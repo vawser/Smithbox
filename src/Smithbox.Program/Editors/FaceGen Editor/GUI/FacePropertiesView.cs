@@ -28,6 +28,7 @@ public class FacePropertiesView
     private readonly FaceGenEditorView View;
 
     private string FieldFilter = "";
+    private bool ExactFieldFilter = false;
     private string NameBuffer = "";
     private Param.Row? NameBufferRow;
     private bool NameActive;
@@ -80,8 +81,7 @@ public class FacePropertiesView
 
         DisplayHeader(editor, paramName, param, row);
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint("##faceGenFieldFilter", LOC.Get("FACEGEN_Properties_Filter_Hint"), ref FieldFilter, 256);
+        EditorFilters.DisplayFramedListFilter("faceGenFieldFilter", ref FieldFilter, ref ExactFieldFilter);
 
         if (ImGui.BeginChild("faceGenProperties"))
         {
@@ -210,9 +210,9 @@ public class FacePropertiesView
 
     private bool FieldMatches(Param param, FaceField field, bool storesModes, FaceGenModelData model, string filter)
     {
-        return field.Name.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-               DisplayName(param, field.Name, storesModes, model).Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-               FaceGenLabel(field.Name, storesModes, model)?.Contains(filter, StringComparison.OrdinalIgnoreCase) == true;
+        return EditorFilters.IsMatch(filter, field.Name, ExactFieldFilter,
+            DisplayName(param, field.Name, storesModes, model),
+            rawSecondaryText: FaceGenLabel(field.Name, storesModes, model) ?? "");
     }
 
     private void NameTooltip(Param param, FaceField field, bool storesModes, FaceGenModelData model)

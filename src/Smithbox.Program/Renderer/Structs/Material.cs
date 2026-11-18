@@ -258,6 +258,13 @@ public struct MaterialCustomize
     ///     times a density from the mask's x and Params.x (the body_hair amount): m·(1 + 4f) below 0, m + f above
     /// </summary>
     public const uint ModeBodyHair = 5;
+
+    /// <summary>
+    ///     Eye patch (ER's [EyePatch]): <c>sat(detail · 4.55 · mix(albedo, albedo · 3 · Color.rgb, mask.x))</c>, the mask's
+    ///     x the cloth or leather that takes the colour, the detail (<see cref="SecondTex" />, tiled by Params.yz) the
+    ///     material's cloth or leather albedo. Without the detail it is 1
+    /// </summary>
+    public const uint ModeEyePatch = 6;
 }
 
 /// <summary>

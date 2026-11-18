@@ -28,6 +28,7 @@ public class ProjectilePropertiesView
     private readonly ProjectileEditorView View;
 
     private string FieldFilter = "";
+    private bool ExactFieldFilter = false;
 
     // The Param Editor view the decorators and inputs work through, and this window's own copies of them, so an
     // edit in progress here never mixes with one in the Param Editor
@@ -63,8 +64,7 @@ public class ProjectilePropertiesView
             return;
         }
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint("##projectileFieldFilter", LOC.Get("PROJECTILE_Properties_Filter_Hint"), ref FieldFilter, 256);
+        EditorFilters.DisplayFramedListFilter("projectileFieldFilter", ref FieldFilter, ref ExactFieldFilter);
 
         // The tabs are named by param, not by row, so the open tab stays open as other rows are selected
         if (!ImGui.BeginTabBar("projectilePropertiesTabs", ImGuiTabBarFlags.FittingPolicyScroll))
@@ -305,9 +305,7 @@ public class ProjectilePropertiesView
 
             var name = DisplayName(internalName, annotation);
 
-            if (filter.Length > 0 &&
-                !name.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
-                !internalName.Contains(filter, StringComparison.OrdinalIgnoreCase))
+            if (filter.Length > 0 && !EditorFilters.IsMatch(filter, internalName, ExactFieldFilter, name))
             {
                 continue;
             }

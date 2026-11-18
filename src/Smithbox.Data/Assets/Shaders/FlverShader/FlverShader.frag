@@ -823,6 +823,14 @@ void ApplyCustomize(inout vec4 diffuseColor)
 		// Shade (the eyes' [EyeAO]): a multiplier from the colour (its darkest) up to 1, by the texture
 		diffuseColor.rgb = mix(cz.color.rgb, vec3(1.0), diffuseColor.rgb);
 	}
+	else if (c_customize == 6)
+	{
+		// Eye patch ([EyePatch]): the patch's albedo, coloured (three times the colour) where the mask's x is its cloth
+		// or leather, under that cloth or leather's albedo times 4.55 (1 until it loads)
+		vec3 detail = cz.pad != 0u ? SampleAt(cz.pad, 0, cz.params.yz, vec2(0.0)).rgb * 4.55 : vec3(1.0);
+		vec3 coloured = mix(diffuseColor.rgb, diffuseColor.rgb * 3.0 * cz.color.rgb, mask.x);
+		diffuseColor.rgb = clamp(detail * coloured, 0.0, 1.0);
+	}
 }
 
 // The number of details stacked over the first, 0 for none

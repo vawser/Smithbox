@@ -370,6 +370,13 @@ public class MaterialSlotRecipe
     /// <summary>Skin: the param of the stubble amount (snp_0_float_14, FaceParam face_beard)</summary>
     public string? StubbleAmount { get; set; }
 
+    /// <summary>
+    /// Eye patch: the texture slot of the cloth or leather albedo laid over the patch ([EyePatch] 5). The game takes
+    /// slot 3 where the mask's x is, but the leather materials leave 3 empty and the cloth ones give both the same
+    /// texture, so slot 5 stands for both
+    /// </summary>
+    public int? Detail { get; set; }
+
     /// <summary>Eye: the params of the iris colour (snp_0_float3_0, over the mask's x), the cataract amount
     /// (snp_0_float_30) and colour (snp_0_float3_2), the pupil's value (snp_0_float_32) and the iris scale
     /// (snp_0_float_12). <see cref="Color"/> is the sclera colour (snp_0_float3_5, multiplying the texture)</summary>
@@ -530,6 +537,9 @@ public class MaterialResolvedSlots
     /// <summary>The sampler type of the skin's stubble texture, and the material's own amount</summary>
     public string? StubbleType { get; set; }
     public float StubbleAmount { get; set; }
+
+    /// <summary>Eye patch: the sampler type of its cloth or leather albedo</summary>
+    public string? DetailType { get; set; }
 
     /// <summary>The eye's own values, see <see cref="MaterialSlotRecipe.Iris"/></summary>
     public float[] Iris { get; set; } = [1, 1, 1];
@@ -1421,6 +1431,7 @@ public class MaterialDefinition
                 "eye" => MaterialCustomize.ModeEye,
                 "shade" => MaterialCustomize.ModeShade,
                 "bodyhair" => MaterialCustomize.ModeBodyHair,
+                "eyepatch" => MaterialCustomize.ModeEyePatch,
                 _ => 0
             },
             Blending = recipe.Blend?.ToLowerInvariant() switch
@@ -1430,6 +1441,7 @@ public class MaterialDefinition
             },
             MaskType = TypeOf(recipe.Mask),
             StubbleType = TypeOf(recipe.Stubble),
+            DetailType = TypeOf(recipe.Detail),
             HeightType = TypeOf(recipe.Height)
         };
 

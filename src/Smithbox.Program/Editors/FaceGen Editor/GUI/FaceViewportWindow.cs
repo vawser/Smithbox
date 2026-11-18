@@ -59,7 +59,6 @@ public class FaceViewportWindow
 
     // The face's hair, beard, brow and lash colours on their parts' materials
     private readonly FaceTinter Tinter;
-    private string? LastColorReportKey;
 
     private static int Serial;
 
@@ -264,18 +263,7 @@ public class FaceViewportWindow
 
         MorphPending = !Morpher.Apply(Mesh, Appearance, shape);
         AppliedShape = shape;
-
-        // TEMPORARY (FaceGen Phase 4 check): once per face shown, when every part has been written
-        var reportKey = $"{View.ParamName}/{row.ID}/{MeshKey}";
-
-        if (!MorphPending && reportKey != LastReportKey && View.PreviewOverrides.Count == 0)
-        {
-            LastReportKey = reportKey;
-            Smithbox.Log(this, $"[FaceGen] {View.ParamName} {row.ID}: {Morpher.LastReport}");
-        }
     }
-
-    private string? LastReportKey;
 
     /// <summary>
     /// Colours the hair-type parts by the face's colour fields, with a colour being edited in place of its stored
@@ -286,17 +274,7 @@ public class FaceViewportWindow
         if (Mesh == null || Appearance == null || View.ActiveRow is not { } row)
             return;
 
-        var done = Tinter.Apply(Mesh, Appearance, row, Parts, View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null);
-
-        // TEMPORARY (FaceGen colour check): once per face shown, when every coloured part has loaded
-        var reportKey = $"{View.ParamName}/{row.ID}/{MeshKey}";
-
-        if (done && reportKey != LastColorReportKey && View.PreviewOverrides.Count == 0)
-        {
-            LastColorReportKey = reportKey;
-            Smithbox.Log(this, $"[FaceGen colours] {View.ParamName} {row.ID}: " +
-                               $"{(Tinter.LastReport.Length > 0 ? Tinter.LastReport : "no coloured parts")}");
-        }
+        Tinter.Apply(Mesh, Appearance, row, Parts, View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null);
     }
 
     private void ClearMesh()
@@ -315,78 +293,6 @@ public class FaceViewportWindow
             MeshProviderCache.InvalidateUidEntries(MeshUid);
 
         MeshUid = null;
-    }
-
-    /// <summary>
-    /// TEMPORARY (FaceGen texture check): for each part of the shown character, each material's shader, whether the
-    /// project's material bank has its MATBIN, and each texture slot: requested or not, the texture it names, and
-    /// whether that texture has arrived. Written to the log.
-    /// </summary>
-    public void LogTextureReport()
-    {
-        var lines = new List<string> { $"[FaceGen textures] material bank: {(Project.Handler.MaterialData?.PrimaryBank != null ? "loaded" : "NOT LOADED")}, " +
-                                       $"texturing {(CFG.Current.Viewport_Enable_Texturing ? "on" : "OFF")}, common_body requested {CommonTexturesRequested}" };
-
-        if (CharacterComposition.GetCommonTexture(Project) is { } common)
-            lines.Add($"  common_body: {common.Name} at {common.AssetVirtualPath}");
-        else
-            lines.Add("  common_body: not found");
-
-        if (Mesh == null || Appearance == null)
-        {
-            lines.Add("  no mesh");
-        }
-        else
-        {
-            for (var i = 0; i < Appearance.Parts.Count && i < Mesh.Submeshes.Count; i++)
-            {
-                var part = Appearance.Parts[i].Name;
-
-                if (Mesh.Submeshes[i]._meshProvider.ResourceHandle is not ResourceHandle<FlverResource> handle)
-                {
-                    lines.Add($"  {part}: no FLVER handle");
-                    continue;
-                }
-
-                if (!handle.IsLoaded || handle.Get()?.GPUMaterials is not { } materials)
-                {
-                    lines.Add($"  {part}: not loaded ({handle.AccessLevel})");
-                    continue;
-                }
-
-                lines.Add($"  {part}: {materials.Length} materials");
-
-                foreach (var material in materials)
-                {
-                    var matbin = Project.Handler.MaterialData?.PrimaryBank?.GetMatbin(
-                        System.IO.Path.GetFileNameWithoutExtension(material.MaterialName ?? ""));
-
-                    lines.Add($"    {material.FlverMaterialName} | {material.MaterialName} | shader {material.ShaderName} | " +
-                              $"definition {(material.Definition != null ? "yes" : "NO")} | matbin {(matbin != null ? $"{matbin.Samplers.Count} samplers" : "NOT FOUND")}");
-
-                    // TEMPORARY (FaceGen body hair check): how the material is coloured and cut out
-                    var slots = material.Definition?.Slots;
-                    lines.Add($"      shader key {material.Definition?.ShaderName} | slots {(slots != null ? "yes" : "none")} | " +
-                              $"customize {FlverResource.CustomizeMode(material.Definition)} (recipe {slots?.Customize ?? 0}, colour {(slots?.Color != null ? "yes" : "no")}) | " +
-                              $"deformer {material.Definition?.Deformer} blend {(material.Definition?.Blend != null)} detail {(material.Definition?.Detail != null)} " +
-                              $"fur {(material.Definition?.Fur != null)} | blending {material.Blending} | alpha ref {material.Shading.DiffuseAlpha.W:0.000} | " +
-                              $"from colour {material.AlbedoFromColor} | body hair {material.IsBodyHair} | " +
-                              $"customize data {(material.Customize is { } c ? $"colour {c.Color} params {c.Params}" : "none")}");
-
-                    for (var t = 0; t < material.TextureResources.Length; t++)
-                    {
-                        if (!material.TextureResourceFilled[t])
-                            continue;
-
-                        var texture = material.TextureResources[t];
-                        var state = texture == null ? "requested, not arrived" : texture.IsLoaded ? $"loaded {texture.Name}" : $"handle {texture.Name}, not loaded";
-                        lines.Add($"      {(FlverResource.FlverMaterial.TextureType)t}: {state}");
-                    }
-                }
-            }
-        }
-
-        Smithbox.Log(this, string.Join("\n", lines));
     }
 
     private bool CommonTexturesRequested;

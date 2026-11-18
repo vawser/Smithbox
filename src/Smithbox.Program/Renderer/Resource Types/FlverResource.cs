@@ -491,6 +491,12 @@ public class FlverResource : IResource, IDisposable
                 LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.StubbleType, "", mtd);
             }
 
+            // The same slot holds an eye patch's cloth or leather albedo
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeEyePatch && slots.DetailType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.DetailType, "", mtd);
+            }
+
             // The same slot holds an eye's iris height, for its parallax
             if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeEye && slots.HeightType != null)
             {
@@ -798,6 +804,13 @@ public class FlverResource : IResource, IDisposable
                     Params = new Vector4(customize.StubbleAmount, 1, 1, mode),
                     MaskTiling = dest.CustomizeMaskTiling
                 },
+                // yz: the detail's tiling, filled in by the upload
+                MaterialCustomize.ModeEyePatch => new MaterialCustomize
+                {
+                    Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], 0),
+                    Params = new Vector4(0, 1, 1, mode),
+                    MaskTiling = dest.CustomizeMaskTiling
+                },
                 _ => new MaterialCustomize
                 {
                     Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], customize.RootBlack),
@@ -825,6 +838,13 @@ public class FlverResource : IResource, IDisposable
                         ? MaterialCustomizeExtra.Default with { B = new Vector4(-1, burn.Amount, 0, 0), C = Vector4.One }
                         : MaterialCustomizeExtra.Default with { B = new Vector4(customize.Gloss, 0, 0, 0) };
             dest.CustomizeMakeup = customize.Makeup?.Data ?? MaterialMakeup.Default;
+
+            // An eye patch's colour (color_0) is the texture input of its albedo too, so the sampler tinted the whole
+            // patch by it. The shader applies it, only where the mask says
+            if (mode == MaterialCustomize.ModeEyePatch)
+            {
+                dest.AlbedoTint = Vector3.One;
+            }
         }
         else if (!hasAlbedo && definition.Slots?.Color is { } slotColor)
         {
@@ -5016,8 +5036,8 @@ public class FlverResource : IResource, IDisposable
                 customize.MaskTex = mask;
                 customize.MaskTiling = CustomizeMaskTiling;
 
-                // The skin's stubble texture and its tiling (Params.yz)
-                if (CustomizeMode(Definition) == MaterialCustomize.ModeSkin)
+                // The skin's stubble texture, or an eye patch's cloth or leather, and its tiling (Params.yz)
+                if (CustomizeMode(Definition) is MaterialCustomize.ModeSkin or MaterialCustomize.ModeEyePatch)
                 {
                     ushort stubble = 0;
                     SetMaterialTexture(TextureType.CustomizeStubbleTextureResource, ref stubble, 0);

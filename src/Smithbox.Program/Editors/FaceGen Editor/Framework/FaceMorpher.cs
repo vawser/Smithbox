@@ -67,9 +67,6 @@ public sealed class FaceMorpher
         Project = project;
     }
 
-    /// <summary>TEMPORARY (FaceGen Phase 4 check): what the last <see cref="Apply"/> did, part by part</summary>
-    public string LastReport { get; private set; } = "";
-
     /// <summary>
     /// Shapes every face part of <paramref name="mesh"/> (the parts are <paramref name="appearance"/>'s, in order) by
     /// the shape coefficients. False while a part isn't loaded yet, so it is to be called again.
@@ -77,7 +74,6 @@ public sealed class FaceMorpher
     public bool Apply(MeshRenderableProxy mesh, CharacterAppearance appearance, float[] coefficients)
     {
         var done = true;
-        var report = new List<string>();
         var body = appearance.Parts.FirstOrDefault(p => p.Name.StartsWith(BodyPrefix, StringComparison.OrdinalIgnoreCase))?.Name;
 
         for (var i = 0; i < appearance.Parts.Count && i < mesh.Submeshes.Count; i++)
@@ -88,10 +84,7 @@ public sealed class FaceMorpher
                 continue;
 
             if (GetPartData(name) is not { } data)
-            {
-                report.Add($"{name}: no egm/flver2tri");
                 continue;
-            }
 
             // A head's edge, pulled onto the body it sits on
             var seam = body != null && name.StartsWith(HeadPrefix, StringComparison.OrdinalIgnoreCase)
@@ -102,47 +95,30 @@ public sealed class FaceMorpher
                 handle.Get()?.GPUMeshes is not { } gpuMeshes)
             {
                 done = false;
-                report.Add($"{name}: not loaded");
                 continue;
             }
 
             var displacement = new Vector3[data.Egm.VertexCount];
             data.Egm.Apply(displacement, coefficients);
 
-            int written = 0, noCopy = 0, notResident = 0;
-
             for (var m = 0; m < gpuMeshes.Length && m < data.Map.Entries.Count; m++)
             {
                 var submesh = gpuMeshes[m];
 
                 if (submesh.RetainedVertices is not { } original || submesh.GeomBuffer is not { } buffer)
-                {
-                    noCopy++;
                     continue;
-                }
 
                 if (buffer.AllocStatus != VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
                 {
                     done = false;
-                    notResident++;
                     continue;
                 }
 
                 buffer.UpdateResidentVertices(Displace(original, submesh.VertexStride, submesh.VertexCount,
                     data.Map.Entries[m].Indices, displacement, seam != null && seam.TryGetValue(m, out var snaps) ? snaps : null));
                 Morphed.Add(submesh);
-                written++;
             }
-
-            var largest = displacement.Length > 0 ? displacement.Max(d => d.Length()) : 0;
-            report.Add($"{name}: meshes {gpuMeshes.Length}/map {data.Map.Entries.Count}, written {written}, " +
-                       (seam != null ? $"seam {seam.Values.Sum(s => s.Count)} vertices (largest pull {(seam.Count > 0 && seam.Values.Any(s => s.Count > 0) ? seam.Values.SelectMany(s => s.Values).Max(v => v.Length()) * 1000 : 0):0.00} mm), " : "") +
-                       $"no vertex copy {noCopy}, not resident {notResident}, largest move {largest:0.0000}, " +
-                       $"stride {gpuMeshes.FirstOrDefault()?.VertexStride}");
         }
-
-        // TEMPORARY (FaceGen Phase 4 check)
-        LastReport = $"coefficients {coefficients.Min():0.00}..{coefficients.Max():0.00}; " + string.Join("; ", report);
 
         return done;
     }

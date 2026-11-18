@@ -34,12 +34,13 @@ public class FaceListView
     private readonly FaceGenEditorView View;
 
     private string Filter = "";
+    private bool ExactFilter = false;
     private UsageFilter Usage = UsageFilter.All;
 
     // The rows that pass the filters, made again when the param, the filters or the param's rows change (any edit,
     // undo or redo can rename, renumber, add or remove a row)
     private List<Param.Row> Rows = new();
-    private (Param? Param, int Count, string Filter, UsageFilter Usage, EditorAction? LastAction) RowsFor;
+    private (Param? Param, int Count, string Filter, bool Exact, UsageFilter Usage, EditorAction? LastAction) RowsFor;
 
     // The selected rows of the shown param. The active row is the range anchor for Shift+click.
     private readonly HashSet<Param.Row> Selected = new();
@@ -105,8 +106,7 @@ public class FaceListView
             GUI.Tooltip(LOC.Get("FACEGEN_List_Param_TT"));
         }
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint("##faceGenFilter", LOC.Get("FACEGEN_List_Filter_Hint"), ref Filter, 256);
+        EditorFilters.DisplayFramedListFilter("faceGenFilter", ref Filter, ref ExactFilter);
 
         var isReferenced = ParamName == FaceGenParams.GetReferencedFaceParam(project);
 
@@ -163,7 +163,7 @@ public class FaceListView
     private void UpdateRows(Param param, FaceGenParams.FaceUsers? users)
     {
         var usage = users != null ? Usage : UsageFilter.All;
-        var key = (param, param.Rows.Count, Filter, usage, ParamEditor?.ActionManager.PeekUndoAction());
+        var key = (param, param.Rows.Count, Filter, ExactFilter, usage, ParamEditor?.ActionManager.PeekUndoAction());
 
         if (key == RowsFor)
             return;
@@ -173,7 +173,7 @@ public class FaceListView
         var filter = Filter.Trim();
 
         Rows = param.Rows
-            .Where(row => filter.Length == 0 || Matches(row, filter))
+            .Where(row => filter.Length == 0 || Matches(row, filter, ExactFilter))
             .Where(row => usage == UsageFilter.All || users!.Get(row.ID).Count > 0 == (usage == UsageFilter.Used))
             .ToList();
 
@@ -188,10 +188,9 @@ public class FaceListView
         }
     }
 
-    private static bool Matches(Param.Row row, string filter)
+    private static bool Matches(Param.Row row, string filter, bool exact)
     {
-        return row.ID.ToString().Contains(filter, StringComparison.Ordinal) ||
-               row.Name?.Contains(filter, StringComparison.OrdinalIgnoreCase) == true;
+        return EditorFilters.IsMatch(filter, row.ID.ToString(), exact, row.Name ?? "");
     }
 
     private void DisplayRows(Param param, FaceGenParams.FaceUsers? users)

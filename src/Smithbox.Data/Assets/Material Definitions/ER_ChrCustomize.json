@@ -13,6 +13,7 @@
   "P[ChrCustomize][Hair]_cloth": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2", "Gloss": "snp_0_float_23" },
   "P[ChrCustomize][FaceHair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2", "Gloss": "snp_0_float_23" },
   "P[ChrCustomize][Eye]": { "CharacterColor": "eye", "Customize": "Eye", "Color": "snp_0_float3_5", "Mask": 6, "Iris": "snp_0_float3_0", "Cataract": "snp_0_float_30", "CataractColor": "snp_0_float3_2", "Pupil": "snp_0_float_32", "IrisScale": "snp_0_float_12", "Height": 4, "HeightDepth": "snp_0_float_46" },
+  "P[ChrCustomize][EyePatch]": { "Albedo": 2, "Normal": 7, "CharacterColor": "part", "Customize": "EyePatch", "Color": "snp_0_color_0", "Mask": 1, "Detail": 5 },
   "P[ChrCustomize][EyeAO]": { "Customize": "Shade", "Color": "snp_0_color_0", "Blend": "Multiply" },
   "P[ChrCustomize][BodyHair_Base]": { "Normal": 0, "Color": "snp_0_color_4", "CharacterColor": "body_hair", "Customize": "BodyHair", "Mask": 4, "Density": "snp_0_float_36" },
   "P[ChrCustomize][BodyHair]": { "Normal": 0, "Color": "snp_0_color_4", "CharacterColor": "body_hair", "Customize": "BodyHair", "Mask": 4, "Density": "snp_0_float_35" },

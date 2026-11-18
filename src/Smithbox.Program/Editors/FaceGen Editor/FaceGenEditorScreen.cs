@@ -163,10 +163,6 @@ public class FaceGenEditorScreen : EditorScreen
         Toggle("FACEGEN_Menu_Apply_Shape", ref CFG.Current.FaceGenEditor_Apply_Shape);
         GUI.Tooltip(LOC.Get("FACEGEN_Menu_Apply_Shape_TT"));
 
-        // TEMPORARY (FaceGen texture check)
-        if (ImGui.MenuItem("Log Texture Report (temporary)##faceGenTextureReport"))
-            View.ViewportWindow.LogTextureReport();
-
         if (ImGui.MenuItem($"{LOC.Get("FACEGEN_Menu_Frame_Face")}##faceGenFrameFace"))
             View.ViewportWindow.FrameFace();
 

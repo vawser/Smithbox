@@ -27,11 +27,12 @@ public class ProjectileListView
 
     private string? ParamName;
     private string Filter = "";
+    private bool ExactFilter = false;
 
     // The rows that pass the filter, made again when the param, the filter or the param's rows change (any edit,
     // undo or redo can rename, renumber, add or remove a row)
     private List<Param.Row> Rows = new();
-    private (Param? Param, int Count, string Filter, EditorAction? LastAction) RowsFor;
+    private (Param? Param, int Count, string Filter, bool Exact, EditorAction? LastAction) RowsFor;
 
     // The selected rows of the shown param. The active row (the simulated one) is the range anchor for Shift+click.
     private readonly HashSet<Param.Row> Selected = new();
@@ -100,8 +101,7 @@ public class ProjectileListView
         }
         GUI.Tooltip(LOC.Get("PROJECTILE_List_Param_TT"));
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.InputTextWithHint("##projectileFilter", LOC.Get("PROJECTILE_List_Filter_Hint"), ref Filter, 256);
+        EditorFilters.DisplayFramedListFilter("projectileFilter", ref Filter, ref ExactFilter);
 
         var param = ProjectileParams.GetParam(project, ParamName!);
 
@@ -124,18 +124,16 @@ public class ProjectileListView
 
     private void UpdateRows(Param param)
     {
-        var key = (param, param.Rows.Count, Filter, ParamEditor?.ActionManager.PeekUndoAction());
+        var key = (param, param.Rows.Count, Filter, ExactFilter, ParamEditor?.ActionManager.PeekUndoAction());
 
         if (key == RowsFor)
             return;
 
         RowsFor = key;
 
-        var filter = Filter.Trim();
-
-        Rows = filter.Length == 0
+        Rows = Filter.Trim().Length == 0
             ? param.Rows.ToList()
-            : param.Rows.Where(row => Matches(row, filter)).ToList();
+            : param.Rows.Where(row => Matches(row, Filter, ExactFilter)).ToList();
 
         // Rows that were deleted (or belong to another param) can't stay selected
         if (Selected.Count > 0)
@@ -152,10 +150,9 @@ public class ProjectileListView
         }
     }
 
-    private static bool Matches(Param.Row row, string filter)
+    private static bool Matches(Param.Row row, string filter, bool exact)
     {
-        return row.ID.ToString().Contains(filter, StringComparison.Ordinal) ||
-               row.Name?.Contains(filter, StringComparison.OrdinalIgnoreCase) == true;
+        return EditorFilters.IsMatch(filter, row.ID.ToString(), exact, row.Name ?? "");
     }
 
     private void DisplayRows(Param param)
