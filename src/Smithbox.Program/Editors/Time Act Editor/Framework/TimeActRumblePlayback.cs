@@ -6,15 +6,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 /// <summary>
 /// Shakes the viewport camera with the rumble cams of the events the playback passes. A rumble cam is a short camera
-/// clip (other/rumble/camera_NNN.hkx in the rumble binder): how far the camera moves from where the clip starts is
-/// added to the view while it plays. One with a dummy poly fades out with the camera's distance from it.
-/// Only games whose rumble cams are Havok clips are played (Sekiro, Elden Ring, Nightreign, Armored Core VI); the
-/// SIBCAM ones of the older games aren't read yet.
+/// animation in the rumble binder (other/rumble/camera_NNN): a Havok clip in Sekiro, Elden Ring, Nightreign and
+/// Armored Core VI, and a SIBCAM in Demon's Souls, Dark Souls and Dark Souls III. How far the camera moves from where
+/// the animation starts is added to the view while it plays. One with a dummy poly fades out with the camera's
+/// distance from it.
 /// </summary>
 public class TimeActRumblePlayback
 {
@@ -26,11 +27,14 @@ public class TimeActRumblePlayback
         "/other/default.rumblebnd"
     };
 
+    // camera_000.hkx, camera_000_win32.sibcam, camera_000_daml_1.sibcam: the number is the rumble cam ID
+    private static readonly Regex CameraName = new(@"^camera_(\d+)", RegexOptions.IgnoreCase);
+
     private readonly TimeActEditorView _view;
     private readonly ProjectEntry _project;
 
-    private readonly Dictionary<int, HavokClip?> _clips = new();
-    private Dictionary<string, BinderFileHeader>? _entries;
+    private readonly Dictionary<int, RumbleCam?> _cams = new();
+    private Dictionary<int, BinderFileHeader>? _entries;
     private byte[]? _binderData;
     private bool _binderRead;
 
@@ -39,9 +43,14 @@ public class TimeActRumblePlayback
     private TAE.Animation? _animation;
     private float _lastTime;
 
-    private sealed class Rumble(HavokClip clip, Vector3? source, float falloffStart, float falloffEnd)
+    /// <summary>
+    /// A rumble cam: how long it lasts, and where the camera is at a time in it
+    /// </summary>
+    private sealed record RumbleCam(float Duration, Func<float, Matrix4x4> Sample);
+
+    private sealed class Rumble(RumbleCam cam, Vector3? source, float falloffStart, float falloffEnd)
     {
-        public HavokClip Clip { get; } = clip;
+        public RumbleCam Cam { get; } = cam;
         public Vector3? Source { get; } = source;
         public float FalloffStart { get; } = falloffStart;
         public float FalloffEnd { get; } = falloffEnd;
@@ -89,10 +98,8 @@ public class TimeActRumblePlayback
             _active.Clear();
         }
 
-        ApplyShake(ImGui_DeltaTime());
+        ApplyShake(Hexa.NET.ImGui.ImGui.GetIO().DeltaTime);
     }
-
-    private static float ImGui_DeltaTime() => Hexa.NET.ImGui.ImGui.GetIO().DeltaTime;
 
     public void StopAll()
     {
@@ -112,7 +119,7 @@ public class TimeActRumblePlayback
                 !_view.Playback.Simulation.IsEventEnabled(ev))
                 continue;
 
-            if (TimeActSimulation.GetFloat(ev, "RumbleCamID") is not { } id || id < 0 || GetClip((int)id) is not { } clip)
+            if (TimeActSimulation.GetFloat(ev, "RumbleCamID") is not { } id || id < 0 || GetCam((int)id) is not { } cam)
                 continue;
 
             Vector3? source = null;
@@ -126,7 +133,7 @@ public class TimeActRumblePlayback
                          ?? _view.Playback.EventDisplay.GetDummyPosition(-1, container, animator);
             }
 
-            _active.Add(new Rumble(clip, source, falloffStart, falloffEnd));
+            _active.Add(new Rumble(cam, source, falloffStart, falloffEnd));
         }
     }
 
@@ -143,7 +150,7 @@ public class TimeActRumblePlayback
             Rumble rumble = _active[i];
             rumble.Elapsed += deltaTime;
 
-            if (rumble.Elapsed >= rumble.Clip.Duration)
+            if (rumble.Elapsed >= rumble.Cam.Duration)
             {
                 _active.RemoveAt(i);
                 continue;
@@ -160,16 +167,11 @@ public class TimeActRumblePlayback
         camera.Shake = shake;
     }
 
-    // How far the camera has moved from where the clip starts
+    // How far the camera has moved from where the rumble cam starts
     private static Matrix4x4 GetMove(Rumble rumble)
     {
-        HavokClip clip = rumble.Clip;
-        var track = clip.BoneToTrack.Length > 0 && clip.BoneToTrack[0] >= 0 ? clip.BoneToTrack[0] : 0;
-        var lastFrame = Math.Max(clip.FrameCount - 1, 0);
-        var frame = clip.FrameDuration > 0 ? Math.Min(rumble.Elapsed / clip.FrameDuration, lastFrame) : 0;
-
-        Matrix4x4 now = clip.Sample(track, frame).GetMatrix();
-        Matrix4x4 start = clip.Sample(track, 0).GetMatrix();
+        Matrix4x4 now = rumble.Cam.Sample(rumble.Elapsed);
+        Matrix4x4 start = rumble.Cam.Sample(0);
 
         return Matrix4x4.Invert(start, out Matrix4x4 inverseStart) ? now * inverseStart : Matrix4x4.Identity;
     }
@@ -197,35 +199,23 @@ public class TimeActRumblePlayback
     }
 
     /// <summary>
-    /// The clip of a rumble cam, found by its name (camera_NNN.hkx) as the binder IDs are offset in some games
+    /// A rumble cam by its ID, found by its file name as the binder IDs are offset in some games
     /// </summary>
-    private HavokClip? GetClip(int id)
+    private RumbleCam? GetCam(int id)
     {
-        if (_clips.TryGetValue(id, out var clip))
-            return clip;
+        if (_cams.TryGetValue(id, out var cam))
+            return cam;
 
-        clip = null;
+        cam = null;
 
         try
         {
-            if (GetEntries() is { } entries && entries.TryGetValue($"camera_{id:D3}", out var entry) && _binderData != null)
+            if (GetEntries() is { } entries && entries.TryGetValue(id, out var entry) && _binderData != null)
             {
                 using var binder = OpenBinder(_binderData);
-                var bytes = binder.ReadFile(entry).ToArray();
+                var bytes = binder.ReadFile(entry);
 
-                // One bone: the camera the clip moves
-                var skeleton = new HavokSkeletonData
-                {
-                    Name = "Camera01",
-                    Names = new[] { "Camera01" },
-                    Parents = new short[] { -1 },
-                    ReferencePose = new[]
-                    {
-                        new HavokTransformData { Translation = Vector3.Zero, Rotation = Quaternion.Identity, Scale = Vector3.One }
-                    }
-                };
-
-                clip = HavokAnimationReader.ReadClip(_project.Descriptor.ProjectType, bytes, null, skeleton);
+                cam = entry.Name.EndsWith(".sibcam", StringComparison.OrdinalIgnoreCase) ? ReadSibcam(bytes) : ReadHavok(bytes);
             }
         }
         catch (Exception e)
@@ -233,11 +223,46 @@ public class TimeActRumblePlayback
             Smithbox.LogError(this, LOC.Get("TAE_Rumble_Failed_To_Read", id), e);
         }
 
-        _clips[id] = clip;
-        return clip;
+        _cams[id] = cam;
+        return cam;
     }
 
-    private Dictionary<string, BinderFileHeader>? GetEntries()
+    private static RumbleCam? ReadSibcam(Memory<byte> bytes)
+    {
+        return SibcamData.Read(bytes) is { Duration: > 0 } sibcam ? new RumbleCam(sibcam.Duration, sibcam.Sample) : null;
+    }
+
+    private RumbleCam? ReadHavok(Memory<byte> bytes)
+    {
+        // One bone: the camera the clip moves
+        var skeleton = new HavokSkeletonData
+        {
+            Name = "Camera01",
+            Names = new[] { "Camera01" },
+            Parents = new short[] { -1 },
+            ReferencePose = new[]
+            {
+                new HavokTransformData { Translation = Vector3.Zero, Rotation = Quaternion.Identity, Scale = Vector3.One }
+            }
+        };
+
+        if (HavokAnimationReader.ReadClip(_project.Descriptor.ProjectType, bytes.ToArray(), null, skeleton) is not
+            { Duration: > 0 } clip)
+        {
+            return null;
+        }
+
+        var track = clip.BoneToTrack.Length > 0 && clip.BoneToTrack[0] >= 0 ? clip.BoneToTrack[0] : 0;
+        var lastFrame = Math.Max(clip.FrameCount - 1, 0);
+
+        return new RumbleCam(clip.Duration, time =>
+        {
+            var frame = clip.FrameDuration > 0 ? Math.Min(time / clip.FrameDuration, lastFrame) : 0;
+            return clip.Sample(track, frame).GetMatrix();
+        });
+    }
+
+    private Dictionary<int, BinderFileHeader>? GetEntries()
     {
         if (_binderRead)
             return _entries;
@@ -257,11 +282,21 @@ public class TimeActRumblePlayback
 
             using var binder = OpenBinder(bytes);
 
-            // Only the Havok clips: the older games' SIBCAMs aren't read
-            _entries = binder.Files
-                .Where(f => f.Name.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase))
-                .GroupBy(f => Path.GetFileNameWithoutExtension(f.Name.Replace('\\', '/')).ToLowerInvariant())
-                .ToDictionary(g => g.Key, g => g.First());
+            _entries = new Dictionary<int, BinderFileHeader>();
+
+            foreach (var file in binder.Files)
+            {
+                var name = Path.GetFileName(file.Name.Replace('\\', '/'));
+
+                if (!name.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase) &&
+                    !name.EndsWith(".sibcam", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                if (CameraName.Match(name) is { Success: true } match && int.TryParse(match.Groups[1].Value, out var id))
+                {
+                    _entries.TryAdd(id, file);
+                }
+            }
 
             return _entries;
         }

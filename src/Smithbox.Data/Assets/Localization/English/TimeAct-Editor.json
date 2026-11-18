@@ -3259,7 +3259,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Rumble_Cam_TT",
-      "Text": "If enabled, rumble cam events shake the viewport camera as playback passes them. A local one fades with the camera's distance from its dummy poly, so zooming out lessens it. Only games whose rumble cams are Havok clips are played (Sekiro, Elden Ring, Nightreign, Armored Core VI)."
+      "Text": "If enabled, rumble cam events shake the viewport camera as playback passes them. A local one fades with the camera's distance from its dummy poly, so zooming out lessens it."
     },
     {
       "Key": "TAE_SimulationTool_Turn_Header",
