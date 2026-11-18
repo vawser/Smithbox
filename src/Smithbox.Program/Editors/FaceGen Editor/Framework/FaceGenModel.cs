@@ -30,6 +30,13 @@ public sealed class FaceGenSliderTable
     public float ShapeClamp { get; set; } = float.MaxValue;
     public float TextureClamp { get; set; } = float.MaxValue;
 
+    /// <summary>
+    /// The face part value names the body too (DS3: the hundreds digit is the musculature, the tens the body hair, the
+    /// ones the age type, and fc_&lt;sex&gt;_&lt;value&gt; is that body), and the head is then fg_a_01NN by its last two
+    /// digits, else by its ones digit alone (110 → fg_a_0100). See <see cref="StudioCore.Editors.Common.FaceComposition"/>
+    /// </summary>
+    public bool FacePartsNameBody { get; set; }
+
     private Dictionary<int, Slider>? ById;
 
     public Slider? Get(int id) => (ById ??= Sliders.ToDictionary(s => s.Id)).GetValueOrDefault(id);

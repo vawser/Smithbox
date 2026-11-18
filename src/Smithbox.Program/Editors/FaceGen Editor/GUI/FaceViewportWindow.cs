@@ -216,7 +216,8 @@ public class FaceViewportWindow
         if (View.RenderScene == null)
             return;
 
-        var models = Parts.Where(p => p.Model != null).Select(p => p.Model!).Distinct().ToList();
+        // The face's models, and the body its face parts value names (DS3)
+        var models = Parts.SelectMany(p => new[] { p.Body, p.Model }).Where(m => m != null).Select(m => m!).Distinct().ToList();
         var key = row == null ? null : $"{(isFemale ? 'f' : 'm')}|{string.Join(",", models)}";
 
         if (key == MeshKey)

@@ -384,6 +384,14 @@ public static class CharacterComposition
                 parts.Add(new CharacterPart(name));
         }
 
+        // A body among the extra parts (the one DS3's face parts value names) replaces the default one
+        if (head == null && extraParts.FirstOrDefault(n => n.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase) &&
+                                                          partNames.Contains(n)) is { } extraBody)
+        {
+            parts.RemoveAll(p => p.AttachNode == null && p.Name != extraBody &&
+                                 p.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase));
+        }
+
         return new CharacterAppearance(parts, masks, head);
     }
 

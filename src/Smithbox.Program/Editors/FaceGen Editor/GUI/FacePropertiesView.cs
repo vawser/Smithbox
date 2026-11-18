@@ -427,8 +427,8 @@ public class FacePropertiesView
         var isFemale = View.ViewportWindow.IsFemale();
         var value = GetInt(row, field.Name);
         var part = FaceComposition.Resolve(Project, field.Name, value, isFemale);
-        var preview = part.Model != null && !part.IsFallback
-            ? $"{value}: {part.Model}"
+        var preview = part.Body != null || (part.Model != null && !part.IsFallback)
+            ? $"{value}: {part.Label}"
             : LOC.Get("FACEGEN_Part_None", value);
 
         ImGui.SetNextItemWidth(-1);
@@ -437,7 +437,7 @@ public class FacePropertiesView
         {
             foreach (var choice in FaceComposition.GetChoices(Project, field.Name, isFemale))
             {
-                var selected = choice.Model == part.Model && !part.IsFallback;
+                var selected = choice.Value == value || (choice.Model == part.Label && !part.IsFallback);
 
                 if (ImGui.Selectable($"{choice.Value}: {choice.Model}##part{choice.Value}", selected))
                 {

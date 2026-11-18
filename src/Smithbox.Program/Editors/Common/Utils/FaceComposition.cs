@@ -14,9 +14,14 @@ namespace StudioCore.Editors.Common;
 /// <param name="Value">The value of the field</param>
 /// <param name="Model">The part model shown, or null if there is none to show</param>
 /// <param name="IsFallback">True when the value names no model, and <paramref name="Model"/> is the family's first one</param>
-public sealed record FacePart(string Field, int Value, string? Model, bool IsFallback);
+/// <param name="Body">The body model the value names as well (DS3's face parts value), or null</param>
+public sealed record FacePart(string Field, int Value, string? Model, bool IsFallback, string? Body = null)
+{
+    /// <summary>The models, for a picker: "fc_m_0110 + fg_a_0100", or the model alone</summary>
+    public string? Label => Body != null && Model != null ? $"{Body} + {Model}" : Body ?? Model;
+}
 
-/// <summary>A choice for a part field: a value, and the model it shows</summary>
+/// <summary>A choice for a part field: a value, and the models it shows</summary>
 public sealed record FacePartChoice(int Value, string Model);
 
 /// <summary>
@@ -34,6 +39,12 @@ public sealed record FacePartChoice(int Value, string Model);
 /// </list>
 /// The NN00 model of a family (and hr_a_0000) has no meshes: it is "none". Decals (6000s) are texture-only parts, and
 /// are not shown. The rules go by field name, so a game shows the parts whose fields it has.
+/// <para>
+/// Where the game's creator data says the face parts value names the body
+/// (<see cref="FaceGenEditor.FaceGenSliderTable.FacePartsNameBody"/>, DS3), the value is also the body fc_&lt;sex&gt;_NNNN
+/// (hundreds the musculature, tens the body hair, ones the age type: 110 is muscular, hairy and young), and the head is
+/// fg_a_01NN by the last two digits, else by the ones digit (fg_a_0100 young, 0101 mature, 0102 aged, 0103 none).
+/// </para>
 /// </summary>
 public static class FaceComposition
 {
@@ -51,6 +62,7 @@ public static class FaceComposition
         ["beard_partsId"] = new("fg", 3000),
         ["beardPartsId"] = new("fg", 3000),
         ["eyelash_partsId"] = new("fg", 7000),
+        ["eyelashPartsId"] = new("fg", 7000),
         ["accessories_partsId"] = new("fg", 5000),
         ["accessoriesPartsId"] = new("fg", 5000),
         ["hair_partsId"] = new("hr", 0),
@@ -58,7 +70,13 @@ public static class FaceComposition
         ["hairStyle"] = new("hr", 0),
     };
 
-    private static readonly Regex PartName = new(@"^(fg|hr)_([a-z])_(\d{4})$", RegexOptions.Compiled);
+    private static readonly Regex PartName = new(@"^(fg|hr|fc)_([a-z])_(\d{4})$", RegexOptions.Compiled);
+
+    private const string BodyPrefix = "fc";
+
+    /// <summary>Whether the game's face parts value names the body as well as the head (DS3)</summary>
+    private static bool NamesBody(ProjectEntry project, Rule rule) =>
+        rule.DropHundreds && FaceGenEditor.FaceGenSliderTable.Get(project)?.FacePartsNameBody == true;
 
     // The part models of each family, by number then by sex letter
     private static readonly ConditionalWeakTable<ProjectEntry, Dictionary<string, Dictionary<int, List<string>>>> Families = new();
@@ -90,19 +108,25 @@ public static class FaceComposition
 
         var family = GetFamily(project, rule.Prefix);
         var sex = isFemale ? 'f' : 'm';
+        var namesBody = NamesBody(project, rule);
 
-        foreach (var number in Candidates(rule, value))
+        // DS3: the value is the body's number too
+        var body = namesBody && value >= 0 && GetFamily(project, BodyPrefix).TryGetValue(value, out var bodies)
+            ? PickSex(bodies, sex)
+            : null;
+
+        foreach (var number in Candidates(rule, value, namesBody))
         {
             if (family.TryGetValue(number, out var models) && Pick(models, sex) is { } model)
-                return new FacePart(field, value, model, false);
+                return new FacePart(field, value, model, false, body);
         }
 
         // Faces always have a head, so a head the value doesn't name is shown as the first head. The other parts are
         // left out: a missing hair or beard is shown as none.
         if (rule.DropHundreds && family.Keys.Where(n => n >= rule.Base && n < rule.Base + 100).DefaultIfEmpty(-1).Min() is >= 0 and var first)
-            return new FacePart(field, value, Pick(family[first], sex), true);
+            return new FacePart(field, value, Pick(family[first], sex), true, body);
 
-        return new FacePart(field, value, null, false);
+        return new FacePart(field, value, null, false, body);
     }
 
     /// <summary>The values a part field can take that name a model, for a picker</summary>
@@ -115,6 +139,17 @@ public static class FaceComposition
         var sex = isFemale ? 'f' : 'm';
         var span = rule.Base == 0 ? int.MaxValue : 100;
 
+        // DS3: every body number, with the head it gets
+        if (NamesBody(project, rule))
+        {
+            return GetFamily(project, BodyPrefix).Keys
+                .OrderBy(n => n)
+                .Select(n => Resolve(project, field, n, isFemale))
+                .Where(p => p.Body != null)
+                .Select(p => new FacePartChoice(p.Value, p.Label!))
+                .ToList();
+        }
+
         return family.Keys
             .Where(n => n >= rule.Base && n - rule.Base < span)
             .OrderBy(n => n)
@@ -122,7 +157,7 @@ public static class FaceComposition
             .ToList();
     }
 
-    private static IEnumerable<int> Candidates(Rule rule, int value)
+    private static IEnumerable<int> Candidates(Rule rule, int value, bool onesDigit = false)
     {
         if (value < 0)
             yield break;
@@ -131,6 +166,16 @@ public static class FaceComposition
 
         if (rule.DropHundreds && value >= 100)
             yield return rule.Base + value % 100;
+
+        // DS3: the head is the age type, the ones digit (the tens are the body hair)
+        if (onesDigit && value % 100 >= 10)
+            yield return rule.Base + value % 10;
+    }
+
+    /// <summary>A body of a sex (bodies have no unisex model): the sex's own, else the male one</summary>
+    private static string? PickSex(List<string> models, char sex)
+    {
+        return models.FirstOrDefault(m => m[3] == sex) ?? models.FirstOrDefault(m => m[3] == 'm');
     }
 
     /// <summary>The model for a sex: the unisex one (a), else the sex's own, else the male one</summary>

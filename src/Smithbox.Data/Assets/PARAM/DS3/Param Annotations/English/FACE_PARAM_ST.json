@@ -85,63 +85,83 @@
       "Description": ""
     },
     {
-      "Field": "eyeBrowPartsId",
+      "Field": "eyebrowPartsId",
       "Name": "Brow Parts ID",
       "Description": "In the character creator the order of brow parts is by default (assuming left to right and top to bottom): 0-16."
     },
     {
-      "Field": "eyeBrowColor_R",
+      "Field": "eyebrowColor_R",
       "Name": "Brow Color: R",
       "Description": ""
     },
     {
-      "Field": "eyeBrowColor_G",
+      "Field": "eyebrowColor_G",
       "Name": "Brow Color: G",
       "Description": ""
     },
     {
-      "Field": "eyeBrowColor_B",
+      "Field": "eyebrowColor_B",
       "Name": "Brow Color: B",
       "Description": ""
     },
     {
-      "Field": "beardPartsId",
+      "Field": "eyelashPartsId",
       "Name": "Eyelash Parts ID",
       "Description": "In the character creator the order of eyelash parts is by default (assuming left to right and top to bottom): 0-3."
     },
     {
-      "Field": "beardColor_R",
+      "Field": "eyelashColor_R",
       "Name": "Eyelash Color: R",
       "Description": ""
     },
     {
-      "Field": "beardColor_G",
+      "Field": "eyelashColor_G",
       "Name": "Eyelash Color: G",
       "Description": ""
     },
     {
-      "Field": "beardColor_B",
+      "Field": "eyelashColor_B",
       "Name": "Eyelash Color: B",
       "Description": ""
     },
     {
-      "Field": "accessoriesPartsId",
+      "Field": "beardPartsId",
       "Name": "Beard Parts ID",
       "Description": "In the character creator the order of beard parts is by default (assuming left to right and top to bottom): 0-11."
     },
     {
-      "Field": "accessoriesColor_R",
+      "Field": "beardColor_R",
       "Name": "Beard Color: R",
       "Description": ""
     },
     {
-      "Field": "accessoriesColor_G",
+      "Field": "beardColor_G",
       "Name": "Beard Color: G",
       "Description": ""
     },
     {
-      "Field": "accessoriesColor_B",
+      "Field": "beardColor_B",
       "Name": "Beard Color: B",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesPartsId",
+      "Name": "Accessory Parts ID",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_R",
+      "Name": "Accessory Color: R",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_G",
+      "Name": "Accessory Color: G",
+      "Description": ""
+    },
+    {
+      "Field": "accessoriesColor_B",
+      "Name": "Accessory Color: B",
       "Description": ""
     },
     {
@@ -185,697 +205,677 @@
       "Description": ""
     },
     {
-      "Field": "ChrBodyScaleHead",
-      "Name": "Character Head Scale",
-      "Description": ""
-    },
-    {
-      "Field": "ChrBodyScaleBreast",
-      "Name": "Character Breast Scale",
-      "Description": ""
-    },
-    {
-      "Field": "ChrBodyScaleAbdomen",
-      "Name": "Character Abdomen Scale",
-      "Description": ""
-    },
-    {
-      "Field": "ChrBodyScaleArm",
-      "Name": "Character Arm Scale",
-      "Description": ""
-    },
-    {
-      "Field": "ChrBodyScaleLeg",
+      "Field": "chrBodyScaleHead",
       "Name": "Build Detail: Head",
       "Description": ""
     },
     {
-      "Field": "Age",
+      "Field": "chrBodyScaleBreast",
       "Name": "Build Detail: Chest",
       "Description": ""
     },
     {
-      "Field": "Gender",
+      "Field": "chrBodyScaleAbdomen",
       "Name": "Build Detail: Abdomen",
       "Description": ""
     },
     {
-      "Field": "carricatureGeometry",
+      "Field": "chrBodyScaleRArm",
       "Name": "Build Detail: Arms (Right)",
       "Description": ""
     },
     {
-      "Field": "carricatureTexture",
+      "Field": "chrBodyScaleRLeg",
       "Name": "Build Detail: Legs (Right)",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData00",
+      "Field": "chrBodyScaleLArm",
       "Name": "Build Detail: Arms (Left)",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData01",
+      "Field": "chrBodyScaleLLeg",
       "Name": "Build Detail: Legs (Left)",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData02",
+      "Field": "age",
       "Name": "Features: Apparent Age",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData03",
+      "Field": "gender",
       "Name": "Features: Facial Aesthetic",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData04",
+      "Field": "caricatureGeometry",
       "Name": "Features: Form Emphasis",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData05",
-      "Name": "Face Geo Data 05",
+      "Field": "caricatureTexture",
+      "Name": "Features: Form Emphasis (Texture)",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData06",
+      "Field": "faceGeoData00",
       "Name": "Brow Ridge: Brow Height",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData07",
+      "Field": "faceGeoData01",
       "Name": "Brow Ridge: Inner Brow Ridge",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData08",
+      "Field": "faceGeoData02",
       "Name": "Brow Ridge: Outer Brow Ridge",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData09",
+      "Field": "faceGeoData03",
       "Name": "Cheeks: Cheekbone Height",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData10",
+      "Field": "faceGeoData04",
       "Name": "Cheeks: Cheekbone Depth",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData11",
+      "Field": "faceGeoData05",
       "Name": "Cheeks: Cheekbone Width",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData12",
+      "Field": "faceGeoData06",
       "Name": "Cheeks: Cheekbone",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData13",
+      "Field": "faceGeoData07",
       "Name": "Cheeks: Cheekbone Depth",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData14",
+      "Field": "faceGeoData08",
       "Name": "Chin: Chin Tip Position",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData15",
+      "Field": "faceGeoData09",
       "Name": "Chin: Chin Length",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData16",
+      "Field": "faceGeoData10",
       "Name": "Chin: Chin Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData17",
+      "Field": "faceGeoData11",
       "Name": "Chin: Chin Depth",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData18",
+      "Field": "faceGeoData12",
       "Name": "Chin: Chin Size",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData19",
+      "Field": "faceGeoData13",
       "Name": "Chin: Chin Height",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData20",
+      "Field": "faceGeoData14",
       "Name": "Chin: Chin Width",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData21",
+      "Field": "faceGeoData15",
       "Name": "Eyes: Eye Position",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData22",
+      "Field": "faceGeoData16",
       "Name": "Eyes: Eye Size",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData23",
+      "Field": "faceGeoData17",
       "Name": "Eyes: Eye Slant",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData24",
+      "Field": "faceGeoData18",
       "Name": "Eyes: Eye Spacing",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData25",
+      "Field": "faceGeoData19",
       "Name": "Facial Balance: Nose Size",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData26",
+      "Field": "faceGeoData20",
       "Name": "Facial Balance: Nose/Forehead Ratio",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData27",
-      "Name": "Face Geo Data 27",
+      "Field": "faceGeoData21",
+      "Name": "Face Geo Data 21",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData28",
+      "Field": "faceGeoData22",
       "Name": "Facial Balance: Face Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData29",
+      "Field": "faceGeoData23",
       "Name": "Facial Balance: Vert. Facial Spacing",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData30",
+      "Field": "faceGeoData24",
       "Name": "Facial Balance: Facial Feature Slant",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData31",
+      "Field": "faceGeoData25",
       "Name": "Facial Balance: Horiz. Facial",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData32",
-      "Name": "Face Geo Data 32",
+      "Field": "faceGeoData26",
+      "Name": "Face Geo Data 26",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData33",
+      "Field": "faceGeoData27",
       "Name": "Forehead/Glabella: Forehead Depth",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData34",
+      "Field": "faceGeoData28",
       "Name": "Forehead/Glabella: Forehead Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData35",
-      "Name": "Face Geo Data 35",
+      "Field": "faceGeoData29",
+      "Name": "Face Geo Data 29",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData36",
+      "Field": "faceGeoData30",
       "Name": "Jaw: Jaw Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData37",
+      "Field": "faceGeoData31",
       "Name": "Jaw: Jaw Width",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData38",
+      "Field": "faceGeoData32",
       "Name": "Jaw: Lower Jaw",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData39",
+      "Field": "faceGeoData33",
       "Name": "Jaw: Jaw Contour",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData40",
+      "Field": "faceGeoData34",
       "Name": "Lips: Lip Shape",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData41",
+      "Field": "faceGeoData35",
       "Name": "Lips: Mouth Expression",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData42",
+      "Field": "faceGeoData36",
       "Name": "Lips: Lip Fullness",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData43",
+      "Field": "faceGeoData37",
       "Name": "Lips: Lip Size",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData44",
+      "Field": "faceGeoData38",
       "Name": "Lips: Lip Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData45",
+      "Field": "faceGeoData39",
       "Name": "Lips: Lip Thickness",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData46",
+      "Field": "faceGeoData40",
       "Name": "Mouth: Mouth Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData47",
+      "Field": "faceGeoData41",
       "Name": "Mouth: Mouth Slant",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData48",
+      "Field": "faceGeoData42",
       "Name": "Mouth: Occlusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData49",
+      "Field": "faceGeoData43",
       "Name": "Mouth: Mouth Position",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData50",
+      "Field": "faceGeoData44",
       "Name": "Mouth: Mouth Width",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData51",
+      "Field": "faceGeoData45",
       "Name": "Mouth: Mouth-Chin Distance",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData52",
+      "Field": "faceGeoData46",
       "Name": "Nose Ridge: Nose Ridge Depth",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData53",
+      "Field": "faceGeoData47",
       "Name": "Nose Ridge: Nose Ridge Length",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData54",
+      "Field": "faceGeoData48",
       "Name": "Nose Ridge: Nose Position",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData55",
+      "Field": "faceGeoData49",
       "Name": "Nose Ridge: Nose Tip Height",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData56",
+      "Field": "faceGeoData50",
       "Name": "Nostrils: Nostril Slant",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData57",
+      "Field": "faceGeoData51",
       "Name": "Nostrils: Nostril Size",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData58",
+      "Field": "faceGeoData52",
       "Name": "Nostrils: Nostril Width",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData59",
+      "Field": "faceGeoData53",
       "Name": "Nose Ridge: Nose Protrusion",
       "Description": ""
     },
     {
-      "Field": "FaceGeoData60",
+      "Field": "faceGeoData54",
       "Name": "Forehead/Glabella: Nose Bridge Height",
       "Description": ""
     },
     {
-      "Field": "FaceTexData00",
+      "Field": "faceGeoData55",
       "Name": "Forehead/Glabella: Bridge Protrusion 1",
       "Description": ""
     },
     {
-      "Field": "FaceTexData01",
+      "Field": "faceGeoData56",
       "Name": "Forehead/Glabella: Bridge Protrusion 2",
       "Description": ""
     },
     {
-      "Field": "FaceTexData02",
+      "Field": "faceGeoData57",
       "Name": "Forehead/Glabella: Nose Bridge Width",
       "Description": ""
     },
     {
-      "Field": "FaceTexData03",
+      "Field": "faceGeoData58",
       "Name": "Nose Ridge > Nose Height",
       "Description": ""
     },
     {
-      "Field": "FaceTexData04",
+      "Field": "faceGeoData59",
       "Name": "Nose Ridge > Nose Slant",
       "Description": ""
     },
     {
-      "Field": "FaceTexData05",
+      "Field": "faceGeoData60",
+      "Name": "Face Geo Data 60",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData00",
+      "Name": "Face Texture Data 00",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData01",
+      "Name": "Face Texture Data 01",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData02",
+      "Name": "Face Texture Data 02",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData03",
+      "Name": "Face Texture Data 03",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData04",
+      "Name": "Face Texture Data 04",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData05",
       "Name": "Face Texture Data 05",
       "Description": ""
     },
     {
-      "Field": "FaceTexData06",
-      "Name": "Face Texture Data 06",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData07",
-      "Name": "Face Texture Data 07",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData08",
-      "Name": "Face Texture Data 08",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData09",
-      "Name": "Face Texture Data 09",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData10",
-      "Name": "Face Texture Data 10",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData11",
-      "Name": "Face Texture Data 11",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData12",
+      "Field": "faceTexData06",
       "Name": "Skin Color: Cheek Color",
       "Description": ""
     },
     {
-      "Field": "FaceTexData13",
+      "Field": "faceTexData07",
       "Name": "Cosmetics: Tone Around Eyes",
       "Description": ""
     },
     {
-      "Field": "FaceTexData14",
+      "Field": "faceTexData08",
       "Name": "Cosmetics: Eye Socket",
       "Description": ""
     },
     {
-      "Field": "FaceTexData15",
+      "Field": "faceTexData09",
+      "Name": "Face Texture Data 09",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData10",
+      "Name": "Face Texture Data 10",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData11",
+      "Name": "Face Texture Data 11",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData12",
+      "Name": "Face Texture Data 12",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData13",
+      "Name": "Face Texture Data 13",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData14",
+      "Name": "Face Texture Data 14",
+      "Description": ""
+    },
+    {
+      "Field": "faceTexData15",
       "Name": "Face Texture Data 15",
       "Description": ""
     },
     {
-      "Field": "FaceTexData16",
+      "Field": "faceTexData16",
       "Name": "Face Texture Data 16",
       "Description": ""
     },
     {
-      "Field": "FaceTexData17",
+      "Field": "faceTexData17",
       "Name": "Face Texture Data 17",
       "Description": ""
     },
     {
-      "Field": "FaceTexData18",
-      "Name": "Face Texture Data 18",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData19",
-      "Name": "Face Texture Data 19",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData20",
-      "Name": "Face Texture Data 20",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData21",
-      "Name": "Face Texture Data 21",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData22",
-      "Name": "Face Texture Data 22",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData23",
-      "Name": "Face Texture Data 23",
-      "Description": ""
-    },
-    {
-      "Field": "FaceTexData24",
+      "Field": "faceTexData18",
       "Name": "Cosmetics: Eyelid Brightness",
       "Description": ""
     },
     {
-      "Field": "FaceTexData25",
+      "Field": "faceTexData19",
       "Name": "Cosmetics: Eyelid Color",
       "Description": ""
     },
     {
-      "Field": "FaceTexData26",
+      "Field": "faceTexData20",
       "Name": "Cosmetics: Eyeliner",
       "Description": ""
     },
     {
-      "Field": "FaceTexData27",
+      "Field": "faceTexData21",
       "Name": "Cosmetics: Eye Shadow",
       "Description": ""
     },
     {
-      "Field": "FaceTexData28",
-      "Name": "Face Texture Data 28",
+      "Field": "faceTexData22",
+      "Name": "Face Texture Data 22",
       "Description": ""
     },
     {
-      "Field": "FaceTexData29",
-      "Name": "Face Texture Data 29",
+      "Field": "faceTexData23",
+      "Name": "Face Texture Data 23",
       "Description": ""
     },
     {
-      "Field": "FaceTexData30",
-      "Name": "Face Texture Data 30",
+      "Field": "faceTexData24",
+      "Name": "Face Texture Data 24",
       "Description": ""
     },
     {
-      "Field": "FaceTexData31",
-      "Name": "Face Texture Data 31",
+      "Field": "faceTexData25",
+      "Name": "Face Texture Data 25",
       "Description": ""
     },
     {
-      "Field": "FaceTexData32",
+      "Field": "faceTexData26",
       "Name": "Cosmetics: Lipstick 1",
       "Description": ""
     },
     {
-      "Field": "FaceTexData33",
+      "Field": "faceTexData27",
       "Name": "Cosmetics: Lipstick 2",
       "Description": ""
     },
     {
-      "Field": "FaceTexData34",
+      "Field": "faceTexData28",
       "Name": "Skin Color: Laugh Lines",
       "Description": ""
     },
     {
-      "Field": "FaceTexData35",
+      "Field": "faceTexData29",
       "Name": "Nostrils: Nasal Size",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData00",
+      "Field": "faceTexData30",
       "Name": "Skin Color: Nose Bridge Color",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData01",
+      "Field": "faceTexData31",
       "Name": "Skin Color: Skin Color Layer 4",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData02",
+      "Field": "faceTexData32",
       "Name": "Skin Color: Skin Tone",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData03",
+      "Field": "faceTexData33",
       "Name": "Skin Color: Skin Color Layer 1",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData04",
+      "Field": "faceTexData34",
       "Name": "Skin Color: Skin Color Layer 2",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData05",
+      "Field": "faceTexData35",
       "Name": "Skin Color: Skin Color Layer 3",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData06",
+      "Field": "faceGeoAsymData00",
+      "Name": "Face Geo Asym Data 00",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData01",
+      "Name": "Face Geo Asym Data 01",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData02",
+      "Name": "Face Geo Asym Data 02",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData03",
+      "Name": "Face Geo Asym Data 03",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData04",
+      "Name": "Face Geo Asym Data 04",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData05",
+      "Name": "Face Geo Asym Data 05",
+      "Description": ""
+    },
+    {
+      "Field": "faceGeoAsymData06",
       "Name": "Face Geo Asym Data 06",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData07",
+      "Field": "faceGeoAsymData07",
       "Name": "Face Geo Asym Data 07",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData08",
+      "Field": "faceGeoAsymData08",
       "Name": "Face Geo Asym Data 08",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData09",
+      "Field": "faceGeoAsymData09",
       "Name": "Face Geo Asym Data 09",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData10",
+      "Field": "faceGeoAsymData10",
       "Name": "Face Geo Asym Data 10",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData11",
+      "Field": "faceGeoAsymData11",
       "Name": "Face Geo Asym Data 11",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData12",
+      "Field": "faceGeoAsymData12",
       "Name": "Face Geo Asym Data 12",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData13",
+      "Field": "faceGeoAsymData13",
       "Name": "Face Geo Asym Data 13",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData14",
+      "Field": "faceGeoAsymData14",
       "Name": "Face Geo Asym Data 14",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData15",
+      "Field": "faceGeoAsymData15",
       "Name": "Face Geo Asym Data 15",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData16",
+      "Field": "faceGeoAsymData16",
       "Name": "Face Geo Asym Data 16",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData17",
+      "Field": "faceGeoAsymData17",
       "Name": "Face Geo Asym Data 17",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData18",
+      "Field": "faceGeoAsymData18",
       "Name": "Face Geo Asym Data 18",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData19",
+      "Field": "faceGeoAsymData19",
       "Name": "Face Geo Asym Data 19",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData20",
+      "Field": "faceGeoAsymData20",
       "Name": "Face Geo Asym Data 20",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData21",
+      "Field": "faceGeoAsymData21",
       "Name": "Face Geo Asym Data 21",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData22",
+      "Field": "faceGeoAsymData22",
       "Name": "Face Geo Asym Data 22",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData23",
+      "Field": "faceGeoAsymData23",
       "Name": "Face Geo Asym Data 23",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData24",
+      "Field": "faceGeoAsymData24",
       "Name": "Face Geo Asym Data 24",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData25",
+      "Field": "faceGeoAsymData25",
       "Name": "Face Geo Asym Data 25",
       "Description": ""
     },
     {
-      "Field": "FaceGeoAsymData26",
-      "Name": "Face Geo Asym Data 26",
-      "Description": ""
-    },
-    {
-      "Field": "FaceGeoAsymData27",
-      "Name": "Face Geo Asym Data 27",
-      "Description": ""
-    },
-    {
-      "Field": "FaceGeoAsymData28",
-      "Name": "Face Geo Asym Data 28",
-      "Description": ""
-    },
-    {
-      "Field": "FaceGeoAsymData29",
-      "Name": "Face Geo Asym Data 29",
-      "Description": ""
-    },
-    {
-      "Field": "FaceGeoAsymData30",
-      "Name": "Face Geo Asym Data 30",
-      "Description": ""
-    },
-    {
-      "Field": "FaceGeoAsymData31",
-      "Name": "Face Geo Asym Data 31",
-      "Description": ""
-    },
-    {
-      "Field": "Padding",
+      "Field": "reserve",
       "Name": "",
       "Description": ""
     }

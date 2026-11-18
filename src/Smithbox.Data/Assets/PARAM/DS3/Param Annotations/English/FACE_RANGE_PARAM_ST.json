@@ -5,734 +5,734 @@
   "Description": "Configuration data for Face paramters",
   "Fields": [
     {
-      "Field": "Unknown0",
-      "Name": "",
-      "Description": ""
+      "Field": "facePartsId",
+      "Name": "Face Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown1",
-      "Name": "",
-      "Description": ""
+      "Field": "skinColor_R",
+      "Name": "Base Skin Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown2",
-      "Name": "",
-      "Description": ""
+      "Field": "skinColor_G",
+      "Name": "Base Skin Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown3",
-      "Name": "",
-      "Description": ""
+      "Field": "skinColor_B",
+      "Name": "Base Skin Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown4",
-      "Name": "",
-      "Description": ""
+      "Field": "hairPartsId",
+      "Name": "Hair Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown5",
-      "Name": "",
-      "Description": ""
+      "Field": "hairColor_R",
+      "Name": "Hair Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown6",
-      "Name": "",
-      "Description": ""
+      "Field": "hairColor_G",
+      "Name": "Hair Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown7",
-      "Name": "",
-      "Description": ""
+      "Field": "hairColor_B",
+      "Name": "Hair Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown8",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeLPartsId",
+      "Name": "Left Pupil Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown9",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeLColor_R",
+      "Name": "Left Pupil Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown10",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeLColor_G",
+      "Name": "Left Pupil Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown11",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeLColor_B",
+      "Name": "Left Pupil Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown12",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeRPartsId",
+      "Name": "Right Pupil Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown13",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeRColor_R",
+      "Name": "Right Pupil Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown14",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeRColor_G",
+      "Name": "Right Pupil Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown15",
-      "Name": "",
-      "Description": ""
+      "Field": "eyeRColor_B",
+      "Name": "Right Pupil Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown16",
-      "Name": "",
-      "Description": ""
+      "Field": "eyebrowPartsId",
+      "Name": "Brow Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown17",
-      "Name": "",
-      "Description": ""
+      "Field": "eyebrowColor_R",
+      "Name": "Brow Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown18",
-      "Name": "",
-      "Description": ""
+      "Field": "eyebrowColor_G",
+      "Name": "Brow Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown19",
-      "Name": "",
-      "Description": ""
+      "Field": "eyebrowColor_B",
+      "Name": "Brow Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown20",
-      "Name": "",
-      "Description": ""
+      "Field": "eyelashPartsId",
+      "Name": "Eyelash Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown21",
-      "Name": "",
-      "Description": ""
+      "Field": "eyelashColor_R",
+      "Name": "Eyelash Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown22",
-      "Name": "",
-      "Description": ""
+      "Field": "eyelashColor_G",
+      "Name": "Eyelash Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown23",
-      "Name": "",
-      "Description": ""
+      "Field": "eyelashColor_B",
+      "Name": "Eyelash Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown24",
-      "Name": "",
-      "Description": ""
+      "Field": "beardPartsId",
+      "Name": "Beard Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown25",
-      "Name": "",
-      "Description": ""
+      "Field": "beardColor_R",
+      "Name": "Beard Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown26",
-      "Name": "",
-      "Description": ""
+      "Field": "beardColor_G",
+      "Name": "Beard Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown27",
-      "Name": "",
-      "Description": ""
+      "Field": "beardColor_B",
+      "Name": "Beard Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown28",
-      "Name": "",
-      "Description": ""
+      "Field": "accessoriesPartsId",
+      "Name": "Accessory Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown29",
-      "Name": "",
-      "Description": ""
+      "Field": "accessoriesColor_R",
+      "Name": "Accessory Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown30",
-      "Name": "",
-      "Description": ""
+      "Field": "accessoriesColor_G",
+      "Name": "Accessory Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown31",
-      "Name": "",
-      "Description": ""
+      "Field": "accessoriesColor_B",
+      "Name": "Accessory Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown32",
-      "Name": "",
-      "Description": ""
+      "Field": "decalPartsId",
+      "Name": "Decal Parts ID",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown33",
-      "Name": "",
-      "Description": ""
+      "Field": "decalColor_R",
+      "Name": "Decal Color: R",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown34",
-      "Name": "",
-      "Description": ""
+      "Field": "decalColor_G",
+      "Name": "Decal Color: G",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown35",
-      "Name": "",
-      "Description": ""
+      "Field": "decalColor_B",
+      "Name": "Decal Color: B",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown36",
-      "Name": "",
-      "Description": ""
+      "Field": "decalPosX",
+      "Name": "Decal Position: X",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown37",
-      "Name": "",
-      "Description": ""
+      "Field": "decalPosY",
+      "Name": "Decal Position: Y",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown38",
-      "Name": "",
-      "Description": ""
+      "Field": "decalAngle",
+      "Name": "Decal Angle",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown39",
-      "Name": "",
-      "Description": ""
+      "Field": "decalScale",
+      "Name": "Decal Scale",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown40",
-      "Name": "",
-      "Description": ""
+      "Field": "chrBodyScaleHead",
+      "Name": "Build Detail: Head",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown41",
-      "Name": "",
-      "Description": ""
+      "Field": "chrBodyScaleBreast",
+      "Name": "Build Detail: Chest",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown42",
-      "Name": "",
-      "Description": ""
+      "Field": "chrBodyScaleAbdomen",
+      "Name": "Build Detail: Abdomen",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown43",
-      "Name": "",
-      "Description": ""
+      "Field": "chrBodyScaleArm",
+      "Name": "Build Detail: Arms",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown44",
-      "Name": "",
-      "Description": ""
+      "Field": "chrBodyScaleLeg",
+      "Name": "Build Detail: Legs",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown45",
-      "Name": "",
-      "Description": ""
+      "Field": "age",
+      "Name": "Features: Apparent Age",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown46",
-      "Name": "",
-      "Description": ""
+      "Field": "gender",
+      "Name": "Features: Facial Aesthetic",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown47",
-      "Name": "",
-      "Description": ""
+      "Field": "caricatureGeometry",
+      "Name": "Features: Form Emphasis",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "Unknown48",
-      "Name": "",
-      "Description": ""
+      "Field": "caricatureTexture",
+      "Name": "Features: Form Emphasis (Texture)",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData00",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData00",
+      "Name": "Brow Ridge: Brow Height",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData01",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData01",
+      "Name": "Brow Ridge: Inner Brow Ridge",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData02",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData02",
+      "Name": "Brow Ridge: Outer Brow Ridge",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData03",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData03",
+      "Name": "Cheeks: Cheekbone Height",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData04",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData04",
+      "Name": "Cheeks: Cheekbone Depth",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData05",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData05",
+      "Name": "Cheeks: Cheekbone Width",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData06",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData06",
+      "Name": "Cheeks: Cheekbone",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData07",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData07",
+      "Name": "Cheeks: Cheekbone Depth",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData08",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData08",
+      "Name": "Chin: Chin Tip Position",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData09",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData09",
+      "Name": "Chin: Chin Length",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData10",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData10",
+      "Name": "Chin: Chin Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData11",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData11",
+      "Name": "Chin: Chin Depth",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData12",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData12",
+      "Name": "Chin: Chin Size",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData13",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData13",
+      "Name": "Chin: Chin Height",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData14",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData14",
+      "Name": "Chin: Chin Width",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData15",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData15",
+      "Name": "Eyes: Eye Position",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData16",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData16",
+      "Name": "Eyes: Eye Size",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData17",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData17",
+      "Name": "Eyes: Eye Slant",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData18",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData18",
+      "Name": "Eyes: Eye Spacing",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData19",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData19",
+      "Name": "Facial Balance: Nose Size",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData20",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData20",
+      "Name": "Facial Balance: Nose/Forehead Ratio",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData21",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData21",
+      "Name": "Face Geo Data 21",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData22",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData22",
+      "Name": "Facial Balance: Face Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData23",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData23",
+      "Name": "Facial Balance: Vert. Facial Spacing",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData24",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData24",
+      "Name": "Facial Balance: Facial Feature Slant",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData25",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData25",
+      "Name": "Facial Balance: Horiz. Facial",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData26",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData26",
+      "Name": "Face Geo Data 26",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData27",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData27",
+      "Name": "Forehead/Glabella: Forehead Depth",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData28",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData28",
+      "Name": "Forehead/Glabella: Forehead Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData29",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData29",
+      "Name": "Face Geo Data 29",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData30",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData30",
+      "Name": "Jaw: Jaw Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData31",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData31",
+      "Name": "Jaw: Jaw Width",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData32",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData32",
+      "Name": "Jaw: Lower Jaw",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData33",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData33",
+      "Name": "Jaw: Jaw Contour",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData34",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData34",
+      "Name": "Lips: Lip Shape",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData35",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData35",
+      "Name": "Lips: Mouth Expression",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData36",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData36",
+      "Name": "Lips: Lip Fullness",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData37",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData37",
+      "Name": "Lips: Lip Size",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData38",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData38",
+      "Name": "Lips: Lip Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData39",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData39",
+      "Name": "Lips: Lip Thickness",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData40",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData40",
+      "Name": "Mouth: Mouth Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData41",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData41",
+      "Name": "Mouth: Mouth Slant",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData42",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData42",
+      "Name": "Mouth: Occlusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData43",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData43",
+      "Name": "Mouth: Mouth Position",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData44",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData44",
+      "Name": "Mouth: Mouth Width",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData45",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData45",
+      "Name": "Mouth: Mouth-Chin Distance",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData46",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData46",
+      "Name": "Nose Ridge: Nose Ridge Depth",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData47",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData47",
+      "Name": "Nose Ridge: Nose Ridge Length",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData48",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData48",
+      "Name": "Nose Ridge: Nose Position",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData49",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData49",
+      "Name": "Nose Ridge: Nose Tip Height",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData50",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData50",
+      "Name": "Nostrils: Nostril Slant",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData51",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData51",
+      "Name": "Nostrils: Nostril Size",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData52",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData52",
+      "Name": "Nostrils: Nostril Width",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData53",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData53",
+      "Name": "Nose Ridge: Nose Protrusion",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData54",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData54",
+      "Name": "Forehead/Glabella: Nose Bridge Height",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData55",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData55",
+      "Name": "Forehead/Glabella: Bridge Protrusion 1",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData56",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData56",
+      "Name": "Forehead/Glabella: Bridge Protrusion 2",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData57",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData57",
+      "Name": "Forehead/Glabella: Nose Bridge Width",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData58",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData58",
+      "Name": "Nose Ridge > Nose Height",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData59",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData59",
+      "Name": "Nose Ridge > Nose Slant",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceGeoData60",
-      "Name": "",
-      "Description": ""
+      "Field": "faceGeoData60",
+      "Name": "Face Geo Data 60",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData00",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData00",
+      "Name": "Face Texture Data 00",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData01",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData01",
+      "Name": "Face Texture Data 01",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData02",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData02",
+      "Name": "Face Texture Data 02",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData03",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData03",
+      "Name": "Face Texture Data 03",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData04",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData04",
+      "Name": "Face Texture Data 04",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData05",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData05",
+      "Name": "Face Texture Data 05",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData06",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData06",
+      "Name": "Skin Color: Cheek Color",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData07",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData07",
+      "Name": "Cosmetics: Tone Around Eyes",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData08",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData08",
+      "Name": "Cosmetics: Eye Socket",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData09",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData09",
+      "Name": "Face Texture Data 09",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData10",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData10",
+      "Name": "Face Texture Data 10",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData11",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData11",
+      "Name": "Face Texture Data 11",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData12",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData12",
+      "Name": "Face Texture Data 12",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData13",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData13",
+      "Name": "Face Texture Data 13",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData14",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData14",
+      "Name": "Face Texture Data 14",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData15",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData15",
+      "Name": "Face Texture Data 15",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData16",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData16",
+      "Name": "Face Texture Data 16",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData17",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData17",
+      "Name": "Face Texture Data 17",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData18",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData18",
+      "Name": "Cosmetics: Eyelid Brightness",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData19",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData19",
+      "Name": "Cosmetics: Eyelid Color",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData20",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData20",
+      "Name": "Cosmetics: Eyeliner",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData21",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData21",
+      "Name": "Cosmetics: Eye Shadow",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData22",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData22",
+      "Name": "Face Texture Data 22",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData23",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData23",
+      "Name": "Face Texture Data 23",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData24",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData24",
+      "Name": "Face Texture Data 24",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData25",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData25",
+      "Name": "Face Texture Data 25",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData26",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData26",
+      "Name": "Cosmetics: Lipstick 1",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData27",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData27",
+      "Name": "Cosmetics: Lipstick 2",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData28",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData28",
+      "Name": "Skin Color: Laugh Lines",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData29",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData29",
+      "Name": "Nostrils: Nasal Size",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData30",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData30",
+      "Name": "Skin Color: Nose Bridge Color",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData31",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData31",
+      "Name": "Skin Color: Skin Color Layer 4",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData32",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData32",
+      "Name": "Skin Color: Skin Tone",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData33",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData33",
+      "Name": "Skin Color: Skin Color Layer 1",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData34",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData34",
+      "Name": "Skin Color: Skin Color Layer 2",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     },
     {
-      "Field": "FaceTexData35",
-      "Name": "",
-      "Description": ""
+      "Field": "faceTexData35",
+      "Name": "Skin Color: Skin Color Layer 3",
+      "Description": "Row 1 is the minimum, row 2 the maximum: a byte b of the FaceParam field is min + (max - min) * b / 255"
     }
   ]
 }
