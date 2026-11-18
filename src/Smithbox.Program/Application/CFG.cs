@@ -267,6 +267,12 @@ public class CFG
     public float MapEditor_Effects_Max_Distance = 150.0f;
     public int MapEditor_Effects_Max_Count = 48;
 
+    // Regions drawn as a clickable icon at their centre while unselected, instead of their wireframe
+    public bool MapEditor_Region_Icons = false;
+    public bool MapEditor_Region_Icon_Occlusion = true;
+    public float MapEditor_Region_Icon_Max_Distance = 500.0f;
+    public Vector3 MapEditor_Region_Icon_Color = Utils.GetDecimalColor(Color.Blue);
+
     public bool MapEditor_Selection_Group_Frame_Selection_On_Use = true;
     public bool MapEditor_Selection_Group_Enable_Quick_Creation = false;
     public bool MapEditor_Selection_Group_Confirm_Delete = true;

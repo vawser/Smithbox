@@ -95,6 +95,34 @@ public class ViewportFiltersAction
         }
 
         GUI.Spacer();
+        GUI.SimpleHeader("Region Display", "Change how regions are displayed in the viewport.");
+
+        var regionIcons = CFG.Current.MapEditor_Region_Icons;
+        if (ImGui.Checkbox("Region Icons##regionIcons", ref regionIcons))
+        {
+            View.RegionIconTool.SetEnabled(regionIcons);
+        }
+        GUI.Tooltip("Display each unselected region as a clickable icon at its centre instead of its wireframe. Clicking the icon selects the region, and its wireframe is displayed while it is selected.");
+
+        if (CFG.Current.MapEditor_Region_Icons)
+        {
+            ImGui.Checkbox("Hide Behind Geometry##regionIconOcclusion", ref CFG.Current.MapEditor_Region_Icon_Occlusion);
+            GUI.Tooltip("Hide an icon while the map's geometry is in front of it, as a mesh would be. The test is a few frames behind the camera, so icons can take a moment to appear or hide while it moves.");
+
+            GUI.SetInputWidth();
+            ImGui.SliderFloat("Max Distance##regionIconMaxDistance", ref CFG.Current.MapEditor_Region_Icon_Max_Distance, 10.0f, 5000.0f, "%.0f", ImGuiSliderFlags.Logarithmic);
+            GUI.Tooltip("Only regions within this distance of the camera are displayed as icons. Ctrl+Click to type a value.");
+
+            var color = CFG.Current.MapEditor_Region_Icon_Color / 255f;
+            GUI.SetInputWidth();
+            if (ImGui.ColorEdit3("Icon Color##regionIconColor", ref color))
+            {
+                CFG.Current.MapEditor_Region_Icon_Color = color * 255f;
+            }
+            GUI.Tooltip("The colour of the region icons.");
+        }
+
+        GUI.Spacer();
         GUI.SimpleHeader("Collision Type", "Toggle which types of collision mesh are displayed. Several can be displayed at once.");
 
         foreach (var curType in View.HavokCollisionBank.GetSupportedCollisionTypes())

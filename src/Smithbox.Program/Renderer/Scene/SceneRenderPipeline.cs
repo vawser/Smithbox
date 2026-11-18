@@ -70,6 +70,9 @@ public class SceneRenderPipeline
     /// <summary>The copy of <see cref="Target" />'s depth that transparent draws read</summary>
     public SceneDepth SceneDepth { get; } = new();
 
+    /// <summary>The Map Editor region icons' test against <see cref="SceneDepth" />, see <see cref="IconOcclusionPass" /></summary>
+    public IconOcclusionPass IconOcclusion { get; }
+
     /// <summary>The scene colour behind the transparent draws, copied only while <see cref="SceneColor.Wanted" /></summary>
     public SceneColor SceneColor { get; } = new();
 
@@ -365,6 +368,8 @@ public class SceneRenderPipeline
             SnapDepth = new SnapDepthPass(device, this);
         }
 
+        IconOcclusion = new IconOcclusionPass(this);
+
         // The scene goes into the pipeline's own HDR target, on the offscreen list, so it is drawn before the
         // overlay queue tone maps it onto the swapchain
         _renderQueue = new SceneRenderer.RenderQueue("Viewport Render", device, this)
@@ -410,6 +415,7 @@ public class SceneRenderPipeline
         Shadows?.Dispose();
         Rain?.Dispose();
         SnapDepth?.Dispose();
+        IconOcclusion?.Dispose();
 
         // Holds SSAO, SSR, TAA, auto exposure, light shafts, both blooms and the surface view
         PostProcess.Dispose();

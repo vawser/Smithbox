@@ -183,7 +183,7 @@ public class Entity : ISelectable, IDisposable
             // otherwise start visible even if this entity is hidden.
             if (_renderSceneMesh != null)
             {
-                _renderSceneMesh.Visible = _EditorVisible;
+                _renderSceneMesh.Visible = IsRenderMeshVisible;
             }
 
             // Nothing is displayed for this entity any more, e.g. it has been deleted
@@ -448,6 +448,26 @@ public class Entity : ISelectable, IDisposable
     private bool IsWireVisible => _EditorVisible && IsSelected;
 
     /// <summary>
+    /// Whether this entity is drawn as an icon while unselected instead of its render scene mesh (e.g. regions,
+    /// with the Region Icons viewport filter on). The mesh is then only drawn, and so only picked, while selected.
+    /// </summary>
+    [XmlIgnore]
+    public virtual bool ShowAsIcon => false;
+
+    private bool IsRenderMeshVisible => _EditorVisible && (IsSelected || !ShowAsIcon);
+
+    /// <summary>
+    /// Shows or hides the render scene mesh after <see cref="ShowAsIcon"/> has changed.
+    /// </summary>
+    public void RefreshRenderMeshVisibility()
+    {
+        if (_renderSceneMesh != null)
+        {
+            _renderSceneMesh.Visible = IsRenderMeshVisible;
+        }
+    }
+
+    /// <summary>
     /// A bool to track if this entity has render groups.
     /// </summary>
     [XmlIgnore] 
@@ -540,7 +560,7 @@ public class Entity : ISelectable, IDisposable
             _EditorVisible = value;
             if (RenderSceneMesh != null)
             {
-                RenderSceneMesh.Visible = _EditorVisible;
+                RenderSceneMesh.Visible = IsRenderMeshVisible;
             }
 
             if (CollisionSceneMesh != null)
@@ -2049,7 +2069,7 @@ public class Entity : ISelectable, IDisposable
             UpdateDispDrawGroups();
         }
 
-        ApplyProxyState(_renderSceneMesh, t, useRenderGroups);
+        ApplyProxyState(_renderSceneMesh, t, useRenderGroups, IsRenderMeshVisible);
         ApplyProxyState(_collisionSceneMesh, t, useRenderGroups);
         ApplyProxyState(_selectionFillMesh, t, useRenderGroups, IsFillVisible);
         ApplyProxyState(_selectionWireMesh, t, useRenderGroups, IsWireVisible);

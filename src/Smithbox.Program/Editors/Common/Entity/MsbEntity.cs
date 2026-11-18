@@ -65,6 +65,12 @@ public class MsbEntity : Entity
     [XmlIgnore]
     public string MapID { get; set; }
 
+    // Regions drawn as wireframes (and DS2's event locations, drawn as boxes) become icons while unselected
+    public override bool ShowAsIcon =>
+        CFG.Current.MapEditor_Region_Icons &&
+        Owner is MapUniverse &&
+        Type is MsbEntityType.Region or MsbEntityType.DS2EventLocation;
+
     public MsbEntity(IUniverse owner, ObjectContainer map, object msbo, MsbEntityType type) : base(owner, map, msbo)
     {
         Owner = owner;

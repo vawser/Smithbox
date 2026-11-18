@@ -284,6 +284,12 @@ public class VulkanViewport : IViewport
                 Snapshot.Update(d);
                 ViewPipeline.Oracle.Update(d);
 
+                // The Map Editor's region icons are tested against this frame's scene depth
+                if (IsViewportVisible)
+                {
+                    ViewPipeline.IconOcclusion?.Run(d, cl);
+                }
+
                 // The screen effects run on the scene first, binding their own targets
                 var frameLighting = ViewPipeline.ActiveMapLighting;
                 var toneMapSource = IsViewportVisible
@@ -548,6 +554,13 @@ public class VulkanViewport : IViewport
         // And picking, moving and placing EDGE points in the Model Editor's EDGE Editor
         if (Owner is ModelUniverse modelEdgeUniverse &&
             modelEdgeUniverse.View.EdgeEditorTool.HandleViewportInput(this, ray, canPick))
+        {
+            painting = true;
+        }
+
+        // And clicking a region's icon, with the Region Icons viewport filter on
+        if (!painting && Owner is MapUniverse regionIconUniverse &&
+            regionIconUniverse.View.RegionIconTool.HandleViewportInput(this, canPick))
         {
             painting = true;
         }

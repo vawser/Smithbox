@@ -79,6 +79,9 @@ public class ViewportOverlay
                 mapUniverse.View.TranslateAction.DisplayViewportHint();
             }
 
+            // The icons of unselected regions, with the Region Icons viewport filter on
+            mapUniverse.View.RegionIconTool.DrawOverlay(Parent);
+
             // The Navigation tool's gate numbers and costs
             mapUniverse.View.NavigationTool.DrawGateLabels(Parent);
 

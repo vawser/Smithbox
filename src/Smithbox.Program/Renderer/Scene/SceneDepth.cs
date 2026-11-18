@@ -16,6 +16,9 @@ public class SceneDepth
     /// <summary>The index in the global texture pool, or 0 until the first capture</summary>
     public uint TextureIndex => Handle?.TexHandle ?? 0;
 
+    /// <summary>The copy itself, for a compute pass that binds it in a set of its own, or null until the first capture</summary>
+    public Texture Texture => Copy;
+
     /// <summary>
     ///     Gives the pool slot back. The pool retires the copy with it, once frames that may sample it are done.
     /// </summary>

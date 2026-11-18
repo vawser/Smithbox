@@ -1,0 +1,58 @@
+#version 450
+
+// Map Editor region icons, see IconOcclusionPass.cs. Each invocation takes one icon: it reads the scene's depth
+// (reversed, so nearer surfaces have larger values and 0 is nothing drawn) at the icon's centre and at four points
+// around it, and the icon is visible if the scene is not nearer than the icon at any of them, so an icon only part
+// hidden stays shown.
+
+layout(local_size_x = 64) in;
+
+struct IconPoint
+{
+	vec4 point;  // x, y: the position in the viewport, 0 to 1; z: the icon's depth; w: the tap radius in texels
+};
+
+layout(set = 0, binding = 0) uniform texture2D sceneDepth;
+layout(set = 0, binding = 1) uniform sampler depthSampler;
+
+layout(set = 0, binding = 2, std430) readonly buffer IconPoints
+{
+	uvec4 count;  // x: the number of icons
+	IconPoint icons[];
+};
+
+layout(set = 0, binding = 3, std430) buffer IconResults
+{
+	uint results[];
+};
+
+bool IsVisibleAt(ivec2 size, vec2 texel, float depth)
+{
+	ivec2 at = clamp(ivec2(texel), ivec2(0), size - 1);
+	float scene = texelFetch(sampler2D(sceneDepth, depthSampler), at, 0).r;
+
+	return scene <= depth;
+}
+
+void main()
+{
+	uint i = gl_GlobalInvocationID.x;
+
+	if (i >= count.x)
+	{
+		return;
+	}
+
+	vec4 p = icons[i].point;
+	ivec2 size = textureSize(sampler2D(sceneDepth, depthSampler), 0);
+	vec2 texel = p.xy * vec2(size);
+	float r = p.w;
+
+	bool visible = IsVisibleAt(size, texel, p.z)
+		|| IsVisibleAt(size, texel + vec2(r, 0), p.z)
+		|| IsVisibleAt(size, texel - vec2(r, 0), p.z)
+		|| IsVisibleAt(size, texel + vec2(0, r), p.z)
+		|| IsVisibleAt(size, texel - vec2(0, r), p.z);
+
+	results[i] = visible ? 1u : 0u;
+}

@@ -138,6 +138,7 @@ public class MapEditorView : IEditorView
     public CollisionEditorTool CollisionEditorTool;
     public NavigationTool NavigationTool;
     public MapRulerTool RulerTool;
+    public RegionIconTool RegionIconTool;
     public MapTileOutlineTool TileOutlineTool;
     public MapForbiddenRegionTool ForbiddenRegionTool;
     public MfrBank MfrBank;
@@ -253,6 +254,7 @@ public class MapEditorView : IEditorView
         CollisionEditorTool = new CollisionEditorTool(this, project);
         NavigationTool = new NavigationTool(this, project);
         RulerTool = new MapRulerTool(this, project);
+        RegionIconTool = new RegionIconTool(this, project);
         TileOutlineTool = new MapTileOutlineTool(this, project);
         ForbiddenRegionTool = new MapForbiddenRegionTool(this, project);
         MfrBank = new MfrBank(project);
