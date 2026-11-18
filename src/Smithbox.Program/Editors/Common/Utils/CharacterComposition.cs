@@ -436,6 +436,10 @@ public static class CharacterComposition
             provider.HideHead = isBody && !hasFace && project.Descriptor.ProjectType is ProjectType.ER;
             provider.HideFace = isBody && project.Descriptor.ProjectType is ProjectType.ER;
 
+            // Leftover meshes with materials no MATBIN defines (a whole test body inside hr_a_0100 and hr_a_0101),
+            // which the game can't draw
+            provider.HideUndefinedMaterials = project.Descriptor.ProjectType is ProjectType.ER;
+
             providers.Add(provider);
 
             ResourceManager.DefaultPool.LoadAsset<FlverResource>(project, asset, new LoadOptions

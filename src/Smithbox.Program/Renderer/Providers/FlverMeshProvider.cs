@@ -33,6 +33,14 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     /// </summary>
     public bool HideFace = false;
 
+    /// <summary>
+    /// Leaves out meshes whose material has no definition (no MATBIN or MTD in the project's material bank), which
+    /// the game can't draw either. ER's hair models hr_a_0100 and hr_a_0101 each carry a whole leftover female body
+    /// (P[FC_F_0000]_SSStest, a material no MATBIN defines) that would sit on the real body. Only while the material
+    /// bank is loaded, as without it no material has a definition.
+    /// </summary>
+    public bool HideUndefinedMaterials = false;
+
     // Every mesh of an Elden Ring body model has its part of the body as its mask, and this one is the head
     private const int HeadMask = 3;
 
@@ -50,7 +58,10 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     }
     private void UpdateModelMasks()
     {
-        if (!ModelMasks.Any() && !HideBodyHair && !HideHead && !HideFace)
+        var hideUndefined = HideUndefinedMaterials &&
+            Smithbox.Orchestrator.SelectedProject?.Handler?.MaterialData?.PrimaryBank != null;
+
+        if (!ModelMasks.Any() && !HideBodyHair && !HideHead && !HideFace && !hideUndefined)
         {
             _activeSubmeshes = _allSubmeshes;
             return;
@@ -75,6 +86,11 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
                 }
 
                 if (HideFace && material.MaterialName?.StartsWith(FaceMaterialPrefix, StringComparison.OrdinalIgnoreCase) == true)
+                {
+                    return false;
+                }
+
+                if (hideUndefined && material.Definition == null)
                 {
                     return false;
                 }
