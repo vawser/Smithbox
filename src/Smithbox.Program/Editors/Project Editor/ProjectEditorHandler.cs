@@ -572,6 +572,9 @@ public class ProjectEditorHandler : IDisposable
         // The Projectile Editor's lines and effects hold GPU buffers, its viewport a render pipeline
         ProjectileEditor?.Dispose();
 
+        // The FaceGen Editor's character mesh, and its viewport's render pipeline
+        FaceGenEditor?.Dispose();
+
         _viewportEnvironment?.Dispose();
         _viewportEnvironment = null;
     }

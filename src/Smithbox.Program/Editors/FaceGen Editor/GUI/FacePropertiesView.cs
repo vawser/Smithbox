@@ -255,7 +255,11 @@ public class FacePropertiesView
             ImGui.PushID(field.Name);
             ImGui.TableNextRow();
 
-            if (field.Kind == FaceFieldKind.Field)
+            if (field.Kind == FaceFieldKind.Field && FaceComposition.IsPartField(field.Name))
+            {
+                PartRow(editor, paramName, param, row, field, storesModes, model);
+            }
+            else if (field.Kind == FaceFieldKind.Field)
             {
                 FieldRow(paramName, param, row, cell, field, storesModes, model);
             }
@@ -386,6 +390,53 @@ public class FacePropertiesView
             EditorCommandQueue.AddCommand($"param/select/-1/{paramName}/{row.ID}");
 
         ImGui.EndPopup();
+    }
+
+    // ---- part: a picker of the models the field can name
+
+    private void PartRow(ParamEditorScreen editor, string paramName, Param param, Param.Row row, FaceField field,
+        bool storesModes, FaceGenModelData model)
+    {
+        ImGui.TableSetColumnIndex(0);
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(DisplayName(param, field.Name, storesModes, model));
+        NameTooltip(param, field, storesModes, model);
+
+        ImGui.TableSetColumnIndex(1);
+
+        var isFemale = View.ViewportWindow.IsFemale();
+        var value = GetInt(row, field.Name);
+        var part = FaceComposition.Resolve(Project, field.Name, value, isFemale);
+        var preview = part.Model != null && !part.IsFallback
+            ? $"{value}: {part.Model}"
+            : LOC.Get("FACEGEN_Part_None", value);
+
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.BeginCombo("##part", preview))
+        {
+            foreach (var choice in FaceComposition.GetChoices(Project, field.Name, isFemale))
+            {
+                var selected = choice.Model == part.Model && !part.IsFallback;
+
+                if (ImGui.Selectable($"{choice.Value}: {choice.Model}##part{choice.Value}", selected))
+                {
+                    FaceGenEdits.SetField(editor, paramName, row, field.Name, choice.Value,
+                        LOC.Get("FACEGEN_Action_Edit_Field", field.Name, row.ID));
+                }
+
+                if (selected)
+                    ImGui.SetItemDefaultFocus();
+            }
+
+            ImGui.EndCombo();
+        }
+
+        GUI.Tooltip(part.IsFallback
+            ? LOC.Get("FACEGEN_Part_Fallback", value, part.Model)
+            : LOC.Get("FACEGEN_Part_Picker_TT"));
+
+        ValueMenu(editor, paramName, row, new[] { field.Name }, null);
     }
 
     // ---- field: as the Param Editor draws it

@@ -10,6 +10,19 @@
     { "Key": "FACEGEN_Menu_Show_Internal_Names", "Text": "Show Internal Names" },
     { "Key": "FACEGEN_Menu_Show_Internal_Names_TT", "Text": "Names each field by its internal name (faceGeoData19 and the like) instead of its community name or FaceGen label." },
 
+    { "Key": "FACEGEN_Menu_Body", "Text": "Body" },
+    { "Key": "FACEGEN_Menu_Body_TT", "Text": "The body the face is shown on in the viewport." },
+    { "Key": "FACEGEN_Menu_Body_Wearer", "Text": "As the First Wearer" },
+    { "Key": "FACEGEN_Menu_Body_Male", "Text": "Male" },
+    { "Key": "FACEGEN_Menu_Body_Female", "Text": "Female" },
+    { "Key": "FACEGEN_Menu_Frame_Face", "Text": "Frame Face" },
+    { "Key": "FACEGEN_Menu_Frame_Body", "Text": "Frame Body" },
+    { "Key": "FACEGEN_Load_Job_Parts", "Text": "Face Parts" },
+
+    { "Key": "FACEGEN_Part_None", "Text": "{0} (no model)" },
+    { "Key": "FACEGEN_Part_Fallback", "Text": "{0} names no model, so {1} is shown." },
+    { "Key": "FACEGEN_Part_Picker_TT", "Text": "The part model this field chooses. Only the values that name a model are listed; right-click for the Param Editor's field menu." },
+
     { "Key": "FACEGEN_Select_Missing_Row", "Text": "FaceGen Editor: {0} has no row {1}, or isn't a face param." },
     { "Key": "FACEGEN_Model_Read_Failed", "Text": "FaceGen Editor: could not read the FaceGen model from {0}. Shape and texture fields are shown by their internal names." },
     { "Key": "FACEGEN_Open_In_Param_Editor", "Text": "Open in Param Editor" },

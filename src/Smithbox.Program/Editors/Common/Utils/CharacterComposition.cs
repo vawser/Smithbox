@@ -56,7 +56,7 @@ public sealed class CharacterLoadout
 /// <summary>
 ///     Builds player-like characters. The FLVER of c0000 only holds a skeleton: what is drawn is the
 ///     body from the parts folder, and the armor and weapons on top of it come from CharaInitParam.
-///     Faces (fg_*) are not displayed yet.
+///     Faces (fg_*) are only displayed by the FaceGen Editor so far, from <see cref="FaceComposition" />.
 /// </summary>
 public static class CharacterComposition
 {
@@ -258,6 +258,40 @@ public static class CharacterComposition
         }
 
         return new CharacterAppearance(parts, masks);
+    }
+
+    /// <summary>
+    ///     Gets the parts of a bare character of a sex, with other part models on top (the parts of a face, from
+    ///     <see cref="FaceComposition" />). The extra models are skinned to the character like the body.
+    /// </summary>
+    public static CharacterAppearance Resolve(ProjectEntry project, bool isFemale, IEnumerable<string> extraParts)
+    {
+        HashSet<string> partNames = GetPartNames(project);
+
+        var sex = isFemale ? "f" : "m";
+        var hasSplitBody = project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R;
+
+        List<CharacterPart> parts = new();
+
+        if (GetBodyPartNames(sex).FirstOrDefault(partNames.Contains) is { } body)
+            parts.Add(new CharacterPart(body));
+
+        if (hasSplitBody)
+        {
+            foreach (var prefix in new[] { "bd", "am", "lg" })
+            {
+                if (new[] { $"{prefix}_{sex}_0000", $"{prefix}_m_0000" }.FirstOrDefault(partNames.Contains) is { } bare)
+                    parts.Add(new CharacterPart(bare));
+            }
+        }
+
+        foreach (var name in extraParts)
+        {
+            if (partNames.Contains(name) && parts.All(p => p.Name != name))
+                parts.Add(new CharacterPart(name));
+        }
+
+        return new CharacterAppearance(parts, null);
     }
 
     /// <summary>

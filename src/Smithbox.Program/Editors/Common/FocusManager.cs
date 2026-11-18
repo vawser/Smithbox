@@ -169,7 +169,8 @@ public static class FocusManager
         return Focus is EditorFocusContext.FaceGenEditor_None
             or EditorFocusContext.FaceGenEditor_List
             or EditorFocusContext.FaceGenEditor_Properties
-            or EditorFocusContext.FaceGenEditor_References;
+            or EditorFocusContext.FaceGenEditor_References
+            or EditorFocusContext.FaceGenEditor_Viewport;
     }
 
     public static bool IsInFxEditor()
@@ -388,5 +389,6 @@ public enum EditorFocusContext
     FaceGenEditor_None,
     FaceGenEditor_List,
     FaceGenEditor_Properties,
-    FaceGenEditor_References
+    FaceGenEditor_References,
+    FaceGenEditor_Viewport
 }

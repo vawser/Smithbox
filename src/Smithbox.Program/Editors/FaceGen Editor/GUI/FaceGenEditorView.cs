@@ -3,7 +3,11 @@ using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
+using StudioCore.Renderer;
 using System;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.FaceGenEditor;
 
@@ -15,6 +19,12 @@ public class FaceGenEditorView
 {
     public FaceGenEditorScreen Editor;
     public ProjectEntry Project;
+
+    public RenderScene? RenderScene;
+    public ViewportSelection ViewportSelection = new();
+    public ViewportActionManager ViewportActionManager = new();
+    public FaceGenUniverse Universe;
+    public FaceViewportWindow ViewportWindow;
 
     public FaceListView ListView;
     public FacePropertiesView PropertiesView;
@@ -29,6 +39,10 @@ public class FaceGenEditorView
     {
         Editor = editor;
         Project = project;
+
+        RenderScene = Smithbox.Instance._context.Device != null ? new RenderScene() : null;
+        Universe = new FaceGenUniverse(this, project);
+        ViewportWindow = new FaceViewportWindow(this, project);
 
         ListView = new FaceListView(this);
         PropertiesView = new FacePropertiesView(this);
@@ -101,6 +115,41 @@ public class FaceGenEditorView
 
         if (CFG.Current.Interface_FaceGenEditor_References)
             Window($"{LOC.Get("FACEGEN_Window_References")}{ReferencesWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_References, ReferencesView.Display);
+
+        // The viewport window sets the focus itself
+        ViewportWindow.Display(dockspaceId);
+    }
+
+    // ---- frame
+
+    public void Update(float dt)
+    {
+        ViewportWindow.Update(dt);
+
+        // The lighting the viewport borrows, once there is something to light (as the Projectile Editor does)
+        if (ViewportWindow.HasMesh)
+            Project.Handler.ViewportEnvironment.Update();
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (ViewportWindow.Viewport is VulkanViewport { Visible: true })
+            ViewportWindow.Draw(device, cl);
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        ViewportWindow.EditorResized(window, device);
+    }
+
+    public bool InputCaptured()
+    {
+        return ViewportWindow.InputCaptured();
+    }
+
+    public void Dispose()
+    {
+        ViewportWindow.Dispose();
     }
 
     public const string ListWindowId = "###faceGenEditor_List";

@@ -85,6 +85,9 @@ public class ProjectEntry
             if (Handler.ProjectileEditorStub != null)
                 Handler.ProjectileEditorStub.Draw(device, cl);
 
+            if (Handler.FaceGenEditorStub != null)
+                Handler.FaceGenEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
             MeshPreviewRenderer.Draw();
         }
@@ -140,6 +143,9 @@ public class ProjectEntry
 
             if (Handler.ProjectileEditorStub != null)
                 Handler.ProjectileEditorStub.EditorResized(window, device);
+
+            if (Handler.FaceGenEditorStub != null)
+                Handler.FaceGenEditorStub.EditorResized(window, device);
         }
     }
 
