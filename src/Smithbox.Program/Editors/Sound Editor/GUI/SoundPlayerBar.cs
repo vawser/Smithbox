@@ -51,10 +51,12 @@ public class SoundPlayerBar
         GUI.Tooltip(LOC.Get("SOUND_Player_Play_TT"));
 
         ImGui.SameLine();
-        if (!player.IsActive) ImGui.BeginDisabled();
+        // read once: Stop (and the worker thread finishing the sound) changes IsActive, and Begin/EndDisabled must pair
+        bool canStop = player.IsActive;
+        if (!canStop) ImGui.BeginDisabled();
         if (ImGui.Button($"{LOC.Get("SOUND_Player_Stop")}##soundStop"))
             player.Stop();
-        if (!player.IsActive) ImGui.EndDisabled();
+        if (!canStop) ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("SOUND_Player_Stop_TT"));
 
         ImGui.SameLine();

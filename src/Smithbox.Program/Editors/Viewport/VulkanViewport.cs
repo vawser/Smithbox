@@ -466,7 +466,7 @@ public class VulkanViewport : IViewport
         ViewPipeline.FocusDepth = ViewportCamera.FocusDistance;
 
         // The scene's pixels start at the viewport's corner, in its own target; the overlays' are the window's
-        ViewPipeline.UpdateSceneParameters(ViewportCamera.ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
+        ViewPipeline.UpdateSceneParameters(ViewportCamera.ProjectionMatrix, ViewportCamera.DrawnViewMatrix,
             ViewportCamera.CameraTransform.Position, CursorX, CursorY, (int)RenderViewport.X, (int)RenderViewport.Y);
 
         ViewPipeline.RenderScene(ViewportCamera.Frustum);

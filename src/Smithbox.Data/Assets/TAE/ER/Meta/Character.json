@@ -430,6 +430,7 @@
     {
       "ID": 144,
       "Event": "RumbleCam_Local",
+      "Simulation": "RumbleCam",
       "Fields": [
         {
           "Field": "RumbleCamID",
@@ -440,6 +441,7 @@
     {
       "ID": 145,
       "Event": "RumbleCam_Global",
+      "Simulation": "RumbleCam",
       "Fields": [
         {
           "Field": "RumbleCamID",
@@ -484,6 +486,12 @@
           "Obsolete": true
         }
       ]
+    },
+    {
+      "ID": 224,
+      "Event": "SetTurnSpeed",
+      "Simulation": "TurnSpeed",
+      "Fields": []
     },
     {
       "ID": 229,

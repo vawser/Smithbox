@@ -821,6 +821,9 @@ public class CFG
     public bool TimeActEditor_Sim_Model_Masks = true;
     public bool TimeActEditor_Sim_Weapons = true;
     public int TimeActEditor_Weapon_Style = 1;
+    public bool TimeActEditor_Sim_Turning = true;
+    public float TimeActEditor_Turn_Target_Angle = 0f;
+    public bool TimeActEditor_Sim_Rumble_Cam = true;
     public bool TimeActEditor_Play_Event_Sounds = true;
     public bool TimeActEditor_Display_Effects = true;
     public float TimeActEditor_Event_Marker_Size = 1f;

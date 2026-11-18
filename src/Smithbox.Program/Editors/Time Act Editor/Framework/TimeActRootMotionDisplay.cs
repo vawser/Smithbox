@@ -20,6 +20,10 @@ public class TimeActRootMotionDisplay
 
     private static readonly Color PathColor = Color.LimeGreen;
     private static readonly Color MarkerColor = Color.White;
+    private static readonly Color TargetColor = Color.Cyan;
+
+    // How far the line toward the turn target reaches
+    private const float TargetLength = 1.5f;
 
     private readonly TimeActEditorView _view;
 
@@ -30,6 +34,9 @@ public class TimeActRootMotionDisplay
 
     private DebugPrimitiveRenderableProxy? _marker;
     private DbgPrimLineBatch? _markerLines;
+
+    private DebugPrimitiveRenderableProxy? _target;
+    private DbgPrimLineBatch? _targetLines;
 
     public TimeActRootMotionDisplay(TimeActEditorView view)
     {
@@ -63,6 +70,36 @@ public class TimeActRootMotionDisplay
         {
             _path.Visible = true;
         }
+    }
+
+    /// <summary>
+    /// Shows the way the character turns toward, from where its root is, while the animation has turn speed events
+    /// </summary>
+    public void UpdateTarget(ModelAnimator? animator, bool show, float angleDegrees)
+    {
+        if (!show || animator == null)
+        {
+            if (_target != null)
+                _target.Visible = false;
+
+            return;
+        }
+
+        if (_target == null)
+        {
+            _targetLines = new DbgPrimLineBatch(new List<(Vector3 A, Vector3 B)>
+            {
+                (Vector3.Zero, new Vector3(0, 0, TargetLength)),
+                (new Vector3(0, 0, TargetLength), new Vector3(-MarkerWidth, 0, TargetLength - MarkerWidth)),
+                (new Vector3(0, 0, TargetLength), new Vector3(MarkerWidth, 0, TargetLength - MarkerWidth))
+            });
+
+            _target = CreateProxy(_targetLines, TargetColor);
+        }
+
+        _target.World = Matrix4x4.CreateRotationY(angleDegrees * MathF.PI / 180) *
+                        Matrix4x4.CreateTranslation(animator.RootMotion.Translation);
+        _target.Visible = true;
     }
 
     private void BuildPath(HavokRootMotion rootMotion, HavokRootMotionScale scale)
@@ -159,5 +196,11 @@ public class TimeActRootMotionDisplay
 
         _marker = null;
         _markerLines = null;
+
+        _target?.Dispose();
+        _targetLines?.Release();
+
+        _target = null;
+        _targetLines = null;
     }
 }

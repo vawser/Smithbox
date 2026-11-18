@@ -81,6 +81,25 @@ public sealed class ModelAnimator : IDisposable
     private HavokRootMotionScale _rootMotionScale = HavokRootMotionScale.One;
 
     /// <summary>
+    ///     A turn about up, in radians, on top of the root motion: for a character that turns toward its target as it
+    ///     plays. Applied whether or not the root motion is.
+    /// </summary>
+    public float Turn
+    {
+        get => _turn;
+        set
+        {
+            if (_turn != value)
+            {
+                _turn = value;
+                _poseDirty = true;
+            }
+        }
+    }
+
+    private float _turn;
+
+    /// <summary>
     ///     How far the root motion has moved the model at the current pose, or identity if it isn't applied.
     /// </summary>
     public Matrix4x4 RootMotion { get; private set; } = Matrix4x4.Identity;
@@ -349,6 +368,14 @@ public sealed class ModelAnimator : IDisposable
         RootMotion = ApplyRootMotion && CurrentClip?.RootMotion is { } rootMotion
             ? rootMotion.Sample(Time, _rootMotionScale)
             : Matrix4x4.Identity;
+
+        // A turn from outside the clip (a character tracking its target) spins the model where the root is now
+        if (_turn != 0)
+        {
+            Vector3 pivot = RootMotion.Translation;
+            RootMotion *= Matrix4x4.CreateTranslation(-pivot) * Matrix4x4.CreateRotationY(_turn) *
+                          Matrix4x4.CreateTranslation(pivot);
+        }
 
         if (!RootMotion.IsIdentity)
         {

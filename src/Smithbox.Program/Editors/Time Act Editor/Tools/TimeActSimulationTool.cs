@@ -60,6 +60,32 @@ public class TimeActSimulationTool
         ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Weapons")}##timeActSimWeapons", ref CFG.Current.TimeActEditor_Sim_Weapons);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Weapons_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Turning")}##timeActSimTurning", ref CFG.Current.TimeActEditor_Sim_Turning);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Turning_TT"));
+
+        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Rumble_Cam")}##timeActSimRumbleCam", ref CFG.Current.TimeActEditor_Sim_Rumble_Cam)
+            && !CFG.Current.TimeActEditor_Sim_Rumble_Cam)
+        {
+            View.Playback.Rumble.StopAll();
+        }
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Rumble_Cam_TT"));
+
+        // Turning
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Turn_Header"), LOC.Get("TAE_SimulationTool_Turn_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat("##timeActSimTurnTarget", ref CFG.Current.TimeActEditor_Turn_Target_Angle, -180f, 180f,
+            $"{LOC.Get("TAE_SimulationTool_Turn_Target")}: %.0f");
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Turn_Target_TT"));
+
+        if (CFG.Current.TimeActEditor_Sim_Turning && View.Selection.SelectedAnimation != null)
+        {
+            GUI.WrappedText(simulation.HasTurnEvents
+                ? LOC.Get("TAE_SimulationTool_Turn_Status", simulation.Turn.ToString("0"))
+                : LOC.Get("TAE_SimulationTool_Turn_None"));
+        }
+
         // Weapons
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Weapon_Style_Header"), LOC.Get("TAE_SimulationTool_Weapon_Style_Header_TT"));

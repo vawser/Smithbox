@@ -3244,6 +3244,50 @@
     {
       "Key": "TAE_SimulationTool_Weapon_Style_Now",
       "Text": "A SetWeaponStyle event has set the style to {0} at the current time."
+    },
+    {
+      "Key": "TAE_SimulationTool_Turning",
+      "Text": "Turning"
+    },
+    {
+      "Key": "TAE_SimulationTool_Turning_TT",
+      "Text": "If enabled, the character turns toward the target angle under Turning while a SetTurnSpeed event is active, at the event's turn speed in degrees a second, as it tracks its target in game."
+    },
+    {
+      "Key": "TAE_SimulationTool_Rumble_Cam",
+      "Text": "Rumble Cam"
+    },
+    {
+      "Key": "TAE_SimulationTool_Rumble_Cam_TT",
+      "Text": "If enabled, rumble cam events shake the viewport camera as playback passes them. A local one fades with the camera's distance from its dummy poly, so zooming out lessens it. Only games whose rumble cams are Havok clips are played (Sekiro, Elden Ring, Nightreign, Armored Core VI)."
+    },
+    {
+      "Key": "TAE_SimulationTool_Turn_Header",
+      "Text": "Turning"
+    },
+    {
+      "Key": "TAE_SimulationTool_Turn_Header_TT",
+      "Text": "Where the character's target is, for the SetTurnSpeed events. A cyan arrow in the viewport points to it while the animation has such an event."
+    },
+    {
+      "Key": "TAE_SimulationTool_Turn_Target",
+      "Text": "Target Angle"
+    },
+    {
+      "Key": "TAE_SimulationTool_Turn_Target_TT",
+      "Text": "The direction of the target in degrees from the way the character faces at the start of the animation. Positive turns the same way as positive root motion turns. Hold Ctrl and click to type a value."
+    },
+    {
+      "Key": "TAE_SimulationTool_Turn_Status",
+      "Text": "Turned {0} degrees toward the target by the current time."
+    },
+    {
+      "Key": "TAE_SimulationTool_Turn_None",
+      "Text": "No SetTurnSpeed event in this animation."
+    },
+    {
+      "Key": "TAE_Rumble_Failed_To_Read",
+      "Text": "Failed to read rumble cam {0}."
     }
   ]
 }

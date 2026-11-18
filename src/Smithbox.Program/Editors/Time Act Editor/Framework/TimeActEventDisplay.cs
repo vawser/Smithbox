@@ -257,6 +257,17 @@ public class TimeActEventDisplay
             .FirstOrDefault(n => n != null);
     }
 
+    /// <summary>
+    /// Where a dummy poly of the body is in the current pose, or the center of the body for a negative one. Null if the
+    /// body has no such dummy poly.
+    /// </summary>
+    public Vector3? GetDummyPosition(int dummy, TimeActContainer container, ModelAnimator? animator)
+    {
+        PrepareDummies(container);
+
+        return GetPositions(dummy, -1, container, animator) is { Count: > 0 } positions ? positions[0] : null;
+    }
+
     private List<Vector3> GetPositions(int dummy, int weaponPart, TimeActContainer container, ModelAnimator? animator)
     {
         if (dummy < 0)

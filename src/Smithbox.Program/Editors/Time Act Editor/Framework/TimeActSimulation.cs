@@ -54,7 +54,16 @@ public enum TimeActSimulationRole
     WeaponLocation,
 
     /// <summary>While active, hides the weapons of the hands it sets (LeftHand, RightHand and their _WithScabbard)</summary>
-    HideWeapon
+    HideWeapon,
+
+    /// <summary>While active, the character turns toward its target at TurnSpeed degrees a second</summary>
+    TurnSpeed,
+
+    /// <summary>
+    /// As it starts, shakes the camera with rumble cam RumbleCamID. With a DummyPolyID and FalloffStart and FalloffEnd,
+    /// the shake comes from that dummy poly and fades with the distance of the camera from it.
+    /// </summary>
+    RumbleCam
 }
 
 /// <summary>
@@ -130,6 +139,16 @@ public class TimeActSimulation
     public bool HideRightWeapon { get; private set; }
     public bool HideLeftWeapon { get; private set; }
 
+    /// <summary>
+    /// How far the character has turned toward the target by the current time, in degrees, from the turn speed events
+    /// </summary>
+    public float Turn { get; private set; }
+
+    /// <summary>
+    /// Whether the animation has any turn speed event, so that the target is worth showing
+    /// </summary>
+    public bool HasTurnEvents { get; private set; }
+
     public void Update(TAE.Animation? animation, float time, float playbackEnd)
     {
         SpeedMultiplier = 1;
@@ -139,6 +158,8 @@ public class TimeActSimulation
         WeaponLocationEvents.Clear();
         HideRightWeapon = false;
         HideLeftWeapon = false;
+        Turn = 0;
+        HasTurnEvents = false;
 
         if (animation == null)
             return;
@@ -147,6 +168,11 @@ public class TimeActSimulation
         var speedEvents = CFG.Current.TimeActEditor_Sim_Speed_Events;
         var masks = CFG.Current.TimeActEditor_Sim_Model_Masks;
         var weapons = CFG.Current.TimeActEditor_Sim_Weapons;
+
+        if (CFG.Current.TimeActEditor_Sim_Turning)
+        {
+            UpdateTurn(animation, data, time);
+        }
 
         foreach (var ev in animation.Events)
         {
@@ -198,6 +224,71 @@ public class TimeActSimulation
                     break;
             }
         }
+    }
+
+    /// <summary>
+    /// Works out the turn from the start of the animation up to the time, so that it is the same however the time was
+    /// got to (played, scrubbed or stepped). Over each stretch between the starts and ends of the turn speed events, the
+    /// character turns toward the target at the speed of the last event in the list that is active there.
+    /// </summary>
+    private void UpdateTurn(TAE.Animation animation, TimeActData? data, float time)
+    {
+        var turns = new List<(TAE.Event Event, float Speed)>();
+
+        foreach (var ev in animation.Events)
+        {
+            if (data?.GetSimulationRole(ev) == TimeActSimulationRole.TurnSpeed && IsEventEnabled(ev) &&
+                GetFloat(ev, "TurnSpeed") is { } speed)
+            {
+                turns.Add((ev, speed));
+            }
+        }
+
+        HasTurnEvents = turns.Count > 0;
+
+        if (turns.Count == 0 || time <= 0)
+            return;
+
+        var target = CFG.Current.TimeActEditor_Turn_Target_Angle;
+
+        var times = new List<float> { 0, time };
+        foreach (var (ev, _) in turns)
+        {
+            if (ev.StartTime > 0 && ev.StartTime < time)
+                times.Add(ev.StartTime);
+            if (ev.MemeEndTime > 0 && ev.MemeEndTime < time)
+                times.Add(ev.MemeEndTime);
+        }
+
+        times.Sort();
+
+        var turn = 0f;
+
+        for (var i = 1; i < times.Count; i++)
+        {
+            var start = times[i - 1];
+            var length = times[i] - start;
+
+            if (length <= 0)
+                continue;
+
+            var middle = start + length / 2;
+            float? speed = null;
+
+            foreach (var (ev, eventSpeed) in turns)
+            {
+                if (middle >= ev.StartTime && middle < ev.MemeEndTime)
+                    speed = eventSpeed;
+            }
+
+            if (speed is not > 0)
+                continue;
+
+            var step = speed.Value * length;
+            turn = Math.Abs(target - turn) <= step ? target : turn + Math.Sign(target - turn) * step;
+        }
+
+        Turn = turn;
     }
 
     /// <summary>

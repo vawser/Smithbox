@@ -41,6 +41,19 @@ public class ViewportCamera
     public Transform CameraPositionDefault = Transform.Default;
     public Transform CameraTransform = Transform.Default;
 
+    /// <summary>
+    ///     A brief move of the camera on top of where it is, in its own space, such as a camera shake. Only the drawn view
+    ///     moves: picking and the controls go by <see cref="CameraTransform" />.
+    /// </summary>
+    public Matrix4x4 Shake = Matrix4x4.Identity;
+
+    /// <summary>
+    ///     The view the scene is drawn with: the camera, moved by <see cref="Shake" />
+    /// </summary>
+    public Matrix4x4 DrawnViewMatrix => Shake.IsIdentity || !Matrix4x4.Invert(Shake, out Matrix4x4 inverse)
+        ? CameraTransform.CameraViewMatrixLH
+        : CameraTransform.CameraViewMatrixLH * inverse;
+
     public float CameraTurnSpeedGamepad = 1.5f * 0.1f;
     public float CameraTurnSpeedMouse = 1.5f * 0.25f;
 

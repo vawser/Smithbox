@@ -77,6 +77,7 @@ public class TimeActPlayback
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
         Sounds = new TimeActSoundPlayback(view, project);
+        Rumble = new TimeActRumblePlayback(view, project);
         Effects = new TimeActEffectPlayback(view, project);
     }
 
@@ -89,6 +90,11 @@ public class TimeActPlayback
     /// Plays the sound events as the clock passes them
     /// </summary>
     public TimeActSoundPlayback Sounds { get; }
+
+    /// <summary>
+    /// Shakes the camera with the rumble cam events as the clock passes them
+    /// </summary>
+    public TimeActRumblePlayback Rumble { get; }
 
     public TimeActRootMotionDisplay RootMotionDisplay { get; }
 
@@ -162,6 +168,7 @@ public class TimeActPlayback
             animator.ApplyRootMotion = CFG.Current.TimeActEditor_Apply_Root_Motion;
             animator.RootMotionScale = new HavokRootMotionScale(CFG.Current.TimeActEditor_Root_Motion_Scale_Ground,
                 CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn);
+            animator.Turn = Simulation.Turn * MathF.PI / 180;
 
             _time = animator.Time;
             _playing = animator.Playing;
@@ -173,9 +180,11 @@ public class TimeActPlayback
 
         EventDisplay.Update(animator, _time, PlaybackDuration);
         RootMotionDisplay.Update(animator);
+        RootMotionDisplay.UpdateTarget(animator, Simulation.HasTurnEvents, CFG.Current.TimeActEditor_Turn_Target_Angle);
 
         // While a clip is on its way the clock stands still, and the sounds wait with it
         Sounds.Update(_time, _playing && !IsClipLoading && !held);
+        Rumble.Update(animator, _time, _playing && !IsClipLoading && !held);
 
         // After the event display, which has found the dummies the effects sit on for this pose
         Effects.Update(animator, _time);
@@ -247,6 +256,7 @@ public class TimeActPlayback
         Animator?.SetPlaying(false);
 
         Sounds.StopAll();
+        Rumble.StopAll();
 
         Seek(0);
     }
@@ -283,6 +293,7 @@ public class TimeActPlayback
         _request++;
         _panel.StopAll();
         Sounds.StopAll();
+        Rumble.StopAll();
         Effects.Clear();
         WeaponDisplay.Invalidate();
 
