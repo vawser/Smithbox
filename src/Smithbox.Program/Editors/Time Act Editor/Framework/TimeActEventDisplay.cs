@@ -190,6 +190,7 @@ public class TimeActEventDisplay
     private void OnParamsEdited()
     {
         _resolver.ClearParamCache();
+        _view.Playback.WeaponDisplay.ClearPlacements();
 
         Invalidate();
     }

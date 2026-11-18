@@ -3208,6 +3208,42 @@
     {
       "Key": "TAE_SimulationTool_Model_Masks_TT",
       "Text": "If enabled, events that change the model masks (such as ChangeChrDrawMask, HideModelMask and ShowModelMask) show and hide the meshes of those masks. A player's model leaves out the meshes its armor hides, so events can't show those."
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapons",
+      "Text": "Weapons"
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapons_TT",
+      "Text": "If enabled, a player's weapons are held as the events say: two-handed by SetWeaponStyle, moved to another place (such as sheathed) by OverrideWeaponModelLocations, and hidden by HideEquippedWeapon. The places come from the WepAbsorpPosParam row of each weapon."
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_Header",
+      "Text": "Weapon Style"
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_Header_TT",
+      "Text": "How a player holds their weapons when the animation starts. A SetWeaponStyle event in the animation changes it from its start."
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_TT",
+      "Text": "The weapon style the animation starts with. Two-handing moves that weapon to its both-hands place and hangs the other one on the body."
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_One_Hand",
+      "Text": "One-Handed"
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_Right_Both",
+      "Text": "Two-Handing Right Weapon"
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_Left_Both",
+      "Text": "Two-Handing Left Weapon"
+    },
+    {
+      "Key": "TAE_SimulationTool_Weapon_Style_Now",
+      "Text": "A SetWeaponStyle event has set the style to {0} at the current time."
     }
   ]
 }

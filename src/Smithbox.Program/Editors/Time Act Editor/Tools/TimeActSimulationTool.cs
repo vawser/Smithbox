@@ -1,4 +1,6 @@
 using Hexa.NET.ImGui;
+using System;
+using System.Linq;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TimeActEditor;
@@ -55,6 +57,15 @@ public class TimeActSimulationTool
         ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Model_Masks")}##timeActSimModelMasks", ref CFG.Current.TimeActEditor_Sim_Model_Masks);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Model_Masks_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Weapons")}##timeActSimWeapons", ref CFG.Current.TimeActEditor_Sim_Weapons);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Weapons_TT"));
+
+        // Weapons
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Weapon_Style_Header"), LOC.Get("TAE_SimulationTool_Weapon_Style_Header_TT"));
+
+        DisplayWeaponStyle(simulation);
+
         // Root Motion
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Root_Motion_Header"), LOC.Get("TAE_SimulationTool_Root_Motion_Header_TT"));
@@ -81,6 +92,36 @@ public class TimeActSimulationTool
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_States_Header"), LOC.Get("TAE_SimulationTool_States_Header_TT"));
 
         DisplayStates(simulation);
+    }
+
+    // The styles that can be picked to start from, by their WeaponStyle value
+    private static readonly (int Style, string Key)[] WeaponStyles =
+    {
+        (1, "TAE_SimulationTool_Weapon_Style_One_Hand"),
+        (3, "TAE_SimulationTool_Weapon_Style_Right_Both"),
+        (2, "TAE_SimulationTool_Weapon_Style_Left_Both")
+    };
+
+    private static void DisplayWeaponStyle(TimeActSimulation simulation)
+    {
+        var current = Array.FindIndex(WeaponStyles, s => s.Style == CFG.Current.TimeActEditor_Weapon_Style);
+        var names = WeaponStyles.Select(s => LOC.Get(s.Key)).ToArray();
+
+        if (current < 0)
+            current = 0;
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.Combo("##timeActSimWeaponStyle", ref current, names, names.Length))
+        {
+            CFG.Current.TimeActEditor_Weapon_Style = WeaponStyles[current].Style;
+        }
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Weapon_Style_TT"));
+
+        // An event may have changed it since the start
+        if (simulation.WeaponStyle != CFG.Current.TimeActEditor_Weapon_Style)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Weapon_Style_Now", simulation.WeaponStyle));
+        }
     }
 
     private static void DisplayScale(string key, string id, ref float value)

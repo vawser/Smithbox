@@ -42,7 +42,19 @@ public enum TimeActSimulationRole
     HideMask,
 
     /// <summary>While active, shows the model masks whose Mask{n} is set</summary>
-    ShowMask
+    ShowMask,
+
+    /// <summary>From its start, holds the weapons as its WeaponStyle says: in one hand each, or one in both hands</summary>
+    WeaponStyle,
+
+    /// <summary>
+    /// While active, moves the weapons to another place their WepAbsorpPosParam row names, by the
+    /// RHModel0ChangeType and LHModel0ChangeType of the event
+    /// </summary>
+    WeaponLocation,
+
+    /// <summary>While active, hides the weapons of the hands it sets (LeftHand, RightHand and their _WithScabbard)</summary>
+    HideWeapon
 }
 
 /// <summary>
@@ -104,11 +116,29 @@ public class TimeActSimulation
     // More than any game's masks: the events have up to 32, and the meshes name theirs in two digits
     public const int MaskCount = 100;
 
+    /// <summary>
+    /// How the weapons are held at the current time, as a SetWeaponStyle event gives it: 1 one-handed, 2 the left
+    /// weapon in both hands, 3 the right weapon in both hands, 4 and 5 one-handed with a weapon transformed
+    /// </summary>
+    public int WeaponStyle { get; private set; } = 1;
+
+    /// <summary>
+    /// The weapon location events active at the current time, in their order in the list
+    /// </summary>
+    public List<TAE.Event> WeaponLocationEvents { get; } = new();
+
+    public bool HideRightWeapon { get; private set; }
+    public bool HideLeftWeapon { get; private set; }
+
     public void Update(TAE.Animation? animation, float time, float playbackEnd)
     {
         SpeedMultiplier = 1;
         SpeedEvent = null;
         Array.Clear(MaskOverrides);
+        WeaponStyle = CFG.Current.TimeActEditor_Weapon_Style;
+        WeaponLocationEvents.Clear();
+        HideRightWeapon = false;
+        HideLeftWeapon = false;
 
         if (animation == null)
             return;
@@ -116,6 +146,7 @@ public class TimeActSimulation
         var data = _project.Handler.TimeActData;
         var speedEvents = CFG.Current.TimeActEditor_Sim_Speed_Events;
         var masks = CFG.Current.TimeActEditor_Sim_Model_Masks;
+        var weapons = CFG.Current.TimeActEditor_Sim_Weapons;
 
         foreach (var ev in animation.Events)
         {
@@ -147,6 +178,23 @@ public class TimeActSimulation
 
                 case TimeActSimulationRole.ShowMask when masks && active:
                     ApplyMasks(ev, value => value != 0 ? true : null);
+                    break;
+
+                // Stays in effect after it ends, as the style it sets is kept until something else changes it
+                case TimeActSimulationRole.WeaponStyle when weapons:
+                    if (GetFloat(ev, "WeaponStyle") is { } style)
+                    {
+                        WeaponStyle = (int)style;
+                    }
+                    break;
+
+                case TimeActSimulationRole.WeaponLocation when weapons && active:
+                    WeaponLocationEvents.Add(ev);
+                    break;
+
+                case TimeActSimulationRole.HideWeapon when weapons && active:
+                    HideRightWeapon |= GetFloat(ev, "RightHand") is > 0 || GetFloat(ev, "RightHand_WithScabbard") is > 0;
+                    HideLeftWeapon |= GetFloat(ev, "LeftHand") is > 0 || GetFloat(ev, "LeftHand_WithScabbard") is > 0;
                     break;
             }
         }
@@ -284,7 +332,7 @@ public class TimeActSimulation
         return state.ToString();
     }
 
-    private static float? GetFloat(TAE.Event ev, string field)
+    internal static float? GetFloat(TAE.Event ev, string field)
     {
         if (ev.Parameters?.Values.TryGetValue(field, out var value) != true || value == null)
             return null;

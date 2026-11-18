@@ -329,7 +329,7 @@ public class AnimationPreviewPanel
                 return;
             }
 
-            active = new ActiveAnimation(target, meshes, animator, parts, attachments);
+            active = new ActiveAnimation(target, meshes, animator, parts, attachments, model.Rig);
             _active.Add(target.Key, active);
         }
 
@@ -397,6 +397,56 @@ public class AnimationPreviewPanel
         }
 
         return attachments;
+    }
+
+    /// <summary>
+    ///     Moves a model held by an animated one to another node, such as a weapon to the back when it is sheathed.
+    ///     Takes effect at once, as the pose of a paused animation isn't worked out again. False if the target isn't
+    ///     playing, the mesh isn't one of its attachments, or the rig has no such node.
+    /// </summary>
+    public bool SetAttachment(object key, MeshRenderableProxy mesh, string nodeName, Matrix4x4 offset)
+    {
+        if (!_active.TryGetValue(key, out ActiveAnimation? active) ||
+            FindAttachment(active, mesh) is not { } attachment || active.Rig.FindNode(nodeName) is not (>= 0 and var node))
+        {
+            return false;
+        }
+
+        if (attachment.Node != node || attachment.Offset != offset)
+        {
+            attachment.Node = node;
+            attachment.Offset = offset;
+            attachment.Mesh.AttachTransform = offset * active.Animator.GetNodeWorld(node);
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    ///     Puts a model moved by <see cref="SetAttachment" /> back where the part holds it
+    /// </summary>
+    public void ResetAttachment(object key, MeshRenderableProxy mesh)
+    {
+        if (!_active.TryGetValue(key, out ActiveAnimation? active) || FindAttachment(active, mesh) is not { } attachment ||
+            attachment.Node == attachment.DefaultNode && attachment.Offset == attachment.DefaultOffset)
+        {
+            return;
+        }
+
+        attachment.Node = attachment.DefaultNode;
+        attachment.Offset = attachment.DefaultOffset;
+        attachment.Mesh.AttachTransform = attachment.Offset * active.Animator.GetNodeWorld(attachment.Node);
+    }
+
+    private static ActiveAttachment? FindAttachment(ActiveAnimation active, MeshRenderableProxy mesh)
+    {
+        foreach (ActiveAttachment attachment in active.Attachments)
+        {
+            if (attachment.Mesh == mesh)
+                return attachment;
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -577,9 +627,24 @@ public class AnimationPreviewPanel
         IReadOnlyList<MeshRenderableProxy> Meshes,
         ModelAnimator Animator,
         IReadOnlyList<ActivePart> Parts,
-        IReadOnlyList<ActiveAttachment> Attachments);
+        IReadOnlyList<ActiveAttachment> Attachments,
+        ModelRig Rig);
 
     private sealed record ActivePart(MeshRenderableProxy Mesh, ModelAnimator Animator);
 
-    private sealed record ActiveAttachment(MeshRenderableProxy Mesh, int Node, Matrix4x4 Offset, Matrix4x4 Rest);
+    /// <summary>
+    ///     A model held on a node of the animated one. Where it is held can be moved while it plays (a weapon drawn or
+    ///     sheathed), and goes back to where the part was first put with <see cref="ResetAttachment" />.
+    /// </summary>
+    private sealed class ActiveAttachment(MeshRenderableProxy mesh, int node, Matrix4x4 offset, Matrix4x4 rest)
+    {
+        public MeshRenderableProxy Mesh { get; } = mesh;
+        public Matrix4x4 Rest { get; } = rest;
+
+        public int DefaultNode { get; } = node;
+        public Matrix4x4 DefaultOffset { get; } = offset;
+
+        public int Node { get; set; } = node;
+        public Matrix4x4 Offset { get; set; } = offset;
+    }
 }

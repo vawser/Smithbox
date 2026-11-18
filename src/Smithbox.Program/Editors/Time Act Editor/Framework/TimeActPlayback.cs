@@ -73,6 +73,7 @@ public class TimeActPlayback
 
         Simulation = new TimeActSimulation(view, project);
         MaskDisplay = new TimeActMaskDisplay(view);
+        WeaponDisplay = new TimeActWeaponDisplay(view, project, _panel);
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
         Sounds = new TimeActSoundPlayback(view, project);
@@ -97,6 +98,8 @@ public class TimeActPlayback
     public TimeActSimulation Simulation { get; }
 
     public TimeActMaskDisplay MaskDisplay { get; }
+
+    public TimeActWeaponDisplay WeaponDisplay { get; }
 
     /// <summary>
     /// How fast the clock really runs: the speed set in the editor, times what the events at the current time ask for
@@ -148,6 +151,7 @@ public class TimeActPlayback
         // From the time the last frame ended at, which is where the clock is about to move on from
         Simulation.Update(View.Selection.SelectedAnimation, _time, PlaybackDuration);
         MaskDisplay.Update(Simulation.MaskOverrides);
+        WeaponDisplay.Update(_target, Simulation);
 
         if (animator != null)
         {
@@ -280,6 +284,7 @@ public class TimeActPlayback
         _panel.StopAll();
         Sounds.StopAll();
         Effects.Clear();
+        WeaponDisplay.Invalidate();
 
         _target = null;
         _boundClip = null;
@@ -321,6 +326,7 @@ public class TimeActPlayback
 
         // Attacks of a player go by the weapon, which may have just changed
         EventDisplay.Invalidate();
+        WeaponDisplay.Invalidate();
         Effects.Invalidate();
 
         // Queued first, as the animations would otherwise be released along with the last thing playing them

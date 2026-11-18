@@ -48,6 +48,19 @@ public enum CharacterSlot
 }
 
 /// <summary>
+///     The places a WepAbsorpPosParam row can hold a weapon: in one hand, in both, or hung on the body (sheathed).
+/// </summary>
+public enum WeaponLocation
+{
+    Right,
+    Left,
+    RightBoth,
+    LeftBoth,
+    RightHang,
+    LeftHang
+}
+
+/// <summary>
 ///     A set of part models chosen by hand, rather than coming from CharaInitParam.
 /// </summary>
 public sealed class CharacterLoadout
@@ -752,14 +765,63 @@ public static class CharacterComposition
     /// </summary>
     private static (string Node, Matrix4x4 Offset)? GetAbsorptionAttachment(ProjectEntry project, CharacterPart part, ModelRig skeleton)
     {
-        if (GetRow(project, "EquipParamWeapon", part.EquipParamId) is not { } weapon || !HasField(weapon, "absorpParamId") ||
-            GetRow(project, "WepAbsorpPosParam", GetValue(weapon, "absorpParamId")) is not { } absorption ||
-            GetValue(absorption, "isSkeletonBind") != 0)
+        return GetAbsorptionAttachment(project, part, skeleton, IsLeftHand(part) ? "left_0" : "right_0");
+    }
+
+    /// <summary>
+    ///     Where a weapon is held at a place its WepAbsorpPosParam row names, for moving it while an animation plays.
+    ///     Null where <see cref="GetAbsorptionAttachment(ProjectEntry, CharacterPart, ModelRig, string)" /> is.
+    /// </summary>
+    public static (string Node, Matrix4x4 Offset)? GetWeaponPlacement(ProjectEntry project, CharacterPart part,
+        WeaponLocation location)
+    {
+        var field = location switch
+        {
+            WeaponLocation.Right => "right_0",
+            WeaponLocation.Left => "left_0",
+            WeaponLocation.RightBoth => "both_0",
+            WeaponLocation.LeftBoth => "leftBoth_0",
+            WeaponLocation.RightHang => "rightHang_0",
+            _ => "leftHang_0"
+        };
+
+        return GetAbsorptionAttachment(project, part, GetSkeleton(project), field);
+    }
+
+    /// <summary>
+    ///     The wepInvisibleType_0 of the WepAbsorpPosParam row of a weapon, which the weapon location events match
+    ///     their conditions against, or null if there is none
+    /// </summary>
+    public static int? GetWeaponInvisibleType(ProjectEntry project, CharacterPart part)
+    {
+        return GetAbsorption(project, part) is { } absorption && HasField(absorption, "wepInvisibleType_0")
+            ? GetValue(absorption, "wepInvisibleType_0")
+            : null;
+    }
+
+    private static Param.Row? GetAbsorption(ProjectEntry project, CharacterPart part)
+    {
+        if (GetRow(project, "EquipParamWeapon", part.EquipParamId) is not { } weapon || !HasField(weapon, "absorpParamId"))
+            return null;
+
+        return GetRow(project, "WepAbsorpPosParam", GetValue(weapon, "absorpParamId"));
+    }
+
+    /// <summary>
+    ///     Where a weapon is held at one of the places its WepAbsorpPosParam row names, by the field of the place
+    ///     (right_0, both_0, leftHang_0 and so on). Null if the game, the row or the field isn't there, the row binds
+    ///     the weapon to the skeleton, or the place has no dummy poly on the body.
+    /// </summary>
+    private static (string Node, Matrix4x4 Offset)? GetAbsorptionAttachment(ProjectEntry project, CharacterPart part,
+        ModelRig skeleton, string field)
+    {
+        if (GetAbsorption(project, part) is not { } absorption || GetValue(absorption, "isSkeletonBind") != 0 ||
+            !HasField(absorption, field))
         {
             return null;
         }
 
-        var dummyId = GetValue(absorption, IsLeftHand(part) ? "left_0" : "right_0");
+        var dummyId = GetValue(absorption, field);
 
         if (GetBodyDummies(project).FirstOrDefault(d => d.ReferenceID == dummyId) is not { } dummy)
         {

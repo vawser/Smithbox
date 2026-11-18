@@ -52,6 +52,12 @@
       ]
     },
     {
+      "ID": 32,
+      "Event": "SetWeaponStyle",
+      "Simulation": "WeaponStyle",
+      "Fields": []
+    },
+    {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
       "Fields": [
@@ -502,9 +508,21 @@
       "Fields": []
     },
     {
+      "ID": 710,
+      "Event": "HideEquippedWeapon",
+      "Simulation": "HideWeapon",
+      "Fields": []
+    },
+    {
       "ID": 711,
       "Event": "HideModelMask",
       "Simulation": "HideMask",
+      "Fields": []
+    },
+    {
+      "ID": 712,
+      "Event": "OverrideWeaponModelLocations",
+      "Simulation": "WeaponLocation",
       "Fields": []
     },
     {
