@@ -40,6 +40,13 @@ public class GparamReloaderTool
 
     private void Display()
     {
+        // DS2: live values
+        if (!Reloader.IsSupported && View.Editor.LiveReloader.IsSupported)
+        {
+            DisplayLive();
+            return;
+        }
+
         // Games with Gparam Reloader offsets (Assets/Gparam Reloader)
         if (!Reloader.IsSupported)
         {
@@ -144,21 +151,135 @@ public class GparamReloaderTool
 
     private void Push(string gameName, SoulsFormats.GPARAM gparam)
     {
-        byte[] bytes;
+        var bytes = WriteUncompressed(gameName, gparam);
 
+        if (bytes != null)
+            Reloader.RequestReload(gameName, bytes);
+    }
+
+    private byte[] WriteUncompressed(string gameName, SoulsFormats.GPARAM gparam)
+    {
         try
         {
             // Uncompressed: the game decompresses .gparam.dcx before Init sees it, and Write() alone would use the
             // compression the file was read with (DCX for ER)
-            bytes = gparam.Write(SoulsFormats.DCX.Type.None);
+            return gparam.Write(SoulsFormats.DCX.Type.None);
         }
         catch (Exception e)
         {
             Smithbox.LogError(this, LOC.Get("GPARAM_Reloader_Write_Failed", gameName), e);
-            return;
+            return null;
+        }
+    }
+
+    // DS2: write edited values into the game's live values
+    private void DisplayLive()
+    {
+        var live = View.Editor.LiveReloader;
+
+        GUI.WrappedText(LOC.Get("GPARAM_Reloader_Live_Hint"));
+
+        // Game
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Reloader_Game_Header"), LOC.Get("GPARAM_Reloader_Game_Header_TT"));
+
+        var message = live.StateMessage;
+        if (string.IsNullOrEmpty(message))
+            message = LOC.Get("GAMELINK_State_Waiting");
+
+        if (live.State is GameLink.LinkState.Failed)
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, message);
+        else
+            GUI.WrappedText(message);
+
+        var gparam = View.Selection._selectedGparam;
+        var key = View.Selection._selectedGparamKey;
+
+        if (live.IsScanning)
+        {
+            GUI.WrappedText(LOC.Get("GPARAM_Reloader_Patch_Scanning"));
+        }
+        else
+        {
+            GUI.MultiButtonInput("gparamLiveRefreshActions",
+                "gparamLiveScan", LOC.Get("GPARAM_Reloader_Patch_Scan"), LOC.Get("GPARAM_Reloader_Live_Scan_TT"),
+                () => live.RequestScan(gparam == null ? null : WriteUncompressed(key, gparam)),
+                "gparamLiveDetach", LOC.Get("GPARAM_Reloader_Detach"), LOC.Get("GPARAM_Reloader_Detach_TT"),
+                live.Detach);
         }
 
-        Reloader.RequestReload(gameName, bytes);
+        // Push
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Reloader_Push_Header"), LOC.Get("GPARAM_Reloader_Live_Push_Header_TT"));
+
+        if (gparam == null || string.IsNullOrEmpty(key))
+        {
+            GUI.WrappedText(LOC.Get("GPARAM_Reloader_No_Selection"));
+        }
+        else
+        {
+            var gameName = GparamLiveReloader.GameNameOf(key);
+            GUI.WrappedText(LOC.Get("GPARAM_Reloader_Selected", gameName));
+
+            if (live.IsReloading)
+            {
+                GUI.WrappedText(LOC.Get("GPARAM_Reloader_Running"));
+            }
+            else if (!live.IsScanning)
+            {
+                GUI.MultiButtonInput("gparamLivePushActions",
+                    "gparamLivePush", LOC.Get("GPARAM_Reloader_Push"), LOC.Get("GPARAM_Reloader_Live_Push_TT"),
+                    () =>
+                    {
+                        var bytes = WriteUncompressed(gameName, gparam);
+                        if (bytes != null)
+                            live.RequestReload(gameName, bytes);
+                    });
+            }
+        }
+
+        var last = live.LastReload;
+        if (last != null)
+        {
+            var text = $"{last.At:T}  {last.Message}";
+
+            if (last.Outcome is GparamLiveReloader.ReloadOutcome.Reloaded)
+                GUI.WrappedText(text);
+            else
+                GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, text);
+        }
+
+        // Registered groups
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("GPARAM_Reloader_Live_Groups_Header"), LOC.Get("GPARAM_Reloader_Live_Groups_Header_TT"));
+
+        var groups = live.Groups;
+
+        if (live.LastScan == null)
+        {
+            GUI.WrappedText(LOC.Get("GPARAM_Reloader_Patch_Not_Scanned"));
+        }
+        else
+        {
+            GUI.WrappedText(LOC.Get("GPARAM_Reloader_Live_Registrations", live.RegistrationCount));
+
+            if (groups.Count > 0)
+            {
+                ImGui.BeginChild("gparamLiveGroupList", new System.Numerics.Vector2(0, 200 * DPI.UIScale()), ImGuiChildFlags.Borders);
+
+                foreach (var group in groups)
+                {
+                    var text = LOC.Get("GPARAM_Reloader_Live_Group_Entry", group.Name, group.Registered, group.Fields);
+
+                    if (group.Registered == 0)
+                        GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, text);
+                    else
+                        GUI.WrappedText(text);
+                }
+
+                ImGui.EndChild();
+            }
+        }
     }
 
     // Loaded in game

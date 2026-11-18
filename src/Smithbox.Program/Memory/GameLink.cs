@@ -582,6 +582,78 @@ public class GameLink : IGameProcess
         }
     }
 
+    /// <summary>The game exe's load address and size in memory (0 when not attached)</summary>
+    public nint ModuleBase => GameProcess?.MainModule?.BaseAddress ?? 0;
+    public int ModuleSize => GameProcess?.MainModule?.ModuleMemorySize ?? 0;
+
+    /// <summary>Size of the pieces <see cref="ForEachHeapChunk"/> hands out (each may carry extra overlap bytes)</summary>
+    public const int HeapChunk = 0x400000;
+
+    /// <summary>
+    /// Reads the game's committed, writable private memory (the heaps, not the exe image) in 4 MB pieces. The callback
+    /// gets each piece's address, a buffer and how many bytes were read; each piece carries `overlap` extra bytes so a
+    /// match can cross into the next one (matches should start below <see cref="HeapChunk"/>). Reads the whole heap, so
+    /// it takes a moment on a large game: call it on demand, not every frame. Returns the bytes read.
+    /// </summary>
+    public long ForEachHeapChunk(int overlap, Action<nint, byte[], int> visit)
+    {
+        long scanned = 0;
+        var buffer = new byte[HeapChunk + overlap];
+        var size = Marshal.SizeOf<MemoryBasicInformation>();
+        nint address = 0;
+
+        while (VirtualQueryEx(Handle, address, out var info, size) == size)
+        {
+            var regionEnd = info.BaseAddress + (nint)info.RegionSize;
+
+            if (info.State == MEM_COMMIT && info.Type == MEM_PRIVATE && (info.Protect & PAGE_GUARD) == 0 &&
+                (info.Protect & (PAGE_READWRITE | PAGE_EXECUTE_READWRITE)) != 0)
+            {
+                for (var start = info.BaseAddress; start < regionEnd; start += HeapChunk)
+                {
+                    var length = (int)Math.Min(HeapChunk + overlap, (long)(regionEnd - start));
+
+                    if (!ReadProcessMemory(Handle, start, buffer, length, out var read) || read == 0)
+                        continue;
+
+                    scanned += Math.Min(read, HeapChunk);
+                    visit(start, buffer, (int)read);
+                }
+            }
+
+            if (regionEnd <= address)
+                break;
+
+            address = regionEnd;
+        }
+
+        return scanned;
+    }
+
+    /// <summary>Every address in the game's heaps where these bytes start (see <see cref="ForEachHeapChunk"/>)</summary>
+    public List<nint> FindInHeap(byte[] prefix, out long scannedBytes)
+    {
+        var hits = new List<nint>();
+
+        scannedBytes = ForEachHeapChunk(prefix.Length - 1, (start, buffer, read) =>
+        {
+            var span = buffer.AsSpan(0, read);
+
+            // Matches must start inside this chunk; the overlap only completes them
+            for (var from = 0; ;)
+            {
+                var at = span[from..].IndexOf(prefix);
+                if (at < 0 || from + at >= HeapChunk)
+                    break;
+
+                hits.Add(start + from + at);
+                from += at + 1;
+            }
+        });
+
+        return hits;
+    }
+
     public byte[] ReadBytes(nint address, int length)
     {
         var buffer = new byte[length];
@@ -680,8 +752,24 @@ public class GameLink : IGameProcess
 
     private const int PROCESS_CREATE_THREAD = 0x2, PROCESS_VM_OPERATION = 0x8, PROCESS_VM_READ = 0x10,
         PROCESS_VM_WRITE = 0x20, PROCESS_QUERY_INFORMATION = 0x400;
-    private const uint MEM_COMMIT = 0x1000, MEM_RESERVE = 0x2000, MEM_RELEASE = 0x8000;
-    private const uint PAGE_READWRITE = 0x04, PAGE_EXECUTE_READWRITE = 0x40;
+    private const uint MEM_COMMIT = 0x1000, MEM_RESERVE = 0x2000, MEM_RELEASE = 0x8000, MEM_PRIVATE = 0x20000;
+    private const uint PAGE_READWRITE = 0x04, PAGE_EXECUTE_READWRITE = 0x40, PAGE_GUARD = 0x100;
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct MemoryBasicInformation
+    {
+        public nint BaseAddress;
+        public nint AllocationBase;
+        public uint AllocationProtect;
+        public ushort PartitionId;
+        public nint RegionSize;
+        public uint State;
+        public uint Protect;
+        public uint Type;
+    }
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern int VirtualQueryEx(nint process, nint address, out MemoryBasicInformation info, int length);
 
     [DllImport("kernel32.dll", SetLastError = true)]
     private static extern nint OpenProcess(int access, bool inherit, int processId);

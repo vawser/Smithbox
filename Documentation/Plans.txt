@@ -40,6 +40,7 @@
 # Param Editor TODO
 #----------------------------------------------------
 
+- DS2 flags params as edited automatically on load
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 
 #----------------------------------------------------
@@ -52,8 +53,10 @@
 # Graphics Param Editor TODO
 #----------------------------------------------------
 
-- GPARAM Reloader: add support for DS2S/DS3/SDT/ER/NR/AC6
+- GPARAM Reloader: add support for DS2S
 - Expand the amount of GPARAM elements considered by the renderer
+
+- Properties: DS2 color picker doesn't work, color input properties 
 
 #----------------------------------------------------
 # Material Editor TODO
@@ -90,7 +93,6 @@
     - Scan for unused animations
     - Animation Builder: builds new animation from combo of animations
     - FBX to HKX
-    - TAE Reload (is HKS Reload)
 
 #----------------------------------------------------
 # Havok Editor TODO

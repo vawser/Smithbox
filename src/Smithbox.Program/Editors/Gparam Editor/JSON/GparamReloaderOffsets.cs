@@ -61,6 +61,13 @@ public class GparamReloaderOffsetEntry
     public string exeName { get; set; }
     public string exeVersion { get; set; }
 
+    // How the game is reloaded: empty = re-Init the ResCap (GparamReloader, every field below);
+    // "live" = write the edited values into the live values the game registered for its debug binding
+    // (GparamLiveReloader, DS2: MetaInfoInit<T> objects found through RTTI). A live group needs no other field.
+    public string method { get; set; }
+
+    public bool IsLive => string.Equals(method, "live", StringComparison.OrdinalIgnoreCase);
+
     // GparamFileCap's lookup of its cached ResCap: mov rcx,[repo]; mov rdx,rsi; call Find; test rax,rax; je;
     // mov r14,[rax+160h]
     public string repositoryAob { get; set; }

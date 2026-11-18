@@ -33,7 +33,7 @@ public class GparamReloader
     private GparamReloaderOffsets Offsets => OffsetsCache ??= GparamReloaderOffsets.Load(Project);
 
     /// <summary>Whether this game has both a game link and Gparam Reloader offsets</summary>
-    public bool IsSupported => Link.IsSupported && Offsets.Groups.Count > 0;
+    public bool IsSupported => Link.IsSupported && Offsets.Groups.Any(g => !g.IsLive);
 
     /// <param name="Active">the ResCap's active flag</param>
     /// <param name="ActiveIds">IDs in the ResCap's active-ID lists</param>
@@ -198,7 +198,7 @@ public class GparamReloader
         var version = Link.ExeVersion;
         var problems = new List<string>();
 
-        foreach (var group in Offsets.GroupsFor(version))
+        foreach (var group in Offsets.GroupsFor(version).Where(g => !g.IsLive))
         {
             if (!ResolveGroup(group, out var problem))
             {

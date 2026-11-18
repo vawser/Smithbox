@@ -27,11 +27,15 @@ public class GparamEditorScreen : EditorScreen
     /// <summary>The Gparam Reloader (ER, NR, AC6) over the project's GameLink, shared by every view</summary>
     public GparamReloader Reloader;
 
+    /// <summary>The Gparam Reloader for DS2: writes edited values into the game's live values</summary>
+    public GparamLiveReloader LiveReloader;
+
     public GparamEditorScreen(ProjectEntry project)
     {
         Project = project;
 
         Reloader = new GparamReloader(project);
+        LiveReloader = new GparamLiveReloader(project);
 
         ViewHandler = new GparamViewHandler(this, project);
 

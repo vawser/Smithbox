@@ -46,6 +46,23 @@
     { "Key": "GPARAM_Reloader_Parse_Failed", "Text": "The game couldn't read the pushed {0}; it now has no data for it. Push a valid copy, or leave the area and come back." },
     { "Key": "GPARAM_Reloader_Changed", "Text": "{0} changed in the game while pushing (the area may have changed). Nothing was done; push again." },
 
+    { "Key": "GPARAM_Reloader_Patch_Scanning", "Text": "Scanning the game's memory..." },
+    { "Key": "GPARAM_Reloader_Patch_Scan", "Text": "Scan" },
+    { "Key": "GPARAM_Reloader_Patch_Not_Scanned", "Text": "Not scanned yet." },
+    { "Key": "GPARAM_Reloader_Patch_Unchanged", "Text": "{0} is already the same in the game." },
+    { "Key": "GPARAM_Reloader_Live_Hint", "Text": "Writes edited values into the values the game is using right now, so filter edits show without reloading the map. Only fields the game exposes can be pushed (about half: not SSAO, and few directional light and shadow fields), and only for the filter ID in use. Reloading the map brings back the file on disk." },
+    { "Key": "GPARAM_Reloader_Live_Scan_TT", "Text": "Connect to the game if needed, and find the filter values it exposes. Takes a moment; also done on the first push." },
+    { "Key": "GPARAM_Reloader_Live_Push_Header_TT", "Text": "Write the selected file's changed values, as they are in the editor (saved or not), into the game." },
+    { "Key": "GPARAM_Reloader_Live_Push_TT", "Text": "Write the values that differ from what the game has into the game's live values." },
+    { "Key": "GPARAM_Reloader_Live_Groups_Header", "Text": "Exposed fields" },
+    { "Key": "GPARAM_Reloader_Live_Groups_Header_TT", "Text": "For each group of the selected file: how many of its fields the game exposes, and so can be pushed." },
+    { "Key": "GPARAM_Reloader_Live_Registrations", "Text": "{0} values exposed by the game." },
+    { "Key": "GPARAM_Reloader_Live_Group_Entry", "Text": "{0}: {1} of {2} fields" },
+    { "Key": "GPARAM_Reloader_Live_No_Registrations", "Text": "The game exposes no filter values (is a map loaded?). Scan again." },
+    { "Key": "GPARAM_Reloader_Live_No_Fields", "Text": "None of {0}'s fields are exposed by the game." },
+    { "Key": "GPARAM_Reloader_Live_Not_Active", "Text": "{0} isn't the filter in use: none of the game's values match it. Go to an area that uses it." },
+    { "Key": "GPARAM_Reloader_Live_Nothing_Written", "Text": "Nothing written for {0}: {1} changed value(s), {2} in exposed fields, but none for the filter ID in use (or the game is blending between IDs)." },
+    { "Key": "GPARAM_Reloader_Live_Done", "Text": "Pushed {0}: {1} value(s) written; {2} changed value(s) are in fields the game doesn't expose." },
     { "Key": "GPARAM_Data_Deserialize_Reloader_Offsets_FAIL", "Text": "[Gparam Editor] Failed to read the Gparam Reloader offsets: {0}" }
   ]
 }

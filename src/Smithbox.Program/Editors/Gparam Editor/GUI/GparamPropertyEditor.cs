@@ -30,6 +30,14 @@ public class GparamPropertyEditor
     private bool _isHoldingColor;
     private Vector4 _heldColor;
 
+    private bool _isHoldingByteColor;
+    private Color _heldByteColor;
+
+    private static int ToByte(float channel)
+    {
+        return (int)Math.Clamp(MathF.Round(channel * 255.0f), 0.0f, 255.0f);
+    }
+
     public GparamPropertyEditor(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -523,23 +531,38 @@ public class GparamPropertyEditor
 
             var flags = ImGuiColorEditFlags.AlphaOpaque;
 
-            if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))
+            bool edited = ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags);
+            bool deactivated = ImGui.IsItemDeactivatedAfterEdit();
+
+            if (edited || deactivated)
             {
-                int inRed = (int)(colorInput.X * 255.0f);
-                int inBlue = (int)(colorInput.Z * 255.0f);
+                int inRed = ToByte(colorInput.X);
+                int inBlue = ToByte(colorInput.Z);
 
                 Color trueColorInput = Color.FromArgb(
-                    (int)(colorInput.W * 255.0f),
+                    ToByte(colorInput.W),
                     isBgr ? inBlue : inRed,
-                    (int)(colorInput.Y * 255.0f),
+                    ToByte(colorInput.Y),
                     isBgr ? inRed : inBlue
                     );
+
+                // Remember the colour from before the edit so undo restores it,
+                // since the in-progress value is written live (uncommitted) below.
+                if (!_isHoldingByteColor)
+                {
+                    _isHoldingByteColor = true;
+                    _heldByteColor = raw;
+                }
 
                 newValue = trueColorInput;
                 _editedValueCache = newValue;
                 _changedCache = true;
+
+                if (deactivated)
+                    _committedCache = true;
+                else
+                    _uncommittedCache = true;
             }
-            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // String
         else if (field is StringField strfield)
@@ -583,6 +606,16 @@ public class GparamPropertyEditor
                     }
                 }
 
+                if (_isHoldingByteColor)
+                {
+                    _isHoldingByteColor = false;
+
+                    if (field is ColorField heldColorField)
+                    {
+                        heldColorField.Values[idx].Value = _heldByteColor;
+                    }
+                }
+
                 if (newValue == null)
                 {
                     return;
@@ -609,6 +642,10 @@ public class GparamPropertyEditor
                         var result = assignedValue;
 
                         vector4Field.Values[idx].Value = result;
+                    }
+                    else if (field is ColorField liveColorField)
+                    {
+                        liveColorField.Values[idx].Value = (Color)newValue;
                     }
                 }
             }
