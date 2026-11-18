@@ -43,6 +43,9 @@ public class FaceViewportWindow
     private static readonly Vector3 DefaultHeadCenter = new(0, 1.58f, 0);
     private const float HeadRadius = 0.22f;
 
+    // A head is a fraction of a metre across, so the shared speeds (20 m/s normal) are slowed to about 1 m/s
+    private const float MoveSpeedFactor = 0.05f;
+
     private MeshRenderableProxy? Mesh;
     private CharacterAppearance? Appearance;
     private string? MeshKey;
@@ -81,6 +84,7 @@ public class FaceViewportWindow
 
         if (Viewport is VulkanViewport vk)
         {
+            vk.ViewportCamera.MoveSpeedFactor = MoveSpeedFactor;
             vk.ViewportCamera.CameraTransform.Rotation = FrontRotation;
             FrameSphere(DefaultHeadCenter, HeadRadius);
         }

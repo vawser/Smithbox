@@ -17,12 +17,6 @@
     - Automatic icon capture
     
 #----------------------------------------------------
-# Misc TODO
-#----------------------------------------------------
-- Add a movement factor per viewport for the camera, so the normal speed is appropriate to the scale of the editor (i.e. slow down in FaceGen Editor)
-    
-    
-#----------------------------------------------------
 # Map Editor TODO
 #----------------------------------------------------
 

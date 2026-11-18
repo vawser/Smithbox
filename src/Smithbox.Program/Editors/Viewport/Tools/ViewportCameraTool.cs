@@ -214,6 +214,12 @@ public static class ViewportCameraTool
             CFG.Current.Viewport_Camera_MoveSpeed_Fast = camera.CameraMoveSpeed_Fast;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast_TT"));
+
+        // The speeds above are shared by every viewport; this one scales them for what it shows
+        if (camera.MoveSpeedFactor != 1.0f)
+        {
+            GUI.WrappedText(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Factor", camera.MoveSpeedFactor.ToString("0.###")));
+        }
     }
 
     private static void OrthographicParameters(ViewportCamera camera)

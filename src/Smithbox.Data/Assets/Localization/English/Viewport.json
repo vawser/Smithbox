@@ -321,6 +321,10 @@
       "Text": "Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving."
     },
     {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Factor",
+      "Text": "This viewport moves at x{0} of these speeds, to suit the scale of what it shows."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Ortho_Near_Clip",
       "Text": "Near Clip"
     },

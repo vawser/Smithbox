@@ -68,6 +68,13 @@ public class ViewportCamera
     public float CameraMoveSpeed_Normal = CFG.Current.Viewport_Camera_MoveSpeed_Normal;
     public float CameraMoveSpeed_Slow = CFG.Current.Viewport_Camera_MoveSpeed_Slow;
 
+    /// <summary>
+    ///     Scales the perspective move speeds for the scale of what this viewport shows, so the shared speeds suit
+    ///     each editor: a map is crossed in metres a second, a face in centimetres. Set by the editor that owns the
+    ///     viewport; the speed settings stay unscaled.
+    /// </summary>
+    public float MoveSpeedFactor = 1.0f;
+
     // Orthographic projection
     public float OrthographicSize = CFG.Current.Viewport_DefaultOrthographicSize;
     public float OrthographicMinSize = 0.1f;
@@ -277,17 +284,17 @@ public class ViewportCamera
         else if (isSpeedupKeyPressed)
         {
             CameraMoveSpeed_Fast *= moveMult;
-            moveMult = dt * CameraMoveSpeed_Fast;
+            moveMult = dt * CameraMoveSpeed_Fast * MoveSpeedFactor;
         }
         else if (isSlowdownKeyPressed)
         {
             CameraMoveSpeed_Slow *= moveMult;
-            moveMult = dt * CameraMoveSpeed_Slow;
+            moveMult = dt * CameraMoveSpeed_Slow * MoveSpeedFactor;
         }
         else
         {
             CameraMoveSpeed_Normal *= moveMult;
-            moveMult = dt * CameraMoveSpeed_Normal;
+            moveMult = dt * CameraMoveSpeed_Normal * MoveSpeedFactor;
         }
 
         Vector3 cameraDist = CameraOrigin.Position - CameraTransform.Position;

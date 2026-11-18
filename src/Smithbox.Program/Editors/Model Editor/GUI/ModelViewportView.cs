@@ -24,6 +24,9 @@ public class ModelViewportWindow
     // The model to frame once its meshes have loaded
     public ModelContainer PendingFrameContainer;
 
+    // Most models are a few metres across (a character is about 2 m), so the shared speeds (20 m/s normal) are slowed to about 5 m/s
+    private const float MoveSpeedFactor = 0.25f;
+
     public ModelViewportWindow(ModelEditorView view, ProjectEntry project)
     {
         View = view;
@@ -34,7 +37,9 @@ public class ModelViewportWindow
         // Without a renderer the viewport is still shown, as a disabled placeholder
         if (Smithbox.Instance.HasRenderer)
         {
-            Viewport = new VulkanViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
+            var vk = new VulkanViewport(View.Universe, $"ModelViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
+            vk.ViewportCamera.MoveSpeedFactor = MoveSpeedFactor;
+            Viewport = vk;
         }
         else
         {
