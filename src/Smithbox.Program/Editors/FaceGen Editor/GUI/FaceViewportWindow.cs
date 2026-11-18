@@ -160,7 +160,7 @@ public class FaceViewportWindow
             return null;
 
         // The face's head part, else the face model the head equipment chose (SDT's Wolf, who has no face parts)
-        var head = Parts.FirstOrDefault(p => p.Model != null && p.Model.StartsWith("fg_a_01", StringComparison.Ordinal))?.Model
+        var head = Parts.FirstOrDefault(p => FaceComposition.IsHead(p.Model))?.Model
                    ?? Appearance.Head;
         var index = head != null ? Appearance.Parts.ToList().FindIndex(p => p.Name == head) : -1;
 
@@ -308,17 +308,24 @@ public class FaceViewportWindow
     /// </summary>
     private void LoadCommonTextures()
     {
-        if (CommonTexturesRequested || !CFG.Current.Viewport_Enable_Texturing ||
-            CharacterComposition.GetCommonTexture(Project) is not { } common)
-        {
+        if (CommonTexturesRequested || !CFG.Current.Viewport_Enable_Texturing)
             return;
-        }
+
+        var common = CharacterComposition.GetCommonTexture(Project);
+
+        // The shared head's textures are in the fgbnd (DS1, DS1R), only wanted when it is worn
+        var fgbnd = Parts.Any(p => p.Model != null && p.Model.Equals(FaceComposition.SharedHead, StringComparison.OrdinalIgnoreCase))
+            ? FaceGenModelData.Get(Project).BinderPath?.TrimStart('/')
+            : null;
+
+        if (common == null && fgbnd == null)
+            return;
 
         CommonTexturesRequested = true;
-        _ = LoadCommonTexturesAsync(common);
+        _ = LoadCommonTexturesAsync(common, fgbnd);
     }
 
-    private async System.Threading.Tasks.Task LoadCommonTexturesAsync(ResourceDescriptor common)
+    private async System.Threading.Tasks.Task LoadCommonTexturesAsync(ResourceDescriptor? common, string? fgbnd)
     {
         try
         {
@@ -329,7 +336,12 @@ public class FaceViewportWindow
                 AccessLevel = AccessLevel.AccessGPUOptimizedOnly
             };
 
-            await ResourceManager.DefaultPool.LoadAssets(Project, new HashSet<ResourceDescriptor> { common }, options);
+            if (common != null)
+                await ResourceManager.DefaultPool.LoadAssets(Project, new HashSet<ResourceDescriptor> { common }, options);
+
+            if (fgbnd != null)
+                await ResourceManager.DefaultPool.LoadContainer(fgbnd, options);
+
             await ResourceManager.LoadMissingTexturesAsync();
         }
         catch (Exception e)

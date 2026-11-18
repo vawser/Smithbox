@@ -1,0 +1,4 @@
+{
+  "Description": "Dark Souls Remastered. Faces are FaceGenParam rows, whose bytes are the FaceGen mode coefficients themselves (b x 20 / 255 - 10), so there are no sliders to apply. Every face wears the shared head (parts fg_a_0000), shaped by the fgbnd's face.egm / eye.egm, and its FaceGen texture is face.egt's modes added to TextureBase.",
+  "TextureBase": "face.bmp"
+}

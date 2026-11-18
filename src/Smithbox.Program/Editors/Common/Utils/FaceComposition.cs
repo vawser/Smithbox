@@ -87,18 +87,35 @@ public static class FaceComposition
     /// <summary>Whether a face param field chooses a part model</summary>
     public static bool IsPartField(string field) => Rules.ContainsKey(field);
 
+    /// <summary>
+    /// The one head every face wears in the games whose face rows choose no head (DS1, DS1R: FaceGenParam has no face
+    /// parts field). Its FaceGen data is the fgbnd's (face.egm, eye.egm, face.flver2tri), not the part's own.
+    /// </summary>
+    public const string SharedHead = "fg_a_0000";
+
+    /// <summary>Whether a part model is a head: a face parts value's (fg_a_01NN) or the shared one</summary>
+    public static bool IsHead(string? model) =>
+        model != null && (model.StartsWith("fg_a_01", StringComparison.OrdinalIgnoreCase) ||
+                          model.Equals(SharedHead, StringComparison.OrdinalIgnoreCase));
+
     /// <summary>The parts a face row names, in the order of its fields</summary>
     public static List<FacePart> Resolve(ProjectEntry project, Param.Row row, bool isFemale)
     {
         var parts = new List<FacePart>();
+        var hasHeadField = false;
 
         foreach (var cell in row.Cells)
         {
-            if (!Rules.ContainsKey(cell.Def.InternalName) || cell.Value is not IConvertible value)
+            if (!Rules.TryGetValue(cell.Def.InternalName, out var rule) || cell.Value is not IConvertible value)
                 continue;
 
+            hasHeadField |= rule.DropHundreds;
             parts.Add(Resolve(project, cell.Def.InternalName, value.ToInt32(null), isFemale));
         }
+
+        // A row with no head field wears the shared head, where the game has one
+        if (!hasHeadField && GetFamily(project, "fg").TryGetValue(0, out var shared) && Pick(shared, isFemale ? 'f' : 'm') is { } head)
+            parts.Insert(0, new FacePart("", 0, head, false));
 
         return parts;
     }

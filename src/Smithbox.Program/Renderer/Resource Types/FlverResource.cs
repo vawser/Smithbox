@@ -4483,6 +4483,25 @@ public class FlverResource : IResource, IDisposable
             UpdateMaterial();
         }
 
+        /// <summary>The texture bound in a slot, or null</summary>
+        public ResourceHandle<TextureResource>? GetTexture(TextureType slot) => TextureResources[(int)slot];
+
+        /// <summary>
+        ///     Puts a texture in a slot at run time, as <see cref="SetCustomizeDecal"/> does: acquires the new handle and
+        ///     releases the old one. The slot's own texture, if it loads later, takes the slot back, so a caller keeping
+        ///     a texture there sets it again (the FaceGen Editor's female face textures, every frame)
+        /// </summary>
+        public void SetTexture(TextureType slot, ResourceHandle<TextureResource>? handle)
+        {
+            if (ReferenceEquals(TextureResources[(int)slot], handle))
+                return;
+
+            handle?.Acquire();
+            TextureResources[(int)slot]?.Release();
+            TextureResources[(int)slot] = handle;
+            UpdateMaterial();
+        }
+
         /// <summary>
         ///     A FaceGen skin's face texture (<see cref="MaterialCustomize.ModeFaceGen"/>): its global texture index, set
         ///     at run time by the FaceGen Editor, 0 for none (the material's own albedo then stands in)

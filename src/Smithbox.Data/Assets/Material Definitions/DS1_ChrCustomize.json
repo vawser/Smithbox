@@ -1,0 +1,13 @@
+{
+  "Ps_FaceGen[DS][M]": { "CharacterColor": "skin", "Customize": "FaceGen", "ColorValue": [0, 0, 0], "Body": "g_Diffuse_2" },
+  "FRPG_Phn_FaceEye": { "CharacterColor": "eye", "Customize": "EyeTint", "ColorValue": [1, 1, 1] },
+  "Ps_Hair[DSB]": { "CharacterColor": "part" },
+  "Ps_Hair[DSB]_Alp": { "CharacterColor": "part" },
+  "Ps_Hair[DSB]_Edge": { "CharacterColor": "part" },
+  "Ps_Hair[DS]": { "CharacterColor": "part" },
+  "Ps_Hair[DS]_Alp": { "CharacterColor": "part" },
+  "Ps_Hair[DS]_Edge": { "CharacterColor": "part" },
+  "Ps_Hair[D]": { "CharacterColor": "part" },
+  "Ps_Hair[D]_Alp": { "CharacterColor": "part" },
+  "Ps_Hair[D]_Edge": { "CharacterColor": "part" }
+}

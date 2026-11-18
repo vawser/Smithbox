@@ -20,6 +20,10 @@ namespace StudioCore.Editors.FaceGenEditor;
 /// (eyelash cards, the heads' extra meshes) where they are relative to the skin.
 /// </para>
 /// <para>
+/// The shared head of DS1 and DS1R (<see cref="FaceComposition.SharedHead"/>) carries no FaceGen files: its EGMs
+/// and flver2tri are the fgbnd's, one EGM per mesh by the TRI its entry names (face.tri, eye.tri).
+/// </para>
+/// <para>
 /// The new positions are written over the vertices the model was loaded with (kept for face parts by
 /// <see cref="FlverResource.RetainVerticesFor"/>). Models are shared by everything that shows them, so the original
 /// vertices are put back by <see cref="Restore"/> when the face is no longer shown. Normals keep the base shape's.
@@ -27,7 +31,8 @@ namespace StudioCore.Editors.FaceGenEditor;
 /// </summary>
 public sealed class FaceMorpher
 {
-    private sealed record PartData(EGM Egm, F2TR Map, FLVER2? Flver);
+    /// <summary>A part's FaceGen data: per flver2tri entry (so per FLVER mesh) the EGM of its TRI, or null to leave it</summary>
+    private sealed record PartData(EGM?[] EntryEgms, F2TR Map, FLVER2? Flver);
 
     /// <summary>
     /// How far a head's edge is pulled onto the body: an edge vertex within this of the body's surface is moved onto it.
@@ -98,15 +103,21 @@ public sealed class FaceMorpher
                 continue;
             }
 
-            var displacement = new Vector3[data.Egm.VertexCount];
-            data.Egm.Apply(displacement, coefficients);
+            // Each TRI's displacement, once (the shared head's meshes are on face.tri and eye.tri)
+            var displacements = new Dictionary<EGM, Vector3[]>();
 
             for (var m = 0; m < gpuMeshes.Length && m < data.Map.Entries.Count; m++)
             {
                 var submesh = gpuMeshes[m];
 
-                if (submesh.RetainedVertices is not { } original || submesh.GeomBuffer is not { } buffer)
+                if (data.EntryEgms[m] is not { } egm || submesh.RetainedVertices is not { } original || submesh.GeomBuffer is not { } buffer)
                     continue;
+
+                if (!displacements.TryGetValue(egm, out var displacement))
+                {
+                    displacements[egm] = displacement = new Vector3[egm.VertexCount];
+                    egm.Apply(displacement, coefficients);
+                }
 
                 if (buffer.AllocStatus != VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
                 {
@@ -343,6 +354,36 @@ public sealed class FaceMorpher
         return file == null ? null : DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes) : file.Bytes;
     }
 
+    /// <summary>
+    /// The shared head's FaceGen data, from the fgbnd (DS1, DS1R): its face.flver2tri (version 1) maps the part's
+    /// FLVER mesh by mesh, the same four meshes as the fgbnd's own face.flver, and each entry names its TRI (face.tri,
+    /// eye.tri; DS1R's say face.tribe, Demon's Souls' big-endian name for the same mesh). Each mesh takes the EGM of
+    /// its TRI's name (face.egm, eye.egm, or .egmbe). Null if the fgbnd lacks them.
+    /// </summary>
+    private PartData? GetSharedHeadData()
+    {
+        var fgbnd = FaceGenModelData.Get(Project);
+
+        if (fgbnd.File("face.flver2tri") is not { } mapBytes)
+            return null;
+
+        var map = F2TR.Read(mapBytes);
+        var egms = new Dictionary<string, EGM?>(StringComparer.OrdinalIgnoreCase);
+
+        EGM? EgmOf(string triName)
+        {
+            var stem = System.IO.Path.GetFileNameWithoutExtension(triName.Replace('\\', '/'));
+
+            if (egms.TryGetValue(stem, out var known))
+                return known;
+
+            var bytes = fgbnd.File(stem + ".egm") ?? fgbnd.File(stem + ".egmbe");
+            return egms[stem] = bytes is { } b ? EGM.Read(b) : null;
+        }
+
+        return new PartData(map.Entries.Select(e => EgmOf(e.Name)).ToArray(), map, null);
+    }
+
     /// <summary>The EGM and flver2tri of a face part, from its partsbnd</summary>
     private PartData? GetPartData(string model)
     {
@@ -371,7 +412,14 @@ public sealed class FaceMorpher
                     // The model too, for its edges (GetSeam)
                     var flverBytes = flver == null ? null : DCX.Is(flver.Bytes) ? DCX.Decompress(flver.Bytes) : flver.Bytes;
                     var headModel = flverBytes is { } fb && FLVER2.Is(fb.ToArray()) ? FLVER2.Read(fb) : null;
-                    data = new PartData(EGM.Read(egm.Bytes), F2TR.Read(map.Bytes), headModel);
+                    var partEgm = EGM.Read(egm.Bytes);
+                    var partMap = F2TR.Read(map.Bytes);
+                    data = new PartData(partMap.Entries.Select(_ => (EGM?)partEgm).ToArray(), partMap, headModel);
+                }
+                else if (egm == null && map == null &&
+                         model.Equals(FaceComposition.SharedHead, StringComparison.OrdinalIgnoreCase))
+                {
+                    data = GetSharedHeadData();
                 }
             }
         }

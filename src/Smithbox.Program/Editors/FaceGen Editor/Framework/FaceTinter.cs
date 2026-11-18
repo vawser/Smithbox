@@ -157,11 +157,15 @@ public sealed class FaceTinter
     /// <summary>The red field of a colour (green and blue by the same name), e.g. "hair" → hair_color_R, or null</summary>
     public static string? ColorField(Param.Row row, string name) => FindField(row, name, "color_R", "Color_R");
 
-    /// <summary>The colour name of a part field: its name without "_partsId" / "PartsId", or null</summary>
+    /// <summary>
+    /// The colour name of a part field: its name without "_partsId" / "PartsId" (or "Style": DS1's hairStyle is
+    /// coloured by hairColor_*), or null
+    /// </summary>
     public static string? PartColorName(string partField)
     {
         return partField.EndsWith("_partsId", StringComparison.OrdinalIgnoreCase) ? partField[..^"_partsId".Length]
             : partField.EndsWith("PartsId", StringComparison.OrdinalIgnoreCase) ? partField[..^"PartsId".Length]
+            : partField.EndsWith("Style", StringComparison.OrdinalIgnoreCase) ? partField[..^"Style".Length]
             : null;
     }
 
@@ -199,6 +203,11 @@ public sealed class FaceTinter
 
             return faceTexture.Value;
         }
+
+        // A woman wearing the shared head (DS1), by her body (fc_f_*). Only the shared head: the other games' heads
+        // name their body's skin (DS3 FC_M_0000_a), and whether they swap it for a woman isn't known
+        var female = appearance.Parts.Any(p => p.Name.StartsWith("fc_f_", StringComparison.OrdinalIgnoreCase)) &&
+                     appearance.Parts.Any(p => p.Name.Equals(FaceComposition.SharedHead, StringComparison.OrdinalIgnoreCase));
 
         // Each name's colour and hair values, as first wanted (null: the row has no such colour)
         var looks = new Dictionary<string, Look?>(StringComparer.OrdinalIgnoreCase);
@@ -240,8 +249,17 @@ public sealed class FaceTinter
                 }
 
                 var colorName = wants.Equals(PartColor, StringComparison.OrdinalIgnoreCase) ? partColorName : wants;
+                var look = colorName != null ? LookOf(colorName) : null;
 
-                if (colorName == null || LookOf(colorName) is not { } look)
+                // A FaceGen face draws the face's texture even where the row has no colour for it (DS1's FaceGenParam
+                // has no skin colour): its own colour stands
+                if (look == null && FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeFaceGen &&
+                    slots.BodyType != null && OwnOf(material).Customize is { } plain)
+                {
+                    look = new Look(new Vector3(plain.Color.X, plain.Color.Y, plain.Color.Z), null, null, null);
+                }
+
+                if (look == null)
                     continue;
 
                 var own = OwnOf(material);
@@ -256,7 +274,7 @@ public sealed class FaceTinter
                         // Body hair: the colour (body_hairColor_*), and the amount from the field of the colour's own
                         // name (body_hair)
                         wanted.Color = new Vector4(look.Color, customize.Color.W);
-                        wanted.Params.X = FindField(row, colorName, "", "") is { } amountField
+                        wanted.Params.X = FindField(row, colorName!, "", "") is { } amountField
                             ? ToValue(amountField, Byte(row, amountField, overrides))
                             : customize.Params.X;
                     }
@@ -266,7 +284,8 @@ public sealed class FaceTinter
                         wanted.Color = new Vector4(look.Color, customize.Color.W);
                         wanted.Params.X = StubbleOf(row, overrides) ?? customize.Params.X;
                     }
-                    else if (FlverResource.CustomizeMode(material.Definition) is MaterialCustomize.ModeFaceGen or MaterialCustomize.ModeHairTint)
+                    else if (FlverResource.CustomizeMode(material.Definition) is MaterialCustomize.ModeFaceGen or
+                             MaterialCustomize.ModeHairTint or MaterialCustomize.ModeEyeTint)
                     {
                         // DS3: the colour is the part model's FC_SkinMatchColor, the field's FaceRangeParam value as it
                         // stands (skin −1…1 added, eyes added on the iris, hair multiplied). Params.x, the eye's alpha
@@ -280,10 +299,17 @@ public sealed class FaceTinter
                     }
 
                     // A FaceGen skin with a body texture is a face: it draws the face's FaceGen texture
-                    var faceTex = FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeFaceGen &&
-                                  slots.BodyType != null
-                        ? FaceTexture()
-                        : material.CustomizeFaceTexture;
+                    var isFace = FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeFaceGen &&
+                                 slots.BodyType != null;
+                    var faceTex = isFace ? FaceTexture() : material.CustomizeFaceTexture;
+
+                    // On a woman, the face's male skin and normal (DS1's shared head names FG_m_face_org_d and
+                    // FG_m_face_n) give way to the female ones beside them (FG_f_*), where those are loaded
+                    if (isFace && female)
+                    {
+                        SwapToFemale(material, FlverResource.FlverMaterial.TextureType.CustomizeStubbleTextureResource);
+                        SwapToFemale(material, FlverResource.FlverMaterial.TextureType.NormalTextureResource);
+                    }
 
                     // Hair: the shininess (hair_shininess), where the material has a gloss to scale
                     var extra = own.Extra;
@@ -335,15 +361,84 @@ public sealed class FaceTinter
                     material.Shading.DiffuseAlpha = wanted;
                     material.UpdateMaterial();
                 }
+                else if (slots.Customize == 0)
+                {
+                    // A plain textured material (DS1's Ps_Hair: the game's DL_FREG_139 multiplies the albedo): the
+                    // face's colour multiplies the material's diffuse colour
+                    var wanted = new Vector4(new Vector3(own.DiffuseAlpha.X, own.DiffuseAlpha.Y, own.DiffuseAlpha.Z) * look.Color,
+                        own.DiffuseAlpha.W);
+
+                    if (material.Shading.DiffuseAlpha == wanted)
+                        continue;
+
+                    material.Shading.DiffuseAlpha = wanted;
+                    material.UpdateMaterial();
+                }
             }
         }
 
         return done;
     }
 
+    // The textures swapped for a woman's, with the material's own, to put back
+    private readonly Dictionary<(FlverResource.FlverMaterial Material, FlverResource.FlverMaterial.TextureType Slot),
+        ResourceHandle<TextureResource>?> Swapped = new();
+
+    /// <summary>
+    /// Puts the female counterpart of a slot's texture in its place: the name with _m_ for _f_ (FG_m_face_n →
+    /// FG_f_face_n), if one is loaded. Nothing for a texture with no _m_ in its name, or none loaded yet.
+    /// </summary>
+    private void SwapToFemale(FlverResource.FlverMaterial material, FlverResource.FlverMaterial.TextureType slot)
+    {
+        var key = (material, slot);
+        var current = material.GetTexture(slot);
+
+        if (current == null)
+            return;
+
+        // The female texture this put there stays; anything else in the slot (the material's own, or its own come back
+        // after loading late) is the one to name the female texture by
+        if (Swapped.TryGetValue(key, out var kept) && !ReferenceEquals(current, kept) &&
+            current.Name.Contains("_f_", StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        var index = current.Name.IndexOf("_m_", StringComparison.OrdinalIgnoreCase);
+
+        if (index < 0)
+            return;
+
+        var femaleName = current.Name[..index] + "_f_" + current.Name[(index + 3)..];
+
+        if (!ResourceManager.DefaultPool.TryFind<TextureResource>(femaleName, out var femaleTexture) ||
+            femaleTexture is not { IsLoaded: true })
+        {
+            return;
+        }
+
+        // Held while swapped out, so it is still there to put back
+        if (kept == null || !ReferenceEquals(kept, current))
+        {
+            current.Acquire();
+            kept?.Release();
+            Swapped[key] = current;
+        }
+
+        material.SetTexture(slot, femaleTexture);
+    }
+
     /// <summary>Puts back the values of everything that was coloured</summary>
     public void Restore()
     {
+        foreach (var ((material, slot), own) in Swapped)
+        {
+            material.SetTexture(slot, own);
+            own?.Release();
+        }
+
+        Swapped.Clear();
+
         foreach (var (material, own) in Tinted)
         {
             material.Shading.DiffuseAlpha = own.DiffuseAlpha;

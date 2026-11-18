@@ -14,7 +14,8 @@ namespace StudioCore.Editors.FaceGenEditor;
 
 /// <summary>
 /// A game's character creator sliders (Assets/FACEGEN/&lt;game&gt;.json): each slider's range, the order the game applies
-/// them in, and the clamps. Only the games whose faces store slider values (FaceParam) have one.
+/// them in, and the clamps. The games whose faces store slider values (FaceParam) have sliders; DS1 and DS1R, whose
+/// faces store the coefficients themselves, have a table only for its <see cref="TextureBase"/>.
 /// </summary>
 public sealed class FaceGenSliderTable
 {
@@ -199,10 +200,40 @@ public static class FaceGenModel
         var ctl = FaceGenModelData.Get(project).Controls;
         var table = FaceGenSliderTable.Get(project);
 
-        if (ctl == null || table == null || ctl.AllRaces is not { } race || FaceGenParams.StoresModes(param))
+        if (ctl == null)
             return null;
 
         var t = new float[ctl.TextureSymmetricModes];
+
+        // FaceGenParam (DS1, DS1R): the texture bytes are the coefficients themselves, in order
+        if (FaceGenParams.StoresModes(param))
+        {
+            var texture = new SortedDictionary<int, int>();
+
+            foreach (var cell in row.Cells)
+            {
+                if (FaceGenParams.ParseFaceGenField(cell.Def.InternalName) is { IsGeometry: false } field && cell.Value is IConvertible value)
+                {
+                    texture[field.Index] = overrides != null && overrides.TryGetValue(cell.Def.InternalName, out var dragged)
+                        ? dragged
+                        : value.ToInt32(null);
+                }
+            }
+
+            var k = 0;
+
+            foreach (var b in texture.Values)
+            {
+                if (k >= t.Length)
+                    break;
+                t[k++] = FaceGenParams.ByteToCoefficient(b);
+            }
+
+            return t;
+        }
+
+        if (table == null || ctl.AllRaces is not { } race)
+            return null;
 
         float Value(int id, int b)
         {

@@ -281,6 +281,12 @@ public struct MaterialCustomize
     ///     square-root space (FC_SkinMatchColor on a hair part)
     /// </summary>
     public const uint ModeHairTint = 8;
+
+    /// <summary>
+    ///     Eye tint (DS1's FRPG_Phn_FaceEye, gFC_FaceEyeCol): <c>mix(albedo, albedo · Color.rgb, albedo.a)</c>, the eye
+    ///     colour multiplying the texture where its alpha (the iris) is
+    /// </summary>
+    public const uint ModeEyeTint = 9;
 }
 
 /// <summary>

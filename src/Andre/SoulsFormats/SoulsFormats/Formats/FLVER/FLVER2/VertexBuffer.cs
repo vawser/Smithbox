@@ -76,9 +76,15 @@ namespace SoulsFormats
                     }
                 }
 
+                // The flag alone doesn't make the data edge geometry: DS1R's PC models keep it from the PS3 builds on
+                // buffers whose layouts and data are plain (the FaceGen head fg_a_0000, whose every vertex would
+                // otherwise read as zero). Only a layout with an edge-compressed member holds edge data; any other
+                // buffer is read by its layout, as the renderer does.
+                bool edgeData = EdgeCompressed && layout.Exists(m => m.Type == FLVER.LayoutType.EdgeCompressed);
+
                 br.StepIn(dataOffset + BufferOffset);
                 {
-                    if (EdgeCompressed)
+                    if (edgeData)
                     {
                         // TODO: EdgeGeom
                         // Only decompress the edge vertexes if we need a fallback

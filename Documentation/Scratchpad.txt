@@ -3,7 +3,5 @@
 #---------------------
 
 Finish FaceGen Editor:
-    - BB
     - DS2S
-    - DS1R / DS1
     - DES

@@ -1426,7 +1426,12 @@ public class MaterialDefinition
     /// </summary>
     private void ResolveSlots(MaterialShaderTable? table)
     {
-        if (table == null || !table.Slots.TryGetValue(ShaderName, out MaterialSlotRecipe? recipe))
+        // A recipe for the material itself (DS1's Ps_FaceGen[DS][M], whose shader is a plain blend shared by armour),
+        // else for its shader
+        var materialName = Path.GetFileNameWithoutExtension(Name.Split('\\', '/')[^1]);
+
+        if (table == null || (!table.Slots.TryGetValue(materialName, out MaterialSlotRecipe? recipe) &&
+                              !table.Slots.TryGetValue(ShaderName, out recipe)))
         {
             return;
         }
@@ -1453,6 +1458,7 @@ public class MaterialDefinition
                 "eyepatch" => MaterialCustomize.ModeEyePatch,
                 "facegen" => MaterialCustomize.ModeFaceGen,
                 "hairtint" => MaterialCustomize.ModeHairTint,
+                "eyetint" => MaterialCustomize.ModeEyeTint,
                 _ => 0
             },
             Blending = recipe.Blend?.ToLowerInvariant() switch

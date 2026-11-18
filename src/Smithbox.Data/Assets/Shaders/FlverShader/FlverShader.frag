@@ -841,6 +841,11 @@ void ApplyCustomize(inout vec4 diffuseColor)
 		// Only a face skin (one with a body texture) blends; a plain skin or an eye is its own albedo
 		diffuseColor.rgb = mix(faceSkin * faceSkin, bodySkin * bodySkin, cz.pad != 0u ? clamp(fsin_color.a, 0.0, 1.0) : 0.0);
 	}
+	else if (c_customize == 9)
+	{
+		// Eye tint (DS1's FRPG_Phn_FaceEye): the eye colour multiplies the texture where its alpha (the iris) is
+		diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * cz.color.rgb, clamp(diffuseColor.a, 0.0, 1.0));
+	}
 	else if (c_customize == 8)
 	{
 		// Hair tint (DS3's SAT_HairIbl2): the hair colour multiplies the texture in square-root space

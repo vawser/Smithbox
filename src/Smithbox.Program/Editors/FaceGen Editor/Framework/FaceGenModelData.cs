@@ -55,6 +55,7 @@ public sealed class FaceGenModelData
                     data.Controls = CTL.Read(ctl.Bytes);
 
                 data.Binder = binder;
+                data.BinderPath = path;
                 break;
             }
             catch (Exception e)
@@ -66,11 +67,32 @@ public sealed class FaceGenModelData
         return data;
     }
 
+    /// <summary>
+    /// The fgbnd's path in the project's file system, or null. Its facegen.tpf holds the shared head's textures (DS1:
+    /// FG_face_s, FG_m_face_n, FG_m_face_org_d, FG_eye), which no part carries
+    /// </summary>
+    public string? BinderPath { get; private set; }
+
     // The fgbnd, for the files read on demand (the texture model is only wanted by games that draw FaceGen textures)
     private IBinder? Binder;
     private EGT? TextureModel;
     private bool TextureModelRead;
     private readonly System.Collections.Generic.Dictionary<string, (int Width, int Height, byte[] Rgb)?> Images = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// The decompressed bytes of the fgbnd's file whose name (without its folders) is <paramref name="name"/>, ignoring
+    /// case, or null
+    /// </summary>
+    public Memory<byte>? File(string name)
+    {
+        lock (Images)
+        {
+            var file = Binder?.Files.FirstOrDefault(f => f.Name != null &&
+                System.IO.Path.GetFileName(f.Name.Replace('\\', '/')).Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            return file == null ? null : DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes) : file.Bytes;
+        }
+    }
 
     /// <summary>The texture modes (face.egt), or null if the fgbnd has none. Read on first use</summary>
     public EGT? Texture
