@@ -3360,6 +3360,78 @@
     {
       "Key": "TAE_SimulationTool_Floor_TT",
       "Text": "The floor material, by its HitMtrlParam row. A floor-determined effect event's FFXID picks one of this floor's effects, through FootSfxParam."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic",
+      "Text": "Magic"
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_TT",
+      "Text": "If enabled, cast events (CastHighlightedMagic) cast the magic picked below: its bullets fly from the event's dummy poly, the way the character faces, as the Projectile Editor simulates them."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Header",
+      "Text": "Magic"
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Header_TT",
+      "Text": "The magic the character casts at a cast event (CastHighlightedMagic). The bullets fly in the Projectile Editor's simulation settings (gravity, ground collision, the wall and the target), with the floor the character stands on as the ground."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_None",
+      "Text": "None"
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Filter",
+      "Text": "Filter by ID or name"
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_More",
+      "Text": "More rows match: refine the filter to see them."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Row_TT",
+      "Text": "The {0} row a cast event casts."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Charged",
+      "Text": "Charged"
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Charged_TT",
+      "Text": "If enabled, casts the charged slots of the magic (consumeType 1) rather than its normal ones. A magic without charged slots casts its normal ones either way."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Flight",
+      "Text": "Latest cast: {0} bullets over {1} seconds."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Effects",
+      "Text": "Bullet effects: {0} running of {1}, {2} not in the FX bank."
+    },
+    {
+      "Key": "TAE_SimulationTool_Magic_Warnings",
+      "Text": "The simulation differs from the rows: {0}"
+    },
+    {
+      "Key": "TAE_EventDisplay_Magic",
+      "Text": "Casts magic {0}, firing bullets {1}."
+    },
+    {
+      "Key": "TAE_EventDisplay_Magic_None",
+      "Text": "No magic picked: pick one in the Simulation tool."
+    },
+    {
+      "Key": "TAE_EventDisplay_Magic_No_Param",
+      "Text": "This game has no magic param."
+    },
+    {
+      "Key": "TAE_EventDisplay_Magic_No_Row",
+      "Text": "No {0} row {1}."
+    },
+    {
+      "Key": "TAE_EventDisplay_Magic_No_Bullets",
+      "Text": "Magic {0} fires no bullets."
     }
   ]
 }

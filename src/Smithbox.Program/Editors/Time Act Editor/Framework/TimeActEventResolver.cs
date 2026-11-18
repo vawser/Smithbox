@@ -16,7 +16,8 @@ public enum TimeActVisualKind
     Sound,
     Attack,
     Throw,
-    Bullet
+    Bullet,
+    Magic
 }
 
 /// <summary>
@@ -116,6 +117,8 @@ public class TimeActEventResolver
                 return ResolveAttack(ev, container, TimeActVisualKind.Throw);
             case TimeActSimulationRole.Bullet:
                 return ResolveBullet(ev, container);
+            case TimeActSimulationRole.CastMagic:
+                return ResolveMagic(ev, container);
         }
 
         if (IsEffectEvent(ev))
@@ -341,6 +344,48 @@ public class TimeActEventResolver
             },
             LOC.Get("TAE_EventDisplay_Bullet", behavior!.ID, bulletId));
     }
+
+    /// <summary>
+    /// A cast of the magic picked in the Simulation tool: a marker on the dummy poly it is cast from, which is where its
+    /// bullets fly from (see <see cref="TimeActMagicDisplay" />)
+    /// </summary>
+    private TimeActEventVisual ResolveMagic(TAE.Event ev, TimeActContainer container)
+    {
+        var dummy = GetParameter(ev, "DummyPolyID") ?? -1;
+        var shapes = new[]
+        {
+            new TimeActVisualShape(ToLocalDummy(container, dummy), -1, MagicRadius, GetWeaponPartOfDummy(container, dummy, -1))
+        };
+
+        var status = GetMagicStatus(_project, CFG.Current.TimeActEditor_Cast_Magic_ID, CFG.Current.TimeActEditor_Cast_Magic_Charged);
+
+        return new TimeActEventVisual(TimeActVisualKind.Magic, shapes,
+            $"{LOC.Get(dummy >= 0 ? "TAE_EventDisplay_On_Dummy" : "TAE_EventDisplay_On_Body", dummy)}\n{status}");
+    }
+
+    /// <summary>
+    /// What a cast of a magic row fires, or why it fires nothing
+    /// </summary>
+    public static string GetMagicStatus(ProjectEntry project, int magicId, bool charged)
+    {
+        if (ProjectileEditor.ProjectileParams.GetSpellParamName(project) is not { } paramName)
+            return LOC.Get("TAE_EventDisplay_Magic_No_Param");
+
+        if (magicId < 0)
+            return LOC.Get("TAE_EventDisplay_Magic_None");
+
+        if (CharacterComposition.GetRow(project, paramName, magicId) is not { } magic)
+            return LOC.Get("TAE_EventDisplay_Magic_No_Row", paramName, magicId);
+
+        var bullets = ProjectileEditor.ProjectileParams.GetCastBullets(magic, charged);
+        var name = string.IsNullOrEmpty(magic.Name) ? $"{magic.ID}" : $"{magic.ID}: {magic.Name}";
+
+        return bullets.Count == 0
+            ? LOC.Get("TAE_EventDisplay_Magic_No_Bullets", name)
+            : LOC.Get("TAE_EventDisplay_Magic", name, string.Join(", ", bullets));
+    }
+
+    private const float MagicRadius = 0.12f;
 
     private static TimeActEventVisual Failed(TimeActVisualKind kind, string reason)
     {

@@ -93,7 +93,13 @@ public enum TimeActSimulationRole
     /// <summary>
     /// The model fades from OpacityAtEventStart to OpacityAtEventEnd over the event, and stays at the end value after it
     /// </summary>
-    Opacity
+    Opacity,
+
+    /// <summary>
+    /// As it starts, casts the magic picked in the Simulation tool from its DummyPolyID: the bullets of the magic row
+    /// fly from there, the way the character faces (CastHighlightedMagic)
+    /// </summary>
+    CastMagic
 }
 
 /// <summary>

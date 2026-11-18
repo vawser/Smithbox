@@ -830,6 +830,9 @@ public class CFG
     public bool TimeActEditor_Sim_Opacity = true;
     public bool TimeActEditor_Assume_SpEffects = true;
     public int TimeActEditor_Floor_Material = 1;
+    public bool TimeActEditor_Sim_Magic = true;
+    public int TimeActEditor_Cast_Magic_ID = -1;
+    public bool TimeActEditor_Cast_Magic_Charged = false;
     public bool TimeActEditor_Play_Event_Sounds = true;
     public bool TimeActEditor_Display_Effects = true;
     public float TimeActEditor_Event_Marker_Size = 1f;

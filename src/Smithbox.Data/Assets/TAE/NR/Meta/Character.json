@@ -86,6 +86,12 @@
       "Fields": []
     },
     {
+      "ID": 64,
+      "Event": "CastHighlightedMagic",
+      "Simulation": "CastMagic",
+      "Fields": []
+    },
+    {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
       "Fields": [

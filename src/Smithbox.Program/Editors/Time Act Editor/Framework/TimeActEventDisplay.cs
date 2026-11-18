@@ -147,7 +147,7 @@ public class TimeActEventDisplay
                 if (GetVisual(ev, container) is not { } visual)
                     continue;
 
-                var isMarker = visual.Kind is TimeActVisualKind.Effect or TimeActVisualKind.Sound;
+                var isMarker = visual.Kind is TimeActVisualKind.Effect or TimeActVisualKind.Sound or TimeActVisualKind.Magic;
 
                 if (isMarker ? !showMarkers : !showAttacks)
                     continue;
@@ -317,6 +317,7 @@ public class TimeActEventDisplay
             TimeActVisualKind.Sound => Color.DeepSkyBlue,
             TimeActVisualKind.Bullet => Color.Yellow,
             TimeActVisualKind.Throw => Color.Magenta,
+            TimeActVisualKind.Magic => Color.MediumOrchid,
             _ => Color.Red
         };
     }
@@ -402,11 +403,23 @@ public class TimeActEventDisplay
     }
 
     /// <summary>
-    /// Where an effect event puts its effect at the current pose: on its dummy poly, turned as the dummy is, or on
-    /// the center of the body for no dummy. A weapon's dummy is turned as the weapon is. Null if the event isn't an
-    /// effect event, or its dummy can't be found (on neither the weapon nor the body).
+    /// Where the first shape of an event's display is at the current pose, such as the dummy poly a cast comes from
+    /// (on the weapon or the body), or null if the event has no shape or its dummy can't be found
     /// </summary>
-    /// <param name="ignoreAngle">Only the position is followed, as with IsIgnoreDummyPolyAngle</param>
+    public Vector3? GetEventPosition(TAE.Event ev, TimeActContainer container, ModelAnimator? animator)
+    {
+        PrepareDummies(container);
+
+        if (GetVisual(ev, container) is not { Shapes.Count: > 0 } visual)
+            return null;
+
+        var shape = visual.Shapes[0];
+
+        return GetPositions(shape.Dummy, shape.WeaponPart, container, animator) is { Count: > 0 } positions
+            ? positions[0]
+            : null;
+    }
+
     /// <summary>
     /// Whether the event spawns an effect, as its marker tells
     /// </summary>
@@ -417,6 +430,12 @@ public class TimeActEventDisplay
         return GetVisual(ev, container)?.Kind == TimeActVisualKind.Effect;
     }
 
+    /// <summary>
+    /// Where an effect event puts its effect at the current pose: on its dummy poly, turned as the dummy is, or on
+    /// the center of the body for no dummy. A weapon's dummy is turned as the weapon is. Null if the event isn't an
+    /// effect event, or its dummy can't be found (on neither the weapon nor the body).
+    /// </summary>
+    /// <param name="ignoreAngle">Only the position is followed, as with IsIgnoreDummyPolyAngle</param>
     public Matrix4x4? GetEffectAnchor(TAE.Event ev, TimeActContainer container, ModelAnimator? animator, bool ignoreAngle)
     {
         PrepareDummies(container);

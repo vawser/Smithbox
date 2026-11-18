@@ -52,6 +52,40 @@ public static class ProjectileParams
     }
 
     /// <summary>
+    /// The param of the player's spells (Magic in most games), or null where the game has none
+    /// </summary>
+    public static string? GetSpellParamName(ProjectEntry project)
+    {
+        var paramList = GetParams(project);
+
+        return paramList?.Keys
+            .Where(name => IsSpellParam(project, name))
+            .OrderBy(name => name is "Magic" or "MagicParam" or "SpellParam" ? 0 : 1)
+            .ThenBy(name => name, StringComparer.OrdinalIgnoreCase)
+            .FirstOrDefault();
+    }
+
+    /// <summary>
+    /// The bullets a spell row casts: its normal slots, or its charged ones. A spell with only one kind casts those
+    /// either way.
+    /// </summary>
+    public static List<int> GetCastBullets(Param.Row spell, bool charged)
+    {
+        var bullets = BulletDefinition.GetSpellBullets(spell);
+        var wanted = charged ? SpellSlotType.Charged : SpellSlotType.Default;
+
+        var picked = bullets.Where(bullet => bullet.Slot == wanted).Select(bullet => bullet.Id).ToList();
+
+        if (picked.Count > 0)
+            return picked;
+
+        // Without slots of that kind, the normal ones, or failing those every bullet it has
+        picked = bullets.Where(bullet => bullet.Slot is SpellSlotType.Default).Select(bullet => bullet.Id).ToList();
+
+        return picked.Count > 0 ? picked : bullets.Select(bullet => bullet.Id).ToList();
+    }
+
+    /// <summary>
     /// The param that a spell's bullets are in, as games can have several: the rest are for enemies and the like.
     /// </summary>
     public static Param? GetSpellBulletParam(ProjectEntry project) =>

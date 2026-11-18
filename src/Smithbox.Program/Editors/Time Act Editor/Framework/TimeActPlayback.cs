@@ -81,7 +81,13 @@ public class TimeActPlayback
         Sounds = new TimeActSoundPlayback(view, project);
         Rumble = new TimeActRumblePlayback(view, project);
         Effects = new TimeActEffectPlayback(view, project);
+        MagicDisplay = new TimeActMagicDisplay(view, project);
     }
+
+    /// <summary>
+    /// Flies the bullets of the picked magic from the cast events
+    /// </summary>
+    public TimeActMagicDisplay MagicDisplay { get; }
 
     /// <summary>
     /// Plays the effects of the FFX events in the viewport
@@ -156,7 +162,7 @@ public class TimeActPlayback
         }
 
         // The clock waits while the animation's effects load (read last frame), so they don't stall as they first show
-        var held = Effects.IsLoading;
+        var held = Effects.IsLoading || MagicDisplay.IsLoading;
 
         // From the time the last frame ended at, which is where the clock is about to move on from
         Simulation.Update(View.Selection.SelectedAnimation, _time, PlaybackDuration);
@@ -196,6 +202,7 @@ public class TimeActPlayback
 
         // After the event display, which has found the dummies the effects sit on for this pose
         Effects.Update(animator, _time);
+        MagicDisplay.Update(animator, _time, PlaybackDuration);
     }
 
     // The clip and time the pose crossfades from, the time of the new clip the crossfade started at (-1 while it
@@ -477,6 +484,7 @@ public class TimeActPlayback
         Sounds.StopAll();
         Rumble.StopAll();
         Effects.Clear();
+        MagicDisplay.Clear();
         WeaponDisplay.Invalidate();
         _blendFrom = null;
         _blendStart = -1;

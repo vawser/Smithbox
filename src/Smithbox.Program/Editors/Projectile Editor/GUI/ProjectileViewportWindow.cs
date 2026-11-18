@@ -249,7 +249,7 @@ public class ProjectileViewportWindow
         Bullets.Show(View.RenderScene!, lines);
     }
 
-    private static List<(Vector3, Vector3)> Lines(Dictionary<Color, List<(Vector3, Vector3)>> lines, Color color)
+    public static List<(Vector3, Vector3)> Lines(Dictionary<Color, List<(Vector3, Vector3)>> lines, Color color)
     {
         if (!lines.TryGetValue(color, out var list))
         {
@@ -264,7 +264,7 @@ public class ProjectileViewportWindow
         new(color.X * amount, color.Y * amount, color.Z * amount, color.W);
 
     /// <summary>The wall, as the outlines of its cells</summary>
-    private static void AddWall(List<(Vector3, Vector3)> lines, SimulationSettings settings)
+    public static void AddWall(List<(Vector3, Vector3)> lines, SimulationSettings settings)
     {
         var columns = Math.Clamp((int)MathF.Ceiling(settings.WallWidth), 1, MaxWallCells);
         var rows = Math.Clamp((int)MathF.Ceiling(settings.WallHeight), 1, MaxWallCells);
@@ -298,7 +298,7 @@ public class ProjectileViewportWindow
         }
     }
 
-    private static void AddTrails(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time)
+    public static void AddTrails(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time)
     {
         var total = 0;
         foreach (var track in result.Tracks)
@@ -330,7 +330,7 @@ public class ProjectileViewportWindow
     }
 
     /// <summary>The bullets in flight as spheres of their radius, and the rings of attacks reaching beyond them</summary>
-    private static void AddProjectiles(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time,
+    public static void AddProjectiles(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time,
         bool spheres, bool reachRings)
     {
         if (!spheres && !reachRings)
@@ -370,7 +370,7 @@ public class ProjectileViewportWindow
     }
 
     /// <summary>Leaves the reach of an attack behind for a moment where a bullet landed</summary>
-    private static void AddImpacts(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time)
+    public static void AddImpacts(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time)
     {
         var list = Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.ReachColor));
 

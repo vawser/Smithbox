@@ -42,7 +42,10 @@ public sealed class ProjectileSimulator
         Project = project;
     }
 
-    public SimulationSettings Settings
+    public SimulationSettings Settings => CurrentSettings;
+
+    /// <summary>The simulation settings of the editor, which the Time Act Editor's casts also fly in</summary>
+    public static SimulationSettings CurrentSettings
     {
         get
         {
