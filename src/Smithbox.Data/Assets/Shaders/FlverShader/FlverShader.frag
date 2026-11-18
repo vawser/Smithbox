@@ -47,6 +47,8 @@ layout (constant_id = 6) const bool c_transparent = false;
 layout (constant_id = 11) const int c_blending = 0;
 // Elden Ring and later: the specular slot holds the metallic map, see FlverResource.ProcessMaterialTexture
 layout (constant_id = 12) const bool c_metallic = false;
+// ER's ChrCustomize hair, beards, brows and lashes: the cut-out is the normal map's alpha, see MaterialSlotRecipe
+layout (constant_id = 13) const bool c_alphaFromNormal = false;
 #define BLENDING_ALPHA 1
 layout (constant_id = 8) const bool c_detail = false;
 layout (constant_id = 9) const bool c_magma = false;
@@ -2041,6 +2043,12 @@ void main()
 
 			diffuseColor.rgb = clamp(detailed, 0.0, 1.0);
 		}
+	}
+
+	// Hair-type strands: their alpha is in the normal map, the albedo being a flat color (c_alphaFromNormal)
+	if (c_alphaFromNormal)
+	{
+		diffuseColor.w = SampleLayer(ROW_NORMAL, 0).w;
 	}
 
 	if (diffuseColor.w < diffuseAlpha.w)

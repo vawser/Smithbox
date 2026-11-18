@@ -291,7 +291,42 @@ public static class CharacterComposition
                 parts.Add(new CharacterPart(name));
         }
 
-        return new CharacterAppearance(parts, null);
+        return new CharacterAppearance(parts, GetBareMasks(project));
+    }
+
+    /// <summary>
+    ///     The mesh groups a character shows with nothing on: those the unarmoured protector rows (no model, one slot
+    ///     each, e.g. ER's 10000 Head) leave visible. Hair and beard models carry a variant per helmet shape (#60# to
+    ///     #65#, #78# to #80#), and the bare head hides all but the full one. Null if the game has no such rows.
+    /// </summary>
+    public static int[]? GetBareMasks(ProjectEntry project)
+    {
+        if (project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
+            !bank.TryGetValue("EquipParamProtector", out Param? param) || param.Rows.Count == 0 ||
+            !HasField(param.Rows[0], "equipModelId"))
+        {
+            return null;
+        }
+
+        var masks = new int[MaskCount];
+        Array.Fill(masks, 1);
+        var found = false;
+
+        foreach (var slot in new[] { "headEquip", "bodyEquip", "armEquip", "legEquip" })
+        {
+            // The first row of the slot with no model, and no other slot
+            var bare = param.Rows.FirstOrDefault(r =>
+                GetValue(r, "equipModelId") == 0 && GetValue(r, slot) != 0 &&
+                new[] { "headEquip", "bodyEquip", "armEquip", "legEquip" }.Count(s => GetValue(r, s) != 0) == 1);
+
+            if (bare != null)
+            {
+                HideMasks(bare, masks);
+                found = true;
+            }
+        }
+
+        return found ? masks : null;
     }
 
     /// <summary>

@@ -1,0 +1,7 @@
+{
+  "P[ChrCustomize][Skin]": { "Albedo": 7, "Normal": 0 },
+  "P[ChrCustomize][Hair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5 },
+  "P[ChrCustomize][Hair]_cloth": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5 },
+  "P[ChrCustomize][FaceHair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5 },
+  "P[ChrCustomize][EyeLash]": { "Normal": 7, "Color": "snp_0_color_1", "AlphaFromNormal": true, "AlphaRef": 0.5 }
+}

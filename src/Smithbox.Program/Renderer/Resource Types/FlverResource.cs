@@ -467,6 +467,21 @@ public class FlverResource : IResource, IDisposable
     {
         dest.MetallicType = MaterialBinding.ChooseMetallic(dest.Definition, flverPaths);
 
+        // The base textures of a shader whose first texture of a role is an overlay (ER's ChrCustomize skin: beard
+        // stubble and burn scars before the skin). Bound first, so the textures loop below keeps them.
+        if (dest.Definition?.Slots is { } slots)
+        {
+            if (slots.AlbedoType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource, dest, slots.AlbedoType, "", mtd);
+            }
+
+            if (slots.NormalType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.NormalTextureResource, dest, slots.NormalType, "", mtd);
+            }
+        }
+
         if (dest.Definition?.SurfaceType != null)
         {
             LookupTexture(dest.Definition.Surface == MaterialSurface.Water
@@ -717,6 +732,18 @@ public class FlverResource : IResource, IDisposable
             dest.AlbedoFromColor = true;
             dest.AlbedoTint = Vector3.Min(new Vector3(baseColor[0], baseColor[1], baseColor[2]), Vector3.One);
         }
+        else if (!hasAlbedo && definition.Slots?.Color is { } slotColor)
+        {
+            // ChrCustomize hair-type shaders: the albedo is a material color (MaterialSlotRecipe.Color)
+            dest.AlbedoFromColor = true;
+            dest.AlbedoTint = Vector3.Min(new Vector3(slotColor[0], slotColor[1], slotColor[2]), Vector3.One);
+        }
+
+        // Their cut-out is the normal map's alpha, tested against the recipe's value where the material sets none
+        if (definition.Slots is { AlphaFromNormal: true, AlphaRef: { } slotAlphaRef } && alphaRef == 0)
+        {
+            alphaRef = slotAlphaRef;
+        }
 
         // A recipe tints each of its layers instead
         var tint = definition.Blend != null ? Vector3.One : dest.AlbedoTint;
@@ -835,6 +862,10 @@ public class FlverResource : IResource, IDisposable
         dest.MetallicShading = metallicGame &&
             (dest.UsesMetallic || !dest.TextureResourceFilled[(int)FlverMaterial.TextureType.SpecularTextureResource]);
         specConstants.Add(new SpecializationConstant(12, dest.MetallicShading));
+
+        // The cut-out from the normal map's alpha (MaterialSlotRecipe.AlphaFromNormal), only where a normal is bound
+        specConstants.Add(new SpecializationConstant(13, dest.Definition?.Slots?.AlphaFromNormal == true &&
+            dest.TextureResourceFilled[(int)FlverMaterial.TextureType.NormalTextureResource]));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();

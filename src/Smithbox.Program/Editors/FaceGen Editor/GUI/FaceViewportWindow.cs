@@ -224,6 +224,8 @@ public class FaceViewportWindow
         if (Mesh != null)
             Mesh.DrawFilter = RenderFilter.Meshes;
 
+        LoadCommonTextures();
+
         // Shared textures (the body's common textures) may have come in with the parts' own
         ResourceManager.SchedulePostTextureRefresh();
     }
@@ -287,6 +289,108 @@ public class FaceViewportWindow
             MeshProviderCache.InvalidateUidEntries(MeshUid);
 
         MeshUid = null;
+    }
+
+    /// <summary>
+    /// TEMPORARY (FaceGen texture check): for each part of the shown character, each material's shader, whether the
+    /// project's material bank has its MATBIN, and each texture slot: requested or not, the texture it names, and
+    /// whether that texture has arrived. Written to the log.
+    /// </summary>
+    public void LogTextureReport()
+    {
+        var lines = new List<string> { $"[FaceGen textures] material bank: {(Project.Handler.MaterialData?.PrimaryBank != null ? "loaded" : "NOT LOADED")}, " +
+                                       $"texturing {(CFG.Current.Viewport_Enable_Texturing ? "on" : "OFF")}, common_body requested {CommonTexturesRequested}" };
+
+        if (CharacterComposition.GetCommonTexture(Project) is { } common)
+            lines.Add($"  common_body: {common.Name} at {common.AssetVirtualPath}");
+        else
+            lines.Add("  common_body: not found");
+
+        if (Mesh == null || Appearance == null)
+        {
+            lines.Add("  no mesh");
+        }
+        else
+        {
+            for (var i = 0; i < Appearance.Parts.Count && i < Mesh.Submeshes.Count; i++)
+            {
+                var part = Appearance.Parts[i].Name;
+
+                if (Mesh.Submeshes[i]._meshProvider.ResourceHandle is not ResourceHandle<FlverResource> handle)
+                {
+                    lines.Add($"  {part}: no FLVER handle");
+                    continue;
+                }
+
+                if (!handle.IsLoaded || handle.Get()?.GPUMaterials is not { } materials)
+                {
+                    lines.Add($"  {part}: not loaded ({handle.AccessLevel})");
+                    continue;
+                }
+
+                lines.Add($"  {part}: {materials.Length} materials");
+
+                foreach (var material in materials)
+                {
+                    var matbin = Project.Handler.MaterialData?.PrimaryBank?.GetMatbin(
+                        System.IO.Path.GetFileNameWithoutExtension(material.MaterialName ?? ""));
+
+                    lines.Add($"    {material.FlverMaterialName} | {material.MaterialName} | shader {material.ShaderName} | " +
+                              $"definition {(material.Definition != null ? "yes" : "NO")} | matbin {(matbin != null ? $"{matbin.Samplers.Count} samplers" : "NOT FOUND")}");
+
+                    for (var t = 0; t < material.TextureResources.Length; t++)
+                    {
+                        if (!material.TextureResourceFilled[t])
+                            continue;
+
+                        var texture = material.TextureResources[t];
+                        var state = texture == null ? "requested, not arrived" : texture.IsLoaded ? $"loaded {texture.Name}" : $"handle {texture.Name}, not loaded";
+                        lines.Add($"      {(FlverResource.FlverMaterial.TextureType)t}: {state}");
+                    }
+                }
+            }
+        }
+
+        Smithbox.Log(this, string.Join("\n", lines));
+    }
+
+    private bool CommonTexturesRequested;
+
+    /// <summary>
+    /// The textures faces, hair and bodies share (common_body: the AAT500 hair, beard and skin maps, the eye shadows,
+    /// the eye patches' cloth and leather), which no part's own textures include. Loaded once, as the Model and
+    /// Cutscene Editors load them beside a player character.
+    /// </summary>
+    private void LoadCommonTextures()
+    {
+        if (CommonTexturesRequested || !CFG.Current.Viewport_Enable_Texturing ||
+            CharacterComposition.GetCommonTexture(Project) is not { } common)
+        {
+            return;
+        }
+
+        CommonTexturesRequested = true;
+        _ = LoadCommonTexturesAsync(common);
+    }
+
+    private async System.Threading.Tasks.Task LoadCommonTexturesAsync(ResourceDescriptor common)
+    {
+        try
+        {
+            var options = new LoadOptions
+            {
+                JobName = LOC.Get("FACEGEN_Load_Job_Textures"),
+                Types = ResourceType.Texture,
+                AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+            };
+
+            await ResourceManager.DefaultPool.LoadAssets(Project, new HashSet<ResourceDescriptor> { common }, options);
+            await ResourceManager.LoadMissingTexturesAsync();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("FACEGEN_Load_Textures_Failed"), e);
+        }
     }
 
     /// <summary>Whether anything is shown, so the viewport environment is worth keeping up to date</summary>

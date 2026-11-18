@@ -20,17 +20,20 @@ public sealed record FacePart(string Field, int Value, string? Model, bool IsFal
 public sealed record FacePartChoice(int Value, string Model);
 
 /// <summary>
-/// The part models a face row names. Each part field names a family of models in the parts folder by its number,
-/// with the same numbering in every game (from comparing each game's part files with its face params' values):
+/// The part models a face row names. Each part field names a family of models in the parts folder by its number.
+/// The families are told by what the models are (their material names: Eyebrow_Base, Beard_Hair, Eyelash_Plane,
+/// Leather / Fabric eye patches), and the values by the character creator's own lists (CharMakeMenuListItemParam):
 /// <list type="bullet">
-/// <item>hair: hr_a_NNNN (hr_m_ / hr_f_ in the games with per-sex hair)</item>
+/// <item>hair: hr_a_NNNN, the value itself (ER's hairstyle list: 0-10 and 100-125); hr_m_ / hr_f_ in the games with
+/// per-sex hair</item>
 /// <item>eyes: fg_a_15NN (one model for both eyes, or the left eye where eyeRPartsId names fg_a_16NN)</item>
-/// <item>eyebrows: fg_a_20NN, beards: fg_a_30NN, eyelashes: fg_a_50NN, accessories: fg_a_70NN</item>
+/// <item>eyebrows: fg_a_20NN, beards: fg_a_30NN, accessories (eye patches, blindfolds): fg_a_50NN,
+/// eyelashes: fg_a_70NN</item>
 /// <item>the head: fg_a_01NN, where the hundreds of the value are not part of the model number (ER uses 0-52 and
 /// 100-152 for the same 18 heads)</item>
 /// </list>
-/// Decals (6000s) are texture-only parts, and are not shown. The rules go by field name, so a game shows the parts
-/// whose fields it has.
+/// The NN00 model of a family (and hr_a_0000) has no meshes: it is "none". Decals (6000s) are texture-only parts, and
+/// are not shown. The rules go by field name, so a game shows the parts whose fields it has.
 /// </summary>
 public static class FaceComposition
 {
@@ -47,9 +50,9 @@ public static class FaceComposition
         ["eyeBrowPartsId"] = new("fg", 2000),
         ["beard_partsId"] = new("fg", 3000),
         ["beardPartsId"] = new("fg", 3000),
-        ["eyelash_partsId"] = new("fg", 5000),
-        ["accessories_partsId"] = new("fg", 7000),
-        ["accessoriesPartsId"] = new("fg", 7000),
+        ["eyelash_partsId"] = new("fg", 7000),
+        ["accessories_partsId"] = new("fg", 5000),
+        ["accessoriesPartsId"] = new("fg", 5000),
         ["hair_partsId"] = new("hr", 0),
         ["hairPartsId"] = new("hr", 0),
         ["hairStyle"] = new("hr", 0),

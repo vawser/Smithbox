@@ -18,6 +18,8 @@
     { "Key": "FACEGEN_Menu_Frame_Face", "Text": "Frame Face" },
     { "Key": "FACEGEN_Menu_Frame_Body", "Text": "Frame Body" },
     { "Key": "FACEGEN_Load_Job_Parts", "Text": "Face Parts" },
+    { "Key": "FACEGEN_Load_Job_Textures", "Text": "Face Textures" },
+    { "Key": "FACEGEN_Load_Textures_Failed", "Text": "FaceGen Editor: could not load the shared face and hair textures (common_body)." },
     { "Key": "FACEGEN_Menu_Apply_Shape", "Text": "Apply Shape" },
     { "Key": "FACEGEN_Menu_Apply_Shape_TT", "Text": "Shapes the head, eyes, brows and beard by the face's sliders, as the game does. Off: the parts' base shapes." },
     { "Key": "FACEGEN_Slider_Table_Failed", "Text": "FaceGen Editor: could not read the slider table {0}. Faces are shown in their base shape." },

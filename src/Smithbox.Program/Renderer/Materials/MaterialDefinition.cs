@@ -148,6 +148,13 @@ public class MaterialShaderTable
     public Dictionary<string, MaterialFurRecipe> Fur { get; set; } = new();
 
     /// <summary>
+    /// Shader name to which slot is each role, where the first texture of a role isn't the base one
+    /// ({GAME}_ChrCustomize.json), see <see cref="MaterialSlotRecipe"/>
+    /// </summary>
+    [JsonIgnore]
+    public Dictionary<string, MaterialSlotRecipe> Slots { get; set; } = new();
+
+    /// <summary>
     /// Shader name to texture slot to the param added to the red of that metallic map before it is saturated,
     /// as "param:component" ("" for none), generated from the game's compiled pixel shaders by Tools/ShaderSignature.
     /// </summary>
@@ -293,6 +300,46 @@ public class MaterialFurRecipe
     /// <summary>A texture whose red multiplies the fur, where the red of <see cref="Mask"/> says, see <see cref="MaterialFurMask"/></summary>
     public int? Masked { get; set; }
     public int? Mask { get; set; }
+}
+
+/// <summary>
+/// Which texture slot of a shader is each role, for shaders with several textures of one role where the first is not
+/// the base one ({GAME}_ChrCustomize.json). ER's P[ChrCustomize][Skin] lists its beard stubble (slot 3) and burn scar
+/// (8) albedos before the skin's own (7), and its burn normal (10) after the skin's (0). Null slots are left to the
+/// usual binding.
+/// </summary>
+public class MaterialSlotRecipe
+{
+    public int? Albedo { get; set; }
+    public int? Normal { get; set; }
+
+    /// <summary>
+    /// The material param whose color is the albedo, for shaders with no albedo texture (ER's ChrCustomize hair,
+    /// beards, brows and lashes: snp_0_color_4, snp_0_color_1), as the game multiplies it by the character's color
+    /// </summary>
+    public string? Color { get; set; }
+
+    /// <summary>
+    /// The cut-out is the normal map's alpha, not the albedo's (the ChrCustomize hair-type shaders: their strands'
+    /// alpha is in the normal map they sample, FC_AlphaRef tested against it)
+    /// </summary>
+    public bool AlphaFromNormal { get; set; }
+
+    /// <summary>The alpha test (0 to 1) where the material sets none</summary>
+    public float? AlphaRef { get; set; }
+}
+
+/// <summary>A <see cref="MaterialSlotRecipe"/> with the sampler types and values of one material filled in</summary>
+public class MaterialResolvedSlots
+{
+    public string? AlbedoType { get; set; }
+    public string? NormalType { get; set; }
+
+    /// <summary>The albedo color (rgb, 0 to 1), from the recipe's <see cref="MaterialSlotRecipe.Color"/> param</summary>
+    public float[]? Color { get; set; }
+
+    public bool AlphaFromNormal { get; set; }
+    public float? AlphaRef { get; set; }
 }
 
 /// <summary>A <see cref="MaterialFurRecipe"/> with the textures of one material filled in</summary>
@@ -924,6 +971,9 @@ public class MaterialDefinition
     /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.Fur"/></summary>
     public MaterialResolvedFur? Fur { get; set; }
 
+    /// <summary>Set when the shader has a <see cref="MaterialSlotRecipe"/>: the textures to bind first for each role</summary>
+    public MaterialResolvedSlots? Slots { get; set; }
+
     /// <summary>
     /// Sampler type of each metallic map to what the shader adds to its red before saturating it,
     /// e.g. M[AMSN]'s snp_0_float_0. Only maps whose shader adds something are here
@@ -1012,6 +1062,7 @@ public class MaterialDefinition
         ResolveSurface();
         ResolveWater(table);
         ResolveFur(table);
+        ResolveSlots(table);
         ResolveMetallic(table);
         ResolveEmissiveMask(table);
 
@@ -1119,6 +1170,35 @@ public class MaterialDefinition
                 : sameGroup.Count > 1 ? (sameGroup.Find(m => m.Suffix == albedo.Suffix) ?? sameGroup[0]).Type
                 : sameNumber.Count == 1 ? sameNumber[0].Type
                 : null;
+        }
+    }
+
+    /// <summary>
+    /// The sampler types of the slots the shader's <see cref="MaterialSlotRecipe"/> names, where this material gives
+    /// them a texture. A slot without one is left to the usual binding.
+    /// </summary>
+    private void ResolveSlots(MaterialShaderTable? table)
+    {
+        if (table == null || !table.Slots.TryGetValue(ShaderName, out MaterialSlotRecipe? recipe))
+        {
+            return;
+        }
+
+        string? TypeOf(int? slot) =>
+            slot is { } s ? Samplers.Find(x => x.Slot == s && x.Path != "")?.Type : null;
+
+        var resolved = new MaterialResolvedSlots
+        {
+            AlbedoType = TypeOf(recipe.Albedo),
+            NormalType = TypeOf(recipe.Normal),
+            Color = recipe.Color != null && Params.TryGetValue(recipe.Color, out var color) && color.Length >= 3 ? color : null,
+            AlphaFromNormal = recipe.AlphaFromNormal,
+            AlphaRef = recipe.AlphaRef
+        };
+
+        if (resolved.AlbedoType != null || resolved.NormalType != null || resolved.Color != null || resolved.AlphaFromNormal)
+        {
+            Slots = resolved;
         }
     }
 
