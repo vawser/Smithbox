@@ -358,6 +358,7 @@
     {
       "ID": 303,
       "Event": "PlayAnimation",
+      "Simulation": "AdditiveOneShot",
       "Fields": [
         {
           "Field": "AnimID",

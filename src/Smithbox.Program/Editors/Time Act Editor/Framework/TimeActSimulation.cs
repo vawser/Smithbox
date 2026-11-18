@@ -72,6 +72,9 @@ public enum TimeActSimulationRole
     /// </summary>
     AdditiveAnim,
 
+    /// <summary>From its start, plays the animation of AnimID through once as an additive layer at full weight</summary>
+    AdditiveOneShot,
+
     /// <summary>The animation crossfades from the one before it over the length of the event</summary>
     Blend,
 
@@ -166,11 +169,11 @@ public class TimeActSimulation
 
     /// <summary>
     /// The additive animations the events play at the current time: the animation ID, its weight, and how long it has
-    /// played, one for each AnimType
+    /// played, one for each AnimType. A one-shot plays through once rather than looping
     /// </summary>
-    public List<(long AnimationId, float Weight, float Time)> AdditiveLayers { get; } = new();
+    public List<(long AnimationId, float Weight, float Time, bool OneShot)> AdditiveLayers { get; } = new();
 
-    private readonly Dictionary<long, (long AnimationId, float Weight, float Time)> _additiveByType = new();
+    private readonly Dictionary<long, (long AnimationId, float Weight, float Time, bool OneShot)> _additiveByType = new();
 
     /// <summary>
     /// How opaque the model is at the current time, from the opacity events: 1 is as it is
@@ -265,6 +268,11 @@ public class TimeActSimulation
                     AddAdditive(ev, data, time, playbackEnd);
                     break;
 
+                // Plays on after its event ends, until its clip has
+                case TimeActSimulationRole.AdditiveOneShot when additive:
+                    AddOneShot(ev, time);
+                    break;
+
                 case TimeActSimulationRole.HideWeapon when weapons && active:
                     HideRightWeapon |= GetFloat(ev, "RightHand") is > 0 || GetFloat(ev, "RightHand_WithScabbard") is > 0;
                     HideLeftWeapon |= GetFloat(ev, "LeftHand") is > 0 || GetFloat(ev, "LeftHand_WithScabbard") is > 0;
@@ -277,11 +285,55 @@ public class TimeActSimulation
 
     private void AddAdditive(TAE.Event ev, TimeActData? data, float time, float playbackEnd)
     {
-        if ((GetFloat(ev, "AnimType") ?? GetFloat(ev, "StayAnimType")) is not { } animType || animType < 0)
+        // Events that only play while the character has a SpEffect, unless the user takes it as having it
+        if (!CFG.Current.TimeActEditor_Assume_SpEffects && NeedsSpEffect(ev))
             return;
 
-        var id = (data?.GetAnimationBase(ev) ?? 0) + (long)animType + 10 * (long)(GetFloat(ev, "AnimType2") ?? 0);
+        var weight = GetAdditiveWeight(ev, time, playbackEnd);
+        var animationBase = data?.GetAnimationBase(ev) ?? 0;
+        var step = data?.GetAnimationStep(ev) ?? 1;
 
+        // An animation ID given outright takes the place of the AnimType
+        if (GetFloat(ev, "AnimID") is { } direct && direct >= 0)
+        {
+            _additiveByType[-1 - (long)direct] = ((long)direct, weight, time - ev.StartTime, false);
+            return;
+        }
+
+        // Up to two animation types (SetAdditiveAnim2IfSpEffect plays both)
+        foreach (var field in new[] { "AnimType", "StayAnimType", "StayAnimType1", "StayAnimType2" })
+        {
+            if (GetFloat(ev, field) is not { } animType || animType < 0)
+                continue;
+
+            var id = animationBase + (long)animType * step + 10 * (long)(GetFloat(ev, "AnimType2") ?? 0);
+
+            // The additive animation starts with the event, and each animation type plays one at a time
+            _additiveByType[(long)animType] = (id, weight, time - ev.StartTime, false);
+        }
+    }
+
+    /// <summary>
+    /// A one-shot: the animation of AnimID plays through once from the event's start, at full weight, however long
+    /// the event lasts
+    /// </summary>
+    private void AddOneShot(TAE.Event ev, float time)
+    {
+        if (GetFloat(ev, "AnimID") is not { } id || id < 0)
+            return;
+
+        // Each event is its own, so two in a row both play; the playback drops it once its clip has run out
+        AdditiveLayers.Add(((long)id, 1, time - ev.StartTime, true));
+    }
+
+    // The SpEffectID_Exist (or _IsExist) of the event names a SpEffect the character must have
+    private static bool NeedsSpEffect(TAE.Event ev)
+    {
+        return (GetFloat(ev, "SpEffectID_Exist") ?? GetFloat(ev, "SpEffectID_IsExist")) is > 0;
+    }
+
+    private static float GetAdditiveWeight(TAE.Event ev, float time, float playbackEnd)
+    {
         float weight;
 
         if (GetFloat(ev, "WeightAtEventStart") is { } start && GetFloat(ev, "WeightAtEventEnd") is { } end)
@@ -291,11 +343,10 @@ public class TimeActSimulation
         }
         else
         {
-            weight = GetFloat(ev, "Weight") ?? 1;
+            weight = GetFloat(ev, "Weight") ?? GetFloat(ev, "AnimWeight") ?? 1;
         }
 
-        // The additive animation starts with the event, and each AnimType plays one at a time
-        _additiveByType[(long)animType] = (id, weight, time - ev.StartTime);
+        return weight;
     }
 
     /// <summary>

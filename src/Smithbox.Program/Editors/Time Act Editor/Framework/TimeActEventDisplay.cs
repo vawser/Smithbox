@@ -44,6 +44,12 @@ public class TimeActEventDisplay
     private readonly List<Shape> _shapes = new();
     private int _usedShapes;
 
+    // The wedges of the throws on show, one per ThrowParam reach, built once and moved with the character
+    private readonly Dictionary<TimeActThrowRange, (DebugPrimitiveRenderableProxy Proxy, DbgPrimLineBatch Lines)> _throwRanges = new();
+    private readonly HashSet<TimeActThrowRange> _usedThrowRanges = new();
+
+    private const int ThrowArcSegments = 16;
+
     private TimeActContainer? _dummySource;
     private readonly Dictionary<int, List<Entity>> _bodyDummies = new();
     private readonly Dictionary<Entity, Vector3> _dummyRest = new();
@@ -113,6 +119,7 @@ public class TimeActEventDisplay
     public void Update(ModelAnimator? animator, float time, float playbackEnd)
     {
         _usedShapes = 0;
+        _usedThrowRanges.Clear();
 
         var animation = _view.Selection.SelectedAnimation;
         var container = _view.Selection.SelectedTimeActModelWrapper?.Container;
@@ -155,12 +162,23 @@ public class TimeActEventDisplay
                 {
                     DrawShape(shape, visual.Kind, scale, container, animator);
                 }
+
+                foreach (TimeActThrowRange throwRange in visual.ThrowRanges ?? Array.Empty<TimeActThrowRange>())
+                {
+                    DrawThrowRange(throwRange, container, animator);
+                }
             }
         }
 
         for (var i = _usedShapes; i < _shapes.Count; i++)
         {
             _shapes[i].Hide();
+        }
+
+        foreach (var (range, (proxy, _)) in _throwRanges)
+        {
+            if (!_usedThrowRanges.Contains(range))
+                proxy.Visible = false;
         }
     }
 
@@ -193,6 +211,81 @@ public class TimeActEventDisplay
         _view.Playback.WeaponDisplay.ClearPlacements();
 
         Invalidate();
+    }
+
+    /// <summary>
+    /// Draws where a throw can catch the other character: a wedge out from the thrower's base, turned the way the
+    /// thrower faces, between the lower and upper heights
+    /// </summary>
+    private void DrawThrowRange(TimeActThrowRange range, TimeActContainer container, ModelAnimator? animator)
+    {
+        if (range.Distance <= 0 || !_usedThrowRanges.Add(range))
+            return;
+
+        if (!_throwRanges.TryGetValue(range, out var entry))
+        {
+            var lines = new DbgPrimLineBatch(BuildThrowWedge(range));
+            var proxy = new DebugPrimitiveRenderableProxy(_view.RenderScene.OpaqueRenderables, lines)
+            {
+                Pickable = false,
+                BaseColor = GetColor(TimeActVisualKind.Throw),
+                HighlightedColor = GetColor(TimeActVisualKind.Throw),
+                RenderOverlay = true,
+                Visible = false
+            };
+
+            entry = (proxy, lines);
+            _throwRanges[range] = entry;
+        }
+
+        // The root carries the character's facing, from the root motion, the turn and a combo's offset
+        Matrix4x4 root = animator?.RootMotion ?? Matrix4x4.Identity;
+        Matrix4x4 facing = root with { M41 = 0, M42 = 0, M43 = 0 };
+
+        Vector3 origin = range.BaseDummy >= 0 && GetDummyPosition(range.BaseDummy, container, animator) is { } dummy
+            ? dummy
+            : root.Translation;
+
+        entry.Proxy.World = facing * Matrix4x4.CreateTranslation(origin);
+        entry.Proxy.Visible = true;
+    }
+
+    private static List<(Vector3 A, Vector3 B)> BuildThrowWedge(TimeActThrowRange range)
+    {
+        var lines = new List<(Vector3 A, Vector3 B)>();
+
+        // Characters face along +Z in the space of their skeleton
+        var halfAngle = Math.Clamp(range.HalfAngle, 0, 180) * MathF.PI / 180;
+        var full = range.HalfAngle >= 180;
+
+        Vector3 Point(float angle, float height) =>
+            new(MathF.Sin(angle) * range.Distance, height, MathF.Cos(angle) * range.Distance);
+
+        foreach (var height in new[] { -range.Lower, range.Upper })
+        {
+            for (var i = 0; i < ThrowArcSegments; i++)
+            {
+                var a = -halfAngle + 2 * halfAngle * i / ThrowArcSegments;
+                var b = -halfAngle + 2 * halfAngle * (i + 1) / ThrowArcSegments;
+                lines.Add((Point(a, height), Point(b, height)));
+            }
+
+            // The sides of the wedge, back to the base
+            if (!full)
+            {
+                lines.Add((new Vector3(0, height, 0), Point(-halfAngle, height)));
+                lines.Add((new Vector3(0, height, 0), Point(halfAngle, height)));
+            }
+        }
+
+        // The edges between the heights, and the way the thrower faces
+        lines.Add((Point(-halfAngle, -range.Lower), Point(-halfAngle, range.Upper)));
+        lines.Add((Point(halfAngle, -range.Lower), Point(halfAngle, range.Upper)));
+        lines.Add((Point(0, -range.Lower), Point(0, range.Upper)));
+        lines.Add((new Vector3(0, -range.Lower, 0), new Vector3(0, range.Upper, 0)));
+        lines.Add((Vector3.Zero, Point(0, 0)));
+
+        return lines;
     }
 
     private void DrawShape(TimeActVisualShape shape, TimeActVisualKind kind, float scale, TimeActContainer container,

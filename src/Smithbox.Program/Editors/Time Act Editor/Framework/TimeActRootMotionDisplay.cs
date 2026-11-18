@@ -63,11 +63,13 @@ public class TimeActRootMotionDisplay
         EnsureMarker();
 
         // Where the root is now, whether or not the model is being moved by it
-        _marker!.World = rootMotion.Sample(animator.Time, scale);
+        _marker!.World = rootMotion.Sample(animator.Time, scale) * animator.RootOffset;
         _marker.Visible = true;
 
         if (_path != null)
         {
+            // The path starts where the animation does, which a combo moves on from the origin
+            _path.World = animator.RootOffset;
             _path.Visible = true;
         }
     }

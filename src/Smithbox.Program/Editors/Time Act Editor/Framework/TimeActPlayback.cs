@@ -6,6 +6,7 @@ using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -173,6 +174,7 @@ public class TimeActPlayback
             animator.RootMotionScale = new HavokRootMotionScale(CFG.Current.TimeActEditor_Root_Motion_Scale_Ground,
                 CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn);
             animator.Turn = Simulation.Turn * MathF.PI / 180;
+            animator.RootOffset = _rootOffset;
 
             UpdateLayers(animator);
 
@@ -260,11 +262,19 @@ public class TimeActPlayback
             }
         }
 
-        foreach (var (id, weight, time) in Simulation.AdditiveLayers)
+        foreach (var (id, weight, time, oneShot) in Simulation.AdditiveLayers)
         {
-            if (GetLayerClip(animator, id) is { Duration: > 0 } clip)
+            if (GetLayerClip(animator, id) is not { Duration: > 0 } clip)
+                continue;
+
+            // A one-shot plays through once and is done; the others loop for as long as their event lasts
+            if (oneShot)
             {
-                // It loops for as long as its event lasts
+                if (time < clip.Duration)
+                    _layers.Add((clip, time, weight, true));
+            }
+            else
+            {
                 _layers.Add((clip, time % clip.Duration, weight, true));
             }
         }
@@ -306,6 +316,54 @@ public class TimeActPlayback
         _layerClips[id] = clip;
 
         return clip;
+    }
+
+    // Where the root motion of the animation starts from, and where the last one left the character until the next
+    // one's clip is in
+    private Matrix4x4 _rootOffset = Matrix4x4.Identity;
+    private Matrix4x4? _carriedRoot;
+
+    /// <summary>
+    /// Puts the character back at the origin
+    /// </summary>
+    public void ResetRootOffset()
+    {
+        _rootOffset = Matrix4x4.Identity;
+        _carriedRoot = null;
+    }
+
+    /// <summary>
+    /// Remembers where the root motion (and any turn) has taken the character, for the next animation of a combo to
+    /// carry on from. Call before selecting that animation.
+    /// </summary>
+    public void CarryRootMotion()
+    {
+        if (Animator is { } animator)
+        {
+            _carriedRoot = animator.RootMotion;
+        }
+    }
+
+    /// <summary>
+    /// Starts the root motion of the animation that has just come in from where <see cref="CarryRootMotion" /> left the
+    /// character, so that the animation's root at <paramref name="startTime" /> is there
+    /// </summary>
+    public void StartFromCarriedRoot(float startTime)
+    {
+        if (_carriedRoot is not { } carried)
+            return;
+
+        _carriedRoot = null;
+
+        Matrix4x4 start = Matrix4x4.Identity;
+
+        if (CFG.Current.TimeActEditor_Apply_Root_Motion && Animator?.CurrentClip?.RootMotion is { } rootMotion)
+        {
+            start = rootMotion.Sample(startTime, new HavokRootMotionScale(CFG.Current.TimeActEditor_Root_Motion_Scale_Ground,
+                CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn));
+        }
+
+        _rootOffset = Matrix4x4.Invert(start, out Matrix4x4 inverseStart) ? inverseStart * carried : carried;
     }
 
     private void UpdateAutoPlay()
@@ -376,6 +434,12 @@ public class TimeActPlayback
         Sounds.StopAll();
         Rumble.StopAll();
 
+        // Back to the start, and to the origin from wherever a combo had taken the character
+        if (View.ComboBuilderTool?.IsPlaying != true)
+        {
+            ResetRootOffset();
+        }
+
         Seek(0);
     }
 
@@ -417,6 +481,7 @@ public class TimeActPlayback
         _blendFrom = null;
         _blendStart = -1;
         _layerClips.Clear();
+        ResetRootOffset();
         _layerPackage = null;
 
         _target = null;
@@ -434,6 +499,12 @@ public class TimeActPlayback
     /// </summary>
     public void OnAnimationChanged()
     {
+        // Only a combo carries the character on from where the last animation left it
+        if (View.ComboBuilderTool?.IsPlaying != true)
+        {
+            ResetRootOffset();
+        }
+
         // The pose crossfades from where the last animation had got to, once the new clip is in
         _blendFrom = ShouldBlend() && Animator is { CurrentClip: { } previous } animator
             ? (previous, animator.Time)

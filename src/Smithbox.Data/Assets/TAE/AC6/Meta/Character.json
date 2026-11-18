@@ -466,6 +466,8 @@
     {
       "ID": 303,
       "Event": "SetAnimOverlay303",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 40000,
       "Fields": [
         {
           "Field": "AnimID",

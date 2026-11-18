@@ -125,6 +125,7 @@ public class TimeActComboBuilderTool
 
             playback.Loop = false;
             playback.Seek(GetStartTime(step));
+            playback.StartFromCarriedRoot(GetStartTime(step));
             playback.Play();
 
             return;
@@ -171,6 +172,9 @@ public class TimeActComboBuilderTool
 
         ActiveSource = source;
 
+        // A combo starts where the character stands, at the origin
+        View.Playback.ResetRootOffset();
+
         BeginStep(index, 0);
     }
 
@@ -188,6 +192,16 @@ public class TimeActComboBuilderTool
             }
 
             next = 0;
+        }
+
+        // The next step carries on from where this one left the character; a combo that loops starts over where it began
+        if (next == 0)
+        {
+            View.Playback.ResetRootOffset();
+        }
+        else
+        {
+            View.Playback.CarryRootMotion();
         }
 
         BeginStep(next, 0);

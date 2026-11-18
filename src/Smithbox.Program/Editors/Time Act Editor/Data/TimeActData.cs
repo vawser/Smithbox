@@ -39,6 +39,7 @@ public class TimeActData : IDisposable
         // Keyed by event type. Only the events the meta gives a known role are here.
         public Dictionary<int, TimeActSimulationRole> SimulationRoles = new();
         public Dictionary<int, long> AnimationBases = new();
+        public Dictionary<int, long> AnimationSteps = new();
 
         public void BuildIndex()
         {
@@ -46,6 +47,7 @@ public class TimeActData : IDisposable
             AnnotationFields.Clear();
             SimulationRoles.Clear();
             AnimationBases.Clear();
+            AnimationSteps.Clear();
 
             foreach (var ev in Meta.Events)
             {
@@ -53,6 +55,7 @@ public class TimeActData : IDisposable
                 {
                     SimulationRoles.TryAdd(ev.ID, role);
                     AnimationBases.TryAdd(ev.ID, ev.AnimationBase);
+                    AnimationSteps.TryAdd(ev.ID, ev.AnimationStep);
                 }
 
                 foreach (var field in ev.Fields)
@@ -126,6 +129,17 @@ public class TimeActData : IDisposable
             return TimeActSimulationRole.None;
 
         return def.SimulationRoles.GetValueOrDefault(ev.Type, TimeActSimulationRole.None);
+    }
+
+    /// <summary>
+    /// The AnimationStep of the meta of the event, which its AnimType is multiplied by, or 1
+    /// </summary>
+    public long GetAnimationStep(TAE.Event ev)
+    {
+        if (ev?.Template is not { } eventTemplate || !EventDefs.TryGetValue(eventTemplate, out var def))
+            return 1;
+
+        return def.AnimationSteps.GetValueOrDefault(ev.Type, 1);
     }
 
     /// <summary>

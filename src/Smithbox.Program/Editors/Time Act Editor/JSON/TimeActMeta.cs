@@ -36,6 +36,12 @@ public class TimeActEventMeta
     /// </summary>
     public long AnimationBase { get; set; } = 0;
 
+    /// <summary>
+    /// For an AdditiveAnim event: what its AnimType is multiplied by before AnimationBase is added (Sekiro's face
+    /// animations are 10 apart)
+    /// </summary>
+    public long AnimationStep { get; set; } = 1;
+
     public List<TimeActField> Fields { get; set; } = new();
 }
 

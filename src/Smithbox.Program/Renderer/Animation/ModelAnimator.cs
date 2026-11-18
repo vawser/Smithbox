@@ -100,6 +100,25 @@ public sealed class ModelAnimator : IDisposable
 
     private float _turn;
 
+    /// <summary>
+    ///     Where the root motion starts from: applied after it and the turn, whether or not the root motion is, so that
+    ///     an animation can carry on from where the one before it left the character.
+    /// </summary>
+    public Matrix4x4 RootOffset
+    {
+        get => _rootOffset;
+        set
+        {
+            if (_rootOffset != value)
+            {
+                _rootOffset = value;
+                _poseDirty = true;
+            }
+        }
+    }
+
+    private Matrix4x4 _rootOffset = Matrix4x4.Identity;
+
     private PoseLayer[] _layers = Array.Empty<PoseLayer>();
 
     /// <summary>
@@ -403,6 +422,12 @@ public sealed class ModelAnimator : IDisposable
             Vector3 pivot = RootMotion.Translation;
             RootMotion *= Matrix4x4.CreateTranslation(-pivot) * Matrix4x4.CreateRotationY(_turn) *
                           Matrix4x4.CreateTranslation(pivot);
+        }
+
+        // Where the clip starts from, such as where the last animation of a combo left the character
+        if (!_rootOffset.IsIdentity)
+        {
+            RootMotion *= _rootOffset;
         }
 
         if (!RootMotion.IsIdentity)

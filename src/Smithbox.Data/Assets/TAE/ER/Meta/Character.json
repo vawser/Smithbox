@@ -658,6 +658,13 @@
       ]
     },
     {
+      "ID": 602,
+      "Event": "SetAdditiveAnim_602",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 40000,
+      "Fields": []
+    },
+    {
       "ID": 606,
       "Event": "JiggleModifier",
       "Fields": [
@@ -678,6 +685,8 @@
     {
       "ID": 607,
       "Event": "SetAdditiveAnimIfSpEffect",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 40000,
       "Fields": [
         {
           "Field": "SpEffectID_Exist",
@@ -694,6 +703,8 @@
     {
       "ID": 609,
       "Event": "SetAdditiveAnim2IfSpEffect",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 40000,
       "Fields": [
         {
           "Field": "SpEffectID_IsExist",

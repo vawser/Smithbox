@@ -828,6 +828,7 @@ public class CFG
     public bool TimeActEditor_Sim_Blending = true;
     public bool TimeActEditor_Blend_On_Animation_Change = false;
     public bool TimeActEditor_Sim_Opacity = true;
+    public bool TimeActEditor_Assume_SpEffects = true;
     public bool TimeActEditor_Play_Event_Sounds = true;
     public bool TimeActEditor_Display_Effects = true;
     public float TimeActEditor_Event_Marker_Size = 1f;

@@ -34,7 +34,16 @@ public sealed record TimeActVisualShape(int Dummy, int EndDummy, float Radius, i
 /// <param name="Kind">What the event is.</param>
 /// <param name="Shapes">The shapes to draw. Empty if the event couldn't be resolved.</param>
 /// <param name="Status">Explains how the event was resolved, or why it couldn't be.</param>
-public sealed record TimeActEventVisual(TimeActVisualKind Kind, IReadOnlyList<TimeActVisualShape> Shapes, string Status);
+/// <param name="ThrowRanges">For a throw, the reaches its ThrowParam rows give, if any were found.</param>
+public sealed record TimeActEventVisual(TimeActVisualKind Kind, IReadOnlyList<TimeActVisualShape> Shapes, string Status,
+    IReadOnlyList<TimeActThrowRange>? ThrowRanges = null);
+
+/// <summary>
+/// Where a throw can catch the other character, from its ThrowParam row: within Distance of the base, within HalfAngle
+/// degrees of the way the thrower faces, and between Lower below and Upper above it.
+/// </summary>
+/// <param name="BaseDummy">The dummy poly the range is measured from (judgeRangeBasePosDmyId1), or -1 for the character's origin.</param>
+public sealed record TimeActThrowRange(int RowId, float Distance, float HalfAngle, float Upper, float Lower, int BaseDummy);
 
 /// <summary>
 /// Works out what the events of an animation look like in the viewport. Attacks go from the event to a
@@ -51,6 +60,10 @@ public class TimeActEventResolver
     private const int BehaviorRefBullet = 1;
 
     private const int AttackHitCount = 16;
+
+    // An AtkParam row is a throw when its throwFlag is this (DS3 names the field ThrowFlag; the lookup ignores case)
+    private const string ThrowFlagField = "throwFlag";
+    private const int ThrowFlagThrow = 2;
 
     // Dummy polys over 1000 name the model they are on
     private const int DummyGroupSize = 1000;
@@ -187,8 +200,106 @@ public class TimeActEventResolver
                 GetWeaponPartOfDummy(container, dummy, weaponPart)));
         }
 
-        return new TimeActEventVisual(kind, shapes,
-            LOC.Get("TAE_EventDisplay_Attack", behavior!.ID, attackId, shapes.Count));
+        var status = LOC.Get("TAE_EventDisplay_Attack", behavior!.ID, attackId, shapes.Count);
+
+        // An attack whose AtkParam has a throwFlag of 2 is a throw, whatever its event: it has the reach in which it
+        // catches the other character, from the ThrowParam rows of its throwTypeId
+        var isThrow = CharacterComposition.HasField(attack, ThrowFlagField) &&
+                      CharacterComposition.GetValue(attack, ThrowFlagField) == ThrowFlagThrow;
+
+        if (!isThrow)
+            return new TimeActEventVisual(kind, shapes, status);
+
+        var ranges = FindThrowRanges(attack, container);
+
+        // TEMPORARY: throw reach diagnostics, to be removed once the wedge is confirmed in the app
+        Smithbox.Log(this, $"[TAE Throw] {container.Name} event type {ev.Type} at {ev.StartTime:0.000}s: " +
+            $"BehaviorParam {behavior.ID}, AtkParam {attackId}, throwFlag 2, throwTypeId " +
+            $"{CharacterComposition.GetValue(attack, "throwTypeId")}, ThrowParam rows: " +
+            (ranges.Count > 0 ? string.Join(", ", ranges.Select(r => $"{r.Range.RowId} (Dist {r.Range.Distance:0.00})")) : "none"));
+
+        if (ranges.Count == 0)
+        {
+            return new TimeActEventVisual(TimeActVisualKind.Throw, shapes,
+                $"{status}\n{LOC.Get("TAE_EventDisplay_Throw_No_Range", container.Name)}");
+        }
+
+        var lines = ranges.Select(r =>
+            LOC.Get("TAE_EventDisplay_Throw_Range", r.Range.RowId, r.Range.Distance, r.Range.HalfAngle, r.Facing));
+
+        return new TimeActEventVisual(TimeActVisualKind.Throw, shapes, $"{status}\n{string.Join("\n", lines)}",
+            ranges.Select(r => r.Range).ToList());
+    }
+
+    // ThrowParam rows are numbered in a different way in each game, but always end in two digits that the AtkParam's
+    // throwTypeId picks among the rows of a thrower (ER: 34201000 Blaidd grab #1, 34201010 grab #2 for throwTypeId 10)
+    private const int ThrowVariantDigits = 100;
+
+    /// <summary>
+    /// The ThrowParam rows a throw attack of the character can start: those with the character as the thrower
+    /// (AtkChrId) against no particular character (DefChrId 0), whose ID ends in the throwTypeId of the AtkParam row. A
+    /// character can have several (a grab, a backstab, a riposte after a parry), for whichever state the other is in.
+    /// Without a row ending in the offset, a throwTypeId of 0 takes all of the thrower's rows (DS1R's player rows are
+    /// numbered 1 to 4). Also gives the facing the other character must have (DiffAngMin to DiffAngMax).
+    /// </summary>
+    private List<(TimeActThrowRange Range, string Facing)> FindThrowRanges(Param.Row attack, TimeActContainer container)
+    {
+        var ranges = new List<(TimeActThrowRange Range, string Facing)>();
+
+        if (_project.Handler.ParamData?.PrimaryBank?.Params is not { } bank || !bank.TryGetValue("ThrowParam", out Param? throws))
+            return ranges;
+
+        var offset = CharacterComposition.HasField(attack, "throwTypeId") ? CharacterComposition.GetValue(attack, "throwTypeId") : 0;
+
+        // The player is 0; a character variant (c2011) can share the rows of its base (c2010)
+        var character = IsPlayer(container) ? 0
+            : container.Name.Length == 5 && int.TryParse(container.Name.AsSpan(1), out var number) ? number : -1;
+
+        if (character < 0)
+            return ranges;
+
+        foreach (var thrower in character == 0 ? new[] { 0 } : new[] { character, character / 10 * 10 })
+        {
+            var own = throws.Rows.Where(r => r.ID > 0 && CharacterComposition.GetValue(r, "AtkChrId") == thrower &&
+                                             CharacterComposition.GetValue(r, "DefChrId") == 0).ToList();
+
+            var picked = own.Where(r => r.ID % ThrowVariantDigits == offset % ThrowVariantDigits).ToList();
+
+            if (picked.Count == 0 && offset == 0)
+                picked = own;
+
+            foreach (Param.Row row in picked)
+            {
+                if (ToThrowRange(row) is { } range)
+                    ranges.Add(range);
+            }
+
+            if (ranges.Count > 0)
+                break;
+        }
+
+        return ranges;
+    }
+
+    private static (TimeActThrowRange Range, string Facing)? ToThrowRange(Param.Row row)
+    {
+        if (CharacterComposition.GetFloat(row, "Dist") <= 0)
+            return null;
+
+        var baseDummy = CharacterComposition.HasField(row, "judgeRangeBasePosDmyId1")
+            ? CharacterComposition.GetValue(row, "judgeRangeBasePosDmyId1")
+            : -1;
+
+        var range = new TimeActThrowRange(row.ID,
+            CharacterComposition.GetFloat(row, "Dist"),
+            CharacterComposition.GetFloat(row, "diffAngMyToDef"),
+            CharacterComposition.GetFloat(row, "upperYRange"),
+            CharacterComposition.GetFloat(row, "lowerYRange"),
+            baseDummy);
+
+        var facing = $"{CharacterComposition.GetFloat(row, "DiffAngMin"):0}..{CharacterComposition.GetFloat(row, "DiffAngMax"):0}";
+
+        return (range, facing);
     }
 
     private TimeActEventVisual ResolveBullet(TAE.Event ev, TimeActContainer container)

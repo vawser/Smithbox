@@ -81,6 +81,14 @@ public class TimeActSimulationTool
         ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Additive_Anims")}##timeActSimAdditive", ref CFG.Current.TimeActEditor_Sim_Additive_Anims);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Additive_Anims_TT"));
 
+        if (CFG.Current.TimeActEditor_Sim_Additive_Anims)
+        {
+            ImGui.Indent();
+            ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Assume_SpEffects")}##timeActSimAssumeSpEffects", ref CFG.Current.TimeActEditor_Assume_SpEffects);
+            GUI.Tooltip(LOC.Get("TAE_SimulationTool_Assume_SpEffects_TT"));
+            ImGui.Unindent();
+        }
+
         ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blending")}##timeActSimBlending", ref CFG.Current.TimeActEditor_Sim_Blending);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Blending_TT"));
 

@@ -570,6 +570,14 @@
       "Fields": []
     },
     {
+      "ID": 607,
+      "Event": "FaceAnimation",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 790000,
+      "AnimationStep": 10,
+      "Fields": []
+    },
+    {
       "ID": 710,
       "Event": "HideEquippedWeapon",
       "Simulation": "HideWeapon",

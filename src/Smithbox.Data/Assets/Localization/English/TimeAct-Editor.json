@@ -3332,6 +3332,22 @@
     {
       "Key": "TAE_SimulationTool_Opacity_Status",
       "Text": "The model is at {0}% opacity at the current time."
+    },
+    {
+      "Key": "TAE_SimulationTool_Assume_SpEffects",
+      "Text": "Assume SpEffect Conditions Met"
+    },
+    {
+      "Key": "TAE_SimulationTool_Assume_SpEffects_TT",
+      "Text": "If enabled, additive animation events that only play while the character has a SpEffect (their SpEffectID_Exist is set) play as if it does. If disabled, they are skipped."
+    },
+    {
+      "Key": "TAE_EventDisplay_Throw_Range",
+      "Text": "Throw reach (ThrowParam {0}): {1:0.00} m, within {2:0} degrees of facing; the other character's facing difference must be {3} degrees."
+    },
+    {
+      "Key": "TAE_EventDisplay_Throw_No_Range",
+      "Text": "A throw (throwFlag 2), but no ThrowParam row has {0} as its thrower."
     }
   ]
 }
