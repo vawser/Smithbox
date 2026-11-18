@@ -155,7 +155,7 @@ public class TimeActSoundPlayback : IDisposable
     {
         foreach (var ev in animation.Events)
         {
-            if (ev.StartTime <= from || ev.StartTime > to)
+            if (ev.StartTime <= from || ev.StartTime > to || !_view.Playback.Simulation.IsEventEnabled(ev))
                 continue;
 
             if (Resolve(ev) is not { } match)

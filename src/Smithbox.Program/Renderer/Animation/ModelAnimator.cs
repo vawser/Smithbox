@@ -63,6 +63,24 @@ public sealed class ModelAnimator : IDisposable
     }
 
     /// <summary>
+    ///     How much of the root motion is applied, when it is.
+    /// </summary>
+    public HavokRootMotionScale RootMotionScale
+    {
+        get => _rootMotionScale;
+        set
+        {
+            if (_rootMotionScale != value)
+            {
+                _rootMotionScale = value;
+                _poseDirty = true;
+            }
+        }
+    }
+
+    private HavokRootMotionScale _rootMotionScale = HavokRootMotionScale.One;
+
+    /// <summary>
     ///     How far the root motion has moved the model at the current pose, or identity if it isn't applied.
     /// </summary>
     public Matrix4x4 RootMotion { get; private set; } = Matrix4x4.Identity;
@@ -329,7 +347,7 @@ public sealed class ModelAnimator : IDisposable
         // Applied to every node, so that the skinning, the parts following this model and anything
         // attached to its nodes all move along with it
         RootMotion = ApplyRootMotion && CurrentClip?.RootMotion is { } rootMotion
-            ? rootMotion.Sample(Time)
+            ? rootMotion.Sample(Time, _rootMotionScale)
             : Matrix4x4.Identity;
 
         if (!RootMotion.IsIdentity)

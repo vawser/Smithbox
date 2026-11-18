@@ -71,6 +71,7 @@ public class TimeActPlayback
 
         _panel = new AnimationPreviewPanel(project);
 
+        Simulation = new TimeActSimulation(view, project);
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
         Sounds = new TimeActSoundPlayback(view, project);
@@ -88,6 +89,16 @@ public class TimeActPlayback
     public TimeActSoundPlayback Sounds { get; }
 
     public TimeActRootMotionDisplay RootMotionDisplay { get; }
+
+    /// <summary>
+    /// What the events do to the playback, such as change its speed or switch other events off by their StateInfo
+    /// </summary>
+    public TimeActSimulation Simulation { get; }
+
+    /// <summary>
+    /// How fast the clock really runs: the speed set in the editor, times what the events at the current time ask for
+    /// </summary>
+    public float EffectiveSpeed => Speed * Simulation.SpeedMultiplier;
 
     private ModelAnimator? Animator => _target != null ? _panel.GetAnimator(_target) : null;
 
@@ -131,13 +142,18 @@ public class TimeActPlayback
         // The clock waits while the animation's effects load (read last frame), so they don't stall as they first show
         var held = Effects.IsLoading;
 
+        // From the time the last frame ended at, which is where the clock is about to move on from
+        Simulation.Update(View.Selection.SelectedAnimation, _time, PlaybackDuration);
+
         if (animator != null)
         {
             animator.Loop = Loop;
-            animator.Speed = held ? 0 : Speed;
+            animator.Speed = held ? 0 : EffectiveSpeed;
 
             // Takes effect with the next pose, which a change of this asks for
             animator.ApplyRootMotion = CFG.Current.TimeActEditor_Apply_Root_Motion;
+            animator.RootMotionScale = new HavokRootMotionScale(CFG.Current.TimeActEditor_Root_Motion_Scale_Ground,
+                CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn);
 
             _time = animator.Time;
             _playing = animator.Playing;
@@ -176,7 +192,7 @@ public class TimeActPlayback
     {
         var duration = GetEventDuration();
 
-        _time += ImGui.GetIO().DeltaTime * Speed;
+        _time += ImGui.GetIO().DeltaTime * EffectiveSpeed;
 
         if (_time >= duration)
         {

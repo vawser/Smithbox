@@ -475,6 +475,12 @@
       ]
     },
     {
+      "ID": 603,
+      "Event": "DebugAnimSpeed",
+      "Simulation": "SpeedFrames",
+      "Fields": []
+    },
+    {
       "ID": 785,
       "Event": "SpawnChrFinderBullet",
       "Fields": [

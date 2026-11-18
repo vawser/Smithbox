@@ -25,6 +25,12 @@ public class TimeActEventMeta
     /// </summary>
     public string Event { get; set; } = "";
 
+    /// <summary>
+    /// What the viewport simulates for the event, as a <see cref="TimeActSimulationRole" />, or empty for nothing.
+    /// The simulation reads the parameters it needs by name, so an event only takes part if its def has them.
+    /// </summary>
+    public string Simulation { get; set; } = "";
+
     public List<TimeActField> Fields { get; set; } = new();
 }
 

@@ -134,7 +134,7 @@ public class TimeActEventDisplay
 
             foreach (TAE.Event ev in animation.Events)
             {
-                if (time < ev.StartTime || time >= ev.MemeEndTime)
+                if (time < ev.StartTime || time >= ev.MemeEndTime || !_view.Playback.Simulation.IsEventEnabled(ev))
                     continue;
 
                 if (GetVisual(ev, container) is not { } visual)

@@ -145,7 +145,7 @@ public sealed class TimeActEffectPlayback : IDisposable
         {
             var ev = animation.Events[i];
 
-            if (!display.IsEffectEvent(ev, container) || GetEffectId(ev) is not { } effectId)
+            if (!_view.Playback.Simulation.IsEventEnabled(ev) || !display.IsEffectEvent(ev, container) || GetEffectId(ev) is not { } effectId)
                 continue;
 
             var oneShot = (ev.TypeName ?? "").Contains("OneShot", StringComparison.OrdinalIgnoreCase);

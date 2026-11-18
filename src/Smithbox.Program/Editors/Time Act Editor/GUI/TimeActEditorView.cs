@@ -63,6 +63,7 @@ public class TimeActEditorView : IEditorView
     public TimeActComboBuilderTool ComboBuilderTool;
     public TimeActHistoryTool HistoryTool;
     public TimeActFiltersTool FiltersTool;
+    public TimeActSimulationTool SimulationTool;
     public CharacterReloaderTool CharacterReloader;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
@@ -109,6 +110,7 @@ public class TimeActEditorView : IEditorView
         ComboBuilderTool = new TimeActComboBuilderTool(this, project);
         HistoryTool = new TimeActHistoryTool(this, project);
         FiltersTool = new TimeActFiltersTool(this, project);
+        SimulationTool = new TimeActSimulationTool(this, project);
         CharacterReloader = new CharacterReloaderTool(project);
     }
 

@@ -24,6 +24,7 @@ public class TimeActRootMotionDisplay
     private readonly TimeActEditorView _view;
 
     private HavokRootMotion? _pathSource;
+    private HavokRootMotionScale _pathScale = HavokRootMotionScale.One;
     private DebugPrimitiveRenderableProxy? _path;
     private DbgPrimLineBatch? _pathLines;
 
@@ -45,15 +46,17 @@ public class TimeActRootMotionDisplay
             return;
         }
 
-        if (rootMotion != _pathSource)
+        var scale = animator.RootMotionScale;
+
+        if (rootMotion != _pathSource || scale != _pathScale)
         {
-            BuildPath(rootMotion);
+            BuildPath(rootMotion, scale);
         }
 
         EnsureMarker();
 
         // Where the root is now, whether or not the model is being moved by it
-        _marker!.World = rootMotion.Sample(animator.Time);
+        _marker!.World = rootMotion.Sample(animator.Time, scale);
         _marker.Visible = true;
 
         if (_path != null)
@@ -62,18 +65,19 @@ public class TimeActRootMotionDisplay
         }
     }
 
-    private void BuildPath(HavokRootMotion rootMotion)
+    private void BuildPath(HavokRootMotion rootMotion, HavokRootMotionScale scale)
     {
         ReleasePath();
 
         _pathSource = rootMotion;
+        _pathScale = scale;
 
         var lines = new List<(Vector3 A, Vector3 B)>();
 
         for (var i = 1; i < rootMotion.SampleCount && lines.Count < DbgPrimLineBatch.MaxLines; i++)
         {
-            Vector3 a = rootMotion.GetSamplePosition(i - 1);
-            Vector3 b = rootMotion.GetSamplePosition(i);
+            Vector3 a = rootMotion.GetSamplePosition(i - 1, scale);
+            Vector3 b = rootMotion.GetSamplePosition(i, scale);
 
             if (a != b)
             {

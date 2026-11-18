@@ -813,6 +813,11 @@ public class CFG
     public bool TimeActEditor_Display_Attack_Capsules = true;
     public bool TimeActEditor_Apply_Root_Motion = true;
     public bool TimeActEditor_Display_Root_Motion = true;
+    public float TimeActEditor_Root_Motion_Scale_Ground = 1f;
+    public float TimeActEditor_Root_Motion_Scale_Up = 1f;
+    public float TimeActEditor_Root_Motion_Scale_Turn = 1f;
+    public bool TimeActEditor_Sim_Speed_Events = true;
+    public bool TimeActEditor_Sim_State_Info = true;
     public bool TimeActEditor_Play_Event_Sounds = true;
     public bool TimeActEditor_Display_Effects = true;
     public float TimeActEditor_Event_Marker_Size = 1f;

@@ -82,14 +82,31 @@ public sealed class HavokRootMotion
     /// </summary>
     public Vector3 GetSamplePosition(int index)
     {
+        return GetSamplePosition(index, HavokRootMotionScale.One);
+    }
+
+    /// <summary>
+    ///     Where the root is at a sample, with its motion scaled as <see cref="Sample(float, HavokRootMotionScale)" /> does.
+    /// </summary>
+    public Vector3 GetSamplePosition(int index, HavokRootMotionScale scale)
+    {
         Vector4 sample = _samples[index];
-        return new Vector3(sample.X, sample.Y, sample.Z);
+        return scale.ScaleTranslation(new Vector3(sample.X, sample.Y, sample.Z), _up);
     }
 
     /// <summary>
     ///     How far the root has moved and turned since the start of the clip, at a time within it.
     /// </summary>
     public Matrix4x4 Sample(float time)
+    {
+        return Sample(time, HavokRootMotionScale.One);
+    }
+
+    /// <summary>
+    ///     How far the root has moved and turned since the start of the clip, with the motion along the ground,
+    ///     the motion along up and the turn each scaled, to preview how a change of speed would look.
+    /// </summary>
+    public Matrix4x4 Sample(float time, HavokRootMotionScale scale)
     {
         if (_samples.Length == 0)
         {
@@ -107,8 +124,29 @@ public sealed class HavokRootMotion
         // The turn in W keeps adding up rather than wrapping, so it lerps like the rest
         Vector4 sample = Vector4.Lerp(_samples[first], _samples[second], position - first);
 
-        return Matrix4x4.CreateFromAxisAngle(_up, sample.W) *
-               Matrix4x4.CreateTranslation(sample.X, sample.Y, sample.Z);
+        return Matrix4x4.CreateFromAxisAngle(_up, sample.W * scale.Turn) *
+               Matrix4x4.CreateTranslation(scale.ScaleTranslation(new Vector3(sample.X, sample.Y, sample.Z), _up));
+    }
+}
+
+/// <summary>
+///     How much of a clip's root motion is applied: along the ground, along up, and of the turn. 1 is as the clip has it.
+/// </summary>
+public readonly record struct HavokRootMotionScale(float Ground, float Up, float Turn)
+{
+    public static readonly HavokRootMotionScale One = new(1, 1, 1);
+
+    public bool IsOne => Ground == 1 && Up == 1 && Turn == 1;
+
+    public Vector3 ScaleTranslation(Vector3 translation, Vector3 up)
+    {
+        if (Ground == 1 && Up == 1)
+        {
+            return translation;
+        }
+
+        Vector3 vertical = up * Vector3.Dot(translation, up);
+        return (translation - vertical) * Ground + vertical * Up;
     }
 }
 

@@ -483,6 +483,12 @@
       ]
     },
     {
+      "ID": 608,
+      "Event": "AnimSpeedGradient",
+      "Simulation": "SpeedGradient",
+      "Fields": []
+    },
+    {
       "ID": 609,
       "Event": "AdditiveAnimPlaybackUnk_609",
       "Fields": [

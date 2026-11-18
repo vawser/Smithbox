@@ -51,6 +51,8 @@ public class TimeActToolWindow
 
         View.ComboBuilderTool.OnToolWindow();
 
+        View.SimulationTool.OnToolWindow();
+
         // Preview
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Preview"));

@@ -36,13 +36,22 @@ public class TimeActData : IDisposable
         public Dictionary<(int EventType, string Field), TimeActField> MetaFields = new();
         public Dictionary<(int EventType, string Field), TimeActFieldAnnotation> AnnotationFields = new();
 
+        // Keyed by event type. Only the events the meta gives a known role are here.
+        public Dictionary<int, TimeActSimulationRole> SimulationRoles = new();
+
         public void BuildIndex()
         {
             MetaFields.Clear();
             AnnotationFields.Clear();
+            SimulationRoles.Clear();
 
             foreach (var ev in Meta.Events)
             {
+                if (!string.IsNullOrEmpty(ev.Simulation) && Enum.TryParse(ev.Simulation, out TimeActSimulationRole role))
+                {
+                    SimulationRoles.TryAdd(ev.ID, role);
+                }
+
                 foreach (var field in ev.Fields)
                 {
                     MetaFields.TryAdd((ev.ID, field.Field), field);
@@ -103,6 +112,17 @@ public class TimeActData : IDisposable
             return null;
 
         return def.MetaFields.GetValueOrDefault((ev.Type, parameterName));
+    }
+
+    /// <summary>
+    /// What the viewport simulates for the event, from the Simulation of its meta
+    /// </summary>
+    public TimeActSimulationRole GetSimulationRole(TAE.Event ev)
+    {
+        if (ev?.Template is not { } eventTemplate || !EventDefs.TryGetValue(eventTemplate, out var def))
+            return TimeActSimulationRole.None;
+
+        return def.SimulationRoles.GetValueOrDefault(ev.Type, TimeActSimulationRole.None);
     }
 
     /// <summary>

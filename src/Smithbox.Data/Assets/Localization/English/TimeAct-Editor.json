@@ -3091,6 +3091,115 @@
     {
       "Key": "TAE_Command_Select_Animation_Missing",
       "Text": "{1} has no time act entry for {0}."
+
+    },
+    {
+      "Key": "TAE_GraphWindow_Event_Speed",
+      "Text": "Event Speed: x{0}"
+    },
+    {
+      "Key": "TAE_GraphWindow_Event_Speed_TT",
+      "Text": "The {0} event at the current time changes how fast the animation plays. The speed set beside this is multiplied by it. Turn Speed Events off in Time Act Simulation to play at the set speed only."
+    },
+    {
+      "Key": "TAE_SimulationTool_Header",
+      "Text": "Time Act Simulation"
+    },
+    {
+      "Key": "TAE_SimulationTool_Hint",
+      "Text": "What the events of the animation do to the preview, as they would in game. Each simulation can be turned off, to check one thing at a time."
+    },
+    {
+      "Key": "TAE_SimulationTool_Simulations_Header",
+      "Text": "Simulations"
+    },
+    {
+      "Key": "TAE_SimulationTool_Simulations_Header_TT",
+      "Text": "The kinds of event the preview acts on. Which events are of each kind is set by the Simulation of the event in the game's time act meta."
+    },
+    {
+      "Key": "TAE_SimulationTool_Speed_Events",
+      "Text": "Speed Events"
+    },
+    {
+      "Key": "TAE_SimulationTool_Speed_Events_TT",
+      "Text": "If enabled, events that change the animation speed (such as AnimSpeedGradient) speed up or slow down the playback while they are active."
+    },
+    {
+      "Key": "TAE_SimulationTool_State_Info",
+      "Text": "StateInfo"
+    },
+    {
+      "Key": "TAE_SimulationTool_State_Info_TT",
+      "Text": "If enabled, events with a StateInfo only play while that state is ticked under States. If disabled, they all play."
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Header",
+      "Text": "Root Motion"
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Header_TT",
+      "Text": "How much of the root motion of the animation is applied to the model and its path. 1 is as the animation has it. Only the preview changes."
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Ground",
+      "Text": "Ground"
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Ground_TT",
+      "Text": "Scales how far the model moves along the ground. Hold Ctrl and click to type a value."
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Up",
+      "Text": "Up"
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Up_TT",
+      "Text": "Scales how far the model moves up and down, as in a jump. Hold Ctrl and click to type a value."
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Turn",
+      "Text": "Turn"
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Turn_TT",
+      "Text": "Scales how far the model turns. Hold Ctrl and click to type a value."
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Reset_TT",
+      "Text": "Sets all three back to 1."
+    },
+    {
+      "Key": "TAE_SimulationTool_Root_Motion_Off",
+      "Text": "Apply Root Motion is off in Time Act Filters, so only the path changes."
+    },
+    {
+      "Key": "TAE_SimulationTool_States_Header",
+      "Text": "States"
+    },
+    {
+      "Key": "TAE_SimulationTool_States_Header_TT",
+      "Text": "The StateInfos the events of this animation are gated on. Untick a state to see the animation as it plays when the character isn't in it. Events that won't play are hatched in the event graph."
+    },
+    {
+      "Key": "TAE_SimulationTool_States_Off",
+      "Text": "StateInfo is off, so every event plays."
+    },
+    {
+      "Key": "TAE_SimulationTool_States_None",
+      "Text": "No event in this animation has a StateInfo."
+    },
+    {
+      "Key": "TAE_SimulationTool_States_Enable_All",
+      "Text": "Enable All"
+    },
+    {
+      "Key": "TAE_SimulationTool_States_Enable_All_TT",
+      "Text": "Ticks every state again, including ones turned off in other animations."
     }
   ]
 }

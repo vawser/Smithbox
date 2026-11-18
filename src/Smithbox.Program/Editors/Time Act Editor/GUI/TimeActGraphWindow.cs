@@ -332,6 +332,14 @@ public class TimeActGraphWindow
         ImGui.SetNextItemWidth(120 * DPI.UIScale());
         ImGui.SliderFloat("##graphSpeed", ref playback.Speed, 0.05f, 2f, LOC.Get("TAE_GraphWindow_Speed"));
 
+        // A slow-down from an event would otherwise look like the editor lagging
+        if (playback.Simulation.SpeedEvent is { } speedEvent)
+        {
+            ImGui.SameLine();
+            ImGui.TextUnformatted(LOC.Get("TAE_GraphWindow_Event_Speed", playback.Simulation.SpeedMultiplier.ToString("0.00")));
+            GUI.Tooltip(LOC.Get("TAE_GraphWindow_Event_Speed_TT", speedEvent.TypeName ?? speedEvent.Type.ToString()));
+        }
+
         ImGui.SameLine();
         if (ImGui.Button("-##graphZoomOut"))
         {
@@ -1336,9 +1344,16 @@ public class TimeActGraphWindow
                 continue;
 
             var eventName = GetEventName(ev, template);
-            var isDull = !EventFilter.IsMatch(ev, eventName);
+            var isGatedOff = !View.Playback.Simulation.IsEventEnabled(ev);
+            var isDull = isGatedOff || !EventFilter.IsMatch(ev, eventName);
 
             drawList.AddRectFilled(min, max, GetEventColor(ev.Type, isDull));
+
+            // Hatched, so an event that won't play because of its StateInfo isn't mistaken for one the filter dims
+            if (isGatedOff)
+            {
+                DrawHatching(drawList, min, Vector2.Min(max, viewMax), dullTextColor);
+            }
 
             if (vanillaMatch != null && TimeActVanillaDisplay.GetColor(vanillaMatch.GetStatus(ev)) is { } vanillaColor)
             {
@@ -1453,6 +1468,25 @@ public class TimeActGraphWindow
     /// Gives each type of event a colour of its own, spread out so that nearby IDs don't look alike.
     /// Dull colours are for events that don't pass the filter: mostly grey and darker, but with a hint of the type left.
     /// </summary>
+    private static void DrawHatching(ImDrawListPtr drawList, Vector2 min, Vector2 max, uint color)
+    {
+        var spacing = 6 * DPI.UIScale();
+        var height = max.Y - min.Y;
+
+        if (height <= 0 || max.X <= min.X)
+            return;
+
+        drawList.PushClipRect(min, max, true);
+
+        // Lines at 45 degrees, starting far enough left that the first one reaches the bottom left corner
+        for (var x = min.X - height; x < max.X; x += spacing)
+        {
+            drawList.AddLine(new Vector2(x, max.Y), new Vector2(x + height, min.Y), color);
+        }
+
+        drawList.PopClipRect();
+    }
+
     private static uint GetEventColor(int type, bool dull = false)
     {
         const float DullGreyAmount = 0.75f;
