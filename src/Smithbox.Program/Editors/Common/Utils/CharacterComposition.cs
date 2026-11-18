@@ -821,8 +821,20 @@ public static class CharacterComposition
             return null;
         }
 
-        var dummyId = GetValue(absorption, field);
+        return GetDummyAttachment(project, skeleton, GetValue(absorption, field));
+    }
 
+    /// <summary>
+    ///     Where a weapon is held when it sits on a dummy poly of the body given outright, as Sekiro's weapon location
+    ///     events do. Null if the body has no such dummy poly.
+    /// </summary>
+    public static (string Node, Matrix4x4 Offset)? GetWeaponPlacementAtDummy(ProjectEntry project, int dummyId)
+    {
+        return GetDummyAttachment(project, GetSkeleton(project), dummyId);
+    }
+
+    private static (string Node, Matrix4x4 Offset)? GetDummyAttachment(ProjectEntry project, ModelRig skeleton, int dummyId)
+    {
         if (GetBodyDummies(project).FirstOrDefault(d => d.ReferenceID == dummyId) is not { } dummy)
         {
             return null;

@@ -212,12 +212,6 @@ public class TimeActEventResolver
 
         var ranges = FindThrowRanges(attack, container);
 
-        // TEMPORARY: throw reach diagnostics, to be removed once the wedge is confirmed in the app
-        Smithbox.Log(this, $"[TAE Throw] {container.Name} event type {ev.Type} at {ev.StartTime:0.000}s: " +
-            $"BehaviorParam {behavior.ID}, AtkParam {attackId}, throwFlag 2, throwTypeId " +
-            $"{CharacterComposition.GetValue(attack, "throwTypeId")}, ThrowParam rows: " +
-            (ranges.Count > 0 ? string.Join(", ", ranges.Select(r => $"{r.Range.RowId} (Dist {r.Range.Distance:0.00})")) : "none"));
-
         if (ranges.Count == 0)
         {
             return new TimeActEventVisual(TimeActVisualKind.Throw, shapes,

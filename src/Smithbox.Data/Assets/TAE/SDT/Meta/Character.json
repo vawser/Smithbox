@@ -596,6 +596,12 @@
       "Fields": []
     },
     {
+      "ID": 715,
+      "Event": "OverrideWeaponModelLocation",
+      "Simulation": "WeaponDummyLocation",
+      "Fields": []
+    },
+    {
       "ID": 785,
       "Event": "SpawnChrFinderBullet",
       "Fields": [

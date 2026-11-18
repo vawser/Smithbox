@@ -56,6 +56,12 @@ public enum TimeActSimulationRole
     /// <summary>While active, hides the weapons of the hands it sets (LeftHand, RightHand and their _WithScabbard)</summary>
     HideWeapon,
 
+    /// <summary>
+    /// While active, puts a weapon on a dummy poly of the body given outright: WeaponModelType 0 the right weapon, 1 the
+    /// left, at Model0DummyPolyID (Sekiro's OverrideWeaponModelLocation)
+    /// </summary>
+    WeaponDummyLocation,
+
     /// <summary>While active, the character turns toward its target at TurnSpeed degrees a second</summary>
     TurnSpeed,
 
@@ -158,6 +164,13 @@ public class TimeActSimulation
     public bool HideLeftWeapon { get; private set; }
 
     /// <summary>
+    /// The body dummy poly a weapon location event puts each weapon on at the current time, or null
+    /// </summary>
+    public int? RightWeaponDummy { get; private set; }
+
+    public int? LeftWeaponDummy { get; private set; }
+
+    /// <summary>
     /// How far the character has turned toward the target by the current time, in degrees, from the turn speed events
     /// </summary>
     public float Turn { get; private set; }
@@ -189,6 +202,8 @@ public class TimeActSimulation
         WeaponLocationEvents.Clear();
         HideRightWeapon = false;
         HideLeftWeapon = false;
+        RightWeaponDummy = null;
+        LeftWeaponDummy = null;
         Turn = 0;
         HasTurnEvents = false;
         AdditiveLayers.Clear();
@@ -271,6 +286,17 @@ public class TimeActSimulation
                 // Plays on after its event ends, until its clip has
                 case TimeActSimulationRole.AdditiveOneShot when additive:
                     AddOneShot(ev, time);
+                    break;
+
+                case TimeActSimulationRole.WeaponDummyLocation when weapons && active:
+                    if (GetFloat(ev, "Model0DummyPolyID") is { } dummy && dummy >= 0)
+                    {
+                        switch ((int?)GetFloat(ev, "WeaponModelType"))
+                        {
+                            case 0: RightWeaponDummy = (int)dummy; break;
+                            case 1: LeftWeaponDummy = (int)dummy; break;
+                        }
+                    }
                     break;
 
                 case TimeActSimulationRole.HideWeapon when weapons && active:

@@ -30,6 +30,7 @@ public class TimeActWeaponDisplay
     private readonly AnimationPreviewPanel _panel;
 
     private readonly Dictionary<(string Part, int EquipParamId, WeaponLocation Location), (string Node, Matrix4x4 Offset)?> _placements = new();
+    private readonly Dictionary<int, (string Node, Matrix4x4 Offset)?> _dummyPlacements = new();
 
     // The weapons this has hidden, so that it only shows again what it hid
     private readonly HashSet<MeshRenderableProxy> _hidden = new();
@@ -47,6 +48,7 @@ public class TimeActWeaponDisplay
     public void ClearPlacements()
     {
         _placements.Clear();
+        _dummyPlacements.Clear();
     }
 
     /// <summary>
@@ -75,9 +77,12 @@ public class TimeActWeaponDisplay
             MeshRenderableProxy weapon = mesh.Submeshes[i];
             var left = CharacterComposition.IsLeftHand(part);
 
-            var location = GetLocation(part, left, simulation);
+            // A dummy poly given outright (Sekiro) takes the place of the weapon's own places
+            var placement = (left ? simulation.LeftWeaponDummy : simulation.RightWeaponDummy) is { } dummy
+                ? GetDummyPlacement(dummy)
+                : GetPlacement(part, GetLocation(part, left, simulation));
 
-            if (GetPlacement(part, location) is var (node, offset))
+            if (placement is var (node, offset))
             {
                 // A place on a bone the model doesn't have leaves the weapon where it was
                 if (!_panel.SetAttachment(key, weapon, node, offset))
@@ -163,6 +168,17 @@ public class TimeActWeaponDisplay
         {
             placement = CharacterComposition.GetWeaponPlacement(_project, part, location);
             _placements[key] = placement;
+        }
+
+        return placement;
+    }
+
+    private (string Node, Matrix4x4 Offset)? GetDummyPlacement(int dummy)
+    {
+        if (!_dummyPlacements.TryGetValue(dummy, out var placement))
+        {
+            placement = CharacterComposition.GetWeaponPlacementAtDummy(_project, dummy);
+            _dummyPlacements[dummy] = placement;
         }
 
         return placement;
