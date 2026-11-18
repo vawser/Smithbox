@@ -72,6 +72,7 @@ public class TimeActPlayback
         _panel = new AnimationPreviewPanel(project);
 
         Simulation = new TimeActSimulation(view, project);
+        MaskDisplay = new TimeActMaskDisplay(view);
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
         Sounds = new TimeActSoundPlayback(view, project);
@@ -94,6 +95,8 @@ public class TimeActPlayback
     /// What the events do to the playback, such as change its speed or switch other events off by their StateInfo
     /// </summary>
     public TimeActSimulation Simulation { get; }
+
+    public TimeActMaskDisplay MaskDisplay { get; }
 
     /// <summary>
     /// How fast the clock really runs: the speed set in the editor, times what the events at the current time ask for
@@ -144,6 +147,7 @@ public class TimeActPlayback
 
         // From the time the last frame ended at, which is where the clock is about to move on from
         Simulation.Update(View.Selection.SelectedAnimation, _time, PlaybackDuration);
+        MaskDisplay.Update(Simulation.MaskOverrides);
 
         if (animator != null)
         {

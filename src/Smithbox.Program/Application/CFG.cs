@@ -818,6 +818,7 @@ public class CFG
     public float TimeActEditor_Root_Motion_Scale_Turn = 1f;
     public bool TimeActEditor_Sim_Speed_Events = true;
     public bool TimeActEditor_Sim_State_Info = true;
+    public bool TimeActEditor_Sim_Model_Masks = true;
     public bool TimeActEditor_Play_Event_Sounds = true;
     public bool TimeActEditor_Display_Effects = true;
     public float TimeActEditor_Event_Marker_Size = 1f;

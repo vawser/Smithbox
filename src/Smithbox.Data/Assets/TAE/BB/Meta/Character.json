@@ -3,6 +3,7 @@
     {
       "ID": 1,
       "Event": "InvokeAttackBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -17,6 +18,7 @@
     {
       "ID": 2,
       "Event": "InvokeBulletBehavior",
+      "Simulation": "Bullet",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -31,6 +33,7 @@
     {
       "ID": 5,
       "Event": "InvokeCommonBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -387,6 +390,12 @@
       ]
     },
     {
+      "ID": 233,
+      "Event": "ChangeChrDrawMask",
+      "Simulation": "DrawMask",
+      "Fields": []
+    },
+    {
       "ID": 300,
       "Event": "ActivateJumpTableEarly",
       "Fields": [
@@ -417,8 +426,20 @@
       ]
     },
     {
+      "ID": 304,
+      "Event": "InvokeThrowAttackBehavior",
+      "Simulation": "Throw",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
       "ID": 307,
       "Event": "InvokePCBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",

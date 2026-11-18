@@ -3,6 +3,7 @@
     {
       "ID": 1,
       "Event": "AttackBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -13,6 +14,7 @@
     {
       "ID": 2,
       "Event": "BulletBehavior",
+      "Simulation": "Bullet",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -27,6 +29,7 @@
     {
       "ID": 5,
       "Event": "CommonBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -301,6 +304,12 @@
       ]
     },
     {
+      "ID": 233,
+      "Event": "ChangeChrDrawMask",
+      "Simulation": "DrawMask",
+      "Fields": []
+    },
+    {
       "ID": 302,
       "Event": "AddSpEffect_DragonForm",
       "Fields": [
@@ -321,8 +330,20 @@
       ]
     },
     {
+      "ID": 304,
+      "Event": "ThrowAttackBehavior",
+      "Simulation": "Throw",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
       "ID": 307,
       "Event": "PCBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",

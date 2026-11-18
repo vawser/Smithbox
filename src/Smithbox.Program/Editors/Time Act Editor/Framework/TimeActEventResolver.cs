@@ -15,6 +15,7 @@ public enum TimeActVisualKind
     Effect,
     Sound,
     Attack,
+    Throw,
     Bullet
 }
 
@@ -42,11 +43,6 @@ public sealed record TimeActEventVisual(TimeActVisualKind Kind, IReadOnlyList<Ti
 /// </summary>
 public class TimeActEventResolver
 {
-    private const int AttackEventType = 1;
-    private const int BulletEventType = 2;
-    private const int MidairBulletEventType = 4;
-    private const int CommonEventType = 5;
-
     private const int NpcBehaviorBase = 200000000;
     private const int PlayerBehaviorBase = 100000000;
     private const int VariationScale = 1000;
@@ -62,6 +58,9 @@ public class TimeActEventResolver
     private const int LeftWeaponGroup = 20;
 
     private const int SourceLeftHand = 2;
+
+    // PCBehavior says which hand by flags: 1 and 16 are the right hand, 2 and 128 the left
+    private const int PcBehaviorLeftHandFlags = 2 | 128;
 
     private const float EffectRadius = 0.1f;
     private const float SoundRadius = 0.18f;
@@ -95,16 +94,15 @@ public class TimeActEventResolver
         if (ev.Parameters == null)
             return null;
 
-        var isSdt = _project.Descriptor.ProjectType is ProjectType.SDT;
-
-        if (ev.Type is AttackEventType or CommonEventType)
+        // The meta of the game says which events invoke a behavior, whatever their type is there
+        switch (_project.Handler.TimeActData?.GetSimulationRole(ev) ?? TimeActSimulationRole.None)
         {
-            return ResolveAttack(ev, container);
-        }
-
-        if (ev.Type == BulletEventType || (isSdt && ev.Type == MidairBulletEventType))
-        {
-            return ResolveBullet(ev, container);
+            case TimeActSimulationRole.Attack:
+                return ResolveAttack(ev, container, TimeActVisualKind.Attack);
+            case TimeActSimulationRole.Throw:
+                return ResolveAttack(ev, container, TimeActVisualKind.Throw);
+            case TimeActSimulationRole.Bullet:
+                return ResolveBullet(ev, container);
         }
 
         if (IsEffectEvent(ev))
@@ -151,23 +149,23 @@ public class TimeActEventResolver
             LOC.Get(dummy >= 0 ? "TAE_EventDisplay_On_Dummy" : "TAE_EventDisplay_On_Body", dummy));
     }
 
-    private TimeActEventVisual ResolveAttack(TAE.Event ev, TimeActContainer container)
+    private TimeActEventVisual ResolveAttack(TAE.Event ev, TimeActContainer container, TimeActVisualKind kind)
     {
         if (!TryGetBehavior(ev, container, out Param.Row? behavior, out var weaponPart, out var failure))
         {
-            return Failed(TimeActVisualKind.Attack, failure);
+            return Failed(kind, failure);
         }
 
         if (CharacterComposition.GetValue(behavior!, "refType") != BehaviorRefAttack)
         {
-            return Failed(TimeActVisualKind.Attack, LOC.Get("TAE_EventDisplay_Not_An_Attack", behavior!.ID));
+            return Failed(kind, LOC.Get("TAE_EventDisplay_Not_An_Attack", behavior!.ID));
         }
 
         var attackId = CharacterComposition.GetValue(behavior!, "refId");
 
         if (GetRow(IsPlayer(container) ? "AtkParam_Pc" : "AtkParam_Npc", attackId) is not { } attack)
         {
-            return Failed(TimeActVisualKind.Attack, LOC.Get("TAE_EventDisplay_No_Attack_Row", attackId));
+            return Failed(kind, LOC.Get("TAE_EventDisplay_No_Attack_Row", attackId));
         }
 
         List<TimeActVisualShape> shapes = new();
@@ -189,7 +187,7 @@ public class TimeActEventResolver
                 GetWeaponPartOfDummy(container, dummy, weaponPart)));
         }
 
-        return new TimeActEventVisual(TimeActVisualKind.Attack, shapes,
+        return new TimeActEventVisual(kind, shapes,
             LOC.Get("TAE_EventDisplay_Attack", behavior!.ID, attackId, shapes.Count));
     }
 
@@ -264,7 +262,7 @@ public class TimeActEventResolver
         }
 
         // Common behaviors are shared by everything, so they use the ID as it is and come from the body
-        if (ev.Type == CommonEventType)
+        if (IsCommonJudge(ev))
         {
             behavior = GetRow(IsPlayer(container) ? BehaviorParamPc : "BehaviorParam", judge);
 
@@ -284,6 +282,15 @@ public class TimeActEventResolver
         }
 
         return behavior != null;
+    }
+
+    /// <summary>
+    /// Whether the meta says the judge ID of the event is a row ID as it is, rather than one added to the variation
+    /// of the attacker
+    /// </summary>
+    private bool IsCommonJudge(TAE.Event ev)
+    {
+        return _project.Handler.TimeActData?.GetFieldMeta(ev, "BehaviorJudgeID")?.BehaviorRef == "Common";
     }
 
     private Param.Row? FindPlayerBehavior(TimeActContainer container, int weaponPart, int judge, out string failure)
@@ -471,11 +478,14 @@ public class TimeActEventResolver
     }
 
     /// <summary>
-    /// Gets the character part an attack comes from. Attacks use the right hand unless they say otherwise.
+    /// Gets the character part an attack comes from. Attacks use the right hand unless they say otherwise: by
+    /// their Source, or the hand flags of their PCBehaviorType.
     /// </summary>
     private static int GetSourceWeapon(TAE.Event ev, TimeActContainer container)
     {
-        var useLeft = GetParameter(ev, "Source") == SourceLeftHand;
+        var useLeft = GetParameter(ev, "PCBehaviorType") is { } pcBehavior
+            ? (pcBehavior & PcBehaviorLeftHandFlags) != 0
+            : GetParameter(ev, "Source") == SourceLeftHand;
 
         return FindWeapon(container, useLeft);
     }

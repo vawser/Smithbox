@@ -30,6 +30,13 @@ public unsafe class FlverSubmeshProvider : MeshProvider
         _meshIndex = idx;
     }
 
+    /// <summary>
+    ///     The model mask of the mesh, from the #nn# in its material name, or -1 if it has none or isn't loaded
+    /// </summary>
+    public int MaterialMask => _isValid && _resource.IsLoaded && _resource.Get() is { } res && _meshIndex < res.GPUMeshes.Length
+        ? res.GPUMeshes[_meshIndex].Material.MaterialMask
+        : -1;
+
     public override BoundingBox Bounds => _resource.Get().GPUMeshes[_meshIndex].Bounds;
 
     public override Matrix4x4 ObjectTransform => _resource.Get().GPUMeshes[_meshIndex].LocalTransform;

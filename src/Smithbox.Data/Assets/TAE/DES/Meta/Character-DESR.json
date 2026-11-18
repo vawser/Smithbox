@@ -3,6 +3,7 @@
     {
       "ID": 1,
       "Event": "InvokeAttackBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -13,6 +14,7 @@
     {
       "ID": 2,
       "Event": "InvokeBulletBehavior",
+      "Simulation": "Bullet",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -27,6 +29,7 @@
     {
       "ID": 5,
       "Event": "InvokeCommonBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -331,8 +334,20 @@
       ]
     },
     {
+      "ID": 304,
+      "Event": "InvokeThrowDamageBehavior",
+      "Simulation": "Throw",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
       "ID": 307,
       "Event": "InvokePCBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",

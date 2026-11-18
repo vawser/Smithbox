@@ -222,6 +222,7 @@ public class TimeActEventDisplay
             TimeActVisualKind.Effect => Color.Orange,
             TimeActVisualKind.Sound => Color.DeepSkyBlue,
             TimeActVisualKind.Bullet => Color.Yellow,
+            TimeActVisualKind.Throw => Color.Magenta,
             _ => Color.Red
         };
     }

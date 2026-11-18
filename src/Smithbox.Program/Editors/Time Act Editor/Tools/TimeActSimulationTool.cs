@@ -52,6 +52,9 @@ public class TimeActSimulationTool
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_State_Info_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Model_Masks")}##timeActSimModelMasks", ref CFG.Current.TimeActEditor_Sim_Model_Masks);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Model_Masks_TT"));
+
         // Root Motion
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Root_Motion_Header"), LOC.Get("TAE_SimulationTool_Root_Motion_Header_TT"));

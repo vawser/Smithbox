@@ -21,7 +21,28 @@ public enum TimeActSimulationRole
     SpeedGradient,
 
     /// <summary>The event plays over AnimSpeed frames at 30 per second, however long it is</summary>
-    SpeedFrames
+    SpeedFrames,
+
+    /// <summary>
+    /// The event invokes the BehaviorParam row of its BehaviorJudgeID, which hits with an AtkParam row. The meta of
+    /// the judge field says whether it is added to the variation of the attacker or used as it is.
+    /// </summary>
+    Attack,
+
+    /// <summary>As <see cref="Attack" />, for a throw (grab)</summary>
+    Throw,
+
+    /// <summary>The event invokes the BehaviorParam row of its BehaviorJudgeID, which fires a Bullet row</summary>
+    Bullet,
+
+    /// <summary>From its start until the animation ends, sets the model masks: Mask{n} 0 hides, 1 shows, others keep</summary>
+    DrawMask,
+
+    /// <summary>While active, hides the model masks whose Mask{n} is set</summary>
+    HideMask,
+
+    /// <summary>While active, shows the model masks whose Mask{n} is set</summary>
+    ShowMask
 }
 
 /// <summary>
@@ -74,32 +95,82 @@ public class TimeActSimulation
             .ToList() ?? new List<int>();
     }
 
+    /// <summary>
+    /// The model masks the events set at the current time, by mask ID: true shows the meshes of the mask, false
+    /// hides them, and null leaves them as the character has them
+    /// </summary>
+    public bool?[] MaskOverrides { get; } = new bool?[MaskCount];
+
+    // More than any game's masks: the events have up to 32, and the meshes name theirs in two digits
+    public const int MaskCount = 100;
+
     public void Update(TAE.Animation? animation, float time, float playbackEnd)
     {
         SpeedMultiplier = 1;
         SpeedEvent = null;
+        Array.Clear(MaskOverrides);
 
-        if (animation == null || !CFG.Current.TimeActEditor_Sim_Speed_Events)
+        if (animation == null)
             return;
+
+        var data = _project.Handler.TimeActData;
+        var speedEvents = CFG.Current.TimeActEditor_Sim_Speed_Events;
+        var masks = CFG.Current.TimeActEditor_Sim_Model_Masks;
 
         foreach (var ev in animation.Events)
         {
-            if (time < ev.StartTime || time >= ev.MemeEndTime || !IsEventEnabled(ev))
+            if (time < ev.StartTime || !IsEventEnabled(ev))
                 continue;
 
-            if (GetSpeed(ev, time, playbackEnd) is { } speed)
+            var role = data?.GetSimulationRole(ev) ?? TimeActSimulationRole.None;
+            var active = time < ev.MemeEndTime;
+
+            // The events are gone through in their order in the list, so a later one takes over from an earlier one
+            switch (role)
             {
-                // A later event in the list takes over from an earlier one
-                SpeedMultiplier = Math.Max(speed, MinSpeed);
-                SpeedEvent = ev;
+                case TimeActSimulationRole.SpeedGradient or TimeActSimulationRole.SpeedFrames when speedEvents && active:
+                    if (GetSpeed(ev, role, time, playbackEnd) is { } speed)
+                    {
+                        SpeedMultiplier = Math.Max(speed, MinSpeed);
+                        SpeedEvent = ev;
+                    }
+                    break;
+
+                // Stays in effect after it ends, as the mask it sets is kept until something else changes it
+                case TimeActSimulationRole.DrawMask when masks:
+                    ApplyMasks(ev, value => value switch { 0 => false, 1 => true, _ => null });
+                    break;
+
+                case TimeActSimulationRole.HideMask when masks && active:
+                    ApplyMasks(ev, value => value != 0 ? false : null);
+                    break;
+
+                case TimeActSimulationRole.ShowMask when masks && active:
+                    ApplyMasks(ev, value => value != 0 ? true : null);
+                    break;
             }
         }
     }
 
-    private float? GetSpeed(TAE.Event ev, float time, float playbackEnd)
+    /// <summary>
+    /// Sets the masks from the Mask0, Mask1 and so on of the event, as far as the event has them
+    /// </summary>
+    private void ApplyMasks(TAE.Event ev, Func<int, bool?> effect)
     {
-        var role = _project.Handler.TimeActData?.GetSimulationRole(ev) ?? TimeActSimulationRole.None;
+        for (var i = 0; i < MaskCount; i++)
+        {
+            if (GetFloat(ev, $"Mask{i}") is not { } value)
+                break;
 
+            if (effect((int)value) is { } visible)
+            {
+                MaskOverrides[i] = visible;
+            }
+        }
+    }
+
+    private static float? GetSpeed(TAE.Event ev, TimeActSimulationRole role, float time, float playbackEnd)
+    {
         switch (role)
         {
             case TimeActSimulationRole.SpeedGradient:

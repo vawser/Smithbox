@@ -13,6 +13,7 @@
     {
       "ID": 1,
       "Event": "AttackBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -27,6 +28,7 @@
     {
       "ID": 2,
       "Event": "BulletBehavior",
+      "Simulation": "Bullet",
       "Fields": [
         {
           "Field": "StateInfo",
@@ -41,16 +43,22 @@
     {
       "ID": 4,
       "Event": "BulletBehavior_Midair",
+      "Simulation": "Bullet",
       "Fields": [
         {
           "Field": "StateInfo",
           "ProjectEnum": "SP_EFFECT_TYPE"
+        },
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
         }
       ]
     },
     {
       "ID": 5,
       "Event": "CommonBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -455,6 +463,12 @@
       ]
     },
     {
+      "ID": 233,
+      "Event": "ChangeChrDrawMask",
+      "Simulation": "DrawMask",
+      "Fields": []
+    },
+    {
       "ID": 237,
       "Event": "CreateAISound2",
       "Fields": [
@@ -475,8 +489,20 @@
       ]
     },
     {
+      "ID": 304,
+      "Event": "ThrowAttackBehavior",
+      "Simulation": "Throw",
+      "Fields": [
+        {
+          "Field": "BehaviorJudgeID",
+          "BehaviorRef": "Variation"
+        }
+      ]
+    },
+    {
       "ID": 307,
       "Event": "PCBehavior",
+      "Simulation": "Attack",
       "Fields": [
         {
           "Field": "BehaviorJudgeID",
@@ -507,6 +533,18 @@
           "ParamRef": "SpEffectParam"
         }
       ]
+    },
+    {
+      "ID": 711,
+      "Event": "HideModelMask",
+      "Simulation": "HideMask",
+      "Fields": []
+    },
+    {
+      "ID": 713,
+      "Event": "ShowModelMask",
+      "Simulation": "ShowMask",
+      "Fields": []
     },
     {
       "ID": 785,

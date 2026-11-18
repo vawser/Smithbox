@@ -3200,6 +3200,14 @@
     {
       "Key": "TAE_SimulationTool_States_Enable_All_TT",
       "Text": "Ticks every state again, including ones turned off in other animations."
+    },
+    {
+      "Key": "TAE_SimulationTool_Model_Masks",
+      "Text": "Model Masks"
+    },
+    {
+      "Key": "TAE_SimulationTool_Model_Masks_TT",
+      "Text": "If enabled, events that change the model masks (such as ChangeChrDrawMask, HideModelMask and ShowModelMask) show and hide the meshes of those masks. A player's model leaves out the meshes its armor hides, so events can't show those."
     }
   ]
 }
