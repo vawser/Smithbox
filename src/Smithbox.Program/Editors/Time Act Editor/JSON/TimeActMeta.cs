@@ -31,6 +31,11 @@ public class TimeActEventMeta
     /// </summary>
     public string Simulation { get; set; } = "";
 
+    /// <summary>
+    /// For an AdditiveAnim event: what is added to its AnimType to make the ID of the animation it plays
+    /// </summary>
+    public long AnimationBase { get; set; } = 0;
+
     public List<TimeActField> Fields { get; set; } = new();
 }
 

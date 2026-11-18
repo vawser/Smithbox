@@ -52,6 +52,12 @@
       ]
     },
     {
+      "ID": 16,
+      "Event": "Blend",
+      "Simulation": "Blend",
+      "Fields": []
+    },
+    {
       "ID": 32,
       "Event": "SetWeaponStyle",
       "Simulation": "WeaponStyle",
@@ -495,6 +501,13 @@
           "ParamRef": "SpEffectParam"
         }
       ]
+    },
+    {
+      "ID": 601,
+      "Event": "SetAdditiveAnim",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 40000,
+      "Fields": []
     },
     {
       "ID": 607,

@@ -76,6 +76,7 @@
 #----------------------------------------------------
 
 - Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
+- Make reloader use chr reload?
 
 #----------------------------------------------------
 # Texture Editor TODO

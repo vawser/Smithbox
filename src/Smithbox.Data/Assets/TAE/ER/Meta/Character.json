@@ -56,6 +56,12 @@
       ]
     },
     {
+      "ID": 16,
+      "Event": "Blend",
+      "Simulation": "Blend",
+      "Fields": []
+    },
+    {
       "ID": 24,
       "Event": "[DS1, Disabled]QueueTransitionAnimation",
       "Fields": [
@@ -636,6 +642,8 @@
     {
       "ID": 601,
       "Event": "SetAdditiveAnim",
+      "Simulation": "AdditiveAnim",
+      "AnimationBase": 40000,
       "Fields": [
         {
           "Field": "SpEffectID_Exist",

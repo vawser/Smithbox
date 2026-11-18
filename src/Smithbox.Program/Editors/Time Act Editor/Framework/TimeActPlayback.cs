@@ -170,6 +170,8 @@ public class TimeActPlayback
                 CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn);
             animator.Turn = Simulation.Turn * MathF.PI / 180;
 
+            UpdateLayers(animator);
+
             _time = animator.Time;
             _playing = animator.Playing;
         }
@@ -188,6 +190,118 @@ public class TimeActPlayback
 
         // After the event display, which has found the dummies the effects sit on for this pose
         Effects.Update(animator, _time);
+    }
+
+    // The clip and time the pose crossfades from, the time of the new clip the crossfade started at (-1 while it
+    // waits for that clip), and how long it lasts
+    private (HavokClip Clip, float Time)? _blendFrom;
+    private float _blendStart = -1;
+    private float _blendDuration;
+
+    // Clips only crossfade with others of the same skeleton
+    private AnimationPackage? _blendPackage;
+
+    private readonly List<(HavokClip Clip, float Time, float Weight, bool Additive)> _layers = new();
+
+    // Clips laid over the animation, by animation ID, for the package they came from
+    private readonly Dictionary<long, HavokClip?> _layerClips = new();
+    private AnimationPackage? _layerPackage;
+
+    /// <summary>
+    /// How much of the last animation is left in the pose, from 1 as the crossfade starts to 0, or 0 when there is none
+    /// </summary>
+    public float BlendWeight { get; private set; }
+
+    private bool ShouldBlend()
+    {
+        return CFG.Current.TimeActEditor_Sim_Blending &&
+               (View.ComboBuilderTool?.IsPlaying == true || CFG.Current.TimeActEditor_Blend_On_Animation_Change);
+    }
+
+    /// <summary>
+    /// Lays the crossfade from the last animation and the additive animations of the events over the clip
+    /// </summary>
+    private void UpdateLayers(ModelAnimator animator)
+    {
+        _layers.Clear();
+        BlendWeight = 0;
+
+        if (_blendFrom is { } blendFrom)
+        {
+            var (fromClip, fromTime) = blendFrom;
+
+            if (_blendStart < 0 && !IsClipLoading)
+            {
+                _blendStart = _time;
+                _blendDuration = Simulation.GetBlendDuration(View.Selection.SelectedAnimation);
+            }
+
+            if (_blendStart >= 0)
+            {
+                var elapsed = _time - _blendStart;
+
+                // Over, or gone back to before it began
+                if (_blendDuration <= 0 || elapsed < 0 || elapsed >= _blendDuration || animator.CurrentClip == null ||
+                    animator.Package != _blendPackage ||
+                    !CFG.Current.TimeActEditor_Sim_Blending)
+                {
+                    _blendFrom = null;
+                }
+                else
+                {
+                    // The last animation plays on as it fades
+                    BlendWeight = 1 - elapsed / _blendDuration;
+                    _layers.Add((fromClip, Math.Min(fromTime + elapsed, fromClip.Duration), BlendWeight, false));
+                }
+            }
+        }
+
+        foreach (var (id, weight, time) in Simulation.AdditiveLayers)
+        {
+            if (GetLayerClip(animator, id) is { Duration: > 0 } clip)
+            {
+                // It loops for as long as its event lasts
+                _layers.Add((clip, time % clip.Duration, weight, true));
+            }
+        }
+
+        animator.SetLayers(_layers);
+    }
+
+    /// <summary>
+    /// The clip of an animation by its ID, following its imports as the animation's own clip does
+    /// </summary>
+    private HavokClip? GetLayerClip(ModelAnimator animator, long id)
+    {
+        if (animator.Package is not { } package)
+            return null;
+
+        if (package != _layerPackage)
+        {
+            _layerPackage = package;
+            _layerClips.Clear();
+        }
+
+        if (_layerClips.TryGetValue(id, out var clip))
+            return clip;
+
+        AnimationEntry? entry = null;
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (source != null && source.TryFindAnimation(id, out var timeAct, out var animation))
+        {
+            entry = FindClip(package, source, timeAct, animation);
+        }
+
+        if (entry == null && id is >= 0 and <= int.MaxValue)
+        {
+            entry = package.FindAnimation((int)id);
+        }
+
+        clip = entry != null ? package.GetClip(entry) : null;
+        _layerClips[id] = clip;
+
+        return clip;
     }
 
     private void UpdateAutoPlay()
@@ -296,6 +410,10 @@ public class TimeActPlayback
         Rumble.StopAll();
         Effects.Clear();
         WeaponDisplay.Invalidate();
+        _blendFrom = null;
+        _blendStart = -1;
+        _layerClips.Clear();
+        _layerPackage = null;
 
         _target = null;
         _boundClip = null;
@@ -312,6 +430,13 @@ public class TimeActPlayback
     /// </summary>
     public void OnAnimationChanged()
     {
+        // The pose crossfades from where the last animation had got to, once the new clip is in
+        _blendFrom = ShouldBlend() && Animator is { CurrentClip: { } previous } animator
+            ? (previous, animator.Time)
+            : null;
+        _blendPackage = Animator?.Package;
+        _blendStart = -1;
+
         _time = 0;
         _playing = false;
         IsClipMissing = false;

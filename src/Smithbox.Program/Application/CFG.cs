@@ -824,6 +824,9 @@ public class CFG
     public bool TimeActEditor_Sim_Turning = true;
     public float TimeActEditor_Turn_Target_Angle = 0f;
     public bool TimeActEditor_Sim_Rumble_Cam = true;
+    public bool TimeActEditor_Sim_Additive_Anims = true;
+    public bool TimeActEditor_Sim_Blending = true;
+    public bool TimeActEditor_Blend_On_Animation_Change = false;
     public bool TimeActEditor_Play_Event_Sounds = true;
     public bool TimeActEditor_Display_Effects = true;
     public float TimeActEditor_Event_Marker_Size = 1f;

@@ -408,6 +408,17 @@ public sealed class ModelRig
 }
 
 /// <summary>
+///     A clip laid over the one a model plays.
+/// </summary>
+/// <param name="Clip">The clip, bound to the same skeleton.</param>
+/// <param name="Frame">The frame of the clip to sample.</param>
+/// <param name="Weight">How much of it there is, from 0 to 1.</param>
+/// <param name="Additive">
+///     Whether its motion adds to the pose (a breathing or flinch layer), rather than the pose crossfading to it.
+/// </param>
+public readonly record struct PoseLayer(HavokClip Clip, float Frame, float Weight, bool Additive);
+
+/// <summary>
 ///     Evaluates a clip into bone matrices for a <see cref="ModelRig" />.
 ///     FLVER bones follow the Havok bone of the same name, and any others hang off their parent.
 /// </summary>
@@ -485,9 +496,24 @@ public sealed class ModelPose
 
     public void Apply(HavokClip? clip, float frame)
     {
+        Apply(clip, frame, Array.Empty<PoseLayer>());
+    }
+
+    /// <summary>
+    ///     Poses the model with a clip, and other clips laid over it: blended ones crossfade with it by their weight,
+    ///     then additive ones add their motion on top, scaled by theirs.
+    /// </summary>
+    public void Apply(HavokClip? clip, float frame, IReadOnlyList<PoseLayer> layers)
+    {
         foreach (var i in _boneOrder)
         {
             NewBlendableTransform local = SampleLocal(clip, i, frame);
+
+            if (layers.Count > 0)
+            {
+                local = ApplyLayers(local, i, layers);
+            }
+
             Matrix4x4 rotationTranslation = local.GetMatrix();
             Vector3 scale = local.Scale;
 
@@ -516,6 +542,76 @@ public sealed class ModelPose
             var parent = _rig.NodeParents[i];
             NodeWorld[i] = parent >= 0 ? _rig.NodeLocal[i] * NodeWorld[parent] : _rig.NodeLocal[i];
         }
+    }
+
+    private NewBlendableTransform ApplyLayers(NewBlendableTransform local, int bone, IReadOnlyList<PoseLayer> layers)
+    {
+        // The crossfades first, so the additive motion goes on the blended pose
+        foreach (PoseLayer layer in layers)
+        {
+            if (layer.Additive || layer.Weight <= 0 || !HasTrack(layer.Clip, bone))
+                continue;
+
+            NewBlendableTransform other = SampleLocal(layer.Clip, bone, layer.Frame);
+            var weight = Math.Min(layer.Weight, 1);
+
+            local = new NewBlendableTransform
+            {
+                Translation = Vector3.Lerp(local.Translation, other.Translation, weight),
+                Rotation = Quaternion.Slerp(local.Rotation, other.Rotation, weight),
+                Scale = Vector3.Lerp(local.Scale, other.Scale, weight)
+            };
+        }
+
+        foreach (PoseLayer layer in layers)
+        {
+            if (!layer.Additive || layer.Weight <= 0 || !HasTrack(layer.Clip, bone))
+                continue;
+
+            NewBlendableTransform delta = SampleDelta(layer.Clip, bone, layer.Frame);
+            var weight = layer.Weight;
+            Quaternion rotation = Quaternion.Slerp(Quaternion.Identity, delta.Rotation, Math.Min(weight, 1));
+
+            local = new NewBlendableTransform
+            {
+                Translation = local.Translation + delta.Translation * weight,
+                Rotation = layer.Clip.BlendMode == HavokBlendMode.AdditiveParentSpace
+                    ? rotation * local.Rotation
+                    : local.Rotation * rotation,
+                Scale = local.Scale * Vector3.Lerp(Vector3.One, delta.Scale, Math.Min(weight, 1))
+            };
+        }
+
+        return local;
+    }
+
+    private static bool HasTrack(HavokClip clip, int bone)
+    {
+        return bone < clip.BoneToTrack.Length && clip.BoneToTrack[bone] >= 0;
+    }
+
+    /// <summary>
+    ///     How far a clip moves a bone from its rest pose. An additive clip holds just that; a normal one played as
+    ///     additive is taken relative to the reference pose.
+    /// </summary>
+    private NewBlendableTransform SampleDelta(HavokClip clip, int bone, float frame)
+    {
+        NewBlendableTransform sampled = clip.Sample(clip.BoneToTrack[bone], frame);
+
+        if (clip.BlendMode != HavokBlendMode.Normal)
+            return sampled;
+
+        NewBlendableTransform reference = _reference[bone];
+
+        return new NewBlendableTransform
+        {
+            Translation = sampled.Translation + _translationOffset[bone] - reference.Translation,
+            Rotation = Quaternion.Inverse(reference.Rotation) * sampled.Rotation,
+            Scale = new Vector3(
+                reference.Scale.X != 0 ? sampled.Scale.X / reference.Scale.X : 1,
+                reference.Scale.Y != 0 ? sampled.Scale.Y / reference.Scale.Y : 1,
+                reference.Scale.Z != 0 ? sampled.Scale.Z / reference.Scale.Z : 1)
+        };
     }
 
     private NewBlendableTransform SampleLocal(HavokClip? clip, int bone, float frame)

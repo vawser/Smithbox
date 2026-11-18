@@ -38,18 +38,21 @@ public class TimeActData : IDisposable
 
         // Keyed by event type. Only the events the meta gives a known role are here.
         public Dictionary<int, TimeActSimulationRole> SimulationRoles = new();
+        public Dictionary<int, long> AnimationBases = new();
 
         public void BuildIndex()
         {
             MetaFields.Clear();
             AnnotationFields.Clear();
             SimulationRoles.Clear();
+            AnimationBases.Clear();
 
             foreach (var ev in Meta.Events)
             {
                 if (!string.IsNullOrEmpty(ev.Simulation) && Enum.TryParse(ev.Simulation, out TimeActSimulationRole role))
                 {
                     SimulationRoles.TryAdd(ev.ID, role);
+                    AnimationBases.TryAdd(ev.ID, ev.AnimationBase);
                 }
 
                 foreach (var field in ev.Fields)
@@ -123,6 +126,17 @@ public class TimeActData : IDisposable
             return TimeActSimulationRole.None;
 
         return def.SimulationRoles.GetValueOrDefault(ev.Type, TimeActSimulationRole.None);
+    }
+
+    /// <summary>
+    /// The AnimationBase of the meta of the event, which its AnimType is added to
+    /// </summary>
+    public long GetAnimationBase(TAE.Event ev)
+    {
+        if (ev?.Template is not { } eventTemplate || !EventDefs.TryGetValue(eventTemplate, out var def))
+            return 0;
+
+        return def.AnimationBases.GetValueOrDefault(ev.Type);
     }
 
     /// <summary>

@@ -63,7 +63,17 @@ public enum TimeActSimulationRole
     /// As it starts, shakes the camera with rumble cam RumbleCamID. With a DummyPolyID and FalloffStart and FalloffEnd,
     /// the shake comes from that dummy poly and fades with the distance of the camera from it.
     /// </summary>
-    RumbleCam
+    RumbleCam,
+
+    /// <summary>
+    /// While active, plays the additive animation of AnimType (plus 10 times AnimType2 where there is one) over the
+    /// animation, at a weight going from WeightAtEventStart to WeightAtEventEnd, or of Weight. The meta's
+    /// AnimationBase is added to make the animation ID (40000 in the later games).
+    /// </summary>
+    AdditiveAnim,
+
+    /// <summary>The animation crossfades from the one before it over the length of the event</summary>
+    Blend
 }
 
 /// <summary>
@@ -149,6 +159,14 @@ public class TimeActSimulation
     /// </summary>
     public bool HasTurnEvents { get; private set; }
 
+    /// <summary>
+    /// The additive animations the events play at the current time: the animation ID, its weight, and how long it has
+    /// played, one for each AnimType
+    /// </summary>
+    public List<(long AnimationId, float Weight, float Time)> AdditiveLayers { get; } = new();
+
+    private readonly Dictionary<long, (long AnimationId, float Weight, float Time)> _additiveByType = new();
+
     public void Update(TAE.Animation? animation, float time, float playbackEnd)
     {
         SpeedMultiplier = 1;
@@ -160,6 +178,8 @@ public class TimeActSimulation
         HideLeftWeapon = false;
         Turn = 0;
         HasTurnEvents = false;
+        AdditiveLayers.Clear();
+        _additiveByType.Clear();
 
         if (animation == null)
             return;
@@ -168,6 +188,7 @@ public class TimeActSimulation
         var speedEvents = CFG.Current.TimeActEditor_Sim_Speed_Events;
         var masks = CFG.Current.TimeActEditor_Sim_Model_Masks;
         var weapons = CFG.Current.TimeActEditor_Sim_Weapons;
+        var additive = CFG.Current.TimeActEditor_Sim_Additive_Anims;
 
         if (CFG.Current.TimeActEditor_Sim_Turning)
         {
@@ -218,12 +239,63 @@ public class TimeActSimulation
                     WeaponLocationEvents.Add(ev);
                     break;
 
+                case TimeActSimulationRole.AdditiveAnim when additive && active:
+                    AddAdditive(ev, data, time, playbackEnd);
+                    break;
+
                 case TimeActSimulationRole.HideWeapon when weapons && active:
                     HideRightWeapon |= GetFloat(ev, "RightHand") is > 0 || GetFloat(ev, "RightHand_WithScabbard") is > 0;
                     HideLeftWeapon |= GetFloat(ev, "LeftHand") is > 0 || GetFloat(ev, "LeftHand_WithScabbard") is > 0;
                     break;
             }
         }
+
+        AdditiveLayers.AddRange(_additiveByType.Values);
+    }
+
+    private void AddAdditive(TAE.Event ev, TimeActData? data, float time, float playbackEnd)
+    {
+        if ((GetFloat(ev, "AnimType") ?? GetFloat(ev, "StayAnimType")) is not { } animType || animType < 0)
+            return;
+
+        var id = (data?.GetAnimationBase(ev) ?? 0) + (long)animType + 10 * (long)(GetFloat(ev, "AnimType2") ?? 0);
+
+        float weight;
+
+        if (GetFloat(ev, "WeightAtEventStart") is { } start && GetFloat(ev, "WeightAtEventEnd") is { } end)
+        {
+            var length = Math.Min(ev.MemeEndTime, Math.Max(playbackEnd, ev.StartTime)) - ev.StartTime;
+            weight = length > 0 ? start + (end - start) * Math.Clamp((time - ev.StartTime) / length, 0, 1) : start;
+        }
+        else
+        {
+            weight = GetFloat(ev, "Weight") ?? 1;
+        }
+
+        // The additive animation starts with the event, and each AnimType plays one at a time
+        _additiveByType[(long)animType] = (id, weight, time - ev.StartTime);
+    }
+
+    /// <summary>
+    /// How long an animation crossfades from the one before it: the length of its Blend event, or 0 without one
+    /// </summary>
+    public float GetBlendDuration(TAE.Animation? animation)
+    {
+        var data = _project.Handler.TimeActData;
+
+        if (animation == null || data == null)
+            return 0;
+
+        foreach (var ev in animation.Events)
+        {
+            if (data.GetSimulationRole(ev) == TimeActSimulationRole.Blend &&
+                ev.EndTime < TAE.Event.EldenRingInfiniteLengthEventPlaceholder)
+            {
+                return Math.Max(ev.EndTime - ev.StartTime, 0);
+            }
+        }
+
+        return 0;
     }
 
     /// <summary>

@@ -70,6 +70,31 @@ public class TimeActSimulationTool
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Rumble_Cam_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Additive_Anims")}##timeActSimAdditive", ref CFG.Current.TimeActEditor_Sim_Additive_Anims);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Additive_Anims_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blending")}##timeActSimBlending", ref CFG.Current.TimeActEditor_Sim_Blending);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Blending_TT"));
+
+        if (CFG.Current.TimeActEditor_Sim_Blending)
+        {
+            ImGui.Indent();
+            ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blend_On_Change")}##timeActSimBlendOnChange", ref CFG.Current.TimeActEditor_Blend_On_Animation_Change);
+            GUI.Tooltip(LOC.Get("TAE_SimulationTool_Blend_On_Change_TT"));
+            ImGui.Unindent();
+        }
+
+        if (View.Playback.BlendWeight > 0)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Blend_Status", (View.Playback.BlendWeight * 100).ToString("0")));
+        }
+
+        if (simulation.AdditiveLayers.Count > 0)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Additive_Status",
+                string.Join(", ", simulation.AdditiveLayers.Select(l => $"{l.AnimationId} ({l.Weight:0.00})"))));
+        }
+
         // Turning
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Turn_Header"), LOC.Get("TAE_SimulationTool_Turn_Header_TT"));

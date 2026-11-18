@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 
 namespace StudioCore.Renderer;
@@ -98,6 +99,33 @@ public sealed class ModelAnimator : IDisposable
     }
 
     private float _turn;
+
+    private PoseLayer[] _layers = Array.Empty<PoseLayer>();
+
+    /// <summary>
+    ///     Lays other clips over the one playing, by their own time in seconds: blended ones crossfade with it, additive
+    ///     ones add to it. The owner keeps their clocks, and passes them again whenever they move. The root motion stays
+    ///     that of the playing clip.
+    /// </summary>
+    public void SetLayers(IReadOnlyList<(HavokClip Clip, float Time, float Weight, bool Additive)> layers)
+    {
+        var converted = new PoseLayer[layers.Count];
+
+        for (var i = 0; i < layers.Count; i++)
+        {
+            var (clip, time, weight, additive) = layers[i];
+            var lastFrame = Math.Max(0, clip.FrameCount - 1);
+            var frame = clip.FrameDuration > 0 ? Math.Clamp(time / clip.FrameDuration, 0, lastFrame) : 0;
+
+            converted[i] = new PoseLayer(clip, frame, weight, additive);
+        }
+
+        if (converted.AsSpan().SequenceEqual(_layers))
+            return;
+
+        _layers = converted;
+        _poseDirty = true;
+    }
 
     /// <summary>
     ///     How far the root motion has moved the model at the current pose, or identity if it isn't applied.
@@ -359,7 +387,7 @@ public sealed class ModelAnimator : IDisposable
 
     private void ApplyPose()
     {
-        _pose!.Apply(CurrentClip, Math.Min(Frame, Math.Max(0, (CurrentClip?.FrameCount ?? 1) - 1)));
+        _pose!.Apply(CurrentClip, Math.Min(Frame, Math.Max(0, (CurrentClip?.FrameCount ?? 1) - 1)), _layers);
 
         var count = NodeCount;
 

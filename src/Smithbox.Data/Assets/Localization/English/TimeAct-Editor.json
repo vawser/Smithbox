@@ -3288,6 +3288,38 @@
     {
       "Key": "TAE_Rumble_Failed_To_Read",
       "Text": "Failed to read rumble cam {0}."
+    },
+    {
+      "Key": "TAE_SimulationTool_Additive_Anims",
+      "Text": "Additive Animations"
+    },
+    {
+      "Key": "TAE_SimulationTool_Additive_Anims_TT",
+      "Text": "If enabled, SetAdditiveAnim events play their additive animation over the animation while they are active, at the event's weight. The animation ID is the event's AnimType plus the AnimationBase in the game's time act meta (40000 in the later games)."
+    },
+    {
+      "Key": "TAE_SimulationTool_Blending",
+      "Text": "Blending"
+    },
+    {
+      "Key": "TAE_SimulationTool_Blending_TT",
+      "Text": "If enabled, each step of the Combo Builder crossfades from the one before it over the length of its Blend event, as it does in game."
+    },
+    {
+      "Key": "TAE_SimulationTool_Blend_On_Change",
+      "Text": "Blend When Changing Animation"
+    },
+    {
+      "Key": "TAE_SimulationTool_Blend_On_Change_TT",
+      "Text": "If enabled, picking another animation in the list also crossfades from the last one. Off by default, as the first frames of the animation you're editing would then show a mix of the two."
+    },
+    {
+      "Key": "TAE_SimulationTool_Blend_Status",
+      "Text": "Crossfading from the last animation: {0}% of it is left."
+    },
+    {
+      "Key": "TAE_SimulationTool_Additive_Status",
+      "Text": "Additive animations playing: {0}"
     }
   ]
 }
