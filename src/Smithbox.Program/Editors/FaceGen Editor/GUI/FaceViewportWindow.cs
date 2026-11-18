@@ -314,7 +314,8 @@ public class FaceViewportWindow
         var common = CharacterComposition.GetCommonTexture(Project);
 
         // The shared head's textures are in the fgbnd (DS1, DS1R), only wanted when it is worn
-        var fgbnd = Parts.Any(p => p.Model != null && p.Model.Equals(FaceComposition.SharedHead, StringComparison.OrdinalIgnoreCase))
+        var fgbnd = Parts.Any(p => p.Model != null && (p.Model.Equals(FaceComposition.SharedHead, StringComparison.OrdinalIgnoreCase) ||
+                                                       p.Model.Equals(FaceComposition.BundleHead, StringComparison.OrdinalIgnoreCase)))
             ? FaceGenModelData.Get(Project).BinderPath?.TrimStart('/')
             : null;
 

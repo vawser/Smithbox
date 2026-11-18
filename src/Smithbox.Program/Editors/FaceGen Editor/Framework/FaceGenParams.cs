@@ -41,10 +41,18 @@ public static class FaceGenParams
     {
         var paramList = GetParams(project);
 
-        return paramList != null && paramList.TryGetValue(paramName, out var param) ? param : null;
+        if (paramList == null)
+            return null;
+
+        if (paramList.TryGetValue(paramName, out var param))
+            return param;
+
+        // The param names are the bank's file names, whose case differs between the games (Demon's Souls' may be
+        // lower case)
+        return paramList.FirstOrDefault(p => p.Key.Equals(paramName, StringComparison.OrdinalIgnoreCase)).Value;
     }
 
-    /// <summary>The face params of the project, the one the characters use first</summary>
+    /// <summary>The face params of the project, as the bank names them, the one the characters use first</summary>
     public static List<string> GetFaceParams(ProjectEntry project)
     {
         var paramList = GetParams(project);
@@ -52,11 +60,15 @@ public static class FaceGenParams
         if (paramList == null)
             return new List<string>();
 
-        return FaceParamNames.Where(paramList.ContainsKey).ToList();
+        return FaceParamNames
+            .Select(n => paramList.Keys.FirstOrDefault(k => k.Equals(n, StringComparison.OrdinalIgnoreCase)))
+            .Where(k => k != null)
+            .Select(k => k!)
+            .ToList();
     }
 
     public static bool IsFaceParam(ProjectEntry project, string? paramName) =>
-        paramName != null && FaceParamNames.Contains(paramName) && GetParam(project, paramName) != null;
+        paramName != null && FaceParamNames.Contains(paramName, StringComparer.OrdinalIgnoreCase) && GetParam(project, paramName) != null;
 
     /// <summary>The face param that characters point at: the first of the face params the project has</summary>
     public static string? GetReferencedFaceParam(ProjectEntry project) => GetFaceParams(project).FirstOrDefault();

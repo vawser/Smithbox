@@ -106,7 +106,9 @@ public sealed class FaceGenModelData
                     TextureModelRead = true;
                     try
                     {
-                        if (Binder?.Files.FirstOrDefault(f => f.Name?.EndsWith(".egt", StringComparison.OrdinalIgnoreCase) == true) is { } egt)
+                        // face.egt, or face.egtbe in Demon's Souls
+                        if (Binder?.Files.FirstOrDefault(f => f.Name?.EndsWith(".egt", StringComparison.OrdinalIgnoreCase) == true ||
+                                                              f.Name?.EndsWith(".egtbe", StringComparison.OrdinalIgnoreCase) == true) is { } egt)
                             TextureModel = EGT.Read(egt.Bytes);
                     }
                     catch (Exception e)

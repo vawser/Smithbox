@@ -1,0 +1,4 @@
+{
+  "Description": "Demon's Souls. Faces are FaceGenParam rows, whose bytes are the FaceGen mode coefficients themselves (b x 20 / 255 - 10), so there are no sliders to apply. There are no face parts: every face wears the FaceGen bundle's own face.flver, its vertices matched to face.tribe by position and shaped by face.egmbe, and its FaceGen texture is face.egtbe's modes added to TextureBase.",
+  "TextureBase": "face.bmp"
+}

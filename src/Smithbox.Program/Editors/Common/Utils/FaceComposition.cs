@@ -93,10 +93,31 @@ public static class FaceComposition
     /// </summary>
     public const string SharedHead = "fg_a_0000";
 
-    /// <summary>Whether a part model is a head: a face parts value's (fg_a_01NN) or the shared one</summary>
+    /// <summary>
+    /// The head of the games with no head part at all (Demon's Souls): the FaceGen bundle's own face.flver, by its
+    /// resource name. Its vertices are matched to face.tri by position, as the bundle has no flver2tri.
+    /// </summary>
+    public const string BundleHead = "face";
+
+    /// <summary>Whether a part model is a head: a face parts value's (fg_a_01NN), the shared one, or the bundle's</summary>
     public static bool IsHead(string? model) =>
         model != null && (model.StartsWith("fg_a_01", StringComparison.OrdinalIgnoreCase) ||
-                          model.Equals(SharedHead, StringComparison.OrdinalIgnoreCase));
+                          model.Equals(SharedHead, StringComparison.OrdinalIgnoreCase) ||
+                          model.Equals(BundleHead, StringComparison.OrdinalIgnoreCase));
+
+    /// <summary>
+    /// The project-relative binder a model that isn't a part is in (<see cref="BundleHead"/>: the FaceGen bundle,
+    /// where it has a face.flver), or null
+    /// </summary>
+    public static string? ContainerOf(ProjectEntry project, string model)
+    {
+        if (!model.Equals(BundleHead, StringComparison.OrdinalIgnoreCase))
+            return null;
+
+        var bundle = FaceGenEditor.FaceGenModelData.Get(project);
+
+        return bundle.BinderPath != null && bundle.File("face.flver") != null ? bundle.BinderPath.TrimStart('/') : null;
+    }
 
     /// <summary>The parts a face row names, in the order of its fields</summary>
     public static List<FacePart> Resolve(ProjectEntry project, Param.Row row, bool isFemale)
@@ -113,9 +134,15 @@ public static class FaceComposition
             parts.Add(Resolve(project, cell.Def.InternalName, value.ToInt32(null), isFemale));
         }
 
-        // A row with no head field wears the shared head, where the game has one
-        if (!hasHeadField && GetFamily(project, "fg").TryGetValue(0, out var shared) && Pick(shared, isFemale ? 'f' : 'm') is { } head)
-            parts.Insert(0, new FacePart("", 0, head, false));
+        // A row with no head field wears the shared head, where the game has one (DS1), else the FaceGen bundle's
+        // own head (Demon's Souls, which has no face parts)
+        if (!hasHeadField)
+        {
+            if (GetFamily(project, "fg").TryGetValue(0, out var shared) && Pick(shared, isFemale ? 'f' : 'm') is { } head)
+                parts.Insert(0, new FacePart("", 0, head, false));
+            else if (GetFamily(project, "fg").Count == 0 && ContainerOf(project, BundleHead) != null)
+                parts.Insert(0, new FacePart("", 0, BundleHead, false));
+        }
 
         return parts;
     }

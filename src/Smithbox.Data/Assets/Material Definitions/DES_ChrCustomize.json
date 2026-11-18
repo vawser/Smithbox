@@ -1,0 +1,12 @@
+{
+  "Ps_FaceGen[DS][M]_Skin": { "CharacterColor": "skin", "Customize": "FaceGen", "ColorValue": [0, 0, 0], "Body": "g_Diffuse_2" },
+  "Ps_Hair[DSB]_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[DSB]_Alp_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[DSB]_Edge_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[DS]_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[DS]_Alp_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[DS]_Edge_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[D]_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[D]_Alp_Skin": { "CharacterColor": "part" },
+  "Ps_Hair[D]_Edge_Skin": { "CharacterColor": "part" }
+}

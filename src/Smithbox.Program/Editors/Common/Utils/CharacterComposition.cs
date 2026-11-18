@@ -18,7 +18,11 @@ namespace StudioCore.Editors.Common;
 /// <param name="Name">The name of the model.</param>
 /// <param name="AttachNode">The bone that holds the model, for parts that aren't skinned to the character.</param>
 /// <param name="EquipParamId">The EquipParamWeapon row of a weapon, or -1 if there is none.</param>
-public sealed record CharacterPart(string Name, string? AttachNode = null, int EquipParamId = -1);
+/// <param name="Container">
+///     The project-relative binder the model is in, when it isn't a part (Demon's Souls' head, the FaceGen bundle's
+///     face.flver); null for a part, which is found by its name
+/// </param>
+public sealed record CharacterPart(string Name, string? AttachNode = null, int EquipParamId = -1, string? Container = null);
 
 /// <summary>
 ///     The part models a character is built from.
@@ -380,8 +384,13 @@ public static class CharacterComposition
 
         foreach (var name in extraParts)
         {
-            if (partNames.Contains(name) && parts.All(p => p.Name != name))
+            if (parts.Any(p => p.Name == name))
+                continue;
+
+            if (partNames.Contains(name))
                 parts.Add(new CharacterPart(name));
+            else if (FaceComposition.ContainerOf(project, name) is { } container)
+                parts.Add(new CharacterPart(name, Container: container));
         }
 
         // A body among the extra parts (the one DS3's face parts value names) replaces the default one
@@ -520,7 +529,10 @@ public static class CharacterComposition
 
         foreach (CharacterPart part in appearance.Parts)
         {
-            ResourceDescriptor asset = ModelLocator.GetPartsModel(project, part.Name, part.Name);
+            // A model in a binder of its own (Demon's Souls' head): found by its name, loaded with its binder
+            ResourceDescriptor asset = part.Container != null
+                ? new ResourceDescriptor { AssetName = part.Name }
+                : ModelLocator.GetPartsModel(project, part.Name, part.Name);
 
             // The masks are for the meshes of the body and armor, and mean something else on a weapon
             FlverMeshProvider provider = MeshProviderCache.GetFlverMeshProvider(
@@ -543,12 +555,17 @@ public static class CharacterComposition
 
             providers.Add(provider);
 
-            ResourceManager.DefaultPool.LoadAsset<FlverResource>(project, asset, new LoadOptions
+            var options = new LoadOptions
             {
                 JobName = jobName,
                 Types = ResourceType.Flver | ResourceType.Texture,
                 AccessLevel = AccessLevel.AccessGPUOptimizedOnly
-            });
+            };
+
+            if (part.Container != null)
+                _ = ResourceManager.DefaultPool.LoadContainer(part.Container, options);
+            else
+                ResourceManager.DefaultPool.LoadAsset<FlverResource>(project, asset, options);
         }
 
         MeshRenderableProxy mesh = MeshRenderableProxy.FromProvider(scene, new CompositeMeshProvider(providers));
@@ -582,6 +599,11 @@ public static class CharacterComposition
         for (var i = 0; i < appearance.Parts.Count && i < mesh.Submeshes.Count; i++)
         {
             CharacterPart part = appearance.Parts[i];
+
+            // A model in a binder of its own isn't animated with the parts
+            if (part.Container != null)
+                continue;
+
             ResourceDescriptor asset = ModelLocator.GetPartsModel(project, part.Name, part.Name);
 
             var attachment = part.AttachNode != null ? GetWeaponAttachment(project, part, skeleton) : ((string, Matrix4x4)?)null;

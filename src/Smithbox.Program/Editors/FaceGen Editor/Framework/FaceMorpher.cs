@@ -32,7 +32,8 @@ namespace StudioCore.Editors.FaceGenEditor;
 public sealed class FaceMorpher
 {
     /// <summary>A part's FaceGen data: per flver2tri entry (so per FLVER mesh) the EGM of its TRI, or null to leave it</summary>
-    private sealed record PartData(EGM?[] EntryEgms, F2TR Map, FLVER2? Flver);
+    /// <param name="Indices">Per FLVER mesh, the TRI vertex of each of its vertices (the flver2tri entry's indices)</param>
+    private sealed record PartData(EGM?[] EntryEgms, IReadOnlyList<List<short>> Indices, FLVER2? Flver);
 
     /// <summary>
     /// How far a head's edge is pulled onto the body: an edge vertex within this of the body's surface is moved onto it.
@@ -64,7 +65,8 @@ public sealed class FaceMorpher
     /// <summary>Makes face parts keep their vertices when they load. Call before any face part is loaded.</summary>
     public static void RetainFaceParts()
     {
-        FlverResource.RetainVerticesFor = name => name.StartsWith("fg_a_", StringComparison.OrdinalIgnoreCase);
+        FlverResource.RetainVerticesFor = name => name.StartsWith("fg_a_", StringComparison.OrdinalIgnoreCase) ||
+                                                  name.Equals(FaceComposition.BundleHead, StringComparison.OrdinalIgnoreCase);
     }
 
     public FaceMorpher(ProjectEntry project)
@@ -85,8 +87,11 @@ public sealed class FaceMorpher
         {
             var name = appearance.Parts[i].Name;
 
-            if (!name.StartsWith("fg_a_", StringComparison.OrdinalIgnoreCase))
+            if (!name.StartsWith("fg_a_", StringComparison.OrdinalIgnoreCase) &&
+                !name.Equals(FaceComposition.BundleHead, StringComparison.OrdinalIgnoreCase))
+            {
                 continue;
+            }
 
             if (GetPartData(name) is not { } data)
                 continue;
@@ -106,7 +111,7 @@ public sealed class FaceMorpher
             // Each TRI's displacement, once (the shared head's meshes are on face.tri and eye.tri)
             var displacements = new Dictionary<EGM, Vector3[]>();
 
-            for (var m = 0; m < gpuMeshes.Length && m < data.Map.Entries.Count; m++)
+            for (var m = 0; m < gpuMeshes.Length && m < data.Indices.Count; m++)
             {
                 var submesh = gpuMeshes[m];
 
@@ -126,7 +131,7 @@ public sealed class FaceMorpher
                 }
 
                 buffer.UpdateResidentVertices(Displace(original, submesh.VertexStride, submesh.VertexCount,
-                    data.Map.Entries[m].Indices, displacement, seam != null && seam.TryGetValue(m, out var snaps) ? snaps : null));
+                    data.Indices[m], displacement, seam != null && seam.TryGetValue(m, out var snaps) ? snaps : null));
                 Morphed.Add(submesh);
             }
         }
@@ -381,7 +386,89 @@ public sealed class FaceMorpher
             return egms[stem] = bytes is { } b ? EGM.Read(b) : null;
         }
 
-        return new PartData(map.Entries.Select(e => EgmOf(e.Name)).ToArray(), map, null);
+        return new PartData(map.Entries.Select(e => EgmOf(e.Name)).ToArray(), map.Entries.Select(e => e.Indices).ToList(), null);
+    }
+
+    /// <summary>How close a FLVER vertex must be to a TRI vertex to be it (Demon's Souls' head matches to within 1 µm)</summary>
+    private const float MatchReach = 1e-4f;
+
+    /// <summary>
+    /// The FaceGen bundle's own head (Demon's Souls: face.flver, FLVER0, with face.tribe and face.egmbe and no
+    /// flver2tri). Each FLVER vertex is the TRI vertex at its position, Z negated: FaceGenSurvey deshead finds every
+    /// one of the head's 1340 vertices on a TRI vertex to within 1 µm. A vertex with none within
+    /// <see cref="MatchReach"/> is left unmoved (index −1). Null if the bundle lacks the files.
+    /// </summary>
+    private PartData? GetBundleHeadData()
+    {
+        var bundle = FaceGenModelData.Get(Project);
+
+        if (bundle.File("face.flver") is not { } flverBytes ||
+            (bundle.File("face.tri") ?? bundle.File("face.tribe")) is not { } triBytes ||
+            (bundle.File("face.egm") ?? bundle.File("face.egmbe")) is not { } egmBytes)
+        {
+            return null;
+        }
+
+        var tri = TRI.Read(triBytes);
+        var egm = EGM.Read(egmBytes);
+        var count = Math.Min(egm.VertexCount, tri.Vertices.Count);
+
+        // The TRI's vertices in FLVER space, bucketed by position for the lookup
+        const float cell = 0.001f;
+        var grid = new Dictionary<(int, int, int), List<int>>();
+
+        (int, int, int) Cell(Vector3 p) => ((int)MathF.Floor(p.X / cell), (int)MathF.Floor(p.Y / cell), (int)MathF.Floor(p.Z / cell));
+
+        var points = new Vector3[count];
+
+        for (var t = 0; t < count; t++)
+        {
+            points[t] = new Vector3(tri.Vertices[t].X, tri.Vertices[t].Y, -tri.Vertices[t].Z);
+
+            var key = Cell(points[t]);
+            if (!grid.TryGetValue(key, out var list))
+                grid[key] = list = new List<int>();
+            list.Add(t);
+        }
+
+        short Match(Vector3 p)
+        {
+            var (cx, cy, cz) = Cell(p);
+            var best = MatchReach;
+            var found = -1;
+
+            for (var x = cx - 1; x <= cx + 1; x++)
+            for (var y = cy - 1; y <= cy + 1; y++)
+            for (var z = cz - 1; z <= cz + 1; z++)
+            {
+                if (!grid.TryGetValue((x, y, z), out var list))
+                    continue;
+
+                foreach (var t in list)
+                {
+                    var d = Vector3.Distance(p, points[t]);
+                    if (d < best)
+                    {
+                        best = d;
+                        found = t;
+                    }
+                }
+            }
+
+            return (short)found;
+        }
+
+        var bytes = flverBytes.ToArray();
+        List<List<short>> indices;
+
+        if (FLVER0.Is(bytes))
+            indices = FLVER0.Read(bytes).Meshes.Select(m => m.Vertices.Select(v => Match(v.Position)).ToList()).ToList();
+        else if (FLVER2.Is(bytes))
+            indices = FLVER2.Read(bytes).Meshes.Select(m => m.Vertices.Select(v => Match(v.Position)).ToList()).ToList();
+        else
+            return null;
+
+        return new PartData(indices.Select(_ => (EGM?)egm).ToArray(), indices, null);
     }
 
     /// <summary>The EGM and flver2tri of a face part, from its partsbnd</summary>
@@ -394,6 +481,13 @@ public sealed class FaceMorpher
 
         try
         {
+            if (model.Equals(FaceComposition.BundleHead, StringComparison.OrdinalIgnoreCase))
+            {
+                data = GetBundleHeadData();
+                Parts[model] = data;
+                return data;
+            }
+
             var entry = Project.Locator.PartFiles.Entries.FirstOrDefault(e =>
                 e.Filename.Equals(model, StringComparison.OrdinalIgnoreCase));
 
@@ -414,7 +508,7 @@ public sealed class FaceMorpher
                     var headModel = flverBytes is { } fb && FLVER2.Is(fb.ToArray()) ? FLVER2.Read(fb) : null;
                     var partEgm = EGM.Read(egm.Bytes);
                     var partMap = F2TR.Read(map.Bytes);
-                    data = new PartData(partMap.Entries.Select(_ => (EGM?)partEgm).ToArray(), partMap, headModel);
+                    data = new PartData(partMap.Entries.Select(_ => (EGM?)partEgm).ToArray(), partMap.Entries.Select(e => e.Indices).ToList(), headModel);
                 }
                 else if (egm == null && map == null &&
                          model.Equals(FaceComposition.SharedHead, StringComparison.OrdinalIgnoreCase))
