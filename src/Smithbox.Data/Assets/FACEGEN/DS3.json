@@ -2,6 +2,7 @@
   "Source": "FaceSouls demo/ds3.csv (github.com/lexlayer93/FaceSouls), MIT licence, Copyright (c) lexlayer93",
   "Description": "Dark Souls III character creator. Slider IDs: 10 age, 20 gender, 30 caricature, 1NN shape control NN (faceGeoDataNN), 2NN texture control NN (faceTexDataNN). A byte b is the value Min + (Max - Min) * b / 255. Sequence is the order the game applies the sliders in; IDs in it without a slider are hidden and applied at 0. Coefficients are then clamped to +-ShapeClamp / +-TextureClamp.",
   "FacePartsNameBody": true,
+  "TextureBase": "face.bmp",
   "Sliders": [
     { "Id": 10, "Min": 15, "Max": 60 },
     { "Id": 20, "Min": -4, "Max": 4 },

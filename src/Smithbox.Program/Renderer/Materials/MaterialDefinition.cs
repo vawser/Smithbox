@@ -377,6 +377,18 @@ public class MaterialSlotRecipe
     /// </summary>
     public int? Detail { get; set; }
 
+    /// <summary>
+    /// FaceGen skin: the sampler type of the body's skin texture (DS3's MTD sampler g_DiffuseTexture2), by name, as
+    /// MTDs have no slot numbers
+    /// </summary>
+    public string? Body { get; set; }
+
+    /// <summary>The colour (rgb) where the material has no <see cref="Color"/> param (DS3's FC_SkinMatchColor is set by the game)</summary>
+    public float[]? ColorValue { get; set; }
+
+    /// <summary>FaceGen skin: the colour is only added where the albedo's alpha is (DS3's eyes: the iris)</summary>
+    public bool AlphaMasked { get; set; }
+
     /// <summary>Eye: the params of the iris colour (snp_0_float3_0, over the mask's x), the cataract amount
     /// (snp_0_float_30) and colour (snp_0_float3_2), the pupil's value (snp_0_float_32) and the iris scale
     /// (snp_0_float_12). <see cref="Color"/> is the sclera colour (snp_0_float3_5, multiplying the texture)</summary>
@@ -540,6 +552,12 @@ public class MaterialResolvedSlots
 
     /// <summary>Eye patch: the sampler type of its cloth or leather albedo</summary>
     public string? DetailType { get; set; }
+
+    /// <summary>FaceGen skin: the sampler type of the body's skin texture</summary>
+    public string? BodyType { get; set; }
+
+    /// <summary>See <see cref="MaterialSlotRecipe.AlphaMasked"/></summary>
+    public bool AlphaMasked { get; set; }
 
     /// <summary>The eye's own values, see <see cref="MaterialSlotRecipe.Iris"/></summary>
     public float[] Iris { get; set; } = [1, 1, 1];
@@ -1420,7 +1438,8 @@ public class MaterialDefinition
         {
             AlbedoType = TypeOf(recipe.Albedo),
             NormalType = TypeOf(recipe.Normal),
-            Color = recipe.Color != null && Params.TryGetValue(recipe.Color, out var color) && color.Length >= 3 ? color : null,
+            Color = recipe.Color != null && Params.TryGetValue(recipe.Color, out var color) && color.Length >= 3 ? color
+                : recipe.ColorValue is { Length: >= 3 } colorValue ? colorValue : null,
             AlphaFromNormal = recipe.AlphaFromNormal,
             AlphaRef = recipe.AlphaRef,
             CharacterColor = recipe.CharacterColor,
@@ -1432,6 +1451,8 @@ public class MaterialDefinition
                 "shade" => MaterialCustomize.ModeShade,
                 "bodyhair" => MaterialCustomize.ModeBodyHair,
                 "eyepatch" => MaterialCustomize.ModeEyePatch,
+                "facegen" => MaterialCustomize.ModeFaceGen,
+                "hairtint" => MaterialCustomize.ModeHairTint,
                 _ => 0
             },
             Blending = recipe.Blend?.ToLowerInvariant() switch
@@ -1442,6 +1463,8 @@ public class MaterialDefinition
             MaskType = TypeOf(recipe.Mask),
             StubbleType = TypeOf(recipe.Stubble),
             DetailType = TypeOf(recipe.Detail),
+            BodyType = recipe.Body != null && Samplers.Exists(x => x.Type == recipe.Body) ? recipe.Body : null,
+            AlphaMasked = recipe.AlphaMasked,
             HeightType = TypeOf(recipe.Height)
         };
 

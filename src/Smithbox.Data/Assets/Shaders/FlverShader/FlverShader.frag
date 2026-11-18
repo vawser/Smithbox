@@ -823,6 +823,30 @@ void ApplyCustomize(inout vec4 diffuseColor)
 		// Shade (the eyes' [EyeAO]): a multiplier from the colour (its darkest) up to 1, by the texture
 		diffuseColor.rgb = mix(cz.color.rgb, vec3(1.0), diffuseColor.rgb);
 	}
+	else if (c_customize == 7)
+	{
+		// FaceGen skin (DS3's GXFlver_FgFace*): the face's FaceGen texture (UV 0; the mask's slot, read above) and the
+		// body's skin texture (UV 1), each offset by the skin colour in square-root space, mixed by the vertex colour's
+		// alpha. The material's own albedo stands in for a texture not there yet
+		vec3 face = cz.maskTex != 0u ? mask.rgb : diffuseColor.rgb;
+#ifdef MATERIAL_BLEND
+		vec3 body = cz.pad != 0u ? SampleAt(cz.pad, 1, cz.params.yz, vec2(0.0)).rgb : face;
+#else
+		vec3 body = face;
+#endif
+		// An eye adds its colour only where the albedo's alpha (the iris) is
+		vec3 offset = cz.color.rgb * (cz.params.x > 0.5 ? diffuseColor.a : 1.0);
+		vec3 faceSkin = clamp(sqrt(max(face, vec3(0.0))) + offset, 0.0, 1.0);
+		vec3 bodySkin = clamp(sqrt(max(body, vec3(0.0))) + offset, 0.0, 1.0);
+		// Only a face skin (one with a body texture) blends; a plain skin or an eye is its own albedo
+		diffuseColor.rgb = mix(faceSkin * faceSkin, bodySkin * bodySkin, cz.pad != 0u ? clamp(fsin_color.a, 0.0, 1.0) : 0.0);
+	}
+	else if (c_customize == 8)
+	{
+		// Hair tint (DS3's SAT_HairIbl2): the hair colour multiplies the texture in square-root space
+		vec3 hair = clamp(sqrt(max(diffuseColor.rgb, vec3(0.0))) * cz.color.rgb, 0.0, 1.0);
+		diffuseColor.rgb = hair * hair;
+	}
 	else if (c_customize == 6)
 	{
 		// Eye patch ([EyePatch]): the patch's albedo, coloured (three times the colour) where the mask's x is its cloth

@@ -277,7 +277,8 @@ public class FaceViewportWindow
         if (Mesh == null || Appearance == null || View.ActiveRow is not { } row)
             return;
 
-        Tinter.Apply(Mesh, Appearance, row, Parts, View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null);
+        Tinter.Apply(Mesh, Appearance, row, Parts, View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null,
+            View.ActiveParam);
     }
 
     private void ClearMesh()

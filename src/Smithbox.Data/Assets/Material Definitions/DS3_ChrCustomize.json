@@ -1,0 +1,9 @@
+{
+  "GXFlver_FgFaceSSSIbl_Bloody": { "CharacterColor": "skin", "Customize": "FaceGen", "ColorValue": [0, 0, 0], "Body": "g_DiffuseTexture2" },
+  "GXFlver_FgFaceIbl_Bloody": { "CharacterColor": "skin", "Customize": "FaceGen", "ColorValue": [0, 0, 0], "Body": "g_DiffuseTexture2" },
+  "GXFlver_SkinSSSIbl_Bloody": { "CharacterColor": "skin", "Customize": "FaceGen", "ColorValue": [0, 0, 0] },
+  "GXFlver_SkinIbl_Bloody": { "CharacterColor": "skin", "Customize": "FaceGen", "ColorValue": [0, 0, 0] },
+  "GXFlver_EyeIbl": { "CharacterColor": "part", "Customize": "FaceGen", "ColorValue": [0, 0, 0], "AlphaMasked": true },
+  "SAT_HairIbl2": { "CharacterColor": "part", "Customize": "HairTint", "ColorValue": [1, 1, 1] },
+  "SAT_HairIbl2_cloth": { "CharacterColor": "part", "Customize": "HairTint", "ColorValue": [1, 1, 1] }
+}

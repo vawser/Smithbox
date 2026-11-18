@@ -37,6 +37,12 @@ public sealed class FaceGenSliderTable
     /// </summary>
     public bool FacePartsNameBody { get; set; }
 
+    /// <summary>
+    /// The fgbnd image the face texture's modes are added to (DS3: "face.bmp", the mean), or null if the game draws no FaceGen
+    /// texture. See <see cref="FaceTextureBuilder"/>
+    /// </summary>
+    public string? TextureBase { get; set; }
+
     private Dictionary<int, Slider>? ById;
 
     public Slider? Get(int id) => (ById ??= Sliders.ToDictionary(s => s.Id)).GetValueOrDefault(id);
@@ -154,13 +160,16 @@ public static class FaceGenModel
             switch (id)
             {
                 case AgeSlider:
-                    SetAgeGender(s, race, Value(id, Byte("age")), age: true);
+                    SetAgeGender(s, race.Age.GeometryCoefficients, race.Gender.GeometryCoefficients,
+                        race.Age.GeometryOffset, race.Gender.GeometryOffset, Value(id, Byte("age")), age: true);
                     break;
                 case GenderSlider:
-                    SetAgeGender(s, race, Value(id, Byte("gender")), age: false);
+                    SetAgeGender(s, race.Age.GeometryCoefficients, race.Gender.GeometryCoefficients,
+                        race.Age.GeometryOffset, race.Gender.GeometryOffset, Value(id, Byte("gender")), age: false);
                     break;
                 case CaricatureSlider:
-                    SetCaricature(s, race, Value(id, Byte("caricatureGeometry")));
+                    SetCaricature(s, race.Age.GeometryCoefficients, race.Gender.GeometryCoefficients,
+                        race.GeometryMean, race.GeometryDensity, Value(id, Byte("caricatureGeometry")));
                     break;
                 case >= 100 and < 200:
                 {
@@ -177,6 +186,65 @@ public static class FaceGenModel
             s[i] = Math.Clamp(s[i], -table.ShapeClamp, table.ShapeClamp);
 
         return s;
+    }
+
+    /// <summary>
+    /// The coefficients of the texture modes of a FaceParam row, as the game's creator applies its sliders: age,
+    /// gender and caricature (caricatureTexture) on the texture side, then each texture control (2NN, faceTexDataNN),
+    /// then the texture clamp. Null if the game has no model or table, or the param stores modes.
+    /// </summary>
+    public static float[]? TextureCoefficients(ProjectEntry project, Param param, Param.Row row,
+        IReadOnlyDictionary<string, int>? overrides = null)
+    {
+        var ctl = FaceGenModelData.Get(project).Controls;
+        var table = FaceGenSliderTable.Get(project);
+
+        if (ctl == null || table == null || ctl.AllRaces is not { } race || FaceGenParams.StoresModes(param))
+            return null;
+
+        var t = new float[ctl.TextureSymmetricModes];
+
+        float Value(int id, int b)
+        {
+            var slider = table.Get(id);
+            return slider == null ? 0 : slider.Min + (slider.Max - slider.Min) * b / 255f;
+        }
+
+        int Byte(string fieldName) =>
+            overrides != null && overrides.TryGetValue(fieldName, out var dragged) ? dragged
+            : row[fieldName]?.Value is IConvertible v ? v.ToInt32(null) : FaceGenParams.Neutral;
+
+        foreach (var id in table.Sequence)
+        {
+            switch (id)
+            {
+                case AgeSlider:
+                    SetAgeGender(t, race.Age.TextureCoefficients, race.Gender.TextureCoefficients,
+                        race.Age.TextureOffset, race.Gender.TextureOffset, Value(id, Byte("age")), age: true);
+                    break;
+                case GenderSlider:
+                    SetAgeGender(t, race.Age.TextureCoefficients, race.Gender.TextureCoefficients,
+                        race.Age.TextureOffset, race.Gender.TextureOffset, Value(id, Byte("gender")), age: false);
+                    break;
+                case CaricatureSlider:
+                    SetCaricature(t, race.Age.TextureCoefficients, race.Gender.TextureCoefficients,
+                        race.TextureMean, race.TextureDensity, Value(id, Byte("caricatureTexture")));
+                    break;
+                case >= 200 and < 300:
+                {
+                    var index = id - 200;
+
+                    if (index < ctl.TextureSymmetricControls.Count)
+                        SetControl(t, ctl.TextureSymmetricControls[index].Coefficients, Value(id, Byte($"faceTexData{index:D2}")));
+                    break;
+                }
+            }
+        }
+
+        for (var i = 0; i < t.Length; i++)
+            t[i] = Math.Clamp(t[i], -table.TextureClamp, table.TextureClamp);
+
+        return t;
     }
 
     /// <summary>
@@ -223,18 +291,15 @@ public static class FaceGenModel
     /// Sets the apparent age (or gender) without changing the other: solves the age/gender covariance for the
     /// amounts of each direction to move by
     /// </summary>
-    private static void SetAgeGender(float[] s, CTL.Race race, float value, bool age)
+    private static void SetAgeGender(float[] s, float[] a, float[] g, float ageOffset, float genderOffset, float value, bool age)
     {
-        var a = race.Age.GeometryCoefficients;
-        var g = race.Gender.GeometryCoefficients;
-
         float aa = Dot(a, a), ag = Dot(a, g), gg = Dot(g, g);
         var det = aa * gg - ag * ag;
 
         if (MathF.Abs(det) < 1e-12f)
             return;
 
-        var current = age ? Dot(a, s) + race.Age.GeometryOffset : Dot(g, s) + race.Gender.GeometryOffset;
+        var current = age ? Dot(a, s) + ageOffset : Dot(g, s) + genderOffset;
         var change = value - current;
 
         // The inverse of [[aa, ag], [ag, gg]] times (change, 0) or (0, change)
@@ -251,7 +316,7 @@ public static class FaceGenModel
             gf = aa / det * change;
         }
 
-        for (var i = 0; i < s.Length; i++)
+        for (var i = 0; i < s.Length && i < a.Length && i < g.Length; i++)
             s[i] += af * a[i] + gf * g[i];
     }
 
@@ -259,20 +324,18 @@ public static class FaceGenModel
     /// Sets how far the face is from the average, outside the age/gender plane (measured through the race's density
     /// matrix), keeping its age and gender
     /// </summary>
-    private static void SetCaricature(float[] s, CTL.Race race, float value)
+    private static void SetCaricature(float[] s, float[] age, float[] gender, float[] mean, float[] density, float value)
     {
         value = MathF.Max(0.01f, value);
 
         var n = s.Length;
-        var mean = race.GeometryMean;
-        var density = race.GeometryDensity;
 
-        if (mean.Length < n || density.Length < n * n || n < 3)
+        if (mean.Length < n || density.Length < n * n || n < 3 || age.Length < n || gender.Length < n)
             return;
 
         // An orthonormal pair spanning age and gender
-        var ua = Normalize(race.Age.GeometryCoefficients.Take(n).ToArray());
-        var ug = race.Gender.GeometryCoefficients.Take(n).ToArray();
+        var ua = Normalize(age.Take(n).ToArray());
+        var ug = gender.Take(n).ToArray();
         var proj = Dot(ua, ug);
         for (var i = 0; i < n; i++)
             ug[i] -= ua[i] * proj;

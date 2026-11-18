@@ -265,6 +265,22 @@ public struct MaterialCustomize
     ///     material's cloth or leather albedo. Without the detail it is 1
     /// </summary>
     public const uint ModeEyePatch = 6;
+
+    /// <summary>
+    ///     FaceGen skin (DS3's GXFlver_FgFace* shaders): <c>mix(f(face), f(body), vertex colour alpha)</c> with
+    ///     <c>f(x) = sat(sqrt(x) + Color.rgb)²</c> (FC_SkinMatchColor, the skin colour). The face is the FaceGen texture
+    ///     built for the face (<see cref="MaskTex" />, set at run time; UV 0), the body the skin texture
+    ///     (<see cref="SecondTex" />, g_DiffuseTexture2; UV 1, tiled by Params.yz). Without a face texture the material's
+    ///     own albedo stands in. The same shaders' plain skins have neither, which leaves <c>f(albedo)</c>, and DS3's eyes
+    ///     (GXFlver_EyeIbl) add the colour only where the albedo's alpha is (Params.x 1): <c>sat(sqrt(x) + c · a)²</c>
+    /// </summary>
+    public const uint ModeFaceGen = 7;
+
+    /// <summary>
+    ///     Hair tint (DS3's SAT_HairIbl2): <c>sat(sqrt(albedo) · Color.rgb)²</c>, the hair colour multiplying the texture in
+    ///     square-root space (FC_SkinMatchColor on a hair part)
+    /// </summary>
+    public const uint ModeHairTint = 8;
 }
 
 /// <summary>

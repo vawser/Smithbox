@@ -491,6 +491,13 @@ public class FlverResource : IResource, IDisposable
                 LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.StubbleType, "", mtd);
             }
 
+            // The same slot holds a FaceGen skin's body texture (an MTD sampler: its path is the FLVER's)
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeFaceGen && slots.BodyType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.BodyType,
+                    flverPaths.GetValueOrDefault(slots.BodyType, ""), mtd);
+            }
+
             // The same slot holds an eye patch's cloth or leather albedo
             if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeEyePatch && slots.DetailType != null)
             {
@@ -804,6 +811,14 @@ public class FlverResource : IResource, IDisposable
                     Params = new Vector4(customize.StubbleAmount, 1, 1, mode),
                     MaskTiling = dest.CustomizeMaskTiling
                 },
+                // yz: the body texture's tiling, filled in by the upload
+                // x: 1 if the colour is only added where the albedo's alpha is (an eye)
+                MaterialCustomize.ModeFaceGen => new MaterialCustomize
+                {
+                    Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], 0),
+                    Params = new Vector4(customize.AlphaMasked ? 1 : 0, 1, 1, mode),
+                    MaskTiling = Vector2.One
+                },
                 // yz: the detail's tiling, filled in by the upload
                 MaterialCustomize.ModeEyePatch => new MaterialCustomize
                 {
@@ -941,9 +956,11 @@ public class FlverResource : IResource, IDisposable
             dest.ShaderName = @"FlverShader\FlverShader_blend";
             dest.LayoutType = MeshLayoutType.LayoutUV2;
         }
-        else if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin &&
-                 dest.Definition?.Slots is { Decal: not null } or { Burn: not null })
+        else if ((CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin &&
+                  dest.Definition?.Slots is { Decal: not null } or { Burn: not null }) ||
+                 CustomizeMode(dest.Definition) == MaterialCustomize.ModeFaceGen)
         {
+            // (A FaceGen skin's body texture is on the second UV set too)
             // A skin's decal or burn scar is on the second UV set: the blend variant for it, with one layer (as a lightmap)
             dest.ShaderName = @"FlverShader\FlverShader_blend";
             dest.LayoutType = MeshLayoutType.LayoutUV2;
@@ -4466,6 +4483,12 @@ public class FlverResource : IResource, IDisposable
             UpdateMaterial();
         }
 
+        /// <summary>
+        ///     A FaceGen skin's face texture (<see cref="MaterialCustomize.ModeFaceGen"/>): its global texture index, set
+        ///     at run time by the FaceGen Editor, 0 for none (the material's own albedo then stands in)
+        /// </summary>
+        public uint CustomizeFaceTexture;
+
         /// <summary>The decal texture set by <see cref="SetCustomizeDecal"/>, or null</summary>
         public ResourceHandle<TextureResource>? CustomizeDecal => TextureResources[(int)TextureType.CustomizeDecalTextureResource];
 
@@ -5036,8 +5059,16 @@ public class FlverResource : IResource, IDisposable
                 customize.MaskTex = mask;
                 customize.MaskTiling = CustomizeMaskTiling;
 
-                // The skin's stubble texture, or an eye patch's cloth or leather, and its tiling (Params.yz)
-                if (CustomizeMode(Definition) is MaterialCustomize.ModeSkin or MaterialCustomize.ModeEyePatch)
+                // A FaceGen skin's face texture, built at run time, in the mask's place (it has none)
+                if (CustomizeMode(Definition) == MaterialCustomize.ModeFaceGen)
+                {
+                    customize.MaskTex = CustomizeFaceTexture;
+                    customize.MaskTiling = Vector2.One;
+                }
+
+                // The skin's stubble texture, an eye patch's cloth or leather, or a FaceGen skin's body texture, and
+                // its tiling (Params.yz)
+                if (CustomizeMode(Definition) is MaterialCustomize.ModeSkin or MaterialCustomize.ModeEyePatch or MaterialCustomize.ModeFaceGen)
                 {
                     ushort stubble = 0;
                     SetMaterialTexture(TextureType.CustomizeStubbleTextureResource, ref stubble, 0);

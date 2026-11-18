@@ -51,6 +51,9 @@ public sealed class FaceTinter
 
     private readonly ProjectEntry Project;
 
+    // The face's FaceGen texture (DS3), made on first use
+    private FaceTextureBuilder? FaceTextureBuilder;
+
     // The materials that have been coloured, with their own values
     private sealed record Own(Vector4 DiffuseAlpha, MaterialCustomize? Customize, MaterialCustomizeExtra Extra, MaterialMakeup Makeup);
     private readonly Dictionary<FlverResource.FlverMaterial, Own> Tinted = new();
@@ -169,9 +172,33 @@ public sealed class FaceTinter
     /// Called every frame: only materials whose values differ are written.
     /// </summary>
     public bool Apply(MeshRenderableProxy mesh, CharacterAppearance appearance, Param.Row row,
-        IReadOnlyList<FacePart> parts, IReadOnlyDictionary<string, int>? overrides)
+        IReadOnlyList<FacePart> parts, IReadOnlyDictionary<string, int>? overrides, Param? param = null)
     {
         var done = true;
+
+        // The face's FaceGen texture (DS3), built when a material first wants it this frame, and rebuilt only when the
+        // texture coefficients or the base image change
+        uint? faceTexture = null;
+
+        uint FaceTexture()
+        {
+            if (faceTexture is { } built)
+                return built;
+
+            faceTexture = 0;
+
+            if (param != null && FaceGenSliderTable.Get(Project) is { } table &&
+                (FaceGenTuning.BaseImage ?? table.TextureBase) is { } baseImage &&
+                FaceGenModel.TextureCoefficients(Project, param, row, overrides) is { } coefficients)
+            {
+                FaceTextureBuilder ??= new FaceTextureBuilder(Project);
+
+                if (FaceTextureBuilder.Update(coefficients, baseImage))
+                    faceTexture = FaceTextureBuilder.Index;
+            }
+
+            return faceTexture.Value;
+        }
 
         // Each name's colour and hair values, as first wanted (null: the row has no such colour)
         var looks = new Dictionary<string, Look?>(StringComparer.OrdinalIgnoreCase);
@@ -239,11 +266,32 @@ public sealed class FaceTinter
                         wanted.Color = new Vector4(look.Color, customize.Color.W);
                         wanted.Params.X = StubbleOf(row, overrides) ?? customize.Params.X;
                     }
+                    else if (FlverResource.CustomizeMode(material.Definition) is MaterialCustomize.ModeFaceGen or MaterialCustomize.ModeHairTint)
+                    {
+                        // DS3: the colour is the part model's FC_SkinMatchColor (Params.x, the eye's alpha mask, is kept).
+                        // TEMPORARY (DS3 skin tuning): how the game turns skinColor into it isn't known, so the skin's
+                        // is scaled and offset by View → DS3 Skin Tuning until it is matched against the game
+                        var color = look.Color;
+
+                        if (FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeFaceGen &&
+                            colorName.Equals("skin", StringComparison.OrdinalIgnoreCase))
+                        {
+                            color = color * FaceGenTuning.SkinScale + new Vector3(FaceGenTuning.SkinOffset);
+                        }
+
+                        wanted.Color = new Vector4(color, customize.Color.W);
+                    }
                     else
                     {
                         wanted.Color = new Vector4(look.Color, look.RootBlack ?? customize.Color.W);
                         wanted.Params.X = look.WhiteDensity ?? customize.Params.X;
                     }
+
+                    // A FaceGen skin with a body texture is a face: it draws the face's FaceGen texture
+                    var faceTex = FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeFaceGen &&
+                                  slots.BodyType != null
+                        ? FaceTexture()
+                        : material.CustomizeFaceTexture;
 
                     // Hair: the shininess (hair_shininess), where the material has a gloss to scale
                     var extra = own.Extra;
@@ -270,12 +318,13 @@ public sealed class FaceTinter
 
                     if (material.Customize is { } current && current.Color == wanted.Color && current.Params == wanted.Params &&
                         material.CustomizeExtra.A == extra.A && material.CustomizeExtra.B == extra.B &&
-                        SameLayers(material.CustomizeMakeup, makeup))
+                        SameLayers(material.CustomizeMakeup, makeup) && material.CustomizeFaceTexture == faceTex)
                     {
                         continue;
                     }
 
                     // The masks' textures and tilings are filled in by the upload
+                    material.CustomizeFaceTexture = faceTex;
                     material.Customize = wanted;
                     material.CustomizeExtra = extra;
                     material.CustomizeMakeup = makeup;
@@ -308,8 +357,9 @@ public sealed class FaceTinter
             material.Shading.DiffuseAlpha = own.DiffuseAlpha;
             material.Customize = own.Customize;
 
-            // No material names a decal: it is only ever the face's
+            // No material names a decal or a FaceGen texture: they are only ever the face's
             material.SetCustomizeDecal(null);
+            material.CustomizeFaceTexture = 0;
             material.CustomizeExtra = own.Extra;
             material.CustomizeMakeup = own.Makeup;
             material.UpdateMaterial();
