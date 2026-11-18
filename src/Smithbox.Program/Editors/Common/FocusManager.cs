@@ -170,6 +170,7 @@ public static class FocusManager
             or EditorFocusContext.FaceGenEditor_List
             or EditorFocusContext.FaceGenEditor_Properties
             or EditorFocusContext.FaceGenEditor_References
+            or EditorFocusContext.FaceGenEditor_Tools
             or EditorFocusContext.FaceGenEditor_Viewport;
     }
 
@@ -390,5 +391,6 @@ public enum EditorFocusContext
     FaceGenEditor_List,
     FaceGenEditor_Properties,
     FaceGenEditor_References,
+    FaceGenEditor_Tools,
     FaceGenEditor_Viewport
 }

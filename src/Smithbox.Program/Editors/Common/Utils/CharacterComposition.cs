@@ -116,13 +116,16 @@ public static class CharacterComposition
     ///     Gets the parts of a character.
     /// </summary>
     /// <param name="charaInitId">The CharaInitParam row to dress it from. Anything else gives the bare body.</param>
-    public static CharacterAppearance Resolve(ProjectEntry project, int charaInitId = -1)
+    /// <param name="isFemale">The body's sex, in place of the row's (the FaceGen Editor's, which is the face's)</param>
+    public static CharacterAppearance Resolve(ProjectEntry project, int charaInitId = -1, bool? isFemale = null)
     {
         HashSet<string> partNames = GetPartNames(project);
 
         Param.Row? charaInit = GetRow(project, "CharaInitParam", charaInitId);
 
-        var isMale = charaInit == null || GetValue(charaInit, "npcPlayerSex") == SexMale;
+        var isMale = isFemale.HasValue
+            ? !isFemale.Value
+            : charaInit == null || GetValue(charaInit, "npcPlayerSex") == SexMale;
         var sex = isMale ? "m" : "f";
 
         List<CharacterPart> parts = new();
@@ -336,11 +339,89 @@ public static class CharacterComposition
     ///     Gets the parts of a bare character of a sex, with other part models on top (the parts of a face, from
     ///     <see cref="FaceComposition" />). The extra models are skinned to the character like the body.
     /// </summary>
-    public static CharacterAppearance Resolve(ProjectEntry project, bool isFemale, IEnumerable<string> extraParts)
+    /// <param name="outfit">
+    ///     The equipment to wear, already resolved for this sex (the Character Preview tool's), in place of the bare
+    ///     character's; null for the bare character
+    /// </param>
+    public static CharacterAppearance Resolve(ProjectEntry project, bool isFemale, IEnumerable<string> extraParts,
+        CharacterAppearance? outfit = null)
     {
         HashSet<string> partNames = GetPartNames(project);
 
         var sex = isFemale ? "f" : "m";
+
+        List<CharacterPart> parts;
+        int[]? masks;
+        string? head;
+
+        if (outfit != null)
+            (parts, masks, head) = WearOutfit(project, outfit);
+        else
+            (parts, masks, head) = WearBare(project, partNames, sex);
+
+        foreach (var name in extraParts)
+        {
+            if (parts.Any(p => p.Name == name))
+                continue;
+
+            if (partNames.Contains(name))
+                parts.Add(new CharacterPart(name));
+            else if (FaceComposition.ContainerOf(project, name) is { } container)
+                parts.Add(new CharacterPart(name, Container: container));
+        }
+
+        // A body among the extra parts (the one DS3's face parts value names) replaces the default one
+        if (head == null && extraParts.FirstOrDefault(n => n.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase) &&
+                                                          partNames.Contains(n)) is { } extraBody)
+        {
+            parts.RemoveAll(p => p.AttachNode == null && p.Name != extraBody &&
+                                 p.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase));
+        }
+
+        return new CharacterAppearance(parts, masks, head);
+    }
+
+    /// <summary>
+    ///     The parts of an outfit, with the masks of the bare character in the slots it leaves empty: a hair model
+    ///     carries a variant per helmet shape, and with no helmet the bare head row hides all but the full one.
+    /// </summary>
+    private static (List<CharacterPart> Parts, int[]? Masks, string? Head) WearOutfit(ProjectEntry project, CharacterAppearance outfit)
+    {
+        var parts = outfit.Parts.ToList();
+
+        int[] masks;
+
+        if (outfit.Masks != null)
+        {
+            masks = outfit.Masks.ToArray();
+        }
+        else
+        {
+            masks = new int[MaskCount];
+            Array.Fill(masks, 1);
+        }
+
+        var empty = ArmorSlots
+            .Where(slot => !parts.Any(p => p.AttachNode == null && IsArmorPart(p.Name, slot.Prefix)) &&
+                           !(slot.Prefix == HeadPrefix && outfit.Head != null))
+            .Select(slot => slot.Field)
+            .ToList();
+
+        HideBareMasks(project, masks, empty);
+
+        return (parts, masks, outfit.Head);
+    }
+
+    /// <summary>An armour part of a slot, not the bare body Dark Souls keeps there (bd_m_0000)</summary>
+    private static bool IsArmorPart(string name, string prefix)
+    {
+        return name.StartsWith($"{prefix}_", StringComparison.OrdinalIgnoreCase) &&
+               !name.EndsWith("_0000", StringComparison.Ordinal);
+    }
+
+    /// <summary>The bare character of a sex: its body, and the default outfit of a game that needs one (SDT)</summary>
+    private static (List<CharacterPart> Parts, int[]? Masks, string? Head) WearBare(ProjectEntry project, HashSet<string> partNames, string sex)
+    {
         var hasSplitBody = project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R;
 
         List<CharacterPart> parts = new();
@@ -382,27 +463,14 @@ public static class CharacterComposition
             UseHead(parts, head);
         }
 
-        foreach (var name in extraParts)
-        {
-            if (parts.Any(p => p.Name == name))
-                continue;
-
-            if (partNames.Contains(name))
-                parts.Add(new CharacterPart(name));
-            else if (FaceComposition.ContainerOf(project, name) is { } container)
-                parts.Add(new CharacterPart(name, Container: container));
-        }
-
-        // A body among the extra parts (the one DS3's face parts value names) replaces the default one
-        if (head == null && extraParts.FirstOrDefault(n => n.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase) &&
-                                                          partNames.Contains(n)) is { } extraBody)
-        {
-            parts.RemoveAll(p => p.AttachNode == null && p.Name != extraBody &&
-                                 p.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase));
-        }
-
-        return new CharacterAppearance(parts, masks, head);
+        return (parts, masks, head);
     }
+
+    // The protector slots, by their EquipParamProtector field and their part prefix
+    private static readonly (string Field, string Prefix)[] ArmorSlots =
+    {
+        ("headEquip", HeadPrefix), ("bodyEquip", "bd"), ("armEquip", "am"), ("legEquip", "lg")
+    };
 
     /// <summary>
     ///     The mesh groups a character shows with nothing on: those the unarmoured protector rows (no model, one slot
@@ -411,23 +479,33 @@ public static class CharacterComposition
     /// </summary>
     public static int[]? GetBareMasks(ProjectEntry project)
     {
+        var masks = new int[MaskCount];
+        Array.Fill(masks, 1);
+
+        return HideBareMasks(project, masks, ArmorSlots.Select(s => s.Field)) ? masks : null;
+    }
+
+    /// <summary>
+    ///     Hides the masks the unarmoured protector row of each slot hides. False if the game has no such rows.
+    /// </summary>
+    /// <param name="slots">The slots, by their EquipParamProtector field (headEquip and the like)</param>
+    private static bool HideBareMasks(ProjectEntry project, int[] masks, IEnumerable<string> slots)
+    {
         if (project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
             !bank.TryGetValue("EquipParamProtector", out Param? param) || param.Rows.Count == 0 ||
             !HasField(param.Rows[0], "equipModelId"))
         {
-            return null;
+            return false;
         }
 
-        var masks = new int[MaskCount];
-        Array.Fill(masks, 1);
         var found = false;
 
-        foreach (var slot in new[] { "headEquip", "bodyEquip", "armEquip", "legEquip" })
+        foreach (var slot in slots)
         {
             // The first row of the slot with no model, and no other slot
             var bare = param.Rows.FirstOrDefault(r =>
                 GetValue(r, "equipModelId") == 0 && GetValue(r, slot) != 0 &&
-                new[] { "headEquip", "bodyEquip", "armEquip", "legEquip" }.Count(s => GetValue(r, s) != 0) == 1);
+                ArmorSlots.Count(s => GetValue(r, s.Field) != 0) == 1);
 
             if (bare != null)
             {
@@ -436,7 +514,7 @@ public static class CharacterComposition
             }
         }
 
-        return found ? masks : null;
+        return found;
     }
 
     /// <summary>

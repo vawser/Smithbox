@@ -3,6 +3,7 @@ using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using System;
@@ -30,6 +31,13 @@ public class FaceGenEditorView
     public FaceListView ListView;
     public FacePropertiesView PropertiesView;
     public FaceReferencesView ReferencesView;
+    public FaceGenToolWindow ToolWindow;
+
+    /// <summary>What the face's character wears in the viewport (the Model Editor's Character Preview tool)</summary>
+    public ModelCharacterPreview CharacterPreview;
+
+    /// <summary>Plays c0000's animations on the viewport's character</summary>
+    public FaceGenAnimationTool AnimationTool;
 
     /// <summary>The face param shown, and its active row</summary>
     public string? ParamName { get; private set; }
@@ -44,6 +52,13 @@ public class FaceGenEditorView
         Editor = editor;
         Project = project;
 
+        // Before the viewport, which asks it what to wear
+        CharacterPreview = new ModelCharacterPreview(project, GetCharacterPreviewTarget)
+        {
+            NoTargetMessage = LOC.Get("FACEGEN_CharacterPreview_No_Face"),
+            SexChoiceNote = LOC.Get("FACEGEN_CharacterPreview_Sex_Note")
+        };
+
         RenderScene = Smithbox.Instance._context.Device != null ? new RenderScene() : null;
         Universe = new FaceGenUniverse(this, project);
         ViewportWindow = new FaceViewportWindow(this, project);
@@ -51,6 +66,23 @@ public class FaceGenEditorView
         ListView = new FaceListView(this);
         PropertiesView = new FacePropertiesView(this);
         ReferencesView = new FaceReferencesView(this);
+        AnimationTool = new FaceGenAnimationTool(this, project);
+        ToolWindow = new FaceGenToolWindow(this);
+    }
+
+    /// <summary>
+    /// What the Character Preview tool dresses: the active face's character, always c0000. The tool's choice is
+    /// resolved again by the viewport, on the face's sex rather than the tool's, so the appearance it hands over is
+    /// only the signal to do so.
+    /// </summary>
+    private CharacterPreviewTarget? GetCharacterPreviewTarget()
+    {
+        if (ActiveRow == null)
+            return null;
+
+        var appearance = ViewportWindow?.Appearance ?? new CharacterAppearance(Array.Empty<CharacterPart>(), null);
+
+        return new CharacterPreviewTarget(CharacterComposition.CompositeModel, appearance, _ => ViewportWindow?.OutfitChanged());
     }
 
     public Param? ActiveParam => ParamName != null ? FaceGenParams.GetParam(Project, ParamName) : null;
@@ -120,6 +152,9 @@ public class FaceGenEditorView
         if (CFG.Current.Interface_FaceGenEditor_References)
             Window($"{LOC.Get("FACEGEN_Window_References")}{ReferencesWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_References, ReferencesView.Display);
 
+        if (CFG.Current.Interface_FaceGenEditor_ToolWindow)
+            Window($"{LOC.Get("FACEGEN_Window_Tools")}{ToolWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_Tools, ToolWindow.Display);
+
         // The viewport window sets the focus itself
         ViewportWindow.Display(dockspaceId);
     }
@@ -129,6 +164,9 @@ public class FaceGenEditorView
     public void Update(float dt)
     {
         ViewportWindow.Update(dt);
+
+        // After the viewport, which may have made the mesh again
+        AnimationTool.Update();
 
         // The lighting the viewport borrows, once there is something to light (as the Projectile Editor does)
         if (ViewportWindow.HasMesh)
@@ -153,12 +191,14 @@ public class FaceGenEditorView
 
     public void Dispose()
     {
+        AnimationTool.StopAll();
         ViewportWindow.Dispose();
     }
 
     public const string ListWindowId = "###faceGenEditor_List";
     public const string PropertiesWindowId = "###faceGenEditor_Properties";
     public const string ReferencesWindowId = "###faceGenEditor_References";
+    public const string ToolWindowId = "###faceGenEditor_Tools";
 
     private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw)
     {

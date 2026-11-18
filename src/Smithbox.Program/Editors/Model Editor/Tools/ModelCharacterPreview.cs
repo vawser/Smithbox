@@ -60,11 +60,30 @@ public class ModelCharacterPreview
     private string _filter = "";
     private readonly Dictionary<CharacterSlot, string> _slotFilters = new();
 
+    /// <summary>
+    ///     Shown in place of the tool while there is no target. Null for the default (load c0000).
+    /// </summary>
+    public string NoTargetMessage { get; set; }
+
+    /// <summary>
+    ///     Set when the host chooses the body's sex itself (the FaceGen Editor, by the face's): the Individual Parts
+    ///     tab shows this in place of its Male and Female choice.
+    /// </summary>
+    public string SexChoiceNote { get; set; }
+
     public ModelCharacterPreview(ProjectEntry project, Func<CharacterPreviewTarget> getTarget)
     {
         Project = project;
         _getTarget = getTarget;
     }
+
+    /// <summary>
+    ///     Whether nothing is chosen: the bare body of the CharaInitParam tab, or an Individual Parts tab with
+    ///     every slot empty.
+    /// </summary>
+    public bool IsBare => _source is PreviewSource.Loadout
+        ? _loadout.Parts.Count == 0
+        : _selectedCharaInitId < 0;
 
     /// <summary>
     ///     Gets the parts for the current choices.
@@ -74,6 +93,26 @@ public class ModelCharacterPreview
         return _source is PreviewSource.Loadout
             ? CharacterComposition.Resolve(Project, _loadout)
             : CharacterComposition.Resolve(Project, _selectedCharaInitId);
+    }
+
+    /// <summary>
+    ///     Gets the parts for the current choices on a body of the given sex, whatever the choices say.
+    /// </summary>
+    public CharacterAppearance GetAppearance(bool isFemale)
+    {
+        if (_source is not PreviewSource.Loadout)
+        {
+            return CharacterComposition.Resolve(Project, _selectedCharaInitId, isFemale);
+        }
+
+        CharacterLoadout loadout = new() { IsFemale = isFemale };
+
+        foreach ((CharacterSlot slot, var part) in _loadout.Parts)
+        {
+            loadout.Parts[slot] = part;
+        }
+
+        return CharacterComposition.Resolve(Project, loadout);
     }
 
     public void OnToolWindow()
@@ -92,7 +131,7 @@ public class ModelCharacterPreview
 
         if (target == null || !CharacterComposition.IsComposite(target.ModelName))
         {
-            GUI.WrappedText($"Load {CharacterComposition.CompositeModel} to preview its equipment.");
+            GUI.WrappedText(NoTargetMessage ?? $"Load {CharacterComposition.CompositeModel} to preview its equipment.");
             return;
         }
 
@@ -196,18 +235,25 @@ public class ModelCharacterPreview
 
         var isFemale = _loadout.IsFemale;
 
-        if (ImGui.RadioButton("Male##characterPreviewMale", !isFemale) && isFemale)
+        if (SexChoiceNote != null)
         {
-            _loadout.IsFemale = false;
-            Apply(target);
+            GUI.WrappedText(SexChoiceNote);
         }
-
-        ImGui.SameLine();
-
-        if (ImGui.RadioButton("Female##characterPreviewFemale", isFemale) && !isFemale)
+        else
         {
-            _loadout.IsFemale = true;
-            Apply(target);
+            if (ImGui.RadioButton("Male##characterPreviewMale", !isFemale) && isFemale)
+            {
+                _loadout.IsFemale = false;
+                Apply(target);
+            }
+
+            ImGui.SameLine();
+
+            if (ImGui.RadioButton("Female##characterPreviewFemale", isFemale) && !isFemale)
+            {
+                _loadout.IsFemale = true;
+                Apply(target);
+            }
         }
 
         GUI.Spacer();

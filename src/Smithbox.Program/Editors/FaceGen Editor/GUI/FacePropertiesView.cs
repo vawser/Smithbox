@@ -81,7 +81,17 @@ public class FacePropertiesView
 
         DisplayHeader(editor, paramName, param, row);
 
-        EditorFilters.DisplayFramedListFilter("faceGenFieldFilter", ref FieldFilter, ref ExactFieldFilter);
+        ImGui.BeginChild("faceGenPropertiesHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+        EditorFilters.DisplaySearchbar("faceGenFieldFilter", ref FieldFilter, ref ExactFieldFilter);
+
+        // Toggle: internal names
+        GUI.DisplayToggleButton("faceGenInternalNamesToggle", Icons.Book,
+            ref CFG.Current.FaceGenEditor_Show_Internal_Names,
+            "FACEGEN_Properties_Names_Toggle_Display",
+            "FACEGEN_Properties_Names_Toggle_Internal",
+            "FACEGEN_Properties_Names_Toggle_TT");
+
+        ImGui.EndChild();
 
         if (ImGui.BeginChild("faceGenProperties"))
         {

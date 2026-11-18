@@ -16,10 +16,11 @@ using Rectangle = Veldrid.Rectangle;
 namespace StudioCore.Editors.FaceGenEditor;
 
 /// <summary>
-/// The FaceGen Editor's viewport: a bare player character (c0000's body, as the other editors build it) wearing the
-/// parts the active face names, in their rest pose. The face is not morphed yet: every head shows its base shape.
+/// The FaceGen Editor's viewport: a player character (c0000's body, as the other editors build it, bare or in the
+/// Character Preview tool's outfit) wearing the parts the active face names, in their rest pose.
 /// <para>
-/// The mesh is made again when the set of part models changes (another face, a part picked, the body's sex), and
+/// The mesh is made again when the set of part models changes (another face, a part picked, the body's sex, the
+/// outfit), and
 /// the head is framed the first time it is shown.
 /// </para>
 /// </summary>
@@ -46,9 +47,16 @@ public class FaceViewportWindow
     // A head is a fraction of a metre across, so the shared speeds (20 m/s normal) are slowed to about 1 m/s
     private const float MoveSpeedFactor = 0.05f;
 
-    private MeshRenderableProxy? Mesh;
-    private CharacterAppearance? Appearance;
+    /// <summary>The character shown, null with no face; made again when its models change (for the Animation Browser)</summary>
+    public MeshRenderableProxy? Mesh { get; private set; }
+
     private string? MeshKey;
+
+    /// <summary>The parts shown, as last resolved (for the Character Preview tool's list)</summary>
+    public CharacterAppearance? Appearance { get; private set; }
+
+    // Raised by the Character Preview tool, so the mesh is made again in the new outfit
+    private int OutfitVersion;
     private string? MeshUid;
     private bool FramePending = true;
 
@@ -100,7 +108,7 @@ public class FaceViewportWindow
             nullViewport.Display();
     }
 
-    /// <summary>Whether the body is the female one: as the menu says, or as the first character wearing the face is</summary>
+    /// <summary>Whether the body is the female one: as the Viewport Filters tool says, or as the first character wearing the face is</summary>
     public bool IsFemale()
     {
         switch (CFG.Current.FaceGenEditor_Body)
@@ -120,6 +128,12 @@ public class FaceViewportWindow
         return wearer != null && wearer.Row.Cells.FirstOrDefault(c =>
             c.Def.InternalName.Equals("npcPlayerSex", StringComparison.OrdinalIgnoreCase)).Value is IConvertible sex &&
             sex.ToInt32(null) == 0;
+    }
+
+    /// <summary>The Character Preview tool's choice changed: the mesh is made again on the next update</summary>
+    public void OutfitChanged()
+    {
+        OutfitVersion++;
     }
 
     // ---- camera
@@ -218,7 +232,8 @@ public class FaceViewportWindow
 
         // The face's models, and the body its face parts value names (DS3)
         var models = Parts.SelectMany(p => new[] { p.Body, p.Model }).Where(m => m != null).Select(m => m!).Distinct().ToList();
-        var key = row == null ? null : $"{(isFemale ? 'f' : 'm')}|{string.Join(",", models)}";
+        var dressed = !View.CharacterPreview.IsBare;
+        var key = row == null ? null : $"{(isFemale ? 'f' : 'm')}|{string.Join(",", models)}|{(dressed ? OutfitVersion : -1)}";
 
         if (key == MeshKey)
             return;
@@ -229,7 +244,10 @@ public class FaceViewportWindow
         if (key == null)
             return;
 
-        Appearance = CharacterComposition.Resolve(Project, isFemale, models);
+        // The tool's outfit, on the face's sex; nothing chosen is the bare character (SDT's default outfit, ER's bare masks)
+        var outfit = dressed ? View.CharacterPreview.GetAppearance(isFemale) : null;
+
+        Appearance = CharacterComposition.Resolve(Project, isFemale, models, outfit);
         MeshUid = $"FaceGenPreview_{System.Threading.Interlocked.Increment(ref Serial)}";
         Mesh = CharacterComposition.CreateMesh(Project, View.RenderScene, Appearance, MeshUid, LOC.Get("FACEGEN_Load_Job_Parts"));
 

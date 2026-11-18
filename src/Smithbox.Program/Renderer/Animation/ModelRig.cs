@@ -146,7 +146,11 @@ public sealed class ModelRig
         foreach (BinderFileHeader file in binder.Files)
         {
             var name = Path.GetFileName(file.Name.Replace('\\', '/'));
-            if (!name.Contains(".flver", StringComparison.OrdinalIgnoreCase))
+
+            // Only the models themselves: a face part's binder also holds its fg_a_7001.flver2tri (F2TR), named
+            // after the model, which would otherwise be taken for it
+            if (!name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase) &&
+                !name.EndsWith(".flver.dcx", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }

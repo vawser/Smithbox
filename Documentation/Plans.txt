@@ -179,9 +179,6 @@
 #----------------------------------------------------
 # FaceGen Editor TODO
 #----------------------------------------------------
-- Move View options into Viewport Filters tool
-- Add Character Preview tool
-- Add Animation Browser tool
 - Add support for face in c0000 usage instances
 
 #----------------------------------------------------

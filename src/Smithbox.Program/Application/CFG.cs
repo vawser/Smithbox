@@ -1051,6 +1051,10 @@ public class CFG
     public bool Interface_FaceGenEditor_List = true;
     public bool Interface_FaceGenEditor_Properties = true;
     public bool Interface_FaceGenEditor_References = true;
+    public bool Interface_FaceGenEditor_ToolWindow = true;
+    public bool Interface_FaceGenEditor_Tool_ViewportFilters = true;
+    public bool Interface_FaceGenEditor_Tool_CharacterPreview = true;
+    public bool Interface_FaceGenEditor_Tool_AnimationBrowser = true;
     public bool FaceGenEditor_Show_Internal_Names = false;
 
     /// <summary>The body the face is shown on: 0 as the first character wearing it, 1 male, 2 female</summary>

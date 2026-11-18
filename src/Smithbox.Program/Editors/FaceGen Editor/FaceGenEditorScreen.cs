@@ -142,27 +142,16 @@ public class FaceGenEditorScreen : EditorScreen
         Toggle("FACEGEN_Window_List", ref CFG.Current.Interface_FaceGenEditor_List);
         Toggle("FACEGEN_Window_Properties", ref CFG.Current.Interface_FaceGenEditor_Properties);
         Toggle("FACEGEN_Window_References", ref CFG.Current.Interface_FaceGenEditor_References);
+        Toggle("FACEGEN_Window_Tools", ref CFG.Current.Interface_FaceGenEditor_ToolWindow);
 
         ImGui.Separator();
 
-        Toggle("FACEGEN_Menu_Show_Internal_Names", ref CFG.Current.FaceGenEditor_Show_Internal_Names);
-        GUI.Tooltip(LOC.Get("FACEGEN_Menu_Show_Internal_Names_TT"));
+        // The Tools window's tools
+        Toggle("FACEGEN_Tool_Viewport_Filters", ref CFG.Current.Interface_FaceGenEditor_Tool_ViewportFilters);
+        Toggle("FACEGEN_Tool_Character_Preview", ref CFG.Current.Interface_FaceGenEditor_Tool_CharacterPreview);
+        Toggle("FACEGEN_Tool_Animation_Browser", ref CFG.Current.Interface_FaceGenEditor_Tool_AnimationBrowser);
 
         ImGui.Separator();
-
-        // The body the face is shown on
-        if (ImGui.BeginMenu($"{LOC.Get("FACEGEN_Menu_Body")}##faceGenBodyMenu"))
-        {
-            BodyOption("FACEGEN_Menu_Body_Wearer", 0);
-            BodyOption("FACEGEN_Menu_Body_Male", 1);
-            BodyOption("FACEGEN_Menu_Body_Female", 2);
-            ImGui.EndMenu();
-        }
-        GUI.Tooltip(LOC.Get("FACEGEN_Menu_Body_TT"));
-
-        Toggle("FACEGEN_Menu_Apply_Shape", ref CFG.Current.FaceGenEditor_Apply_Shape);
-        GUI.Tooltip(LOC.Get("FACEGEN_Menu_Apply_Shape_TT"));
-
 
         if (ImGui.MenuItem($"{LOC.Get("FACEGEN_Menu_Frame_Face")}##faceGenFrameFace"))
             View.ViewportWindow.FrameFace();
@@ -171,14 +160,6 @@ public class FaceGenEditorScreen : EditorScreen
             View.ViewportWindow.FrameBody();
 
         ImGui.EndMenu();
-    }
-
-    private static void BodyOption(string locKey, int value)
-    {
-        if (ImGui.MenuItem($"{LOC.Get(locKey)}##{locKey}"))
-            CFG.Current.FaceGenEditor_Body = value;
-
-        GUI.ShowActiveStatus(CFG.Current.FaceGenEditor_Body == value);
     }
 
     private static void Toggle(string locKey, ref bool value)
@@ -190,7 +171,7 @@ public class FaceGenEditorScreen : EditorScreen
     }
 
     /// <summary>
-    /// The list over the references on the left, the properties on the right, and the viewport between them, the
+    /// The list over the references on the left, the properties over the Tools window on the right, and the viewport between them, the
     /// first time the editor is shown. Once the layout exists it is left alone.
     /// </summary>
     private static unsafe void BuildDefaultLayout(uint dockspaceId)
@@ -209,13 +190,18 @@ public class FaceGenEditorScreen : EditorScreen
         uint referencesId;
         ImGuiP.DockBuilderSplitNode(leftId, ImGuiDir.Up, 0.65f, &listId, &referencesId);
 
-        uint propertiesId;
+        uint sideId;
         uint centerId;
-        ImGuiP.DockBuilderSplitNode(restId, ImGuiDir.Right, 0.38f, &propertiesId, &centerId);
+        ImGuiP.DockBuilderSplitNode(restId, ImGuiDir.Right, 0.38f, &sideId, &centerId);
+
+        uint propertiesId;
+        uint toolsId;
+        ImGuiP.DockBuilderSplitNode(sideId, ImGuiDir.Up, 0.7f, &propertiesId, &toolsId);
 
         ImGuiP.DockBuilderDockWindow(FaceGenEditorView.ListWindowId, listId);
         ImGuiP.DockBuilderDockWindow(FaceGenEditorView.ReferencesWindowId, referencesId);
         ImGuiP.DockBuilderDockWindow(FaceGenEditorView.PropertiesWindowId, propertiesId);
+        ImGuiP.DockBuilderDockWindow(FaceGenEditorView.ToolWindowId, toolsId);
         ImGuiP.DockBuilderDockWindow(FaceViewportWindow.WindowId, centerId);
 
         ImGuiP.DockBuilderFinish(dockspaceId);
