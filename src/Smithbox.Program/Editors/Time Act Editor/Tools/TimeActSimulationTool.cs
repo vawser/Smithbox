@@ -127,6 +127,8 @@ public class TimeActSimulationTool
                 : LOC.Get("TAE_SimulationTool_Turn_None"));
         }
 
+        DisplayFloorMaterial();
+
         // Weapons
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Weapon_Style_Header"), LOC.Get("TAE_SimulationTool_Weapon_Style_Header_TT"));
@@ -159,6 +161,45 @@ public class TimeActSimulationTool
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_States_Header"), LOC.Get("TAE_SimulationTool_States_Header_TT"));
 
         DisplayStates(simulation);
+    }
+
+    /// <summary>
+    /// The floor the character stands on, for the floor-determined effects. Only shown where the game has floor
+    /// materials (HitMtrlParam).
+    /// </summary>
+    private void DisplayFloorMaterial()
+    {
+        var materials = TimeActFloorEffects.GetFloorMaterials(Project);
+
+        if (materials.Count == 0)
+            return;
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Floor_Header"), LOC.Get("TAE_SimulationTool_Floor_Header_TT"));
+
+        string Label((int Id, string Name) material) =>
+            string.IsNullOrEmpty(material.Name) ? $"{material.Id}" : $"{material.Id}: {material.Name}";
+
+        var current = materials.FindIndex(m => m.Id == CFG.Current.TimeActEditor_Floor_Material);
+        var preview = current >= 0 ? Label(materials[current]) : $"{CFG.Current.TimeActEditor_Floor_Material}";
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##timeActSimFloorMaterial", preview))
+        {
+            foreach (var material in materials)
+            {
+                if (ImGui.Selectable($"{Label(material)}##timeActSimFloor{material.Id}", material.Id == CFG.Current.TimeActEditor_Floor_Material))
+                {
+                    CFG.Current.TimeActEditor_Floor_Material = material.Id;
+
+                    // The effects are worked out once for the animation
+                    View.Playback.Effects.Invalidate();
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Floor_TT"));
     }
 
     // The styles that can be picked to start from, by their WeaponStyle value

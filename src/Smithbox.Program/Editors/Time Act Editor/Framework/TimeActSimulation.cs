@@ -62,6 +62,12 @@ public enum TimeActSimulationRole
     /// </summary>
     WeaponDummyLocation,
 
+    /// <summary>
+    /// The FFXID is an offset into the effects of the floor material underfoot (SpawnFFX_FloorDetermined), see
+    /// <see cref="TimeActFloorEffects" />
+    /// </summary>
+    FloorEffect,
+
     /// <summary>While active, the character turns toward its target at TurnSpeed degrees a second</summary>
     TurnSpeed,
 

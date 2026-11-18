@@ -216,6 +216,11 @@ public sealed class TimeActEffectPlayback : IDisposable
         try
         {
             var id = number.ToInt32(null);
+
+            // The ID of a floor-determined effect is an offset into the effects of the floor material underfoot
+            if (_project.Handler.TimeActData?.GetSimulationRole(ev) == TimeActSimulationRole.FloorEffect)
+                return TimeActFloorEffects.Resolve(_project, id, CFG.Current.TimeActEditor_Floor_Material);
+
             return id > 0 ? id : null;
         }
         catch

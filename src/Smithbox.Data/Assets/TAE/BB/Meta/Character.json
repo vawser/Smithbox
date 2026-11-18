@@ -136,6 +136,7 @@
     {
       "ID": 112,
       "Event": "SpawnFFX_FloorDetermined",
+      "Simulation": "FloorEffect",
       "Fields": [
         {
           "Field": "FFXID",

@@ -3348,6 +3348,18 @@
     {
       "Key": "TAE_EventDisplay_Throw_No_Range",
       "Text": "A throw (throwFlag 2), but no ThrowParam row has {0} as its thrower."
+    },
+    {
+      "Key": "TAE_SimulationTool_Floor_Header",
+      "Text": "Floor"
+    },
+    {
+      "Key": "TAE_SimulationTool_Floor_Header_TT",
+      "Text": "The floor material the character stands on, for the effects that depend on it (such as SpawnFFX_FloorDetermined: dust on sand, splashes in water)."
+    },
+    {
+      "Key": "TAE_SimulationTool_Floor_TT",
+      "Text": "The floor material, by its HitMtrlParam row. A floor-determined effect event's FFXID picks one of this floor's effects, through FootSfxParam."
     }
   ]
 }

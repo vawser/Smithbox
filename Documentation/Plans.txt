@@ -85,9 +85,7 @@
 #----------------------------------------------------
 # Time Act Editor TODO
 #----------------------------------------------------
-- Playback:
-    - FloorDetermined FFX needs to apply a offset to the FFX ID
-    
+
 - Tools:
     - NPC Param Selector
     - Behavior / Hit Source Selector
