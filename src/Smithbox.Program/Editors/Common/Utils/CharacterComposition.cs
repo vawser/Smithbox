@@ -25,7 +25,10 @@ public sealed record CharacterPart(string Name, string? AttachNode = null, int E
 /// </summary>
 /// <param name="Parts">The part models.</param>
 /// <param name="Masks">The enabled material masks of the skinned parts. Null if everything is enabled.</param>
-public sealed record CharacterAppearance(IReadOnlyList<CharacterPart> Parts, int[]? Masks);
+/// <param name="Head">
+///     The face model the head equipment chose (SDT: fc_m_0200, Wolf's head), in place of the body's, or null.
+/// </param>
+public sealed record CharacterAppearance(IReadOnlyList<CharacterPart> Parts, int[]? Masks, string? Head = null);
 
 /// <summary>
 ///     The places on a character that hold a part model.
@@ -63,6 +66,7 @@ public static class CharacterComposition
     public const string CompositeModel = "c0000";
 
     private const string BodyPartPrefix = "fc_";
+    private const string HeadPrefix = "hd";
 
     // Larger than the invisible flags of any game, as masks past the end of the list are treated as disabled
     private const int MaskCount = 128;
@@ -152,6 +156,7 @@ public static class CharacterComposition
 
         var masks = new int[MaskCount];
         Array.Fill(masks, 1);
+        string? head = null;
 
         void AddEquipment(string prefix, params string[] fields)
         {
@@ -164,24 +169,27 @@ public static class CharacterComposition
 
             HideMasks(protector, masks);
 
-            var id = GetValue(protector, "equipModelId");
-            if (id <= 0)
+            if (GetValue(protector, "equipModelId") <= 0)
             {
                 AddBareSlot(prefix);
                 return;
             }
 
-            var names = GetModelGenderLetters(GetValue(protector, "equipModelGender"), sex)
-                .Select(letter => $"{prefix}_{letter}_{id:D4}")
-                .ToArray();
+            if (ProtectorPart(partNames, protector, prefix, sex) is { } name)
+            {
+                parts.Add(new CharacterPart(name));
 
-            AddFirstFound(names);
+                if (name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase))
+                    head = name;
+            }
         }
 
-        AddEquipment("hd", "equip_Helm");
+        AddEquipment(HeadPrefix, "equip_Helm");
         AddEquipment("bd", "equip_Armer", "equip_Armor");
         AddEquipment("am", "equip_Gaunt");
         AddEquipment("lg", "equip_Leg");
+
+        UseHead(parts, head);
 
         void AddWeapon(string field, string node)
         {
@@ -202,7 +210,67 @@ public static class CharacterComposition
         AddWeapon("equip_Wep_Right", RightHandNode);
         AddWeapon("equip_Wep_Left", LeftHandNode);
 
-        return new CharacterAppearance(parts, masks);
+        return new CharacterAppearance(parts, masks, head);
+    }
+
+    /// <summary>
+    ///     The part a protector row names in a slot, or null if it has none. A head row whose number no head model has
+    ///     names a face model instead: SDT's head rows choose Wolf's head (100000's 200 is fc_m_0200).
+    /// </summary>
+    private static string? ProtectorPart(HashSet<string> partNames, Param.Row protector, string prefix, string sex)
+    {
+        var id = GetValue(protector, "equipModelId");
+
+        if (id <= 0)
+            return null;
+
+        var letters = GetModelGenderLetters(GetValue(protector, "equipModelGender"), sex);
+        var names = letters.Select(letter => $"{prefix}_{letter}_{id:D4}").ToList();
+
+        // Never a body model (ER's fc_m_0100 / fc_m_0000 are bodies, not heads)
+        if (prefix == HeadPrefix)
+            names.AddRange(letters.Select(letter => $"{BodyPartPrefix}{letter}_{id:D4}").Except(GetBodyPartNames(sex)));
+
+        return names.FirstOrDefault(partNames.Contains);
+    }
+
+    /// <summary>A face model the head equipment chose stands in for the body's own (fc_m_0100 is another head in SDT)</summary>
+    private static void UseHead(List<CharacterPart> parts, string? head)
+    {
+        if (head != null)
+            parts.RemoveAll(p => p.AttachNode == null && p.Name != head &&
+                                 p.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
+    ///     What a game's bare character wears when it has no unarmoured protector rows (see <see cref="GetBareMasks" />)
+    ///     but its head equipment is the character's face: the first row with a model of each slot (SDT: Wolf's
+    ///     100000-103000, his head fc_m_0200 and his clothes). Null in every other game, where the first rows are just
+    ///     the first armour.
+    /// </summary>
+    private static List<(string Prefix, Param.Row Row)>? GetDefaultOutfit(ProjectEntry project, HashSet<string> partNames, string sex)
+    {
+        if (project.Handler.ParamData?.PrimaryBank?.Params is not { } bank ||
+            !bank.TryGetValue("EquipParamProtector", out Param? param) || param.Rows.Count == 0 ||
+            !HasField(param.Rows[0], "equipModelId"))
+        {
+            return null;
+        }
+
+        var outfit = new List<(string Prefix, Param.Row Row)>();
+
+        foreach (var (field, prefix) in new[] { ("headEquip", HeadPrefix), ("bodyEquip", "bd"), ("armEquip", "am"), ("legEquip", "lg") })
+        {
+            if (param.Rows.FirstOrDefault(r => GetValue(r, field) != 0 && GetValue(r, "equipModelId") > 0) is { } row)
+                outfit.Add((prefix, row));
+        }
+
+        var headRow = outfit.FirstOrDefault(o => o.Prefix == HeadPrefix).Row;
+
+        return headRow != null &&
+               ProtectorPart(partNames, headRow, HeadPrefix, sex)?.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase) == true
+            ? outfit
+            : null;
     }
 
     /// <summary>
@@ -285,13 +353,38 @@ public static class CharacterComposition
             }
         }
 
+        var masks = GetBareMasks(project);
+        string? head = null;
+
+        // A game with no unarmoured rows, whose head equipment is the face (SDT), wears its default outfit
+        if (masks == null && GetDefaultOutfit(project, partNames, sex) is { } outfit)
+        {
+            masks = new int[MaskCount];
+            Array.Fill(masks, 1);
+
+            foreach (var (prefix, row) in outfit)
+            {
+                HideMasks(row, masks);
+
+                if (ProtectorPart(partNames, row, prefix, sex) is not { } name)
+                    continue;
+
+                parts.Add(new CharacterPart(name));
+
+                if (name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase))
+                    head = name;
+            }
+
+            UseHead(parts, head);
+        }
+
         foreach (var name in extraParts)
         {
             if (partNames.Contains(name) && parts.All(p => p.Name != name))
                 parts.Add(new CharacterPart(name));
         }
 
-        return new CharacterAppearance(parts, GetBareMasks(project));
+        return new CharacterAppearance(parts, masks, head);
     }
 
     /// <summary>

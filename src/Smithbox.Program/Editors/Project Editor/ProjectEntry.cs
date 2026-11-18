@@ -486,12 +486,11 @@ public class ProjectEntry
                         }
                     }
 
-                    // The Projectile and FaceGen Editors edit the Param Editor's params, so they are saved while
-                    // either is shown too
+                    // The Projectile Editor edits the Param Editor's params, so they are saved while it is shown too.
+                    // The FaceGen Editor is left out: its param edits are saved only when the user saves them.
                     if (CFG.Current.Project_Automatic_Save_Include_Param_Editor &&
                         Handler.FocusedEditor is ParamEditorScreen
-                            or StudioCore.Editors.ProjectileEditor.ProjectileEditorScreen
-                            or StudioCore.Editors.FaceGenEditor.FaceGenEditorScreen)
+                            or StudioCore.Editors.ProjectileEditor.ProjectileEditorScreen)
                     {
                         if (Handler.ParamEditor != null)
                         {

@@ -159,7 +159,9 @@ public class FaceViewportWindow
         if (Mesh == null || Appearance == null)
             return null;
 
-        var head = Parts.FirstOrDefault(p => p.Model != null && p.Model.StartsWith("fg_a_01", StringComparison.Ordinal))?.Model;
+        // The face's head part, else the face model the head equipment chose (SDT's Wolf, who has no face parts)
+        var head = Parts.FirstOrDefault(p => p.Model != null && p.Model.StartsWith("fg_a_01", StringComparison.Ordinal))?.Model
+                   ?? Appearance.Head;
         var index = head != null ? Appearance.Parts.ToList().FindIndex(p => p.Name == head) : -1;
 
         if (index < 0 || index >= Mesh.Submeshes.Count)
