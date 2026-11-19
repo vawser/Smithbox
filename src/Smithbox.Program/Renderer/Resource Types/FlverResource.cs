@@ -56,6 +56,12 @@ public class FlverResource : IResource, IDisposable
     private List<FlverBone>? FBones { get; set; }
     private List<Matrix4x4>? BoneTransforms { get; set; }
 
+    /// <summary>
+    /// The world matrix of each node of a FLVER2, which <see cref="StaticBoneBuffer"/> holds for the static meshes whose
+    /// normal W picks their node. Set before the meshes are processed, as their bounds need it too.
+    /// </summary>
+    private Matrix4x4[] StaticBoneTransforms { get; set; } = [];
+
     public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
     /// <summary>
@@ -3530,6 +3536,19 @@ public class FlverResource : IResource, IDisposable
             idxoffset += faceset.Indices.Count;
         }
 
+        if (mesh.Dynamic == 0)
+        {
+            dest.UseNormalWBoneTransform = mesh.VertexBuffers
+                .SelectMany(b => Flver.BufferLayouts[b.LayoutIndex])
+                .Any(e => e.Semantic == FLVER.LayoutSemantic.Normal &&
+                    (e.Type == FLVER.LayoutType.UByte4 || e.Type == FLVER.LayoutType.Byte4E));
+
+            if (dest.UseNormalWBoneTransform)
+            {
+                MovePickingVerticesToNormalWNodes(pvhandle, meshVertices, dest.Material);
+            }
+        }
+
         SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
         RetainVertices(dest, meshVertices, vbuffersize, vSize);
@@ -3554,13 +3573,6 @@ public class FlverResource : IResource, IDisposable
 
         if (mesh.Dynamic == 0)
         {
-            IEnumerable<FLVER.LayoutMember> elements =
-                mesh.VertexBuffers.SelectMany(b => Flver.BufferLayouts[b.LayoutIndex]);
-
-            dest.UseNormalWBoneTransform = elements.Any(e =>
-                e.Semantic == FLVER.LayoutSemantic.Normal &&
-                (e.Type == FLVER.LayoutType.UByte4 || e.Type == FLVER.LayoutType.Byte4E));
-
             if (dest.UseNormalWBoneTransform)
             {
                 dest.Material.SetNormalWBoneTransform();
@@ -3584,6 +3596,38 @@ public class FlverResource : IResource, IDisposable
         }
 
         return matrix;
+    }
+
+    /// <summary>
+    /// The vertices of a static mesh whose normal W picks its node are in that node's space, and the shader moves each
+    /// by its node's world matrix (GetBoneMatrix in FlverShader.vert). Moves the picking vertices the same way, so the
+    /// bounds fit what is drawn: the plants of AEG099_720 are stored at about 80 times their size under nodes that
+    /// scale them down, which framed and culled the model by bounds far bigger than it.
+    /// Reads the node index back from the vertices as filled, as the shader does (uint(normal.w) &amp; 0xFF).
+    /// </summary>
+    private unsafe void MovePickingVerticesToNormalWNodes(Span<Vector3> pickingVerts, nint meshVertices, FlverMaterial material)
+    {
+        Matrix4x4[] nodes = StaticBoneTransforms;
+        if (nodes.All(m => m.IsIdentity))
+        {
+            return;
+        }
+
+        var stride = (int)material.VertexSize;
+        // The normal follows the position, and the first UV in every layout but the sky's (see MeshLayouts)
+        var normalW = material.LayoutType == MeshLayoutType.LayoutSky
+            ? sizeof(Vector3) + 3
+            : sizeof(Vector3) + (2 * sizeof(short)) + 3;
+
+        var vertices = (byte*)meshVertices;
+        for (var i = 0; i < pickingVerts.Length; i++)
+        {
+            int node = vertices[(i * stride) + normalW];
+            if (node < nodes.Length)
+            {
+                pickingVerts[i] = Vector3.Transform(pickingVerts[i], nodes[node]);
+            }
+        }
     }
 
     /// <summary>
@@ -3868,6 +3912,11 @@ public class FlverResource : IResource, IDisposable
             idxoffset += newFaceSet.IndexCount;
         }
 
+        if (mesh.dynamic == 0 && dest.UseNormalWBoneTransform)
+        {
+            MovePickingVerticesToNormalWNodes(pvhandle, meshVertices, dest.Material);
+        }
+
         SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
         RetainVertices(dest, meshVertices, vbuffersize, vSize);
@@ -4078,6 +4127,7 @@ public class FlverResource : IResource, IDisposable
             Bounds = new BoundingBox();
             ResetDetailStats();
             Bones = Flver.Nodes;
+            StaticBoneTransforms = Bones.Select(b => Utils.GetBoneWorldMatrix(b, Bones)).ToArray();
 
             for (var i = 0; i < Flver.Materials.Count(); i++)
             {
@@ -4105,11 +4155,7 @@ public class FlverResource : IResource, IDisposable
             if (GPUMeshes.Any(e => e.UseNormalWBoneTransform))
             {
                 StaticBoneBuffer = SceneRenderer.BoneBufferAllocator.Allocate(64 * (uint)Bones.Count, 64);
-                var tbones = new Matrix4x4[Bones.Count];
-                for (var i = 0; i < Bones.Count; i++)
-                {
-                    tbones[i] = Utils.GetBoneWorldMatrix(Bones[i], Bones);
-                }
+                var tbones = StaticBoneTransforms;
 
                 SceneRenderer.AddBackgroundUploadTask((d, cl) =>
                 {
@@ -4200,6 +4246,8 @@ public class FlverResource : IResource, IDisposable
             FBones.Add(new FlverBone(br));
         }
 
+        StaticBoneTransforms = FBones.Select(b => GetBoneWorldMatrix(FBones, b)).ToArray();
+
         // Meshes
         Span<FlverMesh> meshes = stackalloc FlverMesh[meshCount];
         for (var i = 0; i < meshCount; i++)
@@ -4276,11 +4324,7 @@ public class FlverResource : IResource, IDisposable
         if (GPUMeshes.Any(e => e.UseNormalWBoneTransform))
         {
             StaticBoneBuffer = SceneRenderer.BoneBufferAllocator.Allocate(64 * (uint)FBones.Count, 64);
-            var tbones = new Matrix4x4[FBones.Count];
-            for (var i = 0; i < FBones.Count; i++)
-            {
-                tbones[i] = GetBoneWorldMatrix(FBones, FBones[i]);
-            }
+            var tbones = StaticBoneTransforms;
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
