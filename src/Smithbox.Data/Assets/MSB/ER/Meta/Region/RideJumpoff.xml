@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Ride jump-off (formerly Mount Jump Fall; handled by the game's CSRideJumpRegionManImpl). The descent area of a spiritspring. Riding Torrent into it gives the rider and Torrent the jump-off SpEffects from GameSystemCommonParam (rideJumpoff_SpEffectIdPc 185 and rideJumpoff_SpEffectId 184 in retail). An SFX can mark it." />
+
+  <Field>
+    <SfxID
+    AltName="SFX ID"
+    Wiki="SFX shown at the region. A negative value uses GameSystemCommonParam rideJumpoff_SfxId, which is -1 (no SFX) in retail. Every retail region uses -1."
+    ParticleAlias="" />
+
+    <SfxHeightOffset
+    AltName="SFX Height Offset"
+    Wiki="Height of the SFX above the region's position. 0 or less uses GameSystemCommonParam rideJumpoff_SfxHeightOffset (0 in retail)." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

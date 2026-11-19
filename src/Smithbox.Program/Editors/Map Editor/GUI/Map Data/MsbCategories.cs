@@ -559,15 +559,15 @@ public static class MsbCategories
                 ["WeatherCreateAssetPoint"] = typeof(MSBE.Region.WeatherCreateAssetPoint),
                 ["PlayArea"] = typeof(MSBE.Region.PlayArea),
                 ["EnvironmentMapOutput"] = typeof(MSBE.Region.EnvironmentMapOutput),
-                ["MountJump"] = typeof(MSBE.Region.MountJump),
-                ["Dummy"] = typeof(MSBE.Region.Dummy),
+                ["RideJump"] = typeof(MSBE.Region.RideJump),
+                ["SoundDummy"] = typeof(MSBE.Region.SoundDummy),
                 ["FallPreventionRemoval"] = typeof(MSBE.Region.FallPreventionRemoval),
                 ["NavmeshCutting"] = typeof(MSBE.Region.NavmeshCutting),
-                ["MapNameOverride"] = typeof(MSBE.Region.MapNameOverride),
-                ["MountJumpFall"] = typeof(MSBE.Region.MountJumpFall),
-                ["HorseRideOverride"] = typeof(MSBE.Region.HorseRideOverride),
-                ["LockedMountJump"] = typeof(MSBE.Region.LockedMountJump),
-                ["LockedMountJumpFall"] = typeof(MSBE.Region.LockedMountJumpFall)
+                ["MapPlaceNameOverride"] = typeof(MSBE.Region.MapPlaceNameOverride),
+                ["RideJumpoff"] = typeof(MSBE.Region.RideJumpoff),
+                ["DisableHorseOverride"] = typeof(MSBE.Region.DisableHorseOverride),
+                ["DlcRideJump"] = typeof(MSBE.Region.DlcRideJump),
+                ["DlcRideJumpoff"] = typeof(MSBE.Region.DlcRideJumpoff)
             },
             ["Part"] = new Dictionary<string, Type>()
             {

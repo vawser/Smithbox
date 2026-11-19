@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="DLC ride jump (formerly Locked Mount Jump; the game's CSDlcRideJumpRegionIns). A sealable spiritspring: it only launches Torrent while its event flag is ON. It shows one SFX while active and another while sealed, and switches between them when the flag changes. Usually paired with a DLC Ride Jump-off at the descent." />
+
+  <Field>
+    <JumpHeight
+    AltName="Jump Height"
+    Wiki="Height the player will move upwards when activating this spiritspring." />
+
+    <SfxID
+    AltName="SFX ID"
+    Wiki="SFX shown while the spiritspring is active. A negative value uses GameSystemCommonParam dlcRideJumpRegionDefaultSfxId (841070 in retail). Retail uses 806731 or -1."
+    ParticleAlias="" />
+
+    <EnableEventFlagID
+    AltName="Enable Event Flag ID"
+    Wiki="The spiritspring is active only while this event flag is ON. The game re-checks the flag every frame. 0 or -1: always active."
+    FlagAlias="" />
+
+    <DisabledSfxID
+    AltName="Disabled SFX ID"
+    Wiki="SFX shown while the spiritspring is sealed (flag OFF). A negative value uses GameSystemCommonParam dlcRideJumpRegionDefaultDisableSfxId (841071 in retail). Every retail region uses -1."
+    ParticleAlias="" />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

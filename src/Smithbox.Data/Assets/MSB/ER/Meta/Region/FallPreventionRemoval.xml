@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a fall prevention removal area in the map." />
+  Wiki="Fall prevention wall removal area: a marker for the offline map build. Inside it, the automatically generated fall-prevention walls along ledges are left out (vanilla names: 落下防止壁削除, and 落下防止壁生成禁止, &quot;fall-prevention wall generation forbidden&quot;), so that drop-offs such as stair gaps, beams and cliff descents stay passable. The game never reads it, so editing it changes nothing in-game. 56 regions in retail, all boxes." />
   
   <Field>
   </Field>

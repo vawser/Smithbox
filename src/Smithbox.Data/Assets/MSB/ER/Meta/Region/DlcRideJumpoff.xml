@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="DLC ride jump-off (formerly Locked Mount Jump Fall; the game's CSDlcRideJumpoffRegionIns). The landing or descent area of a sealable DLC spiritspring (see DLC Ride Jump). While it is active, riding Torrent into it gives the rider and Torrent the jump-off SpEffects from GameSystemCommonParam (rideJumpoff_SpEffectIdPc 185 and rideJumpoff_SpEffectId 184 in retail). An SFX can mark it." />
+
+  <Field>
+    <SfxID
+    AltName="SFX ID"
+    Wiki="SFX shown at the region. A negative value uses GameSystemCommonParam dlcRideJumpoff_SfxId, which is -1 (no SFX) in retail. Every retail region uses -1."
+    ParticleAlias="" />
+
+    <SfxHeightOffset
+    AltName="SFX Height Offset"
+    Wiki="Height of the SFX above the region's position. 0 or less uses GameSystemCommonParam dlcRideJumpoff_SfxHeightOffset (0 in retail)." />
+
+    <EnableEventFlagID
+    AltName="Enable Event Flag ID"
+    Wiki="The region is active only while this event flag is ON. The game re-checks the flag every frame. 0 or -1: always active. Retail regions use the same flag as their DLC Ride Jump."
+    FlagAlias="" />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

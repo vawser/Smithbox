@@ -489,12 +489,12 @@
       "Text": "Environment Map Output"
     },
     {
-      "Key": "MAP_Filters_ER_Mount_Jump",
-      "Text": "Mount Jump"
+      "Key": "MAP_Filters_ER_Ride_Jump",
+      "Text": "Ride Jump"
     },
     {
-      "Key": "MAP_Filters_ER_Dummy",
-      "Text": "Dummy"
+      "Key": "MAP_Filters_ER_Sound_Dummy",
+      "Text": "Sound Dummy"
     },
     {
       "Key": "MAP_Filters_ER_Fall_Prevention_Removal",
@@ -505,20 +505,20 @@
       "Text": "Navmesh Cutting"
     },
     {
-      "Key": "MAP_Filters_ER_Map_Name_Override",
-      "Text": "Mount Jump"
+      "Key": "MAP_Filters_ER_Map_Place_Name_Override",
+      "Text": "Map Place Name Override"
     },
     {
-      "Key": "MAP_Filters_ER_Mount_Jump_Fall",
-      "Text": "Mount Jump Fall"
+      "Key": "MAP_Filters_ER_Ride_Jumpoff",
+      "Text": "Ride Jump-off"
     },
     {
-      "Key": "MAP_Filters_ER_Locked_Mount_Jump",
-      "Text": "Locked Mount Jump"
+      "Key": "MAP_Filters_ER_Dlc_Ride_Jump",
+      "Text": "DLC Ride Jump"
     },
     {
-      "Key": "MAP_Filters_ER_Locked_Mount_Jump_Fall",
-      "Text": "Locked Mount Jump Fall"
+      "Key": "MAP_Filters_ER_Dlc_Ride_Jumpoff",
+      "Text": "DLC Ride Jump-off"
     },
     {
       "Key": "MAP_Filters_ER_Other",

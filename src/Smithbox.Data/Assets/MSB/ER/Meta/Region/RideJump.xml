@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Ride jump (formerly Mount Jump; handled by the game's CSRideJumpRegionManImpl). A spiritspring: riding Torrent into it launches the player upwards. An SFX marks it. A Ride Jump-off usually covers the descent below. For a spiritspring that can be sealed by an event flag, see DLC Ride Jump." />
+
+  <Field>
+    <JumpHeight
+    AltName="Jump Height"
+    Wiki="Height the player will move upwards when activating this spiritspring." />
+
+    <SfxID
+    AltName="SFX ID"
+    Wiki="SFX shown at the spiritspring. A negative value uses GameSystemCommonParam rideJumpRegionDefaultSfxId (806730 in retail). Retail uses -1 (48 regions), 806731 (11) and 806730 (2)."
+    ParticleAlias="" />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

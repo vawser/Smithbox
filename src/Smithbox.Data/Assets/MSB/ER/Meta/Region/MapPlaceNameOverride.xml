@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Map place name override (formerly Map Name Override; the game's CSMapPlaceNameOverrideRegionMan). While the player is inside it, its Location Text ID replaces the one from the collision the player stands on, so the area gets its own place-name title card." />
+
+  <Field>
+    <LocationTextID
+    AltName="Location Text ID"
+    Wiki="Place-name text used instead of the collision's Location Text ID, with the same sign convention: negative values show the title card when entering, positive values on map load."
+    FmgRef="Title_Locations" />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

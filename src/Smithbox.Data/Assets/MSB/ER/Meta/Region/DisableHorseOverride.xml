@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Disable horse override (formerly Horse Ride Override; the game's CSDisableHorseOverrideRegionMan). Inside it, this region decides whether Torrent can be summoned and ridden. It takes precedence over the collision's own Disable Torrent setting." />
+
+  <Field>
+    <OverrideType
+    AltName="Override Type"
+    Wiki="1: riding is disabled here. 2: riding is allowed here, even where the map would disable it. Any other value: no override. The game reads it as a byte. Retail uses 1 (22 regions) and 2 (20 regions)."
+    Enum="DISABLE_HORSE_OVERRIDE_TYPE" />
+  </Field>
+
+  <Enums>
+    <Enum Name="DISABLE_HORSE_OVERRIDE_TYPE" >
+        <Option Value="0" Name="No Override" />
+        <Option Value="1" Name="Disable Riding" />
+        <Option Value="2" Name="Allow Riding" />
+    </Enum>
+  </Enums>
+</MSBMETA>

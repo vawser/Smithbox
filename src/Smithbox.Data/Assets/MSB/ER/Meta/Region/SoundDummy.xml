@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Sound dummy point (formerly Dummy; Nightreign calls the type SoundDummy). The sound system registers its position and feeds the listener's distance to it into the Wwise RTPC DistanceFromDummyPoint_0N, where N is the Dummy Point Index. Sound designers use it to fade sounds with distance from a spot, such as bridges, waterfalls, magma and wind. 28 regions in retail." />
+
+  <Field>
+    <DummyPointIndex
+    AltName="Dummy Point Index"
+    Wiki="Which RTPC this point drives: 0-4 select DistanceFromDummyPoint_00 to _04. The game reads it as a byte and clamps it to 5. Retail uses 0-3, and the index usually matches the number in the region's name (e.g. サウンド_ダミーポイント[3] uses 3)." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

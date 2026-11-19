@@ -39,15 +39,15 @@ namespace SoulsFormats
             WeatherCreateAssetPoint = 42,
             PlayArea = 43,
             EnvironmentMapOutput = 44,
-            MountJump = 46,
-            Dummy = 48,
+            RideJump = 46,
+            SoundDummy = 48,
             FallPreventionRemoval = 49,
             NavmeshCutting = 50,
-            MapNameOverride = 51,
-            MountJumpFall = 52,
-            HorseRideOverride = 53,
-            LockedMountJump = 54,
-            LockedMountJumpFall = 55,
+            MapPlaceNameOverride = 51,
+            RideJumpoff = 52,
+            DisableHorseOverride = 53,
+            DlcRideJump = 54,
+            DlcRideJumpoff = 55,
             Other = 0xFFFFFFFF,
         }
 
@@ -205,12 +205,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.MountJump> MountJumps { get; set; }
+            public List<Region.RideJump> RideJumps { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Dummy> Dummies { get; set; }
+            public List<Region.SoundDummy> SoundDummies { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -225,27 +225,27 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.MapNameOverride> MapNameOverrides { get; set; }
+            public List<Region.MapPlaceNameOverride> MapPlaceNameOverrides { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.MountJumpFall> MountJumpFalls { get; set; }
+            public List<Region.RideJumpoff> RideJumpoffs { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.HorseRideOverride> HorseRideOverrides { get; set; }
+            public List<Region.DisableHorseOverride> DisableHorseOverrides { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.LockedMountJump> LockedMountJumps { get; set; }
+            public List<Region.DlcRideJump> DlcRideJumps { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.LockedMountJumpFall> LockedMountJumpFalls { get; set; }
+            public List<Region.DlcRideJumpoff> DlcRideJumpoffs { get; set; }
 
             /// <summary>
             /// Most likely a dumping ground for unused regions.
@@ -286,15 +286,15 @@ namespace SoulsFormats
                 WeatherCreateAssetPoints = new List<Region.WeatherCreateAssetPoint>();
                 PlayAreas = new List<Region.PlayArea>();
                 EnvironmentMapOutputs = new List<Region.EnvironmentMapOutput>();
-                MountJumps = new List<Region.MountJump>();
-                Dummies = new List<Region.Dummy>();
+                RideJumps = new List<Region.RideJump>();
+                SoundDummies = new List<Region.SoundDummy>();
                 FallPreventionRemovals = new List<Region.FallPreventionRemoval>();
                 NavmeshCuttings = new List<Region.NavmeshCutting>();
-                MapNameOverrides = new List<Region.MapNameOverride>();
-                MountJumpFalls = new List<Region.MountJumpFall>();
-                HorseRideOverrides = new List<Region.HorseRideOverride>();
-                LockedMountJumps = new List<Region.LockedMountJump>();
-                LockedMountJumpFalls = new List<Region.LockedMountJumpFall>();
+                MapPlaceNameOverrides = new List<Region.MapPlaceNameOverride>();
+                RideJumpoffs = new List<Region.RideJumpoff>();
+                DisableHorseOverrides = new List<Region.DisableHorseOverride>();
+                DlcRideJumps = new List<Region.DlcRideJump>();
+                DlcRideJumpoffs = new List<Region.DlcRideJumpoff>();
                 Others = new List<Region.Other>();
             }
 
@@ -333,15 +333,15 @@ namespace SoulsFormats
                     case Region.WeatherCreateAssetPoint r: WeatherCreateAssetPoints.Add(r); break;
                     case Region.PlayArea r: PlayAreas.Add(r); break;
                     case Region.EnvironmentMapOutput r: EnvironmentMapOutputs.Add(r); break;
-                    case Region.MountJump r: MountJumps.Add(r); break;
-                    case Region.Dummy r: Dummies.Add(r); break;
+                    case Region.RideJump r: RideJumps.Add(r); break;
+                    case Region.SoundDummy r: SoundDummies.Add(r); break;
                     case Region.FallPreventionRemoval r: FallPreventionRemovals.Add(r); break;
                     case Region.NavmeshCutting r: NavmeshCuttings.Add(r); break;
-                    case Region.MapNameOverride r: MapNameOverrides.Add(r); break;
-                    case Region.MountJumpFall r: MountJumpFalls.Add(r); break;
-                    case Region.HorseRideOverride r: HorseRideOverrides.Add(r); break;
-                    case Region.LockedMountJump r: LockedMountJumps.Add(r); break;
-                    case Region.LockedMountJumpFall r: LockedMountJumpFalls.Add(r); break;
+                    case Region.MapPlaceNameOverride r: MapPlaceNameOverrides.Add(r); break;
+                    case Region.RideJumpoff r: RideJumpoffs.Add(r); break;
+                    case Region.DisableHorseOverride r: DisableHorseOverrides.Add(r); break;
+                    case Region.DlcRideJump r: DlcRideJumps.Add(r); break;
+                    case Region.DlcRideJumpoff r: DlcRideJumpoffs.Add(r); break;
                     case Region.RollingObjectOverride r: RollingObjectOverrides.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
@@ -365,8 +365,8 @@ namespace SoulsFormats
                     MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupPlacementPoints,
                     MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
-                    MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
-                    MountJumpFalls, HorseRideOverrides, LockedMountJumps, LockedMountJumpFalls, Others);
+                    RideJumps, SoundDummies, FallPreventionRemovals, NavmeshCuttings, MapPlaceNameOverrides,
+                    RideJumpoffs, DisableHorseOverrides, DlcRideJumps, DlcRideJumpoffs, Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
 
@@ -462,11 +462,11 @@ namespace SoulsFormats
                     case RegionType.EnvironmentMapOutput:
                         return EnvironmentMapOutputs.EchoAdd(new Region.EnvironmentMapOutput(br));
 
-                    case RegionType.MountJump:
-                        return MountJumps.EchoAdd(new Region.MountJump(br));
+                    case RegionType.RideJump:
+                        return RideJumps.EchoAdd(new Region.RideJump(br));
 
-                    case RegionType.Dummy:
-                        return Dummies.EchoAdd(new Region.Dummy(br));
+                    case RegionType.SoundDummy:
+                        return SoundDummies.EchoAdd(new Region.SoundDummy(br));
 
                     case RegionType.FallPreventionRemoval:
                         return FallPreventionRemovals.EchoAdd(new Region.FallPreventionRemoval(br));
@@ -474,20 +474,20 @@ namespace SoulsFormats
                     case RegionType.NavmeshCutting:
                         return NavmeshCuttings.EchoAdd(new Region.NavmeshCutting(br));
 
-                    case RegionType.MapNameOverride:
-                        return MapNameOverrides.EchoAdd(new Region.MapNameOverride(br));
+                    case RegionType.MapPlaceNameOverride:
+                        return MapPlaceNameOverrides.EchoAdd(new Region.MapPlaceNameOverride(br));
 
-                    case RegionType.MountJumpFall:
-                        return MountJumpFalls.EchoAdd(new Region.MountJumpFall(br));
+                    case RegionType.RideJumpoff:
+                        return RideJumpoffs.EchoAdd(new Region.RideJumpoff(br));
 
-                    case RegionType.HorseRideOverride:
-                        return HorseRideOverrides.EchoAdd(new Region.HorseRideOverride(br));
+                    case RegionType.DisableHorseOverride:
+                        return DisableHorseOverrides.EchoAdd(new Region.DisableHorseOverride(br));
 
-                    case RegionType.LockedMountJump:
-                        return LockedMountJumps.EchoAdd(new Region.LockedMountJump(br));
+                    case RegionType.DlcRideJump:
+                        return DlcRideJumps.EchoAdd(new Region.DlcRideJump(br));
 
-                    case RegionType.LockedMountJumpFall:
-                        return LockedMountJumpFalls.EchoAdd(new Region.LockedMountJumpFall(br));
+                    case RegionType.DlcRideJumpoff:
+                        return DlcRideJumpoffs.EchoAdd(new Region.DlcRideJumpoff(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -2300,78 +2300,85 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's ride jump region in CSRideJumpRegionManImpl (formerly MountJump): a spiritspring that
+            /// launches Torrent upwards, marked by an SFX.
             /// </summary>
-            public class MountJump : Region
+            public class RideJump : Region
             {
-                private protected override RegionType Type => RegionType.MountJump;
+                private protected override RegionType Type => RegionType.RideJump;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Height the player will move upwards when activating a MountJump.
+                /// Height the player will move upwards when activating this spiritspring.
                 /// </summary>
                 public float JumpHeight { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// SFX shown at the spiritspring. Negative uses GameSystemCommonParam rideJumpRegionDefaultSfxId (806730 in retail).
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int SfxID { get; set; } = -1;
 
                 /// <summary>
-                /// Creates a MountJump with default values.
+                /// Creates a RideJump with default values.
                 /// </summary>
-                public MountJump() : base($"{nameof(Region)}: {nameof(MountJump)}") { }
+                public RideJump() : base($"{nameof(Region)}: {nameof(RideJump)}") { }
 
-                internal MountJump(BinaryReaderEx br) : base(br) { }
+                internal RideJump(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     JumpHeight = br.ReadSingle();
-                    UnkT04 = br.ReadInt32();
+                    SfxID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteSingle(JumpHeight);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(SfxID);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// A sound dummy point (formerly Dummy; NR calls it SoundDummy). The sound system registers its world
+            /// position and feeds the listener's distance to it into the Wwise RTPC DistanceFromDummyPoint_0N, where N is
+            /// DummyPointIndex.
             /// </summary>
-            public class Dummy : Region
+            public class SoundDummy : Region
             {
-                private protected override RegionType Type => RegionType.Dummy;
+                private protected override RegionType Type => RegionType.SoundDummy;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Which RTPC the point drives: 0-4 = DistanceFromDummyPoint_00-04. The game reads a byte and clamps it to 5.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public byte DummyPointIndex { get; set; }
 
                 /// <summary>
-                /// Creates a Dummy with default values.
+                /// Creates a SoundDummy with default values.
                 /// </summary>
-                public Dummy() : base($"{nameof(Region)}: {nameof(Dummy)}") { }
+                public SoundDummy() : base($"{nameof(Region)}: {nameof(SoundDummy)}") { }
 
-                internal Dummy(BinaryReaderEx br) : base(br) { }
+                internal SoundDummy(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    DummyPointIndex = br.ReadByte();
+                    br.AssertByte(0);
+                    br.AssertInt16(0);
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteByte(DummyPointIndex);
+                    bw.WriteByte(0);
+                    bw.WriteInt16(0);
                     bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// Build-time marker: the generated fall-prevention walls are left out inside it (vanilla: 落下防止壁削除). Never read by the game.
             /// </summary>
             public class FallPreventionRemoval : Region
             {
@@ -2399,7 +2406,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Build-time marker for the offline navmesh build (vanilla: navmesh adjacent-cutting merge areas). Never read by the game.
             /// </summary>
             public class NavmeshCutting : Region
             {
@@ -2427,180 +2434,220 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSMapPlaceNameOverrideRegionMan region (formerly MapNameOverride): while the player is inside
+            /// it, its LocationTextID replaces the one from the collision the player stands on.
             /// </summary>
-            public class MapNameOverride : Region
+            public class MapPlaceNameOverride : Region
             {
-                private protected override RegionType Type => RegionType.MapNameOverride;
+                private protected override RegionType Type => RegionType.MapPlaceNameOverride;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// FMG id to use for popup titlecards. Negative values apply when entering, Positive values apply on map load.
+                /// Place-name text (PlaceName FMG) used instead of the collision's LocationTextID, with the same sign
+                /// convention: negative values show the title card when entering, positive ones on map load.
                 /// </summary>
-                public int TextID { get; set; }
+                public int LocationTextID { get; set; }
 
                 /// <summary>
-                /// Creates a MapNameOverride with default values.
+                /// Creates a MapPlaceNameOverride with default values.
                 /// </summary>
-                public MapNameOverride() : base($"{nameof(Region)}: {nameof(MapNameOverride)}") { }
+                public MapPlaceNameOverride() : base($"{nameof(Region)}: {nameof(MapPlaceNameOverride)}") { }
 
-                internal MapNameOverride(BinaryReaderEx br) : base(br) { }
+                internal MapPlaceNameOverride(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    TextID = br.ReadInt32();
+                    LocationTextID = br.ReadInt32();
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(TextID);
+                    bw.WriteInt32(LocationTextID);
                     bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's ride jump-off region in CSRideJumpRegionManImpl (formerly MountJumpFall): the descent area of
+            /// a spiritspring. Riding into it gives the rider and Torrent the jump-off SpEffects
+            /// (GameSystemCommonParam rideJumpoff_SpEffectIdPc / rideJumpoff_SpEffectId), and an SFX can mark it.
             /// </summary>
-            public class MountJumpFall : Region
+            public class RideJumpoff : Region
             {
-                private protected override RegionType Type => RegionType.MountJumpFall;
+                private protected override RegionType Type => RegionType.RideJumpoff;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Creates a MountJumpFall with default values.
+                /// SFX shown at the region. Negative uses GameSystemCommonParam rideJumpoff_SfxId (-1 in retail: none).
                 /// </summary>
-                public MountJumpFall() : base($"{nameof(Region)}: {nameof(MountJumpFall)}") { }
+                public int SfxID { get; set; } = -1;
 
-                internal MountJumpFall(BinaryReaderEx br) : base(br) { }
+                /// <summary>
+                /// Height of the SFX above the region's position. 0 or less uses GameSystemCommonParam
+                /// rideJumpoff_SfxHeightOffset.
+                /// </summary>
+                public float SfxHeightOffset { get; set; } = 0;
+
+                /// <summary>
+                /// Creates a RideJumpoff with default values.
+                /// </summary>
+                public RideJumpoff() : base($"{nameof(Region)}: {nameof(RideJumpoff)}") { }
+
+                internal RideJumpoff(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(-1);
+                    SfxID = br.ReadInt32();
+                    SfxHeightOffset = br.ReadSingle();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32(SfxID);
+                    bw.WriteSingle(SfxHeightOffset);
+                }
+            }
+
+            /// <summary>
+            /// The exe's CSDisableHorseOverrideRegionMan region (formerly HorseRideOverride): overrides whether Torrent
+            /// can be summoned and ridden inside it, ahead of the collision's own setting.
+            /// </summary>
+            public class DisableHorseOverride : Region
+            {
+                private protected override RegionType Type => RegionType.DisableHorseOverride;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// 1 = riding disabled, 2 = riding allowed (cancels a disable from the map). Other values: no override.
+                /// The game reads it as a byte.
+                /// </summary>
+                public byte OverrideType { get; set; } = 1;
+
+                /// <summary>
+                /// Creates a DisableHorseOverride with default values.
+                /// </summary>
+                public DisableHorseOverride() : base($"{nameof(Region)}: {nameof(DisableHorseOverride)}") { }
+
+                internal DisableHorseOverride(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    OverrideType = br.ReadByte();
+                    br.AssertByte(0);
+                    br.AssertInt16(0);
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(-1);
+                    bw.WriteByte(OverrideType);
+                    bw.WriteByte(0);
+                    bw.WriteInt16(0);
                     bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Affects where torrent can be summoned.
+            /// The exe's CSDlcRideJumpRegionIns (formerly LockedMountJump): a sealable DLC spiritspring. It only
+            /// launches Torrent while its event flag is ON; it shows one SFX while active and another while sealed.
             /// </summary>
-            public class HorseRideOverride : Region
+            public class DlcRideJump : Region
             {
-                private protected override RegionType Type => RegionType.HorseRideOverride;
+                private protected override RegionType Type => RegionType.DlcRideJump;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// 1 = Forbid riding torrent, 2 = Permit riding torrent
-                /// </summary>
-                public uint OverrideType { get; set; } = 1;
-
-                /// <summary>
-                /// Creates a HorseRideOverride with default values.
-                /// </summary>
-                public HorseRideOverride() : base($"{nameof(Region)}: {nameof(HorseRideOverride)}") 
-                {
-                    OverrideType = 1;
-                }
-
-                internal HorseRideOverride(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    OverrideType = br.ReadUInt32();
-                    br.AssertInt32(0);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteUInt32((uint)OverrideType);
-                    bw.WriteInt32(0);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class LockedMountJump : Region
-            {
-                private protected override RegionType Type => RegionType.LockedMountJump;
-                private protected override bool HasTypeData => true;
-
-                /// <summary>
-                /// Height the player will move upwards when activating a MountJump.
+                /// Height the player will move upwards when activating this spiritspring.
                 /// </summary>
                 public float JumpHeight { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// SFX shown while the spiritspring is active. Negative uses GameSystemCommonParam
+                /// dlcRideJumpRegionDefaultSfxId (841070 in retail).
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int SfxID { get; set; } = -1;
 
                 /// <summary>
-                /// Probably event flag to enable.
+                /// The spiritspring is active only while this event flag is ON. 0 or -1: always active.
                 /// </summary>
                 public int EnableEventFlagID { get; set; }
 
                 /// <summary>
-                /// Creates a LockedMountJump with default values.
+                /// SFX shown while the spiritspring is sealed (flag OFF). Negative uses GameSystemCommonParam
+                /// dlcRideJumpRegionDefaultDisableSfxId (841071 in retail).
                 /// </summary>
-                public LockedMountJump() : base($"{nameof(Region)}: {nameof(LockedMountJump)}") { }
+                public int DisabledSfxID { get; set; } = -1;
 
-                internal LockedMountJump(BinaryReaderEx br) : base(br) { }
+                /// <summary>
+                /// Creates a DlcRideJump with default values.
+                /// </summary>
+                public DlcRideJump() : base($"{nameof(Region)}: {nameof(DlcRideJump)}") { }
+
+                internal DlcRideJump(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     JumpHeight = br.ReadSingle();
-                    UnkT04 = br.ReadInt32();
+                    SfxID = br.ReadInt32();
                     EnableEventFlagID = br.ReadInt32();
-                    br.AssertInt32(-1);
+                    DisabledSfxID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteSingle(JumpHeight);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(SfxID);
                     bw.WriteInt32(EnableEventFlagID);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(DisabledSfxID);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSDlcRideJumpoffRegionIns (formerly LockedMountJumpFall): the landing/descent area of a
+            /// sealable DLC spiritspring. While it is active, riding into it gives the rider and Torrent the jump-off
+            /// SpEffects (GameSystemCommonParam rideJumpoff_SpEffectIdPc / rideJumpoff_SpEffectId), and an SFX can
+            /// mark it.
             /// </summary>
-            public class LockedMountJumpFall : Region
+            public class DlcRideJumpoff : Region
             {
-                private protected override RegionType Type => RegionType.LockedMountJumpFall;
+                private protected override RegionType Type => RegionType.DlcRideJumpoff;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Probably event flag to enable.
+                /// SFX shown at the region. Negative uses GameSystemCommonParam dlcRideJumpoff_SfxId (-1 in retail: none).
+                /// </summary>
+                public int SfxID { get; set; } = -1;
+
+                /// <summary>
+                /// Height of the SFX above the region's position. 0 or less uses GameSystemCommonParam
+                /// dlcRideJumpoff_SfxHeightOffset.
+                /// </summary>
+                public float SfxHeightOffset { get; set; } = 0;
+
+                /// <summary>
+                /// The region is active only while this event flag is ON. 0 or -1: always active.
                 /// </summary>
                 public int EnableEventFlagID { get; set; }
 
                 /// <summary>
-                /// Creates a LockedMountJumpFall with default values.
+                /// Creates a DlcRideJumpoff with default values.
                 /// </summary>
-                public LockedMountJumpFall() : base($"{nameof(Region)}: {nameof(LockedMountJumpFall)}") { }
+                public DlcRideJumpoff() : base($"{nameof(Region)}: {nameof(DlcRideJumpoff)}") { }
 
-                internal LockedMountJumpFall(BinaryReaderEx br) : base(br) { }
+                internal DlcRideJumpoff(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(-1);
-                    br.AssertInt32(0);
+                    SfxID = br.ReadInt32();
+                    SfxHeightOffset = br.ReadSingle();
                     EnableEventFlagID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(SfxID);
+                    bw.WriteSingle(SfxHeightOffset);
                     bw.WriteInt32(EnableEventFlagID);
                 }
 
