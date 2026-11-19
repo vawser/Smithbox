@@ -14,10 +14,10 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public sealed class NavRegenInput
 {
-    /// <summary>Triangles in map space, three points each: the map's high collision and the placed assets' collision.</summary>
+    /// <summary>Triangles in map space, three points each: the map's low collision and the placed assets' low collision.</summary>
     public List<Vector3> Triangles { get; } = new();
 
-    /// <summary>Per triangle: the ModelID of the collision model it came from (h…_001000 → 1000), or -1 for an asset.</summary>
+    /// <summary>Per triangle: the ModelID of the collision model it came from (l…_001000 → 1000), or -1 for an asset.</summary>
     public List<int> Sources { get; } = new();
 
     /// <summary>Per triangle: its collision material (a HitMtrlParam row plus a property in the hundreds), or uint.MaxValue.</summary>

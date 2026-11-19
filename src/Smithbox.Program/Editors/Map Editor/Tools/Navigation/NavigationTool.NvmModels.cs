@@ -367,15 +367,28 @@ public partial class NavigationTool
     #region Generate
 
     /// <summary>
+    /// The low collision file of a collision part (its map's listed files, new ones included), or null: the model names
+    /// the high file (h01_0200, h0029B1), the low one has an l in its place (l01_0200.hkx.dcx). Navmeshes are generated
+    /// from the low collision; the high collision is for inverse kinematics only.
+    /// </summary>
+    private string NvmSourceFile(GenerateSource source)
+    {
+        if (string.IsNullOrEmpty(source.Model))
+            return null;
+
+        var names = View.HavokCollisionBank.GetMapCollisionNames(source.MapId)
+            .Where(n => n.StartsWith("l", StringComparison.OrdinalIgnoreCase)).ToList();
+        var stem = NvmMap.FileFor("l" + source.Model.Substring(1), names.Select(n => n.Split('.')[0]));
+        return stem == null ? null : names.First(n => n.Split('.')[0].Equals(stem, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
     /// The selected collision parts' triangles in map space, each part wound to face up (NvmModelEdit.FacingUp). Null
     /// for a part whose collision file isn't loaded.
     /// </summary>
     private List<Vector3> NvmSourceTriangles(GenerateSource source)
     {
-        var names = View.HavokCollisionBank.GetMapCollisionNames(source.MapId)
-            .Where(n => n.StartsWith("h", StringComparison.OrdinalIgnoreCase)).ToList();
-        var stem = NvmMap.FileFor(source.Model, names.Select(n => n.Split('.')[0]));
-        var file = stem == null ? null : names.First(n => n.Split('.')[0].Equals(stem, StringComparison.OrdinalIgnoreCase));
+        var file = NvmSourceFile(source);
         var document = file != null ? View.HavokCollisionBank.GetMapDocument(file) : null;
 
         if (document == null)

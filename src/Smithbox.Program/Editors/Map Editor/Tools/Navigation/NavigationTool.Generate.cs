@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor;
 public partial class NavigationTool
 {
     /// <summary>
-    /// A selected part to generate from: a map collision part (its high collision file) or an asset (its own collision
+    /// A selected part to generate from: a map collision part (its low collision file) or an asset (its own collision
     /// binder), placed where the part is.
     /// </summary>
     private sealed record GenerateSource(MsbEntity Part, string MapId, bool IsAsset, string Model, string Label);
@@ -639,8 +639,10 @@ public partial class NavigationTool
     }
 
     /// <summary>
-    /// The triangles of a source in its own space: a collision part's high collision file of its map (h + map digits +
-    /// the model's digits), or an asset's own collision (high, else low), read from its binder. Null if there is none.
+    /// The triangles of a source in its own space: a collision part's low collision file of its map (l + map digits +
+    /// the model's digits), or an asset's own low collision, read from its binder. Null if there is none. Navmeshes are
+    /// generated from the low collision, the one characters walk on: the high collision is for inverse kinematics
+    /// (feet on the ground) and lies lower and rougher, so a navmesh made from it covers less.
     /// </summary>
     private List<Vector3> SourceTriangles(GenerateSource source)
     {
@@ -656,10 +658,12 @@ public partial class NavigationTool
         List<Vector3> triangles = null;
         try
         {
-            var descriptor = Renderer.ModelLocator.GetMapObjCollision(Project, source.Model, HavokCollisionType.High);
+            // The locator falls back to the high collision when an asset has no low; that one is never used here
+            var descriptor = Renderer.ModelLocator.GetMapObjCollision(Project, source.Model, HavokCollisionType.Low);
             var path = descriptor.GetContainerPath(Project);
+            bool high = descriptor.AssetName?.EndsWith("_h", StringComparison.OrdinalIgnoreCase) == true;
 
-            if (path != null && Project.VFS.FS.FileExists(path))
+            if (!high && path != null && Project.VFS.FS.FileExists(path))
             {
                 var binder = SoulsFormats.BND4.Read(Project.VFS.FS.ReadFile(path).Value);
                 var file = binder.Files.FirstOrDefault(f => string.Equals(
@@ -684,8 +688,11 @@ public partial class NavigationTool
         return triangles;
     }
 
-    /// <summary>A collision part's high collision file in its map's binder: h + map digits + the model's digits, e.g. h10_01_00_00_001000.hkx.dcx.</summary>
-    private static string CollisionFileName(GenerateSource source) => $"h{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
+    /// <summary>
+    /// A collision part's low collision file in its map's binder: l + map digits + the model's digits, e.g.
+    /// l10_01_00_00_001000.hkx.dcx (the part's model names the high file, h…; its low file has the same digits).
+    /// </summary>
+    private static string CollisionFileName(GenerateSource source) => $"l{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
 
     /// <summary>The model number of a collision file or part model name, e.g. 1000 for h10_01_00_00_001000.hkx.dcx or h001000, or -1.</summary>
     private static int CollisionModelId(string name)

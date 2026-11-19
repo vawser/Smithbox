@@ -72,33 +72,37 @@ public partial class NavigationTool
             return result;
 
         foreach (var entity in View.ViewportSelection.GetFilteredSelection<MsbEntity>())
-        {
-            if (entity.WrappedObject is not MSB2.Part.Object part)
-                continue;
-
-            var world = entity.GetWorldMatrix();
-            var foot = Vector3.Transform(world.Translation, toLocal);
-            var forward = Vector3.TransformNormal(Vector3.UnitZ, world);
-            forward.Y = 0;
-            if (forward.LengthSquared() < 1e-8f)
-                continue;
-
-            // The top of its bounds, else 3 m up
-            float top = foot.Y + 3f;
-            if (entity.RenderSceneMesh?.GetLocalBounds() is BoundingBox box && box.Max.Y > box.Min.Y)
-            {
-                top = float.MinValue;
-                for (int c = 0; c < 8; c++)
-                {
-                    var corner = new Vector3((c & 1) == 0 ? box.Min.X : box.Max.X, (c & 2) == 0 ? box.Min.Y : box.Max.Y, (c & 4) == 0 ? box.Min.Z : box.Max.Z);
-                    top = MathF.Max(top, Vector3.Transform(Vector3.Transform(corner, world), toLocal).Y);
-                }
-            }
-
-            result.Add(new NgpLadderSource(part.Name, part.ModelName, foot, Vector3.Normalize(forward), top));
-        }
+            if (NgpLadderSourceOf(entity, toLocal) is NgpLadderSource source)
+                result.Add(source);
 
         return result;
+    }
+
+    /// <summary>An MSB2 object as a ladder: its position, +Z and the top of its bounds (else 3 m up), in the NGP's space; null for anything else.</summary>
+    private static NgpLadderSource NgpLadderSourceOf(MsbEntity entity, Matrix4x4 toLocal)
+    {
+        if (entity.WrappedObject is not MSB2.Part.Object part)
+            return null;
+
+        var world = entity.GetWorldMatrix();
+        var foot = Vector3.Transform(world.Translation, toLocal);
+        var forward = Vector3.TransformNormal(Vector3.UnitZ, world);
+        forward.Y = 0;
+        if (forward.LengthSquared() < 1e-8f)
+            return null;
+
+        float top = foot.Y + 3f;
+        if (entity.RenderSceneMesh?.GetLocalBounds() is BoundingBox box && box.Max.Y > box.Min.Y)
+        {
+            top = float.MinValue;
+            for (int c = 0; c < 8; c++)
+            {
+                var corner = new Vector3((c & 1) == 0 ? box.Min.X : box.Max.X, (c & 2) == 0 ? box.Min.Y : box.Max.Y, (c & 4) == 0 ? box.Min.Z : box.Max.Z);
+                top = MathF.Max(top, Vector3.Transform(Vector3.Transform(corner, world), toLocal).Y);
+            }
+        }
+
+        return new NgpLadderSource(part.Name, part.ModelName, foot, Vector3.Normalize(forward), top);
     }
 
     private void AddNgpLadders(MapContainer map, NgpMap data, List<NgpLadderSource> sources)

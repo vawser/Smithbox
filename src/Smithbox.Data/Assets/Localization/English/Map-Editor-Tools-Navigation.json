@@ -1522,7 +1522,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Collision_Header_TT",
-      "Text": "What the generation reads, from the viewport selection: each collision part's high collision, and each asset's own collision (high, else low), placed where the part is. Select more parts (in any loaded map) to include them."
+      "Text": "What the generation reads, from the viewport selection: each collision part's low collision, and each asset's own low collision, placed where the part is (the high collision is for inverse kinematics and is never used). Select more parts (in any loaded map) to include them."
     },
     {
       "Key": "MAP_Navigation_Generate_Collision_Count",
@@ -2591,7 +2591,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Description",
-      "Text": "Generates each set once over the map's high collision, placed by its collision parts (new and edited collision included), and every asset's collision (with the n and o settings of the Models tab's Generate group), keeps what is reachable from the map's enemies and players, and splits it into one navmesh per collision model, joined to each other exactly. On a vanilla catacomb or cave this covers 85-92% of the game's navmesh, with 86-98% of it on the game's. Doors, gates and fog walls are solid in the input, so rooms behind them may be cut off: check the result with the overlay and Validate. Maps with quarter (q) files aren't supported."
+      "Text": "Generates each set once over the map's low collision, placed by its collision parts (new and edited collision included), and every asset's collision (with the n and o settings of the Models tab's Generate group), keeps what is reachable from the map's enemies and players, and splits it into one navmesh per collision model, joined to each other exactly. On a vanilla catacomb or cave this covers 85-92% of the game's navmesh, with 86-98% of it on the game's. Doors, gates and fog walls are solid in the input, so rooms behind them may be cut off: check the result with the overlay and Validate. Maps with quarter (q) files aren't supported."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Error_Quarters",
@@ -2735,7 +2735,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Done",
-      "Text": "Regenerated from {0} collision parts (each placed by its part, the new and edited collision included; {18} high collision files no part places left out) and {1} assets ({2} cut at runtime left out), with {3} seeds. Faces kept: n {4} of {5} generated, o {6} of {7}. Models: {8} replaced, {9} added, {10} made placeholders. {11} in-map connections, {12} to neighbours, {13} gates, {14} jump and fall links ({17} of them kept from the current navmesh). Node bank faces: {15} kept, {16} dropped. Check it with the overlay and Validate."
+      "Text": "Regenerated from {0} collision parts (each placed by its part, the new and edited collision included; {18} low collision files no part places left out) and {1} assets ({2} cut at runtime left out), with {3} seeds. Faces kept: n {4} of {5} generated, o {6} of {7}. Models: {8} replaced, {9} added, {10} made placeholders. {11} in-map connections, {12} to neighbours, {13} gates, {14} jump and fall links ({17} of them kept from the current navmesh). Node bank faces: {15} kept, {16} dropped. Check it with the overlay and Validate."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Skipped",

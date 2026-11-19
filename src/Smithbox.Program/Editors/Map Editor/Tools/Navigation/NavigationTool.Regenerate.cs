@@ -143,7 +143,7 @@ public partial class NavigationTool
             SnapBorders = RegenSnapBorders,
         };
 
-        // The map's high collision as the game places it: each collision part's model (its h file in the map's binder),
+        // The map's low collision as the game places it: each collision part's model (its l file in the map's binder),
         // moved by the part. The collision bank's editable documents hold the user's new and edited files (the Collision
         // Editor's Create places new collision with a new part, in that part's space); files no part places aren't loaded
         // by the game, so they are left out
@@ -181,7 +181,7 @@ public partial class NavigationTool
         }
 
         int unplaced = View.HavokCollisionBank.MapCollisions.TryGetValue(map.Name, out var listed)
-            ? listed.Count(n => n.StartsWith("h", StringComparison.OrdinalIgnoreCase) && !placedFiles.Contains(n)) : 0;
+            ? listed.Count(n => n.StartsWith("l", StringComparison.OrdinalIgnoreCase) && !placedFiles.Contains(n)) : 0;
 
         // The tile's own area: where its collision lies, across, before any asset is added
         var ownBounds = XZBounds(input.Triangles);

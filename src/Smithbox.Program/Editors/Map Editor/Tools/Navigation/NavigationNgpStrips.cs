@@ -566,6 +566,71 @@ public sealed class NgpWorkMesh
         return path;
     }
 
+    /// <summary>The first open edge the XZ ray from p along dir meets within reach, at a height within tolerance of p's, or null.</summary>
+    public Location RayOpenEdge(Vector3 p, Vector2 dir, float reach, float tolerance)
+    {
+        var from = XZ(p);
+        var to = from + dir * reach;
+        Location best = null;
+        float bestT = float.MaxValue;
+
+        foreach (int f in LiveFaces())
+        {
+            var face = Faces[f];
+            for (int k = 0; k < 3; k++)
+            {
+                int a = face[k], b = face[(k + 1) % 3];
+                Vector2 A = XZ(Vertices[a]), B = XZ(Vertices[b]);
+                float d = Orient(Vector2.Zero, to - from, B - A);
+                if (MathF.Abs(d) < 1e-9f)
+                    continue;
+                // from + (to - from) t = A + (B - A) s
+                float t = Orient(Vector2.Zero, A - from, B - A) / d;
+                float s = Orient(Vector2.Zero, A - from, to - from) / d;
+                if (t < 0 || t > 1 || s < 0 || s > 1 || t >= bestT || EdgeFaces(a, b).Count != 1)
+                    continue;
+                var point = Vector3.Lerp(Vertices[a], Vertices[b], s);
+                if (MathF.Abs(point.Y - p.Y) > tolerance)
+                    continue;
+                bestT = t;
+                best = new Location(f, a, b, point, true);
+            }
+        }
+
+        return best;
+    }
+
+    /// <summary>
+    /// For an edge i0-i1 that lies off the floor: the floor's open edge ahead of it along dir, as the path of open
+    /// edges between where each end's ray meets it (vertices put in as needed), and the floor face on its first edge.
+    /// Null (the mesh as it was) when an end is over the floor, a ray meets nothing, or the two meet no common edge path.
+    /// </summary>
+    public (List<int> Path, int FloorFace)? OpenEdgeAhead(Vector3 i0, Vector3 i1, Vector2 dir, float reach, float tolerance)
+    {
+        bool OverFloor(Vector3 p) => Locate(XZ(p), p.Y, y => MathF.Abs(y - p.Y) <= tolerance, 0) != null;
+        if (OverFloor(i0) || OverFloor(i1))
+            return null;
+
+        var before = Clone();
+        var hit0 = RayOpenEdge(i0, dir, reach, tolerance);
+        if (hit0 == null)
+            return null;
+        int h0 = Insert(hit0, CornerSnap);
+
+        // After the first insert, as it may have split the edge the second ray meets
+        var hit1 = RayOpenEdge(i1, dir, reach, tolerance);
+        int h1 = hit1 == null ? -1 : Insert(hit1, CornerSnap);
+        var path = h1 < 0 || h1 == h0 ? null : OpenPath(h0, h1);
+
+        if (path == null || path.Count < 2 || EdgeFaces(path[0], path[1]) is not { Count: 1 } first)
+        {
+            CopyFrom(before);
+            return null;
+        }
+
+        return (path, first[0]);
+    }
+
     #endregion
 
     #region Cutting
@@ -893,6 +958,26 @@ public static class NgpStripEdit
                 }
 
                 w.CopyFrom(before);
+
+                // The floor stops short of the ladder (a generated floor keeps the agent radius back from a ledge): the
+                // landing bridges the gap, from the ladder's plane to the floor's open edge ahead along dir
+                if (w.OpenEdgeAhead(i0, i1, NgpWorkMesh.XZ(dir), LandingDepth + LandingSnap, 0.75f) is var (path, floorFace))
+                {
+                    level = NgpFlags.Level(w.Flags[floorFace]);
+                    uint bridgeFlags = NgpFlags.WithType(level, 0x18);
+                    var target = mesh == home ? w : homeWork;
+                    var down = mesh == home ? path : path.Select(v => homeWork.AddVertex(w.Vertices[v])).ToList();
+                    int n0 = target.AddVertex(i0), n1 = target.AddVertex(i1);
+
+                    // Against the floor's own winding along the path: the floor face has path0 → path1, or the strip turns round
+                    bool floorForward = w.HasDirected(floorFace, path[0], path[1]);
+                    var added = floorForward ? AddStrip(target, n0, n1, down, bridgeFlags)
+                        : AddStrip(target, n1, n0, down.AsEnumerable().Reverse().ToList(), bridgeFlags);
+
+                    result.LandingFaces += added.Count;
+                    result.Notes.Add($"{(Vector3.Dot(dir, forward) > 0 ? "top" : "bottom")}: bridged to the floor's edge ({path.Count} vertices)");
+                    return (n0, n1, true);
+                }
             }
 
             // Not on a floor: a free landing quad in the home mesh, wound clockwise from above (normal Y < 0) as floors are
@@ -994,6 +1079,37 @@ public static class NgpStripEdit
             if (Vector3.Dot(n, direction) > 0) along++; else against++;
         }
         return against == 0 ? 1 : along == 0 ? -1 : 0;
+    }
+
+    #endregion
+
+    #region Strips
+
+    /// <summary>
+    /// Faces between an edge [t0, t1] and a path [down0 … downK] (down0 opposite t0), wound as the loop t0 → t1 →
+    /// downK → … → down0, always along the shorter diagonal. A face on the path's side then has each path edge as
+    /// down(j+1) → down(j), the other way round to a floor face that has down(j) → down(j+1).
+    /// </summary>
+    private static List<int> AddStrip(NgpWorkMesh w, int t0, int t1, IReadOnlyList<int> down, uint flags)
+    {
+        var added = new List<int>();
+        int i = 0, j = 0, k = down.Count - 1;
+        int[] topIndex = { t0, t1 };
+        while (i < 1 || j < k)
+        {
+            bool advanceTop = j == k || i < 1 && Vector3.Distance(w.Vertices[t1], w.Vertices[down[j]]) < Vector3.Distance(w.Vertices[topIndex[i]], w.Vertices[down[j + 1]]);
+            if (advanceTop)
+            {
+                added.Add(w.AddFace(t0, t1, down[j], flags));
+                i = 1;
+            }
+            else
+            {
+                added.Add(w.AddFace(topIndex[i], down[j + 1], down[j], flags));
+                j++;
+            }
+        }
+        return added;
     }
 
     #endregion
@@ -1179,24 +1295,7 @@ public static class NgpStripEdit
             down.Reverse();
         uint flags = NgpFlags.WithType(NgpFlags.Level(upper.Flags[top]), 0x40);
 
-        // A strip between the ledge [t0, t1] and the bottom [down0 … downK], down0 under t0: always the shorter diagonal
-        var added = new List<int>();
-        int i = 0, j = 0, k = down.Count - 1;
-        int[] topIndex = { t0, t1 };
-        while (i < 1 || j < k)
-        {
-            bool advanceTop = j == k || i < 1 && Vector3.Distance(upper.Vertices[t1], upper.Vertices[down[j]]) < Vector3.Distance(upper.Vertices[topIndex[i]], upper.Vertices[down[j + 1]]);
-            if (advanceTop)
-            {
-                added.Add(upper.AddFace(t0, t1, down[j], flags));
-                i = 1;
-            }
-            else
-            {
-                added.Add(upper.AddFace(topIndex[i], down[j + 1], down[j], flags));
-                j++;
-            }
-        }
+        var added = AddStrip(upper, t0, t1, down, flags);
 
         result.StripFaces = added.Count;
         result.BottomPoints = bottom.Count;

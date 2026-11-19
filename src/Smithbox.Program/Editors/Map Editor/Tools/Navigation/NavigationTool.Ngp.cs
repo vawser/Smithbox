@@ -29,7 +29,7 @@ public partial class NavigationTool
     /// <summary>The project's game keeps NGP navigation (DS2, DS2S).</summary>
     private bool IsNgpMode => View.NgpBank?.CanUse() == true;
 
-    private enum NgpTab { Overlay, Models, Flags, Gates, Edit, Check }
+    private enum NgpTab { Overlay, Models, Regenerate, Flags, Gates, Edit, Check }
 
     /// <summary>What a click in the viewport does in the NGP mode.</summary>
     private enum NgpClick { None, Pick, Paint, Gate }
@@ -141,6 +141,12 @@ public partial class NavigationTool
             if (BeginNgpTab(NgpTab.Models, "MAP_Navigation_Tab_Models", "navigationNgpTabModels"))
             {
                 DisplayNgpModelsTab(map);
+                ImGui.EndTabItem();
+            }
+
+            if (BeginNgpTab(NgpTab.Regenerate, "MAP_Navigation_Tab_Regenerate", "navigationNgpTabRegenerate"))
+            {
+                DisplayNgpRegenerateTab(map);
                 ImGui.EndTabItem();
             }
 

@@ -790,7 +790,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Select",
-      "Text": "Select the collision parts to walk on in the viewport (high collision, h####)."
+      "Text": "Select the collision parts to walk on in the viewport (their low collision, l####, is what the navmesh is made from)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Replace",

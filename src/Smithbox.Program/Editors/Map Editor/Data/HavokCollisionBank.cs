@@ -899,6 +899,54 @@ public class HavokCollisionBank
         return MapCollisions.TryGetValue(mapId, out var names) ? names.ToList() : new List<string>();
     }
 
+    /// <summary>The collision file names of each vanilla binder (mapId:type), read once.</summary>
+    private readonly Dictionary<string, HashSet<string>> VanillaCollisionNames = new();
+
+    /// <summary>
+    /// Whether a map collision file was added by the user: made in this session, or in the project's binder but not
+    /// the game's own. Survives a save and reload, as the vanilla binder is compared. Also true for a file changed
+    /// in this session (in the games that track that).
+    /// </summary>
+    public bool IsAddedOrChangedCollision(string mapId, string fileName)
+    {
+        if (NewFiles.ContainsKey(fileName) || ModifiedTagFiles.Contains(fileName))
+            return true;
+
+        if (!CollisionBinders.TryGetValue(fileName, out var binder) || IsLooseGame)
+            return false;
+
+        var key = GetBinderKey(binder.MapId, binder.Type);
+        if (!VanillaCollisionNames.TryGetValue(key, out var vanilla))
+        {
+            vanilla = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            try
+            {
+                var (bhdPath, bdtPath) = GetBinderPaths(binder.MapId, binder.Type);
+                if (Project.VFS.VanillaFS.FileExists(bhdPath) && Project.VFS.VanillaFS.FileExists(bdtPath))
+                {
+                    var bhd = Project.VFS.VanillaFS.ReadFile(bhdPath);
+                    var bdt = Project.VFS.VanillaFS.ReadFile(bdtPath);
+                    if (bhd != null && bdt != null)
+                    {
+                        using BinderReader reader = IsBxf3Game
+                            ? new BXF3Reader((Memory<byte>)bhd, (Memory<byte>)bdt)
+                            : new BXF4Reader((Memory<byte>)bhd, (Memory<byte>)bdt);
+                        foreach (var file in GetCollisionFiles(reader))
+                            vanilla.Add(file.Name.Split('\\')[1]);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", key), e);
+            }
+            VanillaCollisionNames[key] = vanilla;
+        }
+
+        // A map with no vanilla binder at all (a new map): every file is the user's
+        return !vanilla.Contains(fileName);
+    }
+
     /// <summary>
     /// Removes collision files from a map's binders and writes the binders that changed into the project, then drops
     /// them from what this bank holds. Files that were only made in the Map Editor and not written yet are just
