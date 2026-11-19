@@ -136,12 +136,14 @@ public partial class NavigationTool
         DisplayRemove(map, navigation, selected, removable, hasO);
     }
 
+    private bool ShowDuplicateSection = true;
+
     private void DisplayDuplicate(MapContainer map, NavigationMap navigation, NavmeshModel selected, HashSet<NavmeshModel> removable,
         List<NavmeshModel> slots, bool hasO)
     {
         // Duplicate
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Models_Duplicate_Header"), LOC.Get("MAP_Navigation_Models_Duplicate_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Models_Duplicate_Header"), LOC.Get("MAP_Navigation_Models_Duplicate_Header_TT"), ref ShowDuplicateSection);
 
         if (selected == null || !removable.Contains(selected))
         {
@@ -182,11 +184,13 @@ public partial class NavigationTool
             });
     }
 
+    private bool ShowRemoveSection = true;
+
     private void DisplayRemove(MapContainer map, NavigationMap navigation, NavmeshModel selected, HashSet<NavmeshModel> removable, bool hasO)
     {
         // Remove
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Models_Remove_Header"), LOC.Get("MAP_Navigation_Models_Remove_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Models_Remove_Header"), LOC.Get("MAP_Navigation_Models_Remove_Header_TT"), ref ShowRemoveSection);
 
         if (selected == null)
         {

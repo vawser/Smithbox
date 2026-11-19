@@ -165,15 +165,21 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
-            if (BeginTab(NavTab.Models, "MAP_Navigation_Tab_Models", "navigationTabModels"))
+            if (BeginTab(NavTab.Edit, "MAP_Navigation_Tab_Edit", "navigationTabEdit"))
             {
-                DisplayModelsTab(map);
+                DisplayEditTab();
                 ImGui.EndTabItem();
             }
 
             if (BeginTab(NavTab.Regenerate, "MAP_Navigation_Tab_Regenerate", "navigationTabRegenerate"))
             {
                 DisplayRegenerateTab(map);
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(NavTab.Models, "MAP_Navigation_Tab_Models", "navigationTabModels"))
+            {
+                DisplayModelsTab(map);
                 ImGui.EndTabItem();
             }
 
@@ -198,12 +204,6 @@ public partial class NavigationTool
             if (BeginTab(NavTab.FaceData, "MAP_Navigation_Tab_Face_Data", "navigationTabFaceData"))
             {
                 DisplayFaceDataTab();
-                ImGui.EndTabItem();
-            }
-
-            if (BeginTab(NavTab.Edit, "MAP_Navigation_Tab_Edit", "navigationTabEdit"))
-            {
-                DisplayEditTab();
                 ImGui.EndTabItem();
             }
 

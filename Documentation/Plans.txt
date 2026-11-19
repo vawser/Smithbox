@@ -14,6 +14,10 @@
     - Projectile Editor
     - FaceGen Editor
     
+De-verbose some of the text in the Tools:
+    - Navigaiton Editor
+    - Collision Editor
+    
 #-------------
 # Blue Sky
 #-------------

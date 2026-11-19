@@ -59,11 +59,13 @@ public partial class NavigationTool
     private volatile int GenerateStage;
     private bool GenerateHasO;
 
+    private bool ShowGenerateSection = true;
+
     private void DisplayGenerate(MapContainer map, NavigationMap navigation, NavmeshModel selected, HashSet<NavmeshModel> removable, List<NavmeshModel> slots)
     {
         // Generate
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Generate_Header"), LOC.Get("MAP_Navigation_Generate_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Generate_Header"), LOC.Get("MAP_Navigation_Generate_Header_TT"), ref ShowGenerateSection);
 
         var sources = SelectedSources();
         var walkable = sources.Where(s => !IsBlocker(s)).ToList();
