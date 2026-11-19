@@ -181,6 +181,10 @@
       "Text": "Applied {0} of {1} files ({2} on the GPU, {3} DDS files used as they are) in {4} ms."
     },
     {
+      "Key": "TEXVIEW_TexImport_Status_Cancelled",
+      "Text": "Cancelled: nothing was changed."
+    },
+    {
       "Key": "TEXVIEW_TexImport_Log_Failed",
       "Text": "Failed to import {0}: {1}"
     },

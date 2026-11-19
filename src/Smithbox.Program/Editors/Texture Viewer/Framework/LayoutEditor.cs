@@ -349,22 +349,32 @@ public partial class LayoutEditor
             return Twin;
 
         TwinFor = Atlas;
-        Twin = null;
+        Twin = FindLowTwin(Project, Container, Atlas, ResolvedFor?.Name ?? "");
+        return Twin;
+    }
 
-        var path = Container.FileEntry.Path;
+    /// <summary>
+    /// The low twin of a hi sheet's atlas (any sheet, not only the selected one): the binder at the low path, its
+    /// atlas for the sheet, and the TPF beside it (loaded on demand). Null when the container isn't a hi binder.
+    /// </summary>
+    public static LowTwin FindLowTwin(ProjectEntry project, ShoeboxLayoutContainer container, TextureAtlas hiAtlas, string sheet)
+    {
+        if (hiAtlas == null || container == null || container.IsBundled)
+            return null;
+
+        var path = container.FileEntry.Path;
         string lowPath = null;
 
         if (path.Contains("/hi/", StringComparison.OrdinalIgnoreCase))
             lowPath = System.Text.RegularExpressions.Regex.Replace(path, "/hi/", "/low/", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-        else if (System.Text.RegularExpressions.Regex.IsMatch(Container.FileEntry.Filename, "_h$", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
-            lowPath = path.Replace($"{Container.FileEntry.Filename}.", $"{Container.FileEntry.Filename[..^2]}_l.");
+        else if (System.Text.RegularExpressions.Regex.IsMatch(container.FileEntry.Filename, "_h$", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+            lowPath = path.Replace($"{container.FileEntry.Filename}.", $"{container.FileEntry.Filename[..^2]}_l.");
 
         if (lowPath == null)
             return null;
 
-        var bank = Project.Handler.TextureData.PrimaryBank;
+        var bank = project.Handler.TextureData.PrimaryBank;
         var twin = new LowTwin();
-        Twin = twin;
 
         twin.Container = bank.ShoeboxEntries.Values.FirstOrDefault(c => c != null && string.Equals(c.FileEntry.Path, lowPath, StringComparison.OrdinalIgnoreCase));
         if (twin.Container == null)
@@ -373,7 +383,6 @@ public partial class LayoutEditor
             return twin;
         }
 
-        var sheet = ResolvedFor?.Name ?? "";
         (_, twin.Atlas) = twin.Container.FindAtlas(sheet);
         if (twin.Atlas == null)
         {
@@ -388,28 +397,47 @@ public partial class LayoutEditor
             return twin;
         }
 
-        bank.LoadTextureBinder(tpfEntry).Wait();
-        var contents = bank.Entries.FirstOrDefault(e => string.Equals(e.Key.Path, tpfEntry.Path, StringComparison.OrdinalIgnoreCase)).Value;
-        var file = contents?.OrderedFiles().FirstOrDefault();
-        var tpf = file != null ? contents.Files[file] : null;
-        twin.Texture = tpf?.Textures.FirstOrDefault(t => t.Name.Equals(sheet, StringComparison.OrdinalIgnoreCase));
-
-        if (twin.Texture == null || !TextureFormats.IsEditable(tpf))
+        twin.Target = LoadSheet(project, tpfEntry, sheet, out twin.Texture);
+        if (twin.Target == null)
         {
             twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_No_Texture", sheet, tpfEntry.Path);
             return twin;
         }
 
-        twin.Target = new TextureTarget(contents, file, tpf);
+        var tpf = twin.Target.Tpf;
         var info = TextureFormats.GetInfo(tpf, twin.Texture);
         twin.SheetWidth = info.Width;
         twin.SheetHeight = info.Height;
-        twin.Scale = LayoutGeometry.TwinScale(Atlas, twin.Atlas);
+        twin.Scale = LayoutGeometry.TwinScale(hiAtlas, twin.Atlas);
 
         if (twin.Atlas.Layout == null || twin.Atlas.Layout.IsReadOnly)
             twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_Read_Only");
 
         return twin;
+    }
+
+    /// <summary>
+    /// The edit target and texture of a sheet in a TPF (read into the bank when it isn't yet). Null when the TPF
+    /// can't be read or edited, or has no texture of that name.
+    /// </summary>
+    public static TextureTarget LoadSheet(ProjectEntry project, FileDictionaryEntry tpfEntry, string sheet, out TPF.Texture texture)
+    {
+        texture = null;
+        var bank = project.Handler.TextureData.PrimaryBank;
+
+        bank.LoadTextureBinder(tpfEntry).Wait();
+        var contents = bank.Entries.FirstOrDefault(e => string.Equals(e.Key.Path, tpfEntry.Path, StringComparison.OrdinalIgnoreCase)).Value;
+        var file = contents?.OrderedFiles().FirstOrDefault();
+        var tpf = file != null ? contents.Files[file] : null;
+        texture = tpf?.Textures.FirstOrDefault(t => t.Name.Equals(sheet, StringComparison.OrdinalIgnoreCase));
+
+        if (texture == null || !TextureFormats.IsEditable(tpf))
+        {
+            texture = null;
+            return null;
+        }
+
+        return new TextureTarget(contents, file, tpf);
     }
 
     /// <summary>The selected (or given) hi cells that the low twin doesn't have, by name.</summary>

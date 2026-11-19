@@ -16,6 +16,8 @@ public class TexToolView
 
     public ScaleformReloaderTool ScaleformReloader;
 
+    public ItemIconInjectorTool ItemIconInjector;
+
     private ToolSections Sections = new();
 
     public TexToolView(TexEditorView view, ProjectEntry project)
@@ -26,6 +28,7 @@ public class TexToolView
         TextureExport = new TextureExport(view, Project);
         ScaleformConfiguration = new ScaleformConfigurationTool(view, Project);
         ScaleformReloader = new ScaleformReloaderTool(view, Project);
+        ItemIconInjector = new ItemIconInjectorTool(view, Project);
     }
 
     public void Display()
@@ -52,6 +55,9 @@ public class TexToolView
 
             // Scaleform Reloader (reload saved movies in the running game), for games with its offsets
             ScaleformReloader.OnToolWindow();
+
+            // Item Icon Injector (new icon into the atlas and every movie's icon page), for movies with icon pages
+            ItemIconInjector.OnToolWindow();
         }
 
         Sections.End();

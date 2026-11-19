@@ -39,3 +39,48 @@ public class MovieTagChangeAction : EditorAction
         return ActionEvent.NoEvent;
     }
 }
+
+/// <summary>
+/// Shows an item icon in movies (Item Icon Injector, ItemIconPages): swaps the edited tag lists, and adds (or on
+/// undo removes) the new image character in each movie's character table. The preview forgets its image lookups,
+/// so cells added in the same action are found.
+/// </summary>
+public class MovieIconInjectAction : EditorAction
+{
+    private readonly List<(MovieContents Contents, ItemIconEdit Edit)> Edits;
+    private readonly MovieImages Images;
+
+    public MovieIconInjectAction(List<(MovieContents Contents, ItemIconEdit Edit)> edits, MovieImages images)
+    {
+        Edits = edits;
+        Images = images;
+    }
+
+    public override ActionEvent Execute()
+    {
+        foreach (var (contents, edit) in Edits)
+        {
+            edit.Apply();
+            if (edit.AddedImage != null)
+                contents.Characters[(int)edit.AddedImage.Id] = edit.AddedImage;
+            contents.MarkChanged();
+        }
+
+        Images?.Reset();
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        foreach (var (contents, edit) in Edits)
+        {
+            edit.Revert();
+            if (edit.AddedImage != null)
+                contents.Characters.Remove((int)edit.AddedImage.Id);
+            contents.MarkChanged();
+        }
+
+        Images?.Reset();
+        return ActionEvent.NoEvent;
+    }
+}

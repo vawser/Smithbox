@@ -50,7 +50,13 @@ public class TextureImport
 
     private sealed record JobResult(Job Job, TextureEncodeResult Result);
 
-    private readonly ConcurrentQueue<List<JobResult>> Results = new();
+    /// <summary>
+    /// A batch's results, with another tool's follow-up (SheetCellRequest batches): its own actions, made on the main
+    /// thread once every job succeeded and applied in the same undoable action, and where to report the outcome.
+    /// </summary>
+    private sealed record Batch(List<JobResult> Results, Func<List<EditorAction>> Extra, Action<bool, string> Finished);
+
+    private readonly ConcurrentQueue<Batch> Results = new();
     private CancellationTokenSource Cancel;
     private Task Running;
 
@@ -680,7 +686,62 @@ public class TextureImport
         };
     }
 
-    private void Start(List<Job> jobs)
+    /// <summary>
+    /// An image for one cell of a sheet, from another tool: replaces Existing when set, else adds a cell named
+    /// CellName (CellWidth × CellHeight) in the atlas' free space, formatted like Template, with Attributes set where
+    /// the template has them.
+    /// </summary>
+    public sealed record SheetCellRequest(TextureTarget Target, TPF.Texture Texture, TextureAtlas Atlas, int SheetWidth, int SheetHeight,
+        SubTexture Existing, SubTexture Template, string CellName, int CellWidth, int CellHeight, string ImagePath,
+        Dictionary<string, string> Attributes = null);
+
+    /// <summary>
+    /// Puts images into sheet cells for another tool (the Item Icon Injector): one job per sheet, encoded on the
+    /// task like the other imports. When every job succeeds, extraActions (main thread) adds the tool's own actions,
+    /// and all of it is one undoable action; when any fails, nothing is applied. finished gets the outcome and a
+    /// status line. False (with failures) when a cell can't be placed, in which case nothing starts.
+    /// </summary>
+    public bool StartSheetCells(List<SheetCellRequest> requests, Func<List<EditorAction>> extraActions, Action<bool, string> finished, List<string> failures)
+    {
+        if (IsRunning || requests.Count == 0)
+            return false;
+
+        var jobs = new List<Job>();
+
+        foreach (var group in requests.GroupBy(r => r.Texture))
+        {
+            var first = group.First();
+            var cells = group.Where(r => r.Existing != null)
+                .Select(r => new CellSource(CellRect.Of(r.Existing), r.Existing.Name, r.ImagePath))
+                .ToList();
+
+            var adds = group.Where(r => r.Existing == null).ToList();
+            var plan = (Cells: new List<CellSource>(), NewCells: new List<NewCell>(), GrowWidth: 0, GrowHeight: 0);
+
+            if (adds.Count > 0)
+            {
+                var before = failures.Count;
+                plan = PlanNewCells(first.Atlas, adds[0].Template, adds.Select(r => (r.CellName, r.CellWidth, r.CellHeight, r.ImagePath)).ToList(),
+                    first.SheetWidth, first.SheetHeight, CFG.Current.TextureViewerImport_GrowSheet, failures);
+
+                if (failures.Count > before)
+                    return false;
+
+                var attributes = adds.ToDictionary(r => r.CellName, r => r.Attributes, StringComparer.OrdinalIgnoreCase);
+                plan.NewCells = plan.NewCells.Select(n => n with { Attributes = attributes.GetValueOrDefault(n.Name) }).ToList();
+            }
+
+            var tex = first.Texture;
+            Status = "";
+            jobs.Add(new Job(JobKind.ReplaceCells, first.ImagePath, first.Target, tex, -1, null, tex.Format, tex.Bytes,
+                cells.Concat(plan.Cells).ToList(), plan.NewCells, plan.GrowWidth, plan.GrowHeight, first.Atlas));
+        }
+
+        Start(jobs, extraActions, finished);
+        return true;
+    }
+
+    private void Start(List<Job> jobs, Func<List<EditorAction>> extra = null, Action<bool, string> finished = null)
     {
         Cancel?.Cancel();
         Cancel = new CancellationTokenSource();
@@ -726,7 +787,9 @@ public class TextureImport
 
             // A cancelled run applies nothing, so a batch is all or nothing
             if (!token.IsCancellationRequested)
-                Results.Enqueue(results);
+                Results.Enqueue(new Batch(results, extra, finished));
+            else
+                finished?.Invoke(false, LOC.Get("TEXVIEW_TexImport_Status_Cancelled"));
         }, token);
     }
 
@@ -799,14 +862,15 @@ public class TextureImport
     /// </summary>
     public void Update()
     {
-        while (Results.TryDequeue(out var results))
+        while (Results.TryDequeue(out var batch))
         {
-            Apply(results);
+            Apply(batch);
         }
     }
 
-    private void Apply(List<JobResult> results)
+    private void Apply(Batch batch)
     {
+        var results = batch.Results;
         var actions = new List<EditorAction>();
         var failed = new List<string>();
         int gpu = 0, kept = 0;
@@ -896,6 +960,30 @@ public class TextureImport
             }
         }
 
+        // Another tool's batch: all or nothing, with its own actions in the same undoable action
+        if (batch.Finished != null || batch.Extra != null)
+        {
+            if (failed.Count == 0 && batch.Extra != null)
+            {
+                try
+                {
+                    actions.AddRange(batch.Extra());
+                }
+                catch (Exception e)
+                {
+                    failed.Add(e.Message);
+                    Smithbox.LogError(this, e.Message, e);
+                }
+            }
+
+            if (failed.Count > 0)
+            {
+                Status = string.Join("\n", failed);
+                batch.Finished?.Invoke(false, Status);
+                return;
+            }
+        }
+
         if (actions.Count == 1)
             View.ActionManager.ExecuteAction(actions[0]);
         else if (actions.Count > 1)
@@ -907,6 +995,8 @@ public class TextureImport
             Status += "\n" + string.Join("\n", failed);
 
         Smithbox.Log(this, LOC.Get("TEXVIEW_TexImport_Log_Done", actions.Count, results.Count, ms));
+
+        batch.Finished?.Invoke(true, Status);
     }
 
     /// <summary>A texture name not yet used in the TPF (or by an add in the same batch).</summary>
