@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Weather lot region (formerly Weather Override; managed by the game's CSWeatherLotRegionMan). While the player is inside it, each field that is not -1 overrides the map's value. Where regions overlap, the first matching region wins, field by field." />
+
+  <Field>
+    <WeatherLotParamID
+    AltName="Weather Lot Param ID"
+    Wiki="The WeatherLotParam row used inside the region. -1: no override."
+    ParamRef="WeatherLotParam" />
+
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="An override kept by the weather manager; -1 = none. Always -1 in retail; what reads it was not found." />
+
+    <ApplyMimicryLotLimitSpEffect0
+    AltName="Apply Mimicry Lot Limit SpEffect 0"
+    Wiki="Overrides MimicryEstablishmentTexParam isApplyMimicryLotLimitSpEffect0 inside the region. -1: no override, 0: off, 1: on."
+    Enum="WEATHER_LOT_REGION_TRISTATE" />
+
+    <ApplyMimicryLotLimitSpEffect1
+    AltName="Apply Mimicry Lot Limit SpEffect 1"
+    Wiki="Overrides MimicryEstablishmentTexParam isApplyMimicryLotLimitSpEffect1 inside the region. -1: no override, 0: off, 1: on."
+    Enum="WEATHER_LOT_REGION_TRISTATE" />
+
+    <ApplyMimicryLotLimitSpEffect2
+    AltName="Apply Mimicry Lot Limit SpEffect 2"
+    Wiki="Overrides MimicryEstablishmentTexParam isApplyMimicryLotLimitSpEffect2 inside the region. -1: no override, 0: off, 1: on."
+    Enum="WEATHER_LOT_REGION_TRISTATE" />
+
+    <UnkT0B
+    AltName="Unknown: 0x0B"
+    Wiki="0 in retail; never read by the game." />
+  </Field>
+
+  <Enums>
+    <Enum Name="WEATHER_LOT_REGION_TRISTATE" >
+        <Option Value="-1" Name="No Override" />
+        <Option Value="0" Name="Off" />
+        <Option Value="1" Name="On" />
+    </Enum>
+  </Enums>
+</MSBMETA>

@@ -4,9 +4,9 @@
   Wiki="This map object represents a patrol route in the map." />
   
   <Field>
-    <UnkT00
+    <ActionID
     AltName="Patrol Action ID"
-    Wiki="Determines what action ID to perform on reaching this patrol route (handled in ai_common/common_patrol_behavior.lua)." />
+    Wiki="The action ID AI scripts read for this point through the Lua function GetMovePointActionId (used in ai_common/common_patrol_behavior.lua). -1: none. Retail mostly 900001-900006." />
     
   </Field>
   

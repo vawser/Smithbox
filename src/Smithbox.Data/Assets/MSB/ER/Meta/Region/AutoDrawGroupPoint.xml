@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an automatic draw group point in the map." />
+  Wiki="A sample point for the offline automatic draw-group generation (Nightreign calls the type AutoDrawGroupSample). Retail points are all named AutoDrawGroupPoint_NNN and appear only in legacy dungeons. The game never reads it." />
   
   <Field>
     <UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="-1, or a value that is always below the map's collision count (362 of 362 retail points), so probably the index of a collision. Never read by the game." />
   </Field>
   
   <Enums>

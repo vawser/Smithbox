@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a muffling plane in the map." />
+  Wiki="Sound muffling plane. No retail ER map uses it, and the game never references the type." />
   
   <Field>
   </Field>

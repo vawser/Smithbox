@@ -23,13 +23,13 @@ namespace SoulsFormats
             PatrolRoute22 = 22,
             BuddySummonPoint = 26,
             RollingObjectOverride = 27,
-            MufflingBox = 28,
-            MufflingPortal = 29,
+            OcclusionBox = 28,
+            OcclusionPortal = 29,
             SoundRegion = 30,
             MufflingPlane = 31,
             PatrolRoute = 32,
-            MapPoint = 33,
-            WeatherOverride = 35,
+            WorldMapPoint = 33,
+            WeatherLotRegion = 35,
             AutoDrawGroupPoint = 36,
             GroupPlacementPoint = 37,
             WorldMapDiscoveryPoint = 38,
@@ -124,12 +124,12 @@ namespace SoulsFormats
             /// <summary>
             /// Areas where sound is muffled.
             /// </summary>
-            public List<Region.MufflingBox> MufflingBoxes { get; set; }
+            public List<Region.OcclusionBox> OcclusionBoxes { get; set; }
 
             /// <summary>
             /// Entrances to muffling boxes.
             /// </summary>
-            public List<Region.MufflingPortal> MufflingPortals { get; set; }
+            public List<Region.OcclusionPortal> OcclusionPortals { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -149,12 +149,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.MapPoint> MapPoints { get; set; }
+            public List<Region.WorldMapPoint> WorldMapPoints { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.WeatherOverride> WeatherOverrides { get; set; }
+            public List<Region.WeatherLotRegion> WeatherLotRegions { get; set; }
 
 
             /// <summary>
@@ -270,13 +270,13 @@ namespace SoulsFormats
                 PatrolRoute22s = new List<Region.PatrolRoute22>();
                 BuddySummonPoints = new List<Region.BuddySummonPoint>();
                 RollingObjectOverrides = new List<Region.RollingObjectOverride>();
-                MufflingBoxes = new List<Region.MufflingBox>();
-                MufflingPortals = new List<Region.MufflingPortal>();
+                OcclusionBoxes = new List<Region.OcclusionBox>();
+                OcclusionPortals = new List<Region.OcclusionPortal>();
                 SoundRegions = new List<Region.SoundRegion>();
                 MufflingPlanes = new List<Region.MufflingPlane>();
                 PatrolRoutes = new List<Region.PatrolRoute>();
-                MapPoints = new List<Region.MapPoint>();
-                WeatherOverrides = new List<Region.WeatherOverride>();
+                WorldMapPoints = new List<Region.WorldMapPoint>();
+                WeatherLotRegions = new List<Region.WeatherLotRegion>();
                 AutoDrawGroupPoints = new List<Region.AutoDrawGroupPoint>();
                 GroupPlacementPoints = new List<Region.GroupPlacementPoint>();
                 WorldMapDiscoveryPoints = new List<Region.WorldMapDiscoveryPoint>();
@@ -317,13 +317,13 @@ namespace SoulsFormats
                     case Region.Connection r: Connections.Add(r); break;
                     case Region.PatrolRoute22 r: PatrolRoute22s.Add(r); break;
                     case Region.BuddySummonPoint r: BuddySummonPoints.Add(r); break;
-                    case Region.MufflingBox r: MufflingBoxes.Add(r); break;
-                    case Region.MufflingPortal r: MufflingPortals.Add(r); break;
+                    case Region.OcclusionBox r: OcclusionBoxes.Add(r); break;
+                    case Region.OcclusionPortal r: OcclusionPortals.Add(r); break;
                     case Region.SoundRegion r: SoundRegions.Add(r); break;
                     case Region.MufflingPlane r: MufflingPlanes.Add(r); break;
                     case Region.PatrolRoute r: PatrolRoutes.Add(r); break;
-                    case Region.MapPoint r: MapPoints.Add(r); break;
-                    case Region.WeatherOverride r: WeatherOverrides.Add(r); break;
+                    case Region.WorldMapPoint r: WorldMapPoints.Add(r); break;
+                    case Region.WeatherLotRegion r: WeatherLotRegions.Add(r); break;
                     case Region.AutoDrawGroupPoint r: AutoDrawGroupPoints.Add(r); break;
                     case Region.GroupPlacementPoint r: GroupPlacementPoints.Add(r); break;
                     case Region.WorldMapDiscoveryPoint r: WorldMapDiscoveryPoints.Add(r); break;
@@ -360,9 +360,9 @@ namespace SoulsFormats
                 return SFUtil.ConcatAll<Region>(
                     InvasionPoints, EnvironmentMapPoints, Sounds, SFX, WindSFX,
                     SpawnPoints, Messages, EnvironmentMapEffectBoxes, WindAreas,
-                    Connections, PatrolRoute22s, BuddySummonPoints, RollingObjectOverrides, MufflingBoxes,
-                    MufflingPortals, SoundRegions, MufflingPlanes, PatrolRoutes,
-                    MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupPlacementPoints,
+                    Connections, PatrolRoute22s, BuddySummonPoints, RollingObjectOverrides, OcclusionBoxes,
+                    OcclusionPortals, SoundRegions, MufflingPlanes, PatrolRoutes,
+                    WorldMapPoints, WeatherLotRegions, AutoDrawGroupPoints, GroupPlacementPoints,
                     WorldMapDiscoveryPoints, WorldMapReentryPoints, Hitsets,
                     FastTravelOverrides, WeatherCreateAssetPoints, PlayRegions, EnvironmentMapOutputs,
                     RideJumps, SoundDummies, FallPreventionRemovals, NavmeshCuttings, MapPlaceNameOverrides,
@@ -414,11 +414,11 @@ namespace SoulsFormats
                     case RegionType.RollingObjectOverride:
                         return RollingObjectOverrides.EchoAdd(new Region.RollingObjectOverride(br));
 
-                    case RegionType.MufflingBox:
-                        return MufflingBoxes.EchoAdd(new Region.MufflingBox(br));
+                    case RegionType.OcclusionBox:
+                        return OcclusionBoxes.EchoAdd(new Region.OcclusionBox(br));
 
-                    case RegionType.MufflingPortal:
-                        return MufflingPortals.EchoAdd(new Region.MufflingPortal(br));
+                    case RegionType.OcclusionPortal:
+                        return OcclusionPortals.EchoAdd(new Region.OcclusionPortal(br));
 
                     case RegionType.SoundRegion:
                         return SoundRegions.EchoAdd(new Region.SoundRegion(br));
@@ -429,11 +429,11 @@ namespace SoulsFormats
                     case RegionType.PatrolRoute:
                         return PatrolRoutes.EchoAdd(new Region.PatrolRoute(br));
 
-                    case RegionType.MapPoint:
-                        return MapPoints.EchoAdd(new Region.MapPoint(br));
+                    case RegionType.WorldMapPoint:
+                        return WorldMapPoints.EchoAdd(new Region.WorldMapPoint(br));
 
-                    case RegionType.WeatherOverride:
-                        return WeatherOverrides.EchoAdd(new Region.WeatherOverride(br));
+                    case RegionType.WeatherLotRegion:
+                        return WeatherLotRegions.EchoAdd(new Region.WeatherLotRegion(br));
 
                     case RegionType.AutoDrawGroupPoint:
                         return AutoDrawGroupPoints.EchoAdd(new Region.AutoDrawGroupPoint(br));
@@ -1551,53 +1551,55 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// An area where sound is muffled.
+            /// The exe's CSMsbPointOcclusionBox (formerly MufflingBox): a room of the sound occlusion graph. Its
+            /// OcclusionPortals are the openings, and routes (MufflingPortalLink / MufflingBoxLink) join the portals.
             /// </summary>
-            public class MufflingBox : Region
+            public class OcclusionBox : Region
             {
-                private protected override RegionType Type => RegionType.MufflingBox;
+                private protected override RegionType Type => RegionType.OcclusionBox;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// The room number. Several boxes can share a number and form one room; each OcclusionPortal names the
+                /// room it belongs to with the same number.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int BoxNumber { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. 100 in every retail box; not seen read.
                 /// </summary>
                 public float UnkT24 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. 100 in every retail box; not seen read.
                 /// </summary>
                 public float UnkT34 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. -1 in every retail box; not seen read.
                 /// </summary>
                 public float UnkT3C { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. -1 in every retail box; not seen read.
                 /// </summary>
                 public float UnkT40 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. -1 in every retail box; not seen read.
                 /// </summary>
                 public float UnkT44 { get; set; }
 
                 /// <summary>
-                /// Creates a MufflingBox with default values.
+                /// Creates a OcclusionBox with default values.
                 /// </summary>
-                public MufflingBox() : base($"{nameof(Region)}: {nameof(MufflingBox)}") { }
+                public OcclusionBox() : base($"{nameof(Region)}: {nameof(OcclusionBox)}") { }
 
-                internal MufflingBox(BinaryReaderEx br) : base(br) { }
+                internal OcclusionBox(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    BoxNumber = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1619,7 +1621,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(BoxNumber);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1641,28 +1643,30 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// An entrance to a muffling box.
+            /// The exe's CSMsbPointOcclusionPortal (formerly MufflingPortal): an opening of an OcclusionBox. Routes
+            /// reference portals by their RegionID.
             /// </summary>
-            public class MufflingPortal : Region
+            public class OcclusionPortal : Region
             {
-                private protected override RegionType Type => RegionType.MufflingPortal;
+                private protected override RegionType Type => RegionType.OcclusionPortal;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// The BoxNumber of the OcclusionBox this portal belongs to (414 of 414 retail portals match a box in
+                /// their map).
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int BoxNumber { get; set; }
 
                 /// <summary>
-                /// Creates a MufflingPortal with default values.
+                /// Creates a OcclusionPortal with default values.
                 /// </summary>
-                public MufflingPortal() : base($"{nameof(Region)}: {nameof(MufflingPortal)}") { }
+                public OcclusionPortal() : base($"{nameof(Region)}: {nameof(OcclusionPortal)}") { }
 
-                internal MufflingPortal(BinaryReaderEx br) : base(br) { }
+                internal OcclusionPortal(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    BoxNumber = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1680,7 +1684,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(BoxNumber);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1698,7 +1702,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSMsbPointSoundRegion: overrides map sound settings while the listener is inside it. The
+            /// sound-region manager picks the active region separately for each field; a field only counts when it
+            /// is not -1 and the region's shape is a Box.
             /// </summary>
             public class SoundRegion : Region
             {
@@ -1706,43 +1712,48 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown sound override, read as a signed byte (-1/255 = none). Retail 3-8, the same range as
+                /// MapDefaultInfoParam ReverbDefaultType.
                 /// </summary>
                 public byte UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Together with UnkT02 it keys the regions in the sound-region manager; values above 0 set a
+                /// flag of their own. Retail 0/1/2.
                 /// </summary>
                 public byte UnkT01 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Read together with UnkT01. Retail 0/1.
                 /// </summary>
                 public byte UnkT02 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Outdoor/indoor override, like Collision OutdoorIndoorType: 0 outdoor, 1 half indoor, 2 indoor
+                /// (Wwise OutdoorIndoor states). -1/255 = no override.
                 /// </summary>
-                public byte UnkT03 { get; set; }
+                public byte OutdoorIndoorType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Wwise environment place type used inside the region. -1 = no override.
                 /// </summary>
                 [MSBParamReference(ParamName = "WwiseValueToStrParam_EnvPlaceType")]
                 public int WwiseEnvPlaceTypeID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown sound place override (-1 = none). The sound update uses it in place of its own value and
+                /// looks it up in a param; retail values are a subset of the WwiseEnvPlaceType values.
                 /// </summary>
                 public short UnkT08 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Common place type used inside the region (-1 = none); the sound update switches to it after a
+                /// 2-second delay.
                 /// </summary>
                 public short CommonPlaceType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown flag (-1/255 = none), read only in DLC (m61) maps. Retail 1 on ten regions.
                 /// </summary>
                 public byte UnkT0C { get; set; }
 
@@ -1758,7 +1769,7 @@ namespace SoulsFormats
                     UnkT00 = br.ReadByte();
                     UnkT01 = br.ReadByte();
                     UnkT02 = br.ReadByte();
-                    UnkT03 = br.ReadByte();
+                    OutdoorIndoorType = br.ReadByte();
                     WwiseEnvPlaceTypeID = br.ReadInt32();
                     UnkT08 = br.ReadInt16();
                     CommonPlaceType = br.ReadInt16();
@@ -1771,7 +1782,7 @@ namespace SoulsFormats
                     bw.WriteByte(UnkT00);
                     bw.WriteByte(UnkT01);
                     bw.WriteByte(UnkT02);
-                    bw.WriteByte(UnkT03);
+                    bw.WriteByte(OutdoorIndoorType);
                     bw.WriteInt32(WwiseEnvPlaceTypeID);
                     bw.WriteInt16(UnkT08);
                     bw.WriteInt16(CommonPlaceType);
@@ -1781,7 +1792,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Sound muffling plane. No retail ER map uses it and the game never references the type.
             /// </summary>
             public class MufflingPlane : Region
             {
@@ -1805,9 +1816,10 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Action ID that AI scripts read for this point through the Lua function GetMovePointActionId.
+                /// -1: none. Retail mostly 900001-900006.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int ActionID { get; set; } = -1;
 
                 /// <summary>
                 /// Creates a PatrolRoute with default values.
@@ -1818,21 +1830,22 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    ActionID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(ActionID);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSMsbPointWorldMapPoint (formerly MapPoint): a point shown on the world map, with a discovery
+            /// area and a re-entry area.
             /// </summary>
-            public class MapPoint : Region
+            public class WorldMapPoint : Region
             {
-                private protected override RegionType Type => RegionType.MapPoint;
+                private protected override RegionType Type => RegionType.WorldMapPoint;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
@@ -1881,11 +1894,11 @@ namespace SoulsFormats
                 public float ReentryExpandRangeY { get; set; } = -1;
 
                 /// <summary>
-                /// Creates a MapPoint with default values.
+                /// Creates a WorldMapPoint with default values.
                 /// </summary>
-                public MapPoint() : base($"{nameof(Region)}: {nameof(MapPoint)}") { }
+                public WorldMapPoint() : base($"{nameof(Region)}: {nameof(WorldMapPoint)}") { }
 
-                internal MapPoint(BinaryReaderEx br) : base(br) { }
+                internal WorldMapPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1927,57 +1940,60 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSWeatherLotRegionMan region (formerly WeatherOverride). While the player is inside, each
+            /// field that is not -1 overrides the map's value; with overlapping regions, the first match per field wins.
             /// </summary>
-            public class WeatherOverride : Region
+            public class WeatherLotRegion : Region
             {
-                private protected override RegionType Type => RegionType.WeatherOverride;
+                private protected override RegionType Type => RegionType.WeatherLotRegion;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Determines which WeatherLotParam ID to use.
+                /// Determines which WeatherLotParam ID to use. -1: no override.
                 /// </summary>
-                public int WeatherLotParamID { get; set; }
+                public int WeatherLotParamID { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown. Always -1 in retail; the loader sets it to -1 for MSB versions before 0x42.
+                /// Unknown override, -1 = none (always -1 in retail; the loader sets it to -1 for MSB versions before
+                /// 0x42). Kept by the manager, consumer not found.
                 /// </summary>
                 public int UnkT04 { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown. The loader sets UnkT08..UnkT0A to -1 for MSB versions before 0x4A.
+                /// Overrides MimicryEstablishmentTexParam isApplyMimicryLotLimitSpEffect0: -1 none, 0 off, 1 on. The
+                /// loader sets the three overrides to -1 for MSB versions before 0x4A.
                 /// </summary>
-                public sbyte UnkT08 { get; set; }
+                public sbyte ApplyMimicryLotLimitSpEffect0 { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides MimicryEstablishmentTexParam isApplyMimicryLotLimitSpEffect1: -1 none, 0 off, 1 on.
                 /// </summary>
-                public sbyte UnkT09 { get; set; }
+                public sbyte ApplyMimicryLotLimitSpEffect1 { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Overrides MimicryEstablishmentTexParam isApplyMimicryLotLimitSpEffect2: -1 none, 0 off, 1 on.
                 /// </summary>
-                public sbyte UnkT0A { get; set; }
+                public sbyte ApplyMimicryLotLimitSpEffect2 { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown; 0 in retail and never read.
                 /// </summary>
                 public sbyte UnkT0B { get; set; }
 
                 /// <summary>
-                /// Creates a WeatherOverride with default values.
+                /// Creates a WeatherLotRegion with default values.
                 /// </summary>
-                public WeatherOverride() : base($"{nameof(Region)}: {nameof(WeatherOverride)}") { }
+                public WeatherLotRegion() : base($"{nameof(Region)}: {nameof(WeatherLotRegion)}") { }
 
-                internal WeatherOverride(BinaryReaderEx br) : base(br) { }
+                internal WeatherLotRegion(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     WeatherLotParamID = br.ReadInt32();
                     UnkT04 = br.ReadInt32();
-                    UnkT08 = br.ReadSByte();
-                    UnkT09 = br.ReadSByte();
-                    UnkT0A = br.ReadSByte();
+                    ApplyMimicryLotLimitSpEffect0 = br.ReadSByte();
+                    ApplyMimicryLotLimitSpEffect1 = br.ReadSByte();
+                    ApplyMimicryLotLimitSpEffect2 = br.ReadSByte();
                     UnkT0B = br.ReadSByte();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1990,9 +2006,9 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(WeatherLotParamID);
                     bw.WriteInt32(UnkT04);
-                    bw.WriteSByte(UnkT08);
-                    bw.WriteSByte(UnkT09);
-                    bw.WriteSByte(UnkT0A);
+                    bw.WriteSByte(ApplyMimicryLotLimitSpEffect0);
+                    bw.WriteSByte(ApplyMimicryLotLimitSpEffect1);
+                    bw.WriteSByte(ApplyMimicryLotLimitSpEffect2);
                     bw.WriteSByte(UnkT0B);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -2003,7 +2019,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// A sample point for the offline automatic draw-group generation (NR names the type
+            /// AutoDrawGroupSample). Retail points are all named AutoDrawGroupPoint_NNN, in legacy dungeons only.
+            /// Never read by the game.
             /// </summary>
             public class AutoDrawGroupPoint : Region
             {
@@ -2011,7 +2029,8 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. -1, or a value always below the map's collision count (362 of 362 retail points), so
+                /// probably an index into the map's collisions. Never read by the game.
                 /// </summary>
                 public int UnkT00 { get; set; }
 
@@ -2077,15 +2096,15 @@ namespace SoulsFormats
                 private int[] PartIndices { get; set; }
 
                 /// <summary>
-                /// Unknown parts (up to 8; assets in retail, three regions use them), resolved by the game to their
-                /// entities.
+                /// Assets tied to the group (up to 8). The group registers itself on each asset, and the asset only
+                /// activates while the group does. Retail: three regions, all with a RandomAppearParamID.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] UnkPartNames { get; set; }
-                private int[] UnkPartIndices { get; set; }
+                public string[] LinkedAssetNames { get; set; }
+                private int[] LinkedAssetIndices { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// HP/MPEstusFlaskRecoveryParam row applied when the whole group is defeated.
                 /// </summary>
                 public int EstusFlaskRecoveryID { get; set; }
 
@@ -2096,7 +2115,7 @@ namespace SoulsFormats
                 {
                     PlatoonEventNames = new string[4];
                     PartNames = new string[8];
-                    UnkPartNames = new string[8];
+                    LinkedAssetNames = new string[8];
                 }
 
                 private protected override void DeepCopyTo(Region region)
@@ -2104,7 +2123,7 @@ namespace SoulsFormats
                     var reward = (GroupPlacementPoint)region;
                     reward.PlatoonEventNames = (string[])PlatoonEventNames.Clone();
                     reward.PartNames = (string[])PartNames.Clone();
-                    reward.UnkPartNames = (string[])UnkPartNames.Clone();
+                    reward.LinkedAssetNames = (string[])LinkedAssetNames.Clone();
                 }
 
                 internal GroupPlacementPoint(BinaryReaderEx br) : base(br) { }
@@ -2114,7 +2133,7 @@ namespace SoulsFormats
                     RandomAppearParamID = br.ReadInt32();
                     PlatoonEventIndices = br.ReadInt32s(4);
                     PartIndices = br.ReadInt32s(8);
-                    UnkPartIndices = br.ReadInt32s(8);
+                    LinkedAssetIndices = br.ReadInt32s(8);
                     EstusFlaskRecoveryID = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -2125,7 +2144,7 @@ namespace SoulsFormats
                     bw.WriteInt32(RandomAppearParamID);
                     bw.WriteInt32s(PlatoonEventIndices);
                     bw.WriteInt32s(PartIndices);
-                    bw.WriteInt32s(UnkPartIndices);
+                    bw.WriteInt32s(LinkedAssetIndices);
                     bw.WriteInt32(EstusFlaskRecoveryID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -2136,7 +2155,7 @@ namespace SoulsFormats
                     base.GetNames(entries);
                     PlatoonEventNames = MSB.FindNames(entries.Events, PlatoonEventIndices);
                     PartNames = MSB.FindNames(entries.Parts, PartIndices);
-                    UnkPartNames = MSB.FindNames(entries.Parts, UnkPartIndices);
+                    LinkedAssetNames = MSB.FindNames(entries.Parts, LinkedAssetIndices);
                 }
 
                 internal override void GetIndices(Entries entries)
@@ -2144,13 +2163,13 @@ namespace SoulsFormats
                     base.GetIndices(entries);
                     PlatoonEventIndices = MSB.FindIndices(this, entries.Events, PlatoonEventNames);
                     PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);
-                    UnkPartIndices = MSB.FindIndices(this, entries.Parts, UnkPartNames);
+                    LinkedAssetIndices = MSB.FindIndices(this, entries.Parts, LinkedAssetNames);
                 }
             }
             /// <summary>
             /// The exe's CSWorldMapDiscoveryPointIns (formerly MapPointDiscoveryOverride): the area in which the
-            /// player discovers a map point. A MapPoint uses it when its DiscoveryRegionName names this region;
-            /// otherwise the game expands the MapPoint's own shape.
+            /// player discovers a map point. A WorldMapPoint uses it when its DiscoveryRegionName names this region;
+            /// otherwise the game expands the WorldMapPoint's own shape.
             /// </summary>
             public class WorldMapDiscoveryPoint : Region
             {
@@ -2167,8 +2186,8 @@ namespace SoulsFormats
 
             /// <summary>
             /// The exe's CSWorldMapReentryPointIns (formerly MapPointParticipationOverride; vanilla: 出場領域). The
-            /// re-entry area of a map point. A MapPoint uses it when its ReentryRegionName names this region;
-            /// otherwise the game expands the MapPoint's own shape.
+            /// re-entry area of a map point. A WorldMapPoint uses it when its ReentryRegionName names this region;
+            /// otherwise the game expands the WorldMapPoint's own shape.
             /// </summary>
             public class WorldMapReentryPoint : Region
             {

@@ -27,18 +27,18 @@
     <PartIndices
     IndexProperty="" />
 
-    <UnkPartNames
-    AltName="Unknown Part Name"
-    Wiki="Unknown parts (assets in retail, used by three regions); the game resolves them to their entities."
+    <LinkedAssetNames
+    AltName="Linked Asset"
+    Wiki="Assets tied to the group (up to 8). The group registers itself on each asset, and the asset only activates while the group does. Retail: three regions, all with a Random Appear Param ID."
     MapRef="Part-Part"
     ArrayProperty="" />
 
-    <UnkPartIndices
+    <LinkedAssetIndices
     IndexProperty="" />
 
     <EstusFlaskRecoveryID
     AltName="Estus Recovery on Defeat"
-    Wiki="The estus recovery values to use when the group is defeated."
+    Wiki="The HP/MP EstusFlaskRecoveryParam row applied when the whole group is defeated."
     ParamRef="HPEstusFlaskRecoveryParam,MPEstusFlaskRecoveryParam" />
   </Field>
   

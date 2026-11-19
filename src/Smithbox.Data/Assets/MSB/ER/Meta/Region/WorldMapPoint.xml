@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self
-  Wiki="This map object represents a world map point in the map. It has two areas: the discovery area, where the player discovers the point, and the re-entry area. Each is either a separate region (World Map Discovery Point / World Map Re-entry Point) or this region's own shape expanded by the ranges below." />
+  Wiki="World map point (formerly Map Point; the game's CSMsbPointWorldMapPoint). A point shown on the world map. It has two areas: the discovery area, where the player discovers the point, and the re-entry area. Each is either a separate region (World Map Discovery Point / World Map Re-entry Point) or this region's own shape expanded by the ranges below." />
 
   <Field>
     <WorldMapPointParamID

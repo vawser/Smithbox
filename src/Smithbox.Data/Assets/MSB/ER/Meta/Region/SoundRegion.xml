@@ -1,43 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a sound region in the map." />
-  
+  <Self
+  Wiki="Sound region (the game's CSMsbPointSoundRegion). Overrides map sound settings while the listener is inside it. The game picks the active region separately for each field, and a field only counts when it is not -1 and the region's shape is a Box." />
+
   <Field>
     <UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
-    
+    Wiki="A sound override read as a signed byte (255 = none). Retail uses 3-8, the same range as MapDefaultInfoParam ReverbDefaultType, so it is probably a reverb type override." />
+
     <UnkT01
     AltName="Unknown: 0x1"
-    Wiki="" />
-    
+    Wiki="Together with Unknown: 0x2 it groups regions in the sound-region manager; a value above 0 also sets a flag of its own. Retail 0/1/2." />
+
     <UnkT02
     AltName="Unknown: 0x2"
-    Wiki="" />
-    
-    <UnkT03
-    AltName="Unknown: 0x3"
-    Wiki="" />
-    
+    Wiki="Read together with Unknown: 0x1. Retail 0/1." />
+
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="Overrides the outdoor/indoor sound mode, like Collision Outdoor/Indoor Type: 0 outdoor, 1 half indoor, 2 indoor (Wwise OutdoorIndoor states). 255: no override."
+    Enum="SOUND_REGION_OUTDOOR_INDOOR_TYPE" />
+
     <WwiseEnvPlaceTypeID
     AltName="Wwise Environment Place Type ID"
-    Wiki="The environmenta place type ID for the Wwise sounds." 
+    Wiki="The Wwise environment place type used inside the region. -1: no override."
     ParamRef="WwiseValueToStrParam_EnvPlaceType" />
-    
+
     <UnkT08
     AltName="Unknown: 0x8"
-    Wiki="" />
-    
-    <UnkT0A
-    AltName="Unknown: 0x0A"
-    Wiki="" />
-    
+    Wiki="A sound place override (-1 = none). The sound update uses it instead of its own value and looks it up in a param. Retail values are all WwiseEnvPlaceType values." />
+
+    <CommonPlaceType
+    AltName="Common Place Type"
+    Wiki="The common place type used inside the region (-1 = none). The sound update switches to it after a 2-second delay." />
+
     <UnkT0C
     AltName="Unknown: 0x0C"
-    Wiki="" />
+    Wiki="A flag (255 = none) that is only read in DLC (m61) maps. Retail: 1 on ten regions." />
   </Field>
-  
+
   <Enums>
+    <Enum Name="SOUND_REGION_OUTDOOR_INDOOR_TYPE" >
+        <Option Value="255" Name="No Override" />
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Half Indoor" />
+        <Option Value="2" Name="Indoor" />
+    </Enum>
   </Enums>
 </MSBMETA>

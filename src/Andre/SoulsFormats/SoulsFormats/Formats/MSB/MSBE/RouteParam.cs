@@ -14,17 +14,17 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// The edges of the sound occlusion graph: each route joins two MufflingPortals, by RegionID.
+        /// The edges of the sound occlusion graph: each route joins two OcclusionPortals, by RegionID.
         /// </summary>
         public class RouteParam : Param<Route>
         {
             /// <summary>
-            /// Routes between two portals of the same MufflingBox.
+            /// Routes between two portals of the same OcclusionBox.
             /// </summary>
             public List<Route.MufflingPortalLink> MufflingPortalLinks { get; set; }
 
             /// <summary>
-            /// Routes between portals of two different MufflingBoxes.
+            /// Routes between portals of two different OcclusionBoxes.
             /// </summary>
             public List<Route.MufflingBoxLink> MufflingBoxLinks { get; set; }
 
@@ -102,15 +102,15 @@ namespace SoulsFormats
             internal int OtherID { get; set; }
 
             /// <summary>
-            /// The RegionID of the first MufflingPortal this route joins.
+            /// The RegionID of the first OcclusionPortal this route joins.
             /// </summary>
-            [MSBRegionIDReference(ReferenceType = typeof(Region.MufflingPortal))]
+            [MSBRegionIDReference(ReferenceType = typeof(Region.OcclusionPortal))]
             public int PortalA { get; set; }
 
             /// <summary>
-            /// The RegionID of the second MufflingPortal this route joins.
+            /// The RegionID of the second OcclusionPortal this route joins.
             /// </summary>
-            [MSBRegionIDReference(ReferenceType = typeof(Region.MufflingPortal))]
+            [MSBRegionIDReference(ReferenceType = typeof(Region.OcclusionPortal))]
             public int PortalB { get; set; }
 
             private protected Route(string name)
