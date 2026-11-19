@@ -110,6 +110,18 @@ public sealed class GparamProfile
     /// </summary>
     public string LutPathFormat { get; private init; }
 
+    /// <summary>
+    ///     Whether a map grades only with its own area's LUTs, rather than falling back to those of the same mAA or any
+    ///     area (see <see cref="ColorGradingLuts.Find" />)
+    /// </summary>
+    public bool LutOwnAreaOnly { get; private init; }
+
+    /// <summary>
+    ///     Whether Yebis-ToneType 2 is drawn with <see cref="ToneMapOperator.BloodborneExp" /> rather than the Yebis filmic
+    ///     table (see <see cref="GparamLighting.BloodborneExpMode" />)
+    /// </summary>
+    public bool BloodborneToneMap { get; private init; }
+
     private GparamPostEffects DefaultEffects;
 
     /// <summary>
@@ -217,6 +229,11 @@ public sealed class GparamProfile
             HasDolLightmaps = true,
             // map/mAA/mAA_cgrading.tpf.dcx, PS4 textures that ColorGradingLuts headerizes
             LutPathFormat = LutInArea,
+            // Bloodborne seems to grade only with the map's own LUT: a new map number without LUTs of its own looks
+            // ungraded in game, and m21_01's LUT 4 gave Smithbox a cyan cast the game hasn't
+            LutOwnAreaOnly = true,
+            // Its tone map as its shaders do it (fs 5c02eaf8), not DS3's Yebis filmic table
+            BloodborneToneMap = true,
             Exposure = GparamExposureModel.Yebis,
             HasSsr = false,
             HasVolumetricFog = false,

@@ -129,15 +129,14 @@ public class ToneMapPass
         }
 
         // ToneMapMode 8 is "Reinhard Contrast and White Balance", which every Elden Ring GPARAM uses, and 7 the
-        // filmic contrast; YebisFilmicMode is DS3 and BB's Yebis-ToneType 2. The others shift colors in ways that aren't
+        // filmic contrast; YebisFilmicMode is DS3's Yebis-ToneType 2 and BloodborneExpMode BB's. The others shift colors in ways that aren't
         // known, so are left clipped.
         return lighting.ToneMapMode switch
         {
             8 => (ToneMapOperator.Reinhard,
                 Math.Max(lighting.ReinhardContrast * lighting.ReinhardWhiteBalance, 1e-3f)),
             7 => (ToneMapOperator.Filmic, whitePoint),
-            GparamLighting.YebisFilmicMode when Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is
-                Application.ProjectType.BB => (ToneMapOperator.BloodborneExp, whitePoint),
+            GparamLighting.BloodborneExpMode => (ToneMapOperator.BloodborneExp, whitePoint),
             GparamLighting.YebisFilmicMode => (ToneMapOperator.YebisFilmic, whitePoint),
             _ => (ToneMapOperator.Clamp, whitePoint)
         };

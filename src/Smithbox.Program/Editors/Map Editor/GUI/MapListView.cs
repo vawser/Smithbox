@@ -104,6 +104,9 @@ public class MapListView : IActionEventHandler
             ? "Hide the Map Data window and show the viewport."
             : "Hide the viewport and show the Map Data window, which lists the MSB data of the selected map.");
 
+        ImGui.SameLine();
+        DisplayBtlVariantToggleButton();
+
         if (View.Project.Descriptor.ProjectType is ProjectType.BB)
         {
             ImGui.SameLine();
@@ -182,6 +185,28 @@ public class MapListView : IActionEventHandler
             _listVersion++;
         }
         GUI.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
+    }
+
+    /// <summary>
+    /// Whether a map with several BTL files lights the viewport with its _0000 one only, or with all of them
+    /// (MapLightCollector). Highlighted while on.
+    /// </summary>
+    private void DisplayBtlVariantToggleButton()
+    {
+        var enabled = CFG.Current.MapEditor_Lights_Default_BTL_Variant_Only;
+
+        if (enabled)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
+        if (ImGui.Button($"{Icons.LightbulbO}##btlVariantToggle", DPI.IconButtonSize))
+        {
+            CFG.Current.MapEditor_Lights_Default_BTL_Variant_Only = !enabled;
+        }
+
+        if (enabled)
+            ImGui.PopStyleColor();
+
+        GUI.Tooltip(LOC.Get(enabled ? "MAP_List_BTL_Variant_All_TT" : "MAP_List_BTL_Variant_Default_TT"));
     }
 
     private void DisplayAssetToggleButton()

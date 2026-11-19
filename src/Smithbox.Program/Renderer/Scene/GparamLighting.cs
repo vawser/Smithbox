@@ -155,6 +155,12 @@ public class GparamLighting
     /// </summary>
     public const int YebisFilmicMode = 1002;
 
+    /// <summary>
+    ///     A <see cref="ToneMapMode" /> of Smithbox's own: Bloodborne's Yebis-ToneType 2, which its shaders draw with
+    ///     their own curve (see <see cref="ToneMapOperator.BloodborneExp" />, <see cref="GparamProfile.BloodborneToneMap" />)
+    /// </summary>
+    public const int BloodborneExpMode = 1004;
+
     /// <summary>The TONE_MAP_MODE: 8, "Reinhard Contrast and White Balance", in every Elden Ring GPARAM</summary>
     public int ToneMapMode = 8;
     public float ReinhardContrast = 1.35f;

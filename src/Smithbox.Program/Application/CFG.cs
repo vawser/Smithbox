@@ -214,6 +214,10 @@ public class CFG
     public bool MapEditor_Map_List_Display_Map_Aliases = true;
     public bool MapEditor_Map_List_Enable_Load_on_Double_Click = false;
 
+    // Toggled in the Map List header: a map with several BTL files (_0000, _0001, ...) lights the viewport with the
+    // _0000 one only, as the game uses one of them
+    public bool MapEditor_Lights_Default_BTL_Variant_Only = true;
+
     // Tile outlines (ER, NR): toggled in the Map List header, colours by tile size (0-255)
     public bool MapEditor_Display_Tile_Outlines = false;
     public Vector3 MapEditor_Tile_Outline_Small_Color = new Vector3(60, 200, 255);

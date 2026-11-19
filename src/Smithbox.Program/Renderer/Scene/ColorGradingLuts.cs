@@ -1,5 +1,4 @@
 using SoulsFormats;
-using StudioCore.Application;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -134,9 +133,10 @@ public class ColorGradingLuts
 
     /// <summary>
     ///     The slot of LUT <paramref name="id" /> as <paramref name="area" /> (mAA_BB) uses it: its own, then one of the
-    ///     same mAA, then any area's. -1 if there is none.
+    ///     same mAA, then any area's; only its own with <paramref name="ownAreaOnly" />
+    ///     (<see cref="GparamProfile.LutOwnAreaOnly" />). -1 if there is none.
     /// </summary>
-    public int Find(string area, int id)
+    public int Find(string area, int id, bool ownAreaOnly = false)
     {
         if (id < 0)
             return -1;
@@ -156,9 +156,7 @@ public class ColorGradingLuts
                 : prefix != null && owner.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) ? 1
                 : 2;
 
-            // Bloodborne seems to grade only with the map's own LUT: a new map number without LUTs of its own looks
-            // ungraded in game, and m21_01's LUT 4 gave Smithbox a cyan cast the game hasn't
-            if (rank > 0 && Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.BB)
+            if (rank > 0 && ownAreaOnly)
                 continue;
 
             if (rank < bestRank)

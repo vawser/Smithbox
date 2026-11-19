@@ -26,8 +26,9 @@ public class MapLightCollector
 
     private readonly MapEditorView View;
 
-    // The light entities of each loaded map, found again when the map's objects change in number
-    private readonly Dictionary<MapContainer, (int ObjectCount, List<MsbEntity> Lights)> MapLights = new();
+    // The light entities of each loaded map, found again when the map's objects change in number or the BTL variant
+    // toggle (CFG.MapEditor_Lights_Default_BTL_Variant_Only) changes
+    private readonly Dictionary<MapContainer, (int ObjectCount, bool DefaultVariantOnly, List<MsbEntity> Lights)> MapLights = new();
 
     private readonly MapLightData[] Entries = new MapLightData[SceneLightTable.Capacity];
 
@@ -90,7 +91,7 @@ public class MapLightCollector
                     continue;
 
                 // Selected lights come first, then the nearest
-                found.Add((isSelected ? -1.0f : distance, CreateLight(btlLight, world, intensityScale).ToMapGpu()));
+                found.Add((isSelected ? -1.0f : distance, CreateLight(View.Project, btlLight, world, intensityScale).ToMapGpu()));
             }
 
             AddDrawParamPointLights(map, eye, radius, intensityScale, selected, found);
@@ -261,28 +262,29 @@ public class MapLightCollector
     private List<MsbEntity> GetLights(MapContainer map)
     {
         var objectCount = map.Objects.Count;
-        var bloodborne = View.Project.Descriptor.ProjectType is ProjectType.BB;
+        var defaultVariantOnly = CFG.Current.MapEditor_Lights_Default_BTL_Variant_Only;
 
-        if (MapLights.TryGetValue(map, out var cached) && cached.ObjectCount == objectCount)
+        if (MapLights.TryGetValue(map, out var cached) && cached.ObjectCount == objectCount &&
+            cached.DefaultVariantOnly == defaultVariantOnly)
             return cached.Lights;
 
         var lights = map.Objects
             .OfType<MsbEntity>()
             .Where(e => e.Type == MsbEntityType.Light)
-            .Where(e => !bloodborne || IsInBloodborneVariant(map, e))
+            .Where(e => !defaultVariantOnly || IsInDefaultVariant(map, e))
             .ToList();
 
-        MapLights[map] = (objectCount, lights);
+        MapLights[map] = (objectCount, defaultVariantOnly, lights);
 
         return lights;
     }
 
     /// <summary>
-    /// Bloodborne: a map has several BTL files (_0000, _0001, ...) of which the game uses one; the viewport lights with
-    /// the _0000 one. Whether a light is in it: always if the map has no _0000 file, as then there is nothing to choose
-    /// between
+    /// A map can have several BTL files (_0000, _0001, ...) of which the game uses one (Bloodborne's, for one); with
+    /// the Map List header's toggle on, the viewport lights with the _0000 one. Whether a light is in it: always if the
+    /// map has no _0000 file, as then there is nothing to choose between
     /// </summary>
-    private static bool IsInBloodborneVariant(MapContainer map, MsbEntity light)
+    private static bool IsInDefaultVariant(MapContainer map, MsbEntity light)
     {
         const string suffix = "_0000";
 
@@ -292,7 +294,10 @@ public class MapLightCollector
         return light.Parent?.WrappedObject is string file && file.EndsWith(suffix, StringComparison.OrdinalIgnoreCase);
     }
 
-    public static SceneLight CreateLight(BTL.Light btlLight, Matrix4x4 world, float intensityScale)
+    /// <summary>
+    /// The viewport light of <paramref name="btlLight" />, as <paramref name="project" />'s game shines it
+    /// </summary>
+    public static SceneLight CreateLight(ProjectEntry project, BTL.Light btlLight, Matrix4x4 world, float intensityScale)
     {
         // A spot light's FoVs are the cone's full widths, each the same as the other when 0. The vertical one is
         // measured along the light's local Y, the horizontal one along its local X (to check in app: SDT m10's
@@ -300,6 +305,9 @@ public class MapLightCollector
         var verticalFov = btlLight.VerticalFov != 0.0f ? btlLight.VerticalFov : btlLight.HorizontalFov;
         var horizontalFov = btlLight.HorizontalFov != 0.0f ? btlLight.HorizontalFov : verticalFov;
         var outerAngle = verticalFov / 2.0f;
+
+        // Bloodborne squares the BTL colour (fs 370174f7 constants in game frames against the BTL: exact)
+        var gamma = project?.Descriptor.ProjectType is ProjectType.BB ? 2.0f : ColorGamma;
 
         return new SceneLight
         {
@@ -312,10 +320,10 @@ public class MapLightCollector
             Position = world.Translation,
             // Lights shine along their local Z axis
             Direction = Vector3.TransformNormal(Vector3.UnitZ, world),
-            Color = ToLinearColor(btlLight.DiffuseColor),
+            Color = ToLinearColor(btlLight.DiffuseColor, gamma),
             Intensity = btlLight.DiffusePower * intensityScale,
             // BTL gives the highlights their own color and power, on the same scale as the diffuse light
-            SpecularColor = ToLinearColor(btlLight.SpecularColor),
+            SpecularColor = ToLinearColor(btlLight.SpecularColor, gamma),
             SpecularIntensity = btlLight.SpecularPower * intensityScale,
             Range = btlLight.Radius,
             FadeAcrossRange = true,
@@ -326,10 +334,8 @@ public class MapLightCollector
         };
     }
 
-    private static Vector3 ToLinearColor(System.Drawing.Color color)
+    private static Vector3 ToLinearColor(System.Drawing.Color color, float gamma)
     {
-        // Bloodborne squares the BTL colour (fs 370174f7 constants in game frames against the BTL: exact)
-        var gamma = Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.BB ? 2.0f : ColorGamma;
         return new Vector3(
             MathF.Pow(color.R / 255.0f, gamma),
             MathF.Pow(color.G / 255.0f, gamma),

@@ -626,8 +626,8 @@ public class GparamLightingBank
         var grading = lighting.PostEffects.ColorGrading;
         var lutArea = file != null && file.Length >= 6 && file[0] is 'm' or 'M' ? file.Substring(0, 6) : GetArea(mapId);
         grading.Luts = GetLuts();
-        grading.Slot = grading.Luts?.Find(lutArea, grading.LutSourceId) ?? -1;
-        grading.NextSlot = grading.Luts?.Find(lutArea, grading.NextLutSourceId) ?? -1;
+        grading.Slot = grading.Luts?.Find(lutArea, grading.LutSourceId, profile.LutOwnAreaOnly) ?? -1;
+        grading.NextSlot = grading.Luts?.Find(lutArea, grading.NextLutSourceId, profile.LutOwnAreaOnly) ?? -1;
 
         return lighting;
     }
@@ -847,7 +847,9 @@ public class GparamLightingBank
                 // Their GS Presents mode is 0 and Yebis-ToneType 2 nearly everywhere: the filmic table DS3's tone map
                 // passes use (ToneMap_WriteFilmicToneMappingTablePS, ToneMap_TabledToneMapLUTPS)
                 var toneType = reader.Get(ToneMapKey, "Yebis-ToneType", 0, 2);
-                lighting.ToneMapMode = toneType == 2 ? GparamLighting.YebisFilmicMode : 0;
+                lighting.ToneMapMode = toneType != 2 ? 0
+                    : profile.BloodborneToneMap ? GparamLighting.BloodborneExpMode
+                    : GparamLighting.YebisFilmicMode;
                 break;
             }
             default:

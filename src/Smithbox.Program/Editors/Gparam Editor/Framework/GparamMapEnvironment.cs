@@ -295,7 +295,7 @@ public class GparamMapEnvironment : IDisposable
             if (!MapLightCollector.IsNearCamera(light, distance, radius))
                 continue;
 
-            found.Add((distance, MapLightCollector.CreateLight(light, world, intensityScale).ToMapGpu()));
+            found.Add((distance, MapLightCollector.CreateLight(Project, light, world, intensityScale).ToMapGpu()));
         }
 
         found.Sort((a, b) => a.Distance.CompareTo(b.Distance));
