@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an invasion point within the map." />
+  Wiki="Invasion point: a place where an invader can appear. Vanilla names follow 侵入ポイント_ID_PRIORITY." />
   
   <Field>
     <Priority
     AltName="Priority"
-    Wiki="" />
+    Wiki="Ranks this point against the other candidate invasion points, together with its distance to the target player. Vanilla points carry it in their name suffix (2182 of 2184). Retail uses 0 and 100-900 in steps of 100." />
     
   </Field>
   

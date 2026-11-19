@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Wind area: a region that Wind SFX regions reference (Wind Area Name). It has no data of its own. Nightreign calls the type WindPlacement." />
+
+  <Field>
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

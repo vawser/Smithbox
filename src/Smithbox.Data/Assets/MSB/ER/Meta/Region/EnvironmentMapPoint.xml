@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an environmental map point in the map." />
+  Wiki="Environment map capture point (vanilla names: Env_PointNNN). Environment Map Effect Boxes use the point whose name ends in their env map number; the name must be exactly 12 characters." />
   
   <Field>
     <UnkT00
@@ -34,7 +34,7 @@
     
     <UnkMapID
     AltName="Map ID"
-    Wiki=""
+    Wiki="The map this point belongs to. The game compares bytes 0-2 with a map ID's AA, BB and CC (byte 0 = 0: no map). Byte 3 is not read; it is 2 in almost every retail point."
     ArrayProperty="" />
     
     <UnkT20

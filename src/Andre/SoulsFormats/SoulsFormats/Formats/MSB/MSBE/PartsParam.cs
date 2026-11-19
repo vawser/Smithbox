@@ -2751,7 +2751,7 @@ namespace SoulsFormats
                 /// the same fields of the Collision part in PartNames[5] (or [4]); each field below names its Collision
                 /// counterpart (getters 0x140CF2800..0x140CF47E0 in eldenring.exe).
                 /// </summary>
-                public class AssetUnkStruct1
+                public class AssetCollisionSettings
                 {
                     /// <summary>
                     /// If set, the fields of this struct are used instead of those of the asset's collision.
@@ -2817,17 +2817,17 @@ namespace SoulsFormats
                     /// <summary>
                     /// Creates an AssetUnkStruct1 with default values.
                     /// </summary>
-                    public AssetUnkStruct1() { }
+                    public AssetCollisionSettings() { }
 
                     /// <summary>
                     /// Creates a deep copy of the struct.
                     /// </summary>
-                    public AssetUnkStruct1 DeepCopy()
+                    public AssetCollisionSettings DeepCopy()
                     {
-                        return (AssetUnkStruct1)MemberwiseClone();
+                        return (AssetCollisionSettings)MemberwiseClone();
                     }
 
-                    internal AssetUnkStruct1(BinaryReaderEx br)
+                    internal AssetCollisionSettings(BinaryReaderEx br)
                     {
                         OverrideCollisionSettings = br.ReadByte();
                         AssetStruct1_Unk01 = br.ReadByte();
@@ -3011,7 +3011,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public class AssetUnkStruct3
+                public class AssetGparamSettings
                 {
                     /// <summary>
                     /// If set, the gparam and other fields of this struct are used instead of those of the asset's collision.
@@ -3116,7 +3116,7 @@ namespace SoulsFormats
                     /// <summary>
                     /// Creates an AssetUnkStruct3 with default values.
                     /// </summary>
-                    public AssetUnkStruct3()
+                    public AssetGparamSettings()
                     {
                         DisableWhenMapLoadedMapID = new sbyte[4];
                     }
@@ -3124,14 +3124,14 @@ namespace SoulsFormats
                     /// <summary>
                     /// Creates a deep copy of the struct.
                     /// </summary>
-                    public AssetUnkStruct3 DeepCopy()
+                    public AssetGparamSettings DeepCopy()
                     {
-                        var unks3 = (AssetUnkStruct3)MemberwiseClone();
+                        var unks3 = (AssetGparamSettings)MemberwiseClone();
                         unks3.DisableWhenMapLoadedMapID = (sbyte[])DisableWhenMapLoadedMapID.Clone();
                         return unks3;
                     }
 
-                    internal AssetUnkStruct3(BinaryReaderEx br)
+                    internal AssetGparamSettings(BinaryReaderEx br)
                     {
                         OverrideCollisionGparamSettings = br.ReadByte();
                         AssetUnkStruct3_Unk01 = br.ReadByte();
@@ -3198,7 +3198,7 @@ namespace SoulsFormats
                 /// Sound settings of the asset for a character standing on it; the same values as the start of a
                 /// collision's type data.
                 /// </summary>
-                public class AssetUnkStruct4
+                public class AssetSoundSettings
                 {
                     /// <summary>
                     /// If set, a character standing on the asset uses OutdoorIndoorType and EasyOcclusionID from here;
@@ -3224,17 +3224,17 @@ namespace SoulsFormats
                     /// <summary>
                     /// Creates an AssetUnkStruct4 with default values.
                     /// </summary>
-                    public AssetUnkStruct4() { }
+                    public AssetSoundSettings() { }
 
                     /// <summary>
                     /// Creates a deep copy of the struct.
                     /// </summary>
-                    public AssetUnkStruct4 DeepCopy()
+                    public AssetSoundSettings DeepCopy()
                     {
-                        return (AssetUnkStruct4)MemberwiseClone();
+                        return (AssetSoundSettings)MemberwiseClone();
                     }
 
-                    internal AssetUnkStruct4(BinaryReaderEx br)
+                    internal AssetSoundSettings(BinaryReaderEx br)
                     {
                         OverrideCollisionSoundSettings = br.ReadBoolean();
                         AssetUnkStruct4_Unk01 = br.ReadByte();
@@ -3284,7 +3284,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public AssetUnkStruct1 AssetUnk1 { get; set; }
+                public AssetCollisionSettings AssetCollisionSetting { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3294,12 +3294,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public AssetUnkStruct3 AssetUnk3 { get; set; }
+                public AssetGparamSettings AssetGparamSetting { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public AssetUnkStruct4 AssetUnk4 { get; set; }
+                public AssetSoundSettings AssetSoundSetting { get; set; }
 
                 /// <summary>
                 /// Creates an Asset with default values.
@@ -3315,10 +3315,10 @@ namespace SoulsFormats
                     TileLoadConfig = new TileLoadConfig();
                     UnkStruct11 = new UnkStruct11();
 
-                    AssetUnk1 = new AssetUnkStruct1();
+                    AssetCollisionSetting = new AssetCollisionSettings();
                     AssetUnk2 = new AssetUnkStruct2();
-                    AssetUnk3 = new AssetUnkStruct3();
-                    AssetUnk4 = new AssetUnkStruct4();
+                    AssetGparamSetting = new AssetGparamSettings();
+                    AssetSoundSetting = new AssetSoundSettings();
 
                     PartNames = new string[6];
                 }
@@ -3335,10 +3335,10 @@ namespace SoulsFormats
                     asset.TileLoadConfig = TileLoadConfig.DeepCopy();
                     asset.UnkStruct11 = UnkStruct11.DeepCopy();
 
-                    asset.AssetUnk1 = AssetUnk1.DeepCopy();
+                    asset.AssetCollisionSetting = AssetCollisionSetting.DeepCopy();
                     asset.AssetUnk2 = AssetUnk2.DeepCopy();
-                    asset.AssetUnk3 = AssetUnk3.DeepCopy();
-                    asset.AssetUnk4 = AssetUnk4.DeepCopy();
+                    asset.AssetGparamSetting = AssetGparamSetting.DeepCopy();
+                    asset.AssetSoundSetting = AssetSoundSetting.DeepCopy();
 
                     PartNames = (string[])PartNames.Clone();
                 }
@@ -3386,10 +3386,10 @@ namespace SoulsFormats
                     br.AssertInt64(0x108);
                     br.AssertInt64(0x148);
 
-                    AssetUnk1 = new AssetUnkStruct1(br);
+                    AssetCollisionSetting = new AssetCollisionSettings(br);
                     AssetUnk2 = new AssetUnkStruct2(br);
-                    AssetUnk3 = new AssetUnkStruct3(br);
-                    AssetUnk4 = new AssetUnkStruct4(br);
+                    AssetGparamSetting = new AssetGparamSettings(br);
+                    AssetSoundSetting = new AssetSoundSettings(br);
                 }
 
                 private protected override void ReadUnk1(BinaryReaderEx br) => DisplayDataStruct = new DisplayDataStruct(br);
@@ -3441,10 +3441,10 @@ namespace SoulsFormats
                     bw.WriteInt64(0x108);
                     bw.WriteInt64(0x148);
 
-                    AssetUnk1.Write(bw);
+                    AssetCollisionSetting.Write(bw);
                     AssetUnk2.Write(bw);
-                    AssetUnk3.Write(bw);
-                    AssetUnk4.Write(bw);
+                    AssetGparamSetting.Write(bw);
+                    AssetSoundSetting.Write(bw);
                 }
 
                 private protected override void WriteUnk1(BinaryWriterEx bw) => DisplayDataStruct.Write(bw);

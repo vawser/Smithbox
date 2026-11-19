@@ -823,7 +823,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A point where a player can invade your world.
+            /// A point where an invader can appear. Vanilla names are 侵入ポイント_ID_PRIORITY.
             /// </summary>
             public class InvasionPoint : Region
             {
@@ -831,7 +831,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Not sure what this does.
+                /// Ranks candidate invasion points together with their distance to the target player; vanilla points carry it in their name suffix (2182 of 2184).
                 /// </summary>
                 public int Priority { get; set; }
 
@@ -854,7 +854,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An environment map capture point (vanilla: Env_PointNNN). EnvironmentMapEffectBoxes use the point whose name ends in their env map number.
             /// </summary>
             public class EnvironmentMapPoint : Region
             {
@@ -897,7 +897,7 @@ namespace SoulsFormats
                 public float UnkT14 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Map the point belongs to: bytes 0-2 are compared with a map ID's AA/BB/CC (byte 0 = 0: none). Byte 3 is not read.
                 /// </summary>
                 public byte[] UnkMapID { get; set; }
 
@@ -1011,7 +1011,7 @@ namespace SoulsFormats
                 private int[] ChildRegionIndices { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Not seen read by the game.
                 /// </summary>
                 public bool UnkT49 { get; set; }
 
@@ -1080,9 +1080,15 @@ namespace SoulsFormats
                 public int EffectID { get; set; }
 
                 /// <summary>
-                /// If true, the effect is off by default until enabled by event scripts.
+                /// If non-zero, the effect is off by default until enabled by event scripts. The game reads it as a
+                /// byte.
                 /// </summary>
-                public int StartDisabled { get; set; }
+                public byte StartDisabled { get; set; }
+
+                /// <summary>
+                /// Unknown flag, read as a byte and passed to the SFX creation (non-zero = true). 0 in retail.
+                /// </summary>
+                public byte UnkT05 { get; set; }
 
                 /// <summary>
                 /// Creates an SFX with default values.
@@ -1094,18 +1100,22 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     EffectID = br.ReadInt32();
-                    StartDisabled = br.ReadInt32();
+                    StartDisabled = br.ReadByte();
+                    UnkT05 = br.ReadByte();
+                    br.AssertInt16(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(EffectID);
-                    bw.WriteInt32(StartDisabled);
+                    bw.WriteByte(StartDisabled);
+                    bw.WriteByte(UnkT05);
+                    bw.WriteInt16(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// A wind effect: an SFX placed with a WindArea region.
             /// </summary>
             public class WindSFX : Region
             {
@@ -1125,7 +1135,7 @@ namespace SoulsFormats
                 private int WindAreaIndex { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// When 0 or more, sets a value on the created wind effect; -1 (every retail region) leaves the effect's own value.
                 /// </summary>
                 public float UnkT08 { get; set; }
 
@@ -1164,7 +1174,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A point where the player can spawn into the map.
+            /// A warp destination or retry point (vanilla: ワープ先, リトライポイント), used by event scripts through its entity ID. NR calls the type ReturnPoint.
             /// </summary>
             public class SpawnPoint : Region
             {
@@ -1295,7 +1305,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// An environment map effect box (vanilla: Env_BoxNNN): applies the env map of the Env_PointNNN point with its env map number, and links to irradiance volume GIIV NNN.
             /// </summary>
             public class EnvironmentMapEffectBox : Region
             {
@@ -1313,69 +1323,91 @@ namespace SoulsFormats
                 public float FadeDistance { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Applies parallax correction to the env map (non-zero = on).
                 /// </summary>
                 public byte ParallaxCorrection { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The box priority for MSB versions before 0x38. Later versions (every retail map with boxes) use
+                /// Priority instead; 10 in retail.
                 /// </summary>
-                public byte Priority { get; set; }
+                public byte LegacyPriority { get; set; } = 10;
 
                 /// <summary>
-                /// Unknown.
+                /// The env map number this box uses (Env_Point and GIIV volume). -1: the three digits at the end of the
+                /// box name (Env_Box015 = 15).
                 /// </summary>
-                public short UnkT0A { get; set; }
+                public short EnvMapNumber { get; set; } = -1;
 
                 /// <summary>
-                /// Strength of ambient fiffuse light .
+                /// Extends the influence bounds of the box beyond its shape on the negative X/Y/Z sides (local, metres).
+                /// The game uses min = -size/2 - this. 0 in retail.
                 /// </summary>
-                public float AmbientDiffuseIntensity { get; set; }
+                public Vector3 BoundsExpandNegative { get; set; }
+
+                /// <summary>
+                /// Extends the influence bounds of the box beyond its shape on the positive X/Y/Z sides (local, metres).
+                /// The game uses max = size/2 + this. 0 in retail.
+                /// </summary>
+                public Vector3 BoundsExpandPositive { get; set; }
+
+                /// <summary>
+                /// Strength of ambient diffuse light.
+                /// </summary>
+                public float AmbientDiffuseIntensity { get; set; } = 1;
 
                 /// <summary>
                 /// Strength of ambient specular light.
                 /// </summary>
-                public float AmbientSpecularIntensity { get; set; }
+                public float AmbientSpecularIntensity { get; set; } = 1;
 
                 /// <summary>
-                /// Unknown.
+                /// Selects two irradiance volume flags, stored in the volume record next to the ambient intensities: 0 = both
+                /// on, 1 = only the second, 2 = only the first, other = default (both on). 0 in retail except two boxes (1).
                 /// </summary>
-                public short UnkT2C { get; set; }
+                public byte UnkT2C { get; set; }
+
+                /// <summary>
+                /// Unknown. Copied with the UnkT2C flags but never read, so it has no effect in ER. 0 in retail.
+                /// </summary>
+                public byte UnkT2D { get; set; }
 
                 /// <summary>
                 /// Affects lighting with other fields when true. Possibly normalizes light when false.
                 /// </summary>
-                public bool IsModifyLight { get; set; }
+                public bool IsModifyLight { get; set; } = true;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Passed to the irradiance volume setup (140B37F90), which never reads it: no effect in ER.
                 /// </summary>
-                public bool UnkT2F { get; set; }
+                public bool UnkT2F { get; set; } = true;
 
                 /// <summary>
-                /// Unknown.
+                /// A second env map / irradiance volume number for this box; when 0 or more, the volume setup runs a
+                /// second time with it. -1: none.
                 /// </summary>
-                public short UnkT30 { get; set; }
+                public short AdditionalEnvMapNumber { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Passed to the irradiance volume setup (140B37F90), which never reads it: no effect in ER.
                 /// </summary>
                 public bool UnkT32 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Passed to the irradiance volume setup (140B37F90), which never reads it: no effect in ER.
                 /// </summary>
-                public bool UnkT33 { get; set; }
+                public bool UnkT33 { get; set; } = true;
 
                 /// <summary>
-                /// Unknown.
+                /// The box priority (MSB version 0x38 and later). Retail: 10, 20, 30, 21, 31, 22 and others.
                 /// </summary>
-                public short UnkT34 { get; set; }
+                public short Priority { get; set; } = 10;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Passed (MSB version 0x3F and later; older versions pass 1) to the irradiance volume setup
+                /// (140B37F90), which never reads it: no effect in ER.
                 /// </summary>
-                public short UnkT36 { get; set; }
+                public bool UnkT36 { get; set; } = true;
 
                 /// <summary>
                 /// Creates an EnvironmentMapEffectBox with default values.
@@ -1389,19 +1421,22 @@ namespace SoulsFormats
                     DisplayDistance = br.ReadSingle();
                     FadeDistance = br.ReadSingle();
                     ParallaxCorrection = br.ReadByte();
-                    Priority = br.ReadByte();
-                    UnkT0A = br.ReadInt16();
-                    br.AssertPattern(0x18, 0x00);
+                    LegacyPriority = br.ReadByte();
+                    EnvMapNumber = br.ReadInt16();
+                    BoundsExpandNegative = br.ReadVector3();
+                    BoundsExpandPositive = br.ReadVector3();
                     AmbientDiffuseIntensity = br.ReadSingle();
                     AmbientSpecularIntensity = br.ReadSingle();
-                    UnkT2C = br.ReadInt16();
+                    UnkT2C = br.ReadByte();
+                    UnkT2D = br.ReadByte();
                     IsModifyLight = br.ReadBoolean();
                     UnkT2F = br.ReadBoolean();
-                    UnkT30 = br.ReadInt16();
+                    AdditionalEnvMapNumber = br.ReadInt16();
                     UnkT32 = br.ReadBoolean();
                     UnkT33 = br.ReadBoolean();
-                    UnkT34 = br.ReadInt16();
-                    UnkT36 = br.ReadInt16();
+                    Priority = br.ReadInt16();
+                    UnkT36 = br.ReadBoolean();
+                    br.AssertByte(0);
                     br.AssertInt32(0);
                 }
 
@@ -1410,25 +1445,28 @@ namespace SoulsFormats
                     bw.WriteSingle(DisplayDistance);
                     bw.WriteSingle(FadeDistance);
                     bw.WriteByte(ParallaxCorrection);
-                    bw.WriteByte(Priority);
-                    bw.WriteInt16(UnkT0A);
-                    bw.WritePattern(0x18, 0x00);
+                    bw.WriteByte(LegacyPriority);
+                    bw.WriteInt16(EnvMapNumber);
+                    bw.WriteVector3(BoundsExpandNegative);
+                    bw.WriteVector3(BoundsExpandPositive);
                     bw.WriteSingle(AmbientDiffuseIntensity);
                     bw.WriteSingle(AmbientSpecularIntensity);
-                    bw.WriteInt16(UnkT2C);
+                    bw.WriteByte(UnkT2C);
+                    bw.WriteByte(UnkT2D);
                     bw.WriteBoolean(IsModifyLight);
                     bw.WriteBoolean(UnkT2F);
-                    bw.WriteInt16(UnkT30);
+                    bw.WriteInt16(AdditionalEnvMapNumber);
                     bw.WriteBoolean(UnkT32);
                     bw.WriteBoolean(UnkT33);
-                    bw.WriteInt16(UnkT34);
-                    bw.WriteInt16(UnkT36);
+                    bw.WriteInt16(Priority);
+                    bw.WriteBoolean(UnkT36);
+                    bw.WriteByte(0);
                     bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// An area for wind effects (WindSFX reference it); no type data. NR calls the type WindPlacement.
             /// </summary>
             public class WindArea : Region
             {
@@ -1490,7 +1528,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown
+            /// An automatically generated walk route point (vanilla: walk_route_MAP-CHR_N). NR calls the type SourceWaypoint.
             /// </summary>
             public class PatrolRoute22 : Region
             {
@@ -1519,7 +1557,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown
+            /// A spirit ash summon point (vanilla: バディ召喚ポイント), carrying an entity ID. No lookup of the type by number was found in the exe; its type data is four zero ints.
             /// </summary>
             public class BuddySummonPoint : Region
             {

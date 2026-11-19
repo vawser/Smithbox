@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an particle emitter in the map." />
+  Wiki="Particle effect point: plays the SFX Effect ID at its position." />
   
   <Field>
     <EffectID
@@ -12,6 +12,11 @@
     <StartDisabled
     AltName="Start Disabled"
     Wiki="If ON, this particle will be inactive until it is enabled via an event script."
+    IsBool="" />
+
+    <UnkT05
+    AltName="Unknown: 0x5"
+    Wiki="A flag read as a byte. The effect creation copies it into the SFX control (FXHGSfxCtrl +406h); its effect is not known. 0 in every retail SFX."
     IsBool="" />
   </Field>
   

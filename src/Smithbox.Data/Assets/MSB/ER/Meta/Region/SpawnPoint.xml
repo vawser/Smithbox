@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an spawn point in the map." />
+  Wiki="Warp destination or retry point (vanilla names: ワープ先, リトライポイント). Event scripts warp the player to it by its entity ID. Nightreign calls the type ReturnPoint." />
   
   <Field>
   </Field>

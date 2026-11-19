@@ -1,71 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an environmental map effect box in the map." />
-  
+  <Self
+  Wiki="Environment map effect box (vanilla names: Env_BoxNNN). Applies the env map captured at the Env_Point region with the box's env map number, and links to the GIIV irradiance volume with that number." />
+
   <Field>
     <DisplayDistance
     AltName="Display Distance"
     Wiki="The distance from camera required before enabling envmap. 0 = always enabled." />
-    
+
     <FadeDistance
     AltName="Transition Distance"
     Wiki="The distance it takes for an envmap to fully transition into view." />
-    
+
     <ParallaxCorrection
     AltName="Parallax Correction"
-    Wiki="" />
-    
-    <Priority
-    AltName="Priority"
-    Wiki="" />
-    
-    <UnkT0A
-    AltName="Unknown: 0x0A"
-    Wiki="" />
-    
+    Wiki="Applies parallax correction to the env map when on. On in one retail box."
+    IsBool="" />
+
+    <LegacyPriority
+    AltName="Legacy Priority"
+    Wiki="The box priority for MSB versions before 0x38 only. Every retail map with boxes is newer and uses Priority instead; this is 10 in every retail box." />
+
+    <EnvMapNumber
+    AltName="Env Map Number"
+    Wiki="The env map number this box uses: it applies the env map of the Env_Point region with that number (Env_Point015 for 15) and links to irradiance volume GIIV 0015. -1: the three digits at the end of the box name (Env_Box015 is 15). The box name must be exactly Env_BoxNNN and the point name exactly Env_PointNNN for the name lookup to work." />
+
+    <BoundsExpandNegative
+    AltName="Bounds Expand (Negative)"
+    Wiki="Extends the box's influence bounds beyond its shape on the negative X/Y/Z sides, in its local frame (min = -size/2 - this). 0 in retail." />
+
+    <BoundsExpandPositive
+    AltName="Bounds Expand (Positive)"
+    Wiki="Extends the box's influence bounds beyond its shape on the positive X/Y/Z sides, in its local frame (max = size/2 + this). 0 in retail." />
+
     <AmbientDiffuseIntensity
     AltName="Ambient Diffuse Intensity"
     Wiki="Strength of ambient diffuse light." />
-    
+
     <AmbientSpecularIntensity
     AltName="Ambient Specular Intensity"
     Wiki="Strength of ambient specular light." />
-    
+
     <UnkT2C
     AltName="Unknown: 0x2C"
-    Wiki="" />
-    
+    Wiki="Selects two irradiance volume flags, stored in the volume record next to the ambient diffuse and specular intensities: 0 = both on, 1 = only the second, 2 = only the first; any other value keeps the default (both on). What the flags do in the renderer was not traced. 0 in retail except two boxes (1)." />
+
+    <UnkT2D
+    AltName="Unknown: 0x2D"
+    Wiki="Copied along with the Unknown: 0x2C flags but never read, so it has no effect in ER. 0 in retail."
+    IsBool="" />
+
     <IsModifyLight
     AltName="Modify Light"
-    Wiki="Affects lighting with other fields when true. Possibly normalizes light when false." 
+    Wiki="Affects lighting with other fields when true. Possibly normalizes light when false."
     IsBool="" />
-    
+
     <UnkT2F
     AltName="Unknown: 0x2F"
-    Wiki="" />
-    
-    <UnkT30
-    AltName="Unknown: 0x30"
-    Wiki="" />
-    
+    Wiki="Passed to the irradiance volume setup, which never reads it: no effect in ER. On in 4171 of 5189 retail boxes." />
+
+    <AdditionalEnvMapNumber
+    AltName="Additional Env Map Number"
+    Wiki="A second env map / irradiance volume number for this box. When 0 or more, the game runs the volume setup a second time with it. -1: none. Retail: -1 in 5046 boxes; others use values such as 900, 901, 902 and 405." />
+
     <UnkT32
     AltName="Unknown: 0x32"
-    Wiki="" />
-    
+    Wiki="Passed to the irradiance volume setup, which never reads it: no effect in ER. On in 12 retail boxes." />
+
     <UnkT33
     AltName="Unknown: 0x33"
-    Wiki="" />
-    
-    <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
-    
+    Wiki="Passed to the irradiance volume setup, which never reads it: no effect in ER. On in 5047 of 5189 retail boxes." />
+
+    <Priority
+    AltName="Priority"
+    Wiki="The box priority (MSB version 0x38 and later, which is every retail map with boxes). Retail values include 10, 20, 30, 21, 31 and 22." />
+
     <UnkT36
     AltName="Unknown: 0x36"
-    Wiki="" />
+    Wiki="Passed to the irradiance volume setup (MSB version 0x3F and later; older versions pass on), which never reads it: no effect in ER. On in nearly every retail box." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

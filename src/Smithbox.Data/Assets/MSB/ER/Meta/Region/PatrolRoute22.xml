@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a patrol route in the map." />
+  Wiki="Automatically generated walk route point (vanilla names: walk_route_MAP-CHR_N). Nightreign calls the type SourceWaypoint. It has no data of its own." />
   
   <Field>
   </Field>

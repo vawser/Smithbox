@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a spirit summon point in the map." />
+  Wiki="Spirit ash summon point (vanilla names: バディ召喚ポイント). It has no data of its own and is identified by its entity ID." />
   
   <Field>
   </Field>

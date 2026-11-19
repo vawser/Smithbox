@@ -19,7 +19,7 @@
     
     <UnkT08
     AltName="Unknown: 0x8"
-    Wiki="" />
+    Wiki="When 0 or more, the game sets this value on the created wind effect (an FX parameter at +180h); which parameter it is is not known. -1 (every retail region) keeps the effect's own value." />
     
   </Field>
   
