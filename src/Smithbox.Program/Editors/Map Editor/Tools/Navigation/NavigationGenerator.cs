@@ -69,6 +69,16 @@ public sealed record NavGenParameters
     /// <summary>The shortest edge the contour split makes, in metres: below it a face is left as it is.</summary>
     public float ContourMinEdge { get; init; } = 0.5f;
 
+    /// <summary>
+    /// Clean the finished mesh up: short edges collapsed and sliver triangles flipped, as long as every face stays
+    /// within <see cref="SimplifyError"/> of the collision, none turns over or gets thinner, and the outline keeps its
+    /// shape. The result is triangles (NavSimplify).
+    /// </summary>
+    public bool Simplify { get; init; }
+
+    /// <summary>How far a simplified face may stand off the collision, in metres.</summary>
+    public float SimplifyError { get; init; } = 0.2f;
+
     /// <summary>Split every face into triangles, after the grid.</summary>
     public bool TrianglesOnly { get; init; }
 
@@ -171,6 +181,11 @@ public sealed class NavGenPolygons
 
     /// <summary>Faces split to follow the collision (NavGenParameters.ContourError).</summary>
     public int ContouredFaces { get; init; }
+
+    /// <summary>Vertices removed by the simplification, and edges it flipped (NavGenParameters.Simplify).</summary>
+    public int SimplifiedVertices { get; init; }
+
+    public int FlippedEdges { get; init; }
 
     public bool Ok => Error == null;
 }
@@ -352,6 +367,11 @@ public static class NavigationGenerator
             polygons = next;
         }
 
+        // Simplify, last: short edges collapsed and slivers flipped, the faces kept on the collision and the outline kept
+        int simplifiedVertices = 0, flipped = 0;
+        if (p.Simplify && polygons.Count > 0)
+            polygons = NavSimplify.Run(polygons, surface ?? new SurfaceGrid(triangles, 4f), p, out simplifiedVertices, out flipped);
+
         if (polygons.Count == 0)
             return new NavGenPolygons { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
 
@@ -359,7 +379,7 @@ public static class NavigationGenerator
         {
             Polygons = polygons, Cuts = cuts, BlockerTriangles = blockerTriangles, InputTriangles = triangles.Count / 3,
             SnappedVertices = snapped, SpilledVertices = spilled, BorderVertices = bordered, ClippedFaces = clipped,
-            ContouredFaces = contoured,
+            ContouredFaces = contoured, SimplifiedVertices = simplifiedVertices, FlippedEdges = flipped,
         };
     }
 
@@ -1330,7 +1350,7 @@ public static class NavigationGenerator
     }
 
     /// <summary>Triangles (three points each) bucketed on an XZ grid, for the surface height under a point.</summary>
-    private sealed class SurfaceGrid
+    internal sealed class SurfaceGrid
     {
         private readonly IReadOnlyList<Vector3> T;
         private readonly float Cell;

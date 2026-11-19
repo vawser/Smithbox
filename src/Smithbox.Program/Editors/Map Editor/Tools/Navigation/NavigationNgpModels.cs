@@ -30,7 +30,7 @@ public static class NgpModelEdit
     /// The generator settings for an NGP mesh: a 4 m face grid (vanilla ground faces average 6.4 m², about a 3.6 m
     /// triangle), no links (NGP has none; its drops are face types).
     /// </summary>
-    public static NavGenParameters DefaultParameters => NavGenParameters.DefaultN with { FaceSize = 4f, Links = false, MaxEdgeLength = 12f };
+    public static NavGenParameters DefaultParameters => NavGenParameters.DefaultN with { FaceSize = 4f, Links = false, MaxEdgeLength = 12f, Simplify = true };
 
     private static readonly Regex ModelName = new(@"^n(\d\d)_(\d\d)(\d\d)$", RegexOptions.IgnoreCase);
 

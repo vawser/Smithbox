@@ -210,7 +210,8 @@ public partial class NavigationTool
 
         float cell = p.CellSize, radius = p.AgentRadius, height = p.AgentHeight, climb = p.MaxClimb, slope = p.MaxSlope, edge = p.MaxEdgeLength;
         float faceSize = p.FaceSize, spill = p.Spill, contour = p.ContourError, contourEdge = p.ContourMinEdge;
-        bool trianglesOnly = p.TrianglesOnly;
+        bool trianglesOnly = p.TrianglesOnly, simplify = p.Simplify;
+        float simplifyError = p.SimplifyError;
 
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateCell_{id}", ref cell, 0.1f, 1f, $"{LOC.Get("MAP_Navigation_Generate_Cell")} %.2f m");
@@ -244,6 +245,14 @@ public partial class NavigationTool
             ImGui.SliderFloat($"##navigationGenerateContourEdge_{id}", ref contourEdge, 0.1f, 4f, $"{LOC.Get("MAP_Navigation_Generate_Contour_Edge")} %.2f m");
             GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Contour_Edge_TT"));
         }
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Simplify")}##navigationGenerateSimplify_{id}", ref simplify);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Simplify_TT"));
+        if (simplify)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateSimplifyError_{id}", ref simplifyError, 0.02f, 1f, $"{LOC.Get("MAP_Navigation_Generate_Simplify_Error")} %.2f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Simplify_Error_TT"));
+        }
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateSpill_{id}", ref spill, 0f, 1f, spill <= 0 ? LOC.Get("MAP_Navigation_Generate_Spill_Off") : $"{LOC.Get("MAP_Navigation_Generate_Spill")} %.2f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Spill_TT"));
@@ -273,7 +282,7 @@ public partial class NavigationTool
 
         p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge,
             FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly, Spill = spill < 0.01f ? 0 : spill,
-            ContourError = contour < 0.01f ? 0 : contour, ContourMinEdge = contourEdge,
+            ContourError = contour < 0.01f ? 0 : contour, ContourMinEdge = contourEdge, Simplify = simplify, SimplifyError = simplifyError,
             Links = links, JumpHeight = jumpHeight < 0.05f ? 0 : jumpHeight, FallHeight = fallHeight, LinkReach = reach };
 
         if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Reset")}##navigationGenerateReset_{id}"))

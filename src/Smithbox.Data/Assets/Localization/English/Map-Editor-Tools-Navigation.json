@@ -1637,6 +1637,22 @@
       "Text": "Spill: off"
     },
     {
+      "Key": "MAP_Navigation_Generate_Simplify",
+      "Text": "Simplify the result"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Simplify_TT",
+      "Text": "Cleans the finished navmesh up: short edges are collapsed and sliver triangles turned onto the other diagonal, leaving fewer, fuller triangles, as the game's navmeshes have. A change is only made where every face stays within the error below of the collision, no face turns over or gets thinner, and the outline (walls, cuts, map borders) keeps its shape. The faces come out as triangles. On by default for Dark Souls II; off elsewhere, where the face grid evens the face sizes for links and face data."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Simplify_Error",
+      "Text": "Simplify error"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Simplify_Error_TT",
+      "Text": "How far a simplified face may stand off the collision, in metres. Higher gives fewer, larger faces that follow the ground less closely."
+    },
+    {
       "Key": "MAP_Navigation_Generate_Contour",
       "Text": "Follow the collision"
     },
