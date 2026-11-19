@@ -644,8 +644,7 @@ public partial class NavigationTool
     {
         if (!source.IsAsset)
         {
-            var fileName = $"h{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
-            var document = View.HavokCollisionBank.GetMapDocument(fileName);
+            var document = View.HavokCollisionBank.GetEditableDocument(CollisionFileName(source));
             return document == null ? null : Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
         }
 
@@ -682,6 +681,9 @@ public partial class NavigationTool
         AssetCollisionCache[source.Model] = triangles;
         return triangles;
     }
+
+    /// <summary>A collision part's high collision file in its map's binder: h + map digits + the model's digits, e.g. h10_01_00_00_001000.hkx.dcx.</summary>
+    private static string CollisionFileName(GenerateSource source) => $"h{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
 
     /// <summary>The model number of a collision file or part model name, e.g. 1000 for h10_01_00_00_001000.hkx.dcx or h001000, or -1.</summary>
     private static int CollisionModelId(string name)

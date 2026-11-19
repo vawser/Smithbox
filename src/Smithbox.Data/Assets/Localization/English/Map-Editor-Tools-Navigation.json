@@ -405,6 +405,10 @@
       "Text": "1. Tick Show overlay above the tabs, and choose the n or o set.\n2. Turn layers on or off: faces, edges, links and gates. Each line layer shows its colour.\n3. The other tabs edit what the overlay draws. The Map Editor's own navmesh drawing can be hidden with the Navmesh render filter."
     },
     {
+      "Key": "MAP_Navigation_Help_Regenerate",
+      "Text": "1. Load the map with Havok and collision loading on, and its neighbours if its NVC files should be joined too.\n2. Choose the options (the defaults suit a vanilla map: they keep what its navmesh reaches, its models, face data and links) and Regenerate Map. The n and o settings are the Models tab's Generate settings.\n3. When it is done, look over the result with the overlay, then Validate in the Check tab.\nThe whole regeneration is one undo; saving the map writes the NVA, the navmesh binder and the changed NVC files."
+    },
+    {
       "Key": "MAP_Navigation_Help_Models",
       "Text": "1. Generate: select collision parts or assets in the viewport (with the map's collision loaded), tick Blocker on parts to go around, choose the target, and Generate.\n2. Or Duplicate a model, moved by an offset, or Remove one, which leaves a placeholder.\n3. Then select Stitch model to join the new model to its neighbours.\nEach edit is one undo; saving the map writes the files."
     },
@@ -1359,6 +1363,10 @@
     {
       "Key": "MAP_Navigation_Tab_Models",
       "Text": "Models"
+    },
+    {
+      "Key": "MAP_Navigation_Tab_Regenerate",
+      "Text": "Regenerate"
     },
     {
       "Key": "MAP_Navigation_Models_Description",
@@ -2580,6 +2588,134 @@
     {
       "Key": "MAP_Navigation_Issue_GateCostAsymmetric",
       "Text": "Gates {1} and {2} of navmesh {0} cost {3} one way and {4} the other; the game's tables are symmetric."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Header",
+      "Text": "Regenerate Map"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Header_TT",
+      "Text": "Build the map's whole navigation again from its collision and its assets: every model's n and o navmesh, the NVA, the connections, gates and node banks, and the NVC files to loaded neighbours. One undo."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Description",
+      "Text": "Generates each set once over the map's high collision, placed by its collision parts (new and edited collision included), and every asset's collision (with the n and o settings of the Models tab's Generate group), keeps what is reachable from the map's enemies and players, and splits it into one navmesh per collision model, joined to each other exactly. On a vanilla catacomb or cave this covers 85-92% of the game's navmesh, with 86-98% of it on the game's. Doors, gates and fog walls are solid in the input, so rooms behind them may be cut off: check the result with the overlay and Validate. Maps with quarter (q) files aren't supported."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Error_Quarters",
+      "Text": "This map has navmeshes split into quarter (q) files, which regeneration doesn't support yet."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Error_Template",
+      "Text": "The map has no navmesh file with faces and a face tree to build the new files from."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Error_Input",
+      "Text": "No collision to generate from. Load the map with collision on (and Havok loading on)."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Seed_Current",
+      "Text": "Keep what the current navmesh reaches"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Seed_Current_TT",
+      "Text": "Also keep the generated faces joined to the places the map's navmesh covers now. On a vanilla map this keeps the areas the game's navmesh reaches, which few enemies may stand in (Roundtable Hold has six); without it only what the map's enemies and players reach is kept."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Keep_Models",
+      "Text": "Keep the current models"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Keep_Models_TT",
+      "Text": "Put each new face in the model of the current face under it, so the map keeps its own split into navmeshes. Elsewhere, and with this off, the collision model under the face decides (the game's navmesh models are named after collision models)."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Keep_Face_Data",
+      "Text": "Keep the current face data"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Keep_Face_Data_TT",
+      "Text": "Give each new face the face data of the current face under it, where there is one: the authored bits (character limit, gated, impassable) can't be derived from the collision."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Derive_Face_Data",
+      "Text": "Derive face data from the collision"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Derive_Face_Data_TT",
+      "Text": "Set Lava (0x1000) on faces over collision of surface 7 (Lava), and 0x20000 over surfaces 43 and 46 (Scarlet Swamp), as the game's navmeshes have them. Kept face data wins where both apply."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Skip_Runtime_Cuts",
+      "Text": "Leave out assets cut at runtime"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Skip_Runtime_Cuts_TT",
+      "Text": "Leave out of the input the assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (mostly breakables): the game cuts the navmesh under them at runtime and its own navmeshes run under them."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Links_N",
+      "Text": "Generate jump and fall links (n)"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Links_N_TT",
+      "Text": "Find jumps and falls between the n set's faces, as the Generate group's links do (its jump, fall and reach settings). A link between two navmeshes moves the face it lands on into the navmesh it starts from, as the game's links stay within their navmesh."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Links_O",
+      "Text": "Generate fall links (o)"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Links_O_TT",
+      "Text": "Find falls for the o set too. Off by default: the game's o navmeshes have almost none (0-80 a map, against hundreds found), and none of those found matched one of the game's."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Keep_Links",
+      "Text": "Keep the current links"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Keep_Links_TT",
+      "Text": "Carry over the current navmesh's jump and fall links whose two ends land on kept new faces (or within 1.5 m of one), with their edge data and direction. Generated links that repeat one, or join the same two faces, are left out. On vanilla caves and catacombs this keeps 88-100% of the game's links outside the areas cut off behind gates."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Stitch",
+      "Text": "Join loaded neighbours"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Stitch_TT",
+      "Text": "Join the new navmeshes' open border edges to the loaded neighbour maps through their NVC files, as the Stitch tab does."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate",
+      "Text": "Regenerate Map"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_TT",
+      "Text": "Regenerate the map's whole navigation. It runs in the background; the edit is made when it is done, as one undo. Save afterwards to write the NVA, the navmesh binder and the changed NVC files."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Running",
+      "Text": "Regenerating..."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Cancel_TT",
+      "Text": "Drop the regeneration's result when it is done; nothing is changed."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Failed",
+      "Text": "The regeneration failed; nothing was changed. See the log."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Done",
+      "Text": "Regenerated from {0} collision parts (each placed by its part, the new and edited collision included; {18} high collision files no part places left out) and {1} assets ({2} cut at runtime left out), with {3} seeds. Faces kept: n {4} of {5} generated, o {6} of {7}. Models: {8} replaced, {9} added, {10} made placeholders. {11} in-map connections, {12} to neighbours, {13} gates, {14} jump and fall links ({17} of them kept from the current navmesh). Node bank faces: {15} kept, {16} dropped. Check it with the overlay and Validate."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Skipped",
+      "Text": "Left as they were (their files are shared with another entry): models {0}."
     }
   ]
 }

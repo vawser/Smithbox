@@ -171,6 +171,12 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            if (BeginTab(NavTab.Regenerate, "MAP_Navigation_Tab_Regenerate", "navigationTabRegenerate"))
+            {
+                DisplayRegenerateTab(map);
+                ImGui.EndTabItem();
+            }
+
             if (BeginTab(NavTab.Stitch, "MAP_Navigation_Tab_Stitch", "navigationTabStitch"))
             {
                 DisplayStitchTab();
@@ -213,7 +219,7 @@ public partial class NavigationTool
         ImGui.EndChild();
     }
 
-    private enum NavTab { Overlay, Models, Stitch, Gates, Links, FaceData, Edit, Check }
+    private enum NavTab { Overlay, Models, Regenerate, Stitch, Gates, Links, FaceData, Edit, Check }
 
     /// <summary>A tab to switch to, e.g. Stitch after a model is generated; selected the next time its tab item is drawn.</summary>
     private NavTab? PendingTab;
