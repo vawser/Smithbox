@@ -97,8 +97,23 @@ public partial class NavigationTool
                 GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Blocker_TT"));
                 ImGui.SameLine();
                 ImGui.Text(source.Label);
+
+                // An asset the game cuts at runtime: a blocker only with Bake runtime cuts
+                if (RuntimeCutFlag(source) is int flag and not 0)
+                {
+                    ImGui.SameLine();
+                    GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_Navigation_Generate_Runtime_Cut", RuntimeCutName(flag), RuntimeCutSetNames(RuntimeCutSets(source))));
+                    GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Runtime_Cut_TT"));
+                }
             }
             ImGui.EndChild();
+        }
+
+        if (sources.Any(s => RuntimeCutFlag(s) != 0) || BlockerTags.Count > 0)
+        {
+            if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Bake_Runtime_Cuts")}##navigationGenerateBakeRuntimeCuts", ref BakeRuntimeCuts))
+                BlockerOverlayDirty = true;
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Bake_Runtime_Cuts_TT"));
         }
 
         DisplayBlockers();
@@ -365,12 +380,93 @@ public partial class NavigationTool
         BlockerRenderer.Show(scene, overlay, FaceOpacity);
     }
 
+    /// <summary>The loaded assets the game cuts the navmesh under at runtime, found when the Runtime cuts layer is drawn.</summary>
+    private List<GenerateSource> RuntimeCutSources = new();
+
+    /// <summary>Their transforms, and which had model bounds, when last drawn, to see when one moves or its model loads.</summary>
+    private int RuntimeCutSignature;
+
+    /// <summary>
+    /// Every loaded asset part whose AssetEnvironmentGeometryParam row has a navimeshFlag and whose navimeshFlagApply
+    /// cuts the given set (RuntimeCutSets).
+    /// </summary>
+    private List<GenerateSource> FindRuntimeCutSources(NavmeshSet set)
+    {
+        int bit = set == NavmeshSet.O ? 2 : 1;
+        var result = new List<GenerateSource>();
+        foreach (var loaded in LoadedMaps())
+            foreach (var entity in loaded.Objects)
+                if (entity is MsbEntity part && EntityHelper.IsPartAsset(part) && SourceOf(part) is GenerateSource source && (RuntimeCutSets(source) & bit) != 0)
+                    result.Add(source);
+        return result;
+    }
+
+    private int RuntimeCutTransforms()
+    {
+        var hash = new HashCode();
+        foreach (var source in RuntimeCutSources)
+        {
+            hash.Add(source.Part.GetWorldMatrix());
+            hash.Add(source.Part.RenderSceneMesh?.GetLocalBounds().Max ?? Vector3.Zero);
+        }
+        return hash.ToHashCode();
+    }
+
+    /// <summary>Called every frame: every 30th, redraws the runtime cut boxes if a flagged asset moved or its model loaded.</summary>
+    private void CheckRuntimeCutMoves()
+    {
+        if (!ShowOverlay || !Layers.Contains(NavOverlayLayer.RuntimeCuts) || RuntimeCutSources.Count == 0 || DrawFrame % 30 != 0)
+            return;
+
+        if (RuntimeCutTransforms() != RuntimeCutSignature)
+            RuntimeCutOverlayDirty = true;
+    }
+
+    /// <summary>
+    /// Draws the bounds of every loaded asset with a navimeshFlag in amber while the overlay and its Runtime cuts layer
+    /// are shown: where the game cuts or marks the navmesh at runtime. Only assets whose model is loaded are drawn, as
+    /// reading every asset's collision for its bounds would be slow; the layer is redrawn when a model loads.
+    /// </summary>
+    private void UpdateRuntimeCutOverlay()
+    {
+        RuntimeCutOverlayDirty = false;
+        RuntimeCutRenderer.Clear();
+
+        var scene = View.ViewportHandler.ActiveViewport?.RenderScene;
+        if (!ShowOverlay || scene == null || !Layers.Contains(NavOverlayLayer.RuntimeCuts))
+        {
+            RuntimeCutSources = new();
+            return;
+        }
+
+        RuntimeCutSources = FindRuntimeCutSources(OverlaySet);
+        RuntimeCutSignature = RuntimeCutTransforms();
+
+        var overlay = new NavOverlay { MapId = OverlayMap, Set = OverlaySet };
+        var batch = overlay.Batch(NavOverlayLayer.RuntimeCuts);
+
+        foreach (var source in RuntimeCutSources)
+        {
+            // A little larger than a blocker's, so a tagged blocker's red shows inside
+            var corners = BlockerCorners(source, Matrix4x4.Identity, 0.06f, readCollision: false);
+            if (corners == null)
+                continue;
+
+            var triangles = BoxTriangles(corners);
+            for (int i = 0; i + 2 < triangles.Count; i += 3)
+                batch.Triangles.Add((triangles[i], triangles[i + 1], triangles[i + 2]));
+        }
+
+        RuntimeCutRenderer.Show(scene, overlay, FaceOpacity);
+    }
+
     /// <summary>
     /// The eight corners of a blocker's box: the bounds of its model, as the viewport's selection box shows them,
     /// placed by the part's world transform and then the given one. Corner i has the high X, Y, Z side for bits 1, 2, 4.
-    /// When the model isn't loaded, the bounds of its collision. Grown by a margin in each direction. Null if neither.
+    /// When the model isn't loaded, the bounds of its collision (unless readCollision is off). Grown by a margin in each
+    /// direction. Null if neither.
     /// </summary>
-    private List<Vector3> BlockerCorners(GenerateSource source, Matrix4x4 then, float margin)
+    private List<Vector3> BlockerCorners(GenerateSource source, Matrix4x4 then, float margin, bool readCollision = true)
     {
         Vector3 lo, hi;
         var bounds = source.Part.RenderSceneMesh?.GetLocalBounds();
@@ -380,7 +476,7 @@ public partial class NavigationTool
             lo = box.Min;
             hi = box.Max;
         }
-        else if (SourceTriangles(source) is { Count: > 0 } local)
+        else if (readCollision && SourceTriangles(source) is { Count: > 0 } local)
         {
             lo = local.Aggregate(new Vector3(float.MaxValue), Vector3.Min);
             hi = local.Aggregate(new Vector3(float.MinValue), Vector3.Max);
@@ -439,6 +535,60 @@ public partial class NavigationTool
 
     private bool IsBlocker(GenerateSource source) => BlockerTags.Contains((source.MapId, source.Part.Name));
 
+    /// <summary>
+    /// Bake tagged assets the game cuts out of the navmesh at runtime too. Off by default: the game's own navmeshes run
+    /// under them (ER Navigation Exe Analysis.md, R5), and most of them break, after which the game's cut goes away; a
+    /// baked hole would stay.
+    /// </summary>
+    private bool BakeRuntimeCuts;
+
+    /// <summary>
+    /// The navimeshFlag of an asset's AssetEnvironmentGeometryParam row (AEG099_510 → 99510): 1 Obstacle, 2 Impassable,
+    /// 3 High Cost, which the game cuts or marks in the navmesh at runtime under the asset (ER exe 0x140C30DB0 /
+    /// 0x140C30E70); 0 for none, a part that isn't an asset, or a game without the param or field.
+    /// </summary>
+    private int RuntimeCutFlag(GenerateSource source) => RuntimeCutField(source, "navimeshFlag") ?? 0;
+
+    /// <summary>
+    /// The navmesh sets the game cuts under an asset at runtime, as a mask (1 the n set, 2 the o set), from its
+    /// navimeshFlagApply: 0 n only, 1 o only, 2 both. The game stores it as the silhouette's userData and tests it against
+    /// each navmesh section's set (ER exe 0x1406C5AC0, 0x140BFA1D0). 0 when the asset has no navimeshFlag.
+    /// </summary>
+    private int RuntimeCutSets(GenerateSource source)
+    {
+        if (RuntimeCutFlag(source) == 0)
+            return 0;
+
+        return (RuntimeCutField(source, "navimeshFlagApply") ?? 0) switch { 0 => 1, 1 => 2, 2 => 3, _ => 0 };
+    }
+
+    /// <summary>A field of an asset's AssetEnvironmentGeometryParam row (AEG099_510 → 99510); null if there is none.</summary>
+    private int? RuntimeCutField(GenerateSource source, string field)
+    {
+        if (!source.IsAsset || source.Model is not { Length: 10 } model || !model.StartsWith("AEG", StringComparison.OrdinalIgnoreCase) || model[6] != '_'
+            || !int.TryParse(model.AsSpan(3, 3), out var group) || !int.TryParse(model.AsSpan(7, 3), out var number))
+            return null;
+
+        var bank = View.Project.Handler.ParamData?.PrimaryBank;
+        if (bank?.Params == null || !bank.Params.TryGetValue("AssetEnvironmentGeometryParam", out var param))
+            return null;
+
+        var value = param[group * 1000 + number]?[field]?.Value;
+        return value == null ? null : Convert.ToInt32(value);
+    }
+
+    /// <summary>The sets of a RuntimeCutSets mask, for the sources list: "n", "o" or "n, o".</summary>
+    private static string RuntimeCutSetNames(int sets) => sets switch { 1 => "n", 2 => "o", 3 => "n, o", _ => "-" };
+
+    /// <summary>The name of a navimeshFlag value, for the sources list.</summary>
+    private static string RuntimeCutName(int flag) => flag switch
+    {
+        1 => LOC.Get("MAP_Navigation_Generate_Runtime_Cut_Obstacle"),
+        2 => LOC.Get("MAP_Navigation_Generate_Runtime_Cut_Impassable"),
+        3 => LOC.Get("MAP_Navigation_Generate_Runtime_Cut_High_Cost"),
+        _ => flag.ToString(),
+    };
+
     /// <summary>How far past the model's bounds a collision part may start and still be selected, in metres.</summary>
     private const float SelectUnderMargin = 1f;
 
@@ -480,7 +630,8 @@ public partial class NavigationTool
         var result = new List<GenerateSource>();
         foreach (var loaded in LoadedMaps())
             foreach (var entity in loaded.Objects)
-                if (entity is MsbEntity part && BlockerTags.Contains((part.MapID, part.Name)) && SourceOf(part) is GenerateSource source)
+                if (entity is MsbEntity part && BlockerTags.Contains((part.MapID, part.Name)) && SourceOf(part) is GenerateSource source
+                    && (BakeRuntimeCuts || RuntimeCutFlag(source) == 0))
                     result.Add(source);
         return result;
     }

@@ -57,6 +57,12 @@ public enum NavOverlayLayer
     /// <summary>The collision of the parts tagged as blockers, filled in red: generation goes around them.</summary>
     Blockers,
 
+    /// <summary>
+    /// The bounds of the loaded assets whose AssetEnvironmentGeometryParam row has a navimeshFlag: the game cuts or marks
+    /// the navmesh under them at runtime (ER Navigation Exe Analysis.md, R5). Drawn by the tool, not the overlay builder.
+    /// </summary>
+    RuntimeCuts,
+
     // NVM mode (DeS, DS1, DS1R). The NVM mode uses Faces (keyed by triangle flags), InnerEdges, OpenEdges and Highlight too
 
     /// <summary>The outline of the triangles flagged GATE, where MCG nodes join navmeshes.</summary>

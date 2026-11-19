@@ -75,7 +75,100 @@ public sealed class NavmeshFile
     /// <summary>The file holds a clearance cache.</summary>
     public bool HasClearanceCache { get; init; }
 
+    /// <summary>
+    /// The file's ID in the nvmhktbnd, which tells the game its set and quarter (<see cref="NavBinderIds"/>); null for a
+    /// file an edit added that hasn't been saved yet, whose ID the save gives it.
+    /// </summary>
+    public int? BinderId { get; set; }
+
     public int FaceCount => Mesh?.m_faces.Count ?? 0;
+}
+
+/// <summary>
+/// How the game files a navmesh binder's files (ER exe 0x140BF08B6, 0x140BF39A0). The binder ID, not the file name,
+/// gives the set and the quarter: 10000-19999 n, 20000-29999 o, 40000 + 1000k up to 999 more quarter k (0-3); any
+/// other ID isn't registered. The ModelID is the 6 digits at name characters 13-18; the map part of the name isn't read.
+/// Every navmesh file of ER, NR, AC6, SDT, DS3 and BB fits these ranges (NavSurvey bndranges).
+/// </summary>
+public static class NavBinderIds
+{
+    /// <summary>The range (first ID, one past the last) a file of this name belongs in, or null for a name the game wouldn't file.</summary>
+    public static (int First, int End)? RangeOf(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+            return null;
+
+        switch (name[0])
+        {
+            case 'n': return (10000, 20000);
+            case 'o': return (20000, 30000);
+            case 'q':
+                // q…_<k>: the quarter is the last character
+                if (name.Length < 3 || name[^2] != '_')
+                    return null;
+                int k = name[^1] - '0';
+                if (k < 0 || k > 3)
+                    return null;
+                return (40000 + 1000 * k, 41000 + 1000 * k);
+            default: return null;
+        }
+    }
+
+    /// <summary>What the game reads a binder ID as: "n", "o", "q0".."q3", or null when it ignores the file.</summary>
+    public static string KindOf(int id) => id switch
+    {
+        >= 10000 and < 20000 => "n",
+        >= 20000 and < 30000 => "o",
+        >= 40000 and < 44000 => "q" + (id - 40000) / 1000,
+        _ => null,
+    };
+
+    /// <summary>What a file name says it is, in the form of <see cref="KindOf"/>, or null.</summary>
+    public static string KindOf(string name)
+        => RangeOf(name) is not (int first, _) ? null : first >= 40000 ? "q" + (first - 40000) / 1000 : name[0].ToString();
+
+    /// <summary>
+    /// The ModelID the game reads from a file name: the 6 digits at characters 13-18 when the name is at least 19 long,
+    /// the 4 at characters 1-4 when it is 6-18 long, else 0. Null when those characters aren't digits.
+    /// </summary>
+    public static int? ModelIdOfName(string name)
+    {
+        if (name == null)
+            return null;
+
+        var (start, length) = name.Length >= 19 ? (13, 6) : name.Length > 5 ? (1, 4) : (0, 0);
+        int value = 0;
+
+        for (int i = start; i < start + length; i++)
+        {
+            if (name[i] < '0' || name[i] > '9')
+                return null;
+            value = value * 10 + (name[i] - '0');
+        }
+
+        return value;
+    }
+
+    /// <summary>
+    /// A map's packed ID as the game compares them (AA &lt;&lt; 24 | BB &lt;&lt; 16 | CC &lt;&lt; 8 | DD, from mAA_BB_CC_DD), or
+    /// null for a name not of that form.
+    /// </summary>
+    public static uint? PackedMapId(string mapId)
+    {
+        if (mapId is not { Length: 12 } || mapId[0] != 'm')
+            return null;
+
+        uint packed = 0;
+        for (int part = 0; part < 4; part++)
+        {
+            int at = 1 + part * 3;
+            if (!char.IsAsciiDigit(mapId[at]) || !char.IsAsciiDigit(mapId[at + 1]) || (part < 3 && mapId[at + 2] != '_'))
+                return null;
+            packed = (packed << 8) | (uint)((mapId[at] - '0') * 10 + mapId[at + 1] - '0');
+        }
+
+        return packed;
+    }
 }
 
 /// <summary>
@@ -224,12 +317,13 @@ public sealed class NavigationMap
     }
 
     /// <summary>
-    /// The set an NVA entry belongs to, from its NameID's prefix: 0 or 1 for n, 2 or 3 for o. Always n in a game without
+    /// The set an NVA entry belongs to, from bit 1 of its NameID's prefix, as the ER exe tests it
+    /// (<c>((NameID / 10^9) >> 1) &amp; 1</c>, 0x140BDA2A0): 0 or 1 for n, 2 or 3 for o. Always n in a game without
     /// an o set (<see cref="NavGameProfile.HasOSet"/>), where the placeholders with NameID -1 (DS3, BB, SDT) would
     /// otherwise read as o.
     /// </summary>
     public static NavmeshSet SetOf(NVA.Navmesh entry, NavGameProfile profile = null)
-        => profile is { HasOSet: false } ? NavmeshSet.N : (uint)entry.NameID / 1_000_000_000u >= 2 ? NavmeshSet.O : NavmeshSet.N;
+        => profile is { HasOSet: false } ? NavmeshSet.N : (((uint)entry.NameID / 1_000_000_000u) & 2) != 0 ? NavmeshSet.O : NavmeshSet.N;
 
     /// <summary>
     /// The quarter of a q file an entry's faces are in, from the high byte of Unk50 (0xFF when it has none), or null.

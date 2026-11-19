@@ -65,6 +65,8 @@ public class NavigationBank
                 FileCache[document] = file;
             }
 
+            // Not cached with the file: a save gives an added file its ID
+            file.BinderId = NavmeshBank.GetBinderId(map.Name, name);
             files[name] = file;
         }
 
@@ -149,8 +151,40 @@ public class NavigationBank
             nvcs.Add(nvc);
         }
 
+        // Files the Stitch tab made, which the file dictionary doesn't list (until a project scan finds them saved)
+        foreach (var name in CreatedNvcs)
+        {
+            if (NvcFiles.TryGetValue(name, out var nvc) && (nvc.MapA == mapId || nvc.MapB == mapId) && !nvcs.Contains(nvc))
+                nvcs.Add(nvc);
+        }
+
         return nvcs;
     }
+
+    /// <summary>NVC files made by the Stitch tab this session, by name; they stay until the project is closed.</summary>
+    private readonly HashSet<string> CreatedNvcs = new();
+
+    /// <summary>The compression the game's NVC files use, taken from one read, DCX_KRAK (ER, NR) if none has been.</summary>
+    public DCX.Type NvcCompression => NvcFiles.Values.Select(n => n.Nvc.Compression).FirstOrDefault(c => c != DCX.Type.None, DCX.Type.DCX_KRAK);
+
+    /// <summary>
+    /// Adds NVC files a re-stitch needs (NavStitchPlanner.NewNvc), so the maps they name list them from the next
+    /// GetMap on, and their save writes them to /map/nvc/. A name the game already has, or that is already held, is skipped.
+    /// </summary>
+    public void AddCreatedNvcs(IEnumerable<NvcFile> files)
+    {
+        foreach (var file in files)
+        {
+            if (NvcFiles.ContainsKey(file.Name) || NvcNames.Contains(file.Name))
+                continue;
+
+            NvcFiles[file.Name] = file;
+            CreatedNvcs.Add(file.Name);
+        }
+    }
+
+    /// <summary>Whether the bank has an NVC file of this name: the game's, or one made this session.</summary>
+    public bool HasNvc(string name) => NvcFiles.ContainsKey(name) || NvcNames.Contains(name);
 
     /// <summary>
     /// Marks what a remap or an edit changed, so the map's save writes those files.
@@ -196,17 +230,20 @@ public class NavigationBank
         {
             var entry = Project.Locator.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "nvc" && e.Filename == name);
 
-            if (entry == null || !NvcFiles.TryGetValue(name, out var nvc))
+            // A file made this session has no dictionary entry: it goes where the game looks for it
+            var path = entry?.Path ?? (CreatedNvcs.Contains(name) ? NavigationReader.NvcPath(name) : null);
+
+            if (path == null || !NvcFiles.TryGetValue(name, out var nvc))
                 continue;
 
             try
             {
-                WriteFile(entry.Path, nvc.Nvc.Write);
+                WriteFile(path, nvc.Nvc.Write);
                 EditedNvcs.Remove(name);
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_Navigation_Failed_Write", entry.Path), e);
+                Smithbox.LogError(this, LOC.Get("MAP_Navigation_Failed_Write", path), e);
                 success = false;
             }
         }

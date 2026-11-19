@@ -28,6 +28,15 @@ public class HavokNavmeshBank
     private readonly Dictionary<(string Map, string Name), Havok.HavokDocument> Documents = new();
 
     /// <summary>
+    /// The binder ID of each navmesh file read or saved, by map and name. The game reads a file's set and quarter
+    /// from it (<see cref="NavBinderIds"/>), so the Navigation tool's validator checks it.
+    /// </summary>
+    private readonly Dictionary<(string Map, string Name), int> BinderIds = new();
+
+    /// <summary>A navmesh file's binder ID, or null for a file an edit added that hasn't been saved yet.</summary>
+    public int? GetBinderId(string mapId, string name) => BinderIds.TryGetValue((mapId, name), out var id) ? id : null;
+
+    /// <summary>
     /// The loaded ER, NR or AC6 maps whose navmeshes haven't been read yet
     /// </summary>
     private HashSet<string> UnreadMaps = new();
@@ -191,6 +200,9 @@ public class HavokNavmeshBank
         RemovedNavmeshes.Remove(mapId);
         BinderFileNames.Remove(mapId);
 
+        foreach (var key in BinderIds.Keys.Where(k => k.Map == mapId).ToList())
+            BinderIds.Remove(key);
+
         if (MapNavmeshes.Remove(mapId, out var navmeshNames))
         {
             foreach (var name in navmeshNames)
@@ -250,8 +262,11 @@ public class HavokNavmeshBank
                 // The binder reads its files through one position, so they are taken out here and then read in
                 // parallel, as they don't depend on each other. Each file holds its own types.
                 var files = binder.Files
-                    .Select(file => (Name: Path.GetFileNameWithoutExtension(file.Name), Bytes: binder.ReadFile(file)))
+                    .Select(file => (Name: Path.GetFileNameWithoutExtension(file.Name), file.ID, Bytes: binder.ReadFile(file)))
                     .ToList();
+
+                foreach (var file in files)
+                    BinderIds.TryAdd((mapId, file.Name), file.ID);
 
                 var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
 
@@ -316,12 +331,19 @@ public class HavokNavmeshBank
 
     /// <summary>
     /// A new file entry for a navmesh binder, laid out like the game's: the path of the binder's other files, their
-    /// flags, and the next ID of the file's block (10000 + for n, 20000 + for o, 40000 + for q).
+    /// flags, and the next ID of the file's range. The game reads the set and quarter from the ID
+    /// (<see cref="NavBinderIds"/>: n 10000+, o 20000+, quarter k 40000 + 1000k), so a name it wouldn't file, or a
+    /// full range, is refused.
     /// </summary>
     private static BinderFile NewBinderFile(BND4 binder, string name, byte[] bytes)
     {
-        int block = name[0] switch { 'n' => 10000, 'o' => 20000, 'q' => 40000, _ => 90000 };
-        int id = binder.Files.Where(f => f.ID >= block && f.ID < block + 10000).Select(f => f.ID + 1).DefaultIfEmpty(block).Max();
+        if (NavBinderIds.RangeOf(name) is not (int first, int end))
+            throw new InvalidOperationException($"{name} isn't a navmesh file name the game files (n…, o… or q…_0 to _3).");
+
+        int id = binder.Files.Where(f => f.ID >= first && f.ID < end).Select(f => f.ID + 1).DefaultIfEmpty(first).Max();
+
+        if (id >= end)
+            throw new InvalidOperationException($"The binder has no free ID for {name} in {first}-{end - 1}.");
 
         var template = binder.Files.FirstOrDefault();
         var directory = template == null ? "" : template.Name.Substring(0, template.Name.LastIndexOf('\\') + 1);
@@ -397,7 +419,9 @@ public class HavokNavmeshBank
                     {
                         try
                         {
-                            binder.Files.Add(NewBinderFile(binder, name, WriteNavmeshFile(mapId, name, Memory<byte>.Empty)));
+                            var added = NewBinderFile(binder, name, WriteNavmeshFile(mapId, name, Memory<byte>.Empty));
+                            binder.Files.Add(added);
+                            BinderIds[(mapId, name)] = added.ID;
                             anyWritten = true;
                         }
                         catch (Exception ex)
@@ -407,7 +431,7 @@ public class HavokNavmeshBank
                         }
                     }
 
-                    // The game names its files; the IDs follow its blocks (n 10000+, o 20000+, q 40000+)
+                    // The game names its files; the IDs follow its ranges (n 10000+, o 20000+, quarter k 40000 + 1000k)
                     binder.Files.Sort((a, b) => a.ID.CompareTo(b.ID));
                 }
 

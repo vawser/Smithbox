@@ -42,6 +42,12 @@ public sealed class NavStitchPlan
     /// <summary>The neighbour maps whose NVC file with this map was looked at (loaded, with their navmesh files).</summary>
     public List<string> Neighbours { get; } = new();
 
+    /// <summary>
+    /// The NVC files the plan's cross-map pairs need that don't exist yet (names, smaller map first), for open world
+    /// neighbours without one. Empty unless the plan was made with createNvcs.
+    /// </summary>
+    public List<string> NewNvcs { get; } = new();
+
     public int AddedInMap => Added.Count(p => p.MapA == p.MapB);
 
     public int AddedCrossMap => Added.Count(p => p.MapA != p.MapB);
@@ -178,11 +184,52 @@ public static class NavStitchPlanner
     }
 
     /// <summary>
+    /// The 8 open world tiles around a tile, of the same area and version (mAA_BB_CC_DD with BB and CC within 1, kept
+    /// within 0-99): the neighbours an open world tile asks for NVC files with (ER exe 0x140C36E10). Empty for other maps.
+    /// </summary>
+    public static IEnumerable<string> GridNeighbours(string mapId)
+    {
+        if (!NavigationMap.IsOpenWorld(mapId) || NavBinderIds.PackedMapId(mapId) == null)
+            yield break;
+
+        int x = int.Parse(mapId.Substring(4, 2)), z = int.Parse(mapId.Substring(7, 2));
+        for (int dx = -1; dx <= 1; dx++)
+            for (int dz = -1; dz <= 1; dz++)
+            {
+                if ((dx | dz) == 0 || x + dx < 0 || x + dx > 99 || z + dz < 0 || z + dz > 99)
+                    continue;
+                yield return $"{mapId[..4]}{x + dx:D2}_{z + dz:D2}{mapId[9..]}";
+            }
+    }
+
+    /// <summary>The name the game asks for the NVC file of two maps by: the smaller packed map ID first (ER exe 0x140721FE0).</summary>
+    public static string NvcName(string a, string b)
+        => (NavBinderIds.PackedMapId(a) ?? 0) <= (NavBinderIds.PackedMapId(b) ?? 0) ? $"{a}_{b}" : $"{b}_{a}";
+
+    /// <summary>
+    /// A new, empty NVC file between two maps, as the game's are: version 3, the two NVAs' map UIDs (0 when a map has
+    /// none), and the compression of the given file (the game's are DCX_KRAK).
+    /// </summary>
+    public static NvcFile NewNvc(string name, NavigationMap a, NavigationMap b, SoulsFormats.DCX.Type compression)
+    {
+        var mapA = name[..12];
+        var first = a.MapId == mapA ? a : b;
+        var second = ReferenceEquals(first, a) ? b : a;
+        return new NvcFile
+        {
+            Name = name,
+            Nvc = new NVC { MapUID = first.MapUid ?? 0, OppositeMapUID = second.MapUid ?? 0, Compression = compression },
+        };
+    }
+
+    /// <summary>
     /// Plans a re-stitch of one set of a map. With a NameID, only the connections and pairs of that navmesh of this map
     /// are looked at; else every navmesh of the set. Neighbours (by map name; null when not loaded) are joined through
-    /// their existing NVC file with this map; no NVC file is made.
+    /// their existing NVC file with this map. With createNvcs, the loaded open world tiles around the map that have no
+    /// NVC file with it are joined too, through a file the plan lists in NewNvcs for the caller to make.
     /// </summary>
-    public static NavStitchPlan Plan(NavigationMap map, NavmeshSet set, Func<string, NavigationMap> neighbour, NavStitchParameters parameters, int? onlyNameId = null, bool openEdgesOnly = true)
+    public static NavStitchPlan Plan(NavigationMap map, NavmeshSet set, Func<string, NavigationMap> neighbour, NavStitchParameters parameters, int? onlyNameId = null, bool openEdgesOnly = true,
+        bool createNvcs = false)
     {
         var plan = new NavStitchPlan { MapId = map.MapId, Set = set };
         var meshes = Meshes(map, set, Vector3.Zero);
@@ -200,6 +247,29 @@ public static class NavStitchPlanner
 
             plan.Neighbours.Add(otherId);
             meshes.AddRange(Meshes(other, set, offset.Value));
+        }
+
+        // Loaded tiles around the map without an NVC file with it, joined through a file to be made, in the direction
+        // the game stores (from the file's first map)
+        var newPairs = new HashSet<(string, string)>();
+        if (createNvcs)
+        {
+            var existing = map.Nvcs.Select(n => n.Name).ToHashSet();
+            foreach (var otherId in GridNeighbours(map.MapId))
+            {
+                var name = NvcName(map.MapId, otherId);
+                if (existing.Contains(name) || plan.Neighbours.Contains(otherId))
+                    continue;
+
+                var offset = TileOffset(map.MapId, otherId);
+                var other = offset == null ? null : neighbour?.Invoke(otherId);
+                if (other?.Nva == null)
+                    continue;
+
+                plan.Neighbours.Add(otherId);
+                meshes.AddRange(Meshes(other, set, offset.Value));
+                newPairs.Add((name[..12], name[13..]));
+            }
         }
 
         var placed = new Dictionary<(string, int), NavStitchMesh>();
@@ -279,11 +349,16 @@ public static class NavStitchPlanner
                 continue;
             if (!InScope(pair.MapA, pair.NameA, pair.MapB, pair.NameB))
                 continue;
-            if (pair.MapA != pair.MapB && !nvcPairs.Contains((pair.MapA, pair.MapB)))
+            if (pair.MapA != pair.MapB && !nvcPairs.Contains((pair.MapA, pair.MapB)) && !newPairs.Contains((pair.MapA, pair.MapB)))
                 continue;
 
             plan.Added.Add(pair);
         }
+
+        // Only the files some pair goes through are made
+        foreach (var (a, b) in newPairs)
+            if (plan.Added.Any(p => p.MapA == a && p.MapB == b))
+                plan.NewNvcs.Add($"{a}_{b}");
 
         return plan;
     }
@@ -354,7 +429,11 @@ public static class NavStitchPlanner
                 }
                 else
                 {
-                    var nvc = map.Nvcs.First(n => n.MapA == pair.MapA && n.MapB == pair.MapB);
+                    // A file in the plan's NewNvcs that the caller didn't make: the pair has nowhere to go
+                    var nvc = map.Nvcs.FirstOrDefault(n => n.MapA == pair.MapA && n.MapB == pair.MapB);
+                    if (nvc == null)
+                        continue;
+
                     ConnectorOf(nvc.Nvc.Connectors, pair.NameA, pair.NameB, c => c.MainNameID, c => c.TargetNameID,
                         () => new NVC.Connector { MainNameID = pair.NameA, TargetNameID = pair.NameB }).NavMeshConnections.Add(connection);
                     result.NvcsChanged.Add(nvc);

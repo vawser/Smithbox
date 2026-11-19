@@ -70,16 +70,21 @@ public enum NavIssueCode
     GateCostAsymmetric,
     NodeBankNavmeshMissing,
     NodeBankFaceRange,
+    ModelIdName,
+    QuarterIgnored,
 
     // Navmesh files
     MediatorMissing,
     CostGraphMismatch,
+    BinderIdRange,
 
     // Connections, in NVA connectors and NVC files
     ConnectorNavmeshMissing,
     ConnectionFaceRange,
     ConnectionEdgeNotOnFace,
     NvcMapUid,
+    NvcNameOrder,
+    NvcNotRequested,
 
     // NVM mode (DeS, DS1, DS1R): the binder, the NVMs, the MCP and the MCG (NvmValidator)
     NvmBinderMissing,
@@ -195,8 +200,18 @@ public static class NavigationValidator
                 issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceCountMismatch, file, (uint)n.NameID, n.FaceCount, meshName, meshFile.FaceCount) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
 
-            if (map.Profile.Unk4CMeansNoFaces && n.Unk4C == 1 && n.FaceCount > 0)
-                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.PlaceholderHasFaces, file, (uint)n.NameID, n.FaceCount) { MapId = map.MapId, NameID = (uint)n.NameID });
+            // The game finds an entry's file by the ModelID it reads from the file's name (characters 13-18), so a
+            // file whose name doesn't carry the entry's ModelID is never found for it
+            if (meshFile != null && NavBinderIds.ModelIdOfName(meshName) != n.ModelID)
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.ModelIdName, file, (uint)n.NameID, n.ModelID, meshName) { MapId = map.MapId, NameID = (uint)n.NameID });
+
+            // The game skips an entry whose Unk4C bit 0 is set (ER exe 0x140C336DE): it never gets a mesh
+            if (map.Profile.Unk4CMeansNoFaces && (n.Unk4C & 1) != 0 && n.FaceCount > 0)
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.PlaceholderHasFaces, file, (uint)n.NameID, n.FaceCount) { MapId = map.MapId, NameID = (uint)n.NameID });
+
+            // The quarter in Unk50's high byte is only read from a version 4 navmesh section (ER exe 0x140C34A0E)
+            if (map.Profile.HasQuarters && nva.Navmeshes.Version < 4 && NavigationMap.QuarterOf(n, map.Profile) is int quarter)
+                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.QuarterIgnored, file, (uint)n.NameID, quarter, nva.Navmeshes.Version) { MapId = map.MapId, NameID = (uint)n.NameID });
 
             ValidateGates(map, file, n, issues);
         }
@@ -298,6 +313,11 @@ public static class NavigationValidator
             // go through faces that aren't there
             if (f.Mesh != null && NavCostGraph.Of(f.Document) is IHavokDirectedGraphEdit graph && NavCostGraph.Check(graph, f.Mesh) is string problem)
                 issues.Add(new(NavIssueSeverity.Error, NavIssueCode.CostGraphMismatch, $"{f.Name}.hkx", problem) { MapId = map.MapId, NameID = ownerId });
+
+            // The game reads the set and quarter from the binder ID, not the name (NavBinderIds); a file saved since it
+            // was added has its ID, one not saved yet gets the right one on save
+            if (f.BinderId is int id && NavBinderIds.KindOf(id) != NavBinderIds.KindOf(f.Name))
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.BinderIdRange, $"{f.Name}.hkx", id, NavBinderIds.KindOf(id) ?? "-", NavBinderIds.KindOf(f.Name) ?? "-") { MapId = map.MapId, NameID = ownerId });
         }
     }
 
@@ -334,6 +354,15 @@ public static class NavigationValidator
             var mapA = isA ? map : other;
             var mapB = isA ? other : map;
 
+            // The game asks for one file per pair, the smaller packed map ID first (ER exe 0x140721FE0)
+            if (NavBinderIds.PackedMapId(nvc.MapA) is uint packedA && NavBinderIds.PackedMapId(nvc.MapB) is uint packedB && packedA > packedB)
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NvcNameOrder, file, nvc.MapA, nvc.MapB));
+
+            // An open world tile asks for the NVC files of the 8 tiles around it (ER exe 0x140C36E10); other pairs
+            // of open world tiles are only asked for through a map's own neighbour list, which no game file uses
+            if (NavigationMap.IsOpenWorld(nvc.MapA) && NavigationMap.IsOpenWorld(nvc.MapB) && !AreGridNeighbours(nvc.MapA, nvc.MapB))
+                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.NvcNotRequested, file, nvc.MapA, nvc.MapB));
+
             // Each side's UID is checked when that map is here
             if (mapA?.MapUid is uint uidA && nvc.Nvc.MapUID != uidA)
                 issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NvcMapUid, file, mapA.MapId, nvc.Nvc.MapUID, uidA));
@@ -360,6 +389,21 @@ public static class NavigationValidator
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Two open world tiles of the same area that touch, diagonals included (mAA_BB_CC_DD: BB and CC within 1, not both
+    /// the same). The last part (the tile version, _00 / _10) isn't compared, as the game turns each neighbour into the
+    /// version of it that is loaded.
+    /// </summary>
+    private static bool AreGridNeighbours(string a, string b)
+    {
+        if (NavBinderIds.PackedMapId(a) is not uint pa || NavBinderIds.PackedMapId(b) is not uint pb || (pa >> 24) != (pb >> 24))
+            return false;
+
+        int dx = Math.Abs((int)((pa >> 16) & 0xFF) - (int)((pb >> 16) & 0xFF));
+        int dz = Math.Abs((int)((pa >> 8) & 0xFF) - (int)((pb >> 8) & 0xFF));
+        return dx <= 1 && dz <= 1 && (dx | dz) != 0;
     }
 
     /// <summary>

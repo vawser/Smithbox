@@ -46,7 +46,9 @@ public static class NavigationReader
                     bytes = DCX.Decompress(bytes).ToArray();
 
                 var name = Path.GetFileNameWithoutExtension(f.Name);
-                files[name] = FromDocument(name, Havok.Files.HavokFile.Read(bytes, profile));
+                var file = FromDocument(name, Havok.Files.HavokFile.Read(bytes, profile));
+                file.BinderId = f.ID;
+                files[name] = file;
             }
         }
 

@@ -22,6 +22,7 @@ public partial class NavigationTool
     private bool StitchFindPending;
 
     private bool StitchNeighbours = true;
+    private bool StitchCreateNvcs;
     private bool StitchOpenOnly = true;
     private bool StitchRemoveBroken = true;
     private bool StitchAddNew = true;
@@ -63,6 +64,13 @@ public partial class NavigationTool
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Neighbours")}##navigationStitchNeighbours", ref StitchNeighbours);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Neighbours_TT"));
 
+        // Only open world tiles ask for NVC files by grid position, so only they can get new ones
+        if (StitchNeighbours && NavigationMap.IsOpenWorld(OverlayNavigation.MapId))
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Create_Nvc")}##navigationStitchCreateNvc", ref StitchCreateNvcs);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Create_Nvc_TT"));
+        }
+
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Open_Only")}##navigationStitchOpenOnly", ref StitchOpenOnly);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Open_Only_TT"));
 
@@ -101,6 +109,9 @@ public partial class NavigationTool
         GUI.WrappedText(plan.Neighbours.Count == 0
             ? LOC.Get("MAP_Navigation_Stitch_No_Neighbours")
             : LOC.Get("MAP_Navigation_Stitch_With_Neighbours", string.Join(", ", plan.Neighbours)));
+
+        if (plan.NewNvcs.Count > 0)
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Stitch_New_Nvcs", string.Join(", ", plan.NewNvcs)));
 
         if (plan.IsEmpty)
         {
@@ -200,7 +211,8 @@ public partial class NavigationTool
             return other != null && Bank.HasNavmeshFiles(other) ? Bank.GetMap(other) : null;
         }
 
-        StitchPlan = NavStitchPlanner.Plan(OverlayNavigation, OverlaySet, Neighbour, parameters, only, StitchOpenOnly);
+        StitchPlan = NavStitchPlanner.Plan(OverlayNavigation, OverlaySet, Neighbour, parameters, only, StitchOpenOnly,
+            StitchNeighbours && StitchCreateNvcs);
     }
 
     private void ApplyStitch(NavStitchPlan plan)
@@ -209,6 +221,26 @@ public partial class NavigationTool
             return;
 
         var map = OverlayNavigation;
+
+        // New NVC files go in first, empty, so the connector copy below holds them and undo empties them again
+        if (StitchAddNew && plan.NewNvcs.Count > 0)
+        {
+            var loaded = LoadedMaps();
+            var made = new List<NvcFile>();
+
+            foreach (var name in plan.NewNvcs.Where(n => !Bank.HasNvc(n)))
+            {
+                var otherId = name[..12] == map.MapId ? name[13..] : name[..12];
+                var other = loaded.FirstOrDefault(m => m.Name == otherId);
+                var otherMap = other == null ? null : Bank.GetMap(other);
+                if (otherMap != null)
+                    made.Add(NavStitchPlanner.NewNvc(name, map, otherMap, Bank.NvcCompression));
+            }
+
+            Bank.AddCreatedNvcs(made);
+            map = Bank.GetMap(OverlayContainer) ?? map;
+        }
+
         var before = new NavConnectionState(map.Nva, map.Nvcs);
         var gatesBefore = StitchUpdateGates ? new NavGateState(map.Nva) : null;
         var changes = NavStitchPlanner.Apply(map, plan, StitchRemoveBroken, StitchAddNew);

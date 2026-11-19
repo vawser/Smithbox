@@ -40,7 +40,6 @@
 - DB_NT MSB: research/sync with ER
 - NR MSB: research/sync with ER
 - AC6 MSB: research
-- ONAV v2 for AC6
 
 - Improve Map Data view: mainly properties
 

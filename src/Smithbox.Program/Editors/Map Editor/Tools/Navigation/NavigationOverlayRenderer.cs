@@ -98,6 +98,7 @@ public sealed class NavigationOverlayRenderer
         NavOverlayLayer.GateSelected => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.Highlight => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.Blockers => new(1.00f, 0.15f, 0.15f),
+        NavOverlayLayer.RuntimeCuts => new(1.00f, 0.65f, 0.00f),
         NavOverlayLayer.NvmGates => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.NvmEntities => new(1.00f, 0.55f, 0.10f),
         NavOverlayLayer.McpRooms => new(0.60f, 0.60f, 1.00f),
@@ -179,7 +180,7 @@ public sealed class NavigationOverlayRenderer
         // collision; gate markers at a fixed opacity, so their wireframe shows through
         foreach (var batch in overlay.Batches.Values.Where(b => b.Layer != NavOverlayLayer.Faces && b.Triangles.Count > 0))
         {
-            float opacity = batch.Layer == NavOverlayLayer.Blockers ? Math.Max(faceOpacity, 40) : GateFillOpacity;
+            float opacity = batch.Layer is NavOverlayLayer.Blockers or NavOverlayLayer.RuntimeCuts ? Math.Max(faceOpacity, 40) : GateFillOpacity;
             var fill = ColorHelper.GetTransparencyColor(LayerColor(batch.Layer), opacity);
 
             foreach (var chunk in batch.Triangles.Chunk(DbgPrimWallCells.MaxTriangles))

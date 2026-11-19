@@ -190,7 +190,19 @@
     },
     {
       "Key": "MAP_Navigation_Issue_PlaceholderHasFaces",
-      "Text": "Navmesh {0} is marked as a placeholder (Unk4C = 1) but has {1} faces."
+      "Text": "Navmesh {0} is marked as a placeholder (Unk4C = 1) but has {1} faces. The game skips placeholder entries, so it never loads this mesh."
+    },
+    {
+      "Key": "MAP_Navigation_Issue_ModelIdName",
+      "Text": "Navmesh {0} has ModelID {1}, but its file {2} doesn't carry it. The game finds the file by the 6 digits after the map name."
+    },
+    {
+      "Key": "MAP_Navigation_Issue_QuarterIgnored",
+      "Text": "Navmesh {0} names quarter {1} in Unk50, but the game only reads quarters from a version 4 navmesh section (this one is version {2})."
+    },
+    {
+      "Key": "MAP_Navigation_Issue_BinderIdRange",
+      "Text": "The file has binder ID {0}, which the game reads as {1}, but its name says {2}. The game takes the set and quarter from the ID: n 10000-19999, o 20000-29999, quarter k 40000 + 1000k."
     },
     {
       "Key": "MAP_Navigation_Issue_GateNodeNavmeshIndex",
@@ -227,6 +239,14 @@
     {
       "Key": "MAP_Navigation_Issue_NvcMapUid",
       "Text": "The UID for {0} is {1}, but that map's NVA has {2}."
+    },
+    {
+      "Key": "MAP_Navigation_Issue_NvcNameOrder",
+      "Text": "The file names {0} before {1}, but the game only asks for the name with the smaller map ID first, so it never loads this file."
+    },
+    {
+      "Key": "MAP_Navigation_Issue_NvcNotRequested",
+      "Text": "{0} and {1} aren't neighbouring tiles, and an open world tile only asks for the NVC files of the 8 tiles around it."
     },
     {
       "Key": "MAP_Navigation_Tab_Overlay",
@@ -410,7 +430,7 @@
     },
     {
       "Key": "MAP_Navigation_Help_Check",
-      "Text": "1. Validate checks the map against the rules the game files follow, then compares the result with the vanilla files in the background.\n2. New issues come from the project; inherited ones are in the vanilla files too.\n3. Click an issue to go to its navmesh, face or gate.\nValidate again after editing: the header says when the result is out of date."
+      "Text": "1. Validate checks the map against the rules the game files follow, then compares the result with the vanilla files in the background.\n2. New issues come from the project; inherited ones are in the vanilla files too.\n3. Click an issue to go to its navmesh, face or gate.\nValidate again after editing: the header says when the result is out of date.\nIn game (Elden Ring), the exe has debug switches Game.Navimesh.DisableNvc and Game.Navimesh.DisableNavimesh. With a tool that opens the debug menu, turning NVC off and on tells a cross-map edit's effect from an in-map one."
     },
     {
       "Key": "MAP_Navigation_Glossary_Header",
@@ -434,7 +454,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Sets_Text",
-      "Text": "Most games keep two navmeshes of each model: n, and o, most likely for larger characters, as its clearance reaches 5.1 m against n's 1.53 m. o usually has fewer faces. Each set has its own connections and links, and is edited on its own. Armored Core VI has the n set only."
+      "Text": "Most games keep two navmeshes of each model: n for normal characters, and o for huge ones (Elden Ring's exe labels it Huge; its clearance reaches 5.1 m against n's 1.53 m). o usually has fewer faces. Each set has its own connections and links, and is edited on its own. The game tells the sets apart by the NameID (prefix 0/1 n, 2/3 o) and by the file's ID in the nvmhktbnd (10000s n, 20000s o), not by the file name. Armored Core VI has the n set only."
     },
     {
       "Key": "MAP_Navigation_Glossary_NameID",
@@ -458,7 +478,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Quarters_Text",
-      "Text": "Some large Elden Ring navmeshes are split into four q files, and their n file is then empty. Quartered models can't be removed or copied, and a map that has them can't get new models; use a free placeholder there."
+      "Text": "Some large Elden Ring navmeshes are split into four q files, and their n file is then empty. The game finds quarter k by the file's ID in the nvmhktbnd (40000 + 1000 × k) and the entry's Unk50 high byte. Quartered models can't be removed or copied, and a map that has them can't get new models; use a free placeholder there.\nOf a navmesh file's name, the game reads only the 6 model digits after the map part; the map part itself isn't read, which is why some _10 tiles carry their _00 tile's names."
     },
     {
       "Key": "MAP_Navigation_Glossary_Connections",
@@ -594,7 +614,7 @@
     },
     {
       "Key": "MAP_Navigation_Overlay_Set_O_TT",
-      "Text": "The o navmeshes (o files), the second half of the NVA's entries: the same ground as n, most likely for larger characters, as their clearance values reach 5.1 m against n's 1.53 m. They usually have fewer faces."
+      "Text": "The o navmeshes (o files), the second half of the NVA's entries: the same ground as n, for huge characters (Elden Ring's exe labels the set Huge; its clearance values reach 5.1 m against n's 1.53 m). They usually have fewer faces."
     },
     {
       "Key": "MAP_Navigation_Overlay_Opacity",
@@ -703,6 +723,14 @@
     {
       "Key": "MAP_Navigation_Layer_GateCosts_TT",
       "Text": "For the navmesh chosen in the Gates tab: a line between each two of its gates that can reach each other, labelled with the cost in metres."
+    },
+    {
+      "Key": "MAP_Navigation_Layer_RuntimeCuts",
+      "Text": "Runtime cuts"
+    },
+    {
+      "Key": "MAP_Navigation_Layer_RuntimeCuts_TT",
+      "Text": "The bounds of the loaded assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (Obstacle, Impassable or High Cost), filled in amber: the game cuts or marks the navmesh under them at runtime, and lifts that when the asset breaks. The game's own navmeshes run under these assets, so they needn't be cut out of a generated one. Only the assets the game cuts in the drawn set are shown: navimeshFlagApply Type 0 cuts the n set, Type 1 the o set, Type 2 both. Drawn for assets whose model is loaded, in every loaded map."
     },
     {
       "Key": "MAP_Navigation_Legend_Header",
@@ -1202,7 +1230,19 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Neighbours_TT",
-      "Text": "Also join edges across the NVC files of this map, with the neighbour maps that are loaded with their navmesh files. Only existing NVC files are used; none is made."
+      "Text": "Also join edges across the NVC files of this map, with the neighbour maps that are loaded with their navmesh files. Only existing NVC files are used, unless Make missing NVC files is ticked."
+    },
+    {
+      "Key": "MAP_Navigation_Stitch_Create_Nvc",
+      "Text": "Make missing NVC files"
+    },
+    {
+      "Key": "MAP_Navigation_Stitch_Create_Nvc_TT",
+      "Text": "Open world tiles only. Also join edges with the loaded tiles around this one (diagonals included) that have no NVC file with it, and make the file on Apply, as the game names it: the smaller map ID first, storing connections from that map to the other. It is saved to map/nvc in the project; the project's directory scan finds it when the project is opened again."
+    },
+    {
+      "Key": "MAP_Navigation_Stitch_New_Nvcs",
+      "Text": "New NVC files on Apply: {0}."
     },
     {
       "Key": "MAP_Navigation_Stitch_Open_Only",
@@ -1703,6 +1743,34 @@
     {
       "Key": "MAP_Navigation_Generate_Blocker_TT",
       "Text": "Tag this part as a blocker: its collision is solid but never walkable, so the navmesh is generated around it, an agent radius away, and never under or on it. Tags last for the session, and every tagged part of a loaded map counts in each generation, selected or not."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Runtime_Cut",
+      "Text": "(cut at runtime: {0}, in {1})"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Runtime_Cut_TT",
+      "Text": "This asset's AssetEnvironmentGeometryParam row has a navimeshFlag, so the game cuts or marks the navmesh under it at runtime, and drops that when the asset breaks (most of these assets turn to None after breaking). Its navimeshFlagApply says which navmeshes: Type 0 the n set only (normal characters, most assets), Type 1 the o set only (huge characters), Type 2 both. The game's own navmeshes run under such assets. As a blocker it is left out of generation unless Bake assets cut at runtime is ticked."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Runtime_Cut_Obstacle",
+      "Text": "Obstacle"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Runtime_Cut_Impassable",
+      "Text": "Impassable"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Runtime_Cut_High_Cost",
+      "Text": "High Cost"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Bake_Runtime_Cuts",
+      "Text": "Bake assets cut at runtime"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Bake_Runtime_Cuts_TT",
+      "Text": "Also cut tagged blockers whose asset has a navimeshFlag into the generated navmesh. Off by default: the game cuts the navmesh under them at runtime (Impassable makes the faces impassable, Obstacle and High Cost make them cost more) and lifts the cut when the asset breaks, while a baked hole stays. Tick it for an asset that never breaks or moves and should always be a hole."
     },
     {
       "Key": "MAP_Navigation_Generate_Blockers_Header",

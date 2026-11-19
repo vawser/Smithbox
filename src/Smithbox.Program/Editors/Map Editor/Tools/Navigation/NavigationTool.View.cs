@@ -26,6 +26,11 @@ public partial class NavigationTool
     /// <summary>Set when the blocker tags or the overlay change: the red blocker fill is drawn again.</summary>
     private bool BlockerOverlayDirty;
 
+    private readonly NavigationOverlayRenderer RuntimeCutRenderer = new();
+
+    /// <summary>Set when the overlay or the Runtime cuts layer changes, or a flagged asset moves: the amber fill is drawn again.</summary>
+    private bool RuntimeCutOverlayDirty;
+
     private bool ShowOverlay;
     private NavmeshSet OverlaySet = NavmeshSet.N;
     private float FaceOpacity = 45;
@@ -134,7 +139,12 @@ public partial class NavigationTool
             if (ImGui.Checkbox($"{LOC.Get($"MAP_Navigation_Layer_{layer}")}##navigationLayer_{layer}", ref on))
             {
                 if (on) Layers.Add(layer); else Layers.Remove(layer);
-                OverlayDirty = true;
+
+                // Runtime cuts are drawn by the tool on their own, so the navmesh overlay needn't be built again
+                if (layer == NavOverlayLayer.RuntimeCuts)
+                    RuntimeCutOverlayDirty = true;
+                else
+                    OverlayDirty = true;
             }
             GUI.Tooltip(LOC.Get($"MAP_Navigation_Layer_{layer}_TT"));
         }
@@ -419,6 +429,7 @@ public partial class NavigationTool
         OverlayRenderer.Show(scene, OverlayData, FaceOpacity);
         OverlayBuildCount++;
         BlockerOverlayDirty = true;
+        RuntimeCutOverlayDirty = true;
         GateOverlayDirty = true;
 
         if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry, Bank.Profile) == OverlaySet)
@@ -429,6 +440,7 @@ public partial class NavigationTool
     {
         OverlayRenderer.Clear();
         BlockerRenderer.Clear();
+        RuntimeCutRenderer.Clear();
         HighlightRenderer.Clear();
         GateRenderer.Clear();
         GateDragging = false;
@@ -489,6 +501,7 @@ public partial class NavigationTool
         // A redrawn overlay replaces the old one once it has been drawn
         OverlayRenderer.Update();
         BlockerRenderer.Update();
+        RuntimeCutRenderer.Update();
         HighlightRenderer.Update();
         GateRenderer.Update();
 
@@ -504,6 +517,10 @@ public partial class NavigationTool
         CheckBlockerMoves();
         if (BlockerOverlayDirty)
             UpdateBlockerOverlay();
+
+        CheckRuntimeCutMoves();
+        if (RuntimeCutOverlayDirty)
+            UpdateRuntimeCutOverlay();
 
         // The chosen navmesh's gates, drawn after the overlay they sit on
         if (GateOverlayDirty && !OverlayDirty)
