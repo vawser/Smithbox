@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a hitset in the map." />
+  Wiki="Hitset: a build-time marker named after a collision model (hitset_hAABBCCNN). Usually one tile-sized 512 m box per open-world tile, with smaller boxes for sub-collisions. The game never reads it, so editing it changes nothing in-game. 1,076 regions in retail, all in m60/m61." />
   
   <Field>
     <UnkT00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="An ID from -1 to about 150, shared by the sub-boxes of one collision and roughly sequential across neighbouring tiles. Never read by the game; its meaning is not known." />
   </Field>
   
   <Enums>

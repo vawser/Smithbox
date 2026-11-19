@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Play region (formerly Play Area; the game's CSMsbPointPlayRegion). While the player is inside it, its Play Region ID competes with the Play Region ID of the collision the player stands on. The one with the higher priority wins (a collision always has priority 10). On a tie, the larger ID wins. If either ID is 0, the other one is used. Play regions control multiplayer and related attributes through PlayRegionParam." />
+
+  <Field>
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="The PlayRegionParam row used inside this region. -1: the region is ignored."
+    ParamRef="PlayRegionParam" />
+
+    <Priority
+    AltName="Priority"
+    Wiki="Priority against the collision's play region, which is always 10. Above 10 this region wins; below 10 it only applies where the collision has no play region. Negative: the region is ignored. The game reads it as a signed 16-bit value. Retail mostly uses 100 (331 regions), 0 (235) and 200 (75)." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

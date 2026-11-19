@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="World map re-entry point (formerly Map Point Participation Override; the game's CSWorldMapReentryPointIns; vanilla names: 出場領域). The re-entry area of a map point. It has no data of its own: a Map Point uses it when that point's Re-entry Region Name names this region. Without one, the re-entry area is the Map Point's own shape, expanded by its Re-entry Expand Range fields. Three retail Map Points use one." />
+
+  <Field>
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Fast travel override (formerly Fast Travel Restriction; the game's CSFastTravelOverrideRegionIns). While the player is inside it, its flag replaces the Enable Fast Travel Event Flag ID of the collision underfoot and of MapDefaultInfoParam, so fast travel works only while that flag is ON. Only one retail region uses it, a trap room in m10_00_00_00." />
+
+  <Field>
+    <EnableFastTravelEventFlagID
+    AltName="Enable Fast Travel Event Flag ID"
+    Wiki="Fast travel is allowed inside this region only while this event flag is ON. 0: no override (the collision's or map's flag applies)."
+    FlagAlias="" />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

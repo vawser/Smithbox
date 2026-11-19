@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an environment map output in the map." />
+  Wiki="Mid-range environment map output marker (vanilla: 中景環境マップ出力目印ポイント). A build-time marker for baking mid-range environment maps; the three retail points are at the origin of _10 LOD maps. The game never reads it." />
   
   <Field>
   </Field>

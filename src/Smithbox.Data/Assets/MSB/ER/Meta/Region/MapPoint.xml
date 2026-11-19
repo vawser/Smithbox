@@ -1,39 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a world map point in the map." />
-  
+  <Self
+  Wiki="This map object represents a world map point in the map. It has two areas: the discovery area, where the player discovers the point, and the re-entry area. Each is either a separate region (World Map Discovery Point / World Map Re-entry Point) or this region's own shape expanded by the ranges below." />
+
   <Field>
     <WorldMapPointParamID
     AltName="World Map Point Param ID"
     Wiki="Determines which WorldMapPointParam to use."
     ParamRef="WorldMapPointParam" />
-    
-    <UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="" />
-    
-    <UnkT08
-    AltName="Unknown: 0x8"
-    Wiki="" />
-    
-    <UnkT0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
-    
-    <UnkT10
-    AltName="Unknown: 0x10"
-    Wiki="" />
-    
-    <UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="" />
-    
-    <UnkT18
-    AltName="Unknown: 0x18"
-    Wiki="" />
+
+    <DiscoveryRegionName
+    AltName="Discovery Region"
+    Wiki="A World Map Discovery Point region whose shape becomes this point's discovery area. Empty: the discovery area is this region's shape, expanded by the Discovery Expand Range fields."
+    MapRef="Region-WorldMapDiscoveryPoint" />
+
+    <DiscoveryExpandRangeXZ
+    AltName="Discovery Expand Range (XZ)"
+    Wiki="Horizontal expansion of this region's shape for the discovery area, in metres. Negative: GameSystemCommonParam worldMapPointDiscoveryExpandRange." />
+
+    <DiscoveryExpandRangeY
+    AltName="Discovery Expand Range (Y)"
+    Wiki="Vertical expansion of this region's shape for the discovery area, in metres. Negative: GameSystemCommonParam worldMapPointDiscoveryExpandRange." />
+
+    <ReentryRegionName
+    AltName="Re-entry Region"
+    Wiki="A World Map Re-entry Point region whose shape becomes this point's re-entry area. Empty: the re-entry area is this region's shape, expanded by the Re-entry Expand Range fields."
+    MapRef="Region-WorldMapReentryPoint" />
+
+    <ReentryExpandRangeXZ
+    AltName="Re-entry Expand Range (XZ)"
+    Wiki="Horizontal expansion of this region's shape for the re-entry area, in metres. Negative: GameSystemCommonParam worldMapPointReentryExpandRange." />
+
+    <ReentryExpandRangeY
+    AltName="Re-entry Expand Range (Y)"
+    Wiki="Vertical expansion of this region's shape for the re-entry area, in metres. Negative: GameSystemCommonParam worldMapPointReentryExpandRange." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

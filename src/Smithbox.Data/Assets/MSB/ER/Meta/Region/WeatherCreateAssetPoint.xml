@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a weather asset creation point in the map." />
+  Wiki="Weather asset creation point. WeatherAssetCreateParam CreatePoint0-3 select a point by the 3-digit number at the end of its name, so the name must be exactly WeatherCreateAssetPoint_NNN (27 characters). The weather asset is created at the point's position and rotation. Retail points are in m60_00_00_99 and m61_00_00_99." />
   
   <Field>
   </Field>

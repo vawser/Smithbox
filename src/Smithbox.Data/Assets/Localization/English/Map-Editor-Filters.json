@@ -461,28 +461,28 @@
       "Text": "Group Placement Point"
     },
     {
-      "Key": "MAP_Filters_ER_Map_Point_Discovery_Override",
-      "Text": "Map Point Discovery Override"
+      "Key": "MAP_Filters_ER_World_Map_Discovery_Point",
+      "Text": "World Map Discovery Point"
     },
     {
-      "Key": "MAP_Filters_ER_Map_Point_Participation_Override",
-      "Text": "Map Point Participation Override"
+      "Key": "MAP_Filters_ER_World_Map_Reentry_Point",
+      "Text": "World Map Re-entry Point"
     },
     {
       "Key": "MAP_Filters_ER_Hitset",
       "Text": "Hitset"
     },
     {
-      "Key": "MAP_Filters_ER_Fast_Travel_Restriction",
-      "Text": "Fast Travel Restriction"
+      "Key": "MAP_Filters_ER_Fast_Travel_Override",
+      "Text": "Fast Travel Override"
     },
     {
       "Key": "MAP_Filters_ER_Weather_Create_Asset_Point",
       "Text": "Weather Create Asset Point"
     },
     {
-      "Key": "MAP_Filters_ER_Play_Area",
-      "Text": "Play Area"
+      "Key": "MAP_Filters_ER_Play_Region",
+      "Text": "Play Region"
     },
     {
       "Key": "MAP_Filters_ER_Environment_Map_Output",

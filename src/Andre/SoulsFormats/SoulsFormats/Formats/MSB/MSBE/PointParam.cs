@@ -32,12 +32,12 @@ namespace SoulsFormats
             WeatherOverride = 35,
             AutoDrawGroupPoint = 36,
             GroupPlacementPoint = 37,
-            MapPointDiscoveryOverride = 38,
-            MapPointParticipationOverride = 39,
+            WorldMapDiscoveryPoint = 38,
+            WorldMapReentryPoint = 39,
             Hitset = 40,
-            FastTravelRestriction = 41,
+            FastTravelOverride = 41,
             WeatherCreateAssetPoint = 42,
-            PlayArea = 43,
+            PlayRegion = 43,
             EnvironmentMapOutput = 44,
             RideJump = 46,
             SoundDummy = 48,
@@ -170,12 +170,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.MapPointDiscoveryOverride> MapPointDiscoveryOverrides { get; set; }
+            public List<Region.WorldMapDiscoveryPoint> WorldMapDiscoveryPoints { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.MapPointParticipationOverride> MapPointParticipationOverrides { get; set; }
+            public List<Region.WorldMapReentryPoint> WorldMapReentryPoints { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -185,7 +185,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.FastTravelRestriction> FastTravelRestriction { get; set; }
+            public List<Region.FastTravelOverride> FastTravelOverrides { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -195,7 +195,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.PlayArea> PlayAreas { get; set; }
+            public List<Region.PlayRegion> PlayRegions { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -279,12 +279,12 @@ namespace SoulsFormats
                 WeatherOverrides = new List<Region.WeatherOverride>();
                 AutoDrawGroupPoints = new List<Region.AutoDrawGroupPoint>();
                 GroupPlacementPoints = new List<Region.GroupPlacementPoint>();
-                MapPointDiscoveryOverrides = new List<Region.MapPointDiscoveryOverride>();
-                MapPointParticipationOverrides = new List<Region.MapPointParticipationOverride>();
+                WorldMapDiscoveryPoints = new List<Region.WorldMapDiscoveryPoint>();
+                WorldMapReentryPoints = new List<Region.WorldMapReentryPoint>();
                 Hitsets = new List<Region.Hitset>();
-                FastTravelRestriction = new List<Region.FastTravelRestriction>();
+                FastTravelOverrides = new List<Region.FastTravelOverride>();
                 WeatherCreateAssetPoints = new List<Region.WeatherCreateAssetPoint>();
-                PlayAreas = new List<Region.PlayArea>();
+                PlayRegions = new List<Region.PlayRegion>();
                 EnvironmentMapOutputs = new List<Region.EnvironmentMapOutput>();
                 RideJumps = new List<Region.RideJump>();
                 SoundDummies = new List<Region.SoundDummy>();
@@ -326,12 +326,12 @@ namespace SoulsFormats
                     case Region.WeatherOverride r: WeatherOverrides.Add(r); break;
                     case Region.AutoDrawGroupPoint r: AutoDrawGroupPoints.Add(r); break;
                     case Region.GroupPlacementPoint r: GroupPlacementPoints.Add(r); break;
-                    case Region.MapPointDiscoveryOverride r: MapPointDiscoveryOverrides.Add(r); break;
-                    case Region.MapPointParticipationOverride r: MapPointParticipationOverrides.Add(r); break;
+                    case Region.WorldMapDiscoveryPoint r: WorldMapDiscoveryPoints.Add(r); break;
+                    case Region.WorldMapReentryPoint r: WorldMapReentryPoints.Add(r); break;
                     case Region.Hitset r: Hitsets.Add(r); break;
-                    case Region.FastTravelRestriction r: FastTravelRestriction.Add(r); break;
+                    case Region.FastTravelOverride r: FastTravelOverrides.Add(r); break;
                     case Region.WeatherCreateAssetPoint r: WeatherCreateAssetPoints.Add(r); break;
-                    case Region.PlayArea r: PlayAreas.Add(r); break;
+                    case Region.PlayRegion r: PlayRegions.Add(r); break;
                     case Region.EnvironmentMapOutput r: EnvironmentMapOutputs.Add(r); break;
                     case Region.RideJump r: RideJumps.Add(r); break;
                     case Region.SoundDummy r: SoundDummies.Add(r); break;
@@ -363,8 +363,8 @@ namespace SoulsFormats
                     Connections, PatrolRoute22s, BuddySummonPoints, RollingObjectOverrides, MufflingBoxes,
                     MufflingPortals, SoundRegions, MufflingPlanes, PatrolRoutes,
                     MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupPlacementPoints,
-                    MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
-                    FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
+                    WorldMapDiscoveryPoints, WorldMapReentryPoints, Hitsets,
+                    FastTravelOverrides, WeatherCreateAssetPoints, PlayRegions, EnvironmentMapOutputs,
                     RideJumps, SoundDummies, FallPreventionRemovals, NavmeshCuttings, MapPlaceNameOverrides,
                     RideJumpoffs, DisableHorseOverrides, DlcRideJumps, DlcRideJumpoffs, Others);
             }
@@ -441,23 +441,23 @@ namespace SoulsFormats
                     case RegionType.GroupPlacementPoint:
                         return GroupPlacementPoints.EchoAdd(new Region.GroupPlacementPoint(br));
 
-                    case RegionType.MapPointDiscoveryOverride:
-                        return MapPointDiscoveryOverrides.EchoAdd(new Region.MapPointDiscoveryOverride(br));
+                    case RegionType.WorldMapDiscoveryPoint:
+                        return WorldMapDiscoveryPoints.EchoAdd(new Region.WorldMapDiscoveryPoint(br));
 
-                    case RegionType.MapPointParticipationOverride:
-                        return MapPointParticipationOverrides.EchoAdd(new Region.MapPointParticipationOverride(br));
+                    case RegionType.WorldMapReentryPoint:
+                        return WorldMapReentryPoints.EchoAdd(new Region.WorldMapReentryPoint(br));
 
                     case RegionType.Hitset:
                         return Hitsets.EchoAdd(new Region.Hitset(br));
 
-                    case RegionType.FastTravelRestriction:
-                        return FastTravelRestriction.EchoAdd(new Region.FastTravelRestriction(br));
+                    case RegionType.FastTravelOverride:
+                        return FastTravelOverrides.EchoAdd(new Region.FastTravelOverride(br));
 
                     case RegionType.WeatherCreateAssetPoint:
                         return WeatherCreateAssetPoints.EchoAdd(new Region.WeatherCreateAssetPoint(br));
 
-                    case RegionType.PlayArea:
-                        return PlayAreas.EchoAdd(new Region.PlayArea(br));
+                    case RegionType.PlayRegion:
+                        return PlayRegions.EchoAdd(new Region.PlayRegion(br));
 
                     case RegionType.EnvironmentMapOutput:
                         return EnvironmentMapOutputs.EchoAdd(new Region.EnvironmentMapOutput(br));
@@ -1841,34 +1841,44 @@ namespace SoulsFormats
                 public int WorldMapPointParamID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// A WorldMapDiscoveryPoint region that replaces this point's discovery area. Empty: the discovery
+                /// area is this region's shape, expanded by DiscoveryExpandRangeXZ / DiscoveryExpandRangeY.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string DiscoveryRegionName { get; set; }
+                private int DiscoveryRegionIndex { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Horizontal expansion of the shape for the discovery area. Negative: GameSystemCommonParam
+                /// worldMapPointDiscoveryExpandRange.
                 /// </summary>
-                public float UnkT08 { get; set; }
+                public float DiscoveryExpandRangeXZ { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Vertical expansion of the shape for the discovery area. Negative: GameSystemCommonParam
+                /// worldMapPointDiscoveryExpandRange.
                 /// </summary>
-                public float UnkT0C { get; set; }
+                public float DiscoveryExpandRangeY { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// A WorldMapReentryPoint region that replaces this point's re-entry area. Empty: the re-entry
+                /// area is this region's shape, expanded by ReentryExpandRangeXZ / ReentryExpandRangeY.
                 /// </summary>
-                public int UnkT10 { get; set; }
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string ReentryRegionName { get; set; }
+                private int ReentryRegionIndex { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Horizontal expansion of the shape for the re-entry area. Negative: GameSystemCommonParam
+                /// worldMapPointReentryExpandRange.
                 /// </summary>
-                public float UnkT14 { get; set; }
+                public float ReentryExpandRangeXZ { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Vertical expansion of the shape for the re-entry area. Negative: GameSystemCommonParam
+                /// worldMapPointReentryExpandRange.
                 /// </summary>
-                public float UnkT18 { get; set; }
+                public float ReentryExpandRangeY { get; set; } = -1;
 
                 /// <summary>
                 /// Creates a MapPoint with default values.
@@ -1880,25 +1890,39 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     WorldMapPointParamID = br.ReadInt32();
-                    UnkT04 = br.ReadInt32();
-                    UnkT08 = br.ReadSingle();
-                    UnkT0C = br.ReadSingle();
-                    UnkT10 = br.ReadInt32();
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadSingle();
+                    DiscoveryRegionIndex = br.ReadInt32();
+                    DiscoveryExpandRangeXZ = br.ReadSingle();
+                    DiscoveryExpandRangeY = br.ReadSingle();
+                    ReentryRegionIndex = br.ReadInt32();
+                    ReentryExpandRangeXZ = br.ReadSingle();
+                    ReentryExpandRangeY = br.ReadSingle();
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(WorldMapPointParamID);
-                    bw.WriteInt32(UnkT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteSingle(UnkT0C);
-                    bw.WriteInt32(UnkT10);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteSingle(UnkT18);
+                    bw.WriteInt32(DiscoveryRegionIndex);
+                    bw.WriteSingle(DiscoveryExpandRangeXZ);
+                    bw.WriteSingle(DiscoveryExpandRangeY);
+                    bw.WriteInt32(ReentryRegionIndex);
+                    bw.WriteSingle(ReentryExpandRangeXZ);
+                    bw.WriteSingle(ReentryExpandRangeY);
                     bw.WriteInt32(0);
+                }
+
+                internal override void GetNames(Entries entries)
+                {
+                    base.GetNames(entries);
+                    DiscoveryRegionName = MSB.FindName(entries.Regions, DiscoveryRegionIndex);
+                    ReentryRegionName = MSB.FindName(entries.Regions, ReentryRegionIndex);
+                }
+
+                internal override void GetIndices(Entries entries)
+                {
+                    base.GetIndices(entries);
+                    DiscoveryRegionIndex = MSB.FindIndex(this, entries.Regions, DiscoveryRegionName);
+                    ReentryRegionIndex = MSB.FindIndex(this, entries.Regions, ReentryRegionName);
                 }
             }
 
@@ -2124,39 +2148,44 @@ namespace SoulsFormats
                 }
             }
             /// <summary>
-            /// Unknown.
+            /// The exe's CSWorldMapDiscoveryPointIns (formerly MapPointDiscoveryOverride): the area in which the
+            /// player discovers a map point. A MapPoint uses it when its DiscoveryRegionName names this region;
+            /// otherwise the game expands the MapPoint's own shape.
             /// </summary>
-            public class MapPointDiscoveryOverride : Region
+            public class WorldMapDiscoveryPoint : Region
             {
-                private protected override RegionType Type => RegionType.MapPointDiscoveryOverride;
+                private protected override RegionType Type => RegionType.WorldMapDiscoveryPoint;
                 private protected override bool HasTypeData => false;
 
                 /// <summary>
-                /// Creates an MapPointDiscoveryOverride with default values.
+                /// Creates an WorldMapDiscoveryPoint with default values.
                 /// </summary>
-                public MapPointDiscoveryOverride() : base($"{nameof(Region)}: {nameof(MapPointDiscoveryOverride)}") { }
+                public WorldMapDiscoveryPoint() : base($"{nameof(Region)}: {nameof(WorldMapDiscoveryPoint)}") { }
 
-                internal MapPointDiscoveryOverride(BinaryReaderEx br) : base(br) { }
+                internal WorldMapDiscoveryPoint(BinaryReaderEx br) : base(br) { }
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSWorldMapReentryPointIns (formerly MapPointParticipationOverride; vanilla: 出場領域). The
+            /// re-entry area of a map point. A MapPoint uses it when its ReentryRegionName names this region;
+            /// otherwise the game expands the MapPoint's own shape.
             /// </summary>
-            public class MapPointParticipationOverride : Region
+            public class WorldMapReentryPoint : Region
             {
-                private protected override RegionType Type => RegionType.MapPointParticipationOverride;
+                private protected override RegionType Type => RegionType.WorldMapReentryPoint;
                 private protected override bool HasTypeData => false;
 
                 /// <summary>
-                /// Creates an MapPointParticipationOverride with default values.
+                /// Creates an WorldMapReentryPoint with default values.
                 /// </summary>
-                public MapPointParticipationOverride() : base($"{nameof(Region)}: {nameof(MapPointParticipationOverride)}") { }
+                public WorldMapReentryPoint() : base($"{nameof(Region)}: {nameof(WorldMapReentryPoint)}") { }
 
-                internal MapPointParticipationOverride(BinaryReaderEx br) : base(br) { }
+                internal WorldMapReentryPoint(BinaryReaderEx br) : base(br) { }
             }
 
             /// <summary>
-            /// Unknown.
+            /// A build-time marker named after a collision model (hitset_hAABBCCNN), usually one tile-sized box per
+            /// open-world tile. Never read by the game.
             /// </summary>
             public class Hitset : Region
             {
@@ -2164,7 +2193,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown set ID (-1 to ~150), shared by the sub-boxes of one collision. Never read by the game.
                 /// </summary>
                 public int UnkT00 { get; set; }
 
@@ -2187,40 +2216,43 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Region that disables fast travel.
+            /// The exe's CSFastTravelOverrideRegionIns (formerly FastTravelRestriction): while the player is inside it,
+            /// its flag replaces the EnableFastTravelEventFlagID of the collision and of MapDefaultInfoParam.
             /// </summary>
-            public class FastTravelRestriction : Region
+            public class FastTravelOverride : Region
             {
-                private protected override RegionType Type => RegionType.FastTravelRestriction;
+                private protected override RegionType Type => RegionType.FastTravelOverride;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Disables fast travel when flag is OFF.
+                /// Fast travel is allowed only while this event flag is ON. 0: no override.
                 /// </summary>
-                public uint EventFlagID { get; set; }
+                public uint EnableFastTravelEventFlagID { get; set; }
 
                 /// <summary>
-                /// Creates a FastTravelRestriction with default values.
+                /// Creates a FastTravelOverride with default values.
                 /// </summary>
-                public FastTravelRestriction() : base($"{nameof(Region)}: {nameof(FastTravelRestriction)}") { }
+                public FastTravelOverride() : base($"{nameof(Region)}: {nameof(FastTravelOverride)}") { }
 
-                internal FastTravelRestriction(BinaryReaderEx br) : base(br) { }
+                internal FastTravelOverride(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EventFlagID = br.ReadUInt32();
+                    EnableFastTravelEventFlagID = br.ReadUInt32();
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteUInt32(EventFlagID);
+                    bw.WriteUInt32(EnableFastTravelEventFlagID);
                     bw.WriteInt32(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// A spawn point for weather assets. WeatherAssetCreateParam CreatePoint0-3 pick it by the 3-digit suffix
+            /// of its name, which must be exactly "WeatherCreateAssetPoint_NNN"; the asset is created at its position
+            /// and rotation. The type data is never read.
             /// </summary>
             public class WeatherCreateAssetPoint : Region
             {
@@ -2246,45 +2278,52 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// The exe's CSMsbPointPlayRegion (formerly PlayArea): inside it, its PlayRegionID competes with the
+            /// PlayRegionID of the collision the player stands on. The one with the higher priority wins (collisions
+            /// have a fixed priority of 10); a tie goes to the larger ID.
             /// </summary>
-            public class PlayArea : Region
+            public class PlayRegion : Region
             {
-                private protected override RegionType Type => RegionType.PlayArea;
+                private protected override RegionType Type => RegionType.PlayRegion;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// The PlayRegionParam row used inside this region. -1: the region is ignored.
                 /// </summary>
-                public int PlayRegionID { get; set; }
+                [MSBParamReference(ParamName = "PlayRegionParam")]
+                public int PlayRegionID { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown.
+                /// Priority against the collision's play region, whose priority is always 10. Negative: the region is
+                /// ignored. The game reads it as a signed short.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public short Priority { get; set; }
 
                 /// <summary>
-                /// Creates a PlayArea with default values.
+                /// Creates a PlayRegion with default values.
                 /// </summary>
-                public PlayArea() : base($"{nameof(Region)}: {nameof(PlayArea)}") { }
+                public PlayRegion() : base($"{nameof(Region)}: {nameof(PlayRegion)}") { }
 
-                internal PlayArea(BinaryReaderEx br) : base(br) { }
+                internal PlayRegion(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     PlayRegionID = br.ReadInt32();
-                    UnkT04 = br.ReadInt32();
+                    Priority = br.ReadInt16();
+                    br.AssertInt16(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(PlayRegionID);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt16(Priority);
+                    bw.WriteInt16(0);
                 }
             }
 
             /// <summary>
-            /// Unknown.
+            /// Mid-range environment map output marker (vanilla: 中景環境マップ出力目印ポイント). A build-time marker in
+            /// the _10 LOD maps; never read by the game.
             /// </summary>
             public class EnvironmentMapOutput : Region
             {
