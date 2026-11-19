@@ -109,6 +109,7 @@
     <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />
     <PackageReference Include="Hexa.NET.ImNodes" Version="2.2.7" />
     <PackageReference Include="Hexa.NET.ImPlot" Version="2.2.7" />
+    <PackageReference Include="Iced" Version="1.21.0" />
   </ItemGroup>
 
   <ItemGroup>

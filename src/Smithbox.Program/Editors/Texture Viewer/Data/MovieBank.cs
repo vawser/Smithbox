@@ -37,6 +37,9 @@ public class MovieBank
     /// <summary>The project's Scaleform Configuration (placeholder substitutes for the preview).</summary>
     public MovieConfiguration Configuration;
 
+    /// <summary>The Scaleform Reloader, when the project's game has offsets for it (else null).</summary>
+    public ScaleformReloader Reloader;
+
     public void Setup()
     {
         var entries = new Dictionary<FileDictionaryEntry, MovieContents>();
@@ -60,6 +63,9 @@ public class MovieBank
         ProjectFiles = projectFiles;
 
         Configuration.Load();
+
+        var offsets = ScaleformReloadOffsets.Load(Project);
+        Reloader = offsets.Count > 0 ? new ScaleformReloader(Project, offsets) : null;
     }
 
     public bool IsProjectFile(FileDictionaryEntry entry)
@@ -119,6 +125,7 @@ public class MovieBank
     public bool SaveAll()
     {
         var success = true;
+        var saved = new List<string>();
 
         foreach (var movie in ModifiedMovies().ToList())
         {
@@ -127,6 +134,7 @@ public class MovieBank
                 Project.VFS.ProjectFS.WriteFile(movie.Entry.Path, movie.Movie.Write());
                 movie.IsModified = false;
                 ProjectFiles[movie.Entry.Path] = true;
+                saved.Add(movie.Entry.Path);
                 Smithbox.Log(this, LOC.Get("TEXVIEW_Movie_Log_Saved", movie.Entry.Path));
             }
             catch (Exception e)
@@ -134,6 +142,19 @@ public class MovieBank
                 Smithbox.LogError(this, LOC.Get("TEXVIEW_Movie_Log_Save_Failed", movie.Entry.Path), e);
                 success = false;
             }
+        }
+
+        // The Scaleform Reloader: what to reload, and reload now when asked to after every save
+        if (Reloader != null && saved.Count > 0)
+        {
+            lock (Reloader.SavedSinceReload)
+            {
+                foreach (var path in saved)
+                    Reloader.SavedSinceReload.Add(path);
+            }
+
+            if (Reloader.ReloadOnSave)
+                Reloader.Reload(saved);
         }
 
         return success;

@@ -19,6 +19,10 @@ HKLib                     MIT              Licenses/HKLib/LICENSE.txt
 ESDLang                   Apache-2.0       Licenses/ESDLang/LICENSE.txt
 coremats-templates        Apache-2.0       Licenses/coremats-templates/LICENSE.txt
 Tracy Profiler            BSD-3-Clause     Licenses/Tracy Profiler/LICENSE.txt
+gfx-reloader              MIT              Licenses/gfx-reloader/LICENSE.txt
+  Copyright (c) 2026 lugia19. https://github.com/lugia19/gfx-reloader
+  Its reload design, addresses and layouts are ported in the Scaleform Reloader
+  (Texture Viewer, Assets/Scaleform Reloader).
 
 
 Vendored source
@@ -83,6 +87,7 @@ Grpc.AspNetCore, Grpc.Net.Client, Grpc.Core.Api  Apache-2.0  Copyright 2019 The 
 Hexa.NET.ImGui, Hexa.NET.ImGuizmo, Hexa.NET.ImNodes, Hexa.NET.ImPlot  MIT  Copyright (c) 2023 Juna Meinhold
 Hexa.NET.DirectXTex           MIT           Copyright (c) 2022 Juna Meinhold
 HexaGen.Runtime, HexaGen.Runtime.COM  MIT   Copyright (c) 2023 Juna Meinhold
+Iced                          MIT           Copyright (C) 2018-present iced project and contributors. https://github.com/icedland/iced
 McMaster.Extensions.CommandLineUtils  Apache-2.0  Copyright (c) Nate McMaster
 NativeFileDialogSharp         Zlib          milleniumbug
 NativeLibraryLoader           MIT           Copyright (c) Eric Mellino

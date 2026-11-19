@@ -264,6 +264,9 @@ public class TexEditorView : IEditorView
         ContainerList.Update();
         TextureImport.Update();
         TextureList.Update();
+
+        // The Scaleform Reloader's results reach the log even with the Tools window closed (reload after saving)
+        Project.Handler?.TextureData?.PrimaryBank?.Movies?.Reloader?.Drain();
     }
 
     /// <summary>

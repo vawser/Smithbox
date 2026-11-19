@@ -14,6 +14,8 @@ public class TexToolView
 
     public ScaleformConfigurationTool ScaleformConfiguration;
 
+    public ScaleformReloaderTool ScaleformReloader;
+
     private ToolSections Sections = new();
 
     public TexToolView(TexEditorView view, ProjectEntry project)
@@ -23,6 +25,7 @@ public class TexToolView
 
         TextureExport = new TextureExport(view, Project);
         ScaleformConfiguration = new ScaleformConfigurationTool(view, Project);
+        ScaleformReloader = new ScaleformReloaderTool(view, Project);
     }
 
     public void Display()
@@ -46,6 +49,9 @@ public class TexToolView
 
             // Scaleform Configuration (preview substitutes for placeholder images)
             ScaleformConfiguration.OnToolWindow();
+
+            // Scaleform Reloader (reload saved movies in the running game), for games with its offsets
+            ScaleformReloader.OnToolWindow();
         }
 
         Sections.End();
