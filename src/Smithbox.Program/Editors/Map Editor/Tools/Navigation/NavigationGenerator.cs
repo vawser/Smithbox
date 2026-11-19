@@ -14,6 +14,19 @@ namespace StudioCore.Editors.MapEditor;
 // are, with a face tree for its query mediator. Kept free of the rest of Smithbox; NavSurvey `navgen` runs it on the
 // game's collision and compares the result with the game's own navmeshes.
 
+/// <summary>The general shape of generated faces (NavGenParameters.Shape).</summary>
+public enum NavFaceShape
+{
+    /// <summary>Recast's faces cut along a world grid of NavGenParameters.FaceSize: even, square tiles.</summary>
+    Tiles,
+
+    /// <summary>
+    /// Triangles: Recast's own triangulation, edges longer than NavGenParameters.TriangleEdge halved, slivers flipped
+    /// (NavTriangles). Shaped by the walkable area, as the game's navmeshes are.
+    /// </summary>
+    Triangles,
+}
+
 /// <summary>The agent and voxel settings a navmesh is generated with (Recast's, in metres and degrees).</summary>
 public sealed record NavGenParameters
 {
@@ -59,12 +72,47 @@ public sealed record NavGenParameters
     /// </summary>
     public float FaceSize { get; init; } = 2f;
 
+    /// <summary>The general shape of the faces: grid tiles (FaceSize), or triangles of varied size, as the game's are.</summary>
+    public NavFaceShape Shape { get; init; } = NavFaceShape.Tiles;
+
+    /// <summary>
+    /// For the Triangles shape: the longest a triangle's edge may be across, in metres; longer edges are halved (in both
+    /// their faces) until none is. 0 keeps Recast's triangles at their own size, which can be long across open ground.
+    /// </summary>
+    public float TriangleEdge { get; init; } = 6f;
+
     /// <summary>
     /// How far a face may stand off the collision under it, in metres, before it is split so its new corners lie on the
     /// collision; 0 for none. Recast's faces only have corners on their outline, so a mound or dip inside one is lost:
     /// the face cuts flat through it, as the game's navmeshes (which follow the ground) don't.
     /// </summary>
-    public float ContourError { get; init; } = 0.15f;
+    public float ContourError { get; init; } = TilesContourError;
+
+    /// <summary>The contour error the Tiles shape starts with: a fine mesh close to the collision.</summary>
+    public const float TilesContourError = 0.15f;
+
+    /// <summary>
+    /// The contour error the Triangles shape starts with: coarser, so the triangles keep the game's sizes (NavSurvey regen
+    /// diag on m60_33_42_00: median edge 1.70 m as the game's, p90 4.3 m to its 4.1, 15% slivers to its 18%; at 0.15 m
+    /// four times the game's faces, a third of them slivers).
+    /// </summary>
+    public const float TrianglesContourError = 0.4f;
+
+    /// <summary>The contour error a shape starts with.</summary>
+    public static float DefaultContourError(NavFaceShape shape) => shape == NavFaceShape.Triangles ? TrianglesContourError : TilesContourError;
+
+    /// <summary>
+    /// These settings with another face shape: the contour error moves to the new shape's default when it is at the old
+    /// shape's, so a value chosen by hand is kept.
+    /// </summary>
+    public NavGenParameters WithShape(NavFaceShape shape)
+    {
+        if (shape == Shape)
+            return this;
+
+        float contour = ContourError == DefaultContourError(Shape) ? DefaultContourError(shape) : ContourError;
+        return this with { Shape = shape, ContourError = contour };
+    }
 
     /// <summary>The shortest edge the contour split makes, in metres: below it a face is left as it is.</summary>
     public float ContourMinEdge { get; init; } = 0.5f;
@@ -187,6 +235,9 @@ public sealed class NavGenPolygons
 
     public int FlippedEdges { get; init; }
 
+    /// <summary>Edges halved to the triangle edge limit (the Triangles shape).</summary>
+    public int RefinedEdges { get; init; }
+
     public bool Ok => Error == null;
 }
 
@@ -256,7 +307,7 @@ public static class NavigationGenerator
         int regionMin = Math.Max(1, (int)MathF.Round(MathF.Sqrt(p.MinRegionArea) / p.CellSize));
         int regionMerge = Math.Max(1, (int)MathF.Round(MathF.Sqrt(p.MergeRegionArea) / p.CellSize));
         var config = new RcConfig(RcPartition.WATERSHED, p.CellSize, p.CellHeight, p.MaxSlope, p.AgentHeight, p.AgentRadius, p.MaxClimb,
-            regionMin, regionMerge, p.MaxEdgeLength, p.MaxEdgeError, Math.Clamp(p.MaxVerticesPerFace, 3, 6), 6f, 1f,
+            regionMin, regionMerge, p.MaxEdgeLength, p.MaxEdgeError, p.Shape == NavFaceShape.Triangles ? 3 : Math.Clamp(p.MaxVerticesPerFace, 3, 6), 6f, 1f,
             true, true, true, new RcAreaModification(RcRecast.RC_WALKABLE_AREA), false);
 
         RcBuilderResult built;
@@ -315,8 +366,12 @@ public static class NavigationGenerator
 
         var polygons = Polygons(poly, points);
 
-        // Even faces: split along a world grid; the new corners go onto the collision too
-        if (p.FaceSize > 0)
+        // The face shape: triangles refined to the edge limit, or even tiles split along a world grid; new corners go onto
+        // the collision too
+        int refinedEdges = 0, refinedFlips = 0;
+        if (p.Shape == NavFaceShape.Triangles)
+            polygons = NavTriangles.Refine(polygons, surface, p, out refinedEdges, out refinedFlips);
+        else if (p.FaceSize > 0)
         {
             polygons = SplitByGrid(polygons, MathF.Max(0.25f, p.FaceSize));
 
@@ -332,7 +387,16 @@ public static class NavigationGenerator
         // Contour: faces split where the collision under them rises or falls away from them, so they follow the ground
         int contoured = 0;
         if (surface != null && p.ContourError > 0)
+        {
             polygons = Contour(polygons, surface, p, out contoured);
+
+            // Triangles: the contour fans faces from their centres, which leaves slivers; flipped where that stays on the collision
+            if (p.Shape == NavFaceShape.Triangles && contoured > 0)
+            {
+                polygons = NavTriangles.Flip(NavTriangles.Triangulate(polygons), surface, p, out int contourFlips);
+                refinedFlips += contourFlips;
+            }
+        }
 
         // Spill: boundary vertices at a ledge moved out past it, before the cut, so a blocker still trims them
         int spilled = 0;
@@ -367,6 +431,10 @@ public static class NavigationGenerator
             polygons = next;
         }
 
+        // Triangles: the steps after the refinement (spill, borders, cuts) can leave a face of more corners, fanned here
+        if (p.Shape == NavFaceShape.Triangles)
+            polygons = NavTriangles.Triangulate(polygons);
+
         // Simplify, last: short edges collapsed and slivers flipped, the faces kept on the collision and the outline kept
         int simplifiedVertices = 0, flipped = 0;
         if (p.Simplify && polygons.Count > 0)
@@ -379,7 +447,8 @@ public static class NavigationGenerator
         {
             Polygons = polygons, Cuts = cuts, BlockerTriangles = blockerTriangles, InputTriangles = triangles.Count / 3,
             SnappedVertices = snapped, SpilledVertices = spilled, BorderVertices = bordered, ClippedFaces = clipped,
-            ContouredFaces = contoured, SimplifiedVertices = simplifiedVertices, FlippedEdges = flipped,
+            ContouredFaces = contoured, SimplifiedVertices = simplifiedVertices, FlippedEdges = flipped + refinedFlips,
+            RefinedEdges = refinedEdges,
         };
     }
 
@@ -647,7 +716,7 @@ public static class NavigationGenerator
         var blockerTriangles = generated.BlockerTriangles;
         int snapped = generated.SnappedVertices, spilled = generated.SpilledVertices, clipped = generated.ClippedFaces, bordered = generated.BorderVertices;
 
-        var mesh = BuildMesh(polygons, template, createMesh, p.TrianglesOnly, out int dropped);
+        var mesh = BuildMesh(polygons, template, createMesh, p.TrianglesOnly || p.Shape == NavFaceShape.Triangles, out int dropped);
 
         // Self-check: vertices and face centres still inside a cut (should be none)
         int insideCut = 0;

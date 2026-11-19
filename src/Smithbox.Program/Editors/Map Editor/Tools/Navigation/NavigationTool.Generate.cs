@@ -203,7 +203,11 @@ public partial class NavigationTool
     /// <summary>Whether each set's settings are shown; closed by default, as the defaults suit most uses.</summary>
     private readonly Dictionary<string, bool> ShowGenerateSettings = new();
 
-    private NavGenParameters DisplayGenerateParameters(string id, string title, NavGenParameters p, NavGenParameters defaults)
+    /// <param name="linksOverride">
+    /// Set where the caller decides whether links are made (the Regenerate tab's own link checkboxes): the Links checkbox
+    /// is hidden, the link settings are shown when it is true, and the settings' own Links value is kept as it is.
+    /// </param>
+    private NavGenParameters DisplayGenerateParameters(string id, string title, NavGenParameters p, NavGenParameters defaults, bool? linksOverride = null)
     {
         // Settings: the title says when they differ from the defaults, so a folded change is still seen
         GUI.Spacer();
@@ -221,10 +225,16 @@ public partial class NavigationTool
         float faceSize = p.FaceSize, spill = p.Spill, contour = p.ContourError, contourEdge = p.ContourMinEdge;
         bool trianglesOnly = p.TrianglesOnly, simplify = p.Simplify;
         float simplifyError = p.SimplifyError;
+        float cellHeight = p.CellHeight, minRegion = p.MinRegionArea, mergeRegion = p.MergeRegionArea, edgeError = p.MaxEdgeError;
+        int maxCorners = p.MaxVerticesPerFace;
+        bool snap = p.SnapToCollision;
 
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateCell_{id}", ref cell, 0.1f, 1f, $"{LOC.Get("MAP_Navigation_Generate_Cell")} %.2f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Cell_TT"));
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat($"##navigationGenerateCellHeight_{id}", ref cellHeight, 0.02f, 0.5f, $"{LOC.Get("MAP_Navigation_Generate_Cell_Height")} %.2f m");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Cell_Height_TT"));
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateRadius_{id}", ref radius, 0f, 2f, $"{LOC.Get("MAP_Navigation_Generate_Radius")} %.2f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Radius_TT"));
@@ -241,10 +251,52 @@ public partial class NavigationTool
         ImGui.SliderFloat($"##navigationGenerateEdge_{id}", ref edge, 0f, 30f, $"{LOC.Get("MAP_Navigation_Generate_Edge")} %.1f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Edge_TT"));
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat($"##navigationGenerateFaceSize_{id}", ref faceSize, 0f, 10f, faceSize <= 0 ? LOC.Get("MAP_Navigation_Generate_Face_Size_Off") : $"{LOC.Get("MAP_Navigation_Generate_Face_Size")} %.1f m");
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Face_Size_TT"));
-        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Triangles_Only")}##navigationGenerateTriangles_{id}", ref trianglesOnly);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
+        ImGui.SliderFloat($"##navigationGenerateEdgeError_{id}", ref edgeError, 0.1f, 3f, $"{LOC.Get("MAP_Navigation_Generate_Edge_Error")} %.2f m");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Edge_Error_TT"));
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat($"##navigationGenerateMinRegion_{id}", ref minRegion, 0f, 50f, $"{LOC.Get("MAP_Navigation_Generate_Min_Region")} %.1f m²");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Min_Region_TT"));
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat($"##navigationGenerateMergeRegion_{id}", ref mergeRegion, 0f, 200f, $"{LOC.Get("MAP_Navigation_Generate_Merge_Region")} %.1f m²");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Merge_Region_TT"));
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Snap")}##navigationGenerateSnap_{id}", ref snap);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Snap_TT"));
+
+        // The face shape: tiles (the grid, Recast's corners per face, triangles or not) or triangles (their edge limit)
+        var shape = p.Shape;
+        float triangleEdge = p.TriangleEdge;
+        string ShapeName(NavFaceShape s) => s == NavFaceShape.Triangles
+            ? LOC.Get("MAP_Navigation_Generate_Shape_Triangles") : LOC.Get("MAP_Navigation_Generate_Shape_Tiles");
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo($"##navigationGenerateShape_{id}", $"{LOC.Get("MAP_Navigation_Generate_Shape")}: {ShapeName(shape)}"))
+        {
+            foreach (var s in new[] { NavFaceShape.Tiles, NavFaceShape.Triangles })
+            {
+                if (ImGui.Selectable($"{ShapeName(s)}##navigationGenerateShape_{id}_{s}", s == shape))
+                    shape = s;
+                GUI.Tooltip(LOC.Get(s == NavFaceShape.Triangles ? "MAP_Navigation_Generate_Shape_Triangles_TT" : "MAP_Navigation_Generate_Shape_Tiles_TT"));
+            }
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Shape_TT"));
+
+        if (shape == NavFaceShape.Triangles)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateTriangleEdge_{id}", ref triangleEdge, 0f, 30f, triangleEdge <= 0 ? LOC.Get("MAP_Navigation_Generate_Triangle_Edge_Off") : $"{LOC.Get("MAP_Navigation_Generate_Triangle_Edge")} %.1f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangle_Edge_TT"));
+        }
+        else
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderInt($"##navigationGenerateMaxCorners_{id}", ref maxCorners, 3, 6, $"{LOC.Get("MAP_Navigation_Generate_Max_Corners")} %d");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Max_Corners_TT"));
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateFaceSize_{id}", ref faceSize, 0f, 10f, faceSize <= 0 ? LOC.Get("MAP_Navigation_Generate_Face_Size_Off") : $"{LOC.Get("MAP_Navigation_Generate_Face_Size")} %.1f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Face_Size_TT"));
+            ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Triangles_Only")}##navigationGenerateTriangles_{id}", ref trianglesOnly);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
+        }
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateContour_{id}", ref contour, 0f, 1f, contour <= 0 ? LOC.Get("MAP_Navigation_Generate_Contour_Off") : $"{LOC.Get("MAP_Navigation_Generate_Contour")} %.2f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Contour_TT"));
@@ -270,13 +322,13 @@ public partial class NavigationTool
         // Only where links are user edges in the mesh; DS3, BB and SDT build theirs from setups
         bool links = p.Links && Bank.Profile.HasMeshUserEdges;
         float jumpHeight = p.JumpHeight, fallHeight = p.FallHeight, reach = p.LinkReach;
-        if (Bank.Profile.HasMeshUserEdges)
+        if (Bank.Profile.HasMeshUserEdges && linksOverride == null)
         {
             ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Links")}##navigationGenerateLinks_{id}", ref links);
             GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Links_TT"));
         }
 
-        if (links)
+        if (linksOverride ?? links)
         {
             ImGui.SetNextItemWidth(-1);
             ImGui.SliderFloat($"##navigationGenerateJumpHeight_{id}", ref jumpHeight, 0f, 5f, jumpHeight <= 0 ? LOC.Get("MAP_Navigation_Generate_Jump_Height_Off") : $"{LOC.Get("MAP_Navigation_Generate_Jump_Height")} %.1f m");
@@ -292,10 +344,16 @@ public partial class NavigationTool
         p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge,
             FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly, Spill = spill < 0.01f ? 0 : spill,
             ContourError = contour < 0.01f ? 0 : contour, ContourMinEdge = contourEdge, Simplify = simplify, SimplifyError = simplifyError,
-            Links = links, JumpHeight = jumpHeight < 0.05f ? 0 : jumpHeight, FallHeight = fallHeight, LinkReach = reach };
+            Links = linksOverride == null ? links : p.Links, JumpHeight = jumpHeight < 0.05f ? 0 : jumpHeight, FallHeight = fallHeight, LinkReach = reach,
+            CellHeight = Math.Clamp(cellHeight, 0.02f, 0.5f), MinRegionArea = MathF.Max(0, minRegion), MergeRegionArea = MathF.Max(0, mergeRegion),
+            MaxEdgeError = Math.Clamp(edgeError, 0.1f, 3f), MaxVerticesPerFace = Math.Clamp(maxCorners, 3, 6), SnapToCollision = snap,
+            TriangleEdge = triangleEdge < 0.5f ? 0 : triangleEdge };
+
+        // A new shape brings its own contour error, unless one was chosen by hand
+        p = p.WithShape(shape);
 
         if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Reset")}##navigationGenerateReset_{id}"))
-            p = defaults;
+            p = defaults.WithShape(p.Shape);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Reset_TT"));
 
         return p;

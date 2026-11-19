@@ -1609,6 +1609,54 @@
       "Text": "The steepest slope a character walks up."
     },
     {
+      "Key": "MAP_Navigation_Generate_Cell_Height",
+      "Text": "Cell height"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Cell_Height_TT",
+      "Text": "The vertical size of a voxel. Smaller places the faces closer to the collision's height and tells steps apart more finely, and takes more memory."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Edge_Error",
+      "Text": "Max edge error"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Edge_Error_TT",
+      "Text": "How far a simplified boundary may stray from the voxels' outline. Smaller follows walls and ledges more closely, with more corners; larger cuts corners, and keeps the mesh further in from where the collision ends."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Min_Region",
+      "Text": "Min region area"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Min_Region_TT",
+      "Text": "Islands of walkable area smaller than this are dropped: the tops of rocks, crates and props no one can reach. 0 keeps every island."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Merge_Region",
+      "Text": "Merge region area"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Merge_Region_TT",
+      "Text": "Regions smaller than this are merged into their neighbours before the faces are made, so a floor gives fewer, larger regions. It changes how Recast's faces are laid out, not what is covered."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Max_Corners",
+      "Text": "Max corners per face"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Max_Corners_TT",
+      "Text": "The most corners a face Recast makes may have, 3 to 6. 3 gives triangles only; more gives fewer, larger faces. The face grid and the contour split can cut them further."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Snap",
+      "Text": "Snap to collision"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Snap_TT",
+      "Text": "Move each vertex onto the collision surface just below or above it, as the game's navmeshes sit. Off, vertices stay at the voxels' heights, up to a cell height off the collision, and the contour split is not made (it needs the collision surface)."
+    },
+    {
       "Key": "MAP_Navigation_Generate_Edge",
       "Text": "Max edge length"
     },
@@ -1619,6 +1667,42 @@
     {
       "Key": "MAP_Navigation_Generate_Face_Size",
       "Text": "Face size"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Shape",
+      "Text": "Face shape"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Shape_TT",
+      "Text": "The general shape of the generated faces. Tiles cuts the mesh along a world grid into even squares. Triangles keeps the shape of the walkable area, as the game's navmeshes do: larger triangles across open ground, smaller ones along edges and bumps."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Shape_Tiles",
+      "Text": "Tiles"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Shape_Tiles_TT",
+      "Text": "Faces cut along a world grid of the face size: even tiles, the same everywhere."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Shape_Triangles",
+      "Text": "Triangles"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Shape_Triangles_TT",
+      "Text": "Recast's own triangles, with edges longer than the max triangle edge halved and thin slivers turned onto their other diagonal where that gives fatter triangles that still lie on the collision."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Triangle_Edge",
+      "Text": "Max triangle edge"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Triangle_Edge_Off",
+      "Text": "Max triangle edge: off (Recast's size)"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Triangle_Edge_TT",
+      "Text": "The longest a triangle's edge may be across. Longer edges are halved, in both faces on them, until none is longer. Smaller gives more, smaller triangles; 0 keeps Recast's triangles at their own size, which can be long and thin across open ground. Coverage doesn't change."
     },
     {
       "Key": "MAP_Navigation_Generate_Face_Size_Off",
@@ -1662,7 +1746,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Contour_TT",
-      "Text": "How far a face may stand off the collision under it before it is split, in metres. The generated faces have corners only where their outline turns, so a mound or dip inside one is lost and the face cuts flat through it; the game's navmeshes follow the ground. With this on, faces are split, and their new corners put onto the collision, until no edge middle or face centre is further off than this. Lower follows the ground more closely, with more faces. Off keeps the flat faces."
+      "Text": "How far a face may stand off the collision under it before it is split, in metres. The generated faces have corners only where their outline turns, so a mound or dip inside one is lost and the face cuts flat through it; the game's navmeshes follow the ground. With this on, faces are split, and their new corners put onto the collision, until no edge middle or face centre is further off than this. Lower follows the ground more closely, with more faces. Off keeps the flat faces.\nStarts at 0.15 m for Tiles and 0.4 m for Triangles (which then keeps sizes close to the game's triangles); changing the face shape moves it to the new shape's value unless it was changed by hand."
     },
     {
       "Key": "MAP_Navigation_Generate_Contour_Edge",
@@ -1734,7 +1818,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Reset_TT",
-      "Text": "Puts this set's settings back to the defaults."
+      "Text": "Puts this set's settings back to the defaults, for the face shape chosen."
     },
     {
       "Key": "MAP_Navigation_Generate_Running",

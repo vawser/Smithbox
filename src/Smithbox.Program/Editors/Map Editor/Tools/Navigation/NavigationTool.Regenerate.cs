@@ -122,6 +122,12 @@ public partial class NavigationTool
             GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Related_Tiles_TT"));
         }
 
+        // The Generate group's settings of each set, shared with it; whether links are made is this group's choice above
+        bool userEdges = navigation.Profile.HasMeshUserEdges;
+        GenerateN = DisplayGenerateParameters("regenN", LOC.Get("MAP_Navigation_Generate_Set_N"), GenerateN, NavGenParameters.DefaultN, RegenLinksN && userEdges);
+        if (navigation.Profile.HasOSet)
+            GenerateO = DisplayGenerateParameters("regenO", LOC.Get("MAP_Navigation_Generate_Set_O"), GenerateO, NavGenParameters.DefaultO, RegenLinksO && userEdges);
+
         if (Regenerating)
         {
             GUI.WrappedText(LOC.Get("MAP_Navigation_Regenerate_Running"));
