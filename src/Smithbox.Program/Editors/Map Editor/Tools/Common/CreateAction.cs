@@ -397,6 +397,48 @@ public class CreateAction
     }
 
     /// <summary>
+    /// Whether an object of the type can be created in the map: a part, region or event class the game's MSB can
+    /// save, or a light when the map has a BTL to put it in (the targeted one, or its only one).
+    /// </summary>
+    public bool CanCreate(Type type, MapContainer map)
+    {
+        if (type == null || map == null)
+            return false;
+
+        if (type == typeof(BTL.Light))
+            return ResolveTargetBtl(map) != null;
+
+        return PartsClasses.Any(e => e.Item2 == type) ||
+               RegionClasses.Any(e => e.Item2 == type) ||
+               EventClasses.Any(e => e.Item2 == type);
+    }
+
+    /// <summary>
+    /// Creates an object of the type in the map, at the placement orb, selected, as the Create tool does.
+    /// Used by the Map Data window's New button. Returns null if the type can't be created there.
+    /// </summary>
+    public MsbEntity CreateInMap(Type type, MapContainer map)
+    {
+        if (!CanCreate(type, map))
+            return null;
+
+        MsbEntity created;
+
+        if (type == typeof(BTL.Light))
+            created = AddNewEntity(type, MsbEntityType.Light, map, ResolveTargetBtl(map));
+        else if (PartsClasses.Any(e => e.Item2 == type))
+            created = AddNewEntity(type, MsbEntityType.Part, map);
+        else if (RegionClasses.Any(e => e.Item2 == type))
+            created = AddNewEntity(type, MsbEntityType.Region, map);
+        else
+            created = AddNewEntity(type, MsbEntityType.Event, map);
+
+        View.DelayPicking();
+
+        return created;
+    }
+
+    /// <summary>
     /// The first of the named part classes the game's MSB can save (e.g. "Asset", then "Object"), or null.
     /// </summary>
     public Type GetPartClass(params string[] names)

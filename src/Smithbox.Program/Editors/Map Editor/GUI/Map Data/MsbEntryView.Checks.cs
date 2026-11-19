@@ -64,6 +64,8 @@ public partial class MsbEntryView
             AddFirstDuplicates(map);
         }
 
+        RebuildOverview(map);
+
         // Models aren't map objects, so their uses are the parts that place them
         var partsByModel = new Dictionary<string, int>(StringComparer.Ordinal);
 
@@ -263,6 +265,41 @@ public partial class MsbEntryView
 
         DisplayToggle("entryFollowSelection", Icons.Crosshairs, ref CFG.Current.MapDataEditor_EntryView_Follow_Selection,
             "Follow selection: an entity selected in the viewport or Map Content is shown here, switching category if needed.");
+
+        DisplayNewButton();
+    }
+
+    /// <summary>
+    /// Creates an entry of the selected category at the placement orb, as the Create tool does
+    /// </summary>
+    private void DisplayNewButton()
+    {
+        var map = Selection.SelectedMap;
+        var type = Selection.SelectedSubCategoryType;
+        var canCreate = Selection.IsEntityCategory && View.CreateAction.CanCreate(type, map);
+
+        ImGui.SameLine();
+
+        ImGui.BeginDisabled(!canCreate);
+
+        if (ImGui.Button($"{Icons.Plus}##entryNew", DPI.IconButtonSize))
+        {
+            View.CreateAction.CreateInMap(type, map);
+        }
+
+        ImGui.EndDisabled();
+
+        // Shown while disabled too, as that is when it says why
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+        {
+            var text = type == null
+                ? "New: select a category to create an entry of its type."
+                : canCreate
+                    ? $"New {Selection.SelectedSubCategory}: creates one in {map.Name} at the placement orb, and selects it. Can be undone."
+                    : $"New: entries of {Selection.SelectedSubCategory} can't be created here (only the part, region and event types the game saves, and lights in a map with a BTL).";
+
+            ImGui.SetTooltip(text);
+        }
     }
 
     private static void DisplayToggle(string id, string icon, ref bool value, string tooltip)

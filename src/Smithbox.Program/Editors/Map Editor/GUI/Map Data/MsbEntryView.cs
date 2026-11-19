@@ -110,7 +110,7 @@ public partial class MsbEntryView
 
         if (Selection.SelectedSubCategoryType is null)
         {
-            ImGui.TextDisabled("No category selected.");
+            DisplayOverview();
         }
         else if (_cachedEntries.Count == 0)
         {
