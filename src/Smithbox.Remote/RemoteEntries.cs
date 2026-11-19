@@ -584,8 +584,11 @@ public static partial class RemoteControl
         }
 
         into.Names = (HashSet<string>)it.GetField("Names")!.GetValue(index);
-        into.CodeModels = (HashSet<string>)it.GetField("CodeModels")!.GetValue(index);
-        into.CodeByModel = (Dictionary<string, string>)it.GetField("CodeByModel")!.GetValue(index);
+        // Only in builds with the baked map code fallback; without them no part is reported as onlyFallback
+        into.CodeModels = it.GetField("CodeModels")?.GetValue(index) as HashSet<string>
+                          ?? new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        into.CodeByModel = it.GetField("CodeByModel")?.GetValue(index) as Dictionary<string, string>
+                           ?? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         into.Atlas = (Dictionary<string, List<BTAB.Entry>>)t.GetMethod("GetAtlasEntries", any)!.Invoke(null, new object[] { target });
     }
 

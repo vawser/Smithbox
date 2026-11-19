@@ -135,8 +135,10 @@ placements and replay it elsewhere.
 - Bloodborne under llvmpipe: with `Viewport_Render_Mode 1` the image can turn white while distance, volumetric and BB fog are on.
 - Modal Smithbox dialogs block the remote control. Builds that have `LightAtlasResolver.DefaultEntryAnswerOverride` let part
   commands answer the light atlas question (`addAtlas=`) without a dialog.
-- Optional members, used when the Smithbox build has them: `SceneRenderPipeline.MapEnvCubeName` (`envCube` in `status`) and
-  `DolLightmapBank.ModelLightFactor` (`lm-preview`, otherwise it reports that it is not supported).
+- Optional members, used when the Smithbox build has them: `SceneRenderPipeline.MapEnvCubeName` (`envCube` in `status`),
+  `DolLightmapBank.ModelLightFactor` (`lm-preview`, otherwise it reports that it is not supported) and the baked map code
+  fallback of the lightmap index (`onlyFallback` in `lightmap-check`/`inspect`). Both commands read the lightmap index's
+  private members by reflection and may need an update when Smithbox changes it.
 
 ## Security
 
