@@ -92,8 +92,6 @@
     - Scan for unused animations
     - Animation Builder: builds new animation from combo of animations
     - FBX to HKX
-    - Add behavior registration for TAE entry (automatically setup in behavior based on ID patterns)
-        - Include option to do so on TAE.Animation entry too
         
 #----------------------------------------------------
 # Havok Editor TODO

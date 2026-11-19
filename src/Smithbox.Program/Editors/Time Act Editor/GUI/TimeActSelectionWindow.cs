@@ -409,9 +409,41 @@ public class TimeActSelectionWindow
 
         var copy = entry.Duplicate(source.FormatTimeActName(bindIndex), bindIndex);
 
-        View.ViewportActionManager.ExecuteAction(new TimeActAddEntryAction(View, source, copy));
+        // The animation files it uses go with it, renamed to its category, so it has animations of its own
+        TimeActDuplicateAnimationFiles.Result files;
+
+        try
+        {
+            files = TimeActDuplicateAnimationFiles.Prepare(source, entry, copy);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_AnimationWindow_Read_Failed", source.Name), e);
+            files = new TimeActDuplicateAnimationFiles.Result();
+        }
+
+        var add = new TimeActAddEntryAction(View, source, copy);
+
+        if (files.Actions.Count == 0)
+        {
+            View.ViewportActionManager.ExecuteAction(add);
+        }
+        else
+        {
+            // One undo takes back the time act and its files
+            var actions = new List<ViewportAction> { add };
+            actions.AddRange(files.Actions);
+
+            View.ViewportActionManager.ExecuteAction(new TimeActCompoundAction(actions,
+                LOC.Get("TAE_History_Duplicate_TimeAct_Files", entry.Name, copy.Name, files.Copied)));
+        }
 
         Smithbox.Log(this, LOC.Get("TAE_SelectionWindow_Duplicated", entry.Name, copy.Name));
+
+        if (files.Copied + files.Kept + files.Missing + files.Retargeted > 0)
+        {
+            Smithbox.Log(this, LOC.Get("TAE_Duplicate_Files_Done", copy.Name, files.Copied, files.Retargeted, files.Kept, files.Missing));
+        }
     }
 
     public static string GetExportFolderLabel()

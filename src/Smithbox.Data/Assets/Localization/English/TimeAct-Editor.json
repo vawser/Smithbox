@@ -3089,6 +3089,9 @@
     { "Key": "TAE_Register_Unsupported_Game", "Text": "Register in Behavior supports Elden Ring, Nightreign, Dark Souls III and Sekiro." },
     { "Key": "TAE_Register_No_Behavior", "Text": "{0} has no behbnd." },
     { "Key": "TAE_Register_Load_Failed", "Text": "Register in Behavior: time act {0} couldn't be read." },
+    { "Key": "TAE_History_Duplicate_TimeAct_Files", "Text": "Duplicate time act {0} as {1} ({2} animation files)" },
+    { "Key": "TAE_Duplicate_Files_Done", "Text": "{0}: copied {1} animation files to its category, pointed {2} imports at the copies, kept {3} files the category already had, {4} files not found. The files are written when the time act is saved." },
+    { "Key": "TAE_Duplicate_Files_Shared_Set", "Text": "{0} plays another character's animations, so the duplicated time act doesn't get animation files of its own." },
     {
       "Key": "TAE_Command_Select_Source_Scanning",
       "Text": "{0} isn't listed in the Time Act Editor yet, as its sources are still being found. Try again in a moment."
