@@ -2678,6 +2678,38 @@
       "Text": "Join the new navmeshes' open border edges to the loaded neighbour maps through their NVC files, as the Stitch tab does."
     },
     {
+      "Key": "MAP_Navigation_Regenerate_Snap_Borders",
+      "Text": "Keep borders with neighbours"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Snap_Borders_TT",
+      "Text": "Move the new navmesh's border vertices onto the edges the current navmesh joins to other maps (its NVC connections). Recast keeps the mesh the agent radius and up to the max edge error in from where the collision ends, too far apart for the re-stitch to join it to the neighbour's edge again. Only vertices on a boundary edge along such an edge, and close to it, move."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Borders_Done",
+      "Text": "Borders: n {0} edges joined to other maps, {1} new vertices moved onto them; o {2}, {3}."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Neighbours_Not_Loaded",
+      "Text": "The connections with these maps were removed and not made again, as they aren't loaded (or Join loaded neighbours is off): {0}. Load them and use the Stitch tab, or undo, load them and regenerate."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Related_Tiles",
+      "Text": "Include parent and neighbour tile assets"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Related_Tiles_TT",
+      "Text": "Also build from the collision of the assets in the loaded maps that overlap this tile: its _01 and _02 parent tiles (where the game places large assets that span several tiles) and the eight small tiles around it (assets reaching over the border). Their collision is cut to this tile's area, so the navmesh stays on the tile. Load the parent tiles in the Map Editor first; the result names any that aren't loaded."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Related_Done",
+      "Text": "From the parent and neighbour tiles: {0} assets with collision on this tile ({1}); {2} cut at runtime left out."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Related_Not_Loaded",
+      "Text": "Not loaded, so their assets were left out: {0}."
+    },
+    {
       "Key": "MAP_Navigation_Regenerate",
       "Text": "Regenerate Map"
     },

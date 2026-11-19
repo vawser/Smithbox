@@ -27,6 +27,8 @@ public partial class NavigationTool
     private bool RegenLinksN = true;
     private bool RegenLinksO;
     private bool RegenKeepLinks = true;
+    private bool RegenRelatedTiles = true;
+    private bool RegenSnapBorders = true;
     private bool Regenerating;
     private string RegenMessage;
     private bool RegenMessageIsError;
@@ -85,6 +87,14 @@ public partial class NavigationTool
         }
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Regenerate_Stitch")}##navigationRegenStitch", ref RegenStitch);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Stitch_TT"));
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Regenerate_Snap_Borders")}##navigationRegenBorders", ref RegenSnapBorders);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Snap_Borders_TT"));
+
+        if (IsSmallTile(map.Name))
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Regenerate_Related_Tiles")}##navigationRegenRelated", ref RegenRelatedTiles);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Related_Tiles_TT"));
+        }
 
         if (Regenerating)
         {
@@ -130,6 +140,7 @@ public partial class NavigationTool
             KeepFaceData = RegenKeepFaceData,
             DeriveFaceData = RegenDeriveFaceData,
             StitchNeighbours = RegenStitch,
+            SnapBorders = RegenSnapBorders,
         };
 
         // The map's high collision as the game places it: each collision part's model (its h file in the map's binder),
@@ -172,6 +183,9 @@ public partial class NavigationTool
         int unplaced = View.HavokCollisionBank.MapCollisions.TryGetValue(map.Name, out var listed)
             ? listed.Count(n => n.StartsWith("h", StringComparison.OrdinalIgnoreCase) && !placedFiles.Contains(n)) : 0;
 
+        // The tile's own area: where its collision lies, across, before any asset is added
+        var ownBounds = XZBounds(input.Triangles);
+
         // Every asset of the map, placed, with its own collision; those the game cuts at runtime are left out
         int assets = 0, cutAtRuntime = 0;
         foreach (var entity in map.Objects)
@@ -196,6 +210,11 @@ public partial class NavigationTool
             input.Add(local.Select(p => Vector3.Transform(p, placement)).ToList(), -1);
             assets++;
         }
+
+        // An open world small tile: the assets of its parent (_01), ancestor (_02) and adjacent small tiles, cut to the tile
+        string relatedMessage = null;
+        if (RegenRelatedTiles && IsSmallTile(map.Name))
+            relatedMessage = AddRelatedTileAssets(map, input, ownBounds);
 
         if (missing.Count > 0)
             Smithbox.Log(this, LOC.Get("MAP_Navigation_Generate_Missing", string.Join(", ", missing.Distinct())));
@@ -290,10 +309,191 @@ public partial class NavigationTool
                     result.Replaced, result.Added, result.Removed,
                     result.Connections, result.CrossMapConnections, result.Gates, (n?.Links ?? 0) + (o?.Links ?? 0),
                     result.NodeBankFacesKept, result.NodeBankFacesDropped, (n?.LinksKept ?? 0) + (o?.LinksKept ?? 0), unplaced)
-                    + (result.Skipped.Count > 0 ? " " + LOC.Get("MAP_Navigation_Regenerate_Skipped", string.Join(", ", result.Skipped)) : "");
-                RegenMessageIsError = false;
+                    + (result.Skipped.Count > 0 ? " " + LOC.Get("MAP_Navigation_Regenerate_Skipped", string.Join(", ", result.Skipped)) : "")
+                    + (relatedMessage != null ? " " + relatedMessage : "")
+                    + (input.SnapBorders ? " " + LOC.Get("MAP_Navigation_Regenerate_Borders_Done",
+                        n?.Borders ?? 0, n?.BorderVertices ?? 0, o?.Borders ?? 0, o?.BorderVertices ?? 0) : "")
+                    + (result.NeighboursNotLoaded.Count > 0 ? " " + LOC.Get("MAP_Navigation_Regenerate_Neighbours_Not_Loaded", string.Join(", ", result.NeighboursNotLoaded)) : "");
+                RegenMessageIsError = result.NeighboursNotLoaded.Count > 0;
             });
         });
+    }
+
+    /// <summary>Half a small open world tile's width: its origin is its centre (NavStitchPlanner.TileOffset).</summary>
+    private const float HalfTile = 128f;
+
+    /// <summary>An open world small tile (m60_XX_YY_00, _10 and the like): the scale digit is 0.</summary>
+    private static bool IsSmallTile(string mapId)
+        => NavigationMap.IsOpenWorld(mapId) && mapId.Length == 12 && mapId[11] == '0'
+           && int.TryParse(mapId.AsSpan(4, 2), out _) && int.TryParse(mapId.AsSpan(7, 2), out _);
+
+    /// <summary>
+    /// Whether another open world map overlaps a small tile: its parent (scale 1, 2 × 2 tiles) or ancestor (scale 2,
+    /// 4 × 4 tiles) of the same area and version digit, or an adjacent small tile (the eight around it).
+    /// </summary>
+    private static bool IsRelatedTile(string tile, string other, out bool isParent)
+    {
+        isParent = false;
+        if (other == tile || !NavigationMap.IsOpenWorld(other) || other.Length != 12 || other[..3] != tile[..3] || other[10] != tile[10]
+            || !int.TryParse(other.AsSpan(4, 2), out int ox) || !int.TryParse(other.AsSpan(7, 2), out int oz))
+            return false;
+
+        int x = int.Parse(tile.AsSpan(4, 2)), z = int.Parse(tile.AsSpan(7, 2));
+        switch (other[11])
+        {
+            case '0': return Math.Abs(ox - x) <= 1 && Math.Abs(oz - z) <= 1;
+            case '1': isParent = true; return ox == x / 2 && oz == z / 2;
+            case '2': isParent = true; return ox == x / 4 && oz == z / 4;
+            default: return false;
+        }
+    }
+
+    /// <summary>
+    /// Adds the collision of the assets of the loaded maps that overlap a small tile (its _01 parent, _02 ancestor and
+    /// adjacent small tiles), cut to the tile's area across: the large assets the game places in the parent tiles lie on
+    /// the tile too, and an asset of a neighbour can reach over the border. Each is placed by its part in its own map, then
+    /// moved by the offset between the two tiles' origins, so it doesn't rely on how the editor placed the loaded maps.
+    /// Assets without collision (most of the parents' are visual only) are skipped quietly. Returns the line for the
+    /// result message, naming parents that exist but aren't loaded.
+    /// </summary>
+    private string AddRelatedTileAssets(MapContainer map, NavRegenInput input, (Vector2 Min, Vector2 Max)? ownBounds)
+    {
+        // The tile's collision, else the tile's square
+        var (min, max) = ownBounds ?? (new Vector2(-HalfTile), new Vector2(HalfTile));
+
+        int added = 0, cutAtRuntime = 0;
+        var used = new List<string>();
+        var loadedParents = new HashSet<string>();
+
+        foreach (var other in LoadedMaps())
+        {
+            if (!IsRelatedTile(map.Name, other.Name, out bool isParent) || NavStitchPlanner.TileOffset(map.Name, other.Name) is not Vector3 offset)
+                continue;
+
+            if (isParent)
+                loadedParents.Add(other.Name);
+
+            if (!Matrix4x4.Invert(other.RootObject.GetWorldMatrix(), out var toOtherSpace))
+                toOtherSpace = Matrix4x4.Identity;
+            var toThisSpace = toOtherSpace * Matrix4x4.CreateTranslation(offset);
+
+            int fromThis = 0;
+            foreach (var entity in other.Objects)
+            {
+                if (entity is not MsbEntity part || !EntityHelper.IsPartAsset(part) || EntityHelper.IsPartDummyAsset(part) || SourceOf(part) is not GenerateSource source)
+                    continue;
+
+                if (RegenSkipRuntimeCuts && RuntimeCutFlag(source) != 0)
+                {
+                    cutAtRuntime++;
+                    continue;
+                }
+
+                var local = SourceTriangles(source);
+                if (local == null || local.Count == 0)
+                    continue;
+
+                var placement = part.GetWorldMatrix() * toThisSpace;
+                var clipped = ClipXZ(local.Select(p => Vector3.Transform(p, placement)).ToList(), min, max);
+                if (clipped.Count == 0)
+                    continue;
+
+                input.Add(clipped, -1);
+                fromThis++;
+            }
+
+            if (fromThis > 0)
+            {
+                used.Add($"{other.Name} ({fromThis})");
+                added += fromThis;
+            }
+        }
+
+        // The parents the game has for this tile that aren't loaded: their assets are missing from the input
+        var existing = View.Project.Locator.MapFiles.Entries.Select(e => e.Filename).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var notLoaded = existing.Where(id => IsRelatedTile(map.Name, id, out bool parent) && parent && !loadedParents.Contains(id)).OrderBy(id => id).ToList();
+
+        var message = LOC.Get("MAP_Navigation_Regenerate_Related_Done", added, used.Count > 0 ? string.Join(", ", used) : "-", cutAtRuntime);
+        if (notLoaded.Count > 0)
+            message += " " + LOC.Get("MAP_Navigation_Regenerate_Related_Not_Loaded", string.Join(", ", notLoaded));
+        return message;
+    }
+
+    /// <summary>The bounds across (X, Z) of a list of points, or null for none.</summary>
+    private static (Vector2 Min, Vector2 Max)? XZBounds(IReadOnlyList<Vector3> points)
+    {
+        if (points.Count == 0)
+            return null;
+
+        var min = new Vector2(float.MaxValue);
+        var max = new Vector2(float.MinValue);
+        foreach (var p in points)
+        {
+            min = Vector2.Min(min, new Vector2(p.X, p.Z));
+            max = Vector2.Max(max, new Vector2(p.X, p.Z));
+        }
+        return (min, max);
+    }
+
+    /// <summary>
+    /// Triangles (three points each) cut to a box across (X, Z), with any height: those inside kept as they are, those
+    /// across its sides cut along them (Sutherland-Hodgman) and fanned back into triangles, those outside dropped.
+    /// </summary>
+    private static List<Vector3> ClipXZ(List<Vector3> triangles, Vector2 min, Vector2 max)
+    {
+        var result = new List<Vector3>();
+        var polygon = new List<Vector3>(9);
+        var next = new List<Vector3>(9);
+
+        for (int t = 0; t + 2 < triangles.Count; t += 3)
+        {
+            var a = triangles[t];
+            var b = triangles[t + 1];
+            var c = triangles[t + 2];
+            float x0 = MathF.Min(a.X, MathF.Min(b.X, c.X)), x1 = MathF.Max(a.X, MathF.Max(b.X, c.X));
+            float z0 = MathF.Min(a.Z, MathF.Min(b.Z, c.Z)), z1 = MathF.Max(a.Z, MathF.Max(b.Z, c.Z));
+
+            if (x1 < min.X || x0 > max.X || z1 < min.Y || z0 > max.Y)
+                continue;
+
+            if (x0 >= min.X && x1 <= max.X && z0 >= min.Y && z1 <= max.Y)
+            {
+                result.Add(a); result.Add(b); result.Add(c);
+                continue;
+            }
+
+            polygon.Clear();
+            polygon.Add(a); polygon.Add(b); polygon.Add(c);
+
+            // The four sides: (axis 0 = X, 1 = Z; keep the side where sign * (value - limit) >= 0)
+            foreach (var (axis, limit, sign) in new[] { (0, min.X, 1f), (0, max.X, -1f), (1, min.Y, 1f), (1, max.Y, -1f) })
+            {
+                next.Clear();
+                for (int i = 0; i < polygon.Count; i++)
+                {
+                    var p = polygon[i];
+                    var q = polygon[(i + 1) % polygon.Count];
+                    float dp = sign * ((axis == 0 ? p.X : p.Z) - limit);
+                    float dq = sign * ((axis == 0 ? q.X : q.Z) - limit);
+
+                    if (dp >= 0)
+                        next.Add(p);
+                    if ((dp >= 0) != (dq >= 0))
+                        next.Add(Vector3.Lerp(p, q, dp / (dp - dq)));
+                }
+
+                (polygon, next) = (next, polygon);
+                if (polygon.Count < 3)
+                    break;
+            }
+
+            for (int i = 1; i + 1 < polygon.Count; i++)
+            {
+                result.Add(polygon[0]); result.Add(polygon[i]); result.Add(polygon[i + 1]);
+            }
+        }
+
+        return result;
     }
 
     /// <summary>

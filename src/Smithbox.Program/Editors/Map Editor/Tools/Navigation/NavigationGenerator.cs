@@ -71,6 +71,13 @@ public sealed record NavGenParameters
     /// <summary>Add jump and fall links between faces across gaps and down drops (NavLinkGenerator).</summary>
     public bool Links { get; init; }
 
+    /// <summary>
+    /// Lines the navmesh must reach, in its space: the edges joined to another map (a tile border). Recast keeps the mesh
+    /// the agent radius and up to the max edge error in from where the collision ends, too far for a stitch, so boundary
+    /// vertices just inside one, on an edge along it, are moved onto it. Null or empty for none.
+    /// </summary>
+    public IReadOnlyList<(Vector3 A, Vector3 B)> Borders { get; init; }
+
     /// <summary>A link whose ends differ in height by no more than this, either way, is a jump, both ways; 0 for none.</summary>
     public float JumpHeight { get; init; } = 2.5f;
 
@@ -113,6 +120,9 @@ public sealed class NavGenResult
 
     public int SnappedVertices { get; init; }
 
+    /// <summary>Boundary vertices moved onto a border line (NavGenParameters.Borders).</summary>
+    public int BorderVertices { get; init; }
+
     /// <summary>Boundary vertices moved out past a ledge by the spill.</summary>
     public int SpilledVertices { get; init; }
 
@@ -146,6 +156,7 @@ public sealed class NavGenPolygons
     public int InputTriangles { get; init; }
     public int SnappedVertices { get; init; }
     public int SpilledVertices { get; init; }
+    public int BorderVertices { get; init; }
     public int ClippedFaces { get; init; }
 
     public bool Ok => Error == null;
@@ -295,6 +306,11 @@ public static class NavigationGenerator
         if (p.Spill > 0)
             polygons = SpillOverLedges(polygons, surface ?? new SurfaceGrid(triangles, 4f), triangles, blockerTriangles, p, out spilled);
 
+        // Borders: boundary vertices just inside an edge joined to another map moved onto it, so the stitch joins them again
+        int bordered = 0;
+        if (p.Borders is { Count: > 0 })
+            polygons = SnapToBorders(polygons, p, out bordered);
+
         // The hard cut, last, so nothing after it moves a corner back into a box: every face clipped against every
         // widened box
         int clipped = 0;
@@ -324,8 +340,114 @@ public static class NavigationGenerator
         return new NavGenPolygons
         {
             Polygons = polygons, Cuts = cuts, BlockerTriangles = blockerTriangles, InputTriangles = triangles.Count / 3,
-            SnappedVertices = snapped, SpilledVertices = spilled, ClippedFaces = clipped,
+            SnappedVertices = snapped, SpilledVertices = spilled, BorderVertices = bordered, ClippedFaces = clipped,
         };
+    }
+
+    /// <summary>
+    /// The faces with their boundary vertices moved onto the border lines (NavGenParameters.Borders) they lie just inside
+    /// of. A boundary vertex moves when one of its boundary edges runs along a border (within about 25°) and the vertex is
+    /// within the agent radius, the max edge error and a voxel and a half of it across (and a climb and a half in height);
+    /// it goes straight across onto the border's line, its height kept, so the edge lands where the other map's edge is.
+    /// Every face with the vertex takes the move; a face that bends in after it goes in as triangles, one with no area goes.
+    /// </summary>
+    private static List<List<Vector3>> SnapToBorders(List<List<Vector3>> polygons, NavGenParameters p, out int moved)
+    {
+        moved = 0;
+        float reach = p.AgentRadius + p.MaxEdgeError + p.CellSize * 1.5f;
+        float height = p.MaxClimb * 1.5f;
+        const float Along = 0.9f;
+
+        var edges = new HashSet<(Vector3, Vector3)>();
+        foreach (var polygon in polygons)
+            for (int k = 0; k < polygon.Count; k++)
+                edges.Add((polygon[k], polygon[(k + 1) % polygon.Count]));
+
+        var borders = p.Borders
+            .Select(b => (b.A, b.B, Dir: new Vector2(b.B.X - b.A.X, b.B.Z - b.A.Z)))
+            .Where(b => b.Dir.LengthSquared() > 1e-6f)
+            .Select(b => (b.A, b.B, Dir: Vector2.Normalize(b.Dir), Length: Vector2.Distance(new Vector2(b.A.X, b.A.Z), new Vector2(b.B.X, b.B.Z))))
+            .ToList();
+
+        // The border a point lies close to across, with its edge's direction along it: the move onto its line, or null
+        Vector3? Onto(Vector3 v, Vector2 edgeDir)
+        {
+            Vector3? best = null;
+            float bestD = reach;
+            var q = new Vector2(v.X, v.Z);
+            foreach (var (a, b, dir, length) in borders)
+            {
+                if (MathF.Abs(Vector2.Dot(dir, edgeDir)) < Along)
+                    continue;
+
+                var a2 = new Vector2(a.X, a.Z);
+                float t = Vector2.Dot(q - a2, dir);
+                if (t < -reach || t > length + reach)
+                    continue;
+
+                float y = a.Y + (b.Y - a.Y) * Math.Clamp(t / length, 0, 1);
+                if (MathF.Abs(v.Y - y) > height)
+                    continue;
+
+                var foot = a2 + dir * t;
+                float d = Vector2.Distance(q, foot);
+                if (d < bestD)
+                {
+                    bestD = d;
+                    best = new Vector3(foot.X, v.Y, foot.Y);
+                }
+            }
+            return best;
+        }
+
+        var moves = new Dictionary<Vector3, Vector3>();
+        foreach (var polygon in polygons)
+        {
+            for (int k = 0; k < polygon.Count; k++)
+            {
+                var a = polygon[k];
+                var b = polygon[(k + 1) % polygon.Count];
+                if (edges.Contains((b, a)))
+                    continue;
+
+                var dir = new Vector2(b.X - a.X, b.Z - a.Z);
+                if (dir.LengthSquared() < 1e-8f)
+                    continue;
+                dir = Vector2.Normalize(dir);
+
+                // Both ends onto the same line, or neither, so the edge stays along the border
+                if (Onto(a, dir) is Vector3 ta && Onto(b, dir) is Vector3 tb)
+                {
+                    moves.TryAdd(a, ta);
+                    moves.TryAdd(b, tb);
+                }
+            }
+        }
+
+        if (moves.Count == 0)
+            return polygons;
+
+        moved = moves.Count(m => Vector3.DistanceSquared(m.Key, m.Value) > 1e-8f);
+        var result = new List<List<Vector3>>(polygons.Count);
+        foreach (var polygon in polygons)
+        {
+            if (!polygon.Any(moves.ContainsKey))
+            {
+                result.Add(polygon);
+                continue;
+            }
+
+            var shifted = polygon.Select(q => moves.TryGetValue(q, out var to) ? to : q).ToList();
+            if (AreaXZ(shifted) <= 1e-4f)
+                continue;
+
+            if (ConvexXZ(shifted))
+                result.Add(shifted);
+            else
+                result.AddRange(EarClip(shifted));
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -348,7 +470,7 @@ public static class NavigationGenerator
         var polygons = generated.Polygons;
         var cuts = generated.Cuts;
         var blockerTriangles = generated.BlockerTriangles;
-        int snapped = generated.SnappedVertices, spilled = generated.SpilledVertices, clipped = generated.ClippedFaces;
+        int snapped = generated.SnappedVertices, spilled = generated.SpilledVertices, clipped = generated.ClippedFaces, bordered = generated.BorderVertices;
 
         var mesh = BuildMesh(polygons, template, createMesh, p.TrianglesOnly, out int dropped);
 
@@ -381,7 +503,7 @@ public static class NavigationGenerator
             }
         }
 
-        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, SpilledVertices = spilled, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped, JumpLinks = jumps, FallLinks = falls };
+        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, SpilledVertices = spilled, BorderVertices = bordered, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped, JumpLinks = jumps, FallLinks = falls };
     }
 
     /// <summary>

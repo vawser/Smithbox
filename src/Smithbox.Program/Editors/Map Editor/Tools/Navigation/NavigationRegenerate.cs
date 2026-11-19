@@ -61,6 +61,12 @@ public sealed class NavRegenInput
     /// <summary>Join the new navmeshes to the loaded neighbours through their NVC files (open edges only).</summary>
     public bool StitchNeighbours { get; set; } = true;
 
+    /// <summary>
+    /// Pull the new border back onto the edges the current navmesh joins to other maps (NavGenParameters.Borders), as
+    /// Recast keeps it the agent radius and more in from where the collision ends, too far for the re-stitch.
+    /// </summary>
+    public bool SnapBorders { get; set; } = true;
+
     public void Add(IReadOnlyList<Vector3> triangles, int source, IReadOnlyList<uint> materials = null)
     {
         for (int t = 0; t + 2 < triangles.Count; t += 3)
@@ -95,6 +101,10 @@ public sealed class NavRegenSetReport
     public int CutEdges { get; set; }
     public int FaceDataKept { get; set; }
     public int FaceDataDerived { get; set; }
+
+    /// <summary>The edges joined to other maps before, used as border lines, and the new vertices moved onto them.</summary>
+    public int Borders { get; set; }
+    public int BorderVertices { get; set; }
 }
 
 /// <summary>The outcome of a regeneration: the file changes, the NVA and NVC changes, and what was made.</summary>
@@ -121,6 +131,9 @@ public sealed class NavRegenResult
     public int NodeBankFacesKept { get; set; }
     public int NodeBankFacesDropped { get; set; }
     public int CrossMapConnections { get; set; }
+
+    /// <summary>Maps whose connections with this one were removed and not made again, as they weren't loaded.</summary>
+    public List<string> NeighboursNotLoaded { get; } = new();
 
     /// <summary>The map as it is after the regeneration (the NVA and NVC objects are the input map's, edited in place).</summary>
     public NavigationMap Map { get; set; }
@@ -208,7 +221,11 @@ public static class NavRegenerate
             var report = new NavRegenSetReport();
             result.Sets[set] = report;
 
-            var generated = NavigationGenerator.Generate(input.Triangles, p with { Links = false }, templateMesh);
+            // The edges joined to other maps now: the new mesh's border is pulled back onto them, so the re-stitch finds them
+            var borders = input.SnapBorders ? CurrentBorders(map, set) : new List<(Vector3, Vector3)>();
+            report.Borders = borders.Count;
+
+            var generated = NavigationGenerator.Generate(input.Triangles, p with { Links = false, Borders = borders }, templateMesh);
             if (!generated.Ok)
             {
                 result.Error = generated.Error;
@@ -217,6 +234,7 @@ public static class NavRegenerate
 
             var whole = generated.Mesh;
             report.Generated = whole.m_faces.Count;
+            report.BorderVertices = generated.BorderVertices;
 
             // Links on the whole mesh, for reachability, and later kept within each model
             var links = p.Links ? NavLinkGenerator.Find(whole, input.Triangles, p).Links : new List<NavUserEdgeLink>();
@@ -367,7 +385,14 @@ public static class NavRegenerate
         {
             bool isA = nvc.MapA == map.MapId, isB = nvc.MapB == map.MapId;
             if (nvc.Nvc.Connectors.RemoveAll(c => (isA && names.Contains(c.MainNameID)) || (isB && names.Contains(c.TargetNameID))) > 0)
+            {
                 result.Changes.NvcsChanged.Add(nvc);
+
+                // The re-stitch below joins only loaded neighbours: this one's connections are gone until it is stitched
+                var other = nvc.Opposite(map.MapId);
+                if (other != map.MapId && (!input.StitchNeighbours || neighbour?.Invoke(other)?.Nva == null) && !result.NeighboursNotLoaded.Contains(other))
+                    result.NeighboursNotLoaded.Add(other);
+            }
         }
         foreach (var entry in map.Nva.Navmeshes)
             entry.GateNodes.Clear();
@@ -562,6 +587,49 @@ public static class NavRegenerate
                 list.Add((Middle(k), Middle(back), !oneWay, data));
             }
         }
+        return list;
+    }
+
+    /// <summary>
+    /// The edges of a set's navmeshes that the map's NVC files join to another map, in map space, each once: where the
+    /// tile's navmesh meets its neighbours'. The map's edges are an NVC connection's main side when it is the file's first
+    /// map, its opposite side when it is the second.
+    /// </summary>
+    private static List<(Vector3 A, Vector3 B)> CurrentBorders(NavigationMap map, NavmeshSet set)
+    {
+        var byName = NavigationOverlayBuilder.EntriesOf(map, set).GroupBy(e => e.NameID).ToDictionary(g => g.Key, g => g.First());
+        var seen = new HashSet<(int, int)>();
+        var list = new List<(Vector3, Vector3)>();
+
+        void Add(int nameId, int edgeIndex)
+        {
+            if (!seen.Add((nameId, edgeIndex)) || !byName.TryGetValue(nameId, out var entry) || map.FileOf(entry)?.Mesh is not IHavokNavMeshEdit mesh
+                || edgeIndex < 0 || edgeIndex >= mesh.m_edges.Count)
+                return;
+
+            var toMap = NavigationMap.EntryToMap(entry);
+            var edge = mesh.m_edges[edgeIndex];
+            if (edge.m_a < 0 || edge.m_a >= mesh.m_vertices.Count || edge.m_b < 0 || edge.m_b >= mesh.m_vertices.Count)
+                return;
+            var a = mesh.m_vertices[edge.m_a];
+            var b = mesh.m_vertices[edge.m_b];
+            list.Add((Vector3.Transform(new Vector3(a.X, a.Y, a.Z), toMap), Vector3.Transform(new Vector3(b.X, b.Y, b.Z), toMap)));
+        }
+
+        foreach (var nvc in map.Nvcs)
+        {
+            bool isA = nvc.MapA == map.MapId, isB = nvc.MapB == map.MapId;
+            if (isA == isB)
+                continue;
+
+            foreach (var connector in nvc.Nvc.Connectors)
+                foreach (var c in connector.NavMeshConnections)
+                {
+                    if (isA) Add(connector.MainNameID, c.EdgeIndex);
+                    else Add(connector.TargetNameID, c.OppositeEdgeIndex);
+                }
+        }
+
         return list;
     }
 

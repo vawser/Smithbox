@@ -43,8 +43,6 @@
 
 - Improve Map Data view: mainly properties
 
-- Check: range select in Map Contents tree doesn't respect filter
-
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------
