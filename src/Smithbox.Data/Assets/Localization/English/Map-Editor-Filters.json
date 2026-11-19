@@ -421,8 +421,8 @@
       "Text": "Buddy Summon Point"
     },
     {
-      "Key": "MAP_Filters_ER_Disable_Tumbleweed",
-      "Text": "Disable Tumbleweed"
+      "Key": "MAP_Filters_ER_Rolling_Object_Override",
+      "Text": "Rolling Object Override"
     },
     {
       "Key": "MAP_Filters_ER_Muffling_Box",

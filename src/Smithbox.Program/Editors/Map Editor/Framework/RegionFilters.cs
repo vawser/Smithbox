@@ -84,7 +84,7 @@ public class RegionFilters
         { typeof(MSBE.Region.Connection), "MAP_Filters_ER_Connection" },
         { typeof(MSBE.Region.PatrolRoute22), "MAP_Filters_ER_Patrol_Route_22" },
         { typeof(MSBE.Region.BuddySummonPoint), "MAP_Filters_ER_Buddy_Summon_Point" },
-        { typeof(MSBE.Region.DisableTumbleweed), "MAP_Filters_ER_Disable_Tumbleweed" },
+        { typeof(MSBE.Region.RollingObjectOverride), "MAP_Filters_ER_Rolling_Object_Override" },
         { typeof(MSBE.Region.MufflingBox), "MAP_Filters_ER_Muffling_Box" },
         { typeof(MSBE.Region.MufflingPortal), "MAP_Filters_ER_Muffling_Portal" },
         { typeof(MSBE.Region.SoundRegion), "MAP_Filters_ER_Sound_Region" },

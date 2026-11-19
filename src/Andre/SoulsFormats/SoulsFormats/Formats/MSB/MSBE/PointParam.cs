@@ -22,7 +22,7 @@ namespace SoulsFormats
             Connection = 21,
             PatrolRoute22 = 22,
             BuddySummonPoint = 26,
-            DisableTumbleweed = 27,
+            RollingObjectOverride = 27,
             MufflingBox = 28,
             MufflingPortal = 29,
             SoundRegion = 30,
@@ -117,9 +117,9 @@ namespace SoulsFormats
             public List<Region.BuddySummonPoint> BuddySummonPoints { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Regions that change which RollingObjLotParam row rolling objects spawn from.
             /// </summary>
-            public List<Region.DisableTumbleweed> DisableTumbleweeds { get; set; }
+            public List<Region.RollingObjectOverride> RollingObjectOverrides { get; set; }
 
             /// <summary>
             /// Areas where sound is muffled.
@@ -269,7 +269,7 @@ namespace SoulsFormats
                 Connections = new List<Region.Connection>();
                 PatrolRoute22s = new List<Region.PatrolRoute22>();
                 BuddySummonPoints = new List<Region.BuddySummonPoint>();
-                DisableTumbleweeds = new List<Region.DisableTumbleweed>();
+                RollingObjectOverrides = new List<Region.RollingObjectOverride>();
                 MufflingBoxes = new List<Region.MufflingBox>();
                 MufflingPortals = new List<Region.MufflingPortal>();
                 SoundRegions = new List<Region.SoundRegion>();
@@ -342,7 +342,7 @@ namespace SoulsFormats
                     case Region.HorseRideOverride r: HorseRideOverrides.Add(r); break;
                     case Region.LockedMountJump r: LockedMountJumps.Add(r); break;
                     case Region.LockedMountJumpFall r: LockedMountJumpFalls.Add(r); break;
-                    case Region.DisableTumbleweed r: DisableTumbleweeds.Add(r); break;
+                    case Region.RollingObjectOverride r: RollingObjectOverrides.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -360,7 +360,7 @@ namespace SoulsFormats
                 return SFUtil.ConcatAll<Region>(
                     InvasionPoints, EnvironmentMapPoints, Sounds, SFX, WindSFX,
                     SpawnPoints, Messages, EnvironmentMapEffectBoxes, WindAreas,
-                    Connections, PatrolRoute22s, BuddySummonPoints, DisableTumbleweeds, MufflingBoxes,
+                    Connections, PatrolRoute22s, BuddySummonPoints, RollingObjectOverrides, MufflingBoxes,
                     MufflingPortals, SoundRegions, MufflingPlanes, PatrolRoutes,
                     MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupPlacementPoints,
                     MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
@@ -411,8 +411,8 @@ namespace SoulsFormats
                     case RegionType.BuddySummonPoint:
                         return BuddySummonPoints.EchoAdd(new Region.BuddySummonPoint(br));
 
-                    case RegionType.DisableTumbleweed:
-                        return DisableTumbleweeds.EchoAdd(new Region.DisableTumbleweed(br));
+                    case RegionType.RollingObjectOverride:
+                        return RollingObjectOverrides.EchoAdd(new Region.RollingObjectOverride(br));
 
                     case RegionType.MufflingBox:
                         return MufflingBoxes.EchoAdd(new Region.MufflingBox(br));
@@ -760,7 +760,8 @@ namespace SoulsFormats
                 bw.WriteByte(0);
                 bw.WriteInt32(0);
 
-                if (Type > RegionType.BuddySummonPoint && Type != RegionType.Other)
+                // Types up to RollingObjectOverride (27) pad after the type data, later types before it
+                if (Type > RegionType.RollingObjectOverride && Type != RegionType.Other)
                 {
                     bw.Pad(8);
                 }
@@ -775,7 +776,7 @@ namespace SoulsFormats
                     bw.FillInt64("TypeDataOffset", 0);
                 }
 
-                if (Type <= RegionType.BuddySummonPoint || Type == RegionType.Other)
+                if (Type <= RegionType.RollingObjectOverride || Type == RegionType.Other)
                 {
                     bw.Pad(8);
                 }
@@ -2606,30 +2607,40 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Inside this region, rolling objects (tumbleweeds and similar) spawn from RollingObjLotParamID
+            /// instead of the map tile's own lot. Formerly named DisableTumbleweed.
             /// </summary>
-            public class DisableTumbleweed : Region
+            public class RollingObjectOverride : Region
             {
-                private protected override RegionType Type => RegionType.DisableTumbleweed;
+                private protected override RegionType Type => RegionType.RollingObjectOverride;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Creates a DisableTumbleweed with default values.
+                /// The RollingObjLotParam row used for spawns inside the region. -1 means nothing spawns.
                 /// </summary>
-                public DisableTumbleweed() : base($"{nameof(Region)}: {nameof(DisableTumbleweed)}") { }
+                [MSBParamReference(ParamName = "RollingObjLotParam")]
+                public int RollingObjLotParamID { get; set; }
 
-                internal DisableTumbleweed(BinaryReaderEx br) : base(br) { }
+                /// <summary>
+                /// Creates a RollingObjectOverride with default values.
+                /// </summary>
+                public RollingObjectOverride() : base($"{nameof(Region)}: {nameof(RollingObjectOverride)}")
+                {
+                    RollingObjLotParamID = -1;
+                }
+
+                internal RollingObjectOverride(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(-1);
+                    RollingObjLotParamID = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(RollingObjLotParamID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }

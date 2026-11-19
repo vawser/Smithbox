@@ -542,7 +542,7 @@ public static class MsbCategories
                 ["Connection"] = typeof(MSBE.Region.Connection),
                 ["PatrolRoute22"] = typeof(MSBE.Region.PatrolRoute22),
                 ["BuddySummonPoint"] = typeof(MSBE.Region.BuddySummonPoint),
-                ["DisableTumbleweed"] = typeof(MSBE.Region.DisableTumbleweed),
+                ["RollingObjectOverride"] = typeof(MSBE.Region.RollingObjectOverride),
                 ["MufflingBox"] = typeof(MSBE.Region.MufflingBox),
                 ["MufflingPortal"] = typeof(MSBE.Region.MufflingPortal),
                 ["SoundRegion"] = typeof(MSBE.Region.SoundRegion),

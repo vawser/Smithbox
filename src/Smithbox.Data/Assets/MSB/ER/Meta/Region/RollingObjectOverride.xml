@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Rolling object override (formerly Disable Tumbleweed). Inside it, rolling objects such as tumbleweeds spawn from the RollingObjLotParam row given here, instead of the map tile's own row (AABBCC00, e.g. 60324100 for m60_32_41_00). -1 stops them spawning inside the region." />
+
+  <Field>
+    <RollingObjLotParamID
+    AltName="Rolling Object Lot"
+    Wiki="The RollingObjLotParam row used for rolling-object spawns inside this region. -1 means nothing spawns here."
+    ParamRef="RollingObjLotParam" />
+
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>
