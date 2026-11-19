@@ -1,21 +1,92 @@
 //------------------------------------------------
 //--- 010 Editor v9.0.2 Binary Template
 //
-//      File: PFBB.bt
-//   Authors: TKGP
-//   Version: 
-//   Purpose: Unknown DS2 format
-//  Category: Dantelion
-// File Mask: *.pfbbin
-//  ID Bytes: 50 46 42 42 46 52 50 47 32
-//   History: 
+//   File: PFBB.bt
+//   Authors: Radai
+//   Version: 0.2
+//   Purpose: DS2 prefab binary format (PC, 64-bit little endian).
+//   Category: Dantelion
+//   File Mask: *.pfbbin
+//   ID Bytes: 50 46 42 42 46 52 50 47 32
+//   History:
+//     0.2 Full layout: parts, assets, attributes, chunks,
+//         FormDesign blobs, EventAction flows (event / branch / action
+//         nodes), relocation table.
 //------------------------------------------------
-
-local int VARINT_LONG = ReadInt(0x24) == 0;
-#include "Util.bt"
 
 LittleEndian();
 
+//------------------------------------------------
+// Enums
+//------------------------------------------------
+
+enum <uint> PF_CHUNK_TYPE
+{
+    PF_CHUNK_FORM_DESIGN = 0,    // -> PF_PFBBIN_FORM_DESIGN_CHUNK_BLOCK (raw bytes, endian-agnostic, e.g. FormDesign)
+    PF_CHUNK_EVENT_ACTION   = 1,    // -> PF_PFBBIN_EVENT_ACTION_CHUNK_BLOCK (EventAction flows)
+};
+
+enum <uint> PF_NODE_TYPE
+{
+    PF_NODE_EVENT   = 0,    // pData -> uint eventId (0xBBC judge, 0xBBD action)
+    PF_NODE_BRANCH  = 1,    // pData -> PF_BRANCH
+    PF_NODE_ACTION = 2,    // pData -> PF_PFBBIN_ACTION_BLOCK
+};
+
+// Token types inferred from data only (unverified against code).
+enum <uint> PF_TOKEN_TYPE
+{
+    PF_TOKEN_FLOAT    = 0,  // float constant
+    PF_TOKEN_OPERATOR = 1,  // operator id (9 seen, compares var with const)
+    PF_TOKEN_VARIABLE = 2,  // judge param / variable id (2205, 2210 seen)
+};
+
+//------------------------------------------------
+// Helpers
+//------------------------------------------------
+
+// Flow nodes form a DAG (branches rejoin through pNext), so each node is
+// expanded once and later references only show the offset.
+local int64 g_visited[4096];
+local int   g_visitedCount = 0;
+
+int IsVisited(int64 off)
+{
+    local int i;
+    for (i = 0; i < g_visitedCount; i++)
+        if (g_visited[i] == off)
+            return true;
+    return false;
+}
+
+void MarkVisited(int64 off)
+{
+    if (g_visitedCount < 4096)
+    {
+        g_visited[g_visitedCount] = off;
+        g_visitedCount++;
+    }
+}
+
+typedef struct {
+    uint64 ptr <format=hex>;
+    if (ptr != 0) {
+        local int64 cPos = FTell();
+        FSeek(ptr);
+        wstring text;
+        FSeek(cPos);
+    }
+} WStringPtr <read=ReadWStringPtr>;
+
+wstring ReadWStringPtr(WStringPtr &s)
+{
+    if (s.ptr == 0)
+        return "<null>";
+    return s.text;
+}
+
+//------------------------------------------------
+// Header
 //------------------------------------------------
 
 typedef struct {
@@ -23,82 +94,251 @@ typedef struct {
     short unk0A; Assert(unk0A == 0);
     int unk0C; Assert(unk0C == 0);
     int unk10; Assert(unk10 == 0);
-    int unk14; Assert(unk14 == 0);
-    short unk18; Assert(unk18 == 1);
+    ubyte platformFlag14;
+    ubyte platformFlag15;
+    short unk16;
+    short version; Assert(version == 1);   // TestPfbbinHeaderValidation requires 1
     short unk1A; Assert(unk1A == 1);
     short unk1C; Assert(unk1C == 1);
     short unk1E; Assert(unk1E == 1);
-    Varint offset20;
-    Varint offset24;
-    Varint offset28;
-    short unk2C; Assert(unk2C == 1);
-    short unk2E;
-} Header <bgcolor=cLtRed>;
+    uint64 pRelocTable <format=hex>;        // -> PF_RELOC_TABLE (not itself relocated)
+    uint64 pParts <format=hex>;             // -> PF_PFBBIN_PARTS_BLOCK[partsCount]
+    uint64 pAssets <format=hex>;            // -> PF_PFBBIN_ASSET_BLOCK[assetCount]
+    ushort partsCount;
+    ushort assetCount;
+    uint pad3C <hidden=true>;
+} PF_PFBBIN_HEADER <bgcolor=cLtRed>;
 
+//------------------------------------------------
+// Flow graph (EventAction)
+//------------------------------------------------
 
-typedef struct {
-    byte b;
-} Unk11111 <bgcolor=cBlack, fgcolor=cWhite>;
-
-
-typedef struct {
-    Varint unk00;
-    Varint offset04;
-    
-    local quad pos <hidden=true> = FTell();
-    FSeek(offset04.val);
-    Unk11111 unk11111;
-    FSeek(pos);
-} Unk1111 <optimize=false>;
-
+struct PF_NODE;
 
 typedef struct {
-    Varint unk00;
-    Varint offset04;
-    
-    local quad pos <hidden=true> = FTell();
-    FSeek(offset04.val);
-    Unk1111 unk1111;
-    FSeek(pos);
-} Unk111 <optimize=false>;
+    PF_TOKEN_TYPE type;
+    if (type == PF_TOKEN_FLOAT)
+        float value;
+    else
+        uint value;
+} PF_TOKEN <read=ReadToken>;
 
+string ReadToken(PF_TOKEN &t)
+{
+    if (t.type == PF_TOKEN_FLOAT)
+        return Str("float %g", t.value);
+    if (t.type == PF_TOKEN_OPERATOR)
+        return Str("op %u", t.value);
+    if (t.type == PF_TOKEN_VARIABLE)
+        return Str("var %u", t.value);
+    return Str("type %u: %u", t.type, t.value);
+}
 
-typedef struct {
-    int unk00;
-    int unk04;
-    Varint offset08;
-    
-    local quad pos <hidden=true> = FTell();
-    FSeek(offset08.val);
-    Unk111 unk111s[unk04];
-    FSeek(pos);
-} Unk11 <optimize=false>;
+// Condition: the token list is evaluated; if true the pThen chain runs,
+// which rejoins the owning node's pNext chain.
+struct PF_BRANCH {
+    uint tokenCount;
+    uint pad04 <hidden=true>;
+    uint64 pThen <format=hex>;      // -> PF_NODE
+    uint64 pTokens <format=hex>;    // -> PF_TOKEN[tokenCount]
 
-
-typedef struct {
-    int unk00;
-    if (VARINT_LONG) {
-        int zero <hidden=true>; Assert(zero == 0);
+    local int64 ret = FTell();
+    if (pTokens != 0 && tokenCount > 0) {
+        FSeek(pTokens);
+        PF_TOKEN tokens[tokenCount] <optimize=false>;
     }
-    OffsetString name(VARINT_LONG, 1);
-    OffsetString path(VARINT_LONG, 1);
-    int unk0C;
-    int unk10;
-    Varint offset14;
-    
-    local quad pos <hidden=true> = FTell();
-    FSeek(offset14.val);
-    Unk11 unk11s[unk10];
-    FSeek(pos);
-} Unk1 <read=ReadUnk1, bgcolor=cLtGreen, optimize=false>;
+    if (pThen != 0 && !IsVisited(pThen)) {
+        FSeek(pThen);
+        struct PF_NODE then;
+    }
+    FSeek(ret);
+};
 
-wstring ReadUnk1(Unk1& unk1) {
-    return unk1.path.str + " | " + unk1.name.str;
+struct PF_CHUNK;
+
+// Action command (5001 = change state, arg = target asset hash;
+// 5008 / 5012 seen with 12 / 8 byte blob args).
+struct PF_PFBBIN_ACTION_BLOCK {
+    uint actionId;
+    uint argCount;
+    uint64 pArgs <format=hex>;      // -> PF_CHUNK[argCount]
+
+    local int64 ret = FTell();
+    if (pArgs != 0 && argCount > 0) {
+        FSeek(pArgs);
+        struct PF_CHUNK args[argCount] <optimize=false>;
+    }
+    FSeek(ret);
+};
+
+struct PF_NODE {
+    local int64 self = FTell();
+    MarkVisited(self);
+
+    uint64 pNext <format=hex>;      // -> PF_NODE (next in chain), or 0
+    PF_NODE_TYPE type;
+    uint pad0C <hidden=true>;
+    uint64 pData <format=hex>;      // depends on type
+
+    local int64 ret = FTell();
+    if (pData != 0) {
+        FSeek(pData);
+        switch (type) {
+            case PF_NODE_EVENT:   uint eventId <format=hex>; break;
+            case PF_NODE_BRANCH:  struct PF_BRANCH branch;   break;
+            case PF_NODE_ACTION: struct PF_PFBBIN_ACTION_BLOCK action; break;
+        }
+    }
+    if (pNext != 0 && !IsVisited(pNext)) {
+        FSeek(pNext);
+        struct PF_NODE next;
+    }
+    FSeek(ret);
+};
+
+string ReadNode(struct PF_NODE &n)
+{
+    if (n.type == PF_NODE_EVENT && exists(n.eventId))
+        return Str("Event 0x%X", n.eventId);
+    if (n.type == PF_NODE_BRANCH)
+        return "Branch";
+    if (n.type == PF_NODE_ACTION && exists(n.action))
+        return Str("Action %u", n.action.actionId);
+    return EnumToString(n.type);
 }
 
 //------------------------------------------------
+// Values
+//------------------------------------------------
 
-Header header;
+typedef struct {
+    uint64 size;
+    uint64 pData <format=hex>;
 
-FSeek(header.offset28.val);
-Unk1 unk1s[header.unk2E];
+    local int64 ret = FTell();
+    if (pData != 0 && size > 0) {
+        FSeek(pData);
+        uchar data[size] <format=hex>;
+        if (size == 4) {            // usually an asset hash
+            FSeek(pData);
+            uint asUInt <format=hex>;
+        }
+    }
+    FSeek(ret);
+} PF_PFBBIN_FORM_DESIGN_CHUNK_BLOCK;
+
+// Array of event nodes (type PF_NODE_EVENT), each the head of one flow.
+typedef struct {
+    uint count;
+    uint pad04 <hidden=true>;
+    uint64 pEvents <format=hex>;    // -> PF_NODE[count] (contiguous)
+
+    local int64 ret = FTell();
+    if (pEvents != 0 && count > 0) {
+        FSeek(pEvents);
+        struct PF_NODE events[count] <optimize=false, read=ReadNode>;
+    }
+    FSeek(ret);
+} PF_PFBBIN_EVENT_ACTION_CHUNK_BLOCK;
+
+struct PF_CHUNK {
+    PF_CHUNK_TYPE type;
+    uint pad04 <hidden=true>;
+    uint64 pData <format=hex>;
+
+    local int64 ret = FTell();
+    if (pData != 0) {
+        FSeek(pData);
+        switch (type) {
+            case PF_CHUNK_FORM_DESIGN: 		PF_PFBBIN_FORM_DESIGN_CHUNK_BLOCK blob; break;
+            case PF_CHUNK_EVENT_ACTION:   	PF_PFBBIN_EVENT_ACTION_CHUNK_BLOCK flows; break;
+        }
+    }
+    FSeek(ret);
+};
+
+//------------------------------------------------
+// Attributes / assets / parts
+//------------------------------------------------
+
+// Asset attributes seen: 0x65 (2-byte blob), 0x66 (value 0 = FormDesign
+// 16-byte blob, value 1 = EventAction flows).
+// Project attributes seen: 1 (initial asset hash), 2 (0x1C blob),
+// 5 (float blob + flows).
+typedef struct {
+    uint id;
+    uint valueCount;
+    uint64 pValues <format=hex>;    // -> PF_CHUNK[valueCount]
+
+    local int64 ret = FTell();
+    if (pValues != 0 && valueCount > 0) {
+        FSeek(pValues);
+        struct PF_CHUNK values[valueCount] <optimize=false>;
+    }
+    FSeek(ret);
+} PF_PFBBIN_ATTRIBUTE_BLOCK <read=ReadAttribute>;
+
+string ReadAttribute(PF_PFBBIN_ATTRIBUTE_BLOCK &a)
+{
+    return Str("%d (%u values)", a.id, a.valueCount);
+}
+
+typedef struct {
+    uint hash <format=hex>;         // referenced by state change commands
+    uint pad04 <hidden=true>;
+    WStringPtr name;
+    WStringPtr path;                // source .sib
+    uint type;                      // 0x63
+    uint attributeCount;
+    uint64 pAttributes <format=hex>;
+
+    local int64 ret = FTell();
+    if (pAttributes != 0 && attributeCount > 0) {
+        FSeek(pAttributes);
+        PF_PFBBIN_ATTRIBUTE_BLOCK attributes[attributeCount] <optimize=false>;
+    }
+    FSeek(ret);
+} PF_PFBBIN_ASSET_BLOCK <read=ReadAsset>;
+
+wstring ReadAsset(PF_PFBBIN_ASSET_BLOCK &a)
+{
+    return ReadWStringPtr(a.name);
+}
+
+// NOTE: the reloc table lists 0x674 for the name pointer, but on PC the
+// pointer is at +0x08 (0x678) after 4 bytes of padding.
+typedef struct {
+    uint hash <format=hex>;
+    uint pad04 <hidden=true>;
+    WStringPtr name;                // "OBJ"
+    uint type;                      // 1
+    uint attributeCount;
+    uint64 pAttributes <format=hex>;
+
+    local int64 ret = FTell();
+    if (pAttributes != 0 && attributeCount > 0) {
+        FSeek(pAttributes);
+        PF_PFBBIN_ATTRIBUTE_BLOCK attributes[attributeCount] <optimize=false>;
+    }
+    FSeek(ret);
+} PF_PFBBIN_PARTS_BLOCK <bgcolor=cLtGreen>;
+
+typedef struct {
+    uint count;
+    uint offsets[count] <format=hex>;
+} PF_RELOC_TABLE <bgcolor=cLtGray>;
+
+//------------------------------------------------
+// Main
+//------------------------------------------------
+
+PF_PFBBIN_HEADER header;
+
+FSeek(header.pAssets);
+PF_PFBBIN_ASSET_BLOCK assets[header.assetCount] <optimize=false, bgcolor=cLtYellow>;
+
+FSeek(header.pParts);
+PF_PFBBIN_PARTS_BLOCK parts[header.partsCount] <optimize=false>;
+
+FSeek(header.pRelocTable);
+PF_RELOC_TABLE relocs;

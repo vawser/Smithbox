@@ -16,4 +16,5 @@ decompiled text parses and matches the original bytecode.)
 | File | Change | Why |
 |---|---|---|
 | `LuaDecompilerCore/LuaDecompilerCore.csproj` | net7.0 → net10.0; `AllowUnsafeBlocks` set for every configuration; Smithbox's configuration list added | Upstream only allowed unsafe code in configurations named exactly `Debug`/`Release` |
+| `LuaDecompilerCore/Passes/ExpressionPropagationPass.cs`, `LuaDecompilerCore/Utilities/JaggedArray.cs` | Removed upstream's leftover `Debugger.Break()` calls (on block 20, and on arrays over 1,000,000 elements) | They stop Smithbox whenever it runs under a debugger and a script hits them |
 | `LuaDecompilerCore/Utilities/BinaryReaderEx.cs` | `ShiftJIS` is now `Encoding.GetEncoding("shift_jis")` (with `CodePagesEncodingProvider` registered); upstream used `Encoding.UTF8` | The Japanese strings in Lua 5.0 files decoded as U+FFFD. Distinct labels became equal strings, which also shifted constant indices on recompile (10 ER aicommon files) |

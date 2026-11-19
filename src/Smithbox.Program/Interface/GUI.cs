@@ -29,6 +29,7 @@ public static class GUI
     public static uint SETTINGS_EDITOR_DOCK_GROUP = 1021;
     public static uint PROJECTILE_EDITOR_DOCK_GROUP = 1022;
     public static uint FACEGEN_EDITOR_DOCK_GROUP = 1023;
+    public static uint LUA_EDITOR_DOCK_GROUP = 1024;
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
@@ -50,6 +51,7 @@ public static class GUI
     public static uint CUTSCENE_EDITOR_VIEW_DOCK_GROUP = 1119;
     public static uint PROJECTILE_EDITOR_VIEW_DOCK_GROUP = 1120;
     public static uint FACEGEN_EDITOR_VIEW_DOCK_GROUP = 1121;
+    public static uint LUA_EDITOR_VIEW_DOCK_GROUP = 1122;
 
     public static ImGuiWindowClass DockGroup_EditorView = new(
         classId: EDITOR_DOCK_GROUP, 
@@ -181,6 +183,14 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_EsdEditor = new(
         classId: ESD_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_LuaEditor = new(
+        classId: LUA_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_LuaEditorView = new(
+        classId: LUA_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_SoundEditor = new(

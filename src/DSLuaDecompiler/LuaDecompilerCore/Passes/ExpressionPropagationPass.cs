@@ -29,8 +29,6 @@ public class ExpressionPropagationPass : IPass
             changed = false;
             foreach (var b in f.BlockList)
             {
-                if (b.BlockId == 20)
-                    Debugger.Break();
                 for (var i = 0; i < b.Instructions.Count; i++)
                 {
                     var inst = b.Instructions[i];

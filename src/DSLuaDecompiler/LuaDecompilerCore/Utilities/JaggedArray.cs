@@ -30,8 +30,6 @@ public struct JaggedArray<T> : IDisposable
             totalSum += sizes[i];
             _offsets[i] = totalSum;
         }
-        if (totalSum > 1000000)
-            Debugger.Break();
         _array = ArrayPool<T>.Shared.Rent((int)totalSum);
 
         if (initialize)

@@ -42,6 +42,7 @@ public class ProjectDescriptor
     public bool EnableBehaviorEditor = false;
     public bool EnableEmevdEditor = false;
     public bool EnableEsdEditor = false;
+    public bool EnableLuaEditor = false;
     public bool EnableSoundEditor = false;
     public bool EnableTimeActEditor = false;
 
@@ -79,6 +80,7 @@ public class ProjectDescriptor
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
         EnableEmevdEditor = newDescriptor.EnableEmevdEditor;
         EnableEsdEditor = newDescriptor.EnableEsdEditor;
+        EnableLuaEditor = newDescriptor.EnableLuaEditor;
         EnableSoundEditor = newDescriptor.EnableSoundEditor;
         EnableTimeActEditor = newDescriptor.EnableTimeActEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
@@ -162,6 +164,7 @@ public class ProjectDescriptor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
             && EnableEmevdEditor == other.EnableEmevdEditor
             && EnableEsdEditor == other.EnableEsdEditor
+            && EnableLuaEditor == other.EnableLuaEditor
             && EnableSoundEditor == other.EnableSoundEditor
             && EnableTimeActEditor == other.EnableTimeActEditor
             && EnableExternalMaterialData == other.EnableExternalMaterialData;
@@ -197,6 +200,7 @@ public class ProjectDescriptor
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
         EnableEmevdEditor = edited.EnableEmevdEditor;
         EnableEsdEditor = edited.EnableEsdEditor;
+        EnableLuaEditor = edited.EnableLuaEditor;
         EnableSoundEditor = edited.EnableSoundEditor;
         EnableTimeActEditor = edited.EnableTimeActEditor;
         EnableExternalMaterialData = edited.EnableExternalMaterialData;
@@ -232,6 +236,7 @@ public class ProjectDescriptor
             EnableBehaviorEditor = this.EnableBehaviorEditor,
             EnableEmevdEditor = this.EnableEmevdEditor,
             EnableEsdEditor = this.EnableEsdEditor,
+            EnableLuaEditor = this.EnableLuaEditor,
             EnableSoundEditor = this.EnableSoundEditor,
             EnableTimeActEditor = this.EnableTimeActEditor,
             EnableExternalMaterialData = this.EnableExternalMaterialData,
@@ -276,6 +281,7 @@ public class ProjectDescriptor
         EnableBehaviorEditor = true;
         EnableEmevdEditor = true;
         EnableEsdEditor = true;
+        EnableLuaEditor = true;
         EnableSoundEditor = true;
         EnableTimeActEditor = true;
         EnableExternalMaterialData = true;

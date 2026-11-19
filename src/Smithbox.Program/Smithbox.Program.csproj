@@ -125,6 +125,7 @@
     <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
     <ProjectReference Include="..\Tracy\Tracy.csproj" />
+    <ProjectReference Include="..\DSLuaDecompiler\LuaDecompilerCore\LuaDecompilerCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>
