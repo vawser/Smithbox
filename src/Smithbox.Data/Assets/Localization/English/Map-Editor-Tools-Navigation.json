@@ -2690,6 +2690,14 @@
       "Text": "Give each new face the face data of the current face under it, where there is one: the authored bits (character limit, gated, impassable) can't be derived from the collision."
     },
     {
+      "Key": "MAP_Navigation_Regenerate_Current_Face_Height",
+      "Text": "Current face height"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Current_Face_Height_TT",
+      "Text": "How far above or below a new face the current face it keeps the model and face data of may be (the nearest in height wins), and how far a node bank face looks for the new face at its old place.\nThe new navmesh follows the collision, which in the open world often lies 1.5 to 2.5 m off the game's navmesh: too low a value leaves patches with no face data and in the wrong model. Too high a value can take the data of a floor above or below.\nCtrl+click to type a value."
+    },
+    {
       "Key": "MAP_Navigation_Regenerate_Derive_Face_Data",
       "Text": "Derive face data from the collision"
     },

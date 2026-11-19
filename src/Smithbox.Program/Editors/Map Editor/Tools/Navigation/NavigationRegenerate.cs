@@ -46,6 +46,12 @@ public sealed class NavRegenInput
     public bool KeepModels { get; set; } = true;
 
     /// <summary>
+    /// How far in height, either way, a new face looks for the current face it takes its model and face data from, and a
+    /// node bank face for the new face at its old place (NavRegenerate.DefaultCurrentFaceHeight).
+    /// </summary>
+    public float CurrentFaceHeight { get; set; } = NavRegenerate.DefaultCurrentFaceHeight;
+
+    /// <summary>
     /// Count the generated jump and fall links when finding what the seeds reach. Off by default: two-way jumps reach up onto
     /// ledges and roofs the game's navmesh leaves out (Roundtable Hold doubled its area); the links are still made.
     /// </summary>
@@ -155,6 +161,14 @@ public sealed class NavRegenResult
 /// </summary>
 public static class NavRegenerate
 {
+    /// <summary>
+    /// How far in height a new face may be from the current face it takes its model, face data or node bank place from,
+    /// either way (the nearest in height wins). The new mesh follows the low collision, which in the open world often lies
+    /// 1.5-2.5 m off the game's navmesh (NavSurvey regen diag, 20 evergaol tiles): at 1 m whole patches missed their face,
+    /// lost their face data (an evergaol's 0x20000) and fell back to the collision model, an island cut off by a seam.
+    /// </summary>
+    public const float DefaultCurrentFaceHeight = 3f;
+
     /// <summary>A face that a split cut off from its neighbour: (set, model, face, edge) on both sides, in the models' numbering.</summary>
     internal readonly record struct Cut(int ModelA, int FaceA, int EdgeA, int ModelB, int FaceB, int EdgeB);
 
@@ -262,7 +276,7 @@ public static class NavRegenerate
                 currentGrid.Add(current[i].Corners, i);
 
             var label = Label(whole, reach, geometry, input,
-                input.KeepModels ? (Func<Vector3, int?>)(c => currentGrid.At(c, 1f) is int old ? current[old].ModelID : null) : null, out int assetsOnly);
+                input.KeepModels ? (Func<Vector3, int?>)(c => currentGrid.At(c, input.CurrentFaceHeight) is int old ? current[old].ModelID : null) : null, out int assetsOnly);
             report.UnderAssetsOnly = assetsOnly;
 
             for (int f = 0; f < whole.m_faces.Count; f++)
@@ -281,7 +295,7 @@ public static class NavRegenerate
                     if (data != 0) report.FaceDataDerived++;
                 }
 
-                if (input.KeepFaceData && currentGrid.At(centre, 1f) is int old)
+                if (input.KeepFaceData && currentGrid.At(centre, input.CurrentFaceHeight) is int old)
                 {
                     data = current[old].Data;
                     report.FaceDataKept++;
@@ -515,7 +529,7 @@ public static class NavRegenerate
             var faces = new List<NVA.NodeBankFace>();
             foreach (var place in places)
             {
-                if (place is Vector3 at && newFaces.At(at, 1f) is int found)
+                if (place is Vector3 at && newFaces.At(at, input.CurrentFaceHeight) is int found)
                 {
                     var (entry, face) = newEntries[found];
                     if (!faces.Any(x => x.CollisionID == entry.NameID && x.FaceIndex == face))

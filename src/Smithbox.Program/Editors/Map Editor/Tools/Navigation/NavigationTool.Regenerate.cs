@@ -29,6 +29,7 @@ public partial class NavigationTool
     private bool RegenKeepLinks = true;
     private bool RegenRelatedTiles = true;
     private bool RegenSnapBorders = true;
+    private float RegenCurrentFaceHeight = NavRegenerate.DefaultCurrentFaceHeight;
 
     /// <summary>Regenerate from the high collision instead of the low (both Regenerate tabs). Off by default: navmeshes follow the low collision, which characters walk on; the high is for inverse kinematics.</summary>
     private bool RegenHighCollision;
@@ -90,6 +91,10 @@ public partial class NavigationTool
         GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Keep_Face_Data_TT"));
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Regenerate_Derive_Face_Data")}##navigationRegenDerive", ref RegenDeriveFaceData);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Derive_Face_Data_TT"));
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.SliderFloat("##navigationRegenCurrentFaceHeight", ref RegenCurrentFaceHeight, 0.25f, 10f, $"{LOC.Get("MAP_Navigation_Regenerate_Current_Face_Height")} %.2f m"))
+            RegenCurrentFaceHeight = Math.Clamp(RegenCurrentFaceHeight, 0.25f, 10f);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Current_Face_Height_TT"));
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Regenerate_Skip_Runtime_Cuts")}##navigationRegenSkipCuts", ref RegenSkipRuntimeCuts);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Skip_Runtime_Cuts_TT"));
 
@@ -158,6 +163,7 @@ public partial class NavigationTool
             KeepLinks = RegenKeepLinks && navigation.Profile.HasMeshUserEdges,
             SeedFromCurrent = RegenSeedFromCurrent,
             KeepModels = RegenKeepModels,
+            CurrentFaceHeight = RegenCurrentFaceHeight,
             KeepFaceData = RegenKeepFaceData,
             DeriveFaceData = RegenDeriveFaceData,
             StitchNeighbours = RegenStitch,
