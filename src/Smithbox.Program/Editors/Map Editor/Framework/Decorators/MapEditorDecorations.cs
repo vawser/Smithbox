@@ -405,86 +405,7 @@ public static class MapEditorDecorations
         }
         else
         {
-            // View Reference in Viewport
-            if (ImGui.Button(Icons.Binoculars + "##focusRef" + entity.Name,
-                DPI.IconButtonSize))
-            {
-                BoundingBox box = new();
-
-                if (entity.RenderSceneMesh != null)
-                {
-                    box = entity.RenderSceneMesh.GetBounds();
-                }
-                else if (entity.Container.RootObject == entity)
-                {
-                    // Selection is transform node
-                    Vector3 nodeOffset = new(10.0f, 10.0f, 10.0f);
-                    Vector3 pos = entity.GetLocalTransform().Position;
-                    BoundingBox nodeBox = new(pos - nodeOffset, pos + nodeOffset);
-                    box = nodeBox;
-                }
-
-                view.FrameAction.ApplyViewportFrameWithBox(box);
-            }
-
-            ImGui.SameLine();
-
-            // Name
-            var alias = AliasHelper.GetEntityAliasName(view.Project, entity);
-
-            var displayText = $"";
-
-            if(CFG.Current.MapEditor_Properties_Display_Reference_Name)
-            {
-                displayText = $"{entity.PrettyName}";
-            }
-
-            if (CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
-            {
-                var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
-
-                if (entId != null)
-                {
-                    var newText = $"{entId}";
-
-                    if (CFG.Current.MapEditor_Properties_Display_Reference_Name)
-                    {
-                        displayText = $"{displayText} - {newText}";
-                    }
-                    else
-                    {
-                        displayText = $"{newText}";
-                    }
-                }
-            }
-
-            if (CFG.Current.MapEditor_Properties_Display_Reference_Alias)
-            {
-                if (!CFG.Current.MapEditor_Properties_Display_Reference_Name && !CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
-                {
-                    if (alias is null or "")
-                    {
-                        displayText = $"";
-                    }
-                    else
-                    {
-                        displayText = $"{alias}";
-                    }
-                }
-                else
-                {
-                    if (alias is null or "")
-                    {
-                        displayText = $"{displayText}";
-                    }
-                    else
-                    {
-                        displayText = $"{displayText} - {alias}";
-                    }
-                }
-            }
-
-            ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{displayText}");
+            MsbReferenceTarget(view, entity);
         }
 
         if (ImGui.BeginPopupContextItem($"{msbRef.ReferenceType.Name}RefContextMenu"))
@@ -495,6 +416,159 @@ public static class MapEditorDecorations
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Map Reference by RegionID: an int field naming a region of the map by its RegionID (e.g. a route's portals)
+    /// </summary>
+    public static void MsbRegionIdReferenceRow(
+        MapEditorView view,
+        PropertyInfo propInfo,
+        object val,
+        IEnumerable<Entity> entities)
+    {
+        var regionRef = propInfo.GetCustomAttribute<MSBRegionIDReference>();
+        if (regionRef == null || val is not int regionId)
+            return;
+
+        var refName = regionRef.ReferenceType.Name;
+
+        ImGui.NextColumn();
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.TextUnformatted(@$"   <{refName}>");
+        ImGui.PopStyleColor();
+        ImGui.PopStyleVar();
+        ImGui.NextColumn();
+
+        var maps = entities
+            .Select((e) => e.Container)
+            .Distinct();
+        // We're bailing out on multiple maps
+        if (maps.Count() != 1)
+            return;
+
+        var map = maps.First();
+
+        var matches = map.Objects
+            .Where(e => e.WrappedObject != null && regionRef.ReferenceType.IsInstanceOfType(e.WrappedObject)
+                && PropFinderUtil.FindPropertyValue("RegionID", e.WrappedObject) is int id && id == regionId)
+            .ToList();
+
+        if (matches.Count == 0)
+        {
+            ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, $"No {refName} with that Region ID");
+            return;
+        }
+
+        var entity = matches[0];
+        MsbReferenceTarget(view, entity);
+
+        if (ImGui.BeginPopupContextItem($"{propInfo.Name}RegionIdRefContextMenu"))
+        {
+            if (ImGui.Selectable($@"Select"))
+            {
+                EditorCommandQueue.AddCommand($@"map/select/{map.Name}/{entity.Name}");
+            }
+
+            ImGui.Separator();
+            ImGui.Text($"Name: {entity.Name}");
+            ImGui.Text($"Region ID: {regionId}");
+            ImGui.EndPopup();
+        }
+
+        if (matches.Count > 1)
+        {
+            ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color,
+                $"{matches.Count} regions share this Region ID; give each a unique one");
+        }
+    }
+
+    /// <summary>
+    /// The referenced object of a map reference row: frame button and display text
+    /// </summary>
+    private static void MsbReferenceTarget(MapEditorView view, Entity entity)
+    {
+        // View Reference in Viewport
+        if (ImGui.Button(Icons.Binoculars + "##focusRef" + entity.Name,
+            DPI.IconButtonSize))
+        {
+            BoundingBox box = new();
+
+            if (entity.RenderSceneMesh != null)
+            {
+                box = entity.RenderSceneMesh.GetBounds();
+            }
+            else if (entity.Container.RootObject == entity)
+            {
+                // Selection is transform node
+                Vector3 nodeOffset = new(10.0f, 10.0f, 10.0f);
+                Vector3 pos = entity.GetLocalTransform().Position;
+                BoundingBox nodeBox = new(pos - nodeOffset, pos + nodeOffset);
+                box = nodeBox;
+            }
+
+            view.FrameAction.ApplyViewportFrameWithBox(box);
+        }
+
+        ImGui.SameLine();
+
+        // Name
+        var alias = AliasHelper.GetEntityAliasName(view.Project, entity);
+
+        var displayText = $"";
+
+        if(CFG.Current.MapEditor_Properties_Display_Reference_Name)
+        {
+            displayText = $"{entity.PrettyName}";
+        }
+
+        if (CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
+        {
+            var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
+
+            if (entId != null)
+            {
+                var newText = $"{entId}";
+
+                if (CFG.Current.MapEditor_Properties_Display_Reference_Name)
+                {
+                    displayText = $"{displayText} - {newText}";
+                }
+                else
+                {
+                    displayText = $"{newText}";
+                }
+            }
+        }
+
+        if (CFG.Current.MapEditor_Properties_Display_Reference_Alias)
+        {
+            if (!CFG.Current.MapEditor_Properties_Display_Reference_Name && !CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
+            {
+                if (alias is null or "")
+                {
+                    displayText = $"";
+                }
+                else
+                {
+                    displayText = $"{alias}";
+                }
+            }
+            else
+            {
+                if (alias is null or "")
+                {
+                    displayText = $"{displayText}";
+                }
+                else
+                {
+                    displayText = $"{displayText} - {alias}";
+                }
+            }
+        }
+
+        ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{displayText}");
     }
 
     public static bool PropertyRowMsbRefContextItems(

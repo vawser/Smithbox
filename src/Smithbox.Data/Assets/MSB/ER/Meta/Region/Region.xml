@@ -20,7 +20,7 @@
     
     <RegionID
     AltName="Region ID"
-    Wiki="Identifies the region in event scripts." />
+    Wiki="Identifies the region in event scripts. Routes refer to muffling portals by this ID, so keep it unique within the map." />
     
     <Unk40
     AltName="Unknown: 0x40"

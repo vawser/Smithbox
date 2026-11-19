@@ -491,6 +491,9 @@ public class MapMsbPropertyView
             committed = true;
         }
 
+        // Map References by RegionID (e.g. a route's portals)
+        MapEditorDecorations.MsbRegionIdReferenceRow(View, prop, oldval, entSelection);
+
         // Enum List
         if (MapEditorDecorations.GenericEnumRow(View, fieldMeta, prop, oldval, ref newval))
         {

@@ -14,22 +14,22 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// Unknown, but related to muffling regions somehow.
+        /// The edges of the sound occlusion graph: each route joins two MufflingPortals, by RegionID.
         /// </summary>
         public class RouteParam : Param<Route>
         {
             /// <summary>
-            /// Unknown.
+            /// Routes between two portals of the same MufflingBox.
             /// </summary>
             public List<Route.MufflingPortalLink> MufflingPortalLinks { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Routes between portals of two different MufflingBoxes.
             /// </summary>
             public List<Route.MufflingBoxLink> MufflingBoxLinks { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Routes of type -1, which the game does not load.
             /// </summary>
             public List<Route.Other> Others { get; set; }
 
@@ -102,14 +102,16 @@ namespace SoulsFormats
             internal int OtherID { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The RegionID of the first MufflingPortal this route joins.
             /// </summary>
-            public int Unk08 { get; set; }
+            [MSBRegionIDReference(ReferenceType = typeof(Region.MufflingPortal))]
+            public int PortalA { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The RegionID of the second MufflingPortal this route joins.
             /// </summary>
-            public int Unk0C { get; set; }
+            [MSBRegionIDReference(ReferenceType = typeof(Region.MufflingPortal))]
+            public int PortalB { get; set; }
 
             private protected Route(string name)
             {
@@ -129,8 +131,8 @@ namespace SoulsFormats
             {
                 long start = br.Position;
                 long nameOffset = br.ReadInt64();
-                Unk08 = br.ReadInt32();
-                Unk0C = br.ReadInt32();
+                PortalA = br.ReadInt32();
+                PortalB = br.ReadInt32();
                 br.AssertUInt32((uint)Type);
                 OtherID = br.ReadInt32(); // ID
                 br.AssertPattern(0x68, 0x00);
@@ -149,8 +151,8 @@ namespace SoulsFormats
             {
                 long start = bw.Position;
                 bw.ReserveInt64("NameOffset");
-                bw.WriteInt32(Unk08);
-                bw.WriteInt32(Unk0C);
+                bw.WriteInt32(PortalA);
+                bw.WriteInt32(PortalB);
                 bw.WriteUInt32((uint)Type);
                 if (OtherID != -1)
                     bw.WriteInt32(OtherID);
@@ -168,7 +170,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"\"{Name}\" {Unk08} {Unk0C}";
+                return $"\"{Name}\" {PortalA} {PortalB}";
             }
 
             /// <summary>

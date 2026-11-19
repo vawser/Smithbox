@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a muffling portal in the map." />
+  Wiki="This map object represents a muffling (sound occlusion) portal: an opening of a muffling box. Routes join portals into the occlusion graph." />
   
   <Field>
     <UnkT00
-    AltName="Unknown: 0x0"
-    Wiki="" />
+    AltName="Box Number"
+    Wiki="The Box Number of the muffling box this portal belongs to." />
     
   </Field>
   

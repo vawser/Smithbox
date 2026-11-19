@@ -18,6 +18,15 @@ namespace SoulsFormats
         public bool ObjectInstanceParam = false;
     }
 
+    /// <summary>
+    /// An int field holding the RegionID of a region of ReferenceType in the same map.
+    /// </summary>
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class MSBRegionIDReference : Attribute
+    {
+        public Type ReferenceType;
+    }
+
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class MSBEntityReference : Attribute
     {
