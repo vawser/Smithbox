@@ -690,6 +690,9 @@ public class ProjectConfigureMenu
         EditorToggle("PROJECT_Configuration_Checkbox_Esd_Editor",
             ref Descriptor.EnableEsdEditor, EditorConditions.SupportsEsdEditor(type));
 
+        EditorToggle("PROJECT_Configuration_Checkbox_Lua_Editor",
+            ref Descriptor.EnableLuaEditor, EditorConditions.SupportsLuaEditor(type));
+
         EditorToggle("PROJECT_Configuration_Checkbox_Sound_Editor",
             ref Descriptor.EnableSoundEditor, EditorConditions.SupportsSoundEditor(type));
 
@@ -750,6 +753,7 @@ public class ProjectConfigureMenu
         Descriptor.EnableBehaviorEditor = enabled;
         Descriptor.EnableEmevdEditor = enabled;
         Descriptor.EnableEsdEditor = enabled;
+        Descriptor.EnableLuaEditor = enabled;
         Descriptor.EnableSoundEditor = enabled;
         Descriptor.EnableMaterialEditor = enabled;
         Descriptor.EnableTextureViewer = enabled;

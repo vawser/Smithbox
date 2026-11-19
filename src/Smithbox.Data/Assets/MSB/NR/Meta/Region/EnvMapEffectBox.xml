@@ -1,35 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an environmental map effect box in the map." />
-  
+  <Self
+  Wiki="Environment map effect box (vanilla: Env_BoxNNN). It applies the env map of the Env_PointNNN point with its env map number, and links to irradiance volume GIIV NNN." />
+
   <Field>
     <DisplayDistance
     AltName="Display Distance"
     Wiki="The distance from camera required before enabling envmap. 0 = always enabled." />
-    
+
     <FadeDistance
     AltName="Transition Distance"
     Wiki="The distance it takes for an envmap to fully transition into view." />
-    
-    <ParallaxCorrection
+
+    <ApplyParallaxCorrection
     AltName="Parallax Correction"
-    Wiki="" />
-    
-    <Priority
-    AltName="Priority"
-    Wiki="" />
-    
+    Wiki="Applies parallax correction to the env map (non-zero = on)." />
+
+    <LegacyPriority
+    AltName="Legacy Priority"
+    Wiki="The box priority used only by old MSB versions (before 0x38). 10 in every retail box; use Priority instead." />
+
+    <EnvMapNumber
+    AltName="Env Map Number"
+    Wiki="The env map number this box uses (Env_Point and GIIV volume). -1: the three digits at the end of the box name (Env_Box015 = 15)." />
+
+    <BoundsExpandNegative
+    AltName="Bounds Expand (Negative)"
+    Wiki="Extends the influence bounds of the box beyond its shape on the negative X/Y/Z sides, in metres. 0 in retail." />
+
+    <BoundsExpandPositive
+    AltName="Bounds Expand (Positive)"
+    Wiki="Extends the influence bounds of the box beyond its shape on the positive X/Y/Z sides, in metres. 0 in retail." />
+
     <AmbientDiffuseIntensity
     AltName="Ambient Diffuse Intensity"
     Wiki="Strength of ambient diffuse light." />
-    
+
     <AmbientSpecularIntensity
     AltName="Ambient Specular Intensity"
     Wiki="Strength of ambient specular light." />
-    
+
+    <UnkT2C
+    AltName="Unknown: 0x2C"
+    Wiki="Selects two irradiance volume flags (Elden Ring): 0 = both on, 1 = only the second, 2 = only the first." />
+
+    <IsModifyLight
+    AltName="Is Modify Light"
+    Wiki="Affects lighting with other fields when set. 1 in every retail box."
+    IsBool="" />
+
+    <AdditionalEnvMapNumber
+    AltName="Additional Env Map Number"
+    Wiki="A second env map / irradiance volume number for this box. When 0 or more, the volume setup runs a second time with it. -1: none." />
+
+    <Priority
+    AltName="Priority"
+    Wiki="The box priority. Retail uses 10, 30, 20, 31, 32, 35 and others." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

@@ -701,16 +701,16 @@
       "Text": "Rolling Object Override"
     },
     {
-      "Key": "MAP_Filters_NR_Muffling_Box",
-      "Text": "Muffling Box"
+      "Key": "MAP_Filters_NR_Occlusion_Box",
+      "Text": "Occlusion Box"
     },
     {
-      "Key": "MAP_Filters_NR_Muffling_Portal",
-      "Text": "Muffling Portal"
+      "Key": "MAP_Filters_NR_Occlusion_Portal",
+      "Text": "Occlusion Portal"
     },
     {
-      "Key": "MAP_Filters_NR_Sound_Override",
-      "Text": "Sound Override"
+      "Key": "MAP_Filters_NR_Sound_Region",
+      "Text": "Sound Region"
     },
     {
       "Key": "MAP_Filters_NR_Muffling_Plane",
@@ -721,32 +721,32 @@
       "Text": "Patrol Point"
     },
     {
-      "Key": "MAP_Filters_NR_Map_Point",
-      "Text": "Map Point"
+      "Key": "MAP_Filters_NR_World_Map_Point",
+      "Text": "World Map Point"
     },
     {
       "Key": "MAP_Filters_NR_Sound_State",
       "Text": "Sound State"
     },
     {
-      "Key": "MAP_Filters_NR_Map_Info_Override",
-      "Text": "Map Info Override"
+      "Key": "MAP_Filters_NR_Weather_Lot_Region",
+      "Text": "Weather Lot Region"
     },
     {
       "Key": "MAP_Filters_NR_Auto_Draw_Group_Sample",
       "Text": "Auto Draw Group Sample"
     },
     {
-      "Key": "MAP_Filters_NR_Mass_Placement",
-      "Text": "Mass Placement"
+      "Key": "MAP_Filters_NR_Group_Placement_Point",
+      "Text": "Group Placement Point"
     },
     {
-      "Key": "MAP_Filters_NR_Map_Point_Discovery_Override",
-      "Text": "Map Point Discovery Override"
+      "Key": "MAP_Filters_NR_World_Map_Discovery_Point",
+      "Text": "World Map Discovery Point"
     },
     {
-      "Key": "MAP_Filters_NR_Map_Point_Participation_Override",
-      "Text": "Map Point Participation Override"
+      "Key": "MAP_Filters_NR_World_Map_Reentry_Point",
+      "Text": "World Map Re-entry Point"
     },
     {
       "Key": "MAP_Filters_NR_Hit_Setting",
@@ -761,8 +761,8 @@
       "Text": "Weather Asset Generation"
     },
     {
-      "Key": "MAP_Filters_NR_Play_Area",
-      "Text": "Play Area"
+      "Key": "MAP_Filters_NR_Play_Region",
+      "Text": "Play Region"
     },
     {
       "Key": "MAP_Filters_NR_Mid_Range_Env_Map_Output",
@@ -773,8 +773,8 @@
       "Text": "Map Visibility Override"
     },
     {
-      "Key": "MAP_Filters_NR_Big_Jump",
-      "Text": "Big Jump"
+      "Key": "MAP_Filters_NR_Ride_Jump",
+      "Text": "Ride Jump"
     },
     {
       "Key": "MAP_Filters_NR_Open_Character_Activate_Limit",
@@ -793,8 +793,8 @@
       "Text": "Navmesh Cutting"
     },
     {
-      "Key": "MAP_Filters_NR_Map_Name_Override",
-      "Text": "Map Name Override"
+      "Key": "MAP_Filters_NR_Map_Place_Name_Override",
+      "Text": "Map Place Name Override"
     },
     {
       "Key": "MAP_Filters_NR_Big_Jump_Exit",
@@ -829,8 +829,8 @@
       "Text": "User Edge Removal Outer"
     },
     {
-      "Key": "MAP_Filters_NR_Big_Jump_Sealable",
-      "Text": "Big Jump Sealable"
+      "Key": "MAP_Filters_NR_Dlc_Ride_Jump",
+      "Text": "DLC Ride Jump (Sealable)"
     },
     {
       "Key": "MAP_Filters_NR_Other",

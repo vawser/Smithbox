@@ -1463,6 +1463,15 @@ public class CFG
     public bool EsdEditor_Properties_Display_Bytecode = true;
     #endregion
 
+    #region Lua Editor
+    ///------------------------------------------------------------
+    /// Lua Editor (AI scripts in .luabnd)
+    ///------------------------------------------------------------
+    public bool LuaEditor_Readable_Names = true;
+    public bool LuaEditor_Show_Line_Numbers = true;
+    public bool LuaEditor_File_List_Display_Users = true;
+    #endregion
+
     #region FX Editor
     public bool FxEditor_Allow_Automatic_Save = true;
 

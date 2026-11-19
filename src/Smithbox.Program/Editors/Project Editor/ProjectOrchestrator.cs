@@ -111,9 +111,11 @@ public class ProjectOrchestrator : IDisposable
 
         SettingsEditor.Update(showSettings);
 
-        if (projectReady)
+        // Checked again: the UI above can start a reload (e.g. applying the project configuration), which deselects
+        // the project straight away (LoadProject, before its first await)
+        if (projectReady && SelectedProject is { Initialized: true } project)
         {
-            SelectedProject.Update(dt, activeEditor, commands);
+            project.Update(dt, activeEditor, commands);
         }
 
         if (!Smithbox.FirstFrame && !InitExistingProjects)

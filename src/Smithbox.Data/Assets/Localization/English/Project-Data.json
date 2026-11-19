@@ -153,6 +153,14 @@
       "Text": "[ESD Editor] Failed to load the ESD file list."
     },
     {
+      "Key": "PROJECT_Data_Setup_Lua_Data_PASS",
+      "Text": "[Lua Editor] Listed the Lua binders."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Lua_Data_FAIL",
+      "Text": "[Lua Editor] Failed to list the Lua binders."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Sound_Data_PASS",
       "Text": "[Sound Editor] Listed the sound banks."
     },

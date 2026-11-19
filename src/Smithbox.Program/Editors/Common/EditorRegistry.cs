@@ -3,6 +3,7 @@ using StudioCore.Editors.BehaviorEditor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EsdEditor;
+using StudioCore.Editors.LuaEditor;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.GparamEditor;
@@ -227,6 +228,15 @@ public static class EditorRegistry
                                p.Handler?.EsdEditorStub != null,
             Screen = h => h.EsdEditor,
             Display = (h, dt, c) => h.EsdEditorStub.Display(dt, c)
+        },
+        new()
+        {
+            Id = "lua", LabelKey = "LUA_Editor_Stub", Icon = Icons.FileCodeO, Category = EditorCategory.Scripting,
+            IsAvailable = p => p.Descriptor.EnableLuaEditor &&
+                               EditorConditions.SupportsLuaEditor(p.Descriptor.ProjectType) &&
+                               p.Handler?.LuaEditorStub != null,
+            Screen = h => h.LuaEditor,
+            Display = (h, dt, c) => h.LuaEditorStub.Display(dt, c)
         },
         new()
         {

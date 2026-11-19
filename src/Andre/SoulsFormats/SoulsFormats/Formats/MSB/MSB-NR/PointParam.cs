@@ -37,30 +37,30 @@ namespace SoulsFormats
             EnemySpawnPoint = 25,
             BuddySummonPoint = 26,
             RollingObjectOverride = 27,
-            MufflingBox = 28,
-            MufflingPortal = 29,
-            SoundOverride = 30,
+            OcclusionBox = 28,
+            OcclusionPortal = 29,
+            SoundRegion = 30,
             MufflingPlane = 31,
             PatrolPoint = 32,
-            MapPoint = 33,
+            WorldMapPoint = 33,
             SoundState = 34,
-            MapInfoOverride = 35,
+            WeatherLotRegion = 35,
             AutoDrawGroupSample = 36,
-            MassPlacement = 37,
-            MapPointDiscoveryOverride = 38,
-            MapPointParticipationOverride = 39,
+            GroupPlacementPoint = 37,
+            WorldMapDiscoveryPoint = 38,
+            WorldMapReentryPoint = 39,
             HitSetting = 40,
             FastTravelOverride = 41,
             WeatherAssetGeneration = 42,
-            PlayArea = 43,
+            PlayRegion = 43,
             MidRangeEnvMapOutput = 44,
             MapVisibilityOverride = 45,
-            BigJump = 46,
+            RideJump = 46,
             OpenCharacterActivateLimit = 47,
             SoundDummy = 48,
             FallPreventionOverride = 49,
             NavmeshCutting = 50,
-            MapNameOverride = 51,
+            MapPlaceNameOverride = 51,
             BigJumpExit = 52,
             MountOverride = 53,
             SmallBaseAttach = 54,
@@ -69,7 +69,7 @@ namespace SoulsFormats
             RespawnOverride = 57,
             UserEdgeRemovalInner = 58,
             UserEdgeRemovalOuter = 59,
-            BigJumpSealable = 60,
+            DlcRideJump = 60,
             Other = 0xFFFFFFFF,
         }
 
@@ -95,30 +95,30 @@ namespace SoulsFormats
             public List<Region.EnemySpawnPoint> EnemySpawnPoints { get; set; }
             public List<Region.BuddySummonPoint> BuddySummonPoints { get; set; }
             public List<Region.RollingObjectOverride> RollingObjectOverrides { get; set; }
-            public List<Region.MufflingBox> MufflingBoxs { get; set; }
-            public List<Region.MufflingPortal> MufflingPortals { get; set; }
-            public List<Region.SoundOverride> SoundOverrides { get; set; }
+            public List<Region.OcclusionBox> OcclusionBoxes { get; set; }
+            public List<Region.OcclusionPortal> OcclusionPortals { get; set; }
+            public List<Region.SoundRegion> SoundRegions { get; set; }
             public List<Region.MufflingPlane> MufflingPlanes { get; set; }
             public List<Region.PatrolPoint> PatrolPoints { get; set; }
-            public List<Region.MapPoint> MapPoints { get; set; }
+            public List<Region.WorldMapPoint> WorldMapPoints { get; set; }
             public List<Region.SoundState> SoundStates { get; set; }
-            public List<Region.MapInfoOverride> MapInfoOverrides { get; set; }
+            public List<Region.WeatherLotRegion> WeatherLotRegions { get; set; }
             public List<Region.AutoDrawGroupSample> AutoDrawGroupSamples { get; set; }
-            public List<Region.MassPlacement> MassPlacements { get; set; }
-            public List<Region.MapPointDiscoveryOverride> MapPointDiscoveryOverrides { get; set; }
-            public List<Region.MapPointParticipationOverride> MapPointParticipationOverrides { get; set; }
+            public List<Region.GroupPlacementPoint> GroupPlacementPoints { get; set; }
+            public List<Region.WorldMapDiscoveryPoint> WorldMapDiscoveryPoints { get; set; }
+            public List<Region.WorldMapReentryPoint> WorldMapReentryPoints { get; set; }
             public List<Region.HitSetting> HitSettings { get; set; }
             public List<Region.FastTravelOverride> FastTravelOverrides { get; set; }
             public List<Region.WeatherAssetGeneration> WeatherAssetGenerations { get; set; }
-            public List<Region.PlayArea> PlayAreas { get; set; }
+            public List<Region.PlayRegion> PlayRegions { get; set; }
             public List<Region.MidRangeEnvMapOutput> MidRangeEnvMapOutputs { get; set; }
             public List<Region.MapVisibilityOverride> MapVisibilityOverrides { get; set; }
-            public List<Region.BigJump> BigJumps { get; set; }
+            public List<Region.RideJump> RideJumps { get; set; }
             public List<Region.OpenCharacterActivateLimit> OpenCharacterActivateLimits { get; set; }
             public List<Region.SoundDummy> SoundDummys { get; set; }
             public List<Region.FallPreventionOverride> FallPreventionOverrides { get; set; }
             public List<Region.NavmeshCutting> NavmeshCuttings { get; set; }
-            public List<Region.MapNameOverride> MapNameOverrides { get; set; }
+            public List<Region.MapPlaceNameOverride> MapPlaceNameOverrides { get; set; }
             public List<Region.BigJumpExit> BigJumpExits { get; set; }
             public List<Region.MountOverride> MountOverrides { get; set; }
             public List<Region.SmallBaseAttach> SmallBaseAttachs { get; set; }
@@ -127,7 +127,7 @@ namespace SoulsFormats
             public List<Region.RespawnOverride> RespawnOverrides { get; set; }
             public List<Region.UserEdgeRemovalInner> UserEdgeRemovalInners { get; set; }
             public List<Region.UserEdgeRemovalOuter> UserEdgeRemovalOuters { get; set; }
-            public List<Region.BigJumpSealable> BigJumpSealables { get; set; }
+            public List<Region.DlcRideJump> DlcRideJumps { get; set; }
             public List<Region.Other> Others { get; set; }
 
             public PointParam() : base(78, "POINT_PARAM_ST")
@@ -146,27 +146,27 @@ namespace SoulsFormats
                 SourceWaypoints = new List<Region.SourceWaypoint>();
                 BuddySummonPoints = new List<Region.BuddySummonPoint>();
                 RollingObjectOverrides = new List<Region.RollingObjectOverride>();
-                MufflingBoxs = new List<Region.MufflingBox>();
-                MufflingPortals = new List<Region.MufflingPortal>();
-                SoundOverrides = new List<Region.SoundOverride>();
+                OcclusionBoxes = new List<Region.OcclusionBox>();
+                OcclusionPortals = new List<Region.OcclusionPortal>();
+                SoundRegions = new List<Region.SoundRegion>();
                 MufflingPlanes = new List<Region.MufflingPlane>();
                 PatrolPoints = new List<Region.PatrolPoint>();
-                MapPoints = new List<Region.MapPoint>();
-                MapInfoOverrides = new List<Region.MapInfoOverride>();
+                WorldMapPoints = new List<Region.WorldMapPoint>();
+                WeatherLotRegions = new List<Region.WeatherLotRegion>();
                 AutoDrawGroupSamples = new List<Region.AutoDrawGroupSample>();
-                MassPlacements = new List<Region.MassPlacement>();
-                MapPointDiscoveryOverrides = new List<Region.MapPointDiscoveryOverride>();
-                MapPointParticipationOverrides = new List<Region.MapPointParticipationOverride>();
+                GroupPlacementPoints = new List<Region.GroupPlacementPoint>();
+                WorldMapDiscoveryPoints = new List<Region.WorldMapDiscoveryPoint>();
+                WorldMapReentryPoints = new List<Region.WorldMapReentryPoint>();
                 HitSettings = new List<Region.HitSetting>();
                 FastTravelOverrides = new List<Region.FastTravelOverride>();
                 WeatherAssetGenerations = new List<Region.WeatherAssetGeneration>();
-                PlayAreas = new List<Region.PlayArea>();
+                PlayRegions = new List<Region.PlayRegion>();
                 MidRangeEnvMapOutputs = new List<Region.MidRangeEnvMapOutput>();
-                BigJumps = new List<Region.BigJump>();
+                RideJumps = new List<Region.RideJump>();
                 SoundDummys = new List<Region.SoundDummy>();
                 FallPreventionOverrides = new List<Region.FallPreventionOverride>();
                 NavmeshCuttings = new List<Region.NavmeshCutting>();
-                MapNameOverrides = new List<Region.MapNameOverride>();
+                MapPlaceNameOverrides = new List<Region.MapPlaceNameOverride>();
                 BigJumpExits = new List<Region.BigJumpExit>();
                 MountOverrides = new List<Region.MountOverride>();
                 SmallBaseAttachs = new List<Region.SmallBaseAttach>();
@@ -175,7 +175,7 @@ namespace SoulsFormats
                 RespawnOverrides = new List<Region.RespawnOverride>();
                 UserEdgeRemovalInners = new List<Region.UserEdgeRemovalInner>();
                 UserEdgeRemovalOuters = new List<Region.UserEdgeRemovalOuter>();
-                BigJumpSealables = new List<Region.BigJumpSealable>();
+                DlcRideJumps = new List<Region.DlcRideJump>();
 
                 Others = new List<Region.Other>();
             }
@@ -200,27 +200,27 @@ namespace SoulsFormats
                     case Region.MapConnection r: MapConnections.Add(r); break;
                     case Region.SourceWaypoint r: SourceWaypoints.Add(r); break;
                     case Region.BuddySummonPoint r: BuddySummonPoints.Add(r); break;
-                    case Region.MufflingBox r: MufflingBoxs.Add(r); break;
-                    case Region.MufflingPortal r: MufflingPortals.Add(r); break;
-                    case Region.SoundOverride r: SoundOverrides.Add(r); break;
+                    case Region.OcclusionBox r: OcclusionBoxes.Add(r); break;
+                    case Region.OcclusionPortal r: OcclusionPortals.Add(r); break;
+                    case Region.SoundRegion r: SoundRegions.Add(r); break;
                     case Region.MufflingPlane r: MufflingPlanes.Add(r); break;
                     case Region.PatrolPoint r: PatrolPoints.Add(r); break;
-                    case Region.MapPoint r: MapPoints.Add(r); break;
-                    case Region.MapInfoOverride r: MapInfoOverrides.Add(r); break;
+                    case Region.WorldMapPoint r: WorldMapPoints.Add(r); break;
+                    case Region.WeatherLotRegion r: WeatherLotRegions.Add(r); break;
                     case Region.AutoDrawGroupSample r: AutoDrawGroupSamples.Add(r); break;
-                    case Region.MassPlacement r: MassPlacements.Add(r); break;
-                    case Region.MapPointDiscoveryOverride r: MapPointDiscoveryOverrides.Add(r); break;
-                    case Region.MapPointParticipationOverride r: MapPointParticipationOverrides.Add(r); break;
+                    case Region.GroupPlacementPoint r: GroupPlacementPoints.Add(r); break;
+                    case Region.WorldMapDiscoveryPoint r: WorldMapDiscoveryPoints.Add(r); break;
+                    case Region.WorldMapReentryPoint r: WorldMapReentryPoints.Add(r); break;
                     case Region.HitSetting r: HitSettings.Add(r); break;
                     case Region.FastTravelOverride r: FastTravelOverrides.Add(r); break;
                     case Region.WeatherAssetGeneration r: WeatherAssetGenerations.Add(r); break;
-                    case Region.PlayArea r: PlayAreas.Add(r); break;
+                    case Region.PlayRegion r: PlayRegions.Add(r); break;
                     case Region.MidRangeEnvMapOutput r: MidRangeEnvMapOutputs.Add(r); break;
-                    case Region.BigJump r: BigJumps.Add(r); break;
+                    case Region.RideJump r: RideJumps.Add(r); break;
                     case Region.SoundDummy r: SoundDummys.Add(r); break;
                     case Region.FallPreventionOverride r: FallPreventionOverrides.Add(r); break;
                     case Region.NavmeshCutting r: NavmeshCuttings.Add(r); break;
-                    case Region.MapNameOverride r: MapNameOverrides.Add(r); break;
+                    case Region.MapPlaceNameOverride r: MapPlaceNameOverrides.Add(r); break;
                     case Region.BigJumpExit r: BigJumpExits.Add(r); break;
                     case Region.MountOverride r: MountOverrides.Add(r); break;
                     case Region.SmallBaseAttach r: SmallBaseAttachs.Add(r); break;
@@ -230,7 +230,7 @@ namespace SoulsFormats
                     case Region.RespawnOverride r: RespawnOverrides.Add(r); break;
                     case Region.UserEdgeRemovalInner r: UserEdgeRemovalInners.Add(r); break;
                     case Region.UserEdgeRemovalOuter r: UserEdgeRemovalOuters.Add(r); break;
-                    case Region.BigJumpSealable r: BigJumpSealables.Add(r); break;
+                    case Region.DlcRideJump r: DlcRideJumps.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -248,15 +248,15 @@ namespace SoulsFormats
                 return SFUtil.ConcatAll<Region>(
                     EntryPoints, EnvMapPoints, RespawnPoints, Sounds, SFX, WindSFX,
                     ReturnPoints, Messages, EnvMapEffectBoxs, WindPlacements,
-                    MapConnections, SourceWaypoints, BuddySummonPoints, RollingObjectOverrides, MufflingBoxs,
-                    MufflingPortals, SoundOverrides, MufflingPlanes, PatrolPoints,
-                    MapPoints, MapInfoOverrides, AutoDrawGroupSamples, MassPlacements,
-                    MapPointDiscoveryOverrides, MapPointParticipationOverrides, HitSettings,
-                    FastTravelOverrides, WeatherAssetGenerations, PlayAreas, MidRangeEnvMapOutputs,
-                    BigJumps, SoundDummys, FallPreventionOverrides, NavmeshCuttings, MapNameOverrides,
+                    MapConnections, SourceWaypoints, BuddySummonPoints, RollingObjectOverrides, OcclusionBoxes,
+                    OcclusionPortals, SoundRegions, MufflingPlanes, PatrolPoints,
+                    WorldMapPoints, WeatherLotRegions, AutoDrawGroupSamples, GroupPlacementPoints,
+                    WorldMapDiscoveryPoints, WorldMapReentryPoints, HitSettings,
+                    FastTravelOverrides, WeatherAssetGenerations, PlayRegions, MidRangeEnvMapOutputs,
+                    RideJumps, SoundDummys, FallPreventionOverrides, NavmeshCuttings, MapPlaceNameOverrides,
                     BigJumpExits, MountOverrides, SmallBaseAttachs, BirdRoutes,
                      ClearInfos, RespawnOverrides, UserEdgeRemovalInners, UserEdgeRemovalOuters,
-                     BigJumpSealables,
+                     DlcRideJumps,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -308,14 +308,14 @@ namespace SoulsFormats
                     case RegionType.RollingObjectOverride:
                         return RollingObjectOverrides.EchoAdd(new Region.RollingObjectOverride(br));
 
-                    case RegionType.MufflingBox:
-                        return MufflingBoxs.EchoAdd(new Region.MufflingBox(br));
+                    case RegionType.OcclusionBox:
+                        return OcclusionBoxes.EchoAdd(new Region.OcclusionBox(br));
 
-                    case RegionType.MufflingPortal:
-                        return MufflingPortals.EchoAdd(new Region.MufflingPortal(br));
+                    case RegionType.OcclusionPortal:
+                        return OcclusionPortals.EchoAdd(new Region.OcclusionPortal(br));
 
-                    case RegionType.SoundOverride:
-                        return SoundOverrides.EchoAdd(new Region.SoundOverride(br));
+                    case RegionType.SoundRegion:
+                        return SoundRegions.EchoAdd(new Region.SoundRegion(br));
 
                     case RegionType.MufflingPlane:
                         return MufflingPlanes.EchoAdd(new Region.MufflingPlane(br));
@@ -323,23 +323,23 @@ namespace SoulsFormats
                     case RegionType.PatrolPoint:
                         return PatrolPoints.EchoAdd(new Region.PatrolPoint(br));
 
-                    case RegionType.MapPoint:
-                        return MapPoints.EchoAdd(new Region.MapPoint(br));
+                    case RegionType.WorldMapPoint:
+                        return WorldMapPoints.EchoAdd(new Region.WorldMapPoint(br));
 
-                    case RegionType.MapInfoOverride:
-                        return MapInfoOverrides.EchoAdd(new Region.MapInfoOverride(br));
+                    case RegionType.WeatherLotRegion:
+                        return WeatherLotRegions.EchoAdd(new Region.WeatherLotRegion(br));
 
                     case RegionType.AutoDrawGroupSample:
                         return AutoDrawGroupSamples.EchoAdd(new Region.AutoDrawGroupSample(br));
 
-                    case RegionType.MassPlacement:
-                        return MassPlacements.EchoAdd(new Region.MassPlacement(br));
+                    case RegionType.GroupPlacementPoint:
+                        return GroupPlacementPoints.EchoAdd(new Region.GroupPlacementPoint(br));
 
-                    case RegionType.MapPointDiscoveryOverride:
-                        return MapPointDiscoveryOverrides.EchoAdd(new Region.MapPointDiscoveryOverride(br));
+                    case RegionType.WorldMapDiscoveryPoint:
+                        return WorldMapDiscoveryPoints.EchoAdd(new Region.WorldMapDiscoveryPoint(br));
 
-                    case RegionType.MapPointParticipationOverride:
-                        return MapPointParticipationOverrides.EchoAdd(new Region.MapPointParticipationOverride(br));
+                    case RegionType.WorldMapReentryPoint:
+                        return WorldMapReentryPoints.EchoAdd(new Region.WorldMapReentryPoint(br));
 
                     case RegionType.HitSetting:
                         return HitSettings.EchoAdd(new Region.HitSetting(br));
@@ -350,14 +350,14 @@ namespace SoulsFormats
                     case RegionType.WeatherAssetGeneration:
                         return WeatherAssetGenerations.EchoAdd(new Region.WeatherAssetGeneration(br));
 
-                    case RegionType.PlayArea:
-                        return PlayAreas.EchoAdd(new Region.PlayArea(br));
+                    case RegionType.PlayRegion:
+                        return PlayRegions.EchoAdd(new Region.PlayRegion(br));
 
                     case RegionType.MidRangeEnvMapOutput:
                         return MidRangeEnvMapOutputs.EchoAdd(new Region.MidRangeEnvMapOutput(br));
 
-                    case RegionType.BigJump:
-                        return BigJumps.EchoAdd(new Region.BigJump(br));
+                    case RegionType.RideJump:
+                        return RideJumps.EchoAdd(new Region.RideJump(br));
 
                     case RegionType.SoundDummy:
                         return SoundDummys.EchoAdd(new Region.SoundDummy(br));
@@ -368,8 +368,8 @@ namespace SoulsFormats
                     case RegionType.NavmeshCutting:
                         return NavmeshCuttings.EchoAdd(new Region.NavmeshCutting(br));
 
-                    case RegionType.MapNameOverride:
-                        return MapNameOverrides.EchoAdd(new Region.MapNameOverride(br));
+                    case RegionType.MapPlaceNameOverride:
+                        return MapPlaceNameOverrides.EchoAdd(new Region.MapPlaceNameOverride(br));
 
                     case RegionType.BigJumpExit:
                         return BigJumpExits.EchoAdd(new Region.BigJumpExit(br));
@@ -395,8 +395,8 @@ namespace SoulsFormats
                     case RegionType.UserEdgeRemovalOuter:
                         return UserEdgeRemovalOuters.EchoAdd(new Region.UserEdgeRemovalOuter(br));
 
-                    case RegionType.BigJumpSealable:
-                        return BigJumpSealables.EchoAdd(new Region.BigJumpSealable(br));
+                    case RegionType.DlcRideJump:
+                        return DlcRideJumps.EchoAdd(new Region.DlcRideJump(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -411,6 +411,12 @@ namespace SoulsFormats
         {
             private protected abstract RegionType Type { get; }
             private protected abstract bool HasTypeData { get; }
+
+            /// <summary>
+            /// True for types that gained type data from the ER findings but have no retail NR instance; a file written
+            /// before that (type data offset 0) is still read, keeping the defaults.
+            /// </summary>
+            private protected virtual bool TypeDataOptional => false;
 
             private protected Region(string name)
             {
@@ -468,7 +474,7 @@ namespace SoulsFormats
                         throw new InvalidDataException($"Unexpected {nameof(shapeDataOffset)} 0x{shapeDataOffset:X} in type {GetType()}.");
                     if (baseDataOffset3 == 0)
                         throw new InvalidDataException($"{nameof(baseDataOffset3)} must not be 0 in type {GetType()}.");
-                    if (HasTypeData ^ typeDataOffset != 0)
+                    if (HasTypeData ^ typeDataOffset != 0 && !(TypeDataOptional && typeDataOffset == 0))
                         throw new InvalidDataException($"Unexpected {nameof(typeDataOffset)} 0x{typeDataOffset:X} in type {GetType()}.");
                     if (struct98Offset == 0)
                         throw new InvalidDataException($"{nameof(struct98Offset)} must not be 0 in type {GetType()}.");
@@ -506,7 +512,7 @@ namespace SoulsFormats
                 Unk18_Common = br.ReadInt32();
                 Unk1C_Common = br.ReadInt32();
 
-                if (HasTypeData)
+                if (HasTypeData && typeDataOffset != 0)
                 {
                     br.Position = start + typeDataOffset;
                     ReadTypeData(br);
@@ -584,7 +590,9 @@ namespace SoulsFormats
                 bw.WriteInt32(Unk18_Common);
                 bw.WriteInt32(Unk1C_Common);
 
-                if (Type > RegionType.BuddySummonPoint && Type != RegionType.Other)
+                // Type 27 (RollingObjectOverride) is laid out like the lower types in ER: type data right after the
+                // entity data, padding after it.
+                if (Type > RegionType.RollingObjectOverride && Type != RegionType.Other)
                 {
                     bw.Pad(8);
                 }
@@ -599,7 +607,7 @@ namespace SoulsFormats
                     bw.FillInt64("TypeDataOffset", 0);
                 }
 
-                if (Type <= RegionType.BuddySummonPoint || Type == RegionType.Other)
+                if (Type <= RegionType.RollingObjectOverride || Type == RegionType.Other)
                 {
                     bw.Pad(8);
                 }
@@ -711,6 +719,12 @@ namespace SoulsFormats
 
                 internal EnvMapPoint(BinaryReaderEx br) : base(br) { }
 
+                private protected override void DeepCopyTo(Region region)
+                {
+                    var point = (EnvMapPoint)region;
+                    point.UnkMapID = (byte[])UnkMapID.Clone();
+                }
+
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     Unk00 = br.ReadSingle();
@@ -722,7 +736,7 @@ namespace SoulsFormats
                     Unk0F = br.ReadByte();
                     Unk10 = br.ReadSingle();
                     Unk14 = br.ReadSingle();
-                    Unk18 = br.ReadInt32();
+                    UnkMapID = br.ReadBytes(4);
                     Unk1C = br.ReadInt32();
                     Unk20 = br.ReadInt32();
                     Unk24 = br.ReadInt32();
@@ -743,7 +757,7 @@ namespace SoulsFormats
                     bw.WriteByte(Unk0F);
                     bw.WriteSingle(Unk10);
                     bw.WriteSingle(Unk14);
-                    bw.WriteInt32(Unk18);
+                    bw.WriteBytes(UnkMapID);
                     bw.WriteInt32(Unk1C);
                     bw.WriteInt32(Unk20);
                     bw.WriteInt32(Unk24);
@@ -763,7 +777,13 @@ namespace SoulsFormats
                 public byte Unk0F { get; set; } // Boolean
                 public float Unk10 { get; set; } = 1.0f;
                 public float Unk14 { get; set; } = 1.0f;
-                public int Unk18 { get; set; }
+
+                /// <summary>
+                /// Map the point belongs to (ER: bytes 0-2 are compared with a map ID's AA/BB/CC; byte 0 = 0: none; byte 3
+                /// is not read and is 2 almost everywhere). Retail NR: [0,0,0,2], or open-field tiles such as [60,8,8,2].
+                /// Formerly Unk18 (an int).
+                /// </summary>
+                public byte[] UnkMapID { get; set; } = new byte[] { 0, 0, 0, 2 };
                 public int Unk1C { get; set; } = 0;
                 public int Unk20 { get; set; }
                 public int Unk24 { get; set; }
@@ -1031,6 +1051,11 @@ namespace SoulsFormats
 
             }
 
+            /// <summary>
+            /// An environment map effect box (vanilla: Env_BoxNNN): applies the env map of the Env_PointNNN point with its
+            /// env map number, and links to irradiance volume GIIV NNN. Same layout as ER's EnvironmentMapEffectBox; NR's
+            /// env-map setup (140C72520) reads types 2 and 17 together like ER's.
+            /// </summary>
             public class EnvMapEffectBox : Region
             {
                 private protected override RegionType Type => RegionType.EnvMapEffectBox;
@@ -1045,25 +1070,23 @@ namespace SoulsFormats
                     DisplayDistance = br.ReadSingle();
                     FadeDistance = br.ReadSingle();
                     ApplyParallaxCorrection = br.ReadByte();
-                    Priority = br.ReadByte();
-                    Unk0A = br.ReadInt16();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt32();
-                    Unk1C = br.ReadInt32();
-                    Unk20 = br.ReadInt32();
+                    LegacyPriority = br.ReadByte();
+                    EnvMapNumber = br.ReadInt16();
+                    BoundsExpandNegative = br.ReadVector3();
+                    BoundsExpandPositive = br.ReadVector3();
                     AmbientDiffuseIntensity = br.ReadSingle();
                     AmbientSpecularIntensity = br.ReadSingle();
-                    Unk2C = br.ReadInt16();
-                    Unk2E = br.ReadByte();
-                    Unk2F = br.ReadByte();
-                    Unk30 = br.ReadInt16();
-                    Unk32 = br.ReadByte();
-                    Unk33 = br.ReadByte();
-                    Unk34 = br.ReadInt16();
-                    Unk36 = br.ReadInt16();
-                    Unk38 = br.ReadInt32();
+                    UnkT2C = br.ReadByte();
+                    UnkT2D = br.ReadByte();
+                    IsModifyLight = br.ReadByte();
+                    UnkT2F = br.ReadByte();
+                    AdditionalEnvMapNumber = br.ReadInt16();
+                    UnkT32 = br.ReadByte();
+                    UnkT33 = br.ReadByte();
+                    Priority = br.ReadInt16();
+                    UnkT36 = br.ReadByte();
+                    UnkT37 = br.ReadByte();
+                    UnkT38 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1071,50 +1094,126 @@ namespace SoulsFormats
                     bw.WriteSingle(DisplayDistance);
                     bw.WriteSingle(FadeDistance);
                     bw.WriteByte(ApplyParallaxCorrection);
-                    bw.WriteByte(Priority);
-                    bw.WriteInt16(Unk0A);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
-                    bw.WriteInt32(Unk18);
-                    bw.WriteInt32(Unk1C);
-                    bw.WriteInt32(Unk20);
+                    bw.WriteByte(LegacyPriority);
+                    bw.WriteInt16(EnvMapNumber);
+                    bw.WriteVector3(BoundsExpandNegative);
+                    bw.WriteVector3(BoundsExpandPositive);
                     bw.WriteSingle(AmbientDiffuseIntensity);
                     bw.WriteSingle(AmbientSpecularIntensity);
-                    bw.WriteInt16(Unk2C);
-                    bw.WriteByte(Unk2E);
-                    bw.WriteByte(Unk2F);
-                    bw.WriteInt16(Unk30);
-                    bw.WriteByte(Unk32);
-                    bw.WriteByte(Unk33);
-                    bw.WriteInt16(Unk34);
-                    bw.WriteInt16(Unk36);
-                    bw.WriteInt32(Unk38);
+                    bw.WriteByte(UnkT2C);
+                    bw.WriteByte(UnkT2D);
+                    bw.WriteByte(IsModifyLight);
+                    bw.WriteByte(UnkT2F);
+                    bw.WriteInt16(AdditionalEnvMapNumber);
+                    bw.WriteByte(UnkT32);
+                    bw.WriteByte(UnkT33);
+                    bw.WriteInt16(Priority);
+                    bw.WriteByte(UnkT36);
+                    bw.WriteByte(UnkT37);
+                    bw.WriteInt32(UnkT38);
                 }
 
-                // Layout
+                /// <summary>
+                /// Distance from camera required before enabling envmap. 0 = always enabled.
+                /// </summary>
                 public float DisplayDistance { get; set; } = 0;
+
+                /// <summary>
+                /// Distance it takes for an envmap to fully transition into view.
+                /// </summary>
                 public float FadeDistance { get; set; } = 0;
-                public byte ApplyParallaxCorrection { get; set; } = 0; // Boolean
-                public byte Priority { get; set; } = 10; // Priority
-                public short Unk0A { get; set; } = -1;
-                public int Unk0C { get; set; } = 0;
-                public int Unk10 { get; set; } = 0;
-                public int Unk14 { get; set; } = 0;
-                public int Unk18 { get; set; } = 0;
-                public int Unk1C { get; set; } = 0;
-                public int Unk20 { get; set; } = 0;
+
+                /// <summary>
+                /// Applies parallax correction to the env map (non-zero = on).
+                /// </summary>
+                public byte ApplyParallaxCorrection { get; set; } = 0;
+
+                /// <summary>
+                /// The box priority for MSB versions before 0x38 (ER). Later versions use Priority; 10 in all retail NR boxes.
+                /// </summary>
+                public byte LegacyPriority { get; set; } = 10;
+
+                /// <summary>
+                /// The env map number this box uses (Env_Point and GIIV volume). -1: the three digits at the end of the
+                /// box name (Env_Box015 = 15).
+                /// </summary>
+                public short EnvMapNumber { get; set; } = -1;
+
+                /// <summary>
+                /// Extends the influence bounds of the box beyond its shape on the negative X/Y/Z sides (min = -size/2 - this). 0 in retail.
+                /// </summary>
+                public Vector3 BoundsExpandNegative { get; set; }
+
+                /// <summary>
+                /// Extends the influence bounds of the box beyond its shape on the positive X/Y/Z sides (max = size/2 + this). 0 in retail.
+                /// </summary>
+                public Vector3 BoundsExpandPositive { get; set; }
+
+                /// <summary>
+                /// Strength of ambient diffuse light.
+                /// </summary>
                 public float AmbientDiffuseIntensity { get; set; } = 1f;
+
+                /// <summary>
+                /// Strength of ambient specular light.
+                /// </summary>
                 public float AmbientSpecularIntensity { get; set; } = 1f;
-                public short Unk2C { get; set; } = 0;
-                public byte Unk2E { get; set; } = 1;
-                public byte Unk2F { get; set; } = 1;
-                public short Unk30 { get; set; } = -1;
-                public byte Unk32 { get; set; } = 0;
-                public byte Unk33 { get; set; } = 1; // Boolean
-                public short Unk34 { get; set; } = 0;
-                public short Unk36 { get; set; } = 1; // Bool
-                public int Unk38 { get; set; } = 0;
+
+                /// <summary>
+                /// Selects two irradiance volume flags (ER): 0 = both on, 1 = only the second, 2 = only the first. 0 in retail NR.
+                /// </summary>
+                public byte UnkT2C { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; copied with the UnkT2C flags but never read in ER. 0 in retail.
+                /// </summary>
+                public byte UnkT2D { get; set; } = 0;
+
+                /// <summary>
+                /// Affects lighting with other fields when set (boolean). 1 in all retail NR boxes.
+                /// </summary>
+                public byte IsModifyLight { get; set; } = 1;
+
+                /// <summary>
+                /// Unknown (boolean); no effect in ER.
+                /// </summary>
+                public byte UnkT2F { get; set; } = 1;
+
+                /// <summary>
+                /// A second env map / irradiance volume number for this box; when 0 or more, the volume setup runs a
+                /// second time with it. -1: none.
+                /// </summary>
+                public short AdditionalEnvMapNumber { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown (boolean); no effect in ER.
+                /// </summary>
+                public byte UnkT32 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown (boolean); no effect in ER.
+                /// </summary>
+                public byte UnkT33 { get; set; } = 1;
+
+                /// <summary>
+                /// The box priority (MSB version 0x38 and later). Retail NR: 10, 30, 20, 31, 32, 35 and others.
+                /// </summary>
+                public short Priority { get; set; } = 10;
+
+                /// <summary>
+                /// Unknown (boolean); no effect in ER.
+                /// </summary>
+                public byte UnkT36 { get; set; } = 1;
+
+                /// <summary>
+                /// Unknown; 0 in retail.
+                /// </summary>
+                public byte UnkT37 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in retail.
+                /// </summary>
+                public int UnkT38 { get; set; } = 0;
             }
 
             public class WindPlacement : Region
@@ -1268,10 +1367,17 @@ namespace SoulsFormats
                 // Layout
             }
 
+            /// <summary>
+            /// The exe's CSRollingObjOverrideRegionMan region: inside it, rolling objects spawn from RollingObjLotParamID
+            /// instead of the map tile's own lot. No retail NR map uses it; nightreign.exe reads +0 as an int (-1 when
+            /// there is no type data, 1406DCB10) like ER, so the ER layout is used. Files without type data for this
+            /// type (written by older versions) are still read.
+            /// </summary>
             public class RollingObjectOverride : Region
             {
                 private protected override RegionType Type => RegionType.RollingObjectOverride;
-                private protected override bool HasTypeData => false;
+                private protected override bool HasTypeData => true;
+                private protected override bool TypeDataOptional => true;
 
                 public RollingObjectOverride() : base($"{nameof(Region)}: {nameof(RollingObjectOverride)}") { }
 
@@ -1279,211 +1385,301 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
+                    RollingObjLotParamID = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
+                    UnkT08 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
+                    bw.WriteInt32(RollingObjLotParamID);
+                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(UnkT08);
                 }
 
-                // Layout
+                /// <summary>
+                /// The RollingObjLotParam row used for spawns inside the region. -1 means nothing spawns.
+                /// </summary>
+                [MSBParamReference(ParamName = "RollingObjLotParam")]
+                public int RollingObjLotParamID { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown; 0 in ER and never read.
+                /// </summary>
+                public int UnkT04 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in ER and never read.
+                /// </summary>
+                public int UnkT08 { get; set; } = 0;
             }
 
-            public class MufflingBox : Region
+            /// <summary>
+            /// The exe's CSMsbPointOcclusionBox (formerly MufflingBox): a room of the sound occlusion graph. Its
+            /// OcclusionPortals are the openings, and routes (MufflingPortalLink / MufflingBoxLink) join the portals.
+            /// </summary>
+            public class OcclusionBox : Region
             {
-                private protected override RegionType Type => RegionType.MufflingBox;
+                private protected override RegionType Type => RegionType.OcclusionBox;
                 private protected override bool HasTypeData => true;
 
-                public MufflingBox() : base($"{nameof(Region)}: {nameof(MufflingBox)}") { }
+                public OcclusionBox() : base($"{nameof(Region)}: {nameof(OcclusionBox)}") { }
 
-                internal MufflingBox(BinaryReaderEx br) : base(br) { }
+                internal OcclusionBox(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
+                    BoxNumber = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
+                    UnkT08 = br.ReadInt32();
+                    UnkT0C = br.ReadInt32();
+                    UnkT10 = br.ReadInt32();
+                    UnkT14 = br.ReadInt32();
                     Offset18 = br.ReadInt64();
 
-                    Unk20 = br.ReadInt32();
-                    Unk24 = br.ReadSingle();
-                    Unk28 = br.ReadInt32();
-                    Unk2C = br.ReadInt32();
-                    Unk30 = br.ReadInt32();
-                    Unk34 = br.ReadSingle();
-                    Unk38 = br.ReadInt32();
-                    Unk3C = br.ReadSingle();
-                    Unk40 = br.ReadSingle();
-                    Unk44 = br.ReadSingle();
+                    UnkT20 = br.ReadInt32();
+                    UnkT24 = br.ReadSingle();
+                    UnkT28 = br.ReadInt32();
+                    UnkT2C = br.ReadInt32();
+                    UnkT30 = br.ReadInt32();
+                    UnkT34 = br.ReadSingle();
+                    UnkT38 = br.ReadInt32();
+                    UnkT3C = br.ReadSingle();
+                    UnkT40 = br.ReadSingle();
+                    UnkT44 = br.ReadSingle();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(BoxNumber);
+                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(UnkT0C);
+                    bw.WriteInt32(UnkT10);
+                    bw.WriteInt32(UnkT14);
                     bw.WriteInt64(Offset18);
 
-                    bw.WriteInt32(Unk20);
-                    bw.WriteSingle(Unk24);
-                    bw.WriteInt32(Unk28);
-                    bw.WriteInt32(Unk2C);
-                    bw.WriteInt32(Unk30);
-                    bw.WriteSingle(Unk34);
-                    bw.WriteInt32(Unk38);
-                    bw.WriteSingle(Unk3C);
-                    bw.WriteSingle(Unk40);
-                    bw.WriteSingle(Unk44);
+                    bw.WriteInt32(UnkT20);
+                    bw.WriteSingle(UnkT24);
+                    bw.WriteInt32(UnkT28);
+                    bw.WriteInt32(UnkT2C);
+                    bw.WriteInt32(UnkT30);
+                    bw.WriteSingle(UnkT34);
+                    bw.WriteInt32(UnkT38);
+                    bw.WriteSingle(UnkT3C);
+                    bw.WriteSingle(UnkT40);
+                    bw.WriteSingle(UnkT44);
                 }
 
-                // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0;
-                public int Unk0C { get; set; } = 0;
-                public int Unk10 { get; set; } = 0;
-                public int Unk14 { get; set; } = 0;
-                public int Unk20 { get; set; } = 0;
-                public float Unk24 { get; set; } = 100f;
-                public int Unk28 { get; set; } = 0;
-                public int Unk2C { get; set; } = 0;
-                public int Unk30 { get; set; } = 0;
-                public float Unk34 { get; set; } = 100f;
-                public int Unk38 { get; set; } = 0;
-                public float Unk3C { get; set; } = -1f;
-                public float Unk40 { get; set; } = -1f;
-                public float Unk44 { get; set; } = -1f;
+                /// <summary>
+                /// The room number. Several boxes can share a number and form one room; each OcclusionPortal names the
+                /// room it belongs to with the same number.
+                /// </summary>
+                public int BoxNumber { get; set; } = 0;
+
+                public int UnkT04 { get; set; } = 0;
+                public int UnkT08 { get; set; } = 0;
+                public int UnkT0C { get; set; } = 0;
+                public int UnkT10 { get; set; } = 0;
+                public int UnkT14 { get; set; } = 0;
+                public int UnkT20 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown. 100 in every retail box; not seen read in ER.
+                /// </summary>
+                public float UnkT24 { get; set; } = 100f;
+                public int UnkT28 { get; set; } = 0;
+                public int UnkT2C { get; set; } = 0;
+                public int UnkT30 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown. 100 in every retail box; not seen read in ER.
+                /// </summary>
+                public float UnkT34 { get; set; } = 100f;
+                public int UnkT38 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown. -1 in every retail box; not seen read in ER.
+                /// </summary>
+                public float UnkT3C { get; set; } = -1f;
+                public float UnkT40 { get; set; } = -1f;
+                public float UnkT44 { get; set; } = -1f;
 
                 // Offsets
                 private long Offset18 { get; set; } = 32;
             }
 
-            public class MufflingPortal : Region
+            /// <summary>
+            /// The exe's CSMsbPointOcclusionPortal (formerly MufflingPortal): an opening of an OcclusionBox. Routes
+            /// reference portals by their RegionID.
+            /// </summary>
+            public class OcclusionPortal : Region
             {
-                private protected override RegionType Type => RegionType.MufflingPortal;
+                private protected override RegionType Type => RegionType.OcclusionPortal;
                 private protected override bool HasTypeData => true;
 
-                public MufflingPortal() : base($"{nameof(Region)}: {nameof(MufflingPortal)}") { }
+                public OcclusionPortal() : base($"{nameof(Region)}: {nameof(OcclusionPortal)}") { }
 
-                internal MufflingPortal(BinaryReaderEx br) : base(br) { }
+                internal OcclusionPortal(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
+                    BoxNumber = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
+                    UnkT08 = br.ReadInt32();
+                    UnkT0C = br.ReadInt32();
+                    UnkT10 = br.ReadInt32();
+                    UnkT14 = br.ReadInt32();
                     Offset18 = br.ReadInt64();
-                    Unk20 = br.ReadInt32();
-                    Unk24 = br.ReadInt32();
-                    Unk28 = br.ReadInt32();
-                    Unk2C = br.ReadInt32();
-                    Unk30 = br.ReadInt32();
-                    Unk34 = br.ReadInt32();
+                    UnkT20 = br.ReadInt32();
+                    UnkT24 = br.ReadInt32();
+                    UnkT28 = br.ReadInt32();
+                    UnkT2C = br.ReadInt32();
+                    UnkT30 = br.ReadInt32();
+                    UnkT34 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(BoxNumber);
+                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(UnkT0C);
+                    bw.WriteInt32(UnkT10);
+                    bw.WriteInt32(UnkT14);
                     bw.WriteInt64(Offset18);
-                    bw.WriteInt32(Unk20);
-                    bw.WriteInt32(Unk24);
-                    bw.WriteInt32(Unk28);
-                    bw.WriteInt32(Unk2C);
-                    bw.WriteInt32(Unk30);
-                    bw.WriteInt32(Unk34);
+                    bw.WriteInt32(UnkT20);
+                    bw.WriteInt32(UnkT24);
+                    bw.WriteInt32(UnkT28);
+                    bw.WriteInt32(UnkT2C);
+                    bw.WriteInt32(UnkT30);
+                    bw.WriteInt32(UnkT34);
                 }
 
-                // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0;
-                public int Unk0C { get; set; } = 0;
-                public int Unk10 { get; set; } = 0;
-                public int Unk14 { get; set; } = 0;
-                public int Unk20 { get; set; } = 0;
-                public int Unk24 { get; set; } = 0;
-                public int Unk28 { get; set; } = 0;
-                public int Unk2C { get; set; } = 0;
-                public int Unk30 { get; set; } = 0;
-                public int Unk34 { get; set; } = -1;
+                /// <summary>
+                /// The BoxNumber of the OcclusionBox this portal belongs to (283 of 283 retail NR portals match a box in their map).
+                /// </summary>
+                public int BoxNumber { get; set; } = 0;
+
+                public int UnkT04 { get; set; } = 0;
+                public int UnkT08 { get; set; } = 0;
+                public int UnkT0C { get; set; } = 0;
+                public int UnkT10 { get; set; } = 0;
+                public int UnkT14 { get; set; } = 0;
+                public int UnkT20 { get; set; } = 0;
+                public int UnkT24 { get; set; } = 0;
+                public int UnkT28 { get; set; } = 0;
+                public int UnkT2C { get; set; } = 0;
+                public int UnkT30 { get; set; } = 0;
+                public int UnkT34 { get; set; } = -1;
 
                 // Offsets
                 private long Offset18 { get; set; } = 32;
             }
 
-            public class SoundOverride : Region
+            /// <summary>
+            /// The exe's CSMsbPointSoundRegion (formerly SoundOverride): overrides map sound settings while the listener
+            /// is inside it. Same layout as ER's SoundRegion; in ER a field only counts when it is not -1 and the shape
+            /// is a Box.
+            /// </summary>
+            public class SoundRegion : Region
             {
-                private protected override RegionType Type => RegionType.SoundOverride;
+                private protected override RegionType Type => RegionType.SoundRegion;
                 private protected override bool HasTypeData => true;
 
-                public SoundOverride() : base($"{nameof(Region)}: {nameof(SoundOverride)}") { }
+                public SoundRegion() : base($"{nameof(Region)}: {nameof(SoundRegion)}") { }
 
-                internal SoundOverride(BinaryReaderEx br) : base(br) { }
+                internal SoundRegion(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadSByte();
-                    Unk01 = br.ReadByte();
-                    Unk02 = br.ReadByte();
-                    Unk03 = br.ReadSByte();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt16();
-                    Unk0A = br.ReadInt16();
-                    Unk0C = br.ReadSByte();
-                    Unk0D = br.ReadByte();
-                    Unk0E = br.ReadInt16();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt32();
-                    Unk1C = br.ReadInt32();
+                    ReverbType = br.ReadSByte();
+                    WaterType = br.ReadByte();
+                    WaterID = br.ReadByte();
+                    OutdoorIndoorType = br.ReadSByte();
+                    WwiseEnvPlaceTypeID = br.ReadInt32();
+                    EnvPlaceInfo = br.ReadInt16();
+                    CommonPlaceType = br.ReadInt16();
+                    DisableAutoCliffWind = br.ReadSByte();
+                    UnkT0D = br.ReadByte();
+                    UnkT0E = br.ReadInt16();
+                    UnkT10 = br.ReadInt32();
+                    UnkT14 = br.ReadInt32();
+                    UnkT18 = br.ReadInt32();
+                    UnkT1C = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSByte(Unk00);
-                    bw.WriteByte(Unk01);
-                    bw.WriteByte(Unk02);
-                    bw.WriteSByte(Unk03);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt16(Unk08);
-                    bw.WriteInt16(Unk0A);
-                    bw.WriteSByte(Unk0C);
-                    bw.WriteByte(Unk0D);
-                    bw.WriteInt16(Unk0E);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
-                    bw.WriteInt32(Unk18);
-                    bw.WriteInt32(Unk1C);
+                    bw.WriteSByte(ReverbType);
+                    bw.WriteByte(WaterType);
+                    bw.WriteByte(WaterID);
+                    bw.WriteSByte(OutdoorIndoorType);
+                    bw.WriteInt32(WwiseEnvPlaceTypeID);
+                    bw.WriteInt16(EnvPlaceInfo);
+                    bw.WriteInt16(CommonPlaceType);
+                    bw.WriteSByte(DisableAutoCliffWind);
+                    bw.WriteByte(UnkT0D);
+                    bw.WriteInt16(UnkT0E);
+                    bw.WriteInt32(UnkT10);
+                    bw.WriteInt32(UnkT14);
+                    bw.WriteInt32(UnkT18);
+                    bw.WriteInt32(UnkT1C);
                 }
 
-                // Layout
-                public sbyte Unk00 { get; set; } = -1;
-                public byte Unk01 { get; set; } = 0;
-                public byte Unk02 { get; set; } = 0;
-                public sbyte Unk03 { get; set; } = -1;
-                public int Unk04 { get; set; } = -1;
-                public short Unk08 { get; set; } = -1;
-                public short Unk0A { get; set; } = -1;
-                public sbyte Unk0C { get; set; } = -1;
-                public byte Unk0D { get; set; } = 0;
-                public short Unk0E { get; set; } = 0;
-                public int Unk10 { get; set; } = 0;
-                public int Unk14 { get; set; } = 0;
-                public int Unk18 { get; set; } = 0;
-                public int Unk1C { get; set; } = 0;
+                /// <summary>
+                /// Reverb type used inside the region, replacing MapDefaultInfoParam ReverbDefaultType. -1: no override.
+                /// </summary>
+                public sbyte ReverbType { get; set; } = -1;
+
+                /// <summary>
+                /// Water body type for the region's water sound: 0 none, 1 sea, 2 lake, 3 river. Regions with the same
+                /// WaterType and WaterID form one water sound.
+                /// </summary>
+                public byte WaterType { get; set; } = 0;
+
+                /// <summary>
+                /// ID of the water sound group within its WaterType. Only used when WaterType is above 0.
+                /// </summary>
+                public byte WaterID { get; set; } = 0;
+
+                /// <summary>
+                /// Outdoor/indoor override, like Collision OutdoorIndoorType: 0 outdoor, 1 half indoor, 2 indoor. -1: no override.
+                /// </summary>
+                public sbyte OutdoorIndoorType { get; set; } = -1;
+
+                /// <summary>
+                /// Wwise environment place type used inside the region. -1: no override.
+                /// </summary>
+                [MSBParamReference(ParamName = "WwiseValueToStrParam_EnvPlaceType")]
+                public int WwiseEnvPlaceTypeID { get; set; } = -1;
+
+                /// <summary>
+                /// Replaces MapDefaultInfoParam EnvPlaceInfo inside the region. -1: no override.
+                /// </summary>
+                [MSBParamReference(ParamName = "WwiseValueToStrParam_EnvPlaceType")]
+                public short EnvPlaceInfo { get; set; } = -1;
+
+                /// <summary>
+                /// Common place type used inside the region (-1 = none).
+                /// </summary>
+                public short CommonPlaceType { get; set; } = -1;
+
+                /// <summary>
+                /// Replaces MapDefaultInfoParam isDisableAutoCliffWind inside the region (ER: only read in m61 maps).
+                /// -1: no override. -1 in all retail NR regions.
+                /// </summary>
+                public sbyte DisableAutoCliffWind { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown; 0 in retail.
+                /// </summary>
+                public byte UnkT0D { get; set; } = 0;
+                public short UnkT0E { get; set; } = 0;
+                public int UnkT10 { get; set; } = 0;
+                public int UnkT14 { get; set; } = 0;
+                public int UnkT18 { get; set; } = 0;
+                public int UnkT1C { get; set; } = 0;
             }
 
             public class MufflingPlane : Region
@@ -1506,6 +1702,9 @@ namespace SoulsFormats
                 // Layout
             }
 
+            /// <summary>
+            /// A point along an NPC patrol path.
+            /// </summary>
             public class PatrolPoint : Region
             {
                 private protected override RegionType Type => RegionType.PatrolPoint;
@@ -1517,16 +1716,19 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
+                    ActionID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(ActionID);
                 }
 
-                // Layout
-                public int Unk00 { get; set; } = -1;
+                /// <summary>
+                /// Action ID that AI scripts read for this point (ER: Lua GetMovePointActionId). -1: none.
+                /// Retail NR: mostly 900002-900006.
+                /// </summary>
+                public int ActionID { get; set; } = -1;
             }
 
             public class SoundState : Region
@@ -1549,93 +1751,163 @@ namespace SoulsFormats
                 // Layout
             }
 
-            public class MapPoint : Region
+            /// <summary>
+            /// The exe's CSMsbPointWorldMapPoint (formerly MapPoint): a point shown on the world map, with a discovery
+            /// area and a re-entry area. nightreign.exe loads types 38, 39 and 33 together (140BAC6E0), like ER.
+            /// </summary>
+            public class WorldMapPoint : Region
             {
-                private protected override RegionType Type => RegionType.MapPoint;
+                private protected override RegionType Type => RegionType.WorldMapPoint;
                 private protected override bool HasTypeData => true;
 
-                public MapPoint() : base($"{nameof(Region)}: {nameof(MapPoint)}") { }
+                public WorldMapPoint() : base($"{nameof(Region)}: {nameof(WorldMapPoint)}") { }
 
-                internal MapPoint(BinaryReaderEx br) : base(br) { }
+                internal WorldMapPoint(BinaryReaderEx br) : base(br) { }
+
+                internal override void GetNames(Entries entries)
+                {
+                    base.GetNames(entries);
+                    DiscoveryRegionName = MSB.FindName(entries.Regions, DiscoveryRegionIndex);
+                    ReentryRegionName = MSB.FindName(entries.Regions, ReentryRegionIndex);
+                }
+
+                internal override void GetIndices(Entries entries)
+                {
+                    base.GetIndices(entries);
+                    DiscoveryRegionIndex = MSB.FindIndex(this, entries.Regions, DiscoveryRegionName);
+                    ReentryRegionIndex = MSB.FindIndex(this, entries.Regions, ReentryRegionName);
+                }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     WorldMapPointParamID = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadSingle();
-                    Unk0C = br.ReadSingle();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadSingle();
-                    Unk18 = br.ReadSingle();
-                    Unk1C = br.ReadInt32();
+                    DiscoveryRegionIndex = br.ReadInt32();
+                    DiscoveryExpandRangeXZ = br.ReadSingle();
+                    DiscoveryExpandRangeY = br.ReadSingle();
+                    ReentryRegionIndex = br.ReadInt32();
+                    ReentryExpandRangeXZ = br.ReadSingle();
+                    ReentryExpandRangeY = br.ReadSingle();
+                    UnkT1C = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(WorldMapPointParamID);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteSingle(Unk08);
-                    bw.WriteSingle(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteSingle(Unk14);
-                    bw.WriteSingle(Unk18);
-                    bw.WriteInt32(Unk1C);
+                    bw.WriteInt32(DiscoveryRegionIndex);
+                    bw.WriteSingle(DiscoveryExpandRangeXZ);
+                    bw.WriteSingle(DiscoveryExpandRangeY);
+                    bw.WriteInt32(ReentryRegionIndex);
+                    bw.WriteSingle(ReentryExpandRangeXZ);
+                    bw.WriteSingle(ReentryExpandRangeY);
+                    bw.WriteInt32(UnkT1C);
                 }
 
-                // Layout
+                /// <summary>
+                /// Determines which WorldMapPointParam to use.
+                /// </summary>
                 public int WorldMapPointParamID { get; set; } = -1;
-                public int Unk04 { get; set; } = -1;
-                public float Unk08 { get; set; } = -1f;
-                public float Unk0C { get; set; } = -1f;
-                public int Unk10 { get; set; } = -1;
-                public float Unk14 { get; set; } = -1f;
-                public float Unk18 { get; set; } = -1f;
-                public int Unk1C { get; set; } = 0;
+
+                /// <summary>
+                /// A WorldMapDiscoveryPoint region that replaces this point's discovery area. Empty: the discovery area
+                /// is this region's shape, expanded by DiscoveryExpandRangeXZ / DiscoveryExpandRangeY.
+                /// </summary>
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string DiscoveryRegionName { get; set; }
+                private int DiscoveryRegionIndex { get; set; } = -1;
+
+                /// <summary>
+                /// Horizontal expansion of the shape for the discovery area. Negative: GameSystemCommonParam default.
+                /// </summary>
+                public float DiscoveryExpandRangeXZ { get; set; } = -1f;
+
+                /// <summary>
+                /// Vertical expansion of the shape for the discovery area. Negative: GameSystemCommonParam default.
+                /// </summary>
+                public float DiscoveryExpandRangeY { get; set; } = -1f;
+
+                /// <summary>
+                /// A WorldMapReentryPoint region that replaces this point's re-entry area. Empty: the re-entry area is
+                /// this region's shape, expanded by ReentryExpandRangeXZ / ReentryExpandRangeY.
+                /// </summary>
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string ReentryRegionName { get; set; }
+                private int ReentryRegionIndex { get; set; } = -1;
+
+                /// <summary>
+                /// Horizontal expansion of the shape for the re-entry area. Negative: GameSystemCommonParam default.
+                /// </summary>
+                public float ReentryExpandRangeXZ { get; set; } = -1f;
+
+                /// <summary>
+                /// Vertical expansion of the shape for the re-entry area. Negative: GameSystemCommonParam default.
+                /// </summary>
+                public float ReentryExpandRangeY { get; set; } = -1f;
+
+                /// <summary>
+                /// Unknown; 0 in retail.
+                /// </summary>
+                public int UnkT1C { get; set; } = 0;
             }
 
-            public class MapInfoOverride : Region
+            /// <summary>
+            /// The exe's CSWeatherLotRegionMan region (formerly MapInfoOverride). While the player is inside, the region's
+            /// WeatherLotParamID overrides the map's (nightreign.exe 140654C40). NR reads only +0 and +4; ER's
+            /// MimicryEstablishmentTexParam overrides at +8..+A are not read by NR.
+            /// </summary>
+            public class WeatherLotRegion : Region
             {
-                private protected override RegionType Type => RegionType.MapInfoOverride;
+                private protected override RegionType Type => RegionType.WeatherLotRegion;
                 private protected override bool HasTypeData => true;
 
-                public MapInfoOverride() : base($"{nameof(Region)}: {nameof(MapInfoOverride)}") { }
+                public WeatherLotRegion() : base($"{nameof(Region)}: {nameof(WeatherLotRegion)}") { }
 
-                internal MapInfoOverride(BinaryReaderEx br) : base(br) { }
+                internal WeatherLotRegion(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt32();
-                    Unk1C = br.ReadInt32();
+                    WeatherLotParamID = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
+                    UnkT08 = br.ReadInt32();
+                    UnkT0C = br.ReadInt32();
+                    UnkT10 = br.ReadInt32();
+                    UnkT14 = br.ReadInt32();
+                    UnkT18 = br.ReadInt32();
+                    UnkT1C = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
-                    bw.WriteInt32(Unk18);
-                    bw.WriteInt32(Unk1C);
+                    bw.WriteInt32(WeatherLotParamID);
+                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(UnkT0C);
+                    bw.WriteInt32(UnkT10);
+                    bw.WriteInt32(UnkT14);
+                    bw.WriteInt32(UnkT18);
+                    bw.WriteInt32(UnkT1C);
                 }
 
-                // Layout
-                public int Unk00 { get; set; } = 4000;
-                public int Unk04 { get; set; } = -1;
-                public int Unk08 { get; set; } = 0;
-                public int Unk0C { get; set; } = 0;
-                public int Unk10 { get; set; } = 0;
-                public int Unk14 { get; set; } = 0;
-                public int Unk18 { get; set; } = 0;
-                public int Unk1C { get; set; } = 0;
+                /// <summary>
+                /// Determines which WeatherLotParam ID to use. -1: no override. Retail NR: 4000 (one region).
+                /// </summary>
+                [MSBParamReference(ParamName = "WeatherLotParam")]
+                public int WeatherLotParamID { get; set; } = -1;
 
+                /// <summary>
+                /// Unknown, -1 = none. Read by 140654BD0 (-1 when there is no type data); -1 in retail.
+                /// </summary>
+                public int UnkT04 { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown; 0 in retail and not read by NR (ER: three sbyte mimicry overrides and a byte).
+                /// </summary>
+                public int UnkT08 { get; set; } = 0;
+
+                public int UnkT0C { get; set; } = 0;
+                public int UnkT10 { get; set; } = 0;
+                public int UnkT14 { get; set; } = 0;
+                public int UnkT18 { get; set; } = 0;
+                public int UnkT1C { get; set; } = 0;
             }
 
             public class AutoDrawGroupSample : Region
@@ -1658,128 +1930,124 @@ namespace SoulsFormats
                 // Layout
             }
 
-            public class MassPlacement : Region
+            /// <summary>
+            /// A group placement point (the game's CSMsbPointGroupPlacementPoint; formerly MassPlacement): a group of
+            /// enemies, placed from a RandomAppearParam row and tied to platoons. The first 0x54 bytes follow ER's
+            /// GroupPlacementPoint; NR has one more int before the tail (UnkT54), so ER's EstusFlaskRecoveryID (+54h)
+            /// is probably UnkT58 here. Not traced in nightreign.exe.
+            /// </summary>
+            public class GroupPlacementPoint : Region
             {
-                private protected override RegionType Type => RegionType.MassPlacement;
+                private protected override RegionType Type => RegionType.GroupPlacementPoint;
                 private protected override bool HasTypeData => true;
 
-                public MassPlacement() : base($"{nameof(Region)}: {nameof(MassPlacement)}")
+                public GroupPlacementPoint() : base($"{nameof(Region)}: {nameof(GroupPlacementPoint)}")
                 {
-                    //PartNames = new string[8];
+                    PlatoonEventNames = new string[4];
+                    PartNames = new string[8];
+                    LinkedAssetNames = new string[8];
                 }
 
-                internal MassPlacement(BinaryReaderEx br) : base(br) { }
+                internal GroupPlacementPoint(BinaryReaderEx br) : base(br) { }
 
-                //private protected override void DeepCopyTo(Region region)
-                //{
-                //    var reward = (MassPlacement)region;
-                //    reward.PartNames = (string[])PartNames.Clone();
-                //}
+                private protected override void DeepCopyTo(Region region)
+                {
+                    var group = (GroupPlacementPoint)region;
+                    group.PlatoonEventNames = (string[])PlatoonEventNames.Clone();
+                    group.PartNames = (string[])PartNames.Clone();
+                    group.LinkedAssetNames = (string[])LinkedAssetNames.Clone();
+                }
 
-                //internal override void GetNames(Entries entries)
-                //{
-                //    base.GetNames(entries);
-                //    PartNames = MSB.FindNames(entries.Parts, PartIndices);
-                //}
+                internal override void GetNames(Entries entries)
+                {
+                    base.GetNames(entries);
+                    PlatoonEventNames = MSB.FindNames(entries.Events, PlatoonEventIndices);
+                    PartNames = MSB.FindNames(entries.Parts, PartIndices);
+                    LinkedAssetNames = MSB.FindNames(entries.Parts, LinkedAssetIndices);
+                }
 
-                //internal override void GetIndices(Entries entries)
-                //{
-                //    base.GetIndices(entries);
-                //    PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);
-                //}
+                internal override void GetIndices(Entries entries)
+                {
+                    base.GetIndices(entries);
+                    PlatoonEventIndices = MSB.FindIndices(this, entries.Events, PlatoonEventNames);
+                    PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);
+                    LinkedAssetIndices = MSB.FindIndices(this, entries.Parts, LinkedAssetNames);
+                }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt32();
-                    Unk1C = br.ReadInt32();
-                    Unk20 = br.ReadInt32();
-                    Unk24 = br.ReadInt32();
-                    Unk28 = br.ReadInt32();
-                    Unk2C = br.ReadInt32();
-                    Unk30 = br.ReadInt32();
-                    Unk34 = br.ReadInt32();
-                    Unk38 = br.ReadInt32();
-                    Unk3C = br.ReadInt32();
-                    Unk40 = br.ReadInt32();
-                    Unk44 = br.ReadInt32();
-                    Unk48 = br.ReadInt32();
-                    Unk4C = br.ReadInt32();
-                    Unk50 = br.ReadInt32();
-                    Unk54 = br.ReadInt32();
-                    Unk58 = br.ReadInt32();
-                    Unk5C = br.ReadInt32();
+                    RandomAppearParamID = br.ReadInt32();
+                    PlatoonEventIndices = br.ReadInt32s(4);
+                    PartIndices = br.ReadInt32s(8);
+                    LinkedAssetIndices = br.ReadInt32s(8);
+                    UnkT54 = br.ReadInt32();
+                    UnkT58 = br.ReadInt32();
+                    UnkT5C = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
-                    bw.WriteInt32(Unk18);
-                    bw.WriteInt32(Unk1C);
-                    bw.WriteInt32(Unk20);
-                    bw.WriteInt32(Unk24);
-                    bw.WriteInt32(Unk28);
-                    bw.WriteInt32(Unk2C);
-                    bw.WriteInt32(Unk30);
-                    bw.WriteInt32(Unk34);
-                    bw.WriteInt32(Unk38);
-                    bw.WriteInt32(Unk3C);
-                    bw.WriteInt32(Unk40);
-                    bw.WriteInt32(Unk44);
-                    bw.WriteInt32(Unk48);
-                    bw.WriteInt32(Unk4C);
-                    bw.WriteInt32(Unk50);
-                    bw.WriteInt32(Unk54);
-                    bw.WriteInt32(Unk58);
-                    bw.WriteInt32(Unk5C);
+                    bw.WriteInt32(RandomAppearParamID);
+                    bw.WriteInt32s(PlatoonEventIndices);
+                    bw.WriteInt32s(PartIndices);
+                    bw.WriteInt32s(LinkedAssetIndices);
+                    bw.WriteInt32(UnkT54);
+                    bw.WriteInt32(UnkT58);
+                    bw.WriteInt32(UnkT5C);
                 }
 
-                // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = -1;
-                public int Unk08 { get; set; } = -1;
-                public int Unk0C { get; set; } = -1;
-                public int Unk10 { get; set; } = -1;
-                public int Unk14 { get; set; } = -1;
-                public int Unk18 { get; set; } = -1;
-                public int Unk1C { get; set; } = -1;
-                public int Unk20 { get; set; } = -1;
-                public int Unk24 { get; set; } = -1;
-                public int Unk28 { get; set; } = -1;
-                public int Unk2C { get; set; } = -1;
-                public int Unk30 { get; set; } = -1;
-                public int Unk34 { get; set; } = -1;
-                public int Unk38 { get; set; } = -1;
-                public int Unk3C { get; set; } = -1;
-                public int Unk40 { get; set; } = -1;
-                public int Unk44 { get; set; } = -1;
-                public int Unk48 { get; set; } = -1;
-                public int Unk4C { get; set; } = -1;
-                public int Unk50 { get; set; } = -1;
-                public int Unk54 { get; set; } = -1;
-                public int Unk58 { get; set; } = -1;
-                public int Unk5C { get; set; } = 0;
+                /// <summary>
+                /// RandomAppearParam row the group's enemies are placed from; 0 for none (0 in all retail NR points).
+                /// </summary>
+                [MSBParamReference(ParamName = "RandomAppearParam")]
+                public int RandomAppearParamID { get; set; } = 0;
 
+                /// <summary>
+                /// PlatoonInfo events of the group (up to 4).
+                /// </summary>
+                [MSBReference(ReferenceType = typeof(Event))]
+                public string[] PlatoonEventNames { get; set; }
+                private int[] PlatoonEventIndices { get; set; } = new int[] { -1, -1, -1, -1 };
+
+                /// <summary>
+                /// Enemies of the group.
+                /// </summary>
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string[] PartNames { get; set; }
+                private int[] PartIndices { get; set; } = new int[] { -1, -1, -1, -1, -1, -1, -1, -1 };
+
+                /// <summary>
+                /// Assets tied to the group (up to 8); in ER they only activate while the group does.
+                /// </summary>
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string[] LinkedAssetNames { get; set; }
+                private int[] LinkedAssetIndices { get; set; } = new int[] { -1, -1, -1, -1, -1, -1, -1, -1 };
+
+                /// <summary>
+                /// Unknown, NR only (not in ER's layout). -1 in all retail NR points.
+                /// </summary>
+                public int UnkT54 { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown. Retail NR: 0, 1, -1. Probably ER's EstusFlaskRecoveryID (the recovery row applied when the
+                /// group is defeated), moved back by one int.
+                /// </summary>
+                public int UnkT58 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in retail.
+                /// </summary>
+                public int UnkT5C { get; set; } = 0;
             }
 
-            public class MapPointDiscoveryOverride : Region
+            public class WorldMapDiscoveryPoint : Region
             {
-                private protected override RegionType Type => RegionType.MapPointDiscoveryOverride;
+                private protected override RegionType Type => RegionType.WorldMapDiscoveryPoint;
                 private protected override bool HasTypeData => false;
 
-                public MapPointDiscoveryOverride() : base($"{nameof(Region)}: {nameof(MapPointDiscoveryOverride)}") { }
+                public WorldMapDiscoveryPoint() : base($"{nameof(Region)}: {nameof(WorldMapDiscoveryPoint)}") { }
 
-                internal MapPointDiscoveryOverride(BinaryReaderEx br) : base(br) { }
+                internal WorldMapDiscoveryPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1792,14 +2060,14 @@ namespace SoulsFormats
                 // Layout
             }
 
-            public class MapPointParticipationOverride : Region
+            public class WorldMapReentryPoint : Region
             {
-                private protected override RegionType Type => RegionType.MapPointParticipationOverride;
+                private protected override RegionType Type => RegionType.WorldMapReentryPoint;
                 private protected override bool HasTypeData => false;
 
-                public MapPointParticipationOverride() : base($"{nameof(Region)}: {nameof(MapPointParticipationOverride)}") { }
+                public WorldMapReentryPoint() : base($"{nameof(Region)}: {nameof(WorldMapReentryPoint)}") { }
 
-                internal MapPointParticipationOverride(BinaryReaderEx br) : base(br) { }
+                internal WorldMapReentryPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1835,10 +2103,17 @@ namespace SoulsFormats
                 public int Unk00 { get; set; } = 0;
             }
 
+            /// <summary>
+            /// The exe's CSFastTravelOverrideRegionIns: while the player is inside it, its flag replaces the
+            /// EnableFastTravelEventFlagID of the collision and of MapDefaultInfoParam. No retail NR map uses it;
+            /// nightreign.exe reads +0 as an int (140B94070) like ER, so the ER layout is used. Files without type data
+            /// for this type (written by older versions) are still read.
+            /// </summary>
             public class FastTravelOverride : Region
             {
                 private protected override RegionType Type => RegionType.FastTravelOverride;
-                private protected override bool HasTypeData => false;
+                private protected override bool HasTypeData => true;
+                private protected override bool TypeDataOptional => true;
 
                 public FastTravelOverride() : base($"{nameof(Region)}: {nameof(FastTravelOverride)}") { }
 
@@ -1846,13 +2121,25 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
+                    EnableFastTravelEventFlagID = br.ReadUInt32();
+                    UnkT04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
+                    bw.WriteUInt32(EnableFastTravelEventFlagID);
+                    bw.WriteInt32(UnkT04);
                 }
 
-                // Layout
+                /// <summary>
+                /// Fast travel is allowed only while this event flag is ON. 0: no override.
+                /// </summary>
+                public uint EnableFastTravelEventFlagID { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in ER and never read.
+                /// </summary>
+                public int UnkT04 { get; set; } = 0;
             }
 
             public class WeatherAssetGeneration : Region
@@ -1878,14 +2165,14 @@ namespace SoulsFormats
                 public int Unk00 { get; set; } = 0;
             }
 
-            public class PlayArea : Region
+            public class PlayRegion : Region
             {
-                private protected override RegionType Type => RegionType.PlayArea;
+                private protected override RegionType Type => RegionType.PlayRegion;
                 private protected override bool HasTypeData => false;
 
-                public PlayArea() : base($"{nameof(Region)}: {nameof(PlayArea)}") { }
+                public PlayRegion() : base($"{nameof(Region)}: {nameof(PlayRegion)}") { }
 
-                internal PlayArea(BinaryReaderEx br) : base(br) { }
+                internal PlayRegion(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1938,33 +2225,47 @@ namespace SoulsFormats
                 // Layout
             }
 
-            public class BigJump : Region
+            /// <summary>
+            /// The exe's ride jump region in CSRideJumpRegionManImpl (formerly BigJump): a spiritspring that launches
+            /// the player upwards, marked by an SFX.
+            /// </summary>
+            public class RideJump : Region
             {
-                private protected override RegionType Type => RegionType.BigJump;
+                private protected override RegionType Type => RegionType.RideJump;
                 private protected override bool HasTypeData => true;
 
-                public BigJump() : base($"{nameof(Region)}: {nameof(BigJump)}") { }
+                public RideJump() : base($"{nameof(Region)}: {nameof(RideJump)}") { }
 
-                internal BigJump(BinaryReaderEx br) : base(br) { }
+                internal RideJump(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     JumpHeight = br.ReadSingle();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
+                    SfxID = br.ReadInt32();
+                    UnkT08 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteSingle(JumpHeight);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(SfxID);
+                    bw.WriteInt32(UnkT08);
                 }
 
-                // Layout
+                /// <summary>
+                /// Height the player will move upwards when activating this spiritspring.
+                /// </summary>
                 public float JumpHeight { get; set; } = 10;
-                public int Unk04 { get; set; } = 807100;
-                public int Unk08 { get; set; } = 200;
+
+                /// <summary>
+                /// SFX shown at the spiritspring. Negative uses the GameSystemCommonParam default. Retail NR: 807100, 807101.
+                /// </summary>
+                public int SfxID { get; set; } = 807100;
+
+                /// <summary>
+                /// Unknown, NR only. Read as an int for MSB version 0x4B and later (140BA6400; -1 otherwise). Retail: 200, once 201.
+                /// </summary>
+                public int UnkT08 { get; set; } = 200;
             }
 
             public class OpenCharacterActivateLimit : Region
@@ -1987,6 +2288,11 @@ namespace SoulsFormats
                 // Layout
             }
 
+            /// <summary>
+            /// A sound dummy point. The sound system registers its world position and feeds the listener's distance to
+            /// it into the Wwise RTPC DistanceFromDummyPoint_0N, where N is DummyPointIndex (nightreign.exe 140BFB7F0
+            /// reads +0 as a byte clamped to 5, like ER).
+            /// </summary>
             public class SoundDummy : Region
             {
                 private protected override RegionType Type => RegionType.SoundDummy;
@@ -1998,19 +2304,39 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
+                    DummyPointIndex = br.ReadByte();
+                    UnkT01 = br.ReadByte();
+                    UnkT02 = br.ReadInt16();
+                    UnkT04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
+                    bw.WriteByte(DummyPointIndex);
+                    bw.WriteByte(UnkT01);
+                    bw.WriteInt16(UnkT02);
+                    bw.WriteInt32(UnkT04);
                 }
 
-                // Layout
-                public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
+                /// <summary>
+                /// Which RTPC the point drives: 0-4 = DistanceFromDummyPoint_00-04. Retail NR: 0, 1, 4.
+                /// </summary>
+                public byte DummyPointIndex { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in retail and not read.
+                /// </summary>
+                public byte UnkT01 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in retail and not read.
+                /// </summary>
+                public short UnkT02 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown; 0 in retail and not read.
+                /// </summary>
+                public int UnkT04 { get; set; } = 0;
             }
 
             public class FallPreventionOverride : Region
@@ -2060,24 +2386,43 @@ namespace SoulsFormats
                 // Layout
             }
 
-            public class MapNameOverride : Region
+            /// <summary>
+            /// The exe's CSMapPlaceNameOverrideRegionMan region (formerly MapNameOverride): while the player is inside
+            /// it, its LocationTextID replaces the one from the collision the player stands on. No retail NR map uses
+            /// it; nightreign.exe reads +0 as an int (140B99AE0) like ER, so the ER layout is used. Files without type
+            /// data for this type (written by older versions) are still read.
+            /// </summary>
+            public class MapPlaceNameOverride : Region
             {
-                private protected override RegionType Type => RegionType.MapNameOverride;
-                private protected override bool HasTypeData => false;
+                private protected override RegionType Type => RegionType.MapPlaceNameOverride;
+                private protected override bool HasTypeData => true;
+                private protected override bool TypeDataOptional => true;
 
-                public MapNameOverride() : base($"{nameof(Region)}: {nameof(MapNameOverride)}") { }
+                public MapPlaceNameOverride() : base($"{nameof(Region)}: {nameof(MapPlaceNameOverride)}") { }
 
-                internal MapNameOverride(BinaryReaderEx br) : base(br) { }
+                internal MapPlaceNameOverride(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
+                    LocationTextID = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
+                    bw.WriteInt32(LocationTextID);
+                    bw.WriteInt32(UnkT04);
                 }
 
-                // Layout
+                /// <summary>
+                /// Place-name text (PlaceName FMG) used instead of the collision's LocationTextID. -1: none.
+                /// </summary>
+                public int LocationTextID { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown; 0 in ER and never read.
+                /// </summary>
+                public int UnkT04 { get; set; } = 0;
             }
 
             public class BigJumpExit : Region
@@ -2269,42 +2614,70 @@ namespace SoulsFormats
                 public int Unk04 { get; set; } = 0;
             }
 
-            public class BigJumpSealable : Region
+            /// <summary>
+            /// The exe's CSDlcRideJumpRegionIns (formerly BigJumpSealable): a sealable spiritspring. It only launches
+            /// the player while its event flag is ON, and shows one SFX while active and another while sealed. Loaded
+            /// by the same ride jump loader as RideJump (nightreign.exe 140BA7080). Fields +0..+C match ER's DlcRideJump.
+            /// </summary>
+            public class DlcRideJump : Region
             {
-                private protected override RegionType Type => RegionType.BigJumpSealable;
+                private protected override RegionType Type => RegionType.DlcRideJump;
                 private protected override bool HasTypeData => true;
 
-                public BigJumpSealable() : base($"{nameof(Region)}: {nameof(BigJumpSealable)}") { }
+                public DlcRideJump() : base($"{nameof(Region)}: {nameof(DlcRideJump)}") { }
 
-                internal BigJumpSealable(BinaryReaderEx br) : base(br) { }
+                internal DlcRideJump(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadSingle();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
+                    JumpHeight = br.ReadSingle();
+                    SfxID = br.ReadInt32();
+                    EnableEventFlagID = br.ReadInt32();
+                    DisabledSfxID = br.ReadInt32();
+                    UnkT10 = br.ReadInt32();
+                    UnkT14 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteSingle(JumpHeight);
+                    bw.WriteInt32(SfxID);
+                    bw.WriteInt32(EnableEventFlagID);
+                    bw.WriteInt32(DisabledSfxID);
+                    bw.WriteInt32(UnkT10);
+                    bw.WriteInt32(UnkT14);
                 }
 
-                // Layout
-                public float Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0;
-                public int Unk0C { get; set; } = 0;
-                public int Unk10 { get; set; } = 0;
-                public int Unk14 { get; set; } = 0;
+                /// <summary>
+                /// Height the player will move upwards when activating this spiritspring (read as a float at +0).
+                /// </summary>
+                public float JumpHeight { get; set; } = 0;
+
+                /// <summary>
+                /// SFX shown while the spiritspring is active. Negative uses the GameSystemCommonParam default.
+                /// </summary>
+                public int SfxID { get; set; } = -1;
+
+                /// <summary>
+                /// The spiritspring is active only while this event flag is ON. 0 or -1: always active.
+                /// </summary>
+                public int EnableEventFlagID { get; set; } = 0;
+
+                /// <summary>
+                /// SFX shown while the spiritspring is sealed (flag OFF). Negative uses the GameSystemCommonParam default.
+                /// </summary>
+                public int DisabledSfxID { get; set; } = -1;
+
+                /// <summary>
+                /// Unknown, NR only. Read as an int by 140B939F0 (-1 when there is no type data).
+                /// </summary>
+                public int UnkT10 { get; set; } = 0;
+
+                /// <summary>
+                /// Unknown, NR only. Read for MSB version 0x4F and later; when 0 or more it is used for a param lookup
+                /// and an object created at the region (140B93C40).
+                /// </summary>
+                public int UnkT14 { get; set; } = 0;
             }
 
             public class Other : Region

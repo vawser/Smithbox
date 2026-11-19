@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a sound dummy in the map." />
-  
+  <Self
+  Wiki="Sound dummy point. The sound system registers its world position and feeds the listener's distance to it into the Wwise RTPC DistanceFromDummyPoint_0N, where N is the Dummy Point Index." />
+
   <Field>
+    <DummyPointIndex
+    AltName="Dummy Point Index"
+    Wiki="Which RTPC this point drives: 0-4 = DistanceFromDummyPoint_00-04. The game reads a byte and clamps it to 5. Retail uses 0, 1 and 4." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

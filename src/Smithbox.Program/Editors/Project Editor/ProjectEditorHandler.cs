@@ -4,6 +4,7 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.BehaviorEditor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EsdEditor;
+using StudioCore.Editors.LuaEditor;
 using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.HavokEditor;
@@ -122,6 +123,11 @@ public class ProjectEditorHandler : IDisposable
     public EsdEditorScreen EsdEditor;
     public EsdEditorStub EsdEditorStub;
 
+    // Lua Editor (AI scripts in .luabnd)
+    public LuaData LuaData;
+    public LuaEditorScreen LuaEditor;
+    public LuaEditorStub LuaEditorStub;
+
     // Sound Editor (FMOD / Wwise)
     public SoundData SoundData;
     public SoundEditorScreen SoundEditor;
@@ -151,6 +157,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _behaviorDataTask;
     private Task<bool> _emevdDataTask;
     private Task<bool> _esdDataTask;
+    private Task<bool> _luaDataTask;
     private Task<bool> _soundDataTask;
     private Task<bool> _timeActDataTask;
 
@@ -178,6 +185,7 @@ public class ProjectEditorHandler : IDisposable
         BehaviorEditorStub = new(Project);
         EmevdEditorStub = new(Project);
         EsdEditorStub = new(Project);
+        LuaEditorStub = new(Project);
         SoundEditorStub = new(Project);
     }
 
@@ -332,6 +340,16 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_esdDataTask);
         }
 
+        // Lua (AI scripts in .luabnd)
+        if (Project.Descriptor.EnableLuaEditor &&
+            EditorConditions.SupportsLuaEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            LuaData = new(Project);
+            _luaDataTask = LuaData.Setup();
+            tasks.Add(_luaDataTask);
+        }
+
         // Sound (FMOD / Wwise)
         if (Project.Descriptor.EnableSoundEditor &&
             EditorConditions.SupportsSoundEditor(Project.Descriptor.ProjectType) &&
@@ -368,6 +386,7 @@ public class ProjectEditorHandler : IDisposable
         LogDataResult(_behaviorDataTask, "PROJECT_Data_Setup_Behavior_Data_PASS", "PROJECT_Data_Setup_Behavior_Data_FAIL");
         LogDataResult(_emevdDataTask, "PROJECT_Data_Setup_Emevd_Data_PASS", "PROJECT_Data_Setup_Emevd_Data_FAIL");
         LogDataResult(_esdDataTask, "PROJECT_Data_Setup_Esd_Data_PASS", "PROJECT_Data_Setup_Esd_Data_FAIL");
+        LogDataResult(_luaDataTask, "PROJECT_Data_Setup_Lua_Data_PASS", "PROJECT_Data_Setup_Lua_Data_FAIL");
         LogDataResult(_soundDataTask, "PROJECT_Data_Setup_Sound_Data_PASS", "PROJECT_Data_Setup_Sound_Data_FAIL");
     }
 
@@ -502,6 +521,12 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= EsdEditor;
         }
 
+        if (LuaData != null)
+        {
+            LuaEditor = new LuaEditorScreen(Project);
+            firstEditor ??= LuaEditor;
+        }
+
         if (SoundData != null)
         {
             SoundEditor = new SoundEditorScreen(Project);
@@ -558,6 +583,7 @@ public class ProjectEditorHandler : IDisposable
         BehaviorData?.Dispose();
         EmevdData?.Dispose();
         EsdData?.Dispose();
+        LuaData?.Dispose();
 
         // The Sound Editor's player holds an SDL audio device and maybe a decoder process
         SoundEditor?.Dispose();

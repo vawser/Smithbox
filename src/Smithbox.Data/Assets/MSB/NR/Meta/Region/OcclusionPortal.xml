@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Occlusion portal (formerly Muffling Portal; the game's CSMsbPointOcclusionPortal; vanilla names: 遮蔽ポータル). An opening of an Occlusion Box. Routes reference portals by their Region ID, so keep Region IDs unique. The map's .onav file has one layer per portal, compiled from these regions." />
+
+  <Field>
+    <BoxNumber
+    AltName="Box Number"
+    Wiki="The Box Number of the Occlusion Box (room) this portal belongs to. All 283 retail Nightreign portals match a box in their map." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

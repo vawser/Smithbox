@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="" />
-  
+  <Self
+  Wiki="Rolling object override region (the game's CSRollingObjOverrideRegionMan). Inside it, rolling objects (tumbleweeds and similar) spawn from its RollingObjLotParam row instead of the map tile's own lot. No retail Nightreign map uses it." />
+
   <Field>
-  
+    <RollingObjLotParamID
+    AltName="Rolling Object Lot Param ID"
+    Wiki="The RollingObjLotParam row used for spawns inside the region. -1: nothing spawns."
+    ParamRef="RollingObjLotParam" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

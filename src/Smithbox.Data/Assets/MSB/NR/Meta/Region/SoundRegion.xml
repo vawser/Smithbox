@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Sound region (formerly Sound Override; the game's CSMsbPointSoundRegion). Overrides the map's sound settings (MapDefaultInfoParam) while the listener is inside it. The game picks the active region separately for each field, and a field only counts when it is not -1 and the region's shape is a Box. Regions with a Water Type also define a water sound." />
+
+  <Field>
+    <ReverbType
+    AltName="Reverb Type"
+    Wiki="The reverb type used inside the region. It replaces MapDefaultInfoParam ReverbDefaultType and the automatic reverb selection. -1: no override. Retail Nightreign uses 1-6." />
+
+    <WaterType
+    AltName="Water Type"
+    Wiki="The kind of water this region's water sound represents. Regions with the same Water Type and Water ID form one water sound, which the game names e.g. 海_ID:0."
+    Enum="SOUND_REGION_WATER_TYPE" />
+
+    <WaterID
+    AltName="Water ID"
+    Wiki="The ID of the water sound group within its Water Type. Only used when Water Type is not None. Retail Nightreign uses 0, 10, 130 and 150." />
+
+    <OutdoorIndoorType
+    AltName="Outdoor/Indoor Type"
+    Wiki="Overrides the outdoor/indoor sound mode, like Collision Outdoor/Indoor Type: 0 outdoor, 1 half indoor, 2 indoor (Wwise OutdoorIndoor states). -1: no override."
+    Enum="SOUND_REGION_OUTDOOR_INDOOR_TYPE" />
+
+    <WwiseEnvPlaceTypeID
+    AltName="Wwise Environment Place Type ID"
+    Wiki="The Wwise environment place type used inside the region. -1: no override."
+    ParamRef="WwiseValueToStrParam_EnvPlaceType" />
+
+    <EnvPlaceInfo
+    AltName="Env Place Info"
+    Wiki="Replaces MapDefaultInfoParam EnvPlaceInfo inside the region. The game looks the value up in WwiseValueToStrParam_EnvPlaceType and sets the Wwise state from its string. -1: no override."
+    ParamRef="WwiseValueToStrParam_EnvPlaceType" />
+
+    <CommonPlaceType
+    AltName="Common Place Type"
+    Wiki="The common place type used inside the region (-1 = none). The sound update switches to it after a 2-second delay." />
+
+    <DisableAutoCliffWind
+    AltName="Disable Auto Cliff Wind"
+    Wiki="Replaces MapDefaultInfoParam isDisableAutoCliffWind inside the region: 1 disables the automatic cliff wind sound, 0 enables it. -1: no override. In Elden Ring it is only read in DLC (m61) maps; -1 in every retail Nightreign region."
+    Enum="SOUND_REGION_TRISTATE" />
+  </Field>
+
+  <Enums>
+    <Enum Name="SOUND_REGION_OUTDOOR_INDOOR_TYPE" >
+        <Option Value="-1" Name="No Override" />
+        <Option Value="0" Name="Outdoor" />
+        <Option Value="1" Name="Half Indoor" />
+        <Option Value="2" Name="Indoor" />
+    </Enum>
+    <Enum Name="SOUND_REGION_WATER_TYPE" >
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Sea" />
+        <Option Value="2" Name="Lake" />
+        <Option Value="3" Name="River" />
+    </Enum>
+    <Enum Name="SOUND_REGION_TRISTATE" >
+        <Option Value="-1" Name="No Override" />
+        <Option Value="0" Name="Off" />
+        <Option Value="1" Name="On" />
+    </Enum>
+  </Enums>
+</MSBMETA>
