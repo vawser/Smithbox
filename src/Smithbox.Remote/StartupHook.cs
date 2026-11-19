@@ -1,5 +1,5 @@
 /// <summary>
-///     Entry point via DOTNET_STARTUP_HOOKS: runs before Smithbox' Main. Without --remote-port or SMITHBOX_REMOTE_PORT
+///     Entry point via DOTNET_STARTUP_HOOKS: runs before Smithbox's Main. Without --remote-port or SMITHBOX_REMOTE_PORT
 ///     Smithbox stays unchanged.
 /// </summary>
 internal class StartupHook

@@ -10,7 +10,7 @@ namespace StudioCore.Utilities.Remote;
 
 /// <summary>
 ///     Draws labels (part names) into an image, for screenshot labels=true and the plan/profile images. The text uses
-///     Smithbox' own UI font (Assets/Fonts/RobotoMono-Light.ttf), rasterized with ImGui's font atlas, since Smithbox does
+///     Smithbox's own UI font (Assets/Fonts/RobotoMono-Light.ttf), rasterized with ImGui's font atlas, since Smithbox does
 ///     not ship ImageSharp.Drawing.
 /// </summary>
 internal static unsafe class ViewportLabels

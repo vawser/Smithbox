@@ -738,7 +738,7 @@ public static partial class RemoteControl
             result["path"] = points;
             result["narrow"] = narrowList;
 
-            // Walk it with Smithbox' first person controller (the same capsule): where does it get stuck?
+            // Walk it with Smithbox's first person controller (the same capsule): where does it get stuck?
             if (GetBool(args, "simulate", true))
             {
                 var waypoints = new List<Vector3>();

@@ -28,7 +28,7 @@ namespace StudioCore.Utilities.Remote;
 /// </summary>
 public static partial class RemoteControl
 {
-    // Answers Smithbox' light atlas question without a dialog; only in builds that have the field, otherwise the dialog shows
+    // Answers Smithbox's light atlas question without a dialog; only in builds that have the field, otherwise the dialog shows
     private static readonly System.Reflection.FieldInfo AtlasAnswerOverride =
         typeof(LightAtlasResolver).GetField("DefaultEntryAnswerOverride");
 
@@ -115,7 +115,7 @@ public static partial class RemoteControl
     }
 
     /// <summary>
-    ///     Executes a step; addAtlas answers Smithbox' light atlas question (BTAB entries for new models)
+    ///     Executes a step; addAtlas answers Smithbox's light atlas question (BTAB entries for new models)
     /// </summary>
     private static void ExecuteStep(MapEditorView view, RemoteStep step, bool addAtlas)
     {
@@ -1097,7 +1097,7 @@ public static partial class RemoteControl
     }
 
     /// <summary>
-    ///     Smithbox' GPU picking at a viewport pixel: the drawn part (render mesh) and its depth. For this the
+    ///     Smithbox's GPU picking at a viewport pixel: the drawn part (render mesh) and its depth. For this the
     ///     mouse cursor (CursorX/Y) is set to the pixel every frame until the result arrives.
     /// </summary>
     private static IEnumerator GpuPick(MapEditorView view, VulkanViewport viewport, float vx, float vy, PickResult result)

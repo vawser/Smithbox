@@ -1451,7 +1451,7 @@ public static partial class RemoteControl
                 yield return null;
         }
 
-        // Smithbox' own viewport snapshot: the tone mapped scene without overlays, read back a few frames later
+        // Smithbox's own viewport snapshot: the tone mapped scene without overlays, read back a few frames later
         SnapshotPixels pixels = null;
         var done = false;
         viewport.Snapshot.Request(p =>

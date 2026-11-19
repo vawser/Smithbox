@@ -11,7 +11,7 @@ port it does nothing.
 
 It only uses public Smithbox APIs, no patching:
 
-- `StartupHook.cs`: the .NET startup hook (`DOTNET_STARTUP_HOOKS`) loads the assembly before Smithbox' `Main`.
+- `StartupHook.cs`: the .NET startup hook (`DOTNET_STARTUP_HOOKS`) loads the assembly before Smithbox's `Main`.
 - `RemoteHooks.cs`: subscribes to `Smithbox.FrameUpdated`, starts the server on the first frame, then runs one step of the
   current command per frame on the main thread, and adds the port to the window title.
 - Screenshots use the viewport's own snapshot (`VulkanViewport.Snapshot`): the tone mapped scene (with FXAA when it is on),
