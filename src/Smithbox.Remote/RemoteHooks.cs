@@ -1,16 +1,11 @@
-using HarmonyLib;
-using StudioCore.Editors.Viewport;
-using StudioCore.Renderer;
 using System;
-using System.Numerics;
-using Veldrid;
 
 namespace StudioCore.Utilities.Remote;
 
 /// <summary>
-///     Attaches the remote control to Smithbox at run time without changing its sources:
-///     RemoteControl.Tick runs on Smithbox.FrameUpdated (started on the first frame, port shown in the window title),
-///     and a requested screenshot is recorded after ToneMapPass.Draw of the map viewport (Harmony postfix).
+///     Attaches the remote control to Smithbox without changing it: RemoteControl.Tick runs on Smithbox.FrameUpdated
+///     (the server starts on the first frame, the port is shown in the window title). Screenshots use the viewport's
+///     own snapshot (VulkanViewport.Snapshot).
 /// </summary>
 public static class RemoteHooks
 {
@@ -18,17 +13,8 @@ public static class RemoteHooks
 
     public static void Install()
     {
-        if (!HasPort())
-            return;
-
-        Smithbox.FrameUpdated += OnFrame;
-
-        var harmony = new Harmony("smithbox.remote");
-        var toneMap = AccessTools.Method(typeof(ToneMapPass), nameof(ToneMapPass.Draw),
-            [typeof(GraphicsDevice), typeof(CommandList), typeof(Texture), typeof(OutputDescription), typeof(Vector2),
-             typeof(GparamLighting), typeof(AutoExposurePass), typeof(bool)])
-            ?? throw new MissingMethodException("ToneMapPass.Draw not found: the remote control does not match this Smithbox version");
-        harmony.Patch(toneMap, postfix: new HarmonyMethod(typeof(RemoteHooks), nameof(ToneMapPostfix)));
+        if (HasPort())
+            Smithbox.FrameUpdated += OnFrame;
     }
 
     private static bool HasPort()
@@ -54,20 +40,5 @@ public static class RemoteHooks
         var suffix = RemoteControl.TitleSuffix;
         if (window != null && suffix.Length > 0 && !window.Title.EndsWith(suffix))
             window.Title += suffix;
-    }
-
-    private static void ToneMapPostfix(ToneMapPass __instance, GraphicsDevice gd, CommandList cl, Texture source,
-        GparamLighting lighting, AutoExposurePass autoExposure, bool passThrough)
-    {
-        if (!ViewportCapture.TryGetOwner(__instance, out var viewport, out var capture)
-            || capture.State != ViewportCapture.CaptureState.Requested)
-            return;
-
-        var target = viewport.ViewPipeline.Target;
-        capture.Record(gd, cl, source, target.Width, target.Height, lighting, autoExposure, passThrough);
-
-        // Record binds its own target; Smithbox goes on drawing to the swapchain afterwards
-        cl.SetFramebuffer(viewport.Device.SwapchainFramebuffer);
-        cl.SetViewport(0, viewport.RenderViewport);
     }
 }

@@ -8,14 +8,12 @@
     <LangVersion>12</LangVersion>
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Configurations>Release-win;Release-linux</Configurations>
     <SmithboxSrc Condition="'$(SmithboxSrc)' == ''">$(MSBuildThisFileDirectory)..</SmithboxSrc>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="$(SmithboxSrc)/Smithbox.Program/Smithbox.Program.csproj" Private="false" />
-    <PackageReference Include="Lib.Harmony" Version="2.4.3" />
   </ItemGroup>
 
 </Project>

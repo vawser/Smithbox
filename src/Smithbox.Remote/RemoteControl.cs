@@ -1418,9 +1418,6 @@ public static partial class RemoteControl
         yield return null;
     }
 
-    // The one line that differs from the built-in copy in a patched Smithbox (there: viewport.Capture)
-    private static ViewportCapture GetCapture(VulkanViewport viewport) => ViewportCapture.For(viewport);
-
     /// <summary>
     ///     Waits as the screenshot does (wait=true: idle for settle frames, else settle frames) and writes the viewport's
     ///     tone mapped image to path; size gets its width and height
@@ -1442,31 +1439,53 @@ public static partial class RemoteControl
                 yield return null;
         }
 
-        var capture = GetCapture(viewport);
-        capture.Request();
+        // Smithbox' own viewport snapshot: the tone mapped scene without overlays, read back a few frames later
+        SnapshotPixels pixels = null;
+        var done = false;
+        viewport.Snapshot.Request(p =>
+        {
+            pixels = p;
+            done = true;
+        });
 
-        // Recorded while the viewport is drawn, which needs the Map Editor in front
+        // Drawn only while the viewport is visible, which needs the Map Editor in front
         var waited = 0;
-        while (capture.State != ViewportCapture.CaptureState.Recorded)
+        while (!done)
         {
             waited++;
 
             if (waited == 10)
                 view.Editor.Project.Handler.FocusEditorWindow(view.Editor);
 
-            if (waited > 120)
+            if (waited > 120 && viewport.Snapshot.Pending)
             {
-                capture.Cancel();
+                viewport.Snapshot.Cancel();
                 throw new RemoteException("The viewport was not drawn: is the Map Editor's viewport visible?");
             }
+
+            if (waited > 600)
+                throw new RemoteException("The screenshot was not read back");
 
             yield return null;
         }
 
-        // The frame that recorded it has been submitted by now
-        if (!capture.TryRead(Smithbox.Instance._context.Device, path, out var width, out var height))
+        if (pixels == null)
             throw new RemoteException("The screenshot could not be read back");
 
+        // The alpha is whatever the tone map left, which a PNG viewer would show as transparency
+        for (var i = 3; i < pixels.Rgba.Length; i += 4)
+            pixels.Rgba[i] = 255;
+
+        var folder = Path.GetDirectoryName(path);
+        if (!string.IsNullOrEmpty(folder))
+            Directory.CreateDirectory(folder);
+
+        using (var image = SixLabors.ImageSharp.Image.LoadPixelData<SixLabors.ImageSharp.PixelFormats.Rgba32>(
+                   pixels.Rgba, pixels.Width, pixels.Height))
+            SixLabors.ImageSharp.ImageExtensions.SaveAsPng(image, path);
+
+        var width = pixels.Width;
+        var height = pixels.Height;
         size[0] = width;
         size[1] = height;
     }

@@ -9,12 +9,12 @@ COPY . /sb
 FROM src AS build-linux
 RUN dotnet build /sb/src/Smithbox.Vulkan/Smithbox.Vulkan.csproj -c Release-linux -v q -nologo \
  && dotnet build /sb/src/Smithbox.Remote/Smithbox.Remote.csproj -c Release-linux -o /remote -v q -nologo \
- && cp /remote/Smithbox.Remote.dll /remote/0Harmony.dll /sb/src/Smithbox.Vulkan/bin/Release-linux/net10.0/linux-x64/
+ && cp /remote/Smithbox.Remote.dll /sb/src/Smithbox.Vulkan/bin/Release-linux/net10.0/linux-x64/
 
 FROM src AS build-win
 RUN dotnet build /sb/src/Smithbox.Vulkan/Smithbox.Vulkan.csproj -c Release-win -v q -nologo \
  && dotnet build /sb/src/Smithbox.Remote/Smithbox.Remote.csproj -c Release-win -o /remote -v q -nologo \
- && cp /remote/Smithbox.Remote.dll /remote/0Harmony.dll /sb/src/Smithbox.Vulkan/bin/Release-win/net10.0/win-x64/
+ && cp /remote/Smithbox.Remote.dll /sb/src/Smithbox.Vulkan/bin/Release-win/net10.0/win-x64/
 
 FROM scratch AS win
 COPY --from=build-win /sb/src/Smithbox.Vulkan/bin/Release-win/net10.0/win-x64/ /

@@ -9,17 +9,17 @@ port it does nothing.
 
 ## How it attaches
 
+It only uses public Smithbox APIs, no patching:
+
 - `StartupHook.cs`: the .NET startup hook (`DOTNET_STARTUP_HOOKS`) loads the assembly before Smithbox' `Main`.
-- `RemoteHooks.cs`:
-  - subscribes to `Smithbox.FrameUpdated`: starts the server on the first frame, then runs one step of the current command per
-    frame on the main thread, and adds the port to the window title;
-  - patches `ToneMapPass.Draw` with a Harmony postfix to record a requested screenshot of the map viewport (the tone mapped
-    scene, without ImGui, gizmos or overlays).
-- If Smithbox changes the signature of `ToneMapPass.Draw`, start-up stops with a `MissingMethodException` that names it.
+- `RemoteHooks.cs`: subscribes to `Smithbox.FrameUpdated`, starts the server on the first frame, then runs one step of the
+  current command per frame on the main thread, and adds the port to the window title.
+- Screenshots use the viewport's own snapshot (`VulkanViewport.Snapshot`): the tone mapped scene (with FXAA when it is on),
+  without ImGui, gizmos or overlays.
 
 Files: `RemoteControl.cs` (server, basic commands, help texts), `RemoteDesigner.cs` (placing and editing parts),
 `RemoteTools.cs` (checks, search, MSB data), `RemoteEntries.cs` (regions, events, inspect, bookmarks), `RemoteSurvey.cs`
-(render mesh rays, capsule-path, profile, scatter), `RemoteMedia.cs` (batch, shot-compare, flythrough), `ViewportCapture.cs`,
+(render mesh rays, capsule-path, profile, scatter), `RemoteMedia.cs` (batch, shot-compare, flythrough),
 `ViewportLabels.cs` (part names drawn into screenshots).
 
 ## Build
@@ -36,7 +36,7 @@ Only the extension, against the Smithbox sources in this repository:
 dotnet build src/Smithbox.Remote/Smithbox.Remote.csproj -c Release-win      # or Release-linux
 ```
 
-Then put `Smithbox.Remote.dll` and `0Harmony.dll` from `src/Smithbox.Remote/bin/...` next to `Smithbox.Vulkan(.exe)`. The
+Then put `Smithbox.Remote.dll` from `src/Smithbox.Remote/bin/...` next to `Smithbox.Vulkan(.exe)`. The
 extension must be built against the same Smithbox version it is loaded into.
 
 ## Run
