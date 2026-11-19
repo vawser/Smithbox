@@ -2,6 +2,3 @@
 # TODO 
 #---------------------
 
-Finish FaceGen Editor:
-    - DS2S
-    - DES

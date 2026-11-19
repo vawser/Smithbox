@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Vendored from DSLuaDecompiler (katalash, MIT); see ../VENDORED.md for the local changes -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latestmajor</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx</Configurations>
+  </PropertyGroup>
+
+</Project>

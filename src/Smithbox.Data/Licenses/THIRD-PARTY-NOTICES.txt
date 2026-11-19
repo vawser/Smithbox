@@ -16,6 +16,9 @@ Components with their own folder in Licenses/
 SoulsFormats              GPL-3.0          Licenses/SoulsFormats/LICENSE.txt
 DSMapStudio (DSMS)        MIT              Licenses/DSMS/LICENSE.txt
 HKLib                     MIT              Licenses/HKLib/LICENSE.txt
+DSLuaDecompiler           MIT              Licenses/DSLuaDecompiler/LICENSE.txt
+  Copyright (c) 2019 katalash. https://github.com/katalash/DSLuaDecompiler
+  LuaDecompilerCore is vendored and modified in src/DSLuaDecompiler (see VENDORED.md).
 ESDLang                   Apache-2.0       Licenses/ESDLang/LICENSE.txt
 coremats-templates        Apache-2.0       Licenses/coremats-templates/LICENSE.txt
 Tracy Profiler            BSD-3-Clause     Licenses/Tracy Profiler/LICENSE.txt

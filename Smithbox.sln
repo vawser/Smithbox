@@ -77,6 +77,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Havok", "Havok", "{2C9B6E0F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Havok.Files", "src\Havok\Havok.Files\Havok.Files.csproj", "{015A208D-E44D-4423-A46D-09D23BFC6890}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DSLuaDecompiler", "DSLuaDecompiler", "{28EB4440-1EE9-3180-8141-006D59DD84B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaDecompilerCore", "src\DSLuaDecompiler\LuaDecompilerCore\LuaDecompilerCore.csproj", "{17C1308B-3958-4D44-BB20-90FC9FDE43D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1689,6 +1693,54 @@ Global
 		{015A208D-E44D-4423-A46D-09D23BFC6890}.Release-win|x64.Build.0 = Debug|x64
 		{015A208D-E44D-4423-A46D-09D23BFC6890}.Release-win|x86.ActiveCfg = Debug|Any CPU
 		{015A208D-E44D-4423-A46D-09D23BFC6890}.Release-win|x86.Build.0 = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug|x64.Build.0 = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug|x86.Build.0 = Debug|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-linux|Any CPU.ActiveCfg = Debug-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-linux|Any CPU.Build.0 = Debug-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-linux|x64.ActiveCfg = Debug-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-linux|x64.Build.0 = Debug-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-linux|x86.ActiveCfg = Debug-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-linux|x86.Build.0 = Debug-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-osx|Any CPU.ActiveCfg = Debug-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-osx|Any CPU.Build.0 = Debug-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-osx|x64.ActiveCfg = Debug-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-osx|x64.Build.0 = Debug-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-osx|x86.ActiveCfg = Debug-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-osx|x86.Build.0 = Debug-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-win|Any CPU.ActiveCfg = Debug-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-win|Any CPU.Build.0 = Debug-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-win|x64.ActiveCfg = Debug-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-win|x64.Build.0 = Debug-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-win|x86.ActiveCfg = Debug-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Debug-win|x86.Build.0 = Debug-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release|x64.ActiveCfg = Release|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release|x64.Build.0 = Release|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release|x86.ActiveCfg = Release|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release|x86.Build.0 = Release|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-linux|Any CPU.ActiveCfg = Release-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-linux|Any CPU.Build.0 = Release-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-linux|x64.ActiveCfg = Release-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-linux|x64.Build.0 = Release-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-linux|x86.ActiveCfg = Release-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-linux|x86.Build.0 = Release-linux|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-osx|Any CPU.ActiveCfg = Release-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-osx|Any CPU.Build.0 = Release-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-osx|x64.ActiveCfg = Release-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-osx|x64.Build.0 = Release-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-osx|x86.ActiveCfg = Release-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-osx|x86.Build.0 = Release-osx|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-win|Any CPU.ActiveCfg = Release-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-win|x64.ActiveCfg = Release-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-win|x64.Build.0 = Release-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-win|x86.ActiveCfg = Release-win|Any CPU
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4}.Release-win|x86.Build.0 = Release-win|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1707,6 +1759,7 @@ Global
 		{94422361-8A60-4B42-B073-95C85FA3A40B} = {F306E3FE-1239-AF02-7ECA-93C740A4748E}
 		{BD78E359-EC7F-420B-AB7C-DC315974474F} = {F306E3FE-1239-AF02-7ECA-93C740A4748E}
 		{015A208D-E44D-4423-A46D-09D23BFC6890} = {2C9B6E0F-D88E-5FB2-7CE9-341E61465457}
+		{17C1308B-3958-4D44-BB20-90FC9FDE43D4} = {28EB4440-1EE9-3180-8141-006D59DD84B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D45896A8-32E9-4517-BD34-9E84D8DD9540}
