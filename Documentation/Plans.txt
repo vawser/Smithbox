@@ -14,10 +14,6 @@
     - Projectile Editor
     - FaceGen Editor
     
-De-verbose some of the text in the Tools:
-    - Navigaiton Editor
-    - Collision Editor
-    
 #-------------
 # Blue Sky
 #-------------
@@ -46,6 +42,8 @@ De-verbose some of the text in the Tools:
 - AC6 MSB: research
 
 - Improve Map Data view: mainly properties
+
+- Check: range select in Map Contents tree doesn't respect filter
 
 #----------------------------------------------------
 # Model Editor TODO

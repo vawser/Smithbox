@@ -14,7 +14,8 @@ namespace StudioCore.Editors.MapEditor;
 public static class MsbUtils
 {
     public static void EntitySelectionHandler(MapEditorView view, ViewportSelection selection, Entity entity,
-        bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)
+        bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null,
+        Func<Entity, bool> isListed = null)
     {
         // Up/Down arrow mass selection
         var arrowKeySelect = false;
@@ -97,9 +98,13 @@ public static class MsbUtils
                         iEnd = i1;
                     }
 
+                    // Only the entries the list shows: those the user's filter hides stay unselected
                     for (var i = iStart; i <= iEnd; i++)
                     {
-                        selection.AddSelection(entList[i]);
+                        if (isListed == null || isListed(entList[i]))
+                        {
+                            selection.AddSelection(entList[i]);
+                        }
                     }
                 }
                 else

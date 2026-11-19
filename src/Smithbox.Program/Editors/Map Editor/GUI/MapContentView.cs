@@ -1073,7 +1073,8 @@ public class MapContentView
         }
 
         // If the visibility icon wasn't clicked, perform the selection
-        MsbUtils.EntitySelectionHandler(View, View.ViewportSelection, e, doSelect, arrowKeySelect);
+        MsbUtils.EntitySelectionHandler(View, View.ViewportSelection, e, doSelect, arrowKeySelect,
+            isListed: ent => View.MapContentFilter.ContentFilter(map, ent));
 
         // If there's children then draw them
         if (nodeopen)
