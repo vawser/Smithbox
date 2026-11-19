@@ -560,6 +560,7 @@ public class ProjectEditorHandler : IDisposable
         ModelEditor?.ViewHandler?.DisposeViews();
         TimeActEditor?.ViewHandler?.DisposeViews();
         GparamEditor?.ViewHandler?.DisposeViews();
+        LuaEditor?.Viewer?.Dispose();
 
         ModelPreviewCache.Release(Project);
 

@@ -237,13 +237,6 @@ public class TimeActSourceWindow
 
         if (viewHandler.FindViewWithSource(source, View) is { } other)
         {
-            // Open in a view another editor hosts: it stays there (this editor can't bring that view forward)
-            if (other.IsHosted)
-            {
-                Smithbox.Log(this, LOC.Get("TAE_SourceWindow_Open_In_Hosted_View", source.Name));
-                return View;
-            }
-
             viewHandler.FocusView(other);
 
             Smithbox.Log(this, LOC.Get("TAE_SourceWindow_Open_In_Other_View", source.Name, other.ViewIndex));

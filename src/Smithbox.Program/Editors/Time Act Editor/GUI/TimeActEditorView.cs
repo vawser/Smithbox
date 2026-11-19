@@ -160,33 +160,6 @@ public class TimeActEditorView : IEditorView
         (ViewportWindow?.Viewport as VulkanViewport)?.Dispose();
     }
 
-    /// <summary>
-    /// Set when another editor hosts this view (it isn't in the Time Act Editor's view list): whether the host's
-    /// window has focus, which the viewport checks instead of the Time Act Editor's active view, and what to do when
-    /// the viewport is hovered (the host sets its own focus context)
-    /// </summary>
-    public Func<bool> HostIsFocused;
-    public Action HostFocus;
-
-    public bool IsHosted => HostFocus != null;
-
-    /// <summary>
-    /// For a hosted view: the playback, combo and display updates of <see cref="Display"/>, then only the viewport
-    /// window, placed by the host (its dock and window class, set before the viewport's ImGui.Begin)
-    /// </summary>
-    public void DisplayHosted(Action placeWindow)
-    {
-        ViewportFilters.Update();
-        Selection.PruneEvents();
-        Playback.Update();
-        ComboBuilderTool.Update();
-
-        ViewportWindow.PlaceWindow = placeWindow;
-        ViewportWindow.Display(0);
-
-        ViewportSelection.ClearGotoTarget();
-    }
-
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
         ViewportFilters.Update();

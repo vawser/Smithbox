@@ -1,7 +1,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.TimeActEditor;
 using System.Numerics;
 
 namespace StudioCore.Editors.LuaEditor;
@@ -9,11 +8,14 @@ namespace StudioCore.Editors.LuaEditor;
 /// <summary>
 /// The battle goal of the selected script (scripts that follow the Common_Battle_Activate template: 401 of ER's
 /// 405 battle scripts), as what the AI would do:
-/// - Character: the time acts (and model) the acts' animations come from, shown in the Animation viewport;
+/// - Character: the character the goal runs on, and the target it fights (another character, placed by distance and
+///   bearing), shown in the Viewport window;
 /// - Situation: what Goal.Activate's conditions read from the game (distance, HP, special effects, …), each its own
 ///   input, so the situation can be changed on the fly;
-/// - Acts: each act's chance of being picked in that situation (its share of the total weight). Clicking an act
-///   plays its animations in order on the character.
+/// - Acts: each act's chance of being picked in that situation (its share of the total weight), and what it does.
+///   Clicking an act plays it: its function runs with the situation, and each sub-goal that runs becomes a step
+///   (an attack's animation, walking or running to the target, turning, strafing, backing off, waiting), then the
+///   character goes back to its idle.
 /// </summary>
 public class LuaBattleView
 {
@@ -33,13 +35,14 @@ public class LuaBattleView
     private string InputFilter = "";
     private bool HideZero;
     private string CharacterFilter = "";
+    private string TargetFilter = "";
 
-    // The character picked for each binder this session
-    private readonly Dictionary<string, string> CharacterByBinder = new();
+    // The character (and target) picked for each binder this session
+    private readonly Dictionary<string, (string Self, string Target)> CharactersByBinder = new();
 
-    // Each act's animations the character has (finding them reads its time acts), per character
-    private TimeActContainerWrapper AnimationSource;
-    private readonly Dictionary<int, List<long>> AnimationCache = new();
+    // Each act's plan at the current distance, for the act list (re-planned when the situation or distance changes)
+    private readonly Dictionary<int, List<LuaActStep>> Plans = new();
+    private double PlannedDistance = double.NaN;
 
     private int SelectedAct = -1;
 
@@ -48,7 +51,7 @@ public class LuaBattleView
         Editor = editor;
     }
 
-    private LuaAnimationViewer Viewer => Editor.AnimationViewer;
+    private LuaViewer Viewer => Editor.Viewer;
 
     public void Draw()
     {
@@ -97,7 +100,7 @@ public class LuaBattleView
         CachedWithConstants = constants != null;
         Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why);
         Situation = Goal != null ? new LuaSituation(Goal, script.Text, script.Parse.Tokens, constants) : null;
-        AnimationCache.Clear();
+        Plans.Clear();
 
         if (Situation != null && previous != null)
         {
@@ -114,12 +117,11 @@ public class LuaBattleView
         }
         Dirty = true;
 
-        // The character picked for this binder before
-        if (CharacterByBinder.TryGetValue(script.Container.Name, out var name) && Viewer.Character?.Name != name)
+        // The characters picked for this binder before
+        if (CharactersByBinder.TryGetValue(script.Container.Name, out var picked))
         {
-            var source = Viewer.Characters.FirstOrDefault(c => c.Name == name);
-            if (source != null)
-                Viewer.SelectCharacter(source);
+            Viewer.SetSelf(picked.Self);
+            Viewer.SetTarget(picked.Target);
         }
     }
 
@@ -129,51 +131,124 @@ public class LuaBattleView
             return;
         Result = Situation.Evaluate();
         Percent = LuaSituation.Percentages(Result);
+        Plans.Clear();
         Dirty = false;
     }
 
-    // --- character ---
+    // --- character and target ---
 
     private void DrawCharacter(LuaScript script)
     {
         GUI.TitleHeader(LOC.Get("LUA_Battle_Character_Header"), LOC.Get("LUA_Battle_Character_Header_TT"));
 
-        if (!Viewer.IsAvailable)
+        if (ImGui.BeginTable("luaBattleChars", 2, ImGuiTableFlags.SizingStretchProp))
         {
-            ImGui.TextDisabled(LOC.Get("LUA_Viewer_Needs_Time_Act_Editor"));
-            return;
+            ImGui.TableSetupColumn("label", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("value", ImGuiTableColumnFlags.WidthStretch);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("LUA_Battle_Character_Self"));
+            ImGui.TableSetColumnIndex(1);
+            if (CharacterCombo("luaBattleSelf", Viewer.Self?.Name, ref CharacterFilter, false, out var self))
+            {
+                Viewer.SetSelf(self);
+                Remember(script);
+            }
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("LUA_Battle_Character_Target"));
+            GUI.Tooltip(LOC.Get("LUA_Battle_Character_Target_TT"));
+            ImGui.TableSetColumnIndex(1);
+            if (CharacterCombo("luaBattleTarget", Viewer.Target?.Name, ref TargetFilter, true, out var target))
+            {
+                Viewer.SetTarget(target);
+                Remember(script);
+            }
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("LUA_Battle_Target_Distance"));
+            ImGui.TableSetColumnIndex(1);
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.DragFloat("##luaTargetDistance", ref Viewer.TargetDistance, 0.05f, 0, 100, "%.2f m"))
+                Viewer.PlaceTarget();
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("LUA_Battle_Target_Bearing"));
+            GUI.Tooltip(LOC.Get("LUA_Battle_Target_Bearing_TT"));
+            ImGui.TableSetColumnIndex(1);
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.DragFloat("##luaTargetBearing", ref Viewer.TargetBearing, 0.5f, -180, 180, "%.0f deg"))
+                Viewer.PlaceTarget();
+
+            ImGui.EndTable();
         }
 
-        var current = Viewer.Character;
-        var preview = current == null ? LOC.Get("LUA_Battle_Character_None")
-            : AliasOf(current.Name) is { Length: > 0 } currentAlias ? $"{current.Name}  {currentAlias}" : current.Name;
+        if (ImGui.Button($"{LOC.Get("LUA_Battle_Reset_Positions")}##luaResetPositions"))
+            Viewer.ResetPositions();
+        GUI.Tooltip(LOC.Get("LUA_Battle_Reset_Positions_TT"));
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("LUA_Battle_Stop")}##luaStop"))
+            Viewer.Player.Idle();
+
+        // What is playing, and what couldn't be shown
+        if (Viewer.Player.Current is { } step)
+            ImGui.TextDisabled(LOC.Get("LUA_Viewer_Playing_Step", StepText(step), step.Line));
+        foreach (var skipped in Viewer.Player.Skipped.Take(3))
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, skipped);
+        if (Viewer.Status != null)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.7f }, Viewer.Status);
+    }
+
+    private void Remember(LuaScript script) =>
+        CharactersByBinder[script.Container.Name] = (Viewer.Self?.Name, Viewer.Target?.Name);
+
+    /// <summary>A filterable dropdown of chr IDs with their aliases; true with the pick (null for none) when changed</summary>
+    private bool CharacterCombo(string id, string current, ref string filter, bool allowNone, out string picked)
+    {
+        picked = current;
+        var none = LOC.Get(allowNone ? "LUA_Battle_Target_None" : "LUA_Battle_Character_None");
+        var preview = current == null ? none
+            : AliasOf(current) is { Length: > 0 } currentAlias ? $"{current}  {currentAlias}" : current;
+        var changed = false;
+
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.BeginCombo("##luaBattleCharacter", preview, ImGuiComboFlags.HeightLarge))
+        if (ImGui.BeginCombo($"##{id}", preview, ImGuiComboFlags.HeightLarge))
         {
             ImGui.SetNextItemWidth(-1);
             if (ImGui.IsWindowAppearing())
                 ImGui.SetKeyboardFocusHere();
-            ImGui.InputTextWithHint("##luaBattleCharacterFilter", LOC.Get("LUA_Battle_Character_Filter"), ref CharacterFilter, 64);
+            ImGui.InputTextWithHint($"##{id}_filter", LOC.Get("LUA_Battle_Character_Filter"), ref filter, 64);
 
-            foreach (var source in Viewer.Characters)
+            if (allowNone && ImGui.Selectable($"{none}##{id}_none", current == null))
             {
-                // The chr ID and its alias, as the Time Act Editor's source list shows them; the filter matches either
-                var alias = AliasOf(source.Name);
-                if (!string.IsNullOrEmpty(CharacterFilter) && !EditorFilters.IsMatch(CharacterFilter, source.Name, false, alias))
+                picked = null;
+                changed = true;
+            }
+
+            foreach (var chr in Viewer.Characters)
+            {
+                // The chr ID and its alias, as the other editors' source lists show them; the filter matches either
+                var alias = AliasOf(chr);
+                if (!string.IsNullOrEmpty(filter) && !EditorFilters.IsMatch(filter, chr, false, alias))
                     continue;
-                if (ImGui.Selectable($"{source.Name}##luaBattleChr_{source.Name}", source == current))
+                if (ImGui.Selectable($"{chr}##{id}_{chr}", chr == current))
                 {
-                    Viewer.SelectCharacter(source);
-                    if (Viewer.Character == source)
-                        CharacterByBinder[script.Container.Name] = source.Name;
+                    picked = chr;
+                    changed = true;
                 }
                 GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
             }
             ImGui.EndCombo();
         }
-
-        if (Viewer.Status != null)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.7f }, Viewer.Status);
+        return changed && picked != current;
     }
 
     // Character aliases by chr ID (looked up once each)
@@ -185,6 +260,18 @@ public class LuaBattleView
             Aliases[chr] = alias = ModelEditorUtils.GetAliasForSourceListEntry(Editor.Project, chr, ModelListType.Character) ?? "";
         return alias;
     }
+
+    /// <summary>A step as a short line: what it does and with what</summary>
+    private static string StepText(LuaActStep s) => s.Kind switch
+    {
+        LuaStepKind.Clip => LOC.Get("LUA_Step_Clip", $"a{s.Animation / 1_000_000:D3}_{s.Animation % 1_000_000:D6}"),
+        LuaStepKind.Approach => LOC.Get(s.Walk ? "LUA_Step_Walk_To" : "LUA_Step_Run_To", LuaSituation.Format(s.Distance)),
+        LuaStepKind.Leave => LOC.Get("LUA_Step_Leave", LuaSituation.Format(s.Distance)),
+        LuaStepKind.Sideway => LOC.Get(s.Right ? "LUA_Step_Strafe_Right" : "LUA_Step_Strafe_Left"),
+        LuaStepKind.Turn => LOC.Get("LUA_Step_Turn", LuaSituation.Format(s.Angle)),
+        LuaStepKind.Wait => LOC.Get("LUA_Step_Wait", LuaSituation.Format(s.Life)),
+        _ => s.Goal,
+    };
 
     // --- situation ---
 
@@ -301,10 +388,12 @@ public class LuaBattleView
         GUI.TitleHeader(LOC.Get("LUA_Battle_Acts_Header"), LOC.Get("LUA_Battle_Acts_Header_TT"));
         ImGui.Checkbox($"{LOC.Get("LUA_Battle_Hide_Zero")}##luaBattleHideZero", ref HideZero);
 
-        if (Viewer.Character != AnimationSource)
+        // What each act does depends on the distance to the target: plan again when it has moved
+        var distance = Viewer.CurrentDistance();
+        if (Math.Abs(distance - PlannedDistance) > 0.25)
         {
-            AnimationSource = Viewer.Character;
-            AnimationCache.Clear();
+            Plans.Clear();
+            PlannedDistance = distance;
         }
 
         var flags = ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerH | ImGuiTableFlags.SizingStretchProp;
@@ -312,9 +401,9 @@ public class LuaBattleView
             return;
 
         ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Act"), ImGuiTableColumnFlags.WidthFixed, 40 * DPI.UIScale());
-        ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Function"), ImGuiTableColumnFlags.WidthStretch, 0.45f);
-        ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Chance"), ImGuiTableColumnFlags.WidthStretch, 0.4f);
-        ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Animations"), ImGuiTableColumnFlags.WidthStretch, 0.25f);
+        ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Function"), ImGuiTableColumnFlags.WidthStretch, 0.2f);
+        ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Chance"), ImGuiTableColumnFlags.WidthStretch, 0.25f);
+        ImGui.TableSetupColumn(LOC.Get("LUA_Battle_Col_Does"), ImGuiTableColumnFlags.WidthStretch, 0.55f);
         ImGui.TableHeadersRow();
 
         foreach (var act in Goal.Acts.Values)
@@ -332,7 +421,7 @@ public class LuaBattleView
             if (ImGui.Selectable($"{act.Id:D2}##luaAct_{act.Id}", SelectedAct == act.Id, ImGuiSelectableFlags.SpanAllColumns))
             {
                 SelectedAct = act.Id;
-                Viewer.Play(act);
+                Play(act);
             }
             if (ImGui.IsItemHovered())
                 ActTooltip(act);
@@ -346,13 +435,21 @@ public class LuaBattleView
             ImGui.ProgressBar((float)(percent / 100), new Vector2(-1, 0), $"{percent:0.#} %");
 
             ImGui.TableSetColumnIndex(3);
-            var anims = Animations(act);
-            if (Viewer.Character == null)
-                ImGui.TextDisabled("-");
-            else if (anims.Count == 0)
-                ImGui.TextDisabled(LOC.Get("LUA_Battle_No_Animations"));
+            var plan = PlanOf(act);
+            if (plan.Count == 0)
+                ImGui.TextDisabled(LOC.Get("LUA_Battle_No_Steps"));
             else
-                ImGui.TextUnformatted(string.Join(", ", anims.Select(id => Viewer.Character.FormatAnimationName(id))));
+            {
+                var text = string.Join(" → ", plan.Select(StepText));
+                ImGui.TextUnformatted(text.Length > 80 ? text[..77] + "..." : text);
+                if (ImGui.IsItemHovered())
+                {
+                    ImGui.BeginTooltip();
+                    foreach (var s in plan)
+                        ImGui.Text(LOC.Get("LUA_Battle_Step_Line", StepText(s), s.Goal, s.Line));
+                    ImGui.EndTooltip();
+                }
+            }
 
             if (dim)
                 ImGui.PopStyleVar();
@@ -361,13 +458,25 @@ public class LuaBattleView
         ImGui.EndTable();
     }
 
-    private List<long> Animations(LuaAct act)
+    /// <summary>The act's steps at the current distance (its function run with the situation)</summary>
+    private List<LuaActStep> PlanOf(LuaAct act)
     {
-        if (AnimationSource == null)
-            return new();
-        if (!AnimationCache.TryGetValue(act.Id, out var list))
-            AnimationCache[act.Id] = list = Viewer.AnimationsOf(act);
-        return list;
+        if (!Plans.TryGetValue(act.Id, out var plan))
+            Plans[act.Id] = plan = Situation.PlanAct(act, PlannedDistance);
+        return plan;
+    }
+
+    /// <summary>Plays the act on the character from where it stands</summary>
+    private void Play(LuaAct act)
+    {
+        if (Viewer.Self == null)
+        {
+            Viewer.Status = LOC.Get("LUA_Viewer_No_Character");
+            return;
+        }
+        var plan = Situation.PlanAct(act, Viewer.CurrentDistance());
+        Viewer.Status = plan.Count == 0 ? LOC.Get("LUA_Viewer_Act_Nothing", act.Id) : null;
+        Viewer.Player.Play(plan);
     }
 
     /// <summary>The act function's name without the goal's prefix (UncoverTombNobleManSword430000_Act01 → Act01)</summary>

@@ -18,6 +18,9 @@ public class LuaAct
     /// <summary>The act function's definition line; 0 when it isn't defined in this script</summary>
     public int FunctionLine;
 
+    /// <summary>The act function itself (null when it isn't defined in this script), for planning what the act does</summary>
+    public LuaFunctionExpr FunctionNode;
+
     /// <summary>SetCoolTime(ai, goal, anim, seconds, weight, k) calls on this act's weight</summary>
     public List<(LuaLiteral? Anim, LuaLiteral? Seconds, int Line)> Cooldowns { get; } = new();
 
@@ -230,6 +233,7 @@ public class LuaBattleGoal
             if (act.Function == null || !functions.TryGetValue(act.Function, out var fs))
                 continue;
             act.FunctionLine = Line(fs);
+            act.FunctionNode = fs.Function;
             result.ReadSubGoals(act, fs.Function, src, t, Literal);
         }
         if (result.AfterFunction != null && functions.TryGetValue(result.AfterFunction, out var af))

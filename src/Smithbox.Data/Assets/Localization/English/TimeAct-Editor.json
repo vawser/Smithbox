@@ -65,10 +65,6 @@
       "Text": "{0} is already open in view [{1}], so that view has been brought forward. A source can only be open in one view at a time."
     },
     {
-      "Key": "TAE_SourceWindow_Open_In_Hosted_View",
-      "Text": "{0} is open in the Lua Editor's battle-goal viewport, so it can't be opened here as well. Pick another character there to free it."
-    },
-    {
       "Key": "TAE_SourceWindow_Open_In_Other_View_TT",
       "Text": "Open in view [{0}]. Selecting it brings that view forward, as a source can only be open in one view at a time."
     },

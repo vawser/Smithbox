@@ -38,6 +38,44 @@ public class LuaSituationInput
     // Kind hints from the static pass
     internal bool UsedAsNumber;
     internal bool UsedAsBoolean;
+
+    // A random roll or HP rate: a number box, even when it is only tested for truth
+    internal bool PrefersNumber;
+}
+
+public enum LuaStepKind
+{
+    /// <summary>Play one animation (an attack, combo or animation goal), facing the target</summary>
+    Clip,
+    /// <summary>Walk or run toward the target until within Distance</summary>
+    Approach,
+    /// <summary>Back away from the target until Distance away</summary>
+    Leave,
+    /// <summary>Strafe around the target, to the right or left</summary>
+    Sideway,
+    /// <summary>Turn to face the target (within Angle)</summary>
+    Turn,
+    /// <summary>Stand for Life seconds</summary>
+    Wait,
+    /// <summary>A sub-goal the viewer can't show (listed only)</summary>
+    Other,
+}
+
+/// <summary>One thing an act does, from a sub-goal on a branch of its function that runs</summary>
+public class LuaActStep
+{
+    public LuaStepKind Kind;
+    public string Goal;
+    public int Line;
+
+    /// <summary>The goal's life: its time limit, in seconds</summary>
+    public double Life;
+
+    public long Animation;
+    public double Distance;
+    public bool Walk;
+    public bool Right;
+    public double Angle;
 }
 
 /// <summary>What one evaluation of Goal.Activate gives: each act's final weight, and what was set on the way</summary>
@@ -84,10 +122,14 @@ public class LuaSituation
         Constants = constants ?? new Dictionary<string, double>();
         Collect(goal.Activate.Body);
 
+        // Only what a condition or a weight reads is shown: a call whose result nothing tests (an act function
+        // registration, a local never compared) can't change which act is picked. Evaluation still knows them all.
+        Inputs.RemoveAll(i => !i.UsedAsNumber && !i.UsedAsBoolean && i.Choices.Count == 0);
+
         foreach (var input in Inputs)
         {
             input.Kind = input.Choices.Count > 0 ? LuaInputKind.Choice
-                : input.UsedAsNumber ? LuaInputKind.Number
+                : input.UsedAsNumber || input.PrefersNumber && !input.UsedAsBoolean ? LuaInputKind.Number
                 : LuaInputKind.Boolean;
             if (input.Kind == LuaInputKind.Choice)
                 input.Choice = input.Choices[0];
@@ -122,12 +164,14 @@ public class LuaSituation
                         Bind(l.Names[i], l.Values[i]);
                     break;
                 case LuaAssignStat a:
-                    for (int i = 0; i < a.Values.Count; i++)
+                    for (int i = 0; i < a.Values.Count && i < a.Targets.Count; i++)
                     {
-                        if (i < a.Targets.Count && a.Targets[i] is LuaNameExpr target)
+                        if (a.Targets[i] is LuaNameExpr target)
                             Bind(target.Name, a.Values[i]);
-                        else
-                            Visit(a.Values[i], null);
+                        // weights[n] = <value>: what the value reads decides a weight
+                        else if (a.Targets[i] is LuaIndexExpr { Object: LuaNameExpr t } && t.Name == Goal.WeightTable)
+                            Visit(a.Values[i], Hint.Number);
+                        // Other tables (the act functions: funcs[n] = REGIST_FUNC(…), the params) don't change the weights
                     }
                     break;
                 case LuaIfStat i:
@@ -168,12 +212,12 @@ public class LuaSituation
         if (call.Method is "GetRandam_Int" or "GetRandam_Float" && call.Arguments.Count == 2 &&
             call.Arguments[0].AsNumber() is { } lo && call.Arguments[1].AsNumber() is { } hi)
         {
-            input.UsedAsNumber = true;
+            input.PrefersNumber = true;
             input.Number = Math.Round((lo + hi) / 2);
         }
         if (call.Method == "GetHpRate")
         {
-            input.UsedAsNumber = true;
+            input.PrefersNumber = true;
             input.Number = 1;
         }
     }
@@ -217,8 +261,10 @@ public class LuaSituation
             case LuaBinaryExpr b when IsComparison(b.Operator):
                 var leftOther = Describe(b.Right);
                 var rightOther = Describe(b.Left);
-                Visit(b.Left, leftOther.Hint, leftOther.Constant);
-                Visit(b.Right, rightOther.Hint, rightOther.Constant);
+                // <, <=, >, >= only compare numbers, whatever the other side is (dist <= randInt2)
+                var ordering = b.Operator is "<" or "<=" or ">" or ">=";
+                Visit(b.Left, leftOther.Hint ?? (ordering ? Hint.Number : null), leftOther.Constant);
+                Visit(b.Right, rightOther.Hint ?? (ordering ? Hint.Number : null), rightOther.Constant);
                 break;
             case LuaBinaryExpr b when IsArithmetic(b.Operator):
                 Visit(b.Left, Hint.Number);
@@ -302,6 +348,127 @@ public class LuaSituation
         public readonly Dictionary<string, V> Locals = new();
         public readonly LuaSituationResult Result = new();
         public bool Returned;
+
+        // Act planning: each call statement that runs, and the live distance to the target
+        public Action<LuaCallExpr, Run> OnCall;
+        public double? TargetDistance;
+    }
+
+    // --- act planning ---
+
+    /// <summary>
+    /// What an act does in this situation, as steps for the viewer: its function runs with the situation's values
+    /// (ai:GetDist(TARGET_ENE_0) is the live distance to the target; a random roll is its middle), and each sub-goal
+    /// on a branch that runs becomes a step, in order. Approach_Act_Flex (aicommon's approach helper) is followed
+    /// as the game would: walk or run by distance, then approach if further than its distance.
+    /// </summary>
+    public List<LuaActStep> PlanAct(LuaAct act, double targetDistance)
+    {
+        var steps = new List<LuaActStep>();
+        if (act.FunctionNode == null)
+            return steps;
+
+        var run = new Run { TargetDistance = targetDistance };
+        run.OnCall = (call, r) =>
+        {
+            if (StepOf(call, r, targetDistance) is { } step)
+                steps.Add(step);
+        };
+        Exec(act.FunctionNode.Body, run);
+        return steps;
+    }
+
+    private LuaActStep StepOf(LuaCallExpr c, Run run, double targetDistance)
+    {
+        double? Num(int i) => i < c.Arguments.Count && Eval(c.Arguments[i], run) is { Kind: VKind.Number } v ? v.N : null;
+        bool Truthy(int i) => i < c.Arguments.Count && Eval(c.Arguments[i], run).Truthy;
+        var line = Tokens[c.First].Line;
+
+        // Approach_Act_Flex(ai, goal, distance, runDistance, alwaysRunDistance, runOdds, guardOdds[, walkLife, runLife])
+        if (c.Callee is LuaNameExpr { Name: "Approach_Act_Flex" } && c.Arguments.Count >= 7)
+        {
+            var distance = Num(2) ?? 0;
+            var walk = true;
+            if (Num(4) is { } always && always <= targetDistance)
+                walk = false;
+            else if (Num(3) is { } runFrom && runFrom <= targetDistance && (Num(5) ?? 0) >= 50)
+                walk = false;
+            if (distance > targetDistance)
+                return null;
+            return new LuaActStep
+            {
+                Kind = LuaStepKind.Approach, Goal = "Approach_Act_Flex", Line = line, Distance = distance, Walk = walk,
+                Life = (walk ? Num(7) : Num(8)) ?? (walk ? 3 : 8),
+            };
+        }
+
+        // goal:AddSubGoal(GOAL_…, life, args…)
+        if (c.Method != "AddSubGoal" || c.Arguments.Count < 2)
+            return null;
+
+        var goal = c.Arguments[0] is LuaNameExpr g ? g.Name : Text(c.Arguments[0]);
+        var name = goal.StartsWith("GOAL_COMMON_") ? goal["GOAL_COMMON_".Length..] : goal;
+        var step = new LuaActStep { Goal = goal, Line = line, Life = Num(1) ?? 5 };
+
+        if (name.StartsWith("ApproachTarget") || name.StartsWith("ApproachSettingDirection"))
+        {
+            // (life, target, distance, turnTarget, walk, guard)
+            step.Kind = LuaStepKind.Approach;
+            step.Distance = Num(3) ?? 1;
+            step.Walk = Truthy(5);
+        }
+        else if (name.StartsWith("LeaveTarget"))
+        {
+            // (life, target, distance, turnTarget, walk, guard)
+            step.Kind = LuaStepKind.Leave;
+            step.Distance = Num(3) ?? 5;
+            step.Walk = Truthy(5);
+        }
+        else if (name.StartsWith("SidewayMove") || name.StartsWith("FlexibleSideway"))
+        {
+            // (life, target, right (0 or 1), angle, turnTarget, walk, guard)
+            step.Kind = LuaStepKind.Sideway;
+            step.Right = (Num(3) ?? 0) >= 1;
+            step.Angle = Num(4) ?? 45;
+        }
+        else if (name == "Turn" || name.StartsWith("Turn_") || name == "SpecialTurn")
+        {
+            // (life, target, facing angle, guard…)
+            step.Kind = LuaStepKind.Turn;
+            step.Angle = Num(3) ?? 30;
+        }
+        else if (name == "Wait")
+        {
+            step.Kind = LuaStepKind.Wait;
+        }
+        else if (name == "StepSafety")
+        {
+            // (life, front, back, left, right priorities, turnTarget, …): the highest priority that is set (>= 0)
+            // plays its step, a000_006000 (front), 6001 (back), 6002 (left) or 6003 (right)
+            var best = -1;
+            var bestPriority = double.MinValue;
+            for (int d = 0; d < 4; d++)
+            {
+                if (Num(2 + d) is { } p && p >= 0 && p > bestPriority)
+                {
+                    best = d;
+                    bestPriority = p;
+                }
+            }
+            step.Kind = best >= 0 ? LuaStepKind.Clip : LuaStepKind.Other;
+            step.Animation = 6000 + Math.Max(best, 0);
+        }
+        else if (Num(2) is { } anim && anim == Math.Floor(anim) && anim >= 1000 && anim < 1_000_000)
+        {
+            // An attack, combo or animation goal: (life, animation, target, …)
+            step.Kind = LuaStepKind.Clip;
+            step.Animation = (long)anim;
+        }
+        else
+        {
+            step.Kind = LuaStepKind.Other;
+        }
+        return step;
     }
 
     /// <summary>Runs Activate with the inputs' current values</summary>
@@ -364,6 +531,10 @@ public class LuaSituation
                         Exec(i.Else, run);
                     break;
 
+                case LuaCallStat call:
+                    run.OnCall?.Invoke(call.Call, run);
+                    break;
+
                 case LuaReturnStat:
                     run.Returned = true;
                     return;
@@ -401,8 +572,18 @@ public class LuaSituation
                 var cooling = ByKey.TryGetValue($"cooldown:{Text(c.Arguments[2])}", out var cd) && cd.Boolean;
                 return cooling ? new V(VKind.Number, 0) : Eval(c.Arguments[4], run);
 
+            // Planning an act: the distance to the target is where the viewer has the characters
+            case LuaCallExpr { Method: "GetDist", Arguments: [LuaNameExpr { Name: "TARGET_ENE_0" }] } when run.TargetDistance is { } d:
+                return new V(VKind.Number, d);
+
             case LuaCallExpr c:
-                return ByKey.TryGetValue(Text(c), out var input) ? Value(input) : Unknown;
+                if (ByKey.TryGetValue(Text(c), out var input))
+                    return Value(input);
+                // A random roll the situation doesn't set (in an act function): its middle
+                if (run.TargetDistance != null && c.Method is "GetRandam_Int" or "GetRandam_Float" && c.Arguments.Count == 2 &&
+                    c.Arguments[0].AsNumber() is { } lo && c.Arguments[1].AsNumber() is { } hi)
+                    return new V(VKind.Number, c.Method == "GetRandam_Int" ? Math.Round((lo + hi) / 2) : (lo + hi) / 2);
+                return Unknown;
 
             case LuaIndexExpr { Object: LuaNameExpr t, Key: var k } when t.Name == Goal.WeightTable && k.AsNumber() is { } act:
                 return new V(VKind.Number, run.Result.Weights.GetValueOrDefault((int)act));

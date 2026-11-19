@@ -20,7 +20,7 @@ public class LuaEditorScreen : EditorScreen
     public LuaScriptView ScriptView;
     public LuaOutline Outline;
     public LuaBattleView BattleView;
-    public LuaAnimationViewer AnimationViewer;
+    public LuaViewer Viewer;
     public LuaDefinitionIndex Definitions;
 
     public LuaContainer SelectedContainer { get; private set; }
@@ -33,7 +33,7 @@ public class LuaEditorScreen : EditorScreen
         ScriptView = new(this);
         Outline = new(this);
         BattleView = new(this);
-        AnimationViewer = new(this);
+        Viewer = new(this);
         Definitions = new(this);
     }
 
@@ -76,7 +76,7 @@ public class LuaEditorScreen : EditorScreen
             GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
         // The character viewport (a hosted Time Act Editor view): its own window, docked with the others
-        AnimationViewer.Display(dsid);
+        Viewer.Display(dsid);
     }
 
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw, ImGuiWindowFlags? flags = null)
@@ -276,11 +276,11 @@ public class LuaEditorScreen : EditorScreen
     }
 
     // The character viewport's camera, rendering and resizing
-    public void Update(float deltaTime) => AnimationViewer.Update(deltaTime);
+    public void Update(float deltaTime) => Viewer.Update(deltaTime);
 
-    public void Draw(GraphicsDevice device, CommandList cl) => AnimationViewer.Draw(device, cl);
+    public void Draw(GraphicsDevice device, CommandList cl) => Viewer.Draw(device, cl);
 
-    public void EditorResized(Sdl2Window window, GraphicsDevice device) => AnimationViewer.EditorResized(window, device);
+    public void EditorResized(Sdl2Window window, GraphicsDevice device) => Viewer.EditorResized(window, device);
 
-    public bool InputCaptured() => AnimationViewer.InputCaptured();
+    public bool InputCaptured() => Viewer.InputCaptured();
 }

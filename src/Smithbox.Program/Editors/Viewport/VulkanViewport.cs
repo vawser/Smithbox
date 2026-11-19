@@ -204,6 +204,13 @@ public class VulkanViewport : IViewport
             ActionManager = faceGenUniverse.ViewportActionManager;
         }
 
+        if (owner is StudioCore.Editors.LuaEditor.LuaUniverse luaUniverse)
+        {
+            RenderScene = luaUniverse.RenderScene;
+            ViewportSelection = luaUniverse.ViewportSelection;
+            ActionManager = luaUniverse.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -227,6 +234,7 @@ public class VulkanViewport : IViewport
                 CutsceneUniverse cutscene => cutscene.Project,
                 ProjectileUniverse projectile => projectile.Project,
                 StudioCore.Editors.FaceGenEditor.FaceGenUniverse faceGen => faceGen.Project,
+                StudioCore.Editors.LuaEditor.LuaUniverse lua => lua.Project,
                 _ => null
             };
 
@@ -337,7 +345,7 @@ public class VulkanViewport : IViewport
             });
 
             if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse || owner is CutsceneUniverse || owner is ProjectileUniverse ||
-                owner is StudioCore.Editors.FaceGenEditor.FaceGenUniverse)
+                owner is StudioCore.Editors.FaceGenEditor.FaceGenUniverse || owner is StudioCore.Editors.LuaEditor.LuaUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -393,6 +401,7 @@ public class VulkanViewport : IViewport
             HandleCutsceneEditorFocus();
             HandleProjectileEditorFocus();
             HandleFaceGenEditorFocus();
+            HandleLuaEditorFocus();
 
             HandleCompass();
 
@@ -614,10 +623,6 @@ public class VulkanViewport : IViewport
         {
             var view = timeActUniverse.View;
 
-            // A view another editor hosts is focused when the host says so
-            if (view.IsHosted)
-                return view.HostIsFocused?.Invoke() == true && view.ViewportWindow.Viewport == this;
-
             return view.Editor.ViewHandler.ActiveView == view
                 && view.ViewportWindow.Viewport == this;
         }
@@ -654,6 +659,11 @@ public class VulkanViewport : IViewport
         if (Owner is StudioCore.Editors.FaceGenEditor.FaceGenUniverse faceGenUniverse)
         {
             return faceGenUniverse.View.ViewportWindow?.Viewport == this;
+        }
+
+        if (Owner is StudioCore.Editors.LuaEditor.LuaUniverse luaUniverse)
+        {
+            return luaUniverse.Viewport == this;
         }
 
         return false;
@@ -738,15 +748,6 @@ public class VulkanViewport : IViewport
     {
         if (Owner is TimeActUniverse timeActUniverse)
         {
-            // A view another editor hosts: the host sets its own focus context
-            if (timeActUniverse.View.IsHosted)
-            {
-                IsActiveViewport = ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows);
-                if (IsActiveViewport)
-                    timeActUniverse.View.HostFocus();
-                return;
-            }
-
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TimeActEditor_Viewport);
@@ -808,6 +809,22 @@ public class VulkanViewport : IViewport
                 // Only the active view's viewport is updated (CutsceneEditorScreen.Update), so hovering a viewport
                 // makes its view the active one
                 cutsceneUniverse.View.Editor.ViewHandler.ActiveView = cutsceneUniverse.View;
+                IsActiveViewport = true;
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleLuaEditorFocus()
+    {
+        if (Owner is StudioCore.Editors.LuaEditor.LuaUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.LuaEditor_Viewport);
                 IsActiveViewport = true;
             }
             else
