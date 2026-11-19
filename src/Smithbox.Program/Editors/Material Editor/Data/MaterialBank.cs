@@ -270,6 +270,23 @@ public class MaterialBank : IDisposable
             definition.Surface = MaterialSurface.Unlit;
         }
 
+        // Bloodborne's GXFlver_Col is its unlit shader: sky, moon, sun, NoLight materials. Lit, a night sky turns black.
+        if (Project?.Descriptor.ProjectType is ProjectType.BB && definition.ShaderName == "GXFlver_Col")
+        {
+            if (definition.Surface == MaterialSurface.Standard)
+            {
+                definition.Surface = MaterialSurface.Unlit;
+            }
+
+            // It tints with g_DiffuseColor times g_DiffuseColorPower, where there is no g_DiffuseMapColor
+            if (!(definition.Params.TryGetValue("g_DiffuseMapColor", out var mapColor) && mapColor.Length >= 3) &&
+                definition.Params.TryGetValue("g_DiffuseColor", out var color) && color.Length >= 3)
+            {
+                var power = definition.Params.TryGetValue("g_DiffuseColorPower", out var p) && p.Length > 0 ? p[0] : 1.0f;
+                definition.DiffuseColor = [color[0] * power, color[1] * power, color[2] * power];
+            }
+        }
+
         return definition;
     }
 

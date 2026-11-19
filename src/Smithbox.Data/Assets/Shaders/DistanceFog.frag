@@ -65,8 +65,17 @@ void main()
 	}
 
 	float depth = ViewDepth(stored);
-	float t = clamp((depth - fog.range.x) / max(fog.range.y - fog.range.x, 1e-3), 0.0, 1.0);
-	float amount = t * fog.range.z;
+	float amount;
+	if (fog.range.w > 0.5)
+	{
+		// Bloodborne (fs 32e47788): x start, y density, z strength
+		amount = clamp(fog.range.z * (1.0 - exp2(-fog.range.y * (depth - fog.range.x))), 0.0, 1.0);
+	}
+	else
+	{
+		float t = clamp((depth - fog.range.x) / max(fog.range.y - fog.range.x, 1e-3), 0.0, 1.0);
+		amount = t * fog.range.z;
+	}
 
 	// Blended as scene x a + rgb
 	fsout_color = vec4(fog.color.rgb * amount, 1.0 - amount);

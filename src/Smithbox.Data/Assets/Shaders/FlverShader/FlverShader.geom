@@ -31,6 +31,7 @@ layout(location = 17) flat in uvec2 gsin_lightingSet[];
 #ifdef MATERIAL_UV3
 	layout(location = 19) in vec2 gsin_texcoord3[];
 #endif
+layout(location = 5) flat in vec3 gsin_instanceOrigin[];
 
 layout(location = 0) out vec2 fsin_texcoord;
 layout(location = 1) out vec3 fsin_worldpos;
@@ -53,6 +54,7 @@ layout(location = 17) flat out uvec2 fsin_lightingSet;
 #ifdef MATERIAL_UV3
 	layout(location = 19) out vec2 fsin_texcoord3;
 #endif
+layout(location = 5) flat out vec3 fsin_instanceOrigin;
 
 // Wireframe.glsl
 layout(location = 18) noperspective out vec3 fsin_bary;
@@ -84,6 +86,7 @@ void main()
 #ifdef MATERIAL_UV3
 		fsin_texcoord3 = gsin_texcoord3[i];
 #endif
+		fsin_instanceOrigin = gsin_instanceOrigin[i];
 
 		fsin_bary = vec3(i == 0 ? 1.0 : 0.0, i == 1 ? 1.0 : 0.0, i == 2 ? 1.0 : 0.0);
 

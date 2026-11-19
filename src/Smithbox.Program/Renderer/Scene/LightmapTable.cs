@@ -67,11 +67,12 @@ public class LightmapTable
     /// The GPARAM's Dominant Light Map values, in entry 0: <paramref name="sharpnessOffset" />, added to each
     /// lightmap's sharpness, and <paramref name="color" />, which scales their light
     /// </summary>
-    public void SetGlobals(float sharpnessOffset, Vector3 color)
+    public void SetGlobals(float sharpnessOffset, Vector3 color, float missingLight = 0.0f)
     {
         var globals = new LightmapData
         {
-            UvScaleOffset = new Vector4(sharpnessOffset, 0, 0, 0),
+            // y: the light of a lightmapped material whose part has no lightmap (Bloodborne's placeholder), 0 for none
+            UvScaleOffset = new Vector4(sharpnessOffset, missingLight, 0, 0),
             HdrScale = new Vector4(color, 1.0f)
         };
 

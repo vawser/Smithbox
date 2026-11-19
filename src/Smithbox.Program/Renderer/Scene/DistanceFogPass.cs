@@ -72,7 +72,9 @@ public class DistanceFogPass
 
         Params = new DistanceFogParam
         {
-            Range = new Vector4(begin, end, Math.Clamp(fog.MaxDensity, 0.0f, 1.0f), 0.0f),
+            Range = fog.Exponential
+                ? new Vector4(fog.Begin, fog.Density, Math.Clamp(fog.MaxDensity, 0.0f, 1.0f), 1.0f)
+                : new Vector4(begin, end, Math.Clamp(fog.MaxDensity, 0.0f, 1.0f), 0.0f),
             Color = new Vector4(Vector3.Max(new Vector3(fog.Color.X, fog.Color.Y, fog.Color.Z) * fog.Color.W * exposure,
                 Vector3.Zero), 0.0f)
         };

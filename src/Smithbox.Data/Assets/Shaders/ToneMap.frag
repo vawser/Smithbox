@@ -13,6 +13,7 @@
 #define OPERATOR_REINHARD 1
 #define OPERATOR_FILMIC 2
 #define OPERATOR_YEBIS_FILMIC 3
+#define OPERATOR_BB_EXP 4
 
 layout(set = 0, binding = 0) uniform ToneMapParams
 {
@@ -147,9 +148,21 @@ void main()
 		color = Filmic(color);
 	}
 
-	vec3 display = op == OPERATOR_YEBIS_FILMIC
-		? clamp(YebisFilmic(color), 0.0, 1.0)
-		: sqrt(clamp(color, 0.0, 1.0));
+	vec3 display;
+	if (op == OPERATOR_BB_EXP)
+	{
+		// Bloodborne (fs 5c02eaf8): offset.z = k, offset.w = c, settings.z = saturation, then gamma 1 / 2.2
+		vec3 t = 1.0 - exp(-params.offset.z * max(color, vec3(6.1035e-5)));
+		vec3 T = clamp(t * (1.0 + params.offset.w * (t - 1.0)) * (1.0 + params.offset.w * (t - 1.0)), 0.0, 1.0);
+		T = mix(vec3(dot(T, vec3(0.2126, 0.7152, 0.0722))), T, params.settings.z);
+		display = pow(clamp(T, 0.0, 1.0), vec3(1.0 / 2.2));
+	}
+	else
+	{
+		display = op == OPERATOR_YEBIS_FILMIC
+			? clamp(YebisFilmic(color), 0.0, 1.0)
+			: sqrt(clamp(color, 0.0, 1.0));
+	}
 
 	display = ToneCorrect(display);
 

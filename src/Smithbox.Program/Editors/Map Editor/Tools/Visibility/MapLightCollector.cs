@@ -94,6 +94,7 @@ public class MapLightCollector
             }
 
             AddDrawParamPointLights(map, eye, radius, intensityScale, selected, found);
+            AddBloodborneObjectLights(map, eye, radius, intensityScale, found);
         }
 
         found.Sort((a, b) => a.Distance.CompareTo(b.Distance));
@@ -108,6 +109,47 @@ public class MapLightCollector
         ShadedCount = count;
 
         table.Upload(Entries, count);
+    }
+
+    /// <summary>
+    /// Bloodborne objects whose effects carry a point light, which the game draws but no BTL holds: measured in game
+    /// frames (fs 370174f7): warm, flickering lights of radius 6 with the colour below, taken to be the wall
+    /// lanterns o000613. The light sits at the object's origin; its real offset is not known.
+    /// </summary>
+    private static readonly Dictionary<string, (Vector3 Color, float Radius)> BloodborneObjectLights = new()
+    {
+        ["o000613"] = (new Vector3(0.57f, 0.37f, 0.21f), 6.0f)
+    };
+
+    private void AddBloodborneObjectLights(MapContainer map, Vector3? eye, float radius, float intensityScale,
+        List<(float Distance, MapLightData Data)> found)
+    {
+        if (View.Project.Descriptor.ProjectType is not ProjectType.BB)
+            return;
+
+        foreach (var entity in map.Objects)
+        {
+            if (entity is not MsbEntity part || !part.EditorVisible || part.WrappedObject is not MSBB.Part.Object obj ||
+                !BloodborneObjectLights.TryGetValue(obj.ModelName ?? "", out var light))
+                continue;
+
+            var position = part.GetWorldMatrix().Translation;
+            var distance = eye.HasValue ? Vector3.Distance(position, eye.Value) : float.MaxValue;
+
+            if (radius > 0.0f && distance > radius)
+                continue;
+
+            found.Add((distance, new SceneLight
+            {
+                Type = SceneLightType.Point,
+                Position = position,
+                Color = light.Color,
+                Intensity = intensityScale,
+                SpecularColor = light.Color * 0.5f,
+                SpecularIntensity = intensityScale,
+                Range = light.Radius
+            }.ToMapGpu()));
+        }
     }
 
     /// <summary>
@@ -219,6 +261,7 @@ public class MapLightCollector
     private List<MsbEntity> GetLights(MapContainer map)
     {
         var objectCount = map.Objects.Count;
+        var bloodborne = View.Project.Descriptor.ProjectType is ProjectType.BB;
 
         if (MapLights.TryGetValue(map, out var cached) && cached.ObjectCount == objectCount)
             return cached.Lights;
@@ -226,11 +269,27 @@ public class MapLightCollector
         var lights = map.Objects
             .OfType<MsbEntity>()
             .Where(e => e.Type == MsbEntityType.Light)
+            .Where(e => !bloodborne || IsInBloodborneVariant(map, e))
             .ToList();
 
         MapLights[map] = (objectCount, lights);
 
         return lights;
+    }
+
+    /// <summary>
+    /// Bloodborne: a map has several BTL files (_0000, _0001, ...) of which the game uses one; the viewport lights with
+    /// the _0000 one. Whether a light is in it: always if the map has no _0000 file, as then there is nothing to choose
+    /// between
+    /// </summary>
+    private static bool IsInBloodborneVariant(MapContainer map, MsbEntity light)
+    {
+        const string suffix = "_0000";
+
+        if (!map.BTLParents.Any(p => p.WrappedObject is string n && n.EndsWith(suffix, StringComparison.OrdinalIgnoreCase)))
+            return true;
+
+        return light.Parent?.WrappedObject is string file && file.EndsWith(suffix, StringComparison.OrdinalIgnoreCase);
     }
 
     public static SceneLight CreateLight(BTL.Light btlLight, Matrix4x4 world, float intensityScale)
@@ -269,9 +328,11 @@ public class MapLightCollector
 
     private static Vector3 ToLinearColor(System.Drawing.Color color)
     {
+        // Bloodborne squares the BTL colour (fs 370174f7 constants in game frames against the BTL: exact)
+        var gamma = Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.BB ? 2.0f : ColorGamma;
         return new Vector3(
-            MathF.Pow(color.R / 255.0f, ColorGamma),
-            MathF.Pow(color.G / 255.0f, ColorGamma),
-            MathF.Pow(color.B / 255.0f, ColorGamma));
+            MathF.Pow(color.R / 255.0f, gamma),
+            MathF.Pow(color.G / 255.0f, gamma),
+            MathF.Pow(color.B / 255.0f, gamma));
     }
 }

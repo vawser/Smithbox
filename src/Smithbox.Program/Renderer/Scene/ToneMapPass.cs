@@ -24,7 +24,13 @@ public enum ToneMapOperator
     ///     DS3's and Bloodborne's Yebis filmic table (ToneMap_WriteFilmicToneMappingTablePS): Hejl and Burgess-Dawson's
     ///     curve, whose output is already display encoded, so no square root follows
     /// </summary>
-    YebisFilmic = 3
+    YebisFilmic = 3,
+
+    /// <summary>
+    ///     Bloodborne's tone map as its shaders do it (fs 5c02eaf8): t = 1 - exp(-k x), T = t (1 + c (t - 1))^2,
+    ///     saturation, then gamma 1 / 2.2. k, c and the saturation are ToneMapPass's BloodborneTone* constants
+    /// </summary>
+    BloodborneExp = 4
 }
 
 /// <summary>The viewport setting for tone mapping, CFG.Viewport_ToneMap</summary>
@@ -64,6 +70,14 @@ public struct ToneMapParam
 /// </summary>
 public class ToneMapPass
 {
+    // Bloodborne's tone map (ToneMapOperator.BloodborneExp): k, c and the saturation (its colour matrix is a saturation
+    // around BT.709 luminance), measured from game frames in one modded map lit with a copy of m24_01's GPARAM whose
+    // Yebis-ToneMapExposure was scaled. Which GPARAM fields they come from, and whether they hold for other maps, is
+    // unknown
+    private const float BloodborneToneK = 1.0342f;
+    private const float BloodborneToneC = 0.46387f;
+    private const float BloodborneToneSaturation = 0.9f;
+
     private static readonly Dictionary<OutputDescription, Pipeline> Pipelines = new();
     private static ResourceLayout Layout;
 
@@ -122,6 +136,8 @@ public class ToneMapPass
             8 => (ToneMapOperator.Reinhard,
                 Math.Max(lighting.ReinhardContrast * lighting.ReinhardWhiteBalance, 1e-3f)),
             7 => (ToneMapOperator.Filmic, whitePoint),
+            GparamLighting.YebisFilmicMode when Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is
+                Application.ProjectType.BB => (ToneMapOperator.BloodborneExp, whitePoint),
             GparamLighting.YebisFilmicMode => (ToneMapOperator.YebisFilmic, whitePoint),
             _ => (ToneMapOperator.Clamp, whitePoint)
         };
@@ -161,6 +177,15 @@ public class ToneMapPass
 
         Params.Settings = new Vector4(exposure, (float)op, whitePoint, applyAutoExposure ? 1.0f : 0.0f);
         Params.Offset = new Vector4(offset, 0.0f, 0.0f);
+
+        // Bloodborne: k is in the game's scene units, which hold no GPARAM exposure; this target has it in, so k is
+        // divided by it. z: k, w: c, white point slot: the saturation
+        if (op == ToneMapOperator.BloodborneExp)
+        {
+            var gparamExposure = Math.Max((lighting?.Exposure ?? 1.0f) * CFG.Current.Viewport_Map_Lighting_Exposure_Scale, 1e-4f);
+            Params.Offset = new Vector4(offset, BloodborneToneK / gparamExposure, BloodborneToneC);
+            Params.Settings.Z = BloodborneToneSaturation;
+        }
         Params.Grading = grade
             ? new Vector4(1.0f, slot, nextSlot, Math.Clamp(grading.Blend, 0.0f, 1.0f))
             : Vector4.Zero;
