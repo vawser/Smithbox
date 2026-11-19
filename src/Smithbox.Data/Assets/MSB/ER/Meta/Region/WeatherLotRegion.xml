@@ -11,7 +11,7 @@
 
     <UnkT04
     AltName="Unknown: 0x4"
-    Wiki="An override kept by the weather manager; -1 = none. Always -1 in retail; what reads it was not found." />
+    Wiki="-1 in retail. The weather manager merges and stores it like the other fields, but nothing in the game reads the stored value, so it has no effect in ER." />
 
     <ApplyMimicryLotLimitSpEffect0
     AltName="Apply Mimicry Lot Limit SpEffect 0"

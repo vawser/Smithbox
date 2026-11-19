@@ -45,6 +45,8 @@
     - Random blue edges in generated mesh
     - Perhaps some ignored collision meshes should be treated as shapers (i.e. material 29 for evergaols), where the edges follow the shape.
     
+    
+    
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------

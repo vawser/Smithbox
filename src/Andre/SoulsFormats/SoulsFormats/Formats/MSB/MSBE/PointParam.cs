@@ -1712,50 +1712,52 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown sound override, read as a signed byte (-1/255 = none). Retail 3-8, the same range as
-                /// MapDefaultInfoParam ReverbDefaultType.
+                /// Reverb type used inside the region, replacing MapDefaultInfoParam ReverbDefaultType and the automatic
+                /// reverb selection. -1: no override.
                 /// </summary>
-                public byte UnkT00 { get; set; }
+                public sbyte ReverbType { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown. Together with UnkT02 it keys the regions in the sound-region manager; values above 0 set a
-                /// flag of their own. Retail 0/1/2.
+                /// Water body type for the region's water sound: 0 none, 1 sea (海), 2 lake (湖), 3 river (川). Regions
+                /// with the same WaterType and WaterID form one water sound, named "type_ID:n" by the game.
                 /// </summary>
-                public byte UnkT01 { get; set; }
+                public byte WaterType { get; set; }
 
                 /// <summary>
-                /// Unknown. Read together with UnkT01. Retail 0/1.
+                /// ID of the water sound group within its WaterType. Only used when WaterType is above 0.
                 /// </summary>
-                public byte UnkT02 { get; set; }
+                public byte WaterID { get; set; }
 
                 /// <summary>
                 /// Outdoor/indoor override, like Collision OutdoorIndoorType: 0 outdoor, 1 half indoor, 2 indoor
-                /// (Wwise OutdoorIndoor states). -1/255 = no override.
+                /// (Wwise OutdoorIndoor states). -1 = no override.
                 /// </summary>
-                public byte OutdoorIndoorType { get; set; }
+                public sbyte OutdoorIndoorType { get; set; } = -1;
 
                 /// <summary>
                 /// Wwise environment place type used inside the region. -1 = no override.
                 /// </summary>
                 [MSBParamReference(ParamName = "WwiseValueToStrParam_EnvPlaceType")]
-                public int WwiseEnvPlaceTypeID { get; set; }
+                public int WwiseEnvPlaceTypeID { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown sound place override (-1 = none). The sound update uses it in place of its own value and
-                /// looks it up in a param; retail values are a subset of the WwiseEnvPlaceType values.
+                /// Replaces MapDefaultInfoParam EnvPlaceInfo inside the region; the game looks it up in
+                /// WwiseValueToStrParam_EnvPlaceType and sets the Wwise state from its string. -1 = no override.
                 /// </summary>
-                public short UnkT08 { get; set; }
+                [MSBParamReference(ParamName = "WwiseValueToStrParam_EnvPlaceType")]
+                public short EnvPlaceInfo { get; set; } = -1;
 
                 /// <summary>
                 /// Common place type used inside the region (-1 = none); the sound update switches to it after a
                 /// 2-second delay.
                 /// </summary>
-                public short CommonPlaceType { get; set; }
+                public short CommonPlaceType { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown flag (-1/255 = none), read only in DLC (m61) maps. Retail 1 on ten regions.
+                /// Replaces MapDefaultInfoParam isDisableAutoCliffWind inside the region: 1 disables the automatic
+                /// cliff wind sound, 0 enables it, -1 = no override. Only read in DLC (m61) maps.
                 /// </summary>
-                public byte UnkT0C { get; set; }
+                public sbyte DisableAutoCliffWind { get; set; } = -1;
 
                 /// <summary>
                 /// Creates a SoundRegion with default values.
@@ -1766,27 +1768,27 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadByte();
-                    UnkT01 = br.ReadByte();
-                    UnkT02 = br.ReadByte();
-                    OutdoorIndoorType = br.ReadByte();
+                    ReverbType = br.ReadSByte();
+                    WaterType = br.ReadByte();
+                    WaterID = br.ReadByte();
+                    OutdoorIndoorType = br.ReadSByte();
                     WwiseEnvPlaceTypeID = br.ReadInt32();
-                    UnkT08 = br.ReadInt16();
+                    EnvPlaceInfo = br.ReadInt16();
                     CommonPlaceType = br.ReadInt16();
-                    UnkT0C = br.ReadByte();
+                    DisableAutoCliffWind = br.ReadSByte();
                     br.AssertPattern(19, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(UnkT00);
-                    bw.WriteByte(UnkT01);
-                    bw.WriteByte(UnkT02);
-                    bw.WriteByte(OutdoorIndoorType);
+                    bw.WriteSByte(ReverbType);
+                    bw.WriteByte(WaterType);
+                    bw.WriteByte(WaterID);
+                    bw.WriteSByte(OutdoorIndoorType);
                     bw.WriteInt32(WwiseEnvPlaceTypeID);
-                    bw.WriteInt16(UnkT08);
+                    bw.WriteInt16(EnvPlaceInfo);
                     bw.WriteInt16(CommonPlaceType);
-                    bw.WriteByte(UnkT0C);
+                    bw.WriteSByte(DisableAutoCliffWind);
                     bw.WritePattern(19, 0x00);
                 }
             }
@@ -1954,8 +1956,9 @@ namespace SoulsFormats
                 public int WeatherLotParamID { get; set; } = -1;
 
                 /// <summary>
-                /// Unknown override, -1 = none (always -1 in retail; the loader sets it to -1 for MSB versions before
-                /// 0x42). Kept by the manager, consumer not found.
+                /// Unknown, -1 = none (always -1 in retail; the loader sets it to -1 for MSB versions before 0x42).
+                /// The manager merges it like the other fields and stores it, but nothing in the exe reads the stored
+                /// value, so it has no effect in ER.
                 /// </summary>
                 public int UnkT04 { get; set; } = -1;
 

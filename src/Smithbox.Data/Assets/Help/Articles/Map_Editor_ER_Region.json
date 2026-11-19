@@ -76,7 +76,7 @@
         "[Header]Sound",
         "A region used to define a point that can emit sound.",
         "[Header]SoundRegion",
-        "A region that overrides map sound settings (outdoor/indoor mode, Wwise place types) while the listener is inside it. Overrides only apply to Box shapes.",
+        "A region that overrides map sound settings (reverb, outdoor/indoor mode, env place, cliff wind) while the listener is inside it, and can define a sea/lake/river water sound. Overrides only apply to Box shapes.",
         "[Header]SpawnPoint",
         "A region used to define a point that is used for player respawning.",
         "[Header]WeatherCreateAssetPoint",
