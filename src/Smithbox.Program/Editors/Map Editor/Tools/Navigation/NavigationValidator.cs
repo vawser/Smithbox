@@ -41,7 +41,7 @@ public sealed record NavIssue(NavIssueSeverity Severity, NavIssueCode Code, stri
     /// <summary>The gate node of that navmesh the issue is on, if it is on one.</summary>
     public int? Gate { get; init; }
 
-    /// <summary>NVM mode: the room (MSB navmesh part index) the issue is on; Face is then its triangle.</summary>
+    /// <summary>NVM and NGP modes: the room or mesh (MSB navmesh part index) the issue is on; Face is then its triangle or face.</summary>
     public int? Room { get; init; }
 
     /// <summary>The code, file and arguments, which say whether two issues are the same.</summary>
@@ -108,6 +108,32 @@ public enum NavIssueCode
     McgNodeEdgeMismatch,
     McgEdgeTriangleRange,
     McgNodeOffGate,
+
+    // NGP mode (DS2, DS2S): the map's .ngp file (NgpValidator)
+    NgpMissing,
+    NgpVersion,
+    NgpPartCount,
+    NgpMapId,
+    NgpMeshId,
+    NgpCountLimit,
+    NgpFlagsCount,
+    NgpFaceRange,
+    NgpHalfEdgeRange,
+    NgpHalfEdgeShared,
+    NgpFlagsUnknown,
+    NgpEdgeRange,
+    NgpBoundingBox,
+    NgpTreeRange,
+    NgpTreeMissingFace,
+    NgpGateRange,
+    NgpGateId,
+    NgpGateEdge,
+    NgpGateSidesApart,
+    NgpGateLinks,
+    NgpMeshGateList,
+    NgpSharedEdgeNoGate,
+    NgpLadderNotVertical,
+    NgpDropFlat,
 }
 
 /// <summary>

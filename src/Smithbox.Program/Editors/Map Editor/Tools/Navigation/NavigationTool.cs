@@ -55,7 +55,8 @@ public partial class NavigationTool
 
     public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT or ProjectType.AC6
         or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT
-        or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R;
+        or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R
+        or ProjectType.DS2 or ProjectType.DS2S;
 
     private List<MapContainer> LoadedMaps()
     {
@@ -91,7 +92,7 @@ public partial class NavigationTool
             Current.BaselineDone = true;
         }
 
-        GUI.WrappedText(LOC.Get(IsNvmMode ? "MAP_Navigation_Nvm_Description" : "MAP_Navigation_Description"));
+        GUI.WrappedText(LOC.Get(IsNvmMode ? "MAP_Navigation_Nvm_Description" : IsNgpMode ? "MAP_Navigation_Ngp_Description" : "MAP_Navigation_Description"));
 
         var maps = LoadedMaps();
 
@@ -130,6 +131,14 @@ public partial class NavigationTool
         if (IsNvmMode)
         {
             DisplayNvm(map);
+            ImGui.EndChild();
+            return;
+        }
+
+        // DS2 and DS2S keep NGP navigation, edited by the NGP mode (NavigationTool.Ngp.cs)
+        if (IsNgpMode)
+        {
+            DisplayNgp(map);
             ImGui.EndChild();
             return;
         }

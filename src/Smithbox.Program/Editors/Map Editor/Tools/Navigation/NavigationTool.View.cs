@@ -481,6 +481,9 @@ public partial class NavigationTool
         if (IsNvmMode)
             return HandleNvmViewportInput(ray, canInteract);
 
+        if (IsNgpMode)
+            return HandleNgpViewportInput(ray, canInteract);
+
         if (OverlayContainer != null && OverlayContainer.LoadState != MapContentLoadState.Loaded)
         {
             Stroke.Clear();

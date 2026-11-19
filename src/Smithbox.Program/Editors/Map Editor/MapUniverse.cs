@@ -697,6 +697,7 @@ public class MapUniverse : IUniverse
                 View.NavigationBank.OnUnloadMap(curMapID, Project.Handler.MapData.PrimaryBank.Maps.Values
                     .Where(w => w.MapContainer != null).Select(w => w.MapContainer.Name));
                 View.NvmBank.OnUnloadMap(curMapID);
+                View.NgpBank.OnUnloadMap(curMapID);
                 View.IrradianceVolumeBank.OnUnloadMap(curMapID);
 
                 if (wrapper != null)
@@ -954,6 +955,12 @@ public class MapUniverse : IUniverse
         if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.NvmBank.SaveMap(map));
+        }
+
+        // DS2 and DS2S navigation (the map's .ngp), edited by the Navigation tool's NGP mode
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.NgpBank.SaveMap(map));
         }
 
         // The WALL files belong to the collisions

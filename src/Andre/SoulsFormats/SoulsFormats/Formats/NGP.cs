@@ -4,7 +4,9 @@ using System.Numerics;
 namespace SoulsFormats
 {
     /// <summary>
-    /// A navmesh format used in DS2. Extension: .ngp
+    /// The enemy navigation file of DS2 and DS2 SOTFS: navmeshes, the gates between them and the gate graph. Extension: .ngp
+    /// Coordinates are map-local; the game adds the map offset (the MSB MapOffset event) at load.
+    /// Mesh i is the MSB's i-th navmesh part. See Claude/Documentation/NGP Format.md.
     /// </summary>
     public class NGP : SoulsFile<NGP>
     {
@@ -13,25 +15,85 @@ namespace SoulsFormats
 
         public NGPVersion Version { get; set; }
 
-        public int Unk1C { get; set; }
-
-        public List<StructA> StructAs { get; set; }
-
-        public List<StructB> StructBs { get; set; }
+        /// <summary>
+        /// The map id: the map index in the top byte, 0xFFFFFF below (see <see cref="Ids.Map"/>).
+        /// Every id in the file carries the same map index.
+        /// </summary>
+        public uint MapId { get; set; }
 
         /// <summary>
-        /// Unknown, maybe pairs of shorts.
+        /// The map index, unique per map: the top byte of every id in the file.
         /// </summary>
-        public List<int> StructCs { get; set; }
+        public byte MapIndex => (byte)(MapId >> 24);
 
-        public List<short> StructDs { get; set; }
+        /// <summary>
+        /// Gates: connected runs of coincident boundary edges between two meshes of this map.
+        /// </summary>
+        public List<Gate> Gates { get; set; }
+
+        /// <summary>
+        /// The gate graph: for each gate side, a link to every other gate on that side's mesh.
+        /// Indexed by <see cref="Gate.LinkStart"/>.
+        /// </summary>
+        public List<GateLink> GateLinks { get; set; }
+
+        /// <summary>
+        /// The gates' edges as edge refs (<see cref="Ids.EdgeRef"/>): per gate, side A then side B.
+        /// Indexed by <see cref="Gate.SideAEdgeStart"/> and <see cref="Gate.SideBEdgeStart"/>.
+        /// </summary>
+        public List<uint> GateEdgeRefs { get; set; }
+
+        /// <summary>
+        /// Per mesh, the indices of the gates touching it, ascending. Indexed by <see cref="Mesh.GateStart"/>.
+        /// Every gate appears twice (once per mesh).
+        /// </summary>
+        public List<short> MeshGateIndices { get; set; }
 
         public List<Mesh> Meshes { get; set; }
 
         public enum NGPVersion : ushort
         {
+            /// <summary>DS2: 32-bit offsets, meshes before the gate data.</summary>
             Vanilla = 1,
+            /// <summary>DS2 SOTFS: 64-bit offsets, meshes after the gate data. The SOTFS exe only loads this version.</summary>
             Scholar = 2,
+        }
+
+        public NGP()
+        {
+            Version = NGPVersion.Scholar;
+            MapId = 0xFFFFFF;
+            Gates = new List<Gate>();
+            GateLinks = new List<GateLink>();
+            GateEdgeRefs = new List<uint>();
+            MeshGateIndices = new List<short>();
+            Meshes = new List<Mesh>();
+        }
+
+        /// <summary>
+        /// The packed ids and references used throughout the file. The game decodes refs as mesh = (ref &gt;&gt; 17) &amp; 0x7F, index = ref &amp; 0x7FFF.
+        /// </summary>
+        public static class Ids
+        {
+            /// <summary>"None" for any 15-bit index (edge faces and neighbours).</summary>
+            public const short None = 0x7FFF;
+
+            public static uint Map(byte map) => (uint)map << 24 | 0xFFFFFF;
+
+            public static uint Mesh(byte map, int mesh) => (uint)map << 24 | (uint)mesh << 17 | 0x1FFFF;
+
+            public static uint EdgeRef(byte map, int mesh, int edge) => (uint)map << 24 | (uint)mesh << 17 | 0x8000 | (uint)edge;
+
+            public static uint Gate(byte map, int meshA, int meshB, int gate) => (0x40u | map) << 24 | (uint)meshA << 17 | (uint)meshB << 10 | (uint)gate;
+
+            /// <summary>The map index of a mesh id or ref (not a gate id, which has 0x40 added).</summary>
+            public static byte MapOf(uint id) => (byte)(id >> 24);
+
+            /// <summary>The mesh index of a mesh id or ref, or gate mesh A.</summary>
+            public static int MeshOf(uint id) => (int)(id >> 17) & 0x7F;
+
+            /// <summary>The edge or face index of a ref.</summary>
+            public static int IndexOf(uint id) => (int)(id & 0x7FFF);
         }
 
         protected override bool Is(BinaryReaderEx br)
@@ -53,34 +115,34 @@ namespace SoulsFormats
             Version = br.ReadEnum16<NGPVersion>();
             br.AssertInt16(0);
             int meshCount = br.ReadInt32();
-            int countA = br.ReadInt32();
-            int countB = br.ReadInt32();
-            int countC = br.ReadInt32();
-            int countD = br.ReadInt32();
-            Unk1C = br.ReadInt32();
+            int gateCount = br.ReadInt32();
+            int linkCount = br.ReadInt32();
+            int edgeRefCount = br.ReadInt32();
+            int gateIndexCount = br.ReadInt32();
+            MapId = br.ReadUInt32();
 
             br.VarintLong = Version == NGPVersion.Scholar;
-            long offsetA = br.ReadVarint();
-            long offsetB = br.ReadVarint();
-            long offsetC = br.ReadVarint();
-            long offsetD = br.ReadVarint();
+            long gatesOffset = br.ReadVarint();
+            long linksOffset = br.ReadVarint();
+            long edgeRefsOffset = br.ReadVarint();
+            long gateIndicesOffset = br.ReadVarint();
             long[] meshOffsets = br.ReadVarints(meshCount);
 
-            br.Position = offsetA;
-            StructAs = new List<StructA>(countA);
-            for (int i = 0; i < countA; i++)
-                StructAs.Add(new StructA(br));
+            br.Position = gatesOffset;
+            Gates = new List<Gate>(gateCount);
+            for (int i = 0; i < gateCount; i++)
+                Gates.Add(new Gate(br));
 
-            br.Position = offsetB;
-            StructBs = new List<StructB>(countB);
-            for (int i = 0; i < countB; i++)
-                StructBs.Add(new StructB(br));
+            br.Position = linksOffset;
+            GateLinks = new List<GateLink>(linkCount);
+            for (int i = 0; i < linkCount; i++)
+                GateLinks.Add(new GateLink(br));
 
-            br.Position = offsetC;
-            StructCs = new List<int>(br.ReadInt32s(countC));
+            br.Position = edgeRefsOffset;
+            GateEdgeRefs = new List<uint>(br.ReadUInt32s(edgeRefCount));
 
-            br.Position = offsetD;
-            StructDs = new List<short>(br.ReadInt16s(countD));
+            br.Position = gateIndicesOffset;
+            MeshGateIndices = new List<short>(br.ReadInt16s(gateIndexCount));
 
             Meshes = new List<Mesh>(meshCount);
             for (int i = 0; i < meshCount; i++)
@@ -99,15 +161,15 @@ namespace SoulsFormats
             bw.WriteUInt16((ushort)Version);
             bw.WriteInt16(0);
             bw.WriteInt32(Meshes.Count);
-            bw.WriteInt32(StructAs.Count);
-            bw.WriteInt32(StructBs.Count);
-            bw.WriteInt32(StructCs.Count);
-            bw.WriteInt32(StructDs.Count);
-            bw.WriteInt32(Unk1C);
-            bw.ReserveVarint("OffsetA");
-            bw.ReserveVarint("OffsetB");
-            bw.ReserveVarint("OffsetC");
-            bw.ReserveVarint("OffsetD");
+            bw.WriteInt32(Gates.Count);
+            bw.WriteInt32(GateLinks.Count);
+            bw.WriteInt32(GateEdgeRefs.Count);
+            bw.WriteInt32(MeshGateIndices.Count);
+            bw.WriteUInt32(MapId);
+            bw.ReserveVarint("GatesOffset");
+            bw.ReserveVarint("LinksOffset");
+            bw.ReserveVarint("EdgeRefsOffset");
+            bw.ReserveVarint("GateIndicesOffset");
             for (int i = 0; i < Meshes.Count; i++)
                 bw.ReserveVarint($"MeshOffset{i}");
 
@@ -125,156 +187,223 @@ namespace SoulsFormats
                 writeMeshes();
 
             bw.Pad(bw.VarintSize);
-            bw.FillVarint("OffsetA", bw.Position);
-            foreach (StructA structA in StructAs)
-                structA.Write(bw);
+            bw.FillVarint("GatesOffset", bw.Position);
+            foreach (Gate gate in Gates)
+                gate.Write(bw);
 
             bw.Pad(bw.VarintSize);
-            bw.FillVarint("OffsetB", bw.Position);
-            foreach (StructB structB in StructBs)
-                structB.Write(bw);
+            bw.FillVarint("LinksOffset", bw.Position);
+            foreach (GateLink link in GateLinks)
+                link.Write(bw);
 
             bw.Pad(bw.VarintSize);
-            bw.FillVarint("OffsetC", bw.Position);
-            bw.WriteInt32s(StructCs);
+            bw.FillVarint("EdgeRefsOffset", bw.Position);
+            bw.WriteUInt32s(GateEdgeRefs);
 
             bw.Pad(bw.VarintSize);
-            bw.FillVarint("OffsetD", bw.Position);
-            bw.WriteInt16s(StructDs);
+            bw.FillVarint("GateIndicesOffset", bw.Position);
+            bw.WriteInt16s(MeshGateIndices);
 
             if (Version == NGPVersion.Scholar)
                 writeMeshes();
         }
 
-        public class StructA
+        /// <summary>
+        /// A connection between two meshes: a connected run of boundary edges they share.
+        /// Side A's edge k and side B's edge k are the same edge seen from each mesh, in reverse direction.
+        /// </summary>
+        public class Gate
         {
-            public Vector3 Unk00 { get; set; }
+            /// <summary>
+            /// The midpoint of the first side-A edge (map-local).
+            /// </summary>
+            public Vector3 Position { get; set; }
 
-            public float Unk0C { get; set; }
+            /// <summary>
+            /// <see cref="Ids.Gate"/>: (0x40 | map) &lt;&lt; 24 | meshA &lt;&lt; 17 | meshB &lt;&lt; 10 | gate index.
+            /// </summary>
+            public uint Id { get; set; }
 
-            public int Unk10 { get; set; }
+            /// <summary>
+            /// The number of edges on each side.
+            /// </summary>
+            public int EdgeCount { get; set; }
 
-            public short Unk14 { get; set; }
+            /// <summary>
+            /// The first index in <see cref="GateEdgeRefs"/> of side A's edges (on mesh A).
+            /// </summary>
+            public short SideAEdgeStart { get; set; }
 
-            public short Unk16 { get; set; }
+            /// <summary>
+            /// The first index in <see cref="GateEdgeRefs"/> of side B's edges (on mesh B); always SideAEdgeStart + EdgeCount.
+            /// </summary>
+            public short SideBEdgeStart { get; set; }
 
-            public short Unk18 { get; set; }
+            /// <summary>
+            /// The id (<see cref="Ids.Mesh"/>) of the lower-indexed mesh.
+            /// </summary>
+            public uint MeshAId { get; set; }
 
-            public short Unk1A { get; set; }
+            /// <summary>
+            /// The id (<see cref="Ids.Mesh"/>) of the higher-indexed mesh.
+            /// </summary>
+            public uint MeshBId { get; set; }
 
-            public short Unk1C { get; set; }
+            /// <summary>
+            /// The number of links in <see cref="GateLinks"/>: side A's, then side B's.
+            /// </summary>
+            public short LinkCount { get; set; }
 
-            public short Unk1E { get; set; }
+            /// <summary>
+            /// The first index in <see cref="GateLinks"/>, or -1 when there are none.
+            /// </summary>
+            public short LinkStart { get; set; }
 
-            public short Unk20 { get; set; }
+            public Gate() { LinkStart = -1; }
 
-            public short Unk22 { get; set; }
-
-            public StructA() { }
-
-            internal StructA(BinaryReaderEx br)
+            internal Gate(BinaryReaderEx br)
             {
-                Unk00 = br.ReadVector3();
-                Unk0C = br.ReadSingle();
-                Unk10 = br.ReadInt32();
-                Unk14 = br.ReadInt16();
-                Unk16 = br.ReadInt16();
-                Unk18 = br.ReadInt16();
-                Unk1A = br.ReadInt16();
-                Unk1C = br.ReadInt16();
-                Unk1E = br.ReadInt16();
-                Unk20 = br.ReadInt16();
-                Unk22 = br.ReadInt16();
+                Position = br.ReadVector3();
+                Id = br.ReadUInt32();
+                EdgeCount = br.ReadInt32();
+                SideAEdgeStart = br.ReadInt16();
+                SideBEdgeStart = br.ReadInt16();
+                MeshAId = br.ReadUInt32();
+                MeshBId = br.ReadUInt32();
+                LinkCount = br.ReadInt16();
+                LinkStart = br.ReadInt16();
             }
 
             internal void Write(BinaryWriterEx bw)
             {
-                bw.WriteVector3(Unk00);
-                bw.WriteSingle(Unk0C);
-                bw.WriteInt32(Unk10);
-                bw.WriteInt16(Unk14);
-                bw.WriteInt16(Unk16);
-                bw.WriteInt16(Unk18);
-                bw.WriteInt16(Unk1A);
-                bw.WriteInt16(Unk1C);
-                bw.WriteInt16(Unk1E);
-                bw.WriteInt16(Unk20);
-                bw.WriteInt16(Unk22);
+                bw.WriteVector3(Position);
+                bw.WriteUInt32(Id);
+                bw.WriteInt32(EdgeCount);
+                bw.WriteInt16(SideAEdgeStart);
+                bw.WriteInt16(SideBEdgeStart);
+                bw.WriteUInt32(MeshAId);
+                bw.WriteUInt32(MeshBId);
+                bw.WriteInt16(LinkCount);
+                bw.WriteInt16(LinkStart);
             }
         }
 
-        public class StructB
+        /// <summary>
+        /// A gate graph edge: from one side of a gate to another gate on the same mesh.
+        /// </summary>
+        public class GateLink
         {
-            public int Unk00 { get; set; }
+            /// <summary>
+            /// The first edge of the side this link leaves from (<see cref="Ids.EdgeRef"/>).
+            /// </summary>
+            public uint EdgeRef { get; set; }
 
-            public int Unk04 { get; set; }
+            /// <summary>
+            /// The index of the target gate.
+            /// </summary>
+            public int TargetGate { get; set; }
 
-            public int Unk08 { get; set; }
+            /// <summary>
+            /// float.MaxValue in every vanilla file; the game computes costs at runtime.
+            /// </summary>
+            public float Cost { get; set; }
 
-            public StructB() { }
+            public GateLink() { Cost = float.MaxValue; }
 
-            internal StructB(BinaryReaderEx br)
+            internal GateLink(BinaryReaderEx br)
             {
-                Unk00 = br.ReadInt32();
-                Unk04 = br.ReadInt32();
-                Unk08 = br.ReadInt32();
+                EdgeRef = br.ReadUInt32();
+                TargetGate = br.ReadInt32();
+                Cost = br.ReadSingle();
             }
 
             internal void Write(BinaryWriterEx bw)
             {
-                bw.WriteInt32(Unk00);
-                bw.WriteInt32(Unk04);
-                bw.WriteInt32(Unk08);
+                bw.WriteUInt32(EdgeRef);
+                bw.WriteInt32(TargetGate);
+                bw.WriteSingle(Cost);
             }
         }
 
+        /// <summary>
+        /// One navmesh, matching the MSB's navmesh part of the same index.
+        /// </summary>
         public class Mesh
         {
-            public int Unk00 { get; set; }
+            /// <summary>
+            /// <see cref="Ids.Mesh"/>: map &lt;&lt; 24 | mesh index &lt;&lt; 17 | 0x1FFFF.
+            /// </summary>
+            public uint Id { get; set; }
 
-            public int Unk08 { get; set; }
+            /// <summary>
+            /// A runtime pointer slot: the game writes 0 here at load. Files hold leftover pointers from the authoring tool.
+            /// </summary>
+            public int RuntimeSlot { get; set; }
 
+            /// <summary>
+            /// The vertex bounds (map-local).
+            /// </summary>
             public Vector3 BoundingBoxMin { get; set; }
 
             public Vector3 BoundingBoxMax { get; set; }
 
-            public short Unk30 { get; set; }
+            /// <summary>
+            /// The number of entries in <see cref="MeshGateIndices"/> for this mesh.
+            /// </summary>
+            public short GateCount { get; set; }
 
-            public short Unk32 { get; set; }
+            /// <summary>
+            /// The first index in <see cref="MeshGateIndices"/>, or -1 when the mesh has no gates.
+            /// </summary>
+            public short GateStart { get; set; }
 
             public List<Vector3> Vertices { get; set; }
 
-            public List<int> Struct2s { get; set; }
+            /// <summary>
+            /// Per face: bits 0-2 level, a body-size gate (an enemy of level q uses it only if level &gt; q; 7 = everyone).
+            /// Bits 3-6 type (mask 0x78): 0x00 ground, 0x10 door threshold, 0x20 ladder, 0x30 rope, 0x40 one-way drop,
+            /// 0x48 event-switchable area, 0x58 water (others: see NGP Format.md).
+            /// Bits 7-10 attributes: 0x100 blocked (locked door, fog wall, script barrier), 0x200 door closed,
+            /// 0x400 closed door passable, 0x80 unknown.
+            /// </summary>
+            public List<uint> FaceFlags { get; set; }
 
             public List<Face> Faces { get; set; }
 
-            public List<Struct4> Struct4s { get; set; }
+            /// <summary>
+            /// The edges between faces, built in face order: the first face to use a vertex pair is face0.
+            /// </summary>
+            public List<Edge> Edges { get; set; }
 
-            public Struct5 Struct5Root { get; set; }
+            /// <summary>
+            /// The root of the face search tree: X splits at even depths, Z at odd depths.
+            /// </summary>
+            public SplitNode SplitTreeRoot { get; set; }
 
             public Mesh()
             {
+                GateStart = -1;
                 Vertices = new List<Vector3>();
-                Struct2s = new List<int>();
+                FaceFlags = new List<uint>();
                 Faces = new List<Face>();
-                Struct4s = new List<Struct4>();
-                Struct5Root = new Struct5();
+                Edges = new List<Edge>();
+                SplitTreeRoot = new SplitNode();
             }
 
             internal Mesh(BinaryReaderEx br, NGPVersion version)
             {
-                Unk00 = br.ReadInt32();
+                Id = br.ReadUInt32();
                 br.ReadInt32(); // Length of this mesh (including child structs)
-                Unk08 = br.ReadInt32();
+                RuntimeSlot = br.ReadInt32();
                 if (version == NGPVersion.Scholar)
                     br.AssertInt32(0);
                 BoundingBoxMin = br.ReadVector3();
                 BoundingBoxMax = br.ReadVector3();
                 int vertexCount = br.ReadInt32();
                 short faceCount = br.ReadInt16();
-                short count30 = br.ReadInt16();
-                Unk30 = br.ReadInt16();
-                Unk32 = br.ReadInt16();
+                short edgeCount = br.ReadInt16();
+                GateCount = br.ReadInt16();
+                GateStart = br.ReadInt16();
                 br.AssertByte(1);
                 br.AssertByte(0);
                 br.AssertByte(0);
@@ -282,49 +411,49 @@ namespace SoulsFormats
                 if (version == NGPVersion.Scholar)
                     br.AssertInt64(0);
                 long verticesOffset = br.ReadVarint();
-                long offset48 = br.ReadVarint();
+                long faceFlagsOffset = br.ReadVarint();
                 long facesOffset = br.ReadVarint();
-                long offset58 = br.ReadVarint();
-                long offset60 = br.ReadVarint();
-                long offset68 = br.ReadVarint();
+                long edgesOffset = br.ReadVarint();
+                long nodesOffset = br.ReadVarint();
+                long nodeFacesOffset = br.ReadVarint();
 
                 br.Position = verticesOffset;
                 Vertices = new List<Vector3>(vertexCount);
                 for (int i = 0; i < vertexCount; i++)
                     Vertices.Add(br.ReadVector3());
 
-                br.Position = offset48;
-                Struct2s = new List<int>(br.ReadInt32s(faceCount));
+                br.Position = faceFlagsOffset;
+                FaceFlags = new List<uint>(br.ReadUInt32s(faceCount));
 
                 br.Position = facesOffset;
                 Faces = new List<Face>(faceCount);
                 for (int i = 0; i < faceCount; i++)
                     Faces.Add(new Face(br));
 
-                br.Position = offset58;
-                Struct4s = new List<Struct4>(count30);
-                for (int i = 0; i < count30; i++)
-                    Struct4s.Add(new Struct4(br));
+                br.Position = edgesOffset;
+                Edges = new List<Edge>(edgeCount);
+                for (int i = 0; i < edgeCount; i++)
+                    Edges.Add(new Edge(br));
 
-                br.Position = offset60;
-                Struct5Root = new Struct5(br, offset60, offset68);
+                br.Position = nodesOffset;
+                SplitTreeRoot = new SplitNode(br, nodesOffset, nodeFacesOffset);
             }
 
             internal void Write(BinaryWriterEx bw, NGPVersion version)
             {
                 long start = bw.Position;
-                bw.WriteInt32(Unk00);
+                bw.WriteUInt32(Id);
                 bw.ReserveInt32("MeshLength");
-                bw.WriteInt32(Unk08);
+                bw.WriteInt32(RuntimeSlot);
                 if (version == NGPVersion.Scholar)
                     bw.WriteInt32(0);
                 bw.WriteVector3(BoundingBoxMin);
                 bw.WriteVector3(BoundingBoxMax);
                 bw.WriteInt32(Vertices.Count);
                 bw.WriteInt16((short)Faces.Count);
-                bw.WriteInt16((short)Struct4s.Count);
-                bw.WriteInt16(Unk30);
-                bw.WriteInt16(Unk32);
+                bw.WriteInt16((short)Edges.Count);
+                bw.WriteInt16(GateCount);
+                bw.WriteInt16(GateStart);
                 bw.WriteByte(1);
                 bw.WriteByte(0);
                 bw.WriteByte(0);
@@ -332,20 +461,19 @@ namespace SoulsFormats
                 if (version == NGPVersion.Scholar)
                     bw.WriteInt64(0);
                 bw.ReserveVarint("VerticesOffset");
-                bw.ReserveVarint("Struct2sOffset");
+                bw.ReserveVarint("FaceFlagsOffset");
                 bw.ReserveVarint("FacesOffset");
-                bw.ReserveVarint("Struct4sOffset");
-                bw.ReserveVarint("Struct5sOffset");
-                bw.ReserveVarint("Struct6sOffset");
+                bw.ReserveVarint("EdgesOffset");
+                bw.ReserveVarint("NodesOffset");
+                bw.ReserveVarint("NodeFacesOffset");
 
                 bw.FillVarint("VerticesOffset", bw.Position);
                 foreach (Vector3 vertex in Vertices)
                     bw.WriteVector3(vertex);
                 bw.Pad(bw.VarintSize);
 
-                bw.FillVarint("Struct2sOffset", bw.Position);
-                foreach (int struct2 in Struct2s)
-                    bw.WriteInt32(struct2);
+                bw.FillVarint("FaceFlagsOffset", bw.Position);
+                bw.WriteUInt32s(FaceFlags);
                 bw.Pad(bw.VarintSize);
 
                 bw.FillVarint("FacesOffset", bw.Position);
@@ -353,26 +481,30 @@ namespace SoulsFormats
                     face.Write(bw);
                 bw.Pad(bw.VarintSize);
 
-                bw.FillVarint("Struct4sOffset", bw.Position);
-                foreach (Struct4 struct4 in Struct4s)
-                    struct4.Write(bw);
+                bw.FillVarint("EdgesOffset", bw.Position);
+                foreach (Edge edge in Edges)
+                    edge.Write(bw);
                 bw.Pad(bw.VarintSize);
 
-                bw.FillVarint("Struct5sOffset", bw.Position);
+                bw.FillVarint("NodesOffset", bw.Position);
                 short index = 0;
-                Struct5Root.Write(bw, ref index);
+                SplitTreeRoot.Write(bw, ref index);
                 bw.Pad(bw.VarintSize);
 
-                bw.FillVarint("Struct6sOffset", bw.Position);
+                bw.FillVarint("NodeFacesOffset", bw.Position);
                 index = 0;
                 int faceIndexIndex = 0;
-                Struct5Root.WriteFaceIndices(bw, ref index, ref faceIndexIndex);
+                SplitTreeRoot.WriteFaceIndices(bw, ref index, ref faceIndexIndex);
                 bw.Pad(bw.VarintSize);
 
                 bw.FillInt32("MeshLength", (int)(bw.Position - start));
             }
         }
 
+        /// <summary>
+        /// A triangle. Its half-edges are for (V1,V2), (V2,V3), (V3,V1): edge index &lt;&lt; 1 | side,
+        /// where side 0 means this face is the edge's Face0 (running VertexA to VertexB) and 1 means Face1 (reversed).
+        /// </summary>
         public class Face
         {
             public short V1 { get; set; }
@@ -381,11 +513,14 @@ namespace SoulsFormats
 
             public short V3 { get; set; }
 
-            public short Unk06 { get; set; }
+            /// <summary>The half-edge of (V1,V2).</summary>
+            public ushort HalfEdge1 { get; set; }
 
-            public short Unk08 { get; set; }
+            /// <summary>The half-edge of (V2,V3).</summary>
+            public ushort HalfEdge2 { get; set; }
 
-            public short Unk0A { get; set; }
+            /// <summary>The half-edge of (V3,V1).</summary>
+            public ushort HalfEdge3 { get; set; }
 
             public Face() { }
 
@@ -394,9 +529,9 @@ namespace SoulsFormats
                 V1 = br.ReadInt16();
                 V2 = br.ReadInt16();
                 V3 = br.ReadInt16();
-                Unk06 = br.ReadInt16();
-                Unk08 = br.ReadInt16();
-                Unk0A = br.ReadInt16();
+                HalfEdge1 = br.ReadUInt16();
+                HalfEdge2 = br.ReadUInt16();
+                HalfEdge3 = br.ReadUInt16();
             }
 
             internal void Write(BinaryWriterEx bw)
@@ -404,87 +539,113 @@ namespace SoulsFormats
                 bw.WriteInt16(V1);
                 bw.WriteInt16(V2);
                 bw.WriteInt16(V3);
-                bw.WriteInt16(Unk06);
-                bw.WriteInt16(Unk08);
-                bw.WriteInt16(Unk0A);
+                bw.WriteUInt16(HalfEdge1);
+                bw.WriteUInt16(HalfEdge2);
+                bw.WriteUInt16(HalfEdge3);
             }
         }
 
-        public class Struct4
+        /// <summary>
+        /// An edge with the faces on each side. <see cref="Ids.None"/> (0x7FFF) marks a missing face1 (a boundary edge).
+        /// </summary>
+        public class Edge
         {
-            public short Unk00 { get; set; }
+            /// <summary>The start vertex, as Face0 sees the edge.</summary>
+            public short VertexA { get; set; }
 
-            public short Unk02 { get; set; }
+            /// <summary>The end vertex, as Face0 sees the edge.</summary>
+            public short VertexB { get; set; }
 
-            public short Unk04 { get; set; }
+            /// <summary>The edge after this one in Face0.</summary>
+            public short Face0Next { get; set; }
 
-            public short Unk06 { get; set; }
+            /// <summary>The edge before this one in Face0.</summary>
+            public short Face0Prev { get; set; }
 
-            public short Unk08 { get; set; }
+            /// <summary>The edge after this one in Face1, or 0x7FFF.</summary>
+            public short Face1Next { get; set; }
 
-            public short Unk0A { get; set; }
+            /// <summary>The edge before this one in Face1, or 0x7FFF.</summary>
+            public short Face1Prev { get; set; }
 
-            public short Unk0C { get; set; }
+            public short Face0 { get; set; }
 
-            public short Unk0E { get; set; }
+            /// <summary>The face on the other side, or 0x7FFF on a boundary.</summary>
+            public short Face1 { get; set; }
 
-            public Struct4() { }
-
-            internal Struct4(BinaryReaderEx br)
+            public Edge()
             {
-                Unk00 = br.ReadInt16();
-                Unk02 = br.ReadInt16();
-                Unk04 = br.ReadInt16();
-                Unk06 = br.ReadInt16();
-                Unk08 = br.ReadInt16();
-                Unk0A = br.ReadInt16();
-                Unk0C = br.ReadInt16();
-                Unk0E = br.ReadInt16();
+                Face1Next = Ids.None;
+                Face1Prev = Ids.None;
+                Face1 = Ids.None;
+            }
+
+            internal Edge(BinaryReaderEx br)
+            {
+                VertexA = br.ReadInt16();
+                VertexB = br.ReadInt16();
+                Face0Next = br.ReadInt16();
+                Face0Prev = br.ReadInt16();
+                Face1Next = br.ReadInt16();
+                Face1Prev = br.ReadInt16();
+                Face0 = br.ReadInt16();
+                Face1 = br.ReadInt16();
             }
 
             internal void Write(BinaryWriterEx bw)
             {
-                bw.WriteInt16(Unk00);
-                bw.WriteInt16(Unk02);
-                bw.WriteInt16(Unk04);
-                bw.WriteInt16(Unk06);
-                bw.WriteInt16(Unk08);
-                bw.WriteInt16(Unk0A);
-                bw.WriteInt16(Unk0C);
-                bw.WriteInt16(Unk0E);
+                bw.WriteInt16(VertexA);
+                bw.WriteInt16(VertexB);
+                bw.WriteInt16(Face0Next);
+                bw.WriteInt16(Face0Prev);
+                bw.WriteInt16(Face1Next);
+                bw.WriteInt16(Face1Prev);
+                bw.WriteInt16(Face0);
+                bw.WriteInt16(Face1);
             }
         }
 
-        public class Struct5
+        /// <summary>
+        /// A node of the face search tree, stored in pre-order. A node with faces is a leaf.
+        /// The axis is X at even depths and Z at odd depths; a point goes Left when its coordinate is above
+        /// <see cref="Split"/> and Right otherwise. Faces straddling a split are listed on both sides.
+        /// </summary>
+        public class SplitNode
         {
-            public float Unk00 { get; set; }
+            /// <summary>
+            /// The split coordinate on this depth's axis. Not read by the game on leaves (but kept within the leaf's faces).
+            /// </summary>
+            public float Split { get; set; }
 
-            public Struct5 Left { get; set; }
+            /// <summary>The side above the split.</summary>
+            public SplitNode Left { get; set; }
 
-            public Struct5 Right { get; set; }
+            /// <summary>The side at or below the split.</summary>
+            public SplitNode Right { get; set; }
 
+            /// <summary>The faces of a leaf; null on inner nodes.</summary>
             public List<short> FaceIndices { get; set; }
 
-            public Struct5() { }
+            public SplitNode() { }
 
-            internal Struct5(BinaryReaderEx br, long rootOffset, long faceIndexOffset)
+            internal SplitNode(BinaryReaderEx br, long rootOffset, long faceIndexOffset)
             {
-                Unk00 = br.ReadSingle();
+                Split = br.ReadSingle();
                 short leftIndex = br.ReadInt16();
                 short rightIndex = br.ReadInt16();
                 short faceIndexCount = br.ReadInt16();
-                short faceIndexIndex = br.ReadInt16();
+                ushort faceIndexIndex = br.ReadUInt16();
 
                 if (leftIndex != -1)
                 {
                     br.Position = rootOffset + leftIndex * 0xC;
-                    Left = new Struct5(br, rootOffset, faceIndexOffset);
+                    Left = new SplitNode(br, rootOffset, faceIndexOffset);
                 }
 
                 if (rightIndex != -1)
                 {
                     br.Position = rootOffset + rightIndex * 0xC;
-                    Right = new Struct5(br, rootOffset, faceIndexOffset);
+                    Right = new SplitNode(br, rootOffset, faceIndexOffset);
                 }
 
                 if (faceIndexCount > 0)
@@ -497,7 +658,7 @@ namespace SoulsFormats
             internal void Write(BinaryWriterEx bw, ref short index)
             {
                 short thisIndex = index;
-                bw.WriteSingle(Unk00);
+                bw.WriteSingle(Split);
                 bw.ReserveInt16($"LeftIndex{thisIndex}");
                 bw.ReserveInt16($"RightIndex{thisIndex}");
                 bw.ReserveInt16($"FaceIndexCount{thisIndex}");

@@ -43,7 +43,7 @@
 
 - Improve Map Data view: mainly properties
 
-- Navmesh: check evergaol navmesh generation (currently split when regenerated)
+- ER Navmesh: check evergaol navmesh generation (currently split when regenerated)
 
 #----------------------------------------------------
 # Model Editor TODO
@@ -88,6 +88,8 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 - Add spinner modal for saving with KRAK, so user understands it is slow
+
+- DS2: TAE support (requires some additional stuff for the 'network' concept DS2 has)
 
 - Tools:
     - Behavior / Hit Source Selector
