@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// The 'rows' view: each of the entries for the selected individual category.
 /// </summary>
-public class MsbEntryView
+public partial class MsbEntryView
 {
     public MapEditorView View;
     public ProjectEntry Project;
@@ -89,6 +89,8 @@ public class MsbEntryView
             _arrowKeyPressed = true;
         }
 
+        UpdateFollowSelection();
+
         UpdateCaches();
 
         GUI.TitleHeader("Entries", "");
@@ -98,6 +100,8 @@ public class MsbEntryView
         EditorFilters.DisplaySearchbar("EntryListFilter", ref EntryListFilter, ref ExactEntryListFilter);
 
         DisplayColumnsButton();
+
+        DisplayQuickFilterButtons();
 
         ImGui.EndChild();
 
@@ -119,13 +123,17 @@ public class MsbEntryView
 
             // Per entry type, so each type keeps its own column widths
             var tableId = $"msbEntryTable_{Selection.SelectedSubCategoryType.FullName}";
-            var aliasColumn = 2 + _columns.Count;
+            var aliasColumn = FirstFieldColumn + _columns.Count;
 
             if (ImGui.BeginTable(tableId, aliasColumn + 1, tblFlags))
             {
                 // The entry's position in this category's list, which reordering changes
                 ImGui.TableSetupColumn("#", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.DefaultSort);
                 ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch | ImGuiTableColumnFlags.NoHide, 0.5f);
+
+                // The Save Check's issues, and how many objects refer to the entry
+                ImGui.TableSetupColumn($"{Icons.ExclamationTriangle}##issues", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("Used By", ImGuiTableColumnFlags.WidthFixed);
 
                 foreach (var path in _columns)
                 {
@@ -147,19 +155,19 @@ public class MsbEntryView
                     var (label, alias) = GetCurrentLabel(i);
                     var ent = _cachedEntries[i].ent;
 
-                    if (!IsShown(label, alias))
+                    if (!IsShown(label, alias) || !PassesQuickFilters(i))
                     {
                         continue;
                     }
 
                     ImGui.TableNextRow();
 
-                    if (ImGui.TableSetColumnIndex(0))
+                    if (ImGui.TableSetColumnIndex(IndexColumn))
                     {
                         ImGui.TextDisabled(i.ToString());
                     }
 
-                    ImGui.TableSetColumnIndex(1);
+                    ImGui.TableSetColumnIndex(NameColumn);
 
                     if (ent != null)
                     {
@@ -171,11 +179,21 @@ public class MsbEntryView
                         GUI.Tooltip($"Index: {i}\nThis entry is not a map object, so it has no properties to edit.");
                     }
 
+                    if (ImGui.TableSetColumnIndex(IssuesColumn))
+                    {
+                        DisplayIssuesCell(ent);
+                    }
+
+                    if (ImGui.TableSetColumnIndex(UsedByColumn))
+                    {
+                        DisplayUsedByCell(i);
+                    }
+
                     var cells = i < _cells.Length ? _cells[i] : null;
 
                     for (int c = 0; c < _columns.Count; c++)
                     {
-                        if (ImGui.TableSetColumnIndex(2 + c) && cells != null && c < cells.Length)
+                        if (ImGui.TableSetColumnIndex(FirstFieldColumn + c) && cells != null && c < cells.Length)
                         {
                             DisplayCell(i, c, cells[c], ent);
                         }
@@ -193,6 +211,9 @@ public class MsbEntryView
                     _editRow = -1;
                     _editColumn = -1;
                 }
+
+                // The followed entity's row is filtered out, so it isn't scrolled to later
+                _scrollTarget = null;
 
                 ImGui.EndTable();
             }
@@ -283,6 +304,8 @@ public class MsbEntryView
 
             _cells[i] = row;
         }
+
+        RebuildChecks();
 
         _orderDirty = true;
     }
@@ -510,13 +533,20 @@ public class MsbEntryView
 
     private string GetSortText(int index, int aliasColumn)
     {
-        if (_sortColumn == 1)
+        if (_sortColumn == NameColumn)
             return GetCurrentLabel(index).label;
 
         if (_sortColumn == aliasColumn)
             return GetCurrentLabel(index).alias;
 
-        var c = _sortColumn - 2;
+        // Issues and uses sort as numbers: errors above warnings, and the most used first when descending
+        if (_sortColumn == IssuesColumn)
+            return GetIssueRank(_cachedEntries[index].ent).ToString();
+
+        if (_sortColumn == UsedByColumn)
+            return index < _usedBy.Length && _usedBy[index] >= 0 ? _usedBy[index].ToString() : "";
+
+        var c = _sortColumn - FirstFieldColumn;
 
         return index < _cells.Length && c >= 0 && c < _cells[index].Length ? _cells[index][c] : "";
     }
@@ -712,9 +742,24 @@ public class MsbEntryView
     {
         bool isSelected = View.ViewportSelection.IsSelected(ent);
 
-        if (ImGui.Selectable($"{label}##{listIndex}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+        // Added and modified entries are tinted as in the Map Content list
+        var vanillaColour = View.MapContentView.PushVanillaColour(ent);
+
+        var clicked = ImGui.Selectable($"{label}##{listIndex}", isSelected, ImGuiSelectableFlags.AllowDoubleClick);
+
+        if (vanillaColour)
+        {
+            ImGui.PopStyleColor();
+        }
+
+        ScrollToIfTarget(ent);
+
+        if (clicked)
         {
             HandleEntrySelection(listIndex, ent);
+
+            // Selected here, so there is nothing to follow
+            _lastFollowed = ent;
 
             // Double-click frames the entry in the viewport, as in the Map Content list
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left) && ent.RenderSceneMesh != null)

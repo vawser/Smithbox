@@ -375,7 +375,7 @@ public class MapContentView
     /// Colours the next label if the object differs from, or isn't in, the vanilla map (Highlight Changes from
     /// Vanilla). True if a colour was pushed, to pop after the item.
     /// </summary>
-    private bool PushVanillaColour(Entity e)
+    public bool PushVanillaColour(Entity e)
     {
         if (!CFG.Current.MapEditor_Vanilla_Highlight)
             return false;

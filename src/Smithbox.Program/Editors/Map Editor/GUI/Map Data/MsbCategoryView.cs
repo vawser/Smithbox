@@ -227,6 +227,60 @@ public class MsbCategoryView
         ImGui.TextDisabled(text);
     }
 
+    /// <summary>
+    /// Selects the category that lists the entry: the one of its own type, or else the most derived one that
+    /// holds it (Enemy before Part). Returns false when no category lists it.
+    /// </summary>
+    public bool SelectCategoryFor(object entry)
+    {
+        if (entry == null)
+            return false;
+
+        var baseCategories = _baseCategories ??= MsbCategories.GetBaseCategories(View);
+        var entryType = entry.GetType();
+
+        (string baseName, Type baseType, string subName, Type subType) best = default;
+
+        foreach (var (baseName, baseType) in baseCategories)
+        {
+            var subCategories = MsbCategories.GetSubCategories(Project, baseName);
+            var candidates = subCategories.Count > 0
+                ? subCategories.Select(kvp => (kvp.Key, kvp.Value))
+                : new[] { (baseName, baseType) };
+
+            foreach (var (subName, subType) in candidates)
+            {
+                if (!subType.IsAssignableFrom(entryType))
+                    continue;
+
+                // A more derived type is a closer match
+                if (best.subType == null || best.subType.IsAssignableFrom(subType))
+                {
+                    best = (baseName, baseType, subName, subType);
+                }
+            }
+        }
+
+        if (best.subType == null)
+            return false;
+
+        if (Selection.SelectedSubCategoryType == best.subType)
+            return true;
+
+        SelectBaseCategory(best.baseName, best.baseType, baseCategories);
+
+        if (!IsDirectCategory(best.baseName, MsbCategories.GetSubCategories(Project, best.baseName)))
+        {
+            SelectSubCategory(best.subName, best.subType);
+        }
+
+        // The list filters could hide the category that was picked
+        BaseCategoryListFilter = "";
+        SubCategoryListFilter = "";
+
+        return true;
+    }
+
     private void SelectSubCategory(string name, Type type)
     {
         Selection.SelectedSubCategory = name;

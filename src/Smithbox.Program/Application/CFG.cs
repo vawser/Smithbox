@@ -1403,6 +1403,9 @@ public class CFG
     // A type without an entry shows the default columns.
     public Dictionary<string, List<string>> MapDataEditor_EntryView_Columns = new Dictionary<string, List<string>>();
 
+    // Entry view: an entity selected elsewhere (viewport, Map Content) is shown, switching category if needed
+    public bool MapDataEditor_EntryView_Follow_Selection = true;
+
     #endregion
 
     #region Behavior Editor
