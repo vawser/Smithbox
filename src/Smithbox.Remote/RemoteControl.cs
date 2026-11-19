@@ -401,7 +401,7 @@ public static partial class RemoteControl
 
         try
         {
-            job.Steps ??= Commands[job.Command](job.Args, job.Result);
+            job.Steps ??= StartChecked(job.Command, job.Args, job.Result);
 
             if (job.Steps.MoveNext())
                 return;
@@ -468,14 +468,14 @@ public static partial class RemoteControl
             try
             {
                 var stream = client.GetStream();
-                var (method, target, body) = await ReadRequest(stream);
+                var (method, target, headers, body) = await ReadRequest(stream);
 
                 JsonObject response;
                 int status;
 
                 try
                 {
-                    (status, response) = await Dispatch(method, target, body);
+                    (status, response) = await Dispatch(method, target, headers, body);
                 }
                 catch (Exception e)
                 {
@@ -492,7 +492,7 @@ public static partial class RemoteControl
         }
     }
 
-    private static async Task<(int, JsonObject)> Dispatch(string method, string target, string body)
+    private static async Task<(int, JsonObject)> Dispatch(string method, string target, Dictionary<string, string> headers, string body)
     {
         var queryStart = target.IndexOf('?');
         var path = queryStart >= 0 ? target[..queryStart] : target;
@@ -531,6 +531,12 @@ public static partial class RemoteControl
             }
         }
 
+        if (CheckCaller(headers, args) is string refused)
+        {
+            LogCommand($"refused {command}: {refused}");
+            return (403, new JsonObject { ["ok"] = false, ["error"] = refused });
+        }
+
         var job = new RemoteJob { Command = command, Args = args };
         var number = Interlocked.Increment(ref CommandCount);
         var watch = Stopwatch.StartNew();
@@ -554,7 +560,7 @@ public static partial class RemoteControl
         return (ok ? 200 : 400, result);
     }
 
-    private static async Task<(string method, string target, string body)> ReadRequest(NetworkStream stream)
+    private static async Task<(string method, string target, Dictionary<string, string> headers, string body)> ReadRequest(NetworkStream stream)
     {
         var header = new List<byte>();
         var one = new byte[1];
@@ -583,15 +589,20 @@ public static partial class RemoteControl
         if (requestLine.Length < 2)
             throw new IOException("Malformed request line");
 
-        var length = 0;
+        var headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var line in lines.Skip(1))
         {
             var colon = line.IndexOf(':');
 
-            if (colon > 0 && line[..colon].Trim().Equals("Content-Length", StringComparison.OrdinalIgnoreCase))
-                length = int.Parse(line[(colon + 1)..].Trim(), CultureInfo.InvariantCulture);
+            if (colon > 0)
+                headers[line[..colon].Trim()] = line[(colon + 1)..].Trim();
         }
+
+        var length = headers.TryGetValue("Content-Length", out var cl) ? int.Parse(cl, CultureInfo.InvariantCulture) : 0;
+
+        if (length is < 0 or > 16 * 1024 * 1024)
+            throw new IOException("Request body too large");
 
         var body = new byte[length];
         var offset = 0;
@@ -606,7 +617,7 @@ public static partial class RemoteControl
             offset += read;
         }
 
-        return (requestLine[0], requestLine[1], Encoding.UTF8.GetString(body));
+        return (requestLine[0], requestLine[1], headers, Encoding.UTF8.GetString(body));
     }
 
     private static async Task WriteResponse(NetworkStream stream, int status, string json)
@@ -614,6 +625,7 @@ public static partial class RemoteControl
         var reason = status switch
         {
             200 => "OK",
+            403 => "Forbidden",
             404 => "Not Found",
             504 => "Gateway Timeout",
             _ => "Bad Request"

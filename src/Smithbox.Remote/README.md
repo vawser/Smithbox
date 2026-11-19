@@ -49,13 +49,15 @@ start "" "%~dp0Smithbox.Vulkan.exe" --remote-port 7780
 ```
 
 `--remote-port N` or the environment variable `SMITHBOX_REMOTE_PORT` turns the server on. `--remote-role <text>` only adds a
-label to the window title, useful with several instances. The server listens on `127.0.0.1` only.
+label to the window title, useful with several instances. The server listens on `127.0.0.1` only. Screenshots and other
+files go into the project, the temp folder or folders allowed with `--remote-roots` (see Security).
 
 Docker (port 7790 inside the container; reach it with `docker exec`):
 
 ```
 docker run -d --name sb --user 1000:1000 \
   -v <smithbox-home>:/home/sb -v <project>:/project -v <game-data>:/game:ro \
+  -v <output>:/out -e SMITHBOX_REMOTE_ROOTS=/out \
   smithbox-remote --remote-role Docker
 ```
 
@@ -107,7 +109,7 @@ $R screenshot path=/tmp/shots/b.png labels=true                # part names draw
 ### Commands
 
 - Basics: status, projects, project-load, maps, map-load, map-unload, map-save, wait, camera, select, frame, entities, cfg,
-  cfg-list, window, command (any internal editor command), screenshot, log, filter.
+  cfg-list, window, command (a Map Editor command such as map/select/...), screenshot, log, filter.
 - Parts: part-list, part-add, part-move, part-delete, group-copy, place-on, align, set, floor, ray, bbox, pick, undo, redo,
   model-preview. Each change is one Smithbox action, so undo and redo work as in the editor.
 - Regions and events: region-add, region-move, region-delete, region-new, region-list, event-new, event-set, event-list.
@@ -142,5 +144,19 @@ placements and replay it elsewhere.
 
 ## Security
 
-There is no authentication. The server only listens on the loopback interface, but any process on the machine (or in the
-container) can drive Smithbox through it, including saving maps. Start it only when you need it.
+The server is meant for scripts on the same machine. It listens on `127.0.0.1` only and is off unless a port is given.
+On top of that (`RemoteSecurity.cs`):
+
+- **No web pages:** requests with a `Host` other than `127.0.0.1`/`localhost`/`[::1]` and the port (DNS rebinding), with an
+  `Origin` header, or with `Sec-Fetch-Site` other than `none` are refused with HTTP 403. curl and scripts send none of these;
+  a URL typed into the browser's address bar still works.
+- **Files only in allowed folders:** every file argument (`path`, `dir`, `file`, `faces`, `ref`, `out`, `before`, `after`)
+  must be an absolute path inside the loaded project, the system temp folder, or a folder given with
+  `--remote-roots <dirs>` / `SMITHBOX_REMOTE_ROOTS` (separated by `;` on Windows, `:` elsewhere). `ref=` may also read from
+  the game data. `..` and symbolic links are resolved before the check.
+- **Optional token:** with `--remote-token <secret>` or `SMITHBOX_REMOTE_TOKEN`, every request needs it as the
+  `X-Smithbox-Token` header (or `token=`). Use it on machines shared with other users. `remote.sh` sends
+  `SMITHBOX_REMOTE_TOKEN` when it is set.
+- `cfg` does not set string settings to paths, and `command` only passes on Map Editor commands (`map/...`).
+
+Anyone who can call the server can still change and save the loaded maps; that is its purpose. Start it only when you need it.

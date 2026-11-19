@@ -31,10 +31,10 @@ public static partial class RemoteControl
     /// <summary>Runs another command as part of this one (same arguments as over HTTP)</summary>
     private static IEnumerator RunSub(string cmd, JsonObject args, JsonObject result)
     {
-        if (!Commands.TryGetValue(cmd, out var handler))
+        if (!Commands.ContainsKey(cmd))
             throw new RemoteException($"Unknown command '{cmd}'");
 
-        var steps = handler(args, result);
+        var steps = StartChecked(cmd, args, result);
         while (steps.MoveNext())
             yield return null;
     }
@@ -130,7 +130,7 @@ public static partial class RemoteControl
 
                 try
                 {
-                    it = Commands.TryGetValue(cmd, out var h) ? h(subArgs, sub) : throw new RemoteException($"Unknown command '{cmd}'");
+                    it = Commands.ContainsKey(cmd) ? StartChecked(cmd, subArgs, sub) : throw new RemoteException($"Unknown command '{cmd}'");
                 }
                 catch (Exception e)
                 {
