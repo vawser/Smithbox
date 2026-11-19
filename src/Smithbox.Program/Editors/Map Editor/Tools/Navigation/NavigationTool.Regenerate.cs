@@ -29,10 +29,29 @@ public partial class NavigationTool
     private bool RegenKeepLinks = true;
     private bool RegenRelatedTiles = true;
     private bool RegenSnapBorders = true;
+
+    /// <summary>Regenerate from the high collision instead of the low (both Regenerate tabs). Off by default: navmeshes follow the low collision, which characters walk on; the high is for inverse kinematics.</summary>
+    private bool RegenHighCollision;
     private bool Regenerating;
     private string RegenMessage;
     private bool RegenMessageIsError;
     private int RegenRun;
+
+    /// <summary>Which collision a regeneration reads, low (the default) or high; shared by the Havok and NGP Regenerate tabs.</summary>
+    private void DisplayRegenCollisionSource(string id)
+    {
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(LOC.Get("MAP_Navigation_Regenerate_Collision_Source"));
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Collision_Source_TT"));
+        ImGui.SameLine();
+        if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Regenerate_Collision_Low")}##{id}CollisionLow", !RegenHighCollision))
+            RegenHighCollision = false;
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Collision_Low_TT"));
+        ImGui.SameLine();
+        if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Regenerate_Collision_High")}##{id}CollisionHigh", RegenHighCollision))
+            RegenHighCollision = true;
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Collision_High_TT"));
+    }
 
     /// <summary>The Regenerate tab: the Regenerate Map group, over the map picked above.</summary>
     private void DisplayRegenerateTab(MapContainer map)
@@ -60,6 +79,8 @@ public partial class NavigationTool
             GUI.WrappedText(LOC.Get("MAP_Navigation_Regenerate_Error_Quarters"));
             return;
         }
+
+        DisplayRegenCollisionSource("navigationRegen");
 
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Regenerate_Seed_Current")}##navigationRegenSeed", ref RegenSeedFromCurrent);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Regenerate_Seed_Current_TT"));
@@ -156,7 +177,7 @@ public partial class NavigationTool
             if (entity is not MsbEntity part || !EntityHelper.IsPartCollision(part) || SourceOf(part) is not GenerateSource source)
                 continue;
 
-            var fileName = CollisionFileName(source);
+            var fileName = CollisionFileName(source, RegenHighCollision);
             int model = CollisionModelId(source.Model);
             if (model < 0)
                 continue;
@@ -181,7 +202,7 @@ public partial class NavigationTool
         }
 
         int unplaced = View.HavokCollisionBank.MapCollisions.TryGetValue(map.Name, out var listed)
-            ? listed.Count(n => n.StartsWith("l", StringComparison.OrdinalIgnoreCase) && !placedFiles.Contains(n)) : 0;
+            ? listed.Count(n => n.StartsWith(RegenHighCollision ? "h" : "l", StringComparison.OrdinalIgnoreCase) && !placedFiles.Contains(n)) : 0;
 
         // The tile's own area: where its collision lies, across, before any asset is added
         var ownBounds = XZBounds(input.Triangles);
@@ -199,7 +220,7 @@ public partial class NavigationTool
                 continue;
             }
 
-            var local = SourceTriangles(source);
+            var local = SourceTriangles(source, RegenHighCollision);
             if (local == null || local.Count == 0)
             {
                 missing.Add(source.Model);
@@ -389,7 +410,7 @@ public partial class NavigationTool
                     continue;
                 }
 
-                var local = SourceTriangles(source);
+                var local = SourceTriangles(source, RegenHighCollision);
                 if (local == null || local.Count == 0)
                     continue;
 

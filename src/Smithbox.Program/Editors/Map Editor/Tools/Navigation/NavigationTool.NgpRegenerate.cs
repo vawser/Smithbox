@@ -38,6 +38,8 @@ public partial class NavigationTool
         bool seed = o.SeedFromCurrent, meshes = o.KeepMeshes, flags = o.KeepFlags, steep = o.MarkSteep;
         float slope = o.SteepSlope;
 
+        DisplayRegenCollisionSource("navigationNgpRegen");
+
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Ngp_Regen_Seed")}##navigationNgpRegenSeed", ref seed);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Ngp_Regen_Seed_TT"));
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Ngp_Regen_Seed_New")}##navigationNgpRegenSeedNew", ref NgpRegenSeedNew);
@@ -109,14 +111,14 @@ public partial class NavigationTool
             if (entity is not MsbEntity part || part.WrappedObject is not MSB2.Part.Collision collision || SourceOf(part) is not GenerateSource source)
                 continue;
 
-            if (NvmSourceTriangles(source) is not List<Vector3> triangles)
+            if (NvmSourceTriangles(source, RegenHighCollision) is not List<Vector3> triangles)
             {
                 missing.Add(source.Model);
                 continue;
             }
 
             bool seedPart = NgpRegenSeedNew && (selected.Contains(part)
-                || NvmSourceFile(source) is string file && View.HavokCollisionBank.IsAddedOrChangedCollision(map.Name, file));
+                || NvmSourceFile(source, RegenHighCollision) is string file && View.HavokCollisionBank.IsAddedOrChangedCollision(map.Name, file));
             if (seedPart)
                 seedParts.Add(part.Name);
 

@@ -103,7 +103,7 @@ public static class NgpModelEdit
             }
         }
 
-        if (mesh.Vertices.Count > MaxElements || mesh.Faces.Count > MaxElements || mesh.Faces.Count == 0)
+        if (mesh.Faces.Count == 0 || !WithinLimits(mesh))
             return null;
 
         return mesh;
@@ -174,6 +174,23 @@ public static class NgpModelEdit
         // Nothing changed geometry: the kept gates stay as they are, and every table and ID is numbered again
         return NgpRebuild.Rebuild(copy, Array.Empty<int>());
     }
+
+    /// <summary>The edges a mesh's faces make (each vertex pair once), which the 15-bit limit holds as faces and vertices.</summary>
+    public static int EdgeCount(NGP.Mesh mesh)
+    {
+        var edges = new HashSet<(int, int)>();
+        foreach (var f in mesh.Faces)
+        {
+            edges.Add((Math.Min(f.V1, f.V2), Math.Max(f.V1, f.V2)));
+            edges.Add((Math.Min(f.V2, f.V3), Math.Max(f.V2, f.V3)));
+            edges.Add((Math.Min(f.V3, f.V1), Math.Max(f.V3, f.V1)));
+        }
+        return edges.Count;
+    }
+
+    /// <summary>Whether a mesh's faces, vertices and edges all fit the 15-bit indices.</summary>
+    public static bool WithinLimits(NGP.Mesh mesh)
+        => mesh.Faces.Count <= MaxElements && mesh.Vertices.Count <= MaxElements && EdgeCount(mesh) <= MaxElements;
 
     /// <summary>The index of the single NavmeshGroup bit a part sets (word * 32 + bit), or -1.</summary>
     public static int GroupBit(uint[] groups)

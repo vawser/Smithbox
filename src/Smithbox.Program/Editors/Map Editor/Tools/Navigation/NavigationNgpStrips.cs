@@ -813,17 +813,15 @@ public static class NgpStripEdit
 
     private static bool Finish(NGP copy, Dictionary<int, NgpWorkMesh> work, NgpStripResult result)
     {
-        foreach (var (index, w) in work)
+        var meshes = work.ToDictionary(kv => kv.Key, kv => kv.Value.ToMesh());
+        if (meshes.Values.Any(m => !NgpModelEdit.WithinLimits(m)))
         {
-            if (w.FaceCount > NgpModelEdit.MaxElements || w.VertexCount > NgpModelEdit.MaxElements)
-            {
-                result.Problem = "Limit";
-                return false;
-            }
+            result.Problem = "Limit";
+            return false;
         }
 
-        foreach (var (index, w) in work)
-            copy.Meshes[index] = w.ToMesh();
+        foreach (var (index, mesh) in meshes)
+            copy.Meshes[index] = mesh;
 
         result.Changed = work.Keys.OrderBy(k => k).ToList();
         result.Ngp = NgpRebuild.Rebuild(copy, result.Changed);

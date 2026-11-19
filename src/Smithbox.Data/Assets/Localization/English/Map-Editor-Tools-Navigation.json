@@ -1637,6 +1637,26 @@
       "Text": "Spill: off"
     },
     {
+      "Key": "MAP_Navigation_Generate_Contour",
+      "Text": "Follow the collision"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Contour_Off",
+      "Text": "Follow the collision: off"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Contour_TT",
+      "Text": "How far a face may stand off the collision under it before it is split, in metres. The generated faces have corners only where their outline turns, so a mound or dip inside one is lost and the face cuts flat through it; the game's navmeshes follow the ground. With this on, faces are split, and their new corners put onto the collision, until no edge middle or face centre is further off than this. Lower follows the ground more closely, with more faces. Off keeps the flat faces."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Contour_Edge",
+      "Text": "Shortest split edge"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Contour_Edge_TT",
+      "Text": "The shortest edge following the collision makes, in metres: smaller bumps than this are left as they are."
+    },
+    {
       "Key": "MAP_Navigation_Generate_Spill_TT",
       "Text": "Lets the navmesh reach this far out past a ledge of its collision, level with the ledge. Recast keeps the mesh an agent radius in from every edge; the spill moves the boundary vertices at a drop out to the ledge and then past it, so the faces either side of a jump or fall come close, as the game's AI needs to use the link (ER, NR). Vertices against a wall, or where the way out meets the collision or a blocker, stay where they are, and blockers still cut the spilled faces. 0 for none."
     },
@@ -2604,6 +2624,30 @@
     {
       "Key": "MAP_Navigation_Regenerate_Error_Input",
       "Text": "No collision to generate from. Load the map with collision on (and Havok loading on)."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Collision_Source",
+      "Text": "Collision:"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Collision_Source_TT",
+      "Text": "Which collision the navmesh is generated from: each collision part's low (l) or high (h) collision file, and each asset's own of the same type."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Collision_Low",
+      "Text": "Low"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Collision_Low_TT",
+      "Text": "The low collision (l files), which characters walk on and the game's navmeshes follow. Recommended."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Collision_High",
+      "Text": "High"
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Collision_High_TT",
+      "Text": "The high collision (h files), which is for inverse kinematics (feet on the ground). It lies lower and rougher than the low, so a navmesh made from it sits lower and covers less. Parts with no high file are left out and logged."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Seed_Current",

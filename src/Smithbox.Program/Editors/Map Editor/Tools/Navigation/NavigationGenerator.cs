@@ -59,6 +59,16 @@ public sealed record NavGenParameters
     /// </summary>
     public float FaceSize { get; init; } = 2f;
 
+    /// <summary>
+    /// How far a face may stand off the collision under it, in metres, before it is split so its new corners lie on the
+    /// collision; 0 for none. Recast's faces only have corners on their outline, so a mound or dip inside one is lost:
+    /// the face cuts flat through it, as the game's navmeshes (which follow the ground) don't.
+    /// </summary>
+    public float ContourError { get; init; } = 0.15f;
+
+    /// <summary>The shortest edge the contour split makes, in metres: below it a face is left as it is.</summary>
+    public float ContourMinEdge { get; init; } = 0.5f;
+
     /// <summary>Split every face into triangles, after the grid.</summary>
     public bool TrianglesOnly { get; init; }
 
@@ -158,6 +168,9 @@ public sealed class NavGenPolygons
     public int SpilledVertices { get; init; }
     public int BorderVertices { get; init; }
     public int ClippedFaces { get; init; }
+
+    /// <summary>Faces split to follow the collision (NavGenParameters.ContourError).</summary>
+    public int ContouredFaces { get; init; }
 
     public bool Ok => Error == null;
 }
@@ -301,6 +314,11 @@ public static class NavigationGenerator
             }
         }
 
+        // Contour: faces split where the collision under them rises or falls away from them, so they follow the ground
+        int contoured = 0;
+        if (surface != null && p.ContourError > 0)
+            polygons = Contour(polygons, surface, p, out contoured);
+
         // Spill: boundary vertices at a ledge moved out past it, before the cut, so a blocker still trims them
         int spilled = 0;
         if (p.Spill > 0)
@@ -341,7 +359,144 @@ public static class NavigationGenerator
         {
             Polygons = polygons, Cuts = cuts, BlockerTriangles = blockerTriangles, InputTriangles = triangles.Count / 3,
             SnappedVertices = snapped, SpilledVertices = spilled, BorderVertices = bordered, ClippedFaces = clipped,
+            ContouredFaces = contoured,
         };
+    }
+
+    /// <summary>
+    /// Splits faces until they follow the collision under them (NavGenParameters.ContourError). Each round samples the
+    /// collision at every edge's middle and every face's centre:
+    /// - an edge whose middle is further than the error from the collision, and long enough to halve, is split there,
+    ///   in both of its faces (edges are matched by their ends, which neighbours share exactly, so no crack opens);
+    /// - a face with a split edge, or whose centre is off, is fanned from its centre put onto the collision; a triangle
+    ///   with one split edge and a good centre is cut in two instead.
+    /// New corners go onto the collision as the snapped ones do. Up to 8 rounds; returns how many faces were split.
+    /// </summary>
+    private static List<List<Vector3>> Contour(List<List<Vector3>> polygons, SurfaceGrid surface, NavGenParameters p, out int split)
+    {
+        split = 0;
+        float range = p.MaxClimb + 2 * p.CellHeight;
+        float minSplit = MathF.Max(0.05f, p.ContourMinEdge) * 2;
+
+        // An edge's key and middle, from its ends in a fixed order, so both faces on it get the same point
+        static (Vector3, Vector3) Key(Vector3 a, Vector3 b)
+            => a.X < b.X || a.X == b.X && (a.Z < b.Z || a.Z == b.Z && a.Y <= b.Y) ? (a, b) : (b, a);
+
+        Vector3 OnCollision(Vector3 q) => surface.Nearest(q, range) is float y ? q with { Y = y } : q;
+
+        bool Off(Vector3 q)
+            => surface.Nearest(q, range) is float y && MathF.Abs(y - q.Y) > p.ContourError;
+
+        // A new corner only where it leaves the faces walkable: across a step or a kerb the collision jumps, and draping
+        // the face down it would make it a wall (the game's faces stop at a step instead)
+        float tanMax = MathF.Tan(Math.Clamp(p.MaxSlope, 1f, 89f) * MathF.PI / 180);
+        bool Walkable(Vector3 from, Vector3 to)
+            => MathF.Abs(to.Y - from.Y) <= tanMax * new Vector2(to.X - from.X, to.Z - from.Z).Length() + 1e-4f;
+
+        // Whether the collision runs on without a break under the line from a to b: 8 samples along it, each next one no
+        // higher or lower than a walkable slope allows (a step or a ledge between them is a break). A face only bends to
+        // the ground where the ground is one surface
+        bool Continuous(Vector3 a, Vector3 b)
+        {
+            const int Steps = 8;
+            float? last = null;
+            float stepLength = new Vector2(b.X - a.X, b.Z - a.Z).Length() / Steps;
+            for (int i = 0; i <= Steps; i++)
+            {
+                var q = Vector3.Lerp(a, b, i / (float)Steps);
+                if (surface.Nearest(q, range) is not float y)
+                    return false;
+                if (last is float l && MathF.Abs(y - l) > tanMax * stepLength + p.CellHeight)
+                    return false;
+                last = y;
+            }
+            return true;
+        }
+
+        for (int round = 0; round < 8; round++)
+        {
+            // Edges to split this round
+            var splitEdges = new Dictionary<(Vector3, Vector3), Vector3>();
+            foreach (var polygon in polygons)
+            {
+                for (int k = 0; k < polygon.Count; k++)
+                {
+                    var key = Key(polygon[k], polygon[(k + 1) % polygon.Count]);
+                    if (splitEdges.ContainsKey(key))
+                        continue;
+                    var (a, b) = key;
+                    if (new Vector2(b.X - a.X, b.Z - a.Z).Length() < minSplit)
+                        continue;
+                    var middle = (a + b) / 2;
+                    if (!Off(middle))
+                        continue;
+                    var placed = OnCollision(middle);
+                    if (Walkable(a, placed) && Walkable(placed, b) && Continuous(a, b))
+                        splitEdges[key] = placed;
+                }
+            }
+
+            int splitThisRound = 0;
+            var next = new List<List<Vector3>>(polygons.Count);
+            foreach (var polygon in polygons)
+            {
+                var centre = polygon.Aggregate(Vector3.Zero, (s, v) => s + v) / polygon.Count;
+                var onGround = OnCollision(centre);
+                bool hubWalkable = polygon.All(v => Walkable(v, onGround));
+                bool centreOffRaw = AreaXZ(polygon) >= minSplit * minSplit / 4 && Off(centre);
+                hubWalkable = hubWalkable && (!centreOffRaw || polygon.All(v => Continuous(v, centre)));
+                bool centreOff = AreaXZ(polygon) >= minSplit * minSplit / 4 && Off(centre) && hubWalkable;
+
+                var outline = new List<Vector3>(polygon.Count * 2);
+                int splitCount = 0, splitAt = -1;
+                for (int k = 0; k < polygon.Count; k++)
+                {
+                    outline.Add(polygon[k]);
+                    if (splitEdges.TryGetValue(Key(polygon[k], polygon[(k + 1) % polygon.Count]), out var middle))
+                    {
+                        outline.Add(middle);
+                        splitCount++;
+                        splitAt = k;
+                    }
+                }
+
+                if (splitCount == 0 && !centreOff)
+                {
+                    next.Add(polygon);
+                    continue;
+                }
+
+                splitThisRound++;
+
+                if (polygon.Count == 3 && splitCount == 1 && !centreOff)
+                {
+                    // a → m → b of the split edge, then c: two triangles from c, keeping the winding
+                    var a = polygon[splitAt];
+                    var b = polygon[(splitAt + 1) % 3];
+                    var c = polygon[(splitAt + 2) % 3];
+                    var m = splitEdges[Key(a, b)];
+                    next.Add(new List<Vector3> { a, m, c });
+                    next.Add(new List<Vector3> { m, b, c });
+                    continue;
+                }
+
+                // A fan from the centre, on the collision where that stays walkable, round the outline (its winding kept)
+                var hub = hubWalkable ? onGround : centre;
+                for (int k = 0; k < outline.Count; k++)
+                {
+                    var t = new List<Vector3> { outline[k], outline[(k + 1) % outline.Count], hub };
+                    if (AreaXZ(t) > 1e-5f)
+                        next.Add(t);
+                }
+            }
+
+            polygons = next;
+            split += splitThisRound;
+            if (splitThisRound == 0)
+                break;
+        }
+
+        return polygons;
     }
 
     /// <summary>

@@ -71,6 +71,9 @@ public sealed class NgpRegenResult
 
     /// <summary>Faces kept because they lie over a seed collision (one the user added), before spreading from them.</summary>
     public int SeededByCollision;
+
+    /// <summary>The follow-the-collision tolerance used: the asked one, or larger when the face limit was passed (0 = off).</summary>
+    public float ContourUsed;
     public int FlagsKept, Steep;
 
     /// <summary>Per mesh: its new face count, or -1 when it got none and keeps its faces as they were.</summary>
@@ -205,8 +208,34 @@ public static class NgpRegenerate
         }
     }
 
-    /// <summary>Generates the map's navmesh again; reads the current NGP only, so it can run in the background.</summary>
+    /// <summary>
+    /// Generates the map's navmesh again; reads the current NGP only, so it can run in the background. When following
+    /// the collision makes a navmesh pass the face limit, it goes again with the tolerance doubled (up to three times,
+    /// then off); ContourUsed says what it used.
+    /// </summary>
     public static NgpRegenResult Run(NGP current, NgpRegenInput input)
+    {
+        var asked = input.Parameters;
+        try
+        {
+            var p = asked;
+            for (int attempt = 0; ; attempt++)
+            {
+                input.Parameters = p;
+                var result = RunOnce(current, input);
+                result.ContourUsed = p.ContourError;
+                if (result.Error != "MAP_Navigation_Ngp_Regen_Error_Limit" || p.ContourError <= 0)
+                    return result;
+                p = p with { ContourError = attempt < 3 ? p.ContourError * 2 : 0 };
+            }
+        }
+        finally
+        {
+            input.Parameters = asked;
+        }
+    }
+
+    private static NgpRegenResult RunOnce(NGP current, NgpRegenInput input)
     {
         var result = new NgpRegenResult();
 
@@ -462,7 +491,7 @@ public static class NgpRegenerate
                 mesh.FaceFlags.Add(Flags(f));
             }
 
-            if (mesh.Faces.Count > NgpModelEdit.MaxElements || mesh.Vertices.Count > NgpModelEdit.MaxElements)
+            if (!NgpModelEdit.WithinLimits(mesh))
             {
                 result.Error = "MAP_Navigation_Ngp_Regen_Error_Limit";
                 return result;

@@ -209,7 +209,7 @@ public partial class NavigationTool
             return p;
 
         float cell = p.CellSize, radius = p.AgentRadius, height = p.AgentHeight, climb = p.MaxClimb, slope = p.MaxSlope, edge = p.MaxEdgeLength;
-        float faceSize = p.FaceSize, spill = p.Spill;
+        float faceSize = p.FaceSize, spill = p.Spill, contour = p.ContourError, contourEdge = p.ContourMinEdge;
         bool trianglesOnly = p.TrianglesOnly;
 
         ImGui.SetNextItemWidth(-1);
@@ -235,6 +235,15 @@ public partial class NavigationTool
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Face_Size_TT"));
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Triangles_Only")}##navigationGenerateTriangles_{id}", ref trianglesOnly);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat($"##navigationGenerateContour_{id}", ref contour, 0f, 1f, contour <= 0 ? LOC.Get("MAP_Navigation_Generate_Contour_Off") : $"{LOC.Get("MAP_Navigation_Generate_Contour")} %.2f m");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Contour_TT"));
+        if (contour > 0)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateContourEdge_{id}", ref contourEdge, 0.1f, 4f, $"{LOC.Get("MAP_Navigation_Generate_Contour_Edge")} %.2f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Contour_Edge_TT"));
+        }
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateSpill_{id}", ref spill, 0f, 1f, spill <= 0 ? LOC.Get("MAP_Navigation_Generate_Spill_Off") : $"{LOC.Get("MAP_Navigation_Generate_Spill")} %.2f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Spill_TT"));
@@ -264,6 +273,7 @@ public partial class NavigationTool
 
         p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge,
             FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly, Spill = spill < 0.01f ? 0 : spill,
+            ContourError = contour < 0.01f ? 0 : contour, ContourMinEdge = contourEdge,
             Links = links, JumpHeight = jumpHeight < 0.05f ? 0 : jumpHeight, FallHeight = fallHeight, LinkReach = reach };
 
         if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Reset")}##navigationGenerateReset_{id}"))
@@ -642,28 +652,30 @@ public partial class NavigationTool
     /// The triangles of a source in its own space: a collision part's low collision file of its map (l + map digits +
     /// the model's digits), or an asset's own low collision, read from its binder. Null if there is none. Navmeshes are
     /// generated from the low collision, the one characters walk on: the high collision is for inverse kinematics
-    /// (feet on the ground) and lies lower and rougher, so a navmesh made from it covers less.
+    /// (feet on the ground) and lies lower and rougher, so a navmesh made from it covers less. The Regenerate tabs can ask
+    /// for the high collision instead (<paramref name="high"/>), as a choice the user makes.
     /// </summary>
-    private List<Vector3> SourceTriangles(GenerateSource source)
+    private List<Vector3> SourceTriangles(GenerateSource source, bool high = false)
     {
         if (!source.IsAsset)
         {
-            var document = View.HavokCollisionBank.GetEditableDocument(CollisionFileName(source));
+            var document = View.HavokCollisionBank.GetEditableDocument(CollisionFileName(source, high));
             return document == null ? null : Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
         }
 
-        if (AssetCollisionCache.TryGetValue(source.Model, out var cached))
+        var cacheKey = $"{source.Model}:{(high ? "h" : "l")}";
+        if (AssetCollisionCache.TryGetValue(cacheKey, out var cached))
             return cached;
 
         List<Vector3> triangles = null;
         try
         {
-            // The locator falls back to the high collision when an asset has no low; that one is never used here
-            var descriptor = Renderer.ModelLocator.GetMapObjCollision(Project, source.Model, HavokCollisionType.Low);
+            // The locator falls back to the other type when an asset lacks the one asked for; that one isn't used here
+            var descriptor = Renderer.ModelLocator.GetMapObjCollision(Project, source.Model, high ? HavokCollisionType.High : HavokCollisionType.Low);
             var path = descriptor.GetContainerPath(Project);
-            bool high = descriptor.AssetName?.EndsWith("_h", StringComparison.OrdinalIgnoreCase) == true;
+            bool otherType = descriptor.AssetName?.EndsWith(high ? "_l" : "_h", StringComparison.OrdinalIgnoreCase) == true;
 
-            if (!high && path != null && Project.VFS.FS.FileExists(path))
+            if (!otherType && path != null && Project.VFS.FS.FileExists(path))
             {
                 var binder = SoulsFormats.BND4.Read(Project.VFS.FS.ReadFile(path).Value);
                 var file = binder.Files.FirstOrDefault(f => string.Equals(
@@ -684,15 +696,17 @@ public partial class NavigationTool
             Smithbox.LogError(this, LOC.Get("MAP_Navigation_Generate_Asset_Failed", source.Model), e);
         }
 
-        AssetCollisionCache[source.Model] = triangles;
+        AssetCollisionCache[cacheKey] = triangles;
         return triangles;
     }
 
     /// <summary>
     /// A collision part's low collision file in its map's binder: l + map digits + the model's digits, e.g.
     /// l10_01_00_00_001000.hkx.dcx (the part's model names the high file, h…; its low file has the same digits).
+    /// With <paramref name="high"/>, the high file (h…) instead.
     /// </summary>
-    private static string CollisionFileName(GenerateSource source) => $"l{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
+    private static string CollisionFileName(GenerateSource source, bool high = false)
+        => $"{(high ? 'h' : 'l')}{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
 
     /// <summary>The model number of a collision file or part model name, e.g. 1000 for h10_01_00_00_001000.hkx.dcx or h001000, or -1.</summary>
     private static int CollisionModelId(string name)

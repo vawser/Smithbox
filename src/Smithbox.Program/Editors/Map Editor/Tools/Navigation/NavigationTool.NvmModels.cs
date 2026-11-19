@@ -369,16 +369,18 @@ public partial class NavigationTool
     /// <summary>
     /// The low collision file of a collision part (its map's listed files, new ones included), or null: the model names
     /// the high file (h01_0200, h0029B1), the low one has an l in its place (l01_0200.hkx.dcx). Navmeshes are generated
-    /// from the low collision; the high collision is for inverse kinematics only.
+    /// from the low collision; the high collision is for inverse kinematics only. With <paramref name="high"/> (a choice
+    /// in the Regenerate tab), the high file instead.
     /// </summary>
-    private string NvmSourceFile(GenerateSource source)
+    private string NvmSourceFile(GenerateSource source, bool high = false)
     {
         if (string.IsNullOrEmpty(source.Model))
             return null;
 
+        var letter = high ? "h" : "l";
         var names = View.HavokCollisionBank.GetMapCollisionNames(source.MapId)
-            .Where(n => n.StartsWith("l", StringComparison.OrdinalIgnoreCase)).ToList();
-        var stem = NvmMap.FileFor("l" + source.Model.Substring(1), names.Select(n => n.Split('.')[0]));
+            .Where(n => n.StartsWith(letter, StringComparison.OrdinalIgnoreCase)).ToList();
+        var stem = NvmMap.FileFor(letter + source.Model.Substring(1), names.Select(n => n.Split('.')[0]));
         return stem == null ? null : names.First(n => n.Split('.')[0].Equals(stem, StringComparison.OrdinalIgnoreCase));
     }
 
@@ -386,9 +388,9 @@ public partial class NavigationTool
     /// The selected collision parts' triangles in map space, each part wound to face up (NvmModelEdit.FacingUp). Null
     /// for a part whose collision file isn't loaded.
     /// </summary>
-    private List<Vector3> NvmSourceTriangles(GenerateSource source)
+    private List<Vector3> NvmSourceTriangles(GenerateSource source, bool high = false)
     {
-        var file = NvmSourceFile(source);
+        var file = NvmSourceFile(source, high);
         var document = file != null ? View.HavokCollisionBank.GetMapDocument(file) : null;
 
         if (document == null)
