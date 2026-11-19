@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="World map discovery point (formerly Map Point Discovery Override; the game's CSWorldMapDiscoveryPointIns). The area in which the player discovers a map point. It has no data of its own: a World Map Point uses it when that point's Discovery Region Name names this region. Without one, the discovery area is the World Map Point's own shape, expanded by its Discovery Expand Range fields." />
+
+  <Field>
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

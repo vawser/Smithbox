@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="" />
-  
+  <Self
+  Wiki="A point along an NPC patrol path." />
+
   <Field>
-  
+    <ActionID
+    AltName="Action ID"
+    Wiki="An action ID that AI scripts read for this point (in Elden Ring through the Lua function GetMovePointActionId). -1: none. Retail mostly uses 900002-900006." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

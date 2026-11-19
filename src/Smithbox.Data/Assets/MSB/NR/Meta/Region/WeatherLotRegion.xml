@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Weather lot region (formerly Map Info Override; handled by the game's CSWeatherLotRegionMan). While the player is inside it, its Weather Lot Param ID replaces the map's. Retail Nightreign has one region (lot 4000). Unlike Elden Ring, Nightreign doesn't read the mimicry override bytes at 0x08." />
+
+  <Field>
+    <WeatherLotParamID
+    AltName="Weather Lot Param ID"
+    Wiki="The WeatherLotParam row used inside the region. -1: no override."
+    ParamRef="WeatherLotParam" />
+
+    <UnkT04
+    AltName="Unknown: 0x04"
+    Wiki="Read by the game (-1 when unset); meaning unknown. -1 in retail." />
+
+    <UnkT08
+    AltName="Unknown: 0x08"
+    Wiki="0 in retail. Not read by Nightreign." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

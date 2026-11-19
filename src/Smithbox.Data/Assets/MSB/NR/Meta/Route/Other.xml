@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a muffling portal in the map." />
+  Wiki="A route of type -1. The game does not load these routes." />
   
   <Field>
-    
   </Field>
   
   <Enums>

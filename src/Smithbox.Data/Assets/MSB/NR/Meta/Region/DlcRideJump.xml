@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="DLC ride jump (formerly Big Jump Sealable; the game's CSDlcRideJumpRegionIns). A spiritspring that can be sealed: it only launches the player while its event flag is ON, and shows one SFX while active and another while sealed. Loaded together with Ride Jump. No retail Nightreign map uses it." />
+
+  <Field>
+    <JumpHeight
+    AltName="Jump Height"
+    Wiki="Height the player will move upwards when activating this spiritspring." />
+
+    <SfxID
+    AltName="SFX ID"
+    Wiki="SFX shown while the spiritspring is active. A negative value uses the GameSystemCommonParam default."
+    ParticleAlias="" />
+
+    <EnableEventFlagID
+    AltName="Enable Event Flag ID"
+    Wiki="The spiritspring is active only while this event flag is ON. 0 or -1: always active."
+    FlagAlias="" />
+
+    <DisabledSfxID
+    AltName="Sealed SFX ID"
+    Wiki="SFX shown while the spiritspring is sealed (flag OFF). A negative value uses the GameSystemCommonParam default."
+    ParticleAlias="" />
+
+    <UnkT10
+    AltName="Unknown: 0x10"
+    Wiki="Nightreign only. Read as an integer by the game; meaning unknown." />
+
+    <UnkT14
+    AltName="Unknown: 0x14"
+    Wiki="Nightreign only. Read for MSB version 0x4F and later: when 0 or more, the game looks it up in a param and creates an object at the region. Meaning unknown." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

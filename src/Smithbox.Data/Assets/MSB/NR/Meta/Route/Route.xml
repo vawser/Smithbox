@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object is a route: an edge of the sound occlusion graph, joining two occlusion portals." />
+  
+  <Field>
+    <PortalA
+    AltName="Portal A"
+    Wiki="The Region ID of the first occlusion portal this route joins." />
+    
+    <PortalB
+    AltName="Portal B"
+    Wiki="The Region ID of the second occlusion portal this route joins." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Play region (formerly Play Area; the game has a CSMsbPointPlayRegion class). In Elden Ring it carries a PlayRegionParam ID and a priority; in Nightreign the type has no data of its own and no retail map uses it." />
+
+  <Field>
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

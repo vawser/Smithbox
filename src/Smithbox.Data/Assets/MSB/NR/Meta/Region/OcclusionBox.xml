@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Occlusion box (formerly Muffling Box; the game's CSMsbPointOcclusionBox). A room of the sound occlusion graph. Its Occlusion Portals are the openings, and routes (Muffling Portal Link / Muffling Box Link) join the portals. In Elden Ring the map's .onav file is compiled from these boxes and portals, so changing them may not affect in-game sound until the ONAV is rebuilt." />
+
+  <Field>
+    <BoxNumber
+    AltName="Box Number"
+    Wiki="The number of this room. Several boxes can share a number, which makes them one room. Occlusion Portals give the number of the room they belong to." />
+
+    <UnkT24
+    AltName="Unknown: 0x24"
+    Wiki="100 in every retail box. Not seen read by the game." />
+
+    <UnkT34
+    AltName="Unknown: 0x34"
+    Wiki="100 in every retail box. Not seen read by the game." />
+
+    <UnkT3C
+    AltName="Unknown: 0x3C"
+    Wiki="-1 in every retail box. Not seen read by the game." />
+
+    <UnkT40
+    AltName="Unknown: 0x40"
+    Wiki="-1 in every retail box. Not seen read by the game." />
+
+    <UnkT44
+    AltName="Unknown: 0x44"
+    Wiki="-1 in every retail box. Not seen read by the game." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

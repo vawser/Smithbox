@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents an environmental map point in the map." />
-  
+  <Self
+  Wiki="This map object represents an environmental map point in the map (vanilla: Env_PointNNN). Env Map Effect Boxes use the point whose three-digit suffix matches their env map number." />
+
   <Field>
-    
+    <UnkMapID
+    AltName="Map ID"
+    Wiki="The map the point belongs to (formerly Unk18). In Elden Ring bytes 0-2 are compared with a map ID's AA/BB/CC; byte 0 = 0 means none. Byte 3 is not read. Retail Nightreign uses [0,0,0,2], or open-field tiles such as [60,8,8,2]." />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor;
 /// envmap file index (probably times of day). Each bake has an IVINFO in the map's ivinfobnd and four 3D
 /// textures, GIIV####_##_W/X/Y/Z, in the map's envmap TPFs.
 /// Boxes are linked to volumes as the game links them, see <see cref="ResolveVolumeId" />: in ER and NR by the
-/// ID property (EnvMapNumber in ER, Unk0A in NR) when it is 0 or more, or else by the name (Env_Box203 is volume 203);
+/// ID property (EnvMapNumber) when it is 0 or more, or else by the name (Env_Box203 is volume 203);
 /// every vanilla box leaves the property at -1. In AC6 by the EnvMapEffectBox_UnkT32 property.
 /// See Documentation/Full GI for how the game uses this data.
 /// </summary>
@@ -440,7 +440,7 @@ public class IrradianceVolumeBank
         {
             MSB_AC6.Region.EnvMapEffectBox => nameof(MSB_AC6.Region.EnvMapEffectBox.EnvMapEffectBox_UnkT32),
             MSBE.Region.EnvironmentMapEffectBox => nameof(MSBE.Region.EnvironmentMapEffectBox.EnvMapNumber),
-            MSB_NR.Region.EnvMapEffectBox => nameof(MSB_NR.Region.EnvMapEffectBox.Unk0A),
+            MSB_NR.Region.EnvMapEffectBox => nameof(MSB_NR.Region.EnvMapEffectBox.EnvMapNumber),
             _ => null
         };
 

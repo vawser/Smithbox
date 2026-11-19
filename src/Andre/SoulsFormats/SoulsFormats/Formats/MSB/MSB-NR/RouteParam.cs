@@ -14,7 +14,7 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// Unknown, but related to muffling regions somehow.
+        /// The edge list of the sound occlusion graph: each route joins two OcclusionPortals by their RegionID.
         /// </summary>
         public class RouteParam : Param<Route>
         {
@@ -90,7 +90,7 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// Unknown.
+        /// A sound occlusion route (the exe's CSSoundOcclusionRoute) joining two OcclusionPortals.
         /// </summary>
         public abstract class Route : Entry
         {
@@ -102,14 +102,16 @@ namespace SoulsFormats
             internal int OtherID { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The RegionID of the first OcclusionPortal this route joins (every retail NR route resolves).
             /// </summary>
-            public int Unk08 { get; set; }
+            [MSBRegionIDReference(ReferenceType = typeof(Region.OcclusionPortal))]
+            public int PortalA { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The RegionID of the second OcclusionPortal this route joins.
             /// </summary>
-            public int Unk0C { get; set; }
+            [MSBRegionIDReference(ReferenceType = typeof(Region.OcclusionPortal))]
+            public int PortalB { get; set; }
 
             private protected Route(string name)
             {
@@ -129,8 +131,8 @@ namespace SoulsFormats
             {
                 long start = br.Position;
                 long nameOffset = br.ReadInt64();
-                Unk08 = br.ReadInt32();
-                Unk0C = br.ReadInt32();
+                PortalA = br.ReadInt32();
+                PortalB = br.ReadInt32();
                 br.AssertUInt32((uint)Type);
                 OtherID = br.ReadInt32(); // ID
                 br.AssertPattern(0x68, 0x00);
@@ -146,8 +148,8 @@ namespace SoulsFormats
             {
                 long start = bw.Position;
                 bw.ReserveInt64("NameOffset");
-                bw.WriteInt32(Unk08);
-                bw.WriteInt32(Unk0C);
+                bw.WriteInt32(PortalA);
+                bw.WriteInt32(PortalB);
                 bw.WriteUInt32((uint)Type);
                 if (OtherID != -1)
                     bw.WriteInt32(OtherID);
@@ -165,11 +167,11 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"\"{Name}\" {Unk08} {Unk0C}";
+                return $"\"{Name}\" {PortalA} {PortalB}";
             }
 
             /// <summary>
-            /// Unknown; has something to do with muffling portals.
+            /// Joins two portals of the same OcclusionBox (113 of 113 retail NR routes).
             /// </summary>
             public class MufflingPortalLink : Route
             {
@@ -184,7 +186,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown; has something to do with muffling boxes.
+            /// Joins portals of two different OcclusionBoxes (162 of 162 retail NR routes).
             /// </summary>
             public class MufflingBoxLink : Route
             {
@@ -199,7 +201,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Not loaded by the game (ER: the loader only takes route types 3 and 4).
             /// </summary>
             public class Other : Route
             {

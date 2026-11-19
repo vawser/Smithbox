@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Ride jump (formerly Big Jump; handled by the game's CSRideJumpRegionManImpl). A spiritspring: entering it launches the player upwards. An SFX marks it. For a spiritspring that can be sealed by an event flag, see DLC Ride Jump." />
+
+  <Field>
+    <JumpHeight
+    AltName="Jump Height"
+    Wiki="Height the player will move upwards when activating this spiritspring." />
+
+    <SfxID
+    AltName="SFX ID"
+    Wiki="SFX shown at the spiritspring. A negative value uses the GameSystemCommonParam default. Retail uses 807100 (70 regions) and 807101 (14)."
+    ParticleAlias="" />
+
+    <UnkT08
+    AltName="Unknown: 0x08"
+    Wiki="Nightreign only. Read as an integer for MSB version 0x4B and later. Retail uses 200 (one region uses 201)." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>

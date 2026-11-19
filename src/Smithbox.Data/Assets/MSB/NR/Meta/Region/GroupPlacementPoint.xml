@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self
+  Wiki="Group placement point (formerly Mass Placement; the game's CSMsbPointGroupPlacementPoint). A group of enemies, placed from a RandomAppearParam row and tied to platoons. The first fields follow Elden Ring's layout; Nightreign has one extra field before the end." />
+
+  <Field>
+    <RandomAppearParamID
+    AltName="Random Appear Param ID"
+    Wiki="The RandomAppearParam row the group's enemies are placed from. 0: none (0 in every retail point)."
+    ParamRef="RandomAppearParam" />
+
+    <PlatoonEventNames
+    AltName="Platoon Events"
+    Wiki="The PlatoonInfo events of the group (up to 4)."
+    MapRef="Event-PlatoonInfo" />
+
+    <PartNames
+    AltName="Enemies"
+    Wiki="The enemies of the group (up to 8)."
+    MapRef="Part-Part" />
+
+    <LinkedAssetNames
+    AltName="Linked Assets"
+    Wiki="Assets tied to the group (up to 8). In Elden Ring they only activate while the group does."
+    MapRef="Part-Part" />
+
+    <UnkT54
+    AltName="Unknown: 0x54"
+    Wiki="Nightreign only. -1 in every retail point." />
+
+    <UnkT58
+    AltName="Unknown: 0x58"
+    Wiki="Retail uses 0, 1 and -1. Probably Elden Ring's Estus Flask Recovery ID (the recovery row applied when the whole group is defeated), moved back by the extra field." />
+  </Field>
+
+  <Enums>
+  </Enums>
+</MSBMETA>
