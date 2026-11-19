@@ -53,10 +53,7 @@ public enum MapFileType
     /// </summary>
     NVC = 1 << 14,
 
-    /// <summary>
-    /// The ONAV file of a map, its occlusion graph (ER)
-    /// </summary>
-    ONAV = 1 << 15,
+    // 1 << 15 was the ONAV file, which the Map Editor no longer reads or saves
 
     /// <summary>
     /// The EDGE files of the collisions, in the map's edgebhd (SDT)

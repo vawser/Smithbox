@@ -58,7 +58,7 @@
     },
     {
       "Key": "MAP_Navigation_Validate_TT",
-      "Text": "Reads the map's navmesh files, ONAV and NVC files if they haven't been read yet, and checks them. The vanilla data of the map is then checked in the background, to mark the issues the game files also have."
+      "Text": "Reads the map's navmesh files and NVC files if they haven't been read yet, and checks them. The vanilla data of the map is then checked in the background, to mark the issues the game files also have."
     },
     {
       "Key": "MAP_Navigation_Clear",
@@ -91,14 +91,6 @@
     {
       "Key": "MAP_Navigation_Summary_Nvc",
       "Text": "To neighbouring maps: {0} NVC files, {1} connections."
-    },
-    {
-      "Key": "MAP_Navigation_Summary_Onav_Empty",
-      "Text": "ONAV: none, or empty."
-    },
-    {
-      "Key": "MAP_Navigation_Summary_Onav",
-      "Text": "ONAV: {0} areas, {1} layers, {2} links, {3} extra volumes."
     },
     {
       "Key": "MAP_Navigation_Summary_Uid",
@@ -237,18 +229,6 @@
       "Text": "The UID for {0} is {1}, but that map's NVA has {2}."
     },
     {
-      "Key": "MAP_Navigation_Issue_OnavGrid",
-      "Text": "The grid is {0} x {1} x {2} cells; it must have 4096, one for each bit of a cell mask."
-    },
-    {
-      "Key": "MAP_Navigation_Issue_OnavLinkTarget",
-      "Text": "Area {0} links to area {1}, which doesn't exist."
-    },
-    {
-      "Key": "MAP_Navigation_Issue_OnavLinkLayer",
-      "Text": "Area {0} links to area {1} from layer {2}, which area {0} doesn't have."
-    },
-    {
       "Key": "MAP_Navigation_Tab_Overlay",
       "Text": "Overlay"
     },
@@ -270,7 +250,7 @@
     },
     {
       "Key": "MAP_Navigation_View_Description",
-      "Text": "What the overlay draws: a navmesh set of the map over the viewport, its faces coloured by their face data, its edges by what they connect to, its jump and ladder links, gate nodes and occlusion graph. Show overlay and the set are above the tabs. The other tabs edit the drawn set."
+      "Text": "What the overlay draws: a navmesh set of the map over the viewport, its faces coloured by their face data, its edges by what they connect to, its jump and ladder links and its gate nodes. Show overlay and the set are above the tabs. The other tabs edit the drawn set."
     },
     {
       "Key": "MAP_Navigation_Face_Data_Description",
@@ -402,7 +382,7 @@
     },
     {
       "Key": "MAP_Navigation_Help_Overlay",
-      "Text": "1. Tick Show overlay above the tabs, and choose the n or o set.\n2. Turn layers on or off: faces, edges, links, gates and ONAV. Each line layer shows its colour.\n3. The other tabs edit what the overlay draws. The Map Editor's own navmesh drawing can be hidden with the Navmesh render filter."
+      "Text": "1. Tick Show overlay above the tabs, and choose the n or o set.\n2. Turn layers on or off: faces, edges, links and gates. Each line layer shows its colour.\n3. The other tabs edit what the overlay draws. The Map Editor's own navmesh drawing can be hidden with the Navmesh render filter."
     },
     {
       "Key": "MAP_Navigation_Help_Models",
@@ -527,14 +507,6 @@
     {
       "Key": "MAP_Navigation_Glossary_NodeBanks_Text",
       "Text": "Lists of navmesh faces in the NVA, some with an entity ID. In Elden Ring, EMEVD 2003[13] turns the impassable bit of a bank's faces on or off, to block a path until an event flag is set."
-    },
-    {
-      "Key": "MAP_Navigation_Glossary_Onav",
-      "Text": "ONAV"
-    },
-    {
-      "Key": "MAP_Navigation_Glossary_Onav_Text",
-      "Text": "A per-map file of areas on a grid, with links between them (Elden Ring and Nightreign). The overlay draws it and Check checks it; the tool doesn't edit it."
     },
     {
       "Key": "MAP_Navigation_Generate_Settings_Default",
@@ -731,30 +703,6 @@
     {
       "Key": "MAP_Navigation_Layer_GateCosts_TT",
       "Text": "For the navmesh chosen in the Gates tab: a line between each two of its gates that can reach each other, labelled with the cost in metres."
-    },
-    {
-      "Key": "MAP_Navigation_Layer_OnavAreas",
-      "Text": "ONAV areas"
-    },
-    {
-      "Key": "MAP_Navigation_Layer_OnavAreas_TT",
-      "Text": "The ONAV's grid bounds, and a small box at each area's position."
-    },
-    {
-      "Key": "MAP_Navigation_Layer_OnavLinks",
-      "Text": "ONAV links"
-    },
-    {
-      "Key": "MAP_Navigation_Layer_OnavLinks_TT",
-      "Text": "Lines between the positions of linked ONAV areas."
-    },
-    {
-      "Key": "MAP_Navigation_Layer_OnavCells",
-      "Text": "ONAV cells"
-    },
-    {
-      "Key": "MAP_Navigation_Layer_OnavCells_TT",
-      "Text": "The grid cells each ONAV area covers. Heavy, and the order of the cell mask's bits is a guess: if the boxes don't line up with the areas, the guess is wrong."
     },
     {
       "Key": "MAP_Navigation_Legend_Header",
