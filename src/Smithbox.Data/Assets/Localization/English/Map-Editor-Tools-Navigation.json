@@ -98,7 +98,7 @@
     },
     {
       "Key": "MAP_Navigation_Summary_Onav",
-      "Text": "ONAV: {0} areas, {1} layers, {2} links, {3} unknown areas."
+      "Text": "ONAV: {0} areas, {1} layers, {2} links, {3} extra volumes."
     },
     {
       "Key": "MAP_Navigation_Summary_Uid",

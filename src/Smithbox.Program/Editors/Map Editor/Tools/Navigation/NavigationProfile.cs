@@ -67,9 +67,6 @@ public sealed class NavGameProfile
     /// </summary>
     public bool HasOSet { get; private init; } = true;
 
-    /// <summary>Whether the game's ONAV files are the version SoulsFormats reads (v3: ER, NR). AC6's are v2 (Phase N0.4).</summary>
-    public bool HasReadableOnav { get; private init; } = true;
-
     /// <summary>
     /// Whether Unk4C = 1 marks an entry without faces, as it does in every ER, NR and DB_NT entry (NavSurvey nameids).
     /// In AC6, 42 of 664 entries with Unk4C = 1 have faces, all of them ModelID 900000 and up.
@@ -148,7 +145,7 @@ public sealed class NavGameProfile
 
     /// <summary>
     /// The Duskbloods (network test): ER's decimal NameIDs and o offset (NavSurvey nameids, all 9 maps), maps in flat
-    /// folders, no quarter files, no NVC or ONAV files, no map UID, gate costs one per gate (36 of 36), and a
+    /// folders, no quarter files, no NVC files, no map UID, gate costs one per gate (36 of 36), and a
     /// FaceDataIndex that is a 0/1 value per model.
     /// </summary>
     public static readonly NavGameProfile DB_NT = new()
@@ -166,7 +163,7 @@ public sealed class NavGameProfile
 
     /// <summary>
     /// Armored Core VI: ER's decimal NameIDs (NavSurvey nameids, 664 of 664 entries, 20 maps), the running FaceDataIndex,
-    /// 16 gate cost slots and a map UID, but the n set only, no NVC files, and ONAV v2. Its meshes are hk2019, whose
+    /// 16 gate cost slots and a map UID, but the n set only and no NVC files. Its meshes are hk2019, whose
     /// face tree hangs off the mesh's cached face iterator rather than a query mediator. Placeholders (no faces) have
     /// Unk4C = 1, often with a negative ModelID.
     /// </summary>
@@ -176,7 +173,6 @@ public sealed class NavGameProfile
         MirrorOffset = 2_000_000_000u,
         HasOSet = false,
         HasNvc = false,
-        HasReadableOnav = false,
         // Unk50 is 0 or 1 (170 and 494 of 664 entries), never ER's 0xFF01 or quarter marks, and the binders hold no q files
         HasQuarters = false,
         Unk4CMeansNoFaces = false,
@@ -187,7 +183,7 @@ public sealed class NavGameProfile
 
     /// <summary>
     /// The older Havok games (family B: DS3 and BB on hk2014, SDT on hk2016), from NavSurvey nameids and names (Phase N5):
-    /// flat map folders, the n set only, no quarters, NVC, map UID or readable ONAV; files named n{map}_{ModelID:D6} as
+    /// flat map folders, the n set only, no quarters, NVC or map UID; files named n{map}_{ModelID:D6} as
     /// the binders have them; the running FaceDataIndex. NameIDs follow the ModelID, not the position. Unk4C = 1 entries
     /// can have faces (DS3 137, SDT 72, BB 7,354).
     /// </summary>
@@ -197,7 +193,6 @@ public sealed class NavGameProfile
         MirrorOffset = 2_000_000_000u,
         HasOSet = false,
         HasNvc = false,
-        HasReadableOnav = false,
         HasQuarters = false,
         AreaFolders = false,
         HasMapUid = false,

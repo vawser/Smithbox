@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The View tab (Navigation Editor Plan, Phase 1): an overlay of a map's navmesh set in the viewport, coloured by face
-/// data, with its connections, user edges, gate nodes and ONAV, and a face inspector picked in the viewport.
+/// data, with its connections, user edges and gate nodes, and a face inspector picked in the viewport.
 /// </summary>
 public partial class NavigationTool
 {
@@ -47,8 +47,6 @@ public partial class NavigationTool
         NavOverlayLayer.GateNodesUnpaired,
         NavOverlayLayer.GateNodesBroken,
         NavOverlayLayer.GateCosts,
-        NavOverlayLayer.OnavAreas,
-        NavOverlayLayer.OnavLinks,
     };
 
     /// <summary>The map and data the overlay was built from.</summary>
@@ -449,7 +447,7 @@ public partial class NavigationTool
         return entity?.GetWorldMatrix() ?? MapWorld(map);
     }
 
-    /// <summary>Where the map's own navigation data (gate nodes, ONAV) is drawn.</summary>
+    /// <summary>Where the map's own navigation data (gate nodes) is drawn.</summary>
     private static Matrix4x4 MapWorld(MapContainer map) => map.NavmeshParent?.GetWorldMatrix() ?? Matrix4x4.Identity;
 
     private void SetPicked(NavFaceHit hit)

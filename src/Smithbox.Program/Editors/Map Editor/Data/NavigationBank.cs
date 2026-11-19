@@ -9,23 +9,19 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The Elden Ring navigation data of the loaded maps, joined as a <see cref="NavigationMap"/>: the map's NVA (the
-/// entity the Map Editor edits), its navmesh files (read by <see cref="HavokNavmeshBank"/>), its ONAV and the NVC
-/// files that connect it to its neighbours. The ONAV and NVC files are read here, the first time a map is asked for,
-/// and saved with the map when an edit marks them (<see cref="MarkEdited"/>).
+/// entity the Map Editor edits), its navmesh files (read by <see cref="HavokNavmeshBank"/>) and the NVC files that
+/// connect it to its neighbours. The NVC files are read here, the first time a map is asked for, and saved with the
+/// map when an edit marks them (<see cref="MarkEdited"/>).
 /// </summary>
 public class NavigationBank
 {
     private readonly ProjectEntry Project;
 
-    /// <summary>The ONAV of each map read so far; null for a map without one.</summary>
-    private readonly Dictionary<string, ONAV> OnavFiles = new();
-
     /// <summary>The NVC files read so far, by name, e.g. m60_33_41_00_m60_33_42_00.</summary>
     private readonly Dictionary<string, NvcFile> NvcFiles = new();
 
-    /// <summary>The NVC and ONAV files an edit has changed, by name, until they are saved.</summary>
+    /// <summary>The NVC files an edit has changed, by name, until they are saved.</summary>
     private readonly HashSet<string> EditedNvcs = new();
-    private readonly HashSet<string> EditedOnavs = new();
 
     /// <summary>The navmesh files built from each Havok document, so they aren't searched again.</summary>
     private readonly Dictionary<Havok.HavokDocument, NavmeshFile> FileCache = new();
@@ -46,7 +42,7 @@ public class NavigationBank
     private Andre.IO.VFS.VirtualFileSystem FS => Project.Handler.MapData.PrimaryBank.TargetFS;
 
     /// <summary>
-    /// The navigation data of a loaded map, or null if its NVA isn't loaded. Reads its navmesh files, ONAV and NVC
+    /// The navigation data of a loaded map, or null if its NVA isn't loaded. Reads its navmesh files and NVC
     /// files the first time. Built anew on each call, so it reflects edits to the NVA's navmesh list.
     /// </summary>
     public NavigationMap GetMap(MapContainer map)
@@ -72,7 +68,7 @@ public class NavigationBank
             files[name] = file;
         }
 
-        return new NavigationMap(map.Name, nva, files, GetOnav(map.Name), GetNvcs(map.Name), Profile);
+        return new NavigationMap(map.Name, nva, files, GetNvcs(map.Name), Profile);
     }
 
     /// <summary>
@@ -121,33 +117,6 @@ public class NavigationBank
             return new List<NavIssue>();
 
         return NavigationValidator.Validate(vanilla, id => neighbours.Contains(id) ? GetVanillaMap(id) : null);
-    }
-
-    private ONAV GetOnav(string mapId)
-    {
-        if (OnavFiles.TryGetValue(mapId, out var cached))
-            return cached;
-
-        ONAV onav = null;
-        // AC6's ONAV files are v2, which SoulsFormats doesn't read yet (Phase N0.4)
-        var entry = Profile.HasReadableOnav
-            ? Project.Locator.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "onav" && e.Filename == mapId)
-            : null;
-
-        if (entry != null && FS.FileExists(entry.Path))
-        {
-            try
-            {
-                onav = ONAV.Read(FS.ReadFile(entry.Path).Value);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAP_Navigation_Failed_Read", entry.Path), e);
-            }
-        }
-
-        OnavFiles[mapId] = onav;
-        return onav;
     }
 
     private List<NvcFile> GetNvcs(string mapId)
@@ -213,15 +182,6 @@ public class NavigationBank
     }
 
     /// <summary>
-    /// Marks a map's ONAV as changed, so the map's save writes it.
-    /// </summary>
-    public void MarkOnavEdited(MapContainer map)
-    {
-        EditedOnavs.Add(map.Name);
-        map.MarkDirty(MapFileType.ONAV);
-    }
-
-    /// <summary>
     /// Writes the edited NVC files that name the map. A file shared with a neighbour is written once, by
     /// whichever map is saved first.
     /// </summary>
@@ -254,30 +214,6 @@ public class NavigationBank
         return success;
     }
 
-    public bool SaveONAV(MapContainer map)
-    {
-        if (!CanUse() || !EditedOnavs.Contains(map.Name) || OnavFiles.GetValueOrDefault(map.Name) is not ONAV onav)
-            return true;
-
-        var entry = Project.Locator.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "onav" && e.Filename == map.Name);
-
-        if (entry == null)
-            return true;
-
-        try
-        {
-            WriteFile(entry.Path, onav.Write);
-            EditedOnavs.Remove(map.Name);
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, LOC.Get("MAP_Navigation_Failed_Write", entry.Path), e);
-            return false;
-        }
-
-        return true;
-    }
-
     /// <summary>
     /// Writes a file to the project, unless it is the same as the file it replaces
     /// </summary>
@@ -292,13 +228,10 @@ public class NavigationBank
     }
 
     /// <summary>
-    /// Releases a map's ONAV and the NVC files no loaded map names any more. Files with unsaved edits are kept.
+    /// Releases the NVC files no loaded map names any more. Files with unsaved edits are kept.
     /// </summary>
     public void OnUnloadMap(string mapId, IEnumerable<string> loadedMaps)
     {
-        if (!EditedOnavs.Contains(mapId))
-            OnavFiles.Remove(mapId);
-
         var loaded = loadedMaps.Where(m => m != mapId).ToHashSet();
 
         foreach (var name in NvcFiles.Keys.ToList())

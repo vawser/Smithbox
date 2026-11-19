@@ -6,9 +6,12 @@ using System.Numerics;
 namespace SoulsFormats
 {
     /// <summary>
-    /// The occlusion graph of an Elden Ring map, used alongside its navmeshes: areas over a 4096 cell grid of the
-    /// map's bounds, the layers within each area, and the links between areas. The game reads it with
-    /// MSPOcclusionGraph (CS::OnavResCap); most maps have an empty one.
+    /// The sound occlusion graph of an Elden Ring or Armored Core VI map: the map's MSB MufflingBox and MufflingPortal
+    /// regions, compiled into rooms (areas), their portals (layers) and the doorways between rooms (links).
+    /// The game's sound engine (DLMOW::MOOcclusionInstance, through MSPOcclusionGraph and MSPLayerPathFinder_AStar) places
+    /// the emitter and the listener in rooms, then finds a route between them through the portals, which drives the
+    /// Wwise occlusion of the sound. The graphs of all loaded maps are queried together. Maps without muffling regions
+    /// have an empty file.
     /// The file is a memory image: 64 bit offsets that the game turns into pointers from a relocation table.
     /// Extension: .onav, named after the map, in /map/onav.
     /// </summary>
@@ -20,12 +23,14 @@ namespace SoulsFormats
         public const int CellMaskSize = 0x200;
 
         /// <summary>
-        /// The major format version; always 3.
+        /// The major format version: 3 in Elden Ring, 2 in Armored Core VI. Version 2 differs only in its layers
+        /// (0x28 bytes instead of 0x38). AC6's exe only loads 3.2, the same as ER's, so it rejects its own 2.1 files.
         /// </summary>
         public byte Version { get; set; }
 
         /// <summary>
-        /// The minor format version; 2 in most files. The game only loads 2; 26 Elden Ring files have 1, laid out the same.
+        /// The minor format version: 2 in most Elden Ring files, and 1 in 26 of them (laid out the same). Every Armored
+        /// Core VI file has 1. The game only loads 2.
         /// </summary>
         public byte SubVersion { get; set; }
 
@@ -41,7 +46,8 @@ namespace SoulsFormats
         public Vector3 BoundsMin { get; set; }
 
         /// <summary>
-        /// The number of grid cells along X, Y and Z; their product is always 4096, the bits of a cell mask.
+        /// The number of grid cells along X; the product of the three counts is always 4096, the bits of a cell mask.
+        /// The grid is the broad phase of the point-in-room lookup.
         /// </summary>
         public int GridCountX { get; set; }
 
@@ -56,15 +62,15 @@ namespace SoulsFormats
         public int GridCountZ { get; set; }
 
         /// <summary>
-        /// The areas of the graph. The game skips a file with none.
+        /// The rooms of the graph, one for each MufflingBox that isn't an extra volume. The game skips a file with none.
         /// </summary>
         public List<Area> Areas { get; set; }
 
         /// <summary>
-        /// Areas without layers or links, stored inline after the areas; present in about 20 Elden Ring maps.
-        /// The game builds a transform for each from its position and rotation.
+        /// Extra MufflingBoxes of rooms, stored inline after the areas: each adds to or cuts out of the room whose
+        /// <see cref="AreaBase.ID"/> it has. Present in about 20 Elden Ring maps. The game tests them before the areas.
         /// </summary>
-        public List<UnkArea> UnkAreas { get; set; }
+        public List<Volume> Volumes { get; set; }
 
         /// <summary>
         /// Creates an empty ONAV, as the game files have it.
@@ -79,7 +85,7 @@ namespace SoulsFormats
             GridCountY = 16;
             GridCountZ = 16;
             Areas = new List<Area>();
-            UnkAreas = new List<UnkArea>();
+            Volumes = new List<Volume>();
         }
 
         /// <summary>
@@ -97,12 +103,12 @@ namespace SoulsFormats
         {
             br.BigEndian = false;
             br.AssertASCII("ONAV");
-            Version = br.AssertByte(3);
+            Version = br.AssertByte([2, 3]);
             SubVersion = br.ReadByte();
             br.AssertInt16(0);
             br.AssertInt32(0);
             br.ReadInt32(); // Relocation count
-            long unkAreasOffset = br.ReadInt64();
+            long volumesOffset = br.ReadInt64();
             long unk18Offset = br.ReadInt64();
             long areaPointersOffset = br.ReadInt64();
             br.ReadInt64(); // Relocation table offset
@@ -110,7 +116,7 @@ namespace SoulsFormats
             br.AssertUInt16(0);
             br.AssertUInt16(0); // The count of the always empty array at 0x18, presumably
             int areaCount = br.ReadUInt16();
-            int unkAreaCount = br.ReadUInt16();
+            int volumeCount = br.ReadUInt16();
             br.AssertPattern(0x18, 0);
 
             BoundsMax = br.ReadVector3();
@@ -119,7 +125,7 @@ namespace SoulsFormats
             GridCountY = br.ReadInt32();
             GridCountZ = br.ReadInt32();
 
-            if (unk18Offset != unkAreasOffset + unkAreaCount * UnkArea.Size)
+            if (unk18Offset != volumesOffset + volumeCount * Volume.Size)
                 throw new InvalidDataException("The ONAV array at 0x18 is not empty; its layout is unknown.");
 
             long[] areaOffsets = br.GetInt64s(areaPointersOffset, areaCount);
@@ -127,13 +133,13 @@ namespace SoulsFormats
             foreach (long offset in areaOffsets)
             {
                 br.Position = offset;
-                Areas.Add(new Area(br));
+                Areas.Add(new Area(br, Version));
             }
 
-            br.Position = unkAreasOffset;
-            UnkAreas = new List<UnkArea>(unkAreaCount);
-            for (int i = 0; i < unkAreaCount; i++)
-                UnkAreas.Add(new UnkArea(br));
+            br.Position = volumesOffset;
+            Volumes = new List<Volume>(volumeCount);
+            for (int i = 0; i < volumeCount; i++)
+                Volumes.Add(new Volume(br));
         }
 
         /// <summary>
@@ -141,8 +147,10 @@ namespace SoulsFormats
         /// </summary>
         protected override void Write(BinaryWriterEx bw)
         {
-            if (Areas.Count > ushort.MaxValue || UnkAreas.Count > ushort.MaxValue)
+            if (Areas.Count > ushort.MaxValue || Volumes.Count > ushort.MaxValue)
                 throw new InvalidDataException("ONAV counts are 16 bit.");
+            if (Version != 2 && Version != 3)
+                throw new InvalidDataException($"ONAV version {Version} is not supported; only 2 and 3 are.");
 
             // Offsets the game relocates, in the order the game files list them
             var relocations = new List<long> { 0x10, 0x18, 0x20 };
@@ -154,7 +162,7 @@ namespace SoulsFormats
             bw.WriteInt16(0);
             bw.WriteInt32(0);
             bw.ReserveInt32("RelocationCount");
-            bw.ReserveInt64("UnkAreasOffset");
+            bw.ReserveInt64("VolumesOffset");
             bw.ReserveInt64("Unk18Offset");
             bw.ReserveInt64("AreaPointersOffset");
             bw.ReserveInt64("RelocationTableOffset");
@@ -162,7 +170,7 @@ namespace SoulsFormats
             bw.WriteUInt16(0);
             bw.WriteUInt16(0);
             bw.WriteUInt16((ushort)Areas.Count);
-            bw.WriteUInt16((ushort)UnkAreas.Count);
+            bw.WriteUInt16((ushort)Volumes.Count);
             bw.WritePattern(0x18, 0);
 
             bw.WriteVector3(BoundsMax);
@@ -175,12 +183,12 @@ namespace SoulsFormats
             foreach (Area area in Areas)
             {
                 areaOffsets.Add(bw.Position);
-                area.Write(bw, relocations);
+                area.Write(bw, relocations, Version);
             }
 
-            bw.FillInt64("UnkAreasOffset", bw.Position);
-            foreach (UnkArea unkArea in UnkAreas)
-                unkArea.Write(bw);
+            bw.FillInt64("VolumesOffset", bw.Position);
+            foreach (Volume volume in Volumes)
+                volume.Write(bw);
 
             bw.FillInt64("Unk18Offset", bw.Position);
 
@@ -205,37 +213,55 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// The fields an area and an unknown area share.
+        /// The shape of an area's volume, at area byte +0x2F.
+        /// </summary>
+        public enum AreaShape : byte
+        {
+            /// <summary>
+            /// An oriented box; every Elden Ring area. Its half extents are <see cref="AreaBase.Scale"/> × 65535 × 0.5.
+            /// </summary>
+            Box = 0,
+
+            /// <summary>
+            /// Unknown; never used. The game's distance test reads area +0x10 for it.
+            /// </summary>
+            Unk1 = 1,
+
+            /// <summary>
+            /// A sphere of radius <see cref="AreaBase.Scale"/>.X; never used.
+            /// </summary>
+            Sphere = 2,
+        }
+
+        /// <summary>
+        /// The fields an area and a volume share: the box of a MufflingBox region.
         /// </summary>
         public abstract class AreaBase
         {
             /// <summary>
-            /// The ID that links refer to. Areas and unknown areas share the numbering, so it is not an index.
+            /// The room's ID, which links refer to. A volume has the ID of the room it belongs to.
             /// </summary>
             public ushort ID { get; set; }
 
             /// <summary>
-            /// Unknown. For unknown areas the game reads it as the rotation mode, accepting 0 to 2; areas also use 4, 6 and 8.
-            /// </summary>
-            public byte Unk03 { get; set; }
-
-            /// <summary>
-            /// The position of the area.
+            /// The position of the box: the MufflingBox's MSB position, the centre of its base.
             /// </summary>
             public Vector3 Position { get; set; }
 
             /// <summary>
-            /// Euler rotation in radians; the game takes the sine and cosine of each axis.
+            /// Euler rotation in radians: the MufflingBox's rotation, converted from degrees.
             /// </summary>
             public Vector3 Rotation { get; set; }
 
             /// <summary>
-            /// The scale of the area's 16 bit local coordinates: the game multiplies it by 65535 * 0.5.
+            /// The size of the box divided by 65535: the MufflingBox's width, height and depth are Scale × 65535.
+            /// The game multiplies it by 65535 × 0.5 for the half extents.
             /// </summary>
             public Vector3 Scale { get; set; }
 
             /// <summary>
-            /// One bit for each of the 4096 grid cells of the file; which cells the area covers.
+            /// One bit for each of the 4096 grid cells of the file: the cells the box overlaps, which the game tests
+            /// before the box itself.
             /// </summary>
             public byte[] CellMask { get; set; }
 
@@ -244,21 +270,21 @@ namespace SoulsFormats
                 CellMask = new byte[CellMaskSize];
             }
 
-            internal void ReadCommon(BinaryReaderEx br, out byte count02)
+            internal void ReadCommon(BinaryReaderEx br, out byte byte02, out byte byte03)
             {
                 ID = br.ReadUInt16();
-                count02 = br.ReadByte();
-                Unk03 = br.ReadByte();
+                byte02 = br.ReadByte();
+                byte03 = br.ReadByte();
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
                 Scale = br.ReadVector3();
             }
 
-            internal void WriteCommon(BinaryWriterEx bw, byte count02)
+            internal void WriteCommon(BinaryWriterEx bw, byte byte02, byte byte03)
             {
                 bw.WriteUInt16(ID);
-                bw.WriteByte(count02);
-                bw.WriteByte(Unk03);
+                bw.WriteByte(byte02);
+                bw.WriteByte(byte03);
                 bw.WriteVector3(Position);
                 bw.WriteVector3(Rotation);
                 bw.WriteVector3(Scale);
@@ -266,12 +292,13 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// An area of the graph, with its layers and its links to other areas.
+        /// A room of the graph: a MufflingBox, with its portals (<see cref="Layers"/>) and the doorways to other rooms
+        /// (<see cref="Links"/>). Byte +3 is the room's total number of layer entries, written from <see cref="Layers"/>.
         /// </summary>
         public class Area : AreaBase
         {
             /// <summary>
-            /// Unknown; 0 to 3.
+            /// Unknown; 0 to 3. The game returns it with every point-in-room lookup; it matches nothing in the MSB.
             /// </summary>
             public ushort Unk2A { get; set; }
 
@@ -281,17 +308,23 @@ namespace SoulsFormats
             public byte Unk2C { get; set; }
 
             /// <summary>
-            /// Unknown; 0 or 1, set with Unk30 and Unk38. The game checks it for 1.
+            /// When set, the game tests the box for every point, without checking <see cref="AreaBase.CellMask"/> (which
+            /// is then full), and reports the flag with the lookup. Set on 88 Elden Ring rooms, mostly small doorway boxes.
             /// </summary>
-            public byte Unk2D { get; set; }
+            public bool IgnoreCellMask { get; set; }
 
             /// <summary>
             /// Unknown; always 0.
             /// </summary>
-            public short Unk2E { get; set; }
+            public byte Unk2E { get; set; }
 
             /// <summary>
-            /// Unknown; 0 or 1.
+            /// The shape of the room's volume; always <see cref="AreaShape.Box"/>.
+            /// </summary>
+            public AreaShape Shape { get; set; }
+
+            /// <summary>
+            /// Unknown; 0 or 1, always the same as <see cref="IgnoreCellMask"/>.
             /// </summary>
             public int Unk30 { get; set; }
 
@@ -301,7 +334,7 @@ namespace SoulsFormats
             public int Unk34 { get; set; }
 
             /// <summary>
-            /// Unknown; 0 or 1.
+            /// Unknown; 0 or 1, always the same as <see cref="IgnoreCellMask"/>.
             /// </summary>
             public int Unk38 { get; set; }
 
@@ -311,17 +344,17 @@ namespace SoulsFormats
             public ushort Unk3C { get; set; }
 
             /// <summary>
-            /// Unknown; counts up from 0 within a file.
+            /// The index of the room's transform among those the game builds; always the area's index in the file.
             /// </summary>
-            public ushort Unk3E { get; set; }
+            public ushort TransformIndex { get; set; }
 
             /// <summary>
-            /// The layers of the area; at most 255.
+            /// The room's portals, one for each of its MufflingPortals; at most 255.
             /// </summary>
             public List<Layer> Layers { get; set; }
 
             /// <summary>
-            /// The links to other areas.
+            /// The doorways to other rooms. Every link has a reverse one in the room it leads to.
             /// </summary>
             public List<Link> Links { get; set; }
 
@@ -335,25 +368,40 @@ namespace SoulsFormats
                 Links = new List<Link>();
             }
 
-            internal Area(BinaryReaderEx br)
+            internal Area(BinaryReaderEx br, byte version)
             {
-                ReadCommon(br, out byte layerCount);
+                // Byte +3, the total entry count, is rebuilt from the layers on write
+                ReadCommon(br, out byte layerCount, out _);
                 int linkCount = br.ReadUInt16();
                 Unk2A = br.ReadUInt16();
                 Unk2C = br.ReadByte();
-                Unk2D = br.ReadByte();
-                Unk2E = br.ReadInt16();
+                IgnoreCellMask = br.ReadBoolean();
+                Unk2E = br.ReadByte();
+                Shape = br.ReadEnum8<AreaShape>();
                 Unk30 = br.ReadInt32();
                 Unk34 = br.ReadInt32();
                 Unk38 = br.ReadInt32();
                 Unk3C = br.ReadUInt16();
-                Unk3E = br.ReadUInt16();
+                TransformIndex = br.ReadUInt16();
                 CellMask = ReadCellMask(br);
                 long linksOffset = br.ReadInt64();
 
+                // A version 2 layer has no known entry count: its entries end where the next list starts
+                // (the next layer's entries, or the area's links), so they must be empty to be read safely
+                long[] entriesOffsets = new long[layerCount];
                 Layers = new List<Layer>(layerCount);
                 for (int i = 0; i < layerCount; i++)
-                    Layers.Add(new Layer(br));
+                    Layers.Add(new Layer(br, version, out entriesOffsets[i]));
+
+                if (version == 2)
+                {
+                    for (int i = 0; i < layerCount; i++)
+                    {
+                        long end = i + 1 < layerCount ? entriesOffsets[i + 1] : linksOffset;
+                        if (entriesOffsets[i] != end)
+                            throw new InvalidDataException("An ONAV version 2 layer has entries; their count's location is unknown.");
+                    }
+                }
 
                 br.Position = linksOffset;
                 Links = new List<Link>(linkCount);
@@ -361,25 +409,33 @@ namespace SoulsFormats
                     Links.Add(new Link(br));
             }
 
-            internal void Write(BinaryWriterEx bw, List<long> relocations)
+            internal void Write(BinaryWriterEx bw, List<long> relocations, byte version)
             {
                 if (Layers.Count > byte.MaxValue)
                     throw new InvalidDataException("An ONAV area can have at most 255 layers.");
+                if (version == 2 && Layers.Exists(l => l.Entries.Count > 0))
+                    throw new InvalidDataException("An ONAV version 2 layer can't have entries; their count's location is unknown.");
                 if (Links.Count > ushort.MaxValue)
                     throw new InvalidDataException("An ONAV area can have at most 65535 links.");
 
-                long start = bw.Position;
-                WriteCommon(bw, (byte)Layers.Count);
+                int entryCount = 0;
+                foreach (Layer layer in Layers)
+                    entryCount += layer.Entries.Count;
+                if (entryCount > byte.MaxValue)
+                    throw new InvalidDataException("An ONAV area can have at most 255 layer entries in all.");
+
+                WriteCommon(bw, (byte)Layers.Count, (byte)entryCount);
                 bw.WriteUInt16((ushort)Links.Count);
                 bw.WriteUInt16(Unk2A);
                 bw.WriteByte(Unk2C);
-                bw.WriteByte(Unk2D);
-                bw.WriteInt16(Unk2E);
+                bw.WriteBoolean(IgnoreCellMask);
+                bw.WriteByte(Unk2E);
+                bw.WriteByte((byte)Shape);
                 bw.WriteInt32(Unk30);
                 bw.WriteInt32(Unk34);
                 bw.WriteInt32(Unk38);
                 bw.WriteUInt16(Unk3C);
-                bw.WriteUInt16(Unk3E);
+                bw.WriteUInt16(TransformIndex);
                 WriteCellMask(bw, CellMask);
 
                 long linksPointer = bw.Position;
@@ -389,7 +445,7 @@ namespace SoulsFormats
                 var layerPointers = new long[Layers.Count];
                 for (int i = 0; i < Layers.Count; i++)
                 {
-                    layerPointers[i] = Layers[i].Write(bw);
+                    layerPointers[i] = Layers[i].Write(bw, version);
                     relocations.Add(layerPointers[i]);
                 }
 
@@ -424,14 +480,51 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// A layer of an area; links name the layer of each end.
+        /// A portal of a room, one of its MufflingPortals: a node of the route search. Links name the layer at each end
+        /// of a doorway, and the layer's entries are the paths through the room to its other portals.
+        /// 0x38 bytes in version 3; 0x28 in version 2, which keeps <see cref="Index"/>, <see cref="Unk01"/> and
+        /// <see cref="Unk02"/>, then has its own fields (the V2 properties) and the entries offset at +0x20. The other
+        /// properties are only written in version 3, and the V2 ones only in 2.
         /// </summary>
         public class Layer
         {
-            internal const int Size = 0x38;
+            /// <summary>
+            /// Version 2 only. Unknown; 0xFFC2 in the one Armored Core VI layer (m50_50_00_00).
+            /// </summary>
+            public int V2Unk04 { get; set; }
 
             /// <summary>
-            /// The index of the layer, as <see cref="Link.Layers"/> and <see cref="Entry.Layers"/> refer to it.
+            /// Version 2 only. Unknown; 0.
+            /// </summary>
+            public int V2Unk08 { get; set; }
+
+            /// <summary>
+            /// Version 2 only. Unknown; 0x02000000 (byte +0x0F is 2, maybe the counterpart of <see cref="Unk29"/>).
+            /// </summary>
+            public int V2Unk0C { get; set; }
+
+            /// <summary>
+            /// Version 2 only. Unknown; 0.
+            /// </summary>
+            public int V2Unk10 { get; set; }
+
+            /// <summary>
+            /// Version 2 only. Unknown; 0.
+            /// </summary>
+            public int V2Unk14 { get; set; }
+
+            /// <summary>
+            /// Version 2 only. Unknown; 0.
+            /// </summary>
+            public int V2Unk18 { get; set; }
+
+            /// <summary>
+            /// Version 2 only. Unknown; 0.
+            /// </summary>
+            public int V2Unk1C { get; set; }
+
+            /// <summary>
+            /// The index of the layer within its room, as <see cref="Link.Layers"/> and <see cref="Entry.Layers"/> refer to it.
             /// </summary>
             public byte Index { get; set; }
 
@@ -446,9 +539,10 @@ namespace SoulsFormats
             public short Unk02 { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The position of the portal (its MufflingPortal point) in the room's local frame: relative to the centre
+            /// of the room's box, rotated by the inverse of the room's rotation.
             /// </summary>
-            public Vector3 Unk04 { get; set; }
+            public Vector3 PortalPosition { get; set; }
 
             /// <summary>
             /// Unknown; always 0.
@@ -456,17 +550,18 @@ namespace SoulsFormats
             public int Unk10 { get; set; }
 
             /// <summary>
-            /// Unknown; small multiples of 5, or 0.
+            /// Unknown; small multiples of 5, or 0. Set with <see cref="Unk18"/> and <see cref="Unk28"/> on about a third of
+            /// the portals; presumably an occlusion parameter from MufflingPortal data SoulsFormats doesn't decode.
             /// </summary>
             public int Unk14 { get; set; }
 
             /// <summary>
-            /// Unknown; 0 to 15.
+            /// Unknown; 0 to 15. See <see cref="Unk14"/>.
             /// </summary>
             public int Unk18 { get; set; }
 
             /// <summary>
-            /// Unknown; around 7500, counting up across the files.
+            /// Unknown; counts up from about 7500 across the portals of a file, presumably an ID.
             /// </summary>
             public int Unk1C { get; set; }
 
@@ -481,7 +576,7 @@ namespace SoulsFormats
             public int Unk24 { get; set; }
 
             /// <summary>
-            /// Unknown; 0 or a multiple of 10 up to 200.
+            /// Unknown; 0 or a multiple of 10 up to 200. See <see cref="Unk14"/>.
             /// </summary>
             public byte Unk28 { get; set; }
 
@@ -501,7 +596,7 @@ namespace SoulsFormats
             public int Unk2C { get; set; }
 
             /// <summary>
-            /// The layer's entries; at most 255.
+            /// The paths from this portal through the room to its other portals; at most 255.
             /// </summary>
             public List<Entry> Entries { get; set; }
 
@@ -514,12 +609,27 @@ namespace SoulsFormats
                 Entries = new List<Entry>();
             }
 
-            internal Layer(BinaryReaderEx br)
+            internal Layer(BinaryReaderEx br, byte version, out long entriesOffset)
             {
                 Index = br.ReadByte();
                 Unk01 = br.ReadByte();
                 Unk02 = br.ReadInt16();
-                Unk04 = br.ReadVector3();
+                if (version == 2)
+                {
+                    V2Unk04 = br.ReadInt32();
+                    V2Unk08 = br.ReadInt32();
+                    V2Unk0C = br.ReadInt32();
+                    V2Unk10 = br.ReadInt32();
+                    V2Unk14 = br.ReadInt32();
+                    V2Unk18 = br.ReadInt32();
+                    V2Unk1C = br.ReadInt32();
+                    entriesOffset = br.ReadInt64();
+                    Unk29 = 2;
+                    Entries = new List<Entry>();
+                    return;
+                }
+
+                PortalPosition = br.ReadVector3();
                 Unk10 = br.ReadInt32();
                 Unk14 = br.ReadInt32();
                 Unk18 = br.ReadInt32();
@@ -531,7 +641,7 @@ namespace SoulsFormats
                 int entryCount = br.ReadByte();
                 Unk2B = br.ReadByte();
                 Unk2C = br.ReadInt32();
-                long entriesOffset = br.ReadInt64();
+                entriesOffset = br.ReadInt64();
 
                 Entries = new List<Entry>(entryCount);
                 br.StepIn(entriesOffset);
@@ -543,15 +653,30 @@ namespace SoulsFormats
             /// <summary>
             /// Writes the layer, returning the offset of its entries pointer for the caller to fill.
             /// </summary>
-            internal long Write(BinaryWriterEx bw)
+            internal long Write(BinaryWriterEx bw, byte version)
             {
                 if (Entries.Count > byte.MaxValue)
                     throw new InvalidDataException("An ONAV layer can have at most 255 entries.");
 
+                long pointer;
                 bw.WriteByte(Index);
                 bw.WriteByte(Unk01);
                 bw.WriteInt16(Unk02);
-                bw.WriteVector3(Unk04);
+                if (version == 2)
+                {
+                    bw.WriteInt32(V2Unk04);
+                    bw.WriteInt32(V2Unk08);
+                    bw.WriteInt32(V2Unk0C);
+                    bw.WriteInt32(V2Unk10);
+                    bw.WriteInt32(V2Unk14);
+                    bw.WriteInt32(V2Unk18);
+                    bw.WriteInt32(V2Unk1C);
+                    pointer = bw.Position;
+                    bw.WriteInt64(0);
+                    return pointer;
+                }
+
+                bw.WriteVector3(PortalPosition);
                 bw.WriteInt32(Unk10);
                 bw.WriteInt32(Unk14);
                 bw.WriteInt32(Unk18);
@@ -563,7 +688,7 @@ namespace SoulsFormats
                 bw.WriteByte((byte)Entries.Count);
                 bw.WriteByte(Unk2B);
                 bw.WriteInt32(Unk2C);
-                long pointer = bw.Position;
+                pointer = bw.Position;
                 bw.WriteInt64(0);
                 return pointer;
             }
@@ -577,12 +702,12 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown; pairs two layer indices like <see cref="Link.Layers"/>.
+            /// A path through the room, between this portal and another of the same room.
             /// </summary>
             public class Entry
             {
                 /// <summary>
-                /// Two layer indices: the low nibble and the high nibble. The game reads the high one.
+                /// Two layer indices of the room: the low nibble and the high nibble. The game reads the high one.
                 /// </summary>
                 public byte Layers { get; set; }
 
@@ -646,18 +771,18 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// A link from an area to another.
+        /// A doorway from a portal of this room to a portal of another: two MufflingPortal points, one on each side.
         /// </summary>
         public class Link
         {
             /// <summary>
-            /// The <see cref="AreaBase.ID"/> of the area linked to.
+            /// The <see cref="AreaBase.ID"/> of the room linked to.
             /// </summary>
             public ushort AreaID { get; set; }
 
             /// <summary>
-            /// The low nibble is the <see cref="Layer.Index"/> in this area the game matches it with;
-            /// the high nibble is passed on, presumably the layer in the area linked to.
+            /// The low nibble is the <see cref="Layer.Index"/> of the portal in this room; the high nibble is the
+            /// portal in the room linked to.
             /// </summary>
             public byte Layers { get; set; }
 
@@ -672,7 +797,7 @@ namespace SoulsFormats
             public int Unk04 { get; set; }
 
             /// <summary>
-            /// The layer in this area: the low nibble of <see cref="Layers"/>.
+            /// The portal in this room: the low nibble of <see cref="Layers"/>.
             /// </summary>
             public int LayerIndex
             {
@@ -681,7 +806,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// The high nibble of <see cref="Layers"/>.
+            /// The portal in the room linked to: the high nibble of <see cref="Layers"/>.
             /// </summary>
             public int TargetLayerIndex
             {
@@ -720,16 +845,24 @@ namespace SoulsFormats
         }
 
         /// <summary>
-        /// Unknown; an area without layers or links.
+        /// An extra MufflingBox of a room. A point inside it belongs to the room whose <see cref="AreaBase.ID"/> it has,
+        /// or, when <see cref="Excludes"/> is set, can't belong to that room (a hole cut out of it).
         /// </summary>
-        public class UnkArea : AreaBase
+        public class Volume : AreaBase
         {
             internal const int Size = 0x230;
 
             /// <summary>
-            /// Unknown; 0 or 1.
+            /// When set, a point inside the volume is excluded from the room; otherwise the volume adds to the room.
+            /// 15 of the 25 Elden Ring volumes exclude.
             /// </summary>
-            public byte Unk02 { get; set; }
+            public bool Excludes { get; set; }
+
+            /// <summary>
+            /// The rotation mode the game reads when it builds the volume's transform, 0 to 2 (other values assert);
+            /// always 0.
+            /// </summary>
+            public byte RotationMode { get; set; }
 
             /// <summary>
             /// Unknown; always 0.
@@ -742,14 +875,17 @@ namespace SoulsFormats
             public int Unk2C { get; set; }
 
             /// <summary>
-            /// Creates an UnkArea with default values.
+            /// Creates a Volume with default values.
             /// </summary>
-            public UnkArea() { }
+            public Volume() { }
 
-            internal UnkArea(BinaryReaderEx br)
+            internal Volume(BinaryReaderEx br)
             {
-                ReadCommon(br, out byte unk02);
-                Unk02 = unk02;
+                ReadCommon(br, out byte excludes, out byte rotationMode);
+                if (excludes > 1)
+                    throw new InvalidDataException($"ONAV volume exclusion flag {excludes} is not 0 or 1.");
+                Excludes = excludes == 1;
+                RotationMode = rotationMode;
                 Unk28 = br.ReadInt32();
                 Unk2C = br.ReadInt32();
                 CellMask = ReadCellMask(br);
@@ -757,18 +893,18 @@ namespace SoulsFormats
 
             internal void Write(BinaryWriterEx bw)
             {
-                WriteCommon(bw, Unk02);
+                WriteCommon(bw, (byte)(Excludes ? 1 : 0), RotationMode);
                 bw.WriteInt32(Unk28);
                 bw.WriteInt32(Unk2C);
                 WriteCellMask(bw, CellMask);
             }
 
             /// <summary>
-            /// Returns a string representation of the area.
+            /// Returns a string representation of the volume.
             /// </summary>
             public override string ToString()
             {
-                return $"UnkArea {ID}";
+                return $"Volume of area {ID}{(Excludes ? " (excludes)" : "")}";
             }
         }
     }

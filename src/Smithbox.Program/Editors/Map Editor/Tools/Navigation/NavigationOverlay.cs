@@ -51,15 +51,6 @@ public enum NavOverlayLayer
     /// <summary>The gate chosen in the Gates tab, drawn over everything.</summary>
     GateSelected,
 
-    /// <summary>The ONAV's grid bounds and the position of each area.</summary>
-    OnavAreas,
-
-    /// <summary>The links between ONAV areas.</summary>
-    OnavLinks,
-
-    /// <summary>The grid cells each ONAV area's cell mask covers. The bit order is a guess (X fastest, then Y, then Z).</summary>
-    OnavCells,
-
     /// <summary>The outline of the picked face, drawn over everything.</summary>
     Highlight,
 
@@ -144,7 +135,7 @@ public static class NavigationOverlayBuilder
 
     /// <summary>
     /// Builds the overlay of a map's set. The world transforms place a navmesh entry and the map's own data
-    /// (gate nodes, ONAV) in the viewport.
+    /// (gate nodes) in the viewport.
     /// </summary>
     public static NavOverlay Build(NavigationMap map, NavmeshSet set, Func<NVA.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
         ISet<NavOverlayLayer> layers, Func<NVA.Navmesh, bool> only = null)
@@ -168,9 +159,6 @@ public static class NavigationOverlayBuilder
         // the user edges baked from them, which are what it draws
         if (layers.Contains(NavOverlayLayer.UserEdges) && !map.Profile.HasMeshUserEdges)
             AddSetups(overlay, map, set, entryWorld, mapWorld, only);
-
-        if (map.Onav != null && map.Onav.Areas.Count > 0)
-            AddOnav(overlay, map.Onav, mapWorld, layers);
 
         return overlay;
     }
@@ -535,67 +523,6 @@ public static class NavigationOverlayBuilder
         batch.Lines.Add((at - Vector3.UnitX * size, at + Vector3.UnitX * size));
         batch.Lines.Add((at - Vector3.UnitY * size, at + Vector3.UnitY * size));
         batch.Lines.Add((at - Vector3.UnitZ * size, at + Vector3.UnitZ * size));
-    }
-
-    private static void AddBox(NavOverlayBatch batch, Vector3 min, Vector3 max, Matrix4x4 world)
-    {
-        Vector3 C(int i) => Vector3.Transform(new Vector3((i & 1) != 0 ? max.X : min.X, (i & 2) != 0 ? max.Y : min.Y, (i & 4) != 0 ? max.Z : min.Z), world);
-
-        foreach (var (i, j) in new[] { (0, 1), (2, 3), (4, 5), (6, 7), (0, 2), (1, 3), (4, 6), (5, 7), (0, 4), (1, 5), (2, 6), (3, 7) })
-            batch.Lines.Add((C(i), C(j)));
-    }
-
-    private static void AddOnav(NavOverlay overlay, ONAV onav, Matrix4x4 world, ISet<NavOverlayLayer> layers)
-    {
-        var min = Vector3.Min(onav.BoundsMin, onav.BoundsMax);
-        var max = Vector3.Max(onav.BoundsMin, onav.BoundsMax);
-        var positions = new Dictionary<int, Vector3>();
-
-        foreach (var area in onav.Areas)
-            positions[area.ID] = area.Position;
-        foreach (var area in onav.UnkAreas)
-            positions.TryAdd(area.ID, area.Position);
-
-        if (layers.Contains(NavOverlayLayer.OnavAreas))
-        {
-            var batch = overlay.Batch(NavOverlayLayer.OnavAreas);
-            AddBox(batch, min, max, world);
-            foreach (var position in positions.Values)
-                AddBox(batch, position - new Vector3(0.5f), position + new Vector3(0.5f), world);
-        }
-
-        if (layers.Contains(NavOverlayLayer.OnavLinks))
-        {
-            var batch = overlay.Batch(NavOverlayLayer.OnavLinks);
-            foreach (var area in onav.Areas)
-                foreach (var link in area.Links)
-                    if (positions.TryGetValue(link.AreaID, out var to))
-                        batch.Lines.Add((Vector3.Transform(area.Position, world), Vector3.Transform(to, world)));
-        }
-
-        if (layers.Contains(NavOverlayLayer.OnavCells))
-        {
-            var batch = overlay.Batch(NavOverlayLayer.OnavCells);
-            int nx = onav.GridCountX, ny = onav.GridCountY, nz = onav.GridCountZ;
-
-            if (nx <= 0 || ny <= 0 || nz <= 0)
-                return;
-
-            var cell = (max - min) / new Vector3(nx, ny, nz);
-
-            foreach (var area in onav.Areas.Cast<ONAV.AreaBase>().Concat(onav.UnkAreas))
-            {
-                for (int i = 0; i < nx * ny * nz && i / 8 < area.CellMask.Length; i++)
-                {
-                    if ((area.CellMask[i / 8] & (1 << (i % 8))) == 0)
-                        continue;
-
-                    int x = i % nx, y = i / nx % ny, z = i / (nx * ny);
-                    var c0 = min + cell * new Vector3(x, y, z);
-                    AddBox(batch, c0, c0 + cell, world);
-                }
-            }
-        }
     }
 
     /// <summary>

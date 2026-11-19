@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The Map Editor's Navigation tool (Navigation Editor Plan, Phase 0): a summary of a loaded ER map's navigation data
-/// (NVA, navmesh files, ONAV, NVC files) and a check of its invariants. Issues the vanilla game files also have are
+/// (NVA, navmesh files, NVC files) and a check of its invariants. Issues the vanilla game files also have are
 /// marked as inherited, so only what the project changed stands out.
 /// </summary>
 public partial class NavigationTool
@@ -374,17 +374,6 @@ public partial class NavigationTool
 
         int crossMap = navigation.Nvcs.Sum(n => n.Nvc.Connectors.Sum(c => c.NavMeshConnections.Count));
         GUI.WrappedText(LOC.Get("MAP_Navigation_Summary_Nvc", navigation.Nvcs.Count, crossMap));
-
-        if (navigation.Onav == null || navigation.Onav.Areas.Count == 0)
-        {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Summary_Onav_Empty"));
-        }
-        else
-        {
-            var onav = navigation.Onav;
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Summary_Onav", onav.Areas.Count, onav.Areas.Sum(a => a.Layers.Count),
-                onav.Areas.Sum(a => a.Links.Count), onav.UnkAreas.Count));
-        }
 
         GUI.WrappedText(LOC.Get("MAP_Navigation_Summary_Uid", navigation.MapUid?.ToString("X8") ?? "-", navigation.NameBase));
     }

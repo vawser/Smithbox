@@ -7,7 +7,7 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 // The Elden Ring navigation data of a map, joined across its files: the NVA, the navmesh HKX files of its nvmhktbnd,
-// its ONAV and the NVC files that connect it to its neighbours. Kept free of the rest of Smithbox, so Tools/NavSurvey
+// and the NVC files that connect it to its neighbours. Kept free of the rest of Smithbox, so Tools/NavSurvey
 // can build it from the game files and check it on every map. See Documentation/Claude/Navigation Editor Plan.md.
 
 /// <summary>
@@ -139,8 +139,6 @@ public sealed class NavigationMap
     /// <summary>The navmesh files of the nvmhktbnd, by name.</summary>
     public IReadOnlyDictionary<string, NavmeshFile> Files { get; }
 
-    /// <summary>Null when the map has no ONAV.</summary>
-    public ONAV Onav { get; }
 
     /// <summary>The NVC files that name this map.</summary>
     public IReadOnlyList<NvcFile> Nvcs { get; }
@@ -158,14 +156,13 @@ public sealed class NavigationMap
     /// <summary>The game's navigation rules (NameIDs, the o set's offset); Elden Ring's unless given.</summary>
     public NavGameProfile Profile { get; }
 
-    public NavigationMap(string mapId, NVA nva, IReadOnlyDictionary<string, NavmeshFile> files, ONAV onav, IReadOnlyList<NvcFile> nvcs,
+    public NavigationMap(string mapId, NVA nva, IReadOnlyDictionary<string, NavmeshFile> files, IReadOnlyList<NvcFile> nvcs,
         NavGameProfile profile = null)
     {
         Profile = profile ?? NavGameProfile.ER;
         MapId = mapId;
         Nva = nva;
         Files = files;
-        Onav = onav;
         Nvcs = nvcs;
         NameBase = DetectNameBase(mapId, files.Keys);
         Models = BuildModels();

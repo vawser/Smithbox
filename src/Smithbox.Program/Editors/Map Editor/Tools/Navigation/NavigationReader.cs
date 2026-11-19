@@ -18,12 +18,10 @@ public static class NavigationReader
 
     public static string NvmPath(string mapId, NavGameProfile game = null) => $"{(game ?? NavGameProfile.ER).MapFolder(mapId)}/{mapId}.nvmhktbnd.dcx";
 
-    public static string OnavPath(string mapId) => $"/map/onav/{mapId}.onav.dcx";
-
     public static string NvcPath(string name) => $"/map/nvc/{name}.nvc.dcx";
 
     /// <summary>
-    /// Reads a map's NVA, navmesh files, ONAV and the named NVC files. Null if the map has no NVA.
+    /// Reads a map's NVA, navmesh files and the named NVC files. Null if the map has no NVA.
     /// </summary>
     public static NavigationMap Read(VirtualFileSystem fs, string mapId, Havok.HavokProfile profile, IEnumerable<string> nvcNames)
     {
@@ -52,9 +50,6 @@ public static class NavigationReader
             }
         }
 
-        var onavFile = game.HasReadableOnav ? fs.ReadFile(OnavPath(mapId)) : null;
-        var onav = onavFile == null ? null : ONAV.Read(onavFile.Value.ToArray());
-
         var nvcs = new List<NvcFile>();
         foreach (var name in nvcNames)
         {
@@ -63,7 +58,7 @@ public static class NavigationReader
                 nvcs.Add(new NvcFile { Name = name, Nvc = NVC.Read(f.Value.ToArray()) });
         }
 
-        return new NavigationMap(mapId, nva, files, onav, nvcs, game);
+        return new NavigationMap(mapId, nva, files, nvcs, game);
     }
 
     /// <summary>

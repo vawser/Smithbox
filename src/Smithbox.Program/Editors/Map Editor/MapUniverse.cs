@@ -927,11 +927,10 @@ public class MapUniverse : IUniverse
             navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
         }
 
-        // The NVC and ONAV files are only read for ER, by the navigation bank
+        // The NVC files are only read for ER, by the navigation bank
         if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
             navSaved |= SaveFile(map, MapFileType.NVC, () => View.NavigationBank.SaveNVC(map));
-            navSaved |= SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
 
             // The forbidden region boxes, edited by the Forbidden Region Editor
             SaveFile(map, MapFileType.MFR, () => View.MfrBank.Save(map));

@@ -81,11 +81,6 @@ public enum NavIssueCode
     ConnectionEdgeNotOnFace,
     NvcMapUid,
 
-    // ONAV
-    OnavGrid,
-    OnavLinkTarget,
-    OnavLinkLayer,
-
     // NVM mode (DeS, DS1, DS1R): the binder, the NVMs, the MCP and the MCG (NvmValidator)
     NvmBinderMissing,
     NvmPartFileMissing,
@@ -135,7 +130,6 @@ public static class NavigationValidator
         ValidateFiles(map, issues);
         ValidateConnectors(map, nvaName, issues);
         ValidateNvcs(map, neighbour, issues);
-        ValidateOnav(map, issues);
 
         return issues;
     }
@@ -394,36 +388,6 @@ public static class NavigationValidator
 
         if (!onFace)
             issues.Add(new(NavIssueSeverity.Error, NavIssueCode.ConnectionEdgeNotOnFace, file, (uint)nameId, face, edge) { MapId = mapId, NameID = (uint)nameId, Face = face });
-    }
-
-    private static void ValidateOnav(NavigationMap map, List<NavIssue> issues)
-    {
-        var onav = map.Onav;
-
-        if (onav == null)
-            return;
-
-        var file = $"{map.MapId}.onav";
-
-        if (onav.GridCountX * onav.GridCountY * onav.GridCountZ != ONAV.CellMaskSize * 8)
-            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.OnavGrid, file, onav.GridCountX, onav.GridCountY, onav.GridCountZ));
-
-        var layersById = new Dictionary<int, int>();
-        foreach (var area in onav.Areas)
-            layersById[area.ID] = area.Layers.Count;
-        foreach (var area in onav.UnkAreas)
-            layersById.TryAdd(area.ID, 0);
-
-        foreach (var area in onav.Areas)
-        {
-            foreach (var link in area.Links)
-            {
-                if (!layersById.ContainsKey(link.AreaID))
-                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.OnavLinkTarget, file, area.ID, link.AreaID));
-                else if (area.Layers.Count > 0 && !area.Layers.Any(l => l.Index == link.LayerIndex))
-                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.OnavLinkLayer, file, area.ID, link.AreaID, link.LayerIndex));
-            }
-        }
     }
 
     /// <summary>

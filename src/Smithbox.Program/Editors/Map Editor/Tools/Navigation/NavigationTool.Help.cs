@@ -19,7 +19,7 @@ public partial class NavigationTool
     private static readonly string[] GlossaryTerms =
     {
         "Navmesh", "Sets", "NameID", "Placeholder", "Quarters", "Connections", "Links", "Gates", "Clearance",
-        "FaceData", "NodeBanks", "Onav",
+        "FaceData", "NodeBanks",
     };
 
     private const string GlossaryPopup = "##navigationGlossaryPopup";
