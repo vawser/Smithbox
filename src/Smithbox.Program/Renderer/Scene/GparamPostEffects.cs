@@ -35,6 +35,13 @@ public class GparamDistanceFog
     public float End = 100.0f;
     public float MaxDensity = 1.0f;
     public Vector4 Color = new(0.5f, 0.5f, 0.5f, 1.0f);
+
+    /// <summary>
+    ///     Bloodborne's fog (fs 32e47788): amount = MaxDensity * (1 - 2^(-Density * (distance - Begin))) instead of the
+    ///     linear ramp; End is unused then
+    /// </summary>
+    public bool Exponential = false;
+    public float Density = 0.0f;
 }
 
 /// <summary>

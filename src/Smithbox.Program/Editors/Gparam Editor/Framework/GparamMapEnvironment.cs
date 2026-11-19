@@ -182,7 +182,7 @@ public class GparamMapEnvironment : IDisposable
 
             foreach (var (piece, proxy) in pieces)
             {
-                LightmapParts.Add(new DolLightmapBank.LightmapPart(piece, piece, proxy));
+                LightmapParts.Add(new DolLightmapBank.LightmapPart(piece, piece.Name, piece.ModelName, proxy));
             }
         }
 

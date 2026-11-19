@@ -207,12 +207,16 @@ public sealed class GparamProfile
             HasTaa = false,
             LutPathFormat = LutInArea
         },
-        // Bloodborne's LUTs are PS4 textures without a DDS header, which ColorGradingLuts can't read; it has no mapbase
+        // Bloodborne has no mapbase
         ProjectType.BB => new GparamProfile
         {
             Supported = true,
             SharedFiles = new[] { "default" },
             HasLightProbes = true,
+            // The same DOL lightmaps as DS3 (map/mAA/gi_env_mAA.tpfbhd, BTAB atlases)
+            HasDolLightmaps = true,
+            // map/mAA/mAA_cgrading.tpf.dcx, PS4 textures that ColorGradingLuts headerizes
+            LutPathFormat = LutInArea,
             Exposure = GparamExposureModel.Yebis,
             HasSsr = false,
             HasVolumetricFog = false,

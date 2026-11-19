@@ -31,6 +31,9 @@ public class DolLightmapBank
     /// <summary>The bake read, the map's _0000 files</summary>
     private const string Bake = "0000";
 
+    /// <summary>Bloodborne: the constant light (before exposure) of a lightmapped part without lightmap</summary>
+    private const float BloodborneMissingLightmapLight = 0.25f;
+
     private class AreaIndex
     {
         public readonly HashSet<string> Names = new(StringComparer.OrdinalIgnoreCase);
@@ -74,7 +77,7 @@ public class DolLightmapBank
     /// A map piece to light: <see cref="Key" /> names it from frame to frame (the Map Editor's entity), and the
     /// lightmap goes on <see cref="Proxy" />, its current mesh
     /// </summary>
-    public record LightmapPart(object Key, MSB3.Part.MapPiece Piece, MeshRenderableProxy Proxy);
+    public record LightmapPart(object Key, string PartName, string ModelName, MeshRenderableProxy Proxy);
 
     /// <summary>
     /// A map's pieces, and its BTAB entries by part name, read only if a piece needs them
@@ -91,9 +94,9 @@ public class DolLightmapBank
         Update(maps.Select(map => new LightmapMap(
             map.Name,
             map.Parts
-                .Where(entity => entity.WrappedObject is MSB3.Part.MapPiece)
-                .Select(entity => new LightmapPart(entity, (MSB3.Part.MapPiece)entity.WrappedObject,
-                    entity.RenderSceneMesh as MeshRenderableProxy)),
+                .Where(entity => entity.WrappedObject is MSB3.Part.MapPiece or MSBB.Part.MapPiece)
+                .Select(entity => new LightmapPart(entity, ((IMsbPart)entity.WrappedObject).Name,
+                    ((IMsbPart)entity.WrappedObject).ModelName, entity.RenderSceneMesh as MeshRenderableProxy)),
             () => GetAtlasEntries(map))), lighting);
     }
 
@@ -149,7 +152,7 @@ public class DolLightmapBank
 
                         atlas ??= map.GetAtlas();
 
-                        if (!TryResolve(table, index, code, part.Piece, atlas, state))
+                        if (!TryResolve(table, index, code, part.PartName, part.ModelName, atlas, state))
                         {
                             pending++;
                             mapPending++;
@@ -185,18 +188,19 @@ public class DolLightmapBank
         var scale = GparamProfile.For(Project.Descriptor.ProjectType).LightmapScale *
                     Math.Max(CFG.Current.Viewport_Map_Lightmap_Intensity, 0.0f);
 
-        table.SetGlobals(lighting?.DominantSharpnessOffset ?? 0.0f, (lighting?.DominantColor ?? Vector3.One) * scale);
+        // Bloodborne binds a 1x1 placeholder lightmap for a part without lightmap (seen in the game's frames): its light
+        // is taken as a constant, matched to in-game screenshots
+        var missing = Project.Descriptor.ProjectType is ProjectType.BB ? BloodborneMissingLightmapLight : 0.0f;
+        table.SetGlobals(lighting?.DominantSharpnessOffset ?? 0.0f, (lighting?.DominantColor ?? Vector3.One) * scale, missing);
         table.Upload();
     }
 
     /// <summary>
     /// The part's entries, if its textures are on the GPU; true once it is settled, with or without lightmaps
     /// </summary>
-    private bool TryResolve(LightmapTable table, AreaIndex index, string code, MSB3.Part.MapPiece piece,
+    private bool TryResolve(LightmapTable table, AreaIndex index, string code, string partName, string model,
         Dictionary<string, List<BTAB.Entry>> atlas, PartState state)
     {
-        var model = piece.ModelName;
-
         if (string.IsNullOrEmpty(model))
         {
             state.Done = true;
@@ -207,7 +211,7 @@ public class DolLightmapBank
 
         // An instanced piece: its place in an atlas. Every part has one BTAB entry (2,370 of 2,370 in m30_00), whose
         // MaterialName is only one of the model's materials, so the atlas lights all of them
-        if (atlas.TryGetValue(piece.Name, out var entries) && entries.Count > 0)
+        if (atlas.TryGetValue(partName, out var entries) && entries.Count > 0)
         {
             var entry = entries[0];
             var suffix = $"_atlas{entry.AtlasID:D3}";

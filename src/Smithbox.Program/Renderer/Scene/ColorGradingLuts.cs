@@ -1,4 +1,5 @@
 using SoulsFormats;
+using StudioCore.Application;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -86,6 +87,21 @@ public class ColorGradingLuts
                 var match = NamePattern.Match(texture.Name);
                 var data = texture.Bytes.ToArray();
 
+                // Bloodborne's are PS4 textures, tiled and without a DDS header: Headerize gives the same 16 x 256
+                // RGBA8 DDS as the other games' (checked on m21/m24_cgrading: red across, green down, blue by slice)
+                if (data.Length >= 4 && BitConverter.ToInt32(data, 0) != 0x20534444)
+                {
+                    try
+                    {
+                        data = texture.Headerize();
+                    }
+                    catch (Exception e)
+                    {
+                        logError($"{path} {texture.Name}", e);
+                        continue;
+                    }
+                }
+
                 // Only the uncompressed 16 x 256 RGBA8 layout described above
                 if (!match.Success || data.Length < DdsHeaderSize + Size * Height * 4 ||
                     BitConverter.ToInt32(data, 0) != 0x20534444 ||
@@ -139,6 +155,11 @@ public class ColorGradingLuts
             var rank = string.Equals(owner, area, StringComparison.OrdinalIgnoreCase) ? 0
                 : prefix != null && owner.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) ? 1
                 : 2;
+
+            // Bloodborne seems to grade only with the map's own LUT: a new map number without LUTs of its own looks
+            // ungraded in game, and m21_01's LUT 4 gave Smithbox a cyan cast the game hasn't
+            if (rank > 0 && Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.BB)
+                continue;
 
             if (rank < bestRank)
             {

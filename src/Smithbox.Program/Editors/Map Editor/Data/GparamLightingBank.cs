@@ -531,6 +531,17 @@ public class GparamLightingBank
             "Directional Light LocalLight DiffColor2", "Directional Light LocalLight SpecColor2",
             "Directional Enable LocalLight2", null);
 
+        // Bloodborne passes its directional lights as rgb^2 x intensity x 0.09 (fs d92266b9 constants in game frames
+        // against the GPARAM: exact for lights 0 and 1, diffuse and specular). Where 0.09 comes from: unknown
+        if (Project.Descriptor.ProjectType is ProjectType.BB)
+        {
+            foreach (var light in new[] { lighting.Sun, lighting.Light1, lighting.LocalLight1, lighting.LocalLight2 })
+            {
+                light.Diffuse = BloodborneLightColor(light.Diffuse);
+                light.Specular = BloodborneLightColor(light.Specular);
+            }
+        }
+
         lighting.HemiUp = reader.Get(LightSetKey, "Directional Light Hemi Color Up", lightSetId, lighting.HemiUp);
         lighting.HemiDown = reader.Get(LightSetKey, "Directional Light Hemi Color Down", lightSetId, lighting.HemiDown);
 
@@ -559,6 +570,35 @@ public class GparamLightingBank
         lighting.EnvMapSaturate = reader.Get(EnvironmentConfigKey, "EnvironmentConfig EnvMapColorConvert Saturate", 0, lighting.EnvMapSaturate);
         lighting.EnvMapShift = reader.Get(EnvironmentConfigKey, "EnvironmentConfig EnvMapColorConvert Shift", 0, lighting.EnvMapShift);
         lighting.EnvMapScale = reader.Get(EnvironmentConfigKey, "EnvironmentConfig EnvMapColorConvert Scale", 0, lighting.EnvMapScale);
+
+        // Bloodborne's Env Map group: one scale on the map's cubemap, which the hemisphere stands in for
+        if (Project.Descriptor.ProjectType is ProjectType.BB)
+        {
+            var envColorScale = reader.Get("Env Map:Editor", "Env Map: ColorScale", 0, -1.0f);
+            if (envColorScale < 0.0f)
+                envColorScale = reader.Get("Env Map:Editor", "EnvMap:ColorScale", 0, -1.0f);
+            if (envColorScale >= 0.0f)
+                lighting.EnvMapScale = new Vector4(envColorScale, envColorScale, envColorScale, 1.0f);
+        }
+
+        // Bloodborne's Fog group, as its fog shader gets it (fs 32e47788 constants in game frames against the GPARAM,
+        // exact): colour = Color.rgb^2, strength = Alpha x Color.w, start DistOffset, density 1 / Dist,
+        // the colour scaled by 1 + Contrast (lum - 1), taken at lum 0 here as the scene is dark. Height fog left out
+        if (Project.Descriptor.ProjectType is ProjectType.BB)
+        {
+            var fogColor = reader.Get("FogParamEditor", "Fog-Color", 0, Vector4.Zero);
+            var alpha = reader.Get("FogParamEditor", "Fog-fogAlpha", 0, 0.0f);
+            var dist = reader.Get("FogParamEditor", "Fog-Dist", 0, 0.0f);
+            var contrast = reader.Get("FogParamEditor", "Fog-fogContrast", 0, 0.0f);
+            var fog = lighting.PostEffects.DistanceFog;
+            fog.Enabled = alpha > 0.0f && dist > 0.0f;
+            fog.Exponential = true;
+            fog.Begin = reader.Get("FogParamEditor", "Fog-DistOffset", 0, 0.0f);
+            fog.Density = dist > 0.0f ? 1.0f / dist : 0.0f;
+            fog.MaxDensity = alpha * fogColor.W;
+            fog.Color = new Vector4(new Vector3(fogColor.X * fogColor.X, fogColor.Y * fogColor.Y, fogColor.Z * fogColor.Z) *
+                Math.Max(1.0f - contrast, 0.0f), 1.0f);
+        }
 
         // Setting Info
         lighting.BackgroundColor = reader.Get(SettingInfoKey, "GS - BG Color-Data", 0, lighting.BackgroundColor);
@@ -844,6 +884,11 @@ public class GparamLightingBank
 
         if (max > 0.0f)
             settings.AdaptionMax = MathF.Log2(max / exposure);
+    }
+
+    private static Vector4 BloodborneLightColor(Vector4 c)
+    {
+        return new Vector4(c.X * c.X, c.Y * c.Y, c.Z * c.Z, c.W * 0.09f);
     }
 
     private static void ReadLight(FieldReader reader, int id, GparamDirectionalLight light,

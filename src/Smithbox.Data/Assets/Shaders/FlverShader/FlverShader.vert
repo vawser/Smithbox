@@ -123,6 +123,8 @@ layout(location = 17) flat out uvec2 fsin_lightingSet; // x: lighting set, y: fa
 	// The third UV set: a DES multi texture material's lightmap UV (18 is the wireframe's barycentrics)
 	layout(location = 19) out vec2 fsin_texcoord3;
 #endif
+// The instance's origin in the world, where Bloodborne samples its light probe for the whole object
+layout(location = 5) flat out vec3 fsin_instanceOrigin;
 
 // materialID.z of a static instance with a lightmap: InstanceData.LightmapFlag and the entry
 #define SKIN_KIND_MASK 0xC0000000u
@@ -546,6 +548,8 @@ void main()
 	fsin_lightmap = (skinKind & SKIN_KIND_MASK) == SKIN_KIND_LIGHTMAP ? (skinKind & ~SKIN_KIND_MASK) + 1u : 0u;
 	fsin_modelToWorld = mat3(w);
 #endif
+
+	fsin_instanceOrigin = w[3].xyz;
 
 	mat4 bone = GetBoneMatrix();
 	vec4 worldPos = w * bone * vec4(localPosition, 1.0);

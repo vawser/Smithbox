@@ -117,6 +117,8 @@ layout(location = 17) flat in uvec2 fsin_lightingSet; // x: the lighting set, y:
 	// The third UV set, a DES multi texture material's lightmap UV (FlverResource.LookupDesLightmap)
 	layout(location = 19) in vec2 fsin_texcoord3;
 #endif
+// The instance's origin in the world, where Bloodborne samples its light probe for the whole object
+layout(location = 5) flat in vec3 fsin_instanceOrigin;
 
 #define INSTANCE_NO_SHADOW 1u
 
@@ -1325,7 +1327,12 @@ float LightDistanceAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
 
 	float attenuation;
 	float range = light.positionRange.w;
-	if (light.spot.z > 0.5 && range > 0.0)
+	if (c_gameID == GAME_BLOODBORNE && range > 0.0)
+	{
+		// Bloodborne's point lights (fs 370174f7): inverse square less its value at the radius
+		attenuation = max(0.0, 1.0 / max(dist * dist, 1e-3) - 1.0 / (range * range));
+	}
+	else if (light.spot.z > 0.5 && range > 0.0)
 	{
 		// full strength out to spot.w (0 for most lights: at the light), fading away to the light's range
 		float fade = clamp((range - dist) / max(range - light.spot.w, 1e-4), 0.0, 1.0);
@@ -1638,7 +1645,10 @@ vec3 AmbientBase(vec3 N)
 // color squared, times its HDR scale and the GPARAM's Dominant Light Map color; DOL 2's direction (the model's space,
 // x 2 - 1) and its sharpness plus the GPARAM's offset, which splits the light into a part from that direction and a
 // part from all around. DOL 1's alpha is how much of the sun reaches here, which the game scales the sun by.
-vec3 LightmapIrradiance(vec3 N, out float sunMask)
+// Bloodborne (its G-buffer and forward shaders, read from the PS4 shaders): DOL 2's direction as it is, in the world's
+// space without the model's rotation, and the directional part times (1 - F0) on top of the (1 - F0) of all indirect
+// diffuse light.
+vec3 LightmapIrradiance(vec3 N, vec3 F0, out float sunMask)
 {
 	lightmapData lm = lightmapdata[sceneparam.lightmapStart + fsin_lightmap - 1u];
 	lightmapData globals = lightmapdata[sceneparam.lightmapStart];
@@ -1652,12 +1662,19 @@ vec3 LightmapIrradiance(vec3 N, out float sunMask)
 
 	vec3 color = dol1.rgb * dol1.rgb * lm.hdrScale.rgb * globals.hdrScale.rgb;
 
-	vec3 dir = fsin_modelToWorld * (dol2.rgb * 2.0 - 1.0);
+	bool bloodborne = c_gameID == GAME_BLOODBORNE;
+	vec3 dir = dol2.rgb * 2.0 - 1.0;
+	if (!bloodborne)
+		dir = fsin_modelToWorld * dir;
 	dir = dot(dir, dir) > 1e-8 ? normalize(dir) : N;
 
 	float sharpness = clamp(dol2.a + globals.uvScaleOffset.x, 0.0, 1.0);
 
-	vec3 E = color * sharpness * clamp(dot(dir, N), 0.0, 1.0) + color * (1.0 - sharpness);
+	vec3 directional = color * sharpness * clamp(dot(dir, N), 0.0, 1.0);
+	if (bloodborne)
+		directional *= 1.0 - F0;
+
+	vec3 E = directional + color * (1.0 - sharpness);
 	return E * sceneparam.irradianceVolumeExposure;
 }
 #endif
@@ -1674,7 +1691,10 @@ vec3 IndirectLight(Surface s)
 	if (sceneparam.irradianceVolumeCount > 0u)
 	{
 		float coverage;
-		vec3 volumeLight = VolumeIrradiance(fsin_worldpos, s.N, coverage, reflectionScale);
+		// Bloodborne lights a whole object by one probe value, the one at its origin (per-instance constants of its
+		// shaders, e.g. fs e21e283a), not per pixel
+		vec3 probePoint = c_gameID == GAME_BLOODBORNE ? fsin_instanceOrigin : fsin_worldpos;
+		vec3 volumeLight = VolumeIrradiance(probePoint, s.N, coverage, reflectionScale);
 
 		// Unknown whether the game adds the hemisphere inside the volumes too, so it is a choice
 		if (MapLighting() && (sceneparam.mapLightingFlags & 2u) != 0u)
@@ -1695,11 +1715,19 @@ vec3 IndirectLight(Surface s)
 	if (fsin_lightmap == LIGHTMAP_MISSING)
 	{
 		g_lightSource = 3u;
+
+		// Bloodborne draws such a part with a 1x1 placeholder lightmap: a constant light (lightmap globals' y)
+		if (c_gameID == GAME_BLOODBORNE)
+		{
+			float missingLight = lightmapdata[sceneparam.lightmapStart].uvScaleOffset.y;
+			if (missingLight > 0.0)
+				ambientDiffuse = vec3(missingLight) * sceneparam.irradianceVolumeExposure;
+		}
 	}
 	else if (fsin_lightmap != 0u)
 	{
 		float sunMask;
-		ambientDiffuse = LightmapIrradiance(s.N, sunMask);
+		ambientDiffuse = LightmapIrradiance(s.N, s.F0, sunMask);
 		g_probeSunMask = sunMask;
 		g_lightSource = 2u;
 
