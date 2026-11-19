@@ -2798,6 +2798,14 @@
       "Text": "Regenerated from {0} collision parts (each placed by its part, the new and edited collision included; {18} low collision files no part places left out) and {1} assets ({2} cut at runtime left out), with {3} seeds. Faces kept: n {4} of {5} generated, o {6} of {7}. Models: {8} replaced, {9} added, {10} made placeholders. {11} in-map connections, {12} to neighbours, {13} gates, {14} jump and fall links ({17} of them kept from the current navmesh). Node bank faces: {15} kept, {16} dropped. Check it with the overlay and Validate."
     },
     {
+      "Key": "MAP_Navigation_Regenerate_Barriers_Done",
+      "Text": "{0} barrier assets (evergaol and fog walls: collision all of material 29) left out, as the game's navmesh runs through them."
+    },
+    {
+      "Key": "MAP_Navigation_Regenerate_Stealth_Done",
+      "Text": "{0} bush and grass assets had their stealth volumes left out, as characters walk through them."
+    },
+    {
       "Key": "MAP_Navigation_Regenerate_Skipped",
       "Text": "Left as they were (their files are shared with another entry): models {0}."
     }

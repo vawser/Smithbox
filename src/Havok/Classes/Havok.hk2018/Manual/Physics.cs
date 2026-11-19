@@ -23,6 +23,8 @@ public partial class hknpBodyCinfo : IHavokBody
     Vector3 IHavokBody.Position => new(m_position.X, m_position.Y, m_position.Z);
 
     Quaternion IHavokBody.Orientation => m_orientation;
+
+    string? IHavokBody.Name => m_name;
 }
 
 public partial class hknpCompressedMeshShape : IHavokCompressedMesh

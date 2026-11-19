@@ -34,6 +34,15 @@ public partial class NavigationTool
     /// <summary>Asset collision read so far, by asset model, as triangles in the asset's own space (null: none found).</summary>
     private readonly Dictionary<string, List<Vector3>> AssetCollisionCache = new(StringComparer.OrdinalIgnoreCase);
 
+    /// <summary>Whether an asset's collision is a barrier (see <see cref="IsBarrierAsset"/>), by the same key as AssetCollisionCache.</summary>
+    private readonly Dictionary<string, bool> AssetBarrierCache = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>Whether an asset's collision had stealth bodies, left out (see <see cref="IsStealthBody"/>), by the same key.</summary>
+    private readonly Dictionary<string, bool> AssetStealthCache = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>The collision material (its surface, the HitMtrlParam row: material % 100) of barrier walls.</summary>
+    private const uint BarrierSurface = 29;
+
     /// <summary>Where a model edit puts its new n and o files.</summary>
     private enum ModelTarget { Replace, Slot, New }
 
@@ -677,6 +686,7 @@ public partial class NavigationTool
             return cached;
 
         List<Vector3> triangles = null;
+        bool barrier = false, stealth = false;
         try
         {
             // The locator falls back to the other type when an asset lacks the one asked for; that one isn't used here
@@ -696,7 +706,11 @@ public partial class NavigationTool
                     var data = SoulsFormats.DCX.Is(bytes) ? SoulsFormats.DCX.Decompress(bytes) : bytes;
                     var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
                     var document = Havok.Files.HavokFile.Read(data.ToArray(), profile);
-                    triangles = Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
+                    triangles = AssetTriangles(document);
+                    stealth = Havok.Shared.CollisionGeometry.Bodies(document.Objects).Any(IsStealthBody);
+
+                    var materials = CollisionWithMaterials(document).Materials;
+                    barrier = materials.Count > 0 && materials.All(m => m != uint.MaxValue && m % 100 == BarrierSurface);
                 }
             }
         }
@@ -706,7 +720,70 @@ public partial class NavigationTool
         }
 
         AssetCollisionCache[cacheKey] = triangles;
+        AssetBarrierCache[cacheKey] = barrier;
+        AssetStealthCache[cacheKey] = stealth;
         return triangles;
+    }
+
+    /// <summary>Whether an asset's collision had stealth bodies, which <see cref="SourceTriangles"/> leaves out.</summary>
+    private bool HasStealthBodies(GenerateSource source, bool high = false)
+    {
+        if (!source.IsAsset)
+            return false;
+
+        SourceTriangles(source, high);
+        return AssetStealthCache.TryGetValue($"{source.Model}:{(high ? "h" : "l")}", out var stealth) && stealth;
+    }
+
+    /// <summary>
+    /// An asset's collision triangles in its own space, without its stealth bodies (see <see cref="IsStealthBody"/>).
+    /// A document with none is read as before, a submesh each.
+    /// </summary>
+    private static List<Vector3> AssetTriangles(Havok.HavokDocument document)
+    {
+        var bodies = Havok.Shared.CollisionGeometry.Bodies(document.Objects).ToList();
+        if (!bodies.Any(IsStealthBody))
+            return Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
+
+        var triangles = new List<Vector3>();
+        foreach (var body in bodies.Where(b => !IsStealthBody(b)))
+        {
+            var local = new List<Vector3>();
+            try
+            {
+                Havok.Shared.CollisionGeometry.AppendTriangles(body.Shape, Havok.Shared.CollisionGeometry.BodyTransform(body), local);
+            }
+            catch (Exception)
+            {
+                continue;
+            }
+            triangles.AddRange(local);
+        }
+        return triangles;
+    }
+
+    /// <summary>
+    /// A stealth body: the volume of a bush or a tuft of grass that a character hides in and walks through
+    /// (AEG801_006_Stealth, AEG001_290_stealth, AEG801_011_Stealth; 33 ER assets, always in the main _L file). The
+    /// game's navmesh runs through them on the ground (90-92% of their footprint covered, NavSurvey treeprobe), while
+    /// Recast takes them for solid ground, raising the mesh onto the bush with links up to it, so they are left out.
+    /// </summary>
+    private static bool IsStealthBody(Havok.Shared.IHavokBody body)
+        => body.Name?.Contains("stealth", StringComparison.OrdinalIgnoreCase) == true;
+
+    /// <summary>
+    /// Whether an asset is a barrier: all of its collision is of the barrier material (surface 29), as the evergaols'
+    /// cylinder walls (AEG099_120) and the fog walls (AEG099_001, AEG099_230) are. The game's navmesh runs through them
+    /// (the evergaol's 0x20000 faces join the ground around it), while Recast takes them for walls and keeps the
+    /// navmesh back from both sides, so the regeneration leaves them out.
+    /// </summary>
+    private bool IsBarrierAsset(GenerateSource source, bool high = false)
+    {
+        if (!source.IsAsset)
+            return false;
+
+        SourceTriangles(source, high);
+        return AssetBarrierCache.TryGetValue($"{source.Model}:{(high ? "h" : "l")}", out var barrier) && barrier;
     }
 
     /// <summary>

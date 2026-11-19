@@ -28,6 +28,9 @@ public interface IHavokBody
 
     /// <summary>As stored: bodies without a rotation can leave it zeroed.</summary>
     Quaternion Orientation { get; }
+
+    /// <summary>The body's name, where the format stores one (the hknp body infos); else null.</summary>
+    string? Name => null;
 }
 
 /// <summary>One section of a compressed mesh, with the counts the SDKs store in different ways normalised.</summary>

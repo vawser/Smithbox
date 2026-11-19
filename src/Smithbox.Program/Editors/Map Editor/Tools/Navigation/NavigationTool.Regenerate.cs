@@ -207,8 +207,9 @@ public partial class NavigationTool
         // The tile's own area: where its collision lies, across, before any asset is added
         var ownBounds = XZBounds(input.Triangles);
 
-        // Every asset of the map, placed, with its own collision; those the game cuts at runtime are left out
-        int assets = 0, cutAtRuntime = 0;
+        // Every asset of the map, placed, with its own collision; those the game cuts at runtime are left out, and the
+        // barriers (evergaol and fog walls), which the game's navmesh runs through
+        int assets = 0, cutAtRuntime = 0, barriers = 0, stealthAssets = 0;
         foreach (var entity in map.Objects)
         {
             if (entity is not MsbEntity part || !EntityHelper.IsPartAsset(part) || EntityHelper.IsPartDummyAsset(part) || SourceOf(part) is not GenerateSource source)
@@ -221,9 +222,21 @@ public partial class NavigationTool
             }
 
             var local = SourceTriangles(source, RegenHighCollision);
+
+            // Bushes and grass: their stealth volumes are walked through (some have nothing else)
+            if (HasStealthBodies(source, RegenHighCollision))
+                stealthAssets++;
+
             if (local == null || local.Count == 0)
             {
-                missing.Add(source.Model);
+                if (!HasStealthBodies(source, RegenHighCollision))
+                    missing.Add(source.Model);
+                continue;
+            }
+
+            if (IsBarrierAsset(source, RegenHighCollision))
+            {
+                barriers++;
                 continue;
             }
 
@@ -330,6 +343,8 @@ public partial class NavigationTool
                     result.Replaced, result.Added, result.Removed,
                     result.Connections, result.CrossMapConnections, result.Gates, (n?.Links ?? 0) + (o?.Links ?? 0),
                     result.NodeBankFacesKept, result.NodeBankFacesDropped, (n?.LinksKept ?? 0) + (o?.LinksKept ?? 0), unplaced)
+                    + (barriers > 0 ? " " + LOC.Get("MAP_Navigation_Regenerate_Barriers_Done", barriers) : "")
+                    + (stealthAssets > 0 ? " " + LOC.Get("MAP_Navigation_Regenerate_Stealth_Done", stealthAssets) : "")
                     + (result.Skipped.Count > 0 ? " " + LOC.Get("MAP_Navigation_Regenerate_Skipped", string.Join(", ", result.Skipped)) : "")
                     + (relatedMessage != null ? " " + relatedMessage : "")
                     + (input.SnapBorders ? " " + LOC.Get("MAP_Navigation_Regenerate_Borders_Done",
@@ -411,7 +426,7 @@ public partial class NavigationTool
                 }
 
                 var local = SourceTriangles(source, RegenHighCollision);
-                if (local == null || local.Count == 0)
+                if (local == null || local.Count == 0 || IsBarrierAsset(source, RegenHighCollision))
                     continue;
 
                 var placement = part.GetWorldMatrix() * toThisSpace;

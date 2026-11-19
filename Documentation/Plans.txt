@@ -43,8 +43,6 @@
 
 - Improve Map Data view: mainly properties
 
-- ER Navmesh: check evergaol navmesh generation (currently split when regenerated)
-
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------
