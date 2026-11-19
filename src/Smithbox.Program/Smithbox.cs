@@ -28,6 +28,13 @@ public class Smithbox
     public static ProjectOrchestrator Orchestrator { get; set; }
     public static TextureManager TextureManager { get; set; }
 
+    /// <summary>
+    ///     Raised once per frame on the main thread, after the editors' update and before the frame is drawn. Lets code
+    ///     loaded alongside Smithbox (e.g. an automation tool started with DOTNET_STARTUP_HOOKS) work with the editors
+    ///     where it is safe to, without patching Smithbox.
+    /// </summary>
+    public static event Action FrameUpdated;
+
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
 
@@ -671,6 +678,8 @@ public class Smithbox
             InputManager.Update(_context.Window, snapshot, deltaSeconds);
 
             Update((float)deltaSeconds);
+
+            FrameUpdated?.Invoke();
 
             // The first person mode's captured mouse is given back if nothing claimed it this frame
             StudioCore.Editors.MapEditor.FirstPersonMouse.EndFrame();
