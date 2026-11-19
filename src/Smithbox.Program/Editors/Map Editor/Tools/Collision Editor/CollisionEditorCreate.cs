@@ -143,8 +143,6 @@ public class CollisionEditorCreate
 
     public void Display()
     {
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Description"));
-
         var map = View.Selection.ResolveTargetMap(MapTargetPicker.ActiveMap);
 
         // Map

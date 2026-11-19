@@ -53,8 +53,6 @@ public class CollisionEditorCleanup
 
     public void Display()
     {
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cleanup_Description"));
-
         // The older games name their files by model and area, which the unused check doesn't read
         if (Tool.IsHkpGame)
         {

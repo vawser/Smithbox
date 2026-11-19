@@ -181,6 +181,10 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            // The open tab's help, behind a ? at the end of the tab bar
+            if (NvmOpenTab is NvmTab open)
+                GUI.TabHelpButton("navigationNvmTabHelp", LOC.Get(NvmOpenTabKey), new[] { LOC.Get($"MAP_Navigation_Nvm_Tab_{open}_Help") });
+
             ImGui.EndTabBar();
         }
     }
@@ -205,9 +209,12 @@ public partial class NavigationTool
                 StopNvmVertexEdit();
         }
 
-        GUI.WrappedText(LOC.Get($"MAP_Navigation_Nvm_Tab_{tab}_Help"));
+        NvmOpenTabKey = key;
         return true;
     }
+
+    /// <summary>The name key of the NVM tab drawn last, for its help's title.</summary>
+    private string NvmOpenTabKey = "";
 
     private void SetNvmClick(NvmClick mode)
     {

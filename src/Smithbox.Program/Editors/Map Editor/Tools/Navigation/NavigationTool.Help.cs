@@ -1,20 +1,18 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
-using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Built-in help (Navigation Editor UX Analysis, R7): a "How this works" section at the top of each tab, open the first
-/// time the tab is shown and closed after that (remembered in CFG), and a glossary of the navigation terms opened from
-/// the header, so tooltips can stay short.
+/// Built-in help (Navigation Editor UX Analysis, R7): a ? button at the end of each tab bar opens the open tab's
+/// description and steps (GUI.TabHelpButton), ? buttons beside the Tool and Brush combos explain the chosen entry
+/// (GUI.HelpButton), and a glossary of the navigation terms is opened from the header, so tooltips and the tabs
+/// themselves can stay short.
 /// </summary>
 public partial class NavigationTool
 {
-    /// <summary>Whether each tab's help is open this session; starts from whether the tab was seen before.</summary>
-    private readonly Dictionary<NavTab, bool> HelpOpen = new();
-
     /// <summary>The glossary terms, in the order listed: MAP_Navigation_Glossary_{term} and its _Text.</summary>
     private static readonly string[] GlossaryTerms =
     {
@@ -24,26 +22,25 @@ public partial class NavigationTool
 
     private const string GlossaryPopup = "##navigationGlossaryPopup";
 
-    /// <summary>The tab's "How this works" section, drawn by BeginTab before the tab's content.</summary>
-    private void DisplayTabHelp(NavTab tab)
+    /// <summary>The help of a tab of the Havok mode: its description (where it has one) then its steps.</summary>
+    private static string[] TabHelpTexts(NavTab tab)
     {
-        if (!HelpOpen.TryGetValue(tab, out var open))
+        var description = tab switch
         {
-            var seen = CFG.Current.MapEditor_Navigation_Help_Seen;
-            open = !seen.Contains(tab.ToString());
+            NavTab.Overlay => "MAP_Navigation_View_Description",
+            NavTab.Edit => "MAP_Navigation_Edit_Description",
+            NavTab.Regenerate => "MAP_Navigation_Regenerate_Description",
+            NavTab.Models => "MAP_Navigation_Models_Description",
+            NavTab.Gates => "MAP_Navigation_Gates_Description",
+            NavTab.Links => "MAP_Navigation_Links_Description",
+            NavTab.FaceData => "MAP_Navigation_Face_Data_Description",
+            _ => null,
+        };
 
-            // Shown once: from the next session it starts closed
-            if (open)
-                seen.Add(tab.ToString());
-        }
-
-        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Help_Header"), LOC.Get("MAP_Navigation_Help_Header_TT"), ref open);
-        HelpOpen[tab] = open;
-
-        if (open)
-            GUI.WrappedText(LOC.Get($"MAP_Navigation_Help_{tab}"));
-
-        GUI.Spacer();
+        return new[] { description, $"MAP_Navigation_Help_{tab}" }
+            .Where(k => k != null)
+            .Select(k => LOC.Get(k))
+            .ToArray();
     }
 
     /// <summary>The glossary button, for the header.</summary>

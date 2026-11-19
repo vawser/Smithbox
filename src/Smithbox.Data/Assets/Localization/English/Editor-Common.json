@@ -1,6 +1,10 @@
 {
   "Entries": [
     {
+      "Key": "EDITOR_Help_Button_TT",
+      "Text": "How this works: click for a description and how it is used."
+    },
+    {
       "Key": "EDITOR_Short_Project_Type_Undefined",
       "Text": "Undefined"
     },

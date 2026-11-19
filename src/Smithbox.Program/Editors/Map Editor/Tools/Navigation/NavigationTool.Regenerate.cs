@@ -52,7 +52,6 @@ public partial class NavigationTool
     {
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Regenerate_Header"), LOC.Get("MAP_Navigation_Regenerate_Header_TT"));
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Regenerate_Description"));
 
         if (navigation.Models.Any(m => m.Quarters.Count > 0))
         {

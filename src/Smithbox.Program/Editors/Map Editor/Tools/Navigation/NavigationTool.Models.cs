@@ -34,8 +34,6 @@ public partial class NavigationTool
 
     private void DisplayModelsTab(MapContainer map)
     {
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Models_Description"));
-
         if (ModelsNavigation == null || ModelsMap != map.Name)
         {
             ModelsNavigation = Bank.GetMap(map);

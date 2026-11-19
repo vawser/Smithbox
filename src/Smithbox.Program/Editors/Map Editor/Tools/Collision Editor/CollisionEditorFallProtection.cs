@@ -74,8 +74,6 @@ public class CollisionEditorFallProtection
     {
         LastDisplayFrame = Tool.CurrentFrame;
 
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Fall_Description"));
-
         if (!CanUse)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Fall_Unsupported_Game"));

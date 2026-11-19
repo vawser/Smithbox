@@ -82,7 +82,7 @@ public partial class NavigationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Tool_Header"), LOC.Get("MAP_Navigation_Edit_Tool_Header_TT"));
 
-        ImGui.SetNextItemWidth(-1);
+        ImGui.SetNextItemWidth(GUI.HelpButtonItemWidth());
         if (ImGui.BeginCombo("##navigationEditTool", LOC.Get(EditTool.GetDisplayName())))
         {
             foreach (var tool in Enum.GetValues<NavEditTool>())
@@ -103,7 +103,9 @@ public partial class NavigationTool
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Tool_Input_TT"));
 
-        GUI.WrappedText(LOC.Get($"MAP_Navigation_Edit_Tool_{EditTool}_TT"));
+        // How the chosen tool is used, behind a ? beside the combo
+        GUI.HelpButton("navigationEditToolHelp", LOC.Get(EditTool.GetDisplayName()),
+            LOC.Get($"MAP_Navigation_Edit_Tool_{EditTool}_TT"));
     }
 
     /// <summary>The Add Face groups: snapping, the corners placed, what the last add did, and the controls.</summary>

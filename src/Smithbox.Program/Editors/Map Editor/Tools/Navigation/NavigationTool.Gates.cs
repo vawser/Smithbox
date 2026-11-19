@@ -96,8 +96,6 @@ public partial class NavigationTool
 
     private void DisplayGatesTab()
     {
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Gates_Description"));
-
         if (!ShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
 

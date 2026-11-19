@@ -213,7 +213,6 @@ public partial class CollisionEditorTool
             if (BeginTab(CollisionEditorSource.Edit, "MAP_CollisionEditor_Tab_Edit", "collisionEditorTabEdit"))
             {
                 OpenTab = CollisionEditorSource.Edit;
-                DisplayTabHelp(CollisionEditorSource.Edit);
                 DisplayEditTab();
                 ImGui.EndTabItem();
             }
@@ -221,7 +220,6 @@ public partial class CollisionEditorTool
             if (BeginTab(CollisionEditorSource.Create, "MAP_CollisionEditor_Tab_Create", "collisionEditorTabCreate"))
             {
                 OpenTab = CollisionEditorSource.Create;
-                DisplayTabHelp(CollisionEditorSource.Create);
                 Create.Display();
                 ImGui.EndTabItem();
             }
@@ -229,7 +227,6 @@ public partial class CollisionEditorTool
             if (BeginTab(CollisionEditorSource.Fall, "MAP_CollisionEditor_Tab_Fall", "collisionEditorTabFall"))
             {
                 OpenTab = CollisionEditorSource.Fall;
-                DisplayTabHelp(CollisionEditorSource.Fall);
                 FallProtection.Display();
                 ImGui.EndTabItem();
             }
@@ -237,10 +234,12 @@ public partial class CollisionEditorTool
             if (BeginTab(CollisionEditorSource.Cleanup, "MAP_CollisionEditor_Tab_Cleanup", "collisionEditorTabCleanup"))
             {
                 OpenTab = CollisionEditorSource.Cleanup;
-                DisplayTabHelp(CollisionEditorSource.Cleanup);
                 Cleanup.Display();
                 ImGui.EndTabItem();
             }
+
+            // The open tab's description and steps, behind a ? at the end of the tab bar
+            DisplayTabHelpButton(OpenTab);
 
             ImGui.EndTabBar();
         }
@@ -294,8 +293,6 @@ public partial class CollisionEditorTool
     private void DisplayEditTab()
     {
         LastEditTabFrame = Frame;
-
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Description"));
 
         // Actions
         GUI.Spacer();

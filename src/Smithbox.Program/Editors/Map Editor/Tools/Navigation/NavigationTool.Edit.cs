@@ -117,8 +117,6 @@ public partial class NavigationTool
 
     private void DisplayEditTab()
     {
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Description"));
-
         if (!ShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Needs_Overlay"));
 
@@ -222,7 +220,7 @@ public partial class NavigationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Brush_Header"), LOC.Get("MAP_Navigation_Edit_Brush_Header_TT"));
 
-        ImGui.SetNextItemWidth(-1);
+        ImGui.SetNextItemWidth(GUI.HelpButtonItemWidth());
         if (ImGui.BeginCombo("##navigationEditBrushMode", LOC.Get(mode.GetDisplayName())))
         {
             foreach (var (key, value) in VertexBrushKeys)
@@ -238,8 +236,10 @@ public partial class NavigationTool
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Brush_Mode_Input_TT"));
 
+        // How the chosen mode brushes, behind a ? beside the combo
         mode = VertexBrushMode;
-        GUI.WrappedText(LOC.Get($"MAP_Navigation_Edit_Brush_Mode_{mode}_TT"));
+        GUI.HelpButton("navigationEditBrushModeHelp", LOC.Get(mode.GetDisplayName()),
+            LOC.Get($"MAP_Navigation_Edit_Brush_Mode_{mode}_TT"));
 
         // Radius
         GUI.Spacer();

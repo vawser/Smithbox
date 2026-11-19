@@ -69,7 +69,7 @@ public partial class CollisionEditorTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Brush_Header"), LOC.Get("MAP_CollisionEditor_Brush_Header_TT"));
 
-        ImGui.SetNextItemWidth(-1);
+        ImGui.SetNextItemWidth(GUI.HelpButtonItemWidth());
         if (ImGui.BeginCombo("##collisionEditorBrushMode", LOC.Get(mode.GetDisplayName())))
         {
             foreach (var (key, value) in BrushKeys)
@@ -85,9 +85,10 @@ public partial class CollisionEditorTool
         }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Brush_Mode_Input_TT"));
 
-        GUI.WrappedText(LOC.Get($"MAP_CollisionEditor_Brush_Mode_{CFG.Current.MapEditor_CollisionEditor_Brush_Mode}_TT"));
-
+        // How the chosen mode brushes, behind a ? beside the combo
         mode = CFG.Current.MapEditor_CollisionEditor_Brush_Mode;
+        GUI.HelpButton("collisionEditorBrushModeHelp", LOC.Get(mode.GetDisplayName()),
+            LOC.Get($"MAP_CollisionEditor_Brush_Mode_{mode}_TT"));
 
         // Radius
         GUI.Spacer();

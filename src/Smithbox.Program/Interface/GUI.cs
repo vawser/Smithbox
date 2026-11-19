@@ -404,6 +404,65 @@ public static class GUI
     }
 
     /// <summary>
+    /// A ? button at the end of a tab bar that opens the open tab's help (its description and steps) in a popup.
+    /// Call it between BeginTabBar and EndTabBar, after the tab items, so the open tab is the one drawn this frame.
+    /// </summary>
+    public static void TabHelpButton(string id, string title, params string[] texts)
+    {
+        if (texts == null || texts.Length == 0)
+            return;
+
+        var popup = $"##{id}Popup";
+
+        if (ImGui.TabItemButton($"{Icons.QuestionCircle}##{id}", ImGuiTabItemFlags.Trailing | ImGuiTabItemFlags.NoTooltip))
+            ImGui.OpenPopup(popup);
+        Tooltip(LOC.Get("EDITOR_Help_Button_TT"));
+
+        HelpPopup(popup, title, texts);
+    }
+
+    /// <summary>
+    /// A ? button on the same line as the item before it, opening the given help (e.g. how the entry chosen in a combo
+    /// is used) in a popup. Draw that item with <see cref="HelpButtonItemWidth" /> so the button fits at the right.
+    /// </summary>
+    public static void HelpButton(string id, string title, params string[] texts)
+    {
+        ImGui.SameLine();
+
+        var popup = $"##{id}Popup";
+
+        if (ImGui.Button($"{Icons.QuestionCircle}##{id}", DPI.IconButtonSize))
+            ImGui.OpenPopup(popup);
+        Tooltip(LOC.Get("EDITOR_Help_Button_TT"));
+
+        HelpPopup(popup, title, texts);
+    }
+
+    /// <summary>The width for an item followed by <see cref="HelpButton" />: the rest of the line less the button.</summary>
+    public static float HelpButtonItemWidth()
+        => -(DPI.IconButtonSize.X + ImGui.GetStyle().ItemSpacing.X);
+
+    private static void HelpPopup(string popup, string title, string[] texts)
+    {
+        // A set width, as wrapped text in an auto-sized window never wraps; the height fits up to a limit, then scrolls
+        ImGui.SetNextWindowSize(new Vector2(480, 0) * DPI.UIScale(), ImGuiCond.Always);
+        ImGui.SetNextWindowSizeConstraints(Vector2.Zero, new Vector2(480, 520) * DPI.UIScale());
+
+        if (!ImGui.BeginPopup(popup))
+            return;
+
+        WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, title);
+
+        foreach (var text in texts)
+        {
+            Spacer();
+            WrappedText(text);
+        }
+
+        ImGui.EndPopup();
+    }
+
+    /// <summary>
     /// A panel shown in place of content that can't be shown yet: a centered title and a short explanation of what
     /// to do. Follow it with the buttons that do it.
     /// </summary>

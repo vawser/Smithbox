@@ -101,8 +101,6 @@ public partial class NavigationTool
 
     private void DisplayOverlayTab()
     {
-        GUI.WrappedText(LOC.Get("MAP_Navigation_View_Description"));
-
         // Overlay
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Overlay_Header"), LOC.Get("MAP_Navigation_Overlay_Header_TT"));
@@ -156,8 +154,6 @@ public partial class NavigationTool
     /// <summary>The Face Data tab: picking, the picked face, painting, and the legend of the drawn values.</summary>
     private void DisplayFaceDataTab()
     {
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Face_Data_Description"));
-
         if (!ShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
 
@@ -172,8 +168,6 @@ public partial class NavigationTool
     /// <summary>The Links tab: adding links, and the picked face's links.</summary>
     private void DisplayLinksTab()
     {
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Links_Description"));
-
         if (!ShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
 

@@ -393,14 +393,6 @@
       "Text": "Selected model {1:D6} (navmesh {0})."
     },
     {
-      "Key": "MAP_Navigation_Help_Header",
-      "Text": "How this works"
-    },
-    {
-      "Key": "MAP_Navigation_Help_Header_TT",
-      "Text": "The steps this tab is used in. Open the first time each tab is shown; the eye shows or hides it. The ? button above the tabs explains the terms."
-    },
-    {
       "Key": "MAP_Navigation_Help_Overlay",
       "Text": "1. Tick Show overlay above the tabs, and choose the n or o set.\n2. Turn layers on or off: faces, edges, links and gates. Each line layer shows its colour.\n3. The other tabs edit what the overlay draws. The Map Editor's own navmesh drawing can be hidden with the Navmesh render filter."
     },

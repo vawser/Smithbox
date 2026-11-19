@@ -213,6 +213,10 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            // The open tab's description and steps, behind a ? at the end of the tab bar
+            if (OpenTab is NavTab open)
+                GUI.TabHelpButton("navigationTabHelp", LOC.Get(OpenTabKey), TabHelpTexts(open));
+
             ImGui.EndTabBar();
         }
 
@@ -242,12 +246,15 @@ public partial class NavigationTool
             StopModesOutside(tab);
         }
 
-        DisplayTabHelp(tab);
+        OpenTabKey = key;
         return true;
     }
 
     /// <summary>The tab drawn last; null before the tabs are first drawn.</summary>
     private NavTab? OpenTab;
+
+    /// <summary>The name key of the tab drawn last, for its help's title.</summary>
+    private string OpenTabKey = "";
 
     /// <summary>
     /// On a tab change, stops the viewport modes that belong to other tabs, so a mode never takes the viewport's clicks
