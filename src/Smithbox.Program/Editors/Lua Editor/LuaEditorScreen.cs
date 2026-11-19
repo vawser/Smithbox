@@ -2,6 +2,8 @@ using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.LuaEditor;
 
@@ -17,6 +19,8 @@ public class LuaEditorScreen : EditorScreen
     public LuaFileList FileList;
     public LuaScriptView ScriptView;
     public LuaOutline Outline;
+    public LuaBattleView BattleView;
+    public LuaAnimationViewer AnimationViewer;
     public LuaDefinitionIndex Definitions;
 
     public LuaContainer SelectedContainer { get; private set; }
@@ -28,6 +32,8 @@ public class LuaEditorScreen : EditorScreen
         FileList = new(this);
         ScriptView = new(this);
         Outline = new(this);
+        BattleView = new(this);
+        AnimationViewer = new(this);
         Definitions = new(this);
     }
 
@@ -66,6 +72,11 @@ public class LuaEditorScreen : EditorScreen
         Window("LUA_Window_Script", "luaEditor_Script", EditorFocusContext.LuaEditor_Script, dsid, ScriptView.Draw,
             GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
         Window("LUA_Window_Outline", "luaEditor_Outline", EditorFocusContext.LuaEditor_Outline, dsid, Outline.Draw);
+        Window("LUA_Window_Battle", "luaEditor_Battle", EditorFocusContext.LuaEditor_Battle, dsid, BattleView.Draw,
+            GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
+
+        // The character viewport (a hosted Time Act Editor view): its own window, docked with the others
+        AnimationViewer.Display(dsid);
     }
 
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw, ImGuiWindowFlags? flags = null)
@@ -263,4 +274,13 @@ public class LuaEditorScreen : EditorScreen
     {
         ScriptView.CommitPending();
     }
+
+    // The character viewport's camera, rendering and resizing
+    public void Update(float deltaTime) => AnimationViewer.Update(deltaTime);
+
+    public void Draw(GraphicsDevice device, CommandList cl) => AnimationViewer.Draw(device, cl);
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device) => AnimationViewer.EditorResized(window, device);
+
+    public bool InputCaptured() => AnimationViewer.InputCaptured();
 }

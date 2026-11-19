@@ -11,6 +11,9 @@ public class LuaParseResult
     /// <summary>Tokens without comments, ending with EndOfFile</summary>
     public List<LuaToken> Tokens { get; set; }
 
+    /// <summary>The main chunk's syntax tree (null when there is a problem)</summary>
+    public LuaBlock Tree { get; set; }
+
     /// <summary>
     /// The global names the script assigns, in the order its .luagnl lists them: assignments in the main chunk in line
     /// order, then those inside functions in line order, each name once. (This order is how the compiler emits
@@ -32,8 +35,8 @@ public class LuaParseResult
 
 /// <summary>
 /// A Lua 5.0 syntax check (lparser.c's grammar, no code generation). It reports the first error, as Lua does, and
-/// collects what the editor needs from valid source: the assigned globals (for .luagnl), definitions (outline and
-/// go-to-definition) and the main chunk's statement ranges (for the local renaming).
+/// from valid source builds the syntax tree and collects what the editor needs: the assigned globals (for .luagnl),
+/// definitions (outline and go-to-definition) and the main chunk's statement ranges (for the local renaming).
 /// </summary>
 public class LuaParser
 {
@@ -75,7 +78,7 @@ public class LuaParser
         var parser = new LuaParser(tokens, result);
         try
         {
-            parser.Chunk();
+            result.Tree = parser.Chunk();
             foreach (var name in parser.TopGlobals.Concat(parser.NestedGlobals))
             {
                 if (!result.Globals.Contains(name))
@@ -84,6 +87,7 @@ public class LuaParser
         }
         catch (SyntaxError e)
         {
+            result.Tree = null;
             result.Problems.Add(new LuaProblem(e.At.Line, e.At.Column, e.Message));
         }
         return result;
@@ -133,6 +137,14 @@ public class LuaParser
 
     private static string Describe(LuaToken t) => t.Kind == LuaTokenKind.EndOfFile ? LOC.Get("LUA_Syntax_End_Of_File") : $"'{t.Text}'";
 
+    /// <summary>Sets a node's range: from first to the last token consumed</summary>
+    private TNode Done<TNode>(TNode node, int first) where TNode : LuaNode
+    {
+        node.First = first;
+        node.Last = Math.Max(first, P - 1);
+        return node;
+    }
+
     // --- scopes ---
 
     private void OpenScope() => Scopes.Add(new HashSet<string>());
@@ -161,15 +173,17 @@ public class LuaParser
 
     // --- grammar ---
 
-    private void Chunk()
+    private LuaBlock Chunk()
     {
+        var block = new LuaBlock();
+        var start = P;
         OpenScope();
         while (!BlockFollows())
         {
             var first = P;
-            var last = Statement();
-            if (FunctionDepth == 0 && Scopes.Count == 1)
-                Result.TopLevelStatements.Add((first, P - 1));
+            var (stat, last) = Statement();
+            block.Stats.Add(stat);
+            Result.TopLevelStatements.Add((first, P - 1));
             if (last)
             {
                 if (!BlockFollows())
@@ -180,74 +194,87 @@ public class LuaParser
         if (Cur.Kind != LuaTokenKind.EndOfFile)
             throw Error(LOC.Get("LUA_Syntax_Expected_End_Of_File", Describe(Cur)));
         CloseScope();
+        return Done(block, start);
     }
 
     private bool BlockFollows() =>
         Cur.Kind == LuaTokenKind.EndOfFile || Check("else") || Check("elseif") || Check("end") || Check("until");
 
     /// <summary>A block in its own scope</summary>
-    private void Block()
+    private LuaBlock Block()
     {
         OpenScope();
-        BlockBody();
+        var block = BlockBody();
         CloseScope();
+        return block;
     }
 
-    private void BlockBody()
+    private LuaBlock BlockBody()
     {
+        var block = new LuaBlock();
+        var start = P;
         while (!BlockFollows())
         {
             var first = P;
-            if (Statement())
+            var (stat, last) = Statement();
+            block.Stats.Add(stat);
+            if (last)
             {
                 if (!BlockFollows())
                     throw Error(LOC.Get("LUA_Syntax_Must_Be_Last", T[first].Text));
                 break;
             }
         }
+        return Done(block, start);
     }
 
-    /// <summary>One statement (and its optional ';'); true for return / break, which must end their block</summary>
-    private bool Statement()
+    /// <summary>One statement (and its optional ';'); Last is true for return / break, which must end their block</summary>
+    private (LuaStat Stat, bool Last) Statement()
     {
         var t = Cur;
+        var first = P;
         var isLast = false;
+        LuaStat stat;
 
         if (t.Is("if"))
         {
             Next();
-            Expression();
+            var s = new LuaIfStat();
+            var cond = Expression();
             Expect("then");
-            Block();
+            s.Clauses.Add((cond, Block()));
             while (Check("elseif"))
             {
                 Next();
-                Expression();
+                cond = Expression();
                 Expect("then");
-                Block();
+                s.Clauses.Add((cond, Block()));
             }
             if (Accept("else"))
-                Block();
+                s.Else = Block();
             ExpectMatch("end", "if", t.Line);
+            stat = s;
         }
         else if (t.Is("while"))
         {
             Next();
             Expression();
             Expect("do");
-            Block();
+            var body = Block();
             ExpectMatch("end", "while", t.Line);
+            stat = new LuaLoopStat { Keyword = "while", Body = body };
         }
         else if (t.Is("do"))
         {
             Next();
-            Block();
+            var body = Block();
             ExpectMatch("end", "do", t.Line);
+            stat = new LuaLoopStat { Keyword = "do", Body = body };
         }
         else if (t.Is("for"))
         {
             Next();
-            var first = ExpectName();
+            var firstName = ExpectName();
             OpenScope();
             if (Accept("="))
             {
@@ -256,11 +283,11 @@ public class LuaParser
                 Expression();
                 if (Accept(","))
                     Expression();
-                Declare(first.Text);
+                Declare(firstName.Text);
             }
             else
             {
-                var names = new List<string> { first.Text };
+                var names = new List<string> { firstName.Text };
                 while (Accept(","))
                     names.Add(ExpectName().Text);
                 if (!Check("in"))
@@ -271,17 +298,19 @@ public class LuaParser
                     Declare(n);
             }
             Expect("do");
-            Block();
+            var body = Block();
             CloseScope();
             ExpectMatch("end", "for", t.Line);
+            stat = new LuaLoopStat { Keyword = "for", Body = body };
         }
         else if (t.Is("repeat"))
         {
             Next();
             // Lua 5.0: the condition can't see the block's locals
-            Block();
+            var body = Block();
             ExpectMatch("until", "repeat", t.Line);
             Expression();
+            stat = new LuaLoopStat { Keyword = "repeat", Body = body };
         }
         else if (t.Is("function"))
         {
@@ -303,7 +332,7 @@ public class LuaParser
             if (!dotted && !method && !IsLocal(name.Text))
                 AssignGlobal(name.Text);
             Define(full, name, true);
-            FunctionBody(method);
+            stat = new LuaFunctionStat { Name = full, Function = FunctionBody(method, P) };
         }
         else if (t.Is("local"))
         {
@@ -312,38 +341,43 @@ public class LuaParser
             {
                 var name = ExpectName();
                 Declare(name.Text);
-                FunctionBody(false);
+                stat = new LuaFunctionStat { Name = name.Text, IsLocal = true, Function = FunctionBody(false, P) };
             }
             else
             {
-                var names = new List<string> { ExpectName().Text };
+                var s = new LuaLocalStat();
+                s.Names.Add(ExpectName().Text);
                 while (Accept(","))
-                    names.Add(ExpectName().Text);
+                    s.Names.Add(ExpectName().Text);
                 if (Accept("="))
-                    ExpressionList();
-                foreach (var n in names)
+                    s.Values.AddRange(ExpressionList());
+                foreach (var n in s.Names)
                     Declare(n);
+                stat = s;
             }
         }
         else if (t.Is("return"))
         {
             Next();
+            var s = new LuaReturnStat();
             if (!BlockFollows() && !Check(";"))
-                ExpressionList();
+                s.Values.AddRange(ExpressionList());
             isLast = true;
+            stat = s;
         }
         else if (t.Is("break"))
         {
             Next();
             isLast = true;
+            stat = new LuaBreakStat();
         }
         else
         {
-            ExpressionStatement();
+            stat = ExpressionStatement();
         }
 
         Accept(";");
-        return isLast;
+        return (Done(stat, first), isLast);
     }
 
     private void Define(string name, LuaToken at, bool isFunction)
@@ -352,23 +386,26 @@ public class LuaParser
     }
 
     /// <summary>A call, or an assignment to one or more variables</summary>
-    private void ExpressionStatement()
+    private LuaStat ExpressionStatement()
     {
         var first = Cur;
-        var (kind, name) = SuffixedExpression();
+        var (expr, kind, name) = SuffixedExpression();
 
         if (Check("=") || Check(","))
         {
+            var stat = new LuaAssignStat();
+            stat.Targets.Add(expr);
             var targets = new List<(TargetKind Kind, string Name, LuaToken At)> { (kind, name, first) };
             while (Accept(","))
             {
                 var at = Cur;
-                var (k, n) = SuffixedExpression();
+                var (e, k, n) = SuffixedExpression();
+                stat.Targets.Add(e);
                 targets.Add((k, n, at));
             }
             Expect("=");
             var valueStart = P;
-            ExpressionList();
+            stat.Values.AddRange(ExpressionList());
             var isFunctionValue = T[valueStart].Is("function");
 
             foreach (var target in targets)
@@ -384,35 +421,41 @@ public class LuaParser
                 else if (target.Kind == TargetKind.Field && FunctionDepth == 0 && isFunctionValue && targets.Count == 1)
                     Define(target.Name, target.At, true);
             }
-            return;
+            return stat;
         }
 
         if (kind != TargetKind.Call)
             throw new SyntaxError(first, LOC.Get("LUA_Syntax_Not_A_Statement"));
+        return new LuaCallStat { Call = (LuaCallExpr)expr };
     }
 
     private enum TargetKind { Name, Field, Call, Other }
 
     /// <summary>
-    /// prefixexp { '.' Name | '[' exp ']' | ':' Name args | args }. Returns what it ends with: a plain name, an indexed
-    /// field (assignable), a call, or something else; and the dotted name for a Name.Name… chain (for definitions).
+    /// prefixexp { '.' Name | '[' exp ']' | ':' Name args | args }. Returns the expression, what it ends with (a
+    /// plain name, an indexed field (assignable), a call, or something else), and the dotted name for a Name.Name…
+    /// chain (for definitions).
     /// </summary>
-    private (TargetKind Kind, string Name) SuffixedExpression()
+    private (LuaExpr Expr, TargetKind Kind, string Name) SuffixedExpression()
     {
+        var start = P;
         TargetKind kind;
         string name = null;
+        LuaExpr expr;
 
         if (Cur.Kind == LuaTokenKind.Name)
         {
             name = Next().Text;
             kind = TargetKind.Name;
+            expr = Done(new LuaNameExpr { Name = name }, start);
         }
         else if (Check("("))
         {
             var open = Next();
-            Expression();
+            var inner = Expression();
             ExpectMatch(")", "(", open.Line);
             kind = TargetKind.Other;
+            expr = Done(new LuaParenExpr { Inner = inner }, start);
         }
         else
             throw Error(LOC.Get("LUA_Syntax_Unexpected_Symbol", Describe(Cur)));
@@ -424,55 +467,64 @@ public class LuaParser
                 var field = ExpectName().Text;
                 name = name != null && kind is TargetKind.Name or TargetKind.Field ? $"{name}.{field}" : null;
                 kind = TargetKind.Field;
+                expr = Done(new LuaFieldExpr { Object = expr, Name = field }, start);
             }
             else if (Check("["))
             {
                 Next();
-                Expression();
+                var key = Expression();
                 Expect("]");
                 kind = TargetKind.Field;
                 name = null;
+                expr = Done(new LuaIndexExpr { Object = expr, Key = key }, start);
             }
             else if (Accept(":"))
             {
-                ExpectName();
-                CallArguments();
+                var method = ExpectName().Text;
+                var call = new LuaCallExpr { Callee = expr, Method = method };
+                CallArguments(call);
                 kind = TargetKind.Call;
                 name = null;
+                expr = Done(call, start);
             }
             else if (Check("(") || Check("{") || Cur.Kind == LuaTokenKind.String)
             {
-                CallArguments();
+                var call = new LuaCallExpr { Callee = expr };
+                CallArguments(call);
                 kind = TargetKind.Call;
                 name = null;
+                expr = Done(call, start);
             }
             else
                 break;
         }
-        return (kind, name);
+        return (expr, kind, name);
     }
 
-    private void CallArguments()
+    private void CallArguments(LuaCallExpr call)
     {
+        var start = P;
         if (Cur.Kind == LuaTokenKind.String)
         {
             Next();
+            call.Arguments.Add(Done(new LuaStringExpr(), start));
             return;
         }
         if (Check("{"))
         {
-            TableConstructor();
+            call.Arguments.Add(TableConstructor());
             return;
         }
         var open = Expect("(");
         if (!Check(")"))
-            ExpressionList();
+            call.Arguments.AddRange(ExpressionList());
         ExpectMatch(")", "(", open.Line);
     }
 
-    private void FunctionBody(bool isMethod)
+    private LuaFunctionExpr FunctionBody(bool isMethod, int start)
     {
-        var start = Cur;
+        var startToken = Cur;
+        var func = new LuaFunctionExpr();
         FunctionDepth++;
         OpenScope();
         if (isMethod)
@@ -487,25 +539,30 @@ public class LuaParser
                 {
                     // Lua 5.0 varargs arrive in the table 'arg'
                     Declare("arg");
+                    func.IsVararg = true;
                     break;
                 }
-                Declare(ExpectName().Text);
+                var p = ExpectName().Text;
+                func.Parameters.Add(p);
+                Declare(p);
                 if (!Accept(","))
                     break;
             }
         }
         Expect(")");
-        BlockBody();
+        func.Body = BlockBody();
         CloseScope();
         FunctionDepth--;
-        ExpectMatch("end", "function", start.Line);
+        ExpectMatch("end", "function", startToken.Line);
+        return Done(func, start);
     }
 
-    private void ExpressionList()
+    private List<LuaExpr> ExpressionList()
     {
-        Expression();
+        var list = new List<LuaExpr> { Expression() };
         while (Accept(","))
-            Expression();
+            list.Add(Expression());
+        return list;
     }
 
     // lparser.c priorities (left, right)
@@ -528,57 +585,63 @@ public class LuaParser
 
     private const int UnaryPriority = 8;
 
-    private void Expression() => SubExpression(0);
+    private LuaExpr Expression() => SubExpression(0);
 
-    private void SubExpression(int limit)
+    private LuaExpr SubExpression(int limit)
     {
+        var start = P;
+        LuaExpr left;
         if (Check("not") || Check("-"))
         {
-            Next();
-            SubExpression(UnaryPriority);
+            var op = Next().Text;
+            var operand = SubExpression(UnaryPriority);
+            left = Done(new LuaUnaryExpr { Operator = op, Operand = operand }, start);
         }
         else
-            SimpleExpression();
+            left = SimpleExpression();
 
         while (BinaryPriority(Cur) is { } p && p.Left > limit)
         {
-            Next();
-            SubExpression(p.Right);
+            var op = Next().Text;
+            var right = SubExpression(p.Right);
+            left = Done(new LuaBinaryExpr { Operator = op, Left = left, Right = right }, start);
         }
+        return left;
     }
 
-    private void SimpleExpression()
+    private LuaExpr SimpleExpression()
     {
+        var start = P;
         var t = Cur;
         switch (t.Kind)
         {
             case LuaTokenKind.Number:
+                Next();
+                double.TryParse(t.Text, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var v);
+                return Done(new LuaNumberExpr { Value = v }, start);
             case LuaTokenKind.String:
                 Next();
-                return;
+                return Done(new LuaStringExpr(), start);
             case LuaTokenKind.Keyword when t.Text is "nil" or "true" or "false":
                 Next();
-                return;
+                return Done(new LuaConstantExpr { Keyword = t.Text }, start);
             case LuaTokenKind.Keyword when t.Text == "function":
                 Next();
-                FunctionBody(false);
-                return;
+                return FunctionBody(false, start);
         }
 
         if (Check("{"))
-        {
-            TableConstructor();
-            return;
-        }
+            return TableConstructor();
 
         if (Check("..."))
             throw Error(LOC.Get("LUA_Syntax_No_Vararg_Expression"));
 
-        SuffixedExpression();
+        return SuffixedExpression().Expr;
     }
 
-    private void TableConstructor()
+    private LuaTableExpr TableConstructor()
     {
+        var start = P;
         var open = Expect("{");
         while (!Check("}"))
         {
@@ -603,5 +666,6 @@ public class LuaParser
                 break;
         }
         ExpectMatch("}", "{", open.Line);
+        return Done(new LuaTableExpr(), start);
     }
 }

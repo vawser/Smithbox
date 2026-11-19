@@ -43,10 +43,20 @@ public class TimeActViewportWindow
         }
     }
 
+    /// <summary>A hosting editor's placement of the viewport window (its dock and window class); null for the Time Act Editor's own</summary>
+    public Action PlaceWindow;
+
     public void Display(uint dockspaceId)
     {
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_TimeActEditorView);
+        if (PlaceWindow != null)
+        {
+            PlaceWindow();
+        }
+        else
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_TimeActEditorView);
+        }
 
         if (Viewport is VulkanViewport vulkanViewport)
         {

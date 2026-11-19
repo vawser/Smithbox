@@ -614,6 +614,10 @@ public class VulkanViewport : IViewport
         {
             var view = timeActUniverse.View;
 
+            // A view another editor hosts is focused when the host says so
+            if (view.IsHosted)
+                return view.HostIsFocused?.Invoke() == true && view.ViewportWindow.Viewport == this;
+
             return view.Editor.ViewHandler.ActiveView == view
                 && view.ViewportWindow.Viewport == this;
         }
@@ -734,6 +738,15 @@ public class VulkanViewport : IViewport
     {
         if (Owner is TimeActUniverse timeActUniverse)
         {
+            // A view another editor hosts: the host sets its own focus context
+            if (timeActUniverse.View.IsHosted)
+            {
+                IsActiveViewport = ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows);
+                if (IsActiveViewport)
+                    timeActUniverse.View.HostFocus();
+                return;
+            }
+
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TimeActEditor_Viewport);

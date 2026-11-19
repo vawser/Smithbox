@@ -18,6 +18,16 @@ public class LuaDefinitionIndex
     /// <summary>A line for the script view while aicommon is being read, or a lookup found nothing; else null</summary>
     public string Status { get; private set; }
 
+    /// <summary>aicommon's numeric globals (goal IDs, enums: NAME = number at the top level); null until it has been read</summary>
+    public IReadOnlyDictionary<string, double> Constants { get; private set; }
+
+    /// <summary>Starts reading aicommon in the background, if not yet (for <see cref="Constants"/>)</summary>
+    public void EnsureIndex()
+    {
+        if (Common == null)
+            StartBuild();
+    }
+
     public LuaDefinitionIndex(LuaEditorScreen editor)
     {
         Editor = editor;
@@ -96,6 +106,7 @@ public class LuaDefinitionIndex
         if (common == null)
         {
             Common = new();
+            Constants = new Dictionary<string, double>();
             return;
         }
 
@@ -103,6 +114,7 @@ public class LuaDefinitionIndex
         BuildTask = Task.Run(() =>
         {
             var index = new Dictionary<string, List<(LuaScript, int)>>();
+            var constants = new Dictionary<string, double>();
             try
             {
                 if (common.EnsureLoaded())
@@ -112,6 +124,15 @@ public class LuaDefinitionIndex
                         var parse = script.Parse;
                         if (parse == null)
                             continue;
+                        if (parse.Tree != null)
+                        {
+                            foreach (var s in parse.Tree.Stats)
+                            {
+                                if (s is LuaAssignStat { Targets.Count: 1, Values.Count: 1 } a && a.Targets[0] is LuaNameExpr n &&
+                                    a.Values[0].AsNumber() is { } v)
+                                    constants[n.Name] = v;
+                            }
+                        }
                         foreach (var d in parse.Definitions)
                         {
                             foreach (var key in new[] { d.Name, d.Name.Split('.', ':')[^1] }.Distinct())
@@ -128,6 +149,7 @@ public class LuaDefinitionIndex
             {
                 Smithbox.LogError(this, LOC.Get("LUA_Definition_Index_Failed", common.Name), e);
             }
+            Constants = constants;
             Common = index;
             Status = null;
         });

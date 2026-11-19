@@ -2,6 +2,8 @@ using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.LuaEditor;
 
@@ -63,6 +65,9 @@ public class LuaEditorStub : IEditorStub
             if (Project.Handler.LuaEditor != null)
             {
                 Project.Handler.FocusedEditor = Project.Handler.LuaEditor;
+
+                // The character viewport's camera and playback
+                Project.Handler.LuaEditor.Update(dt);
             }
         }
         else
@@ -70,6 +75,23 @@ public class LuaEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();
+        }
+    }
+
+    // The character viewport renders under the editor's windows, as the Time Act Editor's does (ProjectEntry calls these)
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        if (Project.Handler.LuaEditor != null && Project.Handler.FocusedEditor is LuaEditorScreen)
+        {
+            Project.Handler.LuaEditor.EditorResized(window, device);
+        }
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (Project.Handler.LuaEditor != null && Project.Handler.FocusedEditor is LuaEditorScreen)
+        {
+            Project.Handler.LuaEditor.Draw(device, cl);
         }
     }
 }

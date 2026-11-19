@@ -52,6 +52,7 @@ public static class GUI
     public static uint PROJECTILE_EDITOR_VIEW_DOCK_GROUP = 1120;
     public static uint FACEGEN_EDITOR_VIEW_DOCK_GROUP = 1121;
     public static uint LUA_EDITOR_VIEW_DOCK_GROUP = 1122;
+    public static uint LUA_EDITOR_VIEWPORT_DOCK_GROUP = 1123;
 
     public static ImGuiWindowClass DockGroup_EditorView = new(
         classId: EDITOR_DOCK_GROUP, 
@@ -191,6 +192,11 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_LuaEditorView = new(
         classId: LUA_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    // The character viewport, inside the Lua Editor's viewport display window
+    public static ImGuiWindowClass DockGroup_LuaEditorViewport = new(
+        classId: LUA_EDITOR_VIEWPORT_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_SoundEditor = new(

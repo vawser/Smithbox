@@ -257,10 +257,11 @@ public static class LuaNames
                 else
                     break;
             }
-            if (args.Count != 6 || !t[j + 1].Is(")"))
+            // (ai, goal, weights, funcs, after[, params]): some scripts pass no params table
+            if (args.Count is not (5 or 6) || !t[j + 1].Is(")"))
                 continue;
 
-            for (int k = 0; k < 4; k++)
+            for (int k = 0; k < args.Count - 2; k++)
             {
                 if (DecompilerName.IsMatch(args[k + 2]) && args[k + 2].Contains("_local"))
                     wanted[args[k + 2]] = BattleTables[k];
@@ -277,6 +278,9 @@ public static class LuaNames
         for (int p = 0; p < parts.Length; p++)
         {
             var w = parts[p];
+            // An all-caps word (REGIST_FUNC) folds to registFunc, not rEGISTFUNC
+            if (w.Length > 1 && w.All(c => !char.IsLower(c)))
+                w = w[0] + w[1..].ToLowerInvariant();
             sb.Append(p == 0 ? char.ToLowerInvariant(w[0]) : char.ToUpperInvariant(w[0]));
             sb.Append(w, 1, w.Length - 1);
         }

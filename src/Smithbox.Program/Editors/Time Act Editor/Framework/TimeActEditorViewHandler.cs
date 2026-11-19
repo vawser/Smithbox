@@ -15,6 +15,12 @@ public class TimeActEditorViewHandler
     public List<TimeActEditorView> Views = new();
     public TimeActEditorView ActiveView;
 
+    /// <summary>
+    /// Views another editor hosts (the Lua Editor's battle-goal viewport): not shown or made active here, but they
+    /// count when looking for the view a source is open in, as views share each source's time acts and model
+    /// </summary>
+    public List<TimeActEditorView> ExternalViews = new();
+
     public bool AddNewView = false;
     public TimeActEditorView ViewToClose = null;
 
@@ -84,7 +90,8 @@ public class TimeActEditorViewHandler
         if (source == null)
             return null;
 
-        return Views.FirstOrDefault(e => e != null && e != except && e.Selection.SelectedTimeActContainerWrapper == source);
+        return Views.Concat(ExternalViews)
+            .FirstOrDefault(e => e != null && e != except && e.Selection.SelectedTimeActContainerWrapper == source);
     }
 
     /// <summary>
@@ -124,7 +131,7 @@ public class TimeActEditorViewHandler
     /// </summary>
     public void DisposeViews()
     {
-        foreach (var view in Views)
+        foreach (var view in Views.Concat(ExternalViews))
         {
             view?.Dispose();
         }

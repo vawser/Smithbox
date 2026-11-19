@@ -227,7 +227,9 @@ public static class FocusManager
         return Focus is EditorFocusContext.LuaEditor_None
             or EditorFocusContext.LuaEditor_FileList
             or EditorFocusContext.LuaEditor_Script
-            or EditorFocusContext.LuaEditor_Outline;
+            or EditorFocusContext.LuaEditor_Outline
+            or EditorFocusContext.LuaEditor_Battle
+            or EditorFocusContext.LuaEditor_Viewport;
     }
 
     public static bool IsInHavokEditor()
@@ -380,6 +382,8 @@ public enum EditorFocusContext
     LuaEditor_FileList,
     LuaEditor_Script,
     LuaEditor_Outline,
+    LuaEditor_Battle,
+    LuaEditor_Viewport,
 
     HavokEditor_None,
     HavokEditor_CategoryList,

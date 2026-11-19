@@ -58,6 +58,28 @@ public class TimeActComboBuilderTool
 
     public bool IsPlaying => ActiveStep >= 0;
 
+    /// <summary>
+    /// Plays animations of the selected source one after another (each to its end, root motion carried on), as a
+    /// combo that replaces the source's own in this view. For other editors: the Lua Editor plays a battle act's
+    /// animations this way.
+    /// </summary>
+    public void PlaySequence(IEnumerable<long> animationIds)
+    {
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (source == null)
+            return;
+
+        if (ActiveStep >= 0)
+            StopCombo(false);
+
+        var combo = GetCombo(source);
+        combo.Clear();
+        combo.AddRange(animationIds.Select(id => new ComboStep { AnimationID = id }));
+
+        StartCombo(0);
+    }
+
     private List<ComboStep> GetCombo(TimeActContainerWrapper source)
     {
         if (!Combos.TryGetValue(source, out var combo))
