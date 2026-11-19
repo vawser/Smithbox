@@ -185,6 +185,12 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             bank.SaveAll();
         }
 
+        // Menu movies edited in the GFx mode
+        if (bank?.Movies != null && bank.Movies.HasUnsavedChanges)
+        {
+            bank.Movies.SaveAll();
+        }
+
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
     }
@@ -197,7 +203,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     // Matches what Save writes: every container with an edited TPF
     public List<string> GetUnsavedFiles()
     {
-        return Project.Handler?.TextureData?.PrimaryBank?.GetUnsavedFiles() ?? new();
+        var bank = Project.Handler?.TextureData?.PrimaryBank;
+        var files = bank?.GetUnsavedFiles() ?? new();
+        if (bank?.Movies != null)
+            files.AddRange(bank.Movies.GetUnsavedFiles());
+        return files;
     }
 
     public void SaveUnsaved()

@@ -23,8 +23,6 @@
 - HKS intepreter (to link with behaviors and animation playback)
     - Work allow for powerful visualization of movesets
 
-- Scaleform Editor
-
 - Icon Builder
     - Preview a model with adjustable bones so it can be placed in a specific way
     - Include consistent camera angles
@@ -54,7 +52,6 @@
 # Param Editor TODO
 #----------------------------------------------------
 
-- DS2 flags params as edited automatically on load
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 - Add fault-tolerant CSV import (i.e. CSVs from older paramdef versions)
 
@@ -81,6 +78,10 @@
 #----------------------------------------------------
 # Texture Editor TODO
 #----------------------------------------------------
+
+- GFX Editor:
+    - Add GFX reload
+    - Add auto-icon insert for SDT
 
 #----------------------------------------------------
 # Time Act Editor TODO

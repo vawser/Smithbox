@@ -23,11 +23,15 @@ public class TextureBank : IDisposable
 
     public Dictionary<FileDictionaryEntry, ShoeboxLayoutContainer> ShoeboxEntries = new();
 
+    /// <summary>The Scaleform movies of the GFx mode.</summary>
+    public MovieBank Movies;
+
     public TextureBank(string name,  ProjectEntry project, VirtualFileSystem targetFs)
     {
         Project = project;
         Name = name;
         TargetFS = targetFs;
+        Movies = new MovieBank(project, targetFs);
     }
 
     public async Task<bool> Setup()
@@ -41,6 +45,8 @@ public class TextureBank : IDisposable
         bool packedTextureTaskResult = await packedTextureTask;
 
         SetupProjectFiles();
+
+        Movies.Setup();
 
         Task<bool> shoeboxTask = SetupShoeboxLayouts();
         bool shoeboxTaskResult = await shoeboxTask;
@@ -912,6 +918,8 @@ public class TextureBank : IDisposable
         Entries = null;
         PackedEntries = null;
         ShoeboxEntries = null;
+        Movies?.Dispose();
+        Movies = null;
     }
     #endregion
 }

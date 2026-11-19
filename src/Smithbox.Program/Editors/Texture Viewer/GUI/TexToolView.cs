@@ -12,6 +12,8 @@ public class TexToolView
 
     public TextureExport TextureExport;
 
+    public ScaleformConfigurationTool ScaleformConfiguration;
+
     private ToolSections Sections = new();
 
     public TexToolView(TexEditorView view, ProjectEntry project)
@@ -20,6 +22,7 @@ public class TexToolView
         Project = project;
 
         TextureExport = new TextureExport(view, Project);
+        ScaleformConfiguration = new ScaleformConfigurationTool(view, Project);
     }
 
     public void Display()
@@ -35,6 +38,15 @@ public class TexToolView
 
         // Export Texture
         TextureExport.Display();
+
+        // GFX: the GFx mode's tools, for projects with menu movies
+        if (ScaleformConfiguration.IsAvailable)
+        {
+            ToolSections.Category(LOC.Get("TEXVIEW_ToolCategory_GFX"));
+
+            // Scaleform Configuration (preview substitutes for placeholder images)
+            ScaleformConfiguration.OnToolWindow();
+        }
 
         Sections.End();
     }

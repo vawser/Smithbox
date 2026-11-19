@@ -86,6 +86,9 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary TexturePackedFiles = new();
     public FileDictionary ShoeboxFiles = new();
 
+    /// <summary>Scaleform movies of the menus (/menu/*.gfx), for the Texture Viewer's GFx mode.</summary>
+    public FileDictionary MovieFiles = new();
+
     public FileDictionary TimeActFiles = new();
 
     public FileDictionary HavokAnimationFiles = new();
@@ -457,6 +460,7 @@ public class ProjectFileLocator : IDisposable
         var textureFiles = new HashSet<FileDictionaryEntry>();
         var texturePackedFiles = new HashSet<FileDictionaryEntry>();
         var shoeboxFiles = new HashSet<FileDictionaryEntry>();
+        var movieFiles = new HashSet<FileDictionaryEntry>();
         var timeActFiles = new HashSet<FileDictionaryEntry>();
         var entryFileListFiles = new HashSet<FileDictionaryEntry>();
         var loadListFiles = new HashSet<FileDictionaryEntry>();
@@ -659,6 +663,10 @@ public class ProjectFileLocator : IDisposable
             if (ext == "sblytbnd" && !isSd)
                 shoeboxFiles.Add(entry);
 
+            // Scaleform movies (Texture Viewer GFx mode): the menu screens, not the font libraries in /font
+            if (ext == "gfx" && folder.StartsWith("/menu") && !isSd)
+                movieFiles.Add(entry);
+
             // Animation
             if (ext == "anibnd" && !isSd)
             {
@@ -724,6 +732,7 @@ public class ProjectFileLocator : IDisposable
         TextureFiles.Entries = textureFiles;
         TexturePackedFiles.Entries = texturePackedFiles;
         ShoeboxFiles.Entries = shoeboxFiles;
+        MovieFiles.Entries = movieFiles;
         TimeActFiles.Entries = timeActFiles;
         EntryFileListFiles.Entries = entryFileListFiles;
         LoadListFiles.Entries = loadListFiles;
@@ -966,6 +975,7 @@ public class ProjectFileLocator : IDisposable
         TextureFiles = null;
         TexturePackedFiles = null;
         ShoeboxFiles = null;
+        MovieFiles = null;
     }
     #endregion
 }

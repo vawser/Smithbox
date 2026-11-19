@@ -34,10 +34,36 @@ public class TexContainerList
             LOC.Get("TEXVIEW_ContainerList_Header_Containers"),
             LOC.Get("TEXVIEW_ContainerList_Header_Containers_TT"));
 
+        // Texture or GFX mode, for projects with menu movies
+        if (View.HasMovies)
+        {
+            var mode = View.Mode;
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.BeginCombo("##textureViewerMode", ModeName(mode)))
+            {
+                foreach (var option in Enum.GetValues<TexEditorView.EditorMode>())
+                {
+                    if (ImGui.Selectable($"{ModeName(option)}##mode{option}", option == mode))
+                        View.Mode = option;
+                    GUI.Tooltip(LOC.Get(option == TexEditorView.EditorMode.Gfx ? "TEXVIEW_Mode_GFX_TT" : "TEXVIEW_Mode_Texture_TT"));
+                }
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("TEXVIEW_Mode_TT"));
+        }
+
         EditorFilters.DisplayFramedListFilter("textureViewer_ContainerList",
             ref FileListFilter, ref ExactFileListFilter);
 
         ImGui.BeginChild("ContainerList", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        // GFX mode: the menu movies, one list
+        if (View.Mode == TexEditorView.EditorMode.Gfx)
+        {
+            DisplayMovieList();
+            ImGui.EndChild();
+            return;
+        }
 
         ImGui.BeginTabBar("sourceTabs");
 
@@ -307,6 +333,69 @@ public class TexContainerList
         }
     }
 
+    private static string ModeName(TexEditorView.EditorMode mode)
+    {
+        return LOC.Get(mode == TexEditorView.EditorMode.Gfx ? "TEXVIEW_Mode_GFX" : "TEXVIEW_Mode_Texture");
+    }
+
+    /// <summary>
+    /// The GFX mode's container list: the menu movies (.gfx), one list. Selecting one opens it in this view.
+    /// </summary>
+    private void DisplayMovieList()
+    {
+        var movies = Project.Handler?.TextureData?.PrimaryBank?.Movies;
+        if (movies?.Entries == null || movies.Entries.Count == 0)
+            return;
+
+        var entries = movies.Entries
+            .Where(e => EditorFilters.IsMatch(FileListFilter, e.Key.Path, ExactFileListFilter, "", true, true))
+            .OrderBy(e => e.Key.Path, System.StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(entries.Count);
+
+        while (clipper.Step())
+        {
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+            {
+                var (entry, contents) = entries[i];
+                var isSelected = View.Movie.Entry != null && View.Movie.Entry.Path == entry.Path;
+                var isModified = contents != null && contents.IsModified;
+                var isProject = movies.IsProjectFile(entry);
+                var displayName = isModified ? $"{entry.Path} *" : entry.Path;
+
+                if (isModified)
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextureEditor_ModifiedFile_Text);
+                else if (isProject)
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextureEditor_ProjectFile_Text);
+
+                var clicked = ImGui.Selectable($"{displayName}###movie_{entry.Path}", isSelected);
+
+                if (isModified || isProject)
+                {
+                    ImGui.PopStyleColor();
+                    GUI.Tooltip(LOC.Get(isModified ? "TEXVIEW_FileList_Modified_TT" : "TEXVIEW_FileList_Project_File_TT"));
+                }
+
+                if (clicked)
+                {
+                    View.Movie.Open(entry);
+                    View.Editor.ViewHandler.ActiveView = View;
+                }
+
+                if (ImGui.BeginPopupContextItem($"context_movie_{entry.Path}"))
+                {
+                    if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_Path")}##copyMoviePath"))
+                        ImGui.SetClipboardText(entry.Path);
+                    ImGui.EndPopup();
+                }
+            }
+        }
+
+        clipper.End();
+    }
+
     private FileDictionaryEntry TargetTextureBinderEntry;
     private Dictionary<FileDictionaryEntry, BinderContents> TargetDict;
     private bool LoadTextureBinder = false;
@@ -321,6 +410,8 @@ public class TexContainerList
 
         if (LoadTextureBinder)
         {
+            // A texture container leaves the GFx mode
+            View.Movie.Close();
             View.Selection.ResetSelection();
 
             if (TargetTextureBinderEntry.Extension == "tpfbhd")

@@ -30,6 +30,38 @@ public class TexEditorView : IEditorView
     public TexNamePrompt NamePrompt = new();
     public LayoutEditor LayoutEditor;
 
+    /// <summary>The GFx mode: while a movie is open, the lists, viewer and properties show the movie.</summary>
+    public MovieView Movie;
+
+    /// <summary>What the view edits, picked in the Container List: textures, or Scaleform movies.</summary>
+    public enum EditorMode { Texture, Gfx }
+
+    private EditorMode ModeValue = EditorMode.Texture;
+
+    /// <summary>
+    /// The view's mode. GFX needs the project to have menu movies; leaving a mode closes what it had open (the movie,
+    /// or the texture container), so the windows never mix the two.
+    /// </summary>
+    public EditorMode Mode
+    {
+        get => HasMovies ? ModeValue : EditorMode.Texture;
+        set
+        {
+            if (value == ModeValue)
+                return;
+
+            if (value == EditorMode.Texture)
+                Movie.Close();
+            else
+                Selection.ResetSelection();
+
+            ModeValue = value;
+        }
+    }
+
+    /// <summary>The project has menu movies (/menu/*.gfx), so the GFX mode can be picked.</summary>
+    public bool HasMovies => Project.Handler?.TextureData?.PrimaryBank?.Movies?.Entries?.Count > 0;
+
     /// <summary>Which list the mouse was last over, so Copy/Paste/Duplicate/Delete act on its items.</summary>
     public enum ListFocus { None, Containers, Tpfs, Textures }
     public ListFocus FocusedList = ListFocus.None;
@@ -53,6 +85,7 @@ public class TexEditorView : IEditorView
         TextureImport = new TextureImport(this, Project);
         Commands = new TpfCommands(this, Project);
         LayoutEditor = new LayoutEditor(this, Project);
+        Movie = new MovieView(this, Project);
         ToolView = new TexToolView(this, Project);
 
         DisplayViewport = new TexDisplayViewport(this, Project);
@@ -87,7 +120,10 @@ public class TexEditorView : IEditorView
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_File_List")}###textureEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        // GFX mode: the windows show the open movie (or how to open one)
+        var movieMode = Mode == EditorMode.Gfx;
+
+        if (ImGui.Begin($@"{(movieMode ? Movie.HierarchyTitle : LOC.Get("TEXVIEW_Window_File_List"))}###textureEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -95,11 +131,14 @@ public class TexEditorView : IEditorView
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
-                FocusedList = ListFocus.Tpfs;
+                FocusedList = movieMode ? ListFocus.None : ListFocus.Tpfs;
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            FileList.Display(width, height);
+            if (movieMode)
+                Movie.DisplayHierarchy();
+            else
+                FileList.Display(width, height);
         }
 
         ImGui.End();
@@ -107,7 +146,7 @@ public class TexEditorView : IEditorView
         // Texture List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Texture_List")}###textureEditor_TextureList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{(movieMode ? Movie.ImagesTitle : LOC.Get("TEXVIEW_Window_Texture_List"))}###textureEditor_TextureList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -115,11 +154,14 @@ public class TexEditorView : IEditorView
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
-                FocusedList = ListFocus.Textures;
+                FocusedList = movieMode ? ListFocus.None : ListFocus.Textures;
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            TextureList.Display(width, height);
+            if (movieMode)
+                Movie.DisplayImages();
+            else
+                TextureList.Display(width, height);
         }
 
         ImGui.End();
@@ -127,7 +169,8 @@ public class TexEditorView : IEditorView
         // Texture Viewport
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Viewer")}###textureEditor_Viewer_{viewIndex}", GUI.GetTextureViewerFlags()))
+        if (ImGui.Begin($@"{(movieMode ? Movie.CanvasTitle : LOC.Get("TEXVIEW_Window_Viewer"))}###textureEditor_Viewer_{viewIndex}",
+            movieMode ? GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse : GUI.GetTextureViewerFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -139,7 +182,10 @@ public class TexEditorView : IEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            DisplayViewport.Display();
+            if (movieMode)
+                Movie.DisplayCanvas();
+            else
+                DisplayViewport.Display();
         }
 
         ImGui.End();
@@ -161,7 +207,10 @@ public class TexEditorView : IEditorView
                     Editor.ViewHandler.ActiveView = this;
                 }
 
-                Properties.Display();
+                if (movieMode)
+                    Movie.DisplayProperties();
+                else
+                    Properties.Display();
             }
 
             ImGui.End();
