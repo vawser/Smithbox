@@ -1395,6 +1395,10 @@ public class CFG
     public bool MapDataEditor_CategoryView_Display_Empty_Base_Categories = true;
     public bool MapDataEditor_CategoryView_Display_Empty_Sub_Categories = true;
 
+    // Entry view: the field columns shown for each entry type, keyed by the type's full name.
+    // A type without an entry shows the default columns.
+    public Dictionary<string, List<string>> MapDataEditor_EntryView_Columns = new Dictionary<string, List<string>>();
+
     #endregion
 
     #region Behavior Editor

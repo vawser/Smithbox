@@ -494,51 +494,60 @@ public class MapContentView
     {
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{map.Name}_{imguiID}"))
         {
-            View.ReorderAction.OnContext(ent);
-
-            // Copy, Paste (N objects), Paste into Source Map
-            View.DuplicateToMapAction.OnClipboardContext(canCopy: true);
-
-            ImGui.Separator();
-
-            View.DuplicateAction.OnContext();
-            View.DeleteAction.OnContext();
-            View.DuplicateToMapAction.OnContext();
-            View.TranslateAction.OnContext();
-            View.RotateAction.OnContext();
-            View.ScrambleAction.OnContext(ent);
-            View.ReplicateAction.OnContext(ent);
-
-            ImGui.Separator();
-
-            View.FrameAction.OnContext(ent);
-            View.PullToCameraAction.OnContext(ent);
-            View.SnapToMeshAction.OnContext(ent);
-
-            ImGui.Separator();
-
-            View.EditorVisibilityAction.OnContext();
-            View.GameVisibilityAction.OnContext();
-
-            ImGui.Separator();
-
-            View.SelectAllAction.OnContext(ent);
-            View.SelectCollisionRefAction.OnContext(ent);
-
-            ImGui.Separator();
-
-            View.AdjustToGridAction.OnContext();
-
-            ImGui.Separator();
-
-            View.EntityInfoAction.OnContext(ent);
-
-            ImGui.Separator();
-
-            View.SelectionGroupsTool.ContentsContextMenu(ent);
+            DisplayMapObjectContextActions(ent);
 
             ImGui.EndPopup();
         }
+    }
+
+    /// <summary>
+    /// The context actions for a map object. They apply to the selection, so the object must be selected first.
+    /// Shared with the Map Data window, so its entries offer the same actions.
+    /// </summary>
+    public void DisplayMapObjectContextActions(Entity ent)
+    {
+        View.ReorderAction.OnContext(ent);
+
+        // Copy, Paste (N objects), Paste into Source Map
+        View.DuplicateToMapAction.OnClipboardContext(canCopy: true);
+
+        ImGui.Separator();
+
+        View.DuplicateAction.OnContext();
+        View.DeleteAction.OnContext();
+        View.DuplicateToMapAction.OnContext();
+        View.TranslateAction.OnContext();
+        View.RotateAction.OnContext();
+        View.ScrambleAction.OnContext(ent);
+        View.ReplicateAction.OnContext(ent);
+
+        ImGui.Separator();
+
+        View.FrameAction.OnContext(ent);
+        View.PullToCameraAction.OnContext(ent);
+        View.SnapToMeshAction.OnContext(ent);
+
+        ImGui.Separator();
+
+        View.EditorVisibilityAction.OnContext();
+        View.GameVisibilityAction.OnContext();
+
+        ImGui.Separator();
+
+        View.SelectAllAction.OnContext(ent);
+        View.SelectCollisionRefAction.OnContext(ent);
+
+        ImGui.Separator();
+
+        View.AdjustToGridAction.OnContext();
+
+        ImGui.Separator();
+
+        View.EntityInfoAction.OnContext(ent);
+
+        ImGui.Separator();
+
+        View.SelectionGroupsTool.ContentsContextMenu(ent);
     }
 
     /// <summary>

@@ -80,23 +80,24 @@ public class MsbCategoryView
                     continue;
                 }
 
-                // Skip empty base categories if the toggle is off
-                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories)
-                {
-                    var subCats = MsbCategories.GetSubCategories(Project, name);
-                    bool anyEntries = subCats.Any(kvp => View.MapDataView.EntryView.GetCachedEntryCount(kvp.Value) > 0);
+                var count = GetBaseCategoryCount(name, type);
 
-                    // Also count the base itself for direct categories
-                    if (!anyEntries && View.MapDataView.EntryView.GetCachedEntryCount(type) == 0)
-                        continue;
+                // Skip empty base categories if the toggle is off
+                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories && count == 0)
+                {
+                    continue;
                 }
 
                 bool selected = Selection.SelectedBaseCategory == name;
 
-                if (ImGui.Selectable(name, selected))
+                var right = ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X;
+
+                if (ImGui.Selectable($"{name}##baseCategory_{name}", selected))
                 {
                     SelectBaseCategory(name, type, baseCategories);
                 }
+
+                DisplayCount(count, right);
 
                 // Right-click context menu placeholder
                 //if (ImGui.BeginPopupContextItem($"##BaseCtx_{name}"))
@@ -178,23 +179,52 @@ public class MsbCategoryView
                     continue;
                 }
 
+                var count = View.MapDataView.EntryView.GetCachedEntryCount(type);
+
                 // Skip empty sub-categories if the toggle is off
-                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories)
+                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories && count == 0)
                 {
-                    if (View.MapDataView.EntryView.GetCachedEntryCount(type) == 0)
-                        continue;
+                    continue;
                 }
 
                 bool selected = Selection.SelectedSubCategory == name;
 
-                if (ImGui.Selectable(name, selected))
+                var right = ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X;
+
+                if (ImGui.Selectable($"{name}##subCategory_{name}", selected))
                 {
                     SelectSubCategory(name, type);
                 }
+
+                DisplayCount(count, right);
             }
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// The entries of a base category: those of its sub-categories, or of its own type for a direct category
+    /// </summary>
+    private int GetBaseCategoryCount(string name, Type type)
+    {
+        var subCats = MsbCategories.GetSubCategories(Project, name);
+
+        ICollection<Type> types = subCats.Count > 0 ? subCats.Values : new[] { type };
+
+        return View.MapDataView.EntryView.GetCachedEntryCount(types);
+    }
+
+    /// <summary>
+    /// Shows a category's entry count, right-aligned on the line of its selectable
+    /// </summary>
+    private void DisplayCount(int count, float right)
+    {
+        var text = count.ToString("N0");
+        var width = ImGui.CalcTextSize(text).X;
+
+        ImGui.SameLine(right - width);
+        ImGui.TextDisabled(text);
     }
 
     private void SelectSubCategory(string name, Type type)

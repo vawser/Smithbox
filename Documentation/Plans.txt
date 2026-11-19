@@ -39,9 +39,6 @@
 - NR MSB: research/sync with ER
 - AC6 MSB: research
 
-- Improve Map Data view: mainly properties
-
-    
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------
