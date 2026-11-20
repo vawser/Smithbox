@@ -29,6 +29,9 @@ public class LuaSimulation
     private float Clock;
     private readonly Dictionary<long, float> LastPlayed = new();
 
+    // When each act was last picked (AC6's EZOP_SetCoolTime is by act, not by animation)
+    private readonly Dictionary<long, float> LastPicked = new();
+
     // Start the next cycle on the next frame (never from inside the player's callback)
     private bool NextPending;
     private float WaitUntil;
@@ -54,6 +57,7 @@ public class LuaSimulation
         Viewer.Player.HoldWhenDone = true;
         History.Clear();
         LastPlayed.Clear();
+        LastPicked.Clear();
         Clock = 0;
         WaitUntil = 0;
         NextPending = true;
@@ -86,6 +90,8 @@ public class LuaSimulation
             }
             if (input.CooldownAnimation is { } anim)
                 input.Boolean = LastPlayed.TryGetValue(anim, out var at) && Clock - at < (input.CooldownSeconds ?? 0);
+            if (input.CooldownAct is { } coolAct)
+                input.Boolean = LastPicked.TryGetValue(coolAct, out var pickedAt) && Clock - pickedAt < (input.CooldownSeconds ?? 0);
         }
     }
 
@@ -143,6 +149,7 @@ public class LuaSimulation
 
         Current = (act, percent.GetValueOrDefault(act));
         History.Add(Current.Value);
+        LastPicked[act] = Clock;
         if (History.Count > 50)
             History.RemoveAt(0);
         Viewer.Status = null;

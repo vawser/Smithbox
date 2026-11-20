@@ -161,6 +161,7 @@
 #----------------------------------------------------
 # Lua Editor TODO
 #----------------------------------------------------
+- AC6: needs connection between Lua and animations (as AC6 uses BHV)
 
 - Extend support to the other games
 

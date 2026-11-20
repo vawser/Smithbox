@@ -131,7 +131,13 @@ public sealed class LuaParenExpr : LuaExpr
     public LuaExpr Inner;
 }
 
-public sealed class LuaTableExpr : LuaExpr { }
+/// <summary>{ … }: its fields in order — [key] = value (Key), name = value (Name), or a positional value (neither)</summary>
+public sealed class LuaTableExpr : LuaExpr
+{
+    public List<LuaTableField> Fields { get; } = new();
+}
+
+public sealed record LuaTableField(LuaExpr Key, string Name, LuaExpr Value);
 
 public static class LuaSyntaxExtensions
 {
@@ -236,6 +242,14 @@ public static class LuaSyntaxExtensions
                 break;
             case LuaParenExpr p:
                 foreach (var x in p.Inner.Calls()) yield return x;
+                break;
+            case LuaTableExpr table:
+                foreach (var field in table.Fields)
+                {
+                    if (field.Key != null)
+                        foreach (var x in field.Key.Calls()) yield return x;
+                    foreach (var x in field.Value.Calls()) yield return x;
+                }
                 break;
         }
     }

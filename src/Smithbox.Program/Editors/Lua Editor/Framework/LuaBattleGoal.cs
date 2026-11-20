@@ -267,6 +267,18 @@ public class LuaBattleGoal
             sections.Add(new Section { Goal = goal, Activate = fn.Fn, Interrupt = interruptFn });
         }
 
+        // AC6: the logic script is the battle goal, in aicommon's EZOP framework (TacCtrlFuncArr, OpSetArr)
+        if (ReadEzop(src, parse, functions, out var ezopWhy) is { } ezop)
+        {
+            why = null;
+            return ezop;
+        }
+        if (ezopWhy != null)
+        {
+            why = ezopWhy;
+            return null;
+        }
+
         if (!sections.Any(x => x.Activate != null))
         {
             why = "LUA_Battle_Why_No_Activate";
@@ -602,6 +614,125 @@ public class LuaBattleGoal
         return result;
     }
 
+    // --- AC6: aicommon's EZOP framework ---
+
+    /// <summary>
+    /// An AC6 logic script as a battle goal (aicommon's EZOP framework): TacCtrlFuncArr[logicId] = function (ai, goal)
+    /// is the act table — weights by branch (tbl[act] = n, or EZOP_CActLot(tbl, act, weight, otherwise, conditions…)),
+    /// cooldowns (EZOP_SetCoolTime(ai, tbl, act, seconds, weight)), return EZOP_MakeActLotTable(tbl); OpSetArr[logicId]
+    /// = { [act] = function (ai, goal) … arr:Add(EZOP_SetAct_X(ai, …)) … end } are the acts; the interrupt is the
+    /// function EZOP_SetUpInterruptFunc registers. Each is found inline or through a main-chunk local. Null (why null)
+    /// when the script isn't one; why set when it is but has no act table.
+    /// </summary>
+    private static LuaBattleGoal ReadEzop(string src, LuaParseResult parse,
+        Dictionary<string, (LuaNode Node, LuaFunctionExpr Fn)> functions, out string why)
+    {
+        why = null;
+        var t = parse.Tokens;
+        int Line(LuaNode n) => t[n.First].Line;
+        LuaLiteral? Literal(LuaExpr e) => e.AsNumber() is { } v ? new LuaLiteral(e.First, e.Last, v, Line(e)) : null;
+
+        // Main-chunk locals by name (local f0_local10 = function …, local f0_local8 = { … })
+        var chunkLocals = new Dictionary<string, LuaExpr>();
+        foreach (var l in parse.Tree.Stats.OfType<LuaLocalStat>())
+            for (int i = 0; i < l.Names.Count && i < l.Values.Count; i++)
+                chunkLocals[l.Names[i]] = l.Values[i];
+        LuaExpr Resolve(LuaExpr e) => e is LuaNameExpr n && chunkLocals.TryGetValue(n.Name, out var v) ? v
+            : e is LuaNameExpr g && functions.TryGetValue(g.Name, out var fn) ? fn.Fn : e;
+
+        LuaExpr Registered(string array) => parse.Tree.Stats.OfType<LuaAssignStat>()
+            .Where(a => a.Targets.Count == 1 && a.Values.Count == 1 && a.Targets[0] is LuaIndexExpr { Object: LuaNameExpr { Name: var o } } && o == array)
+            .Select(a => Resolve(a.Values[0])).FirstOrDefault();
+
+        if (Registered("TacCtrlFuncArr") is not LuaFunctionExpr tactics)
+            return null;
+
+        var weights = tactics.Body.AllStatements().OfType<LuaReturnStat>()
+            .Select(r => r.Values.Count == 1 && r.Values[0] is LuaCallExpr { Callee: LuaNameExpr { Name: "EZOP_MakeActLotTable" } } m &&
+                         m.Arguments.Count == 1 && m.Arguments[0] is LuaNameExpr w ? w.Name : null)
+            .FirstOrDefault(n => n != null);
+        if (weights == null)
+        {
+            why = "LUA_Battle_Why_No_Ezop_Table";
+            return null;
+        }
+
+        var result = new LuaBattleGoal
+        {
+            GoalName = "TacCtrlFuncArr",
+            Chunk = parse.Tree,
+            Table = MainTable,
+            Activate = tactics,
+            WeightTable = weights,
+            ActivateLine = Line(tactics),
+        };
+        result.Tables.Add(MainTable);
+
+        // Acts: the OpSetArr table's [act] = function entries, and their operations (arr:Add(EZOP_SetAct_X(ai, …)))
+        if (Registered("OpSetArr") is LuaTableExpr acts)
+        {
+            foreach (var field in acts.Fields)
+            {
+                if (field.Key?.AsNumber() is not { } id || field.Value is not LuaFunctionExpr actFn)
+                    continue;
+                var act = result.Act((int)id);
+                act.Function = $"Act{LuaBattleGoal.Format(id)}";
+                act.RegisterLine = Line(field.Key);
+                act.FunctionLine = Line(field.Key);
+                act.FunctionNode = actFn;
+                foreach (var c in actFn.Body.AllStatements().SelectMany(s => s.Calls()))
+                {
+                    if (c is not { Method: "Add", Arguments.Count: 1 } || c.Arguments[0] is not LuaCallExpr { Method: null, Callee: LuaNameExpr opName } op)
+                        continue;
+                    var sub = new LuaSubGoal { Goal = opName.Name, Line = Line(op) };
+                    foreach (var arg in op.Arguments.Skip(1))
+                        sub.Arguments.Add((arg.SourceOf(src, t), Literal(arg)));
+                    act.SubGoals.Add(sub);
+                }
+            }
+        }
+
+        // Cooldowns
+        foreach (var s in tactics.Body.AllStatements().OfType<LuaCallStat>())
+        {
+            if (s.Call is { Method: null, Callee: LuaNameExpr { Name: "EZOP_SetCoolTime" } } cool && cool.Arguments.Count >= 5 &&
+                cool.Arguments[1] is LuaNameExpr { Name: var tbl } && tbl == weights && cool.Arguments[2].AsNumber() is { } coolAct)
+                result.Act((int)coolAct).Cooldowns.Add((null, Literal(cool.Arguments[3]), Line(s)));
+        }
+
+        // Weights by branch: tbl[act] = n, and calls handed the table with a literal act and weight (EZOP_CActLot)
+        int? KeyOf(LuaExpr target, string table) =>
+            target is LuaIndexExpr { Object: LuaNameExpr o, Key: var k } && o.Name == table && k.AsNumber() is { } n ? (int)n : null;
+        (int, LuaExpr)? CallKey(LuaCallExpr c) =>
+            c.Arguments.Count > 2 && c.Arguments[0] is LuaNameExpr { Name: var a0 } && a0 == weights && c.Arguments[1].AsNumber() is { } ca
+                ? ((int)ca, c.Arguments[2]) : null;
+        result.ReadRows(tactics.Body, new List<string>(), weights, src, t, KeyOf, Literal, null, CallKey);
+        foreach (var row in result.Rows)
+            foreach (var id in row.Weights.Keys)
+                result.Act(id);
+
+        if (result.Acts.Count == 0)
+        {
+            why = "LUA_Battle_Why_No_Acts";
+            return null;
+        }
+
+        // The interrupt: EZOP_SetUpInterruptFunc(ai, InterrunptCallBack_…) in the setup
+        LuaFunctionExpr interrupt = null;
+        foreach (var c in parse.Tree.AllStatements().SelectMany(s => s.Calls()))
+        {
+            if (c is { Method: null, Callee: LuaNameExpr { Name: "EZOP_SetUpInterruptFunc" } } && c.Arguments.Count >= 2 &&
+                Resolve(c.Arguments[1]) is LuaFunctionExpr fn)
+            {
+                interrupt = fn;
+                break;
+            }
+        }
+
+        result.Finish(parse, interrupt, functions, tactics.Body);
+        return result;
+    }
+
     /// <summary>How a goal's method is named among <see cref="Functions"/> and act functions (Goal.Act01)</summary>
     public const string MethodPrefix = "Goal.";
 
@@ -628,8 +759,10 @@ public class LuaBattleGoal
     }
 
     /// <param name="localKey">An odds goal's weight locals: local w = 20 sets act w's weight too (null: not read)</param>
+    /// <param name="callKey">A call statement setting an act's weight (EZOP_CActLot(tbl, act, weight, …)): the act and the weight argument</param>
     private void ReadRows(LuaBlock block, List<string> path, string weights, string src, List<LuaToken> t,
-        Func<LuaExpr, string, int?> keyOf, Func<LuaExpr, LuaLiteral?> literal, Func<string, int?> localKey = null)
+        Func<LuaExpr, string, int?> keyOf, Func<LuaExpr, LuaLiteral?> literal, Func<string, int?> localKey = null,
+        Func<LuaCallExpr, (int Act, LuaExpr Weight)?> callKey = null)
     {
         LuaWeightRow run = null;
 
@@ -639,9 +772,16 @@ public class LuaBattleGoal
             {
                 LuaAssignStat { Targets.Count: 1, Values.Count: 1 } a => keyOf(a.Targets[0], weights),
                 LuaLocalStat { Names.Count: 1, Values.Count: 1 } l when localKey != null => localKey(l.Names[0]),
+                LuaCallStat cs when callKey?.Invoke(cs.Call) is { } ck => ck.Act,
                 _ => null,
             };
-            var assigned = s switch { LuaAssignStat a2 => a2.Values[0], LuaLocalStat l2 when l2.Values.Count == 1 => l2.Values[0], _ => null };
+            var assigned = s switch
+            {
+                LuaAssignStat a2 => a2.Values[0],
+                LuaLocalStat l2 when l2.Values.Count == 1 => l2.Values[0],
+                LuaCallStat cs2 when callKey?.Invoke(cs2.Call) is { } ck2 => ck2.Weight,
+                _ => null,
+            };
             if (key is { } act && assigned != null && literal(assigned) is { } value)
             {
                 if (run == null)
@@ -661,14 +801,14 @@ public class LuaBattleGoal
                     for (int c = 0; c < i.Clauses.Count; c++)
                     {
                         var label = (c == 0 ? "if " : "elseif ") + i.Clauses[c].Condition.SourceOf(src, t);
-                        ReadRows(i.Clauses[c].Body, Append(path, label), weights, src, t, keyOf, literal, localKey);
+                        ReadRows(i.Clauses[c].Body, Append(path, label), weights, src, t, keyOf, literal, localKey, callKey);
                     }
                     if (i.Else != null)
-                        ReadRows(i.Else, Append(path, "else"), weights, src, t, keyOf, literal, localKey);
+                        ReadRows(i.Else, Append(path, "else"), weights, src, t, keyOf, literal, localKey, callKey);
                     break;
                 case LuaLoopStat l:
                     run = null;
-                    ReadRows(l.Body, Append(path, l.Keyword + " …"), weights, src, t, keyOf, literal, localKey);
+                    ReadRows(l.Body, Append(path, l.Keyword + " …"), weights, src, t, keyOf, literal, localKey, callKey);
                     break;
                 default:
                     // Other statements (a SetCoolTime, a call) end the run, so rows keep their source order

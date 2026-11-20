@@ -643,29 +643,31 @@ public class LuaParser
     {
         var start = P;
         var open = Expect("{");
+        var table = new LuaTableExpr();
         while (!Check("}"))
         {
             if (Check("["))
             {
                 Next();
-                Expression();
+                var key = Expression();
                 Expect("]");
                 Expect("=");
-                Expression();
+                table.Fields.Add(new LuaTableField(key, null, Expression()));
             }
             else if (Cur.Kind == LuaTokenKind.Name && T[P + 1].Is("="))
             {
+                var name = Cur.Text;
                 Next();
                 Next();
-                Expression();
+                table.Fields.Add(new LuaTableField(null, name, Expression()));
             }
             else
-                Expression();
+                table.Fields.Add(new LuaTableField(null, null, Expression()));
 
             if (!Accept(",") && !Accept(";"))
                 break;
         }
         ExpectMatch("}", "{", open.Line);
-        return Done(new LuaTableExpr(), start);
+        return Done(table, start);
     }
 }

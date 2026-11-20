@@ -48,6 +48,9 @@ public class LuaSituationInput
     /// </summary>
     public LuaCallExpr SceneQuery;
 
+    /// <summary>For an EZOP cooldown (AC6): the act it is about (the simulation knows when that act last ran)</summary>
+    public long? CooldownAct;
+
     /// <summary>For ai:GetStringIndexedNumber(key): the key's source text ("Dist_Step_Small"); the script may set it</summary>
     public string IndexedKey;
 
@@ -56,7 +59,7 @@ public class LuaSituationInput
     public double? CooldownSeconds;
 
     /// <summary>Set by the simulation, not the user, while it runs</summary>
-    public bool IsLive => SceneQuery != null || CooldownAnimation != null;
+    public bool IsLive => SceneQuery != null || CooldownAnimation != null || CooldownAct != null;
 
     /// <summary>A question the character's NpcParam / NpcThinkParam rows answer (see <see cref="LuaSituation.NpcValue"/>)</summary>
     public LuaCallExpr NpcQuery;
@@ -221,7 +224,8 @@ public class LuaSituation
         Constants = constants ?? new Dictionary<string, double>();
         CommonFunctions = commonFunctions ?? new Dictionary<string, LuaFunctionExpr>();
 
-        // The main chunk's locals, as it sets them when the script loads (BB: local f0_local2 = 2.6 - f0_local0): the
+        // The main chunk's locals, as it sets them when the script loads (BB: local f0_local2 = 2.6 - f0_local0; AC6: local
+        // f0_local3 = {_GOOD = 1, …}, compared as f0_local3._GOOD): the
         // goal's functions read them. A value the simulation can't know is left out (read as nil, as before).
         if (goal.Chunk != null)
         {
@@ -232,7 +236,7 @@ public class LuaSituation
                 {
                     var v = i < l.Values.Count ? Eval(l.Values[i], chunk) : Nil;
                     chunk.Locals[l.Names[i]] = v;
-                    if (v.Kind is VKind.Number or VKind.Bool or VKind.Symbol)
+                    if (v.Kind is VKind.Number or VKind.Bool or VKind.Symbol or VKind.Table)
                         ChunkValues[l.Names[i]] = v;
                 }
             }
@@ -338,6 +342,27 @@ public class LuaSituation
                     break;
                 case LuaLoopStat loop:
                     Collect(loop.Body);
+                    break;
+                // EZOP_SetCoolTime: whether the act ran within its seconds is the user's (or the simulation's) to say
+                case LuaCallStat cool when IsEzopCooldown(cool.Call):
+                {
+                    var c = cool.Call;
+                    var act = c.Arguments[2].AsNumber();
+                    var coolInput = Input(EzopCooldownKey(c),
+                        LOC.Get("LUA_Situation_Cooldown_Act", act is { } av ? LuaBattleGoal.Format(av) : Text(c.Arguments[2]),
+                            c.Arguments[3].AsNumber() is { } sec ? LuaBattleGoal.Format(sec) : Text(c.Arguments[3])),
+                        Text(c), c);
+                    coolInput.UsedAsBoolean = true;
+                    coolInput.CooldownAct = act is { } ca ? (long)ca : null;
+                    coolInput.CooldownSeconds = c.Arguments[3].AsNumber();
+                    break;
+                }
+                // A call handing over the weight table to a function the simulation runs (EZOP_CActLot(tbl, act, weight,
+                // otherwise, conditions…); not Common_Battle_Activate, which it doesn't): what its
+                // other arguments read decides the weight
+                case LuaCallStat set when PassesWeightTable(set.Call) && Helper(set.Call) != null:
+                    foreach (var arg in set.Call.Arguments.Skip(1))
+                        Visit(arg, Hint.Boolean);
                     break;
             }
         }
@@ -491,7 +516,7 @@ public class LuaSituation
         var a = c.Arguments;
         return c.Method switch
         {
-            "GetDist" or "GetDistY" or "GetDistYSigned" or "GetToTargetAngle" or "GetRelativeAngleFromTarget" => a.Count == 1 && Who(a[0]) == "TARGET_ENE_0",
+            "GetDist" or "GetDistXZ" or "GetOriginDist" or "GetDistY" or "GetDistYSigned" or "GetToTargetAngle" or "GetRelativeAngleFromTarget" => a.Count == 1 && Who(a[0]) == "TARGET_ENE_0",
             "IsInsideTarget" => a.Count >= 3 && Who(a[0]) == "TARGET_ENE_0" && a[1] is LuaNameExpr,
             "IsInsideTargetCustom" => a.Count >= 6 && Who(a[0]) is { } f && Who(a[1]) is { } t && f != t && a[2] is LuaNameExpr,
             "IsInsideTargetEx" => a.Count >= 5 && Who(a[0]) is { } f2 && Who(a[1]) is { } t2 && f2 != t2 && a[2] is LuaNameExpr,
@@ -564,7 +589,8 @@ public class LuaSituation
     {
         if (run.Depth >= MaxHelperDepth)
             return Unknown;
-        var sub = new Run { Live = true, Foreign = true, Depth = run.Depth + 1, TargetDistance = run.TargetDistance };
+        // (its weight writes, through a weight table passed to it, are the caller's: EZOP_CActLot)
+        var sub = new Run { Live = true, Foreign = true, Depth = run.Depth + 1, TargetDistance = run.TargetDistance, Result = run.Result };
         for (int i = 0; i < fn.Parameters.Count; i++)
             sub.Locals[fn.Parameters[i]] = i < call.Arguments.Count ? Eval(call.Arguments[i], run) : Nil;
         Exec(fn.Body, sub);
@@ -641,7 +667,8 @@ public class LuaSituation
             // The characters stand on the same flat ground
             case "GetDistY" or "GetDistYSigned":
                 return 0.0;
-            case "GetDist":
+            // (AC6 measures between origins, GetOriginDist; on flat ground that and the XZ distance are the distance)
+            case "GetDist" or "GetDistXZ" or "GetOriginDist":
                 return Scene.Distance;
             case "GetToTargetAngle":
                 return (360 - Wrap(Scene.TargetAngleFromSelf)) % 360;
@@ -660,6 +687,17 @@ public class LuaSituation
     private enum Hint { Boolean, Number }
 
     private static bool IsCooldown(LuaCallExpr c) => c.Callee is LuaNameExpr { Name: "SetCoolTime" } && c.Arguments.Count >= 5;
+
+    /// <summary>AC6's EZOP_SetCoolTime(ai, tbl, act, seconds, weight), on the goal's weight table</summary>
+    private bool IsEzopCooldown(LuaCallExpr c) =>
+        c is { Method: null, Callee: LuaNameExpr { Name: "EZOP_SetCoolTime" }, Arguments.Count: >= 5 } &&
+        c.Arguments[1] is LuaNameExpr { Name: var t } && t == Goal.WeightTable;
+
+    private string EzopCooldownKey(LuaCallExpr c) => $"cooldown-act:{Text(c.Arguments[2])}";
+
+    /// <summary>A call statement handing the goal's weight table to a function (EZOP_CActLot(tbl, …)), which may set weights</summary>
+    private bool PassesWeightTable(LuaCallExpr c) =>
+        Goal.WeightTable != null && c.Arguments.Any(a => a is LuaNameExpr { Name: var n } && n == Goal.WeightTable);
 
     private static bool IsComparison(string op) => op is "==" or "~=" or "<" or "<=" or ">" or ">=";
 
@@ -774,9 +812,24 @@ public class LuaSituation
 
     // --- evaluation ---
 
-    private enum VKind { Nil, Bool, Number, Symbol, Unknown }
+    // Table: a table value (T); WeightTable: the goal's weight table passed by name (an EZOP helper sets its acts' weights)
+    private enum VKind { Nil, Bool, Number, Symbol, Unknown, Table, WeightTable }
 
-    private readonly record struct V(VKind Kind, double N = 0, bool B = false, string S = null)
+    /// <summary>A table the script builds (EZOP_SetAct_*: its operation record), by key: "n:3" for [3], "s:name" for .name</summary>
+    private sealed class TableValue
+    {
+        public readonly Dictionary<string, V> Items = new();
+        public static string KeyOf(V key) => key.Kind switch
+        {
+            VKind.Number => "n:" + key.N.ToString("R", CultureInfo.InvariantCulture),
+            VKind.Symbol => "s:" + key.S,
+            _ => null,
+        };
+        public V Get(string key) => key != null && Items.TryGetValue(key, out var v) ? v : Nil;
+        public V Get(int index) => Get("n:" + index.ToString(CultureInfo.InvariantCulture));
+    }
+
+    private readonly record struct V(VKind Kind, double N = 0, bool B = false, string S = null, TableValue T = null)
     {
         public bool Truthy => Kind switch
         {
@@ -792,7 +845,7 @@ public class LuaSituation
     private sealed class Run
     {
         public readonly Dictionary<string, V> Locals = new();
-        public readonly LuaSituationResult Result = new();
+        public LuaSituationResult Result = new();
         public bool Returned;
 
         // Act planning: each call statement that runs, and the live distance to the target
@@ -929,6 +982,12 @@ public class LuaSituation
         bool Truthy(int i) => i < c.Arguments.Count && Eval(c.Arguments[i], run).Truthy;
         var line = Tokens[c.First].Line;
 
+        // AC6: arr:Add(EZOP_SetAct_X(ai, …)) — aicommon's EZOP_SetAct_X builds the operation record the engine runs:
+        // {EZOP_OPERATION.kind, life, params, end checks, …}; its own code is run for it
+        if (c is { Method: "Add", Arguments.Count: 1 } && c.Arguments[0] is LuaCallExpr { Method: null, Callee: LuaNameExpr { Name: var opName } } op &&
+            FunctionNamed(opName) is { } opFunction && CallHelper(opFunction, op, run) is { Kind: VKind.Table, T: { } record })
+            return EzopStep(record, opName, line);
+
         // Approach_Act_Flex(ai, goal, distance, runDistance, alwaysRunDistance, runOdds, guardOdds[, walkLife, runLife])
         if (c.Callee is LuaNameExpr { Name: "Approach_Act_Flex" } && c.Arguments.Count >= 7)
         {
@@ -1019,6 +1078,59 @@ public class LuaSituation
         return step;
     }
 
+    /// <summary>
+    /// An EZOP operation record as a step: its kind (EZOP_OPERATION.MOVE_APPROACH …) says what it does; an approach runs
+    /// until its end check (EZOP_OpEndChk_CloserThan {target, distance}) holds, a leave until FartherThan does. Attacks,
+    /// boosts and jumps are engine operations without an animation of their own: listed, not played.
+    /// </summary>
+    private static LuaActStep EzopStep(TableValue record, string opName, int line)
+    {
+        var kindValue = record.Get(1);
+        var kind = kindValue.Kind == VKind.Symbol && kindValue.S.StartsWith("EZOP_OPERATION.", StringComparison.Ordinal)
+            ? kindValue.S["EZOP_OPERATION.".Length..] : kindValue.S ?? "";
+        var step = new LuaActStep { Goal = $"{opName} ({kind})", Line = line, Life = record.Get(2) is { Kind: VKind.Number } life ? life.N : 5 };
+
+        // The first end check: {label, check, {target, distance, …}}
+        double? EndDistance(string check)
+        {
+            if (record.Get(4) is not { Kind: VKind.Table, T: { } checks })
+                return null;
+            foreach (var entry in checks.Items.Values)
+            {
+                if (entry is { Kind: VKind.Table, T: { } e } && e.Get(2) is { Kind: VKind.Symbol } fn && fn.S == check &&
+                    e.Get(3) is { Kind: VKind.Table, T: { } args } && args.Get(2) is { Kind: VKind.Number } d)
+                    return d.N;
+            }
+            return null;
+        }
+
+        if (kind.Contains("APPROACH", StringComparison.Ordinal))
+        {
+            step.Kind = LuaStepKind.Approach;
+            step.Distance = EndDistance("EZOP_OpEndChk_CloserThan") ?? 5;
+        }
+        else if (kind.Contains("LEAVE", StringComparison.Ordinal))
+        {
+            step.Kind = LuaStepKind.Leave;
+            step.Distance = EndDistance("EZOP_OpEndChk_FartherThan") ?? 10;
+        }
+        else if (kind.Contains("SIDEWAY", StringComparison.Ordinal))
+        {
+            step.Kind = LuaStepKind.Sideway;
+            step.Angle = 45;
+        }
+        else if (kind.Contains("TURN", StringComparison.Ordinal))
+        {
+            step.Kind = LuaStepKind.Turn;
+            step.Angle = 30;
+        }
+        else if (kind == "WAIT")
+            step.Kind = LuaStepKind.Wait;
+        else
+            step.Kind = LuaStepKind.Other;
+        return step;
+    }
+
     // The string-indexed numbers the last Evaluate left set (they stay on the character): act planning and the
     // Interrupt read them
     private Dictionary<string, V> LastIndexed = new();
@@ -1069,6 +1181,14 @@ public class LuaSituation
                     for (int i = 0; i < a.Targets.Count; i++)
                     {
                         var value = i < a.Values.Count ? Eval(a.Values[i], run) : Nil;
+                        // A helper writing the weight table it was given (EZOP_CActLot: tbl[act] = weight)
+                        if (run.Foreign && a.Targets[i] is LuaIndexExpr { Object: LuaNameExpr wt, Key: var wk } &&
+                            run.Locals.TryGetValue(wt.Name, out var held) && held.Kind == VKind.WeightTable &&
+                            Eval(wk, run) is { Kind: VKind.Number } written)
+                        {
+                            run.Result.Weights[(int)written.N] = value.Kind == VKind.Number ? value.N : 0;
+                            continue;
+                        }
                         if (!run.Foreign && a.Targets[i] is LuaIndexExpr { Object: LuaNameExpr t, Key: var k } && t.Name == Goal.WeightTable && k.AsNumber() is { } act)
                         {
                             run.Result.Weights[(int)act] = value.Kind == VKind.Number ? value.N : 0;
@@ -1132,6 +1252,27 @@ public class LuaSituation
                     break;
 
                 case LuaCallStat call:
+                    // EZOP_SetCoolTime(ai, tbl, act, seconds, weight): the act's weight is that while it is cooling down
+                    if (!run.Foreign && IsEzopCooldown(call.Call))
+                    {
+                        if (ByKey.TryGetValue(EzopCooldownKey(call.Call), out var ec) && ec.Boolean &&
+                            call.Call.Arguments[2].AsNumber() is { } coolAct)
+                            run.Result.Weights[(int)coolAct] = Eval(call.Call.Arguments[4], run) is { Kind: VKind.Number } cw ? cw.N : 0;
+                        break;
+                    }
+                    // A helper given the weight table (EZOP_CActLot(tbl, act, weight, otherwise, conditions…)): its own code
+                    // sets the weight; the literal it set is the one in effect
+                    if (!run.Foreign && PassesWeightTable(call.Call) && Helper(call.Call) is { } setter)
+                    {
+                        CallHelper(setter, call.Call, run);
+                        if (call.Call.Arguments.Count > 2 && call.Call.Arguments[1].AsNumber() is { } setAct &&
+                            call.Call.Arguments[2].AsNumber() is { } setWeight &&
+                            run.Result.Weights.TryGetValue((int)setAct, out var now) && now == setWeight)
+                        {
+                            run.Result.AssignedLiterals.Add(call.Call.Arguments[2].First);
+                            run.Result.LastWeightLine = Tokens[s.First].Line;
+                        }
+                    }
                     // ai:SetStringIndexedNumber(key, value): the script's own value, for GetStringIndexedNumber(key) to read
                     // (a value the simulation can't know, such as a random roll, isn't kept: the read falls back to its input)
                     if (!run.Foreign && call.Call is { Method: "SetStringIndexedNumber", Arguments.Count: 2 } set)
@@ -1176,6 +1317,9 @@ public class LuaSituation
                 return Eval(p.Inner, run);
 
             case LuaNameExpr n:
+                // The goal's weight table by name (passed to an EZOP helper: EZOP_CActLot(tbl, act, weight, …))
+                if (!run.Foreign && n.Name == Goal.WeightTable)
+                    return WeightTableValue;
                 if (run.Locals.TryGetValue(n.Name, out var local))
                     return local;
                 if (!run.Foreign && ByKey.TryGetValue(n.Name, out var global))
@@ -1224,7 +1368,7 @@ public class LuaSituation
                 return npcValue is bool nb ? new V(VKind.Bool, B: nb) : new V(VKind.Number, Convert.ToDouble(npcValue, CultureInfo.InvariantCulture));
 
             // Planning without a scene: the distance given
-            case LuaCallExpr { Method: "GetDist", Arguments: [LuaNameExpr { Name: "TARGET_ENE_0" }] } when run.TargetDistance is { } d:
+            case LuaCallExpr { Method: "GetDist" or "GetDistXZ" or "GetOriginDist", Arguments: [LuaNameExpr { Name: "TARGET_ENE_0" }] } when run.TargetDistance is { } d:
                 return new V(VKind.Number, d);
 
             case LuaCallExpr c:
@@ -1239,6 +1383,18 @@ public class LuaSituation
             case LuaIndexExpr { Object: LuaNameExpr t, Key: var k } when !run.Foreign && t.Name == Goal.WeightTable && k.AsNumber() is { } act:
                 return new V(VKind.Number, run.Result.Weights.GetValueOrDefault((int)act));
 
+            // Tables the script builds (an EZOP operation record), read by index and field; a field of a constant table
+            // (EZOP_OPERATION.MOVE_APPROACH) is that name
+            case LuaTableExpr table:
+                return new V(VKind.Table, T: Build(table, run));
+            case LuaIndexExpr ix when Eval(ix.Object, run) is { Kind: VKind.Table, T: { } indexed }:
+                return indexed.Get(TableValue.KeyOf(Eval(ix.Key, run)));
+            case LuaFieldExpr field:
+                var owner = Eval(field.Object, run);
+                if (owner is { Kind: VKind.Table, T: { } fielded })
+                    return fielded.Get("s:" + field.Name);
+                return owner.Kind == VKind.Symbol ? new V(VKind.Symbol, S: owner.S + "." + field.Name) : Unknown;
+
             case LuaUnaryExpr u:
                 var operand = Eval(u.Operand, run);
                 if (u.Operator == "not")
@@ -1251,6 +1407,24 @@ public class LuaSituation
             default:
                 return Unknown;
         }
+    }
+
+    private static readonly V WeightTableValue = new(VKind.WeightTable);
+
+    /// <summary>A table constructor's value: positional fields from 1, [key] = value, name = value</summary>
+    private TableValue Build(LuaTableExpr table, Run run)
+    {
+        var t = new TableValue();
+        var next = 1;
+        foreach (var f in table.Fields)
+        {
+            var key = f.Key != null ? TableValue.KeyOf(Eval(f.Key, run))
+                : f.Name != null ? "s:" + f.Name
+                : "n:" + (next++).ToString(CultureInfo.InvariantCulture);
+            if (key != null)
+                t.Items[key] = Eval(f.Value, run);
+        }
+        return t;
     }
 
     private V Binary(LuaBinaryExpr b, Run run)
@@ -1308,6 +1482,8 @@ public class LuaSituation
         VKind.Bool => x.B == y.B,
         VKind.Number => x.N == y.N,
         VKind.Symbol => x.S == y.S,
+        VKind.Table => ReferenceEquals(x.T, y.T),
+        VKind.WeightTable => true,
         _ => false,
     };
 

@@ -57,6 +57,8 @@
     { "Key": "LUA_Situation_Input_TT", "Text": "{0}\nLine {1}. Click to show it in the script." },
     { "Key": "LUA_Situation_Other", "Text": "(other)" },
     { "Key": "LUA_Situation_Cooldown", "Text": "Animation {0} used in the last {1} s" },
+    { "Key": "LUA_Situation_Cooldown_Act", "Text": "Act {0} run in the last {1} s" },
+    { "Key": "LUA_Battle_Why_No_Ezop_Table", "Text": "Not a battle goal: the tactics function (TacCtrlFuncArr) doesn't return EZOP_MakeActLotTable(...) of a weight table." },
     { "Key": "LUA_Situation_Set_By", "Text": "Weights last set at" },
     { "Key": "LUA_Situation_Undecided", "Text": "Couldn't decide '{0}' (counted as false)" },
     { "Key": "LUA_Situation_Loop_Skipped", "Text": "A '{0}' loop was skipped" },
