@@ -8,7 +8,7 @@ public enum LuaBinderKind
     Battle,
     Logic,
     Common,
-    /// <summary>A map's binder (SDT, BB, DS3: m10_00_00_00), holding the battle and logic scripts of its characters</summary>
+    /// <summary>A map's binder (SDT, BB, DS3, DS1R: m10_00_00_00), holding the battle and logic scripts of its characters</summary>
     Map,
     Other,
 }

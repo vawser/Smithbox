@@ -594,7 +594,7 @@ public class LuaCharacter : IDisposable
             () => Alive,
             AnimationSource: AnimationName != model ? AnimationName : null);
 
-        Locomotion = new LuaLocomotion(project, AnimationName);
+        Locomotion = new LuaLocomotion(project, AnimationName, () => Animator?.Package);
     }
 
     /// <param name="textureSource">The character whose textures are loaded first (its own, or the NpcParam's swap)</param>
@@ -725,8 +725,8 @@ public class LuaCharacter : IDisposable
     public Vector3 Position => World.Translation;
 
     /// <summary>
-    /// The character's front in its own space: the way its walk-front clip moves it (models differ in which axis is
-    /// forward), else +Z
+    /// The character's front in its own space: the way its walk-front (else run) clip moves it (models differ in which
+    /// axis is forward), else +Z
     /// </summary>
     public Vector3 Forward
     {
@@ -734,14 +734,19 @@ public class LuaCharacter : IDisposable
         {
             if (_forward is { } f)
                 return f;
-            if (Animator?.Package is { } package && Locomotion.WalkFront is { } walk &&
-                package.FindAnimation((int)walk) is { } entry && package.GetClip(entry)?.RootMotion is { } motion &&
-                package.GetClip(entry) is { } clip)
+            if (Animator?.Package is { } package)
             {
-                var d = motion.Sample(clip.Duration, HavokRootMotionScale.One).Translation;
-                var flat = new Vector3(d.X, 0, d.Z);
-                if (flat.LengthSquared() > 1e-4f)
-                    return (_forward = Vector3.Normalize(flat)).Value;
+                foreach (var id in new[] { Locomotion.WalkFront, Locomotion.Run })
+                {
+                    if (id is { } v && package.FindAnimation((int)v) is { } entry &&
+                        package.GetClip(entry) is { RootMotion: { } motion } clip)
+                    {
+                        var d = motion.Sample(clip.Duration, HavokRootMotionScale.One).Translation;
+                        var flat = new Vector3(d.X, 0, d.Z);
+                        if (flat.LengthSquared() > 1e-4f)
+                            return (_forward = Vector3.Normalize(flat)).Value;
+                    }
+                }
             }
             return Vector3.UnitZ;
         }
@@ -953,33 +958,68 @@ public class LuaCharacter : IDisposable
 
 /// <summary>
 /// A character's idle and locomotion clips, by their animation aliases (ER's enemies: "Walk Front Battle", "Run
-/// Battle", "Turn Battle Left 90", …), else ER's usual IDs. Only clips the character's package has are played.
+/// Battle", "Turn Battle Left 90", …), else the usual IDs: the first the character's package has, of the later
+/// games' (a000_002000 walk front, 2100 run, 5000 turns) and the DS1-era ones (a00_0200 walk front, 0500 run, 0602
+/// turns; same directions, checked with Claude/Tools/LocomotionProbe). Only clips the package has are played.
 /// </summary>
 public class LuaLocomotion
 {
-    public long? Idle, WalkFront, WalkBack, WalkLeft, WalkRight, Run, TurnLeft90, TurnRight90, TurnLeft180, TurnRight180;
+    public long? Idle => Resolve(0);
+    public long? WalkFront => Resolve(1);
+    public long? WalkBack => Resolve(2);
+    public long? WalkLeft => Resolve(3);
+    public long? WalkRight => Resolve(4);
+    public long? Run => Resolve(5);
+    public long? TurnLeft90 => Resolve(6);
+    public long? TurnRight90 => Resolve(7);
+    public long? TurnLeft180 => Resolve(8);
+    public long? TurnRight180 => Resolve(9);
 
-    public LuaLocomotion(ProjectEntry project, string chr)
+    // Per role: the alias's ID, else the usual IDs in order (later games first, then DS1-era)
+    private readonly long[][] Candidates;
+    private readonly long?[] Resolved;
+    private readonly Func<AnimationPackage> Package;
+
+    /// <param name="package">The character's animations once loaded (null until then: the first candidate is used)</param>
+    public LuaLocomotion(ProjectEntry project, string chr, Func<AnimationPackage> package)
     {
+        Package = package;
         var byName = AliasClips(project, chr);
-        long? Find(long fallback, params string[] names)
+        long[] Find(long[] fallbacks, params string[] names)
         {
             foreach (var n in names)
                 if (byName.TryGetValue(n, out var id))
-                    return id;
-            return fallback;
+                    return [id];
+            return fallbacks;
         }
 
-        Idle = 0;
-        WalkFront = Find(2000, "Walk Front Battle", "Walk Front Default", "Walk Front");
-        WalkBack = Find(2001, "Walk Back Battle", "Walk Back Default", "Walk Back");
-        WalkLeft = Find(2002, "Walk Left Battle", "Walk Left Default", "Walk Left");
-        WalkRight = Find(2003, "Walk Right Battle", "Walk Right Default", "Walk Right");
-        Run = Find(2100, "Run Battle", "Run Default", "Run");
-        TurnLeft90 = Find(5000, "Turn Battle Left 90", "Turn Default Left 90");
-        TurnRight90 = Find(5001, "Turn Battle Right 90", "Turn Default Right 90");
-        TurnLeft180 = Find(5002, "Turn Battle Left 180", "Turn Default Left 180");
-        TurnRight180 = Find(5003, "Turn Battle Right 180", "Turn Default Right 180");
+        Candidates =
+        [
+            [0],
+            Find([2000, 200], "Walk Front Battle", "Walk Front Default", "Walk Front"),
+            Find([2001, 201], "Walk Back Battle", "Walk Back Default", "Walk Back"),
+            Find([2002, 202], "Walk Left Battle", "Walk Left Default", "Walk Left"),
+            Find([2003, 203], "Walk Right Battle", "Walk Right Default", "Walk Right"),
+            Find([2100, 500], "Run Battle", "Run Default", "Run"),
+            Find([5000, 602], "Turn Battle Left 90", "Turn Default Left 90"),
+            Find([5001, 603], "Turn Battle Right 90", "Turn Default Right 90"),
+            Find([5002, 604], "Turn Battle Left 180", "Turn Default Left 180"),
+            Find([5003, 605], "Turn Battle Right 180", "Turn Default Right 180"),
+        ];
+        Resolved = new long?[Candidates.Length];
+    }
+
+    /// <summary>The role's clip: the first candidate the package has (kept once the package has loaded)</summary>
+    private long? Resolve(int role)
+    {
+        if (Resolved[role] is { } done)
+            return done;
+        var candidates = Candidates[role];
+        if (Package() is not { } package)
+            return candidates[0];
+        var id = candidates.FirstOrDefault(c => package.FindAnimation((int)c) != null, candidates[0]);
+        Resolved[role] = id;
+        return id;
     }
 
     /// <summary>The character's animation aliases by name → animation ID (its own set and the sets it shares)</summary>
