@@ -66,7 +66,10 @@ public enum MaterialSurface
     Water,
 
     /// <summary>Cards of strands, cut out by a texture on top of the color of the character</summary>
-    Fur
+    Fur,
+
+    /// <summary>A surface covered by snow (or tar, mud, ash) where its vertex alpha says, see <see cref="MaterialResolvedSnow"/></summary>
+    Snow
 }
 
 /// <summary>
@@ -642,6 +645,48 @@ public class MaterialWaterRecipe
     public string? EdgeDistance { get; set; }
 
     public List<MaterialWaterLayer> Layers { get; set; } = new();
+}
+
+/// <summary>
+/// The snow of a material that has the snow values (g_SnowColor), as DS1R's FRPG_Snow and FRPG_Snow_Lit draw it
+/// (from their disassembly, and the exe's constants, FUN 1401C16F0). The material's own diffuse, specular and normal
+/// (g_Bumpmap_3) are covered by a plain surface of g_SnowColor, with a finer normal (g_Bumpmap_2), by
+/// sat((alpha × height − g_SnowDiffuseBlendBottomHeight) / (g_SnowDiffuseBlendTopHeight − g_SnowDiffuseBlendBottomHeight)),
+/// alpha being the vertex alpha. The height is drawn first into a screen space target by FRPG_Snow_HeightMap:
+/// g_Bumpmap's average of RGB at three tilings (g_SnowTileScale_N, moved by g_TexScroll_N), weighted by
+/// g_SnowTileBlend_N, summed. It fades out with distance (gFC_WaterWaveParam.z), which isn't drawn here.
+/// </summary>
+public class MaterialResolvedSnow
+{
+    /// <summary>The material's own normal, g_Bumpmap_3</summary>
+    public string? NormalType { get; set; }
+
+    /// <summary>The snow's finer normal, g_Bumpmap_2, on the first UV set</summary>
+    public string? DetailType { get; set; }
+
+    /// <summary>g_Bumpmap, the height the cover is found from, in the third normal slot</summary>
+    public string? HeightType { get; set; }
+
+    /// <summary>g_SnowTileScale_0 to 2, g_SnowTileBlend_0 to 2 and g_TexScroll_0 to 2 (UV movement each second)</summary>
+    public float[] HeightTiling { get; set; } = [1, 1, 1];
+    public float[] HeightBlend { get; set; } = [0, 0, 0];
+    public float[] HeightScroll { get; set; } = [0, 0, 0, 0, 0, 0];
+
+    /// <summary>g_SnowColor, as it is stored (the shader raises it to 2.2)</summary>
+    public float[] Color { get; set; } = [1, 1, 1];
+
+    /// <summary>g_SnowRoughness, g_SnowMetalMask and g_SnowDiffuseF0. The older snow MTDs have none of them</summary>
+    public float Roughness { get; set; } = 0.7f;
+    public float Metal { get; set; }
+    public float F0 { get; set; } = 0.04f;
+
+    /// <summary>The vertex alpha where the cover starts, and what multiplies the alpha above it</summary>
+    public float CoverStart { get; set; }
+    public float CoverScale { get; set; } = 1f;
+
+    /// <summary>g_SnowDetailBumpPower and g_SnowDetailBumpTileScale</summary>
+    public float DetailStrength { get; set; } = 1f;
+    public float DetailTiling { get; set; } = 1f;
 }
 
 /// <summary>A <see cref="MaterialWaterRecipe"/> with the values of one material filled in</summary>
@@ -1241,6 +1286,12 @@ public class MaterialDefinition
     /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.Fur"/></summary>
     public MaterialResolvedFur? Fur { get; set; }
 
+    /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.Snow"/></summary>
+    public MaterialResolvedSnow? Snow { get; set; }
+
+    /// <summary>The vertex colors are read: for the Col shaders' multiply (<see cref="VertexColor"/>) or the snow's cover</summary>
+    public bool ReadsVertexColor => VertexColor || Snow != null;
+
     /// <summary>Set when the shader has a <see cref="MaterialSlotRecipe"/>: the textures to bind first for each role</summary>
     public MaterialResolvedSlots? Slots { get; set; }
 
@@ -1339,6 +1390,7 @@ public class MaterialDefinition
         ResolveSurface();
         ResolveWater(table);
         ResolveFur(table);
+        ResolveSnow();
         ResolveSlots(table);
         ResolveMetallic(table);
         ResolveEmissiveMask(table);
@@ -1962,6 +2014,66 @@ public class MaterialDefinition
         SurfaceType = (textures.Find(x => x.Role == named)
             ?? textures.Find(x => x.Scroll.Any(v => v != 0))
             ?? textures.FirstOrDefault())?.Type;
+    }
+
+    /// <summary>
+    /// Works out the snow of a material with the snow values (<see cref="MaterialResolvedSnow"/>). Its own textures are
+    /// tiled by g_SnowDiffuseTileScale, as the shader's vertex stage scales their UVs.
+    /// </summary>
+    private void ResolveSnow()
+    {
+        if (Surface != MaterialSurface.Standard || !Params.TryGetValue("g_SnowColor", out var color) || color.Length < 3 ||
+            !Params.ContainsKey("g_SnowDiffuseBlendTopHeight"))
+        {
+            return;
+        }
+
+        string? TypeNamed(string name) => Samplers.Find(x => x.Type.Equals(name, StringComparison.OrdinalIgnoreCase))?.Type;
+
+        var start = GetFirst("g_SnowDiffuseBlendBottomHeight", 0);
+        var top = GetFirst("g_SnowDiffuseBlendTopHeight", 1);
+
+        MaterialResolvedSnow snow = new()
+        {
+            NormalType = TypeNamed("g_Bumpmap_3"),
+            DetailType = TypeNamed("g_Bumpmap_2"),
+            HeightType = TypeNamed("g_Bumpmap"),
+            Color = color[..3],
+            Roughness = GetFirst("g_SnowRoughness", 0.7f),
+            Metal = GetFirst("g_SnowMetalMask", 0),
+            F0 = GetFirst("g_SnowDiffuseF0", 0.04f),
+            CoverStart = start,
+            // As the exe works it out
+            CoverScale = 1f / MathF.Max(top - start, 0.0001f),
+            DetailStrength = GetFirst("g_SnowDetailBumpPower", 1),
+            DetailTiling = GetFirst("g_SnowDetailBumpTileScale", 1)
+        };
+
+        for (var i = 0; i < 3; i++)
+        {
+            snow.HeightTiling[i] = GetFirst($"g_SnowTileScale_{i}", 1);
+            snow.HeightBlend[i] = GetFirst($"g_SnowTileBlend_{i}", 0);
+            if (Params.TryGetValue($"g_TexScroll_{i}", out var scroll) && scroll.Length >= 2)
+            {
+                snow.HeightScroll[i * 2] = scroll[0];
+                snow.HeightScroll[i * 2 + 1] = scroll[1];
+            }
+        }
+
+        var tiling = GetFirst("g_SnowDiffuseTileScale", 1);
+        if (tiling > 0 && tiling != 1)
+        {
+            foreach (MaterialSampler sampler in Samplers)
+            {
+                if (sampler.Type != snow.DetailType && sampler.Type != snow.HeightType)
+                {
+                    sampler.Tiling = sampler.Tiling.Select(x => x * tiling).ToArray();
+                }
+            }
+        }
+
+        Snow = snow;
+        Surface = MaterialSurface.Snow;
     }
 
     /// <summary>

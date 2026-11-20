@@ -584,6 +584,18 @@ public class FlverResource : IResource, IDisposable
             LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, waterDetail, "", mtd);
         }
 
+        // The snow's finer normal, read with the snow's own tiling (FlverShader.frag, SnowCover)
+        if (dest.Definition?.Snow?.DetailType is { } snowDetail)
+        {
+            LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, snowDetail, flverPaths.GetValueOrDefault(snowDetail, ""), mtd);
+        }
+
+        // And the height its cover is found from
+        if (dest.Definition?.Snow?.HeightType is { } snowHeight)
+        {
+            LookupTexture(FlverMaterial.TextureType.NormalTextureResource3, dest, snowHeight, flverPaths.GetValueOrDefault(snowHeight, ""), mtd);
+        }
+
         if (dest.Definition?.Magma is { } magma)
         {
             LookupTexture(FlverMaterial.TextureType.MagmaTextureResource, dest, magma.TextureType, "", mtd);
@@ -1116,6 +1128,11 @@ public class FlverResource : IResource, IDisposable
             dest.ApplyWater(dest.Definition!.Water!);
         }
 
+        if (dest.Definition?.Snow is { } snow)
+        {
+            dest.ApplySnow(snow);
+        }
+
         // Upload the defaults so a material whose textures never arrive still shows something sensible
         dest.UpdateMaterial();
     }
@@ -1179,7 +1196,8 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithMagma);
         }
 
-        if (dest.Definition?.Water != null)
+        // Snow has water's entries (MaterialSnow)
+        if (dest.Definition?.Water != null || dest.Definition?.Snow != null)
         {
             size = sizeof(MaterialWithWater);
         }
@@ -3533,7 +3551,7 @@ public class FlverResource : IResource, IDisposable
                 dest.Material.Definition?.Deformer == MaterialDeformer.VatFrame);        }
         else
         {
-            FillVerticesStandard(mesh, pvhandle, meshVertices, dest.Material.Definition?.VertexColor == true);
+            FillVerticesStandard(mesh, pvhandle, meshVertices, dest.Material.Definition?.ReadsVertexColor == true);
         }
 
         if (is32bit)
@@ -3887,7 +3905,7 @@ public class FlverResource : IResource, IDisposable
             else
             {
                 FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer,
-                    dest.Material.Definition?.VertexColor == true);
+                    dest.Material.Definition?.ReadsVertexColor == true);
             }
 
             firstBuffer = false;
@@ -4804,6 +4822,25 @@ public class FlverResource : IResource, IDisposable
                 Scatter = new Vector4(water.Scatter[0], water.Scatter[1], water.Scatter[2], water.EdgeFade),
                 Absorption = new Vector4(water.Absorption[0], water.Absorption[1], water.Absorption[2], 0)
             };
+        }
+
+        /// <summary>
+        /// Fills in the snow's values, which go where water's would (a material is never both), so everything about
+        /// uploading water's entries holds for them too
+        /// </summary>
+        public void ApplySnow(MaterialResolvedSnow snow)
+        {
+            MaterialSnow values = new()
+            {
+                Color = new Vector4(MathF.Pow(snow.Color[0], 2.2f), MathF.Pow(snow.Color[1], 2.2f), MathF.Pow(snow.Color[2], 2.2f), snow.Roughness),
+                Surface = new Vector4(snow.Metal, snow.F0, snow.CoverStart, snow.CoverScale),
+                Detail = new Vector4(snow.DetailTiling, snow.DetailTiling, snow.DetailStrength, 0),
+                HeightTiling = new Vector4(snow.HeightTiling[0], snow.HeightTiling[1], snow.HeightTiling[2], snow.HeightScroll[4]),
+                HeightBlend = new Vector4(snow.HeightBlend[0], snow.HeightBlend[1], snow.HeightBlend[2], snow.HeightScroll[5]),
+                HeightScroll = new Vector4(snow.HeightScroll[0], snow.HeightScroll[1], snow.HeightScroll[2], snow.HeightScroll[3])
+            };
+
+            Water = Unsafe.As<MaterialSnow, MaterialWater>(ref values);
         }
 
         /// <summary>Fills in the overlay's values, leaving the textures to <see cref="UpdateMaterial"/></summary>

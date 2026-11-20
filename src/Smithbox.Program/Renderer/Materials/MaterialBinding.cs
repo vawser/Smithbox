@@ -26,7 +26,11 @@ public enum MaterialTextureUse
     OverlayNormal,
     WaterNormal,
     FurAlbedo,
-    FurNormal
+    FurNormal,
+    /// <summary>The finer normal of snow (MaterialResolvedSnow.DetailType), in the second normal slot</summary>
+    SnowNormal,
+    /// <summary>The height of snow (MaterialResolvedSnow.HeightType), in the third normal slot</summary>
+    SnowHeight
 }
 
 /// <summary>
@@ -132,6 +136,15 @@ public static class MaterialBinding
             return texType == d.SurfaceType || texType == d.Water.DetailType
                 ? new(MaterialTextureUse.WaterNormal, LoadedElsewhere: true)
                 : MaterialTextureRoute.Drop("a water normal the water recipe doesn't use");
+        }
+
+        // Snow (MaterialResolvedSnow): the material's own normal is the third, the second is the snow's, and the first
+        // is the height the cover is found from. None of them are layers
+        if (d?.Snow is { } snow && texType != null)
+        {
+            if (texType == snow.NormalType) return new(MaterialTextureUse.Normal);
+            if (texType == snow.DetailType) return new(MaterialTextureUse.SnowNormal, LoadedElsewhere: true);
+            if (texType == snow.HeightType) return new(MaterialTextureUse.SnowHeight, LoadedElsewhere: true);
         }
 
         // Fur's masked layer (MaterialFurMask): the mask in the blend mask slot and the texture in the third albedo slot,

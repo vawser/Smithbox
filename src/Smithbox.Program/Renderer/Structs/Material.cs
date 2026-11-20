@@ -547,6 +547,32 @@ public struct MaterialWater
 }
 
 /// <summary>
+///     The snow of a material (<see cref="MaterialResolvedSnow" />), in the two entries of <see cref="MaterialWater" />,
+///     whose size it has.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialSnow
+{
+    /// <summary>rgb is the snow's color, linear, w its roughness</summary>
+    public Vector4 Color;
+
+    /// <summary>x is how much of a metal it is, y its F0, z the vertex alpha the cover starts at, w what multiplies the alpha above it</summary>
+    public Vector4 Surface;
+
+    /// <summary>xy tiles the finer normal, z is its strength</summary>
+    public Vector4 Detail;
+
+    /// <summary>The second entry. xyz tiles the height's three samples, w is how far the third's v moves each second</summary>
+    public Vector4 HeightTiling;
+
+    /// <summary>xyz weighs the height's three samples, w is how far the third's u moves each second</summary>
+    public Vector4 HeightBlend;
+
+    /// <summary>xy is how far the first sample's UVs move each second, zw the second's</summary>
+    public Vector4 HeightScroll;
+}
+
+/// <summary>
 ///     Everything of a material with a blend recipe. The deform entry is there
 ///     even if it doesn't deform, so that the entries always have the same offsets.
 /// </summary>

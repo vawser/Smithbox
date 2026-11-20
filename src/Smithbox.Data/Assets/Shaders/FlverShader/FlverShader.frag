@@ -91,6 +91,7 @@ layout (constant_id = 98) const bool c_shadowPass = false;
 #define SURFACE_UNLIT 1
 #define SURFACE_WATER 2
 #define SURFACE_FUR 3
+#define SURFACE_SNOW 4
 
 #define MAX_LAYERS 4
 #define MAX_SCENE_LIGHTS 16
@@ -375,6 +376,32 @@ layout(set = 4, binding = 0, std140) buffer materialWaterDetail
 layout(set = 4, binding = 0, std140) buffer materialWaterVolume
 {
     readonly waterVolumeData watervolumedata[];
+};
+
+// The snow of a material (MaterialSnow), in water's first entry: a material is never both
+struct snowData
+{
+	vec4 color;   // rgb: the snow's color, linear, w: its roughness
+	vec4 surface; // x: how much of a metal it is, y: its F0, z: the vertex alpha the cover starts at, w: what multiplies the alpha above it
+	vec4 detail;  // xy: tiling of the finer normal (the second normal), z: its strength
+};
+
+layout(set = 4, binding = 0, std140) buffer materialSnow
+{
+    readonly snowData snowdata[];
+};
+
+// The entry after that: the height the cover is found from
+struct snowHeightData
+{
+	vec4 tiling; // xyz: tiling of the height's three samples, w: how far the third's v moves each second
+	vec4 blend;  // xyz: weights of the three samples, w: how far the third's u moves each second
+	vec4 scroll; // xy: how far the first's UVs move each second, zw: the second's
+};
+
+layout(set = 4, binding = 0, std140) buffer materialSnowHeight
+{
+    readonly snowHeightData snowheightdata[];
 };
 
 // The entry after that
@@ -1904,6 +1931,66 @@ bool IsWater()
 	return c_surface == SURFACE_WATER && HasFeature(FEATURE_WATER);
 }
 
+// A texture's values as stored, where the sampler decoded them as sRGB: the older games' shaders read their
+// textures as data and decode colors themselves
+vec3 StoredFromSrgb(vec3 c)
+{
+	return mix(c * 12.92, 1.055 * pow(max(c, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055, step(vec3(0.0031308), c));
+}
+
+// The snow's height, as FRPG_Snow_HeightMap draws it into the game's screen space target: the average of the
+// height texture's RGB (as stored) at three tilings, weighed and summed. A material without one is at full height
+float SnowHeight()
+{
+	uint tex = MaterialValue(ROW_NORMAL, 2);
+	if (tex == 1u)
+	{
+		return 1.0;
+	}
+
+	snowHeightData h = snowheightdata[g_mat + 12u];
+	vec2 scrolls[3] = vec2[3](h.scroll.xy, h.scroll.zw, vec2(h.blend.w, h.tiling.w));
+
+	float height = 0.0;
+	for (int i = 0; i < 3; i++)
+	{
+		if (h.blend[i] != 0.0)
+		{
+			vec3 rgb = StoredFromSrgb(SampleAt(tex, 0, vec2(h.tiling[i]), scrolls[i] / max(h.tiling[i], 1e-4)).rgb);
+			height += (rgb.r + rgb.g + rgb.b) / 3.0 * h.blend[i];
+		}
+	}
+
+	return height;
+}
+
+// DS1R's FRPG_Snow (MaterialResolvedSnow): a plain surface of the snow's color, with a finer normal, covers the
+// material's own where the vertex alpha times the snow's height rises above the start
+void SnowCover(inout vec3 albedo, inout vec3 F0, inout float roughness, inout vec3 normal)
+{
+	snowData snow = snowdata[g_mat + 11u];
+	float cover = clamp((fsin_color.a * SnowHeight() - snow.surface.z) * snow.surface.w, 0.0, 1.0);
+	if (cover <= 0.0)
+	{
+		return;
+	}
+
+	vec2 detail = vec2(0.0);
+	uint tex = MaterialValue(ROW_NORMAL, 1);
+	if (tex != 1u)
+	{
+		detail = (SampleAt(tex, 0, snow.detail.xy, vec2(0.0)).xy * 2.0 - 1.0) * snow.detail.z;
+	}
+
+	vec3 snowNormal = normalize(fsin_worldToTangent * normalize(vec3(detail, 1.0)));
+	float metal = snow.surface.x;
+
+	albedo = mix(albedo, snow.color.rgb * (1.0 - metal), cover);
+	F0 = mix(F0, mix(vec3(snow.surface.y), snow.color.rgb, metal), cover);
+	roughness = mix(roughness, snow.color.w, cover);
+	normal = normalize(mix(normal, snowNormal, cover));
+}
+
 // The finer ripples, on top of the first normal, whose blue bends them. Only the first normal's scroll is in its row
 vec2 WaterRipples(float height)
 {
@@ -2587,8 +2674,7 @@ void main()
 		}
 		else
 		{
-			vec3 stored = mix(dsr.rgb * 12.92, 1.055 * pow(max(dsr.rgb, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055,
-				step(vec3(0.0031308), dsr.rgb));
+			vec3 stored = StoredFromSrgb(dsr.rgb);
 			roughness = stored.r;
 			dsrMetallic = stored.g;
 			dsrReflectance = clamp(stored.b * 0.2 * c_dsrSpecularScale, 0.0, 1.0);
@@ -2712,6 +2798,12 @@ void main()
 		F0 = mix(vec3(dsrReflectance), albedo, dsrMetallic) * dsrOcclusion;
 		albedo *= (1.0 - dsrMetallic) * dsrOcclusion;
 		oracleMetallic = dsrMetallic;
+	}
+
+	// The snow covers what the material's own maps made, as the game lerps to it last
+	if (c_surface == SURFACE_SNOW)
+	{
+		SnowCover(albedo, F0, roughness, normalMap);
 	}
 
 	Surface surface;
