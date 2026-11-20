@@ -590,10 +590,10 @@ public class FlverResource : IResource, IDisposable
             LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, snowDetail, flverPaths.GetValueOrDefault(snowDetail, ""), mtd);
         }
 
-        // And the height its cover is found from
-        if (dest.Definition?.Snow?.HeightType is { } snowHeight)
+        // And the height its cover is found from, or that DS1R's water waves by (FlverShader.frag, LayeredHeight)
+        if ((dest.Definition?.Snow?.HeightType ?? dest.Definition?.ReflectWater?.HeightType) is { } layeredHeight)
         {
-            LookupTexture(FlverMaterial.TextureType.NormalTextureResource3, dest, snowHeight, flverPaths.GetValueOrDefault(snowHeight, ""), mtd);
+            LookupTexture(FlverMaterial.TextureType.NormalTextureResource3, dest, layeredHeight, flverPaths.GetValueOrDefault(layeredHeight, ""), mtd);
         }
 
         if (dest.Definition?.Magma is { } magma)
@@ -920,6 +920,12 @@ public class FlverResource : IResource, IDisposable
             dest.Blending = recipeBlending;
         }
 
+        // DS1R's water lets the scene through, which its g_BlendMode (3, water) doesn't say
+        if (definition.ReflectWater != null)
+        {
+            dest.Blending = MaterialBlending.Alpha;
+        }
+
         dest.DepthWrite = dest.Blending == MaterialBlending.Opaque && !definition.DisableDepthWrite;
         dest.MeshDecal = definition.MeshDecal;
     }
@@ -1133,6 +1139,11 @@ public class FlverResource : IResource, IDisposable
             dest.ApplySnow(snow);
         }
 
+        if (dest.Definition?.ReflectWater is { } reflectWater)
+        {
+            dest.ApplyReflectWater(reflectWater);
+        }
+
         // Upload the defaults so a material whose textures never arrive still shows something sensible
         dest.UpdateMaterial();
     }
@@ -1196,8 +1207,8 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithMagma);
         }
 
-        // Snow has water's entries (MaterialSnow)
-        if (dest.Definition?.Water != null || dest.Definition?.Snow != null)
+        // Snow and DS1R's water have water's entries (MaterialSnow, MaterialReflectWater)
+        if (dest.Definition?.Water != null || dest.Definition?.Snow != null || dest.Definition?.ReflectWater != null)
         {
             size = sizeof(MaterialWithWater);
         }
@@ -4835,12 +4846,27 @@ public class FlverResource : IResource, IDisposable
                 Color = new Vector4(MathF.Pow(snow.Color[0], 2.2f), MathF.Pow(snow.Color[1], 2.2f), MathF.Pow(snow.Color[2], 2.2f), snow.Roughness),
                 Surface = new Vector4(snow.Metal, snow.F0, snow.CoverStart, snow.CoverScale),
                 Detail = new Vector4(snow.DetailTiling, snow.DetailTiling, snow.DetailStrength, 0),
-                HeightTiling = new Vector4(snow.HeightTiling[0], snow.HeightTiling[1], snow.HeightTiling[2], snow.HeightScroll[4]),
-                HeightBlend = new Vector4(snow.HeightBlend[0], snow.HeightBlend[1], snow.HeightBlend[2], snow.HeightScroll[5]),
-                HeightScroll = new Vector4(snow.HeightScroll[0], snow.HeightScroll[1], snow.HeightScroll[2], snow.HeightScroll[3])
+                Height = MaterialLayeredHeight.Of(snow.HeightTiling, snow.HeightBlend, snow.HeightScroll)
             };
 
             Water = Unsafe.As<MaterialSnow, MaterialWater>(ref values);
+        }
+
+        /// <summary>Fills in DS1R's water's values, which go where water's would, as the snow's do</summary>
+        public void ApplyReflectWater(MaterialResolvedReflectWater water)
+        {
+            static float Linear(float x) => MathF.Pow(MathF.Max(x, 0), 2.2f);
+
+            MaterialReflectWater values = new()
+            {
+                Color = new Vector4(Linear(water.Color[0]), Linear(water.Color[1]), Linear(water.Color[2]), water.Color[3]),
+                Fresnel = new Vector4(water.FresnelPower, water.FresnelBias, water.FresnelScale, water.SpecularPower),
+                FresnelColor = new Vector4(Linear(water.FresnelColor[0]), Linear(water.FresnelColor[1]), Linear(water.FresnelColor[2]), water.WaveHeight),
+                Height = MaterialLayeredHeight.Of(water.HeightTiling, water.HeightBlend, water.HeightScroll)
+            };
+            values.Height.Extra0 = water.FadeBegin;
+
+            Water = Unsafe.As<MaterialReflectWater, MaterialWater>(ref values);
         }
 
         /// <summary>Fills in the overlay's values, leaving the textures to <see cref="UpdateMaterial"/></summary>

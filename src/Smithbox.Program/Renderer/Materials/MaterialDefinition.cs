@@ -69,7 +69,10 @@ public enum MaterialSurface
     Fur,
 
     /// <summary>A surface covered by snow (or tar, mud, ash) where its vertex alpha says, see <see cref="MaterialResolvedSnow"/></summary>
-    Snow
+    Snow,
+
+    /// <summary>DS1R's see-through water, waved by a height and reflecting by a fresnel, see <see cref="MaterialResolvedReflectWater"/></summary>
+    ReflectWater
 }
 
 /// <summary>
@@ -689,6 +692,38 @@ public class MaterialResolvedSnow
     public float DetailTiling { get; set; } = 1f;
 }
 
+/// <summary>
+/// The water of a material with the older games' water values (g_WaterColor, g_FresnelColor, g_WaterWaveHeight), as
+/// DS1R's FRPG_Water_Reflect and FRPG_Water_Env draw it (from their disassembly). The waves are the slope of a height
+/// made as the snow's is (<see cref="MaterialResolvedSnow"/>: g_Bumpmap at g_TileScale_N, by g_TileBlend_N), times
+/// g_WaterWaveHeight. The scene behind takes on g_WaterColor by vertex alpha × its alpha, and the reflection
+/// (× g_FresnelColor, plus the sun's highlight at g_SpecularPower) covers it by
+/// g_FresnelScale × (p + g_FresnelBias × (1 − p)), p = (1 − N·V)^g_FresnelPow. All of it is multiplied by the vertex
+/// color, and fades in from the edge by min(alpha, g_WaterFadeBegin) / g_WaterFadeBegin.
+/// </summary>
+public class MaterialResolvedReflectWater
+{
+    /// <summary>g_Bumpmap, the height of the waves, in the third normal slot</summary>
+    public string? HeightType { get; set; }
+
+    public float[] HeightTiling { get; set; } = [1, 1, 1];
+    public float[] HeightBlend { get; set; } = [0, 0, 0];
+    public float[] HeightScroll { get; set; } = [0, 0, 0, 0, 0, 0];
+
+    /// <summary>g_WaterColor, as stored (the shader raises its RGB to 2.2)</summary>
+    public float[] Color { get; set; } = [1, 1, 1, 0];
+
+    /// <summary>g_FresnelColor, as stored</summary>
+    public float[] FresnelColor { get; set; } = [1, 1, 1];
+
+    public float FresnelPower { get; set; } = 5f;
+    public float FresnelBias { get; set; }
+    public float FresnelScale { get; set; } = 1f;
+    public float SpecularPower { get; set; } = 100f;
+    public float WaveHeight { get; set; } = 1f;
+    public float FadeBegin { get; set; } = 1f;
+}
+
 /// <summary>A <see cref="MaterialWaterRecipe"/> with the values of one material filled in</summary>
 public class MaterialResolvedWater
 {
@@ -1289,8 +1324,14 @@ public class MaterialDefinition
     /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.Snow"/></summary>
     public MaterialResolvedSnow? Snow { get; set; }
 
-    /// <summary>The vertex colors are read: for the Col shaders' multiply (<see cref="VertexColor"/>) or the snow's cover</summary>
-    public bool ReadsVertexColor => VertexColor || Snow != null;
+    /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.ReflectWater"/></summary>
+    public MaterialResolvedReflectWater? ReflectWater { get; set; }
+
+    /// <summary>
+    /// The vertex colors are read: for the Col shaders' multiply (<see cref="VertexColor"/>), the snow's cover or the
+    /// water's tint and edge
+    /// </summary>
+    public bool ReadsVertexColor => VertexColor || Snow != null || ReflectWater != null;
 
     /// <summary>Set when the shader has a <see cref="MaterialSlotRecipe"/>: the textures to bind first for each role</summary>
     public MaterialResolvedSlots? Slots { get; set; }
@@ -1391,6 +1432,7 @@ public class MaterialDefinition
         ResolveWater(table);
         ResolveFur(table);
         ResolveSnow();
+        ResolveReflectWater();
         ResolveSlots(table);
         ResolveMetallic(table);
         ResolveEmissiveMask(table);
@@ -2049,16 +2091,7 @@ public class MaterialDefinition
             DetailTiling = GetFirst("g_SnowDetailBumpTileScale", 1)
         };
 
-        for (var i = 0; i < 3; i++)
-        {
-            snow.HeightTiling[i] = GetFirst($"g_SnowTileScale_{i}", 1);
-            snow.HeightBlend[i] = GetFirst($"g_SnowTileBlend_{i}", 0);
-            if (Params.TryGetValue($"g_TexScroll_{i}", out var scroll) && scroll.Length >= 2)
-            {
-                snow.HeightScroll[i * 2] = scroll[0];
-                snow.HeightScroll[i * 2 + 1] = scroll[1];
-            }
-        }
+        ReadLayeredHeight("g_SnowTileScale_", "g_SnowTileBlend_", snow.HeightTiling, snow.HeightBlend, snow.HeightScroll);
 
         var tiling = GetFirst("g_SnowDiffuseTileScale", 1);
         if (tiling > 0 && tiling != 1)
@@ -2074,6 +2107,55 @@ public class MaterialDefinition
 
         Snow = snow;
         Surface = MaterialSurface.Snow;
+    }
+
+    /// <summary>
+    /// The three tilings (the first value of each), weights and movements of a layered height (MaterialLayeredHeight),
+    /// the movements being g_TexScroll_0 to 2
+    /// </summary>
+    private void ReadLayeredHeight(string tilingPrefix, string blendPrefix, float[] tiling, float[] blend, float[] scroll)
+    {
+        for (var i = 0; i < 3; i++)
+        {
+            tiling[i] = GetFirst($"{tilingPrefix}{i}", 1);
+            blend[i] = GetFirst($"{blendPrefix}{i}", 0);
+            if (Params.TryGetValue($"g_TexScroll_{i}", out var move) && move.Length >= 2)
+            {
+                scroll[i * 2] = move[0];
+                scroll[i * 2 + 1] = move[1];
+            }
+        }
+    }
+
+    /// <summary>
+    /// Works out the water of a material with the older games' water values (<see cref="MaterialResolvedReflectWater"/>)
+    /// </summary>
+    private void ResolveReflectWater()
+    {
+        if (Surface != MaterialSurface.Standard || !Params.TryGetValue("g_WaterColor", out var color) || color.Length < 4 ||
+            !Params.TryGetValue("g_FresnelColor", out var fresnelColor) || fresnelColor.Length < 3 ||
+            !Params.ContainsKey("g_WaterWaveHeight"))
+        {
+            return;
+        }
+
+        MaterialResolvedReflectWater water = new()
+        {
+            HeightType = Samplers.Find(x => x.Type.Equals("g_Bumpmap", StringComparison.OrdinalIgnoreCase))?.Type,
+            Color = color[..4],
+            FresnelColor = fresnelColor[..3],
+            FresnelPower = GetFirst("g_FresnelPow", 5),
+            FresnelBias = GetFirst("g_FresnelBias", 0),
+            FresnelScale = GetFirst("g_FresnelScale", 1),
+            SpecularPower = GetFirst("g_SpecularPower", 100),
+            WaveHeight = GetFirst("g_WaterWaveHeight", 1),
+            FadeBegin = GetFirst("g_WaterFadeBegin", 1)
+        };
+
+        ReadLayeredHeight("g_TileScale_", "g_TileBlend_", water.HeightTiling, water.HeightBlend, water.HeightScroll);
+
+        ReflectWater = water;
+        Surface = MaterialSurface.ReflectWater;
     }
 
     /// <summary>

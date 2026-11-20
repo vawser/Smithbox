@@ -29,8 +29,8 @@ public enum MaterialTextureUse
     FurNormal,
     /// <summary>The finer normal of snow (MaterialResolvedSnow.DetailType), in the second normal slot</summary>
     SnowNormal,
-    /// <summary>The height of snow (MaterialResolvedSnow.HeightType), in the third normal slot</summary>
-    SnowHeight
+    /// <summary>The height of snow or water (MaterialLayeredHeight), in the third normal slot</summary>
+    LayeredHeight
 }
 
 /// <summary>
@@ -144,7 +144,13 @@ public static class MaterialBinding
         {
             if (texType == snow.NormalType) return new(MaterialTextureUse.Normal);
             if (texType == snow.DetailType) return new(MaterialTextureUse.SnowNormal, LoadedElsewhere: true);
-            if (texType == snow.HeightType) return new(MaterialTextureUse.SnowHeight, LoadedElsewhere: true);
+            if (texType == snow.HeightType) return new(MaterialTextureUse.LayeredHeight, LoadedElsewhere: true);
+        }
+
+        // DS1R's water (MaterialResolvedReflectWater): its one texture is the height of its waves
+        if (d?.ReflectWater is { } reflectWater && texType != null && texType == reflectWater.HeightType)
+        {
+            return new(MaterialTextureUse.LayeredHeight, LoadedElsewhere: true);
         }
 
         // Fur's masked layer (MaterialFurMask): the mask in the blend mask slot and the texture in the third albedo slot,

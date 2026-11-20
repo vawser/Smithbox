@@ -562,14 +562,66 @@ public struct MaterialSnow
     /// <summary>xy tiles the finer normal, z is its strength</summary>
     public Vector4 Detail;
 
-    /// <summary>The second entry. xyz tiles the height's three samples, w is how far the third's v moves each second</summary>
-    public Vector4 HeightTiling;
+    /// <summary>The second entry</summary>
+    public MaterialLayeredHeight Height;
+}
 
-    /// <summary>xyz weighs the height's three samples, w is how far the third's u moves each second</summary>
-    public Vector4 HeightBlend;
+/// <summary>
+///     A height made of one texture's RGB average at three tilings, weighed and summed, as DS1R's snow and water
+///     height passes draw it (FRPG_Snow_HeightMap, FRPG_Water_HeightMap). One entry.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLayeredHeight
+{
+    /// <summary>The three tilings</summary>
+    public Vector3 Tiling;
 
-    /// <summary>xy is how far the first sample's UVs move each second, zw the second's</summary>
-    public Vector4 HeightScroll;
+    /// <summary>How far the first sample's UVs move each second, as two halves (BitConverter.HalfToUInt16Bits)</summary>
+    public uint Scroll0;
+
+    /// <summary>The three weights</summary>
+    public Vector3 Blend;
+
+    /// <summary>The second sample's movement, as two halves</summary>
+    public uint Scroll1;
+
+    /// <summary>The third sample's movement, as two halves</summary>
+    public uint Scroll2;
+
+    /// <summary>Whatever the surface wants to put here</summary>
+    public float Extra0, Extra1, Extra2;
+
+    public static uint PackScroll(float u, float v) =>
+        BitConverter.HalfToUInt16Bits((Half)u) | ((uint)BitConverter.HalfToUInt16Bits((Half)v) << 16);
+
+    public static MaterialLayeredHeight Of(float[] tiling, float[] blend, float[] scroll) => new()
+    {
+        Tiling = new Vector3(tiling[0], tiling[1], tiling[2]),
+        Blend = new Vector3(blend[0], blend[1], blend[2]),
+        Scroll0 = PackScroll(scroll[0], scroll[1]),
+        Scroll1 = PackScroll(scroll[2], scroll[3]),
+        Scroll2 = PackScroll(scroll[4], scroll[5])
+    };
+}
+
+/// <summary>
+///     DS1R's FRPG_Water_Reflect and FRPG_Water_Env (<see cref="MaterialResolvedReflectWater" />), in the two entries of
+///     <see cref="MaterialWater" />, whose size it has.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialReflectWater
+{
+    /// <summary>rgb is g_WaterColor, linear, w its alpha: how much of it the scene behind takes on</summary>
+    public Vector4 Color;
+
+    /// <summary>x is g_FresnelPow, y g_FresnelBias, z g_FresnelScale, w g_SpecularPower</summary>
+    public Vector4 Fresnel;
+
+    /// <summary>rgb is g_FresnelColor, linear, w g_WaterWaveHeight</summary>
+    public Vector4 FresnelColor;
+
+    /// <summary>The second entry: the waves. Extra0 is g_WaterFadeBegin</summary>
+    public MaterialLayeredHeight Height;
 }
 
 /// <summary>

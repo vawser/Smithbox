@@ -91,6 +91,11 @@
       "Container": "m0100B2A10",
       "Model": "m0100B2A10",
       "Shows": "map: texture sections stretched horizontally"
+    },
+    {
+      "Container": "m2750B0A10",
+      "Model": "m2750B0A10",
+      "Shows": "map: moving water (FRPG_Water_Reflect)"
     }
   ]
 }

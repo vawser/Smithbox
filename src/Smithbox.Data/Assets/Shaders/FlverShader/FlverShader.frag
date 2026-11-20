@@ -92,6 +92,7 @@ layout (constant_id = 98) const bool c_shadowPass = false;
 #define SURFACE_WATER 2
 #define SURFACE_FUR 3
 #define SURFACE_SNOW 4
+#define SURFACE_REFLECT_WATER 5
 
 #define MAX_LAYERS 4
 #define MAX_SCENE_LIGHTS 16
@@ -391,17 +392,31 @@ layout(set = 4, binding = 0, std140) buffer materialSnow
     readonly snowData snowdata[];
 };
 
-// The entry after that: the height the cover is found from
-struct snowHeightData
+// DS1R's water (MaterialReflectWater), in water's first entry the same way
+struct reflectWaterData
 {
-	vec4 tiling; // xyz: tiling of the height's three samples, w: how far the third's v moves each second
-	vec4 blend;  // xyz: weights of the three samples, w: how far the third's u moves each second
-	vec4 scroll; // xy: how far the first's UVs move each second, zw: the second's
+	vec4 color;        // rgb: g_WaterColor, linear, w: its alpha
+	vec4 fresnel;      // x: g_FresnelPow, y: g_FresnelBias, z: g_FresnelScale, w: g_SpecularPower
+	vec4 fresnelColor; // rgb: g_FresnelColor, linear, w: g_WaterWaveHeight
 };
 
-layout(set = 4, binding = 0, std140) buffer materialSnowHeight
+layout(set = 4, binding = 0, std140) buffer materialReflectWater
 {
-    readonly snowHeightData snowheightdata[];
+    readonly reflectWaterData reflectwaterdata[];
+};
+
+// The entry after either: the height the snow's cover is found from, or the water's waves (MaterialLayeredHeight).
+// The movements are two halves each (packHalf2x16)
+struct layeredHeightData
+{
+	vec4 tiling; // xyz: tiling of the three samples, w: the first's movement each second
+	vec4 blend;  // xyz: weights of the three samples, w: the second's movement
+	vec4 extra;  // x: the third's movement, yzw: the surface's own (water: y g_WaterFadeBegin)
+};
+
+layout(set = 4, binding = 0, std140) buffer materialLayeredHeight
+{
+    readonly layeredHeightData layeredheightdata[];
 };
 
 // The entry after that
@@ -1938,9 +1953,10 @@ vec3 StoredFromSrgb(vec3 c)
 	return mix(c * 12.92, 1.055 * pow(max(c, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055, step(vec3(0.0031308), c));
 }
 
-// The snow's height, as FRPG_Snow_HeightMap draws it into the game's screen space target: the average of the
-// height texture's RGB (as stored) at three tilings, weighed and summed. A material without one is at full height
-float SnowHeight()
+// A height as DS1R's FRPG_Snow_HeightMap and FRPG_Water_HeightMap draw it into the game's screen space target: the
+// average of the height texture's RGB (as stored) at three tilings, each moving, weighed and summed, at the first UV
+// set moved by offset. A material without the texture is at full height
+float LayeredHeight(vec2 offset)
 {
 	uint tex = MaterialValue(ROW_NORMAL, 2);
 	if (tex == 1u)
@@ -1948,15 +1964,21 @@ float SnowHeight()
 		return 1.0;
 	}
 
-	snowHeightData h = snowheightdata[g_mat + 12u];
-	vec2 scrolls[3] = vec2[3](h.scroll.xy, h.scroll.zw, vec2(h.blend.w, h.tiling.w));
+	layeredHeightData h = layeredheightdata[g_mat + 12u];
+	vec2 scrolls[3] = vec2[3](unpackHalf2x16(floatBitsToUint(h.tiling.w)), unpackHalf2x16(floatBitsToUint(h.blend.w)),
+		unpackHalf2x16(floatBitsToUint(h.extra.x)));
+	float time = HasFeature(FEATURE_UV_SCROLL) ? sceneparam.materialTime : 0.0;
 
 	float height = 0.0;
 	for (int i = 0; i < 3; i++)
 	{
 		if (h.blend[i] != 0.0)
 		{
-			vec3 rgb = StoredFromSrgb(SampleAt(tex, 0, vec2(h.tiling[i]), scrolls[i] / max(h.tiling[i], 1e-4)).rgb);
+			float tiling = h.tiling[i];
+			vec2 uv = (g_uv[0] + offset) * tiling + scrolls[i] * time;
+			vec3 rgb = StoredFromSrgb(textureGrad(
+				sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], anisoLinearSampler),
+				uv, g_dx[0] * tiling, g_dy[0] * tiling).rgb);
 			height += (rgb.r + rgb.g + rgb.b) / 3.0 * h.blend[i];
 		}
 	}
@@ -1964,12 +1986,73 @@ float SnowHeight()
 	return height;
 }
 
+bool IsReflectWater()
+{
+	return c_surface == SURFACE_REFLECT_WATER && HasFeature(FEATURE_WATER);
+}
+
+// DS1R's water's waves: the slope of its height × g_WaterWaveHeight, bending the mesh's own normal. The game finds the
+// slope between screen space samples of its height target; here it is the height's slope over the UVs, carried onto
+// the surface by its screen derivatives (a surface gradient)
+vec3 ReflectWaterNormal()
+{
+	const float delta = 1.0 / 1024.0;
+	float h = LayeredHeight(vec2(0.0));
+	vec2 slopeUv = vec2(LayeredHeight(vec2(delta, 0.0)) - h, LayeredHeight(vec2(0.0, delta)) - h) / delta;
+	slopeUv *= reflectwaterdata[g_mat + 11u].fresnelColor.w;
+
+	vec3 N = normalize(fsin_worldToTangent[2]);
+	vec3 dPdx = dFdx(fsin_worldpos);
+	vec3 dPdy = dFdy(fsin_worldpos);
+	float dHdx = dot(slopeUv, dFdx(g_uv[0]));
+	float dHdy = dot(slopeUv, dFdy(g_uv[0]));
+
+	vec3 r1 = cross(dPdy, N);
+	vec3 r2 = cross(N, dPdx);
+	float det = dot(dPdx, r1);
+	if (abs(det) < 1e-12)
+	{
+		return N;
+	}
+
+	vec3 gradient = (dHdx * r1 + dHdy * r2) / det;
+	return normalize(N - gradient);
+}
+
+// DS1R's water's color and alpha (FRPG_Water_Reflect, FRPG_Water_Env): the scene behind takes on the water's color by
+// vertex alpha × its alpha, then the reflection (and the sun's highlight) covers that by the fresnel. Blending does
+// the scene's share, so what is left is put in the color and alpha. The vertex alpha also fades it in from the edge
+vec4 ReflectWaterColor(Surface s, vec3 reflection)
+{
+	reflectWaterData w = reflectwaterdata[g_mat + 11u];
+	float fadeBegin = max(layeredheightdata[g_mat + 12u].extra.y, 1e-4);
+
+	float NdotV = max(dot(s.N, s.V), 0.0);
+	float p = pow(max(1.0 - NdotV, 0.0), w.fresnel.x);
+	float fresnel = clamp((p + w.fresnel.y * (1.0 - p)) * w.fresnel.z, 0.0, 1.0);
+
+	vec3 R = reflect(-s.V, s.N);
+	vec4 sun = SunSpecColor();
+	vec3 highlight = pow(max(dot(R, -SunTravel()), 0.0), w.fresnel.w) * sun.rgb * sun.a *
+		sceneparam.directLightMult * sceneparam.sceneBrightness;
+
+	float tint = clamp(fsin_color.a * w.color.a, 0.0, 1.0);
+	vec3 color = (1.0 - fresnel) * tint * w.color.rgb * sceneparam.sceneBrightness +
+		fresnel * reflection * w.fresnelColor.rgb + highlight;
+	color *= fsin_color.rgb;
+
+	float alpha = 1.0 - (1.0 - tint) * (1.0 - fresnel);
+	float edge = clamp(min(fsin_color.a, fadeBegin) / fadeBegin, 0.0, 1.0);
+
+	return vec4(color / max(alpha, 1e-4), alpha * edge);
+}
+
 // DS1R's FRPG_Snow (MaterialResolvedSnow): a plain surface of the snow's color, with a finer normal, covers the
 // material's own where the vertex alpha times the snow's height rises above the start
 void SnowCover(inout vec3 albedo, inout vec3 F0, inout float roughness, inout vec3 normal)
 {
 	snowData snow = snowdata[g_mat + 11u];
-	float cover = clamp((fsin_color.a * SnowHeight() - snow.surface.z) * snow.surface.w, 0.0, 1.0);
+	float cover = clamp((fsin_color.a * LayeredHeight(vec2(0.0)) - snow.surface.z) * snow.surface.w, 0.0, 1.0);
 	if (cover <= 0.0)
 	{
 		return;
@@ -2806,6 +2889,15 @@ void main()
 		SnowCover(albedo, F0, roughness, normalMap);
 	}
 
+	// DS1R's water is a mirror over its waves, so the indirect light found below is its reflection
+	if (IsReflectWater())
+	{
+		normalMap = ReflectWaterNormal();
+		albedo = vec3(0.0);
+		F0 = vec3(1.0);
+		roughness = 0.0;
+	}
+
 	Surface surface;
 	// The color of water comes from its volume, so all that is lit here is what its surface reflects
 	surface.diffuse = volumeWater ? vec3(0.0) : albedo;
@@ -2943,6 +3035,13 @@ void main()
 		{
 			alpha *= WaterEdge(thickness);
 		}
+	}
+
+	if (IsReflectWater())
+	{
+		vec4 water = ReflectWaterColor(surface, indirect * sceneparam.indirectLightMult * sceneparam.sceneBrightness);
+		litColor = water.rgb;
+		alpha = c_transparent ? water.a : 1.0;
 	}
 
 	// What the surface gives off itself, kept apart for the glow filter as well as added to the color.
