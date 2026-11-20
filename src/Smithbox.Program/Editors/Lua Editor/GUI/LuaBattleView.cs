@@ -468,8 +468,8 @@ public class LuaBattleView
         }
         if (!timeAct.EffectsAvailable && CFG.Current.LuaEditor_TimeAct_Effects)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("LUA_TAE_No_Fx_Editor"));
-        else if (timeAct.BankIndexing && CFG.Current.LuaEditor_TimeAct_Effects)
-            ImGui.TextDisabled(LOC.Get("LUA_TAE_Indexing"));
+        else if (timeAct.PreloadStatus is { } loading)
+            ImGui.TextDisabled(loading);
 
         // The play: which clip, from which TAE, how far in
         var play = timeAct.Current;
@@ -1049,6 +1049,15 @@ public class LuaBattleView
         ImGui.SameLine();
         ImGui.Checkbox($"{LOC.Get("LUA_Battle_Hide_Zero")}##luaBattleHideZero", ref HideZero);
 
+        // Acts start once every effect the character can trigger is ready, so none stalls mid-act
+        if (Viewer.TimeAct.PreloadStatus is { } loading)
+        {
+            var waiting = running || Viewer.WaitingForEffects;
+            GUI.WrappedTextColored(waiting ? UI.Current.ImGui_Warning_Text_Color : UI.Current.ImGui_Default_Text_Color with { W = 0.7f },
+                waiting ? LOC.Get("LUA_TAE_Preload_Waiting", loading) : loading);
+            GUI.Tooltip(LOC.Get("LUA_TAE_Preload_TT"));
+        }
+
         if (running)
         {
             // Always the one line, so it doesn't come and go between acts
@@ -1285,9 +1294,14 @@ public class LuaBattleView
             Viewer.Status = LOC.Get("LUA_Viewer_No_Character");
             return;
         }
-        var plan = Situation.PlanAct(act, Viewer.CurrentDistance());
-        Viewer.Status = plan.Count == 0 ? LOC.Get("LUA_Viewer_Act_Nothing", act.Id) : null;
-        Viewer.Player.Play(plan);
+        // Played once the effects the character can trigger are ready (planned then, from where they stand then)
+        var situation = Situation;
+        Viewer.RunWhenReady(() =>
+        {
+            var plan = situation.PlanAct(act, Viewer.CurrentDistance());
+            Viewer.Status = plan.Count == 0 ? LOC.Get("LUA_Viewer_Act_Nothing", act.Id) : null;
+            Viewer.Player.Play(plan);
+        });
     }
 
     /// <summary>The act function's name without the goal's prefix (UncoverTombNobleManSword430000_Act01 → Act01)</summary>

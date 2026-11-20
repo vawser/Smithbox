@@ -95,7 +95,8 @@ public class LuaSimulation
             return;
         Clock += dt;
 
-        if (NextPending && Clock >= WaitUntil)
+        // An act starts only once every effect the character can trigger is ready, so none stalls mid-act
+        if (NextPending && Clock >= WaitUntil && Viewer.TimeAct.EffectsReady)
         {
             NextPending = false;
             Cycle();

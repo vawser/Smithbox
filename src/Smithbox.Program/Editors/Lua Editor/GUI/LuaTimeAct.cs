@@ -642,8 +642,207 @@ public sealed class LuaTimeAct : IDisposable
         }
     }
 
+    // --- preloading: every effect the character can trigger, ready before playback starts ---
+
+    // How long a frame may spend reading the character's TAE for its effects, and building them while playback waits
+    private const double CollectBudgetMs = 8;
+    private const double WaitingBuildBudgetMs = 25;
+    private const double PlayingBuildBudgetMs = 6;
+
+    // Who the effects were collected for (the character, what it animates with, and the effect filters)
+    private (LuaCharacter? Character, string? Animations, bool Tae, bool Bullets, bool Hits) CollectedFor;
+    private IEnumerator<int>? Collector;
+    private readonly HashSet<int> Collected = new();
+    private int CollectedAnimations;
+
+    // Diagnostic for verification: how long each part of the preload took (remove once confirmed in the app)
+    private readonly System.Diagnostics.Stopwatch PreloadClock = new();
+    private bool PreloadLogged;
+    private double? IndexedAt, CollectedAt;
+
+    /// <summary>
+    /// Whether playback may start: every effect the character's TAE can trigger (its effect events, and its bullet
+    /// events' flight and hit effects, child bullets too) is collected, the FX bank indexed, and those effects built and
+    /// their files loaded. Always true while effects aren't shown or the FX Editor isn't enabled.
+    /// </summary>
+    public bool EffectsReady => !PreloadWanted ||
+                                Collector == null && Project.Handler.FxData?.Bank is { IsIndexed: true } && Effects.Preload.IsDone;
+
+    private bool PreloadWanted => CFG.Current.LuaEditor_TimeAct_Effects && EffectsAvailable && Viewer.Self != null;
+
+    /// <summary>What the preload is doing, for the Battle Simulation (null when ready)</summary>
+    public string? PreloadStatus
+    {
+        get
+        {
+            if (EffectsReady)
+                return null;
+            if (Project.Handler.FxData?.Bank is { IsIndexed: false } bank)
+                return LOC.Get("LUA_TAE_Preload_Indexing", bank.IndexedBinders, bank.TotalBinders);
+            if (Collector != null)
+                return LOC.Get("LUA_TAE_Preload_Collecting", CollectedAnimations, Collected.Count);
+            return LOC.Get("LUA_TAE_Preload_Building", Effects.Preload.ReadyCount, Effects.Preload.Count);
+        }
+    }
+
+    /// <summary>
+    /// Starts collecting again when the character, what it animates with or the effect filters change, then carries
+    /// the collection on within its frame budget, pinning what it has found so it loads meanwhile
+    /// </summary>
+    private void UpdatePreload()
+    {
+        var self = Viewer.Self;
+        var cfg = CFG.Current;
+        var key = (self, self?.AnimationName, cfg.LuaEditor_Display_Tae_Effects, cfg.LuaEditor_Display_Bullet_Effects, cfg.LuaEditor_Display_Hit_Effects);
+
+        if (!PreloadWanted || self == null || self.IsLoading)
+        {
+            if (!PreloadWanted && (Collected.Count > 0 || Collector != null))
+            {
+                Collector = null;
+                Collected.Clear();
+                Effects.Pin(Array.Empty<int>());
+                CollectedFor = default;
+            }
+            return;
+        }
+
+        // The bank is indexed as soon as there is a character (indexing reads every sfx binder, which is what made an
+        // effect's first showing wait so long when it only started then)
+        Project.Handler.FxData?.Bank?.StartIndexing();
+
+        if (key != CollectedFor)
+        {
+            CollectedFor = key;
+            Collected.Clear();
+            CollectedAnimations = 0;
+            Collector = CollectEffects(self).GetEnumerator();
+            PreloadClock.Restart();
+            PreloadLogged = false;
+            IndexedAt = CollectedAt = null;
+        }
+
+        // Diagnostic for verification: remove once the preload is confirmed in the app
+        if (!PreloadLogged)
+        {
+            if (IndexedAt == null && Project.Handler.FxData?.Bank is { IsIndexed: true })
+                IndexedAt = PreloadClock.Elapsed.TotalSeconds;
+            if (CollectedAt == null && Collector == null)
+                CollectedAt = PreloadClock.Elapsed.TotalSeconds;
+            if (EffectsReady)
+            {
+                PreloadLogged = true;
+                Smithbox.Log(this, $"[Lua FX preload] {self.Name} ({self.AnimationName}): {Collected.Count} effects from " +
+                                   $"{CollectedAnimations} animations ready in {PreloadClock.Elapsed.TotalSeconds:0.00} s " +
+                                   $"(bank indexed at {IndexedAt:0.00} s, TAE read at {CollectedAt:0.00} s)");
+            }
+        }
+
+        if (Collector != null)
+        {
+            var before = Collected.Count;
+            var clock = System.Diagnostics.Stopwatch.StartNew();
+            while (clock.Elapsed.TotalMilliseconds < CollectBudgetMs)
+            {
+                if (!Collector.MoveNext())
+                {
+                    Collector = null;
+                    break;
+                }
+                if (Collector.Current > 0)
+                    Collected.Add(Collector.Current);
+                else
+                    CollectedAnimations++;
+            }
+            if (Collected.Count != before || Collector == null)
+                Effects.Pin(Collected);
+        }
+
+        // Built faster while playback waits for them
+        Effects.Preload.FrameBudgetMs = EffectsReady ? PlayingBuildBudgetMs : WaitingBuildBudgetMs;
+    }
+
+    /// <summary>
+    /// The effects of every animation in the character's anibnds (its own and the sets it shares): those its effect
+    /// events spawn, and the flight and hit effects of the bullets its bullet events fire, child bullets and all. Yields
+    /// 0 after each animation, where the collection may stop for the frame. Reads the TAE as the playback does (the
+    /// Time Act Editor's bank, its templates applied), as filtered by the Viewport Filters.
+    /// </summary>
+    private IEnumerable<int> CollectEffects(LuaCharacter self)
+    {
+        if (Project.Handler.TimeActData is not { } data)
+            yield break;
+
+        var cfg = CFG.Current;
+        var bulletParam = ProjectileParams.GetSpellBulletParam(Project);
+        var seenBullets = new HashSet<int>();
+
+        foreach (var set in AnimationPackage.GetAnimationSetNames(AnimatedModelKind.Character, self.AnimationName))
+        {
+            if (GetSource(set) is not { } source)
+                continue;
+            var template = data.GetTemplate(source);
+
+            foreach (var entry in source.TimeActs.ToList())
+            {
+                entry.Load();
+                if (entry.TimeAct == null)
+                    continue;
+
+                foreach (var animation in entry.TimeAct.Animations.ToList())
+                {
+                    entry.ApplyTemplate(animation, template);
+                    foreach (var ev in animation.Events)
+                    {
+                        if (ev.Parameters == null)
+                            continue;
+
+                        if (data.GetSimulationRole(ev) == TimeActSimulationRole.Bullet)
+                        {
+                            if (!CFG.Current.LuaEditor_TimeAct_Bullets || bulletParam == null ||
+                                !ResolveBullet(self.Name, ev, out _, out var row, out _))
+                                continue;
+                            foreach (var id in BulletEffects(row!, bulletParam, seenBullets, cfg))
+                                yield return id;
+                        }
+                        else if (cfg.LuaEditor_Display_Tae_Effects && IsEffectEvent(ev) && GetEffectId(ev) is { } effect)
+                        {
+                            yield return effect;
+                        }
+                    }
+                    yield return 0;
+                }
+            }
+        }
+    }
+
+    /// <summary>A bullet's flight and hit effects, and those of the bullets it fires in turn (each bullet once)</summary>
+    private static IEnumerable<int> BulletEffects(Param.Row row, Param bulletParam, HashSet<int> seen, CFG cfg)
+    {
+        var pending = new Stack<Param.Row>();
+        pending.Push(row);
+        while (pending.Count > 0)
+        {
+            var bullet = pending.Pop();
+            if (!seen.Add(bullet.ID))
+                continue;
+            if (cfg.LuaEditor_Display_Bullet_Effects && ProjectileParams.GetFlightEffect(bullet) is > 0 and var flight)
+                yield return flight;
+            if (cfg.LuaEditor_Display_Hit_Effects && ProjectileParams.GetHitEffect(bullet) is > 0 and var hit)
+                yield return hit;
+            foreach (var (_, child) in ProjectileParams.GetChildBullets(bullet))
+            {
+                if (bulletParam[child] is { } next)
+                    pending.Push(next);
+            }
+        }
+    }
+
     private void UpdateEffects()
     {
+        // First, so effects turned off unpin what was being preloaded too
+        UpdatePreload();
+
         if (!CFG.Current.LuaEditor_TimeAct_Effects || !EffectsAvailable)
         {
             if (Effects.CueCount > 0)
@@ -664,8 +863,9 @@ public sealed class LuaTimeAct : IDisposable
         if (!CFG.Current.LuaEditor_Display_Hit_Effects)
             Effects.RemoveCues(c => c.Tag is BulletEffectTag { Hit: true });
 
-        // The bank is read only once something has an effect to show from it (indexing reads every sfx binder)
-        if (Effects.CueCount > 0 && Project.Handler.FxData?.Bank is { } bank)
+        // The bank is read once something may show from it (indexing reads every sfx binder); the preload above starts it
+        // for the character already
+        if ((Effects.CueCount > 0 || PreloadWanted) && Project.Handler.FxData?.Bank is { } bank)
         {
             bank.StartIndexing();
             bank.Update();
@@ -705,7 +905,7 @@ public sealed class LuaTimeAct : IDisposable
         if (!CFG.Current.LuaEditor_TimeAct_Bullets)
             return;
 
-        if (!ResolveBullet(play, ev, out var behavior, out var bulletRow, out var failure))
+        if (!ResolveBullet(play.Character.Name, ev, out var behavior, out var bulletRow, out var failure))
         {
             AddLog(play, ev, LuaTimeActLogKind.Problem, name, failure);
             return;
@@ -766,7 +966,7 @@ public sealed class LuaTimeAct : IDisposable
     /// The Bullet row a bullet event fires: the event's BehaviorParam row (the character's NpcParam variations + the
     /// judge ID, or the judge ID as it is for a common one), whose refType is a bullet, and its refId
     /// </summary>
-    private bool ResolveBullet(LuaTimeActPlay play, TAE.Event ev, out Param.Row? behavior, out Param.Row? bullet,
+    private bool ResolveBullet(string character, TAE.Event ev, out Param.Row? behavior, out Param.Row? bullet,
         out string failure)
     {
         behavior = null;
@@ -785,10 +985,10 @@ public sealed class LuaTimeAct : IDisposable
         }
 
         var common = Project.Handler.TimeActData?.GetFieldMeta(ev, "BehaviorJudgeID")?.BehaviorRef == "Common";
-        var rows = Resolver.GetBehaviorRows(ev, play.Character.Name, null, judge, common);
+        var rows = Resolver.GetBehaviorRows(ev, character, null, judge, common);
 
         // Running as an NpcParam row: its own variation's row comes first (the others stay as fallbacks)
-        if (!common && Viewer.SelfNpc is { BehaviorVariation: { } variation } npc && npc.Character == play.Character.Name &&
+        if (!common && Viewer.SelfNpc is { BehaviorVariation: { } variation } npc && npc.Character == character &&
             CharacterComposition.GetRow(Project, "BehaviorParam", NpcBehaviorBase + variation * BehaviorVariationScale + judge) is { } own)
         {
             rows.Remove(own);
@@ -796,7 +996,7 @@ public sealed class LuaTimeAct : IDisposable
         }
         if (rows.Count == 0)
         {
-            failure = LOC.Get("LUA_TAE_Bullet_No_Behavior", judge, play.Character.Name);
+            failure = LOC.Get("LUA_TAE_Bullet_No_Behavior", judge, character);
             return false;
         }
 

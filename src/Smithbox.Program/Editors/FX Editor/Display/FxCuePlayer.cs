@@ -170,7 +170,7 @@ public sealed class FxCuePlayer
             Cues.Add(new Running { Cue = cue });
 
         // The same effects again (an edit elsewhere in the timeline) stay ready
-        Preload.Set(Cues.Select(r => r.Cue.EffectId));
+        Preload.Set(Wanted());
     }
 
     /// <summary>
@@ -182,6 +182,27 @@ public sealed class FxCuePlayer
 
     public void Clear() => SetCues(Array.Empty<FxCue>());
 
+    // Effects kept ready whether or not a cue wants them now (see Pin)
+    private readonly HashSet<int> Pinned = new();
+
+    /// <summary>The effects the preload works on: the cues', and the pinned ones</summary>
+    private IEnumerable<int> Wanted() => Cues.Select(r => r.Cue.EffectId).Concat(Pinned);
+
+    /// <summary>
+    /// Keeps these effects ready (built, their files loaded) as well as the cues', so one cued later starts at once:
+    /// for a host that knows ahead what may play (the Lua Editor's simulation, from the character's TAE). Replaces the
+    /// pinned set; an empty one unpins all.
+    /// </summary>
+    public void Pin(IEnumerable<int> ids)
+    {
+        Pinned.Clear();
+        Pinned.UnionWith(ids.Where(id => id > 0));
+        Preload.Set(Wanted());
+    }
+
+    /// <summary>How many effects are pinned</summary>
+    public int PinnedCount => Pinned.Count;
+
     /// <summary>
     /// Adds cues to those set, leaving the running effects as they are: for a host whose clock only goes forward and
     /// learns of its effects as it goes (the Lua Editor's simulation). Pair with <see cref="Prune"/>.
@@ -191,14 +212,14 @@ public sealed class FxCuePlayer
         foreach (var cue in cues)
             Cues.Add(new Running { Cue = cue });
 
-        Preload.Set(Cues.Select(r => r.Cue.EffectId));
+        Preload.Set(Wanted());
     }
 
     /// <summary>Drops the cues that match, running or not (a host hiding one kind of its effects)</summary>
     public void RemoveCues(Predicate<FxCue> match)
     {
         if (Cues.RemoveAll(r => match(r.Cue)) > 0)
-            Preload.Set(Cues.Select(r => r.Cue.EffectId));
+            Preload.Set(Wanted());
     }
 
     /// <summary>
@@ -213,7 +234,7 @@ public sealed class FxCuePlayer
             r.Instance == null && time - r.Cue.Start > MaxLinger);
 
         if (removed > 0)
-            Preload.Set(Cues.Select(r => r.Cue.EffectId));
+            Preload.Set(Wanted());
     }
 
     /// <summary>Starts every effect running at <paramref name="time"/> again from its start.</summary>

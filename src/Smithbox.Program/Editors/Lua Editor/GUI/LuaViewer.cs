@@ -124,6 +124,29 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
     /// <summary>Fires the battle goal's Goal.Interrupt (by the SpEffects the TAE puts on, or by hand)</summary>
     public LuaInterrupts Interrupts { get; }
 
+    // An act to play once the effects the character can trigger are ready (see RunWhenReady)
+    private Action? PendingStart;
+
+    /// <summary>Whether an act is waiting for the character's effects to load before it plays</summary>
+    public bool WaitingForEffects => PendingStart != null;
+
+    /// <summary>
+    /// Plays something (an act clicked) now if every effect the character can trigger is ready, else as soon as they
+    /// are, so its effects show without a stall; a later request replaces an earlier one still waiting
+    /// </summary>
+    public void RunWhenReady(Action start)
+    {
+        if (TimeAct.EffectsReady)
+        {
+            PendingStart = null;
+            start();
+        }
+        else
+        {
+            PendingStart = start;
+        }
+    }
+
     /// <summary>Walks the viewport in first person as the target, the player's actions reaching the AI</summary>
     public LuaFirstPerson FirstPerson { get; }
 
@@ -228,6 +251,7 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
             return;
         Simulation.Stop();
         Player.Stop();
+        PendingStart = null;
         TimeAct.Reset();
         Self?.Dispose();
         Self = name != null ? new LuaCharacter(this, name, Matrix4x4.Identity, source) : null;
@@ -412,6 +436,14 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
 
         // A SpEffect the TAE put on that the goal observes: its Interrupt runs (and may stop the act)
         Interrupts.Update();
+
+        // An act asked for while the effects were still loading starts now they are ready
+        if (PendingStart != null && TimeAct.EffectsReady)
+        {
+            var start = PendingStart;
+            PendingStart = null;
+            start();
+        }
 
         // Each character's clip blends in from the last, over its TAE Blend event (known once its play is), else the
         // default; the pose is applied by the panel's next update
