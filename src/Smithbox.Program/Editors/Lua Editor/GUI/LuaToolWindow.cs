@@ -5,7 +5,7 @@ namespace StudioCore.Editors.LuaEditor;
 
 /// <summary>
 /// The Lua Editor's Tools window, laid out as the other editors' (ToolSections categories and headers). Browse: the
-/// Act Outline, the selected script's definitions. Simulation: the Battle Simulation, the selected battle goal run on
+/// Act Outline, the selected script's definitions, and the Global Search, a string or value in every script. Simulation: the Battle Simulation, the selected battle goal run on
 /// its character in the viewport, and First Person Mode, walking as its target. Viewport: the Viewport Filters (what the viewport shows of the simulation: effects,
 /// bullet lines, the target), and the shared Grid Configuration tool, for the simulation viewport's grids (saved in
 /// CFG.LuaEditor_Grids).
@@ -16,6 +16,7 @@ public class LuaToolWindow
     private readonly ToolSections Sections = new();
 
     public LuaOutline ActOutline { get; }
+    public LuaGlobalSearch GlobalSearch { get; }
     public ViewportGridTool GridTool { get; }
     public LuaViewportFiltersTool FiltersTool { get; } = new();
     public LuaFirstPersonTool FirstPersonTool { get; }
@@ -24,6 +25,7 @@ public class LuaToolWindow
     {
         Editor = editor;
         ActOutline = new LuaOutline(editor);
+        GlobalSearch = new LuaGlobalSearch(editor);
         FirstPersonTool = new LuaFirstPersonTool(editor);
         GridTool = new ViewportGridTool(ViewportGridEditor.Lua, () => Editor.Viewer.Viewport as VulkanViewport);
     }
@@ -35,6 +37,7 @@ public class LuaToolWindow
         // Browse
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
         ActOutline.OnToolWindow();
+        GlobalSearch.OnToolWindow();
 
         // Simulation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Simulation"));

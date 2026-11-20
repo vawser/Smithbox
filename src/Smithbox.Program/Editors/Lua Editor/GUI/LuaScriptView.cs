@@ -236,6 +236,14 @@ public class LuaScriptView
                         if (ImGui.IsItemClicked() && ctrl)
                             Editor.Definitions.GoTo(script, span.Text);
                     }
+
+                    // A name, number or string can be searched for in every script
+                    if (span.Kind is LuaTokenKind.Name or LuaTokenKind.Number or LuaTokenKind.String &&
+                        ImGui.IsItemClicked(ImGuiMouseButton.Right))
+                    {
+                        SearchToken = span.Kind == LuaTokenKind.String ? span.Text.Trim('"', '\'') : span.Text;
+                        ImGui.OpenPopup("luaScriptTokenMenu");
+                    }
                 }
 
                 if (ImGui.IsMouseClicked(ImGuiMouseButton.Left) && !ctrl && ImGui.IsWindowHovered() &&
@@ -245,8 +253,22 @@ public class LuaScriptView
         }
         clipper.End();
 
+        if (ImGui.BeginPopup("luaScriptTokenMenu"))
+        {
+            if (ImGui.Selectable($"{LOC.Get("LUA_Script_Search_All", SearchToken)}##luaScriptSearchAll"))
+            {
+                CFG.Current.Interface_LuaEditor_ToolWindow = true;
+                Editor.ToolWindow.GlobalSearch.SearchFor(SearchToken, true);
+            }
+            GUI.Tooltip(LOC.Get("LUA_Script_Search_All_TT"));
+            ImGui.EndPopup();
+        }
+
         ImGui.EndChild();
     }
+
+    // The token a right-click opened the menu on
+    private string SearchToken = "";
 
     private void Rebuild(LuaScript script)
     {
