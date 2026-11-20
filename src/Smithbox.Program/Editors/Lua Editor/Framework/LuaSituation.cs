@@ -321,6 +321,12 @@ public class LuaSituation
                         // Other tables (the act functions: funcs[n] = REGIST_FUNC(…), the params) don't change the weights
                     }
                     break;
+                // An odds goal's chain: what its terms read decides the weights; the roll and the branches (an act's own
+                // plan) don't
+                case LuaIfStat odds when odds == Goal.OddsChain:
+                    foreach (var act in Goal.Acts.Values.Where(a => a.OddsTerm != null))
+                        Visit(act.OddsTerm, Hint.Number);
+                    break;
                 case LuaIfStat i:
                     foreach (var c in i.Clauses)
                     {
@@ -808,6 +814,9 @@ public class LuaSituation
         public int Depth;
         public bool Undecided;
 
+        // Planning an odds goal's act: the clause of the odds chain that runs (the roll isn't)
+        public int? OddsAct;
+
         // The character's string-indexed numbers (ai:SetStringIndexedNumber("Dist_Step_Small", 2)), by the key's source
         // text: what the script has set, which ai:GetStringIndexedNumber then reads
         public Dictionary<string, V> Indexed = new();
@@ -888,20 +897,27 @@ public class LuaSituation
     /// on a branch that runs becomes a step, in order. Approach_Act_Flex (aicommon's approach helper) is followed
     /// as the game would: walk or run by distance, then approach if further than its distance.
     /// </summary>
-    public List<LuaActStep> PlanAct(LuaAct act, double targetDistance) => PlanFunction(act.FunctionNode, targetDistance);
+    public List<LuaActStep> PlanAct(LuaAct act, double targetDistance) => PlanFunction(act.FunctionNode, targetDistance, act.OddsClause);
 
     /// <summary>As <see cref="PlanAct"/>, for any function of the goal (the after function, …ActAfter_AdjustSpace)</summary>
-    public List<LuaActStep> PlanFunction(LuaFunctionExpr function, double targetDistance)
+    /// <param name="oddsAct">An odds goal's act: the clause of Activate's odds chain to run (function is Activate)</param>
+    /// <param name="depth">How many of the script's functions deep this is (a call to one is planned as its own steps)</param>
+    public List<LuaActStep> PlanFunction(LuaFunctionExpr function, double targetDistance, int? oddsAct = null, int depth = 0)
     {
         var steps = new List<LuaActStep>();
         if (function == null)
             return steps;
 
-        var run = new Run { TargetDistance = targetDistance, Live = Scene != null, Indexed = new(LastIndexed) };
+        var run = new Run { TargetDistance = targetDistance, Live = Scene != null, Indexed = new(LastIndexed), OddsAct = oddsAct };
         run.OnCall = (call, r) =>
         {
             if (StepOf(call, r, targetDistance) is { } step)
                 steps.Add(step);
+            // One of the script's functions (DS3: Activate calls Name_Act01(ai, goal)): its sub-goals, as the Interrupt
+            // follows them
+            else if (depth < MaxHelperDepth && call is { Method: null, Callee: LuaNameExpr { Name: var called } } &&
+                     Goal.Functions.TryGetValue(called, out var fn) && fn != function)
+                steps.AddRange(PlanFunction(fn, targetDistance, null, depth + 1));
         };
         Exec(function.Body, run);
         return steps;
@@ -1015,9 +1031,21 @@ public class LuaSituation
         foreach (var act in Goal.Acts.Keys)
             run.Result.Weights[act] = 0;
         Exec(Goal.Activate.Body, run);
+        // A direct goal: Activate is the one act, so it is always the one picked
+        if (Goal.Kind == LuaGoalKind.Direct)
+            run.Result.Weights[LuaBattleGoal.DirectAct] = 100;
         LastIndexed = run.Indexed;
         LastChunk = run.Locals.Where(l => ChunkNames.Contains(l.Key)).ToDictionary(l => l.Key, l => l.Value);
         return run.Result;
+    }
+
+    /// <summary>An odds goal's weight local set to a literal (w = 30): that literal is the weight in effect, for the inspector</summary>
+    private void MarkOddsLiteral(string name, LuaExpr value, LuaStat at, Run run)
+    {
+        if (run.Foreign || value?.AsNumber() == null || !Goal.OddsTerms.ContainsKey(name))
+            return;
+        run.Result.AssignedLiterals.Add(value.First);
+        run.Result.LastWeightLine = Tokens[at.First].Line;
     }
 
     private void Exec(LuaBlock block, Run run)
@@ -1031,7 +1059,10 @@ public class LuaSituation
             {
                 case LuaLocalStat l:
                     for (int i = 0; i < l.Names.Count; i++)
+                    {
                         run.Locals[l.Names[i]] = i < l.Values.Count ? Eval(l.Values[i], run) : Nil;
+                        MarkOddsLiteral(l.Names[i], i < l.Values.Count ? l.Values[i] : null, s, run);
+                    }
                     break;
 
                 case LuaAssignStat a:
@@ -1048,9 +1079,33 @@ public class LuaSituation
                             }
                         }
                         else if (a.Targets[i] is LuaNameExpr n)
+                        {
                             run.Locals[n.Name] = value;
+                            MarkOddsLiteral(n.Name, i < a.Values.Count ? a.Values[i] : null, s, run);
+                        }
                     }
                     break;
+
+                // An odds goal's chain. Evaluating: each act's weight is its term now (the roll isn't made), and nothing
+                // after the chain changes a weight. Planning an act: its clause runs, and the plan ends with it.
+                case LuaIfStat odds when !run.Foreign && odds == Goal.OddsChain:
+                    if (run.OddsAct is { } chosen)
+                    {
+                        if (chosen < odds.Clauses.Count)
+                            Exec(odds.Clauses[chosen].Body, run);
+                    }
+                    else
+                    {
+                        foreach (var act in Goal.Acts.Values.Where(a => a.OddsTerm != null))
+                        {
+                            var w = Eval(act.OddsTerm, run);
+                            run.Result.Weights[act.Id] = w.Kind == VKind.Number ? Math.Max(w.N, 0) : 0;
+                            if (act.OddsTerm.AsNumber() != null)
+                                run.Result.AssignedLiterals.Add(act.OddsTerm.First);
+                        }
+                    }
+                    run.Returned = true;
+                    return;
 
                 case LuaIfStat i:
                     var taken = false;

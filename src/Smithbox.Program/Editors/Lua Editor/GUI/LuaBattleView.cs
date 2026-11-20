@@ -123,6 +123,15 @@ public class LuaBattleView
         GUI.Tooltip(LOC.Get("LUA_Outline_Line", Goal.ActivateLine));
         DrawTableSwitch();
 
+        // A goal without an act table: how its acts are made
+        if (Goal.Kind != LuaGoalKind.Table)
+        {
+            ImGui.SameLine();
+            var odds = Goal.Kind == LuaGoalKind.Odds;
+            ImGui.TextDisabled(LOC.Get(odds ? "LUA_Battle_Kind_Odds" : "LUA_Battle_Kind_Direct"));
+            GUI.Tooltip(LOC.Get(odds ? "LUA_Battle_Kind_Odds_TT" : "LUA_Battle_Kind_Direct_TT"));
+        }
+
         DrawCharacter(script);
         DrawTimeAct();
         DrawSituation(script);

@@ -117,10 +117,11 @@ public static class EditorConditions
     /// SDT: per-map binders; 672/672 decompile and recompile, 656/672 byte-identical (102010_battle's stray goto fixed
     /// by DSLuaDecompiler's RemoveFallthroughJumpsPass).
     /// BB: per-map binders; 846/846 decompile and recompile; battle goals in the older global form (X_Activate).
+    /// DS3: per-map binders; 1106/1106 decompile and recompile; battle goals as tables, odds chains and direct goals.
     /// </summary>
     public static bool SupportsLuaEditor(ProjectType curType)
     {
-        return curType is ProjectType.ER or ProjectType.NR or ProjectType.SDT or ProjectType.BB;
+        return curType is ProjectType.ER or ProjectType.NR or ProjectType.SDT or ProjectType.BB or ProjectType.DS3;
     }
 
     public static bool SupportsHavokEditor(ProjectType curType)

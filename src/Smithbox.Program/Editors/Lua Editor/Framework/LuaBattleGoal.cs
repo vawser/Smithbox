@@ -21,6 +21,10 @@ public class LuaAct
     /// <summary>The act function itself (null when it isn't defined in this script), for planning what the act does</summary>
     public LuaFunctionExpr FunctionNode;
 
+    /// <summary>An odds goal's act: its clause of the odds chain (FunctionNode is then Activate), and the weight term</summary>
+    public int? OddsClause;
+    public LuaExpr OddsTerm;
+
     /// <summary>SetCoolTime(ai, goal, anim, seconds, weight, k) calls on this act's weight</summary>
     public List<(LuaLiteral? Anim, LuaLiteral? Seconds, int Line)> Cooldowns { get; } = new();
 
@@ -76,6 +80,19 @@ public class LuaWeightRow
     public List<string> Path { get; } = new();
     public int Line;
     public SortedDictionary<int, LuaLiteral> Weights { get; } = new();
+}
+
+/// <summary>How a battle goal picks an act</summary>
+public enum LuaGoalKind
+{
+    /// <summary>A weight table and Common_Battle_Activate (ER, SDT, most of DS3 and BB)</summary>
+    Table,
+
+    /// <summary>Activate's own odds chain: weights in locals, then if roll &lt;= w1 … elseif roll &lt;= w1 + w2 … (DS3)</summary>
+    Odds,
+
+    /// <summary>Activate adds its sub-goals itself, by its conditions: one act, Activate</summary>
+    Direct,
 }
 
 /// <summary>A special effect ID the script checks or observes (ai:HasSpecialEffectId(target, id), …)</summary>
@@ -283,7 +300,11 @@ public class LuaBattleGoal
             break;
         }
 
-        if (battle == null || battle.Arguments[2] is not LuaNameExpr weights || battle.Arguments[3] is not LuaNameExpr funcs)
+        // No act table: Activate picks what to do itself (DS3's older goals): its odds chain, or Activate as one act
+        if (battle == null)
+            return ReadWithoutTable(src, parse, sections, functions, out why);
+
+        if (battle.Arguments[2] is not LuaNameExpr weights || battle.Arguments[3] is not LuaNameExpr funcs)
         {
             why = "LUA_Battle_Why_No_Battle_Activate";
             return null;
@@ -368,8 +389,24 @@ public class LuaBattleGoal
             result.AfterFunctionNode = af.Fn;
         }
 
+        result.Finish(parse, interrupt, functions, body);
+        why = null;
+        return result;
+    }
+
+    /// <summary>
+    /// What every kind of goal reads besides its acts: the Interrupt, the script's functions it can call and what it
+    /// reacts to, the SpEffects observed, and those Activate, the Interrupt and the act functions use
+    /// </summary>
+    private void Finish(LuaParseResult parse, LuaFunctionExpr interrupt, Dictionary<string, (LuaNode Node, LuaFunctionExpr Fn)> functions, LuaBlock body)
+    {
+        var t = parse.Tokens;
+        int Line(LuaNode n) => t[n.First].Line;
+        var result = this;
+
         // The Interrupt, the functions it can call, and what it reacts to
         result.Interrupt = interrupt;
+        result.InterruptLine = interrupt != null ? Line(interrupt) : 0;
         foreach (var (name, fs) in functions)
             result.Functions[name] = fs.Fn;
 
@@ -415,7 +452,152 @@ public class LuaBattleGoal
                     result.SpEffects.Add(new LuaSpEffectUse((int)id, c.Method, Line(c)));
             }
         }
+    }
 
+    // --- goals without an act table ---
+
+    /// <summary>How the goal picks its acts</summary>
+    public LuaGoalKind Kind = LuaGoalKind.Table;
+
+    /// <summary>
+    /// An odds goal's chain (<see cref="LuaGoalKind.Odds"/>): if roll &lt;= w1 then … elseif roll &lt;= w1 + w2 then …;
+    /// each clause is an act, the term it adds (w2) its weight
+    /// </summary>
+    public LuaIfStat OddsChain;
+
+    /// <summary>The locals an odds goal's weights are (w1, w2, … when they are names), each with its act</summary>
+    public Dictionary<string, int> OddsTerms { get; } = new();
+
+    /// <summary>The single act of a direct goal (<see cref="LuaGoalKind.Direct"/>): Activate itself</summary>
+    public const int DirectAct = 1;
+
+    /// <summary>
+    /// The odds chain in a block: an if / elseif chain of two or more clauses whose conditions are roll &lt;= (or &lt;)
+    /// a sum, the same roll each time, each sum the last one plus one term. Its terms, in order; null if there is none.
+    /// </summary>
+    private static (LuaIfStat Chain, List<LuaExpr> Terms)? FindOddsChain(LuaBlock block)
+    {
+        foreach (var s in block.AllStatements())
+        {
+            if (s is not LuaIfStat { Clauses.Count: >= 2 } i)
+                continue;
+            string roll = null;
+            var terms = new List<LuaExpr>();
+            var ok = true;
+            foreach (var clause in i.Clauses)
+            {
+                if (clause.Condition is not LuaBinaryExpr { Operator: "<=" or "<", Left: LuaNameExpr r } cmp ||
+                    roll != null && r.Name != roll)
+                {
+                    ok = false;
+                    break;
+                }
+                roll = r.Name;
+                var sum = Summands(cmp.Right);
+                // Each sum is the last one plus one term (compared by source position of the same names)
+                if (sum.Count != terms.Count + 1 || !sum.Take(terms.Count).Zip(terms).All(p => SameTerm(p.First, p.Second)))
+                {
+                    ok = false;
+                    break;
+                }
+                terms.Add(sum[^1]);
+            }
+            if (ok)
+                return (i, terms);
+        }
+        return null;
+
+        static List<LuaExpr> Summands(LuaExpr e) => e is LuaBinaryExpr { Operator: "+" } b
+            ? Summands(b.Left).Append(b.Right).ToList()
+            : new List<LuaExpr> { e is LuaParenExpr p ? p.Inner : e };
+
+        static bool SameTerm(LuaExpr a, LuaExpr b) => (a, b) switch
+        {
+            (LuaNameExpr x, LuaNameExpr y) => x.Name == y.Name,
+            _ => a.AsNumber() is { } x2 && b.AsNumber() == x2,
+        };
+    }
+
+    /// <summary>
+    /// A battle goal whose Activate picks what to do itself (no Common_Battle_Activate): its odds chain as acts, else
+    /// Activate as its one act. Only a battle section (its goal named …Battle…) is read so, not aicommon's goals.
+    /// </summary>
+    private static LuaBattleGoal ReadWithoutTable(string src, LuaParseResult parse, List<Section> sections,
+        Dictionary<string, (LuaNode Node, LuaFunctionExpr Fn)> functions, out string why)
+    {
+        var t = parse.Tokens;
+        int Line(LuaNode n) => t[n.First].Line;
+        LuaLiteral? Literal(LuaExpr e) => e.AsNumber() is { } v ? new LuaLiteral(e.First, e.Last, v, Line(e)) : null;
+
+        var section = sections.FirstOrDefault(x => x.Activate != null && x.Goal != null &&
+                                                    x.Goal.Contains("Battle", StringComparison.OrdinalIgnoreCase) &&
+                                                    x.Activate.Body.AllStatements().SelectMany(s => s.Calls()).Any(c =>
+                                                        c.Method == "AddSubGoal" || c.Method == null && c.Callee is LuaNameExpr n && functions.ContainsKey(n.Name)));
+        if (section == null)
+        {
+            why = "LUA_Battle_Why_No_Battle_Activate";
+            return null;
+        }
+        foreach (var (name, m) in section.Methods)
+            functions.TryAdd(name, m);
+
+        var activate = section.Activate;
+        var result = new LuaBattleGoal
+        {
+            GoalName = section.Goal,
+            Chunk = parse.Tree,
+            Table = MainTable,
+            Activate = activate,
+            ActivateLine = Line(activate),
+        };
+        result.Tables.Add(MainTable);
+
+        if (FindOddsChain(activate.Body) is { } odds)
+        {
+            // Each clause an act (Branch01, …), its weight the term it adds; the else (if any) is the rest of the roll
+            result.Kind = LuaGoalKind.Odds;
+            result.OddsChain = odds.Chain;
+            for (int k = 0; k < odds.Terms.Count; k++)
+            {
+                var clause = odds.Chain.Clauses[k];
+                var act = result.Act(k + 1);
+                act.Function = $"Branch{k + 1:D2}";
+                act.RegisterLine = Line(clause.Condition);
+                act.FunctionLine = Line(clause.Condition);
+                act.FunctionNode = activate;
+                act.OddsClause = k;
+                act.OddsTerm = odds.Terms[k];
+                if (odds.Terms[k] is LuaNameExpr term)
+                    result.OddsTerms.TryAdd(term.Name, k + 1);
+                result.ReadSubGoals(act, new LuaFunctionExpr { Body = clause.Body }, src, t, Literal);
+            }
+
+            // Weights: the literals the terms are set to, by the branch that sets them; a literal term is its own row
+            result.ReadRows(activate.Body, new List<string>(), null, src, t,
+                (target, _) => target is LuaNameExpr n && result.OddsTerms.TryGetValue(n.Name, out var id) ? id : null, Literal,
+                name => result.OddsTerms.TryGetValue(name, out var id) ? id : null);
+            var literalTerms = odds.Terms.Select((e, k) => (Lit: Literal(e), Act: k + 1)).Where(x => x.Lit != null).ToList();
+            if (literalTerms.Count > 0)
+            {
+                var row = new LuaWeightRow { Line = Line(odds.Chain) };
+                foreach (var (lit, id) in literalTerms)
+                    row.Weights[id] = lit!.Value;
+                result.Rows.Add(row);
+            }
+        }
+        else
+        {
+            // Activate is the act: what it does in the situation is its plan
+            result.Kind = LuaGoalKind.Direct;
+            var act = result.Act(DirectAct);
+            act.Function = "Activate";
+            act.RegisterLine = Line(activate);
+            act.FunctionLine = Line(activate);
+            act.FunctionNode = activate;
+            result.ReadSubGoals(act, activate, src, t, Literal);
+        }
+
+        result.Finish(parse, section.Interrupt, functions, activate.Body);
         why = null;
         return result;
     }
@@ -445,15 +627,22 @@ public class LuaBattleGoal
         return act;
     }
 
+    /// <param name="localKey">An odds goal's weight locals: local w = 20 sets act w's weight too (null: not read)</param>
     private void ReadRows(LuaBlock block, List<string> path, string weights, string src, List<LuaToken> t,
-        Func<LuaExpr, string, int?> keyOf, Func<LuaExpr, LuaLiteral?> literal)
+        Func<LuaExpr, string, int?> keyOf, Func<LuaExpr, LuaLiteral?> literal, Func<string, int?> localKey = null)
     {
         LuaWeightRow run = null;
 
         foreach (var s in block.Stats)
         {
-            if (s is LuaAssignStat { Targets.Count: 1, Values.Count: 1 } a && keyOf(a.Targets[0], weights) is { } act &&
-                literal(a.Values[0]) is { } value)
+            int? key = s switch
+            {
+                LuaAssignStat { Targets.Count: 1, Values.Count: 1 } a => keyOf(a.Targets[0], weights),
+                LuaLocalStat { Names.Count: 1, Values.Count: 1 } l when localKey != null => localKey(l.Names[0]),
+                _ => null,
+            };
+            var assigned = s switch { LuaAssignStat a2 => a2.Values[0], LuaLocalStat l2 when l2.Values.Count == 1 => l2.Values[0], _ => null };
+            if (key is { } act && assigned != null && literal(assigned) is { } value)
             {
                 if (run == null)
                 {
@@ -472,14 +661,14 @@ public class LuaBattleGoal
                     for (int c = 0; c < i.Clauses.Count; c++)
                     {
                         var label = (c == 0 ? "if " : "elseif ") + i.Clauses[c].Condition.SourceOf(src, t);
-                        ReadRows(i.Clauses[c].Body, Append(path, label), weights, src, t, keyOf, literal);
+                        ReadRows(i.Clauses[c].Body, Append(path, label), weights, src, t, keyOf, literal, localKey);
                     }
                     if (i.Else != null)
-                        ReadRows(i.Else, Append(path, "else"), weights, src, t, keyOf, literal);
+                        ReadRows(i.Else, Append(path, "else"), weights, src, t, keyOf, literal, localKey);
                     break;
                 case LuaLoopStat l:
                     run = null;
-                    ReadRows(l.Body, Append(path, l.Keyword + " …"), weights, src, t, keyOf, literal);
+                    ReadRows(l.Body, Append(path, l.Keyword + " …"), weights, src, t, keyOf, literal, localKey);
                     break;
                 default:
                     // Other statements (a SetCoolTime, a call) end the run, so rows keep their source order
