@@ -69,6 +69,11 @@ public class LuaFileList
         if (single)
             flags |= ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
 
+        // A map's binder (or aicommon) found by one of its scripts opens to show it
+        var byScript = !single && !string.IsNullOrEmpty(Filter) && !MatchesBinder(container);
+        if (byScript)
+            ImGui.SetNextItemOpen(true);
+
         var label = container.IsDirty ? $"{container.Name}*" : container.Name;
         if (container.InProject)
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
@@ -84,8 +89,12 @@ public class LuaFileList
         if (container.InProject)
             GUI.Tooltip(LOC.Get("LUA_FileList_In_Project_TT"));
 
-        var hasCharacter = CharacterText(container);
-        UsersText(container, hasCharacter);
+        // A binder of one goal shows its character and users on its own row; a map's binder on each script's
+        if (!container.HoldsManyGoals)
+        {
+            var hasCharacter = CharacterText(container.CharacterId);
+            UsersText(container.GoalId, hasCharacter);
+        }
 
         if (container.LoadError != null)
         {
@@ -101,9 +110,18 @@ public class LuaFileList
         {
             foreach (var script in container.Scripts)
             {
+                if (byScript && !MatchesScript(script))
+                    continue;
+
                 var name = script.IsDirty ? $"{script.EntryName}*" : script.EntryName;
                 if (ImGui.Selectable($"{name}##luaScript_{container.Path}_{script.EntryName}", Editor.SelectedScript == script))
                     Editor.SelectScript(script);
+
+                if (container.HoldsManyGoals)
+                {
+                    var hasCharacter = CharacterText(script.CharacterId);
+                    UsersText(script.GoalId, hasCharacter);
+                }
             }
         }
         ImGui.TreePop();
@@ -120,9 +138,9 @@ public class LuaFileList
     }
 
     /// <summary>A battle goal's character (from its goal ID) and its alias, after its name; true if one was shown</summary>
-    private bool CharacterText(LuaContainer container)
+    private bool CharacterText(string chr)
     {
-        if (container.CharacterId is not { } chr)
+        if (chr == null)
             return false;
 
         var alias = AliasOf(chr);
@@ -136,12 +154,12 @@ public class LuaFileList
     }
 
     /// <summary>
-    /// The NpcThinkParam rows that use the binder's goal ID, after its name: dimmed when the character's alias is shown,
-    /// so the two don't read as one
+    /// The NpcThinkParam rows that use the goal ID, after the binder's or script's name: dimmed when the character's
+    /// alias is shown, so the two don't read as one
     /// </summary>
-    private void UsersText(LuaContainer container, bool afterAlias)
+    private void UsersText(int? goalId, bool afterAlias)
     {
-        if (!CFG.Current.LuaEditor_File_List_Display_Users || container.GoalId is not { } id)
+        if (!CFG.Current.LuaEditor_File_List_Display_Users || goalId is not { } id)
             return;
 
         var users = Editor.Project.Handler.LuaData?.UsersOf(id);
@@ -170,17 +188,28 @@ public class LuaFileList
         }
     }
 
+    /// <summary>The binder matches, or (a map's binder, or aicommon, once read) one of its scripts does</summary>
     private bool Matches(LuaContainer container)
     {
-        if (string.IsNullOrEmpty(Filter))
+        if (string.IsNullOrEmpty(Filter) || MatchesBinder(container))
             return true;
+        return container.HoldsManyGoals && container.IsLoaded && container.Scripts.Any(MatchesScript);
+    }
 
-        var users = CFG.Current.LuaEditor_File_List_Display_Users && container.GoalId is { } id
+    private bool MatchesBinder(LuaContainer container) =>
+        IsMatch(container.Name, container.HoldsManyGoals ? null : container.GoalId, container.HoldsManyGoals ? null : container.CharacterId);
+
+    private bool MatchesScript(LuaScript script) =>
+        string.IsNullOrEmpty(Filter) || IsMatch(script.EntryName, script.GoalId, script.CharacterId);
+
+    private bool IsMatch(string name, int? goalId, string chr)
+    {
+        var users = CFG.Current.LuaEditor_File_List_Display_Users && goalId is { } id
             ? string.Join(" ", Editor.Project.Handler.LuaData?.UsersOf(id).Select(u => u.Name) ?? Array.Empty<string>())
             : "";
         // The character's ID and alias match too
-        var character = container.CharacterId is { } chr ? $"{chr} {AliasOf(chr)}" : "";
-        return EditorFilters.IsMatch(Filter, container.Name, ExactFilter, $"{character} {users}");
+        var character = chr != null ? $"{chr} {AliasOf(chr)}" : "";
+        return EditorFilters.IsMatch(Filter, name, ExactFilter, $"{character} {users}");
     }
 
     private static string KindName(LuaBinderKind kind) => kind switch
@@ -188,6 +217,7 @@ public class LuaFileList
         LuaBinderKind.Battle => LOC.Get("LUA_FileList_Kind_Battle"),
         LuaBinderKind.Logic => LOC.Get("LUA_FileList_Kind_Logic"),
         LuaBinderKind.Common => LOC.Get("LUA_FileList_Kind_Common"),
+        LuaBinderKind.Map => LOC.Get("LUA_FileList_Kind_Map"),
         _ => LOC.Get("LUA_FileList_Kind_Other"),
     };
 }

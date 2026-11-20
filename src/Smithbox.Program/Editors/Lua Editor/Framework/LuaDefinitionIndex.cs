@@ -21,6 +21,12 @@ public class LuaDefinitionIndex
     /// <summary>aicommon's numeric globals (goal IDs, enums: NAME = number at the top level); null until it has been read</summary>
     public IReadOnlyDictionary<string, double> Constants { get; private set; }
 
+    /// <summary>
+    /// aicommon's global functions (function Name(…) at the top level, first definition kept), for the simulation to run
+    /// the helpers scripts call (SpaceCheck); null until aicommon has been read
+    /// </summary>
+    public IReadOnlyDictionary<string, LuaFunctionExpr> Functions { get; private set; }
+
     /// <summary>Starts reading aicommon in the background, if not yet (for <see cref="Constants"/>)</summary>
     public void EnsureIndex()
     {
@@ -106,6 +112,7 @@ public class LuaDefinitionIndex
         if (common == null)
         {
             Common = new();
+            Functions = new Dictionary<string, LuaFunctionExpr>();
             Constants = new Dictionary<string, double>();
             return;
         }
@@ -115,6 +122,7 @@ public class LuaDefinitionIndex
         {
             var index = new Dictionary<string, List<(LuaScript, int)>>();
             var constants = new Dictionary<string, double>();
+            var functions = new Dictionary<string, LuaFunctionExpr>();
             try
             {
                 if (common.EnsureLoaded())
@@ -124,6 +132,7 @@ public class LuaDefinitionIndex
                         var parse = script.Parse;
                         if (parse == null)
                             continue;
+                        parse.Tree?.AddGlobalFunctions(functions);
                         if (parse.Tree != null)
                         {
                             foreach (var s in parse.Tree.Stats)
@@ -149,6 +158,8 @@ public class LuaDefinitionIndex
             {
                 Smithbox.LogError(this, LOC.Get("LUA_Definition_Index_Failed", common.Name), e);
             }
+            // Functions before Constants: the battle view rebuilds once Constants is set
+            Functions = functions;
             Constants = constants;
             Common = index;
             Status = null;

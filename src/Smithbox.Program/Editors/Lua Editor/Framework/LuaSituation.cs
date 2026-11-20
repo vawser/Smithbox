@@ -48,6 +48,9 @@ public class LuaSituationInput
     /// </summary>
     public LuaCallExpr SceneQuery;
 
+    /// <summary>For ai:GetStringIndexedNumber(key): the key's source text ("Dist_Step_Small"); the script may set it</summary>
+    public string IndexedKey;
+
     /// <summary>A SetCoolTime input: the animation and seconds, which the simulation checks against what it played</summary>
     public long? CooldownAnimation;
     public double? CooldownSeconds;
@@ -196,23 +199,41 @@ public class LuaSituation
     private readonly IReadOnlyDictionary<string, double> Constants;
 
     public List<LuaSituationInput> Inputs { get; } = new();
+
+    /// <summary>The GetStringIndexedNumber reads that aren't inputs, as Activate always sets their key first</summary>
+    public int IndexedSetByScript { get; }
     private readonly Dictionary<string, LuaSituationInput> ByKey = new();
 
     // Locals bound to an input (local targetDist = ai:GetDist(TARGET_ENE_0)), from the static pass
     private readonly Dictionary<string, List<LuaSituationInput>> LocalInputs = new();
 
+    // Global functions a call may name: the script's own, then aicommon's (see Helper)
+    private readonly IReadOnlyDictionary<string, LuaFunctionExpr> CommonFunctions;
+
     /// <param name="constants">Numeric global constants (from aicommon: goal IDs, enums), to compare by value; may be empty</param>
-    public LuaSituation(LuaBattleGoal goal, string src, List<LuaToken> tokens, IReadOnlyDictionary<string, double> constants)
+    /// <param name="commonFunctions">aicommon's global functions by name (SpaceCheck, …), run when a script calls one; may be null</param>
+    public LuaSituation(LuaBattleGoal goal, string src, List<LuaToken> tokens, IReadOnlyDictionary<string, double> constants,
+        IReadOnlyDictionary<string, LuaFunctionExpr> commonFunctions = null)
     {
         Goal = goal;
         Src = src;
         Tokens = tokens;
         Constants = constants ?? new Dictionary<string, double>();
+        CommonFunctions = commonFunctions ?? new Dictionary<string, LuaFunctionExpr>();
         Collect(goal.Activate.Body);
 
         // Only what a condition or a weight reads is shown: a call whose result nothing tests (an act function
         // registration, a local never compared) can't change which act is picked. Evaluation still knows them all.
         Inputs.RemoveAll(i => !i.UsedAsNumber && !i.UsedAsBoolean && i.Choices.Count == 0);
+
+        // A string-indexed number Activate always sets first (ai:SetStringIndexedNumber("Dist_Step_Small", 2) at its
+        // top level) is the script's value, not the user's: no input. One set only on some branches stays an input
+        // (the value an earlier Activate left).
+        var alwaysSet = goal.Activate.Body.Stats.OfType<LuaCallStat>()
+            .Where(s => s.Call is { Method: "SetStringIndexedNumber", Arguments.Count: 2 } &&
+                        (s.Call.Arguments[1].AsNumber() != null || s.Call.Arguments[1] is LuaNameExpr { Name: var setName } && IsConstantName(setName)))
+            .Select(s => Text(s.Call.Arguments[0])).ToHashSet();
+        IndexedSetByScript = Inputs.RemoveAll(i => i.IndexedKey != null && alwaysSet.Contains(i.IndexedKey));
 
         foreach (var input in Inputs)
         {
@@ -333,9 +354,10 @@ public class LuaSituation
     /// <summary>
     /// Marks an input the simulation answers from the scene (distance, facing, angles), or one the NPC's rows may answer
     /// </summary>
-    private static LuaSituationInput MarkLive(LuaSituationInput input, LuaCallExpr call)
+    private LuaSituationInput MarkLive(LuaSituationInput input, LuaCallExpr call)
     {
-        if (IsSceneQuery(call))
+        // A scene query, or a helper the scene answers by running its code (SpaceCheck(ai, goal, 90, 1))
+        if (IsSceneQuery(call) || Helper(call) != null)
             input.SceneQuery = call;
         if (IsNpcQuery(call))
             input.NpcQuery = call;
@@ -449,8 +471,82 @@ public class LuaSituation
             "IsInsideTarget" => a.Count >= 3 && Who(a[0]) == "TARGET_ENE_0" && a[1] is LuaNameExpr,
             "IsInsideTargetCustom" => a.Count >= 6 && Who(a[0]) is { } f && Who(a[1]) is { } t && f != t && a[2] is LuaNameExpr,
             "IsInsideTargetEx" => a.Count >= 5 && Who(a[0]) is { } f2 && Who(a[1]) is { } t2 && f2 != t2 && a[2] is LuaNameExpr,
-            _ => false,
+            _ => IsNavmeshQuery(c),
         };
+    }
+
+    /// <summary>
+    /// A navmesh line check from a character: ai:IsExistMeshOnLine(who, dir, dist), ai:GetExistMeshOnLineDist(who, dir,
+    /// dist), ai:GetExistMeshOnLineDistEx(who, dir, dist, …), ai:GetExistMeshOnLineDistSpecifyAngle(who, angle, dist, dirType) and …SpecifyAngleEx(who, angle, dist,
+    /// dirType, radius, n): is there walkable ground along that line, and how far it runs
+    /// </summary>
+    public static bool IsNavmeshQuery(LuaCallExpr c) =>
+        c.Method is "IsExistMeshOnLine" or "GetExistMeshOnLineDist" or "GetExistMeshOnLineDistEx" or "GetExistMeshOnLineDistSpecifyAngle" or
+            "GetExistMeshOnLineDistSpecifyAngleEx" &&
+        c.Arguments.Count >= 3 && Who(c.Arguments[0]) != null;
+
+    /// <summary>
+    /// The scene's answer to a navmesh query: the viewer's ground is flat and open, so the line is on the mesh all the
+    /// way: true, or the length asked for (its third argument, as the caller has it). Null when that length isn't known.
+    /// </summary>
+    private static object NavmeshValue(LuaCallExpr c, Func<LuaExpr, double?> number)
+    {
+        if (!IsNavmeshQuery(c))
+            return null;
+        if (c.Method == "IsExistMeshOnLine")
+            return true;
+        return number(c.Arguments[2]);
+    }
+
+    // --- aicommon's helpers ---
+
+    private const int MaxHelperDepth = 4;
+    private readonly Dictionary<string, bool> AnswerableHelpers = new();
+
+    /// <summary>
+    /// The function a call runs, when it is a global function (the script's own, or aicommon's) that the scene can
+    /// answer by running it: every call it makes is a scene, navmesh or NPC query, or such a helper itself
+    /// (aicommon's SpaceCheck: ai:GetMapHitRadius and ai:GetExistMeshOnLineDistSpecifyAngleEx; SpaceCheck_SidewayMove:
+    /// SpaceCheck). Its own code then gives the answer, with the scene answering only the queries. Else null.
+    /// </summary>
+    private LuaFunctionExpr Helper(LuaCallExpr c) =>
+        c.Method == null && c.Callee is LuaNameExpr { Name: var name } && IsAnswerable(name, 0) ? FunctionNamed(name) : null;
+
+    private LuaFunctionExpr FunctionNamed(string name) =>
+        Goal.Functions.TryGetValue(name, out var own) ? own : CommonFunctions.TryGetValue(name, out var common) ? common : null;
+
+    private bool IsAnswerable(string name, int depth)
+    {
+        if (AnswerableHelpers.TryGetValue(name, out var known))
+            return known;
+        if (depth >= MaxHelperDepth || FunctionNamed(name) is not { } fn)
+            return false;
+
+        AnswerableHelpers[name] = false; // while checking: a recursive helper isn't one
+        var statements = fn.Body.AllStatements().ToList();
+        var answerable = !statements.Any(s => s is LuaLoopStat) && statements.SelectMany(s => s.Calls()).All(call =>
+            IsSceneQuery(call) || IsNpcQuery(call) ||
+            call.Method == null && call.Callee is LuaNameExpr { Name: var inner } && IsAnswerable(inner, depth + 1));
+        AnswerableHelpers[name] = answerable;
+        return answerable;
+    }
+
+    /// <summary>
+    /// Runs a helper with the caller's argument values (live: the scene and the NPC answer its queries). Unknown when
+    /// one of its conditions or its result can't be decided (a value nothing gives, such as a radius without an
+    /// NpcParam row), so the caller falls back to the input.
+    /// </summary>
+    private V CallHelper(LuaFunctionExpr fn, LuaCallExpr call, Run run)
+    {
+        if (run.Depth >= MaxHelperDepth)
+            return Unknown;
+        var sub = new Run { Live = true, Foreign = true, Depth = run.Depth + 1, TargetDistance = run.TargetDistance };
+        for (int i = 0; i < fn.Parameters.Count; i++)
+            sub.Locals[fn.Parameters[i]] = i < call.Arguments.Count ? Eval(call.Arguments[i], run) : Nil;
+        Exec(fn.Body, sub);
+        if (sub.Undecided)
+            return Unknown;
+        return sub.ReturnValue ?? Nil;
     }
 
     /// <summary>The scene the simulation runs in (null outside it: the inputs are the user's)</summary>
@@ -484,10 +580,29 @@ public class LuaSituation
     /// </summary>
     public object SceneValue(LuaCallExpr c)
     {
-        if (Scene == null || !IsSceneQuery(c))
+        if (Scene == null)
+            return null;
+
+        // A helper (SpaceCheck(ai, goal, 90, 1)): its own code, with literal arguments (Evaluate passes the caller's values)
+        if (Helper(c) is { } helper)
+        {
+            var v = CallHelper(helper, c, new Run { Live = true, Indexed = new(LastIndexed) });
+            return v.Kind switch
+            {
+                VKind.Bool => v.B,
+                VKind.Number => v.N,
+                VKind.Nil => false,
+                _ => null,
+            };
+        }
+
+        if (!IsSceneQuery(c))
             return null;
         var a = c.Arguments;
         double? Num(int i) => i < a.Count ? a[i].AsNumber() : null;
+
+        if (NavmeshValue(c, e => e.AsNumber()) is { } navmesh)
+            return navmesh;
 
         bool? Inside(bool lookerIsSelf, LuaExpr dir, double? width, double? range)
         {
@@ -543,7 +658,10 @@ public class LuaSituation
                 Visit(c.Arguments[4], Hint.Number);
                 break;
             case LuaCallExpr c:
-                Mark(MarkLive(Input(Text(c), ShortCall(c), Text(c), c), c), hint, comparedWith);
+                var called = MarkLive(Input(Text(c), ShortCall(c), Text(c), c), c);
+                if (c is { Method: "GetStringIndexedNumber", Arguments.Count: 1 })
+                    called.IndexedKey = Text(c.Arguments[0]);
+                Mark(called, hint, comparedWith);
                 break;
             case LuaNameExpr n when LocalInputs.TryGetValue(n.Name, out var bound):
                 foreach (var b in bound)
@@ -659,6 +777,16 @@ public class LuaSituation
         public string InterruptType;
         public int? InterruptSpEffect;
         public V? ReturnValue;
+
+        // Running a helper (see CallHelper): code from another script (its nodes aren't in this script's tokens, so
+        // no input is looked up by source text and no weight is set), how deep, and whether a condition was undecided
+        public bool Foreign;
+        public int Depth;
+        public bool Undecided;
+
+        // The character's string-indexed numbers (ai:SetStringIndexedNumber("Dist_Step_Small", 2)), by the key's source
+        // text: what the script has set, which ai:GetStringIndexedNumber then reads
+        public Dictionary<string, V> Indexed = new();
     }
 
     // --- interrupts ---
@@ -679,6 +807,7 @@ public class LuaSituation
 
         var run = new Run
         {
+            Indexed = new(LastIndexed),
             TargetDistance = targetDistance,
             Live = Scene != null,
             InterruptType = type,
@@ -701,7 +830,15 @@ public class LuaSituation
             }
 
             // One of the script's functions (an act, or a helper): its sub-goals, with the situation's values
-            if (call.Method == null && call.Callee is LuaNameExpr { Name: var name } && Goal.Functions.TryGetValue(name, out var fn))
+            // (a global, or the goal's method: SDT's self.Parry(ai, goal, …))
+            var self = Goal.Interrupt.Parameters.Count > 0 ? Goal.Interrupt.Parameters[0] : null;
+            var name = call.Method != null ? null : call.Callee switch
+            {
+                LuaNameExpr n => n.Name,
+                LuaFieldExpr { Object: LuaNameExpr o, Name: var m } when o.Name == self || o.Name == "Goal" => LuaBattleGoal.MethodPrefix + m,
+                _ => null,
+            };
+            if (name != null && Goal.Functions.TryGetValue(name, out var fn))
             {
                 result.Calls.Add((line, name));
                 result.Steps.AddRange(PlanFunction(fn, targetDistance));
@@ -736,7 +873,7 @@ public class LuaSituation
         if (function == null)
             return steps;
 
-        var run = new Run { TargetDistance = targetDistance, Live = Scene != null };
+        var run = new Run { TargetDistance = targetDistance, Live = Scene != null, Indexed = new(LastIndexed) };
         run.OnCall = (call, r) =>
         {
             if (StepOf(call, r, targetDistance) is { } step)
@@ -839,6 +976,10 @@ public class LuaSituation
         return step;
     }
 
+    // The string-indexed numbers the last Evaluate left set (they stay on the character): act planning and the
+    // Interrupt read them
+    private Dictionary<string, V> LastIndexed = new();
+
     /// <summary>Runs Activate with the inputs' current values</summary>
     public LuaSituationResult Evaluate()
     {
@@ -847,6 +988,7 @@ public class LuaSituation
         foreach (var act in Goal.Acts.Keys)
             run.Result.Weights[act] = 0;
         Exec(Goal.Activate.Body, run);
+        LastIndexed = run.Indexed;
         return run.Result;
     }
 
@@ -868,7 +1010,7 @@ public class LuaSituation
                     for (int i = 0; i < a.Targets.Count; i++)
                     {
                         var value = i < a.Values.Count ? Eval(a.Values[i], run) : Nil;
-                        if (a.Targets[i] is LuaIndexExpr { Object: LuaNameExpr t, Key: var k } && t.Name == Goal.WeightTable && k.AsNumber() is { } act)
+                        if (!run.Foreign && a.Targets[i] is LuaIndexExpr { Object: LuaNameExpr t, Key: var k } && t.Name == Goal.WeightTable && k.AsNumber() is { } act)
                         {
                             run.Result.Weights[(int)act] = value.Kind == VKind.Number ? value.N : 0;
                             if (i < a.Values.Count && a.Values[i].AsNumber() != null)
@@ -887,6 +1029,12 @@ public class LuaSituation
                     foreach (var c in i.Clauses)
                     {
                         var cond = Eval(c.Condition, run);
+                        if (cond.Kind == VKind.Unknown && run.Foreign)
+                        {
+                            // A helper's branch can't be picked: its answer is unknown, not this branch's guess
+                            run.Undecided = true;
+                            return;
+                        }
                         if (cond.Kind == VKind.Unknown)
                             run.Result.Notes.Add((Tokens[c.Condition.First].Line, LOC.Get("LUA_Situation_Undecided", Text(c.Condition))));
                         if (cond.Kind != VKind.Unknown && cond.Truthy)
@@ -901,6 +1049,16 @@ public class LuaSituation
                     break;
 
                 case LuaCallStat call:
+                    // ai:SetStringIndexedNumber(key, value): the script's own value, for GetStringIndexedNumber(key) to read
+                    // (a value the simulation can't know, such as a random roll, isn't kept: the read falls back to its input)
+                    if (!run.Foreign && call.Call is { Method: "SetStringIndexedNumber", Arguments.Count: 2 } set)
+                    {
+                        var setValue = Eval(set.Arguments[1], run);
+                        if (setValue.Kind is VKind.Number or VKind.Symbol)
+                            run.Indexed[Text(set.Arguments[0])] = setValue;
+                        else
+                            run.Indexed.Remove(Text(set.Arguments[0]));
+                    }
                     run.OnCall?.Invoke(call.Call, run);
                     break;
 
@@ -910,6 +1068,11 @@ public class LuaSituation
                     return;
 
                 case LuaLoopStat loop:
+                    if (run.Foreign)
+                    {
+                        run.Undecided = true;
+                        return;
+                    }
                     run.Result.Notes.Add((Tokens[s.First].Line, LOC.Get("LUA_Situation_Loop_Skipped", loop.Keyword)));
                     break;
             }
@@ -932,7 +1095,7 @@ public class LuaSituation
             case LuaNameExpr n:
                 if (run.Locals.TryGetValue(n.Name, out var local))
                     return local;
-                if (ByKey.TryGetValue(n.Name, out var global))
+                if (!run.Foreign && ByKey.TryGetValue(n.Name, out var global))
                     return Value(global);
                 if (IsConstantName(n.Name))
                     return Constants.TryGetValue(n.Name, out var cv) ? new V(VKind.Number, cv) : new V(VKind.Symbol, S: n.Name);
@@ -941,6 +1104,22 @@ public class LuaSituation
             case LuaCallExpr c when IsCooldown(c):
                 var cooling = ByKey.TryGetValue($"cooldown:{Text(c.Arguments[2])}", out var cd) && cd.Boolean;
                 return cooling ? new V(VKind.Number, 0) : Eval(c.Arguments[4], run);
+
+            // A string-indexed number the script has set (Activate starts with ai:SetStringIndexedNumber("Dist_Step_Small", 2))
+            case LuaCallExpr { Method: "GetStringIndexedNumber", Arguments.Count: 1 } g when !run.Foreign &&
+                                    run.Indexed.TryGetValue(Text(g.Arguments[0]), out var stored):
+                return stored;
+
+            // Live: a helper the scene answers runs its own code with these argument values (SpaceCheck(ai, goal, 45,
+            // dist)); undecided, it falls back to its input below
+            case LuaCallExpr c when run.Live && Scene != null && Helper(c) is { } helper &&
+                                    CallHelper(helper, c, run) is { Kind: not VKind.Unknown } helped:
+                return helped;
+
+            // Live: a navmesh line check, with the length as the caller has it (the ground is flat and open)
+            case LuaCallExpr c when run.Live && Scene != null &&
+                                    NavmeshValue(c, x => Eval(x, run) is { Kind: VKind.Number } len ? len.N : null) is { } mesh:
+                return mesh is bool mb ? new V(VKind.Bool, B: mb) : new V(VKind.Number, Convert.ToDouble(mesh));
 
             // Live (the simulation, or planning an act): where the characters stand answers the distance and facing
             case LuaCallExpr c when run.Live && SceneValue(c) is { } scene:
@@ -962,7 +1141,7 @@ public class LuaSituation
                 return new V(VKind.Number, d);
 
             case LuaCallExpr c:
-                if (ByKey.TryGetValue(Text(c), out var input))
+                if (!run.Foreign && ByKey.TryGetValue(Text(c), out var input))
                     return Value(input);
                 // A random roll the situation doesn't set (in an act function): its middle
                 if (run.TargetDistance != null && c.Method is "GetRandam_Int" or "GetRandam_Float" && c.Arguments.Count == 2 &&
@@ -970,7 +1149,7 @@ public class LuaSituation
                     return new V(VKind.Number, c.Method == "GetRandam_Int" ? Math.Round((lo + hi) / 2) : (lo + hi) / 2);
                 return Unknown;
 
-            case LuaIndexExpr { Object: LuaNameExpr t, Key: var k } when t.Name == Goal.WeightTable && k.AsNumber() is { } act:
+            case LuaIndexExpr { Object: LuaNameExpr t, Key: var k } when !run.Foreign && t.Name == Goal.WeightTable && k.AsNumber() is { } act:
                 return new V(VKind.Number, run.Result.Weights.GetValueOrDefault((int)act));
 
             case LuaUnaryExpr u:

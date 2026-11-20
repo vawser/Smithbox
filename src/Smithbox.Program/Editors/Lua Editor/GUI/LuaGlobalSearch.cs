@@ -259,7 +259,8 @@ public class LuaGlobalSearch
 
         var binder = BinderText.Trim();
         var containers = bank.Containers
-            .Where(c => IncludeKind(c.Kind))
+            // A map's binder holds battle and logic scripts: its scripts are filtered by their own kind below
+            .Where(c => c.Kind == LuaBinderKind.Map || IncludeKind(c.Kind))
             .Where(c => binder.Length == 0 || c.Name.Contains(binder, StringComparison.OrdinalIgnoreCase))
             .ToList();
 
@@ -290,6 +291,8 @@ public class LuaGlobalSearch
                         {
                             if (token.IsCancellationRequested || run.Truncated)
                                 break;
+                            if (container.Kind == LuaBinderKind.Map && !IncludeKind(script.Kind))
+                                continue;
                             SearchScript(run, script, regex);
                         }
                     }

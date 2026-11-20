@@ -828,5 +828,6 @@ public class Lua50Decompiler : ILanguageDecompiler
         passManager.AddPass("parenthesize", new ParenthesizePass());
 
         passManager.AddPass("build-ast", new AstTransformPass());
+        passManager.AddPass("remove-fallthrough-jumps", new RemoveFallthroughJumpsPass());
     }
 }

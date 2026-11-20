@@ -72,6 +72,16 @@ public class LuaWeightRow
     public SortedDictionary<int, LuaLiteral> Weights { get; } = new();
 }
 
+/// <summary>Which of a battle goal's act tables is read</summary>
+public enum LuaActTable
+{
+    /// <summary>Goal.Activate's acts, picked by Common_Battle_Activate</summary>
+    Battle,
+
+    /// <summary>SDT's deflect-exchange acts: Goal.Kengeki_Activate, picked by Common_Kengeki_Activate</summary>
+    Kengeki,
+}
+
 /// <summary>A special effect ID the script checks or observes (ai:HasSpecialEffectId(target, id), …)</summary>
 public readonly record struct LuaSpEffectUse(int Id, string Method, int Line);
 
@@ -125,11 +135,29 @@ public class LuaBattleGoal
         "HasSpecialEffectId", "AddObserveSpecialEffectAttribute", "DeleteObserveSpecialEffectAttribute",
     };
 
+    /// <summary>The act table this was read from (Activate's, or SDT's Kengeki_Activate)</summary>
+    public LuaActTable Table;
+
+    /// <summary>The act tables the battle goal has: Battle, and Kengeki when its Kengeki_Activate picks acts</summary>
+    public List<LuaActTable> Tables { get; } = new();
+
+    /// <summary>The goal method of SDT's deflect-exchange act table</summary>
+    public const string KengekiEntry = MethodPrefix + "Kengeki_Activate";
+
     /// <summary>The template read from a valid parse, or null if the script doesn't follow it</summary>
     public static LuaBattleGoal Read(string src, LuaParseResult parse) => Read(src, parse, out _);
 
-    /// <summary>As <see cref="Read(string, LuaParseResult)"/>; why is the localization key of the reason it isn't the template</summary>
-    public static LuaBattleGoal Read(string src, LuaParseResult parse, out string why)
+    /// <summary>The call in an act table's function that picks an act (Common_Battle_Activate(ai, goal, weights, funcs, after[, params]))</summary>
+    private static LuaCallExpr PickerCall(LuaFunctionExpr fn, string picker) =>
+        fn.Body.AllStatements().SelectMany(s => s.Calls())
+            .FirstOrDefault(c => c.Callee is LuaNameExpr { Name: var n } && n == picker && c.Arguments.Count is 5 or 6);
+
+    /// <summary>
+    /// As <see cref="Read(string, LuaParseResult)"/>; why is the localization key of the reason it isn't the template.
+    /// The Kengeki table is read as the battle table is, from Goal.Kengeki_Activate in place of Goal.Activate (the
+    /// script's functions, Interrupt and observed SpEffects are the same).
+    /// </summary>
+    public static LuaBattleGoal Read(string src, LuaParseResult parse, out string why, LuaActTable table = LuaActTable.Battle)
     {
         if (parse?.Tree == null)
         {
@@ -143,9 +171,11 @@ public class LuaBattleGoal
         // A script can register several goals: each RegisterTableGoal(GOAL_…, "…") starts a section with its own Goal
         // table (Goal.Activate = function (self, ai, goal) … end). The battle goal is the section whose Activate
         // calls Common_Battle_Activate; the others are helpers (e.g. an AfterAttackAct goal).
-        var sections = new List<(string Goal, LuaFunctionExpr Activate, LuaFunctionExpr Interrupt)>();
-        var functions = new Dictionary<string, LuaFunctionStat>();
-        (string Goal, LuaFunctionExpr Activate, LuaFunctionExpr Interrupt) current = (null, null, null);
+        // Each section's other Goal.X = function … are its methods (SDT's acts: Goal.Act01, registered as self.Act01),
+        // named "Goal.X" beside the script's global functions
+        var sections = new List<Section>();
+        var functions = new Dictionary<string, (LuaNode Node, LuaFunctionExpr Fn)>();
+        var current = new Section();
 
         foreach (var s in parse.Tree.Stats)
         {
@@ -153,7 +183,7 @@ public class LuaBattleGoal
             {
                 if (current.Activate != null || current.Goal != null)
                     sections.Add(current);
-                current = ((reg.Arguments[0] as LuaNameExpr)?.Name, null, null);
+                current = new Section { Goal = (reg.Arguments[0] as LuaNameExpr)?.Name };
             }
             else if (s is LuaAssignStat { Targets.Count: 1, Values.Count: 1 } a &&
                 a.Targets[0] is LuaFieldExpr { Object: LuaNameExpr { Name: "Goal" } } f && a.Values[0] is LuaFunctionExpr fn)
@@ -162,9 +192,11 @@ public class LuaBattleGoal
                     current.Activate = fn;
                 else if (f.Name is "Interrupt" or "Interupt")
                     current.Interrupt = fn;
+                else
+                    current.Methods.TryAdd(MethodPrefix + f.Name, (s, fn));
             }
             else if (s is LuaFunctionStat fs && !fs.IsLocal)
-                functions.TryAdd(fs.Name, fs);
+                functions.TryAdd(fs.Name, (fs, fs.Function));
         }
         if (current.Activate != null || current.Goal != null)
             sections.Add(current);
@@ -178,13 +210,34 @@ public class LuaBattleGoal
         LuaFunctionExpr activate = null, interrupt = null;
         LuaCallExpr battle = null;
         string goalName = null;
+        var tables = new List<LuaActTable>();
         foreach (var section in sections.Where(x => x.Activate != null))
         {
-            battle = section.Activate.Body.AllStatements().SelectMany(s => s.Calls())
-                .FirstOrDefault(c => c.Callee is LuaNameExpr { Name: "Common_Battle_Activate" } && c.Arguments.Count is 5 or 6);
+            battle = PickerCall(section.Activate, "Common_Battle_Activate");
             if (battle != null)
             {
-                (goalName, activate, interrupt) = section;
+                (goalName, activate, interrupt) = (section.Goal, section.Activate, section.Interrupt);
+                // The battle section's methods, beside the globals (a global of the same name is kept)
+                foreach (var (name, m) in section.Methods)
+                    functions.TryAdd(name, m);
+
+                // SDT's second act table, for deflect exchanges: Goal.Kengeki_Activate, picked by Common_Kengeki_Activate
+                tables.Add(LuaActTable.Battle);
+                var kengeki = section.Methods.TryGetValue(KengekiEntry, out var k) ? k.Fn : null;
+                var kengekiPicker = kengeki != null ? PickerCall(kengeki, "Common_Kengeki_Activate") : null;
+                if (kengekiPicker != null)
+                    tables.Add(LuaActTable.Kengeki);
+
+                if (table == LuaActTable.Kengeki)
+                {
+                    if (kengekiPicker == null)
+                    {
+                        why = "LUA_Battle_Why_No_Kengeki";
+                        return null;
+                    }
+                    activate = kengeki;
+                    battle = kengekiPicker;
+                }
                 break;
             }
         }
@@ -200,17 +253,28 @@ public class LuaBattleGoal
         var result = new LuaBattleGoal
         {
             GoalName = goalName,
+            Table = table,
             Activate = activate,
             WeightTable = weights.Name,
             FunctionTable = funcs.Name,
             ActivateLine = Line(activate),
             InterruptLine = interrupt != null ? Line(interrupt) : 0,
         };
+        result.Tables.AddRange(tables);
         var afterName = (battle.Arguments[4] as LuaNameExpr)?.Name;
 
         LuaLiteral? Literal(LuaExpr e) => e.AsNumber() is { } v ? new LuaLiteral(e.First, e.Last, v, Line(e)) : null;
         int? KeyOf(LuaExpr target, string table) =>
             target is LuaIndexExpr { Object: LuaNameExpr o, Key: var k } && o.Name == table && k.AsNumber() is { } n ? (int)n : null;
+
+        // REGIST_FUNC's function: a global (ER: Name_Act01), or the goal's method (SDT: self.Act01, Goal.Act01)
+        var self = activate.Parameters.Count > 0 ? activate.Parameters[0] : null;
+        string Registered(LuaExpr e) => e switch
+        {
+            LuaNameExpr n => n.Name,
+            LuaFieldExpr { Object: LuaNameExpr o, Name: var m } when o.Name == self || o.Name == "Goal" => MethodPrefix + m,
+            _ => null,
+        };
 
         // Acts, cooldowns and the after function
         foreach (var s in body.AllStatements())
@@ -219,9 +283,9 @@ public class LuaBattleGoal
             {
                 var value = a.Values[0] as LuaCallExpr;
                 if (KeyOf(a.Targets[0], funcs.Name) is { } actId && value?.Callee is LuaNameExpr { Name: "REGIST_FUNC" } &&
-                    value.Arguments.Count == 3 && value.Arguments[2] is LuaNameExpr target)
+                    value.Arguments.Count == 3 && Registered(value.Arguments[2]) is { } target)
                 {
-                    result.Act(actId).Function = target.Name;
+                    result.Act(actId).Function = target;
                     result.Act(actId).RegisterLine = Line(s);
                 }
                 else if (KeyOf(a.Targets[0], weights.Name) is { } coolId && value?.Callee is LuaNameExpr { Name: "SetCoolTime" } &&
@@ -232,9 +296,9 @@ public class LuaBattleGoal
             }
             else if (s is LuaLocalStat { Names.Count: 1, Values.Count: 1 } l && l.Names[0] == afterName &&
                      l.Values[0] is LuaCallExpr { Callee: LuaNameExpr { Name: "REGIST_FUNC" } } after && after.Arguments.Count == 3 &&
-                     after.Arguments[2] is LuaNameExpr afterTarget)
+                     Registered(after.Arguments[2]) is { } afterTarget)
             {
-                result.AfterFunction = afterTarget.Name;
+                result.AfterFunction = afterTarget;
             }
         }
 
@@ -252,20 +316,20 @@ public class LuaBattleGoal
         {
             if (act.Function == null || !functions.TryGetValue(act.Function, out var fs))
                 continue;
-            act.FunctionLine = Line(fs);
-            act.FunctionNode = fs.Function;
-            result.ReadSubGoals(act, fs.Function, src, t, Literal);
+            act.FunctionLine = Line(fs.Node);
+            act.FunctionNode = fs.Fn;
+            result.ReadSubGoals(act, fs.Fn, src, t, Literal);
         }
         if (result.AfterFunction != null && functions.TryGetValue(result.AfterFunction, out var af))
         {
-            result.AfterFunctionLine = Line(af);
-            result.AfterFunctionNode = af.Function;
+            result.AfterFunctionLine = Line(af.Node);
+            result.AfterFunctionNode = af.Fn;
         }
 
         // The Interrupt, the functions it can call, and what it reacts to
         result.Interrupt = interrupt;
         foreach (var (name, fs) in functions)
-            result.Functions[name] = fs.Function;
+            result.Functions[name] = fs.Fn;
 
         // Observed SpEffects, in every function of the script (Goal.X = function … included)
         var bodies = new List<LuaBlock> { parse.Tree };
@@ -300,7 +364,7 @@ public class LuaBattleGoal
         if (interrupt != null)
             scanned.Add(interrupt.Body);
         scanned.AddRange(result.Acts.Values.Where(a => a.Function != null && functions.ContainsKey(a.Function))
-            .Select(a => functions[a.Function].Function.Body));
+            .Select(a => functions[a.Function].Fn.Body));
         foreach (var block in scanned)
         {
             foreach (var c in block.AllStatements().SelectMany(s => s.Calls()))
@@ -312,6 +376,18 @@ public class LuaBattleGoal
 
         why = null;
         return result;
+    }
+
+    /// <summary>How a goal's method is named among <see cref="Functions"/> and act functions (Goal.Act01)</summary>
+    public const string MethodPrefix = "Goal.";
+
+    /// <summary>One RegisterTableGoal section: its goal, Activate, Interrupt, and other Goal.X functions</summary>
+    private sealed class Section
+    {
+        public string Goal;
+        public LuaFunctionExpr Activate;
+        public LuaFunctionExpr Interrupt;
+        public Dictionary<string, (LuaNode Node, LuaFunctionExpr Fn)> Methods { get; } = new();
     }
 
     private LuaAct Act(int id)

@@ -24,7 +24,18 @@ public class LuaData : IDisposable
         var result = PrimaryBank.Setup();
 
         if (result)
+        {
             Smithbox.Log(this, LOC.Get("LUA_Data_Setup_Primary_Bank_PASS", PrimaryBank.Containers.Count));
+
+            // A map's binder (SDT, BB, DS3) and aicommon hold many goals: read their entry lists now (not decompiled),
+            // so the file list's filter can find a script by its name, character or NpcThinkParam users
+            var bank = PrimaryBank;
+            _ = Task.Run(() =>
+            {
+                foreach (var c in bank.Containers.Where(c => c.HoldsManyGoals))
+                    c.EnsureLoaded();
+            });
+        }
         else
             Smithbox.LogError(this, LOC.Get("LUA_Data_Setup_Primary_Bank_FAIL"));
 

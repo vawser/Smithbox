@@ -8,6 +8,8 @@ public enum LuaBinderKind
     Battle,
     Logic,
     Common,
+    /// <summary>A map's binder (SDT, BB, DS3: m10_00_00_00), holding the battle and logic scripts of its characters</summary>
+    Map,
     Other,
 }
 
@@ -67,8 +69,24 @@ public class LuaBank
             return LuaBinderKind.Logic;
         if (n == "aicommon")
             return LuaBinderKind.Common;
+        if (System.Text.RegularExpressions.Regex.IsMatch(n, @"^m\d\d_\d\d_\d\d_\d\d$"))
+            return LuaBinderKind.Map;
         return LuaBinderKind.Other;
     }
+
+    /// <summary>The number before the first '_' of a binder or script name (430000_battle → 430000), or null</summary>
+    public static int? GoalIdOf(string name)
+    {
+        var i = name.IndexOf('_');
+        return i > 0 && int.TryParse(name[..i], out var id) ? id : null;
+    }
+
+    /// <summary>
+    /// The character a battle goal belongs to, from its goal ID: the first four of its six digits (430000 → c4300,
+    /// 214001 → c2140). Null for other kinds, or a goal ID that isn't six digits.
+    /// </summary>
+    public static string CharacterIdOf(LuaBinderKind kind, int? goalId) =>
+        kind == LuaBinderKind.Battle && goalId is { } id && id is >= 100000 and <= 999999 ? $"c{id / 100:D4}" : null;
 
     public LuaContainer FindContainer(string name)
     {
@@ -129,21 +147,13 @@ public class LuaContainer
     }
 
     /// <summary>The number in the binder's name (e.g. 430000 for 430000_battle): the goal ID NpcThinkParam refers to</summary>
-    public int? GoalId
-    {
-        get
-        {
-            var i = Name.IndexOf('_');
-            return i > 0 && int.TryParse(Name[..i], out var id) ? id : null;
-        }
-    }
+    public int? GoalId => LuaBank.GoalIdOf(Name);
 
-    /// <summary>
-    /// The character a battle goal belongs to, from its goal ID: the first four of its six digits (430000_battle →
-    /// c4300, 214001_battle → c2140). Null for other binders, or a name without a six-digit goal ID.
-    /// </summary>
-    public string CharacterId =>
-        Kind == LuaBinderKind.Battle && GoalId is { } id && id is >= 100000 and <= 999999 ? $"c{id / 100:D4}" : null;
+    /// <summary>The binder's battle goal character (see <see cref="LuaBank.CharacterIdOf"/>); null for a map's binder</summary>
+    public string CharacterId => LuaBank.CharacterIdOf(Kind, GoalId);
+
+    /// <summary>A map's binder or aicommon: several scripts, each with its own goal (shown per script in the list)</summary>
+    public bool HoldsManyGoals => Kind is LuaBinderKind.Map or LuaBinderKind.Common;
 
     /// <summary>Reads the binder's entry list, if not yet (scripts are decompiled when first shown)</summary>
     public bool EnsureLoaded()
@@ -333,7 +343,27 @@ public class LuaScript
         Container = container;
         EntryName = entryName;
         Bytes = bytes;
+
+        // From the entry's own name (a map's binder holds many goals: m10_00_00_00 → 102010_battle.lua), else the binder's
+        var stem = System.IO.Path.GetFileNameWithoutExtension(entryName);
+        var kind = LuaBank.KindOf(stem);
+        Kind = kind is LuaBinderKind.Battle or LuaBinderKind.Logic ? kind
+            : container.Kind == LuaBinderKind.Map ? LuaBinderKind.Other : container.Kind;
+        GoalId = LuaBank.GoalIdOf(stem) ?? container.GoalId;
+        CharacterId = LuaBank.CharacterIdOf(Kind, GoalId);
     }
+
+    /// <summary>Battle or logic by the entry's name (102010_battle.lua), else the binder's kind</summary>
+    public LuaBinderKind Kind { get; }
+
+    /// <summary>The goal ID NpcThinkParam refers to, from the entry's name, else the binder's</summary>
+    public int? GoalId { get; }
+
+    /// <summary>The battle goal's character (see <see cref="LuaBank.CharacterIdOf"/>)</summary>
+    public string CharacterId { get; }
+
+    /// <summary>Identifies the script across binders (map binders can hold scripts of the same name)</summary>
+    public string Key => $"{Container.Name}|{EntryName}";
 
     public bool IsTextReady => _text != null;
 

@@ -135,6 +135,16 @@ public sealed class LuaTableExpr : LuaExpr { }
 
 public static class LuaSyntaxExtensions
 {
+    /// <summary>A chunk's top-level global functions (function Name(…)), added to a lookup (an earlier definition is kept)</summary>
+    public static void AddGlobalFunctions(this LuaBlock chunk, Dictionary<string, LuaFunctionExpr> into)
+    {
+        foreach (var s in chunk.Stats)
+        {
+            if (s is LuaFunctionStat { IsLocal: false } fs && !fs.Name.Contains('.') && !fs.Name.Contains(':'))
+                into.TryAdd(fs.Name, fs.Function);
+        }
+    }
+
     /// <summary>The node's source text (from its first token's start to its last token's end)</summary>
     public static string SourceOf(this LuaNode node, string src, List<LuaToken> tokens)
     {

@@ -25,6 +25,11 @@ public class LuaBattleView
     private LuaScript CachedScript;
     private int CachedRevision = -1;
     private bool CachedWithConstants;
+    private LuaActTable CachedTable;
+
+    // The act table shown (SDT's battle goals have a second one, Kengeki): kept across scripts, Battle where a
+    // script has no other
+    private LuaActTable ActTable = LuaActTable.Battle;
     private LuaBattleGoal Goal;
     private string Why;
     private LuaSituation Situation;
@@ -37,8 +42,8 @@ public class LuaBattleView
     private string CharacterFilter = "";
     private string TargetFilter = "";
 
-    // The NpcParam row (or character, without one) and target picked for each binder this session
-    private readonly Dictionary<string, (int? Npc, int? Think, string Self, string Target)> CharactersByBinder = new();
+    // The NpcParam row (or character, without one) and target picked for each script this session
+    private readonly Dictionary<string, (int? Npc, int? Think, string Self, string Target)> CharactersByScript = new();
     private string ThinkFilter = "";
     private string NpcFilter = "";
 
@@ -87,7 +92,8 @@ public class LuaBattleView
         Editor.Definitions.EnsureIndex();
         var constants = Editor.Definitions.Constants;
 
-        if (CachedScript != script || CachedRevision != script.Revision || CachedWithConstants != (constants != null))
+        if (CachedScript != script || CachedRevision != script.Revision || CachedWithConstants != (constants != null) ||
+            CachedTable != ActTable)
             Rebuild(script, constants);
         return script;
     }
@@ -111,9 +117,11 @@ public class LuaBattleView
 
         ImGui.Text(Goal.GoalName ?? script.EntryName);
         ImGui.SameLine();
-        if (ImGui.SmallButton($"Activate##luaBattleActivate"))
+        var entry = Goal.Table == LuaActTable.Kengeki ? "Kengeki_Activate" : "Activate";
+        if (ImGui.SmallButton($"{entry}##luaBattleActivate"))
             Editor.ShowLine(script, Goal.ActivateLine);
         GUI.Tooltip(LOC.Get("LUA_Outline_Line", Goal.ActivateLine));
+        DrawTableSwitch();
 
         DrawCharacter(script);
         DrawTimeAct();
@@ -122,6 +130,25 @@ public class LuaBattleView
         Evaluate();
         DrawActs(script);
         DrawInterrupts(script);
+    }
+
+    /// <summary>
+    /// Battle / Kengeki, when the goal has both act tables (SDT): the acts, weights, situation and plans below are the
+    /// picked table's. Kengeki_Activate runs first in Activate and only picks an act while a deflect SpEffect is on.
+    /// </summary>
+    private void DrawTableSwitch()
+    {
+        if (Goal.Tables.Count < 2)
+            return;
+
+        foreach (var table in Goal.Tables)
+        {
+            ImGui.SameLine();
+            var label = table == LuaActTable.Kengeki ? LOC.Get("LUA_Battle_Table_Kengeki") : LOC.Get("LUA_Battle_Table_Battle");
+            if (ImGui.RadioButton($"{label}##luaBattleTable_{table}", Goal.Table == table))
+                ActTable = table;
+            GUI.Tooltip(LOC.Get(table == LuaActTable.Kengeki ? "LUA_Battle_Table_Kengeki_TT" : "LUA_Battle_Table_Battle_TT"));
+        }
     }
 
     private void Rebuild(LuaScript script, IReadOnlyDictionary<string, double> constants)
@@ -135,8 +162,11 @@ public class LuaBattleView
         CachedScript = script;
         CachedRevision = script.Revision;
         CachedWithConstants = constants != null;
-        Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why);
-        Situation = Goal != null ? new LuaSituation(Goal, script.Text, script.Parse.Tokens, constants) : null;
+        CachedTable = ActTable;
+        Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why, ActTable);
+        if (Goal == null && ActTable != LuaActTable.Battle)
+            Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why);
+        Situation = Goal != null ? new LuaSituation(Goal, script.Text, script.Parse.Tokens, constants, Editor.Definitions.Functions) : null;
         // Acts are planned from where the characters stand (distance and facing)
         if (Situation != null)
         {
@@ -163,11 +193,11 @@ public class LuaBattleView
         }
         Dirty = true;
 
-        // The characters picked for this binder before, else the battle goal's own
-        if (CharactersByBinder.TryGetValue(script.Container.Name, out var picked))
+        // The characters picked for this script before, else the battle goal's own
+        if (CharactersByScript.TryGetValue(script.Key, out var picked))
         {
             if (picked.Npc is { } npcId && LuaNpc.GetParam(Editor.Project)?[npcId] is { } row)
-                Viewer.SetSelfNpc(row, script.Container.GoalId);
+                Viewer.SetSelfNpc(row, script.GoalId);
             else
                 Viewer.SetSelf(picked.Self);
             Viewer.SetTarget(picked.Target);
@@ -176,21 +206,21 @@ public class LuaBattleView
         else if (previous == null && Goal != null)
         {
             // Another script (not an edit of this one): its goal's own character, and its own think row
-            PickForGoal(script.Container);
+            PickForGoal(script);
             Viewer.SetThinkRow(null);
         }
     }
 
     /// <summary>
     /// Runs the battle goal as its own character: the NpcParam row of an NpcThinkParam row that uses the goal, else the
-    /// character's first NpcParam row, else the character alone (from the binder's goal ID)
+    /// character's first NpcParam row, else the character alone (from the script's goal ID)
     /// </summary>
-    private void PickForGoal(LuaContainer container)
+    private void PickForGoal(LuaScript script)
     {
-        var chr = container.CharacterId;
-        var rows = LuaNpc.RowsForGoal(Editor.Project, container.GoalId, chr, Viewer.CharacterSet);
+        var chr = script.CharacterId;
+        var rows = LuaNpc.RowsForGoal(Editor.Project, script.GoalId, chr, Viewer.CharacterSet);
         if (rows.Count > 0)
-            Viewer.SetSelfNpc(rows[0], container.GoalId);
+            Viewer.SetSelfNpc(rows[0], script.GoalId);
         else if (chr != null && Viewer.CharacterSet.Contains(chr))
             Viewer.SetSelf(chr);
     }
@@ -275,9 +305,9 @@ public class LuaBattleView
             ImGui.TableSetColumnIndex(1);
             if (npcParam != null)
             {
-                if (NpcCombo(npcParam, script.Container.CharacterId, out var row))
+                if (NpcCombo(npcParam, script.CharacterId, out var row))
                 {
-                    Viewer.SetSelfNpc(row, script.Container.GoalId);
+                    Viewer.SetSelfNpc(row, script.GoalId);
                     Remember(script);
                 }
             }
@@ -296,7 +326,7 @@ public class LuaBattleView
                 ImGui.Text(LOC.Get("LUA_Battle_Character_Think"));
                 GUI.Tooltip(LOC.Get("LUA_Battle_Character_Think_TT"));
                 ImGui.TableSetColumnIndex(1);
-                if (ThinkCombo(thinkParam, script.Container.GoalId, script.Container.CharacterId, out var think))
+                if (ThinkCombo(thinkParam, script.GoalId, script.CharacterId, out var think))
                 {
                     Viewer.SetThinkRow(think);
                     Remember(script);
@@ -667,7 +697,7 @@ public class LuaBattleView
     }
 
     private void Remember(LuaScript script) =>
-        CharactersByBinder[script.Container.Name] = (Viewer.SelfNpc?.Row.ID, Viewer.PickedThinkRow?.ID, Viewer.Self?.Name, Viewer.Target?.Name);
+        CharactersByScript[script.Key] = (Viewer.SelfNpc?.Row.ID, Viewer.PickedThinkRow?.ID, Viewer.Self?.Name, Viewer.Target?.Name);
 
     // The NpcParam rows that name a character, for the combo: built once per param, filtered once per filter and limit
     private (Andre.Formats.Param Param, List<(Andre.Formats.Param.Row Row, string Chr, string Text)> Rows)? NpcRows;
@@ -1309,7 +1339,8 @@ public class LuaBattleView
     {
         if (name == null)
             return "?";
-        var i = name.LastIndexOf('_');
+        // Name_Act01 → Act01; a goal's method, Goal.Act01 → Act01 (Goal.ActAfter_AdjustSpace → AdjustSpace)
+        var i = Math.Max(name.LastIndexOf('_'), name.LastIndexOf('.'));
         return i > 0 && i < name.Length - 1 ? name[(i + 1)..] : name;
     }
 

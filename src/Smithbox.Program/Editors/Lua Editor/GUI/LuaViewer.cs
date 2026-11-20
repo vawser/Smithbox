@@ -537,8 +537,9 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
 
 /// <summary>
 /// One character in the Lua Editor's viewport: its mesh, placed in the world, and the animator the panel drives.
-/// Clips play with root motion on, in the mesh's own space; when a clip ends, where it took the character is folded
-/// into <see cref="Placement"/>, so the next clip carries on from there.
+/// Clips play with root motion on, in the mesh's own space. As in the game the root motion moves the character: when
+/// any clip starts, where the last one took it is folded into <see cref="Placement"/> first, and each time a looping
+/// clip goes round its cycle's motion is folded in, so nothing snaps back to where a clip started.
 /// </summary>
 public class LuaCharacter : IDisposable
 {
@@ -780,6 +781,7 @@ public class LuaCharacter : IDisposable
             a.Update(0);
         }
         Placement = world;
+        LastClip = null;
     }
 
     /// <summary>Turns the character in place to face a point (keeping where it stands)</summary>
@@ -815,7 +817,15 @@ public class LuaCharacter : IDisposable
         // What was playing, and how far it had got: the new clip blends from it (see UpdateBlend)
         var previous = animator.CurrentClip is { Duration: > 0 } playing ? (playing, animator.Time) : ((StudioCore.Renderer.HavokClip, float)?)null;
 
-        if (entry == null || !animator.Play(entry))
+        if (entry == null)
+            return false;
+
+        // As in the game, the clip's root motion has moved the character: the new clip starts from where it stands now,
+        // whoever started it (a turn clip straight after an attack, say), not from where the last clip started
+        if (animator.ApplyRootMotion)
+            Carry();
+
+        if (!animator.Play(entry))
             return false;
 
         BlendFrom = previous;
@@ -826,6 +836,8 @@ public class LuaCharacter : IDisposable
         animator.Turn = 0;
         animator.RootOffset = Matrix4x4.Identity;
         animator.Update(0);
+        // A fresh start, not a loop going round (see Update)
+        LastClip = null;
         return true;
     }
 
@@ -890,6 +902,11 @@ public class LuaCharacter : IDisposable
 
     public long? CurrentClip => Animator?.CurrentAnimation?.Id is { } id ? id % 1_000_000_000 : null;
 
+    // The clip and time at the last update, to see a looping clip wrap
+    private StudioCore.Renderer.HavokClip? LastClip;
+    private float LastTime;
+
+    /// <summary>Call each frame after the panel has posed the clip</summary>
     public void Update()
     {
         // The first clip started by the panel: set it up as Start would have
@@ -902,6 +919,28 @@ public class LuaCharacter : IDisposable
             a.RootOffset = Matrix4x4.Identity;
             a.Update(0);
         }
+
+        // A looping clip went round: its time starts again, and so would its root motion. In the game each cycle moves
+        // the character on, so the whole cycle's motion (and the turn so far) is folded into the placement, and this
+        // cycle's root motion runs from there.
+        if (Animator is { ApplyRootMotion: true, Loop: true, CurrentClip: { RootMotion: { } motion, Duration: > 0 } clip } looping &&
+            clip == LastClip && looping.Time < LastTime - 1e-4f)
+        {
+            var cycle = motion.Sample(clip.Duration, looping.RootMotionScale);
+            if (looping.Turn != 0)
+            {
+                var pivot = cycle.Translation;
+                cycle *= Matrix4x4.CreateTranslation(-pivot) * Matrix4x4.CreateRotationY(looping.Turn) * Matrix4x4.CreateTranslation(pivot);
+            }
+            cycle *= looping.RootOffset;
+            Placement = cycle * _placement;
+            looping.Turn = 0;
+            looping.RootOffset = Matrix4x4.Identity;
+            looping.Update(0);
+        }
+
+        LastClip = Animator?.CurrentClip;
+        LastTime = Animator?.Time ?? 0;
     }
 
     public void Dispose()
