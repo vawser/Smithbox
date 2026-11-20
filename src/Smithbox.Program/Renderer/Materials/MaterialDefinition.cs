@@ -1191,11 +1191,17 @@ public class MaterialDefinition
     public bool VertexColor { get; set; }
 
     /// <summary>
-    /// The specular map is the specular color, with the gloss in its alpha: DSR's remastered materials, whose MTD sets
-    /// g_MaterialWorkflow to 1 (C_Metal[DSB]_Spec and the like). Their metals have a near black diffuse, so the
-    /// specular color is all of their color. Workflow 0 keeps the gloss in the color, as DS1 and DS2 do
+    /// The MTD's g_MaterialWorkflow, 0 when it has none: how DSR's FRPG_ shaders read the specular map (DS1R shader
+    /// FRPG_Phn_DifSpcBmp's gFC_MaterialWorkflow). 0: R roughness, G metallic, B the reflectance (× 0.2), A occlusion,
+    /// all as data. 1 (the _Spec MTDs): RGB the specular color, A the roughness. See FlverResource.DsrSpecularLayout
     /// </summary>
-    public bool SpecularColorGlossAlpha { get; set; }
+    public int MaterialWorkflow { get; set; }
+
+    /// <summary>The DS1R/DSR shaders' gFC_SpcMapMulCol as one value: luminance of g_SpecularMapColor × its power</summary>
+    public float SpecularMapScale { get; set; } = 1f;
+
+    /// <summary>A Dark Souls shader (FRPG_...), whose remastered form reads its specular map by <see cref="MaterialWorkflow" /></summary>
+    public bool FrpgShader => ShaderName.StartsWith("FRPG_", StringComparison.Ordinal);
 
     public float[] DiffuseColor { get; set; } = [1, 1, 1];
 
@@ -1300,7 +1306,12 @@ public class MaterialDefinition
         DisableDepthWrite = GetFirst("g_GX_bDisableDepthWrite", 0) != 0;
         MeshDecal = GetFirst("g_GX_bMeshDecal", 0) != 0;
         VertexColor = VertexColorShader.IsMatch(ShaderName);
-        SpecularColorGlossAlpha = (int)GetFirst("g_MaterialWorkflow", 0) == 1;
+        MaterialWorkflow = (int)GetFirst("g_MaterialWorkflow", 0);
+        if (Params.TryGetValue("g_SpecularMapColor", out var specularColor) && specularColor.Length >= 3)
+        {
+            SpecularMapScale = 0.212673f * specularColor[0] + 0.715152f * specularColor[1] + 0.072175f * specularColor[2];
+        }
+        SpecularMapScale *= GetFirst("g_SpecularMapColorPower", 1);
 
         if (Params.TryGetValue("g_DiffuseMapColor", out var color) && color.Length >= 3)
         {

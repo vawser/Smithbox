@@ -141,8 +141,10 @@ bool IsAnimated()
 #define MATERIAL_ID_MASK 0x7FFFFFFFu
 #define MATERIAL_NO_SHADOW 0x80000000u
 
-// UVs are stored as signed 16 bit fixed point with 11 fractional bits
-const float UV_SCALE = 1.0 / 2048.0;
+// UVs are stored as signed 16 bit fixed point with 11 fractional bits, or 10 for DES and DS1 FLVER2s, whose own UVs
+// are stored so and reach ±32 (FlverMaterial.UvPackScale)
+layout (constant_id = 51) const bool c_uvScale1024 = false;
+const float UV_SCALE = c_uvScale1024 ? 1.0 / 1024.0 : 1.0 / 2048.0;
 
 #ifdef MATERIAL_DEFORM
 const float TWO_PI = 6.2831853;

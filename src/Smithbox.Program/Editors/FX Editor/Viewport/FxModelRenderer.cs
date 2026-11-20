@@ -229,6 +229,7 @@ public class FxModelRenderer
                 IsStrip = faceset.IsTriangleStrip,
                 CullBack = faceset.BackfaceCulling && material.Definition?.CullNone != true,
                 Opaque = material.Blending == MaterialBlending.Opaque,
+                UvScale1024 = material.UvPackScale == 1024f,
                 LocalTransform = mesh.LocalTransform,
                 Bounds = mesh.Bounds,
             };

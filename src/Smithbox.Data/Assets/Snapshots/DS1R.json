@@ -81,6 +81,16 @@
       "Container": "c5350",
       "Model": "c5350",
       "Shows": "chr: specular areas"
+    },
+    {
+      "Container": "m2740B0A10",
+      "Model": "m2740B0A10",
+      "Shows": "map: sludge/water submesh"
+    },
+    {
+      "Container": "m0100B2A10",
+      "Model": "m0100B2A10",
+      "Shows": "map: texture sections stretched horizontally"
     }
   ]
 }

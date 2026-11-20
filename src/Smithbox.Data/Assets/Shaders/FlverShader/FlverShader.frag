@@ -54,9 +54,13 @@ layout (constant_id = 14) const int c_customize = 0;
 // A DES or DS1 "Col" shader (MaterialDefinition.VertexColor): 0 no, 1 the diffuse times the vertex color, 2 also an
 // alpha blended material's opacity times its alpha
 layout (constant_id = 15) const int c_vertexColor = 0;
-// DSR's remastered materials (MaterialDefinition.SpecularColorGlossAlpha): the gloss is the alpha of the specular map
-// read as shininess, where it is otherwise its red
-layout (constant_id = 16) const bool c_glossInAlpha = false;
+// How a Dark Souls Remastered material reads its specular map, as DS1R's FRPG_Phn shaders do by gFC_MaterialWorkflow
+// (FlverResource.DsrSpecularLayout): 0 not one, 1 RGB the specular color and A the roughness, 2 R roughness, G metallic,
+// B reflectance (× 0.2) and A occlusion, as data. c_dsrSpecularScale is their gFC_SpcMapMulCol, as one value
+layout (constant_id = 16) const int c_dsrSpecular = 0;
+layout (constant_id = 17) const float c_dsrSpecularScale = 1.0;
+#define DSR_SPECULAR_COLOR 1
+#define DSR_SPECULAR_PACKED 2
 #define BLENDING_ALPHA 1
 // MaterialBlending.Multiply: the scene is multiplied by the unlit albedo
 #define BLENDING_MULTIPLY 4
@@ -2557,11 +2561,39 @@ void main()
 #else
 		vec4 shininessColor = SampleLayer(ROW_SHININESS, 0);
 #endif
-		roughness = 1.0 - (c_glossInAlpha ? shininessColor.a : shininessColor.r);
+		roughness = 1.0 - shininessColor.r;
 	}
 	else
 	{
 		roughness = 1.0 - normalColor.z;
+	}
+
+	// Dark Souls Remastered's specular map (c_dsrSpecular), as FRPG_Phn_DifSpcBmp reads it. The packed one is data the
+	// game reads as it is stored, so the sampler's sRGB decode is undone; the color one the game decodes with 2.2
+	float dsrMetallic = 0.0;
+	float dsrReflectance = 0.04;
+	float dsrOcclusion = 1.0;
+	if (c_dsrSpecular != 0)
+	{
+#ifdef MATERIAL_BLEND
+		vec4 dsr = SampleLayered(ROW_SPECULAR, c_blendSpecular);
+#else
+		vec4 dsr = SampleLayer(ROW_SPECULAR, 0);
+#endif
+		if (c_dsrSpecular == DSR_SPECULAR_COLOR)
+		{
+			F0 = clamp(dsr.rgb * pow(c_dsrSpecularScale, 2.2), 0.0, 1.0);
+			roughness = dsr.a;
+		}
+		else
+		{
+			vec3 stored = mix(dsr.rgb * 12.92, 1.055 * pow(max(dsr.rgb, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055,
+				step(vec3(0.0031308), dsr.rgb));
+			roughness = stored.r;
+			dsrMetallic = stored.g;
+			dsrReflectance = clamp(stored.b * 0.2 * c_dsrSpecularScale, 0.0, 1.0);
+			dsrOcclusion = dsr.a;
+		}
 	}
 
 	// Hair (c_customize 1): the game's gloss, sat(k·(1 − mask.z))·shininess, k 2 or 5 by the root channel switch
@@ -2671,6 +2703,15 @@ void main()
 		F0 = mix(vec3(0.04), albedo, metallic);
 		albedo *= 1.0 - metallic;
 		oracleMetallic = metallic;
+	}
+
+	// DSR's packed specular map: a metal reflects its albedo, anything else its reflectance, and the occlusion takes
+	// from both, as FRPG_Phn_DifSpcBmp's workflow 0
+	if (c_dsrSpecular == DSR_SPECULAR_PACKED && !IsWater())
+	{
+		F0 = mix(vec3(dsrReflectance), albedo, dsrMetallic) * dsrOcclusion;
+		albedo *= (1.0 - dsrMetallic) * dsrOcclusion;
+		oracleMetallic = dsrMetallic;
 	}
 
 	Surface surface;

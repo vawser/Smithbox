@@ -57,6 +57,9 @@ public sealed class FxModelSubmesh
     public uint VertexSize;
     public int IndexOffset, IndexCount;
     public bool Is32Bit, IsStrip, CullBack, Opaque;
+
+    /// <summary>The UVs are stored at 1024 rather than 2048 (FlverMaterial.UvPackScale)</summary>
+    public bool UvScale1024;
     public Matrix4x4 LocalTransform = Matrix4x4.Identity;
     public BoundingBox Bounds;
 }
@@ -220,7 +223,7 @@ public class FxModelRenderableProxy : RenderableProxy
 
     // ---------------------------------------------------------------- pipelines
 
-    private static readonly System.Collections.Concurrent.ConcurrentDictionary<(int Blend, MeshLayoutType Layout, bool Strip, bool Cull, bool Solid, int System), Pipeline> _pipelines = new();
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<(int Blend, MeshLayoutType Layout, bool Strip, bool Cull, bool Solid, int System, bool Uv1024), Pipeline> _pipelines = new();
 
     /// <summary>The blend modes, as the billboards' (FxBillboardRenderableProxy.BlendFor).</summary>
     private static BlendAttachmentDescription BlendFor(int mode) => mode switch
@@ -238,7 +241,7 @@ public class FxModelRenderableProxy : RenderableProxy
 
     private Pipeline GetPipeline(GraphicsDevice gd, ResourceFactory factory)
     {
-        var key = (_blendMode, _submesh.LayoutType, _submesh.IsStrip, _submesh.CullBack, Solid, _renderablesSet.RenderableSystemIndex);
+        var key = (_blendMode, _submesh.LayoutType, _submesh.IsStrip, _submesh.CullBack, Solid, _renderablesSet.RenderableSystemIndex, _submesh.UvScale1024);
         var layout = _submesh.Layout;
         return _pipelines.GetOrAdd(key, _ =>
         {
@@ -264,7 +267,7 @@ public class FxModelRenderableProxy : RenderableProxy
             description.ShaderSet = new ShaderSetDescription(
                 new[] { layout },
                 new[] { shaders.vs, shaders.fs },
-                SceneTarget.Specialize(Array.Empty<SpecializationConstant>(), _renderablesSet));
+                SceneTarget.Specialize(new[] { new SpecializationConstant(51, key.Item7) }, _renderablesSet));
 
             description.ResourceLayouts = new[]
             {

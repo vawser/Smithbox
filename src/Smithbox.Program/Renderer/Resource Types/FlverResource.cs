@@ -749,9 +749,9 @@ public class FlverResource : IResource, IDisposable
                 layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
                 layers.BlendShininess |= layer > 0;
 
-                // A specular map that is the specular color too (MaterialDefinition.SpecularColorGlossAlpha): also the
-                // specular row, so its color is the F0, where it would otherwise be the black default
-                if (glossInSpecular && dest.Definition?.SpecularColorGlossAlpha == true &&
+                // DSR's specular maps (DsrSpecularLayout) are read by the shader from the specular row, where the
+                // black default would otherwise be
+                if (DsrSpecularLayout(dest.Definition, glossInSpecular) != 0 &&
                     texType.Contains("Specular", StringComparison.OrdinalIgnoreCase))
                 {
                     LookupTexture(SpecularLayers[layer], dest, texType, mpath, mtd);
@@ -1033,10 +1033,12 @@ public class FlverResource : IResource, IDisposable
             ? dest.Blending == MaterialBlending.Alpha && !layers.IsBlended ? 2u : 1u
             : 0u;
         specConstants.Add(new SpecializationConstant(15, vertexColor));
-        // The gloss is the specular map's alpha, not its color (MaterialDefinition.SpecularColorGlossAlpha), where the
-        // specular map is read as the gloss (RenderProfile.GlossInSpecular)
-        specConstants.Add(new SpecializationConstant(16, RenderProfile.Of(curProject).GlossInSpecular &&
-            dest.Definition?.SpecularColorGlossAlpha == true));
+        // How a DSR material's specular map is read (DsrSpecularLayout), and its specular color's scale
+        var dsrSpecular = DsrSpecularLayout(dest.Definition, RenderProfile.Of(curProject).GlossInSpecular);
+        specConstants.Add(new SpecializationConstant(16, (uint)dsrSpecular));
+        specConstants.Add(new SpecializationConstant(17, dsrSpecular != 0 ? dest.Definition!.SpecularMapScale : 1f));
+        // The UVs are stored at 1024 rather than 2048 (FlverMaterial.UvPackScale)
+        specConstants.Add(new SpecializationConstant(51, dest.UvPackScale == 1024f));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
@@ -1889,18 +1891,57 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// Vertex UVs are stored as 16 bit fixed point with 11 fractional bits. Values are rounded rather than truncated;
-    /// anything outside the representable range wraps, which the repeat sampler makes invisible for whole tiles.
+    /// How the shader reads the specular map of a Dark Souls Remastered material, as DS1R's FRPG_ shaders do
+    /// (Claude/Tools/Ds1rShaderDisasm, FRPG_Phn_DifSpcBmp's gFC_MaterialWorkflow): 0 not one (the family's own
+    /// reading), 1 for g_MaterialWorkflow 1 (RGB the specular color, A the roughness), 2 for the rest (R roughness,
+    /// G metallic, B reflectance, A occlusion). FRPG_ shaders are only remastered where the specular map is read as
+    /// gloss (RenderProfile.GlossInSpecular), which DS1 PTDE's aren't
+    /// </summary>
+    private static int DsrSpecularLayout(MaterialDefinition? definition, bool glossInSpecular)
+    {
+        if (!glossInSpecular || definition is not { FrpgShader: true })
+        {
+            return 0;
+        }
+
+        return definition.MaterialWorkflow == 1 ? 1 : 2;
+    }
+
+    /// <summary>
+    /// What this FLVER's UVs are multiplied by to store them as 16 bit fixed point: see <see cref="UvPackScaleOf" />
+    /// </summary>
+    private float _uvPackScale = 2048f;
+
+    /// <summary>
+    /// The UV scale of a FLVER2 of this version, as its own short UVs have it: 1024 before 0x2000E (DES and DS1, whose
+    /// map UVs reach ±32), 2048 after. Storing them at the file's scale keeps all of their range and loses no
+    /// precision; at 2048 a DS1 UV past ±16 wrapped to the other side, and a triangle across that point was smeared
+    /// over 32 tiles (DS1R m0100B2A10). The shaders take it as specialization constant 51 (FlverMaterial.UvPackScale)
+    /// </summary>
+    private static float UvPackScaleOf(int version)
+    {
+        return version >= 0x2000E ? 2048f : 1024f;
+    }
+
+    /// <summary>
+    /// Vertex UVs are stored as 16 bit fixed point, at this FLVER's scale (<see cref="_uvPackScale" />). Values are
+    /// rounded rather than truncated; anything outside the representable range wraps.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static short PackUV(float value)
+    private short PackUV(float value)
+    {
+        return PackUV(value, _uvPackScale);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static short PackUV(float value, float scale)
     {
         if (ReportUVRanges)
         {
             UvRangeTracker.Track(value);
         }
 
-        return (short)(int)MathF.Round(value * 2048.0f);
+        return (short)(int)MathF.Round(value * scale);
     }
 
     /// <summary>
@@ -2353,8 +2394,8 @@ public class FlverResource : IResource, IDisposable
         // The other layouts all start the same
         FlverLayout* v = (FlverLayout*)dest;
         (*v).Position = position;
-        (*v).Uv1[0] = PackUV(uv.X);
-        (*v).Uv1[1] = PackUV(uv.Y);
+        (*v).Uv1[0] = PackUV(uv.X, material.UvPackScale);
+        (*v).Uv1[1] = PackUV(uv.Y, material.UvPackScale);
         (*v).Normal[0] = (sbyte)(n.X * 127.0f);
         (*v).Normal[1] = (sbyte)(n.Y * 127.0f);
         (*v).Normal[2] = (sbyte)(n.Z * 127.0f);
@@ -4177,10 +4218,11 @@ public class FlverResource : IResource, IDisposable
             ResetDetailStats();
             Bones = Flver.Nodes;
             StaticBoneTransforms = Bones.Select(b => Utils.GetBoneWorldMatrix(b, Bones)).ToArray();
+            _uvPackScale = UvPackScaleOf(Flver.Header.Version);
 
             for (var i = 0; i < Flver.Materials.Count(); i++)
             {
-                GPUMaterials[i] = new FlverMaterial();
+                GPUMaterials[i] = new FlverMaterial { UvPackScale = _uvPackScale };
                 ProcessMaterial(Flver.Materials[i], GPUMaterials[i]);
             }
 
@@ -4236,6 +4278,7 @@ public class FlverResource : IResource, IDisposable
         br.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
         var version = br.AssertInt32(
                 [0x20005, 0x20007, 0x20009, 0x2000B, 0x2000C, 0x2000D, 0x2000E, 0x2000F, 0x20010, 0x20013, 0x20014, 0x20016, 0x20017, 0x2001A, 0x2001B, 0x20021, 0x20022]);
+        _uvPackScale = UvPackScaleOf(version);
 
         var dataOffset = br.ReadUInt32();
         br.ReadInt32(); // Data length
@@ -4349,7 +4392,7 @@ public class FlverResource : IResource, IDisposable
 
         for (var i = 0; i < materialCount; i++)
         {
-            GPUMaterials[i] = new FlverMaterial();
+            GPUMaterials[i] = new FlverMaterial { UvPackScale = _uvPackScale };
             ProcessMaterial(GPUMaterials[i], br, ref materials[i], textures, unicode);
         }
 
@@ -4690,6 +4733,12 @@ public class FlverResource : IResource, IDisposable
         public List<SpecializationConstant>? SpecializationConstants;
         public VertexLayoutDescription VertexLayout;
         public uint VertexSize;
+
+        /// <summary>
+        /// What the UVs of this material's FLVER were stored at (FlverResource.UvPackScaleOf): 2048, or 1024 for DES
+        /// and DS1 FLVER2s. The vertex shaders divide by it (specialization constant 51)
+        /// </summary>
+        public float UvPackScale = 2048f;
 
         public void Dispose()
         {

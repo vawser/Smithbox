@@ -39,7 +39,9 @@ layout(location = 3) out vec3 fsin_worldpos;
 layout(location = 4) out float fsin_frame;
 layout(location = 5) flat out uint fsin_mat;
 
-const float UV_SCALE = 1.0 / 2048.0;
+// The UVs' fixed point scale, 1024 or 2048 by their FLVER (FlverMaterial.UvPackScale, FlverShader.vert)
+layout (constant_id = 51) const bool c_uvScale1024 = false;
+const float UV_SCALE = c_uvScale1024 ? 1.0 / 1024.0 : 1.0 / 2048.0;
 
 void main()
 {
