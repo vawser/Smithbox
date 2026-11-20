@@ -92,6 +92,9 @@ public class LuaBattleView
 
     private void Rebuild(LuaScript script, IReadOnlyDictionary<string, double> constants)
     {
+        // The simulation runs on the situation being replaced
+        Viewer.Simulation.Stop();
+
         // Keep the user's situation across edits of the same script (inputs match by their source text)
         var previous = CachedScript == script ? Situation?.Inputs.ToDictionary(i => i.Key) : null;
 
@@ -127,6 +130,12 @@ public class LuaBattleView
 
     private void Evaluate()
     {
+        // While the simulation runs, the distance and cooldowns come from the scene, so the chances follow them
+        if (Viewer.Simulation.Running && Situation != null)
+        {
+            Viewer.Simulation.ApplyLive(Situation);
+            Dirty = true;
+        }
         if (!Dirty || Situation == null)
             return;
         Result = Situation.Evaluate();
@@ -194,9 +203,11 @@ public class LuaBattleView
         if (ImGui.Button($"{LOC.Get("LUA_Battle_Reset_Positions")}##luaResetPositions"))
             Viewer.ResetPositions();
         GUI.Tooltip(LOC.Get("LUA_Battle_Reset_Positions_TT"));
-        ImGui.SameLine();
-        if (ImGui.Button($"{LOC.Get("LUA_Battle_Stop")}##luaStop"))
-            Viewer.Player.Idle();
+        if (Viewer.Target != null)
+        {
+            ImGui.SameLine();
+            ImGui.TextDisabled(LOC.Get("LUA_Battle_Gizmo_Hint"));
+        }
 
         // What is playing, and what couldn't be shown
         if (Viewer.Player.Current is { } step)
@@ -309,16 +320,23 @@ public class LuaBattleView
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
                     ImGui.AlignTextToFramePadding();
-                    ImGui.TextUnformatted(input.Label);
+                    var live = input.IsLive && Viewer.Simulation.Running;
+                    ImGui.TextUnformatted(live ? $"{input.Label}  {LOC.Get("LUA_Situation_Live")}" : input.Label);
                     if (ImGui.IsItemHovered())
-                        GUI.Tooltip(LOC.Get("LUA_Situation_Input_TT", input.Detail, input.Line));
+                        GUI.Tooltip(LOC.Get("LUA_Situation_Input_TT", input.Detail, input.Line) +
+                            (input.IsLive ? "\n" + LOC.Get("LUA_Situation_Live_TT") : ""));
                     if (ImGui.IsItemClicked())
                         Editor.ShowLine(script, input.Line);
 
+                    // A live input follows the scene while the simulation runs
                     ImGui.TableSetColumnIndex(1);
                     ImGui.SetNextItemWidth(-1);
+                    if (live)
+                        ImGui.BeginDisabled();
                     if (InputControl(input, i))
                         Dirty = true;
+                    if (live)
+                        ImGui.EndDisabled();
                 }
                 ImGui.EndTable();
             }
@@ -386,7 +404,33 @@ public class LuaBattleView
     private void DrawActs(LuaScript script)
     {
         GUI.TitleHeader(LOC.Get("LUA_Battle_Acts_Header"), LOC.Get("LUA_Battle_Acts_Header_TT"));
+
+        // Play: run the goal as the game does, act after act; Stop: back to idle
+        var simulation = Viewer.Simulation;
+        var running = simulation.Running;
+        if (ImGui.Button(running ? $"{Icons.Stop} {LOC.Get("LUA_Simulation_Stop")}##luaSimToggle" : $"{Icons.Play} {LOC.Get("LUA_Simulation_Play")}##luaSimToggle"))
+        {
+            if (running)
+                simulation.Stop();
+            else if (Viewer.Self == null)
+                Viewer.Status = LOC.Get("LUA_Viewer_No_Character");
+            else
+                simulation.Start(Goal, Situation);
+        }
+        GUI.Tooltip(LOC.Get("LUA_Simulation_Toggle_TT"));
+        ImGui.SameLine();
         ImGui.Checkbox($"{LOC.Get("LUA_Battle_Hide_Zero")}##luaBattleHideZero", ref HideZero);
+
+        if (running)
+        {
+            if (simulation.Current is { } now)
+                ImGui.Text(LOC.Get("LUA_Simulation_Now", now.Act, $"{now.Percent:0.#}"));
+            if (simulation.History.Count > 1)
+            {
+                var recent = simulation.History.TakeLast(10).Reverse().Skip(1).Select(h => $"{h.Act:D2}");
+                ImGui.TextDisabled(LOC.Get("LUA_Simulation_History", string.Join(" ← ", recent)));
+            }
+        }
 
         // What each act does depends on the distance to the target: plan again when it has moved
         var distance = Viewer.CurrentDistance();
@@ -418,8 +462,11 @@ public class LuaBattleView
             if (dim)
                 ImGui.PushStyleVar(ImGuiStyleVar.Alpha, 0.55f);
 
-            if (ImGui.Selectable($"{act.Id:D2}##luaAct_{act.Id}", SelectedAct == act.Id, ImGuiSelectableFlags.SpanAllColumns))
+            var highlighted = simulation.Running ? simulation.Current?.Act == act.Id : SelectedAct == act.Id;
+            if (ImGui.Selectable($"{act.Id:D2}##luaAct_{act.Id}", highlighted, ImGuiSelectableFlags.SpanAllColumns))
             {
+                // One act on its own: the simulation stops
+                simulation.Stop();
                 SelectedAct = act.Id;
                 Play(act);
             }

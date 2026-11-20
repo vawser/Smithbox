@@ -33,6 +33,9 @@ public class LuaViewer : IDisposable
 
     public LuaActPlayer Player { get; }
 
+    /// <summary>Runs the battle goal as the game does (Play / Stop in the AI Simulation window)</summary>
+    public LuaSimulation Simulation { get; }
+
     /// <summary>Where the target stands: its distance from the character, and its bearing from the character's front</summary>
     public float TargetDistance = 5;
     public float TargetBearing;
@@ -49,6 +52,8 @@ public class LuaViewer : IDisposable
         Universe = new LuaUniverse(editor.Project);
         Panel = new AnimationPreviewPanel(editor.Project);
         Player = new LuaActPlayer(this);
+        Simulation = new LuaSimulation(this);
+        Universe.GizmoTarget = new LuaTargetGizmo(this);
     }
 
     private bool EnsureViewport()
@@ -82,6 +87,7 @@ public class LuaViewer : IDisposable
     {
         if (Self?.Name == name)
             return;
+        Simulation.Stop();
         Player.Stop();
         Self?.Dispose();
         Self = name != null ? new LuaCharacter(this, name, Matrix4x4.Identity) : null;
@@ -120,6 +126,31 @@ public class LuaViewer : IDisposable
         if (Target == null)
             return;
         Target.Placement = TargetPlacement();
+    }
+
+    /// <summary>
+    /// Puts the target at a point (from the gizmo), facing the character, and sets the distance and bearing to match:
+    /// both measured from where the character stands now, the bearing from its front
+    /// </summary>
+    public void MoveTargetTo(Vector3 position)
+    {
+        if (Target == null)
+            return;
+
+        var from = Self?.Position ?? Vector3.Zero;
+        var toSelf = from - position;
+        toSelf.Y = 0;
+        var facing = toSelf.LengthSquared() > 1e-6f ? Vector3.Normalize(toSelf) : -Vector3.UnitZ;
+        Target.Placement = LuaCharacter.Facing(position, facing, Target.Forward);
+
+        var offset = position - from;
+        TargetDistance = new Vector2(offset.X, offset.Z).Length();
+        var f = Self?.WorldForward ?? Vector3.UnitZ;
+        var bearing = MathF.Atan2(offset.X, offset.Z) - MathF.Atan2(f.X, f.Z);
+        while (bearing > MathF.PI) bearing -= 2 * MathF.PI;
+        while (bearing < -MathF.PI) bearing += 2 * MathF.PI;
+        TargetBearing = bearing * 180 / MathF.PI;
+        TargetPlaced = true;
     }
 
     /// <summary>The target faces the character, at the distance and bearing from the character's start</summary>
@@ -166,6 +197,7 @@ public class LuaViewer : IDisposable
         Panel.Update();
         Self?.Update();
         Target?.Update();
+        Simulation.Update(dt);
         Player.Update(dt);
 
         // The target is placed from the character's front, known once its animations have loaded

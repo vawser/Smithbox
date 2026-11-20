@@ -19,6 +19,9 @@ public class LuaUniverse : IUniverse
     /// <summary>The viewport showing this scene, set by the viewer once it has made it</summary>
     public IViewport Viewport;
 
+    /// <summary>What the viewport's gizmo moves: the target character</summary>
+    public IGizmoTarget GizmoTarget;
+
     public LuaUniverse(ProjectEntry project)
     {
         Project = project;

@@ -41,6 +41,16 @@ public class LuaSituationInput
 
     // A random roll or HP rate: a number box, even when it is only tested for truth
     internal bool PrefersNumber;
+
+    /// <summary>ai:GetDist(TARGET_ENE_0): the simulation sets it from where the characters stand</summary>
+    public bool IsTargetDistance;
+
+    /// <summary>A SetCoolTime input: the animation and seconds, which the simulation checks against what it played</summary>
+    public long? CooldownAnimation;
+    public double? CooldownSeconds;
+
+    /// <summary>Set by the simulation, not the user, while it runs</summary>
+    public bool IsLive => IsTargetDistance || CooldownAnimation != null;
 }
 
 public enum LuaStepKind
@@ -203,7 +213,7 @@ public class LuaSituation
             return;
         }
 
-        var input = Input(Text(call), name, Text(call), call);
+        var input = Live(Input(Text(call), name, Text(call), call), call);
         if (!LocalInputs.TryGetValue(name, out var list))
             LocalInputs[name] = list = new List<LuaSituationInput>();
         if (!list.Contains(input))
@@ -220,6 +230,14 @@ public class LuaSituation
             input.PrefersNumber = true;
             input.Number = 1;
         }
+    }
+
+    /// <summary>Marks an input the simulation sets from the viewport: the distance to the target</summary>
+    private static LuaSituationInput Live(LuaSituationInput input, LuaCallExpr call)
+    {
+        if (call.Method == "GetDist" && call.Arguments is [LuaNameExpr { Name: "TARGET_ENE_0" }])
+            input.IsTargetDistance = true;
+        return input;
     }
 
     private enum Hint { Boolean, Number }
@@ -242,10 +260,12 @@ public class LuaSituation
                         c.Arguments[3].AsNumber() is { } sec ? LuaBattleGoal.Format(sec) : Text(c.Arguments[3])),
                     Text(c), c);
                 input.UsedAsBoolean = true;
+                input.CooldownAnimation = anim is { } ca ? (long)ca : null;
+                input.CooldownSeconds = c.Arguments[3].AsNumber();
                 Visit(c.Arguments[4], Hint.Number);
                 break;
             case LuaCallExpr c:
-                Mark(Input(Text(c), ShortCall(c), Text(c), c), hint, comparedWith);
+                Mark(Live(Input(Text(c), ShortCall(c), Text(c), c), c), hint, comparedWith);
                 break;
             case LuaNameExpr n when LocalInputs.TryGetValue(n.Name, out var bound):
                 foreach (var b in bound)
@@ -362,10 +382,13 @@ public class LuaSituation
     /// on a branch that runs becomes a step, in order. Approach_Act_Flex (aicommon's approach helper) is followed
     /// as the game would: walk or run by distance, then approach if further than its distance.
     /// </summary>
-    public List<LuaActStep> PlanAct(LuaAct act, double targetDistance)
+    public List<LuaActStep> PlanAct(LuaAct act, double targetDistance) => PlanFunction(act.FunctionNode, targetDistance);
+
+    /// <summary>As <see cref="PlanAct"/>, for any function of the goal (the after function, …ActAfter_AdjustSpace)</summary>
+    public List<LuaActStep> PlanFunction(LuaFunctionExpr function, double targetDistance)
     {
         var steps = new List<LuaActStep>();
-        if (act.FunctionNode == null)
+        if (function == null)
             return steps;
 
         var run = new Run { TargetDistance = targetDistance };
@@ -374,7 +397,7 @@ public class LuaSituation
             if (StepOf(call, r, targetDistance) is { } step)
                 steps.Add(step);
         };
-        Exec(act.FunctionNode.Body, run);
+        Exec(function.Body, run);
         return steps;
     }
 

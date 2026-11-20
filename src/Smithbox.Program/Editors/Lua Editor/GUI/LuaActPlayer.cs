@@ -27,6 +27,12 @@ public class LuaActPlayer
     /// <summary>Steps skipped for want of a clip (named in the status line)</summary>
     public List<string> Skipped { get; } = new();
 
+    /// <summary>The steps of an act have all played (not raised when stopped)</summary>
+    public event Action? Finished;
+
+    /// <summary>A step's clip has started (for the simulation's cooldowns)</summary>
+    public event Action<long>? ClipStarted;
+
     public LuaActPlayer(LuaViewer viewer)
     {
         Viewer = viewer;
@@ -100,7 +106,10 @@ public class LuaActPlayer
             Index++;
             if (Steps == null || Index >= Steps.Count)
             {
+                var played = Steps != null;
                 Idle();
+                if (played)
+                    Finished?.Invoke();
                 return;
             }
             StepTime = 0;
@@ -164,7 +173,10 @@ public class LuaActPlayer
     private bool PlayOrSkip(LuaActStep step, long? clip)
     {
         if (clip is { } c && Self is { } self && (self.IsLoading || self.Has(c)) && self.Play(c))
+        {
+            ClipStarted?.Invoke(c);
             return true;
+        }
         Skipped.Add(LOC.Get("LUA_Viewer_Skipped_Step", step.Goal, clip is { } id ? id.ToString() : "-"));
         return false;
     }

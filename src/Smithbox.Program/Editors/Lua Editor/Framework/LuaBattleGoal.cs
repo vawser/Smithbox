@@ -96,6 +96,9 @@ public class LuaBattleGoal
     public string AfterFunction;
     public int AfterFunctionLine;
 
+    /// <summary>The function Common_Battle_Activate runs after each act (…ActAfter_AdjustSpace); null if not in this script</summary>
+    public LuaFunctionExpr AfterFunctionNode;
+
     public SortedDictionary<int, LuaAct> Acts { get; } = new();
     public List<LuaWeightRow> Rows { get; } = new();
     public List<LuaSpEffectUse> SpEffects { get; } = new();
@@ -237,7 +240,10 @@ public class LuaBattleGoal
             result.ReadSubGoals(act, fs.Function, src, t, Literal);
         }
         if (result.AfterFunction != null && functions.TryGetValue(result.AfterFunction, out var af))
+        {
             result.AfterFunctionLine = Line(af);
+            result.AfterFunctionNode = af.Function;
+        }
 
         // Special effects, in Activate, Interrupt and the act functions
         var scanned = new List<LuaBlock> { body };

@@ -1239,6 +1239,13 @@ public class VulkanViewport : IViewport
             return;
         }
 
+        // The Lua Editor's AI simulation target character
+        if (Owner is StudioCore.Editors.LuaEditor.LuaUniverse luaUniverse && luaUniverse.GizmoTarget?.HasTarget == true)
+        {
+            Gizmos.Target = luaUniverse.GizmoTarget;
+            return;
+        }
+
         // A picked User-Defined point of the Collision Editor's Create tab
         if (Owner is MapUniverse collisionUniverse && collisionUniverse.View.CollisionEditorTool.PointGizmoTarget.HasTarget)
         {
