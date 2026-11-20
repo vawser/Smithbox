@@ -214,6 +214,19 @@ internal sealed class ContainerLoadAction
                         }
 
                         continue;
+                    case ContainerFormat.BinderSplit when depth < MaxNesting && Options.Types.HasFlag(ResourceType.Texture):
+                        // A header whose data is a file of its own beside the binder: DS1's chrbnd holds the
+                        // chrtpfbhd of the character's textures, with the chrtpfbdt next to the chrbnd. The only
+                        // split binders found inside binders hold textures, so a load without them skips the data
+                        if (TryReadNestedData(containerPath, fileName, out Memory<byte> nestedData))
+                        {
+                            using BinderReader nested = UsesLegacyBinders()
+                                ? new BXF3Reader(binder.ReadFile(header), nestedData)
+                                : new BXF4Reader(binder.ReadFile(header), nestedData);
+                            LoadBinder(nested, containerPath, depth + 1);
+                        }
+
+                        continue;
                     case ContainerFormat.None:
                         break;
                     default:
@@ -302,6 +315,26 @@ internal sealed class ContainerLoadAction
     private BinderReader OpenBinder(Memory<byte> bytes)
     {
         return UsesLegacyBinders() ? new BND3Reader(bytes) : new BND4Reader(bytes);
+    }
+
+    /// <summary>
+    ///     The data file of a split binder header found inside the binder at <paramref name="containerPath" />, which
+    ///     sits next to that binder (see <see cref="ResourceName.NestedSplitDataPath" />). False, quietly, when there is
+    ///     none: a container handed over as bytes has no folder.
+    /// </summary>
+    private bool TryReadNestedData(string containerPath, string headerName, out Memory<byte> data)
+    {
+        data = default;
+
+        if (Origin == ContainerOrigin.Memory)
+        {
+            return false;
+        }
+
+        var dataPath = ResourceName.NestedSplitDataPath(containerPath, headerName);
+        var exists = Origin == ContainerOrigin.External ? File.Exists(dataPath) : _project.VFS.FS.FileExists(dataPath);
+
+        return exists && TryRead(dataPath, out data);
     }
 
     private bool TryRead(string path, out Memory<byte> data)

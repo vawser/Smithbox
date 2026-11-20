@@ -34,6 +34,26 @@ public static class ResourceName
     }
 
     /// <summary>
+    ///     Where the data file of a split binder header that is an entry of another binder lives: next to that binder,
+    ///     named as the header with "bhd" turned into "bdt" (DS1's chr/c1202.chrbnd.dcx holds c1202.chrtpfbhd, whose
+    ///     data is chr/c1202.chrtpfbdt). Keeps the binder path's own separators, so it works for project and disk paths.
+    /// </summary>
+    public static string NestedSplitDataPath(string binderPath, string headerEntryName)
+    {
+        var header = FileName(headerEntryName);
+        if (header.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+        {
+            header = header.Substring(0, header.Length - 4);
+        }
+
+        var i = header.LastIndexOf("bhd", StringComparison.OrdinalIgnoreCase);
+        var dataName = i < 0 ? header : string.Concat(header.AsSpan(0, i), "bdt", header.AsSpan(i + 3));
+
+        var slash = binderPath.LastIndexOfAny(new[] { '/', '\\' });
+        return slash < 0 ? dataName : binderPath.Substring(0, slash + 1) + dataName;
+    }
+
+    /// <summary>
     ///     Converts a path or name to the key used for lookups.
     /// </summary>
     public static string Normalize(string pathOrName)

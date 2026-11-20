@@ -41,7 +41,8 @@ public class OpenGLTextureHandle : ITextureHandle
         if (!supportsBC7 && dds.ddspf.dwRGBBitCount != 32)
             return;
 
-        bool srgb = dds.header10.dxgiFormat == DDS.DXGI_FORMAT.BC7_UNORM_SRGB;
+        // A DS1R color texture is BC7 sRGB by its TPF format, although its header says UNORM (TexturePool.SrgbBC7Format)
+        bool srgb = dds.header10.dxgiFormat == DDS.DXGI_FORMAT.BC7_UNORM_SRGB || tex.Format == TexturePool.SrgbBC7Format;
 
         // BC7
         if (dds.header10 != null)

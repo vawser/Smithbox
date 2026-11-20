@@ -66,12 +66,10 @@ bool Legacy_IndirectLight(Surface s, vec3 ambientDiffuse, out vec3 light)
 	return true;
 }
 
-// Every DES shader is a "Col" one (DS_Phn_ColDif...): the diffuse times the vertex color. FLVER0 vertices without
-// a color are filled white (FlverResource.FillDesColor). The alpha is the multi texture weight, not opacity
+// The vertex color of DES's and DS1's "Col" shaders is a material rule (c_vertexColor in the core), not a family one.
+// FLVER0 vertices without a color are filled white (FlverResource.FillDesColor)
 void Legacy_Albedo(inout vec4 diffuseColor)
 {
-	if (c_gameID == GAME_DES)
-		diffuseColor.rgb *= fsin_color.rgb;
 }
 
 // The shared core's tangent space (x along T, y along B)

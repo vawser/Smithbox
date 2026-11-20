@@ -1154,6 +1154,10 @@ public class MaterialDefinition
     private static readonly float[] DefaultAbsorption = [0.4f, 0.1f, 0.06f];
     private const float DefaultGloss = 0.9f;
 
+    // DES's and DS1's "Col" shaders (DS_Phn_ColDifSpcBmp, FRPG_Phn_ColDifSpcBmp, FRPG_Foliage_ColDif...): the Col is the
+    // vertex color, which their diffuse is multiplied by. Their water, ghost and snow shaders don't have it
+    private static readonly Regex VertexColorShader = new(@"^(DS|FRPG)_[A-Za-z]+_Col(?=[A-Z]|$)", RegexOptions.Compiled);
+
     private static readonly Regex ShaderToken = new(@"\[([^\]]+)\]", RegexOptions.Compiled);
     private static readonly Regex BlendToken = new(@"^Mb([2-9])", RegexOptions.Compiled);
     private static readonly Regex SlotName = new(@"Texture2D_(\d+)_(.*)$", RegexOptions.Compiled);
@@ -1179,6 +1183,12 @@ public class MaterialDefinition
 
     /// <summary>A mesh laid on top of another surface, such as a stain or crack, that shares its depth</summary>
     public bool MeshDecal { get; set; }
+
+    /// <summary>
+    /// The shader multiplies the diffuse by the vertex color, and an alpha blended material's opacity by its alpha (a
+    /// "Col" shader of DES and DS1, see VertexColorShader). In their multi texture shaders the alpha weighs the layers
+    /// </summary>
+    public bool VertexColor { get; set; }
 
     public float[] DiffuseColor { get; set; } = [1, 1, 1];
 
@@ -1282,6 +1292,7 @@ public class MaterialDefinition
         CullNone = GetFirst("g_GX_PrimCullNone", 0) != 0;
         DisableDepthWrite = GetFirst("g_GX_bDisableDepthWrite", 0) != 0;
         MeshDecal = GetFirst("g_GX_bMeshDecal", 0) != 0;
+        VertexColor = VertexColorShader.IsMatch(ShaderName);
 
         if (Params.TryGetValue("g_DiffuseMapColor", out var color) && color.Length >= 3)
         {

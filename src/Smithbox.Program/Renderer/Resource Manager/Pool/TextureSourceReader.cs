@@ -62,7 +62,7 @@ public static class TextureSourceReader
                 }
 
                 using BinderReader binder = OpenBinder(project, bytes.Value);
-                return Find(project, binder, name, 0);
+                return Find(project, binder, containerPath, name, 0);
             }
             case ContainerFormat.BinderSplit:
             {
@@ -79,14 +79,14 @@ public static class TextureSourceReader
                 using BinderReader binder = UsesLegacyBinders(project)
                     ? new BXF3Reader(bhd.Value, bdt.Value)
                     : new BXF4Reader(bhd.Value, bdt.Value);
-                return Find(project, binder, name, 0);
+                return Find(project, binder, containerPath, name, 0);
             }
             default:
                 return null;
         }
     }
 
-    private static TPF.Texture? Find(ProjectEntry project, BinderReader binder, string name, int depth)
+    private static TPF.Texture? Find(ProjectEntry project, BinderReader binder, string containerPath, string name, int depth)
     {
         foreach (BinderFileHeader header in binder.Files)
         {
@@ -111,7 +111,27 @@ public static class TextureSourceReader
                 case ContainerFormat.Binder when depth < MaxNesting:
                 {
                     using BinderReader nested = OpenBinder(project, binder.ReadFile(header));
-                    TPF.Texture? texture = Find(project, nested, name, depth + 1);
+                    TPF.Texture? texture = Find(project, nested, containerPath, name, depth + 1);
+                    if (texture != null)
+                    {
+                        return texture;
+                    }
+
+                    break;
+                }
+                case ContainerFormat.BinderSplit when depth < MaxNesting:
+                {
+                    // A header whose data sits beside the binder, e.g. DS1's chrtpfbhd in a chrbnd (ContainerLoadAction)
+                    var bdt = ReadFile(project, ResourceName.NestedSplitDataPath(containerPath, fileName));
+                    if (bdt == null)
+                    {
+                        break;
+                    }
+
+                    using BinderReader nested = UsesLegacyBinders(project)
+                        ? new BXF3Reader(binder.ReadFile(header), bdt.Value)
+                        : new BXF4Reader(binder.ReadFile(header), bdt.Value);
+                    TPF.Texture? texture = Find(project, nested, containerPath, name, depth + 1);
                     if (texture != null)
                     {
                         return texture;

@@ -30,6 +30,14 @@ public class TexturePool
     private const byte LinearBC1Format = 108;
 
     /// <summary>
+    ///     The TPF format of BC7 textures that hold color (diffuse, specular, lightmaps, skies) although their DDS header
+    ///     says UNORM. Only DS1R uses it, where it is the BC7 counterpart of its DXT1 color textures (formats 0 and 1),
+    ///     which are read as sRGB: both are authored to the same values (c1200's BC7 mane and DXT1 body). Read as UNORM,
+    ///     the color is about four times too bright once linear, and stacked alpha layers come out white.
+    /// </summary>
+    public const byte SrgbBC7Format = 38;
+
+    /// <summary>
     ///     Number of Frame() ticks a freed slot / replaced texture is kept alive before its descriptor is
     ///     reset and the GPU resource is destroyed. Must be larger than the number of frames in flight.
     /// </summary>
@@ -806,6 +814,12 @@ public class TexturePool
                     }
 
                     format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
+
+                    // The TPF knows this BC7 texture is color, which its DDS header doesn't say
+                    if (format == VkFormat.Bc7UnormBlock && tex.Format == SrgbBC7Format)
+                    {
+                        format = VkFormat.Bc7SrgbBlock;
+                    }
 
                     //Smithbox.Log(this, $"header10 - {name}: {format}");
                 }

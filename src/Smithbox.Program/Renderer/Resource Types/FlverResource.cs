@@ -1018,6 +1018,12 @@ public class FlverResource : IResource, IDisposable
             dest.TextureResourceFilled[(int)FlverMaterial.TextureType.NormalTextureResource]));
         // A ChrCustomize colouring (MaterialCustomize), read from the entry after the effects
         specConstants.Add(new SpecializationConstant(14, dest.Customize != null ? CustomizeMode(dest.Definition) : 0u));
+        // A "Col" shader (MaterialDefinition.VertexColor): 1 the diffuse times the vertex color, 2 also the opacity times
+        // its alpha, for an alpha blended material that doesn't blend layers (whose alpha is then a layer weight)
+        var vertexColor = dest.Definition?.VertexColor == true
+            ? dest.Blending == MaterialBlending.Alpha && !layers.IsBlended ? 2u : 1u
+            : 0u;
+        specConstants.Add(new SpecializationConstant(15, vertexColor));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
@@ -2534,7 +2540,8 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesStandard(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer,
+        bool vertexColor)
     {
         br.StepIn(buffer.bufferOffset);
         var pverts = (FlverLayout*)vertBuffer;
@@ -2549,6 +2556,12 @@ public class FlverResource : IResource, IDisposable
             {
                 *v = new FlverLayout();
                 FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+
+                // White where the mesh has no color, so that it changes nothing
+                if (vertexColor)
+                {
+                    FillColorWhite((*v).Color);
+                }
             }
 
             foreach (FlverBufferLayoutMember l in layouts)
@@ -2582,6 +2595,10 @@ public class FlverResource : IResource, IDisposable
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, &n, br, l.type);
                 }
+                else if (vertexColor && l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                {
+                    FillVertexColor((*v).Color, br, l.type);
+                }
                 else
                 {
                     EatVertex(br, l.type);
@@ -2594,7 +2611,19 @@ public class FlverResource : IResource, IDisposable
         br.StepOut();
     }
 
-    private unsafe void FillVerticesStandard(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
+    private static unsafe void FillColorWhite(byte* dest)
+    {
+        dest[0] = 255;
+        dest[1] = 255;
+        dest[2] = 255;
+        dest[3] = 255;
+    }
+
+    /// <param name="vertexColor">
+    /// Whether the material reads the vertex color (MaterialDefinition.VertexColor). The others leave it 0, as before:
+    /// ER's ChrCustomize hair reads it in this layout too, and hasn't been checked with real colors
+    /// </param>
+    private unsafe void FillVerticesStandard(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, bool vertexColor)
     {
         Span<FlverLayout> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayout* pverts = verts)
@@ -2624,6 +2653,12 @@ public class FlverResource : IResource, IDisposable
                 else
                 {
                     FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+                }
+
+                if (vertexColor)
+                {
+                    FillColorWhite((*v).Color);
+                    FillColorUNorm((*v).Color, ref vert);
                 }
             }
         }
@@ -3444,7 +3479,7 @@ public class FlverResource : IResource, IDisposable
                 dest.Material.Definition?.Deformer == MaterialDeformer.VatFrame);        }
         else
         {
-            FillVerticesStandard(mesh, pvhandle, meshVertices);
+            FillVerticesStandard(mesh, pvhandle, meshVertices, dest.Material.Definition?.VertexColor == true);
         }
 
         if (is32bit)
@@ -3797,7 +3832,8 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer);
+                FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer,
+                    dest.Material.Definition?.VertexColor == true);
             }
 
             firstBuffer = false;

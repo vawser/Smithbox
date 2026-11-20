@@ -46,6 +46,26 @@
       "Container": "m6100B2A10",
       "Model": "m6100B2A10",
       "Shows": "map: FRPG_NormalToAlpha"
+    },
+    {
+      "Container": "c1200",
+      "Model": "c1200",
+      "Shows": "chr: g_BlendMode 2 (Alp) fur cards over an opaque body"
+    },
+    {
+      "Container": "c1202",
+      "Model": "c1202",
+      "Shows": "chr: textures only in the chrbnd's chrtpfbhd + loose chrtpfbdt"
+    },
+    {
+      "Container": "c2060",
+      "Model": "c2060",
+      "Shows": "chr: textures only in the chrbnd's chrtpfbhd + loose chrtpfbdt"
+    },
+    {
+      "Container": "c2230",
+      "Model": "c2230",
+      "Shows": "chr: body textures owned by another character (c2239's chrtpfbdt)"
     }
   ]
 }
