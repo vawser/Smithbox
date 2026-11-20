@@ -89,6 +89,23 @@ public class LuaFileList
         if (container.InProject)
             GUI.Tooltip(LOC.Get("LUA_FileList_In_Project_TT"));
 
+        // A binder of one script: that script's actions; a map's binder (or aicommon): a new script in it
+        if (ImGui.BeginPopupContextItem($"##luaBinderMenu_{container.Path}"))
+        {
+            if (container.EnsureLoaded() && !container.HoldsManyGoals && container.Scripts.Count == 1)
+                Editor.Commands.ScriptMenuItems(container.Scripts[0]);
+            else if (container.IsLoaded)
+                Editor.Commands.BinderMenuItems(container);
+            ImGui.EndPopup();
+        }
+
+        if (container.PendingRevert)
+        {
+            ImGui.SameLine();
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("LUA_FileList_Reverting"));
+            GUI.Tooltip(LOC.Get("LUA_FileList_Reverting_TT"));
+        }
+
         // A binder of one goal shows its character and users on its own row; a map's binder on each script's
         if (!container.HoldsManyGoals)
         {
@@ -116,6 +133,11 @@ public class LuaFileList
                 var name = script.IsDirty ? $"{script.EntryName}*" : script.EntryName;
                 if (ImGui.Selectable($"{name}##luaScript_{container.Path}_{script.EntryName}", Editor.SelectedScript == script))
                     Editor.SelectScript(script);
+                if (ImGui.BeginPopupContextItem($"##luaScriptMenu_{container.Path}_{script.EntryName}"))
+                {
+                    Editor.Commands.ScriptMenuItems(script);
+                    ImGui.EndPopup();
+                }
 
                 if (container.HoldsManyGoals)
                 {

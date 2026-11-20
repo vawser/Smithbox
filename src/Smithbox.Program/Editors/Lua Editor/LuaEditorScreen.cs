@@ -22,6 +22,7 @@ public class LuaEditorScreen : EditorScreen
     public LuaToolWindow ToolWindow;
     public LuaViewer Viewer;
     public LuaDefinitionIndex Definitions;
+    public LuaScriptCommands Commands;
 
     public LuaContainer SelectedContainer { get; private set; }
     public LuaScript SelectedScript { get; private set; }
@@ -35,6 +36,7 @@ public class LuaEditorScreen : EditorScreen
         ToolWindow = new(this);
         Viewer = new(this);
         Definitions = new(this);
+        Commands = new(this);
     }
 
     public string EditorName => "Lua Editor##LuaEditor";
@@ -78,6 +80,9 @@ public class LuaEditorScreen : EditorScreen
 
         // The AI simulation's viewport: one window, docked with the others
         Viewer.Display(dsid);
+
+        // The create / duplicate / delete script dialogs
+        Commands.Draw();
     }
 
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw, ImGuiWindowFlags? flags = null)
@@ -211,6 +216,16 @@ public class LuaEditorScreen : EditorScreen
             if (ImGui.MenuItem($"{LOC.Get("LUA_Edit_Toggle_Editing")}##luaEditToggle", "", ScriptView.Editing, script?.Text != null))
                 ScriptView.SetEditing(!ScriptView.Editing);
             GUI.Tooltip(LOC.Get("LUA_Edit_Toggle_Editing_TT"));
+
+            ImGui.Separator();
+
+            // New, duplicate, delete: the selected script (a new one goes into the selected map's binder, if any)
+            if (script != null)
+                Commands.ScriptMenuItems(script);
+            else if (SelectedContainer?.HoldsManyGoals == true)
+                Commands.BinderMenuItems(SelectedContainer);
+            else if (ImGui.MenuItem($"{LOC.Get("LUA_Struct_New")}##luaNewScriptMenu", "", false, Bank != null))
+                Commands.AskCreate(null);
 
             ImGui.EndMenu();
         }

@@ -93,19 +93,97 @@ public class LuaBank
         return name != null && ByName.TryGetValue(name, out var c) ? c : null;
     }
 
+    /// <summary>Project files of deleted binders, moved into the project's backup folder on the next save</summary>
+    public List<string> PendingDeletes { get; } = new();
+
     public List<string> GetDirtyFiles()
     {
-        return Containers.Where(c => c.IsDirty).Select(c => c.Path).ToList();
+        return Containers.Where(c => c.IsDirty || c.PendingRevert).Select(c => c.Path).Concat(PendingDeletes).Distinct().ToList();
     }
 
-    /// <summary>Saves every binder with unsaved changes; false if any failed</summary>
+    /// <summary>
+    /// Saves every binder with unsaved changes. Deleted binders' project files, and reverted ones', are moved into the
+    /// project's backup folder first (a reverted binder then reads the game's file again). False if any failed.
+    /// </summary>
     public bool SaveAllDirty()
     {
         var ok = true;
+
+        foreach (var path in PendingDeletes.ToList())
+        {
+            if (MoveToBackup(path))
+                PendingDeletes.Remove(path);
+            else
+                ok = false;
+        }
+
+        foreach (var c in Containers.Where(c => c.PendingRevert).ToList())
+        {
+            if (MoveToBackup(c.Path))
+                c.ResetToVanilla();
+            else
+                ok = false;
+        }
+
         foreach (var c in Containers.Where(c => c.IsDirty).ToList())
             if (!c.Save())
                 ok = false;
         return ok;
+    }
+
+    /// <summary>
+    /// Moves a project file into &lt;project&gt;/.backup/&lt;time&gt;_deleted/&lt;its path&gt; (the project scan skips dot
+    /// folders). Nothing to do when the project has no such file.
+    /// </summary>
+    private bool MoveToBackup(string path)
+    {
+        var projectFs = Project.VFS.ProjectFS;
+        try
+        {
+            if (projectFs == null || !projectFs.FileExists(path))
+                return true;
+
+            var stamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "_deleted";
+            var relative = $".backup/{stamp}{path}";
+            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(System.IO.Path.Join(Project.Descriptor.ProjectPath, relative)));
+            projectFs.Move(path, relative);
+            Smithbox.Log(this, LOC.Get("LUA_Data_Moved_To_Backup", path, relative));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("LUA_Data_Move_To_Backup_Failed", path), e);
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Adds a binder at its sorted place (kind, then name). The list is replaced, not changed, so a background reader
+    /// (the global search) never sees it change under it.
+    /// </summary>
+    public void Insert(LuaContainer container)
+    {
+        var list = Containers.ToList();
+        var index = list.FindIndex(c => c.Kind > container.Kind || c.Kind == container.Kind && string.Compare(c.Name, container.Name, StringComparison.OrdinalIgnoreCase) > 0);
+        list.Insert(index < 0 ? list.Count : index, container);
+        Containers = list;
+        ByName[container.Name] = container;
+    }
+
+    /// <summary>Takes a binder out of the list (replacing the list, as <see cref="Insert"/> does)</summary>
+    public void Remove(LuaContainer container)
+    {
+        Containers = Containers.Where(c => c != container).ToList();
+        if (ByName.TryGetValue(container.Name, out var c) && c == container)
+            ByName.Remove(container.Name);
+    }
+
+    /// <summary>Whether a path is free for a new binder: no binder has it, and neither the project nor the game has the file</summary>
+    public bool IsFreePath(string path)
+    {
+        return !Containers.Any(c => c.Path.Equals(path, StringComparison.OrdinalIgnoreCase))
+            && !PendingDeletes.Contains(path, StringComparer.OrdinalIgnoreCase)
+            && !(Project.VFS.FS?.FileExists(path) ?? false);
     }
 }
 
@@ -127,13 +205,42 @@ public class LuaContainer
     /// <summary>The project folder has its own copy (it overrides the game's)</summary>
     public bool InProject { get; private set; }
 
+    /// <summary>The binder's Lua scripts. Replaced, never changed in place (a background reader may hold it).</summary>
     public List<LuaScript> Scripts { get; private set; } = new();
 
     public bool IsLoaded { get; private set; }
 
     public string LoadError { get; private set; }
 
-    public bool IsDirty => Scripts.Any(s => s.IsDirty);
+    /// <summary>Unsaved changes: an edited script, a script added or removed, a changed goal table, or a new binder</summary>
+    public bool IsDirty => IsNew || EntriesChanged || GoalsChanged || Scripts.Any(s => s.IsDirty);
+
+    /// <summary>Made in the editor (a new or duplicated binder) and not saved yet: no file has its path</summary>
+    public bool IsNew { get; private set; }
+
+    /// <summary>For a new binder: the binder its header and entry layout are copied from, and the stem its entry paths change from</summary>
+    public string TemplatePath { get; private set; }
+    public string TemplateStem { get; private set; }
+
+    /// <summary>Deleted, but the game ships it too: the next save moves the project copy away and reads the game's</summary>
+    public bool PendingRevert { get; set; }
+
+    /// <summary>Whether the game itself has this file (it can't be removed, only reverted to)</summary>
+    public bool InGame => Bank.Project.VFS.VanillaFS?.FileExists(Path) ?? false;
+
+    /// <summary>
+    /// The binder's goal table (its .luainfo: the goals of its global-function battle scripts and its logic scripts);
+    /// null if it has none. Replaced, never changed in place.
+    /// </summary>
+    public List<LUAINFO.Goal> Goals { get; private set; }
+
+    /// <summary>The .luainfo's format (64-bit offsets and UTF-16 names), for a rewritten or new one</summary>
+    private bool GoalsLongFormat = true;
+    private bool GoalsBigEndian;
+
+    // Scripts added or removed, and the goal table changed, since the last load or save
+    private bool EntriesChanged;
+    private bool GoalsChanged;
 
     private readonly object LoadLock = new();
 
@@ -183,6 +290,7 @@ public class LuaContainer
                     .Where(f => f.Name.EndsWith(".lua", StringComparison.OrdinalIgnoreCase))
                     .Select(f => new LuaScript(this, System.IO.Path.GetFileName(f.Name), f.Bytes.ToArray()))
                     .ToList();
+                ReadGoals(bnd);
                 IsLoaded = true;
                 return true;
             }
@@ -193,6 +301,88 @@ public class LuaContainer
                 return false;
             }
         }
+    }
+
+    private void ReadGoals(IBinder bnd)
+    {
+        Goals = null;
+        GoalsLongFormat = bnd is BND4 { Unicode: true };
+        var info = bnd.Files.FirstOrDefault(f => f.Name.EndsWith(".luainfo", StringComparison.OrdinalIgnoreCase));
+        if (info == null)
+            return;
+        try
+        {
+            var li = LUAINFO.Read(info.Bytes);
+            Goals = li.Goals.ToList();
+            GoalsLongFormat = li.LongFormat;
+            GoalsBigEndian = li.BigEndian;
+        }
+        catch (Exception e)
+        {
+            // An empty table can't be read (its format can't be told); edits start from an empty list
+            Goals = new();
+            Smithbox.LogError(this, LOC.Get("LUA_Data_Failed_To_Read_Goals", Name), e);
+        }
+    }
+
+    /// <summary>
+    /// A binder made in the editor: loaded, unsaved. On save it is written as a copy of the template binder (its header
+    /// and layout), with the template's stem in entry paths changed to its own, its Lua entries this binder's scripts
+    /// and its goal table these goals (none: no .luainfo).
+    /// </summary>
+    public static LuaContainer CreateNew(LuaBank bank, string path, string name, LuaBinderKind kind, LuaContainer template,
+        List<LUAINFO.Goal> goals, Func<LuaContainer, List<LuaScript>> scripts)
+    {
+        var c = new LuaContainer(bank, path, name, kind, false)
+        {
+            IsNew = true,
+            // A new binder made from another new one starts from the same file
+            TemplatePath = template.IsNew ? template.TemplatePath : template.Path,
+            TemplateStem = template.IsNew ? template.TemplateStem : template.Name,
+            Goals = goals,
+            GoalsLongFormat = template.GoalsLongFormat,
+            GoalsBigEndian = template.GoalsBigEndian,
+            GoalsChanged = true,
+        };
+        c.Scripts = scripts(c);
+        c.IsLoaded = true;
+        return c;
+    }
+
+    /// <summary>Adds a script at an index (written as a new entry on save)</summary>
+    public void InsertScript(LuaScript script, int index)
+    {
+        var list = Scripts.ToList();
+        list.Insert(Math.Clamp(index, 0, list.Count), script);
+        Scripts = list;
+        EntriesChanged = true;
+    }
+
+    /// <summary>Removes a script (its entry goes on save)</summary>
+    public void RemoveScript(LuaScript script)
+    {
+        Scripts = Scripts.Where(s => s != script).ToList();
+        EntriesChanged = true;
+    }
+
+    /// <summary>Replaces the goal table (written into the .luainfo on save; added if the binder has none, removed when empty)</summary>
+    public void SetGoals(List<LUAINFO.Goal> goals)
+    {
+        Goals = goals;
+        GoalsChanged = true;
+    }
+
+    /// <summary>After its project copy is moved away: unloaded, to read the game's file on next use</summary>
+    public void ResetToVanilla()
+    {
+        Scripts = new();
+        Goals = null;
+        IsLoaded = false;
+        LoadError = null;
+        InProject = false;
+        PendingRevert = false;
+        EntriesChanged = false;
+        GoalsChanged = false;
     }
 
     private static IBinder ReadBinder(Memory<byte> data)
@@ -232,10 +422,12 @@ public class LuaContainer
         IBinder bnd;
         try
         {
-            var data = fs.ReadFile(Path);
+            // A new binder starts as a copy of its template's
+            var source = IsNew ? TemplatePath : Path;
+            var data = source != null ? fs.ReadFile(source) : null;
             if (data == null)
             {
-                Smithbox.LogError(this, LOC.Get("LUA_Data_Failed_To_Find_File", Path));
+                Smithbox.LogError(this, LOC.Get("LUA_Data_Failed_To_Find_File", source ?? Path));
                 return false;
             }
             // Read from the compressed bytes, so the binder keeps its DCX compression on write
@@ -244,6 +436,15 @@ public class LuaContainer
             var newBytes = new Dictionary<LuaScript, byte[]>();
             foreach (var s in edited)
                 newBytes[s] = LuaLexer.ShiftJis.GetBytes(s.Text);
+
+            // A new binder's entry paths name it (…\each\430000_battle\430000_battle.lua → …\430500_battle\430500_battle.lua)
+            if (IsNew && TemplateStem != null)
+            {
+                foreach (var f in bnd.Files)
+                    f.Name = f.Name?.Replace(TemplateStem, Name, StringComparison.OrdinalIgnoreCase);
+            }
+
+            RebuildLuaEntries(bnd, newBytes);
 
             // Lua entries, and the globals in binder order (edited and source scripts from their text, untouched
             // bytecode from its SETGLOBAL names)
@@ -280,6 +481,9 @@ public class LuaContainer
                     gnlFile.Bytes = gnl.Write();
                 }
             }
+
+            if (GoalsChanged)
+                WriteGoals(bnd, gnlFile);
         }
         catch (Exception e)
         {
@@ -299,8 +503,86 @@ public class LuaContainer
             s.MarkSaved();
 
         InProject = true;
+        IsNew = false;
+        TemplatePath = null;
+        TemplateStem = null;
+        EntriesChanged = false;
+        GoalsChanged = false;
         Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", Path));
         return true;
+    }
+
+    /// <summary>
+    /// Makes the binder's .lua entries match <see cref="Scripts"/>: an entry whose script was deleted goes; a script
+    /// with no entry (created or duplicated) gets one, in FromSoftware's layout: the next ID after the other Lua
+    /// entries (they count up from 1000; .luagnl and .luainfo are 1000000 and 1000001), the other entries' folder
+    /// and flags, after the last Lua entry.
+    /// </summary>
+    private void RebuildLuaEntries(IBinder bnd, Dictionary<LuaScript, byte[]> newBytes)
+    {
+        static bool IsLua(BinderFile f) => f.Name?.EndsWith(".lua", StringComparison.OrdinalIgnoreCase) == true;
+        string EntryOf(BinderFile f) => System.IO.Path.GetFileName(f.Name);
+
+        var luaFiles = bnd.Files.Where(IsLua).ToList();
+        var sample = luaFiles.FirstOrDefault() ?? bnd.Files.FirstOrDefault();
+        var folder = sample?.Name is { } n && n.LastIndexOf('\\') is var slash and >= 0 ? n[..(slash + 1)] : "";
+        var flags = luaFiles.FirstOrDefault()?.Flags ?? Binder.FileFlags.Flag1;
+
+        foreach (var f in luaFiles)
+        {
+            if (!Scripts.Any(s => s.EntryName.Equals(EntryOf(f), StringComparison.OrdinalIgnoreCase)))
+                bnd.Files.Remove(f);
+        }
+
+        foreach (var s in Scripts)
+        {
+            if (bnd.Files.Any(f => IsLua(f) && s.EntryName.Equals(EntryOf(f), StringComparison.OrdinalIgnoreCase)))
+                continue;
+
+            var luaIds = bnd.Files.Where(IsLua).Select(f => f.ID).ToList();
+            var id = luaIds.Count > 0 ? luaIds.Max() + 1 : 1000;
+            while (bnd.Files.Any(f => f.ID == id))
+                id++;
+
+            var bytes = newBytes.TryGetValue(s, out var b) ? b : LuaLexer.ShiftJis.GetBytes(s.Text ?? "");
+            var file = new BinderFile(flags, id, folder + s.EntryName, bytes);
+            var last = bnd.Files.FindLastIndex(IsLua);
+            bnd.Files.Insert(last + 1, file);
+        }
+    }
+
+    /// <summary>
+    /// Writes <see cref="Goals"/> into the binder's .luainfo: added beside the .luagnl if the binder has none, removed
+    /// when no goals are left (an empty .luainfo can't be read back)
+    /// </summary>
+    private void WriteGoals(IBinder bnd, BinderFile gnlFile)
+    {
+        var info = bnd.Files.FirstOrDefault(f => f.Name?.EndsWith(".luainfo", StringComparison.OrdinalIgnoreCase) == true);
+
+        if (Goals == null || Goals.Count == 0)
+        {
+            if (info != null)
+                bnd.Files.Remove(info);
+            return;
+        }
+
+        var li = new LUAINFO(GoalsBigEndian, GoalsLongFormat) { Goals = Goals.ToList() };
+        var bytes = li.Write();
+
+        if (info != null)
+        {
+            info.Bytes = bytes;
+            return;
+        }
+
+        var name = gnlFile != null
+            ? System.IO.Path.ChangeExtension(gnlFile.Name, ".luainfo")
+            : $"{Name}.luainfo";
+        var id = 1000001;
+        while (bnd.Files.Any(f => f.ID == id))
+            id++;
+        var index = gnlFile != null ? bnd.Files.IndexOf(gnlFile) + 1 : bnd.Files.Count;
+        bnd.Files.Insert(index, new BinderFile(gnlFile?.Flags ?? Binder.FileFlags.Flag1, id, name, bytes));
     }
 }
 
@@ -351,6 +633,16 @@ public class LuaScript
             : container.Kind == LuaBinderKind.Map ? LuaBinderKind.Other : container.Kind;
         GoalId = LuaBank.GoalIdOf(stem) ?? container.GoalId;
         CharacterId = LuaBank.CharacterIdOf(Kind, GoalId);
+    }
+
+    /// <summary>A script made in the editor (created or duplicated): source text, unsaved; a new entry on save</summary>
+    public static LuaScript CreateNew(LuaContainer container, string entryName, string text)
+    {
+        var s = new LuaScript(container, entryName, Array.Empty<byte>());
+        s._text = text;
+        s.SavedText = null;
+        s.IsDirty = true;
+        return s;
     }
 
     /// <summary>Battle or logic by the entry's name (102010_battle.lua), else the binder's kind</summary>

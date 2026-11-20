@@ -34,6 +34,18 @@ public class LuaDefinitionIndex
             StartBuild();
     }
 
+    /// <summary>
+    /// Reads aicommon again after a script was created, duplicated or deleted (its goal lists changed). The old index
+    /// answers until the new one is ready; nothing happens if it was never read or is being read now.
+    /// </summary>
+    public void Invalidate()
+    {
+        if (Common == null || BuildTask is { IsCompleted: false })
+            return;
+        BuildTask = null;
+        StartBuild();
+    }
+
     public LuaDefinitionIndex(LuaEditorScreen editor)
     {
         Editor = editor;
