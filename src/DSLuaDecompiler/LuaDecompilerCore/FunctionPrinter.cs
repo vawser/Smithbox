@@ -434,17 +434,28 @@ public partial class FunctionPrinter
         VisitFunction(closure.Function);
     }
 
-    private string? LookupIdentifierName(Identifier identifier, Function? currentFunction)
+    private string? LookupIdentifierName(Identifier identifier, Function? currentFunction) =>
+        currentFunction == null ? null : LookupIdentifierName(identifier, _functionStack.LastIndexOf(currentFunction));
+
+    /// <summary>
+    /// The name of an identifier of the function at this level of the function stack. An up-value is named as its
+    /// binding in the enclosing function, one level up per hop: an up-value of an up-value (Lua 5.0: CLOSURE followed
+    /// by GETUPVAL) is the enclosing function's own up-value, so it resolves two levels up, not again in the parent.
+    /// (Smithbox: the lookup used the parent for every hop, so AC6's 30200830_logic named a main-chunk local after a
+    /// local of the enclosing function: f16_local1._NoLineOfFireApp.)
+    /// </summary>
+    private string? LookupIdentifierName(Identifier identifier, int level)
     {
-        if (currentFunction == null)
+        if (level < 0 || level >= _functionStack.Count)
             return null;
+        var function = _functionStack[level];
         return identifier.Type switch
         {
             Identifier.IdentifierType.Register or Identifier.IdentifierType.RenamedRegister =>
-                currentFunction.IdentifierNames.TryGetValue(identifier, out var name) ? name : null,
-            Identifier.IdentifierType.Global => currentFunction.Constants[(int)identifier.ConstantId].ToString(),
-            Identifier.IdentifierType.UpValue when currentFunction.UpValueBindings.Count > 0 => 
-                LookupIdentifierName(currentFunction.UpValueBindings[(int)identifier.UpValueNum], LastFunction()),
+                function.IdentifierNames.TryGetValue(identifier, out var name) ? name : null,
+            Identifier.IdentifierType.Global => function.Constants[(int)identifier.ConstantId].ToString(),
+            Identifier.IdentifierType.UpValue when (int)identifier.UpValueNum < function.UpValueBindings.Count =>
+                LookupIdentifierName(function.UpValueBindings[(int)identifier.UpValueNum], level - 1),
             _ => null
         };
     }
@@ -723,6 +734,16 @@ public partial class FunctionPrinter
         if (assignment is { IsFunctionDeclaration: true, Left: IdentifierReference ir, Right: Closure c })
         {
             VisitFunction(c.Function, LookupIdentifierName(ir.Identifier, CurrentFunction()));
+            return;
+        }
+
+        // Smithbox: a local closure that captures itself (recursion) is "local function f(...)": with
+        // "local f = function (...) ... f(...) ... end" the f inside isn't in scope yet and reads a global (AC6
+        // 29900000_logic, aicommon EZOP_OpFunc). Checked by LuaAiSurvey (GETUPVAL kept) and LuaDisasmProbe cases.
+        if (assignment is { IsLocalDeclaration: true, IsSingleAssignment: true, Left: IdentifierReference self, Right: Closure recursive } &&
+            recursive.Function.UpValueBindings.Contains(self.Identifier))
+        {
+            VisitFunction(recursive.Function, LookupIdentifierName(self.Identifier, CurrentFunction()));
             return;
         }
         

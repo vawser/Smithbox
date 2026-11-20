@@ -102,6 +102,14 @@ public class LuaScriptView
             ImGui.TextColored(UI.Current.ImGui_ModifiedFilter_Text, LOC.Get("LUA_Script_State_Unsaved"));
         }
 
+        // The decompiler couldn't place all of the bytecode: the text is missing code, so it can't be saved
+        if (script.IsDecompileIncomplete)
+        {
+            ImGui.SameLine();
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, $"{Icons.ExclamationTriangle} {LOC.Get("LUA_Script_State_Incomplete")}");
+            GUI.Tooltip(LOC.Get("LUA_Script_State_Incomplete_TT"));
+        }
+
         ImGui.SameLine();
         var label = Editing ? LOC.Get("LUA_Script_Button_Read") : LOC.Get("LUA_Script_Button_Edit");
         if (ImGui.SmallButton($"{label}##luaEditToggleButton"))

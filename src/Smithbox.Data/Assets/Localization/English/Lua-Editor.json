@@ -416,6 +416,9 @@
     { "Key": "LUA_Data_Save_Refused", "Text": "Lua Editor: {0} not saved: {1}: {2}" },
     { "Key": "LUA_Data_Problem_At", "Text": "Line {0}, column {1}: {2}" },
     { "Key": "LUA_Data_Unencodable", "Text": "Line {0}, column {1}: '{2}' can't be stored in Shift-JIS, the encoding the game reads." },
+    { "Key": "LUA_Data_Decompile_Incomplete", "Text": "the decompiler couldn't turn all of this script's bytecode into text (see its '-- Warning' lines), so the text is missing code the game runs; saving it would drop that code." },
+    { "Key": "LUA_Script_State_Incomplete", "Text": "Incomplete" },
+    { "Key": "LUA_Script_State_Incomplete_TT", "Text": "The decompiler couldn't turn all of this script's bytecode into text: the '-- Warning: block_N ... was not used in code generation' lines mark the functions missing code. It can be read, but not saved once edited (the saved text would drop that code). The game's own bytecode is kept while it isn't edited." },
 
     { "Key": "LUA_Syntax_Expected", "Text": "'{0}' expected near {1}" },
     { "Key": "LUA_Syntax_Expected_To_Close", "Text": "'{0}' expected (to close '{1}' at line {2}) near {3}" },

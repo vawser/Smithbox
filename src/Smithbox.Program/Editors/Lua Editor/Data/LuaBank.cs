@@ -381,6 +381,7 @@ public class LuaScript
                     {
                         _text = LuaDecompile.ToText(Bytes, CFG.Current.LuaEditor_Readable_Names);
                         SavedText = _text;
+                        IsDecompileIncomplete = IsBytecode && LuaDecompile.IsIncomplete(_text);
                     }
                     catch (Exception e)
                     {
@@ -451,11 +452,19 @@ public class LuaScript
         }
     }
 
+    /// <summary>
+    /// The decompiler couldn't place part of the bytecode (its "not used in code generation" warning): the text is
+    /// missing code the game runs, so saving it would drop that code
+    /// </summary>
+    public bool IsDecompileIncomplete { get; private set; }
+
     /// <summary>Why the current text can't be saved, or null</summary>
     public string SaveProblem()
     {
         if (Text == null)
             return LoadError;
+        if (IsDecompileIncomplete)
+            return LOC.Get("LUA_Data_Decompile_Incomplete");
         var parse = Parse;
         if (!parse.IsValid)
         {

@@ -11,6 +11,16 @@ namespace StudioCore.Editors.LuaEditor;
 /// </summary>
 public static class LuaDecompile
 {
+    /// <summary>
+    /// Whether decompiled text is missing code: the decompiler marks bytecode it couldn't place in the text with a
+    /// "-- Warning:" comment ("block_N … was not used in code generation", "Function N using already code-generated
+    /// block"), and LuaAiSurvey found every function so marked recompiles without that code (empty, in SDT, BB, DS3,
+    /// AC6 and DB_NT alike). The text still parses, so only the warning tells.
+    /// </summary>
+    public static bool IsIncomplete(string text) =>
+        text != null && (text.Contains("was not used in code generation", StringComparison.Ordinal) ||
+                         text.Contains("using already code-generated block", StringComparison.Ordinal));
+
     /// <summary>Whether the entry is compiled Lua (starts with ESC 'Lua'), not source text</summary>
     public static bool IsBytecode(ReadOnlySpan<byte> data) =>
         data.Length >= 4 && data[0] == 0x1B && data[1] == (byte)'L' && data[2] == (byte)'u' && data[3] == (byte)'a';

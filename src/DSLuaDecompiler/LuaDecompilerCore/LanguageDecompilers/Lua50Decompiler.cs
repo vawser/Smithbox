@@ -582,7 +582,12 @@ public class Lua50Decompiler : ILanguageDecompiler
 
                     break;
                 case Lua50Ops.OpTest:
-                    if (c == 0)
+                    // Smithbox: with a != b (x = y or z, x = e or x), R(a) := R(b) sits between this jump and the JMP
+                    // after it, so merge-conditional-jumps doesn't fold them, and the jump's condition ends up read as
+                    // the fall-through's: the condition is the other way round then (x = b or 5 came out as
+                    // "if not b then x = b else x = 5"). Checked by Claude/Tools/LuaDisasmProbe cases and LuaAiSurvey.
+                    var negate = a != b;
+                    if ((c == 0) != negate)
                     {
                         instructions.Add(new ConditionalJumpLabel(
                             irFunction.GetLabel((uint)(i / 4 + 2)), RkIr(irFunction, function, b)));
