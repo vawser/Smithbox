@@ -118,14 +118,17 @@ public static class EditorConditions
     /// by DSLuaDecompiler's RemoveFallthroughJumpsPass).
     /// BB: per-map binders; 846/846 decompile and recompile; battle goals in the older global form (X_Activate).
     /// DS3: per-map binders; 1106/1106 decompile and recompile; battle goals as tables, odds chains and direct goals.
-    /// AC6: logic scripts only (no battle goals); 353/353 decompile and recompile, no function differing in more than
-    /// register / layout opcodes once the Lua 5.0 TEST, recursive-local and up-value-name fixes are in; 13 scripts the
-    /// decompiler can't fully turn into text are read-only (LuaScript.IsDecompileIncomplete).
+    /// AC6: logic scripts, each the battle goal in aicommon's EZOP framework (TacCtrlFuncArr / OpSetArr; 297/305 read);
+    /// 353/353 decompile and recompile, no function differing in more than register / layout opcodes once the Lua 5.0
+    /// TEST, recursive-local and up-value-name fixes are in.
+    /// DB_NT: one binder per goal (as ER); 202/202 decompile and recompile; battle goals as tables, including the
+    /// player-companion Common_Battle_Activate_PCbot (55/70 read; the rest are aicommon act libraries).
+    /// In every game, scripts the decompiler can't fully turn into text are read-only (LuaScript.IsDecompileIncomplete).
     /// </summary>
     public static bool SupportsLuaEditor(ProjectType curType)
     {
         return curType is ProjectType.ER or ProjectType.NR or ProjectType.SDT or ProjectType.BB or ProjectType.DS3
-            or ProjectType.AC6;
+            or ProjectType.AC6 or ProjectType.DB_NT;
     }
 
     public static bool SupportsHavokEditor(ProjectType curType)

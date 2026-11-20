@@ -243,7 +243,9 @@ public static class LuaNames
     {
         for (int i = 0; i + 1 < t.Count; i++)
         {
-            if (t[i].Kind != LuaTokenKind.Name || t[i].Text != "Common_Battle_Activate" || !t[i + 1].Is("("))
+            // (and its variants: SDT's Common_Kengeki_Activate, DB_NT's Common_Battle_Activate_PCbot)
+            if (t[i].Kind != LuaTokenKind.Name || !(t[i].Text.StartsWith("Common_Battle_Activate", StringComparison.Ordinal) ||
+                                                    t[i].Text.StartsWith("Common_Kengeki_Activate", StringComparison.Ordinal)) || !t[i + 1].Is("("))
                 continue;
 
             // Plain name arguments only: Common_Battle_Activate(a, b, c, d, e, f)

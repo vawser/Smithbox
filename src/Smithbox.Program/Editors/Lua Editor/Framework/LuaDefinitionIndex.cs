@@ -132,7 +132,10 @@ public class LuaDefinitionIndex
                         var parse = script.Parse;
                         if (parse == null)
                             continue;
-                        parse.Tree?.AddGlobalFunctions(functions);
+                        // Not from a script the decompiler couldn't fully turn into text: its functions are missing code, so
+                        // running one would give a wrong answer (DB_NT common_func_PHX: ReturnBuddyOwnerLockOnTarget is empty)
+                        if (!script.IsDecompileIncomplete)
+                            parse.Tree?.AddGlobalFunctions(functions);
                         if (parse.Tree != null)
                         {
                             foreach (var s in parse.Tree.Stats)

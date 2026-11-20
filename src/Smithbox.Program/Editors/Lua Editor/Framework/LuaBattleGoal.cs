@@ -164,7 +164,11 @@ public class LuaBattleGoal
     /// <summary>The goal method of SDT's deflect-exchange act table</summary>
     public const string KengekiEntry = MethodPrefix + "Kengeki_Activate";
 
+    // The functions that pick an act from a weight table: aicommon's Common_Battle_Activate, SDT's Common_Kengeki_Activate,
+    // DB_NT's Common_Battle_Activate_PCbot (player-companion NPCs) — the same (ai, goal, weights, funcs, after[, params])
     private static readonly string[] Pickers = { "Common_Battle_Activate", "Common_Kengeki_Activate" };
+
+    private static bool IsPicker(string name) => Pickers.Any(p => name.StartsWith(p, StringComparison.Ordinal));
 
     /// <summary>The template read from a valid parse, or null if the script doesn't follow it</summary>
     public static LuaBattleGoal Read(string src, LuaParseResult parse) => Read(src, parse, out _);
@@ -172,7 +176,7 @@ public class LuaBattleGoal
     /// <summary>The call in an act table's function that picks an act (Common_Battle_Activate(ai, goal, weights, funcs, after[, params]))</summary>
     private static LuaCallExpr PickerCall(LuaFunctionExpr fn) =>
         fn.Body.AllStatements().SelectMany(s => s.Calls())
-            .FirstOrDefault(c => c.Callee is LuaNameExpr { Name: var n } && Pickers.Contains(n) && c.Arguments.Count is 5 or 6);
+            .FirstOrDefault(c => c.Callee is LuaNameExpr { Name: var n } && IsPicker(n) && c.Arguments.Count is 5 or 6);
 
     /// <summary>
     /// A section's act tables, in order: Activate itself, the Kengeki method, then the functions Activate calls that
@@ -358,7 +362,7 @@ public class LuaBattleGoal
             {
                 var value = a.Values[0] as LuaCallExpr;
                 if (KeyOf(a.Targets[0], funcs.Name) is { } actId && value?.Callee is LuaNameExpr { Name: "REGIST_FUNC" } &&
-                    value.Arguments.Count == 3 && Registered(value.Arguments[2]) is { } target)
+                    value.Arguments.Count >= 3 && Registered(value.Arguments[2]) is { } target)
                 {
                     result.Act(actId).Function = target;
                     result.Act(actId).RegisterLine = Line(s);
@@ -370,10 +374,26 @@ public class LuaBattleGoal
                 }
             }
             else if (s is LuaLocalStat { Names.Count: 1, Values.Count: 1 } l && l.Names[0] == afterName &&
-                     l.Values[0] is LuaCallExpr { Callee: LuaNameExpr { Name: "REGIST_FUNC" } } after && after.Arguments.Count == 3 &&
+                     l.Values[0] is LuaCallExpr { Callee: LuaNameExpr { Name: "REGIST_FUNC" } } after && after.Arguments.Count >= 3 &&
                      Registered(after.Arguments[2]) is { } afterTarget)
             {
                 result.AfterFunction = afterTarget;
+            }
+
+            // The function table built in one go: local funcs = {[1] = REGIST_FUNC(ai, goal, GeneralNPC_Act01), …}
+            // (ER / NR's common NPC goal, 029999_battle)
+            if (s is LuaLocalStat { Names.Count: 1, Values.Count: 1 } built && built.Names[0] == funcs.Name &&
+                built.Values[0] is LuaTableExpr constructor)
+            {
+                foreach (var field in constructor.Fields)
+                {
+                    if (field.Key?.AsNumber() is { } actId && field.Value is LuaCallExpr { Callee: LuaNameExpr { Name: "REGIST_FUNC" } } reg &&
+                        reg.Arguments.Count >= 3 && Registered(reg.Arguments[2]) is { } target)
+                    {
+                        result.Act((int)actId).Function = target;
+                        result.Act((int)actId).RegisterLine = Line(field.Key);
+                    }
+                }
             }
         }
 
