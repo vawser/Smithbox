@@ -1,5 +1,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.ModelEditor;
 using System.Numerics;
 
 namespace StudioCore.Editors.LuaEditor;
@@ -83,7 +84,8 @@ public class LuaFileList
         if (container.InProject)
             GUI.Tooltip(LOC.Get("LUA_FileList_In_Project_TT"));
 
-        UsersText(container);
+        var hasCharacter = CharacterText(container);
+        UsersText(container, hasCharacter);
 
         if (container.LoadError != null)
         {
@@ -107,8 +109,37 @@ public class LuaFileList
         ImGui.TreePop();
     }
 
-    /// <summary>The NpcThinkParam rows that use the binder's goal ID, after its name</summary>
-    private void UsersText(LuaContainer container)
+    // Character aliases by chr ID (looked up once each)
+    private readonly Dictionary<string, string> Aliases = new();
+
+    private string AliasOf(string chr)
+    {
+        if (!Aliases.TryGetValue(chr, out var alias))
+            Aliases[chr] = alias = ModelEditorUtils.GetAliasForSourceListEntry(Editor.Project, chr, ModelListType.Character) ?? "";
+        return alias;
+    }
+
+    /// <summary>A battle goal's character (from its goal ID) and its alias, after its name; true if one was shown</summary>
+    private bool CharacterText(LuaContainer container)
+    {
+        if (container.CharacterId is not { } chr)
+            return false;
+
+        var alias = AliasOf(chr);
+        ImGui.SameLine();
+        ImGui.TextDisabled(chr);
+        GUI.Tooltip(LOC.Get("LUA_FileList_Character_TT", chr));
+        if (alias.Length == 0)
+            return false;
+        GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+        return true;
+    }
+
+    /// <summary>
+    /// The NpcThinkParam rows that use the binder's goal ID, after its name: dimmed when the character's alias is shown,
+    /// so the two don't read as one
+    /// </summary>
+    private void UsersText(LuaContainer container, bool afterAlias)
     {
         if (!CFG.Current.LuaEditor_File_List_Display_Users || container.GoalId is not { } id)
             return;
@@ -123,7 +154,10 @@ public class LuaFileList
             text += $" (+{users.Count - 1})";
 
         ImGui.SameLine();
-        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, text);
+        if (afterAlias)
+            ImGui.TextDisabled(text);
+        else
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, text);
         if (ImGui.IsItemHovered())
         {
             ImGui.BeginTooltip();
@@ -144,7 +178,9 @@ public class LuaFileList
         var users = CFG.Current.LuaEditor_File_List_Display_Users && container.GoalId is { } id
             ? string.Join(" ", Editor.Project.Handler.LuaData?.UsersOf(id).Select(u => u.Name) ?? Array.Empty<string>())
             : "";
-        return EditorFilters.IsMatch(Filter, container.Name, ExactFilter, users);
+        // The character's ID and alias match too
+        var character = container.CharacterId is { } chr ? $"{chr} {AliasOf(chr)}" : "";
+        return EditorFilters.IsMatch(Filter, container.Name, ExactFilter, $"{character} {users}");
     }
 
     private static string KindName(LuaBinderKind kind) => kind switch

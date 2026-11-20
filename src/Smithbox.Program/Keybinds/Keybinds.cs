@@ -240,6 +240,12 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_FirstPerson_Teleport", Description = "KEY_MapEditor_FirstPerson_Teleport_TT")]
     MapEditor_FirstPerson_Teleport,
 
+    [Display(Name = "KEY_LuaEditor_FirstPerson_Roll", Description = "KEY_LuaEditor_FirstPerson_Roll_TT")]
+    LuaEditor_FirstPerson_Roll,
+
+    [Display(Name = "KEY_LuaEditor_FirstPerson_Estus", Description = "KEY_LuaEditor_FirstPerson_Estus_TT")]
+    LuaEditor_FirstPerson_Estus,
+
     [Display(Name = "KEY_MapEditor_Enable_Game_Presence_Object", Description = "KEY_MapEditor_Enable_Game_Presence_TT")]
     MapEditor_Enable_Game_Presence,
 
@@ -589,6 +595,8 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_FirstPerson_Release, new() { Key = Key.Escape });
         InputManager.Bind(KeybindID.MapEditor_FirstPerson_Noclip, new() { Key = Key.N });
         InputManager.Bind(KeybindID.MapEditor_FirstPerson_Teleport, new() { Key = Key.T });
+        InputManager.Bind(KeybindID.LuaEditor_FirstPerson_Roll, new() { Key = Key.F });
+        InputManager.Bind(KeybindID.LuaEditor_FirstPerson_Estus, new() { Key = Key.G });
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
@@ -788,6 +796,8 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_FirstPerson_Release, InputCategory.MapEditor },
         { KeybindID.MapEditor_FirstPerson_Noclip, InputCategory.MapEditor },
         { KeybindID.MapEditor_FirstPerson_Teleport, InputCategory.MapEditor },
+        { KeybindID.LuaEditor_FirstPerson_Roll, InputCategory.Viewport },
+        { KeybindID.LuaEditor_FirstPerson_Estus, InputCategory.Viewport },
         { KeybindID.MapEditor_Enable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Disable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Visibility_Flip, InputCategory.MapEditor },

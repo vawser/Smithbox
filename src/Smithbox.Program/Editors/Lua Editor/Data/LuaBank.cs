@@ -138,6 +138,13 @@ public class LuaContainer
         }
     }
 
+    /// <summary>
+    /// The character a battle goal belongs to, from its goal ID: the first four of its six digits (430000_battle →
+    /// c4300, 214001_battle → c2140). Null for other binders, or a name without a six-digit goal ID.
+    /// </summary>
+    public string CharacterId =>
+        Kind == LuaBinderKind.Battle && GoalId is { } id && id is >= 100000 and <= 999999 ? $"c{id / 100:D4}" : null;
+
     /// <summary>Reads the binder's entry list, if not yet (scripts are decompiled when first shown)</summary>
     public bool EnsureLoaded()
     {

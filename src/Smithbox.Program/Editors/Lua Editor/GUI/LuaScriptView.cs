@@ -294,18 +294,8 @@ public class LuaScriptView
         Lines.Add(line);
     }
 
-    private static bool IsConstantName(string name)
-    {
-        var upper = false;
-        foreach (var c in name)
-        {
-            if (char.IsLower(c))
-                return name.StartsWith("GOAL_");
-            if (char.IsUpper(c))
-                upper = true;
-        }
-        return upper;
-    }
+    // As the situation reads them: ROLE_TYPE_Torimaki and INTERUPT_FindAttack are constants too, not only GOAL_…
+    private static bool IsConstantName(string name) => LuaSituation.LooksLikeConstant(name);
 
     // Syntax colours (on the dark theme)
     private static readonly Vector4 KeywordColor = new(0.55f, 0.7f, 1.0f, 1.0f);

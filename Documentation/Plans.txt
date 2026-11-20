@@ -162,9 +162,11 @@
 #----------------------------------------------------
 # Lua Editor TODO
 #----------------------------------------------------
-- Include FX playback
-- Include bullet playback
 
+- Load all used FX immediately (currently it lags during first playback, which is annoying)
+- FX seem to linger when they should expire
+
+- Extend support to the other games
 
 #----------------------------------------------------
 # Rendering

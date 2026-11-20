@@ -71,8 +71,8 @@ public class LuaEditorScreen : EditorScreen
         Window("LUA_Window_Files", "luaEditor_Files", EditorFocusContext.LuaEditor_FileList, dsid, FileList.Draw);
         Window("LUA_Window_Script", "luaEditor_Script", EditorFocusContext.LuaEditor_Script, dsid, ScriptView.Draw,
             GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
-        Window("LUA_Window_Battle", "luaEditor_Battle", EditorFocusContext.LuaEditor_Battle, dsid, BattleView.Draw,
-            GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
+        // The battle simulation follows the selected script even while its tool is closed (it is drawn in the Tools window)
+        BattleView.Sync();
         if (CFG.Current.Interface_LuaEditor_ToolWindow)
             Window("LUA_Window_Tools", "luaEditor_Tools", EditorFocusContext.LuaEditor_Tools, dsid, ToolWindow.Draw);
 

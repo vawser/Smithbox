@@ -72,6 +72,7 @@
     {
       "ID": 66,
       "Event": "AddSpEffect_Multiplayer",
+      "Simulation": "AddSpEffect",
       "Fields": [
         {
           "Field": "SpEffectID",
@@ -82,6 +83,7 @@
     {
       "ID": 67,
       "Event": "AddSpEffect",
+      "Simulation": "AddSpEffect",
       "Fields": [
         {
           "Field": "SpEffectID",
@@ -345,6 +347,7 @@
     {
       "ID": 302,
       "Event": "AddSpEffect_DragonForm",
+      "Simulation": "AddSpEffect",
       "Fields": [
         {
           "Field": "SpEffectID",
@@ -388,6 +391,7 @@
     {
       "ID": 401,
       "Event": "AddSpEffect_Multiplayer_401",
+      "Simulation": "AddSpEffect",
       "Fields": [
         {
           "Field": "SpEffectID",

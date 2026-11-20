@@ -51,6 +51,7 @@ public class LuaSimulation
         situation.Live = true;
         Situation = situation;
         Running = true;
+        Viewer.Player.HoldWhenDone = true;
         History.Clear();
         LastPlayed.Clear();
         Clock = 0;
@@ -63,6 +64,7 @@ public class LuaSimulation
         if (!Running)
             return;
         Running = false;
+        Viewer.Player.HoldWhenDone = false;
         if (Situation != null)
             Situation.Live = false;
         Current = null;
@@ -118,6 +120,8 @@ public class LuaSimulation
         {
             Current = null;
             Viewer.Status = LOC.Get("LUA_Simulation_No_Weight");
+            // Waiting: the character stands (the last act's pose was held for this)
+            Viewer.Player.Idle();
             Wait(1);
             return;
         }
@@ -149,12 +153,27 @@ public class LuaSimulation
 
         if (steps.All(s => s.Kind == LuaStepKind.Other))
         {
-            // Nothing to show: count it as a short act, so the loop moves on without spinning
+            // Nothing to show: count it as a short act, so the loop moves on without spinning (standing meanwhile)
+            Viewer.Player.Idle();
             Wait(0.5f);
             return;
         }
 
         Viewer.Player.Play(steps);
+    }
+
+    /// <summary>
+    /// The goal's Interrupt took an interrupt and stopped the act: with steps of its own (they play, and the next act
+    /// is picked when they have), or without (the next act is picked at once)
+    /// </summary>
+    public void Interrupted(bool withSteps)
+    {
+        if (!Running)
+            return;
+        Current = null;
+        Viewer.Status = LOC.Get("LUA_Simulation_Interrupted");
+        if (!withSteps)
+            Wait(0);
     }
 
     private void Wait(float seconds)

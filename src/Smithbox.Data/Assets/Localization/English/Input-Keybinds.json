@@ -513,6 +513,22 @@
       "Text": "While walking in first person, moves the player to where the crosshair points: onto the ground there, or onto the ground below if it points at a wall."
     },
     {
+      "Key": "KEY_LuaEditor_FirstPerson_Roll",
+      "Text": "Lua Editor First Person: Roll"
+    },
+    {
+      "Key": "KEY_LuaEditor_FirstPerson_Roll_TT",
+      "Text": "While walking as the target in the Lua Editor's First Person Mode, rolls the way you move. The roll reaches the AI as the First Person Mode tool sets it."
+    },
+    {
+      "Key": "KEY_LuaEditor_FirstPerson_Estus",
+      "Text": "Lua Editor First Person: Estus"
+    },
+    {
+      "Key": "KEY_LuaEditor_FirstPerson_Estus_TT",
+      "Text": "While walking as the target in the Lua Editor's First Person Mode, drinks an estus flask. It reaches the AI as the First Person Mode tool sets it (UseItem by default)."
+    },
+    {
       "Key": "KEY_MapEditor_Rotate_X_Axis",
       "Text": "Rotate Selection (+ x-axis)"
     },

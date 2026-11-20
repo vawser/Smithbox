@@ -8,8 +8,11 @@ namespace StudioCore.Editors.LuaEditor;
 /// The Lua Editor's viewport scene: the battle goal's character and its target, lit by the shared viewport
 /// environment (as the Model and FaceGen Editors' scenes are)
 /// </summary>
-public class LuaUniverse : IUniverse
+public class LuaUniverse : IUniverse, IViewportWalkerHost
 {
+    /// <summary>The First Person Mode, which walks the viewport's camera as the target (set by the viewer)</summary>
+    public IViewportWalker Walker { get; set; }
+
     public ProjectEntry Project;
 
     public RenderScene RenderScene { get; } = new();

@@ -99,6 +99,23 @@ public class LuaBattleGoal
     /// <summary>The function Common_Battle_Activate runs after each act (…ActAfter_AdjustSpace); null if not in this script</summary>
     public LuaFunctionExpr AfterFunctionNode;
 
+    /// <summary>The battle section's Goal.Interrupt (or Goal.Interupt), if it has one</summary>
+    public LuaFunctionExpr Interrupt;
+
+    /// <summary>The script's global functions by name, for calls the Interrupt makes (an act function, a helper)</summary>
+    public Dictionary<string, LuaFunctionExpr> Functions { get; } = new();
+
+    /// <summary>The SpEffects the script observes (AddObserveSpecialEffectAttribute): on whom, which, where</summary>
+    public List<(string Target, int Id, int Line)> ObservedSpEffects { get; } = new();
+
+    /// <summary>The interrupt types the Interrupt tests (IsInterupt(INTERUPT_x)), x without the prefix, first use first</summary>
+    public List<(string Type, int Line)> InterruptTypes { get; } = new();
+
+    /// <summary>The SpEffect IDs the Interrupt tests (GetSpecialEffectActivateInterruptId(id))</summary>
+    public List<(int Id, int Line)> InterruptSpEffects { get; } = new();
+
+    public const string InterruptPrefix = "INTERUPT_";
+
     public SortedDictionary<int, LuaAct> Acts { get; } = new();
     public List<LuaWeightRow> Rows { get; } = new();
     public List<LuaSpEffectUse> SpEffects { get; } = new();
@@ -243,6 +260,39 @@ public class LuaBattleGoal
         {
             result.AfterFunctionLine = Line(af);
             result.AfterFunctionNode = af.Function;
+        }
+
+        // The Interrupt, the functions it can call, and what it reacts to
+        result.Interrupt = interrupt;
+        foreach (var (name, fs) in functions)
+            result.Functions[name] = fs.Function;
+
+        // Observed SpEffects, in every function of the script (Goal.X = function … included)
+        var bodies = new List<LuaBlock> { parse.Tree };
+        bodies.AddRange(parse.Tree.Stats.OfType<LuaAssignStat>().SelectMany(a => a.Values).OfType<LuaFunctionExpr>().Select(fn => fn.Body));
+        foreach (var block in bodies)
+        {
+            foreach (var c in block.AllStatements().SelectMany(s => s.Calls()))
+            {
+                if (c.Method == "AddObserveSpecialEffectAttribute" && c.Arguments.Count == 2 &&
+                    c.Arguments[0] is LuaNameExpr who && c.Arguments[1].AsNumber() is { } observed &&
+                    !result.ObservedSpEffects.Any(o => o.Target == who.Name && o.Id == (int)observed))
+                    result.ObservedSpEffects.Add((who.Name, (int)observed, Line(c)));
+            }
+        }
+
+        if (interrupt != null)
+        {
+            foreach (var c in interrupt.Body.AllStatements().SelectMany(s => s.Calls()))
+            {
+                if (c.Method == "IsInterupt" && c.Arguments.Count == 1 && c.Arguments[0] is LuaNameExpr { Name: var type } &&
+                    type.StartsWith(InterruptPrefix, StringComparison.Ordinal) &&
+                    !result.InterruptTypes.Any(x => x.Type == type[InterruptPrefix.Length..]))
+                    result.InterruptTypes.Add((type[InterruptPrefix.Length..], Line(c)));
+                else if (c.Method == "GetSpecialEffectActivateInterruptId" && c.Arguments.Count == 1 &&
+                         c.Arguments[0].AsNumber() is { } tested && !result.InterruptSpEffects.Any(x => x.Id == (int)tested))
+                    result.InterruptSpEffects.Add(((int)tested, Line(c)));
+            }
         }
 
         // Special effects, in Activate, Interrupt and the act functions

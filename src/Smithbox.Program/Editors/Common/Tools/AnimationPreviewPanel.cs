@@ -34,7 +34,8 @@ public sealed record AnimationTarget(
     Func<IReadOnlyList<MeshRenderableProxy>> GetMeshes,
     Func<bool> IsAlive,
     Action<ModelAnimator?>? PoseChanged = null,
-    IReadOnlyList<AnimatedPart>? Parts = null);
+    IReadOnlyList<AnimatedPart>? Parts = null,
+    string? AnimationSource = null);
 
 /// <summary>
 ///     A model that follows the animations of the character wearing it.
@@ -457,6 +458,15 @@ public class AnimationPreviewPanel
         return _active.TryGetValue(key, out ActiveAnimation? active) ? active.Animator : null;
     }
 
+    /// <summary>
+    ///     Gets the rig of something that is being animated (its nodes and dummy polys), for editors that place things
+    ///     on its dummy polys.
+    /// </summary>
+    public ModelRig? GetRig(object key)
+    {
+        return _active.TryGetValue(key, out ActiveAnimation? active) ? active.Rig : null;
+    }
+
     public void Stop(object key)
     {
         if (!_active.Remove(key, out ActiveAnimation? active))
@@ -572,7 +582,7 @@ public class AnimationPreviewPanel
     private Task<LoadedModel?> GetOrLoadModel(AnimationTarget target)
     {
         // The same model can come from different file systems in the Model Editor
-        var key = $"{target.ContainerPath}|{target.ModelName}|{target.FileSystem.GetHashCode()}";
+        var key = $"{target.ContainerPath}|{target.ModelName}|{target.AnimationSource}|{target.FileSystem.GetHashCode()}";
 
         if (!_models.TryGetValue(key, out Task<LoadedModel?>? load))
         {
@@ -588,7 +598,7 @@ public class AnimationPreviewPanel
         try
         {
             AnimationPackage? package = AnimationPackage.Load(target.FileSystem, _project.Descriptor.ProjectType,
-                target.Kind, target.ModelName, target.ContainerPath);
+                target.Kind, target.ModelName, target.ContainerPath, target.AnimationSource);
 
             if (package == null)
             {

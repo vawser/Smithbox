@@ -182,6 +182,40 @@ public sealed class FxCuePlayer
 
     public void Clear() => SetCues(Array.Empty<FxCue>());
 
+    /// <summary>
+    /// Adds cues to those set, leaving the running effects as they are: for a host whose clock only goes forward and
+    /// learns of its effects as it goes (the Lua Editor's simulation). Pair with <see cref="Prune"/>.
+    /// </summary>
+    public void AddCues(IEnumerable<FxCue> cues)
+    {
+        foreach (var cue in cues)
+            Cues.Add(new Running { Cue = cue });
+
+        Preload.Set(Cues.Select(r => r.Cue.EffectId));
+    }
+
+    /// <summary>Drops the cues that match, running or not (a host hiding one kind of its effects)</summary>
+    public void RemoveCues(Predicate<FxCue> match)
+    {
+        if (Cues.RemoveAll(r => match(r.Cue)) > 0)
+            Preload.Set(Cues.Select(r => r.Cue.EffectId));
+    }
+
+    /// <summary>
+    /// Drops the cues that are done by <paramref name="time"/>: their effect has finished, or they stopped (or
+    /// started, for one that never could) longer than <see cref="MaxLinger"/> ago.
+    /// </summary>
+    public void Prune(float time)
+    {
+        var removed = Cues.RemoveAll(r =>
+            r.Instance is { Finished: true } ||
+            r.Cue.End is { } end && time > end + MaxLinger ||
+            r.Instance == null && time - r.Cue.Start > MaxLinger);
+
+        if (removed > 0)
+            Preload.Set(Cues.Select(r => r.Cue.EffectId));
+    }
+
     /// <summary>Starts every effect running at <paramref name="time"/> again from its start.</summary>
     public void Restart()
     {

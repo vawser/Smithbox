@@ -54,6 +54,39 @@ public class LuaSituationInput
 
     /// <summary>Set by the simulation, not the user, while it runs</summary>
     public bool IsLive => SceneQuery != null || CooldownAnimation != null;
+
+    /// <summary>A question the character's NpcParam / NpcThinkParam rows answer (see <see cref="LuaSituation.NpcValue"/>)</summary>
+    public LuaCallExpr NpcQuery;
+
+    /// <summary>Answered by the NPC rows at the last evaluation (the value shown is theirs, not the user's)</summary>
+    public bool FromNpc;
+}
+
+/// <summary>
+/// What the character's param rows say about it, for the calls a battle goal asks of the game about itself
+/// </summary>
+public interface ILuaNpc
+{
+    /// <summary>The map capsule radius (NpcParam hitRadius), or null without one</summary>
+    double? MapHitRadius { get; }
+
+    /// <summary>Whether a SpEffect is on the character: resident (NpcParam spEffectID0..), or put on by its TAE</summary>
+    bool HasSpEffect(int id);
+
+    /// <summary>A field of the NpcThinkParam row, or null without the row or the field</summary>
+    double? ThinkParam(string field);
+
+    /// <summary>Whether a SpEffect is on the target now (the player in First Person Mode put it on)</summary>
+    bool TargetHasSpEffect(int id);
+
+    /// <summary>Whether the target guards now (First Person Mode), or null when that is the user's to set</summary>
+    bool? TargetGuarding { get; }
+
+    /// <summary>
+    /// The character's role in its team now (ROLE_TYPE_: -1 none, 0 attacker, 1 surrounder, 2 spectator), which
+    /// ai:GetTeamOrder(ORDER_TYPE_Role) gives; null when that is the user's to set
+    /// </summary>
+    double? TeamRole { get; }
 }
 
 /// <summary>
@@ -105,6 +138,32 @@ public class LuaActStep
     public bool Walk;
     public bool Right;
     public double Angle;
+}
+
+/// <summary>What one run of Goal.Interrupt gives, for an interrupt</summary>
+public class LuaInterruptResult
+{
+    /// <summary>The INTERUPT_ type (without the prefix), and the SpEffect that set it off</summary>
+    public string Type;
+    public int? SpEffect;
+
+    /// <summary>It returned true: the interrupt was taken, and the current act stops</summary>
+    public bool Handled;
+
+    /// <summary>It cleared the current sub-goals (goal:ClearSubGoal())</summary>
+    public bool ClearsSubGoals;
+
+    /// <summary>It asked for the goal to be planned again (ai:Replaning())</summary>
+    public bool Replans;
+
+    /// <summary>What it queued instead: its sub-goals, and those of the functions it called</summary>
+    public List<LuaActStep> Steps { get; } = new();
+
+    /// <summary>The calls that shaped the reaction (ClearSubGoal, Replaning, functions called), by line</summary>
+    public List<(int Line, string Call)> Calls { get; } = new();
+
+    /// <summary>Conditions that couldn't be decided (counted as false)</summary>
+    public List<(int Line, string Message)> Notes { get; } = new();
 }
 
 /// <summary>What one evaluation of Goal.Activate gives: each act's final weight, and what was set on the way</summary>
@@ -160,14 +219,34 @@ public class LuaSituation
             input.Kind = input.Choices.Count > 0 ? LuaInputKind.Choice
                 : input.UsedAsNumber || input.PrefersNumber && !input.UsedAsBoolean ? LuaInputKind.Number
                 : LuaInputKind.Boolean;
+            // A choice starts on the first constant compared; a team role on none of them (no role named: the attacker,
+            // as a lone enemy is), not on the first role the script happens to test (the spectator)
             if (input.Kind == LuaInputKind.Choice)
-                input.Choice = input.Choices[0];
+                input.Choice = input.Key.Contains(":GetTeamOrder(", StringComparison.Ordinal) ? OtherChoice : input.Choices[0];
         }
     }
 
     // --- static pass: the inputs ---
 
-    private static bool IsConstantName(string name) => name.Length > 1 && name.All(c => !char.IsLower(c)) && name.Any(char.IsLetter);
+    /// <summary>A name aicommon defines, or one that looks like a constant (see <see cref="LooksLikeConstant"/>)</summary>
+    private bool IsConstantName(string name) => Constants.ContainsKey(name) || LooksLikeConstant(name);
+
+    /// <summary>
+    /// Whether a name is written as the games write their constants: all capitals (TARGET_ENE_0, AI_DIR_TYPE_F), or an
+    /// all-capitals prefix before an underscore with a mixed-case name after it (ROLE_TYPE_Torimaki, ORDER_TYPE_Role,
+    /// INTERUPT_FindAttack, GOAL_COMMON_ApproachTarget). Locals (f2_local0) and globals in mixed case (BackSlash_Int)
+    /// aren't. A constant mistaken for a global would be read as an input of its own, so two of them compared would be
+    /// equal (ROLE_TYPE_Kankyaku == GetTeamOrder(…), both false).
+    /// </summary>
+    public static bool LooksLikeConstant(string name)
+    {
+        if (name.Length < 2 || !char.IsLetter(name[0]))
+            return false;
+        if (name.All(c => !char.IsLower(c)))
+            return name.Any(char.IsLetter);
+        var underscore = name.IndexOf('_');
+        return underscore >= 2 && name[..underscore].All(c => char.IsUpper(c) || char.IsDigit(c));
+    }
 
     private LuaSituationInput Input(string key, string label, string detail, LuaNode at)
     {
@@ -251,12 +330,103 @@ public class LuaSituation
         }
     }
 
-    /// <summary>Marks an input the simulation answers from the scene (distance, facing, angles)</summary>
+    /// <summary>
+    /// Marks an input the simulation answers from the scene (distance, facing, angles), or one the NPC's rows may answer
+    /// </summary>
     private static LuaSituationInput MarkLive(LuaSituationInput input, LuaCallExpr call)
     {
         if (IsSceneQuery(call))
             input.SceneQuery = call;
+        if (IsNpcQuery(call))
+            input.NpcQuery = call;
         return input;
+    }
+
+    // --- the NPC ---
+
+    private const string ThinkParamPrefix = "AI_EXCEL_THINK_PARAM_TYPE__";
+
+    /// <summary>The character's param rows (null: the inputs are the user's)</summary>
+    public Func<ILuaNpc> Npc;
+
+    /// <summary>
+    /// Whether a call asks about the character itself, which its param rows can answer: ai:GetMapHitRadius(TARGET_SELF),
+    /// ai:HasSpecialEffectId(TARGET_SELF, id) and ai:GetExcelParam(AI_EXCEL_THINK_PARAM_TYPE__field); or about what the
+    /// target does, which First Person Mode answers: ai:HasSpecialEffectId(TARGET_ENE_0, id), ai:IsTargetGuard(TARGET_ENE_0);
+    /// or its team role, which the simulation's Team role setting answers: ai:GetTeamOrder(ORDER_TYPE_Role)
+    /// </summary>
+    public static bool IsNpcQuery(LuaCallExpr c)
+    {
+        var a = c.Arguments;
+        return c.Method switch
+        {
+            "GetMapHitRadius" => a.Count == 1 && Who(a[0]) == "TARGET_SELF",
+            "HasSpecialEffectId" => a.Count == 2 && Who(a[0]) is not null,
+            "IsTargetGuard" => a.Count == 1 && Who(a[0]) == "TARGET_ENE_0",
+            "GetTeamOrder" => a.Count == 1 && a[0] is LuaNameExpr { Name: "ORDER_TYPE_Role" },
+            "GetExcelParam" => a.Count == 1 && a[0] is LuaNameExpr { Name: var n } && n.StartsWith(ThinkParamPrefix, StringComparison.Ordinal),
+            _ => false,
+        };
+    }
+
+    /// <summary>
+    /// The NPC's answer to an NPC query, or null when it has none: the map hit radius; true for a resident SpEffect (any
+    /// other is the user's to set, as events and the TAE give them); a NpcThinkParam field's value
+    /// </summary>
+    public object NpcValue(LuaCallExpr c)
+    {
+        if (Npc?.Invoke() is not { } npc || !IsNpcQuery(c))
+            return null;
+
+        switch (c.Method)
+        {
+            case "GetMapHitRadius":
+                return npc.MapHitRadius;
+            case "HasSpecialEffectId":
+                var id = c.Arguments[1].AsNumber() ??
+                         (c.Arguments[1] is LuaNameExpr n && Constants.TryGetValue(n.Name, out var cv) ? cv : null);
+                if (id is not { } v)
+                    return null;
+                // The target's: on while the player has put it on; any other stays the user's
+                if (Who(c.Arguments[0]) == "TARGET_ENE_0")
+                    return npc.TargetHasSpEffect((int)v) ? true : null;
+                return npc.HasSpEffect((int)v) ? true : null;
+            case "IsTargetGuard":
+                return npc.TargetGuarding;
+            case "GetTeamOrder":
+                return npc.TeamRole;
+            case "GetExcelParam":
+                return npc.ThinkParam(((LuaNameExpr)c.Arguments[0]).Name[ThinkParamPrefix.Length..]);
+        }
+        return null;
+    }
+
+    /// <summary>Shows the NPC's answers in their inputs (which then can't be set), and frees the rest</summary>
+    private void ApplyNpc()
+    {
+        foreach (var input in Inputs)
+        {
+            input.FromNpc = false;
+            if (input.NpcQuery == null || NpcValue(input.NpcQuery) is not { } value)
+                continue;
+
+            input.FromNpc = true;
+            switch (value)
+            {
+                case bool b:
+                    input.Boolean = b;
+                    input.Number = b ? 1 : 0;
+                    break;
+                default:
+                    var number = Convert.ToDouble(value, CultureInfo.InvariantCulture);
+                    input.Number = number;
+                    input.Boolean = number != 0;
+                    // A choice: the constant of that value, else "other"
+                    if (input.Kind == LuaInputKind.Choice)
+                        input.Choice = input.Choices.FirstOrDefault(ch => Constants.TryGetValue(ch, out var chv) && chv == number) ?? OtherChoice;
+                    break;
+            }
+        }
     }
 
     // --- the scene ---
@@ -483,6 +653,70 @@ public class LuaSituation
 
         // Scene queries are answered from the scene (the simulation, or planning an act)
         public bool Live;
+
+        // Running Goal.Interrupt: the interrupt that happened (its INTERUPT_ type without the prefix), the SpEffect
+        // that set it off, and what the run returned
+        public string InterruptType;
+        public int? InterruptSpEffect;
+        public V? ReturnValue;
+    }
+
+    // --- interrupts ---
+
+    /// <summary>
+    /// Runs Goal.Interrupt for an interrupt, as the game calls it, with the situation's values (and the scene and the
+    /// NPC answering as they do for Activate): IsInterupt(INTERUPT_x) is true for that type only, and
+    /// GetSpecialEffectActivateInterruptId(id) for that SpEffect only. Gives whether it handled the interrupt (returned
+    /// true), whether it cleared the current sub-goals, and the steps it queued: its sub-goals, and the sub-goals of the
+    /// script's functions it calls (an act function), as act planning reads them.
+    /// </summary>
+    /// <param name="type">The INTERUPT_ type without the prefix (ActivateSpecialEffect, Damaged, …)</param>
+    public LuaInterruptResult RunInterrupt(string type, int? spEffect, double targetDistance)
+    {
+        var result = new LuaInterruptResult { Type = type, SpEffect = spEffect };
+        if (Goal.Interrupt == null)
+            return result;
+
+        var run = new Run
+        {
+            TargetDistance = targetDistance,
+            Live = Scene != null,
+            InterruptType = type,
+            InterruptSpEffect = spEffect,
+        };
+        run.OnCall = (call, r) =>
+        {
+            var line = Tokens[call.First].Line;
+            switch (call.Method)
+            {
+                case "ClearSubGoal":
+                    result.ClearsSubGoals = true;
+                    result.Steps.Clear();
+                    result.Calls.Add((line, "ClearSubGoal"));
+                    return;
+                case "Replaning":
+                    result.Replans = true;
+                    result.Calls.Add((line, "Replaning"));
+                    return;
+            }
+
+            // One of the script's functions (an act, or a helper): its sub-goals, with the situation's values
+            if (call.Method == null && call.Callee is LuaNameExpr { Name: var name } && Goal.Functions.TryGetValue(name, out var fn))
+            {
+                result.Calls.Add((line, name));
+                result.Steps.AddRange(PlanFunction(fn, targetDistance));
+                return;
+            }
+
+            if (StepOf(call, r, targetDistance) is { } step)
+                result.Steps.Add(step);
+        };
+
+        ApplyNpc();
+        Exec(Goal.Interrupt.Body, run);
+        result.Handled = run.ReturnValue is { } v && v.Truthy;
+        result.Notes.AddRange(run.Result.Notes);
+        return result;
     }
 
     // --- act planning ---
@@ -608,6 +842,7 @@ public class LuaSituation
     /// <summary>Runs Activate with the inputs' current values</summary>
     public LuaSituationResult Evaluate()
     {
+        ApplyNpc();
         var run = new Run { Live = Live && Scene != null };
         foreach (var act in Goal.Acts.Keys)
             run.Result.Weights[act] = 0;
@@ -669,7 +904,8 @@ public class LuaSituation
                     run.OnCall?.Invoke(call.Call, run);
                     break;
 
-                case LuaReturnStat:
+                case LuaReturnStat r:
+                    run.ReturnValue = r.Values.Count > 0 ? Eval(r.Values[0], run) : Nil;
                     run.Returned = true;
                     return;
 
@@ -709,6 +945,17 @@ public class LuaSituation
             // Live (the simulation, or planning an act): where the characters stand answers the distance and facing
             case LuaCallExpr c when run.Live && SceneValue(c) is { } scene:
                 return scene is bool sb ? new V(VKind.Bool, B: sb) : new V(VKind.Number, Convert.ToDouble(scene));
+
+            // Running the Interrupt: which interrupt happened, and the SpEffect that set it off
+            case LuaCallExpr { Method: "IsInterupt", Arguments: [LuaNameExpr { Name: var interrupt }] } when run.InterruptType != null:
+                return new V(VKind.Bool, B: interrupt == LuaBattleGoal.InterruptPrefix + run.InterruptType);
+            case LuaCallExpr { Method: "GetSpecialEffectActivateInterruptId", Arguments: [var tested] } when run.InterruptType != null:
+                return new V(VKind.Bool, B: run.InterruptSpEffect is { } fired && tested.AsNumber() == fired);
+
+            // What the character's rows say about it (its radius, resident SpEffects, think param): in Activate and in
+            // the act functions alike
+            case LuaCallExpr c when NpcValue(c) is { } npcValue:
+                return npcValue is bool nb ? new V(VKind.Bool, B: nb) : new V(VKind.Number, Convert.ToDouble(npcValue, CultureInfo.InvariantCulture));
 
             // Planning without a scene: the distance given
             case LuaCallExpr { Method: "GetDist", Arguments: [LuaNameExpr { Name: "TARGET_ENE_0" }] } when run.TargetDistance is { } d:

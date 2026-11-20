@@ -98,6 +98,10 @@ public class ViewportOverlay
             mapUniverse.View.FirstPersonTool.DrawOverlay(Parent);
         }
 
+        // Another editor's first person mode (the Lua Editor's): crosshair and controls
+        if (Parent.Owner is IViewportWalkerHost { Walker: { } walker })
+            walker.DrawOverlay(Parent);
+
         // Model Editor
         if (Parent.Owner is ModelUniverse modelUniverse)
         {

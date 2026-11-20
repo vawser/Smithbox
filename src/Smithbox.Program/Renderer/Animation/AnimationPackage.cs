@@ -89,10 +89,24 @@ public sealed class AnimationPackage : IDisposable
     ///     Loads the animations of a model. Returns null when the model has none.
     /// </summary>
     /// <param name="containerPath">The binder holding the model, e.g. the geombnd or objbnd of an asset.</param>
+    /// <param name="animationSource">
+    ///     Another model whose animations this one plays (an NpcParam's normalChangeAnimChrId), or null for its own: its
+    ///     sets are used, retargeted onto the model's own skeleton when the model's anibnd has one.
+    /// </param>
     public static AnimationPackage? Load(VirtualFileSystem fs, ProjectType game, AnimatedModelKind kind,
-        string modelName, string containerPath)
+        string modelName, string containerPath, string? animationSource = null)
     {
         HavokSkeletonData? ownSkeleton = null;
+
+        if (animationSource != null && !animationSource.Equals(modelName, StringComparison.OrdinalIgnoreCase))
+        {
+            // The model's own skeleton, if its anibnd has one, for the other model's clips to be retargeted onto
+            using (AnimationPackage own = LoadSet(fs, game, kind, modelName, containerPath))
+            {
+                ownSkeleton = own.Skeleton;
+            }
+            modelName = animationSource;
+        }
 
         foreach (var setName in GetAnimationSetNames(kind, modelName))
         {

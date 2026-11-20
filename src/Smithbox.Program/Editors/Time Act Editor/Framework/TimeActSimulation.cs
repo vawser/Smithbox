@@ -72,6 +72,12 @@ public enum TimeActSimulationRole
     TurnSpeed,
 
     /// <summary>
+    /// While active, puts the SpEffect of its SpEffectParam field on the character (AddSpEffect and its variants). The
+    /// Lua Editor's AI simulation answers the battle goal's HasSpecialEffectId from it.
+    /// </summary>
+    AddSpEffect,
+
+    /// <summary>
     /// As it starts, shakes the camera with rumble cam RumbleCamID. With a DummyPolyID and FalloffStart and FalloffEnd,
     /// the shake comes from that dummy poly and fades with the distance of the camera from it.
     /// </summary>

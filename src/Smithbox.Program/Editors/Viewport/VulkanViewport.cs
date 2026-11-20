@@ -425,7 +425,8 @@ public class VulkanViewport : IViewport
             ResizeViewport(Device, newViewportSize);
 
             // Inputs
-            if (Owner is MapUniverse walkUniverse && walkUniverse.View.FirstPersonTool.TakeViewportFocus(this))
+            if (Owner is MapUniverse walkUniverse && walkUniverse.View.FirstPersonTool.TakeViewportFocus(this) ||
+                Owner is IViewportWalkerHost { Walker: { } walker } && walker.TakeViewportFocus(this))
             {
                 // Starting to walk: the keys go to the viewport, not to the button that started it
                 ImGui.SetWindowFocus();
@@ -490,6 +491,10 @@ public class VulkanViewport : IViewport
 
         // Walking in first person takes all of this viewport's input: no gizmo, picking or camera keys
         if (Owner is MapUniverse walkUniverse && walkUniverse.View.FirstPersonTool.UpdateWalking(this, window, dt))
+            return true;
+
+        // Another editor's first person mode (the Lua Editor's)
+        if (Owner is IViewportWalkerHost { Walker: { } walker } && walker.UpdateWalking(this, window, dt))
             return true;
 
         Vector2 pos = InputManager.MousePosition;
