@@ -4,6 +4,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -17,6 +18,13 @@ namespace StudioCore.Renderer;
 internal static class ResourceFallbacks
 {
     private static readonly Regex ChrIdPrefix = new(@"^(c\d{4})", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    // The SFX textures of DES and DS1 are named sNNNNN, and live in the SFX binders (ffxbnd)
+    private static readonly Regex SfxTexture = new(@"^s\d{5}", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    // The loads of an SFX texture's own copy that the SFX rule has replaced, so it asks once for each. A later load of
+    // the model's copy (after it was unloaded) is a new source, and is replaced again
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<ResourceLoadContext, object> _sfxReplaced = new();
 
     // The containers each pool has loaded for the texture name index, so a holder that didn't deliver isn't retried
     private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<ResourcePool, HashSet<string>> _indexTried = new();
@@ -68,9 +76,44 @@ internal static class ResourceFallbacks
         // The containers this pass loads for the index, so textures that share a holder don't each load another one
         HashSet<string> indexPaths = new(StringComparer.OrdinalIgnoreCase);
 
+        // The SFX binders to load from, with the textures each replaces
+        Dictionary<string, HashSet<string>> sfxNames = new(StringComparer.OrdinalIgnoreCase);
+        List<IResourceHandle> sfxReplaced = new();
+
         foreach (IResourceHandle handle in pool.Handles)
         {
-            if (handle.IsLoaded() || handle.ResourceType != typeof(TextureResource))
+            if (handle.ResourceType != typeof(TextureResource))
+            {
+                continue;
+            }
+
+            // An SFX texture is drawn with its SFX binder's copy, also where a model has its own: the game has the
+            // binders resident, and their copy wins. DS1R c2811's chrbnd holds a solid magenta s03011 for its boulder,
+            // whose real texture is in sfx/FRPG_SfxBnd_c4100 and _m14. Only for holders the texture name index lists
+            if (handle.IsLoaded() && SfxTexture.IsMatch(handle.Name) && handle.Source is { } source &&
+                !IsSfxContainer(source.ContainerPath) && !_sfxReplaced.TryGetValue(source, out _))
+            {
+                var holder = TextureNameIndex.Get(project.Descriptor.ProjectType)?.Find(handle.Name)
+                    .Where(c => IsSfxContainer(c.Path) && project.VFS.FS.FileExists(c.Path))
+                    .OrderBy(c => c.Rank).ThenBy(c => c.Path, StringComparer.OrdinalIgnoreCase)
+                    .Select(c => c.Path).FirstOrDefault();
+
+                _sfxReplaced.AddOrUpdate(source, new object());
+
+                if (holder != null)
+                {
+                    if (!sfxNames.TryGetValue(holder, out var names))
+                    {
+                        names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                        sfxNames.Add(holder, names);
+                    }
+
+                    names.Add(handle.Name);
+                    sfxReplaced.Add(handle);
+                }
+            }
+
+            if (handle.IsLoaded())
             {
                 continue;
             }
@@ -177,9 +220,24 @@ internal static class ResourceFallbacks
             }
         }
 
-        queued += externalPaths.Count + ruleNames.Count;
+        queued += externalPaths.Count + ruleNames.Count + sfxNames.Count;
 
         List<Task> loads = new();
+
+        // The SFX copies replace the loaded ones, which give up their priority for it
+        if (sfxNames.Count > 0)
+        {
+            pool.ReleasePriority(sfxReplaced);
+
+            foreach (var (path, names) in sfxNames)
+            {
+                LoadOptions sfxOptions = options.Clone();
+                sfxOptions.OnlyNames = names;
+                sfxOptions.Reload = true;
+
+                loads.Add(pool.LoadContainer(path, sfxOptions));
+            }
+        }
 
         // Only the asked for textures are loaded from a rule's container: an AET or character container holds the
         // textures of many models, and a single one of them is often all that is missing
@@ -232,6 +290,11 @@ internal static class ResourceFallbacks
         }
 
         return Task.WhenAll(loads);
+    }
+
+    private static bool IsSfxContainer(string? path)
+    {
+        return path != null && path.Contains(".ffxbnd", StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>

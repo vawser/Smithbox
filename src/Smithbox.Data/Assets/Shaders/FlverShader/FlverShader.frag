@@ -54,6 +54,9 @@ layout (constant_id = 14) const int c_customize = 0;
 // A DES or DS1 "Col" shader (MaterialDefinition.VertexColor): 0 no, 1 the diffuse times the vertex color, 2 also an
 // alpha blended material's opacity times its alpha
 layout (constant_id = 15) const int c_vertexColor = 0;
+// DSR's remastered materials (MaterialDefinition.SpecularColorGlossAlpha): the gloss is the alpha of the specular map
+// read as shininess, where it is otherwise its red
+layout (constant_id = 16) const bool c_glossInAlpha = false;
 #define BLENDING_ALPHA 1
 // MaterialBlending.Multiply: the scene is multiplied by the unlit albedo
 #define BLENDING_MULTIPLY 4
@@ -2550,11 +2553,11 @@ void main()
 	if (c_roughnessFromShininess)
 	{
 #ifdef MATERIAL_BLEND
-		vec3 shininessColor = SampleLayered(ROW_SHININESS, c_blendShininess).xyz;
+		vec4 shininessColor = SampleLayered(ROW_SHININESS, c_blendShininess);
 #else
-		vec3 shininessColor = SampleLayer(ROW_SHININESS, 0).xyz;
+		vec4 shininessColor = SampleLayer(ROW_SHININESS, 0);
 #endif
-		roughness = 1.0 - shininessColor.r;
+		roughness = 1.0 - (c_glossInAlpha ? shininessColor.a : shininessColor.r);
 	}
 	else
 	{

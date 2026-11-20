@@ -1190,6 +1190,13 @@ public class MaterialDefinition
     /// </summary>
     public bool VertexColor { get; set; }
 
+    /// <summary>
+    /// The specular map is the specular color, with the gloss in its alpha: DSR's remastered materials, whose MTD sets
+    /// g_MaterialWorkflow to 1 (C_Metal[DSB]_Spec and the like). Their metals have a near black diffuse, so the
+    /// specular color is all of their color. Workflow 0 keeps the gloss in the color, as DS1 and DS2 do
+    /// </summary>
+    public bool SpecularColorGlossAlpha { get; set; }
+
     public float[] DiffuseColor { get; set; } = [1, 1, 1];
 
     /// <summary>All of the material's values, keyed by name without the shader prefix</summary>
@@ -1293,6 +1300,7 @@ public class MaterialDefinition
         DisableDepthWrite = GetFirst("g_GX_bDisableDepthWrite", 0) != 0;
         MeshDecal = GetFirst("g_GX_bMeshDecal", 0) != 0;
         VertexColor = VertexColorShader.IsMatch(ShaderName);
+        SpecularColorGlossAlpha = (int)GetFirst("g_MaterialWorkflow", 0) == 1;
 
         if (Params.TryGetValue("g_DiffuseMapColor", out var color) && color.Length >= 3)
         {

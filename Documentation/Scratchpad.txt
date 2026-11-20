@@ -2,3 +2,7 @@
 # TODO 
 #---------------------
 
+Generak: a white shine is being applied on elements that should be matte
+
+m2740B0 Grey texture for sludge/water submesh
+m0100B2_0000 Some texture sections look stretched horizontally

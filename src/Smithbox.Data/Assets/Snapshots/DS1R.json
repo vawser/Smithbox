@@ -66,6 +66,21 @@
       "Container": "c2230",
       "Model": "c2230",
       "Shows": "chr: body textures owned by another character (c2239's chrtpfbdt)"
+    },
+    {
+      "Container": "c2811",
+      "Model": "c2811",
+      "Shows": "chr: boulder material"
+    },
+    {
+      "Container": "c3460",
+      "Model": "c3460",
+      "Shows": "chr: specular armor"
+    },
+    {
+      "Container": "c5350",
+      "Model": "c5350",
+      "Shows": "chr: specular areas"
     }
   ]
 }

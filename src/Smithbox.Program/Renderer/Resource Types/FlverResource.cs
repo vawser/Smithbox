@@ -748,6 +748,15 @@ public class FlverResource : IResource, IDisposable
                 LookupTexture(ShininessLayers[layer], dest, texType, mpath, mtd);
                 layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
                 layers.BlendShininess |= layer > 0;
+
+                // A specular map that is the specular color too (MaterialDefinition.SpecularColorGlossAlpha): also the
+                // specular row, so its color is the F0, where it would otherwise be the black default
+                if (glossInSpecular && dest.Definition?.SpecularColorGlossAlpha == true &&
+                    texType.Contains("Specular", StringComparison.OrdinalIgnoreCase))
+                {
+                    LookupTexture(SpecularLayers[layer], dest, texType, mpath, mtd);
+                    layers.BlendSpecular |= layer > 0;
+                }
                 break;
 
             case MaterialTextureUse.Metallic:
@@ -1024,6 +1033,10 @@ public class FlverResource : IResource, IDisposable
             ? dest.Blending == MaterialBlending.Alpha && !layers.IsBlended ? 2u : 1u
             : 0u;
         specConstants.Add(new SpecializationConstant(15, vertexColor));
+        // The gloss is the specular map's alpha, not its color (MaterialDefinition.SpecularColorGlossAlpha), where the
+        // specular map is read as the gloss (RenderProfile.GlossInSpecular)
+        specConstants.Add(new SpecializationConstant(16, RenderProfile.Of(curProject).GlossInSpecular &&
+            dest.Definition?.SpecularColorGlossAlpha == true));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
