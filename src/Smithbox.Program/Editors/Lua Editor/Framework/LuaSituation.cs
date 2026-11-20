@@ -220,6 +220,24 @@ public class LuaSituation
         Tokens = tokens;
         Constants = constants ?? new Dictionary<string, double>();
         CommonFunctions = commonFunctions ?? new Dictionary<string, LuaFunctionExpr>();
+
+        // The main chunk's locals, as it sets them when the script loads (BB: local f0_local2 = 2.6 - f0_local0): the
+        // goal's functions read them. A value the simulation can't know is left out (read as nil, as before).
+        if (goal.Chunk != null)
+        {
+            var chunk = new Run();
+            foreach (var l in goal.Chunk.Stats.OfType<LuaLocalStat>())
+            {
+                for (int i = 0; i < l.Names.Count; i++)
+                {
+                    var v = i < l.Values.Count ? Eval(l.Values[i], chunk) : Nil;
+                    chunk.Locals[l.Names[i]] = v;
+                    if (v.Kind is VKind.Number or VKind.Bool or VKind.Symbol)
+                        ChunkValues[l.Names[i]] = v;
+                }
+            }
+            ChunkNames = goal.Chunk.Stats.OfType<LuaLocalStat>().SelectMany(l => l.Names).ToHashSet();
+        }
         Collect(goal.Activate.Body);
 
         // Only what a condition or a weight reads is shown: a call whose result nothing tests (an act function
@@ -705,7 +723,13 @@ public class LuaSituation
     private Lazy<HashSet<string>> _declared;
     private Lazy<HashSet<string>> DeclaredLocals => _declared ??= new(() =>
         Goal.Activate.Body.AllStatements().OfType<LuaLocalStat>().SelectMany(l => l.Names)
-            .Concat(Goal.Activate.Parameters).ToHashSet());
+            .Concat(Goal.Activate.Parameters).Concat(ChunkNames).ToHashSet());
+
+    // The main chunk's locals: their names, and the values it gives them (see the constructor); what the last
+    // Evaluate left them at (Activate can set them: f0_local15 = 1), for act planning and the Interrupt
+    private HashSet<string> ChunkNames = new();
+    private readonly Dictionary<string, V> ChunkValues = new();
+    private Dictionary<string, V> LastChunk = new();
 
     /// <summary>How the other side of a comparison makes this side be read: a number, a boolean, or a named constant</summary>
     private (Hint? Hint, string Constant) Describe(LuaExpr other) => other switch
@@ -963,9 +987,12 @@ public class LuaSituation
             step.Kind = best >= 0 ? LuaStepKind.Clip : LuaStepKind.Other;
             step.Animation = 6000 + Math.Max(best, 0);
         }
-        else if (Num(2) is { } anim && anim == Math.Floor(anim) && anim >= 1000 && anim < 1_000_000)
+        else if (c.Arguments.Count > 2 && Eval(c.Arguments[2], run) is { Kind: VKind.Number, S: null, N: var anim } &&
+                 anim == Math.Floor(anim) && anim >= LuaAct.MinAnimationId && anim < 1_000_000)
         {
-            // An attack, combo or animation goal: (life, animation, target, …)
+            // An attack, combo or animation goal: (life, animation, target, …) (see LuaAct.MinAnimationId). A named
+            // constant there isn't an animation: a target (ToTargetWarp's TARGET_ENE_0, POINT_EVENT) or an NPC_ATK_ action, even
+            // through a local (local target = TARGET_ENE_0)
             step.Kind = LuaStepKind.Clip;
             step.Animation = (long)anim;
         }
@@ -989,6 +1016,7 @@ public class LuaSituation
             run.Result.Weights[act] = 0;
         Exec(Goal.Activate.Body, run);
         LastIndexed = run.Indexed;
+        LastChunk = run.Locals.Where(l => ChunkNames.Contains(l.Key)).ToDictionary(l => l.Key, l => l.Value);
         return run.Result;
     }
 
@@ -1097,8 +1125,12 @@ public class LuaSituation
                     return local;
                 if (!run.Foreign && ByKey.TryGetValue(n.Name, out var global))
                     return Value(global);
+                // A main chunk local (an upvalue of the goal's functions): as Activate last left it, else as the chunk set it
+                if (!run.Foreign && ChunkNames.Contains(n.Name))
+                    return LastChunk.TryGetValue(n.Name, out var last) ? last : ChunkValues.TryGetValue(n.Name, out var initial) ? initial : Nil;
+                // (a constant's number keeps its name, so a target ID isn't taken for an animation ID; see StepOf)
                 if (IsConstantName(n.Name))
-                    return Constants.TryGetValue(n.Name, out var cv) ? new V(VKind.Number, cv) : new V(VKind.Symbol, S: n.Name);
+                    return Constants.TryGetValue(n.Name, out var cv) ? new V(VKind.Number, cv, S: n.Name) : new V(VKind.Symbol, S: n.Name);
                 return Nil;
 
             case LuaCallExpr c when IsCooldown(c):

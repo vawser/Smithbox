@@ -25,11 +25,11 @@ public class LuaBattleView
     private LuaScript CachedScript;
     private int CachedRevision = -1;
     private bool CachedWithConstants;
-    private LuaActTable CachedTable;
+    private string CachedTable;
 
-    // The act table shown (SDT's battle goals have a second one, Kengeki): kept across scripts, Battle where a
-    // script has no other
-    private LuaActTable ActTable = LuaActTable.Battle;
+    // The act table picked (null: the goal's first; see LuaBattleGoal.Tables): kept across scripts, the first where a
+    // script hasn't that one
+    private string ActTable;
     private LuaBattleGoal Goal;
     private string Why;
     private LuaSituation Situation;
@@ -117,7 +117,7 @@ public class LuaBattleView
 
         ImGui.Text(Goal.GoalName ?? script.EntryName);
         ImGui.SameLine();
-        var entry = Goal.Table == LuaActTable.Kengeki ? "Kengeki_Activate" : "Activate";
+        var entry = TableName(Goal.Table);
         if (ImGui.SmallButton($"{entry}##luaBattleActivate"))
             Editor.ShowLine(script, Goal.ActivateLine);
         GUI.Tooltip(LOC.Get("LUA_Outline_Line", Goal.ActivateLine));
@@ -133,8 +133,9 @@ public class LuaBattleView
     }
 
     /// <summary>
-    /// Battle / Kengeki, when the goal has both act tables (SDT): the acts, weights, situation and plans below are the
-    /// picked table's. Kengeki_Activate runs first in Activate and only picks an act while a deflect SpEffect is on.
+    /// The goal's act tables, when it has more than one: Battle (Activate's own), Kengeki (SDT's deflect exchanges), and
+    /// a function Activate calls that picks acts itself (BB). The acts, weights, situation and plans below are the
+    /// picked table's.
     /// </summary>
     private void DrawTableSwitch()
     {
@@ -144,12 +145,27 @@ public class LuaBattleView
         foreach (var table in Goal.Tables)
         {
             ImGui.SameLine();
-            var label = table == LuaActTable.Kengeki ? LOC.Get("LUA_Battle_Table_Kengeki") : LOC.Get("LUA_Battle_Table_Battle");
+            var label = table switch
+            {
+                LuaBattleGoal.MainTable => LOC.Get("LUA_Battle_Table_Battle"),
+                LuaBattleGoal.KengekiEntry => LOC.Get("LUA_Battle_Table_Kengeki"),
+                _ => TableName(table),
+            };
             if (ImGui.RadioButton($"{label}##luaBattleTable_{table}", Goal.Table == table))
                 ActTable = table;
-            GUI.Tooltip(LOC.Get(table == LuaActTable.Kengeki ? "LUA_Battle_Table_Kengeki_TT" : "LUA_Battle_Table_Battle_TT"));
+            GUI.Tooltip(table switch
+            {
+                LuaBattleGoal.MainTable => LOC.Get("LUA_Battle_Table_Battle_TT"),
+                LuaBattleGoal.KengekiEntry => LOC.Get("LUA_Battle_Table_Kengeki_TT"),
+                _ => LOC.Get("LUA_Battle_Table_Called_TT", TableName(table)),
+            });
         }
     }
+
+    /// <summary>An act table's function as the script names it (Activate, Kengeki_Activate, Avater_B_BoarKing701000Battle)</summary>
+    private static string TableName(string table) =>
+        table == LuaBattleGoal.MainTable ? "Activate"
+        : table.StartsWith(LuaBattleGoal.MethodPrefix, StringComparison.Ordinal) ? table[LuaBattleGoal.MethodPrefix.Length..] : table;
 
     private void Rebuild(LuaScript script, IReadOnlyDictionary<string, double> constants)
     {
@@ -164,7 +180,7 @@ public class LuaBattleView
         CachedWithConstants = constants != null;
         CachedTable = ActTable;
         Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why, ActTable);
-        if (Goal == null && ActTable != LuaActTable.Battle)
+        if (Goal == null && ActTable != null)
             Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why);
         Situation = Goal != null ? new LuaSituation(Goal, script.Text, script.Parse.Tokens, constants, Editor.Definitions.Functions) : null;
         // Acts are planned from where the characters stand (distance and facing)

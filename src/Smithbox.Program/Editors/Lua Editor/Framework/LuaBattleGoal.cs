@@ -50,7 +50,13 @@ public class LuaAct
         return list;
     }
 
-    private static bool IsAnimationId(double v) => v == Math.Floor(v) && v >= 1000 && v < 1_000_000;
+    /// <summary>
+    /// The smallest number read as an animation ID: DS3 and BB play their steps as a000_000700-703 (SpinStep), so 100;
+    /// smaller ones are flags and counts. Candidates only: the viewer plays what the character has.
+    /// </summary>
+    public const int MinAnimationId = 100;
+
+    private static bool IsAnimationId(double v) => v == Math.Floor(v) && v >= MinAnimationId && v < 1_000_000;
 }
 
 /// <summary>goal:AddSubGoal(GOAL_..., life, args...) in an act function</summary>
@@ -70,16 +76,6 @@ public class LuaWeightRow
     public List<string> Path { get; } = new();
     public int Line;
     public SortedDictionary<int, LuaLiteral> Weights { get; } = new();
-}
-
-/// <summary>Which of a battle goal's act tables is read</summary>
-public enum LuaActTable
-{
-    /// <summary>Goal.Activate's acts, picked by Common_Battle_Activate</summary>
-    Battle,
-
-    /// <summary>SDT's deflect-exchange acts: Goal.Kengeki_Activate, picked by Common_Kengeki_Activate</summary>
-    Kengeki,
 }
 
 /// <summary>A special effect ID the script checks or observes (ai:HasSpecialEffectId(target, id), …)</summary>
@@ -135,29 +131,70 @@ public class LuaBattleGoal
         "HasSpecialEffectId", "AddObserveSpecialEffectAttribute", "DeleteObserveSpecialEffectAttribute",
     };
 
-    /// <summary>The act table this was read from (Activate's, or SDT's Kengeki_Activate)</summary>
-    public LuaActTable Table;
+    /// <summary>The act table this was read from: the function that picks its acts (see <see cref="Tables"/>)</summary>
+    public string Table;
 
-    /// <summary>The act tables the battle goal has: Battle, and Kengeki when its Kengeki_Activate picks acts</summary>
-    public List<LuaActTable> Tables { get; } = new();
+    /// <summary>
+    /// The battle goal's act tables, by the function that picks each one's acts: <see cref="MainTable"/> when Activate
+    /// does; SDT's deflect-exchange table (<see cref="KengekiEntry"/>); and any function of the script Activate calls
+    /// that picks acts itself (BB: Avater_B_BoarKing701000Battle, called from some of Activate's branches)
+    /// </summary>
+    public List<string> Tables { get; } = new();
+
+    /// <summary>The table Activate picks itself</summary>
+    public const string MainTable = "Activate";
 
     /// <summary>The goal method of SDT's deflect-exchange act table</summary>
     public const string KengekiEntry = MethodPrefix + "Kengeki_Activate";
+
+    private static readonly string[] Pickers = { "Common_Battle_Activate", "Common_Kengeki_Activate" };
 
     /// <summary>The template read from a valid parse, or null if the script doesn't follow it</summary>
     public static LuaBattleGoal Read(string src, LuaParseResult parse) => Read(src, parse, out _);
 
     /// <summary>The call in an act table's function that picks an act (Common_Battle_Activate(ai, goal, weights, funcs, after[, params]))</summary>
-    private static LuaCallExpr PickerCall(LuaFunctionExpr fn, string picker) =>
+    private static LuaCallExpr PickerCall(LuaFunctionExpr fn) =>
         fn.Body.AllStatements().SelectMany(s => s.Calls())
-            .FirstOrDefault(c => c.Callee is LuaNameExpr { Name: var n } && n == picker && c.Arguments.Count is 5 or 6);
+            .FirstOrDefault(c => c.Callee is LuaNameExpr { Name: var n } && Pickers.Contains(n) && c.Arguments.Count is 5 or 6);
+
+    /// <summary>
+    /// A section's act tables, in order: Activate itself, the Kengeki method, then the functions Activate calls that
+    /// pick acts (a global, or the goal's method self.X / Goal.X), each once
+    /// </summary>
+    private static List<(string Name, LuaFunctionExpr Fn, LuaCallExpr Picker)> ActTables(Section section,
+        Dictionary<string, (LuaNode Node, LuaFunctionExpr Fn)> functions)
+    {
+        var list = new List<(string, LuaFunctionExpr, LuaCallExpr)>();
+        if (PickerCall(section.Activate) is { } own)
+            list.Add((MainTable, section.Activate, own));
+        if (section.Methods.TryGetValue(KengekiEntry, out var k) && PickerCall(k.Fn) is { } kengeki)
+            list.Add((KengekiEntry, k.Fn, kengeki));
+
+        var self = section.Activate.Parameters.Count > 0 ? section.Activate.Parameters[0] : null;
+        foreach (var call in section.Activate.Body.AllStatements().SelectMany(s => s.Calls()))
+        {
+            var name = call switch
+            {
+                { Method: null, Callee: LuaNameExpr n } => n.Name,
+                { Method: null, Callee: LuaFieldExpr { Object: LuaNameExpr o, Name: var m } } when o.Name == self || o.Name == "Goal" => MethodPrefix + m,
+                _ => null,
+            };
+            if (name == null || list.Any(x => x.Item1 == name))
+                continue;
+            var fn = functions.TryGetValue(name, out var g) ? g.Fn : section.Methods.TryGetValue(name, out var m2) ? m2.Fn : null;
+            if (fn != null && fn != section.Activate && PickerCall(fn) is { } picker)
+                list.Add((name, fn, picker));
+        }
+        return list;
+    }
 
     /// <summary>
     /// As <see cref="Read(string, LuaParseResult)"/>; why is the localization key of the reason it isn't the template.
-    /// The Kengeki table is read as the battle table is, from Goal.Kengeki_Activate in place of Goal.Activate (the
-    /// script's functions, Interrupt and observed SpEffects are the same).
+    /// Another act table (<paramref name="table"/>, one of <see cref="Tables"/>; null for the first) is read as the
+    /// battle table is, from its function in place of Activate (the script's functions, Interrupt and observed
+    /// SpEffects are the same).
     /// </summary>
-    public static LuaBattleGoal Read(string src, LuaParseResult parse, out string why, LuaActTable table = LuaActTable.Battle)
+    public static LuaBattleGoal Read(string src, LuaParseResult parse, out string why, string table = null)
     {
         if (parse?.Tree == null)
         {
@@ -201,6 +238,18 @@ public class LuaBattleGoal
         if (current.Activate != null || current.Goal != null)
             sections.Add(current);
 
+        // The older form (BB): a goal's functions are globals named after it, X_Activate(ai, goal) with X_Interupt
+        // (X_Update, X_Terminate) beside it, and no goal table. Each X_Activate is a section, after the table ones.
+        foreach (var (name, fn) in functions)
+        {
+            if (!name.EndsWith(GlobalActivateSuffix, StringComparison.Ordinal) || name.Length == GlobalActivateSuffix.Length)
+                continue;
+            var goal = name[..^GlobalActivateSuffix.Length];
+            var interruptFn = functions.TryGetValue(goal + "_Interupt", out var i1) ? i1.Fn
+                : functions.TryGetValue(goal + "_Interrupt", out var i2) ? i2.Fn : null;
+            sections.Add(new Section { Goal = goal, Activate = fn.Fn, Interrupt = interruptFn });
+        }
+
         if (!sections.Any(x => x.Activate != null))
         {
             why = "LUA_Battle_Why_No_Activate";
@@ -210,36 +259,28 @@ public class LuaBattleGoal
         LuaFunctionExpr activate = null, interrupt = null;
         LuaCallExpr battle = null;
         string goalName = null;
-        var tables = new List<LuaActTable>();
+        var tables = new List<string>();
         foreach (var section in sections.Where(x => x.Activate != null))
         {
-            battle = PickerCall(section.Activate, "Common_Battle_Activate");
-            if (battle != null)
+            // The section's act tables (see ActTables): the first section that has one is the battle goal
+            var found = ActTables(section, functions);
+            if (found.Count == 0)
+                continue;
+
+            (goalName, interrupt) = (section.Goal, section.Interrupt);
+            // The battle section's methods, beside the globals (a global of the same name is kept)
+            foreach (var (name, m) in section.Methods)
+                functions.TryAdd(name, m);
+
+            tables.AddRange(found.Select(f => f.Name));
+            var picked = table == null ? found[0] : found.FirstOrDefault(f => f.Name == table);
+            if (picked.Fn == null)
             {
-                (goalName, activate, interrupt) = (section.Goal, section.Activate, section.Interrupt);
-                // The battle section's methods, beside the globals (a global of the same name is kept)
-                foreach (var (name, m) in section.Methods)
-                    functions.TryAdd(name, m);
-
-                // SDT's second act table, for deflect exchanges: Goal.Kengeki_Activate, picked by Common_Kengeki_Activate
-                tables.Add(LuaActTable.Battle);
-                var kengeki = section.Methods.TryGetValue(KengekiEntry, out var k) ? k.Fn : null;
-                var kengekiPicker = kengeki != null ? PickerCall(kengeki, "Common_Kengeki_Activate") : null;
-                if (kengekiPicker != null)
-                    tables.Add(LuaActTable.Kengeki);
-
-                if (table == LuaActTable.Kengeki)
-                {
-                    if (kengekiPicker == null)
-                    {
-                        why = "LUA_Battle_Why_No_Kengeki";
-                        return null;
-                    }
-                    activate = kengeki;
-                    battle = kengekiPicker;
-                }
-                break;
+                why = "LUA_Battle_Why_No_Table";
+                return null;
             }
+            (table, activate, battle) = picked;
+            break;
         }
 
         if (battle == null || battle.Arguments[2] is not LuaNameExpr weights || battle.Arguments[3] is not LuaNameExpr funcs)
@@ -253,6 +294,7 @@ public class LuaBattleGoal
         var result = new LuaBattleGoal
         {
             GoalName = goalName,
+            Chunk = parse.Tree,
             Table = table,
             Activate = activate,
             WeightTable = weights.Name,
@@ -380,6 +422,12 @@ public class LuaBattleGoal
 
     /// <summary>How a goal's method is named among <see cref="Functions"/> and act functions (Goal.Act01)</summary>
     public const string MethodPrefix = "Goal.";
+
+    /// <summary>The older global form's Activate: Shousitai_Fist104000Battle_Activate(ai, goal)</summary>
+    private const string GlobalActivateSuffix = "_Activate";
+
+    /// <summary>The script's main chunk, whose top-level locals the goal's functions read (BB: local f0_local2 = 2.6 - f0_local0)</summary>
+    public LuaBlock Chunk;
 
     /// <summary>One RegisterTableGoal section: its goal, Activate, Interrupt, and other Goal.X functions</summary>
     private sealed class Section

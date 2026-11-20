@@ -163,7 +163,6 @@
 # Lua Editor TODO
 #----------------------------------------------------
 
-- Support SpaceCheck
 - Pass over variables to consider in Battle Simulation
 
 - Extend support to the other games

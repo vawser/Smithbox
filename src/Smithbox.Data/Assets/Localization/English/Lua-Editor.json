@@ -13,9 +13,10 @@
     { "Key": "LUA_Battle_Why_No_Activate", "Text": "Not a battle goal: the script has no Goal.Activate." },
     { "Key": "LUA_Battle_Why_No_Battle_Activate", "Text": "Not a battle goal: no Goal.Activate in the script calls Common_Battle_Activate(ai, goal, weights, funcs, after[, params])." },
     { "Key": "LUA_Battle_Why_No_Acts", "Text": "Not a battle goal: no act is registered with REGIST_FUNC." },
-    { "Key": "LUA_Battle_Why_No_Kengeki", "Text": "This battle goal has no Kengeki act table (Goal.Kengeki_Activate calling Common_Kengeki_Activate)." },
+    { "Key": "LUA_Battle_Why_No_Table", "Text": "This battle goal has no such act table." },
     { "Key": "LUA_Battle_Table_Battle", "Text": "Battle" },
-    { "Key": "LUA_Battle_Table_Battle_TT", "Text": "The acts Goal.Activate picks from (Common_Battle_Activate)." },
+    { "Key": "LUA_Battle_Table_Battle_TT", "Text": "The acts Activate picks from (Common_Battle_Activate)." },
+    { "Key": "LUA_Battle_Table_Called_TT", "Text": "The acts {0} picks from (Common_Battle_Activate): Activate calls it on some of its branches, and plays its own sub-goals on the others." },
     { "Key": "LUA_Battle_Table_Kengeki", "Text": "Kengeki" },
     { "Key": "LUA_Battle_Table_Kengeki_TT", "Text": "The deflect-exchange acts Goal.Kengeki_Activate picks from (Common_Kengeki_Activate). Activate runs it first: while the character has a Kengeki SpEffect (from ReturnKengekiSpecialEffect) it picks one of these acts and the normal ones are skipped. Set that SpEffect in the situation to see the weights." },
 
