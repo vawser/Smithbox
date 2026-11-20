@@ -17,7 +17,7 @@ namespace StudioCore.Editors.LuaEditor;
 /// RenderScene and VulkanViewport, chr models through ModelLocator and the ResourceManager, and Havok clips through
 /// AnimationPreviewPanel / ModelAnimator.
 /// </summary>
-public class LuaViewer : IDisposable
+public class LuaViewer : IDisposable, ILuaScene
 {
     private readonly LuaEditorScreen Editor;
     private ProjectEntry Project => Editor.Project;
@@ -164,6 +164,38 @@ public class LuaViewer : IDisposable
     }
 
     /// <summary>Distance on the ground from the character to the target (the bearing's distance without one)</summary>
+    // --- the scene the situation reads (ILuaScene) ---
+
+    /// <summary>Where the target is: the target character, else the unseen point the distance and bearing give</summary>
+    public Vector3 TargetPoint()
+    {
+        if (Target != null)
+            return Target.Position;
+        var forward = Self?.Forward ?? Vector3.UnitZ;
+        return Vector3.Transform(forward, Matrix4x4.CreateRotationY(TargetBearing * MathF.PI / 180)) * TargetDistance;
+    }
+
+    /// <summary>The ground angle of a point from a front, counter-clockwise, in degrees (-180..180)</summary>
+    private static double AngleFrom(Vector3 from, Vector3 front, Vector3 point)
+    {
+        var d = point - from;
+        if (new Vector2(d.X, d.Z).LengthSquared() < 1e-8f)
+            return 0;
+        var angle = MathF.Atan2(d.X, d.Z) - MathF.Atan2(front.X, front.Z);
+        while (angle > MathF.PI) angle -= 2 * MathF.PI;
+        while (angle < -MathF.PI) angle += 2 * MathF.PI;
+        return angle * 180 / MathF.PI;
+    }
+
+    double ILuaScene.Distance => CurrentDistance();
+
+    double ILuaScene.TargetAngleFromSelf =>
+        Self == null ? TargetBearing : AngleFrom(Self.Position, Self.WorldForward, TargetPoint());
+
+    // An unseen target faces the character
+    double ILuaScene.SelfAngleFromTarget =>
+        Target == null ? 0 : AngleFrom(Target.Position, Target.WorldForward, Self?.Position ?? Vector3.Zero);
+
     public double CurrentDistance()
     {
         if (Self == null || Target == null)

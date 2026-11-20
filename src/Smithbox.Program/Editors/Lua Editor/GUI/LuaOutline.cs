@@ -5,7 +5,8 @@ using System.Numerics;
 namespace StudioCore.Editors.LuaEditor;
 
 /// <summary>
-/// What the selected script defines: its functions (and, optionally, top-level values), in order. Click one to show it.
+/// The Act Outline tool of the Tools window: what the selected script defines, its functions (and, optionally,
+/// top-level values), in order. Click one to show it.
 /// </summary>
 public class LuaOutline
 {
@@ -20,9 +21,19 @@ public class LuaOutline
         Editor = editor;
     }
 
-    public void Draw()
+    public void OnToolWindow()
     {
-        GUI.TitleHeader(LOC.Get("LUA_Outline_Header"), LOC.Get("LUA_Outline_Header_TT"));
+        if (ToolSections.Header($"{LOC.Get("LUA_Tool_Act_Outline")}##luaActOutlineTool"))
+        {
+            ImGui.BeginChild("LuaActOutlineToolSection", ImGuiChildFlags.Borders);
+            Draw();
+            ImGui.EndChild();
+        }
+    }
+
+    private void Draw()
+    {
+        GUI.SimpleHeader(LOC.Get("LUA_Outline_Header"), LOC.Get("LUA_Outline_Header_TT"));
 
         ImGui.BeginChild("luaOutlineHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
         EditorFilters.DisplaySearchbar("luaEditor_Outline", ref Filter, ref ExactFilter);

@@ -1159,6 +1159,11 @@ public class VulkanViewport : IViewport
                 editor = ViewportGridEditor.Fx;
                 isEditorFocused = fxUniverse.Project.Handler.FocusedEditor is FxEditorScreen;
                 return true;
+
+            case StudioCore.Editors.LuaEditor.LuaUniverse luaUniverse:
+                editor = ViewportGridEditor.Lua;
+                isEditorFocused = luaUniverse.Project.Handler.FocusedEditor is StudioCore.Editors.LuaEditor.LuaEditorScreen;
+                return true;
         }
 
         editor = default;

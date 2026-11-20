@@ -103,6 +103,9 @@ public class LuaBattleView
         CachedWithConstants = constants != null;
         Goal = LuaBattleGoal.Read(script.Text, script.Parse, out Why);
         Situation = Goal != null ? new LuaSituation(Goal, script.Text, script.Parse.Tokens, constants) : null;
+        // Acts are planned from where the characters stand (distance and facing)
+        if (Situation != null)
+            Situation.Scene = Viewer;
         Plans.Clear();
 
         if (Situation != null && previous != null)

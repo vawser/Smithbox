@@ -47,6 +47,8 @@ public class LuaSimulation
     public void Start(LuaBattleGoal goal, LuaSituation situation)
     {
         Goal = goal;
+        situation.Scene = Viewer;
+        situation.Live = true;
         Situation = situation;
         Running = true;
         History.Clear();
@@ -61,6 +63,8 @@ public class LuaSimulation
         if (!Running)
             return;
         Running = false;
+        if (Situation != null)
+            Situation.Live = false;
         Current = null;
         NextPending = false;
         Viewer.Player.Idle();
@@ -71,8 +75,13 @@ public class LuaSimulation
     {
         foreach (var input in situation.Inputs)
         {
-            if (input.IsTargetDistance)
-                input.Number = Viewer.CurrentDistance();
+            if (input.SceneQuery != null && situation.SceneValue(input.SceneQuery) is { } value)
+            {
+                if (value is bool b)
+                    input.Boolean = b;
+                else
+                    input.Number = Convert.ToDouble(value);
+            }
             if (input.CooldownAnimation is { } anim)
                 input.Boolean = LastPlayed.TryGetValue(anim, out var at) && Clock - at < (input.CooldownSeconds ?? 0);
         }

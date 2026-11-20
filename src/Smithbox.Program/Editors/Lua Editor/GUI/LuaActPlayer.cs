@@ -67,13 +67,7 @@ public class LuaActPlayer
     }
 
     /// <summary>Where the character is heading: the target character, else the point the distance and bearing give</summary>
-    private Vector3 TargetPoint()
-    {
-        if (Viewer.Target != null)
-            return Viewer.Target.Position;
-        var forward = Self?.Forward ?? Vector3.UnitZ;
-        return Vector3.Transform(forward, Matrix4x4.CreateRotationY(Viewer.TargetBearing * MathF.PI / 180)) * Viewer.TargetDistance;
-    }
+    private Vector3 TargetPoint() => Viewer.TargetPoint();
 
     private float Distance()
     {

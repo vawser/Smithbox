@@ -42,15 +42,34 @@ public class LuaSituationInput
     // A random roll or HP rate: a number box, even when it is only tested for truth
     internal bool PrefersNumber;
 
-    /// <summary>ai:GetDist(TARGET_ENE_0): the simulation sets it from where the characters stand</summary>
-    public bool IsTargetDistance;
+    /// <summary>
+    /// A question about where the characters stand (distance, facing, angles: see <see cref="LuaSituation.SceneValue"/>):
+    /// the call, which the simulation answers from the scene
+    /// </summary>
+    public LuaCallExpr SceneQuery;
 
     /// <summary>A SetCoolTime input: the animation and seconds, which the simulation checks against what it played</summary>
     public long? CooldownAnimation;
     public double? CooldownSeconds;
 
     /// <summary>Set by the simulation, not the user, while it runs</summary>
-    public bool IsLive => IsTargetDistance || CooldownAnimation != null;
+    public bool IsLive => SceneQuery != null || CooldownAnimation != null;
+}
+
+/// <summary>
+/// Where the AI's character (TARGET_SELF) and its target (TARGET_ENE_0) stand, for the facing and distance checks.
+/// Angles are on the ground, in degrees, counter-clockwise (to the left) from the front, in -180..180.
+/// </summary>
+public interface ILuaScene
+{
+    /// <summary>Distance on the ground between the two</summary>
+    double Distance { get; }
+
+    /// <summary>Where the target is, seen from the character's front</summary>
+    double TargetAngleFromSelf { get; }
+
+    /// <summary>Where the character is, seen from the target's front</summary>
+    double SelfAngleFromTarget { get; }
 }
 
 public enum LuaStepKind
@@ -213,7 +232,7 @@ public class LuaSituation
             return;
         }
 
-        var input = Live(Input(Text(call), name, Text(call), call), call);
+        var input = MarkLive(Input(Text(call), name, Text(call), call), call);
         if (!LocalInputs.TryGetValue(name, out var list))
             LocalInputs[name] = list = new List<LuaSituationInput>();
         if (!list.Contains(input))
@@ -232,12 +251,101 @@ public class LuaSituation
         }
     }
 
-    /// <summary>Marks an input the simulation sets from the viewport: the distance to the target</summary>
-    private static LuaSituationInput Live(LuaSituationInput input, LuaCallExpr call)
+    /// <summary>Marks an input the simulation answers from the scene (distance, facing, angles)</summary>
+    private static LuaSituationInput MarkLive(LuaSituationInput input, LuaCallExpr call)
     {
-        if (call.Method == "GetDist" && call.Arguments is [LuaNameExpr { Name: "TARGET_ENE_0" }])
-            input.IsTargetDistance = true;
+        if (IsSceneQuery(call))
+            input.SceneQuery = call;
         return input;
+    }
+
+    // --- the scene ---
+
+    private static string Who(LuaExpr e) => e is LuaNameExpr { Name: "TARGET_SELF" or "TARGET_ENE_0" } n ? n.Name : null;
+
+    /// <summary>
+    /// Whether a call asks where the character and its target stand, between the two of them:
+    /// ai:GetDist(TARGET_ENE_0); ai:IsInsideTarget(TARGET_ENE_0, dir, angle);
+    /// ai:IsInsideTargetCustom(from, to, dir, angle, verticalAngle, range) and ai:IsInsideTargetEx(from, to, dir,
+    /// angle, range) with from / to TARGET_SELF and TARGET_ENE_0; ai:GetToTargetAngle(TARGET_ENE_0) and
+    /// ai:GetRelativeAngleFromTarget(TARGET_ENE_0).
+    /// </summary>
+    public static bool IsSceneQuery(LuaCallExpr c)
+    {
+        var a = c.Arguments;
+        return c.Method switch
+        {
+            "GetDist" or "GetDistY" or "GetDistYSigned" or "GetToTargetAngle" or "GetRelativeAngleFromTarget" => a.Count == 1 && Who(a[0]) == "TARGET_ENE_0",
+            "IsInsideTarget" => a.Count >= 3 && Who(a[0]) == "TARGET_ENE_0" && a[1] is LuaNameExpr,
+            "IsInsideTargetCustom" => a.Count >= 6 && Who(a[0]) is { } f && Who(a[1]) is { } t && f != t && a[2] is LuaNameExpr,
+            "IsInsideTargetEx" => a.Count >= 5 && Who(a[0]) is { } f2 && Who(a[1]) is { } t2 && f2 != t2 && a[2] is LuaNameExpr,
+            _ => false,
+        };
+    }
+
+    /// <summary>The scene the simulation runs in (null outside it: the inputs are the user's)</summary>
+    public ILuaScene Scene;
+
+    /// <summary>Set while the simulation runs: Evaluate answers scene queries from the scene, not the inputs</summary>
+    public bool Live;
+
+    // AI_DIR_TYPE_*: the sector's middle, counter-clockwise from the front (the To* types, from the target's side, aren't answered)
+    private static readonly Dictionary<string, double> Directions = new()
+    {
+        ["AI_DIR_TYPE_CENTER"] = 0, ["AI_DIR_TYPE_F"] = 0, ["AI_DIR_TYPE_B"] = 180,
+        ["AI_DIR_TYPE_L"] = 90, ["AI_DIR_TYPE_R"] = -90,
+        ["AI_DIR_TYPE_FL"] = 45, ["AI_DIR_TYPE_FR"] = -45, ["AI_DIR_TYPE_BL"] = 135, ["AI_DIR_TYPE_BR"] = -135,
+    };
+
+    private static double Wrap(double angle)
+    {
+        angle %= 360;
+        if (angle > 180) angle -= 360;
+        if (angle < -180) angle += 360;
+        return angle;
+    }
+
+    /// <summary>
+    /// The scene's answer to a scene query (<see cref="IsSceneQuery"/>), or null without a scene or for a query it
+    /// can't answer. A facing check is true when the other one is within the sector of the given width (degrees)
+    /// around the direction, from the looker's front, and within the range when there is one (the vertical angle
+    /// is ignored: the characters are on flat ground). GetToTargetAngle and GetRelativeAngleFromTarget are 0..360,
+    /// clockwise from the front, as the scripts compare them (>= 90 and <= 270 is behind).
+    /// </summary>
+    public object SceneValue(LuaCallExpr c)
+    {
+        if (Scene == null || !IsSceneQuery(c))
+            return null;
+        var a = c.Arguments;
+        double? Num(int i) => i < a.Count ? a[i].AsNumber() : null;
+
+        bool? Inside(bool lookerIsSelf, LuaExpr dir, double? width, double? range)
+        {
+            if (dir is not LuaNameExpr d || !Directions.TryGetValue(d.Name, out var centre) || width is not { } w)
+                return null;
+            var bearing = lookerIsSelf ? Scene.TargetAngleFromSelf : Scene.SelfAngleFromTarget;
+            return Math.Abs(Wrap(bearing - centre)) <= w / 2 && (range is not { } r || Scene.Distance <= r);
+        }
+
+        switch (c.Method)
+        {
+            // The characters stand on the same flat ground
+            case "GetDistY" or "GetDistYSigned":
+                return 0.0;
+            case "GetDist":
+                return Scene.Distance;
+            case "GetToTargetAngle":
+                return (360 - Wrap(Scene.TargetAngleFromSelf)) % 360;
+            case "GetRelativeAngleFromTarget":
+                return (360 - Wrap(Scene.SelfAngleFromTarget)) % 360;
+            case "IsInsideTarget":
+                return Inside(true, a[1], Num(2), null);
+            case "IsInsideTargetCustom":
+                return Inside(Who(a[0]) == "TARGET_SELF", a[2], Num(3), Num(5));
+            case "IsInsideTargetEx":
+                return Inside(Who(a[0]) == "TARGET_SELF", a[2], Num(3), Num(4));
+        }
+        return null;
     }
 
     private enum Hint { Boolean, Number }
@@ -265,7 +373,7 @@ public class LuaSituation
                 Visit(c.Arguments[4], Hint.Number);
                 break;
             case LuaCallExpr c:
-                Mark(Live(Input(Text(c), ShortCall(c), Text(c), c), c), hint, comparedWith);
+                Mark(MarkLive(Input(Text(c), ShortCall(c), Text(c), c), c), hint, comparedWith);
                 break;
             case LuaNameExpr n when LocalInputs.TryGetValue(n.Name, out var bound):
                 foreach (var b in bound)
@@ -372,6 +480,9 @@ public class LuaSituation
         // Act planning: each call statement that runs, and the live distance to the target
         public Action<LuaCallExpr, Run> OnCall;
         public double? TargetDistance;
+
+        // Scene queries are answered from the scene (the simulation, or planning an act)
+        public bool Live;
     }
 
     // --- act planning ---
@@ -391,7 +502,7 @@ public class LuaSituation
         if (function == null)
             return steps;
 
-        var run = new Run { TargetDistance = targetDistance };
+        var run = new Run { TargetDistance = targetDistance, Live = Scene != null };
         run.OnCall = (call, r) =>
         {
             if (StepOf(call, r, targetDistance) is { } step)
@@ -497,7 +608,7 @@ public class LuaSituation
     /// <summary>Runs Activate with the inputs' current values</summary>
     public LuaSituationResult Evaluate()
     {
-        var run = new Run();
+        var run = new Run { Live = Live && Scene != null };
         foreach (var act in Goal.Acts.Keys)
             run.Result.Weights[act] = 0;
         Exec(Goal.Activate.Body, run);
@@ -595,7 +706,11 @@ public class LuaSituation
                 var cooling = ByKey.TryGetValue($"cooldown:{Text(c.Arguments[2])}", out var cd) && cd.Boolean;
                 return cooling ? new V(VKind.Number, 0) : Eval(c.Arguments[4], run);
 
-            // Planning an act: the distance to the target is where the viewer has the characters
+            // Live (the simulation, or planning an act): where the characters stand answers the distance and facing
+            case LuaCallExpr c when run.Live && SceneValue(c) is { } scene:
+                return scene is bool sb ? new V(VKind.Bool, B: sb) : new V(VKind.Number, Convert.ToDouble(scene));
+
+            // Planning without a scene: the distance given
             case LuaCallExpr { Method: "GetDist", Arguments: [LuaNameExpr { Name: "TARGET_ENE_0" }] } when run.TargetDistance is { } d:
                 return new V(VKind.Number, d);
 

@@ -18,8 +18,8 @@ public class LuaEditorScreen : EditorScreen
 
     public LuaFileList FileList;
     public LuaScriptView ScriptView;
-    public LuaOutline Outline;
     public LuaBattleView BattleView;
+    public LuaToolWindow ToolWindow;
     public LuaViewer Viewer;
     public LuaDefinitionIndex Definitions;
 
@@ -31,8 +31,8 @@ public class LuaEditorScreen : EditorScreen
         Project = project;
         FileList = new(this);
         ScriptView = new(this);
-        Outline = new(this);
         BattleView = new(this);
+        ToolWindow = new(this);
         Viewer = new(this);
         Definitions = new(this);
     }
@@ -71,11 +71,12 @@ public class LuaEditorScreen : EditorScreen
         Window("LUA_Window_Files", "luaEditor_Files", EditorFocusContext.LuaEditor_FileList, dsid, FileList.Draw);
         Window("LUA_Window_Script", "luaEditor_Script", EditorFocusContext.LuaEditor_Script, dsid, ScriptView.Draw,
             GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
-        Window("LUA_Window_Outline", "luaEditor_Outline", EditorFocusContext.LuaEditor_Outline, dsid, Outline.Draw);
         Window("LUA_Window_Battle", "luaEditor_Battle", EditorFocusContext.LuaEditor_Battle, dsid, BattleView.Draw,
             GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
+        if (CFG.Current.Interface_LuaEditor_ToolWindow)
+            Window("LUA_Window_Tools", "luaEditor_Tools", EditorFocusContext.LuaEditor_Tools, dsid, ToolWindow.Draw);
 
-        // The character viewport (a hosted Time Act Editor view): its own window, docked with the others
+        // The AI simulation's viewport: one window, docked with the others
         Viewer.Display(dsid);
     }
 
@@ -219,6 +220,12 @@ public class LuaEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
+            if (ImGui.MenuItem($"{LOC.Get("LUA_View_Toggle_Tools")}##luaToolWindowToggle"))
+                CFG.Current.Interface_LuaEditor_ToolWindow = !CFG.Current.Interface_LuaEditor_ToolWindow;
+            GUI.ShowActiveStatus(CFG.Current.Interface_LuaEditor_ToolWindow);
+
+            ImGui.Separator();
+
             if (ImGui.MenuItem($"{LOC.Get("LUA_View_Line_Numbers")}##luaLineNumbers"))
                 CFG.Current.LuaEditor_Show_Line_Numbers = !CFG.Current.LuaEditor_Show_Line_Numbers;
             GUI.ShowActiveStatus(CFG.Current.LuaEditor_Show_Line_Numbers);

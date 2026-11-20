@@ -1470,6 +1470,7 @@ public class CFG
     public bool LuaEditor_Readable_Names = true;
     public bool LuaEditor_Show_Line_Numbers = true;
     public bool LuaEditor_File_List_Display_Users = true;
+    public bool Interface_LuaEditor_ToolWindow = true;
     #endregion
 
     #region FX Editor
@@ -2037,6 +2038,12 @@ public class CFG
 
     // Effects are small, so the FX Editor shows a 1 m grid from the start
     public ViewportGridSet FxEditor_Grids = new()
+    {
+        Primary = new() { Display = true, Size = 50, SectionSize = 1, FollowCamera = true }
+    };
+
+    // The Lua Editor's AI simulation: a character and its target a few metres apart, on a 1 m grid from the start
+    public ViewportGridSet LuaEditor_Grids = new()
     {
         Primary = new() { Display = true, Size = 50, SectionSize = 1, FollowCamera = true }
     };

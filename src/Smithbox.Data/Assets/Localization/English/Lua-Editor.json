@@ -4,8 +4,8 @@
 
     { "Key": "LUA_Window_Files", "Text": "Files" },
     { "Key": "LUA_Window_Script", "Text": "Script" },
-    { "Key": "LUA_Window_Outline", "Text": "Outline" },
     { "Key": "LUA_Window_Battle", "Text": "AI Simulation" },
+    { "Key": "LUA_Window_Tools", "Text": "Tools" },
 
     { "Key": "LUA_Battle_Header", "Text": "AI Simulation" },
     { "Key": "LUA_Battle_Header_TT", "Text": "What the selected battle goal does: set the situation, see each act's chance of being picked, and click an act to watch its animations on the character." },
@@ -83,6 +83,7 @@
     { "Key": "LUA_Menubar_Save_TT", "Text": "Write the {0} Lua binders with unsaved changes into the project. Edited scripts are saved as text (the game loads text Lua), the binder's .luagnl is rebuilt, and every other entry keeps its bytes. A script with a syntax error isn't saved." },
     { "Key": "LUA_Edit_Toggle_Editing", "Text": "Edit Script" },
     { "Key": "LUA_Edit_Toggle_Editing_TT", "Text": "Switch the Script window between reading (coloured, Ctrl+click a name to go to its definition) and editing (a text box). An edit is applied when you leave the box; each applied edit is one undo step." },
+    { "Key": "LUA_View_Toggle_Tools", "Text": "Tools Window" },
     { "Key": "LUA_View_Line_Numbers", "Text": "Line Numbers" },
     { "Key": "LUA_View_Users", "Text": "NpcThinkParam Users" },
     { "Key": "LUA_View_Users_TT", "Text": "Show, after each binder, the NpcThinkParam rows whose logicId or battleGoalID is its number." },
@@ -100,6 +101,7 @@
     { "Key": "LUA_FileList_Users_TT", "Text": "NpcThinkParam rows using this goal ID (logicId or battleGoalID):" },
     { "Key": "LUA_FileList_Users_More", "Text": "... and {0} more" },
 
+    { "Key": "LUA_Tool_Act_Outline", "Text": "Act Outline" },
     { "Key": "LUA_Outline_Header", "Text": "Outline" },
     { "Key": "LUA_Outline_Header_TT", "Text": "What the selected script defines, in order. Click one to show it." },
     { "Key": "LUA_Outline_Show_Values", "Text": "Values" },
