@@ -12,7 +12,7 @@ public enum LuaBinderKind
 }
 
 /// <summary>
-/// The project's Lua binders (*.luabnd: ER's AI scripts). Listed at setup, each read on first use.
+/// The project's Lua binders (*.luabnd: the AI scripts of ER and NR). Listed at setup, each read on first use.
 /// </summary>
 public class LuaBank
 {

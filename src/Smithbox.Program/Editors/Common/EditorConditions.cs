@@ -112,11 +112,12 @@ public static class EditorConditions
 
     /// <summary>
     /// The Lua Editor: the games whose Lua binders Claude/Tools/LuaAiSurvey has checked (decompiled text faithful,
-    /// .luagnl rebuilt from it). ER only so far; the other luabnd games are the next survey runs.
+    /// .luagnl rebuilt from it). ER and NR so far (NR: 472/472 decompile, 469 recompile byte-identical, every binder,
+    /// .luagnl and .luainfo round trips); the other luabnd games are the next survey runs.
     /// </summary>
     public static bool SupportsLuaEditor(ProjectType curType)
     {
-        return curType is ProjectType.ER;
+        return curType is ProjectType.ER or ProjectType.NR;
     }
 
     public static bool SupportsHavokEditor(ProjectType curType)

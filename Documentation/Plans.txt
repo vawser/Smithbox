@@ -163,6 +163,8 @@
 # Lua Editor TODO
 #----------------------------------------------------
 
+- Pass over variables to consider in Battle Simulation
+
 - Extend support to the other games
 
 #----------------------------------------------------

@@ -8,7 +8,7 @@ using Veldrid.Sdl2;
 namespace StudioCore.Editors.LuaEditor;
 
 /// <summary>
-/// The Lua Editor: the Lua scripts in a project's binders (ER's AI, *.luabnd), as text. Bytecode is decompiled when a
+/// The Lua Editor: the Lua scripts in a project's binders (the AI of ER and NR, *.luabnd), as text. Bytecode is decompiled when a
 /// script is first shown; an edited script is saved as Shift-JIS source, which the game loads. See
 /// Claude/Documentation/ER AI Editor Analysis.md.
 /// </summary>
