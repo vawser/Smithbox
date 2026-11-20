@@ -411,13 +411,27 @@ public static class HavokAnimationReader
         return compendium != null ? HavokFile.ReadCompendium(Decompress(compendium), ProfileOf(game)) : null;
     }
 
-    public static HavokSkeletonData ReadSkeleton(ProjectType game, byte[] data, HavokCompendium? compendium)
+    /// <summary>
+    ///     Returns null when the file has no skeleton: the anibnd skeleton of DS1R c3290 is an empty animation container.
+    /// </summary>
+    public static HavokSkeletonData? ReadSkeleton(ProjectType game, byte[] data, HavokCompendium? compendium)
     {
         HavokDocument document = HavokFile.Read(Decompress(data), ProfileOf(game), compendium);
-        IHavokSkeleton skeleton = document.ObjectsOf<IHavokSkeleton>().FirstOrDefault()
-                                  ?? throw new InvalidOperationException("The file has no skeleton.");
+        IHavokSkeleton? skeleton = document.ObjectsOf<IHavokSkeleton>().FirstOrDefault();
 
-        return ToSkeletonData(skeleton);
+        return skeleton != null ? ToSkeletonData(skeleton) : null;
+    }
+
+    /// <summary>
+    ///     The bone skeleton of a ragdoll file (the hkx of a chrbnd), which also holds the coarser ragdoll skeleton
+    ///     that maps onto it: the one with the most bones is the one animations are made for. Null when it has none.
+    /// </summary>
+    public static HavokSkeletonData? ReadRagdollBoneSkeleton(ProjectType game, byte[] data)
+    {
+        HavokDocument document = HavokFile.Read(Decompress(data), ProfileOf(game));
+        IHavokSkeleton? skeleton = document.ObjectsOf<IHavokSkeleton>().MaxBy(s => s.BoneCount);
+
+        return skeleton != null ? ToSkeletonData(skeleton) : null;
     }
 
     /// <summary>

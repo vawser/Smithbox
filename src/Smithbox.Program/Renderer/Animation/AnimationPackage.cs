@@ -172,6 +172,11 @@ public sealed class AnimationPackage : IDisposable
                         package.AddBinder(OpenBinder(game, data));
                     }
                 }
+
+                if (package.Skeleton == null && package.Animations.Count > 0)
+                {
+                    package.Skeleton = ReadContainerSkeleton(fs, game, containerPath, modelName);
+                }
             }
             else if (fs.ReadFile(containerPath) is { } data)
             {
@@ -209,6 +214,46 @@ public sealed class AnimationPackage : IDisposable
         // The base binder goes first, so a skeleton is known before any clips are listed
         return found.OrderBy(p => Path.GetFileName(p).Split('.')[0].Length)
             .ThenBy(p => p, StringComparer.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    ///     The skeleton of a character whose anibnd has clips but no skeleton (DS1R c3290), from the ragdoll hkx in
+    ///     its chrbnd. Only for the chrbnd's own set: a shared set's clips are bound to the base character's bones.
+    /// </summary>
+    private static HavokSkeletonData? ReadContainerSkeleton(VirtualFileSystem fs, ProjectType game,
+        string containerPath, string modelName)
+    {
+        var containerModel = Path.GetFileName(containerPath).Split('.')[0];
+        if (!containerModel.Equals(modelName, StringComparison.OrdinalIgnoreCase) ||
+            fs.ReadFile(containerPath) is not { } data)
+        {
+            return null;
+        }
+
+        using BinderReader container = OpenBinder(game, data);
+        foreach (BinderFileHeader file in container.Files)
+        {
+            if (!NormalizeName(file.Name).EndsWith(".hkx", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            try
+            {
+                if (HavokAnimationReader.ReadRagdollBoneSkeleton(game, container.ReadFile(file).ToArray()) is
+                    { } skeleton)
+                {
+                    return skeleton;
+                }
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(typeof(AnimationPackage), $"Failed to read the skeleton in {file.Name}",
+                    LogPriority.Low, ex);
+            }
+        }
+
+        return null;
     }
 
     /// <summary>
