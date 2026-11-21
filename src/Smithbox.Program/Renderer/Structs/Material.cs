@@ -42,6 +42,13 @@ public unsafe struct Material
     /// </summary>
     public const ushort MaskBlendFlag = 0x200;
 
+    /// <summary>
+    ///     Set in <see cref="uvSet3" />, above the third layer's UV set: an opacity blend (FlverMaterial.OpacityFadeUvIndex),
+    ///     whose alpha is multiplied by the red of the blend mask slot (second UV slot, MaskTiling.xy), of the detail mask
+    ///     in the blend entries (third UV slot, MaskTiling.zw) and by the vertex alpha
+    /// </summary>
+    public const ushort OpacityFlag = 0x100;
+
     /// <summary>The MTD's g_EnvSpcSlotNo (0-3), which of the four env specular maps the material reads</summary>
     public const ushort EnvSpecularSlotMask = 0x0C00;
     public const int EnvSpecularSlotShift = 10;

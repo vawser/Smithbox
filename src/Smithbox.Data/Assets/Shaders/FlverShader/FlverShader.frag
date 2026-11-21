@@ -589,6 +589,8 @@ float g_weight[MAX_LAYERS];
 #define MATERIAL_MASK_TILING 0x100u
 // And with it: a GXFlver mask blend, weighed by the vertex alpha the mask pushes (Material.MaskBlendFlag)
 #define MATERIAL_MASK_BLEND 0x200u
+// In the third layer's UV set value: an opacity blend, its alpha times two opacity masks and the fade (Material.OpacityFlag)
+#define MATERIAL_OPACITY 0x100u
 
 // One of the 16 bit values of the current material
 uint MaterialValue(int row, int index)
@@ -2669,6 +2671,20 @@ void main()
 	{
 		diffuseColor.w = clamp(SampleLayer(ROW_NORMAL, 0).w * g_customizeDensity, 0.0, 1.0);
 	}
+
+#ifdef MATERIAL_UV3
+	// DS3's Fujir_*_OpacityBlend (Material.OpacityFlag, FlverMaterial.OpacityFadeUvIndex): the alpha is
+	// OpacityTexture1.r (blend mask slot, second UV) * OpacityTexture2.r (detail mask, third UV) * the fade (vertex alpha)
+	if ((MaterialValue(ROW_UVSET, 2) & MATERIAL_OPACITY) != 0u)
+	{
+		vec4 opacityTiling = layertilingdata[g_mat + 4u].maskTiling;
+		float opacity1 = SampleAt(MaterialValue(ROW_EXTRA, 0), 1, opacityTiling.xy, vec2(0.0)).r;
+		uint opacity2Tex = blenddata[g_mat + 5u].sources.w;
+		float opacity2 = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(opacity2Tex))], anisoLinearSampler),
+			fsin_texcoord3 * opacityTiling.zw, dFdx(fsin_texcoord3) * opacityTiling.zw, dFdy(fsin_texcoord3) * opacityTiling.zw).r;
+		diffuseColor.w *= opacity1 * opacity2 * clamp(fsin_color.a, 0.0, 1.0);
+	}
+#endif
 
 	if (diffuseColor.w < diffuseAlpha.w)
 	{

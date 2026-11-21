@@ -16,11 +16,6 @@ BB:
 DS3:
     Chrs:
     
-
-    Irithyll:
-    m000909 - Snow mound has floor tile texture plus snow isn't blended with tile floor
-    m001000 - Snow seems incorrctly blended with base textures
-    
     Carthus:
     m005430 - No texture
     o389041 - No texture

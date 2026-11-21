@@ -804,6 +804,13 @@ public class FlverResource : IResource, IDisposable
                 LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, texType, mpath, mtd);
                 layers.HasBlendMask = true;
                 break;
+
+            case MaterialTextureUse.Opacity:
+                // Their tiling lands in MaterialLayerTiling.MaskTiling (xy, zw), see FlverMaterial.OpacityFadeUvIndex
+                LookupTexture(route.Layer == 0 ? FlverMaterial.TextureType.BlendmaskTextureResource
+                    : FlverMaterial.TextureType.DetailMaskTextureResource, dest, texType, mpath, mtd);
+                dest.HasOpacity = true;
+                break;
         }
     }
 
@@ -996,6 +1003,14 @@ public class FlverResource : IResource, IDisposable
             // DES [ML]: two layers on UV 1 and 2, the lightmap on UV 3 (LookupDesLightmap)
             dest.ShaderName = @"FlverShader\FlverShader_blend_uv3";
             dest.LayoutType = MeshLayoutType.LayoutUV3;
+        }
+        else if (dest.HasOpacity && OpacityUvSets(dest.Definition) is { } opacitySets)
+        {
+            // An opacity blend (FlverMaterial.OpacityFadeUvIndex): its second opacity on a third UV slot, its fade
+            // in the vertex alpha
+            dest.ShaderName = @"FlverShader\FlverShader_blend_uv3";
+            dest.LayoutType = MeshLayoutType.LayoutUV3;
+            (dest.OpacityUvIndex, dest.OpacityFadeUvIndex) = opacitySets;
         }
         else if (layers.HasBlendMask && dest.Definition?.MaskBlend is { } maskBlend)
         {
@@ -1253,7 +1268,7 @@ public class FlverResource : IResource, IDisposable
         // Fur and the ChrCustomize colourings use the mask slot or the deform entry for other things
         // A GXFlver mask blend keeps its intensity in them as well (FlverMaterial.MaskBlendUvIndex)
         if (dest.Definition?.Blend == null && dest.Definition?.Fur == null && CustomizeMode(dest.Definition) == 0 &&
-            (dest.Definition?.MaskBlend != null ||
+            (dest.Definition?.MaskBlend != null || dest.HasOpacity ||
              dest.FlverTiling.Keys.Any(x => x.Contains("BlendMask", StringComparison.OrdinalIgnoreCase))))
         {
             dest.MaskTilingEntries = true;
@@ -1558,6 +1573,29 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
+    /// An opacity blend's FLVER UV sets (FlverMaterial.OpacityFadeUvIndex): OpacityTexture2's, the rank of its MTD UV
+    /// number, and the fade's, the one after every number the MTD's textures use. Null without UV numbers
+    /// </summary>
+    private static (int Second, int Fade)? OpacityUvSets(MaterialDefinition? definition)
+    {
+        if (definition == null)
+        {
+            return null;
+        }
+
+        var numbers = definition.Samplers.Where(x => x.UvNumber > 0).Select(x => x.UvNumber).Distinct().Order().ToList();
+        if (numbers.Count == 0)
+        {
+            return null;
+        }
+
+        MaterialSampler? second = definition.Samplers.Find(x => x.Type?.Contains("OpacityTexture2", StringComparison.OrdinalIgnoreCase) == true);
+        var secondSet = second is { UvNumber: > 0 } ? numbers.IndexOf(second.UvNumber) : Math.Min(1, numbers.Count - 1);
+
+        return (secondSet, numbers.Count);
+    }
+
+    /// <summary>
     /// The first float of the material's GX01 item (BlendMaskIntensity), 1 where it has none. Every BB mask blend
     /// material has one (0 to 10, 1 the most common), with its other floats 0
     /// </summary>
@@ -1594,6 +1632,10 @@ public class FlverResource : IResource, IDisposable
                 RecordFlverTiling(dest, flverTexture.ParamName, flverTexture.TilingScale);
             }
         }
+
+        // An OpacityTexture (MaterialTextureUse.Opacity): known before the buffer, as its tiling is in the blend entries
+        dest.HasOpacity = dest.Definition is { Blend: null } &&
+            mat.Textures.Any(x => x.ParamName?.Contains("OpacityTexture1", StringComparison.OrdinalIgnoreCase) == true);
 
         // The GXFlver mask blends' intensity, from the FLVER material's GX01 (BlendMaskIntensity, GX_Item_Descriptors)
         if (dest.Definition?.MaskBlend != null)
@@ -3065,7 +3107,7 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private unsafe void FillVerticesUV3(BinaryReaderEx br, ref FlverVertexBuffer buffer,
         Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform,
-        float uvFactor, bool firstBuffer, ref int uvSetsFilled, ref int uvSetsSeen, int maxUvSets, int thirdUv)
+        float uvFactor, bool firstBuffer, ref int uvSetsFilled, ref int uvSetsSeen, int maxUvSets, int thirdUv, int fadeUv = -1)
     {
         Span<FlverLayoutUV3> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -3147,6 +3189,14 @@ public class FlverResource : IResource, IDisposable
                             (*v).Uv3[0] = pick[0];
                             (*v).Uv3[1] = pick[1];
                             thirdFound = thirdUv >= seen && thirdUv < seen + count;
+                        }
+
+                        // An opacity fade's set: its u as the vertex alpha (FlverMaterial.OpacityFadeUvIndex)
+                        if (fadeUv >= seen && fadeUv < seen + count)
+                        {
+                            short* fade = fadeUv > seen ? second : first;
+                            (*v).Color[0] = (*v).Color[1] = (*v).Color[2] = 255;
+                            (*v).Color[3] = (byte)Math.Clamp((int)MathF.Round(fade[0] / _uvPackScale * 255f), 0, 255);
                         }
 
                         seen += count;
@@ -3523,7 +3573,7 @@ public class FlverResource : IResource, IDisposable
     /// <see cref="FillVerticesUV2(FLVER2.Mesh, Span{Vector3}, nint, int)"/> plus the FLVER UV set <paramref name="thirdUv"/>
     /// in the third slot (a GXFlver mask blend's mask), or the last set where the mesh has fewer
     /// </summary>
-    private unsafe void FillVerticesUV3(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int thirdUv)
+    private unsafe void FillVerticesUV3(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int thirdUv, int fadeUv = -1)
     {
         Span<FlverLayoutUV3> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayoutUV3* pverts = verts)
@@ -3545,6 +3595,14 @@ public class FlverResource : IResource, IDisposable
                 }
 
                 FillColorUNorm((*v).Color, ref vert);
+
+                // An opacity fade's set: its u as the vertex alpha (FlverMaterial.OpacityFadeUvIndex)
+                if (fadeUv >= 0 && fadeUv < vert.UVs.Count)
+                {
+                    (*v).Color[0] = (*v).Color[1] = (*v).Color[2] = 255;
+                    (*v).Color[3] = (byte)Math.Clamp((int)MathF.Round(vert.UVs[fadeUv].X * 255f), 0, 255);
+                }
+
                 if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
@@ -3908,7 +3966,7 @@ public class FlverResource : IResource, IDisposable
         }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV3)
         {
-            FillVerticesUV3(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, Math.Max(dest.Material.MaskBlendUvIndex, 0));
+            FillVerticesUV3(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, dest.Material.ThirdUvIndex, dest.Material.OpacityFadeUvIndex);
         }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
         {
@@ -4270,7 +4328,7 @@ public class FlverResource : IResource, IDisposable
             {
                 // A GXFlver mask blend, its mask's UV set in the third slot
                 FillVerticesUV3(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer,
-                    ref uvSetsFilled, ref uvSetsSeen, dest.Material.MaxUvSets, Math.Max(dest.Material.MaskBlendUvIndex, 0));
+                    ref uvSetsFilled, ref uvSetsSeen, dest.Material.MaxUvSets, dest.Material.ThirdUvIndex, dest.Material.OpacityFadeUvIndex);
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
             {
@@ -5119,6 +5177,25 @@ public class FlverResource : IResource, IDisposable
         /// </summary>
         public int MaskBlendUvIndex = -1;
 
+        /// <summary>The material has an OpacityTexture (MaterialTextureUse.Opacity)</summary>
+        public bool HasOpacity;
+
+        /// <summary>
+        /// DS3's Fujir_*_OpacityBlend (M[ARSN]_al_m_Opacity, M[A]_al_m_NoLight_Opacity): alpha = OpacityTexture1.r *
+        /// OpacityTexture2.r * TEXCOORD3.x, from the shaders' disassembly, the albedo on UV set 0, the opacities on
+        /// sets 1 and 2 (their MTD UV numbers 2 and 4), the fade on set 3. This is the fade's FLVER UV set: the one after
+        /// those the MTD's textures use (a UByte4Norm, 0-0.9), put in the vertex alpha; -1 for none. OpacityTexture1 is
+        /// in the blend mask slot read on the second UV slot, OpacityTexture2 in the detail mask slot read on the third
+        /// (<see cref="OpacityUvIndex"/>). Their scrolling (GXMD) is left out (Material.OpacityFlag, FlverShader.frag)
+        /// </summary>
+        public int OpacityFadeUvIndex = -1;
+
+        /// <summary>OpacityTexture2's FLVER UV set, in the third UV slot (<see cref="OpacityFadeUvIndex"/>)</summary>
+        public int OpacityUvIndex = -1;
+
+        /// <summary>The FLVER UV set in the third UV slot of FlverLayoutUV3: an opacity's or a mask blend's mask's</summary>
+        public int ThirdUvIndex => OpacityUvIndex >= 0 ? OpacityUvIndex : Math.Max(MaskBlendUvIndex, 0);
+
         /// <summary>The FLVER material's GX01 BlendMaskIntensity, which FC_BlendMaskParam is made from</summary>
         public float MaskBlendIntensity = 1f;
 
@@ -5546,7 +5623,7 @@ public class FlverResource : IResource, IDisposable
             SetMaterialTexture(TextureType.SpecularTextureResource2, ref MaterialData.specTex2, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource, ref MaterialData.shininessTex, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource2, ref MaterialData.shininessTex2, 2);
-            SetMaterialTexture(TextureType.BlendmaskTextureResource, ref MaterialData.blendMaskTex, 0);
+            SetMaterialTexture(TextureType.BlendmaskTextureResource, ref MaterialData.blendMaskTex, OpacityFadeUvIndex >= 0 ? WhiteTexture : (ushort)0);
             // 0 until the lightmap is on the GPU, which the shader reads as no lightmap
             SetMaterialTexture(TextureType.LightmapTextureResource, ref MaterialData.lightmapTex, 0);
 
@@ -5601,6 +5678,12 @@ public class FlverResource : IResource, IDisposable
                 MaterialData.uvSet2 |= Material.MaskTilingFlag;
             }
 
+            // An opacity blend (OpacityFadeUvIndex): its tilings are in the blend entries too
+            if (OpacityFadeUvIndex >= 0 && MaskTilingEntries)
+            {
+                MaterialData.uvSet3 |= Material.OpacityFlag;
+            }
+
             // A GXFlver mask blend: FC_BlendMaskParam in the blend entries (FlverShader.frag, MATERIAL_MASK_BLEND)
             if (MaskBlendUvIndex >= 0 && MaskTilingEntries)
             {
@@ -5616,7 +5699,7 @@ public class FlverResource : IResource, IDisposable
             if ((Detail != null || Magma != null || Water != null || layerDetail || MaskTilingEntries ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
             {
                 ushort detail = 0;
-                SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, BlackTexture);
+                SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, OpacityFadeUvIndex >= 0 ? WhiteTexture : BlackTexture);
 
                 // An extended layer's own detail mask, in the top 16 bits of its source (black until it loads)
                 if (Definition?.Blend?.Extended == true)

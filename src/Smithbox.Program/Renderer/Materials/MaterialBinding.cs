@@ -30,7 +30,12 @@ public enum MaterialTextureUse
     /// <summary>The finer normal of snow (MaterialResolvedSnow.DetailType), in the second normal slot</summary>
     SnowNormal,
     /// <summary>The height of snow or water (MaterialLayeredHeight), in the third normal slot</summary>
-    LayeredHeight
+    LayeredHeight,
+    /// <summary>
+    /// A shader-graph OpacityTexture (DS3's Fujir_*_OpacityBlend: OpacityTexture1 layer 0, OpacityTexture2 layer 1),
+    /// whose red multiplies the alpha. In the blend mask and detail mask slots, see FlverMaterial.OpacityFadeUvIndex
+    /// </summary>
+    Opacity
 }
 
 /// <summary>
@@ -245,6 +250,13 @@ public static class MaterialBinding
         }
         if (MatchLayer(name, "G_SHININESSTEXTURE", "G_SHININESS", "SHININESS", "SHININESS", out n)) return new(MaterialTextureUse.Shininess, n);
         if (name.Contains("BLENDMASK")) return new(MaterialTextureUse.BlendMask);
+
+        // The two opacities of a material without a blend recipe (the slots they go in are a recipe's). The single
+        // OpacityTexture of the SAT character blends is weighed otherwise, and stays dropped
+        if (d?.Blend == null && (name.Contains("OPACITYTEXTURE1") || name.Contains("OPACITYTEXTURE2")))
+        {
+            return new(MaterialTextureUse.Opacity, name.Contains("OPACITYTEXTURE2") ? 1 : 0);
+        }
 
         return MaterialTextureRoute.Drop(role == null ? "no sampler of the material has this type" : $"no route for the role {role}");
     }
