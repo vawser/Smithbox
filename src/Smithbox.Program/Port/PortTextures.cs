@@ -34,7 +34,7 @@ public static class PortTextures
     private const int R8G8B8A8_UNORM = 28, R8G8B8A8_UNORM_SRGB = 29, BC4_UNORM = 80;
 
     public static void Run(PortConfig config, PortGame output, Dictionary<string, BinderFile> textures, IReadOnlyCollection<TextureJob> jobs,
-        int group, PortLog log, Action<float> progress, CancellationToken cancel)
+        PortLog log, Action<float> progress, CancellationToken cancel)
     {
         // An ER AET TPF with a metallic map, for the TPF and per-suffix texture fields
         var templatePath = output.Paths.FirstOrDefault(p => p.Equals("/asset/aet/aet210/aet210_012.tpf.dcx", StringComparison.OrdinalIgnoreCase))
@@ -48,7 +48,8 @@ public static class PortTextures
         foreach (var container in containers)
         {
             cancel.ThrowIfCancellationRequested();
-            var path = $"/asset/aet/aet{group:000}/{container.Key.ToLowerInvariant()}.tpf.dcx";
+            // A container's group is in its name (AETGGG_NNN): a port can fill several groups
+            var path = $"/asset/aet/{container.Key[..6].ToLowerInvariant()}/{container.Key.ToLowerInvariant()}.tpf.dcx";
             var lowPath = path.Replace(".tpf.dcx", "_l.tpf.dcx");
 
             var tpf = new TPF { Platform = template.Platform, Encoding = template.Encoding, Flag2 = template.Flag2, Compression = template.Compression };
@@ -104,7 +105,7 @@ public static class PortTextures
             progress((float)++done / containers.Count);
         }
 
-        log.Line($"Textures: {jobs.Count} in {containers.Count} containers of aet{group:000}, {missing} missing; {checkedTextures} read back (with _l twins)");
+        log.Line($"Textures: {jobs.Count} in {containers.Count} containers of {string.Join(", ", containers.Select(c => c.Key[..6].ToLowerInvariant()).Distinct())}, {missing} missing; {checkedTextures} read back (with _l twins)");
     }
 
     /// <summary>Adds the textures of the project's existing copy that this run doesn't write.</summary>

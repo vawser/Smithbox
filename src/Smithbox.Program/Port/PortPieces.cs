@@ -49,7 +49,8 @@ public sealed class PortPieces
     /// <summary>The DS3 area's textures: name -> binder file (a TPF).</summary>
     public Dictionary<string, BinderFile> Textures { get; }
 
-    public int AetGroup { get; }
+    /// <summary>The AET group new containers go into (the next free one once it holds 1000).</summary>
+    public int AetGroup { get; private set; }
     public SortedDictionary<string, TextureJob> Jobs { get; } = new(StringComparer.OrdinalIgnoreCase);
     public Dictionary<string, PortedMatbin> Matbins { get; } = new(StringComparer.OrdinalIgnoreCase);
     public Dictionary<string, int> RuleCounts { get; } = new();
@@ -80,17 +81,30 @@ public sealed class PortPieces
         }
         Log.Line($"DS3 {ds3Map}: {Mtds.Count} MTDs, {Textures.Count} area textures");
 
-        // The AET group: the manifest's, else the first group from AetGroupFrom that neither the game nor the project uses
+        // The AET group being filled: the manifest's, else the first group from AetGroupFrom that neither the game nor
+        // the project uses. Container IDs are stored as group * 1000 + id; older manifests stored the id alone, for
+        // their one group, and are converted here.
+        UsedAetGroups = output.Paths.Select(p => Regex.Match(p, @"^/asset/aet/aet(\d{3})/", RegexOptions.IgnoreCase))
+            .Where(m => m.Success).Select(m => int.Parse(m.Groups[1].Value)).ToHashSet();
         if (manifest.AetGroup >= 0)
-            AetGroup = manifest.AetGroup;
-        else
         {
-            var used = output.Paths.Select(p => Regex.Match(p, @"^/asset/aet/aet(\d{3})/", RegexOptions.IgnoreCase))
-                .Where(m => m.Success).Select(m => int.Parse(m.Groups[1].Value)).ToHashSet();
-            AetGroup = Enumerable.Range(config.AetGroupFrom, 1000 - config.AetGroupFrom).First(g => !used.Contains(g));
-            manifest.AetGroup = AetGroup;
+            foreach (var key in manifest.AetIds.Where(e => e.Value < 1000).Select(e => e.Key).ToList())
+                manifest.AetIds[key] += manifest.AetGroup * 1000;
+            AetGroup = manifest.AetGroup;
         }
+        else
+            AetGroup = manifest.AetGroup = NewAetGroup();
         Log.Line($"AET group {AetGroup:000}");
+    }
+
+    private readonly HashSet<int> UsedAetGroups;
+
+    /// <summary>The first group from AetGroupFrom (then from 1) that the game, the project and the manifest don't use.</summary>
+    private int NewAetGroup()
+    {
+        var manifestGroups = Manifest.AetIds.Values.Select(v => v / 1000).ToHashSet();
+        return Enumerable.Range(Config.AetGroupFrom, 1000 - Config.AetGroupFrom).Concat(Enumerable.Range(1, Config.AetGroupFrom - 1))
+            .First(g => !UsedAetGroups.Contains(g) && !manifestGroups.Contains(g));
     }
 
     /// <summary>
@@ -125,11 +139,20 @@ public sealed class PortPieces
         key = key.ToLowerInvariant();
         if (!Manifest.AetIds.TryGetValue(key, out var id))
         {
-            id = Manifest.AetIds.Count == 0 ? 0 : Manifest.AetIds.Values.Max() + 1;
-            if (id > 999) throw new InvalidOperationException($"AET group {AetGroup:000} is full (1000 containers)");
+            var taken = Manifest.AetIds.Values.Where(v => v / 1000 == AetGroup).Select(v => v % 1000).ToHashSet();
+            if (taken.Count >= 1000)
+            {
+                var full = AetGroup;
+                AetGroup = Manifest.AetGroup = NewAetGroup();
+                Log.Line($"AET group {full:000} is full (1000 containers); continuing in {AetGroup:000}");
+                taken.Clear();
+            }
+            var n = 0;
+            while (taken.Contains(n)) n++;
+            id = AetGroup * 1000 + n;
             Manifest.AetIds[key] = id;
         }
-        return $"AET{AetGroup:000}_{id:000}_{suffix}";
+        return $"AET{id / 1000:000}_{id % 1000:000}_{suffix}";
     }
 
     private void Note(string text) => Notes[text] = Notes.GetValueOrDefault(text) + 1;
@@ -449,7 +472,7 @@ public sealed class PortPieces
                 if (Jobs.TryGetValue(aet, out var prior) && (prior.Kind != kind || !string.Equals(prior.Source, source, StringComparison.OrdinalIgnoreCase)))
                     Log.Warn($"{aet}: wanted as {kind} of {leaf}, already {prior.Kind} of {prior.Source}");
                 Jobs.TryAdd(aet, new TextureJob { Aet = aet, Kind = kind, Source = source, Spec = spec });
-                sampler.Path = $@"N:\GR\data\Asset\Environment\texture\AET{AetGroup:000}\{aet}.tif";
+                sampler.Path = $@"N:\GR\data\Asset\Environment\texture\{aet[..6]}\{aet}.tif";
 
                 var scale = hit.t.TilingScale;
                 if (s.Role == "O" && mtd?.Params.FirstOrDefault(p => p.Name == "g_DetailBumpCoordScale")?.Value is float[] d && d.Length >= 2)

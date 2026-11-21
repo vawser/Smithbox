@@ -66,6 +66,9 @@ public sealed class MapPort
         {
             Log.Fail($"{e.GetType().Name}: {e.Message}");
             Log.Line(e.StackTrace ?? "");
+            Log.Warn($"The port stopped at '{Stage}'. Files written before it (map pieces, collision, assets) are in the output project, " +
+                "but the later stages (materials, textures, MSB, params) were not: the target map may place models that don't match. " +
+                "Fix the cause and port again before loading the map in game.");
         }
         finally
         {
@@ -188,7 +191,7 @@ public sealed class MapPort
             var found = pieces.FindTextures(missing, ds3Map);
             Log.Line($"{missing.Count} textures not in {ds3Map[..3]}'s binders: {found} found in other areas");
         }
-        PortTextures.Run(Config, Output, pieces.Textures, pieces.Jobs.Values, pieces.AetGroup, Log,
+        PortTextures.Run(Config, Output, pieces.Textures, pieces.Jobs.Values, Log,
             p => Progress = 0.55f + 0.25f * p, cancel);
 
         // Collision
@@ -206,14 +209,18 @@ public sealed class MapPort
 
     /// <summary>
     /// The ER model number of a DS3 model in the target map: the manifest's, else the DS3 number when the target has
-    /// no such file, else the next free one from 900000.
+    /// no such file, else the next free one from 900000. Keyed by target, DS3 map and model: two DS3 maps share model
+    /// names (m001500 in m30 and in m38), and keys without the DS3 map gave a second map's port the first one's
+    /// numbers, so its models were written over the first's files (2026-11-21, m38 then m30 into m10_01).
     /// </summary>
     private string ModelNumber(string target, string ds3Model, Func<string, bool> exists, IEnumerable<string> takenThisRun)
     {
-        var key = $"{target}|{ds3Model}".ToLowerInvariant();
+        var key = $"{target}|{Request.Ds3Map}|{ds3Model}".ToLowerInvariant();
         if (Manifest.Models.TryGetValue(key, out var known)) return known;
 
-        var taken = takenThisRun.Concat(Manifest.Models.Where(m => m.Key.StartsWith(target + "|" + ds3Model[0], StringComparison.OrdinalIgnoreCase)).Select(m => m.Value))
+        // Every number the manifest gave this target's models of the same kind (m or h), from any DS3 map
+        var taken = takenThisRun.Concat(Manifest.Models.Where(m => m.Key.StartsWith(target + "|", StringComparison.OrdinalIgnoreCase)
+                && char.ToLowerInvariant(m.Key.Split('|')[^1][0]) == char.ToLowerInvariant(ds3Model[0])).Select(m => m.Value))
             .ToHashSet(StringComparer.OrdinalIgnoreCase);
         var number = ds3Model[1..];
         if (exists(number) || taken.Contains(number))
@@ -406,7 +413,7 @@ public sealed class MapPort
         // (every model the manifest gave this map, so one an earlier run placed and this run doesn't is removed too)
         var ourModels = pieceNumbers.Values.Select(n => $"m{n}").Concat(collisionNumbers.Values.Select(n => $"h{n}")).Concat(assets.Values).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var portModels = Manifest.Models.Where(m => m.Key.StartsWith(target + "|", StringComparison.OrdinalIgnoreCase))
-            .Select(m => $"{m.Key[(target.Length + 1)..][0]}{m.Value}")
+            .Select(m => $"{m.Key.Split('|')[^1][0]}{m.Value}")
             .Concat(Manifest.Models.Where(m => m.Key.StartsWith("asset|", StringComparison.OrdinalIgnoreCase)).Select(m => m.Value))
             .Concat(ourModels).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var removed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);

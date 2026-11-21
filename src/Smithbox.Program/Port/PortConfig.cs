@@ -279,11 +279,17 @@ public sealed class HitMaterialConfig
 public sealed class PortManifest
 {
     public int AetGroup { get; set; } = -1;
+    /// <summary>The AEG group new assets go into (objects, §4.6).</summary>
+    public int AegGroup { get; set; } = -1;
     /// <summary>AET container key (DS3 base name, or albedo|specular for a metal material) -> container id.</summary>
+    /// <remarks>group * 1000 + container id (manifests before 2026-11-21 stored the id alone, for AetGroup).</remarks>
     public Dictionary<string, int> AetIds { get; set; } = new(StringComparer.OrdinalIgnoreCase);
     /// <summary>MATBIN identity -> MATBIN name.</summary>
     public Dictionary<string, string> Matbins { get; set; } = new();
-    /// <summary>"{targetMap}|{ds3 model}" -> ER model number (map pieces m, collisions h).</summary>
+    /// <summary>
+    /// "{targetMap}|{ds3Map}|{ds3 model}" -> ER model number (map pieces m, collisions h; before 2026-11-21 without
+    /// the DS3 map); "asset|{ds3 object model}" -> ER asset name; "{targetMap}|envbox" -> the EnvMap box's name.
+    /// </summary>|{ds3 model}" -> ER model number (map pieces m, collisions h).</summary>
     public Dictionary<string, string> Models { get; set; } = new(StringComparer.OrdinalIgnoreCase);
 }
 

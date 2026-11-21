@@ -100,8 +100,7 @@ public sealed class PortObjects
             var intactFlver = File(".flver");
             if (intactFlver == null) { Log.Warn($"{model}: no FLVER in {path}"); skippedParts += group.Count(); continue; }
 
-            var number = Number(model);
-            var asset = $"AEG{AegGroup:000}_{number:000}";
+            var asset = AssetName(model);
             string Rename(string name) => Regex.Replace(name ?? "", Regex.Escape(model), asset, RegexOptions.IgnoreCase);
 
             foreach (var tpf in bnd.Files.Where(f => f.Name.EndsWith(".tpf", StringComparison.OrdinalIgnoreCase)))
@@ -190,27 +189,47 @@ public sealed class PortObjects
         return type;
     }
 
-    /// <summary>The manifest's number for a DS3 model, else the next free one in the group.</summary>
-    private int Number(string model)
+    /// <summary>
+    /// The manifest's asset name for a DS3 model (objects are shared between DS3 maps, so the name is too), else the
+    /// next free number in the current group; a full group (1000 assets) moves to the next free group.
+    /// </summary>
+    private string AssetName(string model)
     {
         var key = $"asset|{model}".ToLowerInvariant();
-        if (Manifest.Models.TryGetValue(key, out var known)) return int.Parse(known[7..]);
-        var taken = Manifest.Models.Where(m => m.Key.StartsWith("asset|")).Select(m => int.Parse(m.Value[7..])).ToHashSet();
+        if (Manifest.Models.TryGetValue(key, out var known)) return known;
+        var taken = Manifest.Models.Where(m => m.Key.StartsWith("asset|") && int.Parse(m.Value[3..6]) == AegGroup).Select(m => int.Parse(m.Value[7..])).ToHashSet();
+        if (taken.Count >= 1000)
+        {
+            var full = AegGroup;
+            AegGroup = Manifest.AegGroup = NewGroup();
+            Log.Line($"AEG group {full:000} is full (1000 assets); continuing in {AegGroup:000}");
+            taken.Clear();
+        }
         var n = 0;
         while (taken.Contains(n)) n++;
-        if (n > 999) throw new InvalidOperationException($"AEG group {AegGroup:000} is full");
         Manifest.Models[key] = $"AEG{AegGroup:000}_{n:000}";
-        return n;
+        return Manifest.Models[key];
     }
+
+    private HashSet<int> UsedAegGroups;
 
     /// <summary>The manifest's AEG group, else the first from AegGroupFrom with no binder in the game or project and no param row.</summary>
     private void PickGroup(Param param)
     {
-        var existing = Manifest.Models.FirstOrDefault(m => m.Key.StartsWith("asset|")).Value;
-        if (existing != null) { AegGroup = int.Parse(existing[3..6]); return; }
-        var used = Output.Paths.Select(p => Regex.Match(p, @"^/asset/aeg/aeg(\d{3})/", RegexOptions.IgnoreCase)).Where(m => m.Success)
+        UsedAegGroups = Output.Paths.Select(p => Regex.Match(p, @"^/asset/aeg/aeg(\d{3})/", RegexOptions.IgnoreCase)).Where(m => m.Success)
             .Select(m => int.Parse(m.Groups[1].Value)).Concat(param.Rows.Select(r => r.ID / 1000)).ToHashSet();
-        AegGroup = Enumerable.Range(AegGroupFrom, 1000 - AegGroupFrom).Concat(Enumerable.Range(1, AegGroupFrom - 1)).First(g => !used.Contains(g));
+        // Manifests before 2026-11-21 have no AegGroup: their assets' group
+        var existing = Manifest.Models.Where(m => m.Key.StartsWith("asset|")).Select(m => int.Parse(m.Value[3..6])).DefaultIfEmpty(-1).Max();
+        AegGroup = Manifest.AegGroup >= 0 ? Manifest.AegGroup : existing >= 0 ? existing : NewGroup();
+        Manifest.AegGroup = AegGroup;
+    }
+
+    /// <summary>A group the game, the project, the param and the manifest don't use.</summary>
+    private int NewGroup()
+    {
+        var mine = Manifest.Models.Where(m => m.Key.StartsWith("asset|")).Select(m => int.Parse(m.Value[3..6])).ToHashSet();
+        return Enumerable.Range(AegGroupFrom, 1000 - AegGroupFrom).Concat(Enumerable.Range(1, AegGroupFrom - 1))
+            .First(g => !UsedAegGroups.Contains(g) && !mine.Contains(g));
     }
 
     // ---- params -------------------------------------------------------------------------------------------------
