@@ -1290,6 +1290,20 @@ public class MaterialDefinition
     // (which its tar and corrosive liquid use too)
     private static readonly Regex MtdWaterShader = new(@"^GXFlver_Water", RegexOptions.Compiled);
 
+    // Sekiro's SAT water: M[Interaction]_Water, M[Interaction]_Tessellation_Water, M[Interaction]_Tessellation_PoisonWater,
+    // M[Flow]_Water and M[Flow]_Tessellation_Water. Its textures are normals, a flow map and masks, with no albedo, so as
+    // a standard surface it was a flat gray (m10_00_00_00_800004). Not the foams or waterfalls
+    private static readonly Regex SatWaterShader = new(@"^M\[(Interaction|Flow)\]_(Tessellation_)?(Poison)?Water$", RegexOptions.Compiled);
+
+    // Sekiro's fog cards, whose only textures are density masks (m99_CloudFog_3m, a sheet of cloud banks the cards' UVs
+    // pick from, and m99_LowCloud_3m): the slot of the mask that gives their shape. Drawn unlit, in the material's
+    // color, with the mask's red as the alpha (MaskAlpha). M[LandScape]_Fog has an albedo of its own and isn't one
+    private static readonly Dictionary<string, int> FogCardMaskSlot = new()
+    {
+        ["M[LandScape]_CloudFog"] = 7,
+        ["M[LandScape]_GroundFog"] = 0
+    };
+
     // Not known from the shader. Clear water that loses red first, and a smooth surface
     private static readonly float[] DefaultScatter = [0.01f, 0.01f, 0.01f];
     private static readonly float[] DefaultAbsorption = [0.4f, 0.1f, 0.06f];
@@ -1375,6 +1389,12 @@ public class MaterialDefinition
 
     /// <summary>The texture to use as the albedo of an unlit surface, or the normal of water</summary>
     public string? SurfaceType { get; set; }
+
+    /// <summary>
+    /// An unlit fog card (FogCardMaskSlot): its <see cref="SurfaceType"/> is a density mask, whose red is the alpha,
+    /// and its color is <see cref="DiffuseColor"/> alone (Material.MaskAlphaFlag)
+    /// </summary>
+    public bool MaskAlpha { get; set; }
 
     /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.Water"/></summary>
     public MaterialResolvedWater? Water { get; set; }
@@ -2154,13 +2174,27 @@ public class MaterialDefinition
 
     private void ResolveSurface()
     {
+        // A fog card: the mask in the albedo slot, tinted by the material's first color (CloudFog's pale pink, GroundFog's
+        // pale cyan) on top of g_DiffuseMapColor
+        if (FogCardMaskSlot.TryGetValue(ShaderName, out var maskSlot) &&
+            Samplers.Find(x => x.Slot == maskSlot && HasTexture(x)) is { } mask)
+        {
+            Surface = MaterialSurface.Unlit;
+            SurfaceType = mask.Type;
+            MaskAlpha = true;
+
+            float[] tint = Values("snp_0_color_0", [1, 1, 1]);
+            DiffuseColor = [DiffuseColor[0] * tint[0], DiffuseColor[1] * tint[1], DiffuseColor[2] * tint[2]];
+            return;
+        }
+
         var flame = FlameShader.IsMatch(ShaderName);
 
         if (flame || UnlitShader.IsMatch(ShaderName))
         {
             Surface = MaterialSurface.Unlit;
         }
-        else if (WaterShader.IsMatch(ShaderName) || MtdWaterShader.IsMatch(ShaderName))
+        else if (WaterShader.IsMatch(ShaderName) || MtdWaterShader.IsMatch(ShaderName) || SatWaterShader.IsMatch(ShaderName))
         {
             Surface = MaterialSurface.Water;
         }

@@ -3,4 +3,11 @@
 #---------------------
 
 SDT:
-    
+    m10_00_00_00:
+        - m800004 - Water not rendering properly (solid grey)
+        - m002033 - uncolored submesh
+        
+    m11_00_00_00
+        - m902010 - Not textured
+        - m911008 - Not textured
+        - m900100 - water: not textured

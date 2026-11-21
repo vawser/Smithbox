@@ -55,6 +55,12 @@ public unsafe struct Material
     /// </summary>
     public const ushort OpacityFlag = 0x100;
 
+    /// <summary>
+    ///     Set in <see cref="uvSet3" />: an unlit fog card (MaterialDefinition.MaskAlpha), whose albedo slot holds a density
+    ///     mask. The shader takes the mask's red as the alpha and white as the color, which the material's color then tints
+    /// </summary>
+    public const ushort MaskAlphaFlag = 0x200;
+
     /// <summary>The MTD's g_EnvSpcSlotNo (0-3), which of the four env specular maps the material reads</summary>
     public const ushort EnvSpecularSlotMask = 0x0C00;
     public const int EnvSpecularSlotShift = 10;

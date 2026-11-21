@@ -248,6 +248,20 @@ public static class MaterialBinding
             return MaterialTextureRoute.Drop("the hit damage effect's normal");
         }
 
+        // A mask blend without a recipe whose layers are told apart only by the number that ends the role (SDT's
+        // WallTest_dobei: AlbedoMap_0 and AlbedoMap_1, NormalMap_0 and NormalMap_2). Each is the layer of its number's
+        // rank among those of its role. By name they were all the bottom layer, and the second layer, which the mask
+        // still weighs in, was left the gray default (m10_00_00_00_002033's thatch)
+        if (d != null && sampler is { Suffix: >= 0 } && (role == "AlbedoMap" || role == "NormalMap") && BlendsByMask(d))
+        {
+            var rank = d.Samplers.Where(s => s.Role == role && s.Suffix >= 0).Select(s => s.Suffix).Distinct().Order()
+                .ToList().IndexOf(sampler.Suffix);
+
+            return rank < MaxLayers
+                ? new(role == "AlbedoMap" ? MaterialTextureUse.Albedo : MaterialTextureUse.Normal, rank)
+                : MaterialTextureRoute.Drop("a layer above the layers drawn");
+        }
+
         if (MatchLayer(name, "G_DIFFUSETEXTURE", "G_DIFFUSE", "ALBEDO_", "ALBEDO", out var n)) return new(MaterialTextureUse.Albedo, n);
         if (MatchLayer(name, "G_BUMPMAPTEXTURE", "G_BUMPMAP", "NORMAL_", "NORMAL", out n)) return new(MaterialTextureUse.Normal, n);
         if (MatchLayer(name, "G_SPECULARTEXTURE", "G_SPECULAR", "SPECULAR_", "SPECULAR", out n))
@@ -294,6 +308,15 @@ public static class MaterialBinding
         }
 
         return MaterialTextureRoute.Drop(role == null ? "no sampler of the material has this type" : $"no route for the role {role}");
+    }
+
+    /// <summary>
+    /// Whether the material's layers are weighed by a texture of its own: a BlendMask sampler that is routed as one,
+    /// because there is a layer above the first for it to blend to (see the BLENDMASK route)
+    /// </summary>
+    private static bool BlendsByMask(MaterialDefinition d)
+    {
+        return d.Samplers.Exists(s => s.Role.Contains("BlendMask", StringComparison.OrdinalIgnoreCase)) && HasUpperAlbedoLayer(d);
     }
 
     /// <summary>

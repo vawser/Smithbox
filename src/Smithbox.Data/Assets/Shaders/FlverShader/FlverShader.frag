@@ -594,6 +594,8 @@ float g_weight[MAX_LAYERS];
 #define MATERIAL_DOUBLE_FACE 0x400u
 // In the third layer's UV set value: an opacity blend, its alpha times two opacity masks and the fade (Material.OpacityFlag)
 #define MATERIAL_OPACITY 0x100u
+// And there: an unlit fog card, whose albedo slot is a density mask: its red is the alpha (Material.MaskAlphaFlag)
+#define MATERIAL_MASK_ALPHA 0x200u
 
 // One of the 16 bit values of the current material
 uint MaterialValue(int row, int index)
@@ -2558,6 +2560,13 @@ void main()
 #else
 	vec4 diffuseColor = SampleLayer(ROW_ALBEDO, 0);
 #endif
+
+	// A fog card (SDT's M[LandScape]_CloudFog and _GroundFog, MaterialDefinition.MaskAlpha): the texture is how much fog
+	// there is, and the color is the material's alone
+	if ((MaterialValue(ROW_UVSET, 2) & MATERIAL_MASK_ALPHA) != 0u)
+	{
+		diffuseColor = vec4(1.0, 1.0, 1.0, diffuseColor.r);
+	}
 
 	FamilyAlbedo(diffuseColor);
 

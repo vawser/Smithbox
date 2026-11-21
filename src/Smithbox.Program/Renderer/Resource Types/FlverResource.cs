@@ -5880,6 +5880,12 @@ public class FlverResource : IResource, IDisposable
                 MaterialData.uvSet3 |= Material.OpacityFlag;
             }
 
+            // A fog card: the albedo slot's red is the alpha (FlverShader.frag, MATERIAL_MASK_ALPHA)
+            if (Definition?.MaskAlpha == true)
+            {
+                MaterialData.uvSet3 |= Material.MaskAlphaFlag;
+            }
+
             // A GXFlver mask blend: FC_BlendMaskParam in the blend entries (FlverShader.frag, MATERIAL_MASK_BLEND)
             if (MaskBlendUvIndex >= 0 && MaskTilingEntries)
             {
