@@ -195,12 +195,12 @@ namespace Veldrid
                 pColorAttachments = colorAttachments,
                 pDepthAttachment = description.DepthStencilAttachment != null ? &depthAttachment : null
             };
-            vkCmdBeginRendering(_cb, &renderInfo);
+            if (GraphicsDevice.UseKhr13) vkCmdBeginRenderingKHR(_cb, &renderInfo); else vkCmdBeginRendering(_cb, &renderInfo);
         }
 
         public void EndRenderPass()
         {
-            vkCmdEndRendering(_cb);
+            if (GraphicsDevice.UseKhr13) vkCmdEndRenderingKHR(_cb); else vkCmdEndRendering(_cb);
         }
 
         /// <summary>
@@ -1632,7 +1632,7 @@ namespace Veldrid
         
         public void Barrier(VkDependencyInfo *dependencyInfo)
         {
-            vkCmdPipelineBarrier2(_cb, dependencyInfo);
+            if (GraphicsDevice.UseKhr13) vkCmdPipelineBarrier2KHR(_cb, dependencyInfo); else vkCmdPipelineBarrier2(_cb, dependencyInfo);
         }
 
         public void BufferBarrier(
@@ -2039,7 +2039,7 @@ namespace Veldrid
                 memoryBarrierCount = 1,
                 pMemoryBarriers = &barrier
             };
-            vkCmdPipelineBarrier2(_cb, &dependencyInfo);
+            if (GraphicsDevice.UseKhr13) vkCmdPipelineBarrier2KHR(_cb, &dependencyInfo); else vkCmdPipelineBarrier2(_cb, &dependencyInfo);
         }
         
         private void ClearSets(BoundResourceSetInfo[] boundSets)
