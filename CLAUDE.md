@@ -24,6 +24,9 @@ Do not use Python.
 # Plans
 Create planning and analysis markdown (.MD) files in the Smithbox/Claude/Documentation folder.
 
+# Logs
+When creating logs for diagnostics or other reasons, place them in the Smithbox/Claude/Logs folder.
+
 # Verification
 Do not try to verify changes by launching the program. Pass to the user and tell them what to check for. If additional information is needed during this step, include temporary changes to print additional diagnostics to a log that the user can pass back.
 

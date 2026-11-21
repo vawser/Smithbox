@@ -184,6 +184,12 @@ public class GPUBufferAllocator
             var oldStagingBuffer = _stagingBuffer;
             var oldSize = (uint)BufferSize;
 
+            // TEMPORARY BB texture diagnostics (BbTextureDiag)
+            if (BbTextureDiag.TracedTextures.Count > 0)
+            {
+                BbTextureDiag.Write($"RESIZE buffer '{_name}' {oldSize} -> {newSize}");
+            }
+
             BufferDescription desc = new(
                 newSize,
                 _usage | VkBufferUsageFlags.TransferDst | VkBufferUsageFlags.TransferSrc,
@@ -389,14 +395,25 @@ public class GPUBufferAllocator
             GC.SuppressFinalize(this);
         }
 
+        // Every write below runs under the allocator's lock. The writes are recorded on the render thread, while
+        // Allocate can resize the buffer from a loader thread at any moment (a map load allocates thousands of
+        // materials). Unlocked, a resize landing between MigrateIfPending and the write sent the write to the new
+        // buffer before the migration copy, which then overwrote it with the old buffer's contents: the material
+        // kept its defaults (untextured BB map pieces, see Claude/Documentation/BB Untextured Map Pieces.md).
+        // Under the lock, the migration copy, the staging buffer and the backing buffer all belong to one size.
+
         public void FillBuffer<T>(T[] data, Action completionHandler = null) where T : struct
         {
             SceneRenderer.AddBackgroundUploadTask((device, cl) =>
             {
-                _allocator.MigrateIfPending(cl);
-                device.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
-                cl.CopyBuffer(_allocator._stagingBuffer, AllocationStart, _allocator._backingBuffer,
-                    AllocationStart, AllocationSize);
+                lock (_allocator._allocationLock)
+                {
+                    _allocator.MigrateIfPending(cl);
+                    device.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
+                    cl.CopyBuffer(_allocator._stagingBuffer, AllocationStart, _allocator._backingBuffer,
+                        AllocationStart, AllocationSize);
+                }
+
                 if (completionHandler != null)
                 {
                     completionHandler.Invoke();
@@ -406,16 +423,23 @@ public class GPUBufferAllocator
 
         public void FillBuffer<T>(CommandList cl, T[] data) where T : struct
         {
-            _allocator.MigrateIfPending(cl);
-            cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, data);
+            lock (_allocator._allocationLock)
+            {
+                _allocator.MigrateIfPending(cl);
+                cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, data);
+            }
         }
 
         public void FillBuffer<T>(T data, Action completionHandler = null) where T : struct
         {
             SceneRenderer.AddBackgroundUploadTask((device, cl) =>
             {
-                _allocator.MigrateIfPending(cl);
-                cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, ref data);
+                lock (_allocator._allocationLock)
+                {
+                    _allocator.MigrateIfPending(cl);
+                    cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, ref data);
+                }
+
                 if (completionHandler != null)
                 {
                     completionHandler.Invoke();
@@ -425,42 +449,52 @@ public class GPUBufferAllocator
 
         public void FillBuffer<T>(GraphicsDevice d, CommandList cl, ref T data) where T : struct
         {
-            _allocator.MigrateIfPending(cl);
-            d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
-            cl.CopyBuffer(_allocator._stagingBuffer,
-                AllocationStart,
-                _allocator._backingBuffer,
-                AllocationStart,
-                AllocationSize);
-            cl.BufferBarrier(_allocator._backingBuffer,
-                VkPipelineStageFlags2.Transfer,
-                VkAccessFlags2.TransferWrite,
-                VkPipelineStageFlags2.AllGraphics,
-                _allocator._dstAccessFlags);
+            lock (_allocator._allocationLock)
+            {
+                _allocator.MigrateIfPending(cl);
+                d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
+                cl.CopyBuffer(_allocator._stagingBuffer,
+                    AllocationStart,
+                    _allocator._backingBuffer,
+                    AllocationStart,
+                    AllocationSize);
+                cl.BufferBarrier(_allocator._backingBuffer,
+                    VkPipelineStageFlags2.Transfer,
+                    VkAccessFlags2.TransferWrite,
+                    VkPipelineStageFlags2.AllGraphics,
+                    _allocator._dstAccessFlags);
+            }
         }
 
         public void FillBuffer<T>(GraphicsDevice d, CommandList cl, T[] data) where T : struct
         {
-            _allocator.MigrateIfPending(cl);
-            d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
-            cl.CopyBuffer(_allocator._stagingBuffer,
-                AllocationStart,
-                _allocator._backingBuffer,
-                AllocationStart,
-                AllocationSize);
-            cl.BufferBarrier(_allocator._backingBuffer,
-                VkPipelineStageFlags2.Transfer,
-                VkAccessFlags2.TransferWrite,
-                VkPipelineStageFlags2.AllGraphics,
-                _allocator._dstAccessFlags);
+            lock (_allocator._allocationLock)
+            {
+                _allocator.MigrateIfPending(cl);
+                d.UpdateBuffer(_allocator._stagingBuffer, AllocationStart, data);
+                cl.CopyBuffer(_allocator._stagingBuffer,
+                    AllocationStart,
+                    _allocator._backingBuffer,
+                    AllocationStart,
+                    AllocationSize);
+                cl.BufferBarrier(_allocator._backingBuffer,
+                    VkPipelineStageFlags2.Transfer,
+                    VkAccessFlags2.TransferWrite,
+                    VkPipelineStageFlags2.AllGraphics,
+                    _allocator._dstAccessFlags);
+            }
         }
 
         public void FillBuffer(IntPtr data, uint size, Action completionHandler)
         {
             SceneRenderer.AddBackgroundUploadTask((device, cl) =>
             {
-                _allocator.MigrateIfPending(cl);
-                cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, data, size);
+                lock (_allocator._allocationLock)
+                {
+                    _allocator.MigrateIfPending(cl);
+                    cl.UpdateBuffer(_allocator._backingBuffer, AllocationStart, data, size);
+                }
+
                 completionHandler.Invoke();
             });
         }

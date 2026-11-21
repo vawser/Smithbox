@@ -978,10 +978,10 @@ public class LuaLocomotion
     // Per role: the alias's ID, else the usual IDs in order (later games first, then DS1-era)
     private readonly long[][] Candidates;
     private readonly long?[] Resolved;
-    private readonly Func<AnimationPackage> Package;
+    private readonly Func<AnimationPackage?> Package;
 
     /// <param name="package">The character's animations once loaded (null until then: the first candidate is used)</param>
-    public LuaLocomotion(ProjectEntry project, string chr, Func<AnimationPackage> package)
+    public LuaLocomotion(ProjectEntry project, string chr, Func<AnimationPackage?> package)
     {
         Package = package;
         var byName = AliasClips(project, chr);

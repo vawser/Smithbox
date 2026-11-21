@@ -152,7 +152,7 @@ public class LightmapBinding
         }
     }
 
-    public bool TryGetEntry(string? materialName, out uint entry)
+    public bool TryGetEntry(string materialName, out uint entry)
     {
         if (_all != null)
         {

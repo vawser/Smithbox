@@ -83,7 +83,6 @@ public abstract class TimeActAction : ViewportAction, ITimeActHistoryItem
 public class TimeActCompoundAction : ViewportCompoundAction, ITimeActHistoryItem
 {
     private readonly List<ITimeActHistoryItem> Items;
-    private readonly string Label;
 
     public TimeActCompoundAction(List<ViewportAction> actions, string label = null) : base(actions)
     {

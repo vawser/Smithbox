@@ -118,6 +118,16 @@ public class TextureResource : IResource, IDisposable
             GPUTexture = SceneRenderer.GlobalTexturePool.AllocateTextureDescriptor();
         }
 
+        // TEMPORARY BB texture diagnostics (BbTextureDiag)
+        if (BbTextureDiag.IsTracedTexture(Texture.Textures[TPFIndex].Name))
+        {
+            BbTextureDiag.Write($"LOAD '{Texture.Textures[TPFIndex].Name}' platform={Texture.Platform} descriptor={(GPUTexture == null ? "NULL" : GPUTexture.TexHandle.ToString())} pool={GPUTexture?.Pool?.GetHashCode()}");
+            if (GPUTexture != null)
+            {
+                BbTextureDiag.TracedSlots[GPUTexture.TexHandle] = Texture.Textures[TPFIndex].Name;
+            }
+        }
+
         if (GPUTexture == null)
         {
             Smithbox.Log(this, LOC.Get("REND_TextureResource_Missing_Texture_Descriptor"));
@@ -175,8 +185,29 @@ public class TextureResource : IResource, IDisposable
                         return;
                     }
 
-                    gpuTexture.FillWithPS4TPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex],
-                        capturedTexture.Textures[capturedIndex].Name);
+                    // TEMPORARY BB texture diagnostics (BbTextureDiag)
+                    var diagTex = capturedTexture.Textures[capturedIndex];
+                    var traced = BbTextureDiag.IsTracedTexture(diagTex.Name);
+                    if (traced)
+                    {
+                        BbTextureDiag.Write($"UPLOAD start '{diagTex.Name}' fmt={diagTex.Format} dxgi={diagTex.Header?.DXGIFormat} {diagTex.Header?.Width}x{diagTex.Header?.Height} mips={diagTex.Mipmaps} bytes={diagTex.Bytes?.Length} index={gpuTexture.TexHandle}");
+                    }
+
+                    try
+                    {
+                        gpuTexture.FillWithPS4TPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex],
+                            capturedTexture.Textures[capturedIndex].Name);
+                    }
+                    catch (Exception e) when (traced)
+                    {
+                        BbTextureDiag.Write($"UPLOAD FAILED '{diagTex.Name}': {e}");
+                        throw;
+                    }
+
+                    if (traced)
+                    {
+                        BbTextureDiag.Write($"UPLOAD done '{diagTex.Name}' resident={gpuTexture.Resident} format={gpuTexture.Format}");
+                    }
 
                     OnUploaded(gpuTexture);
                 }

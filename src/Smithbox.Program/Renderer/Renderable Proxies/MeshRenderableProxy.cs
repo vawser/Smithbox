@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
@@ -958,7 +959,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         // Create draw call arguments
         MeshDrawParametersComponent meshcomp = new();
-        VertexIndexBufferAllocator.VertexIndexBufferHandle? geombuffer = _meshProvider.GeometryBuffer;
+        VertexIndexBufferAllocator.VertexIndexBufferHandle geombuffer = _meshProvider.GeometryBuffer!;
         var indexStart = geombuffer.IAllocationStart / (_meshProvider.Is32Bit ? 4u : 2u) +
                          (uint)_meshProvider.IndexOffset;
         meshcomp._indirectArgs.FirstInstance = _worldBuffer.AllocationStart / (uint)sizeof(InstanceData);
@@ -1076,6 +1077,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     ///     renderables keep the resource set of the buffer they were built with, so it can't grow under them.
     ///     False if the budget has run out, in which case the mesh isn't drawn.
     /// </summary>
+    [MemberNotNullWhen(true, nameof(_worldBuffer))]
     private unsafe bool EnsureWorldBuffer()
     {
         var instances = _instanceTransforms?.Length ?? 0;

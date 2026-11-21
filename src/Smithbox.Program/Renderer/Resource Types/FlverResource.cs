@@ -369,6 +369,13 @@ public class FlverResource : IResource, IDisposable
         // Textures are found by name, in the same pool as this model
         string textureName = ResourceName.Normalize(path);
 
+        // TEMPORARY BB texture diagnostics (BbTextureDiag)
+        if (dest.DiagTag != null)
+        {
+            BbTextureDiag.TracedTextures.TryAdd(textureName, 0);
+            BbTextureDiag.Write($"LOOKUP {dest.DiagTag}: slot={textureType} type={type} -> '{textureName}' alreadyFilled={dest.TextureResourceFilled[(int)textureType]} pool={(Context?.Pool ?? ResourceManager.DefaultPool).Name}");
+        }
+
         if (!dest.TextureResourceFilled[(int)textureType])
         {
             var selectedProject = Smithbox.Orchestrator.SelectedProject;
@@ -715,6 +722,12 @@ public class FlverResource : IResource, IDisposable
 
         MaterialTextureRoute route = MaterialBinding.Route(dest.Definition, texType, dest.MetallicType, glossInSpecular);
         var layer = route.Layer;
+
+        // TEMPORARY BB texture diagnostics (BbTextureDiag)
+        if (dest.DiagTag != null)
+        {
+            BbTextureDiag.Write($"ROUTE {dest.DiagTag}: {texType} -> use={route.Use} layer={layer} elsewhere={route.LoadedElsewhere} path='{mpath}'");
+        }
 
         if (route.LoadedElsewhere)
         {
@@ -1694,6 +1707,13 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialName = Path.GetFileNameWithoutExtension(mtd);
         dest.FlverMaterialName = matName;
         dest.Definition = GetMaterialDefinition(mtd);
+
+        // TEMPORARY BB texture diagnostics (BbTextureDiag)
+        if (BbTextureDiag.IsTracedModel(Context?.Name))
+        {
+            dest.DiagTag = $"{Context?.Name} ({Context?.Pool?.Name}) mat '{matName}' mtd '{dest.MaterialName}'";
+            BbTextureDiag.Write($"MATERIAL {dest.DiagTag}: definition={(dest.Definition != null ? "found" : "NULL")} texturing={CFG.Current.Viewport_Enable_Texturing} modelsOnly={ModelsOnly}");
+        }
         if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
@@ -1753,6 +1773,12 @@ public class FlverResource : IResource, IDisposable
         LoadDeformTextures(dest, mtd);
         ConfigureMaterialShader(dest, layers);
         MarkModelLighting(dest);
+
+        // TEMPORARY BB texture diagnostics (BbTextureDiag)
+        if (dest.DiagTag != null)
+        {
+            BbTextureDiag.Write($"SHADER {dest.DiagTag}: shader={dest.ShaderName} layers={layers.LayerCount} albedoFilled={dest.TextureResourceFilled[(int)FlverMaterial.TextureType.AlbedoTextureResource]} albedoFromColor={dest.AlbedoFromColor}");
+        }
     }
 
     /// <summary>
@@ -4825,9 +4851,20 @@ public class FlverResource : IResource, IDisposable
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>TEMPORARY: set on the materials BbTextureDiag traces</summary>
+        public string? DiagTag;
+
         public void OnResourceLoaded(IResourceHandle handle, int tag)
         {
             var texHandle = (ResourceHandle<TextureResource>)handle;
+
+            // TEMPORARY BB texture diagnostics (BbTextureDiag)
+            if (DiagTag != null)
+            {
+                var gpu = texHandle.Get()?.GPUTexture;
+                BbTextureDiag.Write($"LOADED {DiagTag}: slot={(TextureType)tag} '{handle.Name}' gpuTexture={(gpu == null ? "NULL" : $"index {gpu.TexHandle} resident={gpu.Resident}")}");
+            }
+
             texHandle.Acquire();
             TextureResources[tag]?.Release();
             TextureResources[tag] = texHandle;
@@ -4836,6 +4873,12 @@ public class FlverResource : IResource, IDisposable
 
         public void OnResourceUnloaded(IResourceHandle handle, int tag)
         {
+            // TEMPORARY BB texture diagnostics (BbTextureDiag)
+            if (DiagTag != null)
+            {
+                BbTextureDiag.Write($"UNLOADED {DiagTag}: slot={(TextureType)tag} '{handle.Name}'");
+            }
+
             TextureResources[tag]?.Release();
             TextureResources[tag] = null;
             UpdateMaterial();

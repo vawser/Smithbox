@@ -173,8 +173,8 @@ public class CutsceneMapBackdrop
 
             try
             {
-                if (msb == null && fs.FileExists(path))
-                    msb = MsbGameAdapter.For(type).Read(fs.ReadFile(path).Value);
+                if (msb == null && fs.FileExists(path) && fs.ReadFile(path) is { } data)
+                    msb = MsbGameAdapter.For(type).Read(data);
             }
             catch (Exception e)
             {
