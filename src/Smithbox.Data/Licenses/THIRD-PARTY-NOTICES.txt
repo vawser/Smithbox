@@ -50,6 +50,22 @@ bvh (src/native/NavGen/bvh, built into NavGen.dll)
   MIT. Copyright (c) Arsène Pérard-Gayot.
   https://github.com/madmann91/bvh
 
+ConcurrentSortedDictionary (Smithbox.Program/Utilities/ConcurrentSortedDictionary.cs)
+  MIT. Copyright (c) 2023 Matthew Krebser.
+  https://github.com/mkrebser/ConcurrentSortedDictionary
+
+QueuedTaskScheduler (Smithbox.Program/Logger/QueuedTaskScheduler.cs; modified)
+  Copyright (c) Microsoft Corporation. From the ParallelExtensionsExtras samples.
+  https://github.com/dotnet/samples (csharp/parallel/ParallelExtensionsExtras)
+
+xenia (texture tiling maths adapted in SoulsFormats TPF/Headerizer.cs)
+  BSD-3-Clause. Copyright (c) Ben Vanik and xenia contributors.
+  https://github.com/xenia-canary/xenia-canary
+
+MonoGame (mip size calculation adapted in Smithbox.Program/Renderer/Scene/TexturePool.cs)
+  Ms-PL / MIT. Copyright (c) MonoGame Team.
+  https://github.com/MonoGame/MonoGame
+
 
 Native libraries
 ----------------
@@ -101,6 +117,9 @@ Silk.NET (Core, Maths, OpenGL, SDL)  MIT    Copyright (c) .NET Foundation and Co
 SixLabors.ImageSharp          Six Labors Split License 1.0 (Apache-2.0 terms for open-source software)  Copyright (c) Six Labors
 Veldrid.ImageSharp            MIT           Copyright (c) 2017 Eric Mellino and Veldrid contributors
 Vortice.Vulkan, Vortice.VulkanMemoryAllocator  MIT  Copyright (c) Amer Koleci and Contributors
+Vortice.Direct3D11, Vortice.DXGI, Vortice.DirectX, Vortice.Mathematics  MIT  Copyright (c) Amer Koleci and Contributors
+SharpGen.Runtime, SharpGen.Runtime.COM  MIT  Copyright (c) SharpGenTools contributors. https://github.com/SharpGenTools/SharpGenTools
+Microsoft.Extensions.Logging, Microsoft.Extensions.Logging.Console  MIT  Copyright (c) .NET Foundation and Contributors
 ZstdNet                       BSD-3-Clause  Copyright (c) 2016-2026, SKB Kontur
 
 vgmstream r2168 (vgmstream/, unmodified official win64 release, used by the Sound Editor to decode audio)
@@ -113,6 +132,27 @@ vgmstream r2168 (vgmstream/, unmodified official win64 release, used by the Soun
   libcelt-0061.dll, libcelt-0110.dll  BSD-2-Clause  Copyright (c) Xiph.Org Foundation, Jean-Marc Valin, et al.
   The LGPL libraries are separate DLLs and can be replaced by the user; their sources are available from the
   projects above and from the vgmstream repository's build scripts.
+
+Fonts (Assets/Fonts)
+--------------------
+Roboto Mono (RobotoMono-Light.ttf)      Apache-2.0  Copyright 2015 Google Inc. https://github.com/googlefonts/RobotoMono
+Noto Sans CJK TC (NotoSansCJKtc-Light.otf, NotoSansCJKtc-Medium.otf)  OFL-1.1  Copyright 2014, 2015 Adobe Systems Incorporated
+Noto Sans Mono CJK TC (NotoSansMonoCJKtc-Regular.otf)  OFL-1.1  Copyright 2014, 2015 Adobe Systems Incorporated
+Noto Serif SC (NotoSerifSC-Regular.ttf)  OFL-1.1  Copyright (c) 2017-2024 Adobe
+Noto Sans Thai (NotoSansThai-Regular.ttf)  OFL-1.1  Copyright 2022 The Noto Project Authors
+Fork Awesome (forkawesome-webfont.ttf)  OFL-1.1  Fork Awesome contributors, based on Font Awesome 4.7.0 by Dave Gandy
+  OFL-1.1 full text for all of the above: Licenses/Fonts/OFL.txt
+OpenFontIcons (OpenFontIcons.ttf)  MIT  Copyright (c) 2013-2017 Cole Bemis (Feather icons). https://github.com/feathericons/feather
+  Fontello build with no metadata; identified as Feather from its glyph names.
+
+
+Game data
+---------
+The regulation.bin files under Assets/PARAM/*/Regulations are game files owned by
+FromSoftware, Inc. They are included only so the Param Upgrader can compare a
+project against the vanilla regulation of each patch. They are not covered by
+the GPL or by any other license in this file.
+
 
 Note: DrSwizzler has no license in its repository or package. Until its
 author publishes one, redistribution rights are unclear.

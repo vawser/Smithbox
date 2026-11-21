@@ -107,10 +107,15 @@
 
     <RemoveDir Directories="$(ReleaseDir)" Condition="Exists('$(ReleaseDir)')" />
 
+    <!--
+      Oodle (oo2core) is proprietary and must never ship. OodleSetup copies it from the
+      user's game folder into AppContext.BaseDirectory at runtime, which is the bin folder
+      for a dev build, so the bin globs below would otherwise pick it up.
+    -->
     <ItemGroup>
-      <VulkanFiles Include="$(VulkanOutDir)**\*" />
-      <OpenGLFiles Include="$(OpenGLOutDir)**\*" />
-      <UpdaterFiles Include="$(UpdaterOutDir)**\*" />
+      <VulkanFiles Include="$(VulkanOutDir)**\*" Exclude="$(VulkanOutDir)**\oo2core_*;$(VulkanOutDir)**\liboo2core*" />
+      <OpenGLFiles Include="$(OpenGLOutDir)**\*" Exclude="$(OpenGLOutDir)**\oo2core_*;$(OpenGLOutDir)**\liboo2core*" />
+      <UpdaterFiles Include="$(UpdaterOutDir)**\*" Exclude="$(UpdaterOutDir)**\oo2core_*;$(UpdaterOutDir)**\liboo2core*" />
     </ItemGroup>
 
     <Copy SourceFiles="@(VulkanFiles)"
