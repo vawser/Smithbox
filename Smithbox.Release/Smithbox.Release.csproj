@@ -54,10 +54,6 @@
     <ProjectReference Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <!-- Build tool for the Libs layout, run by MoveLibrariesToLibsFolder -->
-    <ProjectReference Include="..\src\Smithbox.ReleaseLayout\Smithbox.ReleaseLayout.csproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
 
   <!--
@@ -154,9 +150,14 @@
       <DotNetHost Condition="'$(DotNetHost)'==''">dotnet</DotNetHost>
     </PropertyGroup>
 
-    <!-- Built through the ProjectReference above; this only asks where its dll is -->
+    <!--
+      Built here rather than through a ProjectReference: a reference to an exe project makes the
+      SDK copy its deps.json/runtimeconfig.json into this project's bin, and Visual Studio does not
+      build references first (BuildProjectReferences=false), so that copy fails on a rebuild.
+      Being in Smithbox.sln is what restores it. A no-op when it is already up to date.
+    -->
     <MSBuild Projects="..\src\Smithbox.ReleaseLayout\Smithbox.ReleaseLayout.csproj"
-             Targets="GetTargetPath"
+             Targets="Build"
              Properties="Configuration=$(Configuration)">
       <Output TaskParameter="TargetOutputs" PropertyName="ReleaseLayoutTool" />
     </MSBuild>

@@ -11,6 +11,8 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <UseAppHost>false</UseAppHost>
+    <!-- Same configurations as the solution, so each solution configuration maps to one of its own -->
+    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
   </PropertyGroup>
 
 </Project>

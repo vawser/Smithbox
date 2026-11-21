@@ -615,7 +615,7 @@ public class Smithbox
 
     public void Run()
     {
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture; 
         CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 
         if (ProgramType is ProgramType.Editor)
