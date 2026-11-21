@@ -46,6 +46,11 @@
       "Container": "o325110",
       "Model": "o325110",
       "Shows": "asset: MultiBlend2_et1, GXFlver_GrassSpcBump"
+    },
+    {
+      "Container": "c6030",
+      "Model": "c6030",
+      "Shows": "chr: Fur_FDP, GXFlver_ColDifSpcBumpIbl_Bloody"
     }
   ]
 }

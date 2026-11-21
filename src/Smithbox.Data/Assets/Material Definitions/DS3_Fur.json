@@ -1,0 +1,14 @@
+{
+   "Fur_FDP":{
+      "Cut":1,
+      "FirstUvSlots":[
+         3
+      ],
+      "ThirdUv":false,
+      "ThirdUvSlots":[],
+      "BaseSecondUv":true,
+      "SecondUvSlots":[
+         2
+      ]
+   }
+}

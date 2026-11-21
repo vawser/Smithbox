@@ -310,6 +310,14 @@ public class MaterialFurRecipe
     public List<int> FirstUvSlots { get; set; } = new();
     public List<int> ThirdUvSlots { get; set; } = new();
 
+    /// <summary>
+    /// The base is read through the second UV set, from <see cref="SecondUvSlots"/>, and the strands through the first,
+    /// whose normal is then in <see cref="FirstUvSlots"/>. DS3's Fur_FDP: the strands (slot 1) and their normal (3) on
+    /// TEXCOORD0.xy, the body's albedo (2) on TEXCOORD0.zw
+    /// </summary>
+    public bool BaseSecondUv { get; set; }
+    public List<int> SecondUvSlots { get; set; } = new();
+
     /// <summary>A texture whose red multiplies the fur, where the red of <see cref="Mask"/> says, see <see cref="MaterialFurMask"/></summary>
     public int? Masked { get; set; }
     public int? Mask { get; set; }
@@ -609,6 +617,9 @@ public class MaterialResolvedFur
     public string? MaskType { get; set; }
 
     public bool ThirdUv { get; set; }
+
+    /// <summary>The base is on the second UV set, see <see cref="MaterialFurRecipe.BaseSecondUv"/></summary>
+    public bool BaseSecondUv { get; set; }
 
     /// <summary>How far the dither can move a pixel past the alpha reference, from 0 to 1</summary>
     public float DitherWidth { get; set; }
@@ -1801,10 +1812,15 @@ public class MaterialDefinition
             return;
         }
 
-        MaterialSampler? strand = Samplers.Find(x => x.Slot == recipe.Cut && x.Path != "");
+        // A MATBIN gives the paths, so an empty one is a slot the material doesn't use. An MTD gives none: its paths are
+        // all in the FLVER (DS3's C[Fur]), so its slots are all taken as used
+        var pathsInFlver = Samplers.TrueForAll(x => x.Path == "");
+        bool Used(MaterialSampler x) => pathsInFlver || x.Path != "";
+
+        MaterialSampler? strand = Samplers.Find(x => x.Slot == recipe.Cut && Used(x));
 
         MaterialSampler? InSlots(IEnumerable<int> slots, string role) =>
-            slots.Select(s => Samplers.Find(x => x.Slot == s && x.Role == role && x.Path != "" && x != strand))
+            slots.Select(s => Samplers.Find(x => x.Slot == s && x.Role == role && Used(x) && x != strand))
                 .FirstOrDefault(x => x != null);
 
         if (strand == null)
@@ -1812,7 +1828,12 @@ public class MaterialDefinition
             return;
         }
 
-        MaterialSampler? color = InSlots(recipe.FirstUvSlots, AlbedoRole);
+        List<int> baseSlots = recipe.BaseSecondUv ? recipe.SecondUvSlots : recipe.FirstUvSlots;
+        MaterialSampler? color = InSlots(baseSlots, AlbedoRole);
+
+        // The strands' own normal: on the third UV set, or on the first where the base has moved to the second
+        var strandNormal = recipe.ThirdUv ? InSlots(recipe.ThirdUvSlots, NormalRole)
+            : recipe.BaseSecondUv ? InSlots(recipe.FirstUvSlots, NormalRole) : null;
 
         Surface = MaterialSurface.Fur;
         Detail = null;
@@ -1825,8 +1846,9 @@ public class MaterialDefinition
         {
             BaseType = color?.Type,
             StrandType = strand.Type,
-            BaseNormalType = InSlots(recipe.FirstUvSlots, NormalRole)?.Type,
-            StrandNormalType = recipe.ThirdUv ? InSlots(recipe.ThirdUvSlots, NormalRole)?.Type : null,
+            BaseNormalType = InSlots(baseSlots, NormalRole)?.Type,
+            StrandNormalType = strandNormal?.Type,
+            BaseSecondUv = recipe.BaseSecondUv,
             MaskedType = recipe.Masked is int maskedSlot ? Samplers.Find(x => x.Slot == maskedSlot)?.Type : null,
             MaskType = recipe.Mask is int maskSlot ? Samplers.Find(x => x.Slot == maskSlot)?.Type : null,
             ThirdUv = recipe.ThirdUv,

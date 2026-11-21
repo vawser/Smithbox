@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.Utilities;
@@ -563,21 +563,26 @@ public class FlverResource : IResource, IDisposable
 
         if (dest.Definition?.Fur is { } fur)
         {
+            // The material's own path as before (found from ""), or the FLVER's where it has none: an MTD has no paths
+            // of its own (DS3's C[Fur])
+            string FurPath(string type) =>
+                string.IsNullOrEmpty(dest.Definition.Samplers.Find(x => x.Type == type)?.Path) ? flverPaths.GetValueOrDefault(type, "") : "";
+
             if (fur.BaseType != null)
             {
-                LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource, dest, fur.BaseType, "", mtd);
+                LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource, dest, fur.BaseType, FurPath(fur.BaseType), mtd);
             }
 
-            LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource2, dest, fur.StrandType, "", mtd);
+            LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource2, dest, fur.StrandType, FurPath(fur.StrandType), mtd);
 
             if (fur.BaseNormalType != null)
             {
-                LookupTexture(FlverMaterial.TextureType.NormalTextureResource, dest, fur.BaseNormalType, "", mtd);
+                LookupTexture(FlverMaterial.TextureType.NormalTextureResource, dest, fur.BaseNormalType, FurPath(fur.BaseNormalType), mtd);
             }
 
             if (fur.StrandNormalType != null)
             {
-                LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, fur.StrandNormalType, "", mtd);
+                LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, fur.StrandNormalType, FurPath(fur.StrandNormalType), mtd);
             }
 
             // The masked layer and its mask (FlverShader.frag, IsFur), both sampled with the first layer's tiling
@@ -1122,6 +1127,9 @@ public class FlverResource : IResource, IDisposable
 
         if (fur != null)
         {
+            // The strands (layer 2) on the third UV set, which sits in the second slot, or on the first. The base
+            // (layer 1) on the first, or on the second where the recipe says (DS3's Fur_FDP)
+            dest.MaterialData.uvSet = (ushort)(fur.BaseSecondUv ? 1 : 0);
             dest.MaterialData.uvSet2 = (ushort)(fur.ThirdUv ? 1 : 0);
         }
         else if (dest.Definition != null)

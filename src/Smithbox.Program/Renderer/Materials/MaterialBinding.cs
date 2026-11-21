@@ -241,6 +241,13 @@ public static class MaterialBinding
         // no slot, so for them this is the whole name.
         var name = samplerName == null ? "G_DIFFUSE" : samplerName.ToUpperInvariant();
 
+        // The hit damage effect's normal (DS3's SAT_Equip DamageNormal, SYSTEX_DummyDamagedNormal) is no surface normal.
+        // It comes before NormalMap_0, so it took the normal slot: noise normals, and a blue of 1, full gloss
+        if (name.Contains("DAMAGENORMAL") || name.Contains("DAMAGEDNORMAL"))
+        {
+            return MaterialTextureRoute.Drop("the hit damage effect's normal");
+        }
+
         if (MatchLayer(name, "G_DIFFUSETEXTURE", "G_DIFFUSE", "ALBEDO_", "ALBEDO", out var n)) return new(MaterialTextureUse.Albedo, n);
         if (MatchLayer(name, "G_BUMPMAPTEXTURE", "G_BUMPMAP", "NORMAL_", "NORMAL", out n)) return new(MaterialTextureUse.Normal, n);
         if (MatchLayer(name, "G_SPECULARTEXTURE", "G_SPECULAR", "SPECULAR_", "SPECULAR", out n))
@@ -249,7 +256,35 @@ public static class MaterialBinding
             return new(glossInSpecular ? MaterialTextureUse.Shininess : MaterialTextureUse.Specular, n);
         }
         if (MatchLayer(name, "G_SHININESSTEXTURE", "G_SHININESS", "SHININESS", "SHININESS", out n)) return new(MaterialTextureUse.Shininess, n);
-        if (name.Contains("BLENDMASK")) return new(MaterialTextureUse.BlendMask);
+
+        // DS3's SAT shaders (SAT_Equip, SAT_MultiBlend2_*_Equip): ReflectanceMap is the _r specular color map, the
+        // same texture GXFlver materials give as g_SpecularTexture. Its number is the layer (ReflectanceMap_1), which
+        // only counts where the layers are weighed: otherwise only the bottom layer is drawn, as with metallic maps
+        if (role == "ReflectanceMap")
+        {
+            var reflectanceLayer = Math.Max(sampler!.Suffix, 0);
+
+            if (reflectanceLayer > 0 && !HasKnownBlend(d))
+            {
+                return MaterialTextureRoute.Drop("a reflectance map of a layer above the bottom one");
+            }
+
+            return reflectanceLayer < MaxLayers
+                ? new(MaterialTextureUse.Specular, reflectanceLayer)
+                : MaterialTextureRoute.Drop("a reflectance map above the layers drawn");
+        }
+
+        if (name.Contains("BLENDMASK"))
+        {
+            // A mask with nothing above the first layer has no layer to blend to: DS3's SAT_Equip BlendMask is the burn
+            // effect's mask (SYSTEX_DummyBurn_m), which blended the armor into the empty second layer's white
+            if (d != null && !HasUpperAlbedoLayer(d))
+            {
+                return MaterialTextureRoute.Drop("a blend mask of a material with one layer");
+            }
+
+            return new(MaterialTextureUse.BlendMask);
+        }
 
         // The two opacities of a material without a blend recipe (the slots they go in are a recipe's). The single
         // OpacityTexture of the SAT character blends is weighed otherwise, and stays dropped
@@ -259,6 +294,30 @@ public static class MaterialBinding
         }
 
         return MaterialTextureRoute.Drop(role == null ? "no sampler of the material has this type" : $"no route for the role {role}");
+    }
+
+    /// <summary>
+    /// Whether any sampler of the material is an albedo above the first layer, by its role's number (AlbedoMap_1)
+    /// or by its name (g_DiffuseTexture2, Albedo_2), so that a blend mask has a layer to blend to.
+    /// </summary>
+    private static bool HasUpperAlbedoLayer(MaterialDefinition d)
+    {
+        foreach (MaterialSampler s in d.Samplers)
+        {
+            if (s.Role == "AlbedoMap" && s.Suffix >= 1)
+            {
+                return true;
+            }
+
+            var samplerName = s.Type[(s.Type.LastIndexOf("Texture2D_", StringComparison.Ordinal) + 1)..].ToUpperInvariant();
+
+            if (MatchLayer(samplerName, "G_DIFFUSETEXTURE", "G_DIFFUSE", "ALBEDO_", "ALBEDO", out var layer) && layer >= 1)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /// <summary>
