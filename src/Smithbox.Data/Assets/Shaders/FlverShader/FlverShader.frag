@@ -1259,8 +1259,9 @@ void ComputeLayerWeights()
 	vec3 channels;
   #if defined(MATERIAL_BLEND_MASK) && defined(MATERIAL_UV3)
 	// A GXFlver mask blend (MaterialResolvedMaskBlend, Material.MaskBlendFlag), as DS3's GXFlver_ColDifSpcBumpMulMaskDOL
-	// weighs it: the vertex alpha pushed toward 1 or 0 by k = mask.r * P.x + P.z (FC_BlendMaskParam, in the blend
-	// entries), smoothstepped. The mask is on its own UV set, in the third slot
+	// weighs it: the vertex alpha scaled up by 1 + k for k = mask.r * P.x + P.z above 0 (FC_BlendMaskParam, in the
+	// blend entries), or pulled toward k below it, smoothstepped. Alpha 0 stays layer 1 and alpha 1 layer 2 either way:
+	// the mask only shapes the transition. The mask is on its own UV set, in the third slot
 	if ((MaterialValue(ROW_UVSET, 1) & MATERIAL_MASK_BLEND) != 0u)
 	{
 		vec2 tiling = layertilingdata[g_mat + 4u].maskTiling.xy;
@@ -1270,7 +1271,7 @@ void ComputeLayerWeights()
 		blendData param = blenddata[g_mat + 5u];
 		float k = maskValue * param.sharpness.x + param.detail.x;
 		float a = clamp(fsin_color.a, 0.0, 1.0);
-		float w = clamp(k > 0.0 ? a + k * (1.0 - a) : a * (1.0 + k), 0.0, 1.0);
+		float w = clamp(k > 0.0 ? a * (1.0 + k) : a + k * (1.0 - a), 0.0, 1.0);
 		w = w * w * (3.0 - 2.0 * w);
 		g_weight = float[MAX_LAYERS](1.0 - w, c_layerCount > 1 ? w : 0.0, 0.0, 0.0);
 		if (c_layerCount <= 1)

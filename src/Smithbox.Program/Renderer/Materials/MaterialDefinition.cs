@@ -728,7 +728,7 @@ public class MaterialResolvedReflectWater
 /// The two-layer blend of the GXFlver MulMask and DirtMask shaders (Bloodborne's and DS3's M[ARSN]_blend materials),
 /// from DS3's GXFlver_ColDifSpcBumpMulMaskDOL and GXFlver_ColDifSpcBumpDirtMaskDOL disassembly
 /// (Claude/Documentation/BB Mask Blend.md). With a the vertex color's alpha and k = mask.r * P.x + P.z:
-/// w = k &gt; 0 ? sat(a + k(1 - a)) : sat(a(1 + k)), smoothstepped (w²(3 - 2w)), and the layers are lerp(1, 2, w).
+/// w = k &gt; 0 ? sat(a(1 + k)) : sat(a + k(1 - a)), smoothstepped (w²(3 - 2w)), and the layers are lerp(1, 2, w).
 /// P is FC_BlendMaskParam, from the FLVER material's GX01 (BlendMaskIntensity), see FlverResource.
 /// </summary>
 public class MaterialResolvedMaskBlend

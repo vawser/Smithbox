@@ -2482,6 +2482,25 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
+    /// The vertex color member a buffer's vertices are given: its lowest index, so VertexColor0 where there is one.
+    /// DS3's map pieces have only VertexColor1, which their GXFlver vertex shaders read as COLOR1 (and pass on to the
+    /// mask blend's weight), so taking index 0 alone left them with no color at all
+    /// </summary>
+    private static int VertexColorIndex(Span<FlverBufferLayoutMember> layouts)
+    {
+        var index = int.MaxValue;
+        foreach (FlverBufferLayoutMember l in layouts)
+        {
+            if (!l.IsSpecialMember && l.semantic == FLVER.LayoutSemantic.VertexColor && l.index < index)
+            {
+                index = l.index;
+            }
+        }
+
+        return index == int.MaxValue ? 0 : index;
+    }
+
+    /// <summary>
     /// Reads a vertex color member as red, green, blue, alpha.
     /// </summary>
     private unsafe void FillVertexColor(byte* dest, BinaryReaderEx br, FLVER.LayoutType type)
@@ -2792,6 +2811,7 @@ public class FlverResource : IResource, IDisposable
         bool vertexColor)
     {
         br.StepIn(buffer.bufferOffset);
+        var colorIndex = VertexColorIndex(layouts);
         var pverts = (FlverLayout*)vertBuffer;
 
         for (var i = 0; i < buffer.vertexCount; i++)
@@ -2843,7 +2863,7 @@ public class FlverResource : IResource, IDisposable
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, &n, br, l.type);
                 }
-                else if (vertexColor && l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                else if (vertexColor && l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == colorIndex)
                 {
                     FillVertexColor((*v).Color, br, l.type);
                 }
@@ -2954,6 +2974,7 @@ public class FlverResource : IResource, IDisposable
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
+        var colorIndex = VertexColorIndex(layouts);
         var uvsfilled = uvSetsFilled;
         fixed (FlverLayoutUV2* pverts = verts)
         {
@@ -3008,7 +3029,7 @@ public class FlverResource : IResource, IDisposable
 
                         uvsfilled += hasv2 ? 2 : 1;
                     }
-                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == colorIndex)
                     {
                         FillVertexColor((*v).Color, br, l.type);
                     }
@@ -3048,6 +3069,7 @@ public class FlverResource : IResource, IDisposable
     {
         Span<FlverLayoutUV3> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
+        var colorIndex = VertexColorIndex(layouts);
         var uvsfilled = uvSetsFilled;
         var seen = uvSetsSeen;
         short* first = stackalloc short[2];
@@ -3129,7 +3151,7 @@ public class FlverResource : IResource, IDisposable
 
                         seen += count;
                     }
-                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == colorIndex)
                     {
                         FillVertexColor((*v).Color, br, l.type);
                     }
@@ -3216,6 +3238,7 @@ public class FlverResource : IResource, IDisposable
     {
         Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
+        var colorIndex = VertexColorIndex(layouts);
         var uvsfilled = uvSetsFilled;
         fixed (FlverLayoutDeform* pverts = verts)
         {
@@ -3311,7 +3334,7 @@ public class FlverResource : IResource, IDisposable
 
                         uvsfilled += hasv2 ? 2 : 1;
                     }
-                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == colorIndex)
                     {
                         FillVertexColor((*v).Color, br, l.type);
                     }
@@ -5100,10 +5123,10 @@ public class FlverResource : IResource, IDisposable
         public float MaskBlendIntensity = 1f;
 
         /// <summary>
-        /// FC_BlendMaskParam's x and z from GX01's BlendMaskIntensity I, so that k = mask.r * x + z. The shader pushes
-        /// the vertex alpha up for k above 0 and down below it, and the blend materials keep their alpha at 0.5 (3616
-        /// of BB's 7692 blend meshes have one constant alpha): the mask is centred, k = I(2 mask - 1), which takes
-        /// alpha 0.5 to either layer at I 1. Inferred from the shader and the data, not read from the game's code
+        /// FC_BlendMaskParam's x and z from GX01's BlendMaskIntensity I, so that k = mask.r * x + z: centred,
+        /// k = I(2 mask - 1). The shader scales the alpha up by 1 + k for k above 0 and pulls it toward k below, so
+        /// alpha 0 and 1 stay the pure layers and the centred mask moves the transition either way (BB keeps 3616 of its
+        /// blend meshes at alpha 0.5). Inferred from the shader and the data, not read from the game's code
         /// (Claude/Documentation/BB Mask Blend.md)
         /// </summary>
         public static (float X, float Z) MaskBlendParam(float intensity) => (2f * intensity, -intensity);

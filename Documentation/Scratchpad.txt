@@ -3,6 +3,7 @@
 #---------------------
 
 BB:
+    Chrs:
     some chrs have textures that look oversized, resulting in smooth blurry texturing
         c2070
         c1030
@@ -13,6 +14,9 @@ BB:
     c2720 missing weapon tex
     
 DS3:
+    Chrs:
+    
+
     Irithyll:
     m000909 - Snow mound has floor tile texture plus snow isn't blended with tile floor
     m001000 - Snow seems incorrctly blended with base textures
