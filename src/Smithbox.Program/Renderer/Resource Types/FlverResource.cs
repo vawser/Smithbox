@@ -2022,8 +2022,65 @@ public class FlverResource : IResource, IDisposable
         }
 
         Vector3 uv = v.UVs[index];
+        if (_uvSetScales != null && index < _uvSetScales.Length)
+        {
+            uv *= _uvSetScales[index];
+        }
+
         dest[0] = PackUV(uv.X);
         dest[1] = PackUV(uv.Y);
+    }
+
+    /// <summary>
+    /// What each UV set of the FLVER2 mesh being filled is multiplied by (<see cref="FloatUvScales" />), or null for
+    /// none. Only the FLVER.Vertex fills read it; the raw buffer fills scale in <c>FillUVShort(..., BinaryReaderEx, ...)</c>
+    /// </summary>
+    private float[]? _uvSetScales;
+
+    /// <summary>
+    /// The scale of each UV set FLVER.Vertex reads from the mesh's buffer layouts, in the order it reads them: 1 / the
+    /// UV scale for a Float2 member, 1 for the rest, or null when no member needs one. FLVER.Vertex reads float UVs
+    /// unscaled, but a Float2 UV holds whole numbers at the file's UV scale, as the short types do: every Float2 UV of
+    /// DS3's MultiBlend map pieces (M[ARSN]_2m_l and its kin, ~3,700 meshes, all whole numbers) is, and read unscaled
+    /// they wrapped when packed and smeared the textures across the mesh (m30_00_00_00_000740). Float3 and Float4 UVs
+    /// (AC6 billboards, NR SpeedTree, DS3 FlowDisplacement) are fractional and stay as they are
+    /// (Claude/Tools/Ds3MapPieceProbe floatuv)
+    /// </summary>
+    private float[]? FloatUvScales(FLVER2.Mesh mesh)
+    {
+        if (Flver is not { } flver)
+        {
+            return null;
+        }
+
+        List<float> scales = new();
+        var any = false;
+        foreach (FLVER2.VertexBuffer buffer in mesh.VertexBuffers)
+        {
+            if (buffer.LayoutIndex < 0 || buffer.LayoutIndex >= flver.BufferLayouts.Count)
+            {
+                continue;
+            }
+
+            foreach (FLVER.LayoutMember member in flver.BufferLayouts[buffer.LayoutIndex])
+            {
+                if (member.Semantic != FLVER.LayoutSemantic.UV)
+                {
+                    continue;
+                }
+
+                var sets = member.Type is FLVER.LayoutType.Float4 or FLVER.LayoutType.Short4 or FLVER.LayoutType.Half4
+                    or FLVER.LayoutType.UByte4Norm ? 2 : 1;
+                var scale = member.Type == FLVER.LayoutType.Float2 ? 1f / _uvPackScale : 1f;
+                any |= scale != 1f;
+                for (var s = 0; s < sets; s++)
+                {
+                    scales.Add(scale);
+                }
+            }
+        }
+
+        return any ? scales.ToArray() : null;
     }
 
     /// <summary>
@@ -2189,7 +2246,8 @@ public class FlverResource : IResource, IDisposable
         hasv2 = false;
         if (type == FLVER.LayoutType.Float2)
         {
-            v = new Vector3(br.ReadVector2(), 0);
+            // Float2 UVs hold whole numbers at the file's UV scale, as the short types do (see FloatUvScales)
+            v = new Vector3(br.ReadVector2(), 0) / uvFactor;
 
             dest[0] = PackUV(v.X);
             dest[1] = PackUV(v.Y);
@@ -3810,6 +3868,8 @@ public class FlverResource : IResource, IDisposable
         var meshVertices = dest.GeomBuffer.MapVBuffer();
         var meshIndices = dest.GeomBuffer.MapIBuffer();
 
+        _uvSetScales = FloatUvScales(mesh);
+
         if (HasSpeedTreeVertices)
         {
             FillVerticesSpeedTree(mesh, pvhandle, meshVertices, dest.Material);
@@ -3835,6 +3895,8 @@ public class FlverResource : IResource, IDisposable
         {
             FillVerticesStandard(mesh, pvhandle, meshVertices, dest.Material.Definition?.ReadsVertexColor == true);
         }
+
+        _uvSetScales = null;
 
         if (is32bit)
         {
