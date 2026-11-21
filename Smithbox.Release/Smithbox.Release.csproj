@@ -54,10 +54,13 @@
     <ProjectReference Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\src\Smithbox.Port\Smithbox.Port.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
   <!--
-    Safety net: explicitly (re)build the three dependent projects with the
+    Safety net: explicitly (re)build the four dependent projects with the
     exact same Configuration/RuntimeIdentifier this project is using.
     Under "Build Solution" in VS this is effectively a no-op (they're
     already up to date), but it guarantees correctness if this project is
@@ -69,6 +72,7 @@
       <ProjectsToBuild Include="..\src\Smithbox.Vulkan\Smithbox.Vulkan.csproj" />
       <ProjectsToBuild Include="..\src\Smithbox.OpenGL\Smithbox.OpenGL.csproj" />
       <ProjectsToBuild Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj" />
+      <ProjectsToBuild Include="..\src\Smithbox.Port\Smithbox.Port.csproj" />
     </ItemGroup>
     <!--
       Only forward RuntimeIdentifier when it's actually set. Passing
@@ -93,6 +97,7 @@
       <VulkanOutDir>$(SolutionDir)src\Smithbox.Vulkan\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</VulkanOutDir>
       <OpenGLOutDir>$(SolutionDir)src\Smithbox.OpenGL\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</OpenGLOutDir>
       <UpdaterOutDir>$(SolutionDir)src\Smithbox.Updater\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</UpdaterOutDir>
+      <PortOutDir>$(SolutionDir)src\Smithbox.Port\bin\$(Configuration)\net10.0\$(RuntimeIdentifier)\</PortOutDir>
     </PropertyGroup>
 
     <!-- Fail loudly instead of silently copying nothing if a RID/path is wrong -->
@@ -104,6 +109,8 @@
            Condition="!Exists('$(OpenGLOutDir)')" />
     <Error Text="Updater output folder not found: $(UpdaterOutDir)"
            Condition="!Exists('$(UpdaterOutDir)')" />
+    <Error Text="Port output folder not found: $(PortOutDir)"
+           Condition="!Exists('$(PortOutDir)')" />
 
     <RemoveDir Directories="$(ReleaseDir)" Condition="Exists('$(ReleaseDir)')" />
 
@@ -116,6 +123,7 @@
       <VulkanFiles Include="$(VulkanOutDir)**\*" Exclude="$(VulkanOutDir)**\oo2core_*;$(VulkanOutDir)**\liboo2core*" />
       <OpenGLFiles Include="$(OpenGLOutDir)**\*" Exclude="$(OpenGLOutDir)**\oo2core_*;$(OpenGLOutDir)**\liboo2core*" />
       <UpdaterFiles Include="$(UpdaterOutDir)**\*" Exclude="$(UpdaterOutDir)**\oo2core_*;$(UpdaterOutDir)**\liboo2core*" />
+      <PortFiles Include="$(PortOutDir)**\*" Exclude="$(PortOutDir)**\oo2core_*;$(PortOutDir)**\liboo2core*" />
     </ItemGroup>
 
     <Copy SourceFiles="@(VulkanFiles)"
@@ -127,6 +135,10 @@
           SkipUnchangedFiles="false" />
 
     <Copy SourceFiles="@(UpdaterFiles)"
+          DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
+          SkipUnchangedFiles="false" />
+
+    <Copy SourceFiles="@(PortFiles)"
           DestinationFolder="$(ReleaseDir)%(RecursiveDir)"
           SkipUnchangedFiles="false" />
 
@@ -145,7 +157,7 @@
 
     <PropertyGroup>
       <ReleaseDir>$(SolutionDir)Smithbox.Release\Output\</ReleaseDir>
-      <ReleaseLayoutApps>Smithbox.Vulkan;Smithbox.OpenGL;Smithbox.Updater</ReleaseLayoutApps>
+      <ReleaseLayoutApps>Smithbox.Vulkan;Smithbox.OpenGL;Smithbox.Updater;Smithbox.Port</ReleaseLayoutApps>
       <DotNetHost Condition="'$(DOTNET_HOST_PATH)'!=''">$(DOTNET_HOST_PATH)</DotNetHost>
       <DotNetHost Condition="'$(DotNetHost)'==''">dotnet</DotNetHost>
     </PropertyGroup>

@@ -1,0 +1,20 @@
+{
+  "Notes": "DS3 -> ER collision surfaces (Claude/Documentation/DS3 to ER Map Port Analysis.md 8.8). A material ID is surface (id % 100) + property (id / 100, kept). Unlisted surfaces keep their ID. NeedsNewRow: DS3 no-fall-damage surfaces, mapped to the closest ER row until the port writes new HitMtrlParam rows.",
+  "Remap": {
+    "46": 45,
+    "36": 23,
+    "41": 39
+  },
+  "NeedsNewRow": {
+    "31": 31,
+    "32": 32,
+    "33": 33,
+    "34": 34,
+    "35": 35,
+    "40": 40,
+    "42": 0,
+    "47": 0,
+    "48": 24,
+    "49": 0
+  }
+}

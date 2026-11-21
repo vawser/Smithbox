@@ -77,6 +77,7 @@ public class Smithbox
     // Updater
     public ProgramUpdater Updater;
     public DeveloperKit DeveloperKit;
+    public StudioCore.Port.PortTool PortTool;
 
     public unsafe Smithbox(string version, RenderingBackend backendType, ProgramType programType)
     {
@@ -103,6 +104,10 @@ public class Smithbox
         {
             _programTitle = $"{LOC.Get("PROGRAM_DEVELOPER_TITLE")} - {_version}";
         }
+        else if (ProgramType is ProgramType.Port)
+        {
+            _programTitle = $"{LOC.Get("PROGRAM_PORT_TITLE")} - {_version}";
+        }
 
         if (ProgramType is ProgramType.Updater)
         {
@@ -111,6 +116,10 @@ public class Smithbox
         if (ProgramType is ProgramType.Developer)
         {
             DeveloperKit = new();
+        }
+        if (ProgramType is ProgramType.Port)
+        {
+            PortTool = new();
         }
 
         GUI.RestoreImguiIfMissing();
@@ -945,6 +954,10 @@ public class Smithbox
             {
                 DeveloperKit.Display(deltaseconds, dockspaceID);
             }
+        }
+        else if (ProgramType is ProgramType.Port)
+        {
+            PortTool?.Display(deltaseconds, dockspaceID);
         }
 
         DeveloperPanel.Display(dockspaceID);

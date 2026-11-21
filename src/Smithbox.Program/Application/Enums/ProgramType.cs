@@ -11,5 +11,6 @@ public enum ProgramType
 {
     Editor,
     Updater,
-    Developer
+    Developer,
+    Port
 }

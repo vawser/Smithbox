@@ -1,0 +1,3971 @@
+{
+  "Generated": "2026-11-21 19:17 by Claude/Tools/Ds3ErPortSurvey genmaterials",
+  "Notes": "DS3 -\u003E ER material port. Rules: Claude/Documentation/Material Mapping.md \u00A73. Templates: dominant values over all ER MATBINs of each shader.",
+  "CopiedParams": [
+    "g_AlphaRef",
+    "g_BlendMode",
+    "g_DiffuseMapColor",
+    "g_GX_bDisableDecal",
+    "g_GX_bDisableDepthWrite"
+  ],
+  "Suffixes": {
+    "A": "a",
+    "N": "n",
+    "M": "m",
+    "B": "1m",
+    "E": "em",
+    "O": "n"
+  },
+  "MetallicThreshold": 0.1,
+  "MetallicCoverage": 0.02,
+  "MetallicRamp": [
+    0.04,
+    0.1
+  ],
+  "AetGroupFrom": 100,
+  "DefaultShader": "M[AMSN_V]",
+  "Rules": [
+    {
+      "Id": "water",
+      "Any": [
+        "water"
+      ],
+      "Shader": "M[Water_Cheap]",
+      "Status": "handcheck",
+      "Note": "Visual only: ER rivers and lakes have samplers DS3 lacks"
+    },
+    {
+      "Id": "grass-albedo",
+      "Base": "^M\\[A\\]$",
+      "All": [
+        "grass"
+      ],
+      "Shader": "M[A]_Grass",
+      "Status": "direct"
+    },
+    {
+      "Id": "grass",
+      "All": [
+        "grass"
+      ],
+      "Shader": "M[AMSN_V]_Grass",
+      "Status": "direct"
+    },
+    {
+      "Id": "nolight",
+      "Any": [
+        "nolight"
+      ],
+      "Shader": "M[A]_NoLight",
+      "Status": "direct"
+    },
+    {
+      "Id": "glow",
+      "Any": [
+        "glow"
+      ],
+      "Shader": "M[AMSN_V]_Emissive_Glow",
+      "Status": "direct"
+    },
+    {
+      "Id": "blend4",
+      "Blend": 4,
+      "Shader": "M[AMSN_V][Mb3]",
+      "Status": "open",
+      "Note": "M5: no plain 4-layer ER map shader; the 4th layer drops"
+    },
+    {
+      "Id": "blend2-alpha",
+      "Blend": 2,
+      "Any": [
+        "edg",
+        "e"
+      ],
+      "Shader": "M[AMSN_V][Mb2]",
+      "Status": "open",
+      "Note": "M2: no plain [Mb2]_Edge; the alpha test drops"
+    },
+    {
+      "Id": "blend3-alpha",
+      "Blend": 3,
+      "Any": [
+        "edg",
+        "e"
+      ],
+      "Shader": "M[AMSN_V][Mb3]",
+      "Status": "open",
+      "Note": "M2: no plain [Mb3]_Edge; the alpha test drops"
+    },
+    {
+      "Id": "blend2",
+      "Blend": 2,
+      "Shader": "M[AMSN_V][Mb2]",
+      "Status": "direct"
+    },
+    {
+      "Id": "blend3",
+      "Blend": 3,
+      "Shader": "M[AMSN_V][Mb3]",
+      "Status": "direct"
+    },
+    {
+      "Id": "mask-detail",
+      "All": [
+        "m"
+      ],
+      "Shader": "M[AMSN_V][Mb2][Ov_N]",
+      "Status": "direct",
+      "Note": "The detail bump becomes the overlay normal; _m_em loses its emissive"
+    },
+    {
+      "Id": "emissive",
+      "Any": [
+        "em"
+      ],
+      "Shader": "M[AMSN_V]_Emissive",
+      "Status": "direct"
+    },
+    {
+      "Id": "albedo",
+      "Base": "^M\\[A\\]$",
+      "Shader": "M[A]",
+      "Status": "direct"
+    },
+    {
+      "Id": "additive",
+      "Any": [
+        "add"
+      ],
+      "Shader": "M[A]",
+      "Status": "direct",
+      "Note": "g_BlendMode copied"
+    },
+    {
+      "Id": "special",
+      "Base": "^(?!M\\[ARSN\\]$|P\\[ARSN\\]$|M\\[A\\]$)",
+      "Shader": "M[AMSN_V]",
+      "Status": "handcheck",
+      "Note": "Special DS3 shader: by sampler roles"
+    },
+    {
+      "Id": "single-edge-metal",
+      "Any": [
+        "e",
+        "edg"
+      ],
+      "Metallic": true,
+      "Shader": "M[AMSN]_Edge",
+      "Status": "direct"
+    },
+    {
+      "Id": "single-edge",
+      "Any": [
+        "e",
+        "edg"
+      ],
+      "Metallic": false,
+      "Shader": "M[AMSN_V]_Edge",
+      "Status": "direct"
+    },
+    {
+      "Id": "single-metal",
+      "Metallic": true,
+      "Shader": "M[AMSN]",
+      "Status": "direct"
+    },
+    {
+      "Id": "single",
+      "Metallic": false,
+      "Shader": "M[AMSN_V]",
+      "Status": "direct",
+      "Note": "_l, _p, _env, _snow, _tr, _al and _Decal drop to the plain shader"
+    }
+  ],
+  "Model": {
+    "Donor": "m10_00_00_00_000004",
+    "Header": {
+      "BigEndian": "False",
+      "Version": "131098",
+      "Unicode": "True",
+      "Unk4A": "False",
+      "Unk4B": "False",
+      "Unk4C": "0",
+      "Unk5C": "0",
+      "Unk5D": "2",
+      "Unk68": "4",
+      "SpecialModifier": "0",
+      "Unk74": "0"
+    },
+    "BaseSkeleton": [
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        0
+      ]
+    ],
+    "AllSkeletons": [
+      [
+        -1,
+        -1,
+        -1,
+        -1,
+        0
+      ]
+    ]
+  },
+  "Shaders": {
+    "M[Water_Cheap]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[Water_Cheap].spx",
+      "Matbins": 1,
+      "Representative": "m12_00_932",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m12_00\\matxml\\m12_00_932.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m12_00\\matxml\\m12_00_932.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "2",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GXFT_Refraction",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 1,
+          "DominantCount": 1
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 1
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_Water_Cheap__snp_Texture2D_2_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x1"
+        },
+        {
+          "Type": "M_Water_Cheap__snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            4,
+            4
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x1"
+        }
+      ],
+      "Donor": {
+        "Model": "m12_03_00_00_000004",
+        "Material": "m12_00_932 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m12_00\\matxml\\m12_00_932.matxml",
+        "MaterialIndex": 0,
+        "Textures": [
+          {
+            "ParamName": "M_Water_Cheap__snp_Texture2D_2_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_Water_Cheap__snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 131,
+              "Data": "AQAAAPQAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD8="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[A]_Grass": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[A]_Grass.spx",
+      "Matbins": 18,
+      "Representative": "m10_00_215",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m10_00\\matxml\\m10_00_215.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_215.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "128,0",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "M_A__Grass_snp_0_float_0",
+          "Type": "Float",
+          "Value": "1.8",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "M_A__Grass_snp_0_float_1",
+          "Type": "Float",
+          "Value": "1.5",
+          "Distinct": 1,
+          "DominantCount": 18
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 18
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_A__Grass_snp_Texture2D_1_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            1,
+            1
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x17"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_001515",
+        "Material": "m10_00_215 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\m10_00_215.mtd",
+        "MaterialIndex": 5,
+        "Textures": [
+          {
+            "ParamName": "M_A__Grass_snp_Texture2D_1_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 1,
+            "TilingTypeV": 1,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V]_Grass": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V]_Grass.spx",
+      "Matbins": 59,
+      "Representative": "ivy_ID01",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\ivy_ID01.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\ivy_ID01.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 58
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 4,
+          "DominantCount": 41
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 55
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "128,0",
+          "Distinct": 3,
+          "DominantCount": 56
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 2,
+          "DominantCount": 58
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 1,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 59
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V__Grass_snp_Texture2D_2_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x58"
+        },
+        {
+          "Type": "M_AMSN_V__Grass_snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x58"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_020004",
+        "Material": "m10_00_185 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_185.matxml",
+        "MaterialIndex": 0,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V__Grass_snp_Texture2D_2_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 1,
+            "TilingTypeV": 1,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__Grass_snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 136,
+              "Data": "AgAAAPoAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD/2AAAAAQAAAAAAAAA="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[A]_NoLight": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[A]_NoLight.spx",
+      "Matbins": 36,
+      "Representative": "m10_00_003",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m10_00\\matxml\\m10_00_003.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_003.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 35
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 35
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 35
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 35
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 35
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 3,
+          "DominantCount": 31
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 5,
+          "DominantCount": 30
+        },
+        {
+          "Name": "g_GX_ForwardRendering",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "GXFT_Emissive",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "GXFT_ForceForward",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 36
+        },
+        {
+          "Name": "M_A__NoLight_snp_0_color_0",
+          "Type": "Float5",
+          "Value": "1,1,1,1,1",
+          "Distinct": 6,
+          "DominantCount": 30
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 36
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_A__NoLight_snp_Texture2D_1_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            1,
+            1
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_BLACK .tif",
+          "Paths": "other x25, AET x8, empty x3"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000018",
+        "Material": "m10_00_003 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\m10_00_003.mtd",
+        "MaterialIndex": 2,
+        "Textures": [
+          {
+            "ParamName": "M_A__NoLight_snp_Texture2D_1_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V]_Emissive_Glow": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V]_Emissive_Glow.spx",
+      "Matbins": 21,
+      "Representative": "AEG008_263",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG008_263.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG008_263.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 20
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 20
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 19
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 17
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 19
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 5,
+          "DominantCount": 11
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 7,
+          "DominantCount": 14
+        },
+        {
+          "Name": "g_GlowScale",
+          "Type": "Float4",
+          "Value": "1,1,1,1",
+          "Distinct": 10,
+          "DominantCount": 6
+        },
+        {
+          "Name": "GXFT_Emissive",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 21
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 2,
+          "DominantCount": 20
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 21
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V__Emissive_Glow_snp_Texture2D_2_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x3, AET x18"
+        },
+        {
+          "Type": "M_AMSN_V__Emissive_Glow_snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x3, AET x18"
+        },
+        {
+          "Type": "M_AMSN_V__Emissive_Glow_snp_Texture2D_4_EmissiveMap_0",
+          "Role": "E",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x20"
+        }
+      ],
+      "Donor": {
+        "Model": "(synthesized: no map piece uses M[AMSN_V]_Emissive_Glow; GX list and layout of M[AMSN_V]\u0027s donor)",
+        "Material": "",
+        "MaterialIndex": 0,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V__Emissive_Glow_snp_Texture2D_2_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__Emissive_Glow_snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__Emissive_Glow_snp_Texture2D_4_EmissiveMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 133,
+              "Data": "AQAAAPUAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD8="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V][Mb3]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V][Mb3].spx",
+      "Matbins": 197,
+      "Representative": "AEG006_000_ID21",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG006_000_ID21.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG006_000_ID21.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 170
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 175
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 1,
+          "DominantCount": 197
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 11,
+          "DominantCount": 185
+        },
+        {
+          "Name": "M_AMSN_V__Mb3__snp_0_float_6",
+          "Type": "Float",
+          "Value": "2",
+          "Distinct": 9,
+          "DominantCount": 106
+        },
+        {
+          "Name": "M_AMSN_V__Mb3__snp_0_float_4",
+          "Type": "Float",
+          "Value": "2",
+          "Distinct": 9,
+          "DominantCount": 110
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 21,
+          "DominantCount": 132
+        },
+        {
+          "Name": "group_2_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 24,
+          "DominantCount": 110
+        },
+        {
+          "Name": "group_3_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 19,
+          "DominantCount": 115
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 197
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_8_GSBlendMap_AlbedoMap_1",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x196"
+        },
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_4_GSBlendMap_AlbedoMap_2",
+          "Role": "A",
+          "Rank": 1,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x196"
+        },
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_0_GSBlendMap_AlbedoMap_3",
+          "Role": "A",
+          "Rank": 2,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x2, AET x195"
+        },
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_2_GSBlendMap_NormalMap_1",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x196"
+        },
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_1_GSBlendMap_NormalMap_2",
+          "Role": "N",
+          "Rank": 1,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x196"
+        },
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_6_GSBlendMap_NormalMap_3",
+          "Role": "N",
+          "Rank": 2,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x2, AET x195"
+        },
+        {
+          "Type": "M_AMSN_V_Mb3__snp_Texture2D_3_GSBlendMap_Mask1Map_4",
+          "Role": "B",
+          "Rank": 0,
+          "Unk14": [
+            1,
+            1
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x4, AET x193"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000004",
+        "Material": "m10_00_043 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_043.matxml",
+        "MaterialIndex": 8,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_8_GSBlendMap_AlbedoMap_1",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_4_GSBlendMap_AlbedoMap_2",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_0_GSBlendMap_AlbedoMap_3",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_2_GSBlendMap_NormalMap_1",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_1_GSBlendMap_NormalMap_2",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_6_GSBlendMap_NormalMap_3",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb3__snp_Texture2D_3_GSBlendMap_Mask1Map_4",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V][Mb2]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V][Mb2].spx",
+      "Matbins": 336,
+      "Representative": "AEG006_000_ID10",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG006_000_ID10.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG006_000_ID10.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 334
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 336
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 329
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 308
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 322
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 6,
+          "DominantCount": 313
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 16,
+          "DominantCount": 311
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 19,
+          "DominantCount": 265
+        },
+        {
+          "Name": "group_2_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 22,
+          "DominantCount": 214
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 336
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V_Mb2__snp_Texture2D_1_GSBlendMap_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x335"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2__snp_Texture2D_2_GSBlendMap_AlbedoMap_1",
+          "Role": "A",
+          "Rank": 1,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x3, AET x333"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2__snp_Texture2D_13_GSBlendMap_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x335"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2__snp_Texture2D_14_GSBlendMap_NormalMap_1",
+          "Role": "N",
+          "Rank": 1,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x3, AET x333"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2__snp_Texture2D_0_GSBlendMap__BlendEdge",
+          "Role": "B",
+          "Rank": 0,
+          "Unk14": [
+            1,
+            1
+          ],
+          "FallbackPath": "N:\\GR\\data\\other\\SysTex\\c80_SYSTEX_GRAY.tif",
+          "Paths": "empty x7, AET x325, other x4"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000004",
+        "Material": "m10_00_201 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\m10_00_201.mtd",
+        "MaterialIndex": 16,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V_Mb2__snp_Texture2D_1_GSBlendMap_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2__snp_Texture2D_2_GSBlendMap_AlbedoMap_1",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2__snp_Texture2D_13_GSBlendMap_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2__snp_Texture2D_14_GSBlendMap_NormalMap_1",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2__snp_Texture2D_0_GSBlendMap__BlendEdge",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 192,
+              "Data": "BQAAAGUAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD9nAAAACwAAAAAAgD8AAIA/AACAPwAAgD8AAIA/GwAAAAEAAAAAAIA/HAAAAAEAAAAAAKBANQAAAAEAAAAAAIA/"
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 0,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V][Mb2][Ov_N]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V][Mb2][Ov_N].spx",
+      "Matbins": 468,
+      "Representative": "m20_00_124",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin_DLC02\\Map_m20_00\\matxml\\m20_00_124.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd_DLC02\\Map_m20_00\\matxml\\m20_00_124.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 467
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 3,
+          "DominantCount": 459
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 458
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 453
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 378
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 468
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 8,
+          "DominantCount": 441
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 26,
+          "DominantCount": 428
+        },
+        {
+          "Name": "M_AMSN_V__Mb2__Ov_N__snp_0_float_1",
+          "Type": "Float",
+          "Value": "2",
+          "Distinct": 12,
+          "DominantCount": 235
+        },
+        {
+          "Name": "M_AMSN_V__Mb2__Ov_N__snp_0_float_4",
+          "Type": "Float",
+          "Value": "0.6",
+          "Distinct": 22,
+          "DominantCount": 145
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 27,
+          "DominantCount": 358
+        },
+        {
+          "Name": "group_2_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 44,
+          "DominantCount": 237
+        },
+        {
+          "Name": "group_3_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 39,
+          "DominantCount": 150
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 467
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_2_GSBlendMap_AlbedoMap_1",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x466, empty x2"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_3_GSBlendMap_AlbedoMap_2",
+          "Role": "A",
+          "Rank": 1,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_BLACK .tif",
+          "Paths": "AET x463, empty x4, other x1"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_0_GSBlendMap_NormalMap_1",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x463, empty x5"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_1_GSBlendMap_NormalMap_2",
+          "Role": "N",
+          "Rank": 1,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x464, empty x4"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_5_GSBlendMap_NormalMap_0",
+          "Role": "O",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x455, empty x13"
+        },
+        {
+          "Type": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_4_GSBlendMap_Mask1Map_4",
+          "Role": "B",
+          "Rank": 0,
+          "Unk14": [
+            1,
+            1
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_Dummy_1m.tif",
+          "Paths": "AET x392, empty x74, other x2"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000004",
+        "Material": "m10_00_612 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_612.matxml",
+        "MaterialIndex": 29,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_2_GSBlendMap_AlbedoMap_1",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_3_GSBlendMap_AlbedoMap_2",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_0_GSBlendMap_NormalMap_1",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_1_GSBlendMap_NormalMap_2",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_5_GSBlendMap_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V_Mb2_Ov_N__snp_Texture2D_4_GSBlendMap_Mask1Map_4",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V]_Emissive": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V]_Emissive.spx",
+      "Matbins": 12,
+      "Representative": "m12_00_680",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m12_00\\matxml\\m12_00_680.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m12_00\\matxml\\m12_00_680.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 4,
+          "DominantCount": 6
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "GXFT_Emissive",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 12
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 3,
+          "DominantCount": 10
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 11
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V__Emissive_snp_Texture2D_2_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x11"
+        },
+        {
+          "Type": "M_AMSN_V__Emissive_snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x11"
+        },
+        {
+          "Type": "M_AMSN_V__Emissive_snp_Texture2D_4_EmissiveMap_0",
+          "Role": "E",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x11"
+        }
+      ],
+      "Donor": {
+        "Model": "m16_00_00_00_000010",
+        "Material": "m16_00_779 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m16_00\\matxml\\m16_00_779.matxml",
+        "MaterialIndex": 0,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V__Emissive_snp_Texture2D_2_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__Emissive_snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__Emissive_snp_Texture2D_4_EmissiveMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 141,
+              "Data": "AwAAAPkAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD/0AAAAAQAAAAAAgD/2AAAAAQAAAAAAAAA="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[A]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[A].spx",
+      "Matbins": 127,
+      "Representative": "AEG003_535_01",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG003_535_01.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG003_535_01.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 118
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 126
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 127
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 121
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "128,0",
+          "Distinct": 2,
+          "DominantCount": 70
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 3,
+          "DominantCount": 125
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 127
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_A__snp_Texture2D_0_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            1,
+            1
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_Dummy.tif",
+          "Paths": "other x108, AET x16, empty x3"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000004",
+        "Material": "m10_00_001 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\m10_00_001.mtd",
+        "MaterialIndex": 0,
+        "Textures": [
+          {
+            "ParamName": "M_A__snp_Texture2D_0_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 400,
+              "Data": "AQAAAI4BAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD8="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V].spx",
+      "Matbins": 1280,
+      "Representative": "AEG001_412_ID14",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG001_412_ID14.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG001_412_ID14.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 1280
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1280
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1280
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 1280
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 1272
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 1278
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 4,
+          "DominantCount": 1259
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 1279
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 1240
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 1280
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 1263
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 1114
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 1277
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 11,
+          "DominantCount": 1174
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 60,
+          "DominantCount": 1191
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 22,
+          "DominantCount": 1217
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 3,
+          "DominantCount": 1277
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V__snp_Texture2D_2_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_Dummy_a.tif",
+          "Paths": "empty x3, AET x1272, other x5"
+        },
+        {
+          "Type": "M_AMSN_V__snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x5, AET x1274, other x1"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000004",
+        "Material": "m10_00_030 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\m10_00_030.mtd",
+        "MaterialIndex": 5,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V__snp_Texture2D_2_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 133,
+              "Data": "AQAAAPUAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD8="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN]_Edge": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN]_Edge.spx",
+      "Matbins": 123,
+      "Representative": "AEG007_477",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG007_477.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG007_477.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 122
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 122
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 106
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 122
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 100
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 123
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "128,0",
+          "Distinct": 27,
+          "DominantCount": 59
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 2,
+          "DominantCount": 122
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 6,
+          "DominantCount": 116
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 121
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN__Edge_snp_Texture2D_3_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_Dummy_BlackAlpha_a.tif",
+          "Paths": "empty x3, AET x114, other x6"
+        },
+        {
+          "Type": "M_AMSN__Edge_snp_Texture2D_2_MetallicMap_0",
+          "Role": "M",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\c80_SYSTEX_BLACK.tif",
+          "Paths": "empty x22, AET x94, other x7"
+        },
+        {
+          "Type": "M_AMSN__Edge_snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_Dummy_BlackAlpha_n.tif",
+          "Paths": "empty x3, AET x114, other x6"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000022",
+        "Material": "m10_00_375 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_375.matxml",
+        "MaterialIndex": 18,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN__Edge_snp_Texture2D_3_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN__Edge_snp_Texture2D_2_MetallicMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN__Edge_snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 131,
+              "Data": "AgAAAPQAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD/vAAAAAQAAAAAAAAA="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN_V]_Edge": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN_V]_Edge.spx",
+      "Matbins": 416,
+      "Representative": "AEG003_092_ID10",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG003_092_ID10.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG003_092_ID10.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 1,
+          "DominantCount": 416
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 408
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 416
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 416
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 395
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 408
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 4,
+          "DominantCount": 400
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 416
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 386
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 416
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 415
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 298
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 413
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "128,0",
+          "Distinct": 21,
+          "DominantCount": 289
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 20,
+          "DominantCount": 388
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 2,
+          "DominantCount": 415
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 2,
+          "DominantCount": 414
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN_V__Edge_snp_Texture2D_2_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x1, AET x415"
+        },
+        {
+          "Type": "M_AMSN_V__Edge_snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "empty x3, AET x413"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000019",
+        "Material": "m10_00_397 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\matxml\\m10_00_397.matxml",
+        "MaterialIndex": 8,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN_V__Edge_snp_Texture2D_2_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN_V__Edge_snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 132,
+              "Data": "AgAAAPUAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD/yAAAAAQAAAAAAAAA="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    },
+    "M[AMSN]": {
+      "ShaderPath": "N:\\GR\\data\\Material\\sat\\OutputData\\SPX\\M[AMSN].spx",
+      "Matbins": 559,
+      "Representative": "AEG001_412_ID01",
+      "BinderName": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\Map_m60_00\\matxml\\AEG001_412_ID01.matbin",
+      "SourcePath": "N:\\GR\\data\\Material\\mtd\\Map_m60_00\\matxml\\AEG001_412_ID01.matxml",
+      "Params": [
+        {
+          "Name": "g_GX_bOverrideCAParam",
+          "Type": "Bool",
+          "Value": "true",
+          "Distinct": 2,
+          "DominantCount": 558
+        },
+        {
+          "Name": "g_GX_bMeshDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 559
+        },
+        {
+          "Name": "g_GX_bEnabledEnvIDWriting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 559
+        },
+        {
+          "Name": "g_GX_PaintDecalSlotNo",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 559
+        },
+        {
+          "Name": "g_GX_bDisableShadowCasting",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 558
+        },
+        {
+          "Name": "g_GX_ShadowCullingMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 559
+        },
+        {
+          "Name": "g_GX_DisplayableLodLevel",
+          "Type": "Int",
+          "Value": "65535",
+          "Distinct": 3,
+          "DominantCount": 556
+        },
+        {
+          "Name": "g_GX_MaterialID",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 3,
+          "DominantCount": 556
+        },
+        {
+          "Name": "g_GX_bDisableDecal",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 434
+        },
+        {
+          "Name": "g_GX_bDisableDepthWrite",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 1,
+          "DominantCount": 559
+        },
+        {
+          "Name": "g_GX_bEnableSSR",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 556
+        },
+        {
+          "Name": "g_GX_PrimCullNone",
+          "Type": "Bool",
+          "Value": "false",
+          "Distinct": 2,
+          "DominantCount": 484
+        },
+        {
+          "Name": "g_BlendMode",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 1,
+          "DominantCount": 559
+        },
+        {
+          "Name": "g_AlphaRef",
+          "Type": "Int2",
+          "Value": "0,0",
+          "Distinct": 12,
+          "DominantCount": 515
+        },
+        {
+          "Name": "g_DiffuseMapColor",
+          "Type": "Float3",
+          "Value": "1,1,1",
+          "Distinct": 15,
+          "DominantCount": 542
+        },
+        {
+          "Name": "group_1_CommonUV-UVParam",
+          "Type": "Float2",
+          "Value": "1,1",
+          "Distinct": 11,
+          "DominantCount": 542
+        },
+        {
+          "Name": "g_GX_CameraFadeParamId",
+          "Type": "Int",
+          "Value": "0",
+          "Distinct": 3,
+          "DominantCount": 555
+        }
+      ],
+      "Samplers": [
+        {
+          "Type": "M_AMSN__snp_Texture2D_0_AlbedoMap_0",
+          "Role": "A",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_BLACK .tif",
+          "Paths": "AET x485, empty x7, other x67"
+        },
+        {
+          "Type": "M_AMSN__snp_Texture2D_2_MetallicMap_0",
+          "Role": "M",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "N:\\GR\\data\\Other\\SysTex\\SYSTEX_BLACK .tif",
+          "Paths": "empty x43, AET x449, other x67"
+        },
+        {
+          "Type": "M_AMSN__snp_Texture2D_1_NormalMap_0",
+          "Role": "N",
+          "Rank": 0,
+          "Unk14": [
+            0,
+            0
+          ],
+          "FallbackPath": "",
+          "Paths": "AET x484, empty x9, other x66"
+        }
+      ],
+      "Donor": {
+        "Model": "m10_00_00_00_000008",
+        "Material": "m10_00_206 -\u003E N:\\GR\\data\\Material\\mtd\\Map_m10_00\\m10_00_206.mtd",
+        "MaterialIndex": 5,
+        "Textures": [
+          {
+            "ParamName": "M_AMSN__snp_Texture2D_0_AlbedoMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN__snp_Texture2D_2_MetallicMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          },
+          {
+            "ParamName": "M_AMSN__snp_Texture2D_1_NormalMap_0",
+            "TilingScale": [
+              1,
+              1
+            ],
+            "TilingTypeU": 0,
+            "TilingTypeV": 0,
+            "Unk14": 0,
+            "Unk18": 0,
+            "Unk1C": 0
+          }
+        ],
+        "Gx": {
+          "TerminatorID": 2147483647,
+          "TerminatorLength": 0,
+          "Items": [
+            {
+              "ID": "GXMD",
+              "Unk04": 133,
+              "Data": "AgAAAPMAAAALAAAAAACAPwAAgD8AAIA/AACAPwAAgD/vAAAAAQAAAAAAAAA="
+            },
+            {
+              "ID": "GX00",
+              "Unk04": 102,
+              "Data": "AAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+            }
+          ]
+        },
+        "Layout": [
+          {
+            "Semantic": "Position",
+            "Index": 0,
+            "Type": "Float3",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Normal",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "Tangent",
+            "Index": 0,
+            "Type": "UByte4",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "VertexColor",
+            "Index": 1,
+            "Type": "UByte4Norm",
+            "Stream": 0,
+            "SpecialModifier": 0
+          },
+          {
+            "Semantic": "UV",
+            "Index": 0,
+            "Type": "Short2",
+            "Stream": 0,
+            "SpecialModifier": 0
+          }
+        ],
+        "NormalW": 0
+      }
+    }
+  }
+}
