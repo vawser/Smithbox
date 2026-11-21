@@ -74,7 +74,8 @@ public class MapLightCollector
         var found = new List<(float Distance, MapLightData Data)>();
 
         var radius = Math.Max(CFG.Current.Viewport_BTL_Light_Radius, 0.0f);
-        var intensityScale = GetIntensityScale(SceneRenderer.MapLighting);
+        // Game mode reduced to the map's lights draws without the GPARAM, so its exposure isn't theirs either
+        var intensityScale = GetIntensityScale(RenderMode.MapLightsOnly ? null : SceneRenderer.MapLighting);
 
         foreach (var map in maps)
         {

@@ -36,6 +36,13 @@ public static class RenderMode
     /// <summary>Whether the screen effects run: Game mode with them switched on</summary>
     public static bool PostEffects => IsGame && CFG.Current.Viewport_Post_Effects;
 
+    /// <summary>
+    ///     Whether Game mode lights the Map Editor's maps with their BTL lights alone, for the selected project's game
+    ///     (<see cref="GparamProfile.MapLightsOnly" />). The pipelines it applies to say so in
+    ///     <see cref="SceneRenderPipeline.MapLightsOnly" />.
+    /// </summary>
+    public static bool MapLightsOnly => IsGame && GparamProfile.Current.MapLightsOnly;
+
     public static ViewportTexturingMode Texturing => (ViewportTexturingMode)CFG.Current.Viewport_Texturing_Mode;
 
     /// <summary>

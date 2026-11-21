@@ -301,6 +301,15 @@ public class ViewportRenderingTool
                 lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
             : LOC.Get("PREF_Viewport_Light_Intensity_Scale_TT"));
 
+        // Game mode lights this game's maps with their BTL lights alone, over a dimmed sun and ambient
+        if (RenderMode.MapLightsOnly)
+        {
+            DPI.ApplyInputWidth();
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Rendering_BTL_Base_Light")}##btlBaseLight",
+                ref CFG.Current.Viewport_Map_Lights_Only_Base_Scale, 0.0f, 1.0f);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_BTL_Base_Light_TT"));
+        }
+
         if (StatusHeader())
         {
             ImGui.Text(LOC.Get("VIEWPORT_Rendering_BTL_Status", shadedCount, inRangeCount));
@@ -1636,7 +1645,7 @@ public class ViewportRenderingTool
 
         active.AddRange(pipeline.PostProcess.LastActive);
 
-        if (pipeline.Fxaa.IsActive(pipeline.ActiveMapLighting))
+        if (pipeline.PostEffects && pipeline.Fxaa.IsActive(pipeline.ActiveMapLighting))
             active.Add("FXAA");
 
         ImGui.Text(active.Count > 0

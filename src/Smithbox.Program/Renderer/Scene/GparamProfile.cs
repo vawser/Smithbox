@@ -87,6 +87,14 @@ public sealed class GparamProfile
     public bool HasDolLightmaps { get; private init; }
 
     /// <summary>
+    ///     Game mode lights the Map Editor's viewports with the map's BTL lights alone, over Editor mode's sun and
+    ///     environment map: the GPARAM lighting, GI (volumes, light probes, lightmaps), shadows, fog and screen effects
+    ///     are left off. For a game whose map lighting doesn't match the game yet (DS3), so its lights can be checked
+    ///     on their own. The Gparam Editor's viewport keeps the full lighting. See SceneRenderPipeline.MapLightsOnly.
+    /// </summary>
+    public bool MapLightsOnly { get; private init; }
+
+    /// <summary>
     ///     A scale on the DOL lightmaps' light, for the part of it the game's code sets (how the TPF's FloatStruct becomes
     ///     FC_TexHdrScaleParam) and that isn't traced. 1 until matched against the game.
     /// </summary>
@@ -212,6 +220,8 @@ public sealed class GparamProfile
             Supported = true,
             HasLightProbes = true,
             HasDolLightmaps = true,
+            // Its map lighting doesn't match the game yet, so the Map Editor shows its BTL lights alone for now
+            MapLightsOnly = true,
             Exposure = GparamExposureModel.Yebis,
             HasSsr = false,
             HasVolumetricFog = false,

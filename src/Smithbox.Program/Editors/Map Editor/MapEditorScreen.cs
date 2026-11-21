@@ -648,8 +648,11 @@ public class MapEditorScreen : EditorScreen
             .ToList();
 
         // Editor mode draws fullbright and reads no volumes (SceneRenderPipeline), so the table is only rebuilt in Game
-        // mode; its first frame back rebuilds it before anything is drawn
-        if (RenderMode.IsGame)
+        // mode; its first frame back rebuilds it before anything is drawn. Nor with Game mode reduced to the map's
+        // lights (GparamProfile.MapLightsOnly), which reads none either.
+        var mapLightsOnly = RenderMode.MapLightsOnly;
+
+        if (RenderMode.IsGame && !mapLightsOnly)
         {
             var (bake, blendBake, blendRatio) = activeView.IrradianceVolumeBank.ResolveBakes(loadedMaps);
 
@@ -667,8 +670,10 @@ public class MapEditorScreen : EditorScreen
             ? activeView.DrawParamLightingBank.UpdatePartLighting(loadedMaps, SceneRenderer.MapLighting)
             : Array.Empty<GparamLighting>();
 
-        // DS3's lightmaps of the map pieces, with the lighting's Dominant Light Map values
-        activeView.Project.Handler.MapData.DolLightmapBank?.Update(loadedMaps, SceneRenderer.MapLighting);
+        // DS3's lightmaps of the map pieces, with the lighting's Dominant Light Map values. The shader reads a piece's
+        // lightmap whatever the lighting, so with Game mode reduced to the map's lights the pieces let theirs go.
+        activeView.Project.Handler.MapData.DolLightmapBank?.Update(
+            mapLightsOnly ? Array.Empty<MapContainer>() : loadedMaps, SceneRenderer.MapLighting);
 
         // The fog volumes follow the same GPARAM file, weather and time of day
         activeView.FogVolumeBank.Update(loadedMaps);

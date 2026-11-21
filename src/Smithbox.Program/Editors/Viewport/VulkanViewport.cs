@@ -225,6 +225,9 @@ public class VulkanViewport : IViewport
             ViewPipeline.UseMapLighting = Owner is MapUniverse;
             ViewPipeline.UseMapLights = Owner is MapUniverse;
 
+            // Game mode lights its maps with their BTL lights alone for a game whose profile asks for it (DS3)
+            ViewPipeline.CanReduceToMapLights = Owner is MapUniverse;
+
             // The Model, Time Act and FX Editors have no map, so they borrow the lighting and a volume of one
             var environmentProject = owner switch
             {
@@ -301,15 +304,17 @@ public class VulkanViewport : IViewport
                 // The screen effects run on the scene first, binding their own targets
                 var frameLighting = ViewPipeline.ActiveMapLighting;
                 var toneMapSource = IsViewportVisible
-                    ? ViewPipeline.PostProcess.Run(d, cl, ViewPipeline.Target, frameLighting)
+                    ? ViewPipeline.PostProcess.Run(d, cl, ViewPipeline.Target, frameLighting, ViewPipeline.PostEffects)
                     : null;
 
                 // A debug view of display values is shown as it is, and so is Editor mode's fullbright albedo, which
-                // no exposure or curve should change
-                var passThrough = ViewPipeline.SurfaceView.ShowsDisplayValues || !RenderMode.IsGame;
+                // no exposure or curve should change; Game mode reduced to the map's lights keeps Editor mode's base,
+                // so it is shown the same way
+                var passThrough = ViewPipeline.SurfaceView.ShowsDisplayValues || !RenderMode.IsGame ||
+                                  ViewPipeline.MapLightsOnly;
 
                 // With FXAA the tone map goes into its image first, and FXAA takes that to the screen
-                var fxaa = IsViewportVisible && ViewPipeline.Fxaa.IsActive(frameLighting);
+                var fxaa = IsViewportVisible && ViewPipeline.PostEffects && ViewPipeline.Fxaa.IsActive(frameLighting);
 
                 if (fxaa)
                 {

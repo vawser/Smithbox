@@ -2032,6 +2032,10 @@ public class CFG
 
     public float Viewport_Light_Intensity_Scale = 5.0f;
 
+    // The share of the viewport's sun and environment map ambient kept under the BTL lights when Game mode lights a
+    // map with them alone (GparamProfile.MapLightsOnly), so their pools of light show
+    public float Viewport_Map_Lights_Only_Base_Scale = 0.2f;
+
     // The Map Editor's BTL lights: those within this many metres of the camera light the viewports, nearest first,
     // up to the count; with the enable distance on, each also only within its own ViewDistance, as in game.
     // Selected lights always do.

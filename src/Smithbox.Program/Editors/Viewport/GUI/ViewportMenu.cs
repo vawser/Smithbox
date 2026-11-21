@@ -219,8 +219,13 @@ public class ViewportMenu
             {
                 ImGui.TextDisabled(LOC.Get("VIEWPORT_Menubar_Setting_Game_Mode_Only"));
             }
+            else if (pipeline?.MapLightsOnly == true)
+            {
+                // GI, map lighting and shadows are all left off there (GparamProfile.MapLightsOnly)
+                ImGui.TextDisabled(LOC.Get("VIEWPORT_Menubar_Setting_Map_Lights_Only"));
+            }
 
-            ImGui.BeginDisabled(!RenderMode.IsGame);
+            ImGui.BeginDisabled(!RenderMode.IsGame || pipeline?.MapLightsOnly == true);
 
             if (pipeline?.UseIrradianceVolumes == true)
             {

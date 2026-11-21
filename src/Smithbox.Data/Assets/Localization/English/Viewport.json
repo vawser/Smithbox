@@ -1857,6 +1857,18 @@
       "Text": "Switch to Game render mode to change these:"
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Map_Lights_Only",
+      "Text": "Game mode shows this game's maps with their BTL lights only:"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Base_Light",
+      "Text": "Base Light"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_BTL_Base_Light_TT",
+      "Text": "How much of the viewport's sun and environment map ambient lights the map under its BTL lights, as this game's maps are shown with their BTL lights only. 0 leaves only the BTL lights; 1 is Editor mode's full base."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Setting_Open_Rendering_Tool",
       "Text": "Rendering Settings..."
     },

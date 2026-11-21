@@ -113,7 +113,8 @@ public class PostProcessChain
     ///     Runs the active passes over <paramref name="target" />'s color and returns the texture to tone map. Leaves
     ///     a framebuffer of its own bound if any pass ran, so the caller binds the one it draws to next.
     /// </summary>
-    public Texture Run(GraphicsDevice gd, CommandList cl, SceneTarget target, GparamLighting lighting)
+    /// <param name="effects">Whether the screen effects run for the pipeline, SceneRenderPipeline.PostEffects</param>
+    public Texture Run(GraphicsDevice gd, CommandList cl, SceneTarget target, GparamLighting lighting, bool effects)
     {
         LastActive.Clear();
 
@@ -131,7 +132,6 @@ public class PostProcessChain
 
         // The surface view is a debug view, not an effect, so it runs whatever the effects switch and render mode
         // say: Texturing (Normal) is it, and is offered in Editor mode too
-        var effects = RenderMode.PostEffects;
         var next = 0;
 
         foreach (var pass in Passes)

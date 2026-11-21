@@ -197,10 +197,28 @@ public class SceneRenderPipeline
     public bool UseMapLights = false;
 
     /// <summary>
-    ///     The map lighting this pipeline is lit with this frame, or null if it uses its own settings. None in Editor
-    ///     mode, which takes the fog, background and screen effects that follow from it along.
+    ///     Whether this pipeline is one of the Map Editor's, which Game mode reduces to the map's lights for a game whose
+    ///     profile asks for it, see <see cref="MapLightsOnly" />
     /// </summary>
-    public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting && RenderMode.IsGame
+    public bool CanReduceToMapLights = false;
+
+    /// <summary>
+    ///     Whether Game mode lights this frame with the map's BTL lights (and the camera light) alone, over Editor
+    ///     mode's sun and environment map: no GPARAM lighting, GI, shadows, fog or screen effects, and no tone map,
+    ///     as in Editor mode. See <see cref="GparamProfile.MapLightsOnly" />.
+    /// </summary>
+    public bool MapLightsOnly => CanReduceToMapLights && RenderMode.MapLightsOnly;
+
+    /// <summary>Whether the screen effects run in this pipeline this frame, see <see cref="RenderMode.PostEffects" /></summary>
+    public bool PostEffects => RenderMode.PostEffects && !MapLightsOnly;
+
+    /// <summary>
+    ///     The map lighting this pipeline is lit with this frame, or null if it uses its own settings. None in Editor
+    ///     mode, or with <see cref="MapLightsOnly" />, which takes the fog, background and screen effects that follow
+    ///     from it along.
+    /// </summary>
+    public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting && RenderMode.IsGame &&
+                                               !MapLightsOnly
         ? MapLightingSource != null ? MapLightingSource() : SceneRenderer.MapLighting
         : null;
 
@@ -509,7 +527,12 @@ public class SceneRenderPipeline
         var lightDirection = CFG.Current.Viewport_Scene_Light_Direction;
         var sunColor = CFG.Current.Viewport_Scene_Sun_Color;
         ViewportSunDirection = new Vector4(lightDirection, 0.0f);
-        ViewportSunColor = new Vector4(sunColor, CFG.Current.Viewport_Scene_Sun_Intensity);
+        // Game mode reduced to the map's lights dims the base under them, the sun and the environment map's ambient,
+        // by the Rendering tool's Base Light, so the lights stand out from it
+        var baseLight = MapLightsOnly ? Math.Clamp(CFG.Current.Viewport_Map_Lights_Only_Base_Scale, 0.0f, 1.0f) : 1.0f;
+        SceneParams.AmbientLightMult = baseLight;
+
+        ViewportSunColor = new Vector4(sunColor, CFG.Current.Viewport_Scene_Sun_Intensity * baseLight);
         SceneParams.DirectLightMult = CFG.Current.Viewport_Scene_Direct_Light_Mult;
         SceneParams.IndirectLightMult = CFG.Current.Viewport_Scene_Indirect_Light_Mult;
         SceneParams.SceneBrightness = CFG.Current.Viewport_Scene_Brightness;
@@ -522,6 +545,9 @@ public class SceneRenderPipeline
         // Editor mode lights by the viewport's sun and the environment map alone: no lights are gathered, and the
         // shader gets none to loop over
         var gameMode = RenderMode.IsGame;
+
+        // Game mode reduced to the lights keeps their loops, but none of the map's own lighting: GI and shadows
+        var fullLighting = gameMode && !MapLightsOnly;
 
         // Lights are gathered here, where the scene can't change under us, and copied in below
         List<SceneLightData> lights = new(SceneLightList.MaxLights);
@@ -546,7 +572,7 @@ public class SceneRenderPipeline
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
         var volumeTable = ActiveVolumeTable;
-        var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable && gameMode;
+        var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable && fullLighting;
         var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
             (CFG.Current.Viewport_GI_Auto_Exposure ? volumeTable.AutoExposure : 1.0f);
         var irradianceFlags = CFG.Current.Viewport_GI_Normalize_Reflections ? 1u : 0u;
@@ -560,7 +586,7 @@ public class SceneRenderPipeline
         // cascades, which are fitted to the view, keep the steady one. None while a click is picking, so what is
         // under the cursor is what it selects.
         var renderProj = proj;
-        if (AllowTaa && TaaPass.Wants(mapLighting) && !_pickingEnabled && Target.Width > 0 && Target.Height > 0)
+        if (AllowTaa && PostEffects && TaaPass.Wants(mapLighting) &&!_pickingEnabled && Target.Width > 0 && Target.Height > 0)
         {
             var count = (mapLighting?.PostEffects.AntiAlias ?? new GparamAntiAlias()).JitterCount;
             var jitter = TaaPass.JitterFor(JitterFrame++, count);
@@ -627,7 +653,7 @@ public class SceneRenderPipeline
         // The cascades follow the sun the shaders light with, and the GPARAM's Shadows group
         var sunDirection = mapLighting != null ? mapLightDirection : ViewportSunDirection;
         var sunIntensity = mapLighting != null ? mapSunColor.W : ViewportSunColor.W;
-        var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f && gameMode;
+        var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f && fullLighting;
 
         // Demon's Souls casts its shadows along a light of their own (ShadowBank), not the sun
         var shadowTravel = mapLighting?.Shadow.LightAngle is { } shadowAngle
@@ -649,7 +675,7 @@ public class SceneRenderPipeline
 
         // Wet surfaces, from the chosen weather's Wet values
         var wet = mapLighting?.PostEffects.Wet;
-        var wetness = RenderMode.PostEffects && CFG.Current.Viewport_Post_Wet && wet != null
+        var wetness = PostEffects && CFG.Current.Viewport_Post_Wet && wet != null
             ? Math.Clamp(wet.Wetness, 0.0f, 1.0f)
             : 0.0f;
         var wetAlbedo = wet != null
