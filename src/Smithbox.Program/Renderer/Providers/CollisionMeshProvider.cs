@@ -42,20 +42,24 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
-        if (_resource != null)
+        lock (StateLock)
         {
-            return;
+            if (_resource != null)
+            {
+                return;
+            }
+
+            // Released providers must not revive on a later reload (see FlverMeshProvider)
+            if (_referenceCount <= 0)
+            {
+                return;
+            }
+
+            _resource = (ResourceHandle<HavokCollisionResource>)handle;
+            _resource.Acquire();
+            CreateSubmeshes();
         }
 
-        // Released providers must not revive on a later reload (see FlverMeshProvider)
-        if (_referenceCount <= 0)
-        {
-            return;
-        }
-
-        _resource = (ResourceHandle<HavokCollisionResource>)handle;
-        _resource.Acquire();
-        CreateSubmeshes();
         NotifyAvailable();
 
         MeshProviderInspector.Add(_source.FullName, this);
@@ -63,14 +67,33 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
     {
+        List<CollisionSubmeshProvider> detached;
+        lock (StateLock)
+        {
+            detached = DetachResource();
+        }
+
+        FinishUnload(detached);
+    }
+
+    // Called under StateLock (see FlverMeshProvider)
+    private List<CollisionSubmeshProvider> DetachResource()
+    {
         _resource?.Release();
         _resource = null;
-        foreach (CollisionSubmeshProvider submesh in _submeshes)
+
+        List<CollisionSubmeshProvider> detached = _submeshes;
+        _submeshes = new List<CollisionSubmeshProvider>();
+        return detached;
+    }
+
+    private void FinishUnload(List<CollisionSubmeshProvider> detached)
+    {
+        foreach (CollisionSubmeshProvider submesh in detached)
         {
             submesh.Invalidate();
         }
 
-        _submeshes.Clear();
         NotifyUnavailable();
 
         MeshProviderInspector.Remove(_source.FullName);
@@ -100,8 +123,12 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public override void Acquire()
     {
-        var first = _referenceCount == 0;
-        _referenceCount++;
+        bool first;
+        lock (StateLock)
+        {
+            first = _referenceCount == 0;
+            _referenceCount++;
+        }
 
         if (first)
         {
@@ -111,13 +138,21 @@ public class CollisionMeshProvider : MeshProvider, IResourceEventListener
 
     public override void Release()
     {
-        _referenceCount--;
-        if (_referenceCount <= 0)
+        List<CollisionSubmeshProvider> detached;
+        lock (StateLock)
         {
+            _referenceCount--;
+            if (_referenceCount > 0)
+            {
+                return;
+            }
+
             _referenceCount = 0;
-            OnResourceUnloaded(_resource, 0);
+            detached = DetachResource();
             _source.RemoveResourceEventListener(this);
         }
+
+        FinishUnload(detached);
     }
 
     public override bool IsAvailable()

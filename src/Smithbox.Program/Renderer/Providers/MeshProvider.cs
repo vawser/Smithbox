@@ -18,6 +18,14 @@ public abstract class MeshProvider
     public List<WeakReference<IMeshProviderEventListener>> _listeners = new();
 
     /// <summary>
+    ///     Guards a resource-backed provider's reference count and its loaded resource. Providers are shared through
+    ///     MeshProviderCache, and a map load acquires and releases them on a thread pool thread while the main thread
+    ///     does the same (and delivers the resource load events). Listeners are notified after it is released, as
+    ///     they take locks of their own.
+    /// </summary>
+    protected readonly object StateLock = new();
+
+    /// <summary>
     ///     This mesh provider has child mesh providers. For example, a FLVER mesh
     ///     provider will have submesh providers that provide the actual mesh data
     /// </summary>

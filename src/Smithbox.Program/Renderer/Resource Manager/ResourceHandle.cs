@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace StudioCore.Renderer;
 
@@ -136,7 +137,15 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     /// <param name="handler"></param>
     public void AddResourceEventListener(IResourceEventListener listener, AccessLevel accessLevel, int tag = 0)
     {
-        EventListeners.Add(new EventListener(new WeakReference<IResourceEventListener>(listener), accessLevel, tag));
+        // The list is never changed in place: a map load on a thread pool thread may be removing a listener
+        // (or a notification may be iterating the list) while the main thread adds one.
+        lock (HandlerLock)
+        {
+            List<EventListener> grown = new(EventListeners.Count + 1);
+            grown.AddRange(EventListeners);
+            grown.Add(new EventListener(new WeakReference<IResourceEventListener>(listener), accessLevel, tag));
+            EventListeners = grown;
+        }
 
         if (IsLoaded)
         {
@@ -151,17 +160,22 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     {
         // Copy-on-write so a load/unload notification that is iterating the old list isn't disturbed.
         // Dead (collected) listeners are dropped at the same time.
-        List<EventListener> kept = new(EventListeners.Count);
-        foreach (EventListener entry in EventListeners)
+        // Locked with Add: this is called from thread pool threads during a map load (MsbEntity drawables).
+        lock (HandlerLock)
         {
-            if (entry.Listener.TryGetTarget(out IResourceEventListener target) &&
-                !ReferenceEquals(target, listener))
+            List<EventListener> current = EventListeners;
+            List<EventListener> kept = new(current.Count);
+            foreach (EventListener entry in current)
             {
-                kept.Add(entry);
+                if (entry.Listener.TryGetTarget(out IResourceEventListener target) &&
+                    !ReferenceEquals(target, listener))
+                {
+                    kept.Add(entry);
+                }
             }
-        }
 
-        EventListeners = kept;
+            EventListeners = kept;
+        }
     }
 
     public int EventListenerCount => EventListeners.Count;
@@ -233,27 +247,28 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         return ReferenceCount;
     }
 
+    // Interlocked: mesh providers acquire and release handles both on the main thread and on map load threads
     public void Acquire()
     {
-        ReferenceCount++;
+        Interlocked.Increment(ref ReferenceCount);
     }
 
     public void CompleteRelease()
     {
         ResourceManager.UnloadResource(this, true);
-        ReferenceCount = 0;
+        Interlocked.Exchange(ref ReferenceCount, 0);
     }
 
     public void Release(bool force = false)
     {
         var unload = false;
-        ReferenceCount--;
-        if (ReferenceCount == 0 && IsLoaded)
+        var count = Interlocked.Decrement(ref ReferenceCount);
+        if (count == 0 && IsLoaded)
         {
             unload = true;
         }
 
-        if (ReferenceCount < 0)
+        if (count < 0)
         {
             //Smithbox.Log(this, $@"Resource {FullName} reference count already 0", Microsoft.Extensions.Logging.LogLevel.Error);
         }

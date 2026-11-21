@@ -55,13 +55,17 @@ public class HavokNavmeshCostGraphProvider : MeshProvider, IResourceEventListene
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
-        if (_resource != null)
+        lock (StateLock)
         {
-            return;
+            if (_resource != null)
+            {
+                return;
+            }
+
+            _resource = (ResourceHandle<HavokNavmeshResource>)handle;
+            _resource.Acquire();
         }
 
-        _resource = (ResourceHandle<HavokNavmeshResource>)handle;
-        _resource.Acquire();
         NotifyAvailable();
 
         MeshProviderInspector.Add(_source.FullName, this);
@@ -69,8 +73,12 @@ public class HavokNavmeshCostGraphProvider : MeshProvider, IResourceEventListene
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
     {
-        _resource?.Release();
-        _resource = null;
+        lock (StateLock)
+        {
+            _resource?.Release();
+            _resource = null;
+        }
+
         NotifyUnavailable();
 
         MeshProviderInspector.Remove(_source.FullName);
@@ -95,22 +103,39 @@ public class HavokNavmeshCostGraphProvider : MeshProvider, IResourceEventListene
 
     public override void Acquire()
     {
-        if (_referenceCount == 0)
+        bool first;
+        lock (StateLock)
+        {
+            first = _referenceCount == 0;
+            _referenceCount++;
+        }
+
+        if (first)
         {
             ResourceManager.AddResourceListener(_source, this, AccessLevel.AccessGPUOptimizedOnly);
         }
-
-        _referenceCount++;
     }
 
     public override void Release()
     {
-        _referenceCount--;
-        if (_referenceCount <= 0)
+        lock (StateLock)
         {
+            _referenceCount--;
+            if (_referenceCount > 0)
+            {
+                return;
+            }
+
             _referenceCount = 0;
-            OnResourceUnloaded(_resource, 0);
+
+            // Dropped inside the lock, so it can't undo a load that a new Acquire started meanwhile
+            _resource?.Release();
+            _resource = null;
         }
+
+        NotifyUnavailable();
+
+        MeshProviderInspector.Remove(_source.FullName);
     }
 
     public override bool IsAvailable()

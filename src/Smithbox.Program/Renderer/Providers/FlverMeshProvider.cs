@@ -145,21 +145,25 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
-        if (_resource != null)
+        lock (StateLock)
         {
-            return;
+            if (_resource != null)
+            {
+                return;
+            }
+
+            // A provider nobody references any more must not come back to life when the resource is reloaded:
+            // it would re-acquire the resource (leaking it) and notify listeners that were already disposed.
+            if (_referenceCount <= 0)
+            {
+                return;
+            }
+
+            _resource = (ResourceHandle<FlverResource>)handle;
+            _resource.Acquire();
+            CreateSubmeshes();
         }
 
-        // A provider nobody references any more must not come back to life when the resource is reloaded:
-        // it would re-acquire the resource (leaking it) and notify listeners that were already disposed.
-        if (_referenceCount <= 0)
-        {
-            return;
-        }
-
-        _resource = (ResourceHandle<FlverResource>)handle;
-        _resource.Acquire();
-        CreateSubmeshes();
         NotifyAvailable();
 
         MeshProviderInspector.Add(_source.FullName, this);
@@ -167,14 +171,37 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
     {
+        List<FlverSubmeshProvider> detached;
+        lock (StateLock)
+        {
+            detached = DetachResource();
+        }
+
+        FinishUnload(detached);
+    }
+
+    /// <summary>
+    ///     Drops the resource and the submeshes built from it. Called under StateLock; the caller then passes the
+    ///     submeshes to FinishUnload outside it.
+    /// </summary>
+    private List<FlverSubmeshProvider> DetachResource()
+    {
         _resource?.Release();
         _resource = null;
-        foreach (FlverSubmeshProvider submesh in _allSubmeshes)
+
+        List<FlverSubmeshProvider> detached = _allSubmeshes;
+        _allSubmeshes = new List<FlverSubmeshProvider>();
+        _activeSubmeshes = _allSubmeshes;
+        return detached;
+    }
+
+    private void FinishUnload(List<FlverSubmeshProvider> detached)
+    {
+        foreach (FlverSubmeshProvider submesh in detached)
         {
             submesh.Invalidate();
         }
 
-        _allSubmeshes.Clear();
         NotifyUnavailable();
 
         MeshProviderInspector.Remove(_source.FullName);
@@ -206,8 +233,12 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public override void Acquire()
     {
-        var first = _referenceCount == 0;
-        _referenceCount++;
+        bool first;
+        lock (StateLock)
+        {
+            first = _referenceCount == 0;
+            _referenceCount++;
+        }
 
         if (first)
         {
@@ -217,13 +248,23 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public override void Release()
     {
-        _referenceCount--;
-        if (_referenceCount <= 0)
+        List<FlverSubmeshProvider> detached;
+        lock (StateLock)
         {
+            _referenceCount--;
+            if (_referenceCount > 0)
+            {
+                return;
+            }
+
             _referenceCount = 0;
-            OnResourceUnloaded(_resource, 0);
+            detached = DetachResource();
+
+            // Inside the lock, so an Acquire on another thread sees the provider either still held or fully released
             _source.RemoveResourceEventListener(this);
         }
+
+        FinishUnload(detached);
     }
 
     public override bool IsAvailable()
