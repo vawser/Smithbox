@@ -2743,8 +2743,8 @@ void main()
 	vec3 normalColor = normalSample.xyz;
 	vec3 F0 = SampleLayered(ROW_SPECULAR, c_blendSpecular).xyz;
 
-	// Each strand bends the normal underneath it, and knows how glossy it is. Index 1 is the default normal,
-	// which isn't quite flat: most fur only has the strands' normals, so that would lean all of them over
+	// Each strand bends the normal underneath it, and knows how glossy it is. Index 1 is the default normal
+	// (flat and matte since 2026-11-21; before then it leaned along the tangent): most fur only has the strands' normals
 	if (IsFur())
 	{
 		if (MaterialValue(ROW_NORMAL, 0) == 1u)

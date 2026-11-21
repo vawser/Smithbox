@@ -1243,13 +1243,13 @@ public partial class MSB_NR
                 Version = version;
 
                 TargetEntityGroupID = br.ReadInt32();
-                FirstItemLot = br.ReadInt32();
-                SecondItemLot = br.ReadInt32();
+                ItemLot_Standard = br.ReadInt32();
+                ItemLot_Cataclysm = br.ReadInt32();
                 LeaderEntityID = br.ReadInt32();
 
                 if (Version >= 78)
                 {
-                    UnkItemLot = br.ReadInt32();
+                    ItemLot_DeepNight = br.ReadInt32();
                 }
                 
                 if (Version >= 80)
@@ -1264,11 +1264,11 @@ public partial class MSB_NR
             private protected override void WriteTypeData(BinaryWriterEx bw)
             {
                 bw.WriteInt32(TargetEntityGroupID);
-                bw.WriteInt32(FirstItemLot);
-                bw.WriteInt32(SecondItemLot);
+                bw.WriteInt32(ItemLot_Standard);
+                bw.WriteInt32(ItemLot_Cataclysm);
                 bw.WriteInt32(LeaderEntityID);
 
-                bw.WriteInt32(UnkItemLot);
+                bw.WriteInt32(ItemLot_DeepNight);
 
                 if (Version >= 80)
                 {
@@ -1282,10 +1282,10 @@ public partial class MSB_NR
             // Layout
 
             public int TargetEntityGroupID { get; set; }
-            public int FirstItemLot { get; set; }
-            public int SecondItemLot { get; set; } = -1;
+            public int ItemLot_Standard { get; set; }
+            public int ItemLot_Cataclysm { get; set; } = -1;
             public int LeaderEntityID { get; set; }
-            public int UnkItemLot { get; set; } = -1;
+            public int ItemLot_DeepNight { get; set; } = -1;
 
             public int Unk14 { get; set; } = 0;
             public int Unk18 { get; set; } = -1;

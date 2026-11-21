@@ -16,11 +16,5 @@ BB:
 DS3:
     Chrs:
     
-    Carthus:
-    m005430 - No texture
-    o389041 - No texture
-    m005401 - Texture has odd white tint
-    m002008 - Texture has odd white tint
-    
     Painted World
     m010711 - No Texture

@@ -37,6 +37,13 @@ public class RenderSnapshotSet
     /// <summary>The material clock while capturing: UV scroll and wind are drawn at this second</summary>
     public float Time { get; set; } = 0f;
 
+    /// <summary>
+    /// The render mode the run is drawn in, Game (the baselines) or Editor. The run switches the viewport to it and
+    /// back. Editor sets are for looking at Editor mode's lighting, and are not kept as baselines
+    /// </summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public ViewportRenderMode RenderMode { get; set; } = ViewportRenderMode.Game;
+
     public List<RenderSnapshotEntry> Models { get; set; } = new();
 }
 
@@ -113,6 +120,7 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
     // Settings changed for the run, put back after it
     private bool SavedTaa;
     private float SavedFov;
+    private int SavedRenderMode;
     private CaptureDisplay SavedDisplay;
 
     private string Status = "";
@@ -280,9 +288,6 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
         if (string.IsNullOrWhiteSpace(CFG.Current.ModelEditor_RenderSnapshot_Folder))
             return LOC.Get("MODEL_RenderSnapshot_Block_No_Folder");
 
-        if (!RenderMode.IsGame)
-            return LOC.Get("MODEL_RenderSnapshot_Block_Not_Game_Mode");
-
         if (View.ViewportWindow?.Viewport is not VulkanViewport)
             return LOC.Get("MODEL_RenderSnapshot_Block_No_Viewport");
 
@@ -342,6 +347,8 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
         // TAA's history and jitter differ frame to frame, so the run is drawn without it; FXAA stays as the GPARAM asks
         SavedTaa = CFG.Current.Viewport_Post_Taa;
         SavedFov = CFG.Current.Viewport_Camera_FOV;
+        SavedRenderMode = CFG.Current.Viewport_Render_Mode;
+        CFG.Current.Viewport_Render_Mode = (int)RunSet.RenderMode;
         CFG.Current.Viewport_Post_Taa = false;
         CFG.Current.Viewport_Camera_FOV = RunSet.Fov;
 
@@ -607,6 +614,7 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
 
         CFG.Current.Viewport_Post_Taa = SavedTaa;
         CFG.Current.Viewport_Camera_FOV = SavedFov;
+        CFG.Current.Viewport_Render_Mode = SavedRenderMode;
         SavedDisplay?.Restore();
         SavedDisplay = null;
         MaterialClock.FixedTime = null;
@@ -636,7 +644,8 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
                 RunSet.Time,
                 Settings = new Dictionary<string, object>
                 {
-                    ["RenderMode"] = RenderMode.Current.ToString(),
+                    // The run's own, as the viewport's is put back before the manifest is written
+                    ["RenderMode"] = (RunSet?.RenderMode ?? RenderMode.Current).ToString(),
                     ["Texturing"] = RenderMode.Texturing.ToString(),
                     ["PostEffects"] = CFG.Current.Viewport_Post_Effects,
                     ["AutoExposure"] = CFG.Current.Viewport_Post_Auto_Exposure,

@@ -879,12 +879,14 @@ public class TexturePool
                     checkPow = false;
                 }
 
-                if (checkPow)
+                // A size that isn't a power of two is fine as long as a block-compressed one is whole blocks: the image
+                // is padded to whole blocks below, but each mip's data is sized from the unpadded header, so the two
+                // only agree when the base size is a multiple of 4. Rejecting every other size left DS3's o389041
+                // (1120x840, 560x420 and 280x210 BC textures in its own TPF) untextured
+                if (checkPow && (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height)) &&
+                    FormatHelpers.IsCompressedFormat(format) && (width % 4 != 0 || height % 4 != 0))
                 {
-                    if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
-                    {
-                        return;
-                    }
+                    return;
                 }
             }
 

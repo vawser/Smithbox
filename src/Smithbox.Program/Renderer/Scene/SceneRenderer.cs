@@ -183,9 +183,12 @@ public static class SceneRenderer
         TexturePool.TextureHandle handle = GlobalTexturePool.AllocateTextureDescriptor();
         handle.FillWithColor(device, Color.Gray, "Gray");
 
-        // Default normal at 1
+        // Default normal at 1: flat (x and y at the middle), and matte, as the Modern family reads the blue as gloss
+        // (roughness 1 - b). It was R 0, G 127, B 127 (FromArgb takes alpha first), a normal lying along the tangent at
+        // half gloss: every material without a normal map was shaded edge on, a white sheen in Editor mode (DS3's M[A],
+        // GXFlver_ColDif, which the game draws with no reflectance at all; Claude/Documentation/DS3 Carthus Rendering.md)
         handle = GlobalTexturePool.AllocateTextureDescriptor();
-        handle.FillWithColor(device, Color.FromArgb(255, 0, 127, 127), "Normal");
+        handle.FillWithColor(device, Color.FromArgb(255, 127, 127, 0), "Normal");
 
         // Default spec at 2
         handle = GlobalTexturePool.AllocateTextureDescriptor();

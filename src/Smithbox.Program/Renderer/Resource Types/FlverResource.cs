@@ -1194,6 +1194,18 @@ public class FlverResource : IResource, IDisposable
     /// <see cref="MaterialCustomize.ModeSkin"/>), or 0. Its entry sits where a deform entry would, and before the blend,
     /// overlay, glow and water entries, so a material with any of those (none of the ChrCustomize shaders) has none.
     /// </summary>
+    /// <summary>
+    /// A texture path that only holds a slot: LiveTokyo's dummy128 (not shipped in any game's data) or a SysTex dummy
+    /// (SYSTEX_DummyNormal and the like, flat values). Survey: Claude/Tools/Ds3MapPieceProbe placeholders. An empty path
+    /// isn't one, as a MATBIN can fill it
+    /// </summary>
+    public static bool IsPlaceholderTexture(string path)
+    {
+        var name = Path.GetFileNameWithoutExtension(path.Replace('\\', '/'));
+        return name.Equals("dummy128", StringComparison.OrdinalIgnoreCase) ||
+               name.StartsWith("SYSTEX_Dummy", StringComparison.OrdinalIgnoreCase);
+    }
+
     public static uint CustomizeMode(MaterialDefinition? definition)
     {
         if (definition?.Slots is not { Customize: not 0 and var mode } ||
@@ -1824,6 +1836,20 @@ public class FlverResource : IResource, IDisposable
         {
             var tpath = isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset);
             HasLowDetailNaming = IsLowDetailName(tpath);
+        }
+
+        // Nothing but placeholders: DS3's M[A] join meshes of m38_00_00_00_005430, whose only texture is dummy128, drew
+        // as flat untextured walls (Claude/Documentation/DS3 Carthus Rendering.md). A character-creator material is
+        // left alone, as its textures come from the character (ER's FaceGen skin lists only placeholders)
+        // A slot whose definition names a texture of its own isn't a placeholder: an ER MATBIN does that for c3950's
+        // glowing claws, whose FLVER lists only dummies
+        dest.NeverDrawn = mat.textureCount > 0 && CustomizeMode(dest.Definition) == 0;
+        for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount && dest.NeverDrawn; i++)
+        {
+            var ttype = isUTF ? br.GetUTF16(textures[i].typeOffset) : br.GetShiftJIS(textures[i].typeOffset);
+            var definitionPath = dest.Definition?.Samplers.Find(x => x.Type == ttype)?.Path;
+            dest.NeverDrawn = string.IsNullOrEmpty(definitionPath) &&
+                IsPlaceholderTexture(isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset));
         }
 
         if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
@@ -5215,6 +5241,12 @@ public class FlverResource : IResource, IDisposable
         /// Lies on another surface at the same depth, so it is pulled toward the camera to be drawn over it
         /// </summary>
         public bool MeshDecal;
+
+        /// <summary>
+        /// Every texture the material lists is a placeholder (<see cref="IsPlaceholderTexture"/>), so
+        /// it has nothing of its own to draw: its meshes get no renderable (FlverSubmeshProvider.IndexCount)
+        /// </summary>
+        public bool NeverDrawn;
 
         /// <summary>
         /// How many of a mesh's UV sets to read. The last that fits goes in the second UV slot of a vertex,

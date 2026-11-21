@@ -95,7 +95,9 @@ public unsafe class FlverSubmeshProvider : MeshProvider
 
     public override int IndexOffset => _resource.Get().GPUMeshes[_meshIndex].MeshFacesets[0].IndexOffset;
 
-    public override int IndexCount => _resource.Get().GPUMeshes[_meshIndex].MeshFacesets.Count > 0
+    // None for a mesh whose material is only placeholders (FlverMaterial.NeverDrawn), so it gets no renderable
+    public override int IndexCount => _resource.Get().GPUMeshes[_meshIndex].MeshFacesets.Count > 0 &&
+                                      _resource.Get().GPUMeshes[_meshIndex].Material?.NeverDrawn != true
         ? _resource.Get().GPUMeshes[_meshIndex].MeshFacesets[0].IndexCount
         : 0;
 
