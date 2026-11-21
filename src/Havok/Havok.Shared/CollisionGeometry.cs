@@ -415,6 +415,15 @@ public static class CollisionGeometry
                 var (i0, i1, i2, i3) = mesh.GetPrimitive(primitiveIndex);
                 if (i0 == 0xDE && i1 == 0xAD && i2 == 0xDE && i3 == 0xAD) continue;
 
+                // a convex piece: its triangles are its hull's, all under the primitive's one key
+                if (i1 == i2 && i2 == i3 && TryConvexVertices(mesh, section, i0, out var points))
+                {
+                    uint key = keyed ? ShapeKey(mesh.BitsPerKey, s, p, 0) : 0;
+                    foreach (var (ha, hb, hc) in ConvexHull(points))
+                        yield return (key, points[ha], points[hb], points[hc]);
+                    continue;
+                }
+
                 bool quad = i2 != i3;
                 if (!TryVertex(mesh, section, i0, out Vector3 a) || !TryVertex(mesh, section, i1, out Vector3 b) ||
                     !TryVertex(mesh, section, i2, out Vector3 c)) continue;
@@ -467,6 +476,35 @@ public static class CollisionGeometry
         int shared = mesh.SharedVerticesIndex[sharedIndexIndex];
         if (shared >= mesh.SharedVertices.Count) return false;
         vertex = DecompressSharedVertex(mesh.SharedVertices[shared], mesh.DomainMin, mesh.DomainMax);
+        return true;
+    }
+
+    /// <summary>
+    /// The vertices of a convex primitive (indices a, b, b, b), as DS3's object meshes store them: a indexes a
+    /// descriptor in the shared vertex index list, from the section's first shared index. Its first ushort is a flags
+    /// byte (low) and the vertex count (high), its second the first m_sharedVertices entry of the vertices (and flags
+    /// bit 0x40 adds a third ushort, not needed for the shape). The vertices are 11/11/10-bit uint32s, two to an
+    /// entry (low half first), relative to the domain. False when the descriptor doesn't fit the lists.
+    /// </summary>
+    private static bool TryConvexVertices(IHavokCompressedMesh mesh, HavokMeshSection section, byte descriptor, out List<Vector3> points)
+    {
+        points = null!;
+        int at = section.FirstSharedVertexIndex + descriptor;
+        if (at < 0 || at + 1 >= mesh.SharedVerticesIndex.Count) return false;
+
+        int count = mesh.SharedVerticesIndex[at] >> 8;
+        int first = mesh.SharedVerticesIndex[at + 1];
+        if (count < 4 || first + (count + 1) / 2 > mesh.SharedVertices.Count) return false;
+
+        Vector3 min = mesh.DomainMin, size = mesh.DomainMax - mesh.DomainMin;
+        points = new List<Vector3>(count);
+        for (int v = 0; v < count; v++)
+        {
+            ulong pair = mesh.SharedVertices[first + v / 2];
+            uint q = (uint)(v % 2 == 0 ? pair : pair >> 32);
+            points.Add(min + size * new Vector3((q & 0x7FF) / 2047f, ((q >> 11) & 0x7FF) / 2047f, (q >> 22) / 1023f));
+        }
+
         return true;
     }
 

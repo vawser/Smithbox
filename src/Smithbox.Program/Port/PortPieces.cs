@@ -134,8 +134,20 @@ public sealed class PortPieces
 
     private void Note(string text) => Notes[text] = Notes.GetValueOrDefault(text) + 1;
 
-    /// <summary>Converts one DS3 map piece FLVER in place into an ER one named newStem. Returns its materials.</summary>
-    public List<PortedMaterial> Convert(FLVER2 flver, string stem, string newStem, out List<UvFix> uvFixes)
+    /// <summary>
+    /// How an object FLVER (an ER asset) differs from a map piece: its bones are kept (renamed, as its physics bodies
+    /// are, since each body drives the bone of its name), each vertex keeps its bone in NormalW (rigid binding, as both
+    /// games store it), and the skeleton set is the nodes' (PortObjects).
+    /// </summary>
+    public sealed class ObjectModel
+    {
+        public Func<string, string> RenameBone;
+        /// <summary>The broken state (_1): fragment bones get ER's Mesh, Bone flags, the dummy node DummyOwner.</summary>
+        public bool Broken;
+    }
+
+    /// <summary>Converts one DS3 map piece (or, with obj, object) FLVER in place into an ER one named newStem. Returns its materials.</summary>
+    public List<PortedMaterial> Convert(FLVER2 flver, string stem, string newStem, out List<UvFix> uvFixes, ObjectModel obj = null)
     {
         var ported = new List<PortedMaterial>();
 
@@ -146,8 +158,24 @@ public sealed class PortPieces
         Config.Model.Apply(flver);
         flver.GXLists = new List<FLVER2.GXList>();
         var gxIndex = new Dictionary<string, int>();
-        if (flver.Nodes.Count > 0)
-            flver.Nodes[0].Name = flver.Nodes[0].Name.Replace(stem, newStem);
+        if (obj == null)
+        {
+            if (flver.Nodes.Count > 0)
+                flver.Nodes[0].Name = flver.Nodes[0].Name.Replace(stem, newStem);
+        }
+        else
+        {
+            foreach (var n in flver.Nodes) n.Name = obj.RenameBone(n.Name);
+            flver.Skeletons = ObjectSkeleton(flver.Nodes);
+            if (obj.Broken)
+            {
+                var meshNodes = flver.Meshes.SelectMany(m => m.Vertices.Select(v => v.NormalW).Append(m.NodeIndex)).ToHashSet();
+                var dummyNodes = flver.Dummies.SelectMany(d => new int[] { d.ParentBoneIndex, d.AttachBoneIndex }).ToHashSet();
+                for (int i = 0; i < flver.Nodes.Count; i++)
+                    flver.Nodes[i].Flags = (meshNodes.Contains(i) ? FLVER.Node.NodeFlags.Mesh | FLVER.Node.NodeFlags.Bone : 0)
+                        | (dummyNodes.Contains(i) ? FLVER.Node.NodeFlags.DummyOwner : 0);
+            }
+        }
 
         for (int i = 0; i < flver.Materials.Count; i++)
         {
@@ -187,7 +215,7 @@ public sealed class PortPieces
 
             var src = mesh.VertexBuffers.SelectMany(vb => flver.BufferLayouts[vb.LayoutIndex]).ToList();
             var dst = layouts[li];
-            foreach (var v in mesh.Vertices) Remap(v, src, dst, donor.NormalW);
+            foreach (var v in mesh.Vertices) Remap(v, src, dst, obj != null ? -1 : donor.NormalW);
 
             var floatUv = src.FirstOrDefault(m => m.Semantic == FLVER.LayoutSemantic.UV)?.Type is FLVER.LayoutType.Float2 or FLVER.LayoutType.Float3 or FLVER.LayoutType.Float4;
             var realUvs = dst.Where(m => m.Semantic == FLVER.LayoutSemantic.UV)
@@ -202,6 +230,32 @@ public sealed class PortPieces
         flver.BufferLayouts = layouts;
 
         return ported;
+    }
+
+    /// <summary>
+    /// An asset FLVER's skeleton set: one bone per node with the node links, for both lists. ER's BaseSkeleton is
+    /// always that; its AllSkeletons follows each export's scene order with no single rule, and 128 of 150 aeg099
+    /// FLVERs have it equal to BaseSkeleton (Ds3ErPortSurvey erassetflver).
+    /// </summary>
+    private static FLVER2.SkeletonSet ObjectSkeleton(List<FLVER.Node> nodes)
+    {
+        List<FLVER2.SkeletonSet.Bone> Bones() => nodes.Select((n, i) => new FLVER2.SkeletonSet.Bone(i)
+        {
+            ParentIndex = n.ParentIndex, FirstChildIndex = n.FirstChildIndex, NextSiblingIndex = n.NextSiblingIndex, PreviousSiblingIndex = n.PreviousSiblingIndex
+        }).ToList();
+        return new FLVER2.SkeletonSet { BaseSkeleton = Bones(), AllSkeletons = Bones() };
+    }
+
+    /// <summary>Adds the textures of an objbnd's own TPF (one single-texture TPF each, as the area binders hold them).</summary>
+    public void AddTextures(TPF tpf)
+    {
+        foreach (var t in tpf.Textures)
+        {
+            if (Textures.ContainsKey(t.Name)) continue;
+            var single = new TPF { Platform = tpf.Platform, Encoding = tpf.Encoding, Flag2 = tpf.Flag2 };
+            single.Textures.Add(t);
+            Textures[t.Name] = new BinderFile(Binder.FileFlags.Flag1, 0, t.Name + ".tpf", single.Write());
+        }
     }
 
     /// <summary>What FitUvs did to one mesh's real UVs, for the read-back.</summary>
@@ -623,7 +677,8 @@ public sealed class PortPieces
         }
 
         var srcNormal = src.First(m => m.Semantic == FLVER.LayoutSemantic.Normal).Type;
-        if (srcNormal != FLVER.LayoutType.UByte4 && srcNormal != FLVER.LayoutType.UByte4Norm && srcNormal != FLVER.LayoutType.Byte4)
+        // A negative normalW keeps the vertex's own (an object's bone index)
+        if (normalW >= 0 && srcNormal != FLVER.LayoutType.UByte4 && srcNormal != FLVER.LayoutType.UByte4Norm && srcNormal != FLVER.LayoutType.Byte4)
             v.NormalW = normalW;
 
         v.UVs = uvs;

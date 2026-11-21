@@ -35,6 +35,7 @@ public class PortTool
     private Vector3 OffsetEdit = Vector3.Zero;
     private bool ClearTarget;
     private bool Collision = true;
+    private bool Objects = true;
 
     private MapPort Port;
     private Task PortTask;
@@ -206,6 +207,8 @@ public class PortTool
         GUI.Tooltip(LOC.Get("PORT_Clear_Target_TT"));
         ImGui.Checkbox($"{LOC.Get("PORT_Collision")}##portCollision", ref Collision);
         GUI.Tooltip(LOC.Get("PORT_Collision_TT"));
+        ImGui.Checkbox($"{LOC.Get("PORT_Objects")}##portObjects", ref Objects);
+        GUI.Tooltip(LOC.Get("PORT_Objects_TT"));
 
         ImGui.EndDisabled();
         ImGui.Separator();
@@ -298,7 +301,8 @@ public class PortTool
             TargetMap = TargetMap,
             Offset = Offset,
             ClearTarget = ClearTarget,
-            Collision = Collision
+            Collision = Collision,
+            Objects = Objects
         };
 
         Port = new MapPort();

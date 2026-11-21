@@ -34,6 +34,8 @@
     { "Key": "PORT_Clear_Target_TT", "Text": "Before the port is added, removes the ER map's vanilla map pieces, collisions, connect collisions, assets, enemies and dummies from its MSB, with the events that place them. Player starts and anything your project added stay. The map's files stay on disk, so running again with this off brings them back." },
     { "Key": "PORT_Collision", "Text": "Port collision" },
     { "Key": "PORT_Collision_TT", "Text": "Rebuilds the DS3 map's h and l collision as Elden Ring collision in the ER map's binders, with the collision surfaces remapped, and adds its collision parts." },
+    { "Key": "PORT_Objects", "Text": "Port objects" },
+    { "Key": "PORT_Objects_TT", "Text": "Ports the DS3 map's static and breakable objects as Elden Ring assets: their models, textures, physics (including the broken state) and an asset param row each, written into the output project's regulation. Animated and cloth objects are left out." },
     { "Key": "PORT_Run", "Text": "Port map" },
     { "Key": "PORT_Run_TT", "Text": "Writes into {0}. Files the port wrote before are replaced, so it can be run again." },
     { "Key": "PORT_Cancel", "Text": "Cancel" },

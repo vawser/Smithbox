@@ -22,6 +22,8 @@ public sealed class PortRequest
     /// <summary>Remove the target map's vanilla map pieces, collisions, assets and enemies first (§4.1).</summary>
     public bool ClearTarget;
     public bool Collision = true;
+    /// <summary>Static and breakable objects as ER assets (§4.6).</summary>
+    public bool Objects = true;
 }
 
 /// <summary>
@@ -99,7 +101,7 @@ public sealed class MapPort
             : new();
         Log.Line($"Input  {Request.Input.ProjectName}: {Request.Input.ProjectPath} over {Request.Input.DataPath}");
         Log.Line($"Output {Request.Output.ProjectName}: {Request.Output.ProjectPath} over {Request.Output.DataPath}");
-        Log.Line($"{ds3Map} -> {target}, offset {Request.Offset}, clear {Request.ClearTarget}, collision {Request.Collision}");
+        Log.Line($"{ds3Map} -> {target}, offset {Request.Offset}, clear {Request.ClearTarget}, collision {Request.Collision}, objects {Request.Objects}");
         Log.Line($"Materials.json: {Config.Generated}; {Config.Rules.Count} rules, {Config.Shaders.Count} shaders");
 
         var ds3Msb = MSB3.Read(Input.Read($"/map/mapstudio/{ds3Map}.msb.dcx"));
@@ -163,6 +165,16 @@ public sealed class MapPort
         Log.Line("Notes:");
         pieces.LogNotes();
 
+        // Objects as assets: their materials and textures join the map pieces' below
+        var assets = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        if (Request.Objects)
+        {
+            Step("Objects", 0.42f);
+            var objects = new PortObjects(Input, Output, Manifest, Log, pieces, HitConfig);
+            objects.Run(ds3Msb, cancel, p => { Progress = 0.42f + 0.08f * p; Stage = $"Objects ({p:P0})"; });
+            assets = objects.Assets;
+        }
+
         // MATBINs into allmaterial
         Step("Materials", 0.5f);
         WriteMatbins(pieces.Matbins.Values.ToList());
@@ -189,7 +201,7 @@ public sealed class MapPort
 
         // MSB
         Step("MSB", 0.92f);
-        WriteMsb(ds3Msb, vanillaMsb, msb, target, pieceNumbers, collisionNumbers, pieceBoxes);
+        WriteMsb(ds3Msb, vanillaMsb, msb, target, pieceNumbers, collisionNumbers, pieceBoxes, assets);
     }
 
     /// <summary>
@@ -382,7 +394,7 @@ public sealed class MapPort
     // ---- MSB ----------------------------------------------------------------------------------------------------
 
     private void WriteMsb(MSB3 ds3Msb, MSBE vanilla, MSBE msb, string target, Dictionary<string, string> pieceNumbers, Dictionary<string, string> collisionNumbers,
-        Dictionary<string, (Vector3 Min, Vector3 Max)> pieceBoxes)
+        Dictionary<string, (Vector3 Min, Vector3 Max)> pieceBoxes, Dictionary<string, string> assets)
     {
         // Templates for the new parts and models, from the vanilla map (before any clear)
         var pieceTemplate = vanilla.Parts.MapPieces.FirstOrDefault() ?? throw new InvalidOperationException($"{target} has no vanilla map piece part");
@@ -392,13 +404,16 @@ public sealed class MapPort
 
         // An earlier run's parts and models go first, so a re-run replaces them
         // (every model the manifest gave this map, so one an earlier run placed and this run doesn't is removed too)
-        var ourModels = pieceNumbers.Values.Select(n => $"m{n}").Concat(collisionNumbers.Values.Select(n => $"h{n}")).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var ourModels = pieceNumbers.Values.Select(n => $"m{n}").Concat(collisionNumbers.Values.Select(n => $"h{n}")).Concat(assets.Values).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var portModels = Manifest.Models.Where(m => m.Key.StartsWith(target + "|", StringComparison.OrdinalIgnoreCase))
-            .Select(m => $"{m.Key[(target.Length + 1)..][0]}{m.Value}").Concat(ourModels).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            .Select(m => $"{m.Key[(target.Length + 1)..][0]}{m.Value}")
+            .Concat(Manifest.Models.Where(m => m.Key.StartsWith("asset|", StringComparison.OrdinalIgnoreCase)).Select(m => m.Value))
+            .Concat(ourModels).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var removed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var earlier = RemoveParts(msb, p => portModels.Contains(p.ModelName ?? ""), removed);
         msb.Models.MapPieces.RemoveAll(m => portModels.Contains(m.Name));
         msb.Models.Collisions.RemoveAll(m => portModels.Contains(m.Name));
+        msb.Models.Assets.RemoveAll(m => portModels.Contains(m.Name));
         if (earlier > 0) Log.Line($"Removed {earlier} parts of an earlier run");
 
         if (Request.ClearTarget)
@@ -461,6 +476,36 @@ public sealed class MapPort
         else if (Request.Collision && collisionNumbers.Count > 0)
             Log.Warn($"{target} has no vanilla collision part to copy; no collision parts added");
 
+        // Assets (§4.6): one per DS3 object of a ported model, from a vanilla asset part with no links of its own
+        int assetParts = 0;
+        var assetTemplate = vanilla.Parts.Assets.FirstOrDefault(a => a.EntityID <= 0) ?? vanilla.Parts.Assets.FirstOrDefault();
+        if (assets.Count > 0 && assetTemplate == null)
+            Log.Warn($"{target} has no vanilla asset part to copy; no asset parts added");
+        else if (assets.Count > 0)
+        {
+            var assetModelTemplate = vanilla.Models.Assets.First(m => m.Name == assetTemplate.ModelName);
+            var allNames = vanilla.Parts.GetEntries().Concat(msb.Parts.GetEntries()).Select(p => p.Name).Where(n => n != null).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            foreach (var asset in assets.Values.Distinct())
+            {
+                var m = (MSBE.Model.Asset)assetModelTemplate.DeepCopy();
+                m.Name = asset;
+                m.SibPath = Regex.Replace(assetModelTemplate.SibPath ?? "", @"AEG\d{3}_\d{3}", asset, RegexOptions.IgnoreCase)
+                    .Replace($@"\{assetTemplate.ModelName[..6]}\", $@"\{asset[..6]}\", StringComparison.OrdinalIgnoreCase);
+                msb.Models.Assets.Add(m);
+            }
+            foreach (var ds3 in ds3Msb.Parts.Objects)
+            {
+                if (!assets.TryGetValue(ds3.ModelName, out var asset)) continue;
+                var part = (MSBE.Part.Asset)assetTemplate.DeepCopy();
+                var name = PartName(asset);
+                Place(part, asset, name, ds3.Position, ds3.Rotation, ds3.Scale, null);
+                part.SibPath = Regex.Replace(assetTemplate.SibPath ?? "", @"AEG\d{3}_\d{3}", asset, RegexOptions.IgnoreCase);
+                ClearReferences(part, allNames, 0);
+                msb.Parts.Assets.Add(part);
+                assetParts++;
+            }
+        }
+
         // GI: one EnvMap box around the playable area, which the collision covers (map pieces include sky domes and
         // backdrops kilometres across); the map pieces when no collision was ported
         var fromCollision = CollisionBoxes.Count > 0;
@@ -482,19 +527,22 @@ public sealed class MapPort
 
         var path = $"/map/mapstudio/{target}.msb.dcx";
         Output.Write(path, msb.Write());
-        Log.Line($"MSB: {pieces} map piece parts, {collisions} collision parts added, at the DS3 positions + {Request.Offset}");
+        Log.Line($"MSB: {pieces} map piece parts, {collisions} collision parts, {assetParts} asset parts added, at the DS3 positions + {Request.Offset}");
 
         // Read back
         var back = MSBE.Read(Output.Read(path));
         Log.Check(back.Parts.MapPieces.Count(p => ourModels.Contains(p.ModelName)) == pieces, "MSB: every ported map piece part");
         Log.Check(back.Parts.Collisions.Count(p => ourModels.Contains(p.ModelName)) == collisions, "MSB: every ported collision part");
+        Log.Check(back.Parts.Assets.Count(p => ourModels.Contains(p.ModelName)) == assetParts, "MSB: every ported asset part");
+        Log.Check(back.Models.Assets.Count(m => ourModels.Contains(m.Name)) == assets.Values.Distinct().Count(), "MSB: every ported asset model");
         Log.Check(back.Parts.GetEntries().Select(p => p.Name).Distinct().Count() == back.Parts.GetEntries().Count(), "MSB: part names unique");
         Log.Check(!back.Parts.GetEntries().Any(p => portModels.Contains(p.ModelName ?? "") && !ourModels.Contains(p.ModelName)), "MSB: no part left on a port model this run didn't write");
         Log.Check(back.Parts.Players.Count == vanilla.Parts.Players.Count || !Request.ClearTarget, "MSB: player starts kept");
 
         // Groups cleared on every ported part (no draw, display or alternate groups)
         var ported = back.Parts.MapPieces.Where(p => ourModels.Contains(p.ModelName)).Cast<MSBE.Part>()
-            .Concat(back.Parts.Collisions.Where(p => ourModels.Contains(p.ModelName))).ToList();
+            .Concat(back.Parts.Collisions.Where(p => ourModels.Contains(p.ModelName)))
+            .Concat(back.Parts.Assets.Where(p => ourModels.Contains(p.ModelName))).ToList();
         Log.Check(ported.All(p => p.GetType().GetProperties().Select(x => x.GetValue(p)).OfType<MSBE.Part.DisplayDataStruct>()
             .All(d => d.UseAltGroups == 0 && d.DisplayGroups.All(g => g == 0) && d.DrawGroups.All(g => g == 0) && d.AltDisplayGroups.All(g => g == 0) && d.AltDrawGroups.All(g => g == 0))),
             "MSB: ported parts have no groups");
