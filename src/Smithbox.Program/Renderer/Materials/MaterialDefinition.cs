@@ -724,6 +724,22 @@ public class MaterialResolvedReflectWater
     public float FadeBegin { get; set; } = 1f;
 }
 
+/// <summary>
+/// The two-layer blend of the GXFlver MulMask and DirtMask shaders (Bloodborne's and DS3's M[ARSN]_blend materials),
+/// from DS3's GXFlver_ColDifSpcBumpMulMaskDOL and GXFlver_ColDifSpcBumpDirtMaskDOL disassembly
+/// (Claude/Documentation/BB Mask Blend.md). With a the vertex color's alpha and k = mask.r * P.x + P.z:
+/// w = k &gt; 0 ? sat(a + k(1 - a)) : sat(a(1 + k)), smoothstepped (w²(3 - 2w)), and the layers are lerp(1, 2, w).
+/// P is FC_BlendMaskParam, from the FLVER material's GX01 (BlendMaskIntensity), see FlverResource.
+/// </summary>
+public class MaterialResolvedMaskBlend
+{
+    /// <summary>The FLVER UV set (0-based) the mask is sampled with: the rank of its MTD UV number</summary>
+    public int MaskUvIndex { get; set; }
+
+    /// <summary>DirtMask: only the albedo is blended, both on the first UV set; normal and specular are layer 1's</summary>
+    public bool AlbedoOnly { get; set; }
+}
+
 /// <summary>A <see cref="MaterialWaterRecipe"/> with the values of one material filled in</summary>
 public class MaterialResolvedWater
 {
@@ -1182,6 +1198,12 @@ public class MaterialSampler
     /// <summary>The UV set the game's shader samples this texture with, or -1 if that isn't known</summary>
     public int UvSet { get; set; } = -1;
 
+    /// <summary>
+    /// An MTD texture's UV number (1-based), or -1. A FLVER stores one UV set for each distinct number its MTD's
+    /// textures use, in ascending order, so a texture's set is the rank of its number (see MaterialResolvedMaskBlend)
+    /// </summary>
+    public int UvNumber { get; set; } = -1;
+
     /// <summary>What UVs are multiplied by to sample this texture</summary>
     public float[] Tiling { get; set; } = [1, 1];
 
@@ -1223,11 +1245,39 @@ public class MaterialDefinition
     private const string AlbedoRole = "AlbedoMap";
     private const string NormalRole = "NormalMap";
 
+    /// <summary>
+    /// Whether a sampler's role is a normal map: MATBIN's NormalMap, or an MTD's g_BumpmapTexture, g_BumpmapTexture2...
+    /// (not g_DetailBumpmapTexture, which is an overlay)
+    /// </summary>
+    public static bool IsNormalRole(string? role)
+    {
+        return role == NormalRole || (role != null && role.StartsWith("g_Bumpmap", StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>Whether a sampler's role is an albedo: MATBIN's AlbedoMap, or an MTD's g_DiffuseTexture, g_DiffuseTexture2...</summary>
+    private static bool IsAlbedoRole(string? role)
+    {
+        return role == AlbedoRole || (role != null && role.StartsWith("g_Diffuse", StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
+    /// Whether a sampler has a texture. An MTD's samplers have no paths, as the FLVER gives them, so each of its
+    /// samplers is taken to have one
+    /// </summary>
+    private bool HasTexture(MaterialSampler sampler)
+    {
+        return sampler.Path != "" || Source == "MTD";
+    }
+
     private static readonly Regex UnlitShader = new(@"^M\[(Sky|Clouds|DistantClouds|Atmosphere|BurningSky|Sea_of_Clouds)", RegexOptions.Compiled);
     private static readonly Regex FlameShader = new(@"^M\[(m11_05_WorldTree\]\[)?Flame", RegexOptions.Compiled);
     private static readonly Regex WaterShader = new(
         @"^M\[(Cut[Ss]cene\]\[)?(Water(?!Fall_Foam)|PlacidLake|Lake|Sea\]|MuddyWater|PoisonSwamp|CurseSwamp2|MossSwamp|Swamp\]|SkyWater|Oil_Liquid|Ocean_ExtraBoss|CrystalLiquid)",
         RegexOptions.Compiled);
+
+    // Bloodborne's water: GXFlver_Water, GXFlver_WaterBumpTri (three normals) and GXFlver_WaterBumpTriInteraction
+    // (which its tar and corrosive liquid use too)
+    private static readonly Regex MtdWaterShader = new(@"^GXFlver_Water", RegexOptions.Compiled);
 
     // Not known from the shader. Clear water that loses red first, and a smooth surface
     private static readonly float[] DefaultScatter = [0.01f, 0.01f, 0.01f];
@@ -1327,6 +1377,9 @@ public class MaterialDefinition
     /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.ReflectWater"/></summary>
     public MaterialResolvedReflectWater? ReflectWater { get; set; }
 
+    /// <summary>Set for the GXFlver MulMask and DirtMask shaders, see <see cref="MaterialResolvedMaskBlend"/></summary>
+    public MaterialResolvedMaskBlend? MaskBlend { get; set; }
+
     /// <summary>
     /// The vertex colors are read: for the Col shaders' multiply (<see cref="VertexColor"/>), the snow's cover or the
     /// water's tint and edge
@@ -1379,7 +1432,9 @@ public class MaterialDefinition
 
         foreach (MTD.Texture texture in mtd.Textures)
         {
-            def.Samplers.Add(ParseSampler(texture.Type, texture.Path ?? "", []));
+            MaterialSampler sampler = ParseSampler(texture.Type, texture.Path ?? "", []);
+            sampler.UvNumber = texture.UVNumber;
+            def.Samplers.Add(sampler);
         }
 
         def.Finish(mtd.ShaderPath, table);
@@ -1436,6 +1491,7 @@ public class MaterialDefinition
         ResolveSlots(table);
         ResolveMetallic(table);
         ResolveEmissiveMask(table);
+        ResolveMaskBlend();
 
         if (table != null && table.UvSets.TryGetValue(ShaderName, out var uvSets))
         {
@@ -1447,6 +1503,43 @@ public class MaterialDefinition
                 }
             }
         }
+    }
+
+    private static readonly Regex MaskBlendShader = new(@"^GXFlver_.*(MulMask|DirtMask)", RegexOptions.Compiled);
+
+    /// <summary>
+    /// The GXFlver MulMask and DirtMask blends (<see cref="MaterialResolvedMaskBlend"/>), for MTDs that give their blend
+    /// mask a UV number and have no blend recipe. Each texture's FLVER UV set is the rank of its UV number among those of
+    /// the MTD's textures (BB's M[ARSN]_l_blend uses 1-4: four sets; M[ARSN]_l_blend[A] 1, 3 and 4: three, the mask's
+    /// the third), so the second albedo is put on its own set: the second for MulMask, the first for DirtMask
+    /// </summary>
+    private void ResolveMaskBlend()
+    {
+        if (Blend != null || Source != "MTD" || !MaskBlendShader.IsMatch(ShaderName))
+        {
+            return;
+        }
+
+        MaterialSampler? mask = Samplers.Find(x => x.Role.StartsWith("g_BlendMask", StringComparison.OrdinalIgnoreCase));
+        if (mask == null || mask.UvNumber < 1)
+        {
+            return;
+        }
+
+        var numbers = Samplers.Where(x => x.UvNumber > 0).Select(x => x.UvNumber).Distinct().Order().ToList();
+        int RankOf(MaterialSampler s) => numbers.IndexOf(s.UvNumber);
+
+        // The shader reads layer 2 with the first or second UV set, which are the only ones the layers have
+        if (Samplers.Find(x => x.Role.Equals("g_DiffuseTexture2", StringComparison.OrdinalIgnoreCase)) is { UvNumber: > 0 } second)
+        {
+            second.UvSet = Math.Clamp(RankOf(second), 0, 1);
+        }
+
+        MaskBlend = new MaterialResolvedMaskBlend
+        {
+            MaskUvIndex = RankOf(mask),
+            AlbedoOnly = ShaderName.Contains("DirtMask", StringComparison.Ordinal)
+        };
     }
 
     /// <summary>The sampler type of the texture whose red is the glow, see <see cref="MaterialEmissiveMask"/></summary>
@@ -2034,7 +2127,7 @@ public class MaterialDefinition
         {
             Surface = MaterialSurface.Unlit;
         }
-        else if (WaterShader.IsMatch(ShaderName))
+        else if (WaterShader.IsMatch(ShaderName) || MtdWaterShader.IsMatch(ShaderName))
         {
             Surface = MaterialSurface.Water;
         }
@@ -2050,10 +2143,10 @@ public class MaterialDefinition
         }
 
         // The texture that moves is the one that matters. These shaders don't name their textures reliably
-        List<MaterialSampler> textures = Samplers.Where(x => x.Path != "").ToList();
-        var named = Surface == MaterialSurface.Water ? NormalRole : AlbedoRole;
+        var water = Surface == MaterialSurface.Water;
+        List<MaterialSampler> textures = Samplers.Where(x => water ? HasTexture(x) : x.Path != "").ToList();
 
-        SurfaceType = (textures.Find(x => x.Role == named)
+        SurfaceType = (textures.Find(x => water ? IsNormalRole(x.Role) : x.Role == AlbedoRole)
             ?? textures.Find(x => x.Scroll.Any(v => v != 0))
             ?? textures.FirstOrDefault())?.Type;
     }
@@ -2200,7 +2293,7 @@ public class MaterialDefinition
         MaterialResolvedWater water = new()
         {
             Gloss = recipe?.Gloss != null ? MathF.Sqrt(Math.Clamp(GetFirst(recipe.Gloss, 1), 0, 1)) * 0.95f : DefaultGloss,
-            HasVolume = !Samplers.Exists(x => x.Role == AlbedoRole && x.Path != ""),
+            HasVolume = !Samplers.Exists(x => IsAlbedoRole(x.Role) && HasTexture(x)),
             Scatter = recipe?.Scatter != null ? Values(recipe.Scatter, [0, 0, 0]) : DefaultScatter,
             Absorption = recipe?.Absorption != null ? Values(recipe.Absorption, [0, 0, 0]) : DefaultAbsorption,
             Tint = LayerTint(recipe?.Tint),

@@ -82,6 +82,15 @@ namespace Veldrid
                     description.ArrayLayers)
             };
 
+            // A BC4 texture holds one channel, which is read as grey (R, R, R, 1) rather than as red (R, 0, 0, 1). The
+            // games put one where a color is sampled: Bloodborne's materials have their shininess map (_s) as the
+            // specular texture too, which drew metal red. Only the game's textures are BC4, never a render target
+            if (Format is VkFormat.Bc4UnormBlock or VkFormat.Bc4SnormBlock)
+            {
+                imageViewCI.components = new VkComponentMapping(
+                    VkComponentSwizzle.R, VkComponentSwizzle.R, VkComponentSwizzle.R, VkComponentSwizzle.One);
+            }
+
             if ((tex.CreateFlags & VkImageCreateFlags.CubeCompatible) == VkImageCreateFlags.CubeCompatible)
             {
                 imageViewCI.viewType = description.ArrayLayers == 1 ? VkImageViewType.ImageCube : VkImageViewType.ImageCubeArray;

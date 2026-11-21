@@ -1247,6 +1247,17 @@ public class TexturePool
             }
         }
 
+        /// <summary>
+        /// A PS4 mip's stored size in one direction: whole 32 pixel tiles, rounded up to 32, or to the next power of two
+        /// (at least 32) for a texture whose size isn't one (see FillWithPS4TPF)
+        /// </summary>
+        private static uint PS4PaddedSize(uint size, bool pow2)
+        {
+            return pow2
+                ? Math.Max(32u, System.Numerics.BitOperations.RoundUpToPowerOf2(Math.Max(1u, size)))
+                : (uint)(Math.Ceiling(size / 32f) * 32f);
+        }
+
         public unsafe void FillWithPS4TPF(GraphicsDevice d, CommandList cl, TPF.TPFPlatform platform,
             TPF.Texture tex, string name)
         {
@@ -1298,6 +1309,35 @@ public class TexturePool
             uint paddedHeight = 0;
             uint paddedSize = 0;
             uint copyOffset = 0;
+            var isCompressed = FormatHelpers.IsCompressedFormat(format);
+            byte[] deswizzled = null;
+
+            // Each mip is stored as whole 32x32 tiles, row-major over a padded width. For a power of two texture that is
+            // the size rounded to 32, but one that isn't (m25_carpet_621_a, 680x677) is padded to the next power of two
+            // in both directions (1024x1024: its data is that chain, byte for byte). Rounded to 32 instead, its tiles
+            // were read at the wrong pitch, a scramble of blocks that changed with the mip. The layout whose chain the
+            // data holds is used, the rounding to 32 where both fit or neither does
+            var pow2Layout = false;
+            if (isCompressed && tex.Format != 105)
+            {
+                long ChainSize(bool pow2)
+                {
+                    long total = 0;
+                    uint w = width, h = height;
+                    for (uint level = 0; level < mipCount; level++)
+                    {
+                        total += PS4PaddedSize(w, pow2) / 4 * (PS4PaddedSize(h, pow2) / 4) * blockSize;
+                        w = Math.Max(1u, w / 2);
+                        h = Math.Max(1u, h / 2);
+                    }
+
+                    return total * arrayCount;
+                }
+
+                var rounded = ChainSize(false);
+                var powered = ChainSize(true);
+                pow2Layout = rounded != tex.Bytes.Length && powered != rounded && powered <= tex.Bytes.Length;
+            }
 
             for (var slice = 0; slice < arrayCount; slice++)
             {
@@ -1313,8 +1353,8 @@ public class TexturePool
                     }
                     else
                     {
-                        paddedWidth = (uint)(Math.Ceiling(currentWidth / 32f) * 32f);
-                        paddedHeight = (uint)(Math.Ceiling(currentHeight / 32f) * 32f);
+                        paddedWidth = PS4PaddedSize(currentWidth, pow2Layout);
+                        paddedHeight = PS4PaddedSize(currentHeight, pow2Layout);
                         paddedSize = (uint)(Math.Ceiling(paddedWidth / 4f) * Math.Ceiling(paddedHeight / 4f) *
                                             blockSize);
                     }
@@ -1322,16 +1362,48 @@ public class TexturePool
                     var mipInfo = GetMipByteSize(format, tex.Header.Width, tex.Header.Height, (int)level);
 
                     MappedResource map = d.Map(_staging, MapMode.Write, ((uint)slice * mipCount) + level);
-                    //fixed (void* data = &tex.Bytes[copyOffset])
-                    //{
-                    //Unsafe.CopyBlock(map.Data.ToPointer(), data, (uint)paddedSize);
 
                     var texBytes = (Memory<byte>)tex.Bytes;
+                    var input = texBytes.Span.Slice((int)copyOffset, (int)paddedSize);
 
-                    DeswizzleDDSBytesPS4((int)currentWidth, (int)currentHeight, tex.Format, (int)blockSize,
-                        (int)paddedWidth, texBytes.Span.Slice((int)copyOffset, (int)paddedSize),
-                        new Span<byte>(map.Data.ToPointer(), mipInfo));
-                    //}
+                    if (isCompressed && tex.Format != 105)
+                    {
+                        // The deswizzle lays rows out at the padded (32 pixel) width, but a mip narrower than that
+                        // has fewer blocks a row: written straight to the mip, its rows interleaved with padding and
+                        // drew stripes on distant surfaces. Deswizzle to the padded layout, then copy out the mip
+                        var paddedRowBytes = (int)(paddedWidth / 4 * blockSize);
+                        var paddedRows = (int)(paddedHeight / 4);
+                        var paddedBytes = paddedRowBytes * paddedRows;
+
+                        if (deswizzled == null || deswizzled.Length < paddedBytes)
+                        {
+                            deswizzled = new byte[paddedBytes];
+                        }
+
+                        // At the padded size, so the tiles of a row are as many as the padded width holds
+                        var padded = deswizzled.AsSpan(0, paddedBytes);
+                        DeswizzleDDSBytesPS4((int)paddedWidth, (int)paddedHeight, tex.Format, (int)blockSize,
+                            (int)paddedWidth, input, padded);
+
+                        var mipWidth = Math.Max(1u, width >> (int)level);
+                        var mipHeight = Math.Max(1u, height >> (int)level);
+                        var rowBytes = (int)(((mipWidth + 3) / 4) * blockSize);
+                        var rows = (int)((mipHeight + 3) / 4);
+                        var destPitch = map.RowPitch >= rowBytes ? (int)map.RowPitch : rowBytes;
+                        var dest = (byte*)map.Data.ToPointer();
+
+                        for (var row = 0; row < rows && row < paddedRows; row++)
+                        {
+                            padded.Slice(row * paddedRowBytes, Math.Min(rowBytes, paddedRowBytes))
+                                .CopyTo(new Span<byte>(dest + (row * destPitch), rowBytes));
+                        }
+                    }
+                    else
+                    {
+                        DeswizzleDDSBytesPS4((int)currentWidth, (int)currentHeight, tex.Format, (int)blockSize,
+                            (int)paddedWidth, input, new Span<byte>(map.Data.ToPointer(), mipInfo));
+                    }
+
                     copyOffset += paddedSize;
 
                     if (currentWidth > 1)

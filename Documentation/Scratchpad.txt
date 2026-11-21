@@ -1,3 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
+
+m009027_2200 Metal trim elements are red
+m005531 Metal trim elements is red
+m005532 Gold trim looks off

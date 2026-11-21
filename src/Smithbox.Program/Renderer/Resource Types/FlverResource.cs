@@ -549,11 +549,16 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
+        // An MTD's samplers have no paths, so its textures are the FLVER's (Bloodborne's water)
+        string FlverPathIfUnnamed(string type) =>
+            dest.Definition?.Samplers.Find(x => x.Type == type) is { Path: "" } ? flverPaths.GetValueOrDefault(type, "") : "";
+
         if (dest.Definition?.SurfaceType != null)
         {
             LookupTexture(dest.Definition.Surface == MaterialSurface.Water
                 ? FlverMaterial.TextureType.NormalTextureResource
-                : FlverMaterial.TextureType.AlbedoTextureResource, dest, dest.Definition.SurfaceType, "", mtd);
+                : FlverMaterial.TextureType.AlbedoTextureResource, dest, dest.Definition.SurfaceType,
+                dest.Definition.Surface == MaterialSurface.Water ? FlverPathIfUnnamed(dest.Definition.SurfaceType) : "", mtd);
         }
 
         if (dest.Definition?.Fur is { } fur)
@@ -588,7 +593,7 @@ public class FlverResource : IResource, IDisposable
 
         if (dest.Definition?.Water?.DetailType is { } waterDetail)
         {
-            LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, waterDetail, "", mtd);
+            LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, waterDetail, FlverPathIfUnnamed(waterDetail), mtd);
         }
 
         // The snow's finer normal, read with the snow's own tiling (FlverShader.frag, SnowCover)
@@ -992,6 +997,14 @@ public class FlverResource : IResource, IDisposable
             dest.ShaderName = @"FlverShader\FlverShader_blend_uv3";
             dest.LayoutType = MeshLayoutType.LayoutUV3;
         }
+        else if (layers.HasBlendMask && dest.Definition?.MaskBlend is { } maskBlend)
+        {
+            // A GXFlver mask blend: the game's weight (FlverShader.frag, MATERIAL_MASK_BLEND), its mask on a UV set of
+            // its own (the fourth of M[ARSN]_l_blend's), which goes in the third slot
+            dest.ShaderName = @"FlverShader\FlverShader_blendmask_uv3";
+            dest.LayoutType = MeshLayoutType.LayoutUV3;
+            dest.MaskBlendUvIndex = maskBlend.MaskUvIndex;
+        }
         else if (layers.HasBlendMask)
         {
             dest.ShaderName = @"FlverShader\FlverShader_blendmask";
@@ -1238,8 +1251,10 @@ public class FlverResource : IResource, IDisposable
 
         // A blend mask the FLVER tiles, on a material without a recipe: the blend entries for its tiling (Material.MaskTilingFlag).
         // Fur and the ChrCustomize colourings use the mask slot or the deform entry for other things
+        // A GXFlver mask blend keeps its intensity in them as well (FlverMaterial.MaskBlendUvIndex)
         if (dest.Definition?.Blend == null && dest.Definition?.Fur == null && CustomizeMode(dest.Definition) == 0 &&
-            dest.FlverTiling.Keys.Any(x => x.Contains("BlendMask", StringComparison.OrdinalIgnoreCase)))
+            (dest.Definition?.MaskBlend != null ||
+             dest.FlverTiling.Keys.Any(x => x.Contains("BlendMask", StringComparison.OrdinalIgnoreCase))))
         {
             dest.MaskTilingEntries = true;
             size = Math.Max(size, sizeof(MaterialWithBlend));
@@ -1542,6 +1557,27 @@ public class FlverResource : IResource, IDisposable
         dest.FlverTiling[paramName] = scale;
     }
 
+    /// <summary>
+    /// The first float of the material's GX01 item (BlendMaskIntensity), 1 where it has none. Every BB mask blend
+    /// material has one (0 to 10, 1 the most common), with its other floats 0
+    /// </summary>
+    private float ReadBlendMaskIntensity(IFlverMaterial mat)
+    {
+        if (mat is not FLVER2.Material material || Flver == null || material.GXIndex < 0 || material.GXIndex >= Flver.GXLists.Count)
+        {
+            return 1f;
+        }
+
+        FLVER2.GXItem? item = Flver.GXLists[material.GXIndex].Find(x => x.ID == "GX01");
+        if (item?.Data is not { Length: >= 4 } data)
+        {
+            return 1f;
+        }
+
+        var value = BitConverter.ToSingle(data, 0);
+        return float.IsFinite(value) ? value : 1f;
+    }
+
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -1557,6 +1593,12 @@ public class FlverResource : IResource, IDisposable
             {
                 RecordFlverTiling(dest, flverTexture.ParamName, flverTexture.TilingScale);
             }
+        }
+
+        // The GXFlver mask blends' intensity, from the FLVER material's GX01 (BlendMaskIntensity, GX_Item_Descriptors)
+        if (dest.Definition?.MaskBlend != null)
+        {
+            dest.MaskBlendIntensity = ReadBlendMaskIntensity(mat);
         }
 
         dest.MaterialBuffer = AllocateMaterialBuffer(dest);
@@ -2937,6 +2979,128 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
+    /// <see cref="FillVerticesUV2"/> plus a third UV slot holding the FLVER UV set <paramref name="thirdUv"/> (a GXFlver
+    /// mask blend's mask, FlverMaterial.MaskBlendUvIndex). The first two slots are filled as FillVerticesUV2 fills
+    /// them; the third counts a UV pair member as its two sets, as FLVER.Vertex lists them. A mesh with fewer sets
+    /// repeats its last one there. <paramref name="uvSetsSeen"/> carries the count across a mesh's buffers.
+    /// </summary>
+    private unsafe void FillVerticesUV3(BinaryReaderEx br, ref FlverVertexBuffer buffer,
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform,
+        float uvFactor, bool firstBuffer, ref int uvSetsFilled, ref int uvSetsSeen, int maxUvSets, int thirdUv)
+    {
+        Span<FlverLayoutUV3> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
+        br.StepIn(buffer.bufferOffset);
+        var uvsfilled = uvSetsFilled;
+        var seen = uvSetsSeen;
+        short* first = stackalloc short[2];
+        short* second = stackalloc short[2];
+
+        fixed (FlverLayoutUV3* pverts = verts)
+        {
+            for (var i = 0; i < buffer.vertexCount; i++)
+            {
+                FlverLayoutUV3* v = &pverts[i];
+                Vector3 n = Vector3.UnitX;
+
+                // See FillVerticesUV2
+                if (firstBuffer)
+                {
+                    *v = new FlverLayoutUV3();
+                    FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+                }
+
+                uvsfilled = uvSetsFilled;
+                seen = uvSetsSeen;
+                var thirdFound = false;
+
+                foreach (FlverBufferLayoutMember l in layouts)
+                {
+                    if (l.IsSpecialMember)
+                    {
+                        continue;
+                    }
+
+                    if (l.semantic == FLVER.LayoutSemantic.Position)
+                    {
+                        if (l.type == LayoutType.EdgeCompressed)
+                        {
+                            continue;
+                        }
+
+                        FillVertex(&(*v).Position, br, l.type);
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.Normal)
+                    {
+                        FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.UV)
+                    {
+                        FillUVShort(first, second, br, l.type, uvFactor, true, out var hasv2);
+                        var count = hasv2 ? 2 : 1;
+
+                        if (uvsfilled < maxUvSets)
+                        {
+                            if (uvsfilled == 0)
+                            {
+                                (*v).Uv1[0] = first[0];
+                                (*v).Uv1[1] = first[1];
+                                if (hasv2)
+                                {
+                                    (*v).Uv2[0] = second[0];
+                                    (*v).Uv2[1] = second[1];
+                                }
+
+                                uvsfilled += count;
+                            }
+                            else
+                            {
+                                (*v).Uv2[0] = first[0];
+                                (*v).Uv2[1] = first[1];
+                                uvsfilled += 1;
+                            }
+                        }
+
+                        // The third slot: the set asked for, else the last one there is
+                        if (!thirdFound)
+                        {
+                            short* pick = hasv2 && thirdUv > seen ? second : first;
+                            (*v).Uv3[0] = pick[0];
+                            (*v).Uv3[1] = pick[1];
+                            thirdFound = thirdUv >= seen && thirdUv < seen + count;
+                        }
+
+                        seen += count;
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.VertexColor && l.index == 0)
+                    {
+                        FillVertexColor((*v).Color, br, l.type);
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.Tangent && l.index == 0)
+                    {
+                        FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, &n, br, l.type);
+                    }
+                    else
+                    {
+                        EatVertex(br, l.type);
+                    }
+                }
+
+                if (uvsfilled == 1)
+                {
+                    (*v).Uv2[0] = (*v).Uv1[0];
+                    (*v).Uv2[1] = (*v).Uv1[1];
+                }
+
+                pickingVerts[i] = (*v).Position;
+            }
+        }
+
+        uvSetsFilled = uvsfilled;
+        uvSetsSeen = seen;
+        br.StepOut();
+    }
+
+    /// <summary>
     /// Which of TEXCOORD1-3 a layout member holds, or -1 if it isn't one of them.
     /// Their position in the layout says nothing, as other members can come before them.
     /// </summary>
@@ -3269,6 +3433,44 @@ public class FlverResource : IResource, IDisposable
                 {
                     Vector3 column = vert.UVs[vatColumnUV];
                     SetVatFrameColumn(d, (byte)Math.Round(column.X * 255f), (byte)Math.Round(column.Y * 255f));
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// <see cref="FillVerticesUV2(FLVER2.Mesh, Span{Vector3}, nint, int)"/> plus the FLVER UV set <paramref name="thirdUv"/>
+    /// in the third slot (a GXFlver mask blend's mask), or the last set where the mesh has fewer
+    /// </summary>
+    private unsafe void FillVerticesUV3(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int thirdUv)
+    {
+        Span<FlverLayoutUV3> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
+        fixed (FlverLayoutUV3* pverts = verts)
+        {
+            for (var i = 0; i < mesh.Vertices.Count; i++)
+            {
+                FLVER.Vertex vert = mesh.Vertices[i];
+
+                verts[i] = new FlverLayoutUV3();
+                pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
+                FlverLayoutUV3* v = &pverts[i];
+                FillVertex(ref (*v).Position, ref vert);
+                FillNormalSNorm8((*v).Normal, ref vert);
+                // FlverLayoutUV3 starts as FlverLayoutUV2 does
+                FillUVPairShort((FlverLayoutUV2*)v, ref vert, maxUvSets);
+                if (vert.UVs.Count > 0)
+                {
+                    FillUVShort((*v).Uv3, ref vert, (byte)Math.Min(thirdUv, vert.UVs.Count - 1));
+                }
+
+                FillColorUNorm((*v).Color, ref vert);
+                if (vert.Tangents.Count > 0)
+                {
+                    FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
+                }
+                else
+                {
+                    FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
                 }
             }
         }
@@ -3621,6 +3823,10 @@ public class FlverResource : IResource, IDisposable
         {
             FillVerticesUV2(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets);
         }
+        else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV3)
+        {
+            FillVerticesUV3(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, Math.Max(dest.Material.MaskBlendUvIndex, 0));
+        }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
         {
             FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute,
@@ -3930,6 +4136,7 @@ public class FlverResource : IResource, IDisposable
 
         var firstBuffer = true;
         var uvSetsFilled = 0;
+        var uvSetsSeen = 0;
 
         foreach (var vbi in vertexBufferIndices)
         {
@@ -3973,6 +4180,12 @@ public class FlverResource : IResource, IDisposable
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
             {
                 FillVerticesUV2(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets);
+            }
+            else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV3)
+            {
+                // A GXFlver mask blend, its mask's UV set in the third slot
+                FillVerticesUV3(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer,
+                    ref uvSetsFilled, ref uvSetsSeen, dest.Material.MaxUvSets, Math.Max(dest.Material.MaskBlendUvIndex, 0));
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
             {
@@ -4815,6 +5028,24 @@ public class FlverResource : IResource, IDisposable
         /// <summary>The material has the blend entries for its blend mask's tiling alone, see <see cref="Material.MaskTilingFlag"/></summary>
         public bool MaskTilingEntries;
 
+        /// <summary>
+        /// A GXFlver MulMask or DirtMask blend (<see cref="MaterialResolvedMaskBlend"/>), weighed as the game does: the
+        /// FLVER UV set of its mask, which goes in the third UV slot (FlverLayoutUV3), or -1 for none
+        /// </summary>
+        public int MaskBlendUvIndex = -1;
+
+        /// <summary>The FLVER material's GX01 BlendMaskIntensity, which FC_BlendMaskParam is made from</summary>
+        public float MaskBlendIntensity = 1f;
+
+        /// <summary>
+        /// FC_BlendMaskParam's x and z from GX01's BlendMaskIntensity I, so that k = mask.r * x + z. The shader pushes
+        /// the vertex alpha up for k above 0 and down below it, and the blend materials keep their alpha at 0.5 (3616
+        /// of BB's 7692 blend meshes have one constant alpha): the mask is centred, k = I(2 mask - 1), which takes
+        /// alpha 0.5 to either layer at I 1. Inferred from the shader and the data, not read from the game's code
+        /// (Claude/Documentation/BB Mask Blend.md)
+        /// </summary>
+        public static (float X, float Z) MaskBlendParam(float intensity) => (2f * intensity, -intensity);
+
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
 
@@ -5283,6 +5514,17 @@ public class FlverResource : IResource, IDisposable
             if (MaskTilingEntries)
             {
                 MaterialData.uvSet2 |= Material.MaskTilingFlag;
+            }
+
+            // A GXFlver mask blend: FC_BlendMaskParam in the blend entries (FlverShader.frag, MATERIAL_MASK_BLEND)
+            if (MaskBlendUvIndex >= 0 && MaskTilingEntries)
+            {
+                MaterialData.uvSet2 |= Material.MaskBlendFlag;
+                var (x, z) = MaskBlendParam(MaskBlendIntensity);
+                MaterialWithBlend withParam = Blend ?? new MaterialWithBlend();
+                withParam.Blend.Sharpness = new Vector4(x, 0, 0, 0);
+                withParam.Blend.Detail = new Vector4(z, 0, 0, 0);
+                Blend = withParam;
             }
 
             // An overlay comes after the blend entries, which are just unused without a recipe, as they are for a mask's tiling

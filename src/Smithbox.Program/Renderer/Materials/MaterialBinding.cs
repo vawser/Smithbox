@@ -131,7 +131,7 @@ public static class MaterialBinding
         }
 
         // All of the normals of water end the same, and the last would replace the one that was chosen
-        if (d?.Water != null && d.SurfaceType != null && role == "NormalMap")
+        if (d?.Water != null && d.SurfaceType != null && MaterialDefinition.IsNormalRole(role))
         {
             return texType == d.SurfaceType || texType == d.Water.DetailType
                 ? new(MaterialTextureUse.WaterNormal, LoadedElsewhere: true)

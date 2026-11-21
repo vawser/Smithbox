@@ -587,6 +587,8 @@ float g_weight[MAX_LAYERS];
 
 // In the second layer's UV set value: the blend mask's tiling is in the blend entries (Material.MaskTilingFlag)
 #define MATERIAL_MASK_TILING 0x100u
+// And with it: a GXFlver mask blend, weighed by the vertex alpha the mask pushes (Material.MaskBlendFlag)
+#define MATERIAL_MASK_BLEND 0x200u
 
 // One of the 16 bit values of the current material
 uint MaterialValue(int row, int index)
@@ -1255,6 +1257,29 @@ void ComputeLayerWeights()
   #endif
 
 	vec3 channels;
+  #if defined(MATERIAL_BLEND_MASK) && defined(MATERIAL_UV3)
+	// A GXFlver mask blend (MaterialResolvedMaskBlend, Material.MaskBlendFlag), as DS3's GXFlver_ColDifSpcBumpMulMaskDOL
+	// weighs it: the vertex alpha pushed toward 1 or 0 by k = mask.r * P.x + P.z (FC_BlendMaskParam, in the blend
+	// entries), smoothstepped. The mask is on its own UV set, in the third slot
+	if ((MaterialValue(ROW_UVSET, 1) & MATERIAL_MASK_BLEND) != 0u)
+	{
+		vec2 tiling = layertilingdata[g_mat + 4u].maskTiling.xy;
+		vec2 maskUv = fsin_texcoord3 * tiling;
+		float maskValue = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(MaterialValue(ROW_EXTRA, 0)))], anisoLinearSampler),
+			maskUv, dFdx(fsin_texcoord3) * tiling, dFdy(fsin_texcoord3) * tiling).r;
+		blendData param = blenddata[g_mat + 5u];
+		float k = maskValue * param.sharpness.x + param.detail.x;
+		float a = clamp(fsin_color.a, 0.0, 1.0);
+		float w = clamp(k > 0.0 ? a + k * (1.0 - a) : a * (1.0 + k), 0.0, 1.0);
+		w = w * w * (3.0 - 2.0 * w);
+		g_weight = float[MAX_LAYERS](1.0 - w, c_layerCount > 1 ? w : 0.0, 0.0, 0.0);
+		if (c_layerCount <= 1)
+		{
+			g_weight[0] = 1.0;
+		}
+		return;
+	}
+  #endif
   #ifdef MATERIAL_BLEND_MASK
 	// The mask's tiling, where the material has the blend entries for it (Material.MaskTilingFlag): DS2's FLVER tiling
 	vec2 maskTiling = (MaterialValue(ROW_UVSET, 1) & MATERIAL_MASK_TILING) != 0u ? layertilingdata[g_mat + 4u].maskTiling.xy : vec2(1.0);

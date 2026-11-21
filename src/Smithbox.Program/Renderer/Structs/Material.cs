@@ -35,6 +35,13 @@ public unsafe struct Material
     /// </summary>
     public const ushort MaskTilingFlag = 0x100;
 
+    /// <summary>
+    ///     Set in <see cref="uvSet2" /> with <see cref="MaskTilingFlag" />: a GXFlver mask blend (MaterialResolvedMaskBlend),
+    ///     weighed by the vertex alpha pushed by the mask, the mask on the third UV slot. FC_BlendMaskParam's x and z are
+    ///     the blend entries' Sharpness.x and Detail.x (FlverMaterial.MaskBlendUvIndex)
+    /// </summary>
+    public const ushort MaskBlendFlag = 0x200;
+
     /// <summary>The MTD's g_EnvSpcSlotNo (0-3), which of the four env specular maps the material reads</summary>
     public const ushort EnvSpecularSlotMask = 0x0C00;
     public const int EnvSpecularSlotShift = 10;
