@@ -62,6 +62,13 @@ void FamilyTangentNormal(inout vec3 n)
 		Modern_TangentNormal(n);
 }
 
+// A normal map's sample as it is stored, before its x and y are read from red and green. Transitional: DS2's DXT5nm
+void FamilyNormalSample(inout vec4 c)
+{
+	if (c_isTransitional)
+		Transitional_NormalSample(c);
+}
+
 // The sampled albedo, before the material's diffuse color and the overlays. Legacy: DES vertex color
 void FamilyAlbedo(inout vec4 diffuseColor)
 {

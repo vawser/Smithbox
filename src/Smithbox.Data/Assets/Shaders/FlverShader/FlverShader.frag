@@ -585,6 +585,9 @@ float g_weight[MAX_LAYERS];
 #define ROW_EXTRA 4
 #define ROW_UVSET 5
 
+// In the second layer's UV set value: the blend mask's tiling is in the blend entries (Material.MaskTilingFlag)
+#define MATERIAL_MASK_TILING 0x100u
+
 // One of the 16 bit values of the current material
 uint MaterialValue(int row, int index)
 {
@@ -1084,6 +1087,8 @@ vec4 SampleLayered(int row, bool blendLayers)
 // file adds up layers by weight, so each mix takes its share from the layers below
 // A family's own tangent space for a normal map's value, before fsin_worldToTangent (Families.glsl, included further down)
 void FamilyTangentNormal(inout vec3 n);
+// A normal map's stored sample, before x and y are read from it (Families.glsl)
+void FamilyNormalSample(inout vec4 c);
 
 void ComputeRecipeWeights()
 {
@@ -1251,7 +1256,9 @@ void ComputeLayerWeights()
 
 	vec3 channels;
   #ifdef MATERIAL_BLEND_MASK
-	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0, vec2(1.0), vec2(0.0)).rgb;
+	// The mask's tiling, where the material has the blend entries for it (Material.MaskTilingFlag): DS2's FLVER tiling
+	vec2 maskTiling = (MaterialValue(ROW_UVSET, 1) & MATERIAL_MASK_TILING) != 0u ? layertilingdata[g_mat + 4u].maskTiling.xy : vec2(1.0);
+	channels = SampleAt(MaterialValue(ROW_EXTRA, 0), 0, maskTiling, vec2(0.0)).rgb;
   #else
 	channels = vec3(fsin_color.a, fsin_color.r, fsin_color.g);
   #endif
@@ -2689,7 +2696,9 @@ void main()
 		sceneparam.lightingDebugView == LIGHTING_VIEW_EDITOR_SURFACE;
 
 #ifdef MATERIAL_BLEND
-	vec3 normalColor = SampleLayered(ROW_NORMAL, c_blendNormal).xyz;
+	vec4 normalSample = SampleLayered(ROW_NORMAL, c_blendNormal);
+	FamilyNormalSample(normalSample);
+	vec3 normalColor = normalSample.xyz;
 	vec3 F0 = SampleLayered(ROW_SPECULAR, c_blendSpecular).xyz;
 
 	// Each strand bends the normal underneath it, and knows how glossy it is. Index 1 is the default normal,
@@ -2709,7 +2718,9 @@ void main()
 		}
 	}
 #else
-	vec3 normalColor = SampleLayer(ROW_NORMAL, 0).xyz;
+	vec4 normalSample = SampleLayer(ROW_NORMAL, 0);
+	FamilyNormalSample(normalSample);
+	vec3 normalColor = normalSample.xyz;
 	vec3 F0 = SampleLayer(ROW_SPECULAR, 0).xyz;
 #endif
 

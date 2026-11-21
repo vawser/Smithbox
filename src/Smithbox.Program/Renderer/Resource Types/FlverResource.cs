@@ -390,7 +390,7 @@ public class FlverResource : IResource, IDisposable
 
             (Context?.Pool ?? ResourceManager.DefaultPool).AddListener<TextureResource>(textureName, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
-            dest.ApplySampler(textureType, resolvedType);
+            dest.ApplySampler(textureType, resolvedType, type);
         }
         else
         {
@@ -1223,6 +1223,15 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithDetailStack);
         }
 
+        // A blend mask the FLVER tiles, on a material without a recipe: the blend entries for its tiling (Material.MaskTilingFlag).
+        // Fur and the ChrCustomize colourings use the mask slot or the deform entry for other things
+        if (dest.Definition?.Blend == null && dest.Definition?.Fur == null && CustomizeMode(dest.Definition) == 0 &&
+            dest.FlverTiling.Keys.Any(x => x.Contains("BlendMask", StringComparison.OrdinalIgnoreCase)))
+        {
+            dest.MaskTilingEntries = true;
+            size = Math.Max(size, sizeof(MaterialWithBlend));
+        }
+
         return SceneRenderer.MaterialBufferAllocator.Allocate((uint)size, sizeof(Material));
     }
 
@@ -1508,6 +1517,18 @@ public class FlverResource : IResource, IDisposable
         DetailSurfaceArea += area;
     }
 
+    /// <summary>
+    /// Keeps a texture's FLVER tiling (<see cref="FlverMaterial.FlverTiling"/>) when it says something: 1,1 is
+    /// the default, and 0 in either axis would collapse the texture to one texel.
+    /// </summary>
+    private static void RecordFlverTiling(FlverMaterial dest, string paramName, Vector2 scale)
+    {
+        if (scale == Vector2.One || scale.X == 0 || scale.Y == 0 || !float.IsFinite(scale.X) || !float.IsFinite(scale.Y))
+            return;
+
+        dest.FlverTiling[paramName] = scale;
+    }
+
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -1515,6 +1536,16 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
         dest.FlverMaterialName = mat.Name;
         dest.Definition = GetMaterialDefinition(mat.MTD);
+
+        // Before the buffer, whose size can depend on it (AllocateMaterialBuffer)
+        foreach (IFlverTexture? texture in mat.Textures)
+        {
+            if (texture is FLVER2.Texture { ParamName: not null } flverTexture)
+            {
+                RecordFlverTiling(dest, flverTexture.ParamName, flverTexture.TilingScale);
+            }
+        }
+
         dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
 
@@ -1668,6 +1699,14 @@ public class FlverResource : IResource, IDisposable
             dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
         dest.IsBodyHair = IsBodyHairMaterial(matName);
+
+        // Before the buffer, whose size can depend on it (AllocateMaterialBuffer)
+        for (var i = mat.textureIndex; i < mat.textureIndex + mat.textureCount; i++)
+        {
+            var ttype = isUTF ? br.GetUTF16(textures[i].typeOffset) : br.GetShiftJIS(textures[i].typeOffset);
+            RecordFlverTiling(dest, ttype, textures[i].scale);
+        }
+
         dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
 
@@ -4740,6 +4779,16 @@ public class FlverResource : IResource, IDisposable
         /// <summary>The sampler type of each layer's albedo, which says the layer's UV set, see ConfigureMaterialShader</summary>
         public string?[] LayerAlbedoTypes = new string?[Material.MaxLayers];
 
+        /// <summary>
+        /// The FLVER's own tiling of each texture, by its param name, where it is set (not 1,1 or 0). DS2 tiles its
+        /// textures here rather than in the MTD (m10_04's ground: grass 30x30, sand 22x22, mask 6x6), so it wins
+        /// over the definition's tiling. The other games' FLVERs leave it at 1,1.
+        /// </summary>
+        public Dictionary<string, Vector2> FlverTiling = new();
+
+        /// <summary>The material has the blend entries for its blend mask's tiling alone, see <see cref="Material.MaskTilingFlag"/></summary>
+        public bool MaskTilingEntries;
+
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
 
@@ -4955,15 +5004,17 @@ public class FlverResource : IResource, IDisposable
         /// two layers have tiling, as those are the only ones a material can blend, and only the
         /// first layer has color and scrolling.
         /// </summary>
-        public void ApplySampler(TextureType textureType, string? samplerType)
+        public void ApplySampler(TextureType textureType, string? samplerType, string? flverType = null)
         {
             MaterialSampler? sampler = Definition?.Samplers.Find(x => x.Type == samplerType);
+            Vector2 flverTiling = default;
+            var hasFlverTiling = flverType != null && FlverTiling.TryGetValue(flverType, out flverTiling);
 
-            if (sampler == null || sampler.Tiling.Length < 2)
+            if (!hasFlverTiling && (sampler == null || sampler.Tiling.Length < 2))
                 return;
 
-            var tiling = sampler.Tiling;
-            var scroll = sampler.Scroll;
+            float[] tiling = hasFlverTiling ? [flverTiling.X, flverTiling.Y] : sampler!.Tiling;
+            var scroll = sampler?.Scroll ?? [0, 0];
 
             switch (textureType)
             {
@@ -4973,7 +5024,7 @@ public class FlverResource : IResource, IDisposable
                     Effects.Scroll.X = scroll[0];
                     Effects.Scroll.Y = scroll[1];
 
-                    if (sampler.Color != null)
+                    if (sampler?.Color != null)
                     {
                         // The game saturates this, unlike the color of light given off
                         AlbedoTint = Vector3.Min(new Vector3(sampler.Color[0], sampler.Color[1], sampler.Color[2]), Vector3.One);
@@ -4988,7 +5039,7 @@ public class FlverResource : IResource, IDisposable
                 case TextureType.EmissiveTextureResource:
                     Effects.EmissiveTiling = new Vector4(tiling[0], tiling[1], scroll[0], scroll[1]);
 
-                    if (sampler.Color != null)
+                    if (sampler?.Color != null)
                     {
                         Effects.EmissiveColor = new Vector4(sampler.Color[0], sampler.Color[1], sampler.Color[2], 0);
                     }
@@ -5186,8 +5237,13 @@ public class FlverResource : IResource, IDisposable
             var detailStack = HasDetailStack;
             var layerDetail = LayerDetail != null || detailStack;
 
-            // An overlay comes after the blend entries, which are just unused without a recipe
-            if ((Detail != null || Magma != null || Water != null || layerDetail ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
+            if (MaskTilingEntries)
+            {
+                MaterialData.uvSet2 |= Material.MaskTilingFlag;
+            }
+
+            // An overlay comes after the blend entries, which are just unused without a recipe, as they are for a mask's tiling
+            if ((Detail != null || Magma != null || Water != null || layerDetail || MaskTilingEntries ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
             {
                 ushort detail = 0;
                 SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, BlackTexture);

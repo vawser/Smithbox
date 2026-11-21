@@ -28,6 +28,13 @@ public unsafe struct Material
     /// </summary>
     public const ushort EnvLightingFlag = 0x200;
 
+    /// <summary>
+    ///     Set in <see cref="uvSet2" />, above the second layer's UV set: a material that blends by a blend mask without a
+    ///     recipe has the blend entries (<see cref="MaterialWithBlend" />) for the mask's tiling alone, which the shader
+    ///     reads from <see cref="MaterialLayerTiling.MaskTiling" />. DS2 tiles its masks in the FLVER (FlverMaterial.FlverTiling)
+    /// </summary>
+    public const ushort MaskTilingFlag = 0x100;
+
     /// <summary>The MTD's g_EnvSpcSlotNo (0-3), which of the four env specular maps the material reads</summary>
     public const ushort EnvSpecularSlotMask = 0x0C00;
     public const int EnvSpecularSlotShift = 10;
