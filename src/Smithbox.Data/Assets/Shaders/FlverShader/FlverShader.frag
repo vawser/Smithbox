@@ -590,6 +590,8 @@ float g_weight[MAX_LAYERS];
 #define MATERIAL_MASK_TILING 0x100u
 // And with it: a GXFlver mask blend, weighed by the vertex alpha the mask pushes (Material.MaskBlendFlag)
 #define MATERIAL_MASK_BLEND 0x200u
+// In the second layer's UV set value: a double face material, front faces layer 1, back faces layer 2 (Material.DoubleFaceFlag)
+#define MATERIAL_DOUBLE_FACE 0x400u
 // In the third layer's UV set value: an opacity blend, its alpha times two opacity masks and the fade (Material.OpacityFlag)
 #define MATERIAL_OPACITY 0x100u
 
@@ -1258,6 +1260,15 @@ void ComputeLayerWeights()
 		return;
 	}
   #endif
+
+	// A GXFlver double face shader (BB's _Df, MaterialDefinition.DoubleFace): the outside of a coat on its front faces,
+	// the inside (g_DiffuseTexture2) on its back faces. Its vertex alpha (1) isn't a weight
+	if ((MaterialValue(ROW_UVSET, 1) & MATERIAL_DOUBLE_FACE) != 0u)
+	{
+		bool inside = !gl_FrontFacing && c_layerCount > 1;
+		g_weight = float[MAX_LAYERS](inside ? 0.0 : 1.0, inside ? 1.0 : 0.0, 0.0, 0.0);
+		return;
+	}
 
 	vec3 channels;
   #if defined(MATERIAL_BLEND_MASK) && defined(MATERIAL_UV3)

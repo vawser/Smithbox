@@ -2,16 +2,5 @@
 # TODO 
 #---------------------
 
-BB:
-    Chrs:
-    some chrs have textures that look oversized, resulting in smooth blurry texturing
-        c2070
-        c1030
-        c1020
-        
-    c2700 coat texture bad: small uv repeating a lot
-    
-    c2720 missing weapon tex
-    
-DS3:
+SDT:
     

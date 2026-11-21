@@ -366,8 +366,9 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        // Textures are found by name, in the same pool as this model
-        string textureName = ResourceName.Normalize(path);
+        // Textures are found by name, in the same pool as this model. A character texture with a larger copy in another
+        // character's container (BB c1020's in c4110's, as c4110_c1020_*) is drawn with the copy (TextureUpgrades)
+        string textureName = TextureUpgrades.Resolve(curProject, ResourceName.Normalize(path));
 
         // TEMPORARY BB texture diagnostics (BbTextureDiag)
         if (dest.DiagTag != null)
@@ -5865,6 +5866,12 @@ public class FlverResource : IResource, IDisposable
             if (MaskTilingEntries)
             {
                 MaterialData.uvSet2 |= Material.MaskTilingFlag;
+            }
+
+            // A double face material: front faces the first layer, back faces the second (FlverShader.frag, MATERIAL_DOUBLE_FACE)
+            if (Definition?.DoubleFace == true)
+            {
+                MaterialData.uvSet2 |= Material.DoubleFaceFlag;
             }
 
             // An opacity blend (OpacityFadeUvIndex): its tilings are in the blend entries too

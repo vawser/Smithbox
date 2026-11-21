@@ -1392,6 +1392,13 @@ public class MaterialDefinition
     public MaterialResolvedMaskBlend? MaskBlend { get; set; }
 
     /// <summary>
+    /// A GXFlver double face shader (BB's ..._Bloody_Df, _Df_Cloth, _Df_Cm): the front faces show the first layer and the
+    /// back faces the second (g_DiffuseTexture2, the inside of a coat, c2700_clothInside tiled 20 by the FLVER), each
+    /// with its own UV set. The vertex alpha, 1 on these meshes, isn't a weight
+    /// </summary>
+    public bool DoubleFace { get; set; }
+
+    /// <summary>
     /// The vertex colors are read: for the Col shaders' multiply (<see cref="VertexColor"/>), the snow's cover or the
     /// water's tint and edge
     /// </summary>
@@ -1503,6 +1510,7 @@ public class MaterialDefinition
         ResolveMetallic(table);
         ResolveEmissiveMask(table);
         ResolveMaskBlend();
+        DoubleFace = Blend == null && MaskBlend == null && DoubleFaceShader.IsMatch(ShaderName);
 
         if (table != null && table.UvSets.TryGetValue(ShaderName, out var uvSets))
         {
@@ -1517,6 +1525,9 @@ public class MaterialDefinition
     }
 
     private static readonly Regex MaskBlendShader = new(@"^GXFlver_.*(MulMask|DirtMask)", RegexOptions.Compiled);
+
+    // GXFlver_ColDifSpcBumpIbl_Bloody_Df, _Df_Cloth, _Df_Cm, _Df_Cm_Cloth (see DoubleFace)
+    private static readonly Regex DoubleFaceShader = new(@"^GXFlver_.*_Df(_|$)", RegexOptions.Compiled);
 
     /// <summary>
     /// The GXFlver MulMask and DirtMask blends (<see cref="MaterialResolvedMaskBlend"/>), for MTDs that give their blend

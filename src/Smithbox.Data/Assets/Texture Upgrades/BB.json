@@ -1,0 +1,486 @@
+{
+  "Version": 1,
+  "Game": "BB",
+  "Upgrades": {
+    "c1020_bandage_a": {
+      "To": "c4110_c1020_bandage_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_bandage_n": {
+      "To": "c4110_c1020_bandage_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_bandage_r": {
+      "To": "c4110_c1020_bandage_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_bandage_s": {
+      "To": "c4110_c1020_bandage_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_2_a": {
+      "To": "c4110_c1020_body_2_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_2_n": {
+      "To": "c4110_c1020_body_2_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_2_r": {
+      "To": "c4110_c1020_body_2_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_2_s": {
+      "To": "c4110_c1020_body_2_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_a": {
+      "To": "c4110_c1020_body_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_n": {
+      "To": "c4110_c1020_body_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_r": {
+      "To": "c4110_c1020_body_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_body_s": {
+      "To": "c4110_c1020_body_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_coat_a": {
+      "To": "c4110_c1020_coat_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_coat_n": {
+      "To": "c4110_c1020_coat_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_coat_r": {
+      "To": "c4110_c1020_coat_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_coat_s": {
+      "To": "c4110_c1020_coat_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_2_a": {
+      "To": "c4110_c1020_fur_2_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_2_n": {
+      "To": "c4110_c1020_fur_2_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_2_r": {
+      "To": "c4110_c1020_fur_2_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_2_s": {
+      "To": "c4110_c1020_fur_2_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_a": {
+      "To": "c4110_c1020_fur_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_body_a": {
+      "To": "c4110_c1020_fur_body_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_body_n": {
+      "To": "c4110_c1020_fur_body_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_body_r": {
+      "To": "c4110_c1020_fur_body_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_body_s": {
+      "To": "c4110_c1020_fur_body_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_face_a": {
+      "To": "c4110_c1020_fur_face_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_face_n": {
+      "To": "c4110_c1020_fur_face_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_face_r": {
+      "To": "c4110_c1020_fur_face_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_face_s": {
+      "To": "c4110_c1020_fur_face_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_n": {
+      "To": "c4110_c1020_fur_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_r": {
+      "To": "c4110_c1020_fur_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_fur_s": {
+      "To": "c4110_c1020_fur_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_pants_a": {
+      "To": "c4110_c1020_pants_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_pants_n": {
+      "To": "c4110_c1020_pants_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_pants_r": {
+      "To": "c4110_c1020_pants_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_pants_s": {
+      "To": "c4110_c1020_pants_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_shirt_a": {
+      "To": "c4110_c1020_shirt_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_shirt_n": {
+      "To": "c4110_c1020_shirt_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_shirt_r": {
+      "To": "c4110_c1020_shirt_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_shirt_s": {
+      "To": "c4110_c1020_shirt_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_skin_a": {
+      "To": "c4110_c1020_skin_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_skin_n": {
+      "To": "c4110_c1020_skin_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_skin_r": {
+      "To": "c4110_c1020_skin_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_skin_s": {
+      "To": "c4110_c1020_skin_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_vest_a": {
+      "To": "c4110_c1020_vest_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_vest_n": {
+      "To": "c4110_c1020_vest_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_vest_r": {
+      "To": "c4110_c1020_vest_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_vest_s": {
+      "To": "c4110_c1020_vest_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_ax_a": {
+      "To": "c4110_c1020_weapon_ax_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_ax_n": {
+      "To": "c4110_c1020_weapon_ax_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_ax_r": {
+      "To": "c4110_c1020_weapon_ax_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_ax_s": {
+      "To": "c4110_c1020_weapon_ax_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_fork_a": {
+      "To": "c4110_c1020_weapon_fork_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_fork_n": {
+      "To": "c4110_c1020_weapon_fork_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_fork_r": {
+      "To": "c4110_c1020_weapon_fork_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_fork_s": {
+      "To": "c4110_c1020_weapon_fork_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_knife_a": {
+      "To": "c4110_c1020_weapon_knife_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_knife_n": {
+      "To": "c4110_c1020_weapon_knife_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_knife_r": {
+      "To": "c4110_c1020_weapon_knife_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_knife_s": {
+      "To": "c4110_c1020_weapon_knife_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_scythe_a": {
+      "To": "c4110_c1020_weapon_scythe_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_scythe_n": {
+      "To": "c4110_c1020_weapon_scythe_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_scythe_r": {
+      "To": "c4110_c1020_weapon_scythe_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_scythe_s": {
+      "To": "c4110_c1020_weapon_scythe_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_shield_a": {
+      "To": "c4110_c1020_weapon_shield_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_shield_n": {
+      "To": "c4110_c1020_weapon_shield_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_shield_r": {
+      "To": "c4110_c1020_weapon_shield_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_shield_s": {
+      "To": "c4110_c1020_weapon_shield_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_torch_a": {
+      "To": "c4110_c1020_weapon_torch_a",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_torch_n": {
+      "To": "c4110_c1020_weapon_torch_n",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_torch_r": {
+      "To": "c4110_c1020_weapon_torch_r",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1020_weapon_torch_s": {
+      "To": "c4110_c1020_weapon_torch_s",
+      "From": "/chr/c1020.chrbnd.dcx"
+    },
+    "c1050_body_r": {
+      "To": "c1055_c1050_body_r",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_body_s": {
+      "To": "c1055_c1050_body_s",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_hair_n": {
+      "To": "c1055_c1050_hair_n",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_hair_r": {
+      "To": "c1055_c1050_hair_r",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_hair_s": {
+      "To": "c1055_c1050_hair_s",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_weapon_bell_a": {
+      "To": "c1055_c1050_weapon_bell_a",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_weapon_bell_r": {
+      "To": "c1055_c1050_weapon_bell_r",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1050_weapon_bell_s": {
+      "To": "c1055_c1050_weapon_bell_s",
+      "From": "/chr/c1050.chrbnd.dcx"
+    },
+    "c1060_body_sc": {
+      "To": "c4010_c1060_body_sc",
+      "From": "/chr/c1060.chrbnd.dcx"
+    },
+    "c1110_body_a": {
+      "To": "c1300_c1110_body_a",
+      "From": "/chr/c1119.chrbnd.dcx"
+    },
+    "c1110_body_r": {
+      "To": "c1300_c1110_body_r",
+      "From": "/chr/c1119.chrbnd.dcx"
+    },
+    "c1110_body_s": {
+      "To": "c1300_c1110_body_s",
+      "From": "/chr/c1119.chrbnd.dcx"
+    },
+    "c1110_head_a": {
+      "To": "c1300_c1110_head_a",
+      "From": "/chr/c1110.chrbnd.dcx"
+    },
+    "c1170_body_a": {
+      "To": "c1179_c1170_body_a",
+      "From": "/chr/c1170.chrbnd.dcx"
+    },
+    "c1170_body_n": {
+      "To": "c1179_c1170_body_n",
+      "From": "/chr/c1170.chrbnd.dcx"
+    },
+    "c1170_down_a": {
+      "To": "c1179_c1170_down_a",
+      "From": "/chr/c1170.chrbnd.dcx"
+    },
+    "c1170_feather_a": {
+      "To": "c1179_c1170_feather_a",
+      "From": "/chr/c1170.chrbnd.dcx"
+    },
+    "c1170_feather_r": {
+      "To": "c1179_c1170_feather_r",
+      "From": "/chr/c1170.chrbnd.dcx"
+    },
+    "c1170_feather_s": {
+      "To": "c1179_c1170_feather_s",
+      "From": "/chr/c1070.chrbnd.dcx"
+    },
+    "c1240_fur_a": {
+      "To": "c1179_c1240_fur_a",
+      "From": "/chr/c1240.chrbnd.dcx"
+    },
+    "c1240_teeth_n": {
+      "To": "c1179_c1240_teeth_n",
+      "From": "/chr/c1240.chrbnd.dcx"
+    },
+    "c1250_body01_r": {
+      "To": "c2120_c1250_body01_r",
+      "From": "/chr/c1259.chrbnd.dcx"
+    },
+    "c2260_whip_n": {
+      "To": "c2730_c2260_whip_n",
+      "From": "/chr/c2260.chrbnd.dcx"
+    },
+    "c2260_whip_r": {
+      "To": "c2730_c2260_whip_r",
+      "From": "/chr/c2260.chrbnd.dcx"
+    },
+    "c2260_whip_s": {
+      "To": "c2730_c2260_whip_s",
+      "From": "/chr/c2260.chrbnd.dcx"
+    },
+    "c2500_body": {
+      "To": "c2570_c2500_body",
+      "From": "/chr/c2500.chrbnd.dcx"
+    },
+    "c2500_body_a": {
+      "To": "c2570_c2500_body_a",
+      "From": "/chr/c2500.chrbnd.dcx"
+    },
+    "c2500_body_n": {
+      "To": "c2570_c2500_body_n",
+      "From": "/chr/c2500.chrbnd.dcx"
+    },
+    "c2500_body_r": {
+      "To": "c4030_c2500_body_r",
+      "From": "/chr/c2500.chrbnd.dcx"
+    },
+    "c2500_body_s": {
+      "To": "c2570_c2500_body_s",
+      "From": "/chr/c2500.chrbnd.dcx"
+    },
+    "c2500_body_sc": {
+      "To": "c2570_c2500_body_sc",
+      "From": "/chr/c2500.chrbnd.dcx"
+    },
+    "c2620_hat_r": {
+      "To": "c4000_c2620_hat_r",
+      "From": "/chr/c2620.chrbnd.dcx"
+    },
+    "c2630_lg_m_4000_s": {
+      "To": "c4110_c2630_lg_m_4000_s",
+      "From": "/chr/c2630_2.tpf.dcx"
+    },
+    "c2630_weapon_saber_a": {
+      "To": "c4110_c2630_weapon_saber_a",
+      "From": "/chr/c2639.chrbnd.dcx"
+    },
+    "c3010_body_r": {
+      "To": "c4021_c3010_body_r",
+      "From": "/chr/c3010.chrbnd.dcx"
+    },
+    "c3010_body_s": {
+      "To": "c4020_c3010_body_s",
+      "From": "/chr/c3010.chrbnd.dcx"
+    },
+    "c5000_body_n": {
+      "To": "c4500_c5000_body_n",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_body_r": {
+      "To": "c4500_c5000_body_r",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_fur_black_r": {
+      "To": "c4500_c5000_fur_black_r",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_fur_black_s": {
+      "To": "c4500_c5000_fur_black_s",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_fur_white_r": {
+      "To": "c4500_c5000_fur_white_r",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_fur_white_s": {
+      "To": "c4500_c5000_fur_white_s",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_spike_r": {
+      "To": "c4500_c5000_spike_r",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5000_spike_s": {
+      "To": "c4500_c5000_spike_s",
+      "From": "/chr/c5000_2.tpf.dcx"
+    },
+    "c5120_eye_r": {
+      "To": "c5140_c5120_eye_r",
+      "From": "/chr/c5120.chrbnd.dcx"
+    },
+    "c8030_hr_r": {
+      "To": "c4520_c8030_hr_r",
+      "From": "/chr/c8030.chrbnd.dcx"
+    },
+    "c8030_skin_r": {
+      "To": "c4520_c8030_skin_r",
+      "From": "/chr/c8030.chrbnd.dcx"
+    },
+    "c8040_hd_m_6400_s": {
+      "To": "c4000_c8040_hd_m_6400_s",
+      "From": "/chr/c8040.chrbnd.dcx"
+    }
+  }
+}

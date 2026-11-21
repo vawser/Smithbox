@@ -43,6 +43,12 @@ public unsafe struct Material
     public const ushort MaskBlendFlag = 0x200;
 
     /// <summary>
+    ///     Set in <see cref="uvSet2" />: a double face material (MaterialDefinition.DoubleFace), whose front faces are the
+    ///     first layer and back faces the second
+    /// </summary>
+    public const ushort DoubleFaceFlag = 0x400;
+
+    /// <summary>
     ///     Set in <see cref="uvSet3" />, above the third layer's UV set: an opacity blend (FlverMaterial.OpacityFadeUvIndex),
     ///     whose alpha is multiplied by the red of the blend mask slot (second UV slot, MaskTiling.xy), of the detail mask
     ///     in the blend entries (third UV slot, MaskTiling.zw) and by the vertex alpha
