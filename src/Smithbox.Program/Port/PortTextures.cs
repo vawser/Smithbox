@@ -143,7 +143,14 @@ public static class PortTextures
             if (log.Check(lowByName.TryGetValue(tex.Name + "_l", out var l), $"{tex.Name}: _l twin"))
             {
                 var h = new DDS(l.Bytes);
-                log.Check(Math.Max(h.dwWidth, h.dwHeight) <= LowCap(Suffix(tex.Name)), $"{l.Name}: within its size cap");
+                // A twin cut from the main texture's own mips is over the cap only when the source has too few mips
+                if (Math.Max(h.dwWidth, h.dwHeight) > LowCap(Suffix(tex.Name)))
+                {
+                    if (TailEquals(tex.Bytes, l.Bytes))
+                        log.Warn($"{l.Name}: the source has too few mips to shrink to {LowCap(Suffix(tex.Name))}, so the twin stays {h.dwWidth}x{h.dwHeight}");
+                    else
+                        log.Fail($"{l.Name}: {h.dwWidth}x{h.dwHeight} is over its size cap");
+                }
                 log.Check(TailEquals(tex.Bytes, l.Bytes), $"{l.Name}: the main texture's mip tail");
             }
             count += 2;

@@ -353,6 +353,13 @@ public sealed class MapPort
             Log.Line($"{type}: {built} built, {failed} failed, into {erBhd}");
         }
 
+        // A collision part needs its h file: models whose h mesh wasn't built get no part
+        foreach (var model in numbers.Keys.Where(m => !builtH.Contains(m)).ToList())
+        {
+            numbers.Remove(model);
+            Log.Warn($"{model}: no h collision built, so it gets no collision part");
+        }
+
         foreach (var (surface, tris) in needsRow.OrderBy(n => n.Key))
             Log.Warn($"surface {surface} ({tris} triangles) needs a new HitMtrlParam row with disableFallDamage; mapped to {HitConfig.NeedsNewRow[surface]} for now");
     }
@@ -374,11 +381,14 @@ public sealed class MapPort
         var colModelTemplate = colTemplate == null ? null : vanilla.Models.Collisions.FirstOrDefault(m => m.Name == colTemplate.ModelName);
 
         // An earlier run's parts and models go first, so a re-run replaces them
+        // (every model the manifest gave this map, so one an earlier run placed and this run doesn't is removed too)
         var ourModels = pieceNumbers.Values.Select(n => $"m{n}").Concat(collisionNumbers.Values.Select(n => $"h{n}")).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var portModels = Manifest.Models.Where(m => m.Key.StartsWith(target + "|", StringComparison.OrdinalIgnoreCase))
+            .Select(m => $"{m.Key[(target.Length + 1)..][0]}{m.Value}").Concat(ourModels).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var removed = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        var earlier = RemoveParts(msb, p => ourModels.Contains(p.ModelName ?? ""), removed);
-        msb.Models.MapPieces.RemoveAll(m => ourModels.Contains(m.Name));
-        msb.Models.Collisions.RemoveAll(m => ourModels.Contains(m.Name));
+        var earlier = RemoveParts(msb, p => portModels.Contains(p.ModelName ?? ""), removed);
+        msb.Models.MapPieces.RemoveAll(m => portModels.Contains(m.Name));
+        msb.Models.Collisions.RemoveAll(m => portModels.Contains(m.Name));
         if (earlier > 0) Log.Line($"Removed {earlier} parts of an earlier run");
 
         if (Request.ClearTarget)
@@ -450,6 +460,7 @@ public sealed class MapPort
         Log.Check(back.Parts.MapPieces.Count(p => ourModels.Contains(p.ModelName)) == pieces, "MSB: every ported map piece part");
         Log.Check(back.Parts.Collisions.Count(p => ourModels.Contains(p.ModelName)) == collisions, "MSB: every ported collision part");
         Log.Check(back.Parts.GetEntries().Select(p => p.Name).Distinct().Count() == back.Parts.GetEntries().Count(), "MSB: part names unique");
+        Log.Check(!back.Parts.GetEntries().Any(p => portModels.Contains(p.ModelName ?? "") && !ourModels.Contains(p.ModelName)), "MSB: no part left on a port model this run didn't write");
         Log.Check(back.Parts.Players.Count == vanilla.Parts.Players.Count || !Request.ClearTarget, "MSB: player starts kept");
     }
 
@@ -496,9 +507,13 @@ public sealed class MapPort
 
     /// <summary>
     /// The MSB writer resolves every part name and throws on a missing one, so: events whose own part is gone are
-    /// removed, and every other part reference (a property whose name ends in PartName or PartNames, on parts, regions
-    /// and events) to a removed part is cleared.
+    /// removed, and every other part reference on parts, regions and events to a removed part is cleared. The MSBE
+    /// properties resolved against the parts: ...PartName, CollisionName, ...PartNames, GroupPartsNames (platoons),
+    /// LinkedAssetNames.
     /// </summary>
+    private static readonly string[] SinglePartReferences = ["PartName", "CollisionName"];
+    private static readonly string[] PartListReferences = ["PartNames", "PartsNames", "LinkedAssetNames"];
+
     private static (int Events, int References) DropReferences(MSBE msb, HashSet<string> removed)
     {
         if (removed.Count == 0) return (0, 0);
@@ -527,11 +542,11 @@ public sealed class MapPort
         foreach (var prop in obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
             if (prop.GetIndexParameters().Length > 0) continue;
-            if (prop.PropertyType == typeof(string) && prop.CanWrite && prop.Name.EndsWith("PartName"))
+            if (prop.PropertyType == typeof(string) && prop.CanWrite && SinglePartReferences.Any(r => prop.Name.EndsWith(r)))
             {
                 if (prop.GetValue(obj) is string s && removed.Contains(s)) { prop.SetValue(obj, null); count++; }
             }
-            else if (prop.PropertyType == typeof(string[]) && prop.Name.EndsWith("PartNames"))
+            else if (prop.PropertyType == typeof(string[]) && PartListReferences.Any(r => prop.Name.EndsWith(r)))
             {
                 if (prop.GetValue(obj) is string[] a)
                     for (int i = 0; i < a.Length; i++)
