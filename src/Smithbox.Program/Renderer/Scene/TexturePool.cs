@@ -10,7 +10,6 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using Veldrid;
 using Vortice.Vulkan;
-using Rectangle = Veldrid.Rectangle;
 
 namespace StudioCore.Renderer;
 
@@ -319,63 +318,26 @@ public class TexturePool
         }
     }
 
-    // From MonoGame.Framework/Graphics/Texture2D.cs and MonoGame.Framework/Graphics/TextureCube.cs
-    //private static (int ByteCount, Rectangle Rect) GetMipInfo(PixelFormat sf, int width, int height, int mip, bool isCubemap)
-    private static int GetMipInfo(VkFormat sf, int width, int height, int mip, bool isCubemap)
+    /// <summary>
+    /// Byte size of one mip level of a 2D surface. Each mip halves the dimensions, down to 1.
+    /// Block-compressed formats store whole blocks, so a partial block at the edge still takes a full block.
+    /// </summary>
+    private static int GetMipByteSize(VkFormat format, int width, int height, int mip)
     {
-        width = Math.Max(width >> mip, 1);
-        height = Math.Max(height >> mip, 1);
+        var mipWidth = Math.Max(width >> mip, 1);
+        var mipHeight = Math.Max(height >> mip, 1);
 
-        var formatTexelSize = (int)GetTexelSize(sf);
-
-        if (isCubemap)
+        if (!FormatHelpers.IsCompressedFormat(format))
         {
-            if (FormatHelpers.IsCompressedFormat(sf))
-            {
-                var roundedWidth = (width + 3) & ~0x3;
-                var roundedHeight = (height + 3) & ~0x3;
-
-                var byteCount = roundedWidth * roundedHeight * formatTexelSize / 16;
-
-                //return (byteCount, new Rectangle(0, 0, roundedWidth, roundedHeight));
-                return byteCount;
-            }
-            else
-            {
-                var byteCount = width * height * formatTexelSize;
-
-                return byteCount;
-                //return (byteCount, new Rectangle(0, 0, width, height));
-            }
+            return mipWidth * mipHeight * (int)FormatHelpers.GetSizeInBytes(format);
         }
 
-        if (FormatHelpers.IsCompressedFormat(sf))
-        {
-            int blockWidth, blockHeight;
-            FormatHelpers.GetBlockDimensions(sf, out blockWidth, out blockHeight);
+        FormatHelpers.GetBlockDimensions(format, out var blockWidth, out var blockHeight);
 
-            var blockWidthMinusOne = blockWidth - 1;
-            var blockHeightMinusOne = blockHeight - 1;
+        var blocksAcross = (mipWidth + blockWidth - 1) / blockWidth;
+        var blocksDown = (mipHeight + blockHeight - 1) / blockHeight;
 
-            var roundedWidth = (width + blockWidthMinusOne) & ~blockWidthMinusOne;
-            var roundedHeight = (height + blockHeightMinusOne) & ~blockHeightMinusOne;
-
-            Rectangle rect = new(0, 0, roundedWidth, roundedHeight);
-
-            int byteCount;
-
-            byteCount = roundedWidth * roundedHeight * formatTexelSize / (blockWidth * blockHeight);
-
-            //return (byteCount, rect);
-            return byteCount;
-        }
-        else
-        {
-            var byteCount = width * height * formatTexelSize;
-
-            //return (byteCount, new Rectangle(0, 0, width, height));
-            return byteCount;
-        }
+        return blocksAcross * blocksDown * (int)FormatHelpers.GetBlockSizeInBytes(format);
     }
 
     internal static int GetBlockSize(byte tpfTexFormat)
@@ -971,7 +933,7 @@ public class TexturePool
                 {
                     MappedResource map = d.Map(_staging, MapMode.Write,
                         ((uint)slice * mipCount) + level);
-                    var mipInfo = GetMipInfo(format, dds.dwWidth, dds.dwHeight, (int)level, false);
+                    var mipInfo = GetMipByteSize(format, dds.dwWidth, dds.dwHeight, (int)level);
 
                     // A volume's mip is its depth slices one after another, as in the staging buffer
                     var mipDepth = (int)Math.Max(1u, depth >> (int)level);
@@ -1034,7 +996,7 @@ public class TexturePool
             for (var level = 0; level < count; level++)
             {
                 var mipDepth = Math.Max(1L, depth >> level);
-                var next = perSlice + GetMipInfo(format, dds.dwWidth, dds.dwHeight, level, false) * mipDepth;
+                var next = perSlice + GetMipByteSize(format, dds.dwWidth, dds.dwHeight, level) * mipDepth;
 
                 if (next * arrayCount > available)
                 {
@@ -1357,7 +1319,7 @@ public class TexturePool
                                             blockSize);
                     }
 
-                    var mipInfo = GetMipInfo(format, tex.Header.Width, tex.Header.Height, (int)level, false);
+                    var mipInfo = GetMipByteSize(format, tex.Header.Width, tex.Header.Height, (int)level);
 
                     MappedResource map = d.Map(_staging, MapMode.Write, ((uint)slice * mipCount) + level);
                     //fixed (void* data = &tex.Bytes[copyOffset])

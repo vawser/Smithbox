@@ -55,16 +55,12 @@ ConcurrentSortedDictionary (Smithbox.Program/Utilities/ConcurrentSortedDictionar
   https://github.com/mkrebser/ConcurrentSortedDictionary
 
 QueuedTaskScheduler (Smithbox.Program/Logger/QueuedTaskScheduler.cs; modified)
-  Copyright (c) Microsoft Corporation. From the ParallelExtensionsExtras samples.
-  https://github.com/dotnet/samples (csharp/parallel/ParallelExtensionsExtras)
+  MIT. Copyright (c) Microsoft Corporation. From the ParallelExtensionsExtras samples.
+  https://github.com/dotnet/samples (csharp/parallel/ParallelExtensionsExtras; code is MIT per LICENSE-CODE)
 
 xenia (texture tiling maths adapted in SoulsFormats TPF/Headerizer.cs)
   BSD-3-Clause. Copyright (c) Ben Vanik and xenia contributors.
   https://github.com/xenia-canary/xenia-canary
-
-MonoGame (mip size calculation adapted in Smithbox.Program/Renderer/Scene/TexturePool.cs)
-  Ms-PL / MIT. Copyright (c) MonoGame Team.
-  https://github.com/MonoGame/MonoGame
 
 
 Native libraries
