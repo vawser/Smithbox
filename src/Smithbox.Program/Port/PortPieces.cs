@@ -135,7 +135,7 @@ public sealed class PortPieces
     private void Note(string text) => Notes[text] = Notes.GetValueOrDefault(text) + 1;
 
     /// <summary>Converts one DS3 map piece FLVER in place into an ER one named newStem. Returns its materials.</summary>
-    public List<PortedMaterial> Convert(FLVER2 flver, string stem, string newStem, out List<(bool FloatUv, Vector2 Shift, bool OutOfRange)> uvFixes)
+    public List<PortedMaterial> Convert(FLVER2 flver, string stem, string newStem, out List<UvFix> uvFixes)
     {
         var ported = new List<PortedMaterial>();
 
@@ -172,7 +172,7 @@ public sealed class PortPieces
         // The donors' layouts, the vertices rebuilt for them
         var layouts = new List<FLVER2.BufferLayout>();
         var layoutIndex = new Dictionary<string, int>();
-        uvFixes = new List<(bool, Vector2, bool)>();
+        uvFixes = new List<UvFix>();
         foreach (var mesh in flver.Meshes)
         {
             var donor = Donor(ported[mesh.MaterialIndex].Shader);
@@ -189,36 +189,155 @@ public sealed class PortPieces
             var dst = layouts[li];
             foreach (var v in mesh.Vertices) Remap(v, src, dst, donor.NormalW);
 
-            // ER's Short2 UVs hold +-16: a mesh beyond that moves by whole UVs (the textures repeat, so nothing changes)
             var floatUv = src.FirstOrDefault(m => m.Semantic == FLVER.LayoutSemantic.UV)?.Type is FLVER.LayoutType.Float2 or FLVER.LayoutType.Float3 or FLVER.LayoutType.Float4;
-            var shift = Vector2.Zero;
-            var outOfRange = false;
             var realUvs = dst.Where(m => m.Semantic == FLVER.LayoutSemantic.UV)
                 .SelectMany(m => Enumerable.Repeat(m.Type != FLVER.LayoutType.UByte4Norm, Entries(m.Type))).ToList();
-            if (mesh.Vertices.Count > 0 && realUvs.Count > 0 && realUvs[0])
-            {
-                var min = new Vector2(mesh.Vertices.Min(v => v.UVs[0].X), mesh.Vertices.Min(v => v.UVs[0].Y));
-                var max = new Vector2(mesh.Vertices.Max(v => v.UVs[0].X), mesh.Vertices.Max(v => v.UVs[0].Y));
-                if (min.X < -15.99f || min.Y < -15.99f || max.X > 15.99f || max.Y > 15.99f)
-                {
-                    shift = -new Vector2(MathF.Round((min.X + max.X) / 2), MathF.Round((min.Y + max.Y) / 2));
-                    foreach (var v in mesh.Vertices)
-                        for (int k = 0; k < realUvs.Count; k++)
-                            if (realUvs[k]) v.UVs[k] += new Vector3(shift, 0);
-                    var lo = min + shift;
-                    var hi = max + shift;
-                    outOfRange = lo.X < -16 || lo.Y < -16 || hi.X > 32767f / 2048 || hi.Y > 32767f / 2048;
-                    if (outOfRange)
-                        Log.Warn($"{newStem}: a mesh's UVs span {max.X - min.X:0.#} x {max.Y - min.Y:0.#}, beyond ER's Short2 range even after the shift");
-                }
-            }
-            uvFixes.Add((floatUv, shift, outOfRange));
+            var fix = FitUvs(mesh, realUvs, $"{stem} ({newStem}) mesh {flver.Meshes.IndexOf(mesh)}");
+            fix.FloatUv = floatUv;
+            uvFixes.Add(fix);
 
             mesh.VertexBuffers = [new FLVER2.VertexBuffer(li)];
+            mesh.BoundingBox = ErMeshBox(mesh);
         }
         flver.BufferLayouts = layouts;
 
         return ported;
+    }
+
+    /// <summary>What FitUvs did to one mesh's real UVs, for the read-back.</summary>
+    public class UvFix
+    {
+        /// <summary>DS3's UV0 is float (x2048, so the read-back divides it).</summary>
+        public bool FloatUv;
+        /// <summary>The whole-UV shift each vertex's UV0 took (null: none).</summary>
+        public Vector2[] Shift;
+        /// <summary>Vertices whose UV0 was replaced (garbage in DS3) or clamped, not compared.</summary>
+        public HashSet<int> Repaired = new();
+    }
+
+    /// <summary>ER's Short2 UVs: value x 2048 in an int16, so -16 to 32767/2048.</summary>
+    private const float ShortUvMin = -16f, ShortUvMax = 32767f / 2048;
+
+    /// <summary>A vertex this far (in UVs) from its island's median is DS3 garbage, not tiling.</summary>
+    private const float GarbageUvDistance = 128;
+
+    /// <summary>
+    /// Fits a mesh's real (non-byte) UVs into ER's Short2 range. DS3's float UVs can tile far past +-16 (m30 000732:
+    /// a wall whose UV islands sit up to 51 UVs out). Since the textures repeat, each UV island (vertices joined by the
+    /// triangles of any face set) moves by its own whole-UV shift, which changes nothing on screen and loses no
+    /// precision. A vertex more than 128 UVs from its island's median is garbage in the DS3 data (m30 000970 and
+    /// 001500: single vertices at -2,653 and +1,860 inside triangles whose other corners are below 1, a smear in DS3)
+    /// and takes its triangle neighbours' mean. An island still too wide after that is clamped.
+    /// </summary>
+    private UvFix FitUvs(FLVER2.Mesh mesh, List<bool> realUvs, string label)
+    {
+        var fix = new UvFix();
+        var count = mesh.Vertices.Count;
+        var channels = Enumerable.Range(0, realUvs.Count).Where(k => realUvs[k]).ToList();
+        if (count == 0 || channels.Count == 0) return fix;
+
+        bool Fits(IEnumerable<int> vertices, int k) => vertices.All(i =>
+        {
+            var u = mesh.Vertices[i].UVs[k];
+            return u.X >= ShortUvMin && u.Y >= ShortUvMin && u.X <= ShortUvMax && u.Y <= ShortUvMax;
+        });
+        var all = Enumerable.Range(0, count).ToList();
+        if (channels.All(k => Fits(all, k))) return fix;
+
+        // UV islands: union-find over every face set's triangles
+        var parent = Enumerable.Range(0, count).ToArray();
+        int Find(int i) { while (parent[i] != i) i = parent[i] = parent[parent[i]]; return i; }
+        var neighbours = new List<int>[count];
+        foreach (var fs in mesh.FaceSets)
+        {
+            var tris = fs.Triangulate(count < ushort.MaxValue);
+            for (int t = 0; t + 2 < tris.Count; t += 3)
+                for (int e = 0; e < 3; e++)
+                {
+                    int a = tris[t + e], b = tris[t + (e + 1) % 3];
+                    if (a >= count || b >= count) continue;
+                    parent[Find(a)] = Find(b);
+                    (neighbours[a] ??= new()).Add(b);
+                    (neighbours[b] ??= new()).Add(a);
+                }
+        }
+        var islands = all.GroupBy(Find).Select(g => g.ToList()).ToList();
+
+        fix.Shift = new Vector2[count];
+        foreach (var island in islands)
+            foreach (var k in channels)
+            {
+                // Garbage vertices: far from the island's median, refilled from their good neighbours
+                var med = new Vector2(Median(island.Select(i => mesh.Vertices[i].UVs[k].X)), Median(island.Select(i => mesh.Vertices[i].UVs[k].Y)));
+                bool Garbage(int i)
+                {
+                    var d = Vector3.Abs(mesh.Vertices[i].UVs[k] - new Vector3(med, 0));
+                    return d.X > GarbageUvDistance || d.Y > GarbageUvDistance;
+                }
+                var garbage = island.Where(Garbage).ToHashSet();
+                if (garbage.Count > 0 && garbage.Count * 2 < island.Count)
+                    foreach (var i in garbage)
+                    {
+                        var good = (neighbours[i] ?? new()).Where(n => !garbage.Contains(n)).Select(n => mesh.Vertices[n].UVs[k]).ToList();
+                        var old = mesh.Vertices[i].UVs[k];
+                        mesh.Vertices[i].UVs[k] = good.Count > 0 ? good.Aggregate(Vector3.Zero, (s, u) => s + u) / good.Count : new Vector3(med, old.Z);
+                        fix.Repaired.Add(i);
+                        Log.Warn($"{label}: vertex {i} UV{k} ({old.X:0.#}, {old.Y:0.#}) is far outside its island (median {med.X:0.##}, {med.Y:0.##}); set from its neighbours");
+                    }
+
+                if (Fits(island, k)) continue;
+                var min = new Vector2(island.Min(i => mesh.Vertices[i].UVs[k].X), island.Min(i => mesh.Vertices[i].UVs[k].Y));
+                var max = new Vector2(island.Max(i => mesh.Vertices[i].UVs[k].X), island.Max(i => mesh.Vertices[i].UVs[k].Y));
+                var shift = -new Vector2(MathF.Round((min.X + max.X) / 2), MathF.Round((min.Y + max.Y) / 2));
+                foreach (var i in island)
+                {
+                    mesh.Vertices[i].UVs[k] += new Vector3(shift, 0);
+                    if (k == channels[0]) fix.Shift[i] = shift;
+                }
+                Note("UV island shifted by whole UVs into Short2");
+                // Still too wide: a texture stretched over 32+ UVs inside one island (m30 000732: 0.5 m triangles
+                // carrying 50 UVs, noise in DS3 too). Clamped, as DS3's own exporter clamps its Short UVs at +-16.
+                if (!Fits(island, k))
+                {
+                    foreach (var i in island)
+                    {
+                        var u = mesh.Vertices[i].UVs[k];
+                        var c = new Vector3(Math.Clamp(u.X, ShortUvMin, ShortUvMax), Math.Clamp(u.Y, ShortUvMin, ShortUvMax), u.Z);
+                        if (c == u) continue;
+                        mesh.Vertices[i].UVs[k] = c;
+                        if (k == channels[0]) fix.Repaired.Add(i);
+                    }
+                    Note($"UV island clamped to Short2 (over 32 UVs inside the island; DS3's Short UVs clamp the same way)");
+                    Log.Line($"  {label}: a UV island of {island.Count} vertices spans {max.X - min.X:0.#} x {max.Y - min.Y:0.#} UVs; clamped to Short2");
+                }
+            }
+        return fix;
+    }
+
+    private static float Median(IEnumerable<float> values)
+    {
+        var a = values.OrderBy(x => x).ToList();
+        return a[a.Count / 2];
+    }
+
+    /// <summary>
+    /// A mesh's bounding box as ER stores it: an oriented box, Unk its centre, Min its half extents, Max its rotation.
+    /// DS3 stores an axis-aligned Min/Max with Unk zero; read as ER's, that is a box about the origin, sized and rotated
+    /// by the DS3 corners, so the game culled the ported meshes at the wrong camera angles. ER's own m10 pieces: centre
+    /// within a metre of the vertices', half extents within a metre, small rotations. Written here unrotated, which is
+    /// a valid, looser box. Header and node boxes are a plain min/max in both games and stay as they are.
+    /// </summary>
+    private static FLVER2.Mesh.BoundingBoxes ErMeshBox(FLVER2.Mesh mesh)
+    {
+        if (mesh.Vertices.Count == 0) return new FLVER2.Mesh.BoundingBoxes { Min = Vector3.Zero, Max = Vector3.Zero, Unk = Vector3.Zero };
+        var min = new Vector3(float.MaxValue);
+        var max = new Vector3(float.MinValue);
+        foreach (var v in mesh.Vertices)
+        {
+            min = Vector3.Min(min, v.Position);
+            max = Vector3.Max(max, v.Position);
+        }
+        return new FLVER2.Mesh.BoundingBoxes { Unk = (min + max) / 2, Min = (max - min) / 2, Max = Vector3.Zero };
     }
 
     private DonorTemplate Donor(string shader) => Config.Shaders[shader].Donor ?? Config.Shaders[Config.DefaultShader].Donor;
@@ -513,7 +632,7 @@ public sealed class PortPieces
     }
 
     /// <summary>The ported FLVER against the DS3 one: counts, faces, positions exact, normals, UV0.</summary>
-    public void CheckPiece(string stem, FLVER2 ds3, FLVER2 er, List<(bool FloatUv, Vector2 Shift, bool OutOfRange)> uvFixes)
+    public void CheckPiece(string stem, FLVER2 ds3, FLVER2 er, List<UvFix> uvFixes)
     {
         Log.Check(er.Header.Version == 0x2001A && er.Skeletons != null, $"{stem}: ER version and skeleton set");
         Log.Check(er.Meshes.Count == ds3.Meshes.Count && er.Materials.Count == ds3.Materials.Count, $"{stem}: mesh and material counts");
@@ -530,12 +649,21 @@ public sealed class PortPieces
             {
                 positions &= a.Vertices[k].Position == b.Vertices[k].Position;
                 maxNormal = Math.Max(maxNormal, (a.Vertices[k].Normal - b.Vertices[k].Normal).Length());
-                if (uvFixes[i].OutOfRange || a.Vertices[k].UVs.Count == 0 || b.Vertices[k].UVs.Count == 0) continue;
-                var expected = new Vector2(a.Vertices[k].UVs[0].X, a.Vertices[k].UVs[0].Y) / (uvFixes[i].FloatUv ? UvFloatScale : 1) + uvFixes[i].Shift;
+                var fix = uvFixes[i];
+                if (fix.Repaired.Contains(k) || a.Vertices[k].UVs.Count == 0 || b.Vertices[k].UVs.Count == 0) continue;
+                var expected = new Vector2(a.Vertices[k].UVs[0].X, a.Vertices[k].UVs[0].Y) / (fix.FloatUv ? UvFloatScale : 1) + (fix.Shift?[k] ?? Vector2.Zero);
                 maxUv = Math.Max(maxUv, (expected - new Vector2(b.Vertices[k].UVs[0].X, b.Vertices[k].UVs[0].Y)).Length());
             }
         }
         Log.Check(positions, $"{stem}: positions unchanged");
+
+        // ER mesh boxes: centre (Unk) and half extents (Min) hold every vertex, no rotation (Max)
+        var boxes = er.Meshes.All(m => m.BoundingBox != null && m.BoundingBox.Max == Vector3.Zero && m.Vertices.All(v =>
+        {
+            var d = Vector3.Abs(v.Position - m.BoundingBox.Unk) - m.BoundingBox.Min;
+            return d.X <= 1e-3f && d.Y <= 1e-3f && d.Z <= 1e-3f;
+        }));
+        Log.Check(boxes, $"{stem}: ER mesh boxes (centre + half extents) hold their vertices");
         Log.Check(maxNormal < 0.03, $"{stem}: normals within byte precision ({maxNormal:0.####})");
         Log.Check(maxUv <= 1.0 / 2048, $"{stem}: UV0 within the Short2 step ({maxUv:0.######})");
     }

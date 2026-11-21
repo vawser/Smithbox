@@ -169,13 +169,6 @@
 #----------------------------------------------------
 # Rendering
 #----------------------------------------------------
-- DS3: texture UVs messed up on quite a few meshes
-
-- DS3: some chrs missing textures: c1280
-- DS3: non-map external resource usage: m903400
-- SDT: regression for some objects/mappieces, pink multi-color, flame shader related?: m504040, m002679
-- SDT: water shader doesn't exist: m800003
-- SDT: non-map external resource usage: m902000
 - ER: Waterfall textures look a bit simple
 - AC6 chrs missing textures
 - NR: various assets missing textures (AEG576_127, AEG576_111)

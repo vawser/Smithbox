@@ -113,6 +113,7 @@ public sealed class MapPort
         var pieces = new PortPieces(Config, Input, Output, Manifest, Log, ds3Map, target);
         var models = ds3Msb.Parts.MapPieces.Select(p => p.ModelName).Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(m => m).ToList();
         var pieceNumbers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        var pieceBoxes = new Dictionary<string, (Vector3 Min, Vector3 Max)>(StringComparer.OrdinalIgnoreCase);
         var erTemplate = Output.MapPieces(target).FirstOrDefault(p => Output.ReadVanilla(p) != null)
             ?? throw new InvalidOperationException($"{target} has no vanilla map piece to take the binder layout from");
         var templateBnd = BND4.Read(Output.Read(erTemplate));
@@ -141,6 +142,7 @@ public sealed class MapPort
             var flver = FLVER2.Read(file.Bytes);
             var original = FLVER2.Read(file.Bytes);
             var stem = Path.GetFileNameWithoutExtension(file.Name);
+            pieceBoxes[model] = (flver.Header.BoundingBoxMin, flver.Header.BoundingBoxMax);
             pieces.Convert(flver, stem, newStem, out var uvFixes);
 
             var outBnd = BND4.Read(Output.Read(erTemplate));
@@ -187,7 +189,7 @@ public sealed class MapPort
 
         // MSB
         Step("MSB", 0.92f);
-        WriteMsb(ds3Msb, vanillaMsb, msb, target, pieceNumbers, collisionNumbers);
+        WriteMsb(ds3Msb, vanillaMsb, msb, target, pieceNumbers, collisionNumbers, pieceBoxes);
     }
 
     /// <summary>
@@ -248,6 +250,9 @@ public sealed class MapPort
     }
 
     // ---- collision ----------------------------------------------------------------------------------------------
+
+    /// <summary>The h mesh box of each ported collision model (its own space), for the EnvMap bounds.</summary>
+    private readonly Dictionary<string, (Vector3 Min, Vector3 Max)> CollisionBoxes = new(StringComparer.OrdinalIgnoreCase);
 
     private void PortCollision(MSB3 ds3Msb, string ds3Map, string target, Dictionary<string, string> numbers, CancellationToken cancel)
     {
@@ -338,7 +343,11 @@ public sealed class MapPort
                     var backMesh = back.Count == 1 ? back[0].Shape as IHavokCompressedMesh : null;
                     Log.Check(backMesh != null && CollisionGeometry.CompressedTriangles(backMesh).Count() == materials.Count, $"{model} {type}: read back with {materials.Count} triangles");
                     built++;
-                    if (type == "h") builtH.Add(model);
+                    if (type == "h")
+                    {
+                        builtH.Add(model);
+                        CollisionBoxes[model] = (vertices.Aggregate(new Vector3(float.MaxValue), Vector3.Min), vertices.Aggregate(new Vector3(float.MinValue), Vector3.Max));
+                    }
                 }
                 catch (Exception e)
                 {
@@ -372,7 +381,8 @@ public sealed class MapPort
 
     // ---- MSB ----------------------------------------------------------------------------------------------------
 
-    private void WriteMsb(MSB3 ds3Msb, MSBE vanilla, MSBE msb, string target, Dictionary<string, string> pieceNumbers, Dictionary<string, string> collisionNumbers)
+    private void WriteMsb(MSB3 ds3Msb, MSBE vanilla, MSBE msb, string target, Dictionary<string, string> pieceNumbers, Dictionary<string, string> collisionNumbers,
+        Dictionary<string, (Vector3 Min, Vector3 Max)> pieceBoxes)
     {
         // Templates for the new parts and models, from the vanilla map (before any clear)
         var pieceTemplate = vanilla.Parts.MapPieces.FirstOrDefault() ?? throw new InvalidOperationException($"{target} has no vanilla map piece part");
@@ -451,6 +461,25 @@ public sealed class MapPort
         else if (Request.Collision && collisionNumbers.Count > 0)
             Log.Warn($"{target} has no vanilla collision part to copy; no collision parts added");
 
+        // GI: one EnvMap box around the playable area, which the collision covers (map pieces include sky domes and
+        // backdrops kilometres across); the map pieces when no collision was ported
+        var fromCollision = CollisionBoxes.Count > 0;
+        var placed = fromCollision
+            ? ds3Msb.Parts.Collisions.Where(p => collisionNumbers.ContainsKey(p.ModelName) && CollisionBoxes.ContainsKey(p.ModelName))
+                .Select(p => ($"h{collisionNumbers[p.ModelName]}", p.Position + Request.Offset, p.Rotation, p.Scale, CollisionBoxes[p.ModelName].Min, CollisionBoxes[p.ModelName].Max)).ToList()
+            : ds3Msb.Parts.MapPieces.Where(p => pieceNumbers.ContainsKey(p.ModelName) && pieceBoxes.ContainsKey(p.ModelName))
+                .Select(p => ($"m{pieceNumbers[p.ModelName]}", p.Position + Request.Offset, p.Rotation, p.Scale, pieceBoxes[p.ModelName].Min, pieceBoxes[p.ModelName].Max)).ToList();
+        var outliers = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var boundsModels = placed.Select(p => p.Item1).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        if (placed.Count > 0)
+        {
+            var (boundsMin, boundsMax) = PortBounds(placed, 30, MaxBoundsReach, outliers);
+            Log.Line($"EnvMap bounds from the {(fromCollision ? "collision" : "map piece")} parts ({placed.Count})"
+                + (outliers.Count > 0 ? $"; left out {outliers.Count} models over {MaxBoundsReach:0} m wide: {string.Join(", ", outliers.Take(10))}" : ""));
+            boundsModels.ExceptWith(outliers);
+            AddEnvMapBox(msb, vanilla, target, boundsMin, boundsMax);
+        }
+
         var path = $"/map/mapstudio/{target}.msb.dcx";
         Output.Write(path, msb.Write());
         Log.Line($"MSB: {pieces} map piece parts, {collisions} collision parts added, at the DS3 positions + {Request.Offset}");
@@ -462,9 +491,30 @@ public sealed class MapPort
         Log.Check(back.Parts.GetEntries().Select(p => p.Name).Distinct().Count() == back.Parts.GetEntries().Count(), "MSB: part names unique");
         Log.Check(!back.Parts.GetEntries().Any(p => portModels.Contains(p.ModelName ?? "") && !ourModels.Contains(p.ModelName)), "MSB: no part left on a port model this run didn't write");
         Log.Check(back.Parts.Players.Count == vanilla.Parts.Players.Count || !Request.ClearTarget, "MSB: player starts kept");
+
+        // Groups cleared on every ported part (no draw, display or alternate groups)
+        var ported = back.Parts.MapPieces.Where(p => ourModels.Contains(p.ModelName)).Cast<MSBE.Part>()
+            .Concat(back.Parts.Collisions.Where(p => ourModels.Contains(p.ModelName))).ToList();
+        Log.Check(ported.All(p => p.GetType().GetProperties().Select(x => x.GetValue(p)).OfType<MSBE.Part.DisplayDataStruct>()
+            .All(d => d.UseAltGroups == 0 && d.DisplayGroups.All(g => g == 0) && d.DrawGroups.All(g => g == 0) && d.AltDisplayGroups.All(g => g == 0) && d.AltDrawGroups.All(g => g == 0))),
+            "MSB: ported parts have no groups");
+
+        // The EnvMap box: a 10-character Env_BoxNNN Box with its volume ID set, holding every ported part's position
+        if (Manifest.Models.TryGetValue($"{target}|envbox".ToLowerInvariant(), out var boxName))
+        {
+            var box = back.Regions.EnvironmentMapEffectBoxes.FirstOrDefault(r => r.Name == boxName);
+            if (Log.Check(box is { Shape: MSB.Shape.Box } && box.Name.Length == 10 && box.EnvMapNumber >= 0, $"MSB: EnvMap box {boxName} (Box shape, 10-character name, volume ID set)"))
+            {
+                var b = (MSB.Shape.Box)box.Shape;
+                var lo = box.Position - new Vector3(b.Width / 2, 0, b.Depth / 2);
+                var hi = box.Position + new Vector3(b.Width / 2, b.Height, b.Depth / 2);
+                Log.Check(ported.Where(p => boundsModels.Contains(p.ModelName)).All(p => p.Position.X >= lo.X && p.Position.Y >= lo.Y && p.Position.Z >= lo.Z && p.Position.X <= hi.X && p.Position.Y <= hi.Y && p.Position.Z <= hi.Z),
+                    "MSB: the EnvMap box holds every part its bounds were taken from");
+            }
+        }
     }
 
-    /// <summary>A ported part: model, name, the DS3 transform plus the offset, every display and draw group (shown everywhere).</summary>
+    /// <summary>A ported part: model, name, the DS3 transform plus the offset, and no groups (§4.4).</summary>
     private void Place(MSBE.Part part, string model, string name, Vector3 position, Vector3 rotation, Vector3 scale, string sibTemplate)
     {
         part.Name = name;
@@ -474,16 +524,108 @@ public sealed class MapPort
         part.Position = position + Request.Offset;
         part.Rotation = rotation;
         part.Scale = scale;
+        ClearGroups(part);
+    }
 
-        // The groups decide where a part is drawn; a port doesn't know ER's, so it is drawn wherever the player is
+    /// <summary>
+    /// ER draws a part with no draw groups everywhere (95% of ER's assets have none; only the legacy dungeons cull by
+    /// group), and DS3's group bits mean nothing in an ER map. So every group array is cleared, and the alternate
+    /// groups a vanilla template carries (UseAltGroups swaps or merges them in on load, MSBE Exe Analysis §1) are
+    /// switched off, as is the unrelated DisplayGroupStruct. All-bits groups did not work: in game the template's
+    /// alternate groups merged over them and many pieces didn't draw.
+    /// </summary>
+    private static void ClearGroups(MSBE.Part part)
+    {
         foreach (var prop in part.GetType().GetProperties())
         {
-            var value = prop.GetValue(part);
-            if (value == null || !prop.PropertyType.Name.Contains("Struct")) continue;
-            foreach (var groups in value.GetType().GetProperties().Where(p => p.PropertyType == typeof(uint[]) && p.Name.EndsWith("Groups") && !p.Name.StartsWith("Alt")))
-                if (groups.GetValue(value) is uint[] g)
-                    Array.Fill(g, 0xFFFFFFFF);
+            if (prop.GetValue(part) is MSBE.Part.DisplayDataStruct display)
+            {
+                foreach (var groups in new[] { display.DisplayGroups, display.AltDisplayGroups, display.AltDisplayGroupsMask,
+                             display.DrawGroups, display.AltDrawGroups, display.AltDrawGroupsMask })
+                    if (groups != null) Array.Clear(groups);
+                display.UseAltGroups = 0;
+                display.NoAltGroupMerge = 0;
+            }
+            else if (prop.GetValue(part) is MSBE.Part.DisplayGroupStruct displayGroup)
+            {
+                displayGroup.Condition = 0;
+                if (displayGroup.DispGroups != null) Array.Clear(displayGroup.DispGroups);
+            }
         }
+    }
+
+    /// <summary>
+    /// An EnvMapEffectBox around the whole ported map (§4.4), so ER's GI applies to it: a copy of the target map's
+    /// largest vanilla box (usually the coarse whole-map one), with that box's volume ID set as a property, under a
+    /// free 10-character Env_BoxNNN name (the game skips any other name length or a non-Box shape). The region
+    /// position is the box's bottom centre.
+    /// </summary>
+    private void AddEnvMapBox(MSBE msb, MSBE vanilla, string target, Vector3 min, Vector3 max)
+    {
+        var key = $"{target}|envbox".ToLowerInvariant();
+        if (Manifest.Models.TryGetValue(key, out var earlierName))
+            msb.Regions.EnvironmentMapEffectBoxes.RemoveAll(r => r.Name == earlierName);
+
+        var template = vanilla.Regions.EnvironmentMapEffectBoxes
+            .Where(r => r.Shape is MSB.Shape.Box && r.Name?.Length == 10)
+            .OrderByDescending(r => r.Shape is MSB.Shape.Box b ? (double)b.Width * b.Depth * b.Height : 0)
+            .FirstOrDefault();
+        if (template == null) { Log.Warn($"{target} has no vanilla EnvMapEffectBox to copy; the ported map gets no GI"); return; }
+
+        var templateId = template.EnvMapNumber >= 0 ? template.EnvMapNumber : int.Parse(template.Name[7..]);
+
+        var names = msb.Regions.GetEntries().Select(r => r.Name).ToHashSet(StringComparer.Ordinal);
+        var name = earlierName != null && !names.Contains(earlierName) ? earlierName : null;
+        for (int n = 999; name == null && n >= 0; n--)
+            if (!names.Contains($"Env_Box{n:000}")) name = $"Env_Box{n:000}";
+        if (name == null) { Log.Warn($"{target}: no free Env_BoxNNN name; the ported map gets no GI"); return; }
+
+        var box = (MSBE.Region.EnvironmentMapEffectBox)template.DeepCopy();
+        box.Name = name;
+        box.EnvMapNumber = (short)templateId;
+        var size = max - min;
+        box.Shape = new MSB.Shape.Box(size.X, size.Z, size.Y);
+        box.Position = new Vector3((min.X + max.X) / 2, min.Y, (min.Z + max.Z) / 2);
+        box.Rotation = Vector3.Zero;
+        msb.Regions.EnvironmentMapEffectBoxes.Add(box);
+        Manifest.Models[key] = name;
+
+        Log.Line($"EnvMap box {name}: GI volume {templateId} of {template.Name} ({((MSB.Shape.Box)template.Shape).Width:0}x{((MSB.Shape.Box)template.Shape).Height:0}x{((MSB.Shape.Box)template.Shape).Depth:0}), " +
+            $"over {size.X:0} x {size.Y:0} x {size.Z:0} m at {box.Position}");
+    }
+
+    /// <summary>
+    /// Models wider than this (their box's largest side, scaled) are left out of the EnvMap bounds: a DS3 map places
+    /// its sky dome and distant backdrops as map pieces kilometres across (m30's made the first box 29 km a side).
+    /// </summary>
+    private const float MaxBoundsReach = 2000;
+
+    /// <summary>
+    /// The world box of the ported parts: each model's box corners through its part's scale, rotation (MSB Euler
+    /// degrees, placed as Smithbox's renderer does: Transform.EulerRotation) and position; plus a margin. The DS3
+    /// collision parts sit at the origin with world-space meshes, so a box per part (not a sphere about the part's
+    /// position) is what keeps this to the map's extent.
+    /// </summary>
+    private static (Vector3 Min, Vector3 Max) PortBounds(IEnumerable<(string Model, Vector3 Position, Vector3 Rotation, Vector3 Scale, Vector3 BoxMin, Vector3 BoxMax)> parts,
+        float margin, float maxSize, HashSet<string> outliers)
+    {
+        var min = new Vector3(float.MaxValue);
+        var max = new Vector3(float.MinValue);
+        foreach (var (model, position, rotation, scale, boxMin, boxMax) in parts)
+        {
+            var size = (boxMax - boxMin) * Vector3.Abs(scale);
+            if (MathF.Max(size.X, MathF.Max(size.Y, size.Z)) > maxSize) { outliers.Add(model); continue; }
+
+            var world = new Renderer.Transform(position, rotation * (MathF.PI / 180), scale).WorldMatrix;
+            for (int c = 0; c < 8; c++)
+            {
+                var corner = new Vector3((c & 1) == 0 ? boxMin.X : boxMax.X, (c & 2) == 0 ? boxMin.Y : boxMax.Y, (c & 4) == 0 ? boxMin.Z : boxMax.Z);
+                var p = Vector3.Transform(corner, world);
+                min = Vector3.Min(min, p);
+                max = Vector3.Max(max, p);
+            }
+        }
+        return (min - new Vector3(margin), max + new Vector3(margin));
     }
 
     /// <summary>Removes the parts of the cleared kinds that match, noting their names.</summary>
