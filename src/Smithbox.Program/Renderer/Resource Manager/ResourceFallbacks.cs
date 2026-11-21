@@ -315,17 +315,36 @@ internal static class ResourceFallbacks
     }
 
     /// <summary>
-    ///     Loads the compass textures that ship with Smithbox
+    ///     Loads the compass texture that ships with Smithbox. It is a loose DDS in the Assets folder, read directly so
+    ///     that no Oodle (DCX_KRAK) is needed: the texture is wrapped in an uncompressed in-memory TPF for the pool.
     /// </summary>
     public static void LoadCompassTextures(ResourcePool pool)
     {
-        ProjectEntry? project = Smithbox.Orchestrator.SelectedProject;
-        if (project == null)
+        const string containerName = "smithbox_compass.tpf";
+
+        var absPath = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", "compass.dds");
+        if (!File.Exists(absPath) || pool.IsContainerLoaded(containerName))
         {
             return;
         }
 
-        LoadSmithboxTextures(pool, project, "smithbox/compass", LOC.Get("REND_Job_Compass_Textures"));
+        byte[] dds;
+        try
+        {
+            dds = File.ReadAllBytes(absPath);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(typeof(ResourceFallbacks), LOC.Get("REND_Resource_Load_Failed", absPath), e);
+            return;
+        }
+
+        // The texture is named "compass", as the TPF it used to ship in had it (smithbox/compass/compass)
+        var tpf = new SoulsFormats.TPF();
+        tpf.Textures.Add(new SoulsFormats.TPF.Texture("compass", 0, 0, dds, SoulsFormats.TPF.TPFPlatform.PC));
+
+        pool.LoadContainerData(containerName, tpf.Write(),
+            new LoadOptions { Types = ResourceType.Texture, JobName = LOC.Get("REND_Job_Compass_Textures") });
     }
 
     private static void LoadSmithboxTextures(ResourcePool pool, ProjectEntry project, string virtualPath, string jobName)

@@ -737,12 +737,6 @@ public class PathBuilder
                     "Maps", $"{containerName}.tpf.dcx");
             }
 
-            if (p[i] == "compass")
-            {
-                absPath = Path.Combine(
-                    AppContext.BaseDirectory, "Assets", "MSB",  $"{containerName}.tpf.dcx");
-            }
-
         }
 
         return absPath;
