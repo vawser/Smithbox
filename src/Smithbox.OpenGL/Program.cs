@@ -29,6 +29,9 @@ public static unsafe class Program
         AppDomain currentDomain = AppDomain.CurrentDomain;
         currentDomain.UnhandledException += CrashHandler;
 
+        // Before any native library is loaded
+        LibraryFolder.Setup();
+
         Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
         _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Build-time tool run by Smithbox.Release after it assembles the release folder.
+    Moves the supporting binaries into a Libs subfolder and points each deps.json at them,
+    so the folder a user opens shows the executables rather than hundreds of DLLs.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <UseAppHost>false</UseAppHost>
+  </PropertyGroup>
+
+</Project>

@@ -54,6 +54,10 @@
     <ProjectReference Include="..\src\Smithbox.Updater\Smithbox.Updater.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <!-- Build tool for the Libs layout, run by MoveLibrariesToLibsFolder -->
+    <ProjectReference Include="..\src\Smithbox.ReleaseLayout\Smithbox.ReleaseLayout.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
   <!--
@@ -131,6 +135,33 @@
           SkipUnchangedFiles="false" />
 
     <Message Importance="high" Text="Release folder assembled at $(ReleaseDir)" />
+
+  </Target>
+
+  <!--
+    Moves the runtime, package and native DLLs into Output\Libs so the top level shows the
+    executables, deps/runtimeconfig files and data folders (see Smithbox.ReleaseLayout).
+    Windows only: there LibraryFolder.Setup adds Libs to the DLL search path for native loaders
+    that bypass the .NET host's probing; Linux and macOS have no in-process equivalent, so
+    those releases keep the flat layout.
+  -->
+  <Target Name="MoveLibrariesToLibsFolder" AfterTargets="AssembleRelease" Condition="$(RuntimeIdentifier.StartsWith('win'))">
+
+    <PropertyGroup>
+      <ReleaseDir>$(SolutionDir)Smithbox.Release\Output\</ReleaseDir>
+      <ReleaseLayoutApps>Smithbox.Vulkan;Smithbox.OpenGL;Smithbox.Updater</ReleaseLayoutApps>
+      <DotNetHost Condition="'$(DOTNET_HOST_PATH)'!=''">$(DOTNET_HOST_PATH)</DotNetHost>
+      <DotNetHost Condition="'$(DotNetHost)'==''">dotnet</DotNetHost>
+    </PropertyGroup>
+
+    <!-- Built through the ProjectReference above; this only asks where its dll is -->
+    <MSBuild Projects="..\src\Smithbox.ReleaseLayout\Smithbox.ReleaseLayout.csproj"
+             Targets="GetTargetPath"
+             Properties="Configuration=$(Configuration)">
+      <Output TaskParameter="TargetOutputs" PropertyName="ReleaseLayoutTool" />
+    </MSBuild>
+
+    <Exec Command="&quot;$(DotNetHost)&quot; &quot;$(ReleaseLayoutTool)&quot; &quot;$(ReleaseDir.TrimEnd('\'))&quot; &quot;$(ReleaseLayoutApps)&quot;" />
 
   </Target>
 
