@@ -1056,6 +1056,20 @@ public class FlverResource : IResource, IDisposable
             dest.LayoutType = MeshLayoutType.LayoutStandard;
         }
 
+        // An opaque single-layer material whose meshes fade by vertex alpha, in a game whose shaders blend by it: drawn
+        // blended, as the game's G-buffer pass blends it (RenderProfile.VertexAlphaOpacity). Layered and mask blends
+        // read the vertex alpha as a layer weight instead, and the "Col", fur, opacity and customize shaders have their
+        // own rules for it
+        if (RenderProfile.Of(curProject).VertexAlphaOpacity && dest.VertexAlphaFades &&
+            dest.Blending == MaterialBlending.Opaque && deformer == MaterialDeformer.None && !knownBlend &&
+            !layers.IsBlended && !layers.HasBlendMask && !dest.HasOpacity && fur == null && dest.Customize == null &&
+            dest.Definition?.ReadsVertexColor != true && !dest.UsesLightmap)
+        {
+            dest.VertexAlphaOpacity = true;
+            dest.Blending = MaterialBlending.Alpha;
+            dest.DepthWrite = false;
+        }
+
         List<SpecializationConstant> specConstants = new();
         specConstants.Add(new SpecializationConstant(0, (uint)curProject.Descriptor.ProjectType));
         if (layers.IsBlended)
@@ -1093,9 +1107,10 @@ public class FlverResource : IResource, IDisposable
         specConstants.Add(new SpecializationConstant(14, dest.Customize != null ? CustomizeMode(dest.Definition) : 0u));
         // A "Col" shader (MaterialDefinition.VertexColor): 1 the diffuse times the vertex color, 2 also the opacity times
         // its alpha, for an alpha blended material that doesn't blend layers (whose alpha is then a layer weight)
+        // 3 the opacity alone times its alpha (FlverMaterial.VertexAlphaOpacity)
         var vertexColor = dest.Definition?.VertexColor == true
             ? dest.Blending == MaterialBlending.Alpha && !layers.IsBlended ? 2u : 1u
-            : 0u;
+            : dest.VertexAlphaOpacity ? 3u : 0u;
         specConstants.Add(new SpecializationConstant(15, vertexColor));
         // How a DSR material's specular map is read (DsrSpecularLayout), and its specular color's scale
         var dsrSpecular = DsrSpecularLayout(dest.Definition, RenderProfile.Of(curProject).GlossInSpecular);
@@ -2576,6 +2591,123 @@ public class FlverResource : IResource, IDisposable
         return index == int.MaxValue ? 0 : index;
     }
 
+    /// <summary>A vertex alpha this far below 1 counts as fading (one step of a byte channel is 1/255)</summary>
+    private const float VertexAlphaFadeLimit = 1f - 0.5f / 255f;
+
+    /// <summary>
+    /// Per material, whether a mesh using it has its vertex alpha painted: some vertices at 1 and some below
+    /// (FlverMaterial.VertexAlphaFades). A mesh at alpha 0 throughout isn't painted out: DS3's o004682 has wood meshes
+    /// like that, drawn in the game. Only read for the games whose profile uses it (RenderProfile.VertexAlphaOpacity)
+    /// </summary>
+    private static bool[] FadingMaterials(FLVER2 flver)
+    {
+        var fading = new bool[flver.Materials.Count];
+
+        if (!RenderProfile.Of(Smithbox.Orchestrator.SelectedProject).VertexAlphaOpacity)
+            return fading;
+
+        foreach (var mesh in flver.Meshes)
+        {
+            if (mesh.MaterialIndex < 0 || mesh.MaterialIndex >= fading.Length || fading[mesh.MaterialIndex])
+                continue;
+
+            bool low = false, high = false;
+            foreach (var v in mesh.Vertices)
+            {
+                if (v.Colors.Count == 0)
+                    break;
+
+                if (v.Colors[0].A < VertexAlphaFadeLimit) low = true; else high = true;
+
+                if (low && high)
+                {
+                    fading[mesh.MaterialIndex] = true;
+                    break;
+                }
+            }
+        }
+
+        return fading;
+    }
+
+    /// <summary><see cref="FadingMaterials(FLVER2)"/> for the fast loader, read from the vertex buffers</summary>
+    private static bool[] FadingMaterials(BinaryReaderEx br, int materialCount, Span<FlverMesh> meshes,
+        Span<FlverVertexBuffer> buffers, Span<FlverBufferLayout> layouts)
+    {
+        var fading = new bool[materialCount];
+
+        if (!RenderProfile.Of(Smithbox.Orchestrator.SelectedProject).VertexAlphaOpacity)
+            return fading;
+
+        foreach (var mesh in meshes)
+        {
+            if (mesh.materialIndex < 0 || mesh.materialIndex >= materialCount || fading[mesh.materialIndex])
+                continue;
+
+            br.StepIn(mesh.vertexBufferIndicesOffset);
+            var bufferIndices = br.ReadInt32s(mesh.vertexBufferCount);
+            br.StepOut();
+
+            foreach (var bufferIndex in bufferIndices)
+            {
+                if (bufferIndex < 0 || bufferIndex >= buffers.Length)
+                    continue;
+
+                var buffer = buffers[bufferIndex];
+                var layout = layouts[buffer.layoutIndex];
+
+                // The vertex color member the vertices are given (VertexColorIndex): the lowest index
+                FlverBufferLayoutMember? color = null;
+                br.StepIn(layout.membersOffset);
+                for (var i = 0; i < layout.memberCount; i++)
+                {
+                    var member = new FlverBufferLayoutMember(br);
+                    if (!member.IsSpecialMember && member.semantic == FLVER.LayoutSemantic.VertexColor &&
+                        (color == null || member.index < color.Value.index))
+                    {
+                        color = member;
+                    }
+                }
+                br.StepOut();
+
+                if (color is not { } c || buffer.edgeCompressed || buffer.vertexSize <= 0)
+                    continue;
+
+                // Alpha is the fourth channel: a byte, or a float for Float4
+                var (alphaOffset, isFloat) = c.type switch
+                {
+                    FLVER.LayoutType.Float4 => (c.structOffset + 12, true),
+                    FLVER.LayoutType.Color or FLVER.LayoutType.UByte4 or FLVER.LayoutType.UByte4Norm or
+                        FLVER.LayoutType.Byte4 or FLVER.LayoutType.Byte4Norm or FLVER.LayoutType.Byte4E => (c.structOffset + 3, false),
+                    _ => (-1, false)
+                };
+
+                if (alphaOffset < 0)
+                    continue;
+
+                bool low = false, high = false;
+                for (var v = 0; v < buffer.vertexCount; v++)
+                {
+                    long at = buffer.bufferOffset + (long)v * buffer.vertexSize + alphaOffset;
+                    var alpha = isFloat ? br.GetSingle(at) : br.GetByte(at) / 255f;
+
+                    if (alpha < VertexAlphaFadeLimit) low = true; else high = true;
+
+                    if (low && high)
+                    {
+                        fading[mesh.materialIndex] = true;
+                        break;
+                    }
+                }
+
+                if (fading[mesh.materialIndex])
+                    break;
+            }
+        }
+
+        return fading;
+    }
+
     /// <summary>
     /// Reads a vertex color member as red, green, blue, alpha.
     /// </summary>
@@ -4008,7 +4140,8 @@ public class FlverResource : IResource, IDisposable
                 dest.Material.Definition?.Deformer == MaterialDeformer.VatFrame);        }
         else
         {
-            FillVerticesStandard(mesh, pvhandle, meshVertices, dest.Material.Definition?.ReadsVertexColor == true);
+            FillVerticesStandard(mesh, pvhandle, meshVertices,
+                dest.Material.Definition?.ReadsVertexColor == true || dest.Material.VertexAlphaOpacity);
         }
 
         _uvSetScales = null;
@@ -4371,7 +4504,7 @@ public class FlverResource : IResource, IDisposable
             else
             {
                 FillVerticesStandard(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer,
-                    dest.Material.Definition?.ReadsVertexColor == true);
+                    dest.Material.Definition?.ReadsVertexColor == true || dest.Material.VertexAlphaOpacity);
             }
 
             firstBuffer = false;
@@ -4703,10 +4836,11 @@ public class FlverResource : IResource, IDisposable
             Bones = Flver.Nodes;
             StaticBoneTransforms = Bones.Select(b => Utils.GetBoneWorldMatrix(b, Bones)).ToArray();
             _uvPackScale = UvPackScaleOf(Flver.Header.Version);
+            var fading = FadingMaterials(Flver);
 
             for (var i = 0; i < Flver.Materials.Count(); i++)
             {
-                GPUMaterials[i] = new FlverMaterial { UvPackScale = _uvPackScale };
+                GPUMaterials[i] = new FlverMaterial { UvPackScale = _uvPackScale, VertexAlphaFades = fading[i] };
                 ProcessMaterial(Flver.Materials[i], GPUMaterials[i]);
             }
 
@@ -4874,9 +5008,11 @@ public class FlverResource : IResource, IDisposable
         ResetDetailStats();
         //Bones = Flver.Bones;
 
+        var fading = FadingMaterials(br, materialCount, meshes, vertexbuffers, bufferLayouts);
+
         for (var i = 0; i < materialCount; i++)
         {
-            GPUMaterials[i] = new FlverMaterial { UvPackScale = _uvPackScale };
+            GPUMaterials[i] = new FlverMaterial { UvPackScale = _uvPackScale, VertexAlphaFades = fading[i] };
             ProcessMaterial(GPUMaterials[i], br, ref materials[i], textures, unicode);
         }
 
@@ -5244,6 +5380,19 @@ public class FlverResource : IResource, IDisposable
 
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
+
+        /// <summary>
+        /// A mesh using the material has its vertex alpha painted, some vertices at 1 and some below (FadingMaterials,
+        /// scanned before the material is processed)
+        /// </summary>
+        public bool VertexAlphaFades;
+
+        /// <summary>
+        /// Drawn alpha blended with its vertex alpha as its opacity (RenderProfile.VertexAlphaOpacity): an opaque
+        /// single-layer material whose vertex alpha fades (<see cref="VertexAlphaFades"/>), e.g. DS3 m45's m010711, whose
+        /// snow shells and paving stones are painted out with vertex alpha 0 (specialization constant 15 = 3)
+        /// </summary>
+        public bool VertexAlphaOpacity;
 
         /// <summary>
         /// Lies on another surface at the same depth, so it is pulled toward the camera to be drawn over it
@@ -6187,10 +6336,13 @@ public class FlverResource : IResource, IDisposable
         // Matches the SpecialModifier check in FLVER.Vertex.Read: these members have no data in the vertex
         public bool IsSpecialMember => (short)(unk00 >> 16) == -32768;
 
+        /// <summary>Where the member starts in a vertex</summary>
+        public readonly int structOffset;
+
         public FlverBufferLayoutMember(BinaryReaderEx br)
         {
             unk00 = br.ReadInt32(); // unk
-            br.ReadInt32(); // struct offset
+            structOffset = br.ReadInt32();
             type = br.ReadEnum32<FLVER.LayoutType>();
             semantic = br.ReadEnum32<FLVER.LayoutSemantic>();
             index = br.ReadInt32();

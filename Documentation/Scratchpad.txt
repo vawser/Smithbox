@@ -14,7 +14,4 @@ BB:
     c2720 missing weapon tex
     
 DS3:
-    Chrs:
     
-    Painted World
-    m010711 - No Texture

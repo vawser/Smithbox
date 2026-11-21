@@ -72,6 +72,13 @@ public sealed partial class RenderProfile
     /// <summary>SpeedTree models have their own vertex layout (ER, NR)</summary>
     public bool SpeedTreeVertices { get; private init; }
 
+    /// <summary>
+    /// A single-layer opaque material's vertex alpha is its opacity (DS3): the GXFlver G-buffer shaders write
+    /// albedo.a x COLOR1.w as the blend alpha (GXFlver_ColDifSpcBumpIbl_Gbuf and the other ColDif variants), so
+    /// meshes painted to alpha 0 fade into what is under them. FlverMaterial.VertexAlphaOpacity
+    /// </summary>
+    public bool VertexAlphaOpacity { get; private init; }
+
     private static readonly Dictionary<ProjectType, RenderProfile> Profiles = new();
 
     /// <summary>The profile of a project type; an unknown one is drawn as a modern MTD game</summary>
@@ -109,7 +116,8 @@ public sealed partial class RenderProfile
             Metallic = matbinGame,
             DesMaterials = type is ProjectType.DES,
             MaterialLightingType = type is ProjectType.DES,
-            SpeedTreeVertices = type is ProjectType.ER or ProjectType.NR
+            SpeedTreeVertices = type is ProjectType.ER or ProjectType.NR,
+            VertexAlphaOpacity = type is ProjectType.DS3
         };
     }
 }

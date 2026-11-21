@@ -52,7 +52,8 @@ layout (constant_id = 13) const bool c_alphaFromNormal = false;
 // A ChrCustomize colouring (MaterialCustomize): 0 none, 1 hair (root darkness, white hairs), 2 skin (re-tinted)
 layout (constant_id = 14) const int c_customize = 0;
 // A DES or DS1 "Col" shader (MaterialDefinition.VertexColor): 0 no, 1 the diffuse times the vertex color, 2 also an
-// alpha blended material's opacity times its alpha
+// alpha blended material's opacity times its alpha, 3 only the opacity times its alpha (DS3's single-layer GXFlver
+// materials faded by vertex alpha, FlverMaterial.VertexAlphaOpacity)
 layout (constant_id = 15) const int c_vertexColor = 0;
 // How a Dark Souls Remastered material reads its specular map, as DS1R's FRPG_Phn shaders do by gFC_MaterialWorkflow
 // (FlverResource.DsrSpecularLayout): 0 not one, 1 RGB the specular color and A the roughness, 2 R roughness, G metallic,
@@ -2551,12 +2552,14 @@ void main()
 
 	// DES's and DS1's "Col" shaders take the vertex color: their fur shells (DS1R c1200) are darkened toward the roots
 	// by its color and faded out at their edges by its alpha
-	if (c_vertexColor != 0)
+	if (c_vertexColor == 1 || c_vertexColor == 2)
 	{
 		diffuseColor.rgb *= fsin_color.rgb;
 	}
 
-	if (c_vertexColor == 2)
+	// 3: DS3's GXFlver G-buffer shaders blend by albedo.a * COLOR1.w (FlverMaterial.VertexAlphaOpacity); its color
+	// isn't used (often a magenta placeholder)
+	if (c_vertexColor == 2 || c_vertexColor == 3)
 	{
 		diffuseColor.a *= fsin_color.a;
 	}
