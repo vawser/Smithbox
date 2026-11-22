@@ -37,6 +37,7 @@ public class ParamToolMenu
     public ParamModifiedFilter ModifiedFilter;
     public ParamEditHistoryTool EditHistory;
     public ParamWeaponGenerator WeaponGenerator;
+    public ParamAcAssemblyTool AcAssembly;
 
     private ToolSections Sections = new();
 
@@ -70,6 +71,7 @@ public class ParamToolMenu
         RowNameManipulationTool = new(view, project);
         ModifiedFilter = new(view, project);
         WeaponGenerator = new(view, project);
+        AcAssembly = new(view, project);
     }
 
     public void DisplayMenu()
@@ -158,6 +160,9 @@ public class ParamToolMenu
         }
 
         WeaponGenerator.Display();
+
+        // AC6 only
+        AcAssembly.Display();
 
         // Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));

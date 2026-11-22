@@ -24,6 +24,13 @@ public class ParamEditorScreen : EditorScreen
 
     public ActionManager ActionManager = new();
 
+    private AcDesignBank _acDesigns;
+
+    /// <summary>
+    /// AC6: the design files edited by the AC Assembly tool, shared by every view. Read on first use.
+    /// </summary>
+    public AcDesignBank AcDesigns => _acDesigns ??= new AcDesignBank(Project);
+
     public ParamViewHandler ViewHandler;
     public ParamCommandQueue CommandQueue;
     public ParamClipboard Clipboard;
@@ -428,6 +435,9 @@ public class ParamEditorScreen : EditorScreen
             // Written here, on the UI thread, since the table names are edited from the UI
             ViewHandler.ActiveView?.ParamTableWindow.WriteTableGroupNames();
 
+            // AC6 design files, when the AC Assembly tool changed any
+            _acDesigns?.Save();
+
             // The bank write itself moves to a worker thread
             await SaveParams();
         }
@@ -528,15 +538,16 @@ public class ParamEditorScreen : EditorScreen
     {
         var bank = Project.Handler.ParamData?.PrimaryBank;
 
-        if (bank == null || !bank.IsDirty())
-            return new();
+        var names = bank == null || !bank.IsDirty() ? new List<string>()
+            : (bank.Params?.Keys ?? Enumerable.Empty<string>())
+                .Concat(bank.StayParams.Keys)
+                .Where(bank.IsParamDirty)
+                .Distinct()
+                .OrderBy(e => e)
+                .ToList();
 
-        var names = (bank.Params?.Keys ?? Enumerable.Empty<string>())
-            .Concat(bank.StayParams.Keys)
-            .Where(bank.IsParamDirty)
-            .Distinct()
-            .OrderBy(e => e)
-            .ToList();
+        if (_acDesigns?.IsDirty == true)
+            names.Add(System.IO.Path.GetFileName(AcDesignBank.BinderPath));
 
         return names;
     }
