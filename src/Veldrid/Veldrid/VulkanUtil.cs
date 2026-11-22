@@ -316,7 +316,7 @@ namespace Veldrid
                 pImageMemoryBarriers = &barrier
             };
             
-            vkCmdPipelineBarrier2(cb, &dependencyInfo);
+            if (GraphicsDevice.UseKhr13) vkCmdPipelineBarrier2KHR(cb, &dependencyInfo); else vkCmdPipelineBarrier2(cb, &dependencyInfo);
         }
     }
 
