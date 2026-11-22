@@ -147,6 +147,7 @@ public class MapEditorView : IEditorView
     public FirstPersonCollisionWorld FirstPersonCollision;
     public FirstPersonTool FirstPersonTool;
     public MapExtractionTool MapExtractionTool;
+    public MapPortTool MapPortTool;
     public MapTextureTransferTool TextureTransferTool;
     public MapPartTransferTool PartTransferTool;
     public DestructionGenerationTool DestructionGenerationTool;
@@ -263,6 +264,7 @@ public class MapEditorView : IEditorView
         FirstPersonCollision = new FirstPersonCollisionWorld(this, project);
         FirstPersonTool = new FirstPersonTool(this, project);
         MapExtractionTool = new MapExtractionTool(this, project);
+        MapPortTool = new MapPortTool(this, project);
         TextureTransferTool = new MapTextureTransferTool(this, project);
         PartTransferTool = new MapPartTransferTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);

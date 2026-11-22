@@ -272,9 +272,9 @@ public class ProjectFileLocator : IDisposable
     /// load (Project_Scan_Directory_For_Additions / Strict Mode). Changes nothing; empty when the scan is turned off.
     /// Used by the File Browser's Refresh to show files saved into the project after it loaded.
     /// </summary>
-    public List<FileDictionaryEntry> FindNewProjectFiles()
+    public List<FileDictionaryEntry> FindNewProjectFiles(bool ignoreScanSetting = false)
     {
-        if (!CFG.Current.Project_Scan_Directory_For_Additions)
+        if (!ignoreScanSetting && !CFG.Current.Project_Scan_Directory_For_Additions)
             return new();
 
         var current = FileDictionary;
@@ -284,6 +284,27 @@ public class ProjectFileLocator : IDisposable
         var known = new HashSet<string>(current.Entries.Select(e => e.Path), StringComparer.OrdinalIgnoreCase);
 
         return scanned.Entries.Where(e => !known.Contains(e.Path)).ToList();
+    }
+
+    /// <summary>
+    /// Adds the files written into the project folder since it loaded (by a tool that writes files directly, such as
+    /// the Map Editor's Port tool) to FileDictionary and rebuilds the per-type lists. Returns how many were added.
+    /// Must run on the main thread, as the editors read the lists every frame.
+    /// </summary>
+    public int RegisterNewProjectFiles()
+    {
+        var added = FindNewProjectFiles(ignoreScanSetting: true);
+        if (added.Count == 0)
+            return 0;
+
+        foreach (var entry in added)
+        {
+            entry.Validated = true;
+            FileDictionary.Entries.Add(entry);
+        }
+
+        CompileDictionaries();
+        return added.Count;
     }
 
     private FileDictionary BuildProjectFileDictionary(string projectPath, FileDictionary existingDict, ProjectType type)

@@ -33,7 +33,8 @@ public sealed class PortObjects
         "windEffectRate_1", "windEffectType_0", "windEffectType_1", "FragmentInvisibleWaitTime", "FragmentInvisibleTime"
     ];
 
-    private const string ParamFile = "AssetEnvironmentGeometryParam.param";
+    /// <summary>The ER param the asset rows go into, as the Param Editor names it.</summary>
+    public const string AssetParamName = "AssetEnvironmentGeometryParam";
 
     private readonly PortGame Input;
     private readonly PortGame Output;
@@ -54,8 +55,16 @@ public sealed class PortObjects
     /// <summary>Off: breakable objects come over as static ones (intact model and physics, the static row, no DS3 break fields).</summary>
     private readonly bool Breakables;
 
-    public PortObjects(PortGame input, PortGame output, PortManifest manifest, PortLog log, PortPieces pieces, HitMaterialConfig hitConfig, bool breakables = true)
+    /// <summary>The AEG groups (row ID / 1000) the loaded asset param already has rows in, read before the port started.</summary>
+    private readonly IReadOnlySet<int> ParamGroups;
+
+    /// <summary>The asset param rows the ported assets need, for the Param Editor to apply (<see cref="BuildParamPlan"/>).</summary>
+    public PortParamPlan ParamPlan { get; private set; }
+
+    public PortObjects(PortGame input, PortGame output, PortManifest manifest, PortLog log, PortPieces pieces, HitMaterialConfig hitConfig,
+        IReadOnlySet<int> paramGroups, bool breakables = true)
     {
+        ParamGroups = paramGroups ?? new HashSet<int>();
         Breakables = breakables;
         Input = input;
         Output = output;
@@ -70,8 +79,7 @@ public sealed class PortObjects
         var parts = ds3Msb.Parts.Objects.GroupBy(o => o.ModelName, StringComparer.OrdinalIgnoreCase).OrderBy(g => g.Key).ToList();
         Log.Line($"DS3 MSB: {ds3Msb.Parts.Objects.Count} objects of {parts.Count} models");
 
-        var param = ReadAssetParam(out _, out _, out _);
-        PickGroup(param);
+        PickGroup();
         Log.Line($"AEG group {AegGroup:000}");
 
         var geomTemplate = BND4.Read(Output.ReadVanilla("/asset/aeg/aeg099/aeg099_200.geombnd.dcx") ?? throw new InvalidOperationException("aeg099_200.geombnd.dcx not found in the ER game"));
@@ -166,7 +174,7 @@ public sealed class PortObjects
 
         Log.Line($"Ported {Assets.Count} of {parts.Count} object models; {skippedParts} parts of the others left out");
         foreach (var (note, count) in Stats.Notes) Log.Line($"  {count,5}  {note}");
-        WriteParams();
+        BuildParamPlan();
     }
 
     /// <summary>A FLVER's LOD0 triangles (each mesh's first plain face set), in model space.</summary>
@@ -220,10 +228,10 @@ public sealed class PortObjects
     private HashSet<int> UsedAegGroups;
 
     /// <summary>The manifest's AEG group, else the first from AegGroupFrom with no binder in the game or project and no param row.</summary>
-    private void PickGroup(Param param)
+    private void PickGroup()
     {
         UsedAegGroups = Output.Paths.Select(p => Regex.Match(p, @"^/asset/aeg/aeg(\d{3})/", RegexOptions.IgnoreCase)).Where(m => m.Success)
-            .Select(m => int.Parse(m.Groups[1].Value)).Concat(param.Rows.Select(r => r.ID / 1000)).ToHashSet();
+            .Select(m => int.Parse(m.Groups[1].Value)).Concat(ParamGroups).ToHashSet();
         // Manifests before 2026-11-21 have no AegGroup: their assets' group
         var existing = Manifest.Models.Where(m => m.Key.StartsWith("asset|")).Select(m => int.Parse(m.Value[3..6])).DefaultIfEmpty(-1).Max();
         AegGroup = Manifest.AegGroup >= 0 ? Manifest.AegGroup : existing >= 0 ? existing : NewGroup();
@@ -240,60 +248,46 @@ public sealed class PortObjects
 
     // ---- params -------------------------------------------------------------------------------------------------
 
-    /// <summary>The output project's regulation (its own copy, else the game's) and its asset param, paramdef applied.</summary>
-    private Param ReadAssetParam(out BND4 regulation, out BinderFile file, out ulong version)
-    {
-        regulation = SFUtil.DecryptERRegulation(Output.Read("/regulation.bin") ?? throw new InvalidOperationException("ER regulation.bin not found"));
-        file = regulation.Files.First(f => f.Name.EndsWith(ParamFile, StringComparison.OrdinalIgnoreCase));
-        ulong.TryParse(regulation.Version, out version);
-        var param = Param.Read(file.Bytes);
-        var def = PARAMDEF.XmlDeserialize(Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", "ER", "Defs", "AssetGeometryParam.xml"), true);
-        param.ApplyParamdef(def, version);
-        return param;
-    }
-
     /// <summary>
-    /// A row per ported asset (ID GGGNNN): a copy of its template row with DS3's ObjectParam fields over it where ER has
-    /// the same field. Rows of an earlier run (the same IDs) are replaced. The regulation is written into the output
-    /// project and read back.
+    /// A row per ported asset (ID GGGNNN): its template row with DS3's ObjectParam fields over it. Only planned here;
+    /// the Map Editor's Port tool applies the plan through the Param Editor, where rows of an earlier run (the same
+    /// IDs) are replaced and fields ER doesn't have are skipped.
     /// </summary>
-    private void WriteParams()
+    private void BuildParamPlan()
     {
         if (Rows.Count == 0) return;
-        var param = ReadAssetParam(out var regulation, out var file, out _);
 
         var ds3Reg = SFUtil.DecryptDS3Regulation(Input.Read("/Data0.bdt") ?? throw new InvalidOperationException("DS3 Data0.bdt not found"));
         var ds3Param = Param.Read(ds3Reg.Files.First(f => f.Name.EndsWith("ObjectParam.param", StringComparison.OrdinalIgnoreCase)).Bytes);
         ds3Param.ApplyParamdef(PARAMDEF.XmlDeserialize(Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", "DS3", "Defs", "ObjectParam.xml")));
 
-        int copied = 0, noDs3Row = 0;
+        var plan = new PortParamPlan { ParamName = AssetParamName };
+        int values = 0, noDs3Row = 0;
         foreach (var (asset, (templateId, ds3Id, copyDs3)) in Rows.OrderBy(r => r.Key))
         {
-            var id = int.Parse(asset[3..6]) * 1000 + int.Parse(asset[7..10]);
-            var template = param.Rows.FirstOrDefault(r => r.ID == templateId) ?? throw new InvalidOperationException($"ER asset param has no template row {templateId}");
-            foreach (var old in param.Rows.Where(r => r.ID == id).ToList()) param.RemoveRow(old);
+            var row = new PortParamRow
+            {
+                Id = int.Parse(asset[3..6]) * 1000 + int.Parse(asset[7..10]),
+                Name = $"DS3 o{ds3Id:000000}",
+                TemplateId = templateId
+            };
 
-            var row = new Param.Row(template) { ID = id, Name = $"DS3 o{ds3Id:000000}" };
             var ds3Row = ds3Param.Rows.FirstOrDefault(r => r.ID == ds3Id);
             if (ds3Row == null) noDs3Row++;
             else if (copyDs3)
                 foreach (var field in CopiedFields)
                 {
-                    if (ds3Row[field] is not { } src || row[field] is not { } dst) continue;
-                    dst.SetValue(System.Convert.ChangeType(src.Value, dst.Value.GetType()));
-                    copied++;
+                    if (ds3Row[field] is not { } src) continue;
+                    row.Values[field] = src.Value;
+                    values++;
                 }
-            param.AddRow(row);
+
+            plan.Rows.Add(row);
         }
-        param.Rows = param.Rows.OrderBy(r => r.ID).ToList();
 
-        file.Bytes = param.Write();
-        Output.Write("/regulation.bin", SFUtil.EncryptERRegulation(regulation, new byte[16]));
-        Log.Line($"{ParamFile}: {Rows.Count} rows (templates {BreakableTemplateRow} breakable, {StaticTemplateRow} static), {copied} DS3 ObjectParam values"
-            + (noDs3Row > 0 ? $"; {noDs3Row} models have no ObjectParam row" : ""));
-
-        // Read back
-        var back = ReadAssetParam(out _, out _, out _);
-        Log.Check(Rows.Keys.All(a => back.Rows.Any(r => r.ID == int.Parse(a[3..6]) * 1000 + int.Parse(a[7..10]))), $"{ParamFile}: every ported asset has its row");
+        ParamPlan = plan;
+        Log.Line($"{AssetParamName}: {plan.Rows.Count} rows planned (templates {BreakableTemplateRow} breakable, {StaticTemplateRow} static), {values} DS3 ObjectParam values"
+            + (noDs3Row > 0 ? $"; {noDs3Row} models have no ObjectParam row" : "")
+            + ". Applied through the Param Editor when the port finishes.");
     }
 }

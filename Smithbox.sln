@@ -83,8 +83,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaDecompilerCore", "src\DS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.ReleaseLayout", "src\Smithbox.ReleaseLayout\Smithbox.ReleaseLayout.csproj", "{8382065A-A5A1-4EDD-B8F4-1B87CC1C242B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Port", "src\Smithbox.Port\Smithbox.Port.csproj", "{C99C8156-1042-45C9-8013-DFEE553651AD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1793,54 +1791,6 @@ Global
 		{8382065A-A5A1-4EDD-B8F4-1B87CC1C242B}.Release-win|x64.Build.0 = Release-win|Any CPU
 		{8382065A-A5A1-4EDD-B8F4-1B87CC1C242B}.Release-win|x86.ActiveCfg = Release-win|Any CPU
 		{8382065A-A5A1-4EDD-B8F4-1B87CC1C242B}.Release-win|x86.Build.0 = Release-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug|x64.Build.0 = Debug|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug|x86.Build.0 = Debug|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-linux|Any CPU.ActiveCfg = Debug-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-linux|Any CPU.Build.0 = Debug-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-linux|x64.ActiveCfg = Debug-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-linux|x64.Build.0 = Debug-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-linux|x86.ActiveCfg = Debug-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-linux|x86.Build.0 = Debug-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-osx|Any CPU.ActiveCfg = Debug-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-osx|Any CPU.Build.0 = Debug-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-osx|x64.ActiveCfg = Debug-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-osx|x64.Build.0 = Debug-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-osx|x86.ActiveCfg = Debug-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-osx|x86.Build.0 = Debug-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-win|Any CPU.ActiveCfg = Debug-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-win|Any CPU.Build.0 = Debug-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-win|x64.ActiveCfg = Debug-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-win|x64.Build.0 = Debug-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-win|x86.ActiveCfg = Debug-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Debug-win|x86.Build.0 = Debug-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release|x64.ActiveCfg = Release|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release|x64.Build.0 = Release|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release|x86.ActiveCfg = Release|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release|x86.Build.0 = Release|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-linux|Any CPU.ActiveCfg = Release-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-linux|Any CPU.Build.0 = Release-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-linux|x64.ActiveCfg = Release-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-linux|x64.Build.0 = Release-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-linux|x86.ActiveCfg = Release-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-linux|x86.Build.0 = Release-linux|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-osx|Any CPU.ActiveCfg = Release-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-osx|Any CPU.Build.0 = Release-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-osx|x64.ActiveCfg = Release-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-osx|x64.Build.0 = Release-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-osx|x86.ActiveCfg = Release-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-osx|x86.Build.0 = Release-osx|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-win|Any CPU.ActiveCfg = Release-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-win|x64.ActiveCfg = Release-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-win|x64.Build.0 = Release-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-win|x86.ActiveCfg = Release-win|Any CPU
-		{C99C8156-1042-45C9-8013-DFEE553651AD}.Release-win|x86.Build.0 = Release-win|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -295,6 +295,12 @@ public class MapToolWindow
             View.TextureTransferTool.OnToolWindow();
         }
 
+        // Draws its own header and section
+        if (View.MapPortTool.CanUse())
+        {
+            View.MapPortTool.OnToolWindow();
+        }
+
         //*****************************
         // Validation
         //*****************************

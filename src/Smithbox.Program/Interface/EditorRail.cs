@@ -342,66 +342,6 @@ public static class EditorRail
         ImGui.PopStyleVar(5);
     }
 
-    /// <summary>A rail button for a program that isn't the editor (Smithbox.Port): its id, icon and name.</summary>
-    public readonly record struct RailItem(string Id, string Icon, string Label, bool Separator = false);
-
-    /// <summary>
-    /// The rail for a program without the editor's registry (Smithbox.Port): the same window, buttons, accent bar
-    /// and border as <see cref="Display"/>, for a fixed list of sections. Returns the id of the clicked item, or
-    /// null. Draw the active section with <see cref="EditorHost.Begin"/>, as the editors are.
-    /// </summary>
-    public static unsafe string DisplayItems(IReadOnlyList<RailItem> items, string activeId)
-    {
-        var viewport = ImGui.GetMainViewport();
-        var railWidth = EditorHost.RailWidth;
-        var scale = DPI.UIScale();
-        var padding = MathF.Round(4.0f * scale);
-        string clickedId = null;
-
-        ImGui.SetNextWindowPos(viewport.WorkPos);
-        ImGui.SetNextWindowSize(new Vector2(railWidth, Math.Max(viewport.WorkSize.Y, 1)));
-        ImGui.SetNextWindowViewport(viewport.ID);
-
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(padding, padding));
-        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, padding));
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowMinSize, Vector2.One);
-
-        var flags =
-            ImGuiWindowFlags.NoDecoration |
-            ImGuiWindowFlags.NoMove |
-            ImGuiWindowFlags.NoDocking |
-            ImGuiWindowFlags.NoSavedSettings |
-            ImGuiWindowFlags.NoBringToFrontOnFocus |
-            ImGuiWindowFlags.NoFocusOnAppearing |
-            ImGuiWindowFlags.NoNav;
-
-        if (ImGui.Begin("##editorRail", flags))
-        {
-            ImGui.SetWindowFontScale(CFG.Current.Interface_Editor_Rail_Text_Labels ? 1.0f : IconScale);
-
-            var buttonSize = railWidth - padding * 2;
-
-            foreach (var item in items)
-            {
-                if (item.Separator)
-                    ImGui.Separator();
-
-                if (RailButton(item.Id, item.Icon, item.Label, item.Id == activeId, false, 0, buttonSize, scale))
-                    clickedId = item.Id;
-            }
-
-            DrawRightBorder(scale);
-        }
-
-        ImGui.End();
-
-        ImGui.PopStyleVar(5);
-
-        return clickedId;
-    }
-
     /// <summary>
     /// A line down the rail's right edge, separating it from the editor. Drawn rather than using the window
     /// border, which would go round all four sides.

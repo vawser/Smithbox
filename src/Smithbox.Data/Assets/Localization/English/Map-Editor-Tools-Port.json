@@ -1,0 +1,37 @@
+{
+  "Entries": [
+    { "Key": "MAP_Port_Header", "Text": "Port" },
+    { "Key": "MAP_Port_Description", "Text": "Ports a whole Dark Souls III map into an existing map of this project ({0}): every map piece the DS3 map places, with its materials and textures, its collision, and the map's parts at their DS3 positions plus the offset. The source project is only read." },
+
+    { "Key": "MAP_Port_Source_Header", "Text": "Source Project" },
+    { "Key": "MAP_Port_Source_Header_TT", "Text": "The Dark Souls III project the map is read from. Projects are created in the Project Editor." },
+
+    { "Key": "MAP_Port_Maps_Header", "Text": "Maps" },
+    { "Key": "MAP_Port_Maps_Header_TT", "Text": "The DS3 map to port, and the map of this project it is written into." },
+    { "Key": "MAP_Port_Map_Loaded_Suffix", "Text": "{0} (loaded)" },
+    { "Key": "MAP_Port_Target_Loaded", "Text": "{0} is loaded in the Map Editor. It will be unloaded before the port starts." },
+
+    { "Key": "MAP_Port_Options_Header", "Text": "Options" },
+    { "Key": "MAP_Port_Options_Header_TT", "Text": "The offset is added to every ported part's DS3 position. The options choose what is ported." },
+    { "Key": "MAP_Port_Params_Note", "Text": "Ported objects need asset param rows. They are added to the Param Editor's params when the port finishes, as one edit you can undo there, and written to regulation.bin when you save the params." },
+    { "Key": "MAP_Port_Params_Not_Ready", "Text": "Porting objects needs the Param Editor's {0} param, which isn't loaded. Enable the Param Editor for this project and wait for its params to load, or turn off Port objects." },
+
+    { "Key": "MAP_Port_Actions_Header", "Text": "Actions" },
+    { "Key": "MAP_Port_Progress_Header", "Text": "Progress" },
+    { "Key": "MAP_Port_Running_Note", "Text": "Don't load {0} until the port has finished." },
+
+    { "Key": "MAP_Port_Unload_Prompt_Title", "Text": "Unload Target Map" },
+    { "Key": "MAP_Port_Unload_Prompt", "Text": "{0} is loaded in the Map Editor. The port rewrites its files, so it must be unloaded first.\n\nUnload {0} and start the port?" },
+    { "Key": "MAP_Port_Unload_Cancelled", "Text": "Port not started: {0} is still loaded." },
+
+    { "Key": "MAP_Port_Started", "Text": "Porting {0} of {1} into {2}." },
+    { "Key": "MAP_Port_Finished_Log", "Text": "Port into {0} finished; {1} new files added to the project's file lists." },
+    { "Key": "MAP_Port_Finished_Failures_Log", "Text": "Port into {0} finished with problems: {1} failed checks, {2} warnings. See the Port tool's log." },
+    { "Key": "MAP_Port_Register_Failed", "Text": "Could not add the ported files to the project's file lists. Reload the project to see them." },
+    { "Key": "MAP_Port_Params_Unavailable", "Text": "The Param Editor's {0} param isn't loaded, so the {1} asset param rows were not added. Load the params and port again." },
+    { "Key": "MAP_Port_Params_No_Template", "Text": "{0} has no template row {1}, so row {2} was not added." },
+    { "Key": "MAP_Port_Params_Action", "Text": "Port: {0} rows in {1}" },
+    { "Key": "MAP_Port_Params_Applied", "Text": "Port: added or replaced {0} rows in {1} in the Param Editor. Save the params to write them to regulation.bin." },
+    { "Key": "MAP_Port_Params_Apply_Failed", "Text": "Could not add the ported asset param rows in the Param Editor." }
+  ]
+}

@@ -28,6 +28,11 @@ public sealed class PortRequest
     public bool Breakables = true;
     /// <summary>Enclose the ported map in a shadow-only box that keeps the sun out, as ER's catacombs do (§4.9).</summary>
     public bool LightShell;
+    /// <summary>
+    /// The AEG groups (row ID / 1000) the Param Editor's asset param has rows in, read on the main thread before the
+    /// port starts, so new assets take a group no row uses (rows not saved yet included).
+    /// </summary>
+    public IReadOnlySet<int> AssetParamGroups;
 }
 
 /// <summary>
@@ -42,6 +47,12 @@ public sealed class MapPort
     public float Progress { get; private set; }
     public bool Succeeded { get; private set; }
     public string ReportPath { get; private set; }
+
+    /// <summary>
+    /// The param rows the port needs (null when it ported no objects). The port doesn't write params itself: the
+    /// caller applies this through the Param Editor on the main thread once <see cref="Run"/> has returned.
+    /// </summary>
+    public PortParamPlan ParamPlan { get; private set; }
 
     private PortRequest Request;
     private PortGame Input;
@@ -177,9 +188,10 @@ public sealed class MapPort
         if (Request.Objects)
         {
             Step("Objects", 0.42f);
-            var objects = new PortObjects(Input, Output, Manifest, Log, pieces, HitConfig, Request.Breakables);
+            var objects = new PortObjects(Input, Output, Manifest, Log, pieces, HitConfig, Request.AssetParamGroups, Request.Breakables);
             objects.Run(ds3Msb, cancel, p => { Progress = 0.42f + 0.08f * p; Stage = $"Objects ({p:P0})"; });
             assets = objects.Assets;
+            ParamPlan = objects.ParamPlan;
         }
 
         // MATBINs into allmaterial
@@ -873,6 +885,30 @@ public sealed class MapPort
         param.GetType().GetProperties().Where(p => typeof(IList).IsAssignableFrom(p.PropertyType)).Select(p => (IList)p.GetValue(param)).Where(l => l != null);
 
     // ---- manifest and report ------------------------------------------------------------------------------------
+
+    /// <summary>
+    /// After the caller has added to the log (the param rows applied through the Param Editor): the totals again, the
+    /// report rewritten with them, and <see cref="Succeeded"/> brought up to date.
+    /// </summary>
+    public void UpdateReport()
+    {
+        Succeeded = Succeeded && Log.Failures == 0;
+        Stage = Succeeded ? "Done" : "Finished with failures";
+
+        if (ReportPath == null)
+            return;
+
+        try
+        {
+            Log.Line();
+            Log.Line($"{Log.Failures} failed checks, {Log.Warnings} warnings");
+            File.WriteAllLines(ReportPath, Log.Snapshot());
+        }
+        catch (Exception e)
+        {
+            Log.Warn($"Could not save the report: {e.Message}");
+        }
+    }
 
     private void SaveManifestAndReport()
     {
