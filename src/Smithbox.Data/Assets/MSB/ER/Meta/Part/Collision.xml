@@ -6,7 +6,7 @@
   <Field>
     <HitFilterID
     AltName="Hit Filter ID"
-    Wiki="Determines the behavior of the collision with other entities." 
+    Wiki="Determines the behavior of the collision with other entities. The game maps it to a physics layer: 8 (and any value outside 9-29) is normal solid collision. Trigger values collide with nothing but run an effect on the character that touches them (and its mount)."
     Enum="HIT_FILTER_TYPE" />
     
     <UnkT01
@@ -118,21 +118,29 @@
   
   <Enums>
     <Enum Name="HIT_FILTER_TYPE">
-        <Option Value="0" Name="Type 0" />
+        <Option Value="0" Name="Collide with all characters (as 8)" />
         <Option Value="8" Name="Collide with all characters" />
         <Option Value="9" Name="Collide with camera only" />
+        <Option Value="10" Name="Collide with all characters (as 8)" />
         <Option Value="11" Name="Collide with non-player characters only" />
+        <Option Value="12" Name="Trigger with no effect" />
         <Option Value="13" Name="Trigger fall death camera on collision" />
+        <Option Value="14" Name="Trigger lethal fall (max fall height)" />
         <Option Value="15" Name="Trigger instant death on collision" />
-        <Option Value="16" Name="Type 16" />
-        <Option Value="17" Name="Type 17" />
-        <Option Value="19" Name="Type 19" />
-        <Option Value="20" Name="Type 20" />
-        <Option Value="21" Name="Type 21" />
-        <Option Value="22" Name="Type 22" />
-        <Option Value="23" Name="Type 23" />
-        <Option Value="24" Name="Type 24" />
-        <Option Value="29" Name="Type 29" />
+        <Option Value="16" Name="Water surface" />
+        <Option Value="17" Name="Trigger floor properties (no solid floor)" />
+        <Option Value="18" Name="No collision 18" />
+        <Option Value="19" Name="Collide with non-player characters only (as 11)" />
+        <Option Value="20" Name="Trigger multiplay forbidden state (all characters)" />
+        <Option Value="21" Name="Trigger warp to region (Entity ID + 100)" />
+        <Option Value="22" Name="Collide with characters only" />
+        <Option Value="23" Name="Trigger multiplay forbidden check (player)" />
+        <Option Value="24" Name="No collision 24" />
+        <Option Value="25" Name="Collide with all, half the character layers" />
+        <Option Value="26" Name="Detection only 26" />
+        <Option Value="27" Name="Trigger disable Torrent" />
+        <Option Value="28" Name="Trigger allow Torrent" />
+        <Option Value="29" Name="Detection only 29" />
     </Enum>
     <Enum Name="SOUND_SPACE_TYPE">
         <Option Value="0" Name="Type 0" />
