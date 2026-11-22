@@ -48,7 +48,13 @@ public enum MaterialDeformer
     /// <see cref="FlverResource.FlverMaterial.SetVertexAnimation"/>; without them the model keeps its bind pose.
     /// See Claude/Documentation/Cutscene Vertex Animation.md
     /// </summary>
-    VatFrame
+    VatFrame,
+
+    /// <summary>
+    /// An AC6 laser blade's swell (<see cref="MaterialResolvedLaser"/>): out along the normal by TEXCOORD4, more where a
+    /// scrolling noise texture is bright
+    /// </summary>
+    Laser
 }
 
 /// <summary>
@@ -72,7 +78,10 @@ public enum MaterialSurface
     Snow,
 
     /// <summary>DS1R's see-through water, waved by a height and reflecting by a fresnel, see <see cref="MaterialResolvedReflectWater"/></summary>
-    ReflectWater
+    ReflectWater,
+
+    /// <summary>AC6's laser blades and energy effects (P[LaserBlade]_001), unlit and additive, see <see cref="MaterialResolvedLaser"/></summary>
+    Laser
 }
 
 /// <summary>
@@ -194,6 +203,13 @@ public class MaterialShaderTable
     /// </summary>
     [JsonIgnore]
     public Dictionary<string, MaterialPaintRecipe> Paint { get; set; } = new();
+
+    /// <summary>
+    /// Shader name to how it draws an energy effect ({GAME}_Laser.json, AC6's P[LaserBlade]_001), see
+    /// <see cref="MaterialLaserRecipe"/>
+    /// </summary>
+    [JsonIgnore]
+    public Dictionary<string, MaterialLaserRecipe> Laser { get; set; } = new();
 
     /// <summary>
     /// Adds the overlays found by Tools/ShaderSignature's overlays mode ({GAME}_Overlays.json) where the checked-in
@@ -422,6 +438,55 @@ public class MaterialPaintWeight
     public static readonly string[] Kinds = ["", "Dirt", "Wear", "Repair", "AlbedoAlpha", "NormalBlue", "NormalBlueInverse", "NormalAlpha"];
     public static readonly string[] Shapes = ["ScaleThenPow", "PowThenScale"];
     public static readonly string[] Posts = ["None", "MaskLerp", "MaskScale", "Invert"];
+}
+
+/// <summary>
+/// An AC6 energy effect (P[LaserBlade]_001: laser blades, energy wings, thrusters), unlit and additive. Its textures,
+/// colours and values by role; FlverResource and FlverShader.frag's LaserSurface know what each role does. Textures are
+/// sampler slots ("3" is Texture2D_3), colours and values parameter names without the shader prefix, or numbers. A
+/// colour is its rgb times its intensity. See Claude/Documentation/AC6 Laser Blades.md.
+/// </summary>
+public class MaterialLaserRecipe
+{
+    /// <summary>Edge, Core, Distort, Flow, Mask, Displace, Extra</summary>
+    public Dictionary<string, string> Textures { get; set; } = new();
+
+    /// <summary>Core, Edge, Flow, Extra, Rim, Vertex</summary>
+    public Dictionary<string, string> Colors { get; set; } = new();
+
+    /// <summary>Single values and float2/float3 parameters (read whole)</summary>
+    public Dictionary<string, string> Values { get; set; } = new();
+
+    /// <summary>The permutations (GXFT_SATStaticSwitch) with the view-angle rim; null for none</summary>
+    public List<int>? RimPermutations { get; set; }
+
+    /// <summary>The permutations with the extra texture; null for none</summary>
+    public List<int>? ExtraPermutations { get; set; }
+
+    /// <summary>The shader's own values (its metaparam) for parameters a material leaves out; a colour is [r, g, b, a, intensity]</summary>
+    public Dictionary<string, float[]> Defaults { get; set; } = new();
+}
+
+/// <summary>A <see cref="MaterialLaserRecipe"/> worked out for one material</summary>
+public class MaterialResolvedLaser
+{
+    /// <summary>Role to sampler type, null where the material has no texture</summary>
+    public readonly Dictionary<string, string?> Types = new();
+
+    /// <summary>Role to rgb (times the intensity), alpha</summary>
+    public readonly Dictionary<string, Vector4> Colors = new();
+
+    /// <summary>Role to its components (a float is x)</summary>
+    public readonly Dictionary<string, Vector4> Values = new();
+
+    public bool Rim;
+    public bool Extra;
+
+    public string? Type(string role) => Types.GetValueOrDefault(role);
+    public Vector4 Color(string role) => Colors.GetValueOrDefault(role, Vector4.Zero);
+    public float Value(string role) => Values.GetValueOrDefault(role, Vector4.Zero).X;
+    public Vector2 Value2(string role) { Vector4 v = Values.GetValueOrDefault(role, Vector4.Zero); return new Vector2(v.X, v.Y); }
+    public Vector3 Value3(string role) { Vector4 v = Values.GetValueOrDefault(role, Vector4.Zero); return new Vector3(v.X, v.Y, v.Z); }
 }
 
 /// <summary>The camo pattern crossed with the paint slots: an index map, tiled by U, V and Scale, and its colours 1-5</summary>
@@ -1576,6 +1641,9 @@ public class MaterialDefinition
     /// <summary>Set when the shader has a <see cref="MaterialPaintRecipe"/> (AC6's ColorMaterial shaders)</summary>
     public MaterialResolvedPaint? Paint { get; set; }
 
+    /// <summary>Set when the shader has a <see cref="MaterialLaserRecipe"/> (AC6's P[LaserBlade]_001)</summary>
+    public MaterialResolvedLaser? Laser { get; set; }
+
     /// <summary>
     /// Sampler type of each metallic map to what the shader adds to its red before saturating it,
     /// e.g. M[AMSN]'s snp_0_float_0. Only maps whose shader adds something are here
@@ -1680,7 +1748,8 @@ public class MaterialDefinition
         ResolveEmissiveMask(table);
         ResolveMaskBlend();
         ResolvePaint(table);
-        DoubleFace = Blend == null && MaskBlend == null && DoubleFaceShader.IsMatch(ShaderName);
+        ResolveLaser(table);
+        DoubleFace =Blend == null && MaskBlend == null && DoubleFaceShader.IsMatch(ShaderName);
 
         if (table != null && table.UvSets.TryGetValue(ShaderName, out var uvSets))
         {
@@ -1867,6 +1936,72 @@ public class MaterialDefinition
         Blend = null;
         Detail = null;
         MaskBlend = null;
+
+        if (BlendWeight == MaterialBlendWeight.Recipe)
+        {
+            BlendWeight = MaterialBlendWeight.Unknown;
+        }
+    }
+
+    /// <summary>
+    /// An energy effect's textures, colours and values (<see cref="MaterialLaserRecipe"/>). It is drawn by its own path:
+    /// unlit, blended as its g_BlendMode says (additive), its vertices moved by <see cref="MaterialDeformer.Laser"/>.
+    /// </summary>
+    private void ResolveLaser(MaterialShaderTable? table)
+    {
+        if (table == null || !table.Laser.TryGetValue(ShaderName, out MaterialLaserRecipe? recipe))
+        {
+            return;
+        }
+
+        var permutation = (int)GetFirst("GXFT_SATStaticSwitch", 0);
+
+        // A parameter's values, the shader's own where the material leaves it out, else 0
+        float[] Raw(string expression)
+        {
+            if (float.TryParse(expression, NumberStyles.Float, CultureInfo.InvariantCulture, out var number))
+                return [number, number, number, 1, 1];
+
+            if (Params.TryGetValue(expression, out var value))
+                return value;
+
+            return recipe.Defaults.TryGetValue(expression, out var fallback) ? fallback : [];
+        }
+
+        MaterialResolvedLaser laser = new()
+        {
+            Rim = recipe.RimPermutations?.Contains(permutation) == true,
+            Extra = recipe.ExtraPermutations?.Contains(permutation) == true
+        };
+
+        foreach (var (role, slot) in recipe.Textures)
+        {
+            laser.Types[role] = int.TryParse(slot, out var n) ? Samplers.Find(x => x.Slot == n && x.Path != "")?.Type : null;
+        }
+
+        // What the shader's cbuffer holds: rgb times the intensity (the fifth value)
+        foreach (var (role, expression) in recipe.Colors)
+        {
+            var c = Raw(expression);
+            var intensity = c.Length >= 5 ? c[4] : 1;
+            laser.Colors[role] = c.Length >= 3
+                ? new Vector4(c[0] * intensity, c[1] * intensity, c[2] * intensity, c.Length >= 4 ? c[3] : 1)
+                : Vector4.Zero;
+        }
+
+        foreach (var (role, expression) in recipe.Values)
+        {
+            var v = Raw(expression);
+            laser.Values[role] = new Vector4(v.Length > 0 ? v[0] : 0, v.Length > 1 ? v[1] : 0, v.Length > 2 ? v[2] : 0, v.Length > 3 ? v[3] : 0);
+        }
+
+        Laser = laser;
+        Surface = MaterialSurface.Laser;
+        Deformer = MaterialDeformer.Laser;
+        Blend = null;
+        Detail = null;
+        MaskBlend = null;
+        Paint = null;
 
         if (BlendWeight == MaterialBlendWeight.Recipe)
         {

@@ -94,6 +94,7 @@ layout (constant_id = 98) const bool c_shadowPass = false;
 #define SURFACE_FUR 3
 #define SURFACE_SNOW 4
 #define SURFACE_REFLECT_WATER 5
+#define SURFACE_LASER 6
 
 #define MAX_LAYERS 4
 #define MAX_SCENE_LIGHTS 16
@@ -114,8 +115,10 @@ layout(location = 9) flat in uint fsin_entityid;
 #ifdef MATERIAL_BLEND
 	layout(location = 10) in vec2 fsin_texcoord2;
 #endif
-#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+#ifdef MATERIAL_DEFORM
 	layout(location = 11) in vec4 fsin_vertexBlend;
+	// An AC6 energy effect's (LaserSurface): xyz TEXCOORD3, w the instance's scale
+	layout(location = 20) in vec4 fsin_laser;
 #endif
 // 1: the instance receives no shadows, an MSB part's IsShadowDest
 layout(location = 12) flat in uint fsin_flags;
@@ -2600,6 +2603,149 @@ float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
 // instead of light. Only set by the --material-oracle run (MaterialOracleTool)
 #define LIGHTING_VIEW_ORACLE 6u
 
+#ifdef MATERIAL_DEFORM
+// AC6's energy effects (c_surface 6, P[LaserBlade]_001: laser blades, energy wings, thrusters), entries 4 to 9 after the
+// material (MaterialLaser), read as 18 vec4s. Its vertices are swelled by FlverShader.vert's DeformLaser.
+// See Claude/Documentation/AC6 Laser Blades.md
+vec4 LaserVec(uint i)
+{
+	return paintdata[g_mat + 4u + i / 3u].v[i % 3u];
+}
+
+uvec4 LaserBits(uint i)
+{
+	return paintbits[g_mat + 4u + i / 3u].v[i % 3u];
+}
+
+#define LASER_RIM 1u
+#define LASER_EXTRA 2u
+
+// The derivatives of the first UV set, taken where control flow is uniform
+vec2 g_laserDx;
+vec2 g_laserDy;
+
+// One texture of an energy effect at uv, tiled: black until it loads, and as stored where the GPU decoded it as sRGB
+// (MaterialLaser.SrgbShift). scale is what uv was scaled by, for the derivatives
+vec4 LaserTexture(uint packedTex, bool high, uint srgbBit, vec2 uv, vec2 tiling, float scale)
+{
+	uint tex = high ? packedTex >> 16u : packedTex & 0xFFFFu;
+	if (tex == 0u)
+	{
+		return vec4(0.0);
+	}
+
+	vec4 c = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], anisoLinearSampler),
+		uv * tiling, g_laserDx * scale * tiling, g_laserDy * scale * tiling);
+
+	if ((LaserBits(0u).w & (1u << srgbBit)) != 0u)
+	{
+		c.rgb = StoredFromSrgb(c.rgb);
+	}
+
+	return c;
+}
+
+// The game samples its flowing textures twice, a distortion apart at two phases half a cycle apart, and fades between
+// them, so the distortion never jumps back
+vec4 LaserFlowing(uint packedTex, bool high, uint srgbBit, vec2 uv, vec2 tiling, float scale, vec2 off1, vec2 off2, float b)
+{
+	return mix(LaserTexture(packedTex, high, srgbBit, uv + off1, tiling, scale),
+		LaserTexture(packedTex, high, srgbBit, uv + off2, tiling, scale), b);
+}
+
+// The light (rgb) and the alpha of an energy effect, as P[LaserBlade]_001's forward pixel shader makes them. The
+// additive blend (SrcAlpha, One) is the game's g_BlendMode 4. The game divides by the scene's exposure, which the
+// other glows here leave out as well
+vec4 LaserSurface(vec3 viewVec)
+{
+	uvec4 bits = LaserBits(0u); // edge | core, distort | flow, mask | extra, flags
+	vec4 tilingEdgeCore = LaserVec(1u);
+	vec4 tilingDistortFlow = LaserVec(2u);
+	vec4 tilingMaskExtra = LaserVec(3u);
+	vec4 core = LaserVec(4u);   // w: intensity
+	vec4 edge = LaserVec(5u);   // w: speed
+	vec4 flow = LaserVec(6u);   // w: flow strength
+	vec4 extra = LaserVec(7u);  // w: the edge's share of the alpha curve with the extra texture
+	vec4 rim = LaserVec(8u);    // w: rim base
+	vec4 vertexColor = LaserVec(9u); // w: rim gain
+	vec4 v0 = LaserVec(10u);    // pulse floor, pulse offset, pulse rate, distortion strength
+	vec4 v1 = LaserVec(11u);    // distortion rate, facing power, facing offset, edge offset
+	vec4 v2 = LaserVec(12u);    // edge power, fade near, fade far, soft depth
+	vec4 v3 = LaserVec(13u);    // opacity, cutoff, curve middle, curve contrast
+	vec4 v4 = LaserVec(14u);    // curve gain, rim power, rim offset
+	vec4 scrollMaskEdge = LaserVec(15u);
+	vec4 scrollCoreDistort = LaserVec(16u);
+	vec4 scrollFlowExtra = LaserVec(17u);
+	bool withExtra = (bits.w & LASER_EXTRA) != 0u;
+
+	float time = HasFeature(FEATURE_UV_SCROLL) ? sceneparam.materialTime : 0.0;
+	float t = edge.w * time;
+	vec2 uv = fsin_texcoord;
+	float scale = fsin_laser.w;
+	vec2 scaled = uv * scale;
+
+	// The distortion, by a texture scrolled by time alone, applied at two phases
+	vec4 distortion = LaserTexture(bits.y, false, 4u, uv + scrollCoreDistort.zw * time, tilingDistortFlow.xy, 1.0);
+	float phase = fract(2.0 * time * v1.x);
+	float phase2 = fract(2.0 * time * v1.x + 0.5);
+	vec2 offset = vec2(-v0.w * (distortion.x * 0.5 - 0.25), (distortion.y * 0.5 - 0.25) * v0.w);
+	vec2 off1 = offset * phase;
+	vec2 off2 = offset * phase2;
+	float b = abs(phase * 2.0 - 1.0);
+
+	vec4 coreTex = LaserFlowing(bits.x, true, 3u, scaled + t * scrollCoreDistort.xy, tilingEdgeCore.zw, scale, off1, off2, b);
+	vec4 edgeTex = LaserFlowing(bits.x, false, 2u, uv + t * scrollMaskEdge.zw, tilingEdgeCore.xy, 1.0, off1, off2, b);
+	vec3 extraColor = withExtra
+		? LaserFlowing(bits.z, true, 7u, scaled + t * scrollFlowExtra.zw, tilingMaskExtra.zw, scale, off1, off2, b).rgb * extra.rgb
+		: vec3(0.0);
+
+	// How solid it is: the core (and with the extra texture, the edge) through a contrast curve set by the vertex alpha
+	float a = (withExtra ? edgeTex.x * extra.w + extraColor.x * coreTex.x : coreTex.x) * v4.x;
+	float c = fsin_color.a;
+	float upper = c < 0.5 ? 0.0 : 1.0;
+	float k = v3.w * ((2.0 * c * (1.0 - upper) * a - 0.5) + (1.0 - 2.0 * (1.0 - c) * (1.0 - a)) * upper);
+	k = clamp(v3.z + k * (k > 0.0 ? v3.z : 1.0 - v3.z), 0.0, 1.0);
+
+	// Faded by distance, by the angle of view at its edges and face on, and where it meets the scene
+	vec3 N = normalize(fsin_worldToTangent[2]) * (gl_FrontFacing ? 1.0 : -1.0);
+	float facing = dot(viewVec, N);
+	float fade = clamp((distance(sceneparam.eye.xyz, fsin_worldpos) - v2.y) / max(v2.z - v2.y, 0.01), 0.0, 1.0);
+	float shown = k * k * fade * (3.0 - 2.0 * k)
+		* PaintPow(1.0 - clamp(facing - v1.w, 0.0, 1.0), max(v2.x, 0.001))
+		* (1.0 - PaintPow(1.0 - clamp(facing - v1.z, 0.0, 1.0), max(v1.y, 0.001)));
+
+	// With no copy of the scene's depth nothing is known to be in front, so nothing fades
+	float soft = 0.0;
+	if (c_transparent && sceneparam.sceneDepthTexture != 0u)
+	{
+		soft = clamp(1.0 - clamp(WaterThickness() / v2.w, 0.0, 1.0), 0.0, 1.0);
+	}
+	float coverage = (shown - soft * soft * (3.0 - 2.0 * soft) * shown) * (fsin_vertexBlend.w < v3.y ? 1.0 : 0.0) * v3.x;
+
+	// The colour: the core, lerped to the edge by TEXCOORD3 and to the vertex colour by TEXCOORD1, then the pulsing
+	// flow over it where the mask is
+	vec3 color = mix(core.rgb * coreTex.rgb, edge.rgb * edgeTex.rgb, fsin_laser.xyz) + extraColor;
+	color = mix(color, vertexColor.rgb, fsin_vertexBlend.xyz);
+
+	float pulseWave = clamp(abs(fract(v0.z * time) * 2.0 - 1.0), 0.0, 1.0);
+	float pulse = clamp((pulseWave * pulseWave * (3.0 - 2.0 * pulseWave) - v0.x) / max(1.0 - v0.x, 0.001), 0.0, 1.0) - v0.y;
+	vec3 flowTex = LaserFlowing(bits.y, true, 5u, uv + t * scrollFlowExtra.xy, tilingDistortFlow.zw, 1.0, off1, off2, b).rgb;
+	float mask = LaserFlowing(bits.z, false, 6u, scaled + t * scrollMaskEdge.xy, tilingMaskExtra.xy, scale, off1, off2, b).r;
+	color += mask * flow.w * (flowTex * flow.rgb * pulse - color);
+
+	// The alpha takes the red of the colour, before the rim
+	float alpha = clamp(coverage * color.r, 0.0, 1.0);
+
+	if ((bits.w & LASER_RIM) != 0u)
+	{
+		float rimShare = PaintPow(1.0 - clamp(facing - v4.z, 0.0, 1.0), max(v4.y, 0.001));
+		color += rim.w + rimShare * (vertexColor.w * rim.rgb - rim.w);
+	}
+
+	return vec4(max(color * core.w * sceneparam.emissiveMapMult, vec3(0.0)), alpha);
+}
+#endif
+
 // The end of every pixel: the selection tint, the fog on transparents, the display curve and the outputs.
 // litColor already has the glow added; the indirect outputs are from g_indirectDiffuse and g_indirectSpecular.
 void WritePixel(vec3 litColor, float alpha, vec3 glow, vec3 N, float roughness, float F0max, float wireCoverage)
@@ -2710,6 +2856,33 @@ void main()
 	g_envLit = !g_modelLit && EnvLit();
 
 	vec3 viewVec = VIEW_DIRECTION(fsin_worldpos);
+
+#ifdef MATERIAL_DEFORM
+	// An AC6 energy effect, drawn whole by its own path: unlit light, no surface. Shown in both render modes, as the
+	// other shader types are (MaterialClock.Features); Editor mode holds its time still
+	if (c_surface == SURFACE_LASER && HasFeature(FEATURE_UNLIT))
+	{
+		g_laserDx = dFdx(fsin_texcoord);
+		g_laserDy = dFdy(fsin_texcoord);
+
+		// Casts no shadow, and has nothing for the material oracle's G-buffer (it is forward only in the game)
+		if (c_shadowPass || sceneparam.lightingDebugView == LIGHTING_VIEW_ORACLE)
+		{
+			discard;
+		}
+
+		vec4 laser = LaserSurface(viewVec);
+
+		if (c_picking)
+		{
+			ivec2 coord = ivec2(gl_FragCoord.xy - vec2(0.49, 0.49));
+			UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
+		}
+
+		WritePixel(laser.rgb, laser.a, laser.rgb, normalize(fsin_worldToTangent[2]), 1.0, 0.0, wireCoverage);
+		return;
+	}
+#endif
 
 	vec3 sunDir = SunTravel();
 

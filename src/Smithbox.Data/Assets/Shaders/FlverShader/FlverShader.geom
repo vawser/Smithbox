@@ -19,8 +19,9 @@ layout(location = 9) flat in uint gsin_entityid[];
 #ifdef MATERIAL_BLEND
 	layout(location = 10) in vec2 gsin_texcoord2[];
 #endif
-#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+#ifdef MATERIAL_DEFORM
 	layout(location = 11) in vec4 gsin_vertexBlend[];
+	layout(location = 20) in vec4 gsin_laser[];
 #endif
 layout(location = 12) flat in uint gsin_flags[];
 #ifdef MATERIAL_BLEND
@@ -42,8 +43,9 @@ layout(location = 9) flat out uint fsin_entityid;
 #ifdef MATERIAL_BLEND
 	layout(location = 10) out vec2 fsin_texcoord2;
 #endif
-#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+#ifdef MATERIAL_DEFORM
 	layout(location = 11) out vec4 fsin_vertexBlend;
+	layout(location = 20) out vec4 fsin_laser;
 #endif
 layout(location = 12) flat out uint fsin_flags;
 #ifdef MATERIAL_BLEND
@@ -74,8 +76,9 @@ void main()
 #ifdef MATERIAL_BLEND
 		fsin_texcoord2 = gsin_texcoord2[i];
 #endif
-#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+#ifdef MATERIAL_DEFORM
 		fsin_vertexBlend = gsin_vertexBlend[i];
+		fsin_laser = gsin_laser[i];
 #endif
 		fsin_flags = gsin_flags[i];
 #ifdef MATERIAL_BLEND

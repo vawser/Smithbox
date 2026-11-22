@@ -436,6 +436,68 @@ public struct MaterialWithPaint
 }
 
 /// <summary>
+///     An AC6 laser blade (P[LaserBlade]_001, <see cref="MaterialResolvedLaser" />), entries 4 to 9 after the material,
+///     after its <see cref="MaterialDeform" /> (which moves the vertices, MaterialDeformer.Laser). Read by
+///     FlverShader.frag's LaserSurface as 18 vec4s (LaserVec), in this order. Texture words hold one index in the low 16
+///     bits and another in the high, 0 for none; each tiling vec4 is xy for the low texture and zw for the high. See
+///     Claude/Documentation/AC6 Laser Blades.md
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLaser
+{
+    /// <summary>Set in <see cref="Flags" />: the rim (permutations 1 and 3)</summary>
+    public const uint FlagRim = 1;
+
+    /// <summary>Set in <see cref="Flags" />: the extra texture (permutations 2 and 3)</summary>
+    public const uint FlagExtra = 2;
+
+    /// <summary>
+    ///     Set in <see cref="Flags" /> from bit 2, one per texture (edge, core, distort, flow, mask, extra): on the GPU as
+    ///     sRGB, which the shader undoes. They are legacy DXT1 DDS, which TexturePool reads as sRGB, and the game reads as
+    ///     they are stored (see MaterialPaint.FlagMaskSrgb)
+    /// </summary>
+    public const int SrgbShift = 2;
+
+    // v0: edge | core << 16, distort | flow << 16, mask | extra << 16, flags
+    public uint EdgeCoreTex, DistortFlowTex, MaskExtraTex, Flags;
+
+    // v1 - v3
+    public Vector4 EdgeCoreTiling, DistortFlowTiling, MaskExtraTiling;
+
+    /// <summary>v4 - v9: rgb the colours (times their intensity); w: intensity, speed, flow strength, extra edge, rim base, rim gain</summary>
+    public Vector4 Core, Edge, Flow, Extra, Rim, Vertex;
+
+    /// <summary>v10: pulse floor, pulse offset, pulse rate, distortion strength</summary>
+    public Vector4 Values0;
+
+    /// <summary>v11: distortion rate, facing power, facing offset, edge offset</summary>
+    public Vector4 Values1;
+
+    /// <summary>v12: edge power, fade near, fade far, soft depth</summary>
+    public Vector4 Values2;
+
+    /// <summary>v13: opacity, cutoff, curve middle, curve contrast</summary>
+    public Vector4 Values3;
+
+    /// <summary>v14: curve gain, rim power, rim offset</summary>
+    public Vector4 Values4;
+
+    /// <summary>v15 - v17: scrolls, mask | edge, core | distort, flow | extra</summary>
+    public Vector4 MaskEdgeScroll, CoreDistortScroll, FlowExtraScroll;
+}
+
+/// <summary>What is uploaded for an AC6 laser blade (<see cref="MaterialLaser" />), entries 0 to 9</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithLaser
+{
+    public Material Material;
+    public MaterialShading Shading;
+    public MaterialEffects Effects;
+    public MaterialDeform Deform;
+    public MaterialLaser Laser;
+}
+
+/// <summary>
 ///     What doesn't fit in <see cref="MaterialCustomize" />, the entry after it (in the blend tiling entry's place)
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]

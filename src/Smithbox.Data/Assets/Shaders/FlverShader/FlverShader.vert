@@ -43,6 +43,7 @@ layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 #define DEFORM_BIRDS 7
 #define DEFORM_DIRECTIONAL_WAVE 8
 #define DEFORM_VAT_FRAME 9
+#define DEFORM_LASER 10
 
 #define FEATURE_WIND 1u
 #define FEATURE_VERTEX_ANIMATION 2u
@@ -105,9 +106,11 @@ layout(location = 9) flat out uint fsin_entityid;
 #ifdef MATERIAL_BLEND
 	layout(location = 10) out vec2 fsin_texcoord2;
 #endif
-#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+#ifdef MATERIAL_DEFORM
 	// xyz: TEXCOORD1, w: the x of TEXCOORD2 (or of the second attribute a blend recipe reads, see FlverResource.GetTexCoordIndex)
 	layout(location = 11) out vec4 fsin_vertexBlend;
+	// An AC6 energy effect's (c_surface 6, FlverShader.frag's LaserSurface): xyz TEXCOORD3, w the instance's scale
+	layout(location = 20) out vec4 fsin_laser;
 #endif
 // 1: the instance receives no shadows
 layout(location = 12) flat out uint fsin_flags;
@@ -485,6 +488,33 @@ void DeformSwing(deformData deform, mat4 toWorld, inout vec3 worldPos)
 
 	worldPos += (rotated - worldPos) * (1.0 - texcoord1.z);
 }
+
+// An AC6 energy effect's swell (P[LaserBlade]_001's vertex stage): out along the model space normal by TEXCOORD4,
+// which sits in the second UV set's bytes (FlverResource.SetTexCoord4), times direction.xyz, more where a noise
+// texture scrolled by time is bright: pos += t4 * n * d * (1 + noise * amplitude). params: x the amplitude, y the
+// speed, zw the scroll; textures: x the noise, y 1 if it is on the GPU as sRGB; extra: the noise's tiling
+void DeformLaser(deformData deform, inout vec3 pos, vec3 nrm)
+{
+	uvec2 packed = uvec2(uv2) & 0xFFFFu;
+	vec3 t4 = vec3(packed.x & 0xFFu, packed.x >> 8u, packed.y & 0xFFu) / 255.0;
+
+	float time = HasFeature(FEATURE_UV_SCROLL) ? sceneparam.materialTime : 0.0;
+	vec2 at = (vec2(uv) * UV_SCALE + time * deform.params.y * deform.params.zw) * deform.extra;
+
+	float noise = 0.0;
+	if (deform.textures.x != 0u)
+	{
+		noise = textureLod(sampler2D(globalTextures[nonuniformEXT(TextureIndex(deform.textures.x))], linearSampler), at, 0.0).r;
+
+		// The game reads it as stored
+		if (deform.textures.y != 0u)
+		{
+			noise = noise <= 0.0031308 ? noise * 12.92 : 1.055 * pow(noise, 1.0 / 2.4) - 0.055;
+		}
+	}
+
+	pos += t4 * nrm * deform.direction.xyz * (1.0 + noise * deform.params.x);
+}
 #endif
 
 void main()
@@ -523,6 +553,11 @@ void main()
 	{
 		DeformSway(deform, localPosition);
 	}
+	// The normal as the game reads it, (N - 127) / 127, not normalized
+	else if (c_deformer == DEFORM_LASER)
+	{
+		DeformLaser(deform, localPosition, vec3(normal.xyz) / 127.0);
+	}
 #endif
 
 	fsin_texcoord = vec2(uv) * UV_SCALE;
@@ -532,8 +567,10 @@ void main()
 #ifdef MATERIAL_UV3
 	fsin_texcoord3 = vec2(uv3) * UV_SCALE;
 #endif
-#if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
+#ifdef MATERIAL_DEFORM
 	fsin_vertexBlend = vec4(texcoord1.xyz, texcoord2.x);
+	// The game scales an energy effect's own UVs by the length of the world matrix's first column
+	fsin_laser = vec4(texcoord3.xyz, length(w[0].xyz));
 #endif
 
 	// Vertex colors are used as blend weights by blended materials

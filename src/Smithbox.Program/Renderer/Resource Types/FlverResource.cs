@@ -526,6 +526,53 @@ public class FlverResource : IResource, IDisposable
         dest.UsesMetallic = true;
     }
 
+    /// <summary>The roles of an energy effect's textures (MaterialLaserRecipe), in the order of their texture types</summary>
+    private static readonly string[] LaserRoles = ["Edge", "Core", "Distort", "Flow", "Mask", "Extra", "Displace"];
+
+    private static FlverMaterial.TextureType LaserTexture(int role) =>
+        FlverMaterial.TextureType.LaserEdgeTextureResource + role;
+
+    /// <summary>Binds an energy effect's textures (MaterialResolvedLaser). One the material has no file for stays empty</summary>
+    private void LoadLaser(FlverMaterial dest, string mtd, MaterialResolvedLaser laser)
+    {
+        for (var i = 0; i < LaserRoles.Length; i++)
+        {
+            if (laser.Type(LaserRoles[i]) is { } type)
+            {
+                LookupTexture(LaserTexture(i), dest, type, "", mtd);
+            }
+        }
+    }
+
+    /// <summary>
+    /// An energy effect's entries (<see cref="MaterialLaser"/>) from its recipe. The textures, tilings and sRGB flags are
+    /// left to <see cref="FlverMaterial.UpdateMaterial"/>, as the textures load later
+    /// </summary>
+    private static MaterialLaser BuildMaterialLaser(MaterialResolvedLaser laser)
+    {
+        static Vector4 Pair(Vector2 a, Vector2 b) => new(a.X, a.Y, b.X, b.Y);
+        static Vector3 Rgb(Vector4 c) => new(c.X, c.Y, c.Z);
+
+        return new MaterialLaser
+        {
+            Flags = (laser.Rim ? MaterialLaser.FlagRim : 0) | (laser.Extra ? MaterialLaser.FlagExtra : 0),
+            Core = new Vector4(Rgb(laser.Color("Core")), laser.Value("Intensity")),
+            Edge = new Vector4(Rgb(laser.Color("Edge")), laser.Value("Speed")),
+            Flow = new Vector4(Rgb(laser.Color("Flow")), laser.Value("FlowStrength")),
+            Extra = new Vector4(Rgb(laser.Color("Extra")), laser.Value("ExtraEdge")),
+            Rim = new Vector4(Rgb(laser.Color("Rim")), laser.Value("RimBase")),
+            Vertex = new Vector4(Rgb(laser.Color("Vertex")), laser.Value("RimGain")),
+            Values0 = new Vector4(laser.Value("PulseFloor"), laser.Value("PulseOffset"), laser.Value("PulseRate"), laser.Value("DistortStrength")),
+            Values1 = new Vector4(laser.Value("DistortRate"), laser.Value("FacingPower"), laser.Value("FacingOffset"), laser.Value("EdgeOffset")),
+            Values2 = new Vector4(laser.Value("EdgePower"), laser.Value("FadeNear"), laser.Value("FadeFar"), laser.Value("SoftDepth")),
+            Values3 = new Vector4(laser.Value("Opacity"), laser.Value("Cutoff"), laser.Value("CurveMid"), laser.Value("CurveContrast")),
+            Values4 = new Vector4(laser.Value("CurveGain"), laser.Value("RimPower"), laser.Value("RimOffset"), 0),
+            MaskEdgeScroll = Pair(laser.Value2("MaskScroll"), laser.Value2("EdgeScroll")),
+            CoreDistortScroll = Pair(laser.Value2("CoreScroll"), laser.Value2("DistortScroll")),
+            FlowExtraScroll = Pair(laser.Value2("FlowScroll"), laser.Value2("ExtraScroll"))
+        };
+    }
+
     /// <summary>
     /// The paint entries of a material (<see cref="MaterialPaint"/>) from its recipe. The textures and tilings are left
     /// to <see cref="FlverMaterial.UpdateMaterial"/>, as the textures load later
@@ -572,6 +619,13 @@ public class FlverResource : IResource, IDisposable
         if (PaintMode(dest.Definition))
         {
             LoadPaint(dest, mtd, dest.Definition!.Paint!);
+            return;
+        }
+
+        // An AC6 energy effect: the same, for its own textures
+        if (dest.Definition?.Laser is { } laser)
+        {
+            LoadLaser(dest, mtd, laser);
             return;
         }
 
@@ -1157,6 +1211,12 @@ public class FlverResource : IResource, IDisposable
             dest.Paint = BuildMaterialPaint(dest.Definition!.Paint!);
         }
 
+        // An AC6 energy effect (MaterialLaser), drawn by its own path in the shader (c_surface, MaterialSurface.Laser)
+        if (dest.Definition?.Laser is { } laser)
+        {
+            dest.Laser = BuildMaterialLaser(laser);
+        }
+
         // An opaque single-layer material whose meshes fade by vertex alpha, in a game whose shaders blend by it: drawn
         // blended, as the game's G-buffer pass blends it (RenderProfile.VertexAlphaOpacity). Layered and mask blends
         // read the vertex alpha as a layer weight instead, and the "Col", fur, opacity, customize and paint shaders have
@@ -1377,6 +1437,12 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithPaint);
         }
 
+        // An energy effect's entries follow its deform entry (ResolveLaser clears the blend and overlay entries)
+        if (dest.Definition?.Laser != null)
+        {
+            size = sizeof(MaterialWithLaser);
+        }
+
         if (dest.Definition?.Blend != null)
         {
             size = sizeof(MaterialWithBlend);
@@ -1412,7 +1478,7 @@ public class FlverResource : IResource, IDisposable
         // Fur and the ChrCustomize colourings use the mask slot or the deform entry for other things
         // A GXFlver mask blend keeps its intensity in them as well (FlverMaterial.MaskBlendUvIndex)
         if (dest.Definition?.Blend == null && dest.Definition?.Fur == null && CustomizeMode(dest.Definition) == 0 &&
-            !PaintMode(dest.Definition) && (dest.Definition?.MaskBlend != null || dest.HasOpacity ||
+            !PaintMode(dest.Definition) && dest.Definition?.Laser == null && (dest.Definition?.MaskBlend != null || dest.HasOpacity ||
              dest.FlverTiling.Keys.Any(x => x.Contains("BlendMask", StringComparison.OrdinalIgnoreCase))))
         {
             dest.MaskTilingEntries = true;
@@ -1451,6 +1517,20 @@ public class FlverResource : IResource, IDisposable
     private static MaterialDeform BuildMaterialDeform(MaterialDefinition definition)
     {
         MaterialDeform deform = new();
+
+        // An energy effect's swell: pos += TEXCOORD4.xyz · normal · Direction.xyz · (1 + noise · Amplitude), the noise
+        // scrolled by Rate · time · Extra0/1. The texture, its sRGB flag and tiling are filled in at upload
+        if (definition.Deformer == MaterialDeformer.Laser && definition.Laser is { } laser)
+        {
+            deform.Amplitude = laser.Value("DisplaceNoise");
+            deform.Rate = laser.Value("Speed");
+            Vector2 scroll = laser.Value2("DisplaceScroll");
+            deform.Extra0 = scroll.X;
+            deform.Extra1 = scroll.Y;
+            deform.Direction = new Vector4(laser.Value3("Displace"), 0);
+            deform.Extra2 = deform.Extra3 = 1;
+            return deform;
+        }
 
         // Some vertex animations play as they are, with no parameter to scale them
         deform.Amplitude = GetDeformValue(definition, "Amplitude",
@@ -1515,6 +1595,10 @@ public class FlverResource : IResource, IDisposable
 
             // A cutscene's cloth and flags move further: up to 4.2 units in ER
             MaterialDeformer.VatFrame => 5.0f,
+
+            // An energy effect swells by up to its direction times one plus the noise's amplitude
+            MaterialDeformer.Laser => new Vector3(deform.Direction.X, deform.Direction.Y, deform.Direction.Z).Length() *
+                                      (1 + Math.Abs(deform.Amplitude)),
             MaterialDeformer.Sway => Math.Abs(deform.Amplitude) * deform.Direction.Length(),
 
             // The whole flight path is around the model, on top of the animation
@@ -3559,7 +3643,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesDeform(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets, int blendAttribute = 1, int vatColumnMember = -1)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets, int blendAttribute = 1, int vatColumnMember = -1, bool texCoord4InUv2 = false)
     {
         Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -3593,7 +3677,12 @@ public class FlverResource : IResource, IDisposable
 
                     var texCoord = GetTexCoordIndex(l.semantic, l.type, l.index, blendAttribute);
 
-                    if (vatColumnMember > 0 && l.index == vatColumnMember && IsVatFrameColumnCandidate(l.semantic, l.type, l.index))
+                    if (texCoord4InUv2 && IsTexCoord4(l.semantic, l.type, l.index))
+                    {
+                        // An energy effect's TEXCOORD4, its four bytes in the second UV set's place (see SetTexCoord4)
+                        SetTexCoord4(d, br.ReadByte(), br.ReadByte(), br.ReadByte(), br.ReadByte());
+                    }
+                    else if (vatColumnMember > 0 && l.index == vatColumnMember && IsVatFrameColumnCandidate(l.semantic, l.type, l.index))
                     {
                         // Kept as it would be otherwise, and its first two bytes are the vertex's column
                         for (var c = 0; c < FlverLayoutDeform.TexCoordSize; c++)
@@ -3644,7 +3733,7 @@ public class FlverResource : IResource, IDisposable
                             }
                         }
                     }
-                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < maxUvSets)
+                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < (texCoord4InUv2 ? 1 : maxUvSets))
                     {
                         bool hasv2;
                         if (uvsfilled == 0)
@@ -3673,7 +3762,7 @@ public class FlverResource : IResource, IDisposable
                     }
                 }
 
-                if (uvsfilled == 1)
+                if (uvsfilled == 1 && !texCoord4InUv2)
                 {
                     (*v).Uv2[0] = (*v).Uv1[0];
                     (*v).Uv2[1] = (*v).Uv1[1];
@@ -3690,6 +3779,22 @@ public class FlverResource : IResource, IDisposable
 
         uvSetsFilled = uvsfilled;
         br.StepOut();
+    }
+
+    /// <summary>An energy effect's TEXCOORD4: how far each axis of a vertex swells (MaterialDeformer.Laser)</summary>
+    private static bool IsTexCoord4(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index)
+    {
+        return semantic == FLVER.LayoutSemantic.UV && type == FLVER.LayoutType.UByte4Norm && index == 4;
+    }
+
+    /// <summary>
+    /// Puts an energy effect's TEXCOORD4 in the second UV set's four bytes, which those meshes don't otherwise have
+    /// (FlverShader.vert's DeformLaser unpacks them)
+    /// </summary>
+    private static unsafe void SetTexCoord4(FlverLayoutDeform* dest, byte x, byte y, byte z, byte w)
+    {
+        (*dest).Uv2[0] = (short)(x | (y << 8));
+        (*dest).Uv2[1] = (short)(z | (w << 8));
     }
 
     /// <summary>
@@ -3779,10 +3884,38 @@ public class FlverResource : IResource, IDisposable
         return column;
     }
 
-    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int blendAttribute = 1, bool vatFrame = false)
+    /// <summary>Where an energy effect's TEXCOORD4 is in the flat UV list of a vertex, or -1 if the mesh has none</summary>
+    private int GetTexCoord4UV(FLVER2.Mesh mesh)
+    {
+        var uvIndex = 0;
+        foreach (FLVER2.VertexBuffer buffer in mesh.VertexBuffers)
+        {
+            foreach (FLVER.LayoutMember member in Flver!.BufferLayouts[buffer.LayoutIndex])
+            {
+                if (member.Semantic != FLVER.LayoutSemantic.UV)
+                {
+                    continue;
+                }
+
+                if (IsTexCoord4(member.Semantic, member.Type, member.Index))
+                {
+                    return uvIndex;
+                }
+
+                // As GetTexCoordUVs counts them
+                uvIndex += member.Type is FLVER.LayoutType.Float4 or FLVER.LayoutType.UByte4Norm
+                    or FLVER.LayoutType.Short4 or FLVER.LayoutType.Half4 ? 2 : 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int blendAttribute = 1, bool vatFrame = false, bool texCoord4InUv2 = false)
     {
         var texCoordUVs = GetTexCoordUVs(mesh, out var halfTexCoord3, blendAttribute);
         var vatColumnUV = vatFrame ? GetVatFrameColumnUV(mesh) : -1;
+        var texCoord4UV = texCoord4InUv2 ? GetTexCoord4UV(mesh) : -1;
 
         // FLVER.Vertex reads half floats as if they were 16 bit fixed point, so this gets the bits back
         float uvFactor = Flver!.Header.Version >= 0x2000E ? 2048 : 1024;
@@ -3839,6 +3972,22 @@ public class FlverResource : IResource, IDisposable
                 {
                     Vector3 column = vert.UVs[vatColumnUV];
                     SetVatFrameColumn(d, (byte)Math.Round(column.X * 255f), (byte)Math.Round(column.Y * 255f));
+                }
+
+                // An energy effect's TEXCOORD4, in the second UV set's place (over what FillUVPairShort put there)
+                if (texCoord4InUv2)
+                {
+                    if (texCoord4UV >= 0 && texCoord4UV + 1 < vert.UVs.Count)
+                    {
+                        Vector3 first = vert.UVs[texCoord4UV];
+                        Vector3 second = vert.UVs[texCoord4UV + 1];
+                        SetTexCoord4(d, (byte)Math.Round(first.X * 255f), (byte)Math.Round(first.Y * 255f),
+                            (byte)Math.Round(second.X * 255f), (byte)Math.Round(second.Y * 255f));
+                    }
+                    else
+                    {
+                        SetTexCoord4(d, 0, 0, 0, 0);
+                    }
                 }
             }
         }
@@ -4246,7 +4395,8 @@ public class FlverResource : IResource, IDisposable
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
         {
             FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute,
-                dest.Material.Definition?.Deformer == MaterialDeformer.VatFrame);        }
+                dest.Material.Definition?.Deformer == MaterialDeformer.VatFrame, dest.Material.Definition?.Laser != null);
+        }
         else
         {
             FillVerticesStandard(mesh, pvhandle, meshVertices,
@@ -4608,7 +4758,7 @@ public class FlverResource : IResource, IDisposable
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
             {
-                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute, vatColumnMember);
+                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute, vatColumnMember, dest.Material.Definition?.Laser != null);
             }
             else
             {
@@ -5228,6 +5378,14 @@ public class FlverResource : IResource, IDisposable
             PaintLayerNormalTextureResource2,
             PaintLayerNormalTextureResource3,
             PaintLayerNormalTextureResource4,
+            // An AC6 energy effect's (MaterialLaser, LaserTextures' order)
+            LaserEdgeTextureResource,
+            LaserCoreTextureResource,
+            LaserDistortTextureResource,
+            LaserFlowTextureResource,
+            LaserMaskTextureResource,
+            LaserExtraTextureResource,
+            LaserDisplaceTextureResource,
             TextureResourceCount
         }
 
@@ -5331,6 +5489,12 @@ public class FlverResource : IResource, IDisposable
         ///     customize entries' place. Its textures and tilings are filled in at upload
         /// </summary>
         public MaterialPaint? Paint;
+
+        /// <summary>
+        ///     Set for AC6 energy effects (<see cref="MaterialDefinition.Laser"/>), and uploaded after the deform entry.
+        ///     Its textures, tilings and sRGB flags are filled in at upload
+        /// </summary>
+        public MaterialLaser? Laser;
 
         /// <summary>The tiling of the customize mask, from its sampler</summary>
         public Vector2 CustomizeMaskTiling = Vector2.One;
@@ -5997,7 +6161,61 @@ public class FlverResource : IResource, IDisposable
                     deform.VatNormalTex = _vatFrameNormalTex;
                     deform.Rate = _vatFramePlay;                }
 
+                // An energy effect's swell: its noise texture, whether it is on the GPU as sRGB, and its tiling
+                if (Definition?.Deformer == MaterialDeformer.Laser && Definition.Laser is { } swell)
+                {
+                    ushort noise = 0;
+                    SetMaterialTexture(TextureType.LaserDisplaceTextureResource, ref noise, 0);
+                    deform.VatPositionTex = noise;
+                    deform.VatNormalTex = IsSrgb(TextureType.LaserDisplaceTextureResource) ? 1u : 0u;
+                    Vector2 tiling = SamplerTiling(swell.Type("Displace"));
+                    deform.Extra2 = tiling.X;
+                    deform.Extra3 = tiling.Y;
+                }
+
                 deformed = new MaterialWithDeform { Material = MaterialData, Shading = Shading, Effects = Effects, Deform = deform };
+            }
+
+            // An AC6 energy effect, after its deform entry: its textures (0 until they load, which the shader reads as
+            // black), their tilings from the MATBIN, and which are on the GPU as sRGB
+            MaterialWithLaser? lasered = null;
+
+            if (Laser is MaterialLaser laser && Definition?.Laser is { } laserRecipe && deformed is MaterialWithDeform laserDeform)
+            {
+                uint Packed(TextureType low, TextureType high)
+                {
+                    ushort a = 0, b = 0;
+                    SetMaterialTexture(low, ref a, 0);
+                    SetMaterialTexture(high, ref b, 0);
+                    return a | ((uint)b << 16);
+                }
+
+                Vector4 Tilings(string low, string high)
+                {
+                    Vector2 a = SamplerTiling(laserRecipe.Type(low)), b = SamplerTiling(laserRecipe.Type(high));
+                    return new Vector4(a.X, a.Y, b.X, b.Y);
+                }
+
+                laser.EdgeCoreTex = Packed(TextureType.LaserEdgeTextureResource, TextureType.LaserCoreTextureResource);
+                laser.DistortFlowTex = Packed(TextureType.LaserDistortTextureResource, TextureType.LaserFlowTextureResource);
+                laser.MaskExtraTex = Packed(TextureType.LaserMaskTextureResource, TextureType.LaserExtraTextureResource);
+                laser.EdgeCoreTiling = Tilings("Edge", "Core");
+                laser.DistortFlowTiling = Tilings("Distort", "Flow");
+                laser.MaskExtraTiling = Tilings("Mask", "Extra");
+
+                laser.Flags &= MaterialLaser.FlagRim | MaterialLaser.FlagExtra;
+                for (var i = 0; i < 6; i++)
+                {
+                    if (IsSrgb(TextureType.LaserEdgeTextureResource + i))
+                    {
+                        laser.Flags |= 1u << (MaterialLaser.SrgbShift + i);
+                    }
+                }
+
+                lasered = new MaterialWithLaser
+                {
+                    Material = MaterialData, Shading = Shading, Effects = Effects, Deform = laserDeform.Deform, Laser = laser
+                };
             }
 
             MaterialWithBlend? blended = null;
@@ -6287,6 +6505,10 @@ public class FlverResource : IResource, IDisposable
                     else if (painted is MaterialWithPaint paintedData)
                     {
                         MaterialBuffer.FillBuffer(d, cl, ref paintedData);
+                    }
+                    else if (lasered is MaterialWithLaser laserData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref laserData);
                     }
                     else if (deformed is MaterialWithDeform data)
                     {

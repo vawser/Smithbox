@@ -1,0 +1,36 @@
+{
+  "P[LaserBlade]_001": {
+    "Textures": { "Edge": "2", "Core": "3", "Distort": "4", "Flow": "5", "Mask": "6", "Displace": "10", "Extra": "12" },
+    "Colors": {
+      "Core": "snp_0_color_8", "Edge": "snp_0_color_6", "Flow": "snp_0_color_10", "Extra": "snp_0_color_12",
+      "Rim": "snp_0_color_13", "Vertex": "snp_0_color_15"
+    },
+    "Values": {
+      "Intensity": "snp_0_float_5", "Speed": "snp_0_float_7", "FlowStrength": "snp_0_float_11",
+      "PulseFloor": "snp_0_float_12", "PulseOffset": "snp_0_float_21", "PulseRate": "snp_0_float_22",
+      "DistortStrength": "snp_0_float_19", "DistortRate": "snp_0_float_20",
+      "FacingPower": "snp_0_float_14", "FacingOffset": "snp_0_float_31", "EdgeOffset": "snp_0_float_28", "EdgePower": "snp_0_float_29",
+      "FadeNear": "snp_0_float_18", "FadeFar": "snp_0_float_17", "SoftDepth": "snp_0_float_30",
+      "Opacity": "snp_0_float_26", "Cutoff": "snp_0_float_54",
+      "CurveMid": "snp_0_float_57", "CurveContrast": "snp_0_float_58", "CurveGain": "snp_0_float_59", "ExtraEdge": "snp_0_float_64",
+      "RimBase": "snp_0_float_60", "RimGain": "snp_0_float_61", "RimPower": "snp_0_float_62", "RimOffset": "snp_0_float_63",
+      "MaskScroll": "snp_0_float2_0", "EdgeScroll": "snp_0_float2_1", "CoreScroll": "snp_0_float2_3", "DistortScroll": "snp_0_float2_4",
+      "FlowScroll": "snp_0_float2_5", "ExtraScroll": "snp_0_float2_9",
+      "Displace": "snp_0_float3_1", "DisplaceNoise": "snp_0_float_56", "DisplaceScroll": "snp_0_float2_8"
+    },
+    "RimPermutations": [ 1, 3 ],
+    "ExtraPermutations": [ 2, 3 ],
+    "Defaults": {
+      "snp_0_color_6": [ 1, 0, 0.01961, 1, 36.436 ], "snp_0_color_8": [ 1, 1, 1, 1, 1 ], "snp_0_color_10": [ 0.486328, 1, 1, 1, 120 ],
+      "snp_0_color_12": [ 1, 1, 1, 1, 1 ], "snp_0_color_13": [ 0, 0.600066, 0, 1, 10 ], "snp_0_color_15": [ 1, 1, 1, 1, 0 ],
+      "snp_0_float_5": [ 1 ], "snp_0_float_7": [ -1 ], "snp_0_float_11": [ 5 ], "snp_0_float_12": [ 0.9 ], "snp_0_float_14": [ 1.5 ],
+      "snp_0_float_17": [ 2 ], "snp_0_float_18": [ 0 ], "snp_0_float_19": [ 0.3 ], "snp_0_float_20": [ 0.2 ], "snp_0_float_21": [ -0.9 ],
+      "snp_0_float_22": [ 0.35 ], "snp_0_float_26": [ 1 ], "snp_0_float_28": [ 1 ], "snp_0_float_29": [ 2 ], "snp_0_float_30": [ 3 ],
+      "snp_0_float_31": [ 0.05 ], "snp_0_float_54": [ 1 ], "snp_0_float_56": [ 1 ], "snp_0_float_57": [ 0.6 ], "snp_0_float_58": [ 3 ],
+      "snp_0_float_59": [ 5 ], "snp_0_float_60": [ 0 ], "snp_0_float_61": [ 1 ], "snp_0_float_62": [ 2.6 ], "snp_0_float_63": [ 0 ],
+      "snp_0_float_64": [ 0.2 ],
+      "snp_0_float2_0": [ 0.1, -0.1 ], "snp_0_float2_1": [ 0.2, -1 ], "snp_0_float2_3": [ 0, -0.2 ], "snp_0_float2_4": [ 0.1, 0.5 ],
+      "snp_0_float2_5": [ -0.1, -0.5 ], "snp_0_float2_8": [ 0, 0.52 ], "snp_0_float2_9": [ 0, -0.2 ], "snp_0_float3_1": [ 0.2, 0.3, 0.3 ]
+    }
+  }
+}

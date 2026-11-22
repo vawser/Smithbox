@@ -30,6 +30,7 @@ namespace StudioCore.Editors.MaterialEditor;
 [JsonSerializable(typeof(Dictionary<string, MaterialFurRecipe>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialSlotRecipe>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialPaintRecipe>))]
+[JsonSerializable(typeof(Dictionary<string, MaterialLaserRecipe>))]
 [JsonSerializable(typeof(MaterialReloaderOffsetEntry))]
 
 internal partial class MaterialEditorJsonSerializerContext : JsonSerializerContext

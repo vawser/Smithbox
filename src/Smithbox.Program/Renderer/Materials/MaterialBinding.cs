@@ -38,7 +38,10 @@ public enum MaterialTextureUse
     Opacity,
 
     /// <summary>A texture of an AC6 paint material's recipe (MaterialResolvedPaint): mask, base, camo or a layer's</summary>
-    Paint
+    Paint,
+
+    /// <summary>A texture of an AC6 energy effect's recipe (MaterialResolvedLaser)</summary>
+    Laser
 }
 
 /// <summary>
@@ -119,6 +122,14 @@ public static class MaterialBinding
                    Array.IndexOf(paint.LayerNormalTypes, texType) >= 0
                 ? new(MaterialTextureUse.Paint, LoadedElsewhere: true)
                 : MaterialTextureRoute.Drop("a texture the paint recipe doesn't use");
+        }
+
+        // An energy effect (AC6's laser blades): its recipe binds everything (FlverResource.LoadLaser)
+        if (d?.Laser is { } laser && texType != null)
+        {
+            return laser.Types.ContainsValue(texType)
+                ? new(MaterialTextureUse.Laser, LoadedElsewhere: true)
+                : MaterialTextureRoute.Drop("a texture the laser recipe doesn't use");
         }
 
         if (d?.Magma?.TextureType == texType && texType != null)

@@ -38,6 +38,11 @@
       "Shows": "map: M[m10_00]031_AET001_018, M[m10_00]089_AET101_135, M[m10_00]015_AET101_060, M[m10_00]227_AET101_138 (+16 more)"
     },
     {
+      "Container": "c3100",
+      "Model": "c3100",
+      "Shows": "chr: C[Enemy]_ColorMaterial @2, P[LaserBlade]_001, C[Enemy][A]_Emissive_Glow, C[A][M0]_Emissive_Glow"
+    },
+    {
       "Container": "c8130",
       "Model": "c8130",
       "Shows": "chr: P[AMSN], M[AMSN], C[EyeLight][A]_EXAM"

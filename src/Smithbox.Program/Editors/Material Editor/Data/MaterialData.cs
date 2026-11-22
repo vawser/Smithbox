@@ -230,6 +230,16 @@ public class MaterialData : IDisposable
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialPaintRecipe) ?? new();
             }
 
+            // How the energy effect shaders draw (AC6's laser blades)
+            var laserPath = Path.Join(folder, $"{game}_Laser.json");
+            if (File.Exists(laserPath))
+            {
+                string text = await File.ReadAllTextAsync(laserPath);
+
+                table.Laser = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialLaserRecipe) ?? new();
+            }
+
             var furMasksPath = Path.Join(folder, $"{game}_FurMasks.json");
             if (File.Exists(furMasksPath))
             {
