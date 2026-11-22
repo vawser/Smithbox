@@ -48,7 +48,7 @@ public partial class CollisionEditorTool
     private Vector3 DragAnchor;
 
     /// <summary>True while a stroke is held, so the viewport's clicks don't select anything.</summary>
-    public bool IsStroking => Stroke != null;
+    public bool IsStroking => Stroke != null || MaterialStroking;
 
     private static readonly (KeybindID Key, CollisionBrushMode Mode)[] BrushKeys =
     {

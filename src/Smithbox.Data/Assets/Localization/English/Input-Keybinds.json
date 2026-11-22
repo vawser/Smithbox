@@ -441,6 +441,30 @@
       "Text": "While editing collision with the Collision Editor, switches the brush to Smooth."
     },
     {
+      "Key": "KEY_MapEditor_CollisionEditor_Paint_Material",
+      "Text": "Collision Editor: Paint Material"
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Paint_Material_TT",
+      "Text": "While painting collision materials with the Collision Editor, switches the brush to Paint."
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Pick_Material",
+      "Text": "Collision Editor: Pick Material"
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Pick_Material_TT",
+      "Text": "While painting collision materials with the Collision Editor, switches the brush to Pick, which takes the material of the face clicked."
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Select_Material",
+      "Text": "Collision Editor: Select Face"
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Select_Material_TT",
+      "Text": "While painting collision materials with the Collision Editor, switches the brush to Select, which selects the face clicked so its hit material ID can be edited."
+    },
+    {
       "Key": "KEY_MapEditor_NavigationEditor_Raise",
       "Text": "Navigation Editor: Raise Brush"
     },

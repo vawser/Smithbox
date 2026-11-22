@@ -24,6 +24,7 @@ namespace StudioCore.Editors.MapEditor;
 public enum CollisionEditorSource
 {
     Edit,
+    Material,
     Create,
     Cleanup
 }
@@ -206,6 +207,13 @@ public partial class CollisionEditorTool
                 ImGui.EndTabItem();
             }
 
+            if (BeginTab("MAP_CollisionEditor_Tab_Material", "collisionEditorTabMaterial"))
+            {
+                OpenTab = CollisionEditorSource.Material;
+                DisplayMaterialTab();
+                ImGui.EndTabItem();
+            }
+
             if (BeginTab("MAP_CollisionEditor_Tab_Create", "collisionEditorTabCreate"))
             {
                 OpenTab = CollisionEditorSource.Create;
@@ -326,6 +334,8 @@ public partial class CollisionEditorTool
                     // The cursor and stroke belong to the layer they were on
                     EndStroke();
                     Hover = null;
+                    MaterialHover = null;
+                    MaterialStroking = false;
                 }
             }
 
@@ -506,18 +516,21 @@ public partial class CollisionEditorTool
 
         foreach (var file in edited)
         {
-            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Pending_File", file.FileName, CountMovedVertices(file)));
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Pending_File", file.FileName, CountMovedVertices(file), file.RepaintedCount));
         }
     }
 
     /// <summary>
-    /// Stops editing if it is on: the cursor is hidden and pending edits are kept. Called by the Navigation tool when
-    /// its vertex edit starts, as both take the same keys.
+    /// Stops editing and material painting if they are on: the cursor is hidden and pending edits are kept. Called by
+    /// the Navigation tool when its vertex edit starts, as they take the same keys and button.
     /// </summary>
     public void StopEditing()
     {
         if (Active)
             ToggleEditing();
+
+        if (MaterialActive)
+            ToggleMaterialPainting();
     }
 
     private void ToggleEditing()
@@ -526,7 +539,12 @@ public partial class CollisionEditorTool
 
         // The Navigation tool's vertex edit takes the same keys, so one press would move both meshes
         if (Active)
+        {
             View.NavigationTool?.StopVertexEdit();
+
+            if (MaterialActive)
+                ToggleMaterialPainting();
+        }
 
         if (!Active)
         {
@@ -534,18 +552,27 @@ public partial class CollisionEditorTool
             Hover = null;
             DisposeCursor();
 
-            // Files without edits are decoded again the next time they are needed
-            foreach (var key in Files.Where(e => !e.Value.IsEdited).Select(e => e.Key).ToList())
-            {
-                Files[key].DisposePreview();
-                Files.Remove(key);
-            }
+            // The material overlay draws from the decoded files, so they are kept while it is shown
+            if (!IsMaterialOverlayShown)
+                ReleaseUneditedFiles();
+        }
+    }
+
+    /// <summary>Drops the decoded files without edits, which are decoded again the next time they are needed.</summary>
+    private void ReleaseUneditedFiles()
+    {
+        // The Material tab's selected face is kept, so it is still selected when the tab is opened again
+        foreach (var key in Files.Where(e => !e.Value.IsEdited && e.Value != SelectedFace?.File).Select(e => e.Key).ToList())
+        {
+            Files[key].DisposePreview();
+            Files.Remove(key);
         }
     }
 
     private void DiscardChanges()
     {
         EndStroke();
+        MaterialStroking = false;
 
         foreach (var file in Files.Values)
         {
@@ -589,6 +616,12 @@ public partial class CollisionEditorTool
             ToggleEditing();
         }
 
+        // The same for the Material tab's painting
+        if (MaterialActive && Frame - LastMaterialTabFrame > 1)
+        {
+            ToggleMaterialPainting();
+        }
+
         // Placing User-Defined points takes the clicks, so the cursor doesn't edit under them
         var placing = Create.HandleViewportInput(viewport, ray, canInteract);
 
@@ -597,11 +630,17 @@ public partial class CollisionEditorTool
             HandleEditing(scene, ray, canInteract && !placing);
         }
 
+        if (MaterialActive)
+        {
+            HandleMaterialPainting(scene, ray, canInteract && !placing);
+        }
+
         UpdatePreviews(scene);
         UpdateRetiringPreviews();
+        UpdateMaterialOverlay(scene);
 
-        // While editing, the picking button brushes, so it doesn't select what is under the brush as well
-        return Active || placing;
+        // While editing or painting, the picking button brushes, so it doesn't select what is under the brush as well
+        return Active || MaterialActive || placing;
     }
 
     /// <summary>The gizmo target of the Create tab's picked User-Defined point.</summary>
@@ -968,6 +1007,9 @@ public partial class CollisionEditorTool
         if (Hover != null && !Files.ContainsValue(Hover.File))
             Hover = null;
 
+        if (MaterialHover != null && !Files.ContainsValue(MaterialHover.File))
+            MaterialHover = null;
+
         Unsupported.Clear();
         ResourceNames.Clear();
     }
@@ -983,7 +1025,8 @@ public partial class CollisionEditorTool
     {
         foreach (var file in Files.Values)
         {
-            if (!file.IsEdited)
+            // Repainted materials don't change what is drawn, so only moved vertices need a preview
+            if (!file.IsGeometryEdited)
                 continue;
 
             var world = file.Entity.GetWorldMatrix();
@@ -1151,8 +1194,10 @@ public partial class CollisionEditorTool
 
                 try
                 {
-                    // The older games' meshes keep their triangles and keys; the others are built afresh
-                    built = Havok.Builders.HkpMeshShapeRebuild.IsSupported(body.Body.Shape)
+                    // The older games' meshes keep their triangles and keys, unless a triangle was repainted: each of
+                    // their storages has one material, so the triangles are regrouped into new storages. The others
+                    // are built afresh, with each triangle's material.
+                    built = Havok.Builders.HkpMeshShapeRebuild.IsSupported(body.Body.Shape) && !body.IsMaterialEdited
                         ? CollisionEditorShapes.BuildHkpShape(body.Body.Shape, vertices, indices, keys)
                         : CollisionEditorShapes.BuildShape(body.Body.Shape, vertices, indices, materials);
                 }
@@ -1274,6 +1319,9 @@ public partial class CollisionEditorTool
 
                 if (Hover?.File == file)
                     Hover = null;
+
+                if (MaterialHover?.File == file)
+                    MaterialHover = null;
             }
 
             // A previewed file keeps its preview drawn, and its loaded mesh hidden, until the rebuilt loaded mesh
@@ -1421,6 +1469,9 @@ public partial class CollisionEditorTool
 
             if (Hover?.File == file)
                 Hover = null;
+
+            if (MaterialHover?.File == file)
+                MaterialHover = null;
 
             file.DisposePreview();
         }

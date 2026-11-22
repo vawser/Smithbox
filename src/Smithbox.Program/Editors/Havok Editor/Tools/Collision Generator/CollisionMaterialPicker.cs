@@ -86,6 +86,7 @@ public class CollisionMaterialPicker
 
     /// <summary>
     /// The surface, property and raw ID inputs. Returns the chosen ID through <paramref name="materialId"/>.
+    /// With <paramref name="currentMaterials"/> null, the materials of the collision being replaced aren't listed.
     /// </summary>
     public void Display(ref int materialId, IReadOnlyList<uint> currentMaterials)
     {
@@ -168,6 +169,9 @@ public class CollisionMaterialPicker
         GUI.Tooltip(LOC.Get("HAVOK_CollisionGen_Material_Input_TT"));
 
         materialId = (int)id;
+
+        if (currentMaterials == null)
+            return;
 
         // The materials of the shape being replaced
         GUI.Spacer();

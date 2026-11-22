@@ -437,6 +437,15 @@ public class CFG
     public float MapEditor_CollisionEditor_Cursor_Fill_Alpha = 20f;
     public Vector3 MapEditor_CollisionEditor_Cursor_Color = new Vector3(0, 200, 255);
     public Vector3 MapEditor_CollisionEditor_Vertex_Color = new Vector3(255, 220, 0);
+    // Collision Editor, Material tab: the material painted, the brush radius (0 paints the face under the cursor
+    // alone), the steepest angle from the hit face a painted face may have, and the overlay of each face's material
+    public int MapEditor_CollisionEditor_Paint_Material = 1;
+    public float MapEditor_CollisionEditor_Paint_Radius = 0f;
+    public float MapEditor_CollisionEditor_Paint_Facing_Limit = 180f;
+    public bool MapEditor_CollisionEditor_Material_Overlay = true;
+    public float MapEditor_CollisionEditor_Material_Overlay_Alpha = 55f;
+    public bool MapEditor_CollisionEditor_Show_Paint_Material = true;
+    public bool MapEditor_CollisionEditor_Show_Material_Legend = true;
     public float MapEditor_Ruler_Point_Size = 0.15f;
     public Vector3 MapEditor_Ruler_Color = new Vector3(255, 200, 40);
     public Vector3 MapEditor_Ruler_Selected_Color = new Vector3(255, 255, 255);

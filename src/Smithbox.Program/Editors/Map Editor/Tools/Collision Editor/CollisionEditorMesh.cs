@@ -52,7 +52,33 @@ public sealed class CollisionEditorBody
 
     public int TriangleCount => Indices.Length / 3;
 
-    public bool IsEdited { get; private set; }
+    /// <summary>Whether a vertex has been moved since the body was decoded (or reset).</summary>
+    public bool IsGeometryEdited { get; private set; }
+
+    /// <summary>How many triangles have a material other than the one they were decoded with.</summary>
+    public int RepaintedCount { get; private set; }
+
+    public bool IsMaterialEdited => RepaintedCount > 0;
+
+    /// <summary>Whether the body has anything a commit would write: moved vertices or repainted triangles.</summary>
+    public bool IsEdited => IsGeometryEdited || IsMaterialEdited;
+
+    // The material each triangle was decoded with, which a reset puts back
+    public readonly uint[] OriginalMaterials;
+
+    // How many triangles have each material, kept up to date as they are repainted, for the legend
+    private readonly Dictionary<uint, int> MaterialCounts = new();
+
+    /// <summary>How many triangles have each material.</summary>
+    public IReadOnlyDictionary<uint, int> MaterialTriangleCounts => MaterialCounts;
+
+    // Raised for a chunk whenever a triangle in it is repainted or moved, so the material overlay knows to rebuild it
+    private readonly int[] OverlayVersions;
+
+    /// <summary>The version of a chunk of triangles (of <see cref="ChunkTriangles" />), raised by each change to it.</summary>
+    public int GetOverlayVersion(int chunk) => OverlayVersions[chunk];
+
+    public int ChunkCount => OverlayVersions.Length;
 
     private CollisionEditorBody(IHavokBody body, List<Vector3> vertices, List<int> indices, List<uint> materials,
         List<uint> keys)
@@ -64,7 +90,11 @@ public sealed class CollisionEditorBody
         OriginalVertices = vertices.ToArray();
         Indices = indices.ToArray();
         Materials = materials.ToArray();
+        OriginalMaterials = materials.ToArray();
         Keys = keys.ToArray();
+
+        foreach (var material in Materials)
+            MaterialCounts[material] = MaterialCounts.GetValueOrDefault(material) + 1;
 
         // Count, then fill, the triangles of each vertex
         VertexTriangleStart = new int[Vertices.Length + 1];
@@ -86,6 +116,7 @@ public sealed class CollisionEditorBody
         ChunkMeshes = new MeshRenderableProxy[chunkCount];
         PendingMeshes = new MeshRenderableProxy[chunkCount];
         PendingShownFrames = new int[chunkCount];
+        OverlayVersions = new int[chunkCount];
 
         UpdateBounds();
     }
@@ -326,7 +357,7 @@ public sealed class CollisionEditorBody
             MarkVertexDirty(v);
         }
 
-        IsEdited = true;
+        IsGeometryEdited = true;
         UpdateBounds();
     }
 
@@ -342,7 +373,7 @@ public sealed class CollisionEditorBody
             MarkVertexDirty(v);
         }
 
-        IsEdited = true;
+        IsGeometryEdited = true;
         UpdateBounds();
     }
 
@@ -352,17 +383,31 @@ public sealed class CollisionEditorBody
         Vertices[vertex] = position;
         MarkVertexDirty(vertex);
 
-        IsEdited = true;
+        IsGeometryEdited = true;
         UpdateBounds();
     }
 
-    /// <summary>Puts every vertex back where it was decoded.</summary>
+    /// <summary>Puts every vertex back where it was decoded, and every triangle back to its decoded material.</summary>
     public void Reset()
     {
         Array.Copy(OriginalVertices, Vertices, Vertices.Length);
         Array.Fill(DirtyChunks, true);
 
-        IsEdited = false;
+        if (IsMaterialEdited)
+        {
+            Array.Copy(OriginalMaterials, Materials, Materials.Length);
+
+            MaterialCounts.Clear();
+            foreach (var material in Materials)
+                MaterialCounts[material] = MaterialCounts.GetValueOrDefault(material) + 1;
+
+            RepaintedCount = 0;
+        }
+
+        for (var chunk = 0; chunk < OverlayVersions.Length; chunk++)
+            OverlayVersions[chunk]++;
+
+        IsGeometryEdited = false;
         UpdateBounds();
     }
 
@@ -370,7 +415,71 @@ public sealed class CollisionEditorBody
     {
         for (var i = VertexTriangleStart[vertex]; i < VertexTriangleStart[vertex + 1]; i++)
         {
-            DirtyChunks[VertexTriangles[i] / ChunkTriangles] = true;
+            var chunk = VertexTriangles[i] / ChunkTriangles;
+            DirtyChunks[chunk] = true;
+            OverlayVersions[chunk]++;
+        }
+    }
+
+    /// <summary>
+    /// Gives a triangle a collision material. Returns whether it changed. The drawn mesh doesn't depend on materials,
+    /// so only the material overlay is rebuilt.
+    /// </summary>
+    public bool SetMaterial(int triangle, uint material)
+    {
+        var old = Materials[triangle];
+
+        if (old == material)
+            return false;
+
+        if (old == OriginalMaterials[triangle])
+            RepaintedCount++;
+        else if (material == OriginalMaterials[triangle])
+            RepaintedCount--;
+
+        Materials[triangle] = material;
+
+        if (MaterialCounts[old] <= 1)
+            MaterialCounts.Remove(old);
+        else
+            MaterialCounts[old]--;
+
+        MaterialCounts[material] = MaterialCounts.GetValueOrDefault(material) + 1;
+
+        OverlayVersions[triangle / ChunkTriangles]++;
+
+        return true;
+    }
+
+    /// <summary>The corners of a triangle, in the space of the shape.</summary>
+    public (Vector3 A, Vector3 B, Vector3 C) GetTriangle(int triangle)
+    {
+        return (Vertices[Indices[triangle * 3]], Vertices[Indices[triangle * 3 + 1]], Vertices[Indices[triangle * 3 + 2]]);
+    }
+
+    /// <summary>
+    /// The triangles with a corner, or their centre, within a radius of a point (in the space of the shape).
+    /// </summary>
+    public IEnumerable<int> GetTrianglesNear(Vector3 center, float radius)
+    {
+        var reach = new Vector3(radius);
+
+        if (!Bounds.Intersects(new BoundingBox(center - reach, center + reach)))
+            yield break;
+
+        var radiusSquared = radius * radius;
+
+        for (var t = 0; t < TriangleCount; t++)
+        {
+            var (a, b, c) = GetTriangle(t);
+
+            if (Vector3.DistanceSquared(a, center) <= radiusSquared
+                || Vector3.DistanceSquared(b, center) <= radiusSquared
+                || Vector3.DistanceSquared(c, center) <= radiusSquared
+                || Vector3.DistanceSquared((a + b + c) / 3f, center) <= radiusSquared)
+            {
+                yield return t;
+            }
         }
     }
 
@@ -564,6 +673,12 @@ public sealed class CollisionEditorFile
     }
 
     public bool IsEdited => Bodies.Any(b => b.IsEdited);
+
+    /// <summary>Whether a vertex of the file has moved, so it is drawn from a preview in place of its loaded mesh.</summary>
+    public bool IsGeometryEdited => Bodies.Any(b => b.IsGeometryEdited);
+
+    /// <summary>How many of the file's triangles have a material other than their decoded one.</summary>
+    public int RepaintedCount => Bodies.Sum(b => b.RepaintedCount);
 
     /// <summary>
     /// The binder the file is in: h, l or f, from the first letter of its name.

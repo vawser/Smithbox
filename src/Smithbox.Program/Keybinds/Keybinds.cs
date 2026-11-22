@@ -213,6 +213,15 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_CollisionEditor_Smooth", Description = "KEY_MapEditor_CollisionEditor_Smooth_TT")]
     MapEditor_CollisionEditor_Smooth,
 
+    [Display(Name = "KEY_MapEditor_CollisionEditor_Paint_Material", Description = "KEY_MapEditor_CollisionEditor_Paint_Material_TT")]
+    MapEditor_CollisionEditor_Paint_Material,
+
+    [Display(Name = "KEY_MapEditor_CollisionEditor_Pick_Material", Description = "KEY_MapEditor_CollisionEditor_Pick_Material_TT")]
+    MapEditor_CollisionEditor_Pick_Material,
+
+    [Display(Name = "KEY_MapEditor_CollisionEditor_Select_Material", Description = "KEY_MapEditor_CollisionEditor_Select_Material_TT")]
+    MapEditor_CollisionEditor_Select_Material,
+
     [Display(Name = "KEY_MapEditor_NavigationEditor_Raise", Description = "KEY_MapEditor_NavigationEditor_Raise_TT")]
     MapEditor_NavigationEditor_Raise,
 
@@ -586,6 +595,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Lower, new() { Key = Key.E });
         InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Drag, new() { Key = Key.G });
         InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Smooth, new() { Key = Key.T });
+        InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Paint_Material, new() { Key = Key.B });
+        InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Pick_Material, new() { Key = Key.I });
+        InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Select_Material, new() { Key = Key.V });
         InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Raise, new() { Key = Key.Q });
         InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Lower, new() { Key = Key.E });
         InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Drag, new() { Key = Key.G });
@@ -787,6 +799,9 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_CollisionEditor_Lower, InputCategory.MapEditor },
         { KeybindID.MapEditor_CollisionEditor_Drag, InputCategory.MapEditor },
         { KeybindID.MapEditor_CollisionEditor_Smooth, InputCategory.MapEditor },
+        { KeybindID.MapEditor_CollisionEditor_Paint_Material, InputCategory.MapEditor },
+        { KeybindID.MapEditor_CollisionEditor_Pick_Material, InputCategory.MapEditor },
+        { KeybindID.MapEditor_CollisionEditor_Select_Material, InputCategory.MapEditor },
         { KeybindID.MapEditor_NavigationEditor_Raise, InputCategory.MapEditor },
         { KeybindID.MapEditor_NavigationEditor_Lower, InputCategory.MapEditor },
         { KeybindID.MapEditor_NavigationEditor_Drag, InputCategory.MapEditor },

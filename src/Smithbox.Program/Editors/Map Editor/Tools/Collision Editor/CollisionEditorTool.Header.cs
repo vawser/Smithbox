@@ -103,6 +103,20 @@ public partial class CollisionEditorTool
                 LOC.Get(CFG.Current.MapEditor_CollisionEditor_Brush_Mode.GetDisplayName()),
                 $"{CFG.Current.MapEditor_CollisionEditor_Brush_Radius:0.###}");
         }
+        else if (MaterialActive && MaterialMode is CollisionMaterialMode.Select)
+        {
+            mode = LOC.Get("MAP_CollisionEditor_Mode_Material_Select",
+                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Layer.GetDisplayName()),
+                InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action));
+        }
+        else if (MaterialActive)
+        {
+            mode = LOC.Get("MAP_CollisionEditor_Mode_Material",
+                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Layer.GetDisplayName()),
+                InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action),
+                LOC.Get(MaterialMode.GetDisplayName()),
+                GetMaterialNames().Describe(GetPaintMaterial()));
+        }
         else if (userDefined.IsShown && userDefined.Placing)
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Placing");
@@ -126,7 +140,7 @@ public partial class CollisionEditorTool
         GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, mode);
 
         // The cursor only lands on drawn collision; without it, the keys are taken but do nothing
-        if (Active && !collisionShown)
+        if ((Active || MaterialActive) && !collisionShown)
             GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("MAP_CollisionEditor_Mode_Collision_Hidden"));
     }
 
@@ -151,7 +165,7 @@ public partial class CollisionEditorTool
         var edited = Files.Values.Where(f => f.IsEdited).ToList();
 
         GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color,
-            LOC.Get("MAP_CollisionEditor_Pending_Status", edited.Count, edited.Sum(CountMovedVertices)));
+            LOC.Get("MAP_CollisionEditor_Pending_Status", edited.Count, edited.Sum(CountMovedVertices), edited.Sum(f => f.RepaintedCount)));
 
         GUI.ConditionalMultiButtonInput("collisionEditorActions",
             "collisionEditorCommit", LOC.Get("MAP_CollisionEditor_Commit"), LOC.Get("MAP_CollisionEditor_Commit_TT"),
