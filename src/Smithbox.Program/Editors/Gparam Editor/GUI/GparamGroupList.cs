@@ -131,14 +131,13 @@ public class GparamGroupList
 
         ImGui.BeginGroup();
 
-        // Groups with fields the viewport's renderer reads are coloured, as their fields are
+        // Groups with fields the viewport's renderer reads say so in their tooltip; the text colour is always the
+        // vanilla state (modified / added against the game's file)
         var isRendered = CFG.Current.GparamEditor_Highlight_Viewport_Fields &&
                          View.ViewportWindow.LightingBank.IsRenderedGroup(group.Key);
 
-        if (isRendered)
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_GparamPreviewable_Text);
-        }
+        var vanillaStatus = View.VanillaCompare.GroupStatus(fileEntry, group);
+        var coloured = VanillaMarkers.PushColour(vanillaStatus);
 
         // Group row
         if (ImGui.Selectable($@" {groupName}##{group.Key}", selected))
@@ -161,10 +160,7 @@ public class GparamGroupList
             View.FieldListView.InvalidateAddOptions();
         }
 
-        if (isRendered)
-        {
-            ImGui.PopStyleColor();
-        }
+        VanillaMarkers.PopColour(coloured);
 
         var tooltip = CFG.Current.GparamEditor_Group_List_Display_Descriptions ? groupDesc : "";
 
@@ -172,6 +168,11 @@ public class GparamGroupList
         {
             var note = LOC.Get("GPARAM_GroupList_Shown_In_Viewport");
             tooltip = tooltip != "" ? $"{tooltip}\n\n{note}" : note;
+        }
+
+        if (coloured && VanillaMarkers.TooltipText(vanillaStatus) is { } vanillaNote)
+        {
+            tooltip = tooltip != "" ? $"{tooltip}\n\n{vanillaNote}" : vanillaNote;
         }
 
         if (tooltip != "")

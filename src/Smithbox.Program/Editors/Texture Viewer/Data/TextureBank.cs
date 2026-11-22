@@ -14,6 +14,10 @@ public class TextureBank : IDisposable
 {
     public ProjectEntry Project;
 
+    /// <summary>The TPFs and textures of containers against the game's, for the list colours</summary>
+    public TextureVanillaCompare Vanilla => _vanilla ??= new TextureVanillaCompare(Project);
+    private TextureVanillaCompare _vanilla;
+
     public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
 
     public string Name;

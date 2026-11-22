@@ -185,13 +185,13 @@ public class ModelVanillaCompareTool
         {
             if (ImGui.BeginTabItem($"{LOC.Get("MODEL_Vanilla_Tab_Modified", Modified.Count)}##modelVanillaTabModified"))
             {
-                DisplayEntities(Modified, "modified", UI.Current.ImGui_MapEditor_VanillaModified_Text);
+                DisplayEntities(Modified, "modified", UI.Current.ImGui_Vanilla_Modified_Text);
                 ImGui.EndTabItem();
             }
 
             if (ImGui.BeginTabItem($"{LOC.Get("MODEL_Vanilla_Tab_Added", Added.Count)}##modelVanillaTabAdded"))
             {
-                DisplayEntities(Added, "added", UI.Current.ImGui_MapEditor_VanillaAdded_Text);
+                DisplayEntities(Added, "added", UI.Current.ImGui_Vanilla_Added_Text);
                 ImGui.EndTabItem();
             }
 
@@ -344,7 +344,7 @@ public class ModelVanillaCompareTool
 
         if (!isModel && diff.Pairs.TryGetValue(entity.WrappedObject, out var vanilla) && vanilla == null)
         {
-            GUI.WrappedTextColored(UI.Current.ImGui_MapEditor_VanillaAdded_Text, LOC.Get("MODEL_Vanilla_Tool_Added", name));
+            GUI.WrappedTextColored(UI.Current.ImGui_Vanilla_Added_Text, LOC.Get("MODEL_Vanilla_Tool_Added", name));
             return;
         }
 
@@ -354,7 +354,7 @@ public class ModelVanillaCompareTool
             return;
         }
 
-        GUI.WrappedTextColored(UI.Current.ImGui_MapEditor_VanillaModified_Text, LOC.Get("MODEL_Vanilla_Tool_Fields", name, Fields.Count));
+        GUI.WrappedTextColored(UI.Current.ImGui_Vanilla_Modified_Text, LOC.Get("MODEL_Vanilla_Tool_Fields", name, Fields.Count));
 
         if (ImGui.BeginTable("modelVanillaFields", 4, ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchProp))
         {

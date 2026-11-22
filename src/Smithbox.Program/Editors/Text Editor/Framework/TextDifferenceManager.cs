@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -237,5 +238,83 @@ public class TextDifferenceManager
             return false;
 
         return AdditionCache.Contains(entry);
+    }
+
+    /// <summary>The shared status of an entry of the compared FMG, for VanillaMarkers</summary>
+    public VanillaStatus EntryStatus(FMG.Entry entry)
+    {
+        if (IsUniqueToProject(entry))
+            return VanillaStatus.Added;
+
+        return IsDifferentToVanilla(entry) ? VanillaStatus.Modified : VanillaStatus.Unchanged;
+    }
+
+    // Per FMG of any container, the status worked out at a Version: every edit and selection rebuilds the compared
+    // FMG (Version goes up), which is when another FMG's status may have changed too
+    private readonly Dictionary<TextFmgWrapper, (int Version, VanillaStatus Status)> FmgStatusCache =
+        new(ReferenceEqualityComparer.Instance);
+
+    /// <summary>
+    /// How an FMG compares with the game's FMG of the same ID in the same container, for the FMG list: Added when
+    /// the game has no such container or FMG, Modified when any entry is added, removed or has different text,
+    /// else Unchanged. None when the vanilla comparison is off.
+    /// </summary>
+    public VanillaStatus FmgStatus(TextContainerWrapper container, TextFmgWrapper fmg)
+    {
+        if (!CFG.Current.TextEditor_Include_Vanilla_Cache || container == null || fmg?.File == null)
+            return VanillaStatus.None;
+
+        if (FmgStatusCache.TryGetValue(fmg, out var cached) && cached.Version == Version)
+            return cached.Status;
+
+        var status = ComputeFmgStatus(container, fmg);
+        FmgStatusCache[fmg] = (Version, status);
+        return status;
+    }
+
+    private VanillaStatus ComputeFmgStatus(TextContainerWrapper container, TextFmgWrapper fmg)
+    {
+        var vanillaContainer = FindVanillaContainer(container);
+        if (vanillaContainer?.FmgWrappers == null)
+            return VanillaStatus.Added;
+
+        var vanillaFmg = vanillaContainer.FmgWrappers.FirstOrDefault(e => e.ID == fmg.ID);
+        if (vanillaFmg?.File == null)
+            return VanillaStatus.Added;
+
+        var vanillaEntries = vanillaFmg.File.Entries;
+        var entries = fmg.File.Entries;
+
+        var vanillaText = new Dictionary<int, string>(vanillaEntries.Count);
+        foreach (var e in vanillaEntries)
+            vanillaText[e.ID] = e.Text;
+
+        var seen = new HashSet<int>();
+        foreach (var e in entries)
+        {
+            if (!vanillaText.TryGetValue(e.ID, out var text))
+                return VanillaStatus.Modified;
+
+            if (text != null ? !text.Equals(e.Text) : e.Text != null)
+                return VanillaStatus.Modified;
+
+            seen.Add(e.ID);
+        }
+
+        // An entry the mod removed
+        return seen.Count < vanillaText.Count ? VanillaStatus.Modified : VanillaStatus.Unchanged;
+    }
+
+    /// <summary>The vanilla bank's container matching a project container (category, DS2 sub-category, file name)</summary>
+    private TextContainerWrapper FindVanillaContainer(TextContainerWrapper container)
+    {
+        var isDS2 = Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S;
+
+        return Project.Handler.TextData.VanillaBank.Containers
+            .Where(e => e.Value.ContainerDisplayCategory == container.ContainerDisplayCategory)
+            .Where(e => !isDS2 || e.Value.ContainerDisplaySubCategory == container.ContainerDisplaySubCategory)
+            .Where(e => e.Value.FileEntry.Filename == container.FileEntry.Filename)
+            .Select(e => e.Value)
+            .FirstOrDefault();
     }
 }

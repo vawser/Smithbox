@@ -33,6 +33,13 @@ public class RowListContext
     public PropertyInfo CompareColumnProperty { get; set; }
 
     public HashSet<Param.Row> VanillaDiffCache { get; set; }
+
+    /// <summary>
+    /// The row IDs the vanilla param has, or null when vanilla has no such param. A diff row whose ID isn't here
+    /// is Added rather than Modified (VanillaDiffCache holds both: a row with no vanilla match counts as changed).
+    /// </summary>
+    public HashSet<int> VanillaRowIds { get; set; }
+
     /// <summary>
     /// Per aux bank, the IDs of its rows that differ from vanilla and from primary. The aux caches hold the aux
     /// bank's own row objects, so primary rows are matched to them by ID.
@@ -120,6 +127,7 @@ public class ParamRowWindow
 
             Context.VanillaDiffCache = Editor.Project.Handler.ParamData.PrimaryBank
                 .GetVanillaDiffRows(activeParam);
+            Context.VanillaRowIds = GetVanillaRowIds(activeParam);
             // ID sets, cached per diff set (cleared when the diffs are refreshed), so each row's test is a lookup.
             // Each row used to scan every aux diff set, every frame.
             Context.AuxDiffCaches = Editor.Project.Handler.ParamData.AuxBanks
@@ -1069,6 +1077,22 @@ public class ParamRowWindow
     /// The IDs in a diff set, cached against that set object. A diff refresh publishes new set objects and clears
     /// the Param Editor's caches, so the IDs are rebuilt then.
     /// </summary>
+    /// <summary>
+    /// The vanilla param's row IDs, cached on the vanilla param (which is never edited), or null when vanilla lacks
+    /// the param. Then every row stays Modified: with no vanilla param to compare, nothing can be called added.
+    /// </summary>
+    private HashSet<int> GetVanillaRowIds(string activeParam)
+    {
+        var vanillaBank = Editor.Project.Handler.ParamData.VanillaBank;
+
+        if (activeParam == null || vanillaBank?.Params == null ||
+            !vanillaBank.Params.TryGetValue(activeParam, out var vanillaParam) || vanillaParam == null)
+            return null;
+
+        return CacheBank.GetCached(Editor, vanillaParam, "rowListVanillaRowIds",
+            () => vanillaParam.Rows.Select(r => r.ID).ToHashSet());
+    }
+
     private HashSet<int> GetDiffIds(HashSet<Param.Row> diffRows)
     {
         if (diffRows == null || diffRows.Count == 0)
@@ -1109,13 +1133,20 @@ public class ParamRowWindow
             var auxDiffPrimaryAndVanilla = (auxDiffVanilla ? 1 : 0) + Context.AuxDiffCaches
                 .Count(cache => cache.VanillaDiffIds.Contains(r.ID) && cache.PrimaryDiffIds.Contains(r.ID)) > 1;
 
+            // Added: no vanilla row has this ID (the diff cache can't tell, it holds both)
+            var added = Context.VanillaRowIds != null && !Context.VanillaRowIds.Contains(r.ID);
+
             if (auxDiffVanilla && auxDiffPrimaryAndVanilla)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AuxConflict_Text);
             }
+            else if (filterMatch)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ModifiedFilter_Text);
+            }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, filterMatch ? UI.Current.ImGui_ModifiedFilter_Text : UI.Current.ImGui_PrimaryChanged_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, added ? UI.Current.ImGui_Vanilla_Added_Text : UI.Current.ImGui_Vanilla_Modified_Text);
             }
             pushed++;
 

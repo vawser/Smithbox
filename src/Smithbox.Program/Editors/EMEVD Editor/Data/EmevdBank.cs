@@ -1,5 +1,6 @@
 using Andre.IO.VFS;
 using SoulsFormats;
+using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -99,11 +100,18 @@ public class EmevdBank
             if (!RegulationEntries.TryAdd(entryName, entry.Bytes.ToArray()))
                 continue;
 
-            var inProject = vanillaEntries != null
-                && (!vanillaEntries.TryGetValue(entryName, out var original) || !original.Span.SequenceEqual(entry.Bytes.Span));
+            // No project regulation: every entry is the game's own
+            var status = vanillaEntries == null ? VanillaStatus.Unchanged
+                : !vanillaEntries.TryGetValue(entryName, out var original) ? VanillaStatus.Added
+                : original.Span.SequenceEqual(entry.Bytes.Span) ? VanillaStatus.Unchanged
+                : VanillaStatus.Modified;
+            var inProject = status is VanillaStatus.Added or VanillaStatus.Modified;
 
             var name = System.IO.Path.GetFileNameWithoutExtension(entryName);
-            files.Add(new EmevdFileWrapper(this, $"{RegulationPath}/{entryName}", name, inProject, null, entryName));
+            files.Add(new EmevdFileWrapper(this, $"{RegulationPath}/{entryName}", name, inProject, null, entryName)
+            {
+                RegulationStatus = status
+            });
         }
 
         current.Dispose();
@@ -136,6 +144,18 @@ public class EmevdBank
             Smithbox.LogError(this, LOC.Get("EMEVD_Data_Log_Failed_to_Read_File", RegulationPath), e);
             return null;
         }
+    }
+
+    /// <summary>
+    /// The game's own bytes of a regulation .emevd entry (for event-level vanilla comparison); null if the game's
+    /// regulation has none. Reads (and decrypts) the game's regulation, so call it off the UI thread.
+    /// </summary>
+    public byte[] ReadVanillaRegulationEntry(string entryName)
+    {
+        using var vanilla = ReadRegulation(Project.VFS.VanillaFS);
+        var entry = vanilla?.Files.FirstOrDefault(f =>
+            string.Equals(System.IO.Path.GetFileName(f.Name), entryName, StringComparison.OrdinalIgnoreCase));
+        return entry?.Bytes.ToArray();
     }
 
     /// <summary>A regulation .emevd entry's bytes as read at setup or last saved; null if the regulation has none</summary>

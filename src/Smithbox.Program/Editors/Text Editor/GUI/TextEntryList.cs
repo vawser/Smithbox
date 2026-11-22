@@ -363,28 +363,18 @@ public class TextEntryList
         var displayedText = FormatDisplayName(contents);
         var isSelected = Parent.Selection.IsFmgEntrySelected(index);
 
-        // Unique rows
-        if (Parent.DifferenceManager.IsUniqueToProject(entry))
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
-        }
-        // Modified rows
-        else if (Parent.DifferenceManager.IsDifferentToVanilla(entry))
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
-        }
+        // Unique (added) and modified rows take the shared vanilla colours
+        var coloured = VanillaMarkers.PushColour(Parent.DifferenceManager.EntryStatus(entry));
 
         // Script row
-        if (ImGui.Selectable($"{displayedText}##fmgEntryName_{id}{index}", isSelected))
+        var clicked = ImGui.Selectable($"{displayedText}##fmgEntryName_{id}{index}", isSelected);
+
+        VanillaMarkers.PopColour(coloured);
+
+        if (clicked)
         {
             Parent.Selection.SelectFmgEntry(index, entry);
             Parent.TextEntryCreator.UpdateParameters(entry);
-        }
-
-        if (Parent.DifferenceManager.IsUniqueToProject(entry) ||
-            Parent.DifferenceManager.IsDifferentToVanilla(entry))
-        {
-            ImGui.PopStyleColor(1);
         }
 
         // Modified rows: show what the text was in vanilla

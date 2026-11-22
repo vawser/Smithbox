@@ -143,9 +143,19 @@ public class GparamFileList
             filename = $"{filename}*";
         }
 
+        // The saved file against the game's (for BB's .gparambnd files, the binder that holds it)
+        var vanillaStatus = Project.VFS.FileStatus(fileEntry.Path);
+        var coloured = VanillaMarkers.PushColour(vanillaStatus);
+
         // File row
         // The ## suffix keeps the ImGui ID stable when the dirty marker toggles
-        if (ImGui.Selectable($@" {filename}##gparamFile_{fileEntry.Filename}.{fileEntry.Extension}", View.Selection.IsSelectedFile(fileEntry)))
+        var clicked = ImGui.Selectable($@" {filename}##gparamFile_{fileEntry.Filename}.{fileEntry.Extension}", View.Selection.IsSelectedFile(fileEntry));
+
+        VanillaMarkers.PopColour(coloured);
+        if (coloured)
+            VanillaMarkers.Tooltip(vanillaStatus);
+
+        if (clicked)
         {
             View.Selection.SetFileSelection(fileEntry);
         }

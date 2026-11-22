@@ -9,20 +9,8 @@ using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public enum ModelVanillaStatus
-{
-    /// <summary>Not a material, node, dummy or mesh</summary>
-    None,
-
-    /// <summary>The game has no such model (the mod added it), or it couldn't be read</summary>
-    NoVanilla,
-
-    Unchanged,
-    Modified,
-
-    /// <summary>Vanilla has no counterpart</summary>
-    Added
-}
+// Status values are the shared StudioCore.Editors.Common.VanillaStatus. Here None means "not a material, node,
+// dummy or mesh", and NoVanilla means the game has no such model (the mod added it) or it couldn't be read.
 
 /// <summary>
 /// Compares the loaded model of a view with the model as the game ships it, for the Vanilla Compare tool: what is
@@ -98,21 +86,21 @@ public class ModelVanillaCompare
         return CachedDiff;
     }
 
-    public ModelVanillaStatus GetStatus(Entity entity)
+    public VanillaStatus GetStatus(Entity entity)
     {
         if (entity?.WrappedObject is not (FLVER2.Material or FLVER.Node or FLVER.Dummy or FLVER2.Mesh))
-            return ModelVanillaStatus.None;
+            return VanillaStatus.None;
 
         var diff = GetDiff(out var hasVanilla);
 
         if (!hasVanilla)
-            return ModelVanillaStatus.NoVanilla;
+            return VanillaStatus.NoVanilla;
 
         if (diff == null || !diff.Pairs.TryGetValue(entity.WrappedObject, out var vanilla))
-            return ModelVanillaStatus.None;
+            return VanillaStatus.None;
 
         if (vanilla == null)
-            return ModelVanillaStatus.Added;
+            return VanillaStatus.Added;
 
         // Contents asks for every row every frame, and a mesh compares its geometry, so the answer is kept until
         // the next diff (one is made after every edit)
@@ -124,7 +112,7 @@ public class ModelVanillaCompare
 
         if (!StatusCache.TryGetValue(entity.WrappedObject, out var status))
         {
-            status = diff.Differs(entity.WrappedObject) ? ModelVanillaStatus.Modified : ModelVanillaStatus.Unchanged;
+            status = diff.Differs(entity.WrappedObject) ? VanillaStatus.Modified : VanillaStatus.Unchanged;
             StatusCache[entity.WrappedObject] = status;
         }
 
@@ -132,7 +120,7 @@ public class ModelVanillaCompare
     }
 
     private FlverDiff StatusFor;
-    private readonly Dictionary<object, ModelVanillaStatus> StatusCache = new(ReferenceEqualityComparer.Instance);
+    private readonly Dictionary<object, VanillaStatus> StatusCache = new(ReferenceEqualityComparer.Instance);
 
     /// <summary>
     /// Pushes the Contents text colour for an object that differs from vanilla (green) or isn't in it (blue), when
@@ -145,12 +133,12 @@ public class ModelVanillaCompare
 
         switch (GetStatus(entity))
         {
-            case ModelVanillaStatus.Modified:
-                Hexa.NET.ImGui.ImGui.PushStyleColor(Hexa.NET.ImGui.ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaModified_Text);
+            case VanillaStatus.Modified:
+                Hexa.NET.ImGui.ImGui.PushStyleColor(Hexa.NET.ImGui.ImGuiCol.Text, UI.Current.ImGui_Vanilla_Modified_Text);
                 return true;
 
-            case ModelVanillaStatus.Added:
-                Hexa.NET.ImGui.ImGui.PushStyleColor(Hexa.NET.ImGui.ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaAdded_Text);
+            case VanillaStatus.Added:
+                Hexa.NET.ImGui.ImGui.PushStyleColor(Hexa.NET.ImGui.ImGuiCol.Text, UI.Current.ImGui_Vanilla_Added_Text);
                 return true;
 
             default:

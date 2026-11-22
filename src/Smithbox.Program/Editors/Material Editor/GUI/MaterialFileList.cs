@@ -174,7 +174,24 @@ public class MaterialFileList
             displayName = $"{displayName}*";
         }
 
-        if (ImGui.Selectable($"{displayName}##materialFileEntry_{key}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap))
+        // Against the game's file (F7): modified and added files take the shared colour (no icons)
+        var vanillaState = Parent.Editor.Vanilla.StateOf(binder, curFile);
+        var coloured = VanillaMarkers.PushColour(vanillaState switch
+        {
+            VanillaState.Added => VanillaStatus.Added,
+            VanillaState.Modified => VanillaStatus.Modified,
+            _ => VanillaStatus.None
+        });
+
+        var clicked = ImGui.Selectable($"{displayName}##materialFileEntry_{key}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap);
+
+        VanillaMarkers.PopColour(coloured);
+        if (vanillaState == VanillaState.Modified)
+            GUI.Tooltip(LOC.Get("MAT_Vanilla_Modified"));
+        else if (vanillaState == VanillaState.Added)
+            GUI.Tooltip(LOC.Get("MAT_Vanilla_Added_TT"));
+
+        if (clicked)
         {
             Parent.Selection.SelectFile(curFile);
             Parent.Selection.ScrollToFile = false;
@@ -197,22 +214,6 @@ public class MaterialFileList
         }
 
         DisplayContextMenu(binder, curFile, index);
-
-        // Against the game's file (F7): added by the project, or changed
-        switch (Parent.Editor.Vanilla.StateOf(binder, curFile))
-        {
-            case VanillaState.Added:
-                ImGui.SameLine();
-                ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, $"{Icons.Plus}");
-                GUI.Tooltip(LOC.Get("MAT_Vanilla_Added_TT"));
-                break;
-
-            case VanillaState.Modified:
-                ImGui.SameLine();
-                ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, $"{Icons.Pencil}");
-                GUI.Tooltip(LOC.Get("MAT_Vanilla_Modified"));
-                break;
-        }
     }
 
     private void DisplayContextMenu(IMaterialBinder binder, MaterialFileWrapper file, int index)

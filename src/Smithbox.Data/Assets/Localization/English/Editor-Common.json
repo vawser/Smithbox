@@ -459,6 +459,18 @@
     {
       "Key": "EDITOR_Window_CenterPanel",
       "Text": "Center Panel"
+    },
+    {
+      "Key": "EDITOR_Vanilla_Modified_TT",
+      "Text": "Modified: differs from the game's data."
+    },
+    {
+      "Key": "EDITOR_Vanilla_Added_TT",
+      "Text": "Added: the game's data doesn't have this."
+    },
+    {
+      "Key": "EDITOR_Vanilla_NoVanilla_TT",
+      "Text": "The game's data has no copy of this to compare with."
     }
   ]
 }

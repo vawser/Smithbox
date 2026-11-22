@@ -952,9 +952,25 @@ public class MaterialProperties
                             _ => (null, null)
                         };
 
+                        // Against vanilla (F7): modified and added entries take the shared colour (no icons)
+                        object vanillaEntry = null;
+                        var vanillaChange = VanillaChange(prop.Name, elem, out vanillaEntry);
+                        var entryColoured = VanillaMarkers.PushColour(vanillaChange switch
+                        {
+                            VanillaState.Added => VanillaStatus.Added,
+                            VanillaState.Modified => VanillaStatus.Modified,
+                            _ => VanillaStatus.None
+                        });
+
                         var label = entryName != null ? $"{fieldName}: {i} · {entryName}" : $"{fieldName}: {i}";
                         var classOpen = ImGui.TreeNodeEx($@"{label}###{fieldName}{i}", treeFlags);
-                        GUI.Tooltip(fieldDescription);
+                        VanillaMarkers.PopColour(entryColoured);
+                        GUI.Tooltip(vanillaChange switch
+                        {
+                            VanillaState.Modified => $"{fieldDescription}\n{LOC.Get("MAT_Vanilla_Entry_Modified_TT")}",
+                            VanillaState.Added => $"{fieldDescription}\n{LOC.Get("MAT_Vanilla_Entry_Added_TT")}",
+                            _ => fieldDescription
+                        });
 
                         // Copy / paste of this entry, as JSON. Pastes wait until the list is drawn
                         if (entryName != null && ImGui.BeginPopupContextItem($"entryContext_{fieldName}{i}"))
@@ -984,23 +1000,6 @@ public class MaterialProperties
 
                         if (uses != null)
                             MaterialShaderPanel.DisplayUses(CurrentShaderInfo, uses);
-
-                        // Against vanilla (F7): added, or changed with a Revert
-                        object vanillaEntry = null;
-                        var vanillaChange = VanillaChange(prop.Name, elem, out vanillaEntry);
-
-                        if (vanillaChange == VanillaState.Added)
-                        {
-                            ImGui.SameLine();
-                            ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, $"{Icons.Plus}");
-                            GUI.Tooltip(LOC.Get("MAT_Vanilla_Entry_Added_TT"));
-                        }
-                        else if (vanillaChange == VanillaState.Modified)
-                        {
-                            ImGui.SameLine();
-                            ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, $"{Icons.Pencil}");
-                            GUI.Tooltip(LOC.Get("MAT_Vanilla_Entry_Modified_TT"));
-                        }
 
                         ImGui.NextColumn();
                         ImGui.SetNextItemWidth(-1);

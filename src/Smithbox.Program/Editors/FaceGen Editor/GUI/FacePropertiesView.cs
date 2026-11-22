@@ -290,13 +290,12 @@ public class FacePropertiesView
 
         var modified = IsModified(row, field);
 
-        if (modified)
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+        // Fields that differ from vanilla take the shared modified colour
+        var coloured = modified && VanillaMarkers.PushColour(VanillaStatus.Modified);
 
         ImGui.TextUnformatted(DisplayName(param, field.Name, storesModes, model));
 
-        if (modified)
-            ImGui.PopStyleColor();
+        VanillaMarkers.PopColour(coloured);
 
         NameTooltip(param, row, field, storesModes, model);
     }

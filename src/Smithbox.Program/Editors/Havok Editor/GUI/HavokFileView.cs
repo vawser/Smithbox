@@ -200,7 +200,18 @@ public class HavokFileView
                         labelName = $"{labelName}*";
                     }
 
-                    if (ImGui.Selectable($"{labelName}##fileEntry_{filepath}", selected))
+                    // The saved file against the game's entry of the same name in the game's binder
+                    var vanillaStatus = View.HavokBank.EntryStatus(View.Selection.BinderFileEntry,
+                        View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode), filepath);
+                    var coloured = VanillaMarkers.PushColour(vanillaStatus);
+
+                    var clicked = ImGui.Selectable($"{labelName}##fileEntry_{filepath}", selected);
+
+                    VanillaMarkers.PopColour(coloured);
+                    if (coloured)
+                        VanillaMarkers.Tooltip(vanillaStatus);
+
+                    if (clicked)
                     {
                         // 'Soft' select used for multi-selecting for the binder actions
                         if (InputManager.HasCtrlDown())

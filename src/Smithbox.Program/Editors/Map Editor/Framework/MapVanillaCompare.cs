@@ -11,20 +11,9 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-public enum VanillaStatus
-{
-    /// <summary>Not an MSB part, region or event, or not worked out</summary>
-    None,
-
-    /// <summary>The map has no vanilla file (the mod added it), or it couldn't be read</summary>
-    NoVanilla,
-
-    Unchanged,
-    Modified,
-
-    /// <summary>Vanilla has no object of this list and name</summary>
-    Added
-}
+// Status values are the shared StudioCore.Editors.Common.VanillaStatus. Here None means "not an MSB part, region
+// or event, or not worked out", NoVanilla means the map has no vanilla file (the mod added it) or it couldn't be
+// read, and Added means vanilla has no object of this list and name.
 
 /// <summary>
 /// Compares loaded maps with their vanilla MSBs (MapData.VanillaBank, over VanillaFS), for the Map Contents

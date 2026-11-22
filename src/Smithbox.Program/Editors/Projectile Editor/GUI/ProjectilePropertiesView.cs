@@ -337,8 +337,14 @@ public class ProjectilePropertiesView
 
         FieldTooltipHelper.IconTooltip(FieldView!, context, field);
 
+        // A field whose value differs from the vanilla row's takes the modified colour. Fields of an added row stay
+        // uncoloured (the row list shows it as added), as in the Param Editor's field list
+        var fieldStatus = ParamVanillaStatus.FieldStatus(Project, paramName, row, field.InternalName);
+        var nameColoured = fieldStatus == VanillaStatus.Modified && VanillaMarkers.PushColour(fieldStatus);
+
         ImGui.AlignTextToFramePadding();
         ImGui.TextUnformatted(name);
+        VanillaMarkers.PopColour(nameColoured);
         FieldTooltipHelper.HoverTooltip(FieldView!, context, field);
 
         decorators.HandleCache(context, row, oldval);

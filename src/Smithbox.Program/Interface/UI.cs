@@ -97,11 +97,19 @@ public class UI
     public Vector4 ImGui_PrimaryChanged_Text = new Vector4(0.7f, 1, 0.7f, 1);
     public Vector4 ImGui_ModifiedFilter_Text = new Vector4(1.0f, 0.8f, 0.35f, 1.0f); // AMBER
 
+    // Vanilla comparison, shared by every editor (VanillaMarkers): an item that differs from the game's copy, and
+    // one the game doesn't have. Themes saved before these existed take them from the older per-editor colours
+    // (MigrateVanillaColours).
+    public Vector4 ImGui_Vanilla_Modified_Text = new Vector4(0.7f, 1, 0.7f, 1);
+    public Vector4 ImGui_Vanilla_Added_Text = new Vector4(0.7f, 0.7f, 1, 1);
+
     // Map Editor vanilla compare: objects that differ from, or aren't in, the vanilla map (as PrimaryChanged / AuxAdded)
+    // Superseded by ImGui_Vanilla_Modified_Text / ImGui_Vanilla_Added_Text; kept so saved themes still load.
     public Vector4 ImGui_MapEditor_VanillaModified_Text = new Vector4(0.7f, 1, 0.7f, 1);
     public Vector4 ImGui_MapEditor_VanillaAdded_Text = new Vector4(0.7f, 0.7f, 1, 1);
     public Vector4 ImGui_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
     public Vector4 ImGui_AliasName_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+    // Unused since the shared vanilla colours (previewable is now a tooltip note); kept so saved themes still load.
     public Vector4 ImGui_GparamPreviewable_Text = new Vector4(0.45f, 0.85f, 1.0f, 1.0f);
 
     // Logger
@@ -147,11 +155,13 @@ public class UI
     /// <summary>
     /// Coloring for a modified text entry in the Text Editor.
     /// </summary>
+    // Unused since the shared vanilla colours (VanillaMarkers); kept so saved themes still load.
     public Vector4 ImGui_TextEditor_ModifiedTextEntry_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 
     /// <summary>
     /// Coloring for a Texture Editor container or TPF that the project holds (game data files keep the default color).
     /// </summary>
+    // Unused since the shared vanilla colours (VanillaMarkers); kept so saved themes still load.
     public Vector4 ImGui_TextureEditor_ProjectFile_Text = new Vector4(0.55f, 0.8f, 1.0f, 1.0f);
 
     /// <summary>
@@ -168,6 +178,7 @@ public class UI
     /// <summary>
     /// Coloring for an unique text entry in the Text Editor.
     /// </summary>
+    // Unused since the shared vanilla colours (VanillaMarkers); kept so saved themes still load.
     public Vector4 ImGui_TextEditor_UniqueTextEntry_Text = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);
 
     public Vector4 ImGui_TimeAct_InfoText_1_Color = new Vector4(1.0f, 1.0f, 0.0f, 1.0f); // Green
@@ -227,6 +238,8 @@ public class UI
                 {
                     throw new Exception(LOC.Get("INTERFACE_UI_Failed_Deseralize"));
                 }
+
+                MigrateVanillaColours(Current, filestring);
             }
             catch (Exception e)
             {
@@ -260,6 +273,8 @@ public class UI
                 {
                     throw new Exception(LOC.Get("INTERFACE_Theme_Failed_Deseralize"));
                 }
+
+                MigrateVanillaColours(Current, filestring);
             }
             catch (Exception e)
             {
@@ -312,6 +327,30 @@ public class UI
         var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.UI);
 
         File.WriteAllText(file, json);
+    }
+
+    /// <summary>
+    /// A theme or Interface.json written before the shared vanilla colours existed keeps the colours it had: the
+    /// Map Editor's vanilla pair when it has them (they meant exactly this), otherwise PrimaryChanged / AuxAdded,
+    /// which every other vanilla-comparing editor used. A file that has the new keys is left as it is.
+    /// </summary>
+    private static void MigrateVanillaColours(UI ui, string json)
+    {
+        static bool Has(string json, string key) => json.Contains($"\"{key}\"", StringComparison.Ordinal);
+
+        if (!Has(json, nameof(ImGui_Vanilla_Modified_Text)))
+        {
+            ui.ImGui_Vanilla_Modified_Text = Has(json, nameof(ImGui_MapEditor_VanillaModified_Text))
+                ? ui.ImGui_MapEditor_VanillaModified_Text
+                : ui.ImGui_PrimaryChanged_Text;
+        }
+
+        if (!Has(json, nameof(ImGui_Vanilla_Added_Text)))
+        {
+            ui.ImGui_Vanilla_Added_Text = Has(json, nameof(ImGui_MapEditor_VanillaAdded_Text))
+                ? ui.ImGui_MapEditor_VanillaAdded_Text
+                : ui.ImGui_AuxAdded_Text;
+        }
     }
 
     public static void ResetToDefault()

@@ -179,7 +179,15 @@ public class ProjectileListView
                 var row = Rows[i];
                 var isSelected = Selected.Contains(row);
 
+                // Against vanilla: the Param Editor's row diff, with added rows told apart
+                var status = ParamVanillaStatus.RowStatus(View.Project, ParamName, row);
+                var coloured = VanillaMarkers.PushColour(status);
+
                 var clicked = ImGui.Selectable($"{ProjectileParams.RowLabel(row.ID, row.Name)}##projectileRow{i}", isSelected);
+
+                VanillaMarkers.PopColour(coloured);
+                if (coloured)
+                    VanillaMarkers.Tooltip(status);
 
                 HandleRowInput(clicked, row);
 

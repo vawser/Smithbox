@@ -233,7 +233,13 @@ public class FaceListView
                 var row = Rows[i];
                 var isSelected = Selected.Contains(row);
 
+                // The Param Editor's vanilla diff (refreshed by every face edit), with added rows told apart
+                var status = ParamVanillaStatus.RowStatus(View.Project, ParamName, row);
+                var coloured = VanillaMarkers.PushColour(status);
                 var clicked = ImGui.Selectable($"{FaceGenParams.RowLabel(row.ID, row.Name)}##faceGenRow{i}", isSelected);
+                VanillaMarkers.PopColour(coloured);
+                if (coloured)
+                    VanillaMarkers.Tooltip(status);
 
                 HandleRowInput(clicked, row);
 

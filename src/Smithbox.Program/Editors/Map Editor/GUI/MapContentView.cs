@@ -385,11 +385,11 @@ public class MapContentView
         switch (status)
         {
             case VanillaStatus.Modified:
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaModified_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Vanilla_Modified_Text);
                 return true;
 
             case VanillaStatus.Added:
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaAdded_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Vanilla_Added_Text);
                 return true;
 
             default:

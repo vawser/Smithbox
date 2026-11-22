@@ -1,5 +1,7 @@
 using Andre.IO.VFS;
 using SoulsFormats;
+using StudioCore.Editors.Common;
+using StudioCore.Logger;
 
 namespace StudioCore.Editors.LuaEditor;
 
@@ -227,6 +229,62 @@ public class LuaContainer
 
     /// <summary>Whether the game itself has this file (it can't be removed, only reverted to)</summary>
     public bool InGame => Bank.Project.VFS.VanillaFS?.FileExists(Path) ?? false;
+
+    /// <summary>How the saved binder compares with the game's copy, for the file list. A new, unsaved binder is Added.</summary>
+    public VanillaStatus VanillaStatus => IsNew ? VanillaStatus.Added : Bank.Project.VFS.FileStatus(Path);
+
+    // The game's copy of this binder's Lua entries (entry name → bytes), read in the background the first time a
+    // script of a modified binder is drawn. The game's data doesn't change, so it is kept once read.
+    private Dictionary<string, byte[]> VanillaEntries;
+    private int VanillaEntriesRequested;
+
+    /// <summary>
+    /// How a script's saved bytes compare with the game's entry of the same name: every script of an added binder
+    /// is Added, of an unchanged binder Unchanged; in a modified binder, Added when the game's binder lacks the
+    /// entry, Modified when its bytes differ. None while the game's binder is being read.
+    /// </summary>
+    public VanillaStatus ScriptStatus(LuaScript script)
+    {
+        var binder = VanillaStatus;
+
+        if (binder != VanillaStatus.Modified)
+            return binder;
+
+        var entries = Volatile.Read(ref VanillaEntries);
+        if (entries == null)
+        {
+            if (Interlocked.Exchange(ref VanillaEntriesRequested, 1) == 0)
+                Task.Run(ReadVanillaEntries);
+            return VanillaStatus.None;
+        }
+
+        if (!entries.TryGetValue(script.EntryName, out var vanilla))
+            return VanillaStatus.Added;
+
+        return script.SavedBytes.AsSpan().SequenceEqual(vanilla) ? VanillaStatus.Unchanged : VanillaStatus.Modified;
+    }
+
+    private void ReadVanillaEntries()
+    {
+        var entries = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
+
+        try
+        {
+            var data = Bank.Project.VFS.VanillaFS.ReadFile(Path);
+            if (data != null)
+            {
+                using var bnd = ReadBinder(data.Value);
+                foreach (var f in bnd.Files.Where(f => f.Name.EndsWith(".lua", StringComparison.OrdinalIgnoreCase)))
+                    entries.TryAdd(System.IO.Path.GetFileName(f.Name), f.Bytes.ToArray());
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, $"Failed to read the game's copy of {Path} for vanilla comparison", LogPriority.Low, e);
+        }
+
+        Volatile.Write(ref VanillaEntries, entries);
+    }
 
     /// <summary>
     /// The binder's goal table (its .luainfo: the goals of its global-function battle scripts and its logic scripts);
@@ -600,6 +658,9 @@ public class LuaScript
 
     /// <summary>The entry as last read or saved</summary>
     private byte[] Bytes;
+
+    /// <summary>The entry's bytes as last read or saved (empty for a new, unsaved script), for vanilla comparison</summary>
+    public byte[] SavedBytes => Bytes;
 
     /// <summary>The entry is compiled Lua (vanilla); false once saved as text, or for a mod's source entry</summary>
     public bool IsBytecode => LuaDecompile.IsBytecode(Bytes);

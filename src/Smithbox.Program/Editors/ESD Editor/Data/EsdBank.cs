@@ -1,5 +1,6 @@
 using Andre.IO.VFS;
 using SoulsFormats;
+using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.EsdEditor;
 
@@ -225,6 +226,9 @@ public class EsdContainer
 
     /// <summary>Whether the game itself has this file (it can't be removed, only reverted to)</summary>
     public bool InGame => Bank.Project.VFS.VanillaFS?.FileExists(Path) ?? false;
+
+    /// <summary>How the saved file compares with the game's copy, for the file list. A new, unsaved container is Added.</summary>
+    public VanillaStatus VanillaStatus => IsNew ? VanillaStatus.Added : Bank.Project.VFS.FileStatus(Path);
 
     /// <summary>A container made in the editor (a duplicated binder or loose ESD, a new binder): loaded, unsaved</summary>
     public static EsdContainer CreateNew(EsdBank bank, string path, string name, bool isBinder, EsdScriptKind kind,

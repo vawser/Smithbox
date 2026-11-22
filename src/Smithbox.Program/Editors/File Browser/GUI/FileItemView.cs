@@ -135,10 +135,10 @@ public class FileItemView
         switch (details.Source)
         {
             case FileSource.ProjectOverride:
-                ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, LOC.Get("FILE_ItemViewer_Source_Override"));
+                ImGui.TextColored(UI.Current.ImGui_Vanilla_Modified_Text, LOC.Get("FILE_ItemViewer_Source_Override"));
                 break;
             case FileSource.ProjectOnly:
-                ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, LOC.Get("FILE_ItemViewer_Source_Project_Only"));
+                ImGui.TextColored(UI.Current.ImGui_Vanilla_Added_Text, LOC.Get("FILE_ItemViewer_Source_Project_Only"));
                 break;
             default:
                 ImGui.Text(LOC.Get("FILE_ItemViewer_Source_Vanilla"));

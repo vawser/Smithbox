@@ -1042,7 +1042,7 @@ public class MapMsbPropertyView
                 return;
 
             case VanillaStatus.Added:
-                GUI.WrappedTextColored(UI.Current.ImGui_MapEditor_VanillaAdded_Text, LOC.Get("MAP_Vanilla_Compare_Added"));
+                GUI.WrappedTextColored(UI.Current.ImGui_Vanilla_Added_Text, LOC.Get("MAP_Vanilla_Compare_Added"));
                 return;
 
             case VanillaStatus.Unchanged:
@@ -1055,7 +1055,7 @@ public class MapMsbPropertyView
 
         var diffs = compare.GetDiffs(ent);
 
-        GUI.WrappedTextColored(UI.Current.ImGui_MapEditor_VanillaModified_Text, LOC.Get("MAP_Vanilla_Compare_Modified", diffs.Count));
+        GUI.WrappedTextColored(UI.Current.ImGui_Vanilla_Modified_Text, LOC.Get("MAP_Vanilla_Compare_Modified", diffs.Count));
 
         ViewportAction revert = null;
 

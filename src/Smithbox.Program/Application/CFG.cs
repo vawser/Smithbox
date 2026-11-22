@@ -192,6 +192,9 @@ public class CFG
 
     // Editor Presentation
     public bool Interface_Display_Title_Headers = false;
+
+    // Every editor colours and marks items that differ from, or aren't in, the game's data (VanillaMarkers)
+    public bool Interface_Vanilla_Highlight = true;
     public bool Interface_Display_Searchbar_Minimize = true;
     public bool Interface_Searchbar_Fixed_Width = true;
 

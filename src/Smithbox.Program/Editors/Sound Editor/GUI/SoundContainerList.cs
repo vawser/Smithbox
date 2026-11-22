@@ -131,9 +131,17 @@ public class SoundContainerList
         var label = string.IsNullOrEmpty(c.Language) ? c.Name : $"{c.Name} [{c.Language}]";
 
         ImGui.Indent();
-        if (ImGui.Selectable($"{label}##soundBank_{c.Path}", selected))
+        var status = View.CanEdit ? c.VanillaStatus : VanillaStatus.None;
+        var coloured = VanillaMarkers.PushColour(status);
+        var clicked = ImGui.Selectable($"{label}##soundBank_{c.Path}", selected);
+        VanillaMarkers.PopColour(coloured);
+
+        if (clicked)
             View.SelectContainer(c);
-        GUI.Tooltip(c.Path);
+        // The bank's path; for a coloured bank, its status and where the project's copy is
+        GUI.Tooltip(coloured && VanillaMarkers.TooltipText(status) is { } statusText
+            ? $"{c.Path}\n{statusText}\n{LOC.Get("SOUND_Banks_Project_TT", View.Data.ProjectPath(c.Path))}"
+            : c.Path);
 
         if (ImGui.BeginPopupContextItem($"soundBankContext_{c.Path}"))
         {
@@ -166,21 +174,12 @@ public class SoundContainerList
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("SOUND_Banks_Failed"));
         }
 
-        // * = a save will rewrite it; "project" = the project has its own copy
-        if (View.CanEdit)
+        // * = a save will rewrite it (whether the project's copy differs from the game's is the label's colour)
+        if (View.CanEdit && View.Data.Edits.Affects(c))
         {
-            if (View.Data.Edits.Affects(c))
-            {
-                ImGui.SameLine();
-                ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, "*");
-                GUI.Tooltip(LOC.Get("SOUND_Banks_Modified_TT"));
-            }
-            if (c.InProject)
-            {
-                ImGui.SameLine();
-                ImGui.TextDisabled(LOC.Get("SOUND_Banks_Project"));
-                GUI.Tooltip(LOC.Get("SOUND_Banks_Project_TT", View.Data.ProjectPath(c.Path)));
-            }
+            ImGui.SameLine();
+            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, "*");
+            GUI.Tooltip(LOC.Get("SOUND_Banks_Modified_TT"));
         }
         ImGui.Unindent();
     }

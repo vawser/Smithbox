@@ -250,7 +250,19 @@ public class TextContainerList
             // Script row
             // Selected and identified by the file entry itself: the display index depended on
             // which DS2 headers were expanded, so the highlight moved when one collapsed.
-            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Path}", View.Selection.SelectedFileDictionaryEntry == entry))
+            // The saved container against the game's copy (Added / Modified; identical copies stay uncoloured)
+            var status = CFG.Current.TextEditor_Include_Vanilla_Cache
+                ? Project.VFS.FileStatus(wrapper.FileEntry.Path)
+                : VanillaStatus.None;
+            var coloured = VanillaMarkers.PushColour(status);
+
+            var clicked = ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Path}", View.Selection.SelectedFileDictionaryEntry == entry);
+
+            VanillaMarkers.PopColour(coloured);
+            if (coloured)
+                VanillaMarkers.Tooltip(status);
+
+            if (clicked)
             {
                 View.Selection.SelectFileContainer(entry, wrapper, index);
             }

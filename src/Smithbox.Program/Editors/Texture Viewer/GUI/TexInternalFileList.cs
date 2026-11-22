@@ -65,21 +65,32 @@ public class TexInternalFileList
                         isSelected = true;
                     }
 
+                    // Unsaved changes are yellow; otherwise the saved TPF takes the vanilla colour
                     var isModified = View.Selection.SelectedBinder.ModifiedFiles.Contains(file);
+                    var status = isModified ? VanillaStatus.None
+                        : Project.Handler.TextureData.PrimaryBank.Vanilla.TpfStatus(View.Selection.SelectedFileEntry, container.Loose, file.Name);
+
+                    var pushed = false;
                     if (isModified)
                     {
                         displayName = $"{displayName} *";
                         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextureEditor_ModifiedFile_Text);
+                        pushed = true;
+                    }
+                    else
+                    {
+                        pushed = VanillaMarkers.PushColour(status);
                     }
 
                     // Texture row (the id stays the file name, so the row keeps its state when the marker appears)
                     var clicked = ImGui.Selectable($@"{displayName}###{file.Name}{index}", isSelected);
 
+                    VanillaMarkers.PopColour(pushed);
+
                     if (isModified)
-                    {
-                        ImGui.PopStyleColor();
                         GUI.Tooltip(LOC.Get("TEXVIEW_FileList_Modified_TT"));
-                    }
+                    else if (pushed)
+                        VanillaMarkers.Tooltip(status);
 
                     if (clicked)
                     {

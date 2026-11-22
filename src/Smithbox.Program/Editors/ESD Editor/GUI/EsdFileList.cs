@@ -381,7 +381,12 @@ public class EsdFileList
             var file = container.IsLoaded && container.Files.Count == 1 ? container.Files[0] : null;
             var selected = selection.SelectedContainer == container;
 
-            if (ImGui.Selectable($"{container.Name}{(container.IsDirty || container.PendingRevert ? "*" : "")}##esdContainer_{container.Path}", selected))
+            var coloured = VanillaMarkers.PushColour(container.VanillaStatus);
+            var clicked = ImGui.Selectable($"{container.Name}{(container.IsDirty || container.PendingRevert ? "*" : "")}##esdContainer_{container.Path}", selected);
+            VanillaMarkers.PopColour(coloured);
+            StatusTooltip(container, coloured);
+
+            if (clicked)
                 selection.SelectContainer(container);
             Rows.Add((container, null));
 
@@ -406,7 +411,10 @@ public class EsdFileList
         if (selection.SelectedContainer == container && ScrollToSelection)
             ImGui.SetNextItemOpen(true);
 
+        var colouredNode = VanillaMarkers.PushColour(container.VanillaStatus);
         var open = ImGui.TreeNodeEx($"{container.Name}{(container.IsDirty || container.PendingRevert ? "*" : "")}##esdContainer_{container.Path}", flags);
+        VanillaMarkers.PopColour(colouredNode);
+        StatusTooltip(container, colouredNode);
 
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             selection.SelectContainer(container);
@@ -506,24 +514,26 @@ public class EsdFileList
             }
         }
 
-        if (container.IsNew)
-        {
-            ImGui.SameLine();
-            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, Icons.PlusCircle);
-            GUI.Tooltip(LOC.Get("ESD_FileList_New_TT"));
-        }
-        else if (container.PendingRevert)
+        // New and modified / added containers are shown by the label's colour (see StatusTooltip); only a pending
+        // revert gets an icon
+        if (container.PendingRevert)
         {
             ImGui.SameLine();
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.Undo);
             GUI.Tooltip(LOC.Get("ESD_FileList_Reverting_TT"));
         }
-        else if (container.InProject)
-        {
-            ImGui.SameLine();
-            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, Icons.Pencil);
-            GUI.Tooltip(LOC.Get("ESD_FileList_In_Project_TT"));
-        }
+    }
+
+    /// <summary>The tooltip for a coloured container label: new and unsaved, or the shared vanilla status</summary>
+    private static void StatusTooltip(EsdContainer container, bool coloured)
+    {
+        if (!coloured)
+            return;
+
+        if (container.IsNew)
+            GUI.Tooltip(LOC.Get("ESD_FileList_New_TT"));
+        else
+            VanillaMarkers.Tooltip(container.VanillaStatus);
     }
 
     public static string KindName(EsdScriptKind kind) => kind switch

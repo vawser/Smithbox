@@ -86,13 +86,13 @@ public class VanillaCompareTool
         {
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Vanilla_Tool_Tab_Modified", Modified.Count)}##vanillaTabModified"))
             {
-                DisplayEntities(Modified, "modified", UI.Current.ImGui_MapEditor_VanillaModified_Text);
+                DisplayEntities(Modified, "modified", UI.Current.ImGui_Vanilla_Modified_Text);
                 ImGui.EndTabItem();
             }
 
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Vanilla_Tool_Tab_Added", Added.Count)}##vanillaTabAdded"))
             {
-                DisplayEntities(Added, "added", UI.Current.ImGui_MapEditor_VanillaAdded_Text);
+                DisplayEntities(Added, "added", UI.Current.ImGui_Vanilla_Added_Text);
                 ImGui.EndTabItem();
             }
 

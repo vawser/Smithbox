@@ -158,7 +158,17 @@ public class HavokBinderView
                     displayName = $"{displayName}*";
                 }
 
-                if (ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected))
+                // The saved binder against the game's
+                var vanillaStatus = View.HavokBank.BinderStatus(entry, View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode));
+                var coloured = VanillaMarkers.PushColour(vanillaStatus);
+
+                var clicked = ImGui.Selectable($"{displayName}##binderEntry_{entry.Filename}", selected);
+
+                VanillaMarkers.PopColour(coloured);
+                if (coloured)
+                    VanillaMarkers.Tooltip(vanillaStatus);
+
+                if (clicked)
                 {
                     View.Selection.ClearFileSelection();
                     View.Selection.BinderFileEntry = entry;

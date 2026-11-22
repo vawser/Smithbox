@@ -127,14 +127,13 @@ public class GparamFieldList
 
         ImGui.BeginGroup();
 
-        // Fields the viewport's renderer reads are coloured, so the user knows editing them can be previewed
+        // Fields the viewport's renderer reads say so in their tooltip, so the user knows editing them can be
+        // previewed; the text colour is always the vanilla state (modified / added against the game's file)
         var isRendered = CFG.Current.GparamEditor_Highlight_Viewport_Fields &&
                          View.ViewportWindow.LightingBank.IsRenderedField(group.Key, field.Key);
 
-        if (isRendered)
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_GparamPreviewable_Text);
-        }
+        var vanillaStatus = View.VanillaCompare.FieldStatus(fileEntry, group, field);
+        var coloured = VanillaMarkers.PushColour(vanillaStatus);
 
         // Field row
         if (ImGui.Selectable($@"[{index}] {fieldName}##{field.Key}{index}", selected))
@@ -155,10 +154,7 @@ public class GparamFieldList
             View.Selection.SetGparamField(index, field);
         }
 
-        if (isRendered)
-        {
-            ImGui.PopStyleColor();
-        }
+        VanillaMarkers.PopColour(coloured);
 
         var tooltip = CFG.Current.GparamEditor_Field_List_Display_Descriptions ? fieldDesc : "";
 
@@ -166,6 +162,11 @@ public class GparamFieldList
         {
             var note = LOC.Get("GPARAM_FieldList_Shown_In_Viewport");
             tooltip = tooltip != "" ? $"{tooltip}\n\n{note}" : note;
+        }
+
+        if (coloured && VanillaMarkers.TooltipText(vanillaStatus) is { } vanillaNote)
+        {
+            tooltip = tooltip != "" ? $"{tooltip}\n\n{vanillaNote}" : vanillaNote;
         }
 
         if (tooltip != "")

@@ -353,8 +353,18 @@ public class TextFileList
                 labelName = $"{labelName}*";
             }
 
+            // Modified / added against the game's FMG of the same ID
+            var status = View.DifferenceManager.FmgStatus(View.Selection.SelectedContainerWrapper, info);
+            var coloured = VanillaMarkers.PushColour(status);
+
             // Script row
-            if (ImGui.Selectable($"{labelName}##{id}{selectableName}", View.Selection.SelectedFmgWrapper == info))
+            var clicked = ImGui.Selectable($"{labelName}##{id}{selectableName}", View.Selection.SelectedFmgWrapper == info);
+
+            VanillaMarkers.PopColour(coloured);
+            if (coloured)
+                VanillaMarkers.Tooltip(status);
+
+            if (clicked)
             {
                 View.Selection.SelectFmg(info);
             }

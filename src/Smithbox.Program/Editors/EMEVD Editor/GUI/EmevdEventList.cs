@@ -128,7 +128,17 @@ public class EmevdEventList
                 var ev = Visible[i];
                 var selected = selection.SelectedEvent == ev;
 
-                if (ImGui.Selectable($"{ev.ID}##emevdEvent_{i}", selected))
+                // The event as it is now against the game's event of the same ID
+                var status = file.EventStatus(ev);
+                var coloured = VanillaMarkers.PushColour(status);
+
+                var clicked = ImGui.Selectable($"{ev.ID}##emevdEvent_{i}", selected);
+
+                VanillaMarkers.PopColour(coloured);
+                if (coloured)
+                    VanillaMarkers.Tooltip(status);
+
+                if (clicked)
                     selection.SelectEvent(ev);
 
                 // Right-click selects the event and offers the event commands

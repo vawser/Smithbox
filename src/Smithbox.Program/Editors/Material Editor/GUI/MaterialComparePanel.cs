@@ -77,7 +77,7 @@ public class MaterialComparePanel
                 return;
 
             case VanillaState.Added:
-                ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, $"{Icons.Plus} {LOC.Get("MAT_Vanilla_Added")}");
+                ImGui.TextColored(UI.Current.ImGui_Vanilla_Added_Text, LOC.Get("MAT_Vanilla_Added"));
                 GUI.Tooltip(LOC.Get("MAT_Vanilla_Added_TT"));
                 return;
         }
@@ -85,7 +85,7 @@ public class MaterialComparePanel
         var vanillaFile = Vanilla.FindVanilla(binder, file.Key);
         var vanilla = MaterialVanilla.MaterialOf(vanillaFile);
 
-        ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, $"{Icons.Pencil} {LOC.Get("MAT_Vanilla_Modified")}");
+        ImGui.TextColored(UI.Current.ImGui_Vanilla_Modified_Text, LOC.Get("MAT_Vanilla_Modified"));
         ImGui.SameLine();
 
         if (ImGui.SmallButton($"{LOC.Get("MAT_Vanilla_Revert_Material")}##revertMaterial"))

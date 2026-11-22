@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using StudioCore.Editors.Common;
 using StudioCore.Logger;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ public class ProjectVFS : IDisposable
     public VirtualFileSystem VanillaRealFS = EmptyVirtualFileSystem.Instance;
 
     public VirtualFileSystem VanillaFS = EmptyVirtualFileSystem.Instance;
+
+    /// <summary>File-level vanilla status (Added / Modified / Unchanged) for editors' file lists; see FileStatus</summary>
+    public ProjectFileStatus? FileStatusCache { get; private set; }
 
     public ProjectVFS(ProjectEntry project)
     {
@@ -96,7 +100,20 @@ public class ProjectVFS : IDisposable
             FS = EmptyVirtualFileSystem.Instance;
         else
             FS = new CompundVirtualFileSystem(fileSystems);
+
+        FileStatusCache = new ProjectFileStatus(this, Project.Descriptor.ProjectPath);
     }
+
+    /// <summary>
+    /// How a file in the VFS compares with the game's copy: Added (project only), Modified (bytes differ),
+    /// Unchanged (identical, or not in the project), or None (neither has it, or the compare is still running).
+    /// Cheap enough to call while drawing; see ProjectFileStatus.
+    /// </summary>
+    public VanillaStatus FileStatus(string path) => FileStatusCache?.Get(path) ?? VanillaStatus.None;
+
+    /// <summary>FileStatus for a file the project keeps at a different path from the game's</summary>
+    public VanillaStatus FileStatus(string projectPath, string vanillaPath) =>
+        FileStatusCache?.Get(projectPath, vanillaPath) ?? VanillaStatus.None;
 
     /// <summary>
     /// Demon's Souls ships most of its files twice, as X and X.dcx, with the same data (see
@@ -145,6 +162,10 @@ public class ProjectVFS : IDisposable
 
     private void DisposeInternal()
     {
+        // Stop the compare worker before the file systems it reads go away
+        FileStatusCache?.Dispose();
+        FileStatusCache = null;
+
         FS?.Dispose();
         ProjectFS?.Dispose();
         VanillaBinderFS?.Dispose();

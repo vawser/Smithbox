@@ -1,4 +1,5 @@
 using SoulsFormats;
+using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -18,6 +19,124 @@ public class EmevdFileWrapper
 
     /// <summary>The project folder has its own copy (it overrides the game's)</summary>
     public bool InProject { get; private set; }
+
+    /// <summary>
+    /// For a regulation entry (DS2, SotFS): how it compares with the game's regulation, worked out by the bank as it
+    /// reads the binder. Loose files use the VFS file status instead.
+    /// </summary>
+    public VanillaStatus RegulationStatus { get; set; } = VanillaStatus.None;
+
+    /// <summary>How the saved file compares with the game's copy (Added / Modified / Unchanged), for the file list</summary>
+    public VanillaStatus VanillaStatus => EntryName != null ? RegulationStatus : Bank.Project.VFS.FileStatus(Path);
+
+    // ---- event-level vanilla comparison (the event list's colours)
+
+    // The game's events of this file by ID, read in the background the first time they're needed (null until then)
+    private Dictionary<long, EMEVD.Event> VanillaEvents;
+    private int VanillaEventsRequested;
+
+    // Statuses per event, worked out at a Revision (every edit and undo changes it)
+    private readonly Dictionary<EMEVD.Event, VanillaStatus> EventStatusCache = new(ReferenceEqualityComparer.Instance);
+    private int EventStatusRevision = -1;
+
+    /// <summary>
+    /// How an event, as it is now (unsaved edits included), compares with the game's event of the same ID: every
+    /// event of an added file is Added; otherwise Added when the game's file has no such ID, Modified when its
+    /// rest behaviour, instructions or parameters differ. An unchanged, unedited file's events are Unchanged
+    /// without reading the game's copy. None while the game's file is being read.
+    /// </summary>
+    public VanillaStatus EventStatus(EMEVD.Event ev)
+    {
+        if (ev == null)
+            return VanillaStatus.None;
+
+        var file = VanillaStatus;
+
+        if (file == VanillaStatus.Added)
+            return VanillaStatus.Added;
+
+        // Neither saved nor unsaved changes: nothing can differ
+        if (file != VanillaStatus.Modified && !IsDirty)
+            return file;
+
+        var vanilla = Volatile.Read(ref VanillaEvents);
+        if (vanilla == null)
+        {
+            if (Interlocked.Exchange(ref VanillaEventsRequested, 1) == 0)
+                Task.Run(ReadVanillaEvents);
+            return VanillaStatus.None;
+        }
+
+        if (EventStatusRevision != Revision)
+        {
+            EventStatusCache.Clear();
+            EventStatusRevision = Revision;
+        }
+
+        if (EventStatusCache.TryGetValue(ev, out var cached))
+            return cached;
+
+        var status = !vanilla.TryGetValue(ev.ID, out var original) ? VanillaStatus.Added
+            : SameEvent(ev, original) ? VanillaStatus.Unchanged
+            : VanillaStatus.Modified;
+
+        EventStatusCache[ev] = status;
+        return status;
+    }
+
+    private void ReadVanillaEvents()
+    {
+        var events = new Dictionary<long, EMEVD.Event>();
+
+        try
+        {
+            var data = EntryName != null
+                ? Bank.ReadVanillaRegulationEntry(EntryName) is { } entry ? new Memory<byte>(entry) : (Memory<byte>?)null
+                : Bank.Project.VFS.VanillaFS.ReadFile(Path);
+
+            if (data != null)
+            {
+                foreach (var ev in EMEVD.Read(data.Value).Events)
+                    events.TryAdd(ev.ID, ev);
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, $"Failed to read the game's copy of {Path} for vanilla comparison", StudioCore.Logger.LogPriority.Low, e);
+        }
+
+        Volatile.Write(ref VanillaEvents, events);
+    }
+
+    /// <summary>Same rest behaviour, and the same instructions (bank, ID, layer, argument bytes) and parameters in order</summary>
+    private static bool SameEvent(EMEVD.Event a, EMEVD.Event b)
+    {
+        if (a.RestBehavior != b.RestBehavior || a.Instructions.Count != b.Instructions.Count ||
+            a.Parameters.Count != b.Parameters.Count)
+            return false;
+
+        for (var i = 0; i < a.Instructions.Count; i++)
+        {
+            var x = a.Instructions[i];
+            var y = b.Instructions[i];
+
+            if (x.Bank != y.Bank || x.ID != y.ID || x.Layer != y.Layer ||
+                !(x.ArgData ?? Array.Empty<byte>()).AsSpan().SequenceEqual(y.ArgData ?? Array.Empty<byte>()))
+                return false;
+        }
+
+        for (var i = 0; i < a.Parameters.Count; i++)
+        {
+            var x = a.Parameters[i];
+            var y = b.Parameters[i];
+
+            if (x.InstructionIndex != y.InstructionIndex || x.TargetStartByte != y.TargetStartByte ||
+                x.SourceStartByte != y.SourceStartByte || x.ByteCount != y.ByteCount || x.UnkID != y.UnkID)
+                return false;
+        }
+
+        return true;
+    }
 
     // Edits done minus edits undone since the last load or save
     private int ChangeBalance;
@@ -80,6 +199,10 @@ public class EmevdFileWrapper
     {
         IsDirty = false;
         InProject = true;
+
+        // A saved regulation entry now differs from the game's (unless the game never had it)
+        if (EntryName != null && RegulationStatus != VanillaStatus.Added)
+            RegulationStatus = VanillaStatus.Modified;
     }
 
     /// <summary>The entry's name inside the regulation binder (DS2, SotFS), e.g. SpEffectRing.emevd; null for a loose file</summary>

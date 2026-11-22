@@ -3,6 +3,7 @@ using Havok;
 using Havok.Files;
 using Havok.Shared;
 using SoulsFormats;
+using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -124,6 +125,89 @@ public class HavokBank : IDisposable
     private bool IsBinderDirty(FileDictionaryEntry fileEntry, Dictionary<string, HavokFileWrapper> files)
     {
         return StagedBinders.Contains(fileEntry) || files.Values.Any(e => e.IsDirty);
+    }
+
+    // ---- vanilla comparison of the files inside a binder (the file list's colours)
+
+    // Per binder: each entry's status (by entry name), worked out in the background from the saved project binder
+    // and the game's; dropped when the binder is saved. Null while the compare runs.
+    private readonly System.Collections.Concurrent.ConcurrentDictionary<FileDictionaryEntry, Dictionary<string, VanillaStatus>?> EntryStatuses = new();
+
+    /// <summary>
+    /// The saved binder against the game's: for a BXF, Modified when either the header or the data file differs
+    /// </summary>
+    public VanillaStatus BinderStatus(FileDictionaryEntry binderEntry, bool isCombined)
+    {
+        var status = Project.VFS.FileStatus(binderEntry.Path);
+
+        if (isCombined && !IsLooseFile(binderEntry) && status == VanillaStatus.Unchanged &&
+            Project.VFS.FileStatus(GetBdtPath(binderEntry.Path)) == VanillaStatus.Modified)
+            return VanillaStatus.Modified;
+
+        return status;
+    }
+
+    /// <summary>
+    /// How a saved file inside a binder compares with the game's entry of the same name: every file of an added
+    /// binder is Added, of an unchanged binder Unchanged; in a modified binder, Added when the game's binder lacks the
+    /// entry, Modified when its bytes differ. None while the binders are being compared.
+    /// </summary>
+    public VanillaStatus EntryStatus(FileDictionaryEntry binderEntry, bool isCombined, string entryName)
+    {
+        if (binderEntry == null)
+            return VanillaStatus.None;
+
+        var binder = BinderStatus(binderEntry, isCombined);
+
+        if (binder != VanillaStatus.Modified)
+            return binder;
+
+        if (!EntryStatuses.TryGetValue(binderEntry, out var statuses))
+        {
+            if (EntryStatuses.TryAdd(binderEntry, null))
+                Task.Run(() => CompareEntries(binderEntry, isCombined));
+            return VanillaStatus.None;
+        }
+
+        if (statuses == null)
+            return VanillaStatus.None;
+
+        return statuses.TryGetValue(entryName, out var status) ? status : VanillaStatus.None;
+    }
+
+    private void CompareEntries(FileDictionaryEntry binderEntry, bool isCombined)
+    {
+        var statuses = new Dictionary<string, VanillaStatus>(StringComparer.OrdinalIgnoreCase);
+
+        try
+        {
+            var vanillaFS = Project.VFS.VanillaFS;
+            var project = ReadContainer(binderEntry, isCombined);
+            var vanilla = ReadContainer(binderEntry, isCombined, p => vanillaFS.FileExists(p) ? vanillaFS.ReadFile(p) : null);
+
+            var vanillaBytes = new Dictionary<string, Memory<byte>>(StringComparer.OrdinalIgnoreCase);
+            if (vanilla != null)
+            {
+                foreach (var f in vanilla.Files)
+                    vanillaBytes.TryAdd(f.Name, f.Bytes);
+            }
+
+            if (project != null)
+            {
+                foreach (var f in project.Files)
+                {
+                    statuses[f.Name] = !vanillaBytes.TryGetValue(f.Name, out var original) ? VanillaStatus.Added
+                        : f.Bytes.Span.SequenceEqual(original.Span) ? VanillaStatus.Unchanged
+                        : VanillaStatus.Modified;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, $"Failed to compare {binderEntry.Path} with the game's copy", StudioCore.Logger.LogPriority.Low, e);
+        }
+
+        EntryStatuses[binderEntry] = statuses;
     }
 
     /// <summary>
@@ -409,12 +493,15 @@ public class HavokBank : IDisposable
     /// Read the container as a BND, or as a BXF if it is combined.
     /// Returns null if the container files could not be found.
     /// </summary>
-    private IBinder ReadContainer(FileDictionaryEntry fileEntry, bool isCombined)
+    private IBinder ReadContainer(FileDictionaryEntry fileEntry, bool isCombined) => ReadContainer(fileEntry, isCombined, ReadFileData);
+
+    /// <summary>ReadContainer with the bytes read by <paramref name="read" /> (the project-first read, or the game's own files)</summary>
+    private IBinder ReadContainer(FileDictionaryEntry fileEntry, bool isCombined, Func<string, Memory<byte>?> read)
     {
         // DS1 and DeS keep map collision as loose .hkx files: held as a container of one file, which is the file
         if (IsLooseFile(fileEntry))
         {
-            var fileData = ReadFileData(fileEntry.Path);
+            var fileData = read(fileEntry.Path);
 
             if (fileData == null)
                 return null;
@@ -428,8 +515,8 @@ public class HavokBank : IDisposable
         // The binder versions are told apart by their headers (BND3/BXF3 for DeS, DS1 and DS1R, BND4/BXF4 for the rest)
         if (isCombined)
         {
-            var bhdData = ReadFileData(fileEntry.Path);
-            var bdtData = ReadFileData(GetBdtPath(fileEntry.Path));
+            var bhdData = read(fileEntry.Path);
+            var bdtData = read(GetBdtPath(fileEntry.Path));
 
             if (bhdData == null || bdtData == null)
                 return null;
@@ -442,7 +529,7 @@ public class HavokBank : IDisposable
             return BXF4.Read(bhdData.Value, bdtData.Value);
         }
 
-        var binderData = ReadFileData(fileEntry.Path);
+        var binderData = read(fileEntry.Path);
 
         if (binderData == null)
             return null;
@@ -470,6 +557,9 @@ public class HavokBank : IDisposable
     /// </summary>
     private void WriteContainer(FileDictionaryEntry fileEntry, IBinder binder)
     {
+        // The saved files change: their vanilla status is worked out again
+        EntryStatuses.TryRemove(fileEntry, out _);
+
         byte[] bhdBytes;
         byte[] bdtBytes;
 

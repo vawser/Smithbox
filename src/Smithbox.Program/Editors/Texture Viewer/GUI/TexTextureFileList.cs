@@ -56,8 +56,22 @@ public class TexTextureFileList
                         isSelected = true;
                     }
 
+                    // The saved texture against the game's texture of the same name in the same TPF (a TPF with unsaved
+                    // changes shows its saved state until it is saved)
+                    var status = View.Selection.SelectedBinder != null
+                        ? Project.Handler.TextureData.PrimaryBank.Vanilla.TextureStatus(View.Selection.SelectedFileEntry,
+                            View.Selection.SelectedBinder.Loose, View.Selection.SelectedTpfKey, entry.Name)
+                        : VanillaStatus.None;
+                    var coloured = VanillaMarkers.PushColour(status);
+
                     // Texture row
-                    if (ImGui.Selectable($@"{displayName}", isSelected))
+                    var clicked = ImGui.Selectable($@"{displayName}", isSelected);
+
+                    VanillaMarkers.PopColour(coloured);
+                    if (coloured)
+                        VanillaMarkers.Tooltip(status);
+
+                    if (clicked)
                     {
                         View.Selection.SelectTextureEntry(entry.Name, entry);
                         TargetIndex = index;

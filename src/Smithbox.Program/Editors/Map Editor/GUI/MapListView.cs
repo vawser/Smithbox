@@ -279,6 +279,12 @@ public class MapListView : IActionEventHandler
 
                 var saveError = curWrapper.MapContainer?.SaveError;
 
+                // The saved MSB against the game's: unloaded maps take the shared modified / added colour. Loaded maps
+                // keep the loaded colour, so their vanilla state isn't shown here
+                var vanillaStatus = VanillaMarkers.Enabled(CFG.Current.MapEditor_Vanilla_Highlight)
+                    ? Project.VFS.FileStatus(curWrapper.Path)
+                    : VanillaStatus.None;
+
                 if (saveError != null)
                 {
                     // A failed save (an autosave, which shows no dialog) stays marked until the map saves
@@ -291,7 +297,10 @@ public class MapListView : IActionEventHandler
                 }
                 else
                 {
-                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_Default_Text_Color, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                    GUI.DisplayColoredAlias(displayedName,
+                        VanillaMarkers.Colour(vanillaStatus) ?? UI.Current.ImGui_Default_Text_Color,
+                        CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                    VanillaMarkers.Tooltip(vanillaStatus);
                 }
 
                 // Context Menu

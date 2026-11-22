@@ -17,6 +17,20 @@ public enum FxVanillaState
     Added,
 }
 
+public static class FxVanillaStateExtensions
+{
+    /// <summary>
+    /// The shared status, for VanillaMarkers. FxVanillaState stays its own enum: its default (0) is Same, which the
+    /// bank and the project check rely on, whereas the shared enum's default is None.
+    /// </summary>
+    public static Common.VanillaStatus ToStatus(this FxVanillaState state) => state switch
+    {
+        FxVanillaState.Modified => Common.VanillaStatus.Modified,
+        FxVanillaState.Added => Common.VanillaStatus.Added,
+        _ => Common.VanillaStatus.Unchanged
+    };
+}
+
 /// <summary>
 /// One effect id. Vanilla stores identical copies of an effect in every binder that needs it, so the editor
 /// edits the effect once and saves it to all of them (FX Editor Plan, decision 1).

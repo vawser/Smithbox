@@ -297,12 +297,12 @@ public class ParamTableWindow
 
         if (isAdded)
         {
-            // The vanilla-compare "added" colour, shared with the Map and Model editors
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaAdded_Text);
+            // The shared vanilla "added" colour (VanillaMarkers)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Vanilla_Added_Text);
         }
         else if (isModified)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Vanilla_Modified_Text);
         }
 
         // ID

@@ -627,6 +627,30 @@
     {
       "Key": "PREF_Interface_Display_Searchbar_Minimize_TT",
       "Text": "If enabled, the searchbar minimize toggle buttons are displayed."
+    },
+    {
+      "Key": "PREF_Interface_Vanilla_Highlight",
+      "Text": "Highlight Changes from Vanilla"
+    },
+    {
+      "Key": "PREF_Interface_Vanilla_Highlight_TT",
+      "Text": "If enabled, editors colour and mark items that differ from the game's data (modified) or that the game doesn't have (added). The colours are set in the Theme Builder under Vanilla Comparison."
+    },
+    {
+      "Key": "PREF_Theme_Editor_Vanilla",
+      "Text": "Vanilla Comparison"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Vanilla_TT",
+      "Text": "Colours every editor uses for items compared with the game's data."
+    },
+    {
+      "Key": "PREF_CE_ImGui_Vanilla_Modified_Text",
+      "Text": "Modified (differs from vanilla)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Vanilla_Added_Text",
+      "Text": "Added (not in vanilla)"
     }
   ]
 }

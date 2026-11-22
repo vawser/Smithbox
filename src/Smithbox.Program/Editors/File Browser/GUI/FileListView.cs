@@ -50,11 +50,11 @@ public class FileListView
         GUI.Tooltip(LOC.Get("FILE_FileList_Project_Files_Only_TT"));
 
         ImGui.SameLine();
-        ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, LOC.Get("FILE_FileList_Legend_Override"));
+        ImGui.TextColored(UI.Current.ImGui_Vanilla_Modified_Text, LOC.Get("FILE_FileList_Legend_Override"));
         GUI.Tooltip(LOC.Get("FILE_FileList_Legend_Override_TT"));
 
         ImGui.SameLine();
-        ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, LOC.Get("FILE_FileList_Legend_Project_Only"));
+        ImGui.TextColored(UI.Current.ImGui_Vanilla_Added_Text, LOC.Get("FILE_FileList_Legend_Project_Only"));
         GUI.Tooltip(LOC.Get("FILE_FileList_Legend_Project_Only_TT"));
 
         var tree = Parent.Editor.Tree;
@@ -310,8 +310,8 @@ public class FileListView
             if (colored)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, source is FileSource.ProjectOverride
-                    ? UI.Current.ImGui_PrimaryChanged_Text
-                    : UI.Current.ImGui_AuxAdded_Text);
+                    ? UI.Current.ImGui_Vanilla_Modified_Text
+                    : UI.Current.ImGui_Vanilla_Added_Text);
             }
 
             ImGui.TreeNodeEx(

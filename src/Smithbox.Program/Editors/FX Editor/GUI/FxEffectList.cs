@@ -405,22 +405,22 @@ public partial class FxEffectList
 
     private void DisplayRow(List<FxEntry> rows, FxEntry entry, bool focus, bool stepped)
     {
-        // Marks: favorite, then how it compares with the game's copy
+        // Marks: favorite (modified and added effects are shown by the label's colour alone)
         var marks = "";
         if (Favorites.IsFavorite(entry.Id))
             marks += $"{Icons.Star} ";
-        if (entry.Vanilla == FxVanillaState.Modified)
-            marks += $"{Icons.Pencil} ";
-        else if (entry.Vanilla == FxVanillaState.Added)
-            marks += $"{Icons.Plus} ";
 
         bool unsaved = entry.IsDirty && entry.IsLoaded || entry.MembershipChanged;
         var label = $"{marks}{entry.Stem}{(unsaved ? "*" : "")}";
         if (entry.Binders.Count > 1)
             label += $"  [{LOC.Get("FX_EffectList_Binder_Count", entry.Binders.Count)}]";
 
-        // The ## suffix keeps the ID stable when the label changes
-        if (ImGui.Selectable($" {label}##fxEffect_{entry.Id}", IsPicked(entry)))
+        // The ## suffix keeps the ID stable when the label changes. Modified / added effects take the shared colour.
+        var coloured = VanillaMarkers.PushColour(entry.Vanilla.ToStatus());
+        var clicked = ImGui.Selectable($" {label}##fxEffect_{entry.Id}", IsPicked(entry));
+        VanillaMarkers.PopColour(coloured);
+
+        if (clicked)
             Click(rows, entry);
 
         if (ImGui.IsItemHovered())

@@ -140,6 +140,9 @@ public class SoundContainer
     /// <summary>The project folder has its own copy of this bank (saved edits, or a mod's file). Cached.</summary>
     public bool InProject => _inProject ??= Data.IsInProject(Path);
 
+    /// <summary>How the project's copy of this bank compares with the game's (Added / Modified / Unchanged)</summary>
+    public Common.VanillaStatus VanillaStatus => Data.FileStatus(Path);
+
     /// <summary>After a save rewrote this bank: forget the cached facts and reload on next use.</summary>
     public void MarkSaved()
     {
@@ -163,9 +166,144 @@ public class SoundContainer
 
     private string CacheKey(string inner) => inner == null ? $"{Data.Project.Descriptor.ProjectPath}|{Path}" : $"{Data.Project.Descriptor.ProjectPath}|{Path}|{inner}";
 
+    // ---- entry-level vanilla comparison (the entry list's colours)
+
+    // Each sound's media as saved, by MediaKey: the wem bytes of in-bank Wwise media, or an FSB sample's signature.
+    // Built from the bytes Load read; the game's side is built the same way from the game's copy, in the background.
+    private Dictionary<string, byte[]> _savedMedia = new();
+    private Dictionary<string, byte[]> _vanillaMedia;
+    private int _vanillaMediaRequested;
+
+    /// <summary>The key an entry's media is compared by: the Wwise media ID, or the FSB file and sample name</summary>
+    private static string MediaKey(SoundEntry e) => e.MediaId != 0 ? e.MediaId.ToString() : $"{e.InnerFile}|{e.Name}";
+
+    /// <summary>
+    /// How a sound compares with the game's: a pending replacement is Modified (or Unchanged when it puts back the
+    /// game's audio); a streamed .wem by its own file; otherwise every sound of an added bank is Added, of an
+    /// unchanged bank Unchanged, and in a modified bank Added when the game's bank lacks it, Modified when its media
+    /// differs. In-bank Wwise media compare their bytes; FMOD samples compare name, length, rate, channels, loop and
+    /// data size (an edit of the same length and size isn't seen). None while the game's bank is being read.
+    /// </summary>
+    public Common.VanillaStatus EntryStatus(SoundEntry e)
+    {
+        if (e == null)
+            return Common.VanillaStatus.None;
+
+        if (Data.Edits.Get(e) is { } edit)
+            return edit.IsVanilla ? Common.VanillaStatus.Unchanged : Common.VanillaStatus.Modified;
+
+        if (e.IsStreamed && e.StreamPath != null)
+            return Data.FileStatus(e.StreamPath);
+
+        var bank = VanillaStatus;
+        if (bank != Common.VanillaStatus.Modified)
+            return bank;
+
+        var vanilla = Volatile.Read(ref _vanillaMedia);
+        if (vanilla == null)
+        {
+            if (Interlocked.Exchange(ref _vanillaMediaRequested, 1) == 0)
+                Task.Run(ReadVanillaMedia);
+            return Common.VanillaStatus.None;
+        }
+
+        // Compared once per load: wem media can be large, and this runs for every visible row each frame
+        var savedMedia = _savedMedia;
+        if (!ReferenceEquals(_mediaStatusFor, savedMedia))
+        {
+            _mediaStatus.Clear();
+            _mediaStatusFor = savedMedia;
+        }
+
+        var key = MediaKey(e);
+        if (_mediaStatus.TryGetValue(key, out var cached))
+            return cached;
+
+        Common.VanillaStatus status;
+        if (!vanilla.TryGetValue(key, out var original))
+            status = Common.VanillaStatus.Added;
+        else if (!savedMedia.TryGetValue(key, out var saved))
+            return Common.VanillaStatus.None;
+        else
+            status = saved.AsSpan().SequenceEqual(original) ? Common.VanillaStatus.Unchanged : Common.VanillaStatus.Modified;
+
+        _mediaStatus[key] = status;
+        return status;
+    }
+
+    // EntryStatus results by MediaKey, for the _savedMedia they were worked out from (UI thread only)
+    private readonly Dictionary<string, Common.VanillaStatus> _mediaStatus = new();
+    private Dictionary<string, byte[]> _mediaStatusFor;
+
+    private void ReadVanillaMedia()
+    {
+        Dictionary<string, byte[]> media;
+
+        try
+        {
+            var raw = Data.ReadVanillaFile(Path);
+            media = raw != null ? IndexMedia(raw) : new();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, $"Failed to read the game's copy of {Path} for vanilla comparison", StudioCore.Logger.LogPriority.Low, e);
+            media = new();
+        }
+
+        Volatile.Write(ref _vanillaMedia, media);
+    }
+
+    /// <summary>The media of a bank's bytes by MediaKey, as <see cref="EntryStatus" /> compares them</summary>
+    private Dictionary<string, byte[]> IndexMedia(byte[] raw)
+    {
+        var media = new Dictionary<string, byte[]>();
+
+        void AddFsb(byte[] fsbRaw, string inner)
+        {
+            foreach (var s in FsbFile.Read(fsbRaw).Samples)
+            {
+                var signature = $"{s.SampleCount}|{s.SampleRate}|{s.Channels}|{s.LoopStart}|{s.LoopEnd}|{s.DataSize}|{s.Codec}";
+                media.TryAdd($"{inner}|{s.Name ?? $"#{s.Index}"}", System.Text.Encoding.UTF8.GetBytes(signature));
+            }
+        }
+
+        switch (Kind)
+        {
+            case SoundContainerKind.Fsb:
+                AddFsb(raw, null);
+                break;
+
+            case SoundContainerKind.FsbBinder:
+                {
+                    Memory<byte> data = DCX.Is(raw) ? DCX.Decompress(raw) : raw;
+                    IBinder bnd = data.Span[3] == '4' ? BND4.Read(data) : BND3.Read(data);
+                    foreach (var f in bnd.Files.Where(f => f.Name.EndsWith(".fsb", StringComparison.OrdinalIgnoreCase)))
+                        AddFsb(f.Bytes.ToArray(), System.IO.Path.GetFileName(f.Name.Replace('\\', '/')));
+                    break;
+                }
+
+            default:
+                foreach (var m in WwiseBank.Read(raw).InBankMedia)
+                    media.TryAdd(m.Id.ToString(), raw.AsSpan(m.Offset, m.Size).ToArray());
+                break;
+        }
+
+        return media;
+    }
+
     private List<SoundEntry> Load()
     {
         var raw = Data.ReadFile(Path) ?? throw new FileNotFoundException(LOC.Get("SOUND_Data_Log_Not_Found", Path));
+
+        // The saved media, for the entry list's vanilla colours
+        try
+        {
+            _savedMedia = IndexMedia(raw);
+        }
+        catch
+        {
+            _savedMedia = new();
+        }
 
         switch (Kind)
         {

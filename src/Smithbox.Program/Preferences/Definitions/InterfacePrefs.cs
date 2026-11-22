@@ -423,6 +423,25 @@ public class InterfacePrefs
         };
     }
 
+    public static PreferenceItem Interface_Vanilla_Highlight()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.EditorPresentation,
+
+            Title = "PREF_Interface_Vanilla_Highlight",
+            Description = "PREF_Interface_Vanilla_Highlight_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Vanilla_Highlight);
+            }
+        };
+    }
+
     #endregion
 
     #region Fonts
@@ -904,6 +923,19 @@ public class InterfacePrefs
                     $"{LOC.Get("PREF_CE_ImGui_Input_DiffCompare_Background")}##ImGui_Input_DiffCompare_Background",
                     ref UI.Current.ImGui_Input_DiffCompare_Background, flags);
 
+                // Vanilla Comparison
+                GUI.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Vanilla"),
+                    LOC.Get("PREF_Theme_Editor_Vanilla_TT"));
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Vanilla_Modified_Text")}##ImGui_Vanilla_Modified_Text",
+                    ref UI.Current.ImGui_Vanilla_Modified_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Vanilla_Added_Text")}##ImGui_Vanilla_Added_Text",
+                    ref UI.Current.ImGui_Vanilla_Added_Text, flags);
+
                 // Backgrounds
                 GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Backgrounds"),
@@ -1010,21 +1042,9 @@ public class InterfacePrefs
                     $"{LOC.Get("PREF_CE_ImGui_AliasName_Text")}##ImGui_AliasName_Text",
                     ref UI.Current.ImGui_AliasName_Text, flags);
 
-                ImGui.ColorEdit4(
-                    $"{LOC.Get("PREF_CE_ImGui_GparamPreviewable_Text")}##ImGui_GparamPreviewable_Text",
-                    ref UI.Current.ImGui_GparamPreviewable_Text, flags);
-
-                ImGui.ColorEdit4(
-                    $"{LOC.Get("PREF_CE_ImGui_TextEditor_ModifiedTextEntry_Text")}##ImGui_TextEditor_ModifiedTextEntry_Text",
-                    ref UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text, flags);
-
-                ImGui.ColorEdit4(
-                    $"{LOC.Get("PREF_CE_ImGui_TextEditor_UniqueTextEntry_Text")}##ImGui_TextEditor_UniqueTextEntry_Text",
-                    ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text, flags);
-
-                ImGui.ColorEdit4(
-                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_ProjectFile_Text")}##ImGui_TextureEditor_ProjectFile_Text",
-                    ref UI.Current.ImGui_TextureEditor_ProjectFile_Text, flags);
+                // The Text Editor's modified / unique entry colours, the Texture Editor's project-file colour and
+                // the Gparam Editor's previewable colour are gone: list colours are the shared Vanilla Comparison
+                // pair (previewable is a tooltip note). Their UI fields stay so saved themes still load.
 
                 ImGui.ColorEdit4(
                     $"{LOC.Get("PREF_CE_ImGui_TextureEditor_ModifiedFile_Text")}##ImGui_TextureEditor_ModifiedFile_Text",

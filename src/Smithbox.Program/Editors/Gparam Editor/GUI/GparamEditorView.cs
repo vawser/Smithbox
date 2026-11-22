@@ -16,6 +16,9 @@ public class GparamEditorView : IEditorView
 
     public ActionManager ActionManager = new();
 
+    /// <summary>The open files' groups and fields against the game's copies, for the list colours</summary>
+    public GparamVanillaCompare VanillaCompare;
+
     public Sdl2Window Window;
     public GraphicsDevice Device;
     public RenderScene RenderScene;
@@ -70,6 +73,10 @@ public class GparamEditorView : IEditorView
 
         // So a list drawn later in the same frame as an edit doesn't act on stale indices
         ActionManager.ActionPerformed += Selection.Reconcile;
+
+        // Group and field colours against the game's file, worked out again after every edit, undo and redo
+        VanillaCompare = new GparamVanillaCompare(Project);
+        ActionManager.ActionPerformed += VanillaCompare.Invalidate;
 
         ViewportPreviewTool = new GparamViewportPreviewTool(this, Project);
         RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);

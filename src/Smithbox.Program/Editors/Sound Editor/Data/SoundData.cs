@@ -161,6 +161,9 @@ public class SoundData : IDisposable
         catch { return false; }
     }
 
+    /// <summary>How the project's copy of a sound file (at <see cref="ProjectPath"/>) compares with the game's</summary>
+    public Common.VanillaStatus FileStatus(string path) => Project.VFS.FileStatus(ProjectPath(path), path);
+
     /// <summary>Writes a sound file to the project (at <see cref="ProjectPath"/>).</summary>
     public void WriteProjectFile(string path, byte[] bytes) => Project.VFS.ProjectFS.WriteFile(ProjectPath(path), bytes);
 

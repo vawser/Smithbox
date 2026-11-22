@@ -14,8 +14,8 @@ public static class TimeActVanillaDisplay
 
     public static Vector4? GetColor(TimeActVanillaStatus status) => status switch
     {
-        TimeActVanillaStatus.Modified => UI.Current.ImGui_PrimaryChanged_Text,
-        TimeActVanillaStatus.Added => UI.Current.ImGui_AuxAdded_Text,
+        TimeActVanillaStatus.Modified => UI.Current.ImGui_Vanilla_Modified_Text,
+        TimeActVanillaStatus.Added => UI.Current.ImGui_Vanilla_Added_Text,
         _ => null
     };
 

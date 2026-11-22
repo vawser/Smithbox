@@ -101,8 +101,15 @@ public class EmevdFileList
         var selected = View.Selection.SelectedFile == file;
 
         var label = file.IsDirty ? $"{file.Name}*" : file.Name;
+        var status = file.VanillaStatus;
 
-        if (ImGui.Selectable($"{label}##emevdFile_{file.Name}", selected))
+        var coloured = VanillaMarkers.PushColour(status);
+        var clicked = ImGui.Selectable($"{label}##emevdFile_{file.Name}", selected);
+        VanillaMarkers.PopColour(coloured);
+        if (coloured)
+            VanillaMarkers.Tooltip(status);
+
+        if (clicked)
         {
             View.Selection.SelectFile(file);
         }
@@ -145,13 +152,6 @@ public class EmevdFileList
         {
             ImGui.SameLine();
             ImGui.TextDisabled(LOC.Get("EMEVD_FileList_Event_Count", file.Emevd.Events.Count));
-        }
-
-        if (file.InProject)
-        {
-            ImGui.SameLine();
-            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, Icons.Pencil);
-            GUI.Tooltip(LOC.Get("EMEVD_FileList_In_Project_TT"));
         }
     }
 }

@@ -1159,7 +1159,7 @@ public class ParamFieldWindow
                 }
                 else
                 {
-                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Vanilla_Modified_Text);
                 }
 
                 pushedStyle = true;

@@ -458,7 +458,7 @@ public class ParamListWindow
 
             ImGui.PushStyleColor(ImGuiCol.Text, filterMatch
                 ? UI.Current.ImGui_ModifiedFilter_Text
-                : UI.Current.ImGui_PrimaryChanged_Text);
+                : UI.Current.ImGui_Vanilla_Modified_Text);
             popColor = true;
         }
 
@@ -748,7 +748,7 @@ public class ParamListWindow
 
             if (hasVanillaDiff)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Vanilla_Modified_Text);
             }
 
             // Mark stay params with unsaved changes
