@@ -55,8 +55,7 @@ public class FirstPersonCollisionWorld
 
     /// <summary>
     /// The games whose collision is read: those the collision bank holds (ER, NR, AC6, DS3, DB_NT, SDT), and the older
-    /// ones read straight from their files (BB, DS1R, DS1, DES, DS2S). Not DS2, whose map collision Smithbox doesn't
-    /// locate.
+    /// ones read straight from their files (BB, DS1R, DS1, DES, DS2, DS2S).
     /// </summary>
     public bool CanUse()
     {
@@ -70,6 +69,7 @@ public class FirstPersonCollisionWorld
             or ProjectType.DS1R
             or ProjectType.DS1
             or ProjectType.DES
+            or ProjectType.DS2
             or ProjectType.DS2S;
     }
 

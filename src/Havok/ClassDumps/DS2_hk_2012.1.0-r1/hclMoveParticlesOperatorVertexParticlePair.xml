@@ -1,0 +1,6 @@
+<class name="hclMoveParticlesOperatorVertexParticlePair" version="0" signature="0x00000000" size="4" source="exe">
+  <members>
+    <member name="vertexIndex" offset="0" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="particleIndex" offset="2" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

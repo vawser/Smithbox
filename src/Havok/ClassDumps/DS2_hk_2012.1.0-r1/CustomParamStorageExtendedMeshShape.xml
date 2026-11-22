@@ -1,0 +1,5 @@
+<class name="CustomParamStorageExtendedMeshShape" version="0" signature="0xe438e88d" size="288" parent="hkpStorageExtendedMeshShape">
+  <members>
+    <member name="materialArray" offset="272" ctype="CustomMeshParameter" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

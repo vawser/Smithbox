@@ -1,0 +1,5 @@
+<class name="hclStretchLinkConstraintSet" version="0" signature="0x1dc8a777" size="28" parent="hclConstraintSet" source="exe">
+  <members>
+    <member name="links" offset="16" ctype="hclStretchLinkConstraintSetLink" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

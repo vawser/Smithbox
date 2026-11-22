@@ -1,0 +1,12 @@
+<class name="hclCollidable" version="3" signature="0xe7bd9b7c" size="128" parent="hkReferencedObject" source="exe">
+  <members>
+    <member name="name" offset="8" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="transform" offset="16" vtype="TYPE_TRANSFORM" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="linearVelocity" offset="80" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angularVelocity" offset="96" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionEnabled" offset="112" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionPriority" offset="113" vtype="TYPE_INT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionRadius" offset="116" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shape" offset="120" ctype="hclShape" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

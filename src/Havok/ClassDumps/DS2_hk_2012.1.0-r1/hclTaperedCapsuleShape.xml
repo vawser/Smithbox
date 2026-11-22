@@ -1,0 +1,19 @@
+<class name="hclTaperedCapsuleShape" version="2" signature="0x8f8537e1" size="160" parent="hclShape" source="exe">
+  <members>
+    <member name="small" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="big" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="coneApex" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="coneAxis" offset="64" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="lVec" offset="80" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="dVec" offset="96" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="tanThetaVecNeg" offset="112" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="smallRadius" offset="128" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bigRadius" offset="132" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="l" offset="136" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="d" offset="140" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="cosTheta" offset="144" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="sinTheta" offset="148" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="tanTheta" offset="152" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="tanThetaSqr" offset="156" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,22 @@
+<class name="hclObjectSpaceDeformer" version="0" signature="0x00000000" size="68" source="exe">
+  <enums>
+    <enum name="ControlByte" flags="0">
+      <enumitem name="FOUR_BLEND" value="0" />
+      <enumitem name="THREE_BLEND" value="1" />
+      <enumitem name="TWO_BLEND" value="2" />
+      <enumitem name="ONE_BLEND" value="3" />
+      <enumitem name="NEXT_SPU_BATCH" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="fourBlendEntries" offset="0" ctype="hclObjectSpaceDeformerFourBlendEntryBlock" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="threeBlendEntries" offset="12" ctype="hclObjectSpaceDeformerThreeBlendEntryBlock" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="twoBlendEntries" offset="24" ctype="hclObjectSpaceDeformerTwoBlendEntryBlock" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="oneBlendEntries" offset="36" ctype="hclObjectSpaceDeformerOneBlendEntryBlock" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="controlBytes" offset="48" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="startVertexIndex" offset="60" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="endVertexIndex" offset="62" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="batchSizeSpu" offset="64" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="partialWrite" offset="66" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

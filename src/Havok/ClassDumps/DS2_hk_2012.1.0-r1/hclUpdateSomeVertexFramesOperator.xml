@@ -1,0 +1,18 @@
+<class name="hclUpdateSomeVertexFramesOperator" version="2" signature="0x068f994f" size="136" parent="hclOperator" source="exe">
+  <members>
+    <member name="involvedTriangles" offset="16" ctype="hclUpdateSomeVertexFramesOperatorTriangle" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="involvedVertices" offset="28" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="selectionVertexToInvolvedVertex" offset="40" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="involvedVertexToNormalID" offset="52" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="triangleFlips" offset="64" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="referenceVertices" offset="76" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="tangentEdgeCosAngle" offset="88" vtype="TYPE_ARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="tangentEdgeSinAngle" offset="100" vtype="TYPE_ARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="biTangentFlip" offset="112" vtype="TYPE_ARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bufferIdx" offset="124" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numUniqueNormalIDs" offset="128" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="updateNormals" offset="132" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="updateTangents" offset="133" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="updateBiTangents" offset="134" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

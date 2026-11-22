@@ -1,0 +1,6 @@
+<class name="hclClothContainer" version="1" signature="0xf7fda47f" size="32" parent="hkReferencedObject" source="exe">
+  <members>
+    <member name="collidables" offset="8" ctype="hclCollidable" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="clothDatas" offset="20" ctype="hclClothData" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

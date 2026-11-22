@@ -1,0 +1,5 @@
+<class name="hclUpdateSomeVertexFramesOperatorTriangle" version="0" signature="0x00000000" size="6" source="exe">
+  <members>
+    <member name="indices" offset="0" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+  </members>
+</class>

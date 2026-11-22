@@ -1,0 +1,10 @@
+<class name="hclCopyVerticesOperator" version="0" signature="0x63eb08b7" size="40" parent="hclOperator" source="exe">
+  <members>
+    <member name="inputBufferIdx" offset="16" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="outputBufferIdx" offset="20" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numberOfVertices" offset="24" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="startVertexIn" offset="28" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="startVertexOut" offset="32" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="copyNormals" offset="36" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

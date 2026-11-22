@@ -44,7 +44,7 @@ public enum HavokSdk
     /// <summary>hk_2010.2.0 (DS1). 32-bit.</summary>
     Hk2010,
 
-    /// <summary>hk_2012.1.0 (DS2). 32-bit. No current library reads it.</summary>
+    /// <summary>hk_2012.1.0 (DS2). 32-bit. Also DS2's few hk_2011.3.0 files, which share its layouts.</summary>
     Hk2012,
 
     /// <summary>hk_2014.1.0 (DS2S, BB, DS3, some SDT).</summary>
@@ -77,7 +77,9 @@ public static class HavokSdkExtensions
         if (version.StartsWith("Havok-4.")) return HavokSdk.Hk4x;
         if (version.StartsWith("Havok-5.")) return HavokSdk.Hk5x;
         if (version.StartsWith("hk_2010")) return HavokSdk.Hk2010;
-        if (version.StartsWith("hk_2012")) return HavokSdk.Hk2012;
+        // DS2 holds 9 hk_2011.3.0 files (character binders) beside its hk_2012 ones: the same packfile version and
+        // classes, read with the 2012 registry
+        if (version.StartsWith("hk_2011") || version.StartsWith("hk_2012")) return HavokSdk.Hk2012;
         if (version.StartsWith("hk_2014")) return HavokSdk.Hk2014;
 
         return version switch
@@ -94,5 +96,5 @@ public static class HavokSdkExtensions
     /// Whether one of the current libraries reads this SDK, so the unified library must too (plan §1.3).
     /// </summary>
     public static bool IsInScope(this HavokSdk sdk) =>
-        sdk is not (HavokSdk.Unknown or HavokSdk.Hk4x or HavokSdk.Hk2012);
+        sdk is not (HavokSdk.Unknown or HavokSdk.Hk4x);
 }

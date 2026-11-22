@@ -1,0 +1,7 @@
+<class name="hclScratchBufferDefinition" version="0" signature="0x87f923fc" size="72" parent="hclBufferDefinition" source="exe">
+  <members>
+    <member name="triangleIndices" offset="56" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="storeNormals" offset="68" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="storeTangentsAndBiTangents" offset="69" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

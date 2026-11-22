@@ -1,0 +1,10 @@
+<class name="hclTransitionConstraintSet" version="1" signature="0xd086d9ec" size="48" parent="hclConstraintSet" source="exe">
+  <members>
+    <member name="perParticleData" offset="16" ctype="hclTransitionConstraintSetPerParticle" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="toAnimPeriod" offset="28" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="toAnimPlusDelayPeriod" offset="32" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="toSimPeriod" offset="36" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="toSimPlusDelayPeriod" offset="40" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="referenceMeshBufferIdx" offset="44" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

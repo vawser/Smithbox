@@ -25,6 +25,7 @@ public static class HavokFile
         return file.Sdk switch
         {
             HavokSdk.Hk2010 => HavokProfile.DS1,
+            HavokSdk.Hk2012 => HavokProfile.DS2,
             HavokSdk.Hk2014 => HavokProfile.DS3,
             HavokSdk.Hk2015 => HavokProfile.DS1R,
             HavokSdk.Hk2016 => HavokProfile.SDT,
@@ -39,6 +40,7 @@ public static class HavokFile
     {
         HavokSdk.Hk5x => hk55.ClassSet.For(profile),
         HavokSdk.Hk2010 => hk2010.ClassSet.For(profile),
+        HavokSdk.Hk2012 => hk2012.ClassSet.For(profile),
         HavokSdk.Hk2014 => hk2014.ClassSet.For(profile),
         HavokSdk.Hk2015 => hk2015.ClassSet.For(profile),
         HavokSdk.Hk2016 => hk2016.ClassSet.For(profile),

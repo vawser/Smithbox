@@ -1,0 +1,5 @@
+<class name="hclObjectSpaceMeshMeshDeformPNTBOperator" version="0" signature="0x59fa4b17" size="132" parent="hclObjectSpaceMeshMeshDeformOperator" source="exe">
+  <members>
+    <member name="localPNTBs" offset="120" ctype="hclObjectSpaceDeformerLocalBlockPNTB" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

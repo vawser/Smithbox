@@ -1,0 +1,9 @@
+<class name="hkcdShapeInfoCodecType" version="0" signature="0x00000000" size="1" source="exe">
+  <enums>
+    <enum name="ShapeInfoCodecTypeEnum" flags="0">
+      <enumitem name="NULL_CODEC" value="0" />
+      <enumitem name="UFM358" value="1" />
+      <enumitem name="MAX_NUM_CODECS" value="16" />
+    </enum>
+  </enums>
+</class>

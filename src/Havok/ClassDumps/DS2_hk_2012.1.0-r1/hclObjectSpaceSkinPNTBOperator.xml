@@ -1,0 +1,5 @@
+<class name="hclObjectSpaceSkinPNTBOperator" version="0" signature="0xe74baf54" size="116" parent="hclObjectSpaceSkinOperator" source="exe">
+  <members>
+    <member name="localPNTBs" offset="104" ctype="hclObjectSpaceDeformerLocalBlockPNTB" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

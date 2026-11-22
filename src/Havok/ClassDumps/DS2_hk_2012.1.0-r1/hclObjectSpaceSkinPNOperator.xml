@@ -1,0 +1,5 @@
+<class name="hclObjectSpaceSkinPNOperator" version="0" signature="0xd3597a50" size="116" parent="hclObjectSpaceSkinOperator" source="exe">
+  <members>
+    <member name="localPNs" offset="104" ctype="hclObjectSpaceDeformerLocalBlockPN" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

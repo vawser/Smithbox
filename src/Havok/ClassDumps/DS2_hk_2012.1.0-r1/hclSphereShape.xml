@@ -1,0 +1,5 @@
+<class name="hclSphereShape" version="0" signature="0xbb23e3b3" size="32" parent="hclShape" source="exe">
+  <members>
+    <member name="sphere" offset="16" ctype="hkSphere" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

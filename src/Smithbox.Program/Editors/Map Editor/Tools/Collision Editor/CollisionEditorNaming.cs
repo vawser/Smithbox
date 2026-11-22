@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <item>ER, NR, AC6, DB_NT, DS3, SDT, BB: model h001234, files h10_00_00_00_001234.hkx.dcx, part h001234_0000</item>
 /// <item>DES: model h0000B0, loose file h0000b0.hkx (lower-case b), body h0000B0, part named as its model</item>
 /// <item>DS1 / DS1R: model h1000B1, file h1000B1A10.hkx (DS1R .hkx.dcx in its binder), body h1000B1, part as its model</item>
-/// <item>DS2S: model h01_0200, file h01_0200.hkx.dcx, body h01_0200, part h01_0200_0000</item>
+/// <item>DS2 / DS2S: model h01_0200, file h01_0200.hkx.dcx, body h01_0200, part h01_0200_0000</item>
 /// </list>
 /// Takes the game as its project type's name, so the survey tools link it without Smithbox's types.
 /// </summary>
@@ -29,11 +29,14 @@ public sealed class CollisionEditorNaming
 
     private bool IsBlockNamed => Game is "DES" or "DS1" or "DS1R";
 
+    /// <summary>DS2 and DS2S name their collision by group and number: h01_0200.</summary>
+    private bool IsDs2Named => Game is "DS2" or "DS2S";
+
     /// <summary>The ID's form, for messages: 001234, 1234B1 or 01_0200.</summary>
-    public string Example => IsBlockNamed ? "1234B1" : Game is "DS2S" ? "01_0200" : "001234";
+    public string Example => IsBlockNamed ? "1234B1" : IsDs2Named ? "01_0200" : "001234";
 
     /// <summary>The longest ID typed.</summary>
-    public int MaxLength => IsBlockNamed || Game is "DS2S" ? 7 : 6;
+    public int MaxLength => IsBlockNamed || IsDs2Named ? 7 : 6;
 
     /// <summary>Whether a typed ID has the game's form.</summary>
     public bool IsValid(string id)
@@ -42,7 +45,7 @@ public sealed class CollisionEditorNaming
             return false;
 
         return IsBlockNamed ? Regex.IsMatch(id, @"^\d{4}[Bb]\d$")
-            : Game is "DS2S" ? Regex.IsMatch(id, @"^\d\d_\d{4}$")
+            : IsDs2Named ? Regex.IsMatch(id, @"^\d\d_\d{4}$")
             : Regex.IsMatch(id, @"^\d{6}$");
     }
 
@@ -61,7 +64,7 @@ public sealed class CollisionEditorNaming
             "DES" => $"{type}{id.ToLowerInvariant()}.hkx",
             "DS1" => $"{type}{id}A{mapId.Substring(1, 2)}.hkx",
             "DS1R" => $"{type}{id}A{mapId.Substring(1, 2)}.hkx.dcx",
-            "DS2S" => $"{type}{id}.hkx.dcx",
+            "DS2" or "DS2S" => $"{type}{id}.hkx.dcx",
             _ => $"{type}{mapId.Substring(1)}_{id}.hkx.dcx"
         };
     }
@@ -73,7 +76,7 @@ public sealed class CollisionEditorNaming
     public string IdFromFile(string fileName)
     {
         var match = IsBlockNamed ? Regex.Match(fileName, @"^[hlf](\d{4}[Bb]\d)(A\d\d)?\.hkx", RegexOptions.IgnoreCase)
-            : Game is "DS2S" ? Regex.Match(fileName, @"^[hlf](\d\d_\d{4})\.hkx", RegexOptions.IgnoreCase)
+            : IsDs2Named ? Regex.Match(fileName, @"^[hlf](\d\d_\d{4})\.hkx", RegexOptions.IgnoreCase)
             : Regex.Match(fileName, @"_(\d{6})\.hkx", RegexOptions.IgnoreCase);
 
         return match.Success ? Normalize(match.Groups[1].Value) : null;
@@ -92,14 +95,14 @@ public sealed class CollisionEditorNaming
 
     /// <summary>
     /// A new ID after the map's used ones: the next free number after the highest (below 900000 for six digits, 9000
-    /// for the older games' four, those numbers being kept apart), in the block (DES, DS1: the digit after B) or group (DS2S: the digits before
+    /// for the older games' four, those numbers being kept apart), in the block (DES, DS1: the digit after B) or group (DS2, DS2S: the digits before
     /// the _) the map uses most. Empty if none is free.
     /// </summary>
     public string Suggest(IReadOnlyCollection<string> used)
     {
         var taken = new HashSet<string>(used.Select(Normalize), StringComparer.OrdinalIgnoreCase);
 
-        if (IsBlockNamed || Game is "DS2S")
+        if (IsBlockNamed || IsDs2Named)
         {
             // The block or group: B1 in h1000B1, 01 in h01_0200
             string Group(string id) => IsBlockNamed ? id.Substring(5, 1) : id.Substring(0, 2);

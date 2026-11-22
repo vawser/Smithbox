@@ -68,7 +68,10 @@ public sealed class HavokProfile
         "HavokTypeRegistry20100200.xml");
     public static readonly HavokProfile DS1R = new("DS1R", HavokSdk.Hk2015, HavokContainer.Tagfile, 8, false,
         "HavokTypeRegistry20150100.xml");
-    public static readonly HavokProfile DS2 = new("DS2", HavokSdk.Hk2012, HavokContainer.Packfile, 4, false);
+    // DS2's packfiles mostly leave __types__ empty: its registry takes the classes they don't describe from the static
+    // hkClass tables of DarkSoulsII.exe (survey --dumpclasses --execlasses)
+    public static readonly HavokProfile DS2 = new("DS2", HavokSdk.Hk2012, HavokContainer.Packfile, 4, false,
+        "HavokTypeRegistry20120100.xml");
     public static readonly HavokProfile DS2S = new("DS2S", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
         "HavokTypeRegistry20140100.xml");
     // BB is a PS4 (Itanium C++ ABI) build: its layouts are the DS3 ones recomputed by the buildlayoutoverlay mode of

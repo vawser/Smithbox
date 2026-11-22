@@ -1,0 +1,9 @@
+<class name="hclCapsuleShape" version="1" signature="0xde5980e5" size="80" parent="hclShape" source="exe">
+  <members>
+    <member name="start" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="end" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="dir" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="radius" offset="64" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="capLenSqrdInv" offset="68" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

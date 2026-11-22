@@ -73,8 +73,8 @@ public static class HavokMetaHelper
 
     /// <summary>
     /// The meta folders for a class set, in order. The classes of every SDK are named alike, so SDKs without a folder
-    /// of their own share one: the tagfile SDKs (2015, 2016, 2019) hk2018's, the older packfile SDKs (hk2010, Havok
-    /// 5.5) hk2014's, each falling back to the other.
+    /// of their own share one: the tagfile SDKs (2015, 2016, 2019) hk2018's, the older packfile SDKs (hk2010, hk2012,
+    /// Havok 5.5) hk2014's, each falling back to the other.
     /// </summary>
     private static string[] GetMetaFolders(Type type)
     {
@@ -83,7 +83,7 @@ public static class HavokMetaHelper
             ["Havok", "hk2014", ..] => ["hk2014"],
             ["Havok", "hk2016" or "hk2018" or "hk2019", ..] => ["hk2018"],
             ["Havok", "hk2015", ..] => ["hk2018", "hk2014"],
-            ["Havok", "hk2010" or "hk55", ..] => ["hk2014", "hk2018"],
+            ["Havok", "hk2010" or "hk2012" or "hk55", ..] => ["hk2014", "hk2018"],
             _ => []
         };
     }
@@ -99,7 +99,7 @@ public static class HavokMetaHelper
         if (fullName.Contains('`'))
             fullName = fullName.Split('`')[0];
 
-        foreach (var prefix in new[] { "Havok.hk55.", "Havok.hk2010.", "Havok.hk2014.", "Havok.hk2015.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
+        foreach (var prefix in new[] { "Havok.hk55.", "Havok.hk2010.", "Havok.hk2012.", "Havok.hk2014.", "Havok.hk2015.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
         {
             if (fullName.StartsWith(prefix, StringComparison.Ordinal))
                 return fullName[prefix.Length..];

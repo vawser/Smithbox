@@ -1,0 +1,9 @@
+<class name="hclGatherAllVerticesOperator" version="1" signature="0xd332c9b9" size="40" parent="hclOperator" source="exe">
+  <members>
+    <member name="vertexInputFromVertexOutput" offset="16" vtype="TYPE_ARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="inputBufferIdx" offset="28" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="outputBufferIdx" offset="32" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="gatherNormals" offset="36" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="partialGather" offset="37" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

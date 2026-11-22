@@ -1,0 +1,6 @@
+<class name="hkxMeshUserChannelInfo" version="0" signature="0x00000000" size="28" parent="hkxAttributeHolder">
+  <members>
+    <member name="name" offset="20" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="className" offset="24" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

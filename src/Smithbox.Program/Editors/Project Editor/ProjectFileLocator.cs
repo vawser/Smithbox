@@ -709,8 +709,8 @@ public class ProjectFileLocator : IDisposable
                 havokBehaviorFiles.Add(entry);
             }
 
-            // Character
-            if (ext == "chrbnd" && !isSd)
+            // Character: the chrbnds, or DS2's and DS2S's model/chr/cNNNN.bnd (ragdolls and character physics)
+            if (ShouldAddToChrFiles(entry, projectType, isSd))
             {
                 havokCharacterFiles.Add(entry);
             }

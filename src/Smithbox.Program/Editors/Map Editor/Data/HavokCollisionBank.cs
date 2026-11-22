@@ -172,7 +172,7 @@ public class HavokCollisionBank
 
     /// <summary>
     /// The games whose map collision binders are listed when a map loads and read when first asked for
-    /// (MapDocuments): ER, NR, AC6, DB_NT, DS3, BB, DS1R and DS2S. SDT's is read at load instead (TagContainers);
+    /// (MapDocuments): ER, NR, AC6, DB_NT, DS3, BB, DS1R, DS2 and DS2S. SDT's is read at load instead (TagContainers);
     /// DES and DS1 keep loose files (see IsLooseGame).
     /// </summary>
     private bool IsListedGame => Project.Descriptor.ProjectType is ProjectType.ER
@@ -182,6 +182,7 @@ public class HavokCollisionBank
         or ProjectType.DS3
         or ProjectType.BB
         or ProjectType.DS1R
+        or ProjectType.DS2
         or ProjectType.DS2S;
 
     /// <summary>
@@ -203,16 +204,17 @@ public class HavokCollisionBank
         or ProjectType.DES
         or ProjectType.DS1
         or ProjectType.DS1R
+        or ProjectType.DS2
         or ProjectType.DS2S;
 
     /// <summary>
     /// The paths of a map's collision binder of one type. ER, NR and AC6 keep a map in its area's folder
     /// (map/m30/m30_00_00_00/h30_00_00_00.hkxbhd); DS3, SDT, BB, DS1R and DB_NT keep it in the map's own
-    /// (map/m30_00_00_00/...); DS2S keeps every map's in model/map (model/map/h10_02_00_00.hkxbhd).
+    /// (map/m30_00_00_00/...); DS2 and DS2S keep every map's in model/map (model/map/h10_02_00_00.hkxbhd).
     /// </summary>
     private (string Bhd, string Bdt) GetBinderPaths(string mapId, string type)
     {
-        var folder = Project.Descriptor.ProjectType is ProjectType.DS2S
+        var folder = Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S
             ? Path.Join("model", "map")
             : Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB or ProjectType.DB_NT or ProjectType.DS1R
             ? Path.Join("map", mapId)

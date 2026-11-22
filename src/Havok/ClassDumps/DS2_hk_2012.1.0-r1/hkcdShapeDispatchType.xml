@@ -1,0 +1,12 @@
+<class name="hkcdShapeDispatchType" version="0" signature="0x00000000" size="1" source="exe">
+  <enums>
+    <enum name="ShapeDispatchTypeEnum" flags="0">
+      <enumitem name="CONVEX_IMPLICIT" value="0" />
+      <enumitem name="CONVEX" value="1" />
+      <enumitem name="HEIGHT_FIELD" value="2" />
+      <enumitem name="COMPOSITE" value="3" />
+      <enumitem name="USER" value="4" />
+      <enumitem name="NUM_DISPATCH_TYPES" value="5" />
+    </enum>
+  </enums>
+</class>

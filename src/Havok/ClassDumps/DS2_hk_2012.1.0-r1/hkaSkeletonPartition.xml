@@ -1,0 +1,7 @@
+<class name="hkaSkeletonPartition" version="1" signature="0x00000000" size="8">
+  <members>
+    <member name="name" offset="0" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="startBoneIndex" offset="4" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numBones" offset="6" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

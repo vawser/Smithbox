@@ -1,0 +1,8 @@
+<class name="hclStandardLinkConstraintSetLink" version="0" signature="0x00000000" size="12" source="exe">
+  <members>
+    <member name="particleA" offset="0" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="particleB" offset="2" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="restLength" offset="4" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="stiffness" offset="8" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

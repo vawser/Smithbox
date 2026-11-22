@@ -1,0 +1,10 @@
+<class name="hclBendLinkConstraintSetLink" version="0" signature="0x00000000" size="20" source="exe">
+  <members>
+    <member name="particleA" offset="0" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="particleB" offset="2" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bendMinLength" offset="4" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="stretchMaxLength" offset="8" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bendStiffness" offset="12" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="stretchStiffness" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

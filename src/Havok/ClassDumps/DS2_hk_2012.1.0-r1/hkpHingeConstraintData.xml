@@ -1,0 +1,5 @@
+<class name="hkpHingeConstraintData" version="0" signature="0xb6d0b1b0" size="208" parent="hkpConstraintData" source="exe">
+  <members>
+    <member name="atoms" offset="16" ctype="hkpHingeConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+  </members>
+</class>

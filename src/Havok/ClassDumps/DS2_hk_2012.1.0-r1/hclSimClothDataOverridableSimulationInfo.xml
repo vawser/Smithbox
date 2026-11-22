@@ -1,0 +1,10 @@
+<class name="hclSimClothDataOverridableSimulationInfo" version="0" signature="0x00000000" size="32" source="exe">
+  <members>
+    <member name="gravity" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="globalDampingPerSecond" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="collisionTolerance" offset="20" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionEnabled" offset="24" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="landscapeCollisionEnabled" offset="25" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="transferMotionEnabled" offset="26" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

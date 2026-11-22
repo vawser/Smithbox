@@ -1,0 +1,5 @@
+<class name="hclShape" version="0" signature="0x00000000" size="12" parent="hkReferencedObject" source="exe">
+  <members>
+    <member name="type" offset="8" vtype="TYPE_ENUM" vsubtype="TYPE_INT32" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

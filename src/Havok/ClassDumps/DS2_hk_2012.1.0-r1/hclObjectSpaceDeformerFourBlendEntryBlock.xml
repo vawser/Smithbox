@@ -1,0 +1,7 @@
+<class name="hclObjectSpaceDeformerFourBlendEntryBlock" version="0" signature="0x00000000" size="224" source="exe">
+  <members>
+    <member name="vertexIndices" offset="0" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="16" flags="FLAGS_NONE" />
+    <member name="boneIndices" offset="32" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="64" flags="FLAGS_NONE" />
+    <member name="boneWeights" offset="160" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="64" flags="FLAGS_NONE" />
+  </members>
+</class>

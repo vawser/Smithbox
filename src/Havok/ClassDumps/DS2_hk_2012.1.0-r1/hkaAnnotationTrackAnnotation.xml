@@ -1,0 +1,6 @@
+<class name="hkaAnnotationTrackAnnotation" version="0" signature="0x00000000" size="8">
+  <members>
+    <member name="time" offset="0" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="text" offset="4" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

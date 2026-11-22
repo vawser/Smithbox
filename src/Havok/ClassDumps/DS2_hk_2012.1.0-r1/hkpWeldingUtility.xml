@@ -1,0 +1,20 @@
+<class name="hkpWeldingUtility" version="0" signature="0x00000000" size="1" source="exe">
+  <enums>
+    <enum name="WeldingType" flags="0">
+      <enumitem name="WELDING_TYPE_ANTICLOCKWISE" value="0" />
+      <enumitem name="WELDING_TYPE_CLOCKWISE" value="4" />
+      <enumitem name="WELDING_TYPE_TWO_SIDED" value="5" />
+      <enumitem name="WELDING_TYPE_NONE" value="6" />
+    </enum>
+    <enum name="SectorType" flags="0">
+      <enumitem name="ACCEPT_0" value="1" />
+      <enumitem name="SNAP_0" value="0" />
+      <enumitem name="REJECT" value="2" />
+      <enumitem name="SNAP_1" value="4" />
+      <enumitem name="ACCEPT_1" value="3" />
+    </enum>
+    <enum name="NumAngles" flags="0">
+      <enumitem name="NUM_ANGLES" value="31" />
+    </enum>
+  </enums>
+</class>

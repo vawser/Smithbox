@@ -19,6 +19,7 @@
         <ProjectReference Include="..\Havok.Shared\Havok.Shared.csproj" />
         <ProjectReference Include="..\Classes\Havok.hk55\Havok.hk55.csproj" />
         <ProjectReference Include="..\Classes\Havok.hk2010\Havok.hk2010.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2012\Havok.hk2012.csproj" />
         <ProjectReference Include="..\Classes\Havok.hk2014\Havok.hk2014.csproj" />
         <ProjectReference Include="..\Classes\Havok.hk2015\Havok.hk2015.csproj" />
         <ProjectReference Include="..\Classes\Havok.hk2016\Havok.hk2016.csproj" />

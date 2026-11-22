@@ -1,0 +1,8 @@
+<class name="hclRuntimeConversionInfoSlotConversion" version="0" signature="0x00000000" size="7" source="exe">
+  <members>
+    <member name="elements" offset="0" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="numElements" offset="4" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="index" offset="5" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="partialWrite" offset="6" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

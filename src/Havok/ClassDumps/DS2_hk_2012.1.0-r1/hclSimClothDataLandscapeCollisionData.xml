@@ -1,0 +1,10 @@
+<class name="hclSimClothDataLandscapeCollisionData" version="0" signature="0x00000000" size="20" source="exe">
+  <members>
+    <member name="landscapeRadius" offset="0" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="enableStuckParticleDetection" offset="4" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="stuckParticlesStretchFactorSq" offset="8" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionEnabled" offset="12" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionPriority" offset="13" vtype="TYPE_INT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pinchDetectionRadius" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

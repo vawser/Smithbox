@@ -153,14 +153,14 @@ public partial class CollisionEditorTool
 
     /// <summary>
     /// The games whose map collision the Map Editor holds as documents it can write back: FromSoftware compressed
-    /// meshes (hknp) the shared builder makes, and the older games' MOPP meshes (hkp: DES, DS1, DS1R, DS2S), whose
-    /// MOPP is recompiled on commit. DS2 isn't: its Havok 2012 files have no class set to write them with.
+    /// meshes (hknp) the shared builder makes, and the older games' MOPP meshes (hkp: DES, DS1, DS1R, DS2, DS2S),
+    /// whose MOPP is recompiled on commit. DS2's hk_2012 files are laid out as DS2S's (Havok.hk2012).
     /// </summary>
     public bool CanUse()
     {
         return Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6
             or ProjectType.DB_NT or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB
-            or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S;
+            or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S;
     }
 
     /// <summary>
@@ -168,7 +168,7 @@ public partial class CollisionEditorTool
     /// Cleanup doesn't cover them (their files are named by model and area, not by number).
     /// </summary>
     public bool IsHkpGame => Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1
-        or ProjectType.DS1R or ProjectType.DS2S;
+        or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S;
 
     private bool HasEdits => Files.Values.Any(f => f.IsEdited);
 

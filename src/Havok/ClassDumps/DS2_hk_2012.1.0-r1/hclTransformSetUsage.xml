@@ -1,0 +1,18 @@
+<class name="hclTransformSetUsage" version="0" signature="0x00000000" size="2" source="exe">
+  <enums>
+    <enum name="Component" flags="0">
+      <enumitem name="COMPONENT_TRANSFORM" value="0" />
+      <enumitem name="COMPONENT_INVTRANSPOSE" value="1" />
+    </enum>
+    <enum name="InternalFlags" flags="0">
+      <enumitem name="USAGE_NONE" value="0" />
+      <enumitem name="USAGE_READ" value="1" />
+      <enumitem name="USAGE_WRITE" value="2" />
+      <enumitem name="USAGE_FULL_WRITE" value="4" />
+      <enumitem name="USAGE_READ_BEFORE_WRITE" value="8" />
+    </enum>
+  </enums>
+  <members>
+    <member name="perComponentFlags" offset="0" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="2" flags="FLAGS_NONE" />
+  </members>
+</class>

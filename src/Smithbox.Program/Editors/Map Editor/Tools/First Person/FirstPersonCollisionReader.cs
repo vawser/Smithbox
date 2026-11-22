@@ -1,4 +1,4 @@
-using Havok.Shared;
+﻿using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -49,11 +49,12 @@ public static class FirstPersonCollisionReader
 
     /// <summary>
     /// The binder of a map's collision of one type (h, l or f). ER, NR and AC6 keep it in the area's folder
-    /// (map/m30/m30_00_00_00/l30_00_00_00.hkxbhd); DS3, SDT, BB and DB_NT in the map's own (map/m30_00_00_00/...).
+    /// (map/m30/m30_00_00_00/l30_00_00_00.hkxbhd); DS3, SDT, BB, DB_NT and DS1R in the map's own (map/m30_00_00_00/...);
+    /// DS2 and DS2S every map's in model/map.
     /// </summary>
     public static (string Bhd, string Bdt) MapBinderPaths(string game, string mapId, string type)
     {
-        var folder = game is "DS2S" ? "model/map"
+        var folder = game is "DS2" or "DS2S" ? "model/map"
             : game is "DS3" or "SDT" or "BB" or "DB_NT" or "DS1R" ? $"map/{mapId}"
             : $"map/{mapId.Substring(0, 3)}/{mapId}";
 
@@ -68,7 +69,7 @@ public static class FirstPersonCollisionReader
     /// <item>DS1R: binder (BXF3) entry <c>l0000B0A10</c> (the model's number, then A and the area)</item>
     /// <item>DS1: loose <c>map/m10_00_00_00/l0000B0A10.hkx</c></item>
     /// <item>DES: loose <c>map/m01_00_00_00/l0000B0.hkx</c></item>
-    /// <item>DS2S: binder <c>model/map/l10_02_00_00.hkxbhd</c>, entry <c>l01_0200</c> (the model's name)</item>
+    /// <item>DS2 / DS2S: binder <c>model/map/l10_02_00_00.hkxbhd</c>, entry <c>l01_0200</c> (the model's name)</item>
     /// </list>
     /// </summary>
     public static (string Container, string Entry) MapCollisionSource(string game, string mapId, string model, string type)
@@ -83,6 +84,7 @@ public static class FirstPersonCollisionReader
                 return ($"map/{mapId}/{type}{number}A{mapId.Substring(1, 2)}.hkx", null);
             case "DS1R":
                 return (MapBinderPaths(game, mapId, type).Bhd, $"{type}{number}A{mapId.Substring(1, 2)}");
+            case "DS2":
             case "DS2S":
                 return (MapBinderPaths(game, mapId, type).Bhd, $"{type}{number}");
             default:
@@ -183,7 +185,6 @@ public static class FirstPersonCollisionReader
 
     /// <summary>
     /// A collision file's triangles in the space of its part, every submesh in one list. Null if it can't be read.
-    /// DS2's 32-bit collision is read by SoulsFormats' HKX, as Smithbox's viewport does.
     /// </summary>
     public static List<Vector3> TrianglesOf(byte[] bytes, Havok.HavokProfile profile, Havok.HavokCompendium compendium,
         string name, Action<string> onError = null)
@@ -191,9 +192,6 @@ public static class FirstPersonCollisionReader
         try
         {
             var data = DCX.Is(bytes) ? DCX.Decompress(bytes).ToArray() : bytes;
-
-            if (profile.Game == "DS2")
-                return SoulsTriangles(HKX.Read(data));
 
             var document = Havok.Files.HavokFile.Read(data, profile, compendium);
 
@@ -204,40 +202,6 @@ public static class FirstPersonCollisionReader
             onError?.Invoke($"{name}: {e.Message}");
             return null;
         }
-    }
-
-    /// <summary>
-    /// The triangles of a SoulsFormats HKX (DS2): its extended mesh storages, each a vertex list and index quads (the
-    /// fourth index unused), as HKX_Helper reads them for the viewport.
-    /// </summary>
-    private static List<Vector3> SoulsTriangles(HKX hkx)
-    {
-        var triangles = new List<Vector3>();
-
-        foreach (var obj in hkx.DataSection.Objects)
-        {
-            if (obj is not HKX.HKPStorageExtendedMeshShapeMeshSubpartStorage mesh)
-                continue;
-
-            var indices = mesh.Indices8?.Capacity > 0 ? mesh.Indices8.GetArrayData().Elements.Select(e => (uint)e.data).ToList()
-                : mesh.Indices16?.Capacity > 0 ? mesh.Indices16.GetArrayData().Elements.Select(e => (uint)e.data).ToList()
-                : mesh.Indices32.GetArrayData().Elements.Select(e => e.data).ToList();
-            var vertices = mesh.Vertices.GetArrayData().Elements;
-
-            for (var i = 0; i + 3 < indices.Count; i += 4)
-            {
-                if (indices[i] >= vertices.Count || indices[i + 1] >= vertices.Count || indices[i + 2] >= vertices.Count)
-                    continue;
-
-                foreach (var k in new[] { indices[i], indices[i + 1], indices[i + 2] })
-                {
-                    var v = vertices[(int)k].Vector;
-                    triangles.Add(new Vector3(v.X, v.Y, v.Z));
-                }
-            }
-        }
-
-        return triangles;
     }
 
     /// <summary>

@@ -1,0 +1,10 @@
+<class name="hclBufferDefinition" version="1" signature="0x09318ce9" size="56" parent="hkReferencedObject" source="exe">
+  <members>
+    <member name="name" offset="8" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="type" offset="12" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="subType" offset="16" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numVertices" offset="20" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numTriangles" offset="24" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bufferLayout" offset="28" ctype="hclBufferLayout" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

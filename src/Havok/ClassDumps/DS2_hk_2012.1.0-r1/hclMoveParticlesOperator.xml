@@ -1,0 +1,12 @@
+<class name="hclMoveParticlesOperator" version="0" signature="0x28cd4112" size="36" parent="hclOperator" source="exe">
+  <enums>
+    <enum name="ForceUpgrade610" flags="0">
+      <enumitem name="HCL_FORCE_UPGRADE610" value="0" />
+    </enum>
+  </enums>
+  <members>
+    <member name="vertexParticlePairs" offset="16" ctype="hclMoveParticlesOperatorVertexParticlePair" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="simClothIndex" offset="28" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="refBufferIdx" offset="32" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

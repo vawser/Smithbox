@@ -14,11 +14,8 @@ public class HavokCollisionResource : IResource, IDisposable
 {
     public CollisionSubmesh[] GPUMeshes;
 
-    /// <summary>The collision as the unified Havok library read it (every game but DS2).</summary>
+    /// <summary>The collision as the unified Havok library read it.</summary>
     public HavokDocument Document;
-
-    /// <summary>DS2's collision, which only SoulsFormats reads.</summary>
-    public HKX Hkx;
 
     public BoundingBox Bounds { get; set; }
 
@@ -61,9 +58,9 @@ public class HavokCollisionResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// Every game but DS2 is read by the unified Havok library, whatever the container: the file says which SDK it
-    /// is (DS1R's own collision is 2015 tagfiles). Map collision of the tagfile games refers to the compendium of
-    /// its binder for its types.
+    /// Every game is read by the unified Havok library, whatever the container: the file says which SDK it is (DS1R's
+    /// own collision is 2015 tagfiles, DS2's hk_2012 packfiles). Map collision of the tagfile games refers to the
+    /// compendium of its binder for its types.
     /// </summary>
     private bool Load(ProjectEntry curProject, Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
@@ -79,22 +76,6 @@ public class HavokCollisionResource : IResource, IDisposable
 
         DetermineColor(ctx);
         DetermineFrontFace(curProject);
-
-        // DS2 is hk_2012 32-bit, which only SoulsFormats reads
-        if (curProject.Descriptor.ProjectType is ProjectType.DS2)
-        {
-            try
-            {
-                Hkx = HKX.Read(bytes);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
-                return false;
-            }
-
-            return HKX_Helper.LoadCollisionMesh(this, al);
-        }
 
         // Sekiro's map collision is read with its binder's compendium when the map loads
         if (curProject.Descriptor.ProjectType is ProjectType.SDT)

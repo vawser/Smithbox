@@ -1,0 +1,15 @@
+<class name="hkxVertexBufferVertexData" version="0" signature="0x00000000" size="84">
+  <members>
+    <member name="vectorData" offset="0" vtype="TYPE_ARRAY" vsubtype="TYPE_VECTOR4" arrsize="0" flags="FLAGS_NONE" />
+    <member name="floatData" offset="12" vtype="TYPE_ARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uint32Data" offset="24" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uint16Data" offset="36" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uint8Data" offset="48" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numVerts" offset="60" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="vectorStride" offset="64" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="floatStride" offset="68" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uint32Stride" offset="72" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uint16Stride" offset="76" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uint8Stride" offset="80" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

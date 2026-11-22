@@ -1,0 +1,27 @@
+<class name="hclSimClothData" version="9" signature="0x55604fbc" size="304" parent="hkReferencedObject" source="exe">
+  <members>
+    <member name="simulationInfo" offset="16" ctype="hclSimClothDataOverridableSimulationInfo" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="48" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="particleDatas" offset="52" ctype="hclSimClothDataParticleData" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="triangleIndices" offset="64" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="triangleFlips" offset="76" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="totalMass" offset="88" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="collidableTransformMap" offset="92" ctype="hclSimClothDataCollidableTransformMap" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="perInstanceCollidables" offset="120" ctype="hclCollidable" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticConstraintSets" offset="132" ctype="hclConstraintSet" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="antiPinchConstraintSets" offset="144" ctype="hclConstraintSet" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="simClothPoses" offset="156" ctype="hclSimClothPose" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="actions" offset="168" ctype="hclAction" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticCollisionMasks" offset="180" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="perParticlePinchDetectionEnabledFlags" offset="192" vtype="TYPE_ARRAY" vsubtype="TYPE_BOOL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="collidablePinchingDatas" offset="204" ctype="hclSimClothDataCollidablePinchingData" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="minPinchedParticleIndex" offset="216" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxPinchedParticleIndex" offset="218" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxCollisionPairs" offset="220" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxParticleRadius" offset="224" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="landscapeCollisionData" offset="228" ctype="hclSimClothDataLandscapeCollisionData" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numLandscapeCollidableParticles" offset="248" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="doNormals" offset="252" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="transferMotionData" offset="256" ctype="hclSimClothDataTransferMotionData" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>
