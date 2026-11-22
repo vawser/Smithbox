@@ -52,7 +52,6 @@
 
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 - Add fault-tolerant CSV import (i.e. CSVs from older paramdef versions)
-- Modified coloring should apply to row ID column
 
 #----------------------------------------------------
 # Text Editor TODO
