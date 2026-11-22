@@ -49,10 +49,14 @@ public sealed class PortObjects
     public Dictionary<string, string> Assets { get; } = new(StringComparer.OrdinalIgnoreCase);
 
     /// <summary>Asset name -> what its row copies: the template row and the DS3 ObjectParam row.</summary>
-    private readonly Dictionary<string, (int Template, int Ds3Row)> Rows = new(StringComparer.OrdinalIgnoreCase);
+    private readonly Dictionary<string, (int Template, int Ds3Row, bool CopyDs3)> Rows = new(StringComparer.OrdinalIgnoreCase);
 
-    public PortObjects(PortGame input, PortGame output, PortManifest manifest, PortLog log, PortPieces pieces, HitMaterialConfig hitConfig)
+    /// <summary>Off: breakable objects come over as static ones (intact model and physics, the static row, no DS3 break fields).</summary>
+    private readonly bool Breakables;
+
+    public PortObjects(PortGame input, PortGame output, PortManifest manifest, PortLog log, PortPieces pieces, HitMaterialConfig hitConfig, bool breakables = true)
     {
+        Breakables = breakables;
         Input = input;
         Output = output;
         Manifest = manifest;
@@ -106,10 +110,11 @@ public sealed class PortObjects
             foreach (var tpf in bnd.Files.Where(f => f.Name.EndsWith(".tpf", StringComparison.OrdinalIgnoreCase)))
                 Pieces.AddTextures(TPF.Read(tpf.Bytes));
 
-            // Models: intact, and the broken state if it has one
+            // Models: intact, and the broken state if it has one (and breakables are ported)
             var files = new List<BinderFile>();
             var renderTriangles = new List<System.Numerics.Vector3>();
-            var broken = File("_1.flver");
+            var breakable = File("_1.flver") != null;
+            var broken = Breakables ? File("_1.flver") : null;
             foreach (var (src, suffix, id) in new[] { (intactFlver, "", 200), (broken, "_1", 201) })
             {
                 if (src == null) continue;
@@ -138,7 +143,7 @@ public sealed class PortObjects
             foreach (var (suffix, id) in new[] { ("", 300), ("_1", 301) })
             {
                 var src = File(suffix + ".hkx");
-                if (src == null) continue;
+                if (src == null || (suffix == "_1" && broken == null)) continue;
                 var built = Physics.Convert(PortPhysics.Bytes(src), Rename, suffix == "" ? asset : null, $"{model}{suffix} ({asset}{suffix})", Stats, suffix == "" ? renderTriangles : null);
                 if (built == null) continue;
                 var templateFile = Physics.BinderTemplate.Files.First(f => f.ID == id);
@@ -152,9 +157,10 @@ public sealed class PortObjects
                 Output.Write(GeomPath(asset).Replace(".geombnd.dcx", "_l.geomhkxbnd.dcx"), hkxBnd.Write());
             }
 
-            var kind = broken != null ? "breakable" : hkxFiles.Count > 0 ? "static collision" : "visual only";
+            var kind = broken != null ? "breakable" : breakable ? "breakable, ported static" : hkxFiles.Count > 0 ? "static collision" : "visual only";
             Stats.Note($"model ported: {kind}");
-            Rows[asset] = (broken != null ? BreakableTemplateRow : StaticTemplateRow, int.Parse(model[1..]));
+            // A breakable ported static takes the static row as it is: DS3's hp and break fields would make it breakable again
+            Rows[asset] = (broken != null ? BreakableTemplateRow : StaticTemplateRow, int.Parse(model[1..]), !(breakable && broken == null));
             Assets[group.Key] = asset;
         }
 
@@ -261,7 +267,7 @@ public sealed class PortObjects
         ds3Param.ApplyParamdef(PARAMDEF.XmlDeserialize(Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", "DS3", "Defs", "ObjectParam.xml")));
 
         int copied = 0, noDs3Row = 0;
-        foreach (var (asset, (templateId, ds3Id)) in Rows.OrderBy(r => r.Key))
+        foreach (var (asset, (templateId, ds3Id, copyDs3)) in Rows.OrderBy(r => r.Key))
         {
             var id = int.Parse(asset[3..6]) * 1000 + int.Parse(asset[7..10]);
             var template = param.Rows.FirstOrDefault(r => r.ID == templateId) ?? throw new InvalidOperationException($"ER asset param has no template row {templateId}");
@@ -270,7 +276,7 @@ public sealed class PortObjects
             var row = new Param.Row(template) { ID = id, Name = $"DS3 o{ds3Id:000000}" };
             var ds3Row = ds3Param.Rows.FirstOrDefault(r => r.ID == ds3Id);
             if (ds3Row == null) noDs3Row++;
-            else
+            else if (copyDs3)
                 foreach (var field in CopiedFields)
                 {
                     if (ds3Row[field] is not { } src || row[field] is not { } dst) continue;

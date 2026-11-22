@@ -36,6 +36,8 @@ public class PortTool
     private bool ClearTarget;
     private bool Collision = true;
     private bool Objects = true;
+    private bool Breakables = true;
+    private bool LightShell;
 
     private MapPort Port;
     private Task PortTask;
@@ -209,6 +211,14 @@ public class PortTool
         GUI.Tooltip(LOC.Get("PORT_Collision_TT"));
         ImGui.Checkbox($"{LOC.Get("PORT_Objects")}##portObjects", ref Objects);
         GUI.Tooltip(LOC.Get("PORT_Objects_TT"));
+        ImGui.BeginDisabled(!Objects);
+        ImGui.Indent();
+        ImGui.Checkbox($"{LOC.Get("PORT_Breakables")}##portBreakables", ref Breakables);
+        GUI.Tooltip(LOC.Get("PORT_Breakables_TT"));
+        ImGui.Unindent();
+        ImGui.EndDisabled();
+        ImGui.Checkbox($"{LOC.Get("PORT_LightShell")}##portLightShell", ref LightShell);
+        GUI.Tooltip(LOC.Get("PORT_LightShell_TT"));
 
         ImGui.EndDisabled();
         ImGui.Separator();
@@ -302,7 +312,9 @@ public class PortTool
             Offset = Offset,
             ClearTarget = ClearTarget,
             Collision = Collision,
-            Objects = Objects
+            Objects = Objects,
+            Breakables = Breakables,
+            LightShell = LightShell
         };
 
         Port = new MapPort();

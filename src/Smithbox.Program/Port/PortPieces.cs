@@ -238,7 +238,8 @@ public sealed class PortPieces
 
             var src = mesh.VertexBuffers.SelectMany(vb => flver.BufferLayouts[vb.LayoutIndex]).ToList();
             var dst = layouts[li];
-            foreach (var v in mesh.Vertices) Remap(v, src, dst, obj != null ? -1 : donor.NormalW);
+            var blend = Regex.IsMatch(ported[mesh.MaterialIndex].Ds3Mtd ?? "", @"_[234]m(_|$)", RegexOptions.IgnoreCase);
+            foreach (var v in mesh.Vertices) Remap(v, src, dst, obj != null ? -1 : donor.NormalW, blend);
 
             var floatUv = src.FirstOrDefault(m => m.Semantic == FLVER.LayoutSemantic.UV)?.Type is FLVER.LayoutType.Float2 or FLVER.LayoutType.Float3 or FLVER.LayoutType.Float4;
             var realUvs = dst.Where(m => m.Semantic == FLVER.LayoutSemantic.UV)
@@ -341,25 +342,33 @@ public sealed class PortPieces
         var islands = all.GroupBy(Find).Select(g => g.ToList()).ToList();
 
         fix.Shift = new Vector2[count];
+        int nanRepaired = 0;
         foreach (var island in islands)
             foreach (var k in channels)
             {
                 // Garbage vertices: far from the island's median, refilled from their good neighbours
-                var med = new Vector2(Median(island.Select(i => mesh.Vertices[i].UVs[k].X)), Median(island.Select(i => mesh.Vertices[i].UVs[k].Y)));
+                // NaN UVs (m38 001538: whole triangles of them) are garbage whatever their share of the island; the
+                // median is taken over the finite ones (0 when there are none)
+                static bool IsNaN(Vector3 u) => float.IsNaN(u.X) || float.IsNaN(u.Y);
+                var finite = island.Where(i => !IsNaN(mesh.Vertices[i].UVs[k])).ToList();
+                var med = finite.Count == 0 ? Vector2.Zero
+                    : new Vector2(Median(finite.Select(i => mesh.Vertices[i].UVs[k].X)), Median(finite.Select(i => mesh.Vertices[i].UVs[k].Y)));
                 bool Garbage(int i)
                 {
+                    if (IsNaN(mesh.Vertices[i].UVs[k])) return true;
                     var d = Vector3.Abs(mesh.Vertices[i].UVs[k] - new Vector3(med, 0));
                     return d.X > GarbageUvDistance || d.Y > GarbageUvDistance;
                 }
                 var garbage = island.Where(Garbage).ToHashSet();
-                if (garbage.Count > 0 && garbage.Count * 2 < island.Count)
+                if (garbage.Count > 0 && (garbage.Count * 2 < island.Count || garbage.All(i => IsNaN(mesh.Vertices[i].UVs[k]))))
                     foreach (var i in garbage)
                     {
                         var good = (neighbours[i] ?? new()).Where(n => !garbage.Contains(n)).Select(n => mesh.Vertices[n].UVs[k]).ToList();
                         var old = mesh.Vertices[i].UVs[k];
                         mesh.Vertices[i].UVs[k] = good.Count > 0 ? good.Aggregate(Vector3.Zero, (s, u) => s + u) / good.Count : new Vector3(med, old.Z);
                         fix.Repaired.Add(i);
-                        Log.Warn($"{label}: vertex {i} UV{k} ({old.X:0.#}, {old.Y:0.#}) is far outside its island (median {med.X:0.##}, {med.Y:0.##}); set from its neighbours");
+                        if (IsNaN(old)) nanRepaired++;
+                        else Log.Warn($"{label}: vertex {i} UV{k} ({old.X:0.#}, {old.Y:0.#}) is far outside its island (median {med.X:0.##}, {med.Y:0.##}); set from its neighbours");
                     }
 
                 if (Fits(island, k)) continue;
@@ -388,6 +397,8 @@ public sealed class PortPieces
                     Log.Line($"  {label}: a UV island of {island.Count} vertices spans {max.X - min.X:0.#} x {max.Y - min.Y:0.#} UVs; clamped to Short2");
                 }
             }
+        if (nanRepaired > 0)
+            Log.Warn($"{label}: {nanRepaired} NaN UVs (in the DS3 data) set from their neighbours");
         return fix;
     }
 
@@ -651,7 +662,7 @@ public sealed class PortPieces
     /// order, float ones divided by 2048 (so UV0 keeps its first pair and the DS3 lightmap pair drops). Colours: the same
     /// index (DS3 MultiBlend's COLOR0.a sets the blend edge sharpness), else white. Tangents: in order, else the first.
     /// </summary>
-    private void Remap(FLVER.Vertex v, List<FLVER.LayoutMember> src, FLVER2.BufferLayout dst, int normalW)
+    private void Remap(FLVER.Vertex v, List<FLVER.LayoutMember> src, FLVER2.BufferLayout dst, int normalW, bool blend = false)
     {
         static bool ByteNorm(FLVER.LayoutType t) => t == FLVER.LayoutType.UByte4Norm;
         static bool IsFloat(FLVER.LayoutType t) => t is FLVER.LayoutType.Float2 or FLVER.LayoutType.Float3 or FLVER.LayoutType.Float4;
@@ -689,7 +700,10 @@ public sealed class PortPieces
                 }
             else if (m.Semantic == FLVER.LayoutSemantic.VertexColor)
             {
-                if (colors.TryGetValue(m.Index, out var c)) cols.Add(c);
+                // A DS3 blend writes its edge sharpness into all four channels of COLOR0 and reads only the alpha; ER's
+                // blends read COLOR0.rgb as a tint (398 of 410 m10/m11 blend meshes are near white), so the grey would
+                // darken the albedo (m38 001538's walkway: 0.09-0.39). The RGB goes white, the alpha is kept.
+                if (colors.TryGetValue(m.Index, out var c)) cols.Add(blend && m.Index == 0 ? new FLVER.VertexColor(c.A, 1f, 1f, 1f) : c);
                 else cols.Add(new FLVER.VertexColor(1f, 1f, 1f, 1f));
             }
             else if (m.Semantic == FLVER.LayoutSemantic.Tangent)
@@ -700,6 +714,11 @@ public sealed class PortPieces
         }
 
         var srcNormal = src.First(m => m.Semantic == FLVER.LayoutSemantic.Normal).Type;
+        if (srcNormal == FLVER.LayoutType.Half4)
+        {
+            v.Normal = HalfNormal(v.Normal);
+            v.NormalW = HalfNormalW(v.NormalW);
+        }
         // A negative normalW keeps the vertex's own (an object's bone index)
         if (normalW >= 0 && srcNormal != FLVER.LayoutType.UByte4 && srcNormal != FLVER.LayoutType.UByte4Norm && srcNormal != FLVER.LayoutType.Byte4)
             v.NormalW = normalW;
@@ -708,6 +727,21 @@ public sealed class PortPieces
         v.Colors = cols;
         v.Tangents = tans;
     }
+
+    /// <summary>
+    /// A DS3 Half4 normal as DS3 means it. SoulsFormats reads Half4 normals as unsigned-short-normalised ((u - 32767) /
+    /// 32767), but DS3's MultiBlend vertex shader declares NORMAL as float and uses it as it is (`dp3 o1.x, v2.xyzx`, the
+    /// W `ftou` as the bone index): the 16-bit values are half floats. Read the SoulsFormats way, a blend floor's normals
+    /// had a length of 0.9-1.4 and pointed anywhere, so ER lit DS3's blended floors and walls dark (2026-11-22, m38
+    /// m001538 and m001043). Recovered here from the read value: decoded as halves they are unit length and face their
+    /// triangles as the UByte4 normals do (Ds3ErPortSurvey darkpiece).
+    /// </summary>
+    public static Vector3 HalfNormal(Vector3 read) => new(Half(read.X), Half(read.Y), Half(read.Z));
+
+    public static int HalfNormalW(int read) => (int)MathF.Round((float)BitConverter.UInt16BitsToHalf((ushort)(short)read));
+
+    private static float Half(float readUShortNorm) =>
+        (float)BitConverter.UInt16BitsToHalf((ushort)Math.Clamp(MathF.Round(readUShortNorm * 32767f + 32767f), 0, 65535));
 
     /// <summary>The ported FLVER against the DS3 one: counts, faces, positions exact, normals, UV0.</summary>
     public void CheckPiece(string stem, FLVER2 ds3, FLVER2 er, List<UvFix> uvFixes)
@@ -720,13 +754,16 @@ public sealed class PortPieces
         for (int i = 0; i < Math.Min(er.Meshes.Count, ds3.Meshes.Count); i++)
         {
             var a = ds3.Meshes[i];
+            var halfNormals = a.VertexBuffers.SelectMany(vb => ds3.BufferLayouts[vb.LayoutIndex])
+                .Any(m => m.Semantic == FLVER.LayoutSemantic.Normal && m.Type == FLVER.LayoutType.Half4);
             var b = er.Meshes[i];
             Log.Check(a.Vertices.Count == b.Vertices.Count, $"{stem} mesh {i}: vertex count");
             Log.Check(a.FaceSets.Count == b.FaceSets.Count && a.FaceSets.Zip(b.FaceSets).All(x => x.First.Indices.SequenceEqual(x.Second.Indices)), $"{stem} mesh {i}: face sets");
             for (int k = 0; k < Math.Min(a.Vertices.Count, b.Vertices.Count); k++)
             {
                 positions &= a.Vertices[k].Position == b.Vertices[k].Position;
-                maxNormal = Math.Max(maxNormal, (a.Vertices[k].Normal - b.Vertices[k].Normal).Length());
+                var expectedNormal = halfNormals ? HalfNormal(a.Vertices[k].Normal) : a.Vertices[k].Normal;
+                maxNormal = Math.Max(maxNormal, (expectedNormal - b.Vertices[k].Normal).Length());
                 var fix = uvFixes[i];
                 if (fix.Repaired.Contains(k) || a.Vertices[k].UVs.Count == 0 || b.Vertices[k].UVs.Count == 0) continue;
                 var expected = new Vector2(a.Vertices[k].UVs[0].X, a.Vertices[k].UVs[0].Y) / (fix.FloatUv ? UvFloatScale : 1) + (fix.Shift?[k] ?? Vector2.Zero);

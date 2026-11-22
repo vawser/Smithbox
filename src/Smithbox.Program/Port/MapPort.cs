@@ -24,6 +24,10 @@ public sealed class PortRequest
     public bool Collision = true;
     /// <summary>Static and breakable objects as ER assets (§4.6).</summary>
     public bool Objects = true;
+    /// <summary>Breakable objects keep their broken state and break; off, they come over as static objects.</summary>
+    public bool Breakables = true;
+    /// <summary>Enclose the ported map in a shadow-only box that keeps the sun out, as ER's catacombs do (§4.9).</summary>
+    public bool LightShell;
 }
 
 /// <summary>
@@ -104,7 +108,7 @@ public sealed class MapPort
             : new();
         Log.Line($"Input  {Request.Input.ProjectName}: {Request.Input.ProjectPath} over {Request.Input.DataPath}");
         Log.Line($"Output {Request.Output.ProjectName}: {Request.Output.ProjectPath} over {Request.Output.DataPath}");
-        Log.Line($"{ds3Map} -> {target}, offset {Request.Offset}, clear {Request.ClearTarget}, collision {Request.Collision}, objects {Request.Objects}");
+        Log.Line($"{ds3Map} -> {target}, offset {Request.Offset}, clear {Request.ClearTarget}, collision {Request.Collision}, objects {Request.Objects}, breakables {Request.Breakables}");
         Log.Line($"Materials.json: {Config.Generated}; {Config.Rules.Count} rules, {Config.Shaders.Count} shaders");
 
         var ds3Msb = MSB3.Read(Input.Read($"/map/mapstudio/{ds3Map}.msb.dcx"));
@@ -173,7 +177,7 @@ public sealed class MapPort
         if (Request.Objects)
         {
             Step("Objects", 0.42f);
-            var objects = new PortObjects(Input, Output, Manifest, Log, pieces, HitConfig);
+            var objects = new PortObjects(Input, Output, Manifest, Log, pieces, HitConfig, Request.Breakables);
             objects.Run(ds3Msb, cancel, p => { Progress = 0.42f + 0.08f * p; Stage = $"Objects ({p:P0})"; });
             assets = objects.Assets;
         }
@@ -530,7 +534,11 @@ public sealed class MapPort
                 + (outliers.Count > 0 ? $"; left out {outliers.Count} models over {MaxBoundsReach:0} m wide: {string.Join(", ", outliers.Take(10))}" : ""));
             boundsModels.ExceptWith(outliers);
             AddEnvMapBox(msb, vanilla, target, boundsMin, boundsMax);
+            if (Request.LightShell)
+                AddLightShell(msb, vanilla, target, boundsMin, boundsMax, PartName);
         }
+        else if (Request.LightShell)
+            Log.Warn("No ported parts to size the light-blocking shell by; none added");
 
         var path = $"/map/mapstudio/{target}.msb.dcx";
         Output.Write(path, msb.Write());
@@ -647,6 +655,102 @@ public sealed class MapPort
 
         Log.Line($"EnvMap box {name}: GI volume {templateId} of {template.Name} ({((MSB.Shape.Box)template.Shape).Width:0}x{((MSB.Shape.Box)template.Shape).Height:0}x{((MSB.Shape.Box)template.Shape).Depth:0}), " +
             $"over {size.X:0} x {size.Y:0} x {size.Z:0} m at {box.Position}");
+    }
+
+    /// <summary>The ER catacomb whose shell the light-blocking box copies (map piece m000000, part m000000_1000).</summary>
+    private const string ShellTemplateMap = "m30_00_00_00";
+
+    /// <summary>
+    /// A light-blocking shell around the ported map, as ER's catacombs have one (Smithbox Port Plan.md §4.9): their
+    /// map piece m000000 is a black (m39_12_001, c80_SYSTEX_BLACK), double-sided hull round the dungeon, placed as a
+    /// shadow-only part (IsShadowOnly, PartsDrawParamID 2044), so it isn't drawn but keeps the sun out. Here: a closed
+    /// box over the port's bounds, built on that piece's FLVER (material, GX list, layout) and placed with a copy of its
+    /// part (groups cleared). The model number is kept per target by the manifest, so a re-run replaces it.
+    /// </summary>
+    private void AddLightShell(MSBE msb, MSBE vanilla, string target, Vector3 min, Vector3 max, Func<string, string> partName)
+    {
+        var templateBinderPath = $"/map/{ShellTemplateMap[..3]}/{ShellTemplateMap}/{ShellTemplateMap}_000000.mapbnd.dcx";
+        var templateBytes = Output.ReadVanilla(templateBinderPath);
+        var templateMsbBytes = Output.ReadVanilla($"/map/mapstudio/{ShellTemplateMap}.msb.dcx");
+        if (templateBytes == null || templateMsbBytes == null) { Log.Warn($"{templateBinderPath} or its MSB not found in the ER game; no light-blocking shell"); return; }
+        var templateMsb = MSBE.Read(templateMsbBytes);
+        var templatePart = templateMsb.Parts.MapPieces.FirstOrDefault(p => p.ModelName == "m000000");
+        var templateModel = templateMsb.Models.MapPieces.FirstOrDefault(m => m.Name == "m000000");
+        if (templatePart == null || templateModel == null) { Log.Warn($"{ShellTemplateMap} has no m000000 part; no light-blocking shell"); return; }
+
+        // The model number: the manifest's for this target, else the next free one from 900000
+        var key = $"{target}|mlightshell".ToLowerInvariant();
+        var folder = Output.MapFolder(target);
+        if (!Manifest.Models.TryGetValue(key, out var number))
+        {
+            var taken = Manifest.Models.Where(m => m.Key.StartsWith(target + "|", StringComparison.OrdinalIgnoreCase)).Select(m => m.Value).ToHashSet();
+            var n = 900000;
+            while (taken.Contains($"{n:000000}") || Output.Exists($"{folder}{target}_{n:000000}.mapbnd.dcx")) n++;
+            Manifest.Models[key] = number = $"{n:000000}";
+        }
+        var stem = $"{target}_{number}";
+
+        // The FLVER: the template's, its one mesh rebuilt as a box (24 vertices, 12 triangles, both sides drawn)
+        var bnd = BND4.Read(templateBytes);
+        var file = bnd.Files.First(f => f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase));
+        var flver = FLVER2.Read(file.Bytes);
+        var mesh = flver.Meshes[0];
+        flver.Meshes = [mesh];
+        var proto = mesh.Vertices[0];
+        mesh.Vertices = new List<FLVER.Vertex>();
+        var indices = new List<int>();
+        var corners = Enumerable.Range(0, 8).Select(c => new Vector3((c & 1) == 0 ? min.X : max.X, (c & 2) == 0 ? min.Y : max.Y, (c & 4) == 0 ? min.Z : max.Z)).ToArray();
+        int[][] faces = [[0, 2, 6, 4], [1, 5, 7, 3], [0, 4, 5, 1], [2, 3, 7, 6], [0, 1, 3, 2], [4, 6, 7, 5]];
+        Vector3[] inward = [Vector3.UnitX, -Vector3.UnitX, Vector3.UnitY, -Vector3.UnitY, Vector3.UnitZ, -Vector3.UnitZ];
+        for (int f = 0; f < 6; f++)
+        {
+            var first = mesh.Vertices.Count;
+            foreach (var c in faces[f])
+                mesh.Vertices.Add(new FLVER.Vertex(proto) { Position = corners[c], Normal = inward[f] });
+            indices.AddRange([first, first + 1, first + 2, first, first + 2, first + 3]);
+        }
+        var faceSet = mesh.FaceSets[0];
+        faceSet.Flags = FLVER2.FaceSet.FSFlags.None;
+        faceSet.TriangleStrip = false;
+        faceSet.CullBackfaces = false;
+        faceSet.Indices = indices;
+        mesh.FaceSets = [faceSet];
+        mesh.BoundingBox = new FLVER2.Mesh.BoundingBoxes { Unk = (min + max) / 2, Min = (max - min) / 2, Max = Vector3.Zero };
+        flver.Header.BoundingBoxMin = min;
+        flver.Header.BoundingBoxMax = max;
+        foreach (var node in flver.Nodes)
+        {
+            node.Name = node.Name.Replace($"{ShellTemplateMap}_000000", stem, StringComparison.OrdinalIgnoreCase).Replace("m000000", $"m{number}", StringComparison.OrdinalIgnoreCase);
+            node.BoundingBoxMin = min;
+            node.BoundingBoxMax = max;
+        }
+        file.Name = file.Name.Replace($"{ShellTemplateMap}_000000", stem, StringComparison.OrdinalIgnoreCase).Replace(ShellTemplateMap, target, StringComparison.OrdinalIgnoreCase);
+        file.Bytes = flver.Write();
+        bnd.Files = [file];
+        var path = $"{folder}{stem}.mapbnd.dcx";
+        Output.Write(path, bnd.Write());
+
+        // The model and the part: copies of the catacomb's, the part at the origin (the box is in world space)
+        var model = (MSBE.Model.MapPiece)templateModel.DeepCopy();
+        model.Name = $"m{number}";
+        model.SibPath = Regex.Replace(templateModel.SibPath ?? "", @"m\d{6}", model.Name).Replace(ShellTemplateMap, target, StringComparison.OrdinalIgnoreCase);
+        msb.Models.MapPieces.Add(model);
+        var part = (MSBE.Part.MapPiece)templatePart.DeepCopy();
+        part.Name = partName(model.Name);
+        part.ModelName = model.Name;
+        part.SibPath = (templatePart.SibPath ?? "").Replace(ShellTemplateMap, target, StringComparison.OrdinalIgnoreCase);
+        part.EntityID = 0;
+        part.Position = Vector3.Zero;
+        part.Rotation = Vector3.Zero;
+        part.Scale = Vector3.One;
+        ClearGroups(part);
+        msb.Parts.MapPieces.Add(part);
+        var size = max - min;
+        Log.Line($"Light-blocking shell {part.Name}: a shadow-only box of {size.X:0} x {size.Y:0} x {size.Z:0} m (from {ShellTemplateMap}'s m000000: PartsDrawParamID {part.PartsDrawParamID}, IsShadowOnly {part.IsShadowOnly})");
+
+        // Read back: one double-sided mesh of 12 triangles
+        var back = FLVER2.Read(BND4.Read(Output.Read(path)).Files[0].Bytes);
+        Log.Check(back.Meshes.Count == 1 && back.Meshes[0].FaceSets[0].Indices.Count == 36 && !back.Meshes[0].FaceSets[0].CullBackfaces, "Light-blocking shell: one double-sided box mesh");
     }
 
     /// <summary>
