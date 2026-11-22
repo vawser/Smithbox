@@ -62,26 +62,6 @@ public partial class CollisionEditorTool
 
         if (!result.Failed && result.Wrote)
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Save_Note"));
-
-        // After a commit (shown in the header), the walls that no longer follow the edited edges
-        if (tab == null && result.Source == CollisionEditorSource.Edit && StaleFallWalls is { Count: > 0 } stale)
-        {
-            for (var i = 0; i < stale.Count; i++)
-            {
-                var (part, model, layer) = stale[i];
-
-                // Deleted, or its map unloaded, since the commit
-                if (part.Container is not MapContainer map || !map.Objects.Contains(part))
-                    continue;
-
-                GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("MAP_CollisionEditor_HandOff_Stale_Walls", model));
-
-                GUI.MultiButtonInput($"collisionEditorStaleWalls{i}",
-                    $"collisionEditorStaleWallsButton{i}", LOC.Get("MAP_CollisionEditor_HandOff_Regenerate", model),
-                    LOC.Get("MAP_CollisionEditor_HandOff_Regenerate_TT"),
-                    () => HandOffToFall(part, layer));
-            }
-        }
     }
 
     /// <summary>The viewport's collision filter, as the Filters menu sets it. Returns whether collision is drawn.</summary>

@@ -36,8 +36,8 @@ public enum CollisionCreateShape
 /// <summary>
 /// The Create tab of the Collision Editor: makes a new collision for the active map in one go. Its mesh is a basic
 /// shape (as the Havok Editor's generator makes) or the FLVERs of the selected map pieces and assets, combined where
-/// they are placed. It goes into new files in the map's h and l
-/// binders, and a collision part placing it is added to the map.
+/// they are placed. It goes into new files in the map's binders of the chosen types (high, low, and fall protection,
+/// whose file holds walls along the mesh's outer edges), and a collision part placing it is added to the map.
 /// </summary>
 public class CollisionEditorCreate
 {
@@ -55,6 +55,9 @@ public class CollisionEditorCreate
     private readonly CollisionGeneratorTool.SemiCircleParameters SemiCircleInputs = new();
 
     private readonly CollisionMaterialPicker MaterialPicker;
+
+    // The walls of the fall protection (f) collision, when it is one of the types made
+    private readonly CollisionEditorFallProtection FallProtection;
 
     // The model number typed, and the map it was suggested for, so a new map gets a new suggestion
     private string ModelNumber = "";
@@ -123,8 +126,115 @@ public class CollisionEditorCreate
         Project = project;
         Tool = tool;
         MaterialPicker = new CollisionMaterialPicker(project);
+        FallProtection = new CollisionEditorFallProtection(view, project, tool);
         UserDefined = new CollisionEditorUserDefined(view, tool);
     }
+
+    #region Collision Types
+
+    /// <summary>Whether the map has a binder of a type (h, l or f) for its files, and the game supports making it.</summary>
+    private bool CanMakeType(MapContainer map, string type)
+    {
+        if (type == "f" && !FallProtection.IsSupported)
+            return false;
+
+        return View.HavokCollisionBank.HasCollisionBinder(map.Name, type);
+    }
+
+    private static ref bool TypeOption(string type)
+    {
+        switch (type)
+        {
+            case "h": return ref CFG.Current.MapEditor_CollisionEditor_Create_High;
+            case "l": return ref CFG.Current.MapEditor_CollisionEditor_Create_Low;
+            default: return ref CFG.Current.MapEditor_CollisionEditor_Create_Fall;
+        }
+    }
+
+    /// <summary>The types (h, l, f) chosen that the map can have, in that order.</summary>
+    private List<string> GetChosenTypes(MapContainer map)
+    {
+        return new[] { "h", "l", "f" }.Where(t => TypeOption(t) && CanMakeType(map, t)).ToList();
+    }
+
+    /// <summary>The chosen mesh types (h, l): fall protection's file holds walls built from the mesh, not the mesh.</summary>
+    private List<string> GetChosenMeshTypes(MapContainer map)
+    {
+        return GetChosenTypes(map).Where(t => t != "f").ToList();
+    }
+
+    private bool MakesFall(MapContainer map) => GetChosenTypes(map).Contains("f");
+
+    private static HavokCollisionType ToCollisionType(string type) => type switch
+    {
+        "l" => HavokCollisionType.Low,
+        "f" => HavokCollisionType.FallProtection,
+        _ => HavokCollisionType.High
+    };
+
+    /// <summary>
+    /// A checkbox per collision type, unavailable where the map has no binder for it (or the game has no fall
+    /// protection Smithbox can build), then the wall options while fall protection is chosen.
+    /// </summary>
+    private void DisplayTypes(MapContainer map)
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Types_Header"), LOC.Get("MAP_CollisionEditor_Create_Types_Header_TT"));
+
+        foreach (var type in new[] { "h", "l", "f" })
+        {
+            var usable = CanMakeType(map, type);
+            var label = LOC.Get(ToCollisionType(type).GetDisplayName());
+
+            ImGui.BeginDisabled(!usable);
+
+            var chosen = usable && TypeOption(type);
+
+            if (ImGui.Checkbox($"{label}##collisionCreateType{type}", ref chosen))
+                TypeOption(type) = chosen;
+
+            ImGui.EndDisabled();
+
+            if (!usable)
+            {
+                GUI.Tooltip(type == "f" && !FallProtection.IsSupported
+                    ? LOC.Get("MAP_CollisionEditor_Fall_Unsupported_Game")
+                    : LOC.Get("MAP_CollisionEditor_Create_Type_No_Binder", map.Name, label));
+            }
+            else
+            {
+                GUI.Tooltip(LOC.Get($"MAP_CollisionEditor_Create_Type_{type}_TT"));
+            }
+
+            ImGui.SameLine();
+        }
+
+        ImGui.NewLine();
+
+        var chosenTypes = GetChosenTypes(map);
+
+        if (chosenTypes.Count == 0)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Types_None"));
+        }
+        else if (!chosenTypes.Contains("h"))
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Types_No_High"));
+        }
+
+        if (!chosenTypes.Contains("f"))
+            return;
+
+        // Fall Protection
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Fall_Header"), LOC.Get("MAP_CollisionEditor_Create_Fall_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Fall);
+
+        if (CFG.Current.MapEditor_CollisionEditor_Show_Create_Fall)
+            FallProtection.DisplayOptions();
+    }
+
+    #endregion
 
     /// <summary>
     /// Places the User-Defined points while that shape is shown. Called each frame by the tool. Returns true while the
@@ -165,6 +275,9 @@ public class CollisionEditorCreate
         }
 
         UpdateFlverSource(map);
+
+        // Collision Types
+        DisplayTypes(map);
 
         // Shape
         GUI.Spacer();
@@ -301,7 +414,7 @@ public class CollisionEditorCreate
             GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Actions_Header"), LOC.Get("MAP_CollisionEditor_Create_Actions_Header_TT"));
         }
 
-        var canCreate = modelProblem == null && GeometryValid;
+        var canCreate = modelProblem == null && GeometryValid && GetChosenTypes(map).Count > 0;
 
         // A used number overwrites that collision's mesh, once confirmed
         if (modelUsed)
@@ -327,8 +440,8 @@ public class CollisionEditorCreate
     }
 
     /// <summary>
-    /// After a Create or Overwrite: buttons to select the collision part placing it, and to go on to its fall
-    /// protection. Gone once its part is (undone or deleted), or another action's result is shown.
+    /// After a Create or Overwrite: a button to select the collision part placing it. Gone once its part is (undone
+    /// or deleted), or another action's result is shown.
     /// </summary>
     private void DisplayHandOff(MapContainer map)
     {
@@ -346,23 +459,9 @@ public class CollisionEditorCreate
         if (part == null)
             return;
 
-        var select = LOC.Get("MAP_CollisionEditor_HandOff_Select", part.Name);
-
-        if (Tool.FallSupported)
-        {
-            GUI.MultiButtonInput("collisionCreateHandOff",
-                "collisionCreateHandOffSelect", select, LOC.Get("MAP_CollisionEditor_HandOff_Select_TT"),
-                () => Tool.SelectAndFrame(part),
-
-                "collisionCreateHandOffFall", LOC.Get("MAP_CollisionEditor_HandOff_Fall"), LOC.Get("MAP_CollisionEditor_HandOff_Fall_TT"),
-                () => Tool.HandOffToFall(part, HavokCollisionType.High));
-        }
-        else
-        {
-            GUI.MultiButtonInput("collisionCreateHandOff",
-                "collisionCreateHandOffSelect", select, LOC.Get("MAP_CollisionEditor_HandOff_Select_TT"),
-                () => Tool.SelectAndFrame(part));
-        }
+        GUI.MultiButtonInput("collisionCreateHandOff",
+            "collisionCreateHandOffSelect", LOC.Get("MAP_CollisionEditor_HandOff_Select", part.Name), LOC.Get("MAP_CollisionEditor_HandOff_Select_TT"),
+            () => Tool.SelectAndFrame(part));
     }
 
     private void DisplayParameters(MapContainer map)
@@ -1134,8 +1233,9 @@ public class CollisionEditorCreate
     #region Create
 
     /// <summary>
-    /// Makes the new collision: its files in the map's h and l binders, written into the project, then a collision part
-    /// placing it, added as an action so it can be undone.
+    /// Makes the new collision: its files in the map's binders of the chosen types, written into the project, then a
+    /// collision part placing it, added as an action so it can be undone. The high and low files hold the mesh; the fall
+    /// protection file holds walls along the mesh's outer edges, as the part places it in the world.
     /// </summary>
     private void Create(MapContainer map)
     {
@@ -1157,8 +1257,38 @@ public class CollisionEditorCreate
             return;
         }
 
-        // h always, l if the map has a low binder
-        var types = new[] { "h", "l" }.Where(t => bank.HasCollisionBinder(mapId, t)).ToList();
+        var types = GetChosenMeshTypes(map);
+        var makesFall = MakesFall(map);
+
+        if (types.Count == 0 && !makesFall)
+            return;
+
+        var (part, parent) = PreparePart(map, template, number);
+
+        // The walls are built before anything changes, as the part will place them, so a fall protection only
+        // collision with no walls makes nothing
+        CollisionEditorFallShapes.WallResult walls = null;
+
+        if (makesFall)
+        {
+            try
+            {
+                walls = FallProtection.BuildWalls(vertices, indices, GetWorldMatrix(part, parent), Naming.ModelName(number));
+            }
+            catch (Exception e)
+            {
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create,
+                    LOC.Get("MAP_CollisionEditor_Fall_Build_Failed", CollisionEditorFallProtection.GetFileName("f", mapId, number)), e);
+                return;
+            }
+
+            if (walls.Bodies.Count == 0 && types.Count == 0)
+            {
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Fall_No_Walls"));
+                return;
+            }
+        }
+
         var created = new List<(string Type, string FileName)>();
 
         foreach (var type in types)
@@ -1200,17 +1330,55 @@ public class CollisionEditorCreate
             return;
         }
 
-        AddPart(map, template, number);
+        // Written before the part is added, so the part's load finds it with the others
+        string fallProblem = null;
+        string fallFile = null;
+
+        if (walls is { Bodies.Count: > 0 })
+        {
+            fallProblem = FallProtection.WriteWalls(map, number, walls, out fallFile, out _);
+
+            if (fallProblem != null && created.Count == 0)
+            {
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, fallProblem);
+                return;
+            }
+        }
+
+        AddPart(map, part, parent);
 
         // The Edit tab finds the new files by their names, which were listed after it last looked
         Tool.OnCollisionCreated();
 
-        Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, LOC.Get("MAP_CollisionEditor_Created", string.Join(", ", created.Select(c => c.FileName)),
-            indices.Count / 3));
+        // The mesh files, then the walls (named with their file), or only the walls
+        var fallText = GetFallResultText(walls, fallFile, fallProblem);
+        var text = created.Count > 0
+            ? LOC.Get("MAP_CollisionEditor_Created", string.Join(", ", created.Select(c => c.FileName)), indices.Count / 3) + fallText
+            : fallText.Trim();
+
+        if (fallProblem != null)
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Create, text);
+        else
+            Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, text);
 
         HandOffModel = (mapId, Naming.ModelName(number));
 
         ModelNumberMap = null;
+    }
+
+    /// <summary>What happened to the fall protection, after the result of the mesh files; empty when it wasn't made.</summary>
+    private static string GetFallResultText(CollisionEditorFallShapes.WallResult walls, string fallFile, string fallProblem)
+    {
+        if (walls == null)
+            return "";
+
+        if (fallProblem != null)
+            return " " + LOC.Get("MAP_CollisionEditor_Create_Fall_Failed", fallProblem);
+
+        if (walls.Bodies.Count == 0)
+            return " " + LOC.Get("MAP_CollisionEditor_Create_Fall_None");
+
+        return " " + LOC.Get("MAP_CollisionEditor_Create_Fall_Generated", fallFile, walls.TriangleCount / 2, walls.Bodies.Count);
     }
 
     #endregion
@@ -1228,8 +1396,9 @@ public class CollisionEditorCreate
     }
 
     /// <summary>
-    /// The files of a model number in the map's h and l binders, which of them exist (their meshes are replaced) and
-    /// which don't (they are made, as Create makes them), and the collision parts already placing the model.
+    /// The files of a model number in the map's binders of the chosen types, which of them exist (their meshes, or
+    /// walls, are replaced) and which don't (they are made, as Create makes them), and the collision parts already
+    /// placing the model.
     /// </summary>
     private OverwritePlan BuildOverwritePlan(MapContainer map, string number)
     {
@@ -1238,7 +1407,7 @@ public class CollisionEditorCreate
         var files = new List<OverwriteFile>();
         string problem = null;
 
-        foreach (var type in new[] { "h", "l" }.Where(t => bank.HasCollisionBinder(mapId, t)))
+        foreach (var type in GetChosenTypes(map))
         {
             var fileName = GetFileName(type, mapId, number);
             var exists = bank.HasMapCollision(mapId, fileName);
@@ -1251,6 +1420,11 @@ public class CollisionEditorCreate
             if (Tool.HasPendingEdits(fileName))
             {
                 problem = LOC.Get("MAP_CollisionEditor_Create_Overwrite_Pending_Edits", fileName);
+            }
+            else if (type == "f")
+            {
+                if (FallProtection.GetBodies(bank.GetEditableDocument(fileName)) == null)
+                    problem = LOC.Get("MAP_CollisionEditor_Fall_Unsupported_File", fileName);
             }
             else if (bank.GetEditableDocument(fileName) is not { } document || CollisionEditorShapes.GetTemplateBody(document) == null)
             {
@@ -1301,9 +1475,11 @@ public class CollisionEditorCreate
 
         foreach (var file in plan.Files)
         {
-            GUI.WrappedText(LOC.Get(file.Exists
-                ? "MAP_CollisionEditor_Create_Overwrite_File_Replaced"
-                : "MAP_CollisionEditor_Create_Overwrite_File_Created", file.FileName));
+            var key = !file.Exists ? "MAP_CollisionEditor_Create_Overwrite_File_Created"
+                : file.Type == "f" ? "MAP_CollisionEditor_Create_Overwrite_Fall_Replaced"
+                : "MAP_CollisionEditor_Create_Overwrite_File_Replaced";
+
+            GUI.WrappedText(LOC.Get(key, file.FileName));
         }
 
         GUI.WrappedText(plan.PartCount > 0
@@ -1364,25 +1540,54 @@ public class CollisionEditorCreate
         var bank = View.HavokCollisionBank;
 
         // The part is only needed when nothing places the model yet
-        MsbEntity template = null;
+        (MsbEntity Part, Entity Parent)? newPart = null;
 
         if (plan.PartCount == 0)
         {
-            template = map.Objects.OfType<MsbEntity>().FirstOrDefault(EntityHelper.IsPartCollision);
+            var template = map.Objects.OfType<MsbEntity>().FirstOrDefault(EntityHelper.IsPartCollision);
 
             if (template == null)
             {
                 Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_No_Template_Part", mapId));
                 return;
             }
+
+            newPart = PreparePart(map, template, number);
         }
 
-        // Everything is built before anything changes, so a failure leaves the map as it was
+        var meshFiles = plan.Files.Where(f => f.Type != "f").ToList();
+        var fallPlan = plan.Files.FirstOrDefault(f => f.Type == "f");
+
+        // Everything is built before anything changes, so a failure leaves the map as it was. The walls follow the
+        // mesh where the first part placing the model has it
+        CollisionEditorFallShapes.WallResult walls = null;
+
+        if (fallPlan != null)
+        {
+            var world = keptPart != null ? keptPart.GetWorldMatrix() : GetWorldMatrix(newPart.Value.Part, newPart.Value.Parent);
+
+            try
+            {
+                walls = FallProtection.BuildWalls(vertices, indices, world, Naming.ModelName(number));
+            }
+            catch (Exception e)
+            {
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Fall_Build_Failed", fallPlan.FileName), e);
+                return;
+            }
+
+            if (walls.Bodies.Count == 0 && meshFiles.Count == 0)
+            {
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Fall_No_Walls"));
+                return;
+            }
+        }
+
         var swaps = new List<CollisionEditorAction.ShapeSwap>();
         var remaps = new List<CollisionEditorAction.WallRemap>();
         var newFiles = new List<(OverwriteFile File, Havok.HavokDocument Document)>();
 
-        foreach (var file in plan.Files)
+        foreach (var file in meshFiles)
         {
             if (file.Exists)
             {
@@ -1475,7 +1680,7 @@ public class CollisionEditorCreate
 
         var success = true;
 
-        foreach (var type in plan.Files.Select(f => f.Type).Distinct())
+        foreach (var type in meshFiles.Select(f => f.Type).Distinct())
             success &= bank.SaveMapCollision(mapId, type);
 
         if (remaps.Count > 0)
@@ -1487,11 +1692,37 @@ public class CollisionEditorCreate
             return;
         }
 
-        if (template != null)
-            AddPart(map, template, number);
+        // The walls replace any the model had
+        string fallProblem = null;
+        string fallFile = null;
 
-        Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, LOC.Get("MAP_CollisionEditor_Overwritten", string.Join(", ", plan.Files.Select(f => f.FileName)),
-            indices.Count / 3));
+        if (walls is { Bodies.Count: > 0 })
+        {
+            fallProblem = FallProtection.WriteWalls(map, number, walls, out fallFile, out var fallCreated);
+
+            if (fallProblem != null && meshFiles.Count == 0)
+            {
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, fallProblem);
+                return;
+            }
+
+            // A new file has no loaded mesh yet for the parts already placing the model
+            if (fallProblem == null && fallCreated && keptPart != null)
+                FallProtection.LoadCollision(map, Naming.ModelName(number), fallFile);
+        }
+
+        if (newPart is { } added)
+            AddPart(map, added.Part, added.Parent);
+
+        var fallText = GetFallResultText(walls, fallFile, fallProblem);
+        var text = meshFiles.Count > 0
+            ? LOC.Get("MAP_CollisionEditor_Overwritten", string.Join(", ", meshFiles.Select(f => f.FileName)), indices.Count / 3) + fallText
+            : fallText.Trim();
+
+        if (fallProblem != null)
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Create, text);
+        else
+            Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, text);
 
         HandOffModel = (mapId, Naming.ModelName(number));
 
@@ -1503,10 +1734,11 @@ public class CollisionEditorCreate
     #region Part
 
     /// <summary>
-    /// Adds a collision part for the new model, cloned from one of the map's collision parts, at the placement orb
-    /// for a basic shape, or where the anchor (the first source part, in map order) is for FLVERs.
+    /// A collision part for the new model, cloned from one of the map's collision parts, at the placement orb for a
+    /// basic shape, or where the anchor (the first source part, in map order) is for FLVERs, with the parent it goes
+    /// under. Not added yet (see AddPart), so the walls can be built where it will be first.
     /// </summary>
-    private void AddPart(MapContainer map, MsbEntity template, string number)
+    private (MsbEntity Part, Entity Parent) PreparePart(MapContainer map, MsbEntity template, string number)
     {
         var modelName = Naming.ModelName(number);
         var part = (MsbEntity)template.Clone();
@@ -1557,6 +1789,31 @@ public class CollisionEditorCreate
 
         SetProperty(wrapped, "Name", partName);
         SetProperty(wrapped, "InstanceID", instance);
+
+        return (part, parent);
+    }
+
+    /// <summary>
+    /// Where a part not yet added will be in the world, under its parent: as Entity.GetWorldMatrix walks the parent
+    /// chain.
+    /// </summary>
+    private static Matrix4x4 GetWorldMatrix(MsbEntity part, Entity parent)
+    {
+        var world = part.GetLocalTransform().WorldMatrix;
+
+        for (var p = parent; p != null; p = p.Parent)
+        {
+            if (p.HasTransform)
+                world *= p.GetLocalTransform().WorldMatrix;
+        }
+
+        return world;
+    }
+
+    /// <summary>Adds a prepared part, loading its model's collision files first.</summary>
+    private void AddPart(MapContainer map, MsbEntity part, Entity parent)
+    {
+        var modelName = part.GetPropertyValue("ModelName") as string;
 
         // Loaded from the binder by name first, so the part's own load joins this one instead of reading the binder's
         // every collision again

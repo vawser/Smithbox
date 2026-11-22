@@ -535,9 +535,32 @@ public static class CollisionEditorFallShapes
     /// </summary>
     public static hkcdSimdTree BuildTree(List<Vector3> vertices, List<int> indices)
     {
+        var tree = new hkcdSimdTree { m_isCompact = true };
+
+        foreach (var layout in BuildTreeLayout(GetTriangleBoxes(vertices, indices)))
+        {
+            var node = EmptyNode(layout.Leaf);
+
+            for (var lane = 0; lane < 4; lane++)
+            {
+                if (layout.Lanes[lane] is not { } box)
+                    continue;
+
+                node.m_data[lane] = layout.Data[lane];
+                SetLane(node, lane, box);
+            }
+
+            tree.m_nodes.Add(node);
+        }
+
+        return tree;
+    }
+
+    /// <summary>The box of each triangle (corners in threes by the indices).</summary>
+    public static (Vector3 Min, Vector3 Max)[] GetTriangleBoxes(List<Vector3> vertices, List<int> indices)
+    {
         var triangleCount = indices.Count / 3;
         var boxes = new (Vector3 Min, Vector3 Max)[triangleCount];
-        var centers = new Vector3[triangleCount];
 
         for (var t = 0; t < triangleCount; t++)
         {
@@ -546,48 +569,69 @@ public static class CollisionEditorFallShapes
             var c = vertices[indices[t * 3 + 2]];
 
             boxes[t] = (Vector3.Min(a, Vector3.Min(b, c)), Vector3.Max(a, Vector3.Max(b, c)));
-            centers[t] = (boxes[t].Min + boxes[t].Max) * 0.5f;
         }
 
-        var tree = new hkcdSimdTree { m_isCompact = true };
-        tree.m_nodes.Add(EmptyNode(leaf: false));
+        return boxes;
+    }
 
-        var pending = new Queue<(int Node, List<int> Triangles, bool Leaf)>();
-        tree.m_nodes.Add(null);
-        pending.Enqueue((1, Enumerable.Range(0, triangleCount).ToList(), false));
+    /// <summary>
+    /// A node of a compact simd tree, whichever Havok version it is written in: whether it is a leaf, the four lanes'
+    /// data (child node or item indices; 0 or 0xFFFFFFFF for none) and the boxes of the lanes used.
+    /// </summary>
+    public sealed record TreeNode(bool Leaf, uint[] Data, (Vector3 Min, Vector3 Max)?[] Lanes);
+
+    /// <summary>
+    /// The nodes of a compact four-wide tree over items with these boxes, laid out as the game's (see BuildTree):
+    /// node 0 an empty inner sentinel, node 1 the root (never a leaf), the rest breadth first. Leaf lanes hold item
+    /// indices.
+    /// </summary>
+    public static List<TreeNode> BuildTreeLayout((Vector3 Min, Vector3 Max)[] boxes)
+    {
+        var centers = boxes.Select(b => (b.Min + b.Max) * 0.5f).ToArray();
+
+        static TreeNode Empty(bool leaf)
+        {
+            var data = new uint[4];
+            Array.Fill(data, leaf ? 0xFFFFFFFFu : 0u);
+            return new TreeNode(leaf, data, new (Vector3, Vector3)?[4]);
+        }
+
+        var nodes = new List<TreeNode> { Empty(leaf: false), null };
+        var pending = new Queue<(int Node, List<int> Items, bool Leaf)>();
+        pending.Enqueue((1, Enumerable.Range(0, boxes.Length).ToList(), false));
 
         while (pending.Count > 0)
         {
-            var (index, triangles, leaf) = pending.Dequeue();
-            var node = EmptyNode(leaf);
+            var (index, items, leaf) = pending.Dequeue();
+            var node = Empty(leaf);
 
             if (leaf)
             {
-                for (var lane = 0; lane < triangles.Count; lane++)
+                for (var lane = 0; lane < items.Count; lane++)
                 {
-                    node.m_data[lane] = (uint)triangles[lane];
-                    SetLane(node, lane, boxes[triangles[lane]]);
+                    node.Data[lane] = (uint)items[lane];
+                    node.Lanes[lane] = boxes[items[lane]];
                 }
             }
             else
             {
-                var groups = Split(triangles, centers);
+                var groups = Split(items, centers);
 
                 for (var lane = 0; lane < groups.Count; lane++)
                 {
-                    var child = tree.m_nodes.Count;
-                    tree.m_nodes.Add(null);
+                    var child = nodes.Count;
+                    nodes.Add(null);
 
-                    node.m_data[lane] = (uint)child;
-                    SetLane(node, lane, Union(groups[lane], boxes));
+                    node.Data[lane] = (uint)child;
+                    node.Lanes[lane] = Union(groups[lane], boxes);
                     pending.Enqueue((child, groups[lane], groups[lane].Count <= 4));
                 }
             }
 
-            tree.m_nodes[index] = node;
+            nodes[index] = node;
         }
 
-        return tree;
+        return nodes;
     }
 
     /// <summary>

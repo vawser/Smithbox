@@ -476,9 +476,15 @@ public class CFG
     public float MapEditor_CollisionEditor_Flver_Simplify_Target = 25f;
     public float MapEditor_CollisionEditor_Flver_Simplify_Max_Error = 0.25f;
     public bool MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders = true;
-    public bool MapEditor_CollisionEditor_Show_Create_Preview = true;    public HavokCollisionType MapEditor_CollisionEditor_Fall_Source = HavokCollisionType.High;
+    public bool MapEditor_CollisionEditor_Show_Create_Preview = true;
+    public bool MapEditor_CollisionEditor_Create_High = true;
+    public bool MapEditor_CollisionEditor_Create_Low = true;
+    public bool MapEditor_CollisionEditor_Create_Fall = false;
+    public bool MapEditor_CollisionEditor_Show_Create_Fall = true;
+    public HavokCollisionType MapEditor_CollisionEditor_Fall_Source = HavokCollisionType.High;
     public FallProtectionDirection MapEditor_CollisionEditor_Fall_Direction = FallProtectionDirection.All;
     public float MapEditor_CollisionEditor_Fall_Height = 1.8f;
+    public float MapEditor_CollisionEditor_Fall_Height_AC6 = 10f;
     public int MapEditor_CollisionEditor_Fall_Filter = 1;
     public bool MapEditor_CollisionEditor_Fall_Keep_Existing = false;
     public bool MapEditor_CollisionEditor_Fall_Show_Preview = true;

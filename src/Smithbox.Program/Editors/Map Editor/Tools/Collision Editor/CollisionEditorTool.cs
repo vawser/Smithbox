@@ -25,7 +25,6 @@ public enum CollisionEditorSource
 {
     Edit,
     Create,
-    Fall,
     Cleanup
 }
 
@@ -85,7 +84,6 @@ public partial class CollisionEditorTool
     private record MoveSet(CollisionEditorFile File, CollisionEditorBody Body, List<(int Vertex, float Weight)> Falloff);
 
     private readonly CollisionEditorCreate Create;
-    private readonly CollisionEditorFallProtection FallProtection;
     private readonly CollisionEditorCleanup Cleanup;
 
     /// <summary>
@@ -104,7 +102,6 @@ public partial class CollisionEditorTool
     {
         Smithbox.Log(owner, text);
         LastResult = new ToolResult(source, text, false, wrote, DateTime.Now);
-        StaleFallWalls = null;
     }
 
     /// <summary>Logs an action that failed (with its exception, if any), and shows it as the last result.</summary>
@@ -112,7 +109,6 @@ public partial class CollisionEditorTool
     {
         Smithbox.LogError(owner, text, exception);
         LastResult = new ToolResult(source, text, true, false, DateTime.Now);
-        StaleFallWalls = null;
     }
 
     /// <summary>Whether the result shown is from this tab, and whether it failed.</summary>
@@ -121,18 +117,11 @@ public partial class CollisionEditorTool
         return LastResult is { } result && result.Source == source && result.Failed == failed;
     }
 
-    /// <summary>
-    /// After a commit: the parts whose h or l edges moved and whose model has fall protection walls, which still
-    /// follow the old edges, with the layer that was edited. Offered for regenerating under the commit's result.
-    /// </summary>
-    private List<(MsbEntity Part, string Model, HavokCollisionType Layer)> StaleFallWalls;
-
     public CollisionEditorTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
         Create = new CollisionEditorCreate(view, project, this);
-        FallProtection = new CollisionEditorFallProtection(view, project, this);
         Cleanup = new CollisionEditorCleanup(view, project, this);
     }
 
@@ -210,28 +199,21 @@ public partial class CollisionEditorTool
 
         if (ImGui.BeginTabBar("collisionEditorTabs"))
         {
-            if (BeginTab(CollisionEditorSource.Edit, "MAP_CollisionEditor_Tab_Edit", "collisionEditorTabEdit"))
+            if (BeginTab("MAP_CollisionEditor_Tab_Edit", "collisionEditorTabEdit"))
             {
                 OpenTab = CollisionEditorSource.Edit;
                 DisplayEditTab();
                 ImGui.EndTabItem();
             }
 
-            if (BeginTab(CollisionEditorSource.Create, "MAP_CollisionEditor_Tab_Create", "collisionEditorTabCreate"))
+            if (BeginTab("MAP_CollisionEditor_Tab_Create", "collisionEditorTabCreate"))
             {
                 OpenTab = CollisionEditorSource.Create;
                 Create.Display();
                 ImGui.EndTabItem();
             }
 
-            if (BeginTab(CollisionEditorSource.Fall, "MAP_CollisionEditor_Tab_Fall", "collisionEditorTabFall"))
-            {
-                OpenTab = CollisionEditorSource.Fall;
-                FallProtection.Display();
-                ImGui.EndTabItem();
-            }
-
-            if (BeginTab(CollisionEditorSource.Cleanup, "MAP_CollisionEditor_Tab_Cleanup", "collisionEditorTabCleanup"))
+            if (BeginTab("MAP_CollisionEditor_Tab_Cleanup", "collisionEditorTabCleanup"))
             {
                 OpenTab = CollisionEditorSource.Cleanup;
                 Cleanup.Display();
@@ -247,24 +229,10 @@ public partial class CollisionEditorTool
         ImGui.EndChild();
     }
 
-    // A tab to switch to, e.g. Fall Protection after a hand-off; selected the next time its tab item is drawn
-    private CollisionEditorSource? PendingTab;
-
-    private bool BeginTab(CollisionEditorSource tab, string key, string id)
+    private static bool BeginTab(string key, string id)
     {
-        var flags = ImGuiTabItemFlags.None;
-
-        if (PendingTab == tab)
-        {
-            flags = ImGuiTabItemFlags.SetSelected;
-            PendingTab = null;
-        }
-
-        return ImGui.BeginTabItem($"{LOC.Get(key)}##{id}", flags);
+        return ImGui.BeginTabItem($"{LOC.Get(key)}##{id}");
     }
-
-    /// <summary>Whether the Fall Protection tab can generate walls for this game.</summary>
-    public bool FallSupported => FallProtection.IsSupported;
 
     /// <summary>Makes a part the only selection and frames it in the viewport.</summary>
     public void SelectAndFrame(MsbEntity part)
@@ -272,19 +240,6 @@ public partial class CollisionEditorTool
         View.ViewportSelection.ClearSelection();
         View.ViewportSelection.AddSelection(part);
         View.FrameAction.ApplyViewportFrame();
-    }
-
-    /// <summary>
-    /// Selects a collision part, frames it and switches to Fall Protection with the given source layer, so its walls
-    /// can be generated (Generate stays the user's click).
-    /// </summary>
-    public void HandOffToFall(MsbEntity part, HavokCollisionType source)
-    {
-        if (source is HavokCollisionType.High or HavokCollisionType.Low)
-            CFG.Current.MapEditor_CollisionEditor_Fall_Source = source;
-
-        SelectAndFrame(part);
-        PendingTab = CollisionEditorSource.Fall;
     }
 
     /// <summary>
@@ -644,7 +599,6 @@ public partial class CollisionEditorTool
 
         UpdatePreviews(scene);
         UpdateRetiringPreviews();
-        FallProtection.UpdatePreview(scene);
 
         // While editing, the picking button brushes, so it doesn't select what is under the brush as well
         return Active || placing;
@@ -1265,45 +1219,6 @@ public partial class CollisionEditorTool
             ReportSuccess(GetType(), CollisionEditorSource.Edit, true, LOC.Get("MAP_CollisionEditor_Committed", names));
         else
             ReportFailure(GetType(), CollisionEditorSource.Edit, LOC.Get("MAP_CollisionEditor_Commit_Save_Failed", names));
-
-        // Set after the report, which clears it
-        StaleFallWalls = GetStaleFallWalls(edited);
-    }
-
-    /// <summary>
-    /// The parts of committed h and l files whose model has an f file, as its walls were built along the old edges.
-    /// One per model (h and l of a model are the same part). Empty where fall protection isn't generated.
-    /// </summary>
-    private List<(MsbEntity Part, string Model, HavokCollisionType Layer)> GetStaleFallWalls(List<CollisionEditorFile> committed)
-    {
-        var stale = new List<(MsbEntity Part, string Model, HavokCollisionType Layer)>();
-
-        if (!FallProtection.IsSupported)
-            return stale;
-
-        foreach (var file in committed)
-        {
-            if (file.Type is not (HavokCollisionType.High or HavokCollisionType.Low))
-                continue;
-
-            var match = System.Text.RegularExpressions.Regex.Match(file.FileName, @"_(\d{6})\.hkx", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-
-            if (!match.Success)
-                continue;
-
-            var number = match.Groups[1].Value;
-            var model = $"h{number}";
-
-            if (stale.Any(s => s.Model == model && s.Part.MapID == file.MapId))
-                continue;
-
-            var fallFile = $"f{file.MapId.Substring(1)}_{number}.hkx.dcx";
-
-            if (View.HavokCollisionBank.HasMapCollision(file.MapId, fallFile))
-                stale.Add((file.Entity, model, file.Type));
-        }
-
-        return stale;
     }
 
     /// <summary>
@@ -1489,7 +1404,7 @@ public partial class CollisionEditorTool
     public int CurrentFrame => Frame;
 
     /// <summary>
-    /// After a file's bodies were replaced (the Fall Protection tab, or its undo or redo): the decoded file is out of
+    /// After a file's bodies were replaced (the Create tab's fall protection walls, or their undo or redo): the decoded file is out of
     /// date, so it is dropped, the loaded mesh is rebuilt from the document, and the parts drawing it get new meshes,
     /// as each body is a submesh of its own and their number can change.
     /// </summary>

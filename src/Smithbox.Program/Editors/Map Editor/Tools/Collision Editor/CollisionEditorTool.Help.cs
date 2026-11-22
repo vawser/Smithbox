@@ -27,7 +27,6 @@ public partial class CollisionEditorTool
         var (name, description) = tab switch
         {
             CollisionEditorSource.Create => ("MAP_CollisionEditor_Tab_Create", "MAP_CollisionEditor_Create_Description"),
-            CollisionEditorSource.Fall => ("MAP_CollisionEditor_Tab_Fall", "MAP_CollisionEditor_Fall_Description"),
             CollisionEditorSource.Cleanup => ("MAP_CollisionEditor_Tab_Cleanup", "MAP_CollisionEditor_Cleanup_Description"),
             _ => ("MAP_CollisionEditor_Tab_Edit", "MAP_CollisionEditor_Description"),
         };
