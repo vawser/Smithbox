@@ -1,0 +1,148 @@
+{
+  "P[ACParts]_ColorMaterial": {
+    "Albedo": "7",
+    "Normal": "0",
+    "Mask": "14",
+    "Base": "A0",
+    "BaseNormal": "A1",
+    "Scale": 4.5,
+    "Unpainted": "snp_0_color_1",
+    "Paint": [ "snp_0_color_11", "snp_0_color_12", "snp_0_color_13", "snp_0_color_14", "snp_0_color_15", "snp_0_color_10" ],
+    "BaseMetallic": [ "snp_0_float2_1:1", "snp_0_float2_2:1", "snp_0_float2_3:1", "snp_0_float2_4:1", "snp_0_float2_5:1" ],
+    "BaseGloss": [ "snp_0_float2_1:0", "snp_0_float2_2:0", "snp_0_float2_3:0", "snp_0_float2_4:0", "snp_0_float2_5:0" ],
+    "NormalStrength": "snp_0_float_4",
+    "GlossFromNormal": "snp_0_float_27",
+    "WearCurveScale": "1",
+    "WearCurvePower": "1",
+    "Layers": [
+      {
+        "Albedo": "1", "Normal": "6", "Color": "snp_0_color_0", "Metallic": "snp_0_float2_7:1", "Gloss": "snp_0_float2_7:0",
+        "Weight": { "Kind": "Wear", "Factor": "1", "Shape": "ScaleThenPow", "Scale": "snp_0_float_50", "Power": "snp_0_float_49", "Post": "MaskLerp" }
+      },
+      {
+        "Albedo": "2", "Normal": "8", "Color": "snp_0_color_2", "Metallic": "snp_0_float2_8:1", "Gloss": "snp_0_float2_8:0",
+        "Weight": { "Kind": "Dirt", "Factor": "1", "Shape": "ScaleThenPow", "Scale": "snp_0_float_46", "Power": "snp_0_float_47" }
+      },
+      {
+        "Albedo": "4", "Normal": "9", "Color": "snp_0_color_3", "Metallic": "snp_0_float2_9:1", "Gloss": "snp_0_float2_9:0"
+      }
+    ],
+    "Defaults": {
+      "snp_0_float_4": 1, "snp_0_float_27": 1, "snp_0_float_46": 0, "snp_0_float_47": 20, "snp_0_float_49": 60, "snp_0_float_50": 0,
+      "snp_0_float2_7:0": 0.5, "snp_0_float2_7:1": 1, "snp_0_float2_8:0": 0.35, "snp_0_float2_8:1": 1
+    }
+  },
+  "P[ACParts]_ColorMaterial_Repair": {
+    "Albedo": "7",
+    "Normal": "0",
+    "Mask": "14",
+    "Base": "11",
+    "BaseNormal": "5",
+    "Scale": 4.5,
+    "Unpainted": "snp_0_color_1",
+    "Paint": [ "snp_0_color_11", "snp_0_color_12", "snp_0_color_13", "snp_0_color_14", "snp_0_color_15", "snp_0_color_10" ],
+    "Glow": [ "snp_0_color_24", "snp_0_color_25", "snp_0_color_26", "snp_0_color_27", "snp_0_color_28", "snp_0_color_29" ],
+    "BaseMetallic": [ "snp_0_float2_1:1", "snp_0_float2_2:1", "snp_0_float2_3:1", "snp_0_float2_4:1", "snp_0_float2_5:1" ],
+    "BaseGloss": [ "snp_0_float2_1:0", "snp_0_float2_2:0", "snp_0_float2_3:0", "snp_0_float2_4:0", "snp_0_float2_5:0" ],
+    "NormalStrength": "snp_0_float_4",
+    "GlossFromNormal": "snp_0_float_27",
+    "WearCurveScale": "1",
+    "WearCurvePower": "1",
+    "Layers": [
+      {
+        "Albedo": "1", "Normal": "6", "Color": "snp_0_color_0", "Metallic": "snp_0_float2_7:1", "Gloss": "snp_0_float2_7:0",
+        "Weight": { "Kind": "Wear", "Factor": "1", "Shape": "ScaleThenPow", "Scale": "snp_0_float_50", "Power": "snp_0_float_49", "Post": "MaskLerp" }
+      },
+      {
+        "Albedo": "2", "Normal": "8", "Color": "snp_0_color_2", "Metallic": "snp_0_float2_8:1", "Gloss": "snp_0_float2_8:0",
+        "Weight": { "Kind": "Dirt", "Factor": "1", "Shape": "ScaleThenPow", "Scale": "snp_0_float_46", "Power": "snp_0_float_47" }
+      },
+      {
+        "Albedo": "4", "Normal": "9", "Color": "snp_0_color_3", "Metallic": "snp_0_float2_9:1", "Gloss": "snp_0_float2_9:0"
+      }
+    ],
+    "Defaults": {
+      "snp_0_float_4": 1, "snp_0_float_27": 1, "snp_0_float_46": 0, "snp_0_float_47": 20, "snp_0_float_49": 60, "snp_0_float_50": 0,
+      "snp_0_float2_7:0": 0.5, "snp_0_float2_7:1": 1, "snp_0_float2_8:0": 0.35, "snp_0_float2_8:1": 1
+    }
+  },
+  "P[ACParts]_ColorMaterial_Repair_Damage": {
+    "Albedo": "7",
+    "Normal": "0",
+    "Mask": "14",
+    "Base": "19",
+    "BaseNormal": "20",
+    "Scale": 4.5,
+    "Unpainted": "snp_0_color_1",
+    "Paint": [ "snp_0_color_11", "snp_0_color_12", "snp_0_color_13", "snp_0_color_14", "snp_0_color_15", "snp_0_color_10" ],
+    "Glow": [ "snp_0_color_30", "snp_0_color_29", "snp_0_color_28", "snp_0_color_27", "snp_0_color_26", "snp_0_color_25" ],
+    "BaseMetallic": [ "snp_0_float2_1:1", "snp_0_float2_2:1", "snp_0_float2_3:1", "snp_0_float2_4:1", "snp_0_float2_5:1" ],
+    "BaseGloss": [ "snp_0_float2_1:0", "snp_0_float2_2:0", "snp_0_float2_3:0", "snp_0_float2_4:0", "snp_0_float2_5:0" ],
+    "NormalStrength": "snp_0_float_4",
+    "GlossFromNormal": "snp_0_float_27",
+    "WearCurveScale": "snp_0_float_69",
+    "WearCurvePower": "4.5",
+    "Layers": [
+      {
+        "Albedo": "1", "Normal": "6", "Color": "snp_0_color_0", "Metallic": "snp_0_float2_7:1", "Gloss": "snp_0_float2_7:0",
+        "Weight": { "Kind": "Wear", "Factor": "snp_0_float_6", "Shape": "ScaleThenPow", "Scale": "snp_0_float_50", "Power": "snp_0_float_49", "Post": "MaskLerp" }
+      },
+      {
+        "Albedo": "2", "Normal": "8", "Color": "snp_0_color_2", "Metallic": "snp_0_float2_8:1", "Gloss": "snp_0_float2_8:0",
+        "Weight": { "Kind": "Dirt", "Factor": "snp_0_float_8", "Shape": "ScaleThenPow", "Scale": "snp_0_float_46", "Power": "snp_0_float_47" }
+      },
+      {
+        "Albedo": "4", "Normal": "9", "Color": "snp_0_color_3", "Metallic": "snp_0_float2_9:1", "Gloss": "snp_0_float2_9:0",
+        "Weight": { "Kind": "AlbedoAlpha", "Factor": "snp_0_float_19", "Shape": "ScaleThenPow", "Scale": "1", "Power": "snp_0_float_12" }
+      },
+      {
+        "Albedo": "1", "Normal": "11", "Color": "snp_0_color_0", "Metallic": "snp_0_float2_12:1", "Gloss": "snp_0_float2_12:0",
+        "Weight": { "Kind": "Repair", "Factor": "snp_0_float_66", "Exponent": "snp_0_float_52", "Shape": "ScaleThenPow", "Scale": "snp_0_float_29", "Power": "snp_0_float_43", "Post": "MaskScale" }
+      }
+    ],
+    "Defaults": {
+      "snp_0_float_4": 1, "snp_0_float_6": 1, "snp_0_float_8": 1, "snp_0_float_12": 0.5, "snp_0_float_19": 0, "snp_0_float_27": 1,
+      "snp_0_float_29": 0, "snp_0_float_43": 60, "snp_0_float_46": 0, "snp_0_float_47": 20, "snp_0_float_49": 60, "snp_0_float_50": 0,
+      "snp_0_float_52": 0.1, "snp_0_float_66": 1, "snp_0_float_69": 1,
+      "snp_0_float2_7:0": 0.5, "snp_0_float2_7:1": 1, "snp_0_float2_8:0": 0.35, "snp_0_float2_8:1": 1
+    }
+  },
+  "C[Enemy]_ColorMaterial": {
+    "Albedo": "7",
+    "Normal": "0",
+    "Mask": "14",
+    "Base": "A0",
+    "BaseNormal": "A1",
+    "Scale": 4.55,
+    "Unpainted": "snp_0_color_1",
+    "Paint": [ "snp_0_color_20", "snp_0_color_19", "snp_0_color_18", "snp_0_color_17", "snp_0_color_16", "snp_0_color_21" ],
+    "PaintPermutations": [ 3, 4, 5 ],
+    "BaseMetallic": [ "snp_0_float2_1:1", "snp_0_float2_5:1", "snp_0_float2_4:1", "snp_0_float2_3:1", "snp_0_float2_2:1" ],
+    "BaseGloss": [ "snp_0_float2_1:0", "snp_0_float2_5:0", "snp_0_float2_4:0", "snp_0_float2_3:0", "snp_0_float2_2:0" ],
+    "NormalStrength": "snp_0_float_4",
+    "GlossFromNormal": "snp_0_float_25",
+    "Layers": [
+      {
+        "Albedo": "1", "Normal": "6", "Color": "snp_0_color_0", "Metallic": "snp_0_float_13", "Gloss": "snp_0_float_0",
+        "Weight": { "Kind": "NormalBlue", "Factor": "snp_0_float_19", "Shape": "ScaleThenPow", "Scale": "1", "Power": "snp_0_float_12", "Post": "Invert" }
+      },
+      {
+        "Albedo": "2", "Normal": "8", "Color": "snp_0_color_2", "Metallic": "snp_0_float_14", "Gloss": "snp_0_float_6",
+        "Weight": { "Kind": "NormalAlpha", "Factor": "1", "Shape": "ScaleThenPow", "Scale": "1", "Power": "snp_0_float_20" }
+      },
+      {
+        "Albedo": "4", "Normal": "9", "Color": "snp_0_color_3", "Metallic": "snp_0_float_39", "Gloss": "snp_0_float_2",
+        "Weight": { "Kind": "AlbedoAlpha", "Factor": "snp_0_float_7", "Shape": "ScaleThenPow", "Scale": "1", "Power": "snp_0_float_17" },
+        "Permutations": [ 1, 2, 4, 5 ]
+      },
+      {
+        "Albedo": "19", "Normal": "20", "Color": "snp_0_color_4", "Metallic": "snp_0_float_43", "Gloss": "snp_0_float_44",
+        "Weight": { "Kind": "NormalBlueInverse", "Factor": "snp_0_float_46", "Shape": "ScaleThenPow", "Scale": "1", "Power": "snp_0_float_41" }
+      }
+    ],
+    "Defaults": {
+      "snp_0_float_4": 1, "snp_0_float_7": 1, "snp_0_float_12": 8.13, "snp_0_float_13": 1, "snp_0_float_14": 1, "snp_0_float_17": 0.5,
+      "snp_0_float_19": 3.83, "snp_0_float_20": 0.1, "snp_0_float_25": 1, "snp_0_float_41": 10, "snp_0_float_46": 0
+    }
+  }
+}

@@ -220,6 +220,16 @@ public class MaterialData : IDisposable
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialSlotRecipe) ?? new();
             }
 
+            // How the paint shaders build their surface (AC6's ColorMaterial family)
+            var paintPath = Path.Join(folder, $"{game}_Paint.json");
+            if (File.Exists(paintPath))
+            {
+                string text = await File.ReadAllTextAsync(paintPath);
+
+                table.Paint = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialPaintRecipe) ?? new();
+            }
+
             var furMasksPath = Path.Join(folder, $"{game}_FurMasks.json");
             if (File.Exists(furMasksPath))
             {

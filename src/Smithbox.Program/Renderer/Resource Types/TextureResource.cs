@@ -25,6 +25,13 @@ public class TextureResource : IResource, IDisposable
     public TexturePool.TextureHandle GPUTexture { get; private set; }
 
     /// <summary>
+    ///     A PC DDS with a legacy DXT1 header (no DX10 header), which TexturePool reads as sRGB unless the TPF says it is
+    ///     linear (format 108). Known when the texture loads, before its deferred upload sets the GPU format. AC6's paint
+    ///     masks are these, and hold linear codes (MaterialPaint.FlagMaskSrgb)
+    /// </summary>
+    public bool LegacySrgbBc1 { get; private set; }
+
+    /// <summary>
     ///     Whether <see cref="TexturePool.TextureHandle.TpfTexture" />, and with it the texture's file data, is kept
     ///     once the texture is on the GPU. True for textures made on their own (the Texture Viewer's, previews), which
     ///     are read back. Textures loaded into a pool drop it, as a map holds thousands of them, which would otherwise
@@ -136,6 +143,15 @@ public class TextureResource : IResource, IDisposable
 
         if (Texture.Platform == TPF.TPFPlatform.PC || Texture.Platform == TPF.TPFPlatform.PS3)
         {
+            // The FourCC sits at 84 in a DDS file (after the magic); "DX10" has the format in the extended header instead.
+            // 108 is TexturePool.LinearBC1Format
+            if (Texture.Platform == TPF.TPFPlatform.PC && Texture.Textures[TPFIndex] is { } source)
+            {
+                var head = source.Bytes;
+                LegacySrgbBc1 = head.Length >= 88 && head[84] == (byte)'D' && head[85] == (byte)'X' && head[86] == (byte)'T' &&
+                                head[87] == (byte)'1' && source.Format != 108;
+            }
+
             var capturedTexture = Texture;
             var capturedIndex = TPFIndex;
             Texture = null;

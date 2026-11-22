@@ -35,7 +35,10 @@ public enum MaterialTextureUse
     /// A shader-graph OpacityTexture (DS3's Fujir_*_OpacityBlend: OpacityTexture1 layer 0, OpacityTexture2 layer 1),
     /// whose red multiplies the alpha. In the blend mask and detail mask slots, see FlverMaterial.OpacityFadeUvIndex
     /// </summary>
-    Opacity
+    Opacity,
+
+    /// <summary>A texture of an AC6 paint material's recipe (MaterialResolvedPaint): mask, base, camo or a layer's</summary>
+    Paint
 }
 
 /// <summary>
@@ -103,6 +106,20 @@ public static class MaterialBinding
     {
         MaterialSampler? sampler = texType == null ? null : d?.Samplers.Find(x => x.Type == texType);
         var role = sampler?.Role;
+
+        // A paint material (AC6's ColorMaterial shaders): its recipe binds everything (FlverResource.LoadPaint), the own
+        // albedo and normal as layer 0 and the rest for the paint
+        if (d?.Paint is { } paint && texType != null)
+        {
+            if (texType == paint.AlbedoType) return new(MaterialTextureUse.Albedo, LoadedElsewhere: true);
+            if (texType == paint.NormalType) return new(MaterialTextureUse.Normal, LoadedElsewhere: true);
+
+            return texType == paint.MaskType || texType == paint.BaseType || texType == paint.BaseNormalType ||
+                   texType == paint.CamoType || Array.IndexOf(paint.LayerAlbedoTypes, texType) >= 0 ||
+                   Array.IndexOf(paint.LayerNormalTypes, texType) >= 0
+                ? new(MaterialTextureUse.Paint, LoadedElsewhere: true)
+                : MaterialTextureRoute.Drop("a texture the paint recipe doesn't use");
+        }
 
         if (d?.Magma?.TextureType == texType && texType != null)
         {

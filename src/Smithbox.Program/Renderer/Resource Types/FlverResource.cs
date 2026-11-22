@@ -472,6 +472,92 @@ public class FlverResource : IResource, IDisposable
     /// <summary>See <see cref="MaterialBinding.HasKnownBlend"/></summary>
     private static bool HasKnownBlend(FlverMaterial dest) => MaterialBinding.HasKnownBlend(dest.Definition);
 
+    private static readonly FlverMaterial.TextureType[] PaintLayerAlbedos =
+    [
+        FlverMaterial.TextureType.PaintLayerAlbedoTextureResource1, FlverMaterial.TextureType.PaintLayerAlbedoTextureResource2,
+        FlverMaterial.TextureType.PaintLayerAlbedoTextureResource3, FlverMaterial.TextureType.PaintLayerAlbedoTextureResource4
+    ];
+
+    private static readonly FlverMaterial.TextureType[] PaintLayerNormals =
+    [
+        FlverMaterial.TextureType.PaintLayerNormalTextureResource1, FlverMaterial.TextureType.PaintLayerNormalTextureResource2,
+        FlverMaterial.TextureType.PaintLayerNormalTextureResource3, FlverMaterial.TextureType.PaintLayerNormalTextureResource4
+    ];
+
+    /// <summary>
+    /// Whether a material is drawn as an AC6 paint material (<see cref="MaterialPaint"/>, c_customize
+    /// <see cref="MaterialCustomize.ModePaint"/>). Its entries take the customize entries' place, so a material with a
+    /// deformer, glow, water or fur (none of the ColorMaterial shaders) can't be one.
+    /// </summary>
+    public static bool PaintMode(MaterialDefinition? definition)
+    {
+        return definition?.Paint != null && definition.Deformer == MaterialDeformer.None && definition.Magma == null &&
+               definition.Water == null && definition.Fur == null && CustomizeMode(definition) == 0;
+    }
+
+    /// <summary>
+    /// Binds a paint material's textures: its own albedo and normal as layer 0, and the mask, camo, base and layers for
+    /// the paint. A slot the material has no file for stays empty (the shader's stand-in)
+    /// </summary>
+    private void LoadPaint(FlverMaterial dest, string mtd, MaterialResolvedPaint paint)
+    {
+        void Load(FlverMaterial.TextureType textureType, string? type)
+        {
+            if (type != null)
+            {
+                LookupTexture(textureType, dest, type, "", mtd);
+            }
+        }
+
+        Load(FlverMaterial.TextureType.AlbedoTextureResource, paint.AlbedoType);
+        Load(FlverMaterial.TextureType.NormalTextureResource, paint.NormalType);
+        Load(FlverMaterial.TextureType.PaintMaskTextureResource, paint.MaskType);
+        Load(FlverMaterial.TextureType.PaintCamoTextureResource, paint.CamoType);
+        Load(FlverMaterial.TextureType.PaintBaseTextureResource, paint.BaseType);
+        Load(FlverMaterial.TextureType.PaintBaseNormalTextureResource, paint.BaseNormalType);
+
+        for (var i = 0; i < 4; i++)
+        {
+            Load(PaintLayerAlbedos[i], paint.LayerAlbedoTypes[i]);
+            Load(PaintLayerNormals[i], paint.LayerNormalTypes[i]);
+        }
+
+        dest.LayerAlbedoTypes[0] = paint.AlbedoType;
+        dest.UsesMetallic = true;
+    }
+
+    /// <summary>
+    /// The paint entries of a material (<see cref="MaterialPaint"/>) from its recipe. The textures and tilings are left
+    /// to <see cref="FlverMaterial.UpdateMaterial"/>, as the textures load later
+    /// </summary>
+    private static MaterialPaint BuildMaterialPaint(MaterialResolvedPaint paint)
+    {
+        MaterialPaint data = new()
+        {
+            Flags = paint.CamoType != null && paint.CamoAmount != 0 ? MaterialPaint.FlagCamo : 0,
+            Values = new Vector4(paint.Scale, paint.NormalStrength, paint.GlossFromNormal, paint.CamoAmount),
+            Unpainted = new Vector4(paint.Unpainted, paint.WearCurveScale),
+            WearCurve = new Vector4(paint.WearCurvePower, 0, 0, 0),
+            BaseMetallic0 = new Vector4(paint.BaseMetallic[0], paint.BaseMetallic[1], paint.BaseMetallic[2], paint.BaseMetallic[3]),
+            BaseMetallic1 = new Vector4(paint.BaseMetallic[4], paint.BaseGloss[0], paint.BaseGloss[1], paint.BaseGloss[2]),
+            BaseGloss1 = new Vector4(paint.BaseGloss[3], paint.BaseGloss[4], 0, 0)
+        };
+
+        for (var i = 0; i < 6; i++)
+        {
+            data.SetPaint(i, paint.Paint[i]);
+            data.SetCamo(i, paint.Camo[i]);
+            data.SetGlow(i, new Vector4(paint.Glow[i], 0));
+        }
+
+        for (var l = 0; l < 4; l++)
+        {
+            data.SetLayer(l, Vector4.One, paint.LayerColor[l], paint.LayerGloss[l], paint.LayerWeight[l], paint.LayerKind[l]);
+        }
+
+        return data;
+    }
+
     /// <summary>
     /// Loads the textures of a recipe by what the material calls them, as the names
     /// in the flver don't always match, and a recipe can use textures the flver doesn't list.
@@ -480,6 +566,14 @@ public class FlverResource : IResource, IDisposable
     private void LoadBlendRecipe(FlverMaterial dest, string mtd, MaterialLayers layers, Dictionary<string, string> flverPaths)
     {
         dest.MetallicType = MaterialBinding.ChooseMetallic(dest.Definition, flverPaths);
+
+        // An AC6 paint material: every texture its recipe names, by what the MATBIN calls them (MaterialBinding.Route
+        // then leaves them be)
+        if (PaintMode(dest.Definition))
+        {
+            LoadPaint(dest, mtd, dest.Definition!.Paint!);
+            return;
+        }
 
         // The base textures of a shader whose first texture of a role is an overlay (ER's ChrCustomize skin: beard
         // stubble and burn scars before the skin). Bound first, so the textures loop below keeps them.
@@ -1057,14 +1151,20 @@ public class FlverResource : IResource, IDisposable
             dest.LayoutType = MeshLayoutType.LayoutStandard;
         }
 
+        // An AC6 paint material (MaterialPaint), drawn by its own path in the shader
+        if (PaintMode(dest.Definition))
+        {
+            dest.Paint = BuildMaterialPaint(dest.Definition!.Paint!);
+        }
+
         // An opaque single-layer material whose meshes fade by vertex alpha, in a game whose shaders blend by it: drawn
         // blended, as the game's G-buffer pass blends it (RenderProfile.VertexAlphaOpacity). Layered and mask blends
-        // read the vertex alpha as a layer weight instead, and the "Col", fur, opacity and customize shaders have their
-        // own rules for it
+        // read the vertex alpha as a layer weight instead, and the "Col", fur, opacity, customize and paint shaders have
+        // their own rules for it
         if (RenderProfile.Of(curProject).VertexAlphaOpacity && dest.VertexAlphaFades &&
             dest.Blending == MaterialBlending.Opaque && deformer == MaterialDeformer.None && !knownBlend &&
             !layers.IsBlended && !layers.HasBlendMask && !dest.HasOpacity && fur == null && dest.Customize == null &&
-            dest.Definition?.ReadsVertexColor != true && !dest.UsesLightmap)
+            dest.Paint == null && dest.Definition?.ReadsVertexColor != true && !dest.UsesLightmap)
         {
             dest.VertexAlphaOpacity = true;
             dest.Blending = MaterialBlending.Alpha;
@@ -1104,8 +1204,10 @@ public class FlverResource : IResource, IDisposable
         // The cut-out from the normal map's alpha (MaterialSlotRecipe.AlphaFromNormal), only where a normal is bound
         specConstants.Add(new SpecializationConstant(13, dest.Definition?.Slots?.AlphaFromNormal == true &&
             dest.TextureResourceFilled[(int)FlverMaterial.TextureType.NormalTextureResource]));
-        // A ChrCustomize colouring (MaterialCustomize), read from the entry after the effects
-        specConstants.Add(new SpecializationConstant(14, dest.Customize != null ? CustomizeMode(dest.Definition) : 0u));
+        // A ChrCustomize colouring (MaterialCustomize) or an AC6 paint material (MaterialPaint), read from the entries
+        // after the effects
+        specConstants.Add(new SpecializationConstant(14, dest.Customize != null ? CustomizeMode(dest.Definition)
+            : dest.Paint != null ? MaterialCustomize.ModePaint : 0u));
         // A "Col" shader (MaterialDefinition.VertexColor): 1 the diffuse times the vertex color, 2 also the opacity times
         // its alpha, for an alpha blended material that doesn't blend layers (whose alpha is then a layer weight)
         // 3 the opacity alone times its alpha (FlverMaterial.VertexAlphaOpacity)
@@ -1269,6 +1371,12 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithCustomize);
         }
 
+        // So do a paint material's (PaintMode rules out the same, and ResolvePaint the blend and overlay entries)
+        if (PaintMode(dest.Definition))
+        {
+            size = sizeof(MaterialWithPaint);
+        }
+
         if (dest.Definition?.Blend != null)
         {
             size = sizeof(MaterialWithBlend);
@@ -1304,7 +1412,7 @@ public class FlverResource : IResource, IDisposable
         // Fur and the ChrCustomize colourings use the mask slot or the deform entry for other things
         // A GXFlver mask blend keeps its intensity in them as well (FlverMaterial.MaskBlendUvIndex)
         if (dest.Definition?.Blend == null && dest.Definition?.Fur == null && CustomizeMode(dest.Definition) == 0 &&
-            (dest.Definition?.MaskBlend != null || dest.HasOpacity ||
+            !PaintMode(dest.Definition) && (dest.Definition?.MaskBlend != null || dest.HasOpacity ||
              dest.FlverTiling.Keys.Any(x => x.Contains("BlendMask", StringComparison.OrdinalIgnoreCase))))
         {
             dest.MaskTilingEntries = true;
@@ -5107,6 +5215,19 @@ public class FlverResource : IResource, IDisposable
             // The body's burn scar: its albedo, and the normal map whose alpha is its shape
             CustomizeBurnTextureResource,
             CustomizeBurnNormalTextureResource,
+            // An AC6 paint material's (MaterialPaint): the paint mask, the camo pattern, the base, and layers 1 to 4
+            PaintMaskTextureResource,
+            PaintCamoTextureResource,
+            PaintBaseTextureResource,
+            PaintBaseNormalTextureResource,
+            PaintLayerAlbedoTextureResource1,
+            PaintLayerAlbedoTextureResource2,
+            PaintLayerAlbedoTextureResource3,
+            PaintLayerAlbedoTextureResource4,
+            PaintLayerNormalTextureResource1,
+            PaintLayerNormalTextureResource2,
+            PaintLayerNormalTextureResource3,
+            PaintLayerNormalTextureResource4,
             TextureResourceCount
         }
 
@@ -5204,6 +5325,12 @@ public class FlverResource : IResource, IDisposable
 
         /// <summary>Uploaded straight after <see cref="Customize"/> (the eye's further values)</summary>
         public MaterialCustomizeExtra CustomizeExtra = MaterialCustomizeExtra.Default;
+
+        /// <summary>
+        ///     Set for AC6 paint materials (<see cref="PaintMode"/>), and uploaded straight after the effects, in the
+        ///     customize entries' place. Its textures and tilings are filled in at upload
+        /// </summary>
+        public MaterialPaint? Paint;
 
         /// <summary>The tiling of the customize mask, from its sampler</summary>
         public Vector2 CustomizeMaskTiling = Vector2.One;
@@ -5766,6 +5893,23 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
+        /// <summary>
+        /// Whether a loaded texture is a legacy DXT1 the pool reads as sRGB (TextureResource.LegacySrgbBc1). Its GPU format
+        /// isn't set yet when the material learns of it: the upload is deferred
+        /// </summary>
+        private bool IsSrgb(TextureType textureType)
+        {
+            ResourceHandle<TextureResource>? handle = TextureResources[(int)textureType];
+            return handle is { IsLoaded: true } && handle.Get()?.LegacySrgbBc1 == true;
+        }
+
+        /// <summary>A sampler's tiling (its own scale or its UV group's, MaterialDefinition.ResolveTiling), 1 for none</summary>
+        private Vector2 SamplerTiling(string? samplerType)
+        {
+            MaterialSampler? sampler = samplerType == null ? null : Definition?.Samplers.Find(x => x.Type == samplerType);
+            return sampler is { Tiling.Length: >= 2 } ? new Vector2(sampler.Tiling[0], sampler.Tiling[1]) : Vector2.One;
+        }
+
         private void SetMaterialTexture(TextureType textureType, ref ushort matTex, ushort defaultTex)
         {
             ResourceHandle<TextureResource>? handle = TextureResources[(int)textureType];
@@ -6062,6 +6206,51 @@ public class FlverResource : IResource, IDisposable
                 };
             }
 
+            // An AC6 paint material, in the customize entries' place: its textures (0 until they load, which the shader
+            // reads as its stand-ins) and their tilings from the MATBIN
+            MaterialWithPaint? painted = null;
+
+            if (Paint is MaterialPaint paint && Definition?.Paint is { } recipe)
+            {
+                uint Packed(TextureType low, TextureType high)
+                {
+                    ushort a = 0, b = 0;
+                    SetMaterialTexture(low, ref a, 0);
+                    SetMaterialTexture(high, ref b, 0);
+                    return a | ((uint)b << 16);
+                }
+
+                Vector4 Tilings(string? low, string? high)
+                {
+                    Vector2 a = SamplerTiling(low), b = SamplerTiling(high);
+                    return new Vector4(a.X, a.Y, b.X, b.Y);
+                }
+
+                paint.MaskCamoTex = Packed(TextureType.PaintMaskTextureResource, TextureType.PaintCamoTextureResource);
+
+                // The index maps hold linear codes; the shader undoes an sRGB read (MaterialPaint.FlagMaskSrgb)
+                paint.Flags &= MaterialPaint.FlagCamo;
+                if (IsSrgb(TextureType.PaintMaskTextureResource)) paint.Flags |= MaterialPaint.FlagMaskSrgb;
+                if (IsSrgb(TextureType.PaintCamoTextureResource)) paint.Flags |= MaterialPaint.FlagCamoSrgb;
+                paint.BaseTex = Packed(TextureType.PaintBaseTextureResource, TextureType.PaintBaseNormalTextureResource);
+                paint.MaskCamoTiling = Tilings(recipe.MaskType, null);
+                paint.BaseTiling = Tilings(recipe.BaseType, recipe.BaseNormalType);
+
+                // The camo's index map is tiled by the material's values on top of its own scale
+                Vector2 camoTiling = SamplerTiling(recipe.CamoType);
+                paint.MaskCamoTiling.Z = camoTiling.X * recipe.CamoTiling.X * recipe.CamoTiling.Z;
+                paint.MaskCamoTiling.W = camoTiling.Y * recipe.CamoTiling.Y * recipe.CamoTiling.Z;
+
+                for (var l = 0; l < 4; l++)
+                {
+                    paint.SetLayerTextures(l, Packed(PaintLayerAlbedos[l], PaintLayerNormals[l]));
+                    paint.SetLayer(l, Tilings(recipe.LayerAlbedoTypes[l], recipe.LayerNormalTypes[l]),
+                        recipe.LayerColor[l], recipe.LayerGloss[l], recipe.LayerWeight[l], recipe.LayerKind[l]);
+                }
+
+                painted = new MaterialWithPaint { Material = MaterialData, Shading = Shading, Effects = Effects, Paint = paint };
+            }
+
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
@@ -6094,6 +6283,10 @@ public class FlverResource : IResource, IDisposable
                     else if (customized is MaterialWithCustomize customizedData)
                     {
                         MaterialBuffer.FillBuffer(d, cl, ref customizedData);
+                    }
+                    else if (painted is MaterialWithPaint paintedData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref paintedData);
                     }
                     else if (deformed is MaterialWithDeform data)
                     {

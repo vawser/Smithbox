@@ -320,6 +320,119 @@ public struct MaterialCustomize
     ///     colour multiplying the texture where its alpha (the iris) is
     /// </summary>
     public const uint ModeEyeTint = 9;
+
+    /// <summary>
+    ///     AC6's ColorMaterial shaders (<see cref="MaterialPaint" />): the albedo, normal, gloss and metallic built from a
+    ///     paint slot picked by a mask and a chain of detail layers. Not a ChrCustomize colouring: its entries are
+    ///     <see cref="MaterialWithPaint" />, in the same place. See Claude/Documentation/AC6 Paint Materials.md
+    /// </summary>
+    public const uint ModePaint = 10;
+}
+
+/// <summary>
+///     An AC6 paint material (<see cref="MaterialResolvedPaint" />), entries 3 to 17 after the material, in the customize
+///     entries' place. Read by FlverShader.frag's PaintSurface as 45 vec4s (PaintVec, PaintBits), in this order.
+///     Texture words hold an albedo (or mask) index in the low 16 bits and a normal (or camo) index in the high, 0 for
+///     none; each tiling vec4 is xy for the low texture and zw for the high.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialPaint
+{
+    /// <summary>Set in <see cref="Flags" />: the paint slots are crossed with the camo pattern</summary>
+    public const uint FlagCamo = 1;
+
+    /// <summary>
+    ///     Set in <see cref="Flags" />: the mask (and, with the next, the camo map) is on the GPU as sRGB, which the shader
+    ///     undoes. They are legacy DXT1 DDS, which TexturePool reads as sRGB, while AC6 authors its colour textures with
+    ///     explicit sRGB DX10 headers and these index maps hold linear codes ((r - 0.025) * 8 is the slot)
+    /// </summary>
+    public const uint FlagMaskSrgb = 2;
+    public const uint FlagCamoSrgb = 4;
+
+    // v0, v1
+    public uint MaskCamoTex, BaseTex, Layer1Tex, Layer2Tex;
+    public uint Layer3Tex, Layer4Tex, Flags, Pad0;
+
+    /// <summary>v2: x what multiplies the own albedo (4.5 or 4.55), y the own normal's strength, z how much the gloss
+    /// takes from the own normal's blue after layer 2, w the camo's amount</summary>
+    public Vector4 Values;
+
+    // v3 - v8
+    public Vector4 MaskCamoTiling, BaseTiling, Layer1Tiling, Layer2Tiling, Layer3Tiling, Layer4Tiling;
+
+    /// <summary>v9: rgb the colour where the mask's green has no paint, w the wear curve's scale (u = 1 - w·a^WearCurve.x)</summary>
+    public Vector4 Unpainted;
+
+    /// <summary>v10: x the wear curve's power</summary>
+    public Vector4 WearCurve;
+
+    /// <summary>v11, v12.x: the metallic of base layers 0-3 and 4. v12.yzw, v13.xy: the gloss offset of base layers 0-4</summary>
+    public Vector4 BaseMetallic0, BaseMetallic1, BaseGloss1;
+    public Vector4 Pad1;
+
+    /// <summary>v15 - v18: each layer's colour (rgb) and metallic (w)</summary>
+    public Vector4 Layer1Color, Layer2Color, Layer3Color, Layer4Color;
+
+    /// <summary>v19: each layer's gloss offset, added to its normal's blue</summary>
+    public Vector4 LayerGloss;
+    public Vector4 Pad2;
+
+    /// <summary>v21 - v24: each layer's weight values: factor, exponent, scale, power (see MaterialPaintWeight)</summary>
+    public Vector4 Weight1, Weight2, Weight3, Weight4;
+
+    /// <summary>v25: each layer's weight form: kind in bits 0-7, shape 8-15, post 16-23 (0 for no layer)</summary>
+    public uint Kind1, Kind2, Kind3, Kind4;
+    public Vector4 Pad3;
+
+    /// <summary>v27 - v32: the six paint slots' colours, w the share of the camo the slot takes</summary>
+    public Vector4 Paint0, Paint1, Paint2, Paint3, Paint4, Paint5;
+
+    /// <summary>v33 - v38: the camo pattern's six colours (0 is white), w their camo share</summary>
+    public Vector4 Camo0, Camo1, Camo2, Camo3, Camo4, Camo5;
+
+    /// <summary>v39 - v44: what each paint slot adds to the albedo where the mask's green is</summary>
+    public Vector4 Glow0, Glow1, Glow2, Glow3, Glow4, Glow5;
+
+    public void SetPaint(int i, Vector4 v)
+    {
+        switch (i) { case 0: Paint0 = v; break; case 1: Paint1 = v; break; case 2: Paint2 = v; break; case 3: Paint3 = v; break; case 4: Paint4 = v; break; default: Paint5 = v; break; }
+    }
+
+    public void SetCamo(int i, Vector4 v)
+    {
+        switch (i) { case 0: Camo0 = v; break; case 1: Camo1 = v; break; case 2: Camo2 = v; break; case 3: Camo3 = v; break; case 4: Camo4 = v; break; default: Camo5 = v; break; }
+    }
+
+    public void SetGlow(int i, Vector4 v)
+    {
+        switch (i) { case 0: Glow0 = v; break; case 1: Glow1 = v; break; case 2: Glow2 = v; break; case 3: Glow3 = v; break; case 4: Glow4 = v; break; default: Glow5 = v; break; }
+    }
+
+    public void SetLayer(int i, Vector4 tiling, Vector4 color, float gloss, Vector4 weight, uint kind)
+    {
+        switch (i)
+        {
+            case 0: Layer1Tiling = tiling; Layer1Color = color; LayerGloss.X = gloss; Weight1 = weight; Kind1 = kind; break;
+            case 1: Layer2Tiling = tiling; Layer2Color = color; LayerGloss.Y = gloss; Weight2 = weight; Kind2 = kind; break;
+            case 2: Layer3Tiling = tiling; Layer3Color = color; LayerGloss.Z = gloss; Weight3 = weight; Kind3 = kind; break;
+            default: Layer4Tiling = tiling; Layer4Color = color; LayerGloss.W = gloss; Weight4 = weight; Kind4 = kind; break;
+        }
+    }
+
+    public void SetLayerTextures(int i, uint packed)
+    {
+        switch (i) { case 0: Layer1Tex = packed; break; case 1: Layer2Tex = packed; break; case 2: Layer3Tex = packed; break; default: Layer4Tex = packed; break; }
+    }
+}
+
+/// <summary>What is uploaded for an AC6 paint material (<see cref="MaterialPaint" />), entries 0 to 17</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithPaint
+{
+    public Material Material;
+    public MaterialShading Shading;
+    public MaterialEffects Effects;
+    public MaterialPaint Paint;
 }
 
 /// <summary>

@@ -189,6 +189,13 @@ public class MaterialShaderTable
     public Dictionary<string, MaterialEmissiveMask> EmissiveMasks { get; set; } = new();
 
     /// <summary>
+    /// Shader name (or name@permutation) to how it builds a painted surface ({GAME}_Paint.json, AC6's ColorMaterial
+    /// shaders), see <see cref="MaterialPaintRecipe"/>
+    /// </summary>
+    [JsonIgnore]
+    public Dictionary<string, MaterialPaintRecipe> Paint { get; set; } = new();
+
+    /// <summary>
     /// Adds the overlays found by Tools/ShaderSignature's overlays mode ({GAME}_Overlays.json) where the checked-in
     /// <see cref="Details"/> has none, or has no albedo for one: the [Ov_AN] albedo overlay was beyond what made those.
     /// </summary>
@@ -321,6 +328,145 @@ public class MaterialFurRecipe
     /// <summary>A texture whose red multiplies the fur, where the red of <see cref="Mask"/> says, see <see cref="MaterialFurMask"/></summary>
     public int? Masked { get; set; }
     public int? Mask { get; set; }
+}
+
+/// <summary>
+/// How a paint shader (AC6's ColorMaterial family) builds its surface ({GAME}_Paint.json). A paint slot is picked per
+/// pixel by the mask's red and mixed in by its green over a base texture, then layers (wear, dirt, damage, and a top one)
+/// are lerped over it by weights worked out from the own normal and albedo. The own albedo then multiplies the whole by
+/// <see cref="Scale"/>. See Claude/Documentation/AC6 Paint Materials.md.
+/// Textures are sampler slots: "7" is Texture2D_7, "A0" Texture2DArray_0. Values are parameter names without the shader
+/// prefix ("snp_0_float_6"), with ":N" for a component, or numbers. A colour parameter is its rgb times its intensity.
+/// </summary>
+public class MaterialPaintRecipe
+{
+    public string Albedo { get; set; } = "7";
+    public string Normal { get; set; } = "0";
+    public string Mask { get; set; } = "14";
+    public string? Base { get; set; }
+    public string? BaseNormal { get; set; }
+
+    /// <summary>What the own albedo multiplies the composed colour by</summary>
+    public float Scale { get; set; } = 4.5f;
+
+    /// <summary>The colour where the mask's green has no paint</summary>
+    public string Unpainted { get; set; } = "";
+
+    /// <summary>The six paint slots, by the mask's red</summary>
+    public List<string> Paint { get; set; } = new();
+
+    /// <summary>The permutations (GXFT_SATStaticSwitch) that paint; the others are <see cref="Unpainted"/> throughout. Null for all</summary>
+    public List<int>? PaintPermutations { get; set; }
+
+    public MaterialPaintCamo? Camo { get; set; }
+
+    /// <summary>What each paint slot adds to the albedo where the mask's green is, or null</summary>
+    public List<string>? Glow { get; set; }
+
+    /// <summary>The metallic and gloss offset of each base layer (5), picked by the mask's red as well</summary>
+    public List<string> BaseMetallic { get; set; } = new();
+    public List<string> BaseGloss { get; set; } = new();
+
+    public string NormalStrength { get; set; } = "1";
+
+    /// <summary>After the second layer the gloss is lerped to twice itself times the own normal's blue, by this</summary>
+    public string GlossFromNormal { get; set; } = "0";
+
+    /// <summary>The wear curve u = 1 - scale · a^power, a the own normal's alpha</summary>
+    public string WearCurveScale { get; set; } = "1";
+    public string WearCurvePower { get; set; } = "1";
+
+    /// <summary>Up to four layers, in the shader's order</summary>
+    public List<MaterialPaintLayer> Layers { get; set; } = new();
+
+    /// <summary>The shader's own values (its metaparam) for parameters a material can leave out</summary>
+    public Dictionary<string, float> Defaults { get; set; } = new();
+}
+
+public class MaterialPaintLayer
+{
+    public string? Albedo { get; set; }
+    public string? Normal { get; set; }
+    public string Color { get; set; } = "1";
+    public string Metallic { get; set; } = "0";
+
+    /// <summary>Added to the layer normal's blue</summary>
+    public string Gloss { get; set; } = "0";
+
+    public MaterialPaintWeight? Weight { get; set; }
+
+    /// <summary>The permutations that have this layer, null for all</summary>
+    public List<int>? Permutations { get; set; }
+}
+
+/// <summary>
+/// A layer's weight: x from <see cref="Kind"/> (a the own normal's alpha, b its blue, A the own albedo's alpha, u the wear
+/// curve), shaped as sat(pow(scale · x, power)) or sat(pow(x, power) · scale), then <see cref="Post"/>. pow of x &lt;= 0 is 0.
+/// </summary>
+public class MaterialPaintWeight
+{
+    /// <summary>Dirt 1 - c·u·b, Wear 1 - c·u²·b, Repair 1 - c·b·(1 - A)^e, AlbedoAlpha c·A, NormalBlue c·b,
+    /// NormalBlueInverse c·(1 - b), NormalAlpha c·a</summary>
+    public string Kind { get; set; } = "";
+    public string Factor { get; set; } = "1";
+    public string Exponent { get; set; } = "1";
+
+    /// <summary>ScaleThenPow or PowThenScale</summary>
+    public string Shape { get; set; } = "ScaleThenPow";
+    public string Scale { get; set; } = "1";
+    public string Power { get; set; } = "1";
+
+    /// <summary>None, MaskLerp (lerp from a by the mask's green), MaskScale (times the mask's green) or Invert</summary>
+    public string Post { get; set; } = "None";
+
+    public static readonly string[] Kinds = ["", "Dirt", "Wear", "Repair", "AlbedoAlpha", "NormalBlue", "NormalBlueInverse", "NormalAlpha"];
+    public static readonly string[] Shapes = ["ScaleThenPow", "PowThenScale"];
+    public static readonly string[] Posts = ["None", "MaskLerp", "MaskScale", "Invert"];
+}
+
+/// <summary>The camo pattern crossed with the paint slots: an index map, tiled by U, V and Scale, and its colours 1-5</summary>
+public class MaterialPaintCamo
+{
+    public string Texture { get; set; } = "15";
+    public string Amount { get; set; } = "0";
+    public string TilingU { get; set; } = "1";
+    public string TilingV { get; set; } = "1";
+    public string TilingScale { get; set; } = "1";
+    public List<string> Colors { get; set; } = new();
+}
+
+/// <summary>A <see cref="MaterialPaintRecipe"/> worked out for one material</summary>
+public class MaterialResolvedPaint
+{
+    /// <summary>Sampler types, null where the material has no texture</summary>
+    public string? AlbedoType, NormalType, MaskType, BaseType, BaseNormalType, CamoType;
+    public readonly string?[] LayerAlbedoTypes = new string?[4];
+    public readonly string?[] LayerNormalTypes = new string?[4];
+
+    public float Scale;
+    public float NormalStrength;
+    public float GlossFromNormal;
+    public float WearCurveScale;
+    public float WearCurvePower;
+    public Vector3 Unpainted;
+    public readonly Vector4[] Paint = new Vector4[6];
+
+    /// <summary>Colour 0 is white; w the camo share of the paint slot of that number</summary>
+    public readonly Vector4[] Camo = new Vector4[6];
+    public float CamoAmount;
+    public Vector3 CamoTiling = Vector3.One;
+    public readonly Vector3[] Glow = new Vector3[6];
+    public readonly float[] BaseMetallic = new float[5];
+    public readonly float[] BaseGloss = new float[5];
+
+    public readonly Vector4[] LayerColor = new Vector4[4];
+    public readonly float[] LayerGloss = new float[4];
+
+    /// <summary>factor, exponent, scale, power</summary>
+    public readonly Vector4[] LayerWeight = new Vector4[4];
+
+    /// <summary>kind | shape &lt;&lt; 8 | post &lt;&lt; 16, 0 for no layer</summary>
+    public readonly uint[] LayerKind = new uint[4];
 }
 
 /// <summary>
@@ -1427,6 +1573,9 @@ public class MaterialDefinition
     /// <summary>Set when the shader has a <see cref="MaterialSlotRecipe"/>: the textures to bind first for each role</summary>
     public MaterialResolvedSlots? Slots { get; set; }
 
+    /// <summary>Set when the shader has a <see cref="MaterialPaintRecipe"/> (AC6's ColorMaterial shaders)</summary>
+    public MaterialResolvedPaint? Paint { get; set; }
+
     /// <summary>
     /// Sampler type of each metallic map to what the shader adds to its red before saturating it,
     /// e.g. M[AMSN]'s snp_0_float_0. Only maps whose shader adds something are here
@@ -1530,6 +1679,7 @@ public class MaterialDefinition
         ResolveMetallic(table);
         ResolveEmissiveMask(table);
         ResolveMaskBlend();
+        ResolvePaint(table);
         DoubleFace = Blend == null && MaskBlend == null && DoubleFaceShader.IsMatch(ShaderName);
 
         if (table != null && table.UvSets.TryGetValue(ShaderName, out var uvSets))
@@ -1582,6 +1732,146 @@ public class MaterialDefinition
             MaskUvIndex = RankOf(mask),
             AlbedoOnly = ShaderName.Contains("DirtMask", StringComparison.Ordinal)
         };
+    }
+
+    /// <summary>
+    /// A paint shader's surface (<see cref="MaterialPaintRecipe"/>), for this material's permutation. It replaces what
+    /// the other recipes would make of the shader: its many albedos and normals aren't layers or overlays.
+    /// </summary>
+    private void ResolvePaint(MaterialShaderTable? table)
+    {
+        var permutation = (int)GetFirst("GXFT_SATStaticSwitch", 0);
+
+        if (table == null || (!table.Paint.TryGetValue($"{ShaderName}@{permutation}", out MaterialPaintRecipe? recipe) &&
+                              !table.Paint.TryGetValue(ShaderName, out recipe)))
+        {
+            return;
+        }
+
+        // "7" is Texture2D_7, "A0" Texture2DArray_0; only a sampler with a file
+        string? TypeOf(string? slot)
+        {
+            if (string.IsNullOrEmpty(slot))
+                return null;
+
+            if (slot.StartsWith('A') && int.TryParse(slot[1..], out var array))
+                return Samplers.Find(x => x.Type.Contains($"Texture2DArray_{array}_", StringComparison.Ordinal) && x.Path != "")?.Type;
+
+            return int.TryParse(slot, out var n) ? Samplers.Find(x => x.Slot == n && x.Path != "")?.Type : null;
+        }
+
+        // A number, a parameter ("snp_0_float_6") or one of its components ("snp_0_float2_7:1"). A parameter the
+        // material leaves out has the shader's value from the recipe, else 0
+        float Value(string expression)
+        {
+            if (float.TryParse(expression, NumberStyles.Float, CultureInfo.InvariantCulture, out var number))
+                return number;
+
+            var parts = expression.Split(':');
+            var component = parts.Length > 1 && int.TryParse(parts[1], out var c) ? c : 0;
+
+            if (Params.TryGetValue(parts[0], out var value) && component < value.Length)
+                return value[component];
+
+            return recipe.Defaults.TryGetValue(expression, out var fallback) ? fallback : 0;
+        }
+
+        // A colour parameter's rgb times its intensity (the fifth value), and its alpha: what the shader's cbuffer holds
+        Vector4 Color(string expression)
+        {
+            if (float.TryParse(expression, NumberStyles.Float, CultureInfo.InvariantCulture, out var number))
+                return new Vector4(number, number, number, 1);
+
+            if (!Params.TryGetValue(expression, out var c) || c.Length < 3)
+                return Vector4.One;
+
+            var intensity = c.Length >= 5 ? c[4] : 1;
+            return new Vector4(c[0] * intensity, c[1] * intensity, c[2] * intensity, c.Length >= 4 ? c[3] : 1);
+        }
+
+        MaterialResolvedPaint paint = new()
+        {
+            AlbedoType = TypeOf(recipe.Albedo),
+            NormalType = TypeOf(recipe.Normal),
+            MaskType = TypeOf(recipe.Mask),
+            BaseType = TypeOf(recipe.Base),
+            BaseNormalType = TypeOf(recipe.BaseNormal),
+            Scale = recipe.Scale,
+            NormalStrength = Value(recipe.NormalStrength),
+            GlossFromNormal = Value(recipe.GlossFromNormal),
+            WearCurveScale = Value(recipe.WearCurveScale),
+            WearCurvePower = Value(recipe.WearCurvePower)
+        };
+
+        Vector4 unpainted = Color(recipe.Unpainted);
+        paint.Unpainted = new Vector3(unpainted.X, unpainted.Y, unpainted.Z);
+
+        var paints = recipe.PaintPermutations == null || recipe.PaintPermutations.Contains(permutation);
+
+        // Camo colour 0 is white; the share of the camo each paint slot takes is the alpha of the camo colour of its number
+        paint.Camo[0] = Vector4.One;
+        if (recipe.Camo is { } camo)
+        {
+            paint.CamoType = TypeOf(camo.Texture);
+            paint.CamoAmount = paint.CamoType != null ? Value(camo.Amount) : 0;
+            paint.CamoTiling = new Vector3(Value(camo.TilingU), Value(camo.TilingV), Value(camo.TilingScale));
+
+            for (var j = 1; j < 6 && j - 1 < camo.Colors.Count; j++)
+            {
+                paint.Camo[j] = Color(camo.Colors[j - 1]);
+            }
+        }
+
+        for (var i = 0; i < 6; i++)
+        {
+            Vector4 slot = paints && i < recipe.Paint.Count ? Color(recipe.Paint[i]) : unpainted;
+            paint.Paint[i] = new Vector4(slot.X, slot.Y, slot.Z, paint.Camo[i].W);
+
+            if (recipe.Glow != null && i < recipe.Glow.Count)
+            {
+                Vector4 glow = Color(recipe.Glow[i]);
+                paint.Glow[i] = new Vector3(glow.X, glow.Y, glow.Z);
+            }
+        }
+
+        for (var k = 0; k < 5; k++)
+        {
+            paint.BaseMetallic[k] = k < recipe.BaseMetallic.Count ? Value(recipe.BaseMetallic[k]) : 0;
+            paint.BaseGloss[k] = k < recipe.BaseGloss.Count ? Value(recipe.BaseGloss[k]) : 0;
+        }
+
+        for (var l = 0; l < 4 && l < recipe.Layers.Count; l++)
+        {
+            MaterialPaintLayer layer = recipe.Layers[l];
+
+            if (layer.Permutations != null && !layer.Permutations.Contains(permutation))
+                continue;
+
+            paint.LayerAlbedoTypes[l] = TypeOf(layer.Albedo);
+            paint.LayerNormalTypes[l] = TypeOf(layer.Normal);
+
+            Vector4 color = Color(layer.Color);
+            paint.LayerColor[l] = new Vector4(color.X, color.Y, color.Z, Value(layer.Metallic));
+            paint.LayerGloss[l] = Value(layer.Gloss);
+
+            if (layer.Weight is { } weight && Array.IndexOf(MaterialPaintWeight.Kinds, weight.Kind) is > 0 and var kind)
+            {
+                var shape = Math.Max(Array.IndexOf(MaterialPaintWeight.Shapes, weight.Shape), 0);
+                var post = Math.Max(Array.IndexOf(MaterialPaintWeight.Posts, weight.Post), 0);
+                paint.LayerKind[l] = (uint)kind | ((uint)shape << 8) | ((uint)post << 16);
+                paint.LayerWeight[l] = new Vector4(Value(weight.Factor), Value(weight.Exponent), Value(weight.Scale), Value(weight.Power));
+            }
+        }
+
+        Paint = paint;
+        Blend = null;
+        Detail = null;
+        MaskBlend = null;
+
+        if (BlendWeight == MaterialBlendWeight.Recipe)
+        {
+            BlendWeight = MaterialBlendWeight.Unknown;
+        }
     }
 
     /// <summary>The sampler type of the texture whose red is the glow, see <see cref="MaterialEmissiveMask"/></summary>

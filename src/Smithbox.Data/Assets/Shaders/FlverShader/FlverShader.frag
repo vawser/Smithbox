@@ -280,6 +280,28 @@ layout(set = 4, binding = 0, std140) buffer materialCustomizeExtra
     readonly customizeExtraData customizeextradata[];
 };
 
+// Entries 3 to 17 after a material, in the customize entries' place: an AC6 paint material (c_customize 10,
+// MaterialPaint), read as 45 vec4s by PaintVec and PaintBits
+struct paintEntryData
+{
+	vec4 v[3];
+};
+
+struct paintEntryBits
+{
+	uvec4 v[3];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialPaint
+{
+    readonly paintEntryData paintdata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialPaintBits
+{
+    readonly paintEntryBits paintbits[];
+};
+
 // Seven entries after a material: the makeup's masks and layout (MaterialMakeup). Its six layers (rgb colour, w amount)
 // are entries five and six, read as customizeExtraData
 struct makeupInfoData
@@ -772,9 +794,176 @@ float g_customizeDensity = 1.0;
 // The customize mask as sampled for the albedo, for the hair's gloss later
 vec4 g_customizeMask = vec4(1.0);
 
+// ---------------------------------------------------------------------------------------------
+// AC6 paint materials (c_customize 10): the ColorMaterial shaders, see MaterialPaint and
+// Claude/Documentation/AC6 Paint Materials.md. PaintSurface works out the albedo, and the normal, gloss and metallic
+// for later, in one go
+// ---------------------------------------------------------------------------------------------
+
+#define CUSTOMIZE_PAINT 10
+
+vec3 g_paintNormal = vec3(0.0, 0.0, 1.0); // tangent space, before the family's axes
+float g_paintGloss = 0.0;
+float g_paintMetallic = 0.0;
+
+vec4 PaintVec(uint i)
+{
+	return paintdata[g_mat + 3u + i / 3u].v[i % 3u];
+}
+
+uvec4 PaintBits(uint i)
+{
+	return paintbits[g_mat + 3u + i / 3u].v[i % 3u];
+}
+
+// The game's pow, exp2(log2(x) * p): 0 for x <= 0, where its NaN goes through min and max as 0
+float PaintPow(float x, float p)
+{
+	return x > 0.0 ? exp2(log2(x) * p) : 0.0;
+}
+
+// A texture of the paint, the low (albedo) or high (normal) half of a texture word, or a stand-in until it loads
+vec4 PaintSample(uint packedTex, bool high, vec4 tiling, vec4 standIn)
+{
+	uint tex = high ? packedTex >> 16u : packedTex & 0xFFFFu;
+	return tex != 0u ? SampleAt(tex, 0, high ? tiling.zw : tiling.xy, vec2(0.0)) : standIn;
+}
+
+// A layer's weight (MaterialPaintWeight): kind in bits 0-7, shape 8-15, post 16-23. w: factor, exponent, scale, power.
+// n is the own normal, a the own albedo's alpha, u the wear curve, g the mask's green
+float PaintWeight(uint bits, vec4 w, vec4 n, float a, float u, float g)
+{
+	uint kind = bits & 0xFFu;
+	if (kind == 0u)
+	{
+		return 0.0;
+	}
+
+	float x;
+	if (kind == 1u)      x = 1.0 - w.x * u * n.b;
+	else if (kind == 2u) x = 1.0 - w.x * u * u * n.b;
+	else if (kind == 3u) x = 1.0 - w.x * n.b * PaintPow(1.0 - a, w.y);
+	else if (kind == 4u) x = w.x * a;
+	else if (kind == 5u) x = w.x * n.b;
+	else if (kind == 6u) x = w.x * (1.0 - n.b);
+	else                 x = w.x * n.a;
+
+	float v = ((bits >> 8u) & 0xFFu) == 0u ? PaintPow(w.z * x, w.w) : PaintPow(x, w.w) * w.z;
+	v = clamp(v, 0.0, 1.0);
+
+	uint post = (bits >> 16u) & 0xFFu;
+	if (post == 1u)      v = mix(n.a, v, g);
+	else if (post == 2u) v *= g;
+	else if (post == 3u) v = 1.0 - v;
+	return v;
+}
+
+vec4 SampleLayer(int row, int layer);
+vec3 StoredFromSrgb(vec3 c);
+
+// The game's G-buffer shader, from the own albedo (diffuseColor, layer 0) and the own normal (normal layer 0)
+void PaintSurface(inout vec4 diffuseColor)
+{
+	vec4 own = diffuseColor;
+	vec4 ownNormal = SampleLayer(ROW_NORMAL, 0);
+	uvec4 tex0 = PaintBits(0u);
+	uvec4 tex1 = PaintBits(1u);
+	vec4 values = PaintVec(2u);
+	vec4 maskTiling = PaintVec(3u);
+
+	// The mask: red picks the paint slot (and the base layer, counted the other way), green how much paint there is.
+	// No paint until it loads
+	vec4 mask = PaintSample(tex0.x, false, maskTiling, vec4(0.0));
+
+	// Its codes are linear; a legacy DXT1 mask is read as sRGB (MaterialPaint.FlagMaskSrgb), which is undone
+	if ((tex1.z & 2u) != 0u)
+	{
+		mask.rgb = StoredFromSrgb(mask.rgb);
+	}
+
+	float slot = (mask.r - 0.025) * 8.0;
+	uint i = uint(clamp(roundEven(slot), 0.0, 5.0));
+	uint k = uint(clamp(roundEven(5.0 - slot), 0.0, 4.0));
+
+	vec4 unpainted = PaintVec(9u);
+	float u = 1.0 - unpainted.w * PaintPow(ownNormal.a, PaintVec(10u).x);
+
+	vec4 slotPaint = PaintVec(27u + i);
+	vec3 paint = slotPaint.rgb;
+	if ((tex1.z & 1u) != 0u && (tex0.x >> 16u) != 0u)
+	{
+		float camo = PaintSample(tex0.x, true, maskTiling, vec4(0.0)).r;
+		if ((tex1.z & 4u) != 0u)
+		{
+			camo = StoredFromSrgb(vec3(camo)).r;
+		}
+		uint j = uint(clamp(roundEven((camo - 0.025) * 8.0), 0.0, 5.0));
+		paint += values.w * slotPaint.w * (PaintVec(33u + j).rgb - paint);
+	}
+
+	vec4 baseTiling = PaintVec(4u);
+	vec4 base = PaintSample(tex0.y, false, baseTiling, vec4(1.0));
+	vec4 baseNormal = PaintSample(tex0.y, true, baseTiling, vec4(0.5, 0.5, 0.0, 1.0));
+
+	vec4 metal0 = PaintVec(11u);
+	vec4 metal1 = PaintVec(12u);
+	vec4 gloss1 = PaintVec(13u);
+	float baseMetallic[5] = float[5](metal0.x, metal0.y, metal0.z, metal0.w, metal1.x);
+	float baseGloss[5] = float[5](metal1.y, metal1.z, metal1.w, gloss1.x, gloss1.y);
+
+	vec3 color = mix(unpainted.rgb, paint, mask.g) * base.rgb;
+	float metallic = baseMetallic[k];
+	float gloss = baseNormal.b + baseGloss[k];
+	vec2 normal = baseNormal.rg;
+
+	uvec4 kinds = PaintBits(25u);
+	vec4 layerGloss = PaintVec(19u);
+	uint layerTex[4] = uint[4](tex0.z, tex0.w, tex1.x, tex1.y);
+
+	// Wear, dirt, damage and the top layer, each lerped over what is below by its weight
+	for (uint l = 0u; l < 4u; l++)
+	{
+		float w = PaintWeight(kinds[l], PaintVec(21u + l), ownNormal, own.a, u, mask.g);
+		if (w > 0.0)
+		{
+			vec4 tiling = PaintVec(5u + l);
+			vec4 layerColor = PaintVec(15u + l);
+			vec4 albedo = PaintSample(layerTex[l], false, tiling, vec4(1.0));
+			vec4 layerNormal = PaintSample(layerTex[l], true, tiling, vec4(0.5, 0.5, 0.0, 1.0));
+			color = mix(color, layerColor.rgb * albedo.rgb, w);
+			metallic = mix(metallic, layerColor.w, w);
+			gloss = mix(gloss, layerGloss[l] + layerNormal.b, w);
+			normal = mix(normal, layerNormal.rg, w);
+		}
+
+		// After the second layer (the dirt), the gloss takes from the own normal's blue
+		if (l == 1u)
+		{
+			gloss = mix(gloss, 2.0 * ownNormal.b * gloss, values.z);
+		}
+	}
+
+	vec3 glow = PaintVec(39u + i).rgb;
+	diffuseColor = vec4(clamp(glow * mask.g + values.x * own.rgb * color, 0.0, 1.0), 1.0);
+
+	// The layers' normal, its z taken before the own normal's offset is added
+	vec2 xy = normal * 2.0 - 1.0;
+	float z = sqrt(1.0 - clamp(dot(xy, xy), 0.0, 1.0));
+	xy += values.y * (ownNormal.rg * 2.0 - 1.0);
+	g_paintNormal = vec3(xy, z);
+	g_paintGloss = clamp(gloss, 0.0, 1.0);
+	g_paintMetallic = clamp(metallic, 0.0, 1.0);
+}
+
 // The game's ChrCustomize colourings (ER's P[ChrCustomize] _Gbuf shaders), over the sampled albedo
 void ApplyCustomize(inout vec4 diffuseColor)
 {
+	if (c_customize == CUSTOMIZE_PAINT)
+	{
+		PaintSurface(diffuseColor);
+		return;
+	}
+
 	customizeData cz = customizedata[g_mat + 3u];
 
 	// Until the mask loads: no roots, white hair or tint (white), and for an eye no pupil or sclera (black)
@@ -2850,6 +3039,12 @@ void main()
 			roughness = 1.0 - clamp((customizedata[g_mat + 3u].params.y < 1.5 ? 2.0 : 5.0) * (1.0 - g_customizeMask.z), 0.0, 1.0) * shininess;
 		}
 	}
+
+	// A paint material's gloss, from its layers (PaintSurface)
+	if (c_customize == CUSTOMIZE_PAINT)
+	{
+		roughness = 1.0 - g_paintGloss;
+	}
 	roughness = clamp(roughness, 0.0, 1.0);
 
 	vec3 normalMap;
@@ -2888,6 +3083,13 @@ void main()
 	}
 
 	normalMap.z = sqrt(1.0 - min(dot(normalMap.xy, normalMap.xy), 1.0));
+
+	// A paint material's normal is its layers' and its own, as PaintSurface made it
+	if (c_customize == CUSTOMIZE_PAINT)
+	{
+		normalMap = g_paintNormal;
+	}
+
 	normalMap = normalize(normalMap);
 	FamilyTangentNormal(normalMap);
 	normalMap = normalize(fsin_worldToTangent * normalMap);
@@ -2930,7 +3132,8 @@ void main()
 	// anything else reflects 4%. Water keeps its own F0
 	if (c_metallic && !IsWater())
 	{
-		float metallic = MetallicLayer(0);
+		// A paint material's is its base layer's and its layers' (PaintSurface)
+		float metallic = c_customize == CUSTOMIZE_PAINT ? g_paintMetallic : MetallicLayer(0);
 #ifdef MATERIAL_BLEND
 		// Each layer's own, by the weights its albedo has
 		if (c_blendSpecular)
