@@ -78,7 +78,7 @@ public sealed class ModelCollisionFiles
     }
 
     /// <summary>The name a layer's file has in its binder.</summary>
-    public string GetEntryName(HavokCollisionType type) => UsesLayerBinders ? $"{Wrapper.Name}_{Suffix(type)}" : Wrapper.Name;
+    public string GetEntryName(HavokCollisionType type) => UsesLayerBinders ? $"{Wrapper.Name}_{Suffix(type)}" : Wrapper.HKX_Name ?? Wrapper.Name;
 
     /// <summary>The layer's file, read if it hasn't been. Null if the model has none (or it can't be read).</summary>
     public ModelCollisionFile Get(HavokCollisionType type)
@@ -142,7 +142,7 @@ public sealed class ModelCollisionFiles
         return new ModelCollisionFile
         {
             Type = HavokCollisionType.Low,
-            EntryName = Wrapper.Name,
+            EntryName = Wrapper.HKX_Name ?? Wrapper.Name,
             BinderPath = null,
             Document = Wrapper.HKX_Document
         };

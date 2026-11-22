@@ -37,6 +37,105 @@ public static class CollisionEditorShapes
     }
 
     /// <summary>
+    /// A compressed mesh (hknp) whose triangles can be decoded and edited: a FromSoftware one, or a plain Havok one
+    /// (some DS3 objects), which has no materials and is rebuilt as a FromSoftware one with material 0.
+    /// </summary>
+    public static bool IsDecodableMeshShape(object shape)
+    {
+        return IsCompressedMeshShape(shape)
+            || shape is Havok.hk2014.hknpCompressedMeshShape
+            or Havok.hk2016.hknpCompressedMeshShape
+            or Havok.hk2018.hknpCompressedMeshShape
+            or Havok.hk2019.hknpCompressedMeshShape;
+    }
+
+    /// <summary>
+    /// Whether a body's shape can be replaced by a mesh built from new triangles: any hknp shape (a convex or box shape
+    /// becomes a FromSoftware compressed mesh of the same class set, as objects of those games also have), or an older
+    /// game's MOPP mesh (hkp), whose storages are the template of the new mesh.
+    /// </summary>
+    public static bool CanReplaceShape(object shape)
+    {
+        return HkpMeshShapeRebuild.IsSupported(shape)
+            || shape is Havok.hk2014.hknpShape or Havok.hk2016.hknpShape or Havok.hk2018.hknpShape or Havok.hk2019.hknpShape;
+    }
+
+    /// <summary>
+    /// An older game's (hkp) single rigid body whose shape isn't a mesh (a box, convex hull or a list of them, as most
+    /// of their objects have): it has nothing to base a mesh on, so a new one needs a template from another file of
+    /// the game (see BuildShapeFromTemplate). Null if the document isn't one.
+    /// </summary>
+    public static IHavokBody GetBodyNeedingTemplate(Havok.HavokDocument document)
+    {
+        var bodies = CollisionGeometry.Bodies(document.Objects).ToList();
+
+        return bodies.Count == 1 && HkpMeshShapeRebuild.GetBodyName(bodies[0]) != null && !CanReplaceShape(bodies[0].Shape)
+            ? bodies[0]
+            : null;
+    }
+
+    /// <summary>
+    /// Whether a body's shape can be replaced by a mesh, either from its own shape (CanReplaceShape) or, for an older
+    /// game's rigid body with none, from another file's mesh (BuildShapeFromTemplate).
+    /// </summary>
+    public static bool CanReplaceBody(IHavokBody body, out bool needsTemplate)
+    {
+        needsTemplate = false;
+
+        if (body?.Shape == null)
+            return false;
+
+        if (CanReplaceShape(body.Shape))
+            return true;
+
+        needsTemplate = HkpMeshShapeRebuild.GetBodyName(body) != null;
+        return needsTemplate;
+    }
+
+    /// <summary>A body's name, as the file has it (hkp rigid bodies and hknp body infos both name theirs), or null.</summary>
+    public static string GetBodyName(IHavokBody body)
+    {
+        return HkpMeshShapeRebuild.GetBodyName(body) ?? body?.GetType().GetField("m_name")?.GetValue(body) as string;
+    }
+
+    /// <summary>
+    /// How a body moves, for telling bodies apart: an hkp rigid body's motion type (MOTION_FIXED, MOTION_KEYFRAMED,
+    /// MOTION_BOX_INERTIA...), an hknp body's motion number. Null if it says nothing.
+    /// </summary>
+    public static string GetBodyMotion(IHavokBody body)
+    {
+        var motion = body?.GetType().GetField("m_motion")?.GetValue(body);
+        var type = motion?.GetType().GetField("m_type")?.GetValue(motion);
+
+        if (type != null)
+            return type.ToString();
+
+        return body?.GetType().GetField("m_motionId")?.GetValue(body)?.ToString();
+    }
+
+    /// <summary>
+    /// A new mesh from triangles, built on another file's MOPP mesh of the same class set (its storage, material
+    /// parameter and code settings), for a body whose own shape has none. Null if the template isn't one.
+    /// </summary>
+    public static BuiltShape BuildShapeFromTemplate(object templateShape, List<Vector3> vertices, List<int> indices, List<uint> materials)
+    {
+        if (!HkpMeshShapeRebuild.IsSupported(templateShape))
+            return null;
+
+        var shape = HkpMeshShapeRebuild.BuildNew(templateShape, vertices, indices, materials, out var keys);
+
+        return shape == null ? null : new BuiltShape(shape, keys);
+    }
+
+    /// <summary>The body of a document whose shape a new mesh can replace (a single body, see CanReplaceShape), or null.</summary>
+    public static IHavokBody GetReplaceableBody(Havok.HavokDocument document)
+    {
+        var bodies = CollisionGeometry.Bodies(document.Objects).ToList();
+
+        return bodies.Count == 1 && CanReplaceShape(bodies[0].Shape) ? bodies[0] : null;
+    }
+
+    /// <summary>
     /// An older game's (hkp) shape with its vertices moved: each triangle (by its shape key, which a rebuild keeps)
     /// gives its storage corners the positions of its welded vertices. Triangles left out of the input (no area left)
     /// are left out of the MOPP. Null if the shape isn't an hkp mesh this can rebuild.
@@ -138,10 +237,13 @@ public static class CollisionEditorShapes
             return hkp == null ? null : new BuiltShape(hkp, hkpKeys);
         }
 
-        if (!IsCompressedMeshShape(oldShape))
+        if (!CanReplaceShape(oldShape))
             return null;
 
-        var radius = oldShape switch
+        // A mesh keeps the convex radius it had; a convex or box shape's radius is its own rounding, not a mesh's
+        var radius = !IsDecodableMeshShape(oldShape)
+            ? oldShape is Havok.hk2014.hknpShape convex2014 ? GetVariant2014(convex2014).ConvexRadius : HavokCompressedMeshBuilder.DefaultConvexRadius
+            : oldShape switch
         {
             Havok.hk2014.hknpShape s => s.m_convexRadius,
             Havok.hk2016.hknpShape s => s.m_convexRadius,
@@ -155,17 +257,22 @@ public static class CollisionEditorShapes
 
         object shape;
 
+        // By the old shape's class set: a FromSoftware mesh, a plain one, or a convex or box shape it replaces
         switch (oldShape)
         {
-            case Havok.hk2014.fsnpCustomParamCompressedMeshShape old:
+            case Havok.hk2014.hknpShape old:
             {
-                var built = HavokCompressedMeshGenerator_hk2014.ToShape(build, old.m_flags);
+                // A mesh keeps its flags. A convex shape's describe a convex, so the mesh gets DS3's or BB's (see
+                // HavokCompressedMeshGenerator_hk2014.Variant), by whether the shape has the SPU flag, as DS3's do
+                var built = IsDecodableMeshShape(old)
+                    ? HavokCompressedMeshGenerator_hk2014.ToShape(build, old.m_flags)
+                    : HavokCompressedMeshGenerator_hk2014.ToShape(build, GetVariant2014(old).Flags);
                 built.m_userData = old.m_userData;
                 built.m_properties = old.m_properties;
                 shape = built;
                 break;
             }
-            case Havok.hk2016.fsnpCustomParamCompressedMeshShape old:
+            case Havok.hk2016.hknpShape old:
             {
                 var built = Havok.hk2016.Builders.CollisionShapeBuilder.ToShape(build);
                 built.m_userData = old.m_userData;
@@ -173,7 +280,7 @@ public static class CollisionEditorShapes
                 shape = built;
                 break;
             }
-            case Havok.hk2018.fsnpCustomParamCompressedMeshShape old:
+            case Havok.hk2018.hknpShape old:
             {
                 var built = Havok.hk2018.Builders.CollisionShapeBuilder.ToShape(build);
                 built.m_userData = old.m_userData;
@@ -181,7 +288,7 @@ public static class CollisionEditorShapes
                 shape = built;
                 break;
             }
-            case Havok.hk2019.fsnpCustomParamCompressedMeshShape old:
+            case Havok.hk2019.hknpShape old:
             {
                 var built = Havok.hk2019.Builders.CollisionShapeBuilder.ToShape(build);
                 built.m_userData = old.m_userData;
@@ -194,6 +301,14 @@ public static class CollisionEditorShapes
         }
 
         return new BuiltShape(shape, keys);
+    }
+
+    /// <summary>The hk2014 mesh settings for a shape's platform: DS3's when it has the SPU flag, else BB's.</summary>
+    private static HavokCompressedMeshGenerator_hk2014.Variant GetVariant2014(Havok.hk2014.hknpShape shape)
+    {
+        return shape.m_flags.HasFlag(Havok.hk2014.hknpShape.FlagsEnum.NO_GET_SHAPE_KEYS_ON_SPU)
+            ? HavokCompressedMeshGenerator_hk2014.Variant.DS3
+            : HavokCompressedMeshGenerator_hk2014.Variant.BB;
     }
 
     /// <summary>

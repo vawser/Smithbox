@@ -9,8 +9,9 @@ using System.Reflection;
 namespace Havok.Builders;
 
 /// <summary>
-/// The older games' (hkp: DES, DS1, DS1R, DS2S) map collision mesh, read and rebuilt for the Collision Editor: an
-/// hkpMoppBvTreeShape around a FromSoftware CustomParamStorageExtendedMeshShape. Every one of these games keeps one
+/// The older games' (hkp: DES, DS1, DS1R, DS2S) map and object collision mesh, read and rebuilt for the Collision
+/// Editors: an hkpMoppBvTreeShape around a FromSoftware CustomParamStorageExtendedMeshShape, or around a plain
+/// hkpStorageExtendedMeshShape (DES objects), whose storage's mesh material holds the material. Every one of these games keeps one
 /// mesh storage per collision material, each with its own subpart and material parameter (MoppSurvey fields), and a
 /// triangle's shape key is its storage in the top bits (m_numBitsForSubpartIndex) and its index below.
 ///
@@ -34,7 +35,11 @@ public static class HkpMeshShapeRebuild
         public (int Storage, int Triangle) FromKey(uint key) => ((int)(key >> KeyShift), (int)(key & ((1u << KeyShift) - 1)));
     }
 
-    /// <summary>Whether a shape is a MOPP over a FromSoftware storage-extended mesh, the shape this rebuilds.</summary>
+    /// <summary>
+    /// Whether a shape is a MOPP over a storage-extended mesh this rebuilds: FromSoftware's, or a plain Havok one, as
+    /// DES objects have (ModelCollisionSurvey DES inspect), laid out the same way, a storage per material, but keeping
+    /// each storage's material as the filter info of its one mesh material (0-9 there: the OBJ2HKX material IDs).
+    /// </summary>
     public static bool IsSupported(object shape)
     {
         if (shape?.GetType().Name != "hkpMoppBvTreeShape")
@@ -42,9 +47,29 @@ public static class HkpMeshShapeRebuild
 
         var child = Get(Get(shape, "m_child"), "m_childShape");
 
-        return child?.GetType().Name == "CustomParamStorageExtendedMeshShape"
-            && Get(child, "m_shapestorage") is IList { Count: 0 }
-            && Get(child, "m_meshstorage") is IList { Count: > 0 };
+        if (Get(child, "m_shapestorage") is not IList { Count: 0 } || Get(child, "m_meshstorage") is not IList { Count: > 0 } storages)
+            return false;
+
+        return child.GetType().Name switch
+        {
+            "CustomParamStorageExtendedMeshShape" => true,
+
+            // A material a storage, so a triangle's material is its storage's, as in FromSoftware's
+            "hkpStorageExtendedMeshShape" => storages.Cast<object>().All(s => Get(s, "m_materials") is IList { Count: <= 1 }),
+
+            _ => false
+        };
+    }
+
+    /// <summary>Whether a supported shape's mesh is a plain Havok one, whose materials are its storages' mesh materials.</summary>
+    private static bool IsPlain(object child) => child?.GetType().Name == "hkpStorageExtendedMeshShape";
+
+    /// <summary>A plain storage's material: the filter info of its mesh material, 0 for none.</summary>
+    private static uint GetStorageMaterial(object storage)
+    {
+        return Get(storage, "m_materials") is IList { Count: > 0 } materials && materials[0] != null
+            ? Convert.ToUInt32(Get(materials[0], "m_filterInfo"))
+            : 0;
     }
 
     /// <summary>The mesh of a supported shape, or null.</summary>
@@ -71,6 +96,12 @@ public static class HkpMeshShapeRebuild
 
             mesh.StorageVertices.Add(vertices);
             mesh.StorageTriangles.Add(triangles);
+
+            if (IsPlain(child))
+            {
+                mesh.StorageMaterials.Add(GetStorageMaterial(storage));
+                continue;
+            }
 
             var parameter = parameters != null && s < parameters.Count ? parameters[s] : null;
             mesh.StorageMaterials.Add(GetMaterial(parameter));
@@ -210,7 +241,10 @@ public static class HkpMeshShapeRebuild
         var oldSubparts = (IList)Get(oldChild, "m_trianglesSubparts");
         var keyShift = 32 - Convert.ToInt32(Get(oldChild, "m_numBitsForSubpartIndex"));
 
-        if (oldStorages.Count == 0 || oldParameters == null || oldParameters.Count == 0 || oldSubparts.Count == 0)
+        // A plain mesh keeps its materials in its storages, so it has no parameters
+        var plain = IsPlain(oldChild);
+
+        if (oldStorages.Count == 0 || oldSubparts.Count == 0 || (!plain && (oldParameters == null || oldParameters.Count == 0)))
             return null;
 
         // The triangles of each material, in input order, split where a storage would pass its vertex limit
@@ -244,7 +278,7 @@ public static class HkpMeshShapeRebuild
             return null;
 
         var newStorages = (IList)Activator.CreateInstance(oldStorages.GetType());
-        var newParameters = (IList)Activator.CreateInstance(oldParameters.GetType());
+        var newParameters = plain ? null : (IList)Activator.CreateInstance(oldParameters.GetType());
         var newSubparts = (IList)Activator.CreateInstance(oldSubparts.GetType());
         var storageVertices = new List<Vector3[]>();
         var triangles = new List<MoppCompiler.Triangle>();
@@ -261,7 +295,12 @@ public static class HkpMeshShapeRebuild
 
             storageVertices.Add(local);
 
-            var storage = Clone(oldStorages[0]);
+            // A plain mesh's storage of the same material, if it has one, so its mesh material keeps every field
+            var templateStorage = plain
+                ? oldStorages.Cast<object>().FirstOrDefault(o => o != null && GetStorageMaterial(o) == material) ?? oldStorages[0]
+                : oldStorages[0];
+
+            var storage = Clone(templateStorage);
             Set(storage, "m_vertices", local.Select(v => new Vector4(v, 0)).ToList());
 
             // Four 16-bit indices a triangle, the fourth padding; every other list empty, of its own
@@ -286,6 +325,38 @@ public static class HkpMeshShapeRebuild
                     continue;
 
                 field.SetValue(storage, field.Name == "m_indices16" ? indices16 : Activator.CreateInstance(field.FieldType));
+            }
+
+            if (plain)
+            {
+                // Its one mesh material, with the material as its filter info, and every triangle using it
+                var materialList = (IList)Activator.CreateInstance(Field(storage.GetType(), "m_materials").FieldType);
+                var oldMaterials = (IList)Get(templateStorage, "m_materials");
+                var meshMaterial = oldMaterials is { Count: > 0 } && oldMaterials[0] != null
+                    ? Clone(oldMaterials[0])
+                    : Activator.CreateInstance(materialList.GetType().GetGenericArguments()[0]);
+
+                var filterInfo = Field(meshMaterial.GetType(), "m_filterInfo");
+                filterInfo?.SetValue(meshMaterial, Convert.ChangeType(material, filterInfo.FieldType));
+
+                materialList.Add(meshMaterial);
+                Set(storage, "m_materials", materialList);
+
+                var materialIndices = (IList)Activator.CreateInstance(Field(storage.GetType(), "m_materialIndices").FieldType);
+
+                for (var i = 0; i < groupTriangles.Count; i++)
+                    materialIndices.Add((byte)0);
+
+                Set(storage, "m_materialIndices", materialIndices);
+
+                newStorages.Add(storage);
+
+                var plainSubpart = Clone(oldSubparts[0]);
+                SetConverted(plainSubpart, "m_numTriangleShapes", groupTriangles.Count);
+                SetConverted(plainSubpart, "m_numVertices", local.Length);
+                SetConverted(plainSubpart, "m_numMaterials", 1);
+                newSubparts.Add(plainSubpart);
+                continue;
             }
 
             newStorages.Add(storage);
@@ -314,7 +385,10 @@ public static class HkpMeshShapeRebuild
 
         var child = Clone(oldChild);
         Set(child, "m_meshstorage", newStorages);
-        Set(child, "m_materialArray", newParameters);
+
+        if (!plain)
+            Set(child, "m_materialArray", newParameters);
+
         Set(child, "m_trianglesSubparts", newSubparts);
         Set(child, "m_embeddedTrianglesSubpart", Clone(newSubparts[0]));
 

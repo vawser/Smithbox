@@ -843,13 +843,9 @@ public class ModelWrapper
     /// </summary>
     private void LoadAssetCollision()
     {
-        if (Parent.Project.Descriptor.ProjectType is not (ProjectType.ER
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB))
-        {
+        // Every game with geombnd assets keeps them this way (ER, NR, AC6, DB_NT, DB): ModelCollisionSurvey
+        if (!Parent.Path.EndsWith(".geombnd.dcx", StringComparison.OrdinalIgnoreCase))
             return;
-        }
 
         var folder = Parent.Path.Substring(0, Parent.Path.LastIndexOf('/') + 1);
 
@@ -993,13 +989,11 @@ public class ModelWrapper
             }
         }
 
-        // HKX
-        if(filepath.Contains(".hkx"))
+        // HKX: the object's collision, named as the model (o0000.hkx), or with _h in DS2S (o00_0100_h.hkx). Other hkx
+        // files in the binder are its skeleton, animations or the pieces it breaks into (o0000_1.hkx): ModelCollisionSurvey
+        if (filepath.Contains(".hkx") && !filepath.Contains(".hkxpwv") && IsCollisionFileName(filename))
         {
-            if (filename == Name)
-            {
-                HandleHavokCollisionLoad(filename, data);
-            }
+            HandleHavokCollisionLoad(filename, data);
         }
 
         // CLM2
@@ -1313,7 +1307,7 @@ public class ModelWrapper
         // and matching by name alone could write this model's data over another model's
 
         // HKX: the model binder's collision, when the Collision tool has changed it
-        if (filepath.Contains(".hkx") && !filepath.Contains(".hkxpwv") && filename == Name
+        if (filepath.Contains(".hkx") && !filepath.Contains(".hkxpwv") && string.Equals(filename, HKX_Name, StringComparison.OrdinalIgnoreCase) && HKX_BinderName == null
             && _collisionFiles?.GetEmbeddedToWrite() is { } collision)
         {
             try
@@ -1487,23 +1481,30 @@ public class ModelWrapper
         }
     }
 
+    /// <summary>Whether a file in the model binder is the model's collision: named as the model, or with _h (DS2S).</summary>
+    private bool IsCollisionFileName(string filename) =>
+        string.Equals(filename, Name, StringComparison.OrdinalIgnoreCase)
+        || string.Equals(filename, $"{Name}_h", StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>The model's collision file couldn't be read (DS2's Havok version has no class set to read it with).</summary>
+    public bool HKX_ReadFailed { get; private set; }
+
     private void HandleHavokCollisionLoad(string filename, Memory<byte> data)
     {
         HasCollision = true;
         HKX_Name = filename;
+        HKX_ReadFailed = false;
+        HKX_Document = null;
 
-        // The games the Model Editor has shown collision for: read through the unified Havok library
-        if (Parent.Project.Descriptor.ProjectType is not (ProjectType.ER
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB
-            or ProjectType.DS3))
-            return;
-
+        // Read through the unified Havok library, for every game that has a profile; ModelCollisionSurvey reads
+        // every game's object and asset collision this way but DS2's
         var profile = Havok.HavokProfile.FromGame(Parent.Project.Descriptor.ProjectType.ToString());
 
         if (profile == null)
+        {
+            HKX_ReadFailed = true;
             return;
+        }
 
         try
         {
@@ -1514,7 +1515,8 @@ public class ModelWrapper
         }
         catch (Exception)
         {
-            // As before: a collision that doesn't read is left out (e.g. one whose types are in a compendium elsewhere)
+            // A collision that doesn't read is left out (DS2's, or one whose types are in a compendium elsewhere)
+            HKX_ReadFailed = true;
         }
     }
 }

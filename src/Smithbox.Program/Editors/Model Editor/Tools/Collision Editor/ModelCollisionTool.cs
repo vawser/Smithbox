@@ -230,7 +230,9 @@ public partial class ModelCollisionTool
         var layer = GetLayer();
         var file = files.Get(files.UsesLayerBinders ? Layer : HavokCollisionType.Low);
 
-        if (file == null)
+        if (file == null && !files.UsesLayerBinders && wrapper.HKX_ReadFailed)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MODEL_CollisionTool_Layer_Read_Failed", wrapper.HKX_Name));
+        else if (file == null)
             GUI.WrappedText(LOC.Get("MODEL_CollisionTool_Layer_None", files.GetEntryName(files.UsesLayerBinders ? Layer : HavokCollisionType.Low)));
         else if (layer == null)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MODEL_CollisionTool_Layer_Unsupported", file.EntryName));

@@ -123,7 +123,8 @@ public sealed class CollisionEditorBody
 
     /// <summary>
     /// Decodes a body's compressed mesh. Corners that decode to the same position are welded into one vertex, as
-    /// the vertices shared between sections are stored once. Each triangle keeps the collision material its shape key
+    /// the vertices shared between sections are stored once (a plain Havok mesh, with no FromSoftware parameters, has
+    /// material 0 throughout). Each triangle keeps the collision material its shape key
     /// has in the FromSoftware parameters. Null if the body isn't a FromSoftware compressed mesh.
     /// </summary>
     public static CollisionEditorBody Decode(IHavokBody body)
@@ -131,7 +132,7 @@ public sealed class CollisionEditorBody
         if (Havok.Builders.HkpMeshShapeRebuild.IsSupported(body.Shape))
             return DecodeHkp(body);
 
-        if (body.Shape is not IHavokCompressedMesh mesh || !CollisionEditorShapes.IsCompressedMeshShape(body.Shape))
+        if (body.Shape is not IHavokCompressedMesh mesh || !CollisionEditorShapes.IsDecodableMeshShape(body.Shape))
             return null;
 
         var materialOfKey = CollisionEditorShapes.GetMaterialsByKey(body.Shape);

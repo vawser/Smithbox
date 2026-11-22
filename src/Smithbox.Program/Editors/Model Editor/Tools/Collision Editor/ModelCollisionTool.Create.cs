@@ -40,6 +40,7 @@ public partial class ModelCollisionTool
         CreateFlver = null;
         CreateModel = null;
         CreateMeshes = [];
+        CreateBodyIndex.Clear();
     }
 
     private void DisplayCreateTab(ModelWrapper wrapper)
@@ -116,6 +117,9 @@ public partial class ModelCollisionTool
             }
 
             GUI.WrappedText(DescribeCreateTarget(files, type));
+
+            if (files.Get(type) is { } layerFile)
+                DisplayBodyChoice(layerFile, type);
         }
 
         // Build
@@ -224,6 +228,80 @@ public partial class ModelCollisionTool
         return targets;
     }
 
+    // The body Create gives the mesh to, by layer, for files with several bodies
+    private readonly Dictionary<HavokCollisionType, int> CreateBodyIndex = new();
+
+    /// <summary>The body of a layer's file Create builds into: its only body, or the one chosen. Null if it has none.</summary>
+    private Havok.Shared.IHavokBody GetCreateBody(ModelCollisionFile file, HavokCollisionType type)
+    {
+        var bodies = Havok.Shared.CollisionGeometry.Bodies(file.Document.Objects).ToList();
+
+        if (bodies.Count == 0)
+            return null;
+
+        return bodies[GetCreateBodyIndex(bodies, type)];
+    }
+
+    /// <summary>The chosen body's number, or until one is chosen, the first that can take a mesh.</summary>
+    private int GetCreateBodyIndex(List<Havok.Shared.IHavokBody> bodies, HavokCollisionType type)
+    {
+        if (!CreateBodyIndex.TryGetValue(type, out var index))
+            index = Math.Max(0, bodies.FindIndex(b => CollisionEditorShapes.CanReplaceBody(b, out _)));
+
+        return Math.Clamp(index, 0, bodies.Count - 1);
+    }
+
+    /// <summary>Vertices in the model's space, carried into a body's space, where its shape is.</summary>
+    private static List<Vector3> ToBodySpace(Havok.Shared.IHavokBody body, List<Vector3> vertices)
+    {
+        var transform = Havok.Shared.CollisionGeometry.BodyTransform(body);
+
+        if (transform.IsIdentity || !Matrix4x4.Invert(transform, out var inverse))
+            return vertices;
+
+        return vertices.Select(v => Vector3.Transform(v, inverse)).ToList();
+    }
+
+    /// <summary>A body for the body list: its number, name, shape and motion.</summary>
+    private static string DescribeBody(int index, Havok.Shared.IHavokBody body)
+    {
+        var name = CollisionEditorShapes.GetBodyName(body);
+        var motion = CollisionEditorShapes.GetBodyMotion(body);
+
+        return LOC.Get("MODEL_CollisionTool_Create_Body", index, string.IsNullOrEmpty(name) ? "-" : name,
+            body.Shape?.GetType().Name ?? "-", motion ?? "-");
+    }
+
+    /// <summary>For a layer file with several bodies, which one Create gives the mesh to.</summary>
+    private void DisplayBodyChoice(ModelCollisionFile file, HavokCollisionType type)
+    {
+        var bodies = Havok.Shared.CollisionGeometry.Bodies(file.Document.Objects).ToList();
+
+        if (bodies.Count < 2)
+            return;
+
+        var index = GetCreateBodyIndex(bodies, type);
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo($"##modelCollisionCreateBody{type}", DescribeBody(index, bodies[index])))
+        {
+            for (var i = 0; i < bodies.Count; i++)
+            {
+                var replaceable = CollisionEditorShapes.CanReplaceBody(bodies[i], out _);
+
+                ImGui.BeginDisabled(!replaceable);
+
+                if (ImGui.Selectable($"{DescribeBody(i, bodies[i])}##modelCollisionCreateBody{type}{i}", i == index))
+                    CreateBodyIndex[type] = i;
+
+                ImGui.EndDisabled();
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("MODEL_CollisionTool_Create_Body_TT"));
+    }
+
     /// <summary>What Create does to a layer: replaces its file's mesh, makes a new file, or can't.</summary>
     private string DescribeCreateTarget(ModelCollisionFiles files, HavokCollisionType type)
     {
@@ -231,9 +309,21 @@ public partial class ModelCollisionTool
 
         if (files.Get(type) is { } file)
         {
-            return CollisionEditorShapes.IsTemplate(file.Document)
-                ? LOC.Get("MODEL_CollisionTool_Create_Replaces", entry)
-                : LOC.Get("MODEL_CollisionTool_Create_Unsupported", entry);
+            var body = GetCreateBody(file, type);
+
+            if (body == null || !CollisionEditorShapes.CanReplaceBody(body, out var needsTemplate))
+                return LOC.Get("MODEL_CollisionTool_Create_Unsupported", entry);
+
+            var several = Havok.Shared.CollisionGeometry.Bodies(file.Document.Objects).Count() > 1;
+
+            // An older game's box or convex body: the mesh is based on another object's, found when building
+            return (several, needsTemplate) switch
+            {
+                (true, false) => LOC.Get("MODEL_CollisionTool_Create_Replaces_Body", entry),
+                (true, true) => LOC.Get("MODEL_CollisionTool_Create_Replaces_Body_Templated", entry),
+                (false, true) => LOC.Get("MODEL_CollisionTool_Create_Replaces_Templated", entry),
+                _ => LOC.Get("MODEL_CollisionTool_Create_Replaces", entry)
+            };
         }
 
         if (!files.UsesLayerBinders)
@@ -270,15 +360,36 @@ public partial class ModelCollisionTool
             {
                 if (files.Get(type) is { } file)
                 {
-                    var body = CollisionEditorShapes.GetTemplateBody(file.Document);
+                    var body = GetCreateBody(file, type);
 
-                    if (body == null)
+                    if (body == null || !CollisionEditorShapes.CanReplaceBody(body, out var needsTemplate))
                     {
                         ReportFailure(LOC.Get("MODEL_CollisionTool_Create_Unsupported", entry));
                         return;
                     }
 
-                    var built = CollisionEditorShapes.BuildShape(body.Shape, vertices, indices, materials);
+                    // The mesh is in the model's space; a body's shape is in the body's, which it places
+                    var local = ToBodySpace(body, vertices);
+                    CollisionEditorShapes.BuiltShape built;
+
+                    if (!needsTemplate)
+                    {
+                        built = CollisionEditorShapes.BuildShape(body.Shape, local, indices, materials);
+                    }
+                    else
+                    {
+                        // An older game's box or convex body: another object's mesh holds what a mesh of the game needs
+                        var template = ModelCollisionTemplate.FindHkpMesh(Project, out var source);
+
+                        if (template == null)
+                        {
+                            ReportFailure(LOC.Get("MODEL_CollisionTool_Create_No_Object_Mesh", entry));
+                            return;
+                        }
+
+                        built = CollisionEditorShapes.BuildShapeFromTemplate(template, local, indices, materials);
+                        Smithbox.Log(this, LOC.Get("MODEL_CollisionTool_Create_Template_Used", source, entry));
+                    }
 
                     if (built == null)
                     {
@@ -293,7 +404,13 @@ public partial class ModelCollisionTool
                     var other = type is HavokCollisionType.High ? HavokCollisionType.Low : HavokCollisionType.High;
                     var document = files.Get(other) != null ? files.ReadTemplateDocument(other) : null;
 
-                    if (document == null || !CollisionEditorShapes.MakeNewCollision(document, "", vertices, indices, materials))
+                    // The other layer's file, read afresh, with the new mesh in its body, which keeps its placement and
+                    // settings (any replaceable shape: a convex one too)
+                    var templateBody = document == null ? null : CollisionEditorShapes.GetReplaceableBody(document);
+                    var templateBuilt = templateBody == null ? null
+                        : CollisionEditorShapes.BuildShape(templateBody.Shape, ToBodySpace(templateBody, vertices), indices, materials);
+
+                    if (templateBuilt == null || !CollisionEditorShapes.SetShape(templateBody, templateBuilt.Shape))
                     {
                         ReportFailure(LOC.Get("MODEL_CollisionTool_Create_No_Template", entry));
                         return;
