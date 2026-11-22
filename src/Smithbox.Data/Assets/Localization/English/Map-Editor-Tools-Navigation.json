@@ -729,6 +729,18 @@
       "Text": "The bounds of the loaded assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (Obstacle, Impassable or High Cost), filled in amber: the game cuts or marks the navmesh under them at runtime, and lifts that when the asset breaks. The game's own navmeshes run under these assets, so they needn't be cut out of a generated one. Only the assets the game cuts in the drawn set are shown: navimeshFlagApply Type 0 cuts the n set, Type 1 the o set, Type 2 both. Drawn for assets whose model is loaded, in every loaded map."
     },
     {
+      "Key": "MAP_Navigation_Layer_FlyingVolume",
+      "Text": "Flying volume"
+    },
+    {
+      "Key": "MAP_Navigation_Layer_FlyingVolume_TT",
+      "Text": "The overall shape of the map's flying navigation volume (the .nvvhktbnd that flying enemies path through), as an outline: its floor and ceiling shells and the box of its grid.\nThe floor is where the air over the terrain (or under a roof) ends going down, and the ceiling is the top of that air, for each patch of the map. Space inside or under the terrain, and holes inside the shape, aren't shown. The map is split into at most 128 patches on a side, so small details are smoothed out.\nRead from the project's files, so it shows the saved volume."
+    },
+    {
+      "Key": "MAP_Navigation_Volume_Read_Failed",
+      "Text": "Couldn't read the flying navigation volume of {0}: {1}"
+    },
+    {
       "Key": "MAP_Navigation_Legend_Header",
       "Text": "Face Data"
     },

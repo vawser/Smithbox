@@ -99,6 +99,7 @@ public sealed class NavigationOverlayRenderer
         NavOverlayLayer.Highlight => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.Blockers => new(1.00f, 0.15f, 0.15f),
         NavOverlayLayer.RuntimeCuts => new(1.00f, 0.65f, 0.00f),
+        NavOverlayLayer.FlyingVolume => new(0.40f, 1.00f, 0.75f),
         NavOverlayLayer.NvmGates => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.NvmEntities => new(1.00f, 0.55f, 0.10f),
         NavOverlayLayer.McpRooms => new(0.60f, 0.60f, 1.00f),

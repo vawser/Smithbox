@@ -124,6 +124,10 @@ public partial class NavigationTool
 
         foreach (var layer in ToggleLayers)
         {
+            // Only AC6 has flying navigation volumes
+            if (layer == NavOverlayLayer.FlyingVolume && !HasFlyingVolumes)
+                continue;
+
             bool on = Layers.Contains(layer);
 
             // The line layers show their colour, so the viewport can be read without the legend
@@ -138,9 +142,12 @@ public partial class NavigationTool
             {
                 if (on) Layers.Add(layer); else Layers.Remove(layer);
 
-                // Runtime cuts are drawn by the tool on their own, so the navmesh overlay needn't be built again
+                // Runtime cuts and the flying volume are drawn by the tool on their own, so the navmesh overlay needn't be
+                // built again
                 if (layer == NavOverlayLayer.RuntimeCuts)
                     RuntimeCutOverlayDirty = true;
+                else if (layer == NavOverlayLayer.FlyingVolume)
+                    VolumeOverlayDirty = true;
                 else
                     OverlayDirty = true;
             }
@@ -424,6 +431,7 @@ public partial class NavigationTool
         OverlayBuildCount++;
         BlockerOverlayDirty = true;
         RuntimeCutOverlayDirty = true;
+        VolumeOverlayDirty = true;
         GateOverlayDirty = true;
 
         if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry, Bank.Profile) == OverlaySet)
@@ -435,6 +443,7 @@ public partial class NavigationTool
         OverlayRenderer.Clear();
         BlockerRenderer.Clear();
         RuntimeCutRenderer.Clear();
+        VolumeRenderer.Clear();
         HighlightRenderer.Clear();
         GateRenderer.Clear();
         GateDragging = false;
@@ -499,6 +508,7 @@ public partial class NavigationTool
         OverlayRenderer.Update();
         BlockerRenderer.Update();
         RuntimeCutRenderer.Update();
+        VolumeRenderer.Update();
         HighlightRenderer.Update();
         GateRenderer.Update();
 
@@ -518,6 +528,8 @@ public partial class NavigationTool
         CheckRuntimeCutMoves();
         if (RuntimeCutOverlayDirty)
             UpdateRuntimeCutOverlay();
+
+        UpdateVolumeOverlay();
 
         // The chosen navmesh's gates, drawn after the overlay they sit on
         if (GateOverlayDirty && !OverlayDirty)

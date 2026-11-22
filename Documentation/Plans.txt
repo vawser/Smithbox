@@ -33,7 +33,6 @@
     - bsipwv
     
 - AC6: unsupported formats:
-    - aith
     - nvve
     - moaei
     - blf

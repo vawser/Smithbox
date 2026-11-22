@@ -63,6 +63,12 @@ public enum NavOverlayLayer
     /// </summary>
     RuntimeCuts,
 
+    /// <summary>
+    /// AC6 only: the outer envelope of the map's flying navigation volume (NavVolumeEnvelope), as lines. Drawn by the
+    /// tool, not the overlay builder.
+    /// </summary>
+    FlyingVolume,
+
     // NVM mode (DeS, DS1, DS1R). The NVM mode uses Faces (keyed by triangle flags), InnerEdges, OpenEdges and Highlight too
 
     /// <summary>The outline of the triangles flagged GATE, where MCG nodes join navmeshes.</summary>
