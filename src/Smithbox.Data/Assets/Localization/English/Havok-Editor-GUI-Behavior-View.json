@@ -763,6 +763,8 @@
     { "Key": "HAVOK_Register_Nothing", "Text": "There is nothing to add." },
     { "Key": "HAVOK_Register_Done", "Text": "Register in Behavior: added {0} clips for {1} ({2} skipped)." },
     { "Key": "HAVOK_Register_No_Binder", "Text": "Register in Behavior: {0} has no behbnd." },
-    { "Key": "HAVOK_Register_No_Behavior_File", "Text": "Register in Behavior: the behbnd of {0} has no behavior file." }
+    { "Key": "HAVOK_Register_No_Behavior_File", "Text": "Register in Behavior: the behbnd of {0} has no behavior file." },
+    { "Key": "HAVOK_Select_No_Binder", "Text": "Havok Editor: there is no binder named {0}." },
+    { "Key": "HAVOK_Select_No_File", "Text": "Havok Editor: {1} has no file named {0}." }
   ]
 }

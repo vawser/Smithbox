@@ -17,6 +17,22 @@
       "Text": "Go To: show the selected object in the Map Contents tree, opening its tree nodes and scrolling to it. With several selected, the first is shown. Its map becomes the active map if it isn't already."
     },
     {
+      "Key": "MAP_Properties_Havok_Editor_TT",
+      "Text": "Open in Havok Editor: show this collision part's collision file, {0}, in the Havok Editor. The first displayed collision type (Low, High, Fall Protection) the map has a file of is shown.\n\nUnsaved collision edits made in the Map Editor are not in the Havok Editor until the map is saved."
+    },
+    {
+      "Key": "MAP_Properties_Havok_Editor_Unavailable_TT",
+      "Text": "Open in Havok Editor: this collision part has no collision file in its map, or the Havok Editor isn't enabled for this project."
+    },
+    {
+      "Key": "MAP_Properties_Havok_Editor_Navmesh_TT",
+      "Text": "Open in Havok Editor: show this navmesh entry's navmesh file, {0}, in the Havok Editor. It is the file the entry's faces are in: its own n or o file, or its quarter's q file.\n\nUnsaved navmesh edits made in the Map Editor are not in the Havok Editor until the map is saved."
+    },
+    {
+      "Key": "MAP_Properties_Havok_Editor_Navmesh_Unavailable_TT",
+      "Text": "Open in Havok Editor: this isn't a navmesh entry, its map's navmesh binder has no file for it, or the Havok Editor isn't enabled for this project."
+    },
+    {
       "Key": "MAP_Properties_Toggle_Unknown_Field_Hide",
       "Text": "Show unknown fields"
     },

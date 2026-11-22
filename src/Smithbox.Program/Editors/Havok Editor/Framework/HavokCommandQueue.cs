@@ -33,7 +33,83 @@ public class HavokCommandQueue
         {
             Register(activeView, initcmd[1], initcmd[2]);
         }
+
+        // Show a file in a binder: "hkx/select/{category}/{binder name}/{file name}"
+        // (sent by the Map Editor's properties, for a collision part or navmesh entry)
+        if (initcmd[0] == "select" && initcmd.Length >= 4)
+        {
+            Select(activeView, initcmd[1], initcmd[2], initcmd[3]);
+        }
     }
+
+    /// <summary>
+    /// Selects the category, the binder of that name and the file of that name in it, as picking them in the lists.
+    /// The file is matched by its name alone, as a binder's entries can be inside a folder (map collision).
+    /// </summary>
+    private void Select(HavokEditorView view, string categoryName, string binderName, string fileName)
+    {
+        if (!Enum.TryParse<HavokCategoryMode>(categoryName, out var category))
+            return;
+
+        var binders = category switch
+        {
+            HavokCategoryMode.Animation => Project.Locator.HavokAnimationFiles.Entries,
+            HavokCategoryMode.Behavior => Project.Locator.HavokBehaviorFiles.Entries,
+            HavokCategoryMode.Character => Project.Locator.HavokCharacterFiles.Entries,
+            HavokCategoryMode.Map_Collision => Project.Locator.HavokCollisionFiles.Entries,
+            HavokCategoryMode.Asset_Collision => Project.Locator.HavokAssetFiles.Entries,
+            HavokCategoryMode.Navmesh => Project.Locator.HavokNavmeshFiles.Entries,
+            HavokCategoryMode.Cutscene => Project.Locator.HavokCutsceneFiles.Entries,
+            HavokCategoryMode.Part_Collidable => Project.Locator.HavokPartFiles.Entries,
+            HavokCategoryMode.Rumble => Project.Locator.HavokRumbleFiles.Entries,
+            _ => null
+        };
+
+        var binder = binders?.FirstOrDefault(e => e.Filename.Equals(binderName, StringComparison.OrdinalIgnoreCase));
+
+        if (binder == null)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Select_No_Binder", binderName));
+            return;
+        }
+
+        view.Selection.ClearSelection();
+        view.Selection.CategoryMode = category;
+        view.Selection.RebuildBinderAliasCache();
+        view.Selection.BinderFileEntry = binder;
+        view.Selection.ClearFileAliasCache();
+        view.BinderView.PopulateFileList(true);
+
+        // The binder list's collision type filter would hide the binder: shown with every type instead
+        if (category is HavokCategoryMode.Map_Collision)
+        {
+            var filter = CFG.Current.HavokEditor_FileList_Collision_Type_Filter;
+            var hidden = (filter == 1 && !binderName.StartsWith("l"))
+                || (filter == 2 && !binderName.StartsWith("h"))
+                || (filter == 3 && !binderName.StartsWith("f"));
+
+            if (hidden)
+                CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 0;
+        }
+
+        var files = view.HavokBank.GetBank(category)?.TryGetValue(binder, out var bankFiles) == true
+            ? bankFiles.Keys
+            : Enumerable.Empty<string>();
+
+        // By the whole name, or without the extension (navmesh files are named n30_00_00_00_000100 by the Map Editor)
+        var file = files.FirstOrDefault(f => FileName(f).Equals(fileName, StringComparison.OrdinalIgnoreCase))
+            ?? files.FirstOrDefault(f => FileName(f).Split('.')[0].Equals(fileName, StringComparison.OrdinalIgnoreCase));
+
+        if (file == null)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_Select_No_File", fileName, binderName));
+            return;
+        }
+
+        view.FileView.SelectFile(file);
+    }
+
+    private static string FileName(string path) => System.IO.Path.GetFileName(path.Replace('\\', '/'));
 
     /// <summary>
     /// Selects the character's behbnd and behavior file, then opens Register in Behavior once the file is shown

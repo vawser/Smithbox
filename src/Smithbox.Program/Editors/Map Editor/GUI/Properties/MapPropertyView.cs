@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Utilities;
@@ -11,13 +12,9 @@ public class MapPropertyView
     private ProjectEntry Project;
 
     public MapMsbPropertyView MsbPropertyView;
-    public MapHavokPropertyView HavokPropertyView;
 
     public string MapPropFilter = "";
     public bool ExactMapPropFilter = false;
-
-    private MapCollisionViewMode CollisionViewMode = MapCollisionViewMode.MSB;
-    private MapNavmeshViewMode NavmeshViewMode = MapNavmeshViewMode.NVA;
 
     public MapPropertyView(MapEditorView view, ProjectEntry project)
     {
@@ -25,53 +22,15 @@ public class MapPropertyView
         Project = project;
 
         MsbPropertyView = new(view, project);
-        HavokPropertyView = new(view, project);
     }
 
     public void Display()
     {
         DisplayCommonHeader();
 
-        var supportsMultEditModes = IsCollisionType();
-
-        if (IsCollisionType())
-        {
-            DisplayCollisionViewModeSelect();
-
-            if(CollisionViewMode is MapCollisionViewMode.MSB)
-            {
-                MsbPropertyView.Display();
-            }
-
-            if (CollisionViewMode is MapCollisionViewMode.CollisionHKX)
-            {
-                DisplayCollisionTypeHeader();
-
-                HavokPropertyView.SetPropertyMode(HavokPropertyMode.Collision);
-                HavokPropertyView.Display();
-            }
-        }
-        else if (IsNavmeshType())
-        {
-            DisplayNavmeshViewModeSelect();
-
-            if (NavmeshViewMode is MapNavmeshViewMode.NVA)
-            {
-                MsbPropertyView.Display();
-            }
-
-            if (NavmeshViewMode is MapNavmeshViewMode.NavmeshHKX)
-            {
-                DisplayNavmeshTypeHeader();
-
-                HavokPropertyView.SetPropertyMode(HavokPropertyMode.Navmesh);
-                HavokPropertyView.Display();
-            }
-        }
-        else
-        {
-            MsbPropertyView.Display();
-        }
+        // A collision part's collision file and a navmesh entry's navmesh file are edited in the Havok Editor
+        // (the header's link button)
+        MsbPropertyView.Display();
     }
 
     public void DisplayCommonHeader()
@@ -83,6 +42,18 @@ public class MapPropertyView
         // Action: Go To
         DisplayGoToButton();
 
+        // Action: Open in Havok Editor
+        if (IsCollisionType())
+        {
+            DisplayHavokEditorButton(HavokCategoryMode.Map_Collision, GetHavokCollisionTarget(),
+                "MAP_Properties_Havok_Editor_TT", "MAP_Properties_Havok_Editor_Unavailable_TT");
+        }
+        else if (IsNavmeshType())
+        {
+            DisplayHavokEditorButton(HavokCategoryMode.Navmesh, GetHavokNavmeshTarget(),
+                "MAP_Properties_Havok_Editor_Navmesh_TT", "MAP_Properties_Havok_Editor_Navmesh_Unavailable_TT");
+        }
+
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNameToggle", Icons.Book,
             ref CFG.Current.MapEditor_Properties_Enable_Commmunity_Names,
@@ -90,32 +61,7 @@ public class MapPropertyView
             "MAP_Properties_Toggle_Community_Names_Community",
             "MAP_Properties_Toggle_Community_Names_TT");
 
-        // Each kind has its own view mode: a navmesh's is the navmesh one, not the collision one
-        var showsHavok = (IsCollisionType() && CollisionViewMode is MapCollisionViewMode.CollisionHKX)
-            || (IsNavmeshType() && NavmeshViewMode is MapNavmeshViewMode.NavmeshHKX);
-
-        if (showsHavok)
-        {
-            {
-                // Toggle: Type Column
-                GUI.DisplayToggleButton("typeColumnToggle", Icons.Calculator,
-                    ref CFG.Current.MapEditor_HavokEdit_Display_Type_Column,
-                    "HAVOK_PropertyView_Type_Column_Toggle_Hide",
-                    "HAVOK_PropertyView_Type_Column_Toggle_Show",
-                    "HAVOK_PropertyView_Type_Column_Toggle_TT");
-
-                // Toggle: Mesh Data
-                GUI.DisplayToggleButton("meshDataToggle", Icons.Database,
-                    ref CFG.Current.MapEditor_CollisionEdit_Display_Raw_Data_Fields,
-                    "HAVOK_PropertyView_Mesh_Data_Toggle_Hide",
-                    "HAVOK_PropertyView_Mesh_Data_Toggle_Show",
-                    "HAVOK_PropertyView_Mesh_Data_Toggle_TT");
-            }
-        }
-        else
-        {
-            DisplayMsbHeaderToggles();
-        }
+        DisplayMsbHeaderToggles();
 
         ImGui.EndChild();
     }
@@ -158,6 +104,118 @@ public class MapPropertyView
         return null;
     }
 
+    /// <summary>
+    /// Shows a file of the selected entity (its collision or navmesh file) in the Havok Editor
+    /// </summary>
+    private void DisplayHavokEditorButton(HavokCategoryMode category, (string Binder, string File)? target,
+        string tooltipKey, string unavailableKey)
+    {
+        var available = target != null
+            && Project.Descriptor.EnableHavokEditor
+            && EditorConditions.SupportsHavokEditor(Project.Descriptor.ProjectType)
+            && Project.Handler.HavokEditor != null;
+
+        ImGui.SameLine();
+
+        ImGui.BeginDisabled(!available);
+
+        if (ImGui.Button($"{Icons.ExternalLink}##propertiesHavokEditor", DPI.IconButtonSize))
+        {
+            EditorCommandQueue.AddCommand($"hkx/select/{category}/{target.Value.Binder}/{target.Value.File}");
+        }
+
+        ImGui.EndDisabled();
+
+        GUI.Tooltip(available
+            ? LOC.Get(tooltipKey, target.Value.File)
+            : LOC.Get(unavailableKey));
+    }
+
+    /// <summary>
+    /// The binder and file name of the selected collision part's collision (h30_00_00_00, h30_00_00_00_000100.hkx.dcx):
+    /// the first displayed collision type the map has a file of, else the first type it has one of. Null if the part
+    /// has no model name or its map has no such file.
+    /// </summary>
+    private (string Binder, string File)? GetHavokCollisionTarget()
+    {
+        var ent = View.ViewportSelection.GetFilteredSelection<Entity>().FirstOrDefault();
+
+        if (ent?.WrappedObject == null || ent.Container is not MapContainer map)
+            return null;
+
+        var modelName = ent.WrappedObject.GetType().GetProperty("ModelName")?.GetValue(ent.WrappedObject) as string;
+
+        if (string.IsNullOrEmpty(modelName))
+            return null;
+
+        var mapId = map.Name;
+        var bank = View.HavokCollisionBank;
+
+        (string, string) MakeTarget(HavokCollisionType type)
+        {
+            var prefix = type switch
+            {
+                HavokCollisionType.Low => "l",
+                HavokCollisionType.FallProtection => "f",
+                _ => "h"
+            };
+
+            var binder = $"{prefix}{mapId.Replace("m", "")}";
+            return (binder, $"{binder}_{modelName.Replace("h", "")}.hkx.dcx");
+        }
+
+        var types = bank.GetVisibleCollisionTypes().Concat(bank.GetSupportedCollisionTypes()).Distinct().ToList();
+
+        // The map's collision isn't listed when collision loading is off: the Havok Editor reports a missing file
+        if (bank.GetMapCollisionNames(mapId).Count == 0)
+            return MakeTarget(types[0]);
+
+        foreach (var type in types)
+        {
+            var target = MakeTarget(type);
+
+            if (bank.HasMapCollision(mapId, target.Item2))
+                return target;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// The binder and file name of the selected navmesh entry's navmesh (m30_00_00_00, n30_00_00_00_000100): the file
+    /// its faces are in. In ER, NR and DB_NT that is its own set's file (n or o) or its quarter's q file, named as the
+    /// Map Editor's navmesh drawing names it; in AC6 and DB its model's n file. Null for an entry that isn't a navmesh
+    /// entry (e.g. the entity holding the whole NVA), or whose file the map's binder doesn't have.
+    /// </summary>
+    private (string Binder, string File)? GetHavokNavmeshTarget()
+    {
+        var ent = View.ViewportSelection.GetFilteredSelection<Entity>().FirstOrDefault();
+
+        if (ent?.WrappedObject is not NVA.Navmesh entry || ent.Container is not MapContainer map)
+            return null;
+
+        var mapName = map.Name;
+        var fileNames = View.HavokNavmeshBank.GetBinderFileNames(mapName);
+
+        string fileName;
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT)
+        {
+            // NR names an open world tile version's files from the binder's names (its NameIDs have no _DD); ER from the NameID
+            var profile = NavGameProfile.For(Project.Descriptor.ProjectType.ToString());
+            fileName = NavigationMap.FileNameFromEntry(mapName, entry, profile, profile.NameIdNamesTileVersion ? null : fileNames);
+        }
+        else
+        {
+            fileName = NavigationMap.MeshName(mapName, NavmeshSet.N, entry.ModelID);
+        }
+
+        if (!fileNames.Contains(fileName, StringComparer.OrdinalIgnoreCase))
+            return null;
+
+        return (mapName, fileName);
+    }
+
     public void DisplayMsbHeaderToggles()
     {
         // Toggle: Display Unknown
@@ -182,114 +240,6 @@ public class MapPropertyView
             "MAP_Properties_Toggle_References_TT");
     }
 
-    public void DisplayCollisionTypeHeader()
-    {
-        ImGui.BeginChild("editTypeCollisionSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
-
-        var previewName = LOC.Get(HavokPropertyView.CollisionEditType.GetDisplayName());
-
-        if (ImGui.BeginCombo("##editTypeCollisionSelect", previewName))
-        {
-            foreach (var entry in Enum.GetValues(typeof(MapCollisionEditType)))
-            {
-                var curType = (MapCollisionEditType)entry;
-
-                var displayName = LOC.Get(curType.GetDisplayName());
-
-                if (ImGui.Selectable(displayName, curType == HavokPropertyView.CollisionEditType))
-                {
-                    HavokPropertyView.CollisionEditType = curType;
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        GUI.Tooltip("The type of collision file to edit.");
-
-        ImGui.EndChild();
-    }
-
-    public void DisplayNavmeshTypeHeader()
-    {
-        ImGui.BeginChild("editTypeNavmeshSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
-
-        var previewName = LOC.Get(HavokPropertyView.NavmeshEditType.GetDisplayName());
-
-        if (ImGui.BeginCombo("##editTypeNavmeshSelect", previewName))
-        {
-            foreach (var entry in Enum.GetValues(typeof(MapNavmeshEditType)))
-            {
-                var curType = (MapNavmeshEditType)entry;
-
-                var displayName = LOC.Get(curType.GetDisplayName());
-
-                if (ImGui.Selectable(displayName, curType == HavokPropertyView.NavmeshEditType))
-                {
-                    HavokPropertyView.NavmeshEditType = curType;
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        GUI.Tooltip("The type of navmesh file to edit.");
-
-        ImGui.EndChild();
-    }
-
-    public void DisplayCollisionViewModeSelect()
-    {
-        ImGui.BeginChild("collisionViewModeSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
-
-        var previewName = LOC.Get(CollisionViewMode.GetDisplayName());
-
-        if (ImGui.BeginCombo("##collisionViewModeSelect", previewName))
-        {
-            foreach (var entry in Enum.GetValues(typeof(MapCollisionViewMode)))
-            {
-                var curType = (MapCollisionViewMode)entry;
-
-                var displayName = LOC.Get(curType.GetDisplayName());
-
-                if (ImGui.Selectable(displayName, curType == CollisionViewMode))
-                {
-                    CollisionViewMode = curType;
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        GUI.Tooltip("Determines which property editor to display.");
-
-        ImGui.EndChild();
-    }
-
-    public void DisplayNavmeshViewModeSelect()
-    {
-        ImGui.BeginChild("navmeshViewModeSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
-
-        var previewName = LOC.Get(NavmeshViewMode.GetDisplayName());
-
-        if (ImGui.BeginCombo("##navmeshViewModeSelect", previewName))
-        {
-            foreach (var entry in Enum.GetValues(typeof(MapNavmeshViewMode)))
-            {
-                var curType = (MapNavmeshViewMode)entry;
-
-                var displayName = LOC.Get(curType.GetDisplayName());
-
-                if (ImGui.Selectable(displayName, curType == NavmeshViewMode))
-                {
-                    NavmeshViewMode = curType;
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        GUI.Tooltip("Determines which property editor to display.");
-
-        ImGui.EndChild();
-    }
-
     public bool IsCollisionType()
     {
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
@@ -299,8 +249,8 @@ public class MapPropertyView
             Entity firstEnt = entSelection.First();
 
             // Is Collision Map Object
-            if (Project.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
+            if (Project.Descriptor.ProjectType is ProjectType.ER
+                or ProjectType.AC6
                 or ProjectType.NR
                 or ProjectType.DB_NT
                 or ProjectType.DB)
@@ -324,7 +274,7 @@ public class MapPropertyView
 
             // Is Navmesh Map Object
             if (Project.Descriptor.ProjectType is ProjectType.ER
-                or ProjectType.AC6 
+                or ProjectType.AC6
                 or ProjectType.NR
                 or ProjectType.DB_NT
                 or ProjectType.DB)

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -66,15 +66,12 @@
     <Compile Include="Editors\Map Editor\Enums\FileSelectionType.cs" />
     <Compile Include="Editors\Map Editor\Enums\GameVisibilityState.cs" />
     <Compile Include="Editors\Map Editor\Enums\GameVisibilityType.cs" />
-    <Compile Include="Editors\Map Editor\Enums\MapCollisionEditType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapConnectionRelationType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapContentLoadState.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapContentViewType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapDuplicateToMapType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapEditorContext.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapFileType.cs" />
-    <Compile Include="Editors\Map Editor\Enums\MapNavmeshEditType.cs" />
-    <Compile Include="Editors\Map Editor\Enums\MapPropertyViewMode.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapValidationType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MsbEntityType.cs" />
     <Compile Include="Editors\Map Editor\Enums\QuerySelectionConditionLogic.cs" />
