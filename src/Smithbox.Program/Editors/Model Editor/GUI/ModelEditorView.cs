@@ -59,6 +59,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public MaterialOracleTool MaterialOracleTool;
     public ModelDummyTool DummyTool;
     public ModelEdgeEditorTool EdgeEditorTool;
+    public ModelCollisionTool CollisionTool;
     public ModelGrassBuilderTool GrassBuilderTool;
     public ModelSearchTool LocalSearchTool;
     public ModelSearchTool GlobalSearchTool;
@@ -129,6 +130,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         MaterialOracleTool = new MaterialOracleTool(this, Project);
         DummyTool = new ModelDummyTool(this, Project);
         EdgeEditorTool = new ModelEdgeEditorTool(this, Project);
+        CollisionTool = new ModelCollisionTool(this, Project);
         GrassBuilderTool = new ModelGrassBuilderTool(this, Project);
         LocalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Local);
         GlobalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Global);

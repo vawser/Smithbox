@@ -135,7 +135,8 @@ public static class CollisionFlverReader
             : FromFlver0(FLVER0.Read(bytes));
     }
 
-    private static CollisionFlverModel FromFlver2(FLVER2 flver, bool colorNormalIsNode)
+    /// <summary>An already read FLVER2's meshes, as FromBytes reads them (the Model Editor's loaded model).</summary>
+    public static CollisionFlverModel FromFlver2(FLVER2 flver, bool colorNormalIsNode)
     {
         var model = new CollisionFlverModel();
         var nodes = NodeWorlds(flver.Nodes);

@@ -577,6 +577,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // And brushing or painting collision in the Model Editor's Collision tool
+        if (Owner is ModelUniverse modelCollisionUniverse &&
+            modelCollisionUniverse.View.CollisionTool.HandleViewportInput(this, ray, canPick))
+        {
+            painting = true;
+        }
+
         // And clicking a region's icon, with the Region Icons viewport filter on
         if (!painting && Owner is MapUniverse regionIconUniverse &&
             regionIconUniverse.View.RegionIconTool.HandleViewportInput(this, canPick))

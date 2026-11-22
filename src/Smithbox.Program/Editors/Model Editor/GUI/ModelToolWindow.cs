@@ -61,6 +61,8 @@ public class ModelToolWindow
             View.EdgeEditorTool.OnToolWindow();
         }
 
+        View.CollisionTool.OnToolWindow();
+
         //********************************
         // Preview
         //********************************

@@ -420,6 +420,14 @@ public class ModelWrapper
     public string HKX_BinderName { get; set; }
     public IRootContainer HKX { get; set; }
 
+    /// <summary>The document <see cref="HKX"/> is the root of, which the Collision tool edits and the save writes.</summary>
+    public Havok.HavokDocument HKX_Document { get; set; }
+
+    private ModelCollisionFiles _collisionFiles;
+
+    /// <summary>The collision files the Collision tool edits, by layer.</summary>
+    public ModelCollisionFiles CollisionFiles => _collisionFiles ??= new ModelCollisionFiles(this);
+
     /// <summary>
     /// Whether the model has been modified since it was last loaded or saved
     /// </summary>
@@ -652,6 +660,9 @@ public class ModelWrapper
             LoadDirect();
             return;
         }
+
+        // Collision read for the Collision tool is read again with the rest
+        CollisionFiles.Clear();
 
         // A file made here and never saved goes with the rest of the unsaved edits
         EDGE = null;
@@ -1094,6 +1105,12 @@ public class ModelWrapper
             ? SaveDirect()
             : SaveContainer();
 
+        // Collision the Collision tool changed in the layer binders beside the model binder (assets)
+        if (_collisionFiles != null && _collisionFiles.HasModified && _collisionFiles.UsesLayerBinders)
+        {
+            isSaved &= _collisionFiles.SaveLayerBinders();
+        }
+
         // A map EDGE file (the edgebhd one shown with Sekiro map pieces) is never written here: it belongs to a
         // collision and is edited by the Map Editor's EDGE tool, so the two editors can't overwrite each other
 
@@ -1295,6 +1312,24 @@ public class ModelWrapper
         // The other files go back to the file they were read from: a binder can hold the files of several models,
         // and matching by name alone could write this model's data over another model's
 
+        // HKX: the model binder's collision, when the Collision tool has changed it
+        if (filepath.Contains(".hkx") && !filepath.Contains(".hkxpwv") && filename == Name
+            && _collisionFiles?.GetEmbeddedToWrite() is { } collision)
+        {
+            try
+            {
+                file.Bytes = ModelCollisionFiles.WriteDocument(collision.Document, file.Bytes);
+                collision.IsModified = false;
+
+                Smithbox.Log(this, LOC.Get("MODEL_CollisionTool_Saved", filepath, Parent.Path));
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_CollisionTool_Save_Failed", filepath, Parent.Path), e);
+                isWritten = false;
+            }
+        }
+
         // CLM2
         if (filepath.Contains(".clm2") && CLM2 != null)
         {
@@ -1474,7 +1509,8 @@ public class ModelWrapper
         {
             var bytes = DCX.Is(data) ? DCX.Decompress(data).ToArray() : data.ToArray();
 
-            HKX = Havok.Files.HavokFile.Read(bytes, profile).Root as IRootContainer;
+            HKX_Document = Havok.Files.HavokFile.Read(bytes, profile);
+            HKX = HKX_Document.Root as IRootContainer;
         }
         catch (Exception)
         {

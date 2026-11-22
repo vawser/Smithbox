@@ -446,6 +446,11 @@ public class CFG
     public float MapEditor_CollisionEditor_Material_Overlay_Alpha = 55f;
     public bool MapEditor_CollisionEditor_Show_Paint_Material = true;
     public bool MapEditor_CollisionEditor_Show_Material_Legend = true;
+    // Model Editor Collision tool: the layer edited (High or Low; models have no fall protection), and the layers its
+    // Create tab builds. Its brush, material and simplify options are the Map Editor's Collision Editor's.
+    public HavokCollisionType ModelEditor_CollisionTool_Layer = HavokCollisionType.Low;
+    public bool ModelEditor_CollisionTool_Create_High = true;
+    public bool ModelEditor_CollisionTool_Create_Low = true;
     public float MapEditor_Ruler_Point_Size = 0.15f;
     public Vector3 MapEditor_Ruler_Color = new Vector3(255, 200, 40);
     public Vector3 MapEditor_Ruler_Selected_Color = new Vector3(255, 255, 255);

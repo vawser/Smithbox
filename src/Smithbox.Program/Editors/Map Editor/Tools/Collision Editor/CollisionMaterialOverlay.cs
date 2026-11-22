@@ -52,21 +52,31 @@ public sealed class CollisionMaterialOverlay
     public void Update(RenderScene scene, ISet<string> wanted,
         IReadOnlyList<(CollisionEditorFile File, bool Visible)> files, float opacity, ISet<uint> hidden)
     {
+        Update(scene, wanted, files.Select(f => (f.File.FileName, (IReadOnlyList<CollisionEditorBody>)f.File.Bodies,
+            f.File.Entity.GetWorldMatrix(), f.Visible)).ToList(), opacity, hidden);
+    }
+
+    /// <summary>
+    /// As above, for collision that isn't a map part's (the Model Editor's): each file by a key of its own, its
+    /// bodies, where it is drawn, and whether it is shown.
+    /// </summary>
+    public void Update(RenderScene scene, ISet<string> wanted,
+        IReadOnlyList<(string Key, IReadOnlyList<CollisionEditorBody> Bodies, Matrix4x4 World, bool Visible)> files,
+        float opacity, ISet<uint> hidden)
+    {
         var seen = new HashSet<(string, int, int)>();
-        var decoded = new HashSet<string>(files.Select(f => f.File.FileName), StringComparer.OrdinalIgnoreCase);
+        var decoded = new HashSet<string>(files.Select(f => f.Key), StringComparer.OrdinalIgnoreCase);
 
-        foreach (var (file, visible) in files)
+        foreach (var (fileKey, bodies, world, visible) in files)
         {
-            var world = file.Entity.GetWorldMatrix();
-
-            for (var b = 0; b < file.Bodies.Count; b++)
+            for (var b = 0; b < bodies.Count; b++)
             {
-                var body = file.Bodies[b];
+                var body = bodies[b];
                 var placement = body.BodyTransform * world;
 
                 for (var c = 0; c < body.ChunkCount; c++)
                 {
-                    var key = (file.FileName, b, c);
+                    var key = (fileKey, b, c);
                     seen.Add(key);
 
                     if (!Chunks.TryGetValue(key, out var chunk))
