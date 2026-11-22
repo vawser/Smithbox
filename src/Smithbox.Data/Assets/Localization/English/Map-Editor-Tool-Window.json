@@ -405,6 +405,10 @@
       "Text": "Part Token Lists"
     },
     {
+      "Key": "MAP_AiThreadInfo_Header",
+      "Text": "AI Thread Info"
+    },
+    {
       "Key": "MAP_AnimationBrowser_Header",
       "Text": "Animation Browser"
     },

@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_AI_Thread_Info_Saved",
+      "Text": "Saved AI thread info {0}."
+    },
+    {
+      "Key": "MAP_AI_Thread_Info_Failed_Read",
+      "Text": "Failed to read AI thread info {0}."
+    },
+    {
+      "Key": "MAP_AI_Thread_Info_Failed_Write",
+      "Text": "Failed to write AI thread info {0}."
+    }
+  ]
+}

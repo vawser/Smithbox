@@ -197,6 +197,14 @@ public class MapToolWindow
             }
         }
 
+        if (View.AiThreadInfoTool.CanUse())
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_AiThreadInfo_Header")}##aiThreadInfoHeader"))
+            {
+                View.AiThreadInfoTool.OnToolWindow();
+            }
+        }
+
         //*****************************
         // Preview
         //*****************************

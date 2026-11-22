@@ -3,26 +3,33 @@
 //
 //      File: AITH.bt
 //   Authors: Vawser
-//   Version: 
-//   Purpose: AI Thread Info
-//  Category: 
+//   Version:
+//   Purpose: AI Thread Info (AC6): per AI character of a mission, its worker slot out of 5, 6 and 12
+//  Category:
 // File Mask: *.aith
-//  ID Bytes: 
-//   History: 
+//  ID Bytes:
+//   History: Fields decoded against MSB/MissionParam, see SoulsFormats AITH.cs
 //------------------------------------------------
 
 LittleEndian();
 
 typedef struct {
-    short id;
-    short unk02;
-    short unk04;
-    short unk06;
-    short unk08;
-    short unk0A;
-    short unk0C;
-    short unk0E;
-} Row <bgcolor=cLtRed>;
+    uint index : 20;     // character index in its map (MSB Enemy index when below the Enemy count)
+    uint block : 8;      // map slot in the game's map list (0x108-0x171 in vanilla)
+    uint type  : 4;      // always 1
+    ubyte mapDD;         // map ID mAA_BB_CC_DD, written DD CC BB AA
+    ubyte mapCC;
+    ubyte mapBB;
+    ubyte mapAA;
+    ubyte slot5;         // 0-4
+    ubyte slot6;         // 0-5
+    ubyte slot12;        // 0-11
+    ubyte unk0B;         // 0
+    ubyte unk0C;         // 0
+    ubyte unk0D;         // 0
+    ubyte unk0E;         // 0
+    ubyte unk0F;         // 100
+} Row <bgcolor=cLtRed, read=Str("m%02d_%02d_%02d_%02d #%d %d/%d/%d", mapAA, mapBB, mapCC, mapDD, index, slot5, slot6, slot12)>;
 
 //------------------------------------------------
 

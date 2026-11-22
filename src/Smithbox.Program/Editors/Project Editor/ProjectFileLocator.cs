@@ -72,6 +72,7 @@ public class ProjectFileLocator : IDisposable
     /// The parts token ID lists of the maps (AC6)
     /// </summary>
     public FileDictionary PartsTokenIdListFiles = new();
+    public FileDictionary AiThreadInfoFiles = new();
 
     public FileDictionary GparamFiles = new();
 
@@ -486,6 +487,7 @@ public class ProjectFileLocator : IDisposable
         var entryFileListFiles = new HashSet<FileDictionaryEntry>();
         var loadListFiles = new HashSet<FileDictionaryEntry>();
         var partsTokenIdListFiles = new HashSet<FileDictionaryEntry>();
+        var aiThreadInfoFiles = new HashSet<FileDictionaryEntry>();
 
         var havokAnimationFiles = new HashSet<FileDictionaryEntry>();
         var havokBehaviorFiles = new HashSet<FileDictionaryEntry>();
@@ -641,6 +643,12 @@ public class ProjectFileLocator : IDisposable
                 partsTokenIdListFiles.Add(entry);
             }
 
+            // AI Thread Info (AC6): one per mission
+            if (projectType is ProjectType.AC6 && ext == "aith" && folder == "/map/aithreadinfo" && !isSd)
+            {
+                aiThreadInfoFiles.Add(entry);
+            }
+
             // Gparam
             if (folder.StartsWith("/param") && ext == "gparam" && !isSd)
             gparamFiles.Add(entry);
@@ -758,6 +766,7 @@ public class ProjectFileLocator : IDisposable
         EntryFileListFiles.Entries = entryFileListFiles;
         LoadListFiles.Entries = loadListFiles;
         PartsTokenIdListFiles.Entries = partsTokenIdListFiles;
+        AiThreadInfoFiles.Entries = aiThreadInfoFiles;
 
         HavokAnimationFiles.Entries = havokAnimationFiles;
         HavokBehaviorFiles.Entries = havokBehaviorFiles;
@@ -984,6 +993,7 @@ public class ProjectFileLocator : IDisposable
         SfxFiles = null;
         LoadListFiles = null;
         PartsTokenIdListFiles = null;
+        AiThreadInfoFiles = null;
         TextFiles = null;
         MTD_Files = null;
         MATBIN_Files = null;

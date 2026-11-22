@@ -111,6 +111,10 @@
     {
       "Key": "UNSAVED_Map_Parts_Token_ID_List",
       "Text": "Parts Token ID List"
+    },
+    {
+      "Key": "UNSAVED_Map_AI_Thread_Info",
+      "Text": "AI Thread Info"
     }
   ]
 }

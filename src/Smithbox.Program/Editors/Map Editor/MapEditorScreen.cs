@@ -770,12 +770,13 @@ public class MapEditorScreen : EditorScreen
             {
                 activeView.Universe.SaveAllMaps();
 
-                // Load list, entry file list and parts token ID list edits are kept per view, so each view's are saved
+                // Load list, entry file list, parts token ID list and AI thread info edits are kept per view, so each view's are saved
                 foreach (var view in ViewHandler.Views)
                 {
                     view.LoadListTool.SaveModified();
                     view.EntryFileListTool.SaveModified();
                     view.PartsTokenIdListTool.SaveModified();
+                    view.AiThreadInfoTool.SaveModified();
                     view.WorldMapTool.MapInfo.Bank.SaveModified();
                 }
             }
@@ -827,6 +828,9 @@ public class MapEditorScreen : EditorScreen
 
             if (view.PartsTokenIdListTool?.HasModifiedFiles == true)
                 files.Add(LOC.Get("UNSAVED_Map_Parts_Token_ID_List"));
+
+            if (view.AiThreadInfoTool?.HasModifiedFiles == true)
+                files.Add(LOC.Get("UNSAVED_Map_AI_Thread_Info"));
         }
 
         return files.Distinct().ToList();
