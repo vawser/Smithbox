@@ -20,14 +20,14 @@ public class TimeActSourceWindow
     private bool _arrowKeyPressed = false;
 
     // Rebuilt only when the filter or the sources change, as the aliases are matched as well
-    private Dictionary<ModelListType, List<TimeActContainerWrapper>> CachedSources = new();
-    private Dictionary<ModelListType, int> CachedSourceCounts = new();
+    private Dictionary<TimeActSourceListType, List<TimeActContainerWrapper>> CachedSources = new();
+    private Dictionary<TimeActSourceListType, int> CachedSourceCounts = new();
     private string CachedFilter = "";
     private bool CachedExactFilter = false;
 
     // The source to bring into view the next time the list is drawn, such as one jumped to from a search
     private TimeActContainerWrapper ScrollTarget;
-    private ModelListType ScrollTargetList;
+    private TimeActSourceListType ScrollTargetList;
 
     public TimeActSourceWindow(TimeActEditorView view, ProjectEntry project)
     {
@@ -65,11 +65,11 @@ public class TimeActSourceWindow
         ImGui.BeginTabBar("sourceTabs");
 
         // Characters
-        if (ImGui.BeginTabItem($"{LOC.Get("TAE_SourceWindow_Tab_Characters")}##characterTab", GetTabFlags(ModelListType.Character)))
+        if (ImGui.BeginTabItem($"{LOC.Get("TAE_SourceWindow_Tab_Characters")}##characterTab", GetTabFlags(TimeActSourceListType.Character)))
         {
             ImGui.BeginChild($"characterSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-            DisplaySources(ModelListType.Character, bank.GetCharacters());
+            DisplaySources(TimeActSourceListType.Character, bank.GetCharacters());
 
             ImGui.EndChild();
             ImGui.EndTabItem();
@@ -86,20 +86,35 @@ public class TimeActSourceWindow
             name = LOC.Get("TAE_SourceWindow_Tab_Assets");
         }
 
-        if (ImGui.BeginTabItem($"{name}##objectTab", GetTabFlags(ModelListType.Asset)))
+        if (ImGui.BeginTabItem($"{name}##objectTab", GetTabFlags(TimeActSourceListType.Asset)))
         {
             ImGui.BeginChild($"assetSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-            DisplaySources(ModelListType.Asset, bank.GetAssets());
+            DisplaySources(TimeActSourceListType.Asset, bank.GetAssets());
 
             ImGui.EndChild();
             ImGui.EndTabItem();
         }
 
+        // Behavior: the action time acts of the behbnds, where they hold BHV state machines (AC6)
+        if (EditorConditions.SupportsBehaviorEditor(Project.Descriptor.ProjectType))
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("TAE_SourceWindow_Tab_Behavior")}##behaviorTab", GetTabFlags(TimeActSourceListType.Behavior)))
+            {
+                ImGui.BeginChild($"behaviorSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+                DisplaySources(TimeActSourceListType.Behavior, bank.GetBehaviors());
+
+                ImGui.EndChild();
+                ImGui.EndTabItem();
+            }
+            GUI.Tooltip(LOC.Get("TAE_SourceWindow_Tab_Behavior_TT"));
+        }
+
         ImGui.EndTabBar();
     }
 
-    private List<TimeActContainerWrapper> GetFilteredSources(ModelListType listType, List<TimeActContainerWrapper> sources)
+    private List<TimeActContainerWrapper> GetFilteredSources(TimeActSourceListType listType, List<TimeActContainerWrapper> sources)
     {
         if (CachedFilter != SourceListFilter || CachedExactFilter != ExactSourceListFilter)
         {
@@ -117,7 +132,7 @@ public class TimeActSourceWindow
 
         filtered = sources
             .Where(e => EditorFilters.IsMatch(SourceListFilter, e.Name, ExactSourceListFilter,
-                ModelEditorUtils.GetAliasForSourceListEntry(Project, e.Name, listType), true, true))
+                GetAlias(e, listType), true, true))
             .OrderBy(e => e.Name)
             .ToList();
 
@@ -127,7 +142,7 @@ public class TimeActSourceWindow
         return filtered;
     }
 
-    private void DisplaySources(ModelListType listType, List<TimeActContainerWrapper> sources)
+    private void DisplaySources(TimeActSourceListType listType, List<TimeActContainerWrapper> sources)
     {
         var filteredSources = GetFilteredSources(listType, sources);
 
@@ -159,7 +174,7 @@ public class TimeActSourceWindow
 
                 var selected = View.Selection.SelectedTimeActContainerWrapper == source;
 
-                var alias = ModelEditorUtils.GetAliasForSourceListEntry(Project, source.Name, listType);
+                var alias = GetAlias(source, listType);
 
                 var labelName = source.HasUnsavedTimeActs ? $"{source.Name}*" : source.Name;
 
@@ -210,13 +225,23 @@ public class TimeActSourceWindow
     /// <summary>
     /// Brings a source into view in the list once it is next drawn, switching to the tab it is listed in
     /// </summary>
-    public void ScrollTo(TimeActContainerWrapper source, ModelListType listType)
+    public void ScrollTo(TimeActContainerWrapper source, TimeActSourceListType listType)
     {
         ScrollTarget = source;
         ScrollTargetList = listType;
     }
 
-    private ImGuiTabItemFlags GetTabFlags(ModelListType listType)
+    /// <summary>
+    /// The alias of a source: a behbnd is a character's, so it takes the character's alias
+    /// </summary>
+    private string GetAlias(TimeActContainerWrapper source, TimeActSourceListType listType)
+    {
+        var modelListType = listType is TimeActSourceListType.Asset ? ModelListType.Asset : ModelListType.Character;
+
+        return ModelEditorUtils.GetAliasForSourceListEntry(Project, source.Name, modelListType);
+    }
+
+    private ImGuiTabItemFlags GetTabFlags(TimeActSourceListType listType)
     {
         return ScrollTarget != null && ScrollTargetList == listType ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
     }

@@ -193,22 +193,25 @@ public class TimeActSelectionWindow
 
         var canEdit = Project.Handler.TimeActData.CanSaveTimeActs;
 
+        // An action source holds its one time act under a fixed ID and name, which the game looks for
+        var canEditStructure = canEdit && !source.IsActionSource;
+
         // Duplicate
-        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Duplicate")}##duplicateTimeAct", "", false, canEdit))
+        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Duplicate")}##duplicateTimeAct", "", false, canEditStructure))
         {
             DuplicateTimeAct(source, entry);
         }
-        GUI.Tooltip(LOC.Get("TAE_SelectionWindow_Context_Duplicate_TT"));
+        ActionSourceTooltip(source, "TAE_SelectionWindow_Context_Duplicate_TT");
 
         // Delete
-        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Delete")}##deleteTimeAct", "", false, canEdit))
+        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Delete")}##deleteTimeAct", "", false, canEditStructure))
         {
             View.ViewportActionManager.ExecuteAction(new TimeActAddEntryAction(View, source, entry, true));
         }
-        GUI.Tooltip(LOC.Get("TAE_SelectionWindow_Context_Delete_TT"));
+        ActionSourceTooltip(source, "TAE_SelectionWindow_Context_Delete_TT");
 
         // Rename
-        if (ImGui.BeginMenu($"{LOC.Get("TAE_SelectionWindow_Context_Rename")}##renameTimeAct", canEdit))
+        if (ImGui.BeginMenu($"{LOC.Get("TAE_SelectionWindow_Context_Rename")}##renameTimeAct", canEditStructure))
         {
             RenameMenu(source, entry);
 
@@ -241,8 +244,14 @@ public class TimeActSelectionWindow
 
         ImGui.Separator();
 
-        // Register in Behavior: every animation of the time act
+        // Register in Behavior: every animation of the time act. Action IDs have no clips to register.
         var canRegister = TimeActBehaviorRegistration.CanRegister(Project, source, out var registerReason);
+
+        if (source.IsActionSource)
+        {
+            canRegister = false;
+            registerReason = LOC.Get("TAE_SelectionWindow_Action_Source_Disabled_TT");
+        }
 
         if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Register")}##registerTimeAct", "", false, canRegister))
         {
@@ -255,11 +264,11 @@ public class TimeActSelectionWindow
         ImGui.Separator();
 
         // Import
-        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Import")}##importTimeAct", "", false, canEdit))
+        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Import")}##importTimeAct", "", false, canEditStructure))
         {
             ImportTimeAct(source, entry);
         }
-        GUI.Tooltip(LOC.Get("TAE_SelectionWindow_Context_Import_TT"));
+        ActionSourceTooltip(source, "TAE_SelectionWindow_Context_Import_TT");
 
         // Export
         if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Export")}##exportTimeAct"))
@@ -283,6 +292,22 @@ public class TimeActSelectionWindow
         }
 
         ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// The item's tooltip, or for an action source (where the item is disabled) why it can't be used. Shown while
+    /// disabled too, so the reason can be read.
+    /// </summary>
+    private static void ActionSourceTooltip(TimeActContainerWrapper source, string tooltipKey)
+    {
+        if (!source.IsActionSource)
+        {
+            GUI.Tooltip(LOC.Get(tooltipKey));
+            return;
+        }
+
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(LOC.Get("TAE_SelectionWindow_Action_Source_Disabled_TT"));
     }
 
     /// <summary>

@@ -330,7 +330,7 @@ public class TimeActEditorScreen : EditorScreen
         {
             var bank = Project.Handler.TimeActData.PrimaryBank;
 
-            SaveSources(bank.GetCharacters().Concat(bank.GetAssets()), autoSave, showModal: showModal);
+            SaveSources(bank.GetAllSources(), autoSave, showModal: showModal);
         }
 
         // Save the configuration JSONs
@@ -548,9 +548,9 @@ public class TimeActEditorScreen : EditorScreen
         if (bank == null)
             return new();
 
-        return bank.GetCharacters().Concat(bank.GetAssets())
+        return bank.GetAllSources()
             .Where(e => e != null && e.HasUnsavedTimeActs)
-            .Select(e => e.Name)
+            .Select(e => e.DisplayName)
             .Distinct()
             .ToList();
     }

@@ -50,6 +50,10 @@ public sealed class TimeActAnimationFiles : IDisposable
     {
         var files = new TimeActAnimationFiles(source);
 
+        // Action IDs have no HKX clips; looked up in the character's anibnds, they would find unrelated ones
+        if (source.IsActionSource)
+            return files;
+
         try
         {
             if (source.IsCharacter)

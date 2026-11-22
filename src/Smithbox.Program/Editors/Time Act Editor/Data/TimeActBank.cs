@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ public class TimeActBank : IDisposable
 
     private List<TimeActContainerWrapper> Characters = new();
     private List<TimeActContainerWrapper> Assets = new();
+    private List<TimeActContainerWrapper> Behaviors = new();
 
     // The sources are added by the scan while the source list is displayed
     private readonly object SourceLock = new();
@@ -43,12 +45,13 @@ public class TimeActBank : IDisposable
             .Where(IsCharacterSource)
             .ToList();
         var assetFiles = Project.Locator.AssetFiles.Entries.ToList();
+        var actionFiles = GetActionSourceFiles();
 
-        _scanTotal = characterFiles.Count + assetFiles.Count;
+        _scanTotal = characterFiles.Count + assetFiles.Count + actionFiles.Count;
 
         var token = ScanCancellation.Token;
 
-        _ = Task.Run(() => ScanSources(characterFiles, assetFiles, token), token);
+        _ = Task.Run(() => ScanSources(characterFiles, assetFiles, actionFiles, token), token);
 
         return true;
     }
@@ -62,11 +65,28 @@ public class TimeActBank : IDisposable
     }
 
     /// <summary>
+    /// The behbnds whose action time act (tae_action) is listed with the characters. Only where the behbnds hold BHV
+    /// state machines (AC6, which replaced Havok behaviors with them): elsewhere they hold Havok behaviors and no
+    /// time acts. Most AC6 behbnds hold one, 7010000 b000.tae or cXXXX.tae (91 of 98).
+    /// </summary>
+    private List<FileDictionaryEntry> GetActionSourceFiles()
+    {
+        if (!EditorConditions.SupportsBehaviorEditor(Project.Descriptor.ProjectType))
+            return new();
+
+        return Project.Locator.HavokBehaviorFiles.Entries
+            .Where(IsCharacterSource)
+            .ToList();
+    }
+
+    /// <summary>
     /// Whether a container holds time acts can't be told from the file dictionary: objects and assets
     /// hold them in a nested anibnd that most of them don't have, and some anibnds don't have any.
     /// The containers have to be read to find out, which takes too long to block the project load for.
+    /// The action sources are scanned last, so the anibnd of a character is listed before its behbnd.
     /// </summary>
-    private void ScanSources(List<FileDictionaryEntry> characterFiles, List<FileDictionaryEntry> assetFiles, CancellationToken token)
+    private void ScanSources(List<FileDictionaryEntry> characterFiles, List<FileDictionaryEntry> assetFiles,
+        List<FileDictionaryEntry> actionFiles, CancellationToken token)
     {
         var modelFiles = new Dictionary<string, FileDictionaryEntry>();
 
@@ -89,6 +109,16 @@ public class TimeActBank : IDisposable
         foreach (var entry in assetFiles)
         {
             ScanSource(entry, entry, Assets, scannedFiles, token);
+        }
+
+        // Their own set: a behbnd has the name of the character's anibnd
+        scannedFiles.Clear();
+
+        foreach (var entry in actionFiles)
+        {
+            modelFiles.TryGetValue(entry.Filename, out var modelEntry);
+
+            ScanSource(entry, modelEntry, Behaviors, scannedFiles, token);
         }
     }
 
@@ -141,6 +171,41 @@ public class TimeActBank : IDisposable
         }
     }
 
+    /// <summary>
+    /// The AC6 behbnds with an action time act, listed in the Behavior tab
+    /// </summary>
+    public List<TimeActContainerWrapper> GetBehaviors()
+    {
+        lock (SourceLock)
+        {
+            return Behaviors.ToList();
+        }
+    }
+
+    /// <summary>
+    /// The sources of every tab
+    /// </summary>
+    public List<TimeActContainerWrapper> GetAllSources()
+    {
+        lock (SourceLock)
+        {
+            return Characters.Concat(Assets).Concat(Behaviors).ToList();
+        }
+    }
+
+    /// <summary>
+    /// The sources of one tab
+    /// </summary>
+    public List<TimeActContainerWrapper> GetSources(TimeActSourceListType listType)
+    {
+        return listType switch
+        {
+            TimeActSourceListType.Asset => GetAssets(),
+            TimeActSourceListType.Behavior => GetBehaviors(),
+            _ => GetCharacters()
+        };
+    }
+
     #region Dispose
     public void Dispose()
     {
@@ -151,6 +216,7 @@ public class TimeActBank : IDisposable
         {
             Characters.Clear();
             Assets.Clear();
+            Behaviors.Clear();
         }
     }
     #endregion

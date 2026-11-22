@@ -82,9 +82,9 @@ public class TimeActQueryRunner
 
         var sources = new List<TimeActQuerySource>();
 
-        foreach (var (listType, list) in new[] { (ModelListType.Character, bank.GetCharacters()), (ModelListType.Asset, bank.GetAssets()) })
+        foreach (var listType in Enum.GetValues<TimeActSourceListType>())
         {
-            foreach (var source in list.OrderBy(e => e.Name))
+            foreach (var source in bank.GetSources(listType).OrderBy(e => e.Name))
             {
                 // An open source, or one with unsaved changes, is queried as it is in the editor.
                 // The rest are read again for the query, without being opened.
@@ -97,11 +97,9 @@ public class TimeActQueryRunner
         return sources;
     }
 
-    public ModelListType GetListType(TimeActContainerWrapper source)
+    public TimeActSourceListType GetListType(TimeActContainerWrapper source)
     {
-        return Project.Handler.TimeActData.PrimaryBank.GetAssets().Contains(source)
-            ? ModelListType.Asset
-            : ModelListType.Character;
+        return source.ListType;
     }
     #endregion
 

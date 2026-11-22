@@ -69,6 +69,18 @@
       "Text": "Open in view [{0}]. Selecting it brings that view forward, as a source can only be open in one view at a time."
     },
     {
+      "Key": "TAE_SourceWindow_Action_Source_Name",
+      "Text": "{0} (Behavior)"
+    },
+    {
+      "Key": "TAE_SourceWindow_Tab_Behavior",
+      "Text": "Behavior"
+    },
+    {
+      "Key": "TAE_SourceWindow_Tab_Behavior_TT",
+      "Text": "The action time acts in the characters' behbnds (tae_action), next to their BHV state machines. Their animation IDs are action IDs, not animation clips, so nothing plays in the viewport."
+    },
+    {
       "Key": "TAE_SelectionWindow_Entry_Details",
       "Text": "{0} ({1} animations)"
     },
@@ -1423,6 +1435,10 @@
     {
       "Key": "TAE_SelectionWindow_Context_Import_TT",
       "Text": "Adds a .tae file to this source. If the file's name is a free time act name it is kept, and if it is already used you can replace that time act. Otherwise it goes in the next free category. The binder is updated when the source is saved."
+    },
+    {
+      "Key": "TAE_SelectionWindow_Action_Source_Disabled_TT",
+      "Text": "Not available for an action time act: the behbnd holds one, under a fixed binder ID and name, and its animation IDs have no clips. Its events can be edited."
     },
     {
       "Key": "TAE_SelectionWindow_Dialog_Select_Import_File",

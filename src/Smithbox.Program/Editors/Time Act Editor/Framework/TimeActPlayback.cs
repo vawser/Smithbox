@@ -630,6 +630,10 @@ public class TimeActPlayback
     private static AnimationEntry? FindClip(AnimationPackage package, TimeActContainerWrapper source,
         TimeActEntry entry, TAE.Animation animation)
     {
+        // Action IDs (AC6 behbnd) aren't clip IDs: 100 would find the character's unrelated a000_000100
+        if (source.IsActionSource)
+            return null;
+
         for (var depth = 0; depth < MaxImportDepth; depth++)
         {
             var id = entry.GetFullAnimationID(animation, source.AnimationCategorySize);

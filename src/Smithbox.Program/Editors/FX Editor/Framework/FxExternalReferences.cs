@@ -220,7 +220,8 @@ public class FxExternalReferences
         var source = item.Source;
         var entries = item.Entries ?? source.ReadTimeActs();
         int categorySize = source.AnimationCategorySize;
-        bool character = item.ListType == ModelListType.Character;
+        // The jump command finds a character's anibnd source by name, so it isn't offered for a behbnd one
+        bool character = item.ListType == TimeActSourceListType.Character;
 
         foreach (var entry in entries)
         {

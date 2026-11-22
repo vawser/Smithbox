@@ -97,7 +97,7 @@ public record TimeActQuery(string Animation, string Event, string Field, string 
 /// A source to query, with what is needed of the editor taken beforehand, as the query runs off the main thread.
 /// Entries is null for a source that isn't open, which is read again for the query without being opened.
 /// </summary>
-public record TimeActQuerySource(TimeActContainerWrapper Source, ModelListType ListType,
+public record TimeActQuerySource(TimeActContainerWrapper Source, TimeActSourceListType ListType,
     List<TimeActEntry> Entries, TAE.Template.BankTemplate Template);
 
 /// <summary>
@@ -106,7 +106,7 @@ public record TimeActQuerySource(TimeActContainerWrapper Source, ModelListType L
 /// EventIndex is -1 for a match on the animation itself.
 /// </summary>
 public record TimeActQueryMatch(
-    TimeActContainerWrapper Source, ModelListType ListType,
+    TimeActContainerWrapper Source, TimeActSourceListType ListType,
     TimeActEntry Entry, string EntryName, int BindIndex,
     TAE.Animation Animation, long AnimationID,
     TAE.Event Event, int EventIndex, int EventType,

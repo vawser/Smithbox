@@ -28,8 +28,15 @@
     - Include consistent camera angles
     - Automatic icon capture
     
-- Unknown formats:
-    bsipwv
+- ER: unsupported formats:
+    - moaei
+    - bsipwv
+    
+- AC6: unsupported formats:
+    - aith
+    - nvve
+    - moaei
+    - blf
     
 #----------------------------------------------------
 # Map Editor TODO

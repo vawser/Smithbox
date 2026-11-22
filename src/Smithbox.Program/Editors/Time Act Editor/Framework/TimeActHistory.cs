@@ -102,7 +102,7 @@ public class TimeActHistory
 
         var bank = Project.Handler.TimeActData?.PrimaryBank;
 
-        return bank?.GetCharacters().Concat(bank.GetAssets()).FirstOrDefault(e => e.TimeActs.Contains(item.TargetEntry));
+        return bank?.GetAllSources().FirstOrDefault(e => e.TimeActs.Contains(item.TargetEntry));
     }
 
     /// <summary>
@@ -139,7 +139,7 @@ public class TimeActHistory
         {
             // The source may be open in another view, which then shows the change
             view = view.SourceWindow.SelectSource(source);
-            view.SourceWindow.ScrollTo(source, source.IsCharacter ? ModelListType.Character : ModelListType.Asset);
+            view.SourceWindow.ScrollTo(source, source.ListType);
         }
 
         var entry = item.TargetEntry;

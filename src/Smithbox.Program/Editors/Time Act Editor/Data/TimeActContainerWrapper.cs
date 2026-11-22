@@ -105,6 +105,25 @@ public class TimeActContainerWrapper
     public bool IsCharacter => SourcePath.TrimStart('/').StartsWith("chr", StringComparison.OrdinalIgnoreCase);
 
     /// <summary>
+    /// An AC6 behbnd: its tae_action time act (7010000, b000 or cXXXX) goes with the BHV state machines next to it.
+    /// Its animation IDs are action IDs (1, 100, 300, 10000000 …) with no HKX clips, so they are shown as they are
+    /// stored, no animation files are opened, and the time act can't be added, copied, renamed or removed.
+    /// </summary>
+    public bool IsActionSource => SourcePath.Contains(".behbnd", StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// The tab of the source list it is in
+    /// </summary>
+    public TimeActSourceListType ListType => IsActionSource ? TimeActSourceListType.Behavior
+        : IsCharacter ? TimeActSourceListType.Character : TimeActSourceListType.Asset;
+
+    /// <summary>
+    /// The name outside the source list, such as in the unsaved changes prompt: an action source shares its name
+    /// with the character's anibnd
+    /// </summary>
+    public string DisplayName => IsActionSource ? LOC.Get("TAE_SourceWindow_Action_Source_Name", Name) : Name;
+
+    /// <summary>
     /// Whether time acts have been added or removed since the source was last saved
     /// </summary>
     public bool HasStructuralChanges
@@ -277,6 +296,10 @@ public class TimeActContainerWrapper
     /// </summary>
     public string FormatAnimationName(long id)
     {
+        // Action IDs have no HKX file to be named after
+        if (IsActionSource)
+            return id.ToString();
+
         var size = AnimationCategorySize;
 
         return size == 10000 ? $"a{id / size:D2}_{id % size:D4}" : $"a{id / size:D3}_{id % size:D6}";
@@ -720,7 +743,10 @@ public class TimeActContainerWrapper
             // Some binders hold empty placeholders for unused categories
             if (file.Name.ToLower().Contains(".tae") && file.Bytes.Length >= 4)
             {
-                entries.Add(new TimeActEntry(FilePathUtils.GetPureFilename(file.Name), file.ID, file.ID % firstID,
+                // An action time act (7010000) is no animation category: its IDs are kept as stored
+                var bindIndex = IsActionSource ? 0 : file.ID % firstID;
+
+                entries.Add(new TimeActEntry(FilePathUtils.GetPureFilename(file.Name), file.ID, bindIndex,
                     file.Bytes.ToArray(), file.Name, file.Flags, file.CompressionType));
             }
         }

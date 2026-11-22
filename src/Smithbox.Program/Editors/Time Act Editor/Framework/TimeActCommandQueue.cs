@@ -62,7 +62,7 @@ public class TimeActCommandQueue
         {
             // The source may be open in another view, which then takes the rest of the selection
             view = view.SourceWindow.SelectSource(source);
-            view.SourceWindow.ScrollTo(source, ModelListType.Character);
+            view.SourceWindow.ScrollTo(source, TimeActSourceListType.Character);
         }
 
         if (!long.TryParse(animationID, out var id))
