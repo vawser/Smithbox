@@ -571,8 +571,14 @@ public sealed class MapPort
                 var b = (MSB.Shape.Box)box.Shape;
                 var lo = box.Position - new Vector3(b.Width / 2, 0, b.Depth / 2);
                 var hi = box.Position + new Vector3(b.Width / 2, b.Height, b.Depth / 2);
-                Log.Check(ported.Where(p => boundsModels.Contains(p.ModelName)).All(p => p.Position.X >= lo.X && p.Position.Y >= lo.Y && p.Position.Z >= lo.Z && p.Position.X <= hi.X && p.Position.Y <= hi.Y && p.Position.Z <= hi.Z),
-                    "MSB: the EnvMap box holds every part its bounds were taken from");
+                // Each part's model box centre, placed: a part's position says nothing of where its geometry is (DS3
+                // collision parts sit at the origin with world-space meshes, outside m40's box at offset 0)
+                var outside = placed.Where(p => boundsModels.Contains(p.Item1)).Select(p =>
+                {
+                    var world = new Renderer.Transform(p.Item2, p.Item3 * (MathF.PI / 180), p.Item4).WorldMatrix;
+                    return Vector3.Transform((p.Item5 + p.Item6) / 2, world);
+                }).Count(c => c.X < lo.X || c.Y < lo.Y || c.Z < lo.Z || c.X > hi.X || c.Y > hi.Y || c.Z > hi.Z);
+                Log.Check(outside == 0, $"MSB: the EnvMap box holds every part its bounds were taken from ({outside} outside)");
             }
         }
     }

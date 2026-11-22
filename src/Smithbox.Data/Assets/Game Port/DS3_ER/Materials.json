@@ -64,8 +64,9 @@
       "Any": [
         "glow"
       ],
-      "Shader": "M[AMSN_V]_Emissive_Glow",
-      "Status": "direct"
+      "Shader": "M[AMSN_V]",
+      "Status": "handcheck",
+      "Note": "em_Glow: DS3 lights it only by event; ported unlit, the emissive drops"
     },
     {
       "Id": "blend4",

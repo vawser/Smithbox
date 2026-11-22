@@ -471,11 +471,13 @@ public sealed class PortPieces
             {
                 used.Add(hit.i);
                 var leaf = Leaf(hit.t.Path);
-                var ds3Base = Regex.Replace(leaf, "_[^_]+$", "");
+                // The texture's base name: its role suffix (_a, _n, _m, _em...) off. A name without one keeps its number:
+                // m40_00_mask_311 and _312 were both "m40_00_mask" and shared one AET name (2026-11-22)
+                var ds3Base = TextureBase(leaf);
 
                 // A metal material's albedo is recoloured with its F0, so it and its metallic map get a container
                 // of their own (keyed by albedo + specular map); everything else is keyed by its DS3 name
-                var metalKey = $"{Regex.Replace(albedo ?? "", "_[^_]+$", "")}|{spec}";
+                var metalKey = $"{TextureBase(albedo ?? "")}|{spec}";
                 var own = isMetal && s.Role is "M" or "A" && s.Rank == 0;
                 var aet = own ? Aet(metalKey, Config.Suffixes[s.Role]) : Aet(ds3Base, Config.Suffixes[s.Role]);
                 var kind = !own ? TextureJobKind.Copy : s.Role == "M" ? TextureJobKind.Metallic : TextureJobKind.MetalAlbedo;
@@ -547,6 +549,9 @@ public sealed class PortPieces
     }
 
     public static string Leaf(string path) => string.IsNullOrEmpty(path) ? "" : Path.GetFileNameWithoutExtension(path.Replace('\\', '/'));
+
+    /// <summary>A DS3 texture name without its role suffix (one to three letters: _a, _n, _m, _em); a name ending in a number is kept whole.</summary>
+    public static string TextureBase(string name) => Regex.Replace(name, "_[A-Za-z]{1,3}$", "");
 
     // ---- metallic test ------------------------------------------------------------------------------------------
 
@@ -703,7 +708,18 @@ public sealed class PortPieces
                 // A DS3 blend writes its edge sharpness into all four channels of COLOR0 and reads only the alpha; ER's
                 // blends read COLOR0.rgb as a tint (398 of 410 m10/m11 blend meshes are near white), so the grey would
                 // darken the albedo (m38 001538's walkway: 0.09-0.39). The RGB goes white, the alpha is kept.
-                if (colors.TryGetValue(m.Index, out var c)) cols.Add(blend && m.Index == 0 ? new FLVER.VertexColor(c.A, 1f, 1f, 1f) : c);
+                if (colors.TryGetValue(m.Index, out var c))
+                {
+                    if (blend && m.Index == 0) cols.Add(new FLVER.VertexColor(c.A, 1f, 1f, 1f));
+                    // ER writes COLOR1.x to RT1.w, the vertex AO slot (GBuffer.md), and keeps G and B at 0 (m10: 2,394
+                    // meshes). DS3 has no vertex AO there: COLOR1.x is unused, and COLOR1.w reaches RT1.w only as decal
+                    // opacity when FC_AlphaRef.z is set, else RT1.w is 0 (DS3 Painted World Rendering.md). So neither
+                    // DS3 channel is occlusion: copied as R, m40's loose tiles (304871_03, R = 0) went black, and
+                    // taking A instead blackened the stairs (004320, A 0.06) and patches of the ash (004600)
+                    // (2026-11-22). ER R is 1, no occlusion.
+                    else if (m.Index == 1) cols.Add(new FLVER.VertexColor(1f, 1f, 0f, 0f));
+                    else cols.Add(c);
+                }
                 else cols.Add(new FLVER.VertexColor(1f, 1f, 1f, 1f));
             }
             else if (m.Semantic == FLVER.LayoutSemantic.Tangent)
