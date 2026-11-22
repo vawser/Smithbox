@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 
@@ -55,9 +56,15 @@ public class TimeActEditorScreen : EditorScreen
 
         var activeView = ViewHandler.ActiveView;
 
-        Shortcuts.Monitor();
+        FinishBackgroundSave();
 
-        CommandQueue.Parse(commands);
+        // The time acts are being written on another thread, so nothing may edit them until it is done
+        if (!IsSaving)
+        {
+            Shortcuts.Monitor();
+
+            CommandQueue.Parse(commands);
+        }
 
         if (ImGui.BeginMenuBar())
         {
@@ -81,6 +88,8 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_TimeActEditor);
 
         ViewHandler.HandleViews(dsid);
+
+        DrawSavingModal();
     }
 
     public void FileMenu()
@@ -111,6 +120,17 @@ public class TimeActEditorScreen : EditorScreen
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
             GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Allow_Unmodified_Save);
+
+            // Save KRAK as Deflate: ER loads deflate binders as well as KRAK ones, and deflate is much quicker to write
+            if (Project.Descriptor.ProjectType is ProjectType.ER)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Save_Krak_As_Deflate")}##saveKrakAsDeflate"))
+                {
+                    CFG.Current.TimeActEditor_Save_Krak_As_Deflate = !CFG.Current.TimeActEditor_Save_Krak_As_Deflate;
+                }
+                GUI.Tooltip(LOC.Get("TAE_Editor_Save_Krak_As_Deflate_TT"));
+                GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Save_Krak_As_Deflate);
+            }
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
@@ -270,15 +290,10 @@ public class TimeActEditorScreen : EditorScreen
         {
             var source = activeView.Selection.SelectedTimeActContainerWrapper;
 
-            if (source != null)
-            {
-                // Only the selected source is written unmodified: Save All would rewrite every anibnd of the project
-                SaveSources([source], autoSave, CFG.Current.TimeActEditor_Allow_Unmodified_Save);
-            }
-
             // Save only writes the open source, so edits made elsewhere (by a mass edit across all sources, or
-            // left in a source that was switched away from) are pointed out, as they need Save All
-            if (!autoSave)
+            // left in a source that was switched away from) are pointed out, as they need Save All. Done once
+            // the save is, as a save run in the background still has the open source unsaved until it finishes.
+            Action reportOthers = autoSave ? null : () =>
             {
                 var others = GetUnsavedFiles();
 
@@ -288,6 +303,16 @@ public class TimeActEditorScreen : EditorScreen
 
                     Smithbox.Log(this, LOC.Get("TAE_Editor_Save_Other_Sources_Unsaved", others.Count, names));
                 }
+            };
+
+            if (source != null)
+            {
+                // Only the selected source is written unmodified: Save All would rewrite every anibnd of the project
+                SaveSources([source], autoSave, CFG.Current.TimeActEditor_Allow_Unmodified_Save, onSaved: reportOthers);
+            }
+            else
+            {
+                reportOthers?.Invoke();
             }
         }
 
@@ -296,16 +321,167 @@ public class TimeActEditorScreen : EditorScreen
     }
     public void SaveAll(bool autoSave = false)
     {
+        SaveAllSources(autoSave, showModal: true);
+    }
+
+    private void SaveAllSources(bool autoSave, bool showModal)
+    {
         if (autoSave && CFG.Current.TimeActEditor_Allow_Automatic_Save || !autoSave)
         {
             var bank = Project.Handler.TimeActData.PrimaryBank;
 
-            SaveSources(bank.GetCharacters().Concat(bank.GetAssets()), autoSave);
+            SaveSources(bank.GetCharacters().Concat(bank.GetAssets()), autoSave, showModal: showModal);
         }
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
     }
+
+    #region Background Save
+    // A save that writes a KRAK-compressed binder (Sekiro, ER, AC6, NR) runs on a worker thread behind a modal, as
+    // Oodle compression of a large anibnd takes long enough to freeze the editor otherwise
+
+    private Task<List<TimeActContainerWrapper>> SaveTask;
+
+    // Run on the main thread once the background save has finished
+    private Action SaveCompleted;
+
+    // Whether the saving modal is shown: not for a save started by the unsaved changes prompt, which has its own
+    private bool ShowSavingModal;
+    private bool SavingModalOpen;
+
+    // Written by the worker, read by the modal
+    private volatile string SavingSourceName = "";
+    private volatile int SavingIndex;
+    private int SavingCount;
+
+    /// <summary>
+    /// True while time acts are being written in the background
+    /// </summary>
+    public bool IsSaving => SaveTask is { IsCompleted: false };
+
+    public bool IsSavingUnsaved => IsSaving;
+
+    /// <summary>
+    /// Once the background save has finished, does what has to happen on the main thread after it
+    /// </summary>
+    private void FinishBackgroundSave()
+    {
+        if (SaveTask is not { IsCompleted: true } task)
+            return;
+
+        SaveTask = null;
+
+        var completed = SaveCompleted;
+        SaveCompleted = null;
+
+        // Each source's failure is caught and logged by WriteSources, so a faulted task is only an unexpected error
+        if (task.IsFaulted)
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_Editor_Background_Save_Failed"), task.Exception?.InnerException);
+            return;
+        }
+
+        RefreshPlayback(task.Result);
+
+        completed?.Invoke();
+    }
+
+    private void DrawSavingModal()
+    {
+        if (!SavingModalOpen && !(IsSaving && ShowSavingModal))
+            return;
+
+        var popupName = $"{LOC.Get("TAE_Editor_Saving_Modal_Title")}###timeActSavingModal";
+
+        if (!SavingModalOpen)
+        {
+            ImGui.OpenPopup(popupName);
+            SavingModalOpen = true;
+        }
+
+        var viewport = ImGui.GetMainViewport();
+        ImGui.SetNextWindowPos(viewport.Pos + viewport.Size / 2, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+
+        if (ImGui.BeginPopupModal(popupName,
+            ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoSavedSettings))
+        {
+            if (!IsSaving)
+            {
+                ImGui.CloseCurrentPopup();
+                SavingModalOpen = false;
+            }
+
+            ImGui.TextUnformatted(LOC.Get("TAE_Editor_Saving_Modal_Text"));
+            ImGui.Spacing();
+
+            // KRAK compression reports no progress of its own, so the bar is indeterminate
+            ImGui.ProgressBar(-1.0f * (float)ImGui.GetTime(), new Vector2(400 * DPI.UIScale(), 0),
+                LOC.Get("TAE_Editor_Saving_Modal_Progress", SavingIndex, SavingCount));
+
+            ImGui.Spacing();
+            ImGui.TextDisabled(SavingSourceName);
+
+            ImGui.EndPopup();
+        }
+        else
+        {
+            SavingModalOpen = false;
+        }
+    }
+
+    /// <summary>
+    /// Writes the sources, returning those that wrote animation files. Can run on a worker thread.
+    /// </summary>
+    private List<TimeActContainerWrapper> WriteSources(List<TimeActContainerWrapper> toSave, bool allowUnmodified)
+    {
+        var wroteAnimations = new List<TimeActContainerWrapper>();
+
+        for (var i = 0; i < toSave.Count; i++)
+        {
+            var source = toSave[i];
+
+            SavingSourceName = source.Name;
+            SavingIndex = i + 1;
+
+            try
+            {
+                var wroteAnimationFiles = source.PendingAnimationFiles.Count > 0;
+
+                source.SaveTimeActs(allowUnmodified);
+
+                Smithbox.Log(this, LOC.Get("TAE_Editor_Saved_Source", source.Name));
+
+                if (wroteAnimationFiles)
+                {
+                    wroteAnimations.Add(source);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("TAE_Editor_Failed_To_Save_Source", source.Name), e);
+            }
+        }
+
+        return wroteAnimations;
+    }
+
+    // The animations are read from the binders, so they are read again to play the imported files
+    private void RefreshPlayback(List<TimeActContainerWrapper> wroteAnimations)
+    {
+        foreach (var source in wroteAnimations)
+        {
+            foreach (var view in ViewHandler.Views)
+            {
+                if (view?.Selection.SelectedTimeActContainerWrapper != source)
+                    continue;
+
+                view.Playback.Clear();
+                view.Playback.OnAnimationChanged();
+            }
+        }
+    }
+    #endregion
 
     // More issues than this are counted rather than listed in the dialog
     private const int MaxListedSaveIssues = 12;
@@ -379,53 +555,63 @@ public class TimeActEditorScreen : EditorScreen
             .ToList();
     }
 
+    // The unsaved changes prompt shows its own saving message and waits on IsSavingUnsaved, so no modal here
     public void SaveUnsaved()
     {
-        SaveAll();
+        SaveAllSources(autoSave: false, showModal: false);
     }
 
-    private void SaveSources(IEnumerable<TimeActContainerWrapper> sources, bool autoSave, bool allowUnmodified = false)
+    private void SaveSources(IEnumerable<TimeActContainerWrapper> sources, bool autoSave, bool allowUnmodified = false,
+        bool showModal = true, Action onSaved = null)
     {
+        // One save at a time: the next one would write binders the running one is still writing
+        if (IsSaving)
+        {
+            if (!autoSave)
+            {
+                Smithbox.Log(this, LOC.Get("TAE_Editor_Save_Already_Running"));
+            }
+
+            return;
+        }
+
+        FinishBackgroundSave();
+
         var toSave = sources
             .Where(e => e.HasUnsavedTimeActs || allowUnmodified && e.CanSaveUnmodified)
             .ToList();
 
+        if (toSave.Count == 0)
+        {
+            onSaved?.Invoke();
+            return;
+        }
+
+        if (!Project.Handler.TimeActData.CanSaveTimeActs)
+        {
+            Smithbox.Log(this, LOC.Get("TAE_Editor_Save_Not_Supported"));
+            return;
+        }
+
         if (!CheckBeforeSave(toSave, autoSave))
             return;
 
-        foreach (var source in toSave)
+        // Only a save that compresses with KRAK is slow enough to be worth the modal
+        if (toSave.Any(e => e.SaveUsesKrak(allowUnmodified)))
         {
-            if (!Project.Handler.TimeActData.CanSaveTimeActs)
-            {
-                Smithbox.Log(this, LOC.Get("TAE_Editor_Save_Not_Supported"));
-                return;
-            }
+            SavingCount = toSave.Count;
+            SavingIndex = 0;
+            SavingSourceName = "";
 
-            try
-            {
-                var wroteAnimationFiles = source.PendingAnimationFiles.Count > 0;
+            ShowSavingModal = showModal;
+            SaveCompleted = onSaved;
 
-                source.SaveTimeActs(allowUnmodified);
-
-                Smithbox.Log(this, LOC.Get("TAE_Editor_Saved_Source", source.Name));
-
-                // The animations are read from the binders, so they are read again to play the imported files
-                if (wroteAnimationFiles)
-                {
-                    foreach (var view in ViewHandler.Views)
-                    {
-                        if (view?.Selection.SelectedTimeActContainerWrapper != source)
-                            continue;
-
-                        view.Playback.Clear();
-                        view.Playback.OnAnimationChanged();
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("TAE_Editor_Failed_To_Save_Source", source.Name), e);
-            }
+            SaveTask = Task.Run(() => WriteSources(toSave, allowUnmodified));
+            return;
         }
+
+        RefreshPlayback(WriteSources(toSave, allowUnmodified));
+
+        onSaved?.Invoke();
     }
 }

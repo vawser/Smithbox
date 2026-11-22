@@ -136,16 +136,11 @@
 #----------------------------------------------------
 # EMEVD Editor TODO
 #----------------------------------------------------
-
-- Aliases for ID references within Script graph
-- UX for properties
 - Add auto-fill value ranges for templates (i.e. disable enemies with entity IDs between X and Y)
 
 #----------------------------------------------------
 # ESD Editor TODO
 #----------------------------------------------------
-
-- UX for Properties
 - Aliases for ID references within States graph
 
 #----------------------------------------------------

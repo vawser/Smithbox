@@ -489,6 +489,34 @@
       "Text": "Saved time acts: {0}"
     },
     {
+      "Key": "TAE_Editor_Saving_Modal_Title",
+      "Text": "Saving Time Acts"
+    },
+    {
+      "Key": "TAE_Editor_Saving_Modal_Text",
+      "Text": "Writing the time acts with KRAK compression. This can take a while."
+    },
+    {
+      "Key": "TAE_Editor_Saving_Modal_Progress",
+      "Text": "{0} / {1}"
+    },
+    {
+      "Key": "TAE_Editor_Save_Already_Running",
+      "Text": "The time acts are still being saved. Try again once the save has finished."
+    },
+    {
+      "Key": "TAE_Editor_Save_Krak_As_Deflate",
+      "Text": "Save KRAK as Deflate"
+    },
+    {
+      "Key": "TAE_Editor_Save_Krak_As_Deflate_TT",
+      "Text": "If enabled, KRAK-compressed binders are written with deflate compression (DCX_DFLT 11000.44.9.15) instead. Elden Ring loads both, and deflate is much quicker to write. The files are larger than with KRAK."
+    },
+    {
+      "Key": "TAE_Editor_Background_Save_Failed",
+      "Text": "Failed to save the time acts."
+    },
+    {
       "Key": "TAE_Data_Failed_To_Read_Group_Map",
       "Text": "Failed to read the event group map: {0}"
     },

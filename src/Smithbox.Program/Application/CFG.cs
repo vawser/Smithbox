@@ -802,6 +802,7 @@ public class CFG
     public bool Interface_TimeActEditor_ToolWindow = true;
 
     public bool TimeActEditor_Allow_Unmodified_Save = false;
+    public bool TimeActEditor_Save_Krak_As_Deflate = false;
     public bool TimeActEditor_Allow_Automatic_Save = true;
     public string TimeActEditor_Export_Directory = "";
     public bool AutomaticSave_TimeActEditor = true;

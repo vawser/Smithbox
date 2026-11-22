@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ModelEditor;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -361,22 +362,7 @@ public class TimeActContainerWrapper
         if (!HasUnsavedTimeActs && !writeUnmodified)
             return;
 
-        var timeActsChanged = HasStructuralChanges || TimeActs.Any(e => e.IsDirty) || writeUnmodified;
-
-        var paths = new List<string>();
-
-        if (timeActsChanged)
-        {
-            paths.Add(SourcePath);
-        }
-
-        foreach (var path in PendingAnimationFiles.Values.SelectMany(e => e.BinderPaths))
-        {
-            if (!paths.Contains(path, StringComparer.OrdinalIgnoreCase))
-            {
-                paths.Add(path);
-            }
-        }
+        var paths = GetSavePaths(writeUnmodified, out var timeActsChanged);
 
         var failed = false;
 
@@ -401,6 +387,120 @@ public class TimeActContainerWrapper
         }
     }
 
+    /// <summary>
+    /// The binders a save writes: the source, if its time acts changed, and those the imported animation files go in
+    /// </summary>
+    private List<string> GetSavePaths(bool writeUnmodified, out bool timeActsChanged)
+    {
+        timeActsChanged = HasStructuralChanges || TimeActs.Any(e => e.IsDirty) || writeUnmodified;
+
+        var paths = new List<string>();
+
+        if (timeActsChanged)
+        {
+            paths.Add(SourcePath);
+        }
+
+        foreach (var path in PendingAnimationFiles.Values.SelectMany(e => e.BinderPaths))
+        {
+            if (!paths.Contains(path, StringComparer.OrdinalIgnoreCase))
+            {
+                paths.Add(path);
+            }
+        }
+
+        return paths;
+    }
+
+    // Whether each binder read uses KRAK compression, on itself, its files or its nested anibnd, by path
+    private readonly ConcurrentDictionary<string, bool> KrakBinders = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// Whether <see cref="SaveTimeActs"/> would write a binder that uses KRAK (Oodle) compression, which is slow
+    /// enough for the save to be worth running in the background
+    /// </summary>
+    public bool SaveUsesKrak(bool allowUnmodified = false)
+    {
+        var writeUnmodified = allowUnmodified && CanSaveUnmodified;
+
+        if (!HasUnsavedTimeActs && !writeUnmodified)
+            return false;
+
+        // Written with deflate instead, which is quick enough to need no modal
+        if (ConvertKrakToDeflate)
+            return false;
+
+        return GetSavePaths(writeUnmodified, out _).Any(BinderUsesKrak);
+    }
+
+    // The deflate type Elden Ring's own files use, which it reads as well as KRAK
+    private const DCX.Type ErDeflate = DCX.Type.DCX_DFLT_11000_44_9_15;
+
+    /// <summary>
+    /// Whether KRAK compression is written as deflate instead: only for ER, which can load both
+    /// </summary>
+    private bool ConvertKrakToDeflate => Project.Descriptor.ProjectType is ProjectType.ER
+        && CFG.Current.TimeActEditor_Save_Krak_As_Deflate;
+
+    /// <summary>
+    /// Switches the binder, and any of its files, from KRAK to deflate. A nested binder is converted separately.
+    /// </summary>
+    private static void ConvertKrak(IBinder binder)
+    {
+        if (binder is ISoulsFile soulsFile && IsKrak(soulsFile.Compression))
+        {
+            soulsFile.Compression = ErDeflate;
+        }
+
+        foreach (var file in binder.Files)
+        {
+            if (IsKrak(file.CompressionType))
+            {
+                file.CompressionType = ErDeflate;
+            }
+        }
+    }
+
+    // Known for the source once its time acts are read; any other binder is read to find out
+    private bool BinderUsesKrak(string path)
+    {
+        if (KrakBinders.TryGetValue(path, out var known))
+            return known;
+
+        using var binder = ReadBinderFile(path);
+
+        if (binder == null)
+            return false;
+
+        var nestedFile = FindNestedAnibnd(binder);
+
+        if (nestedFile == null)
+        {
+            RecordKrak(path, binder, null);
+        }
+        else
+        {
+            using var anibnd = ReadBinder(nestedFile.Bytes);
+
+            RecordKrak(path, binder, anibnd);
+        }
+
+        return KrakBinders[path];
+    }
+
+    private void RecordKrak(string path, IBinder binder, IBinder nested)
+    {
+        KrakBinders[path] = UsesKrak(binder) || nested != null && UsesKrak(nested);
+    }
+
+    private static bool UsesKrak(IBinder binder)
+    {
+        return binder is ISoulsFile file && IsKrak(file.Compression)
+            || binder.Files.Any(e => IsKrak(e.CompressionType));
+    }
+
+    private static bool IsKrak(DCX.Type type) => type is DCX.Type.DCX_KRAK or DCX.Type.DCX_KRAK_MAX;
+
     private bool SaveBinder(string path, bool updateTimeActs, List<TimeActPendingAnimationFile> animationFiles)
     {
         using var binder = ReadBinderFile(path);
@@ -417,15 +517,33 @@ public class TimeActContainerWrapper
 
         if (nestedFile == null)
         {
+            RecordKrak(path, binder, null);
+
             UpdateFiles(binder);
         }
         else
         {
             using var anibnd = ReadBinder(nestedFile.Bytes);
 
+            RecordKrak(path, binder, anibnd);
+
             UpdateFiles(anibnd);
 
+            // After the update, so the files it adds with the compression of their siblings are converted too
+            if (ConvertKrakToDeflate)
+            {
+                ConvertKrak(anibnd);
+            }
+
             nestedFile.Bytes = anibnd is BND3 bnd3 ? bnd3.Write() : ((BND4)anibnd).Write();
+        }
+
+        if (ConvertKrakToDeflate)
+        {
+            ConvertKrak(binder);
+
+            // Kept as deflate if the option is turned off later, as only KRAK is converted
+            KrakBinders[path] = false;
         }
 
         WriteBinderFile(binder, path);
@@ -573,11 +691,15 @@ public class TimeActContainerWrapper
 
         if (nestedFile == null)
         {
+            RecordKrak(SourcePath, binder, null);
+
             AddTimeActs(binder, entries);
         }
         else
         {
             using var anibnd = ReadBinder(nestedFile.Bytes);
+
+            RecordKrak(SourcePath, binder, anibnd);
 
             AddTimeActs(anibnd, entries);
         }
