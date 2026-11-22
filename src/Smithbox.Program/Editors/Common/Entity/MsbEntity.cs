@@ -223,11 +223,9 @@ public class MsbEntity : Entity
         var modelName = (string)modelProp.GetValue(WrappedObject);
         var amapid = PathBuilder.GetAssetMapID(curProject, MapID);
 
-        // A newly created part has no model yet, and map models are found from the name, so it gets a box
-        // until one is set
-        if (string.IsNullOrEmpty(modelName) && (EntityHelper.IsPartMapPiece(this)
-            || EntityHelper.IsPartCollision(this) || EntityHelper.IsPartConnectCollision(this)
-            || EntityHelper.IsPartNavmesh(this)))
+        // A newly created part has no model yet (an asset created in a map with no assets to copy from, say),
+        // and every model is found from the name, so it gets a box until one is set
+        if (string.IsNullOrEmpty(modelName) && !EntityHelper.IsPartPlayer(this))
         {
             SetRenderSceneMesh(CreateObjectProxyMesh());
             return;
@@ -424,6 +422,11 @@ public class MsbEntity : Entity
             return;
 
         var modelName = (string)modelProp.GetValue(WrappedObject);
+
+        // A newly created part has no model yet, so it has no collision either
+        if (string.IsNullOrEmpty(modelName))
+            return;
+
         var collisionType = curUniverse.View.HavokCollisionBank.PrimaryCollisionType;
 
         if (isPrefab)
