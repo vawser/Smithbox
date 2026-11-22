@@ -411,7 +411,7 @@ public class TimeActPlayback
         if (events == null || events.Count == 0)
             return 1;
 
-        return Math.Max(events.Max(e => e.EndTime < TAE.Event.EldenRingInfiniteLengthEventPlaceholder ? e.EndTime : e.StartTime), DefaultFrameDuration);
+        return Math.Max(events.Max(e => !e.IsInfiniteEnd ? e.EndTime : e.StartTime), DefaultFrameDuration);
     }
 
     public void TogglePlaying()

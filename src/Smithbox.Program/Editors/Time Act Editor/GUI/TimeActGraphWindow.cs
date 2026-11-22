@@ -932,7 +932,7 @@ public class TimeActGraphWindow
     /// </summary>
     private static bool IsOpenEnded(TAE.Event ev)
     {
-        return ev.EndTime >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder;
+        return ev.IsInfiniteEnd;
     }
 
     private string GetEventName(TAE.Event ev, TAE.Template.BankTemplate template)

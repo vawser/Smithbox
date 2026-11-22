@@ -230,7 +230,25 @@ namespace SoulsFormats
 
             public const float EldenRingInfiniteLengthEventPlaceholder = 100;
 
-            public float MemeEndTime => EndTime >= EldenRingInfiniteLengthEventPlaceholder ? float.MaxValue : EndTime;
+            /// <summary>
+            /// The end time as stored: the placeholder (what an infinite end, float.MaxValue, reads as) goes back to
+            /// float.MaxValue. Only the placeholder itself: long AC6 asset animations have real end times past it
+            /// (AEG120_106 up to 206 s), which were saved as infinite while every end time from 100 on was.
+            /// </summary>
+            public float MemeEndTime => EndTime == EldenRingInfiniteLengthEventPlaceholder && !ReadEndTimeAsPlaceholderValue
+                ? float.MaxValue : EndTime;
+
+            /// <summary>
+            /// Whether the event lasts to the end of the animation: its end is stored as float.MaxValue. An end time
+            /// past the placeholder is a real one (AC6 asset animations run to 206 s).
+            /// </summary>
+            public bool IsInfiniteEnd => MemeEndTime == float.MaxValue;
+
+            /// <summary>
+            /// The end time read was the placeholder's value itself (100.0, AC6 AEG300_900), not an infinite one, so it
+            /// is written back as 100.0
+            /// </summary>
+            private bool ReadEndTimeAsPlaceholderValue;
 
             internal byte[] ParameterBytes;
 
@@ -278,6 +296,7 @@ namespace SoulsFormats
             {
                 var paramBytes = GetParameterBytes(bigEndian);
                 var ev = new Event(StartTime, EndTime, Type, Unk04, paramBytes, bigEndian);
+                ev.ReadEndTimeAsPlaceholderValue = ReadEndTimeAsPlaceholderValue;
                 if (Parameters != null)
                     ev.Parameters = new ParameterContainer(bigEndian, paramBytes, Parameters.Template);
                 return ev;
@@ -514,10 +533,13 @@ namespace SoulsFormats
                 float startTime = br.GetSingle(startTimeOffset);
                 float endTime = br.GetSingle(endTimeOffset);
 
+                bool literalPlaceholder = endTime == EldenRingInfiniteLengthEventPlaceholder;
+
                 if (endTime == float.MaxValue)
                     endTime = EldenRingInfiniteLengthEventPlaceholder;
 
                 Event result = new Event(startTime, endTime);
+                result.ReadEndTimeAsPlaceholderValue = literalPlaceholder;
                 br.StepIn(eventDataOffset);
                 {
                     result.Type = br.ReadInt32();

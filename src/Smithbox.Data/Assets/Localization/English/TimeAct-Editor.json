@@ -1006,7 +1006,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Time_TT",
-      "Text": "Type a time in seconds (0.5), or in frames with an f after it (15f). The frame in brackets is only shown, and can be left in when editing."
+      "Text": "Type a time in seconds (0.5), or in frames with an f after it (15f). The frame in brackets is only shown, and can be left in when editing. An end time of exactly 100 makes the event last to the end of the animation; any other time, longer ones included, is kept as it is."
     },
     {
       "Key": "TAE_PropertiesWindow_Invalid_Time",

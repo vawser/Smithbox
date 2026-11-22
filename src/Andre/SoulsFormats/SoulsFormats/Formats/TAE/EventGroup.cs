@@ -24,10 +24,17 @@ namespace SoulsFormats
 
             public EventGroupDataStruct GroupData;
 
+            /// <summary>
+            /// The 64-bit (SDT layout) group's data block as read, from its data offset up to its values; null when the
+            /// offset was 0. AC6 type 192 groups have 16 bytes here. Not decoded.
+            /// </summary>
+            public byte[] RawGroupData { get; set; }
+
             public EventGroup GetClone()
             {
                 var g = new EventGroup(GroupType);
                 g.GroupData = GroupData;
+                g.RawGroupData = RawGroupData?.ToArray();
                 return g;
             }
 
@@ -96,9 +103,20 @@ namespace SoulsFormats
                     }
                     else if (format == TAEFormat.DS3 || format == TAEFormat.SDT)
                     {
-                        // AC6 has the same format, but goes straight on to the group values here
-                        if (format == TAEFormat.DS3 || br.GetVarint(br.Position) == 0)
+                        // A data offset, 0 for most groups. AC6 type 192 groups point it right after itself, at a
+                        // data block that runs up to the group values (16 bytes, 01 01 01 00 …), kept as read.
+                        long dataOffset = br.GetVarint(br.Position);
+
+                        if (format == TAEFormat.SDT && dataOffset != 0 && dataOffset == br.Position + br.VarintSize
+                            && valuesOffset > dataOffset)
+                        {
+                            br.ReadVarint();
+                            RawGroupData = br.GetBytes(dataOffset, (int)(valuesOffset - dataOffset));
+                        }
+                        else
+                        {
                             br.AssertVarint(0);
+                        }
                     }
                     else
                     {
@@ -163,7 +181,15 @@ namespace SoulsFormats
                 }
                 else if (format == TAEFormat.DS3 || format == TAEFormat.SDT)
                 {
-                    bw.WriteVarint(0);
+                    if (format == TAEFormat.SDT && RawGroupData != null)
+                    {
+                        bw.WriteVarint(bw.Position + bw.VarintSize);
+                        bw.WriteBytes(RawGroupData);
+                    }
+                    else
+                    {
+                        bw.WriteVarint(0);
+                    }
                 }
                 else
                 {

@@ -406,7 +406,7 @@ public class TimeActSimulation
         foreach (var ev in animation.Events)
         {
             if (data.GetSimulationRole(ev) == TimeActSimulationRole.Blend &&
-                ev.EndTime < TAE.Event.EldenRingInfiniteLengthEventPlaceholder)
+                !ev.IsInfiniteEnd)
             {
                 return Math.Max(ev.EndTime - ev.StartTime, 0);
             }
@@ -515,7 +515,7 @@ public class TimeActSimulation
             case TimeActSimulationRole.SpeedFrames:
             {
                 if (GetFloat(ev, "AnimSpeed") is not { } frames || frames <= 0 ||
-                    ev.EndTime >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder)
+                    ev.IsInfiniteEnd)
                     return null;
 
                 return (ev.EndTime - ev.StartTime) * FramesPerSecond / frames;

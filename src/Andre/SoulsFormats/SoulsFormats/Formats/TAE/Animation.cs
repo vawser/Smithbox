@@ -64,6 +64,7 @@ namespace SoulsFormats
                         newClone.DesImportsByte = DesImportsByte;
 
                         newClone.ImportHKXSourceAnimID = ImportHKXSourceAnimID;
+                        newClone.Unk03 = Unk03;
 
                         return newClone;
                     }
@@ -89,6 +90,11 @@ namespace SoulsFormats
                     /// <see cref="ImportsHKX"/> is enabled.
                     /// </summary>
                     public int ImportHKXSourceAnimID { get; set; } = 0;
+
+                    /// <summary>
+                    /// The byte after the delay load flag (not DES / DESR), 0 except in AC6 movtae anim 14 (1). Unknown.
+                    /// </summary>
+                    public byte Unk03 { get; set; } = 0;
 
                     /// <summary>
                     /// DES only: the bytes where later games keep the delay load flag and a pad byte.
@@ -132,7 +138,7 @@ namespace SoulsFormats
                             else
                             {
                                 AllowDelayLoad = br.ReadByte() != 0;
-                                br.ReadByte();
+                                Unk03 = br.ReadByte();
                             }
 
                             ImportHKXSourceAnimID = br.ReadInt32();
@@ -163,7 +169,7 @@ namespace SoulsFormats
                                 bw.WriteBoolean(IsLoopByDefault);
                                 bw.WriteBoolean(ImportsHKX);
                                 bw.WriteBoolean(AllowDelayLoad);
-                                bw.WriteByte(0);
+                                bw.WriteByte(Unk03);
                             }
 
                             bw.WriteInt32(ImportHKXSourceAnimID);
@@ -269,6 +275,82 @@ namespace SoulsFormats
             public string AnimFileName { get; set; }
 
             /// <summary>
+            /// The anim file struct was empty: type 0 and a null name offset offset, 16 bytes with no mini header or name
+            /// after it (AC6 c0100/c0200/c0300 a330/a331, the first animation). Written back the same way while the
+            /// mini header and name stay at their defaults.
+            /// </summary>
+            private bool EmptyAnimFile;
+
+            /// <summary>
+            /// The anim file struct ended after the mini header, without the two zero varints, and the name offset
+            /// pointed at its end, where the name is if there is one (AC6 /other/movtae.movtae, every animation; some
+            /// name a movie, "1010.mp4"). Written the same way.
+            /// </summary>
+            private bool NoAnimFileTail;
+
+            /// <summary>
+            /// The offset of the body this animation was read from
+            /// </summary>
+            internal long ReadBodyOffset = -1;
+
+            /// <summary>
+            /// The times table as read, written again along with the times the events use now
+            /// </summary>
+            internal List<float> ReadTimes;
+
+            /// <summary>
+            /// The earlier animation whose body this one shared when read (AC6 asset TAEs: several animation IDs
+            /// pointing at one body), or null. Written shared again while the two are still identical and both listed.
+            /// </summary>
+            internal Animation SharedBodySource;
+
+            /// <summary>
+            /// Whether everything the body and its data hold (all but the ID) is the same as in the other animation
+            /// </summary>
+            internal bool HasSameBodyAs(Animation other, bool bigEndian)
+            {
+                if (AnimFileName != other.AnimFileName || EmptyAnimFile != other.EmptyAnimFile
+                    || NoAnimFileTail != other.NoAnimFileTail
+                    || Events.Count != other.Events.Count || EventGroups.Count != other.EventGroups.Count)
+                    return false;
+
+                switch (MiniHeader, other.MiniHeader)
+                {
+                    case (AnimMiniHeader.Standard a, AnimMiniHeader.Standard b):
+                        if (a.IsLoopByDefault != b.IsLoopByDefault || a.ImportsHKX != b.ImportsHKX
+                            || a.AllowDelayLoad != b.AllowDelayLoad || a.ImportHKXSourceAnimID != b.ImportHKXSourceAnimID
+                            || a.Unk03 != b.Unk03)
+                            return false;
+                        break;
+                    case (AnimMiniHeader.ImportOtherAnim a, AnimMiniHeader.ImportOtherAnim b):
+                        if (a.ImportFromAnimID != b.ImportFromAnimID || a.Unknown != b.Unknown)
+                            return false;
+                        break;
+                    default:
+                        return false;
+                }
+
+                for (int i = 0; i < Events.Count; i++)
+                {
+                    Event a = Events[i], b = other.Events[i];
+                    if (a.StartTime != b.StartTime || a.MemeEndTime != b.MemeEndTime || a.Unk04 != b.Unk04
+                        || !a.IsIdenticalTo(b, bigEndian)
+                        || EventGroups.IndexOf(a.Group) != other.EventGroups.IndexOf(b.Group))
+                        return false;
+                }
+
+                for (int i = 0; i < EventGroups.Count; i++)
+                {
+                    EventGroup a = EventGroups[i], b = other.EventGroups[i];
+                    if (a.GroupType != b.GroupType || !a.GroupData.Equals(b.GroupData)
+                        || !(a.RawGroupData ?? []).SequenceEqual(b.RawGroupData ?? []))
+                        return false;
+                }
+
+                return true;
+            }
+
+            /// <summary>
             /// Creates a new empty animation with the specified properties.
             /// </summary>
             public Animation(long id, AnimMiniHeader miniHeader, string animFileName)
@@ -288,6 +370,7 @@ namespace SoulsFormats
                 lastEventParamOffset = 0;
                 ID = br.ReadVarint();
                 long offset = br.ReadVarint();
+                ReadBodyOffset = offset;
 
                 if (format == TAEFormat.DES) // Not in DESR
                 {
@@ -301,6 +384,7 @@ namespace SoulsFormats
                     int eventGroupCount;
                     long eventGroupsOffset;
                     long timesOffset;
+                    int timesCount;
 
                     if (format == TAEFormat.DS1 || format == TAEFormat.DES)
                     {
@@ -308,7 +392,7 @@ namespace SoulsFormats
                         eventHeadersOffset = br.ReadVarint();
                         eventGroupCount = br.ReadInt32();
                         eventGroupsOffset = br.ReadVarint();
-                        br.ReadInt32(); // Times count
+                        timesCount = br.ReadInt32();
                         timesOffset = br.ReadVarint(); // Times offset
                         animFileOffset = br.ReadVarint();
 
@@ -323,7 +407,7 @@ namespace SoulsFormats
                     {
                         eventCount = br.ReadInt32();
                         eventGroupCount = br.ReadInt32();
-                        br.ReadInt32(); // Times count
+                        timesCount = br.ReadInt32();
                         br.AssertInt32(0);
                         eventHeadersOffset = br.ReadVarint();
                         eventGroupsOffset = br.ReadVarint();
@@ -338,8 +422,16 @@ namespace SoulsFormats
                         animFileOffset = br.ReadVarint();
                         eventCount = br.ReadInt32();
                         eventGroupCount = br.ReadInt32();
-                        br.ReadInt32(); // Times count
+                        timesCount = br.ReadInt32();
                         br.AssertInt32(0);
+                    }
+
+                    // Kept, as the table can hold times no event uses any more (AC6 AEG120_106: 54 times, 44 used)
+                    ReadTimes = new List<float>(Math.Max(0, timesCount));
+                    if (timesOffset > 0)
+                    {
+                        for (int t = 0; t < timesCount; t++)
+                            ReadTimes.Add(br.GetSingle(timesOffset + t * 4));
                     }
 
                     var eventHeaderOffsets = new List<long>(eventCount);
@@ -420,6 +512,17 @@ namespace SoulsFormats
 
                         var fileNameOffsetOffset = br.GetNextPaddedOffsetAfterCurrentField(br.VarintSize, format == TAEFormat.DES ? 0x10 : 0);
 
+                        // An empty struct: no name offset offset, and nothing after it
+                        if (br.VarintLong && format != TAEFormat.DESR && miniHeaderType == MiniHeaderType.Standard
+                            && br.GetInt64(br.Position) == 0)
+                        {
+                            EmptyAnimFile = true;
+                            MiniHeader = new AnimMiniHeader.Standard();
+                            AnimFileName = "";
+                        }
+                        else
+                        {
+
                         // Offset being read as 32bit int to deal with bad data in the upper 32bits of the offsets in DESR
                         br.AssertInt32((int)fileNameOffsetOffset);
                         if (br.VarintLong)
@@ -467,8 +570,14 @@ namespace SoulsFormats
 
                         if (!(format == TAEFormat.DES || format == TAEFormat.DS1 || format == TAEFormat.DESR))
                         {
-                            br.AssertVarint(0);
-                            br.AssertVarint(0);
+                            // The name offset pointing here means the struct ends without its two zeros
+                            NoAnimFileTail = animFileNameOffset == br.Position;
+
+                            if (!NoAnimFileTail)
+                            {
+                                br.AssertVarint(0);
+                                br.AssertVarint(0);
+                            }
                         }
                         else
                         {
@@ -519,6 +628,7 @@ namespace SoulsFormats
                         //    || animNameCheck.EndsWith(".hkxwin")))
                         //    AnimFileName = "";
 
+                        }
                     }
                     br.StepOut();
                 }
@@ -588,6 +698,16 @@ namespace SoulsFormats
                 bw.FillVarint($"AnimFileOffset{i}", bw.Position);
                 bw.WriteVarint((int)MiniHeader.Type);
 
+                // Kept empty while nothing has been set that the full struct would hold
+                if (EmptyAnimFile && bw.VarintLong && format != TAEFormat.DESR && string.IsNullOrEmpty(AnimFileName) && MiniHeader is AnimMiniHeader.Standard
+                    {
+                        IsLoopByDefault: false, ImportsHKX: false, AllowDelayLoad: false, ImportHKXSourceAnimID: 0, Unk03: 0
+                    })
+                {
+                    bw.WriteVarint(0);
+                    return;
+                }
+
 
                 bw.ReserveVarint("AnimFileNameOffsetOffset");
                 if (format is TAEFormat.DES) // Not in DESR
@@ -619,8 +739,12 @@ namespace SoulsFormats
 
                 if (!(format == TAEFormat.DES || format == TAEFormat.DS1 || format == TAEFormat.DESR))
                 {
-                    bw.WriteVarint(0);
-                    bw.WriteVarint(0);
+                    // Without them the name, if there is one, follows the mini header (movtae "1010.mp4")
+                    if (!NoAnimFileTail)
+                    {
+                        bw.WriteVarint(0);
+                        bw.WriteVarint(0);
+                    }
                 }
                 else
                 {
@@ -657,6 +781,12 @@ namespace SoulsFormats
             internal Dictionary<float, long> WriteTimes(BinaryWriterEx bw, int animIndex, TAEFormat format)
             {
                 var times = new SortedSet<float>();
+
+                if (ReadTimes != null)
+                {
+                    foreach (var time in ReadTimes)
+                        times.Add(time);
+                }
 
                 foreach (Event evt in Events)
                 {
@@ -716,7 +846,12 @@ namespace SoulsFormats
                     bw.FillVarint($"EventGroupHeadersOffset{i}", bw.Position);
                     for (int j = 0; j < EventGroups.Count; j++)
                     {
-                        EventGroups[j].indices = Events.Where(ev => ev.Group == EventGroups[j]).Select(ev => Events.IndexOf(ev)).ToList();
+                        var members = Events.Where(ev => ev.Group == EventGroups[j]).Select(ev => Events.IndexOf(ev)).ToList();
+
+                        // The order as read (not always ascending in AC6), while the group still has the same events
+                        var read = EventGroups[j].indices;
+                        if (read == null || read.Count != members.Count || !read.OrderBy(x => x).SequenceEqual(members))
+                            EventGroups[j].indices = members;
                         EventGroups[j].WriteHeader(bw, i, j, format);
                     }
                 }

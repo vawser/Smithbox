@@ -96,6 +96,18 @@ namespace SoulsFormats
         private bool DesSkeletonNameAtAnims;
 
         /// <summary>
+        /// The two zero varints after the name offsets were left out, with the anims table right after the offsets
+        /// (AC6 /other/movtae.movtae). Written the same way while the time act still has no names.
+        /// </summary>
+        private bool NoHeaderTail;
+
+        /// <summary>
+        /// The skeleton and sib name offsets pointed at the same string (AC6 assets: both "AEG034_110.sib"). Written
+        /// once again while the two names are the same.
+        /// </summary>
+        private bool SharedNameOffset;
+
+        /// <summary>
         /// Unknown .hkt file.
         /// </summary>
         public string SkeletonName { get; set; }
@@ -406,7 +418,11 @@ namespace SoulsFormats
                     skeletonNameOffset = br.ReadVarint();
                     sibNameOffset = br.ReadVarint();
 
-                    if (Format != TAEFormat.SOTFS)
+                    // AC6 movtae has no names and starts its anims table here, without the two zeros
+                    NoHeaderTail = Format != TAEFormat.SOTFS && animCount > 0 && animsOffset == br.Position
+                        && skeletonNameOffset == 0 && sibNameOffset == 0;
+
+                    if (Format != TAEFormat.SOTFS && !NoHeaderTail)
                     {
                         br.AssertVarint(0);
                         br.AssertVarint(0);
@@ -418,8 +434,15 @@ namespace SoulsFormats
                 if (Format != TAEFormat.SOTFS)
                 {
                     DesSkeletonNameAtAnims = Format == TAEFormat.DES && skeletonNameOffset != 0 && skeletonNameOffset == animsOffset;
-                    SkeletonName = skeletonNameOffset == 0 || DesSkeletonNameAtAnims ? null : br.GetUTF16(skeletonNameOffset);
-                    SibName = sibNameOffset == 0 ? null : br.GetUTF16(sibNameOffset);
+                    SkeletonName = skeletonNameOffset == 0 || DesSkeletonNameAtAnims ? null : ReadName(skeletonNameOffset);
+                    SibName = sibNameOffset == 0 ? null : ReadName(sibNameOffset);
+                    SharedNameOffset = skeletonNameOffset != 0 && skeletonNameOffset == sibNameOffset;
+
+                    // An empty name is written as an offset to where it would go, with no terminator: when nothing
+                    // follows, that is the anims table (AC6: 283 files had two 2-character names read from the first
+                    // anim's ID). The writer gives "" the same offset.
+                    string ReadName(long offset) => Format != TAEFormat.DES && animsOffset != 0 && offset == animsOffset
+                        ? "" : br.GetUTF16(offset);
                 }
             }
 
@@ -430,13 +453,21 @@ namespace SoulsFormats
             br.StepIn(animsOffset);
             {
                 Animations = new List<Animation>(animCount);
+                var bodiesByOffset = new Dictionary<long, int>();
                 bool previousAnimNeedsParamGen = false;
                 long previousAnimParamStart = 0;
                 for (int i = 0; i < animCount; i++)
                 {
-                    Animations.Add(new Animation(br, Format, 
-                        out bool lastEventNeedsParamGen, 
+                    Animations.Add(new Animation(br, Format,
+                        out bool lastEventNeedsParamGen,
                         out long animFileOffset, out long lastEventParamOffset));
+
+                    // An animation pointing at an earlier one's body shares it
+                    var bodyOffset = Animations[i].ReadBodyOffset;
+                    if (bodiesByOffset.TryGetValue(bodyOffset, out var sharedIndex))
+                        Animations[i].SharedBodySource = Animations[sharedIndex];
+                    else
+                        bodiesByOffset[bodyOffset] = i;
 
                     if (previousAnimNeedsParamGen)
                     {
@@ -612,7 +643,9 @@ namespace SoulsFormats
                     bw.ReserveVarint("SkeletonName");
                     bw.ReserveVarint("SibName");
 
-                    if (Format != TAEFormat.SOTFS)
+                    var noTail = NoHeaderTail && SkeletonName == null && SibName == null && Animations.Count > 0;
+
+                    if (Format != TAEFormat.SOTFS && !noTail)
                     {
                         bw.WriteVarint(0);
                         bw.WriteVarint(0);
@@ -625,6 +658,8 @@ namespace SoulsFormats
                 if (Format == TAEFormat.DES)
                     bw.Pad(0x10);
 
+                long skeletonNamePosition = -1;
+
                 if (Format == TAEFormat.DES && SkeletonName == null && DesSkeletonNameAtAnims)
                 {
                     // The anims table comes next, at this position
@@ -632,6 +667,7 @@ namespace SoulsFormats
                 }
                 else if (SkeletonName != null)
                 {
+                    skeletonNamePosition = bw.Position;
                     bw.FillVarint("SkeletonName", bw.Position);
                     if (!string.IsNullOrEmpty(SkeletonName))
                     {
@@ -645,7 +681,11 @@ namespace SoulsFormats
                     bw.FillVarint("SkeletonName", 0);
                 }
 
-                if (SibName != null)
+                if (SharedNameOffset && skeletonNamePosition >= 0 && !string.IsNullOrEmpty(SibName) && SibName == SkeletonName)
+                {
+                    bw.FillVarint("SibName", skeletonNamePosition);
+                }
+                else if (SibName != null)
                 {
                     bw.FillVarint("SibName", bw.Position);
                     if (!string.IsNullOrEmpty(SibName))
@@ -711,6 +751,18 @@ namespace SoulsFormats
             // anim offset is 0 (with the second anim count 0 too)
             bool bodiesInterleaved = NoFirstAnimOffset && Animations.Count > 0;
 
+            // The animations that share a body as they did when read: the source is still listed, doesn't share one
+            // itself, and nothing in the body differs
+            var listed = new HashSet<Animation>(Animations);
+            var sharesBody = new Animation[Animations.Count];
+            for (int i = 0; i < Animations.Count; i++)
+            {
+                var source = Animations[i].SharedBodySource;
+                if (!bodiesInterleaved && source != null && source != Animations[i] && listed.Contains(source)
+                    && source.SharedBodySource == null && Animations[i].HasSameBodyAs(source, BigEndian))
+                    sharesBody[i] = source;
+            }
+
             if (Animations.Count == 0)
             {
                 bw.FillVarint("FirstAnimOffset", 0);
@@ -722,13 +774,33 @@ namespace SoulsFormats
             else
             {
                 bw.FillVarint("FirstAnimOffset", bw.Position);
+
+                var bodyPositions = new Dictionary<Animation, long>();
                 for (int i = 0; i < Animations.Count; i++)
+                {
+                    if (sharesBody[i] != null)
+                        continue;
+
+                    bodyPositions[Animations[i]] = bw.Position;
                     Animations[i].WriteBody(bw, i, Format);
+                }
+
+                // An alias points at the body of the animation it shares it with
+                for (int i = 0; i < Animations.Count; i++)
+                {
+                    if (sharesBody[i] != null)
+                        bw.FillVarint($"AnimationOffset{i}", bodyPositions[sharesBody[i]]);
+                }
             }
 
             for (int i = 0; i < Animations.Count; i++)
             {
                 Animation anim = Animations[i];
+
+                // Its body and data are the other animation's
+                if (sharesBody[i] != null)
+                    continue;
+
                 if (bodiesInterleaved)
                     anim.WriteBody(bw, i, Format);
                 anim.WriteAnimFile(bw, i, Format);

@@ -295,7 +295,7 @@ public sealed class LuaTimeAct : IDisposable
                 play.TurnEvents.Add((ev, speed));
             // How long the clip blends in from the last (its first Blend event's length, as the Time Act Editor reads it)
             else if (role == TimeActSimulationRole.Blend && play.BlendDuration == null &&
-                     ev.EndTime < TAE.Event.EldenRingInfiniteLengthEventPlaceholder)
+                     !ev.IsInfiniteEnd)
                 play.BlendDuration = Math.Max(ev.EndTime - ev.StartTime, 0);
             else if (role is TimeActSimulationRole.DrawMask or TimeActSimulationRole.HideMask or TimeActSimulationRole.ShowMask)
                 play.MaskEvents.Add((ev, role));
@@ -497,7 +497,7 @@ public sealed class LuaTimeAct : IDisposable
     {
         if (oneShot)
             return LOC.Get("LUA_TAE_Life_OneShot");
-        return ev.EndTime >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder
+        return ev.IsInfiniteEnd
             ? LOC.Get("LUA_TAE_Life_Clip")
             : LOC.Get("LUA_TAE_Life_Seconds", $"{Math.Max(ev.EndTime - ev.StartTime, 0):0.00}");
     }
@@ -590,7 +590,7 @@ public sealed class LuaTimeAct : IDisposable
 
         // A lasting effect is told to stop at its event's end; one that lasts until the clip ends, when the play does
         var start = play.Base + ev.StartTime;
-        float? end = oneShot || ev.EndTime >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder
+        float? end = oneShot || ev.IsInfiniteEnd
             ? null
             : play.Base + Math.Max(ev.EndTime, ev.StartTime + 1f / 30f);
 

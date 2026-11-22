@@ -185,14 +185,13 @@ public static class TimeActCompare
     public static bool EndsEqual(TAE.Event a, TAE.Event b) => GetEnd(a) == GetEnd(b);
 
     /// <summary>
-    /// Any end at or past the placeholder means the event lasts to the end of the animation. The writer stores
-    /// every such end as the placeholder (a Sekiro event ending at 133.33 is written as 100), so they compare as one.
+    /// The end as stored: an infinite end, or the real time. Until 2026-11-22 the writer stored every end from the
+    /// placeholder (100) on as infinite (a Sekiro event ending at 133.33 came back as 100), so these were compared as
+    /// one; it now writes them as they are, and a project saved before then shows such an end as changed.
     /// </summary>
     private static float GetEnd(TAE.Event ev)
     {
-        return ev.EndTime >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder
-            ? TAE.Event.EldenRingInfiniteLengthEventPlaceholder
-            : ev.EndTime;
+        return ev.MemeEndTime;
     }
 
     /// <summary>

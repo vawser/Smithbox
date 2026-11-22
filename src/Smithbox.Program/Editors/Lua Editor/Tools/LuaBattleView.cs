@@ -605,7 +605,7 @@ public class LuaBattleView
             foreach (var ev in play.Events)
             {
                 var fired = play.Fired.Contains(ev);
-                var infinite = ev.EndTime >= SoulsFormats.TAE.Event.EldenRingInfiniteLengthEventPlaceholder;
+                var infinite = ev.IsInfiniteEnd;
                 var running = fired && (infinite || now < ev.EndTime);
 
                 ImGui.TableNextRow();

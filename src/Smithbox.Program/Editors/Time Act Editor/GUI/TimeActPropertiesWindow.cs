@@ -310,7 +310,8 @@ public class TimeActPropertiesWindow
 
             // Each event keeps its own other end, so setting the start of several doesn't line up their ends
             DisplayTimeField("TAE_PropertiesWindow_Start_Time", ev.StartTime, (target, value) => (value, target.EndTime));
-            DisplayTimeField("TAE_PropertiesWindow_End_Time", ev.EndTime, (target, value) => (target.StartTime, value));
+            DisplayTimeField("TAE_PropertiesWindow_End_Time", ev.EndTime, (target, value) => (target.StartTime, value),
+                ev.IsInfiniteEnd);
 
             DisplayUnk04Field(ev);
             DisplayEventGroup(ev);
@@ -854,7 +855,7 @@ public class TimeActPropertiesWindow
 
             if (vanilla.EndTime != ev.EndTime)
                 details.Add(LOC.Get("TAE_Vanilla_Detail_Value", LOC.Get("TAE_PropertiesWindow_End_Time"),
-                    FormatTime(vanilla.EndTime, frameDuration)));
+                    FormatTime(vanilla.EndTime, frameDuration, vanilla.IsInfiniteEnd)));
 
             if (vanilla.Unk04 != ev.Unk04)
                 details.Add(LOC.Get("TAE_Vanilla_Detail_Value", "Unk04", $"{vanilla.Unk04}"));
@@ -1197,7 +1198,7 @@ public class TimeActPropertiesWindow
         DisplayLinkList("identicalEvents", links.Count, i =>
         {
             var link = links[i];
-            var times = $"{FormatTime(link.Event.StartTime, frameDuration)} - {FormatTime(link.Event.EndTime, frameDuration)}";
+            var times = $"{FormatTime(link.Event.StartTime, frameDuration)} - {FormatTime(link.Event.EndTime, frameDuration, link.Event.IsInfiniteEnd)}";
 
             return ($"{source.GetAnimationName(link.Entry, link.Animation)}  {times}", link.Entry, link.Animation, link.Event);
         });
@@ -1436,13 +1437,14 @@ public class TimeActPropertiesWindow
 
     /// <summary>
     /// A time in seconds, with the frame it falls on after it, as "0.43333334 (13f)". Frames that don't come out
-    /// whole get two decimals. The placeholder of an event that lasts until the end of the animation says so.
+    /// whole get two decimals. The end of an event that lasts until the end of the animation says so; an end time
+    /// past the placeholder is a real one (AC6 asset animations run to 206 s).
     /// </summary>
-    private static string FormatTime(float seconds, float frameDuration)
+    private static string FormatTime(float seconds, float frameDuration, bool infinite = false)
     {
         var text = seconds.ToString(CultureInfo.InvariantCulture);
 
-        if (seconds >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder)
+        if (infinite)
             return $"{text} ({LOC.Get("TAE_PropertiesWindow_Time_To_End")})";
 
         var frames = seconds / frameDuration;
@@ -1592,12 +1594,13 @@ public class TimeActPropertiesWindow
         GUI.Tooltip(string.Join("\n", lines));
     }
 
-    private void DisplayTimeField(string nameKey, float value, Func<TAE.Event, float, (float Start, float End)> apply)
+    private void DisplayTimeField(string nameKey, float value, Func<TAE.Event, float, (float Start, float End)> apply,
+        bool infinite = false)
     {
         var frameDuration = View.Playback.FrameDuration;
         var name = LOC.Get(nameKey);
 
-        var text = BeginField(name, nameKey, FormatTime(value, frameDuration));
+        var text = BeginField(name, nameKey, FormatTime(value, frameDuration, infinite));
 
         ImGui.SetNextItemWidth(-1);
 

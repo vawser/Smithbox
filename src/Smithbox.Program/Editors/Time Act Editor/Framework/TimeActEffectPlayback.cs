@@ -155,7 +155,7 @@ public sealed class TimeActEffectPlayback : IDisposable
             var follows = GetBool(ev, "IsFollowDummyPoly") ?? true;
 
             var start = ev.StartTime;
-            float? end = oneShot || ev.EndTime >= TAE.Event.EldenRingInfiniteLengthEventPlaceholder
+            float? end = oneShot || ev.IsInfiniteEnd
                 ? null
                 : Math.Max(ev.EndTime, start + 1f / 30f);
 
