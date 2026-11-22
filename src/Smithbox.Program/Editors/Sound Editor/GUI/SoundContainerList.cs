@@ -186,7 +186,8 @@ public class SoundContainerList
 
     private void BuildRows(List<SoundContainer> containers)
     {
-        if (RowsSource == containers && RowsFilter == Filter && RowsExact == ExactFilter && RowsCollapseVersion == CollapseVersion)
+        // A vanilla-state search is rebuilt every frame: statuses arrive from background compares
+        if (RowsSource == containers && RowsFilter == Filter && RowsExact == ExactFilter && RowsCollapseVersion == CollapseVersion && !EditorFilters.HasStatusTerm(Filter))
             return;
 
         RowsSource = containers;
@@ -199,7 +200,7 @@ public class SoundContainerList
         foreach (var group in containers.GroupBy(c => c.Group))
         {
             var matches = filtering
-                ? group.Where(c => EditorFilters.IsMatch(Filter, c.Name, ExactFilter, c.FileAlias ?? "") || EditorFilters.IsMatch(Filter, c.Path, ExactFilter)).ToList()
+                ? group.Where(c => EditorFilters.IsMatch(Filter, c.Name, ExactFilter, () => View.CanEdit ? c.VanillaStatus : VanillaStatus.None, c.FileAlias ?? "") || EditorFilters.IsMatch(Filter, c.Path, ExactFilter)).ToList()
                 : group.ToList();
             if (matches.Count == 0)
                 continue;

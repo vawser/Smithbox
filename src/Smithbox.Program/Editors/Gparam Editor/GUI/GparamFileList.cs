@@ -120,7 +120,7 @@ public class GparamFileList
         var alias = AliasHelper.GetGparamAliasName(View.Project, fileEntry.Filename);
 
         var isMatch = EditorFilters.IsMatch(
-            FileListFilter, fileEntry.Filename, ExactFileListFilter, alias, false, true);
+            FileListFilter, fileEntry.Filename, ExactFileListFilter, () => Project.VFS.FileStatus(fileEntry.Path), alias, false, true);
 
         if (!isMatch)
             return;

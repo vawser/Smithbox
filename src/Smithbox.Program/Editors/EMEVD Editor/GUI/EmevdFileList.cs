@@ -63,7 +63,7 @@ public class EmevdFileList
 
             foreach (var file in bank.Files)
             {
-                if (!EditorFilters.IsMatch(Filter, file.Name, ExactFilter, aliases?.FileAlias(file) ?? ""))
+                if (!EditorFilters.IsMatch(Filter, file.Name, ExactFilter, () => file.VanillaStatus, aliases?.FileAlias(file) ?? ""))
                     continue;
 
                 Visible.Add(file);

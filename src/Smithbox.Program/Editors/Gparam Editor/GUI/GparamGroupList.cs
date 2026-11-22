@@ -124,7 +124,7 @@ public class GparamGroupList
         if (!DisplayEmptyGroup(group))
             return false;
 
-        var isMatch = EditorFilters.IsMatch(GroupListFilter, group.Name, ExactGroupListFilter, groupName);
+        var isMatch = EditorFilters.IsMatch(GroupListFilter, group.Name, ExactGroupListFilter, () => View.VanillaCompare.GroupStatus(fileEntry, group), groupName);
 
         if (!isMatch)
             return false;

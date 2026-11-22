@@ -299,7 +299,8 @@ public class TextEntryList
         }
 
         return EditorFilters.IsMatch(
-            EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
+            EntryListFilter, entry.ID.ToString(), ExactEntryListFilter,
+            () => Parent.DifferenceManager.EntryStatus(entry), entry.Text);
     }
 
     public void DisplayEntryRow(FMG.Entry entry, int id, string contents, int index)
@@ -454,11 +455,9 @@ public class TextEntryList
 
         var input = rawInput.Trim().ToLower();
 
-        if (input == "modified")
-        {
-            return true;
-        }
-        else if (input == "unique")
+        // "modified" and "added" are the shared vanilla-state search terms (EditorFilters), which combine with
+        // other terms; "unique" (= added) and "deleted" stay commands of their own
+        if (input == "unique")
         {
             return true;
         }

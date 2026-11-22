@@ -186,7 +186,9 @@ public class HavokFileView
                 }
 
                 // Normal filter (also matches the alias)
-                var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter, alias ?? "");
+                var isMatch = EditorFilters.IsMatch(FileFilter, displayName, ExactFileFilter,
+                    () => View.HavokBank.EntryStatus(View.Selection.BinderFileEntry, View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode), filepath),
+                    alias ?? "");
 
                 if (!isMatch)
                     continue;

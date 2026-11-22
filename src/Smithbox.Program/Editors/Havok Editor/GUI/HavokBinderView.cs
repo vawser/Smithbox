@@ -95,7 +95,8 @@ public class HavokBinderView
             && FilteredExact == ExactBinderFilter
             && FilteredFullPath == fullPath
             && FilteredCollisionType == collisionType
-            && FilteredAliasVersion == View.Selection.BinderAliasVersion)
+            && FilteredAliasVersion == View.Selection.BinderAliasVersion
+            && !EditorFilters.HasStatusTerm(BinderFilter)) // a vanilla-state search follows the background compares
             return;
 
         FilteredSource = entries;
@@ -114,7 +115,8 @@ public class HavokBinderView
 
             View.Selection.BinderAliasCache.TryGetValue(entry.Filename, out var binderAlias);
 
-            if (!EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter, binderAlias ?? ""))
+            if (!EditorFilters.IsMatch(BinderFilter, displayName, ExactBinderFilter,
+                    () => View.HavokBank.BinderStatus(entry, View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode)), binderAlias ?? ""))
                 continue;
 
             if (collisionType == 1 && !entry.Filename.StartsWith("l"))

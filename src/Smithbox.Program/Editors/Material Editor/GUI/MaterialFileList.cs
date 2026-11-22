@@ -117,7 +117,7 @@ public class MaterialFileList
             var filteredEntries = new List<string>();
             foreach (var key in binder.FileOrder)
             {
-                if (!EditorFilters.IsMatch(FileListFilter, key, ExactFileListFilter))
+                if (!EditorFilters.IsMatch(FileListFilter, key, ExactFileListFilter, () => binder.GetFile(key) is { } f ? vanilla.StateOf(binder, f) switch { VanillaState.Added => VanillaStatus.Added, VanillaState.Modified => VanillaStatus.Modified, _ => VanillaStatus.None } : VanillaStatus.None))
                     continue;
 
                 // Modified Only keeps added and changed materials, and everything while vanilla is loading

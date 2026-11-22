@@ -133,7 +133,7 @@ public class ProjectileListView
 
         Rows = Filter.Trim().Length == 0
             ? param.Rows.ToList()
-            : param.Rows.Where(row => Matches(row, Filter, ExactFilter)).ToList();
+            : param.Rows.Where(row => Matches(row, Filter, ExactFilter, () => ParamVanillaStatus.RowStatus(View.Project, ParamName, row))).ToList();
 
         // Rows that were deleted (or belong to another param) can't stay selected
         if (Selected.Count > 0)
@@ -150,9 +150,9 @@ public class ProjectileListView
         }
     }
 
-    private static bool Matches(Param.Row row, string filter, bool exact)
+    private static bool Matches(Param.Row row, string filter, bool exact, Func<VanillaStatus> status)
     {
-        return EditorFilters.IsMatch(filter, row.ID.ToString(), exact, row.Name ?? "");
+        return EditorFilters.IsMatch(filter, row.ID.ToString(), exact, status, row.Name ?? "");
     }
 
     private void DisplayRows(Param param)

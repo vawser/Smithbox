@@ -225,8 +225,15 @@ public class MapContentTreeSearch
             for(int i = 0; i < inputParts.Length; i++)
             {
                 var cmd = inputParts[i];
+                var term = cmd.Trim().ToLower();
 
-                if (cmd.Contains("prop:"))
+                // The shared vanilla-state terms: objects that differ from, or aren't in, the vanilla map
+                if (term == EditorFilters.ModifiedTerm || term == EditorFilters.AddedTerm)
+                {
+                    var status = curEnt != null ? View.Editor.VanillaCompare.GetStatus(curEnt) : VanillaStatus.None;
+                    partTruth[i] = term == EditorFilters.ModifiedTerm ? status == VanillaStatus.Modified : status == VanillaStatus.Added;
+                }
+                else if (cmd.Contains("prop:"))
                 {
                     partTruth[i] = PropertyValueFilter(map, curEnt, cmd);
                 }

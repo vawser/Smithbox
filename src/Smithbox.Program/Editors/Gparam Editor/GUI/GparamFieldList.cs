@@ -120,7 +120,7 @@ public class GparamFieldList
         var fieldDesc = GetFieldDescription(field);
 
         var isMatch = EditorFilters.IsMatch(
-            FieldListFilter, field.Name, ExactFieldListFilter, fieldName);
+            FieldListFilter, field.Name, ExactFieldListFilter, () => View.VanillaCompare.FieldStatus(fileEntry, group, field), fieldName);
 
         if (!isMatch)
             return false;

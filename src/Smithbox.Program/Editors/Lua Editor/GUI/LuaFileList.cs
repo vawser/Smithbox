@@ -225,19 +225,21 @@ public class LuaFileList
     }
 
     private bool MatchesBinder(LuaContainer container) =>
-        IsMatch(container.Name, container.HoldsManyGoals ? null : container.GoalId, container.HoldsManyGoals ? null : container.CharacterId);
+        IsMatch(container.Name, container.HoldsManyGoals ? null : container.GoalId, container.HoldsManyGoals ? null : container.CharacterId,
+            () => container.VanillaStatus);
 
     private bool MatchesScript(LuaScript script) =>
-        string.IsNullOrEmpty(Filter) || IsMatch(script.EntryName, script.GoalId, script.CharacterId);
+        string.IsNullOrEmpty(Filter) || IsMatch(script.EntryName, script.GoalId, script.CharacterId,
+            () => script.Container.ScriptStatus(script));
 
-    private bool IsMatch(string name, int? goalId, string chr)
+    private bool IsMatch(string name, int? goalId, string chr, Func<VanillaStatus> status)
     {
         var users = CFG.Current.LuaEditor_File_List_Display_Users && goalId is { } id
             ? string.Join(" ", Editor.Project.Handler.LuaData?.UsersOf(id).Select(u => u.Name) ?? Array.Empty<string>())
             : "";
-        // The character's ID and alias match too
+        // The character's ID and alias match too; "modified" / "added" match the vanilla state
         var character = chr != null ? $"{chr} {AliasOf(chr)}" : "";
-        return EditorFilters.IsMatch(Filter, name, ExactFilter, $"{character} {users}");
+        return EditorFilters.IsMatch(Filter, name, ExactFilter, status, $"{character} {users}");
     }
 
     private static string KindName(LuaBinderKind kind) => kind switch

@@ -312,7 +312,9 @@ public class SoundEntryList
     {
         // alias edits change what a filter matches
         var namesVersion = View.Data?.Names?.Version ?? 0;
-        if (VisibleSource == entries && VisibleFilter == Filter && VisibleExact == ExactFilter && VisibleNamesVersion == namesVersion)
+        // A vanilla-state search is rebuilt every frame: statuses arrive from background compares
+        if (VisibleSource == entries && VisibleFilter == Filter && VisibleExact == ExactFilter && VisibleNamesVersion == namesVersion
+            && !EditorFilters.HasStatusTerm(Filter))
             return;
 
         VisibleSource = entries;
@@ -323,7 +325,7 @@ public class SoundEntryList
         // name, alias, sound ID and media ID all match
         Visible = string.IsNullOrWhiteSpace(Filter)
             ? entries
-            : entries.Where(e => EditorFilters.IsMatch(Filter, e.DisplayName, ExactFilter, e.Alias ?? "") ||
+            : entries.Where(e => EditorFilters.IsMatch(Filter, e.DisplayName, ExactFilter, () => View.CanEdit ? e.Container.EntryStatus(e) : VanillaStatus.None, e.Alias ?? "") ||
                                  (e.SoundId != null && EditorFilters.IsMatch(Filter, e.SoundId, ExactFilter)) ||
                                  (e.MediaId != 0 && EditorFilters.IsMatch(Filter, e.MediaId.ToString(), ExactFilter))).ToList();
     }

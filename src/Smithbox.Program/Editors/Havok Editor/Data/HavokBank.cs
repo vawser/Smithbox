@@ -975,6 +975,34 @@ public class HavokBank : IDisposable
     /// <summary>
     /// The binder's type compendium, or null if it has none
     /// </summary>
+    /// <summary>The field-level vanilla comparison of open files, for the Properties window's colours</summary>
+    public HavokFieldCompare FieldCompare => _fieldCompare ??= new HavokFieldCompare(this);
+    private HavokFieldCompare _fieldCompare;
+
+    /// <summary>
+    /// The game's copy of a file inside a binder, read as a document (with the game's binder's compendium); null if
+    /// the game's binder or the file isn't there. Reads the game's binder, so call it off the UI thread.
+    /// </summary>
+    public HavokDocument ReadVanillaDocument(FileDictionaryEntry fileEntry, bool isCombined, string internalFilePath)
+    {
+        var profile = HavokTypeUtils.GetProfile(Project);
+        if (profile == null)
+            return null;
+
+        var vanillaFS = Project.VFS.VanillaFS;
+        var binder = ReadContainer(fileEntry, isCombined, p => vanillaFS.FileExists(p) ? vanillaFS.ReadFile(p) : null);
+
+        var file = binder?.Files.FirstOrDefault(e => e.Name == internalFilePath);
+        if (file == null)
+            return null;
+
+        var fileBytes = IsDcxFile(file.Name) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+        var compendium = HavokFile.Sniff(fileBytes).UsesCompendium ? ReadCompendium(binder, profile) : null;
+
+        return HavokFile.Read(fileBytes, profile, compendium);
+    }
+
     private static HavokCompendium ReadCompendium(IBinder binder, HavokProfile profile)
     {
         var file = binder.Files.FirstOrDefault(e => e.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase));

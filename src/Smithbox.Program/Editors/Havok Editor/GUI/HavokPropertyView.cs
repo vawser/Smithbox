@@ -403,8 +403,11 @@ public class HavokPropertyView
                 if (searching)
                     ImGui.SetNextItemOpen(true);
 
+                var arrayStatus = FieldVanillaStatus(obj, prop);
+                var arrayColoured = VanillaMarkers.PushColour(arrayStatus);
                 var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
-                GUI.Tooltip(fieldDescription);
+                VanillaMarkers.PopColour(arrayColoured);
+                StatusTooltip(fieldDescription, arrayStatus, arrayColoured);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
                 if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
@@ -439,8 +442,11 @@ public class HavokPropertyView
                                 ImGui.SetNextItemOpen(true);
                             }
 
+                            var elemStatus = ObjectVanillaStatus(o);
+                            var elemColoured = VanillaMarkers.PushColour(elemStatus);
                             var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
-                            GUI.Tooltip(fieldDescription);
+                            VanillaMarkers.PopColour(elemColoured);
+                            StatusTooltip(fieldDescription, elemStatus, elemColoured);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             ImGui.Text("");
@@ -498,8 +504,11 @@ public class HavokPropertyView
                     if (searching)
                         ImGui.SetNextItemOpen(true);
 
+                    var classStatus = ObjectVanillaStatus(o);
+                    var classColoured = VanillaMarkers.PushColour(classStatus);
                     var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
-                    GUI.Tooltip(fieldDescription);
+                    VanillaMarkers.PopColour(classColoured);
+                    StatusTooltip(fieldDescription, classStatus, classColoured);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     ImGui.Text("");
@@ -538,6 +547,30 @@ public class HavokPropertyView
             id++;
         }
     }
+
+    #region Vanilla
+    private bool IsCombinedSelection => View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode);
+
+    /// <summary>A class object (tree node) of the shown file against the game's copy</summary>
+    private VanillaStatus ObjectVanillaStatus(object obj) =>
+        View.HavokBank.FieldCompare.ObjectStatus(View.Selection.SelectedFileWrapper, View.Selection.BinderFileEntry,
+            IsCombinedSelection, View.PropertyCache.GetCachedHavokFields, obj);
+
+    /// <summary>A field (or one element of it) of an object of the shown file against the game's copy</summary>
+    private VanillaStatus FieldVanillaStatus(object obj, FieldInfo prop, int index = -1) =>
+        View.HavokBank.FieldCompare.FieldStatus(View.Selection.SelectedFileWrapper, View.Selection.BinderFileEntry,
+            IsCombinedSelection, View.PropertyCache.GetCachedHavokFields, obj, prop, index);
+
+    /// <summary>A tree node's tooltip: its description, then the vanilla status line when it is coloured</summary>
+    private static void StatusTooltip(string description, VanillaStatus status, bool coloured)
+    {
+        var note = coloured ? VanillaMarkers.TooltipText(status) : null;
+        var text = string.IsNullOrEmpty(description) ? note ?? "" : note != null ? $"{description}\n\n{note}" : description;
+
+        if (text != "")
+            GUI.Tooltip(text);
+    }
+    #endregion
 
     #region Search
     /// <summary>
@@ -750,7 +783,13 @@ public class HavokPropertyView
     {
         PropContextRowOpener("nameCol");
 
+        // The field (or this element of it) against the game's copy of the file
+        var vanillaStatus = FieldVanillaStatus(containerObj, prop, arrayIndex);
+        var vanillaColoured = VanillaMarkers.PushColour(vanillaStatus);
         ImGui.Text(name);
+        VanillaMarkers.PopColour(vanillaColoured);
+        if (vanillaColoured)
+            VanillaMarkers.Tooltip(vanillaStatus);
 
         // Remove-from-list button (only passed in by list entries)
         if (onRemove != null)
@@ -1303,8 +1342,11 @@ public class HavokPropertyView
         if (searching)
             ImGui.SetNextItemOpen(true);
 
+        var listStatus = FieldVanillaStatus(obj, prop);
+        var listColoured = VanillaMarkers.PushColour(listStatus);
         var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
-        GUI.Tooltip(fieldDescription);
+        VanillaMarkers.PopColour(listColoured);
+        StatusTooltip(fieldDescription, listStatus, listColoured);
         ImGui.NextColumn();
 
         if (list != null)
@@ -1373,8 +1415,11 @@ public class HavokPropertyView
                             ImGui.SetNextItemOpen(true);
                         }
 
+                        var entryStatus = ObjectVanillaStatus(elem);
+                        var entryColoured = VanillaMarkers.PushColour(entryStatus);
                         var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
-                        GUI.Tooltip(fieldDescription);
+                        VanillaMarkers.PopColour(entryColoured);
+                        StatusTooltip(fieldDescription, entryStatus, entryColoured);
                         ImGui.NextColumn();
                         ImGui.SetNextItemWidth(-1);
                         ImGui.Text(elem?.GetType().Name ?? "null");

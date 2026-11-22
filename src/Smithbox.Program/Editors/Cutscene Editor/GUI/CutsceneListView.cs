@@ -157,7 +157,17 @@ public class CutsceneListView
             foreach (var file in files)
             {
                 var alias = AliasOf(file.Name);
-                if (Filter.Length > 0
+
+                // A search with "modified" / "added" goes through the shared filter (its + and | too); others keep the
+                // plain name / alias match
+                if (EditorFilters.HasStatusTerm(Filter))
+                {
+                    var match = EditorFilters.IsMatch(Filter, file.Name, false,
+                        () => file.IsNew ? VanillaStatus.Added : Editor.Project.VFS.FileStatus(file.Entry.Path), alias ?? "");
+                    if (!match)
+                        continue;
+                }
+                else if (Filter.Length > 0
                     && !file.Name.Contains(Filter, StringComparison.OrdinalIgnoreCase)
                     && !(alias?.Contains(Filter, StringComparison.OrdinalIgnoreCase) ?? false))
                     continue;

@@ -53,7 +53,9 @@ public class TexInternalFileList
                 var tpfEntry = entry.Value;
 
                 var isMatch = EditorFilters.IsMatch(
-                    TpfFileListFilter, file.Name, ExactTpfFileListFilter, "", true);
+                    TpfFileListFilter, file.Name, ExactTpfFileListFilter,
+                    () => Project.Handler.TextureData.PrimaryBank.Vanilla.TpfStatus(View.Selection.SelectedFileEntry, container.Loose, file.Name),
+                    "", true);
 
                 if (isMatch)
                 {

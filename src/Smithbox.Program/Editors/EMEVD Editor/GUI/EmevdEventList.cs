@@ -91,7 +91,7 @@ public class EmevdEventList
         var aliasVersion = aliases?.Version ?? 0;
 
         if (file == CachedFile && file.Revision == CachedRevision && Filter == CachedFilter && ExactFilter == CachedExact
-            && aliasVersion == CachedAliasVersion)
+            && aliasVersion == CachedAliasVersion && !EditorFilters.HasStatusTerm(Filter))
             return;
 
         CachedFile = file;
@@ -101,7 +101,7 @@ public class EmevdEventList
         CachedAliasVersion = aliasVersion;
 
         Visible = file.Emevd.Events
-            .Where(e => EditorFilters.IsMatch(Filter, e.ID.ToString(), ExactFilter, DisplayName(file, e)))
+            .Where(e => EditorFilters.IsMatch(Filter, e.ID.ToString(), ExactFilter, () => file.EventStatus(e), DisplayName(file, e)))
             .ToList();
     }
 

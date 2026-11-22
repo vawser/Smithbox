@@ -246,7 +246,7 @@ public partial class FxEffectList
         CacheKey = key;
         CacheTime = DateTime.Now;
         var entries = Bank.Entries.Values
-            .Where(e => EditorFilters.IsMatch(Filter, e.Id.ToString(), ExactFilter, e.Alias, false, true,
+            .Where(e => EditorFilters.IsMatch(Filter, e.Id.ToString(), ExactFilter, () => e.Vanilla.ToStatus(), e.Alias, false, true,
                 string.Join(" ", e.Binders.Select(b => b.Binder.Filename))))
             .Where(PassesMode);
 

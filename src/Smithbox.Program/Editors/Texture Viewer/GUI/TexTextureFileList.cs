@@ -44,7 +44,11 @@ public class TexTextureFileList
             foreach (var entry in View.Selection.SelectedTpf.Textures.ToList())
             {
                 var isMatch = EditorFilters.IsMatch(
-                    TextureFileListFilter, entry.Name, ExactTextureFileListFilter, "", true);
+                    TextureFileListFilter, entry.Name, ExactTextureFileListFilter,
+                    () => View.Selection.SelectedBinder != null
+                        ? Project.Handler.TextureData.PrimaryBank.Vanilla.TextureStatus(View.Selection.SelectedFileEntry, View.Selection.SelectedBinder.Loose, View.Selection.SelectedTpfKey, entry.Name)
+                        : VanillaStatus.None,
+                    "", true);
 
                 if (isMatch)
                 {

@@ -66,7 +66,7 @@
     },
     {
       "Key": "EDITOR_List_Filter_Input_TT",
-      "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character."
+      "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character.\n\nIn lists that colour items by their vanilla state, the terms modified and added show only modified or added items, and combine with other terms (e.g. modified{0}c1000)."
     },
     {
       "Key": "EDITOR_Search_Size_Toggle_TT",

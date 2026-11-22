@@ -146,7 +146,8 @@ public class MapListView : IActionEventHandler
             }
         }
 
-        if (_updateMapList)
+        // A vanilla-state search is redone every frame: file statuses arrive from background compares
+        if (_updateMapList || EditorFilters.HasStatusTerm(FileListFilter))
         {
             _updateMapList = false;
             _listVersion++;
@@ -162,7 +163,8 @@ public class MapListView : IActionEventHandler
 
                 _cachedMapNameAliases[mapID] = nameAlias;
 
-                var isMatch = EditorFilters.IsMatch(FileListFilter, mapID, ExactFileListFilter, nameAlias, true, true);
+                var mapPath = entry.Path;
+                var isMatch = EditorFilters.IsMatch(FileListFilter, mapID, ExactFileListFilter, () => Project.VFS.FileStatus(mapPath), nameAlias, true, true);
 
                 if (isMatch)
                 {

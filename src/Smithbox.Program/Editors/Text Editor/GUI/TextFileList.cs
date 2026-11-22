@@ -323,7 +323,9 @@ public class TextFileList
         var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
         var isMatch = EditorFilters.IsMatch(
-            FmgListFilter, fmgName, ExactFmgListFilter, displayName, false, false, id.ToString());
+            FmgListFilter, fmgName, ExactFmgListFilter,
+            () => View.DifferenceManager.FmgStatus(View.Selection.SelectedContainerWrapper, info),
+            displayName, false, false, id.ToString());
 
         if (isMatch)
         {

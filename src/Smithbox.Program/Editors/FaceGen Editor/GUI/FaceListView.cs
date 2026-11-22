@@ -192,7 +192,7 @@ public class FaceListView
         var filter = Filter.Trim();
 
         Rows = param.Rows
-            .Where(row => filter.Length == 0 || Matches(row, filter, ExactFilter))
+            .Where(row => filter.Length == 0 || Matches(row, filter, ExactFilter, () => ParamVanillaStatus.RowStatus(View.Project, ParamName, row)))
             .Where(row => usage == UsageFilter.All || users!.Get(row.ID).Count > 0 == (usage == UsageFilter.Used))
             .ToList();
 
@@ -207,9 +207,9 @@ public class FaceListView
         }
     }
 
-    private static bool Matches(Param.Row row, string filter, bool exact)
+    private static bool Matches(Param.Row row, string filter, bool exact, Func<VanillaStatus> status)
     {
-        return EditorFilters.IsMatch(filter, row.ID.ToString(), exact, row.Name ?? "");
+        return EditorFilters.IsMatch(filter, row.ID.ToString(), exact, status, row.Name ?? "");
     }
 
     private void DisplayRows(Param param, FaceGenParams.FaceUsers? users)

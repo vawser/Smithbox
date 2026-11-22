@@ -237,7 +237,8 @@ public class TextContainerList
             }
         }
 
-        var isMatch = EditorFilters.IsMatch(ContainerListFilter, displayName, ExactContainerListFilter);
+        var isMatch = EditorFilters.IsMatch(ContainerListFilter, displayName, ExactContainerListFilter,
+            () => CFG.Current.TextEditor_Include_Vanilla_Cache ? Project.VFS.FileStatus(wrapper.FileEntry.Path) : VanillaStatus.None);
 
         if (isMatch)
         {

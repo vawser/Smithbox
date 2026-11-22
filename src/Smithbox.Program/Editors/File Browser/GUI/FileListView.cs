@@ -557,7 +557,9 @@ public class FileListView
                 return terms.Length == 0 || terms.Any(t => file.Path.Contains(t, StringComparison.OrdinalIgnoreCase));
         }
 
-        return EditorFilters.IsMatch(FileListFilter, $"{file.Filename}.{file.Extension}", ExactFileListFilter);
+        // "modified" / "added": a project override, or a file only the project has (as the list colours them)
+        return EditorFilters.IsMatch(FileListFilter, $"{file.Filename}.{file.Extension}", ExactFileListFilter,
+            () => source switch { FileSource.ProjectOverride => VanillaStatus.Modified, FileSource.ProjectOnly => VanillaStatus.Added, _ => VanillaStatus.None });
     }
 
     private bool FolderNameMatches(FolderNode folder)

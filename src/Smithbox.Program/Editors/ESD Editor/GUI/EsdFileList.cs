@@ -360,7 +360,7 @@ public class EsdFileList
 
     private bool Matches(EsdContainer c)
     {
-        if (string.IsNullOrEmpty(Filter) || EditorFilters.IsMatch(Filter, c.Name, ExactFilter, Aliases?.ContainerAlias(c) ?? ""))
+        if (string.IsNullOrEmpty(Filter) || EditorFilters.IsMatch(Filter, c.Name, ExactFilter, () => c.VanillaStatus, Aliases?.ContainerAlias(c) ?? ""))
             return true;
 
         // An opened binder also matches by its ESDs' names and aliases
@@ -442,7 +442,7 @@ public class EsdFileList
             foreach (var file in container.Files)
             {
                 if (!string.IsNullOrEmpty(Filter)
-                    && !EditorFilters.IsMatch(Filter, container.Name, ExactFilter, Aliases?.ContainerAlias(container) ?? "")
+                    && !EditorFilters.IsMatch(Filter, container.Name, ExactFilter, () => container.VanillaStatus, Aliases?.ContainerAlias(container) ?? "")
                     && !FileMatches(file))
                     continue;
 

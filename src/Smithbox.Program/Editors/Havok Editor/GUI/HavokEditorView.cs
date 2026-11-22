@@ -48,6 +48,9 @@ public class HavokEditorView : IEditorView
         {
             CheckForStructureChange = true;
 
+            // The Properties window's vanilla colours are worked out again (files are shared by every view)
+            HavokBank?.FieldCompare.Invalidate();
+
             // A val: search matches values, so any edit can change its matches (in every view, as they share files)
             foreach (var view in Editor.ViewHandler?.Views ?? new())
             {

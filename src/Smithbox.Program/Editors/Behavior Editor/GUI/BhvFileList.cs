@@ -49,8 +49,8 @@ public class BhvFileList
     private void DrawBinder(BhvBinderWrapper binder)
     {
         // A filter matches the behbnd name or any of its file names
-        var binderMatches = EditorFilters.IsMatch(Filter, binder.Name, ExactFilter);
-        var files = binderMatches ? binder.Files : binder.Files.Where(f => EditorFilters.IsMatch(Filter, f.Name, ExactFilter)).ToList();
+        var binderMatches = EditorFilters.IsMatch(Filter, binder.Name, ExactFilter, () => binder.VanillaStatus);
+        var files = binderMatches ? binder.Files : binder.Files.Where(f => EditorFilters.IsMatch(Filter, f.Name, ExactFilter, () => binder.FileStatus(f))).ToList();
 
         if (!binderMatches && files.Count == 0)
             return;

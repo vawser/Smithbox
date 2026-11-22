@@ -91,6 +91,53 @@ public static class EditorFilters
             ImGui.SetNextItemWidth(80f * DPI.UIScale());
     }
 
+    /// <summary>The search terms that match an item's vanilla state instead of its text (lists with vanilla colours)</summary>
+    public const string ModifiedTerm = "modified";
+    public const string AddedTerm = "added";
+
+    /// <summary>
+    /// <see cref="IsMatch(string, string, bool, string, bool, bool, string)" /> for a list that colours its items by
+    /// vanilla state: a term that is exactly "modified" or "added" matches items of that state, and combines with the
+    /// rest as usual (modified+c1000, added|modified). <paramref name="status" /> is only read for those terms, so it
+    /// may be computed lazily.
+    /// </summary>
+    public static bool IsMatch(string rawInput, string rawText, bool exactBool, Func<VanillaStatus> status,
+        string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
+    {
+        if (string.IsNullOrEmpty(rawInput) || rawText == null)
+            return true;
+
+        var input = rawInput.Trim().ToLower();
+        var terms = input.Contains(OR_Chr) ? input.Split(OR_Chr).ToList() : new List<string> { input };
+
+        VanillaStatus? known = null;
+        VanillaStatus Status() => known ??= status?.Invoke() ?? VanillaStatus.None;
+
+        foreach (var term in terms)
+        {
+            if (IsMatchInternal(term, rawText, exactBool, rawAliasText, partSplit, aliasSplit, rawSecondaryText, Status))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>Whether a search contains a vanilla-state term, for lists that skip work when nothing asks for it</summary>
+    public static bool HasStatusTerm(string rawInput)
+    {
+        if (string.IsNullOrEmpty(rawInput))
+            return false;
+
+        foreach (var part in rawInput.Trim().ToLower().Split(OR_Chr).SelectMany(t => t.Split(SplitChr)))
+        {
+            var p = part.Trim();
+            if (p == ModifiedTerm || p == AddedTerm)
+                return true;
+        }
+
+        return false;
+    }
+
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
     {
         bool isValid = false;
@@ -124,7 +171,7 @@ public static class EditorFilters
         return isValid;
     }
 
-    public static bool IsMatchInternal(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
+    public static bool IsMatchInternal(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "", Func<VanillaStatus> status = null)
     {
         bool isValid = true;
 
@@ -148,6 +195,14 @@ public static class EditorFilters
         for (int i = 0; i < partTruth.Length; i++)
         {
             string entry = inputParts[i];
+
+            // Vanilla state (only for lists that pass one): the term matches the state, never the text
+            if (status != null && (entry.Trim() == ModifiedTerm || entry.Trim() == AddedTerm))
+            {
+                var s = status();
+                partTruth[i] = entry.Trim() == ModifiedTerm ? s == VanillaStatus.Modified : s == VanillaStatus.Added;
+                continue;
+            }
 
             // Exact
             if (entry == text)

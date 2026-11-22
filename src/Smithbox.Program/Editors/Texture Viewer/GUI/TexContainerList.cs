@@ -138,7 +138,8 @@ public class TexContainerList
                     var aliasName = GetAlias(rawName);
 
                     var isMatch = EditorFilters.IsMatch(
-                        FileListFilter, entry.Key.Path, ExactFileListFilter, aliasName, true, true);
+                        FileListFilter, entry.Key.Path, ExactFileListFilter,
+                        () => Project.Handler.TextureData.PrimaryBank.Vanilla.ContainerStatus(entry.Key), aliasName, true, true);
 
                     if (isMatch)
                     {
@@ -350,7 +351,7 @@ public class TexContainerList
             return;
 
         var entries = movies.Entries
-            .Where(e => EditorFilters.IsMatch(FileListFilter, e.Key.Path, ExactFileListFilter, "", true, true))
+            .Where(e => EditorFilters.IsMatch(FileListFilter, e.Key.Path, ExactFileListFilter, () => Project.VFS.FileStatus(e.Key.Path), "", true, true))
             .OrderBy(e => e.Key.Path, System.StringComparer.OrdinalIgnoreCase)
             .ToList();
 
