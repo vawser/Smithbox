@@ -4019,7 +4019,7 @@
               "desc": "Named from DS2 slot 8 (animFrameTimeline), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "texture09",
+              "name": "normalMap",
               "types": [
                 34
               ],
@@ -4027,7 +4027,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "Named from DS2 slot 9 (normalMap), same position in a window [0..13] of matching types, anchored by 9 slots named alike in both (textureID, scaleY, scaleX, orientationMode, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk10",
@@ -4053,7 +4054,7 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -4062,7 +4063,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 12 (depthBlend), same position in a window [0..13] of matching types, anchored by 9 slots named alike in both (textureID, scaleY, scaleX, orientationMode, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk13",
@@ -4169,7 +4171,7 @@
               "desc": "DarkSoulsII.exe compiles it to block +A8, DS1 ActionData 59's AnimFrameTimeline in DS1R's wide layout; values: an int sequence (FFX plan §20.20)."
             },
             {
-              "name": "texture09",
+              "name": "normalMap",
               "types": [
                 40
               ],
@@ -4177,7 +4179,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "A normal map: a20 compiles this slot to block+34 of a59's block, whose texture picks the Bump shader in the shared resources function (140FE1960) (FFX Schema Gaps Plan S7f). 0 (none) in vanilla DS2."
             },
             {
               "name": "unk10",
@@ -4202,7 +4205,7 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -4210,7 +4213,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "Soft particles (FXR3 BillboardEx's depthBlend). a20 compiles into a59's block (block id 59; this slot to block+124) and shares a59's resources function (140FE1960), which adds 2 (the ZFeather variants) to the sprite shader when it isn't 0 (FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk13",
@@ -4455,10 +4459,11 @@
               "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture09",
+              "name": "normalMap",
               "types": [
                 40
-              ]
+              ],
+              "desc": "Named from DS2 slot 9 (normalMap), same position in a window [0..14] of matching types, anchored by 9 slots named alike in both (textureID, scaleY, scaleX, orientationMode, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk10",
@@ -4484,7 +4489,7 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -4493,7 +4498,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 12 (depthBlend), same position in a window [0..14] of matching types, anchored by 9 slots named alike in both (textureID, scaleY, scaleX, orientationMode, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk13",
@@ -10293,7 +10299,7 @@
               "desc": "DarkSoulsII.exe compiles it to block +30, DS1 ActionData 40's TextureID in DS1R's wide layout; values: textures 77 / 92 / 93 / 190 (FFX plan §20.20)."
             },
             {
-              "name": "texture01",
+              "name": "normalMap",
               "types": [
                 40
               ],
@@ -10301,7 +10307,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "A normal map (FXR3 Tracer's normalMap, after its texture). DarkSoulsII.exe: the tracer's resources function (140FE2140, a40) loads this slot's texture (block+34) and picks sprite shader 3 (Default_Bump) when one loaded, else 2 (Default); it has no soft-particle switch (FFX Schema Gaps Plan S7f). 0 (none) in vanilla DS2."
             },
             {
               "name": "trailThickness",
@@ -10780,10 +10787,11 @@
               "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture01",
+              "name": "normalMap",
               "types": [
                 40
-              ]
+              ],
+              "desc": "Named from DS2 slot 1 (normalMap), same position in a window [0..36] of matching types, anchored by 7 slots named alike in both (textureID, trailThickness, orientationMode, blendMode, trailLength, trailFadeIn, trailFadeOut) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "trailThickness",
@@ -11928,7 +11936,7 @@
               "seen": [
                 0
               ],
-              "desc": "DarkSoulsII.exe compiles it to block +34, DS1 ActionData 43's TextureID1 in DS1R's wide layout; values: 0 in every instance (no mask) (FFX plan §20.20)."
+              "desc": "The distortion's texture (block+34, loaded second): DarkSoulsII.exe's a43 resources function (140FE3000) picks the Textured distortion shaders (SfxDistortion_Textured / _Textured_Bump) when one loads, for distortionMode 0 / 1 (FFX Schema Gaps Plan S7f). 0 (none) in vanilla DS2, which the earlier notes read as 'no mask'."
             },
             {
               "name": "texture19",
@@ -13700,7 +13708,7 @@
               "desc": "Named from DS2 slot 11 (animFrameTimeline), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "texture12",
+              "name": "normalMap",
               "types": [
                 34
               ],
@@ -13708,7 +13716,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "Named from DS2 slot 12 (normalMap), same position in a window [0..16] of matching types, anchored by 8 slots named alike in both (textureID, scaleX, scaleY, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk13",
@@ -13733,7 +13742,7 @@
               ]
             },
             {
-              "name": "unk15",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -13741,7 +13750,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "Named from DS2 slot 15 (depthBlend), same position in a window [0..16] of matching types, anchored by 8 slots named alike in both (textureID, scaleX, scaleY, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk16",
@@ -13886,7 +13896,7 @@
               "desc": "DarkSoulsII.exe compiles it to block +A8, DS1 a59 ActionData's AnimFrameTimeline in DS1R's wide layout (FFX plan §20.19). An int sequence (0, 0 → 1)."
             },
             {
-              "name": "texture12",
+              "name": "normalMap",
               "types": [
                 40
               ],
@@ -13894,7 +13904,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "A normal map. DarkSoulsII.exe: the a59 / a20 resources function loads this slot's texture (block+34) and, when one loaded, picks the Bump shader (Default_Bump / Default_ZFeather_Bump) (FFX Schema Gaps Plan S7f). 0 (none) in vanilla DS2."
             },
             {
               "name": "unk13",
@@ -13919,7 +13930,7 @@
               ]
             },
             {
-              "name": "unk15",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -13928,7 +13939,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Soft particles (FXR3 BillboardEx's depthBlend). DarkSoulsII.exe: the a59 / a20 resources function (140FE1960) picks the sprite shader 2 / 3 / 4 / 5 as a15000's does, adding 2 (the ZFeather variants) when this slot (compiled to block+124) isn't 0 (FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk16",
@@ -14343,10 +14355,11 @@
               "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture12",
+              "name": "normalMap",
               "types": [
                 40
-              ]
+              ],
+              "desc": "Named from DS2 slot 12 (normalMap), same position in a window [0..29] of matching types, anchored by 12 slots named alike in both (textureID, scaleX, scaleY, orientationMode, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline, animFrameInitial, uvShiftX, uvShiftY) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk13",
@@ -14377,7 +14390,7 @@
               ]
             },
             {
-              "name": "unk15",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -14386,7 +14399,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 15 (depthBlend), same position in a window [0..29] of matching types, anchored by 12 slots named alike in both (textureID, scaleX, scaleY, orientationMode, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline, animFrameInitial, uvShiftX, uvShiftY) (FfxSurvey --align after the S7f exe names, FFX Schema Gaps Plan S7f)."
             },
             {
               "name": "unk16",
@@ -41644,7 +41658,7 @@
               "desc": "DS2's tracer a18000: its compile writes this slot to +30, where DS2's a40 writes a40's textureID (§20.20). Values 77 / 81 / 190 (FFX plan §20.41)."
             },
             {
-              "name": "texture01",
+              "name": "normalMap",
               "types": [
                 40
               ],
@@ -41652,7 +41666,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "A normal map: DS2's own tracer compiles this slot to block+34 and its resources function (140BFEC80) picks sprite shader 3 (Default_Bump) or 2 (Default), as a40's does (FFX Schema Gaps Plan S7f). 0 (none) in vanilla DS2."
             },
             {
               "name": "trailThickness",
@@ -48546,23 +48561,23 @@
       "members": {
         "Stir": {
           "value": 0,
-          "desc": "FXR3: Distorts the background as if you stuck something into it and stirred it. Not confirmed in DS2. Not used in vanilla DS2."
+          "desc": "Confirmed in DS2: the plain distortion shader. DarkSoulsII.exe's a43 resources function (140FE3000) switches on this slot (block+3C): 0 (and any value it has no case for, e.g. 4) picks SfxDistortion, or SfxDistortion_Textured when the a43 [18] texture (block+34) loads (sprite techniques 12 / 16) (FFX Schema Gaps Plan S7f). Not used in vanilla DS2."
         },
         "NormalMap": {
           "value": 1,
-          "desc": "Confirmed in DS2: normal map (NormalMap): DS2's a43 uses mode 1 with textureID2 s000101, f0000132's normal map (FFX plan §20.20)."
+          "desc": "Confirmed in DS2: normal map (Bump): DarkSoulsII.exe picks SfxDistortion_Bump, or SfxDistortion_Textured_Bump with the [18] texture (techniques 13 / 17); and DS2's a43 uses mode 1 with textureID2 s000101, f0000132's normal map (FFX plan §20.20; FFX Schema Gaps Plan S7f)."
         },
         "Twist": {
           "value": 2,
-          "desc": "FXR3: Distorts the background as if the edges were held in place and you grabbed the center and twisted it. Not confirmed in DS2. Not used in vanilla DS2."
+          "desc": "Confirmed in DS2: twist: DarkSoulsII.exe picks SfxDistortion_Rotation (technique 15) (FFX Schema Gaps Plan S7f). Not used in vanilla DS2."
         },
-        "Unk3": {
+        "Reflection": {
           "value": 3,
-          "desc": "FXR3: Seemingly identical to NormalMap? Not confirmed in DS2. Not used in vanilla DS2."
+          "desc": "Confirmed in DS2: reflection: DarkSoulsII.exe picks SfxDistortion_Reflection (technique 14); FXR3 has no name for 3 (Unk3) (FFX Schema Gaps Plan S7f). Not used in vanilla DS2."
         },
         "Unk4": {
           "value": 4,
-          "desc": "FXR3: This seems to just squeeze everything to the bottom left corner? Not confirmed in DS2. Not used in vanilla DS2."
+          "desc": "Confirmed in DS2: no case of its own: DarkSoulsII.exe treats it as 0, the plain distortion shader (FFX Schema Gaps Plan S7f). Not used in vanilla DS2."
         }
       }
     },
