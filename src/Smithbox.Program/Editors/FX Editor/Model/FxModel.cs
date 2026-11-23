@@ -16,6 +16,8 @@ public enum FxFormat
     Fxr3,
     /// <summary>DLsE/DLSE class streams: DES, DS2, DS2S.</summary>
     Dlse,
+    /// <summary>FXR v1 (pointer-linked nodes, ActionData): DS1, DS1R.</summary>
+    Fxr1,
 }
 
 /// <summary>An effect: its state machine and its structure.</summary>
@@ -121,6 +123,34 @@ public enum FxNodeKind
     Basic,
     NodeEmitter,
     Unknown,
+    /// <summary>FXR1 node 134: several effect roots (each a node 133 with its own states).</summary>
+    Roots,
+}
+
+/// <summary>
+/// Capability: a node that holds its own state machine (FXR1 node 133). The tree shows its states under it instead of
+/// at the top; the effect's <see cref="IFxEffect.States"/> are the first such node's.
+/// </summary>
+public interface IFxStatesNode
+{
+    IReadOnlyList<IFxState> States { get; }
+}
+
+public enum FxPackedKind
+{
+    /// <summary>FXR1 ActionData: a fixed-layout record of an action's particle values.</summary>
+    ActionData,
+    /// <summary>FXR1 container modifier (types 0–7).</summary>
+    Modifier,
+}
+
+/// <summary>
+/// Capability: an action-like item that is a packed record of its parent action (FXR1 ActionData and modifiers).
+/// Its values are the record's fields; <see cref="IFxAction.TypeId"/> is the record's own type.
+/// </summary>
+public interface IFxPacked
+{
+    FxPackedKind Kind { get; }
 }
 
 /// <summary>Capability: an effect made of several complete effects with the same id (22 DeS wrapper files).</summary>

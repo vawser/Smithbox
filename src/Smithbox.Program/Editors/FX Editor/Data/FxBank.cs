@@ -64,12 +64,12 @@ public class FxBank : IDisposable
 
         // DES and DS2 ship some binders twice, as x.ffxbnd and x.ffxbnd.dcx with the same files; the .dcx is the one
         // read (DS2S ships only the .dcx copies)
-        if (IsDlse)
+        if (IsFfx)
         {
             var paths = binders.Select(b => b.Path).ToHashSet(StringComparer.OrdinalIgnoreCase);
             binders = binders.Where(b => !(b.Path.EndsWith(".ffxbnd", StringComparison.OrdinalIgnoreCase) && paths.Contains(b.Path + ".dcx"))).ToList();
         }
-        bool dlse = IsDlse;
+        bool dlse = IsFfx;
         var effectExtension = EffectExtension;
 
         TotalBinders = binders.Count;
@@ -228,7 +228,7 @@ public class FxBank : IDisposable
         var vfs = Project.VFS.VanillaFS;
         if (!vfs.FileExists(path))
             return result;
-        var reader = IsDlse ? OpenBinder(vfs.ReadFile(path).Value) : new BND4Reader(vfs.ReadFile(path).Value);
+        var reader = IsFfx ? OpenBinder(vfs.ReadFile(path).Value) : new BND4Reader(vfs.ReadFile(path).Value);
         foreach (var file in reader.Files)
             if (file.Name.EndsWith(EffectExtension, StringComparison.OrdinalIgnoreCase))
                 result[file.Name] = reader.ReadFile(file).ToArray();
@@ -299,13 +299,13 @@ public class FxBank : IDisposable
         return versions[0];
     }
 
-    /// <summary>The effects are DLSE class streams (.ffx in BND3 or BND4 binders: DES, DS2, DS2S).</summary>
-    public bool IsDlse => Data.Format == Model.FxFormat.Dlse;
+    /// <summary>The effects are an older game's .ffx files in BND3 or BND4 binders (DLSE: DES, DS2, DS2S; FXR1: DS1, DS1R).</summary>
+    public bool IsFfx => Data.IsFfx;
 
     /// <summary>The effect files' extension in this game's binders.</summary>
-    public string EffectExtension => IsDlse ? ".ffx" : ".fxr";
+    public string EffectExtension => IsFfx ? ".ffx" : ".fxr";
 
-    /// <summary>A BND3 (DES) or BND4 (DS2) binder, compressed or not.</summary>
+    /// <summary>A BND3 (DES, DS1, DS1R) or BND4 (DS2) binder, compressed or not.</summary>
     private static BinderReader OpenBinder(Memory<byte> bytes)
     {
         if (DCX.Is(bytes))
@@ -316,7 +316,7 @@ public class FxBank : IDisposable
     /// <summary>The game's copy of the effect, read fresh; null when it has none (or it's the same as the project's, see <see cref="ReadCopy"/>).</summary>
     public FXR ReadVanilla(FxEntry entry)
     {
-        if (IsDlse)
+        if (IsFfx)
             return null;
         try
         {
@@ -455,7 +455,7 @@ public class FxBank : IDisposable
 
         try
         {
-            var reader = IsDlse ? OpenBinder(FS.ReadFile(source.Binder.Path).Value) : new BND4Reader(FS.ReadFile(source.Binder.Path).Value);
+            var reader = IsFfx ? OpenBinder(FS.ReadFile(source.Binder.Path).Value) : new BND4Reader(FS.ReadFile(source.Binder.Path).Value);
             var file = reader.Files.FirstOrDefault(f => f.Name == source.InternalName);
             if (file == null)
             {
@@ -476,7 +476,9 @@ public class FxBank : IDisposable
     /// <summary>Reads the effect's bytes into the entry, as this game's format.</summary>
     private void SetFile(FxEntry entry, Memory<byte> bytes)
     {
-        if (IsDlse)
+        if (Data.Format == Model.FxFormat.Fxr1)
+            entry.Fxr1 = FXR1.Read(bytes);
+        else if (IsFfx)
             entry.Ffx = FFXDLSE.Read(bytes);
         else
             entry.Fxr = FXR.Read(bytes);
@@ -489,7 +491,7 @@ public class FxBank : IDisposable
     /// </summary>
     public FXR ReadCopy(FxEntry entry)
     {
-        if (IsDlse)
+        if (IsFfx)
             return null;
         try
         {
@@ -586,6 +588,7 @@ public class FxBank : IDisposable
             return true;
         entry.Fxr = null;
         entry.Ffx = null;
+        entry.Fxr1 = null;
         entry.IsDirty = false;
         return Load(entry);
     }
@@ -604,9 +607,9 @@ public class FxBank : IDisposable
     public async Task<bool> Save(IEnumerable<FxEntry> entries)
     {
         // What to do is settled on the calling (main) thread, before the work moves off it
-        if (IsDlse)
+        if (IsFfx)
         {
-            var dlse = entries.Where(e => e.Ffx != null).ToList();
+            var dlse = entries.Where(e => e.Ffx != null || e.Fxr1 != null).ToList();
             await Task.Yield();
             return SaveDlse(dlse);
         }
@@ -731,8 +734,8 @@ public class FxBank : IDisposable
     }
 
     /// <summary>
-    /// Saves DLSE effects (DES, DS2, DS2S): each into the binders holding its version, which are read and written once
-    /// each, BND3 or BND4, with the binder's own compression (DES DCX_EDGE, DS2 DFLT). Where the game also ships the
+    /// Saves the older games' effects (DLSE: DES, DS2, DS2S; FXR1: DS1, DS1R): each into the binders holding its version, which are read and written once
+    /// each, BND3 or BND4, with the binder's own compression (DES DCX_EDGE, DS2 and DS1R DFLT, DS1 none). Where the game also ships the
     /// binder uncompressed next to it (x.ffxbnd beside x.ffxbnd.dcx), that copy is written too, so both stay the same.
     /// Effects are only changed, never added or removed (structure edits are FXR3 only).
     /// </summary>
@@ -752,10 +755,11 @@ public class FxBank : IDisposable
             {
                 // Ids the effect uses that its resource lists lack are appended (§8.6). Every vanilla list holds its own
                 // effect's ids, so an effect whose ids didn't change keeps its lists as they are
-                int appended = Model.FfxResources.AppendMissing(entry.Ffx);
+                // (DLSE only: FXR1 keeps its resource ids in each ActionData, which an edit changes in place)
+                int appended = entry.Ffx != null ? Model.FfxResources.AppendMissing(entry.Ffx) : 0;
                 if (appended > 0)
                     Smithbox.Log(this, LOC.Get("FX_Data_Resources_Appended", entry.Stem, appended));
-                bytes[entry] = entry.Ffx.Write();
+                bytes[entry] = entry.Ffx != null ? entry.Ffx.Write() : entry.Fxr1.Write();
             }
             catch (Exception e)
             {

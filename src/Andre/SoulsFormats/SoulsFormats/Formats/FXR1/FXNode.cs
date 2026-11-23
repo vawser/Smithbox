@@ -174,6 +174,7 @@ namespace SoulsFormats
                     case 122: func = new Node2Node122(); break;
                     case 123: func = new Node2Node123(); break;
                     case 124: func = new Node2Node124(); break;
+                    case 125: func = new Node2Node125(); break;
                     case 126: func = new Node2Node126(); break;
                     case 127: func = new Node2Node127(); break;
                     case 128: func = new NodeNode128(); break;
@@ -1529,6 +1530,36 @@ namespace SoulsFormats
                     env.RegisterPointer(Node2);
                 }
             }
+            /// <summary>
+            /// "!=" in a transition condition (120 GE, 121 GT, 122 LE, 123 LT, 124 EQ, 125 NE, 126 And, 127 Or; matched to
+            /// DLSE evaluators by FfxSurvey --fxr1eval). No vanilla DS1 / DS1R file uses it; it's here so an edited
+            /// condition can hold one, as DLSE's EvaluatableNE.
+            /// </summary>
+            public class Node2Node125 : FXNode
+            {
+                public FXNode Node1;
+                public FXNode Node2;
+
+                internal override void ReadInner(BinaryReaderEx br, FxrEnvironment env)
+                {
+                    AssertFXR1Varint(br, 125);
+
+                    int funcOffset1 = ReadFXR1Varint(br);
+                    int funcOffset2 = ReadFXR1Varint(br);
+
+                    Node1 = env.GetFXNode(br, funcOffset1);
+                    Node2 = env.GetFXNode(br, funcOffset2);
+                }
+
+                internal override void WriteInner(BinaryWriterEx bw, FxrEnvironment env)
+                {
+                    WriteFXR1Varint(bw, 125);
+
+                    env.RegisterPointer(Node1);
+                    env.RegisterPointer(Node2);
+                }
+            }
+
             public class Node2Node126 : FXNode
             {
                 public FXNode Node1;

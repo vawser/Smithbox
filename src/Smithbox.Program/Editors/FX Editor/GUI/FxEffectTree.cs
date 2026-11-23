@@ -163,52 +163,10 @@ public class FxEffectTree
         // A DES wrapper effect: one complete effect per variant, picked here
         effect = DisplayVariantPicker(entry, effect);
 
-        // States
-        var states = effect.States;
-        bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", states.Count)}##fxStates", ImGuiTreeNodeFlags.DefaultOpen);
-        if (!Filtering && entry.Fxr != null && ImGui.BeginPopupContextItem("##fxStatesContext"))
-        {
-            if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_State_Add")}##fxStatesAdd"))
-                Deferred.Add(() => AddState(entry));
-            GUI.Tooltip(LOC.Get("FX_EffectTree_State_Add_TT"));
-            ImGui.EndPopup();
-        }
-        if (statesOpen)
-        {
-            for (int i = 0; i < states.Count; i++)
-            {
-                var state = states[i];
-                var transitions = state.Transitions;
-                // DLSE states hold their own actions (FXR3 states have none: their actions are in node configs)
-                var stateActions = state.Actions;
-                var flags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow;
-                if (transitions.Count == 0 && stateActions.Count == 0) flags |= ImGuiTreeNodeFlags.Leaf;
-                if (Editor.Selection.IsSelected(state.Source)) flags |= ImGuiTreeNodeFlags.Selected;
-
-                var stateLabel = LOC.Get("FX_EffectTree_State", i);
-                if (i == 0)
-                    stateLabel = $"{stateLabel} {LOC.Get("FX_EffectTree_State_Start")}";
-                if (i == Editor.Playback.PreviewState)
-                    stateLabel = $"{stateLabel} {LOC.Get("FX_EffectTree_State_Previewed")}";
-
-                bool open = ImGui.TreeNodeEx($"{stateLabel}##fxState_{i}", flags);
-                TreeRow(state.Source);
-                if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
-                    Editor.Selection.SelectItem(state.Source);
-                if (state.Source is FxrState fxrState)
-                    DisplayStateContextMenu(entry, fxrState, i);
-                if (open)
-                {
-                    foreach (var t in transitions)
-                        GUI.WrappedText(FxNames.Condition(t));
-                    int stateActionId = 0;
-                    foreach (var action in stateActions)
-                        DisplayAction(entry, action, ref stateActionId, $"s{i}_");
-                    ImGui.TreePop();
-                }
-            }
-            ImGui.TreePop();
-        }
+        // States; FXR1 roots hold their own, drawn under each root node instead
+        bool statesOnNodes = effect.Root is Model.IFxStatesNode || effect.Root.Children.Any(c => c is Model.IFxStatesNode);
+        if (!statesOnNodes)
+            DisplayStates(entry, effect.States, "", entry.Fxr != null);
 
         if (Filtering && FilterShown.Count == 0)
             GUI.WrappedText(LOC.Get("FX_EffectTree_No_Matches"));
@@ -230,6 +188,58 @@ public class FxEffectTree
         foreach (var op in Deferred)
             op();
         Deferred.Clear();
+    }
+
+    /// <summary>
+    /// A "States (n)" branch: each state with its exits and (DLSE, FXR1) its own actions. <paramref name="idPrefix"/>
+    /// keeps the ImGui ids apart when several roots each draw their states (FXR1 node 134).
+    /// </summary>
+    private void DisplayStates(FxEntry entry, IReadOnlyList<Model.IFxState> states, string idPrefix, bool canAdd)
+    {
+        bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", states.Count)}##fxStates{idPrefix}", ImGuiTreeNodeFlags.DefaultOpen);
+        if (!Filtering && canAdd && ImGui.BeginPopupContextItem($"##fxStatesContext{idPrefix}"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_State_Add")}##fxStatesAdd"))
+                Deferred.Add(() => AddState(entry));
+            GUI.Tooltip(LOC.Get("FX_EffectTree_State_Add_TT"));
+            ImGui.EndPopup();
+        }
+        if (!statesOpen)
+            return;
+
+        for (int i = 0; i < states.Count; i++)
+        {
+            var state = states[i];
+            var transitions = state.Transitions;
+            // DLSE and FXR1 states hold their own actions (FXR3 states have none: their actions are in node configs)
+            var stateActions = state.Actions;
+            var flags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow;
+            if (transitions.Count == 0 && stateActions.Count == 0) flags |= ImGuiTreeNodeFlags.Leaf;
+            if (Editor.Selection.IsSelected(state.Source)) flags |= ImGuiTreeNodeFlags.Selected;
+
+            var stateLabel = LOC.Get("FX_EffectTree_State", i);
+            if (i == 0)
+                stateLabel = $"{stateLabel} {LOC.Get("FX_EffectTree_State_Start")}";
+            if (i == Editor.Playback.PreviewState)
+                stateLabel = $"{stateLabel} {LOC.Get("FX_EffectTree_State_Previewed")}";
+
+            bool open = ImGui.TreeNodeEx($"{stateLabel}##fxState_{idPrefix}{i}", flags);
+            TreeRow(state.Source);
+            if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
+                Editor.Selection.SelectItem(state.Source);
+            if (state.Source is FxrState fxrState)
+                DisplayStateContextMenu(entry, fxrState, i);
+            if (open)
+            {
+                foreach (var t in transitions)
+                    GUI.WrappedText(FxNames.Condition(t));
+                int stateActionId = 0;
+                foreach (var action in stateActions)
+                    DisplayAction(entry, action, ref stateActionId, $"{idPrefix}s{i}_");
+                ImGui.TreePop();
+            }
+        }
+        ImGui.TreePop();
     }
 
     private void DisplayToolbar(FxEntry entry)
@@ -335,6 +345,10 @@ public class FxEffectTree
 
         if (!Filtering)
         {
+            // An FXR1 root's own states
+            if (node is Model.IFxStatesNode stateful)
+                DisplayStates(entry, stateful.States, $"n{nodeId}_", false);
+
             // The node's own actions
             foreach (var action in node.Actions)
                 DisplayAction(entry, action, ref id);

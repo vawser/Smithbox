@@ -54,8 +54,11 @@ public class FxEntry
     /// <summary>The loaded effect (DES, DS2, DS2S: DLSE class streams), null until selected.</summary>
     public FFXDLSE Ffx;
 
-    /// <summary>The loaded file object, whichever format it is: <see cref="Fxr"/> or <see cref="Ffx"/>.</summary>
-    public object File => (object)Fxr ?? Ffx;
+    /// <summary>The loaded effect (DS1, DS1R: FXR v1), null until selected.</summary>
+    public FXR1 Fxr1;
+
+    /// <summary>The loaded file object, whichever format it is: <see cref="Fxr"/>, <see cref="Ffx"/> or <see cref="Fxr1"/>.</summary>
+    public object File => (object)Fxr ?? (object)Ffx ?? Fxr1;
 
     /// <summary>
     /// The file name without its extension where the game's names don't follow f&lt;id:D9&gt; (DES and DS2 use 7

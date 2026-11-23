@@ -70,6 +70,7 @@ public static class FxNames
         Model.FxNodeKind.LevelsOfDetail => LOC.Get("FX_Node_LevelsOfDetail"),
         Model.FxNodeKind.Basic => LOC.Get("FX_Node_Basic"),
         Model.FxNodeKind.NodeEmitter => LOC.Get("FX_Node_NodeEmitter"),
+        Model.FxNodeKind.Roots => LOC.Get("FX_Node_Fxr1_Roots"),
         _ => LOC.Get("FX_Node_Unknown", node.TypeId),
     };
 
@@ -119,6 +120,10 @@ public static class FxNames
         // DLSE: the effect's own param lists, and calls of other effects
         if (action is Model.IFxEffectParams list)
             return LOC.Get("FX_Action_Effect_Params", list.ListIndex);
+        // FXR1: an action's packed ActionData and its container modifier
+        if (action is Model.IFxPacked packed)
+            return LOC.Get(packed.Kind == Model.FxPackedKind.ActionData ? "FX_Action_Fxr1_ActionData" : "FX_Action_Fxr1_Modifier",
+                action.Name ?? action.TypeId.ToString(), action.TypeId);
         if (action is Model.IFxProxy call)
             return LOC.Get("FX_Action_Effect_Call", call.TargetEffect);
         if (action.Name == null)

@@ -16,7 +16,7 @@ public class FxData : IDisposable
     public ProjectEntry Project;
 
     /// <summary>
-    /// The FXR schema, for the FXR3 games only. It stays null for the DLSE games, so code that reads effects as FXRs
+    /// The FXR schema, for the FXR3 games only. It stays null for the older games, so code that reads effects as FXRs
     /// (playback in other editors, FxDefCache) sees no effects there rather than receiving DLSE ones.
     /// </summary>
     public FxrSchema Schema;
@@ -26,7 +26,7 @@ public class FxData : IDisposable
     /// <summary>The effect format of the project's game.</summary>
     public Model.FxFormat Format = Model.FxFormat.Fxr3;
 
-    /// <summary>The FFX schema (Assets/FXR/ffx_schema.json), for the DLSE games only.</summary>
+    /// <summary>The FFX schema (Assets/FXR/ffx_schema.json), for the older games (DLSE and FXR1) only.</summary>
     public FfxSchema FfxSchema;
 
     public SoulsFormats.FfxGame FfxGame;
@@ -35,9 +35,15 @@ public class FxData : IDisposable
     public bool IsDlse => Format == Model.FxFormat.Dlse;
 
     /// <summary>
+    /// The project's effects are an older game's .ffx files (DLSE: DES, DS2, DS2S; FXR1: DS1, DS1R), kept in BND3 or
+    /// BND4 sfx binders and read through the FFX schema.
+    /// </summary>
+    public bool IsFfx => Format is Model.FxFormat.Dlse or Model.FxFormat.Fxr1;
+
+    /// <summary>
     /// Effects can be added, removed, duplicated, renumbered, moved between binders, imported, exported, compared and
-    /// project-checked: FXR3 only. DLSE effects have their values edited and saved (FFX Older Games Plan F3b); their
-    /// structure comes later (F7).
+    /// project-checked: FXR3 only. DLSE and FXR1 effects have their values and exits edited and saved (FFX Older Games
+    /// Plan F3b, F3c, F4b); their structure comes later (F7).
     /// </summary>
     public bool CanEditStructure => Format == Model.FxFormat.Fxr3;
 
@@ -62,7 +68,7 @@ public class FxData : IDisposable
 
         if (ToFfxGame(Project.Descriptor.ProjectType) is SoulsFormats.FfxGame ffxGame)
         {
-            Format = Model.FxFormat.Dlse;
+            Format = ffxGame is SoulsFormats.FfxGame.DS1 or SoulsFormats.FfxGame.DS1R ? Model.FxFormat.Fxr1 : Model.FxFormat.Dlse;
             FfxGame = ffxGame;
             var ffxPath = Path.Join(AppContext.BaseDirectory, "Assets", "FXR", "ffx_schema.json");
             try
@@ -103,12 +109,14 @@ public class FxData : IDisposable
         _ => FxrGame.ER,
     };
 
-    /// <summary>The FFX game of a project whose effects are DLSE class streams; null for every other game.</summary>
+    /// <summary>The FFX game of a project whose effects are DLSE class streams or FXR1 files; null for every other game.</summary>
     public static SoulsFormats.FfxGame? ToFfxGame(ProjectType type) => type switch
     {
         ProjectType.DES => SoulsFormats.FfxGame.DES,
         ProjectType.DS2 => SoulsFormats.FfxGame.DS2,
         ProjectType.DS2S => SoulsFormats.FfxGame.DS2S,
+        ProjectType.DS1 => SoulsFormats.FfxGame.DS1,
+        ProjectType.DS1R => SoulsFormats.FfxGame.DS1R,
         _ => null,
     };
 
@@ -128,6 +136,7 @@ public class FxData : IDisposable
             {
                 FXR fxr => Model.FxrModel.Adapt(fxr, Schema, Game),
                 FFXDLSE ffx => Model.FfxModel.Adapt(ffx, FfxSchema, FfxGame),
+                FXR1 fxr1 => Model.Fxr1Model.Adapt(fxr1, FfxSchema, FfxGame),
                 _ => null,
             };
         }

@@ -302,7 +302,19 @@ public class FxInspector
         var editable = e as Model.IFxEditableExpression;
         switch (e.Kind)
         {
-            case Model.FxExpressionKind.Compare or Model.FxExpressionKind.And or Model.FxExpressionKind.Or when editable != null:
+            case Model.FxExpressionKind.Compare or Model.FxExpressionKind.And or Model.FxExpressionKind.Or when editable is not { Operators.Count: > 0 }:
+            {
+                // A fixed part of a packed FXR1 condition (nodes 136–140): its operator is the node type's, but the
+                // arguments under it can still be edited
+                ImGui.TextUnformatted(e.Operator);
+                GUI.Tooltip(LOC.Get("FX_Inspector_Expr_Fixed_TT"));
+                ImGui.Indent();
+                for (int i = 0; i < e.Operands.Count; i++)
+                    DisplayExpression(e.Operands[i], $"{id}_{i}", commit);
+                ImGui.Unindent();
+                break;
+            }
+            case Model.FxExpressionKind.Compare or Model.FxExpressionKind.And or Model.FxExpressionKind.Or:
             {
                 ImGui.SetNextItemWidth(80 * DPI.UIScale());
                 if (ImGui.BeginCombo($"##fxExprOp_{id}", e.Operator))
@@ -739,9 +751,9 @@ public class FxInspector
         // The typed TPF first, then the plain one, as FxTextureLibrary looks them up
         var file = ResourceName(resource, textureType, shown);
         bool known = true;
-        if (Data.IsDlse && resource is "texture" or "model")
+        if (Data.IsFfx && resource is "texture" or "model")
         {
-            // DES and DS2 name resources with 4 or 6 digits (s0003, s000002): found by id in the bank's names
+            // DES, DS1 and DS2 name resources with 4 to 6 digits (s0003, s000002): found by id in the bank's names
             var names = resource == "texture" ? Data.Bank.Textures : Data.Bank.Models;
             var name = Data.Bank.ResourceName(names, shown);
             known = name != null;
