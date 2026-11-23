@@ -3936,19 +3936,21 @@
               "max": 9000
             },
             {
-              "name": "unk01",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Named from DS2 slot 1 (scaleY), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk02",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Named from DS2 slot 2 (scaleX), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk03",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -3957,10 +3959,12 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 3 (orientationMode), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a).",
+              "enum": "OrientationMode_DES"
             },
             {
-              "name": "unk04",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -3970,16 +3974,19 @@
                 0,
                 4,
                 5
-              ]
+              ],
+              "desc": "Named from DS2 slot 4 (blendMode), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a).",
+              "enum": "BlendMode_DES"
             },
             {
-              "name": "unk05",
+              "name": "color",
               "types": [
                 17
-              ]
+              ],
+              "desc": "Named from DS2 slot 5 (color), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk06",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -3988,10 +3995,11 @@
               "seen": [
                 1,
                 4
-              ]
+              ],
+              "desc": "Named from DS2 slot 6 (animFrameSliceCountPerRow), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk07",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -4000,13 +4008,15 @@
               "seen": [
                 1,
                 4
-              ]
+              ],
+              "desc": "Named from DS2 slot 7 (animFrameTotalCount), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk08",
+              "name": "animFrameTimeline",
               "types": [
                 6
-              ]
+              ],
+              "desc": "Named from DS2 slot 8 (animFrameTimeline), same position in a window [0..13] of matching types, 14 slots of 5 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
               "name": "texture09",
@@ -4837,7 +4847,7 @@
               ]
             },
             {
-              "name": "unk48",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -4845,10 +4855,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk49",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -4856,10 +4867,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk50",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -4867,10 +4879,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk51",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -4878,10 +4891,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk52",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -4889,10 +4903,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk53",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -4900,9 +4915,65 @@
               "max": -1,
               "seen": [
                 -1
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "30": {
+              "from": 25,
+              "params": [
+                {
+                  "name": "unk25",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "30-param instances: alignment ambiguous between the 54-param layout's [26] and [30] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk26",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "30-param instances: alignment ambiguous between the 54-param layout's [27] and [31] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk27",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "30-param instances: alignment ambiguous between the 54-param layout's [30] and [32] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk28",
+                  "types": [
+                    1
+                  ],
+                  "min": 8,
+                  "max": 8,
+                  "like": 33,
+                  "desc": "30-param instances: as the 54-param layout's [33] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk29",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 34,
+                  "desc": "30-param instances: as the 54-param layout's [34] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -5767,7 +5838,265 @@
                 100
               ]
             }
-          ]
+          ],
+          "variants": {
+            "30": {
+              "from": 13,
+              "params": [
+                {
+                  "name": "unk13",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 10,
+                  "seen": [
+                    1,
+                    10
+                  ],
+                  "like": 18,
+                  "desc": "30-param instances: as the 40-param layout's [18] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk14",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.05000000074505806,
+                  "max": 0.05000000074505806,
+                  "seen": [
+                    0.05000000074505806
+                  ],
+                  "like": 19,
+                  "desc": "30-param instances: as the 40-param layout's [19] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk15",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    0.009999999776482582,
+                    0.05000000074505806,
+                    1
+                  ],
+                  "like": 20,
+                  "desc": "30-param instances: as the 40-param layout's [20] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk16",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    0.07000000029802322,
+                    1
+                  ],
+                  "like": 21,
+                  "desc": "30-param instances: as the 40-param layout's [21] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk17",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    0.009999999776482582,
+                    0.05000000074505806,
+                    1
+                  ],
+                  "like": 22,
+                  "desc": "30-param instances: as the 40-param layout's [22] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk18",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    0.15000000596046448,
+                    0.20000000298023224,
+                    0.5,
+                    1.5,
+                    2
+                  ],
+                  "like": 23,
+                  "desc": "30-param instances: as the 40-param layout's [23] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk19",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 2.5,
+                  "seen": [
+                    0,
+                    0.30000001192092896,
+                    0.4000000059604645,
+                    1.5,
+                    2,
+                    2.5
+                  ],
+                  "like": 24,
+                  "desc": "30-param instances: as the 40-param layout's [24] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk20",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    0.20000000298023224,
+                    0.4000000059604645,
+                    0.699999988079071,
+                    0.800000011920929,
+                    1
+                  ],
+                  "like": 25,
+                  "desc": "30-param instances: as the 40-param layout's [25] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk21",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 26,
+                  "desc": "30-param instances: as the 40-param layout's [26] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk22",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 27,
+                  "desc": "30-param instances: as the 40-param layout's [27] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk23",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 3,
+                  "seen": [
+                    1,
+                    3
+                  ],
+                  "like": 28,
+                  "desc": "30-param instances: as the 40-param layout's [28] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk24",
+                  "types": [
+                    1
+                  ],
+                  "min": 30,
+                  "max": 30,
+                  "seen": [
+                    30
+                  ],
+                  "like": 29,
+                  "desc": "30-param instances: as the 40-param layout's [29] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk25",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.800000011920929,
+                  "max": 0.800000011920929,
+                  "seen": [
+                    0.800000011920929
+                  ],
+                  "like": 30,
+                  "desc": "30-param instances: as the 40-param layout's [30] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk26",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 31,
+                  "desc": "30-param instances: as the 40-param layout's [31] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk27",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 32,
+                  "desc": "30-param instances: as the 40-param layout's [32] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk28",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0.5,
+                  "seen": [
+                    0,
+                    0.5
+                  ],
+                  "like": 33,
+                  "desc": "30-param instances: as the 40-param layout's [33] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk29",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 34,
+                  "desc": "30-param instances: as the 40-param layout's [34] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            }
+          }
         }
       }
     },
@@ -6633,7 +6962,7 @@
               ]
             },
             {
-              "name": "unk42",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -6641,10 +6970,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk43",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -6652,10 +6982,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk44",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -6663,10 +6994,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk45",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -6674,10 +7006,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk46",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -6686,10 +7019,11 @@
               "seen": [
                 -1,
                 3.75
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 3.75. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk47",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -6697,7 +7031,8 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             }
           ]
         }
@@ -11063,7 +11398,7 @@
               ]
             },
             {
-              "name": "unk64",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -11071,10 +11406,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk65",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -11082,10 +11418,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk66",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -11093,10 +11430,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk67",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -11104,10 +11442,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk68",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -11116,10 +11455,11 @@
               "seen": [
                 -1,
                 5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk69",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -11127,7 +11467,8 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             }
           ]
         }
@@ -13251,24 +13592,27 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 34
               ],
               "min": 1049,
-              "max": 2000
+              "max": 2000,
+              "desc": "Named from DS2 slot 0 (textureID), same position in a window [0..16] of matching types, anchored by 7 slots named alike in both (scaleX, scaleY, blendMode, color, animFrameSliceCountPerRow, animFrameTotalCount, animFrameTimeline) (FfxSurvey --align rerun after the S7e exe names; a texture's type name no longer counts as a clash, FFX Schema Gaps Plan S7e)."
             },
             {
-              "name": "unk01",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Named from DS2 slot 1 (scaleX), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk02",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Named from DS2 slot 2 (scaleY), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
               "name": "unk03",
@@ -13309,21 +13653,23 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "blendMode",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 4
+              "max": 4,
+              "desc": "Named from DS2 slot 7 (blendMode), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk08",
+              "name": "color",
               "types": [
                 17
-              ]
+              ],
+              "desc": "Named from DS2 slot 8 (color), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk09",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -13331,10 +13677,11 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 9 (animFrameSliceCountPerRow), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk10",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -13342,13 +13689,15 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 10 (animFrameTotalCount), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
-              "name": "unk11",
+              "name": "animFrameTimeline",
               "types": [
                 6
-              ]
+              ],
+              "desc": "Named from DS2 slot 11 (animFrameTimeline), same position in a window [0..16] of matching types, 17 slots of 6 type classes matching in order (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
               "name": "texture12",
@@ -14557,7 +14906,7 @@
               ]
             },
             {
-              "name": "unk67",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -14566,10 +14915,11 @@
               "seen": [
                 -1,
                 5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk68",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -14578,10 +14928,11 @@
               "seen": [
                 -1,
                 2.5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 2.5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk69",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -14589,10 +14940,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk70",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -14600,10 +14952,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk71",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -14614,10 +14967,11 @@
                 1,
                 1.25,
                 2.5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 1 / 1.25 / 2.5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk72",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -14626,9 +14980,259 @@
               "seen": [
                 -1,
                 10
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 10. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "33": {
+              "from": 30,
+              "params": [
+                {
+                  "name": "unk30",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "33-param instances: alignment ambiguous between the 73-param layout's [32] and [48] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk31",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "33-param instances: alignment ambiguous between the 73-param layout's [34] and [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk32",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "33-param instances: alignment ambiguous between the 73-param layout's [35] and [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "45": {
+              "from": 44,
+              "params": [
+                {
+                  "name": "unk44",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "45-param instances: alignment ambiguous between the 73-param layout's [45] and [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "49": {
+              "from": 44,
+              "params": [
+                {
+                  "name": "unk44",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "49-param instances: alignment ambiguous between the 73-param layout's [45] and [49] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk45",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "49-param instances: alignment ambiguous between the 73-param layout's [46] and [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk46",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "49-param instances: alignment ambiguous between the 73-param layout's [49] and [51] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk47",
+                  "types": [
+                    1
+                  ],
+                  "min": 8,
+                  "max": 8,
+                  "seen": [
+                    8
+                  ],
+                  "like": 52,
+                  "desc": "49-param instances: as the 73-param layout's [52] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk48",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 53,
+                  "desc": "49-param instances: as the 73-param layout's [53] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "54": {
+              "from": 44,
+              "params": [
+                {
+                  "name": "unk44",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "54-param instances: alignment ambiguous between the 73-param layout's [45] and [49] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk45",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "54-param instances: alignment ambiguous between the 73-param layout's [46] and [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk46",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "54-param instances: alignment ambiguous between the 73-param layout's [49] and [51] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk47",
+                  "types": [
+                    1
+                  ],
+                  "min": 8,
+                  "max": 8,
+                  "seen": [
+                    8
+                  ],
+                  "like": 52,
+                  "desc": "54-param instances: as the 73-param layout's [52] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk48",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 53,
+                  "desc": "54-param instances: as the 73-param layout's [53] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk49",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 55,
+                  "desc": "54-param instances: as the 73-param layout's [55] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk50",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 56,
+                  "desc": "54-param instances: as the 73-param layout's [56] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk51",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 57,
+                  "desc": "54-param instances: as the 73-param layout's [57] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk52",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 58,
+                  "desc": "54-param instances: as the 73-param layout's [58] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk53",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 59,
+                  "desc": "54-param instances: as the 73-param layout's [59] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -14704,12 +15308,13 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "modelID",
               "types": [
                 35
               ],
               "min": 1,
-              "max": 9012
+              "max": 9012,
+              "desc": "Named from DS2 slot 0 (modelID), same position in a window [0..12] of matching types, anchored by 2 slots named alike in both (blendMode, color) (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
               "name": "unk01",
@@ -16386,7 +16991,7 @@
               ]
             },
             {
-              "name": "unk65",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -16394,10 +16999,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk66",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -16405,10 +17011,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk67",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -16416,10 +17023,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk68",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -16427,10 +17035,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk69",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -16438,10 +17047,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk70",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -16449,9 +17059,46 @@
               "max": -1,
               "seen": [
                 -1
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "39": {
+              "from": 36,
+              "params": [
+                {
+                  "name": "unk36",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "39-param instances: alignment ambiguous between the 71-param layout's [37] and [46] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk37",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "39-param instances: alignment ambiguous between the 71-param layout's [39] and [48] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk38",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "39-param instances: alignment ambiguous between the 71-param layout's [40] and [64] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -17388,7 +18035,7 @@
               ]
             },
             {
-              "name": "unk41",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -17396,10 +18043,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk42",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -17407,10 +18055,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk43",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -17418,10 +18067,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk44",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -17429,10 +18079,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk45",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -17440,10 +18091,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk46",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -17451,9 +18103,82 @@
               "max": -1,
               "seen": [
                 -1
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "33": {
+              "from": 28,
+              "params": [
+                {
+                  "name": "unk28",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 29,
+                  "desc": "33-param instances: as the 47-param layout's [29] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk29",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 30,
+                  "desc": "33-param instances: as the 47-param layout's [30] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk30",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 31,
+                  "desc": "33-param instances: as the 47-param layout's [31] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk31",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 32,
+                  "desc": "33-param instances: as the 47-param layout's [32] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk32",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 33,
+                  "desc": "33-param instances: as the 47-param layout's [33] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -17873,7 +18598,7 @@
               ]
             },
             {
-              "name": "alphaMode",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -17883,7 +18608,7 @@
                 0,
                 1
               ],
-              "desc": "DarkSoulsII.exe compiles it to block +26C, DS1 ActionData 70's AlphaMode in DS1R's wide layout; values: 0 ×92, 1 ×190 (DS1R: 0 ×134, 1 ×500). Not FXR3's layer opacity mode: both values occur with all-DXT1 and all-DXT5 layer sets (FFX plan §20.20). No enum: FXR3 has no enum for this field, and the values' meanings are unknown (FFX Schema Gaps Plan S3)."
+              "desc": "Soft particles (FXR3 BillboardEx's depthBlend), formerly named alphaMode after DSAnimStudio's DS1 field at this offset (FFX plan §20.21). DarkSoulsII.exe: a70's resources function (140FE56F0) picks the Multi sprite shader 6 / 7 or 8 / 9, adding 1 (the ZFeather variants) when this slot (block+26C) isn't 0, as a15001's [33] does. That's why §20.21 found it unrelated to the textures' alpha. 0 / 1 in vanilla (DS2S 0 ×92, 1 ×190) (FFX Schema Gaps Plan S7e)."
             },
             {
               "name": "unk39",
@@ -18575,7 +19300,7 @@
               ]
             },
             {
-              "name": "alphaMode",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -18585,7 +19310,7 @@
                 0,
                 1
               ],
-              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27). No enum: FXR3 has no enum for this field, and the values' meanings are unknown (FFX Schema Gaps Plan S3)."
+              "desc": "BB keeps DS2's a70 layout here (FFX plan §20.18); DS2's a70 [38] switches the ZFeather (soft-particle) shader in DarkSoulsII.exe (block+26C), formerly named alphaMode after DSAnimStudio's DS1 field (FFX Schema Gaps Plan S7e). BB itself isn't traced."
             },
             {
               "name": "unk39",
@@ -19054,7 +19779,7 @@
               ]
             },
             {
-              "name": "unk87",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -19062,10 +19787,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk88",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -19073,10 +19799,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk89",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -19084,10 +19811,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk90",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -19095,10 +19823,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk91",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -19107,10 +19836,11 @@
               "seen": [
                 -1,
                 5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk92",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -19118,9 +19848,171 @@
               "max": -1,
               "seen": [
                 -1
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "49": {
+              "from": 46,
+              "params": [
+                {
+                  "name": "unk46",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "49-param instances: alignment ambiguous between the 93-param layout's [47] and [68] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk47",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "49-param instances: alignment ambiguous between the 93-param layout's [49] and [70] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk48",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "49-param instances: alignment ambiguous between the 93-param layout's [50] and [86] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "58": {
+              "from": 55,
+              "params": [
+                {
+                  "name": "unk55",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 93-param layout's [56] and [68] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk56",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 93-param layout's [57] and [70] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk57",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 93-param layout's [65] and [86] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "63": {
+              "from": 55,
+              "params": [
+                {
+                  "name": "unk55",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 65,
+                  "desc": "63-param instances: as the 93-param layout's [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk56",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "63-param instances: alignment ambiguous between the 93-param layout's [66] and [67] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk57",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "63-param instances: alignment ambiguous between the 93-param layout's [67] and [68] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 69,
+                  "desc": "63-param instances: as the 93-param layout's [69] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    11
+                  ],
+                  "like": 70,
+                  "desc": "63-param instances: as the 93-param layout's [70] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk60",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 71,
+                  "desc": "63-param instances: as the 93-param layout's [71] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk61",
+                  "types": [
+                    1
+                  ],
+                  "min": 8,
+                  "max": 8,
+                  "seen": [
+                    8
+                  ],
+                  "like": 72,
+                  "desc": "63-param instances: as the 93-param layout's [72] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk62",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 73,
+                  "desc": "63-param instances: as the 93-param layout's [73] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -19143,15 +20035,16 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID",
               "types": [
                 34
               ],
               "min": 3,
-              "max": 4110
+              "max": 4110,
+              "desc": "Named from BB slot 1 (textureID), same position in a window [0..12] of matching types, anchored by 10 slots named alike in both (duration, orientationMode, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, animFrameInitial, animFrameTimeline, scale2X, scale2Y, color2) (FfxSurvey --align rerun after the S7e exe names; a texture's type name no longer counts as a clash, FFX Schema Gaps Plan S7e)."
             },
             {
-              "name": "texture02",
+              "name": "normalMap",
               "types": [
                 34
               ],
@@ -19161,7 +20054,8 @@
                 0,
                 17,
                 1005
-              ]
+              ],
+              "desc": "Named from DS2 slot 2 (normalMap), same position in a window [0..12] of matching types, anchored by 10 slots named alike in both (duration, orientationMode, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, animFrameInitial, animFrameTimeline, scale2X, scale2Y, color2) (FfxSurvey --align rerun after the S7e exe names; a texture's type name no longer counts as a clash, FFX Schema Gaps Plan S7e)."
             },
             {
               "name": "duration",
@@ -19173,7 +20067,7 @@
               "max": 1666666.625
             },
             {
-              "name": "unk04",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -19182,7 +20076,9 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 4 (orientationMode), same position in a window [0..12] of matching types, anchored by 7 slots named alike in both (duration, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, scale2X, scale2Y, color2) (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a).",
+              "enum": "OrientationMode_DES"
             },
             {
               "name": "blendMode",
@@ -19234,7 +20130,7 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "animFrameInitial",
               "types": [
                 1
               ],
@@ -19243,15 +20139,17 @@
               "seen": [
                 0,
                 3
-              ]
+              ],
+              "desc": "Named from DS2 slot 8 (animFrameInitial), same position in a window [0..12] of matching types, anchored by 7 slots named alike in both (duration, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, scale2X, scale2Y, color2) (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a). DS2's is an int pair (value + variance); DES has no int-pair type, so it holds the value alone (0 / 3)."
             },
             {
-              "name": "unk09",
+              "name": "animFrameTimeline",
               "types": [
                 3,
                 5,
                 6
-              ]
+              ],
+              "desc": "Named from DS2 slot 9 (animFrameTimeline), same position in a window [0..12] of matching types, anchored by 7 slots named alike in both (duration, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, scale2X, scale2Y, color2) (FfxSurvey --align rerun on the S6 schema, FFX Schema Gaps Plan S7a)."
             },
             {
               "name": "scale2X",
@@ -19467,7 +20365,7 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -19481,10 +20379,11 @@
                 29,
                 70,
                 72
-              ]
+              ],
+              "desc": "Named from BB slot 1 (textureID), same position in a window [0..37] of matching types, anchored by 22 slots named alike in both (duration, orientationMode, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, animFrameInitial, animFrameTimeline, scale2X, scale2Y, color2, rotX, rotY, rotZ, rotSpeedX, rotSpeedXMult, rotSpeedY, rotSpeedYMult, rotSpeedZ, rotSpeedZMult, attachedBool, saturation, renderDepth) (FfxSurvey --align rerun after the S7e exe names; a texture's type name no longer counts as a clash, FFX Schema Gaps Plan S7e)."
             },
             {
-              "name": "texture02",
+              "name": "normalMap",
               "types": [
                 40
               ],
@@ -19492,7 +20391,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "A normal map. DarkSoulsII.exe: a71's resources function loads this slot's texture (block+44) and, when one loaded, picks the Bump shader (Default_Bump / Default_ZFeather_Bump), as a15000's does (FFX Schema Gaps Plan S7e). 0 (none) in every vanilla DS2 instance."
             },
             {
               "name": "duration",
@@ -19716,7 +20616,7 @@
               ]
             },
             {
-              "name": "unk27",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -19724,7 +20624,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "Soft particles (FXR3 BillboardEx's depthBlend). DarkSoulsII.exe: a71's resources function (140FE4F10) picks the sprite shader 2 / 3 / 4 / 5 exactly as a15000's does, adding 2 (the ZFeather variants) when this slot (compiled to block+1D4, past DS1's ActionData71) isn't 0 (FFX Schema Gaps Plan S7d / S7e). Always 0 in vanilla DS2."
             },
             {
               "name": "unk28",
@@ -19990,10 +20891,11 @@
               ]
             },
             {
-              "name": "texture02",
+              "name": "normalMap",
               "types": [
                 40
-              ]
+              ],
+              "desc": "Named from DS2 slot 2 (normalMap), same position in a window [0..37] of matching types, anchored by 22 slots named alike in both (duration, orientationMode, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, animFrameInitial, animFrameTimeline, scale2X, scale2Y, color2, rotX, rotY, rotZ, rotSpeedX, rotSpeedXMult, rotSpeedY, rotSpeedYMult, rotSpeedZ, rotSpeedZMult, attachedBool, saturation, renderDepth) (FfxSurvey --align rerun after the S7e exe names; a texture's type name no longer counts as a clash, FFX Schema Gaps Plan S7e)."
             },
             {
               "name": "duration",
@@ -20236,7 +21138,7 @@
               ]
             },
             {
-              "name": "unk27",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -20245,7 +21147,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Named from DS2 slot 27 (depthBlend), same position in a window [0..37] of matching types, anchored by 22 slots named alike in both (duration, orientationMode, blendMode, animFrameSliceCountPerRow, animFrameTotalCount, animFrameInitial, animFrameTimeline, scale2X, scale2Y, color2, rotX, rotY, rotZ, rotSpeedX, rotSpeedXMult, rotSpeedY, rotSpeedYMult, rotSpeedZ, rotSpeedZMult, attachedBool, saturation, renderDepth) (FfxSurvey --align rerun after the S7e exe names; a texture's type name no longer counts as a clash, FFX Schema Gaps Plan S7e)."
             },
             {
               "name": "unk28",
@@ -20779,7 +21682,7 @@
               ]
             },
             {
-              "name": "unk80",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -20787,10 +21690,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk81",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -20798,10 +21702,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk82",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -20809,10 +21714,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk83",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -20820,10 +21726,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk84",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -20836,10 +21743,11 @@
                 2.5,
                 3.75,
                 5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 1 / 1.5 / 2.5 / 3.75 / 5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk85",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -20847,9 +21755,497 @@
               "max": -1,
               "seen": [
                 -1
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "40": {
+              "from": 37,
+              "params": [
+                {
+                  "name": "unk37",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "40-param instances: alignment ambiguous between the 86-param layout's [40] and [61] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk38",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "40-param instances: alignment ambiguous between the 86-param layout's [41] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk39",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "40-param instances: alignment ambiguous between the 86-param layout's [44] and [79] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "47": {
+              "from": 43,
+              "params": [
+                {
+                  "name": "unk43",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "47-param instances: alignment ambiguous between the 86-param layout's [44] and [58] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk44",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "47-param instances: alignment ambiguous between the 86-param layout's [45] and [61] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk45",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "47-param instances: alignment ambiguous between the 86-param layout's [47] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk46",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "47-param instances: alignment ambiguous between the 86-param layout's [48] and [79] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "58": {
+              "from": 43,
+              "params": [
+                {
+                  "name": "unk43",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 44,
+                  "desc": "58-param instances: as the 86-param layout's [44] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk44",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 46,
+                  "desc": "58-param instances: as the 86-param layout's [46] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk45",
+                  "types": [
+                    11
+                  ],
+                  "like": 47,
+                  "desc": "58-param instances: as the 86-param layout's [47] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk46",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 48,
+                  "desc": "58-param instances: as the 86-param layout's [48] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk47",
+                  "types": [
+                    11
+                  ],
+                  "like": 49,
+                  "desc": "58-param instances: as the 86-param layout's [49] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk48",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 50,
+                  "desc": "58-param instances: as the 86-param layout's [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk49",
+                  "types": [
+                    11
+                  ],
+                  "like": 51,
+                  "desc": "58-param instances: as the 86-param layout's [51] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk50",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 52,
+                  "desc": "58-param instances: as the 86-param layout's [52] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk51",
+                  "types": [
+                    11
+                  ],
+                  "like": 53,
+                  "desc": "58-param instances: as the 86-param layout's [53] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk52",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 54,
+                  "desc": "58-param instances: as the 86-param layout's [54] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk53",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 86-param layout's [55] and [57] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk54",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 58,
+                  "desc": "58-param instances: as the 86-param layout's [58] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk55",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 86-param layout's [59] and [61] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk56",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 86-param layout's [60] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk57",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": null,
+                  "desc": "58-param instances: alignment ambiguous between the 86-param layout's [62] and [79] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "60": {
+              "from": 57,
+              "params": [
+                {
+                  "name": "unk57",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "60-param instances: alignment ambiguous between the 86-param layout's [58] and [62] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "60-param instances: alignment ambiguous between the 86-param layout's [59] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "60-param instances: alignment ambiguous between the 86-param layout's [62] and [79] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "62": {
+              "from": 57,
+              "params": [
+                {
+                  "name": "unk57",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": null,
+                  "desc": "62-param instances: alignment ambiguous between the 86-param layout's [58] and [62] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "62-param instances: alignment ambiguous between the 86-param layout's [59] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "62-param instances: alignment ambiguous between the 86-param layout's [62] and [64] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk60",
+                  "types": [
+                    1
+                  ],
+                  "min": 3,
+                  "max": 8,
+                  "seen": [
+                    3,
+                    8
+                  ],
+                  "like": 65,
+                  "desc": "62-param instances: as the 86-param layout's [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk61",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 10,
+                  "seen": [
+                    0,
+                    10
+                  ],
+                  "like": 66,
+                  "desc": "62-param instances: as the 86-param layout's [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "67": {
+              "from": 57,
+              "params": [
+                {
+                  "name": "unk57",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [58] and [62] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [59] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [62] and [64] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk60",
+                  "types": [
+                    1
+                  ],
+                  "min": 8,
+                  "max": 8,
+                  "seen": [
+                    8
+                  ],
+                  "like": 65,
+                  "desc": "67-param instances: as the 86-param layout's [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk61",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 66,
+                  "desc": "67-param instances: as the 86-param layout's [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk62",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 67,
+                  "desc": "67-param instances: as the 86-param layout's [67] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk63",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [68] and [69] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk64",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [69] and [70] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk65",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [70] and [71] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk66",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": null,
+                  "desc": "67-param instances: alignment ambiguous between the 86-param layout's [71] and [72] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -26873,7 +28269,7 @@
               ]
             },
             {
-              "name": "unk41",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -26882,10 +28278,11 @@
               "seen": [
                 -1,
                 5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk42",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -26894,10 +28291,11 @@
               "seen": [
                 -1,
                 2.5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 2.5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk43",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -26905,10 +28303,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk44",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -26916,18 +28315,20 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk45",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
               "min": -1,
-              "max": 5
+              "max": 5,
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: 0. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk46",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -26935,7 +28336,8 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             }
           ]
         }
@@ -27718,7 +29120,7 @@
               ]
             },
             {
-              "name": "unk82",
+              "name": "minFadeDistance",
               "types": [
                 7
               ],
@@ -27726,10 +29128,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk83",
+              "name": "minDistance",
               "types": [
                 7
               ],
@@ -27737,10 +29140,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk84",
+              "name": "maxFadeDistance",
               "types": [
                 7
               ],
@@ -27748,10 +29152,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxFadeDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk85",
+              "name": "maxDistance",
               "types": [
                 7
               ],
@@ -27759,10 +29164,11 @@
               "max": -1,
               "seen": [
                 -1
-              ]
+              ],
+              "desc": "FXR3's common appearance field maxDistance (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk86",
+              "name": "minDistanceThreshold",
               "types": [
                 7
               ],
@@ -27772,10 +29178,11 @@
                 -1,
                 2.5,
                 5
-              ]
+              ],
+              "desc": "FXR3's common appearance field minDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1 / 2.5 / 5. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk87",
+              "name": "maxDistanceThreshold",
               "types": [
                 7
               ],
@@ -27783,9 +29190,46 @@
               "max": -1,
               "seen": [
                 -1
+              ],
+              "desc": "FXR3's common appearance field maxDistanceThreshold (fields2; -1 disables). Every BB appearance (a20, a27, a40, a59, a61, a66, a70, a71, a107, a108) ends in two RGBA sequences, an int and six floats that are -1 in nearly every effect, as FXR3's six distance fields are (default -1, in this order after an int). Values here: -1. Where both fade slots vary (a59, a107: minFadeDistance 5, minDistance 2.5) they keep FXR3's order, minDistance < minFadeDistance (FFX Schema Gaps Plan S7b)."
+            }
+          ],
+          "variants": {
+            "41": {
+              "from": 38,
+              "params": [
+                {
+                  "name": "unk38",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "41-param instances: alignment ambiguous between the 88-param layout's [52] and [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk39",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "41-param instances: alignment ambiguous between the 88-param layout's [54] and [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk40",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": null,
+                  "desc": "41-param instances: alignment ambiguous between the 88-param layout's [55] and [81] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
               ]
             }
-          ]
+          }
         }
       }
     },
@@ -30902,7 +32346,7 @@
               ]
             },
             {
-              "name": "unk163",
+              "name": "particleDurationMultiplier",
               "types": [
                 7
               ],
@@ -30913,7 +32357,8 @@
                 1,
                 1.2000000476837158,
                 2
-              ]
+              ],
+              "desc": "FXR3 (DS3) GPUStandardParticle fields1 [119] at BB's offset +44, which six named slots in a row fix: blendMode [149] … maxFrameIndex [154] = DS3 [105] … [110]. A float, 0.5–2 around 1 (FXR3's default 1) (FFX Schema Gaps Plan S7b)."
             },
             {
               "name": "unk164",
@@ -30930,7 +32375,7 @@
               ]
             },
             {
-              "name": "unk165",
+              "name": "particleSizeMultiplier",
               "types": [
                 7
               ],
@@ -30939,7 +32384,8 @@
               "seen": [
                 0.699999988079071,
                 1
-              ]
+              ],
+              "desc": "FXR3 (DS3) GPUStandardParticle fields1 [121] at offset +44 (see [163]). A float around 1 (FXR3's default 1) (FFX Schema Gaps Plan S7b)."
             },
             {
               "name": "unk166",
@@ -31200,7 +32646,7 @@
               ]
             },
             {
-              "name": "unk186",
+              "name": "limitUpdateDistance",
               "types": [
                 1
               ],
@@ -31209,18 +32655,20 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "FXR3 (DS3) GPUStandardParticle fields1 [142] at offset +44 (see [163]); a bool, 0 / 1 here (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk187",
+              "name": "updateDistance",
               "types": [
                 7
               ],
               "min": -1,
-              "max": 100
+              "max": 100,
+              "desc": "FXR3 (DS3) GPUStandardParticle fields1 [143] at offset +44 (see [163]); a float, −1..100 here (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk188",
+              "name": "particleCollision",
               "types": [
                 1
               ],
@@ -31229,10 +32677,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "FXR3 (DS3) GPUStandardParticle fields1 [144] at offset +44 (see [163]); a bool, 0 / 1 here (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk189",
+              "name": "particleBounciness",
               "types": [
                 7
               ],
@@ -31244,7 +32693,8 @@
                 0.10000000149011612,
                 0.20000000298023224,
                 0.5
-              ]
+              ],
+              "desc": "FXR3 (DS3) GPUStandardParticle fields1 [145] at offset +44 (see [163]); a float, 0–0.5 here (FFX Schema Gaps Plan S7b)."
             },
             {
               "name": "unk190",
@@ -31254,7 +32704,7 @@
               ]
             },
             {
-              "name": "unk191",
+              "name": "particleRandomTurns",
               "types": [
                 1
               ],
@@ -31263,7 +32713,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Provisional: FXR3 (DS3) GPUStandardParticle fields1 [146] at offset +46. [190] and [192] are sequences, which FXR3 keeps as properties, and BB a10000 places properties among its fields elsewhere too ([23]–[25], [64]–[66]); taking them as such, the fields after [189] keep DS3's order. A bool, 0 / 1 here (FFX Schema Gaps Plan S7b)."
             },
             {
               "name": "unk192",
@@ -31273,15 +32724,16 @@
               ]
             },
             {
-              "name": "unk193",
+              "name": "particleRandomTurnIntervalMax",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 60
+              "max": 60,
+              "desc": "Provisional: FXR3 (DS3) fields1 [147] at offset +46 (see [191]); an int, 0–60 here (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk194",
+              "name": "traceParticles",
               "types": [
                 1
               ],
@@ -31290,7 +32742,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Provisional: FXR3 (DS3) fields1 [148] at offset +46 (see [191]); a bool, 0 / 1 here (FFX Schema Gaps Plan S7b)."
             },
             {
               "name": "unk195",
@@ -31308,15 +32761,16 @@
               ]
             },
             {
-              "name": "unk196",
+              "name": "particleTraceLength",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 25
+              "max": 25,
+              "desc": "Provisional: FXR3 (DS3) fields1 [150] at offset +46 (see [191]); a float, 0–25 here (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk197",
+              "name": "traceParticlesThreshold",
               "types": [
                 7
               ],
@@ -31327,10 +32781,11 @@
                 0.014999999664723873,
                 0.05000000074505806,
                 0.10000000149011612
-              ]
+              ],
+              "desc": "Provisional: FXR3 (DS3) fields1 [151] at offset +46 (see [191]); a float, 0–0.1 here (FFX Schema Gaps Plan S7b)."
             },
             {
-              "name": "unk198",
+              "name": "traceParticleHead",
               "types": [
                 1
               ],
@@ -31339,7 +32794,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Provisional: FXR3 (DS3) fields1 [152] at offset +46 (see [191]); a bool, 0 / 1 here (FFX Schema Gaps Plan S7b)."
             },
             {
               "name": "unk199",
@@ -31535,7 +32991,397 @@
                 1
               ]
             }
-          ]
+          ],
+          "variants": {
+            "184": {
+              "from": 152,
+              "params": [
+                {
+                  "name": "unk152",
+                  "types": [
+                    1
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "like": 156,
+                  "desc": "184-param instances: as the 216-param layout's [156] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk153",
+                  "types": [
+                    1
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "like": 157,
+                  "desc": "184-param instances: as the 216-param layout's [157] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk154",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 158,
+                  "desc": "184-param instances: as the 216-param layout's [158] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk155",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 159,
+                  "desc": "184-param instances: as the 216-param layout's [159] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk156",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 160,
+                  "desc": "184-param instances: as the 216-param layout's [160] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk157",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 161,
+                  "desc": "184-param instances: as the 216-param layout's [161] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk158",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 162,
+                  "desc": "184-param instances: as the 216-param layout's [162] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "particleDurationMultiplier",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 163,
+                  "desc": "184-param instances: as the 216-param layout's [163] (FxModelCheck --variants, FFX Schema Gaps Plan S7c). FXR3 (DS3) GPUStandardParticle fields1 [119] at BB's offset +44, which six named slots in a row fix: blendMode [149] … maxFrameIndex [154] = DS3 [105] … [110]. A float, 0.5–2 around 1 (FXR3's default 1) (FFX Schema Gaps Plan S7b)."
+                },
+                {
+                  "name": "unk160",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 164,
+                  "desc": "184-param instances: as the 216-param layout's [164] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "particleSizeMultiplier",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 165,
+                  "desc": "184-param instances: as the 216-param layout's [165] (FxModelCheck --variants, FFX Schema Gaps Plan S7c). FXR3 (DS3) GPUStandardParticle fields1 [121] at offset +44 (see [163]). A float around 1 (FXR3's default 1) (FFX Schema Gaps Plan S7b)."
+                },
+                {
+                  "name": "unk162",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 166,
+                  "desc": "184-param instances: as the 216-param layout's [166] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk163",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 167,
+                  "desc": "184-param instances: as the 216-param layout's [167] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk164",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 168,
+                  "desc": "184-param instances: as the 216-param layout's [168] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk165",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 169,
+                  "desc": "184-param instances: as the 216-param layout's [169] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk166",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 170,
+                  "desc": "184-param instances: as the 216-param layout's [170] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk167",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 171,
+                  "desc": "184-param instances: as the 216-param layout's [171] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk168",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 172,
+                  "desc": "184-param instances: as the 216-param layout's [172] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk169",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 173,
+                  "desc": "184-param instances: as the 216-param layout's [173] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk170",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 174,
+                  "desc": "184-param instances: as the 216-param layout's [174] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk171",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 175,
+                  "desc": "184-param instances: as the 216-param layout's [175] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk172",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 176,
+                  "desc": "184-param instances: as the 216-param layout's [176] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk173",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 177,
+                  "desc": "184-param instances: as the 216-param layout's [177] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk174",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 178,
+                  "desc": "184-param instances: as the 216-param layout's [178] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk175",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 179,
+                  "desc": "184-param instances: as the 216-param layout's [179] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk176",
+                  "types": [
+                    10
+                  ],
+                  "like": 181,
+                  "desc": "184-param instances: as the 216-param layout's [181] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk177",
+                  "types": [
+                    14
+                  ],
+                  "like": 182,
+                  "desc": "184-param instances: as the 216-param layout's [182] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk178",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 183,
+                  "desc": "184-param instances: as the 216-param layout's [183] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk179",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.20000000298023224,
+                  "max": 0.20000000298023224,
+                  "like": 184,
+                  "desc": "184-param instances: as the 216-param layout's [184] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk180",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "184-param instances: alignment ambiguous between the 216-param layout's [185] and [202] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk181",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "184-param instances: alignment ambiguous between the 216-param layout's [188] and [205] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk182",
+                  "types": [
+                    7
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "184-param instances: alignment ambiguous between the 216-param layout's [189] and [209] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk183",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "184-param instances: alignment ambiguous between the 216-param layout's [193] and [210] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "194": {
+              "from": 191,
+              "params": [
+                {
+                  "name": "unk191",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": null,
+                  "desc": "194-param instances: alignment ambiguous between the 216-param layout's [193] and [202] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk192",
+                  "types": [
+                    11
+                  ],
+                  "like": null,
+                  "desc": "194-param instances: alignment ambiguous between the 216-param layout's [201] and [203] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk193",
+                  "types": [
+                    1
+                  ],
+                  "min": 2,
+                  "max": 2,
+                  "like": null,
+                  "desc": "194-param instances: alignment ambiguous between the 216-param layout's [202] and [210] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "200": {
+              "from": 199,
+              "params": [
+                {
+                  "name": "unk199",
+                  "types": [
+                    1
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 204,
+                  "desc": "200-param instances: as the 216-param layout's [204] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "205": {
+              "from": 204,
+              "params": [
+                {
+                  "name": "unk204",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": null,
+                  "desc": "205-param instances: alignment ambiguous between the 216-param layout's [205] and [210] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            }
+          }
         }
       }
     },
@@ -36831,7 +38677,7 @@
               "max": 4000
             },
             {
-              "name": "texture02",
+              "name": "normalMap",
               "types": [
                 40
               ],
@@ -36839,7 +38685,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "A normal map (FXR3 BillboardEx's normalMap, the texture after the main one). DarkSoulsII.exe: a15000's resources function loads this slot's texture (block+44) and, when one loaded, picks the Bump shader (Default_Bump / Default_ZFeather_Bump) instead of Default / Default_ZFeather. 0 (none) in every vanilla instance (FFX Schema Gaps Plan S7d)."
             },
             {
               "name": "unk03",
@@ -37040,7 +38887,7 @@
               "enum": "AttachMode_DS2"
             },
             {
-              "name": "unk24",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -37049,7 +38896,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Soft particles (FXR3 BillboardEx's depthBlend). DarkSoulsII.exe: a15000's resources function (140C02C70) picks the sprite shader by id 2 / 3 / 4 / 5, adding 2 when this slot (block+214) isn't 0. In the exe's sprite shader table (140BEFE00) that run is Default, Default_Bump, Default_ZFeather, Default_ZFeather_Bump: the slot turns on the ZFeather (depth-feathered) shader, as a15001's [33] does in the Multi family (FFX Schema Gaps Plan S7d)."
             },
             {
               "name": "unk25",
@@ -37363,7 +39211,332 @@
                 -1
               ]
             }
-          ]
+          ],
+          "variants": {
+            "42": {
+              "from": 35,
+              "params": [
+                {
+                  "name": "unk35",
+                  "types": [
+                    17,
+                    19,
+                    20
+                  ],
+                  "like": 39,
+                  "desc": "42-param instances: as the 48-param layout's [39] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk36",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 40,
+                  "desc": "42-param instances: as the 48-param layout's [40] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk37",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 41,
+                  "desc": "42-param instances: as the 48-param layout's [41] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk38",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 42,
+                  "desc": "42-param instances: as the 48-param layout's [42] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk39",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 43,
+                  "desc": "42-param instances: as the 48-param layout's [43] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk40",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 44,
+                  "desc": "42-param instances: as the 48-param layout's [44] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk41",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 45,
+                  "desc": "42-param instances: as the 48-param layout's [45] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "43": {
+              "from": 34,
+              "params": [
+                {
+                  "name": "unk34",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "like": null,
+                  "desc": "43-param instances: alignment ambiguous between the 48-param layout's [35] and [36] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk35",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 38,
+                  "desc": "43-param instances: as the 48-param layout's [38] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk36",
+                  "types": [
+                    20
+                  ],
+                  "like": 39,
+                  "desc": "43-param instances: as the 48-param layout's [39] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk37",
+                  "types": [
+                    1
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "like": 40,
+                  "desc": "43-param instances: as the 48-param layout's [40] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk38",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 41,
+                  "desc": "43-param instances: as the 48-param layout's [41] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk39",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "like": 42,
+                  "desc": "43-param instances: as the 48-param layout's [42] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk40",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "like": 43,
+                  "desc": "43-param instances: as the 48-param layout's [43] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk41",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "like": 44,
+                  "desc": "43-param instances: as the 48-param layout's [44] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk42",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "like": 45,
+                  "desc": "43-param instances: as the 48-param layout's [45] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "46": {
+              "from": 36,
+              "params": [
+                {
+                  "name": "unk36",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 38,
+                  "desc": "46-param instances: as the 48-param layout's [38] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk37",
+                  "types": [
+                    17,
+                    19,
+                    20
+                  ],
+                  "like": 39,
+                  "desc": "46-param instances: as the 48-param layout's [39] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk38",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 40,
+                  "desc": "46-param instances: as the 48-param layout's [40] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk39",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 41,
+                  "desc": "46-param instances: as the 48-param layout's [41] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk40",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 42,
+                  "desc": "46-param instances: as the 48-param layout's [42] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk41",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 43,
+                  "desc": "46-param instances: as the 48-param layout's [43] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk42",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 44,
+                  "desc": "46-param instances: as the 48-param layout's [44] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk43",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 45,
+                  "desc": "46-param instances: as the 48-param layout's [45] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk44",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 46,
+                  "desc": "46-param instances: as the 48-param layout's [46] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk45",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 47,
+                  "desc": "46-param instances: as the 48-param layout's [47] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            }
+          }
         },
         "DS2S": "DS2"
       }
@@ -37654,7 +39827,7 @@
               "enum": "AttachMode_DS2"
             },
             {
-              "name": "unk33",
+              "name": "depthBlend",
               "types": [
                 1
               ],
@@ -37663,7 +39836,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "Soft particles (FXR3 BillboardEx's depthBlend). DarkSoulsII.exe: a15001's resources function (140C07D70) loads the three textures, then picks the sprite shader by id: 6 / 7 with a third texture, 8 / 9 without, adding 1 when this slot (compiled to block+2D4) isn't 0. In the exe's sprite shader table (140BEFE00) that run is Multi_CC, Multi_CC_ZFeather, Multi_2Sampler_C, Multi_ZFeather_2Sampler_C: the slot turns on the ZFeather (depth-feathered) shader. a15000's flag does the same in the Default family (FFX Schema Gaps Plan S7d)."
             },
             {
               "name": "unk34",
@@ -38114,7 +40288,837 @@
                 50
               ]
             }
-          ]
+          ],
+          "variants": {
+            "67": {
+              "from": 47,
+              "params": [
+                {
+                  "name": "unk47",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 50,
+                  "desc": "67-param instances: as the 72-param layout's [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk48",
+                  "types": [
+                    17,
+                    19,
+                    20
+                  ],
+                  "like": 51,
+                  "desc": "67-param instances: as the 72-param layout's [51] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk49",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 52,
+                  "desc": "67-param instances: as the 72-param layout's [52] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk50",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 53,
+                  "desc": "67-param instances: as the 72-param layout's [53] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk51",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 54,
+                  "desc": "67-param instances: as the 72-param layout's [54] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk52",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 55,
+                  "desc": "67-param instances: as the 72-param layout's [55] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk53",
+                  "types": [
+                    15
+                  ],
+                  "like": 56,
+                  "desc": "67-param instances: as the 72-param layout's [56] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk54",
+                  "types": [
+                    15
+                  ],
+                  "like": 57,
+                  "desc": "67-param instances: as the 72-param layout's [57] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk55",
+                  "types": [
+                    15
+                  ],
+                  "like": 58,
+                  "desc": "67-param instances: as the 72-param layout's [58] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk56",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 59,
+                  "desc": "67-param instances: as the 72-param layout's [59] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk57",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 1,
+                  "seen": [
+                    1
+                  ],
+                  "like": 60,
+                  "desc": "67-param instances: as the 72-param layout's [60] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 61,
+                  "desc": "67-param instances: as the 72-param layout's [61] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.125,
+                  "max": 2,
+                  "seen": [
+                    0.125,
+                    0.25,
+                    1,
+                    2
+                  ],
+                  "like": 62,
+                  "desc": "67-param instances: as the 72-param layout's [62] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk60",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 63,
+                  "desc": "67-param instances: as the 72-param layout's [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk61",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.125,
+                  "max": 1,
+                  "seen": [
+                    0.125,
+                    0.25,
+                    1
+                  ],
+                  "like": 64,
+                  "desc": "67-param instances: as the 72-param layout's [64] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk62",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 65,
+                  "desc": "67-param instances: as the 72-param layout's [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk63",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 66,
+                  "desc": "67-param instances: as the 72-param layout's [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk64",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 67,
+                  "desc": "67-param instances: as the 72-param layout's [67] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk65",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 0,
+                  "seen": [
+                    -1,
+                    0
+                  ],
+                  "like": 68,
+                  "desc": "67-param instances: as the 72-param layout's [68] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk66",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 69,
+                  "desc": "67-param instances: as the 72-param layout's [69] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "68": {
+              "from": 48,
+              "params": [
+                {
+                  "name": "unk48",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 50,
+                  "desc": "68-param instances: as the 72-param layout's [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk49",
+                  "types": [
+                    17,
+                    19,
+                    20
+                  ],
+                  "like": 51,
+                  "desc": "68-param instances: as the 72-param layout's [51] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk50",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 52,
+                  "desc": "68-param instances: as the 72-param layout's [52] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk51",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 53,
+                  "desc": "68-param instances: as the 72-param layout's [53] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk52",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 54,
+                  "desc": "68-param instances: as the 72-param layout's [54] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk53",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 55,
+                  "desc": "68-param instances: as the 72-param layout's [55] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk54",
+                  "types": [
+                    15
+                  ],
+                  "like": 56,
+                  "desc": "68-param instances: as the 72-param layout's [56] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk55",
+                  "types": [
+                    15
+                  ],
+                  "like": 57,
+                  "desc": "68-param instances: as the 72-param layout's [57] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk56",
+                  "types": [
+                    15
+                  ],
+                  "like": 58,
+                  "desc": "68-param instances: as the 72-param layout's [58] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk57",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 59,
+                  "desc": "68-param instances: as the 72-param layout's [59] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 60,
+                  "desc": "68-param instances: as the 72-param layout's [60] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 61,
+                  "desc": "68-param instances: as the 72-param layout's [61] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk60",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.125,
+                  "max": 2,
+                  "seen": [
+                    0.125,
+                    0.15000000596046448,
+                    0.25,
+                    1,
+                    2
+                  ],
+                  "like": 62,
+                  "desc": "68-param instances: as the 72-param layout's [62] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk61",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 63,
+                  "desc": "68-param instances: as the 72-param layout's [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk62",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.125,
+                  "max": 2,
+                  "seen": [
+                    0.125,
+                    0.25,
+                    1,
+                    2
+                  ],
+                  "like": 64,
+                  "desc": "68-param instances: as the 72-param layout's [64] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk63",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 65,
+                  "desc": "68-param instances: as the 72-param layout's [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk64",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 66,
+                  "desc": "68-param instances: as the 72-param layout's [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk65",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 67,
+                  "desc": "68-param instances: as the 72-param layout's [67] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk66",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 0,
+                  "seen": [
+                    -1,
+                    0
+                  ],
+                  "like": 68,
+                  "desc": "68-param instances: as the 72-param layout's [68] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk67",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 69,
+                  "desc": "68-param instances: as the 72-param layout's [69] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            },
+            "70": {
+              "from": 48,
+              "params": [
+                {
+                  "name": "unk48",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 50,
+                  "desc": "70-param instances: as the 72-param layout's [50] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk49",
+                  "types": [
+                    17,
+                    19,
+                    20
+                  ],
+                  "like": 51,
+                  "desc": "70-param instances: as the 72-param layout's [51] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk50",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 52,
+                  "desc": "70-param instances: as the 72-param layout's [52] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk51",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 53,
+                  "desc": "70-param instances: as the 72-param layout's [53] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk52",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 54,
+                  "desc": "70-param instances: as the 72-param layout's [54] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk53",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 2,
+                  "seen": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "like": 55,
+                  "desc": "70-param instances: as the 72-param layout's [55] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk54",
+                  "types": [
+                    15
+                  ],
+                  "like": 56,
+                  "desc": "70-param instances: as the 72-param layout's [56] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk55",
+                  "types": [
+                    15
+                  ],
+                  "like": 57,
+                  "desc": "70-param instances: as the 72-param layout's [57] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk56",
+                  "types": [
+                    15
+                  ],
+                  "like": 58,
+                  "desc": "70-param instances: as the 72-param layout's [58] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk57",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 4,
+                  "seen": [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  "like": 59,
+                  "desc": "70-param instances: as the 72-param layout's [59] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk58",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 2,
+                  "seen": [
+                    1,
+                    2
+                  ],
+                  "like": 60,
+                  "desc": "70-param instances: as the 72-param layout's [60] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk59",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 30,
+                  "seen": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    10,
+                    30
+                  ],
+                  "like": 61,
+                  "desc": "70-param instances: as the 72-param layout's [61] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk60",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.125,
+                  "max": 60,
+                  "like": 62,
+                  "desc": "70-param instances: as the 72-param layout's [62] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk61",
+                  "types": [
+                    7
+                  ],
+                  "min": 1,
+                  "max": 20,
+                  "like": 63,
+                  "desc": "70-param instances: as the 72-param layout's [63] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk62",
+                  "types": [
+                    7
+                  ],
+                  "min": 0.10000000149011612,
+                  "max": 40,
+                  "like": 64,
+                  "desc": "70-param instances: as the 72-param layout's [64] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk63",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 65,
+                  "desc": "70-param instances: as the 72-param layout's [65] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk64",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 20,
+                  "seen": [
+                    -1,
+                    3,
+                    5,
+                    7.5,
+                    9,
+                    15,
+                    20
+                  ],
+                  "like": 66,
+                  "desc": "70-param instances: as the 72-param layout's [66] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk65",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 35,
+                  "seen": [
+                    -1,
+                    20,
+                    30,
+                    35
+                  ],
+                  "like": 67,
+                  "desc": "70-param instances: as the 72-param layout's [67] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk66",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 2.5,
+                  "like": 68,
+                  "desc": "70-param instances: as the 72-param layout's [68] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk67",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 69,
+                  "desc": "70-param instances: as the 72-param layout's [69] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk68",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 10,
+                  "seen": [
+                    -1,
+                    0,
+                    1,
+                    2,
+                    2.5,
+                    3.5,
+                    5,
+                    10
+                  ],
+                  "like": 70,
+                  "desc": "70-param instances: as the 72-param layout's [70] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk69",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": 50,
+                  "seen": [
+                    -1,
+                    25,
+                    40,
+                    50
+                  ],
+                  "like": 71,
+                  "desc": "70-param instances: as the 72-param layout's [71] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            }
+          }
         },
         "DS2S": "DS2"
       }
@@ -38462,7 +41466,155 @@
                 -1
               ]
             }
-          ]
+          ],
+          "variants": {
+            "26": {
+              "from": 15,
+              "params": [
+                {
+                  "name": "unk15",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 17,
+                  "desc": "26-param instances: as the 28-param layout's [17] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk16",
+                  "types": [
+                    17,
+                    19
+                  ],
+                  "like": 18,
+                  "desc": "26-param instances: as the 28-param layout's [18] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk17",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 19,
+                  "desc": "26-param instances: as the 28-param layout's [19] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk18",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 0,
+                  "seen": [
+                    0
+                  ],
+                  "like": 20,
+                  "desc": "26-param instances: as the 28-param layout's [20] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk19",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 21,
+                  "desc": "26-param instances: as the 28-param layout's [21] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk20",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 22,
+                  "desc": "26-param instances: as the 28-param layout's [22] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk21",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 23,
+                  "desc": "26-param instances: as the 28-param layout's [23] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk22",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 24,
+                  "desc": "26-param instances: as the 28-param layout's [24] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk23",
+                  "types": [
+                    1
+                  ],
+                  "min": 0,
+                  "max": 1,
+                  "seen": [
+                    0,
+                    1
+                  ],
+                  "like": 25,
+                  "desc": "26-param instances: as the 28-param layout's [25] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk24",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 26,
+                  "desc": "26-param instances: as the 28-param layout's [26] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                },
+                {
+                  "name": "unk25",
+                  "types": [
+                    7
+                  ],
+                  "min": -1,
+                  "max": -1,
+                  "seen": [
+                    -1
+                  ],
+                  "like": 27,
+                  "desc": "26-param instances: as the 28-param layout's [27] (FxModelCheck --variants, FFX Schema Gaps Plan S7c)."
+                }
+              ]
+            }
+          }
         },
         "DS2S": "DS2"
       }
@@ -45266,7 +48418,7 @@
       }
     },
     "BlendMode_DES": {
-      "desc": "BlendMode values in DES: FXR3's BlendMode members (fxr_schema.json), plus any value vanilla DES uses that FXR3 lacks. Vanilla uses 0, 1, 2, 4, 5 (a43 [17] blendMode; a61 [8] blendMode; a66 [2] blendMode; a71 [5] blendMode). Each member says whether DES is known to agree (FFX Schema Gaps Plan S3).",
+      "desc": "BlendMode values in DES: FXR3's BlendMode members (fxr_schema.json), plus any value vanilla DES uses that FXR3 lacks. Vanilla uses 0, 1, 2, 4, 5 (a20 [4] blendMode; a43 [17] blendMode; a61 [8] blendMode; a66 [2] blendMode; a71 [5] blendMode). Each member says whether DES is known to agree (FFX Schema Gaps Plan S3).",
       "members": {
         "Unk0": {
           "value": 0,
@@ -45718,7 +48870,7 @@
       }
     },
     "OrientationMode_DES": {
-      "desc": "OrientationMode values in DES: FXR3's OrientationMode members (fxr_schema.json), plus any value vanilla DES uses that FXR3 lacks. Vanilla uses 0, 1 (a43 [2] orientationMode). Each member says whether DES is known to agree (FFX Schema Gaps Plan S3).",
+      "desc": "OrientationMode values in DES: FXR3's OrientationMode members (fxr_schema.json), plus any value vanilla DES uses that FXR3 lacks. Vanilla uses 0, 1 (a20 [3] orientationMode; a43 [2] orientationMode; a71 [4] orientationMode). Each member says whether DES is known to agree (FFX Schema Gaps Plan S3).",
       "members": {
         "South": {
           "value": 0,

@@ -61,6 +61,9 @@ namespace SoulsFormats
         /// <summary>A node type's layout in a game, or null.</summary>
         public FfxActionLayout NodeLayout(int effectId, FfxGame game) =>
             nodeTypes.TryGetValue(effectId, out var n) && n.Games.TryGetValue(game, out var l) ? l : null;
+
+        /// <summary>A node type's layout for a call with <paramref name="count"/> params (its per-count tail when it has one), or null.</summary>
+        public FfxActionLayout NodeLayout(int effectId, FfxGame game, int count) => NodeLayout(effectId, game)?.ForCount(count);
         private readonly Dictionary<string, FfxActionDef> effectParams = new();
 
         public static FfxSchema Load(string path) => Parse(File.ReadAllText(path));
@@ -150,21 +153,22 @@ namespace SoulsFormats
                 {
                     int i = 0;
                     foreach (var p in ps.EnumerateArray())
-                    {
-                        layout.Params.Add(new FfxParamDef
-                        {
-                            Index = i++,
-                            Name = Str(p, "name"),
-                            Types = p.TryGetProperty("types", out var t) ? t.EnumerateArray().Select(x => x.GetInt32()).ToArray() : Array.Empty<int>(),
-                            Min = p.TryGetProperty("min", out var mn) ? mn.GetDouble() : null,
-                            Max = p.TryGetProperty("max", out var mx) ? mx.GetDouble() : null,
-                            Seen = p.TryGetProperty("seen", out var sn) ? sn.EnumerateArray().Select(x => x.GetDouble()).ToArray() : null,
-                            Desc = Str(p, "desc"),
-                            Unit = Str(p, "unit"),
-                            Enum = Str(p, "enum"),
-                        });
-                    }
+                        layout.Params.Add(ReadParam(p, i++));
                 }
+                // per-count tails (FFX Schema Gaps Plan S7c): "variants": { "<count>": { "from": i, "params": [...] } }
+                if (g.Value.TryGetProperty("variants", out var vs) && vs.ValueKind == JsonValueKind.Object)
+                    foreach (var v in vs.EnumerateObject())
+                    {
+                        if (!int.TryParse(v.Name, out int count) || !v.Value.TryGetProperty("from", out var fr)) continue;
+                        var variant = new FfxLayoutVariant { Count = count, From = fr.GetInt32() };
+                        if (v.Value.TryGetProperty("params", out var vp))
+                        {
+                            int i = variant.From;
+                            foreach (var p in vp.EnumerateArray())
+                                variant.Params.Add(ReadParam(p, i++));
+                        }
+                        layout.Variants[count] = variant;
+                    }
                 def.Games[game] = layout;
             }
             foreach (var (game, b) in aliases)
@@ -172,6 +176,19 @@ namespace SoulsFormats
                     def.Games[game] = bl;
             return def;
         }
+
+        private static FfxParamDef ReadParam(JsonElement p, int index) => new FfxParamDef
+        {
+            Index = index,
+            Name = Str(p, "name"),
+            Types = p.TryGetProperty("types", out var t) ? t.EnumerateArray().Select(x => x.GetInt32()).ToArray() : Array.Empty<int>(),
+            Min = p.TryGetProperty("min", out var mn) ? mn.GetDouble() : null,
+            Max = p.TryGetProperty("max", out var mx) ? mx.GetDouble() : null,
+            Seen = p.TryGetProperty("seen", out var sn) ? sn.EnumerateArray().Select(x => x.GetDouble()).ToArray() : null,
+            Desc = Str(p, "desc"),
+            Unit = Str(p, "unit"),
+            Enum = Str(p, "enum"),
+        };
 
         private static string Str(JsonElement e, string prop) =>
             e.ValueKind == JsonValueKind.Object && e.TryGetProperty(prop, out var v) && v.ValueKind == JsonValueKind.String ? v.GetString() : null;
@@ -187,6 +204,9 @@ namespace SoulsFormats
         /// <summary>An action's layout in a game, or null when the schema has none.</summary>
         public FfxActionLayout Layout(int actionId, FfxGame game) =>
             actions.TryGetValue(actionId, out var a) && a.Games.TryGetValue(game, out var l) ? l : null;
+
+        /// <summary>An action's layout for an instance with <paramref name="count"/> params (its per-count tail when it has one), or null.</summary>
+        public FfxActionLayout Layout(int actionId, FfxGame game, int count) => Layout(actionId, game)?.ForCount(count);
 
         /// <summary>The game an FFXDLSE file belongs to, from its stream format; DS2 files can't tell DS2 from DS2S.</summary>
         public static FfxGame GameOf(FFXDLSE ffx) => ffx.Format == FFXDLSE.StreamFormat.DES ? FfxGame.DES : FfxGame.DS2;
@@ -221,6 +241,43 @@ namespace SoulsFormats
         /// <summary>Every param count seen in vanilla.</summary>
         public int[] ParamCounts;
         /// <summary>One entry per slot up to the largest count.</summary>
+        public List<FfxParamDef> Params = new();
+
+        /// <summary>
+        /// Per-count tails (hand data, FFX Schema Gaps Plan S7c): an instance with this many params keeps
+        /// <see cref="Params"/> up to <see cref="FfxLayoutVariant.From"/> and the variant's slots from there, because a
+        /// shorter list isn't always a prefix of the longest (DS2's a15001 drops floats from the middle of its tail).
+        /// </summary>
+        public Dictionary<int, FfxLayoutVariant> Variants = new();
+
+        private readonly Dictionary<int, FfxActionLayout> byCount = new();
+
+        /// <summary>
+        /// The layout an instance with <paramref name="count"/> params reads: this one, or (when a variant is defined
+        /// for that count) its shared slots followed by the variant's. Cached; the result has no variants itself.
+        /// </summary>
+        public FfxActionLayout ForCount(int count)
+        {
+            if (Variants.Count == 0 || !Variants.TryGetValue(count, out var v))
+                return this;
+            lock (byCount)
+            {
+                if (byCount.TryGetValue(count, out var cached))
+                    return cached;
+                var resolved = new FfxActionLayout { ParamCounts = ParamCounts };
+                resolved.Params.AddRange(Params.Take(Math.Min(v.From, Params.Count)));
+                resolved.Params.AddRange(v.Params);
+                byCount[count] = resolved;
+                return resolved;
+            }
+        }
+    }
+
+    /// <summary>The slots an instance with <see cref="Count"/> params has from index <see cref="From"/> on.</summary>
+    public class FfxLayoutVariant
+    {
+        public int Count;
+        public int From;
         public List<FfxParamDef> Params = new();
     }
 
@@ -268,7 +325,9 @@ namespace SoulsFormats
         public FfxSchema Schema { get; }
         public FfxGame Game { get; }
         public FfxActionDef Def { get; }
-        public FfxActionLayout Layout { get; }
+        private readonly FfxActionLayout baseLayout;
+        /// <summary>The layout for this list's current param count (its per-count tail when it has one).</summary>
+        public FfxActionLayout Layout => baseLayout?.ForCount(List?.Params.Count ?? 0);
         public FFXDLSE.ParamList List { get; }
 
         public FfxActionView(FfxSchema schema, FfxGame game, int actionId, FFXDLSE.ParamList list)
@@ -280,7 +339,7 @@ namespace SoulsFormats
             {
                 Def = def;
                 def.Games.TryGetValue(game, out var layout);
-                Layout = layout;
+                baseLayout = layout;
             }
         }
 
@@ -291,7 +350,7 @@ namespace SoulsFormats
             List = list;
             Def = def;
             if (def != null && def.Games.TryGetValue(game, out var layout))
-                Layout = layout;
+                baseLayout = layout;
         }
 
         /// <summary>A view of an effect's ParamList1 (index 1) or ParamList2 (index 2).</summary>

@@ -551,7 +551,8 @@ public class Fxr1ActionAdapter : IFxAction, IFxSnapshot
     public int TypeId { get; }
     public object Source => source;
 
-    public FfxActionLayout Layout => def != null && def.Games.TryGetValue(Owner.Game, out var l) ? l : null;
+    /// <summary>The layout for this action's current node count (its per-count tail when it has one, FFX Schema Gaps Plan S7c).</summary>
+    public FfxActionLayout Layout => def != null && def.Games.TryGetValue(Owner.Game, out var l) ? l.ForCount(Container?.FXNodes?.Count ?? 0) : null;
     public FfxParamDef ParamDef(int index) => Layout is { } l && index < l.Params.Count ? l.Params[index] : null;
 
     public virtual string Name => def?.Name;

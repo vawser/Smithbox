@@ -205,7 +205,7 @@ public static class FfxEffectDefBuilder
                 return new FxNodeDef { Kind = FxNodeKind.Proxy, ProxyEffectId = id, Source = call.Source };
             }
 
-            var layout = schema.NodeLayout(id, game);
+            var layout = schema.NodeLayout(id, game, values.Count);
             if (layout == null) Note($"node type {id} without a layout");
             string NameOf(int k) => layout != null && k < layout.Params.Count ? layout.Params[k].Name : null;
             int Slot(string name)
@@ -827,7 +827,8 @@ public static class FfxEffectDefBuilder
                 d.LimitEmissions = F("limitEmissionCount") != 0;
                 d.EmissionLimit = (int)F("emissionCountLimit");
                 float life = F("particleDuration", 30) + (F("particleDurationMin") + F("particleDurationMax")) / 2;
-                d.Duration = Math.Max(1, life) * frame;
+                // the life multiplier (FFX Schema Gaps Plan S7b: BB [163], DS3's fields1 [119]), as FXR3's builder applies it
+                d.Duration = Math.Max(1, life) * frame * F("particleDurationMultiplier", 1);
             }
             else
             {
@@ -846,6 +847,8 @@ public static class FfxEffectDefBuilder
                 d.SizeXMax = F("particleSizeXMax");
                 d.SizeYMin = F("particleSizeYMin");
                 d.SizeYMax = F("particleSizeYMax");
+                // FFX Schema Gaps Plan S7b: BB [165], DS3's fields1 [121]
+                d.SizeMultiplier = F("particleSizeMultiplier", 1);
                 d.GrowthRateX = Value(n.GetValueOrDefault("particleGrowthRateX"), FxArgument.ParticleAge);
                 d.GrowthRateY = Value(n.GetValueOrDefault("particleGrowthRateY"), FxArgument.ParticleAge);
                 d.GrowthStaticX = F("particleGrowthRateXStatic");
@@ -1005,10 +1008,10 @@ public static class FfxEffectDefBuilder
         /// <summary>The schema slot an action's own value is in, or null (an ActionData value, no layout).</summary>
         private FfxParamDef SlotOf(IFxAction a, IFxValue v)
         {
-            var layout = schema.Layout(a.TypeId, game);
+            var values = a.Values;
+            var layout = schema.Layout(a.TypeId, game, values.Count);
             if (layout == null)
                 return null;
-            var values = a.Values;
             for (int k = 0; k < values.Count && k < layout.Params.Count; k++)
                 if (ReferenceEquals(values[k], v))
                     return layout.Params[k];
