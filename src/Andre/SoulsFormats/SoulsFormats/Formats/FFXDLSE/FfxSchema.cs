@@ -40,6 +40,14 @@ namespace SoulsFormats
         public IReadOnlyDictionary<int, FfxActionDef> Actions => actions;
         private readonly Dictionary<int, FfxActionDef> actions = new();
 
+        /// <summary>
+        /// Named int values (hand data, FFX Schema Gaps Plan S3), keyed by name. One enum per game where the values
+        /// differ (e.g. "BlendMode_DS2"); a slot names its enum in <see cref="FfxParamDef.Enum"/>. Same layout as
+        /// fxr_schema.json's enums.
+        /// </summary>
+        public IReadOnlyDictionary<string, FfxEnumDef> Enums => enums;
+        private readonly Dictionary<string, FfxEnumDef> enums = new();
+
         /// <summary>The effect-level param lists: "effect1" (ParamList1) and "effect2" (ParamList2).</summary>
         public IReadOnlyDictionary<string, FfxActionDef> EffectParams => effectParams;
 
@@ -94,6 +102,17 @@ namespace SoulsFormats
                 foreach (var p in eps.EnumerateObject())
                     schema.effectParams[p.Name] = ReadAction(p.Name, p.Value);
 
+            if (root.TryGetProperty("enums", out var ens))
+                foreach (var p in ens.EnumerateObject())
+                {
+                    var en = new FfxEnumDef { Name = p.Name, Desc = Str(p.Value, "desc") };
+                    if (p.Value.TryGetProperty("members", out var ms))
+                        foreach (var m in ms.EnumerateObject())
+                            if (m.Value.TryGetProperty("value", out var v) && v.TryGetInt32(out int iv))
+                                en.Members.Add(new FfxEnumMemberDef { Name = m.Name, Value = iv, Desc = Str(m.Value, "desc") });
+                    schema.enums[p.Name] = en;
+                }
+
             return schema;
         }
 
@@ -142,6 +161,7 @@ namespace SoulsFormats
                             Seen = p.TryGetProperty("seen", out var sn) ? sn.EnumerateArray().Select(x => x.GetDouble()).ToArray() : null,
                             Desc = Str(p, "desc"),
                             Unit = Str(p, "unit"),
+                            Enum = Str(p, "enum"),
                         });
                     }
                 }
@@ -220,6 +240,23 @@ namespace SoulsFormats
         /// slot that holds radians (DS2's a71 rotations) where the others hold degrees. Null: the usual unit.
         /// </summary>
         public string Unit;
+        /// <summary>The name of the slot's enum in <see cref="FfxSchema.Enums"/> (hand field), or null.</summary>
+        public string Enum;
+    }
+
+    public class FfxEnumDef
+    {
+        public string Name;
+        public string Desc;
+        /// <summary>In schema order.</summary>
+        public List<FfxEnumMemberDef> Members = new();
+    }
+
+    public class FfxEnumMemberDef
+    {
+        public string Name;
+        public int Value;
+        public string Desc;
     }
 
     /// <summary>

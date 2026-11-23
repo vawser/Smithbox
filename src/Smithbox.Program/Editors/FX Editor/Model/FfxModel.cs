@@ -549,10 +549,10 @@ public sealed class FfxValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFx
     public bool IsUnknown => Name.StartsWith("unk", StringComparison.Ordinal) || Name.StartsWith("param", StringComparison.Ordinal);
     public bool IsStored => true;
     public string Description => Def?.Desc;
-    public string Enum => null;
+    public string Enum => FfxEnums.Name(owner.Schema, Def);
     public string Resource => Param is Param40 ? "texture" : null;
     public string TextureType => null;
-    public IReadOnlyList<FxEnumMember> EnumMembers => Array.Empty<FxEnumMember>();
+    public IReadOnlyList<FxEnumMember> EnumMembers => FfxEnums.Members(owner.Schema, Def);
     public string Argument => null;
     public bool IsConverted => false;
     public bool IsColor => Param is Param15 or Param17 or Param18 or Param19 or Param20 or Param21;
@@ -805,4 +805,19 @@ public sealed class FfxValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFx
         Param84 w => Color(w.Color),
         _ => Array.Empty<double>(),
     };
+}
+
+/// <summary>
+/// A schema slot's enum for the Inspector's combo (FFX Schema Gaps Plan S3), shared by the DLSE and FXR1 adapters.
+/// Null / empty when the slot names no enum or the enum isn't in the schema.
+/// </summary>
+internal static class FfxEnums
+{
+    public static string Name(FfxSchema schema, FfxParamDef def) =>
+        def?.Enum != null && schema.Enums.ContainsKey(def.Enum) ? def.Enum : null;
+
+    public static IReadOnlyList<FxEnumMember> Members(FfxSchema schema, FfxParamDef def) =>
+        def?.Enum != null && schema.Enums.TryGetValue(def.Enum, out var en)
+            ? en.Members.Select(m => new FxEnumMember(m.Name, m.Value, m.Desc)).ToList()
+            : Array.Empty<FxEnumMember>();
 }

@@ -719,10 +719,10 @@ public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IF
     public bool IsUnknown => Name.StartsWith("unk", StringComparison.Ordinal) || Name.StartsWith("param", StringComparison.Ordinal);
     public bool IsStored => true;
     public string Description => Def?.Desc;
-    public string Enum => null;
+    public string Enum => FfxEnums.Name(owner.Schema, Def);
     public string Resource => Node is TextureNode40 ? "texture" : null;
     public string TextureType => null;
-    public IReadOnlyList<FxEnumMember> EnumMembers => Array.Empty<FxEnumMember>();
+    public IReadOnlyList<FxEnumMember> EnumMembers => FfxEnums.Members(owner.Schema, Def);
     public string Argument => null;
     public bool IsConverted => false;
 

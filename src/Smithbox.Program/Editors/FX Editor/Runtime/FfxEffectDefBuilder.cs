@@ -294,7 +294,8 @@ public static class FfxEffectDefBuilder
         /// A node action passed to a node type (§20.23), read by its slot names as FXR3's: the transform (offset,
         /// rotation in degrees, and for RandomNodeTransform their variances), the spin (angular speed and multiplier
         /// per axis) and the acceleration (speed and acceleration along Z, acceleration along Y). (provisional) A
-        /// Float2 range reads its first value; the spin is taken as degrees per second.
+        /// Float2 range reads its first value; the spin speed is converted to degrees per second when its slot is
+        /// <c>unit: "radians"</c> (as every older game's a34 / a113 is, FFX Schema Gaps Plan S5).
         /// </summary>
         private void NodeActions(FxConfigDef c, IFxAction a)
         {
@@ -318,7 +319,9 @@ public static class FfxEffectDefBuilder
             if (n.ContainsKey("angularSpeedX"))
                 c.NodeSpin = new[] { "X", "Y", "Z" }.SelectMany(ax => new[]
                 {
-                    Value(n.GetValueOrDefault("angularSpeed" + ax), FxArgument.ActiveTime),
+                    // the speed in the slot's unit: the older games store node spin as radians per second (S5 of the
+                    // FFX Schema Gaps Plan: 3.14 = 180°/s, 17.45 = 1000°/s), the runtime turns it in degrees per second
+                    Angle(a, n.GetValueOrDefault("angularSpeed" + ax), FxArgument.ActiveTime),
                     Value(n.GetValueOrDefault("angularSpeedMultiplier" + ax), FxArgument.ActiveTime),
                 }).ToArray();
             if (n.ContainsKey("accelerationZ") || n.ContainsKey("speedZ"))
@@ -989,14 +992,14 @@ public static class FfxEffectDefBuilder
         /// says <c>unit: "radians"</c> (§20.17): DS2's a71 stores its rotations as radians ([0, 6.28]), while DS2's own
         /// a15000 / a15001 store degrees ([90, 90], [0, 360], [180, 180]), so the unit is per slot, not per game.
         /// </summary>
-        private FxValue Angle(IFxAction a, IFxValue v)
+        private FxValue Angle(IFxAction a, IFxValue v, FxArgument arg = FxArgument.ParticleAge)
         {
             var c = v == null ? null : ToCurve(v);
             if (c == null)
                 return null;
             if (SlotOf(a, v)?.Unit == "radians")
                 for (int i = 0; i < c.Components; i++) c.ScaleComponent(i, 180 / Math.PI);
-            return FxValue.FromCurve(c, FxArgument.ParticleAge);
+            return FxValue.FromCurve(c, arg);
         }
 
         /// <summary>The schema slot an action's own value is in, or null (an ActionData value, no layout).</summary>
