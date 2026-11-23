@@ -40,6 +40,7 @@ public class ViewportGrid
     {
         var proxy = new DebugPrimitiveRenderableProxy(renderlist, new DbgPrimGridPlane());
         proxy.RenderTranslucent = true;
+        proxy.RenderBeforeTranslucents = true;
         proxy.RenderOccludedOnly = occludedOnly;
         proxy.Pickable = false;
         proxy.Visible = false;

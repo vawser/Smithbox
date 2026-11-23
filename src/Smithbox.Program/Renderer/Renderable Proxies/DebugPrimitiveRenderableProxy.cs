@@ -37,6 +37,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private bool _pickable = true;
     private bool _translucent;
     private bool _occludedOnly;
+    private bool _beforeTranslucents;
     protected Pipeline? _pickingPipeline;
 
     protected Pipeline? _pipeline;
@@ -75,6 +76,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         _pickable = clone._pickable;
         _translucent = clone._translucent;
         _occludedOnly = clone._occludedOnly;
+        _beforeTranslucents = clone._beforeTranslucents;
         if (clone._hasColorVariance)
         {
             ColorHelper.ApplyColorVariance(this);
@@ -340,6 +342,26 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     }
 
     /// <summary>
+    /// For a translucent primitive: drawn before every other translucent object instead of being sorted among them
+    /// by the distance to its center. For something as large as the viewport grid, whose center is under the camera,
+    /// that distance says nothing, and sorting by it drew the grid over particles and other effects behind it.
+    /// Other translucent objects then always draw over this one; it still hides behind opaque geometry by depth.
+    /// </summary>
+    public bool RenderBeforeTranslucents
+    {
+        get => _beforeTranslucents;
+        set
+        {
+            var old = _beforeTranslucents;
+            _beforeTranslucents = value;
+            if (_registered && _beforeTranslucents != old)
+            {
+                ScheduleRenderableConstruction();
+            }
+        }
+    }
+
+    /// <summary>
     /// Draws only the parts of this primitive that are hidden behind other surfaces, and doesn't write depth.
     /// Paired with a normal copy of the primitive, this shows what is behind geometry, usually more faintly.
     /// </summary>
@@ -589,8 +611,12 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         // Instantiate renderable
         BoundingBox bounds = BoundingBox.Transform(_debugPrimitive.Bounds, _world);
         _renderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
-        _renderablesSet.cRenderKeys[_renderable] = GetRenderKey(0.0f);
-        _renderablesSet.cBackToFront[_renderable] = _translucent;
+        // BackToFrontStart sorts after every opaque key and before every back-to-front one, see RenderKey
+        var beforeTranslucents = _translucent && _beforeTranslucents;
+        _renderablesSet.cRenderKeys[_renderable] = beforeTranslucents
+            ? new RenderKey(RenderKey.BackToFrontStart)
+            : GetRenderKey(0.0f);
+        _renderablesSet.cBackToFront[_renderable] = _translucent && !beforeTranslucents;
 
         // Pipelines
         _renderablesSet.cPipelines[_renderable] = _pipeline;
