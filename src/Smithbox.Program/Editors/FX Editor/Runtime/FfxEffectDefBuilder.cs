@@ -461,6 +461,10 @@ public static class FfxEffectDefBuilder
                     };
                     Note($"appearance a{a.TypeId} ({(distortion ? "distortion" : "radial blur")}, size unknown)");
                 }
+                // BB's a10008 (FXR3 GPUSparkParticle) is a spark system: drawn as one billboard of its texture it was
+                // an alpha-blended square (f000000960, §20.36), so it's left out until its slots are named
+                else if (a.TypeId == 10008)
+                    Note("appearance a10008 (GPU sparks, not drawn)");
                 else if (t != null && a.TypeId is not (108 or 61 or 3))
                 {
                     // another appearance with a texture: drawn as a plain billboard of it (size 1, white), in its blend
@@ -669,6 +673,7 @@ public static class FfxEffectDefBuilder
                 return false;
             float F(string name, float fallback = 0) => (float)(n.GetValueOrDefault(name)?.Get()?.FirstOrDefault() ?? fallback);
             Vector3 V3(string prefix) => new(F(prefix + "X"), F(prefix + "Y"), F(prefix + "Z"));
+            Vector4 V4(string name) => n.GetValueOrDefault(name)?.Get() is { Length: >= 4 } v ? new((float)v[0], (float)v[1], (float)v[2], (float)v[3]) : Vector4.Zero;
             var d = new FxGpuParticleDef
             {
                 Texture = (int)F("texture", 1),
@@ -683,6 +688,17 @@ public static class FfxEffectDefBuilder
                 SpeedMin = V3("particleSpeedMin"),
                 SpeedMax = V3("particleSpeedMax"),
                 BlendMode = (int)F("blendMode", 4),
+                // the colour over the particle's age, its multipliers and the sprite sheet (§20.36: FXR3 fields1's
+                // rgbMultiplier … maxFrameIndex run). Unnamed, the sheet was drawn whole and white at full alpha
+                Color = Value(n.GetValueOrDefault("color"), FxArgument.ParticleAge),
+                RgbMultiplier = F("rgbMultiplier", 1),
+                AlphaMultiplier = F("alphaMultiplier", 1),
+                ColorMin = V4("colorMin"),
+                ColorMax = V4("colorMax"),
+                Columns = Math.Max(1, (int)F("columns", 1)),
+                TotalFrames = Math.Max(1, (int)F("totalFrames", 1)),
+                RandomFrame = F("randomTextureFrame") != 0,
+                MaxFrameIndex = (int)F("maxFrameIndex"),
                 // as FXR3's builder falls back when the interval isn't named (0 would emit every frame)
                 IntervalMin = 1,
                 IntervalMax = 1,

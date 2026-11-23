@@ -30152,7 +30152,7 @@
               ]
             },
             {
-              "name": "unk136",
+              "name": "color",
               "types": [
                 7,
                 19,
@@ -30164,26 +30164,29 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's color (properties1, over the particle's age) (same id; BB's run lines up with FXR3's fields1 by kind); values RGBA sequences fading in and out over 0.3–0.75 s (FFX plan Â§20.36)."
             },
             {
-              "name": "unk137",
+              "name": "rgbMultiplier",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 20
+              "max": 20,
+              "desc": "FXR3 GPUStandardParticle's rgbMultiplier (same id; BB's run lines up with FXR3's fields1 by kind); values 1 / 2.5 / 3 / 5 (FFX plan Â§20.36)."
             },
             {
-              "name": "unk138",
+              "name": "alphaMultiplier",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 20
+              "max": 20,
+              "desc": "FXR3 GPUStandardParticle's alphaMultiplier (same id; BB's run lines up with FXR3's fields1 by kind); values 1 / 1.5 / 2.5 / 7.5 (FFX plan Â§20.36)."
             },
             {
-              "name": "unk139",
+              "name": "colorMin",
               "types": [
                 7,
                 15
@@ -30192,7 +30195,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's colorMin (same id; BB's run lines up with FXR3's fields1 by kind); values [0,0,0,0] in 399 of 400 (FFX plan Â§20.36)."
             },
             {
               "name": "unk140",
@@ -30231,7 +30235,7 @@
               ]
             },
             {
-              "name": "unk143",
+              "name": "colorMax",
               "types": [
                 7,
                 15
@@ -30240,7 +30244,8 @@
               "max": 0.30000001192092896,
               "seen": [
                 0.30000001192092896
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's colorMax (same id; BB's run lines up with FXR3's fields1 by kind); values mostly [0,0,0,0]; [0,0,0,0.5], greys 0.1 / 0.2 (FFX plan Â§20.36)."
             },
             {
               "name": "unk144",
@@ -30310,7 +30315,7 @@
               ]
             },
             {
-              "name": "unk149",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -30322,10 +30327,11 @@
                 2,
                 4,
                 5
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's blendMode (same id; BB's run lines up with FXR3's fields1 by kind); values 4 ×319, 2 ×65, 5 ×13, 0 ×2 (FFX plan Â§20.36)."
             },
             {
-              "name": "unk150",
+              "name": "columns",
               "types": [
                 1
               ],
@@ -30335,10 +30341,11 @@
                 -1,
                 1,
                 8
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's columns (same id; BB's run lines up with FXR3's fields1 by kind); values 8 ×210, 1 ×189 (FFX plan Â§20.36)."
             },
             {
-              "name": "unk151",
+              "name": "totalFrames",
               "types": [
                 1
               ],
@@ -30351,10 +30358,11 @@
                 16,
                 32,
                 64
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's totalFrames (same id; BB's run lines up with FXR3's fields1 by kind); values 1 / 16 / 32 / 64 (FFX plan Â§20.36)."
             },
             {
-              "name": "unk152",
+              "name": "randomTextureFrame",
               "types": [
                 1
               ],
@@ -30364,7 +30372,8 @@
                 -1,
                 0,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's randomTextureFrame (same id; BB's run lines up with FXR3's fields1 by kind); values 0 / 1 (FFX plan Â§20.36)."
             },
             {
               "name": "unk153",
@@ -30380,7 +30389,7 @@
               ]
             },
             {
-              "name": "unk154",
+              "name": "maxFrameIndex",
               "types": [
                 1
               ],
@@ -30394,7 +30403,8 @@
                 31,
                 32,
                 48
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's maxFrameIndex (same id; BB's run lines up with FXR3's fields1 by kind); values 0 / 15 / 16 / 32 (FFX plan Â§20.36)."
             },
             {
               "name": "unk155",
