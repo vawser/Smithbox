@@ -50,8 +50,8 @@ public class FxInspector
             case Model.IFxConfig config:
                 GUI.WrappedText(LOC.Get("FX_Inspector_Config", FxNames.Config(config), config.Actions.Count));
                 break;
-            case Model.IFxState modelState:
-                DisplayModelState(modelState);
+            case Model.IFxState modelState when entry != null:
+                DisplayModelState(entry, modelState);
                 break;
             default:
                 GUI.WrappedText(LOC.Get("FX_Inspector_No_Selection"));
@@ -243,14 +243,25 @@ public class FxInspector
         }
     }
 
-    /// <summary>A state through the model (DLSE; FXR3 states have their own editor above): its exits and actions.</summary>
-    private void DisplayModelState(Model.IFxState state)
+    /// <summary>
+    /// A state through the model (DLSE; FXR3 states have their own editor above): its exits, edited in place (target,
+    /// operators, numbers, argument evaluators; decision §8.7 of the FFX plan), and its actions.
+    /// </summary>
+    private void DisplayModelState(FxEntry entry, Model.IFxState state)
     {
         GUI.SimpleHeader(LOC.Get("FX_Inspector_State_Header", state.Index), LOC.Get("FX_Inspector_Ffx_State_TT"));
         if (state.Transitions.Count == 0)
             GUI.WrappedText(LOC.Get("FX_Inspector_State_No_Exits"));
-        foreach (var t in state.Transitions)
-            GUI.WrappedText(FxNames.Condition(t));
+
+        var transitions = state.Transitions;
+        for (int x = 0; x < transitions.Count; x++)
+        {
+            var t = transitions[x];
+            GUI.Spacer();
+            GUI.WrappedText(LOC.Get("FX_Inspector_Exit", x + 1, FxNames.Condition(t)));
+            if (t is Model.IFxEditableTransition editable)
+                DisplayExitEditor(entry, editable, t, $"x{state.Index}_{x}");
+        }
 
         GUI.Spacer();
         GUI.WrappedText(LOC.Get("FX_Inspector_State_Actions", state.Actions.Count));
@@ -259,10 +270,124 @@ public class FxInspector
                 Editor.Selection.SelectItem(action.Source);
     }
 
+    // ---------------------------------------------------------------- DLSE exits
+
+    private void DisplayExitEditor(FxEntry entry, Model.IFxEditableTransition exit, Model.IFxTransition t, string id)
+    {
+        void Commit(Action change) => Editor.ActionManager.ExecuteAction(new FxEditSnapshotAction(Data.Bank, entry, exit, change));
+
+        ImGui.Indent();
+
+        // Target state
+        ImGui.SetNextItemWidth(160 * DPI.UIScale());
+        if (ImGui.BeginCombo($"{LOC.Get("FX_Inspector_Exit_Target")}##fxExitTarget_{id}", LOC.Get("FX_Condition_State", t.TargetState)))
+        {
+            for (int s = 0; s < exit.StateCount; s++)
+                if (ImGui.Selectable($"{LOC.Get("FX_Condition_State", s)}##fxExitTarget_{id}_{s}", s == t.TargetState) && s != t.TargetState)
+                {
+                    int target = s;
+                    Commit(() => exit.SetTarget(target));
+                }
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("FX_Inspector_Exit_Target_TT"));
+
+        DisplayExpression(t.Condition, $"{id}_c", Commit);
+        ImGui.Unindent();
+    }
+
+    /// <summary>One condition node and its operands, indented: operators as combos, numbers and arguments as inputs.</summary>
+    private void DisplayExpression(Model.IFxExpression e, string id, Action<Action> commit)
+    {
+        var editable = e as Model.IFxEditableExpression;
+        switch (e.Kind)
+        {
+            case Model.FxExpressionKind.Compare or Model.FxExpressionKind.And or Model.FxExpressionKind.Or when editable != null:
+            {
+                ImGui.SetNextItemWidth(80 * DPI.UIScale());
+                if (ImGui.BeginCombo($"##fxExprOp_{id}", e.Operator))
+                {
+                    foreach (var op in editable.Operators)
+                        if (ImGui.Selectable($"{op}##fxExprOp_{id}_{op}", op == e.Operator) && op != e.Operator)
+                        {
+                            var chosen = op;
+                            commit(() => editable.SetOperator(chosen));
+                        }
+                    ImGui.EndCombo();
+                }
+                GUI.Tooltip(LOC.Get(e.Kind == Model.FxExpressionKind.Compare ? "FX_Inspector_Expr_Compare_TT" : "FX_Inspector_Expr_Logic_TT"));
+                ImGui.Indent();
+                for (int i = 0; i < e.Operands.Count; i++)
+                    DisplayExpression(e.Operands[i], $"{id}_{i}", commit);
+                ImGui.Unindent();
+                break;
+            }
+            case Model.FxExpressionKind.Not:
+                ImGui.TextUnformatted(LOC.Get("FX_Inspector_Expr_Not"));
+                ImGui.Indent();
+                if (e.Operands.Count == 1)
+                    DisplayExpression(e.Operands[0], $"{id}_0", commit);
+                ImGui.Unindent();
+                break;
+            case Model.FxExpressionKind.Constant when editable != null:
+            {
+                string key = $"##fxExprConst_{id}";
+                int v = Pending.TryGetValue(key, out var p) ? (int)p : (int)(e.Value ?? 0);
+                ImGui.SetNextItemWidth(120 * DPI.UIScale());
+                if (ImGui.InputInt($"{LOC.Get("FX_Inspector_Expr_Number")}{key}", ref v))
+                    Pending[key] = v;
+                int typed = v;
+                CommitOnDeactivate(key, () => { if (typed != (int)(e.Value ?? 0)) commit(() => editable.SetValue(typed)); });
+                break;
+            }
+            case Model.FxExpressionKind.ArgumentA or Model.FxExpressionKind.ArgumentB when editable != null:
+            {
+                ImGui.TextUnformatted(FxNames.Expression(e));
+                GUI.Tooltip(LOC.Get("FX_Inspector_Expr_Argument_TT"));
+                string key = $"##fxExprArg_{id}";
+                var cur = Pending.TryGetValue(key, out var p) ? (int[])p : new[] { e.Index, (int)(e.Value ?? 0) };
+                ImGui.SetNextItemWidth(160 * DPI.UIScale());
+                if (ImGui.InputInt2($"{LOC.Get("FX_Inspector_Expr_Argument")}{key}", ref cur[0]))
+                    Pending[key] = cur;
+                var typed = (int[])cur.Clone();
+                CommitOnDeactivate(key, () =>
+                {
+                    if (typed[0] != e.Index || typed[1] != (int)(e.Value ?? 0))
+                        commit(() => editable.SetArgument(typed[0], typed[1]));
+                });
+                break;
+            }
+            default:
+                ImGui.TextUnformatted(FxNames.Expression(e));
+                break;
+        }
+    }
+
     private void DisplayNode(Model.IFxNode node)
     {
         int configs = node is Model.IFxConfigured c ? c.Configs.Count : 0;
         GUI.WrappedText(LOC.Get("FX_Inspector_Node", FxNames.Node(node), configs, node.Actions.Count, node.Children.Count));
+
+        // DLSE: the effect's resource lists, kept by saves (which only append ids an edit introduces)
+        if (node is Model.IFxResourceLists lists)
+        {
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("FX_Inspector_Resources_Header"), LOC.Get("FX_Inspector_Resources_Header_TT"));
+            if (ImGui.BeginTable("fxResourceLists", 2, ImGuiTableFlags.SizingStretchProp | ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV))
+            {
+                ImGui.TableSetupColumn("##kind", ImGuiTableColumnFlags.WidthStretch, 0.3f);
+                ImGui.TableSetupColumn("##ids", ImGuiTableColumnFlags.WidthStretch, 0.7f);
+                foreach (var (kind, ids) in lists.ResourceLists)
+                {
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+                    ImGui.TextUnformatted(LOC.Get($"FX_Resource_List_{kind}"));
+                    ImGui.TableSetColumnIndex(1);
+                    ImGui.TextWrapped(ids.Count == 0 ? "—" : string.Join(", ", ids));
+                }
+                ImGui.EndTable();
+            }
+        }
     }
 
     // ---------------------------------------------------------------- actions

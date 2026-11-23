@@ -128,7 +128,7 @@ public sealed class FfxEffectAdapter : IFxEffect, IFxVariants
         return st;
     }
 
-    internal FfxTransitionAdapter Transition(Trigger t) => Get(t, () => new FfxTransitionAdapter(t));
+    internal FfxTransitionAdapter Transition(Trigger t) => Get(t, () => new FfxTransitionAdapter(this, t));
 
     internal FfxActionAdapter EffectParams(int index)
     {
@@ -148,12 +148,28 @@ public sealed class FfxEffectAdapter : IFxEffect, IFxVariants
         Get(p, () => new FfxValueAdapter(this, p)).At(owner, index);
 }
 
-/// <summary>The effect's root: no node tree in DLSE, so it only holds the two effect param lists.</summary>
-public sealed class FfxRootAdapter : IFxNode
+/// <summary>The effect's root: no node tree in DLSE, so it holds the two effect param lists and the resource lists.</summary>
+public sealed class FfxRootAdapter : IFxNode, IFxResourceLists
 {
     private readonly FfxEffectAdapter owner;
 
     internal FfxRootAdapter(FfxEffectAdapter owner) { this.owner = owner; }
+
+    public IReadOnlyList<(FxResourceListKind Kind, IReadOnlyList<int> Ids)> ResourceLists
+    {
+        get
+        {
+            var rs = owner.Effect.ResourceSet;
+            return new (FxResourceListKind, IReadOnlyList<int>)[]
+            {
+                (FxResourceListKind.Models, rs.Vector1),
+                (FxResourceListKind.Textures, rs.Vector2),
+                (FxResourceListKind.Unknown3, rs.Vector3),
+                (FxResourceListKind.Actions, rs.Vector4),
+                (FxResourceListKind.Effects, rs.Vector5),
+            };
+        }
+    }
 
     public FxNodeKind Kind => FxNodeKind.Root;
     public int TypeId => 0;
@@ -179,19 +195,50 @@ public sealed class FfxStateAdapter : IFxState
     public IReadOnlyList<IFxAction> Actions => state.Actions.Select(a => (IFxAction)owner.Action(a)).ToList();
 }
 
-public sealed class FfxTransitionAdapter : IFxTransition
+public sealed class FfxTransitionAdapter : IFxTransition, IFxEditableTransition
 {
     private readonly Trigger trigger;
+    private readonly FfxEffectAdapter owner;
 
-    internal FfxTransitionAdapter(Trigger trigger) { this.trigger = trigger; }
+    internal FfxTransitionAdapter(FfxEffectAdapter owner, Trigger trigger)
+    {
+        this.owner = owner;
+        this.trigger = trigger;
+    }
 
     public int TargetState => trigger.StateIndex;
-    public IFxExpression Condition => FfxExpression.Of(trigger.Evaluator);
+    public IFxExpression Condition => FfxExpression.Of(trigger.Evaluator, e => trigger.Evaluator = e);
     public object Source => trigger;
+
+    public int StateCount => owner.Effect.StateMap.States.Count;
+
+    public void SetTarget(int state)
+    {
+        if (state >= 0 && state < StateCount)
+            trigger.StateIndex = state;
+    }
+
+    // The target and a copy of the whole condition; restoring puts a fresh copy back, so a snapshot can be restored
+    // more than once (undo, redo)
+    private sealed record ExitState(int Target, Evaluatable Condition);
+
+    public object Snapshot() => new ExitState(trigger.StateIndex, FfxExpression.Clone(trigger.Evaluator));
+
+    public void Restore(object state)
+    {
+        if (state is not ExitState s)
+            throw new ArgumentException("Not a snapshot of a DLSE exit.");
+        trigger.StateIndex = s.Target;
+        trigger.Evaluator = FfxExpression.Clone(s.Condition);
+    }
 }
 
-/// <summary>An evaluator tree as an expression. Rebuilt on each read (evaluators are small and only drawn as text).</summary>
-public sealed class FfxExpression : IFxExpression
+/// <summary>
+/// An evaluator tree as an expression, rebuilt on each read (evaluators are small). Each node keeps its evaluator and
+/// how to put a replacement in its place, so it can be edited in place (operators swap the node for another of the
+/// same arity; constants and arguments change their ints).
+/// </summary>
+public sealed class FfxExpression : IFxExpression, IFxEditableExpression
 {
     public FxExpressionKind Kind { get; private init; }
     public string Operator { get; private init; }
@@ -199,17 +246,23 @@ public sealed class FfxExpression : IFxExpression
     public int Index { get; private init; }
     public IReadOnlyList<IFxExpression> Operands { get; private init; } = Array.Empty<IFxExpression>();
 
-    public static IFxExpression Of(Evaluatable e)
-    {
-        static IFxExpression[] Two(EvaluatableBinary b) => new[] { Of(b.Left), Of(b.Right) };
-        static FfxExpression Compare(EvaluatableBinary b, string op) => new() { Kind = FxExpressionKind.Compare, Operator = op, Operands = Two(b) };
+    private Evaluatable node;
+    private Action<Evaluatable> replace;
 
-        return e switch
+    public static readonly string[] CompareOperators = { "==", "!=", "<", "<=", ">", ">=" };
+    public static readonly string[] LogicOperators = { "&&", "||" };
+
+    public static IFxExpression Of(Evaluatable e, Action<Evaluatable> replace)
+    {
+        IFxExpression[] Two(EvaluatableBinary b) => new[] { Of(b.Left, x => b.Left = x), Of(b.Right, x => b.Right = x) };
+        FfxExpression Compare(EvaluatableBinary b, string op) => new() { Kind = FxExpressionKind.Compare, Operator = op, Operands = Two(b) };
+
+        var result = e switch
         {
             null => new FfxExpression { Kind = FxExpressionKind.Unknown, Index = -1 },
-            EvaluatableAnd b => new FfxExpression { Kind = FxExpressionKind.And, Operands = Two(b) },
-            EvaluatableOr b => new FfxExpression { Kind = FxExpressionKind.Or, Operands = Two(b) },
-            EvaluatableNot u => new FfxExpression { Kind = FxExpressionKind.Not, Operands = new[] { Of(u.Operand) } },
+            EvaluatableAnd b => new FfxExpression { Kind = FxExpressionKind.And, Operator = "&&", Operands = Two(b) },
+            EvaluatableOr b => new FfxExpression { Kind = FxExpressionKind.Or, Operator = "||", Operands = Two(b) },
+            EvaluatableNot u => new FfxExpression { Kind = FxExpressionKind.Not, Operands = new[] { Of(u.Operand, x => u.Operand = x) } },
             EvaluatableEQ b => Compare(b, "=="),
             EvaluatableNE b => Compare(b, "!="),
             EvaluatableLT b => Compare(b, "<"),
@@ -227,6 +280,89 @@ public sealed class FfxExpression : IFxExpression
             EvaluatableEmittersStopped => new FfxExpression { Kind = FxExpressionKind.EmittersStopped },
             _ => new FfxExpression { Kind = FxExpressionKind.Unknown, Index = -1 },
         };
+        result.node = e;
+        result.replace = replace;
+        return result;
+    }
+
+    // ---------------------------------------------------------------- editing in place
+
+    public IReadOnlyList<string> Operators => Kind switch
+    {
+        FxExpressionKind.Compare => CompareOperators,
+        FxExpressionKind.And or FxExpressionKind.Or => LogicOperators,
+        _ => Array.Empty<string>(),
+    };
+
+    public void SetOperator(string op)
+    {
+        if (node is not EvaluatableBinary b || op == Operator || !Operators.Contains(op))
+            return;
+        EvaluatableBinary swapped = op switch
+        {
+            "==" => new EvaluatableEQ(),
+            "!=" => new EvaluatableNE(),
+            "<" => new EvaluatableLT(),
+            "<=" => new EvaluatableLE(),
+            ">" => new EvaluatableGT(),
+            ">=" => new EvaluatableGE(),
+            "&&" => new EvaluatableAnd(),
+            "||" => new EvaluatableOr(),
+            _ => null,
+        };
+        if (swapped == null)
+            return;
+        swapped.Left = b.Left;
+        swapped.Right = b.Right;
+        swapped.ClassVersion = b.ClassVersion;
+        replace(swapped);
+    }
+
+    public void SetValue(int value)
+    {
+        if (node is EvaluatableConstant c)
+            c.Value = value;
+    }
+
+    public void SetArgument(int index, int unk)
+    {
+        switch (node)
+        {
+            case Evaluatable2 a: a.ArgIndex = index; a.Unk00 = unk; break;
+            case Evaluatable3 a: a.ArgIndex = index; a.Unk00 = unk; break;
+        }
+    }
+
+    /// <summary>A deep copy of an evaluator tree, class versions included.</summary>
+    public static Evaluatable Clone(Evaluatable e)
+    {
+        T Bin<T>(EvaluatableBinary b) where T : EvaluatableBinary, new() => new T { Left = Clone(b.Left), Right = Clone(b.Right) };
+        Evaluatable c = e switch
+        {
+            null => null,
+            EvaluatableAnd b => Bin<EvaluatableAnd>(b),
+            EvaluatableOr b => Bin<EvaluatableOr>(b),
+            EvaluatableEQ b => Bin<EvaluatableEQ>(b),
+            EvaluatableNE b => Bin<EvaluatableNE>(b),
+            EvaluatableLT b => Bin<EvaluatableLT>(b),
+            EvaluatableLE b => Bin<EvaluatableLE>(b),
+            EvaluatableGT b => Bin<EvaluatableGT>(b),
+            EvaluatableGE b => Bin<EvaluatableGE>(b),
+            EvaluatableNot u => new EvaluatableNot { Operand = Clone(u.Operand) },
+            EvaluatableConstant k => new EvaluatableConstant { Value = k.Value },
+            Evaluatable2 a => new Evaluatable2 { Unk00 = a.Unk00, ArgIndex = a.ArgIndex },
+            Evaluatable3 a => new Evaluatable3 { Unk00 = a.Unk00, ArgIndex = a.ArgIndex },
+            EvaluatableCurrentTick => new EvaluatableCurrentTick(),
+            EvaluatableTotalTick => new EvaluatableTotalTick(),
+            EvaluatableChildExists => new EvaluatableChildExists(),
+            EvaluatableParentExists => new EvaluatableParentExists(),
+            EvaluatableDistanceFromCamera => new EvaluatableDistanceFromCamera(),
+            EvaluatableEmittersStopped => new EvaluatableEmittersStopped(),
+            _ => throw new NotSupportedException($"Can't copy {e.GetType().Name}."),
+        };
+        if (c != null)
+            c.ClassVersion = e.ClassVersion;
+        return c;
     }
 }
 

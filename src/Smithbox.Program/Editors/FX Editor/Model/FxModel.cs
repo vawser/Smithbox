@@ -172,6 +172,51 @@ public interface IFxTypedValue
     string TypeName { get; }
 }
 
+/// <summary>What a resource list of an effect holds (DLSE FXResourceSet vectors 1–5, FFX plan §16).</summary>
+public enum FxResourceListKind
+{
+    Models,
+    Textures,
+    /// <summary>Vector3: empty in every vanilla effect.</summary>
+    Unknown3,
+    Actions,
+    Effects,
+}
+
+/// <summary>Capability: a node holding the effect's resource lists (DLSE root). Kept by saves, which only append new ids.</summary>
+public interface IFxResourceLists
+{
+    IReadOnlyList<(FxResourceListKind Kind, IReadOnlyList<int> Ids)> ResourceLists { get; }
+}
+
+/// <summary>
+/// Capability: an exit edited in place (DLSE): its target, and its condition through <see cref="IFxEditableExpression"/>
+/// nodes. The condition's shape doesn't change. <see cref="IFxSnapshot"/> captures target and condition for undo.
+/// </summary>
+public interface IFxEditableTransition : IFxSnapshot
+{
+    /// <summary>The states the target can be set to (0 to count-1).</summary>
+    int StateCount { get; }
+
+    void SetTarget(int state);
+}
+
+/// <summary>Capability: a condition node edited in place (DLSE evaluators).</summary>
+public interface IFxEditableExpression
+{
+    /// <summary>The operators this node can switch to, its own included (compare: the six; And/Or: both); empty for leaves.</summary>
+    IReadOnlyList<string> Operators { get; }
+
+    /// <summary>Switches a Compare or And/Or node to another of <see cref="Operators"/>; its operands stay.</summary>
+    void SetOperator(string op);
+
+    /// <summary>A Constant's value.</summary>
+    void SetValue(int value);
+
+    /// <summary>An ArgumentA/B node's argument index and unknown int (<see cref="IFxExpression.Value"/>).</summary>
+    void SetArgument(int index, int unk);
+}
+
 /// <summary>An item of the effect tree.</summary>
 public interface IFxNode
 {

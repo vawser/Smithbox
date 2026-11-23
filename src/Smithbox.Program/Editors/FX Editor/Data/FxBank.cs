@@ -750,6 +750,11 @@ public class FxBank : IDisposable
         {
             try
             {
+                // Ids the effect uses that its resource lists lack are appended (§8.6). Every vanilla list holds its own
+                // effect's ids, so an effect whose ids didn't change keeps its lists as they are
+                int appended = Model.FfxResources.AppendMissing(entry.Ffx);
+                if (appended > 0)
+                    Smithbox.Log(this, LOC.Get("FX_Data_Resources_Appended", entry.Stem, appended));
                 bytes[entry] = entry.Ffx.Write();
             }
             catch (Exception e)
