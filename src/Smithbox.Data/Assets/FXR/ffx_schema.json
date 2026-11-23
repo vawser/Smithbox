@@ -5820,10 +5820,11 @@
               "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 27's TextureID in DS1R's wide layout; values: texture ids (FFX plan Â§20.20)."
             },
             {
-              "name": "unk02",
+              "name": "duration",
               "types": [
                 85
-              ]
+              ],
+              "desc": "The particle's duration: a Tick2 range ([1, 1] in every DS2S instance); DS1 a27's first field is Duration, a15002 [2] the same type (FFX plan §20.41)."
             },
             {
               "name": "blendMode",
@@ -6136,10 +6137,11 @@
               "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 27's TextureID in DS1R's wide layout; values: texture ids (FFX plan Â§20.20)."
             },
             {
-              "name": "unk02",
+              "name": "duration",
               "types": [
                 85
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 17 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "blendMode",
@@ -11019,7 +11021,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "distortionMode",
               "types": [
                 1
               ],
@@ -11028,10 +11030,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk01",
+              "name": "shapeMode",
               "types": [
                 1
               ],
@@ -11041,10 +11044,11 @@
                 0,
                 1,
                 2
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -11053,7 +11057,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk03",
@@ -11089,55 +11094,63 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "scaleZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "stretchingDistance",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "distortionIntensity",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk11",
+              "name": "wobblingSpeed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk12",
+              "name": "waveSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk13",
+              "name": "flowSpeed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture14",
+              "name": "textureID2",
               "types": [
                 34
               ],
@@ -11145,7 +11158,8 @@
               "max": 22,
               "seen": [
                 22
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk15",
@@ -11159,13 +11173,14 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "color",
               "types": [
                 17
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk17",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -11176,10 +11191,11 @@
                 1,
                 2,
                 4
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture18",
+              "name": "textureID1",
               "types": [
                 34
               ],
@@ -11192,7 +11208,8 @@
                 3004,
                 3005,
                 3009
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "texture19",
@@ -11207,10 +11224,11 @@
               ]
             },
             {
-              "name": "unk20",
+              "name": "wobblingRadius",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: DES's layout agrees with DS2's in value kind slot for slot over its first 21 slots (the agreeing prefix) (FFX plan Â§20.27)."
             }
           ]
         },
@@ -16506,9 +16524,10 @@
       }
     },
     "66": {
-      "name": "Appearance66",
+      "name": "QuadLine",
       "category": "Appearance",
       "source": "DSAnimStudio ActionData 66 (duration, attached flag, 18 curves, two colours)",
+      "desc": "FXR3's QuadLine (602) in the older games: a camera-facing strip from the particle back along its travel, width × length, coloured from its leading to its trailing end. No texture. Mapped from DarkSoulsII.exe's a66 compile onto DS1R ActionData 66's struct and QuadLine's property order (FFX plan §20.40).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -16538,7 +16557,7 @@
               ]
             },
             {
-              "name": "unk02",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -16547,26 +16566,29 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "DES a66 [2]: 4 ×74, 2 ×8, the blend mode as BB / DS2 a66 [2] (QuadLine's blendMode) (FFX plan §20.40)."
             },
             {
-              "name": "unk03",
+              "name": "width",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DES a66 [3]: 0.005 ×72, 0.01, 0.002, a streak's width; DES keeps QuadLine's width and length as its only floats (FFX plan §20.40)."
             },
             {
-              "name": "unk04",
+              "name": "length",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DES a66 [4]: 0.2 → 0.01, 0.4 → 0.04 over 0.33 s, QuadLine's length; DS1 ActionData 66's field at +78 (§11's pairing: DSAnimStudio's Unk6_4), where DS2 / BB's length is (FFX plan §20.40)."
             },
             {
-              "name": "color2",
-              "nameSource": "DS1 ActionData field Color2B: 42/42 paired effects agree (9 values), key times 42/42, channel b",
+              "name": "color3",
               "types": [
                 17
-              ]
+              ],
+              "desc": "DES a66 [5]: QuadLine's color3, as BB / DS2 a66 [5] (DS1's Color2, §11) (FFX plan §20.40)."
             },
             {
               "name": "unk06",
@@ -16593,13 +16615,14 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
               "types": [
                 85
-              ]
+              ],
+              "desc": "FXR3 QuadLine's the particle's duration (not a QuadLine property; DS1 ActionData 66's first field, as DES a66 [1], §11). Values Tick2 ranges [1, 1], [0.75, 0.92] (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk02",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -16607,26 +16630,29 @@
               "max": 2,
               "seen": [
                 2
-              ]
+              ],
+              "desc": "FXR3 QuadLine's blendMode (fields1); DarkSoulsII.exe's a66 compile writes this slot to +40. Values 4 ×220, 2 ×10 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk03",
+              "name": "widthMultiplier",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's widthMultiplier; DarkSoulsII.exe's a66 compile writes this slot to +188. Values 1 in every BB instance (FFX plan §20.40)."
             },
             {
-              "name": "unk04",
+              "name": "lengthMultiplier",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's lengthMultiplier; DarkSoulsII.exe's a66 compile writes this slot to +198. Values 1 in every BB instance (FFX plan §20.40)."
             },
             {
-              "name": "color2",
-              "nameSource": "BB slot 5 (color2), same position in a window [0..15] of matching types, 16 slots of 7 type classes matching in order",
+              "name": "color3",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 QuadLine's color3; DarkSoulsII.exe's a66 compile writes this slot to +1A8 … +1D8 (DS1's Color2R … A). Values orange fading out: [1, 0.51, 0.2, 1] → alpha 0 (BB) (FFX plan §20.40)."
             },
             {
               "name": "unk06",
@@ -16640,34 +16666,39 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "color2",
               "types": [
                 84
-              ]
+              ],
+              "desc": "FXR3 QuadLine's color2; DarkSoulsII.exe's a66 compile writes this slot to +C8 … +F8. Values white, a ParamRGBA (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk08",
+              "name": "startColor",
               "types": [
                 84
-              ]
+              ],
+              "desc": "FXR3 QuadLine's startColor (the leading end); DarkSoulsII.exe's a66 compile writes this slot to +108 … +138. Values [0, 0, 0, 1] ×186, white ×36 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk09",
+              "name": "width",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's width; DarkSoulsII.exe's a66 compile writes this slot to +68. Values 0.003 → 0.005 → 0.003, 0.004 → 0.008 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk10",
+              "name": "length",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's length; DarkSoulsII.exe's a66 compile writes this slot to +78. Values 0.01 → 0.1 / 0.15 → 0.01 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk11",
+              "name": "endColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 QuadLine's endColor (the trailing end); DarkSoulsII.exe's a66 compile writes this slot to +148 … +178. Values white → red over the particle's age (BB) (FFX plan §20.40)."
             },
             {
               "name": "unk12",
@@ -16773,13 +16804,14 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
               "types": [
                 85
-              ]
+              ],
+              "desc": "FXR3 QuadLine's the particle's duration (not a QuadLine property; DS1 ActionData 66's first field, as DES a66 [1], §11). Values Tick2 ranges [1, 1], [0.75, 0.92] (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk02",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -16788,26 +16820,29 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "FXR3 QuadLine's blendMode (fields1); DarkSoulsII.exe's a66 compile writes this slot to +40. Values 4 ×220, 2 ×10 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk03",
+              "name": "widthMultiplier",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's widthMultiplier; DarkSoulsII.exe's a66 compile writes this slot to +188. Values 1 in every BB instance (FFX plan §20.40)."
             },
             {
-              "name": "unk04",
+              "name": "lengthMultiplier",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's lengthMultiplier; DarkSoulsII.exe's a66 compile writes this slot to +198. Values 1 in every BB instance (FFX plan §20.40)."
             },
             {
-              "name": "color2",
-              "nameSource": "DS1 ActionData field Color2R: 8/8 paired effects agree (2 values), key times 8/8, channel r",
+              "name": "color3",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 QuadLine's color3; DarkSoulsII.exe's a66 compile writes this slot to +1A8 … +1D8 (DS1's Color2R … A). Values orange fading out: [1, 0.51, 0.2, 1] → alpha 0 (BB) (FFX plan §20.40)."
             },
             {
               "name": "unk06",
@@ -16821,37 +16856,42 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "color2",
               "types": [
                 19,
                 84
-              ]
+              ],
+              "desc": "FXR3 QuadLine's color2; DarkSoulsII.exe's a66 compile writes this slot to +C8 … +F8. Values white, a ParamRGBA (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk08",
+              "name": "startColor",
               "types": [
                 19,
                 84
-              ]
+              ],
+              "desc": "FXR3 QuadLine's startColor (the leading end); DarkSoulsII.exe's a66 compile writes this slot to +108 … +138. Values [0, 0, 0, 1] ×186, white ×36 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk09",
+              "name": "width",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 QuadLine's width; DarkSoulsII.exe's a66 compile writes this slot to +68. Values 0.003 → 0.005 → 0.003, 0.004 → 0.008 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk10",
+              "name": "length",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 QuadLine's length; DarkSoulsII.exe's a66 compile writes this slot to +78. Values 0.01 → 0.1 / 0.15 → 0.01 (BB) (FFX plan §20.40)."
             },
             {
-              "name": "unk11",
+              "name": "endColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 QuadLine's endColor (the trailing end); DarkSoulsII.exe's a66 compile writes this slot to +148 … +178. Values white → red over the particle's age (BB) (FFX plan §20.40)."
             },
             {
               "name": "unk12",
@@ -21230,9 +21270,10 @@
       }
     },
     "82": {
-      "name": "Appearance82",
+      "name": "Line",
       "category": "Appearance",
       "source": "DarkSoulsII.exe registers it with the cluster appearances (a27, a66, a70, a71, a108) (§20.9)",
+      "desc": "FXR3's Line (601) in DS2: a streak back along the particle's travel, length × multiplier long, no width or texture (FFX plan §20.44).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -21246,13 +21287,14 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
               "types": [
                 85
-              ]
+              ],
+              "desc": "FXR3 Line's the particle's duration (as a66 [1]). Values Tick2 [1, 1] (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk02",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -21260,19 +21302,22 @@
               "max": 2,
               "seen": [
                 2
-              ]
+              ],
+              "desc": "FXR3 Line's blendMode; DarkSoulsII.exe's a82 compile writes this slot to +40. Values 2 (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk03",
+              "name": "lengthMultiplier",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 Line's lengthMultiplier; DarkSoulsII.exe's a82 compile writes this slot to +168. Values 1 (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk04",
+              "name": "color3",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 Line's color3; DarkSoulsII.exe's a82 compile writes this slot to +178 … +1A8. Values white (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
               "name": "unk05",
@@ -21286,28 +21331,32 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "color2",
               "types": [
                 84
-              ]
+              ],
+              "desc": "FXR3 Line's color2; DarkSoulsII.exe's a82 compile writes this slot to +A8 … +D8. Values orange fading to red (a ParamRGBA) (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk07",
+              "name": "startColor",
               "types": [
                 84
-              ]
+              ],
+              "desc": "FXR3 Line's startColor; DarkSoulsII.exe's a82 compile writes this slot to +E8 … +118. Values the same orange with alpha 0 (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk08",
+              "name": "length",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 Line's length; DarkSoulsII.exe's a82 compile writes this slot to +58. Values 0.2 → 0.05 (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk09",
+              "name": "endColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 Line's endColor; DarkSoulsII.exe's a82 compile writes this slot to +128 … +158. Values white (DS2S, 13 instances) (FFX plan §20.44)."
             },
             {
               "name": "unk10",
@@ -26196,7 +26245,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -26205,7 +26254,8 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "FXR3 RadialBlur's blendMode: DarkSoulsII.exe's a107 compile writes this slot to +34 (DS1R's \"DistortionMode\"); BB's layout follows it kind for kind. Values 2 ×214, 4 ×186, FXR3's numbering; DS1R's field 2 ×326, 4 ×8 (FFX plan §20.39)."
             },
             {
               "name": "unk01",
@@ -26216,41 +26266,46 @@
               "max": 100000
             },
             {
-              "name": "texture02",
+              "name": "mask",
               "types": [
                 40
-              ]
+              ],
+              "desc": "FXR3 RadialBlur's mask: DarkSoulsII.exe's a107 compile writes this slot to +30 (TextureID); BB's layout follows it kind for kind. Values 1049 ×261, 1004, 1036 (DS1R's are the same textures) (FFX plan §20.39)."
             },
             {
-              "name": "unk03",
+              "name": "width",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 RadialBlur's width: DarkSoulsII.exe's a107 compile writes this slot to +38 (Scale1X); BB's layout follows it kind for kind. Values 2.5–15, sequences (FFX plan §20.39)."
             },
             {
-              "name": "unk04",
+              "name": "height",
               "types": [
                 9,
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 RadialBlur's height: DarkSoulsII.exe's a107 compile writes this slot to +48 (Scale1Y); BB's layout follows it kind for kind. Values equal to the width in most (FFX plan §20.39)."
             },
             {
-              "name": "unk05",
+              "name": "color",
               "types": [
                 19,
                 20,
                 21
-              ]
+              ],
+              "desc": "FXR3 RadialBlur's color: DarkSoulsII.exe's a107 compile writes this slot to +68…+98 (ColorR / G / B / A); BB's layout follows it kind for kind. Values RGBA sequences fading in and out (FFX plan §20.39)."
             },
             {
-              "name": "unk06",
+              "name": "blurRadius",
               "types": [
                 11,
                 13,
                 149
-              ]
+              ],
+              "desc": "FXR3 RadialBlur's blurRadius: DarkSoulsII.exe's a107 compile writes this slot to +58 (DS1R's \"Scale1Z\"); BB's layout follows it kind for kind. Values 0.1 ×108, 0.075, 0.05, 0.2; pulses 0 → 0.075 → 0 (DS1R: 0 → 0.1 / 0.15 → 0) (FFX plan §20.39)."
             },
             {
               "name": "unk07",
@@ -28302,9 +28357,10 @@
       }
     },
     "117": {
-      "name": "Action117",
+      "name": "ClusterEmitter_EqualDistance",
       "category": "Emitter",
       "source": "DSAnimStudio ActionData 117 (unnamed); DarkSoulsII.exe registers it with the cluster emitters (§20.6)",
+      "desc": "An emitter, FFX::FXClusterEmitter_EqualDistance: DarkSoulsII.exe's a117 compile sits in that class's module (FFX plan §20.44). DS2's compile stores six sequences at +28 … +78, two ints at +88 / +8C and a sequence at +90, DS1R's ActionData 117 field for field; their meanings aren't known.",
       "games": {
         "DS1R": {
           "paramCounts": [
@@ -28929,12 +28985,13 @@
               ]
             },
             {
-              "name": "unk23",
+              "name": "particleFollowFactor",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleFollowFactor (properties1, first; BB keeps it among the fields) (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values sequences of 0 ×385, 1 ×14, 0.85 ×1 (a 0–1 factor) (FFX plan §20.38)."
             },
             {
               "name": "unk24",
@@ -28961,15 +29018,16 @@
               "max": 10000
             },
             {
-              "name": "unk27",
+              "name": "emissionParticleCount",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 512
+              "max": 512,
+              "desc": "FXR3 GPUStandardParticle's emissionParticleCount (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values 10 ×124, 1 ×47, 100 ×44, 20 ×38, 50 ×31 (1–512); particles per emission (FFX plan §20.37)."
             },
             {
-              "name": "unk28",
+              "name": "emissionParticleCountMin",
               "types": [
                 1
               ],
@@ -28977,15 +29035,17 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emissionParticleCountMin (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values 0 in all 400; a random value in [min, max] is added to the count (FFX plan §20.37)."
             },
             {
-              "name": "unk29",
+              "name": "emissionParticleCountMax",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 60
+              "max": 60,
+              "desc": "FXR3 GPUStandardParticle's emissionParticleCountMax (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values 0 ×152, 5 ×77, 10 ×47, 1 ×36, 25 ×33 (0–60) (FFX plan §20.37)."
             },
             {
               "name": "unk30",
@@ -29036,15 +29096,16 @@
               ]
             },
             {
-              "name": "unk34",
+              "name": "emissionInterval",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 GPUStandardParticle's emissionInterval (BB keeps a base before FXR3's min / max) (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values frames at 30 Hz: 1 ×330, 0 ×38 (every frame), 4, 60, 100 (FFX plan §20.37)."
             },
             {
-              "name": "unk35",
+              "name": "emissionIntervalMin",
               "types": [
                 1
               ],
@@ -29056,15 +29117,17 @@
                 -1,
                 0,
                 3
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emissionIntervalMin (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values frames added to the base: 0 ×392, -50 with base 100, 3 with base 0 (FFX plan §20.37)."
             },
             {
-              "name": "unk36",
+              "name": "emissionIntervalMax",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 50
+              "max": 50,
+              "desc": "FXR3 GPUStandardParticle's emissionIntervalMax (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values frames added to the base: 0 ×305, 1–6, 50 with base 100 (FFX plan §20.37)."
             },
             {
               "name": "unk37",
@@ -29089,7 +29152,7 @@
               ]
             },
             {
-              "name": "unk39",
+              "name": "limitEmissionCount",
               "types": [
                 1
               ],
@@ -29098,10 +29161,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's limitEmissionCount (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values 0 ×394, 1 ×6; set only where [40] is 1 / 3 / 6 (FFX plan §20.37)."
             },
             {
-              "name": "unk40",
+              "name": "emissionCountLimit",
               "types": [
                 1
               ],
@@ -29112,31 +29176,35 @@
                 1,
                 3,
                 6
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emissionCountLimit (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values 1 / 3 / 6 where [39] is 1 (FFX plan §20.37)."
             },
             {
-              "name": "unk41",
+              "name": "particleDuration",
               "types": [
                 1
               ],
               "min": 1,
-              "max": 600
+              "max": 600,
+              "desc": "FXR3 GPUStandardParticle's particleDuration (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values frames at 30 Hz: 30 ×89, 45 ×60, 60 ×50, 120, 300, 600 (1–20 s) (FFX plan §20.37)."
             },
             {
-              "name": "unk42",
+              "name": "particleDurationMin",
               "types": [
                 1
               ],
               "min": -120,
-              "max": 0
+              "max": 0,
+              "desc": "FXR3 GPUStandardParticle's unk_ds3_f1_32 (here the duration's min variance) (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values frames: 0 ×167, -6 ×149, -30 ×41, -15 ×26; never > 0 (FFX plan §20.37)."
             },
             {
-              "name": "unk43",
+              "name": "particleDurationMax",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 90
+              "max": 90,
+              "desc": "FXR3 GPUStandardParticle's unk_ds3_f1_33 (here the duration's max variance) (same id; BB's ints follow FXR3's fields1 run count, interval, limit, duration); values frames: 6 ×153, 0 ×103, 30 ×83, 15 ×27; never < 0, mostly the min mirrored (FFX plan §20.37)."
             },
             {
               "name": "unk44",
@@ -29361,31 +29429,34 @@
               "desc": "FXR3 GPUStandardParticle's particleSpeedMaxZ (same id; BB's run lines up with FXR3's fields1 by kind); values always ≥ 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk64",
+              "name": "particleAccelerationX",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationX (properties1) (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values sequences, mostly 0; Y -0.1 ×14 and curves to -0.1 (falling) (FFX plan §20.38)."
             },
             {
-              "name": "unk65",
+              "name": "particleAccelerationY",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationY (properties1) (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values sequences, mostly 0; Y -0.1 ×14 and curves to -0.1 (falling) (FFX plan §20.38)."
             },
             {
-              "name": "unk66",
+              "name": "particleAccelerationZ",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationZ (properties1) (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values sequences, mostly 0; Y -0.1 ×14 and curves to -0.1 (falling) (FFX plan §20.38)."
             },
             {
-              "name": "unk67",
+              "name": "particleAccelerationMinX",
               "types": [
                 7
               ],
@@ -29394,10 +29465,11 @@
               "seen": [
                 -0.0010000000474974513,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationMinX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values ≤ 0: Y -0.3 ×14, -0.001 (FFX plan §20.38)."
             },
             {
-              "name": "unk68",
+              "name": "particleAccelerationMinY",
               "types": [
                 7
               ],
@@ -29407,10 +29479,11 @@
                 -0.30000001192092896,
                 -0.0010000000474974513,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationMinY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values ≤ 0: Y -0.3 ×14, -0.001 (FFX plan §20.38)."
             },
             {
-              "name": "unk69",
+              "name": "particleAccelerationMinZ",
               "types": [
                 7
               ],
@@ -29419,10 +29492,11 @@
               "seen": [
                 -0.0010000000474974513,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationMinZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values ≤ 0: Y -0.3 ×14, -0.001 (FFX plan §20.38)."
             },
             {
-              "name": "unk70",
+              "name": "particleAccelerationMaxX",
               "types": [
                 7
               ],
@@ -29431,10 +29505,11 @@
               "seen": [
                 0,
                 0.0010000000474974513
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationMaxX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values ≥ 0 mostly: 0.001–0.06, Z -0.01 ×10 (FFX plan §20.38)."
             },
             {
-              "name": "unk71",
+              "name": "particleAccelerationMaxY",
               "types": [
                 7
               ],
@@ -29445,10 +29520,11 @@
                 0.0010000000474974513,
                 0.004999999888241291,
                 0.029999999329447746
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationMaxY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values ≥ 0 mostly: 0.001–0.06, Z -0.01 ×10 (FFX plan §20.38)."
             },
             {
-              "name": "unk72",
+              "name": "particleAccelerationMaxZ",
               "types": [
                 7
               ],
@@ -29459,7 +29535,8 @@
                 0,
                 0.0010000000474974513,
                 0.05999999865889549
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAccelerationMaxZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values ≥ 0 mostly: 0.001–0.06, Z -0.01 ×10 (FFX plan §20.38)."
             },
             {
               "name": "unk73",
@@ -29509,7 +29586,7 @@
               ]
             },
             {
-              "name": "unk77",
+              "name": "particleRotationMinX",
               "types": [
                 7
               ],
@@ -29517,10 +29594,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleRotationMinX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees: Z -180 ×283, 0 ×116, -20; X / Y 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk78",
+              "name": "particleRotationMinY",
               "types": [
                 7
               ],
@@ -29528,10 +29606,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleRotationMinY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees: Z -180 ×283, 0 ×116, -20; X / Y 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk79",
+              "name": "particleRotationMinZ",
               "types": [
                 7
               ],
@@ -29542,10 +29621,11 @@
                 -20,
                 -10,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleRotationMinZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees: Z -180 ×283, 0 ×116, -20; X / Y 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk80",
+              "name": "particleRotationMaxX",
               "types": [
                 7
               ],
@@ -29553,10 +29633,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleRotationMaxX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees: Z 180 ×283, 0 ×111, 360 ×5 (with min 0), 20 (FFX plan §20.38)."
             },
             {
-              "name": "unk81",
+              "name": "particleRotationMaxY",
               "types": [
                 7
               ],
@@ -29564,10 +29645,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleRotationMaxY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees: Z 180 ×283, 0 ×111, 360 ×5 (with min 0), 20 (FFX plan §20.38)."
             },
             {
-              "name": "unk82",
+              "name": "particleRotationMaxZ",
               "types": [
                 7
               ],
@@ -29579,7 +29661,8 @@
                 20,
                 180,
                 360
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleRotationMaxZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees: Z 180 ×283, 0 ×111, 360 ×5 (with min 0), 20 (FFX plan §20.38)."
             },
             {
               "name": "unk83",
@@ -29626,7 +29709,7 @@
               ]
             },
             {
-              "name": "unk87",
+              "name": "particleAngularSpeedMinX",
               "types": [
                 7
               ],
@@ -29634,10 +29717,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularSpeedMinX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees per second: Z -90 ×215, 0, -50 ×53, -45, -30, -22.5; X / Y 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk88",
+              "name": "particleAngularSpeedMinY",
               "types": [
                 7
               ],
@@ -29645,10 +29729,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularSpeedMinY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees per second: Z -90 ×215, 0, -50 ×53, -45, -30, -22.5; X / Y 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk89",
+              "name": "particleAngularSpeedMinZ",
               "types": [
                 7
               ],
@@ -29663,10 +29748,11 @@
                 -22.5,
                 -10,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularSpeedMinZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees per second: Z -90 ×215, 0, -50 ×53, -45, -30, -22.5; X / Y 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk90",
+              "name": "particleAngularSpeedMaxX",
               "types": [
                 7
               ],
@@ -29674,10 +29760,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularSpeedMaxX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees per second: Z 90 ×215, 0, 50 ×53 …, 40 ×2 with min 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk91",
+              "name": "particleAngularSpeedMaxY",
               "types": [
                 7
               ],
@@ -29685,15 +29772,17 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularSpeedMaxY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees per second: Z 90 ×215, 0, 50 ×53 …, 40 ×2 with min 0 (FFX plan §20.38)."
             },
             {
-              "name": "unk92",
+              "name": "particleAngularSpeedMaxZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 90
+              "max": 90,
+              "desc": "FXR3 GPUStandardParticle's particleAngularSpeedMaxZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values degrees per second: Z 90 ×215, 0, 50 ×53 …, 40 ×2 with min 0 (FFX plan §20.38)."
             },
             {
               "name": "unk93",
@@ -29712,15 +29801,16 @@
               ]
             },
             {
-              "name": "unk95",
+              "name": "particleAngularAccelerationZ",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationZ (properties1, after p1_7 / p1_8 as [93] / [94]) (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values sequences, 0 in vanilla (FFX plan §20.38)."
             },
             {
-              "name": "unk96",
+              "name": "particleAngularAccelerationMinX",
               "types": [
                 7
               ],
@@ -29728,10 +29818,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationMinX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values Z 0 ×391, -2 ×9 (FFX plan §20.38)."
             },
             {
-              "name": "unk97",
+              "name": "particleAngularAccelerationMinY",
               "types": [
                 7
               ],
@@ -29739,10 +29830,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationMinY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values Z 0 ×391, -2 ×9 (FFX plan §20.38)."
             },
             {
-              "name": "unk98",
+              "name": "particleAngularAccelerationMinZ",
               "types": [
                 7
               ],
@@ -29751,10 +29843,11 @@
               "seen": [
                 -2,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationMinZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values Z 0 ×391, -2 ×9 (FFX plan §20.38)."
             },
             {
-              "name": "unk99",
+              "name": "particleAngularAccelerationMaxX",
               "types": [
                 7
               ],
@@ -29762,10 +29855,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationMaxX (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values Z 0 ×391, 2 ×9 (FFX plan §20.38)."
             },
             {
-              "name": "unk100",
+              "name": "particleAngularAccelerationMaxY",
               "types": [
                 7
               ],
@@ -29773,10 +29867,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationMaxY (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values Z 0 ×391, 2 ×9 (FFX plan §20.38)."
             },
             {
-              "name": "unk101",
+              "name": "particleAngularAccelerationMaxZ",
               "types": [
                 7
               ],
@@ -29785,7 +29880,8 @@
               "seen": [
                 0,
                 2
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleAngularAccelerationMaxZ (same id; BB's run lines up with FXR3's fields1 / properties1 by kind and order); values Z 0 ×391, 2 ×9 (FFX plan §20.38)."
             },
             {
               "name": "unk102",
@@ -29799,7 +29895,7 @@
               ]
             },
             {
-              "name": "unk103",
+              "name": "particleUniformScale",
               "types": [
                 1,
                 7
@@ -29810,23 +29906,26 @@
                 0,
                 0.30000001192092896,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleUniformScale (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values 1 ×301, 0 ×98 (one instance holds a float 0.3); X = Y in every instance (FFX plan §20.37)."
             },
             {
-              "name": "unk104",
+              "name": "particleSizeX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 GPUStandardParticle's particleSizeX (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values 0.025 ×144, 0.02, 0.01, 0.005 … 1 (FFX plan §20.37)."
             },
             {
-              "name": "unk105",
+              "name": "particleSizeY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 GPUStandardParticle's particleSizeY (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values equal to sizeX in every instance (FFX plan §20.37)."
             },
             {
               "name": "unk106",
@@ -29837,20 +29936,22 @@
               "max": 2
             },
             {
-              "name": "unk107",
+              "name": "particleSizeXMin",
               "types": [
                 7
               ],
               "min": -0.30000001192092896,
-              "max": 0.006000000052154064
+              "max": 0.006000000052154064,
+              "desc": "FXR3 GPUStandardParticle's particleSizeXMin (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values ≤ 0: 0 ×199, -0.013 ×87, -0.023, -0.25 (FFX plan §20.37)."
             },
             {
-              "name": "unk108",
+              "name": "particleSizeYMin",
               "types": [
                 7
               ],
               "min": -0.30000001192092896,
-              "max": 0.006000000052154064
+              "max": 0.006000000052154064,
+              "desc": "FXR3 GPUStandardParticle's particleSizeYMin (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values equal to sizeXMin (FFX plan §20.37)."
             },
             {
               "name": "unk109",
@@ -29866,20 +29967,22 @@
               ]
             },
             {
-              "name": "unk110",
+              "name": "particleSizeXMax",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 GPUStandardParticle's particleSizeXMax (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values ≥ 0: 0.013 ×135, 0.01, 0.04, 0.03 (FFX plan §20.37)."
             },
             {
-              "name": "unk111",
+              "name": "particleSizeYMax",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 GPUStandardParticle's particleSizeYMax (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values equal to sizeXMax (FFX plan §20.37)."
             },
             {
               "name": "unk112",
@@ -29913,20 +30016,22 @@
               ]
             },
             {
-              "name": "unk114",
+              "name": "particleGrowthRateXStatic",
               "types": [
                 7
               ],
               "min": -1,
-              "max": 1
+              "max": 1,
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateXStatic (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values 0 ×359, -0.01, -0.005, 0.1–0.7 (per second) (FFX plan §20.37)."
             },
             {
-              "name": "unk115",
+              "name": "particleGrowthRateYStatic",
               "types": [
                 7
               ],
               "min": -1,
-              "max": 1
+              "max": 1,
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateYStatic (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values equal to the X one (FFX plan §20.37)."
             },
             {
               "name": "unk116",
@@ -29943,7 +30048,7 @@
               ]
             },
             {
-              "name": "unk117",
+              "name": "particleGrowthRateXMin",
               "types": [
                 7
               ],
@@ -29952,10 +30057,11 @@
               "seen": [
                 -0.20000000298023224,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateXMin (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values 0 in all 400 (FFX plan §20.37)."
             },
             {
-              "name": "unk118",
+              "name": "particleGrowthRateYMin",
               "types": [
                 7
               ],
@@ -29964,7 +30070,8 @@
               "seen": [
                 -0.20000000298023224,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateYMin (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values 0 in all 400 (FFX plan §20.37)."
             },
             {
               "name": "unk119",
@@ -29978,15 +30085,16 @@
               ]
             },
             {
-              "name": "unk120",
+              "name": "particleGrowthRateXMax",
               "types": [
                 7
               ],
               "min": -1.5,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateXMax (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values 0 ×386, 0.1, 0.2, 0.5, 2, -0.375, -1.5 (FFX plan §20.37)."
             },
             {
-              "name": "unk121",
+              "name": "particleGrowthRateYMax",
               "types": [
                 7
               ],
@@ -30001,7 +30109,8 @@
                 0.30000001192092896,
                 0.5,
                 2
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateYMax (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values equal to the X one (FFX plan §20.37)."
             },
             {
               "name": "unk122",
@@ -30019,20 +30128,22 @@
               ]
             },
             {
-              "name": "unk123",
+              "name": "particleGrowthRateX",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateX (properties1, kept among the fields as BB does, §20.25) (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values constant 0 sequences in vanilla (FFX plan §20.37)."
             },
             {
-              "name": "unk124",
+              "name": "particleGrowthRateY",
               "types": [
                 10,
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleGrowthRateY (properties1) (same id; BB's floats follow FXR3's fields1 size / growth runs in triples X, Y, unknown); values constant 0 sequences in vanilla (FFX plan §20.37)."
             },
             {
               "name": "unk125",
@@ -31208,7 +31319,7 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "layerWeight",
               "types": [
                 7
               ],
@@ -31218,10 +31329,11 @@
                 0.949999988079071,
                 0.9900000095367432,
                 1
-              ]
+              ],
+              "desc": "FXR3 LightShaft's unk_ds3_f1_3 (BB keeps fields1's six floats at [5]–[10]), which the FXR3 preview reads as the layers' weight (provisional). Values 0.99 (FFX plan §20.44)."
             },
             {
-              "name": "unk07",
+              "name": "layerSpread",
               "types": [
                 7
               ],
@@ -31236,7 +31348,8 @@
                 0.699999988079071,
                 0.7250000238418579,
                 0.75
-              ]
+              ],
+              "desc": "FXR3 LightShaft's unk_ds3_f1_4, which the FXR3 preview reads as the layers' spread (provisional). Values 0.725, 0.3 (FFX plan §20.44)."
             },
             {
               "name": "unk08",
@@ -31429,8 +31542,9 @@
       }
     },
     "10008": {
-      "name": "Action10008",
+      "name": "GPUSparkParticle",
       "category": "",
+      "desc": "FXR3's GPUSparkParticle, same id: a GPU system of spark streaks. Only its emitter fields are named; it isn't drawn until its count, timing and spark size are (FFX plan §20.44).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -31445,10 +31559,11 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "texture",
               "types": [
                 40
-              ]
+              ],
+              "desc": "FXR3 GPUSparkParticle's texture (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values texture ids (BB, 13 instances) (FFX plan §20.44)."
             },
             {
               "name": "unk02",
@@ -31462,7 +31577,7 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "emitterShape",
               "types": [
                 1
               ],
@@ -31471,7 +31586,8 @@
               "seen": [
                 3,
                 5
-              ]
+              ],
+              "desc": "FXR3 GPUSparkParticle's emitterShape (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 3 / 5 (FXR3's shape range) (BB, 13 instances) (FFX plan §20.44)."
             },
             {
               "name": "unk04",
@@ -31485,31 +31601,34 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "emitterSizeX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 6
+              "max": 6,
+              "desc": "FXR3 GPUSparkParticle's emitterSize X (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0–6 (BB, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk06",
+              "name": "emitterSizeY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 6
+              "max": 6,
+              "desc": "FXR3 GPUSparkParticle's emitterSize Y (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0–6 (BB, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk07",
+              "name": "emitterSizeZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 6
+              "max": 6,
+              "desc": "FXR3 GPUSparkParticle's emitterSize Z (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0–6 (BB, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk08",
+              "name": "emitterRotationX",
               "types": [
                 7
               ],
@@ -31518,10 +31637,11 @@
               "seen": [
                 0,
                 22.5
-              ]
+              ],
+              "desc": "FXR3 GPUSparkParticle's emitterRotation X (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0–22.5 (degrees) (BB, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk09",
+              "name": "emitterRotationY",
               "types": [
                 7
               ],
@@ -31529,10 +31649,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUSparkParticle's emitterRotation Y (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0 (BB, 13 instances) (FFX plan §20.44)."
             },
             {
-              "name": "unk10",
+              "name": "emitterRotationZ",
               "types": [
                 7
               ],
@@ -31540,7 +31661,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUSparkParticle's emitterRotation Z (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0 (BB, 13 instances) (FFX plan §20.44)."
             },
             {
               "name": "unk11",
@@ -31576,7 +31698,7 @@
               ]
             },
             {
-              "name": "unk14",
+              "name": "emitterDistribution",
               "types": [
                 7
               ],
@@ -31585,7 +31707,8 @@
               "seen": [
                 0.20000000298023224,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUSparkParticle's emitterDistribution (after three floats of 1, as AC6's f1_9 … f1_11) (same id; BB's emitter run lines up with AC6's fields1 by kind and values). Values 0.2–1, as a10000's (BB, 13 instances) (FFX plan §20.44)."
             },
             {
               "name": "unk15",
@@ -33406,8 +33529,9 @@
       }
     },
     "10200": {
-      "name": "Action10200",
+      "name": "CancelForce",
       "category": "",
+      "desc": "FXR3's CancelForce, same id: a volume where no force acts (FFX plan §20.43).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -33421,12 +33545,13 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "shape",
               "types": [
                 1
               ],
               "min": 2,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 CancelForce's shape (0 boundless, 1 sphere, 2 box, 3 cylinder, 4 square prism) (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 2 (one instance) (FFX plan §20.43)."
             },
             {
               "name": "unk02",
@@ -33437,12 +33562,13 @@
               "max": 0
             },
             {
-              "name": "unk03",
+              "name": "sphereRadius",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 0
+              "max": 0,
+              "desc": "FXR3 CancelForce's sphereRadius (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 5 / 6 where the shape is a sphere (FFX plan §20.43)."
             },
             {
               "name": "unk04",
@@ -33453,28 +33579,31 @@
               "max": 0
             },
             {
-              "name": "unk05",
+              "name": "boxSizeX",
               "types": [
                 7
               ],
               "min": 1000,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 CancelForce's boxSize X (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1000 / 10 where the shape is a box (FFX plan §20.43)."
             },
             {
-              "name": "unk06",
+              "name": "boxSizeY",
               "types": [
                 7
               ],
               "min": 1000,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 CancelForce's boxSize Y (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values as X (FFX plan §20.43)."
             },
             {
-              "name": "unk07",
+              "name": "boxSizeZ",
               "types": [
                 7
               ],
               "min": 1000,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 CancelForce's boxSize Z (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values as X (FFX plan §20.43)."
             },
             {
               "name": "unk08",
@@ -33485,20 +33614,22 @@
               "max": 0
             },
             {
-              "name": "unk09",
+              "name": "cylinderHeight",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 0
+              "max": 0,
+              "desc": "FXR3 CancelForce's cylinderHeight (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0 in vanilla (FFX plan §20.43)."
             },
             {
-              "name": "unk10",
+              "name": "cylinderRadius",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 0
+              "max": 0,
+              "desc": "FXR3 CancelForce's cylinderRadius (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0 in vanilla (FFX plan §20.43)."
             },
             {
               "name": "unk11",
@@ -33509,28 +33640,31 @@
               "max": 0
             },
             {
-              "name": "unk12",
+              "name": "squarePrismHeight",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 0
+              "max": 0,
+              "desc": "FXR3 CancelForce's squarePrismHeight (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1 / 3 where the shape is a prism (FFX plan §20.43)."
             },
             {
-              "name": "unk13",
+              "name": "squarePrismApothem",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 0
+              "max": 0,
+              "desc": "FXR3 CancelForce's squarePrismApothem (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 7 / 0.4 where the shape is a prism (FFX plan §20.43)."
             }
           ]
         }
       }
     },
     "10300": {
-      "name": "Action10300",
+      "name": "WindForce",
       "category": "",
+      "desc": "FXR3's WindForce, same id: a force volume (sphere, box, cylinder or prism) pushing force-responding particles (FFX plan §20.43).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -33547,7 +33681,7 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "shape",
               "types": [
                 1
               ],
@@ -33557,7 +33691,8 @@
                 1,
                 2,
                 4
-              ]
+              ],
+              "desc": "FXR3 WindForce's shape (0 boundless, 1 sphere, 2 box, 3 cylinder, 4 square prism) (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1 ×117, 2 ×63, 4 ×20 (FFX plan §20.43)."
             },
             {
               "name": "unk02",
@@ -33571,12 +33706,13 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "sphereRadius",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 40
+              "max": 40,
+              "desc": "FXR3 WindForce's sphereRadius (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 5 / 6 where the shape is a sphere (FFX plan §20.43)."
             },
             {
               "name": "unk04",
@@ -33590,28 +33726,31 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "boxSizeX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 WindForce's boxSize X (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1000 / 10 where the shape is a box (FFX plan §20.43)."
             },
             {
-              "name": "unk06",
+              "name": "boxSizeY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 WindForce's boxSize Y (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values as X (FFX plan §20.43)."
             },
             {
-              "name": "unk07",
+              "name": "boxSizeZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 WindForce's boxSize Z (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values as X (FFX plan §20.43)."
             },
             {
               "name": "unk08",
@@ -33625,7 +33764,7 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "cylinderHeight",
               "types": [
                 7
               ],
@@ -33633,10 +33772,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 WindForce's cylinderHeight (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0 in vanilla (FFX plan §20.43)."
             },
             {
-              "name": "unk10",
+              "name": "cylinderRadius",
               "types": [
                 7
               ],
@@ -33644,7 +33784,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 WindForce's cylinderRadius (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0 in vanilla (FFX plan §20.43)."
             },
             {
               "name": "unk11",
@@ -33658,20 +33799,22 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "squarePrismHeight",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 15
+              "max": 15,
+              "desc": "FXR3 WindForce's squarePrismHeight (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1 / 3 where the shape is a prism (FFX plan §20.43)."
             },
             {
-              "name": "unk13",
+              "name": "squarePrismApothem",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 100
+              "max": 100,
+              "desc": "FXR3 WindForce's squarePrismApothem (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 7 / 0.4 where the shape is a prism (FFX plan §20.43)."
             },
             {
               "name": "unk14",
@@ -34063,7 +34206,7 @@
               "max": 100
             },
             {
-              "name": "unk45",
+              "name": "force",
               "types": [
                 10,
                 11,
@@ -34072,7 +34215,8 @@
                 14,
                 149,
                 150
-              ]
+              ],
+              "desc": "FXR3 WindForce's force (properties1, its only property; BB's only sequence slot) (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1, curves from 1 to 0 (cyclic) (FFX plan §20.43)."
             },
             {
               "name": "unk46",
@@ -34261,8 +34405,9 @@
       }
     },
     "10301": {
-      "name": "Action10301",
+      "name": "GravityForce",
       "category": "",
+      "desc": "FXR3's GravityForce, same id (FFX plan §20.43).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -34276,7 +34421,7 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "shape",
               "types": [
                 1
               ],
@@ -34284,7 +34429,8 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "FXR3 GravityForce's shape (0 boundless, 1 sphere, 2 box, 3 cylinder, 4 square prism) (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1 ×4 (FFX plan §20.43)."
             },
             {
               "name": "unk02",
@@ -34298,7 +34444,7 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "sphereRadius",
               "types": [
                 7
               ],
@@ -34310,7 +34456,8 @@
                 5,
                 6,
                 40
-              ]
+              ],
+              "desc": "FXR3 GravityForce's sphereRadius (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 5 / 6 where the shape is a sphere (FFX plan §20.43)."
             },
             {
               "name": "unk04",
@@ -34324,7 +34471,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "boxSizeX",
               "types": [
                 7
               ],
@@ -34332,10 +34479,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's boxSize X (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1000 / 10 where the shape is a box (FFX plan §20.43)."
             },
             {
-              "name": "unk06",
+              "name": "boxSizeY",
               "types": [
                 7
               ],
@@ -34343,10 +34491,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's boxSize Y (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values as X (FFX plan §20.43)."
             },
             {
-              "name": "unk07",
+              "name": "boxSizeZ",
               "types": [
                 7
               ],
@@ -34354,7 +34503,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's boxSize Z (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values as X (FFX plan §20.43)."
             },
             {
               "name": "unk08",
@@ -34368,7 +34518,7 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "cylinderHeight",
               "types": [
                 7
               ],
@@ -34376,10 +34526,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's cylinderHeight (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0 in vanilla (FFX plan §20.43)."
             },
             {
-              "name": "unk10",
+              "name": "cylinderRadius",
               "types": [
                 7
               ],
@@ -34387,7 +34538,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's cylinderRadius (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0 in vanilla (FFX plan §20.43)."
             },
             {
               "name": "unk11",
@@ -34401,7 +34553,7 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "squarePrismHeight",
               "types": [
                 7
               ],
@@ -34409,10 +34561,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's squarePrismHeight (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 1 / 3 where the shape is a prism (FFX plan §20.43)."
             },
             {
-              "name": "unk13",
+              "name": "squarePrismApothem",
               "types": [
                 7
               ],
@@ -34420,7 +34573,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GravityForce's squarePrismApothem (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 7 / 0.4 where the shape is a prism (FFX plan §20.43)."
             },
             {
               "name": "unk14",
@@ -34671,11 +34825,12 @@
               ]
             },
             {
-              "name": "unk36",
+              "name": "force",
               "types": [
                 149,
                 150
-              ]
+              ],
+              "desc": "FXR3 GravityForce's force (properties1, its only property; BB's only sequence slot) (same id; BB's volume run follows FXR3's fields1 with an int before each group). Values 0.2 → 0, 1, 2 (FFX plan §20.43)."
             },
             {
               "name": "unk37",
@@ -37639,9 +37794,10 @@
       }
     },
     "15002": {
-      "name": "Appearance15002",
+      "name": "PointSprite15002",
       "category": "Appearance",
       "source": "DarkSoulsII.exe registers it with the cluster appearances (§20.9)",
+      "desc": "DS2's own point sprite (a27's layout for its first fields): a camera-facing sprite of one texture, its size scaleMult × the emitter's particle scale (FFX plan §20.41).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -37656,7 +37812,7 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -37668,13 +37824,15 @@
                 25,
                 45,
                 133
-              ]
+              ],
+              "desc": "DS2's own point sprite: its compile writes this slot to +40, a27's TextureID (§20.28). Values 24 ×65, 25, 45, 20 (FFX plan §20.41)."
             },
             {
-              "name": "unk02",
+              "name": "duration",
               "types": [
                 85
-              ]
+              ],
+              "desc": "The particle's duration: a Tick2 range, [2, 2] ×105, [3, 3], [1, 1]; a27 [2] has the same type ([1, 1]), DS1 a27's first field is Duration. Evaluated by the compile with no traced destination (FFX plan §20.41)."
             },
             {
               "name": "blendMode",
@@ -37690,10 +37848,11 @@
               "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split."
             },
             {
-              "name": "unk04",
+              "name": "scaleMult",
               "types": [
                 11
-              ]
+              ],
+              "desc": "The sprite's size: its compile writes this slot to +60, a27's ScaleMult (§20.28). Float sequences 0.01 ×50, 0.015, 0.03, 0.008, as DS2 a27 [4] (0.015–0.05) (FFX plan §20.41)."
             },
             {
               "name": "unk05",
@@ -37754,7 +37913,7 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -37763,10 +37922,11 @@
               "seen": [
                 1,
                 8
-              ]
+              ],
+              "desc": "Sprite-sheet columns, by value: 1 ×97, 8 ×19, always with [12] = 32 (8 × 32 frames, as a59's [9] / [10]). Not traced (FFX plan §20.41)."
             },
             {
-              "name": "unk12",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -37775,7 +37935,8 @@
               "seen": [
                 1,
                 32
-              ]
+              ],
+              "desc": "Sprite-sheet frames, by value: 1 ×97, 32 ×19 (FFX plan §20.41)."
             },
             {
               "name": "unk13",
@@ -37980,8 +38141,9 @@
       }
     },
     "18000": {
-      "name": "Action18000",
+      "name": "Tracer18000",
       "category": "",
+      "desc": "DS2's own tracer: its compile sits in SfxFXParticleAppearance_Tracer's module and writes its first slots where DS2's a40 writes them (FFX plan §20.41).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -37989,7 +38151,7 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -37999,7 +38161,8 @@
                 77,
                 81,
                 190
-              ]
+              ],
+              "desc": "DS2's tracer a18000: its compile writes this slot to +30, where DS2's a40 writes a40's textureID (§20.20). Values 77 / 81 / 190 (FFX plan §20.41)."
             },
             {
               "name": "texture01",
@@ -38013,7 +38176,7 @@
               ]
             },
             {
-              "name": "unk02",
+              "name": "trailThickness",
               "types": [
                 1
               ],
@@ -38022,7 +38185,8 @@
               "seen": [
                 1,
                 4
-              ]
+              ],
+              "desc": "DS2's tracer a18000: its compile writes this slot to +40, where DS2's a40 writes a40's trailThickness (§20.20). Values 1 / 4 (FFX plan §20.41)."
             },
             {
               "name": "unk03",
@@ -38037,7 +38201,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -38047,10 +38211,11 @@
                 0,
                 2,
                 3
-              ]
+              ],
+              "desc": "DS2's tracer a18000: its compile writes this slot to +38, where DS2's a40 writes a40's orientationMode (§20.20). Values 0 / 2 / 3 (FFX plan §20.41)."
             },
             {
-              "name": "unk06",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -38058,7 +38223,8 @@
               "max": 4,
               "seen": [
                 4
-              ]
+              ],
+              "desc": "DS2's tracer a18000: its compile writes this slot to +3C, where DS2's a40 writes a40's blendMode (§20.20). Values 4 in every instance (FFX plan §20.41)."
             },
             {
               "name": "unk07",
@@ -38099,7 +38265,7 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "trailLength",
               "types": [
                 1
               ],
@@ -38109,7 +38275,8 @@
                 10,
                 15,
                 30
-              ]
+              ],
+              "desc": "DS2's tracer a18000: its compile writes this slot to +90, where DS2's a40 writes a40's trailLength (§20.20). Values 10 / 15 / 30 (a40: 10–60) (FFX plan §20.41)."
             },
             {
               "name": "unk12",
@@ -38461,8 +38628,9 @@
       }
     },
     "20002": {
-      "name": "Action20002",
+      "name": "Blink20002",
       "category": "",
+      "desc": "DS2's SfxFxDrawEntityHostBlink: a glow sprite with a colour and a stepped multiplier; the ints after its texture ([13]–[30], stored at +7C … +C0) are likely its blink timing, unnamed (FFX plan §20.42).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -38493,7 +38661,7 @@
               ]
             },
             {
-              "name": "unk02",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -38503,7 +38671,8 @@
                 0,
                 2,
                 4
-              ]
+              ],
+              "desc": "SfxFxDrawEntityHostBlink's blend mode, by value: 4 ×68, 2 ×9, 0 ×2, FXR3's numbers as the other DS2 appearances (§20.15); not traced (FFX plan §20.42)."
             },
             {
               "name": "unk03",
@@ -38575,21 +38744,23 @@
               ]
             },
             {
-              "name": "unk10",
+              "name": "scaleX",
               "types": [
                 9,
                 11
-              ]
+              ],
+              "desc": "SfxFxDrawEntityHostBlink's width, by value: float sequences 3 / 1.5 / 4, beside [11]; not traced (FFX plan §20.42)."
             },
             {
-              "name": "unk11",
+              "name": "scaleY",
               "types": [
                 9,
                 11
-              ]
+              ],
+              "desc": "SfxFxDrawEntityHostBlink's height, by value: 3 / 2 / 4; not traced (FFX plan §20.42)."
             },
             {
-              "name": "texture12",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -38599,7 +38770,8 @@
                 20,
                 42,
                 195
-              ]
+              ],
+              "desc": "SfxFxDrawEntityHostBlink's texture: the handler (DarkSoulsII.exe 1404D01E0) stores it at +78. Values 20 ×65 (the glint texture DS2's point sprites use), 42, 195 (FFX plan §20.42)."
             },
             {
               "name": "unk13",
@@ -38916,8 +39088,9 @@
       }
     },
     "20005": {
-      "name": "Action20005",
+      "name": "RadialBlur20005",
       "category": "",
+      "desc": "DS2's own radial blur, SfxFxDrawEntityHostRadialBlur: a screen blur through a mask, width × height, its strength fading (FFX plan §20.42).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -38925,7 +39098,7 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "mask",
               "types": [
                 40
               ],
@@ -38935,25 +39108,29 @@
                 14,
                 52,
                 151
-              ]
+              ],
+              "desc": "DS2's SfxFxDrawEntityHostRadialBlur (a20005, reached through the id − 20000 switch at DarkSoulsII.exe 1404C94E0): the mask texture: the handler stores it at +34. Values 52 ×235, 14, 151 (DS2S, 244 instances) (FFX plan §20.42)."
             },
             {
-              "name": "unk01",
+              "name": "width",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's SfxFxDrawEntityHostRadialBlur (a20005, reached through the id − 20000 switch at DarkSoulsII.exe 1404C94E0): width, as BB a107 [3] (§20.39). Values sequences 10 → 15, 1 → 10, 5 → 25 (DS2S, 244 instances) (FFX plan §20.42)."
             },
             {
-              "name": "unk02",
+              "name": "height",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's SfxFxDrawEntityHostRadialBlur (a20005, reached through the id − 20000 switch at DarkSoulsII.exe 1404C94E0): height: equal to the width in every instance. Values as [1] (DS2S, 244 instances) (FFX plan §20.42)."
             },
             {
-              "name": "unk03",
+              "name": "blurRadius",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's SfxFxDrawEntityHostRadialBlur (a20005, reached through the id − 20000 switch at DarkSoulsII.exe 1404C94E0): blurRadius, as BB a107 [6] / DS1's \"Scale1Z\" (§20.39). Values 0.3 → 0 ×107, 0.25 → 0, 0.1 → 0: fading over 0.17–0.5 s (DS2S, 244 instances) (FFX plan §20.42)."
             },
             {
               "name": "unk04",

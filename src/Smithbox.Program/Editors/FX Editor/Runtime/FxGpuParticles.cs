@@ -31,6 +31,12 @@ public sealed class FxGpuParticleDef
     public FxValue AccelerationX, AccelerationY, AccelerationZ, Gravity, FollowFactor;
     public Vector3 RotationVariance, AngularSpeedVariance, AngularAccelerationMin, AngularAccelerationMax;
     public FxValue AngularAccelerationZ;
+    /// <summary>
+    /// BB's a10000 (§20.38) gives rotation and angular speed as min / max ranges (0 / 360, 0 / 40 occur), not FXR3's
+    /// ± variance. When set, Z is drawn from [min, max] in degrees / degrees per second instead of the variance.
+    /// </summary>
+    public bool RotationRanges;
+    public float RotationMinZ, RotationMaxZ, AngularSpeedMinZ, AngularSpeedMaxZ;
     public bool UniformScale;
     public float SizeX = 1, SizeY = 1, SizeXMin, SizeXMax, SizeYMin, SizeYMax, SizeMultiplier = 1;
     public FxValue GrowthRateX, GrowthRateY;
@@ -340,8 +346,8 @@ public sealed class FxGpuSystem
                 Size = new Vector2(sx, sy),
                 Growth = new Vector2(gx, gy),
                 GrowthAcceleration = new Vector2(Range(d.GrowthAccelXMin, d.GrowthAccelXMax), d.UniformScale ? 0 : Range(d.GrowthAccelYMin, d.GrowthAccelYMax)),
-                Rotation = Random.NextSigned() * d.RotationVariance.Z,
-                AngularSpeed = Random.NextSigned() * d.AngularSpeedVariance.Z,
+                Rotation = d.RotationRanges ? Range(d.RotationMinZ, d.RotationMaxZ) : Random.NextSigned() * d.RotationVariance.Z,
+                AngularSpeed = d.RotationRanges ? Range(d.AngularSpeedMinZ, d.AngularSpeedMaxZ) : Random.NextSigned() * d.AngularSpeedVariance.Z,
                 AngularAcceleration = Range(d.AngularAccelerationMin.Z, d.AngularAccelerationMax.Z),
                 ColorOffset = new Vector4(Range(d.ColorMin.X, d.ColorMax.X), Range(d.ColorMin.Y, d.ColorMax.Y), Range(d.ColorMin.Z, d.ColorMax.Z), Range(d.ColorMin.W, d.ColorMax.W)),
                 Frame = d.RandomFrame ? MathF.Floor(Random.Next() * frames) : 0,

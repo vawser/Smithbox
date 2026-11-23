@@ -435,14 +435,45 @@ public static class FfxEffectDefBuilder
                 Model(c, app, a, n);
                 return;
             }
-            if (a.TypeId is 40 or 43 or 107 && ScreenOrTrail(c, app, a, n))
+            if (a.TypeId is 40 or 43 or 107 or 18000 or 20005 && ScreenOrTrail(c, app, a, n))
+                return;
+            if (a.TypeId is 66 or 82 && QuadLine(c, app, n, quad: a.TypeId == 66))
                 return;
             if (Light(c, app, n))
                 return;
             if (GpuParticles(c, app, a, n))
                 return;
-            if (a.TypeId is not (20 or 27 or 59 or 70 or 71 or 15000 or 15001))
+            if (a.TypeId is not (20 or 27 or 59 or 70 or 71 or 15000 or 15001 or 15002 or 20002))
             {
+                // §20.44: BB's a10003, FXR3's LightShaft (named §20.25), drawn as FXR3's are: layered flares at the
+                // source, coloured color1 → color2 → color3 across the layers
+                if (a.TypeId == 10003 && n.ContainsKey("layers"))
+                {
+                    IFxValue S(string x) => n.GetValueOrDefault(x);
+                    int shaftTexture = (int)Scalar(S("texture"), 0);
+                    app.LightShaft = new FxLightShaftDef
+                    {
+                        // BB's 9999x is "no texture" (§20.28)
+                        Texture = shaftTexture >= 99990 ? 0 : shaftTexture,
+                        BlendMode = (int)Scalar(S("blendMode"), 4),
+                        Layers = Math.Clamp((int)Scalar(S("layers"), 30), 1, FxLightShaftDef.MaxLayers),
+                        Weight = Math.Clamp(Scalar(S("layerWeight"), 1), 0, 4),
+                        Spread = Math.Max(Scalar(S("layerSpread"), 1), 0),
+                        Width = Value(S("width"), FxArgument.ParticleAge),
+                        Height = Value(S("height"), FxArgument.ParticleAge),
+                        Color1 = Value(S("color1"), FxArgument.ParticleAge),
+                        Color2 = Value(S("color2"), FxArgument.ParticleAge),
+                        Color3 = Value(S("color3"), FxArgument.ParticleAge),
+                    };
+                    return;
+                }
+                // §20.43: BB's forces (FXR3's WindForce / GravityForce / CancelForce) are named for the Inspector, not
+                // simulated: no BB action responds to forces (FXR3's force movements 731–734 aren't in BB)
+                if (a.TypeId is 10200 or 10300 or 10301)
+                {
+                    Note($"force a{a.TypeId} (named; nothing in BB responds to forces)");
+                    return;
+                }
                 var t = a.Values.FirstOrDefault(v => v.Resource == "texture") ?? n.Values.FirstOrDefault(v => v.Resource == "texture");
                 if (t != null && a.TypeId is 43 or 107)
                 {
@@ -485,7 +516,7 @@ public static class FfxEffectDefBuilder
             IFxValue V(params string[] names) => names.Select(x => n.GetValueOrDefault(x)).FirstOrDefault(x => x != null);
             var bb = new FxBillboardDef
             {
-                Kind = a.TypeId == 27 ? FxBillboardKind.PointSprite : FxBillboardKind.BillboardEx,
+                Kind = a.TypeId is 27 or 15002 ? FxBillboardKind.PointSprite : FxBillboardKind.BillboardEx,
                 Orientation = 1,
             };
 
@@ -531,6 +562,11 @@ public static class FfxEffectDefBuilder
                 c.ParticleScaleY ??= Value(V("scale1Y"), FxArgument.ParticleAge);
             }
             bb.Size = bb.Width;
+            // §20.41: a point sprite's size is its ScaleMult (DS1 ActionData 27: 0.02 / 0.5, beside a Scale that is a
+            // random range around 1; DS2 a27 / a15002 and BB a27 by name: 0.008–0.05, BB up to 1.9), × the emitter's
+            // particle scale. Read as "scale", every point sprite was about 1 unit across
+            if (bb.Kind == FxBillboardKind.PointSprite && Value(V("scaleMult"), FxArgument.ParticleAge) is { } sm)
+                bb.Size = sm;
 
             // colours: a whole colour value, or four channel fields (DS1 ActionData Color1R..A)
             bb.Color1 = Colour(n, "color1");
@@ -544,7 +580,9 @@ public static class FfxEffectDefBuilder
             app.Billboard = bb;
 
             // the particle's life: the appearance's duration (seconds)
-            c.ParticleDuration = Seconds(V("duration"));
+            // a20002 (Blink) names no duration; drawn by the "texture only" path before §20.42 it left the life as it was
+            if (a.TypeId != 20002 || V("duration") != null)
+                c.ParticleDuration = Seconds(V("duration"), range: true);
         }
 
         /// <summary>
@@ -572,8 +610,9 @@ public static class FfxEffectDefBuilder
             name == null || System.Text.RegularExpressions.Regex.IsMatch(name, @"^(unk|texture|sound|effect|action|param)\d\d$");
 
         /// <summary>
-        /// Tracer (a40), distortion (a43) and radial blur (a107), from DS1's ActionData field names (FXR1 games; the
-        /// DLSE games don't name these slots, so they fall back to a plain billboard of the texture). False when the
+        /// Tracer (a40), distortion (a43) and radial blur (a107), from DS1's ActionData field names (FXR1 games) or the
+        /// slot names DS2's exe compile gave (a43 §20.33, BB's a107 §20.39); unnamed ones fall back to a screen effect
+        /// of size 1. False when the
         /// fields aren't there. Provisional: width = scale 1 (tracer), segment time = TrailMaxTime, segments =
         /// TrailLength, intensity = DistortionIntensity, the modes numbered as FXR3's.
         /// </summary>
@@ -587,7 +626,8 @@ public static class FfxEffectDefBuilder
 
             switch (a.TypeId)
             {
-                case 40 when V("TextureID") != null:
+                // a18000 is DS2's own tracer, its first slots named as a40's (§20.41)
+                case 40 or 18000 when V("TextureID") != null:
                 {
                     var t = new FxTracerDef
                     {
@@ -622,20 +662,84 @@ public static class FfxEffectDefBuilder
                         InterpolateFrames = false,
                     };
                     return true;
-                case 107 when V("TextureID") != null:
+                // §20.39: DS1 / DS1R by their ActionData field names, BB by FXR3 RadialBlur's (DarkSoulsII.exe's compile
+                // puts the slots on the same fields). DS1R's "Scale1Z" holds BB's blurRadius values (0 → 0.1 → 0
+                // pulses), so it's read as the blur radius; FXR3's default 0.5 when there's neither
+                // a20005 is DS2's own radial blur (SfxFxDrawEntityHostRadialBlur), named as BB's a107 (§20.42)
+                case 107 or 20005 when V("TextureID", "mask") != null:
                     app.Billboard = new FxBillboardDef
                     {
                         Kind = FxBillboardKind.RadialBlur,
-                        Texture = Int("TextureID", 0),
+                        Texture = V("mask") != null ? Tex("mask") : Int("TextureID", 0),
                         Orientation = 1,
-                        Width = Value(V("Scale1X"), FxArgument.ParticleAge) ?? FxValue.Constant(1),
-                        Height = Value(V("Scale1Y", "Scale1X"), FxArgument.ParticleAge) ?? FxValue.Constant(1),
+                        Width = Value(V("width", "Scale1X"), FxArgument.ParticleAge) ?? FxValue.Constant(1),
+                        Height = Value(V("height", "Scale1Y", "width", "Scale1X"), FxArgument.ParticleAge) ?? FxValue.Constant(1),
                         Color1 = Colour(n, "color"),
+                        BlurRadius = Value(V("blurRadius", "Scale1Z"), FxArgument.ParticleAge),
                         InterpolateFrames = false,
                     };
                     return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// a66, FXR3's QuadLine (§20.40): a camera-facing strip from the particle back along its travel, width × length,
+        /// coloured color1 × color2 × color3 and from startColor (leading) to endColor (trailing); no texture. DES /
+        /// DS2 / BB by their slot names. DS1 / DS1R by ActionData 66's fields in struct order (DSAnimStudio's names
+        /// are positional there): Unk6_3 width, Unk6_4 length, Unk6_5–8 color1, Unk6_9–12 color2, Unk6_13–16
+        /// startColor, Unk6_17 / 18 / Color1R / G endColor, Color1B / A the width / length multipliers, Color2 color3,
+        /// Unk5 the blend mode. (provisional) startColor / endColor follow FXR3's order; which end is which isn't
+        /// confirmed against the games.
+        /// </summary>
+        private static bool QuadLine(FxConfigDef c, FxAppearanceDef app, Dictionary<string, IFxValue> n, bool quad = true)
+        {
+            bool ds1 = n.ContainsKey("Unk6_4");
+            if (!ds1 && !n.ContainsKey("length"))
+                return false;
+            FxValue V(string name) => Value(n.GetValueOrDefault(name), FxArgument.ParticleAge);
+            FxValue C(string r, string g, string b, string al) => Channels(n, r, g, b, al);
+            // a82 is FXR3's Line (§20.44): no width, drawn 1.5 % of its length wide as FXR3's
+            var line = new FxLineDef { Quad = quad };
+            if (ds1)
+            {
+                line.Width = V("Unk6_3");
+                line.Length = V("Unk6_4");
+                line.Color1 = C("Unk6_5", "Unk6_6", "Unk6_7", "Unk6_8");
+                line.Color2 = C("Unk6_9", "Unk6_10", "Unk6_11", "Unk6_12");
+                line.StartColor = C("Unk6_13", "Unk6_14", "Unk6_15", "Unk6_16");
+                line.EndColor = C("Unk6_17", "Unk6_18", "Color1R", "Color1G");
+                line.WidthMultiplier = V("Color1B");
+                line.LengthMultiplier = V("Color1A");
+                line.Color3 = C("Color2R", "Color2G", "Color2B", "Color2A");
+                line.BlendMode = (int)Scalar(n.GetValueOrDefault("Unk5"), 2);
+            }
+            else
+            {
+                line.Width = V("width");
+                line.Length = V("length");
+                line.WidthMultiplier = V("widthMultiplier");
+                line.LengthMultiplier = V("lengthMultiplier");
+                line.Color2 = V("color2");
+                line.StartColor = V("startColor");
+                line.EndColor = V("endColor");
+                line.Color3 = V("color3");
+                line.BlendMode = (int)Scalar(n.GetValueOrDefault("blendMode"), 2);
+            }
+            // DES has no width multiplier and stores the width as a sequence: unset values are 1 in FxLineDef
+            app.Line = line;
+            c.ParticleDuration ??= Seconds(n.GetValueOrDefault("duration") ?? n.GetValueOrDefault("Duration"), range: true);
+            return true;
+        }
+
+        /// <summary>A colour from four channel values (each a constant or a sequence), sampled as <see cref="Colour"/> does.</summary>
+        private static FxValue Channels(Dictionary<string, IFxValue> n, string r, string g, string b, string a)
+        {
+            var ch = new[] { r, g, b, a }.Select(x => n.GetValueOrDefault(x)).ToArray();
+            if (ch.Any(x => x == null))
+                return null;
+            var tmp = new Dictionary<string, IFxValue> { ["cR"] = ch[0], ["cG"] = ch[1], ["cB"] = ch[2], ["cA"] = ch[3] };
+            return Colour(tmp, "c");
         }
 
         /// <summary>
@@ -664,8 +768,10 @@ public static class FfxEffectDefBuilder
         /// <summary>
         /// A GPU particle system (BB's a10000, FXR3's GPUStandardParticle, §20.25–26), from the slots named after FXR3's
         /// fields: textures, emitter shape / size / rotation / distribution, particle offset and speed with their
-        /// ranges. Run by the node, as FXR3's. (provisional) What BB doesn't name yet keeps the runtime's defaults: 10
-        /// particles per emission, one emission a second, a one-second life, size 1, white; the blend mode is additive.
+        /// ranges, colour and sprite sheet (§20.36), count / interval / life (frames at 30 Hz) and size / growth
+        /// (§20.37), acceleration, rotation and angular speed / acceleration (§20.38). Run by the node, as FXR3's.
+        /// Without the §20.37 names the runtime's defaults stay: 10 particles per emission, one emission a second, a
+        /// one-second life, size 1.
         /// </summary>
         private bool GpuParticles(FxConfigDef c, FxAppearanceDef app, IFxAction a, Dictionary<string, IFxValue> n)
         {
@@ -699,13 +805,81 @@ public static class FfxEffectDefBuilder
                 TotalFrames = Math.Max(1, (int)F("totalFrames", 1)),
                 RandomFrame = F("randomTextureFrame") != 0,
                 MaxFrameIndex = (int)F("maxFrameIndex"),
-                // as FXR3's builder falls back when the interval isn't named (0 would emit every frame)
-                IntervalMin = 1,
-                IntervalMax = 1,
             };
+
+            // §20.37: count, interval and life are each a base int plus a min / max variance; interval and life are
+            // frames at 30 Hz. The def takes the interval as an absolute range and the life as one value (its
+            // variance isn't per particle in the runtime: the midpoint is used)
+            bool timed = n.ContainsKey("particleDuration") && n.ContainsKey("emissionInterval");
+            if (timed)
+            {
+                const float frame = FxGpuParticleDef.FrameInterval;
+                d.PerEmission = (int)F("emissionParticleCount", 10);
+                d.PerEmissionMin = (int)F("emissionParticleCountMin");
+                d.PerEmissionMax = (int)F("emissionParticleCountMax");
+                float interval = F("emissionInterval", 1);
+                // 0 emits every frame (the runtime's own rule for a zero interval)
+                d.IntervalMin = Math.Max(0, interval + F("emissionIntervalMin")) * frame;
+                d.IntervalMax = Math.Max(0, interval + F("emissionIntervalMax")) * frame;
+                d.LimitEmissions = F("limitEmissionCount") != 0;
+                d.EmissionLimit = (int)F("emissionCountLimit");
+                float life = F("particleDuration", 30) + (F("particleDurationMin") + F("particleDurationMax")) / 2;
+                d.Duration = Math.Max(1, life) * frame;
+            }
+            else
+            {
+                // as FXR3's builder falls back when the interval isn't named (0 would emit every frame)
+                d.IntervalMin = 1;
+                d.IntervalMax = 1;
+            }
+
+            bool sized = n.ContainsKey("particleSizeX");
+            if (sized)
+            {
+                d.UniformScale = F("particleUniformScale") != 0;
+                d.SizeX = F("particleSizeX", 1);
+                d.SizeY = F("particleSizeY", d.SizeX);
+                d.SizeXMin = F("particleSizeXMin");
+                d.SizeXMax = F("particleSizeXMax");
+                d.SizeYMin = F("particleSizeYMin");
+                d.SizeYMax = F("particleSizeYMax");
+                d.GrowthRateX = Value(n.GetValueOrDefault("particleGrowthRateX"), FxArgument.ParticleAge);
+                d.GrowthRateY = Value(n.GetValueOrDefault("particleGrowthRateY"), FxArgument.ParticleAge);
+                d.GrowthStaticX = F("particleGrowthRateXStatic");
+                d.GrowthStaticY = F("particleGrowthRateYStatic");
+                d.GrowthXMin = F("particleGrowthRateXMin");
+                d.GrowthXMax = F("particleGrowthRateXMax");
+                d.GrowthYMin = F("particleGrowthRateYMin");
+                d.GrowthYMax = F("particleGrowthRateYMax");
+            }
+
+            // §20.38: acceleration (properties over the particle's age, plus a random min / max per particle), rotation
+            // and angular speed as min / max ranges (degrees, degrees per second), angular acceleration. The runtime
+            // evaluates the properties once per system, so they take the active time (provisional: BB's argument
+            // isn't known; only 17 vanilla instances aren't constant)
+            bool moved = n.ContainsKey("particleRotationMinZ");
+            if (moved)
+            {
+                d.AccelerationX = Value(n.GetValueOrDefault("particleAccelerationX"), FxArgument.ActiveTime);
+                d.AccelerationY = Value(n.GetValueOrDefault("particleAccelerationY"), FxArgument.ActiveTime);
+                d.AccelerationZ = Value(n.GetValueOrDefault("particleAccelerationZ"), FxArgument.ActiveTime);
+                d.AccelerationMin = V3("particleAccelerationMin");
+                d.AccelerationMax = V3("particleAccelerationMax");
+                d.RotationRanges = true;
+                d.RotationMinZ = F("particleRotationMinZ");
+                d.RotationMaxZ = F("particleRotationMaxZ");
+                d.AngularSpeedMinZ = F("particleAngularSpeedMinZ");
+                d.AngularSpeedMaxZ = F("particleAngularSpeedMaxZ");
+                d.AngularAccelerationZ = Value(n.GetValueOrDefault("particleAngularAccelerationZ"), FxArgument.ActiveTime);
+                d.AngularAccelerationMin = V3("particleAngularAccelerationMin");
+                d.AngularAccelerationMax = V3("particleAngularAccelerationMax");
+            }
+
             app.GpuParticles = d;
             c.GpuSystems.Add(app);
-            Note($"appearance a{a.TypeId} (GPU particles, count / timing / size provisional)");
+            // the survey lists notes as unmapped: only what is still missing
+            if (!(timed && sized && moved))
+                Note($"appearance a{a.TypeId} (GPU particles, count / timing / size / rotation provisional)");
             return true;
         }
 
@@ -750,7 +924,7 @@ public static class FfxEffectDefBuilder
             m.Color2 = Colour(n, "color2") ?? Colour(n, "color");
             m.BlendModeValue = (int)(V("blendMode")?.Get()?.FirstOrDefault() ?? 2);
             app.Model = m;
-            c.ParticleDuration = Seconds(V("duration"));
+            c.ParticleDuration = Seconds(V("duration"), range: true);
         }
 
         // ---------------------------------------------------------------- values
@@ -786,7 +960,14 @@ public static class FfxEffectDefBuilder
             }
             if (v is IFxCurveValue cv && v.Kind == FxValueKind.Curve)
             {
-                try { return cv.GetCurve(); } catch { return null; }
+                FxrCurve curve;
+                try { curve = cv.GetCurve(); } catch { return null; }
+                // §20.38: a cyclic sequence with one key (length 0) evaluates to NaN in FxrCurve, as FXR3 games do.
+                // The older games use them as constants: BB's a10000 has 58 instances holding 0 at key 0 in its
+                // acceleration / follow slots, and a NaN there removed every particle. Not looped, it holds its key
+                if (curve is { Loop: true } && curve.SequenceDuration == 0)
+                    curve.Loop = false;
+                return curve;
             }
             var d = v.Get();
             if (d == null || d.Length == 0)
@@ -832,13 +1013,19 @@ public static class FfxEffectDefBuilder
         }
 
         /// <summary>A time in seconds; a negative one (-1 frame) means endless and reads -1.</summary>
-        private static FxValue Seconds(IFxValue v)
+        private static FxValue Seconds(IFxValue v, bool range = false)
         {
             var c = v == null ? null : ToCurve(v);
             if (c == null)
                 return null;
             if (c.Function <= FxrPropertyFunction.Constant && c.Constant?.Length > 0 && c.Constant[0] < 0)
                 return FxValue.Constant(-1);
+            // §20.41: an appearance's duration Tick2 is a [min, max] range (BB a27 [0.93, 2.07], a66 [0.75, 0.92], a71;
+            // DS2's are [1, 1] / [2, 2]): its midpoint, as the runtime has one life per config (the first value alone
+            // shortened BB's sprites). Node
+            // durations / emission timing (range false) keep the first value: their Tick2s aren't known to be ranges
+            if (range && v is IFxTypedValue { TypeName: "Tick2" } && c.Function <= FxrPropertyFunction.Constant && c.Constant?.Length == 2)
+                return FxValue.Constant((c.Constant[0] + c.Constant[1]) / 2);
             return FxValue.FromCurve(c, FxArgument.ActiveTime);
         }
 
