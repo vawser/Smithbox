@@ -1,83 +1,49 @@
-- Editors:
-    - Map Editor
-    - Model Editor
-    - Param Editor
-    - Text Editor
-    - Gparam Editor
-    - FX Editor
-    - Havok Editor
-    - Material Editor
-    - Texture Editor
-    - EMEVD Editor
-    - ESD Editor
-    - File Browser
-    - Projectile Editor
-    - FaceGen Editor
-    
 #-------------
 # Blue Sky
 #-------------
 - Game Porter
-    - Port assets from X game to Y game
-
-- HKS intepreter (to link with behaviors and animation playback)
-    - Work allow for powerful visualization of movesets
+    - DB_NT -> ER
+    - DS1R -> ER
+    - SDT -> ER
 
 - Icon Builder
     - Preview a model with adjustable bones so it can be placed in a specific way
     - Include consistent camera angles
     - Automatic icon capture
-    
-- ER: unsupported formats:
-    - moaei
-    - bsipwv
-    
-- AC6: unsupported formats:
-    - nvve
-    - moaei
-    - blf
-    
+
 #----------------------------------------------------
 # Map Editor TODO
 #----------------------------------------------------
-
-- DB_NT MSB: research/sync with ER
 - NR MSB: research/sync with ER
 - AC6 MSB: research
 
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------
-
-- Support Cloth
+- Support cloth simulation
 - External Model Import (transform into FLVER)
 
 #----------------------------------------------------
 # Param Editor TODO
 #----------------------------------------------------
-
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 - Add fault-tolerant CSV import (i.e. CSVs from older paramdef versions)
 
 #----------------------------------------------------
 # Text Editor TODO
 #----------------------------------------------------
-
 - FMG Reloader: add support for DS2S / DS1R
 
 #----------------------------------------------------
 # Graphics Param Editor TODO
 #----------------------------------------------------
-
 - GPARAM Reloader: add full support for DS2S
-- Expand the amount of GPARAM elements considered by the renderer
 
 #----------------------------------------------------
 # Material Editor TODO
 #----------------------------------------------------
-
-- Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
 - Make reloader use chr reload?
+- Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
 
 #----------------------------------------------------
 # Texture Editor TODO
@@ -86,6 +52,7 @@
 #----------------------------------------------------
 # Time Act Editor TODO
 #----------------------------------------------------
+- NR: need to support additive blend
 - DS2: TAE support (requires some additional stuff for the 'network' concept DS2 has)
 
 - Tools:
@@ -96,10 +63,10 @@
 #----------------------------------------------------
 # Havok Editor TODO
 #----------------------------------------------------
+- Remove Collision Generator tool (tooling in Map/Model Editor covers it properly now)
+
 - Add Behavior Merge tool
 - Add Behavior templates
-
-- Improve Collision Generator: add support for DES / DS1R / DS2S
  
 - Character Reloader: add support for DS2S / DS1R
 
@@ -130,11 +97,10 @@
 #----------------------------------------------------
 # FX Editor TODO
 #----------------------------------------------------
-- Continue FFX Older Games Plan.md
-
+- Add FX Reloader: support for DES/SDT/ER/NR/AC6
 - FX placement in map seems slightly off (candle flames too high), missing factor that positions them properly?
 
-- Add FX Reloader: support for DES/SDT/ER/NR/AC6
+- Continue FFX Older Games Plan.md
 
 #----------------------------------------------------
 # EMEVD Editor TODO
@@ -153,14 +119,16 @@
 - Add support for FMOD sound add/replace
 
 #----------------------------------------------------
+# Behavior Editor TODO
+#----------------------------------------------------
+
+#----------------------------------------------------
 # FaceGen Editor TODO
 #----------------------------------------------------
 
 #----------------------------------------------------
 # Lua Editor TODO
 #----------------------------------------------------
-
-- NR: some enemies need additional anim support (top half is blended with separate bottom half anim)
 - AC6: needs connection between Lua and animations (as AC6 uses BHV)
 
 #----------------------------------------------------

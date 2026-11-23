@@ -6680,20 +6680,23 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterDegree",
+              "nameSource": "DarkSoulsII.exe: the a28 compile function writes slot 1 to +28 of the compiled block, DS1 ActionData28's EmitterDegree; every DS1 field gets exactly one slot of its kind",
               "types": [
                 9,
                 11
               ]
             },
             {
-              "name": "unk02",
+              "name": "emitterSpread",
+              "nameSource": "DarkSoulsII.exe: the a28 compile function writes slot 2 to +38 of the compiled block, DS1 ActionData28's EmitterSpread; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk03",
+              "name": "emitterSpeed",
+              "nameSource": "DarkSoulsII.exe: the a28 compile function writes slot 3 to +48 of the compiled block, DS1 ActionData28's EmitterSpeed; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11,
                 13,
@@ -6715,7 +6718,8 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "emitterDirectionMode",
+              "nameSource": "DarkSoulsII.exe: the a28 compile function writes slot 6 to +58 of the compiled block, DS1 ActionData28's EmitterDirectionMode; every DS1 field gets exactly one slot of its kind",
               "types": [
                 1
               ],
@@ -6727,8 +6731,7 @@
               ]
             },
             {
-              "name": "emitterDirectionMode",
-              "nameSource": "DS1 ActionData field EmitterDirectionMode: 16/17 paired effects agree (2 values)",
+              "name": "unk07",
               "types": [
                 1
               ],
@@ -7285,27 +7288,31 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterRadius",
+              "nameSource": "DarkSoulsII.exe: the a30 compile function writes slot 1 to +28 of the compiled block, DS1 ActionData30's EmitterRadius; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 9,
                 11
               ]
             },
             {
-              "name": "unk02",
+              "name": "emitterDegree",
+              "nameSource": "DarkSoulsII.exe: the a30 compile function writes slot 2 to +38 of the compiled block, DS1 ActionData30's EmitterDegree; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 9,
                 11
               ]
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
+              "nameSource": "DarkSoulsII.exe: the a30 compile function writes slot 3 to +48 of the compiled block, DS1 ActionData30's EmitterSpread; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
+              "nameSource": "DarkSoulsII.exe: the a30 compile function writes slot 4 to +58 of the compiled block, DS1 ActionData30's EmitterSpeed; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 82
               ]
@@ -7323,7 +7330,8 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emitterDirectionMode",
+              "nameSource": "DarkSoulsII.exe: the a30 compile function writes slot 7 to +70 of the compiled block, DS1 ActionData30's EmitterDirectionMode; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -7366,7 +7374,8 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "emitterDistributionMode",
+              "nameSource": "DarkSoulsII.exe: the a30 compile function writes slot 11 to +6C of the compiled block, DS1 ActionData30's EmitterDistributionMode; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -7447,7 +7456,8 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emitterDirectionMode",
+              "nameSource": "DS1 ActionData field EmitterDirectionMode: 17/17 paired effects agree (2 values)",
               "types": [
                 1
               ],
@@ -7488,7 +7498,8 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "emitterDistributionMode",
+              "nameSource": "DS1 ActionData field EmitterDistributionMode: 17/17 paired effects agree (2 values)",
               "types": [
                 1
               ],
@@ -7626,26 +7637,30 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterRadius",
+              "nameSource": "DarkSoulsII.exe: the a31 compile function writes slot 1 to +28 of the compiled block, DS1 ActionData31's EmitterRadius; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk02",
+              "name": "emitterDegree",
+              "nameSource": "DarkSoulsII.exe: the a31 compile function writes slot 2 to +38 of the compiled block, DS1 ActionData31's EmitterDegree; every DS1 field gets exactly one slot of its kind",
               "types": [
                 9,
                 11
               ]
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
+              "nameSource": "DarkSoulsII.exe: the a31 compile function writes slot 3 to +48 of the compiled block, DS1 ActionData31's EmitterSpread; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
+              "nameSource": "DarkSoulsII.exe: the a31 compile function writes slot 4 to +58 of the compiled block, DS1 ActionData31's EmitterSpeed; every DS1 field gets exactly one slot of its kind",
               "types": [
                 82
               ]
@@ -7663,7 +7678,8 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emitterDistributionMode",
+              "nameSource": "DarkSoulsII.exe: the a31 compile function writes slot 7 to +68 of the compiled block, DS1 ActionData31's EmitterDistributionMode; every DS1 field gets exactly one slot of its kind",
               "types": [
                 1
               ],
@@ -7692,7 +7708,8 @@
               ]
             },
             {
-              "name": "unk10",
+              "name": "emitterMovementMode",
+              "nameSource": "DarkSoulsII.exe: the a31 compile function writes slot 10 to +6C of the compiled block, DS1 ActionData31's EmitterMovementMode; every DS1 field gets exactly one slot of its kind",
               "types": [
                 1
               ],
@@ -7954,38 +7971,44 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterSizeX",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 1 to +28 of the compiled block, DS1 ActionData32's EmitterSizeX; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk02",
+              "name": "emitterSizeY",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 2 to +38 of the compiled block, DS1 ActionData32's EmitterSizeY; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk03",
+              "name": "emitterSizeZ",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 3 to +48 of the compiled block, DS1 ActionData32's EmitterSizeZ; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk04",
+              "name": "emitterDegree",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 4 to +58 of the compiled block, DS1 ActionData32's EmitterDegree; every DS1 field gets exactly one slot of its kind",
               "types": [
                 9,
                 11
               ]
             },
             {
-              "name": "unk05",
+              "name": "emitterSpread",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 5 to +68 of the compiled block, DS1 ActionData32's EmitterSpread; every DS1 field gets exactly one slot of its kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk06",
+              "name": "emitterSpeed",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 6 to +78 of the compiled block, DS1 ActionData32's EmitterSpeed; every DS1 field gets exactly one slot of its kind",
               "types": [
                 82
               ]
@@ -8003,7 +8026,8 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "emitterDistributionMode",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 9 to +88 of the compiled block, DS1 ActionData32's EmitterDistributionMode; every DS1 field gets exactly one slot of its kind",
               "types": [
                 1
               ],
@@ -8043,7 +8067,8 @@
               ]
             },
             {
-              "name": "unk13",
+              "name": "emitterMovementMode",
+              "nameSource": "DarkSoulsII.exe: the a32 compile function writes slot 13 to +8C of the compiled block, DS1 ActionData32's EmitterMovementMode; every DS1 field gets exactly one slot of its kind",
               "types": [
                 1
               ],
@@ -8211,8 +8236,9 @@
       }
     },
     "33": {
-      "name": "Action33",
-      "category": "",
+      "name": "ClusterEmitter_EllipticCone",
+      "category": "Emitter",
+      "source": "DarkSoulsII.exe: the a33 factory builds FXClusterEmitter_EllipticCone (§20.6)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -11489,8 +11515,9 @@
       }
     },
     "45": {
-      "name": "Action45",
-      "category": "",
+      "name": "ClusterEmitter_FoursidedPyramid",
+      "category": "Emitter",
+      "source": "DarkSoulsII.exe: the a45 factory builds FXClusterEmitter_FoursidedPyramid (§20.6)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -12259,7 +12286,8 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
+              "nameSource": "DarkSoulsII.exe: the a55 compile function writes slot 0 to +28 of the compiled block, DS1 ActionData55's Gravity; all 3 slots inside DS1's layout land on fields of their kind (all compiled params on the 16-byte FXField stride, so the order is the weaker evidence)",
               "types": [
                 11,
                 12,
@@ -12267,14 +12295,16 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "movementFalloff",
+              "nameSource": "DarkSoulsII.exe: the a55 compile function writes slot 1 to +38 of the compiled block, DS1 ActionData55's MovementFalloff; all 3 slots inside DS1's layout land on fields of their kind (all compiled params on the 16-byte FXField stride, so the order is the weaker evidence)",
               "types": [
                 11,
                 12
               ]
             },
             {
-              "name": "unk02",
+              "name": "movementFalloffMult",
+              "nameSource": "DarkSoulsII.exe: the a55 compile function writes slot 2 to +48 of the compiled block, DS1 ActionData55's MovementFalloffMult; all 3 slots inside DS1's layout land on fields of their kind (all compiled params on the 16-byte FXField stride, so the order is the weaker evidence)",
               "types": [
                 81
               ]
@@ -12354,7 +12384,8 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "phaseShift",
+              "nameSource": "DS1 ActionData field PhaseShift: 183/184 paired effects agree (5 values)",
               "types": [
                 7
               ],
@@ -14219,7 +14250,8 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "color",
+              "nameSource": "BB slot 9 (color), same position in a window [0..12] of matching types, 13 slots of 4 type classes matching in order",
               "types": [
                 17
               ]
@@ -14445,7 +14477,8 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "blendMode",
+              "nameSource": "DES slot 8 (blendMode), same position in a window [0..12] of matching types, 13 slots of 4 type classes matching in order",
               "types": [
                 1
               ],
@@ -14458,7 +14491,8 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "color",
+              "nameSource": "BB slot 9 (color), same position in a window [0..35] of matching types, 36 slots of 6 type classes matching in order",
               "types": [
                 19
               ]
@@ -15248,7 +15282,8 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "blendMode",
+              "nameSource": "DES slot 8 (blendMode), same position in a window [0..12] of matching types, 13 slots of 4 type classes matching in order",
               "types": [
                 1
               ],
@@ -15264,7 +15299,8 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "color",
+              "nameSource": "DS1 ActionData field ColorA: 4/4 paired effects agree (4 values), key times 4/4, channel a",
               "types": [
                 17,
                 19,
@@ -16233,7 +16269,8 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "color2",
+              "nameSource": "BB slot 5 (color2), same position in a window [0..15] of matching types, 16 slots of 7 type classes matching in order",
               "types": [
                 19
               ]
@@ -16413,7 +16450,8 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "color2",
+              "nameSource": "DS1 ActionData field Color2R: 8/8 paired effects agree (2 values), key times 8/8, channel r",
               "types": [
                 19
               ]
@@ -18793,13 +18831,15 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "duration",
+              "nameSource": "DES slot 3 (duration), same position in a window [0..12] of matching types, 13 slots of 7 type classes matching in order",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk04",
+              "name": "orientationMode",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 4 to +48 of the compiled block, DS1 ActionData71's OrientationMode; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 1
               ],
@@ -18810,7 +18850,8 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "blendMode",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 5 to +4C of the compiled block, DS1 ActionData71's BlendMode; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 1
               ],
@@ -18822,7 +18863,8 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "animFrameSliceCountPerRow",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 6 to +F8 of the compiled block, DS1 ActionData71's AnimFrameSliceCountPerRow; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 1
               ],
@@ -18836,7 +18878,8 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "animFrameTotalCount",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 7 to +FC of the compiled block, DS1 ActionData71's AnimFrameTotalCount; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 1
               ],
@@ -18851,31 +18894,36 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "animFrameInitial",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 8 to +100 of the compiled block, DS1 ActionData71's AnimFrameInitial; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 79
               ]
             },
             {
-              "name": "unk09",
+              "name": "animFrameTimeline",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 9 to +110 of the compiled block, DS1 ActionData71's AnimFrameTimeline; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 6
               ]
             },
             {
-              "name": "unk10",
+              "name": "scale2X",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 10 to +78 of the compiled block, DS1 ActionData71's Scale2X; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk11",
+              "name": "scale2Y",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 11 to +88 of the compiled block, DS1 ActionData71's Scale2Y; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk12",
+              "name": "color2",
+              "nameSource": "DES slot 12 (color2), same position in a window [0..12] of matching types, 13 slots of 7 type classes matching in order",
               "types": [
                 19
               ]
@@ -18887,19 +18935,22 @@
               ]
             },
             {
-              "name": "unk14",
+              "name": "rotX",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 14 to +98 of the compiled block, DS1 ActionData71's RotX; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 81
               ]
             },
             {
-              "name": "unk15",
+              "name": "rotY",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 15 to +A8 of the compiled block, DS1 ActionData71's RotY; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 81
               ]
             },
             {
-              "name": "unk16",
+              "name": "rotZ",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 16 to +B8 of the compiled block, DS1 ActionData71's RotZ; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 81
               ]
@@ -18941,7 +18992,8 @@
               ]
             },
             {
-              "name": "unk23",
+              "name": "attachedBool",
+              "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 23 to +34 of the compiled block, DS1 ActionData71's AttachedBool; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 1
               ],
@@ -19019,7 +19071,8 @@
               ]
             },
             {
-              "name": "unk30",
+              "name": "saturation",
+              "nameSource": "BB slot 30 (saturation), same position in a window [0..37] of matching types, 38 slots of 9 type classes matching in order",
               "types": [
                 7
               ],
@@ -19042,7 +19095,8 @@
               ]
             },
             {
-              "name": "unk32",
+              "name": "renderDepth",
+              "nameSource": "BB slot 32 (renderDepth), same position in a window [0..37] of matching types, 38 slots of 9 type classes matching in order",
               "types": [
                 7
               ],
@@ -19250,7 +19304,8 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID",
+              "nameSource": "DS1 ActionData field TextureID: 26/27 paired effects agree (9 values)",
               "types": [
                 40
               ]
@@ -19262,7 +19317,8 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "duration",
+              "nameSource": "DES slot 3 (duration), same position in a window [0..12] of matching types, anchored by 6 slots named alike in both (blendMode, animFrameSliceCountPerRow, animFrameTotalCount, scale2X, scale2Y, color2)",
               "types": [
                 85
               ]
@@ -19283,7 +19339,8 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "blendMode",
+              "nameSource": "DS1 ActionData field BlendMode: 27/27 paired effects agree (4 values)",
               "types": [
                 1
               ],
@@ -19299,7 +19356,8 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "animFrameSliceCountPerRow",
+              "nameSource": "DS1 ActionData field AnimFrameSliceCountPerRow: 27/27 paired effects agree (2 values)",
               "types": [
                 1
               ],
@@ -19313,7 +19371,8 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "animFrameTotalCount",
+              "nameSource": "DS1 ActionData field AnimFrameTotalCount: 27/27 paired effects agree (2 values)",
               "types": [
                 1
               ],
@@ -19335,7 +19394,8 @@
               ]
             },
             {
-              "name": "unk10",
+              "name": "scale2X",
+              "nameSource": "DS1 ActionData field Scale2X: 4/4 paired effects agree (4 values), key times 4/4",
               "types": [
                 11,
                 12,
@@ -19344,7 +19404,8 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "scale2Y",
+              "nameSource": "DS1 ActionData field Scale2Y: 4/4 paired effects agree (4 values), key times 4/4",
               "types": [
                 9,
                 11,
@@ -19354,7 +19415,8 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "color2",
+              "nameSource": "DS1 ActionData field Color2R: 4/4 paired effects agree (4 values), key times 4/4, channel r",
               "types": [
                 19,
                 20,
@@ -19426,7 +19488,8 @@
               ]
             },
             {
-              "name": "unk23",
+              "name": "attachedBool",
+              "nameSource": "DS1 ActionData field AttachedBool: 27/27 paired effects agree (2 values)",
               "types": [
                 1
               ],
@@ -19509,7 +19572,8 @@
               ]
             },
             {
-              "name": "unk30",
+              "name": "saturation",
+              "nameSource": "DS1 ActionData field Saturation: 27/27 paired effects agree (4 values)",
               "types": [
                 7
               ],
@@ -19529,7 +19593,8 @@
               ]
             },
             {
-              "name": "unk32",
+              "name": "renderDepth",
+              "nameSource": "DS1 ActionData field RenderDepth: 27/27 paired effects agree (3 values)",
               "types": [
                 7
               ],
@@ -21254,21 +21319,24 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
+              "nameSource": "DarkSoulsII.exe: the a84 compile function writes slot 0 to +28 of the compiled block, DS1 ActionData84's Gravity; all 5 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11,
                 12
               ]
             },
             {
-              "name": "unk01",
+              "name": "movementFalloff",
+              "nameSource": "DarkSoulsII.exe: the a84 compile function writes slot 1 to +38 of the compiled block, DS1 ActionData84's MovementFalloff; all 5 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11,
                 12
               ]
             },
             {
-              "name": "unk02",
+              "name": "movementFalloffMult",
+              "nameSource": "DarkSoulsII.exe: the a84 compile function writes slot 2 to +48 of the compiled block, DS1 ActionData84's MovementFalloffMult; all 5 slots inside DS1's layout land on fields of their kind",
               "types": [
                 81
               ]
@@ -21288,13 +21356,15 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "turnAngle",
+              "nameSource": "DarkSoulsII.exe: the a84 compile function writes slot 4 to +60 of the compiled block, DS1 ActionData84's TurnAngle; all 5 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk05",
+              "name": "turnInterval",
+              "nameSource": "DarkSoulsII.exe: the a84 compile function writes slot 5 to +70 of the compiled block, DS1 ActionData84's TurnInterval; all 5 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -25211,21 +25281,24 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
+              "nameSource": "DarkSoulsII.exe: the a105 compile function writes slot 0 to +28 of the compiled block, DS1 ActionData105's Gravity; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11,
                 12
               ]
             },
             {
-              "name": "unk01",
+              "name": "movementFalloff",
+              "nameSource": "DarkSoulsII.exe: the a105 compile function writes slot 1 to +38 of the compiled block, DS1 ActionData105's MovementFalloff; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11,
                 12
               ]
             },
             {
-              "name": "unk02",
+              "name": "movementFalloffMult",
+              "nameSource": "DarkSoulsII.exe: the a105 compile function writes slot 2 to +48 of the compiled block, DS1 ActionData105's MovementFalloffMult; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 81
               ]
@@ -25242,13 +25315,15 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "turnAngle",
+              "nameSource": "DarkSoulsII.exe: the a105 compile function writes slot 4 to +60 of the compiled block, DS1 ActionData105's TurnAngle; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk05",
+              "name": "turnInterval",
+              "nameSource": "DarkSoulsII.exe: the a105 compile function writes slot 5 to +70 of the compiled block, DS1 ActionData105's TurnInterval; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -25262,7 +25337,8 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "followRate",
+              "nameSource": "DarkSoulsII.exe: the a105 compile function writes slot 6 to +78 of the compiled block, DS1 ActionData105's FollowRate; all 6 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11
               ]
@@ -26138,7 +26214,8 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "color2",
+              "nameSource": "DS1 ActionData field Color2A: 30/32 paired effects agree (3 values), key times 26/31, channel a",
               "types": [
                 19,
                 20,
@@ -26279,7 +26356,8 @@
               ]
             },
             {
-              "name": "unk23",
+              "name": "orientationMode",
+              "nameSource": "DS1 ActionData field OrientationMode: 29/32 paired effects agree (3 values)",
               "types": [
                 1
               ],
@@ -26319,7 +26397,8 @@
               ]
             },
             {
-              "name": "unk28",
+              "name": "blendMode",
+              "nameSource": "DS1 ActionData field BlendMode: 32/32 paired effects agree (2 values)",
               "types": [
                 1
               ],
@@ -27702,8 +27781,8 @@
     },
     "117": {
       "name": "Action117",
-      "category": "",
-      "source": "DSAnimStudio ActionData 117 (unnamed)",
+      "category": "Emitter",
+      "source": "DSAnimStudio ActionData 117 (unnamed); DarkSoulsII.exe registers it with the cluster emitters (§20.6)",
       "games": {
         "DS1R": {
           "paramCounts": [
@@ -38370,6 +38449,5517 @@
           ]
         },
         "DS2S": "DS2"
+      }
+    }
+  },
+  "nodeTypes": {
+    "-1": {
+      "name": "Node-1",
+      "games": {
+        "BB": {
+          "paramCounts": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                2
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                37,
+                38
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                37,
+                38
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                37,
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "103": {
+      "name": "Node103",
+      "template": "f0000103",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "104": {
+      "name": "Node104",
+      "template": "f0000104",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "105": {
+      "name": "Node105",
+      "template": "f0000105",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "106": {
+      "name": "Node106",
+      "template": "f0000106",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "107": {
+      "name": "Node107",
+      "template": "f0000107",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "108": {
+      "name": "Node108",
+      "template": "f0000108",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "109": {
+      "name": "Node109",
+      "template": "f0000109",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "110": {
+      "name": "Node110",
+      "template": "f0000110",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "111": {
+      "name": "Node111",
+      "template": "f0000111",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "114": {
+      "name": "Node114",
+      "template": "f0000114",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "115": {
+      "name": "Node115",
+      "template": "f0000115",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "116": {
+      "name": "Node116",
+      "template": "f0000116",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            1
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2020": {
+      "name": "Node2020",
+      "template": "f0002020",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            12
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002020: state 2 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0)); template f0002020: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 40
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002020: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:6])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 1.1666666269302368
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002020: state 2 restarts itself when (CurrentTick >= argB[1:7])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 33.33333206176758
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002020: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:8]) && (argB[1:8] >= 0)); template f0002020: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:8]) && (argB[1:8] >= 0)); template f0002020: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:8]) && (argB[1:8] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 11.666666984558105
+            },
+            {
+              "name": "unk09",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002020: state 2 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002020: state 3 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002020: state 4 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002020: state 2 stops emitting (to state 4) when (argA[1:11] && !(ParentExists)); template f0002020: state 3 stops emitting (to state 4) when (argA[1:11] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "DS2": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "duration",
+              "nameSource": "template f0002020: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002020: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002020: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.03333333507180214,
+              "max": 13.333333015441895
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002020: state 2 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002020: state 3 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002020: state 4 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002020: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:4])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 4.333333492279053
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002020: state 2 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0)); template f0002020: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 10,
+              "seen": [
+                -1,
+                1,
+                3,
+                5,
+                10
+              ]
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002020: state 2 restarts itself when (CurrentTick >= argB[1:6])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 4,
+              "seen": [
+                0,
+                0.03333333507180214,
+                0.06666667014360428,
+                0.10000000149011612,
+                0.5,
+                1,
+                3,
+                4
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002020: state 2 stops emitting (to state 4) when (argA[1:7] && !(ParentExists)); template f0002020: state 3 stops emitting (to state 4) when (argA[1:7] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "effect08",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action11",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "duration",
+              "nameSource": "template f0002020: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002020: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002020: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 66.66666412353516
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002020: state 2 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002020: state 3 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002020: state 4 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002020: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:4])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 3.8333332538604736
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002020: state 2 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0)); template f0002020: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 20
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002020: state 2 restarts itself when (CurrentTick >= argB[1:6])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 16.66666603088379
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002020: state 2 stops emitting (to state 4) when (argA[1:7] && !(ParentExists)); template f0002020: state 3 stops emitting (to state 4) when (argA[1:7] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "effect08",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action11",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1"
+      }
+    },
+    "2022": {
+      "name": "Node2022",
+      "template": "f0002022",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            17
+          ],
+          "params": [
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 95/95 Appearance actions there (a66 95)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 95/95 Movement actions there (a55 95)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002022: state 1 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:6] >= 0)); template f0002022: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:6] >= 0))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 5,
+              "seen": [
+                1,
+                4,
+                5
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002022: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002022: state 1 restarts itself when (CurrentTick >= argB[1:8])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk09",
+              "types": [
+                5
+              ]
+            },
+            {
+              "name": "emissionTime",
+              "nameSource": "template f0002022: state 1 stops emitting (to state 4) when ((TotalTick >= argB[1:10]) && (argB[1:10] >= 0)); template f0002022: state 3 stops emitting (to state 4) when ((TotalTick >= argB[1:10]) && (argB[1:10] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 0.0833333358168602,
+              "seen": [
+                -0.01666666753590107,
+                0.0833333358168602
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002022: state 1 ends the node (to state 2, a5) when (argA[1:12] && !(ParentExists)); template f0002022: state 3 ends the node (to state 2, a5) when (argA[1:12] && !(ParentExists)); template f0002022: state 4 ends the node (to state 2, a5) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002022: state 1 stops emitting (to state 4) when (argA[1:13] && !(ParentExists)); template f0002022: state 3 stops emitting (to state 4) when (argA[1:13] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk14",
+              "types": [
+                1
+              ],
+              "min": 10,
+              "max": 160,
+              "seen": [
+                10,
+                20,
+                50,
+                80,
+                100,
+                160
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002022: state 1 ends the node (to state 2, a5) when ((TotalTick >= argB[1:15]) && (argB[1:15] >= 0)); template f0002022: state 3 ends the node (to state 2, a5) when ((TotalTick >= argB[1:15]) && (argB[1:15] >= 0)); template f0002022: state 4 ends the node (to state 2, a5) when ((TotalTick >= argB[1:15]) && (argB[1:15] >= 0))",
+              "types": [
+                64
+              ],
+              "min": 0.5,
+              "max": 1,
+              "seen": [
+                0.5,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 95/95 child-list actions there (a17 69, a87 26)",
+              "types": [
+                32
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2023": {
+      "name": "Node2023",
+      "template": "f0002023",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            17
+          ],
+          "params": [
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 3333/3333 Appearance actions there (a71 3333)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 3255/3333 Emitter actions there (a28 1008, a31 978, a29 537, a30 403, a32 329)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 2828/2828 Movement actions there (a55 2440, a84 354, a105 34)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002023: state 1 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:6] >= 0)); template f0002023: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:6] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -10,
+              "max": 250
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002023: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 15.833333015441895
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002023: state 1 restarts itself when (CurrentTick >= argB[1:8])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 50000
+            },
+            {
+              "name": "unk09",
+              "types": [
+                5
+              ]
+            },
+            {
+              "name": "emissionTime",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when ((TotalTick >= argB[1:10]) && (argB[1:10] >= 0)); template f0002023: state 3 stops emitting (to state 4) when ((TotalTick >= argB[1:10]) && (argB[1:10] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 16.66666603088379
+            },
+            {
+              "name": "unk11",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when (argA[1:12] && !(ParentExists)); template f0002023: state 3 ends the node (to state 2, a5) when (argA[1:12] && !(ParentExists)); template f0002023: state 4 ends the node (to state 2, a5) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk13",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1200
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when (argA[1:14] && !(ParentExists)); template f0002023: state 3 stops emitting (to state 4) when (argA[1:14] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when ((TotalTick >= argB[1:15]) && (argB[1:15] >= 0)); template f0002023: state 3 ends the node (to state 2, a5) when ((TotalTick >= argB[1:15]) && (argB[1:15] >= 0)); template f0002023: state 4 ends the node (to state 2, a5) when ((TotalTick >= argB[1:15]) && (argB[1:15] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 16.66666603088379
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 3333/3333 child-list actions there (a17 2688, a87 552, a14 62, a79 31)",
+              "types": [
+                32
+              ]
+            }
+          ]
+        },
+        "DS2": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "emissionTime",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002023: state 3 stops emitting (to state 4) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.03333333507180214,
+              "max": 10
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0)); template f0002023: state 3 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0)); template f0002023: state 4 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.03333333507180214,
+              "max": 3,
+              "seen": [
+                -0.03333333507180214,
+                1,
+                3
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists)); template f0002023: state 3 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists)); template f0002023: state 4 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002023: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:5])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 4
+            },
+            {
+              "name": "unk06",
+              "types": [
+                5
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002023: state 1 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:7] >= 0)); template f0002023: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:7] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 32
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002023: state 1 restarts itself when (CurrentTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0.03333333507180214,
+              "max": 2
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when (argA[1:9] && !(ParentExists)); template f0002023: state 3 stops emitting (to state 4) when (argA[1:9] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 1024
+            },
+            {
+              "name": "action11",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 2310/2310 Emitter actions there (a28 952, a45 908, a30 193, a29 106, a31 82)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 2310/2310 Movement actions there (a55 1601, a105 654, a84 55)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action14",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action15",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 2310/2310 child-list actions there (a79 2261, a14 49)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "emissionTime",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002023: state 3 stops emitting (to state 4) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 1666666.625
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0)); template f0002023: state 3 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0)); template f0002023: state 4 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 8.333333015441895
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists)); template f0002023: state 3 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists)); template f0002023: state 4 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002023: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:5])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 16.66666603088379
+            },
+            {
+              "name": "unk06",
+              "types": [
+                3,
+                5,
+                6
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002023: state 1 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:7] >= 0)); template f0002023: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:7] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 150
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002023: state 1 restarts itself when (CurrentTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0.01666666753590107,
+              "max": 1666666.625
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when (argA[1:9] && !(ParentExists)); template f0002023: state 3 stops emitting (to state 4) when (argA[1:9] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                1
+              ],
+              "min": -10,
+              "max": 10000
+            },
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 5416/5416 Appearance actions there (a71 3919, a108 1045, a70 363, a66 77, a27 12)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 5416/5416 Emitter actions there (a28 1880, a32 1529, a31 1064, a30 936, a29 7)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 5416/5416 Movement actions there (a55 3854, a84 1074, a105 488)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action14",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action15",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 5416/5416 child-list actions there (a79 3224, a17 2088, a14 104)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1",
+        "BB": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "emissionTime",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002023: state 3 stops emitting (to state 4) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 3600
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0)); template f0002023: state 3 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0)); template f0002023: state 4 ends the node (to state 2, a5) when ((TotalTick >= argB[1:1]) && (argB[1:1] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 2.3333332538604736,
+              "seen": [
+                -0.01666666753590107,
+                1,
+                1.5,
+                1.6666666269302368,
+                2.3333332538604736
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002023: state 1 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists)); template f0002023: state 3 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists)); template f0002023: state 4 ends the node (to state 2, a5) when (argA[1:2] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002023: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:5])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 10
+            },
+            {
+              "name": "unk06",
+              "types": [
+                3,
+                4,
+                5,
+                6
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002023: state 1 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:7] >= 0)); template f0002023: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:7] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 20
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002023: state 1 restarts itself when (CurrentTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0.01666666753590107,
+              "max": 1666666.625
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002023: state 1 stops emitting (to state 4) when (argA[1:9] && !(ParentExists)); template f0002023: state 3 stops emitting (to state 4) when (argA[1:9] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 100000
+            },
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 8395/8395 Appearance actions there (a71 6363, a108 1321, a66 303, a70 240, a27 168)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 8395/8395 Emitter actions there (a28 4405, a32 1884, a30 1430, a31 662, a45 9)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 7621/8395 Movement actions there (a55 5428, a105 1639, a60 718, a84 554, a65 29)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action14",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action15",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 4,
+              "seen": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 8395/8395 child-list actions there (a79 6543, a17 1852)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2024": {
+      "name": "Node2024",
+      "template": "f0002024",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            12
+          ],
+          "params": [
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 93/93 child-list actions there (a14 49, a95 35, a79 7, a87 2)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002024: state 2 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0)); template f0002024: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 15,
+              "seen": [
+                -1,
+                1,
+                3,
+                4,
+                6,
+                7,
+                10,
+                15
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002024: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:6])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 13.333333015441895
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002024: state 2 restarts itself when (CurrentTick >= argB[1:7])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 1.6666666269302368
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002024: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:8]) && (argB[1:8] >= 0)); template f0002024: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:8]) && (argB[1:8] >= 0)); template f0002024: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:8]) && (argB[1:8] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 6.666666507720947
+            },
+            {
+              "name": "unk09",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002024: state 2 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002024: state 3 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002024: state 4 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002024: state 2 stops emitting (to state 4) when (argA[1:11] && !(ParentExists)); template f0002024: state 3 stops emitting (to state 4) when (argA[1:11] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "DS2": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "duration",
+              "nameSource": "template f0002024: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002024: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002024: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.03333333507180214,
+              "max": 2,
+              "seen": [
+                -0.03333333507180214,
+                1,
+                2
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002024: state 2 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002024: state 3 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002024: state 4 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002024: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:4])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0.30000001192092896,
+              "seen": [
+                0,
+                0.30000001192092896
+              ]
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002024: state 2 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0)); template f0002024: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 5,
+              "seen": [
+                -1,
+                1,
+                5
+              ]
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002024: state 2 restarts itself when (CurrentTick >= argB[1:6])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 5,
+              "seen": [
+                0,
+                0.06666667014360428,
+                0.1666666716337204,
+                0.20000000298023224,
+                1,
+                5
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002024: state 2 stops emitting (to state 4) when (argA[1:7] && !(ParentExists)); template f0002024: state 3 stops emitting (to state 4) when (argA[1:7] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 10/10 child-list actions there (a14 10)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action11",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "duration",
+              "nameSource": "template f0002024: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002024: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0)); template f0002024: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 83.33333587646484
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002024: state 2 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002024: state 3 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists)); template f0002024: state 4 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002024: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:4])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 19.5
+            },
+            {
+              "name": "emissionCount",
+              "nameSource": "template f0002024: state 2 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0)); template f0002024: state 3 stops when the instance counter runs out: ((argA[3:0] <= 0) && (argA[1:5] >= 0))",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 12
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002024: state 2 restarts itself when (CurrentTick >= argB[1:6])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 39
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002024: state 2 stops emitting (to state 4) when (argA[1:7] && !(ParentExists)); template f0002024: state 3 stops emitting (to state 4) when (argA[1:7] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 65/69 child-list actions there (a14 65, a58 4)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action11",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1"
+      }
+    },
+    "2031": {
+      "name": "Node2031",
+      "template": "f0002031",
+      "games": {
+        "DS2": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk06",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk08",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 461/461 child-list actions there (a79 454, a14 7)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk06",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0.5,
+              "seen": [
+                0,
+                0.01666666753590107,
+                0.1666666716337204,
+                0.5
+              ]
+            },
+            {
+              "name": "unk08",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1",
+        "BB": {
+          "paramCounts": [
+            13
+          ],
+          "params": [
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 1037/1040 child-list actions there (a79 1037, a58 3)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk06",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 10
+            },
+            {
+              "name": "unk08",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 3,
+              "seen": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2032": {
+      "name": "Node2032",
+      "template": "f0002032",
+      "games": {
+        "DS2": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 1927/1927 Emitter actions there (a28 774, a45 672, a30 215, a31 110, a29 86)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 1927/1927 Movement actions there (a55 888, a105 856, a84 183)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 2,
+              "seen": [
+                0,
+                0.06666667014360428,
+                0.1666666716337204,
+                0.2666666805744171,
+                0.3333333432674408,
+                0.5,
+                1.6666666269302368,
+                2
+              ]
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                5
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk14",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 512
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 1927/1927 child-list actions there (a79 1927)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 1177/1177 Appearance actions there (a71 782, a108 233, a70 157, a27 5)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 1177/1177 Emitter actions there (a28 764, a32 181, a30 117, a31 115)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 1177/1177 Movement actions there (a55 952, a105 216, a84 9)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 7
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                5,
+                6,
+                89
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk14",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 720
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 1177/1177 child-list actions there (a79 969, a17 206, a14 2)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1",
+        "BB": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 803/803 Appearance actions there (a71 616, a108 182, a70 5)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 803/803 Emitter actions there (a28 336, a32 332, a30 83, a31 52)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 787/803 Movement actions there (a55 516, a105 236, a84 35, a60 7, a64 7)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 15
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                3,
+                4,
+                5,
+                6,
+                89
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 3,
+              "seen": [
+                0,
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk14",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 160
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 803/803 child-list actions there (a79 743, a17 60)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2034": {
+      "name": "Node2034",
+      "template": "f0002034",
+      "games": {
+        "DS1R": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 13/13 Appearance actions there (a71 10, a70 3)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "emitter",
+              "nameSource": "the game's calls put 13/13 Emitter actions there (a117 13)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "movement",
+              "nameSource": "the game's calls put 13/13 Movement actions there (a55 9, a84 3, a105 1)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002034: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                5
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002034: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002034: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002034: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk14",
+              "types": [
+                1
+              ],
+              "min": 100,
+              "max": 5000,
+              "seen": [
+                100,
+                120,
+                1000,
+                5000
+              ]
+            },
+            {
+              "name": "stopWithParent",
+              "nameSource": "template f0002034: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002034: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 13/13 child-list actions there (a79 13)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "BB": {
+          "paramCounts": [
+            18
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                79
+              ]
+            },
+            {
+              "name": "unk08",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 2.200000047683716
+            },
+            {
+              "name": "unk09",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                5
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 2,
+              "seen": [
+                1,
+                2
+              ]
+            },
+            {
+              "name": "unk13",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "unk14",
+              "types": [
+                1
+              ],
+              "min": 24,
+              "max": 100000
+            },
+            {
+              "name": "unk15",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "action17",
+              "types": [
+                38
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2101": {
+      "name": "Node2101",
+      "template": "f0002101",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 923/959 Appearance actions there (a61 597, a43 155, a20 89, a3 80, a24 36)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:4]) && (argB[1:4] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 166666.671875
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a5) when (argA[1:6] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002101: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:7])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 6.333333492279053
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 1255/1261 child-list actions there (a17 829, a87 199, a79 177, a14 50, a65 4)",
+              "types": [
+                32
+              ]
+            }
+          ]
+        },
+        "DS2": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                70
+              ],
+              "min": -0.03333333507180214,
+              "max": 20
+            },
+            {
+              "name": "unk01",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002101: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:3])",
+              "types": [
+                70
+              ],
+              "min": -0.03333333507180214,
+              "max": 5
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 5450/5450 child-list actions there (a79 3515, a14 1772, a87 162, a17 1)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                70
+              ],
+              "min": -2147483.75,
+              "max": 1666666.625
+            },
+            {
+              "name": "unk01",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002101: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:3])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 18.883333206176758
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 3037/3037 child-list actions there (a79 1692, a14 964, a17 370, a87 11)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1",
+        "BB": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "unk00",
+              "types": [
+                70
+              ],
+              "min": -2147483.75,
+              "max": 1666666.625
+            },
+            {
+              "name": "unk01",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002101: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:3])",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 10
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 4,
+              "seen": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 14215/14215 child-list actions there (a79 13068, a17 731, a14 416)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2102": {
+      "name": "Node2102",
+      "template": "f0002102",
+      "games": {
+        "DS2": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "delay",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk01",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk02",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "action08",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS2S": "DS2",
+        "DS1": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "delay",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk01",
+              "types": [
+                95
+              ]
+            },
+            {
+              "name": "unk02",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "appearance",
+              "nameSource": "the game's calls put 5/5 Appearance actions there (a61 5)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 5/5 child-list actions there (a17 5)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "DS1R": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "delay",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk01",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk02",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 101/101 child-list actions there (a95 100, a14 1)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        },
+        "BB": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "delay",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "unk01",
+              "types": [
+                85
+              ]
+            },
+            {
+              "name": "unk02",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action05",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action06",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 3,
+              "seen": [
+                0,
+                1,
+                3
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 27/27 child-list actions there (a79 27)",
+              "types": [
+                38
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2104": {
+      "name": "Node2104",
+      "template": "f0002104",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            23
+          ],
+          "params": [
+            {
+              "name": "texture00",
+              "types": [
+                34
+              ],
+              "min": 34,
+              "max": 9000,
+              "seen": [
+                34,
+                35,
+                36,
+                37,
+                9000
+              ]
+            },
+            {
+              "name": "unk01",
+              "types": [
+                1
+              ],
+              "min": 2,
+              "max": 4,
+              "seen": [
+                2,
+                4
+              ]
+            },
+            {
+              "name": "unk02",
+              "types": [
+                11
+              ]
+            },
+            {
+              "name": "unk03",
+              "types": [
+                11
+              ]
+            },
+            {
+              "name": "unk04",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 2,
+              "seen": [
+                -0.01666666753590107,
+                2
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                11
+              ]
+            },
+            {
+              "name": "emissionInterval",
+              "nameSource": "template f0002104: state 1 restarts itself when (CurrentTick >= argB[1:6])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0.3333333432674408,
+              "seen": [
+                0,
+                0.01666666753590107,
+                0.03333333507180214,
+                0.3333333432674408
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                64
+              ],
+              "min": 0.06666667014360428,
+              "max": 8.333333015441895
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 100
+            },
+            {
+              "name": "unk09",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 4,
+              "seen": [
+                0,
+                1,
+                4
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                11
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                11
+              ]
+            },
+            {
+              "name": "unk12",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 3,
+              "seen": [
+                0,
+                0.3333333432674408,
+                0.5,
+                0.6666666865348816,
+                0.8333333134651184,
+                1,
+                2,
+                3
+              ]
+            },
+            {
+              "name": "unk13",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "texture14",
+              "types": [
+                34
+              ],
+              "min": 0,
+              "max": 22,
+              "seen": [
+                0,
+                22
+              ]
+            },
+            {
+              "name": "unk15",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 0,
+              "seen": [
+                -1,
+                0
+              ]
+            },
+            {
+              "name": "unk16",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 4,
+              "seen": [
+                1,
+                4
+              ]
+            },
+            {
+              "name": "unk17",
+              "types": [
+                6
+              ]
+            },
+            {
+              "name": "unk18",
+              "types": [
+                17
+              ]
+            },
+            {
+              "name": "unk19",
+              "types": [
+                11
+              ]
+            },
+            {
+              "name": "unk20",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 0,
+              "seen": [
+                -1,
+                0
+              ]
+            },
+            {
+              "name": "unk21",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 129/129 child-list actions there (a87 129)",
+              "types": [
+                32
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2105": {
+      "name": "Node2105",
+      "template": "f0002105",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            11
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect05",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect06",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect07",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002105: state 2 ends the node (to state 1, a5) when (argA[1:8] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002105: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:9])",
+              "types": [
+                64
+              ],
+              "min": 0.5,
+              "max": 0.5,
+              "seen": [
+                0.5
+              ]
+            },
+            {
+              "name": "unk10",
+              "types": [
+                2
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2113": {
+      "name": "Node2113",
+      "template": "f0002113",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            5
+          ],
+          "params": [
+            {
+              "name": "sound00",
+              "types": [
+                62
+              ],
+              "min": 0,
+              "max": 0
+            },
+            {
+              "name": "unk01",
+              "types": [
+                7
+              ],
+              "min": 1,
+              "max": 1
+            },
+            {
+              "name": "unk02",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002113: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:3])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0
+            },
+            {
+              "name": "action04",
+              "types": [
+                32
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2115": {
+      "name": "Node2115",
+      "template": "f0002115",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            3
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002115: state 2 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002115: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:2])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            }
+          ]
+        },
+        "DS1": {
+          "paramCounts": [
+            4
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002115: state 2 ends the node (to state 1, a5) when (argA[1:1] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002115: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:2])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002115: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:3]) && (argB[1:3] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": -0.01666666753590107,
+              "seen": [
+                -0.01666666753590107
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1"
+      }
+    },
+    "2116": {
+      "name": "Node2116",
+      "template": "f0002116",
+      "games": {
+        "DS1": {
+          "paramCounts": [
+            11
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 9,
+              "max": 700
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 15,
+              "max": 1000
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 20,
+              "max": 1000
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": 40,
+              "max": 2000,
+              "seen": [
+                40,
+                50,
+                100,
+                200,
+                400,
+                500,
+                1000,
+                2000
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002116: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002116: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002116: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002116: state 5 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002116: state 6 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 83.33333587646484,
+              "seen": [
+                -0.01666666753590107,
+                83.33333587646484
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002116: state 2 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002116: state 3 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002116: state 4 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002116: state 5 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002116: state 6 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1"
+      }
+    },
+    "2117": {
+      "name": "Node2117",
+      "template": "f0002117",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 4,
+              "max": 100
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 8,
+              "max": 200
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 12,
+              "max": 1000
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": 16,
+              "max": 9999
+            }
+          ]
+        },
+        "DS1": {
+          "paramCounts": [
+            11
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 6000
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 15,
+              "max": 100000
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 20,
+              "max": 1000000
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": 45,
+              "max": 10000000
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002117: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 5 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 6 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -2147483.75,
+              "max": 83.33333587646484,
+              "seen": [
+                -2147483.75,
+                -0.01666666753590107,
+                2,
+                3.3333332538604736,
+                4.166666507720947,
+                50,
+                83.33333587646484
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002117: state 2 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 3 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 4 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 5 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 6 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1",
+        "BB": {
+          "paramCounts": [
+            11
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 3,
+              "max": 10000
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 9,
+              "max": 100010
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 100020
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": -1,
+              "max": 100002
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002117: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 5 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002117: state 6 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 16666.666015625,
+              "seen": [
+                -0.01666666753590107,
+                0.01666666753590107,
+                1,
+                16666.666015625
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002117: state 2 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 3 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 4 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 5 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002117: state 6 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2118": {
+      "name": "Node2118",
+      "template": "f0002118",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 20,
+              "max": 20
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 9999,
+              "max": 9999
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 9999,
+              "max": 9999
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": 9999,
+              "max": 9999
+            }
+          ]
+        },
+        "DS1": {
+          "paramCounts": [
+            11
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "unk05",
+              "types": [
+                1
+              ],
+              "min": 10,
+              "max": 8000
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 20,
+              "max": 8500,
+              "seen": [
+                20,
+                35,
+                80,
+                100,
+                200,
+                250,
+                300,
+                8500
+              ]
+            },
+            {
+              "name": "unk07",
+              "types": [
+                1
+              ],
+              "min": 30,
+              "max": 9000,
+              "seen": [
+                30,
+                50,
+                100,
+                200,
+                300,
+                350,
+                400,
+                9000
+              ]
+            },
+            {
+              "name": "unk08",
+              "types": [
+                1
+              ],
+              "min": 80,
+              "max": 10000,
+              "seen": [
+                80,
+                150,
+                300,
+                400,
+                450,
+                500,
+                10000
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002118: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002118: state 3 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002118: state 4 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002118: state 5 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0)); template f0002118: state 6 ends the node (to state 1, a5) when ((TotalTick >= argB[1:9]) && (argB[1:9] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 16.66666603088379
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002118: state 2 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002118: state 3 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002118: state 4 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002118: state 5 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists)); template f0002118: state 6 ends the node (to state 1, a5) when (argA[1:10] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            }
+          ]
+        },
+        "DS1R": "DS1"
+      }
+    },
+    "2120": {
+      "name": "Node2120",
+      "template": "f0002120",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            9
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "action04",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002120: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:5]) && (argB[1:5] >= 0))",
+              "types": [
+                64
+              ],
+              "min": -0.01666666753590107,
+              "max": 10,
+              "seen": [
+                -0.01666666753590107,
+                10
+              ]
+            },
+            {
+              "name": "unk06",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002120: state 2 ends the node (to state 1, a5) when (argA[1:7] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002120: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:8])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2121": {
+      "name": "Node2121",
+      "template": "f0002121",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            14
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                31,
+                53
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect05",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect06",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect07",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "action08",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002121: state 2 ends the node (to state 1, a5) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002121: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:13])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 2
+            }
+          ]
+        },
+        "DS1": {
+          "paramCounts": [
+            15
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect05",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect06",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "effect07",
+              "types": [
+                37
+              ]
+            },
+            {
+              "name": "action08",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002121: state 2 ends the node (to state 1, a5) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002121: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:13])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0.1666666716337204,
+              "seen": [
+                0,
+                0.05000000074505806,
+                0.1666666716337204
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002121: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:14]) && (argB[1:14] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 1666666.625
+            }
+          ]
+        },
+        "DS1R": "DS1"
+      }
+    },
+    "2122": {
+      "name": "Node2122",
+      "template": "f0002122",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            15
+          ],
+          "params": [
+            {
+              "name": "effect00",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect01",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect02",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect03",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect04",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect05",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect06",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "effect07",
+              "types": [
+                31
+              ]
+            },
+            {
+              "name": "action08",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action09",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action10",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "unk11",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002122: state 2 ends the node (to state 1, a5) when (argA[1:12] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002122: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:13])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002122: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:14]) && (argB[1:14] >= 0))",
+              "types": [
+                64
+              ],
+              "min": 0.6666666865348816,
+              "max": 9,
+              "seen": [
+                0.6666666865348816,
+                3.3333332538604736,
+                3.8333332538604736,
+                4.166666507720947,
+                5,
+                6.666666507720947,
+                9
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2123": {
+      "name": "Node2123",
+      "template": "f0002123",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            7
+          ],
+          "params": [
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 329/329 child-list actions there (a87 156, a14 104, a79 52, a95 17)",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "unk04",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002123: state 2 ends the node (to state 1, a5) when (argA[1:5] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002123: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:6])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 6,
+              "seen": [
+                0,
+                0.01666666753590107,
+                1.6666666269302368,
+                3.4166667461395264,
+                3.6666667461395264,
+                6
+              ]
+            }
+          ]
+        },
+        "DS1": {
+          "paramCounts": [
+            8
+          ],
+          "params": [
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 148/148 child-list actions there (a14 117, a79 30, a87 1)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk04",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002123: state 2 ends the node (to state 1, a5) when (argA[1:5] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002123: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:6])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 7.25,
+              "seen": [
+                0,
+                7.25
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002123: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:7]) && (argB[1:7] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": 83.33333587646484
+            }
+          ]
+        },
+        "DS1R": "DS1",
+        "BB": {
+          "paramCounts": [
+            8
+          ],
+          "params": [
+            {
+              "name": "children",
+              "nameSource": "the game's calls put 9/9 child-list actions there (a14 9)",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                38
+              ]
+            },
+            {
+              "name": "unk04",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002123: state 2 ends the node (to state 1, a5) when (argA[1:5] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002123: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:6])",
+              "types": [
+                70
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002123: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:7]) && (argB[1:7] >= 0))",
+              "types": [
+                70
+              ],
+              "min": -0.01666666753590107,
+              "max": -0.01666666753590107,
+              "seen": [
+                -0.01666666753590107
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "2124": {
+      "name": "Node2124",
+      "template": "f0002124",
+      "games": {
+        "DES": {
+          "paramCounts": [
+            8
+          ],
+          "params": [
+            {
+              "name": "action00",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action01",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action02",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "action03",
+              "types": [
+                32
+              ]
+            },
+            {
+              "name": "unk04",
+              "types": [
+                1
+              ],
+              "min": 1,
+              "max": 1,
+              "seen": [
+                1
+              ]
+            },
+            {
+              "name": "endWithParent",
+              "nameSource": "template f0002124: state 2 ends the node (to state 1, a5) when (argA[1:5] && !(ParentExists))",
+              "types": [
+                1
+              ],
+              "min": 0,
+              "max": 1,
+              "seen": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "delay",
+              "nameSource": "template f0002124: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:6])",
+              "types": [
+                64
+              ],
+              "min": 0,
+              "max": 0,
+              "seen": [
+                0
+              ]
+            },
+            {
+              "name": "duration",
+              "nameSource": "template f0002124: state 2 ends the node (to state 1, a5) when ((TotalTick >= argB[1:7]) && (argB[1:7] >= 0))",
+              "types": [
+                64
+              ],
+              "min": 0.3333333432674408,
+              "max": 0.5,
+              "seen": [
+                0.3333333432674408,
+                0.5
+              ]
+            }
+          ]
+        }
       }
     }
   }
