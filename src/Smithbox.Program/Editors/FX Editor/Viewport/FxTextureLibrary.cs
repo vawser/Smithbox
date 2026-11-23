@@ -58,13 +58,22 @@ public class FxTextureLibrary : IResourceEventListener
         return 0;
     }
 
+    /// <summary>s&lt;id&gt; with five digits (FXR3), else the older games' name for the id (DES s0000, DS2 s000010).</summary>
+    private string ModelName(int id)
+    {
+        var name = $"s{id:D5}";
+        if (Host.Data.Bank.Models.ContainsKey(name) || !Host.Data.IsFfx)
+            return name;
+        return Host.Data.Bank.ResourceName(Host.Data.Bank.Models, id) ?? name;
+    }
+
     /// <summary>A model's resource once it has loaded, null until then (or when no binder holds it).</summary>
     public ResourceHandle<FlverResource> GetModel(int id)
     {
         if (id <= 0)
             return null;
 
-        var name = $"s{id:D5}";
+        var name = ModelName(id);
         if (LoadedModels.TryGetValue(name, out var handle))
             return handle.IsLoaded ? handle : null;
 
@@ -109,7 +118,7 @@ public class FxTextureLibrary : IResourceEventListener
         if (GetModel(id) != null)
             return true;
 
-        var name = $"s{id:D5}";
+        var name = ModelName(id);
         if (!Host.Data.Bank.Models.ContainsKey(name))
             return Host.Data.Bank.IsIndexed;
 

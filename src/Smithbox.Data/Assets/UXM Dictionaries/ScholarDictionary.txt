@@ -14997,6 +14997,11 @@
 /sfx/sfx5037_append.ffxbnd.dcx
 /sfx/sfx5037res.ffxbnd
 /sfx/sfx5037res_append.ffxbnd
+/sfx/sfx9999.ffxbnd.dcx
+/sfx/sfx9999_Append.ffxbnd.dcx
+/sfx/sfx9999res.ffxbnd
+/sfx/sfx9999res_Append.ffxbnd
+/sfx/sfxcommon.ffxbnd
 /sound/frpg2.fevbnd.dcx
 /sound/frpg2_c1000.bnd
 /sound/frpg2_c1010.bnd

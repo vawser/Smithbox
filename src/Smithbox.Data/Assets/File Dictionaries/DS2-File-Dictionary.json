@@ -118802,6 +118802,38 @@
     },
     {
       "Archive": "",
+      "Path": "/sfx/sfx9999.ffxbnd",
+      "Folder": "/sfx",
+      "Filename": "sfx9999",
+      "Extension": "ffxbnd",
+      "Validated": true
+    },
+    {
+      "Archive": "",
+      "Path": "/sfx/sfx9999.ffxbnd.dcx",
+      "Folder": "/sfx",
+      "Filename": "sfx9999",
+      "Extension": "ffxbnd",
+      "Validated": true
+    },
+    {
+      "Archive": "",
+      "Path": "/sfx/sfx9999res.ffxbnd",
+      "Folder": "/sfx",
+      "Filename": "sfx9999res",
+      "Extension": "ffxbnd",
+      "Validated": true
+    },
+    {
+      "Archive": "",
+      "Path": "/sfx/sfxcommon.ffxbnd",
+      "Folder": "/sfx",
+      "Filename": "sfxcommon",
+      "Extension": "ffxbnd",
+      "Validated": true
+    },
+    {
+      "Archive": "",
       "Path": "/sound/frpg2.fevbnd.dcx",
       "Folder": "/sound",
       "Filename": "frpg2",

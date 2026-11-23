@@ -39266,7 +39266,8 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "perEmission",
+              "nameSource": "template f0002022: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 1, arg 9): arg 1 holds the emitter action, arg 9 the count of each emission",
               "types": [
                 5
               ]
@@ -39436,7 +39437,8 @@
               "max": 50000
             },
             {
-              "name": "unk09",
+              "name": "perEmission",
+              "nameSource": "template f0002023: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 1, arg 9): arg 1 holds the emitter action, arg 9 the count of each emission",
               "types": [
                 5
               ]
@@ -39577,7 +39579,8 @@
               "max": 4
             },
             {
-              "name": "unk06",
+              "name": "perEmission",
+              "nameSource": "template f0002023: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 12, arg 6): arg 12 holds the emitter action, arg 6 the count of each emission",
               "types": [
                 5
               ]
@@ -39733,7 +39736,8 @@
               "max": 16.66666603088379
             },
             {
-              "name": "unk06",
+              "name": "perEmission",
+              "nameSource": "template f0002023: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 12, arg 6): arg 12 holds the emitter action, arg 6 the count of each emission",
               "types": [
                 3,
                 5,
@@ -39899,7 +39903,8 @@
               "max": 10
             },
             {
-              "name": "unk06",
+              "name": "perEmission",
+              "nameSource": "template f0002023: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 12, arg 6): arg 12 holds the emitter action, arg 6 the count of each emission",
               "types": [
                 3,
                 4,
@@ -40400,7 +40405,8 @@
           ],
           "params": [
             {
-              "name": "action00",
+              "name": "children",
+              "nameSource": "the game's calls put 14/16 child-list actions there (a79 12, a14 2, a58 2)",
               "types": [
                 38
               ]
@@ -40436,14 +40442,15 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "emissionCount",
+              "nameSource": "template f0002031: state 2 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 6; template f0002031: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 6",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7]) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 70
               ],
@@ -40454,13 +40461,15 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "emissionInterval",
+              "nameSource": "template f0002031: state 2 restarts itself when (CurrentTick >= argA[1:8]) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk09",
+              "name": "duration",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 4 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 85
               ]
@@ -40478,7 +40487,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists))",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 1
               ],
@@ -40491,7 +40500,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists))",
+              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 1
               ],
@@ -40547,14 +40556,15 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "emissionCount",
+              "nameSource": "template f0002031: state 2 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 6; template f0002031: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 6",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7]) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 70
               ],
@@ -40568,13 +40578,15 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "emissionInterval",
+              "nameSource": "template f0002031: state 2 restarts itself when (CurrentTick >= argA[1:8]) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk09",
+              "name": "duration",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 4 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 85
               ]
@@ -40593,7 +40605,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists))",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 1
               ],
@@ -40606,7 +40618,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists))",
+              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 1
               ],
@@ -40663,14 +40675,15 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "emissionCount",
+              "nameSource": "template f0002031: state 2 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 6; template f0002031: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 6",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7])",
+              "nameSource": "template f0002031: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:7]) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 70
               ],
@@ -40678,13 +40691,15 @@
               "max": 10
             },
             {
-              "name": "unk08",
+              "name": "emissionInterval",
+              "nameSource": "template f0002031: state 2 restarts itself when (CurrentTick >= argA[1:8]) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk09",
+              "name": "duration",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 4 ends the node (to state 1, a5) when ((TotalTick >= argA[1:9]) && (argA[1:9] >= 0)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 85
               ]
@@ -40705,7 +40720,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists))",
+              "nameSource": "template f0002031: state 2 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 4 ends the node (to state 1, a5) when (argA[1:11] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 1
               ],
@@ -40718,7 +40733,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists))",
+              "nameSource": "template f0002031: state 2 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8); template f0002031: state 3 stops emitting (to state 4) when (argA[1:12] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 2 = arg 9, counter 1 = arg 8)",
               "types": [
                 1
               ],
@@ -40788,14 +40803,15 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emissionCount",
+              "nameSource": "template f0002032: state 1 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7; template f0002032: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 70
               ],
@@ -40813,19 +40829,22 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "emissionInterval",
+              "nameSource": "template f0002032: state 1 restarts itself when (CurrentTick >= argA[1:9]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk10",
+              "name": "perEmission",
+              "nameSource": "template f0002032: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 1, arg 10): arg 1 holds the emitter action, arg 10 the count of each emission",
               "types": [
                 5
               ]
             },
             {
-              "name": "unk11",
+              "name": "emissionTime",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -40844,7 +40863,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -40865,7 +40884,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -40876,7 +40895,8 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "duration",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 4 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -40942,14 +40962,15 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emissionCount",
+              "nameSource": "template f0002032: state 1 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7; template f0002032: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 70
               ],
@@ -40957,13 +40978,15 @@
               "max": 7
             },
             {
-              "name": "unk09",
+              "name": "emissionInterval",
+              "nameSource": "template f0002032: state 1 restarts itself when (CurrentTick >= argA[1:9]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk10",
+              "name": "perEmission",
+              "nameSource": "template f0002032: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 1, arg 10): arg 1 holds the emitter action, arg 10 the count of each emission",
               "types": [
                 5,
                 6,
@@ -40971,7 +40994,8 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "emissionTime",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -40990,7 +41014,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -41011,7 +41035,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -41023,7 +41047,8 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "duration",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 4 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -41089,14 +41114,15 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emissionCount",
+              "nameSource": "template f0002032: state 1 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7; template f0002032: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "nameSource": "template f0002032: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 70
               ],
@@ -41104,13 +41130,15 @@
               "max": 15
             },
             {
-              "name": "unk09",
+              "name": "emissionInterval",
+              "nameSource": "template f0002032: state 1 restarts itself when (CurrentTick >= argA[1:9]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk10",
+              "name": "perEmission",
+              "nameSource": "template f0002032: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 1, arg 10): arg 1 holds the emitter action, arg 10 the count of each emission",
               "types": [
                 3,
                 4,
@@ -41120,7 +41148,8 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "emissionTime",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -41141,7 +41170,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -41162,7 +41191,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "nameSource": "template f0002032: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -41174,7 +41203,8 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "duration",
+              "nameSource": "template f0002032: state 1 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 3 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002032: state 4 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -41245,14 +41275,15 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emissionCount",
+              "nameSource": "template f0002034: state 1 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7; template f0002034: state 3 stops when counter 0 reaches 0 ((argA[3:0] == 0)); a112 fills that counter from arg 7",
               "types": [
                 79
               ]
             },
             {
               "name": "delay",
-              "nameSource": "template f0002034: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8])",
+              "nameSource": "template f0002034: state 0 waits, then goes to state 3, when (TotalTick >= argB[1:8]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 70
               ],
@@ -41263,19 +41294,22 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "emissionInterval",
+              "nameSource": "template f0002034: state 1 restarts itself when (CurrentTick >= argA[1:9]) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk10",
+              "name": "perEmission",
+              "nameSource": "template f0002034: state 1 (the emit state, restarting itself on CurrentTick) calls a56(arg 1, arg 10): arg 1 holds the emitter action, arg 10 the count of each emission",
               "types": [
                 5
               ]
             },
             {
-              "name": "unk11",
+              "name": "emissionTime",
+              "nameSource": "template f0002034: state 1 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002034: state 3 stops emitting (to state 4) when ((TotalTick >= argA[1:11]) && (argA[1:11] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -41293,7 +41327,7 @@
             },
             {
               "name": "endWithParent",
-              "nameSource": "template f0002034: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002034: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)); template f0002034: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists))",
+              "nameSource": "template f0002034: state 1 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002034: state 3 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002034: state 4 ends the node (to state 2, a5) when (argA[1:13] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -41319,7 +41353,7 @@
             },
             {
               "name": "stopWithParent",
-              "nameSource": "template f0002034: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)); template f0002034: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists))",
+              "nameSource": "template f0002034: state 1 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002034: state 3 stops emitting (to state 4) when (argA[1:15] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 1
               ],
@@ -41331,7 +41365,8 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "duration",
+              "nameSource": "template f0002034: state 1 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002034: state 3 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9); template f0002034: state 4 ends the node (to state 2, a5) when ((TotalTick >= argA[1:16]) && (argA[1:16] >= 0)) (counters filled by a109 read as their arguments: counter 3 = arg 11, counter 2 = arg 16, counter 1 = arg 9)",
               "types": [
                 85
               ]
@@ -41610,7 +41645,8 @@
               "max": 5
             },
             {
-              "name": "action04",
+              "name": "appearance",
+              "nameSource": "the game's calls put 1392/2335 Appearance actions there (a59 1055, a11001 535, a61 228, a20005 224, a40 83)",
               "types": [
                 38
               ]
@@ -41690,7 +41726,8 @@
               "max": 18.883333206176758
             },
             {
-              "name": "action04",
+              "name": "appearance",
+              "nameSource": "the game's calls put 719/891 Appearance actions there (a61 181, a24 172, a40 165, a43 147, a3 90)",
               "types": [
                 38
               ]
@@ -41770,7 +41807,8 @@
               "max": 10
             },
             {
-              "name": "action04",
+              "name": "appearance",
+              "nameSource": "the game's calls put 3248/5011 Appearance actions there (a59 1230, a24 1079, a40 556, a107 536, a61 493)",
               "types": [
                 38
               ]
@@ -41824,7 +41862,7 @@
           "params": [
             {
               "name": "delay",
-              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0]) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 70
               ],
@@ -41903,7 +41941,7 @@
           "params": [
             {
               "name": "delay",
-              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0]) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 70
               ],
@@ -41982,7 +42020,7 @@
           "params": [
             {
               "name": "delay",
-              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0]) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 70
               ],
@@ -42017,7 +42055,8 @@
               ]
             },
             {
-              "name": "action04",
+              "name": "appearance",
+              "nameSource": "the game's calls put 49/60 Appearance actions there (a59 39, a24 11, a40 8, a107 2)",
               "types": [
                 38
               ]
@@ -42062,7 +42101,7 @@
           "params": [
             {
               "name": "delay",
-              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0])",
+              "nameSource": "template f0002102: state 0 waits, then goes to state 2, when (TotalTick >= argB[1:0]) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 70
               ],

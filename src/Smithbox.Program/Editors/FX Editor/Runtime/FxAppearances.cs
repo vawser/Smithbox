@@ -378,7 +378,10 @@ public sealed class FxModelDef
     public int Columns = 1, TotalFrames = 1;
 
     /// <summary>Model (605) particles are drawn by the FX model shader, coloured by the effect.</summary>
-    public bool IsEffectColoured => Action.Type == 605;
+    /// <summary>For an older-format model (no FXR3 action): whether the effect's colours tint it.</summary>
+    public bool ColouredByEffect;
+
+    public bool IsEffectColoured => Action != null ? Action.Type == 605 : ColouredByEffect;
 
     public static FxModelDef Build(FxAppearanceDef appearance)
     {
