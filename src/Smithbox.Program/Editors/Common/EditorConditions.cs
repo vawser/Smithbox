@@ -40,11 +40,11 @@ public static class EditorConditions
 
     /// <summary>
     /// The FX Editor: FXR effects of the games the FXR schema covers, the DLSE effects of DES, DS2 and DS2S, and the
-    /// FXR1 effects of DS1 and DS1R (values and exits edited, no structure or preview yet: FFX Older Games Plan F3, F4b)
+    /// FXR1 effects of DS1, DS1R and Bloodborne (values and exits edited, no structure or preview yet: FFX Older Games Plan F3, F4b, F6)
     /// </summary>
     public static bool SupportsFxEditor(ProjectType curType)
     {
-        return SupportsFxPlayback(curType) || curType is ProjectType.DES or ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R;
+        return SupportsFxPlayback(curType) || curType is ProjectType.DES or ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB;
     }
 
     /// <summary>

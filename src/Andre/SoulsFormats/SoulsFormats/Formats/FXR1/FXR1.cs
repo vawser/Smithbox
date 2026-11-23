@@ -14,6 +14,20 @@ namespace SoulsFormats
         public int Unk1 { get; set; }
         public int Unk2 { get; set; }
 
+        /// <summary>
+        /// 1: FXR v1 (DS1, DS1R). 2: FXR v2 (Bloodborne): 32-byte containers holding a small record instead of
+        /// ActionData and modifier, a new root layout and container nodes 141–148 (FFX Older Games Plan §19). Always wide.
+        /// </summary>
+        public int Version { get; set; } = 1;
+
+        /// <summary>The version of the file being read or written on this thread, for the object readers and writers.</summary>
+        [ThreadStatic] internal static int currentVersion;
+
+        internal static bool IsV2 => currentVersion == 2;
+
+        /// <summary>FXR v2 reading: where the packed tail starts (the header's 141 list offset).</summary>
+        [ThreadStatic] internal static int v2TailStart;
+
         public FXNode RootFXNode { get; set; }
 
         // Ported from DSAnimStudio's SoulsAssetPipeline (Claude/Reference/DSAnimStudio, FFX Older Games Plan §8.3, F4).
@@ -246,8 +260,10 @@ namespace SoulsFormats
         protected override void Read(BinaryReaderEx br)
         {
             br.AssertASCII("FXR\0");
-            int endianCheck = br.AssertInt32([0x10000, 0x100]);
+            int endianCheck = br.AssertInt32([0x10000, 0x100, 0x20000]);
             br.BigEndian = BigEndian = (endianCheck == 0x100);
+            Version = endianCheck == 0x20000 ? 2 : 1;
+            currentVersion = Version;
 
             uint longCheck = br.GetUInt32(0xC);
             br.VarintLong = Wide = (longCheck == 0 || longCheck == 0xCDCDCDCD);
@@ -261,6 +277,7 @@ namespace SoulsFormats
             int functionTableCount = br.ReadInt32();
             Unk1 = br.ReadInt32();
             Unk2 = br.ReadInt32();
+            v2TailStart = Version == 2 ? Unk2 : int.MaxValue;
 
             var env = new FxrEnvironment();
 
@@ -283,6 +300,7 @@ namespace SoulsFormats
 
             RootFXNode = env.GetFXNode(br, mainDataOffset);
             readingGarbage = null;
+            currentVersion = 1;
 
             void Register<T>(string type, long offset, List<T> list, T thing)
                 where T : XIDable
@@ -304,6 +322,10 @@ namespace SoulsFormats
                 if (kvp.Value is FXActionData asActionData)
                 {
                     Register("ActionData", kvp.Key, AllFXActionDatas, asActionData);
+                }
+                else if (kvp.Value is FXRecord)
+                {
+                    // FXR v2 records have no list of their own
                 }
                 else if (kvp.Value is FXModifier asModifier)
                 {
@@ -390,7 +412,8 @@ namespace SoulsFormats
         {
             bw.WriteASCII("FXR\0");
             bw.BigEndian = BigEndian;
-            bw.WriteUInt32(0x10000);
+            bw.WriteUInt32(Version == 2 ? 0x20000u : 0x10000u);
+            currentVersion = Version;
             bw.VarintLong = Wide;
             var env = new FxrEnvironment();
             env.bw = bw;
@@ -405,12 +428,23 @@ namespace SoulsFormats
             bw.ReserveInt32("TableFXNodeCount");
 
             bw.WriteInt32(Unk1);
-            bw.WriteInt32(Unk2);
+            // FXR v2 (Bloodborne): the offset of the first root's node 141 node list (FFX plan §19), filled in below
+            if (Version == 2)
+                bw.ReserveInt32("V2RootList");
+            else
+                bw.WriteInt32(Unk2);
 
             bw.Pad(16);
-            
+
             // Write RootFXNode and everything else.
             env.FinishRecursiveWrite();
+
+            if (Version == 2)
+            {
+                var first = RootFXNode as FXNode.EffectCreateNode133 ?? (RootFXNode as FXNode.EffectCreateNode134)?.Nodes.OfType<FXNode.EffectCreateNode133>().FirstOrDefault();
+                var list = (first?.V2Node as FXNode.ContainerNode)?.Container?.WrittenPointers;
+                bw.FillInt32("V2RootList", list != null && env.OffsetsByObject.TryGetValue(list, out long at) ? (int)at : 0);
+            }
 
             bw.Pad(16);
             bw.FillInt32("OffsetToTable", (int)bw.Position);
@@ -418,6 +452,7 @@ namespace SoulsFormats
             env.WriteFXNodeTable("TableFXNodeCount");
             env.ApplyGarbage();
             writingEnvironment = null;
+            currentVersion = 1;
         }
 
         protected override bool Is(BinaryReaderEx br)
@@ -426,7 +461,7 @@ namespace SoulsFormats
                 return false;
 
             var version = br.GetInt32(4);
-            return version == 0x10000 || version == 0x100;
+            return version == 0x10000 || version == 0x100 || version == 0x20000;
         }
 
         static int ReadFXR1Varint(BinaryReaderEx br)
@@ -450,7 +485,8 @@ namespace SoulsFormats
             if (br.VarintLong)
             {
                 long at = br.Position;
-                uint v = br.AssertUInt32([0, 0xCDCDCDCD]);
+                // v1 (DS1R) leaves 0 or 0xCDCDCDCD; v2 (Bloodborne) is 0 but for a few words with real-looking values
+                uint v = IsV2 ? br.ReadUInt32() : br.AssertUInt32([0, 0xCDCDCDCD]);
                 if (v != 0 && readingGarbage != null)
                     readingGarbage[at] = v;
             }

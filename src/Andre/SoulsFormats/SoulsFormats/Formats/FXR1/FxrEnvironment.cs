@@ -130,6 +130,21 @@ namespace SoulsFormats
                 }
             }
 
+            public FXRecord GetFXRecord(BinaryReaderEx br, long offset)
+            {
+                if (offset == 0)
+                    return null;
+                if (ObjectsByOffset.TryGetValue(offset, out var existing))
+                    return existing as FXRecord ?? throw new InvalidOperationException();
+                var newVal = new FXRecord();
+                RegisterOffset(offset, newVal);
+                newVal.XID = $"0x{offset:X}";
+                br.StepIn(offset);
+                newVal.Read(br);
+                br.StepOut();
+                return newVal;
+            }
+
             public FXModifier GetFXModifier(BinaryReaderEx br, long offset)
             {
                 if (offset == 0)
@@ -310,6 +325,8 @@ namespace SoulsFormats
             {
                 public object Obj;
                 public Section Section;
+                /// <summary>FXR v2: which root (133) the unit was written under; the packed tail goes root by root.</summary>
+                public int RootIndex;
                 public int Order;
                 public byte[] Bytes;
                 public long Base;
@@ -329,16 +346,110 @@ namespace SoulsFormats
             internal enum Section
             {
                 Root, Container, State, Transition, Action, Data, Node, NodePointer, Late, ActionData,
+                /// <summary>FXR v2 container records (placement learned from Bloodborne, FFX plan §19).</summary>
+                Record,
                 /// <summary>Nodes a transition's condition starts at (DS1: at the end of the nodes; DS1R: before the node pointers).</summary>
                 Evaluator,
+                /// <summary>FXR v2: the first root's node 141's node list (the header points at it), after the nodes.</summary>
+                V2RootList,
+                /// <summary>FXR v2: the packed nodes' data lists (the first count2 nodes of a container: FFX plan §19).</summary>
+                PackedData,
+                /// <summary>FXR v2: the packed nodes, block by block.</summary>
+                PackedNode,
+                /// <summary>FXR v2: the roots' node 141, the last object.</summary>
+                V2Root141,
+                /// <summary>FXR v2: the packed colour nodes (15, 83), after the packed vector lists.</summary>
+                PackedColor,
+                /// <summary>FXR v2: the packed nodes' 16-byte vector lists (colour values), after 141.</summary>
+                PackedLate,
             }
 
             /// <summary>Where a section goes: DS1R puts the node pointer lists (after the evaluators) before the other nodes.</summary>
             private int Rank(Section s)
             {
-                Section[] narrow = { Section.Root, Section.Container, Section.State, Section.Transition, Section.Action, Section.Data, Section.Node, Section.Evaluator, Section.NodePointer, Section.Late, Section.ActionData };
-                Section[] wide = { Section.Root, Section.Container, Section.State, Section.Transition, Section.Action, Section.Data, Section.Evaluator, Section.NodePointer, Section.Node, Section.Late, Section.ActionData };
-                return Array.IndexOf(fxr.Wide ? wide : narrow, s);
+                Section[] narrow = { Section.Root, Section.Container, Section.State, Section.Transition, Section.Action, Section.Data, Section.Node, Section.Evaluator, Section.NodePointer, Section.Late, Section.ActionData, Section.Record };
+                Section[] wide = { Section.Root, Section.Container, Section.State, Section.Transition, Section.Action, Section.Data, Section.Evaluator, Section.NodePointer, Section.Node, Section.Late, Section.ActionData, Section.Record };
+                Section[] v2 = { Section.Root, Section.Container, Section.State, Section.Transition, Section.Action, Section.Data, Section.Evaluator, Section.NodePointer, Section.Node, Section.Late, Section.Record, Section.V2RootList, Section.PackedData, Section.PackedNode, Section.V2Root141, Section.PackedLate, Section.PackedColor };
+                return Array.IndexOf(fxr.Version == 2 ? v2 : fxr.Wide ? wide : narrow, s);
+            }
+
+            // FXR v2 layout state: the packed nodes (the first count2 nodes of every container whose count2 is set), the
+            // roots' 141 nodes (written after everything else), and whether the unit being written belongs to a packed node
+            private Dictionary<FXContainer, int> packedCounts;
+            private readonly Dictionary<object, FXContainer> listOwners = new Dictionary<object, FXContainer>(ReferenceEqualityComparer.Instance);
+
+            /// <summary>FXR v2: the node pointer list a container just made, so its entries can be told packed or not.</summary>
+            internal void NoteContainerList(FXContainer c, object list) => listOwners[list] = c;
+            private HashSet<object> v2Roots141;
+            private readonly List<object> deferredV2 = new List<object>();
+            private bool writingPacked;
+            private int rootIndex = -1;
+
+            /// <summary>FXR v2: sections laid out root by root (each root's packed nodes, then its 141); the roots' 141 lists and packed data come together before them.</summary>
+            private static bool PerRoot(Section s) => s is Section.PackedNode or Section.V2Root141;
+
+            /// <summary>Sort key of a unit's section: v2 per-root sections come after the shared ones, root by root.</summary>
+            private int SectionKey(Unit u)
+            {
+                int rank = Rank(u.Section);
+                if (fxr.Version != 2)
+                    return rank;
+                int firstTail = Rank(Section.PackedNode);
+                if (rank < firstTail)
+                    return rank;
+                if (PerRoot(u.Section))
+                    return 100 + Math.Max(0, u.RootIndex) * 100 + rank;
+                return 1000000 + rank;
+            }
+            private bool writingV2Tree;
+
+            /// <summary>
+            /// FXR v2: the action types whose values are packed (laid out in the tail, FFX plan §19): DS1's ActionData
+            /// types plus 10000–10600, 20, 45, 60, 64 and 65, from every vanilla Bloodborne action call (FfxSurvey --bbwalk).
+            /// </summary>
+            internal static readonly HashSet<int> PackedActionTypes = new HashSet<int>
+            {
+                20, 27, 28, 29, 30, 31, 32, 40, 43, 45, 55, 59, 60, 61, 64, 65, 66, 70, 71, 84, 105, 107, 108, 117,
+                10000, 10003, 10008, 10200, 10300, 10301, 10600,
+            };
+
+            private void PrepareV2()
+            {
+                packedCounts = new Dictionary<FXContainer, int>(ReferenceEqualityComparer.Instance);
+                v2Roots141 = new HashSet<object>(ReferenceEqualityComparer.Instance);
+                var seen = new HashSet<object>(ReferenceEqualityComparer.Instance);
+                void Container(FXContainer c, int actionType = -1)
+                {
+                    if (c == null || !seen.Add(c)) return;
+                    // A packed action type's container: its first count2 nodes (all when count2 is the count) are packed, if
+                    // they are first written from it (a node shared with an unpacked place written first stays unpacked)
+                    if (PackedActionTypes.Contains(actionType))
+                        packedCounts[c] = c.V2PackedRead >= 0 ? c.V2PackedRead : c.V2Count2 >= 0 ? c.V2Count2 : c.FXNodes.Count;
+                    else if (c.V2PackedRead > 0)
+                        packedCounts[c] = c.V2PackedRead;
+                    foreach (var n in c.FXNodes)
+                        Node(n);
+                }
+                void Node(FXNode n)
+                {
+                    if (n == null || !seen.Add(n)) return;
+                    switch (n)
+                    {
+                        case FXNode.EffectCreateNode133 r:
+                            Container(r.Container1);
+                            if (r.V2Node != null) v2Roots141.Add(r.V2Node);
+                            Node(r.V2Node);
+                            foreach (var s in r.States)
+                                foreach (var a in s.Actions)
+                                    Container(a.Container, a.ActionType);
+                            break;
+                        case FXNode.EffectCreateNode134 m: foreach (var x in m.Nodes) Node(x); break;
+                        case FXNode.ContainerNode cn: Container(cn.Container); break;
+                        case FXNode.ActionCallNode ac: Container(ac.Container, ac.ActionType); break;
+                        case FXNode.EffectCallNode ec: Container(ec.Container); break;
+                    }
+                }
+                Node(fxr.RootFXNode);
             }
 
             private bool writingTransitions;
@@ -369,7 +480,7 @@ namespace SoulsFormats
 
             /// <summary>Objects written as units of their own; others (states, transitions, actions, node pointers) live in their list's unit.</summary>
             private static bool IsUnit(object o) =>
-                o is FXNode || o is FXContainer || o is FXActionData || o is FXModifier || o is System.Collections.IList;
+                o is FXNode || o is FXContainer || o is FXActionData || o is FXModifier || o is FXRecord || o is System.Collections.IList;
 
             internal static Section SectionOf(object o, bool root) => o switch
             {
@@ -384,6 +495,8 @@ namespace SoulsFormats
                 List<FXAction> => Section.Action,
                 List<FXNodePointer> => Section.NodePointer,
                 FXActionData => Section.ActionData,
+                // FXR v2: 48-byte records (kind 1) have a 16-aligned section; 8-byte ones (kind 0) sit with the data lists
+                FXRecord r => r.Kind == 0 ? Section.Data : Section.Late,
                 FXModifier1_MoveEffect => Section.Late,
                 VectorList => Section.Late,
                 FXModifier => Section.Data,
@@ -393,7 +506,7 @@ namespace SoulsFormats
             /// <summary>Alignment of a unit's start; the first unit of a section may need more (see <see cref="SectionAlign"/>).</summary>
             internal int UnitAlign(Unit u) => u.Section switch
             {
-                Section.Late or Section.ActionData => 16,
+                Section.Late or Section.ActionData or Section.PackedLate or Section.Record => 16,
                 // DS1R's 64-bit pointers: nodes and node pointer lists start on 8 bytes
                 _ when fxr.Wide && (u.Obj is FXNode || u.Obj is List<FXNodePointer> || u.Obj is List<FXNode>) => 8,
                 _ => 4,
@@ -401,7 +514,7 @@ namespace SoulsFormats
 
             internal static int SectionAlign(Section s) => s switch
             {
-                Section.Late or Section.ActionData => 16,
+                Section.Late or Section.ActionData or Section.PackedLate or Section.Record or Section.V2RootList => 16,
                 _ => 4,
             };
 
@@ -436,14 +549,40 @@ namespace SoulsFormats
             }
 
             /// <summary>Writes one unit into its own buffer, then (depth first) the units it points to.</summary>
-            private void WriteUnit(object obj, bool isRoot)
+            private void WriteUnit(object obj, bool isRoot, object parent = null)
             {
                 var section = SectionOf(obj, isRoot);
                 // DS1R: a transition's condition (every node first reached through the deferred transitions) has its own
                 // section; DS1 leaves those nodes at the end of the node section, where the deferral puts them
                 if (fxr.Wide && writingTransitions && section == Section.Node)
                     section = Section.Evaluator;
-                var u = new Unit { Obj = obj, Section = section };
+
+                // FXR v2: packed nodes and everything they hold go to the packed tail; a root's 141 and its own list
+                // to their sections
+                bool wasPacked = writingPacked;
+                if (fxr.Version == 2)
+                {
+                    if (obj is FXNode && parent is List<FXNodePointer> list && listOwners.TryGetValue(list, out var owner)
+                        && packedCounts.TryGetValue(owner, out int packed) && list.FindIndex(p => ReferenceEquals(p.Node, obj)) is int idx && idx >= 0 && idx < packed)
+                        writingPacked = true;
+                    if (writingPacked)
+                        section = obj switch
+                        {
+                            // A colour constant counts as vector data
+                            FXNode.ColorNode15 or FXNode.Color2Node83 or FXNode.ColorWrapNode84 => Section.PackedColor,
+                            FXNode => Section.PackedNode,
+                            VectorList => Section.PackedLate,
+                            System.Collections.IList when obj is not List<FXNodePointer> => Section.PackedData,
+                            _ => section,
+                        };
+                    else if (v2Roots141.Contains(obj))
+                        section = Section.V2Root141;
+                    else if (obj is List<FXNodePointer> && parent != null && v2Roots141.Contains(parent))
+                        section = Section.V2RootList;
+                }
+                if (fxr.Version == 2 && obj is FXNode.EffectCreateNode133)
+                    rootIndex++;
+                var u = new Unit { Obj = obj, Section = section, RootIndex = rootIndex };
                 units[obj] = u;
 
                 var (prevUnit, prevWriter, prevMember) = (current, bw, currentMember);
@@ -466,9 +605,17 @@ namespace SoulsFormats
                         continue;
                     if (target is List<FXTransition>)
                         deferredTransitions.Add(target);
+                    // FXR v2: a root's 141 subtree comes after everything else
+                    else if (fxr.Version == 2 && v2Roots141.Contains(target))
+                        deferredV2.Add(target);
                     else
-                        WriteUnit(target, false);
+                        WriteUnit(target, false, obj);
                 }
+                writingPacked = wasPacked;
+
+                // FXR v2: a root's 141 subtree follows that root (multi-root files go root by root)
+                if (fxr.Version == 2 && obj is FXNode.EffectCreateNode133 root && root.V2Node != null && !units.ContainsKey(root.V2Node))
+                    WriteUnit(root.V2Node, false, obj);
             }
 
             private void DoDataWrite(object data)
@@ -478,6 +625,7 @@ namespace SoulsFormats
                     case FXNodePointer asEffectFXNode: asEffectFXNode.Write(bw, this); break;
                     case FXActionData asActionData: asActionData.Write(bw, this); break;
                     case FXModifier asModifier: asModifier.Write(bw, this); break;
+                    case FXRecord asRecord: asRecord.Write(bw, this); break;
                     case FXContainer asEffect: asEffect.Write(bw, this); break;
                     case FXAction asFXAction: asFXAction.Write(bw, this); break;
                     case FXTransition asTransition: asTransition.Write(bw, this); break;
@@ -531,6 +679,8 @@ namespace SoulsFormats
             public void FinishRecursiveWrite()
             {
                 var main = bw;
+                if (fxr.Version == 2)
+                    PrepareV2();
                 foreach (var root in roots.ToList())
                     if (!units.ContainsKey(root))
                         WriteUnit(root, true);
@@ -540,9 +690,13 @@ namespace SoulsFormats
                     if (!units.ContainsKey(deferredTransitions[i]))
                         WriteUnit(deferredTransitions[i], false);
                 writingTransitions = false;
+                // FXR v2: each root's 141 subtree, last
+                for (int i = 0; i < deferredV2.Count; i++)
+                    if (!units.ContainsKey(deferredV2[i]))
+                        WriteUnit(deferredV2[i], false);
 
                 Section? previous = null;
-                foreach (var u in unitOrder.OrderBy(u => Rank(u.Section)).ThenBy(u => u.Order))
+                foreach (var u in unitOrder.OrderBy(SectionKey).ThenBy(u => u.Order))
                 {
                     if (previous != u.Section)
                         main.Pad(SectionAlign(u.Section));

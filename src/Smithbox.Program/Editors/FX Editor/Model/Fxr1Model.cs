@@ -35,30 +35,7 @@ public static class Fxr1Model
     public static Fxr1EffectAdapter Adapt(FXR1 fx, FfxSchema schema, FfxGame game) => new(fx, schema, game);
 
     /// <summary>The FXR1 node type id of a node object (the id the file stores), or -1.</summary>
-    public static int TypeId(FXNode node) => node != null && NodeTypes.TryGetValue(node.GetType(), out var id) ? id : -1;
-
-    private static readonly Dictionary<Type, int> NodeTypes = new()
-    {
-        [typeof(IntNode)] = 1, [typeof(IntArrayNode)] = 2, [typeof(IntSequenceNode3)] = 3, [typeof(IntSequenceNode5)] = 5,
-        [typeof(IntSequenceNode6)] = 6, [typeof(FloatNode)] = 7, [typeof(IntSequenceNode9)] = 9,
-        [typeof(FloatSequenceNode11)] = 11, [typeof(FloatSequenceNode12)] = 12, [typeof(Float3SequenceNode13)] = 13,
-        [typeof(Float3SequenceNode14)] = 14, [typeof(ColorSequenceNode19)] = 19, [typeof(ColorSequenceNode20)] = 20,
-        [typeof(Color3SequenceNode21)] = 21, [typeof(Color3SequenceNode22)] = 22, [typeof(ColorSequenceNode27)] = 27,
-        [typeof(ColorSequenceNode28)] = 28, [typeof(Color3SequenceNode29)] = 29, [typeof(EffectCallNode)] = 37,
-        [typeof(ActionCallNode)] = 38, [typeof(IntNode41)] = 41, [typeof(IndexedIntNode)] = 44, [typeof(IndexedIntArrayNode)] = 45,
-        [typeof(IndexedIntSequenceNode)] = 46, [typeof(IndexedFloatNode)] = 47, [typeof(IndexedEffectNode)] = 59,
-        [typeof(IndexedActionNode)] = 60, [typeof(IndexedSoundIDNode)] = 66, [typeof(SoundIDNode68)] = 68,
-        [typeof(SoundIDNode69)] = 69, [typeof(TickNode)] = 70, [typeof(IndexedTickNode)] = 71, [typeof(Int2Node)] = 79,
-        [typeof(Float2Node)] = 81, [typeof(Tick2Node)] = 85, [typeof(IndexedTick2Node)] = 87, [typeof(IntSequenceNode89)] = 89,
-        [typeof(FloatSequenceNodeNode91)] = 91, [typeof(FloatSequenceNodeNode95)] = 95, [typeof(IntNode111)] = 111,
-        [typeof(EmptyNode112)] = 112, [typeof(EmptyNode113)] = 113, [typeof(UnkIndexedValueNode114)] = 114,
-        [typeof(UnkIndexedValueNode115)] = 115, [typeof(Node2Node120)] = 120, [typeof(Node2Node121)] = 121,
-        [typeof(Node2Node122)] = 122, [typeof(Node2Node123)] = 123, [typeof(Node2Node124)] = 124, [typeof(Node2Node125)] = 125,
-        [typeof(Node2Node126)] = 126, [typeof(Node2Node127)] = 127, [typeof(NodeNode128)] = 128, [typeof(EmptyNode129)] = 129,
-        [typeof(EmptyNode130)] = 130, [typeof(EmptyNode131)] = 131, [typeof(EmptyNode132)] = 132,
-        [typeof(EffectCreateNode133)] = 133, [typeof(EffectCreateNode134)] = 134, [typeof(EmptyNode136)] = 136,
-        [typeof(FXNode137)] = 137, [typeof(FXNode138)] = 138, [typeof(FXNode139)] = 139, [typeof(FXNode140)] = 140,
-    };
+    public static int TypeId(FXNode node) => FXR1.NodeTypeId(node);
 
     /// <summary>
     /// How a param node sequence interpolates, by node type. 3–22 share DLSE's (DS2-scheme) ids; 27–29 are taken as
@@ -71,6 +48,12 @@ public static class Fxr1Model
         29 => 21,
         89 => 5,
         91 or 95 => 11,
+        // FXR v2: 4 / 10 / 17 by DLSE's numbering; 30 as 22; the ranged 149 / 150 as 13 / 14 and 151 / 152 as 21 / 22
+        30 => 22,
+        149 => 13,
+        150 => 14,
+        151 => 21,
+        152 => 22,
         _ => type,
     });
 
@@ -143,7 +126,7 @@ public sealed class Fxr1EffectAdapter : IFxEffect
         // Not drawn yet: found by searching the roots
         switch (source)
         {
-            case EffectCreateNode133 or EffectCreateNode134:
+            case EffectCreateNode133 or EffectCreateNode134 or ContainerNode:
                 return Node((FXNode)source);
             case FXState s:
                 foreach (var r in Fxr1Model.Roots(File))
@@ -188,6 +171,7 @@ public sealed class Fxr1EffectAdapter : IFxEffect
         EffectCreateNode133 r => RootNode(r),
         EffectCreateNode134 m => Get(m, () => new Fxr1RootsAdapter(this, m)),
         null => null,
+        ContainerNode c => Get(c, () => new Fxr1ContainerNodeAdapter(this, c)),
         _ => Get(node, () => new Fxr1OtherNodeAdapter(node)),
     };
 
@@ -210,12 +194,23 @@ public sealed class Fxr1EffectAdapter : IFxEffect
     internal Fxr1ActionAdapter ActionCall(ActionCallNode call) =>
         Get(call, () => new Fxr1ActionAdapter(this, call.ActionType, call.Container, call, Schema.Actions.GetValueOrDefault(call.ActionType)));
 
+    /// <summary>A v2 container node's container, as an action: its node type and int, no schema layout.</summary>
+    internal Fxr1ActionAdapter ContainerNodeAction(ContainerNode n) =>
+        Get(n.Container, () => new Fxr1ActionAdapter(this, n.NodeType, n.Container, n.Container, null));
+
     internal Fxr1EffectCallAdapter EffectCall(EffectCallNode call) => Get(call, () => new Fxr1EffectCallAdapter(this, call));
 
     internal Fxr1PackedAdapter Packed(object record) => Get(record, () => new Fxr1PackedAdapter(this, record));
 
-    internal Fxr1ValueAdapter Value(Fxr1ActionAdapter owner, FXNode node, int index) =>
-        Get(node, () => new Fxr1ValueAdapter(this, node)).At(owner, index);
+    // Values have their own cache: a v2 container node is both a tree node (Node) and a value of its parent's container
+    private readonly Dictionary<object, Fxr1ValueAdapter> values = new(ReferenceEqualityComparer.Instance);
+
+    internal Fxr1ValueAdapter Value(Fxr1ActionAdapter owner, FXNode node, int index)
+    {
+        if (!values.TryGetValue(node, out var v))
+            values[node] = v = new Fxr1ValueAdapter(this, node);
+        return v.At(owner, index);
+    }
 }
 
 /// <summary>Node 134: several effect roots.</summary>
@@ -251,9 +246,38 @@ public sealed class Fxr1RootAdapter : IFxNode, IFxStatesNode
 
     public FxNodeKind Kind => FxNodeKind.Root;
     public int TypeId => 133;
-    public IReadOnlyList<IFxNode> Children => Array.Empty<IFxNode>();
-    public IReadOnlyList<IFxAction> Actions => new IFxAction[] { owner.RootContainer(node, 1), owner.RootContainer(node, 2) };
+    /// <summary>FXR v2: the root's node 141 tree; v1 roots have no child nodes.</summary>
+    public IReadOnlyList<IFxNode> Children => node.V2Node != null ? new[] { owner.Node(node.V2Node) } : Array.Empty<IFxNode>();
+
+    /// <summary>The root's containers (v2 roots have only the first).</summary>
+    public IReadOnlyList<IFxAction> Actions => node.Container2 != null
+        ? new IFxAction[] { owner.RootContainer(node, 1), owner.RootContainer(node, 2) }
+        : new IFxAction[] { owner.RootContainer(node, 1) };
     public IReadOnlyList<IFxState> States => node.States.Select(s => (IFxState)owner.State(node, s)).ToList();
+    public object Source => node;
+}
+
+/// <summary>
+/// FXR v2 container nodes 141–148 (each root → 141 → 142 → 143 → 146 → 147 …; meaning unknown, FFX plan §19): the
+/// container nodes among its container's nodes are its children, and the container itself is its one action (its
+/// values are all the container's nodes, the child container nodes shown as references).
+/// </summary>
+public sealed class Fxr1ContainerNodeAdapter : IFxNode
+{
+    private readonly Fxr1EffectAdapter owner;
+    private readonly ContainerNode node;
+
+    internal Fxr1ContainerNodeAdapter(Fxr1EffectAdapter owner, ContainerNode node)
+    {
+        this.owner = owner;
+        this.node = node;
+    }
+
+    public FxNodeKind Kind => FxNodeKind.Container;
+    public int TypeId => node.NodeType;
+    public IReadOnlyList<IFxNode> Children =>
+        node.Container?.FXNodes.OfType<ContainerNode>().Select(c => owner.Node(c)).ToList() ?? (IReadOnlyList<IFxNode>)Array.Empty<IFxNode>();
+    public IReadOnlyList<IFxAction> Actions => node.Container != null ? new IFxAction[] { owner.ContainerNodeAction(node) } : Array.Empty<IFxAction>();
     public object Source => node;
 }
 
@@ -638,7 +662,7 @@ public sealed class Fxr1EffectCallAdapter : Fxr1ActionAdapter, IFxProxy
 /// A param node. Its name and position come from the action it was last read through (<see cref="At"/>): the adapter
 /// is cached by the node, and vanilla never shares a param node between containers.
 /// </summary>
-public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFxCallValue, IFxArgumentValue, IFxTypedValue, IFxFixedCurveShape
+public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFxCallValue, IFxArgumentValue, IFxTypedValue, IFxFixedCurveShape, IFxWrappedValue
 {
     private readonly Fxr1EffectAdapter owner;
     public FXNode Node { get; }
@@ -665,24 +689,29 @@ public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IF
 
     public FxValueKind Kind => Node switch
     {
-        IntNode or IntNode41 or SoundIDNode68 or SoundIDNode69 or IntNode111 => FxValueKind.Int,
+        IntNode or IntNode41 or SoundIDNode68 or SoundIDNode69 or IntNode111 or TextureNode40 => FxValueKind.Int,
         FloatNode or TickNode => FxValueKind.Float,
-        Int2Node or Float2Node or Tick2Node => FxValueKind.Vector,
+        Int2Node or Float2Node or Tick2Node or ColorNode15 or Color2Node83 => FxValueKind.Vector,
         IntArrayNode => FxValueKind.IntList,
         IntSequenceNode3 or IntSequenceNode5 or IntSequenceNode6 or IntSequenceNode9 or IntSequenceNode89
             or FloatSequenceNode11 or FloatSequenceNode12 or FloatSequenceNodeNode91 or FloatSequenceNodeNode95
             or Float3SequenceNode13 or Float3SequenceNode14
             or ColorSequenceNode19 or ColorSequenceNode20 or ColorSequenceNode27 or ColorSequenceNode28
-            or Color3SequenceNode21 or Color3SequenceNode22 or Color3SequenceNode29 => FxValueKind.Curve,
+            or Color3SequenceNode21 or Color3SequenceNode22 or Color3SequenceNode29
+            // FXR v2 (Bloodborne)
+            or IntSequenceNode4 or FloatSequenceNode10 or ColorSequenceNode17 or Color3SequenceNode30
+            or RangedFloat3SequenceNode or RangedColor3SequenceNode => FxValueKind.Curve,
         _ => FxValueKind.Other,
     };
 
     public bool IsColor => Node is ColorSequenceNode19 or ColorSequenceNode20 or ColorSequenceNode27 or ColorSequenceNode28
-        or Color3SequenceNode21 or Color3SequenceNode22 or Color3SequenceNode29;
+        or Color3SequenceNode21 or Color3SequenceNode22 or Color3SequenceNode29
+        or ColorSequenceNode17 or Color3SequenceNode30 or RangedColor3SequenceNode or ColorNode15;
 
     public int Components => Node switch
     {
         Int2Node or Float2Node or Tick2Node => 2,
+        Color2Node83 => 8,
         _ when IsColor => 4,
         _ => 1,
     };
@@ -691,11 +720,27 @@ public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IF
     public bool IsStored => true;
     public string Description => Def?.Desc;
     public string Enum => null;
-    public string Resource => null;
+    public string Resource => Node is TextureNode40 ? "texture" : null;
     public string TextureType => null;
     public IReadOnlyList<FxEnumMember> EnumMembers => Array.Empty<FxEnumMember>();
     public string Argument => null;
     public bool IsConverted => false;
+
+    // ---------------------------------------------------------------- IFxWrappedValue (v2 82 / 84)
+
+    public IFxValue Inner => Node switch
+    {
+        FloatWrapNode82 w when w.Node != null => owner.Value(action, w.Node, index),
+        ColorWrapNode84 w when w.Node != null => owner.Value(action, w.Node, index),
+        _ => null,
+    };
+
+    public IReadOnlyList<double> Factor => Node switch
+    {
+        FloatWrapNode82 w => new double[] { w.Value },
+        ColorWrapNode84 w => new double[] { w.R, w.G, w.B, w.A },
+        _ => Array.Empty<double>(),
+    };
 
     // ---------------------------------------------------------------- IFxTypedValue
 
@@ -716,6 +761,9 @@ public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IF
         Int2Node n => new double[] { n.X, n.Y },
         Float2Node n => new double[] { n.X, n.Y },
         Tick2Node n => new double[] { n.Tick1, n.Tick2 },
+        TextureNode40 n => new double[] { n.TextureID },
+        ColorNode15 n => new double[] { n.R, n.G, n.B, n.A },
+        Color2Node83 n => n.Values.Select(v => (double)v).ToArray(),
         _ => null,
     };
 
@@ -741,6 +789,9 @@ public sealed class Fxr1ValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IF
             case Int2Node n: n.X = I(0, n.X); n.Y = I(1, n.Y); break;
             case Float2Node n: n.X = F(0, n.X); n.Y = F(1, n.Y); break;
             case Tick2Node n: n.Tick1 = F(0, n.Tick1); n.Tick2 = F(1, n.Tick2); break;
+            case TextureNode40 n: n.TextureID = I(0, n.TextureID); break;
+            case ColorNode15 n: n.R = F(0, n.R); n.G = F(1, n.G); n.B = F(2, n.B); n.A = F(3, n.A); break;
+            case Color2Node83 n: for (int i = 0; i < 8; i++) n.Values[i] = F(i, n.Values[i]); break;
         }
     }
 

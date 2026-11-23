@@ -732,6 +732,7 @@
     { "Key": "FX_Inspector_Argument_Value", "Text": "Argument {0} ({1})" },
     { "Key": "FX_Inspector_Value_Type", "Text": "Stored as {0} (type {1})" },
     { "Key": "FX_Node_Fxr1_Roots", "Text": "Effect Roots" },
+    { "Key": "FX_Node_Fxr2_Container", "Text": "Container Node {0}" },
     { "Key": "FX_Action_Fxr1_ActionData", "Text": "ActionData: {0} ({1})" },
     { "Key": "FX_Action_Fxr1_Modifier", "Text": "Modifier: {0} ({1})" },
     { "Key": "FX_Inspector_Expr_Fixed_TT", "Text": "Part of a packed condition (Dark Souls node types 136 to 140): its operator and constants are set by the node type and can't be changed. The arguments under it can be edited; in the distance conditions (138 to 140) the second argument number is always 1." }

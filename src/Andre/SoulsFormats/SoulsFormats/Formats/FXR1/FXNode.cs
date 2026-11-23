@@ -70,7 +70,7 @@ namespace SoulsFormats
         [XmlInclude(typeof(FXNode139))]
         [XmlInclude(typeof(FXNode140))]
         [XmlInclude(typeof(FXNodeRef))]
-        public abstract class FXNode : XIDable
+        public abstract partial class FXNode : XIDable
         {
             public override bool ShouldSerializeXID() => FXR1.FlattenFXNodes;
 
@@ -189,6 +189,19 @@ namespace SoulsFormats
                     case 138: func = new FXNode138(); break;
                     case 139: func = new FXNode139(); break;
                     case 140: func = new FXNode140(); break;
+                    // FXR v2 (Bloodborne): FXNodeV2.cs
+                    case 4: func = new IntSequenceNode4(); break;
+                    case 10: func = new FloatSequenceNode10(); break;
+                    case 15: func = new ColorNode15(); break;
+                    case 17: func = new ColorSequenceNode17(); break;
+                    case 30: func = new Color3SequenceNode30(); break;
+                    case 40: func = new TextureNode40(); break;
+                    case 82: func = new FloatWrapNode82(); break;
+                    case 83: func = new Color2Node83(); break;
+                    case 84: func = new ColorWrapNode84(); break;
+                    case >= 141 and <= 148: func = new ContainerNode(); break;
+                    case 149 or 150: func = new RangedFloat3SequenceNode(); break;
+                    case 151 or 152: func = new RangedColor3SequenceNode(); break;
                     default:
                         throw new NotImplementedException();
                 }
@@ -329,9 +342,38 @@ namespace SoulsFormats
                     Container2 = fxr.DereferenceFXContainer(Container2);
                 }
 
+                /// <summary>FXR v2: the three varints after the effect id (0, 0, 96 in vanilla).</summary>
+                public int V2Unk10, V2Unk18, V2Unk20;
+
+                /// <summary>FXR v2: the root's node 141 (a container node), where v1 has a second container.</summary>
+                public FXNode V2Node;
+
                 internal override void ReadInner(BinaryReaderEx br, FxrEnvironment env)
                 {
                     AssertFXR1Varint(br, 133);
+
+                    if (IsV2)
+                    {
+                        EffectID = ReadFXR1Varint(br);
+                        V2Unk10 = ReadFXR1Varint(br);
+                        V2Unk18 = ReadFXR1Varint(br);
+                        V2Unk20 = ReadFXR1Varint(br);
+                        Container1 = env.GetFXContainer(br, br.Position);
+                        br.Position += FXContainer.GetSize(br.VarintLong);
+                        int statesOffset = ReadFXR1Varint(br);
+                        int stateCount = ReadFXR1Varint(br);
+                        int nodeOffset = ReadFXR1Varint(br);
+                        States = new List<FXState>();
+                        br.StepIn(statesOffset);
+                        for (int i = 0; i < stateCount; i++)
+                        {
+                            States.Add(env.GetFXState(br, br.Position));
+                            br.Position += FXState.GetSize(br.VarintLong);
+                        }
+                        br.StepOut();
+                        V2Node = env.GetFXNode(br, nodeOffset);
+                        return;
+                    }
 
                     EffectID = ReadFXR1Varint(br);
                     for (int i = 0; i < 7; i++)
@@ -360,6 +402,19 @@ namespace SoulsFormats
                 internal override void WriteInner(BinaryWriterEx bw, FxrEnvironment env)
                 {
                     WriteFXR1Varint(bw, 133);
+
+                    if (IsV2)
+                    {
+                        WriteFXR1Varint(bw, EffectID);
+                        WriteFXR1Varint(bw, V2Unk10);
+                        WriteFXR1Varint(bw, V2Unk18);
+                        WriteFXR1Varint(bw, V2Unk20);
+                        Container1.Write(bw, env);
+                        env.RegisterPointer(States);
+                        WriteFXR1Varint(bw, States.Count);
+                        env.RegisterPointer(V2Node);
+                        return;
+                    }
 
                     WriteFXR1Varint(bw, EffectID);
                     for (int i = 0; i < 7; i++)

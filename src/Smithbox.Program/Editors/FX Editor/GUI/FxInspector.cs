@@ -661,6 +661,12 @@ public class FxInspector
                 case 2: { var v = new Vector2(cur[0], cur[1]); changed = ImGui.InputFloat2(id, ref v, "%.4g"); cur = new[] { v.X, v.Y }; break; }
                 case 3: { var v = new Vector3(cur[0], cur[1], cur[2]); changed = ImGui.InputFloat3(id, ref v, "%.4g"); cur = new[] { v.X, v.Y, v.Z }; break; }
                 case 4: { var v = new Vector4(cur[0], cur[1], cur[2], cur[3]); changed = ImGui.InputFloat4(id, ref v, "%.4g"); cur = new[] { v.X, v.Y, v.Z, v.W }; break; }
+                case > 4:
+                {
+                    // More than 4 (Bloodborne's two-colour value, 8): rows of 4, edited and committed as one value
+                    DisplayFloatRows(id, cur, entry, make);
+                    return;
+                }
             }
         }
 
@@ -673,6 +679,64 @@ public class FxInspector
 
         var final = cur;
         CommitOnDeactivate(id, () => Editor.ActionManager.ExecuteAction(make(final.Select(f => (double)f).ToArray())));
+    }
+
+    /// <summary>
+    /// A value of more than 4 floats as rows of 4 inputs. The rows are one value: it commits when focus leaves all of
+    /// them after an edit, and is dropped when it leaves without one (as CommitOnDeactivate does for a single input).
+    /// </summary>
+    private void DisplayFloatRows(string id, float[] cur, FxEntry entry, Func<double[], EditorAction> make)
+    {
+        var next = (float[])cur.Clone();
+        bool changed = false, active = false, deactivatedAfterEdit = false;
+        for (int row = 0; row * 4 < cur.Length; row++)
+        {
+            int n = Math.Min(4, cur.Length - row * 4);
+            var v = new Vector4(cur[row * 4], n > 1 ? cur[row * 4 + 1] : 0, n > 2 ? cur[row * 4 + 2] : 0, n > 3 ? cur[row * 4 + 3] : 0);
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.InputFloat4($"{id}_{row}", ref v, "%.4g"))
+            {
+                changed = true;
+                var vs = new[] { v.X, v.Y, v.Z, v.W };
+                for (int k = 0; k < n; k++) next[row * 4 + k] = vs[k];
+            }
+            active |= ImGui.IsItemActive();
+            deactivatedAfterEdit |= ImGui.IsItemDeactivatedAfterEdit();
+        }
+
+        if (changed)
+        {
+            Pending[id] = next;
+            var live = next.Select(f => (double)f).ToArray();
+            Editor.Live.Show(id, entry, () => make(live));
+        }
+        if (!Pending.ContainsKey(id))
+            return;
+
+        var final = next;
+        void Commit()
+        {
+            Editor.Live.Revert(id);
+            Editor.ActionManager.ExecuteAction(make(final.Select(f => (double)f).ToArray()));
+        }
+        if (deactivatedAfterEdit && !active)
+        {
+            Commit();
+            Pending.Remove(id);
+            PendingCommits.Remove(id);
+        }
+        else if (!active && !deactivatedAfterEdit)
+        {
+            // Focus moved between the rows (no edit), or left without one
+            if (!ImGui.IsAnyItemActive())
+            {
+                Editor.Live.Revert(id);
+                Pending.Remove(id);
+                PendingCommits.Remove(id);
+            }
+        }
+        else
+            PendingCommits[id] = Commit;
     }
 
     private void CommitOnDeactivate(string id, Action commit)

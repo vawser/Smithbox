@@ -71,6 +71,7 @@ public static class FxNames
         Model.FxNodeKind.Basic => LOC.Get("FX_Node_Basic"),
         Model.FxNodeKind.NodeEmitter => LOC.Get("FX_Node_NodeEmitter"),
         Model.FxNodeKind.Roots => LOC.Get("FX_Node_Fxr1_Roots"),
+        Model.FxNodeKind.Container => LOC.Get("FX_Node_Fxr2_Container", node.TypeId),
         _ => LOC.Get("FX_Node_Unknown", node.TypeId),
     };
 

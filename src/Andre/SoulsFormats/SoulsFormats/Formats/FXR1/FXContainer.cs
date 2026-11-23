@@ -44,11 +44,59 @@ namespace SoulsFormats
                     FXNodes[i] = fxr.DereferenceFXNode(FXNodes[i]);
             }
 
+            /// <summary>
+            /// FXR v2: the node count stored a second time. Most containers store the count twice, as v1 does; 15,126
+            /// vanilla action-call containers store a smaller number here (meaning unknown). -1: the same as the count.
+            /// </summary>
+            public int V2Count2 = -1;
+
+            /// <summary>FXR v2: the two words after the counts (v1's flag bytes and padding): 4 or 0 and 0 in vanilla, kept as read.</summary>
+            public int V2Unk10;
+            public int V2Unk14;
+
+            /// <summary>FXR v2: the small record some action-call containers point to, where v1 has ActionData.</summary>
+            public FXRecord Record;
+
+            /// <summary>FXR v2: how many leading nodes were in the packed tail when read; -1 for a new container (the writer then decides by action type).</summary>
+            public int V2PackedRead = -1;
+
+            /// <summary>The node pointer list made by the last write (the v2 header points at the first root's).</summary>
+            internal List<FXNodePointer> WrittenPointers;
+
             public static int GetSize(bool isLong)
-                => isLong ? 40 : 24;
+                => isLong ? (IsV2 ? 32 : 40) : 24;
 
             internal void Read(BinaryReaderEx br, FxrEnvironment env)
             {
+                if (IsV2)
+                {
+                    int listOffset = ReadFXR1Varint(br);
+                    int count = br.ReadInt32();
+                    int count2 = br.ReadInt32();
+                    V2Count2 = count2 == count ? -1 : count2;
+                    V2Unk10 = br.ReadInt32();
+                    V2Unk14 = br.ReadInt32();
+                    int recordOffset = ReadFXR1Varint(br);
+
+                    br.StepIn(listOffset);
+                    FXNodes = new List<FXNode>(count);
+                    for (int i = 0; i < count; i++)
+                    {
+                        FXNodes.Add(env.GetFXNodePointer(br, br.Position).Node);
+                        br.Position += FXNodePointer.GetSize(br.VarintLong);
+                    }
+                    br.StepOut();
+                    Record = env.GetFXRecord(br, recordOffset);
+
+                    // How many leading nodes vanilla laid out in the packed tail: kept, since a few files (another
+                    // build of the tool?) leave a packed action type unpacked (FFX plan §19)
+                    int lead = 0;
+                    while (lead < FXNodes.Count && FXNodes[lead] != null && env.OffsetsByObject.TryGetValue(FXNodes[lead], out long nodeAt) && nodeAt > v2TailStart)
+                        lead++;
+                    V2PackedRead = lead;
+                    return;
+                }
+
                 int commandPool1TableOffset = ReadFXR1Varint(br);
                 int commandPool1TableCount = br.ReadInt32();
                 br.AssertInt32(commandPool1TableCount);
@@ -87,6 +135,20 @@ namespace SoulsFormats
                 for (int i = 0; i < FXNodes.Count; i++)
                 {
                     nodePointers.Add(new FXNodePointer() { Node = FXNodes[i] });
+                }
+
+                WrittenPointers = nodePointers;
+                env.NoteContainerList(this, nodePointers);
+
+                if (IsV2)
+                {
+                    env.RegisterPointer(nodePointers);
+                    bw.WriteInt32(nodePointers.Count);
+                    bw.WriteInt32(V2Count2 >= 0 ? V2Count2 : nodePointers.Count);
+                    bw.WriteInt32(V2Unk10);
+                    bw.WriteInt32(V2Unk14);
+                    env.RegisterPointer(Record);
+                    return;
                 }
 
                 if (ActionData != null)

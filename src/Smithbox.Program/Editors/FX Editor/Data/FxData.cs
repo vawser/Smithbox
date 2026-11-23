@@ -68,7 +68,7 @@ public class FxData : IDisposable
 
         if (ToFfxGame(Project.Descriptor.ProjectType) is SoulsFormats.FfxGame ffxGame)
         {
-            Format = ffxGame is SoulsFormats.FfxGame.DS1 or SoulsFormats.FfxGame.DS1R ? Model.FxFormat.Fxr1 : Model.FxFormat.Dlse;
+            Format = ffxGame is SoulsFormats.FfxGame.DS1 or SoulsFormats.FfxGame.DS1R or SoulsFormats.FfxGame.BB ? Model.FxFormat.Fxr1 : Model.FxFormat.Dlse;
             FfxGame = ffxGame;
             var ffxPath = Path.Join(AppContext.BaseDirectory, "Assets", "FXR", "ffx_schema.json");
             try
@@ -117,6 +117,7 @@ public class FxData : IDisposable
         ProjectType.DS2S => SoulsFormats.FfxGame.DS2S,
         ProjectType.DS1 => SoulsFormats.FfxGame.DS1,
         ProjectType.DS1R => SoulsFormats.FfxGame.DS1R,
+        ProjectType.BB => SoulsFormats.FfxGame.BB,
         _ => null,
     };
 

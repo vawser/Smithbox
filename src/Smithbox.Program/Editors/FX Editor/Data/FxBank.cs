@@ -303,7 +303,7 @@ public class FxBank : IDisposable
     public bool IsFfx => Data.IsFfx;
 
     /// <summary>The effect files' extension in this game's binders.</summary>
-    public string EffectExtension => IsFfx ? ".ffx" : ".fxr";
+    public string EffectExtension => IsFfx && Data.FfxGame != SoulsFormats.FfxGame.BB ? ".ffx" : ".fxr";
 
     /// <summary>A BND3 (DES, DS1, DS1R) or BND4 (DS2) binder, compressed or not.</summary>
     private static BinderReader OpenBinder(Memory<byte> bytes)

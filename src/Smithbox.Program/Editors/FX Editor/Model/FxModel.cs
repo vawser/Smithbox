@@ -123,6 +123,8 @@ public enum FxNodeKind
     Basic,
     NodeEmitter,
     Unknown,
+    /// <summary>FXR v2 (Bloodborne) container nodes 141–148.</summary>
+    Container,
     /// <summary>FXR1 node 134: several effect roots (each a node 133 with its own states).</summary>
     Roots,
 }

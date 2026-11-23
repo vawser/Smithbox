@@ -15,6 +15,8 @@ namespace SoulsFormats
         DS2S,
         DS1,
         DS1R,
+        /// <summary>Bloodborne: FXR v2 (FFX Older Games Plan §19).</summary>
+        BB,
     }
 
     /// <summary>
