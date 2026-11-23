@@ -20787,8 +20787,9 @@
       }
     },
     "82": {
-      "name": "Action82",
-      "category": "",
+      "name": "Appearance82",
+      "category": "Appearance",
+      "source": "DarkSoulsII.exe registers it with the cluster appearances (a27, a66, a70, a71, a108) (§20.9)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -35756,8 +35757,9 @@
       }
     },
     "15000": {
-      "name": "Action15000",
-      "category": "",
+      "name": "Appearance15000",
+      "category": "Appearance",
+      "source": "DarkSoulsII.exe registers it with the cluster appearances; its compiled block has a71's layout (§20.9)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -35799,7 +35801,8 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "orientationMode",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 4 to +48 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field OrientationMode; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -35814,7 +35817,8 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "blendMode",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 5 to +4C of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field BlendMode; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -35827,7 +35831,8 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "animFrameSliceCountPerRow",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 6 to +F8 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field AnimFrameSliceCountPerRow; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -35842,7 +35847,8 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "animFrameTotalCount",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 7 to +FC of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field AnimFrameTotalCount; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -35857,26 +35863,30 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "animFrameInitial",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 8 to +100 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field AnimFrameInitial; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 79
               ]
             },
             {
-              "name": "unk09",
+              "name": "animFrameTimeline",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 9 to +110 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field AnimFrameTimeline; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 6
               ]
             },
             {
-              "name": "unk10",
+              "name": "scale2X",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 10 to +78 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field Scale2X; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11,
                 12
               ]
             },
             {
-              "name": "unk11",
+              "name": "scale2Y",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 11 to +88 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field Scale2Y; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 11,
                 12
@@ -35897,19 +35907,22 @@
               ]
             },
             {
-              "name": "unk14",
+              "name": "rotX",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 14 to +98 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field RotX; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 81
               ]
             },
             {
-              "name": "unk15",
+              "name": "rotY",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 15 to +A8 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field RotY; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 81
               ]
             },
             {
-              "name": "unk16",
+              "name": "rotZ",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 16 to +B8 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field RotZ; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 81
               ]
@@ -35951,7 +35964,8 @@
               ]
             },
             {
-              "name": "unk23",
+              "name": "attachedBool",
+              "nameSource": "DarkSoulsII.exe: the a15000 compile function writes slot 23 to +34 of the compiled block, the layout of DS1 ClusterAppearanceBillboardActionData71 (the DS1 layout it fits: 15 slots), field AttachedBool; all 15 slots inside DS1's layout land on fields of their kind",
               "types": [
                 1
               ],
@@ -36293,8 +36307,9 @@
       }
     },
     "15001": {
-      "name": "Action15001",
-      "category": "",
+      "name": "Appearance15001",
+      "category": "Appearance",
+      "source": "DarkSoulsII.exe registers it with the cluster appearances (§20.9)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -37006,8 +37021,9 @@
       }
     },
     "15002": {
-      "name": "Action15002",
-      "category": "",
+      "name": "Appearance15002",
+      "category": "Appearance",
+      "source": "DarkSoulsII.exe registers it with the cluster appearances (§20.9)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -39605,7 +39621,8 @@
               "max": 1024
             },
             {
-              "name": "action11",
+              "name": "appearance",
+              "nameSource": "the game's calls put 2310/2310 Appearance actions there (a15001 1716, a71 197, a70 189, a15000 189, a82 13)",
               "types": [
                 38
               ]
@@ -40726,7 +40743,8 @@
           ],
           "params": [
             {
-              "name": "action00",
+              "name": "appearance",
+              "nameSource": "the game's calls put 1927/1927 Appearance actions there (a15001 1400, a15000 290, a15002 112, a70 79, a27 42)",
               "types": [
                 38
               ]

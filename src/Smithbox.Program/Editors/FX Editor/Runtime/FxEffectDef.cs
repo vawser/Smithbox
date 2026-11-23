@@ -20,6 +20,15 @@ public sealed class FxEffectDef
     /// <summary>Actions the runtime reads but couldn't (no schema layout, or the layout didn't fit).</summary>
     public int UntypedActions;
 
+    /// <summary>
+    /// The older formats' state machine (FFX plan §20): given the running effect, the state to go to, -1 to end, or
+    /// null to stay. Null for FXR3, whose <see cref="States"/> conditions are evaluated instead.
+    /// </summary>
+    public Func<FxEffectInstance, int?> StateLogic;
+
+    /// <summary>What the older-format builder couldn't map, counted by reason (for the survey and the preview's notes).</summary>
+    public Dictionary<string, int> Unmapped;
+
     public static FxEffectDef Build(FxrSchema schema, FxrGame game, FXR fxr)
     {
         var def = new FxEffectDef { Id = fxr.Id, Game = game, States = fxr.States };
@@ -64,7 +73,8 @@ public enum FxNodeKind
 
 public sealed class FxNodeDef
 {
-    public FxrNode Source;
+    /// <summary>The file object the node comes from (FxrNode for FXR3; an effect call for the older formats), compared by reference.</summary>
+    public object Source;
     public FxNodeKind Kind;
     public List<FxNodeDef> Children = new();
     public List<FxConfigDef> Configs = new();
@@ -171,6 +181,9 @@ public sealed class FxConfigDef
     // Emitter
     public FxEmitterKind Emitter;
     public FxValue Interval, PerEmission, TotalEmissions, MaxConcurrent, Threshold;
+
+    /// <summary>The older formats' emission time: no emission after it (negative or null: none). FXR3 leaves it null.</summary>
+    public FxValue EmissionTime;
 
     // NodeSelector (201): weights for one random child per emission; null = all children
     public List<int> SelectWeights;

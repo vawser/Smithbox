@@ -45,7 +45,8 @@ public class FxPreviewRuntime
     public void Update(int editVersion, int liveVersion, Vector3 cameraPosition)
     {
         var entry = Editor.Selection.Entry;
-        if (entry?.Fxr == null)
+        // FXR3 effects, or the older formats' (FFX plan §20): whichever file is loaded
+        if (entry?.File == null)
         {
             Clear();
             return;
@@ -53,12 +54,12 @@ public class FxPreviewRuntime
 
         // A committed edit, undo or a new effect rebuilds now; a live change once the interval has passed (a later
         // frame picks it up if nothing else changes)
-        bool committed = entry != Entry || entry.Fxr != Fxr || editVersion != Edits;
+        bool committed = entry != Entry || entry.File != Fxr || editVersion != Edits;
         bool live = liveVersion != LiveEdits && (DateTime.Now - LastBuild).TotalSeconds >= LiveInterval;
         if (committed || live)
         {
             Entry = entry;
-            Fxr = entry.Fxr;
+            Fxr = entry.File;
             Edits = editVersion;
             LiveEdits = liveVersion;
             LastBuild = DateTime.Now;
@@ -111,7 +112,7 @@ public class FxPreviewRuntime
         Error = null;
         try
         {
-            Def = FxEffectDef.Build(Editor.Data.Schema, Editor.Data.Game, entry.Fxr);
+            Def = BuildDef(entry);
         }
         catch (Exception e)
         {
@@ -119,6 +120,18 @@ public class FxPreviewRuntime
             Error = e.Message;
             Smithbox.LogError(this, $"[FX Editor] The preview couldn't read {entry.Stem}: {e.Message}", e);
         }
+    }
+
+    /// <summary>An FXR3 effect from its FXR; an older one (DES, DS2, DS2S, DS1, DS1R, BB) through the model (FFX plan §20).</summary>
+    private FxEffectDef BuildDef(FxEntry entry)
+    {
+        var data = Editor.Data;
+        if (data.IsFfx)
+        {
+            var effect = data.Effect(entry);
+            return effect == null ? null : FfxEffectDefBuilder.Build(effect, data.FfxSchema, data.FfxGame);
+        }
+        return entry.Fxr == null ? null : FxEffectDef.Build(data.Schema, data.Game, entry.Fxr);
     }
 
     private (int, float, float, float) MotionKey;
@@ -133,7 +146,7 @@ public class FxPreviewRuntime
         {
             ResolveEffect = ResolveProxy,
             Motion = Editor.Playback.MotionFunction(),
-            IsHidden = Editor.Playback.IsNodeHidden,
+            IsHidden = o => o is SoulsFormats.FxrNode n && Editor.Playback.IsNodeHidden(n),
             Forces = new FxForceField
             {
                 Wind = Editor.Playback.WindVector(),
@@ -154,7 +167,7 @@ public class FxPreviewRuntime
         var bank = Editor.Data.Bank;
         if (bank.Entries.TryGetValue(id, out var entry) && (entry.IsLoaded || bank.Load(entry)))
         {
-            try { def = FxEffectDef.Build(Editor.Data.Schema, Editor.Data.Game, entry.Fxr); }
+            try { def = BuildDef(entry); }
             catch { def = null; }
         }
 

@@ -134,6 +134,8 @@ public class FxTextureLibrary : IResourceEventListener
             name = typed;
         else if (textures.ContainsKey(plain))
             name = plain;
+        else if (Host.Data.IsFfx && Host.Data.Bank.ResourceName(textures, id) is string any)
+            name = any; // the older games name textures with other digit counts (DES s0003, DS2 s000002)
         else
         {
             name = null;
@@ -266,17 +268,31 @@ public class FxTextureLibrary : IResourceEventListener
         {
             try
             {
-                var reader = new SoulsFormats.BND4Reader(fs.ReadFile(path).Value);
+                // BND4 (FXR3 games, DS2, BB) is read entry by entry; BND3 (DES, DS1, DS1R) is read whole
+                var raw = fs.ReadFile(path).Value;
+                var unpacked = SoulsFormats.DCX.Is(raw) ? SoulsFormats.DCX.Decompress(raw) : raw;
+                bool bnd3 = unpacked.Length >= 4 && System.Text.Encoding.ASCII.GetString(unpacked.Span[..4]) == "BND3";
+                var reader = bnd3 ? null : new SoulsFormats.BND4Reader(raw);
+                var bnd3Files = bnd3 ? SoulsFormats.BND3.Read(unpacked).Files : null;
                 foreach (var (name, internalName, kind) in wanted)
                 {
-                    var file = reader.Files.FirstOrDefault(f => f.Name == internalName);
-                    if (file == null)
+                    byte[] bytes;
+                    if (bnd3)
+                    {
+                        var entry = bnd3Files.FirstOrDefault(f => f.Name == internalName);
+                        bytes = entry?.Bytes.ToArray();
+                    }
+                    else
+                    {
+                        var file = reader.Files.FirstOrDefault(f => f.Name == internalName);
+                        bytes = file == null ? null : reader.ReadFile(file).ToArray();
+                    }
+                    if (bytes == null)
                     {
                         FailedReads.Enqueue(kind == Kind.Model ? $"{name}.flver" : name);
                         continue;
                     }
 
-                    var bytes = reader.ReadFile(file).ToArray();
                     List<string> textures = null;
                     if (kind == Kind.Model)
                         textures = MaterialTextures(bytes, materials);

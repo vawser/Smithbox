@@ -42,6 +42,17 @@ namespace SoulsFormats
 
         /// <summary>The effect-level param lists: "effect1" (ParamList1) and "effect2" (ParamList2).</summary>
         public IReadOnlyDictionary<string, FfxActionDef> EffectParams => effectParams;
+
+        /// <summary>
+        /// Node types: an effect call whose effect id is a template effect (f0002023 …) takes the call's params as the
+        /// template's arguments; their names come from the template (FFX plan §20.7–20.8). Keyed by effect id.
+        /// </summary>
+        public IReadOnlyDictionary<int, FfxActionDef> NodeTypes => nodeTypes;
+        private readonly Dictionary<int, FfxActionDef> nodeTypes = new();
+
+        /// <summary>A node type's layout in a game, or null.</summary>
+        public FfxActionLayout NodeLayout(int effectId, FfxGame game) =>
+            nodeTypes.TryGetValue(effectId, out var n) && n.Games.TryGetValue(game, out var l) ? l : null;
         private readonly Dictionary<string, FfxActionDef> effectParams = new();
 
         public static FfxSchema Load(string path) => Parse(File.ReadAllText(path));
@@ -74,6 +85,10 @@ namespace SoulsFormats
             if (root.TryGetProperty("actions", out var acts))
                 foreach (var p in acts.EnumerateObject())
                     schema.actions[int.Parse(p.Name)] = ReadAction(p.Name, p.Value);
+
+            if (root.TryGetProperty("nodeTypes", out var nts))
+                foreach (var p in nts.EnumerateObject())
+                    schema.nodeTypes[int.Parse(p.Name)] = ReadAction(p.Name, p.Value);
 
             if (root.TryGetProperty("effectParams", out var eps))
                 foreach (var p in eps.EnumerateObject())

@@ -30,7 +30,7 @@ public sealed class FxRuntimeContext
     /// Nodes the editor has hidden: they and everything under them still simulate (so showing them again needs no
     /// replay), but their particles aren't output. Null hides nothing.
     /// </summary>
-    public Func<FxrNode, bool> IsHidden;
+    public Func<object, bool> IsHidden;
 
     /// <summary>
     /// The forces acting (plan §20): the volumes of every force appearance in the effect tree, gathered by the
@@ -179,6 +179,18 @@ public sealed class FxEffectInstance
     /// </summary>
     private void UpdateState()
     {
+        // The older formats decide their own state changes (FFX plan §20): null stays, -1 ends, else the target
+        if (Def.StateLogic != null)
+        {
+            int? next = Def.StateLogic(this);
+            if (next is int target)
+            {
+                if (target < 0) Terminate();
+                else if (target != State) { State = target; StateTime = 0; }
+            }
+            return;
+        }
+
         if (State < 0 || State >= Def.States.Count)
             return;
 
@@ -706,7 +718,9 @@ public sealed class FxNodeInstance
             {
                 int guard = 0;
                 // Emissions are due up to now, but not past the node's duration
+                float emissionTime = c.EmissionTime?.Scalar(ctx) ?? -1;
                 while (!EmitterDone && ActiveTime >= NextEmission && (Duration < 0 || NextEmission <= Duration)
+                       && (emissionTime < 0 || NextEmission <= emissionTime)
                        && guard++ < Effect.Context.MaxEmissionsPerUpdate)
                 {
                     int count = (int)MathF.Round(c.PerEmission?.Scalar(ctx) ?? 1);

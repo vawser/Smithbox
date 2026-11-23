@@ -319,7 +319,7 @@ public class FxViewportWindow
 
         // A newly selected effect is framed once its shapes are known, unless auto-framing is off (the camera then
         // stays where it is, e.g. to compare effects from one viewpoint)
-        if (entry?.Fxr != null && entry != FramedEntry)
+        if (entry?.File != null && entry != FramedEntry)
         {
             FramedEntry = entry;
             if (CFG.Current.FxEditor_Viewport_Auto_Frame)

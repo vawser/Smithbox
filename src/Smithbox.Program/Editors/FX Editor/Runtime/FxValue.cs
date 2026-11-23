@@ -83,6 +83,14 @@ public sealed class FxValue
         return new FxValue(curve, factors, FxArgument.Constant0);
     }
 
+    /// <summary>A curve already in display units, evaluated at <paramref name="argument"/> (the older formats, FFX plan §20).</summary>
+    public static FxValue FromCurve(FxrCurve curve, FxArgument argument)
+    {
+        var factors = new float[Math.Max(curve.Components, 1)];
+        Array.Fill(factors, 1f);
+        return new FxValue(curve, factors, argument);
+    }
+
     /// <summary>A property of an action (its schema default when it isn't stored), null when it can't be read.</summary>
     public static FxValue From(FxrActionView view, string name)
     {
