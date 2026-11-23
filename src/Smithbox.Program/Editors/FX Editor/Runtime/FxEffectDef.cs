@@ -83,6 +83,12 @@ public sealed class FxNodeDef
     /// <summary>Proxy: the effect it starts.</summary>
     public int ProxyEffectId = -1;
 
+    /// <summary>
+    /// Proxy: an effect it starts that isn't looked up by id (an FXR1 multi-root effect's roots, each with its own
+    /// states; FFX plan §20.14). Null for FXR3. Takes precedence over <see cref="ProxyEffectId"/>.
+    /// </summary>
+    public FxEffectDef ProxyDef;
+
     public FxConfigDef ConfigFor(int state)
     {
         int i = FxEffectDef.ConfigIndexFor(StateMap, Configs.Count, state);

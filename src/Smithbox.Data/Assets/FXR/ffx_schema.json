@@ -4929,8 +4929,10 @@
       }
     },
     "24": {
-      "name": "Action24",
-      "category": "",
+      "name": "PointLight24",
+      "category": "Appearance",
+      "source": "FXR3 PointLight's slot order (diffuse, specular, radius, 10 10 10); exe FrpgFxDrawEntityHostPointLight (§20.14)",
+      "desc": "A point light. Its slots follow FXR3's PointLight (609): diffuse colour (alpha = intensity), specular colour, radius; [9]–[11] are 10 in every instance, as 609's three 10s. BB's 40-slot form ends in 609's flicker and view-distance values (100). DarkSoulsRemastered.exe has FrpgFxDrawEntityHostPointLight. (FFX plan §20.14)",
       "games": {
         "DES": {
           "paramCounts": [
@@ -4938,19 +4940,19 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 17
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 17
               ]
             },
             {
-              "name": "unk02",
+              "name": "radius",
               "types": [
                 11
               ]
@@ -5028,20 +5030,20 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 19,
                 20
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 19
               ]
             },
             {
-              "name": "unk02",
+              "name": "radius",
               "types": [
                 11,
                 12,
@@ -5122,7 +5124,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 19,
                 20,
@@ -5130,14 +5132,14 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 19,
                 20
               ]
             },
             {
-              "name": "unk02",
+              "name": "radius",
               "types": [
                 11,
                 12,
@@ -5235,7 +5237,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 17,
                 19,
@@ -5245,7 +5247,7 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 19,
                 20,
@@ -5253,7 +5255,7 @@
               ]
             },
             {
-              "name": "unk02",
+              "name": "radius",
               "types": [
                 11,
                 12,
@@ -12977,7 +12979,7 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -12987,7 +12989,8 @@
                 0,
                 2,
                 4
-              ]
+              ],
+              "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split."
             },
             {
               "name": "unk08",
@@ -17007,7 +17010,7 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -17016,7 +17019,8 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split. a70 [6] (a15001's position): DXT1 4 ×21, 2 ×18 (its other texture layers may carry the alpha); DXT5 2 ×216, 4 ×27 (§20.16)."
             },
             {
               "name": "unk07",
@@ -35092,8 +35096,10 @@
       }
     },
     "11000": {
-      "name": "Action11000",
-      "category": "",
+      "name": "SpotLight",
+      "category": "Appearance",
+      "source": "FXR3 SpotLight's id and slot order (no multipliers); DarkSoulsII.exe SfxFxDrawEntityHostSpotLight (§20.14)",
+      "desc": "DS2's spot light: FXR3's SpotLight (11000, same id) without its two multipliers: diffuse, specular, near (0.001), far (10–40), radiusX / radiusY (25–50). [13] / [14] are a second RGBA pair, not mapped yet. DarkSoulsII.exe has SfxFxDrawEntityHostSpotLight. (FFX plan §20.14)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -35101,37 +35107,37 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 19
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 19
               ]
             },
             {
-              "name": "unk02",
+              "name": "near",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk03",
+              "name": "far",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk04",
+              "name": "radiusX",
               "types": [
                 11
               ]
             },
             {
-              "name": "unk05",
+              "name": "radiusY",
               "types": [
                 11
               ]
@@ -35407,8 +35413,10 @@
       }
     },
     "11001": {
-      "name": "Action11001",
-      "category": "",
+      "name": "PointLight",
+      "category": "Appearance",
+      "source": "a24's slot order; DarkSoulsII.exe SfxFxDrawEntityHostPointLight (§20.14)",
+      "desc": "DS2's point light: diffuse colour (alpha fades the light in and out), specular colour, radius (0–25). [10] / [11] are a second RGBA pair (alpha 1–6), not mapped yet. DarkSoulsII.exe has SfxFxDrawEntityHostPointLight; its id sits next to a11000 as FXR3's lights do. (FFX plan §20.14)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -35418,19 +35426,19 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 19
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 19
               ]
             },
             {
-              "name": "unk02",
+              "name": "radius",
               "types": [
                 11,
                 12,
@@ -35589,21 +35597,21 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "diffuseColor",
               "types": [
                 19,
                 20
               ]
             },
             {
-              "name": "unk01",
+              "name": "specularColor",
               "types": [
                 19,
                 20
               ]
             },
             {
-              "name": "unk02",
+              "name": "radius",
               "types": [
                 11,
                 12,
@@ -36370,7 +36378,7 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -36379,7 +36387,8 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split. a15001 [6]: DXT1 4 ×239, 2 ×3; DXT5 2 ×2187, 4 ×571; [5] holds a15000 [4] orientationMode's values (§20.16)."
             },
             {
               "name": "unk07",
@@ -37059,7 +37068,7 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -37068,7 +37077,8 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split."
             },
             {
               "name": "unk04",
@@ -41529,7 +41539,7 @@
           "params": [
             {
               "name": "appearance",
-              "nameSource": "the game's calls put 923/959 Appearance actions there (a61 597, a43 155, a20 89, a3 80, a24 36)",
+              "nameSource": "the game's calls put 959/959 Appearance actions there (a61 597, a43 155, a20 89, a3 80, a24 36)",
               "types": [
                 32
               ]
@@ -41610,7 +41620,8 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "duration",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a41) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
               "types": [
                 70
               ],
@@ -41618,7 +41629,8 @@
               "max": 20
             },
             {
-              "name": "unk01",
+              "name": "endWithParent",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a41) when (argA[1:1] && !(ParentExists))",
               "types": [
                 1
               ],
@@ -41646,7 +41658,7 @@
             },
             {
               "name": "appearance",
-              "nameSource": "the game's calls put 1392/2335 Appearance actions there (a59 1055, a11001 535, a61 228, a20005 224, a40 83)",
+              "nameSource": "the game's calls put 1940/2335 Appearance actions there (a59 1055, a11001 535, a61 228, a20005 224, a40 83)",
               "types": [
                 38
               ]
@@ -41691,7 +41703,8 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "duration",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a41) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
               "types": [
                 70
               ],
@@ -41699,7 +41712,8 @@
               "max": 1666666.625
             },
             {
-              "name": "unk01",
+              "name": "endWithParent",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a41) when (argA[1:1] && !(ParentExists))",
               "types": [
                 1
               ],
@@ -41727,7 +41741,7 @@
             },
             {
               "name": "appearance",
-              "nameSource": "the game's calls put 719/891 Appearance actions there (a61 181, a24 172, a40 165, a43 147, a3 90)",
+              "nameSource": "the game's calls put 891/891 Appearance actions there (a61 181, a24 172, a40 165, a43 147, a3 90)",
               "types": [
                 38
               ]
@@ -41772,7 +41786,8 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "duration",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a41) when ((TotalTick >= argB[1:0]) && (argB[1:0] >= 0))",
               "types": [
                 70
               ],
@@ -41780,7 +41795,8 @@
               "max": 1666666.625
             },
             {
-              "name": "unk01",
+              "name": "endWithParent",
+              "nameSource": "template f0002101: state 2 ends the node (to state 1, a41) when (argA[1:1] && !(ParentExists))",
               "types": [
                 1
               ],
@@ -41808,7 +41824,7 @@
             },
             {
               "name": "appearance",
-              "nameSource": "the game's calls put 3248/5011 Appearance actions there (a59 1230, a24 1079, a40 556, a107 536, a61 493)",
+              "nameSource": "the game's calls put 4338/5011 Appearance actions there (a59 1230, a24 1079, a40 556, a107 536, a61 493)",
               "types": [
                 38
               ]
@@ -41873,13 +41889,15 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when ((TotalTick >= argA[1:1]) && (argA[1:1] >= 0)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk02",
+              "name": "endWithParent",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when (argA[1:2] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 1
               ],
@@ -41952,13 +41970,15 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when ((TotalTick >= argA[1:1]) && (argA[1:1] >= 0)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 95
               ]
             },
             {
-              "name": "unk02",
+              "name": "endWithParent",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when (argA[1:2] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 1
               ],
@@ -42031,13 +42051,15 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when ((TotalTick >= argA[1:1]) && (argA[1:1] >= 0)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk02",
+              "name": "endWithParent",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when (argA[1:2] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 1
               ],
@@ -42056,7 +42078,7 @@
             },
             {
               "name": "appearance",
-              "nameSource": "the game's calls put 49/60 Appearance actions there (a59 39, a24 11, a40 8, a107 2)",
+              "nameSource": "the game's calls put 60/60 Appearance actions there (a59 39, a24 11, a40 8, a107 2)",
               "types": [
                 38
               ]
@@ -42112,13 +42134,15 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "duration",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when ((TotalTick >= argA[1:1]) && (argA[1:1] >= 0)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 85
               ]
             },
             {
-              "name": "unk02",
+              "name": "endWithParent",
+              "nameSource": "template f0002102: state 2 ends the node (to state 1, a41) when (argA[1:2] && !(ParentExists)) (counters filled by a109 read as their arguments: counter 0 = arg 1)",
               "types": [
                 1
               ],
@@ -42136,7 +42160,8 @@
               ]
             },
             {
-              "name": "action04",
+              "name": "appearance",
+              "nameSource": "the game's calls put 25/25 Appearance actions there (a24 22, a61 2, a40 1)",
               "types": [
                 38
               ]
@@ -43243,7 +43268,8 @@
           ],
           "params": [
             {
-              "name": "action00",
+              "name": "appearance",
+              "nameSource": "the game's calls put 13/13 Appearance actions there (a24 13)",
               "types": [
                 32
               ]

@@ -210,6 +210,9 @@ public sealed class FxPreload
             var node = nodes.Pop();
             if (node.ProxyEffectId > 0)
                 effect.Proxies.Add(node.ProxyEffectId);
+            // an inline effect (an FXR1 multi-root effect's roots): its nodes are this effect's own
+            if (node.ProxyDef?.Root != null)
+                nodes.Push(node.ProxyDef.Root);
 
             foreach (var config in node.Configs)
             {

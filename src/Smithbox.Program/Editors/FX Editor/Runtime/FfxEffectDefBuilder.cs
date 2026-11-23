@@ -40,20 +40,51 @@ public static class FfxEffectDefBuilder
     {
         private readonly FfxSchema schema;
         private readonly FfxGame game;
-        private FxEffectDef def;
-        private int states;
+        private Dictionary<string, int> unmapped;
         private int nodes;
 
         public Builder(FfxSchema schema, FfxGame game) { this.schema = schema; this.game = game; }
 
-        private void Note(string reason) => def.Unmapped[reason] = def.Unmapped.GetValueOrDefault(reason) + 1;
+        private void Note(string reason) => unmapped[reason] = unmapped.GetValueOrDefault(reason) + 1;
 
         public FxEffectDef Effect(IFxEffect effect)
         {
-            def = new FxEffectDef { Id = effect.Id, Unmapped = new() };
-            var stateList = effect.States;
-            states = Math.Max(stateList.Count, 1);
-            def.Root = new FxNodeDef { Kind = FxNodeKind.Root, Source = effect.Root?.Source };
+            unmapped = new();
+            // FXR1 node 134 (several roots, DS1R / BB): each root has its own states, so each plays as an effect of its
+            // own, started by a Proxy node of the outer one; the outer effect ends when all of them have (§20.14)
+            var roots = effect.Root is { Kind: StudioCore.Editors.FxEditor.Model.FxNodeKind.Roots } multi
+                ? multi.Children.Where(c => c is IFxStatesNode).ToList() : null;
+            if (roots is not { Count: > 1 })
+            {
+                var single = Part(effect.Id, effect.States, effect.Root?.Source);
+                single.Unmapped = unmapped;
+                return single;
+            }
+
+            var outer = new FxEffectDef
+            {
+                Id = effect.Id,
+                Unmapped = unmapped,
+                Root = new FxNodeDef { Kind = FxNodeKind.Root, Source = effect.Root.Source },
+            };
+            foreach (var r in roots)
+            {
+                var part = Part(effect.Id, ((IFxStatesNode)r).States, r.Source);
+                part.Unmapped = unmapped;
+                outer.Root.Children.Add(new FxNodeDef { Kind = FxNodeKind.Proxy, ProxyDef = part, Source = r.Source });
+            }
+            // made on the first update; each ends when its effect has finished
+            outer.StateLogic = inst => inst.Root.ChildrenMade
+                && inst.Root.Children.All(c => c.Expired || c.Proxy is { Finished: true }) ? -1 : null;
+            return outer;
+        }
+
+        /// <summary>One root's states and the nodes they list, as an effect.</summary>
+        private FxEffectDef Part(int id, IReadOnlyList<IFxState> stateList, object source)
+        {
+            var d = new FxEffectDef { Id = id };
+            int states = Math.Max(stateList.Count, 1);
+            d.Root = new FxNodeDef { Kind = FxNodeKind.Root, Source = source };
 
             for (int s = 0; s < stateList.Count; s++)
                 foreach (var action in stateList[s].Actions)
@@ -63,11 +94,11 @@ public static class FfxEffectDefBuilder
                         var map = Enumerable.Repeat(-1, states).ToList();
                         map[s] = 0;
                         child.StateMap = map;
-                        def.Root.Children.Add(child);
+                        d.Root.Children.Add(child);
                     }
 
-            def.StateLogic = StateLogic(stateList);
-            return def;
+            d.StateLogic = StateLogic(stateList);
+            return d;
         }
 
         // ---------------------------------------------------------------- state machine
@@ -113,8 +144,10 @@ public static class FfxEffectDefBuilder
                 case FxExpressionKind.ArgumentA:
                 case FxExpressionKind.ArgumentB: return 0;
                 case FxExpressionKind.ParentExists: return 1;
-                case FxExpressionKind.ChildExists: return inst.Root.Children.Any(c => !c.Dead) ? 1 : 0;
-                case FxExpressionKind.EmittersStopped: return inst.Root.Children.All(c => c.Dead) ? 1 : 0;
+                // the exits run before the root's first update has made its children; the game runs a state's actions
+                // (a14 making the children) before testing its exits, so a child exists until they're made (§20.14)
+                case FxExpressionKind.ChildExists: return !inst.Root.ChildrenMade || inst.Root.Children.Any(c => !c.Dead) ? 1 : 0;
+                case FxExpressionKind.EmittersStopped: return inst.Root.ChildrenMade && inst.Root.Children.All(c => c.Dead) ? 1 : 0;
                 case FxExpressionKind.DistanceFromCamera: return Vector3.Distance(inst.Context.CameraPosition, inst.World.Translation);
                 case FxExpressionKind.Not: return o.Count > 0 && Eval(o[0], inst) == 0 ? 1 : 0;
                 case FxExpressionKind.And: return o.Count == 2 && Eval(o[0], inst) != 0 && Eval(o[1], inst) != 0 ? 1 : 0;
@@ -328,13 +361,40 @@ public static class FfxEffectDefBuilder
             }
             if (a.TypeId is 40 or 43 or 107 && ScreenOrTrail(c, app, a, n))
                 return;
+            if (Light(c, app, n))
+                return;
             if (a.TypeId is not (27 or 59 or 70 or 71 or 15000 or 15001))
             {
-                // another appearance with a texture: drawn as a plain billboard of it (size 1, white)
                 var t = a.Values.FirstOrDefault(v => v.Resource == "texture") ?? n.Values.FirstOrDefault(v => v.Resource == "texture");
-                if (t != null && a.TypeId is not (108 or 61 or 3))
+                if (t != null && a.TypeId is 43 or 107)
                 {
-                    app.Billboard = new FxBillboardDef { Kind = FxBillboardKind.BillboardEx, Orientation = 1, Texture = (int)(t.Get()?.FirstOrDefault() ?? 0) };
+                    // a distortion / radial blur whose slots aren't named (DS2, DS2S, DES, BB): its texture is a normal
+                    // map or mask, so it's drawn as the screen effect it is, not as a billboard of the texture (§20.15).
+                    // Provisional: size 1, FXR3's defaults (normal-map distortion, intensity 1)
+                    bool distortion = a.TypeId == 43;
+                    app.Billboard = new FxBillboardDef
+                    {
+                        Kind = distortion ? FxBillboardKind.Distortion : FxBillboardKind.RadialBlur,
+                        Texture = (int)(t.Get()?.FirstOrDefault() ?? 0),
+                        Orientation = 1,
+                        Width = FxValue.Constant(1),
+                        Height = FxValue.Constant(1),
+                        InterpolateFrames = false,
+                    };
+                    Note($"appearance a{a.TypeId} ({(distortion ? "distortion" : "radial blur")}, size unknown)");
+                }
+                else if (t != null && a.TypeId is not (108 or 61 or 3))
+                {
+                    // another appearance with a texture: drawn as a plain billboard of it (size 1, white), in its blend
+                    // mode when a slot names it (DS2's a15002, §20.15)
+                    app.Billboard = new FxBillboardDef
+                    {
+                        Kind = FxBillboardKind.BillboardEx,
+                        Orientation = 1,
+                        Texture = (int)(t.Get()?.FirstOrDefault() ?? 0),
+                        BlendMode = (int)(n.GetValueOrDefault("blendMode")?.Get()?.FirstOrDefault() ?? 2),
+                    };
+                    TypedColours(a, app.Billboard);
                     Note($"appearance a{a.TypeId} (texture only)");
                 }
                 else Note($"appearance a{a.TypeId}");
@@ -374,10 +434,8 @@ public static class FfxEffectDefBuilder
             // colours: a whole colour value, or four channel fields (DS1 ActionData Color1R..A)
             bb.Color1 = Colour(n, "color1");
             bb.Color2 = Colour(n, "color2") ?? Colour(n, "color");
-            // (provisional) no colour named (a15001, a15002, DS2's own appearances): the first RGBA sequence, by its
-            // value type, as textures are found by theirs (a15001's slot 21 fades its alpha over the particle's life)
-            if (bb.Color1 == null && bb.Color2 == null && a.Values.FirstOrDefault(v => v is IFxTypedValue { TypeName: { } tn } && tn.StartsWith("RGBA") && tn.Contains("Sequence")) is { } rgba)
-                bb.Color2 = Value(rgba, FxArgument.ParticleAge);
+            bb.Color3 = Colour(n, "color3");
+            TypedColours(a, bb);
             bb.RotationZ = Angle(V("rotZ"));
             var rs = Angle(V("rotSpeedZ"));
             if (rs != null) bb.AngularSpeed = new FxValue[] { null, null, null, null, rs, null };
@@ -386,6 +444,27 @@ public static class FfxEffectDefBuilder
 
             // the particle's life: the appearance's duration (seconds)
             c.ParticleDuration = Seconds(V("duration"));
+        }
+
+        /// <summary>
+        /// (provisional, §20.12 / §20.16) An appearance whose own slots name no colour (DS2's a15000, a15001, a15002,
+        /// a18000, a20002, a59, a70): its colours by value type. Every DS2 appearance, in every layout length, has an
+        /// RGBA sequence (the colour, usually fading its alpha), then an RGBA2 (its variation), then exactly one more
+        /// RGBA sequence, often above 1 ([10, 3, 1, 2.5], [1.5, 1.25, 1, 1]) and its only tint when the first is white:
+        /// the first is the colour, the second the unclamped multiplier, FXR3's color3. The constant RGBAs after it
+        /// (a15001 / a70's three) aren't used.
+        /// </summary>
+        private void TypedColours(IFxAction a, FxBillboardDef bb)
+        {
+            if (a.Values.Any(v => v.Name != null && v.Name.StartsWith("color", StringComparison.OrdinalIgnoreCase)))
+                return;
+            var sequences = a.Values.Where(v => v is IFxTypedValue { TypeName: { } tn } && tn.StartsWith("RGBA") && tn.Contains("Sequence")).ToList();
+            if (sequences.Count == 0)
+                return;
+            if (bb.Color1 == null && bb.Color2 == null)
+                bb.Color2 = Value(sequences[0], FxArgument.ParticleAge);
+            if (bb.Color3 == null && sequences.Count >= 2)
+                bb.Color3 = Value(sequences[1], FxArgument.ParticleAge);
         }
 
         /// <summary>
@@ -448,6 +527,29 @@ public static class FfxEffectDefBuilder
                     return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Lights (a24 in DES / DS1 / DS1R / BB, DS2's a11001 point and a11000 spot light; §20.14), by their slot names
+        /// (FXR3's PointLight / SpotLight order): any appearance with a diffuseColor is one, a spot light when it has a
+        /// far. One light per particle, as FXR3's. The colour's alpha is the intensity (provisional: no multiplier
+        /// slot is named; a24's alpha goes up to 7.8). Specular, falloff and flicker aren't applied.
+        /// </summary>
+        private static bool Light(FxConfigDef c, FxAppearanceDef app, Dictionary<string, IFxValue> n)
+        {
+            if (!n.TryGetValue("diffuseColor", out var diffuse))
+                return false;
+            var far = n.GetValueOrDefault("far");
+            app.Light = new FxLightDef
+            {
+                Spot = far != null,
+                Diffuse = Value(diffuse, FxArgument.ParticleAge),
+                Radius = Value(n.GetValueOrDefault("radius"), FxArgument.ParticleAge),
+                Far = Value(far, FxArgument.ParticleAge),
+                RadiusX = Value(n.GetValueOrDefault("radiusX"), FxArgument.ParticleAge),
+                RadiusY = Value(n.GetValueOrDefault("radiusY"), FxArgument.ParticleAge),
+            };
+            return true;
         }
 
         /// <summary>

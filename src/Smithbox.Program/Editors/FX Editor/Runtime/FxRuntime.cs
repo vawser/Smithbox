@@ -331,6 +331,10 @@ public sealed class FxNodeInstance
 
     private readonly FxRandom Random;
     private bool StaticChildrenMade;
+
+    /// <summary>Whether the node's fixed children have been made (on its first update).</summary>
+    public bool ChildrenMade => StaticChildrenMade;
+
     private Matrix4x4 BaseTransform = Matrix4x4.Identity;
     private FxConfigDef BaseFor;
     private float Duration = -1;
@@ -661,7 +665,7 @@ public sealed class FxNodeInstance
                 Effect.Context.ProxyDepthHits++;
                 return;
             }
-            var def = Def.ProxyEffectId >= 0 ? Effect.Context.ResolveEffect?.Invoke(Def.ProxyEffectId) : null;
+            var def = Def.ProxyDef ?? (Def.ProxyEffectId >= 0 ? Effect.Context.ResolveEffect?.Invoke(Def.ProxyEffectId) : null);
             if (def == null)
             {
                 Effect.Context.ProxyMissing++;
