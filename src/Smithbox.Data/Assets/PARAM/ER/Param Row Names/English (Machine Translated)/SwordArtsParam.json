@@ -16,13 +16,13 @@
     {
       "ID": 10,
       "Entries": [
-        "Bare Hands: Right Hand Skill Activated"
+        "Unarmed: Right Hand Skill Activation"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Airborne Forward Roll Slam"
+        "Midair Forward Flip Slam"
       ]
     },
     {
@@ -58,13 +58,13 @@
     {
       "ID": 106,
       "Entries": [
-        "Lunge+Upward Slash"
+        "Step-In\u002BUpward Slash"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Lunge+Spin"
+        "Step-In\u002BSpin"
       ]
     },
     {
@@ -76,25 +76,25 @@
     {
       "ID": 109,
       "Entries": [
-        "Multi-Hit Thrust"
+        "Multi-Thrust"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Loop Frenzy Axe"
+        "Loop Flurry/Axe"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Loop Frenzy Halberd"
+        "Loop Flurry/Halberd"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Combo Frenzy"
+        "Combo Flurry"
       ]
     },
     {
@@ -118,7 +118,7 @@
     {
       "ID": 116,
       "Entries": [
-        "Lunge Upthrust"
+        "Step-In Upthrust"
       ]
     },
     {
@@ -130,13 +130,13 @@
     {
       "ID": 118,
       "Entries": [
-        "Diving Enchant Slash"
+        "Leaping Enchant Slash"
       ]
     },
     {
       "ID": 119,
       "Entries": [
-        "Two Hits Poison"
+        "Two-Hit Sure Poison"
       ]
     },
     {
@@ -154,7 +154,7 @@
     {
       "ID": 122,
       "Entries": [
-        "Stormleap Plunge"
+        "Storm Leap Downthrust"
       ]
     },
     {
@@ -172,31 +172,31 @@
     {
       "ID": 125,
       "Entries": [
-        "Flail Flurry"
+        "Flail Barrage"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Funnel+Thrust"
+        "Funnel\u002BThrust"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "Magic Attack+Enchant (Holy)"
+        "Magic Attack\u002BEnchant (Sacred)"
       ]
     },
     {
       "ID": 202,
       "Entries": [
-        "Gae Bolg"
+        "Gáe Bolg"
       ]
     },
     {
       "ID": 203,
       "Entries": [
-        "Mid-Range Bullet + Approach"
+        "Mid-Range Projectile\u002BApproach"
       ]
     },
     {
@@ -220,7 +220,7 @@
     {
       "ID": 208,
       "Entries": [
-        "Greater Recovery Strike"
+        "Great Heal Strike"
       ]
     },
     {
@@ -232,7 +232,7 @@
     {
       "ID": 210,
       "Entries": [
-        "Sonic Blade"
+        "Sonic Boom"
       ]
     },
     {
@@ -244,43 +244,43 @@
     {
       "ID": 213,
       "Entries": [
-        "Golden Tree Quake"
+        "World Tree Earthquake"
       ]
     },
     {
       "ID": 214,
       "Entries": [
-        "Fire Sweep + Enveloping Slash"
+        "Flame Sweep\u002BWreathed Slash"
       ]
     },
     {
       "ID": 216,
       "Entries": [
-        "Continuous Lightning Strike"
+        "Chain Lightning"
       ]
     },
     {
       "ID": 217,
       "Entries": [
-        "Lightning + Downward Slash"
+        "Lightning Strike\u002BDownward Slash"
       ]
     },
     {
       "ID": 218,
       "Entries": [
-        "Soul Colossal Sword"
+        "Greatsword of Souls"
       ]
     },
     {
       "ID": 219,
       "Entries": [
-        "Soul Colossal Sword_2-Stage"
+        "Greatsword of Souls_Phase 2"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Vacuum Wave Slash"
+        "Vacuum Slash"
       ]
     },
     {
@@ -292,7 +292,7 @@
     {
       "ID": 222,
       "Entries": [
-        "Radiant Halo of Miquella"
+        "Miquella\u0027s Halo"
       ]
     },
     {
@@ -322,13 +322,13 @@
     {
       "ID": 227,
       "Entries": [
-        "Magic Attack+Enchant (Frost)"
+        "Magic Attack\u002BEnchant (Frost)"
       ]
     },
     {
       "ID": 228,
       "Entries": [
-        "Magic Attack+Enchant (Poison)"
+        "Magic Attack\u002BEnchant (Poison)"
       ]
     },
     {
@@ -340,7 +340,7 @@
     {
       "ID": 301,
       "Entries": [
-        "Mighty Parry"
+        "Mighty Deflect"
       ]
     },
     {
@@ -370,7 +370,7 @@
     {
       "ID": 307,
       "Entries": [
-        "Ranged Parry"
+        "Remote Parry"
       ]
     },
     {
@@ -394,7 +394,7 @@
     {
       "ID": 401,
       "Entries": [
-        "Continuous Shot"
+        "Rapid Fire"
       ]
     },
     {
@@ -412,7 +412,7 @@
     {
       "ID": 405,
       "Entries": [
-        "Arcing Shot"
+        "Arc Shot"
       ]
     },
     {
@@ -424,19 +424,19 @@
     {
       "ID": 407,
       "Entries": [
-        "Invisible Shot"
+        "Unseen Shot"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "Stomp・Frost Step"
+        "Stomp/Frost Stomp"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "Stomp・Storm"
+        "Stomp/Storm"
       ]
     },
     {
@@ -448,13 +448,13 @@
     {
       "ID": 504,
       "Entries": [
-        "Special Rolling"
+        "Special Roll"
       ]
     },
     {
       "ID": 505,
       "Entries": [
-        "Single-shot area skill"
+        "Single Area Skill"
       ]
     },
     {
@@ -466,19 +466,19 @@
     {
       "ID": 507,
       "Entries": [
-        "Hip Drop+Magic Bullet"
+        "Hip Drop\u002BMagic Projectile"
       ]
     },
     {
       "ID": 508,
       "Entries": [
-        "Ground Upheaval Magic Bullet"
+        "Ground-Lifting Magic Projectile"
       ]
     },
     {
       "ID": 509,
       "Entries": [
-        "Bare Hands Earthquake"
+        "Unarmed Earthquake"
       ]
     },
     {
@@ -490,7 +490,7 @@
     {
       "ID": 601,
       "Entries": [
-        "Upper Concentrate"
+        "Greater Concentrate"
       ]
     },
     {
@@ -502,7 +502,7 @@
     {
       "ID": 603,
       "Entries": [
-        "Sun Oath"
+        "Oath of the Sun"
       ]
     },
     {
@@ -550,7 +550,7 @@
     {
       "ID": 653,
       "Entries": [
-        "Troll War Cry"
+        "Troll\u0027s War Cry"
       ]
     },
     {
@@ -568,13 +568,13 @@
     {
       "ID": 701,
       "Entries": [
-        "Momentary invincibility"
+        "Brief Invincibility"
       ]
     },
     {
       "ID": 702,
       "Entries": [
-        "Sacred Area"
+        "Sanctuary"
       ]
     },
     {
@@ -592,7 +592,7 @@
     {
       "ID": 802,
       "Entries": [
-        "Substitute Technique"
+        "Substitution Technique"
       ]
     },
     {
@@ -658,13 +658,13 @@
     {
       "ID": 1009,
       "Entries": [
-        "Wind-cloaked Thrust"
+        "Wind-Wreathed Thrust"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Flag Skill"
+        "Banner Skill"
       ]
     },
     {
@@ -694,7 +694,7 @@
     {
       "ID": 1015,
       "Entries": [
-        "Sword of Emanuel"
+        "Emanuel\u0027s Sword"
       ]
     },
     {
@@ -712,13 +712,13 @@
     {
       "ID": 1018,
       "Entries": [
-        "Fluid Metal Sword"
+        "Liquid Metal Sword"
       ]
     },
     {
       "ID": 1019,
       "Entries": [
-        "Crystal and Flame Sword"
+        "Sword of Crystal and Flame"
       ]
     },
     {
@@ -736,7 +736,7 @@
     {
       "ID": 1022,
       "Entries": [
-        "Erdtree Greatsword"
+        "Golden Tree Greatsword"
       ]
     },
     {
@@ -754,25 +754,25 @@
     {
       "ID": 1025,
       "Entries": [
-        "Wolf-Head Knight's Greatsword"
+        "Wolf-Headed Knight\u0027s Greatsword"
       ]
     },
     {
       "ID": 1026,
       "Entries": [
-        "Ancient Thunder Thrusting Sword"
+        "Ancient Lightning Thrusting Sword"
       ]
     },
     {
       "ID": 1027,
       "Entries": [
-        "Malgit's Sword of Death"
+        "Margit\u0027s Sword of Death"
       ]
     },
     {
       "ID": 1028,
       "Entries": [
-        "Malenia Waltz"
+        "Malenia Flurry"
       ]
     },
     {
@@ -784,25 +784,25 @@
     {
       "ID": 1030,
       "Entries": [
-        "Grafted King's Greataxe"
+        "Grafted King\u0027s Greataxe"
       ]
     },
     {
       "ID": 1031,
       "Entries": [
-        "Godfrey's Great Axe"
+        "Godfrey\u0027s Greataxe"
       ]
     },
     {
       "ID": 1032,
       "Entries": [
-        "Radahn (Scrawny Horse) Greatcurved Sword"
+        "Radahn of the Scrawny Horse\u0027s Curved Greatsword"
       ]
     },
     {
       "ID": 1033,
       "Entries": [
-        "World-Breaker Greatsword"
+        "World-Breaking Greatsword"
       ]
     },
     {
@@ -814,25 +814,25 @@
     {
       "ID": 1035,
       "Entries": [
-        "Fluid Metal Hammer"
+        "Liquid Metal Hammer"
       ]
     },
     {
       "ID": 1036,
       "Entries": [
-        "Black Knife Descendant Dagger"
+        "Black Knife Assassin\u0027s Dagger"
       ]
     },
     {
       "ID": 1037,
       "Entries": [
-        "Daughter Marika's Dagger"
+        "Daughter Marika\u0027s Dagger"
       ]
     },
     {
       "ID": 1038,
       "Entries": [
-        "Black Blade Malenia Sword"
+        "Maliketh the Black Blade\u0027s Sword"
       ]
     },
     {
@@ -844,13 +844,13 @@
     {
       "ID": 1040,
       "Entries": [
-        "Light Walker Sword"
+        "Light Walker\u0027s Sword"
       ]
     },
     {
       "ID": 1041,
       "Entries": [
-        "Dark Walker Curved Greatsword"
+        "Dark Walker\u0027s Curved Greatsword"
       ]
     },
     {
@@ -862,7 +862,7 @@
     {
       "ID": 1043,
       "Entries": [
-        "Ruinous Blade"
+        "Katana of Desolation"
       ]
     },
     {
@@ -874,13 +874,13 @@
     {
       "ID": 1045,
       "Entries": [
-        "Red Hair Whip"
+        "Red-Haired Whip"
       ]
     },
     {
       "ID": 1046,
       "Entries": [
-        "Ring Finger Hammer"
+        "Ringed Finger Hammer"
       ]
     },
     {
@@ -892,7 +892,7 @@
     {
       "ID": 1048,
       "Entries": [
-        "Deathbird Weapon"
+        "Deathbird\u0027s Weapon"
       ]
     },
     {
@@ -904,13 +904,13 @@
     {
       "ID": 1050,
       "Entries": [
-        "Ruinous Spear"
+        "Spear of Ruin"
       ]
     },
     {
       "ID": 1051,
       "Entries": [
-        "Godskin Apostle Reaper"
+        "Cleanrot Knight\u0027s Scythe"
       ]
     },
     {
@@ -922,25 +922,25 @@
     {
       "ID": 1053,
       "Entries": [
-        "Grave Marker Sword"
+        "Gravestone Sword"
       ]
     },
     {
       "ID": 1054,
       "Entries": [
-        "Secret Glyph/Beam Saber"
+        "Cipher/Beam Saber"
       ]
     },
     {
       "ID": 1055,
       "Entries": [
-        "King Goujian's Sword"
+        "Sword of Goujian"
       ]
     },
     {
       "ID": 1165,
       "Entries": [
-        "Tree Sentinel Noble Halberd"
+        "Tree Sentinel Noble\u0027s Halberd"
       ]
     },
     {
@@ -952,163 +952,163 @@
     {
       "ID": 1167,
       "Entries": [
-        "Gargoyle (Maliketh Follower) Sword"
+        "Gargoyle (Maliketh Kin)\u0027s Sword"
       ]
     },
     {
       "ID": 1168,
       "Entries": [
-        "Cold Winter Curved Sword"
+        "Cold Winter Scimitar"
       ]
     },
     {
       "ID": 1169,
       "Entries": [
-        "Radahn (Scrawny Horse) Greatbow"
+        "Radahn of the Scrawny Horse\u0027s Greatbow"
       ]
     },
     {
       "ID": 1170,
       "Entries": [
-        "God-Hunting Holy Sword"
+        "Sacred Relic Sword"
       ]
     },
     {
       "ID": 1171,
       "Entries": [
-        "Demon's Blood Rapier"
+        "Demon Blood Believer\u0027s Rapier"
       ]
     },
     {
       "ID": 1172,
       "Entries": [
-        "Children of Ghouls' Curved Sword"
+        "Ghoul Children\u0027s Curved Sword"
       ]
     },
     {
       "ID": 1173,
       "Entries": [
-        "Astel's Wings"
+        "Astel\u0027s Wing"
       ]
     },
     {
       "ID": 1174,
       "Entries": [
-        "Sun Flare Shotel"
+        "Solar Flare Shotel"
       ]
     },
     {
       "ID": 1175,
       "Entries": [
-        "Bolas Hound Curved Greatsword"
+        "Hound of Bolas\u0027 Curved Greatsword"
       ]
     },
     {
       "ID": 1176,
       "Entries": [
-        "King's Mole Greatsword"
+        "King\u0027s Mole\u0027s Curved Greatsword"
       ]
     },
     {
       "ID": 1177,
       "Entries": [
-        "Demon's Blood Katana"
+        "Demon Blood Katana"
       ]
     },
     {
       "ID": 1178,
       "Entries": [
-        "Moonveil Katana"
+        "Moonveil"
       ]
     },
     {
       "ID": 1179,
       "Entries": [
-        "Blood Blade Twinblade"
+        "Bloodblade Twinblade"
       ]
     },
     {
       "ID": 1180,
       "Entries": [
-        "Twinblade of Bounty and Rot"
+        "Twinblade of Fertility and Rot"
       ]
     },
     {
       "ID": 1181,
       "Entries": [
-        "Cult Twinblade"
+        "Esoteric Twinblade"
       ]
     },
     {
       "ID": 1182,
       "Entries": [
-        "Scepter of Wisdom"
+        "Sceptre of a Hundred Wisdoms"
       ]
     },
     {
       "ID": 1183,
       "Entries": [
-        "King of Ghouls Scepter"
+        "Ghoul King\u0027s Sceptre"
       ]
     },
     {
       "ID": 1184,
       "Entries": [
-        "Dried Head Flail"
+        "Shrunken Head Flail"
       ]
     },
     {
       "ID": 1185,
       "Entries": [
-        "Mercy Axe"
+        "Axe of Mercy"
       ]
     },
     {
       "ID": 1186,
       "Entries": [
-        "Warhawk Axe"
+        "War Hawk Axe"
       ]
     },
     {
       "ID": 1187,
       "Entries": [
-        "Godskin Apostle Spear"
+        "Cleanrot Knight\u0027s Spear"
       ]
     },
     {
       "ID": 1188,
       "Entries": [
-        "Giant Hunt"
+        "Giant-Crusher"
       ]
     },
     {
       "ID": 1189,
       "Entries": [
-        "Saintess's Scythe"
+        "Saint\u0027s Scythe"
       ]
     },
     {
       "ID": 1190,
       "Entries": [
-        "Veteran's Prosthesis"
+        "Veteran\u0027s Prosthesis"
       ]
     },
     {
       "ID": 1191,
       "Entries": [
-        "Secret Glyph Fist"
+        "Cipher Fist"
       ]
     },
     {
       "ID": 1192,
       "Entries": [
-        "Watchdog Golem Hammer"
+        "Watchdog Golem\u0027s Hammer"
       ]
     },
     {
       "ID": 1193,
       "Entries": [
-        "World Tree Demon Weapon"
+        "World Tree Demon\u0027s Weapon"
       ]
     },
     {
@@ -1126,7 +1126,7 @@
     {
       "ID": 1196,
       "Entries": [
-        "Tree Sentinel Chief Shield"
+        "Tree Sentinel Leader\u0027s Shield"
       ]
     },
     {
@@ -1138,19 +1138,19 @@
     {
       "ID": 1198,
       "Entries": [
-        "Godfrey Sixteen Knights Sword"
+        "Godfrey\u0027s Sixteen Knights\u0027 Sword"
       ]
     },
     {
       "ID": 1199,
       "Entries": [
-        "Moonlight Greatsword Scepter"
+        "Moon Sceptre"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "Cloaked Greatsword"
+        "Caped Greatsword"
       ]
     },
     {

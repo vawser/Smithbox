@@ -1,0 +1,971 @@
+{
+  "Name": "LegacyDistantViewPartsReplaceParam",
+  "Entries": [
+    {
+      "ID": 100050,
+      "Entries": [
+        "m10_00_00_99 310: Green Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100051,
+      "Entries": [
+        "m10_00_00_99 310: Green Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100052,
+      "Entries": [
+        "m10_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100053,
+      "Entries": [
+        "m10_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100054,
+      "Entries": [
+        "m10_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100055,
+      "Entries": [
+        "m10_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100056,
+      "Entries": [
+        "m10_00_00_99 312: Plains Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100057,
+      "Entries": [
+        "m10_00_00_99 312: Plains Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 100080,
+      "Entries": [
+        "m10_00_00_99 300: Erdtree Burning Erdtree body swap"
+      ]
+    },
+    {
+      "ID": 100081,
+      "Entries": [
+        "m10_00_00_99 300: Erdtree Burning Disable Erdtree light shaft (for Stormveil)"
+      ]
+    },
+    {
+      "ID": 100085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 100090,
+      "Entries": [
+        "m10_00_00_99 302: Erdtree Burning (Weak) Erdtree body swap"
+      ]
+    },
+    {
+      "ID": 100091,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "m11_00_00_99 310: Green Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "m11_00_00_99 310: Green Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "m11_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "m11_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "m11_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "m11_00_00_99 311: Snowy Mountain Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "m11_00_00_99 312: Plains Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "m11_00_00_99 312: Plains Crater Terrain swap"
+      ]
+    },
+    {
+      "ID": 110090,
+      "Entries": [
+        "m11_00_00_99 302: Erdtree Burning (Weak) Erdtree body swap"
+      ]
+    },
+    {
+      "ID": 110091,
+      "Entries": [
+        "m11_00_00_99 302: Erdtree Burning (Weak) Erdtree_mid-range trunk (burning state) swap"
+      ]
+    },
+    {
+      "ID": 110095,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 110096,
+      "Entries": [
+        "Disable Normal World Tree_Near-view Trunk at 302"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "m11_05_00_99 310: Green Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115001,
+      "Entries": [
+        "m11_05_00_99 310: Green Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115002,
+      "Entries": [
+        "m11_05_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115003,
+      "Entries": [
+        "m11_05_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115004,
+      "Entries": [
+        "m11_05_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115005,
+      "Entries": [
+        "m11_05_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115006,
+      "Entries": [
+        "m11_05_00_99 312: Plains Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 115007,
+      "Entries": [
+        "m11_05_00_99 312: Plains Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "m13_00_00_99 310: Green Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        "m13_00_00_99 310: Green Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130002,
+      "Entries": [
+        "m13_00_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130003,
+      "Entries": [
+        "m13_00_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130004,
+      "Entries": [
+        "m13_00_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130005,
+      "Entries": [
+        "m13_00_00_99 311: Snowy Mountain Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130006,
+      "Entries": [
+        "m13_00_00_99 312: Plains Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130007,
+      "Entries": [
+        "m13_00_00_99 312: Plains Crater Terrain Replacement"
+      ]
+    },
+    {
+      "ID": 130080,
+      "Entries": [
+        "m13_00_00_99 300: Erdtree Burning Erdtree Body Replacement"
+      ]
+    },
+    {
+      "ID": 130085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 130090,
+      "Entries": [
+        "m13_00_00_99 302: Erdtree Burning (Weak) Erdtree Body Replacement"
+      ]
+    },
+    {
+      "ID": 130091,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "m14_00_00_99「310：Green Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140001,
+      "Entries": [
+        "m14_00_00_99「310：Green Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140002,
+      "Entries": [
+        "m14_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140003,
+      "Entries": [
+        "m14_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140004,
+      "Entries": [
+        "m14_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140005,
+      "Entries": [
+        "m14_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140006,
+      "Entries": [
+        "m14_00_00_99「312：Plains Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140007,
+      "Entries": [
+        "m14_00_00_99「312：Plains Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 140008,
+      "Entries": [
+        "m14_00_00_99 300: Erdtree Burning Erdtree Body Replacement"
+      ]
+    },
+    {
+      "ID": 140009,
+      "Entries": [
+        "m14_00_00_99 300: Erdtree Burning Erdtree Branch Replacement"
+      ]
+    },
+    {
+      "ID": 140080,
+      "Entries": [
+        "m14_00_00_99 300: Erdtree Burning Erdtree Body Replacement"
+      ]
+    },
+    {
+      "ID": 140085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 140090,
+      "Entries": [
+        "m14_00_00_99 302: Erdtree Burning (Weak) Erdtree Body Replacement"
+      ]
+    },
+    {
+      "ID": 140091,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "m15_00_00_99「310：Green Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150001,
+      "Entries": [
+        "m15_00_00_99「310：Green Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150002,
+      "Entries": [
+        "m15_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150003,
+      "Entries": [
+        "m15_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150004,
+      "Entries": [
+        "m15_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150005,
+      "Entries": [
+        "m15_00_00_99「311：Snowy Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150006,
+      "Entries": [
+        "m15_00_00_99「312：Plains Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150007,
+      "Entries": [
+        "m15_00_00_99「312：Plains Crater」Terrain Swap"
+      ]
+    },
+    {
+      "ID": 150080,
+      "Entries": [
+        "m15_00_00_99「300：World Tree Burning」World Tree Body Swap"
+      ]
+    },
+    {
+      "ID": 150085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 150090,
+      "Entries": [
+        "m15_00_00_99「302：World Tree Burning (Weak)」World Tree Body Swap"
+      ]
+    },
+    {
+      "ID": 150091,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 160080,
+      "Entries": [
+        "m16_00_00_99「300：World Tree Burning」World Tree Body Swap"
+      ]
+    },
+    {
+      "ID": 160085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 160090,
+      "Entries": [
+        "m16_00_00_99「302：World Tree Burning (Weak)」World Tree Body Swap"
+      ]
+    },
+    {
+      "ID": 160091,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 340010,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 341007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 342007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 343007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 345007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392000,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392001,
+      "Entries": [
+        "310: Green Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392002,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392003,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392004,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392005,
+      "Entries": [
+        "311: Snowy Mountain Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392006,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392007,
+      "Entries": [
+        "312: Plains Crater terrain replacement"
+      ]
+    },
+    {
+      "ID": 392080,
+      "Entries": [
+        "m39_20_00_99「300：World Tree Burning」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 392085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 392090,
+      "Entries": [
+        "m39_20_00_99「302：World Tree Burning (Weak)」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 392091,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 450080,
+      "Entries": [
+        "m45_00_00_99「300：World Tree Burning」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 450081,
+      "Entries": [
+        "m45_00_00_99「300：World Tree Burning」World Tree_Far View Trunk (300: Burning State) Replacement"
+      ]
+    },
+    {
+      "ID": 450082,
+      "Entries": [
+        "m45_00_00_99「300：World Tree Burning」World Tree_Light Shaft Disabled"
+      ]
+    },
+    {
+      "ID": 450085,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 450086,
+      "Entries": [
+        "Disable Normal World Tree_Near-view Trunk at 300"
+      ]
+    },
+    {
+      "ID": 450090,
+      "Entries": [
+        "m45_00_00_99「302：World Tree Burning (Weak)」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 450091,
+      "Entries": [
+        "m45_00_00_99「302：World Tree Burning (Weak)」World Tree_Far View Trunk (302: Burning State) Replacement"
+      ]
+    },
+    {
+      "ID": 450095,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 450180,
+      "Entries": [
+        "m45_01_00_99「300：World Tree Burning」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 450185,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 450190,
+      "Entries": [
+        "m45_01_00_99「302：World Tree Burning (Weak)」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 450191,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 450280,
+      "Entries": [
+        "m45_02_00_99「300：World Tree Burning」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 450285,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 450290,
+      "Entries": [
+        "m45_02_00_99「302：World Tree Burning (Weak)」World Tree Main Body Replacement"
+      ]
+    },
+    {
+      "ID": 450291,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "m60_00_00_99「300：世界樹炎上」Royal Capital farthest distant view ash part replacement"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "m60_00_00_99「300：世界樹炎上」World Tree body replacement"
+      ]
+    },
+    {
+      "ID": 600011,
+      "Entries": [
+        "m60_00_00_99「300：世界樹炎上」World Tree light shaft replacement: Green"
+      ]
+    },
+    {
+      "ID": 600012,
+      "Entries": [
+        "m60_00_00_99「300：世界樹炎上」World Tree light shaft replacement: Plains"
+      ]
+    },
+    {
+      "ID": 600013,
+      "Entries": [
+        "m60_00_00_99「300：世界樹炎上」World Tree light shaft replacement: Lake"
+      ]
+    },
+    {
+      "ID": 600014,
+      "Entries": [
+        "m60_00_00_99「300：世界樹炎上」Distant view cloud replacement: Green"
+      ]
+    },
+    {
+      "ID": 600050,
+      "Entries": [
+        "300 Normal World Tree Disabled"
+      ]
+    },
+    {
+      "ID": 600110,
+      "Entries": [
+        "m60_00_00_99「302：世界樹炎上（弱）」World Tree body replacement"
+      ]
+    },
+    {
+      "ID": 600150,
+      "Entries": [
+        "302 Normal World Tree Disabled"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "Name": "KeyAssignMenuItemParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Movement"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Movement Shift"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Movement (Forward)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Move (Back)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Move (Left)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Move (Right)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Backstep"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Crouch / Crouch Release"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Camera Operation"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Camera Operation"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Camera Operation"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Camera Operation"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Camera Operation"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Camera Reset"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Weapon Switch"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Sorcery/Incantation Switch"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Item Switch"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Right hand weapon switch"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Left hand weapon switch"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Attack"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Attack (Right Hand Weapon"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Heavy Attack (Right-hand Weapon"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Guard (Left hand weapon)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Skill"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Item Use"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Event Action (Examine"
+      ]
+    }
+  ]
+}

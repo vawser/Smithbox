@@ -16,13 +16,13 @@
     {
       "ID": 20,
       "Entries": [
-        "Open: Highland"
+        "Open: Altus"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Open: Highland_Volcano"
+        "Open: Altus_Volcano"
       ]
     },
     {
@@ -40,19 +40,19 @@
     {
       "ID": 40,
       "Entries": [
-        "Open: Snowy Mountain_Upper Level"
+        "Open: Snow Mountain_Upper Level"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Open: Snowy Mountain_Lower Level"
+        "Open: Snow Mountain_Lower Level"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Open: Snowy Mountain_Entrance (Foot)"
+        "Open: Snow Mountain_Entrance (Foothills)"
       ]
     },
     {
@@ -70,19 +70,19 @@
     {
       "ID": 1100,
       "Entries": [
-        "m11_00 Royal Capital"
+        "m11_00 Leyndell"
       ]
     },
     {
       "ID": 1105,
       "Entries": [
-        "m11_05 Royal Capital (Ash)"
+        "m11_05 Leyndell (Ash)"
       ]
     },
     {
       "ID": 1110,
       "Entries": [
-        "m11_10 Royal Capital (Base)"
+        "m11_10 Leyndell (Base)"
       ]
     },
     {
@@ -106,13 +106,13 @@
     {
       "ID": 1203,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital"
+        "m12_03 Underground Labyrinth: Leyndell"
       ]
     },
     {
       "ID": 1204,
       "Entries": [
-        "m12_04 Underground Labyrinth: Ancestor Spirit"
+        "m12_04 Underground Labyrinth: Ancestral Spirit"
       ]
     },
     {
@@ -124,7 +124,7 @@
     {
       "ID": 1400,
       "Entries": [
-        "m14_00 Monsan"
+        "m14_00 Raya Lucaria"
       ]
     },
     {
@@ -400,49 +400,49 @@
     {
       "ID": 3205,
       "Entries": [
-        "m32_05 Catacombs 3-2"
+        "m32_05 Tunnel 3-2"
       ]
     },
     {
       "ID": 3206,
       "Entries": [
-        "m32_06 Catacombs 3-3"
+        "m32_06 Tunnel 3-3"
       ]
     },
     {
       "ID": 3207,
       "Entries": [
-        "m32_07 Catacombs 4-1"
+        "m32_07 Tunnel 4-1"
       ]
     },
     {
       "ID": 3208,
       "Entries": [
-        "m32_08 Catacombs 4-2"
+        "m32_08 Tunnel 4-2"
       ]
     },
     {
       "ID": 3209,
       "Entries": [
-        "m32_09 Catacombs 4-3"
+        "m32_09 Tunnel 4-3"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "m32_10 Catacombs 4-4"
+        "m32_10 Tunnel 4-4"
       ]
     },
     {
       "ID": 3211,
       "Entries": [
-        "m32_11 Catacombs 5-1"
+        "m32_11 Tunnel 5-1"
       ]
     },
     {
       "ID": 3212,
       "Entries": [
-        "m32_12 Catacombs 5-2"
+        "m32_12 Tunnel 5-2"
       ]
     },
     {
@@ -460,7 +460,7 @@
     {
       "ID": 3412,
       "Entries": [
-        "m34_12 Divine Tower (Highland)"
+        "m34_12 Divine Tower (Mountain)"
       ]
     },
     {
@@ -484,19 +484,19 @@
     {
       "ID": 3416,
       "Entries": [
-        "m34_16 Divine Tower (Lake)_Reversed"
+        "m34_16 Divine Tower (Lake)_Mirrored"
       ]
     },
     {
       "ID": 3500,
       "Entries": [
-        "m35_00 Royal Capital Underground Sewers"
+        "m35_00 Leyndell Underground Sewers"
       ]
     },
     {
       "ID": 3920,
       "Entries": [
-        "m39_20 Cliff Tunnel"
+        "m39_20 Cliffside Tunnel"
       ]
     }
   ]

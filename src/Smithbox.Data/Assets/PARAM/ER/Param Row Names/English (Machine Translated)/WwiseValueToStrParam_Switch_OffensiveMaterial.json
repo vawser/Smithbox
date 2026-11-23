@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Iron (Default"
+        "Iron (Default Used When String Not Found)"
       ]
     },
     {
@@ -46,31 +46,31 @@
     {
       "ID": 7,
       "Entries": [
-        "Dummy1"
+        "Dummy 1"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Dummy2"
+        "Dummy 2"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Dummy3"
+        "Dummy 3"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Maggot"
+        "Maggots"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Candle"
+        "Wax"
       ]
     }
   ]

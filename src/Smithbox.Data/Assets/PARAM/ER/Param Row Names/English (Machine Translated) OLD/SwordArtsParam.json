@@ -1,0 +1,1163 @@
+{
+  "Name": "SwordArtsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test Data"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "No Skill"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Bare Hands: Right Hand Skill Activated"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Airborne Forward Roll Slam"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Piercing Thrust"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Piercing Katana"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Lunge+Upward Slash"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Lunge+Spin"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Drain Multi-Thrust"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Multi-Hit Thrust"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Loop Frenzy Axe"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Loop Frenzy Halberd"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Combo Frenzy"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Sumo Train"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Iai (Katana)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Stance (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Lunge Upthrust"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Torch Attack"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Diving Enchant Slash"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Two Hits Poison"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Baton Attack"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Black Knight Stance"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Stormleap Plunge"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Storm Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Double Slash"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Flail Flurry"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Funnel+Thrust"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Magic Attack+Enchant (Holy)"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Gae Bolg"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Mid-Range Bullet + Approach"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Blood Slash"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Drain Attack"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Lava Placement"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Greater Recovery Strike"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Gravity Pull"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Sonic Blade"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Earthquake"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Golden Tree Quake"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Fire Sweep + Enveloping Slash"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Continuous Lightning Strike"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Lightning + Downward Slash"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Soul Colossal Sword"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Soul Colossal Sword_2-Stage"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Vacuum Wave Slash"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Fire Tornado"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Radiant Halo of Miquella"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Fire Breath"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Blood Throw"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Phantom Double Slash"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Phantom Throw"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Magic Attack+Enchant (Frost)"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Magic Attack+Enchant (Poison)"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Mighty Parry"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Buckler Parry"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Magic Parry"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Projectile Parry"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Ranged Parry"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Charge Bash"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Light Wall Parry"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Piercing Shot"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Continuous Shot"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Power Shot"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Homing Shot"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Arcing Shot"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Arrow Rain"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Invisible Shot"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Stomp・Frost Step"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Stomp・Storm"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Special Rolling"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Single-shot area skill"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Hip Drop"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Hip Drop+Magic Bullet"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Ground Upheaval Magic Bullet"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Bare Hands Earthquake"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Concentrate"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Upper Concentrate"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Self-Harm/Curse"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Sun Oath"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Holy Enchant"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Area Holy Enchant"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Seppuku Enchant"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Rock Enchant"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Barbarian War Cry"
+      ]
+    },
+    {
+      "ID": 651,
+      "Entries": [
+        "Warrior War Cry"
+      ]
+    },
+    {
+      "ID": 652,
+      "Entries": [
+        "Ultrasonic War Cry"
+      ]
+    },
+    {
+      "ID": 653,
+      "Entries": [
+        "Troll War Cry"
+      ]
+    },
+    {
+      "ID": 654,
+      "Entries": [
+        "Gladiator War Cry"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Momentary invincibility"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Sacred Area"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Gehrman Step"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Substitute Technique"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Phantom Summon"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Eruption"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Bazooka Shield"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Flamethrower Shield"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Flute Magic (Soul Arrow)"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Flute Magic (Homing Bullet)"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Flute Magic (Bomb)"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Lava Scatter"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Coiled Shield"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Moonlight Enchant"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Wind-cloaked Thrust"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Flag Skill"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Dragon Head"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Force Sword"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Defense Debuff"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Vengeful Spirit Slash"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Sword of Emanuel"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Blood Throw (Strong)"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Jeweled Sword"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Fluid Metal Sword"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Crystal and Flame Sword"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Corpse Sword"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Spire Sword"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Erdtree Greatsword"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Tizona"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Death Throw"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Wolf-Head Knight's Greatsword"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "Ancient Thunder Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        "Malgit's Sword of Death"
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Malenia Waltz"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Transforming Hammer"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Grafted King's Greataxe"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Godfrey's Great Axe"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Radahn (Scrawny Horse) Greatcurved Sword"
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        "World-Breaker Greatsword"
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        "Greater Demon Spear"
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        "Fluid Metal Hammer"
+      ]
+    },
+    {
+      "ID": 1036,
+      "Entries": [
+        "Black Knife Descendant Dagger"
+      ]
+    },
+    {
+      "ID": 1037,
+      "Entries": [
+        "Daughter Marika's Dagger"
+      ]
+    },
+    {
+      "ID": 1038,
+      "Entries": [
+        "Black Blade Malenia Sword"
+      ]
+    },
+    {
+      "ID": 1039,
+      "Entries": [
+        "Wheel Chainsaw"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Light Walker Sword"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "Dark Walker Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "Sword-Grafted Greatsword"
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        "Ruinous Blade"
+      ]
+    },
+    {
+      "ID": 1044,
+      "Entries": [
+        "Blessed Great Hammer"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        "Red Hair Whip"
+      ]
+    },
+    {
+      "ID": 1046,
+      "Entries": [
+        "Ring Finger Hammer"
+      ]
+    },
+    {
+      "ID": 1047,
+      "Entries": [
+        "Stardust Flail"
+      ]
+    },
+    {
+      "ID": 1048,
+      "Entries": [
+        "Deathbird Weapon"
+      ]
+    },
+    {
+      "ID": 1049,
+      "Entries": [
+        "Spiral Spear"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Ruinous Spear"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Godskin Apostle Reaper"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Grafted Spider Sword"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "Grave Marker Sword"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "Secret Glyph/Beam Saber"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "King Goujian's Sword"
+      ]
+    },
+    {
+      "ID": 1165,
+      "Entries": [
+        "Tree Sentinel Noble Halberd"
+      ]
+    },
+    {
+      "ID": 1166,
+      "Entries": [
+        "Dragon Halberd"
+      ]
+    },
+    {
+      "ID": 1167,
+      "Entries": [
+        "Gargoyle (Maliketh Follower) Sword"
+      ]
+    },
+    {
+      "ID": 1168,
+      "Entries": [
+        "Cold Winter Curved Sword"
+      ]
+    },
+    {
+      "ID": 1169,
+      "Entries": [
+        "Radahn (Scrawny Horse) Greatbow"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "God-Hunting Holy Sword"
+      ]
+    },
+    {
+      "ID": 1171,
+      "Entries": [
+        "Demon's Blood Rapier"
+      ]
+    },
+    {
+      "ID": 1172,
+      "Entries": [
+        "Children of Ghouls' Curved Sword"
+      ]
+    },
+    {
+      "ID": 1173,
+      "Entries": [
+        "Astel's Wings"
+      ]
+    },
+    {
+      "ID": 1174,
+      "Entries": [
+        "Sun Flare Shotel"
+      ]
+    },
+    {
+      "ID": 1175,
+      "Entries": [
+        "Bolas Hound Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 1176,
+      "Entries": [
+        "King's Mole Greatsword"
+      ]
+    },
+    {
+      "ID": 1177,
+      "Entries": [
+        "Demon's Blood Katana"
+      ]
+    },
+    {
+      "ID": 1178,
+      "Entries": [
+        "Moonveil Katana"
+      ]
+    },
+    {
+      "ID": 1179,
+      "Entries": [
+        "Blood Blade Twinblade"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Twinblade of Bounty and Rot"
+      ]
+    },
+    {
+      "ID": 1181,
+      "Entries": [
+        "Cult Twinblade"
+      ]
+    },
+    {
+      "ID": 1182,
+      "Entries": [
+        "Scepter of Wisdom"
+      ]
+    },
+    {
+      "ID": 1183,
+      "Entries": [
+        "King of Ghouls Scepter"
+      ]
+    },
+    {
+      "ID": 1184,
+      "Entries": [
+        "Dried Head Flail"
+      ]
+    },
+    {
+      "ID": 1185,
+      "Entries": [
+        "Mercy Axe"
+      ]
+    },
+    {
+      "ID": 1186,
+      "Entries": [
+        "Warhawk Axe"
+      ]
+    },
+    {
+      "ID": 1187,
+      "Entries": [
+        "Godskin Apostle Spear"
+      ]
+    },
+    {
+      "ID": 1188,
+      "Entries": [
+        "Giant Hunt"
+      ]
+    },
+    {
+      "ID": 1189,
+      "Entries": [
+        "Saintess's Scythe"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Veteran's Prosthesis"
+      ]
+    },
+    {
+      "ID": 1191,
+      "Entries": [
+        "Secret Glyph Fist"
+      ]
+    },
+    {
+      "ID": 1192,
+      "Entries": [
+        "Watchdog Golem Hammer"
+      ]
+    },
+    {
+      "ID": 1193,
+      "Entries": [
+        "World Tree Demon Weapon"
+      ]
+    },
+    {
+      "ID": 1194,
+      "Entries": [
+        "Meteoric Beast Jaw"
+      ]
+    },
+    {
+      "ID": 1195,
+      "Entries": [
+        "Candlestick Torch"
+      ]
+    },
+    {
+      "ID": 1196,
+      "Entries": [
+        "Tree Sentinel Chief Shield"
+      ]
+    },
+    {
+      "ID": 1197,
+      "Entries": [
+        "Jellyfish"
+      ]
+    },
+    {
+      "ID": 1198,
+      "Entries": [
+        "Godfrey Sixteen Knights Sword"
+      ]
+    },
+    {
+      "ID": 1199,
+      "Entries": [
+        "Moonlight Greatsword Scepter"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Cloaked Greatsword"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Golden Order Flail"
+      ]
+    }
+  ]
+}

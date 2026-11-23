@@ -1,0 +1,563 @@
+{
+  "Name": "MapDefaultInfoParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default param. Do not delete."
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "m10_00 Stormveil"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "m10_01 Stormveil_Detached"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "m11_00 Royal Capital"
+      ]
+    },
+    {
+      "ID": 11050000,
+      "Entries": [
+        "m11_05 Royal Capital (Ash)"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "m11_10 Royal Capital_Base"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "m11_70 Royal Capital Cutscene"
+      ]
+    },
+    {
+      "ID": 11710000,
+      "Entries": [
+        "m11_71 Royal Capital Cutscene"
+      ]
+    },
+    {
+      "ID": 11720000,
+      "Entries": [
+        "m11_72 Royal Capital Cutscene"
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "m12_01 Underground Labyrinth: Poison Swamp"
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "m12_02 Underground Labyrinth: Plains"
+      ]
+    },
+    {
+      "ID": 12030000,
+      "Entries": [
+        "m12_03 Underground Labyrinth: Royal Capital"
+      ]
+    },
+    {
+      "ID": 12040000,
+      "Entries": [
+        "m12_04 Underground Labyrinth: Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 12050000,
+      "Entries": [
+        "m12_05 Underground Labyrinth: Underground"
+      ]
+    },
+    {
+      "ID": 12060000,
+      "Entries": [
+        "m12_06 Underground Labyrinth: Ark"
+      ]
+    },
+    {
+      "ID": 12070000,
+      "Entries": [
+        "m12_07 Underground Labyrinth: Plains First Half Split"
+      ]
+    },
+    {
+      "ID": 12080000,
+      "Entries": [
+        "m12_08 Underground Labyrinth: Plains Hidden"
+      ]
+    },
+    {
+      "ID": 12090000,
+      "Entries": [
+        "m12_09 Underground Labyrinth: Plains Hidden B"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "m13_00 Descending Ruins"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "m14_00 Monsan"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "m15_00 Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 15020000,
+      "Entries": [
+        "m15_02 Rotten Great Tree For Cutscene"
+      ]
+    },
+    {
+      "ID": 16000000,
+      "Entries": [
+        "m16_00 Prison Castle"
+      ]
+    },
+    {
+      "ID": 18000000,
+      "Entries": [
+        "m18_00 Tutorial"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "m19_00 Final Boss"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "m30_00 Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "m30_01 Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "m30_02 Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "m30_03 Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "m30_04 Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "m30_05 Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 30060000,
+      "Entries": [
+        "m30_06 Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "m30_07 Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "m30_08 Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "m30_09 Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "m30_10 Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "m30_11 Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "m30_12 Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "m30_13 Catacombs 3-6"
+      ]
+    },
+    {
+      "ID": 30140000,
+      "Entries": [
+        "m30_14 Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 30150000,
+      "Entries": [
+        "m30_15 Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 30160000,
+      "Entries": [
+        "m30_16 Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 30170000,
+      "Entries": [
+        "m30_17 Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 30180000,
+      "Entries": [
+        "m30_18 Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 30190000,
+      "Entries": [
+        "m30_19 Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "m30_20 Catacombs 5-4"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "m31_00 Cave 1-3"
+      ]
+    },
+    {
+      "ID": 31010000,
+      "Entries": [
+        "m31_01 Cave 1-2"
+      ]
+    },
+    {
+      "ID": 31020000,
+      "Entries": [
+        "m31_02 Cave 1-1"
+      ]
+    },
+    {
+      "ID": 31030000,
+      "Entries": [
+        "m31_03 Cave 1-4"
+      ]
+    },
+    {
+      "ID": 31040000,
+      "Entries": [
+        "m31_04 Cave 2-1"
+      ]
+    },
+    {
+      "ID": 31050000,
+      "Entries": [
+        "m31_05 Cave 2-2"
+      ]
+    },
+    {
+      "ID": 31060000,
+      "Entries": [
+        "m31_06 Cave 2-3"
+      ]
+    },
+    {
+      "ID": 31070000,
+      "Entries": [
+        "m31_07 Cave 3-1"
+      ]
+    },
+    {
+      "ID": 31080000,
+      "Entries": [
+        "Old m31_08 Cave 3-2 Unused"
+      ]
+    },
+    {
+      "ID": 31090000,
+      "Entries": [
+        "m31_09 Cave 3-2"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "m31_10 Cave 4-2"
+      ]
+    },
+    {
+      "ID": 31110000,
+      "Entries": [
+        "m31_11 Cave 4-4"
+      ]
+    },
+    {
+      "ID": 31120000,
+      "Entries": [
+        "m31_12 Cave 5-1"
+      ]
+    },
+    {
+      "ID": 31130000,
+      "Entries": [
+        "Old m31_13 Cave 5-2 Unused"
+      ]
+    },
+    {
+      "ID": 31140000,
+      "Entries": [
+        "Old m31_14 Cave 5-3 Unused"
+      ]
+    },
+    {
+      "ID": 31150000,
+      "Entries": [
+        "m31_15 Cave 1-5"
+      ]
+    },
+    {
+      "ID": 31170000,
+      "Entries": [
+        "m31_17 Cave 1-6"
+      ]
+    },
+    {
+      "ID": 31180000,
+      "Entries": [
+        "m31_18 Cave 3-3"
+      ]
+    },
+    {
+      "ID": 31190000,
+      "Entries": [
+        "m31_19 Cave 3-4"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "m31_20 Cave 4-3"
+      ]
+    },
+    {
+      "ID": 31210000,
+      "Entries": [
+        "m31_21 Cave 4-1"
+      ]
+    },
+    {
+      "ID": 31220000,
+      "Entries": [
+        "m31_22 Cave 5-2"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "m32_00 Tunnel 1-1"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "m32_01 Tunnel 1-2"
+      ]
+    },
+    {
+      "ID": 32020000,
+      "Entries": [
+        "m32_02 Tunnel 2-1"
+      ]
+    },
+    {
+      "ID": 32030000,
+      "Entries": [
+        "Old m32_03 Tunnel 2-2 Unused"
+      ]
+    },
+    {
+      "ID": 32040000,
+      "Entries": [
+        "m32_04 Tunnel 3-1"
+      ]
+    },
+    {
+      "ID": 32050000,
+      "Entries": [
+        "m32_05 Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 32060000,
+      "Entries": [
+        "Old m32_06 Tunnel 3-3 Unused"
+      ]
+    },
+    {
+      "ID": 32070000,
+      "Entries": [
+        "m32_07 Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 32080000,
+      "Entries": [
+        "m32_08 Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 32090000,
+      "Entries": [
+        "Old m32_09 Tunnel 4-3 Unused"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Old m32_10 Tunnel 4-4 Unused"
+      ]
+    },
+    {
+      "ID": 32110000,
+      "Entries": [
+        "m32_11 Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 32120000,
+      "Entries": [
+        "Old m32_12 Tunnel 5-2 Unused"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "m34_10 Divine Tower (Green)"
+      ]
+    },
+    {
+      "ID": 34110000,
+      "Entries": [
+        "m34_11 Divine Tower (Lake)"
+      ]
+    },
+    {
+      "ID": 34120000,
+      "Entries": [
+        "m34_12 Divine Tower (Highland)"
+      ]
+    },
+    {
+      "ID": 34130000,
+      "Entries": [
+        "m34_13 Divine Tower (Snow)"
+      ]
+    },
+    {
+      "ID": 34140000,
+      "Entries": [
+        "m34_14 Divine Tower (Plains)"
+      ]
+    },
+    {
+      "ID": 34150000,
+      "Entries": [
+        "m34_15 Divine Tower (Sea)"
+      ]
+    },
+    {
+      "ID": 34160000,
+      "Entries": [
+        "m34_16 Divine Tower (Lake)_Reversed [Unused in Product]"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "m35_00 Royal Capital Underground Sewers"
+      ]
+    },
+    {
+      "ID": 39200000,
+      "Entries": [
+        "m39_20 Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 45000000,
+      "Entries": [
+        "m45_00 Arena (Royal Capital)"
+      ]
+    },
+    {
+      "ID": 45010000,
+      "Entries": [
+        "m45_01 Arena (Plains)"
+      ]
+    },
+    {
+      "ID": 45020000,
+      "Entries": [
+        "m45_02 Arena (Green) ※Plains and Green IDs would have been better swapped..."
+      ]
+    }
+  ]
+}

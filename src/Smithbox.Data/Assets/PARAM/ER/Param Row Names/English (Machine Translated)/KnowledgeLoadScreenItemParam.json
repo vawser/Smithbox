@@ -22,19 +22,19 @@
     {
       "ID": 4,
       "Entries": [
-        "Two-handed Hold"
+        "Two-Handing"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Charged Attack"
+        "Charged Attack, Jump Attack"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Skill"
+        "Ash of War"
       ]
     },
     {
@@ -52,19 +52,19 @@
     {
       "ID": 9,
       "Entries": [
-        "Precision Shot"
+        "Precision Shooting"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Weapon Equip"
+        "Equip Weapon"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Item Use"
+        "Use Item"
       ]
     },
     {
@@ -94,13 +94,13 @@
     {
       "ID": 16,
       "Entries": [
-        "Spirit Updraft Jump"
+        "Spiritstream Jump"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Death and Held Runes"
+        "Death and Runes Held"
       ]
     },
     {
@@ -118,7 +118,7 @@
     {
       "ID": 54,
       "Entries": [
-        "Discovery of Grace"
+        "Discover Grace"
       ]
     },
     {
@@ -130,7 +130,7 @@
     {
       "ID": 56,
       "Entries": [
-        "Flask of Holy Grail"
+        "Chalice Flask"
       ]
     },
     {
@@ -148,7 +148,7 @@
     {
       "ID": 59,
       "Entries": [
-        "No-Mount Area"
+        "Mount Prohibited Area"
       ]
     },
     {
@@ -160,7 +160,7 @@
     {
       "ID": 61,
       "Entries": [
-        "Item Crafting Using Container"
+        "Item Crafting Using Containers"
       ]
     },
     {
@@ -202,43 +202,43 @@
     {
       "ID": 70,
       "Entries": [
-        "Status Ailment: Poison"
+        "Status Ailments: Poison"
       ]
     },
     {
       "ID": 71,
       "Entries": [
-        "Status Ailment: Scarlet Rot"
+        "Status Ailments: Scarlet Rot"
       ]
     },
     {
       "ID": 72,
       "Entries": [
-        "Status Ailment: Blood Loss"
+        "Status Ailments: Bleed"
       ]
     },
     {
       "ID": 73,
       "Entries": [
-        "Status Ailment: Frost"
+        "Status Ailments: Frost"
       ]
     },
     {
       "ID": 74,
       "Entries": [
-        "Status Ailment: Sleep"
+        "Status Ailments: Sleep"
       ]
     },
     {
       "ID": 75,
       "Entries": [
-        "Status Ailment: Madness"
+        "Status Ailments: Frenzy"
       ]
     },
     {
       "ID": 76,
       "Entries": [
-        "Status Ailment: Death"
+        "Status Ailments: Death"
       ]
     },
     {
@@ -250,31 +250,31 @@
     {
       "ID": 80,
       "Entries": [
-        "DLC Player Enhancement Item"
+        "DLC Player Upgrade Item"
       ]
     },
     {
       "ID": 81,
       "Entries": [
-        "DLC Spirit Ash Enhancement Item"
+        "DLC Buddy Upgrade Item"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Co-op guest objective"
+        "Cooperator Guest\u0027s Objective"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Invader/Hostile Guest Objective"
+        "Invasion/Hostile Guest\u0027s Objective"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Multiplayer Max Players"
+        "Max Multiplayer Players"
       ]
     },
     {
@@ -286,7 +286,7 @@
     {
       "ID": 104,
       "Entries": [
-        "Write co-op sign"
+        "Write Cooperation Sign"
       ]
     },
     {
@@ -304,7 +304,7 @@
     {
       "ID": 107,
       "Entries": [
-        "Rescue Request"
+        "Request for Help"
       ]
     },
     {
@@ -316,13 +316,13 @@
     {
       "ID": 109,
       "Entries": [
-        "Sign Pool"
+        "Summoning Pool"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Group Passphrase"
+        "Group Password"
       ]
     },
     {
@@ -358,7 +358,7 @@
     {
       "ID": 116,
       "Entries": [
-        "Rescue Guest Objective"
+        "Rescue Guest\u0027s Objective"
       ]
     },
     {
@@ -370,19 +370,19 @@
     {
       "ID": 118,
       "Entries": [
-        "Message Extension"
+        "Message Expansion"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Arena"
+        "Colosseum"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Arena Rank"
+        "Colosseum Rank"
       ]
     },
     {
@@ -394,13 +394,13 @@
     {
       "ID": 151,
       "Entries": [
-        "Knock off balance"
+        "Break Stance"
       ]
     },
     {
       "ID": 152,
       "Entries": [
-        "Dismount"
+        "Unhorsed"
       ]
     },
     {
@@ -412,25 +412,25 @@
     {
       "ID": 200,
       "Entries": [
-        "Dripping Scarab"
+        "Teardrop Scarab"
       ]
     },
     {
       "ID": 205,
       "Entries": [
-        "Newly acquired item"
+        "Newly Obtained Item"
       ]
     },
     {
       "ID": 206,
       "Entries": [
-        "Recently Acquired Items tab"
+        "\u0022Recently Obtained Item\u0022Tab"
       ]
     },
     {
       "ID": 207,
       "Entries": [
-        "Sign Pool Cycle and Enable/Disable Toggle"
+        "Summoning Pool Cycle and Enable/Disable Toggle"
       ]
     }
   ]

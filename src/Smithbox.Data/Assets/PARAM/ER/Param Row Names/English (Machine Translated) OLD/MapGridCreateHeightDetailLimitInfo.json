@@ -1,0 +1,155 @@
+{
+  "Name": "MapGridCreateHeightDetailLimitInfo",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Entry 0 is used as the default when a parameter is not found"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "All Low Placement (Debug Override Behavior Check)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "All High Placement (Debug Override Behavior Check)"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "m61_10_10_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "m61_10_11_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 110800,
+      "Entries": [
+        "m61_11_08_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 110900,
+      "Entries": [
+        "m61_11_09_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "m61_11_10_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "m61_11_11_02(LOD2)_Graveyard Plains Side"
+      ]
+    },
+    {
+      "ID": 111101,
+      "Entries": [
+        "m61_11_11_02(LOD2)_Mohenjo Daro Side"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "m61_11_12_02(LOD2)_Graveyard Plains Side"
+      ]
+    },
+    {
+      "ID": 111201,
+      "Entries": [
+        "m61_11_12_02(LOD2)_Mohenjo Daro Side"
+      ]
+    },
+    {
+      "ID": 120900,
+      "Entries": [
+        "m61_12_09_02(LOD2) Graveyard Plains Side"
+      ]
+    },
+    {
+      "ID": 120901,
+      "Entries": [
+        "m61_12_09_02(LOD2) Deeproot Depths Side"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "m61_12_10_02(LOD2)_Graveyard Plains Side"
+      ]
+    },
+    {
+      "ID": 121001,
+      "Entries": [
+        "m61_12_10_02(LOD2)_Deeproot Depths Side"
+      ]
+    },
+    {
+      "ID": 121100,
+      "Entries": [
+        "m61_12_11_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 121200,
+      "Entries": [
+        "m61_12_12_02(LOD2) Graveyard Plains Side"
+      ]
+    },
+    {
+      "ID": 121201,
+      "Entries": [
+        "m61_12_12_02(LOD2) Shadow Erdtree Foot Side"
+      ]
+    },
+    {
+      "ID": 130900,
+      "Entries": [
+        "m61_13_09_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "m61_13_10_02(LOD2)_Graveyard Plains Side"
+      ]
+    },
+    {
+      "ID": 131001,
+      "Entries": [
+        "m61_13_10_02(LOD2) Deeproot Depths Side"
+      ]
+    },
+    {
+      "ID": 131100,
+      "Entries": [
+        "m61_13_11_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 131200,
+      "Entries": [
+        "m61_13_12_02(LOD2)"
+      ]
+    },
+    {
+      "ID": 140900,
+      "Entries": [
+        "m61_14_09_02(LOD2)"
+      ]
+    }
+  ]
+}

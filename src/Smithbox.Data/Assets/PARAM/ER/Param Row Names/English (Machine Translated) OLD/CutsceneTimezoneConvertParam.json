@@ -1,0 +1,47 @@
+{
+  "Name": "CutsceneTimezoneConvertParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Morning"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Day A"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Day B"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Evening"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Night"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Late Night A"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Late Night B"
+      ]
+    }
+  ]
+}

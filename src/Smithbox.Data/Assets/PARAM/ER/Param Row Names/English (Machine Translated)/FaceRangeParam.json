@@ -4,13 +4,13 @@
     {
       "ID": 1,
       "Entries": [
-        "Area Min Value"
+        "Range Min Value"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Area Max Value"
+        "Range Max Value"
       ]
     }
   ]

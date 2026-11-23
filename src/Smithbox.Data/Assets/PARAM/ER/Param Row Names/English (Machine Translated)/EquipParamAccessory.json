@@ -4,73 +4,73 @@
     {
       "ID": 1000,
       "Entries": [
-        "HP Increase"
+        "HP Up"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "HP Increase +1"
+        "HP Up\u002B1"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "HP Increase +2"
+        "HP Up\u002B2"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "FP Increase"
+        "FP Up"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        "FP Increase+1"
+        "FP Up\u002B1"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "FP Increase+2"
+        "FP Up\u002B2"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "Stamina Increase"
+        "Stamina Up"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        "Stamina Increase +1"
+        "Stamina Up\u002B1"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        "Stamina Increase +2"
+        "Stamina Up\u002B2"
       ]
     },
     {
       "ID": 1030,
       "Entries": [
-        "Max Equip Load Up"
+        "Max Equip Load UP"
       ]
     },
     {
       "ID": 1031,
       "Entries": [
-        "Max Equip Load Up +1"
+        "Max Equip Load UP\u002B1"
       ]
     },
     {
       "ID": 1032,
       "Entries": [
-        "Max Equip Load Up +2"
+        "Max Equip Load UP\u002B2"
       ]
     },
     {
@@ -82,49 +82,49 @@
     {
       "ID": 1041,
       "Entries": [
-        "Favor +1"
+        "Favor\u002B1"
       ]
     },
     {
       "ID": 1042,
       "Entries": [
-        "Favor +2"
+        "Favor\u002B2"
       ]
     },
     {
       "ID": 1050,
       "Entries": [
-        "Demerit-Attached Ability Boost A_Lower"
+        "Stat Boost with Drawback A_Lesser"
       ]
     },
     {
       "ID": 1051,
       "Entries": [
-        "Demerit-Attached Ability Boost A_Upper"
+        "Stat Boost with Drawback A_Upper"
       ]
     },
     {
       "ID": 1060,
       "Entries": [
-        "Strength Increase"
+        "Strength Up"
       ]
     },
     {
       "ID": 1070,
       "Entries": [
-        "Dexterity Increase"
+        "Dexterity Up"
       ]
     },
     {
       "ID": 1080,
       "Entries": [
-        "Intellect Increase"
+        "Intelligence Up"
       ]
     },
     {
       "ID": 1090,
       "Entries": [
-        "Faith Increase"
+        "Faith Up"
       ]
     },
     {
@@ -154,25 +154,25 @@
     {
       "ID": 1160,
       "Entries": [
-        "Talisman of Vigor"
+        "Stalwart Talisman"
       ]
     },
     {
       "ID": 1161,
       "Entries": [
-        "Talisman of Vigor +1"
+        "Stalwart Talisman\u002B1"
       ]
     },
     {
       "ID": 1170,
       "Entries": [
-        "Immunity Talisman"
+        "Immunizing Talisman"
       ]
     },
     {
       "ID": 1171,
       "Entries": [
-        "Immunity Talisman +1"
+        "Immunizing Talisman\u002B1"
       ]
     },
     {
@@ -184,31 +184,31 @@
     {
       "ID": 1181,
       "Entries": [
-        "Mind Talisman +1"
+        "Mind Talisman\u002B1"
       ]
     },
     {
       "ID": 1190,
       "Entries": [
-        "Talisman of Transformation"
+        "Twinned Talisman"
       ]
     },
     {
       "ID": 1191,
       "Entries": [
-        "Talisman of Transformation +1"
+        "Twinned Talisman\u002B1"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "All Elements Talisman"
+        "All-Element Talisman"
       ]
     },
     {
       "ID": 1201,
       "Entries": [
-        "All Elements Talisman +1"
+        "All-Element Talisman\u002B1"
       ]
     },
     {
@@ -220,25 +220,25 @@
     {
       "ID": 1220,
       "Entries": [
-        "Demerit-Attached Ability Boost B_Lower"
+        "Stat Boost with Drawback B_Lesser"
       ]
     },
     {
       "ID": 1221,
       "Entries": [
-        "Demerit-Attached Ability Boost B_Upper"
+        "Stat Boost with Drawback B_Upper"
       ]
     },
     {
       "ID": 1230,
       "Entries": [
-        "Jar Meyer Contents (Small)"
+        "Jar Mayer\u0027s Contents (Small)"
       ]
     },
     {
       "ID": 1231,
       "Entries": [
-        "Jar Meyer Contents (Large)"
+        "Jar Mayer\u0027s Contents (Large)"
       ]
     },
     {
@@ -250,37 +250,37 @@
     {
       "ID": 2000,
       "Entries": [
-        "Magic Strange Hand Ring"
+        "Magic Scorpion Charm"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Lightning Ring of Unorthodox Hands"
+        "Lightning Scorpion Charm"
       ]
     },
     {
       "ID": 2020,
       "Entries": [
-        "Ring of Fire Dexterity"
+        "Fire Scorpion Charm"
       ]
     },
     {
       "ID": 2030,
       "Entries": [
-        "Ring of the Holy Dexterous Hand"
+        "Sacred Scorpion Charm"
       ]
     },
     {
       "ID": 2040,
       "Entries": [
-        "HP Reduced Stat Up (Attack)"
+        "Stat Up at Low HP (Attack)"
       ]
     },
     {
       "ID": 2050,
       "Entries": [
-        "HP Max Stat Up (Attack)"
+        "Stat Up at Full HP (Attack)"
       ]
     },
     {
@@ -292,49 +292,49 @@
     {
       "ID": 2070,
       "Entries": [
-        "Shield_GuardBreak_Enhanced"
+        "Shield Guard Break Enhancement"
       ]
     },
     {
       "ID": 2080,
       "Entries": [
-        "Pontiff's Right Eye"
+        "Pontiff\u0027s Right Eye"
       ]
     },
     {
       "ID": 2081,
       "Entries": [
-        "Pontiff's Right Eye +1"
+        "Pontiff\u0027s Right Eye\u002B1"
       ]
     },
     {
       "ID": 2090,
       "Entries": [
-        "Wasp Ring"
+        "Hornet Ring"
       ]
     },
     {
       "ID": 2100,
       "Entries": [
-        "Arrow Range Up"
+        "Arrow Range UP"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Light Armor Ability Boost"
+        "Light Armor Stat Boost"
       ]
     },
     {
       "ID": 2120,
       "Entries": [
-        "Combo Final Hit Boost"
+        "Combo Final Hit Enhancement"
       ]
     },
     {
       "ID": 2130,
       "Entries": [
-        "Charged Attack Enhancement"
+        "Charge Attack Enhancement"
       ]
     },
     {
@@ -346,91 +346,91 @@
     {
       "ID": 2150,
       "Entries": [
-        "Arrow Power Up"
+        "Arrow Power UP"
       ]
     },
     {
       "ID": 2160,
       "Entries": [
-        "Blood Ecstasy"
+        "Bleed Rapture"
       ]
     },
     {
       "ID": 2170,
       "Entries": [
-        "Poison Joy"
+        "Poison Rapture"
       ]
     },
     {
       "ID": 2180,
       "Entries": [
-        "Jump Attack Enhanced"
+        "Jump Attack Enhancement"
       ]
     },
     {
       "ID": 2190,
       "Entries": [
-        "War Cry / Breath Boost"
+        "War Cry/Breath Enhancement"
       ]
     },
     {
       "ID": 2200,
       "Entries": [
-        "Guard Counter Enhanced"
+        "Guard Counter Enhancement"
       ]
     },
     {
       "ID": 2210,
       "Entries": [
-        "Pot-Type Attack Up"
+        "Pot Attack UP"
       ]
     },
     {
       "ID": 2220,
       "Entries": [
-        "Perfumer Attack Power UP"
+        "Perfume Attack Power UP"
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "Glintstone Sorcery Power Boost"
+        "Glintstone Sorcery Power Up"
       ]
     },
     {
       "ID": 3001,
       "Entries": [
-        "Glintstone Sorcery Power Boost+1"
+        "Glintstone Sorcery Power Up\u002B1"
       ]
     },
     {
       "ID": 3040,
       "Entries": [
-        "Ring of Mohn"
+        "Mourn Ring"
       ]
     },
     {
       "ID": 3050,
       "Entries": [
-        "Sun Eldest's Ring"
+        "Sun\u0027s Firstborn Ring"
       ]
     },
     {
       "ID": 3060,
       "Entries": [
-        "Dragon-Crest Ring of Standing"
+        "Dragoncrest Ring Standing"
       ]
     },
     {
       "ID": 3070,
       "Entries": [
-        "Ancient Elder's Ring"
+        "Elder\u0027s Ring"
       ]
     },
     {
       "ID": 3080,
       "Entries": [
-        "Crown of Dusk Fingers"
+        "Dusk Crown Ring"
       ]
     },
     {
@@ -448,19 +448,19 @@
     {
       "ID": 4001,
       "Entries": [
-        "Physical Cut Rate UP+1"
+        "Physical Cut Rate UP\u002B1"
       ]
     },
     {
       "ID": 4002,
       "Entries": [
-        "Physical Cut Rate UP+2"
+        "Physical Cut Rate UP\u002B2"
       ]
     },
     {
       "ID": 4003,
       "Entries": [
-        "Physical Cut Rate UP+3"
+        "Physical Cut Rate UP\u002B3"
       ]
     },
     {
@@ -472,13 +472,13 @@
     {
       "ID": 4011,
       "Entries": [
-        "Magic Cut Rate UP+1"
+        "Magic Cut Rate UP\u002B1"
       ]
     },
     {
       "ID": 4012,
       "Entries": [
-        "Magic Cut Rate UP+2"
+        "Magic Cut Rate UP\u002B2"
       ]
     },
     {
@@ -490,103 +490,103 @@
     {
       "ID": 4021,
       "Entries": [
-        "Fire Cut Rate UP+1"
+        "Fire Cut Rate UP\u002B1"
       ]
     },
     {
       "ID": 4022,
       "Entries": [
-        "Fire Cut Rate UP+2"
+        "Fire Cut Rate UP\u002B2"
       ]
     },
     {
       "ID": 4030,
       "Entries": [
-        "Lightning Negation Up"
+        "Lightning Cut Rate UP"
       ]
     },
     {
       "ID": 4031,
       "Entries": [
-        "Lightning Negation Up +1"
+        "Lightning Cut Rate UP\u002B1"
       ]
     },
     {
       "ID": 4032,
       "Entries": [
-        "Lightning Negation Up +2"
+        "Lightning Cut Rate UP\u002B2"
       ]
     },
     {
       "ID": 4040,
       "Entries": [
-        "Holy Cut Rate Up"
+        "Holy Cut Rate UP"
       ]
     },
     {
       "ID": 4041,
       "Entries": [
-        "Holy Cut Rate Up +1"
+        "Holy Cut Rate UP\u002B1"
       ]
     },
     {
       "ID": 4042,
       "Entries": [
-        "Holy Cut Rate Up +2"
+        "Holy Cut Rate UP\u002B2"
       ]
     },
     {
       "ID": 4050,
       "Entries": [
-        "Full Cut Rate UP"
+        "All Cut Rate UP"
       ]
     },
     {
       "ID": 4051,
       "Entries": [
-        "Full Cut Rate UP +1"
+        "All Cut Rate UP\u002B1"
       ]
     },
     {
       "ID": 4052,
       "Entries": [
-        "Full Cut Rate UP +2"
+        "All Cut Rate UP\u002B2"
       ]
     },
     {
       "ID": 4060,
       "Entries": [
-        "Dragon Scale Ring"
+        "Dragoncrest Shield Talisman"
       ]
     },
     {
       "ID": 4070,
       "Entries": [
-        "Blood Ring of Cassus"
+        "Kindred of Rot\u0027s Exultation"
       ]
     },
     {
       "ID": 4080,
       "Entries": [
-        "HP Reduced Stat Up (Defense)"
+        "Stat Up at Low HP (Defense)"
       ]
     },
     {
       "ID": 4090,
       "Entries": [
-        "HP Max Stat Up (Defense)"
+        "Stat Up at Full HP (Defense)"
       ]
     },
     {
       "ID": 4100,
       "Entries": [
-        "Ring of the Ominous Bird"
+        "Bull-Goat\u0027s Talisman"
       ]
     },
     {
       "ID": 4110,
       "Entries": [
-        "Headshot Disabled"
+        "Headshot Immunity"
       ]
     },
     {
@@ -598,13 +598,13 @@
     {
       "ID": 5010,
       "Entries": [
-        "Ash Estus Ring"
+        "Ashen Estus Ring"
       ]
     },
     {
       "ID": 5020,
       "Entries": [
-        "Sun Princess's Ring"
+        "Sun Princess Ring"
       ]
     },
     {
@@ -616,37 +616,37 @@
     {
       "ID": 5040,
       "Entries": [
-        "Pontiff's Left Eye"
+        "Pontiff\u0027s Left Eye"
       ]
     },
     {
       "ID": 5050,
       "Entries": [
-        "Critical Additional Effect (HP recovery)"
+        "Critical Hit Bonus Effect (HP Recovery)"
       ]
     },
     {
       "ID": 5060,
       "Entries": [
-        "Critical Additional Effect (FP recovery)"
+        "Critical Hit Bonus Effect (FP Recovery)"
       ]
     },
     {
       "ID": 6000,
       "Entries": [
-        "Quietly Sleeping Dragon Seal Ring"
+        "Dragoncrest Ring Quietly Sleeping"
       ]
     },
     {
       "ID": 6010,
       "Entries": [
-        "Hidden Shroud"
+        "Concealment"
       ]
     },
     {
       "ID": 6020,
       "Entries": [
-        "Ring of Fallen"
+        "Farron Ring"
       ]
     },
     {
@@ -658,7 +658,7 @@
     {
       "ID": 6050,
       "Entries": [
-        "Hate"
+        "Aggro"
       ]
     },
     {
@@ -670,19 +670,19 @@
     {
       "ID": 6070,
       "Entries": [
-        "On-Death Penalty Avoidance"
+        "Avoid Death Penalty"
       ]
     },
     {
       "ID": 6080,
       "Entries": [
-        "Appearance Disguise (Host)"
+        "Disguise (Host)"
       ]
     },
     {
       "ID": 6090,
       "Entries": [
-        "Appearance Disguise (Guest)"
+        "Disguise (Guest)"
       ]
     },
     {
@@ -694,13 +694,13 @@
     {
       "ID": 6110,
       "Entries": [
-        "Ancestor Spirit Talisman"
+        "Ancestral Spirit Talisman"
       ]
     },
     {
       "ID": 999999999,
       "Entries": [
-        "■■■■■Last Param Data■■■■■"
+        "■■■■■ Last Entry of Param ■■■■■"
       ]
     }
   ]

@@ -40,19 +40,19 @@
     {
       "ID": 6,
       "Entries": [
-        "Fist and Claw Family"
+        "Fist, Claw Type"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Greatsword Series"
+        "Heavy Sword Type"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Axe"
+        "Axe, Hammer Type"
       ]
     },
     {
@@ -70,67 +70,67 @@
     {
       "ID": 100,
       "Entries": [
-        "Mounted_Standard"
+        "Mount_Standard"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Mounted_Reaper"
+        "Mount_Reaper"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Mounted_Catalyst"
+        "Mount_Catalyst"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Mounted_Greatshield"
+        "Mount_Greatshield"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Mounted_Torch"
+        "Mount_Torch"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Mounted_Sword Type"
+        "Mount_Sword Type"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Mounted_Fist/Claw Type"
+        "Mount_Fist, Claw Type"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Mounted_Heavy Sword Type"
+        "Mount_Heavy Sword Type"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Mounted_Axe/Hammer Type"
+        "Mount_Axe, Hammer Type"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Mounted_Twinblade"
+        "Mount_Twinblade"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Mounted_Dueling Shield"
+        "Mount_Dueling Shield"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 206,
       "Entries": [
-        "Crouch_Fist"
+        "Crouch_Fist, Claw Type"
       ]
     },
     {
@@ -184,7 +184,7 @@
     {
       "ID": 208,
       "Entries": [
-        "Crouch_Axe"
+        "Crouch_Axe, Hammer Type"
       ]
     },
     {

@@ -10,799 +10,799 @@
     {
       "ID": 20,
       "Entries": [
-        "Gem Fixed Weapon Test_Standard_Skill Override Off"
+        "Fixed Ash Weapon Test_Standard_Without Skill Override"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Gem Fixed Weapon Test_Standard_Skill Override On"
+        "Fixed Ash Weapon Test_Standard_With Skill Override"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Magic Stone Fixed Weapon Test_Magic_Skill Override Disabled"
+        "Fixed Ash Weapon Test_Magic_Without Skill Override"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Magic Stone Fixed Weapon Test_Magic_Skill Override Enabled"
+        "Fixed Ash Weapon Test_Magic_With Skill Override"
       ]
     },
     {
       "ID": 80,
       "Entries": [
-        "Attribute Change Test_Standard"
+        "Affinity Change Test_Standard"
       ]
     },
     {
       "ID": 81,
       "Entries": [
-        "Attribute Change Test_Strength"
+        "Affinity Change Test_Strength"
       ]
     },
     {
       "ID": 82,
       "Entries": [
-        "Attribute Change Test_Dexterity"
+        "Affinity Change Test_Dexterity"
       ]
     },
     {
       "ID": 83,
       "Entries": [
-        "Attribute Change Test_Quality"
+        "Affinity Change Test_Quality"
       ]
     },
     {
       "ID": 84,
       "Entries": [
-        "Attribute Change Test_Holy"
+        "Affinity Change Test_Sacred"
       ]
     },
     {
       "ID": 85,
       "Entries": [
-        "Attribute Change Test_Magic"
+        "Affinity Change Test_Magic"
       ]
     },
     {
       "ID": 86,
       "Entries": [
-        "Attribute Change Test_Spirit"
+        "Affinity Change Test_Spirit"
       ]
     },
     {
       "ID": 87,
       "Entries": [
-        "Attribute Change Test_Warrior Fire"
+        "Affinity Change Test_Warrior Flame"
       ]
     },
     {
       "ID": 88,
       "Entries": [
-        "Attribute Change Test_Sorcerer Fire"
+        "Affinity Change Test_Caster Flame"
       ]
     },
     {
       "ID": 89,
       "Entries": [
-        "Attribute Change Test_Lightning"
+        "Affinity Change Test_Lightning"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Attribute Change Test_Blood"
+        "Affinity Change Test_Blood"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Generic Skill Test Magic Stone_Aerial Forward Roll Slam"
+        "Generic Skill Test Ash_Midair Forward Flip Slam"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Generic Skill Test Magic Stone_Piercing Thrust"
+        "Generic Skill Test Ash_Piercing Thrust"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Generic Skill Test Magic Stone_Piercing Katana"
+        "Generic Skill Test Ash_Piercing Katana"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Generic Skill Test Magic Stone_Whirlwind Slash"
+        "Generic Skill Test Ash_Spinning Slash"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Generic Skill Test Magic Stone_Spinning Sweep"
+        "Generic Skill Test Ash_Spinning Sweep"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Generic Skill Test Magic Stone_Charge"
+        "Generic Skill Test Ash_Charge"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lunge + Upward Slash"
+        "Generic Skill Test Ash_Step-In\u002BUpward Slash"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lunge + Spin"
+        "Generic Skill Test Ash_Step-In\u002BSpin"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Generic Skill Test Magic Stone_Drain Multi-Thrust"
+        "Generic Skill Test Ash_Drain Multi-Thrust"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Generic Skill Test Magic Stone_Multi-hit Thrust"
+        "Generic Skill Test Ash_Multi-Thrust"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stance Frenzy・Axe"
+        "Generic Skill Test Ash_Stance Flurry/Axe"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stance Frenzy・Halberd"
+        "Generic Skill Test Ash_Stance Flurry/Halberd"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Generic Skill Test Magic Stone_Single Hit Frenzy"
+        "Generic Skill Test Ash_Single Flurry"
       ]
     },
     {
       "ID": 113,
       "Entries": [
-        "Generic Skill Test Magic Stone_Sumo Train"
+        "Generic Skill Test Ash_Sumo Train"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        "Generic Skill Test Magic Stone_Iaido (Katana)"
+        "Generic Skill Test Ash_Iai (Katana)"
       ]
     },
     {
       "ID": 115,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stance (Straight Sword)"
+        "Generic Skill Test Ash_Stance (Straight Sword)"
       ]
     },
     {
       "ID": 116,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lunging Upthrust"
+        "Generic Skill Test Ash_Step-In Upthrust"
       ]
     },
     {
       "ID": 117,
       "Entries": [
-        "Generic Skill Test Magic Stone_Torch Attack"
+        "Generic Skill Test Ash_Torch Attack"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Generic Skill Test Magic Stone_Diving Enchanted Slash"
+        "Generic Skill Test Ash_Leaping Enchant Slash"
       ]
     },
     {
       "ID": 119,
       "Entries": [
-        "Generic Skill Test Magic Stone_Two-Hit Poison"
+        "Generic Skill Test Ash_Two-Hit Sure Poison"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Generic Skill Test Magic Stone_Baton Attack"
+        "Generic Skill Test Ash_Baton Attack"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Generic Skill Test Magic Stone_Black Knight Stance"
+        "Generic Skill Test Ash_Black Knight Stance"
       ]
     },
     {
       "ID": 122,
       "Entries": [
-        "Generic Skill Test Magic Stone_Storm Leaping Downward Thrust"
+        "Generic Skill Test Ash_Storm Leap Downthrust"
       ]
     },
     {
       "ID": 123,
       "Entries": [
-        "Generic Skill Test Magic Stone_Storm Spinning Sweep"
+        "Generic Skill Test Ash_Storm Spinning Sweep"
       ]
     },
     {
       "ID": 124,
       "Entries": [
-        "Generic Skill Test Magic Stone_Funnel + Thrust"
+        "Generic Skill Test Ash_Funnel\u002BThrust"
       ]
     },
     {
       "ID": 125,
       "Entries": [
-        "Generic Skill Test Magic Stone_Magic Attack + Enchant"
+        "Generic Skill Test Ash_Magic Attack\u002BEnchant"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gae Bolg"
+        "Generic Skill Test Ash_Gáe Bolg"
       ]
     },
     {
       "ID": 127,
       "Entries": [
-        "Generic Skill Test Magic Stone_Mid-Range Bullet + Approach"
+        "Generic Skill Test Ash_Mid-Range Projectile\u002BApproach"
       ]
     },
     {
       "ID": 128,
       "Entries": [
-        "Generic Skill Test Magic Stone_Blood Slash"
+        "Generic Skill Test Ash_Blood Slash"
       ]
     },
     {
       "ID": 129,
       "Entries": [
-        "Generic Skill Test Magic Stone_Drain Attack"
+        "Generic Skill Test Ash_Drain Attack"
       ]
     },
     {
       "ID": 130,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lava Placement"
+        "Generic Skill Test Ash_Lava Placement"
       ]
     },
     {
       "ID": 131,
       "Entries": [
-        "Generic Skill Test Magic Stone_Great Recovery Slam"
+        "Generic Skill Test Ash_Great Heal Strike"
       ]
     },
     {
       "ID": 132,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gravity Pull"
+        "Generic Skill Test Ash_Gravity Pull"
       ]
     },
     {
       "ID": 133,
       "Entries": [
-        "Generic Skill Test Magic Stone_Sonic Boom"
+        "Generic Skill Test Ash_Sonic Boom"
       ]
     },
     {
       "ID": 134,
       "Entries": [
-        "Generic Skill Test Magic Stone_Phantom Double Slash"
+        "Generic Skill Test Ash_Phantom Double Slash"
       ]
     },
     {
       "ID": 135,
       "Entries": [
-        "Generic Skill Test Magic Stone_Earthquake"
+        "Generic Skill Test Ash_Earthquake"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Generic Skill Test Magic Stone_World Tree Quake"
+        "Generic Skill Test Ash_World Tree Earthquake"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "Generic Skill Test Magic Stone_Flame Sweep + Coated Slash"
+        "Generic Skill Test Ash_Flame Sweep\u002BWreathed Slash"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "Generic Skill Test Magic Stone_Continuous Lightning Strike"
+        "Generic Skill Test Ash_Chain Lightning"
       ]
     },
     {
       "ID": 139,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lightning Strike + Downward Slash"
+        "Generic Skill Test Ash_Lightning Strike\u002BDownward Slash"
       ]
     },
     {
       "ID": 140,
       "Entries": [
-        "Generic Skill Test Magic Stone_Soul Colossal Sword"
+        "Generic Skill Test Ash_Greatsword of Souls"
       ]
     },
     {
       "ID": 141,
       "Entries": [
-        "Generic Skill Test Magic Stone_Soul Colossal Sword_2-Stage"
+        "Generic Skill Test Ash_Greatsword of Souls_Phase 2"
       ]
     },
     {
       "ID": 142,
       "Entries": [
-        "Generic Skill Test Magic Stone_Vacuum Wave Slash"
+        "Generic Skill Test Ash_Vacuum Slash"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Tornado"
+        "Generic Skill Test Ash_Fire Tornado"
       ]
     },
     {
       "ID": 144,
       "Entries": [
-        "Generic Skill Test Magic Stone_Miquella's Halo"
+        "Generic Skill Test Ash_Miquella\u0027s Halo"
       ]
     },
     {
       "ID": 145,
       "Entries": [
-        "Generic Skill Test Magic Stone_Phantom Throw"
+        "Generic Skill Test Ash_Phantom Throw"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        "Generic Skill Test Magic Stone_Shield Bash"
+        "Generic Skill Test Ash_Shield Bash"
       ]
     },
     {
       "ID": 147,
       "Entries": [
-        "Generic Skill Test Magic Stone_Power Deflect"
+        "Generic Skill Test Ash_Mighty Deflect"
       ]
     },
     {
       "ID": 148,
       "Entries": [
-        "Generic Skill Test Magic Stone_Parry"
+        "Generic Skill Test Ash_Parry"
       ]
     },
     {
       "ID": 149,
       "Entries": [
-        "Generic Skill Test Magic Stone_Buckler Parry"
+        "Generic Skill Test Ash_Buckler Parry"
       ]
     },
     {
       "ID": 151,
       "Entries": [
-        "Generic Skill Test Magic Stone_Magic Parry"
+        "Generic Skill Test Ash_Magic Parry"
       ]
     },
     {
       "ID": 152,
       "Entries": [
-        "Generic Skill Test Magic Stone_Projectile Parry"
+        "Generic Skill Test Ash_Projectile Parry"
       ]
     },
     {
       "ID": 153,
       "Entries": [
-        "Generic Skill Test Magic Stone_Remote Parry"
+        "Generic Skill Test Ash_Remote Parry"
       ]
     },
     {
       "ID": 154,
       "Entries": [
-        "Generic Skill Test Magic Stone_Charge Bash"
+        "Generic Skill Test Ash_Charge Bash"
       ]
     },
     {
       "ID": 155,
       "Entries": [
-        "Generic Skill Test Magic Stone_Piercing Shot"
+        "Generic Skill Test Ash_Piercing Shot"
       ]
     },
     {
       "ID": 156,
       "Entries": [
-        "Generic Skill Test Magic Stone_Rapid Fire"
+        "Generic Skill Test Ash_Rapid Fire"
       ]
     },
     {
       "ID": 157,
       "Entries": [
-        "Generic Skill Test Magic Stone_Power Shot"
+        "Generic Skill Test Ash_Power Shot"
       ]
     },
     {
       "ID": 158,
       "Entries": [
-        "Generic Skill Test Magic Stone_Homing Shot"
+        "Generic Skill Test Ash_Homing Shot"
       ]
     },
     {
       "ID": 159,
       "Entries": [
-        "Generic Skill Test Magic Stone_Arcing Shot"
+        "Generic Skill Test Ash_Arc Shot"
       ]
     },
     {
       "ID": 160,
       "Entries": [
-        "Generic Skill Test Magic Stone_Arrow Rain"
+        "Generic Skill Test Ash_Arrow Rain"
       ]
     },
     {
       "ID": 161,
       "Entries": [
-        "Generic Skill Test Magic Stone_Invisible Shot"
+        "Generic Skill Test Ash_Unseen Shot"
       ]
     },
     {
       "ID": 163,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stomp・Ground Leveling"
+        "Generic Skill Test Ash_Stomp/Ground Leveling"
       ]
     },
     {
       "ID": 164,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stomp・Frost Tread"
+        "Generic Skill Test Ash_Stomp/Frost Stomp"
       ]
     },
     {
       "ID": 165,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stomp・Storm"
+        "Generic Skill Test Ash_Stomp/Storm"
       ]
     },
     {
       "ID": 166,
       "Entries": [
-        "Generic Skill Test Magic Stone_Kick"
+        "Generic Skill Test Ash_Kick"
       ]
     },
     {
       "ID": 167,
       "Entries": [
-        "Generic Skill Test Magic Stone_Rolling Attack"
+        "Generic Skill Test Ash_Rolling Attack"
       ]
     },
     {
       "ID": 168,
       "Entries": [
-        "Generic Skill Test Magic Stone_Single Hit Area Skill"
+        "Generic Skill Test Ash_Single Area Skill"
       ]
     },
     {
       "ID": 169,
       "Entries": [
-        "Generic Skill Test Magic Stone_Hip Drop"
+        "Generic Skill Test Ash_Hip Drop"
       ]
     },
     {
       "ID": 170,
       "Entries": [
-        "Generic Skill Test Magic Stone_Hip Drop + Magic Bullet"
+        "Generic Skill Test Ash_Hip Drop\u002BMagic Projectile"
       ]
     },
     {
       "ID": 171,
       "Entries": [
-        "Generic Skill Test Magic Stone_Ground Upheaval Magic Bullet"
+        "Generic Skill Test Ash_Ground-Lifting Magic Projectile"
       ]
     },
     {
       "ID": 172,
       "Entries": [
-        "Generic Skill Test Magic Stone_Bare-hand Earthquake"
+        "Generic Skill Test Ash_Unarmed Earthquake"
       ]
     },
     {
       "ID": 173,
       "Entries": [
-        "Generic Skill Test Magic Stone_Concentrate"
+        "Generic Skill Test Ash_Concentrate"
       ]
     },
     {
       "ID": 174,
       "Entries": [
-        "Generic Skill Test Magic Stone_Self-harm/Curse"
+        "Generic Skill Test Ash_Self-Harm/Curse"
       ]
     },
     {
       "ID": 175,
       "Entries": [
-        "Generic Skill Test Magic Stone_Oath of the Sun"
+        "Generic Skill Test Ash_Oath of the Sun"
       ]
     },
     {
       "ID": 176,
       "Entries": [
-        "Generic Skill Test Magic Stone_Holy Enchant"
+        "Generic Skill Test Ash_Holy Enchant"
       ]
     },
     {
       "ID": 177,
       "Entries": [
-        "Generic Skill Test Magic Stone_Seppuku Enchant"
+        "Generic Skill Test Ash_Seppuku Enchant"
       ]
     },
     {
       "ID": 178,
       "Entries": [
-        "Generic Skill Test Magic Stone_Rock Enchant"
+        "Generic Skill Test Ash_Rock Enchant"
       ]
     },
     {
       "ID": 179,
       "Entries": [
-        "Generic Skill Test Magic Stone_Holy Enchant"
+        "Generic Skill Test Ash_Holy Enchant"
       ]
     },
     {
       "ID": 180,
       "Entries": [
-        "Generic Skill Test Magic Stone_War Cry"
+        "Generic Skill Test Ash_War Cry"
       ]
     },
     {
       "ID": 181,
       "Entries": [
-        "Generic Skill Test Magic Stone_Ultrasonic War Cry"
+        "Generic Skill Test Ash_Ultrasonic War Cry"
       ]
     },
     {
       "ID": 182,
       "Entries": [
-        "Generic Skill Test Magic Stone_Thunder War Cry"
+        "Generic Skill Test Ash_Thunder War Cry"
       ]
     },
     {
       "ID": 183,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gladiator War Cry"
+        "Generic Skill Test Ash_Gladiator War Cry"
       ]
     },
     {
       "ID": 184,
       "Entries": [
-        "Generic Skill Test Magic Stone_Troll War Cry"
+        "Generic Skill Test Ash_Troll\u0027s War Cry"
       ]
     },
     {
       "ID": 185,
       "Entries": [
-        "Generic Skill Test Magic Stone_Patience"
+        "Generic Skill Test Ash_Endure"
       ]
     },
     {
       "ID": 186,
       "Entries": [
-        "Generic Skill Test Magic Stone_Momentary Invincibility"
+        "Generic Skill Test Ash_Brief Invincibility"
       ]
     },
     {
       "ID": 187,
       "Entries": [
-        "Generic Skill Test Magic Stone_Sanctuary"
+        "Generic Skill Test Ash_Sanctuary"
       ]
     },
     {
       "ID": 188,
       "Entries": [
-        "Generic Skill Test Magic Stone_Patience_Large"
+        "Generic Skill Test Ash_Endure_Large"
       ]
     },
     {
       "ID": 189,
       "Entries": [
-        "Generic Skill Test Magic Stone_Patience_Fist"
+        "Generic Skill Test Ash_Endure_Fist"
       ]
     },
     {
       "ID": 190,
       "Entries": [
-        "Generic Skill Test Magic Stone_Quickstep"
+        "Generic Skill Test Ash_Quickstep"
       ]
     },
     {
       "ID": 191,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gehlmann Step"
+        "Generic Skill Test Ash_Gehrman Step"
       ]
     },
     {
       "ID": 192,
       "Entries": [
-        "Generic Skill Test Magic Stone_Substitution Jutsu"
+        "Generic Skill Test Ash_Substitution Technique"
       ]
     },
     {
       "ID": 193,
       "Entries": [
-        "Generic Skill Test Magic Stone_Upper Concentrate"
+        "Generic Skill Test Ash_Greater Concentrate"
       ]
     },
     {
       "ID": 194,
       "Entries": [
-        "Generic Skill Test Magic Stone_Phantom Summon"
+        "Generic Skill Test Ash_Phantom Summon"
       ]
     },
     {
       "ID": 197,
       "Entries": [
-        "Generic Skill Test Magic Stone_Whirlwind Slash_Twinblade"
+        "Generic Skill Test Ash_Spinning Slash_Twinblade"
       ]
     },
     {
       "ID": 198,
       "Entries": [
-        "Generic Skill Test Magic Stone_Spinning Sweep_Pole-type"
+        "Generic Skill Test Ash_Spinning Sweep_Pole-Shaped"
       ]
     },
     {
       "ID": 199,
       "Entries": [
-        "Generic Skill Test Magic Stone_Diving Enchanted Slash_Pole-type"
+        "Generic Skill Test Ash_Leaping Enchant Slash_Pole-Shaped"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Generic Skill Test Magic Stone_Storm Leaping Downward Thrust_Pole-type"
+        "Generic Skill Test Ash_Storm Leap Downthrust_Pole-Shaped"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "Generic Skill Test Magic Stone_Storm Spinning Sweep_Pole-type"
+        "Generic Skill Test Ash_Storm Spinning Sweep_Pole-Shaped"
       ]
     },
     {
       "ID": 202,
       "Entries": [
-        "Generic Skill Test Magic Stone_Double Slash_Standard"
+        "Generic Skill Test Ash_Double Slash_Standard"
       ]
     },
     {
       "ID": 203,
       "Entries": [
-        "Generic Skill Test Magic Stone_Double Slash_Large"
+        "Generic Skill Test Ash_Double Slash_Large"
       ]
     },
     {
       "ID": 204,
       "Entries": [
-        "Generic Skill Test Magic Stone_Double Slash_Pole"
+        "Generic Skill Test Ash_Double Slash_Pole-Shaped"
       ]
     },
     {
       "ID": 205,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Breath"
+        "Generic Skill Test Ash_Fire Breath"
       ]
     },
     {
       "ID": 206,
       "Entries": [
-        "Generic Skill Test Magic Stone_Blood Throw"
+        "Generic Skill Test Ash_Blood Throw"
       ]
     },
     {
       "ID": 207,
       "Entries": [
-        "Generic Skill Test Magic Stone_Shield Bash_Greatshield"
+        "Generic Skill Test Ash_Shield Bash_Greatshield"
       ]
     },
     {
       "ID": 208,
       "Entries": [
-        "Generic Skill Test Magic Stone_Shield Bash_Small Shield"
+        "Generic Skill Test Ash_Shield Bash_Small Shield"
       ]
     },
     {
       "ID": 209,
       "Entries": [
-        "Generic Skill Test Magic Stone_Power Deflect_Greatshield"
+        "Generic Skill Test Ash_Mighty Deflect_Greatshield"
       ]
     },
     {
       "ID": 210,
       "Entries": [
-        "Generic Skill Test Magic Stone_Power Deflect_Small Shield"
+        "Generic Skill Test Ash_Mighty Deflect_Small Shield"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        "Generic Skill Test Magic Stone_Parry_Small Shield"
+        "Generic Skill Test Ash_Parry_Small Shield"
       ]
     },
     {
       "ID": 212,
       "Entries": [
-        "Generic Skill Test Magic Stone_Parry_Dagger"
+        "Generic Skill Test Ash_Parry_Dagger"
       ]
     },
     {
       "ID": 213,
       "Entries": [
-        "Generic Skill Test Magic Stone_Parry_Curved Sword"
+        "Generic Skill Test Ash_Parry_Curved Sword"
       ]
     },
     {
       "ID": 214,
       "Entries": [
-        "Generic Skill Test Magic Stone_Charge Bash_Greatshield"
+        "Generic Skill Test Ash_Charge Bash_Greatshield"
       ]
     },
     {
       "ID": 215,
       "Entries": [
-        "Generic Skill Test Magic Stone_Charge Bash_Small Shield"
+        "Generic Skill Test Ash_Charge Bash_Small Shield"
       ]
     },
     {
       "ID": 216,
       "Entries": [
-        "Generic Skill Test Magic Stone_Light Wall Parry"
+        "Generic Skill Test Ash_Light Wall Parry"
       ]
     },
     {
       "ID": 217,
       "Entries": [
-        "Generic Skill Test Magic Stone_Concentrate"
+        "Generic Skill Test Ash_Concentrate"
       ]
     },
     {
       "ID": 218,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Tornado_Spear"
+        "Generic Skill Test Ash_Fire Tornado_Spear"
       ]
     },
     {
       "ID": 219,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Tornado_Great Spear"
+        "Generic Skill Test Ash_Fire Tornado_Heavy Spear"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Tornado_Halberd"
+        "Generic Skill Test Ash_Fire Tornado_Halberd"
       ]
     },
     {
       "ID": 221,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Tornado_Reaper"
+        "Generic Skill Test Ash_Fire Tornado_Reaper"
       ]
     },
     {
@@ -814,7 +814,7 @@
     {
       "ID": 301,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_One-handed Normal"
+        "Generic Skill Test_Barbarian War Cry_One-Handed Normal"
       ]
     },
     {
@@ -826,13 +826,13 @@
     {
       "ID": 303,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Straight Sword Large"
+        "Generic Skill Test_Barbarian War Cry_Large Straight Sword"
       ]
     },
     {
       "ID": 304,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Straight Sword Extra Large"
+        "Generic Skill Test_Barbarian War Cry_Extra Large Straight Sword"
       ]
     },
     {
@@ -850,7 +850,7 @@
     {
       "ID": 307,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Axe Normal"
+        "Generic Skill Test_Barbarian War Cry_Normal Axe"
       ]
     },
     {
@@ -868,13 +868,13 @@
     {
       "ID": 310,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Axe Large"
+        "Generic Skill Test_Barbarian War Cry_Large Axe"
       ]
     },
     {
       "ID": 311,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Hammer Normal"
+        "Generic Skill Test_Barbarian War Cry_Normal Hammer"
       ]
     },
     {
@@ -886,19 +886,19 @@
     {
       "ID": 313,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Hammer Large"
+        "Generic Skill Test_Barbarian War Cry_Large Hammer"
       ]
     },
     {
       "ID": 314,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Spear Normal"
+        "Generic Skill Test_Barbarian War Cry_Normal Spear"
       ]
     },
     {
       "ID": 315,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Great Spear"
+        "Generic Skill Test_Barbarian War Cry_Heavy Spear"
       ]
     },
     {
@@ -910,7 +910,7 @@
     {
       "ID": 317,
       "Entries": [
-        "Generic Skill Test_Barbarian War Cry_Greatcurved Sword"
+        "Generic Skill Test_Barbarian War Cry_Curved Greatsword"
       ]
     },
     {
@@ -934,7 +934,7 @@
     {
       "ID": 321,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_One-handed Standard"
+        "Generic Skill Test_Warrior War Cry_One-Handed Normal"
       ]
     },
     {
@@ -946,19 +946,19 @@
     {
       "ID": 323,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Straight Sword Large"
+        "Generic Skill Test_Warrior War Cry_Large Straight Sword"
       ]
     },
     {
       "ID": 324,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Straight Sword Extra Large"
+        "Generic Skill Test_Warrior War Cry_Extra Large Straight Sword"
       ]
     },
     {
       "ID": 325,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Curved Sword Standard"
+        "Generic Skill Test_Warrior War Cry_Curved Sword Normal"
       ]
     },
     {
@@ -970,7 +970,7 @@
     {
       "ID": 327,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Axe Standard"
+        "Generic Skill Test_Warrior War Cry_Normal Axe"
       ]
     },
     {
@@ -988,13 +988,13 @@
     {
       "ID": 330,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Axe Large"
+        "Generic Skill Test_Warrior War Cry_Large Axe"
       ]
     },
     {
       "ID": 331,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Hammer Standard"
+        "Generic Skill Test_Warrior War Cry_Normal Hammer"
       ]
     },
     {
@@ -1006,19 +1006,19 @@
     {
       "ID": 333,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Hammer Large"
+        "Generic Skill Test_Warrior War Cry_Large Hammer"
       ]
     },
     {
       "ID": 334,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Spear Standard"
+        "Generic Skill Test_Warrior War Cry_Normal Spear"
       ]
     },
     {
       "ID": 335,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Great Spear"
+        "Generic Skill Test_Warrior War Cry_Heavy Spear"
       ]
     },
     {
@@ -1030,13 +1030,13 @@
     {
       "ID": 337,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Greatcurved Sword"
+        "Generic Skill Test_Warrior War Cry_Curved Greatsword"
       ]
     },
     {
       "ID": 338,
       "Entries": [
-        "Generic Skill Test_Warrior War Cry_Fist Standard"
+        "Generic Skill Test_Warrior War Cry_Fist Normal"
       ]
     },
     {
@@ -1048,277 +1048,277 @@
     {
       "ID": 340,
       "Entries": [
-        "Generic Skill Test Magic Stone_Single Hit Frenzy_Greatsword"
+        "Generic Skill Test Ash_Single Flurry_Greatsword"
       ]
     },
     {
       "ID": 341,
       "Entries": [
-        "Generic Skill Test Magic Stone_Single Hit Frenzy_Halberd"
+        "Generic Skill Test Ash_Single Flurry_Halberd"
       ]
     },
     {
       "ID": 345,
       "Entries": [
-        "Generic Skill Test Magic Stone_Blood Slash_Greatsword"
+        "Generic Skill Test Ash_Blood Slash_Greatsword"
       ]
     },
     {
       "ID": 346,
       "Entries": [
-        "Generic Skill Test Magic Stone_Blood Slash_Twinblade"
+        "Generic Skill Test Ash_Blood Slash_Twinblade"
       ]
     },
     {
       "ID": 350,
       "Entries": [
-        "Generic Skill Test Magic Stone_Magic Attack + Enchant (Frost)"
+        "Generic Skill Test Ash_Magic Attack\u002BEnchant (Frost)"
       ]
     },
     {
       "ID": 355,
       "Entries": [
-        "Generic Skill Test Magic Stone_Magic Attack + Enchant (Poison)"
+        "Generic Skill Test Ash_Magic Attack\u002BEnchant (Poison)"
       ]
     },
     {
       "ID": 360,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gae Bolg"
+        "Generic Skill Test Ash_Gáe Bolg"
       ]
     },
     {
       "ID": 365,
       "Entries": [
-        "Generic Skill Test Magic Stone_Continuous Lightning Strike_Pole-type"
+        "Generic Skill Test Ash_Chain Lightning_Pole-Shaped"
       ]
     },
     {
       "ID": 370,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lightning Strike + Downward Slash_Fist"
+        "Generic Skill Test Ash_Lightning Strike\u002BDownward Slash_Fist"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "NT Early_Scimitar_Standard_Sonic Boom"
+        "NT Initial_Scimitar_Standard_Sonic Boom"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "NT Early_Soldier of the Fallen Spear_Standard_Concentrate"
+        "NT Initial_Lost Soldier\u0027s Spear_Standard_Concentrate"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "NT Early_Mace_Standard_Kick"
+        "NT Initial_Mace_Standard_Kick"
       ]
     },
     {
       "ID": 503,
       "Entries": [
-        "NT Early_Broken Wooden Shield_Standard_Sanctuary"
+        "NT Initial_Broken Wooden Shield_Standard_Sanctuary"
       ]
     },
     {
       "ID": 504,
       "Entries": [
-        "NT Early_Bastard Sword_Standard_Continuous Lightning Strike"
+        "NT Initial_Bastard Sword_Standard_Chain Lightning"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Standard Variant_Aerial Forward Roll Slam"
+        "Standard Follow-Up_Midair Forward Flip Slam"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Standard Variant_Piercing Thrust"
+        "Standard Follow-Up_Piercing Thrust"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "Standard Variant_Spinning Slash"
+        "Standard Follow-Up_Spinning Slash"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "Standard Variant_Spinning Sweep"
+        "Standard Follow-Up_Spinning Sweep"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Magic Variant_Funnel + Thrust"
+        "Magic Follow-Up_Funnel\u002BThrust"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "Blood Variant_Blood Slash"
+        "Blood Follow-Up_Blood Slash"
       ]
     },
     {
       "ID": 1006,
       "Entries": [
-        "Warrior Fire Variant_Lava Placement"
+        "Warrior Flame Follow-Up_Lava Placement"
       ]
     },
     {
       "ID": 1007,
       "Entries": [
-        "Magic Variant_Gravity Pull"
+        "Magic Follow-Up_Gravity Pull"
       ]
     },
     {
       "ID": 1008,
       "Entries": [
-        "Quality Variant_Sonic Boom"
+        "Quality Follow-Up_Sonic Boom"
       ]
     },
     {
       "ID": 1009,
       "Entries": [
-        "Strength Variant_Earthquake"
+        "Strength Follow-Up_Earthquake"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Sorcerer Fire Variant_Flame Sweep+Flame Cut"
+        "Caster Flame Follow-Up_Flame Sweep\u002BWreathed Slash"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        "Lightning Variant_Continuous Lightning Strike"
+        "Lightning Follow-Up_Chain Lightning"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "Magic Variant_Soul Colossal Sword_2-stage"
+        "Magic Follow-Up_Greatsword of Souls_Phase 2"
       ]
     },
     {
       "ID": 1013,
       "Entries": [
-        "Heavy Variant_Stomp/Ground Leveling"
+        "Heavy Follow-Up_Stomp/Ground Leveling"
       ]
     },
     {
       "ID": 1014,
       "Entries": [
-        "Quality Variant_Concentrate"
+        "Quality Follow-Up_Concentrate"
       ]
     },
     {
       "ID": 1015,
       "Entries": [
-        "Holy Variant_Sanctuary"
+        "Sacred Follow-Up_Sanctuary"
       ]
     },
     {
       "ID": 1016,
       "Entries": [
-        "Dexterity Variant_Quickstep"
+        "Dexterity Follow-Up_Quickstep"
       ]
     },
     {
       "ID": 1017,
       "Entries": [
-        "Dexterity Variant_Substitute Jutsu"
+        "Dexterity Follow-Up_Substitution Technique"
       ]
     },
     {
       "ID": 3010,
       "Entries": [
-        "301_Battlefield Physician _Guiding Sacred Seal"
+        "301_Battlefield Medic _Guiding Sacred Seal"
       ]
     },
     {
       "ID": 3040,
       "Entries": [
-        "_304_Wounded Knight_Doom Spear [Stormleap Thrust]"
+        "_304_Scarred Knight_Spear of Ruin [Storm Leaping Thrust]"
       ]
     },
     {
       "ID": 3041,
       "Entries": [
-        "_304_Wounded Knight_Guiding Sacred Seal"
+        "_304_Scarred Knight_Guiding Sacred Seal"
       ]
     },
     {
       "ID": 3042,
       "Entries": [
-        "_304_Wounded Knight_Guiding Sacred Seal (Invader)"
+        "_304_Scarred Knight_Guiding Sacred Seal (When Dark Spirit)"
       ]
     },
     {
       "ID": 3090,
       "Entries": [
-        "309 _Bandit Chief(Patch)_Soldier of the Fallen Spear[Kick]"
+        "309 _Bandit Chief (Patches)_Lost Soldier\u0027s Spear [Kick]"
       ]
     },
     {
       "ID": 3091,
       "Entries": [
-        "309 _Bandit Chief(Patch)_Wandering Royal Army Greatshield(New)"
+        "309 _Bandit Chief (Patches)_Wandering Royal Army Greatshield (New)"
       ]
     },
     {
       "ID": 3092,
       "Entries": [
-        "309 _Bandit Chief(Patch)_Soldier of the Fallen Spear[Kick] _For Co-op Character"
+        "309 _Bandit Chief (Patches)_Lost Soldier\u0027s Spear [Kick] _For Co-op Character"
       ]
     },
     {
       "ID": 3093,
       "Entries": [
-        "309 _Bandit Chief(Patch)_Wandering Royal Army Greatshield(New) _For Co-op Character"
+        "309 _Bandit Chief (Patches)_Wandering Royal Army Greatshield (New) _For Co-op Character"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        "_311_Half-Fort Castellan_Lost Knight Halberd [111_Loop Frenzy"
+        "_311_Lord of the Peninsula Fort_Lost Knight\u0027s Halberd [111_Loop Flurry/Halberd]"
       ]
     },
     {
       "ID": 3111,
       "Entries": [
-        "_311_Half-Fort Castellan_Erdtree Sacred Seal"
+        "_311_Lord of the Peninsula Fort_World Tree Sacred Seal"
       ]
     },
     {
       "ID": 3120,
       "Entries": [
-        "312_Plains Fort Lord_Flamberge[Flame Sweep+Enveloping Cut]"
+        "312_Lord of Plains Fort_Flamberge [Flame Sweep\u002BWreathed Slash]"
       ]
     },
     {
       "ID": 3121,
       "Entries": [
-        "312_Plains Fort Lord_Staff"
+        "312_Lord of Plains Fort_Staff"
       ]
     },
     {
       "ID": 3122,
       "Entries": [
-        "312_Plains Fort Lord_Flamberge[Flame Sweep+Enveloping Cut]_For Co-op"
+        "312_Lord of Plains Fort_Flamberge [Flame Sweep\u002BWreathed Slash]_For Co-op"
       ]
     },
     {
       "ID": 3123,
       "Entries": [
-        "312_Plains Fort Lord_Assassin's Staff"
+        "312_Lord of Plains Fort_Assassin\u0027s Staff"
       ]
     },
     {
@@ -1330,145 +1330,145 @@
     {
       "ID": 3141,
       "Entries": [
-        "314_Munou_Wandering Royal Army Elite Mounted Soldier Shield"
+        "314_Munou_Wandering Royal Army Elite Cavalry Shield"
       ]
     },
     {
       "ID": 3160,
       "Entries": [
-        "316_Academy Female Sorcerer_Glintstone Sorcerer Staff B"
+        "316_Academy Sorceress_Glintstone Sorcerer\u0027s Staff B"
       ]
     },
     {
       "ID": 3180,
       "Entries": [
-        "318_Host of Chaos(Yupa)_Monohoshizao[Piercing Thrust]"
+        "318_Host of Chaos (Yura)_Drying Pole [Piercing Thrust]"
       ]
     },
     {
       "ID": 3181,
       "Entries": [
-        "318_Host of Chaos(Yupa)_Chaos Sacred Seal"
+        "318_Host of Chaos (Yura)_Chaos Sacred Seal"
       ]
     },
     {
       "ID": 3182,
       "Entries": [
-        "318_Host of Chaos(Yupa)_Uchigatana[Piercing Thrust]"
+        "318_Host of Chaos (Yura)_Uchigatana [Piercing Thrust]"
       ]
     },
     {
       "ID": 3183,
       "Entries": [
-        "318_Mixed Incarnate(Yupa)_Clothesline Pole[Piercing Thrust]_For White Phantom"
+        "318_Host of Chaos (Yura)_Drying Pole [Piercing Thrust]_For White Phantom"
       ]
     },
     {
       "ID": 3190,
       "Entries": [
-        "_319_D_Twin Swords [Holy Enchantment]"
+        "_319_D_Twin Swords [Holy Enchant]"
       ]
     },
     {
       "ID": 3191,
       "Entries": [
-        "_319_D_Beast Holy Seal"
+        "_319_D_Beast Seal"
       ]
     },
     {
       "ID": 3192,
       "Entries": [
-        "319_D_Twin Swords (Blood Smear Variant) [Holy Enchant]"
+        "319_D_Twin Swords (Blood Splatter Variant) [Holy Enchant]"
       ]
     },
     {
       "ID": 3193,
       "Entries": [
-        "_319_D_Golden Order Holy Seal"
+        "_319_D_Golden Order Seal"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "321_Watchtower Noble_Margit's Summoned Dagger+[Holy Enchant]"
+        "321_Watchtower Noble_Margit\u0027s Summoned Dagger\u002B[Holy Enchant]"
       ]
     },
     {
       "ID": 3211,
       "Entries": [
-        "321_Watchtower Noble_Erdtree Sacred Seal"
+        "321_Watchtower Noble_World Tree Sacred Seal"
       ]
     },
     {
       "ID": 3230,
       "Entries": [
-        "323_Dung Eater_Emanuel's Sword[Dedicated Skill]"
+        "323_Dung Eater_Emanuel\u0027s Sword [Unique Skill]"
       ]
     },
     {
       "ID": 3240,
       "Entries": [
-        "324_Hundred-Sage Lord_Assassin's Staff"
+        "324_Lord of a Hundred Wisdoms_Assassin\u0027s Staff"
       ]
     },
     {
       "ID": 3241,
       "Entries": [
-        "324_Hundred-Sage Lord_Guiding Sacred Seal"
+        "324_Lord of a Hundred Wisdoms_Guiding Sacred Seal"
       ]
     },
     {
       "ID": 3250,
       "Entries": [
-        "325_Roger_Royal Estoc[Funnel Skill]"
+        "325_Rogier_Royal Estoc [Funnel Skill]"
       ]
     },
     {
       "ID": 3251,
       "Entries": [
-        "325_Roger_Glintstone Sorcerer Staff B"
+        "325_Rogier_Glintstone Sorcerer\u0027s Staff B"
       ]
     },
     {
       "ID": 3260,
       "Entries": [
-        "326_Volcano Manor Strongest Knight(Mercutio)_Zweihander[Vacuum Wave Slash]"
+        "326_Volcano Manor\u0027s Strongest Knight (Merkatz)_Zweihander [Vacuum Slash]"
       ]
     },
     {
       "ID": 3261,
       "Entries": [
-        "326_Volcano Manor Strongest Knight(Mercutio)_Guiding Sacred Seal"
+        "326_Volcano Manor\u0027s Strongest Knight (Merkatz)_Guiding Sacred Seal"
       ]
     },
     {
       "ID": 3262,
       "Entries": [
-        "326_Volcano Manor Strongest Knight(Mercutio)_Scarlet Rot King's Scepter"
+        "326_Volcano Manor\u0027s Strongest Knight (Merkatz)_Ghoul King\u0027s Sceptre"
       ]
     },
     {
       "ID": 3270,
       "Entries": [
-        "327_Dragon Feast Warrior Woman_Blood Blade Twinblade [Dedicated Skill]"
+        "327_Dragon Communion Warrior Woman_Bloodblade Twinblade [Unique Skill]"
       ]
     },
     {
       "ID": 3271,
       "Entries": [
-        "327_Dragon Feast Warrior Woman_Dragon Feast Sacred Seal"
+        "327_Dragon Communion Warrior Woman_Dragon Communion Seal"
       ]
     },
     {
       "ID": 3290,
       "Entries": [
-        "329_Death Faction_Heavy Thrusting Sword[Multi-Hit Thrust]"
+        "329_Death Faction_Heavy Thrusting Sword [Multi-Thrust]"
       ]
     },
     {
       "ID": 3291,
       "Entries": [
-        "329_Death Faction_Monsan Splinter Faction Staff"
+        "329_Death Faction_Raya Lucaria Splinter Staff"
       ]
     },
     {
@@ -1486,79 +1486,79 @@
     {
       "ID": 3310,
       "Entries": [
-        "331_Ruffian(Crab Eater)_Iron Ball Fist[654_Gladiator War Cry]"
+        "331_Ruffian (Crab Eater)_Iron Ball Fist [654_Gladiator War Cry]"
       ]
     },
     {
       "ID": 3330,
       "Entries": [
-        "333_Unreturning Glintstone Sorcerer_Glintstone Sorcerer Staff B"
+        "333_Glintstone Sorcerer Who Can\u0027t Return_Glintstone Sorcerer\u0027s Staff B"
       ]
     },
     {
       "ID": 3340,
       "Entries": [
-        "334_Hundred-Sage Lord's Daughter(Nephelie)_War Hawk Axe[Dedicated Skill]"
+        "334_Daughter of the Lord of a Hundred Wisdoms (Nepheli)_War Hawk Axe [Unique Skill]"
       ]
     },
     {
       "ID": 3350,
       "Entries": [
-        "335_Jiko Bo_Jagged Curved Sword[652_Ultrasonic War Cry]"
+        "335_Jiko-bo_Serrated Curved Sword [652_Ultrasonic War Cry]"
       ]
     },
     {
       "ID": 3351,
       "Entries": [
-        "335_Jiko Bo_Guiding Sacred Seal"
+        "335_Jiko-bo_Guiding Sacred Seal"
       ]
     },
     {
       "ID": 3390,
       "Entries": [
-        "_339_Hundred-Sage Hand Underling_Bone Katar [Dedicated Skill]"
+        "_339_Lord of a Hundred Wisdoms\u0027 Henchman_Bone Katar [Unique Skill]"
       ]
     },
     {
       "ID": 3391,
       "Entries": [
-        "_339_Hundred-Sage Hand_Gravity Staff"
+        "_339_Hand of the Hundred-Wise Lord_Gravity Staff"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "_340_Some Crushed Finger_Assassin Claws [Substitution Technique]"
+        "_340_A Certain Crushed Finger_Assassin\u0027s Talons [Substitution Technique]"
       ]
     },
     {
       "ID": 3430,
       "Entries": [
-        "343_Nerius_Demi-Blood Monk Dagger[Blood Throw]"
+        "343_Nerius_Demon Blood Believer\u0027s Dagger [Blood Throw]"
       ]
     },
     {
       "ID": 3440,
       "Entries": [
-        "344_Tragos_Great War Hammer [Hip Drop]"
+        "344_Tragoth_Great Warhammer [Hip Drop]"
       ]
     },
     {
       "ID": 3441,
       "Entries": [
-        "344_Tragos_Arbalest"
+        "344_Tragoth_Arbalest"
       ]
     },
     {
       "ID": 3442,
       "Entries": [
-        "344_Tragos_Great Warhammer [Hip Drop]_For Co-op"
+        "344_Tragoth_Great Warhammer [Hip Drop]_For Co-op"
       ]
     },
     {
       "ID": 3443,
       "Entries": [
-        "344_Tragos_Arbalest_For Co-op"
+        "344_Tragoth_Arbalest_For Co-op"
       ]
     },
     {
@@ -1576,109 +1576,109 @@
     {
       "ID": 3461,
       "Entries": [
-        "346_Volcano Manor Request Target 2_Assassin Knight Crossbow"
+        "346_Volcano Manor Request Target 2_Assassin Knight\u0027s Crossbow"
       ]
     },
     {
       "ID": 3470,
       "Entries": [
-        "_347_Volcano Manor Quest Target 3 (Muno's Elder Brother)_Chain Whip [Gehrman Step]"
+        "_347_Volcano Manor Request Target 3 (Munou Elder Brother)_Chain Whip [Gehrman Step]"
       ]
     },
     {
       "ID": 3510,
       "Entries": [
-        "351_Golden Mask Attendant_Flail [Flail Barrage]"
+        "351_Gold Mask\u0027s Attendant_Flail [Flail Barrage]"
       ]
     },
     {
       "ID": 3511,
       "Entries": [
-        "351_Golden Mask Attendant_Golden Order Sacred Seal"
+        "351_Gold Mask\u0027s Attendant_Golden Order Seal"
       ]
     },
     {
       "ID": 3520,
       "Entries": [
-        "352_Divine Tower Lake NPC_Glintstone Sorcerer Staff A"
+        "352_Divine Tower Lake NPC_Glintstone Sorcerer\u0027s Staff A"
       ]
     },
     {
       "ID": 3530,
       "Entries": [
-        "353_Butcher Knife NPC_Butcher Knife [Loop Frenzy Axe]"
+        "353_Meat Cleaver NPC_Meat Cleaver [Loop Flurry/Axe]"
       ]
     },
     {
       "ID": 3531,
       "Entries": [
-        "353_Butcher Knife NPC_Sacred Butcher Knife [Loop Frenzy Axe]"
+        "353_Meat Cleaver NPC_Holy Meat Cleaver [Loop Flurry/Axe]"
       ]
     },
     {
       "ID": 3532,
       "Entries": [
-        "353_Butcher Knife NPC_Sacred Butcher Knife [Great Heal Smash]"
+        "353_Meat Cleaver NPC_Holy Meat Cleaver [Great Heal Strike]"
       ]
     },
     {
       "ID": 3550,
       "Entries": [
-        "355_Open Snowy Mountain Church 5-2 NPC_Demon's Blood Sword [Dedicated Skill]"
+        "355_Open Snow Mountain Church 5-2NPC_Demon Blood Katana [Unique Skill]"
       ]
     },
     {
       "ID": 3551,
       "Entries": [
-        "355_Open Snowy Mountain Church 5-2 NPC_Wakizashi [Quickstep]"
+        "355_Open Snow Mountain Church 5-2NPC_Wakizashi [Quickstep]"
       ]
     },
     {
       "ID": 3552,
       "Entries": [
-        "355_Open Snowy Mountain Church 5-2 NPC_Demon's Blood Sword [Dedicated Skill]_For Co-op"
+        "355_Open Snow Mountain Church 5-2NPC_Demon Blood Katana [Unique Skill]_For Co-op"
       ]
     },
     {
       "ID": 3553,
       "Entries": [
-        "355_Open Snowy Mountain Church 5-2 NPC_Wakizashi [Quickstep]_For Co-op"
+        "355_Open Snow Mountain Church 5-2NPC_Wakizashi [Quickstep]_For Co-op"
       ]
     },
     {
       "ID": 3560,
       "Entries": [
-        "356_Circular Plaza 2-1 NPC_Flail [Flail Frenzy]"
+        "356_Circular Plaza 2-1NPC_Flail [Flail Flurry]"
       ]
     },
     {
       "ID": 3561,
       "Entries": [
-        "356_Circular Plaza 2-1 NPC_Giant's Flame Sacred Seal"
+        "356_Circular Plaza 2-1NPC_Giant\u0027s Seal"
       ]
     },
     {
       "ID": 3590,
       "Entries": [
-        "_359_Monsan_Pre-Boss Area (Monsan Knight)_Glintstone Sword (Blue) [200_Funnel + Thrust]"
+        "_359_Raya Lucaria_Before Boss EV (Raya Lucaria Knight)_Glintstone Sword (Blue) [200_Funnel\u002BThrust]"
       ]
     },
     {
       "ID": 3591,
       "Entries": [
-        "_359_Monsan_Pre-Boss Area (Monsan Knight)_Monsan Knight Shield [Magic Parry]"
+        "_359_Raya Lucaria_Before Boss EV (Raya Lucaria Knight)_Raya Lucaria Knight\u0027s Shield [Magic Parry]"
       ]
     },
     {
       "ID": 3592,
       "Entries": [
-        "_359_Monsan_Pre-Boss Area (Monsan Knight)_Glintstone Sorcerer Staff A"
+        "_359_Raya Lucaria_Before Boss EV (Raya Lucaria Knight)_Glintstone Sorcerer\u0027s Staff A"
       ]
     },
     {
       "ID": 3600,
       "Entries": [
-        "360_Round Table First Tarnished Survivor A_Godslayer Sacred Sword [Dedicated Skill]"
+        "360_Survivor of the Roundtable\u0027s First Tarnished A_Sacred Relic Sword [Unique Skill]"
       ]
     },
     {
@@ -1708,13 +1708,13 @@
     {
       "ID": 3670,
       "Entries": [
-        "_367_Cave 5-2 (Spirit Summoned by Snake Snail)_Uchigatana [606_Seppuku Enchant]"
+        "_367_Cave 5-2 (Spirit Summoned by Snake-Snail)_Uchigatana [606_Seppuku Enchant]"
       ]
     },
     {
       "ID": 3671,
       "Entries": [
-        "_367_Cave 5-2 (Spirit Summoned by Snake Snail)_Wakizashi"
+        "_367_Cave 5-2 (Spirit Summoned by Snake-Snail)_Wakizashi"
       ]
     },
     {
@@ -1726,25 +1726,25 @@
     {
       "ID": 3681,
       "Entries": [
-        "368_Marika Ruins 2 (Transforming Slime_Mace)_Mace"
+        "368_Marika Ruins 2 (Transforming Slime_Mace )_Mace"
       ]
     },
     {
       "ID": 3682,
       "Entries": [
-        "368_Marika Ruins 2 (Transforming Slime_Colossal Sword)_Zweihander"
+        "368_Marika Ruins 2 (Transforming Slime_Extra Large Check)_Zweihander"
       ]
     },
     {
       "ID": 3683,
       "Entries": [
-        "368Marika Ruins 2 (Transforming Slime_Spear Shield)_Spear"
+        "368 Marika Ruins 2 (Transforming Slime_Spear and Shield)_Spear"
       ]
     },
     {
       "ID": 3684,
       "Entries": [
-        "368Marika Ruins 2 (Transforming Slime_Spear Shield)_Search Party Greatshield"
+        "368 Marika Ruins 2 (Transforming Slime_Spear and Shield)_Search Party Greatshield"
       ]
     },
     {
@@ -1756,31 +1756,31 @@
     {
       "ID": 3700,
       "Entries": [
-        "361_Bedfellows 2_Gladiator Greataxe [Endure]"
+        "361_Bedfellows 2_Gladiator\u0027s Greataxe [Endure]"
       ]
     },
     {
       "ID": 3701,
       "Entries": [
-        "361_Bedfellows 2_Gladiator Greataxe (Malenia Faction)"
+        "361_Bedfellows 2_Gladiator\u0027s Greataxe (Malenia Faction)"
       ]
     },
     {
       "ID": 3702,
       "Entries": [
-        "361_Bedfellows 2_Gladiator Greataxe [Endure]"
+        "361_Bedfellows 2_Gladiator\u0027s Greataxe [Endure]"
       ]
     },
     {
       "ID": 3703,
       "Entries": [
-        "361_Bedfellows 2_Gladiator Greataxe (Malenia Faction)"
+        "361_Bedfellows 2_Gladiator\u0027s Greataxe (Malenia Faction)"
       ]
     },
     {
       "ID": 3710,
       "Entries": [
-        "361_Bedfellows 3_Glintstone Sorcerer Staff A"
+        "361_Bedfellows 3_Glintstone Sorcerer\u0027s Staff A"
       ]
     },
     {
@@ -1792,7 +1792,7 @@
     {
       "ID": 3712,
       "Entries": [
-        "361_Bedfellows 3_Glintstone Sorcerer Staff A"
+        "361_Bedfellows 3_Glintstone Sorcerer\u0027s Staff A"
       ]
     },
     {
@@ -1804,103 +1804,103 @@
     {
       "ID": 3720,
       "Entries": [
-        "_372_Highland Fort West Side_Ant Thorn Rapier [Piercing Thrust]"
+        "_372_West Side of Altus Fort_Antspur Rapier [Piercing Thrust]"
       ]
     },
     {
       "ID": 3721,
       "Entries": [
-        "_372_Highland Fort West Side_World Tree Holy Seal"
+        "_372_West Side of Altus Fort_World Tree Sacred Seal"
       ]
     },
     {
       "ID": 3730,
       "Entries": [
-        "_373_Plains Arena Front Red Ghost 1_Armor Piercer [Two-hit Poison]"
+        "_373_Red Phantom 1 Before Plains Colosseum_Armor Piercer [Two-Hit Sure Poison]"
       ]
     },
     {
       "ID": 3731,
       "Entries": [
-        "_373_Plains Arena Front Red Ghost 1_Buckler [Buckler Parry]"
+        "_373_Red Phantom 1 Before Plains Colosseum_Buckler [Buckler Parry]"
       ]
     },
     {
       "ID": 3740,
       "Entries": [
-        "_374_Plains Arena Front Red Ghost 2_Great Mace (Heavy) [Big Recovery Smash]"
+        "_374_Red Phantom 2 Before Plains Colosseum_Great Mace (Heavy) [Great Heal Strike]"
       ]
     },
     {
       "ID": 3741,
       "Entries": [
-        "_374_Plains Arena Front Red Ghost 2_Knight Shield"
+        "_374_Red Phantom 2 Before Plains Colosseum_Knight Shield"
       ]
     },
     {
       "ID": 3750,
       "Entries": [
-        "_375_Plains Arena Front Red Ghost 3_Estoc (Magic) [Weapon Parry]"
+        "_375_Red Phantom 3 Before Plains Colosseum_Estoc (Magic) [Weapon Parry]"
       ]
     },
     {
       "ID": 3751,
       "Entries": [
-        "_375_Plains Arena Front Red Ghost 3_Leg Cripple Staff"
+        "_375_Red Phantom 3 Before Plains Colosseum_Cripple\u0027s Staff"
       ]
     },
     {
       "ID": 3760,
       "Entries": [
-        "376_Cave 3-4 (Death Caster)_Black Knife Descendant Dagger"
+        "376_Cave 3-4 (Instant Death User)_Black Knife Assassin\u0027s Dagger"
       ]
     },
     {
       "ID": 3761,
       "Entries": [
-        "376_Cave 3-4 (Death Caster)_Monsan Faction Staff"
+        "376_Cave 3-4 (Instant Death User)_Raya Lucaria Splinter Staff"
       ]
     },
     {
       "ID": 3770,
       "Entries": [
-        "_377_Underground Labyrinth Plains Depths Blood Swamp Area_Bleed Armor Piercer [Multi-hit Thrust]"
+        "_377_Blood Swamp Area in Underground Labyrinth Plains Depths_Blood Armor Piercer [Multi-Thrust]"
       ]
     },
     {
       "ID": 3771,
       "Entries": [
-        "_377_Underground Labyrinth Plains Depths Blood Swamp Area_Guiding Holy Seal"
+        "_377_Blood Swamp Area in Underground Labyrinth Plains Depths_Guiding Sacred Seal"
       ]
     },
     {
       "ID": 3800,
       "Entries": [
-        "380_Round Table First Tarnished Survivor_Staff of Loss"
+        "380_Survivor of the Roundtable\u0027s First Tarnished_Lost Staff"
       ]
     },
     {
       "ID": 3820,
       "Entries": [
-        "_382_Open Snowy Mountain Seaside Tower 5-1_Boss-tier_Giant's Flame Holy Seal"
+        "_382_Open Snow Mountain Seaside Tower 5-1_Boss-Class_Giant\u0027s Seal"
       ]
     },
     {
       "ID": 3821,
       "Entries": [
-        "_382_Open Snowy Mountain Seaside Tower 5-1_Boss-tier_Bazooka Shield"
+        "_382_Open Snow Mountain Seaside Tower 5-1_Boss-Class_Bazooka Shield"
       ]
     },
     {
       "ID": 3830,
       "Entries": [
-        "_383_Open Snowy Mountain Seaside Tower 5-1_Common_Lost Soldier Long Torch"
+        "_383_Open Snow Mountain Seaside Tower 5-1_Small Fry_Lost Soldier\u0027s Long Torch"
       ]
     },
     {
       "ID": 3831,
       "Entries": [
-        "_383_Open Snowy Mountain Seaside Tower 5-1_Common_Giant's Flame Holy Seal"
+        "_383_Open Snow Mountain Seaside Tower 5-1_Small Fry_Giant\u0027s Seal"
       ]
     },
     {
@@ -1912,7 +1912,7 @@
     {
       "ID": 3850,
       "Entries": [
-        "_385_Base 1F Enemy_Great Sickle [Phantom Double Slash]"
+        "_385_Base 1F Enemy_Great Scythe [Phantom 2 Chain Slash]"
       ]
     },
     {
@@ -1924,79 +1924,79 @@
     {
       "ID": 3860,
       "Entries": [
-        "_386_Royal Capital Underground Catacombs_Demon's Blood Monk Dagger"
+        "_386_Leyndell Catacombs_Demon Blood Believer\u0027s Dagger"
       ]
     },
     {
       "ID": 3861,
       "Entries": [
-        "_386_Royal Capital Underground Catacombs_World Tree Holy Seal"
+        "_386_Leyndell Catacombs_World Tree Sacred Seal"
       ]
     },
     {
       "ID": 3870,
       "Entries": [
-        "387_Millicent's Sister A_Putrid Knights Scythe"
+        "387_Millicent\u0027s Sister A_Cleanrot Knight\u0027s Scythe"
       ]
     },
     {
       "ID": 3880,
       "Entries": [
-        "388_Millicent's Sister B_Malgit's Summoning Spear"
+        "388_Millicent\u0027s Sister B_Margit\u0027s Summoned Spear"
       ]
     },
     {
       "ID": 3890,
       "Entries": [
-        "389_Millicent's Sister C_Dancer Curved Sword"
+        "389_Millicent\u0027s Sister C_Dancer\u0027s Curved Sword"
       ]
     },
     {
       "ID": 3900,
       "Entries": [
-        "390_Miriel's Sister D_Same Appearance as Daughter Marika's Dagger"
+        "390_Millicent\u0027s Sister D_Same Appearance as Daughter Marika\u0027s Dagger"
       ]
     },
     {
       "ID": 3901,
       "Entries": [
-        "390_Miriel's Sister D_Sacred Seal of the Erdtree"
+        "390_Millicent\u0027s Sister D_World Tree Sacred Seal"
       ]
     },
     {
       "ID": 3910,
       "Entries": [
-        "391_Valley Event Target_Great Stars[100_Lion Slash]"
+        "391_Varré Event Target_Great Stars [100_Lion Slash]"
       ]
     },
     {
       "ID": 3911,
       "Entries": [
-        "391_Valley Event Target_Claw Mark Sacred Seal"
+        "391_Varré Event Target_Clawmark Seal"
       ]
     },
     {
       "ID": 5000,
       "Entries": [
-        "Fallen Knight Halberd+8_Loop Frenzy・Halberd"
+        "Lost Knight\u0027s Halberd\u002B8_Loop Flurry/Halberd"
       ]
     },
     {
       "ID": 5010,
       "Entries": [
-        "Royal Estoc +8_Funnel Thrust"
+        "Royal Estoc\u002B8_Funnel Thrust"
       ]
     },
     {
       "ID": 5020,
       "Entries": [
-        "Soldier of the Fallen Spear+7_No Dedicated Skill"
+        "Lost Soldier\u0027s Spear\u002B7_No Exclusive Skill"
       ]
     },
     {
       "ID": 5030,
       "Entries": [
-        "Clothesline Pole_Piercing Blade"
+        "Drying Pole_Piercing Katana"
       ]
     },
     {
@@ -2008,211 +2008,211 @@
     {
       "ID": 9000,
       "Entries": [
-        "Ice Crest Shield+25_Magic Parry"
+        "Icon Shield\u002B25_Magic Parry"
       ]
     },
     {
       "ID": 9001,
       "Entries": [
-        "Heavy Great War Hammer+25_Hound Step"
+        "Heavy Great Warhammer\u002B25_Hound Step"
       ]
     },
     {
       "ID": 9002,
       "Entries": [
-        "Heavy Stone Club+25_Horah's Ground Shake"
+        "Heavy Stone Club\u002B25_Horah\u0027s Ground Shaker"
       ]
     },
     {
       "ID": 9003,
       "Entries": [
-        "Heavy Greatsword+25_Hound Step"
+        "Heavy Greatsword\u002B25_Hound Step"
       ]
     },
     {
       "ID": 9004,
       "Entries": [
-        "Quality Grosmesser+25_Sword Dance"
+        "Quality Grossmesser\u002B25_Sword Dance"
       ]
     },
     {
       "ID": 9005,
       "Entries": [
-        "Quality Lost Knight's Sword+25_Storm Kick"
+        "Quality Banished Knight\u0027s Sword\u002B25_Storm Legs"
       ]
     },
     {
       "ID": 9006,
       "Entries": [
-        "Keen Hoslow's Petal +25_Hound Step"
+        "Keen Hosrow\u0027s Petal\u002B25_Hound Step"
       ]
     },
     {
       "ID": 9007,
       "Entries": [
-        "Composite Bow+25_Rapid Fire"
+        "Composite Bow\u002B25_Rapid Fire"
       ]
     },
     {
       "ID": 9100,
       "Entries": [
-        "Keen Bug-Eaten Swordspear +25 Charge"
+        "Keen Moth-Eaten Sword Spear\u002B25 Rush"
       ]
     },
     {
       "ID": 9101,
       "Entries": [
-        "Mystic Uchigatana +25 Hound Step"
+        "Arcane Uchigatana\u002B25 Hound Step"
       ]
     },
     {
       "ID": 9102,
       "Entries": [
-        "Blood Loss Gravekeeper Scythe+25 Double Strike"
+        "Blood Gravekeeper Scythe\u002B25 2-Hit Combo"
       ]
     },
     {
       "ID": 9103,
       "Entries": [
-        "Frost Godskin +25 Hound Step"
+        "Cold Godskin\u002B25 Hound Step"
       ]
     },
     {
       "ID": 9104,
       "Entries": [
-        "Magic Mercy Dagger+25 Oath of the Royal Knight"
+        "Magic Mercy Dagger\u002B25 Royal Knight\u0027s Oath"
       ]
     },
     {
       "ID": 9105,
       "Entries": [
-        "Blood Loss Cross-Shaped Sword+25 Seppuku"
+        "Bleeding Cross\u002B25 Seppuku"
       ]
     },
     {
       "ID": 9106,
       "Entries": [
-        "Blood Loss Cross-Shaped Sword+25 Charge"
+        "Bleeding Cross\u002B25 Charge"
       ]
     },
     {
       "ID": 9107,
       "Entries": [
-        "Gray Sorcerer Hound Step"
+        "Greatsword Hound Step"
       ]
     },
     {
       "ID": 9108,
       "Entries": [
-        "Finger Print Shield Weapon Skill"
+        "Fingerprint Shield Weapon Ash of War"
       ]
     },
     {
       "ID": 9109,
       "Entries": [
-        "Great Estoc Hound Step"
+        "Great Épée Hound Step"
       ]
     },
     {
       "ID": 9110,
       "Entries": [
-        "Magic Mercy Dagger+25 Hound"
+        "Magic Mercy Dagger\u002B25 Hound"
       ]
     },
     {
       "ID": 9111,
       "Entries": [
-        "Chain Whip+10[Gehrman Step]"
+        "Chain Whip\u002B10 [Gehrman Step]"
       ]
     },
     {
       "ID": 9112,
       "Entries": [
-        "Frost Grave Warden Sickle +25 2-Hit Combo"
+        "Cold Gravekeeper Scythe\u002B25 2-Hit Combo"
       ]
     },
     {
       "ID": 9113,
       "Entries": [
-        "Blood Loss Serrated Curved Sword+25 Seppuku"
+        "Blood Serrated Curved Sword\u002B25 Seppuku"
       ]
     },
     {
       "ID": 10001,
       "Entries": [
-        "Airborne Forward Roll Slam_Straight Sword_Longsword_2000000"
+        "Midair Forward Flip Slam_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 10002,
       "Entries": [
-        "Airborne Forward Roll Slam_Greatsword_Bastard Sword_3000000"
+        "Midair Forward Flip Slam_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10003,
       "Entries": [
-        "Airborne Forward Roll Slam_Colossal Sword_Great Sword_4000000"
+        "Midair Forward Flip Slam_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 10004,
       "Entries": [
-        "Airborne Forward Roll Slam_Curved Sword_Falchion_7000000"
+        "Midair Forward Flip Slam_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 10005,
       "Entries": [
-        "Airborne Forward Roll Slam_Great Curved Sword_Great Curved Sword_8020000"
+        "Midair Forward Flip Slam_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 10006,
       "Entries": [
-        "Airborne Forward Roll Slam_Katana_Uchigatana_9000000"
+        "Midair Forward Flip Slam_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 10007,
       "Entries": [
-        "Airborne Forward Roll Slam_Twinblade_Twinblade_10000000"
+        "Midair Forward Flip Slam_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 10010,
       "Entries": [
-        "Airborne Forward Roll Slam_Axe_Battle Axe_14000000"
+        "Midair Forward Flip Slam_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 10011,
       "Entries": [
-        "Airborne Forward Roll Slam_Greataxe_Greataxe_15000000"
+        "Midair Forward Flip Slam_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 10012,
       "Entries": [
-        "Airborne Forward Roll Slam_Hammer_Mace_11000000"
+        "Midair Forward Flip Slam_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 10013,
       "Entries": [
-        "Airborne Forward Roll Slam_Great Hammer_Great Mace_12000000"
+        "Midair Forward Flip Slam_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 10014,
       "Entries": [
-        "Airborne Forward Roll Slam_Flail_Flail_13000000"
+        "Midair Forward Flip Slam_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 10022,
       "Entries": [
-        "Airborne Forward Roll Slam_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Midair Forward Flip Slam_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -2266,13 +2266,13 @@
     {
       "ID": 10066,
       "Entries": [
-        "Piercing Thrust_Great Spear_Jousting Lance_17060000"
+        "Piercing Thrust_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10067,
       "Entries": [
-        "Piercing Thrust_Halberd_Red-hilted Halberd_18000000"
+        "Piercing Thrust_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -2320,13 +2320,13 @@
     {
       "ID": 10116,
       "Entries": [
-        "Piercing Katana (Fang Thrust)_Great Spear_Jousting Lance_17060000"
+        "Piercing Katana (Fang Thrust)_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10117,
       "Entries": [
-        "Piercing Katana (Fang Thrust)_Halberd_Red-hilted Halberd_18000000"
+        "Piercing Katana (Fang Thrust)_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -2380,7 +2380,7 @@
     {
       "ID": 10161,
       "Entries": [
-        "Spinning Slash_Greataxe_Great Axe_15000000"
+        "Spinning Slash_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -2392,19 +2392,19 @@
     {
       "ID": 10166,
       "Entries": [
-        "Spinning Slash_Heavy Spear_Jousting Lance_17060000"
+        "Spinning Slash_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10167,
       "Entries": [
-        "Spinning Slash_Halberd_Red-hilted Halberd_18000000"
+        "Spinning Slash_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10168,
       "Entries": [
-        "Spinning Slash_Scythe_Greatscythe_19000000"
+        "Spinning Slash_Reaper_Great Scythe_19000000"
       ]
     },
     {
@@ -2428,121 +2428,121 @@
     {
       "ID": 10216,
       "Entries": [
-        "Charge_Great Spear_Jousting Lance_17060000"
+        "Charge_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10217,
       "Entries": [
-        "Charge_Halberd_Red-hilted Halberd_18000000"
+        "Charge_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10252,
       "Entries": [
-        "Lunge+Upward Slash_Greatsword_Bastard Sword_3000000"
+        "Step-In\u002BUpward Slash_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10253,
       "Entries": [
-        "Lunge + Upward Slash_Colossal Sword_Great Sword_4000000"
+        "Step-In\u002BUpward Slash_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 10255,
       "Entries": [
-        "Lunge + Upward Slash_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Step-In\u002BUpward Slash_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 10260,
       "Entries": [
-        "Lunge + Upward Slash_Axe_Battle Axe_14000000"
+        "Step-In\u002BUpward Slash_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 10261,
       "Entries": [
-        "Lunge + Upward Slash_Greataxe_Great Axe_15000000"
+        "Step-In\u002BUpward Slash_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 10262,
       "Entries": [
-        "Lunge + Upward Slash_Hammer_Mace_11000000"
+        "Step-In\u002BUpward Slash_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 10263,
       "Entries": [
-        "Lunge + Upward Slash_Great Hammer_Great Mace_12000000"
+        "Step-In\u002BUpward Slash_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 10264,
       "Entries": [
-        "Lunge+Upward Slash_Flail_Flail_13000000"
+        "Step-In\u002BUpward Slash_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 10272,
       "Entries": [
-        "Lunge + Upward Slash_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Step-In\u002BUpward Slash_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 10302,
       "Entries": [
-        "Lunge+Spin_Greatsword_Bastard Sword_3000000"
+        "Step-In\u002BSpin_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10303,
       "Entries": [
-        "Lunge+Spin_Colossal Sword_Greatsword_4000000"
+        "Step-In\u002BSpin_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 10305,
       "Entries": [
-        "Lunge+Spin_Great Curved Sword_Great Curved Sword_8020000"
+        "Step-In\u002BSpin_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 10310,
       "Entries": [
-        "Lunge+Spin_Axe_Battle Axe_14000000"
+        "Step-In\u002BSpin_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 10311,
       "Entries": [
-        "Lunge+Spin_Greataxe_Greataxe_15000000"
+        "Step-In\u002BSpin_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 10312,
       "Entries": [
-        "Lunge+Spin_Hammer_Mace_11000000"
+        "Step-In\u002BSpin_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 10313,
       "Entries": [
-        "Lunge+Spin_Great Hammer_Great Mace_12000000"
+        "Step-In\u002BSpin_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 10314,
       "Entries": [
-        "Lunge+Spin_Flail_Flail_13000000"
+        "Step-In\u002BSpin_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 10322,
       "Entries": [
-        "Lunge+Spin_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Step-In\u002BSpin_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -2596,205 +2596,205 @@
     {
       "ID": 10366,
       "Entries": [
-        "Drain Multi-Thrust_Great Spear_Jousting Lance_17060000"
+        "Drain Multi-Thrust_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10367,
       "Entries": [
-        "Drain Multi-Thrust_Halberd_Red-hilted Halberd_18000000"
+        "Drain Multi-Thrust_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10400,
       "Entries": [
-        "Multi-Hit Thrust_Dagger_Dagger_1000000"
+        "Multi-Thrust_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 10401,
       "Entries": [
-        "Multi-Hit Thrust_Straight Sword_Longsword_2000000"
+        "Multi-Thrust_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 10402,
       "Entries": [
-        "Multi-Hit Thrust_Greatsword_Bastard Sword_3000000"
+        "Multi-Thrust_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10406,
       "Entries": [
-        "Multi-Hit Thrust_Katana_Uchigatana_9000000"
+        "Multi-Thrust_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 10407,
       "Entries": [
-        "Multi-Hit Thrust_Twinblade_Twinblade_10000000"
+        "Multi-Thrust_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 10408,
       "Entries": [
-        "Multi-Hit Thrust_Thrusting Sword_Rapier_5020000"
+        "Multi-Thrust_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 10409,
       "Entries": [
-        "Multi-Hit Thrust_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Multi-Thrust_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 10415,
       "Entries": [
-        "Multi-Hit Thrust_Spear_Spear_16000000"
+        "Multi-Thrust_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 10416,
       "Entries": [
-        "Multi-Hit Thrust_Great Spear_Jousting Lance_17060000"
+        "Multi-Thrust_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10417,
       "Entries": [
-        "Multi-Hit Thrust_Halberd_Red-hilted Halberd_18000000"
+        "Multi-Thrust_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10452,
       "Entries": [
-        "Loop Frenzy Axe_Greatsword_Bastard Sword_3000000"
+        "Loop Flurry/Axe_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10454,
       "Entries": [
-        "Loop Frenzy Axe_Curved Sword_Falchion_7000000"
+        "Loop Flurry/Axe_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 10455,
       "Entries": [
-        "Loop Frenzy Axe_Curved Greatsword_Curved Greatsword_8020000"
+        "Loop Flurry/Axe_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 10460,
       "Entries": [
-        "Loop Frenzy Axe_Axe_Battle Axe_14000000"
+        "Loop Flurry/Axe_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 10461,
       "Entries": [
-        "Loop Frenzy Axe_Greataxe_Great Axe_15000000"
+        "Loop Flurry/Axe_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 10462,
       "Entries": [
-        "Loop Frenzy Axe_Hammer_Mace_11000000"
+        "Loop Flurry/Axe_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 10463,
       "Entries": [
-        "Loop Frenzy Axe_Great Hammer_Great Mace_12000000"
+        "Loop Flurry/Axe_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 10464,
       "Entries": [
-        "Loop Frenzy Axe_Flail_Flail_13000000"
+        "Loop Flurry/Axe_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 10468,
       "Entries": [
-        "Loop Frenzy Axe_Reaper_Great Scythe_19000000"
+        "Loop Flurry/Axe_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 10515,
       "Entries": [
-        "Loop Frenzy Halberd_Spear_Spear_16000000"
+        "Loop Flurry/Halberd_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 10517,
       "Entries": [
-        "Loop Frenzy Halberd_Halberd_Red-hilted Halberd_18000000"
+        "Loop Flurry/Halberd_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10518,
       "Entries": [
-        "Loop Frenzy Halberd_Reaper_Great Scythe_19000000"
+        "Loop Flurry/Halberd_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 10550,
       "Entries": [
-        "Combo Frenzy_Dagger_Dagger_1000000"
+        "Combo Flurry_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 10551,
       "Entries": [
-        "Combo Frenzy_Straight Sword_Longsword_2000000"
+        "Combo Flurry_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 10552,
       "Entries": [
-        "Combo Frenzy_Greatsword_Bastard Sword_3000000"
+        "Combo Flurry_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10554,
       "Entries": [
-        "Combo Frenzy_Curved Sword_Falchion_7000000"
+        "Combo Flurry_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 10555,
       "Entries": [
-        "Combo Frenzy_Curved Greatsword_Curved Greatsword_8020000"
+        "Combo Flurry_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 10556,
       "Entries": [
-        "Combo Frenzy_Katana_Uchigatana_9000000"
+        "Combo Flurry_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 10557,
       "Entries": [
-        "Combo Frenzy_Twinblade_Twinblade_10000000"
+        "Combo Flurry_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 10567,
       "Entries": [
-        "Combo Frenzy_Halberd_Red-Hilted Halberd_18000000"
+        "Combo Flurry_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10568,
       "Entries": [
-        "Combo Frenzy_Reaper_Great Scythe_19000000"
+        "Combo Flurry_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 10611,
       "Entries": [
-        "Sumo Train_Greataxe_Great Axe_15000000"
+        "Sumo Train_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -2806,7 +2806,7 @@
     {
       "ID": 10622,
       "Entries": [
-        "Sumo Train_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Sumo Train_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -2824,103 +2824,103 @@
     {
       "ID": 10752,
       "Entries": [
-        "Lunge Upthrust_Greatsword_Bastard Sword_3000000"
+        "Step-In Upthrust_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 10753,
       "Entries": [
-        "Lunge Upthrust_Colossal Sword_Greatsword_4000000"
+        "Step-In Upthrust_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 10757,
       "Entries": [
-        "Lunge Upthrust_Twinblade_Twinblade_10000000"
+        "Step-In Upthrust_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 10759,
       "Entries": [
-        "Lunge Upthrust_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Step-In Upthrust_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 10765,
       "Entries": [
-        "Lunge Upthrust_Spear_Spear_16000000"
+        "Step-In Upthrust_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 10766,
       "Entries": [
-        "Lunge Upthrust_Great Spear_Mounted Lance_17060000"
+        "Step-In Upthrust_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10767,
       "Entries": [
-        "Lunge Upthrust_Halberd_Red-hilted Halberd_18000000"
+        "Step-In Upthrust_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10807,
       "Entries": [
-        "Diving Enchant Slash_Twinblade_Twinblade_10000000"
+        "Leaping Enchant Slash_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 10815,
       "Entries": [
-        "Diving Enchant Slash_Spear_Spear_16000000"
+        "Leaping Enchant Slash_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 10816,
       "Entries": [
-        "Diving Enchant Slash_Great Spear_Mounted Lance_17060000"
+        "Leaping Enchant Slash_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10817,
       "Entries": [
-        "Diving Enchant Slash_Halberd_Red-hilted Halberd_18000000"
+        "Leaping Enchant Slash_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 10818,
       "Entries": [
-        "Diving Enchant Slash_Reaper_Great Reaper_19000000"
+        "Leaping Enchant Slash_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 10850,
       "Entries": [
-        "Two Hits Poison_Dagger_Dagger_1000000"
+        "Two-Hit Sure Poison_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 10851,
       "Entries": [
-        "Two Hits Poison_Straight Sword_Longsword_2000000"
+        "Two-Hit Sure Poison_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 10854,
       "Entries": [
-        "Two Hits Poison_Curved Sword_Falchion_7000000"
+        "Two-Hit Sure Poison_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 10856,
       "Entries": [
-        "Two Hits Poison_Katana_Uchigatana_9000000"
+        "Two-Hit Sure Poison_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 10858,
       "Entries": [
-        "Two Hits Poison_Thrusting Sword_Rapier_5020000"
+        "Two-Hit Sure Poison_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
@@ -2986,7 +2986,7 @@
     {
       "ID": 10917,
       "Entries": [
-        "Baton Attack_Halberd_Red-hilted Halberd_18000000"
+        "Baton Attack_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -2998,121 +2998,121 @@
     {
       "ID": 10957,
       "Entries": [
-        "Stormleap Plunge Twinblade_Twinblade_10000000"
+        "Storm Leaping Downward Thrust Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 10959,
       "Entries": [
-        "Stormleap Plunge Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Storm Leaping Downward Thrust Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 10965,
       "Entries": [
-        "Stormleap Plunge Spear_Spear_16000000"
+        "Storm Leaping Downward Thrust Spear_Spear_16000000"
       ]
     },
     {
       "ID": 10966,
       "Entries": [
-        "Stormleap Plunge Great Spear_Mounted Lance_17060000"
+        "Storm Leaping Downward Thrust Great Spear_Lance_17060000"
       ]
     },
     {
       "ID": 10967,
       "Entries": [
-        "Stormleap Plunge Halberd_Red-hilted Halberd_18000000"
+        "Storm Leaping Downward Thrust Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11001,
       "Entries": [
-        "Stormwheel Sweep_Straight Sword_Longsword_2000000"
+        "Storm Spinning Sweep_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11002,
       "Entries": [
-        "Stormwheel Sweep_Greatsword_Bastard Sword_3000000"
+        "Storm Spinning Sweep_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11004,
       "Entries": [
-        "Stormwheel Sweep_Curved Sword_Falchion_7000000"
+        "Storm Spinning Sweep_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11005,
       "Entries": [
-        "Stormwheel Sweep_Curved Greatsword_Curved Greatsword_8020000"
+        "Storm Spinning Sweep_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11006,
       "Entries": [
-        "Stormwheel Sweep_Katana_Uchigatana_9000000"
+        "Storm Spinning Sweep_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11007,
       "Entries": [
-        "Stormwheel Sweep_Twinblade_Twinblade_10000000"
+        "Storm Spinning Sweep_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11010,
       "Entries": [
-        "Stormwheel Sweep_Axe_Battle Axe_14000000"
+        "Storm Spinning Sweep_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11011,
       "Entries": [
-        "Stormwheel Sweep_Greataxe_Great Axe_15000000"
+        "Storm Spinning Sweep_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11012,
       "Entries": [
-        "Stormwheel Sweep_Hammer_Mace_11000000"
+        "Storm Spinning Sweep_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 11013,
       "Entries": [
-        "Stormwheel Sweep_Great Hammer_Great Mace_12000000"
+        "Storm Spinning Sweep_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11014,
       "Entries": [
-        "Stormwheel Sweep_Flail_Flail_13000000"
+        "Storm Spinning Sweep_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 11015,
       "Entries": [
-        "Stormwheel Sweep_Spear_Spear_16000000"
+        "Storm Spinning Sweep_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11016,
       "Entries": [
-        "Stormwheel Sweep_Great Spear_Mounted Lance_17060000"
+        "Storm Spinning Sweep_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11017,
       "Entries": [
-        "Stormwheel Sweep_Halberd_Red-hilted Halberd_18000000"
+        "Storm Spinning Sweep_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11018,
       "Entries": [
-        "Stormwheel Sweep_Reaper_Great Scythe_19000000"
+        "Storm Spinning Sweep_Reaper_Great Scythe_19000000"
       ]
     },
     {
@@ -3142,7 +3142,7 @@
     {
       "ID": 11055,
       "Entries": [
-        "Double Slash_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Double Slash_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -3166,319 +3166,319 @@
     {
       "ID": 11061,
       "Entries": [
-        "Double Slash_Greataxe_Great Axe_15000000"
+        "Double Slash_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11067,
       "Entries": [
-        "Double Slash_Halberd_Red-hilted Halberd_18000000"
+        "Double Slash_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11068,
       "Entries": [
-        "Double Slash_Scythe_Great Scythe_19000000"
+        "Double Slash_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 11100,
       "Entries": [
-        "Funnel+Thrust_Dagger_Dagger_1000000"
+        "Funnel\u002BThrust_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11101,
       "Entries": [
-        "Funnel+Thrust_Straight Sword_Longsword_2000000"
+        "Funnel\u002BThrust_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11102,
       "Entries": [
-        "Funnel+Thrust_Greatsword_Bastard Sword_3000000"
+        "Funnel\u002BThrust_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11104,
       "Entries": [
-        "Funnel+Thrust_Curved Sword_Falchion_7000000"
+        "Funnel\u002BThrust_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11105,
       "Entries": [
-        "Funnel+Thrust_Curved Greatsword_Curved Greatsword_8020000"
+        "Funnel\u002BThrust_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11106,
       "Entries": [
-        "Funnel+Thrust_Katana_Uchigatana_9000000"
+        "Funnel\u002BThrust_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11107,
       "Entries": [
-        "Funnel+Thrust_Twinblade_Twinblade_10000000"
+        "Funnel\u002BThrust_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11108,
       "Entries": [
-        "Funnel+Thrust_Thrusting Sword_Rapier_5020000"
+        "Funnel\u002BThrust_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11109,
       "Entries": [
-        "Funnel+Thrust_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Funnel\u002BThrust_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11115,
       "Entries": [
-        "Funnel+Thrust_Spear_Spear_16000000"
+        "Funnel\u002BThrust_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11116,
       "Entries": [
-        "Funnel+Thrust_Great Spear_Jousting Lance_17060000"
+        "Funnel\u002BThrust_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11117,
       "Entries": [
-        "Funnel+Thrust_Halberd_Red-hilted Halberd_18000000"
+        "Funnel\u002BThrust_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11150,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Dagger_Dagger_1000000"
+        "Magic Attack\u002BEnchant (Sacred)_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11151,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Straight Sword_Longsword_2000000"
+        "Magic Attack\u002BEnchant (Sacred)_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11152,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Greatsword_Bastard Sword_3000000"
+        "Magic Attack\u002BEnchant (Sacred)_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11153,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Colossal Sword_Great Sword_4000000"
+        "Magic Attack\u002BEnchant (Sacred)_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11154,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Curved Sword_Falchion_7000000"
+        "Magic Attack\u002BEnchant (Sacred)_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11155,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Curved Greatsword_Curved Greatsword_8020000"
+        "Magic Attack\u002BEnchant (Sacred)_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11156,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Katana_Uchigatana_9000000"
+        "Magic Attack\u002BEnchant (Sacred)_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11157,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Twinblade_Twinblade_10000000"
+        "Magic Attack\u002BEnchant (Sacred)_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11158,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Thrusting Sword_Rapier_5020000"
+        "Magic Attack\u002BEnchant (Sacred)_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11159,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Magic Attack\u002BEnchant (Sacred)_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11160,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Axe_Battle Axe_14000000"
+        "Magic Attack\u002BEnchant (Sacred)_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11161,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Greataxe_Great Axe_15000000"
+        "Magic Attack\u002BEnchant (Sacred)_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11162,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Hammer_Mace_11000000"
+        "Magic Attack\u002BEnchant (Sacred)_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 11163,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Great Hammer_Great Mace_12000000"
+        "Magic Attack\u002BEnchant (Sacred)_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11164,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Flail_Flail_13000000"
+        "Magic Attack\u002BEnchant (Sacred)_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 11165,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Spear_Spear_16000000"
+        "Magic Attack\u002BEnchant (Sacred)_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11166,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Great Spear_Lance_17060000"
+        "Magic Attack\u002BEnchant (Sacred)_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11167,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Halberd_Red-hilted Halberd_18000000"
+        "Magic Attack\u002BEnchant (Sacred)_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11168,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Reaper_Great Scythe_19000000"
+        "Magic Attack\u002BEnchant (Sacred)_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 11169,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Fist_Cestus_21000000"
+        "Magic Attack\u002BEnchant (Sacred)_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 11170,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Claw_Hooked Claw_22000000"
+        "Magic Attack\u002BEnchant (Sacred)_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 11172,
       "Entries": [
-        "Magic Attack + Enchant (Holy)_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Magic Attack\u002BEnchant (Sacred)_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11207,
       "Entries": [
-        "Gae Bolg_Twinblade_Twinblade_10000000"
+        "Gáe Bolg_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11215,
       "Entries": [
-        "Gae Bolg_Spear_Spear_16000000"
+        "Gáe Bolg_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11216,
       "Entries": [
-        "Gae Bolg_Great Spear_Jousting Lance_17060000"
+        "Gáe Bolg_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11217,
       "Entries": [
-        "Gae Bolg_Halberd_Red-hilted Halberd_18000000"
+        "Gáe Bolg_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11250,
       "Entries": [
-        "Mid-Range Bullet + Approach_Dagger_Dagger_1000000"
+        "Mid-Range Projectile\u002BApproach_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11251,
       "Entries": [
-        "Mid-Range Bullet + Approach_Straight Sword_Longsword_2000000"
+        "Mid-Range Projectile\u002BApproach_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11252,
       "Entries": [
-        "Mid-Range Bullet + Approach_Greatsword_Bastard Sword_3000000"
+        "Mid-Range Projectile\u002BApproach_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11254,
       "Entries": [
-        "Mid-Range Bullet + Approach_Curved Sword_Falchion_7000000"
+        "Mid-Range Projectile\u002BApproach_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11255,
       "Entries": [
-        "Mid-Range Bullet + Approach_Curved Greatsword_Curved Greatsword_8020000"
+        "Mid-Range Projectile\u002BApproach_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11256,
       "Entries": [
-        "Mid-Range Bullet + Approach_Katana_Uchigatana_9000000"
+        "Mid-Range Projectile\u002BApproach_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11257,
       "Entries": [
-        "Mid-Range Bullet + Approach_Twinblade_Twinblade_10000000"
+        "Mid-Range Projectile\u002BApproach_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11258,
       "Entries": [
-        "Mid-Range Bullet + Approach_Thrusting Sword_Rapier_5020000"
+        "Mid-Range Projectile\u002BApproach_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11259,
       "Entries": [
-        "Mid-Range Bullet + Approach_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Mid-Range Projectile\u002BApproach_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11265,
       "Entries": [
-        "Mid-Range Bullet + Approach_Spear_Spear_16000000"
+        "Mid-Range Projectile\u002BApproach_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11266,
       "Entries": [
-        "Mid-Range Bullet + Approach_Great Spear_Jousting Lance_17060000"
+        "Mid-Range Projectile\u002BApproach_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11267,
       "Entries": [
-        "Mid-Range Bullet + Approach_Halberd_Red-hilted Halberd_18000000"
+        "Mid-Range Projectile\u002BApproach_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -3508,7 +3508,7 @@
     {
       "ID": 11305,
       "Entries": [
-        "Blood Slash_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Blood Slash_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -3526,7 +3526,7 @@
     {
       "ID": 11308,
       "Entries": [
-        "Blood Slash_Rapier_Rapier_5020000"
+        "Blood Slash_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
@@ -3544,7 +3544,7 @@
     {
       "ID": 11370,
       "Entries": [
-        "Drain Attack_Claw_Claw_22000000"
+        "Drain Attack_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -3568,7 +3568,7 @@
     {
       "ID": 11411,
       "Entries": [
-        "Lava Placement_Greataxe_Great Axe_15000000"
+        "Lava Placement_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -3580,43 +3580,43 @@
     {
       "ID": 11422,
       "Entries": [
-        "Lava Placement_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Lava Placement_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11460,
       "Entries": [
-        "Greater Recovery Strike_Axe_BattleAxe_14000000"
+        "Great Heal Strike_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11461,
       "Entries": [
-        "Greater Recovery Strike_GreatAxe_GreatAxe_15000000"
+        "Great Heal Strike_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11462,
       "Entries": [
-        "Greater Recovery Strike_Hammer_Mace_11000000"
+        "Great Heal Strike_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 11463,
       "Entries": [
-        "Greater Recovery Strike_GreatHammer_GreatMace_12000000"
+        "Great Heal Strike_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11464,
       "Entries": [
-        "Greater Recovery Strike_Flail_Flail_13000000"
+        "Great Heal Strike_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 11472,
       "Entries": [
-        "Greran Recovery Strike_ColossalAxeHammer_GladiatorGreataxe_23040000"
+        "Great Heal Strike_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -3682,7 +3682,7 @@
     {
       "ID": 11511,
       "Entries": [
-        "Gravity Pull_Greataxe_Great Axe_15000000"
+        "Gravity Pull_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -3712,13 +3712,13 @@
     {
       "ID": 11516,
       "Entries": [
-        "Gravity Pull_Great Spear_Jousting Lance_17060000"
+        "Gravity Pull_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11517,
       "Entries": [
-        "Gravity Pull_Halberd_Red-hilted Halberd_18000000"
+        "Gravity Pull_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -3730,61 +3730,61 @@
     {
       "ID": 11522,
       "Entries": [
-        "Gravity Pull_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Gravity Pull_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11550,
       "Entries": [
-        "Sonic Blade_Dagger_Dagger_1000000"
+        "Sonic Boom_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11551,
       "Entries": [
-        "Sonic Blade_Straight Sword_Longsword_2000000"
+        "Sonic Boom_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11552,
       "Entries": [
-        "Sonic Blade_Greatsword_Bastard Sword_3000000"
+        "Sonic Boom_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11554,
       "Entries": [
-        "Sonic Blade_Curved Sword_Falchion_7000000"
+        "Sonic Boom_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11555,
       "Entries": [
-        "Sonic Blade_Curved Greatsword_Curved Greatsword_8020000"
+        "Sonic Boom_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11556,
       "Entries": [
-        "Sonic Blade_Katana_Uchigatana_9000000"
+        "Sonic Boom_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11558,
       "Entries": [
-        "Sonic Blade_Thrusting Sword_Rapier_5020000"
+        "Sonic Boom_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11603,
       "Entries": [
-        "Earthquake_Colossal Sword_Great Sword_4000000"
+        "Earthquake_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11611,
       "Entries": [
-        "Earthquake_Greataxe_Great Axe_15000000"
+        "Earthquake_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -3796,589 +3796,589 @@
     {
       "ID": 11616,
       "Entries": [
-        "Earthquake_Great Spear_Mounted Lance_17060000"
+        "Earthquake_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11622,
       "Entries": [
-        "Earthquake_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Earthquake_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11653,
       "Entries": [
-        "Golden Tree Quake_Colossal Sword_Greatsword_4000000"
+        "World Tree Earthquake_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11661,
       "Entries": [
-        "Golden Tree Quake_Greataxe_Great Axe_15000000"
+        "World Tree Earthquake_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11663,
       "Entries": [
-        "Golden Tree Quake_Great Hammer_Great Mace_12000000"
+        "World Tree Earthquake_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11666,
       "Entries": [
-        "Golden Tree Quake_Heavy Spear_Jousting Lance_17060000"
+        "World Tree Earthquake_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11672,
       "Entries": [
-        "Golden Tree Quake_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "World Tree Earthquake_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11700,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Dagger_Dagger_1000000"
+        "Flame Sweep\u002BWreathed Slash_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11701,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Straight Sword_Longsword_2000000"
+        "Flame Sweep\u002BWreathed Slash_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11702,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Greatsword_Bastard Sword_3000000"
+        "Flame Sweep\u002BWreathed Slash_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11703,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Colossal Sword_Greatsword_4000000"
+        "Flame Sweep\u002BWreathed Slash_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11704,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Curved Sword_Falchion_7000000"
+        "Flame Sweep\u002BWreathed Slash_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11705,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Great Curved Sword_Great Curved Sword_8020000"
+        "Flame Sweep\u002BWreathed Slash_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11706,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Katana_Uchigatana_9000000"
+        "Flame Sweep\u002BWreathed Slash_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11707,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Twinblade_Twinblade_10000000"
+        "Flame Sweep\u002BWreathed Slash_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11708,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Thrusting Sword_Rapier_5020000"
+        "Flame Sweep\u002BWreathed Slash_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11709,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Flame Sweep\u002BWreathed Slash_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11710,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Axe_Battle Axe_14000000"
+        "Flame Sweep\u002BWreathed Slash_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11711,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Greataxe_Great Axe_15000000"
+        "Flame Sweep\u002BWreathed Slash_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11712,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Hammer_Mace_11000000"
+        "Flame Sweep\u002BWreathed Slash_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 11713,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Great Hammer_Great Mace_12000000"
+        "Flame Sweep\u002BWreathed Slash_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11714,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Flail_Flail_13000000"
+        "Flame Sweep\u002BWreathed Slash_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 11715,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Spear_Spear_16000000"
+        "Flame Sweep\u002BWreathed Slash_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11716,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Great Spear_Mounted Lance_17060000"
+        "Flame Sweep\u002BWreathed Slash_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11717,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Halberd_Red-hilted Halberd_18000000"
+        "Flame Sweep\u002BWreathed Slash_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11718,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Reaper_Great Scythe_19000000"
+        "Flame Sweep\u002BWreathed Slash_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 11719,
       "Entries": [
-        "Fire Sweep + Enveloping Slash_Fist_Cestus_21000000"
+        "Flame Sweep\u002BWreathed Slash_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 11720,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Claw_Claw_22000000"
+        "Flame Sweep\u002BWreathed Slash_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 11722,
       "Entries": [
-        "Flame Sweep + Wrap Slash_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Flame Sweep\u002BWreathed Slash_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11750,
       "Entries": [
-        "Continuous Lightning Strike_Dagger_Dagger_1000000"
+        "Chain Lightning_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11751,
       "Entries": [
-        "Continuous Lightning Strike_Straight Sword_Longsword_2000000"
+        "Chain Lightning_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11752,
       "Entries": [
-        "Continuous Lightning Strike_Greatsword_Bastard Sword_3000000"
+        "Chain Lightning_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11753,
       "Entries": [
-        "Continuous Lightning Strike_Colossal Sword_Greatsword_4000000"
+        "Chain Lightning_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11754,
       "Entries": [
-        "Continuous Lightning Strike_Curved Sword_Falchion_7000000"
+        "Chain Lightning_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11755,
       "Entries": [
-        "Continuous Lightning Strike_Great Curved Sword_Great Curved Sword_8020000"
+        "Chain Lightning_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11756,
       "Entries": [
-        "Continuous Lightning Strike_Katana_Uchigatana_9000000"
+        "Chain Lightning_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11757,
       "Entries": [
-        "Continuous Lightning Strike_Twinblade_Twinblade_10000000"
+        "Chain Lightning_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11758,
       "Entries": [
-        "Continuous Lightning Strike_Thrusting Sword_Rapier_5020000"
+        "Chain Lightning_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11759,
       "Entries": [
-        "Continuous Lightning Strike_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Chain Lightning_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11760,
       "Entries": [
-        "Continuous Lightning Strike_Axe_Battle Axe_14000000"
+        "Chain Lightning_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11761,
       "Entries": [
-        "Continuous Lightning Strike_Greataxe_Great Axe_15000000"
+        "Chain Lightning_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11762,
       "Entries": [
-        "Continuous Lightning Strike_Hammer_Mace_11000000"
+        "Chain Lightning_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 11763,
       "Entries": [
-        "Continuous Lightning Strike_Great Hammer_Great Mace_12000000"
+        "Chain Lightning_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11764,
       "Entries": [
-        "Continuous Lightning Strike_Flail_Flail_13000000"
+        "Chain Lightning_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 11765,
       "Entries": [
-        "Continuous Lightning Strike_Spear_Spear_16000000"
+        "Chain Lightning_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 11766,
       "Entries": [
-        "Continuous Lightning Strike_Heavy Spear_Jousting Lance_17060000"
+        "Chain Lightning_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 11767,
       "Entries": [
-        "Continuous Lightning Strike_Halberd_Red-hilted Halberd_18000000"
+        "Chain Lightning_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 11768,
       "Entries": [
-        "Continuous Lightning Strike_Reaper_Great Scythe_19000000"
+        "Chain Lightning_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 11769,
       "Entries": [
-        "Continuous Lightning Strike_Fist_Cestus_21000000"
+        "Chain Lightning_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 11770,
       "Entries": [
-        "Continuous Lightning Strike_Claw_Claw_22000000"
+        "Chain Lightning_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 11771,
       "Entries": [
-        "Continuous Lightning Strike_Whip_Whip_20000000"
+        "Chain Lightning_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 11772,
       "Entries": [
-        "Continuous Lightning Strike_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Chain Lightning_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11800,
       "Entries": [
-        "Lightning Strike + Downward Slash_Dagger_Dagger_1000000"
+        "Lightning Strike\u002BDownward Slash_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11801,
       "Entries": [
-        "Lightning Strike + Downward Slash_Straight Sword_Longsword_2000000"
+        "Lightning Strike\u002BDownward Slash_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11802,
       "Entries": [
-        "Lightning + Downward Slash_Greatsword_Bastard Sword_3000000"
+        "Lightning Strike\u002BDownward Slash_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11803,
       "Entries": [
-        "Lightning Strike + Downward Slash_Colossal Sword_Greatsword_4000000"
+        "Lightning Strike\u002BDownward Slash_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11804,
       "Entries": [
-        "Lightning Strike + Downward Slash_Curved Sword_Falchion_7000000"
+        "Lightning Strike\u002BDownward Slash_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11805,
       "Entries": [
-        "Lightning + Downward Slash_Curved Greatsword_Curved Greatsword_8020000"
+        "Lightning Strike\u002BDownward Slash_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11806,
       "Entries": [
-        "Lightning + Downward Slash_Katana_Uchigatana_9000000"
+        "Lightning Strike\u002BDownward Slash_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11807,
       "Entries": [
-        "Lightning + Downward Slash_Twinblade_Twinblade_10000000"
+        "Lightning Strike\u002BDownward Slash_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11808,
       "Entries": [
-        "Lightning + Downward Slash_Thrusting Sword_Rapier_5020000"
+        "Lightning Strike\u002BDownward Slash_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11809,
       "Entries": [
-        "Lightning Strike + Downward Slash_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Lightning Strike\u002BDownward Slash_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11810,
       "Entries": [
-        "Lightning Strike + Downward Slash_Axe_Battle Axe_14000000"
+        "Lightning Strike\u002BDownward Slash_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11811,
       "Entries": [
-        "Lightning + Downward Slash_Greataxe_Greataxe_15000000"
+        "Lightning Strike\u002BDownward Slash_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 11812,
       "Entries": [
-        "Lightning Strike + Downward Slash_Hammer_Mace_11000000"
+        "Lightning Strike\u002BDownward Slash_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 11813,
       "Entries": [
-        "Lightning + Downward Slash_Great Hammer_Great Mace_12000000"
+        "Lightning Strike\u002BDownward Slash_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 11814,
       "Entries": [
-        "Lightning + Downward Slash_Flail_Flail_13000000"
+        "Lightning Strike\u002BDownward Slash_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 11822,
       "Entries": [
-        "Lightning Strike + Downward Slash_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Lightning Strike\u002BDownward Slash_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 11850,
       "Entries": [
-        "Soul Colossal Sword_Dagger_Dagger_1000000"
+        "Greatsword of Souls_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11851,
       "Entries": [
-        "Soul Colossal Sword_Straight Sword_Longsword_2000000"
+        "Greatsword of Souls_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11852,
       "Entries": [
-        "Soul Colossal Sword_Greatsword_Bastard Sword_3000000"
+        "Greatsword of Souls_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11854,
       "Entries": [
-        "Soul Colossal Sword_Curved Sword_Falchion_7000000"
+        "Greatsword of Souls_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11855,
       "Entries": [
-        "Soul Colossal Sword_Curved Greatsword_Curved Greatsword_8020000"
+        "Greatsword of Souls_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11856,
       "Entries": [
-        "Soul Colossal Sword_Katana_Uchigatana_9000000"
+        "Greatsword of Souls_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11857,
       "Entries": [
-        "Soul Colossal Sword_Twinblade_Twinblade_10000000"
+        "Greatsword of Souls_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11858,
       "Entries": [
-        "Soul Colossal Sword_Thrusting Sword_Rapier_5020000"
+        "Greatsword of Souls_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11859,
       "Entries": [
-        "Soul Colossal Sword_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Greatsword of Souls_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11900,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Dagger_Dagger_1000000"
+        "Greatsword of Souls/Phase 2_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11901,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Straight Sword_Longsword_2000000"
+        "Greatsword of Souls/Phase 2_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11902,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Greatsword_Bastard Sword_3000000"
+        "Greatsword of Souls/Phase 2_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11904,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Curved Sword_Falchion_7000000"
+        "Greatsword of Souls/Phase 2_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11905,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Curved Greatsword_Curved Greatsword_8020000"
+        "Greatsword of Souls/Phase 2_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11906,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Katana_Uchigatana_9000000"
+        "Greatsword of Souls/Phase 2_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11907,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Twinblade_Twinblade_10000000"
+        "Greatsword of Souls/Phase 2_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11908,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Thrusting Sword_Rapier_5020000"
+        "Greatsword of Souls/Phase 2_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11909,
       "Entries": [
-        "Soul Colossal Sword・2-Stage_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Greatsword of Souls/Phase 2_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11950,
       "Entries": [
-        "Vacuum Wave Slash_Dagger_Dagger_1000000"
+        "Vacuum Slash_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 11951,
       "Entries": [
-        "Vacuum Wave Slash_Straight Sword_Longsword_2000000"
+        "Vacuum Slash_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 11952,
       "Entries": [
-        "Vacuum Wave Slash_Greatsword_Bastard Sword_3000000"
+        "Vacuum Slash_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 11953,
       "Entries": [
-        "Vacuum Wave Slash_Colossal Sword_Greatsword_4000000"
+        "Vacuum Slash_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 11954,
       "Entries": [
-        "Vacuum Wave Slash_Curved Sword_Falchion_7000000"
+        "Vacuum Slash_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 11955,
       "Entries": [
-        "Vacuum Wave Slash_Curved Greatsword_Curved Greatsword_8020000"
+        "Vacuum Slash_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 11956,
       "Entries": [
-        "Vacuum Wave Slash_Katana_Uchigatana_9000000"
+        "Vacuum Slash_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 11957,
       "Entries": [
-        "Vacuum Wave Slash_Twinblade_Twinblade_10000000"
+        "Vacuum Slash_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 11958,
       "Entries": [
-        "Vacuum Wave Slash_Thrusting Sword_Rapier_5020000"
+        "Vacuum Slash_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 11959,
       "Entries": [
-        "Vacuum Wave Slash_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Vacuum Slash_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 11960,
       "Entries": [
-        "Vacuum Wave Slash_Axe_Battle Axe_14000000"
+        "Vacuum Slash_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 11961,
       "Entries": [
-        "Vacuum Wave Slash_Greataxe_Greataxe_15000000"
+        "Vacuum Slash_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -4396,37 +4396,37 @@
     {
       "ID": 12016,
       "Entries": [
-        "Fire Tornado_Great Spear_Jousting Spear_17060000"
+        "Fire Tornado_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 12017,
       "Entries": [
-        "Fire Tornado_Halberd_Red-hilted Halberd_18000000"
+        "Fire Tornado_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 12018,
       "Entries": [
-        "Fire Tornado_Reaper_Greatreaper_19000000"
+        "Fire Tornado_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 12065,
       "Entries": [
-        "Radiant Halo of Miquella_Spear_Spear_16000000"
+        "Miquella\u0027s Halo_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 12067,
       "Entries": [
-        "Radiant Halo of Miquella_Halberd_Red-hilted Halberd_18000000"
+        "Miquella\u0027s Halo_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 12068,
       "Entries": [
-        "Radiant Halo of Miquella_Reaper_Great Reaper_19000000"
+        "Miquella\u0027s Halo_Reaper_Great Scythe_19000000"
       ]
     },
     {
@@ -4480,7 +4480,7 @@
     {
       "ID": 12167,
       "Entries": [
-        "Phantom Double Slash_Halberd_Red-hilted Halberd_18000000"
+        "Phantom Double Slash_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -4498,277 +4498,277 @@
     {
       "ID": 12216,
       "Entries": [
-        "Phantom Throw_Great Spear_Mounted Lance_17060000"
+        "Phantom Throw_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 12217,
       "Entries": [
-        "Phantom Throw_Halberd_Red-hilted Halberd_18000000"
+        "Phantom Throw_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 12250,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Dagger_Dagger_1000000"
+        "Magic Attack\u002BEnchant (Frost)_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 12251,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Straight Sword_Longsword_2000000"
+        "Magic Attack\u002BEnchant (Frost)_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 12252,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Greatsword_Bastard Sword_3000000"
+        "Magic Attack\u002BEnchant (Frost)_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 12253,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Colossal Sword_Greatsword_4000000"
+        "Magic Attack\u002BEnchant (Frost)_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 12254,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Curved Sword_Falchion_7000000"
+        "Magic Attack\u002BEnchant (Frost)_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 12255,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Curved Greatsword_Curved Greatsword_8020000"
+        "Magic Attack\u002BEnchant (Frost)_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 12256,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Katana_Uchigatana_9000000"
+        "Magic Attack\u002BEnchant (Frost)_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 12257,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Twinblade_Twinblade_10000000"
+        "Magic Attack\u002BEnchant (Frost)_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 12258,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Thrusting Sword_Rapier_5020000"
+        "Magic Attack\u002BEnchant (Frost)_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 12259,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Magic Attack\u002BEnchant (Frost)_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 12260,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Axe_Battle Axe_14000000"
+        "Magic Attack\u002BEnchant (Frost)_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 12261,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Greataxe_Great Axe_15000000"
+        "Magic Attack\u002BEnchant (Frost)_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 12262,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Hammer_Mace_11000000"
+        "Magic Attack\u002BEnchant (Frost)_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 12263,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Great Hammer_Great Mace_12000000"
+        "Magic Attack\u002BEnchant (Frost)_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 12264,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Flail_Flail_13000000"
+        "Magic Attack\u002BEnchant (Frost)_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 12265,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Spear_Spear_16000000"
+        "Magic Attack\u002BEnchant (Frost)_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 12266,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Heavy Spear_Jousting Lance_17060000"
+        "Magic Attack\u002BEnchant (Frost)_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 12267,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Halberd_Red-hilted Halberd_18000000"
+        "Magic Attack\u002BEnchant (Frost)_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 12268,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Reaper_Great Scythe_19000000"
+        "Magic Attack\u002BEnchant (Frost)_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 12269,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Fist_Cestus_21000000"
+        "Magic Attack\u002BEnchant (Frost)_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 12270,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Claw_Hooked Claw_22000000"
+        "Magic Attack\u002BEnchant (Frost)_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 12272,
       "Entries": [
-        "Magic Attack+Enchant (Frost)_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Magic Attack\u002BEnchant (Frost)_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 12300,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Dagger_Dagger_1000000"
+        "Magic Attack\u002BEnchant (Poison)_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 12301,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Straight Sword_Longsword_2000000"
+        "Magic Attack\u002BEnchant (Poison)_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 12302,
       "Entries": [
-        "Magic Attack+Enchant (Poison)_Greatsword_Bastard Sword_3000000"
+        "Magic Attack\u002BEnchant (Poison)_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 12303,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Colossal Sword_Great Sword_4000000"
+        "Magic Attack\u002BEnchant (Poison)_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 12304,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Curved Sword_Falchion_7000000"
+        "Magic Attack\u002BEnchant (Poison)_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 12305,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Curved Greatsword_Curved Greatsword_8020000"
+        "Magic Attack\u002BEnchant (Poison)_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 12306,
       "Entries": [
-        "Magic Attack+Enchant (Poison)_Katana_Uchigatana_9000000"
+        "Magic Attack\u002BEnchant (Poison)_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 12307,
       "Entries": [
-        "Magic Attack+Enchant (Poison)_Twinblade_Twinblade_10000000"
+        "Magic Attack\u002BEnchant (Poison)_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 12308,
       "Entries": [
-        "Magic Attack+Enchant (Poison)_Thrusting Sword_Rapier_5020000"
+        "Magic Attack\u002BEnchant (Poison)_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 12309,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Magic Attack\u002BEnchant (Poison)_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 12310,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Axe_Battle Axe_14000000"
+        "Magic Attack\u002BEnchant (Poison)_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 12311,
       "Entries": [
-        "Magic Attack+Enchant (Poison)_Greataxe_Great Axe_15000000"
+        "Magic Attack\u002BEnchant (Poison)_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 12312,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Hammer_Mace_11000000"
+        "Magic Attack\u002BEnchant (Poison)_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 12313,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Great Hammer_Great Mace_12000000"
+        "Magic Attack\u002BEnchant (Poison)_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 12314,
       "Entries": [
-        "Magic Attack+Enchant (Poison)_Flail_Flail_13000000"
+        "Magic Attack\u002BEnchant (Poison)_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 12315,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Spear_Spear_16000000"
+        "Magic Attack\u002BEnchant (Poison)_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 12316,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Great Spear_Lance_17060000"
+        "Magic Attack\u002BEnchant (Poison)_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 12317,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Halberd_Red-hilted Halberd_18000000"
+        "Magic Attack\u002BEnchant (Poison)_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 12318,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Reaper_Great Scythe_19000000"
+        "Magic Attack\u002BEnchant (Poison)_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 12319,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Fist_Cestus_21000000"
+        "Magic Attack\u002BEnchant (Poison)_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 12320,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Claw_Hooked Claw_22000000"
+        "Magic Attack\u002BEnchant (Poison)_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 12322,
       "Entries": [
-        "Magic Attack + Enchant (Poison)_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Magic Attack\u002BEnchant (Poison)_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -4792,19 +4792,19 @@
     {
       "ID": 12428,
       "Entries": [
-        "Mighty Parry_Small Shield_Wooden Small Shield A_30070000"
+        "Mighty Deflect_Small Shield_Wooden Small Shield A_30070000"
       ]
     },
     {
       "ID": 12429,
       "Entries": [
-        "Mighty Parry_Medium Shield_Kite Shield_31000000"
+        "Mighty Deflect_Medium Shield_Kite Shield_31000000"
       ]
     },
     {
       "ID": 12430,
       "Entries": [
-        "Mighty Parry_Greatshield_Tower Shield_32000000"
+        "Mighty Deflect_Greatshield_Tower Shield_32000000"
       ]
     },
     {
@@ -4834,13 +4834,13 @@
     {
       "ID": 12470,
       "Entries": [
-        "Parry_Claw_Hooked Claw_22000000"
+        "Parry_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 12478,
       "Entries": [
-        "Parry_Small Shield_Wooden Small ShieldA_30070000"
+        "Parry_Small Shield_Wooden Small Shield A_30070000"
       ]
     },
     {
@@ -4876,13 +4876,13 @@
     {
       "ID": 12628,
       "Entries": [
-        "Ranged Parry Small Shield_Wooden Small Shield A_30070000"
+        "Remote Parry Small Shield_Wooden Small Shield A_30070000"
       ]
     },
     {
       "ID": 12629,
       "Entries": [
-        "Ranged Parry Medium Shield_Kite Shield_31000000"
+        "Remote Parry Medium Shield_Kite Shield_31000000"
       ]
     },
     {
@@ -4948,19 +4948,19 @@
     {
       "ID": 12873,
       "Entries": [
-        "Continuous Shot_Light Bow_Conduit Bow_40050000"
+        "Rapid Fire_Shortbow_Conduit Bow_40050000"
       ]
     },
     {
       "ID": 12874,
       "Entries": [
-        "Continuous Shot_Bow_Longbow_41000000"
+        "Rapid Fire_Bow_Longbow_41000000"
       ]
     },
     {
       "ID": 12923,
       "Entries": [
-        "Power Shot_Small Bow_Conduit Bow_40050000"
+        "Power Shot_Shortbow_Conduit Bow_40050000"
       ]
     },
     {
@@ -4972,7 +4972,7 @@
     {
       "ID": 12973,
       "Entries": [
-        "Homing Shot_Small Bow_Conduit Bow_40050000"
+        "Homing Shot_Shortbow_Conduit Bow_40050000"
       ]
     },
     {
@@ -4984,19 +4984,19 @@
     {
       "ID": 13023,
       "Entries": [
-        "Arcing Shot_Small Bow_Conduit Bow_40050000"
+        "Arc Shot_Shortbow_Conduit Bow_40050000"
       ]
     },
     {
       "ID": 13024,
       "Entries": [
-        "Arcing Shot_Bow_Longbow_41000000"
+        "Arc Shot_Bow_Longbow_41000000"
       ]
     },
     {
       "ID": 13073,
       "Entries": [
-        "Arrow Rain_Small Bow_Conduit Bow_40050000"
+        "Arrow Rain_Shortbow_Conduit Bow_40050000"
       ]
     },
     {
@@ -5014,277 +5014,277 @@
     {
       "ID": 13100,
       "Entries": [
-        "Quaking Frost Step_Dagger_Dagger_1000000"
+        "Stomp/Frost Stomp_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13101,
       "Entries": [
-        "Quaking Frost Step_Straight Sword_Longsword_2000000"
+        "Stomp/Frost Stomp_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13102,
       "Entries": [
-        "Stomp・Frost Step_Greatsword_Bastard Sword_3000000"
+        "Stomp/Frost Stomp_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13103,
       "Entries": [
-        "Quaking Frost Step_Colossal Sword_Greatsword_4000000"
+        "Stomp/Frost Stomp_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13104,
       "Entries": [
-        "Stomp・Frost Step_Curved Sword_Falchion_7000000"
+        "Stomp/Frost Stomp_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13105,
       "Entries": [
-        "Stomp・Frost Step_Curved Greatsword_Curved Greatsword_8020000"
+        "Stomp/Frost Stomp_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13106,
       "Entries": [
-        "Stomp・Frost Step_Katana_Uchigatana_9000000"
+        "Stomp/Frost Stomp_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13107,
       "Entries": [
-        "Stomp・Frost Step_Twinblade_Twinblade_10000000"
+        "Stomp/Frost Stomp_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13108,
       "Entries": [
-        "Stomp・Frost Step_Thrusting Sword_Rapier_5020000"
+        "Stomp/Frost Stomp_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13109,
       "Entries": [
-        "Quaking Frost Step_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Stomp/Frost Stomp_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13110,
       "Entries": [
-        "Stomp・Frost Step_Axe_Battle Axe_14000000"
+        "Stomp/Frost Stomp_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13111,
       "Entries": [
-        "Stomp・Frost Step_Greataxe_Great Axe_15000000"
+        "Stomp/Frost Stomp_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13112,
       "Entries": [
-        "Stomp・Frost Step_Hammer_Mace_11000000"
+        "Stomp/Frost Stomp_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13113,
       "Entries": [
-        "Stomp・Frost Step_Great Hammer_Great Mace_12000000"
+        "Stomp/Frost Stomp_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13114,
       "Entries": [
-        "Stomp・Frost Step_Flail_Flail_13000000"
+        "Stomp/Frost Stomp_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13115,
       "Entries": [
-        "Stomp・Frost Step_Spear_Spear_16000000"
+        "Stomp/Frost Stomp_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13116,
       "Entries": [
-        "Quaking Frost Step_Great Spear_Jousting Lance_17060000"
+        "Stomp/Frost Stomp_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13117,
       "Entries": [
-        "Stomp・Frost Step_Halberd_Red-hilted Halberd_18000000"
+        "Stomp/Frost Stomp_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13118,
       "Entries": [
-        "Quaking Frost Step_Reaper_Greatscythe_19000000"
+        "Stomp/Frost Stomp_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13119,
       "Entries": [
-        "Stomp・Frost Step_Fist_Cestus_21000000"
+        "Stomp/Frost Stomp_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13120,
       "Entries": [
-        "Stomp・Frost Step_Claw_Hooked Claw_22000000"
+        "Stomp/Frost Stomp_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13121,
       "Entries": [
-        "Stomp・Frost Step_Whip_Whip_20000000"
+        "Stomp/Frost Stomp_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13122,
       "Entries": [
-        "Quaking Frost Step_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Stomp/Frost Stomp_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13150,
       "Entries": [
-        "Stomp・Storm_Dagger_Dagger_1000000"
+        "Stomp/Storm_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13151,
       "Entries": [
-        "Stomp・Storm_Straight Sword_Longsword_2000000"
+        "Stomp/Storm_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13152,
       "Entries": [
-        "Stomp・Storm_Greatsword_Bastard Sword_3000000"
+        "Stomp/Storm_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13153,
       "Entries": [
-        "Stomp・Storm_Colossal Sword_Greatsword_4000000"
+        "Stomp/Storm_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13154,
       "Entries": [
-        "Stomp・Storm_Curved Sword_Falchion_7000000"
+        "Stomp/Storm_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13155,
       "Entries": [
-        "Stomp・Storm_Curved Greatsword_Curved Greatsword_8020000"
+        "Stomp/Storm_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13156,
       "Entries": [
-        "Stomp・Storm_Katana_Uchigatana_9000000"
+        "Stomp/Storm_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13157,
       "Entries": [
-        "Stomp・Storm_Twinblade_Twinblade_10000000"
+        "Stomp/Storm_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13158,
       "Entries": [
-        "Stomp・Storm_Thrusting Sword_Rapier_5020000"
+        "Stomp/Storm_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13159,
       "Entries": [
-        "Stomp・Storm_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Stomp/Storm_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13160,
       "Entries": [
-        "Stomp・Storm_Axe_Battle Axe_14000000"
+        "Stomp/Storm_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13161,
       "Entries": [
-        "Stomp・Storm_Greataxe_Great Axe_15000000"
+        "Stomp/Storm_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13162,
       "Entries": [
-        "Stomp・Storm_Hammer_Mace_11000000"
+        "Stomp/Storm_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13163,
       "Entries": [
-        "Stomp・Storm_Great Hammer_Great Mace_12000000"
+        "Stomp/Storm_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13164,
       "Entries": [
-        "Stomp・Storm_Flail_Flail_13000000"
+        "Stomp/Storm_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13165,
       "Entries": [
-        "Stomp・Storm_Spear_Spear_16000000"
+        "Stomp/Storm_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13166,
       "Entries": [
-        "Stomp・Storm_Great Spear_Jousting Lance_17060000"
+        "Stomp/Storm_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13167,
       "Entries": [
-        "Stomp・Storm_Halberd_Red-hilted Halberd_18000000"
+        "Stomp/Storm_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13168,
       "Entries": [
-        "Stomp・Storm_Reaper_Great Scythe_19000000"
+        "Stomp/Storm_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13169,
       "Entries": [
-        "Stomp・Storm_Fist_Cestus_21000000"
+        "Stomp/Storm_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13170,
       "Entries": [
-        "Stomp・Storm_Claw_Hooked Claw_22000000"
+        "Stomp/Storm_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13171,
       "Entries": [
-        "Stomp・Storm_Whip_Whip_20000000"
+        "Stomp/Storm_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13172,
       "Entries": [
-        "Stomp・Storm_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Stomp/Storm_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -5320,7 +5320,7 @@
     {
       "ID": 13205,
       "Entries": [
-        "Kick_Great Curved Sword_Great Curved Sword_8020000"
+        "Kick_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -5356,7 +5356,7 @@
     {
       "ID": 13211,
       "Entries": [
-        "Kick_Greataxe_Great Axe_15000000"
+        "Kick_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -5386,13 +5386,13 @@
     {
       "ID": 13216,
       "Entries": [
-        "Kick_Great Spear_Jousting Lance_17060000"
+        "Kick_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13217,
       "Entries": [
-        "Kick_Halberd_Red-hilted Halberd_18000000"
+        "Kick_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -5410,7 +5410,7 @@
     {
       "ID": 13220,
       "Entries": [
-        "Kick_Claw_Claw_22000000"
+        "Kick_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -5422,319 +5422,319 @@
     {
       "ID": 13222,
       "Entries": [
-        "Kick_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Kick_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13250,
       "Entries": [
-        "Rolling Attack / Special Rolling_Dagger_Dagger_1000000"
+        "Rolling Attack/Special Roll_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13251,
       "Entries": [
-        "Rolling Attack / Special Rolling_Straight Sword_Longsword_2000000"
+        "Rolling Attack/Special Roll_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13252,
       "Entries": [
-        "Rolling Attack・Special Rolling_Greatsword_Bastard Sword_3000000"
+        "Rolling Attack/Special Roll_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13253,
       "Entries": [
-        "Rolling Attack / Special Rolling_Colossal Sword_Greatsword_4000000"
+        "Rolling Attack/Special Roll_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13254,
       "Entries": [
-        "Rolling Attack / Special Rolling_Curved Sword_Falchion_7000000"
+        "Rolling Attack/Special Roll_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13255,
       "Entries": [
-        "Rolling Attack・Special Rolling_Great Curved Sword_Great Curved Sword_8020000"
+        "Rolling Attack/Special Roll_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13256,
       "Entries": [
-        "Rolling Attack・Special Rolling_Katana_Uchigatana_9000000"
+        "Rolling Attack/Special Roll_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13257,
       "Entries": [
-        "Rolling Attack・Special Rolling_Twinblade_Twinblade_10000000"
+        "Rolling Attack/Special Roll_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13258,
       "Entries": [
-        "Rolling Attack・Special Rolling_Thrusting Sword_Rapier_5020000"
+        "Rolling Attack/Special Roll_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13259,
       "Entries": [
-        "Rolling Attack / Special Rolling_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Rolling Attack/Special Roll_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13260,
       "Entries": [
-        "Rolling Attack・Special Rolling_Axe_Battle Axe_14000000"
+        "Rolling Attack/Special Roll_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13261,
       "Entries": [
-        "Rolling Attack・Special Rolling_Greataxe_Greataxe_15000000"
+        "Rolling Attack/Special Roll_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13262,
       "Entries": [
-        "Rolling Attack / Special Rolling_Hammer_Mace_11000000"
+        "Rolling Attack/Special Roll_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13263,
       "Entries": [
-        "Rolling Attack・Special Rolling_Great Hammer_Great Mace_12000000"
+        "Rolling Attack/Special Roll_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13264,
       "Entries": [
-        "Rolling Attack・Special Rolling_Flail_Flail_13000000"
+        "Rolling Attack/Special Roll_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13265,
       "Entries": [
-        "Rolling Attack / Special Rolling_Spear_Spear_16000000"
+        "Rolling Attack/Special Roll_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13266,
       "Entries": [
-        "Rolling Attack / Special Rolling_Great Spear_Jousting Lance_17060000"
+        "Rolling Attack/Special Roll_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13267,
       "Entries": [
-        "Rolling Attack / Special Rolling_Halberd_Red-hilted Halberd_18000000"
+        "Rolling Attack/Special Roll_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13268,
       "Entries": [
-        "Rolling Attack / Special Rolling_Reaper_Greatscythe_19000000"
+        "Rolling Attack/Special Roll_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13269,
       "Entries": [
-        "Rolling Attack・Special Rolling_Fist_Cestus_21000000"
+        "Rolling Attack/Special Roll_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13270,
       "Entries": [
-        "Rolling Attack / Special Rolling_Claw_Clawed Gauntlet_22000000"
+        "Rolling Attack/Special Roll_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13271,
       "Entries": [
-        "Rolling Attack・Special Rolling_Whip_Whip_20000000"
+        "Rolling Attack/Special Roll_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13272,
       "Entries": [
-        "Rolling Attack / Special Rolling_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Rolling Attack/Special Roll_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13300,
       "Entries": [
-        "Single-shot area skill_Dagger_Dagger_1000000"
+        "Single Area Skill_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13301,
       "Entries": [
-        "Single-shot area skill_Straight Sword_Longsword_2000000"
+        "Single Area Skill_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13302,
       "Entries": [
-        "Single-shot area skill_Greatsword_Bastard Sword_3000000"
+        "Single Area Skill_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13303,
       "Entries": [
-        "Single-shot area skill_Colossal Sword_Greatsword_4000000"
+        "Single Area Skill_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13304,
       "Entries": [
-        "Single-shot area skill_Curved Sword_Falchion_7000000"
+        "Single Area Skill_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13305,
       "Entries": [
-        "Single-shot area skill_Curved Greatsword_Curved Greatsword_8020000"
+        "Single Area Skill_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13306,
       "Entries": [
-        "Single-shot area skill_Katana_Uchigatana_9000000"
+        "Single Area Skill_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13307,
       "Entries": [
-        "Single-shot area skill_Twinblade_Twinblade_10000000"
+        "Single Area Skill_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13308,
       "Entries": [
-        "Single-shot area skill_Thrusting Sword_Rapier_5020000"
+        "Single Area Skill_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13309,
       "Entries": [
-        "Single-shot area skill_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Single Area Skill_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13310,
       "Entries": [
-        "Single-shot area skill_Axe_Battle Axe_14000000"
+        "Single Area Skill_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13311,
       "Entries": [
-        "Single-shot area skill_Greataxe_Great Axe_15000000"
+        "Single Area Skill_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13312,
       "Entries": [
-        "Single-shot area skill_Hammer_Mace_11000000"
+        "Single Area Skill_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13313,
       "Entries": [
-        "Single-shot area skill_Great Hammer_Great Mace_12000000"
+        "Single Area Skill_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13314,
       "Entries": [
-        "Single-shot area skill_Flail_Flail_13000000"
+        "Single Area Skill_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13315,
       "Entries": [
-        "Single-shot area skill_Spear_Spear_16000000"
+        "Single Area Skill_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13316,
       "Entries": [
-        "Single-shot area skill_Great Spear_Jousting Lance_17060000"
+        "Single Area Skill_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13317,
       "Entries": [
-        "Single-shot area skill_Halberd_Red-hilted Halberd_18000000"
+        "Single Area Skill_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13318,
       "Entries": [
-        "Single-shot area skill_Reaper_Great Scythe_19000000"
+        "Single Area Skill_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13319,
       "Entries": [
-        "Single-shot area skill_Fist_Cestus_21000000"
+        "Single Area Skill_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13320,
       "Entries": [
-        "Single-shot area skill_Claw_Claw_22000000"
+        "Single Area Skill_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13321,
       "Entries": [
-        "Single-shot area skill_Whip_Whip_20000000"
+        "Single Area Skill_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13322,
       "Entries": [
-        "Single-shot area skill_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Single Area Skill_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13350,
       "Entries": [
-        "HipDrop_Dagger_Dagger_1000000"
+        "Hip Drop_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13351,
       "Entries": [
-        "HipDrop_Straight Sword_Longsword_2000000"
+        "Hip Drop_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13352,
       "Entries": [
-        "HipDrop_Greatsword_Bastard Sword_3000000"
+        "Hip Drop_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13353,
       "Entries": [
-        "HipDrop_Colossal Sword_Great Sword_4000000"
+        "Hip Drop_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13354,
       "Entries": [
-        "HipDrop_Curved Sword_Falchion_7000000"
+        "Hip Drop_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13355,
       "Entries": [
-        "HipDrop_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Hip Drop_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -5752,37 +5752,37 @@
     {
       "ID": 13358,
       "Entries": [
-        "HipDrop_Thrusting Sword_Rapier_5020000"
+        "Hip Drop_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13359,
       "Entries": [
-        "HipDrop_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Hip Drop_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13360,
       "Entries": [
-        "HipDrop_Axe_Battle Axe_14000000"
+        "Hip Drop_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13361,
       "Entries": [
-        "HipDrop_Greataxe_Great Axe_15000000"
+        "Hip Drop_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13362,
       "Entries": [
-        "HipDrop_Hammer_Mace_11000000"
+        "Hip Drop_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13363,
       "Entries": [
-        "HipDrop_Great Hammer_Great Mace_12000000"
+        "Hip Drop_Great Hammer_Great Mace_12000000"
       ]
     },
     {
@@ -5794,37 +5794,37 @@
     {
       "ID": 13365,
       "Entries": [
-        "HipDrop_Spear_Spear_16000000"
+        "Hip Drop_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13366,
       "Entries": [
-        "HipDrop_Heavy Spear_Jousting Lance_17060000"
+        "Hip Drop_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13367,
       "Entries": [
-        "HipDrop_Halberd_Red-hilted Halberd_18000000"
+        "Hip Drop_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13368,
       "Entries": [
-        "HipDrop_Reaper_Great Scythe_19000000"
+        "Hip Drop_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13369,
       "Entries": [
-        "HipDrop_Fist_Cestus_21000000"
+        "Hip Drop_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13370,
       "Entries": [
-        "HipDrop_Claw_Hooked Claw_22000000"
+        "Hip Drop_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -5836,313 +5836,313 @@
     {
       "ID": 13372,
       "Entries": [
-        "HipDrop_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Hip Drop_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13400,
       "Entries": [
-        "HipDrop+Magic Bullet_Dagger_Dagger_1000000"
+        "Hip Drop\u002BMagic Projectile_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13401,
       "Entries": [
-        "HipDrop+Magic Bullet_Straight Sword_Longsword_2000000"
+        "Hip Drop\u002BMagic Projectile_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13402,
       "Entries": [
-        "HipDrop+Magic Bullet_Greatsword_Bastard Sword_3000000"
+        "Hip Drop\u002BMagic Projectile_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13403,
       "Entries": [
-        "HipDrop+Magic Bullet_Colossal Sword_Great Sword_4000000"
+        "Hip Drop\u002BMagic Projectile_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13404,
       "Entries": [
-        "HipDrop+Magic Bullet_Curved Sword_Falchion_7000000"
+        "Hip Drop\u002BMagic Projectile_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13405,
       "Entries": [
-        "HipDrop+Magic Bullet_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Hip Drop\u002BMagic Projectile_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13406,
       "Entries": [
-        "HipDrop+Magic Bullet_Katana_Uchigatana_9000000"
+        "Hip Drop\u002BMagic Projectile_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13407,
       "Entries": [
-        "HipDrop+Magic Bullet_Twinblade_Twinblade_10000000"
+        "Hip Drop\u002BMagic Projectile_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13408,
       "Entries": [
-        "HipDrop+Magic Bullet_Thrusting Sword_Rapier_5020000"
+        "Hip Drop\u002BMagic Projectile_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13409,
       "Entries": [
-        "HipDrop+Magic Bullet_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Hip Drop\u002BMagic Projectile_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13410,
       "Entries": [
-        "HipDrop+Magic Bullet_Axe_Battle Axe_14000000"
+        "Hip Drop\u002BMagic Projectile_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13411,
       "Entries": [
-        "HipDrop+Magic Bullet_Greataxe_Great Axe_15000000"
+        "Hip Drop\u002BMagic Projectile_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13412,
       "Entries": [
-        "HipDrop+Magic Bullet_Hammer_Mace_11000000"
+        "Hip Drop\u002BMagic Projectile_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13413,
       "Entries": [
-        "HipDrop+Magic Bullet_Great Hammer_Great Mace_12000000"
+        "Hip Drop\u002BMagic Projectile_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13414,
       "Entries": [
-        "HipDrop+Magic Bullet_Flail_Flail_13000000"
+        "Hip Drop\u002BMagic Projectile_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13415,
       "Entries": [
-        "HipDrop+Magic Bullet_Spear_Spear_16000000"
+        "Hip Drop\u002BMagic Projectile_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13416,
       "Entries": [
-        "HipDrop+Magic Bullet_Heavy Spear_Jousting Lance_17060000"
+        "Hip Drop\u002BMagic Projectile_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13417,
       "Entries": [
-        "HipDrop+Magic Bullet_Halberd_Red-hilted Halberd_18000000"
+        "Hip Drop\u002BMagic Projectile_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13418,
       "Entries": [
-        "HipDrop+Magic Bullet_Reaper_Great Scythe_19000000"
+        "Hip Drop\u002BMagic Projectile_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13419,
       "Entries": [
-        "HipDrop+Magic Bullet_Fist_Cestus_21000000"
+        "Hip Drop\u002BMagic Projectile_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13420,
       "Entries": [
-        "HipDrop+Magic Bullet_Claw_Hooked Claw_22000000"
+        "Hip Drop\u002BMagic Projectile_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13421,
       "Entries": [
-        "HipDrop+Magic Bullet_Whip_Whip_20000000"
+        "Hip Drop\u002BMagic Projectile_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13422,
       "Entries": [
-        "HipDrop+Magic Bullet_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Hip Drop\u002BMagic Projectile_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13453,
       "Entries": [
-        "Ground Upheaval Magic Bullet_Colossal Sword_Greatsword_4000000"
+        "Ground-Lifting Magic Projectile_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13461,
       "Entries": [
-        "Ground Upheaval Magic Bullet_Greataxe_Great Axe_15000000"
+        "Ground-Lifting Magic Projectile_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13463,
       "Entries": [
-        "Ground Upheaval Magic Bullet_Greatmace_Great Mace_12000000"
+        "Ground-Lifting Magic Projectile_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13466,
       "Entries": [
-        "Ground Upheaval Magic Bullet_Great Spear_Mounted Spear_17060000"
+        "Ground-Lifting Magic Projectile_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13472,
       "Entries": [
-        "Ground Upheaval Magic Bullet_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Ground-Lifting Magic Projectile_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13500,
       "Entries": [
-        "Bare Hands Earthquake_Dagger_Dagger_1000000"
+        "Unarmed Earthquake_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13501,
       "Entries": [
-        "Bare Hands Earthquake_Straight Sword_Longsword_2000000"
+        "Unarmed Earthquake_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13502,
       "Entries": [
-        "Bare Hands Earthquake_Greatsword_Bastard Sword_3000000"
+        "Unarmed Earthquake_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13503,
       "Entries": [
-        "Bare Hands Earthquake_Colossal Sword_Greatsword_4000000"
+        "Unarmed Earthquake_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13504,
       "Entries": [
-        "Bare Hands Earthquake_Curved Sword_Falchion_7000000"
+        "Unarmed Earthquake_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13505,
       "Entries": [
-        "Bare Hands Earthquake_Curved Greatsword_Curved Greatsword_8020000"
+        "Unarmed Earthquake_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13506,
       "Entries": [
-        "Bare Hands Earthquake_Katana_Uchigatana_9000000"
+        "Unarmed Earthquake_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13507,
       "Entries": [
-        "Bare Hands Earthquake_Twinblade_Twinblade_10000000"
+        "Unarmed Earthquake_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13508,
       "Entries": [
-        "Bare Hands Earthquake_Thrusting Sword_Rapier_5020000"
+        "Unarmed Earthquake_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13509,
       "Entries": [
-        "Bare Hands Earthquake_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Unarmed Earthquake_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13510,
       "Entries": [
-        "Bare Hands Earthquake_Axe_Battle Axe_14000000"
+        "Unarmed Earthquake_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13511,
       "Entries": [
-        "Bare Hands Earthquake_Greataxe_Greataxe_15000000"
+        "Unarmed Earthquake_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13512,
       "Entries": [
-        "Bare Hands Earthquake_Hammer_Mace_11000000"
+        "Unarmed Earthquake_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13513,
       "Entries": [
-        "Bare Hands Earthquake_Great Hammer_Great Mace_12000000"
+        "Unarmed Earthquake_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13514,
       "Entries": [
-        "Bare Hands Earthquake_Flail_Flail_13000000"
+        "Unarmed Earthquake_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13515,
       "Entries": [
-        "Bare Hands Earthquake_Spear_Spear_16000000"
+        "Unarmed Earthquake_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13516,
       "Entries": [
-        "Bare Hands Earthquake_Great Spear_Jousting Lance_17060000"
+        "Unarmed Earthquake_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13517,
       "Entries": [
-        "Bare Hands Earthquake_Halberd_Red-hilted Halberd_18000000"
+        "Unarmed Earthquake_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13518,
       "Entries": [
-        "Bare Hands Earthquake_Reaper_Great Scythe_19000000"
+        "Unarmed Earthquake_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13519,
       "Entries": [
-        "Bare Hands Earthquake_Fist_Cestus_21000000"
+        "Unarmed Earthquake_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13520,
       "Entries": [
-        "Bare Hands Earthquake_Claw_Hooked Claw_22000000"
+        "Unarmed Earthquake_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13521,
       "Entries": [
-        "Bare Hands Earthquake_Whip_Whip_20000000"
+        "Unarmed Earthquake_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13522,
       "Entries": [
-        "Bare Hands Earthquake_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Unarmed Earthquake_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -6214,7 +6214,7 @@
     {
       "ID": 13561,
       "Entries": [
-        "Concentrate_Greataxe_Great Axe_15000000"
+        "Concentrate_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -6244,13 +6244,13 @@
     {
       "ID": 13566,
       "Entries": [
-        "Concentrate_Great Spear_Jousting Lance_17060000"
+        "Concentrate_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13567,
       "Entries": [
-        "Concentrate_Halberd_Red-Hilted Halberd_18000000"
+        "Concentrate_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -6268,7 +6268,7 @@
     {
       "ID": 13570,
       "Entries": [
-        "Concentrate_Claw_Hooked Claw_22000000"
+        "Concentrate_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -6280,145 +6280,145 @@
     {
       "ID": 13572,
       "Entries": [
-        "Concentrate_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Concentrate_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 13600,
       "Entries": [
-        "Upper Concentrate_Dagger_Dagger_1000000"
+        "Greater Concentrate_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13601,
       "Entries": [
-        "Upper Concentrate_Straight Sword_Longsword_2000000"
+        "Greater Concentrate_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13602,
       "Entries": [
-        "Upper Concentrate_Greatsword_Bastard Sword_3000000"
+        "Greater Concentrate_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13603,
       "Entries": [
-        "Upper Concentrate_Colossal Sword_Greatsword_4000000"
+        "Greater Concentrate_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13604,
       "Entries": [
-        "Upper Concentrate_Curved Sword_Falchion_7000000"
+        "Greater Concentrate_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13605,
       "Entries": [
-        "Upper Concentrate_Curved Greatsword_Curved Greatsword_8020000"
+        "Greater Concentrate_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13606,
       "Entries": [
-        "Upper Concentrate_Katana_Uchigatana_9000000"
+        "Greater Concentrate_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13607,
       "Entries": [
-        "Upper Concentrate_Twinblade_Twinblade_10000000"
+        "Greater Concentrate_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13608,
       "Entries": [
-        "Upper Concentrate_Thrusting Sword_Rapier_5020000"
+        "Greater Concentrate_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13609,
       "Entries": [
-        "Upper Concentrate_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Greater Concentrate_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13610,
       "Entries": [
-        "Upper Concentrate_Axe_Battle Axe_14000000"
+        "Greater Concentrate_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13611,
       "Entries": [
-        "Upper Concentrate_Greataxe_Great Axe_15000000"
+        "Greater Concentrate_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13612,
       "Entries": [
-        "Upper Concentrate_Hammer_Mace_11000000"
+        "Greater Concentrate_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13613,
       "Entries": [
-        "Upper Concentrate_Great Hammer_Great Mace_12000000"
+        "Greater Concentrate_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13614,
       "Entries": [
-        "Upper Concentrate_Flail_Flail_13000000"
+        "Greater Concentrate_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13615,
       "Entries": [
-        "Upper Concentrate_Spear_Spear_16000000"
+        "Greater Concentrate_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13616,
       "Entries": [
-        "Upper Concentrate_Great Spear_Jousting Lance_17060000"
+        "Greater Concentrate_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13617,
       "Entries": [
-        "Upper Concentrate_Halberd_Red-hilted Halberd_18000000"
+        "Greater Concentrate_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13618,
       "Entries": [
-        "Upper Concentrate_Reaper_Great Scythe_19000000"
+        "Greater Concentrate_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13619,
       "Entries": [
-        "Upper Concentrate_Fist_Cestus_21000000"
+        "Greater Concentrate_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13620,
       "Entries": [
-        "Upper Concentrate_Claw_Clawed Gauntlet_22000000"
+        "Greater Concentrate_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13621,
       "Entries": [
-        "Upper Concentrate_Whip_Whip_20000000"
+        "Greater Concentrate_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13622,
       "Entries": [
-        "Upper Concentrate_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Greater Concentrate_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -6454,139 +6454,139 @@
     {
       "ID": 13700,
       "Entries": [
-        "Sun Oath_Dagger_Dagger_1000000"
+        "Oath of the Sun_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 13701,
       "Entries": [
-        "Sun Oath_Straight Sword_Longsword_2000000"
+        "Oath of the Sun_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 13702,
       "Entries": [
-        "Sun Oath_Greatsword_Bastard Sword_3000000"
+        "Oath of the Sun_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 13703,
       "Entries": [
-        "Sun Oath_Colossal Sword_Greatsword_4000000"
+        "Oath of the Sun_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 13704,
       "Entries": [
-        "Sun Oath_Curved Sword_Falchion_7000000"
+        "Oath of the Sun_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 13705,
       "Entries": [
-        "Sun Oath_Great Curved Sword_Great Curved Sword_8020000"
+        "Oath of the Sun_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 13706,
       "Entries": [
-        "Sun Oath_Katana_Uchigatana_9000000"
+        "Oath of the Sun_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 13707,
       "Entries": [
-        "Sun Oath_Twinblade_Twinblade_10000000"
+        "Oath of the Sun_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 13708,
       "Entries": [
-        "Sun Oath_Thrusting Sword_Rapier_5020000"
+        "Oath of the Sun_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 13709,
       "Entries": [
-        "Sun Oath_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
+        "Oath of the Sun_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 13710,
       "Entries": [
-        "Sun Oath_Axe_Battle Axe_14000000"
+        "Oath of the Sun_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 13711,
       "Entries": [
-        "Sun Oath_Greataxe_Great Axe_15000000"
+        "Oath of the Sun_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 13712,
       "Entries": [
-        "Sun Oath_Hammer_Mace_11000000"
+        "Oath of the Sun_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 13713,
       "Entries": [
-        "Sun Oath_Great Hammer_Great Mace_12000000"
+        "Oath of the Sun_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 13714,
       "Entries": [
-        "Sun Oath_Flail_Flail_13000000"
+        "Oath of the Sun_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 13715,
       "Entries": [
-        "Sun Oath_Spear_Spear_16000000"
+        "Oath of the Sun_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 13716,
       "Entries": [
-        "Sun Oath_Great Spear_Jousting Lance_17060000"
+        "Oath of the Sun_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13717,
       "Entries": [
-        "Sun Oath_Halberd_Red-hilted Halberd_18000000"
+        "Oath of the Sun_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13718,
       "Entries": [
-        "Sun Oath_Reaper_Great Scythe_19000000"
+        "Oath of the Sun_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 13719,
       "Entries": [
-        "Sun Oath_Fist_Cestus_21000000"
+        "Oath of the Sun_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 13720,
       "Entries": [
-        "Sun Oath_Claw_Hooked Claw_22000000"
+        "Oath of the Sun_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13721,
       "Entries": [
-        "Sun Oath_Whip_Whip_20000000"
+        "Oath of the Sun_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 13722,
       "Entries": [
-        "Sun Oath_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Oath of the Sun_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -6622,7 +6622,7 @@
     {
       "ID": 13755,
       "Entries": [
-        "Holy Enchant_Great Curved Sword_Great Curved Sword_8020000"
+        "Holy Enchant_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -6688,13 +6688,13 @@
     {
       "ID": 13766,
       "Entries": [
-        "Holy Enchant_Great Spear_Jousting Lance_17060000"
+        "Holy Enchant_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13767,
       "Entries": [
-        "Holy Enchant_Halberd_Red-hilted Halberd_18000000"
+        "Holy Enchant_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -6712,7 +6712,7 @@
     {
       "ID": 13770,
       "Entries": [
-        "Holy Enchant_Claw_Claw_22000000"
+        "Holy Enchant_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -6724,7 +6724,7 @@
     {
       "ID": 13772,
       "Entries": [
-        "Holy Enchant_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Holy Enchant_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -6796,7 +6796,7 @@
     {
       "ID": 13811,
       "Entries": [
-        "Area Holy Enchant_Greataxe_Great Axe_15000000"
+        "Area Holy Enchant_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -6826,19 +6826,19 @@
     {
       "ID": 13816,
       "Entries": [
-        "Area Holy Enchant_Great Spear_Jousting Lance_17060000"
+        "Area Holy Enchant_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13817,
       "Entries": [
-        "Area Holy Enchant_Halberd_Red-hilted Halberd_18000000"
+        "Area Holy Enchant_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 13818,
       "Entries": [
-        "Area Holy Enchant_Reaper_Greatscythe_19000000"
+        "Area Holy Enchant_Reaper_Great Scythe_19000000"
       ]
     },
     {
@@ -6850,7 +6850,7 @@
     {
       "ID": 13820,
       "Entries": [
-        "Area Holy Enchant_Claw_Clawed Gauntlet_22000000"
+        "Area Holy Enchant_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -6862,7 +6862,7 @@
     {
       "ID": 13822,
       "Entries": [
-        "Area Holy Enchant_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Area Holy Enchant_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -6928,13 +6928,13 @@
     {
       "ID": 13866,
       "Entries": [
-        "Seppuku Enchant_Heavy Spear_Jousting Lance_17060000"
+        "Seppuku Enchant_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13867,
       "Entries": [
-        "Seppuku Enchant_Halberd_Red-hilted Halberd_18000000"
+        "Seppuku Enchant_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -7036,13 +7036,13 @@
     {
       "ID": 13916,
       "Entries": [
-        "Rock Enchant_Great Spear_Jousting Lance_17060000"
+        "Rock Enchant_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13917,
       "Entries": [
-        "Rock Enchant_Halberd_Red-hilted Halberd_18000000"
+        "Rock Enchant_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -7060,13 +7060,13 @@
     {
       "ID": 13920,
       "Entries": [
-        "Rock Enchant_Claw_Claw_22000000"
+        "Rock Enchant_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13922,
       "Entries": [
-        "Rock Enchant_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Rock Enchant_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -7096,7 +7096,7 @@
     {
       "ID": 13955,
       "Entries": [
-        "Barbarian War Cry_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Barbarian War Cry_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -7120,7 +7120,7 @@
     {
       "ID": 13961,
       "Entries": [
-        "Barbarian War Cry_Greataxe_Great Axe_15000000"
+        "Barbarian War Cry_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7150,13 +7150,13 @@
     {
       "ID": 13966,
       "Entries": [
-        "Barbarian War Cry_Great Spear_Jousting Lance_17060000"
+        "Barbarian War Cry_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 13967,
       "Entries": [
-        "Barbarian War Cry_Halberd_Red-hilted Halberd_18000000"
+        "Barbarian War Cry_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -7174,13 +7174,13 @@
     {
       "ID": 13970,
       "Entries": [
-        "Barbarian War Cry_Claw_Clawed Gauntlet_22000000"
+        "Barbarian War Cry_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 13972,
       "Entries": [
-        "Barbarian War Cry_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Barbarian War Cry_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -7198,7 +7198,7 @@
     {
       "ID": 14003,
       "Entries": [
-        "Warrior War Cry_Colossal Sword_Great Sword_4000000"
+        "Warrior War Cry_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
@@ -7210,7 +7210,7 @@
     {
       "ID": 14005,
       "Entries": [
-        "Warrior War Cry_Greatcurved Sword_Greatcurved Sword_8020000"
+        "Warrior War Cry_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
@@ -7234,7 +7234,7 @@
     {
       "ID": 14011,
       "Entries": [
-        "Warrior War Cry_Greataxe_Great Axe_15000000"
+        "Warrior War Cry_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7264,13 +7264,13 @@
     {
       "ID": 14016,
       "Entries": [
-        "Warrior War Cry_Great Spear_Jousting Lance_17060000"
+        "Warrior War Cry_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14017,
       "Entries": [
-        "Warrior War Cry_Halberd_Red-hilted Halberd_18000000"
+        "Warrior War Cry_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -7288,13 +7288,13 @@
     {
       "ID": 14020,
       "Entries": [
-        "Warrior War Cry_Claw_Claw_22000000"
+        "Warrior War Cry_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 14022,
       "Entries": [
-        "Warrior War Cry_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Warrior War Cry_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -7366,7 +7366,7 @@
     {
       "ID": 14061,
       "Entries": [
-        "Ultrasonic War Cry_Greataxe_Great Axe_15000000"
+        "Ultrasonic War Cry_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7396,19 +7396,19 @@
     {
       "ID": 14066,
       "Entries": [
-        "Ultrasonic War Cry_Heavy Spear_Jousting Lance_17060000"
+        "Ultrasonic War Cry_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14067,
       "Entries": [
-        "Ultrasonic War Cry_Halberd_Red-hilted Halberd_18000000"
+        "Ultrasonic War Cry_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 14068,
       "Entries": [
-        "Ultrasonic War Cry_Scythe_Greatscythe_19000000"
+        "Ultrasonic War Cry_Reaper_Great Scythe_19000000"
       ]
     },
     {
@@ -7420,7 +7420,7 @@
     {
       "ID": 14070,
       "Entries": [
-        "Ultrasonic War Cry_Claw_Hooked Claw_22000000"
+        "Ultrasonic War Cry_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -7432,43 +7432,43 @@
     {
       "ID": 14072,
       "Entries": [
-        "Ultrasonic War Cry_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Ultrasonic War Cry_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 14102,
       "Entries": [
-        "Troll War Cry_Greatsword_Bastard Sword_3000000"
+        "Troll\u0027s War Cry_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 14103,
       "Entries": [
-        "Troll War Cry_Colossal Sword_Great Sword_4000000"
+        "Troll\u0027s War Cry_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 14105,
       "Entries": [
-        "Troll War Cry_Curved Greatsword_Curved Greatsword_8020000"
+        "Troll\u0027s War Cry_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 14111,
       "Entries": [
-        "Troll War Cry_Greataxe_Greataxe_15000000"
+        "Troll\u0027s War Cry_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 14113,
       "Entries": [
-        "Troll War Cry_Great Hammer_Great Mace_12000000"
+        "Troll\u0027s War Cry_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 14122,
       "Entries": [
-        "Troll War Cry_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Troll\u0027s War Cry_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -7522,7 +7522,7 @@
     {
       "ID": 14161,
       "Entries": [
-        "Gladiator War Cry_Greataxe_Great Axe_15000000"
+        "Gladiator War Cry_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7558,13 +7558,13 @@
     {
       "ID": 14167,
       "Entries": [
-        "Gladiator War Cry_Halberd_Red-hilted Halberd_18000000"
+        "Gladiator War Cry_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 14168,
       "Entries": [
-        "Gladiator War Cry_Reaper_Greatscythe_19000000"
+        "Gladiator War Cry_Reaper_Great Scythe_19000000"
       ]
     },
     {
@@ -7576,13 +7576,13 @@
     {
       "ID": 14170,
       "Entries": [
-        "Gladiator War Cry_Claw_Clawed Hook_22000000"
+        "Gladiator War Cry_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 14172,
       "Entries": [
-        "Gladiator War Cry_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Gladiator War Cry_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -7606,7 +7606,7 @@
     {
       "ID": 14203,
       "Entries": [
-        "Endure_Colossal Sword_Great Sword_4000000"
+        "Endure_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
@@ -7642,7 +7642,7 @@
     {
       "ID": 14209,
       "Entries": [
-        "Endure_Heavy Thrusting Sword_Large Rapier_6020000"
+        "Endure_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
@@ -7654,7 +7654,7 @@
     {
       "ID": 14211,
       "Entries": [
-        "Endure_Greataxe_Great Axe_15000000"
+        "Endure_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7684,13 +7684,13 @@
     {
       "ID": 14216,
       "Entries": [
-        "Endure_Great Spear_Jousting Lance_17060000"
+        "Endure_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14217,
       "Entries": [
-        "Endure_Halberd_Red-hilted Halberd_18000000"
+        "Endure_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -7708,7 +7708,7 @@
     {
       "ID": 14220,
       "Entries": [
-        "Endure_Claw_Clawed Gauntlet_22000000"
+        "Endure_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -7720,43 +7720,43 @@
     {
       "ID": 14222,
       "Entries": [
-        "Endure_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Endure_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 14278,
       "Entries": [
-        "Momentary invincibility_Small Shield_Wooden Small Shield A_30070000"
+        "Brief Invincibility_Small Shield_Wooden Small Shield A_30070000"
       ]
     },
     {
       "ID": 14279,
       "Entries": [
-        "Momentary invincibility_Medium Shield_Kite Shield_31000000"
+        "Brief Invincibility_Medium Shield_Kite Shield_31000000"
       ]
     },
     {
       "ID": 14280,
       "Entries": [
-        "Momentary invincibility_Greatshield_Tower Shield_32000000"
+        "Brief Invincibility_Greatshield_Tower Shield_32000000"
       ]
     },
     {
       "ID": 14328,
       "Entries": [
-        "Sacred Area_Small Shield_Wooden Small Shield A_30070000"
+        "Sanctuary_Small Shield_Wooden Small Shield A_30070000"
       ]
     },
     {
       "ID": 14329,
       "Entries": [
-        "Sacred Area_Medium Shield_Kite Shield_31000000"
+        "Sanctuary_Medium Shield_Kite Shield_31000000"
       ]
     },
     {
       "ID": 14330,
       "Entries": [
-        "Sacred Area_Greatshield_Tower Shield_32000000"
+        "Sanctuary_Greatshield_Tower Shield_32000000"
       ]
     },
     {
@@ -7828,7 +7828,7 @@
     {
       "ID": 14361,
       "Entries": [
-        "Quickstep_Greataxe_Great Axe_15000000"
+        "Quickstep_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7858,13 +7858,13 @@
     {
       "ID": 14366,
       "Entries": [
-        "Quickstep_Great Spear_Jousting Lance_17060000"
+        "Quickstep_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14367,
       "Entries": [
-        "Quickstep_Halberd_Red-hilted Halberd_18000000"
+        "Quickstep_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -7882,7 +7882,7 @@
     {
       "ID": 14370,
       "Entries": [
-        "Quickstep_Claw_Clawed Gauntlet_22000000"
+        "Quickstep_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -7894,7 +7894,7 @@
     {
       "ID": 14372,
       "Entries": [
-        "Quickstep_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Quickstep_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -7966,7 +7966,7 @@
     {
       "ID": 14411,
       "Entries": [
-        "Gehrman Step_Greataxe_Great Axe_15000000"
+        "Gehrman Step_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -7996,13 +7996,13 @@
     {
       "ID": 14416,
       "Entries": [
-        "Gehrman Step_Great Spear_Lance_17060000"
+        "Gehrman Step_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14417,
       "Entries": [
-        "Gehrman Step_Halberd_Red-hilted Halberd_18000000"
+        "Gehrman Step_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -8020,7 +8020,7 @@
     {
       "ID": 14420,
       "Entries": [
-        "Gehrman Step_Claw_Hooked Claw_22000000"
+        "Gehrman Step_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -8032,145 +8032,145 @@
     {
       "ID": 14422,
       "Entries": [
-        "Gehrman Step_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Gehrman Step_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
       "ID": 14450,
       "Entries": [
-        "Substitute Technique_Dagger_Dagger_1000000"
+        "Substitution Technique_Dagger_Dagger_1000000"
       ]
     },
     {
       "ID": 14451,
       "Entries": [
-        "Substitute Technique_Straight Sword_Longsword_2000000"
+        "Substitution Technique_Straight Sword_Longsword_2000000"
       ]
     },
     {
       "ID": 14452,
       "Entries": [
-        "Substitute Technique_Greatsword_Bastard Sword_3000000"
+        "Substitution Technique_Greatsword_Bastard Sword_3000000"
       ]
     },
     {
       "ID": 14453,
       "Entries": [
-        "Substitute Technique_Colossal Sword_Greatsword_4000000"
+        "Substitution Technique_Colossal Sword_Greatsword_4000000"
       ]
     },
     {
       "ID": 14454,
       "Entries": [
-        "Substitute Technique_Curved Sword_Falchion_7000000"
+        "Substitution Technique_Curved Sword_Falchion_7000000"
       ]
     },
     {
       "ID": 14455,
       "Entries": [
-        "Substitute Technique_Curved Greatsword_Curved Greatsword_8020000"
+        "Substitution Technique_Curved Greatsword_Curved Greatsword_8020000"
       ]
     },
     {
       "ID": 14456,
       "Entries": [
-        "Substitute Technique_Katana_Uchigatana_9000000"
+        "Substitution Technique_Katana_Uchigatana_9000000"
       ]
     },
     {
       "ID": 14457,
       "Entries": [
-        "Substitute Technique_Twinblade_Twinblade_10000000"
+        "Substitution Technique_Twinblade_Twinblade_10000000"
       ]
     },
     {
       "ID": 14458,
       "Entries": [
-        "Substitute Technique_Thrusting Sword_Rapier_5020000"
+        "Substitution Technique_Thrusting Sword_Rapier_5020000"
       ]
     },
     {
       "ID": 14459,
       "Entries": [
-        "Substitute Technique_Heavy Thrusting Sword_Large Rapier_6020000"
+        "Substitution Technique_Heavy Thrusting Sword_Large Thrusting Sword_6020000"
       ]
     },
     {
       "ID": 14460,
       "Entries": [
-        "Substitute Technique_Axe_Battle Axe_14000000"
+        "Substitution Technique_Axe_Battle Axe_14000000"
       ]
     },
     {
       "ID": 14461,
       "Entries": [
-        "Substitute Technique_Greataxe_Great Axe_15000000"
+        "Substitution Technique_Greataxe_Greataxe_15000000"
       ]
     },
     {
       "ID": 14462,
       "Entries": [
-        "Substitute Technique_Hammer_Mace_11000000"
+        "Substitution Technique_Hammer_Mace_11000000"
       ]
     },
     {
       "ID": 14463,
       "Entries": [
-        "Substitute Technique_Great Hammer_Great Mace_12000000"
+        "Substitution Technique_Great Hammer_Great Mace_12000000"
       ]
     },
     {
       "ID": 14464,
       "Entries": [
-        "Substitute Technique_Flail_Flail_13000000"
+        "Substitution Technique_Flail_Flail_13000000"
       ]
     },
     {
       "ID": 14465,
       "Entries": [
-        "Substitute Technique_Spear_Spear_16000000"
+        "Substitution Technique_Spear_Spear_16000000"
       ]
     },
     {
       "ID": 14466,
       "Entries": [
-        "Substitute Technique_Great Spear_Jousting Lance_17060000"
+        "Substitution Technique_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14467,
       "Entries": [
-        "Substitute Technique_Halberd_Red-hilted Halberd_18000000"
+        "Substitution Technique_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
       "ID": 14468,
       "Entries": [
-        "Substitute Technique_Reaper_Great Scythe_19000000"
+        "Substitution Technique_Reaper_Great Scythe_19000000"
       ]
     },
     {
       "ID": 14469,
       "Entries": [
-        "Substitute Technique_Fist_Cestus_21000000"
+        "Substitution Technique_Fist_Cestus_21000000"
       ]
     },
     {
       "ID": 14470,
       "Entries": [
-        "Substitute Technique_Claw_Hooked Claw_22000000"
+        "Substitution Technique_Claw_Hookclaws_22000000"
       ]
     },
     {
       "ID": 14471,
       "Entries": [
-        "Substitute Technique_Whip_Whip_20000000"
+        "Substitution Technique_Whip_Whip_20000000"
       ]
     },
     {
       "ID": 14472,
       "Entries": [
-        "Substitute Technique_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Substitution Technique_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     },
     {
@@ -8242,7 +8242,7 @@
     {
       "ID": 14511,
       "Entries": [
-        "Phantom Summon_Greataxe_Great Axe_15000000"
+        "Phantom Summon_Greataxe_Greataxe_15000000"
       ]
     },
     {
@@ -8272,13 +8272,13 @@
     {
       "ID": 14516,
       "Entries": [
-        "Phantom Summon_Heavy Spear_Jousting Lance_17060000"
+        "Phantom Summon_Heavy Spear_Lance_17060000"
       ]
     },
     {
       "ID": 14517,
       "Entries": [
-        "Phantom Summon_Halberd_Red-hilted Halberd_18000000"
+        "Phantom Summon_Halberd_Red-Handled Halberd_18000000"
       ]
     },
     {
@@ -8296,7 +8296,7 @@
     {
       "ID": 14520,
       "Entries": [
-        "Phantom Summon_Claw_Clawed Gauntlet_22000000"
+        "Phantom Summon_Claw_Hookclaws_22000000"
       ]
     },
     {
@@ -8308,7 +8308,7 @@
     {
       "ID": 14522,
       "Entries": [
-        "Phantom Summon_Colossal Axe-hammer_Gladiator Greataxe_23040000"
+        "Phantom Summon_Colossal Axe-Hammer_Gladiator\u0027s Greataxe_23040000"
       ]
     }
   ]

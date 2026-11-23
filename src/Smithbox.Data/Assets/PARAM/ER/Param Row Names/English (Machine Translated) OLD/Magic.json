@@ -1,0 +1,1541 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 4000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Soul Greatarrow"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Fallen Short Arrow"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Soul Crystal Spear"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Twisted Soul Spear"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Soul Missile"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Enhanced Soul Missile"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Fallen Arrow Rain"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Spreading Light Wave"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Soul Greatcannon"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Shotgun Magic"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Blast Magic"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Blast Magic_Drill"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Soul Great Hammer"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Area Magic Buff"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Illuminating Light"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Soul Torrent"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Rain of Souls (Top-Tier Falling Crystal)"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Homing Lance (Top-tier Missile)"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "Enhanced Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 4302,
+      "Entries": [
+        "Large Funnel"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Crystal Moon"
+      ]
+    },
+    {
+      "ID": 4361,
+      "Entries": [
+        "Frost Moon"
+      ]
+    },
+    {
+      "ID": 4370,
+      "Entries": [
+        "Falling Crystals"
+      ]
+    },
+    {
+      "ID": 4380,
+      "Entries": [
+        "Giant Arrow"
+      ]
+    },
+    {
+      "ID": 4381,
+      "Entries": [
+        "Multi-Warhead Ultimate Arrow"
+      ]
+    },
+    {
+      "ID": 4390,
+      "Entries": [
+        "Placed Soul Arrow"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Frost Great Arrow"
+      ]
+    },
+    {
+      "ID": 4410,
+      "Entries": [
+        "Frost Tornado"
+      ]
+    },
+    {
+      "ID": 4420,
+      "Entries": [
+        "Frost Mist"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 4431,
+      "Entries": [
+        "Ice Greatsword"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "Fallen Swift Sword"
+      ]
+    },
+    {
+      "ID": 4450,
+      "Entries": [
+        "Soul Thrusting Greatsword"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 4480,
+      "Entries": [
+        "Mind Recovery"
+      ]
+    },
+    {
+      "ID": 4490,
+      "Entries": [
+        "Cold Weapon"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Shotgun Magic (Rennala)"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Crystal Release"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Crystal Surge"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Backstab Bullet"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "Invisible Arrow"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "Invisible Spear"
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        "Distorted Light Wall"
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        "Magic Absorption_Early-game"
+      ]
+    },
+    {
+      "ID": 4641,
+      "Entries": [
+        "Magic Absorption_Mid-game"
+      ]
+    },
+    {
+      "ID": 4642,
+      "Entries": [
+        "Magic Absorption_End-game"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "Magic Flare"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "Invisible Weapon"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "Invisible Body"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        "Meteor"
+      ]
+    },
+    {
+      "ID": 4701,
+      "Entries": [
+        "Meteor (Astel)"
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        "Gravity Magic (Rock)"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "Pull Gravity Bullet"
+      ]
+    },
+    {
+      "ID": 4721,
+      "Entries": [
+        "Multi-Warhead Pull Gravity Bolt"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "Seething Chaos"
+      ]
+    },
+    {
+      "ID": 4830,
+      "Entries": [
+        "Serpent Bullet"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "Thorn Storm"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "Thorned Nito Sword"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Pursuers"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Pursuers (Deathbird)"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Great Fire Explosion"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Curse Death"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Skeleton Attack Summon"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Dark Fall Guardian Magic"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Small Bubble Magic"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Great Bubble Magic"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Fire Burst"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Great Ignition"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Bursting Fireball (Fire Shotgun)"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Sweeping Flame"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Plague Recovery"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Inner Strength"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Upper Fire Protection"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Giant Fireball"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Living Fireball"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Fire Storm"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Black Fireball"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Fire Jet"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "Sweeping Black Flame"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "Flame Art (Flame Circle)"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "Black Flame Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "Physical Protection"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Launch Force"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Fire Burst (Greater Demon)"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Single Hit Magic_Salt Scatter"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Blood Enchant"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "Magic Protection"
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "Golden Tree Protection (All Elements Except Physical)"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Wrath of God"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Recovery Blessing"
+      ]
+    },
+    {
+      "ID": 6421,
+      "Entries": [
+        "Recovery"
+      ]
+    },
+    {
+      "ID": 6422,
+      "Entries": [
+        "Mid Recovery"
+      ]
+    },
+    {
+      "ID": 6423,
+      "Entries": [
+        "Greater Recovery"
+      ]
+    },
+    {
+      "ID": 6424,
+      "Entries": [
+        "Healing of Sunlight"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "Light Blessing"
+      ]
+    },
+    {
+      "ID": 6431,
+      "Entries": [
+        "Blessing of Sunlight"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "Poison Recovery"
+      ]
+    },
+    {
+      "ID": 6441,
+      "Entries": [
+        "Poison/Blood Loss/Sleep AoE Recovery"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "Lower Fire Protection"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "Lower Magic Protection"
+      ]
+    },
+    {
+      "ID": 6470,
+      "Entries": [
+        "Lower Lightning Protection"
+      ]
+    },
+    {
+      "ID": 6480,
+      "Entries": [
+        "Lower Holy Protection"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "Upper Holy Protection"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Deathly White Mist"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Stealth"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Sound Send"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Darkness"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Firm Vow"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "White Church Ring"
+      ]
+    },
+    {
+      "ID": 6701,
+      "Entries": [
+        "White Ring (Multiple)"
+      ]
+    },
+    {
+      "ID": 6710,
+      "Entries": [
+        "Order Wheel"
+      ]
+    },
+    {
+      "ID": 6720,
+      "Entries": [
+        "Splitting Homing Projectile"
+      ]
+    },
+    {
+      "ID": 6730,
+      "Entries": [
+        "All Status Cure + Buff/Debuff Removal"
+      ]
+    },
+    {
+      "ID": 6740,
+      "Entries": [
+        "Order Shield"
+      ]
+    },
+    {
+      "ID": 6750,
+      "Entries": [
+        "Turn Undead"
+      ]
+    },
+    {
+      "ID": 6760,
+      "Entries": [
+        "Karma"
+      ]
+    },
+    {
+      "ID": 6770,
+      "Entries": [
+        "Holy Enchant"
+      ]
+    },
+    {
+      "ID": 6780,
+      "Entries": [
+        "Death Recovery"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "Beast Incantation: Shotgun"
+      ]
+    },
+    {
+      "ID": 6810,
+      "Entries": [
+        "Beast Incantation: Rock Throw"
+      ]
+    },
+    {
+      "ID": 6820,
+      "Entries": [
+        "Beast Incantation: Spear Thicket"
+      ]
+    },
+    {
+      "ID": 6830,
+      "Entries": [
+        "Beast Incantation: Spear Thicket (Self-centered)"
+      ]
+    },
+    {
+      "ID": 6840,
+      "Entries": [
+        "Life Spawn"
+      ]
+    },
+    {
+      "ID": 6850,
+      "Entries": [
+        "Immunity・Resilience Recovery"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        "Surrounding Lightning Strike"
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "Linear Lightning Strike"
+      ]
+    },
+    {
+      "ID": 6921,
+      "Entries": [
+        "Linear Frost Lightning"
+      ]
+    },
+    {
+      "ID": 6930,
+      "Entries": [
+        "Lightning Nito Sword"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "Lightning Stake"
+      ]
+    },
+    {
+      "ID": 6941,
+      "Entries": [
+        "Double Lightning Stake"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "Lightning Naginata"
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        "Lightning Weapon Enchant"
+      ]
+    },
+    {
+      "ID": 6970,
+      "Entries": [
+        "Lightning Buff A"
+      ]
+    },
+    {
+      "ID": 6971,
+      "Entries": [
+        "Lightning Buff B"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Breath Fire"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Airborne Breath Fire"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Breath Lava"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "Large Breath Lava"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Breath Ice"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "Airborne Breath Frost"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "Breath Rot"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "Airborne Breath Rot"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "Breath Glintstone"
+      ]
+    },
+    {
+      "ID": 7041,
+      "Entries": [
+        "Airborne Breath Glintstone"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Ancient Dragon Breath"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "Dragon Claw"
+      ]
+    },
+    {
+      "ID": 7080,
+      "Entries": [
+        "Dragon Bite"
+      ]
+    },
+    {
+      "ID": 7090,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Thread Sorcery"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Eclipsing"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "Poison Enchant"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "Great Rot Magic"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Madness Throw Magic"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "Chaos Lightning"
+      ]
+    },
+    {
+      "ID": 7311,
+      "Entries": [
+        "Upper Chaos Lightning"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Chaos Beam from Eyes"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "Madness War Cry"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Armor Skill (Tail)"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Armor Skill (Shoulder Horn)"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "Armor Skill (Throat Sac)"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "Black Sword (Malenia)"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Immolation"
+      ]
+    },
+    {
+      "ID": 7903,
+      "Entries": [
+        "Upper Lightning Protection"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[NPC] Thorn Storm"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[NPC] Thorn Nito Sword"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "301_Battlefield Physician_Ignition"
+      ]
+    },
+    {
+      "ID": 53011,
+      "Entries": [
+        "301_Battlefield Physician_Blood Enchant"
+      ]
+    },
+    {
+      "ID": 53012,
+      "Entries": [
+        "301_Battlefield Physician_Corrosion"
+      ]
+    },
+    {
+      "ID": 53040,
+      "Entries": [
+        "304_Scarred Knight_Straight Lightning Strike"
+      ]
+    },
+    {
+      "ID": 53041,
+      "Entries": [
+        "304_Scarred Knight_Twin Lightning Stake"
+      ]
+    },
+    {
+      "ID": 53042,
+      "Entries": [
+        "304_Scarred Knight_Lightning Buff A"
+      ]
+    },
+    {
+      "ID": 53043,
+      "Entries": [
+        "304_Scarred Knight [Invader]_Chaos Lightning"
+      ]
+    },
+    {
+      "ID": 53044,
+      "Entries": [
+        "304_Scarred Knight [Invader]_Chaos Beam from Eyes"
+      ]
+    },
+    {
+      "ID": 53045,
+      "Entries": [
+        "304_Scarred Knight [Invader]_Madness War Cry"
+      ]
+    },
+    {
+      "ID": 53110,
+      "Entries": [
+        "311_Fort Castellan_Wrath of God"
+      ]
+    },
+    {
+      "ID": 53111,
+      "Entries": [
+        "311_Fort Castellan_Firm Oath"
+      ]
+    },
+    {
+      "ID": 53120,
+      "Entries": [
+        "312_Plains Fort Castellan_Placed Soul Arrow"
+      ]
+    },
+    {
+      "ID": 53160,
+      "Entries": [
+        "316_Academy Female Sorcerer_Soul Spear"
+      ]
+    },
+    {
+      "ID": 53161,
+      "Entries": [
+        "316_Academy Female Sorcerer_Soul Rain"
+      ]
+    },
+    {
+      "ID": 53162,
+      "Entries": [
+        "316_Academy Female Sorcerer_Shotgun Magic (Rennala)"
+      ]
+    },
+    {
+      "ID": 53163,
+      "Entries": [
+        "316_Academy Female Sorcerer_Crystal Release"
+      ]
+    },
+    {
+      "ID": 53180,
+      "Entries": [
+        "318_Mixed Incarnate_Madness Throw Magic"
+      ]
+    },
+    {
+      "ID": 53181,
+      "Entries": [
+        "318_Mixed Incarnate_Greater Chaos Lightning"
+      ]
+    },
+    {
+      "ID": 53182,
+      "Entries": [
+        "318_Mixed Incarnate_Greater Chaos Lightning_For White Phantom"
+      ]
+    },
+    {
+      "ID": 53183,
+      "Entries": [
+        "318_Mixed Incarnate_Madness War Cry"
+      ]
+    },
+    {
+      "ID": 53190,
+      "Entries": [
+        "319_D_Turn Undead"
+      ]
+    },
+    {
+      "ID": 53191,
+      "Entries": [
+        "319_D_Beast Incantation: Spear Thicket"
+      ]
+    },
+    {
+      "ID": 53192,
+      "Entries": [
+        "319_D_White Ring"
+      ]
+    },
+    {
+      "ID": 53210,
+      "Entries": [
+        "321_Watchtower Noble_Wrath of God"
+      ]
+    },
+    {
+      "ID": 53240,
+      "Entries": [
+        "324_Hundred-Sage Lord_Soul Crystal Spear"
+      ]
+    },
+    {
+      "ID": 53241,
+      "Entries": [
+        "324_Hundred-Sage Lord_Torrent of Souls"
+      ]
+    },
+    {
+      "ID": 53242,
+      "Entries": [
+        "324_Hundred-Sage Lord_Enhanced Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 53243,
+      "Entries": [
+        "324_Hundred-Sage Lord_Fire Sorcery(Fire Circle)"
+      ]
+    },
+    {
+      "ID": 53244,
+      "Entries": [
+        "324_Hundred-Sage Lord_White Ring(Multiple)"
+      ]
+    },
+    {
+      "ID": 53245,
+      "Entries": [
+        "324_Hundred-Sage Lord_Retribution"
+      ]
+    },
+    {
+      "ID": 53246,
+      "Entries": [
+        "324_Hundred-Sage Lord_Serpent Bullet"
+      ]
+    },
+    {
+      "ID": 53247,
+      "Entries": [
+        "324_Hundred-Sage Lord_Single Shot Magic_Salt Scattering"
+      ]
+    },
+    {
+      "ID": 53248,
+      "Entries": [
+        "324_Hundred-Sage Lord_Great Rot Magic"
+      ]
+    },
+    {
+      "ID": 53250,
+      "Entries": [
+        "325_Roger_Soul Arrow"
+      ]
+    },
+    {
+      "ID": 53251,
+      "Entries": [
+        "325_Roger_Falling Crystals"
+      ]
+    },
+    {
+      "ID": 53252,
+      "Entries": [
+        "325_Roger_Magic Weapon"
+      ]
+    },
+    {
+      "ID": 53260,
+      "Entries": [
+        "326_Mercutio_Erdtree Protection(All Elements Except Physical)"
+      ]
+    },
+    {
+      "ID": 53261,
+      "Entries": [
+        "326_Mercutio_Firm Oath"
+      ]
+    },
+    {
+      "ID": 53270,
+      "Entries": [
+        "327_Dragon Feast Warrior Woman_Aerial Breath Fire"
+      ]
+    },
+    {
+      "ID": 53271,
+      "Entries": [
+        "327_Dragon Feast Warrior Woman_Aerial Dragon Roar"
+      ]
+    },
+    {
+      "ID": 53290,
+      "Entries": [
+        "329_Death Faction_Pursuers"
+      ]
+    },
+    {
+      "ID": 53291,
+      "Entries": [
+        "329_Death Faction_Death Curse"
+      ]
+    },
+    {
+      "ID": 53330,
+      "Entries": [
+        "333_Unreturning Glintstone Sorcerer_Soul Arrow"
+      ]
+    },
+    {
+      "ID": 53350,
+      "Entries": [
+        "335_Jiko Bo_White Ring(Multiple)"
+      ]
+    },
+    {
+      "ID": 53390,
+      "Entries": [
+        "339_Hundred-Sage Lord's Underling_Multi-Warhead Pull Gravity Bullet"
+      ]
+    },
+    {
+      "ID": 53510,
+      "Entries": [
+        "351_Golden Mask Attendant_Recovery"
+      ]
+    },
+    {
+      "ID": 53520,
+      "Entries": [
+        "352_Divine Tower NPC_Giant Arrow (No Charge)"
+      ]
+    },
+    {
+      "ID": 53521,
+      "Entries": [
+        "352_Divine Tower NPC_Giant Arrow (For Rate Boost)"
+      ]
+    },
+    {
+      "ID": 53522,
+      "Entries": [
+        "352_Divine Tower NPC_Large Funnel"
+      ]
+    },
+    {
+      "ID": 53523,
+      "Entries": [
+        "352_Divine Tower NPC_Falling Crystals"
+      ]
+    },
+    {
+      "ID": 53524,
+      "Entries": [
+        "352_Divine Tower NPC_Faran's Quick Sword"
+      ]
+    },
+    {
+      "ID": 53560,
+      "Entries": [
+        "356_Circular Plaza 2-1 NPC_Great Ignition"
+      ]
+    },
+    {
+      "ID": 53561,
+      "Entries": [
+        "356_Circular Plaza 2-1 NPC_Willful Fireball"
+      ]
+    },
+    {
+      "ID": 53590,
+      "Entries": [
+        "359_Monsan Knight_Soul Thrusting Greatsword"
+      ]
+    },
+    {
+      "ID": 53610,
+      "Entries": [
+        "361_Bedfellows 3_Faran's Quick Sword"
+      ]
+    },
+    {
+      "ID": 53630,
+      "Entries": [
+        "363_Puppet A_Medium Recovery"
+      ]
+    },
+    {
+      "ID": 53720,
+      "Entries": [
+        "372_Highland West_Poison Mist"
+      ]
+    },
+    {
+      "ID": 53750,
+      "Entries": [
+        "375_Plains Arena Front Red Spirit 3_Enhanced Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 53751,
+      "Entries": [
+        "375_Plains Arena Front Red Spirit 3_Placed Soul Arrow"
+      ]
+    },
+    {
+      "ID": 53760,
+      "Entries": [
+        "376_Cave 3-4 (Death Caster)_Skeleton Attack Summon"
+      ]
+    },
+    {
+      "ID": 53770,
+      "Entries": [
+        "377_Underground Labyrinth Plains Depths Blood Swamp Area_Battlefield Doctor_Erosion"
+      ]
+    },
+    {
+      "ID": 53800,
+      "Entries": [
+        "380_Round Table Survivor B_Soul Shotgun Magic"
+      ]
+    },
+    {
+      "ID": 53801,
+      "Entries": [
+        "380_Round Table Survivor B_Homing Lance (Top Missile)"
+      ]
+    },
+    {
+      "ID": 53802,
+      "Entries": [
+        "380_Round Table Survivor B_Backstab Bullet"
+      ]
+    },
+    {
+      "ID": 53803,
+      "Entries": [
+        "380_Round Table Survivor B_Invisible Spear"
+      ]
+    },
+    {
+      "ID": 53804,
+      "Entries": [
+        "380_Round Table Survivor B_Backstab Bullet (Lottery Adjust)"
+      ]
+    },
+    {
+      "ID": 53805,
+      "Entries": [
+        "380_Round Table Survivor B_Invisible Spear (Lottery Adjust)"
+      ]
+    },
+    {
+      "ID": 53820,
+      "Entries": [
+        "382_Open Snowy Mountain Seaside Tower 5-1_Boss Tier_Ignition"
+      ]
+    },
+    {
+      "ID": 53821,
+      "Entries": [
+        "382_Open Snowy Mountain Seaside Tower 5-1_Boss Tier_Storm of Fire"
+      ]
+    },
+    {
+      "ID": 53822,
+      "Entries": [
+        "382_Open Snowy Mountain Seaside Tower 5-1_Boss Tier_Flame Jet"
+      ]
+    },
+    {
+      "ID": 53830,
+      "Entries": [
+        "383_Open Snowy Mountain Seaside Tower 5-1_Minion_Sweeping Flame"
+      ]
+    },
+    {
+      "ID": 53850,
+      "Entries": [
+        "385_Base 1F Enemy_Frost Thick Arrow"
+      ]
+    },
+    {
+      "ID": 53851,
+      "Entries": [
+        "385_Base 1F Enemy_Frost Mist"
+      ]
+    },
+    {
+      "ID": 53852,
+      "Entries": [
+        "385_Base 1F Enemy_Thorn Storm"
+      ]
+    },
+    {
+      "ID": 53860,
+      "Entries": [
+        "386_Royal Capital Catacombs_Ignition (Greater Demon)"
+      ]
+    },
+    {
+      "ID": 53861,
+      "Entries": [
+        "386_Royal Capital Catacombs_Erosion"
+      ]
+    },
+    {
+      "ID": 53900,
+      "Entries": [
+        "390_Miriel's Sister D_Thread Sorcery"
+      ]
+    },
+    {
+      "ID": 53910,
+      "Entries": [
+        "391_Valley Event Target _Beast Incantation: Shotgun"
+      ]
+    },
+    {
+      "ID": 53911,
+      "Entries": [
+        "391_Valley Event Target _Beast Incantation: Spear Hedge"
+      ]
+    },
+    {
+      "ID": 53912,
+      "Entries": [
+        "391_Valley Event Target _Beast Incantation: Spear Hedge (Self-centered)"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "■■■■■Last Param Data■■■■■"
+      ]
+    }
+  ]
+}

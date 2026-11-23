@@ -1,0 +1,1643 @@
+{
+  "Name": "ChrModelParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Group Patrol Dummy Leader"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Carriage Dummy"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Catapult Dummy"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Site of Grace Dummy"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Wolf-Head Warrior"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Rennala of the Full Moon"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Rennala of the Full Moon (After HU)"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Rennala's Children"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Rot Larva"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Sorceress Ranni"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Sorceress Rani (corpse)"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "World Worm (2 Fingers)"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "World Worm (3 Fingers)"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Black Knife Descendant"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Black Blade Malenia"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Arbitrating Malenia"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Margit the Fell Omen"
+      ]
+    },
+    {
+      "ID": 2131,
+      "Entries": [
+        "Margit the Fell Omen (Human Corpse)"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Omens"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Wisp"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Wedge Person (Male)"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Wedge Person (Female)"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Marika"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Crumbling Marika"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "Crumbling Marika (Corpse)"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Crumbling Marika (Post-HU)"
+      ]
+    },
+    {
+      "ID": 2270,
+      "Entries": [
+        "[FDP] Death-stench Crab"
+      ]
+    },
+    {
+      "ID": 2271,
+      "Entries": [
+        "[FDP] Death-stench Crab (small)"
+      ]
+    },
+    {
+      "ID": 2272,
+      "Entries": [
+        "Death-stench Crab (Death Attribute)"
+      ]
+    },
+    {
+      "ID": 2273,
+      "Entries": [
+        "Deathstench Crab (Small) (Death Attribute)"
+      ]
+    },
+    {
+      "ID": 2274,
+      "Entries": [
+        "Deathstench Crab (Homunculus)"
+      ]
+    },
+    {
+      "ID": 2275,
+      "Entries": [
+        "Deathstench Crab (Small) (Homunculus)"
+      ]
+    },
+    {
+      "ID": 2276,
+      "Entries": [
+        "Deathstench Crab (Instant Death Attribute)"
+      ]
+    },
+    {
+      "ID": 2277,
+      "Entries": [
+        "Deathstench Crab (Small) (Instant Death Attribute)"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Godfrey Sixteen Knights"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Lost Kin_Soldier"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Lost Kin_Knight"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Lost Kin_Soldier (Greataxe)"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Aged Veteran General"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Buried Skeleton (Large)"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Buried Skeleton (Beast)"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Man-Eater Hag"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Insectoid Golem"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Bloodstained Vulture Knight"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Rune-hunting Knight"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Rune-hunting Knight's Horse"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "WolfRider"
+      ]
+    },
+    {
+      "ID": 3171,
+      "Entries": [
+        "Large Wolf Rider"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Wolf Rider's Wolf"
+      ]
+    },
+    {
+      "ID": 3181,
+      "Entries": [
+        "Runewolf"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Red-Eyed Gypsy"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Red-Eye Guardian"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Red-Eye Gypsy (Burned Corpse)"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Red-Eyed Gypsy's Donkey"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Tree Sentinel (Aberration)"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        "Tree Sentinel (Chief)"
+      ]
+    },
+    {
+      "ID": 3252,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Direct Lineage of Marika"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Direct Lineage of Marika (Slime)"
+      ]
+    },
+    {
+      "ID": 3330,
+      "Entries": [
+        "Direct Lineage of Marika (Mother Slime)"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "Crystal Tribe"
+      ]
+    },
+    {
+      "ID": 3360,
+      "Entries": [
+        "Ancestral Follower (Male)"
+      ]
+    },
+    {
+      "ID": 3361,
+      "Entries": [
+        "Ancestral Follower (Male)_Poison"
+      ]
+    },
+    {
+      "ID": 3370,
+      "Entries": [
+        "Ancestral Follower (Female)"
+      ]
+    },
+    {
+      "ID": 3371,
+      "Entries": [
+        "Ancestral Follower (Female)_Poison"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Gladiator"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "Children of Radagon"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "Radagon's Children (Scale)"
+      ]
+    },
+    {
+      "ID": 3460,
+      "Entries": [
+        "Radagon's Children (Lion)"
+      ]
+    },
+    {
+      "ID": 3470,
+      "Entries": [
+        "Frog-man"
+      ]
+    },
+    {
+      "ID": 3471,
+      "Entries": [
+        "Frog-man (Large)"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Buried Skeleton"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "New Skeleton"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Demon's Blood Monk"
+      ]
+    },
+    {
+      "ID": 3560,
+      "Entries": [
+        "Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 3570,
+      "Entries": [
+        "Godskin Apostle (Another)"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Light Walker / Dark Walker"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Servants of the Moon"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "Servants of the Moon (Tall)"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "Servants of the Moon (Fat)"
+      ]
+    },
+    {
+      "ID": 3640,
+      "Entries": [
+        "Servants of the Moon (Unique)"
+      ]
+    },
+    {
+      "ID": 3650,
+      "Entries": [
+        "Bug-eaten Tribe"
+      ]
+    },
+    {
+      "ID": 3660,
+      "Entries": [
+        "Rune Slave"
+      ]
+    },
+    {
+      "ID": 3661,
+      "Entries": [
+        "Rotten Undead"
+      ]
+    },
+    {
+      "ID": 3662,
+      "Entries": [
+        "Rotten Undead (Large)"
+      ]
+    },
+    {
+      "ID": 3664,
+      "Entries": [
+        "Catacomb Shadow"
+      ]
+    },
+    {
+      "ID": 3665,
+      "Entries": [
+        "Rune Slave (Gatekeeper NPC)"
+      ]
+    },
+    {
+      "ID": 3666,
+      "Entries": [
+        "Golden Mask Beggar"
+      ]
+    },
+    {
+      "ID": 3670,
+      "Entries": [
+        "Leg Cripple"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Perfumer Sorcerer"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "Scholar Perfumer (Court)"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 3703,
+      "Entries": [
+        "Page"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "Wandering Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Crystal Sorcerers (Blue)"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Crystal Sorcerers (Red)"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "Sorcerer Orb"
+      ]
+    },
+    {
+      "ID": 3750,
+      "Entries": [
+        "Rune Devourer"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Putrid Knights"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "Rot's Kin"
+      ]
+    },
+    {
+      "ID": 3850,
+      "Entries": [
+        "Balloon Puppet Soldier"
+      ]
+    },
+    {
+      "ID": 3860,
+      "Entries": [
+        "Flying Puppet Soldier"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Giant's Flame Monk"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "Giant Flame Monk (Godskin Garb)"
+      ]
+    },
+    {
+      "ID": 3910,
+      "Entries": [
+        "Giant's Flame Fat Monk"
+      ]
+    },
+    {
+      "ID": 3950,
+      "Entries": [
+        "Children of Ghouls"
+      ]
+    },
+    {
+      "ID": 3970,
+      "Entries": [
+        "Descendants of the Intelligent Beast"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Nazgul (Follower)"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Nazgul (Ground Insect)"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Slug [FDP Eclipse Slug Small]"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Northern Mercenary"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Mercenary Horse"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        "Wolf (Elite)"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Dog Rat"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Dog Rat (Large)"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Gray Demi-Human_Basic"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Gray Demi-Human_Basic (Elite)"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Gray Demi-Human_Small"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Gray Demi-Human_Berserker"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Gray Demi-Human King"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Snake Snail"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "Undead Dog (Large)"
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        "Undead Dog"
+      ]
+    },
+    {
+      "ID": 4162,
+      "Entries": [
+        "Undead Dog (Large)_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 4163,
+      "Entries": [
+        "Undead Dog_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 4164,
+      "Entries": [
+        "Undead Dog (Large)_Blood Attribute"
+      ]
+    },
+    {
+      "ID": 4165,
+      "Entries": [
+        "Undead Dog_Blood Attribute"
+      ]
+    },
+    {
+      "ID": 4166,
+      "Entries": [
+        "Undead Dog (Large)_Rot"
+      ]
+    },
+    {
+      "ID": 4167,
+      "Entries": [
+        "Undead Dog_Rot"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "Writhing Carrion"
+      ]
+    },
+    {
+      "ID": 4171,
+      "Entries": [
+        "Writhing Carrion (Large)"
+      ]
+    },
+    {
+      "ID": 4180,
+      "Entries": [
+        "Spirit Jellyfish"
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        "Scarab (Large)"
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        "Scarab"
+      ]
+    },
+    {
+      "ID": 4192,
+      "Entries": [
+        "Scarab (Colossal)"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Bat"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Old Woman Bat"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Stormhawk"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Land Octopus"
+      ]
+    },
+    {
+      "ID": 4230,
+      "Entries": [
+        "Land Octopus (Small)"
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        "Finger Worm"
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        "Finger Worm (Large)"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Finger Worm (Small)"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Watchdog Golem"
+      ]
+    },
+    {
+      "ID": 4270,
+      "Entries": [
+        "Arena Old Lion"
+      ]
+    },
+    {
+      "ID": 4280,
+      "Entries": [
+        "Jar Ant"
+      ]
+    },
+    {
+      "ID": 4281,
+      "Entries": [
+        "Jar Ant (Variant)"
+      ]
+    },
+    {
+      "ID": 4290,
+      "Entries": [
+        "Bolas Hound"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Grave Robber Noble"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "Wandering Royal Army [Dummy]"
+      ]
+    },
+    {
+      "ID": 4311,
+      "Entries": [
+        "Wandering Royal Army_Stormveil Faction"
+      ]
+    },
+    {
+      "ID": 4312,
+      "Entries": [
+        "Wandering Royal Army_Monsan Faction"
+      ]
+    },
+    {
+      "ID": 4313,
+      "Entries": [
+        "Wandering Royal Army_Royal Capital Faction"
+      ]
+    },
+    {
+      "ID": 4314,
+      "Entries": [
+        "Wandering Royal Army_Plains Faction"
+      ]
+    },
+    {
+      "ID": 4315,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 4316,
+      "Entries": [
+        "Wandering Royal Army_Miquella Faction"
+      ]
+    },
+    {
+      "ID": 4321,
+      "Entries": [
+        "Wandering Lowly Soldier"
+      ]
+    },
+    {
+      "ID": 4340,
+      "Entries": [
+        "Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 4341,
+      "Entries": [
+        "Pumpkin Head_Buddy"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)[Dummy]"
+      ]
+    },
+    {
+      "ID": 4351,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Stormveil Faction"
+      ]
+    },
+    {
+      "ID": 4352,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Monsan Faction"
+      ]
+    },
+    {
+      "ID": 4353,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Royal Capital Faction"
+      ]
+    },
+    {
+      "ID": 4354,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Plains Faction"
+      ]
+    },
+    {
+      "ID": 4355,
+      "Entries": [
+        "Wandering Royal Army (Elite Mounted Soldier)_Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 4356,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Miquella Faction"
+      ]
+    },
+    {
+      "ID": 4358,
+      "Entries": [
+        "Wandering Royal Army (Upper Cavalry)_Independent Faction"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Wandering Royal Army Horse [Dummy]"
+      ]
+    },
+    {
+      "ID": 4361,
+      "Entries": [
+        "Wandering Royal Army Horse_Stormveil Faction"
+      ]
+    },
+    {
+      "ID": 4362,
+      "Entries": [
+        "Wandering Royal Army Horse_Monsan Faction"
+      ]
+    },
+    {
+      "ID": 4363,
+      "Entries": [
+        "Wandering Royal Army Horse_Royal Capital Faction"
+      ]
+    },
+    {
+      "ID": 4364,
+      "Entries": [
+        "Wandering Royal Army Horse_Plains Faction"
+      ]
+    },
+    {
+      "ID": 4365,
+      "Entries": [
+        "Wandering Royal Army Horse_Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 4368,
+      "Entries": [
+        "Wandering Royal Army Horse_Independent Faction"
+      ]
+    },
+    {
+      "ID": 4370,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier) [Dummy]"
+      ]
+    },
+    {
+      "ID": 4371,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Stormveil Faction"
+      ]
+    },
+    {
+      "ID": 4372,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Monsan Faction"
+      ]
+    },
+    {
+      "ID": 4373,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Royal Capital Faction"
+      ]
+    },
+    {
+      "ID": 4374,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Plains Faction"
+      ]
+    },
+    {
+      "ID": 4375,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 4376,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Miquella Faction"
+      ]
+    },
+    {
+      "ID": 4377,
+      "Entries": [
+        "Wandering Royal Army (Foot Soldier)_Cave Soldier"
+      ]
+    },
+    {
+      "ID": 4380,
+      "Entries": [
+        "Destruction Cult (Those Who Call Meteors)"
+      ]
+    },
+    {
+      "ID": 4381,
+      "Entries": [
+        "Destruction Cult (Fire Cult)"
+      ]
+    },
+    {
+      "ID": 4382,
+      "Entries": [
+        "Undead Miner (Ore Carving)"
+      ]
+    },
+    {
+      "ID": 4383,
+      "Entries": [
+        "Undead Miner (Gem Carving)"
+      ]
+    },
+    {
+      "ID": 4384,
+      "Entries": [
+        "Undead Miner (Gem Carving Large)"
+      ]
+    },
+    {
+      "ID": 4385,
+      "Entries": [
+        "Poison Rot Devotee"
+      ]
+    },
+    {
+      "ID": 4420,
+      "Entries": [
+        "Lake Marsh Crayfish"
+      ]
+    },
+    {
+      "ID": 4421,
+      "Entries": [
+        "Frozen Crayfish"
+      ]
+    },
+    {
+      "ID": 4430,
+      "Entries": [
+        "Living Stone"
+      ]
+    },
+    {
+      "ID": 4440,
+      "Entries": [
+        "Land Barnacle"
+      ]
+    },
+    {
+      "ID": 4441,
+      "Entries": [
+        "Land Barnacle (Large)"
+      ]
+    },
+    {
+      "ID": 4442,
+      "Entries": [
+        "Land Barnacle (Large)_Rot"
+      ]
+    },
+    {
+      "ID": 4450,
+      "Entries": [
+        "Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 4460,
+      "Entries": [
+        "Large Weapon Gunman"
+      ]
+    },
+    {
+      "ID": 4470,
+      "Entries": [
+        "Rykard's Kidnapper Weapon"
+      ]
+    },
+    {
+      "ID": 4480,
+      "Entries": [
+        "Rune-eating Flower"
+      ]
+    },
+    {
+      "ID": 4481,
+      "Entries": [
+        "Runeeating Flower (Child Plant)"
+      ]
+    },
+    {
+      "ID": 4482,
+      "Entries": [
+        "Runeeating Flower_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 4483,
+      "Entries": [
+        "Runeeating Flower (Child Plant)_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 4490,
+      "Entries": [
+        "Living Jar"
+      ]
+    },
+    {
+      "ID": 4491,
+      "Entries": [
+        "Living Jar（Small）"
+      ]
+    },
+    {
+      "ID": 4492,
+      "Entries": [
+        "Living Jar（Colossal）"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Wyvern"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "Wyvern (Rot)"
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        "Wyvern (Magic)"
+      ]
+    },
+    {
+      "ID": 4503,
+      "Entries": [
+        "Wyvern (Ice)"
+      ]
+    },
+    {
+      "ID": 4504,
+      "Entries": [
+        "Wyvern (Giant)"
+      ]
+    },
+    {
+      "ID": 4505,
+      "Entries": [
+        "Wyvern (Lesser)"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 4511,
+      "Entries": [
+        "Ancestral Follower (Instant Death)"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "Feral Tyrannosaur"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "Raven Tyranno"
+      ]
+    },
+    {
+      "ID": 4561,
+      "Entries": [
+        "Raven Tyranno (Blood Attribute)"
+      ]
+    },
+    {
+      "ID": 4570,
+      "Entries": [
+        "Deracine (Male)"
+      ]
+    },
+    {
+      "ID": 4580,
+      "Entries": [
+        "Deracine (Female)"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "Troll"
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        "Troll (Royal Knight)"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "Troll (Snow Man)"
+      ]
+    },
+    {
+      "ID": 4603,
+      "Entries": [
+        "Troll (Tunnel)"
+      ]
+    },
+    {
+      "ID": 4604,
+      "Entries": [
+        "Troll (Grandpa NPC)"
+      ]
+    },
+    {
+      "ID": 4620,
+      "Entries": [
+        "Astel"
+      ]
+    },
+    {
+      "ID": 4630,
+      "Entries": [
+        "Runebear"
+      ]
+    },
+    {
+      "ID": 4640,
+      "Entries": [
+        "Serpent Spirit"
+      ]
+    },
+    {
+      "ID": 4650,
+      "Entries": [
+        "Ruinator"
+      ]
+    },
+    {
+      "ID": 4660,
+      "Entries": [
+        "Guardian of the High Road"
+      ]
+    },
+    {
+      "ID": 4670,
+      "Entries": [
+        "Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 4680,
+      "Entries": [
+        "Meteoric Beast"
+      ]
+    },
+    {
+      "ID": 4690,
+      "Entries": [
+        "Grafted Spider"
+      ]
+    },
+    {
+      "ID": 4710,
+      "Entries": [
+        "King of Ghouls"
+      ]
+    },
+    {
+      "ID": 4711,
+      "Entries": [
+        "King of Ghouls (Corpse)"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "Godfrey the Beast-clad"
+      ]
+    },
+    {
+      "ID": 4721,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)"
+      ]
+    },
+    {
+      "ID": 4730,
+      "Entries": [
+        "Radahn (Scrawny Horse)"
+      ]
+    },
+    {
+      "ID": 4750,
+      "Entries": [
+        "Grafted King"
+      ]
+    },
+    {
+      "ID": 4751,
+      "Entries": [
+        "Grafted King (Human Corpse)"
+      ]
+    },
+    {
+      "ID": 4760,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 4770,
+      "Entries": [
+        "Capital Gargoyle"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "Greater Demon"
+      ]
+    },
+    {
+      "ID": 4801,
+      "Entries": [
+        "Greater Demon (Human Corpse)"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "World Tree Demon"
+      ]
+    },
+    {
+      "ID": 4811,
+      "Entries": [
+        "World Tree Demon (Rotten)"
+      ]
+    },
+    {
+      "ID": 4820,
+      "Entries": [
+        "Wandering"
+      ]
+    },
+    {
+      "ID": 4910,
+      "Entries": [
+        "King's Mole"
+      ]
+    },
+    {
+      "ID": 4911,
+      "Entries": [
+        "King's Mole (Large)"
+      ]
+    },
+    {
+      "ID": 4950,
+      "Entries": [
+        "Night King Followers"
+      ]
+    },
+    {
+      "ID": 4960,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)"
+      ]
+    },
+    {
+      "ID": 4980,
+      "Entries": [
+        "Deathbird"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Wild Animal_Bird (Large)"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Wild Animal_Deer"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Wild Animal_Bear"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Wild Animal_Owl"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Wild Animal_Boar"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Wild Animal_Sheep"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Wild Animal_Sea Crow"
+      ]
+    },
+    {
+      "ID": 6072,
+      "Entries": [
+        "Wild Animal_Messenger Pigeon (Large)"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Wild Animal_Dragonfly"
+      ]
+    },
+    {
+      "ID": 6081,
+      "Entries": [
+        "Wild Animal_Dragonfly(Large)"
+      ]
+    },
+    {
+      "ID": 6082,
+      "Entries": [
+        "Wild Animal_Dragonfly(Giant)"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Wild Animal_Turtle"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Penitent Priest"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Wild Animal_Leaping Rabbit"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Spirit Ash summon_Generic"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Spirit Ash summon_Unique"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "PC Horse"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Ballista"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Ballista (Generic)"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Flamethrower"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Chariot"
+      ]
+    }
+  ]
+}

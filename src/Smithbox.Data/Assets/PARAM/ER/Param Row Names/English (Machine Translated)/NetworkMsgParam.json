@@ -4,109 +4,109 @@
     {
       "ID": 0,
       "Entries": [
-        "Write a summon sign with a password set"
+        "Write Summon Sign With Password Set"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Session Establishment with Host Started (Host)"
+        "Start Establishing Session with Host (Host)"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Session Establishment with Host Started (New Guest)"
+        "Start Establishing Session with Host (New Guest)"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Session Establishment with Host Started (Existing Guest)"
+        "Start Establishing Session with Host (Existing Guest)"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Session Established with Host (New Guest)"
+        "Session With Host Established (New Guest)"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Searching for Connection Destination (Invasion Destination)"
+        "Connection Target (Invasion Destination) Searching for"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Session Creation Failed"
+        "Failed to Create Session"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Session Join Failed"
+        "Failed to Join Session"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Requesting Assistance as Host"
+        "Requesting Help as Host"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Searching for Connection Destination (Visit Destination)"
+        "Connection Target (Destination) Searching for"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Host - New Guest"
+        "Host-New Guest"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Host - New Guest"
+        "Host-New Guest"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Host - New Guest"
+        "Host-New Guest"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Blocklist Check NG"
+        "Block List Check NG"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Blocklist Check NG"
+        "Block List Check NG"
       ]
     },
     {
       "ID": 122,
       "Entries": [
-        "Blocklist Check NG"
+        "Block List Check NG"
       ]
     },
     {
       "ID": 130,
       "Entries": [
-        "New Guest Dies"
+        "New Guest Died"
       ]
     },
     {
       "ID": 131,
       "Entries": [
-        "New Guest Dies"
+        "New Guest Died"
       ]
     },
     {
@@ -148,151 +148,151 @@
     {
       "ID": 200,
       "Entries": [
-        "Guest A was summoned"
+        "Guest A Summoned"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "Guest A was summoned"
+        "Guest A Summoned"
       ]
     },
     {
       "ID": 202,
       "Entries": [
-        "Guest A was summoned"
+        "Guest A Summoned"
       ]
     },
     {
       "ID": 203,
       "Entries": [
-        "Guest A was summoned"
+        "Guest A Summoned"
       ]
     },
     {
       "ID": 210,
       "Entries": [
-        "Guest A met success condition"
+        "Guest A Met Success Condition"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        "Guest A met success condition"
+        "Guest A Met Success Condition"
       ]
     },
     {
       "ID": 212,
       "Entries": [
-        "Guest A met success condition"
+        "Guest A Met Success Condition"
       ]
     },
     {
       "ID": 213,
       "Entries": [
-        "During Deactivate"
+        "While Deactivated"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Guest A met success condition 2"
+        "Guest A Met Success Condition 2"
       ]
     },
     {
       "ID": 221,
       "Entries": [
-        "Guest A met success condition 2"
+        "Guest A Met Success Condition 2"
       ]
     },
     {
       "ID": 222,
       "Entries": [
-        "Guest A met success condition 2"
+        "Guest A Met Success Condition 2"
       ]
     },
     {
       "ID": 223,
       "Entries": [
-        "Guest A met failure condition"
+        "Guest A Met Failure Condition"
       ]
     },
     {
       "ID": 230,
       "Entries": [
-        "Guest A died"
+        "Guest A Died"
       ]
     },
     {
       "ID": 231,
       "Entries": [
-        "Guest A died"
+        "Guest A Died"
       ]
     },
     {
       "ID": 232,
       "Entries": [
-        "Guest A died"
+        "Guest A Died"
       ]
     },
     {
       "ID": 233,
       "Entries": [
-        "Guest A died"
+        "Guest A Died"
       ]
     },
     {
       "ID": 234,
       "Entries": [
-        "Guest A died"
+        "Guest A Died"
       ]
     },
     {
       "ID": 240,
       "Entries": [
-        "Guest A self-returned"
+        "Guest A Returned Self"
       ]
     },
     {
       "ID": 241,
       "Entries": [
-        "Guest A self-returned"
+        "Guest A Returned Self"
       ]
     },
     {
       "ID": 242,
       "Entries": [
-        "Guest A self-returned"
+        "Guest A Returned Self"
       ]
     },
     {
       "ID": 244,
       "Entries": [
-        "Guest A self-returned"
+        "Guest A Returned Self"
       ]
     },
     {
       "ID": 250,
       "Entries": [
-        "Host Dismissed Guest A"
+        "Host Sent Guest A Home"
       ]
     },
     {
       "ID": 251,
       "Entries": [
-        "Host Dismissed Guest A"
+        "Host Sent Guest A Home"
       ]
     },
     {
       "ID": 252,
       "Entries": [
-        "Host Dismissed Guest A"
+        "Host Sent Guest A Home"
       ]
     },
     {
       "ID": 260,
       "Entries": [
-        "Host Dead"
+        "Host Death"
       ]
     },
     {
@@ -316,19 +316,19 @@
     {
       "ID": 270,
       "Entries": [
-        "Generic Error causes Guest A to leave"
+        "Guest A Left Due to Generic Error"
       ]
     },
     {
       "ID": 271,
       "Entries": [
-        "Generic Error causes Guest A to leave"
+        "Guest A Left Due to Generic Error"
       ]
     },
     {
       "ID": 272,
       "Entries": [
-        "Generic Error causes Guest A to leave"
+        "Guest A Left Due to Generic Error"
       ]
     },
     {
@@ -340,97 +340,97 @@
     {
       "ID": 280,
       "Entries": [
-        "NPC Multi Non-Host Guest A Died"
+        "NPC Multiplayer Non-Host Guest A Died"
       ]
     },
     {
       "ID": 281,
       "Entries": [
-        "NPC Multi Non-Host Guest A Died"
+        "NPC Multiplayer Non-Host Guest A Died"
       ]
     },
     {
       "ID": 282,
       "Entries": [
-        "NPC Multi Non-Host Guest A Self-Returned"
+        "NPC Multiplayer Non-Host Guest A Returned Self"
       ]
     },
     {
       "ID": 283,
       "Entries": [
-        "NPC Multi Non-Host Guest A Self-Returned"
+        "NPC Multiplayer Non-Host Guest A Returned Self"
       ]
     },
     {
       "ID": 300,
       "Entries": [
-        "Guest A left the host: Preliminary warning"
+        "Guest A Left Host: Preliminary Warning"
       ]
     },
     {
       "ID": 301,
       "Entries": [
-        "Guest A left the host: Main warning"
+        "Guest A Left Host: Main Warning"
       ]
     },
     {
       "ID": 302,
       "Entries": [
-        "Guest A left the host: Return"
+        "Guest A Left Host: Return"
       ]
     },
     {
       "ID": 303,
       "Entries": [
-        "Guest A left the host: Return"
+        "Guest A Left Host: Return"
       ]
     },
     {
       "ID": 310,
       "Entries": [
-        "Re-summon of Guest A when distance from host exceeded a set value at time of summon"
+        "Resummon When Guest A Too Far From Host on Summon"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Brawl/Co-op: Self Dies"
+        "Brawl/Self Died in Co-op"
       ]
     },
     {
       "ID": 401,
       "Entries": [
-        "Brawl/Co-op: Another Player Dies"
+        "Brawl/Other Died in Co-op"
       ]
     },
     {
       "ID": 402,
       "Entries": [
-        "Brawl/Co-op: Another Player Dies"
+        "Brawl/Other Died in Co-op"
       ]
     },
     {
       "ID": 403,
       "Entries": [
-        "Arena Quick Match Start Notification Send Failed"
+        "Colosseum Quickmatch Start Notification Send Failed"
       ]
     },
     {
       "ID": 404,
       "Entries": [
-        "Arena All Guests Left"
+        "Host Return Due to All Guests Leaving Colosseum"
       ]
     },
     {
       "ID": 410,
       "Entries": [
-        "Matchmaking Waiting"
+        "Waiting for Matchmaking"
       ]
     },
     {
       "ID": 411,
       "Entries": [
-        "Matchmaking Waiting"
+        "Waiting for Matchmaking"
       ]
     },
     {

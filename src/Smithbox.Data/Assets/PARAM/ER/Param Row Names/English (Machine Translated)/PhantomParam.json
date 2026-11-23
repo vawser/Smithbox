@@ -10,7 +10,7 @@
     {
       "ID": 18,
       "Entries": [
-        "Weapon Enchant_Physical"
+        "Weapon Enchant_Physics"
       ]
     },
     {
@@ -28,7 +28,7 @@
     {
       "ID": 29,
       "Entries": [
-        "Weapon Enchant_Holy"
+        "Weapon Enchant_Sacred"
       ]
     },
     {
@@ -40,31 +40,31 @@
     {
       "ID": 44,
       "Entries": [
-        "Weapon Enchant_Holy (No Anti-Undead Bonus)"
+        "Weapon Enchant_Sacred (No Undead Bonus)"
       ]
     },
     {
       "ID": 47,
       "Entries": [
-        "Weapon Enchant_Upper Magic"
+        "Weapon Enchant_Greater Magic"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Shield_Enchant_Magic"
+        "Shield Enchant_Magic"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Shield_Enchant_Physical"
+        "Shield Enchant_Physics"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "Black Spirit"
+        "Black Phantom"
       ]
     },
     {
@@ -76,7 +76,7 @@
     {
       "ID": 62,
       "Entries": [
-        "NPC white phantom (same appearance as 61)"
+        "NPC White Phantom (Same Appearance as 61)"
       ]
     },
     {
@@ -88,7 +88,7 @@
     {
       "ID": 200,
       "Entries": [
-        "Spirit Ash summon"
+        "Buddy"
       ]
     },
     {
@@ -100,25 +100,25 @@
     {
       "ID": 202,
       "Entries": [
-        "Arena Buddy (Hostile)"
+        "Colosseum Buddy (Hostile)"
       ]
     },
     {
       "ID": 203,
       "Entries": [
-        "Arena Buddy (Hostile) Final Version"
+        "Colosseum Buddy (Hostile) Official Version"
       ]
     },
     {
       "ID": 204,
       "Entries": [
-        "[DLC] Miquella buddy"
+        "[DLC] Miquella Buddy"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        "Defeated Soldier"
+        "Straggler"
       ]
     },
     {
@@ -130,7 +130,7 @@
     {
       "ID": 230,
       "Entries": [
-        "Rennala's Summoning Magic"
+        "Rennala\u0027s Summoning Sorcery"
       ]
     },
     {
@@ -142,7 +142,7 @@
     {
       "ID": 250,
       "Entries": [
-        "Spirit Animals of Spirit Tree Forest"
+        "Spirit Animals of the Spirit Tree Forest"
       ]
     },
     {
@@ -160,7 +160,7 @@
     {
       "ID": 290,
       "Entries": [
-        "Enemies appearing in Hero's Grave"
+        "Enemy That Appears in Hero\u0027s Grave"
       ]
     },
     {
@@ -184,7 +184,7 @@
     {
       "ID": 330,
       "Entries": [
-        "Ruinator Phantom"
+        "Ravager Phantom"
       ]
     },
     {
@@ -202,19 +202,19 @@
     {
       "ID": 400,
       "Entries": [
-        "[DLC] Shadow enemy"
+        "[DLC] Shadow Enemy"
       ]
     },
     {
       "ID": 410,
       "Entries": [
-        "[DLC] Physalis spirit"
+        "[DLC] Lantern Spirit"
       ]
     },
     {
       "ID": 420,
       "Entries": [
-        "[DLC] Summon Priests of the Divine Ones"
+        "[DLC] Godskin Priests Summon"
       ]
     },
     {
@@ -244,49 +244,49 @@
     {
       "ID": 800,
       "Entries": [
-        "[CS] s19_00_0020_Ranni summon"
+        "[CS] s19_00_0020_Ranni Summon"
       ]
     },
     {
       "ID": 803,
       "Entries": [
-        "[CS] s19_00_0020_Marika statue disappearance glow_midway"
+        "[CS] s19_00_0020_Glow When Marika Statue Vanishes_Midway"
       ]
     },
     {
       "ID": 804,
       "Entries": [
-        "[CS] s19_00_0020_Marika statue disappearance glow"
+        "[CS] s19_00_0020_Glow When Marika Statue Vanishes"
       ]
     },
     {
       "ID": 805,
       "Entries": [
-        "[CS] s60_54_0001_PC_fire supplementary effect"
+        "[CS] s60_54_0001_PC_Burning Auxiliary Effect"
       ]
     },
     {
       "ID": 810,
       "Entries": [
-        "[CS] s14_00_0010_Rennala summon A"
+        "[CS] s14_00_0010_Rennala Summon A"
       ]
     },
     {
       "ID": 811,
       "Entries": [
-        "[CS] s14_00_0010_Rennala summon B"
+        "[CS] s14_00_0010_Rennala Summon B"
       ]
     },
     {
       "ID": 812,
       "Entries": [
-        "[CS] s14_00_0010_Rennala summon C"
+        "[CS] s14_00_0010_Rennala Summon C"
       ]
     },
     {
       "ID": 813,
       "Entries": [
-        "[CS] s14_00_0010_Rennala summon D"
+        "[CS] s14_00_0010_Rennala Summon D"
       ]
     },
     {
@@ -310,49 +310,49 @@
     {
       "ID": 831,
       "Entries": [
-        "[CS] s20_01_0010_Miquella (transition)"
+        "[CS] s20_01_0010_Miquella (For Transition)"
       ]
     },
     {
       "ID": 832,
       "Entries": [
-        "[CS] s20_01_0010_Miquella (summon)"
+        "[CS] s20_01_0010_Miquella (Summon)"
       ]
     },
     {
       "ID": 833,
       "Entries": [
-        "[CS] s20_01_0010_Child Miquella arm (summon)"
+        "[CS] s20_01_0010_Child Miquella Arm (Summon)"
       ]
     },
     {
       "ID": 834,
       "Entries": [
-        "[CS] s20_01_0010_Child Miquella arm"
+        "[CS] s20_01_0010_Child Miquella Arm"
       ]
     },
     {
       "ID": 840,
       "Entries": [
-        "[CS] s61_44_0000_Complete Spiral Tower"
+        "[CS] s61_44_0000_Perfect Spiral Tower"
       ]
     },
     {
       "ID": 841,
       "Entries": [
-        "[CS] s61_44_0000_Complete Spiral Tower (transition)"
+        "[CS] s61_44_0000_Perfect Spiral Tower (For Transition)"
       ]
     },
     {
       "ID": 890,
       "Entries": [
-        "[CS] No change (transition)"
+        "[CS] No Change (For Transition)"
       ]
     },
     {
       "ID": 891,
       "Entries": [
-        "[CS] Disappear (transition)"
+        "[CS] Vanish (For Transition)"
       ]
     },
     {
@@ -376,13 +376,13 @@
     {
       "ID": 930,
       "Entries": [
-        "[Codename] Bonfire Phantom"
+        "[Codename] Site of Grace Phantom"
       ]
     },
     {
       "ID": 998,
       "Entries": [
-        "Godfrey Statue Check"
+        "For Godfrey Statue Check"
       ]
     },
     {

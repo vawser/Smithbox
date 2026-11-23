@@ -1,0 +1,1667 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "----"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Item Common] Name"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Item Common] Description"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Item Common] Trivia"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Item Common] Weight"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Item Common] Sort ID"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Item Common] Description 2"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Item Common] Owned Count"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Item Common] Owned Count_Max"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "[Item Common] Storage Owned Count"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "[Item Common] Storage Owned Count_Max"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[Item Common] Required Souls"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[Item Common] Souls Acquired"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[Item Common] Shop Lineup Name"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "[Item Common] Shop Lineup Description"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "[Item Common] Shop Lineup Trivia"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "[Item Common] Set Sale Name"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[Item Common] Material 1: Name"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Item Common] Material 1: Required Count"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[Item Common] Material 1: Owned Count"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "[Item Common] Material 1: Description 2"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "[Item Common] Material 2: Name"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "[Item Common] Material 2: Required Count"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "[Item Common] Material 2: Owned Count"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "[Item Common] Material 2: Description 2"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[Item Common] Material 3: Name"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "[Item Common] Material 3: Required Count"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "[Item Common] Material 3: Owned Count"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "[Item Common] Material 3: Description 2"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "[Item Common] Material 4: Name"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "[Item Common] Material 4: Required Count"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "[Item Common] Material 4: Owned Count"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "[Item Common] Material 4: Description 2"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "[Item Common] Name (Original Text)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Item] Consumable Type on Use"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "[Item] Stat Modifier Strength"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "[Item] Stat Modifier Dexterity"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "[Item] Stat Modifier Intelligence"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "[Item] Stat Modifier Faith"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[Item] Stat Modifier Luck"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "[Item] HP Consumed"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "[Item] FP Consumed"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[Item] Pot Type"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "[Item] Pot Item Held Count"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "[Item] Pot Item Max Held Count"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "[Item] Craftable Pot Item Count"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "[Item] Required Player Level"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "[Weapon] Weapon Type"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "[Weapon] Attack Attribute"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "[Weapon] Skill Name"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Weapon] Attack Power: Physical"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[Weapon] Attack Power: Magic"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "[Weapon] Attack Power: Fire"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "[Weapon] Attack Power: Lightning"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "[Weapon] Attack Power: Dark"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "[Weapon] Additional Attack Power: Physical"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "[Weapon] Additional Attack Power: Magic"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "[Weapon] Additional Attack Power: Fire"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "[Weapon] Additional Attack Power: Lightning"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "[Weapon] Additional Attack Power: Dark"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[Weapon] Range"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "[Weapon] Magic Damage Modifier"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "[Weapon] Critical"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "[Weapon] Special Effect: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "[Weapon] Special Effect: Instant Death"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "[Weapon] Special Effect: Sleep"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "[Weapon] Special Effect: Madness"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "[Weapon] Special Effect: Poison"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "[Weapon] Special Effect: Blood Loss"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "[Weapon] Special Effect: Holy"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "[Weapon] Special Effect: Heretical"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "[Weapon] Special Effect: Frost"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "[Weapon] Sorcery Modifier"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "[Weapon] Incantation Correction"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "[Weapon] Damage Cut Rate: Physical"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "[Weapon] Damage Cut Rate: Magic"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "[Weapon] Damage Cut Rate: Fire"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "[Weapon] Damage Cut Rate: Lightning"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "[Weapon] Damage Cut Rate: Dark"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "[Weapon] Additional Damage Cut Rate: Physical"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "[Weapon] Additional Damage Cut Rate: Magic"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "[Weapon] Additional Damage Cut Rate: Fire"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "[Weapon] Additional Damage Cut Rate: Lightning"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "[Weapon] Additional Damage Cut Rate: Dark"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "[Weapon] Guard Ability"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "[Weapon] Additional Guard Ability"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Weapon] Required Attribute: Strength"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "[Weapon] Required Attribute: Dexterity"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "[Weapon] Required Attribute: Intelligence"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "[Weapon] Required Attribute: Faith"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "[Weapon] Required Attribute: Luck"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "[Weapon] Attribute Unlock Stat Value: Strength"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "[Weapon] Attribute Unlock Stat Value: Dexterity"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "[Weapon] Attribute Unlock Stat Value: Intelligence"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "[Weapon] Attribute Unlock Stat Value: Faith"
+      ]
+    },
+    {
+      "ID": 369,
+      "Entries": [
+        "[Weapon] Attribute Unlock Stat Value: Luck"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "[Weapon] Attribute Correction: Strength"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "[Weapon] Attribute Correction: Dexterity"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "[Weapon] Attribute Correction: Intelligence"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "[Weapon] Attribute Correction: Faith"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "[Weapon] Attribute Correction: Luck"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "[Weapon] Durability Current Value"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "[Weapon] Durability Max Value"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "[Weapon] Additional Effect 1 (top-aligned)"
+      ]
+    },
+    {
+      "ID": 386,
+      "Entries": [
+        "[Weapon] Additional Effect 2 (top-aligned)"
+      ]
+    },
+    {
+      "ID": 387,
+      "Entries": [
+        "[Weapon] Additional Effect 3 (top-aligned)"
+      ]
+    },
+    {
+      "ID": 388,
+      "Entries": [
+        "[Weapon] Additional Effect 4 (top-aligned)"
+      ]
+    },
+    {
+      "ID": 389,
+      "Entries": [
+        "[Weapon] Additional Effect 5 (top-aligned)"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "[Weapon] Skill Points Cost: L1"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "[Weapon] Skill FP Cost: L2"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "[Weapon] Skill FP Cost: R1"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "[Weapon] Skill FP Cost: R2"
+      ]
+    },
+    {
+      "ID": 395,
+      "Entries": [
+        "[Weapon] Unique Effect 1"
+      ]
+    },
+    {
+      "ID": 396,
+      "Entries": [
+        "[Weapon] Unique Effect 2"
+      ]
+    },
+    {
+      "ID": 397,
+      "Entries": [
+        "[Weapon] Unique Effect 3"
+      ]
+    },
+    {
+      "ID": 398,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 1"
+      ]
+    },
+    {
+      "ID": 399,
+      "Entries": [
+        "[Weapon] Magic Stone Effect 2"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Armor] Defense: Physical"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Armor] Defense: Physical vs Strike"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Armor] Defense: Physical vs Slash"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "[Armor] Defense: Physical vs Thrust"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "[Armor] Defense: Magic"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Armor] Defense: Fire"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "[Armor] Defense: Lightning"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[Armor] Resistance: Poison"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "[Armor] Resistance: Blood Loss"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "[Armor] Resistance: Curse"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "[Armor] Resistance: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "[Armor] Resistance: Frost"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "[Armor] Resistance: Sleep"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "[Armor] Resistance: Madness"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "[Armor] Poise"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "[Armor] Durability Current"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "[Armor] Durability Max"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "[Armor] Damage Cut: Physical"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "[Armor] Damage Cut: Physical vs Strike"
+      ]
+    },
+    {
+      "ID": 432,
+      "Entries": [
+        "[Armor] Damage Cut: Physical vs Slash"
+      ]
+    },
+    {
+      "ID": 433,
+      "Entries": [
+        "[Armor] Damage Cut: Physical vs Thrust"
+      ]
+    },
+    {
+      "ID": 434,
+      "Entries": [
+        "[Armor] Damage Cut: Magic"
+      ]
+    },
+    {
+      "ID": 435,
+      "Entries": [
+        "[Armor] Damage Cut: Fire"
+      ]
+    },
+    {
+      "ID": 436,
+      "Entries": [
+        "[Armor] Damage Cut: Lightning"
+      ]
+    },
+    {
+      "ID": 437,
+      "Entries": [
+        "[Armor] Damage Cut: Dark"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Spell] Spell Type"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "[Spell] Attack Attribute"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "[Spell] Slots Used"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "[Spell] Uses"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "[Spell] Required Attribute Intelligence"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "[Spell] Required Attribute Faith"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "[Spell] Required Attribute Luck"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "[Spell] FP Cost"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "[Spell] FP Cost: Loop"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[Arrow] Weapon Type"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "[Arrow] Attack Attribute"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "[Arrow] Attack Power: Physical"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "[Arrow] Attack Power: Magic"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "[Arrow] Attack Power: Fire"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "[Arrow] Attack Power: Lightning"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "[Arrow] Critical"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "[Arrow] Attack Power: Dark"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "[Arrow] Special Effect: Poison"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "[Arrow] Special Effect: Blood Loss"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "[Arrow] Special Effect: Holy"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "[Arrow] Special Effect: Heretical"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "[Arrow] Special Effect: Frost"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Elixir] Material 1: Name"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "[Elixir] Material 1: Description"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "[Elixir] Material 1: Description 2"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "[Elixir] Material 2: Name"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "[Elixir] Material 2: Description"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "[Elixir] Material 2: Description 2"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[Magic Stone] Transmutation Content"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "[Magic Stone] Skill"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "[Magic Stone] Compatible Weapon Type"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "[Magic Stone] Default Weapon Type"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "[Magic Stone] Effect 1"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "[Magic Stone] Effect 2"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "[Magic Stone] Skill FP Cost: L2"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "[Magic Stone] Skill FP Cost: R1"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "[Magic Stone] Skill FP Cost: R2"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[Multiplayer] Cooperation Sign Rank"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "[Multiplayer] Hostile Sign Rank"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "[Multiplayer] Invasion A Rank"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "[Multiplayer] Invasion B Rank"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "[Multiplayer] Rescue Rank"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[Multiplayer] Cooperation Sign Contribution"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "[Multiplayer] Hostile Sign Contribution"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "[Multiplayer] Invasion A Contribution"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "[Multiplayer] Invasion B Contribution"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "[Multiplayer] Rescue Contribution"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[PC Base] Name"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[PC Base] Gender"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[PC Base] Origin"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[PC Base] Gift"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[PC Base] Body Type"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[PC Base] Face"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "[PC Base] Hairstyle"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "[PC Base] Hair and Eye Color"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "[PC Base] Level"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "[PC Base] Held Souls"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "[PC Base] Required Souls"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "[PC Base] Pledge"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "[PC Base] Age Group"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "[PC Base] Undead Degree"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "[PC Base] Held Dragon Feast Cost"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "[PC Base] DLC Map Player Enhancement Level"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "[PC Base] DLC Map Buddy Enhancement Level"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "[PC Primary] Vitality"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "[PC Primary] Endurance"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "[PC Primary] Memory"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "[PC Primary] Strength"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "[PC Primary] Dexterity"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "[PC Primary] Vigor"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "[PC Primary] Intelligence"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "[PC Primary] Faith"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "[PC Primary] Humanity"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "[PC Primary] Luck"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "[PC Secondary] HP Current"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "[PC Secondary] HP Max"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "[PC Secondary] MP Current"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "[PC Secondary] MP Max"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "[PC Secondary] Stamina"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "[PC Secondary] Equip Load Current"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "[PC Secondary] Equip Load Max"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "[PC Secondary] Right Weapon 1 Attack Power"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "[PC Secondary] Right Weapon 2 Attack Power"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "[PC Secondary] Right Weapon 3 Attack Power"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "[PC Secondary] Left Weapon 1 Attack Power"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "[PC Secondary] Left Weapon 2 Attack Power"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "[PC Secondary] Left Weapon 3 Attack Power"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "[PC Secondary] Defense: Physical"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "[PC Secondary] Defense: Physical vs Strike"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "[PC Secondary] Defense: Physical vs Slash"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "[PC Secondary] Defense: Physical vs Thrust"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "[PC Secondary] Defense: Magic"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "[PC Secondary] Defense: Fire"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "[PC Secondary] Defense: Lightning"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "[PC Secondary] Memory Slots"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "[PC Secondary] Item Discovery"
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        "[PC Secondary] Load Ratio"
+      ]
+    },
+    {
+      "ID": 10228,
+      "Entries": [
+        "[PC Secondary] Weight Class"
+      ]
+    },
+    {
+      "ID": 10229,
+      "Entries": [
+        "[PC Secondary] Poise"
+      ]
+    },
+    {
+      "ID": 10242,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Physical"
+      ]
+    },
+    {
+      "ID": 10243,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Magic"
+      ]
+    },
+    {
+      "ID": 10244,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Fire"
+      ]
+    },
+    {
+      "ID": 10245,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Lightning"
+      ]
+    },
+    {
+      "ID": 10258,
+      "Entries": [
+        "[PC Secondary] Defense: Dark"
+      ]
+    },
+    {
+      "ID": 10259,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Physical vs Strike"
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Physical vs Slash"
+      ]
+    },
+    {
+      "ID": 10261,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Physical vs Thrust"
+      ]
+    },
+    {
+      "ID": 10262,
+      "Entries": [
+        "[PC Secondary] Armor Damage Cut: Dark"
+      ]
+    },
+    {
+      "ID": 10270,
+      "Entries": [
+        "[PC Secondary] Resistance: Poison"
+      ]
+    },
+    {
+      "ID": 10271,
+      "Entries": [
+        "[PC Secondary] Resistance: Bleed"
+      ]
+    },
+    {
+      "ID": 10272,
+      "Entries": [
+        "[PC Secondary] Resistance: Curse"
+      ]
+    },
+    {
+      "ID": 10273,
+      "Entries": [
+        "[PC Secondary] Resistance: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 10274,
+      "Entries": [
+        "[PC Secondary] Resistance: Frost"
+      ]
+    },
+    {
+      "ID": 10275,
+      "Entries": [
+        "[PC Secondary] Resistance: Sleep"
+      ]
+    },
+    {
+      "ID": 10276,
+      "Entries": [
+        "[PC Secondary] Resistance: Madness"
+      ]
+    },
+    {
+      "ID": 10280,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Bleed"
+      ]
+    },
+    {
+      "ID": 10281,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Poison"
+      ]
+    },
+    {
+      "ID": 10282,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 10283,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Curse"
+      ]
+    },
+    {
+      "ID": 10284,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Frost"
+      ]
+    },
+    {
+      "ID": 10285,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Sleep"
+      ]
+    },
+    {
+      "ID": 10286,
+      "Entries": [
+        "[PC Secondary] Armor Resistance: Madness"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "[Sort][Weapon] Attack Power: Total"
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        "[Sort][Weapon] Damage Negation Rate: Total"
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        "[Sort][Weapon] By Effect"
+      ]
+    },
+    {
+      "ID": 20303,
+      "Entries": [
+        "[Sort][Weapon] Upgrade Level"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "[Sort][Armor] Damage Negation: Total"
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        "[Sort][Armor] Resistance: Total"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "[Sort][Arrow] Attack Power: Total"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "[Sort] Acquisition Number"
+      ]
+    },
+    {
+      "ID": 20801,
+      "Entries": [
+        "[Sort] Item Category ID"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Label] Stat Correction"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "[Label] Item Acquisition Source"
+      ]
+    },
+    {
+      "ID": 39999,
+      "Entries": [
+        "[Label] [Terminal]"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "[PG] Possession Count"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_PlayerEquipmentTops",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default leg equipment. Do not delete. Used when no param exists"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Weapon Iron"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Candle"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Weapon Wood"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weapon Meat"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Shield_Iron"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Shield_Wood"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Bug"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Armor Leather"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Flesh Weak Point"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon Meat"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Heavy Iron"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Stone (Soft)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Feather"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Carrion"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Death Spirit"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Crystal"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Liquid"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Fire"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Rock"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Shield_Stone"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Shield_Heavy_Iron"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Ghost White"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Ghost Black"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Ghost Enemy White"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Ghost Enemy Black"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Drool"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Ghost White (For Guard)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Ghost Black (For Guard)"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Ghost Enemy White(For Guard)"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Ghost Enemy Black(For Guard)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Eye Glow"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Eclipse"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Maggot"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Charcoal"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Chain Mail"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Body Fluid"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Flesh (Living)"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Flesh (Living)_Weak Point"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Maggot weak point"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Weapon Light Iron"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Weapon Medium Iron"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Weapon Heavy Iron"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Weapon Heavy Wood"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Weapon Stone"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Weapon Pumice"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Weapon Heavy Stone"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Weapon Mercury"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Weapon Crystal"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Weapon Secret Glyph"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Weapon Ring Finger"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Shield_Light_Iron"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Shield_Heavy_Wood"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Shield_Heavy_Stone"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Shield_Crystal"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Shield_Spirit"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Mercury (Hard)"
+      ]
+    }
+  ]
+}

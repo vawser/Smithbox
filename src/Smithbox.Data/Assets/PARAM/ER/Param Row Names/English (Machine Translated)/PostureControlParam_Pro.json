@@ -10,7 +10,7 @@
     {
       "ID": 1,
       "Entries": [
-        "Fat Monk A"
+        "Fat A"
       ]
     },
     {
@@ -28,19 +28,19 @@
     {
       "ID": 100,
       "Entries": [
-        "Mounted_Standard"
+        "Mount_Standard"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Mounted_Fat A"
+        "Mount_Fat A"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Mounted_Fat B"
+        "Mount_Fat B"
       ]
     },
     {

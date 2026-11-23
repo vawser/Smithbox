@@ -4,7 +4,7 @@
     {
       "ID": 60001000,
       "Entries": [
-        "Open_Green_Clear 0: Region override default set. If the map side is -1 (unset)"
+        "Open_Green_Clear 0: Regional Replacement Default Set.Map Side Is-1: If Not Set, 0 and-1 (Unlimited) Data Is Used"
       ]
     },
     {
@@ -16,7 +16,7 @@
     {
       "ID": 60001100,
       "Entries": [
-        "Open_Green_Light Overcast"
+        "Open_Green_Light Clouds"
       ]
     },
     {
@@ -46,7 +46,7 @@
     {
       "ID": 60001310,
       "Entries": [
-        "Open_Green_Storm (Guardian Lineage)"
+        "Open_Green_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -112,7 +112,7 @@
     {
       "ID": 60001101,
       "Entries": [
-        "Open_1_Light Overcast"
+        "Open_1_Light Clouds"
       ]
     },
     {
@@ -142,7 +142,7 @@
     {
       "ID": 60001311,
       "Entries": [
-        "Open_1_Storm (Guardian Lineage)"
+        "Open_1_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 60001831,
       "Entries": [
-        "Open_1_Spare 3 (Hang Terrain Only)"
+        "Open_1_Spare 3 (Hanging Terrain Only)"
       ]
     },
     {
@@ -214,7 +214,7 @@
     {
       "ID": 60001102,
       "Entries": [
-        "Open_2_Light Overcast"
+        "Open_2_Light Clouds"
       ]
     },
     {
@@ -244,7 +244,7 @@
     {
       "ID": 60001312,
       "Entries": [
-        "Open_2_Storm (Guardian Lineage)"
+        "Open_2_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -310,7 +310,7 @@
     {
       "ID": 60001103,
       "Entries": [
-        "Open_3_Light Overcast"
+        "Open_3_Light Clouds"
       ]
     },
     {
@@ -340,7 +340,7 @@
     {
       "ID": 60001313,
       "Entries": [
-        "Open_3_Storm (Guardian Lineage)"
+        "Open_3_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -406,7 +406,7 @@
     {
       "ID": 60001104,
       "Entries": [
-        "Open_4_Light Overcast"
+        "Open_4_Light Clouds"
       ]
     },
     {
@@ -436,7 +436,7 @@
     {
       "ID": 60001314,
       "Entries": [
-        "Open_4_Storm (Guardian Lineage)"
+        "Open_4_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -502,7 +502,7 @@
     {
       "ID": 600011021,
       "Entries": [
-        "Open_Volcano_Light Overcast"
+        "Open_Volcano_Light Clouds"
       ]
     },
     {
@@ -532,7 +532,7 @@
     {
       "ID": 600013121,
       "Entries": [
-        "Open_Volcano_Storm (Guardian Lineage)"
+        "Open_Volcano_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -592,7 +592,7 @@
     {
       "ID": 600011031,
       "Entries": [
-        "Open_Desert_Light Overcast"
+        "Open_Desert_Light Clouds"
       ]
     },
     {
@@ -622,7 +622,7 @@
     {
       "ID": 600013131,
       "Entries": [
-        "Open_Desert_Storm (Guardian Lineage)"
+        "Open_Desert_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -670,1039 +670,1039 @@
     {
       "ID": 600010041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Clear"
+        "Open_Snow Mountain Lower Level_Clear"
       ]
     },
     {
       "ID": 600010141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Clear Sky"
+        "Open_Snow Mountain Lower Level_Clear Skies"
       ]
     },
     {
       "ID": 600011041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Light Overcast"
+        "Open_Snow Mountain Lower Level_Light Clouds"
       ]
     },
     {
       "ID": 600011141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Cloudy"
+        "Open_Snow Mountain Lower Level_Cloudy"
       ]
     },
     {
       "ID": 600012041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Rain"
+        "Open_Snow Mountain Lower Level_Rain"
       ]
     },
     {
       "ID": 600012141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Heavy Rain"
+        "Open_Snow Mountain Lower Level_Heavy Rain"
       ]
     },
     {
       "ID": 600013041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Storm"
+        "Open_Snow Mountain Lower Level_Storm"
       ]
     },
     {
       "ID": 600013141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Storm (Guardian Lineage)"
+        "Open_Snow Mountain Lower Level_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 600014041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Snow"
+        "Open_Snow Mountain Lower Level_Snow"
       ]
     },
     {
       "ID": 600014141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Heavy Snow"
+        "Open_Snow Mountain Lower Level_Heavy Snow"
       ]
     },
     {
       "ID": 600015041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Fog"
+        "Open_Snow Mountain Lower Level_Fog"
       ]
     },
     {
       "ID": 600015141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Dense Fog"
+        "Open_Snow Mountain Lower Level_Dense Fog"
       ]
     },
     {
       "ID": 600015241,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Dense Fog (Rain)"
+        "Open_Snow Mountain Lower Level_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 600016041,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Sandstorm"
+        "Open_Snow Mountain Lower Level_Sandstorm"
       ]
     },
     {
       "ID": 600018141,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Blizzard"
+        "Open_Snow Mountain Lower Level_Blizzard"
       ]
     },
     {
       "ID": 600019941,
       "Entries": [
-        "Open_Snowy Mountain Lower Level_Environment Map Capture"
+        "Open_Snow Mountain Lower Level_Environment Map Capture"
       ]
     },
     {
       "ID": 600010042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Clear"
+        "Open_Snow Mountain_Road from Leyndell_Clear"
       ]
     },
     {
       "ID": 600010142,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Clear Sky"
+        "Open_Snow Mountain_Road from Leyndell_Clear Skies"
       ]
     },
     {
       "ID": 600011042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Light Overcast"
+        "Open_Snow Mountain_Road from Leyndell_Light Clouds"
       ]
     },
     {
       "ID": 600011142,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Cloudy"
+        "Open_Snow Mountain_Road from Leyndell_Cloudy"
       ]
     },
     {
       "ID": 600012042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Rain"
+        "Open_Snow Mountain_Road from Leyndell_Rain"
       ]
     },
     {
       "ID": 600012142,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Heavy Rain"
+        "Open_Snow Mountain_Road from Leyndell_Heavy Rain"
       ]
     },
     {
       "ID": 600013042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Storm"
+        "Open_Snow Mountain_Road from Leyndell_Storm"
       ]
     },
     {
       "ID": 600013142,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Storm (Guardian Lineage)"
+        "Open_Snow Mountain_Road from Leyndell_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 600014042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Snow"
+        "Open_Snow Mountain_Road from Leyndell_Snow"
       ]
     },
     {
       "ID": 600014142,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Heavy Snow"
+        "Open_Snow Mountain_Road from Leyndell_Heavy Snow"
       ]
     },
     {
       "ID": 600015042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Fog"
+        "Open_Snow Mountain_Road from Leyndell_Fog"
       ]
     },
     {
       "ID": 600015142,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Dense Fog"
+        "Open_Snow Mountain_Road from Leyndell_Dense Fog"
       ]
     },
     {
       "ID": 600015242,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Dense Fog (Rain)"
+        "Open_Snow Mountain_Road from Leyndell_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 600016042,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Sandstorm"
+        "Open_Snow Mountain_Road from Leyndell_Sandstorm"
       ]
     },
     {
       "ID": 600019942,
       "Entries": [
-        "Open_Snowy Mountain_Road from Royal Capital_Environment Map Capture"
+        "Open_Snow Mountain_Road from Leyndell_Environment Map Capture"
       ]
     },
     {
       "ID": 60002000,
       "Entries": [
-        "Ash of Fire: Open_Green_Clear (Fair) ※Add restriction settings during adjustment. -1 means unlimited"
+        "Fire Ash: Open_Green_Clear ※Please Add Limit Setting When Adjusting.-1 Is Unlimited, So Remove After Adding Limit ID Set or It Duplicates"
       ]
     },
     {
       "ID": 60002010,
       "Entries": [
-        "Ash of Fire: Open_Green_Clear"
+        "Fire Ash: Open_Green_Clear Skies"
       ]
     },
     {
       "ID": 60002100,
       "Entries": [
-        "Ash of Fire: Open_Green_Light Overcast"
+        "Fire Ash: Open_Green_Light Clouds"
       ]
     },
     {
       "ID": 60002110,
       "Entries": [
-        "Ash of Fire: Open_Green_Cloudy"
+        "Fire Ash: Open_Green_Cloudy"
       ]
     },
     {
       "ID": 60002200,
       "Entries": [
-        "Ash of Fire: Open_Green_Rain"
+        "Fire Ash: Open_Green_Rain"
       ]
     },
     {
       "ID": 60002210,
       "Entries": [
-        "Ash of Fire: Open_Green_Heavy Rain"
+        "Fire Ash: Open_Green_Heavy Rain"
       ]
     },
     {
       "ID": 60002300,
       "Entries": [
-        "Ash of Fire: Open_Green_Storm"
+        "Fire Ash: Open_Green_Storm"
       ]
     },
     {
       "ID": 60002310,
       "Entries": [
-        "Ash of Fire: Open_Green_Storm (Guardian Lineage)"
+        "Fire Ash: Open_Green_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 60002400,
       "Entries": [
-        "Ash of Fire: Open_Green_Snow"
+        "Fire Ash: Open_Green_Snow"
       ]
     },
     {
       "ID": 60002410,
       "Entries": [
-        "Ash of Fire: Open_Green_Heavy Snow"
+        "Fire Ash: Open_Green_Heavy Snow"
       ]
     },
     {
       "ID": 60002500,
       "Entries": [
-        "Ash of Fire: Open_Green_Fog"
+        "Fire Ash: Open_Green_Fog"
       ]
     },
     {
       "ID": 60002510,
       "Entries": [
-        "Ash of Fire: Open_Green_Dense Fog"
+        "Fire Ash: Open_Green_Dense Fog"
       ]
     },
     {
       "ID": 60002520,
       "Entries": [
-        "Ash of Fire: Open_Green_Dense Fog (Rain)"
+        "Fire Ash: Open_Green_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 60002600,
       "Entries": [
-        "Ash of Fire: Open_Green_Sandstorm"
+        "Fire Ash: Open_Green_Sandstorm"
       ]
     },
     {
       "ID": 60002820,
       "Entries": [
-        "Ash of Fire: Open_Green_Storm (Lightning)"
+        "Fire Ash: Open_Green_Storm (Lightning)"
       ]
     },
     {
       "ID": 60002990,
       "Entries": [
-        "Ash of Fire: Open_Green_Environment Map Capture"
+        "Fire Ash: Open_Green_Environment Map Capture"
       ]
     },
     {
       "ID": 60002001,
       "Entries": [
-        "Ash of Fire: Open_1_Clear"
+        "Fire Ash: Open_1_Clear"
       ]
     },
     {
       "ID": 60002011,
       "Entries": [
-        "Ash of Fire: Open_1_Clear Skies"
+        "Fire Ash: Open_1_Clear Skies"
       ]
     },
     {
       "ID": 60002101,
       "Entries": [
-        "Ash of Fire: Open_1_Light Overcast"
+        "Fire Ash: Open_1_Light Clouds"
       ]
     },
     {
       "ID": 60002111,
       "Entries": [
-        "Ash of Fire: Open_1_Cloudy"
+        "Fire Ash: Open_1_Cloudy"
       ]
     },
     {
       "ID": 60002201,
       "Entries": [
-        "Ash of Fire: Open_1_Rain"
+        "Fire Ash: Open_1_Rain"
       ]
     },
     {
       "ID": 60002211,
       "Entries": [
-        "Ash of Fire: Open_1_Heavy Rain"
+        "Fire Ash: Open_1_Heavy Rain"
       ]
     },
     {
       "ID": 60002301,
       "Entries": [
-        "Ash of Fire: Open_1_Storm"
+        "Fire Ash: Open_1_Storm"
       ]
     },
     {
       "ID": 60002311,
       "Entries": [
-        "Ash of Fire: Open_1_Storm (Guardian Lineage)"
+        "Fire Ash: Open_1_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 60002401,
       "Entries": [
-        "Ash of Fire: Open_1_Snow"
+        "Fire Ash: Open_1_Snow"
       ]
     },
     {
       "ID": 60002411,
       "Entries": [
-        "Ash of Fire: Open_1_Heavy Snow"
+        "Fire Ash: Open_1_Heavy Snow"
       ]
     },
     {
       "ID": 60002501,
       "Entries": [
-        "Ash of Fire: Open_1_Fog"
+        "Fire Ash: Open_1_Fog"
       ]
     },
     {
       "ID": 60002511,
       "Entries": [
-        "Ash of Fire: Open_1_Dense Fog"
+        "Fire Ash: Open_1_Dense Fog"
       ]
     },
     {
       "ID": 60002521,
       "Entries": [
-        "Ash of Fire: Open_1_Dense Fog (Rain)"
+        "Fire Ash: Open_1_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 60002601,
       "Entries": [
-        "Ash of Fire: Open_1_Sandstorm"
+        "Fire Ash: Open_1_Sandstorm"
       ]
     },
     {
       "ID": 60002821,
       "Entries": [
-        "Ash of Fire: Open_1_Storm (Lightning)"
+        "Fire Ash: Open_1_Storm (Lightning)"
       ]
     },
     {
       "ID": 60002831,
       "Entries": [
-        "Ash of Fire: Open_1_Reserve 3 (Hang Terrain Only)"
+        "Fire Ash: Open_1_Spare 3 (Hanging Terrain Only)"
       ]
     },
     {
       "ID": 60002991,
       "Entries": [
-        "Ash of Fire: Open_1_Environment Map Capture"
+        "Fire Ash: Open_1_Environment Map Capture"
       ]
     },
     {
       "ID": 60002002,
       "Entries": [
-        "Ash of Fire: Open_2_Clear"
+        "Fire Ash: Open_2_Clear"
       ]
     },
     {
       "ID": 60002012,
       "Entries": [
-        "Ash of Fire: Open_2_Clear Skies"
+        "Fire Ash: Open_2_Clear Skies"
       ]
     },
     {
       "ID": 60002102,
       "Entries": [
-        "Ash of Fire: Open_2_Light Overcast"
+        "Fire Ash: Open_2_Light Clouds"
       ]
     },
     {
       "ID": 60002112,
       "Entries": [
-        "Ash of Fire: Open_2_Cloudy"
+        "Fire Ash: Open_2_Cloudy"
       ]
     },
     {
       "ID": 60002202,
       "Entries": [
-        "Ash of Fire: Open_2_Rain"
+        "Fire Ash: Open_2_Rain"
       ]
     },
     {
       "ID": 60002212,
       "Entries": [
-        "Ash of Fire: Open_2_Heavy Rain"
+        "Fire Ash: Open_2_Heavy Rain"
       ]
     },
     {
       "ID": 60002302,
       "Entries": [
-        "Ash of Fire: Open_2_Storm"
+        "Fire Ash: Open_2_Storm"
       ]
     },
     {
       "ID": 60002312,
       "Entries": [
-        "Ash of Fire: Open_2_Storm (Guardian Lineage)"
+        "Fire Ash: Open_2_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 60002402,
       "Entries": [
-        "Ash of Fire: Open_2_Snow"
+        "Fire Ash: Open_2_Snow"
       ]
     },
     {
       "ID": 60002412,
       "Entries": [
-        "Ash of Fire: Open_2_Heavy Snow"
+        "Fire Ash: Open_2_Heavy Snow"
       ]
     },
     {
       "ID": 60002502,
       "Entries": [
-        "Ash of Fire: Open_2_Fog"
+        "Fire Ash: Open_2_Fog"
       ]
     },
     {
       "ID": 60002512,
       "Entries": [
-        "Ash of Fire: Open_2_Dense Fog"
+        "Fire Ash: Open_2_Dense Fog"
       ]
     },
     {
       "ID": 60002522,
       "Entries": [
-        "Ash of Fire: Open_2_Dense Fog (Rain)"
+        "Fire Ash: Open_2_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 60002602,
       "Entries": [
-        "Ash of Fire: Open_2_Sandstorm"
+        "Fire Ash: Open_2_Sandstorm"
       ]
     },
     {
       "ID": 60002822,
       "Entries": [
-        "Ash of Fire: Open_2_Storm (Lightning)"
+        "Fire Ash: Open_2_Storm (Lightning)"
       ]
     },
     {
       "ID": 61002992,
       "Entries": [
-        "Ash of Fire: Open_2_Environment Map Capture"
+        "Fire Ash: Open_2_Environment Map Capture"
       ]
     },
     {
       "ID": 60002003,
       "Entries": [
-        "Ash of Fire: Open_3_Clear"
+        "Fire Ash: Open_3_Clear"
       ]
     },
     {
       "ID": 60002013,
       "Entries": [
-        "Ash of Fire: Open_3_Clear Skies"
+        "Fire Ash: Open_3_Clear Skies"
       ]
     },
     {
       "ID": 60002103,
       "Entries": [
-        "Ash of Fire: Open_3_Light Overcast"
+        "Fire Ash: Open_3_Light Clouds"
       ]
     },
     {
       "ID": 60002113,
       "Entries": [
-        "Ash of Fire: Open_3_Cloudy"
+        "Fire Ash: Open_3_Cloudy"
       ]
     },
     {
       "ID": 60002203,
       "Entries": [
-        "Ash of Fire: Open_3_Rain"
+        "Fire Ash: Open_3_Rain"
       ]
     },
     {
       "ID": 60002213,
       "Entries": [
-        "Ash of Fire: Open_3_Heavy Rain"
+        "Fire Ash: Open_3_Heavy Rain"
       ]
     },
     {
       "ID": 60002303,
       "Entries": [
-        "Ash of Fire: Open_3_Storm"
+        "Fire Ash: Open_3_Storm"
       ]
     },
     {
       "ID": 60002313,
       "Entries": [
-        "Ash of Fire: Open_3_Storm (Guardian Lineage)"
+        "Fire Ash: Open_3_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 60002403,
       "Entries": [
-        "Ash of Fire: Open_3_Snow"
+        "Fire Ash: Open_3_Snow"
       ]
     },
     {
       "ID": 60002413,
       "Entries": [
-        "Ash of Fire: Open_3_Heavy Snow"
+        "Fire Ash: Open_3_Heavy Snow"
       ]
     },
     {
       "ID": 60002503,
       "Entries": [
-        "Ash of Fire: Open_3_Fog"
+        "Fire Ash: Open_3_Fog"
       ]
     },
     {
       "ID": 60002513,
       "Entries": [
-        "Ash of Fire: Open_3_Dense Fog"
+        "Fire Ash: Open_3_Dense Fog"
       ]
     },
     {
       "ID": 60002523,
       "Entries": [
-        "Ash of Fire: Open_3_Dense Fog (Rain)"
+        "Fire Ash: Open_3_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 60002603,
       "Entries": [
-        "Ash of Fire: Open_3_Sandstorm"
+        "Fire Ash: Open_3_Sandstorm"
       ]
     },
     {
       "ID": 60002823,
       "Entries": [
-        "Ash of Fire: Open_3_Storm (Lightning)"
+        "Fire Ash: Open_3_Storm (Lightning)"
       ]
     },
     {
       "ID": 60002993,
       "Entries": [
-        "Ash of Fire: Open_3_Environment Map Capture"
+        "Fire Ash: Open_3_Environment Map Capture"
       ]
     },
     {
       "ID": 60002004,
       "Entries": [
-        "Ash of Fire: Open_4_Clear"
+        "Fire Ash: Open_4_Clear"
       ]
     },
     {
       "ID": 60002014,
       "Entries": [
-        "Ash of Fire: Open_4_Clear Skies"
+        "Fire Ash: Open_4_Clear Skies"
       ]
     },
     {
       "ID": 60002104,
       "Entries": [
-        "Ash of Fire: Open_4_Light Overcast"
+        "Fire Ash: Open_4_Light Clouds"
       ]
     },
     {
       "ID": 60002114,
       "Entries": [
-        "Ash of Fire: Open_4_Cloudy"
+        "Fire Ash: Open_4_Cloudy"
       ]
     },
     {
       "ID": 60002204,
       "Entries": [
-        "Ash of Fire: Open_4_Rain"
+        "Fire Ash: Open_4_Rain"
       ]
     },
     {
       "ID": 60002214,
       "Entries": [
-        "Ash of Fire: Open_4_Heavy Rain"
+        "Fire Ash: Open_4_Heavy Rain"
       ]
     },
     {
       "ID": 60002304,
       "Entries": [
-        "Ash of Fire: Open_4_Storm"
+        "Fire Ash: Open_4_Storm"
       ]
     },
     {
       "ID": 60002314,
       "Entries": [
-        "Ash of Fire: Open_4_Storm (Guardian Lineage)"
+        "Fire Ash: Open_4_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 60002404,
       "Entries": [
-        "Ash of Fire: Open_4_Snow"
+        "Fire Ash: Open_4_Snow"
       ]
     },
     {
       "ID": 60002414,
       "Entries": [
-        "Ash of Fire: Open_4_Heavy Snow"
+        "Fire Ash: Open_4_Heavy Snow"
       ]
     },
     {
       "ID": 60002504,
       "Entries": [
-        "Ash of Fire: Open_4_Fog"
+        "Fire Ash: Open_4_Fog"
       ]
     },
     {
       "ID": 60002514,
       "Entries": [
-        "Ash of Fire: Open_4_Dense Fog"
+        "Fire Ash: Open_4_Dense Fog"
       ]
     },
     {
       "ID": 60002524,
       "Entries": [
-        "Ash of Fire: Open_4_Dense Fog (Rain)"
+        "Fire Ash: Open_4_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 60002604,
       "Entries": [
-        "Ash of Fire: Open_4_Sandstorm"
+        "Fire Ash: Open_4_Sandstorm"
       ]
     },
     {
       "ID": 60002814,
       "Entries": [
-        "Ash of Fire: Open_4_Blizzard"
+        "Fire Ash: Open_4_Blizzard"
       ]
     },
     {
       "ID": 60002994,
       "Entries": [
-        "Ash of Fire: Open_4_Environment Map Capture"
+        "Fire Ash: Open_4_Environment Map Capture"
       ]
     },
     {
       "ID": 600020021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Clear"
+        "Fire Ash: Open_Volcano_Clear"
       ]
     },
     {
       "ID": 600020121,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Clear Skies"
+        "Fire Ash: Open_Volcano_Clear Skies"
       ]
     },
     {
       "ID": 600021021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Light Overcast"
+        "Fire Ash: Open_Volcano_Light Clouds"
       ]
     },
     {
       "ID": 600021121,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Cloudy"
+        "Fire Ash: Open_Volcano_Cloudy"
       ]
     },
     {
       "ID": 600022021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Rain"
+        "Fire Ash: Open_Volcano_Rain"
       ]
     },
     {
       "ID": 600022121,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Heavy Rain"
+        "Fire Ash: Open_Volcano_Heavy Rain"
       ]
     },
     {
       "ID": 600023021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Storm"
+        "Fire Ash: Open_Volcano_Storm"
       ]
     },
     {
       "ID": 600023121,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Storm (Guardian Lineage)"
+        "Fire Ash: Open_Volcano_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 600024021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Snow"
+        "Fire Ash: Open_Volcano_Snow"
       ]
     },
     {
       "ID": 600024121,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Heavy Snow"
+        "Fire Ash: Open_Volcano_Heavy Snow"
       ]
     },
     {
       "ID": 600025021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Fog"
+        "Fire Ash: Open_Volcano_Fog"
       ]
     },
     {
       "ID": 600025121,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Dense Fog"
+        "Fire Ash: Open_Volcano_Dense Fog"
       ]
     },
     {
       "ID": 600025221,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Dense Fog (Rain)"
+        "Fire Ash: Open_Volcano_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 600026021,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Sandstorm"
+        "Fire Ash: Open_Volcano_Sandstorm"
       ]
     },
     {
       "ID": 600029921,
       "Entries": [
-        "Ash of Fire: Open_Volcano_Environment Map Capture"
+        "Fire Ash: Open_Volcano_Environment Map Capture"
       ]
     },
     {
       "ID": 600020031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Clear"
+        "Fire Ash: Open_Desert_Clear"
       ]
     },
     {
       "ID": 600020131,
       "Entries": [
-        "Ash of Fire: Open_Desert_Clear Skies"
+        "Fire Ash: Open_Desert_Clear Skies"
       ]
     },
     {
       "ID": 600021031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Light Overcast"
+        "Fire Ash: Open_Desert_Light Clouds"
       ]
     },
     {
       "ID": 600021131,
       "Entries": [
-        "Ash of Fire: Open_Desert_Cloudy"
+        "Fire Ash: Open_Desert_Cloudy"
       ]
     },
     {
       "ID": 600022031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Rain"
+        "Fire Ash: Open_Desert_Rain"
       ]
     },
     {
       "ID": 600022131,
       "Entries": [
-        "Ash of Fire: Open_Desert_Heavy Rain"
+        "Fire Ash: Open_Desert_Heavy Rain"
       ]
     },
     {
       "ID": 600023031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Storm"
+        "Fire Ash: Open_Desert_Storm"
       ]
     },
     {
       "ID": 600023131,
       "Entries": [
-        "Ash of Fire: Open_Desert_Storm (Guardian Lineage)"
+        "Fire Ash: Open_Desert_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 600024031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Snow"
+        "Fire Ash: Open_Desert_Snow"
       ]
     },
     {
       "ID": 600024131,
       "Entries": [
-        "Ash of Fire: Open_Desert_Heavy Snow"
+        "Fire Ash: Open_Desert_Heavy Snow"
       ]
     },
     {
       "ID": 600025031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Fog"
+        "Fire Ash: Open_Desert_Fog"
       ]
     },
     {
       "ID": 600025131,
       "Entries": [
-        "Ash of Fire: Open_Desert_Dense Fog"
+        "Fire Ash: Open_Desert_Dense Fog"
       ]
     },
     {
       "ID": 600025231,
       "Entries": [
-        "Ash of Fire: Open_Desert_Dense Fog (Rain)"
+        "Fire Ash: Open_Desert_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 600026031,
       "Entries": [
-        "Ash of Fire: Open_Desert_Sandstorm"
+        "Fire Ash: Open_Desert_Sandstorm"
       ]
     },
     {
       "ID": 600029931,
       "Entries": [
-        "Ash of Fire: Open_Desert_Environment Map Capture"
+        "Fire Ash: Open_Desert_Environment Map Capture"
       ]
     },
     {
       "ID": 600020041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Fair"
+        "Fire Ash: Open_Snow Mountain Lower Level_Clear"
       ]
     },
     {
       "ID": 600020141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Clear"
+        "Fire Ash: Open_Snow Mountain Lower Level_Clear Skies"
       ]
     },
     {
       "ID": 600021041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Light Overcast"
+        "Fire Ash: Open_Snow Mountain Lower Level_Light Clouds"
       ]
     },
     {
       "ID": 600021141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Cloudy"
+        "Fire Ash: Open_Snow Mountain Lower Level_Cloudy"
       ]
     },
     {
       "ID": 600022041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Rain"
+        "Fire Ash: Open_Snow Mountain Lower Level_Rain"
       ]
     },
     {
       "ID": 600022141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Heavy Rain"
+        "Fire Ash: Open_Snow Mountain Lower Level_Heavy Rain"
       ]
     },
     {
       "ID": 600023041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Storm"
+        "Fire Ash: Open_Snow Mountain Lower Level_Storm"
       ]
     },
     {
       "ID": 600023141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Storm (Guardian Lineage)"
+        "Fire Ash: Open_Snow Mountain Lower Level_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 600024041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Snow"
+        "Fire Ash: Open_Snow Mountain Lower Level_Snow"
       ]
     },
     {
       "ID": 600024141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Heavy Snow"
+        "Fire Ash: Open_Snow Mountain Lower Level_Heavy Snow"
       ]
     },
     {
       "ID": 600025041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Fog"
+        "Fire Ash: Open_Snow Mountain Lower Level_Fog"
       ]
     },
     {
       "ID": 600025141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Dense Fog"
+        "Fire Ash: Open_Snow Mountain Lower Level_Dense Fog"
       ]
     },
     {
       "ID": 600025241,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Dense Fog (Rain)"
+        "Fire Ash: Open_Snow Mountain Lower Level_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 600026041,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Sandstorm"
+        "Fire Ash: Open_Snow Mountain Lower Level_Sandstorm"
       ]
     },
     {
       "ID": 600028141,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Blizzard"
+        "Fire Ash: Open_Snow Mountain Lower Level_Blizzard"
       ]
     },
     {
       "ID": 600029941,
       "Entries": [
-        "Ash of Fire: Open_Lower Snowy Mountain_Environment Map Capture"
+        "Fire Ash: Open_Snow Mountain Lower Level_Environment Map Capture"
       ]
     },
     {
       "ID": 600020042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Fair"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Clear"
       ]
     },
     {
       "ID": 600020142,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Clear"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Clear Skies"
       ]
     },
     {
       "ID": 600021042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Light Overcast"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Light Clouds"
       ]
     },
     {
       "ID": 600021142,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Cloudy"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Cloudy"
       ]
     },
     {
       "ID": 600022042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Rain"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Rain"
       ]
     },
     {
       "ID": 600022142,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Heavy Rain"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Heavy Rain"
       ]
     },
     {
       "ID": 600023042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Storm"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Storm"
       ]
     },
     {
       "ID": 600023142,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Storm (Guardian Lineage)"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 600024042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Snow"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Snow"
       ]
     },
     {
       "ID": 600024142,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Heavy Snow"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Heavy Snow"
       ]
     },
     {
       "ID": 600025042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Fog"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Fog"
       ]
     },
     {
       "ID": 600025142,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Dense Fog"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Dense Fog"
       ]
     },
     {
       "ID": 600025242,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Dense Fog (Rain)"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 600026042,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Sandstorm"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Sandstorm"
       ]
     },
     {
       "ID": 600029942,
       "Entries": [
-        "Ash of Fire: Open_Snowy Mountain_Royal Capital Road_Environment Map Capture"
+        "Fire Ash: Open_Snow Mountain_Road from Leyndell_Environment Map Capture"
       ]
     },
     {
@@ -1720,7 +1720,7 @@
     {
       "ID": 1000110,
       "Entries": [
-        "Stormveil_Light Overcast"
+        "Stormveil_Light Clouds"
       ]
     },
     {
@@ -1750,7 +1750,7 @@
     {
       "ID": 1000131,
       "Entries": [
-        "Stormveil_Storm (Guardian Lineage)"
+        "Stormveil_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -1798,271 +1798,271 @@
     {
       "ID": 1000200,
       "Entries": [
-        "Ash of Fire: Stormveil_Clear"
+        "Fire Ash: Stormveil_Clear"
       ]
     },
     {
       "ID": 1000201,
       "Entries": [
-        "Ash of Fire: Stormveil_Clear Skies"
+        "Fire Ash: Stormveil_Clear Skies"
       ]
     },
     {
       "ID": 1000210,
       "Entries": [
-        "Ash of Fire: Stormveil_Light Overcast"
+        "Fire Ash: Stormveil_Light Clouds"
       ]
     },
     {
       "ID": 1000211,
       "Entries": [
-        "Ash of Fire: Stormveil_Cloudy"
+        "Fire Ash: Stormveil_Cloudy"
       ]
     },
     {
       "ID": 1000220,
       "Entries": [
-        "Ash of Fire: Stormveil_Rain"
+        "Fire Ash: Stormveil_Rain"
       ]
     },
     {
       "ID": 1000221,
       "Entries": [
-        "Ash of Fire: Stormveil_Heavy Rain"
+        "Fire Ash: Stormveil_Heavy Rain"
       ]
     },
     {
       "ID": 1000230,
       "Entries": [
-        "Ash of Fire: Stormveil_Storm"
+        "Fire Ash: Stormveil_Storm"
       ]
     },
     {
       "ID": 1000231,
       "Entries": [
-        "Ash of Fire: Stormveil_Storm (Guardian Lineage)"
+        "Fire Ash: Stormveil_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1000240,
       "Entries": [
-        "Ash of Fire: Stormveil_Snow"
+        "Fire Ash: Stormveil_Snow"
       ]
     },
     {
       "ID": 1000241,
       "Entries": [
-        "Ash of Fire: Stormveil_Heavy Snow"
+        "Fire Ash: Stormveil_Heavy Snow"
       ]
     },
     {
       "ID": 1000250,
       "Entries": [
-        "Ash of Fire: Stormveil_Fog"
+        "Fire Ash: Stormveil_Fog"
       ]
     },
     {
       "ID": 1000251,
       "Entries": [
-        "Ash of Fire: Stormveil_Dense Fog"
+        "Fire Ash: Stormveil_Dense Fog"
       ]
     },
     {
       "ID": 1000252,
       "Entries": [
-        "Ash of Fire: Stormveil_Dense Fog (Rain)"
+        "Fire Ash: Stormveil_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1000260,
       "Entries": [
-        "Ash of Fire: Stormveil_Sandstorm"
+        "Fire Ash: Stormveil_Sandstorm"
       ]
     },
     {
       "ID": 1000299,
       "Entries": [
-        "Ash of Fire: Stormveil_Environment Map Capture"
+        "Fire Ash: Stormveil_Environment Map Capture"
       ]
     },
     {
       "ID": 1100100,
       "Entries": [
-        "Royal Capital_Clear Sky"
+        "Leyndell_Clear"
       ]
     },
     {
       "ID": 1100101,
       "Entries": [
-        "Royal Capital_Clear"
+        "Leyndell_Clear Skies"
       ]
     },
     {
       "ID": 1100110,
       "Entries": [
-        "Capital_Light Overcast"
+        "Leyndell_Light Clouds"
       ]
     },
     {
       "ID": 1100111,
       "Entries": [
-        "Royal Capital_Cloudy"
+        "Leyndell_Cloudy"
       ]
     },
     {
       "ID": 1100120,
       "Entries": [
-        "Capital_Rain"
+        "Leyndell_Rain"
       ]
     },
     {
       "ID": 1100121,
       "Entries": [
-        "Capital_Heavy Rain"
+        "Leyndell_Heavy Rain"
       ]
     },
     {
       "ID": 1100130,
       "Entries": [
-        "Royal Capital_Storm"
+        "Leyndell_Storm"
       ]
     },
     {
       "ID": 1100131,
       "Entries": [
-        "Royal Capital_Storm (Guardian Lineage)"
+        "Leyndell_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1100140,
       "Entries": [
-        "Capital_Snow"
+        "Leyndell_Snow"
       ]
     },
     {
       "ID": 1100141,
       "Entries": [
-        "Royal Capital_Heavy Snow"
+        "Leyndell_Heavy Snow"
       ]
     },
     {
       "ID": 1100150,
       "Entries": [
-        "Capital_Fog"
+        "Leyndell_Fog"
       ]
     },
     {
       "ID": 1100151,
       "Entries": [
-        "Royal Capital_Dense Fog"
+        "Leyndell_Dense Fog"
       ]
     },
     {
       "ID": 1100152,
       "Entries": [
-        "Royal Capital_Dense Fog (Rain)"
+        "Leyndell_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1100160,
       "Entries": [
-        "Royal Capital_Sandstorm"
+        "Leyndell_Sandstorm"
       ]
     },
     {
       "ID": 1100199,
       "Entries": [
-        "Royal Capital_Environment Map Capture"
+        "Leyndell_Environment Map Capture"
       ]
     },
     {
       "ID": 1105200,
       "Entries": [
-        "Royal Capital Ash_Clear"
+        "Leyndell Ash_Clear"
       ]
     },
     {
       "ID": 1105201,
       "Entries": [
-        "Royal Capital Ash_Clear Skies"
+        "Leyndell Ash_Clear Skies"
       ]
     },
     {
       "ID": 1105210,
       "Entries": [
-        "Royal Capital Ash_Light Overcast"
+        "Leyndell Ash_Light Clouds"
       ]
     },
     {
       "ID": 1105211,
       "Entries": [
-        "Royal Capital Ash_Cloudy"
+        "Leyndell Ash_Cloudy"
       ]
     },
     {
       "ID": 1105220,
       "Entries": [
-        "Royal Capital Ash_Rain"
+        "Leyndell Ash_Rain"
       ]
     },
     {
       "ID": 1105221,
       "Entries": [
-        "Royal Capital Ash_Heavy Rain"
+        "Leyndell Ash_Heavy Rain"
       ]
     },
     {
       "ID": 1105230,
       "Entries": [
-        "Royal Capital Ash_Storm"
+        "Leyndell Ash_Storm"
       ]
     },
     {
       "ID": 1105231,
       "Entries": [
-        "Royal Capital Ash_Storm (Guardian Lineage)"
+        "Leyndell Ash_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1105240,
       "Entries": [
-        "Royal Capital Ash_Snow"
+        "Leyndell Ash_Snow"
       ]
     },
     {
       "ID": 1105241,
       "Entries": [
-        "Royal Capital Ash_Heavy Snow"
+        "Leyndell Ash_Heavy Snow"
       ]
     },
     {
       "ID": 1105250,
       "Entries": [
-        "Royal Capital Ash_Fog"
+        "Leyndell Ash_Fog"
       ]
     },
     {
       "ID": 1105251,
       "Entries": [
-        "Royal Capital Ash_Dense Fog"
+        "Leyndell Ash_Dense Fog"
       ]
     },
     {
       "ID": 1105252,
       "Entries": [
-        "Royal Capital Ash_Dense Fog (Rain)"
+        "Leyndell Ash_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1105260,
       "Entries": [
-        "Royal Capital Ash_Sandstorm"
+        "Leyndell Ash_Sandstorm"
       ]
     },
     {
       "ID": 1105299,
       "Entries": [
-        "Royal Capital Ash_Environment Map Capture"
+        "Leyndell Ash_Environment Map Capture"
       ]
     },
     {
@@ -2074,13 +2074,13 @@
     {
       "ID": 1110101,
       "Entries": [
-        "Base_Clear Sky"
+        "Base_Clear Skies"
       ]
     },
     {
       "ID": 1110110,
       "Entries": [
-        "Base_Light Overcast"
+        "Base_Light Clouds"
       ]
     },
     {
@@ -2110,7 +2110,7 @@
     {
       "ID": 1110131,
       "Entries": [
-        "Base_Storm (Guardian Lineage)"
+        "Base_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -2158,91 +2158,91 @@
     {
       "ID": 1110200,
       "Entries": [
-        "Ash of Fire: Base_Clear"
+        "Fire Ash: Base_Clear"
       ]
     },
     {
       "ID": 1110201,
       "Entries": [
-        "Ash of Fire: Base_Clear Skies"
+        "Fire Ash: Base_Clear Skies"
       ]
     },
     {
       "ID": 1110210,
       "Entries": [
-        "Ash of Fire: Base_Light Overcast"
+        "Fire Ash: Base_Light Clouds"
       ]
     },
     {
       "ID": 1110211,
       "Entries": [
-        "Ash of Fire: Base_Cloudy"
+        "Fire Ash: Base_Cloudy"
       ]
     },
     {
       "ID": 1110220,
       "Entries": [
-        "Ash of Fire: Base_Rain"
+        "Fire Ash: Base_Rain"
       ]
     },
     {
       "ID": 1110221,
       "Entries": [
-        "Ash of Fire: Base_Heavy Rain"
+        "Fire Ash: Base_Heavy Rain"
       ]
     },
     {
       "ID": 1110230,
       "Entries": [
-        "Ash of Fire: Base_Storm"
+        "Fire Ash: Base_Storm"
       ]
     },
     {
       "ID": 1110231,
       "Entries": [
-        "Ash of Fire: Base_Storm (Guardian Lineage)"
+        "Fire Ash: Base_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1110240,
       "Entries": [
-        "Ash of Fire: Base_Snow"
+        "Fire Ash: Base_Snow"
       ]
     },
     {
       "ID": 1110241,
       "Entries": [
-        "Ash of Fire: Base_Heavy Snow"
+        "Fire Ash: Base Heavy Snow"
       ]
     },
     {
       "ID": 1110250,
       "Entries": [
-        "Ash of Fire: Base_Fog"
+        "Fire Ash: Base_Fog"
       ]
     },
     {
       "ID": 1110251,
       "Entries": [
-        "Ash of Fire: Base_Dense Fog"
+        "Fire Ash: Base_Dense Fog"
       ]
     },
     {
       "ID": 1110252,
       "Entries": [
-        "Ash of Fire: Base_Dense Fog (Rain)"
+        "Fire Ash: Base_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1110260,
       "Entries": [
-        "Ash of Fire: Base_Sandstorm"
+        "Fire Ash: Base_Sandstorm"
       ]
     },
     {
       "ID": 1110299,
       "Entries": [
-        "Ash of Fire: Base_Environment Map Capture"
+        "Fire Ash: Base_Environment Map Capture"
       ]
     },
     {
@@ -2254,13 +2254,13 @@
     {
       "ID": 1171101,
       "Entries": [
-        "Ending A_Fair Weather"
+        "Ending A_Clear Skies"
       ]
     },
     {
       "ID": 1171110,
       "Entries": [
-        "Ending A_Light Overcast"
+        "Ending A_Light Clouds"
       ]
     },
     {
@@ -2290,7 +2290,7 @@
     {
       "ID": 1171131,
       "Entries": [
-        "Ending A_Storm (Guardian Lineage)"
+        "Ending A_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -2338,325 +2338,325 @@
     {
       "ID": 1171200,
       "Entries": [
-        "Ash of Fire: Ending A_Clear"
+        "Fire Ash: Ending A_Clear"
       ]
     },
     {
       "ID": 1171201,
       "Entries": [
-        "Ash of Fire: Ending A_Clear Skies"
+        "Fire Ash: Ending A_Clear Skies"
       ]
     },
     {
       "ID": 1171210,
       "Entries": [
-        "Ash of Fire: Ending A_Light Overcast"
+        "Fire Ash: Ending A_Light Clouds"
       ]
     },
     {
       "ID": 1171211,
       "Entries": [
-        "Ash of Fire: Ending A_Cloudy"
+        "Fire Ash: Ending A_Cloudy"
       ]
     },
     {
       "ID": 1171220,
       "Entries": [
-        "Ash of Fire: Ending A_Rain"
+        "Fire Ash: Ending A_Rain"
       ]
     },
     {
       "ID": 1171221,
       "Entries": [
-        "Ash of Fire: Ending A_Heavy Rain"
+        "Fire Ash: Ending A_Heavy Rain"
       ]
     },
     {
       "ID": 1171230,
       "Entries": [
-        "Ash of Fire: Ending A_Storm"
+        "Fire Ash: Ending A_Storm"
       ]
     },
     {
       "ID": 1171231,
       "Entries": [
-        "Ash of Fire: Ending A_Storm (Guardian Lineage)"
+        "Fire Ash: Ending A_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1171240,
       "Entries": [
-        "Ash of Fire: Ending A_Snow"
+        "Fire Ash: Ending A_Snow"
       ]
     },
     {
       "ID": 1171241,
       "Entries": [
-        "Ash of Fire: Ending A_Heavy Snow"
+        "Fire Ash: Ending A_Heavy Snow"
       ]
     },
     {
       "ID": 1171250,
       "Entries": [
-        "Ash of Fire: Ending A_Fog"
+        "Fire Ash: Ending A_Fog"
       ]
     },
     {
       "ID": 1171251,
       "Entries": [
-        "Ash of Fire: Ending A_Dense Fog"
+        "Fire Ash: Ending A_Dense Fog"
       ]
     },
     {
       "ID": 1171252,
       "Entries": [
-        "Ash of Fire: Ending A_Dense Fog (Rain)"
+        "Fire Ash: Ending A_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1171260,
       "Entries": [
-        "Ash of Fire: Ending A_Sandstorm"
+        "Fire Ash: Ending A_Sandstorm"
       ]
     },
     {
       "ID": 1171299,
       "Entries": [
-        "Ash of Fire: Ending A_Environment Map Capture"
+        "Fire Ash: Ending A_Environment Map Capture"
       ]
     },
     {
       "ID": 1203100,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Clear"
+        "Underground Labyrinth Leyndell_Clear"
       ]
     },
     {
       "ID": 1203101,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Clear Sky"
+        "Underground Labyrinth Leyndell_Clear Skies"
       ]
     },
     {
       "ID": 1203110,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Light Overcast"
+        "Underground Labyrinth Leyndell_Light Clouds"
       ]
     },
     {
       "ID": 1203111,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Cloudy"
+        "Underground Labyrinth Leyndell_Cloudy"
       ]
     },
     {
       "ID": 1203120,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Rain"
+        "Underground Labyrinth Leyndell_Rain"
       ]
     },
     {
       "ID": 1203121,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Heavy Rain"
+        "Underground Labyrinth Leyndell_Heavy Rain"
       ]
     },
     {
       "ID": 1203130,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Storm"
+        "Underground Labyrinth Leyndell_Storm"
       ]
     },
     {
       "ID": 1203131,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Storm (Guardian Lineage)"
+        "Underground Labyrinth Leyndell_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1203140,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Snow"
+        "Underground Labyrinth Leyndell_Snow"
       ]
     },
     {
       "ID": 1203141,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Heavy Snow"
+        "Underground Labyrinth Leyndell_Heavy Snow"
       ]
     },
     {
       "ID": 1203150,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Fog"
+        "Underground Labyrinth Leyndell_Fog"
       ]
     },
     {
       "ID": 1203151,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Dense Fog"
+        "Underground Labyrinth Leyndell_Dense Fog"
       ]
     },
     {
       "ID": 1203152,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Dense Fog (Rain)"
+        "Underground Labyrinth Leyndell_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1203160,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Sandstorm"
+        "Underground Labyrinth Leyndell_Sandstorm"
       ]
     },
     {
       "ID": 1203199,
       "Entries": [
-        "Underground Labyrinth Royal Capital_Environment Map Capture"
+        "Underground Labyrinth Leyndell_Environment Map Capture"
       ]
     },
     {
       "ID": 1203200,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Fair"
+        "Fire Ash: Underground Labyrinth Leyndell_Clear"
       ]
     },
     {
       "ID": 1203201,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Clear"
+        "Fire Ash: Underground Labyrinth Leyndell_Clear Skies"
       ]
     },
     {
       "ID": 1203210,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Light Overcast"
+        "Fire Ash: Underground Labyrinth Leyndell_Light Clouds"
       ]
     },
     {
       "ID": 1203211,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Cloudy"
+        "Fire Ash: Underground Labyrinth Leyndell_Cloudy"
       ]
     },
     {
       "ID": 1203220,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Rain"
+        "Fire Ash: Underground Labyrinth Leyndell_Rain"
       ]
     },
     {
       "ID": 1203221,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Heavy Rain"
+        "Fire Ash: Underground Labyrinth Leyndell_Heavy Rain"
       ]
     },
     {
       "ID": 1203230,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Storm"
+        "Fire Ash: Underground Labyrinth Leyndell_Storm"
       ]
     },
     {
       "ID": 1203231,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Storm (Guardian Lineage)"
+        "Fire Ash: Underground Labyrinth Leyndell_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1203240,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Snow"
+        "Fire Ash: Underground Labyrinth Leyndell_Snow"
       ]
     },
     {
       "ID": 1203241,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Heavy Snow"
+        "Fire Ash: Underground Labyrinth Leyndell_Heavy Snow"
       ]
     },
     {
       "ID": 1203250,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Fog"
+        "Fire Ash: Underground Labyrinth Leyndell_Fog"
       ]
     },
     {
       "ID": 1203251,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Dense Fog"
+        "Fire Ash: Underground Labyrinth Leyndell_Dense Fog"
       ]
     },
     {
       "ID": 1203252,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Dense Fog (Rain)"
+        "Fire Ash: Underground Labyrinth Leyndell_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1203260,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Sandstorm"
+        "Fire Ash: Underground Labyrinth Leyndell_Sandstorm"
       ]
     },
     {
       "ID": 1203299,
       "Entries": [
-        "Ash of Fire: Underground Labyrinth Royal Capital_Environment Map Capture"
+        "Fire Ash: Underground Labyrinth Leyndell_Environment Map Capture"
       ]
     },
     {
       "ID": 1300100,
       "Entries": [
-        "Ruins Descending_Clear"
+        "Descending Ruins_Clear"
       ]
     },
     {
       "ID": 1300101,
       "Entries": [
-        "Ruins Descending_Clear Sky"
+        "Descending Ruins_Clear Skies"
       ]
     },
     {
       "ID": 1300110,
       "Entries": [
-        "Ruins Descending_Light Overcast"
+        "Descending Ruins_Light Clouds"
       ]
     },
     {
       "ID": 1300111,
       "Entries": [
-        "Ruins Descending_Cloudy"
+        "Descending Ruins_Cloudy"
       ]
     },
     {
       "ID": 1300120,
       "Entries": [
-        "Ruins Descending_Rain"
+        "Descending Ruins_Rain"
       ]
     },
     {
       "ID": 1300121,
       "Entries": [
-        "Ruins Descending_Heavy Rain"
+        "Descending Ruins_Heavy Rain"
       ]
     },
     {
       "ID": 1300130,
       "Entries": [
-        "Ruins Descending_Storm"
+        "Descending Ruins_Storm"
       ]
     },
     {
       "ID": 1300131,
       "Entries": [
-        "Ruins Descending_Storm (Guardian Lineage)"
+        "Descending Ruins_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1300140,
       "Entries": [
-        "Ruins Descending_Snow"
+        "Descending Ruins_Snow"
       ]
     },
     {
@@ -2668,301 +2668,301 @@
     {
       "ID": 1300150,
       "Entries": [
-        "Ruins Descending_Fog"
+        "Descending Ruins_Fog"
       ]
     },
     {
       "ID": 1300151,
       "Entries": [
-        "Ruins Descending_Dense Fog"
+        "Descending Ruins_Dense Fog"
       ]
     },
     {
       "ID": 1300152,
       "Entries": [
-        "Ruins Descending_Dense Fog (Rain)"
+        "Descending Ruins_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1300160,
       "Entries": [
-        "Ruins Descending_Sandstorm"
+        "Descending Ruins_Sandstorm"
       ]
     },
     {
       "ID": 1300199,
       "Entries": [
-        "Ruins Descending_Environment Map Capture"
+        "Descending Ruins_Environment Map Capture"
       ]
     },
     {
       "ID": 1300200,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Fair"
+        "Fire Ash: Descending Ruins_Clear"
       ]
     },
     {
       "ID": 1300201,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Clear"
+        "Fire Ash: Descending Ruins_Clear Skies"
       ]
     },
     {
       "ID": 1300210,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Light Overcast"
+        "Fire Ash: Descending Ruins_Light Clouds"
       ]
     },
     {
       "ID": 1300211,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Cloudy"
+        "Fire Ash: Descending Ruins_Cloudy"
       ]
     },
     {
       "ID": 1300220,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Rain"
+        "Fire Ash: Descending Ruins_Rain"
       ]
     },
     {
       "ID": 1300221,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Heavy Rain"
+        "Fire Ash: Descending Ruins_Heavy Rain"
       ]
     },
     {
       "ID": 1300230,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Storm"
+        "Fire Ash: Descending Ruins_Storm"
       ]
     },
     {
       "ID": 1300231,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Storm (Guardian Lineage)"
+        "Fire Ash: Descending Ruins_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1300240,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Snow"
+        "Fire Ash: Descending Ruins_Snow"
       ]
     },
     {
       "ID": 1300241,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Heavy Snow"
+        "Fire Ash: Descending Ruins_Heavy Snow"
       ]
     },
     {
       "ID": 1300250,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Fog"
+        "Fire Ash: Descending Ruins_Fog"
       ]
     },
     {
       "ID": 1300251,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Dense Fog"
+        "Fire Ash: Descending Ruins_Dense Fog"
       ]
     },
     {
       "ID": 1300252,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Dense Fog (Rain)"
+        "Fire Ash: Descending Ruins_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1300260,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Sandstorm"
+        "Fire Ash: Descending Ruins_Sandstorm"
       ]
     },
     {
       "ID": 1300299,
       "Entries": [
-        "Ash of Fire: Descending Ruins_Environment Map Capture"
+        "Fire Ash: Descending Ruins_Environment Map Capture"
       ]
     },
     {
       "ID": 1400100,
       "Entries": [
-        "Monsan_Clear"
+        "Raya Lucaria_Clear"
       ]
     },
     {
       "ID": 1400101,
       "Entries": [
-        "Monsan_Clear Sky"
+        "Raya Lucaria_Clear Skies"
       ]
     },
     {
       "ID": 1400110,
       "Entries": [
-        "Monsan_Light Overcast"
+        "Raya Lucaria_Light Clouds"
       ]
     },
     {
       "ID": 1400111,
       "Entries": [
-        "Monsan_Cloudy"
+        "Raya Lucaria_Cloudy"
       ]
     },
     {
       "ID": 1400120,
       "Entries": [
-        "Monsan_Rain"
+        "Raya Lucaria_Rain"
       ]
     },
     {
       "ID": 1400121,
       "Entries": [
-        "Monsan_Heavy Rain"
+        "Raya Lucaria_Heavy Rain"
       ]
     },
     {
       "ID": 1400130,
       "Entries": [
-        "Monsan_Storm"
+        "Raya Lucaria_Storm"
       ]
     },
     {
       "ID": 1400131,
       "Entries": [
-        "Monsan_Storm (Guardian Lineage)"
+        "Raya Lucaria_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1400140,
       "Entries": [
-        "Monsan_Snow"
+        "Raya Lucaria_Snow"
       ]
     },
     {
       "ID": 1400141,
       "Entries": [
-        "Monsan_Heavy Snow"
+        "Raya Lucaria_Heavy Snow"
       ]
     },
     {
       "ID": 1400150,
       "Entries": [
-        "Monsan_Fog"
+        "Raya Lucaria_Fog"
       ]
     },
     {
       "ID": 1400151,
       "Entries": [
-        "Monsan_Dense Fog"
+        "Raya Lucaria_Dense Fog"
       ]
     },
     {
       "ID": 1400152,
       "Entries": [
-        "Monsan_Dense Fog (Rain)"
+        "Raya Lucaria_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1400160,
       "Entries": [
-        "Monsan_Sandstorm"
+        "Raya Lucaria_Sandstorm"
       ]
     },
     {
       "ID": 1400199,
       "Entries": [
-        "Monsan_Environment Map Capture"
+        "Raya Lucaria_Environment Map Capture"
       ]
     },
     {
       "ID": 1400200,
       "Entries": [
-        "Ash of Fire: Monsan_Fair"
+        "Fire Ash: Raya Lucaria_Clear"
       ]
     },
     {
       "ID": 1400201,
       "Entries": [
-        "Ash of Fire: Monsan_Clear"
+        "Fire Ash: Raya Lucaria_Clear Skies"
       ]
     },
     {
       "ID": 1400210,
       "Entries": [
-        "Ash of Fire: Monsan_Light Overcast"
+        "Fire Ash: Raya Lucaria_Light Clouds"
       ]
     },
     {
       "ID": 1400211,
       "Entries": [
-        "Ash of Fire: Monsan_Cloudy"
+        "Fire Ash: Raya Lucaria_Cloudy"
       ]
     },
     {
       "ID": 1400220,
       "Entries": [
-        "Ash of Fire: Monsan_Rain"
+        "Fire Ash: Raya Lucaria_Rain"
       ]
     },
     {
       "ID": 1400221,
       "Entries": [
-        "Ash of Fire: Monsan_Heavy Rain"
+        "Fire Ash: Raya Lucaria_Heavy Rain"
       ]
     },
     {
       "ID": 1400230,
       "Entries": [
-        "Ash of Fire: Monsan_Storm"
+        "Fire Ash: Raya Lucaria_Storm"
       ]
     },
     {
       "ID": 1400231,
       "Entries": [
-        "Ash of Fire: Monsan_Storm (Guardian Lineage)"
+        "Fire Ash: Raya Lucaria_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1400240,
       "Entries": [
-        "Ash of Fire: Monsan_Snow"
+        "Fire Ash: Raya Lucaria_Snow"
       ]
     },
     {
       "ID": 1400241,
       "Entries": [
-        "Ash of Fire: Monsan_Heavy Snow"
+        "Fire Ash: Raya Lucaria_Heavy Snow"
       ]
     },
     {
       "ID": 1400250,
       "Entries": [
-        "Ash of Fire: Monsan_Fog"
+        "Fire Ash: Raya Lucaria_Fog"
       ]
     },
     {
       "ID": 1400251,
       "Entries": [
-        "Ash of Fire: Monsan_Dense Fog"
+        "Fire Ash: Raya Lucaria_Dense Fog"
       ]
     },
     {
       "ID": 1400252,
       "Entries": [
-        "Ash of Fire: Monsan_Dense Fog (Rain)"
+        "Fire Ash: Raya Lucaria_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1400260,
       "Entries": [
-        "Ash of Fire: Monsan_Sandstorm"
+        "Fire Ash: Raya Lucaria_Sandstorm"
       ]
     },
     {
       "ID": 1400299,
       "Entries": [
-        "Ash of Fire: Monsan_Environment Map Capture"
+        "Fire Ash: Raya Lucaria_Environment Map Capture"
       ]
     },
     {
@@ -2974,13 +2974,13 @@
     {
       "ID": 1500101,
       "Entries": [
-        "Rotten Great Tree_Clear Sky"
+        "Rotten Great Tree_Clear Skies"
       ]
     },
     {
       "ID": 1500110,
       "Entries": [
-        "Rotten Great Tree_Light Overcast"
+        "Rotten Great Tree_Light Clouds"
       ]
     },
     {
@@ -3010,7 +3010,7 @@
     {
       "ID": 1500131,
       "Entries": [
-        "Rotten Great Tree_Storm (Guardian Lineage)"
+        "Rotten Great Tree_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -3058,91 +3058,91 @@
     {
       "ID": 1500200,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Clear"
+        "Fire Ash: Rotten Great Tree_Clear"
       ]
     },
     {
       "ID": 1500201,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Clear Sky"
+        "Fire Ash: Rotten Great Tree_Clear Skies"
       ]
     },
     {
       "ID": 1500210,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Light Overcast"
+        "Fire Ash: Rotten Great Tree_Light Clouds"
       ]
     },
     {
       "ID": 1500211,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Cloudy"
+        "Fire Ash: Rotten Great Tree_Cloudy"
       ]
     },
     {
       "ID": 1500220,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Rain"
+        "Fire Ash: Rotten Great Tree_Rain"
       ]
     },
     {
       "ID": 1500221,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Heavy Rain"
+        "Fire Ash: Rotten Great Tree_Heavy Rain"
       ]
     },
     {
       "ID": 1500230,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Storm"
+        "Fire Ash: Rotten Great Tree_Storm"
       ]
     },
     {
       "ID": 1500231,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Storm (Guardian Lineage)"
+        "Fire Ash: Rotten Great Tree_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1500240,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Snow"
+        "Fire Ash: Rotten Great Tree_Snow"
       ]
     },
     {
       "ID": 1500241,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Heavy Snow"
+        "Fire Ash: Rotten Great Tree_Heavy Snow"
       ]
     },
     {
       "ID": 1500250,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Fog"
+        "Fire Ash: Rotten Great Tree_Fog"
       ]
     },
     {
       "ID": 1500251,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Dense Fog"
+        "Fire Ash: Rotten Great Tree_Dense Fog"
       ]
     },
     {
       "ID": 1500252,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Dense Fog (Rain)"
+        "Fire Ash: Rotten Great Tree_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1500260,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Sandstorm"
+        "Fire Ash: Rotten Great Tree_Sandstorm"
       ]
     },
     {
       "ID": 1500299,
       "Entries": [
-        "Ash of Fire: Rotten Great Tree_Environment Map Capture"
+        "Fire Ash: Rotten Great Tree_Environment Map Capture"
       ]
     },
     {
@@ -3154,13 +3154,13 @@
     {
       "ID": 1600101,
       "Entries": [
-        "Volcano Prison_Clear Sky"
+        "Volcano Prison_Clear Skies"
       ]
     },
     {
       "ID": 1600110,
       "Entries": [
-        "Volcano Prison_Light Overcast"
+        "Volcano Prison_Light Clouds"
       ]
     },
     {
@@ -3190,7 +3190,7 @@
     {
       "ID": 1600131,
       "Entries": [
-        "Volcano Prison_Storm (Guardian Lineage)"
+        "Volcano Prison_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -3238,271 +3238,271 @@
     {
       "ID": 1600200,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Clear"
+        "Fire Ash: Volcano Prison_Clear"
       ]
     },
     {
       "ID": 1600201,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Clear Skies"
+        "Fire Ash: Volcano Prison_Clear Skies"
       ]
     },
     {
       "ID": 1600210,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Light Overcast"
+        "Fire Ash: Volcano Prison_Light Clouds"
       ]
     },
     {
       "ID": 1600211,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Cloudy"
+        "Fire Ash: Volcano Prison_Cloudy"
       ]
     },
     {
       "ID": 1600220,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Rain"
+        "Fire Ash: Volcano Prison_Rain"
       ]
     },
     {
       "ID": 1600221,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Heavy Rain"
+        "Fire Ash: Volcano Prison_Heavy Rain"
       ]
     },
     {
       "ID": 1600230,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Storm"
+        "Fire Ash: Volcano Prison_Storm"
       ]
     },
     {
       "ID": 1600231,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Storm (Guardian Lineage)"
+        "Fire Ash: Volcano Prison_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1600240,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Snow"
+        "Fire Ash: Volcano Prison_Snow"
       ]
     },
     {
       "ID": 1600241,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Heavy Snow"
+        "Fire Ash: Volcano Prison_Heavy Snow"
       ]
     },
     {
       "ID": 1600250,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Fog"
+        "Fire Ash: Volcano Prison_Fog"
       ]
     },
     {
       "ID": 1600251,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Dense Fog"
+        "Fire Ash: Volcano Prison_Dense Fog"
       ]
     },
     {
       "ID": 1600252,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Dense Fog (Rain)"
+        "Fire Ash: Volcano Prison_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1600260,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Sandstorm"
+        "Fire Ash: Volcano Prison_Sandstorm"
       ]
     },
     {
       "ID": 1600299,
       "Entries": [
-        "Ash of Fire: Volcano Prison_Environment Map Capture"
+        "Fire Ash: Volcano Prison_Environment Map Capture"
       ]
     },
     {
       "ID": 3920100,
       "Entries": [
-        "Cliff Tunnel_Clear"
+        "Cliffside Tunnel_Clear"
       ]
     },
     {
       "ID": 3920101,
       "Entries": [
-        "Cliff Tunnel_Clear Sky"
+        "Cliffside Tunnel_Clear Skies"
       ]
     },
     {
       "ID": 3920110,
       "Entries": [
-        "Cliff Tunnel_Light Overcast"
+        "Cliffside Tunnel_Light Clouds"
       ]
     },
     {
       "ID": 3920111,
       "Entries": [
-        "Cliff Tunnel_Cloudy"
+        "Cliffside Tunnel_Cloudy"
       ]
     },
     {
       "ID": 3920120,
       "Entries": [
-        "Cliff Tunnel_Rain"
+        "Cliffside Tunnel_Rain"
       ]
     },
     {
       "ID": 3920121,
       "Entries": [
-        "Cliff Tunnel_Heavy Rain"
+        "Cliffside Tunnel_Heavy Rain"
       ]
     },
     {
       "ID": 3920130,
       "Entries": [
-        "Cliff Tunnel_Storm"
+        "Cliffside Tunnel_Storm"
       ]
     },
     {
       "ID": 3920131,
       "Entries": [
-        "Cliff Tunnel_Storm (Guardian Lineage)"
+        "Cliffside Tunnel_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3920140,
       "Entries": [
-        "Cliff Tunnel_Snow"
+        "Cliffside Tunnel_Snow"
       ]
     },
     {
       "ID": 3920141,
       "Entries": [
-        "Cliff Tunnel_Heavy Snow"
+        "Cliffside Tunnel_Heavy Snow"
       ]
     },
     {
       "ID": 3920150,
       "Entries": [
-        "Cliff Tunnel_Fog"
+        "Cliffside Tunnel_Fog"
       ]
     },
     {
       "ID": 3920151,
       "Entries": [
-        "Cliff Tunnel_Dense Fog"
+        "Cliffside Tunnel_Dense Fog"
       ]
     },
     {
       "ID": 3920152,
       "Entries": [
-        "Cliff Tunnel_Dense Fog (Rain)"
+        "Cliffside Tunnel_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3920160,
       "Entries": [
-        "Cliff Tunnel_Sandstorm"
+        "Cliffside Tunnel_Sandstorm"
       ]
     },
     {
       "ID": 3920199,
       "Entries": [
-        "Cliff Tunnel_Environment Map Capture"
+        "Cliffside Tunnel_Environment Map Capture"
       ]
     },
     {
       "ID": 3920200,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Clear"
+        "Fire Ash: Cliffside Tunnel_Clear"
       ]
     },
     {
       "ID": 3920201,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Clear Skies"
+        "Fire Ash: Cliffside Tunnel_Clear Skies"
       ]
     },
     {
       "ID": 3920210,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Light Overcast"
+        "Fire Ash: Cliffside Tunnel_Light Clouds"
       ]
     },
     {
       "ID": 3920211,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Cloudy"
+        "Fire Ash: Cliffside Tunnel_Cloudy"
       ]
     },
     {
       "ID": 3920220,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Rain"
+        "Fire Ash: Cliffside Tunnel_Rain"
       ]
     },
     {
       "ID": 3920221,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Heavy Rain"
+        "Fire Ash: Cliffside Tunnel_Heavy Rain"
       ]
     },
     {
       "ID": 3920230,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Storm"
+        "Fire Ash: Cliffside Tunnel_Storm"
       ]
     },
     {
       "ID": 3920231,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Storm (Guardian Lineage)"
+        "Fire Ash: Cliffside Tunnel_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3920240,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Snow"
+        "Fire Ash: Cliffside Tunnel_Snow"
       ]
     },
     {
       "ID": 3920241,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Heavy Snow"
+        "Fire Ash: Cliffside Tunnel_Heavy Snow"
       ]
     },
     {
       "ID": 3920250,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Fog"
+        "Fire Ash: Cliffside Tunnel_Fog"
       ]
     },
     {
       "ID": 3920251,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Dense Fog"
+        "Fire Ash: Cliffside Tunnel_Dense Fog"
       ]
     },
     {
       "ID": 3920252,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Dense Fog (Rain)"
+        "Fire Ash: Cliffside Tunnel_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3920260,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Sandstorm"
+        "Fire Ash: Cliffside Tunnel_Sandstorm"
       ]
     },
     {
       "ID": 3920299,
       "Entries": [
-        "Ash of Fire: Cliff Tunnel_Environment Map Capture"
+        "Fire Ash: Cliffside Tunnel_Environment Map Capture"
       ]
     },
     {
@@ -3514,13 +3514,13 @@
     {
       "ID": 3410101,
       "Entries": [
-        "Divine Tower 1_Green_Fair Skies"
+        "Divine Tower 1_Green_Clear Skies"
       ]
     },
     {
       "ID": 3410110,
       "Entries": [
-        "Divine Tower 1_Green_Light Overcast"
+        "Divine Tower 1_Green_Light Clouds"
       ]
     },
     {
@@ -3550,7 +3550,7 @@
     {
       "ID": 3410131,
       "Entries": [
-        "Divine Tower 1_Green_Storm (Guardian Lineage)"
+        "Divine Tower 1_Green_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -3598,91 +3598,91 @@
     {
       "ID": 3410200,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Clear"
+        "Fire Ash: Divine Tower 1_Green_Clear"
       ]
     },
     {
       "ID": 3410201,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Clear Skies"
+        "Fire Ash: Divine Tower 1_Green_Clear Skies"
       ]
     },
     {
       "ID": 3410210,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Light Overcast"
+        "Fire Ash: Divine Tower 1_Green_Light Clouds"
       ]
     },
     {
       "ID": 3410211,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Cloudy"
+        "Fire Ash: Divine Tower 1_Green_Cloudy"
       ]
     },
     {
       "ID": 3410220,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Rain"
+        "Fire Ash: Divine Tower 1_Green_Rain"
       ]
     },
     {
       "ID": 3410221,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Heavy Rain"
+        "Fire Ash: Divine Tower 1_Green_Heavy Rain"
       ]
     },
     {
       "ID": 3410230,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Storm"
+        "Fire Ash: Divine Tower 1_Green_Storm"
       ]
     },
     {
       "ID": 3410231,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Storm (Guardian Lineage)"
+        "Fire Ash: Divine Tower 1_Green_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3410240,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Snow"
+        "Fire Ash: Divine Tower 1_Green_Snow"
       ]
     },
     {
       "ID": 3410241,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Heavy Snow"
+        "Fire Ash: Divine Tower 1_Green_Heavy Snow"
       ]
     },
     {
       "ID": 3410250,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Fog"
+        "Fire Ash: Divine Tower 1_Green_Fog"
       ]
     },
     {
       "ID": 3410251,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Dense Fog"
+        "Fire Ash: Divine Tower 1_Green_Dense Fog"
       ]
     },
     {
       "ID": 3410252,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Dense Fog (Rain)"
+        "Fire Ash: Divine Tower 1_Green_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3410260,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Sandstorm"
+        "Fire Ash: Divine Tower 1_Green_Sandstorm"
       ]
     },
     {
       "ID": 3410299,
       "Entries": [
-        "Ash of Fire: Divine Tower 1_Green_Environment Map Capture"
+        "Fire Ash: Divine Tower 1_Green_Environment Map Capture"
       ]
     },
     {
@@ -3694,13 +3694,13 @@
     {
       "ID": 3411101,
       "Entries": [
-        "Divine Tower 2_Lake_Fair Skies"
+        "Divine Tower 2_Lake_Clear Skies"
       ]
     },
     {
       "ID": 3411110,
       "Entries": [
-        "Divine Tower 2_Lake_Light Overcast"
+        "Divine Tower 2_Lake_Light Clouds"
       ]
     },
     {
@@ -3730,7 +3730,7 @@
     {
       "ID": 3411131,
       "Entries": [
-        "Divine Tower 2_Lake_Storm (Guardian Lineage)"
+        "Divine Tower 2_Lake_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -3778,271 +3778,271 @@
     {
       "ID": 3411200,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Clear"
+        "Fire Ash: Divine Tower 2_Lake_Clear"
       ]
     },
     {
       "ID": 3411201,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Clear Skies"
+        "Fire Ash: Divine Tower 2_Lake_Clear Skies"
       ]
     },
     {
       "ID": 3411210,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Light Overcast"
+        "Fire Ash: Divine Tower 2_Lake_Light Clouds"
       ]
     },
     {
       "ID": 3411211,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Cloudy"
+        "Fire Ash: Divine Tower 2_Lake_Cloudy"
       ]
     },
     {
       "ID": 3411220,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Rain"
+        "Fire Ash: Divine Tower 2_Lake__Rain"
       ]
     },
     {
       "ID": 3411221,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Heavy Rain"
+        "Fire Ash: Divine Tower 2_Lake_Heavy Rain"
       ]
     },
     {
       "ID": 3411230,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Storm"
+        "Fire Ash: Divine Tower 2_Lake_Storm"
       ]
     },
     {
       "ID": 3411231,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Storm (Guardian Lineage)"
+        "Fire Ash: Divine Tower 2_Lake_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3411240,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Snow"
+        "Fire Ash: Divine Tower 2_Lake_Snow"
       ]
     },
     {
       "ID": 3411241,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Heavy Snow"
+        "Fire Ash: Divine Tower 2_Lake_Heavy Snow"
       ]
     },
     {
       "ID": 3411250,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Fog"
+        "Fire Ash: Divine Tower 2_Lake_Fog"
       ]
     },
     {
       "ID": 3411251,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Dense Fog"
+        "Fire Ash: Divine Tower 2_Lake_Dense Fog"
       ]
     },
     {
       "ID": 3411252,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake Dense Fog (Rain)"
+        "Fire Ash: Divine Tower 2_Lake Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3411260,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Sandstorm"
+        "Fire Ash: Divine Tower 2_Lake_Sandstorm"
       ]
     },
     {
       "ID": 3411299,
       "Entries": [
-        "Ash of Fire: Divine Tower 2_Lake_Environment Map Capture"
+        "Fire Ash: Divine Tower 2_Lake_Environment Map Capture"
       ]
     },
     {
       "ID": 3412100,
       "Entries": [
-        "Divine Tower 3_Highland_Clear"
+        "Divine Tower 3_Altus_Clear"
       ]
     },
     {
       "ID": 3412101,
       "Entries": [
-        "Divine Tower 3_Highland_Fair Skies"
+        "Divine Tower 3_Altus_Clear Skies"
       ]
     },
     {
       "ID": 3412110,
       "Entries": [
-        "Divine Tower 3_Highland Light Overcast"
+        "Divine Tower 3_Altus Light Clouds"
       ]
     },
     {
       "ID": 3412111,
       "Entries": [
-        "Divine Tower 3_Highland_Cloudy"
+        "Divine Tower 3_Altus_Cloudy"
       ]
     },
     {
       "ID": 3412120,
       "Entries": [
-        "Divine Tower 3_Highland__Rain"
+        "Divine Tower 3_Altus__Rain"
       ]
     },
     {
       "ID": 3412121,
       "Entries": [
-        "Divine Tower 3_Highland_Heavy Rain"
+        "Divine Tower 3_Altus_Heavy Rain"
       ]
     },
     {
       "ID": 3412130,
       "Entries": [
-        "Divine Tower 3_Highland_Storm"
+        "Divine Tower 3_Altus_Storm"
       ]
     },
     {
       "ID": 3412131,
       "Entries": [
-        "Divine Tower 3_Highland_Storm (Guardian Lineage)"
+        "Divine Tower 3_Altus_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3412140,
       "Entries": [
-        "Divine Tower 3_Highland_Snow"
+        "Divine Tower 3_Altus_Snow"
       ]
     },
     {
       "ID": 3412141,
       "Entries": [
-        "Divine Tower 3_Highland Heavy Snow"
+        "Divine Tower 3_Altus Heavy Snow"
       ]
     },
     {
       "ID": 3412150,
       "Entries": [
-        "Divine Tower 3_Highland Fog"
+        "Divine Tower 3_Altus Fog"
       ]
     },
     {
       "ID": 3412151,
       "Entries": [
-        "Divine Tower 3_Highland_Dense Fog"
+        "Divine Tower 3_Altus_Dense Fog"
       ]
     },
     {
       "ID": 3412152,
       "Entries": [
-        "Divine Tower 3_Highland Dense Fog (Rain)"
+        "Divine Tower 3_Altus Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3412160,
       "Entries": [
-        "Divine Tower 3_Highland_Sandstorm"
+        "Divine Tower 3_Altus_Sandstorm"
       ]
     },
     {
       "ID": 3412199,
       "Entries": [
-        "Divine Tower 3_Highland_Environment Map Capture"
+        "Divine Tower 3_Altus_Environment Map Capture"
       ]
     },
     {
       "ID": 3412200,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Clear"
+        "Fire Ash: Divine Tower 3_Altus_Clear"
       ]
     },
     {
       "ID": 3412201,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Clear Sky"
+        "Fire Ash: Divine Tower 3_Altus_Clear Skies"
       ]
     },
     {
       "ID": 3412210,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland Light Overcast"
+        "Fire Ash: Divine Tower 3_Altus Light Clouds"
       ]
     },
     {
       "ID": 3412211,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland Cloudy"
+        "Fire Ash: Divine Tower 3_Altus Cloudy"
       ]
     },
     {
       "ID": 3412220,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland__Rain"
+        "Fire Ash: Divine Tower 3_Altus__Rain"
       ]
     },
     {
       "ID": 3412221,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Heavy Rain"
+        "Fire Ash: Divine Tower 3_Altus_Heavy Rain"
       ]
     },
     {
       "ID": 3412230,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland Storm"
+        "Fire Ash: Divine Tower 3_Altus Storm"
       ]
     },
     {
       "ID": 3412231,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Storm (Guardian Lineage)"
+        "Fire Ash: Divine Tower 3_Altus_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3412240,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Snow"
+        "Fire Ash: Divine Tower 3_Altus_Snow"
       ]
     },
     {
       "ID": 3412241,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Heavy Snow"
+        "Fire Ash: Divine Tower 3_Altus_Heavy Snow"
       ]
     },
     {
       "ID": 3412250,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Fog"
+        "Fire Ash: Divine Tower 3_Altus_Fog"
       ]
     },
     {
       "ID": 3412251,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Dense Fog"
+        "Fire Ash: Divine Tower 3_Altus_Dense Fog"
       ]
     },
     {
       "ID": 3412252,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland Dense Fog (Rain)"
+        "Fire Ash: Divine Tower 3_Altus Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3412260,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland_Sandstorm"
+        "Fire Ash: Divine Tower 3_Altus_Sandstorm"
       ]
     },
     {
       "ID": 3412299,
       "Entries": [
-        "Ash of Fire: Divine Tower 3_Highland Environment Map Capture"
+        "Fire Ash: Divine Tower 3_Altus Environment Map Capture"
       ]
     },
     {
@@ -4060,7 +4060,7 @@
     {
       "ID": 3413110,
       "Entries": [
-        "Divine Tower 6_Crater Lake_Light Overcast"
+        "Divine Tower 6_Crater Lake_Light Clouds"
       ]
     },
     {
@@ -4090,7 +4090,7 @@
     {
       "ID": 3413131,
       "Entries": [
-        "Divine Tower 6_Crater Lake_Storm (Guardian Lineage)"
+        "Divine Tower 6_Crater Lake_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -4138,91 +4138,91 @@
     {
       "ID": 3413200,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Clear"
+        "Fire Ash: Divine Tower 6_Crater Lake_Clear"
       ]
     },
     {
       "ID": 3413201,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Clear Sky"
+        "Fire Ash: Divine Tower 6_Crater Lake_Clear Skies"
       ]
     },
     {
       "ID": 3413210,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Light Overcast"
+        "Fire Ash: Divine Tower 6_Crater Lake_Light Clouds"
       ]
     },
     {
       "ID": 3413211,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Cloudy"
+        "Fire Ash: Divine Tower 6_Crater Lake_Cloudy"
       ]
     },
     {
       "ID": 3413220,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake__Rain"
+        "Fire Ash: Divine Tower 6_Crater Lake__Rain"
       ]
     },
     {
       "ID": 3413221,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Heavy Rain"
+        "Fire Ash: Divine Tower 6_Crater Lake_Heavy Rain"
       ]
     },
     {
       "ID": 3413230,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Storm"
+        "Fire Ash: Divine Tower 6_Crater Lake_Storm"
       ]
     },
     {
       "ID": 3413231,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Storm (Guardian Lineage)"
+        "Fire Ash: Divine Tower 6_Crater Lake_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3413240,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Snow"
+        "Fire Ash: Divine Tower 6_Crater Lake_Snow"
       ]
     },
     {
       "ID": 3413241,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Heavy Snow"
+        "Fire Ash: Divine Tower 6_Crater Lake_Heavy Snow"
       ]
     },
     {
       "ID": 3413250,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Fog"
+        "Fire Ash: Divine Tower 6_Crater Lake_Fog"
       ]
     },
     {
       "ID": 3413251,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Dense Fog"
+        "Fire Ash: Divine Tower 6_Crater Lake_Dense Fog"
       ]
     },
     {
       "ID": 3413252,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Dense Fog (Rain)"
+        "Fire Ash: Divine Tower 6_Crater Lake_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3413260,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Sandstorm"
+        "Fire Ash: Divine Tower 6_Crater Lake_Sandstorm"
       ]
     },
     {
       "ID": 3413299,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Environment Map Capture"
+        "Fire Ash: Divine Tower 6_Crater Lake_Environment Map Capture"
       ]
     },
     {
@@ -4240,7 +4240,7 @@
     {
       "ID": 3414110,
       "Entries": [
-        "Divine Tower 5_Snowfield_Light Overcast"
+        "Divine Tower 5_Snowfield_Light Clouds"
       ]
     },
     {
@@ -4270,7 +4270,7 @@
     {
       "ID": 3414131,
       "Entries": [
-        "Divine Tower 5_Snowfield_Storm (Guardian Lineage)"
+        "Divine Tower 5_Snowfield_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -4318,91 +4318,91 @@
     {
       "ID": 3414200,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Clear"
+        "Fire Ash: Divine Tower 5_Snowfield_Clear"
       ]
     },
     {
       "ID": 3414201,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Clear Sky"
+        "Fire Ash: Divine Tower 5_Snowfield_Clear Skies"
       ]
     },
     {
       "ID": 3414210,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Light Overcast"
+        "Fire Ash: Divine Tower 5_Snowfield_Light Clouds"
       ]
     },
     {
       "ID": 3414211,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Cloudy"
+        "Fire Ash: Divine Tower 5_Snowfield_Cloudy"
       ]
     },
     {
       "ID": 3414220,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield__Rain"
+        "Fire Ash: Divine Tower 5_Snowfield__Rain"
       ]
     },
     {
       "ID": 3414221,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Heavy Rain"
+        "Fire Ash: Divine Tower 5_Snowfield_Heavy Rain"
       ]
     },
     {
       "ID": 3414230,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Storm"
+        "Fire Ash: Divine Tower 5_Snowfield_Storm"
       ]
     },
     {
       "ID": 3414231,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Storm (Guardian Lineage)"
+        "Fire Ash: Divine Tower 5_Snowfield_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3414240,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Snow"
+        "Fire Ash: Divine Tower 5_Snowfield_Snow"
       ]
     },
     {
       "ID": 3414241,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Heavy Snow"
+        "Fire Ash: Divine Tower 5_Snowfield_Heavy Snow"
       ]
     },
     {
       "ID": 3414250,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Fog"
+        "Fire Ash: Divine Tower 5_Snowfield_Fog"
       ]
     },
     {
       "ID": 3414251,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Dense Fog"
+        "Fire Ash: Divine Tower 5_Snowfield_Dense Fog"
       ]
     },
     {
       "ID": 3414252,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield Dense Fog (Rain)"
+        "Fire Ash: Divine Tower 5_Snowfield Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3414260,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield Sandstorm"
+        "Fire Ash: Divine Tower 5_Snowfield Sandstorm"
       ]
     },
     {
       "ID": 3414299,
       "Entries": [
-        "Ash of Fire: Divine Tower 5_Snowfield_Environment Map Capture"
+        "Fire Ash: Divine Tower 5_Snowfield_Environment Map Capture"
       ]
     },
     {
@@ -4420,7 +4420,7 @@
     {
       "ID": 3415110,
       "Entries": [
-        "Divine Tower 6_Crater Lake_Light Overcast"
+        "Divine Tower 6_Crater Lake_Light Clouds"
       ]
     },
     {
@@ -4450,7 +4450,7 @@
     {
       "ID": 3415131,
       "Entries": [
-        "Divine Tower 6_Crater Lake_Storm (Guardian Lineage)"
+        "Divine Tower 6_Crater Lake_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -4498,271 +4498,271 @@
     {
       "ID": 3415200,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Clear"
+        "Fire Ash: Divine Tower 6_Crater Lake_Clear"
       ]
     },
     {
       "ID": 3415201,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Clear Sky"
+        "Fire Ash: Divine Tower 6_Crater Lake_Clear Skies"
       ]
     },
     {
       "ID": 3415210,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Light Overcast"
+        "Fire Ash: Divine Tower 6_Crater Lake_Light Clouds"
       ]
     },
     {
       "ID": 3415211,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Cloudy"
+        "Fire Ash: Divine Tower 6_Crater Lake_Cloudy"
       ]
     },
     {
       "ID": 3415220,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake__Rain"
+        "Fire Ash: Divine Tower 6_Crater Lake__Rain"
       ]
     },
     {
       "ID": 3415221,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Heavy Rain"
+        "Fire Ash: Divine Tower 6_Crater Lake_Heavy Rain"
       ]
     },
     {
       "ID": 3415230,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Storm"
+        "Fire Ash: Divine Tower 6_Crater Lake_Storm"
       ]
     },
     {
       "ID": 3415231,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Storm (Guardian Lineage)"
+        "Fire Ash: Divine Tower 6_Crater Lake_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 3415240,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Snow"
+        "Fire Ash: Divine Tower 6_Crater Lake_Snow"
       ]
     },
     {
       "ID": 3415241,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Heavy Snow"
+        "Fire Ash: Divine Tower 6_Crater Lake_Heavy Snow"
       ]
     },
     {
       "ID": 3415250,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Fog"
+        "Fire Ash: Divine Tower 6_Crater Lake_Fog"
       ]
     },
     {
       "ID": 3415251,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Dense Fog"
+        "Fire Ash: Divine Tower 6_Crater Lake_Dense Fog"
       ]
     },
     {
       "ID": 3415252,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Dense Fog (Rain)"
+        "Fire Ash: Divine Tower 6_Crater Lake_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 3415260,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Sandstorm"
+        "Fire Ash: Divine Tower 6_Crater Lake_Sandstorm"
       ]
     },
     {
       "ID": 3415299,
       "Entries": [
-        "Ash of Fire: Divine Tower 6_Crater Lake_Environment Map Capture"
+        "Fire Ash: Divine Tower 6_Crater Lake_Environment Map Capture"
       ]
     },
     {
       "ID": 6098100,
       "Entries": [
-        "NT版_Open_Green_Clear"
+        "NT Version_Open_Green_Clear"
       ]
     },
     {
       "ID": 6098101,
       "Entries": [
-        "NT版_Open_Green_Clear Sky"
+        "NT Version_Open_Green_Clear Skies"
       ]
     },
     {
       "ID": 6098110,
       "Entries": [
-        "NT版_Open_Green_Light Overcast"
+        "NT Version_Open_Green_Light Clouds"
       ]
     },
     {
       "ID": 6098111,
       "Entries": [
-        "NT版_Open_Green_Cloudy"
+        "NT Version_Open_Green_Cloudy"
       ]
     },
     {
       "ID": 6098120,
       "Entries": [
-        "NT版_Open_Green_Rain"
+        "NT Version_Open_Green_Rain"
       ]
     },
     {
       "ID": 6098121,
       "Entries": [
-        "NT版_Open_Green_Heavy Rain"
+        "NT Version_Open_Green_Heavy Rain"
       ]
     },
     {
       "ID": 6098130,
       "Entries": [
-        "NT版_Open_Green_Storm"
+        "NT Version_Open_Green_Storm"
       ]
     },
     {
       "ID": 6098131,
       "Entries": [
-        "NT版_Open_Green_Storm (Guardian Lineage)"
+        "NT Version_Open_Green_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 6098140,
       "Entries": [
-        "NT版_Open_Green_Snow"
+        "NT Version_Open_Green_Snow"
       ]
     },
     {
       "ID": 6098141,
       "Entries": [
-        "NT版_Open_Green_Heavy Snow"
+        "NT Version_Open_Green_Heavy Snow"
       ]
     },
     {
       "ID": 6098150,
       "Entries": [
-        "NT版_Open_Green_Fog"
+        "NT Version_Open_Green_Fog"
       ]
     },
     {
       "ID": 6098151,
       "Entries": [
-        "NT版_Open_Green_Dense Fog"
+        "NT Version_Open_Green_Dense Fog"
       ]
     },
     {
       "ID": 6098152,
       "Entries": [
-        "NT版_Open_Green_Dense Fog (Rain)"
+        "NT Version_Open_Green_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 6098160,
       "Entries": [
-        "NT版_Open_Green_Sandstorm"
+        "NT Version_Open_Green_Sandstorm"
       ]
     },
     {
       "ID": 6098199,
       "Entries": [
-        "NT版_Open_Green_Environment Map Capture"
+        "NT Version_Open_Green_Environment Map Capture"
       ]
     },
     {
       "ID": 1098100,
       "Entries": [
-        "NT Ver_Stormveil_Clear"
+        "NT Version_Stormveil_Clear"
       ]
     },
     {
       "ID": 1098101,
       "Entries": [
-        "NT Ver_Stormveil_Clear Skies"
+        "NT Version_Stormveil_Clear Skies"
       ]
     },
     {
       "ID": 1098110,
       "Entries": [
-        "NT Ver_Stormveil_Light Overcast"
+        "NT Version_Stormveil_Light Clouds"
       ]
     },
     {
       "ID": 1098111,
       "Entries": [
-        "NT Ver_Stormveil_Cloudy"
+        "NT Version_Stormveil_Cloudy"
       ]
     },
     {
       "ID": 1098120,
       "Entries": [
-        "NT Ver_Stormveil_Rain"
+        "NT Version_Stormveil_Rain"
       ]
     },
     {
       "ID": 1098121,
       "Entries": [
-        "NT Ver_Stormveil_Heavy Rain"
+        "NT Version_Stormveil_Heavy Rain"
       ]
     },
     {
       "ID": 1098130,
       "Entries": [
-        "NT Ver_Stormveil_Storm"
+        "NT Version_Stormveil_Storm"
       ]
     },
     {
       "ID": 1098131,
       "Entries": [
-        "NT Ver_Stormveil_Storm (Guardian Lineage)"
+        "NT Version_Stormveil_Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
       "ID": 1098140,
       "Entries": [
-        "NT Ver_Stormveil_Snow"
+        "NT Version_Stormveil_Snow"
       ]
     },
     {
       "ID": 1098141,
       "Entries": [
-        "NT Ver_Stormveil_Heavy Snow"
+        "NT Version_Stormveil_Heavy Snow"
       ]
     },
     {
       "ID": 1098150,
       "Entries": [
-        "NT Ver_Stormveil_Fog"
+        "NT Version_Stormveil_Fog"
       ]
     },
     {
       "ID": 1098151,
       "Entries": [
-        "NT Ver_Stormveil_Dense Fog"
+        "NT Version_Stormveil_Dense Fog"
       ]
     },
     {
       "ID": 1098152,
       "Entries": [
-        "NT Ver_Stormveil_Dense Fog (Rain)"
+        "NT Version_Stormveil_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 1098160,
       "Entries": [
-        "NT Ver_Stormveil_Sandstorm"
+        "NT Version_Stormveil_Sandstorm"
       ]
     },
     {
       "ID": 1098199,
       "Entries": [
-        "NT Ver_Stormveil_Environment Map Capture"
+        "NT Version_Stormveil_Environment Map Capture"
       ]
     }
   ]

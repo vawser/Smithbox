@@ -1,0 +1,77 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_OffensiveMaterial",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Iron (Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Leather"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Dummy1"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Dummy2"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Dummy3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Maggot"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Candle"
+      ]
+    }
+  ]
+}

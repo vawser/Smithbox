@@ -16,7 +16,7 @@
     {
       "ID": 11100020,
       "Entries": [
-        "Base Default_Dark Round Table Space"
+        "Base Default Dark Roundtable Space"
       ]
     },
     {
@@ -34,19 +34,19 @@
     {
       "ID": 14000000,
       "Entries": [
-        "Monsan Default"
+        "Raya Lucaria Default"
       ]
     },
     {
       "ID": 14000020,
       "Entries": [
-        "Monsan Pseudo-Multi NPC_Academy Female Sorcerer"
+        "Raya Lucaria NPC Pseudo-Multiplayer_Academy Sorceress"
       ]
     },
     {
       "ID": 14000030,
       "Entries": [
-        "Monsan Pseudo-Multi NPC_Plains Fort Lord"
+        "Raya Lucaria NPC Pseudo-Multiplayer_Lord of Plains Fort"
       ]
     },
     {
@@ -58,49 +58,49 @@
     {
       "ID": 1035460040,
       "Entries": [
-        "m60_35_46_00 NPC Pseudo-Multi_Ash Crushed Finger"
+        "m60_35_46_00 NPC Pseudo-Multiplayer_A Certain Crushed Finger"
       ]
     },
     {
       "ID": 39200000,
       "Entries": [
-        "Cliff Tunnel Default"
+        "Cliffside Tunnel Default"
       ]
     },
     {
       "ID": 39200050,
       "Entries": [
-        "Cliff Tunnel NPC Pseudo-Multiplayer_Tragos"
+        "Cliffside Tunnel NPC Pseudo-Multiplayer_Tragoth"
       ]
     },
     {
       "ID": 11000000,
       "Entries": [
-        "Royal Capital Default"
+        "Leyndell Default"
       ]
     },
     {
       "ID": 11000020,
       "Entries": [
-        "Royal Capital NPC Pseudo-Multiplayer_First Tarnished of the Round Table"
+        "Leyndell NPC Pseudo-Multiplayer_Roundtable\u0027s First Tarnished"
       ]
     },
     {
       "ID": 1039530000,
       "Entries": [
-        "m60_39_53_00 Highland Default"
+        "m60_39_53_00 Altus Default"
       ]
     },
     {
       "ID": 1039530020,
       "Entries": [
-        "m60_39_53_00 Highland NPC Pseudo-Multi_Volcano Manor Request 2"
+        "m60_39_53_00 Altus NPC Pseudo-Multiplayer_Volcano Manor Request 2"
       ]
     },
     {
       "ID": 1040530020,
       "Entries": [
-        "m60_40_53_00 Highland NPC Pseudo-Multiplayer_Valley Event"
+        "m60_40_53_00 Altus NPC Pseudo-Multiplayer_Varré Event"
       ]
     },
     {
@@ -112,55 +112,55 @@
     {
       "ID": 15000020,
       "Entries": [
-        "Rotten Great Tree NP World Invasion_Malenia's Daughter"
+        "Rotten Great Tree Invasion into NP World_Malenia\u0027s Daughter"
       ]
     },
     {
       "ID": 15000030,
       "Entries": [
-        "Rotten Great Tree NP World Invasion_Sisters"
+        "Rotten Great Tree Invasion into NP World_Sisters"
       ]
     },
     {
       "ID": 1039530000,
       "Entries": [
-        "m60_50_56_00 Snowy Mountain Default"
+        "m60_50_56_00 Snow Mountain Default"
       ]
     },
     {
       "ID": 1050560020,
       "Entries": [
-        "m60_50_56_00 Snowy Mountain NPC Pseudo-Multiplayer_Volcano Manor Request 3"
+        "m60_50_56_00 Snow Mountain NPC Pseudo-Multiplayer_Volcano Manor Request 3"
       ]
     },
     {
       "ID": 12050000,
       "Entries": [
-        "Underground Labyrinth・Plains Interior Default"
+        "Underground Labyrinth/Plains Depths Default"
       ]
     },
     {
       "ID": 12050020,
       "Entries": [
-        "Underground Labyrinth・Plains Interior NPC Pseudo-Multiplayer_Battlefield Physician"
+        "Underground Labyrinth/Plains Depths NPC Pseudo-Multiplayer_Battlefield Medic"
       ]
     },
     {
       "ID": 99021010,
       "Entries": [
-        "Sawayama Test Map_White Phantom NPC Pseudo-Multi"
+        "For Sawayama Test Map_White Phantom NPC Pseudo-Multiplayer"
       ]
     },
     {
       "ID": 99022020,
       "Entries": [
-        "Sawayama Test Map_Invader NPC Pseudo-Multi"
+        "For Sawayama Test Map_Dark Spirit NPC Pseudo-Multiplayer"
       ]
     },
     {
       "ID": 99023030,
       "Entries": [
-        "Sawayama Test Map_Illusion Event Pseudo-Multi"
+        "For Sawayama Test Map_Vision Event Pseudo-Multiplayer"
       ]
     }
   ]

@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "ForTest"
+        "For Testing"
       ]
     },
     {
@@ -28,19 +28,19 @@
     {
       "ID": 103,
       "Entries": [
-        "Weapon Meat"
+        "Weapon Flesh"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Shield_Iron"
+        "Shield Iron"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Shield_Wood"
+        "Shield Wood"
       ]
     },
     {
@@ -160,19 +160,19 @@
     {
       "ID": 125,
       "Entries": [
-        "Shell"
+        "Carapace"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Weakpoint"
+        "Spirit (Spirit Jellyfish)_Weak Point"
       ]
     },
     {
       "ID": 127,
       "Entries": [
-        "Shield_Stone"
+        "Shield Stone"
       ]
     },
     {
@@ -184,7 +184,7 @@
     {
       "ID": 129,
       "Entries": [
-        "Shield_Heavy_Iron"
+        "Shield Heavy Iron"
       ]
     },
     {
@@ -208,13 +208,13 @@
     {
       "ID": 135,
       "Entries": [
-        "Ghost White(For Guard)"
+        "Ghost White (For Guarding)"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Ghost Black (For Guard)"
+        "Ghost Black (For Guarding)"
       ]
     },
     {
@@ -232,13 +232,13 @@
     {
       "ID": 142,
       "Entries": [
-        "spirit"
+        "Spirit"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        "Spirit_Weakpoint"
+        "Spirit_Weak Point"
       ]
     },
     {
@@ -250,13 +250,13 @@
     {
       "ID": 145,
       "Entries": [
-        "Body Fluid"
+        "Bodily Fluid"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        "Body Fluid_weak point"
+        "Bodily Fluid_Weak Point"
       ]
     },
     {
@@ -274,7 +274,7 @@
     {
       "ID": 169,
       "Entries": [
-        "Rune Meat"
+        "Rune Flesh"
       ]
     },
     {
@@ -286,25 +286,25 @@
     {
       "ID": 171,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
       "ID": 172,
       "Entries": [
-        "Scale_Weak Point"
+        "Scales_Weak Point"
       ]
     },
     {
       "ID": 173,
       "Entries": [
-        "Scale_Weak Point(Large)"
+        "Scales_Weak Point (Large)"
       ]
     },
     {
       "ID": 174,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     }
   ]

@@ -10,13 +10,13 @@
     {
       "ID": 1,
       "Entries": [
-        "Day A"
+        "Daytime A"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Day B"
+        "Daytime B"
       ]
     },
     {
@@ -34,13 +34,13 @@
     {
       "ID": 5,
       "Entries": [
-        "Late Night A"
+        "Midnight A"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Late Night B"
+        "Midnight B"
       ]
     }
   ]

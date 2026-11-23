@@ -4,115 +4,115 @@
     {
       "ID": 0,
       "Entries": [
-        "0:None"
+        "0: None"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "1:Hard Stone"
+        "1: Hard Stone"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "2:Keen Stone"
+        "2: Sharp Stone"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "3:Surging Stone"
+        "3: Vigor Stone"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "4:Gray Stone"
+        "4: Dull Stone"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "5:Blade Stone"
+        "5: Blade Stone"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "6:Spider Silk Steel Wire"
+        "6: Spider Silk Steel Wire"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "7:Mercury Stone"
+        "7: Mercury Stone"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "8:Dragon Stone"
+        "8: Dragon Stone"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "9:Suction Stone"
+        "9: Sticking Stone"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "10:Marrow Stone"
+        "10: Marrow Stone"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "11:Moonlight Stone"
+        "11: Moonlight Stone"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "12:Moonshadow Stone"
+        "12: Moon Shadow Stone"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "13:Faint Light Stone"
+        "13: Glimmerstone"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "14:Magic Shield Stone"
+        "14: Magic Shield Stone"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "15:Ore Spirit DS"
+        "15: Ore Spirit DS"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "16:DS"
+        "16:ＤＳ"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Attack Power UP as Equip Load Decreases"
+        "Attack Power Up the Lower the Equip Load"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Attack Power UP as Equip Load Increases"
+        "Attack Power Up the Heavier the Equip Load"
       ]
     },
     {
@@ -154,7 +154,7 @@
     {
       "ID": 111,
       "Entries": [
-        "Scarlet Rot Resistance (Soul Level)"
+        "Plague Resistance (Soul Level)"
       ]
     },
     {
@@ -184,7 +184,7 @@
     {
       "ID": 116,
       "Entries": [
-        "Curse Resistance (Soul Level)"
+        "Alteration (Curse) Resistance (Soul Level)"
       ]
     },
     {
@@ -196,37 +196,37 @@
     {
       "ID": 121,
       "Entries": [
-        "Scarlet Rot Resistance (Vigor)"
+        "Plague Resistance (Vigor)"
       ]
     },
     {
       "ID": 122,
       "Entries": [
-        "Bleed Resistance (Stamina)"
+        "Bleed Resistance (Endurance)"
       ]
     },
     {
       "ID": 123,
       "Entries": [
-        "Frost Resistance (Stamina)"
+        "Frost Resistance (Endurance)"
       ]
     },
     {
       "ID": 124,
       "Entries": [
-        "Sleep Resistance (Focus)"
+        "Sleep Resistance (Mind)"
       ]
     },
     {
       "ID": 125,
       "Entries": [
-        "Madness Resistance (Focus)"
+        "Madness Resistance (Mind)"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "Curse Resistance (Inspiration)"
+        "Alteration (Curse) Resistance (Spirit Sense)"
       ]
     },
     {
@@ -238,25 +238,25 @@
     {
       "ID": 131,
       "Entries": [
-        "Physical Defense (Vigor)"
+        "Physical Defense (Vitality)"
       ]
     },
     {
       "ID": 132,
       "Entries": [
-        "Magic Defense (Rational Power)"
+        "Magic Defense (Intelligence)"
       ]
     },
     {
       "ID": 133,
       "Entries": [
-        "Fire Defense (Vitality)"
+        "Fire Defense (Vigor)"
       ]
     },
     {
       "ID": 134,
       "Entries": [
-        "Lightning Defense (Stamina)"
+        "Lightning Defense (Endurance)"
       ]
     },
     {
@@ -274,61 +274,61 @@
     {
       "ID": 150,
       "Entries": [
-        "Recovery Spot Max Refill Count"
+        "Max Recovery Spot Refills"
       ]
     },
     {
       "ID": 160,
       "Entries": [
-        "Shield_StatusCorrection_PhysicalCutRate"
+        "Shield Stat Correction Physical Cut Rate"
       ]
     },
     {
       "ID": 161,
       "Entries": [
-        "Shield_StatusCorrection_ElementCutRate"
+        "Shield Stat Correction Element Cut Rate"
       ]
     },
     {
       "ID": 162,
       "Entries": [
-        "Shield_StatusCorrection_ResistanceCutRate"
+        "Shield Stat Correction Resistance Cut Rate"
       ]
     },
     {
       "ID": 163,
       "Entries": [
-        "Shield_StatusCorrection_StaminaCutRate"
+        "Shield Stat Correction Stamina Cut Rate"
       ]
     },
     {
       "ID": 170,
       "Entries": [
-        "Skill Point Max (Strength)"
+        "Max Skill Points (Strength)"
       ]
     },
     {
       "ID": 171,
       "Entries": [
-        "Skill Point Max (Dexterity)"
+        "Max Skill Points (Dexterity)"
       ]
     },
     {
       "ID": 172,
       "Entries": [
-        "Skill Point Max (Magic)"
+        "Max Skill Points (Magic)"
       ]
     },
     {
       "ID": 173,
       "Entries": [
-        "Skill Point Max (Faith)"
+        "Max Skill Points (Miracle)"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Growth Cost Souls"
+        "Growth Soul Cost"
       ]
     },
     {
@@ -340,25 +340,25 @@
     {
       "ID": 211,
       "Entries": [
-        "Fall Damage Weight Ratio Correction"
+        "Fall Damage Weight Ratio Scaling"
       ]
     },
     {
       "ID": 212,
       "Entries": [
-        "Fall Damage Vigor Correction"
+        "Fall Damage Vigor Scaling"
       ]
     },
     {
       "ID": 213,
       "Entries": [
-        "Fall Damage Skill Correction"
+        "Fall Damage Dexterity Scaling"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Equip Load (Stamina)"
+        "Equip Load (Endurance)"
       ]
     },
     {
@@ -442,7 +442,7 @@
     {
       "ID": 352,
       "Entries": [
-        "Level Sync: Weapon: Sorcery Fire"
+        "Level Sync: Weapon: Pyromancy Flame"
       ]
     },
     {
@@ -454,7 +454,7 @@
     {
       "ID": 401,
       "Entries": [
-        "Level Sync: Item: Throwing Pot"
+        "Level Sync: Item: Throwing Bottle"
       ]
     },
     {

@@ -1,0 +1,539 @@
+{
+  "Name": "HitEffectSfxConceptParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Flagstone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Earth"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Lumber"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grass Ground"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Magma"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Heavy Oil"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Blood Flesh"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Roof Tile"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bell"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (Puddle Level)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (Ankle Level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (Below Knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp (Shallow)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp (Deep)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Carpet"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Eclipse"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Glass"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Ice"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Plague Swamp（Shallow）"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Plague Swamp（Deep）"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Blood Swamp"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Great Poison Swamp"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weak Poison Swamp"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Strong Plague Swamp"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Strong Magma"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Weapon Iron"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Weapon Wood"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weapon Meat"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Shield_Iron"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Shield_Wood"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Armor Leather"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Flesh_Weak Point"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Flesh_Weak Point (Large)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Heavy Iron"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Rune"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Rune_Weak Point"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Stone (Soft)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Crystal"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Shell"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Shell"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Shield_Stone"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Shield_Heavy_Iron"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Ghost White"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Ghost Black"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Shadow"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Ghost White(For Guard)"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Ghost Black (For Guard)"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Brass"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Shadow_Weak Point"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "spirit"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Spirit_Weakpoint"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Chain Mail"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Body Fluid"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Body Fluid_weak point"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Rot"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Rot_Weak Point"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Rune Meat"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Crystal_Weak Point"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Black Shadow"
+      ]
+    }
+  ]
+}

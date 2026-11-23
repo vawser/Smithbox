@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Don't extinguish it."
+        "Don\u0027t Delete"
       ]
     },
     {
@@ -28,13 +28,13 @@
     {
       "ID": 1010,
       "Entries": [
-        "Event: Item Use"
+        "Event: Use Item"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "Event: Bonfire"
+        "Event: Site of Grace"
       ]
     },
     {
@@ -88,7 +88,7 @@
     {
       "ID": 1110,
       "Entries": [
-        "Event: Lock Toggle"
+        "Event: Lock Switch"
       ]
     },
     {
@@ -100,7 +100,7 @@
     {
       "ID": 1130,
       "Entries": [
-        "Event: Bow Usage"
+        "Event: How to Use Bows"
       ]
     },
     {
@@ -118,7 +118,7 @@
     {
       "ID": 1160,
       "Entries": [
-        "Event: Jump Attack/Charged/"
+        "Event: Jump Attack/Charge/"
       ]
     },
     {
@@ -160,13 +160,13 @@
     {
       "ID": 1510,
       "Entries": [
-        "Event: Bonfire Guidance"
+        "Event: Guidance of Grace"
       ]
     },
     {
       "ID": 1520,
       "Entries": [
-        "Event: Riding"
+        "Event: Mount"
       ]
     },
     {
@@ -178,7 +178,7 @@
     {
       "ID": 1550,
       "Entries": [
-        "Event: Spirit Ash"
+        "Event: Buddy"
       ]
     },
     {
@@ -196,7 +196,7 @@
     {
       "ID": 1580,
       "Entries": [
-        "Event: Item Crafting (Pot)"
+        "Event: Item Crafting (Jar)"
       ]
     },
     {
@@ -214,13 +214,13 @@
     {
       "ID": 1610,
       "Entries": [
-        "Event: Lookout Tower"
+        "Event: Lookout Platform"
       ]
     },
     {
       "ID": 1620,
       "Entries": [
-        "Event: Large Jump"
+        "Event: Great Jump"
       ]
     },
     {
@@ -244,7 +244,7 @@
     {
       "ID": 1660,
       "Entries": [
-        "Event: Multiplayer (Co-op)"
+        "Event: Multiplayer (Cooperation)"
       ]
     },
     {
@@ -262,7 +262,7 @@
     {
       "ID": 1690,
       "Entries": [
-        "Event: Sign Pool"
+        "Event: Summoning Pool"
       ]
     },
     {
@@ -274,7 +274,7 @@
     {
       "ID": 1710,
       "Entries": [
-        "Event: Spirit Ash Summon Available Range"
+        "Event: Buddy Summonable Range"
       ]
     },
     {
@@ -292,13 +292,13 @@
     {
       "ID": 1740,
       "Entries": [
-        "Event: Blacksmith Stall"
+        "Event: Blacksmith Stand"
       ]
     },
     {
       "ID": 1750,
       "Entries": [
-        "Event: Weapon Attribute Change"
+        "Event: Weapon Affinity Change"
       ]
     },
     {
@@ -310,7 +310,7 @@
     {
       "ID": 1770,
       "Entries": [
-        "Event: Item Box"
+        "Event: Toolbox"
       ]
     },
     {
@@ -328,7 +328,7 @@
     {
       "ID": 1810,
       "Entries": [
-        "Event: Great Rune Acquisition"
+        "Event: Obtain Great Rune"
       ]
     },
     {
@@ -340,43 +340,43 @@
     {
       "ID": 1850,
       "Entries": [
-        "Event: Duel Arena"
+        "Event: Duel Colosseum"
       ]
     },
     {
       "ID": 1860,
       "Entries": [
-        "Event: Cooperative Arena"
+        "Event: Co-op Colosseum"
       ]
     },
     {
       "ID": 1870,
       "Entries": [
-        "Event: Arena with Spirit Ash"
+        "Event: Colosseum With Ashes"
       ]
     },
     {
       "ID": 1880,
       "Entries": [
-        "Event: Round Table Marika Statue"
+        "Event: Roundtable Marika Statue"
       ]
     },
     {
       "ID": 1900,
       "Entries": [
-        "Event: DLC Player Enhancement Item"
+        "Event: DLC Player Upgrade Item"
       ]
     },
     {
       "ID": 1910,
       "Entries": [
-        "Event: DLC Spirit Ash Enhancement Item"
+        "Event: DLC Buddy Upgrade Item"
       ]
     },
     {
       "ID": 1920,
       "Entries": [
-        "Event: Inventory Additional Function"
+        "Event: Additional Inventory Features"
       ]
     },
     {
@@ -424,19 +424,19 @@
     {
       "ID": 2090,
       "Entries": [
-        "Menu: Estus Distribution"
+        "Menu: Flask Allocation"
       ]
     },
     {
       "ID": 2100,
       "Entries": [
-        "Menu: Sorcery Memory"
+        "Menu: Memory of Sorcery"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Menu: Wooden Chest"
+        "Menu: Wooden Crate"
       ]
     },
     {
@@ -448,19 +448,19 @@
     {
       "ID": 2140,
       "Entries": [
-        "Menu: Talisman Swap"
+        "Menu: Magic Stone Replacement"
       ]
     },
     {
       "ID": 2150,
       "Entries": [
-        "Menu: Spirit Ash Upgrade"
+        "Menu: Buddy Upgrade"
       ]
     },
     {
       "ID": 2160,
       "Entries": [
-        "Menu: Memory Replication"
+        "Menu: Mimic Tear"
       ]
     },
     {
@@ -472,19 +472,19 @@
     {
       "ID": 2180,
       "Entries": [
-        "Menu: Elixir Crafting"
+        "Menu: Elixir Mixing"
       ]
     },
     {
       "ID": 2190,
       "Entries": [
-        "Menu: Status Respec"
+        "Menu: Stat Respec"
       ]
     },
     {
       "ID": 2200,
       "Entries": [
-        "Menu: Soul Refinement"
+        "Menu: Soul Smelting"
       ]
     },
     {
@@ -502,7 +502,7 @@
     {
       "ID": 2230,
       "Entries": [
-        "Menu: Arena"
+        "Menu: Colosseum"
       ]
     },
     {
@@ -514,7 +514,7 @@
     {
       "ID": 2310,
       "Entries": [
-        "Menu: DLC Spirit Ash Upgrade"
+        "Menu: DLC Buddy Upgrade"
       ]
     }
   ]

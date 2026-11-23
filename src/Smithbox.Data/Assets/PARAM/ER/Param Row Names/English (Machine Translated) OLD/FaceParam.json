@@ -1,0 +1,3443 @@
+{
+  "Name": "FaceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do not delete this row. Do not enter data either."
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Character Creation Test (Default)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Category Investigation"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Skill Icon Capture"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[NT] Arts Warrior_M"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[NT] Arts Warrior_F"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[NT] Sorcery Knight_M"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[NT] Sorcery Knight_F"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "[NT] Cleric_M"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[NT] Cleric_F"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[NT] Barbarian_M"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[NT] Barbarian_F"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "[NT] Senior Knight_M"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "[NT] Senior Knight_F"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "[Animation Check] 342_Demi-Human Needlewoman (After Rebirth)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Character Creation [Appearance] A_Warrior Face"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Character Creation [Appearance] A_Seeker Face"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Character Creation [Appearance] A_Noble Face"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Character Creation [Appearance] A_Lone Face"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Character creation [Appearance] A_Northern face"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Character Creation [Appearance] A_Sailor Face"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Character Creation [Appearance] A_Reed Land Face"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Character Creation [Appearance] A_Dragon Face"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Character creation [Appearance] A_Night person face"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Character Creation [Appearance] A_Outlander Face"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Character Creation [Appearance] B_Warrior Face"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Character Creation [Appearance] B_Seeker Face"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Character Creation [Appearance] B_Noble Face"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Character Creation [Appearance] B_Lone Face"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Character Creation [Appearance] B_Northern Face"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Character Creation [Appearance] B_Sailor Face"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Character Creation [Appearance] B_Reed Land Face"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Character Creation [Appearance] B_Dragon Face"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Character Creation [Appearance] B_Night Person Face"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Character Creation [Appearance] B_Outlander Face"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Character Creation Origin Select_Exiled Knight_Male]"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[Character Creation Origin Select_Exiled Knight_Female]"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "[Character Creation Origin Select_Dancing Swordsman_Male]"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "[Character Creation Origin Select_Dancing Swordsman_Female]"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "[For Character Creation Class Select_Barbarian_Male]"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "[For Character Creation Class Select_Barbarian_Female]"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "[For Character Creation Class Select_Assassin Light Armor_Male]"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "[For Character Creation Class Select_Assassin Light Armor_Female]"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "[For Character Creation Class Select_Astrologer_Male]"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "[For Character Creation Class Select_Astrologer_Female]"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[Character Creation Origin Select_Persecuted Clergy B_Male]"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[Character Creation Origin Select_Persecuted Clergy B_Female]"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "[For Character Creation Class Select_Assassin Knight_Male]"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "[For Character Creation Class Select_Assassin Knight_Female]"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "[For Character Creation Class Select_Samurai (Light Armor)_Male]"
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "[For Character Creation Class Select_Samurai (Light Armor)_Female]"
+      ]
+    },
+    {
+      "ID": 3116,
+      "Entries": [
+        "[Character Creation Origin Select_Condemned Prisoner (A)_Male]"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "[For Character Creation Class Select_Death Row Convict (A)_Female]"
+      ]
+    },
+    {
+      "ID": 3118,
+      "Entries": [
+        "[Character Creation Origin Select_Nude_Male]"
+      ]
+    },
+    {
+      "ID": 3119,
+      "Entries": [
+        "[Character Creation Origin Select_Nude_Female]"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[Character Creation Origin Select_Light Knight_Male]"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[Character Creation Origin Select_Light Knight_Female]"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "[Character Creation Origin Select_Heavy Knight_Male]"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "[Character Creation Origin Select_Heavy Knight_Female]"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Phantom (Faceless)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "DesignTestCreation_1"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "For Design Test Creation_2"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "For Design Test Creation_3"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "For Design Test Creation_4"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "For Design Test Creation_5"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "For Design Test Creation_6"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "For Design Test Creation_7"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "For Design Test Creation_8"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "For Design Test Creation_9"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "For Design Test Creation_10"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "For Design Test Creation_11"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "For Design Test Creation_12"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "For Design Test Creation_13"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "For Design Test Creation_14"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "For Design Test Creation_15"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "For Design Test Creation_16"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "For Design Test Creation_17"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "For Design Test Creation_18"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "For Design Test Creation_19"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "For Design Test Creation_20"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "For Design Test Creation_21"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "For Design Test Creation_22"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "For Design Test Creation_23"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "For Design Test Creation_24"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "For Design Test Creation_25"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "For Design Test Creation_26"
+      ]
+    },
+    {
+      "ID": 10026,
+      "Entries": [
+        "For Design Test Creation_27"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "For Design Test Creation_28"
+      ]
+    },
+    {
+      "ID": 10028,
+      "Entries": [
+        "For Design Test Creation_29"
+      ]
+    },
+    {
+      "ID": 10029,
+      "Entries": [
+        "For Design Test Creation_30"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "For Design Test Creation_31"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "For Design Test Creation_32"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "For Design Test Creation_33"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "For Design Test Creation_34"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "For Design Test Creation_35"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        "For Design Test Creation_36"
+      ]
+    },
+    {
+      "ID": 10036,
+      "Entries": [
+        "For Design Test Creation_37"
+      ]
+    },
+    {
+      "ID": 10037,
+      "Entries": [
+        "For Design Test Creation_38"
+      ]
+    },
+    {
+      "ID": 10038,
+      "Entries": [
+        "For Design Test Creation_39"
+      ]
+    },
+    {
+      "ID": 10039,
+      "Entries": [
+        "For Design Test Creation_40"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "For Design Test Creation_41"
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        "For Design Test Creation_42"
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        "For Design Test Creation_43"
+      ]
+    },
+    {
+      "ID": 10043,
+      "Entries": [
+        "For Design Test Creation_44"
+      ]
+    },
+    {
+      "ID": 10044,
+      "Entries": [
+        "For Design Test Creation_45"
+      ]
+    },
+    {
+      "ID": 10045,
+      "Entries": [
+        "For Design Test Creation_46"
+      ]
+    },
+    {
+      "ID": 10046,
+      "Entries": [
+        "For Design Test Creation_47"
+      ]
+    },
+    {
+      "ID": 10047,
+      "Entries": [
+        "For Design Test Creation_48"
+      ]
+    },
+    {
+      "ID": 10048,
+      "Entries": [
+        "For Design Test Creation_49"
+      ]
+    },
+    {
+      "ID": 10049,
+      "Entries": [
+        "For Design Test Creation_50"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "For Design Test Creation_51"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "For Design Test Creation_52"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "For Design Test Creation_53"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "For Design Test Creation_54"
+      ]
+    },
+    {
+      "ID": 10054,
+      "Entries": [
+        "For Design Test Creation_55"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        "For Design Test Creation_56"
+      ]
+    },
+    {
+      "ID": 10056,
+      "Entries": [
+        "For Design Test Creation_57"
+      ]
+    },
+    {
+      "ID": 10057,
+      "Entries": [
+        "For Design Test Creation_58"
+      ]
+    },
+    {
+      "ID": 10058,
+      "Entries": [
+        "For Design Test Creation_59"
+      ]
+    },
+    {
+      "ID": 10059,
+      "Entries": [
+        "For Design Test Creation_60"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "For Design Test Creation_61"
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "For Design Test Creation_62"
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "For Design Test Creation_63"
+      ]
+    },
+    {
+      "ID": 10063,
+      "Entries": [
+        "For Design Test Creation_64"
+      ]
+    },
+    {
+      "ID": 10064,
+      "Entries": [
+        "For Design Test Creation_65"
+      ]
+    },
+    {
+      "ID": 10065,
+      "Entries": [
+        "For Design Test Creation_66"
+      ]
+    },
+    {
+      "ID": 10066,
+      "Entries": [
+        "For Design Test Creation_67"
+      ]
+    },
+    {
+      "ID": 10067,
+      "Entries": [
+        "For Design Test Creation_68"
+      ]
+    },
+    {
+      "ID": 10068,
+      "Entries": [
+        "For Design Test Creation_69"
+      ]
+    },
+    {
+      "ID": 10069,
+      "Entries": [
+        "For Design Test Creation_70"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "For Design Test Creation_71"
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "For Design Test Creation_72"
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "For Design Test Creation_73"
+      ]
+    },
+    {
+      "ID": 10073,
+      "Entries": [
+        "For Design Test Creation_74"
+      ]
+    },
+    {
+      "ID": 10074,
+      "Entries": [
+        "For Design Test Creation_75"
+      ]
+    },
+    {
+      "ID": 10075,
+      "Entries": [
+        "For Design Test Creation_76"
+      ]
+    },
+    {
+      "ID": 10076,
+      "Entries": [
+        "For Design Test Creation_77"
+      ]
+    },
+    {
+      "ID": 10077,
+      "Entries": [
+        "For Design Test Creation_78"
+      ]
+    },
+    {
+      "ID": 10078,
+      "Entries": [
+        "For Design Test Creation_79"
+      ]
+    },
+    {
+      "ID": 10079,
+      "Entries": [
+        "For Design Test Creation_80"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "For Design Test Creation_81"
+      ]
+    },
+    {
+      "ID": 10081,
+      "Entries": [
+        "For Design Test Creation_82"
+      ]
+    },
+    {
+      "ID": 10082,
+      "Entries": [
+        "For Design Test Creation_83"
+      ]
+    },
+    {
+      "ID": 10083,
+      "Entries": [
+        "For Design Test Creation_84"
+      ]
+    },
+    {
+      "ID": 10084,
+      "Entries": [
+        "For Design Test Creation_85"
+      ]
+    },
+    {
+      "ID": 10085,
+      "Entries": [
+        "For Design Test Creation_86"
+      ]
+    },
+    {
+      "ID": 10086,
+      "Entries": [
+        "For Design Test Creation_87"
+      ]
+    },
+    {
+      "ID": 10087,
+      "Entries": [
+        "For Design Test Creation_88"
+      ]
+    },
+    {
+      "ID": 10088,
+      "Entries": [
+        "For Design Test Creation_89"
+      ]
+    },
+    {
+      "ID": 10089,
+      "Entries": [
+        "For Design Test Creation_90"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "For Design Test Creation_91"
+      ]
+    },
+    {
+      "ID": 10091,
+      "Entries": [
+        "For Design Test Creation_92"
+      ]
+    },
+    {
+      "ID": 10092,
+      "Entries": [
+        "For Design Test Creation_93"
+      ]
+    },
+    {
+      "ID": 10093,
+      "Entries": [
+        "For Design Test Creation_94"
+      ]
+    },
+    {
+      "ID": 10094,
+      "Entries": [
+        "For Design Test Creation_95"
+      ]
+    },
+    {
+      "ID": 10095,
+      "Entries": [
+        "For Design Test Creation_96"
+      ]
+    },
+    {
+      "ID": 10096,
+      "Entries": [
+        "For Design Test Creation_97"
+      ]
+    },
+    {
+      "ID": 10097,
+      "Entries": [
+        "For Design Test Creation_98"
+      ]
+    },
+    {
+      "ID": 10098,
+      "Entries": [
+        "For Design Test Creation_99"
+      ]
+    },
+    {
+      "ID": 10099,
+      "Entries": [
+        "For Design Test Creation_100"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "For Design Test Creation_101"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "For Design Test Creation_102"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "For Design Test Creation_103"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "For Design Test Creation_104"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "For Design Test Creation_105"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "For Design Test Creation_106"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "For Design Test Creation_107"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "For Design Test Creation_108"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "For Design Test Creation_109"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "For Design Test Creation_110"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "For Design Test Creation_111"
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "For Design Test Creation_112"
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "For Design Test Creation_113"
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "For Design Test Creation_114"
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "For Design Test Creation_115"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "For Design Test Creation_116"
+      ]
+    },
+    {
+      "ID": 10116,
+      "Entries": [
+        "For Design Test Creation_117"
+      ]
+    },
+    {
+      "ID": 10117,
+      "Entries": [
+        "For Design Test Creation_118"
+      ]
+    },
+    {
+      "ID": 10118,
+      "Entries": [
+        "For Design Test Creation_119"
+      ]
+    },
+    {
+      "ID": 10119,
+      "Entries": [
+        "For Design Test Creation_120"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "For Design Test Creation_121"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "For Design Test Creation_122"
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "For Design Test Creation_123"
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "For Design Test Creation_124"
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "For Design Test Creation_125"
+      ]
+    },
+    {
+      "ID": 10125,
+      "Entries": [
+        "For Design Test Creation_126"
+      ]
+    },
+    {
+      "ID": 10126,
+      "Entries": [
+        "For Design Test Creation_127"
+      ]
+    },
+    {
+      "ID": 10127,
+      "Entries": [
+        "For Design Test Creation_128"
+      ]
+    },
+    {
+      "ID": 10128,
+      "Entries": [
+        "For Design Test Creation_129"
+      ]
+    },
+    {
+      "ID": 10129,
+      "Entries": [
+        "For Design Test Creation_130"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "For Design Test Creation_131"
+      ]
+    },
+    {
+      "ID": 10131,
+      "Entries": [
+        "For Design Test Creation_132"
+      ]
+    },
+    {
+      "ID": 10132,
+      "Entries": [
+        "For Design Test Creation_133"
+      ]
+    },
+    {
+      "ID": 10133,
+      "Entries": [
+        "For Design Test Creation_134"
+      ]
+    },
+    {
+      "ID": 10134,
+      "Entries": [
+        "For Design Test Creation_135"
+      ]
+    },
+    {
+      "ID": 10135,
+      "Entries": [
+        "For Design Test Creation_136"
+      ]
+    },
+    {
+      "ID": 10136,
+      "Entries": [
+        "For Design Test Creation_137"
+      ]
+    },
+    {
+      "ID": 10137,
+      "Entries": [
+        "For Design Test Creation_138"
+      ]
+    },
+    {
+      "ID": 10138,
+      "Entries": [
+        "For Design Test Creation_139"
+      ]
+    },
+    {
+      "ID": 10139,
+      "Entries": [
+        "For Design Test Creation_140"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "For Design Test Creation_141"
+      ]
+    },
+    {
+      "ID": 10141,
+      "Entries": [
+        "For Design Test Creation_142"
+      ]
+    },
+    {
+      "ID": 10142,
+      "Entries": [
+        "For Design Test Creation_143"
+      ]
+    },
+    {
+      "ID": 10143,
+      "Entries": [
+        "For Design Test Creation_144"
+      ]
+    },
+    {
+      "ID": 10144,
+      "Entries": [
+        "For Design Test Creation_145"
+      ]
+    },
+    {
+      "ID": 10145,
+      "Entries": [
+        "For Design Test Creation_146"
+      ]
+    },
+    {
+      "ID": 10146,
+      "Entries": [
+        "For Design Test Creation_147"
+      ]
+    },
+    {
+      "ID": 10147,
+      "Entries": [
+        "For Design Test Creation_148"
+      ]
+    },
+    {
+      "ID": 10148,
+      "Entries": [
+        "For Design Test Creation_149"
+      ]
+    },
+    {
+      "ID": 10149,
+      "Entries": [
+        "For Design Test Creation_150"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "For Design Test Creation_151"
+      ]
+    },
+    {
+      "ID": 10151,
+      "Entries": [
+        "For Design Test Creation_152"
+      ]
+    },
+    {
+      "ID": 10152,
+      "Entries": [
+        "For Design Test Creation_153"
+      ]
+    },
+    {
+      "ID": 10153,
+      "Entries": [
+        "For Design Test Creation_154"
+      ]
+    },
+    {
+      "ID": 10154,
+      "Entries": [
+        "For Design Test Creation_155"
+      ]
+    },
+    {
+      "ID": 10155,
+      "Entries": [
+        "For Design Test Creation_156"
+      ]
+    },
+    {
+      "ID": 10156,
+      "Entries": [
+        "For Design Test Creation_157"
+      ]
+    },
+    {
+      "ID": 10157,
+      "Entries": [
+        "For Design Test Creation_158"
+      ]
+    },
+    {
+      "ID": 10158,
+      "Entries": [
+        "For Design Test Creation_159"
+      ]
+    },
+    {
+      "ID": 10159,
+      "Entries": [
+        "For Design Test Creation_160"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "For Design Test Creation_161"
+      ]
+    },
+    {
+      "ID": 10161,
+      "Entries": [
+        "For Design Test Creation_162"
+      ]
+    },
+    {
+      "ID": 10162,
+      "Entries": [
+        "For Design Test Creation_163"
+      ]
+    },
+    {
+      "ID": 10163,
+      "Entries": [
+        "For Design Test Creation_164"
+      ]
+    },
+    {
+      "ID": 10164,
+      "Entries": [
+        "For Design Test Creation_165"
+      ]
+    },
+    {
+      "ID": 10165,
+      "Entries": [
+        "For Design Test Creation_166"
+      ]
+    },
+    {
+      "ID": 10166,
+      "Entries": [
+        "For Design Test Creation_167"
+      ]
+    },
+    {
+      "ID": 10167,
+      "Entries": [
+        "For Design Test Creation_168"
+      ]
+    },
+    {
+      "ID": 10168,
+      "Entries": [
+        "For Design Test Creation_169"
+      ]
+    },
+    {
+      "ID": 10169,
+      "Entries": [
+        "For Design Test Creation_170"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "For Design Test Creation_171"
+      ]
+    },
+    {
+      "ID": 10171,
+      "Entries": [
+        "For Design Test Creation_172"
+      ]
+    },
+    {
+      "ID": 10172,
+      "Entries": [
+        "For Design Test Creation_173"
+      ]
+    },
+    {
+      "ID": 10173,
+      "Entries": [
+        "For Design Test Creation_174"
+      ]
+    },
+    {
+      "ID": 10174,
+      "Entries": [
+        "For Design Test Creation_175"
+      ]
+    },
+    {
+      "ID": 10175,
+      "Entries": [
+        "For Design Test Creation_176"
+      ]
+    },
+    {
+      "ID": 10176,
+      "Entries": [
+        "For Design Test Creation_177"
+      ]
+    },
+    {
+      "ID": 10177,
+      "Entries": [
+        "For Design Test Creation_178"
+      ]
+    },
+    {
+      "ID": 10178,
+      "Entries": [
+        "For Design Test Creation_179"
+      ]
+    },
+    {
+      "ID": 10179,
+      "Entries": [
+        "For Design Test Creation_180"
+      ]
+    },
+    {
+      "ID": 10180,
+      "Entries": [
+        "For Design Test Creation_181"
+      ]
+    },
+    {
+      "ID": 10181,
+      "Entries": [
+        "For Design Test Creation_182"
+      ]
+    },
+    {
+      "ID": 10182,
+      "Entries": [
+        "For Design Test Creation_183"
+      ]
+    },
+    {
+      "ID": 10183,
+      "Entries": [
+        "For Design Test Creation_184"
+      ]
+    },
+    {
+      "ID": 10184,
+      "Entries": [
+        "For Design Test Creation_185"
+      ]
+    },
+    {
+      "ID": 10185,
+      "Entries": [
+        "For Design Test Creation_186"
+      ]
+    },
+    {
+      "ID": 10186,
+      "Entries": [
+        "For Design Test Creation_187"
+      ]
+    },
+    {
+      "ID": 10187,
+      "Entries": [
+        "For Design Test Creation_188"
+      ]
+    },
+    {
+      "ID": 10188,
+      "Entries": [
+        "For Design Test Creation_189"
+      ]
+    },
+    {
+      "ID": 10189,
+      "Entries": [
+        "For Design Test Creation_190"
+      ]
+    },
+    {
+      "ID": 10190,
+      "Entries": [
+        "For Design Test Creation_191"
+      ]
+    },
+    {
+      "ID": 10191,
+      "Entries": [
+        "For Design Test Creation_192"
+      ]
+    },
+    {
+      "ID": 10192,
+      "Entries": [
+        "For Design Test Creation_193"
+      ]
+    },
+    {
+      "ID": 10193,
+      "Entries": [
+        "For Design Test Creation_194"
+      ]
+    },
+    {
+      "ID": 10194,
+      "Entries": [
+        "For Design Test Creation_195"
+      ]
+    },
+    {
+      "ID": 10195,
+      "Entries": [
+        "For Design Test Creation_196"
+      ]
+    },
+    {
+      "ID": 10196,
+      "Entries": [
+        "For Design Test Creation_197"
+      ]
+    },
+    {
+      "ID": 10197,
+      "Entries": [
+        "For Design Test Creation_198"
+      ]
+    },
+    {
+      "ID": 10198,
+      "Entries": [
+        "For Design Test Creation_199"
+      ]
+    },
+    {
+      "ID": 10199,
+      "Entries": [
+        "For Design Test Creation_200"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "For Design Test Creation_201"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "For Design Test Creation_202"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "For Design Test Creation_203"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "For Design Test Creation_204"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "For Design Test Creation_205"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "For Design Test Creation_206"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "For Design Test Creation_207"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "For Design Test Creation_208"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "For Design Test Creation_209"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "For Design Test Creation_210"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "For Design Test Creation_211"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "For Design Test Creation_212"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "For Design Test Creation_213"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "For Design Test Creation_214"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "For Design Test Creation_215"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "For Design Test Creation_216"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "For Design Test Creation_217"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "For Design Test Creation_218"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "For Design Test Creation_219"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "For Design Test Creation_220"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "For Design Test Creation_221"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "[GR Costume Change NPC] _300_Volcano Manor Mistress"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "[GR Costume Change NPC] _301_Battlefield Doctor"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23040,
+      "Entries": [
+        "[GR Costume Change NPC] _304_Wounded Knight"
+      ]
+    },
+    {
+      "ID": 23050,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23060,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23070,
+      "Entries": [
+        "[GR Costume Change NPC] _307_Suspicious Puppeteer"
+      ]
+    },
+    {
+      "ID": 23080,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23090,
+      "Entries": [
+        "[GR Costume Change NPC] _309_Bandit Chief"
+      ]
+    },
+    {
+      "ID": 23100,
+      "Entries": [
+        "[GR Costume NPC]_310_Castle Lord's Daughter"
+      ]
+    },
+    {
+      "ID": 23110,
+      "Entries": [
+        "[GR Costume NPC]_311_Peninsula Fort Lord"
+      ]
+    },
+    {
+      "ID": 23120,
+      "Entries": [
+        "[GR Costume NPC]_312_Plains Fort Lord"
+      ]
+    },
+    {
+      "ID": 23130,
+      "Entries": [
+        "[GR Costume NPC]_313_Volcano Manor Recruiter"
+      ]
+    },
+    {
+      "ID": 23140,
+      "Entries": [
+        "[GR Costume NPC]_314_Mununu"
+      ]
+    },
+    {
+      "ID": 23150,
+      "Entries": [
+        "[GR Costume NPC]_315_Mununu Partner NPC"
+      ]
+    },
+    {
+      "ID": 23160,
+      "Entries": [
+        "[GR Costume NPC]_316_Academy Female Sorcerer"
+      ]
+    },
+    {
+      "ID": 23162,
+      "Entries": [
+        "[GR Costume NPC]_316_Academy Female Sorcerer (Glintstone 100%)"
+      ]
+    },
+    {
+      "ID": 23170,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23180,
+      "Entries": [
+        "[GR Costume NPC]_318_Host of Chaos (Yupa)"
+      ]
+    },
+    {
+      "ID": 23190,
+      "Entries": [
+        "[GR Costume NPC]_319_D"
+      ]
+    },
+    {
+      "ID": 23192,
+      "Entries": [
+        "[GR Costume NPC]_319_D (Danny)"
+      ]
+    },
+    {
+      "ID": 23200,
+      "Entries": [
+        "[GR Costume NPC]_320_Wandering Noble Farnese"
+      ]
+    },
+    {
+      "ID": 23210,
+      "Entries": [
+        "[GR Costume NPC]_321_Watchtower Noble"
+      ]
+    },
+    {
+      "ID": 23220,
+      "Entries": [
+        "[GR Costume NPC]_322_Bedfellow Maiden"
+      ]
+    },
+    {
+      "ID": 23230,
+      "Entries": [
+        "[GR Costume NPC]_323_Dung Eater"
+      ]
+    },
+    {
+      "ID": 23240,
+      "Entries": [
+        "[GR Costume NPC]_324_Hundred-Wisdom Lord"
+      ]
+    },
+    {
+      "ID": 23250,
+      "Entries": [
+        "[GR Costume NPC]_325_Rogier"
+      ]
+    },
+    {
+      "ID": 23260,
+      "Entries": [
+        "[GR Costume NPC]_326_Volcano Manor Strongest Knight (Mergatz)"
+      ]
+    },
+    {
+      "ID": 23270,
+      "Entries": [
+        "[GR Costume NPC]_327_Dragon-Feast Female Warrior"
+      ]
+    },
+    {
+      "ID": 23280,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23290,
+      "Entries": [
+        "[GR Costume NPC]_329_Death Faction (Underground Labyrinth Royal Capital Consecutive Boss)"
+      ]
+    },
+    {
+      "ID": 23300,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23310,
+      "Entries": [
+        "[GR Costume NPC]_331_Crab-Eating NPC"
+      ]
+    },
+    {
+      "ID": 23320,
+      "Entries": [
+        "[GR Costume NPC]_332_Volcano Manor Ghost"
+      ]
+    },
+    {
+      "ID": 23330,
+      "Entries": [
+        "[GR Costume NPC]_333_Unreturning Glintstone Sorcerer"
+      ]
+    },
+    {
+      "ID": 23340,
+      "Entries": [
+        "[GR Costume NPC]_334_Hundred-Wisdom Lord's Daughter (Nefeli)"
+      ]
+    },
+    {
+      "ID": 23350,
+      "Entries": [
+        "[GR Costume NPC]_335_Jiko-bo"
+      ]
+    },
+    {
+      "ID": 23360,
+      "Entries": [
+        "[GR Costume NPC]_336_Wounded Knight Priestess"
+      ]
+    },
+    {
+      "ID": 23370,
+      "Entries": [
+        "[GR Costume NPC]_337_Royal Capital Old Man"
+      ]
+    },
+    {
+      "ID": 23380,
+      "Entries": [
+        "[GR Costume NPC]_338_Collapsed Priestess"
+      ]
+    },
+    {
+      "ID": 23390,
+      "Entries": [
+        "[GR Costume NPC]_339_Hundred-Wisdom Lord's Underling"
+      ]
+    },
+    {
+      "ID": 23400,
+      "Entries": [
+        "[GR Costume NPC]_340_A Crushed Finger"
+      ]
+    },
+    {
+      "ID": 23410,
+      "Entries": [
+        "[GR Costume NPC]_341_Mad Finger Maiden"
+      ]
+    },
+    {
+      "ID": 23420,
+      "Entries": [
+        "[GR Costume NPC]_342_Demi-Human Seamstress (After Rebirth)"
+      ]
+    },
+    {
+      "ID": 23430,
+      "Entries": [
+        "[GR Costume NPC]_343_Nerius"
+      ]
+    },
+    {
+      "ID": 23440,
+      "Entries": [
+        "[GR Costume NPC]_344_ Tragos"
+      ]
+    },
+    {
+      "ID": 23450,
+      "Entries": [
+        "[GR Costume NPC]_345_Volcano Manor Request Target 1"
+      ]
+    },
+    {
+      "ID": 23460,
+      "Entries": [
+        "[GR Costume NPC]_346_Volcano Manor Request Target 2"
+      ]
+    },
+    {
+      "ID": 23470,
+      "Entries": [
+        "[GR Costume NPC]_347_Volcano Manor Request Target 3 (Munou's Brother)"
+      ]
+    },
+    {
+      "ID": 23480,
+      "Entries": [
+        "[GR Costume NPC]_348 Malenia's Daughter"
+      ]
+    },
+    {
+      "ID": 23481,
+      "Entries": [
+        "[GR Costume NPC]_348 Malenia's Daughter_Hair Binding"
+      ]
+    },
+    {
+      "ID": 23490,
+      "Entries": [
+        "[GR Costume NPC]_349_Rot Elder"
+      ]
+    },
+    {
+      "ID": 23500,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23510,
+      "Entries": [
+        "[GR Costume NPC]_351_Gold Mask Attendant"
+      ]
+    },
+    {
+      "ID": 23520,
+      "Entries": [
+        "[GR Costume NPC]_352_Divine Tower Lake NPC"
+      ]
+    },
+    {
+      "ID": 23530,
+      "Entries": [
+        "[GR Costume NPC]_353_Meat Cleaver NPC"
+      ]
+    },
+    {
+      "ID": 23540,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23550,
+      "Entries": [
+        "[GR Costume NPC]_355_Church 5-2 NPC"
+      ]
+    },
+    {
+      "ID": 23560,
+      "Entries": [
+        "[GR Costume NPC]_356_Circular Plaza 2-1 NPC"
+      ]
+    },
+    {
+      "ID": 23570,
+      "Entries": [
+        "[GR Costume NPC]_357_Hidden Passage Stairs Back NPC_Volcano Prison"
+      ]
+    },
+    {
+      "ID": 23580,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23590,
+      "Entries": [
+        "[GR Costume NPC]_359_Monsan_Before Boss EV (Rennala's Escort Knight)"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "[GR Costume Change NPC] 360_Round Table First Tarnished Survivor_A"
+      ]
+    },
+    {
+      "ID": 23610,
+      "Entries": [
+        "[GR Costume NPC]_361_Bedfellows_1"
+      ]
+    },
+    {
+      "ID": 23611,
+      "Entries": [
+        "[GR Costume NPC]_361_Bedfellows_2"
+      ]
+    },
+    {
+      "ID": 23612,
+      "Entries": [
+        "[GR Costume NPC]_361_Bedfellows_3"
+      ]
+    },
+    {
+      "ID": 23620,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23630,
+      "Entries": [
+        "[GR Costume NPC]_363_Puppet_Mr. A (Fallen Saintess)"
+      ]
+    },
+    {
+      "ID": 23640,
+      "Entries": [
+        "[GR Costume NPC]_364_Puppet_Mr. B (Sleep User)"
+      ]
+    },
+    {
+      "ID": 23650,
+      "Entries": [
+        "[GR Costume NPC]_365_Puppet_Mr. C (Pot User)"
+      ]
+    },
+    {
+      "ID": 23660,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23670,
+      "Entries": [
+        "[GR Costume NPC]_367_Cave 5-2 (Snail Summoned Spirit)"
+      ]
+    },
+    {
+      "ID": 23680,
+      "Entries": [
+        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Ballista)"
+      ]
+    },
+    {
+      "ID": 23681,
+      "Entries": [
+        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Straight Sword)"
+      ]
+    },
+    {
+      "ID": 23682,
+      "Entries": [
+        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Colossal Sword)"
+      ]
+    },
+    {
+      "ID": 23683,
+      "Entries": [
+        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Spear Shield)"
+      ]
+    },
+    {
+      "ID": 23690,
+      "Entries": [
+        "[GR Costume NPC]_369_Volcano Manor Mob"
+      ]
+    },
+    {
+      "ID": 23700,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23710,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23720,
+      "Entries": [
+        "[GR Costume NPC]_372_Highland Fort West (Sculpture Dump Minor Lord)"
+      ]
+    },
+    {
+      "ID": 23730,
+      "Entries": [
+        "[GR Costume NPC]_373_Plains Arena Front Red Phantom 1_Offline"
+      ]
+    },
+    {
+      "ID": 23740,
+      "Entries": [
+        "[GR Costume NPC]_374_Plains Arena Front Red Phantom 2_Offline"
+      ]
+    },
+    {
+      "ID": 23750,
+      "Entries": [
+        "[GR Costume NPC]_375_Plains Arena Front Red Phantom 3_Offline"
+      ]
+    },
+    {
+      "ID": 23760,
+      "Entries": [
+        "[GR Costume NPC]_376_Cave 3-4 (Instant Death User)"
+      ]
+    },
+    {
+      "ID": 23770,
+      "Entries": [
+        "[GR Costume NPC]_377_Underground Labyrinth Plains Depths Blood Swamp Area"
+      ]
+    },
+    {
+      "ID": 23780,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23790,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23800,
+      "Entries": [
+        "[GR Costume Change NPC] 380_Round Table First Tarnished Survivor_B"
+      ]
+    },
+    {
+      "ID": 23810,
+      "Entries": [
+        "[GR Costume Change NPC]"
+      ]
+    },
+    {
+      "ID": 23820,
+      "Entries": [
+        "[GR Costume NPC]_382_Open Snowy Mountain Seaside Tower 5-1_Boss Tier"
+      ]
+    },
+    {
+      "ID": 23830,
+      "Entries": [
+        "[GR Costume NPC]_383_Open Snowy Mountain Seaside Tower 5-1_Trash"
+      ]
+    },
+    {
+      "ID": 23840,
+      "Entries": [
+        "[GR Costume NPC]_384_Volcano Manor 2F Enemy"
+      ]
+    },
+    {
+      "ID": 23850,
+      "Entries": [
+        "[GR Costume NPC]_385_Base 1F Enemy"
+      ]
+    },
+    {
+      "ID": 23860,
+      "Entries": [
+        "[GR Costume NPC]_386_Royal Capital Underground Catacombs"
+      ]
+    },
+    {
+      "ID": 23870,
+      "Entries": [
+        "[GR Costume NPC]_387_Millicent's Sister A"
+      ]
+    },
+    {
+      "ID": 23880,
+      "Entries": [
+        "[GR Costume NPC]_388_Millicent's Sister B"
+      ]
+    },
+    {
+      "ID": 23890,
+      "Entries": [
+        "[GR Costume NPC]_389_Millicent's Sister C"
+      ]
+    },
+    {
+      "ID": 23900,
+      "Entries": [
+        "[GR Costume NPC]_390_Millicent's Sister D"
+      ]
+    },
+    {
+      "ID": 23910,
+      "Entries": [
+        "[GR Costume NPC]_391_Valley Event Target"
+      ]
+    },
+    {
+      "ID": 24700,
+      "Entries": [
+        "[GR Costume NPC]_Patch1.17_New Lucatiel"
+      ]
+    },
+    {
+      "ID": 24710,
+      "Entries": [
+        "[GR Costume NPC]_Patch1.17_Golden Mask Lord's First Disciple"
+      ]
+    },
+    {
+      "ID": 27000,
+      "Entries": [
+        "[GR Costume NPC]_Talking Corpse_Beside Arena Gate"
+      ]
+    },
+    {
+      "ID": 27001,
+      "Entries": [
+        "[GR Costume Change NPC]Talking Corpse_Inside Lake Fort Room"
+      ]
+    },
+    {
+      "ID": 27002,
+      "Entries": [
+        "[GR Costume Change NPC]Talking Corpse_Entrance of Plains Dragon Zone"
+      ]
+    },
+    {
+      "ID": 27003,
+      "Entries": [
+        "[GR Costume Change NPC]Talking Corpse_For Tutorial Guidance"
+      ]
+    },
+    {
+      "ID": 27900,
+      "Entries": [
+        "[GR Costume NPC]_D's Mourned Corpse"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30019,
+      "Entries": [
+        "ForTestCreation_NT Cleric"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30021,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30022,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30023,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30024,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30025,
+      "Entries": [
+        "ForTestCreation_NT SkillWarrior"
+      ]
+    },
+    {
+      "ID": 30026,
+      "Entries": [
+        "ForTestCreation_NT Barbarian"
+      ]
+    },
+    {
+      "ID": 30027,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30028,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30029,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "ForTestCreation_NT MagicKnight"
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30032,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30033,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30034,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30035,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30036,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30037,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30038,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30039,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30041,
+      "Entries": [
+        "ForTestCreation_NT BattlefieldDoctor"
+      ]
+    },
+    {
+      "ID": 30042,
+      "Entries": [
+        "ForTestCreation_NT MercenarySwordsman"
+      ]
+    },
+    {
+      "ID": 30043,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30044,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30045,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30046,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30047,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30048,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30049,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "ForTestCreation_OldCastellan"
+      ]
+    },
+    {
+      "ID": 30051,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30052,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30053,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30054,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30055,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30056,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30057,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30058,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30059,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "ForTestCreation_NPC GlintstoneSorcererB"
+      ]
+    },
+    {
+      "ID": 30061,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30062,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30063,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30064,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30065,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30066,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30067,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30068,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30069,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "ForTestCreation_NobleExileFarnese"
+      ]
+    },
+    {
+      "ID": 30071,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30072,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30073,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30074,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30075,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30076,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30077,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30078,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30079,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "ForTestCreation_Yulia(Dress)"
+      ]
+    },
+    {
+      "ID": 30081,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30082,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30083,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30084,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30085,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30086,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30087,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30088,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30089,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30091,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30092,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30093,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30094,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30095,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30096,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30097,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30098,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30099,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "ForTestCreation_BelowForGDSave"
+      ]
+    },
+    {
+      "ID": 30101,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30102,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30103,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30104,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30105,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30106,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30107,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30108,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30109,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30111,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30112,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30113,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30114,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30115,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30116,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30117,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30118,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30119,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30121,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30122,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30123,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30124,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30125,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30126,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30127,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30128,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30129,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30131,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30132,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30133,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30134,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30135,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30136,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 30137,
+      "Entries": [
+        "ForTestCreation"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "[Override 1] Madness Fire_Burn"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "[Override 2] Madness Fire_Eyeball"
+      ]
+    },
+    {
+      "ID": 81001,
+      "Entries": [
+        "[Override 2] Blood_Eyeball"
+      ]
+    },
+    {
+      "ID": 81002,
+      "Entries": [
+        "[Override 2] Erdtree Feast_Eyeball"
+      ]
+    },
+    {
+      "ID": 81003,
+      "Entries": [
+        "[Override 2] Silver_Eyeball"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "[Test] Eyeball Part ID Override"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "[Test] Iris Color Override"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "[Test] Crystalline Opacity Overwrite"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "[Test] Lens Opacity Color Override"
+      ]
+    },
+    {
+      "ID": 90004,
+      "Entries": [
+        "[Test] Sclera Color Override"
+      ]
+    },
+    {
+      "ID": 90005,
+      "Entries": [
+        "[Test] Burn Scar Override"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91001,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91002,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91003,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91004,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91005,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91006,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91007,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91008,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91009,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91010,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 91011,
+      "Entries": [
+        "[Body Type] Scale Test"
+      ]
+    },
+    {
+      "ID": 99991,
+      "Entries": [
+        "DLC Debug Use"
+      ]
+    },
+    {
+      "ID": 99992,
+      "Entries": [
+        "DLC Debug Use"
+      ]
+    },
+    {
+      "ID": 2024030,
+      "Entries": [
+        "[GR Costume NPC]_403_Dragon Communion Ahab"
+      ]
+    },
+    {
+      "ID": 2024032,
+      "Entries": [
+        "[GR Costume NPC]_403_Dragon Communion Ahab_Limbs Paralyzed"
+      ]
+    },
+    {
+      "ID": 2024060,
+      "Entries": [
+        "[GR Costume NPC]_406_Dragon Communion Priest"
+      ]
+    },
+    {
+      "ID": 2024070,
+      "Entries": [
+        "[GR Costume NPC]_407_Cave Boss (Dragon Communion NPC)"
+      ]
+    },
+    {
+      "ID": 2024090,
+      "Entries": [
+        "[GR Costume NPC]_409_Finger Reader Lord's Assassin"
+      ]
+    },
+    {
+      "ID": 2024120,
+      "Entries": [
+        "[GR Costume NPC]_412_Finger Reader Lord's Assassin_Twins"
+      ]
+    },
+    {
+      "ID": 2024130,
+      "Entries": [
+        "[GR Costume NPC]_413_Demigod Hunter"
+      ]
+    },
+    {
+      "ID": 2024140,
+      "Entries": [
+        "[GR Costume NPC]_414_Miquella's Army③ Demigod"
+      ]
+    },
+    {
+      "ID": 2024150,
+      "Entries": [
+        "[GR Costume NPC]_415_Miquella's Army⑥ Malenia Faction"
+      ]
+    },
+    {
+      "ID": 2024160,
+      "Entries": [
+        "[GR Costume NPC]_416_Miquella's Army④ Bloody Lord's Retainer"
+      ]
+    },
+    {
+      "ID": 2024170,
+      "Entries": [
+        "[GR Costume NPC]_417_Miquella's Army② Radahn Soldier"
+      ]
+    },
+    {
+      "ID": 2024180,
+      "Entries": [
+        "[GR Costume NPC]_418_Miquella's Army① Leader"
+      ]
+    },
+    {
+      "ID": 2024190,
+      "Entries": [
+        "[GR Costume NPC]_419_Miquella's Army⑤ Triina Faction"
+      ]
+    },
+    {
+      "ID": 2024200,
+      "Entries": [
+        "[GR Costume NPC]_420_Finger Reader Lord"
+      ]
+    },
+    {
+      "ID": 2024201,
+      "Entries": [
+        "[GR Costume NPC]_420_Finger Reader Lord_Combat"
+      ]
+    },
+    {
+      "ID": 2024210,
+      "Entries": [
+        "[GR Costume NPC]_421_Shrine NPC① _Bear Armor"
+      ]
+    },
+    {
+      "ID": 2024220,
+      "Entries": [
+        "[GR Costume NPC]_422_Shrine NPC② _Dancer Swordsman"
+      ]
+    },
+    {
+      "ID": 2024230,
+      "Entries": [
+        "[GR Costume NPC]_423_Shrine NPC③ _Swordmaster Warrior"
+      ]
+    },
+    {
+      "ID": 2024240,
+      "Entries": [
+        "[GR Costume NPC]_424_Shrine NPC④ _Heavy Armor②"
+      ]
+    },
+    {
+      "ID": 2024250,
+      "Entries": [
+        "[GR Costume NPC]_425_Babel Upper Level Boss"
+      ]
+    },
+    {
+      "ID": 2024260,
+      "Entries": [
+        "[GR Costume NPC]_426_Babel Upper Level Assist Slot"
+      ]
+    },
+    {
+      "ID": 2024270,
+      "Entries": [
+        "[GR Costume NPC]_427_Prison Boss"
+      ]
+    },
+    {
+      "ID": 2024280,
+      "Entries": [
+        "[GR Costume NPC]_428_Pot-Making Village NPC"
+      ]
+    },
+    {
+      "ID": 2024290,
+      "Entries": [
+        "[GR Costume NPC]_429_Abyssal Forest NPC"
+      ]
+    },
+    {
+      "ID": 2024310,
+      "Entries": [
+        "[GR Costume NPC]_431_Beast Claw NPC"
+      ]
+    },
+    {
+      "ID": 2024320,
+      "Entries": [
+        "[GR Costume NPC]_432_Highway Fort Church Front NPC"
+      ]
+    },
+    {
+      "ID": 2024500,
+      "Entries": [
+        "[GR Costume NPC]_Patch1.17_New Lucatiel"
+      ]
+    },
+    {
+      "ID": 2024510,
+      "Entries": [
+        "[GR Costume NPC]_Patch1.17_Golden Mask Lord's First Disciple"
+      ]
+    }
+  ]
+}

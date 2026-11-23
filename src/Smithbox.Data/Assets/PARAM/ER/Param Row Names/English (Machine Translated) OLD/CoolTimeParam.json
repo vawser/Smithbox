@@ -1,0 +1,245 @@
+{
+  "Name": "CoolTimeParam",
+  "Entries": [
+    {
+      "ID": 101,
+      "Entries": [
+        "Invasion Level 1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Invasion Level 2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Invasion Level 3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Invasion Level 4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Invasion Level 5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Invasion Level 6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Invasion Level 7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Invasion Level 8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Invasion Level 9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Invasion Level 10"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Map Guardian (Forest) Lv1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Map Guardian (Forest) Lv2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Map Guardian (Forest) Lv3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Map Guardian (Forest) Lv4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Map Guardian (Forest) Lv5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Map Guardian (Forest) Lv6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Map Guardian (Forest) Lv7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Map Guardian (Forest) Lv8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Map Guardian (Forest) Lv9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Map Guardian (Forest) Lv10"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Map Guardian (Anor Londo) Level 1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Map Guardian (Anor Londo) Level 2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Map Guardian (Anor Londo) Level 3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Map Guardian (Anor Londo) Level 4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Map Guardian (Anor Londo) Level 5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Map Guardian (Anor Londo) Lv6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Map Guardian (Anor Londo) Lv7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Map Guardian (Anor Londo) Lv8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Map Guardian (Anor Londo) Lv9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Map Guardian (Anor Londo) Level 10"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Red Hunt Level 1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Red Hunt Level 2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Red Hunt Level 3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Red Hunt Level 4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Red Hunt Level 5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Red Hunt Level 6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Red Hunt Level 7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Red Hunt Level 8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Red Hunt Level 9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Red Hunt Level 10"
+      ]
+    }
+  ]
+}

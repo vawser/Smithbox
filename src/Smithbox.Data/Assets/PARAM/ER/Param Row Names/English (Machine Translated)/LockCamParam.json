@@ -10,19 +10,19 @@
     {
       "ID": 1,
       "Entries": [
-        "For Summon Magic Range Specification"
+        "For Specifying Summoning Magic Range"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Mounted Offset_Normal Camera"
+        "Mount Offset_Normal Camera"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Mounted Offset_Lock-On Camera"
+        "Mount Offset_Lock-On Camera"
       ]
     },
     {
@@ -34,7 +34,7 @@
     {
       "ID": 1011,
       "Entries": [
-        "Mounted_During Large Jump"
+        "Mount_During Great Jump"
       ]
     },
     {
@@ -52,7 +52,7 @@
     {
       "ID": 1022,
       "Entries": [
-        "PC Dragon Communion Magic_Airborne Breath"
+        "PC Dragon Communion Magic_Aerial Breath"
       ]
     },
     {
@@ -64,43 +64,43 @@
     {
       "ID": 1041,
       "Entries": [
-        "Mist Wall Entry Camera"
+        "Camera for Fog Wall Entry"
       ]
     },
     {
       "ID": 1050,
       "Entries": [
-        "PC Large Throw Staging"
+        "For PC Large Throw Performance"
       ]
     },
     {
       "ID": 2031,
       "Entries": [
-        "Rennala of the Full Moon (After HU)"
+        "Fertile Rennala (Post-HU)"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Black Blade Malenia"
+        "Maliketh the Black Blade"
       ]
     },
     {
       "ID": 2120,
       "Entries": [
-        "Arbitrating Malenia"
+        "Arbiter Malenia"
       ]
     },
     {
       "ID": 2121,
       "Entries": [
-        "Arbitrating Malenia_First Rot Release"
+        "Arbiter Malenia_Initial Rot Release"
       ]
     },
     {
       "ID": 2122,
       "Entries": [
-        "Arbitrating Malenia_Flight"
+        "Arbiter Malenia_Soaring"
       ]
     },
     {
@@ -112,13 +112,13 @@
     {
       "ID": 2200,
       "Entries": [
-        "Crumbling Marika (Post-HU)"
+        "Collapsed Marika (Post-HU)"
       ]
     },
     {
       "ID": 2201,
       "Entries": [
-        "Crumbling Marika (Post-HU)_Big Move Staging Camera"
+        "Collapsed Marika (Post-HU)_Effect Camera for Big Move"
       ]
     },
     {
@@ -130,49 +130,49 @@
     {
       "ID": 3015,
       "Entries": [
-        "Lost Knight When Aged Veteran General Spirit Ash summon"
+        "Lost Knight When Veteran General Is Buddy"
       ]
     },
     {
       "ID": 3050,
       "Entries": [
-        "Aged Veteran General"
+        "Old Veteran General"
       ]
     },
     {
       "ID": 3180,
       "Entries": [
-        "Wolf Rider's Wolf"
+        "Wolf Rider\u0027s Wolf"
       ]
     },
     {
       "ID": 3181,
       "Entries": [
-        "Runewolf"
+        "Rune Wolf"
       ]
     },
     {
       "ID": 3204,
       "Entries": [
-        "※Snake Spirit Possessed Gundah Throw Performance"
+        "※Serpent-Possessed Gunda Throw Performance"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        "Red-Eyed Gypsy's Donkey"
+        "Red-Eyed Gypsy\u0027s Donkey"
       ]
     },
     {
       "ID": 3250,
       "Entries": [
-        "Tree Sentinel (Aberration)"
+        "Tree Sentinel (Deformed)"
       ]
     },
     {
       "ID": 3251,
       "Entries": [
-        "Tree Sentinel (Chief)"
+        "Tree Sentinel (Leader)"
       ]
     },
     {
@@ -184,91 +184,91 @@
     {
       "ID": 3460,
       "Entries": [
-        "Radagon's Children Lion Type"
+        "Radagon\u0027s Children Lion Type"
       ]
     },
     {
       "ID": 3470,
       "Entries": [
-        "Frog-man_Long Haft Mixed"
+        "Frogman_Long Hilt Blend"
       ]
     },
     {
       "ID": 3560,
       "Entries": [
-        "Godskin Apostle"
+        "Godskin Priest"
       ]
     },
     {
       "ID": 3570,
       "Entries": [
-        "Godskin Apostle (Another)"
+        "Godskin Priest (Another)"
       ]
     },
     {
       "ID": 3600,
       "Entries": [
-        "Light / Dark Walker"
+        "Light/Dark Walker"
       ]
     },
     {
       "ID": 3620,
       "Entries": [
-        "Servant of the Moon (Tall)"
+        "Moon Attendant (Tall)"
       ]
     },
     {
       "ID": 3630,
       "Entries": [
-        "Servant of the Moon (Fat)"
+        "Moon Attendant (Fat)"
       ]
     },
     {
       "ID": 3664,
       "Entries": [
-        "Catacomb Shadow"
+        "Tomb Shadow"
       ]
     },
     {
       "ID": 3670,
       "Entries": [
-        "Leg Cripple"
+        "Cripple"
       ]
     },
     {
       "ID": 3704,
       "Entries": [
-        "Wandering Glintstone Sorcerer"
+        "Stray Glintstone Sorcerer"
       ]
     },
     {
       "ID": 3810,
       "Entries": [
-        "Rot's Kin"
+        "Rot Kindred"
       ]
     },
     {
       "ID": 3910,
       "Entries": [
-        "Giant's Flame Fat Monk"
+        "Giant\u0027s Fire Fat Monk"
       ]
     },
     {
       "ID": 3950,
       "Entries": [
-        "Children of Ghouls"
+        "Children of the Ghouls"
       ]
     },
     {
       "ID": 4020,
       "Entries": [
-        "Nazgul(Ground Insect)"
+        "Nazgul (Grub)"
       ]
     },
     {
       "ID": 4060,
       "Entries": [
-        "Mercenary Horse"
+        "Mercenary\u0027s Horse"
       ]
     },
     {
@@ -298,7 +298,7 @@
     {
       "ID": 4192,
       "Entries": [
-        "Scarab (Colossal)"
+        "Scarab (Extra Large)"
       ]
     },
     {
@@ -310,13 +310,13 @@
     {
       "ID": 4240,
       "Entries": [
-        "Finger Worm"
+        "Fingercreeper"
       ]
     },
     {
       "ID": 4241,
       "Entries": [
-        "Finger Worm(Large)"
+        "Fingercreeper (Extra Large)"
       ]
     },
     {
@@ -328,7 +328,7 @@
     {
       "ID": 4280,
       "Entries": [
-        "Pot Ant (Mounted)"
+        "Jar Ant (Mount)"
       ]
     },
     {
@@ -346,19 +346,19 @@
     {
       "ID": 4381,
       "Entries": [
-        "Ruinous Cult (Fire Cult)"
+        "Believer of Ruin (Fire Believer)"
       ]
     },
     {
       "ID": 4385,
       "Entries": [
-        "Ruinous Cult (Putrid Cult)"
+        "Believer of Ruin (Poison-Rot Believer)"
       ]
     },
     {
       "ID": 4410,
       "Entries": [
-        "Carriage Horse (Giant)_Normal Combat"
+        "Carriage Horse (Giant)_For Normal Combat"
       ]
     },
     {
@@ -370,19 +370,19 @@
     {
       "ID": 4441,
       "Entries": [
-        "Land Barnacle (Large)"
+        "Land Squirt (Large)"
       ]
     },
     {
       "ID": 4460,
       "Entries": [
-        "Large Weapon Gunman"
+        "Large Weapon Ganmen"
       ]
     },
     {
       "ID": 4470,
       "Entries": [
-        "Rykard's Kidnapper Weapon"
+        "Rykard\u0027s Abduction Weapon"
       ]
     },
     {
@@ -400,13 +400,13 @@
     {
       "ID": 4501,
       "Entries": [
-        "Wyvern_Flying"
+        "Wyvern_While Flying"
       ]
     },
     {
       "ID": 4504,
       "Entries": [
-        "Wyvern (Giant)"
+        "Wyvern (Huge)"
       ]
     },
     {
@@ -418,55 +418,55 @@
     {
       "ID": 4510,
       "Entries": [
-        "Ancestral Follower_Normal Camera"
+        "Guardian\u0027s Descendant_Normal Camera"
       ]
     },
     {
       "ID": 4511,
       "Entries": [
-        "Ancestral Follower_Staging Camera (Godwyn Arts)"
+        "Guardian\u0027s Descendant_Effect Camera (Godwyn Skill)"
       ]
     },
     {
       "ID": 4512,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 4513,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 4514,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 4515,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 4516,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 4517,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 4518,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
@@ -478,7 +478,7 @@
     {
       "ID": 4521,
       "Entries": [
-        "Ancient Dragon_Switch Camera Only At Specific Timing"
+        "Ancient Dragon_Switch Camera Only at Specific Timing"
       ]
     },
     {
@@ -490,31 +490,31 @@
     {
       "ID": 4550,
       "Entries": [
-        "Feral Tyrannosaur"
+        "Wild Dog Tyranno"
       ]
     },
     {
       "ID": 4560,
       "Entries": [
-        "Raven Tyranno"
+        "Crow Tyranno"
       ]
     },
     {
       "ID": 4570,
       "Entries": [
-        "Deracine (Male)"
+        "Déraciné(Male)"
       ]
     },
     {
       "ID": 4580,
       "Entries": [
-        "Deracine (Female)"
+        "Déraciné(Female)"
       ]
     },
     {
       "ID": 4581,
       "Entries": [
-        "Deracine (Female)_Throw Death Camera"
+        "Déraciné(Female)_Camera for Throw Death"
       ]
     },
     {
@@ -538,43 +538,43 @@
     {
       "ID": 4641,
       "Entries": [
-        "Serpent Spirit_Throw Animation"
+        "Serpent Spirit_For Throw Effect"
       ]
     },
     {
       "ID": 4650,
       "Entries": [
-        "Ruinator_Normal"
+        "The Desolator_Normal"
       ]
     },
     {
       "ID": 4651,
       "Entries": [
-        "Ruinator_Airborne"
+        "The Desolator_While Flying"
       ]
     },
     {
       "ID": 4660,
       "Entries": [
-        "Guardian of the High Road"
+        "Highroad Guardian"
       ]
     },
     {
       "ID": 4670,
       "Entries": [
-        "Ancestor Spirit"
+        "Ancestral Spirit"
       ]
     },
     {
       "ID": 4680,
       "Entries": [
-        "Meteoric Beast"
+        "Meteoric Iron Beast"
       ]
     },
     {
       "ID": 4681,
       "Entries": [
-        "Meteoric Beast_Throw 1"
+        "Meteoric Iron Beast_For Throw 1"
       ]
     },
     {
@@ -586,85 +586,85 @@
     {
       "ID": 4710,
       "Entries": [
-        "King of Ghouls_Map"
+        "King of Ghouls_For Map"
       ]
     },
     {
       "ID": 4711,
       "Entries": [
-        "King of Ghouls (Human)_Lock-on"
+        "King of Ghouls (Human)_For Lock-On"
       ]
     },
     {
       "ID": 4712,
       "Entries": [
-        "King of Ghouls (Serpent)_Lock-on"
+        "King of Ghouls (Snake)_For Lock-On"
       ]
     },
     {
       "ID": 4713,
       "Entries": [
-        "King of Ghouls (Serpent)_Throw 1"
+        "King of Ghouls (Snake)_For Throw 1"
       ]
     },
     {
       "ID": 4714,
       "Entries": [
-        "King of Ghouls (Serpent)_Throw 2"
+        "King of Ghouls (Snake)_For Throw 2"
       ]
     },
     {
       "ID": 4720,
       "Entries": [
-        "Godfrey the Beast-clad (Before HU)"
+        "Beast-Clad Godfrey (Pre-HU)"
       ]
     },
     {
       "ID": 4721,
       "Entries": [
-        "Godfrey the Beast-clad (After HU)"
+        "Beast-Clad Godfrey (Post-HU)"
       ]
     },
     {
       "ID": 4722,
       "Entries": [
-        "Godfrey the Beast-clad (After HU)_Throw Use 1"
+        "Beast-Clad Godfrey (Post-HU)_For Throw 1"
       ]
     },
     {
       "ID": 4723,
       "Entries": [
-        "Godfrey the Beast-clad (After HU)_Throw Use 2"
+        "Beast-Clad Godfrey (Post-HU)_For Throw 2"
       ]
     },
     {
       "ID": 4724,
       "Entries": [
-        "Godfrey the Beast-clad (After HU)_Throw Use 3"
+        "Beast-Clad Godfrey (Post-HU)_For Throw 3"
       ]
     },
     {
       "ID": 4725,
       "Entries": [
-        "Godfrey the Beast-clad (After HU)_Special Move_Dedicated Camera"
+        "Beast-Clad Godfrey (Post-HU)_Special Move_Exclusive Camera"
       ]
     },
     {
       "ID": 4730,
       "Entries": [
-        "Radahn (Scrawny Horse)"
+        "Radahn of the Scrawny Horse"
       ]
     },
     {
       "ID": 4750,
       "Entries": [
-        "Grafted King"
+        "The Grafted King"
       ]
     },
     {
       "ID": 4751,
       "Entries": [
-        "Grafted King_During Throw"
+        "The Grafted King_During Throw"
       ]
     },
     {
@@ -676,19 +676,19 @@
     {
       "ID": 4761,
       "Entries": [
-        "Giant_Quadruped State"
+        "Giant_On All Fours State"
       ]
     },
     {
       "ID": 4770,
       "Entries": [
-        "Capital Gargoyle"
+        "Leyndell Gargoyle"
       ]
     },
     {
       "ID": 4775,
       "Entries": [
-        "Capital Gargoyle_For Collapse Variant"
+        "Leyndell Gargoyle_For Collapse Variation"
       ]
     },
     {
@@ -706,7 +706,7 @@
     {
       "ID": 4811,
       "Entries": [
-        "World Tree Demon/On Jump"
+        "World Tree Demon/While Jumping"
       ]
     },
     {
@@ -718,19 +718,19 @@
     {
       "ID": 4910,
       "Entries": [
-        "King's Mole"
+        "King\u0027s Mole"
       ]
     },
     {
       "ID": 4950,
       "Entries": [
-        "Night King Followers"
+        "Night King\u0027s Kindred"
       ]
     },
     {
       "ID": 4960,
       "Entries": [
-        "Night King Followers_Giant Skeleton"
+        "Night King\u0027s Kindred_Giant Skeleton"
       ]
     },
     {
@@ -748,19 +748,19 @@
     {
       "ID": 5241,
       "Entries": [
-        "Runebear Throw Presentation Camera"
+        "Rune Bear Throw Effect Camera"
       ]
     },
     {
       "ID": 6031,
       "Entries": [
-        "Wild Animal_Bear(Large)"
+        "Wild Animal_Bear (Large)"
       ]
     },
     {
       "ID": 7100,
       "Entries": [
-        "Spirit Ash summon_Unique"
+        "Buddy_Unique"
       ]
     },
     {
@@ -784,19 +784,19 @@
     {
       "ID": 1000000,
       "Entries": [
-        "Conversation Camera: General"
+        "Dialogue Camera: General"
       ]
     },
     {
       "ID": 1001000,
       "Entries": [
-        "Conversation Camera: Bonfire"
+        "Dialogue Camera: Site of Grace"
       ]
     },
     {
       "ID": 1001001,
       "Entries": [
-        "Conversation Camera: Great Bonfire"
+        "Dialogue Camera: Large Bonfire"
       ]
     }
   ]

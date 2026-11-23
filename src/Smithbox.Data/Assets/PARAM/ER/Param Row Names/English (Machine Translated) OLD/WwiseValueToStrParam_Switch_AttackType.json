@@ -1,0 +1,29 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_AttackType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Cut (default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stab"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Strike"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Rub"
+      ]
+    }
+  ]
+}

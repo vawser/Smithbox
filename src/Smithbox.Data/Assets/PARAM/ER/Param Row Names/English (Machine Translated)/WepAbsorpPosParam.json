@@ -226,7 +226,7 @@
     {
       "ID": 37,
       "Entries": [
-        "Great Spear"
+        "Heavy Spear"
       ]
     },
     {
@@ -310,25 +310,25 @@
     {
       "ID": 51,
       "Entries": [
-        "Small Bow"
+        "Shortbow"
       ]
     },
     {
       "ID": 53,
       "Entries": [
-        "[DLC] Throwing sword"
+        "[DLC] Throwing Sword"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        "[DLC] Force grapple"
+        "[DLC] Force Melee"
       ]
     },
     {
       "ID": 56,
       "Entries": [
-        "[DLC] Perfume bottle"
+        "[DLC] Perfume Bottle"
       ]
     },
     {
@@ -340,31 +340,31 @@
     {
       "ID": 58,
       "Entries": [
-        "[DLC] Reverse-grip sword"
+        "[DLC] Reverse-Grip Sword"
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        "[DLC] Beast claw"
+        "[DLC] Beast Claw"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Straight Sword_Secret Glyph Sword"
+        "Straight Sword_Sword of Secret Script"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Twin Straight Sword_Grafted Spider Sword"
+        "Twin Straight Swords_Grafted Spider Sword"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Fist_SecretGlyphFist"
+        "Fist_Cipher Fist"
       ]
     },
     {
@@ -376,19 +376,19 @@
     {
       "ID": 250,
       "Entries": [
-        "[1.17] Lucatiel's Greatsword"
+        "[1.17] Lucatiel\u0027s Greatsword"
       ]
     },
     {
       "ID": 260,
       "Entries": [
-        "Colossal Sword_Radahn (Scrawny Horse) Greatsword"
+        "Colossal Sword_Starscourge Radahn\u0027s Curved Greatsword"
       ]
     },
     {
       "ID": 261,
       "Entries": [
-        "[DLC] Light greatsword_asymmetric twinblades"
+        "[DLC] Light Greatsword_Asymmetric Twin Swords"
       ]
     },
     {
@@ -406,19 +406,19 @@
     {
       "ID": 482,
       "Entries": [
-        "Primeval Godhuman Head"
+        "Primeval Godman\u0027s Head"
       ]
     },
     {
       "ID": 620,
       "Entries": [
-        "[DLC] Bear claw"
+        "[DLC] Bear Claw"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "4Model Test"
+        "4 Model Test"
       ]
     }
   ]

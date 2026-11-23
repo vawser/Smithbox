@@ -1,0 +1,65 @@
+{
+  "Name": "MenuValueTableParam",
+  "Entries": [
+    {
+      "ID": 50,
+      "Entries": [
+        "Weight Category"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Consumable Type"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Table Converting Values to E-S Letters"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Oath"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Weapon Type"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Converts the value of the Weapon Type (WEP_TYPE) in the weapon param"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Pot Type"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Convert Jar Group ID to Text"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Transformation Details"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Convert gem param's Weapon Attribute ID (gemAttr) to text"
+      ]
+    }
+  ]
+}

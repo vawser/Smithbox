@@ -1,0 +1,953 @@
+{
+  "Name": "SignPuddleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Invalid Data"
+      ]
+    },
+    {
+      "ID": 670130,
+      "Entries": [
+        "Stormveil 0"
+      ]
+    },
+    {
+      "ID": 670131,
+      "Entries": [
+        "Stormveil 1"
+      ]
+    },
+    {
+      "ID": 670132,
+      "Entries": [
+        "Stormveil 2"
+      ]
+    },
+    {
+      "ID": 670133,
+      "Entries": [
+        "Stormveil 3"
+      ]
+    },
+    {
+      "ID": 670134,
+      "Entries": [
+        "Stormveil 4"
+      ]
+    },
+    {
+      "ID": 670135,
+      "Entries": [
+        "Stormveil 5"
+      ]
+    },
+    {
+      "ID": 670330,
+      "Entries": [
+        "Royal Capital 0"
+      ]
+    },
+    {
+      "ID": 670331,
+      "Entries": [
+        "Royal Capital 1"
+      ]
+    },
+    {
+      "ID": 670332,
+      "Entries": [
+        "Royal Capital 2"
+      ]
+    },
+    {
+      "ID": 670333,
+      "Entries": [
+        "Royal Capital 3"
+      ]
+    },
+    {
+      "ID": 670334,
+      "Entries": [
+        "Royal Capital 4"
+      ]
+    },
+    {
+      "ID": 670730,
+      "Entries": [
+        "Royal Capital (Ash)00"
+      ]
+    },
+    {
+      "ID": 670731,
+      "Entries": [
+        "Royal Capital (Ash)01"
+      ]
+    },
+    {
+      "ID": 670610,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp0"
+      ]
+    },
+    {
+      "ID": 670611,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp1"
+      ]
+    },
+    {
+      "ID": 670612,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp2"
+      ]
+    },
+    {
+      "ID": 670613,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp3"
+      ]
+    },
+    {
+      "ID": 670614,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp4"
+      ]
+    },
+    {
+      "ID": 670615,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp5"
+      ]
+    },
+    {
+      "ID": 670616,
+      "Entries": [
+        "Underground Labyrinth Poison Swamp6"
+      ]
+    },
+    {
+      "ID": 670620,
+      "Entries": [
+        "Underground Labyrinth Plains 0"
+      ]
+    },
+    {
+      "ID": 670621,
+      "Entries": [
+        "Underground Labyrinth Plains 1"
+      ]
+    },
+    {
+      "ID": 670622,
+      "Entries": [
+        "Underground Labyrinth Plains 2"
+      ]
+    },
+    {
+      "ID": 670623,
+      "Entries": [
+        "Underground Labyrinth Plains 3"
+      ]
+    },
+    {
+      "ID": 670624,
+      "Entries": [
+        "Underground Labyrinth Plains 4"
+      ]
+    },
+    {
+      "ID": 670625,
+      "Entries": [
+        "Underground Labyrinth Plains 5"
+      ]
+    },
+    {
+      "ID": 670626,
+      "Entries": [
+        "Underground Labyrinth Plains 6"
+      ]
+    },
+    {
+      "ID": 670630,
+      "Entries": [
+        "Underground Labyrinth Royal Capital 0"
+      ]
+    },
+    {
+      "ID": 670631,
+      "Entries": [
+        "Underground Labyrinth Royal Capital 1"
+      ]
+    },
+    {
+      "ID": 670632,
+      "Entries": [
+        "Underground Labyrinth Royal Capital 2"
+      ]
+    },
+    {
+      "ID": 670633,
+      "Entries": [
+        "Underground Labyrinth Royal Capital 3"
+      ]
+    },
+    {
+      "ID": 670634,
+      "Entries": [
+        "Underground Labyrinth Royal Capital 4"
+      ]
+    },
+    {
+      "ID": 670650,
+      "Entries": [
+        "Underground Labyrinth Plains Depths0"
+      ]
+    },
+    {
+      "ID": 670651,
+      "Entries": [
+        "Underground Labyrinth Plains Depths1"
+      ]
+    },
+    {
+      "ID": 670652,
+      "Entries": [
+        "Underground Labyrinth Plains Depths2"
+      ]
+    },
+    {
+      "ID": 670670,
+      "Entries": [
+        "Underground Labyrinth Plains First Half 0"
+      ]
+    },
+    {
+      "ID": 670671,
+      "Entries": [
+        "Underground Labyrinth Plains First Half 1"
+      ]
+    },
+    {
+      "ID": 670740,
+      "Entries": [
+        "Descending Ruins 0"
+      ]
+    },
+    {
+      "ID": 670741,
+      "Entries": [
+        "Descending Ruins 1"
+      ]
+    },
+    {
+      "ID": 670742,
+      "Entries": [
+        "Descending Ruins 2"
+      ]
+    },
+    {
+      "ID": 670743,
+      "Entries": [
+        "Descending Ruins 3"
+      ]
+    },
+    {
+      "ID": 670744,
+      "Entries": [
+        "Descending Ruins 4"
+      ]
+    },
+    {
+      "ID": 670745,
+      "Entries": [
+        "Descending Ruins 5"
+      ]
+    },
+    {
+      "ID": 670746,
+      "Entries": [
+        "Descending Ruins 6"
+      ]
+    },
+    {
+      "ID": 670747,
+      "Entries": [
+        "Descending Ruins 7"
+      ]
+    },
+    {
+      "ID": 670230,
+      "Entries": [
+        "Monsan0"
+      ]
+    },
+    {
+      "ID": 670231,
+      "Entries": [
+        "Monsan1"
+      ]
+    },
+    {
+      "ID": 670232,
+      "Entries": [
+        "Monsan2"
+      ]
+    },
+    {
+      "ID": 670233,
+      "Entries": [
+        "Monsan3"
+      ]
+    },
+    {
+      "ID": 670530,
+      "Entries": [
+        "Rotten Great Tree 00"
+      ]
+    },
+    {
+      "ID": 670531,
+      "Entries": [
+        "Rotten Great Tree 01"
+      ]
+    },
+    {
+      "ID": 670532,
+      "Entries": [
+        "Rotten Great Tree 02"
+      ]
+    },
+    {
+      "ID": 670534,
+      "Entries": [
+        "Rotten Great Tree 04"
+      ]
+    },
+    {
+      "ID": 670535,
+      "Entries": [
+        "Rotten Great Tree 05"
+      ]
+    },
+    {
+      "ID": 670536,
+      "Entries": [
+        "Rotten Great Tree 06"
+      ]
+    },
+    {
+      "ID": 670537,
+      "Entries": [
+        "Rotten Great Tree 07"
+      ]
+    },
+    {
+      "ID": 670539,
+      "Entries": [
+        "Rotten Great Tree 09"
+      ]
+    },
+    {
+      "ID": 670351,
+      "Entries": [
+        "Volcano Prison 1"
+      ]
+    },
+    {
+      "ID": 670352,
+      "Entries": [
+        "Volcano Prison 2"
+      ]
+    },
+    {
+      "ID": 670353,
+      "Entries": [
+        "Volcano Prison 3"
+      ]
+    },
+    {
+      "ID": 670354,
+      "Entries": [
+        "Volcano Prison 4"
+      ]
+    },
+    {
+      "ID": 670750,
+      "Entries": [
+        "Final Boss 00"
+      ]
+    },
+    {
+      "ID": 670160,
+      "Entries": [
+        "Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 670161,
+      "Entries": [
+        "Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 670162,
+      "Entries": [
+        "Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 670163,
+      "Entries": [
+        "Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 670164,
+      "Entries": [
+        "Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 670260,
+      "Entries": [
+        "Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 670261,
+      "Entries": [
+        "Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 670262,
+      "Entries": [
+        "Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 670360,
+      "Entries": [
+        "Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 670361,
+      "Entries": [
+        "Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 670362,
+      "Entries": [
+        "Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 670363,
+      "Entries": [
+        "Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 670364,
+      "Entries": [
+        "Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 670460,
+      "Entries": [
+        "Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 670461,
+      "Entries": [
+        "Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 670462,
+      "Entries": [
+        "Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 670560,
+      "Entries": [
+        "Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 670561,
+      "Entries": [
+        "Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 670562,
+      "Entries": [
+        "Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 670563,
+      "Entries": [
+        "Catacombs 5-4"
+      ]
+    },
+    {
+      "ID": 670170,
+      "Entries": [
+        "Cave 1-1"
+      ]
+    },
+    {
+      "ID": 670171,
+      "Entries": [
+        "Cave 1-2"
+      ]
+    },
+    {
+      "ID": 670172,
+      "Entries": [
+        "Cave 1-3"
+      ]
+    },
+    {
+      "ID": 670173,
+      "Entries": [
+        "Cave1-4"
+      ]
+    },
+    {
+      "ID": 670174,
+      "Entries": [
+        "Cave1-5"
+      ]
+    },
+    {
+      "ID": 670175,
+      "Entries": [
+        "Cave1-6"
+      ]
+    },
+    {
+      "ID": 670270,
+      "Entries": [
+        "Cave2-1"
+      ]
+    },
+    {
+      "ID": 670271,
+      "Entries": [
+        "Cave2-2"
+      ]
+    },
+    {
+      "ID": 670272,
+      "Entries": [
+        "Cave2-3"
+      ]
+    },
+    {
+      "ID": 670370,
+      "Entries": [
+        "Cave3-1"
+      ]
+    },
+    {
+      "ID": 670371,
+      "Entries": [
+        "Cave3-2"
+      ]
+    },
+    {
+      "ID": 670372,
+      "Entries": [
+        "Cave3-3"
+      ]
+    },
+    {
+      "ID": 670373,
+      "Entries": [
+        "Cave3-4"
+      ]
+    },
+    {
+      "ID": 670470,
+      "Entries": [
+        "Cave4-1"
+      ]
+    },
+    {
+      "ID": 670471,
+      "Entries": [
+        "Cave4-2"
+      ]
+    },
+    {
+      "ID": 670472,
+      "Entries": [
+        "Cave4-3"
+      ]
+    },
+    {
+      "ID": 670473,
+      "Entries": [
+        "Cave4-4"
+      ]
+    },
+    {
+      "ID": 670570,
+      "Entries": [
+        "Cave5-1"
+      ]
+    },
+    {
+      "ID": 670571,
+      "Entries": [
+        "Cave5-2"
+      ]
+    },
+    {
+      "ID": 670180,
+      "Entries": [
+        "Tunnel 1-1"
+      ]
+    },
+    {
+      "ID": 670181,
+      "Entries": [
+        "Tunnel 1-2"
+      ]
+    },
+    {
+      "ID": 670280,
+      "Entries": [
+        "Tunnel 2-1"
+      ]
+    },
+    {
+      "ID": 670380,
+      "Entries": [
+        "Tunnel 3-1"
+      ]
+    },
+    {
+      "ID": 670381,
+      "Entries": [
+        "Tunnel3-3"
+      ]
+    },
+    {
+      "ID": 670480,
+      "Entries": [
+        "Tunnel4-1"
+      ]
+    },
+    {
+      "ID": 670481,
+      "Entries": [
+        "Tunnel4-2"
+      ]
+    },
+    {
+      "ID": 670580,
+      "Entries": [
+        "Tunnel5-1"
+      ]
+    },
+    {
+      "ID": 670390,
+      "Entries": [
+        "Tunnel 3-2"
+      ]
+    },
+    {
+      "ID": 670490,
+      "Entries": [
+        "Divine Tower (Plains) 1"
+      ]
+    },
+    {
+      "ID": 670340,
+      "Entries": [
+        "Royal Capital Sewers 0"
+      ]
+    },
+    {
+      "ID": 670341,
+      "Entries": [
+        "Royal Capital Sewers 1"
+      ]
+    },
+    {
+      "ID": 670342,
+      "Entries": [
+        "Royal Capital Sewers 2"
+      ]
+    },
+    {
+      "ID": 670240,
+      "Entries": [
+        "Cliff Tunnel0"
+      ]
+    },
+    {
+      "ID": 670241,
+      "Entries": [
+        "Cliff Tunnel1"
+      ]
+    },
+    {
+      "ID": 670100,
+      "Entries": [
+        "Open Green Second Half Ant Ruins"
+      ]
+    },
+    {
+      "ID": 670101,
+      "Entries": [
+        "Open Green First Half Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 670102,
+      "Entries": [
+        "Open Green First Half Wyvern"
+      ]
+    },
+    {
+      "ID": 670103,
+      "Entries": [
+        "Open Green First Half Agheel Ruins"
+      ]
+    },
+    {
+      "ID": 670104,
+      "Entries": [
+        "Open Green Second Half World Tree Demon"
+      ]
+    },
+    {
+      "ID": 670105,
+      "Entries": [
+        "Open Green Second Half Fort"
+      ]
+    },
+    {
+      "ID": 670106,
+      "Entries": [
+        "Open Green First Half Tenebrae Inn Ruins"
+      ]
+    },
+    {
+      "ID": 670200,
+      "Entries": [
+        "Open Lake First Half Small World Tree 1"
+      ]
+    },
+    {
+      "ID": 670201,
+      "Entries": [
+        "Open Lake First Half Glintstone Wyvern"
+      ]
+    },
+    {
+      "ID": 670202,
+      "Entries": [
+        "Open Lake First Half Leg Cripple Village"
+      ]
+    },
+    {
+      "ID": 670203,
+      "Entries": [
+        "Open Lake First Half Royal Noble Ruins"
+      ]
+    },
+    {
+      "ID": 670204,
+      "Entries": [
+        "Open Lake First Half Fort"
+      ]
+    },
+    {
+      "ID": 670205,
+      "Entries": [
+        "Open Lake First Half Small World Tree 2"
+      ]
+    },
+    {
+      "ID": 670300,
+      "Entries": [
+        "Open Highland Volcano King's Mole at Lava Flow Zone"
+      ]
+    },
+    {
+      "ID": 670301,
+      "Entries": [
+        "Open Highland Volcano Demi-Human King A at Demi-Human Settlement"
+      ]
+    },
+    {
+      "ID": 670303,
+      "Entries": [
+        "Open Highland Volcano Snake Spirit at Small World Tree"
+      ]
+    },
+    {
+      "ID": 670304,
+      "Entries": [
+        "Open Highland Volcano Open Highland Demi-Human King B at Demi-Human Settlement"
+      ]
+    },
+    {
+      "ID": 670305,
+      "Entries": [
+        "Open Highland Volcano Large Enemy at Sub-route Entrance Plains"
+      ]
+    },
+    {
+      "ID": 670306,
+      "Entries": [
+        "Open Highland Volcano Bloodstained Vulture Knight at Fort"
+      ]
+    },
+    {
+      "ID": 670307,
+      "Entries": [
+        "Open Highland First Half Demon's Blood Monk at Highway Ruins Basement"
+      ]
+    },
+    {
+      "ID": 670308,
+      "Entries": [
+        "Open Highland First Half Windmill Village Summit Godskin Apostle (Another)"
+      ]
+    },
+    {
+      "ID": 670309,
+      "Entries": [
+        "Open Highland Royal Capital Base of World Tree Before Royal Capital Death Cult + NPC Binding Death Cult"
+      ]
+    },
+    {
+      "ID": 670310,
+      "Entries": [
+        "Open Highland Royal Capital Royal Capital Entrance Front Tree Sentinel (Variant)"
+      ]
+    },
+    {
+      "ID": 670400,
+      "Entries": [
+        "Open Plains Small World Tree World Tree Demon"
+      ]
+    },
+    {
+      "ID": 670401,
+      "Entries": [
+        "Open Plains Ruins 4-4 Kirem Ruins"
+      ]
+    },
+    {
+      "ID": 670402,
+      "Entries": [
+        "Open Plains Front of Dragon Feast Church Rotten Wyvern"
+      ]
+    },
+    {
+      "ID": 670403,
+      "Entries": [
+        "Open Plains Poison Swamp Center Veteran General"
+      ]
+    },
+    {
+      "ID": 670404,
+      "Entries": [
+        "Open Plains Ruined Town Butcher"
+      ]
+    },
+    {
+      "ID": 670405,
+      "Entries": [
+        "Open Plains Dragon Mound Giant Wyvern"
+      ]
+    },
+    {
+      "ID": 670406,
+      "Entries": [
+        "Open Plains Fort Sixteen Knights + Radagon Lion"
+      ]
+    },
+    {
+      "ID": 670407,
+      "Entries": [
+        "Open Plains Radahn's Desert Radahn"
+      ]
+    },
+    {
+      "ID": 670408,
+      "Entries": [
+        "Open Plains Small World Tree 4-2 World Tree Demon"
+      ]
+    },
+    {
+      "ID": 670409,
+      "Entries": [
+        "Open Plains Great Bridge Wyvern and Gargoyle"
+      ]
+    },
+    {
+      "ID": 670500,
+      "Entries": [
+        "Open Snowy Mountain Before Large EV Royal Capital Gargoyle_Maliketh Kin"
+      ]
+    },
+    {
+      "ID": 670501,
+      "Entries": [
+        "Open Snowy Mountain Ice Lake Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 670502,
+      "Entries": [
+        "Open Snowy Mountain Giant Graveyard Giant"
+      ]
+    },
+    {
+      "ID": 670503,
+      "Entries": [
+        "Open Snowy Mountain Exclave Small World Tree World Tree Demon"
+      ]
+    },
+    {
+      "ID": 670504,
+      "Entries": [
+        "Open Snowy Mountain Sub-route Graveyard Zone Deathbird"
+      ]
+    },
+    {
+      "ID": 670505,
+      "Entries": [
+        "Open Snowy Mountain Fort Aged Veteran General"
+      ]
+    },
+    {
+      "ID": 670506,
+      "Entries": [
+        "Open Snowy Mountain Near Frozen River King's Mole Large"
+      ]
+    },
+    {
+      "ID": 670507,
+      "Entries": [
+        "Open Snowy Mountain Small World Tree World Tree Demon Rot Variant"
+      ]
+    }
+  ]
+}

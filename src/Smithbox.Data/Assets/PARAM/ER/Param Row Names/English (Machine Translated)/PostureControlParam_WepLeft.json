@@ -10,127 +10,127 @@
     {
       "ID": 1,
       "Entries": [
-        "Left hand Reaper"
+        "Left Hand Scythe"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Left hand Catalyst"
+        "Left Hand Catalyst"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Left hand Greatshield"
+        "Left Hand Greatshield"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "Left hand Torch"
+        "Left Hand Torch"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Left hand sword type"
+        "Left Hand Sword Type"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Left hand fist/claw type"
+        "Left Hand Fist, Claw Type"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Left hand heavy sword type"
+        "Left Hand Heavy Sword Type"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Left hand axe/hammer type"
+        "Left Hand Axe, Hammer Type"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Left hand Twinblade"
+        "Left Hand Twinblade"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Left hand Dueling Shield"
+        "Left Hand Dueling Shield"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Mounted_Standard"
+        "Mount_Standard"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Mounted_Left-Hand Reaper"
+        "Mount_Left Hand Scythe"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Mounted_Left-Hand Catalyst"
+        "Mount_Left Hand Catalyst"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Mounted_Left-Hand Greatshield"
+        "Mount_Left Hand Greatshield"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Mounted_Left-Hand Torch"
+        "Mount_Left Hand Torch"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Mounted_Left-Hand Sword Type"
+        "Mount_Left Hand Sword Type"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Mounted_Left-Hand Fist/Claw Type"
+        "Mount_Left Hand Fist, Claw Type"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Mounted_Left-Hand Heavy Sword Type"
+        "Mount_Left Hand Heavy Sword Type"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Mounted_Left-Hand Axe/Hammer Type"
+        "Mount_Left Hand Axe, Hammer Type"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Mounted_Left-Hand Twinblade"
+        "Mount_Left Hand Twinblade"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Mounted_Left-Hand Dueling Shield"
+        "Mount_Left Hand Dueling Shield"
       ]
     },
     {
@@ -142,7 +142,7 @@
     {
       "ID": 201,
       "Entries": [
-        "Crouch_Left Hand Reaper"
+        "Crouch_Left Hand Scythe"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 206,
       "Entries": [
-        "Crouch_Left Hand Fist"
+        "Crouch_Left Hand Fist, Claw Type"
       ]
     },
     {
@@ -184,7 +184,7 @@
     {
       "ID": 208,
       "Entries": [
-        "Crouch_Left Hand Axe"
+        "Crouch_Left Hand Axe, Hammer Type"
       ]
     },
     {

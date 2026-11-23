@@ -4,13 +4,13 @@
     {
       "ID": 1,
       "Entries": [
-        "Must Not Extinguish"
+        "Do Not Delete"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        "Host Cost"
+        "Host Conversion Cost"
       ]
     },
     {
@@ -22,13 +22,13 @@
     {
       "ID": 30101,
       "Entries": [
-        "Upper Fire Pot"
+        "Greater Fire Pot"
       ]
     },
     {
       "ID": 30102,
       "Entries": [
-        "Upper Fire Pot 2"
+        "Greater Fire Pot 2"
       ]
     },
     {
@@ -40,31 +40,31 @@
     {
       "ID": 30104,
       "Entries": [
-        "Upper Lightning Pot"
+        "Greater Lightning Pot"
       ]
     },
     {
       "ID": 30105,
       "Entries": [
-        "Feces Pot"
+        "Dung Pot"
       ]
     },
     {
       "ID": 30106,
       "Entries": [
-        "Insect Jar"
+        "Bug Pot"
       ]
     },
     {
       "ID": 30107,
       "Entries": [
-        "Holy Water Vial"
+        "Holy Water Bottle"
       ]
     },
     {
       "ID": 30108,
       "Entries": [
-        "Upper Holy Water Flask"
+        "Greater Holy Water Bottle"
       ]
     },
     {
@@ -94,7 +94,7 @@
     {
       "ID": 30113,
       "Entries": [
-        "Lure Skull (Beast)"
+        "Luring Skull (Anti-Beast)"
       ]
     },
     {
@@ -136,7 +136,7 @@
     {
       "ID": 30120,
       "Entries": [
-        "Tethered Bug Pot"
+        "Tethered Bug Jar"
       ]
     },
     {
@@ -148,37 +148,37 @@
     {
       "ID": 30123,
       "Entries": [
-        "Tethered Holy Water Flask"
+        "Tethered Holy Water Bottle"
       ]
     },
     {
       "ID": 30124,
       "Entries": [
-        "Volcano Gas Pot"
+        "Volcanic Gas Pot"
       ]
     },
     {
       "ID": 30125,
       "Entries": [
-        "Immortal Hunter's Talisman"
+        "Undead Hunter\u0027s Talisman"
       ]
     },
     {
       "ID": 30126,
       "Entries": [
-        "Cursed Blood Pot"
+        "Cursed-Blood Pot"
       ]
     },
     {
       "ID": 30127,
       "Entries": [
-        "Sleep Pot (Former Sleep Cloud)"
+        "Sleep Pot (Old Sleep Cloud)"
       ]
     },
     {
       "ID": 30128,
       "Entries": [
-        "Throw (Those Who Pursue)"
+        "Throw (The Pursuers)"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 30130,
       "Entries": [
-        "Throw (Greater Sorcery Pot)"
+        "Throw (Greater Magic Pot)"
       ]
     },
     {
@@ -220,37 +220,37 @@
     {
       "ID": 30300,
       "Entries": [
-        "Poison Cure Medicine"
+        "Neutralizing Boluses"
       ]
     },
     {
       "ID": 30301,
       "Entries": [
-        "Bleed Cure Medicine"
+        "Stanching Boluses"
       ]
     },
     {
       "ID": 30302,
       "Entries": [
-        "Frost Cure Medicine"
+        "Frost Cure"
       ]
     },
     {
       "ID": 30303,
       "Entries": [
-        "Sleep Cure Medicine"
+        "Sleep Cure"
       ]
     },
     {
       "ID": 30304,
       "Entries": [
-        "Plague Recovery"
+        "Plague Cure"
       ]
     },
     {
       "ID": 30305,
       "Entries": [
-        "Death Cure Medicine"
+        "Instant Death Cure"
       ]
     },
     {
@@ -268,13 +268,13 @@
     {
       "ID": 30401,
       "Entries": [
-        "Herbivore Jerky (Poison/Scarlet Rot Resistance UP)"
+        "Herbivore Jerky (Poison/Plague Resistance UP)"
       ]
     },
     {
       "ID": 30402,
       "Entries": [
-        "Herbivore Jerky (Blood Loss/Frost Resistance UP)"
+        "Herbivore Jerky (Bleed/Frost Resistance UP)"
       ]
     },
     {
@@ -298,7 +298,7 @@
     {
       "ID": 30406,
       "Entries": [
-        "Herbivore Liver (Cut Rate UP_Fire)"
+        "Herbivore Liver (Cut Rate UP_Flame)"
       ]
     },
     {
@@ -316,49 +316,49 @@
     {
       "ID": 30409,
       "Entries": [
-        "Bird Dried Meat (Item Drop Rate UP)"
+        "Bird Jerky (Item Drop Rate UP)"
       ]
     },
     {
       "ID": 30410,
       "Entries": [
-        "Bird Dried Meat (Rune)"
+        "Bird Jerky (Rune)"
       ]
     },
     {
       "ID": 30411,
       "Entries": [
-        "Dried Carnivore Meat"
+        "Carnivore Jerky"
       ]
     },
     {
       "ID": 30413,
       "Entries": [
-        "Bloodless Dried Meat (Poison/Scarlet Rot Resistance Up)?"
+        "Bloodless Jerky (Poison/Plague Resistance UP)?"
       ]
     },
     {
       "ID": 30414,
       "Entries": [
-        "Bloodless Dried Meat (Bleed/Frost Resistance Up)?"
+        "Bloodless Jerky (Bleed/Frost Resistance UP)?"
       ]
     },
     {
       "ID": 30415,
       "Entries": [
-        "Bloodless Dried Meat (Sleep/Madness Resistance Up)?"
+        "Bloodless Jerky (Sleep/Madness Resistance UP)?"
       ]
     },
     {
       "ID": 30416,
       "Entries": [
-        "Bloodless Dried Meat (All Resistances Up)?"
+        "Bloodless Jerky (All Resistance UP)?"
       ]
     },
     {
       "ID": 30500,
       "Entries": [
-        "Fire Fat"
+        "Fire Grease"
       ]
     },
     {
@@ -370,19 +370,19 @@
     {
       "ID": 30502,
       "Entries": [
-        "Magic Fat"
+        "Magic Grease"
       ]
     },
     {
       "ID": 30503,
       "Entries": [
-        "Golden Fat"
+        "Gold Grease"
       ]
     },
     {
       "ID": 30504,
       "Entries": [
-        "Bloodbound Resin"
+        "Bleed Resin"
       ]
     },
     {
@@ -394,13 +394,13 @@
     {
       "ID": 30506,
       "Entries": [
-        "Poison Fat"
+        "Poison Grease"
       ]
     },
     {
       "ID": 30507,
       "Entries": [
-        "Frostbite Pine Resin"
+        "Frostbite Resin"
       ]
     },
     {
@@ -418,31 +418,31 @@
     {
       "ID": 30510,
       "Entries": [
-        "Quick Fire Resin"
+        "Quick Fire Grease"
       ]
     },
     {
       "ID": 30511,
       "Entries": [
-        "Quick Lightning Resin"
+        "Quick Lightning Grease"
       ]
     },
     {
       "ID": 30512,
       "Entries": [
-        "Quick Magic Resin"
+        "Quick Magic Grease"
       ]
     },
     {
       "ID": 30513,
       "Entries": [
-        "Quick Golden Resin"
+        "Quick Gold Grease"
       ]
     },
     {
       "ID": 30514,
       "Entries": [
-        "Quick Blood Loss Resin"
+        "Quick Bleed Resin"
       ]
     },
     {
@@ -460,7 +460,7 @@
     {
       "ID": 30518,
       "Entries": [
-        "Quick Scarlet Rot Resin"
+        "Quick Plague Resin"
       ]
     },
     {
@@ -496,19 +496,19 @@
     {
       "ID": 30701,
       "Entries": [
-        "Light Stone"
+        "Glowstone"
       ]
     },
     {
       "ID": 30702,
       "Entries": [
-        "Seven-Colored Stone Indicating Direction"
+        "Seven-Color Stone Showing Direction"
       ]
     },
     {
       "ID": 30703,
       "Entries": [
-        "Vine-Woven Shoes"
+        "Woven Vine Shoes"
       ]
     },
     {
@@ -532,13 +532,13 @@
     {
       "ID": 30802,
       "Entries": [
-        "Chaos Warmth Fire"
+        "Warmth of Chaos Fire"
       ]
     },
     {
       "ID": 30803,
       "Entries": [
-        "Request Advice"
+        "Seek Advice"
       ]
     },
     {
@@ -550,31 +550,31 @@
     {
       "ID": 30900,
       "Entries": [
-        "Perfumer Magic (Scatter Buff)"
+        "Perfume Magic (Scattered Buff)"
       ]
     },
     {
       "ID": 30901,
       "Entries": [
-        "Perfumer Magic (Horizontal Swing Attack)"
+        "Perfume Magic (Horizontal Swing Attack)"
       ]
     },
     {
       "ID": 30902,
       "Entries": [
-        "Perfumer Magic (Iron Transformation)"
+        "Perfume Magic (Ironize)"
       ]
     },
     {
       "ID": 30903,
       "Entries": [
-        "Perfumer Magic (Decadence"
+        "Perfume Magic (Corrupted/Drinkable Buff)"
       ]
     },
     {
       "ID": 30904,
       "Entries": [
-        "(Beast-tribe toxic pollen)"
+        "(Worm-Eaten Race\u0027s) Poison Pollen"
       ]
     },
     {
@@ -598,37 +598,37 @@
     {
       "ID": 32002,
       "Entries": [
-        "Fire Arrow (Handmade"
+        "Fire Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32003,
       "Entries": [
-        "Fire Arrow (Handmade"
+        "Fire Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32004,
       "Entries": [
-        "Poison Arrow (Handmade"
+        "Poison Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32005,
       "Entries": [
-        "Poison Arrow (Handmade"
+        "Poison Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32006,
       "Entries": [
-        "Sleep Arrow (Handmade"
+        "Sleep Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32007,
       "Entries": [
-        "Sleep Arrow (Handmade"
+        "Sleep Arrow (Handmade/Unfletched)"
       ]
     },
     {
@@ -640,85 +640,85 @@
     {
       "ID": 32009,
       "Entries": [
-        "Lightning Arrow (Handmade"
+        "Lightning Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32010,
       "Entries": [
-        "Lightning Arrow (Handmade"
+        "Lightning Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32011,
       "Entries": [
-        "Seven-Colored Stone Arrow (No Fletching)"
+        "Rainbow Stone Arrow (Unfletched)"
       ]
     },
     {
       "ID": 32012,
       "Entries": [
-        "Sound-sending Arrow (Unfletched)"
+        "Sound Arrow (Unfletched)"
       ]
     },
     {
       "ID": 32013,
       "Entries": [
-        "Magic Arrow (Handmade"
+        "Magic Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32014,
       "Entries": [
-        "Magic Arrow (Handmade"
+        "Magic Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32015,
       "Entries": [
-        "Holy Arrow (Handmade"
+        "Holy Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32016,
       "Entries": [
-        "Holy Arrow (Handmade"
+        "Holy Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32017,
       "Entries": [
-        "Blood Loss Arrow (Handmade"
+        "Bleed Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32018,
       "Entries": [
-        "Bloodloss Arrow (Handmade"
+        "Bleed Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32019,
       "Entries": [
-        "Frost Arrow (Handmade"
+        "Frost Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32020,
       "Entries": [
-        "Frost Arrow (Handmade"
+        "Frost Arrow (Handmade/Unfletched)"
       ]
     },
     {
       "ID": 32021,
       "Entries": [
-        "Plague Arrow (Handmade"
+        "Plague Arrow (Handmade/Fletched)"
       ]
     },
     {
       "ID": 32022,
       "Entries": [
-        "Plague Arrow (Handmade"
+        "Plague Arrow (Handmade/Unfletched)"
       ]
     },
     {
@@ -772,7 +772,7 @@
     {
       "ID": 32206,
       "Entries": [
-        "Blood Loss Bolt (Handmade)"
+        "Bleed Bolt (Handmade)"
       ]
     },
     {
@@ -796,7 +796,7 @@
     {
       "ID": 32300,
       "Entries": [
-        "Large Bone Bolt"
+        "Bone Great Bolt"
       ]
     }
   ]

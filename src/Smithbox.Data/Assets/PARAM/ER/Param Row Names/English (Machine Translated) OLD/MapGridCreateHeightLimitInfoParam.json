@@ -1,0 +1,17 @@
+{
+  "Name": "MapGridCreateHeightLimitInfoParam",
+  "Entries": [
+    {
+      "ID": 60081302,
+      "Entries": [
+        "m60_08_13_02 Volcano Left Same as above"
+      ]
+    },
+    {
+      "ID": 60091302,
+      "Entries": [
+        "m60_09_13_02 Volcano Right Min side: destroy at 490m"
+      ]
+    }
+  ]
+}

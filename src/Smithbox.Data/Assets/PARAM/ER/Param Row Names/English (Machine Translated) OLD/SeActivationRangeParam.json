@@ -1,0 +1,809 @@
+{
+  "Name": "SeActivationRangeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default Parameter"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Immolation World Tree"
+      ]
+    },
+    {
+      "ID": 100000000,
+      "Entries": [
+        "Stormveil Castle Entrance Strong Wind"
+      ]
+    },
+    {
+      "ID": 100000001,
+      "Entries": [
+        "Stormveil Castle Strong Wind"
+      ]
+    },
+    {
+      "ID": 100001000,
+      "Entries": [
+        "Stormveil Castle Banner Sway"
+      ]
+    },
+    {
+      "ID": 100002000,
+      "Entries": [
+        "Stormveil Castle Gust Holes"
+      ]
+    },
+    {
+      "ID": 100003000,
+      "Entries": [
+        "Stormveil Castle Falling Leaves"
+      ]
+    },
+    {
+      "ID": 110005000,
+      "Entries": [
+        "Royal Capital Large Puddle ※Indoor/Outdoor RTPC Setting"
+      ]
+    },
+    {
+      "ID": 110005001,
+      "Entries": [
+        "Royal Capital Large Puddle"
+      ]
+    },
+    {
+      "ID": 110005020,
+      "Entries": [
+        "Royal Capital Seaside"
+      ]
+    },
+    {
+      "ID": 110005100,
+      "Entries": [
+        "Royal Capital Waterfall (Small)"
+      ]
+    },
+    {
+      "ID": 110006000,
+      "Entries": [
+        "Royal Capital Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 110100000,
+      "Entries": [
+        "Royal Capital Base Fire ※After Erdtree Burns"
+      ]
+    },
+    {
+      "ID": 110500000,
+      "Entries": [
+        "Royal Capital (Ash) Burning Erdtree"
+      ]
+    },
+    {
+      "ID": 120005000,
+      "Entries": [
+        "Underground Ruins Waterfall_Distant View"
+      ]
+    },
+    {
+      "ID": 120005001,
+      "Entries": [
+        "Underground Ruins Waterfall_150m"
+      ]
+    },
+    {
+      "ID": 120005002,
+      "Entries": [
+        "Underground Ruins Waterfall_190m"
+      ]
+    },
+    {
+      "ID": 120005010,
+      "Entries": [
+        "Underground Ruins Large Puddle"
+      ]
+    },
+    {
+      "ID": 120005020,
+      "Entries": [
+        "Underground Ruins Sea"
+      ]
+    },
+    {
+      "ID": 120005100,
+      "Entries": [
+        "Underground Ruins Waterfall (Small)"
+      ]
+    },
+    {
+      "ID": 120005200,
+      "Entries": [
+        "Underground Ruins Waterfall (Large)_Upper"
+      ]
+    },
+    {
+      "ID": 120005201,
+      "Entries": [
+        "Underground Ruins Waterfall (Large)_Upper_Audible Distance_Large"
+      ]
+    },
+    {
+      "ID": 120005210,
+      "Entries": [
+        "Underground Ruins Waterfall (Large)_Lower_Audible Distance_100m"
+      ]
+    },
+    {
+      "ID": 120005211,
+      "Entries": [
+        "Underground Ruins Waterfall (Large)_Lower_Audible Distance_35m"
+      ]
+    },
+    {
+      "ID": 120005220,
+      "Entries": [
+        "Underground Ruins Waterfall_Ambience"
+      ]
+    },
+    {
+      "ID": 120005230,
+      "Entries": [
+        "Underground Ruins Waterfall_Poison (Upper)"
+      ]
+    },
+    {
+      "ID": 120005240,
+      "Entries": [
+        "Underground Ruins Waterfall_Poison (Lower)"
+      ]
+    },
+    {
+      "ID": 120005250,
+      "Entries": [
+        "Underground Ruins River_Poison"
+      ]
+    },
+    {
+      "ID": 120005400,
+      "Entries": [
+        "Underground Ruins Flies Swarm_Dead Prince"
+      ]
+    },
+    {
+      "ID": 120300000,
+      "Entries": [
+        "Underground Labyrinth Underground Royal Capital Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 120500000,
+      "Entries": [
+        "Underground Labyrinth Groaning near Greater Demon"
+      ]
+    },
+    {
+      "ID": 130000000,
+      "Entries": [
+        "Descending Ruins Large Tornado"
+      ]
+    },
+    {
+      "ID": 130000001,
+      "Entries": [
+        "Descending Ruins Whirlwind Opening"
+      ]
+    },
+    {
+      "ID": 130000002,
+      "Entries": [
+        "Descending Ruins Whirlwind Opening Dead End"
+      ]
+    },
+    {
+      "ID": 130000003,
+      "Entries": [
+        "Descending Ruins Whirlwind Opening Open"
+      ]
+    },
+    {
+      "ID": 130000004,
+      "Entries": [
+        "Descending Ruins Whirlwind and Dragon Distant View"
+      ]
+    },
+    {
+      "ID": 130000100,
+      "Entries": [
+        "Descending Ruins Intro Tornado"
+      ]
+    },
+    {
+      "ID": 130000200,
+      "Entries": [
+        "Descending Ruins Intro Lightning"
+      ]
+    },
+    {
+      "ID": 130001000,
+      "Entries": [
+        "Descending Ruins Intro Dragon"
+      ]
+    },
+    {
+      "ID": 130005000,
+      "Entries": [
+        "Descending Ruins Large Puddle"
+      ]
+    },
+    {
+      "ID": 130005200,
+      "Entries": [
+        "Descending Ruins Waterfall (Upper)"
+      ]
+    },
+    {
+      "ID": 140000099,
+      "Entries": [
+        "Monsan Cuckoo Test"
+      ]
+    },
+    {
+      "ID": 140001000,
+      "Entries": [
+        "Monsan Waterwheel"
+      ]
+    },
+    {
+      "ID": 140002000,
+      "Entries": [
+        "Monsan Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 150003000,
+      "Entries": [
+        "Rotten Great Tree Stormveil Castle Leaf Copy"
+      ]
+    },
+    {
+      "ID": 150005000,
+      "Entries": [
+        "Rotten Great Tree Large Puddle"
+      ]
+    },
+    {
+      "ID": 150005020,
+      "Entries": [
+        "Rotten Great Tree Sea"
+      ]
+    },
+    {
+      "ID": 150005100,
+      "Entries": [
+        "Rotten Great Tree Waterfall System_(Small)"
+      ]
+    },
+    {
+      "ID": 150005230,
+      "Entries": [
+        "Rotten Great Tree Large Waterfall_Poison"
+      ]
+    },
+    {
+      "ID": 150005240,
+      "Entries": [
+        "Rotten Great Tree Poison Swamp"
+      ]
+    },
+    {
+      "ID": 150005300,
+      "Entries": [
+        "Rotten Great Tree Stream"
+      ]
+    },
+    {
+      "ID": 160000100,
+      "Entries": [
+        "Volcano Prison Campfire (Temporary)"
+      ]
+    },
+    {
+      "ID": 160001000,
+      "Entries": [
+        "Volcano Prison_Ambient Sound Copy_Hidden Passage Use"
+      ]
+    },
+    {
+      "ID": 160005000,
+      "Entries": [
+        "Volcano Prison Lava Ambient Sound"
+      ]
+    },
+    {
+      "ID": 160005001,
+      "Entries": [
+        "Volcano Prison Lava Ambient Sound [Hidden Passage]"
+      ]
+    },
+    {
+      "ID": 160005100,
+      "Entries": [
+        "Volcano Prison Lava Ambient Sound_Waterfall"
+      ]
+    },
+    {
+      "ID": 160005101,
+      "Entries": [
+        "Volcano Prison Lava Ambient Sound_Waterfall [Hidden Passage]"
+      ]
+    },
+    {
+      "ID": 160005110,
+      "Entries": [
+        "Volcano Prison Lava Ambient Sound_Waterfall Basin"
+      ]
+    },
+    {
+      "ID": 160005111,
+      "Entries": [
+        "Volcano Prison Lava Ambient Sound_Waterfall Basin [Hidden Passage]"
+      ]
+    },
+    {
+      "ID": 160005200,
+      "Entries": [
+        "Volcano Prison_Large Puddle"
+      ]
+    },
+    {
+      "ID": 180005400,
+      "Entries": [
+        "Tutorial Map Poison Swamp"
+      ]
+    },
+    {
+      "ID": 300005000,
+      "Entries": [
+        "Catacombs Large Puddle"
+      ]
+    },
+    {
+      "ID": 300005100,
+      "Entries": [
+        "Catacombs Lava River"
+      ]
+    },
+    {
+      "ID": 300005400,
+      "Entries": [
+        "Catacombs Poison Swamp"
+      ]
+    },
+    {
+      "ID": 310005000,
+      "Entries": [
+        "Cave Large Puddle"
+      ]
+    },
+    {
+      "ID": 310005010,
+      "Entries": [
+        "Cave Large Puddle Magic Ver"
+      ]
+    },
+    {
+      "ID": 310005100,
+      "Entries": [
+        "Cave Interior_Waterfall(Small)"
+      ]
+    },
+    {
+      "ID": 310005101,
+      "Entries": [
+        "Cave Interior_Waterfall(Small) For Cave 3-4 Narrow Audible Range Ver"
+      ]
+    },
+    {
+      "ID": 310005200,
+      "Entries": [
+        "Cave Waterfall Upper"
+      ]
+    },
+    {
+      "ID": 310005210,
+      "Entries": [
+        "Cave Waterfall Lower"
+      ]
+    },
+    {
+      "ID": 310005220,
+      "Entries": [
+        "Cave Waterfall Ambient Sound (Distant)"
+      ]
+    },
+    {
+      "ID": 310005300,
+      "Entries": [
+        "Cave Waterfall Middle_Small Stream"
+      ]
+    },
+    {
+      "ID": 310005410,
+      "Entries": [
+        "Cave Poison Swamp (Red)"
+      ]
+    },
+    {
+      "ID": 310005420,
+      "Entries": [
+        "Cave Poison Swamp (Red) Waterfall"
+      ]
+    },
+    {
+      "ID": 340100000,
+      "Entries": [
+        "Divine Tower Snowy Mountain Burning Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 340100010,
+      "Entries": [
+        "Divine Tower Green Burning Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 340112000,
+      "Entries": [
+        "Upside-Down Tower Chandelier Sway"
+      ]
+    },
+    {
+      "ID": 340115000,
+      "Entries": [
+        "Upside-Down Tower Water"
+      ]
+    },
+    {
+      "ID": 340115001,
+      "Entries": [
+        "Upside-Down Tower Elevator_Water_Sphere"
+      ]
+    },
+    {
+      "ID": 340115100,
+      "Entries": [
+        "Upside-Down Tower Waterfall"
+      ]
+    },
+    {
+      "ID": 340115101,
+      "Entries": [
+        "Upside-Down Tower Waterfall"
+      ]
+    },
+    {
+      "ID": 340115102,
+      "Entries": [
+        "Upside-Down Tower Waterfall"
+      ]
+    },
+    {
+      "ID": 340115103,
+      "Entries": [
+        "Upside-Down Tower Waterfall"
+      ]
+    },
+    {
+      "ID": 340305010,
+      "Entries": [
+        "Divine Tower Sea Waterfall (for m34_15)"
+      ]
+    },
+    {
+      "ID": 350005000,
+      "Entries": [
+        "Puddle"
+      ]
+    },
+    {
+      "ID": 350005200,
+      "Entries": [
+        "Waterfall_Upper"
+      ]
+    },
+    {
+      "ID": 350005201,
+      "Entries": [
+        "Waterfall_Upper (Short Audible Range)"
+      ]
+    },
+    {
+      "ID": 350005210,
+      "Entries": [
+        "Waterfall_Big Eyes"
+      ]
+    },
+    {
+      "ID": 350005300,
+      "Entries": [
+        "Royal Capital Underground Sewers_Sewer Water (Medium)"
+      ]
+    },
+    {
+      "ID": 390005000,
+      "Entries": [
+        "Puddle"
+      ]
+    },
+    {
+      "ID": 390005100,
+      "Entries": [
+        "Cliff Tunnel Small Waterfall"
+      ]
+    },
+    {
+      "ID": 390005200,
+      "Entries": [
+        "Cliff Tunnel_Giant Waterfall"
+      ]
+    },
+    {
+      "ID": 600000000,
+      "Entries": [
+        "Green Waterfall SE_Lower"
+      ]
+    },
+    {
+      "ID": 600000001,
+      "Entries": [
+        "Green Tutorial Waterfall_Upper"
+      ]
+    },
+    {
+      "ID": 600000002,
+      "Entries": [
+        "Green Tutorial Waterfall_Near"
+      ]
+    },
+    {
+      "ID": 600000003,
+      "Entries": [
+        "Green Tutorial Waterfall_Near_Lower"
+      ]
+    },
+    {
+      "ID": 600000010,
+      "Entries": [
+        "Green Waterfall SE_Lower (For Crater)"
+      ]
+    },
+    {
+      "ID": 600000012,
+      "Entries": [
+        "Green Tutorial Waterfall_Near (For Crater)"
+      ]
+    },
+    {
+      "ID": 600000099,
+      "Entries": [
+        "Green Start Point Night Screams"
+      ]
+    },
+    {
+      "ID": 600000100,
+      "Entries": [
+        "Green Strong Wind (Temporarily Off)"
+      ]
+    },
+    {
+      "ID": 600005400,
+      "Entries": [
+        "Green Open Poison Swamp"
+      ]
+    },
+    {
+      "ID": 600005500,
+      "Entries": [
+        "Green Meteorite Floating"
+      ]
+    },
+    {
+      "ID": 600006000,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006001,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006002,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006003,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006004,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006005,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006006,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006010,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006011,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006012,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006020,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006021,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600006030,
+      "Entries": [
+        "Green Open Crucified Corpses_Box Placement"
+      ]
+    },
+    {
+      "ID": 600050000,
+      "Entries": [
+        "Open All Areas"
+      ]
+    },
+    {
+      "ID": 600100002,
+      "Entries": [
+        "Lake Giant Waterfall"
+      ]
+    },
+    {
+      "ID": 600102000,
+      "Entries": [
+        "Lake Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 600105000,
+      "Entries": [
+        "Lake Large Puddle"
+      ]
+    },
+    {
+      "ID": 600105400,
+      "Entries": [
+        "Lake Open Poison Swamp"
+      ]
+    },
+    {
+      "ID": 600200000,
+      "Entries": [
+        "Highland Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 600205000,
+      "Entries": [
+        "Lava Ambience_River"
+      ]
+    },
+    {
+      "ID": 600205200,
+      "Entries": [
+        "Highland Large Puddle"
+      ]
+    },
+    {
+      "ID": 600205250,
+      "Entries": [
+        "Highland Cliff Tunnel Colossal Waterfall"
+      ]
+    },
+    {
+      "ID": 600205400,
+      "Entries": [
+        "Highland Poison Swamp (Green)"
+      ]
+    },
+    {
+      "ID": 600206000,
+      "Entries": [
+        "Highland Crow 1"
+      ]
+    },
+    {
+      "ID": 600305000,
+      "Entries": [
+        "Plains Large Puddle"
+      ]
+    },
+    {
+      "ID": 600305010,
+      "Entries": [
+        "Plains Large Waterfall Plains Sea Waterfall"
+      ]
+    },
+    {
+      "ID": 600305011,
+      "Entries": [
+        "Plains Large Waterfall Copy Sea"
+      ]
+    },
+    {
+      "ID": 600305410,
+      "Entries": [
+        "Plains_Poison Swamp (Red)"
+      ]
+    },
+    {
+      "ID": 600400000,
+      "Entries": [
+        "Snowy Mountain Suspension Bridge (Wind Only)"
+      ]
+    },
+    {
+      "ID": 999999990,
+      "Entries": [
+        "BGM Mute Test"
+      ]
+    },
+    {
+      "ID": 999999991,
+      "Entries": [
+        "BGM Reset Test"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "ForTest"
+      ]
+    }
+  ]
+}

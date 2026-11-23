@@ -1,0 +1,275 @@
+{
+  "Name": "BulletCreateLimitParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[PC Sorcery] Activation of the Dead"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[PC Magic] Warmth Fire"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[PC Sorcery] Miasma of Death"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[PC Sorcery] Poison Mist"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[PC Sorcery] Virulent Mist"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[PC Magic] Acid Mist"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[PC Arts] Zombie Crow Staff_Poison Mist"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[PC Sorcery] Homesickness"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[PC Magic]Raining Soul: Spawn Bullet"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[PC Magic]Raining Soul (Slot 2: For Aimed Bullet): Spawn Bullet"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[PC Item] Warmth Stone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[PC Item] Light Stone"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[PC Magic] Flare"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[PC Magic] Area Magic Buff"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "[PC Magic] Soul Rain_Generation Bullet"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "[PC Arts] Sanctuary"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "[PC Sorcery] Lava Breath_Lava Pool"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "[PC Sorcery] Greater Lava Breath_Lava Pool"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "[PC Arts] Phantom Summon"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[PC Sorcery] Curse Death"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[PC Sorcery] Frost Mist"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[PC Item] Chaotic Warmth Fire"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[PC Sorcery] Willed Fireball"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "[PC Item] Ancestral Spirit Magic (Breath)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[PC Item] Perfumery Magic (Buff Scatter)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[PC Item] (Bug-eaten Tribe) Poison Pollen"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[PC Item] Acid Spray"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "[PC Item] Guiding Pseudo (Bonfire)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "[PC Item] Guiding Pseudo (Guidance)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[PC Item] Lure Skull (Anti-Human) [Child]"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[PC Item] Lure Skull (Anti-Human) [Grandchild]"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[PC Item] Lure Skull (Anti-Beast)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[PC Item] Insect Pot"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[PC Item] Tethered Insect Pot"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "[PC Item] Volcanic Gas Pot"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "[PC Item] Tethered Volcanic Gas Pot"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "[PC Item] Sleep Pot"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "[PC Magic] Serpent Bullet"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "[PC Sorcery] Splitting Homing Projectile"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[PC Sorcery] Small Bubble"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[PC Sorcery] Ignite"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[PC Sorcery] Rock Shrapnel"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "[PC Magic] Soul Shortarrow"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "[PC Magic] Invisible Arrow"
+      ]
+    }
+  ]
+}

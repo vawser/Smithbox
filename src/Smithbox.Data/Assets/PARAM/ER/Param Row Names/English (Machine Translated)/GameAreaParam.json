@@ -16,7 +16,7 @@
     {
       "ID": 10000800,
       "Entries": [
-        "Stormveil Grafted King"
+        "Stormveil The Grafted King"
       ]
     },
     {
@@ -28,55 +28,55 @@
     {
       "ID": 10010800,
       "Entries": [
-        "Stormveil Separated Grafted Spider"
+        "Stormveil Outbuilding Grafted Spider"
       ]
     },
     {
       "ID": 11000800,
       "Entries": [
-        "Royal Capital Margit (True)"
+        "Leyndell Margit (True)"
       ]
     },
     {
       "ID": 11000850,
       "Entries": [
-        "Royal Capital Godfrey (Phantom)"
+        "Leyndell Godfrey (Phantom)"
       ]
     },
     {
       "ID": 11050800,
       "Entries": [
-        "Royal Capital (Ash) Godfrey"
+        "Leyndell (Ash) Godfrey"
       ]
     },
     {
       "ID": 11050850,
       "Entries": [
-        "Royal Capital (Ash) Hyakuchi-kyo"
+        "Leyndell (Ash) Lord of a Hundred Wisdoms"
       ]
     },
     {
       "ID": 12010800,
       "Entries": [
-        "Underground Labyrinth Poison Swamp Lower Level Ruinator (HP Shared)"
+        "Underground Labyrinth Poison Swamp Lower Level The Desolator (Shared HP)"
       ]
     },
     {
       "ID": 12010850,
       "Entries": [
-        "Underground Labyrinth Poison Swamp Lower Level Ruinator_No HU"
+        "Underground Labyrinth Poison Swamp Lower Level The Desolator_No HU"
       ]
     },
     {
       "ID": 12020800,
       "Entries": [
-        "Underground Labyrinth Plains Upper Level Royal Capital Gargoyle Axe&Twinblade Type Poison Breath Variant"
+        "Underground Labyrinth Plains Upper Level Leyndell Gargoyle Axe\u0026Twinblade Type Poison Breath Variant"
       ]
     },
     {
       "ID": 12020830,
       "Entries": [
-        "Underground Labyrinth Plains Upper Level Ruinator"
+        "Underground Labyrinth Plains Upper Level The Desolator"
       ]
     },
     {
@@ -88,25 +88,25 @@
     {
       "ID": 12030390,
       "Entries": [
-        "Underground Labyrinth Royal Capital Godfrey Sixteen Knights"
+        "Underground Labyrinth Leyndell Godfrey\u0027s Sixteen Knights"
       ]
     },
     {
       "ID": 12030800,
       "Entries": [
-        "Underground Labyrinth Royal Capital Bedfellows 1"
+        "Underground Labyrinth Leyndell Bedfellows 1"
       ]
     },
     {
       "ID": 12030850,
       "Entries": [
-        "Underground Labyrinth Royal Capital Guardian Lineage"
+        "Underground Labyrinth Leyndell Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 12040800,
       "Entries": [
-        "Underground Labyrinth Ancestor Spirit Astel"
+        "Underground Labyrinth Ancestral Spirit Astel"
       ]
     },
     {
@@ -118,19 +118,19 @@
     {
       "ID": 12080800,
       "Entries": [
-        "Underground Labyrinth Plains Hidden Ancestor Spirit (Weak)"
+        "Underground Labyrinth Plains Hidden Ancestral Spirit (Weak)"
       ]
     },
     {
       "ID": 12090800,
       "Entries": [
-        "Underground Labyrinth Plains Hidden B Ancestor Spirit"
+        "Underground Labyrinth Plains Hidden B Ancestral Spirit"
       ]
     },
     {
       "ID": 13000800,
       "Entries": [
-        "Descending Ruins Black Blade Malenia (Post-HU)"
+        "Descending Ruins Maliketh the Black Blade (Post-HU)"
       ]
     },
     {
@@ -142,25 +142,25 @@
     {
       "ID": 13000850,
       "Entries": [
-        "Descending Ruins Godskin Apostle (For HP)"
+        "Descending Ruins Godskin Priest (For HP)"
       ]
     },
     {
       "ID": 14000800,
       "Entries": [
-        "Monsan Rennala of the Full Moon (Post-HU)"
+        "Raya Lucaria Fertile Rennala (Post-HU)"
       ]
     },
     {
       "ID": 14000850,
       "Entries": [
-        "Monsan Runewolf"
+        "Raya Lucaria Rune Wolf"
       ]
     },
     {
       "ID": 15000800,
       "Entries": [
-        "Rotten Great Tree Arbitrating Malenia"
+        "Rotten Great Tree Arbiter Malenia"
       ]
     },
     {
@@ -172,25 +172,25 @@
     {
       "ID": 16000800,
       "Entries": [
-        "Volcano Prison Gray Demi-Human King"
+        "Volcano Prison King of Ghouls"
       ]
     },
     {
       "ID": 16000850,
       "Entries": [
-        "Volcano Prison Godskin Apostle (Another)"
+        "Volcano Prison Godskin Priest (Another)"
       ]
     },
     {
       "ID": 16000860,
       "Entries": [
-        "Volcano Prison Rykard's Kidnapper Weapon"
+        "Volcano Prison Rykard\u0027s Abduction Weapon"
       ]
     },
     {
       "ID": 18000800,
       "Entries": [
-        "TutorialEX Spirit Snake"
+        "Tutorial EX Serpent Spirit"
       ]
     },
     {
@@ -208,25 +208,25 @@
     {
       "ID": 35000800,
       "Entries": [
-        "Royal Capital Sewers Greater Demon Phantom"
+        "Leyndell Sewers Greater Demon Phantom"
       ]
     },
     {
       "ID": 35000850,
       "Entries": [
-        "Royal Capital Sewers Hostile NPC"
+        "Leyndell Sewers Hostile NPC"
       ]
     },
     {
       "ID": 39200800,
       "Entries": [
-        "Cliff Tunnel_Underground Lobster"
+        "Cliffside Tunnel King\u0027s Mole"
       ]
     },
     {
       "ID": 30000800,
       "Entries": [
-        "Graveyard 1-1 Catacombs Shadow"
+        "Graveyard 1-1 Tomb Shadow"
       ]
     },
     {
@@ -244,31 +244,31 @@
     {
       "ID": 30110800,
       "Entries": [
-        "Graveyard 1-4 Black Knife Descendant"
+        "Graveyard 1-4 Black Knife Assassin"
       ]
     },
     {
       "ID": 30040800,
       "Entries": [
-        "Graveyard 1-5 Gladiator_Twin Hammer"
+        "Graveyard 1-5 Gladiator_Twin Hammers"
       ]
     },
     {
       "ID": 30050800,
       "Entries": [
-        "Graveyard 2-1 Catacombs Shadow (+Skeleton)"
+        "Graveyard 2-1 Tomb Shadow (\u002BSkeleton)"
       ]
     },
     {
       "ID": 30050850,
       "Entries": [
-        "Graveyard 2-1 Black Knife Descendant"
+        "Graveyard 2-1 Black Knife Assassin"
       ]
     },
     {
       "ID": 30030800,
       "Entries": [
-        "Graveyard 2-2 White Snake Snail (Magic_Infinite Summon)"
+        "Graveyard 2-2 White Snake-Snail (Magic_Infinite Summon)"
       ]
     },
     {
@@ -280,25 +280,25 @@
     {
       "ID": 30080800,
       "Entries": [
-        "Graveyard 3-1 Spirit Ash Unique"
+        "Graveyard 3-1 Buddy Unique"
       ]
     },
     {
       "ID": 30090800,
       "Entries": [
-        "Graveyard 3-2 Runewolf (Greatsword)"
+        "Graveyard 3-2 Rune Wolf (Greatsword)"
       ]
     },
     {
       "ID": 30100800,
       "Entries": [
-        "Graveyard 3-3 Godfrey Sixteen Knights_Greatsword_Wing_Tail"
+        "Graveyard 3-3 Godfrey\u0027s Sixteen Knights_Greatsword_Wing_Tail"
       ]
     },
     {
       "ID": 30100801,
       "Entries": [
-        "Graveyard 3-3 Godfrey Sixteen Knights_Halberd_Wing_Shoulder Horn"
+        "Graveyard 3-3 Godfrey\u0027s Sixteen Knights_Halberd_Wing_Shoulder Horn"
       ]
     },
     {
@@ -310,7 +310,7 @@
     {
       "ID": 30120801,
       "Entries": [
-        "Graveyard 3-4 Perfumer Sorcerer (Fallen)_Shield Type"
+        "Graveyard 3-4 Perfumer Sorcerer (Corrupted)_Shield Type"
       ]
     },
     {
@@ -322,7 +322,7 @@
     {
       "ID": 30130800,
       "Entries": [
-        "Graveyard 3-6 Gladiator Twin-Hammer Cape"
+        "Graveyard 3-6 Gladiator Twin Hammers Cape"
       ]
     },
     {
@@ -334,25 +334,25 @@
     {
       "ID": 30150800,
       "Entries": [
-        "Graveyard 4-2 Catacombs Shadow"
+        "Graveyard 4-2 Tomb Shadow"
       ]
     },
     {
       "ID": 30160800,
       "Entries": [
-        "Graveyard 4-3 Snake Spirit (Red Rot)"
+        "Graveyard 4-3 Serpent Spirit (Red Rot)"
       ]
     },
     {
       "ID": 30170800,
       "Entries": [
-        "Graveyard 5-1 Spirit Ash Unique"
+        "Graveyard 5-1 Buddy Unique"
       ]
     },
     {
       "ID": 30180800,
       "Entries": [
-        "Graveyard 5-2 Snake Spirit"
+        "Graveyard 5-2 Serpent Spirit"
       ]
     },
     {
@@ -382,115 +382,115 @@
     {
       "ID": 31020800,
       "Entries": [
-        "Cave 1-1 Rune-eating Flower"
+        "Cave 1-1 Rune-Eating Flower"
       ]
     },
     {
       "ID": 31030800,
       "Entries": [
-        "Cave1-4 Descendants of the Intelligent Beast"
+        "Cave 1-4 Descendant of the Intelligent Beast"
       ]
     },
     {
       "ID": 31150800,
       "Entries": [
-        "Cave1-5 Gray Demi-Human Berserker"
+        "Cave 1-5 Gray Demi-Human Berserker"
       ]
     },
     {
       "ID": 31170800,
       "Entries": [
-        "Cave1-6 Guardian of the High Road"
+        "Cave 1-6 Highroad Guardian"
       ]
     },
     {
       "ID": 31040800,
       "Entries": [
-        "Cave2-1 Putrid Knights_Scythe"
+        "Cave 2-1 Cleanrot Knights_Reaper"
       ]
     },
     {
       "ID": 31050800,
       "Entries": [
-        "Cave2-2 Bolas Hound"
+        "Cave 2-2 Hound of Bolas"
       ]
     },
     {
       "ID": 31060800,
       "Entries": [
-        "Cave2-3 Crystal Tribe: Staff"
+        "Cave 2-3 Crystal Tribe: Staff"
       ]
     },
     {
       "ID": 31070800,
       "Entries": [
-        "Cave3-1 Rot's Kin A"
+        "Cave 3-1 Kindred of Rot A"
       ]
     },
     {
       "ID": 31090800,
       "Entries": [
-        "Cave3-2 Demi-Human King"
+        "Cave 3-2 Demi-Human King"
       ]
     },
     {
       "ID": 31180800,
       "Entries": [
-        "Cave3-3 Rune-eating Flower_Parent Stock_Dirty Yellow Flower"
+        "Cave 3-3 Rune-Eating Flower_Parent Plant_Dirty Yellow Flower"
       ]
     },
     {
       "ID": 31190800,
       "Entries": [
-        "Cave3-4 Black Knife Descendant"
+        "Cave 3-4 Black Knife Assassin"
       ]
     },
     {
       "ID": 31190850,
       "Entries": [
-        "Cave3-4 NPC Instant Death User"
+        "Cave 3-4 NPC Instant Death User"
       ]
     },
     {
       "ID": 31210800,
       "Entries": [
-        "Cave4-1 Gladiator"
+        "Cave 4-1 Gladiator"
       ]
     },
     {
       "ID": 31100800,
       "Entries": [
-        "Cave4-2 Descendants of the Intelligent Beast_Large Weapon"
+        "Cave 4-2 Descendant of the Intelligent Beast_Large Weapon"
       ]
     },
     {
       "ID": 31200800,
       "Entries": [
-        "Cave4-3 Putrid Knights_Spear"
+        "Cave 4-3 Cleanrot Knights_Spear"
       ]
     },
     {
       "ID": 31110800,
       "Entries": [
-        "Cave4-4 Crystal Tribe_Spear_Elite"
+        "Cave 4-4 Crystal Tribe_Spear_Elite"
       ]
     },
     {
       "ID": 31120800,
       "Entries": [
-        "Cave5-1 Children of Radagon_Lion (World Tree Greatsword)"
+        "Cave 5-1 Children of Radagon_Lion (World Tree Greatsword)"
       ]
     },
     {
       "ID": 31220800,
       "Entries": [
-        "Cave5-2 Snake Snail"
+        "Cave 5-2 Snake-Snail"
       ]
     },
     {
       "ID": 32000800,
       "Entries": [
-        "Tunnel 1-1 Radagon (Scale)"
+        "Tunnel 1-1 Radagon (Scales)"
       ]
     },
     {
@@ -514,37 +514,37 @@
     {
       "ID": 34120800,
       "Entries": [
-        "Tunnel3-2 Dark Walker"
+        "Tunnel 3-2 Dark Walker"
       ]
     },
     {
       "ID": 32050800,
       "Entries": [
-        "Tunnel3-3 Crystal Tribe (Chakram)"
+        "Tunnel 3-3 Crystal Tribe (Chakram)"
       ]
     },
     {
       "ID": 32050801,
       "Entries": [
-        "Tunnel3-3 Crystal Tribe (Spear)"
+        "Tunnel 3-3 Crystal Tribe (Spear)"
       ]
     },
     {
       "ID": 32070800,
       "Entries": [
-        "Tunnel4-1 King's Mole"
+        "Tunnel 4-1 King\u0027s Mole"
       ]
     },
     {
       "ID": 32080800,
       "Entries": [
-        "Tunnel4-2 Meteorite Beast"
+        "Tunnel 4-2 Meteoric Iron Beast"
       ]
     },
     {
       "ID": 32110800,
       "Entries": [
-        "Tunnel5-1 Astel"
+        "Tunnel 5-1 Astel"
       ]
     },
     {
@@ -568,7 +568,7 @@
     {
       "ID": 1043370340,
       "Entries": [
-        "Open Green North Road Bridge Rune-hunting Knight"
+        "Open Green North Road Bridge Rune Hunter Knight"
       ]
     },
     {
@@ -580,37 +580,37 @@
     {
       "ID": 1042380850,
       "Entries": [
-        "Open Green North Arts NPC Vulture Knight"
+        "Open Green North Skill NPC Vulture Knight"
       ]
     },
     {
       "ID": 1042330800,
       "Entries": [
-        "Circular Circle 1-1 Buddy Unique"
+        "Circular Ring 1-1 Buddy Unique"
       ]
     },
     {
       "ID": 1044350800,
       "Entries": [
-        "Circular Circle 1-2 Bolas Hound"
+        "Circular Ring 1-2 Hound of Bolas"
       ]
     },
     {
       "ID": 1042370800,
       "Entries": [
-        "Circular Circle 1-3 Godfrey's 16 Knights"
+        "Circular Ring 1-3 Godfrey\u0027s 16 Knights"
       ]
     },
     {
       "ID": 1043330800,
       "Entries": [
-        "Small World Tree 1-1 Demon of the World Tree"
+        "Small World Tree 1-1 World Tree Demon"
       ]
     },
     {
       "ID": 1044320342,
       "Entries": [
-        "Open Green South Broken Wall Rune-hunting Knight"
+        "Open Green South Collapsed Wall Rune Hunter Knight"
       ]
     },
     {
@@ -628,19 +628,19 @@
     {
       "ID": 1042360800,
       "Entries": [
-        "Open Green First Church Tree Sentinel Chief"
+        "Open Green First Church Lead Tree Sentinel"
       ]
     },
     {
       "ID": 1043360800,
       "Entries": [
-        "Open Green Lake Agheel Wyvern"
+        "Open Green Agheel Lake Wyvern"
       ]
     },
     {
       "ID": 1045390800,
       "Entries": [
-        "Ruins 1-8 Night King Followers"
+        "Ruins 1-8 Night King\u0027s Kindred"
       ]
     },
     {
@@ -652,37 +652,37 @@
     {
       "ID": 1038410800,
       "Entries": [
-        "Circular Circle 2-1 Circular Plaza 2-1 NPC"
+        "Circular Ring 2-1 Circular Plaza 2-1NPC"
       ]
     },
     {
       "ID": 1033450800,
       "Entries": [
-        "Circular Circle 2-2 Troll (Magic)"
+        "Circular Ring 2-2 Troll (Magic)"
       ]
     },
     {
       "ID": 1036500800,
       "Entries": [
-        "Circular Circle 2-3 Dark Walker"
+        "Circular Ring 2-3 Dark Walker"
       ]
     },
     {
       "ID": 1033420800,
       "Entries": [
-        "Circular Circle 2-4 Black Knife Descendant (Strongest Individual)"
+        "Circular Ring 2-4 Black Knife Assassin (Strongest Individual)"
       ]
     },
     {
       "ID": 1033430800,
       "Entries": [
-        "Small World Tree 2-1 Demon of the World Tree"
+        "Small World Tree 2-1 World Tree Demon"
       ]
     },
     {
       "ID": 1038480800,
       "Entries": [
-        "Small World Tree 2-2 Demon of the World Tree"
+        "Small World Tree 2-2 World Tree Demon"
       ]
     },
     {
@@ -694,19 +694,19 @@
     {
       "ID": 1037460800,
       "Entries": [
-        "Open Lake Atonement Church Vulture Knight"
+        "Open Lake Atonement Association Vulture Knight"
       ]
     },
     {
       "ID": 1039430340,
       "Entries": [
-        "Open Lake After Battlefield Ruins Rune-hunting Knight"
+        "Open Lake After Old Battlefield Rune Hunter Knight"
       ]
     },
     {
       "ID": 1036480340,
       "Entries": [
-        "Open Lake Royal Capital Road Rune-hunting Knight"
+        "Open Lake Leyndell Highway Rune Hunter Knight"
       ]
     },
     {
@@ -718,157 +718,157 @@
     {
       "ID": 1036450340,
       "Entries": [
-        "Open Lake Flooded City Deathbird (After HU)"
+        "Open Lake Sunken City Deathbird (Post-HU)"
       ]
     },
     {
       "ID": 1034450800,
       "Entries": [
-        "Open Lake Wyvern Nest Glintstone Wyvern Lower"
+        "Open Lake Wyvern Nest Glintstone Wyvern Lesser"
       ]
     },
     {
       "ID": 1034500800,
       "Entries": [
-        "Open Lake Before Rani Tower Glintstone Wyvern Upper"
+        "Open Lake Before Ranni\u0027s Tower Greater Glintstone Wyvern"
       ]
     },
     {
       "ID": 1034420800,
       "Entries": [
-        "Open Lake Before Grand Church Glintstone Wyvern Upper"
+        "Open Lake Before Great Church Greater Glintstone Wyvern"
       ]
     },
     {
       "ID": 1035420800,
       "Entries": [
-        "Open Lake Leg Cripple Village Wandering Butcher"
+        "Open Lake Cripple Village Wandering Butcher"
       ]
     },
     {
       "ID": 1039440800,
       "Entries": [
-        "Open Lake Night King Follower Village Night King Follower"
+        "Open Lake Village of the Night King\u0027s Kin Night King\u0027s Kindred"
       ]
     },
     {
       "ID": 1037510800,
       "Entries": [
-        "Open Highland Carriage Graveyard Guardian Lineage"
+        "Open Altus Carriage Graveyard Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 1041520800,
       "Entries": [
-        "Open Highland Cliff Summit Guardian Lineage"
+        "Open Altus Summit Atop Cliff Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 1038510800,
       "Entries": [
-        "Open Highland Ruins 3-3 Demi-Human King"
+        "Open Altus Ruins 3-3 Demi-Human King"
       ]
     },
     {
       "ID": 1041500800,
       "Entries": [
-        "Open Highland Meteorite Site Meteorite Beast"
+        "Open Altus Meteor Crater Site Meteoric Iron Beast"
       ]
     },
     {
       "ID": 1040530800,
       "Entries": [
-        "Open Highland Ruins 3-2 Demon's Blood Monk"
+        "Open Altus Ruins 3-2 Demon Blood Believer"
       ]
     },
     {
       "ID": 1041510800,
       "Entries": [
-        "Open Highland Before Royal Capital Walls Tree Sentinel (Torch)"
+        "Open Altus Before Leyndell Castle Wall Tree Sentinel (Torch)"
       ]
     },
     {
       "ID": 1042550800,
       "Entries": [
-        "Open Highland Windmill Village Godskin Apostle"
+        "Open Altus Windmill Village Godskin Priest"
       ]
     },
     {
       "ID": 1040520800,
       "Entries": [
-        "Open Highland Hero's Grave Front_Black Knife Descendant"
+        "Open Altus Before Hero\u0027s Grave_Black Knife Assassin"
       ]
     },
     {
       "ID": 1045520800,
       "Entries": [
-        "Open Highland Before Royal Capital Tree Sentinel (Variant)"
+        "Open Altus Before Leyndell Tree Sentinel (Deformed)"
       ]
     },
     {
       "ID": 1039500800,
       "Entries": [
-        "Circular Circle 3-1 Grafted King"
+        "Circular Ring 3-1 The Grafted King"
       ]
     },
     {
       "ID": 1041530800,
       "Entries": [
-        "Small World Tree 3-1 Deracine (Female)"
+        "Small World Tree 3-1 Déraciné(Female)"
       ]
     },
     {
       "ID": 1039510800,
       "Entries": [
-        "Open Highland Large EV Front Road Night Enemy Rune Hunter"
+        "Open Altus Road Before Large EV Night Enemy Rune Hunter"
       ]
     },
     {
       "ID": 1044530800,
       "Entries": [
-        "Open Highland Great Graveyard Night Enemy Deathbird"
+        "Open Altus Great Graveyard Night Enemy Deathbird"
       ]
     },
     {
       "ID": 1043530800,
       "Entries": [
-        "Open Highland House 3-2 Night Enemy Vulture"
+        "Open Altus House 3-2 Night Enemy Vulture"
       ]
     },
     {
       "ID": 1037530800,
       "Entries": [
-        "Open Highland Volcano Demi-Human Settlement Demi-Human King (Elite Magic)"
+        "Open Altus Volcano Demi-Human Settlement Demi-Human King (Greater Magic)"
       ]
     },
     {
       "ID": 1035530800,
       "Entries": [
-        "Open Highland Volcano Lava Flow Zone King's Mole"
+        "Open Altus Volcano Lava Flow Zone King\u0027s Mole"
       ]
     },
     {
       "ID": 1036540800,
       "Entries": [
-        "Open Highland Volcano Stargazer Plaza Meteorite Beast (Almost Astel)"
+        "Open Altus Volcano Observatory Plaza Meteoric Iron Beast (Nearly Becoming Astel)"
       ]
     },
     {
       "ID": 1039540800,
       "Entries": [
-        "Fort Highland Bloodstained Vulture Knight"
+        "Fort Altus Bloodhound Vulture Knight"
       ]
     },
     {
       "ID": 1037540810,
       "Entries": [
-        "Open Highland Volcano Great Tree 3-3 Snake Spirit"
+        "Open Altus Volcano Great Tree 3-3 Serpent Spirit"
       ]
     },
     {
       "ID": 1038520340,
       "Entries": [
-        "Open Highland Volcano Submerged Ruins Night King Followers"
+        "Open Altus Volcano Submerged Ruins Night King\u0027s Kindred"
       ]
     },
     {
@@ -880,7 +880,7 @@
     {
       "ID": 1048370800,
       "Entries": [
-        "Open Plains Front of Dragon Feast Church Rotten Wyvern"
+        "Open Plains Before Dragon Communion Church Rot Wyvern"
       ]
     },
     {
@@ -892,19 +892,19 @@
     {
       "ID": 1049370800,
       "Entries": [
-        "Open Plains Caelid Road Night Enemy Rune Hunter"
+        "Open Plains Caelid Highway Night Enemy Rune Hunter"
       ]
     },
     {
       "ID": 1049370850,
       "Entries": [
-        "Open Plains Sellia Gate Night Enemy Deathbird"
+        "Open Plains Saria\u0027s Gate Night Enemy Deathbird"
       ]
     },
     {
       "ID": 1049380800,
       "Entries": [
-        "Open Plains Poison Swamp Center Veteran General"
+        "Open Plains Center of Poison Swamp Old Veteran General"
       ]
     },
     {
@@ -916,13 +916,13 @@
     {
       "ID": 1052380800,
       "Entries": [
-        "Open Plains Radahn's Desert Radahn"
+        "Open Plains Radahn\u0027s Desert Radahn"
       ]
     },
     {
       "ID": 1049390800,
       "Entries": [
-        "Open Plains Ruined Town Marika Lineage"
+        "Open Plains Ruined Town Marika\u0027s Direct Lineage"
       ]
     },
     {
@@ -934,7 +934,7 @@
     {
       "ID": 1049390850,
       "Entries": [
-        "Open Plains Circular Plaza Wandering Sorcerer"
+        "Open Plains Circular Plaza Stray Sorcerer"
       ]
     },
     {
@@ -946,7 +946,7 @@
     {
       "ID": 1052410800,
       "Entries": [
-        "Open Plains Bridge after Small World Tree Wyvern"
+        "Open Plains Bridge After Small World Tree Wyvern"
       ]
     },
     {
@@ -958,79 +958,79 @@
     {
       "ID": 1051430800,
       "Entries": [
-        "Open Plains Front of Ruins-Derived Building Royal Capital Gargoyle"
+        "Open Plains Before Descending Ruins Derived Building Leyndell Gargoyle"
       ]
     },
     {
       "ID": 1048510800,
       "Entries": [
-        "Open Snowy Mountain Forbidden Land Rune-hunting Knight"
+        "Open Snow Mountain Forbidden Lands Rune Hunter Knight"
       ]
     },
     {
       "ID": 1049520800,
       "Entries": [
-        "Open Snowy Mountain Before Large EV Royal Capital Gargoyle_Maliketh Kin"
+        "Open Snow Mountain Before Great EV Leyndell Gargoyle_Maliketh Kin"
       ]
     },
     {
       "ID": 1054560800,
       "Entries": [
-        "Open Snowy Mountain Ice Lake Ice Wyvern"
+        "Open Snow Mountain Ice Lake Ice Wyvern"
       ]
     },
     {
       "ID": 1053560800,
       "Entries": [
-        "Open Snowy Mountain Circular Circle 5-1 Wounded Knight"
+        "Open Snow Mountain Circular Ring 5-1 Scarred Knight"
       ]
     },
     {
       "ID": 1052520800,
       "Entries": [
-        "Open Snowy Mountain Giant Graveyard Giant"
+        "Open Snow Mountain Giant Graveyard Giant"
       ]
     },
     {
       "ID": 1052560800,
       "Entries": [
-        "Open Snowy Mountain Small World Tree 5-1 World Tree Demon"
+        "Open Snow Mountain Small World Tree 5-1 World Tree Demon"
       ]
     },
     {
       "ID": 1050570800,
       "Entries": [
-        "Open Snowy Mountain Sub-route Graveyard Zone Deathbird"
+        "Open Snow Mountain Sub-Route Graveyard Zone Deathbird"
       ]
     },
     {
       "ID": 1050570850,
       "Entries": [
-        "Open Snowy Mountain Small World Tree 5-2 World Tree Demon"
+        "Open Snow Mountain Small World Tree 5-2 World Tree Demon"
       ]
     },
     {
       "ID": 1051570800,
       "Entries": [
-        "Open Snowy Mountain Fort Aged Veteran General"
+        "Open Snow Mountain Fort Old Veteran General"
       ]
     },
     {
       "ID": 1050560800,
       "Entries": [
-        "Open Snowy Mountain Ravine Terminus King's Mole"
+        "Open Snow Mountain Canyon End King\u0027s Mole"
       ]
     },
     {
       "ID": 1248550800,
       "Entries": [
-        "Open Snowy Mountain Snowfield Center Rune-hunting Knight"
+        "Open Snow Mountain Snowfield Center Rune Hunter Knight"
       ]
     },
     {
       "ID": 1048570800,
       "Entries": [
-        "Open Snowy Mountain Frozen River Terminus Deathbird"
+        "Open Snow Mountain Frozen River End Deathbird"
       ]
     }
   ]

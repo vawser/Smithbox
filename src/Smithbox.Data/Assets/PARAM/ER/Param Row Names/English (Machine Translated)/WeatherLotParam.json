@@ -10,7 +10,7 @@
     {
       "ID": 1000,
       "Entries": [
-        "Generic Weather: Fair Skies"
+        "Generic Weather: Clear Skies"
       ]
     },
     {
@@ -22,7 +22,7 @@
     {
       "ID": 2010,
       "Entries": [
-        "Generic Weather: Light Overcast"
+        "Generic Weather: Light Clouds"
       ]
     },
     {
@@ -52,7 +52,7 @@
     {
       "ID": 3021,
       "Entries": [
-        "Generic Weather: Storm (Guardian End)"
+        "Generic Weather: Storm (Guardian\u0027s Descendant)"
       ]
     },
     {
@@ -112,7 +112,7 @@
     {
       "ID": 7000,
       "Entries": [
-        "Generic Weather: Reserve Weather 3"
+        "Generic Weather: Spare Weather 3"
       ]
     },
     {
@@ -124,19 +124,19 @@
     {
       "ID": 100100000,
       "Entries": [
-        "Stormveil_Separated"
+        "Stormveil_Detached"
       ]
     },
     {
       "ID": 110000000,
       "Entries": [
-        "Royal Capital"
+        "Leyndell"
       ]
     },
     {
       "ID": 110500000,
       "Entries": [
-        "Royal Capital (Ash)"
+        "Leyndell (Ash)"
       ]
     },
     {
@@ -160,13 +160,13 @@
     {
       "ID": 120300000,
       "Entries": [
-        "Underground Labyrinth: Royal Capital"
+        "Underground Labyrinth: Leyndell"
       ]
     },
     {
       "ID": 120400000,
       "Entries": [
-        "Underground Labyrinth: Ancestor Spirit"
+        "Underground Labyrinth: Ancestral Spirit"
       ]
     },
     {
@@ -178,7 +178,7 @@
     {
       "ID": 120600000,
       "Entries": [
-        "Underground Labyrinth: Ancestor Spirit"
+        "Underground Labyrinth: Ancestral Spirit"
       ]
     },
     {
@@ -208,13 +208,13 @@
     {
       "ID": 140000000,
       "Entries": [
-        "Monsan"
+        "Raya Lucaria"
       ]
     },
     {
       "ID": 140000001,
       "Entries": [
-        "Monsan_Night"
+        "Raya Lucaria_Night"
       ]
     },
     {
@@ -394,97 +394,97 @@
     {
       "ID": 310300000,
       "Entries": [
-        "Cave1-4"
+        "Cave 1-4"
       ]
     },
     {
       "ID": 310400000,
       "Entries": [
-        "Cave2-1"
+        "Cave 2-1"
       ]
     },
     {
       "ID": 310500000,
       "Entries": [
-        "Cave2-2"
+        "Cave 2-2"
       ]
     },
     {
       "ID": 310600000,
       "Entries": [
-        "Cave2-3"
+        "Cave 2-3"
       ]
     },
     {
       "ID": 310700000,
       "Entries": [
-        "Cave3-1"
+        "Cave 3-1"
       ]
     },
     {
       "ID": 310900000,
       "Entries": [
-        "Cave3-3"
+        "Cave 3-3"
       ]
     },
     {
       "ID": 311000000,
       "Entries": [
-        "Cave4-1"
+        "Cave 4-1"
       ]
     },
     {
       "ID": 311100000,
       "Entries": [
-        "Cave4-4"
+        "Cave 4-4"
       ]
     },
     {
       "ID": 311200000,
       "Entries": [
-        "Cave5-1"
+        "Cave 5-1"
       ]
     },
     {
       "ID": 311500000,
       "Entries": [
-        "Cave1-5"
+        "Cave 1-5"
       ]
     },
     {
       "ID": 311700000,
       "Entries": [
-        "Cave1-6"
+        "Cave 1-6"
       ]
     },
     {
       "ID": 311800000,
       "Entries": [
-        "Cave3-3"
+        "Cave 3-3"
       ]
     },
     {
       "ID": 311900000,
       "Entries": [
-        "Cave3-4"
+        "Cave 3-4"
       ]
     },
     {
       "ID": 312000000,
       "Entries": [
-        "Cave4-3"
+        "Cave 4-3"
       ]
     },
     {
       "ID": 312100000,
       "Entries": [
-        "Cave4-1"
+        "Cave 4-1"
       ]
     },
     {
       "ID": 312200000,
       "Entries": [
-        "Cave5-2"
+        "Cave 5-2"
       ]
     },
     {
@@ -526,49 +526,49 @@
     {
       "ID": 320600000,
       "Entries": [
-        "Tunnel3-3"
+        "Tunnel 3-3"
       ]
     },
     {
       "ID": 320700000,
       "Entries": [
-        "Tunnel4-1"
+        "Tunnel 4-1"
       ]
     },
     {
       "ID": 320800000,
       "Entries": [
-        "Tunnel4-2"
+        "Tunnel 4-2"
       ]
     },
     {
       "ID": 320900000,
       "Entries": [
-        "Tunnel4-3"
+        "Tunnel 4-3"
       ]
     },
     {
       "ID": 321000000,
       "Entries": [
-        "Tunnel4-4"
+        "Tunnel 4-4"
       ]
     },
     {
       "ID": 321100000,
       "Entries": [
-        "Tunnel5-1"
+        "Tunnel 5-1"
       ]
     },
     {
       "ID": 321200000,
       "Entries": [
-        "Tunnel5-2"
+        "Tunnel 5-2"
       ]
     },
     {
       "ID": 340000000,
       "Entries": [
-        "True Divine Tower"
+        "True/Divine Tower"
       ]
     },
     {
@@ -610,31 +610,31 @@
     {
       "ID": 341600000,
       "Entries": [
-        "Divine Tower (Lake)_Reversed"
+        "Divine Tower (Lake)_Mirrored"
       ]
     },
     {
       "ID": 350000000,
       "Entries": [
-        "Royal Capital Underground Sewers"
+        "Leyndell Underground Sewers"
       ]
     },
     {
       "ID": 392000000,
       "Entries": [
-        "Cliff Tunnel"
+        "Cliffside Tunnel"
       ]
     },
     {
       "ID": 400000000,
       "Entries": [
-        "Arena"
+        "Colosseum"
       ]
     },
     {
       "ID": 600000000,
       "Entries": [
-        "Crater Lake (Essentially Default)"
+        "Crater Lake (Basically Default)"
       ]
     },
     {
@@ -652,7 +652,7 @@
     {
       "ID": 611000000,
       "Entries": [
-        "Open Green: North_Stormhill"
+        "Open Green: North_Storm Land"
       ]
     },
     {
@@ -676,19 +676,19 @@
     {
       "ID": 620000010,
       "Entries": [
-        "Open Lake: Around Ranni's Tower"
+        "Open Lake: Around Ranni\u0027s Tower"
       ]
     },
     {
       "ID": 620000020,
       "Entries": [
-        "Open Lake: Hang Terrain Lower"
+        "Open Lake: Below Hanging Terrain"
       ]
     },
     {
       "ID": 620000021,
       "Entries": [
-        "Open Lake: Hang Terrain Lower (Night)"
+        "Open Lake: Below Hanging Terrain (Night)"
       ]
     },
     {
@@ -706,25 +706,25 @@
     {
       "ID": 630000000,
       "Entries": [
-        "Open Highland: Royal Capital"
+        "Open Altus: Leyndell"
       ]
     },
     {
       "ID": 630000001,
       "Entries": [
-        "Open Highland: Royal Capital_Morning Twilight"
+        "Open Altus: Leyndell_Morning Twilight"
       ]
     },
     {
       "ID": 635000000,
       "Entries": [
-        "Open Highland: Volcano"
+        "Open Altus: Volcano"
       ]
     },
     {
       "ID": 638000000,
       "Entries": [
-        "Open Highland: Connection"
+        "Open Altus: Joint"
       ]
     },
     {
@@ -742,43 +742,43 @@
     {
       "ID": 645000000,
       "Entries": [
-        "Open Plains: Descending Ruins Origin"
+        "Open Plains: From Descending Ruins"
       ]
     },
     {
       "ID": 650000000,
       "Entries": [
-        "Open Snowy Mountain：Giant"
+        "Open Snow Mountain: Giant"
       ]
     },
     {
       "ID": 651000000,
       "Entries": [
-        "Open Snowy Mountain：Giant After Frozen Lake"
+        "Open Snow Mountain: Giant After Ice Lake"
       ]
     },
     {
       "ID": 652000000,
       "Entries": [
-        "Open Snowy Mountain：Giant Fire Cauldron"
+        "Open Snow Mountain: Giant Fire Cauldron"
       ]
     },
     {
       "ID": 655000000,
       "Entries": [
-        "Open Snowy Mountain：Snowfield"
+        "Open Snow Mountain: Snowfield"
       ]
     },
     {
       "ID": 655000010,
       "Entries": [
-        "Open Snowy Mountain：Snowfield_Heavy Snow"
+        "Open Snow Mountain: Snowfield_Heavy Snow"
       ]
     },
     {
       "ID": 655000020,
       "Entries": [
-        "Open Snowy Mountain：Snowfield_Blizzard"
+        "Open Snow Mountain: Snowfield_Blizzard"
       ]
     }
   ]

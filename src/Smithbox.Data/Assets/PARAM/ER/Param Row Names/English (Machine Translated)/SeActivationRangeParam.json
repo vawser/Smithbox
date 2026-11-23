@@ -10,7 +10,7 @@
     {
       "ID": 50,
       "Entries": [
-        "Immolation World Tree"
+        "Burning World Tree"
       ]
     },
     {
@@ -28,61 +28,61 @@
     {
       "ID": 100001000,
       "Entries": [
-        "Stormveil Castle Banner Sway"
+        "Stormveil Castle Flag Sway"
       ]
     },
     {
       "ID": 100002000,
       "Entries": [
-        "Stormveil Castle Gust Holes"
+        "Stormveil Castle Pothole Style"
       ]
     },
     {
       "ID": 100003000,
       "Entries": [
-        "Stormveil Castle Falling Leaves"
+        "Stormveil Castle Tree Leaves"
       ]
     },
     {
       "ID": 110005000,
       "Entries": [
-        "Royal Capital Large Puddle ※Indoor/Outdoor RTPC Setting"
+        "Leyndell Big Puddle ※Indoor/Outdoor RTPC Setting"
       ]
     },
     {
       "ID": 110005001,
       "Entries": [
-        "Royal Capital Large Puddle"
+        "Leyndell Big Puddle"
       ]
     },
     {
       "ID": 110005020,
       "Entries": [
-        "Royal Capital Seaside"
+        "Leyndell Along the Sea"
       ]
     },
     {
       "ID": 110005100,
       "Entries": [
-        "Royal Capital Waterfall (Small)"
+        "Leyndell Waterfall (Small)"
       ]
     },
     {
       "ID": 110006000,
       "Entries": [
-        "Royal Capital Fallen Leaves"
+        "Leyndell Fallen Leaves"
       ]
     },
     {
       "ID": 110100000,
       "Entries": [
-        "Royal Capital Base Fire ※After Erdtree Burns"
+        "Leyndell Base Fire ※After World Tree Burning"
       ]
     },
     {
       "ID": 110500000,
       "Entries": [
-        "Royal Capital (Ash) Burning Erdtree"
+        "Leyndell (Ash) Burning World Tree"
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "ID": 120005010,
       "Entries": [
-        "Underground Ruins Large Puddle"
+        "Underground Ruins Big Puddle"
       ]
     },
     {
@@ -124,43 +124,43 @@
     {
       "ID": 120005200,
       "Entries": [
-        "Underground Ruins Waterfall (Large)_Upper"
+        "Underground Ruins Waterfall (Large)_Top"
       ]
     },
     {
       "ID": 120005201,
       "Entries": [
-        "Underground Ruins Waterfall (Large)_Upper_Audible Distance_Large"
+        "Underground Ruins Waterfall (Large)_Top_Audible Distance_Large"
       ]
     },
     {
       "ID": 120005210,
       "Entries": [
-        "Underground Ruins Waterfall (Large)_Lower_Audible Distance_100m"
+        "Underground Ruins Waterfall (Large)_Bottom_Audible Distance_100m"
       ]
     },
     {
       "ID": 120005211,
       "Entries": [
-        "Underground Ruins Waterfall (Large)_Lower_Audible Distance_35m"
+        "Underground Ruins Waterfall (Large)_Bottom_Audible Distance_35m"
       ]
     },
     {
       "ID": 120005220,
       "Entries": [
-        "Underground Ruins Waterfall_Ambience"
+        "Underground Ruins Waterfall_Atmosphere"
       ]
     },
     {
       "ID": 120005230,
       "Entries": [
-        "Underground Ruins Waterfall_Poison (Upper)"
+        "Underground Ruins Waterfall_Poison (Top)"
       ]
     },
     {
       "ID": 120005240,
       "Entries": [
-        "Underground Ruins Waterfall_Poison (Lower)"
+        "Underground Ruins Waterfall_Poison (Bottom)"
       ]
     },
     {
@@ -172,19 +172,19 @@
     {
       "ID": 120005400,
       "Entries": [
-        "Underground Ruins Flies Swarm_Dead Prince"
+        "Underground Ruins Fly-Swarmed_Dead Prince"
       ]
     },
     {
       "ID": 120300000,
       "Entries": [
-        "Underground Labyrinth Underground Royal Capital Fallen Leaves"
+        "Underground Labyrinth Underground Labyrinth Leyndell Fallen Leaves"
       ]
     },
     {
       "ID": 120500000,
       "Entries": [
-        "Underground Labyrinth Groaning near Greater Demon"
+        "Underground Labyrinth Groaning at the Greater Demon"
       ]
     },
     {
@@ -196,25 +196,25 @@
     {
       "ID": 130000001,
       "Entries": [
-        "Descending Ruins Whirlwind Opening"
+        "Descending Ruins Tornado Opening"
       ]
     },
     {
       "ID": 130000002,
       "Entries": [
-        "Descending Ruins Whirlwind Opening Dead End"
+        "Descending Ruins Tornado Opening Dead End"
       ]
     },
     {
       "ID": 130000003,
       "Entries": [
-        "Descending Ruins Whirlwind Opening Open"
+        "Descending Ruins Tornado Opening Opening Place"
       ]
     },
     {
       "ID": 130000004,
       "Entries": [
-        "Descending Ruins Whirlwind and Dragon Distant View"
+        "Descending Ruins Tornado and Dragon Distant View"
       ]
     },
     {
@@ -238,31 +238,31 @@
     {
       "ID": 130005000,
       "Entries": [
-        "Descending Ruins Large Puddle"
+        "Descending Ruins Big Puddle"
       ]
     },
     {
       "ID": 130005200,
       "Entries": [
-        "Descending Ruins Waterfall (Upper)"
+        "Descending Ruins Waterfall (Top)"
       ]
     },
     {
       "ID": 140000099,
       "Entries": [
-        "Monsan Cuckoo Test"
+        "Raya Lucaria Cuckoo Trial"
       ]
     },
     {
       "ID": 140001000,
       "Entries": [
-        "Monsan Waterwheel"
+        "Raya Lucaria Waterwheel"
       ]
     },
     {
       "ID": 140002000,
       "Entries": [
-        "Monsan Suspension Bridge"
+        "Raya Lucaria Suspension Bridge"
       ]
     },
     {
@@ -274,7 +274,7 @@
     {
       "ID": 150005000,
       "Entries": [
-        "Rotten Great Tree Large Puddle"
+        "Rotten Great Tree Big Puddle"
       ]
     },
     {
@@ -286,13 +286,13 @@
     {
       "ID": 150005100,
       "Entries": [
-        "Rotten Great Tree Waterfall System_(Small)"
+        "Rotten Great Tree Waterfall Type_(Small)"
       ]
     },
     {
       "ID": 150005230,
       "Entries": [
-        "Rotten Great Tree Large Waterfall_Poison"
+        "Rotten Great Tree Huge Waterfall_Poison"
       ]
     },
     {
@@ -304,19 +304,19 @@
     {
       "ID": 150005300,
       "Entries": [
-        "Rotten Great Tree Stream"
+        "Rotten Great Tree Brook"
       ]
     },
     {
       "ID": 160000100,
       "Entries": [
-        "Volcano Prison Campfire (Temporary)"
+        "Volcano Prison Campfire (Temporarily)"
       ]
     },
     {
       "ID": 160001000,
       "Entries": [
-        "Volcano Prison_Ambient Sound Copy_Hidden Passage Use"
+        "Volcano Prison_Persistent Ambient Sound Copy_Hidden Passage Use"
       ]
     },
     {
@@ -328,7 +328,7 @@
     {
       "ID": 160005001,
       "Entries": [
-        "Volcano Prison Lava Ambient Sound [Hidden Passage]"
+        "Volcano Prison Lava Ambient Sound ※For Hidden Passage"
       ]
     },
     {
@@ -340,25 +340,25 @@
     {
       "ID": 160005101,
       "Entries": [
-        "Volcano Prison Lava Ambient Sound_Waterfall [Hidden Passage]"
+        "Volcano Prison Lava Ambient Sound_Waterfall ※For Hidden Passage"
       ]
     },
     {
       "ID": 160005110,
       "Entries": [
-        "Volcano Prison Lava Ambient Sound_Waterfall Basin"
+        "Volcano Prison Lava Ambient Sound_Plunge Pool"
       ]
     },
     {
       "ID": 160005111,
       "Entries": [
-        "Volcano Prison Lava Ambient Sound_Waterfall Basin [Hidden Passage]"
+        "Volcano Prison Lava Ambient Sound_Plunge Pool ※For Hidden Passage"
       ]
     },
     {
       "ID": 160005200,
       "Entries": [
-        "Volcano Prison_Large Puddle"
+        "Volcano Prison_Big Puddle"
       ]
     },
     {
@@ -370,7 +370,7 @@
     {
       "ID": 300005000,
       "Entries": [
-        "Catacombs Large Puddle"
+        "Catacombs Big Puddle"
       ]
     },
     {
@@ -388,49 +388,49 @@
     {
       "ID": 310005000,
       "Entries": [
-        "Cave Large Puddle"
+        "Cave Big Puddle"
       ]
     },
     {
       "ID": 310005010,
       "Entries": [
-        "Cave Large Puddle Magic Ver"
+        "Cave Big Puddle Magic Ver"
       ]
     },
     {
       "ID": 310005100,
       "Entries": [
-        "Cave Interior_Waterfall(Small)"
+        "Cave Inside Cave_Waterfall (Small)"
       ]
     },
     {
       "ID": 310005101,
       "Entries": [
-        "Cave Interior_Waterfall(Small) For Cave 3-4 Narrow Audible Range Ver"
+        "Cave Inside Cave_Waterfall (Small) Cave 3-For 4 Narrow Audible Distance Ver"
       ]
     },
     {
       "ID": 310005200,
       "Entries": [
-        "Cave Waterfall Upper"
+        "Cave Atop Waterfall"
       ]
     },
     {
       "ID": 310005210,
       "Entries": [
-        "Cave Waterfall Lower"
+        "Cave Below Waterfall"
       ]
     },
     {
       "ID": 310005220,
       "Entries": [
-        "Cave Waterfall Ambient Sound (Distant)"
+        "Cave Waterfall Atmosphere Ambient Sound (Farther)"
       ]
     },
     {
       "ID": 310005300,
       "Entries": [
-        "Cave Waterfall Middle_Small Stream"
+        "Cave Mid-Waterfall_Brook"
       ]
     },
     {
@@ -448,61 +448,61 @@
     {
       "ID": 340100000,
       "Entries": [
-        "Divine Tower Snowy Mountain Burning Rotten Great Tree"
+        "Divine Tower Snow Mountain Burning World Tree"
       ]
     },
     {
       "ID": 340100010,
       "Entries": [
-        "Divine Tower Green Burning Rotten Great Tree"
+        "Divine Tower Green Burning World Tree"
       ]
     },
     {
       "ID": 340112000,
       "Entries": [
-        "Upside-Down Tower Chandelier Sway"
+        "Inverted Tower Chandelier Sway"
       ]
     },
     {
       "ID": 340115000,
       "Entries": [
-        "Upside-Down Tower Water"
+        "Inverted Tower Water"
       ]
     },
     {
       "ID": 340115001,
       "Entries": [
-        "Upside-Down Tower Elevator_Water_Sphere"
+        "Inverted Tower Elevator_Water_Sphere"
       ]
     },
     {
       "ID": 340115100,
       "Entries": [
-        "Upside-Down Tower Waterfall"
+        "Inverted Tower Waterfall"
       ]
     },
     {
       "ID": 340115101,
       "Entries": [
-        "Upside-Down Tower Waterfall"
+        "Inverted Tower Waterfall"
       ]
     },
     {
       "ID": 340115102,
       "Entries": [
-        "Upside-Down Tower Waterfall"
+        "Inverted Tower Waterfall"
       ]
     },
     {
       "ID": 340115103,
       "Entries": [
-        "Upside-Down Tower Waterfall"
+        "Inverted Tower Waterfall"
       ]
     },
     {
       "ID": 340305010,
       "Entries": [
-        "Divine Tower Sea Waterfall (for m34_15)"
+        "Divine Tower Sea Waterfall (m34_For 15)"
       ]
     },
     {
@@ -514,13 +514,13 @@
     {
       "ID": 350005200,
       "Entries": [
-        "Waterfall_Upper"
+        "Waterfall_Top"
       ]
     },
     {
       "ID": 350005201,
       "Entries": [
-        "Waterfall_Upper (Short Audible Range)"
+        "Waterfall_Top (Shorter Audible Distance)"
       ]
     },
     {
@@ -532,7 +532,7 @@
     {
       "ID": 350005300,
       "Entries": [
-        "Royal Capital Underground Sewers_Sewer Water (Medium)"
+        "Leyndell Underground Sewers_Sewer Pipe Water (Medium)"
       ]
     },
     {
@@ -544,25 +544,25 @@
     {
       "ID": 390005100,
       "Entries": [
-        "Cliff Tunnel Small Waterfall"
+        "Cliffside Tunnel Small Waterfall"
       ]
     },
     {
       "ID": 390005200,
       "Entries": [
-        "Cliff Tunnel_Giant Waterfall"
+        "Cliffside Tunnel_Extra Large Waterfall"
       ]
     },
     {
       "ID": 600000000,
       "Entries": [
-        "Green Waterfall SE_Lower"
+        "Green Waterfall SE_Bottom"
       ]
     },
     {
       "ID": 600000001,
       "Entries": [
-        "Green Tutorial Waterfall_Upper"
+        "Green Tutorial Waterfall_Top"
       ]
     },
     {
@@ -574,13 +574,13 @@
     {
       "ID": 600000003,
       "Entries": [
-        "Green Tutorial Waterfall_Near_Lower"
+        "Green Tutorial Waterfall_Near_Bottom"
       ]
     },
     {
       "ID": 600000010,
       "Entries": [
-        "Green Waterfall SE_Lower (For Crater)"
+        "Green Waterfall SE_Bottom (For Crater)"
       ]
     },
     {
@@ -592,7 +592,7 @@
     {
       "ID": 600000099,
       "Entries": [
-        "Green Start Point Night Screams"
+        "Green Start Point Night Scream"
       ]
     },
     {
@@ -616,85 +616,85 @@
     {
       "ID": 600006000,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006001,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006002,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006003,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006004,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006005,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006006,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006010,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006011,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006012,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006020,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006021,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600006030,
       "Entries": [
-        "Green Open Crucified Corpses_Box Placement"
+        "Green Open Crucified Corpse_Box Placement"
       ]
     },
     {
       "ID": 600050000,
       "Entries": [
-        "Open All Areas"
+        "Open Entire Area Doorway Ambient Sound"
       ]
     },
     {
@@ -724,49 +724,49 @@
     {
       "ID": 600200000,
       "Entries": [
-        "Highland Suspension Bridge"
+        "Altus Suspension Bridge"
       ]
     },
     {
       "ID": 600205000,
       "Entries": [
-        "Lava Ambience_River"
+        "Lava Ambient Sound_River"
       ]
     },
     {
       "ID": 600205200,
       "Entries": [
-        "Highland Large Puddle"
+        "Altus Big Puddle"
       ]
     },
     {
       "ID": 600205250,
       "Entries": [
-        "Highland Cliff Tunnel Colossal Waterfall"
+        "Altus Cliff Tunnel Extra Large Waterfall"
       ]
     },
     {
       "ID": 600205400,
       "Entries": [
-        "Highland Poison Swamp (Green)"
+        "Altus Poison Swamp (Green)"
       ]
     },
     {
       "ID": 600206000,
       "Entries": [
-        "Highland Crow 1"
+        "Altus Crow 1"
       ]
     },
     {
       "ID": 600305000,
       "Entries": [
-        "Plains Large Puddle"
+        "Plains Big Puddle"
       ]
     },
     {
       "ID": 600305010,
       "Entries": [
-        "Plains Large Waterfall Plains Sea Waterfall"
+        "Plains Huge Waterfall Plains Sea Waterfall"
       ]
     },
     {
@@ -778,13 +778,13 @@
     {
       "ID": 600305410,
       "Entries": [
-        "Plains_Poison Swamp (Red)"
+        "Plains Poison Swamp (Red)"
       ]
     },
     {
       "ID": 600400000,
       "Entries": [
-        "Snowy Mountain Suspension Bridge (Wind Only)"
+        "Snow Mountain Suspension Bridge (Wind Only)"
       ]
     },
     {
@@ -802,7 +802,7 @@
     {
       "ID": 999999999,
       "Entries": [
-        "ForTest"
+        "For Testing"
       ]
     }
   ]

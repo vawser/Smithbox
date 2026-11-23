@@ -1,0 +1,467 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0:None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1:Hard Stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2:Keen Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3:Surging Stone"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4:Gray Stone"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5:Blade Stone"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6:Spider Silk Steel Wire"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7:Mercury Stone"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8:Dragon Stone"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9:Suction Stone"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10:Marrow Stone"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11:Moonlight Stone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12:Moonshadow Stone"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13:Faint Light Stone"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14:Magic Shield Stone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15:Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16:DS"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Attack Power UP as Equip Load Decreases"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Attack Power UP as Equip Load Increases"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Max HP (Vigor)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Max MP (Mind)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Defense (Soul Level)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Max SA (Dexterity)"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Stamina (Endurance)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Scarlet Rot Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Bleed Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Frost Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Sleep Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Madness Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Curse Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Poison Resistance (Vigor)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Scarlet Rot Resistance (Vigor)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Bleed Resistance (Stamina)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Frost Resistance (Stamina)"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Sleep Resistance (Focus)"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Madness Resistance (Focus)"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Curse Resistance (Inspiration)"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Physical Defense (Strength)"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Physical Defense (Vigor)"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Magic Defense (Rational Power)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Fire Defense (Vitality)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Lightning Defense (Stamina)"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Dark Defense (Luck)"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Drop Rate (Luck)"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Recovery Spot Max Refill Count"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Shield_StatusCorrection_PhysicalCutRate"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Shield_StatusCorrection_ElementCutRate"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Shield_StatusCorrection_ResistanceCutRate"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Shield_StatusCorrection_StaminaCutRate"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Skill Point Max (Strength)"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Skill Point Max (Dexterity)"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Skill Point Max (Magic)"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Skill Point Max (Faith)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Growth Cost Souls"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Fall Damage Base Value"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Fall Damage Weight Ratio Correction"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Fall Damage Vigor Correction"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Fall Damage Skill Correction"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Equip Load (Stamina)"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Level Sync: HP"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Level Sync: MP"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Level Sync: Stamina"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Level Sync: Defense"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Level Sync: Resistance Value"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Level Sync: Weapon: Straight Sword"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Level Sync: Weapon: Dagger"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Level Sync: Weapon: Colossal Sword"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Level Sync: Weapon: Bow"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Level Sync: Weapon: Greatbow"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Level Sync: Weapon: Crossbow"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Level Sync: Weapon: Staff"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Level Sync: Weapon: Talisman and Bell"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Level Sync: Weapon: Sorcery Fire"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Level Sync: Item: Throwing Knife"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Level Sync: Item: Throwing Pot"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Enemy Search Level"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Name": "WaypointParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Water Area"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Land Beside Water Area"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Tower Interior"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Mushroom"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Camp"
+      ]
+    }
+  ]
+}

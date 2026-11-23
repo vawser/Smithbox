@@ -1,0 +1,311 @@
+{
+  "Name": "ResistCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test (Do Not Edit)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[NPC] All Types_Generic"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Poison_Weak Resistance"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Poison_Weak Resistance+"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Poison_Medium Resistance"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Poison_Medium Resistance+"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Poison_Strong Resistance"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Poison_Super Resistance"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Poison_Weakness"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Plague_Weak Resistance"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Plague_Weak Resistance+"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Plague_Medium Resistance"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Plague_Medium Resistance+"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Plague_Strong Resistance"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Plague_Super Resistance"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Plague_Weakness"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Blood Loss_Weak Resistance"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Blood Loss_Weak Resistance+"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Blood Loss_Medium Resistance"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Blood Loss_Medium Resistance+"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Blood Loss_Strong Resistance"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Blood Loss_Super Resistance"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Blood Loss_Weakness"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Curse_Weak Resistance"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Curse_Weak Resistance+"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Curse_Medium Resistance"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Curse_Medium Resistance+"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Curse_Strong Resistance"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Curse_Immunity"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Curse_Weakness"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Frost_Weak Resistance"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Frost_Weak Resistance+"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Frost_Medium Resistance"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Frost_Medium Resistance+"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Frost_Strong Resistance"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Frost_Super Resistance"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Frost_Weak Point"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Sleep_Weak Resistance"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Sleep_Weak Resistance+"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Sleep_Medium Resistance"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Sleep_Medium Resistance+"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Sleep_Strong Resistance"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Sleep_Super Resistance"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Sleep_Weak Point"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Madness_weak resistance"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Madness_weak resistance+"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Madness_medium resistance"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Madness_medium resistance+"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Madness_strong resistance"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "Madness_SuperResist"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Madness_weakness"
+      ]
+    }
+  ]
+}

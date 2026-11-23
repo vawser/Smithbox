@@ -1,0 +1,209 @@
+{
+  "Name": "MultiPlayCorrectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Must Not Extinguish"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Trash Enemy Default"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Strong Enemy Default"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Boss Default"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Field Boss Default"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Rennala of the Full Moon"
+      ]
+    },
+    {
+      "ID": 203100,
+      "Entries": [
+        "Rennala of the Full Moon (After HU)"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Black Blade Malenia"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Arbitrating Malenia"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Margit the Fell Omen"
+      ]
+    },
+    {
+      "ID": 219000,
+      "Entries": [
+        "Crumbling Marika"
+      ]
+    },
+    {
+      "ID": 219200,
+      "Entries": [
+        "Crumbling Marika (Post-HU)"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Aged Veteran General"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Tree Sentinel (Aberration)"
+      ]
+    },
+    {
+      "ID": 325100,
+      "Entries": [
+        "Tree Sentinel (Chief)"
+      ]
+    },
+    {
+      "ID": 325200,
+      "Entries": [
+        "Tree Sentinel (Sorcerer)"
+      ]
+    },
+    {
+      "ID": 356000,
+      "Entries": [
+        "Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 357000,
+      "Entries": [
+        "Godskin Apostle (Another)"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Guardian Lineage"
+      ]
+    },
+    {
+      "ID": 452000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 465000,
+      "Entries": [
+        "Ruinator"
+      ]
+    },
+    {
+      "ID": 467000,
+      "Entries": [
+        "Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 468000,
+      "Entries": [
+        "Meteoric Beast"
+      ]
+    },
+    {
+      "ID": 471000,
+      "Entries": [
+        "King of Ghouls"
+      ]
+    },
+    {
+      "ID": 472000,
+      "Entries": [
+        "Godfrey the Beast-clad"
+      ]
+    },
+    {
+      "ID": 472100,
+      "Entries": [
+        "Godfrey the Beast-clad (After HU)"
+      ]
+    },
+    {
+      "ID": 473000,
+      "Entries": [
+        "Radahn (Scrawny Horse)"
+      ]
+    },
+    {
+      "ID": 475000,
+      "Entries": [
+        "Grafted King"
+      ]
+    },
+    {
+      "ID": 476000,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 480000,
+      "Entries": [
+        "Greater Demon"
+      ]
+    },
+    {
+      "ID": 491000,
+      "Entries": [
+        "King's Mole"
+      ]
+    },
+    {
+      "ID": 495000,
+      "Entries": [
+        "Night King Followers"
+      ]
+    },
+    {
+      "ID": 496000,
+      "Entries": [
+        "Night King Followers (Giant Skeleton)"
+      ]
+    },
+    {
+      "ID": 498000,
+      "Entries": [
+        "Deathbird"
+      ]
+    }
+  ]
+}

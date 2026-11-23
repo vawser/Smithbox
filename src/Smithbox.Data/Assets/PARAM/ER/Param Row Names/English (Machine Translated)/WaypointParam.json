@@ -10,19 +10,19 @@
     {
       "ID": 100,
       "Entries": [
-        "Water Area"
+        "Watering Hole"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Land Beside Water Area"
+        "Land Beside Watering Hole"
       ]
     },
     {
       "ID": 300,
       "Entries": [
-        "Tower Interior"
+        "Inside Tower"
       ]
     },
     {

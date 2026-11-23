@@ -1,0 +1,1709 @@
+{
+  "Name": "NpcAiBehaviorProbability",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Category Classification"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Action Number"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Treat as probability?"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Melee Type_Attack Focused (Point Blank)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Melee Type_Attack Focused (Close Range)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Melee Type_Attack Focused (Mid Range)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Melee Type_Attack Focused (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Melee Type_Attack Focused (Long Range)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Melee Type_Attack Focused_Two-Handed Focused (Point Blank)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Melee Type_Attack Focused_Two-Handed Focused (Close Range)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Melee Type_Attack Focused_Two-Handed Focused (Mid Range)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Melee Type_Attack Focused_Two-Handed Focused (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Melee Type_Attack Focused_Two-Handed Focused (Long Range)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Melee Type_Maneuver Focused (Point Blank)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Melee Type_Positioning Focus (Close Range)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Melee Type_Maneuver Focused (Mid Range)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Melee Type_Maneuver Focused (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Melee Type_Positioning Focus (Long Range)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Melee Type_Positioning Focus_Shield Poke (Point Blank)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Melee Type_Positioning Focus_Shield Poke (Close Range)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Melee Type_Positioning Focus_Shield Poke (Mid Range)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Melee Type_Positioning Focus_Shield Poke (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Melee Type_Positioning Focus_Shield Poke (Long Range)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Melee Type_Positioning Focus_Wide Reach (Point Blank)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Melee Type_Positioning Focus_Wide Reach (Close Range)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Melee Type_Positioning Focus_Wide Reach (Mid Range)"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Melee Type_Positioning Focus_Wide Reach (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Melee Type_Positioning Focus_Wide Reach (Long Range)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Magic Type (Long Range Heavy) (Point Blank)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Magic Type (Long Range Heavy) (Close Range)"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Magic Type (Long Range Heavy) (Mid Range)"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Magic Type (Long Range Heavy) (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Magic Type (Long Range Heavy) (Long Range)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Magic Type (Mid Range) (Point Blank)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Magic Type (Mid Range) (Close Range)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Magic Type (Mid Range) (Mid Range)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Magic Type (Mid Range) (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Magic Type (Mid Range) (Long Range)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Magic Type (Close Range Heavy) (Point Blank)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Magic Type (Close Range Heavy) (Close Range)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Magic Type (Close Range Heavy) (Mid Range)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Magic Type (Close Range Heavy) (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Magic Type (Close Range Heavy) (Long Range)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Long Range Type (Point Blank)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Long Range Type (Close Range)"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Long Range Type (Mid Range)"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Long Range Type (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Long Range Type (Long Range)"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon (Point Blank)"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon (Close Range)"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon (Mid Range)"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon (Far Range)"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon_Parryable (Point Blank)"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon_Parryable (Close Range)"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon_Parryable (Mid Range)"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon_Parryable (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Sub_Left Hand Melee Weapon_Parryable (Long Range)"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Sub_Left Hand Ranged Weapon (Point Blank)"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Sub_Left Hand Ranged Weapon (Close Range)"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Sub_Left Hand Ranged Weapon (Mid Range)"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Sub_Left Hand Ranged Weapon (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Sub_Left Hand Ranged Weapon (Long Range)"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Sub_Left Hand Catalyst Weapon (Point Blank)"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Sub_Left Hand Catalyst Weapon (Close Range)"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Sub_Left Hand Catalyst Weapon (Mid Range)"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Sub_Left Hand Catalyst Weapon (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Sub_Left Hand Catalyst Weapon (Far Range)"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Sub_Left Hand Shield Weapon (Point Blank)"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Sub_Left Hand Shield Weapon (Close Range)"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Sub_Left Hand Shield Weapon (Mid Range)"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Sub_Left Hand Shield Weapon (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Sub_Left Hand Shield Weapon (Far Range)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Right hand is Spear"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Right hand is Spear"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Right hand is Spear"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Right hand is Spear"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Right hand is Spear"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Right hand is Greatsword (Point-Blank Range)"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Right hand is Greatsword (Close Range)"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Right hand is Greatsword (Mid Range)"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Right hand is Greatsword (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Right hand is Greatsword (Long Range)"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Has Skill Close-Range Attack (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Has Skill Close-Range Attack (Close Range)"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Has Skill Close-Range Attack (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Has Skill Close-Range Attack (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Has Skill Close-Range Attack (Far Range)"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Has Skill Mid-Range Attack (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Has Skill Mid-Range Attack (Close Range)"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Has Skill Mid-Range Attack (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Has Skill Mid-Range Attack (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Has Skill Mid-Range Attack (Far Range)"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Has Arts ranged attack (point blank)"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Has Arts ranged attack (close range)"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Has Arts ranged attack (mid range)"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Has Arts ranged attack (mid-long range)"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Has Arts ranged attack (long range)"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Has Skill Recovery (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Has Skill Recovery (Close Range)"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "Has Skill Recovery (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "Has Skill Recovery (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "Has Skill Recovery (Far Range)"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Has Skill Buff (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Has Skill Buff (Close Range)"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "Has Skill Buff (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "Has Skill Buff (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "Has Skill Buff (Far Range)"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Has Skill Special Roll (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Has Skill Special Roll (Close Range)"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "Has Skill Special Roll (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "Has Skill Special Roll (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "Has Skill Special Roll (Far Range)"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Has Skill In-Place Dodge (Close Range)"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "Has Skill In-Place Dodge (Short Range)"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "Has Skill In-Place Dodge (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2063,
+      "Entries": [
+        "Has Skill In-Place Dodge (Mid-Long Range)"
+      ]
+    },
+    {
+      "ID": 2064,
+      "Entries": [
+        "Has Skill In-Place Dodge (Long Range)"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Has Skill Parry (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2071,
+      "Entries": [
+        "Has Skill Parry (Close Range)"
+      ]
+    },
+    {
+      "ID": 2072,
+      "Entries": [
+        "Has Skill Parry (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2073,
+      "Entries": [
+        "Has Skill Parry (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2074,
+      "Entries": [
+        "Has Skill Parry (Far Range)"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Has Skill Debuff (Point Blank)"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "Has Skill Debuff (Close Range)"
+      ]
+    },
+    {
+      "ID": 2082,
+      "Entries": [
+        "Has Skill Debuff (Mid Range)"
+      ]
+    },
+    {
+      "ID": 2083,
+      "Entries": [
+        "Has Skill Debuff (Mid-Far Range)"
+      ]
+    },
+    {
+      "ID": 2084,
+      "Entries": [
+        "Has Skill Debuff (Far Range)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Enemy Is Guarding"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Enemy Is Forcibly Asleep"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Ally HP is 50% or more"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Equip Load Type is Heavy (Superheavy)"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Equip Load Type is Heavy"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Equip Load Type is Medium"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Equip Load Type is Light"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Health still above 50%"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Stamina is 0 or below"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Magic Close Range Magic series not held"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Magic Mid Range Magic series not held"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Magic Long Range Magic series not held"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Magic HP Recovery Magic series not held"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Magic Ally HP Recovery Magic series not held"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Magic Buff Magic series not held"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Magic Debuff Magic series not held"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Right hand Catalyst has no castable close range Magic type"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Right hand Catalyst has no castable mid range Magic type"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Right hand Catalyst has no castable long range Magic type"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "Right hand Catalyst has no castable HP recovery Magic type"
+      ]
+    },
+    {
+      "ID": 6431,
+      "Entries": [
+        "Right hand Catalyst has no castable ally HP recovery Magic type"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "Right hand Catalyst has no castable buff Magic type (including buff status)"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "Right hand Catalyst has no castable debuff Magic type (including debuff status)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Left hand Catalyst has no close-range magic type to cast"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Left hand Catalyst has no mid-range magic type to cast"
+      ]
+    },
+    {
+      "ID": 6620,
+      "Entries": [
+        "Left hand Catalyst has no long-range magic type to cast"
+      ]
+    },
+    {
+      "ID": 6630,
+      "Entries": [
+        "Left hand Catalyst has no HP recovery magic type to cast"
+      ]
+    },
+    {
+      "ID": 6631,
+      "Entries": [
+        "Left hand Catalyst has no ally HP recovery magic type to cast"
+      ]
+    },
+    {
+      "ID": 6640,
+      "Entries": [
+        "Left hand Catalyst has no buff magic type to cast (including buff status)"
+      ]
+    },
+    {
+      "ID": 6650,
+      "Entries": [
+        "Left hand Catalyst has no debuff magic type to cast (including debuff status)"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "Right hand is Catalyst and has no castable attack Magic"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "No mesh behind."
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "No mesh on left or right"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "No pass to target"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "No usable throwing item type"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "No usable HP recovery item type"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "No usable buff item type"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "No usable powder pouch item type"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "No usable debuff item type"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "Right hand R1 has no arrows/bolts to fire"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "Right hand R2 has no arrows/bolts to fire"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "Left hand R1 cannot fire arrows/bolts"
+      ]
+    },
+    {
+      "ID": 8411,
+      "Entries": [
+        "Left hand R2 cannot fire arrows/bolts"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "L1 Unguardable State"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Cannot immediately use dodge Arts in this state"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Just switched weapons (7 sec cooldown not elapsed)"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Right hand is held two-handed"
+      ]
+    },
+    {
+      "ID": 9021,
+      "Entries": [
+        "Left hand is two-handed gripped"
+      ]
+    },
+    {
+      "ID": 9022,
+      "Entries": [
+        "Holding with one hand"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Dual-wielding attack possible with left and right weapons"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Left hand Skill is a weapon skill (L2 attack prohibited)"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "Skill Action Cooldown Active"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "During Cooldown After Debuff Action"
+      ]
+    },
+    {
+      "ID": 9506,
+      "Entries": [
+        "Rolling"
+      ]
+    },
+    {
+      "ID": 9507,
+      "Entries": [
+        "Close Range During Magic Cooldown"
+      ]
+    },
+    {
+      "ID": 9508,
+      "Entries": [
+        "During Cooldown After Mid-Range Magic Cast"
+      ]
+    },
+    {
+      "ID": 9509,
+      "Entries": [
+        "During Long Range Magic Cooldown"
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        "Recovery Cast Cooldown Active"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "He is a henchman."
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Spectator role."
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Personality Check Test_Has Special Effect 5020 [Aggressive]"
+      ]
+    },
+    {
+      "ID": 15021,
+      "Entries": [
+        "Personality Check Test_Has Special Effect 5021 [Cautious]"
+      ]
+    },
+    {
+      "ID": 15022,
+      "Entries": [
+        "Personality Check Test_Has Special Effect 5022 [Timid]"
+      ]
+    },
+    {
+      "ID": 15023,
+      "Entries": [
+        "Personality Check Test_Has Special Effect 5023"
+      ]
+    },
+    {
+      "ID": 15024,
+      "Entries": [
+        "Personality Check Test_Has Special Effect 5024"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18690 applied[_Minion AI Adjustment Effect]"
+      ]
+    },
+    {
+      "ID": 15031,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18691 applied[Munou]"
+      ]
+    },
+    {
+      "ID": 15032,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18692 applied[]"
+      ]
+    },
+    {
+      "ID": 15033,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18693 applied[Divine Tower NPC_First Half AI Adjustment]"
+      ]
+    },
+    {
+      "ID": 15034,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18694 applied[Divine Tower NPC_Second Half AI Adjustment]"
+      ]
+    },
+    {
+      "ID": 15035,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18695 applied[Confirmed Two-handed Hold]"
+      ]
+    },
+    {
+      "ID": 15036,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18650 [Puppet A: Fallen Saint AI Adjust]"
+      ]
+    },
+    {
+      "ID": 15037,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18651 [Puppet C: Pot Man AI Adjust]"
+      ]
+    },
+    {
+      "ID": 15038,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18652 [Malenia's Daughter: Left Arm Only]"
+      ]
+    },
+    {
+      "ID": 15039,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18653 [Hundred Smiles_Aggressive State]"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18654 [Hundred Smiles_Normal State]"
+      ]
+    },
+    {
+      "ID": 15041,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18655 [Hundred Smiles_Watchful Evasion State]"
+      ]
+    },
+    {
+      "ID": 15042,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18656 [304_Scarred Knight_AI Adjust+Madness Immunity]"
+      ]
+    },
+    {
+      "ID": 15043,
+      "Entries": [
+        "Draw Rate Correction_Has Status Effect 18657 [344_Tragos]"
+      ]
+    },
+    {
+      "ID": 15044,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18658 applied[Volcano Manor Request_Munou's Brother]"
+      ]
+    },
+    {
+      "ID": 15045,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18659 applied[Meat Cleaver NPC]"
+      ]
+    },
+    {
+      "ID": 15046,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18660 applied[355_Church 5-2 NPC (Old Man Mask)]"
+      ]
+    },
+    {
+      "ID": 15047,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18661 applied[359_Monsan Knight]"
+      ]
+    },
+    {
+      "ID": 15048,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18662 applied[360_Round Table First Tarnished Survivor A]"
+      ]
+    },
+    {
+      "ID": 15049,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18663 applied[380_Round Table First Tarnished Survivor_B]"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18664 applied[327_Dragon Feast Woman Warrior]"
+      ]
+    },
+    {
+      "ID": 15051,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18665 applied[385_Base 1F Enemy]"
+      ]
+    },
+    {
+      "ID": 15052,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18666 applied[318_Chaos Host (Chaos)]"
+      ]
+    },
+    {
+      "ID": 15053,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18667 applied[316_Academy Sorceress]"
+      ]
+    },
+    {
+      "ID": 15054,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18668 applied[356_Circular Plaza 2-1 NPC]"
+      ]
+    },
+    {
+      "ID": 15055,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18669 applied: [382_Open Snowy Mountain Seaside Tower 5-1_Boss-tier]"
+      ]
+    },
+    {
+      "ID": 15056,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18670 applied[Radahn Festival Patch]"
+      ]
+    },
+    {
+      "ID": 15057,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 18671 applied[Two-handed Hold Seal]"
+      ]
+    },
+    {
+      "ID": 15058,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 19384 applied[Beast Claw"
+      ]
+    },
+    {
+      "ID": 15060,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 19382 applied[Patch1.17_New Lucatiel]"
+      ]
+    },
+    {
+      "ID": 15061,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 19381 applied[Patch1.17_Golden Mask Marquis's First Disciple]"
+      ]
+    },
+    {
+      "ID": 15062,
+      "Entries": [
+        "Lottery Rate Correction_Special Effects 19381 and 190010 applied[Patch1.17_Golden Mask Marquis's First Disciple]"
+      ]
+    },
+    {
+      "ID": 15063,
+      "Entries": [
+        "Lottery Rate Correction_Special Effects 19381 and 190023 applied[Patch1.17_Golden Mask Marquis's First Disciple]"
+      ]
+    },
+    {
+      "ID": 15064,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 19380 applied[Patch1.17_Golden Mask Marquis's First Disciple_Opening Skill]"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018660 applied[Cave Boss_Opening Skill]"
+      ]
+    },
+    {
+      "ID": 15101,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018661 applied[Cave Boss_Two-handed Hold]"
+      ]
+    },
+    {
+      "ID": 15102,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018662 applied[Cave Boss_One-handed Hold]"
+      ]
+    },
+    {
+      "ID": 15103,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018663 applied[Plain Cleric_Forward Pressure Action Probability UP]"
+      ]
+    },
+    {
+      "ID": 15104,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018664 applied[Shrine Bear_Two-handed Start (Walking)]"
+      ]
+    },
+    {
+      "ID": 15105,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018665 applied[Shrine Bear_Two-handed Start]"
+      ]
+    },
+    {
+      "ID": 15106,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018666 applied[Shrine Bear_One-handed]"
+      ]
+    },
+    {
+      "ID": 15107,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018667 applied[Shrine Bear_Two-handed]"
+      ]
+    },
+    {
+      "ID": 15108,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018668 applied[Shrine Dancer_: No One-handed Hold"
+      ]
+    },
+    {
+      "ID": 15109,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018672 applied[Miquella Faction 1 Leader_]"
+      ]
+    },
+    {
+      "ID": 15110,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018673 applied[Miquella Faction 2 Radahn Soldier_]"
+      ]
+    },
+    {
+      "ID": 15111,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018674 applied[Miquella Faction 3 Godskin]"
+      ]
+    },
+    {
+      "ID": 15112,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018675 applied[Miquella Faction 4 Blood Lord Follower_]"
+      ]
+    },
+    {
+      "ID": 15113,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018676 applied[Miquella Faction 5 Trina Faction]"
+      ]
+    },
+    {
+      "ID": 15114,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018677 applied[Miquella Faction 6 Malenia Faction_]"
+      ]
+    },
+    {
+      "ID": 15115,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018678 applied[Miquella Faction Plain Cleric]"
+      ]
+    },
+    {
+      "ID": 15116,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018679 applied[Miquella Faction Plain Cleric_Many Holy Seals]"
+      ]
+    },
+    {
+      "ID": 15117,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018680 applied[Miquella Faction Plain Cleric_Aggressive]"
+      ]
+    },
+    {
+      "ID": 15118,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018719 applied[Primeval Godskin_Normal Time]"
+      ]
+    },
+    {
+      "ID": 15119,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018681 applied[Primeval Godskin_Wants to Use Skill]"
+      ]
+    },
+    {
+      "ID": 15120,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018683 applied[Primeval Godskin_Normal After HU]"
+      ]
+    },
+    {
+      "ID": 15121,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018684 applied[Primeval Godskin_Normal Phantom]"
+      ]
+    },
+    {
+      "ID": 15122,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018685 applied[Primeval Godskin_Wants Crying Sickness]"
+      ]
+    },
+    {
+      "ID": 15123,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018686 applied[Primeval Godskin_Crying Sickness Phantom]"
+      ]
+    },
+    {
+      "ID": 15124,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018689 applied[Primeval Godskin_Observe]"
+      ]
+    },
+    {
+      "ID": 15125,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018690 applied[Finger Reader Assassin_Katana]"
+      ]
+    },
+    {
+      "ID": 15126,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018693 applied[Finger Reader Marquis]"
+      ]
+    },
+    {
+      "ID": 15127,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018694 applied_For Catalyst Weapons"
+      ]
+    },
+    {
+      "ID": 15128,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018695 applied[Shrine Swordmaster Warrior_High Skill Frequency]"
+      ]
+    },
+    {
+      "ID": 15129,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018696 applied[Shrine Heavy Armor_Opening Skill]"
+      ]
+    },
+    {
+      "ID": 15130,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018697 applied[Dragon Feast Ahab]"
+      ]
+    },
+    {
+      "ID": 15131,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018698 applied[Finger Reader Assassin_Twins]"
+      ]
+    },
+    {
+      "ID": 15132,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018699 applied[Godskin Hunter]"
+      ]
+    },
+    {
+      "ID": 15133,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018700 applied[Normal Plain Cleric]"
+      ]
+    },
+    {
+      "ID": 15134,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018701 applied[Babel Upper Level_Helper Slot]"
+      ]
+    },
+    {
+      "ID": 15135,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018702 applied[Miquella Faction 4 Blood Lord Follower_Bow]"
+      ]
+    },
+    {
+      "ID": 15136,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018703 applied[Jar Making Village NPC]"
+      ]
+    },
+    {
+      "ID": 15137,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018704 applied[Abyss Forest NPC]"
+      ]
+    },
+    {
+      "ID": 15138,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018705 applied[Beast Claw NPC]"
+      ]
+    },
+    {
+      "ID": 15139,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018706 applied[Highway Fort Church Front NPC]"
+      ]
+    },
+    {
+      "ID": 15140,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018707 applied[Miquella Faction 1 Leader_]: Co-op"
+      ]
+    },
+    {
+      "ID": 15141,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018708 applied[Normal Plain Cleric]: Co-op"
+      ]
+    },
+    {
+      "ID": 15142,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018709 applied[Finger Reader Assassin_Katana_Counter Aim]"
+      ]
+    },
+    {
+      "ID": 15143,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018710 applied[Finger Reader Assassin_Twins_Counter Aim]"
+      ]
+    },
+    {
+      "ID": 15144,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018711 applied[Finger Reader Marquis_Finger Maggot Summon Cap]"
+      ]
+    },
+    {
+      "ID": 15145,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018712 applied[Shrine Dancer_Opening Skill]"
+      ]
+    },
+    {
+      "ID": 15146,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018713 applied[Shrine Swordmaster Warrior_Observe]"
+      ]
+    },
+    {
+      "ID": 15147,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018714 applied[Shrine Swordmaster Warrior_Normal Attack]"
+      ]
+    },
+    {
+      "ID": 15148,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018715 applied[Shrine Heavy Armor_Sword and Crossbow]"
+      ]
+    },
+    {
+      "ID": 15149,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018716 applied[Shrine Heavy Armor_Sword Two-handed]"
+      ]
+    },
+    {
+      "ID": 15150,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018717 applied[Cave Boss_Skill Seal]"
+      ]
+    },
+    {
+      "ID": 15151,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018718 applied[Miquella Faction 1 Leader_Invasion Opening Observe]"
+      ]
+    },
+    {
+      "ID": 15152,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018720 applied[Finger Reader Marquis_Immediately After Finger Maggot Summon]"
+      ]
+    },
+    {
+      "ID": 15153,
+      "Entries": [
+        "Lottery Rate Correction_Special Effect 20018721 applied[Miquella Faction 4 Blood Lord Follower_Bow__Flee]"
+      ]
+    },
+    {
+      "ID": 15154,
+      "Entries": [
+        "Lottery Rate Correction_Applied Special Effect 20018722[Primordial Divine Being_Normal]_Slight delay before Arts reactivation"
+      ]
+    },
+    {
+      "ID": 15155,
+      "Entries": [
+        "Lottery Rate Correction_Applied Special Effect 20018724[Dragonfeast Priest_Opening Buff]"
+      ]
+    },
+    {
+      "ID": 15156,
+      "Entries": [
+        "Lottery Rate Correction_Applied Special Effect 20018724[Dragonfeast Priest]"
+      ]
+    }
+  ]
+}

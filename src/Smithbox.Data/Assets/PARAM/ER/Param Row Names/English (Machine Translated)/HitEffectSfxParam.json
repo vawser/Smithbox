@@ -22,13 +22,13 @@
     {
       "ID": 30,
       "Entries": [
-        "Dust Cloud"
+        "Sand Cloud"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Earth"
+        "Soil"
       ]
     },
     {
@@ -94,37 +94,37 @@
     {
       "ID": 110,
       "Entries": [
-        "Crystal Fragment_Front"
+        "Crystal Shard_Front"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Crystal Fragment_Top"
+        "Crystal Shard_Top"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Crystal Fragment_Bottom"
+        "Crystal Shard_Bottom"
       ]
     },
     {
       "ID": 113,
       "Entries": [
-        "Crystal Fragment_Left"
+        "Crystal Shard_Left"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        "Crystal Fragment_Right"
+        "Crystal Shard_Right"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Grass Piece"
+        "Grass Fragment"
       ]
     },
     {
@@ -148,13 +148,13 @@
     {
       "ID": 151,
       "Entries": [
-        "Heavy Iron_Upper"
+        "Heavy Iron_Top"
       ]
     },
     {
       "ID": 152,
       "Entries": [
-        "Heavy Iron_Lower"
+        "Heavy Iron_Bottom"
       ]
     },
     {
@@ -202,13 +202,13 @@
     {
       "ID": 201,
       "Entries": [
-        "Blood_Up"
+        "Blood_Top"
       ]
     },
     {
       "ID": 202,
       "Entries": [
-        "Blood_Down"
+        "Blood_Bottom"
       ]
     },
     {
@@ -226,31 +226,31 @@
     {
       "ID": 210,
       "Entries": [
-        "Blood(Undead)_Front"
+        "Blood (Hollow)_Front"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        "Blood(Undead)_Up"
+        "Blood (Hollow)_Top"
       ]
     },
     {
       "ID": 212,
       "Entries": [
-        "Blood(Undead)_Down"
+        "Blood (Hollow)_Bottom"
       ]
     },
     {
       "ID": 213,
       "Entries": [
-        "Blood(Undead)_Left"
+        "Blood (Hollow)_Left"
       ]
     },
     {
       "ID": 214,
       "Entries": [
-        "Blood(Undead)_Right"
+        "Blood (Hollow)_Right"
       ]
     },
     {
@@ -262,13 +262,13 @@
     {
       "ID": 221,
       "Entries": [
-        "Flesh_Weak Point (Large)_Upper"
+        "Flesh_Weak Point (Large)_Top"
       ]
     },
     {
       "ID": 222,
       "Entries": [
-        "Flesh_Weak Point (Large)_Lower"
+        "Flesh_Weak Point (Large)_Bottom"
       ]
     },
     {
@@ -316,31 +316,31 @@
     {
       "ID": 240,
       "Entries": [
-        "Body Fluid_front"
+        "Bodily Fluid_Front"
       ]
     },
     {
       "ID": 241,
       "Entries": [
-        "Body Fluid_upper"
+        "Bodily Fluid_Top"
       ]
     },
     {
       "ID": 242,
       "Entries": [
-        "Body Fluid_lower"
+        "Bodily Fluid_Bottom"
       ]
     },
     {
       "ID": 243,
       "Entries": [
-        "Body Fluid_left"
+        "Bodily Fluid_Left"
       ]
     },
     {
       "ID": 244,
       "Entries": [
-        "Body Fluid_right"
+        "Bodily Fluid_Right"
       ]
     },
     {
@@ -358,13 +358,13 @@
     {
       "ID": 261,
       "Entries": [
-        "Crystal_Weak Point_Upper"
+        "Crystal_Weak Point_Top"
       ]
     },
     {
       "ID": 262,
       "Entries": [
-        "Crystal_Weak Point_Lower"
+        "Crystal_Weak Point_Bottom"
       ]
     },
     {
@@ -418,13 +418,13 @@
     {
       "ID": 281,
       "Entries": [
-        "Black Shadow_Up"
+        "Black Shadow_Top"
       ]
     },
     {
       "ID": 282,
       "Entries": [
-        "Black Shadow_Down"
+        "Black Shadow_Bottom"
       ]
     },
     {
@@ -472,7 +472,7 @@
     {
       "ID": 300,
       "Entries": [
-        "Hair Piece"
+        "Fur Piece"
       ]
     },
     {
@@ -508,7 +508,7 @@
     {
       "ID": 320,
       "Entries": [
-        "Carrion Chunk"
+        "Rotten Flesh Chunk"
       ]
     },
     {
@@ -550,13 +550,13 @@
     {
       "ID": 341,
       "Entries": [
-        "Lava_Upper"
+        "Lava_Top"
       ]
     },
     {
       "ID": 342,
       "Entries": [
-        "Lava_Lower"
+        "Lava_Bottom"
       ]
     },
     {
@@ -592,91 +592,91 @@
     {
       "ID": 380,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
       "ID": 381,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
       "ID": 382,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
       "ID": 383,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
       "ID": 384,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
       "ID": 390,
       "Entries": [
-        "Scale_Weak Point"
+        "Scales_Weak Point"
       ]
     },
     {
       "ID": 391,
       "Entries": [
-        "Scale_Weak Point"
+        "Scales_Weak Point"
       ]
     },
     {
       "ID": 392,
       "Entries": [
-        "Scale_Weak Point"
+        "Scales_Weak Point"
       ]
     },
     {
       "ID": 393,
       "Entries": [
-        "Scale_Weak Point"
+        "Scales_Weak Point"
       ]
     },
     {
       "ID": 394,
       "Entries": [
-        "Scale_Weak Point"
+        "Scales_Weak Point"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Scale_Weak Point(Large)"
+        "Scales_Weak Point (Large)"
       ]
     },
     {
       "ID": 401,
       "Entries": [
-        "Scale_Weak Point(Large)"
+        "Scales_Weak Point (Large)"
       ]
     },
     {
       "ID": 402,
       "Entries": [
-        "Scale_Weak Point(Large)"
+        "Scales_Weak Point (Large)"
       ]
     },
     {
       "ID": 403,
       "Entries": [
-        "Scale_Weak Point(Large)"
+        "Scales_Weak Point (Large)"
       ]
     },
     {
       "ID": 404,
       "Entries": [
-        "Scale_Weak Point(Large)"
+        "Scales_Weak Point (Large)"
       ]
     },
     {
@@ -688,31 +688,31 @@
     {
       "ID": 420,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     },
     {
       "ID": 421,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     },
     {
       "ID": 422,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     },
     {
       "ID": 423,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     },
     {
       "ID": 424,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     },
     {
@@ -730,13 +730,13 @@
     {
       "ID": 441,
       "Entries": [
-        "Rot_Upper"
+        "Rot_Top"
       ]
     },
     {
       "ID": 442,
       "Entries": [
-        "Rot_Lower"
+        "Rot_Bottom"
       ]
     },
     {
@@ -760,13 +760,13 @@
     {
       "ID": 451,
       "Entries": [
-        "Rot_Weak Point_Upper"
+        "Rot_Weak Point_Top"
       ]
     },
     {
       "ID": 452,
       "Entries": [
-        "Rot_Weak Point_Lower"
+        "Rot_Weak Point_Bottom"
       ]
     },
     {
@@ -790,31 +790,31 @@
     {
       "ID": 470,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Weakpoint"
+        "Spirit (Spirit Jellyfish)_Weak Point"
       ]
     },
     {
       "ID": 471,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Weakpoint"
+        "Spirit (Spirit Jellyfish)_Weak Point"
       ]
     },
     {
       "ID": 472,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Weakpoint"
+        "Spirit (Spirit Jellyfish)_Weak Point"
       ]
     },
     {
       "ID": 473,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Weakpoint"
+        "Spirit (Spirit Jellyfish)_Weak Point"
       ]
     },
     {
       "ID": 474,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Weakpoint"
+        "Spirit (Spirit Jellyfish)_Weak Point"
       ]
     },
     {
@@ -826,13 +826,13 @@
     {
       "ID": 481,
       "Entries": [
-        "Flesh_Weak Point_Upper"
+        "Flesh_Weak Point_Top"
       ]
     },
     {
       "ID": 482,
       "Entries": [
-        "Flesh_Weak Point_Lower"
+        "Flesh_Weak Point_Bottom"
       ]
     },
     {
@@ -850,31 +850,31 @@
     {
       "ID": 490,
       "Entries": [
-        "Body Fluid_weak point_front"
+        "Bodily Fluid_Weak Point_Front"
       ]
     },
     {
       "ID": 491,
       "Entries": [
-        "Body Fluid_weak point_upper"
+        "Bodily Fluid_Weak Point_Top"
       ]
     },
     {
       "ID": 492,
       "Entries": [
-        "Body Fluid_weak point_lower"
+        "Bodily Fluid_Weak Point_Bottom"
       ]
     },
     {
       "ID": 493,
       "Entries": [
-        "Body Fluid_weak point_left"
+        "Bodily Fluid_Weak Point_Left"
       ]
     },
     {
       "ID": 494,
       "Entries": [
-        "Body Fluid_weak point_right"
+        "Bodily Fluid_Weak Point_Right"
       ]
     },
     {
@@ -886,13 +886,13 @@
     {
       "ID": 501,
       "Entries": [
-        "Rune_Up"
+        "Rune_Top"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "Rune_Down"
+        "Rune_Bottom"
       ]
     },
     {
@@ -916,13 +916,13 @@
     {
       "ID": 511,
       "Entries": [
-        "Rune_Weak Point_Upper"
+        "Rune_Weak Point_Top"
       ]
     },
     {
       "ID": 512,
       "Entries": [
-        "Rune_Weak Point_Lower"
+        "Rune_Weak Point_Bottom"
       ]
     },
     {
@@ -946,55 +946,55 @@
     {
       "ID": 521,
       "Entries": [
-        "spirit_Upper"
+        "Spirit_Top"
       ]
     },
     {
       "ID": 522,
       "Entries": [
-        "spirit_Lower"
+        "Spirit_Bottom"
       ]
     },
     {
       "ID": 523,
       "Entries": [
-        "spirit_Left"
+        "Spirit_Left"
       ]
     },
     {
       "ID": 524,
       "Entries": [
-        "spirit_Right"
+        "Spirit_Right"
       ]
     },
     {
       "ID": 530,
       "Entries": [
-        "Spirit_Weakpoint_Front"
+        "Spirit_Weak Point_Front"
       ]
     },
     {
       "ID": 531,
       "Entries": [
-        "Spirit_Weakpoint_Upper"
+        "Spirit_Weak Point_Top"
       ]
     },
     {
       "ID": 532,
       "Entries": [
-        "Spirit_Weakpoint_Lower"
+        "Spirit_Weak Point_Bottom"
       ]
     },
     {
       "ID": 533,
       "Entries": [
-        "Spirit_Weakpoint_Left"
+        "Spirit_Weak Point_Left"
       ]
     },
     {
       "ID": 534,
       "Entries": [
-        "Spirit_Weakpoint_Right"
+        "Spirit_Weak Point_Right"
       ]
     },
     {
@@ -1006,13 +1006,13 @@
     {
       "ID": 541,
       "Entries": [
-        "Shadow_Upper"
+        "Shadow_Top"
       ]
     },
     {
       "ID": 542,
       "Entries": [
-        "Shadow_Lower"
+        "Shadow_Bottom"
       ]
     },
     {
@@ -1036,13 +1036,13 @@
     {
       "ID": 551,
       "Entries": [
-        "Shadow_Weak Point_Upper"
+        "Shadow_Weak Point_Top"
       ]
     },
     {
       "ID": 552,
       "Entries": [
-        "Shadow_Weak Point_Lower"
+        "Shadow_Weak Point_Bottom"
       ]
     },
     {
@@ -1066,31 +1066,31 @@
     {
       "ID": 570,
       "Entries": [
-        "Rune (Crumbling Marika)"
+        "Rune (Collapsed Marika)"
       ]
     },
     {
       "ID": 571,
       "Entries": [
-        "Rune (Crumbling Marika)"
+        "Rune (Collapsed Marika)"
       ]
     },
     {
       "ID": 572,
       "Entries": [
-        "Rune (Crumbling Marika)"
+        "Rune (Collapsed Marika)"
       ]
     },
     {
       "ID": 573,
       "Entries": [
-        "Rune (Crumbling Marika)"
+        "Rune (Collapsed Marika)"
       ]
     },
     {
       "ID": 574,
       "Entries": [
-        "Rune (Crumbling Marika)"
+        "Rune (Collapsed Marika)"
       ]
     },
     {
@@ -1102,13 +1102,13 @@
     {
       "ID": 581,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Upper"
+        "Spirit (Spirit Jellyfish)_Top"
       ]
     },
     {
       "ID": 582,
       "Entries": [
-        "Spirit (Spirit Jellyfish)_Lower"
+        "Spirit (Spirit Jellyfish)_Bottom"
       ]
     },
     {
@@ -1132,13 +1132,13 @@
     {
       "ID": 591,
       "Entries": [
-        "Tree_Upper"
+        "Tree_Top"
       ]
     },
     {
       "ID": 592,
       "Entries": [
-        "Tree_Lower"
+        "Tree_Bottom"
       ]
     },
     {

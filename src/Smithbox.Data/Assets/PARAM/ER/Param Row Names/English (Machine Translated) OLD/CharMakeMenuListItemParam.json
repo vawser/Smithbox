@@ -1,0 +1,149 @@
+{
+  "Name": "CharMakeMenuListItemParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Not set"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Base Body Type (Discontinued)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Muscle Mass"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Skeleton Frame"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Appearance (Male) *Value is Face Parameter ID"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Appearance (Female) *Value is Face Parameter ID"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Eye (Right)"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Eye (Left)"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Eyebrow"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Beard"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Beard_Female Use (Same as Male)"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Hairstyle"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Decal"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Accessory"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Eyes (Both Eyes)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Eyelashes"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Decal Flip"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Eye Change"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Burn Scar"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Gender"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Age Group"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Origin"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Gift"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Voice"
+      ]
+    }
+  ]
+}

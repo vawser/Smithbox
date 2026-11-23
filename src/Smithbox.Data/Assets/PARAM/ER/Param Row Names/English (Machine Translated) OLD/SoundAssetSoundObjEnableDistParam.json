@@ -1,0 +1,743 @@
+{
+  "Name": "SoundAssetSoundObjEnableDistParam",
+  "Entries": [
+    {
+      "ID": 3362,
+      "Entries": [
+        "Empty"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Chest (Old)"
+      ]
+    },
+    {
+      "ID": 27002,
+      "Entries": [
+        "Lever"
+      ]
+    },
+    {
+      "ID": 27005,
+      "Entries": [
+        "Ladder"
+      ]
+    },
+    {
+      "ID": 99005,
+      "Entries": [
+        "Vanishing Door"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Empty"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Empty"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Empty"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Crucified Corpse (currently unused)"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800002,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800003,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800004,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800005,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800006,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800007,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800008,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800009,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800011,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800012,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 800013,
+      "Entries": [
+        "Destruction Sound - Tree"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810001,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810002,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810003,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810004,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810005,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810006,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810007,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810008,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810009,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810020,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810021,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810022,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 810023,
+      "Entries": [
+        "Destruction Sound - Wood"
+      ]
+    },
+    {
+      "ID": 815000,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815001,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815002,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815003,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815004,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815005,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815006,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815007,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815008,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815009,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 815010,
+      "Entries": [
+        "Destruction Sound - Wood Combined"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820001,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820002,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820003,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820004,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820005,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820006,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820007,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820008,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820009,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820010,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820011,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820012,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820020,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820021,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820022,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820023,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820024,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820025,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 820026,
+      "Entries": [
+        "Destruction Sound - Rock/Sand/Dirt"
+      ]
+    },
+    {
+      "ID": 830000,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830001,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830002,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830003,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830004,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830005,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830006,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830007,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830008,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 830020,
+      "Entries": [
+        "Destruction Sound - Iron"
+      ]
+    },
+    {
+      "ID": 840000,
+      "Entries": [
+        "Destruction Sound - Bone"
+      ]
+    },
+    {
+      "ID": 840001,
+      "Entries": [
+        "Destruction Sound - Bone"
+      ]
+    },
+    {
+      "ID": 840002,
+      "Entries": [
+        "Destruction Sound - Bone"
+      ]
+    },
+    {
+      "ID": 840003,
+      "Entries": [
+        "Destruction Sound - Bone"
+      ]
+    },
+    {
+      "ID": 840004,
+      "Entries": [
+        "Destruction Sound - Bone"
+      ]
+    },
+    {
+      "ID": 840005,
+      "Entries": [
+        "Destruction Sound - Bone"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 850001,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 850002,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 850003,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 850004,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 850005,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 850006,
+      "Entries": [
+        "Destruction Sound - Glass/Bottle"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "Destruction Sound - Explosion"
+      ]
+    },
+    {
+      "ID": 890000,
+      "Entries": [
+        "Destruction Sound - Other"
+      ]
+    },
+    {
+      "ID": 890001,
+      "Entries": [
+        "Destruction Sound - Other"
+      ]
+    },
+    {
+      "ID": 890002,
+      "Entries": [
+        "Destruction Sound - Other"
+      ]
+    },
+    {
+      "ID": 890003,
+      "Entries": [
+        "Destruction Sound - Other"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900015,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900016,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900030,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900031,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900032,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 900035,
+      "Entries": [
+        "Door"
+      ]
+    },
+    {
+      "ID": 930001,
+      "Entries": [
+        "Kick Down Ladder"
+      ]
+    },
+    {
+      "ID": 930002,
+      "Entries": [
+        "Collapsing Floor(Pitfall)"
+      ]
+    },
+    {
+      "ID": 930003,
+      "Entries": [
+        "Catacombs Traps 3 Types"
+      ]
+    },
+    {
+      "ID": 930004,
+      "Entries": [
+        "Sewers Boss Room Altar Active"
+      ]
+    },
+    {
+      "ID": 930006,
+      "Entries": [
+        "Stormveil Main Gate Door"
+      ]
+    },
+    {
+      "ID": 930007,
+      "Entries": [
+        "Monsan Rolling Rock"
+      ]
+    },
+    {
+      "ID": 930008,
+      "Entries": [
+        "Highland Windmill"
+      ]
+    },
+    {
+      "ID": 930009,
+      "Entries": [
+        "Catapult"
+      ]
+    },
+    {
+      "ID": 950000,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 950001,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 950002,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 950003,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 950004,
+      "Entries": [
+        "Chest"
+      ]
+    },
+    {
+      "ID": 980000,
+      "Entries": [
+        "Waterfall"
+      ]
+    },
+    {
+      "ID": 980001,
+      "Entries": [
+        "Waterfall"
+      ]
+    }
+  ]
+}

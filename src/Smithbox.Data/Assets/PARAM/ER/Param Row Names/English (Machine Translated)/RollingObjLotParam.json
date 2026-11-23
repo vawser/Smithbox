@@ -10,19 +10,19 @@
     {
       "ID": 10010000,
       "Entries": [
-        "Stormveil Back Area"
+        "Stormveil Depths"
       ]
     },
     {
       "ID": 11000000,
       "Entries": [
-        "Royal Capital"
+        "Leyndell"
       ]
     },
     {
       "ID": 11050000,
       "Entries": [
-        "Royal Capital (Ash)"
+        "Leyndell (Ash)"
       ]
     },
     {
@@ -46,25 +46,25 @@
     {
       "ID": 12030000,
       "Entries": [
-        "Underground Labyrinth: Royal Capital"
+        "Underground Labyrinth: Leyndell"
       ]
     },
     {
       "ID": 12040000,
       "Entries": [
-        "Underground Labyrinth: Hanging Terrain Boss Room"
+        "Underground Labyrinth: Hang Terrain Boss Room"
       ]
     },
     {
       "ID": 12050000,
       "Entries": [
-        "Underground Labyrinth: Plains Interior"
+        "Underground Labyrinth: Plains Depths"
       ]
     },
     {
       "ID": 12060000,
       "Entries": [
-        "Underground Labyrinth: Royal Capital Ark"
+        "Underground Labyrinth: Leyndell Ark"
       ]
     },
     {
@@ -76,7 +76,7 @@
     {
       "ID": 14000000,
       "Entries": [
-        "Monsan"
+        "Raya Lucaria"
       ]
     },
     {
@@ -130,7 +130,7 @@
     {
       "ID": 34120000,
       "Entries": [
-        "Divine Tower 3 (Highland)"
+        "Divine Tower 3 (Altus)"
       ]
     },
     {
@@ -154,13 +154,13 @@
     {
       "ID": 35000000,
       "Entries": [
-        "Royal Capital Underground Sewers"
+        "Leyndell Underground Sewers"
       ]
     },
     {
       "ID": 39200000,
       "Entries": [
-        "Cliff Tunnel"
+        "Cliffside Tunnel"
       ]
     },
     {
@@ -298,85 +298,85 @@
     {
       "ID": 31030000,
       "Entries": [
-        "Cave1-4"
+        "Cave 1-4"
       ]
     },
     {
       "ID": 31040000,
       "Entries": [
-        "Cave2-1"
+        "Cave 2-1"
       ]
     },
     {
       "ID": 31050000,
       "Entries": [
-        "Cave2-2"
+        "Cave 2-2"
       ]
     },
     {
       "ID": 31060000,
       "Entries": [
-        "Cave2-3"
+        "Cave 2-3"
       ]
     },
     {
       "ID": 31070000,
       "Entries": [
-        "Cave3-1"
+        "Cave 3-1"
       ]
     },
     {
       "ID": 31080000,
       "Entries": [
-        "Cave3-2"
+        "Cave 3-2"
       ]
     },
     {
       "ID": 31090000,
       "Entries": [
-        "Cave3-3"
+        "Cave 3-3"
       ]
     },
     {
       "ID": 31100000,
       "Entries": [
-        "Cave4-1"
+        "Cave 4-1"
       ]
     },
     {
       "ID": 31110000,
       "Entries": [
-        "Cave4-2"
+        "Cave 4-2"
       ]
     },
     {
       "ID": 31120000,
       "Entries": [
-        "Cave5-1"
+        "Cave 5-1"
       ]
     },
     {
       "ID": 31130000,
       "Entries": [
-        "Cave5-2"
+        "Cave 5-2"
       ]
     },
     {
       "ID": 31140000,
       "Entries": [
-        "Cave5-3"
+        "Cave 5-3"
       ]
     },
     {
       "ID": 31150000,
       "Entries": [
-        "Cave1-5"
+        "Cave 1-5"
       ]
     },
     {
       "ID": 31170000,
       "Entries": [
-        "Cave1-6"
+        "Cave 1-6"
       ]
     },
     {
@@ -418,43 +418,43 @@
     {
       "ID": 32060000,
       "Entries": [
-        "Tunnel3-3"
+        "Tunnel 3-3"
       ]
     },
     {
       "ID": 32070000,
       "Entries": [
-        "Tunnel4-1"
+        "Tunnel 4-1"
       ]
     },
     {
       "ID": 32080000,
       "Entries": [
-        "Tunnel4-2"
+        "Tunnel 4-2"
       ]
     },
     {
       "ID": 32090000,
       "Entries": [
-        "Tunnel4-3"
+        "Tunnel 4-3"
       ]
     },
     {
       "ID": 32100000,
       "Entries": [
-        "Tunnel4-4"
+        "Tunnel 4-4"
       ]
     },
     {
       "ID": 32110000,
       "Entries": [
-        "Tunnel5-1"
+        "Tunnel 5-1"
       ]
     },
     {
       "ID": 32120000,
       "Entries": [
-        "Tunnel5-2"
+        "Tunnel 5-2"
       ]
     }
   ]

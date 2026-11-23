@@ -16,19 +16,19 @@
     {
       "ID": 11000000,
       "Entries": [
-        "m11_00 Royal Capital"
+        "m11_00 Leyndell"
       ]
     },
     {
       "ID": 11050000,
       "Entries": [
-        "m11_05 Royal Capital (Ash)"
+        "m11_05 Leyndell (Ash)"
       ]
     },
     {
       "ID": 11100000,
       "Entries": [
-        "m11_10 Royal Capital (Base)"
+        "m11_10 Leyndell (Base)"
       ]
     },
     {
@@ -52,25 +52,25 @@
     {
       "ID": 12030000,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital"
+        "m12_03 Underground Labyrinth: Leyndell"
       ]
     },
     {
       "ID": 12040000,
       "Entries": [
-        "m12_04 Underground Labyrinth: Ancestor Spirit"
+        "m12_04 Underground Labyrinth: Ancestral Spirit"
       ]
     },
     {
       "ID": 12050000,
       "Entries": [
-        "m12_05 Underground Labyrinth: Plains Interior"
+        "m12_05 Underground Labyrinth: Plains Depths"
       ]
     },
     {
       "ID": 12060000,
       "Entries": [
-        "m12_05 Underground Labyrinth: Royal Capital Ark"
+        "m12_05 Underground Labyrinth: Leyndell Ark"
       ]
     },
     {
@@ -94,7 +94,7 @@
     {
       "ID": 14000000,
       "Entries": [
-        "m14_00 Monsan"
+        "m14_00 Raya Lucaria"
       ]
     },
     {
@@ -412,7 +412,7 @@
     {
       "ID": 32050000,
       "Entries": [
-        "m32_05 Catacombs 3-3"
+        "m32_05 Tunnel 3-3"
       ]
     },
     {
@@ -424,13 +424,13 @@
     {
       "ID": 32070000,
       "Entries": [
-        "m32_07 Catacombs 4-1"
+        "m32_07 Tunnel 4-1"
       ]
     },
     {
       "ID": 32080000,
       "Entries": [
-        "m32_08 Catacombs 4-2"
+        "m32_08 Tunnel 4-2"
       ]
     },
     {
@@ -448,7 +448,7 @@
     {
       "ID": 32110000,
       "Entries": [
-        "m32_11 Catacombs 5-1"
+        "m32_11 Tunnel 5-1"
       ]
     },
     {
@@ -472,7 +472,7 @@
     {
       "ID": 34120000,
       "Entries": [
-        "m34_12 Divine Tower (Highland)"
+        "m34_12 Divine Tower (Mountain)"
       ]
     },
     {
@@ -496,19 +496,19 @@
     {
       "ID": 34160000,
       "Entries": [
-        "m34_16 Divine Tower (Lake)_Reversed"
+        "m34_16 Divine Tower (Lake)_Mirrored"
       ]
     },
     {
       "ID": 35000000,
       "Entries": [
-        "m35_00 Royal Capital Underground Sewers"
+        "m35_00 Leyndell Underground Sewers"
       ]
     },
     {
       "ID": 39200000,
       "Entries": [
-        "m39_20 Cliff Tunnel"
+        "m39_20 Cliffside Tunnel"
       ]
     },
     {
@@ -574,25 +574,25 @@
     {
       "ID": 60375100,
       "Entries": [
-        "Highland Section Start Point"
+        "Altus District Start Point"
       ]
     },
     {
       "ID": 60385100,
       "Entries": [
-        "Lake in Lower Level"
+        "Lake on Lower Level"
       ]
     },
     {
       "ID": 60474200,
       "Entries": [
-        "Arena"
+        "Colosseum"
       ]
     },
     {
       "ID": 60495300,
       "Entries": [
-        "Snowy Mountain Section Start Point"
+        "Snow Mountain District Start Point"
       ]
     }
   ]

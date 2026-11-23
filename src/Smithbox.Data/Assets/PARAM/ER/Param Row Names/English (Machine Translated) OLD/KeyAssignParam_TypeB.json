@@ -1,0 +1,329 @@
+{
+  "Name": "KeyAssignParam_TypeB",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Walk"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Running (Forward Movement)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Running (Backward Movement)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Running (Left Movement)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Running (Right Movement)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Crouch"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Dash/Backstep/Rolling"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Camera Move Up"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Camera Move Down"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Camera Move Left / Lock-On Switch (Left)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Camera Move Right / Lock-On Switch (Right)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Camera Reset / Lock-On"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Switch Spell"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Item Switch"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Right weapon switch"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Left weapon switch"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Right hand (normal attack)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Right hand (heavy attack)"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Left hand (normal attack)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Left hand (strong attack)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Item Use"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Control Action"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Two-handed Hold (Right) Stance"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Main Menu Display"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Map Menu"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Cursor Move (Up)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Cursor Move (Down)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Cursor Move (Right)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Cursor Move (Left)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Map Cursor Move (Up)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Map Cursor Move (Down)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Map Cursor Move (Right)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Map Cursor Move (Left)"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Confirm"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Confirm (Mouse Only)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Confirm (Pad Only)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Cancel"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Cancel (Pad Only)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Menu Switch (L)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Menu Switch (R)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Function 1: Status Switch etc. *1"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Function 2: Display Switch / Unequip etc. *2"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Expand Sub-Menu"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Window Scroll (Up)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Window Scroll (Down)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Sort"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Function 3: Simple/Detailed Display Switch etc."
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Menu Page Scroll (Up)"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Menu Page Scroll (Down)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Map Zoom In"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Map Zoom Out"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Confirm (Alternate)"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Cancel (Alternate)"
+      ]
+    }
+  ]
+}

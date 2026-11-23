@@ -1,0 +1,203 @@
+{
+  "Name": "PostureControlParam_WepLeft",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Left hand Reaper"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Left hand Catalyst"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Left hand Greatshield"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Left hand Torch"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Left hand sword type"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Left hand fist/claw type"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Left hand heavy sword type"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Left hand axe/hammer type"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Left hand Twinblade"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Left hand Dueling Shield"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Mounted_Standard"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Mounted_Left-Hand Reaper"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Mounted_Left-Hand Catalyst"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Mounted_Left-Hand Greatshield"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Mounted_Left-Hand Torch"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Mounted_Left-Hand Sword Type"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Mounted_Left-Hand Fist/Claw Type"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Mounted_Left-Hand Heavy Sword Type"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Mounted_Left-Hand Axe/Hammer Type"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Mounted_Left-Hand Twinblade"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Mounted_Left-Hand Dueling Shield"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Crouch_Normal"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Crouch_Left Hand Reaper"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Crouch_Left Hand Catalyst"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Crouch_Left Hand Greatshield"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Crouch_Left Hand Torch"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Crouch_Left Hand Sword Type"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Crouch_Left Hand Fist"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Crouch_Left Hand Heavy Sword Type"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Crouch_Left Hand Axe"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Crouch_Left Hand Twinblade"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Crouch_Left Hand Dueling Shield"
+      ]
+    }
+  ]
+}

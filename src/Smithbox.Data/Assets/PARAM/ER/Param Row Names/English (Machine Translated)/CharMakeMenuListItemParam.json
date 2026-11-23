@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Not set"
+        "Not Set"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Base Body Type (Discontinued)"
+        "Base Body Type (Abolished)"
       ]
     },
     {
@@ -22,19 +22,19 @@
     {
       "ID": 130,
       "Entries": [
-        "Skeleton Frame"
+        "Skeleton"
       ]
     },
     {
       "ID": 240,
       "Entries": [
-        "Appearance (Male) *Value is Face Parameter ID"
+        "Appearance (Male) ※\u0022Value\u0022Is Face Param ID"
       ]
     },
     {
       "ID": 260,
       "Entries": [
-        "Appearance (Female) *Value is Face Parameter ID"
+        "Appearance (Female) ※\u0022Value\u0022Is Face Param ID"
       ]
     },
     {
@@ -52,7 +52,7 @@
     {
       "ID": 500,
       "Entries": [
-        "Eyebrow"
+        "Eyebrows"
       ]
     },
     {
@@ -64,7 +64,7 @@
     {
       "ID": 620,
       "Entries": [
-        "Beard_Female Use (Same as Male)"
+        "Beard For Women (Same as Male)"
       ]
     },
     {
@@ -88,7 +88,7 @@
     {
       "ID": 1000,
       "Entries": [
-        "Eyes (Both Eyes)"
+        "Eye (For Both Pupils)"
       ]
     },
     {
@@ -118,7 +118,7 @@
     {
       "ID": 100000,
       "Entries": [
-        "Gender"
+        "Sex"
       ]
     },
     {
@@ -136,7 +136,7 @@
     {
       "ID": 100300,
       "Entries": [
-        "Gift"
+        "Keepsake"
       ]
     },
     {

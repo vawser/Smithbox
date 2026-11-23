@@ -10,13 +10,13 @@
     {
       "ID": 10000100,
       "Entries": [
-        "m10_00 Stormveil Castle Generic Tree-lined Path"
+        "m10_00 Stormveil Castle Generic Tree-Lined Path"
       ]
     },
     {
       "ID": 10000102,
       "Entries": [
-        "m10_00 Stormveil Castle Generic Gate of God"
+        "m10_00 Stormveil Castle Generic Divine Gate"
       ]
     },
     {
@@ -40,43 +40,43 @@
     {
       "ID": 11000100,
       "Entries": [
-        "m11_00 Royal Capital Generic Boss Room"
+        "m11_00 Leyndell Generic Boss Room"
       ]
     },
     {
       "ID": 11000102,
       "Entries": [
-        "m11_00 Royal Capital Generic Mid-Boss Room"
+        "m11_00 Leyndell Generic Mid-Boss Room"
       ]
     },
     {
       "ID": 11000104,
       "Entries": [
-        "m11_00 Royal Capital Generic Main Street"
+        "m11_00 Leyndell Generic Main Street"
       ]
     },
     {
       "ID": 11000106,
       "Entries": [
-        "m11_00 Royal Capital Generic Sealed Area Upper Stairs"
+        "m11_00 Leyndell Generic Blockaded Area Top of Stairs"
       ]
     },
     {
       "ID": 11050100,
       "Entries": [
-        "m11_05 Royal Capital (Ash) Generic Boss Room"
+        "m11_05 Leyndell (Ash) Generic Boss Room"
       ]
     },
     {
       "ID": 11050102,
       "Entries": [
-        "m11_05 Royal Capital (Ash) Generic Mid-Boss Room"
+        "m11_05 Leyndell (Ash) Generic Mid-Boss Room"
       ]
     },
     {
       "ID": 12010100,
       "Entries": [
-        "m12_01 Underground Labyrinth Poison Swamp Lower Level Generic Rune Devourer Ruins"
+        "m12_01 Underground Labyrinth Poison Swamp Lower Level Generic Rune Eater Ruins"
       ]
     },
     {
@@ -112,7 +112,7 @@
     {
       "ID": 12020102,
       "Entries": [
-        "m12_02 Underground Labyrinth Plains Lower Level Generic Land Octopus Zone"
+        "m12_02 Underground Labyrinth Plains Lower Level Generic Land Octopus Area"
       ]
     },
     {
@@ -142,67 +142,67 @@
     {
       "ID": 12020118,
       "Entries": [
-        "m12_02 Underground Labyrinth Plains Upper Level Generic Ruinator"
+        "m12_02 Underground Labyrinth Plains Upper Level Generic The Desolator"
       ]
     },
     {
       "ID": 12030100,
       "Entries": [
-        "m12_05 Underground Labyrinth Royal Capital Generic Jar Ant Flight Zone"
+        "m12_05 Underground Labyrinth Leyndell Generic Pot Ant Flight Zone"
       ]
     },
     {
       "ID": 12030102,
       "Entries": [
-        "m12_02 Underground Labyrinth Royal Capital Generic Mausoleum Area"
+        "m12_02 Underground Labyrinth Leyndell Generic Mausoleum Area"
       ]
     },
     {
       "ID": 12030104,
       "Entries": [
-        "m12_02 Underground Labyrinth Royal Capital Generic Bedfellows Boss Room"
+        "m12_02 Underground Labyrinth Leyndell Generic Bedfellows Boss Room"
       ]
     },
     {
       "ID": 12030106,
       "Entries": [
-        "m12_02 Underground Labyrinth Royal Capital Generic Guardian Lineage Boss Room"
+        "m12_02 Underground Labyrinth Leyndell Generic Guardian\u0027s Descendant Boss Room"
       ]
     },
     {
       "ID": 12030108,
       "Entries": [
-        "m12_02 Underground Labyrinth Royal Capital Generic Front of Sixteen Knights Boss"
+        "m12_02 Underground Labyrinth Leyndell Generic Before Sixteen Knights Boss"
       ]
     },
     {
       "ID": 12040100,
       "Entries": [
-        "m12_04 Underground Labyrinth Hang Terrain Generic Boss Room"
+        "m12_04 Underground Labyrinth Hanging Terrain Generic Boss Room"
       ]
     },
     {
       "ID": 12050100,
       "Entries": [
-        "m12_05 Underground Labyrinth Plains Interior Generic Underground Forest"
+        "m12_05 Underground Labyrinth Plains Depths Generic Underground Forest"
       ]
     },
     {
       "ID": 12050102,
       "Entries": [
-        "m12_02 Underground Labyrinth Plains Interior Generic Underground Mountain Interior"
+        "m12_02 Underground Labyrinth Plains Depths Generic Inside Subterranean Mountain"
       ]
     },
     {
       "ID": 12050104,
       "Entries": [
-        "m12_02 Underground Labyrinth Plains Interior Generic Boss Room"
+        "m12_02 Underground Labyrinth Plains Depths Generic Boss Room"
       ]
     },
     {
       "ID": 12070100,
       "Entries": [
-        "m12_07 Underground Labyrinth Plains Lower Level Generic Rune Devourer Ruins"
+        "m12_07 Underground Labyrinth Plains Lower Level Generic Rune Eater Ruins"
       ]
     },
     {
@@ -226,25 +226,25 @@
     {
       "ID": 13000100,
       "Entries": [
-        "m13_00 Descending Ruins Generic Mid Boss Room"
+        "m13_00 Descending Ruins Generic Mid-Boss Room"
       ]
     },
     {
       "ID": 13000102,
       "Entries": [
-        "m13_00 Descending Ruins Generic Castle Wall Top"
+        "m13_00 Descending Ruins Generic Atop Castle Wall"
       ]
     },
     {
       "ID": 13000106,
       "Entries": [
-        "m13_00 Descending Ruins Generic Castle Wall Base Water Area"
+        "m13_00 Descending Ruins Generic Castle Wall Base Watering Hole"
       ]
     },
     {
       "ID": 13000108,
       "Entries": [
-        "m13_00 Descending Ruins Generic Upper Level Garden Ritual Site"
+        "m13_00 Descending Ruins Generic Upper Garden Ritual Site"
       ]
     },
     {
@@ -256,31 +256,31 @@
     {
       "ID": 13000122,
       "Entries": [
-        "m13_00 Descending Ruins Generic Back Boss Room"
+        "m13_00 Descending Ruins Generic Hidden Boss Room"
       ]
     },
     {
       "ID": 14000100,
       "Entries": [
-        "m14_00 Monsan Generic Graveyard Second Half"
+        "m14_00 Raya Lucaria Generic Cemetery Latter Half"
       ]
     },
     {
       "ID": 14000102,
       "Entries": [
-        "m14_01 Monsan Generic Lecture Hall (Mid-Boss Room)"
+        "m14_01 Raya Lucaria Generic Auditorium (Mid-Boss Room)"
       ]
     },
     {
       "ID": 14000104,
       "Entries": [
-        "m14_02 Monsan Generic Garden"
+        "m14_02 Raya Lucaria Generic Garden"
       ]
     },
     {
       "ID": 14000106,
       "Entries": [
-        "m14_02 Monsan Generic Boss Room Before HU"
+        "m14_02 Raya Lucaria Generic Boss Room Pre-HU"
       ]
     },
     {
@@ -298,7 +298,7 @@
     {
       "ID": 15000104,
       "Entries": [
-        "m15_00 Rotten Great Tree Generic Lower Castle Wall"
+        "m15_00 Rotten Great Tree Generic Castle Wall Lower Level"
       ]
     },
     {
@@ -334,7 +334,7 @@
     {
       "ID": 16000114,
       "Entries": [
-        "m16_00 Volcano Prison Generic Great Boss"
+        "m16_00 Volcano Prison Generic Major Boss"
       ]
     },
     {
@@ -358,31 +358,31 @@
     {
       "ID": 35000100,
       "Entries": [
-        "m35_00 Royal Capital Underground (Sewers) Generic Boss Room"
+        "m35_00 Leyndell Underground (Sewer) Generic Boss Room"
       ]
     },
     {
       "ID": 35000102,
       "Entries": [
-        "m35_00 Royal Capital Underground (Sewers) Generic Catacombs Boss Room"
+        "m35_00 Leyndell Underground (Sewer) Generic Catacombs Boss Room"
       ]
     },
     {
       "ID": 39200100,
       "Entries": [
-        "m39_20 Cliff Tunnel Generic Large Roof"
+        "m39_20 Cliffside Tunnel Generic Large Roof"
       ]
     },
     {
       "ID": 39200102,
       "Entries": [
-        "m39_20 Cliff Tunnel Generic Twin Crone"
+        "m39_20 Cliffside Tunnel Generic Twin Crones"
       ]
     },
     {
       "ID": 39200104,
       "Entries": [
-        "m39_20 Cliff Tunnel Generic Boss Room"
+        "m39_20 Cliffside Tunnel Generic Boss Room"
       ]
     },
     {
@@ -676,37 +676,37 @@
     {
       "ID": 32050100,
       "Entries": [
-        "m32_05 Catacombs 3-3 Generic Boss Room"
+        "m32_05 Tunnel 3-3 Generic Boss Room"
       ]
     },
     {
       "ID": 32070100,
       "Entries": [
-        "m32_07 Catacombs 4-1 Generic Boss Room"
+        "m32_07 Tunnel 4-1 Generic Boss Room"
       ]
     },
     {
       "ID": 32080100,
       "Entries": [
-        "m32_08 Catacombs 4-2 Generic Boss Room"
+        "m32_08 Tunnel 4-2 Generic Boss Room"
       ]
     },
     {
       "ID": 32110100,
       "Entries": [
-        "m32_11 Catacombs 5-1 Generic Boss Room"
+        "m32_11 Tunnel 5-1 Generic Boss Room"
       ]
     },
     {
       "ID": 34120100,
       "Entries": [
-        "m34_12 Catacombs 3-2 (Divine Tower_same map as Highland) Generic Catacombs Boss Room"
+        "m34_12 Tunnel 3-2 (Divine Tower_Same Map as Altus) Generic Tunnel Boss Room"
       ]
     },
     {
       "ID": 34120102,
       "Entries": [
-        "m34_12 Catacombs 3-2 (Divine Tower_same map as Highland) Generic Root Area Lower Level"
+        "m34_12 Tunnel 3-2 (Divine Tower_Same Map as Altus) Generic Root Area Lower Level"
       ]
     },
     {
@@ -718,7 +718,7 @@
     {
       "ID": 1041380100,
       "Entries": [
-        "m60_41_38_Generic_Stormveil Castle Front_1"
+        "m60_41_38_Generic_Before Stormveil Castle_1"
       ]
     },
     {
@@ -772,7 +772,7 @@
     {
       "ID": 1044360100,
       "Entries": [
-        "m60_44_36_Generic_Ruins 1-4 Surface"
+        "m60_44_36_Generic_Ruins 1-4 Above Ground"
       ]
     },
     {
@@ -790,25 +790,25 @@
     {
       "ID": 1045370106,
       "Entries": [
-        "m60_45_37_汎用_Misty Forest Runebear"
+        "m60_45_37_Generic_Mistwood Rune Bear"
       ]
     },
     {
       "ID": 1045380100,
       "Entries": [
-        "m60_45_38_汎用_Demi-Human Group"
+        "m60_45_38_Generic_Demi-Human Group"
       ]
     },
     {
       "ID": 1045390100,
       "Entries": [
-        "m60_45_39_汎用_Torch Village_Night Kin"
+        "m60_45_39_Generic_Village of Calling Water_Night Kindred"
       ]
     },
     {
       "ID": 1046360100,
       "Entries": [
-        "m60_46_36_汎用_Seaside Tower"
+        "m60_46_36_Generic_Seaside Tower"
       ]
     },
     {
@@ -826,7 +826,7 @@
     {
       "ID": 1044330100,
       "Entries": [
-        "m60_44_33_Generic_Caravan Stopover"
+        "m60_44_33_Generic_Caravan Anchorage"
       ]
     },
     {
@@ -874,7 +874,7 @@
     {
       "ID": 1045330100,
       "Entries": [
-        "m60_45_33_Generic_Meteorite Crater"
+        "m60_45_33_Generic_Meteor Crater"
       ]
     },
     {
@@ -892,7 +892,7 @@
     {
       "ID": 1039420100,
       "Entries": [
-        "m60_39_42_Generic_Battlefield Ruins"
+        "m60_39_42_Generic_Old Battlefield"
       ]
     },
     {
@@ -904,55 +904,55 @@
     {
       "ID": 1038420100,
       "Entries": [
-        "m60_38_42_Generic_Lookout Tower Front"
+        "m60_38_42_Generic_Before Watchtower"
       ]
     },
     {
       "ID": 1039440100,
       "Entries": [
-        "m60_39_44_Generic_Night Followers Forest Front"
+        "m60_39_44_Generic_Before Night\u0027s Kin Forest"
       ]
     },
     {
       "ID": 1037440100,
       "Entries": [
-        "m60_37_44_Generic_Submerged City 1"
+        "m60_37_44_Generic_Sunken City 1"
       ]
     },
     {
       "ID": 1036440100,
       "Entries": [
-        "m60_36_44_Generic_Submerged City 2"
+        "m60_36_44_Generic_Sunken City 2"
       ]
     },
     {
       "ID": 1034440100,
       "Entries": [
-        "m60_34_44_Generic_Submerged City (Detached)"
+        "m60_34_44_Generic_Sunken City (Detached)"
       ]
     },
     {
       "ID": 1034450100,
       "Entries": [
-        "m60_34_45_Generic_Behind Monsan"
+        "m60_34_45_Generic_Behind Raya Lucaria"
       ]
     },
     {
       "ID": 1036480100,
       "Entries": [
-        "m60_36_48_Generic_Royal Capital Road Side 1"
+        "m60_36_48_Generic_Beside Road to Leyndell 1"
       ]
     },
     {
       "ID": 1037490100,
       "Entries": [
-        "m60_37_49_Generic_Royal Capital Road Side Encampment"
+        "m60_37_49_Generic_Encampment Beside Road to Leyndell"
       ]
     },
     {
       "ID": 1034480100,
       "Entries": [
-        "m60_34_48_Generic_Ruins 2-2 Surface"
+        "m60_34_48_Generic_Ruins 2-2 Above Ground"
       ]
     },
     {
@@ -964,25 +964,25 @@
     {
       "ID": 1038450100,
       "Entries": [
-        "m60_38_45_Generic_Encampment 2-3"
+        "m60_38_45_Generic_Camp 2-3"
       ]
     },
     {
       "ID": 1034500100,
       "Entries": [
-        "m60_34_50_Generic_Ranni Sorcerer Tower Front"
+        "m60_34_50_Generic_Before Ranni\u0027s Sorcerer Tower"
       ]
     },
     {
       "ID": 1036410100,
       "Entries": [
-        "m60_36_41_Generic_Encampment 2-2"
+        "m60_36_41_Generic_Camp 2-2"
       ]
     },
     {
       "ID": 1036500100,
       "Entries": [
-        "m60_36_50_Generic_Fort Side Large Graveyard"
+        "m60_36_50_Generic_Great Cemetery Beside Fort"
       ]
     },
     {
@@ -1000,19 +1000,19 @@
     {
       "ID": 1033470100,
       "Entries": [
-        "m60_33_47_Generic_Bell Tower Group Lower Encampment"
+        "m60_33_47_Generic_Encampment Below Bell Tower Cluster"
       ]
     },
     {
       "ID": 1034420100,
       "Entries": [
-        "m60_34_42_Generic_Fell Village Entrance"
+        "m60_34_42_Generic_Lame Village Entrance"
       ]
     },
     {
       "ID": 1035420100,
       "Entries": [
-        "m60_35_42_Generic_Fell Village Boss Room"
+        "m60_35_42_Generic_Lame Village Boss Room"
       ]
     },
     {
@@ -1024,7 +1024,7 @@
     {
       "ID": 1035500102,
       "Entries": [
-        "m60_35_50_Generic_Lake Fort Church Front"
+        "m60_35_50_Generic_Before Lake Fort Church"
       ]
     },
     {
@@ -1054,271 +1054,271 @@
     {
       "ID": 1036510100,
       "Entries": [
-        "m60_36_51_Generic_Highland Royal Capital Side_Perfumer Ruins"
+        "m60_36_51_Generic_Altus Leyndell Side_Perfume Ruins"
       ]
     },
     {
       "ID": 1037510100,
       "Entries": [
-        "m60_37_51_Generic_Highland Royal Capital Side_Guardian Lineage"
+        "m60_37_51_Generic_Altus Leyndell Side_Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 1038510100,
       "Entries": [
-        "m60_38_51_Generic_Highland Royal Capital Side_Ruins 3-3"
+        "m60_38_51_Generic_Altus Leyndell Side_Ruins 3-3"
       ]
     },
     {
       "ID": 1039500100,
       "Entries": [
-        "m60_39_50_Generic_Highland Royal Capital Side_Radagon Encampment"
+        "m60_39_50_Generic_Altus Leyndell Side_Radagon Encampment"
       ]
     },
     {
       "ID": 1039540100,
       "Entries": [
-        "m60_39_54_Generic_Highland Fort"
+        "m60_39_54_Generic_Altus Fort"
       ]
     },
     {
       "ID": 1040520100,
       "Entries": [
-        "m60_40_52_Generic_Highland Royal Capital Side_Black Knife Descendant in Front of Hero's Grave"
+        "m60_40_52_Generic_Altus Leyndell Side_Black Knife Descendant Before Hero\u0027s Grave"
       ]
     },
     {
       "ID": 1040530102,
       "Entries": [
-        "m60_40_53_Generic_Highland Royal Capital Side_Ruins 3-2"
+        "m60_40_53_Generic_Altus Leyndell Side_Ruins 3-2"
       ]
     },
     {
       "ID": 1041500100,
       "Entries": [
-        "m60_41_50_Generic_Highland Royal Capital Side Giant Crater"
+        "m60_41_50_Generic_Altus Leyndell Side Giant Crater"
       ]
     },
     {
       "ID": 1041510100,
       "Entries": [
-        "m60_41_51_Generic_Highland Royal Capital Side Tree Sentinel Torch"
+        "m60_41_51_Generic_Altus Leyndell Side Tree Sentinel Torch"
       ]
     },
     {
       "ID": 1041510102,
       "Entries": [
-        "m60_41_51_Generic_Highland Royal Capital Side Surface Graveyard Zone"
+        "m60_41_51_Generic_Altus Leyndell Side Above-Ground Cemetery Area"
       ]
     },
     {
       "ID": 1041510104,
       "Entries": [
-        "m60_41_51_Generic_Highland Royal Capital Side Cave Front of 3-3"
+        "m60_41_51_Generic_Altus Leyndell Side Cave 3-Before 3"
       ]
     },
     {
       "ID": 1041520100,
       "Entries": [
-        "m60_41_52_Generic_Highland Royal Capital Side Guardian Lineage_Rematch"
+        "m60_41_52_Generic_Altus Leyndell Side Guardian\u0027s Descendant_Rematch"
       ]
     },
     {
       "ID": 1041530100,
       "Entries": [
-        "m60_41_53_Generic_Highland Royal Capital Side Great Tree 3-1"
+        "m60_41_53_Generic_Altus Leyndell Side Great Tree 3-1"
       ]
     },
     {
       "ID": 1041530102,
       "Entries": [
-        "m60_41_53_Generic_Highland Royal Capital Side Deracine Forest Slug Ruins"
+        "m60_41_53_Generic_Altus Leyndell Side Déraciné Forest Slug Ruins"
       ]
     },
     {
       "ID": 1042540100,
       "Entries": [
-        "m60_42_54_Generic_Highland Royal Capital Side_In Front of Tower 3-1"
+        "m60_42_54_Generic_Altus Leyndell Side_Tower 3-Before 1"
       ]
     },
     {
       "ID": 1042550100,
       "Entries": [
-        "m60_42_55_Generic_Highland Royal Capital Side_Windmill Village Top"
+        "m60_42_55_Generic_Altus Leyndell Side_Windmill Village Summit"
       ]
     },
     {
       "ID": 1042500100,
       "Entries": [
-        "m60_42_50_Generic_Highland Royal Capital Side_Snake Spirit Encampment"
+        "m60_42_50_Generic_Altus Leyndell Side_Serpent Spirit Encampment"
       ]
     },
     {
       "ID": 1042510100,
       "Entries": [
-        "m60_42_51_Generic_Highland Royal Capital Side_Castle Wall Interior Stairs"
+        "m60_42_51_Generic_Altus Leyndell Side_Stairs Inside Castle Wall"
       ]
     },
     {
       "ID": 1042520100,
       "Entries": [
-        "m60_42_52_Generic_Highland Royal Capital Side_Bat Encampment"
+        "m60_42_52_Generic_Altus Leyndell Side_Bat Camp"
       ]
     },
     {
       "ID": 1044530100,
       "Entries": [
-        "m60_44_53_Generic_Highland Royal Capital Side Great Tree 3-2"
+        "m60_44_53_Generic_Altus Leyndell Side Great Tree 3-2"
       ]
     },
     {
       "ID": 1045520100,
       "Entries": [
-        "m60_45_52_汎用_Highland Royal Capital Side Royal Capital Front"
+        "m60_45_52_Generic_Altus Leyndell Side Before Leyndell"
       ]
     },
     {
       "ID": 1036540100,
       "Entries": [
-        "m60_36_54 Generic Highland Volcano Side Summit Plaza"
+        "m60_36_54 Generic Altus Volcano Side Summit Plaza"
       ]
     },
     {
       "ID": 1035530100,
       "Entries": [
-        "m60_35_53 Generic Highland Volcano Side Lava Area"
+        "m60_35_53 Generic Altus Volcano Side Lava Zone"
       ]
     },
     {
       "ID": 1037530100,
       "Entries": [
-        "m60_37_53 Generic Highland Volcano Side Village Innermost"
+        "m60_37_53 Generic Altus Volcano Side Deepest Part of Village"
       ]
     },
     {
       "ID": 1037540100,
       "Entries": [
-        "m60_37_54_Generic_Highland Volcano Side_Snake Spirit"
+        "m60_37_54_Generic_Altus Volcano Side_Serpent Spirit"
       ]
     },
     {
       "ID": 1038520100,
       "Entries": [
-        "m60_38_52_Generic_Highland Volcano Side_Night King Followers"
+        "m60_38_52_Generic_Altus Volcano Side_Night King\u0027s Kindred"
       ]
     },
     {
       "ID": 1046380100,
       "Entries": [
-        "m60_46_38_汎用_Plains_Lion Sea Watchtower"
+        "m60_46_38_Generic_Plains_Lion Sea Watchtower"
       ]
     },
     {
       "ID": 1046400100,
       "Entries": [
-        "m60_46_40_汎用_Plains_World Tree Demon"
+        "m60_46_40_Generic_Plains_World Tree Demon"
       ]
     },
     {
       "ID": 1047400100,
       "Entries": [
-        "m60_47_40_汎用_Plains_Royal Army Encampment"
+        "m60_47_40_Generic_Plains_Royal Army Encampment"
       ]
     },
     {
       "ID": 1047400102,
       "Entries": [
-        "m60_47_40_汎用_Plains_Ruins 4-4"
+        "m60_47_40_Generic_Plains_Ruins 4-4"
       ]
     },
     {
       "ID": 1047380100,
       "Entries": [
-        "m60_47_38_汎用_Plains_Rot's Kin Ruins"
+        "m60_47_38_Generic_Plains_Ruins of the Kindred of Rot"
       ]
     },
     {
       "ID": 1047390100,
       "Entries": [
-        "m60_47_39_汎用_Plains_Raven Village"
+        "m60_47_39_Generic_Plains_Crow Village"
       ]
     },
     {
       "ID": 1048370100,
       "Entries": [
-        "m60_48_37_汎用_Plains_Rotten Wyvern"
+        "m60_48_37_Generic_Plains_Rot Wyvern"
       ]
     },
     {
       "ID": 1048380100,
       "Entries": [
-        "m60_48_38_汎用_Plains_Poison Swamp Ruins"
+        "m60_48_38_Generic_Plains_Poison Swamp Ruins"
       ]
     },
     {
       "ID": 1048390100,
       "Entries": [
-        "m60_48_39_汎用_Plains_Nazgul Valley"
+        "m60_48_39_Generic_Plains_Valley of Nazgul"
       ]
     },
     {
       "ID": 1048400100,
       "Entries": [
-        "m60_48_40_汎用_Plains_Ruins 4-4 Basement Boss Room"
+        "m60_48_40_Generic_Plains_Ruins 4-4 Basement Boss Room"
       ]
     },
     {
       "ID": 1049360100,
       "Entries": [
-        "m60_49_36_汎用_Plains_Fort Front Encampment"
+        "m60_49_36_Generic_Plains_Camp Before Fort"
       ]
     },
     {
       "ID": 1049380100,
       "Entries": [
-        "m60_49_38_汎用_Plains Poison Swamp_Near Veteran General"
+        "m60_49_38_Generic_Plains Poison Swamp_Near Veteran General"
       ]
     },
     {
       "ID": 1049390100,
       "Entries": [
-        "m60_49_39_汎用_Plains Ruined Town_Intersection"
+        "m60_49_39_Generic_Plains Ruined Town_Intersection"
       ]
     },
     {
       "ID": 1049390102,
       "Entries": [
-        "m60_49_39_汎用_Plains Ruined Town_Boss Room"
+        "m60_49_39_Generic_Plains Ruined Town_Boss Room"
       ]
     },
     {
       "ID": 1050400100,
       "Entries": [
-        "m60_50_40_汎用_Plains_Giant Wyvern"
+        "m60_50_40_Generic_Plains_Giant Wyvern"
       ]
     },
     {
       "ID": 1051390100,
       "Entries": [
-        "m60_51_39_汎用_Plains_Abandoned Sea Watchtower"
+        "m60_51_39_Generic_Plains_Abandoned Sea Watchtower"
       ]
     },
     {
       "ID": 1051360100,
       "Entries": [
-        "m60_51_36_汎用_Plains_Fort Boss Room"
+        "m60_51_36_Generic_Plains_Fort Boss Room"
       ]
     },
     {
       "ID": 1051400100,
       "Entries": [
-        "m60_51_40_汎用_Plains_World Tree 4-2"
+        "m60_51_40_Generic_Plains_World Tree 4-2"
       ]
     },
     {
       "ID": 1051430100,
       "Entries": [
-        "m60_51_43_汎用_Plains_Gargoyle of Descending Ruins Building"
+        "m60_51_43_Generic_Plains_Descending Ruins Derived Building Gargoyle"
       ]
     },
     {
@@ -1330,157 +1330,157 @@
     {
       "ID": 1049520100,
       "Entries": [
-        "m60_49_52_汎用_Snowy Mountain_Snowy Mountain EV Front"
+        "m60_49_52_Generic_Snow Mountain_Before Snow Mountain EV"
       ]
     },
     {
       "ID": 1049530100,
       "Entries": [
-        "m60_49_53_汎用_Snowy Mountain_Before Ruins 5-1"
+        "m60_49_53_Generic_Snow Mountain_Ruins 5-Before 1"
       ]
     },
     {
       "ID": 1050540100,
       "Entries": [
-        "m60_50_54_汎用_Snowy Mountain_Ridge Tip Devotee Zone"
+        "m60_50_54_Generic_Snow Mountain_Devotee Zone at Ridge Tip"
       ]
     },
     {
       "ID": 1050560100,
       "Entries": [
-        "m60_50_56_汎用_Snowy Mountain_Great Ravine Sub-route"
+        "m60_50_56_Generic_Snow Mountain_Great Canyon Sub-Route"
       ]
     },
     {
       "ID": 1050570100,
       "Entries": [
-        "m60_50_57_汎用_Snowy Mountain_Deathbird Boss Area"
+        "m60_50_57_Generic_Snow Mountain_Death Bird Boss Area"
       ]
     },
     {
       "ID": 1054560100,
       "Entries": [
-        "m60_54_56_Generic_Snowy Mountain_Ice Lake"
+        "m60_54_56_Generic_Snow Mountain_Ice Lake"
       ]
     },
     {
       "ID": 1053560100,
       "Entries": [
-        "m60_53_56_Generic_Snowy Mountain_Church Surrounding Forest"
+        "m60_53_56_Generic_Snow Mountain_Woods Around Church"
       ]
     },
     {
       "ID": 1052550100,
       "Entries": [
-        "m60_52_55_Generic_Snowy Mountain_Tower 5-1 Interior"
+        "m60_52_55_Generic_Snow Mountain_Tower 5-1 Interior"
       ]
     },
     {
       "ID": 1052560100,
       "Entries": [
-        "m60_52_56_Generic_Snowy Mountain_Small World Tree 5-1"
+        "m60_52_56_Generic_Snow Mountain_Small World Tree 5-1"
       ]
     },
     {
       "ID": 1052530100,
       "Entries": [
-        "m60_52_53_Generic_Snowy Mountain_Giant Boss Area"
+        "m60_52_53_Generic_Snow Mountain_Giant Boss Area"
       ]
     },
     {
       "ID": 1052530102,
       "Entries": [
-        "m60_52_53_Generic_Snowy Mountain_Giant Corpse Cluster"
+        "m60_52_53_Generic_Snow Mountain_Giant Corpse Cluster"
       ]
     },
     {
       "ID": 1051560100,
       "Entries": [
-        "m60_51_56_汎用_Snowy Mountain_Ruins 5-2"
+        "m60_51_56_Generic_Snow Mountain_Ruins 5-2"
       ]
     },
     {
       "ID": 1051570100,
       "Entries": [
-        "m60_51_57_汎用_Snowy Mountain_Sub-route Graveyard Zone End"
+        "m60_51_57_Generic_Snow Mountain_Sub-Route Cemetery Area End"
       ]
     },
     {
       "ID": 1051570102,
       "Entries": [
-        "m60_51_57_汎用_Snowy Mountain_Snowy Mountain Fort_Entrance"
+        "m60_51_57_Generic_Snow Mountain_Snow Mountain Fort_Entrance"
       ]
     },
     {
       "ID": 1051570104,
       "Entries": [
-        "m60_51_57_汎用_Snowy Mountain_Snowy Mountain Fort_Boss Room"
+        "m60_51_57_Generic_Snow Mountain_Snow Mountain Fort_Boss Room"
       ]
     },
     {
       "ID": 1049560100,
       "Entries": [
-        "m60_49_56_汎用_Snowy Mountain_Lower Ravine"
+        "m60_49_56_Generic_Snow Mountain_Lower Level Canyon"
       ]
     },
     {
       "ID": 1049560102,
       "Entries": [
-        "m60_49_56_汎用_Snowy Mountain_Sorcerer's Tower"
+        "m60_49_56_Generic_Snow Mountain_Sorcerer\u0027s Tower"
       ]
     },
     {
       "ID": 1049570100,
       "Entries": [
-        "m60_49_57_汎用_Snowy Mountain_Small World Tree 5-2"
+        "m60_49_57_Generic_Snow Mountain_Small World Tree 5-2"
       ]
     },
     {
       "ID": 1047550100,
       "Entries": [
-        "m60_47_55_汎用_Snowy Mountain_Ruins 5-3"
+        "m60_47_55_Generic_Snow Mountain_Ruins 5-3"
       ]
     },
     {
       "ID": 45000100,
       "Entries": [
-        "m45_00 Arena Temporary Support"
+        "m45_00 Colosseum Temp Handling"
       ]
     },
     {
       "ID": 45010100,
       "Entries": [
-        "m45_01 Arena Temporary Support"
+        "m45_01 Colosseum Temp Handling"
       ]
     },
     {
       "ID": 45020100,
       "Entries": [
-        "m45_02 Arena Temporary Support"
+        "m45_02 Colosseum Temp Handling"
       ]
     },
     {
       "ID": 99020100,
       "Entries": [
-        "Sawayama Test Map"
+        "For Sawayama Test Map"
       ]
     },
     {
       "ID": 99020101,
       "Entries": [
-        "Sawayama Test Map"
+        "For Sawayama Test Map"
       ]
     },
     {
       "ID": 99020102,
       "Entries": [
-        "Sawayama Test Map"
+        "For Sawayama Test Map"
       ]
     },
     {
       "ID": 99150100,
       "Entries": [
-        "Arita Test Map Use"
+        "For Arita Test Map"
       ]
     }
   ]

@@ -298,43 +298,43 @@
     {
       "ID": 32050000,
       "Entries": [
-        "m32_05_00_00.msb #Catacombs 3-3"
+        "m32_05_00_00.msb #Tunnel 3-3"
       ]
     },
     {
       "ID": 32070000,
       "Entries": [
-        "m32_07_00_00.msb #Catacombs 4-1"
+        "m32_07_00_00.msb #Tunnel 4-1"
       ]
     },
     {
       "ID": 32080000,
       "Entries": [
-        "m32_08_00_00.msb #Catacombs 4-2"
+        "m32_08_00_00.msb #Tunnel 4-2"
       ]
     },
     {
       "ID": 32090000,
       "Entries": [
-        "m32_09_00_00.msb #Catacombs 4-3"
+        "m32_09_00_00.msb #Tunnel 4-3"
       ]
     },
     {
       "ID": 32100000,
       "Entries": [
-        "m32_10_00_00.msb #Catacombs 4-4"
+        "m32_10_00_00.msb #Tunnel 4-4"
       ]
     },
     {
       "ID": 32110000,
       "Entries": [
-        "m32_11_00_00.msb #Catacombs 5-1"
+        "m32_11_00_00.msb #Tunnel 5-1"
       ]
     },
     {
       "ID": 32120000,
       "Entries": [
-        "m32_12_00_00.msb #Catacombs 3-2"
+        "m32_12_00_00.msb #Tunnel 3-2"
       ]
     }
   ]

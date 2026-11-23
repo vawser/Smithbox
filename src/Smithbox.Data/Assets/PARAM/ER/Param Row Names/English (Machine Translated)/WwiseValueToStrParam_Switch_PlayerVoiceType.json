@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Default. Do not delete. Used when no param exists"
+        "Default.Do Not Delete.This is Used if No Param"
       ]
     },
     {
       "ID": 255,
       "Entries": [
-        "※ Can only register up to 255"
+        "※Can Only Register Up to 255"
       ]
     }
   ]

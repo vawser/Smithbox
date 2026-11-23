@@ -1,0 +1,95 @@
+{
+  "Name": "BonfireWarpTabParam",
+  "Entries": [
+    {
+      "ID": 11100,
+      "Entries": [
+        "Royal Capital (Base)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Stormveil"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Royal Capital"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Descending Ruins"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Monsan"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Volcano Prison"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Underground Labyrinth・Poison Swamp"
+      ]
+    },
+    {
+      "ID": 12001,
+      "Entries": [
+        "Underground Labyrinth・Plains"
+      ]
+    },
+    {
+      "ID": 12002,
+      "Entries": [
+        "Underground Labyrinth・Royal Capital"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Open Green"
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        "Open Lake"
+      ]
+    },
+    {
+      "ID": 63000,
+      "Entries": [
+        "Open Highland"
+      ]
+    },
+    {
+      "ID": 64000,
+      "Entries": [
+        "Open Plains"
+      ]
+    },
+    {
+      "ID": 65000,
+      "Entries": [
+        "Open Snowy Mountain"
+      ]
+    }
+  ]
+}

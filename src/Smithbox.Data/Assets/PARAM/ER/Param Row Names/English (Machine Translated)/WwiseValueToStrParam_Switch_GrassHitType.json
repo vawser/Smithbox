@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Not touching (default"
+        "Not Touching (Default Used When String Not Found)"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Touching (normal grass)"
+        "Touching (Normal Grass)"
       ]
     }
   ]

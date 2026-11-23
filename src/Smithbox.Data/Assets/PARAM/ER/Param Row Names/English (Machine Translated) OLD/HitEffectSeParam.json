@@ -1,0 +1,491 @@
+{
+  "Name": "HitEffectSeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Flagstone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Earth"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Lumber"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grass Ground"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Unused Number"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Swamp"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Nest"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Blood Flesh"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Roof Tile"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bell"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (Puddle Level)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (Ankle Level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (Below Knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp (Shallow)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp (Deep)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison Swamp (Knee Deep)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Poison Swamp (Puddle Level)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Water (Waist Height and Above)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Carpet"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Eclipse"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "God Tomb Net"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Weapon Iron"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Candle"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Weapon Wood"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Weapon Meat"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shield_Iron"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Shield_Wood"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Bug"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Armor Leather"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Flesh_Weak Point"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Dragon Meat"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Heavy Iron"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Stone (Soft)"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Feather"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Carrion"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Death Spirit"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Crystal"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Liquid"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Fire"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Rock"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Shield_Stone"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Tree"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Shield_Heavy_Iron"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Ghost White"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Ghost Black"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Ghost Enemy White"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Ghost Enemy Black"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Drool"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Ghost White(For Guard)"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Ghost Black (For Guard)"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Ghost Enemy White(For Guard)"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Ghost Enemy Black(For Guard)"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Eye Glow"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Eclipse"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Maggot"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Charcoal"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Unused Number"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Body Fluid"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Flesh (Living)"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Flesh (Living)_Weak Point"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Eclipse_Weak Point"
+      ]
+    }
+  ]
+}

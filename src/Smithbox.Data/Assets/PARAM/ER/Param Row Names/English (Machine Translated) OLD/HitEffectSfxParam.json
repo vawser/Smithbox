@@ -1,0 +1,1163 @@
+{
+  "Name": "HitEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Sparks"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Generic Smoke"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Dust Cloud"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Earth"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Plague Swamp"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Ash Smoke"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Magma"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Wood Fragment"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Stone Fragment"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Bone Fragment_Front"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Bone Fragment_Top"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Bone Fragment_Bottom"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Bone Fragment_Left"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Bone Fragment_Right"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Crystal Fragment_Front"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Crystal Fragment_Top"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Crystal Fragment_Bottom"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Crystal Fragment_Left"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Crystal Fragment_Right"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Grass Piece"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Great Poison Swamp"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Fallen Leaves"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Heavy Iron_Front"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Heavy Iron_Upper"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Heavy Iron_Lower"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Heavy Iron_Left"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Heavy Iron_Right"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Water Splash"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Mud Splash"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Poison Swamp Splash"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Oil"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Blood_Front"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Blood_Up"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Blood_Down"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Blood_Left"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Blood_Right"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Blood(Undead)_Front"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Blood(Undead)_Up"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Blood(Undead)_Down"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Blood(Undead)_Left"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Blood(Undead)_Right"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Flesh_Weak Point (Large)_Front"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Flesh_Weak Point (Large)_Upper"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Flesh_Weak Point (Large)_Lower"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Flesh_Weak Point (Large)_Left"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Flesh_Weak Point (Large)_Right"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Dried Meat"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Body Fluid_front"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Body Fluid_upper"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Body Fluid_lower"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Body Fluid_left"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Body Fluid_right"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Drool"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Crystal_Weak Point_Front"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Crystal_Weak Point_Upper"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Crystal_Weak Point_Lower"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Crystal_Weak Point_Left"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Crystal_Weak Point_Right"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "Mercury"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Black Shadow_Front"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Black Shadow_Up"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "Black Shadow_Down"
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        "Black Shadow_Left"
+      ]
+    },
+    {
+      "ID": 284,
+      "Entries": [
+        "Black Shadow_Right"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "Blood Disease"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Hair Piece"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Mud"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Carrion Chunk"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Lava_Weak Point"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Lava_Front"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Lava_Upper"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Lava_Lower"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Lava_Left"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Lava_Right"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Spirit"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Ghost White"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Ghost Black"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 383,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Scale"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 394,
+      "Entries": [
+        "Scale_Weak Point"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Scale_Weak Point(Large)"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "Scale(Hard)"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Rot_Front"
+      ]
+    },
+    {
+      "ID": 441,
+      "Entries": [
+        "Rot_Upper"
+      ]
+    },
+    {
+      "ID": 442,
+      "Entries": [
+        "Rot_Lower"
+      ]
+    },
+    {
+      "ID": 443,
+      "Entries": [
+        "Rot_Left"
+      ]
+    },
+    {
+      "ID": 444,
+      "Entries": [
+        "Rot_Right"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Rot_Weak Point_Front"
+      ]
+    },
+    {
+      "ID": 451,
+      "Entries": [
+        "Rot_Weak Point_Upper"
+      ]
+    },
+    {
+      "ID": 452,
+      "Entries": [
+        "Rot_Weak Point_Lower"
+      ]
+    },
+    {
+      "ID": 453,
+      "Entries": [
+        "Rot_Weak Point_Left"
+      ]
+    },
+    {
+      "ID": 454,
+      "Entries": [
+        "Rot_Weak Point_Right"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Blood Swamp"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 471,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 472,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 473,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 474,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Weakpoint"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Flesh_Weak Point_Front"
+      ]
+    },
+    {
+      "ID": 481,
+      "Entries": [
+        "Flesh_Weak Point_Upper"
+      ]
+    },
+    {
+      "ID": 482,
+      "Entries": [
+        "Flesh_Weak Point_Lower"
+      ]
+    },
+    {
+      "ID": 483,
+      "Entries": [
+        "Flesh_Weak Point_Left"
+      ]
+    },
+    {
+      "ID": 484,
+      "Entries": [
+        "Flesh_Weak Point_Right"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "Body Fluid_weak point_front"
+      ]
+    },
+    {
+      "ID": 491,
+      "Entries": [
+        "Body Fluid_weak point_upper"
+      ]
+    },
+    {
+      "ID": 492,
+      "Entries": [
+        "Body Fluid_weak point_lower"
+      ]
+    },
+    {
+      "ID": 493,
+      "Entries": [
+        "Body Fluid_weak point_left"
+      ]
+    },
+    {
+      "ID": 494,
+      "Entries": [
+        "Body Fluid_weak point_right"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Rune_Front"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Rune_Up"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Rune_Down"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Rune_Left"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Rune_Right"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Rune_Weak Point_Front"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Rune_Weak Point_Upper"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Rune_Weak Point_Lower"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Rune_Weak Point_Left"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Rune_Weak Point_Right"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Spirit_Front"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "spirit_Upper"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "spirit_Lower"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "spirit_Left"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "spirit_Right"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Spirit_Weakpoint_Front"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "Spirit_Weakpoint_Upper"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "Spirit_Weakpoint_Lower"
+      ]
+    },
+    {
+      "ID": 533,
+      "Entries": [
+        "Spirit_Weakpoint_Left"
+      ]
+    },
+    {
+      "ID": 534,
+      "Entries": [
+        "Spirit_Weakpoint_Right"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Shadow_Front"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Shadow_Upper"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Shadow_Lower"
+      ]
+    },
+    {
+      "ID": 543,
+      "Entries": [
+        "Shadow_Left"
+      ]
+    },
+    {
+      "ID": 544,
+      "Entries": [
+        "Shadow_Right"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Shadow_Weak Point_Front"
+      ]
+    },
+    {
+      "ID": 551,
+      "Entries": [
+        "Shadow_Weak Point_Upper"
+      ]
+    },
+    {
+      "ID": 552,
+      "Entries": [
+        "Shadow_Weak Point_Lower"
+      ]
+    },
+    {
+      "ID": 553,
+      "Entries": [
+        "Shadow_Weak Point_Left"
+      ]
+    },
+    {
+      "ID": 554,
+      "Entries": [
+        "Shadow_Weak Point_Right"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Water Splash (High Position)"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Rune (Crumbling Marika)"
+      ]
+    },
+    {
+      "ID": 571,
+      "Entries": [
+        "Rune (Crumbling Marika)"
+      ]
+    },
+    {
+      "ID": 572,
+      "Entries": [
+        "Rune (Crumbling Marika)"
+      ]
+    },
+    {
+      "ID": 573,
+      "Entries": [
+        "Rune (Crumbling Marika)"
+      ]
+    },
+    {
+      "ID": 574,
+      "Entries": [
+        "Rune (Crumbling Marika)"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Front"
+      ]
+    },
+    {
+      "ID": 581,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Upper"
+      ]
+    },
+    {
+      "ID": 582,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Lower"
+      ]
+    },
+    {
+      "ID": 583,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Left"
+      ]
+    },
+    {
+      "ID": 584,
+      "Entries": [
+        "Spirit (Spirit Jellyfish)_Right"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Tree_Front"
+      ]
+    },
+    {
+      "ID": 591,
+      "Entries": [
+        "Tree_Upper"
+      ]
+    },
+    {
+      "ID": 592,
+      "Entries": [
+        "Tree_Lower"
+      ]
+    },
+    {
+      "ID": 593,
+      "Entries": [
+        "Tree_Left"
+      ]
+    },
+    {
+      "ID": 594,
+      "Entries": [
+        "Tree_Right"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Heavy Oil"
+      ]
+    }
+  ]
+}

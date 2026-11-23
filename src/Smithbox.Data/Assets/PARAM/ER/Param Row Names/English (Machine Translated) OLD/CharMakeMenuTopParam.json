@@ -1,0 +1,1217 @@
+{
+  "Name": "CharMakeMenuTopParam",
+  "Entries": [
+    {
+      "ID": 2,
+      "Entries": [
+        "├Name"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "├Body Type"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "├Age"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "├Origin"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "├Keepsake"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "├Appearance"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "├Appearance Details"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "│├Age"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "│├Voice"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "│├"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "│├Skin Tone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "│├Face/Hair"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "││├Base Face Adjustment"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "│││├Bone Structure"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "│││├Shape Exaggeration"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "│││├Age Impression"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "│││├Face Impression"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "││├Part Shapes"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "│││├Facial Balance"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "││││├Nose proportion"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "││││├Nose to forehead ratio"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "││││├Face unevenness"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "││││├Face part vertical spacing"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "││││├Face part tilt"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "││││├Face part horizontal spacing"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "│││├Forehead／Glabella"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "││││├Forehead depth"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "││││├Forehead unevenness"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "││││├Nose bridge upper height"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "││││├Nose bridge upper unevenness 1"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "││││├Nose bridge upper unevenness 2"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "││││├Nose bridge upper width"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "│││├Brow Ridge"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "││││├Brow bone height"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "││││├Brow bone inner end"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "││││├Brow bone outer end"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "│││├Eyes"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "││││├Eye position"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "││││├Eye size"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "││││├Eye tilt"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "││││├Eye spacing"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "│││├Nose Bridge"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "││││├Nasal groove depth"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "││││├Nasal groove length"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "││││├Nose position"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "││││├Nose tip height"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "││││├Nose unevenness"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "││││├Nose height"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "││││├Nose slope"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "│││├Nostril Wings"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "││││├Nostril wing slope"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "││││├Nostril wing size"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "││││├Nostril wing width"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "│││├Cheeks"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "││││├Cheekbone height"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "││││├Cheekbone depth"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "││││├Cheekbone width"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "││││├Cheek unevenness"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "││││├Cheek"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "│││├Lips"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "││││├Lip shape"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "││││├Mouth corner expression"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "││││├Lip fullness"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "││││├Lip size"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "││││├Lip unevenness"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "││││├Lip thickness"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "│││├Mouth"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "││││├Mouth unevenness"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "││││├Mouth tilt"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "││││├Bite"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "││││├Mouth position"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "││││├Mouth width"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "││││├Distance from mouth to chin tip"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "│││├Lower Jaw"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "││││├Chin tip front/back"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "││││├Chin length"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "││││├Chin protrusion"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "││││├Chin depth"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "││││├Chin size"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "││││├Chin height"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "││││├Chin width"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "│││├Upper Jaw"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "││││├Jaw protrusion"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "││││├Jaw width"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "││││├Lower jaw"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "││││├Jaw outline"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "││├"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "││├Hair"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "│││├Hair"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "│││├Hair Color"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "│││├Hair Gloss"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "│││├Hair Root Darkness"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "│││├Hair Gray Amount"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "││├Eyebrows"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "│││├Eyebrows"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "│││├Eyebrow Color"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "│││├Eyebrow Gloss"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "│││├Eyebrow Root Darkness"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "│││├Eyebrow Gray Amount"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "││├Beard"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "│││├Beard"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "│││├Beard Color"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "│││├Beard Gloss"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "│││├Beard Root Darkness"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "│││├Beard Gray Amount"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "│││├Stubble"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "││├Eyelashes"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "│││├Eyelashes"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "│││├Eyelash color"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "││├Eyes"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "│││├Right Pupil Size"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "│││├Right Iris Color"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "│││├Right Lens Opacity"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "│││├Right Lens Opacity Color"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "│││├Right Sclera Color"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "│││├Right Eye Direction"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "│││├Left Pupil Size"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "│││├Left Iris Color"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "│││├Left Lens Opacity"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "│││├Left Lens Opacity Color"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "│││├Left Sclera Color"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "│││├Left Eye Direction"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "│││├Eye Change"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "││├Skin Features"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "│││├Pores"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "│││├Skin Sheen"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "│││├Eye bags"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "│││├Eye bag color"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "││├Makeup"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "│││├Eyeliner"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "│││├Eyeliner Color"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "│││├Eyeshadow (Upper)"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "│││├Eyeshadow color (upper)"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "│││├Eyeshadow (Lower)"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "│││├Eyeshadow color (lower)"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "│││├Blush"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "│││├Blush Color"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "│││├Lipstick"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "│││├Lipstick Color"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "││├Tattoo／Birthmark／Eyepatch"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "│││├Tattoo／Birthmark"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "│││├Tattoo／Birthmark Color"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "│││├Tattoo／Birthmark Adjustment"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "││││├Position up/down"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "││││├Position left/right"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "││││├Angle"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "││││├Scale factor"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "││││├Reverse"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "││││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "│││├Eyepatch"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "│││├Eyepatch Color"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "│││├[[terminal]]"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "││├"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "││├Similar Face"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "││├[[End]]"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "│├Body"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "││├Head"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "││├Chest"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "││├Abdomen"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "││├Arms"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "││├Legs"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "││├Body Hair Amount"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "││├Body Hair Color"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "││├Muscle Mass"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "││├Burn Scars"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "││├[[End]]"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "│├"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "│├"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "│├Appearance Save"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "│├Appearance Load"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "│├[[End]]"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "├"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "├Creation End"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "├Rebirth"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "├Rebirth"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "├[[End]]"
+      ]
+    }
+  ]
+}

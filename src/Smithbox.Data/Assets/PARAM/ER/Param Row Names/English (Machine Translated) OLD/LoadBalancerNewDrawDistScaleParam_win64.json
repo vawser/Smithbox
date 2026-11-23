@@ -1,0 +1,89 @@
+{
+  "Name": "LoadBalancerNewDrawDistScaleParam_win64",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[Draw Distance Scale] Default (No Scale)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[Draw Distance Scale] Local Player"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Draw Distance Scale] Remote Player"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Draw Distance Scale] Phantom"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[Draw Distance Scale] 0.75"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[Draw Distance Scale] 0.6"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[Draw Distance Scale] 0.5"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[Draw Distance Scale] 0.4"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[Draw Distance Scale] 0.3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Draw Distance Scale] Chr Small"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Draw Distance Scale] Chr Medium"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Draw Distance Scale] Chr Large"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Draw Distance Scale] Chr Colossal"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Draw Distance Scale] Map/Obj Default"
+      ]
+    }
+  ]
+}

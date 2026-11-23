@@ -4,7 +4,7 @@
     {
       "ID": 1,
       "Entries": [
-        "Flagstone"
+        "Cobblestone"
       ]
     },
     {
@@ -16,7 +16,7 @@
     {
       "ID": 3,
       "Entries": [
-        "Earth"
+        "Soil"
       ]
     },
     {
@@ -28,7 +28,7 @@
     {
       "ID": 5,
       "Entries": [
-        "Grass Ground"
+        "Grassland"
       ]
     },
     {
@@ -40,7 +40,7 @@
     {
       "ID": 7,
       "Entries": [
-        "Unused Number"
+        "Missing Number"
       ]
     },
     {
@@ -70,7 +70,7 @@
     {
       "ID": 12,
       "Entries": [
-        "Blood Flesh"
+        "Flesh and Blood"
       ]
     },
     {
@@ -124,7 +124,7 @@
     {
       "ID": 21,
       "Entries": [
-        "Water (Ankle Level)"
+        "Water (Ankle Deep)"
       ]
     },
     {
@@ -148,7 +148,7 @@
     {
       "ID": 25,
       "Entries": [
-        "Poison Swamp (Knee Deep)"
+        "Poison Swamp (Below Knee)"
       ]
     },
     {
@@ -160,7 +160,7 @@
     {
       "ID": 27,
       "Entries": [
-        "Water (Waist Height and Above)"
+        "Water (Above Waist)"
       ]
     },
     {
@@ -178,13 +178,13 @@
     {
       "ID": 30,
       "Entries": [
-        "Eclipse"
+        "Erosion"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "God Tomb Net"
+        "Divine Grave Net"
       ]
     },
     {
@@ -202,7 +202,7 @@
     {
       "ID": 51,
       "Entries": [
-        "Candle"
+        "Wax"
       ]
     },
     {
@@ -214,19 +214,19 @@
     {
       "ID": 53,
       "Entries": [
-        "Weapon Meat"
+        "Weapon Flesh"
       ]
     },
     {
       "ID": 54,
       "Entries": [
-        "Shield_Iron"
+        "Shield Iron"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        "Shield_Wood"
+        "Shield Wood"
       ]
     },
     {
@@ -262,7 +262,7 @@
     {
       "ID": 61,
       "Entries": [
-        "Dragon Meat"
+        "Dragon Flesh"
       ]
     },
     {
@@ -286,7 +286,7 @@
     {
       "ID": 65,
       "Entries": [
-        "Hair"
+        "Fur"
       ]
     },
     {
@@ -298,13 +298,13 @@
     {
       "ID": 67,
       "Entries": [
-        "Feather"
+        "Blade"
       ]
     },
     {
       "ID": 68,
       "Entries": [
-        "Carrion"
+        "Rotten Flesh"
       ]
     },
     {
@@ -322,7 +322,7 @@
     {
       "ID": 71,
       "Entries": [
-        "Death Spirit"
+        "Wraith"
       ]
     },
     {
@@ -346,7 +346,7 @@
     {
       "ID": 75,
       "Entries": [
-        "Fire"
+        "Flame"
       ]
     },
     {
@@ -358,7 +358,7 @@
     {
       "ID": 77,
       "Entries": [
-        "Shield_Stone"
+        "Shield Stone"
       ]
     },
     {
@@ -370,7 +370,7 @@
     {
       "ID": 79,
       "Entries": [
-        "Shield_Heavy_Iron"
+        "Shield Heavy Iron"
       ]
     },
     {
@@ -406,25 +406,25 @@
     {
       "ID": 85,
       "Entries": [
-        "Ghost White(For Guard)"
+        "Ghost White (For Guarding)"
       ]
     },
     {
       "ID": 86,
       "Entries": [
-        "Ghost Black (For Guard)"
+        "Ghost Black (For Guarding)"
       ]
     },
     {
       "ID": 87,
       "Entries": [
-        "Ghost Enemy White(For Guard)"
+        "Ghost Enemy White (For Guarding)"
       ]
     },
     {
       "ID": 88,
       "Entries": [
-        "Ghost Enemy Black(For Guard)"
+        "Ghost Enemy Black (For Guarding)"
       ]
     },
     {
@@ -436,19 +436,19 @@
     {
       "ID": 90,
       "Entries": [
-        "Eye Glow"
+        "Eye Glint"
       ]
     },
     {
       "ID": 91,
       "Entries": [
-        "Eclipse"
+        "Erosion"
       ]
     },
     {
       "ID": 92,
       "Entries": [
-        "Maggot"
+        "Maggots"
       ]
     },
     {
@@ -460,13 +460,13 @@
     {
       "ID": 94,
       "Entries": [
-        "Unused Number"
+        "Missing Number"
       ]
     },
     {
       "ID": 95,
       "Entries": [
-        "Body Fluid"
+        "Bodily Fluid"
       ]
     },
     {
@@ -484,7 +484,7 @@
     {
       "ID": 98,
       "Entries": [
-        "Eclipse_Weak Point"
+        "Erosion_Weak Point"
       ]
     }
   ]

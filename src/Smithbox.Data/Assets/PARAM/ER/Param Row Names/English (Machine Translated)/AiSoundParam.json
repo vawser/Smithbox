@@ -16,7 +16,7 @@
     {
       "ID": 1010,
       "Entries": [
-        "Running"
+        "Run"
       ]
     },
     {
@@ -28,13 +28,13 @@
     {
       "ID": 1030,
       "Entries": [
-        "Rolling"
+        "Roll"
       ]
     },
     {
       "ID": 1040,
       "Entries": [
-        "Landing (Extra Small)"
+        "Landing (Tiny)"
       ]
     },
     {
@@ -88,19 +88,19 @@
     {
       "ID": 1520,
       "Entries": [
-        "PC Magic: Sound Send"
+        "PC Magic: Sound Lure"
       ]
     },
     {
       "ID": 1530,
       "Entries": [
-        "Item: Chaos Jar (Human Type)"
+        "Item: Chaos Pot (Human Type)"
       ]
     },
     {
       "ID": 1531,
       "Entries": [
-        "Item: Chaos Jar (Demi-Human Type)"
+        "Item: Chaos Pot (Demi-Human Type)"
       ]
     },
     {
@@ -124,49 +124,49 @@
     {
       "ID": 2030,
       "Entries": [
-        "Attack Hit Sound_Colossal"
+        "Attack Hit Sound_Extra Large"
       ]
     },
     {
       "ID": 2090,
       "Entries": [
-        "Attack Hit Sound_Sound-sending Arrow"
+        "Attack Hit Sound_Sound Arrow"
       ]
     },
     {
       "ID": 2100,
       "Entries": [
-        "Attack Startup Sound_Small"
+        "Attack Sound_Small"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Attack Startup Sound_Medium"
+        "Attack Sound_Medium"
       ]
     },
     {
       "ID": 2120,
       "Entries": [
-        "Attack Startup Sound_Large"
+        "Attack Sound_Large"
       ]
     },
     {
       "ID": 2130,
       "Entries": [
-        "Attack Startup Sound_Colossal"
+        "Attack Sound_Extra Large"
       ]
     },
     {
       "ID": 2200,
       "Entries": [
-        "Attack Hit Sound_Small (normal sound)"
+        "Attack Hit Sound_Small (Normal Sound)"
       ]
     },
     {
       "ID": 2210,
       "Entries": [
-        "Attack Hit Sound_Large (for Darkness Magic)"
+        "Attack Hit Sound_Large (For Darkness Magic)"
       ]
     },
     {
@@ -196,115 +196,115 @@
     {
       "ID": 3100,
       "Entries": [
-        "Object Break Sound_Stormveil Barracks"
+        "Object Destruction Sound_For Stormveil Barracks"
       ]
     },
     {
       "ID": 4000,
       "Entries": [
-        "Wake-up Sound"
+        "Wake Up Sound"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Ally Call Sound: Medium"
+        "Call Allies Sound: Medium"
       ]
     },
     {
       "ID": 4020,
       "Entries": [
-        "Ally Call Sound: Small"
+        "Call Allies Sound: Small"
       ]
     },
     {
       "ID": 4050,
       "Entries": [
-        "c4070_Wolf_Howl (Alert)"
+        "c4070_Wolf_Bark (Alert)"
       ]
     },
     {
       "ID": 4100,
       "Entries": [
-        "c4100_Gray Demi-Human: Reinforcement_Relay"
+        "c4100_Gray Demi-Human: Reinforcements_Transmission"
       ]
     },
     {
       "ID": 4130,
       "Entries": [
-        "c4130_Gray Demi-Human King: Super Berserk_Infection_for Basic"
+        "c4130_Gray Demi-Human King: Hyper Frenzy_Contagion_For Basic"
       ]
     },
     {
       "ID": 4131,
       "Entries": [
-        "c4130_Gray Demi-Human King: Super Berserk_Infection_for Small"
+        "c4130_Gray Demi-Human King: Hyper Frenzy_Contagion_For Small Ones"
       ]
     },
     {
       "ID": 4132,
       "Entries": [
-        "c4130_Gray Demi-Human King: Loss of Will_Spread_For Basic"
+        "c4130_Gray Demi-Human King: Loss of Will to Fight_Contagion_For Basic"
       ]
     },
     {
       "ID": 4133,
       "Entries": [
-        "c4130_Gray Demi-Human King: Loss of Will_Spread_For Runt"
+        "c4130_Gray Demi-Human King: Loss of Will to Fight_Contagion_For Small Ones"
       ]
     },
     {
       "ID": 4134,
       "Entries": [
-        "c4130_Gray Demi-Human King: Super Berserk_Infection_for Berserker"
+        "c4130_Gray Demi-Human King: Hyper Frenzy_Contagion_For Berserkers"
       ]
     },
     {
       "ID": 4135,
       "Entries": [
-        "c4130_Gray Demi-Human King: Loss of Will_Spread_For Berserker"
+        "c4130_Gray Demi-Human King: Loss of Will to Fight_Contagion_For Berserkers"
       ]
     },
     {
       "ID": 4136,
       "Entries": [
-        "c4130_Gray Demi-Human King: Coordinated Attack_Signal"
+        "c4130_Gray Demi-Human King: Simultaneous Attack_Command"
       ]
     },
     {
       "ID": 4200,
       "Entries": [
-        "c4200_Bat_Threat Display Warning"
+        "c4200_Bat_Alert via Intimidation"
       ]
     },
     {
       "ID": 4201,
       "Entries": [
-        "c4200_Bat_Blood Loss Reaction"
+        "c4200_Bat_Bleed Reaction"
       ]
     },
     {
       "ID": 4300,
       "Entries": [
-        "c3000_Soldier of the Fallen_Lookout Trumpet: Soldier Gather"
+        "c3000_Lost Soldier_Lookout Trumpet Blowing: Soldiers Assemble"
       ]
     },
     {
       "ID": 4310,
       "Entries": [
-        "c3000_Soldier of the Fallen_Lookout Trumpet: Soldier Gather PC From Feet"
+        "c3000_Lost Soldier_Lookout Trumpet Blowing: Soldiers Assemble From PC\u0027s Feet"
       ]
     },
     {
       "ID": 5000,
       "Entries": [
-        "Unsettling Sound 1"
+        "Curious Sound 1"
       ]
     },
     {
       "ID": 6100,
       "Entries": [
-        "c7000_Spirit Ash summon_Generic_Shield Sound Effect"
+        "c7000_Buddy_Generic_Make Noise with Shield"
       ]
     },
     {
@@ -334,19 +334,19 @@
     {
       "ID": 6300,
       "Entries": [
-        "c4000_Follower_Targeting"
+        "c4000_Attendant_Targeting"
       ]
     },
     {
       "ID": 6301,
       "Entries": [
-        "c4000_Follower_Neigh Buff_Targeting"
+        "c4000_Attendant_Neigh Buff_Targeting"
       ]
     },
     {
       "ID": 6320,
       "Entries": [
-        "c4020_Nazgul_Position Specification"
+        "c4020_Nazgul_Position Locate"
       ]
     },
     {
@@ -364,409 +364,409 @@
     {
       "ID": 6391,
       "Entries": [
-        "c4000_Follower_Sound Target Reset Sound"
+        "c4000_Attendant_Sound Target Reset Sound"
       ]
     },
     {
       "ID": 6400,
       "Entries": [
-        "Open Map 1_Meteorite Lure Sound"
+        "Open Map 1_Meteorite Luring Sound"
       ]
     },
     {
       "ID": 6410,
       "Entries": [
-        "Open Snowy Mountain Fleeing Noble Trigger Sound"
+        "Open Snow Mountain Fleeing Noble Trigger Sound"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "c3210_Red Eye Gypsy Donkey_warning via braying"
+        "c3210_Red-Eyed Gypsy\u0027s Donkey_Alert via Cry"
       ]
     },
     {
       "ID": 6600,
       "Entries": [
-        "Buddy Aggressive Item_Gather at Impact Point"
+        "Buddy Aggression Item_Gather at Impact Point"
       ]
     },
     {
       "ID": 6610,
       "Entries": [
-        "c4354_Royal Army Knight_Plains Faction_Arrow Rain Activated"
+        "c4354_Royal Army Knight_Plains Faction_Arrow Rain Activation"
       ]
     },
     {
       "ID": 7000,
       "Entries": [
-        "Naruko Trap Activation Sound"
+        "Clapper Trap Activation Sound"
       ]
     },
     {
       "ID": 203000,
       "Entries": [
-        "c2030_Rennala of the Full Moon (before HU)_gravemarker bullet gather target"
+        "c2030_Fertile Rennala (Pre-HU)_Gravestone Bullet Gathering Target"
       ]
     },
     {
       "ID": 203100,
       "Entries": [
-        "c2031_Rennala of the Full Moon (after HU)_event kick behavior sound"
+        "c2031_Fertile Rennala (Post-HU)_Behavior Sound for Event Kick"
       ]
     },
     {
       "ID": 212000,
       "Entries": [
-        "c2120_Arbitrating Malenia_Illusion Attack Trigger_3000"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3000"
       ]
     },
     {
       "ID": 212001,
       "Entries": [
-        "c2120_Arbitrating Malenia_Illusion Attack Trigger_3001"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3001"
       ]
     },
     {
       "ID": 212002,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3002"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3002"
       ]
     },
     {
       "ID": 212003,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3003"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3003"
       ]
     },
     {
       "ID": 212004,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3004"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3004"
       ]
     },
     {
       "ID": 212005,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3005"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3005"
       ]
     },
     {
       "ID": 212006,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3006"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3006"
       ]
     },
     {
       "ID": 212007,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3007"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3007"
       ]
     },
     {
       "ID": 212008,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3008"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3008"
       ]
     },
     {
       "ID": 212009,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3009"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3009"
       ]
     },
     {
       "ID": 212010,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3010"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3010"
       ]
     },
     {
       "ID": 212011,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3011"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3011"
       ]
     },
     {
       "ID": 212012,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3012"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3012"
       ]
     },
     {
       "ID": 212013,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3013"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3013"
       ]
     },
     {
       "ID": 212014,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3014"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3014"
       ]
     },
     {
       "ID": 212015,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3015"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3015"
       ]
     },
     {
       "ID": 212016,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3016"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3016"
       ]
     },
     {
       "ID": 212017,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3017"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3017"
       ]
     },
     {
       "ID": 212018,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3018"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3018"
       ]
     },
     {
       "ID": 212019,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3019"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3019"
       ]
     },
     {
       "ID": 212020,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3020"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3020"
       ]
     },
     {
       "ID": 212021,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3021"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3021"
       ]
     },
     {
       "ID": 212022,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3022"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3022"
       ]
     },
     {
       "ID": 212023,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3023"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3023"
       ]
     },
     {
       "ID": 212024,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3024"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3024"
       ]
     },
     {
       "ID": 212025,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3025"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3025"
       ]
     },
     {
       "ID": 212026,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3026"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3026"
       ]
     },
     {
       "ID": 212027,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3027"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3027"
       ]
     },
     {
       "ID": 212028,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3028"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3028"
       ]
     },
     {
       "ID": 212029,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3029"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3029"
       ]
     },
     {
       "ID": 212030,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3030"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3030"
       ]
     },
     {
       "ID": 212031,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3031"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3031"
       ]
     },
     {
       "ID": 212032,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3032"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3032"
       ]
     },
     {
       "ID": 212033,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3033"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3033"
       ]
     },
     {
       "ID": 212034,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3034"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3034"
       ]
     },
     {
       "ID": 212035,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3035"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3035"
       ]
     },
     {
       "ID": 212036,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3036"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3036"
       ]
     },
     {
       "ID": 212037,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3037"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3037"
       ]
     },
     {
       "ID": 212038,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3038"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3038"
       ]
     },
     {
       "ID": 212039,
       "Entries": [
-        "c2120_Arbitrating Malenia_Phantom Attack Command_3039"
+        "c2120_Arbiter Malenia_Phantom Attack Command_3039"
       ]
     },
     {
       "ID": 307000,
       "Entries": [
-        "c3070_Old Woman Bat: Ally Call_Audible Range_5m"
+        "c3070_Man-Eating Hag: Call Allies_Hearing Range_5m"
       ]
     },
     {
       "ID": 307001,
       "Entries": [
-        "c3070_Old Woman Bat: Ally Call_Audible Range_15m"
+        "c3070_Man-Eating Hag: Call Allies_Hearing Range_15m"
       ]
     },
     {
       "ID": 307002,
       "Entries": [
-        "c3070_Old Woman Bat: Ally Call_Audible Range_25m"
+        "c3070_Man-Eating Hag: Call Allies_Hearing Range_25m"
       ]
     },
     {
       "ID": 337000,
       "Entries": [
-        "c3670_Ancestral Follower (Female)_Animal Summon"
+        "c3670_Ancestor Worshipper (Female)_Animal Gathering"
       ]
     },
     {
       "ID": 337001,
       "Entries": [
-        "c3670_Ancestral Follower (Female)_Male Type Summon"
+        "c3670_Ancestor Worshipper (Female)_Male Type Gathering"
       ]
     },
     {
       "ID": 356000,
       "Entries": [
-        "c3560_Godskin Apostle: Tag Battle_AI Sound Combo"
+        "c3560_Godskin Priest: Tag Battle_AI Sound Combo"
       ]
     },
     {
       "ID": 357000,
       "Entries": [
-        "c3570_Godskin Apostle (Another): Tag Battle_AI Sound Combo"
+        "c3570_Godskin Priest (Another): Tag Battle_AI Sound Combo"
       ]
     },
     {
       "ID": 357001,
       "Entries": [
-        "c3570_Godskin Apostle (Another): Tag Battle_AI Sound Combo 2"
+        "c3570_Godskin Priest (Another): Tag Battle_AI Sound Combo 2"
       ]
     },
     {
       "ID": 365000,
       "Entries": [
-        "c3650_Worm-eaten Tribe_Flower Grandpa buff application"
+        "c3650_Worm-Eaten Race_Flower-Blooming Old Man Buff Application"
       ]
     },
     {
       "ID": 366000,
       "Entries": [
-        "c3660_Rune Citizen_Simultaneous stone throw"
+        "c3660_Rune Citizen_Coordinated Stone Throw"
       ]
     },
     {
       "ID": 366100,
       "Entries": [
-        "c3661_Rotten Undead Ally throw success sound"
+        "c3661_Rotten Hollow Sound of Someone\u0027s Throw Success"
       ]
     },
     {
       "ID": 366110,
       "Entries": [
-        "c3661_Rotten Undead Cursed blood variant"
+        "c3661_Rotten Hollow Cursed Blood Variant Sound of Someone\u0027s Explosive Scatter Death"
       ]
     },
     {
       "ID": 367000,
       "Entries": [
-        "c3670_Leg Cripple_Restraint Type：Scream_Audible Range_5m"
+        "c3670_Cripple_Restraint Type: Scream_Hearing Range_5m"
       ]
     },
     {
       "ID": 367001,
       "Entries": [
-        "c3670_Leg Cripple_Restraint Type：Scream_Audible Range_15m"
+        "c3670_Cripple_Restraint Type: Scream_Hearing Range_15m"
       ]
     },
     {
       "ID": 367002,
       "Entries": [
-        "c3670_Leg Cripple_Restraint Type：Scream_Audible Range_25m"
+        "c3670_Cripple_Restraint Type: Scream_Hearing Range_25m"
       ]
     },
     {
       "ID": 375000,
       "Entries": [
-        "c3750_Rune Devourer: On Successful Throw"
+        "c3750_Rune Eater: On Throw Success, Entourage Retreat Command"
       ]
     },
     {
       "ID": 385000,
       "Entries": [
-        "c3850_Balloon Puppet Soldier_Draws Attention with Crystal Break Sound"
+        "c3850_Balloon Puppet Soldier_Draw Attention With Crystal Breaking Sound"
       ]
     },
     {
       "ID": 395000,
       "Entries": [
-        "c3950_Children of Ghouls_Ally Call"
+        "c3950_Children of the Ghouls_Call Allies"
       ]
     },
     {
       "ID": 397000,
       "Entries": [
-        "c3970_Descendants of the Intelligent Beast_Ally Call"
+        "c3970_Descendants of the Intelligent Beast_Call Allies"
       ]
     },
     {
@@ -778,163 +778,163 @@
     {
       "ID": 418000,
       "Entries": [
-        "c4180_Spirit Jellyfish_Hostile Transformation"
+        "c4180_Spirit Jellyfish_Turn Hostile"
       ]
     },
     {
       "ID": 420100,
       "Entries": [
-        "c4201_Old Woman Bat: Bat Coordinated Attack_Audible Range_5m"
+        "c4201_Crone Bat: Bat Coordinated Attack_Hearing Range_5m"
       ]
     },
     {
       "ID": 420101,
       "Entries": [
-        "c4201_Old Woman Bat: Bat Coordinated Attack_Audible Range_15m"
+        "c4201_Crone Bat: Bat Coordinated Attack_Hearing Range_15m"
       ]
     },
     {
       "ID": 420102,
       "Entries": [
-        "c4201_Old Woman Bat: Bat Coordinated Attack_Audible Range_25m"
+        "c4201_Crone Bat: Bat Coordinated Attack_Hearing Range_25m"
       ]
     },
     {
       "ID": 430000,
       "Entries": [
-        "c4300_Grave Robber Noble: Horn_Audible Range_10m"
+        "c4300_Grave-Robbing Noble: Horn_Hearing Range_10m"
       ]
     },
     {
       "ID": 430001,
       "Entries": [
-        "c4300_Grave Robber Noble: Horn_Audible Range_20m"
+        "c4300_Grave-Robbing Noble: Horn_Hearing Range_20m"
       ]
     },
     {
       "ID": 430002,
       "Entries": [
-        "c4300_Grave Robber Noble: Horn_Audible Range_30m"
+        "c4300_Grave-Robbing Noble: Horn_Hearing Range_30m"
       ]
     },
     {
       "ID": 430003,
       "Entries": [
-        "c4300_Grave Robber Noble: Horn_Audible Range_40m (For Caravan)"
+        "c4300_Grave-Robbing Noble: Horn_Hearing Range_40m (For Caravan)"
       ]
     },
     {
       "ID": 430004,
       "Entries": [
-        "c4300_Grave Robber Noble: Horn_Audible Range_50m (For Caravan)"
+        "c4300_Grave-Robbing Noble: Horn_Hearing Range_50m (For Caravan)"
       ]
     },
     {
       "ID": 430005,
       "Entries": [
-        "c4300_Grave Robber Noble: Horn_Audible Range_60m (For Caravan)"
+        "c4300_Grave-Robbing Noble: Horn_Hearing Range_60m (For Caravan)"
       ]
     },
     {
       "ID": 431000,
       "Entries": [
-        "c4310_Wandering Royal Army Horn Sound Retreat"
+        "c4310_Wandering Royal Army Trumpet Sound Retreat"
       ]
     },
     {
       "ID": 431001,
       "Entries": [
-        "c4310_Wandering Royal Army Horn Sound Enemy Spotted"
+        "c4310_Wandering Royal Army Trumpet Sound Enemy Spotted"
       ]
     },
     {
       "ID": 431002,
       "Entries": [
-        "c4310_Wandering Royal Army Horn Sound Charge"
+        "c4310_Wandering Royal Army Trumpet Sound Charge"
       ]
     },
     {
       "ID": 432100,
       "Entries": [
-        "c4321_Wandering Lowly Soldier (Small Person)_Poison Trap Trigger Sound"
+        "c4321_Wandering Lowly Soldier (Dwarf)_Sound When Poison Trap Activates"
       ]
     },
     {
       "ID": 432101,
       "Entries": [
-        "c4321_Wandering Lowly Soldier (Small Person)_Smoke Ball Detection"
+        "c4321_Wandering Lowly Soldier (Dwarf)_Smoke Ball Detection"
       ]
     },
     {
       "ID": 432102,
       "Entries": [
-        "c4321_Wandering Lowly Soldier (Small Person)_Circling Movement & Attack Start Cue (Buddy Only)"
+        "c4321_Wandering Lowly Soldier (Dwarf)_Circling Movement\u0026Attack Start Signal (Buddy Only)"
       ]
     },
     {
       "ID": 434000,
       "Entries": [
-        "c4340_Pumpkin Head Trumpet Sound While Sleeping"
+        "c4340_Pumpkin Head Horn Sound for When Sleeping"
       ]
     },
     {
       "ID": 438300,
       "Entries": [
-        "c4383_Gem Carving：Ally Call_Audible Range_5m"
+        "c4383_Gem Carver: Call Allies_Hearing Range_5m"
       ]
     },
     {
       "ID": 438301,
       "Entries": [
-        "c4383_Gem Carving：Ally Call_Audible Range_15m"
+        "c4383_Gem Carver: Call Allies_Hearing Range_15m"
       ]
     },
     {
       "ID": 438302,
       "Entries": [
-        "c4383_Gem Carving：Ally Call_Audible Range_25m"
+        "c4383_Gem Carver: Call Allies_Hearing Range_25m"
       ]
     },
     {
       "ID": 452000,
       "Entries": [
-        "c4520_Ancient Dragon_Guardian Lineage Summon"
+        "c4520_Ancient Dragon_Guardian Descendant Summon"
       ]
     },
     {
       "ID": 452001,
       "Entries": [
-        "c4520_Ancient Dragon_Guardian Lineage Summon"
+        "c4520_Ancient Dragon_Guardian Descendant Summon"
       ]
     },
     {
       "ID": 452002,
       "Entries": [
-        "c4520_Ancient Dragon_Guardian Lineage Summon Double"
+        "c4520_Ancient Dragon_Guardian Descendant Double Summon"
       ]
     },
     {
       "ID": 452003,
       "Entries": [
-        "c4520_Ancient Dragon_Guardian Lineage Summon Double"
+        "c4520_Ancient Dragon_Guardian Descendant Double Summon"
       ]
     },
     {
       "ID": 452004,
       "Entries": [
-        "c4520_Ancient Dragon_Guardian Lineage Summon Double"
+        "c4520_Ancient Dragon_Guardian Descendant Double Summon"
       ]
     },
     {
       "ID": 455000,
       "Entries": [
-        "c4550_Feral Tyrannosaur_Discovery Sound"
+        "c4550_Wild Dog Tyranno_Discovery Sound"
       ]
     },
     {
       "ID": 456000,
       "Entries": [
-        "c4560_Raven Tyranno_Feral Tyrannosaur Fear Check"
+        "c4560_Crow Tyranno_Wild Dog Tyranno Frighten Check"
       ]
     },
     {
@@ -988,127 +988,127 @@
     {
       "ID": 463000,
       "Entries": [
-        "c4630_Runebear_Bear Bell Sound"
+        "c4630_Runebear_Sound for Bear Bell"
       ]
     },
     {
       "ID": 467000,
       "Entries": [
-        "c4670_Ancestor Spirit_Event kick behavior sound"
+        "c4670_Ancestral Spirit_Behavior Sound for Event Kick"
       ]
     },
     {
       "ID": 477000,
       "Entries": [
-        "c4770_Royal Capital Gargoyle Underground Labyrinth Plains_Two-Boss Fight When One Retreats"
+        "c4770_Leyndell Gargoyle Underground Labyrinth Plains_Two-Boss Fight When One Side Retreated"
       ]
     },
     {
       "ID": 495000,
       "Entries": [
-        "c4950_Night King Followers_Giant Skeleton Summon"
+        "c4950_Night King\u0027s Kindred_Giant Skeleton Summon"
       ]
     },
     {
       "ID": 496000,
       "Entries": [
-        "c4960_Nightlord Followers_Giant Skeleton_Attacking Check"
+        "c4960_Night King\u0027s Kindred_Giant Skeleton_During Attack Check"
       ]
     },
     {
       "ID": 603000,
       "Entries": [
-        "c3000_Soldier of the Fallen_Ally Call: PC Spawn AI Sound"
+        "c3000_Lost Soldier_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 603070,
       "Entries": [
-        "c3070_Old Woman Bat: Ally Call: PC-Generated AI Sound"
+        "c3070_Man-Eating Hag: Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 603370,
       "Entries": [
-        "c3370_Ancestral Follower (Female): Ally Call: PC-Triggered AI Sound"
+        "c3370_Ancestor Worshipper (Female): Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 603670,
       "Entries": [
-        "c3670_Leg Cripple_Restraint Type: Ally Call: PC-Triggered AI Sound"
+        "c3670_Cripple_Restraint Type: Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 603950,
       "Entries": [
-        "c3950_Children of Ghouls_Ally Call: PC-Generated AI Sound"
+        "c3950_Children of the Ghouls_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 603970,
       "Entries": [
-        "c3970_Descendants of the Intelligent Beast_Ally Call: PC Generated AI Sound"
+        "c3970_Descendants of the Intelligent Beast_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604070,
       "Entries": [
-        "c4070_Wolf_Ally Call: PC-Triggered AI Sound"
+        "c4070_Wolf_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604100,
       "Entries": [
-        "c4100_Gray Demi-Human_Ally Call: PC-Triggered AI Sound"
+        "c4100_Gray Demi-Human_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604300,
       "Entries": [
-        "c4300_Grave Robber Noble_Ally Call: PC-triggered AI sound"
+        "c4300_Grave-Robbing Noble_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604310,
       "Entries": [
-        "c4310_Wandering Royal Army_Ally Call: PC-Triggered AI Sound"
+        "c4310_Wandering Royal Army_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604370,
       "Entries": [
-        "c4370_Wandering Royal Army (Foot Soldier)_Ally Call: PC Generation AI Sound"
+        "c4370_Wandering Royal Army (Foot Soldier)_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604383,
       "Entries": [
-        "c4383_Gem Carving_Ally Call：PC-Generated AI Sound"
+        "c4383_Gem Carver_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 604550,
       "Entries": [
-        "c4550_Feral Tyrannosaur_Ally Call: PC Generated AI Sound"
+        "c4550_Wild Dog Tyranno_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 607000,
       "Entries": [
-        "c7000_Spirit Ash summon Generic_Ally Call：PC-generated AI Sound"
+        "c7000_Buddy Generic_Call Allies: PC-Generated AI Sound"
       ]
     },
     {
       "ID": 700000,
       "Entries": [
-        "c7000_Spirit Ash summon_Generic_All-Out Attack Use"
+        "c7000_Buddy_Generic_For Coordinated Attack"
       ]
     },
     {
       "ID": 900000,
       "Entries": [
-        "[GR] Spirit Ash Command Issuing Item"
+        "[GR] Item for Buddy Commands"
       ]
     },
     {
@@ -1144,7 +1144,7 @@
     {
       "ID": 900700,
       "Entries": [
-        "Phantom Voice"
+        "Auditory Hallucination"
       ]
     },
     {
@@ -1156,25 +1156,25 @@
     {
       "ID": 999900,
       "Entries": [
-        "Fake Target_Hallucination"
+        "Fake Target_Auditory Hallucination"
       ]
     },
     {
       "ID": 999901,
       "Entries": [
-        "Fake Target_Soul Coin (Human)"
+        "Fake Target_Soul Coin (Human Type)"
       ]
     },
     {
       "ID": 999902,
       "Entries": [
-        "Fake Target_Soul Coin (Beast)"
+        "Fake Target_Soul Coin (Beast Type)"
       ]
     },
     {
       "ID": 999903,
       "Entries": [
-        "Fake Target_Soul Coin (Demi-Human)"
+        "Fake Target_Soul Coin (Demi-Human Type)"
       ]
     },
     {
@@ -1186,25 +1186,25 @@
     {
       "ID": 999910,
       "Entries": [
-        "Fake Target_Hallucination"
+        "Fake Target_Auditory Hallucination"
       ]
     },
     {
       "ID": 999911,
       "Entries": [
-        "Fake Target_Soul Coin (Human)"
+        "Fake Target_Soul Coin (Human Type)"
       ]
     },
     {
       "ID": 999912,
       "Entries": [
-        "Fake Target_Soul Coin (Beast)"
+        "Fake Target_Soul Coin (Beast Type)"
       ]
     },
     {
       "ID": 999913,
       "Entries": [
-        "Fake Target_Soul Coin (Demi-Human)"
+        "Fake Target_Soul Coin (Demi-Human Type)"
       ]
     },
     {
@@ -1216,7 +1216,7 @@
     {
       "ID": 999999999,
       "Entries": [
-        "■■■■■Last Param Data■■■■■"
+        "■■■■■ Last Entry of Param ■■■■■"
       ]
     }
   ]

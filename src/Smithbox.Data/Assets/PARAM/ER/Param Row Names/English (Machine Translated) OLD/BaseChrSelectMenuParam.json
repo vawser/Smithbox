@@ -1,0 +1,107 @@
+{
+  "Name": "BaseChrSelectMenuParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Skill Warrior"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Sorcerer Knight"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Cleric"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Barbarian"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Senior Knight"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Exiled Knight"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Dancing Swordsman"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Barbarian"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Bandit Armor"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Stargazing"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Persecuted Cleric"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Samurai (Light Armor)"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Condemned Prisoner(A)"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Noble Wanderer's Tale"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Nude"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Light Knight"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Heavy Knight"
+      ]
+    }
+  ]
+}

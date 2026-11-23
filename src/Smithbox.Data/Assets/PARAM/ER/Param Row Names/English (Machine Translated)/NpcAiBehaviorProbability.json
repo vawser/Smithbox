@@ -16,13 +16,13 @@
     {
       "ID": 2,
       "Entries": [
-        "Treat as probability?"
+        "Treat as Probability"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Melee Type_Attack Focused (Point Blank)"
+        "Melee Type_Attack Focused (Point-Blank)"
       ]
     },
     {
@@ -40,7 +40,7 @@
     {
       "ID": 13,
       "Entries": [
-        "Melee Type_Attack Focused (Mid-Long Range)"
+        "Melee Type_Attack Focused (Mid to Long Range)"
       ]
     },
     {
@@ -52,157 +52,157 @@
     {
       "ID": 20,
       "Entries": [
-        "Melee Type_Attack Focused_Two-Handed Focused (Point Blank)"
+        "Melee Type_Attack Focused_Two-Handing Focused (Point-Blank)"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Melee Type_Attack Focused_Two-Handed Focused (Close Range)"
+        "Melee Type_Attack Focused_Two-Handing Focused (Close Range)"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Melee Type_Attack Focused_Two-Handed Focused (Mid Range)"
+        "Melee Type_Attack Focused_Two-Handing Focused (Mid Range)"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Melee Type_Attack Focused_Two-Handed Focused (Mid-Long Range)"
+        "Melee Type_Attack Focused_Two-Handing Focused (Mid to Long Range)"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Melee Type_Attack Focused_Two-Handed Focused (Long Range)"
+        "Melee Type_Attack Focused_Two-Handing Focused (Long Range)"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Melee Type_Maneuver Focused (Point Blank)"
+        "Melee Type_Positioning Focused (Point-Blank)"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Melee Type_Positioning Focus (Close Range)"
+        "Melee Type_Positioning Focused (Close Range)"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "Melee Type_Maneuver Focused (Mid Range)"
+        "Melee Type_Positioning Focused (Mid Range)"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        "Melee Type_Maneuver Focused (Mid-Long Range)"
+        "Melee Type_Positioning Focused (Mid to Long Range)"
       ]
     },
     {
       "ID": 34,
       "Entries": [
-        "Melee Type_Positioning Focus (Long Range)"
+        "Melee Type_Positioning Focused (Long Range)"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Melee Type_Positioning Focus_Shield Poke (Point Blank)"
+        "Melee Type_Positioning Focused_With Shield Poke (Point-Blank)"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Melee Type_Positioning Focus_Shield Poke (Close Range)"
+        "Melee Type_Positioning Focused_With Shield Poke (Close Range)"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Melee Type_Positioning Focus_Shield Poke (Mid Range)"
+        "Melee Type_Positioning Focused_With Shield Poke (Mid Range)"
       ]
     },
     {
       "ID": 43,
       "Entries": [
-        "Melee Type_Positioning Focus_Shield Poke (Mid-Long Range)"
+        "Melee Type_Positioning Focused_With Shield Poke (Mid to Long Range)"
       ]
     },
     {
       "ID": 44,
       "Entries": [
-        "Melee Type_Positioning Focus_Shield Poke (Long Range)"
+        "Melee Type_Positioning Focused_With Shield Poke (Long Range)"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Melee Type_Positioning Focus_Wide Reach (Point Blank)"
+        "Melee Type_Positioning Focused_Wide Reach (Point-Blank)"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Melee Type_Positioning Focus_Wide Reach (Close Range)"
+        "Melee Type_Positioning Focused_Wide Reach (Close Range)"
       ]
     },
     {
       "ID": 52,
       "Entries": [
-        "Melee Type_Positioning Focus_Wide Reach (Mid Range)"
+        "Melee Type_Positioning Focused_Wide Reach (Mid Range)"
       ]
     },
     {
       "ID": 53,
       "Entries": [
-        "Melee Type_Positioning Focus_Wide Reach (Mid-Long Range)"
+        "Melee Type_Positioning Focused_Wide Reach (Mid to Long Range)"
       ]
     },
     {
       "ID": 54,
       "Entries": [
-        "Melee Type_Positioning Focus_Wide Reach (Long Range)"
+        "Melee Type_Positioning Focused_Wide Reach (Long Range)"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Magic Type (Long Range Heavy) (Point Blank)"
+        "Magic Type (More Long Range) (Point-Blank)"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Magic Type (Long Range Heavy) (Close Range)"
+        "Magic Type (More Long Range) (Close Range)"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Magic Type (Long Range Heavy) (Mid Range)"
+        "Magic Type (More Long Range) (Mid Range)"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Magic Type (Long Range Heavy) (Mid-Long Range)"
+        "Magic Type (More Long Range) (Mid to Long Range)"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Magic Type (Long Range Heavy) (Long Range)"
+        "Magic Type (More Long Range) (Long Range)"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Magic Type (Mid Range) (Point Blank)"
+        "Magic Type (Mid Range) (Point-Blank)"
       ]
     },
     {
@@ -220,7 +220,7 @@
     {
       "ID": 113,
       "Entries": [
-        "Magic Type (Mid Range) (Mid-Long Range)"
+        "Magic Type (Mid Range) (Mid to Long Range)"
       ]
     },
     {
@@ -232,127 +232,127 @@
     {
       "ID": 120,
       "Entries": [
-        "Magic Type (Close Range Heavy) (Point Blank)"
+        "Magic Type (More Close Range) (Point-Blank)"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Magic Type (Close Range Heavy) (Close Range)"
+        "Magic Type (More Close Range) (Close Range)"
       ]
     },
     {
       "ID": 122,
       "Entries": [
-        "Magic Type (Close Range Heavy) (Mid Range)"
+        "Magic Type (More Close Range) (Mid Range)"
       ]
     },
     {
       "ID": 123,
       "Entries": [
-        "Magic Type (Close Range Heavy) (Mid-Long Range)"
+        "Magic Type (More Close Range) (Mid to Long Range)"
       ]
     },
     {
       "ID": 124,
       "Entries": [
-        "Magic Type (Close Range Heavy) (Long Range)"
+        "Magic Type (More Close Range) (Long Range)"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Long Range Type (Point Blank)"
+        "Ranged Type (Point-Blank)"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "Long Range Type (Close Range)"
+        "Ranged Type (Close Range)"
       ]
     },
     {
       "ID": 202,
       "Entries": [
-        "Long Range Type (Mid Range)"
+        "Ranged Type (Mid Range)"
       ]
     },
     {
       "ID": 203,
       "Entries": [
-        "Long Range Type (Mid-Long Range)"
+        "Ranged Type (Mid to Long Range)"
       ]
     },
     {
       "ID": 204,
       "Entries": [
-        "Long Range Type (Long Range)"
+        "Ranged Type (Long Range)"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "Sub_Left Hand Melee Weapon (Point Blank)"
+        "Sub_Left-Hand Melee Weapon (Point-Blank)"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "Sub_Left Hand Melee Weapon (Close Range)"
+        "Sub_Left-Hand Melee Weapon (Close Range)"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "Sub_Left Hand Melee Weapon (Mid Range)"
+        "Sub_Left-Hand Melee Weapon (Mid Range)"
       ]
     },
     {
       "ID": 503,
       "Entries": [
-        "Sub_Left Hand Melee Weapon (Mid-Far Range)"
+        "Sub_Left-Hand Melee Weapon (Mid to Long Range)"
       ]
     },
     {
       "ID": 504,
       "Entries": [
-        "Sub_Left Hand Melee Weapon (Far Range)"
+        "Sub_Left-Hand Melee Weapon (Long Range)"
       ]
     },
     {
       "ID": 510,
       "Entries": [
-        "Sub_Left Hand Melee Weapon_Parryable (Point Blank)"
+        "Sub_Left-Hand Melee Weapon_Parry Capable (Point-Blank)"
       ]
     },
     {
       "ID": 511,
       "Entries": [
-        "Sub_Left Hand Melee Weapon_Parryable (Close Range)"
+        "Sub_Left-Hand Melee Weapon_Parry Capable (Close Range)"
       ]
     },
     {
       "ID": 512,
       "Entries": [
-        "Sub_Left Hand Melee Weapon_Parryable (Mid Range)"
+        "Sub_Left-Hand Melee Weapon_Parry Capable (Mid Range)"
       ]
     },
     {
       "ID": 513,
       "Entries": [
-        "Sub_Left Hand Melee Weapon_Parryable (Mid-Long Range)"
+        "Sub_Left-Hand Melee Weapon_Parry Capable (Mid to Long Range)"
       ]
     },
     {
       "ID": 514,
       "Entries": [
-        "Sub_Left Hand Melee Weapon_Parryable (Long Range)"
+        "Sub_Left-Hand Melee Weapon_Parry Capable (Long Range)"
       ]
     },
     {
       "ID": 600,
       "Entries": [
-        "Sub_Left Hand Ranged Weapon (Point Blank)"
+        "Sub_Left Hand Ranged Weapon (Point-Blank)"
       ]
     },
     {
@@ -370,7 +370,7 @@
     {
       "ID": 603,
       "Entries": [
-        "Sub_Left Hand Ranged Weapon (Mid-Long Range)"
+        "Sub_Left Hand Ranged Weapon (Mid to Long Range)"
       ]
     },
     {
@@ -382,7 +382,7 @@
     {
       "ID": 700,
       "Entries": [
-        "Sub_Left Hand Catalyst Weapon (Point Blank)"
+        "Sub_Left Hand Catalyst Weapon (Point-Blank)"
       ]
     },
     {
@@ -400,19 +400,19 @@
     {
       "ID": 703,
       "Entries": [
-        "Sub_Left Hand Catalyst Weapon (Mid-Far Range)"
+        "Sub_Left Hand Catalyst Weapon (Mid to Long Range)"
       ]
     },
     {
       "ID": 704,
       "Entries": [
-        "Sub_Left Hand Catalyst Weapon (Far Range)"
+        "Sub_Left Hand Catalyst Weapon (Long Range)"
       ]
     },
     {
       "ID": 800,
       "Entries": [
-        "Sub_Left Hand Shield Weapon (Point Blank)"
+        "Sub_Left Hand Shield Weapon (Point-Blank)"
       ]
     },
     {
@@ -430,343 +430,343 @@
     {
       "ID": 803,
       "Entries": [
-        "Sub_Left Hand Shield Weapon (Mid-Far Range)"
+        "Sub_Left Hand Shield Weapon (Mid to Long Range)"
       ]
     },
     {
       "ID": 804,
       "Entries": [
-        "Sub_Left Hand Shield Weapon (Far Range)"
+        "Sub_Left Hand Shield Weapon (Long Range)"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Right hand is Spear"
+        "Right Hand Spear, Left Hand Shield (Point-Blank)"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Right hand is Spear"
+        "Right Hand Spear, Left Hand Shield (Close Range)"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "Right hand is Spear"
+        "Right Hand Spear, Left Hand Shield (Mid Range)"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "Right hand is Spear"
+        "Right Hand Spear, Left Hand Shield (Mid to Long Range)"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Right hand is Spear"
+        "Right Hand Spear, Left Hand Shield (Long Range)"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Right hand is Greatsword (Point-Blank Range)"
+        "Right Hand Greatsword (Point-Blank)"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        "Right hand is Greatsword (Close Range)"
+        "Right Hand Greatsword (Close Range)"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "Right hand is Greatsword (Mid Range)"
+        "Right Hand Greatsword (Mid Range)"
       ]
     },
     {
       "ID": 1013,
       "Entries": [
-        "Right hand is Greatsword (Mid-Long Range)"
+        "Right Hand Greatsword (Mid to Long Range)"
       ]
     },
     {
       "ID": 1014,
       "Entries": [
-        "Right hand is Greatsword (Long Range)"
+        "Right Hand Greatsword (Long Range)"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Has Skill Close-Range Attack (Point Blank)"
+        "Has Skill: Close-Range Attack (Point-Blank)"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        "Has Skill Close-Range Attack (Close Range)"
+        "Has Skill: Close-Range Attack (Close Range)"
       ]
     },
     {
       "ID": 2002,
       "Entries": [
-        "Has Skill Close-Range Attack (Mid Range)"
+        "Has Skill: Close-Range Attack (Mid Range)"
       ]
     },
     {
       "ID": 2003,
       "Entries": [
-        "Has Skill Close-Range Attack (Mid-Far Range)"
+        "Has Skill: Close-Range Attack (Mid to Long Range)"
       ]
     },
     {
       "ID": 2004,
       "Entries": [
-        "Has Skill Close-Range Attack (Far Range)"
+        "Has Skill: Close-Range Attack (Long Range)"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Has Skill Mid-Range Attack (Point Blank)"
+        "Has Skill: Mid-Range Attack (Point-Blank)"
       ]
     },
     {
       "ID": 2011,
       "Entries": [
-        "Has Skill Mid-Range Attack (Close Range)"
+        "Has Skill: Mid-Range Attack (Close Range)"
       ]
     },
     {
       "ID": 2012,
       "Entries": [
-        "Has Skill Mid-Range Attack (Mid Range)"
+        "Has Skill: Mid-Range Attack (Mid Range)"
       ]
     },
     {
       "ID": 2013,
       "Entries": [
-        "Has Skill Mid-Range Attack (Mid-Far Range)"
+        "Has Skill: Mid-Range Attack (Mid to Long Range)"
       ]
     },
     {
       "ID": 2014,
       "Entries": [
-        "Has Skill Mid-Range Attack (Far Range)"
+        "Has Skill: Mid-Range Attack (Long Range)"
       ]
     },
     {
       "ID": 2020,
       "Entries": [
-        "Has Arts ranged attack (point blank)"
+        "Has Skill: Long-Range Attack (Point-Blank)"
       ]
     },
     {
       "ID": 2021,
       "Entries": [
-        "Has Arts ranged attack (close range)"
+        "Has Skill: Long-Range Attack (Close Range)"
       ]
     },
     {
       "ID": 2022,
       "Entries": [
-        "Has Arts ranged attack (mid range)"
+        "Has Skill: Long-Range Attack (Mid Range)"
       ]
     },
     {
       "ID": 2023,
       "Entries": [
-        "Has Arts ranged attack (mid-long range)"
+        "Has Skill: Long-Range Attack (Mid to Long Range)"
       ]
     },
     {
       "ID": 2024,
       "Entries": [
-        "Has Arts ranged attack (long range)"
+        "Has Skill: Long-Range Attack (Long Range)"
       ]
     },
     {
       "ID": 2030,
       "Entries": [
-        "Has Skill Recovery (Point Blank)"
+        "Has Skill: Heal (Point-Blank)"
       ]
     },
     {
       "ID": 2031,
       "Entries": [
-        "Has Skill Recovery (Close Range)"
+        "Has Skill: Heal (Close Range)"
       ]
     },
     {
       "ID": 2032,
       "Entries": [
-        "Has Skill Recovery (Mid Range)"
+        "Has Skill: Heal (Mid Range)"
       ]
     },
     {
       "ID": 2033,
       "Entries": [
-        "Has Skill Recovery (Mid-Far Range)"
+        "Has Skill: Heal (Mid to Long Range)"
       ]
     },
     {
       "ID": 2034,
       "Entries": [
-        "Has Skill Recovery (Far Range)"
+        "Has Skill: Heal (Long Range)"
       ]
     },
     {
       "ID": 2040,
       "Entries": [
-        "Has Skill Buff (Point Blank)"
+        "Has Skill: Buff (Point-Blank)"
       ]
     },
     {
       "ID": 2041,
       "Entries": [
-        "Has Skill Buff (Close Range)"
+        "Has Skill: Buff (Close Range)"
       ]
     },
     {
       "ID": 2042,
       "Entries": [
-        "Has Skill Buff (Mid Range)"
+        "Has Skill: Buff (Mid Range)"
       ]
     },
     {
       "ID": 2043,
       "Entries": [
-        "Has Skill Buff (Mid-Far Range)"
+        "Has Skill: Buff (Mid to Long Range)"
       ]
     },
     {
       "ID": 2044,
       "Entries": [
-        "Has Skill Buff (Far Range)"
+        "Has Skill: Buff (Long Range)"
       ]
     },
     {
       "ID": 2050,
       "Entries": [
-        "Has Skill Special Roll (Point Blank)"
+        "Has Skill: Special Roll (Point-Blank)"
       ]
     },
     {
       "ID": 2051,
       "Entries": [
-        "Has Skill Special Roll (Close Range)"
+        "Has Skill: Special Roll (Close Range)"
       ]
     },
     {
       "ID": 2052,
       "Entries": [
-        "Has Skill Special Roll (Mid Range)"
+        "Has Skill: Special Roll (Mid Range)"
       ]
     },
     {
       "ID": 2053,
       "Entries": [
-        "Has Skill Special Roll (Mid-Far Range)"
+        "Has Skill: Special Roll (Mid to Long Range)"
       ]
     },
     {
       "ID": 2054,
       "Entries": [
-        "Has Skill Special Roll (Far Range)"
+        "Has Skill: Special Roll (Long Range)"
       ]
     },
     {
       "ID": 2060,
       "Entries": [
-        "Has Skill In-Place Dodge (Close Range)"
+        "Has Skill: In-Place Dodge (Point-Blank)"
       ]
     },
     {
       "ID": 2061,
       "Entries": [
-        "Has Skill In-Place Dodge (Short Range)"
+        "Has Skill: In-Place Dodge (Close Range)"
       ]
     },
     {
       "ID": 2062,
       "Entries": [
-        "Has Skill In-Place Dodge (Mid Range)"
+        "Has Skill: In-Place Dodge (Mid Range)"
       ]
     },
     {
       "ID": 2063,
       "Entries": [
-        "Has Skill In-Place Dodge (Mid-Long Range)"
+        "Has Skill: In-Place Dodge (Mid to Long Range)"
       ]
     },
     {
       "ID": 2064,
       "Entries": [
-        "Has Skill In-Place Dodge (Long Range)"
+        "Has Skill: In-Place Dodge (Long Range)"
       ]
     },
     {
       "ID": 2070,
       "Entries": [
-        "Has Skill Parry (Point Blank)"
+        "Has Skill: Parry (Point-Blank)"
       ]
     },
     {
       "ID": 2071,
       "Entries": [
-        "Has Skill Parry (Close Range)"
+        "Has Skill: Parry (Close Range)"
       ]
     },
     {
       "ID": 2072,
       "Entries": [
-        "Has Skill Parry (Mid Range)"
+        "Has Skill: Parry (Mid Range)"
       ]
     },
     {
       "ID": 2073,
       "Entries": [
-        "Has Skill Parry (Mid-Far Range)"
+        "Has Skill: Parry (Mid to Long Range)"
       ]
     },
     {
       "ID": 2074,
       "Entries": [
-        "Has Skill Parry (Far Range)"
+        "Has Skill: Parry (Long Range)"
       ]
     },
     {
       "ID": 2080,
       "Entries": [
-        "Has Skill Debuff (Point Blank)"
+        "Has Skill: Debuff (Point-Blank)"
       ]
     },
     {
       "ID": 2081,
       "Entries": [
-        "Has Skill Debuff (Close Range)"
+        "Has Skill: Debuff (Close Range)"
       ]
     },
     {
       "ID": 2082,
       "Entries": [
-        "Has Skill Debuff (Mid Range)"
+        "Has Skill: Debuff (Mid Range)"
       ]
     },
     {
       "ID": 2083,
       "Entries": [
-        "Has Skill Debuff (Mid-Far Range)"
+        "Has Skill: Debuff (Mid to Long Range)"
       ]
     },
     {
       "ID": 2084,
       "Entries": [
-        "Has Skill Debuff (Far Range)"
+        "Has Skill: Debuff (Long Range)"
       ]
     },
     {
@@ -778,307 +778,307 @@
     {
       "ID": 3100,
       "Entries": [
-        "Enemy Is Forcibly Asleep"
+        "Enemy Is in Forced Sleep"
       ]
     },
     {
       "ID": 3500,
       "Entries": [
-        "Ally HP is 50% or more"
+        "Ally HP Is 50% Or More Or No Allies Nearby"
       ]
     },
     {
       "ID": 4000,
       "Entries": [
-        "Equip Load Type is Heavy (Superheavy)"
+        "Equip Load Type Is Overloaded"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Equip Load Type is Heavy"
+        "Equip Load Type Is Heavy"
       ]
     },
     {
       "ID": 4020,
       "Entries": [
-        "Equip Load Type is Medium"
+        "Equip Load Type Is Medium"
       ]
     },
     {
       "ID": 4030,
       "Entries": [
-        "Equip Load Type is Light"
+        "Equip Load Type Is Light"
       ]
     },
     {
       "ID": 4100,
       "Entries": [
-        "Health still above 50%"
+        "Still Has 50% or More HP"
       ]
     },
     {
       "ID": 4200,
       "Entries": [
-        "Stamina is 0 or below"
+        "Stamina Is 0 or Less"
       ]
     },
     {
       "ID": 6000,
       "Entries": [
-        "Magic Close Range Magic series not held"
+        "Has No Close-Range Magic"
       ]
     },
     {
       "ID": 6010,
       "Entries": [
-        "Magic Mid Range Magic series not held"
+        "Has No Mid-Range Magic"
       ]
     },
     {
       "ID": 6020,
       "Entries": [
-        "Magic Long Range Magic series not held"
+        "Has No Long-Range Magic"
       ]
     },
     {
       "ID": 6030,
       "Entries": [
-        "Magic HP Recovery Magic series not held"
+        "Has No HP Recovery Magic"
       ]
     },
     {
       "ID": 6031,
       "Entries": [
-        "Magic Ally HP Recovery Magic series not held"
+        "Has No Ally HP Recovery Magic"
       ]
     },
     {
       "ID": 6040,
       "Entries": [
-        "Magic Buff Magic series not held"
+        "Has No Buff Magic"
       ]
     },
     {
       "ID": 6050,
       "Entries": [
-        "Magic Debuff Magic series not held"
+        "Has No Debuff Magic"
       ]
     },
     {
       "ID": 6400,
       "Entries": [
-        "Right hand Catalyst has no castable close range Magic type"
+        "No Close-Range Magic Castable with Right Hand Catalyst"
       ]
     },
     {
       "ID": 6410,
       "Entries": [
-        "Right hand Catalyst has no castable mid range Magic type"
+        "No Mid-Range Magic Castable with Right Hand Catalyst"
       ]
     },
     {
       "ID": 6420,
       "Entries": [
-        "Right hand Catalyst has no castable long range Magic type"
+        "No Long-Range Magic Castable with Right Hand Catalyst"
       ]
     },
     {
       "ID": 6430,
       "Entries": [
-        "Right hand Catalyst has no castable HP recovery Magic type"
+        "No HP Recovery Magic Castable with Right Hand Catalyst"
       ]
     },
     {
       "ID": 6431,
       "Entries": [
-        "Right hand Catalyst has no castable ally HP recovery Magic type"
+        "No Ally HP Recovery Magic Castable with Right Hand Catalyst"
       ]
     },
     {
       "ID": 6440,
       "Entries": [
-        "Right hand Catalyst has no castable buff Magic type (including buff status)"
+        "No Buff Magic Castable with Right Hand Catalyst (Including Buff Situation)"
       ]
     },
     {
       "ID": 6450,
       "Entries": [
-        "Right hand Catalyst has no castable debuff Magic type (including debuff status)"
+        "No Debuff Magic Castable with Right Hand Catalyst (Including Debuff Situation)"
       ]
     },
     {
       "ID": 6600,
       "Entries": [
-        "Left hand Catalyst has no close-range magic type to cast"
+        "No Close-Range Magic Castable with Left Hand Catalyst"
       ]
     },
     {
       "ID": 6610,
       "Entries": [
-        "Left hand Catalyst has no mid-range magic type to cast"
+        "No Mid-Range Magic Castable with Left Hand Catalyst"
       ]
     },
     {
       "ID": 6620,
       "Entries": [
-        "Left hand Catalyst has no long-range magic type to cast"
+        "No Long-Range Magic Castable with Left Hand Catalyst"
       ]
     },
     {
       "ID": 6630,
       "Entries": [
-        "Left hand Catalyst has no HP recovery magic type to cast"
+        "No HP Recovery Magic Castable with Left Hand Catalyst"
       ]
     },
     {
       "ID": 6631,
       "Entries": [
-        "Left hand Catalyst has no ally HP recovery magic type to cast"
+        "No Ally HP Recovery Magic Castable with Left Hand Catalyst"
       ]
     },
     {
       "ID": 6640,
       "Entries": [
-        "Left hand Catalyst has no buff magic type to cast (including buff status)"
+        "No Buff Magic Castable with Left Hand Catalyst (Including Buff Situation)"
       ]
     },
     {
       "ID": 6650,
       "Entries": [
-        "Left hand Catalyst has no debuff magic type to cast (including debuff status)"
+        "No Debuff Magic Castable with Left Hand Catalyst (Including Debuff Situation)"
       ]
     },
     {
       "ID": 6800,
       "Entries": [
-        "Right hand is Catalyst and has no castable attack Magic"
+        "Right Hand Is Catalyst and Has No Castable Attack Magic"
       ]
     },
     {
       "ID": 7000,
       "Entries": [
-        "No mesh behind."
+        "No Mesh at Rear"
       ]
     },
     {
       "ID": 7010,
       "Entries": [
-        "No mesh on left or right"
+        "No Mesh on Left/Right"
       ]
     },
     {
       "ID": 7800,
       "Entries": [
-        "No pass to target"
+        "No Path to Target"
       ]
     },
     {
       "ID": 8000,
       "Entries": [
-        "No usable throwing item type"
+        "No Usable Throwable Items"
       ]
     },
     {
       "ID": 8010,
       "Entries": [
-        "No usable HP recovery item type"
+        "No Usable HP Recovery Items"
       ]
     },
     {
       "ID": 8020,
       "Entries": [
-        "No usable buff item type"
+        "No Usable Buff Items"
       ]
     },
     {
       "ID": 8030,
       "Entries": [
-        "No usable powder pouch item type"
+        "No Usable Medicine Pack Items"
       ]
     },
     {
       "ID": 8040,
       "Entries": [
-        "No usable debuff item type"
+        "No Usable Debuff Items"
       ]
     },
     {
       "ID": 8400,
       "Entries": [
-        "Right hand R1 has no arrows/bolts to fire"
+        "Right Hand R1 Shootable Arrows/No Bolts"
       ]
     },
     {
       "ID": 8401,
       "Entries": [
-        "Right hand R2 has no arrows/bolts to fire"
+        "Right Hand R2 Shootable Arrows/No Bolts"
       ]
     },
     {
       "ID": 8410,
       "Entries": [
-        "Left hand R1 cannot fire arrows/bolts"
+        "Left Hand R1 Shootable Arrows/No Bolts"
       ]
     },
     {
       "ID": 8411,
       "Entries": [
-        "Left hand R2 cannot fire arrows/bolts"
+        "Left Hand R2 Shootable Arrows/No Bolts"
       ]
     },
     {
       "ID": 9000,
       "Entries": [
-        "L1 Unguardable State"
+        "Can\u0027t Guard with L1"
       ]
     },
     {
       "ID": 9005,
       "Entries": [
-        "Cannot immediately use dodge Arts in this state"
+        "Can\u0027t Immediately Use Evasion Skill"
       ]
     },
     {
       "ID": 9010,
       "Entries": [
-        "Just switched weapons (7 sec cooldown not elapsed)"
+        "Just Switched Weapon (Cooldown of 7sec Has Not Elapsed )"
       ]
     },
     {
       "ID": 9020,
       "Entries": [
-        "Right hand is held two-handed"
+        "Two-Handing Right Hand"
       ]
     },
     {
       "ID": 9021,
       "Entries": [
-        "Left hand is two-handed gripped"
+        "Two-Handing Left Hand"
       ]
     },
     {
       "ID": 9022,
       "Entries": [
-        "Holding with one hand"
+        "Holding One-Handed"
       ]
     },
     {
       "ID": 9100,
       "Entries": [
-        "Dual-wielding attack possible with left and right weapons"
+        "Can Dual-Wield Attack With Left and Right Weapons"
       ]
     },
     {
       "ID": 9120,
       "Entries": [
-        "Left hand Skill is a weapon skill (L2 attack prohibited)"
+        "Left Hand Skill Is Weapon Ash of War ( For L2 Attack Prohibition )"
       ]
     },
     {
       "ID": 9503,
       "Entries": [
-        "Skill Action Cooldown Active"
+        "During Cooldown After Skill Action"
       ]
     },
     {
@@ -1090,619 +1090,619 @@
     {
       "ID": 9506,
       "Entries": [
-        "Rolling"
+        "Roll"
       ]
     },
     {
       "ID": 9507,
       "Entries": [
-        "Close Range During Magic Cooldown"
+        "During Cooldown After Firing Close-Range Magic"
       ]
     },
     {
       "ID": 9508,
       "Entries": [
-        "During Cooldown After Mid-Range Magic Cast"
+        "During Cooldown After Firing Mid-Range Magic"
       ]
     },
     {
       "ID": 9509,
       "Entries": [
-        "During Long Range Magic Cooldown"
+        "During Cooldown After Firing Long-Range Magic"
       ]
     },
     {
       "ID": 9510,
       "Entries": [
-        "Recovery Cast Cooldown Active"
+        "During Cooldown After Firing Radiant Heal"
       ]
     },
     {
       "ID": 9600,
       "Entries": [
-        "He is a henchman."
+        "Is Entourage Role"
       ]
     },
     {
       "ID": 9700,
       "Entries": [
-        "Spectator role."
+        "Is Spectator Role"
       ]
     },
     {
       "ID": 15020,
       "Entries": [
-        "Personality Check Test_Has Special Effect 5020 [Aggressive]"
+        "For Personality Check Test_Has Special Effect 5020 [Aggressiveness]"
       ]
     },
     {
       "ID": 15021,
       "Entries": [
-        "Personality Check Test_Has Special Effect 5021 [Cautious]"
+        "For Personality Check Test_Has Special Effect 5021 [Cautious]"
       ]
     },
     {
       "ID": 15022,
       "Entries": [
-        "Personality Check Test_Has Special Effect 5022 [Timid]"
+        "For Personality Check Test_Has Special Effect 5022 [Timid]"
       ]
     },
     {
       "ID": 15023,
       "Entries": [
-        "Personality Check Test_Has Special Effect 5023"
+        "For Personality Check Test_Has Special Effect 5023"
       ]
     },
     {
       "ID": 15024,
       "Entries": [
-        "Personality Check Test_Has Special Effect 5024"
+        "For Personality Check Test_Has Special Effect 5024"
       ]
     },
     {
       "ID": 15030,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18690 applied[_Minion AI Adjustment Effect]"
+        "Selection Rate Adjustment_Has Special Effect 18690 [_AI Adjustment Effect for Small Fry]"
       ]
     },
     {
       "ID": 15031,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18691 applied[Munou]"
+        "Selection Rate Adjustment_Has Special Effect 18691 [Munou]"
       ]
     },
     {
       "ID": 15032,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18692 applied[]"
+        "Selection Rate Adjustment_Has Special Effect 18692 []"
       ]
     },
     {
       "ID": 15033,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18693 applied[Divine Tower NPC_First Half AI Adjustment]"
+        "Selection Rate Adjustment_Has Special Effect 18693 [Divine Tower NPC_First Half AI Adjustment]"
       ]
     },
     {
       "ID": 15034,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18694 applied[Divine Tower NPC_Second Half AI Adjustment]"
+        "Selection Rate Adjustment_Has Special Effect 18694 [Divine Tower NPC_Second Half AI Adjustment]"
       ]
     },
     {
       "ID": 15035,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18695 applied[Confirmed Two-handed Hold]"
+        "Selection Rate Adjustment_Has Special Effect 18695 [Guaranteed Two-Handed]"
       ]
     },
     {
       "ID": 15036,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18650 [Puppet A: Fallen Saint AI Adjust]"
+        "Selection Rate Adjustment_Has Special Effect 18650 [Puppet A: Fallen Saint AI Adjustment]"
       ]
     },
     {
       "ID": 15037,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18651 [Puppet C: Pot Man AI Adjust]"
+        "Selection Rate Adjustment_Has Special Effect 18651 [Puppet C: Jar Man AI Adjustment]"
       ]
     },
     {
       "ID": 15038,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18652 [Malenia's Daughter: Left Arm Only]"
+        "Selection Rate Adjustment_Has Special Effect 18652 [Malenia\u0027s Daughter: Left Arm Only]"
       ]
     },
     {
       "ID": 15039,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18653 [Hundred Smiles_Aggressive State]"
+        "Selection Rate Adjustment_Has Special Effect 18653 [Lord of a Hundred Wisdoms_Aggressive State]"
       ]
     },
     {
       "ID": 15040,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18654 [Hundred Smiles_Normal State]"
+        "Selection Rate Adjustment_Has Special Effect 18654 [Lord of a Hundred Wisdoms_Normal State]"
       ]
     },
     {
       "ID": 15041,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18655 [Hundred Smiles_Watchful Evasion State]"
+        "Selection Rate Adjustment_Has Special Effect 18655 [Lord of a Hundred Wisdoms_Wait-and-See Evasion State]"
       ]
     },
     {
       "ID": 15042,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18656 [304_Scarred Knight_AI Adjust+Madness Immunity]"
+        "Selection Rate Adjustment_Has Special Effect 18656 [304_Scarred Knight_AI Adjustment\u002BMadness Disabled]"
       ]
     },
     {
       "ID": 15043,
       "Entries": [
-        "Draw Rate Correction_Has Status Effect 18657 [344_Tragos]"
+        "Selection Rate Adjustment_Has Special Effect 18657 [344_Tragoth]"
       ]
     },
     {
       "ID": 15044,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18658 applied[Volcano Manor Request_Munou's Brother]"
+        "Selection Rate Adjustment_Has Special Effect 18658 [Volcano Manor Request_Munou\u0027s Older Brother]"
       ]
     },
     {
       "ID": 15045,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18659 applied[Meat Cleaver NPC]"
+        "Selection Rate Adjustment_Has Special Effect 18659 [Meat Cleaver NPC]"
       ]
     },
     {
       "ID": 15046,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18660 applied[355_Church 5-2 NPC (Old Man Mask)]"
+        "Selection Rate Adjustment_Has Special Effect 18660 [355_Church 5-2NPC (Old Man Mask)]"
       ]
     },
     {
       "ID": 15047,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18661 applied[359_Monsan Knight]"
+        "Selection Rate Adjustment_Has Special Effect 18661 [359_Raya Lucaria Knight]"
       ]
     },
     {
       "ID": 15048,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18662 applied[360_Round Table First Tarnished Survivor A]"
+        "Selection Rate Adjustment_Has Special Effect 18662 [360_Survivor of the Roundtable\u0027s First Tarnished A]"
       ]
     },
     {
       "ID": 15049,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18663 applied[380_Round Table First Tarnished Survivor_B]"
+        "Selection Rate Adjustment_Has Special Effect 18663 [380_Survivor of the Roundtable\u0027s First Tarnished_B]"
       ]
     },
     {
       "ID": 15050,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18664 applied[327_Dragon Feast Woman Warrior]"
+        "Selection Rate Adjustment_Has Special Effect 18664 [327_Dragon Communion Warrior Woman]"
       ]
     },
     {
       "ID": 15051,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18665 applied[385_Base 1F Enemy]"
+        "Selection Rate Adjustment_Has Special Effect 18665 [385_Base 1F Enemy]"
       ]
     },
     {
       "ID": 15052,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18666 applied[318_Chaos Host (Chaos)]"
+        "Selection Rate Adjustment_Has Special Effect 18666 [318_Host of Chaos (Chaos)]"
       ]
     },
     {
       "ID": 15053,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18667 applied[316_Academy Sorceress]"
+        "Selection Rate Adjustment_Has Special Effect 18667 [316_Academy Sorceress]"
       ]
     },
     {
       "ID": 15054,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18668 applied[356_Circular Plaza 2-1 NPC]"
+        "Selection Rate Adjustment_Has Special Effect 18668 [356_Circular Plaza 2-1NPC]"
       ]
     },
     {
       "ID": 15055,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18669 applied: [382_Open Snowy Mountain Seaside Tower 5-1_Boss-tier]"
+        "Selection Rate Adjustment_Has Special Effect 18669:[382_Open Snow Mountain Seaside Tower 5-1_Boss-Class]"
       ]
     },
     {
       "ID": 15056,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18670 applied[Radahn Festival Patch]"
+        "Selection Rate Adjustment_Has Special Effect 18670 [Radahn Festival Patches]"
       ]
     },
     {
       "ID": 15057,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 18671 applied[Two-handed Hold Seal]"
+        "Selection Rate Adjustment_Has Special Effect 18671 [Two-Handing Sealed]"
       ]
     },
     {
       "ID": 15058,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 19384 applied[Beast Claw"
+        "Selection Rate Adjustment_Has Special Effect 19384 [Beast Claw, Magnus]"
       ]
     },
     {
       "ID": 15060,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 19382 applied[Patch1.17_New Lucatiel]"
+        "Selection Rate Adjustment_Has Special Effect 19382 [Patch1.17_New Lucatiel]"
       ]
     },
     {
       "ID": 15061,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 19381 applied[Patch1.17_Golden Mask Marquis's First Disciple]"
+        "Selection Rate Adjustment_Has Special Effect 19381 [Patch1.17_Gold Mask\u0027s First Disciple]"
       ]
     },
     {
       "ID": 15062,
       "Entries": [
-        "Lottery Rate Correction_Special Effects 19381 and 190010 applied[Patch1.17_Golden Mask Marquis's First Disciple]"
+        "Selection Rate Adjustment_Has Special Effects 19381 and 190010 [Patch1.17_Gold Mask\u0027s First Disciple]"
       ]
     },
     {
       "ID": 15063,
       "Entries": [
-        "Lottery Rate Correction_Special Effects 19381 and 190023 applied[Patch1.17_Golden Mask Marquis's First Disciple]"
+        "Selection Rate Adjustment_Has Special Effects 19381 and 190023 [Patch1.17_Gold Mask\u0027s First Disciple]"
       ]
     },
     {
       "ID": 15064,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 19380 applied[Patch1.17_Golden Mask Marquis's First Disciple_Opening Skill]"
+        "Selection Rate Adjustment_Has Special Effect 19380 [Patch1.17_Gold Mask\u0027s First Disciple_Opening Skill]"
       ]
     },
     {
       "ID": 15100,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018660 applied[Cave Boss_Opening Skill]"
+        "Selection Rate Adjustment_Has Special Effect 20018660 [Cave Boss_Opening Skill]"
       ]
     },
     {
       "ID": 15101,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018661 applied[Cave Boss_Two-handed Hold]"
+        "Selection Rate Adjustment_Has Special Effect 20018661 [Cave Boss_Two-Handing]"
       ]
     },
     {
       "ID": 15102,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018662 applied[Cave Boss_One-handed Hold]"
+        "Selection Rate Adjustment_Has Special Effect 20018662 [Cave Boss_One-Handed]"
       ]
     },
     {
       "ID": 15103,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018663 applied[Plain Cleric_Forward Pressure Action Probability UP]"
+        "Selection Rate Adjustment_Has Special Effect 20018663 [Plain Cleric_Close-In Action Probability UP]"
       ]
     },
     {
       "ID": 15104,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018664 applied[Shrine Bear_Two-handed Start (Walking)]"
+        "Selection Rate Adjustment_Has Special Effect 20018664 [Shrine Bear_Two-Handed Start (Walk)]"
       ]
     },
     {
       "ID": 15105,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018665 applied[Shrine Bear_Two-handed Start]"
+        "Selection Rate Adjustment_Has Special Effect 20018665 [Shrine Bear_Two-Handed Start]"
       ]
     },
     {
       "ID": 15106,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018666 applied[Shrine Bear_One-handed]"
+        "Selection Rate Adjustment_Has Special Effect 20018666 [Shrine Bear_One-Handed]"
       ]
     },
     {
       "ID": 15107,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018667 applied[Shrine Bear_Two-handed]"
+        "Selection Rate Adjustment_Has Special Effect 20018667 [Shrine Bear_Two-Handed]"
       ]
     },
     {
       "ID": 15108,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018668 applied[Shrine Dancer_: No One-handed Hold"
+        "Selection Rate Adjustment_Has Special Effect 20018668 [Shrine Dancer_: No One-Handed Use and Higher Skill Frequency]"
       ]
     },
     {
       "ID": 15109,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018672 applied[Miquella Faction 1 Leader_]"
+        "Selection Rate Adjustment_Has Special Effect 20018672 [Miquella Group 1 Leader_]"
       ]
     },
     {
       "ID": 15110,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018673 applied[Miquella Faction 2 Radahn Soldier_]"
+        "Selection Rate Adjustment_Has Special Effect 20018673 [Miquella Group 2 Radahn Soldier_]"
       ]
     },
     {
       "ID": 15111,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018674 applied[Miquella Faction 3 Godskin]"
+        "Selection Rate Adjustment_Has Special Effect 20018674 [Miquella Group 3 God-Man]"
       ]
     },
     {
       "ID": 15112,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018675 applied[Miquella Faction 4 Blood Lord Follower_]"
+        "Selection Rate Adjustment_Has Special Effect 20018675 [Miquella Group 4 Lord of Blood Subordinate_]"
       ]
     },
     {
       "ID": 15113,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018676 applied[Miquella Faction 5 Trina Faction]"
+        "Selection Rate Adjustment_Has Special Effect 20018676 [Miquella Group 5 Trina Faction]"
       ]
     },
     {
       "ID": 15114,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018677 applied[Miquella Faction 6 Malenia Faction_]"
+        "Selection Rate Adjustment_Has Special Effect 20018677 [Miquella Group 6 Malenia Faction_]"
       ]
     },
     {
       "ID": 15115,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018678 applied[Miquella Faction Plain Cleric]"
+        "Selection Rate Adjustment_Has Special Effect 20018678 [Miquella Group Plain Cleric]"
       ]
     },
     {
       "ID": 15116,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018679 applied[Miquella Faction Plain Cleric_Many Holy Seals]"
+        "Selection Rate Adjustment_Has Special Effect 20018679 [Miquella Group Plain Cleric_More Sacred Seals]"
       ]
     },
     {
       "ID": 15117,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018680 applied[Miquella Faction Plain Cleric_Aggressive]"
+        "Selection Rate Adjustment_Has Special Effect 20018680 [Miquella Group Plain Cleric_Offense]"
       ]
     },
     {
       "ID": 15118,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018719 applied[Primeval Godskin_Normal Time]"
+        "Selection Rate Adjustment_Has Special Effect 20018719 [Primordial God-Man_Normal State]"
       ]
     },
     {
       "ID": 15119,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018681 applied[Primeval Godskin_Wants to Use Skill]"
+        "Selection Rate Adjustment_Has Special Effect 20018681 [Primordial God-Man_Wants Skill]"
       ]
     },
     {
       "ID": 15120,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018683 applied[Primeval Godskin_Normal After HU]"
+        "Selection Rate Adjustment_Has Special Effect 20018683 [Primordial God-Man_Post-HU Normal]"
       ]
     },
     {
       "ID": 15121,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018684 applied[Primeval Godskin_Normal Phantom]"
+        "Selection Rate Adjustment_Has Special Effect 20018684 [Primordial God-Man_Phantom Normal]"
       ]
     },
     {
       "ID": 15122,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018685 applied[Primeval Godskin_Wants Crying Sickness]"
+        "Selection Rate Adjustment_Has Special Effect 20018685 [Primordial God-Man_Wants Weeping Sickness]"
       ]
     },
     {
       "ID": 15123,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018686 applied[Primeval Godskin_Crying Sickness Phantom]"
+        "Selection Rate Adjustment_Has Special Effect 20018686 [Primordial God-Man_Weeping Sickness Phantom]"
       ]
     },
     {
       "ID": 15124,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018689 applied[Primeval Godskin_Observe]"
+        "Selection Rate Adjustment_Has Special Effect 20018689 [Primordial God-Man_Wait and See]"
       ]
     },
     {
       "ID": 15125,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018690 applied[Finger Reader Assassin_Katana]"
+        "Selection Rate Adjustment_Has Special Effect 20018690 [Finger Hunter\u0027s Assassin_Katana]"
       ]
     },
     {
       "ID": 15126,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018693 applied[Finger Reader Marquis]"
+        "Selection Rate Adjustment_Has Special Effect 20018693 [Finger Hunter]"
       ]
     },
     {
       "ID": 15127,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018694 applied_For Catalyst Weapons"
+        "Selection Rate Adjustment_Has Special Effect 20018694_For Catalyst Weapon"
       ]
     },
     {
       "ID": 15128,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018695 applied[Shrine Swordmaster Warrior_High Skill Frequency]"
+        "Selection Rate Adjustment_Has Special Effect 20018695 [Shrine Master Swordsman_Skill High Frequency]"
       ]
     },
     {
       "ID": 15129,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018696 applied[Shrine Heavy Armor_Opening Skill]"
+        "Selection Rate Adjustment_Has Special Effect 20018696 [Shrine Heavy Armor_Opening Skill]"
       ]
     },
     {
       "ID": 15130,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018697 applied[Dragon Feast Ahab]"
+        "Selection Rate Adjustment_Has Special Effect 20018697 [Dragon Communion Ahab]"
       ]
     },
     {
       "ID": 15131,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018698 applied[Finger Reader Assassin_Twins]"
+        "Selection Rate Adjustment_Has Special Effect 20018698 [Finger Hunter\u0027s Assassin_Twins]"
       ]
     },
     {
       "ID": 15132,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018699 applied[Godskin Hunter]"
+        "Selection Rate Adjustment_Has Special Effect 20018699 [God-Man Hunter]"
       ]
     },
     {
       "ID": 15133,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018700 applied[Normal Plain Cleric]"
+        "Selection Rate Adjustment_Has Special Effect 20018700 [Normal Plain Cleric]"
       ]
     },
     {
       "ID": 15134,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018701 applied[Babel Upper Level_Helper Slot]"
+        "Selection Rate Adjustment_Has Special Effect 20018701 [Babel Upper Level Helper Slot]"
       ]
     },
     {
       "ID": 15135,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018702 applied[Miquella Faction 4 Blood Lord Follower_Bow]"
+        "Selection Rate Adjustment_Has Special Effect 20018702 [Miquella Group 4 Lord of Blood Subordinate_Bow]"
       ]
     },
     {
       "ID": 15136,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018703 applied[Jar Making Village NPC]"
+        "Selection Rate Adjustment_Has Special Effect 20018703 [Jar-Making Village NPC]"
       ]
     },
     {
       "ID": 15137,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018704 applied[Abyss Forest NPC]"
+        "Selection Rate Adjustment_Has Special Effect 20018704 [Abyssal Woods NPC]"
       ]
     },
     {
       "ID": 15138,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018705 applied[Beast Claw NPC]"
+        "Selection Rate Adjustment_Has Special Effect 20018705 [Beast Claw NPC]"
       ]
     },
     {
       "ID": 15139,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018706 applied[Highway Fort Church Front NPC]"
+        "Selection Rate Adjustment_Has Special Effect 20018706 [Highway Fort Church Front NPC]"
       ]
     },
     {
       "ID": 15140,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018707 applied[Miquella Faction 1 Leader_]: Co-op"
+        "Selection Rate Adjustment_Has Special Effect 20018707 [Miquella Group 1 Leader_]: Co-op"
       ]
     },
     {
       "ID": 15141,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018708 applied[Normal Plain Cleric]: Co-op"
+        "Selection Rate Adjustment_Has Special Effect 20018708 [Normal Plain Cleric]: Co-op"
       ]
     },
     {
       "ID": 15142,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018709 applied[Finger Reader Assassin_Katana_Counter Aim]"
+        "Selection Rate Adjustment_Has Special Effect 20018709 [Finger Hunter\u0027s Assassin_Katana_Counter Focused]"
       ]
     },
     {
       "ID": 15143,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018710 applied[Finger Reader Assassin_Twins_Counter Aim]"
+        "Selection Rate Adjustment_Has Special Effect 20018710 [Finger Hunter\u0027s Assassin_Twins_Counter Focused]"
       ]
     },
     {
       "ID": 15144,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018711 applied[Finger Reader Marquis_Finger Maggot Summon Cap]"
+        "Selection Rate Adjustment_Has Special Effect 20018711 [Finger Hunter_Finger Bug Summon Limit]"
       ]
     },
     {
       "ID": 15145,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018712 applied[Shrine Dancer_Opening Skill]"
+        "Selection Rate Adjustment_Has Special Effect 20018712 [Shrine Dancer_Opening Skill]"
       ]
     },
     {
       "ID": 15146,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018713 applied[Shrine Swordmaster Warrior_Observe]"
+        "Selection Rate Adjustment_Has Special Effect 20018713 [Shrine Master Swordsman_Wait and See]"
       ]
     },
     {
       "ID": 15147,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018714 applied[Shrine Swordmaster Warrior_Normal Attack]"
+        "Selection Rate Adjustment_Has Special Effect 20018714 [Shrine Master Swordsman_Normal Attack]"
       ]
     },
     {
       "ID": 15148,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018715 applied[Shrine Heavy Armor_Sword and Crossbow]"
+        "Selection Rate Adjustment_Has Special Effect 20018715 [Shrine Heavy Armor_Sword and Crossbow]"
       ]
     },
     {
       "ID": 15149,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018716 applied[Shrine Heavy Armor_Sword Two-handed]"
+        "Selection Rate Adjustment_Has Special Effect 20018716 [Shrine Heavy Armor_Sword Two-Handed]"
       ]
     },
     {
       "ID": 15150,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018717 applied[Cave Boss_Skill Seal]"
+        "Selection Rate Adjustment_Has Special Effect 20018717 [Cave Boss_Skill Sealed]"
       ]
     },
     {
       "ID": 15151,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018718 applied[Miquella Faction 1 Leader_Invasion Opening Observe]"
+        "Selection Rate Adjustment_Has Special Effect 20018718 [Miquella Group 1 Leader_Invasion Opening Wait and See]"
       ]
     },
     {
       "ID": 15152,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018720 applied[Finger Reader Marquis_Immediately After Finger Maggot Summon]"
+        "Selection Rate Adjustment_Has Special Effect 20018720 [Finger Hunter]_Right After Finger Bug Summon"
       ]
     },
     {
       "ID": 15153,
       "Entries": [
-        "Lottery Rate Correction_Special Effect 20018721 applied[Miquella Faction 4 Blood Lord Follower_Bow__Flee]"
+        "Selection Rate Adjustment_Has Special Effect 20018721 [Miquella Group 4 Lord of Blood Subordinate_Bow]__Flee"
       ]
     },
     {
       "ID": 15154,
       "Entries": [
-        "Lottery Rate Correction_Applied Special Effect 20018722[Primordial Divine Being_Normal]_Slight delay before Arts reactivation"
+        "Selection Rate Adjustment_Has Special Effect 20018722 [Primordial God-Man_Normal State]_Slight Delay Before Skill Reactivation"
       ]
     },
     {
       "ID": 15155,
       "Entries": [
-        "Lottery Rate Correction_Applied Special Effect 20018724[Dragonfeast Priest_Opening Buff]"
+        "Selection Rate Adjustment_Has Special Effect 20018724 [Dragon Communion Priest_Opening Buff]"
       ]
     },
     {
       "ID": 15156,
       "Entries": [
-        "Lottery Rate Correction_Applied Special Effect 20018724[Dragonfeast Priest]"
+        "Selection Rate Adjustment_Has Special Effect 20018724 [Dragon Communion Priest]"
       ]
     }
   ]

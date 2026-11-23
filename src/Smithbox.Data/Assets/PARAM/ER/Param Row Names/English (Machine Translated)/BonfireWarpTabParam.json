@@ -4,7 +4,7 @@
     {
       "ID": 11100,
       "Entries": [
-        "Royal Capital (Base)"
+        "Leyndell (Base)"
       ]
     },
     {
@@ -16,7 +16,7 @@
     {
       "ID": 11000,
       "Entries": [
-        "Royal Capital"
+        "Leyndell"
       ]
     },
     {
@@ -28,7 +28,7 @@
     {
       "ID": 14000,
       "Entries": [
-        "Monsan"
+        "Raya Lucaria"
       ]
     },
     {
@@ -46,19 +46,19 @@
     {
       "ID": 12000,
       "Entries": [
-        "Underground Labyrinth・Poison Swamp"
+        "Underground Labyrinth/Poison Swamp"
       ]
     },
     {
       "ID": 12001,
       "Entries": [
-        "Underground Labyrinth・Plains"
+        "Underground Labyrinth/Plains"
       ]
     },
     {
       "ID": 12002,
       "Entries": [
-        "Underground Labyrinth・Royal Capital"
+        "Underground Labyrinth/Leyndell"
       ]
     },
     {
@@ -76,7 +76,7 @@
     {
       "ID": 63000,
       "Entries": [
-        "Open Highland"
+        "Open Altus"
       ]
     },
     {
@@ -88,7 +88,7 @@
     {
       "ID": 65000,
       "Entries": [
-        "Open Snowy Mountain"
+        "Open Snow Mountain"
       ]
     }
   ]

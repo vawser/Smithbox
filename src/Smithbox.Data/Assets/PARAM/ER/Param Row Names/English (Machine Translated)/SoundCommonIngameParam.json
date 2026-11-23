@@ -4,85 +4,85 @@
     {
       "ID": 1,
       "Entries": [
-        "Constant map ambient SoundId. Played from the constant sound source upon entering the map"
+        "Persistent Map Ambient Sound SoundId.Played from Persistent Sound Source on Map Entry"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Damage Sound Generation Effective Distance from Listener [m] (0 or Less: No Limit) [GR] SEQ10487 [Sound] Want to space out hit sounds"
+        "Damage Sound Generation Valid Distance (From Listener) [m] (0 or Less Disables Limit) [GR] SEQ10487 [Sound] Want Intervals Between Hit Sounds"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Damage Sound Same Asset"
+        "Same Asset for Damage Sound, Hit Playback Limit Frames (-1: Disabled) [GR] SEQ10487 [Sound] Want Intervals Between Hit Sounds"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "PC Speed-Based Wind Sound [sec]"
+        "Wind Sound by PC Speed [Seconds]"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Wait Time Between Field BGM Transitions [sec]"
+        "Wait Time When Location BGM Switches [Seconds]"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "Generic Wait Time When Switching Location Type [sec]"
+        "Wait Time When Generic Location Type Switches [Seconds]"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Caravan claude restriction offset distance [m] (negative value disables all-distance load restriction)"
+        "Character Bank Load Limit Offset Distance [m] (Negative Value Means No Load Limit at Any Distance)"
       ]
     },
     {
       "ID": 401,
       "Entries": [
-        "Caravan claude restriction slack [m]"
+        "Character Bank Load Limit Margin [m]"
       ]
     },
     {
       "ID": 402,
       "Entries": [
-        "Character Sound Effect Activation Distance Slack [m] [GR] SEQ03076"
+        "Character Sound Valid Distance Margin [m] [GR] SEQ03076"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "Asset Bank Load Restriction Offset Distance [m]"
+        "Asset Bank Load Limit Offset Distance [m]"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "Asset Bank Load Restriction Slack [m]"
+        "Asset Bank Load Limit Margin [m]"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        "Asset Sound Playback Effective Distance Slack [m]"
+        "Asset Sound Valid Distance Margin [m]"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "Default voice bank release delay time. Also used as parameter start offset. *Affects memory; consult PG before changing*"
+        "Default Voice Bank Discard Delay Time.Also Used as Parameter Start Offset.※Affects Memory, Consult PG Before Changing※"
       ]
     },
     {
       "ID": 10207,
       "Entries": [
-        "vc207 Grafted King"
+        "vc207 The Grafted King"
       ]
     }
   ]

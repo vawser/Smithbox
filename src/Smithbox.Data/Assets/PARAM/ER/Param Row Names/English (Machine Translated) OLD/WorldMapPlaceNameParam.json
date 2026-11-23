@@ -1,0 +1,59 @@
+{
+  "Name": "WorldMapPlaceNameParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Map Fragment Green 1 Green Area"
+      ]
+    },
+    {
+      "ID": 8000400,
+      "Entries": [
+        "Map Fragment Lake 2 Lake Area"
+      ]
+    },
+    {
+      "ID": 8000800,
+      "Entries": [
+        "Map Fragment Highland 3 Highland Area"
+      ]
+    },
+    {
+      "ID": 8000900,
+      "Entries": [
+        "Map Fragment Plains 1 Plains Area"
+      ]
+    },
+    {
+      "ID": 8001200,
+      "Entries": [
+        "Map Fragment Snowy Mountain 2 Snowy Mountain Area"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "Map Fragment Underground Poison Swamp 1 Underground Labyrinth Poison Swamp Area"
+      ]
+    },
+    {
+      "ID": 8010200,
+      "Entries": [
+        "Map Fragment Underground Plains 1 Underground Labyrinth Plains Area"
+      ]
+    },
+    {
+      "ID": 8010400,
+      "Entries": [
+        "Map Fragment Underground Royal Capital 1 Underground Labyrinth Royal Capital Area"
+      ]
+    }
+  ]
+}

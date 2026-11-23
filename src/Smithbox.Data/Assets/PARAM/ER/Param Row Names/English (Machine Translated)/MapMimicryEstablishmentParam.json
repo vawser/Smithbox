@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Do not delete. Default parameter."
+        "Do Not Delete.Default Parameter."
       ]
     },
     {
@@ -28,25 +28,25 @@
     {
       "ID": 6202000,
       "Entries": [
-        "Lake Overhang Terrain"
+        "Lake Hanging Terrain"
       ]
     },
     {
       "ID": 6300000,
       "Entries": [
-        "Highland"
+        "Altus"
       ]
     },
     {
       "ID": 6301000,
       "Entries": [
-        "Highland Royal Capital"
+        "Altus Leyndell"
       ]
     },
     {
       "ID": 6302000,
       "Entries": [
-        "Highland Volcano"
+        "Altus Volcano"
       ]
     },
     {
@@ -64,25 +64,25 @@
     {
       "ID": 6500000,
       "Entries": [
-        "Snowy Mountain Forbidden Area"
+        "Snow Mountain Forbidden Lands"
       ]
     },
     {
       "ID": 6501000,
       "Entries": [
-        "Snowy Mountain Giant"
+        "Snow Mountain Giant"
       ]
     },
     {
       "ID": 6502000,
       "Entries": [
-        "Snowy Mountain Giant Grave"
+        "Snow Mountain Giant Graveyard"
       ]
     },
     {
       "ID": 6503000,
       "Entries": [
-        "Snowy Mountain Snowfield"
+        "Snow Mountain Snowfield"
       ]
     },
     {
@@ -94,25 +94,25 @@
     {
       "ID": 11000800,
       "Entries": [
-        "Royal Capital Margit"
+        "Leyndell Margit"
       ]
     },
     {
       "ID": 11000850,
       "Entries": [
-        "Royal Capital Godfrey (Phantom)"
+        "Leyndell Godfrey (Phantom)"
       ]
     },
     {
       "ID": 11050800,
       "Entries": [
-        "Royal Capital (Ash) Godfrey"
+        "Leyndell (Ash) Godfrey"
       ]
     },
     {
       "ID": 11050850,
       "Entries": [
-        "Royal Capital (Ash) Hyakuchi-kyo"
+        "Leyndell (Ash) Lord of a Hundred Wisdoms"
       ]
     },
     {
@@ -136,13 +136,13 @@
     {
       "ID": 12030800,
       "Entries": [
-        "Underground Labyrinth Royal Capital"
+        "Underground Labyrinth Leyndell"
       ]
     },
     {
       "ID": 12040800,
       "Entries": [
-        "Underground Labyrinth Poison Swamp *Inserted in boss area ID order"
+        "Underground Labyrinth Poison Swamp ※Inserted in Boss Area ID Order"
       ]
     },
     {
@@ -154,7 +154,7 @@
     {
       "ID": 12080800,
       "Entries": [
-        "Underground Labyrinth Plains *Inserted in Boss Area ID Order"
+        "Underground Labyrinth Plains ※Inserted in Boss Area ID Order"
       ]
     },
     {
@@ -178,13 +178,13 @@
     {
       "ID": 14000800,
       "Entries": [
-        "Monsan Rennala"
+        "Raya Lucaria Rennala"
       ]
     },
     {
       "ID": 14000850,
       "Entries": [
-        "Monsan Runewolf"
+        "Raya Lucaria Rune Wolf"
       ]
     },
     {
@@ -196,7 +196,7 @@
     {
       "ID": 15000850,
       "Entries": [
-        "Rotten Great Tree Sorcerer Tree Guard"
+        "Rotten Great Tree Tree Sentinel Sorcerer"
       ]
     },
     {
@@ -208,7 +208,7 @@
     {
       "ID": 16000850,
       "Entries": [
-        "Volcano Prison Godskin Fat"
+        "Volcano Prison Godskin Noble"
       ]
     },
     {
@@ -226,127 +226,127 @@
     {
       "ID": 30000800,
       "Entries": [
-        "Underground Catacombs 1-1"
+        "Catacombs 1-1"
       ]
     },
     {
       "ID": 30010800,
       "Entries": [
-        "Underground Catacombs 1-2"
+        "Catacombs 1-2"
       ]
     },
     {
       "ID": 30020800,
       "Entries": [
-        "Underground Catacombs 1-3"
+        "Catacombs 1-3"
       ]
     },
     {
       "ID": 30030800,
       "Entries": [
-        "Underground Catacombs 2-2"
+        "Catacombs 2-2"
       ]
     },
     {
       "ID": 30040800,
       "Entries": [
-        "Underground Catacombs 1-5"
+        "Catacombs 1-5"
       ]
     },
     {
       "ID": 30050800,
       "Entries": [
-        "Underground Catacombs 2-1"
+        "Catacombs 2-1"
       ]
     },
     {
       "ID": 30060800,
       "Entries": [
-        "Underground Catacombs 2-3"
+        "Catacombs 2-3"
       ]
     },
     {
       "ID": 30070800,
       "Entries": [
-        "Underground Catacombs 3-5"
+        "Catacombs 3-5"
       ]
     },
     {
       "ID": 30080800,
       "Entries": [
-        "Underground Catacombs 3-1"
+        "Catacombs 3-1"
       ]
     },
     {
       "ID": 30090800,
       "Entries": [
-        "Underground Catacombs 3-2"
+        "Catacombs 3-2"
       ]
     },
     {
       "ID": 30100800,
       "Entries": [
-        "Underground Catacombs 3-3"
+        "Catacombs 3-3"
       ]
     },
     {
       "ID": 30110800,
       "Entries": [
-        "Underground Catacombs 1-4"
+        "Catacombs 1-4"
       ]
     },
     {
       "ID": 30120800,
       "Entries": [
-        "Underground Catacombs 3-4"
+        "Catacombs 3-4"
       ]
     },
     {
       "ID": 30130800,
       "Entries": [
-        "Underground Catacombs 3-6"
+        "Catacombs 3-6"
       ]
     },
     {
       "ID": 30140800,
       "Entries": [
-        "Underground Catacombs 4-1"
+        "Catacombs 4-1"
       ]
     },
     {
       "ID": 30150800,
       "Entries": [
-        "Underground Catacombs 4-2"
+        "Catacombs 4-2"
       ]
     },
     {
       "ID": 30160800,
       "Entries": [
-        "Underground Catacombs 4-3"
+        "Catacombs 4-3"
       ]
     },
     {
       "ID": 30170800,
       "Entries": [
-        "Underground Catacombs 5-1"
+        "Catacombs 5-1"
       ]
     },
     {
       "ID": 30180800,
       "Entries": [
-        "Underground Catacombs 5-2"
+        "Catacombs 5-2"
       ]
     },
     {
       "ID": 30190800,
       "Entries": [
-        "Underground Catacombs 5-3"
+        "Catacombs 5-3"
       ]
     },
     {
       "ID": 30200800,
       "Entries": [
-        "Underground Catacombs 5-4"
+        "Catacombs 5-4"
       ]
     },
     {
@@ -466,67 +466,67 @@
     {
       "ID": 32000800,
       "Entries": [
-        "Cave 1-1"
+        "Tunnel 1-1"
       ]
     },
     {
       "ID": 32010800,
       "Entries": [
-        "Cave 1-2"
+        "Tunnel 1-2"
       ]
     },
     {
       "ID": 32020800,
       "Entries": [
-        "Cave 2-1"
+        "Tunnel 2-1"
       ]
     },
     {
       "ID": 32040800,
       "Entries": [
-        "Cave 3-1"
+        "Tunnel 3-1"
       ]
     },
     {
       "ID": 32050800,
       "Entries": [
-        "Cave 3-3"
+        "Tunnel 3-3"
       ]
     },
     {
       "ID": 32070800,
       "Entries": [
-        "Cave 4-1"
+        "Tunnel 4-1"
       ]
     },
     {
       "ID": 32080800,
       "Entries": [
-        "Cave 4-2"
+        "Tunnel 4-2"
       ]
     },
     {
       "ID": 32110800,
       "Entries": [
-        "Cave 5-1"
+        "Tunnel 5-1"
       ]
     },
     {
       "ID": 35000800,
       "Entries": [
-        "Royal Capital Underground Sewers"
+        "Leyndell Underground Sewers"
       ]
     },
     {
       "ID": 35000850,
       "Entries": [
-        "Royal Capital Underground Sewers Catacombs Side"
+        "Leyndell Underground Sewers Catacombs Side"
       ]
     },
     {
       "ID": 39200800,
       "Entries": [
-        "Cliff Tunnel"
+        "Cliffside Tunnel"
       ]
     }
   ]

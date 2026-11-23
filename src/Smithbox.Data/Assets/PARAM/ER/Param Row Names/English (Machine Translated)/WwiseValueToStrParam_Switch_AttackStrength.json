@@ -4,19 +4,19 @@
     {
       "ID": 0,
       "Entries": [
-        "0_Standard (Default used when string not found)"
+        "0_Standard (Default Used When String Not Found)"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "1_Small(Designated 1)"
+        "1_Small (Specified 1)"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "2_Large (Designation 2)"
+        "2_Large (Specified 2)"
       ]
     }
   ]

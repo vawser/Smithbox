@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Dummy Data (Do Not Change)"
+        "Dummy Data (Change Prohibited)"
       ]
     },
     {
       "ID": 15000000,
       "Entries": [
-        "Malenia Battle Start"
+        "Malenia Fight Start"
       ]
     },
     {
@@ -28,7 +28,7 @@
     {
       "ID": 91000000,
       "Entries": [
-        "Radahn HU_Work Use"
+        "Radahn HU_For Work"
       ]
     },
     {
@@ -40,7 +40,7 @@
     {
       "ID": 19000000,
       "Entries": [
-        "Crumbling Marika HU"
+        "Collapsed Marika HU"
       ]
     },
     {

@@ -10,13 +10,13 @@
     {
       "ID": 1,
       "Entries": [
-        "Wet Surface"
+        "Water Soaked"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Poison Wet"
+        "Poison Soaked"
       ]
     },
     {
@@ -28,13 +28,13 @@
     {
       "ID": 4,
       "Entries": [
-        "Freeze"
+        "Frozen"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Oil Soaked"
+        "Oil-Soaked"
       ]
     },
     {
@@ -64,7 +64,7 @@
     {
       "ID": 10,
       "Entries": [
-        "[Cutscene] Bloodstained"
+        "[Cutscene] Blood-Soaked"
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "ID": 17,
       "Entries": [
-        "Adhesion check"
+        "For Adhesion Check"
       ]
     },
     {
@@ -118,7 +118,7 @@
     {
       "ID": 19,
       "Entries": [
-        "Plague Wet"
+        "Plague Soaked"
       ]
     }
   ]

@@ -1,0 +1,1307 @@
+{
+  "Name": "EquipParamGem",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "TestMagicStone1"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "TestMagicStone2"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "TestMagicStone3"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Special Effect Test Magic Stone"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Special Effect Test Magic Stone 2"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Attribute Change Test_Standard"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Attribute Change Test_Strength"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Attribute Change Test_Dexterity"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Attribute Change Test_Quality"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Attribute Change Test_Holy"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Attribute Change Test_Magic"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Attribute Change Test_Spirit"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Attribute Change Test_Warrior Fire"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Attribute Change Test_Sorcerer Fire"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Attribute Change Test_Lightning"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Attribute Change Test_Blood"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Aerial Forward Roll Slam"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Piercing Thrust"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Piercing Katana"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Whirlwind Slash"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Charge"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Lunge + Upward Slash"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Lunge + Spin"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Drain Multi-Thrust"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Multi-hit Thrust"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Stance Frenzy・Axe"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Stance Frenzy・Halberd"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Single Hit Frenzy"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Sumo Train"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Iaido (Katana)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Stance (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Lunging Upthrust"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Torch Attack"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Diving Enchanted Slash"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Two-Hit Poison"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Baton Attack"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Black Knight Stance"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Storm Leaping Downward Thrust"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Storm Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Funnel + Thrust"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Magic Attack + Enchant"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Gae Bolg"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Mid-Range Bullet + Approach"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Blood Slash"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Drain Attack"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Lava Placement"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Great Recovery Slam"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Gravity Pull"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Sonic Boom"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Phantom Double Slash"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Earthquake"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Generic Skill Test Magic Stone_World Tree Quake"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Flame Sweep + Coated Slash"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Continuous Lightning Strike"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Lightning Strike + Downward Slash"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Soul Colossal Sword"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Soul Colossal Sword_2-Stage"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Vacuum Wave Slash"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Fire Tornado"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Miquella's Halo"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Shield Bash"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Power Deflect"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Parry"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Buckler Parry"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Magic Parry"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Projectile Parry"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Remote Parry"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Charge Bash"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Piercing Shot"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Rapid Fire"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Power Shot"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Homing Shot"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Arcing Shot"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Arrow Rain"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Invisible Shot"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Stomp・Ground Leveling"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Stomp・Frost Tread"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Stomp・Storm"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Kick"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Rolling Attack"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Single Hit Area Skill"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Hip Drop"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Hip Drop + Magic Bullet"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Ground Upheaval Magic Bullet"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Concentrate"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Self-harm/Curse"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Oath of the Sun"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Holy Enchant"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Seppuku Enchant"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Rock Enchant"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Area Holy Enchant"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Generic Skill Test Magic Stone_War Cry"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Ultrasonic War Cry"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Thunder War Cry"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Gladiator War Cry"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Troll War Cry"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Patience"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Momentary Invincibility"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Sanctuary"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Quickstep"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Gehlmann Step"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Substitution Jutsu"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Phantom Summon"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Double Slash"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Fire Breath"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Blood Throw"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Generic Skill Test Magic Stone_Light Wall Parry"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Standard Variant_Aerial Forward Roll Slam"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Standard Variant_Piercing Thrust"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Standard Variant_Spinning Slash"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Standard Variant_Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Magic Variant_Funnel + Thrust"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Blood Variant_Bleed Effect Application"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Warrior Fire Variant_Lava Placement"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Magic Variant_Gravity Pull"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Quality Variant_Sonic Boom"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Strength Variant_Earthquake"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Sorcerer Fire Variant_Flame Sweep+Flame Cut"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Lightning Variant_Continuous Lightning Strike"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Magic Variant_Soul Colossal Sword_2-stage"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Heavy Variant_Stomp/Ground Leveling"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Quality Variant_Concentrate"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Holy Variant_Sanctuary"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Dexterity Variant_Quickstep"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Dexterity Variant_Substitute Jutsu"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Airborne Forward Roll Slam"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Piercing Thrust"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Piercing Katana (Fang Thrust)"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "Charge"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "Lunge+Upward Slash"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "Lunge+Spin"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "Drain Multi-Thrust"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "Multi-Hit Thrust"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Loop Frenzy Axe"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Loop Frenzy Halberd"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "Combo Frenzy"
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        "Sumo Train"
+      ]
+    },
+    {
+      "ID": 11400,
+      "Entries": [
+        "Iai (Katana)"
+      ]
+    },
+    {
+      "ID": 11500,
+      "Entries": [
+        "Stance (Straight Sword)"
+      ]
+    },
+    {
+      "ID": 11600,
+      "Entries": [
+        "Lunge Upthrust"
+      ]
+    },
+    {
+      "ID": 11800,
+      "Entries": [
+        "Diving Enchant Slash"
+      ]
+    },
+    {
+      "ID": 11900,
+      "Entries": [
+        "Two Hits Poison"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Baton Attack"
+      ]
+    },
+    {
+      "ID": 12200,
+      "Entries": [
+        "Stormleap Plunge"
+      ]
+    },
+    {
+      "ID": 12300,
+      "Entries": [
+        "Storm Spinning Sweep"
+      ]
+    },
+    {
+      "ID": 12400,
+      "Entries": [
+        "Double Slash"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Funnel+Thrust"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Magic Attack"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Gae Bolg"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "Mid-Range Bullet + Approach"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "Blood Slash"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Drain Attack"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "Lava Placement"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "Greater Recovery Strike"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "Gravity Pull"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Sonic Blade"
+      ]
+    },
+    {
+      "ID": 21200,
+      "Entries": [
+        "Earthquake"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        "Golden Tree Quake"
+      ]
+    },
+    {
+      "ID": 21400,
+      "Entries": [
+        "Fire Sweep + Enveloping Slash"
+      ]
+    },
+    {
+      "ID": 21600,
+      "Entries": [
+        "Continuous Lightning Strike"
+      ]
+    },
+    {
+      "ID": 21700,
+      "Entries": [
+        "Lightning + Downward Slash"
+      ]
+    },
+    {
+      "ID": 21800,
+      "Entries": [
+        "Soul Colossal Sword"
+      ]
+    },
+    {
+      "ID": 21900,
+      "Entries": [
+        "Soul Colossal Sword_2-Stage"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Vacuum Wave Slash"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "Fire Tornado"
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        "Radiant Halo of Miquella"
+      ]
+    },
+    {
+      "ID": 22400,
+      "Entries": [
+        "Blood Throw"
+      ]
+    },
+    {
+      "ID": 22500,
+      "Entries": [
+        "Phantom Double Slash"
+      ]
+    },
+    {
+      "ID": 22600,
+      "Entries": [
+        "Phantom Throw"
+      ]
+    },
+    {
+      "ID": 22700,
+      "Entries": [
+        "Magic Attack"
+      ]
+    },
+    {
+      "ID": 22800,
+      "Entries": [
+        "Magic Attack"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "Mighty Parry"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 30500,
+      "Entries": [
+        "Magic Parry"
+      ]
+    },
+    {
+      "ID": 30600,
+      "Entries": [
+        "Projectile Parry"
+      ]
+    },
+    {
+      "ID": 30700,
+      "Entries": [
+        "Ranged Parry"
+      ]
+    },
+    {
+      "ID": 30800,
+      "Entries": [
+        "Charge Bash"
+      ]
+    },
+    {
+      "ID": 30900,
+      "Entries": [
+        "Weapon Skill"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Light Wall Parry"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Piercing Shot"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Continuous Shot"
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        "Power Shot"
+      ]
+    },
+    {
+      "ID": 40400,
+      "Entries": [
+        "Homing Shot"
+      ]
+    },
+    {
+      "ID": 40500,
+      "Entries": [
+        "Arcing Shot"
+      ]
+    },
+    {
+      "ID": 40600,
+      "Entries": [
+        "Arrow Rain"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Stomp・Frost Step"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Stomp・Storm"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "Rolling Attack"
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        "Single-shot area skill"
+      ]
+    },
+    {
+      "ID": 50600,
+      "Entries": [
+        "Hip Drop"
+      ]
+    },
+    {
+      "ID": 50700,
+      "Entries": [
+        "HipDrop+Magic Bullet"
+      ]
+    },
+    {
+      "ID": 50800,
+      "Entries": [
+        "Ground Upheaval Magic Bullet"
+      ]
+    },
+    {
+      "ID": 50900,
+      "Entries": [
+        "Bare Hands Earthquake"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Concentrate"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Upper Concentrate"
+      ]
+    },
+    {
+      "ID": 60200,
+      "Entries": [
+        "Self-Harm/Curse"
+      ]
+    },
+    {
+      "ID": 60300,
+      "Entries": [
+        "Sun Oath"
+      ]
+    },
+    {
+      "ID": 60400,
+      "Entries": [
+        "Holy Enchant"
+      ]
+    },
+    {
+      "ID": 60500,
+      "Entries": [
+        "Area Holy Enchant"
+      ]
+    },
+    {
+      "ID": 60600,
+      "Entries": [
+        "Seppuku Enchant"
+      ]
+    },
+    {
+      "ID": 60700,
+      "Entries": [
+        "Rock Enchant"
+      ]
+    },
+    {
+      "ID": 65000,
+      "Entries": [
+        "Barbarian War Cry"
+      ]
+    },
+    {
+      "ID": 65100,
+      "Entries": [
+        "Warrior War Cry"
+      ]
+    },
+    {
+      "ID": 65200,
+      "Entries": [
+        "Ultrasonic War Cry"
+      ]
+    },
+    {
+      "ID": 65300,
+      "Entries": [
+        "Troll War Cry"
+      ]
+    },
+    {
+      "ID": 65400,
+      "Entries": [
+        "Gladiator War Cry"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 70100,
+      "Entries": [
+        "Momentary invincibility"
+      ]
+    },
+    {
+      "ID": 70200,
+      "Entries": [
+        "Sacred Area"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "Gehrman Step"
+      ]
+    },
+    {
+      "ID": 80200,
+      "Entries": [
+        "Substitute Technique"
+      ]
+    },
+    {
+      "ID": 85000,
+      "Entries": [
+        "Phantom Summon"
+      ]
+    }
+  ]
+}

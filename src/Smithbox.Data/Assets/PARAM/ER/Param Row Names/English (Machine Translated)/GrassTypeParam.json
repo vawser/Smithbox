@@ -4,55 +4,55 @@
     {
       "ID": 3,
       "Entries": [
-        "TestGrass1"
+        "Test Grass 1"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "TestGrass2"
+        "Test Grass 2"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "TestGrass3"
+        "Test Grass 3"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "TestGrass4"
+        "Test Grass 4"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "TestGrass5"
+        "Test Grass 5"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "TestGrass6"
+        "Test Grass 6"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "200 Transplant Area 01 Standard"
+        "200 Port Area 01 Standard"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "170 Transplant Area 01 Sub"
+        "170 Port Area 01 Sub"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Grass 9 Turf Creation"
+        "Grass 9 Lawn Creation"
       ]
     },
     {
@@ -76,25 +76,25 @@
     {
       "ID": 13,
       "Entries": [
-        "Small Pebble"
+        "Pebble"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "Small Pebble"
+        "Pebble"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Small Pebble (Old: Root)"
+        "Pebble (Old: Root)"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "Bush"
+        "Thicket"
       ]
     },
     {
@@ -112,19 +112,19 @@
     {
       "ID": 19,
       "Entries": [
-        "Bush tall"
+        "Thicket Tall"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Grass-Flower Mix (White)"
+        "Grass and Flower Mix (White)"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Grass-Flower Mix (Yellow)"
+        "Grass and Flower Mix (Yellow)"
       ]
     },
     {
@@ -136,19 +136,19 @@
     {
       "ID": 23,
       "Entries": [
-        "Grass 7 Turf Creation_Polygon Cut Version"
+        "Grass 7 Lawn Creation_Polygon Cut Version"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Small Pebble (Board)"
+        "Pebble (Plank)"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Small Pebble (Board)_Density Level 5"
+        "Pebble (Plank)_Density Level 5"
       ]
     },
     {
@@ -160,7 +160,7 @@
     {
       "ID": 27,
       "Entries": [
-        "Dead Grass"
+        "Dry Grass"
       ]
     },
     {
@@ -190,13 +190,13 @@
     {
       "ID": 32,
       "Entries": [
-        "Water Grass"
+        "Water Plant"
       ]
     },
     {
       "ID": 37,
       "Entries": [
-        "Grass 7 Dead Grass"
+        "Grass 7 Dry Grass"
       ]
     },
     {
@@ -208,67 +208,67 @@
     {
       "ID": 39,
       "Entries": [
-        "Waterside Grass (Grass 8 Creation Old ID 8) *Quality upgrade later via model replacement"
+        "Waterside Grass (Grass 8 Lawn Creation Old ID8) ※Quality Up Later via Model Replacement"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Lake Region Base 1 (ID7 Basis)"
+        "Lake Region Base 1 (Per ID 7)"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Lake Region Base 2 (ID8 Basis)"
+        "Lake Region Base 2 (Per ID 8)"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Highland Regional Base 1 (ID7 Compliant)"
+        "Altus Region Base 1 (Per ID 7)"
       ]
     },
     {
       "ID": 43,
       "Entries": [
-        "Highland Regional Base 2 (ID8 Compliant)"
+        "Altus Region Base 2 (Per ID 8)"
       ]
     },
     {
       "ID": 44,
       "Entries": [
-        "Plains Region Base 1 (ID7 Compliant)"
+        "Plains Region Base 1 (Per ID 7)"
       ]
     },
     {
       "ID": 45,
       "Entries": [
-        "Plains Region Base 2 (ID8 Compliant)"
+        "Plains Region Base 2 (Per ID 8)"
       ]
     },
     {
       "ID": 46,
       "Entries": [
-        "Snowfield Region Base 1 (ID7 compliant)"
+        "Snowfield Region Base 1 (Per ID 7)"
       ]
     },
     {
       "ID": 47,
       "Entries": [
-        "Snowfield Region Base 2 (ID8 compliant)"
+        "Snowfield Region Base 2 (Per ID 8)"
       ]
     },
     {
       "ID": 48,
       "Entries": [
-        "Volcano Region Base 1 (ID7 Reference)"
+        "Volcano Region Base 1 (Per ID 7)"
       ]
     },
     {
       "ID": 49,
       "Entries": [
-        "Volcano Region Base 2 (ID8 Reference)"
+        "Volcano Region Base 2 (Per ID 8)"
       ]
     },
     {
@@ -280,7 +280,7 @@
     {
       "ID": 51,
       "Entries": [
-        "Basic Dark A-2"
+        "Basic Dense A-2"
       ]
     },
     {
@@ -292,37 +292,37 @@
     {
       "ID": 53,
       "Entries": [
-        "Highland Pampas Grass"
+        "Altus Pampas Grass"
       ]
     },
     {
       "ID": 54,
       "Entries": [
-        "Highland Grass"
+        "Altus Grass"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        "Highland Foundation"
+        "Altus Foundation"
       ]
     },
     {
       "ID": 56,
       "Entries": [
-        "Battlefield Ruins_Skeleton Corpse"
+        "Old Battlefield_Skeletal Corpse"
       ]
     },
     {
       "ID": 57,
       "Entries": [
-        "Battlefield Ruins_Unused"
+        "Old Battlefield_Unused"
       ]
     },
     {
       "ID": 58,
       "Entries": [
-        "Battlefield Ruins_Unused"
+        "Old Battlefield_Unused"
       ]
     },
     {
@@ -340,13 +340,13 @@
     {
       "ID": 61,
       "Entries": [
-        "Highland Reservation"
+        "Altus Reserved"
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        "Straw_Wood Scraps"
+        "Straw_Wood Chips"
       ]
     },
     {
@@ -358,25 +358,25 @@
     {
       "ID": 64,
       "Entries": [
-        "Highland Fallen Leaves"
+        "Altus Fallen Leaves"
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        "Water Grass"
+        "Water Plant"
       ]
     },
     {
       "ID": 66,
       "Entries": [
-        "Small Pebble"
+        "Pebble"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        "Tutorial Beach Only (48 Distance Extension)"
+        "Tutorial Coast Exclusive (48 Distance Extended)"
       ]
     },
     {
@@ -412,7 +412,7 @@
     {
       "ID": 76,
       "Entries": [
-        "Generic Flower Dark Red"
+        "Generic Flower Red Black"
       ]
     },
     {
@@ -460,7 +460,7 @@
     {
       "ID": 84,
       "Entries": [
-        "Snowy Mountain Grass Crystal"
+        "Snow Mountain Grass Crystal"
       ]
     },
     {
@@ -472,55 +472,55 @@
     {
       "ID": 89,
       "Entries": [
-        "Highland Golden Flower"
+        "Altus Golden Flower"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Volcano Region Base Grass (ID42 Reference)"
+        "Volcanic Region Base Grass (Per ID 42)"
       ]
     },
     {
       "ID": 91,
       "Entries": [
-        "Volcano Region High Grass (ID43 Reference)"
+        "Volcano Region Tall Grass (Per ID 43)"
       ]
     },
     {
       "ID": 92,
       "Entries": [
-        "Volcano Region Pebbles (ID218 Reference)"
+        "Volcanic Region Pebbles (Per ID 218)"
       ]
     },
     {
       "ID": 93,
       "Entries": [
-        "Volcano Region High Grass (ID215 Reference)"
+        "Volcano Region Tall Grass (Per ID 215)"
       ]
     },
     {
       "ID": 94,
       "Entries": [
-        "Volcano Region Low Grass (ID216 Reference)"
+        "Volcanic Region Low Grass (Per ID 216)"
       ]
     },
     {
       "ID": 95,
       "Entries": [
-        "Volcano Region Silver Grass (ID222 Reference)"
+        "Volcanic Region Pampas Grass (Per ID 222)"
       ]
     },
     {
       "ID": 96,
       "Entries": [
-        "Highland Water Grass"
+        "Altus Water Grass"
       ]
     },
     {
       "ID": 97,
       "Entries": [
-        "Highland Water Grass"
+        "Altus Water Grass"
       ]
     },
     {
@@ -532,7 +532,7 @@
     {
       "ID": 99,
       "Entries": [
-        "Small Pebble Statue Fragment"
+        "Pebble Statue Fragment"
       ]
     },
     {
@@ -544,13 +544,13 @@
     {
       "ID": 101,
       "Entries": [
-        "Wood Scraps (Legacy Map)"
+        "Wood Scrap (Legacy Map)"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Vine Leaves (Legacy Map)"
+        "Ivy Leaves (Legacy Map)"
       ]
     },
     {
@@ -562,25 +562,25 @@
     {
       "ID": 104,
       "Entries": [
-        "Vine Tendril (Legacy Map)"
+        "Ivy Vine (Legacy Map)"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Small Pebble (Legacy Map)"
+        "Pebble (Legacy Map)"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Fallen Leaves(Legacy Map)"
+        "Fallen Leaves (Legacy Map)"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Wooden Planks (Legacy Map)"
+        "Wooden Plank (Legacy Map)"
       ]
     },
     {
@@ -616,13 +616,13 @@
     {
       "ID": 113,
       "Entries": [
-        "Piled Sand(Legacy Map)"
+        "Mounded Sand (Legacy Map)"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        "Wood Shavings (Legacy Map)"
+        "Wood Chips (Legacy Map)"
       ]
     },
     {
@@ -634,19 +634,19 @@
     {
       "ID": 116,
       "Entries": [
-        "Grassland Default (Open 30 Legacy Transplant)"
+        "Grassland Default (Legacy Transplant of Open 30"
       ]
     },
     {
       "ID": 117,
       "Entries": [
-        "Castle Wall Block Small (Legacy Map)"
+        "Small Castle Wall Block (Legacy Map)"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Fallen Leaves(Legacy Map: Royal Capital)"
+        "Fallen Leaves (Legacy Map: Leyndell)"
       ]
     },
     {
@@ -688,37 +688,37 @@
     {
       "ID": 125,
       "Entries": [
-        "Sand Clump_Slope (Legacy Map: Underground Labyrinth)"
+        "Sand Clump_For Slope (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "Sand Clump_Flat Wide Area (Legacy Map: Underground Labyrinth)"
+        "Sand Clump_For Wide Flat Area (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 127,
       "Entries": [
-        "Generic Grass_Withered (Legacy Map: Royal Capital)"
+        "Generic Grass_Withered (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 128,
       "Entries": [
-        "Sand Clump_Underwater: Medium Size (Legacy Map: Underground Labyrinth)"
+        "Sand Clump_For Underwater: Medium Size (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 129,
       "Entries": [
-        "Sand Clump_Flat Density Adjust (Legacy Map: Underground Labyrinth)"
+        "Sand Clump_Density Adjustment for Flat Surfaces (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 130,
       "Entries": [
-        "Small Pebble (Legacy Map: Descending Ruins)"
+        "Pebble (Legacy Map: Descending Ruins)"
       ]
     },
     {
@@ -730,43 +730,43 @@
     {
       "ID": 132,
       "Entries": [
-        "Wooden Planks (Legacy Map: Royal Capital)"
+        "Wooden Plank (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 133,
       "Entries": [
-        "Wood Shavings (Legacy Map: Royal Capital)"
+        "Wood Chips (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 134,
       "Entries": [
-        "Small Pebble (Legacy Map: Royal Capital)"
+        "Pebble (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 135,
       "Entries": [
-        "Rope (Legacy Map: Royal Capital)"
+        "Rope (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Castle Wall Block Small (Legacy Map: Royal Capital)"
+        "Small Castle Wall Block (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "Castle Manor_Grass (Legacy Map: Royal Capital)"
+        "Manor_Grass (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "Fallen Leaves(Legacy Map: Descending Ruins)"
+        "Fallen Leaves (Legacy Map: Descending Ruins)"
       ]
     },
     {
@@ -784,127 +784,127 @@
     {
       "ID": 141,
       "Entries": [
-        "Grass burned area (Legacy Map: Royal Capital)"
+        "Grass Fire Damage Ruins (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 142,
       "Entries": [
-        "Small Pebble (Legacy Map Monsan)"
+        "Pebble (Legacy Map Raya Lucaria)"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        "Grass 9 Legacy Monsan)"
+        "Grass 9 Legacy Raya Lucaria)"
       ]
     },
     {
       "ID": 144,
       "Entries": [
-        "Royal Capital Grass (Royal Capital)"
+        "Leyndell Grass (Leyndell)"
       ]
     },
     {
       "ID": 145,
       "Entries": [
-        "Sand Clump_Underwater: Medium Size (Legacy Map: Underground Labyrinth)"
+        "Sand Clump_For Underwater: Medium Size (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        "Fern Plant (Legacy: Monsan)"
+        "Fern (Legacy: Raya Lucaria)"
       ]
     },
     {
       "ID": 147,
       "Entries": [
-        "Charred Tree (Legacy Map: Royal Capital)"
+        "Scorched Tree (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 148,
       "Entries": [
-        "Vegetation Group (Legacy Map: Underground Labyrinth)"
+        "Vegetation Cluster (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 149,
       "Entries": [
-        "Cave Pebbles_Low Density Ver (Legacy Map: Underground Labyrinth)"
+        "Cave Pebbles_Low Density Version (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 150,
       "Entries": [
-        "Cave Roots (Small Outpost: Cave)"
+        "Cave Roots (Small Base: Cave)"
       ]
     },
     {
       "ID": 151,
       "Entries": [
-        "Cave Pebbles (Small Outpost: Cave)"
+        "Cave Pebbles (Small Base: Cave)"
       ]
     },
     {
       "ID": 152,
       "Entries": [
-        "Grass-Flower Mix Monsan (Purple)"
+        "Grass and Flower Mix Raya Lucaria (Purple)"
       ]
     },
     {
       "ID": 153,
       "Entries": [
-        "Grass 9 Small Size Legacy Monsan)"
+        "Grass 9 Small Size Legacy Raya Lucaria)"
       ]
     },
     {
       "ID": 154,
       "Entries": [
-        "Mycelium(Underground Labyrinth)"
+        "Mycelium (Underground Labyrinth)"
       ]
     },
     {
       "ID": 155,
       "Entries": [
-        "Cave Pebbles_Sand (Small Outpost: Cave)"
+        "Cave Pebbles_Sand (Small Base: Cave)"
       ]
     },
     {
       "ID": 156,
       "Entries": [
-        "Small Pebble_Sparse (Legacy Map: Royal Capital)"
+        "Pebble_Fewer (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 157,
       "Entries": [
-        "Interior_Tiny Stone (Legacy Map: Monsan)"
+        "Interior_Tiny Pebble (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 158,
       "Entries": [
-        "Interior_Paper (Legacy Map: Monsan)"
+        "Interior_Paper (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 159,
       "Entries": [
-        "Human Bones (Small Outpost: Cave)"
+        "Human Bones (Small Base: Cave)"
       ]
     },
     {
       "ID": 160,
       "Entries": [
-        "Horse Bones (Small Outpost: Cave)"
+        "Horse Bones (Small Base: Cave)"
       ]
     },
     {
       "ID": 161,
       "Entries": [
-        "Cow Bone (Small Outpost: Cave)"
+        "Cow Bones (Small Base: Cave)"
       ]
     },
     {
@@ -916,25 +916,25 @@
     {
       "ID": 163,
       "Entries": [
-        "Lichen"
+        "Lichen, Grass, Moss (Rotten Great Tree)"
       ]
     },
     {
       "ID": 164,
       "Entries": [
-        "Interior_Tiny Stone (Legacy Map: Stormveil)"
+        "Interior_Tiny Pebble (Legacy Map: Stormveil)"
       ]
     },
     {
       "ID": 165,
       "Entries": [
-        "Wall-side Rock_(Legacy Map: Underground Labyrinth)"
+        "Wall-Side Rock_(Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 166,
       "Entries": [
-        "Interior_Pottery Shards (Legacy Map: Stormveil)"
+        "Interior_Jar Shards (Legacy Map: Stormveil)"
       ]
     },
     {
@@ -958,7 +958,7 @@
     {
       "ID": 170,
       "Entries": [
-        "Generic Grass (height up to player waist)"
+        "Generic Grass (Height Up to Player Waist)"
       ]
     },
     {
@@ -970,13 +970,13 @@
     {
       "ID": 172,
       "Entries": [
-        "Yahata Test Grass (Short Yellow Pampas)"
+        "Yahata Test Grass (Short Yellow Pampas Grass)"
       ]
     },
     {
       "ID": 173,
       "Entries": [
-        "Yahata Test Grass (Long Yellow Pampas)"
+        "Yahata Test Grass (Long Yellow Pampas Grass)"
       ]
     },
     {
@@ -994,13 +994,13 @@
     {
       "ID": 176,
       "Entries": [
-        "Hollow white flower (Rotten Great Tree)"
+        "White Flower in the Hollow (Rotten Great Tree)"
       ]
     },
     {
       "ID": 177,
       "Entries": [
-        "Cave Pebbles_Low Density Ver_White (Legacy Map: Underground Labyrinth)"
+        "Cave Pebbles_Low Density Version_White (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
@@ -1012,37 +1012,37 @@
     {
       "ID": 179,
       "Entries": [
-        "Fallen Leaves(Monsan)"
+        "Fallen Leaves (Raya Lucaria)"
       ]
     },
     {
       "ID": 180,
       "Entries": [
-        "Fallen Leaves Size Small(Monsan)"
+        "Fallen Leaves Small Size (Raya Lucaria)"
       ]
     },
     {
       "ID": 181,
       "Entries": [
-        "Mycelium_Large(Underground Labyrinth)"
+        "Mycelium_Large (Underground Labyrinth)"
       ]
     },
     {
       "ID": 182,
       "Entries": [
-        "White Mushroom Cluster Sparse Type (Small Outpost: Cave)"
+        "White Mushroom Colony Stray Type (Small Base: Cave)"
       ]
     },
     {
       "ID": 183,
       "Entries": [
-        "White Mushroom Tall Type (Small Outpost: Cave)"
+        "White Mushroom Tall Type (Small Base: Cave)"
       ]
     },
     {
       "ID": 184,
       "Entries": [
-        "White Mushroom Cluster Dense Type (Small Outpost: Cave)"
+        "White Mushroom Colony Dense Type (Small Base: Cave)"
       ]
     },
     {
@@ -1054,91 +1054,91 @@
     {
       "ID": 186,
       "Entries": [
-        "Bone_Mycelium Attached (Underground Labyrinth_Ancestor Forest)"
+        "Bone_With Mycelium (Underground Labyrinth_Ancestral Woods)"
       ]
     },
     {
       "ID": 187,
       "Entries": [
-        "Small Pebble (Legacy Map: Volcano Prison)"
+        "Pebble (Legacy Map: Volcano Prison)"
       ]
     },
     {
       "ID": 188,
       "Entries": [
-        "Wall Grass 1 (Cliff Tunnel)"
+        "Wall Grass 1 (Cliffside Tunnel)"
       ]
     },
     {
       "ID": 189,
       "Entries": [
-        "Wall Grass 2 (Cliff Tunnel)"
+        "Wall Grass 2 (Cliffside Tunnel)"
       ]
     },
     {
       "ID": 190,
       "Entries": [
-        "Wall Grass 3 (Cliff Tunnel)"
+        "Wall Grass 3 (Cliffside Tunnel)"
       ]
     },
     {
       "ID": 191,
       "Entries": [
-        "Marika Ruins_Pot Shard (Legacy Map: Underground Labyrinth)"
+        "Marika Ruins_Jar Shards (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 192,
       "Entries": [
-        "Cave Pebbles_Red Sand (Small Outpost: Cave)"
+        "Cave Pebbles_Red Sand (Small Base: Cave)"
       ]
     },
     {
       "ID": 193,
       "Entries": [
-        "Generic Vegetation (Royal Capital)"
+        "Generic Vegetation (Leyndell)"
       ]
     },
     {
       "ID": 194,
       "Entries": [
-        "Generic Vegetation B (Royal Capital)"
+        "Generic Vegetation B (Leyndell)"
       ]
     },
     {
       "ID": 195,
       "Entries": [
-        "Ruins Descending Orange Flower"
+        "Descending Ruins Orange Flower"
       ]
     },
     {
       "ID": 196,
       "Entries": [
-        "Ruins Descending White Flower"
+        "Descending Ruins White Flower"
       ]
     },
     {
       "ID": 197,
       "Entries": [
-        "Ruins Descending Pampas Grass"
+        "Descending Ruins Pampas Grass"
       ]
     },
     {
       "ID": 198,
       "Entries": [
-        "Hollow white flower_Rotten Great Tree"
+        "White Flower in the Hollow_Rotten Great Tree"
       ]
     },
     {
       "ID": 199,
       "Entries": [
-        "Hollow white flower_Poison swamp only (Rotten Great Tree)"
+        "White Flower in the Hollow_Poison Swamp Exclusive (Rotten Great Tree)"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Generic Grass (height up to player shin): 169 adjustment"
+        "Generic Grass (Height Up to Player Shin): 169 Adjustment"
       ]
     },
     {
@@ -1228,37 +1228,37 @@
     {
       "ID": 215,
       "Entries": [
-        "Highland Section"
+        "Altus District"
       ]
     },
     {
       "ID": 216,
       "Entries": [
-        "Highland Section"
+        "Altus District"
       ]
     },
     {
       "ID": 217,
       "Entries": [
-        "Highland Section"
+        "Altus District"
       ]
     },
     {
       "ID": 218,
       "Entries": [
-        "Highland Section Rock Planned"
+        "Altus District Rock Planned"
       ]
     },
     {
       "ID": 219,
       "Entries": [
-        "Green Grass (Plains_Wasteland)"
+        "Green-Type Grass (Plains_Wasteland)"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        "Low Lush Grass (Plains_Wasteland)"
+        "Low Rich Grass (Plains_Wasteland)"
       ]
     },
     {
@@ -1270,13 +1270,13 @@
     {
       "ID": 222,
       "Entries": [
-        "Pampas Grass Highland"
+        "Pampas Grass Altus"
       ]
     },
     {
       "ID": 225,
       "Entries": [
-        "Small Pebble White_Desert Use (Plains_Wasteland)"
+        "Pebble White_For Desert (Plains_Wasteland)"
       ]
     },
     {
@@ -1294,7 +1294,7 @@
     {
       "ID": 228,
       "Entries": [
-        "Dead Grass"
+        "Withered Grass"
       ]
     },
     {
@@ -1306,61 +1306,61 @@
     {
       "ID": 230,
       "Entries": [
-        "Underground Labyrinth Royal Capital Natural Terrain Spot Red Grass"
+        "Underground Labyrinth Leyndell Natural Terrain Spot Red Grass"
       ]
     },
     {
       "ID": 232,
       "Entries": [
-        "Underground Labyrinth Royal Capital Natural Terrain Spot Pebbles"
+        "Underground Labyrinth Leyndell Natural Terrain Spot Pebble"
       ]
     },
     {
       "ID": 233,
       "Entries": [
-        "Moss (Underground Labyrinth Royal Capital)"
+        "Moss (Underground Labyrinth Leyndell)"
       ]
     },
     {
       "ID": 234,
       "Entries": [
-        "Human Bones_Mud-Covered (Royal Capital_Sewer Connection)"
+        "Human Bones_Mud-Covered (Leyndell_Sewer Connection)"
       ]
     },
     {
       "ID": 235,
       "Entries": [
-        "Small Pebble_Medium (Royal Capital_Sewer Connection)"
+        "Pebble_Medium (Leyndell_Sewer Connection)"
       ]
     },
     {
       "ID": 236,
       "Entries": [
-        "Small Pebble_Small (Royal Capital_Sewer Connection)"
+        "Pebble_Small (Leyndell_Sewer Connection)"
       ]
     },
     {
       "ID": 237,
       "Entries": [
-        "Human Flesh_Fragment (Royal Capital_Lower Level)"
+        "Human Flesh_Fragment (Leyndell_Lower Level)"
       ]
     },
     {
       "ID": 238,
       "Entries": [
-        "Rubble (Royal Capital_Sewer Connection)"
+        "Rubble (Leyndell_Sewer Connection)"
       ]
     },
     {
       "ID": 239,
       "Entries": [
-        "Small Pebble (Final Boss Room)"
+        "Pebble (Final Boss Room)"
       ]
     },
     {
       "ID": 240,
       "Entries": [
-        "Small Snow Chunk (Open Map: Snowfield)"
+        "Small Snow Clump (Open Map: Snowfield)"
       ]
     },
     {
@@ -1372,7 +1372,7 @@
     {
       "ID": 242,
       "Entries": [
-        "Snowfield Region Dead Branch Grass"
+        "Snowfield Region Withered Branch Grass"
       ]
     },
     {
@@ -1384,7 +1384,7 @@
     {
       "ID": 244,
       "Entries": [
-        "Small Pebble (Open Map: Snowfield)"
+        "Pebble (Open Map: Snowfield)"
       ]
     },
     {
@@ -1402,13 +1402,13 @@
     {
       "ID": 248,
       "Entries": [
-        "Small Pebble_Medium_Rotten Great Tree"
+        "Pebble_Medium_Rotten Great Tree"
       ]
     },
     {
       "ID": 249,
       "Entries": [
-        "Small Pebble_Small_Rotten Great Tree"
+        "Pebble_Small_Rotten Great Tree"
       ]
     },
     {
@@ -1420,13 +1420,13 @@
     {
       "ID": 251,
       "Entries": [
-        "Dead Grass_Large_Rotten Great Tree"
+        "Dry Grass_Large_Rotten Great Tree"
       ]
     },
     {
       "ID": 252,
       "Entries": [
-        "Dead Grass_Small_Rotten Great Tree"
+        "Dry Grass_Small_Rotten Great Tree"
       ]
     },
     {
@@ -1444,7 +1444,7 @@
     {
       "ID": 255,
       "Entries": [
-        "Fallen Leaves_Gold(Legacy Map: Royal Capital)"
+        "Fallen Leaves_Golden (Legacy Map: Leyndell)"
       ]
     },
     {
@@ -1504,37 +1504,37 @@
     {
       "ID": 265,
       "Entries": [
-        "Water Grass (Legacy Map: Underground Labyrinth)"
+        "Water Plant (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 266,
       "Entries": [
-        "Water Grass (Legacy Map: Underground Labyrinth)"
+        "Water Plant (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 267,
       "Entries": [
-        "Rotten Fallen Leaves (Royal Capital Sewers)"
+        "Rotten Fallen Leaves (Leyndell Sewers)"
       ]
     },
     {
       "ID": 268,
       "Entries": [
-        "Small Pebble_Small_White Legacy Map: Underground Labyrinth)"
+        "Pebble_Small_White Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 269,
       "Entries": [
-        "Small Pebble_Large_White (Legacy Map: Underground Labyrinth)"
+        "Pebble_Large_White (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 270,
       "Entries": [
-        "Generic Vegetation_Underwater (Legacy Map: Underground Labyrinth)"
+        "Generic Vegetation_Water Bottom (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
@@ -1570,19 +1570,19 @@
     {
       "ID": 280,
       "Entries": [
-        "Fallen Leaves Petrified(Descending Ruins)"
+        "Fallen Leaves Petrified (Descending Ruins)"
       ]
     },
     {
       "ID": 281,
       "Entries": [
-        "Grass Petrified (Descending Ruins)"
+        "Grass Petrification (Descending Ruins)"
       ]
     },
     {
       "ID": 282,
       "Entries": [
-        "Grass Petrified (Descending Ruins)"
+        "Grass Petrification (Descending Ruins)"
       ]
     },
     {
@@ -1600,31 +1600,31 @@
     {
       "ID": 285,
       "Entries": [
-        "Golden Fallen Leaves (Legacy: Underground Labyrinth Royal Capital)"
+        "Golden Fallen Leaves (Legacy: Underground Labyrinth Leyndell)"
       ]
     },
     {
       "ID": 286,
       "Entries": [
-        "Small Pebble + Snow (Legacy: Underground Labyrinth Royal Capital Ark)"
+        "Pebble\u002BSnow (Legacy: Underground Labyrinth Leyndell Ark)"
       ]
     },
     {
       "ID": 287,
       "Entries": [
-        "Dead Grass (Legacy Map: Volcano Prison)"
+        "Dry Grass (Legacy Map: Volcano Prison)"
       ]
     },
     {
       "ID": 288,
       "Entries": [
-        "Feather (Legacy: Monsan)"
+        "Blade (Legacy: Raya Lucaria)"
       ]
     },
     {
       "ID": 289,
       "Entries": [
-        "Crystal Shard (Small Outpost: Cave)"
+        "Crystal Fragment (Small Base: Cave)"
       ]
     },
     {
@@ -1642,37 +1642,37 @@
     {
       "ID": 292,
       "Entries": [
-        "Grass_low (Plains_Desert)"
+        "Grass_Low (Plains_Desert)"
       ]
     },
     {
       "ID": 293,
       "Entries": [
-        "Cave Gravel (Small Outpost: Cave)"
+        "Cave Gravel (Small Base: Cave)"
       ]
     },
     {
       "ID": 294,
       "Entries": [
-        "Water Grass (Royal Capital)"
+        "Water Plant (Leyndell)"
       ]
     },
     {
       "ID": 295,
       "Entries": [
-        "Boss Room_Petrified Corpses(Legacy Map: Volcano Prison)"
+        "Boss Room_Petrified Corpse Cluster (Legacy Map: Volcano Prison)"
       ]
     },
     {
       "ID": 296,
       "Entries": [
-        "Boss Room_Rock Cluster(Legacy Map: Volcano Prison)"
+        "Boss Room_Rock Cluster (Legacy Map: Volcano Prison)"
       ]
     },
     {
       "ID": 297,
       "Entries": [
-        "Plains_Deep Poison Swamp"
+        "Plains Deep Poison Swamp"
       ]
     },
     {
@@ -1684,25 +1684,25 @@
     {
       "ID": 299,
       "Entries": [
-        "Ant Egg (Legacy Map: Underground Labyrinth Poison Swamp)"
+        "Ant Eggs (Legacy Map: Underground Labyrinth Poison Swamp)"
       ]
     },
     {
       "ID": 300,
       "Entries": [
-        "Standard Grass (Legacy Map: Stormveil Interior)"
+        "Standard Grass (Legacy Map: Stormveil Depths)"
       ]
     },
     {
       "ID": 301,
       "Entries": [
-        "Ant Egg_Wall (Legacy Map: Underground Labyrinth Poison Swamp)"
+        "Ant Eggs_For Wall (Legacy Map: Underground Labyrinth Poison Swamp)"
       ]
     },
     {
       "ID": 302,
       "Entries": [
-        "Tall Grass (Royal Capital)"
+        "Tall Grass (Leyndell)"
       ]
     },
     {
@@ -1720,19 +1720,19 @@
     {
       "ID": 305,
       "Entries": [
-        "Fallen Leaves_Gold(Legacy Map: Royal Capital)_B"
+        "Fallen Leaves_Golden (Legacy Map: Leyndell)_B"
       ]
     },
     {
       "ID": 306,
       "Entries": [
-        "Snowy Mountain Generic Flower Pale Blue"
+        "Snow Mountain Generic Flower Light Blue"
       ]
     },
     {
       "ID": 307,
       "Entries": [
-        "Snowy Mountain Generic Flower Pale Green"
+        "Snow Mountain Generic Flower Light Green"
       ]
     },
     {
@@ -1744,67 +1744,67 @@
     {
       "ID": 309,
       "Entries": [
-        "Drift_Stone (Legacy Map: Stormveil)"
+        "Drift Pile_Stone (Legacy Map: Stormveil)"
       ]
     },
     {
       "ID": 310,
       "Entries": [
-        "Highland Pink"
+        "Altus Pink"
       ]
     },
     {
       "ID": 311,
       "Entries": [
-        "Golden Fallen Leaves (Legacy Map: Royal Capital)"
+        "Golden Fallen Leaves (Legacy Map: Leyndell)"
       ]
     },
     {
       "ID": 312,
       "Entries": [
-        "Snowy Mountain Gold Flower"
+        "Snow Mountain Gold Flower"
       ]
     },
     {
       "ID": 313,
       "Entries": [
-        "Snowy Mountain Thorns"
+        "Snow Mountain Thorns"
       ]
     },
     {
       "ID": 314,
       "Entries": [
-        "Snowy Mountain Akahana"
+        "Snow Mountain Red Flower"
       ]
     },
     {
       "ID": 315,
       "Entries": [
-        "Snowy Mountain Akahana"
+        "Snow Mountain Red Flower"
       ]
     },
     {
       "ID": 316,
       "Entries": [
-        "Snowy Mountain Akahana"
+        "Snow Mountain Red Flower"
       ]
     },
     {
       "ID": 317,
       "Entries": [
-        "Snowy Mountain Akahana Base"
+        "Snow Mountain Red Flower Base"
       ]
     },
     {
       "ID": 318,
       "Entries": [
-        "Bush_Underground Labyrinth Royal Capital"
+        "Thicket_Underground Labyrinth Leyndell"
       ]
     },
     {
       "ID": 319,
       "Entries": [
-        "Meteorite Shard (Small Outpost: Tunnel)"
+        "Meteorite Fragment (Small Base: Tunnel)"
       ]
     },
     {
@@ -1816,7 +1816,7 @@
     {
       "ID": 321,
       "Entries": [
-        "Fallen Leaves_Mercury(Legacy Map: Underground Labyrinth)"
+        "Fallen Leaves_Mercury (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
@@ -1834,79 +1834,79 @@
     {
       "ID": 324,
       "Entries": [
-        "Crystal Shard (Monsan)"
+        "Crystal Fragment (Raya Lucaria)"
       ]
     },
     {
       "ID": 325,
       "Entries": [
-        "Glowing Flower_Blue"
+        "Glowing Flower Blue"
       ]
     },
     {
       "ID": 326,
       "Entries": [
-        "Crystal Shard"
+        "Crystal Fragment"
       ]
     },
     {
       "ID": 327,
       "Entries": [
-        "Highland White Flower"
+        "Altus White Flower"
       ]
     },
     {
       "ID": 328,
       "Entries": [
-        "Glowing Flower_Blue_Plains"
+        "Glowing Flower Blue Plains"
       ]
     },
     {
       "ID": 329,
       "Entries": [
-        "Tarnished Gold and Black"
+        "Faded Gold and Black"
       ]
     },
     {
       "ID": 330,
       "Entries": [
-        "Highland Black Flower"
+        "Altus Black Flower"
       ]
     },
     {
       "ID": 331,
       "Entries": [
-        "Highland Yellow Flower"
+        "Altus Yellow Flower"
       ]
     },
     {
       "ID": 332,
       "Entries": [
-        "Highland Blue Flower"
+        "Altus Blue Flower"
       ]
     },
     {
       "ID": 333,
       "Entries": [
-        "Highland Blue-Purple Flower"
+        "Altus Blue-Purple Flower"
       ]
     },
     {
       "ID": 334,
       "Entries": [
-        "Highland Red-Black Flower"
+        "Altus Red Black Flower"
       ]
     },
     {
       "ID": 335,
       "Entries": [
-        "Highland Tarnished Gold Flower"
+        "Altus Faded Gold Flower"
       ]
     },
     {
       "ID": 336,
       "Entries": [
-        "Highland Glowing Blue Flower"
+        "Altus Glowing Blue Flower"
       ]
     },
     {
@@ -1924,25 +1924,25 @@
     {
       "ID": 339,
       "Entries": [
-        "Water Grass (Legacy Map: Underground Labyrinth)"
+        "Water Plant (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 340,
       "Entries": [
-        "Water Grass (Legacy Map: Underground Labyrinth)"
+        "Water Plant (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
       "ID": 342,
       "Entries": [
-        "Royal Capital Exclusive_Highland Base1 (ID7 Compliant)"
+        "Leyndell Only_Altus Region Base 1 (Per ID 7)"
       ]
     },
     {
       "ID": 343,
       "Entries": [
-        "Royal Capital Exclusive Highland Base2 (ID8 Compliant)"
+        "Leyndell Exclusive Altus Region Base 2 (Per ID 8)"
       ]
     },
     {
@@ -1954,31 +1954,31 @@
     {
       "ID": 345,
       "Entries": [
-        "Dead Grass (Legacy Map: Underground Labyrinth Royal Capital)"
+        "Dry Grass (Legacy Map: Underground Labyrinth_Leyndell)"
       ]
     },
     {
       "ID": 346,
       "Entries": [
-        "Snowy Mountain Generic Flower Yellow"
+        "Snow Mountain Generic Flower Yellow"
       ]
     },
     {
       "ID": 347,
       "Entries": [
-        "Ice Fragment (Small Outpost: Cave)"
+        "Ice Fragment (Small Base: Cave)"
       ]
     },
     {
       "ID": 348,
       "Entries": [
-        "Ice Stalagmite (Small Outpost: Cave)"
+        "Ice Stalagmite (Small Base: Cave)"
       ]
     },
     {
       "ID": 349,
       "Entries": [
-        "Nocstella General Vegetation (Legacy Map: Underground Labyrinth)"
+        "Noxtella Generic Vegetation (Legacy Map: Underground Labyrinth)"
       ]
     },
     {
@@ -1990,91 +1990,91 @@
     {
       "ID": 351,
       "Entries": [
-        "Lake Curse-type Flower"
+        "Lake Curse Type Flower"
       ]
     },
     {
       "ID": 352,
       "Entries": [
-        "Dead Grass_Many (Divine Tower)"
+        "Dry Grass_Many (_Divine Tower)"
       ]
     },
     {
       "ID": 353,
       "Entries": [
-        "Dead Grass_Few (Divine Tower)"
+        "Dry Grass_Few (Divine Tower)"
       ]
     },
     {
       "ID": 354,
       "Entries": [
-        "Small Pebble (Divine Tower)"
+        "Pebble (Divine Tower)"
       ]
     },
     {
       "ID": 355,
       "Entries": [
-        "Crystal Shard Medium (Lake Area)"
+        "Crystal Fragment Medium (Lake Area)"
       ]
     },
     {
       "ID": 356,
       "Entries": [
-        "Lichen"
+        "Lichen, Grass, Moss (Underground Labyrinth Leyndell)"
       ]
     },
     {
       "ID": 357,
       "Entries": [
-        "Moss (Underground Labyrinth Royal Capital)"
+        "Moss (Underground Labyrinth Leyndell)"
       ]
     },
     {
       "ID": 358,
       "Entries": [
-        "Lake Region Base 1 (Legacy Map: Monsan)"
+        "Lake Region Base 1 (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 359,
       "Entries": [
-        "New Vegetation 002 (Legacy Map: Monsan)"
+        "New Vegetation 002 (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 360,
       "Entries": [
-        "New Vegetation 005 (Legacy Map: Monsan)"
+        "New Vegetation 005 (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 361,
       "Entries": [
-        "New Vegetation 007 (Legacy Map: Monsan)"
+        "New Vegetation 007 (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 362,
       "Entries": [
-        "New Vegetation 008 (Legacy Map: Monsan)"
+        "New Vegetation 008 (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 363,
       "Entries": [
-        "Cave Pebbles (Legacy Map: Monsan)"
+        "Cave Pebbles (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 364,
       "Entries": [
-        "Sand Clump_Flat Wide Area (Legacy Map: Monsan)"
+        "Sand Clump_For Wide Flat Area (Legacy Map: Raya Lucaria)"
       ]
     },
     {
       "ID": 365,
       "Entries": [
-        "Sand Clump_Underwater: Medium Size (Legacy Map: Monsan)"
+        "Sand Clump_For Underwater: Medium Size (Legacy Map: Raya Lucaria)"
       ]
     },
     {
@@ -2116,13 +2116,13 @@
     {
       "ID": 500,
       "Entries": [
-        "200 Transplant Area 01 Standard"
+        "200 Port Area 01 Standard"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "170 Transplant Area 01 Sub"
+        "170 Port Area 01 Sub"
       ]
     },
     {
@@ -2134,19 +2134,19 @@
     {
       "ID": 503,
       "Entries": [
-        "TestGrass2"
+        "Test Grass 2"
       ]
     },
     {
       "ID": 1007,
       "Entries": [
-        "Grass 7 Turf Creation Old 7"
+        "Grass 7 Lawn Creation Old 7"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Grass 8 Turf Creation Old 8"
+        "Grass 8 Lawn Creation Old 8"
       ]
     }
   ]

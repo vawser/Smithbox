@@ -1,0 +1,47 @@
+{
+  "Name": "ChrActivateConditionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "------------------------------------99999"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "c**** Character Generic_Night-Appearing Enemy (Appears 20:00 - 5:59)"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "c**** Character Generic_Night-Disappearing Enemy (Disappears 20:00 - 5:59)"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "c**** Character Generic_Day-Appearing Enemy (6:00 - 19:59)"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "------------------------------------ 21200000"
+      ]
+    },
+    {
+      "ID": 21200010,
+      "Entries": [
+        "c2120_Arbitrating Malenia_Snow Only"
+      ]
+    }
+  ]
+}

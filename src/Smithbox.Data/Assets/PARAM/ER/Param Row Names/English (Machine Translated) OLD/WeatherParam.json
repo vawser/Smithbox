@@ -1,0 +1,617 @@
+{
+  "Name": "WeatherParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Clear"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Clear Skies"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Light Overcast"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Cloudy"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Rain"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Heavy Rain"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Storm"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Storm (for Guardian Lineage battle)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Heavy Snow"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Mist"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Dense Fog"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Dense Fog (Rain)"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Sandstorm"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Blizzard"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Storm (Lightning)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Special Snow (Spare Weather 3)"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Spare Weather 4 ↓Unused spare. If spare weather is used in product"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Spare Weather 5"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Spare Weather 6"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Spare Weather 7"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Spare Weather 8"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "For environment map photography. Unused in product [GR] SEQ13778"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Lake Area_Clear"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Lake Area_Light Overcast"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Lake Area_Cloudy"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Lake Area_Rain"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Lake Area_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Lake Area_Snow_Lake Fort Only"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Lake Area_Fog"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Lake Area_Dense Fog"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Lake Area_Dense Fog (Rain)"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Highland Area_Light Overcast"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Highland Area_Cloudy"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Highland Area_Rain"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Highland Area_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Volcano Area_Light Overcast"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "Volcano Area_Cloudy"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Plains Area_Light Overcast"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Plains Area_Cloudy"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Desert Area_Clear"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Desert Area_Light Overcast"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Desert Area_Cloudy"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Desert Area_Rain (Red Rain)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Snowy Mountain Area Upper Level Clear"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Snowy Mountain Area Upper Level Light Overcast"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Snowy Mountain Area Upper Level Cloudy"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Snowy Mountain Area Upper Level Snow"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Snowy Mountain Area Lower Level Light Overcast"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "Snowy Mountain Area Lower Level Cloudy"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Snowy Mountain Area Lower Level Snow"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Snowy Mountain Entrance_Clear Skies"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Snowy Mountain Entrance_Light Overcast"
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        "Snowy Mountain Entrance_Cloudy"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Snowy Mountain Entrance_Rain"
+      ]
+    },
+    {
+      "ID": 4221,
+      "Entries": [
+        "Snowy Mountain Entrance_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 4230,
+      "Entries": [
+        "Snowy Mountain Entrance_Storm"
+      ]
+    },
+    {
+      "ID": 4231,
+      "Entries": [
+        "Snowy Mountain Entrance_Storm (For Guardian Lineage Battle)"
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        "Snowy Mountain Entrance_Snow"
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        "Snowy Mountain Entrance_Heavy Snow"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Snowy Mountain Entrance_Fog"
+      ]
+    },
+    {
+      "ID": 4251,
+      "Entries": [
+        "Snowy Mountain Entrance_Dense Fog"
+      ]
+    },
+    {
+      "ID": 4252,
+      "Entries": [
+        "Snowy Mountain Entrance_Dense Fog (Rain)"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Snowy Mountain Entrance_Sandstorm"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "m10_00 Stormveil_Storm"
+      ]
+    },
+    {
+      "ID": 100031,
+      "Entries": [
+        "m10_00 Stormveil_Storm (for Children of the Ancestor fight)"
+      ]
+    },
+    {
+      "ID": 110020,
+      "Entries": [
+        "m11_00_Royal Capital_Rain"
+      ]
+    },
+    {
+      "ID": 110021,
+      "Entries": [
+        "m11_00 Royal Capital_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 110521,
+      "Entries": [
+        "m11_05 Royal Capital Ash_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 111001,
+      "Entries": [
+        "m11_10_Base_Clear"
+      ]
+    },
+    {
+      "ID": 111060,
+      "Entries": [
+        "m11_10_Base_Sandstorm"
+      ]
+    },
+    {
+      "ID": 117111,
+      "Entries": [
+        "m11_71 Ending A_Cloudy"
+      ]
+    },
+    {
+      "ID": 120311,
+      "Entries": [
+        "m12_03 Underground Labyrinth_Royal Capital_Cloudy"
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        "m13_00 Descending Ruins_Clear"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "m13_00 Descending Ruins_Light Overcast"
+      ]
+    },
+    {
+      "ID": 130011,
+      "Entries": [
+        "m13_00 Descending Ruins_Cloudy"
+      ]
+    },
+    {
+      "ID": 130030,
+      "Entries": [
+        "m13_00 Descending Ruins_Storm"
+      ]
+    },
+    {
+      "ID": 130060,
+      "Entries": [
+        "m13_00 Descending Ruins_Sandstorm"
+      ]
+    },
+    {
+      "ID": 140001,
+      "Entries": [
+        "m14_00 Monsan_Clear"
+      ]
+    },
+    {
+      "ID": 140020,
+      "Entries": [
+        "m14_00 Monsan_Rain"
+      ]
+    },
+    {
+      "ID": 150040,
+      "Entries": [
+        "m15_00_Rotten Great Tree_Snow"
+      ]
+    },
+    {
+      "ID": 341021,
+      "Entries": [
+        "m34_10 Divine Tower 1 Green_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 341051,
+      "Entries": [
+        "m34_10 Divine Tower 1 Green_Dense Fog"
+      ]
+    },
+    {
+      "ID": 341121,
+      "Entries": [
+        "m34_11 Divine Tower 2 Lake_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 341151,
+      "Entries": [
+        "m34_11 Divine Tower 2 Lake_Dense Fog"
+      ]
+    },
+    {
+      "ID": 341251,
+      "Entries": [
+        "m34_12 Divine Tower 3 Highland_Dense Fog"
+      ]
+    },
+    {
+      "ID": 341351,
+      "Entries": [
+        "m34_13 Divine Tower 4 Plains_Dense Fog"
+      ]
+    },
+    {
+      "ID": 341421,
+      "Entries": [
+        "m34_14 Divine Tower 5 Snowfield_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 341450,
+      "Entries": [
+        "m34_14 Divine Tower 5 Snowfield_Fog"
+      ]
+    },
+    {
+      "ID": 341451,
+      "Entries": [
+        "m34_14 Divine Tower 5 Snowfield_Dense Fog"
+      ]
+    },
+    {
+      "ID": 341501,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Clear"
+      ]
+    },
+    {
+      "ID": 341510,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Light Overcast"
+      ]
+    },
+    {
+      "ID": 341511,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Cloudy"
+      ]
+    },
+    {
+      "ID": 341520,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Rain"
+      ]
+    },
+    {
+      "ID": 341521,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 341550,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Fog"
+      ]
+    },
+    {
+      "ID": 341551,
+      "Entries": [
+        "m34_15 Divine Tower 6 Crater Lake_Dense Fog"
+      ]
+    },
+    {
+      "ID": 392010,
+      "Entries": [
+        "m39_20 Cliff Tunnel_Light Overcast"
+      ]
+    },
+    {
+      "ID": 392011,
+      "Entries": [
+        "m39_20 Cliff Tunnel_Cloudy"
+      ]
+    },
+    {
+      "ID": 392020,
+      "Entries": [
+        "m39_20 Cliff Tunnel_Rain"
+      ]
+    },
+    {
+      "ID": 392021,
+      "Entries": [
+        "m39_20 Cliff Tunnel_Heavy Rain"
+      ]
+    },
+    {
+      "ID": 392030,
+      "Entries": [
+        "m39_20 Cliff Tunnel_Storm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2699 @@
+{
+  "Name": "DecalParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Reflectance Verification For Test"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Test Character Team Paint Decal Test For"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[SEQ: 24185] Pre-applied Decal with SFX"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Emissive Color Test"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "[Wandering Phantom]Trace Decal"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "[Wandering Phantom]Trace Decal (Codename) *Contents placeholder"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "[World Fragment] Enemy Spawn (Small)"
+      ]
+    },
+    {
+      "ID": 300011,
+      "Entries": [
+        "[World Fragment] Enemy Spawn (Large)"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "NPC Event_Map Placed Bloodstain"
+      ]
+    },
+    {
+      "ID": 300030,
+      "Entries": [
+        "Catapult (Trebuchet) Impact"
+      ]
+    },
+    {
+      "ID": 300031,
+      "Entries": [
+        "Catapult (Trebuchet) Burning Impact"
+      ]
+    },
+    {
+      "ID": 300040,
+      "Entries": [
+        "Pre-placed Decal for Fire Material Zone"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "AEG110_243_Ranni Blood Stain Pre-Decal"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "[Player] Lava Placement"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "[Player] Magic Thorn Storm Blood 1st Wave"
+      ]
+    },
+    {
+      "ID": 400011,
+      "Entries": [
+        "[Player] Magic Thorn Storm Blood 2nd Wave"
+      ]
+    },
+    {
+      "ID": 400012,
+      "Entries": [
+        "[Player] Magic Thorn Storm Blood 3rd Wave"
+      ]
+    },
+    {
+      "ID": 400020,
+      "Entries": [
+        "[Player] Arts Stomp / Frost Step"
+      ]
+    },
+    {
+      "ID": 400040,
+      "Entries": [
+        "[Player] Magic Blood Scatter"
+      ]
+    },
+    {
+      "ID": 400050,
+      "Entries": [
+        "[Player] Magic Straight Frost-Lightning"
+      ]
+    },
+    {
+      "ID": 400060,
+      "Entries": [
+        "[Player] Dragon Communion Fire Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 400070,
+      "Entries": [
+        "[Player] Dragon Communion Magic Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 400080,
+      "Entries": [
+        "[Player] Dragon Communion Frost Breath Frost"
+      ]
+    },
+    {
+      "ID": 400090,
+      "Entries": [
+        "[Player] Dragon Communion Holy Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "[Player] Dragon Communion Lava Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 400110,
+      "Entries": [
+        "[Player] Dragon Communion Ancient Dragon Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 400130,
+      "Entries": [
+        "[Player] Wolf-Head Knight Greatsword"
+      ]
+    },
+    {
+      "ID": 421500,
+      "Entries": [
+        "[Crystal Lizard] Trail"
+      ]
+    },
+    {
+      "ID": 421501,
+      "Entries": [
+        "[Crystal Lizard] Trail Directional On_em Adjustment"
+      ]
+    },
+    {
+      "ID": 421502,
+      "Entries": [
+        "[Crystal Lizard] Trail"
+      ]
+    },
+    {
+      "ID": 430700,
+      "Entries": [
+        "[Man-Eater Hag] Oil Pot Impact"
+      ]
+    },
+    {
+      "ID": 431800,
+      "Entries": [
+        "[Wolf Rider's Wolf] Blizzard Breath Frost"
+      ]
+    },
+    {
+      "ID": 433000,
+      "Entries": [
+        "[Direct Lineage of Marika] Mercury Contact Area"
+      ]
+    },
+    {
+      "ID": 435500,
+      "Entries": [
+        "[Demon's Blood Monk] Blood Swamp"
+      ]
+    },
+    {
+      "ID": 435505,
+      "Entries": [
+        "[Demon's Blood Monk] Blood Pool Spawn"
+      ]
+    },
+    {
+      "ID": 436610,
+      "Entries": [
+        "[Rotten Undead]Poison Spit Translucent"
+      ]
+    },
+    {
+      "ID": 436611,
+      "Entries": [
+        "[Rotten Undead]Poison Spit Multiply"
+      ]
+    },
+    {
+      "ID": 436612,
+      "Entries": [
+        "[Rotten Undead]Poison Spit Large Translucent"
+      ]
+    },
+    {
+      "ID": 436613,
+      "Entries": [
+        "[Rotten Undead]Poison Spit Large Multiply"
+      ]
+    },
+    {
+      "ID": 436620,
+      "Entries": [
+        "[Rotten Undead]Scarlet Rot Spit Translucent"
+      ]
+    },
+    {
+      "ID": 436621,
+      "Entries": [
+        "[Rotten Undead]Scarlet Rot Spit Multiply"
+      ]
+    },
+    {
+      "ID": 436622,
+      "Entries": [
+        "[Rotten Undead]Scarlet Rot Spit Large Translucent"
+      ]
+    },
+    {
+      "ID": 436623,
+      "Entries": [
+        "[Rotten Undead]Scarlet Rot Spit Large Multiply"
+      ]
+    },
+    {
+      "ID": 438000,
+      "Entries": [
+        "[Putrid Knights] Vomit"
+      ]
+    },
+    {
+      "ID": 439500,
+      "Entries": [
+        "[Children of Ghouls] Poison Spray"
+      ]
+    },
+    {
+      "ID": 440200,
+      "Entries": [
+        "[Nazgul Scarab] Venom Spit"
+      ]
+    },
+    {
+      "ID": 440400,
+      "Entries": [
+        "[Slug] Lava Spit"
+      ]
+    },
+    {
+      "ID": 440401,
+      "Entries": [
+        "[Slug] Corrosion Spit"
+      ]
+    },
+    {
+      "ID": 440402,
+      "Entries": [
+        "[Slug] Slowing Slime Spit"
+      ]
+    },
+    {
+      "ID": 441300,
+      "Entries": [
+        "[Gray Demi-Human King] Blood (Character Use)"
+      ]
+    },
+    {
+      "ID": 441301,
+      "Entries": [
+        "[Gray Demi-Human King] Blood (Map Use)"
+      ]
+    },
+    {
+      "ID": 441908,
+      "Entries": [
+        "[Scarab] Hide and Seek Decal Skill Color (Iron)"
+      ]
+    },
+    {
+      "ID": 441909,
+      "Entries": [
+        "[Scarab] Hide and Seek Decal Sorcery Color (Teal)"
+      ]
+    },
+    {
+      "ID": 441910,
+      "Entries": [
+        "[Scarab] Hide and Seek Decal Faith Color (Tarnished Gold)"
+      ]
+    },
+    {
+      "ID": 442200,
+      "Entries": [
+        "[Land Octopus]Egg Spit Ground Remnant"
+      ]
+    },
+    {
+      "ID": 442201,
+      "Entries": [
+        "[Land Octopus]Egg Spit Ground Remnant"
+      ]
+    },
+    {
+      "ID": 442202,
+      "Entries": [
+        "[Land Octopus]While Moving Drag Mark"
+      ]
+    },
+    {
+      "ID": 442203,
+      "Entries": [
+        "[Land Octopus]While Moving Dripping"
+      ]
+    },
+    {
+      "ID": 442204,
+      "Entries": [
+        "[Land Octopus]While Moving Splash"
+      ]
+    },
+    {
+      "ID": 442600,
+      "Entries": [
+        "[Watchdog Golem] Fire Breath Scorch Mark"
+      ]
+    },
+    {
+      "ID": 442601,
+      "Entries": [
+        "[Watchdog Golem] Frost Breath Frost"
+      ]
+    },
+    {
+      "ID": 442701,
+      "Entries": [
+        "[Arena Old Lion] Cold Breath Frost"
+      ]
+    },
+    {
+      "ID": 442800,
+      "Entries": [
+        "[Jar Ant] Full Belly Death Liquid"
+      ]
+    },
+    {
+      "ID": 442801,
+      "Entries": [
+        "[Jar Ant] Large Belly Death Liquid (Special Effect 15352)"
+      ]
+    },
+    {
+      "ID": 442802,
+      "Entries": [
+        "[Jar Ant] Extra Large Belly Death Liquid (Special Effect 15353)"
+      ]
+    },
+    {
+      "ID": 443001,
+      "Entries": [
+        "[Grave Robber Noble (Spirit)] Footprint Trace Foot Shape Expression"
+      ]
+    },
+    {
+      "ID": 443200,
+      "Entries": [
+        "[Marika Slime] On Death Ground Residual Decal"
+      ]
+    },
+    {
+      "ID": 443400,
+      "Entries": [
+        "[Pumpkin Head] Juice"
+      ]
+    },
+    {
+      "ID": 443800,
+      "Entries": [
+        "[Apostle of Destruction (Fire Monk)] Thorn Storm_Wave 1 Blood"
+      ]
+    },
+    {
+      "ID": 443801,
+      "Entries": [
+        "[Apostle of Destruction (Fire Monk)] Thorn Storm_Wave 2 Blood"
+      ]
+    },
+    {
+      "ID": 443802,
+      "Entries": [
+        "[Apostle of Destruction (Fire Monk)] Thorn Storm_Wave 3 Blood"
+      ]
+    },
+    {
+      "ID": 443803,
+      "Entries": [
+        "[Apostle of Destruction (Fire Monk)]Thorn Storm_Third Wave Blood Auxiliary"
+      ]
+    },
+    {
+      "ID": 443810,
+      "Entries": [
+        "[Apostle of Destruction (Fire Monk)] Thorn Sword Homing Blood"
+      ]
+    },
+    {
+      "ID": 443812,
+      "Entries": [
+        "[Apostle of Destruction (Fire Monk)] Thorn Sword Activate Blood"
+      ]
+    },
+    {
+      "ID": 443850,
+      "Entries": [
+        "[Apostle of Destruction (Poison Rot)] Poison Rot Magic Splash"
+      ]
+    },
+    {
+      "ID": 445000,
+      "Entries": [
+        "[Wyvern] Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 445002,
+      "Entries": [
+        "[Wyvern Magic] Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 445004,
+      "Entries": [
+        "[Wyvern Freeze] Breath Ice Mark"
+      ]
+    },
+    {
+      "ID": 445006,
+      "Entries": [
+        "[Wyvern Strongest] Breath Burn Mark"
+      ]
+    },
+    {
+      "ID": 445100,
+      "Entries": [
+        "[Guardian Lineage] Fire Breath a3010・3028"
+      ]
+    },
+    {
+      "ID": 445101,
+      "Entries": [
+        "[Guardian Lineage] Fire Breath a3022"
+      ]
+    },
+    {
+      "ID": 445700,
+      "Entries": [
+        "[Deracine (Male)] Fluid Pool"
+      ]
+    },
+    {
+      "ID": 445800,
+      "Entries": [
+        "[Deracine (Female)] Fluid Pool"
+      ]
+    },
+    {
+      "ID": 446000,
+      "Entries": [
+        "[Troll] Magic Fire Pot Burn Mark"
+      ]
+    },
+    {
+      "ID": 446400,
+      "Entries": [
+        "[Snake Spirit] Throw PC fall Burn remains s"
+      ]
+    },
+    {
+      "ID": 446600,
+      "Entries": [
+        "[High Road Guardian] Lava Residue"
+      ]
+    },
+    {
+      "ID": 446601,
+      "Entries": [
+        "[High Road Guardian] Lava Residue Large"
+      ]
+    },
+    {
+      "ID": 446602,
+      "Entries": [
+        "[High Road Guardian] Fire Breath"
+      ]
+    },
+    {
+      "ID": 447500,
+      "Entries": [
+        "[Grafted King] Red-Hot Small"
+      ]
+    },
+    {
+      "ID": 447501,
+      "Entries": [
+        "[Grafted King] Red-Hot Large"
+      ]
+    },
+    {
+      "ID": 447502,
+      "Entries": [
+        "[Grafted King] Throw PC Fall Remnant Flames s"
+      ]
+    },
+    {
+      "ID": 447600,
+      "Entries": [
+        "[Giant] Super Large Fireball"
+      ]
+    },
+    {
+      "ID": 447601,
+      "Entries": [
+        "[Giant] Willed Fireball"
+      ]
+    },
+    {
+      "ID": 447602,
+      "Entries": [
+        "[Giant] Fire Storm"
+      ]
+    },
+    {
+      "ID": 447603,
+      "Entries": [
+        "[Giant] Thin Projected Breath"
+      ]
+    },
+    {
+      "ID": 447604,
+      "Entries": [
+        "[Giant] Gabba Breath"
+      ]
+    },
+    {
+      "ID": 447605,
+      "Entries": [
+        "[Giant] Floating Fireball Rain"
+      ]
+    },
+    {
+      "ID": 447606,
+      "Entries": [
+        "[Giant] Breath After Elbow"
+      ]
+    },
+    {
+      "ID": 448000,
+      "Entries": [
+        "[Greater Demon] Falling Blood"
+      ]
+    },
+    {
+      "ID": 448100,
+      "Entries": [
+        "[World Tree Demon Rot] Hip Drop Rot Fluid"
+      ]
+    },
+    {
+      "ID": 449000,
+      "Entries": [
+        "[Living Jar] Liquid Ground Residue on Death"
+      ]
+    },
+    {
+      "ID": 449001,
+      "Entries": [
+        "[Living Jar] Liquid Ground Residue on Death Small"
+      ]
+    },
+    {
+      "ID": 449100,
+      "Entries": [
+        "[King's Mole] Lava Breath Scorch Mark"
+      ]
+    },
+    {
+      "ID": 471000,
+      "Entries": [
+        "[Buddy Unique] Freeze Effect (a3008) Small"
+      ]
+    },
+    {
+      "ID": 471001,
+      "Entries": [
+        "[Buddy Unique] Freeze Effect (a3008) Large"
+      ]
+    },
+    {
+      "ID": 471002,
+      "Entries": [
+        "[Buddy Unique] Freeze Effect (a3009)"
+      ]
+    },
+    {
+      "ID": 471003,
+      "Entries": [
+        "[Buddy Unique] Freeze Effect (a3010)"
+      ]
+    },
+    {
+      "ID": 610001,
+      "Entries": [
+        "[s10_00_0030][cut0148] Face Slam Blood Spatter"
+      ]
+    },
+    {
+      "ID": 610002,
+      "Entries": [
+        "[s10_00_0030][cut0110] Blood"
+      ]
+    },
+    {
+      "ID": 610003,
+      "Entries": [
+        "[s10_00_0030][cut0110] Cut Blood Spatter"
+      ]
+    },
+    {
+      "ID": 610004,
+      "Entries": [
+        "[s10_00_0030][cut0160] Cut Blood Spatter"
+      ]
+    },
+    {
+      "ID": 611520,
+      "Entries": [
+        "[s11_05_0020][cut0061・65・86] Godfrey HU Body War Paint Decal (Front Emphasis)"
+      ]
+    },
+    {
+      "ID": 611521,
+      "Entries": [
+        "[s11_05_0020][cut0061・65] Bloodied Beast Decal (Head)"
+      ]
+    },
+    {
+      "ID": 611522,
+      "Entries": [
+        "[s11_05_0020][cut0075] Blood Decal on Beast Arm Asset"
+      ]
+    },
+    {
+      "ID": 611523,
+      "Entries": [
+        "[s11_05_0020][cut0061・65] Bloodied Beast Decal (Arm)"
+      ]
+    },
+    {
+      "ID": 611524,
+      "Entries": [
+        "[s11_05_0020][cut0085] Godfrey HU Body War Paint Decal (Back Emphasis)"
+      ]
+    },
+    {
+      "ID": 611701,
+      "Entries": [
+        "[s19_00_0032][cut70] Burn Mark"
+      ]
+    },
+    {
+      "ID": 613001,
+      "Entries": [
+        "[s13_00_0040][cut70] Blood on Surrounding Ground"
+      ]
+    },
+    {
+      "ID": 619000,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint A"
+      ]
+    },
+    {
+      "ID": 619001,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint A(+30)"
+      ]
+    },
+    {
+      "ID": 619002,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint A(-30)"
+      ]
+    },
+    {
+      "ID": 619003,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint B"
+      ]
+    },
+    {
+      "ID": 619004,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint B(+30)"
+      ]
+    },
+    {
+      "ID": 619005,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint B(-30)"
+      ]
+    },
+    {
+      "ID": 619006,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint C"
+      ]
+    },
+    {
+      "ID": 619007,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint C(+30)"
+      ]
+    },
+    {
+      "ID": 619008,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint C(-30)"
+      ]
+    },
+    {
+      "ID": 619010,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint A"
+      ]
+    },
+    {
+      "ID": 619011,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint B"
+      ]
+    },
+    {
+      "ID": 619012,
+      "Entries": [
+        "[s19_00_0030][cut70] Fingerprint C"
+      ]
+    },
+    {
+      "ID": 660520,
+      "Entries": [
+        "[s60_52_0010][cut0040] Cut Blood Spatter"
+      ]
+    },
+    {
+      "ID": 810001,
+      "Entries": [
+        "[Throw] PC→Enemy Stab Bleed PC Apply (Character)"
+      ]
+    },
+    {
+      "ID": 810101,
+      "Entries": [
+        "[Throw] PC→Enemy Stab Bleed Enemy Apply (Character)"
+      ]
+    },
+    {
+      "ID": 811201,
+      "Entries": [
+        "[Throw] PC→Enemy Stab Bleed Map (Map)"
+      ]
+    },
+    {
+      "ID": 811211,
+      "Entries": [
+        "[Throw] PC→Enemy Pull Bleed Map (Map)"
+      ]
+    },
+    {
+      "ID": 820001,
+      "Entries": [
+        "[Throw] Enemy→PC Stab Bleed PC Apply (Character)"
+      ]
+    },
+    {
+      "ID": 820101,
+      "Entries": [
+        "[Throw] Enemy→PC Stab Bleed(Medium) Enemy Apply (Character)"
+      ]
+    },
+    {
+      "ID": 821200,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Heavy Bleed Map (Small)"
+      ]
+    },
+    {
+      "ID": 821201,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Heavy Bleed Map (Medium)"
+      ]
+    },
+    {
+      "ID": 821210,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Droplet Heavy Bleed Map (Small)"
+      ]
+    },
+    {
+      "ID": 821211,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Droplet Heavy Bleed Map (Medium)"
+      ]
+    },
+    {
+      "ID": 821220,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Sparse Bleed Map (Small)"
+      ]
+    },
+    {
+      "ID": 821221,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Sparse Bleed Map (Medium)"
+      ]
+    },
+    {
+      "ID": 100300020,
+      "Entries": [
+        "NPC Event_Map Placed Bloodstain[MILD]"
+      ]
+    },
+    {
+      "ID": 100360000,
+      "Entries": [
+        "AEG110_243_Ranni Blood Stain Pre-Decal[MILD]"
+      ]
+    },
+    {
+      "ID": 100400010,
+      "Entries": [
+        "[Player] Magic Thorn Storm Blood 1st Wave [MILD]"
+      ]
+    },
+    {
+      "ID": 100400011,
+      "Entries": [
+        "[Player] Magic Thorn Storm Blood 2nd Wave [MILD]"
+      ]
+    },
+    {
+      "ID": 100400012,
+      "Entries": [
+        "[Player] Magic Thorn Storm Blood 3rd Wave [MILD]"
+      ]
+    },
+    {
+      "ID": 100435505,
+      "Entries": [
+        "[Demon's Blood Monk] Blood Pool Spawn [Blood MILD]"
+      ]
+    },
+    {
+      "ID": 100800001,
+      "Entries": [
+        "[Throw] PC→Enemy Stab Bleed PC Apply (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100801001,
+      "Entries": [
+        "[Throw] PC→Enemy Stab Bleed Enemy Apply (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100812001,
+      "Entries": [
+        "[Throw] PC→Enemy Stab Bleed Map (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100812011,
+      "Entries": [
+        "[Throw] PC→Enemy Pull Bleed Map (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100820001,
+      "Entries": [
+        "[Throw] Enemy→PC Stab Bleed PC Apply (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100820101,
+      "Entries": [
+        "[Throw] Enemy→PC Stab Bleed(Medium) Enemy Apply (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100821200,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Heavy Bleed Map (Small) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100821201,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Heavy Bleed Map (Medium) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100821210,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Droplet Heavy Bleed Map (Small) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100821211,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Droplet Heavy Bleed Map (Medium) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100821220,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Sparse Bleed Map (Small) Blood MILD"
+      ]
+    },
+    {
+      "ID": 100821221,
+      "Entries": [
+        "[Throw] Enemy→PC Directly Below Sparse Bleed Map (Medium) Blood MILD"
+      ]
+    },
+    {
+      "ID": 300003101,
+      "Entries": [
+        "003：Dirt Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300003111,
+      "Entries": [
+        "003：Dirt Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300003121,
+      "Entries": [
+        "043：Dirt Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 300005101,
+      "Entries": [
+        "005：Grass Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300005111,
+      "Entries": [
+        "005：Grass Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300005121,
+      "Entries": [
+        "005：Grass Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 300013101,
+      "Entries": [
+        "013：Sand Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300013111,
+      "Entries": [
+        "013：Sand Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300013121,
+      "Entries": [
+        "013：Sand Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 300021101,
+      "Entries": [
+        "021：Water(Ankle) Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300021111,
+      "Entries": [
+        "021：Water(Ankle) Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300021121,
+      "Entries": [
+        "021：Water Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 300043100,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Small"
+      ]
+    },
+    {
+      "ID": 300043101,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300043102,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Large"
+      ]
+    },
+    {
+      "ID": 300043103,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Extra Large"
+      ]
+    },
+    {
+      "ID": 300043104,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Extra Extra Large"
+      ]
+    },
+    {
+      "ID": 300043105,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Extra Extra Extra Large"
+      ]
+    },
+    {
+      "ID": 300043106,
+      "Entries": [
+        "043：Snow Bare Feet Footprint Extra Extra Extra Extra Large"
+      ]
+    },
+    {
+      "ID": 300043111,
+      "Entries": [
+        "043：Snow Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300043121,
+      "Entries": [
+        "043：Snow Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 300044101,
+      "Entries": [
+        "044：Mud Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300044111,
+      "Entries": [
+        "044：Mud Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300044121,
+      "Entries": [
+        "044：Mud Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 300045101,
+      "Entries": [
+        "045：Ice Bare Feet Footprint Medium (PC)"
+      ]
+    },
+    {
+      "ID": 300045111,
+      "Entries": [
+        "045：Ice Shoes_Normal Size Footprint"
+      ]
+    },
+    {
+      "ID": 300045121,
+      "Entries": [
+        "044：Mud Generic Square_Normal Size Footprint(PC Horse)"
+      ]
+    },
+    {
+      "ID": 600101000,
+      "Entries": [
+        "[Attack] Mercury Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600101001,
+      "Entries": [
+        "[Attack] Mercury Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600101002,
+      "Entries": [
+        "[Attack] Mercury Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600101003,
+      "Entries": [
+        "[Attack] Mercury Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600101004,
+      "Entries": [
+        "[Attack] Mercury Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600101100,
+      "Entries": [
+        "[Attack] Mercury Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600101101,
+      "Entries": [
+        "[Attack] Mercury Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600101102,
+      "Entries": [
+        "[Attack] Mercury Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600101103,
+      "Entries": [
+        "[Attack] Mercury Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600101104,
+      "Entries": [
+        "[Attack] Mercury Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600109000,
+      "Entries": [
+        "[Attack]Blood Flesh Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600109001,
+      "Entries": [
+        "[Attack]Blood Flesh Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600109002,
+      "Entries": [
+        "[Attack]Blood Flesh Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600109003,
+      "Entries": [
+        "[Attack]Blood Flesh Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600109004,
+      "Entries": [
+        "[Attack]Blood Flesh Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600109100,
+      "Entries": [
+        "[Attack]Blood Flesh Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600109101,
+      "Entries": [
+        "[Attack]Blood Flesh Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600109102,
+      "Entries": [
+        "[Attack]Blood Flesh Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600109103,
+      "Entries": [
+        "[Attack]Blood Flesh Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600109104,
+      "Entries": [
+        "[Attack]Blood Flesh Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600110000,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600110001,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600110002,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600110003,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600110004,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600110100,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600110101,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600110102,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600110103,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600110104,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600111000,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600111001,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600111002,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600111003,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600111004,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600111100,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600111101,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600111102,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600111103,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600111104,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600118000,
+      "Entries": [
+        "[Attack] Mud Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600118001,
+      "Entries": [
+        "[Attack] Mud Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600118002,
+      "Entries": [
+        "[Attack] Mud Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600118003,
+      "Entries": [
+        "[Attack] Mud Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600118004,
+      "Entries": [
+        "[Attack] Mud Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600118100,
+      "Entries": [
+        "[Attack] Mud Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600118101,
+      "Entries": [
+        "[Attack] Mud Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600118102,
+      "Entries": [
+        "[Attack] Mud Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600118103,
+      "Entries": [
+        "[Attack] Mud Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600118104,
+      "Entries": [
+        "[Attack] Mud Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600119000,
+      "Entries": [
+        "[Attack] Lava_Weak Point Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600119001,
+      "Entries": [
+        "[Attack] Lava_Weak Point Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600119002,
+      "Entries": [
+        "[Attack] Lava_Weak Point Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600119003,
+      "Entries": [
+        "[Attack] Lava_Weak Point Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600119004,
+      "Entries": [
+        "[Attack] Lava_Weak Point Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600119100,
+      "Entries": [
+        "[Attack] Lava_Weak Point Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600119101,
+      "Entries": [
+        "[Attack] Lava_Weak Point Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600119102,
+      "Entries": [
+        "[Attack] Lava_Weak Point Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600119103,
+      "Entries": [
+        "[Attack] Lava_Weak Point Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600119104,
+      "Entries": [
+        "[Attack] Lava_Weak Point Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600120000,
+      "Entries": [
+        "[Attack] Lava Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600120001,
+      "Entries": [
+        "[Attack] Lava Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600120002,
+      "Entries": [
+        "[Attack] Lava Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600120003,
+      "Entries": [
+        "[Attack] Lava Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600120004,
+      "Entries": [
+        "[Attack] Lava Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600120100,
+      "Entries": [
+        "[Attack] Lava Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600120101,
+      "Entries": [
+        "[Attack] Lava Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600120102,
+      "Entries": [
+        "[Attack] Lava Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600120103,
+      "Entries": [
+        "[Attack] Lava Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600120104,
+      "Entries": [
+        "[Attack] Lava Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600121000,
+      "Entries": [
+        "[Attack]Spirit Front(For Character)"
+      ]
+    },
+    {
+      "ID": 600121001,
+      "Entries": [
+        "[Attack]Spirit Upper(For Character)"
+      ]
+    },
+    {
+      "ID": 600121002,
+      "Entries": [
+        "[Attack]Spirit Lower(For Character)"
+      ]
+    },
+    {
+      "ID": 600121003,
+      "Entries": [
+        "[Attack]Spirit Left(For Character)"
+      ]
+    },
+    {
+      "ID": 600121004,
+      "Entries": [
+        "[Attack]Spirit Right(For Character)"
+      ]
+    },
+    {
+      "ID": 600121100,
+      "Entries": [
+        "[Attack]Spirit Front(For Map)"
+      ]
+    },
+    {
+      "ID": 600121101,
+      "Entries": [
+        "[Attack]Spirit Upper(For Map)"
+      ]
+    },
+    {
+      "ID": 600121102,
+      "Entries": [
+        "[Attack]Spirit Lower(For Map)"
+      ]
+    },
+    {
+      "ID": 600121103,
+      "Entries": [
+        "[Attack]Spirit Left(For Map)"
+      ]
+    },
+    {
+      "ID": 600121104,
+      "Entries": [
+        "[Attack]Spirit Right(For Map)"
+      ]
+    },
+    {
+      "ID": 600126000,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Front(For Character)"
+      ]
+    },
+    {
+      "ID": 600126001,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Upper(For Character)"
+      ]
+    },
+    {
+      "ID": 600126002,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Lower(For Character)"
+      ]
+    },
+    {
+      "ID": 600126003,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Left(For Character)"
+      ]
+    },
+    {
+      "ID": 600126004,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Right(For Character)"
+      ]
+    },
+    {
+      "ID": 600126100,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Front(For Map)"
+      ]
+    },
+    {
+      "ID": 600126101,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Upper(For Map)"
+      ]
+    },
+    {
+      "ID": 600126102,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Lower(For Map)"
+      ]
+    },
+    {
+      "ID": 600126103,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Left(For Map)"
+      ]
+    },
+    {
+      "ID": 600126104,
+      "Entries": [
+        "[Attack]Spirit_Weak Point Right(For Map)"
+      ]
+    },
+    {
+      "ID": 600145000,
+      "Entries": [
+        "[Attack] Bodily Fluid Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600145001,
+      "Entries": [
+        "[Attack] Bodily Fluid Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600145002,
+      "Entries": [
+        "[Attack] Bodily Fluid Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600145003,
+      "Entries": [
+        "[Attack] Bodily Fluid Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600145004,
+      "Entries": [
+        "[Attack] Bodily Fluid Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600145100,
+      "Entries": [
+        "[Attack] Bodily Fluid Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600145101,
+      "Entries": [
+        "[Attack] Bodily Fluid Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600145102,
+      "Entries": [
+        "[Attack] Bodily Fluid Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600145103,
+      "Entries": [
+        "[Attack] Bodily Fluid Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600145104,
+      "Entries": [
+        "[Attack] Bodily Fluid Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600146000,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600146001,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600146002,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600146003,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600146004,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600146100,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600146101,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600146102,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600146103,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600146104,
+      "Entries": [
+        "[Attack] Bodily Fluid_Weak Point Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600147000,
+      "Entries": [
+        "[Attack] Rot Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600147001,
+      "Entries": [
+        "[Attack] Rot Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600147002,
+      "Entries": [
+        "[Attack] Rot Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600147003,
+      "Entries": [
+        "[Attack] Rot Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600147004,
+      "Entries": [
+        "[Attack] Rot Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600147100,
+      "Entries": [
+        "[Attack] Rot Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600147101,
+      "Entries": [
+        "[Attack] Rot Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600147102,
+      "Entries": [
+        "[Attack] Rot Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600147103,
+      "Entries": [
+        "[Attack] Rot Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600147104,
+      "Entries": [
+        "[Attack] Rot Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600148000,
+      "Entries": [
+        "[Attack] Rot_Weak Point Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600148001,
+      "Entries": [
+        "[Attack] Rot_Weak Point Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600148002,
+      "Entries": [
+        "[Attack] Rot_Weak Point Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600148003,
+      "Entries": [
+        "[Attack] Rot_Weak Point Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600148004,
+      "Entries": [
+        "[Attack] Rot_Weak Point Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600148100,
+      "Entries": [
+        "[Attack] Rot_Weak Point Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600148101,
+      "Entries": [
+        "[Attack] Rot_Weak Point Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600148102,
+      "Entries": [
+        "[Attack] Rot_Weak Point Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600148103,
+      "Entries": [
+        "[Attack] Rot_Weak Point Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600148104,
+      "Entries": [
+        "[Attack] Rot_Weak Point Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600169000,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600169001,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600169002,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600169003,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600169004,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600169100,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600169101,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600169102,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600169103,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600169104,
+      "Entries": [
+        "[Attack] Rune (Crumbling Marika) Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600170000,
+      "Entries": [
+        "[Attack]Blood Disease Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600170001,
+      "Entries": [
+        "[Attack]Blood Disease Up (For Character)"
+      ]
+    },
+    {
+      "ID": 600170002,
+      "Entries": [
+        "[Attack]Blood Disease Down (For Character)"
+      ]
+    },
+    {
+      "ID": 600170003,
+      "Entries": [
+        "[Attack]Blood Disease Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600170004,
+      "Entries": [
+        "[Attack]Blood Disease Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600170100,
+      "Entries": [
+        "[Attack]Blood Disease Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600170101,
+      "Entries": [
+        "[Attack]Blood Disease Up (For Map)"
+      ]
+    },
+    {
+      "ID": 600170102,
+      "Entries": [
+        "[Attack]Blood Disease Down (For Map)"
+      ]
+    },
+    {
+      "ID": 600170103,
+      "Entries": [
+        "[Attack]Blood Disease Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600170104,
+      "Entries": [
+        "[Attack]Blood Disease Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600171000,
+      "Entries": [
+        "[Attack] Scale Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600171001,
+      "Entries": [
+        "[Attack] Scale Upper (Character)"
+      ]
+    },
+    {
+      "ID": 600171002,
+      "Entries": [
+        "[Attack] Scale Lower (Character)"
+      ]
+    },
+    {
+      "ID": 600171003,
+      "Entries": [
+        "[Attack] Scale Left (Character)"
+      ]
+    },
+    {
+      "ID": 600171004,
+      "Entries": [
+        "[Attack] Scale Right (Character)"
+      ]
+    },
+    {
+      "ID": 600171100,
+      "Entries": [
+        "[Attack] Scale Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600171101,
+      "Entries": [
+        "[Attack] Scale Upper (Map)"
+      ]
+    },
+    {
+      "ID": 600171102,
+      "Entries": [
+        "[Attack] Scale Lower (Map)"
+      ]
+    },
+    {
+      "ID": 600171103,
+      "Entries": [
+        "[Attack] Scale Left (Map)"
+      ]
+    },
+    {
+      "ID": 600171104,
+      "Entries": [
+        "[Attack] Scale Right (Map)"
+      ]
+    },
+    {
+      "ID": 600172000,
+      "Entries": [
+        "[Attack] Scale Weak Point Front (For Character)"
+      ]
+    },
+    {
+      "ID": 600172001,
+      "Entries": [
+        "[Attack] Scale Weak Point Upper (Character)"
+      ]
+    },
+    {
+      "ID": 600172002,
+      "Entries": [
+        "[Attack] Scale Weak Point Lower (Character)"
+      ]
+    },
+    {
+      "ID": 600172003,
+      "Entries": [
+        "[Attack] Scale Weak Point Left (For Character)"
+      ]
+    },
+    {
+      "ID": 600172004,
+      "Entries": [
+        "[Attack] Scale Weak Point Right (For Character)"
+      ]
+    },
+    {
+      "ID": 600172100,
+      "Entries": [
+        "[Attack] Scale Weak Point Front (For Map)"
+      ]
+    },
+    {
+      "ID": 600172101,
+      "Entries": [
+        "[Attack] Scale Weak Point Upper (Map)"
+      ]
+    },
+    {
+      "ID": 600172102,
+      "Entries": [
+        "[Attack] Scale Weak Point Lower (Map)"
+      ]
+    },
+    {
+      "ID": 600172103,
+      "Entries": [
+        "[Attack] Scale Weak Point Left (For Map)"
+      ]
+    },
+    {
+      "ID": 600172104,
+      "Entries": [
+        "[Attack] Scale Weak Point Right (For Map)"
+      ]
+    },
+    {
+      "ID": 600173000,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Front (Character)"
+      ]
+    },
+    {
+      "ID": 600173001,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Upper (Character)"
+      ]
+    },
+    {
+      "ID": 600173002,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Lower (Character)"
+      ]
+    },
+    {
+      "ID": 600173003,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Left (Character)"
+      ]
+    },
+    {
+      "ID": 600173004,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Right (Character)"
+      ]
+    },
+    {
+      "ID": 600173100,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Front (Map)"
+      ]
+    },
+    {
+      "ID": 600173101,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Upper (Map)"
+      ]
+    },
+    {
+      "ID": 600173102,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Lower (Map)"
+      ]
+    },
+    {
+      "ID": 600173103,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Left (Map)"
+      ]
+    },
+    {
+      "ID": 600173104,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Right (Map)"
+      ]
+    },
+    {
+      "ID": 601109000,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Front (For Character)"
+      ]
+    },
+    {
+      "ID": 601109001,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Up (For Character)"
+      ]
+    },
+    {
+      "ID": 601109002,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Down (For Character)"
+      ]
+    },
+    {
+      "ID": 601109003,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Left (For Character)"
+      ]
+    },
+    {
+      "ID": 601109004,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Right (For Character)"
+      ]
+    },
+    {
+      "ID": 601109100,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Front (For Map)"
+      ]
+    },
+    {
+      "ID": 601109101,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Up (For Map)"
+      ]
+    },
+    {
+      "ID": 601109102,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Down (For Map)"
+      ]
+    },
+    {
+      "ID": 601109103,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Left (For Map)"
+      ]
+    },
+    {
+      "ID": 601109104,
+      "Entries": [
+        "[Attack]Blood Homunculus Flesh Right (For Map)"
+      ]
+    },
+    {
+      "ID": 700109000,
+      "Entries": [
+        "[Attack]Blood Flesh Front (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109001,
+      "Entries": [
+        "[Attack]Blood Flesh Up (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109002,
+      "Entries": [
+        "[Attack]Blood Flesh Down (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109003,
+      "Entries": [
+        "[Attack]Blood Flesh Left (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109004,
+      "Entries": [
+        "[Attack]Blood Flesh Right (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109100,
+      "Entries": [
+        "[Attack]Blood Flesh Front (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109101,
+      "Entries": [
+        "[Attack]Blood Flesh Up (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109102,
+      "Entries": [
+        "[Attack]Blood Flesh Down (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109103,
+      "Entries": [
+        "[Attack]Blood Flesh Left (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700109104,
+      "Entries": [
+        "[Attack]Blood Flesh Right (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110000,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Front (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110001,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Up (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110002,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Down (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110003,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Left (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110004,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Right (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110100,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Front (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110101,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Up (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110102,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Down (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110103,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Left (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700110104,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point Right (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111000,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Front (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111001,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Up (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111002,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Down (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111003,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Left (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111004,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Right (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111100,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Front (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111101,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Up (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111102,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Down (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111103,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Left (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700111104,
+      "Entries": [
+        "[Attack]Blood Flesh Weak Point (Large) Right (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170000,
+      "Entries": [
+        "[Attack]Blood Disease Front (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170001,
+      "Entries": [
+        "[Attack]Blood Disease Up (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170002,
+      "Entries": [
+        "[Attack]Blood Disease Down (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170003,
+      "Entries": [
+        "[Attack]Blood Disease Left (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170004,
+      "Entries": [
+        "[Attack]Blood Disease Right (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170100,
+      "Entries": [
+        "[Attack]Blood Disease Front (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170101,
+      "Entries": [
+        "[Attack]Blood Disease Up (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170102,
+      "Entries": [
+        "[Attack]Blood Disease Down (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170103,
+      "Entries": [
+        "[Attack]Blood Disease Left (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700170104,
+      "Entries": [
+        "[Attack]Blood Disease Right (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171000,
+      "Entries": [
+        "[Attack] Scale Front (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171001,
+      "Entries": [
+        "[Attack] Scale Upper (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171002,
+      "Entries": [
+        "[Attack] Scale Lower (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171003,
+      "Entries": [
+        "[Attack] Scale Left (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171004,
+      "Entries": [
+        "[Attack] Scale Right (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171100,
+      "Entries": [
+        "[Attack] Scale Front (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171101,
+      "Entries": [
+        "[Attack] Scale Upper (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171102,
+      "Entries": [
+        "[Attack] Scale Lower (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171103,
+      "Entries": [
+        "[Attack] Scale Left (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700171104,
+      "Entries": [
+        "[Attack] Scale Right (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172000,
+      "Entries": [
+        "[Attack] Scale Weak Point Front (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172001,
+      "Entries": [
+        "[Attack] Scale Weak Point Upper (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172002,
+      "Entries": [
+        "[Attack] Scale Weak Point Lower (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172003,
+      "Entries": [
+        "[Attack] Scale Weak Point Left (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172004,
+      "Entries": [
+        "[Attack] Scale Weak Point Right (For Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172100,
+      "Entries": [
+        "[Attack] Scale Weak Point Front (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172101,
+      "Entries": [
+        "[Attack] Scale Weak Point Upper (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172102,
+      "Entries": [
+        "[Attack] Scale Weak Point Lower (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172103,
+      "Entries": [
+        "[Attack] Scale Weak Point Left (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700172104,
+      "Entries": [
+        "[Attack] Scale Weak Point Right (For Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173000,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Front (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173001,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Upper (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173002,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Lower (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173003,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Left (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173004,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Right (Character) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173100,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Front (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173101,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Upper (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173102,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Lower (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173103,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Left (Map) Blood MILD"
+      ]
+    },
+    {
+      "ID": 700173104,
+      "Entries": [
+        "[Attack] Scale Weak Point(Large) Right (Map) Blood MILD"
+      ]
+    }
+  ]
+}

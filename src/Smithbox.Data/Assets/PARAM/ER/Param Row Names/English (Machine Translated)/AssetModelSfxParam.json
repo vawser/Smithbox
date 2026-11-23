@@ -4,31 +4,31 @@
     {
       "ID": 3011000,
       "Entries": [
-        "AEG003_011 Fire Monk Brazier"
+        "AEG003_011 Fire Monk Bonfire"
       ]
     },
     {
       "ID": 3012000,
       "Entries": [
-        "AEG003_012 Fire Monk Brazier"
+        "AEG003_012 Fire Monk Bonfire"
       ]
     },
     {
       "ID": 3071000,
       "Entries": [
-        "AEG003_071 Bonfire"
+        "AEG003_071 Site of Grace"
       ]
     },
     {
       "ID": 3071001,
       "Entries": [
-        "AEG003_071 Bonfire (With Shadow)"
+        "AEG003_071 Site of Grace (With Shadow)"
       ]
     },
     {
       "ID": 3071002,
       "Entries": [
-        "AEG003_071 Bonfire (Enhanced Point Light)"
+        "AEG003_071 Site of Grace (Point Light Enhancement)"
       ]
     },
     {
@@ -40,55 +40,55 @@
     {
       "ID": 3302000,
       "Entries": [
-        "AEG003_302 GR Proto Curse Dummy Obj (Weak)"
+        "AEG003_302 GR Prototype Curse Dummy Obj (Weak)"
       ]
     },
     {
       "ID": 3303000,
       "Entries": [
-        "AEG003_303 GR Proto Curse Dummy Obj (Weak)"
+        "AEG003_303 GR Prototype Curse Dummy Obj (Weak)"
       ]
     },
     {
       "ID": 3305000,
       "Entries": [
-        "AEG003_305 GR Proto Curse Dummy Obj (Weak)"
+        "AEG003_305 GR Prototype Curse Dummy Obj (Weak)"
       ]
     },
     {
       "ID": 3306000,
       "Entries": [
-        "AEG003_306 GR Proto Curse Dummy Obj (Strong/Riverbank)"
+        "AEG003_306 GR Prototype Curse Dummy Obj (Strong/Riverbed)"
       ]
     },
     {
       "ID": 3307000,
       "Entries": [
-        "AEG003_307 GR Proto Curse Dummy Obj (Strong/Forest)"
+        "AEG003_307 GR Prototype Curse Dummy Obj (Strong/Forest)"
       ]
     },
     {
       "ID": 3321000,
       "Entries": [
-        "AEG003_321 [GR]Cursed Giant Corpse"
+        "AEG003_321 [GR] Cursed Giant Corpse"
       ]
     },
     {
       "ID": 3322000,
       "Entries": [
-        "AEG003_322 [GR]Cursed Giant Corpse"
+        "AEG003_322 [GR] Cursed Giant Corpse"
       ]
     },
     {
       "ID": 3323000,
       "Entries": [
-        "AEG003_323 Ruins Street Lamp (Warm)"
+        "AEG003_323 Ruins Street Lamp (Warm Color)"
       ]
     },
     {
       "ID": 3323001,
       "Entries": [
-        "AEG003_323 Ruins Street Lamp (Blue-White)"
+        "AEG003_323 Ruins Street Lamp (Blue-White Type)"
       ]
     },
     {
@@ -112,19 +112,19 @@
     {
       "ID": 3361000,
       "Entries": [
-        "AEG003_361 Campfire 50% (Cave)"
+        "AEG003_361 Campfire 50%(For Cave)"
       ]
     },
     {
       "ID": 3361001,
       "Entries": [
-        "AEG003_361 Campfire 50% (Cave_With Shadow)"
+        "AEG003_361 Campfire 50%(For Cave_With Shadow)"
       ]
     },
     {
       "ID": 3361002,
       "Entries": [
-        "AEG003_361 Campfire 50% (Cave Entrance)"
+        "AEG003_361 Campfire 50%(For Cave Entrance)"
       ]
     },
     {
@@ -148,19 +148,19 @@
     {
       "ID": 3418000,
       "Entries": [
-        "AEG003_418 Tower_Fire"
+        "AEG003_418 Tower_Flame"
       ]
     },
     {
       "ID": 3405000,
       "Entries": [
-        "AEG003_405 Lantern_Wall Mounted"
+        "AEG003_405 Lantern_Wall-Fixed"
       ]
     },
     {
       "ID": 3405001,
       "Entries": [
-        "AEG003_405 Lantern (Long Draw Distance)"
+        "AEG003_405 Lantern (Longer Draw Distance)"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 3405008,
       "Entries": [
-        "AEG003_405 Lantern※No Light Source"
+        "AEG003_405 Lantern ※No Light Source"
       ]
     },
     {
@@ -190,13 +190,13 @@
     {
       "ID": 4038000,
       "Entries": [
-        "AEG004_038_Large Elevator Candlestick Small"
+        "AEG004_038_Great Elevator Small Candlestand"
       ]
     },
     {
       "ID": 4133000,
       "Entries": [
-        "AEG004_133 GR Standing Candlestick (Blue)"
+        "AEG004_133 GR Standing Candlestand (Blue)"
       ]
     },
     {
@@ -214,7 +214,7 @@
     {
       "ID": 4139000,
       "Entries": [
-        "AEG004_139 Candlestick (Blue)"
+        "AEG004_139 Candlestand (Blue)"
       ]
     },
     {
@@ -226,31 +226,31 @@
     {
       "ID": 4384001,
       "Entries": [
-        "AEG004_384 Candle (Blue-White)"
+        "AEG004_384 Candle (Pale Blue)"
       ]
     },
     {
       "ID": 4498000,
       "Entries": [
-        "AEG004_498_Large Elevator Candlestick Large"
+        "AEG004_498_Grand Lift Candlestick Large"
       ]
     },
     {
       "ID": 4499000,
       "Entries": [
-        "AEG004_498_Large Elevator Candlestick Small"
+        "AEG004_498_Great Elevator Small Candlestand"
       ]
     },
     {
       "ID": 4599000,
       "Entries": [
-        "AEG004_599 Candlestick"
+        "AEG004_599 Candlestand"
       ]
     },
     {
       "ID": 4690000,
       "Entries": [
-        "AEG004_690 GR Campfire Stand"
+        "AEG004_690 GR Bonfire Stand"
       ]
     },
     {
@@ -262,13 +262,13 @@
     {
       "ID": 4691001,
       "Entries": [
-        "AEG004_691 GR Wall Candle (Long Draw Distance)"
+        "AEG004_691 GR Wall Candle (Longer Draw Distance)"
       ]
     },
     {
       "ID": 4691002,
       "Entries": [
-        "AEG004_691 GR Wall Candle (Blue-White)"
+        "AEG004_691 GR Wall Candle (Pale Blue)"
       ]
     },
     {
@@ -280,91 +280,91 @@
     {
       "ID": 4691010,
       "Entries": [
-        "AEG004_691 GR Wall Candle※No Light Source"
+        "AEG004_691 GR Wall Candle ※No Light Source"
       ]
     },
     {
       "ID": 4692000,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick"
+        "AEG004_692 GR Standing Candlestand"
       ]
     },
     {
       "ID": 4692001,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick"
+        "AEG004_692 GR Standing Candlestand"
       ]
     },
     {
       "ID": 4692003,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (For Catacombs)"
+        "AEG004_692 GR Standing Candlestand (For Catacombs)"
       ]
     },
     {
       "ID": 4692004,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (For Catacombs_Medium)"
+        "AEG004_692 GR Standing Candlestand (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 4692006,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (For Catacombs_Small)"
+        "AEG004_692 GR Standing Candlestand (For Catacombs_Small)"
       ]
     },
     {
       "ID": 4692007,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (For Catacombs_Color Check Only)"
+        "AEG004_692 GR Standing Candlestand (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 4692008,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (For Catacombs_Gold)"
+        "AEG004_692 GR Standing Candlestand (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 4692009,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (Inverted)"
+        "AEG004_692 GR Standing Candlestand (Inverted)"
       ]
     },
     {
       "ID": 4692010,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick_Tarnished Gold (Subdued)"
+        "AEG004_692 GR Standing Candlestand_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 4692011,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick_Tarnished Gold (Standard)"
+        "AEG004_692 GR Standing Candlestand_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 4692020,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick_Tarnished Gold (Subdued)※No Light Source"
+        "AEG004_692 GR Standing Candlestand_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 4692021,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick_Tarnished Gold (Standard)※No Light Source"
+        "AEG004_692 GR Standing Candlestand_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 4692030,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (Blue)"
+        "AEG004_692 GR Standing Candlestand (Blue)"
       ]
     },
     {
       "ID": 4692040,
       "Entries": [
-        "AEG004_692 GR Standing Candlestick (Blue)※No Light Source"
+        "AEG004_692 GR Standing Candlestand (Blue)※No Light Source"
       ]
     },
     {
@@ -394,43 +394,43 @@
     {
       "ID": 4693007,
       "Entries": [
-        "AEG004_693 GR Wall Torch (For Catacombs_Color Check Only)"
+        "AEG004_693 GR Wall Torch (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 4693010,
       "Entries": [
-        "AEG004_693 GR Wall Torch_Tarnished Gold (Subdued)"
+        "AEG004_693 GR Wall Torch_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 4693011,
       "Entries": [
-        "AEG004_693 GR Wall Torch_Tarnished Gold (Standard)"
+        "AEG004_693 GR Wall Torch_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 4693012,
       "Entries": [
-        "AEG004_693 GR Wall Torch_Tarnished Gold (Deep)"
+        "AEG004_693 GR Wall Torch_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 4693020,
       "Entries": [
-        "AEG004_693 GR Wall Torch_Tarnished Gold (Subdued)※No Light Source"
+        "AEG004_693 GR Wall Torch_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 4693021,
       "Entries": [
-        "AEG004_693 GR Wall Torch_Tarnished Gold (Standard)※No Light Source"
+        "AEG004_693 GR Wall Torch_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 4693022,
       "Entries": [
-        "AEG004_693 GR Wall Torch_Tarnished Gold (Deep)※No Light Source"
+        "AEG004_693 GR Wall Torch_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
@@ -472,7 +472,7 @@
     {
       "ID": 5040000,
       "Entries": [
-        "AEG001_040 Volcanic Smoke"
+        "AEG001_040 Volcano Smoke"
       ]
     },
     {
@@ -484,13 +484,13 @@
     {
       "ID": 5042000,
       "Entries": [
-        "AEG005_042 Smoldering Smoke from War Fire Width 2m Height 5m"
+        "AEG005_042 Smoldering Smoke from War Fires Width 2m Height 5m"
       ]
     },
     {
       "ID": 5043000,
       "Entries": [
-        "AEG005_043 Smoldering Smoke from War Fire Width 3m Height 2m"
+        "AEG005_043 Smoldering Smoke from War Fires Width 3m Height 2m"
       ]
     },
     {
@@ -508,13 +508,13 @@
     {
       "ID": 6072000,
       "Entries": [
-        "AEG006_072 Descending Ruins Lantern Source 247038000"
+        "AEG006_072 Descending Ruins Derived Stone Lantern Original 247038000"
       ]
     },
     {
       "ID": 6074000,
       "Entries": [
-        "AEG006_074 Plains Descending Ruins Torch_Dragon Source 247042000"
+        "AEG006_074 Plains Descending Ruins Torch_Dragon Original 247042000"
       ]
     },
     {
@@ -526,25 +526,25 @@
     {
       "ID": 7144000,
       "Entries": [
-        "AEG007_144 GR Campfire Stand"
+        "AEG007_144 GR Bonfire Stand"
       ]
     },
     {
       "ID": 7146000,
       "Entries": [
-        "AEG007_146 Giant A Skewer Brazier"
+        "AEG007_146 Giant A Skewer Site of Grace"
       ]
     },
     {
       "ID": 7360000,
       "Entries": [
-        "AEG007_360 AEG210_230 Transplant Lantern"
+        "AEG007_360 AEG210_230 Ported Lantern"
       ]
     },
     {
       "ID": 7430000,
       "Entries": [
-        "AEG007 430 [Dragon Feast] Dragon Feast Shop Guide Marker"
+        "AEG007 430 [Dragon Communion] Dragon Communion Shop Guide Marker"
       ]
     },
     {
@@ -568,13 +568,13 @@
     {
       "ID": 7438000,
       "Entries": [
-        "AEG007_438 Plains Statue Pseudo Candlestick_Low"
+        "AEG007_438 Plains Statue Pseudo Candlestand_Low"
       ]
     },
     {
       "ID": 7439000,
       "Entries": [
-        "AEG007_439 Plains Statue Pseudo Candlestick_High"
+        "AEG007_439 Plains Statue Pseudo Candlestand_High"
       ]
     },
     {
@@ -598,7 +598,7 @@
     {
       "ID": 7470000,
       "Entries": [
-        "AEG007 470 Plains Corpse Pile"
+        "AEG007 470 Plains Pile of Corpses"
       ]
     },
     {
@@ -610,7 +610,7 @@
     {
       "ID": 7507000,
       "Entries": [
-        "AEG007_507 Candlestick Small Dish Source 110309"
+        "AEG007_507 Candlestand Small Plate Original 110309"
       ]
     },
     {
@@ -634,7 +634,7 @@
     {
       "ID": 7587000,
       "Entries": [
-        "AEG007_587 [Dragon Feast] Dragon Feast Shop Guide Marker"
+        "AEG007_587 [Dragon Communion] Dragon Communion Shop Guide Marker"
       ]
     },
     {
@@ -694,181 +694,181 @@
     {
       "ID": 20940000,
       "Entries": [
-        "AEG020_940 Statue_With Candle"
+        "AEG020_940 Statue_With Candles"
       ]
     },
     {
       "ID": 20940001,
       "Entries": [
-        "AEG020_940 Statue_With Candle_Tarnished Gold(Volcano Prison Series)"
+        "AEG020_940 Statue_With Candles_Faded Gold (Volcano Prison Type)"
       ]
     },
     {
       "ID": 20940003,
       "Entries": [
-        "AEG020_940 Statue_With Candle (For Catacombs)"
+        "AEG020_940 Statue_With Candles (For Catacombs)"
       ]
     },
     {
       "ID": 20940004,
       "Entries": [
-        "AEG020_940 Statue_With Candle (For Catacombs_Medium)"
+        "AEG020_940 Statue_With Candles (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20940006,
       "Entries": [
-        "AEG020_940 Statue_With Candle (For Catacombs_Small)"
+        "AEG020_940 Statue_With Candles (For Catacombs_Small)"
       ]
     },
     {
       "ID": 20940007,
       "Entries": [
-        "AEG020_940 Statue_With Candle(For Catacombs_Color Check Only)"
+        "AEG020_940 Statue_With Candles (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20940008,
       "Entries": [
-        "AEG020_940 Statue_With Candle(For Catacombs_Gold)"
+        "AEG020_940 Statue_With Candles (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 20940010,
       "Entries": [
-        "AEG020_940 Statue_With Candle_Tarnished Gold(Suppressed)"
+        "AEG020_940 Statue_With Candles_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20940011,
       "Entries": [
-        "AEG020_940 Statue_With Candle_Tarnished Gold(Standard)"
+        "AEG020_940 Statue_With Candles_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 20942000,
       "Entries": [
-        "AEG020_942_Statue+Torch"
+        "AEG020_942_Statue\u002BTorch"
       ]
     },
     {
       "ID": 20945000,
       "Entries": [
-        "AEG020_945_Statue B+Candle"
+        "AEG020_945_Statue B\u002BCandle"
       ]
     },
     {
       "ID": 20945003,
       "Entries": [
-        "AEG020_945 Statue B+Candle(For Catacombs)"
+        "AEG020_945 Statue B\u002BCandle (For Catacombs)"
       ]
     },
     {
       "ID": 20945004,
       "Entries": [
-        "AEG020_945 Statue B+Candle(For Catacombs_Medium)"
+        "AEG020_945 Statue B\u002BCandle (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20945006,
       "Entries": [
-        "AEG020_945 Statue B+Candle(For Catacombs_Small)"
+        "AEG020_945 Statue B\u002BCandle (For Catacombs_Small)"
       ]
     },
     {
       "ID": 20945007,
       "Entries": [
-        "AEG020_945 Statue B+Candle(For Catacombs_Color Check Only)"
+        "AEG020_945 Statue B\u002BCandle (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20945008,
       "Entries": [
-        "AEG020_945 Statue B+Candle(For Catacombs_Test)"
+        "AEG020_945 Statue B\u002BCandle (For Catacombs_Test)"
       ]
     },
     {
       "ID": 20945010,
       "Entries": [
-        "AEG020_945 Statue B+Candle_Tarnished Gold(Suppressed)"
+        "AEG020_945 Statue B\u002BCandle_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20945011,
       "Entries": [
-        "AEG020_945 Statue B+Candle_Tarnished Gold(Standard)"
+        "AEG020_945 Statue B\u002BCandle_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 20945020,
       "Entries": [
-        "AEG020_945 Statue B+Candle_Tarnished Gold(Suppressed)※No Light Source"
+        "AEG020_945 Statue B\u002BCandle_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20945021,
       "Entries": [
-        "AEG020_945 Statue B+Candle_Tarnished Gold(Standard)※No Light Source"
+        "AEG020_945 Statue B\u002BCandle_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 20946000,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped"
+        "AEG020_946 Statue B\u002BCandle Mirrored"
       ]
     },
     {
       "ID": 20946003,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped(For Catacombs)"
+        "AEG020_946 Statue B\u002BCandle Mirrored (For Catacombs)"
       ]
     },
     {
       "ID": 20946004,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped(For Catacombs_Medium)"
+        "AEG020_946 Statue B\u002BCandle Mirrored (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20946006,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped(For Catacombs_Small)"
+        "AEG020_946 Statue B\u002BCandle Mirrored (For Catacombs_Small)"
       ]
     },
     {
       "ID": 20946007,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped(For Catacombs_Color Check Only)"
+        "AEG020_946 Statue B\u002BCandle Mirrored (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20946008,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped(For Catacombs_Test"
+        "AEG020_946 Statue B\u002BCandle Mirrored (For Catacombs_Test"
       ]
     },
     {
       "ID": 20946010,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped_Tarnished Gold(Suppressed)"
+        "AEG020_946 Statue B\u002BCandle Mirrored_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20946011,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped_Tarnished Gold(Standard)"
+        "AEG020_946 Statue B\u002BCandle Mirrored_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 20946020,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped_Tarnished Gold(Suppressed)※No Light Source"
+        "AEG020_946 Statue B\u002BCandle Mirrored_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20946021,
       "Entries": [
-        "AEG020_946 Statue B+Candle Flipped_Tarnished Gold(Standard)※No Light Source"
+        "AEG020_946 Statue B\u002BCandle Mirrored_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
@@ -898,217 +898,217 @@
     {
       "ID": 20968003,
       "Entries": [
-        "AEG020_968_Catacombs_Chandelier(For Catacombs)"
+        "AEG020_968_Catacombs_Chandelier (For Catacombs)"
       ]
     },
     {
       "ID": 20968004,
       "Entries": [
-        "AEG020_968_Catacombs_Chandelier(For Catacombs_Medium)"
+        "AEG020_968_Catacombs_Chandelier (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20968006,
       "Entries": [
-        "AEG020_968_Catacombs_Chandelier(For Catacombs_Small)"
+        "AEG020_968_Catacombs_Chandelier (For Catacombs_Small)"
       ]
     },
     {
       "ID": 20968007,
       "Entries": [
-        "AEG020_968_Catacombs_Chandelier(For Catacombs_Color Check Only)"
+        "AEG020_968_Catacombs_Chandelier (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20983000,
       "Entries": [
-        "AEG020_983 Stone Candlestick"
+        "AEG020_983 Stone Candlestand"
       ]
     },
     {
       "ID": 20983001,
       "Entries": [
-        "AEG020_983 Stone Candlestick(Shadowed)"
+        "AEG020_983 Stone Candlestand (With Shadow)"
       ]
     },
     {
       "ID": 20983002,
       "Entries": [
-        "AEG020_983 Stone Candlestick(Bright)"
+        "AEG020_983 Stone Candlestand (Bright)"
       ]
     },
     {
       "ID": 20983003,
       "Entries": [
-        "AEG020_983_Stone Candlestick(For Catacombs)"
+        "AEG020_983_Stone Candlestand (For Catacombs)"
       ]
     },
     {
       "ID": 20983004,
       "Entries": [
-        "AEG020_983_Stone Candlestick(For Catacombs_Medium)"
+        "AEG020_983_Stone Candlestand (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20983005,
       "Entries": [
-        "AEG020_983_Stone Candlestick(For Catacombs_Large)"
+        "AEG020_983_Stone Candlestand (For Catacombs_Large)"
       ]
     },
     {
       "ID": 20983007,
       "Entries": [
-        "AEG020_983_Stone Candlestick(For Catacombs_Color Check Only)"
+        "AEG020_983_Stone Candlestand (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20983030,
       "Entries": [
-        "AEG020_983_Stone Candlestick(Blue)"
+        "AEG020_983_Stone Candlestand (Blue)"
       ]
     },
     {
       "ID": 20983040,
       "Entries": [
-        "AEG020_983_Stone Candlestick(Blue)※No Light Source"
+        "AEG020_983_Stone Candlestand (Blue)※No Light Source"
       ]
     },
     {
       "ID": 20986000,
       "Entries": [
-        "AEG020_986 Bone Candlestick"
+        "AEG020_986 Bone Candlestand"
       ]
     },
     {
       "ID": 20989000,
       "Entries": [
-        "AEG020_989_Wall-mounted Torch C"
+        "AEG020_989_Wall-Mounted Torch C"
       ]
     },
     {
       "ID": 20989003,
       "Entries": [
-        "AEG020_989_Wall-mounted Torch C(For Catacombs)"
+        "AEG020_989_Wall-Mounted Torch C (For Catacombs)"
       ]
     },
     {
       "ID": 20989004,
       "Entries": [
-        "AEG020_989_Wall-mounted Torch C(For Catacombs_Medium)"
+        "AEG020_989_Wall-Mounted Torch C (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20989005,
       "Entries": [
-        "AEG020_989_Wall-mounted Torch C(For Catacombs_Large)"
+        "AEG020_989_Wall-Mounted Torch C (For Catacombs_Large)"
       ]
     },
     {
       "ID": 20989007,
       "Entries": [
-        "AEG020_989_Wall-mounted Torch C(For Catacombs_Color Check Only)"
+        "AEG020_989_Wall-Mounted Torch C (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20989010,
       "Entries": [
-        "AEG020_989 Wall-mounted Torch C_Tarnished Gold(Suppressed)"
+        "AEG020_989 Wall-Mounted Torch C_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20989020,
       "Entries": [
-        "AEG020_989 Wall-mounted Torch C_Tarnished Gold(Suppressed)※No Light Source"
+        "AEG020_989 Wall-Mounted Torch C_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20989030,
       "Entries": [
-        "AEG020_989 Wall-mounted Torch C(Blue)"
+        "AEG020_989 Wall-Mounted Torch C (Blue)"
       ]
     },
     {
       "ID": 20989040,
       "Entries": [
-        "AEG020_989 Wall-mounted Torch C(Blue)※No Light Source"
+        "AEG020_989 Wall-Mounted Torch C (Blue)※No Light Source"
       ]
     },
     {
       "ID": 20991000,
       "Entries": [
-        "AEG020_991 Candlestick"
+        "AEG020_991 Candlestand"
       ]
     },
     {
       "ID": 20991001,
       "Entries": [
-        "AEG020_991 Candlestick(Long Draw Distance)"
+        "AEG020_991 Candlestand (Longer Draw Distance)"
       ]
     },
     {
       "ID": 20991003,
       "Entries": [
-        "AEG020_991 Candlestick(For Catacombs)"
+        "AEG020_991 Candlestand (For Catacombs)"
       ]
     },
     {
       "ID": 20991004,
       "Entries": [
-        "AEG020_991 Candlestick(For Catacombs_Medium)"
+        "AEG020_991 Candlestand (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20991006,
       "Entries": [
-        "AEG020_991 Candlestick(For Catacombs_Small)"
+        "AEG020_991 Candlestand (For Catacombs_Small)"
       ]
     },
     {
       "ID": 20991007,
       "Entries": [
-        "AEG020_991 Candlestick(For Catacombs_Color Check Only)"
+        "AEG020_991 Candlestand (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20991008,
       "Entries": [
-        "AEG020_991 Candlestick(For Catacombs_Gold)"
+        "AEG020_991 Candlestand (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 20991010,
       "Entries": [
-        "AEG020_991 Candlestick(Magic Stone Tunnel)"
+        "AEG020_991 Candlestand (Magic Stone Tunnel)"
       ]
     },
     {
       "ID": 20991011,
       "Entries": [
-        "AEG020_991 Candlestick(Magic Stone Tunnel)※No Light Source"
+        "AEG020_991 Candlestand (Magic Stone Tunnel)※No Light Source"
       ]
     },
     {
       "ID": 20991020,
       "Entries": [
-        "AEG020_991 Candlestick_Tarnished Gold(Suppressed)※No Light Source"
+        "AEG020_991 Candlestand_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20991021,
       "Entries": [
-        "AEG020_991 Candlestick_Tarnished Gold(Standard)※No Light Source"
+        "AEG020_991 Candlestand_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 20991030,
       "Entries": [
-        "AEG020_991 Candlestick(Blue)"
+        "AEG020_991 Candlestand (Blue)"
       ]
     },
     {
       "ID": 20991040,
       "Entries": [
-        "AEG020_991 Candlestick(Blue)※No Light Source"
+        "AEG020_991 Candlestand (Blue)※No Light Source"
       ]
     },
     {
@@ -1120,151 +1120,151 @@
     {
       "ID": 20992001,
       "Entries": [
-        "AEG020_992 Candle(Long Draw Distance)"
+        "AEG020_992 Candle (Longer Draw Distance)"
       ]
     },
     {
       "ID": 20992003,
       "Entries": [
-        "AEG020_992 Candle(For Catacombs)"
+        "AEG020_992 Candle (For Catacombs)"
       ]
     },
     {
       "ID": 20992004,
       "Entries": [
-        "AEG020_992 Candle(For Catacombs_Medium)"
+        "AEG020_992 Candle (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20992006,
       "Entries": [
-        "AEG020_992 Candle(For Catacombs_Small)"
+        "AEG020_992 Candle (For Catacombs_Small)"
       ]
     },
     {
       "ID": 20992007,
       "Entries": [
-        "AEG020_992 Candle(For Catacombs_Color Check Only)"
+        "AEG020_992 Candle (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20992008,
       "Entries": [
-        "AEG020_992 Candle(For Catacombs_Gold)"
+        "AEG020_992 Candle (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 20992010,
       "Entries": [
-        "AEG020_992 Candle_Tarnished Gold(Suppressed)"
+        "AEG020_992 Candle_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20992011,
       "Entries": [
-        "AEG020_992 Candle_Tarnished Gold(Standard)"
+        "AEG020_992 Candle_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 20992020,
       "Entries": [
-        "AEG020_992 Candle_Tarnished Gold(Suppressed)※No Light Source"
+        "AEG020_992 Candle_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20992021,
       "Entries": [
-        "AEG020_992 Candle_Tarnished Gold(Standard)※No Light Source"
+        "AEG020_992 Candle_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 20992030,
       "Entries": [
-        "AEG020_992 Candle(Blue)"
+        "AEG020_992 Candle (Blue)"
       ]
     },
     {
       "ID": 20992040,
       "Entries": [
-        "AEG020_992 Candle(Blue)※No Light Source"
+        "AEG020_992 Candle (Blue)※No Light Source"
       ]
     },
     {
       "ID": 20993000,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch"
+        "AEG020_993_Wall-Mounted Torch"
       ]
     },
     {
       "ID": 20993003,
       "Entries": [
-        "AEG020_993 Wall-mounted Torch(For Catacombs)"
+        "AEG020_993 Wall-Mounted Torch (For Catacombs)"
       ]
     },
     {
       "ID": 20993004,
       "Entries": [
-        "AEG020_993 Wall-mounted Torch(For Catacombs_Medium)"
+        "AEG020_993 Wall-Mounted Torch (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20993005,
       "Entries": [
-        "AEG020_993 Wall-mounted Torch (Catacombs_Large)"
+        "AEG020_993 Wall-Mounted Torch (For Catacombs_Large)"
       ]
     },
     {
       "ID": 20993007,
       "Entries": [
-        "AEG020_993 Wall-mounted Torch (Catacombs_Color Check Only)"
+        "AEG020_993 Wall-Mounted Torch (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20993010,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch_Tarnished Gold (Suppressed)"
+        "AEG020_993_Wall-Mounted Torch_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20993011,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch_Tarnished Gold (Standard)"
+        "AEG020_993_Wall-Mounted Torch_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 20993012,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch_Tarnished Gold (Dark)"
+        "AEG020_993_Wall-Mounted Torch_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 20993020,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch_Tarnished Gold (Suppressed) No Light Source"
+        "AEG020_993_Wall-Mounted Torch_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20993021,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch_Tarnished Gold (Standard) No Light Source"
+        "AEG020_993_Wall-Mounted Torch_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 20993022,
       "Entries": [
-        "AEG020_993_Wall-mounted Torch_Tarnished Gold (Dark) No Light Source"
+        "AEG020_993_Wall-Mounted Torch_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
       "ID": 20993030,
       "Entries": [
-        "AEG020_993 Wall-mounted Torch (Blue)"
+        "AEG020_993 Wall-Mounted Torch (Blue)"
       ]
     },
     {
       "ID": 20993040,
       "Entries": [
-        "AEG020_993 Wall-mounted Torch (Blue) No Light Source"
+        "AEG020_993 Wall-Mounted Torch (Blue)※No Light Source"
       ]
     },
     {
@@ -1276,61 +1276,61 @@
     {
       "ID": 20994003,
       "Entries": [
-        "AEG020_994 Hanging Torch(Catacombs)"
+        "AEG020_994 Hanging Torch (For Catacombs)"
       ]
     },
     {
       "ID": 20994004,
       "Entries": [
-        "AEG020_994 Hanging Torch(Catacombs_Medium)"
+        "AEG020_994 Hanging Torch (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20994005,
       "Entries": [
-        "AEG020_994 Hanging Torch(Catacombs_Large)"
+        "AEG020_994 Hanging Torch (For Catacombs_Large)"
       ]
     },
     {
       "ID": 20994007,
       "Entries": [
-        "AEG020_994 Hanging Torch(Catacombs_Color Check Only)"
+        "AEG020_994 Hanging Torch (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 20994010,
       "Entries": [
-        "AEG020_994 Hanging Torch_Tarnished Gold (Suppressed)"
+        "AEG020_994 Hanging Torch_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 20994011,
       "Entries": [
-        "AEG020_994 Hanging Torch_Tarnished Gold (Standard)"
+        "AEG020_994 Hanging Torch_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 20994012,
       "Entries": [
-        "AEG020_994 Hanging Torch_Tarnished Gold (Dark)"
+        "AEG020_994 Hanging Torch_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 20994020,
       "Entries": [
-        "AEG020_994 Hanging Torch_Tarnished Gold (Suppressed) No Light Source"
+        "AEG020_994 Hanging Torch_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 20994021,
       "Entries": [
-        "AEG020_994 Hanging Torch_Tarnished Gold (Standard) No Light Source"
+        "AEG020_994 Hanging Torch_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 20994022,
       "Entries": [
-        "AEG020_994 Hanging Torch_Tarnished Gold (Dark) No Light Source"
+        "AEG020_994 Hanging Torch_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
@@ -1342,37 +1342,37 @@
     {
       "ID": 20994040,
       "Entries": [
-        "AEG020_994 Hanging Torch (Blue) No Light Source"
+        "AEG020_994 Hanging Torch (Blue)※No Light Source"
       ]
     },
     {
       "ID": 20995000,
       "Entries": [
-        "AEG020_995_Wall-mounted Torch B"
+        "AEG020_995_Wall-Mounted Torch B"
       ]
     },
     {
       "ID": 20995003,
       "Entries": [
-        "AEG020_995 Wall-mounted Torch B(Catacombs)"
+        "AEG020_995 Wall-Mounted Torch B (For Catacombs)"
       ]
     },
     {
       "ID": 20995004,
       "Entries": [
-        "AEG020_995 Wall-mounted Torch B(Catacombs_Medium)"
+        "AEG020_995 Wall-Mounted Torch B (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 20995005,
       "Entries": [
-        "AEG020_995 Wall-mounted Torch B(Catacombs_Large)"
+        "AEG020_995 Wall-Mounted Torch B (For Catacombs_Large)"
       ]
     },
     {
       "ID": 20995007,
       "Entries": [
-        "AEG020_995 Wall-mounted Torch B(Catacombs_Color Check Only)"
+        "AEG020_995 Wall-Mounted Torch B (For Catacombs_Color Only)"
       ]
     },
     {
@@ -1384,7 +1384,7 @@
     {
       "ID": 22010000,
       "Entries": [
-        "AEG022_010_Divine Bridge_Mini Lighthouse(Long Range)"
+        "AEG022_010_Divine Bridge_Mini Lighthouse (Long Range)"
       ]
     },
     {
@@ -1396,7 +1396,7 @@
     {
       "ID": 22029001,
       "Entries": [
-        "AEG022_029_Divine Tower_Mini Lighthouse (Bonfire)"
+        "AEG022_029_Divine Tower_Mini Lighthouse (Campfire)"
       ]
     },
     {
@@ -1414,19 +1414,19 @@
     {
       "ID": 22184001,
       "Entries": [
-        "AEG022_184_Divine Tower_Wall Lighthouse(Bonfire)"
+        "AEG022_184_Divine Tower_Wall Lighthouse (Campfire)"
       ]
     },
     {
       "ID": 22184002,
       "Entries": [
-        "AEG022_184_Divine Tower_Wall Lighthouse(Bonfire_Shadow On)"
+        "AEG022_184_Divine Tower_Wall Lighthouse (Campfire_With Shadow)"
       ]
     },
     {
       "ID": 22184003,
       "Entries": [
-        "AEG022_184_Divine Tower_Wall Lighthouse(Bonfire_Point Light Boost)"
+        "AEG022_184_Divine Tower_Wall Lighthouse (Campfire_Point Light Enhancement)"
       ]
     },
     {
@@ -1438,13 +1438,13 @@
     {
       "ID": 22246000,
       "Entries": [
-        "AEG022_246 Divine Tower_Waterfall Basin"
+        "AEG022_246 Divine Tower_Plunge Pool"
       ]
     },
     {
       "ID": 22246009,
       "Entries": [
-        "AEG022_246 Divine Tower_Waterfall Basin (Inverted)"
+        "AEG022_246 Divine Tower_Plunge Pool (Inverted)"
       ]
     },
     {
@@ -1462,25 +1462,25 @@
     {
       "ID": 22300000,
       "Entries": [
-        "AEG022_300_Divine Bridge Brazier (Small)"
+        "AEG022_300_Divine Bridge Bonfire (Small)"
       ]
     },
     {
       "ID": 22300001,
       "Entries": [
-        "AEG022_300_Divine Bridge Brazier (Small) (Long Range)"
+        "AEG022_300_Divine Bridge Bonfire (Small) (Long Range)"
       ]
     },
     {
       "ID": 22301000,
       "Entries": [
-        "AEG022_301_Divine Bridge Brazier (Large)"
+        "AEG022_301_Divine Bridge Bonfire (Large)"
       ]
     },
     {
       "ID": 22301001,
       "Entries": [
-        "AEG022_301_Divine Bridge Brazier (Large)"
+        "AEG022_301_Divine Bridge Bonfire (Large)"
       ]
     },
     {
@@ -1522,139 +1522,139 @@
     {
       "ID": 22905000,
       "Entries": [
-        "AEG022_905_Tunnel_Boss Room Bonfire Stand"
+        "AEG022_905_Tunnel_Boss Room Site of Grace Stand"
       ]
     },
     {
       "ID": 23424000,
       "Entries": [
-        "AEG023_424 Royal Capital Sewers_Pipe Waterfall Lower"
+        "AEG023_424 Leyndell Sewers_Waterfall Below Pipe"
       ]
     },
     {
       "ID": 23425000,
       "Entries": [
-        "AEG023_425 Royal Capital Sewers_Sewage Waterfall A"
+        "AEG023_425 Leyndell Sewers_Sewage Waterfall A"
       ]
     },
     {
       "ID": 23426000,
       "Entries": [
-        "AEG023_426 Royal Capital Sewers_Sewage Waterfall B"
+        "AEG023_426 Leyndell Sewers_Sewage Waterfall B"
       ]
     },
     {
       "ID": 23733000,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick"
+        "AEG023_733 Catacombs_Circular EV Candlestand"
       ]
     },
     {
       "ID": 23733001,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick(Orange)"
+        "AEG023_733 Catacombs_Circular EV Candlestand (Orange)"
       ]
     },
     {
       "ID": 23733008,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick(Catacombs_Gold)"
+        "AEG023_733 Catacombs_Circular EV Candlestand (Catacombs_Gold)"
       ]
     },
     {
       "ID": 23733010,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick_Tarnished Gold (Suppressed)"
+        "AEG023_733 Catacombs_Circular EV Candlestand_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23733011,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick_Tarnished Gold (Standard)"
+        "AEG023_733 Catacombs_Circular EV Candlestand_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23733020,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick_Tarnished Gold (Suppressed) No Light Source"
+        "AEG023_733 Catacombs_Circular EV Candlestand_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23733021,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick_Tarnished Gold (Standard) No Light Source"
+        "AEG023_733 Catacombs_Circular EV Candlestand_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23733030,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick (Blue)"
+        "AEG023_733 Catacombs_Circular EV Candlestand (Blue)"
       ]
     },
     {
       "ID": 23733040,
       "Entries": [
-        "AEG023_733 Catacombs_Circular EV Candlestick (Blue) No Light Source"
+        "AEG023_733 Catacombs_Circular EV Candlestand (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23832000,
       "Entries": [
-        "AEG023_832_Catacombs 3-2 Candlestick"
+        "AEG023_832_Catacombs 3-2 Candlestand"
       ]
     },
     {
       "ID": 23833000,
       "Entries": [
-        "AEG023_833 Candlestick_Tarnished Gold (Catacombs)"
+        "AEG023_833 Candlestand_Faded Gold (Catacombs)"
       ]
     },
     {
       "ID": 23833001,
       "Entries": [
-        "AEG023_833 Candlestick_Tarnished Gold (Catacombs) No Light Source"
+        "AEG023_833 Candlestand_Faded Gold (Catacombs)※No Light Source"
       ]
     },
     {
       "ID": 23862000,
       "Entries": [
-        "AEG023_862_Ornate Candlestick"
+        "AEG023_862_Luxurious Candlestand"
       ]
     },
     {
       "ID": 23862001,
       "Entries": [
-        "AEG023_862_Ornate Candlestick (Long Draw Distance)"
+        "AEG023_862_Luxurious Candlestand (Longer Draw Distance)"
       ]
     },
     {
       "ID": 23862003,
       "Entries": [
-        "AEG023_862_Ornate Candlestick(Catacombs)"
+        "AEG023_862_Luxurious Candlestand (For Catacombs)"
       ]
     },
     {
       "ID": 23862009,
       "Entries": [
-        "AEG023_862_Ornate Candlestick (Inverted)"
+        "AEG023_862_Luxurious Candlestand (Inverted)"
       ]
     },
     {
       "ID": 23862005,
       "Entries": [
-        "AEG023_862_Ornate Candlestick(Catacombs_Medium)"
+        "AEG023_862_Luxurious Candlestand (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23862006,
       "Entries": [
-        "AEG023_862_Ornate Candlestick(Catacombs_Small)"
+        "AEG023_862_Luxurious Candlestand (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23862007,
       "Entries": [
-        "AEG023_862_Ornate Candlestick(Catacombs_Color Check Only)"
+        "AEG023_862_Luxurious Candlestand (For Catacombs_Color Only)"
       ]
     },
     {
@@ -1666,505 +1666,505 @@
     {
       "ID": 23871003,
       "Entries": [
-        "AEG023_871 Candle Set_Small (Catacombs)"
+        "AEG023_871 Candle Set_Small (For Catacombs)"
       ]
     },
     {
       "ID": 23871007,
       "Entries": [
-        "AEG023_871 Candle Set_Small (Catacombs_Color Check Only)"
+        "AEG023_871 Candle Set_Small (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23871008,
       "Entries": [
-        "AEG023_871 Candle Set（For Catacombs_Gold）"
+        "AEG023_871 Candle Set (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 23871010,
       "Entries": [
-        "AEG023_871 Candle Set_Tarnished Gold (Suppressed)"
+        "AEG023_871 Candle Set_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23871011,
       "Entries": [
-        "AEG023_871 Candle Set_Tarnished Gold (Standard)"
+        "AEG023_871 Candle Set_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23871020,
       "Entries": [
-        "AEG023_871 Candle Set_Tarnished Gold (Suppressed) No Light Source"
+        "AEG023_871 Candle Set_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23871021,
       "Entries": [
-        "AEG023_871 Candle Set_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_871 Candle Set_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23871030,
       "Entries": [
-        "AEG023_871 Candle Set（Blue）"
+        "AEG023_871 Candle Set (Blue)"
       ]
     },
     {
       "ID": 23871040,
       "Entries": [
-        "AEG023_871 Candle Set（Blue）※No Light Source"
+        "AEG023_871 Candle Set (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23872000,
       "Entries": [
-        "AEG023_872 Candle Set_Pillar Top A"
+        "AEG023_872 Candle Set_For Stone Pillar Top A"
       ]
     },
     {
       "ID": 23872003,
       "Entries": [
-        "AEG023_872 Candle Set_Pillar Top A（For Catacombs）"
+        "AEG023_872 Candle Set_For Stone Pillar Top A (For Catacombs)"
       ]
     },
     {
       "ID": 23872004,
       "Entries": [
-        "AEG023_872 Candle Set_Pillar Top A(For Catacombs_Medium)"
+        "AEG023_872 Candle Set_For Stone Pillar Top A (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23872006,
       "Entries": [
-        "AEG023_872 Candle Set_Pillar Top A(For Catacombs_Small)"
+        "AEG023_872 Candle Set_For Stone Pillar Top A (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23872007,
       "Entries": [
-        "AEG023_872 Candle Set_Pillar Top A（For Catacombs_Color Check Only）"
+        "AEG023_872 Candle Set_For Stone Pillar Top A (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23873000,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B"
+        "AEG023_873 Candle Set_For Stone Pillar Top B"
       ]
     },
     {
       "ID": 23873003,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B（For Catacombs）"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (For Catacombs)"
       ]
     },
     {
       "ID": 23873004,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B(For Catacombs_Medium)"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23873006,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B(For Catacombs_Small)"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23873007,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B（For Catacombs_Color Check Only）"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23873008,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B（For Catacombs_Gold）"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 23873010,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B_Tarnished Gold（Subdued）"
+        "AEG023_873 Candle Set_For Stone Pillar Top B_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23873011,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B_Tarnished Gold（Standard）"
+        "AEG023_873 Candle Set_For Stone Pillar Top B_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23873020,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B_Tarnished Gold（Subdued）※No Light Source"
+        "AEG023_873 Candle Set_For Stone Pillar Top B_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23873021,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_873 Candle Set_For Stone Pillar Top B_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23873030,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B（Blue）"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (Blue)"
       ]
     },
     {
       "ID": 23873040,
       "Entries": [
-        "AEG023_873 Candle Set_Pillar Top B（Blue）※No Light Source"
+        "AEG023_873 Candle Set_For Stone Pillar Top B (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23874000,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C"
+        "AEG023_874 Candle Set_For Stone Pillar Top C"
       ]
     },
     {
       "ID": 23874003,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C（For Catacombs）"
+        "AEG023_874 Candle Set_For Stone Pillar Top C (For Catacombs)"
       ]
     },
     {
       "ID": 23874004,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C(For Catacombs_Medium)"
+        "AEG023_874 Candle Set_For Stone Pillar Top C (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23874006,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C(For Catacombs_Small)"
+        "AEG023_874 Candle Set_For Stone Pillar Top C (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23874007,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C（For Catacombs_Color Check Only）"
+        "AEG023_874 Candle Set_For Stone Pillar Top C (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23874010,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C_Tarnished Gold（Subdued）"
+        "AEG023_874 Candle Set_For Stone Pillar Top C_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23874011,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C_Tarnished Gold（Standard）"
+        "AEG023_874 Candle Set_For Stone Pillar Top C_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23874020,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C_Tarnished Gold（Subdued）※No Light Source"
+        "AEG023_874 Candle Set_For Stone Pillar Top C_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23874021,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_874 Candle Set_For Stone Pillar Top C_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23874030,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C（Blue）"
+        "AEG023_874 Candle Set_For Stone Pillar Top C (Blue)"
       ]
     },
     {
       "ID": 23874040,
       "Entries": [
-        "AEG023_874 Candle Set_Pillar Top C（Blue）※No Light Source"
+        "AEG023_874 Candle Set_For Stone Pillar Top C (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23875000,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top"
+        "AEG023_875 Candle Set_For Upper Wall"
       ]
     },
     {
       "ID": 23875003,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top（For Catacombs）"
+        "AEG023_875 Candle Set_For Upper Wall (For Catacombs)"
       ]
     },
     {
       "ID": 23875004,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top(For Catacombs_Medium)"
+        "AEG023_875 Candle Set_For Upper Wall (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23875006,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top(For Catacombs_Small)"
+        "AEG023_875 Candle Set_For Upper Wall (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23875007,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top（For Catacombs_Color Check Only）"
+        "AEG023_875 Candle Set_For Upper Wall (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23875010,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top_Tarnished Gold（Subdued）"
+        "AEG023_875 Candle Set_For Upper Wall_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23875011,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top_Tarnished Gold（Standard）"
+        "AEG023_875 Candle Set_For Upper Wall_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23875020,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top_Tarnished Gold（Subdued）※No Light Source"
+        "AEG023_875 Candle Set_For Upper Wall_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23875021,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_875 Candle Set_For Upper Wall_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23875030,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top（Blue）"
+        "AEG023_875 Candle Set_For Upper Wall (Blue)"
       ]
     },
     {
       "ID": 23875040,
       "Entries": [
-        "AEG023_875 Candle Set_Wall Top（Blue）※No Light Source"
+        "AEG023_875 Candle Set_For Upper Wall (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23876003,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top（For Catacombs）"
+        "AEG023_876 Candle Set_For Upper Wall (For Catacombs)"
       ]
     },
     {
       "ID": 23876010,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top_Tarnished Gold（Subdued）"
+        "AEG023_876 Candle Set_For Upper Wall_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23876011,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top_Tarnished Gold（Standard）"
+        "AEG023_876 Candle Set_For Upper Wall_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23876020,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top_Tarnished Gold（Subdued）※No Light Source"
+        "AEG023_876 Candle Set_For Upper Wall_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23876021,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_876 Candle Set_For Upper Wall_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23876030,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top（Blue）"
+        "AEG023_876 Candle Set_For Upper Wall (Blue)"
       ]
     },
     {
       "ID": 23876040,
       "Entries": [
-        "AEG023_876 Candle Set_Wall Top（Blue）※No Light Source"
+        "AEG023_876 Candle Set_For Upper Wall (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23877000,
       "Entries": [
-        "AEG023_877 Candle Set_Right of Pillar A"
+        "AEG023_877 Candle Set_Right of Stone Pillar A"
       ]
     },
     {
       "ID": 23877003,
       "Entries": [
-        "AEG023_877 Candle Set_Right of Pillar A（For Catacombs）"
+        "AEG023_877 Candle Set_Right of Stone Pillar A (For Catacombs)"
       ]
     },
     {
       "ID": 23877004,
       "Entries": [
-        "AEG023_877 Candle Set_Right of Pillar A(For Catacombs_Medium)"
+        "AEG023_877 Candle Set_Right of Stone Pillar A (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23877006,
       "Entries": [
-        "AEG023_877 Candle Set_Right of Pillar A(For Catacombs_Small)"
+        "AEG023_877 Candle Set_Right of Stone Pillar A (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23877007,
       "Entries": [
-        "AEG023_877 Candle Set_Right of Pillar A（For Catacombs_Color Check Only）"
+        "AEG023_877 Candle Set_Right of Stone Pillar A (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23878000,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B"
+        "AEG023_878 Candle Set_Left of Stone Pillar B"
       ]
     },
     {
       "ID": 23878003,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B（For Catacombs）"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (For Catacombs)"
       ]
     },
     {
       "ID": 23878004,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B(For Catacombs_Medium)"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23878006,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B(For Catacombs_Small)"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23878007,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B（For Catacombs_Color Check Only）"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23878008,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B（For Catacombs_Gold）"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 23878010,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B_Tarnished Gold（Subdued）"
+        "AEG023_878 Candle Set_Left of Stone Pillar B_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23878011,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B_Tarnished Gold（Standard）"
+        "AEG023_878 Candle Set_Left of Stone Pillar B_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23878020,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B_Tarnished Gold（Subdued）※No Light Source"
+        "AEG023_878 Candle Set_Left of Stone Pillar B_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23878021,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_878 Candle Set_Left of Stone Pillar B_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23878030,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B（Blue）"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (Blue)"
       ]
     },
     {
       "ID": 23878040,
       "Entries": [
-        "AEG023_878 Candle Set_Left of Pillar B（Blue）※No Light Source"
+        "AEG023_878 Candle Set_Left of Stone Pillar B (Blue)※No Light Source"
       ]
     },
     {
       "ID": 23879000,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B"
+        "AEG023_879 Candle Set_Right of Stone Pillar B"
       ]
     },
     {
       "ID": 23879003,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B（For Catacombs）"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (For Catacombs)"
       ]
     },
     {
       "ID": 23879004,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B(For Catacombs_Medium)"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 23879006,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B(For Catacombs_Small)"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (For Catacombs_Small)"
       ]
     },
     {
       "ID": 23879007,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B（For Catacombs_Color Check Only）"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 23879008,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B（For Catacombs_Gold）"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 23879010,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B_Tarnished Gold（Subdued）"
+        "AEG023_879 Candle Set_Right of Stone Pillar B_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 23879011,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B_Tarnished Gold（Standard）"
+        "AEG023_879 Candle Set_Right of Stone Pillar B_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 23879020,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B_Tarnished Gold（Subdued）※No Light Source"
+        "AEG023_879 Candle Set_Right of Stone Pillar B_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 23879021,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B_Tarnished Gold（Standard）※No Light Source"
+        "AEG023_879 Candle Set_Right of Stone Pillar B_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 23879030,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B（Blue）"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (Blue)"
       ]
     },
     {
       "ID": 23879040,
       "Entries": [
-        "AEG023_879 Candle Set_Right of Pillar B（Blue）※No Light Source"
+        "AEG023_879 Candle Set_Right of Stone Pillar B (Blue)※No Light Source"
       ]
     },
     {
@@ -2176,25 +2176,25 @@
     {
       "ID": 23885003,
       "Entries": [
-        "AEG023_885 Pedestal Candle Set（Catacombs）"
+        "AEG023_885 Pedestal Candle Set (For Catacombs)"
       ]
     },
     {
       "ID": 23885008,
       "Entries": [
-        "AEG023_885 Pedestal Candle Set（Catacombs_Gold）"
+        "AEG023_885 Pedestal Candle Set (For Catacombs_Gold)"
       ]
     },
     {
       "ID": 23900000,
       "Entries": [
-        "AEG023_900 Royal Capital Sewers Lantern"
+        "AEG023_900 Leyndell Sewer Lantern"
       ]
     },
     {
       "ID": 23900001,
       "Entries": [
-        "AEG023_900 Royal Capital Sewers Lantern(Long Draw Distance)"
+        "AEG023_900 Leyndell Sewer Lantern (Longer Draw Distance)"
       ]
     },
     {
@@ -2206,19 +2206,19 @@
     {
       "ID": 24157003,
       "Entries": [
-        "AEG024_157_EX Dungeon_Large Pillar 1(Catacombs)"
+        "AEG024_157_EX Dungeon_Large Pillar 1 (For Catacombs)"
       ]
     },
     {
       "ID": 24157010,
       "Entries": [
-        "AEG024_157_EX Dungeon_Large Pillar 1(Tarnished Gold)"
+        "AEG024_157_EX Dungeon_Large Pillar 1 (Faded Gold)"
       ]
     },
     {
       "ID": 24157020,
       "Entries": [
-        "AEG024_157_EX Dungeon_Large Pillar 1(Tarnished Gold)※No Light Source"
+        "AEG024_157_EX Dungeon_Large Pillar 1 (Faded Gold)※No Light Source"
       ]
     },
     {
@@ -2230,19 +2230,19 @@
     {
       "ID": 24670000,
       "Entries": [
-        "AEG024_670_For Cave 1-6_Ruins Candlestick"
+        "AEG024_670_Cave 1-For 6_Ruins Candlestand"
       ]
     },
     {
       "ID": 24826000,
       "Entries": [
-        "AEG024_826 For Tunnel 1-5 Packed Cargo"
+        "AEG024_826 Tunnel 1-Luggage Bundle for 5"
       ]
     },
     {
       "ID": 27003000,
       "Entries": [
-        "AEG027_003 Fire Breath Elevator"
+        "AEG027_003 Fire-Breathing Elevator"
       ]
     },
     {
@@ -2254,73 +2254,73 @@
     {
       "ID": 27022000,
       "Entries": [
-        "AEG027_022 Tunnel Cargo A"
+        "AEG027_022 Tunnel Luggage A"
       ]
     },
     {
       "ID": 27022001,
       "Entries": [
-        "AEG027_022 Tunnel Cargo A（Long Draw Distance）"
+        "AEG027_022 Tunnel Luggage A (Longer Draw Distance)"
       ]
     },
     {
       "ID": 27022010,
       "Entries": [
-        "AEG027_022 Tunnel Cargo A（Magic Stone Tunnel）"
+        "AEG027_022 Tunnel Luggage A (Magic Stone Tunnel)"
       ]
     },
     {
       "ID": 27022011,
       "Entries": [
-        "AEG027_022 Tunnel Cargo A（Magic Stone Tunnel）※No Light Source"
+        "AEG027_022 Tunnel Luggage A (Magic Stone Tunnel)※No Light Source"
       ]
     },
     {
       "ID": 27023000,
       "Entries": [
-        "AEG027_023 Tunnel Cargo B（Long Draw Distance）"
+        "AEG027_023 Tunnel Luggage B (Longer Draw Distance)"
       ]
     },
     {
       "ID": 27023001,
       "Entries": [
-        "AEG027_023 Tunnel Cargo B（Long Draw Distance）"
+        "AEG027_023 Tunnel Luggage B (Longer Draw Distance)"
       ]
     },
     {
       "ID": 27023010,
       "Entries": [
-        "AEG027_023 Tunnel Cargo B（Magic Stone Tunnel）"
+        "AEG027_023 Tunnel Luggage B (Magic Stone Tunnel)"
       ]
     },
     {
       "ID": 27023011,
       "Entries": [
-        "AEG027_023 Tunnel Cargo B（Magic Stone Tunnel）※No Light Source"
+        "AEG027_023 Tunnel Luggage B (Magic Stone Tunnel)※No Light Source"
       ]
     },
     {
       "ID": 27065000,
       "Entries": [
-        "AEG027_065 Magic Circle Projection Elevator"
+        "AEG027_065 Elevator With Magic Circle Projection Statue"
       ]
     },
     {
       "ID": 27078000,
       "Entries": [
-        "AEG027_078 Key Golem（2 Holes）※Top and Bottom Lit"
+        "AEG027_078 Key Golem (2 Holes)※Both Upper and Lower Lit"
       ]
     },
     {
       "ID": 27078001,
       "Entries": [
-        "AEG027_078 Key Golem（2 Holes）※Bottom Only Lit"
+        "AEG027_078 Key Golem (2 Holes)※Only Lower Lit"
       ]
     },
     {
       "ID": 27079000,
       "Entries": [
-        "AEG027_079 Key Golem（1 Hole）"
+        "AEG027_079 Key Golem (1 Holes)"
       ]
     },
     {
@@ -2332,373 +2332,373 @@
     {
       "ID": 27114000,
       "Entries": [
-        "AEG027_114_Torch Single（Floor Placed）"
+        "AEG027_114_Single Torch (Floor Placement)"
       ]
     },
     {
       "ID": 27115003,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Catacombs)"
+        "AEG027_115 Boss Door Lever (For Catacombs)"
       ]
     },
     {
       "ID": 27115004,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Catacombs_Medium)"
+        "AEG027_115 Boss Door Lever (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 27115006,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Catacombs_Small)"
+        "AEG027_115 Boss Door Lever (For Catacombs_Small)"
       ]
     },
     {
       "ID": 27115007,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Catacombs_Color Check Only)"
+        "AEG027_115 Boss Door Lever (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 27115008,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Catacombs_Test)"
+        "AEG027_115 Boss Door Lever (For Catacombs_Test)"
       ]
     },
     {
       "ID": 27115030,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Blue)"
+        "AEG027_115 Boss Door Lever (Blue)"
       ]
     },
     {
       "ID": 27115040,
       "Entries": [
-        "AEG027_115 Boss Door Lever(Blue)※No Light Source"
+        "AEG027_115 Boss Door Lever (Blue)※No Light Source"
       ]
     },
     {
       "ID": 27135000,
       "Entries": [
-        "AEG027_135 Destruction Pillar"
+        "AEG027_135 Destructible Pillar"
       ]
     },
     {
       "ID": 27135003,
       "Entries": [
-        "AEG027_135 Destruction Pillar(Catacombs)"
+        "AEG027_135 Destructible Pillar (For Catacombs)"
       ]
     },
     {
       "ID": 27135004,
       "Entries": [
-        "AEG027_135 Destruction Pillar(Catacombs_Medium)"
+        "AEG027_135 Destructible Pillar (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 27135005,
       "Entries": [
-        "AEG027_135 Destruction Pillar(Catacombs_Large)"
+        "AEG027_135 Destructible Pillar (For Catacombs_Large)"
       ]
     },
     {
       "ID": 27135007,
       "Entries": [
-        "AEG027_135 Destruction Pillar(Catacombs_Color Check Only)"
+        "AEG027_135 Destructible Pillar (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 27135010,
       "Entries": [
-        "AEG027_135 Destruction Pillar_Tarnished Gold（Subdued）"
+        "AEG027_135 Destructible Pillar_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 27135011,
       "Entries": [
-        "AEG027_135 Destruction Pillar_Tarnished Gold（Standard）"
+        "AEG027_135 Destructible Pillar_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 27135012,
       "Entries": [
-        "AEG027_135 Destruction Pillar_Tarnished Gold（Dark）"
+        "AEG027_135 Destructible Pillar_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 27135020,
       "Entries": [
-        "AEG027_135 Destruction Pillar_Tarnished Gold（Subdued）※No Light Source"
+        "AEG027_135 Destructible Pillar_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 27135021,
       "Entries": [
-        "AEG027_135 Destruction Pillar_Tarnished Gold（Standard）※No Light Source"
+        "AEG027_135 Destructible Pillar_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 27135022,
       "Entries": [
-        "AEG027_135 Destruction Pillar_Tarnished Gold（Dark）※No Light Source"
+        "AEG027_135 Destructible Pillar_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
       "ID": 27136000,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root"
+        "AEG027_136 Destructible Pillar\u002BRoot"
       ]
     },
     {
       "ID": 27136003,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root(Catacombs)"
+        "AEG027_136 Destructible Pillar\u002BRoot (For Catacombs)"
       ]
     },
     {
       "ID": 27136004,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root(Catacombs_Medium)"
+        "AEG027_136 Destructible Pillar\u002BRoot (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 27136005,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root(Catacombs_Large)"
+        "AEG027_136 Destructible Pillar\u002BRoot (For Catacombs_Large)"
       ]
     },
     {
       "ID": 27136007,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root(Catacombs_Color Check Only)"
+        "AEG027_136 Destructible Pillar\u002BRoot (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 27136010,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root_Tarnished Gold（Subdued）"
+        "AEG027_136 Destructible Pillar\u002BRoot_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 27136011,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root_Tarnished Gold（Standard）"
+        "AEG027_136 Destructible Pillar\u002BRoot_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 27136012,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root_Tarnished Gold（Dark）"
+        "AEG027_136 Destructible Pillar\u002BRoot_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 27136020,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root_Tarnished Gold（Subdued）※No Light Source"
+        "AEG027_136 Destructible Pillar\u002BRoot_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 27136021,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root_Tarnished Gold（Standard）※No Light Source"
+        "AEG027_136 Destructible Pillar\u002BRoot_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 27136022,
       "Entries": [
-        "AEG027_136 Destruction Pillar+Root_Tarnished Gold（Dark）※No Light Source"
+        "AEG027_136 Destructible Pillar\u002BRoot_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
       "ID": 27137003,
       "Entries": [
-        "AEG027_137 Altar Moving Part(Catacombs)"
+        "AEG027_137 Altar Movable Part (For Catacombs)"
       ]
     },
     {
       "ID": 27137004,
       "Entries": [
-        "AEG027_137 Altar Moving Part(Catacombs_Medium)"
+        "AEG027_137 Altar Movable Part (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 27137006,
       "Entries": [
-        "AEG027_137 Altar Moving Part(Catacombs_Small)"
+        "AEG027_137 Altar Movable Part (For Catacombs_Small)"
       ]
     },
     {
       "ID": 27137007,
       "Entries": [
-        "AEG027_137 Altar Moving Part(Catacombs_Color Check Only)"
+        "AEG027_137 Altar Movable Part (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 27145000,
       "Entries": [
-        "AEG027_145 Lantern（No Fittings）"
+        "AEG027_145 Lantern (No Metal Fittings)"
       ]
     },
     {
       "ID": 27148000,
       "Entries": [
-        "AEG027_148 Lantern（Hanging Type"
+        "AEG027_148 Lantern (Hanging Type, With Animation)"
       ]
     },
     {
       "ID": 27162003,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small(Catacombs)"
+        "AEG027_162 Destructible Pillar_Small (For Catacombs)"
       ]
     },
     {
       "ID": 27162004,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small(Catacombs_Medium)"
+        "AEG027_162 Destructible Pillar_Small (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 27162005,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small(Catacombs_Large)"
+        "AEG027_162 Destructible Pillar_Small (For Catacombs_Large)"
       ]
     },
     {
       "ID": 27162007,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small(Catacombs_Color Check Only)"
+        "AEG027_162 Destructible Pillar_Small (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 27162010,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small_Tarnished Gold（Subdued）"
+        "AEG027_162 Destructible Pillar_Small_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 27162011,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small_Tarnished Gold（Standard）"
+        "AEG027_162 Destructible Pillar_Small_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 27162012,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small_Tarnished Gold（Dark）"
+        "AEG027_162 Destructible Pillar_Small_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 27162020,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small_Tarnished Gold（Subdued）※No Light Source"
+        "AEG027_162 Destructible Pillar_Small_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 27162021,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small_Tarnished Gold（Standard）※No Light Source"
+        "AEG027_162 Destructible Pillar_Small_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 27162022,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small_Tarnished Gold（Dark）※No Light Source"
+        "AEG027_162 Destructible Pillar_Small_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
       "ID": 27162030,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small(Blue)"
+        "AEG027_162 Destructible Pillar_Small (Blue)"
       ]
     },
     {
       "ID": 27162040,
       "Entries": [
-        "AEG027_162 Destruction Pillar_Small(Blue)※No Light Source"
+        "AEG027_162 Destructible Pillar_Small (Blue)※No Light Source"
       ]
     },
     {
       "ID": 27163003,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root(Catacombs)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot (For Catacombs)"
       ]
     },
     {
       "ID": 27163004,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root(Catacombs_Medium)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot (For Catacombs_Medium)"
       ]
     },
     {
       "ID": 27163005,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root(Catacombs_Large)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot (For Catacombs_Large)"
       ]
     },
     {
       "ID": 27163007,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root(Catacombs_Color Check Only)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot (For Catacombs_Color Only)"
       ]
     },
     {
       "ID": 27163010,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root_Tarnished Gold（Subdued）"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot_Faded Gold (Subdued)"
       ]
     },
     {
       "ID": 27163011,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root_Tarnished Gold (Standard)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot_Faded Gold (Standard)"
       ]
     },
     {
       "ID": 27163012,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root_Tarnished Gold (Dark)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot_Faded Gold (Dark)"
       ]
     },
     {
       "ID": 27163020,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root_Tarnished Gold (Subdued)※No Light Source"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot_Faded Gold (Subdued)※No Light Source"
       ]
     },
     {
       "ID": 27163021,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root_Tarnished Gold (Standard)※No Light Source"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot_Faded Gold (Standard)※No Light Source"
       ]
     },
     {
       "ID": 27163022,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root_Tarnished Gold (Dark)※No Light Source"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot_Faded Gold (Dark)※No Light Source"
       ]
     },
     {
       "ID": 27163030,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root(Blue)"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot (Blue)"
       ]
     },
     {
       "ID": 27163040,
       "Entries": [
-        "AEG027_163 Destruction Pillar_Small+Root(Blue)※No Light Source"
+        "AEG027_163 Destructible Pillar_Small\u002BRoot (Blue)※No Light Source"
       ]
     },
     {
       "ID": 27176003,
       "Entries": [
-        "AEG027_176 Candelabra Shelf FDP Transplant (For Catacombs)"
+        "AEG027_176 Candlestand Shelf FDP Port (For Catacombs)"
       ]
     },
     {
       "ID": 27176004,
       "Entries": [
-        "AEG027_176 Candelabra Shelf FDP Transplant (For Catacombs 2)"
+        "AEG027_176 Candlestand Shelf FDP Port (For Catacombs 2)"
       ]
     },
     {
@@ -2710,79 +2710,79 @@
     {
       "ID": 27188000,
       "Entries": [
-        "AEG027_188_Divine Tower_Desk with Small Items_(Cobweb-covered)A"
+        "AEG027_188_Divine Tower_Desk with Small Objects_(With Cobwebs) A"
       ]
     },
     {
       "ID": 27188009,
       "Entries": [
-        "AEG027_188_Divine Tower_Desk with Small Items_(Cobweb-covered)A_(Upside Down)"
+        "AEG027_188_Divine Tower_Desk with Small Objects_(With Cobwebs) A_(Inverted)"
       ]
     },
     {
       "ID": 27189000,
       "Entries": [
-        "AEG027_189_Divine Tower_Desk with Small Items_(Cobweb-covered)B"
+        "AEG027_189_Divine Tower_Desk with Small Objects_(With Cobwebs) B"
       ]
     },
     {
       "ID": 27189009,
       "Entries": [
-        "AEG027_189_Divine Tower_Desk with Small Items_(Cobweb-covered)B_(Upside Down)"
+        "AEG027_189_Divine Tower_Desk with Small Objects_(With Cobwebs) B_(Inverted)"
       ]
     },
     {
       "ID": 27194000,
       "Entries": [
-        "AEG027_194_Divine Tower_Desk with Small Items_A"
+        "AEG027_194_Divine Tower_Desk with Small Objects_A"
       ]
     },
     {
       "ID": 27194009,
       "Entries": [
-        "AEG027_194_Divine Tower_Desk with Small Items_A_(Upside Down)"
+        "AEG027_194_Divine Tower_Desk with Small Objects_A_(Inverted)"
       ]
     },
     {
       "ID": 27195000,
       "Entries": [
-        "AEG027_195_Divine Tower_Desk with Small Items_B"
+        "AEG027_195_Divine Tower_Desk with Small Objects_B"
       ]
     },
     {
       "ID": 27195009,
       "Entries": [
-        "AEG027_195_Divine Tower_Desk with Small Items_B_(Upside Down)"
+        "AEG027_195_Divine Tower_Desk with Small Objects_B_(Inverted)"
       ]
     },
     {
       "ID": 27196000,
       "Entries": [
-        "AEG027_196_Divine Tower_Desk with Small Items_C"
+        "AEG027_196_Divine Tower_Desk with Small Objects_C"
       ]
     },
     {
       "ID": 27196009,
       "Entries": [
-        "AEG027_196_Divine Tower_Desk with Small Items_C_(Upside Down)"
+        "AEG027_196_Divine Tower_Desk with Small Objects_C_(Inverted)"
       ]
     },
     {
       "ID": 27213000,
       "Entries": [
-        "AEG027_213_Catacombs 3-2 Candlestick"
+        "AEG027_213_Catacombs 3-2 Candlestand"
       ]
     },
     {
       "ID": 27214003,
       "Entries": [
-        "AEG027_214_Catacombs 3-3 Candlestick (For Catacombs)"
+        "AEG027_214_Catacombs 3-3 Candlestand (For Catacombs)"
       ]
     },
     {
       "ID": 30024000,
       "Entries": [
-        "AEG030_024 Hanging Brazier"
+        "AEG030_024 Hanging Bonfire"
       ]
     },
     {
@@ -2794,7 +2794,7 @@
     {
       "ID": 30196000,
       "Entries": [
-        "AEG030_024 Hanging Brazier"
+        "AEG030_024 Hanging Bonfire"
       ]
     },
     {
@@ -2806,19 +2806,19 @@
     {
       "ID": 30639000,
       "Entries": [
-        "AEG004_038_Large Elevator Candlestick Small"
+        "AEG004_038_Great Elevator Small Candlestand"
       ]
     },
     {
       "ID": 30669000,
       "Entries": [
-        "AEG004_038_Large Elevator Candlestick Small Snow Processed"
+        "AEG004_038_Great Elevator Small Candlestand Snow-Processed"
       ]
     },
     {
       "ID": 30670000,
       "Entries": [
-        "AEG004_038_Large Elevator Candlestick Small Snow Processed (No Snow)"
+        "AEG004_038_Great Elevator Small Candlestand Snow-Processed (No Snow)"
       ]
     },
     {
@@ -2830,7 +2830,7 @@
     {
       "ID": 30925000,
       "Entries": [
-        "AEG003_362 Corpse Flame Small"
+        "AEG003_362 Corpse Fire Small"
       ]
     },
     {
@@ -2842,7 +2842,7 @@
     {
       "ID": 99003000,
       "Entries": [
-        "AEG099_003 Light Wall"
+        "AEG099_003 Wall of Light"
       ]
     },
     {
@@ -2854,7 +2854,7 @@
     {
       "ID": 99010000,
       "Entries": [
-        "AEG099_010 Statue"
+        "AEG099_010 Stone Statue"
       ]
     },
     {
@@ -2872,19 +2872,19 @@
     {
       "ID": 99015000,
       "Entries": [
-        "AEG099_015 Sign Pool"
+        "AEG099_015 Summoning Pool"
       ]
     },
     {
       "ID": 99018000,
       "Entries": [
-        "AEG099_018 NT ver for Pre-Area Wall"
+        "AEG099_018 For NT Version Pre-Area Wall"
       ]
     },
     {
       "ID": 99023000,
       "Entries": [
-        "AEG099_023 Snow Processed Gargoyle Statue"
+        "AEG099_023 Snow-Processed Gargoyle Statue"
       ]
     },
     {
@@ -2902,7 +2902,7 @@
     {
       "ID": 99070000,
       "Entries": [
-        "AEG099_070 Map Stone Tablet"
+        "AEG099_070 Map Stele"
       ]
     },
     {
@@ -2914,19 +2914,19 @@
     {
       "ID": 99038000,
       "Entries": [
-        "AEG099_038 Non-fruiting Plant"
+        "AEG099_038 Fruitless Plant"
       ]
     },
     {
       "ID": 99055000,
       "Entries": [
-        "AEG009_055 Hero's Grave Marker Stone Statue"
+        "AEG009_055 Hero\u0027s Grave Landmark Stone Statue"
       ]
     },
     {
       "ID": 99047000,
       "Entries": [
-        "AEG099_047 Plains Ruined Town Candlestick"
+        "AEG099_047 Plains Ruined Town Candlestand"
       ]
     },
     {
@@ -2938,7 +2938,7 @@
     {
       "ID": 99130000,
       "Entries": [
-        "AEG099_130 Lookout Tower"
+        "AEG099_130 Lookout Platform"
       ]
     },
     {
@@ -2950,31 +2950,31 @@
     {
       "ID": 99139000,
       "Entries": [
-        "AEG099_139 Farnese Offering Asset"
+        "AEG099_139 Farnese\u0027s Offering Asset"
       ]
     },
     {
       "ID": 99220000,
       "Entries": [
-        "AEG099_220 Multi Wall"
+        "AEG099_220 Multiplayer Wall"
       ]
     },
     {
       "ID": 99230000,
       "Entries": [
-        "Legacy Multi Wall 5m Width Height 8m"
+        "Multiplayer Wall for Legacy 5m Wide Height 8m"
       ]
     },
     {
       "ID": 99231000,
       "Entries": [
-        "Legacy Multi Wall 15m Width Height 15m"
+        "Multiplayer Wall for Legacy 15m Wide Height 15m"
       ]
     },
     {
       "ID": 99232000,
       "Entries": [
-        "Legacy Multi Wall 6m Width Height 6m"
+        "Multiplayer Wall for Legacy 6m Wide Height 6m"
       ]
     },
     {
@@ -2992,7 +2992,7 @@
     {
       "ID": 99255000,
       "Entries": [
-        "AEG009_255 Light Wall"
+        "AEG009_255 Wall of Light"
       ]
     },
     {
@@ -3022,7 +3022,7 @@
     {
       "ID": 99295000,
       "Entries": [
-        "AEG099_295 Gargoyle Statue Different Color"
+        "AEG099_295 Different-Colored Gargoyle Statue"
       ]
     },
     {
@@ -3052,13 +3052,13 @@
     {
       "ID": 99374000,
       "Entries": [
-        "AEG099_374 Candlestick"
+        "AEG099_374 Candlestand"
       ]
     },
     {
       "ID": 99390000,
       "Entries": [
-        "AEG099_390 [GR]Guidance Light Item Snowy Mountain"
+        "AEG099_390 [GR] Guidance Glow Item For Snow Mountain"
       ]
     },
     {
@@ -3070,19 +3070,19 @@
     {
       "ID": 99635000,
       "Entries": [
-        "AEG099_635 Statue-type Chest"
+        "AEG099_635 Statue-Type Treasure Chest"
       ]
     },
     {
       "ID": 99684000,
       "Entries": [
-        "AEG099_684 Thunder Flower (Dummy with Butterfly Inserted)"
+        "AEG099_684 Lightning Flower (Butterfly Inserted as Dummy)"
       ]
     },
     {
       "ID": 99687000,
       "Entries": [
-        "AEG099_687 Thunder Flower (Thunder Grass)"
+        "AEG099_687 Lightning Flower (Lightning Grass)"
       ]
     },
     {
@@ -3124,103 +3124,103 @@
     {
       "ID": 99930000,
       "Entries": [
-        "AEG_099_930 Lily of the Valley_Buddy Enhancement_Upper LV1"
+        "AEG_099_930 Lily of the Valley_Buddy Upgrade_Greater LV1"
       ]
     },
     {
       "ID": 99931000,
       "Entries": [
-        "AEG_099_931 Lily of the Valley_Buddy Enhancement_Upper LV2"
+        "AEG_099_931 Lily of the Valley_Buddy Upgrade_Greater LV2"
       ]
     },
     {
       "ID": 99932000,
       "Entries": [
-        "AEG_099_932 Lily of the Valley_Buddy Enhancement_Upper LV3"
+        "AEG_099_932 Lily of the Valley_Buddy Upgrade_Greater LV3"
       ]
     },
     {
       "ID": 99933000,
       "Entries": [
-        "AEG_099_933 Lily of the Valley_Buddy Enhancement_Upper LV4"
+        "AEG_099_933 Lily of the Valley_Buddy Upgrade_Greater LV4"
       ]
     },
     {
       "ID": 99934000,
       "Entries": [
-        "AEG_099_934 Lily of the Valley_Buddy Enhancement_Upper LV5"
+        "AEG_099_934 Lily of the Valley_Buddy Upgrade_Greater LV5"
       ]
     },
     {
       "ID": 99935000,
       "Entries": [
-        "AEG_099_935 Lily of the Valley_Buddy Enhancement_Upper LV6"
+        "AEG_099_935 Lily of the Valley_Buddy Upgrade_Greater LV6"
       ]
     },
     {
       "ID": 99936000,
       "Entries": [
-        "AEG_099_936 Lily of the Valley_Buddy Enhancement_Upper LV7"
+        "AEG_099_936 Lily of the Valley_Buddy Upgrade_Greater LV7"
       ]
     },
     {
       "ID": 99937000,
       "Entries": [
-        "AEG_099_937 Lily of the Valley_Buddy Enhancement_Upper LV8"
+        "AEG_099_937 Lily of the Valley_Buddy Upgrade_Greater LV8"
       ]
     },
     {
       "ID": 99938000,
       "Entries": [
-        "AEG_099_938 Lily of the Valley_Buddy Enhancement_Upper LV9"
+        "AEG_099_938 Lily of the Valley_Buddy Upgrade_Greater LV9"
       ]
     },
     {
       "ID": 99939000,
       "Entries": [
-        "AEG_099_939 Lily of the Valley_Buddy Enhancement_Upper LV10"
+        "AEG_099_939 Lily of the Valley_Buddy Upgrade_Greater LV10"
       ]
     },
     {
       "ID": 100101000,
       "Entries": [
-        "AEG100_101 Carriage Chest Candle"
+        "AEG100_101 Carriage Treasure Chest Candle"
       ]
     },
     {
       "ID": 110029000,
       "Entries": [
-        "AEG110_029 Statue for Glowing Town Gimmick"
+        "AEG110_029 Statue for Shining City Gimmick"
       ]
     },
     {
       "ID": 110039000,
       "Entries": [
-        "AEG110_039 Candle for Glowing Town Gimmick"
+        "AEG110_039 Candle for Shining City Gimmick"
       ]
     },
     {
       "ID": 110059000,
       "Entries": [
-        "AEG110_059 Iron Brazier (Wall-Fixed)"
+        "AEG110_059 Iron Bonfire (Wall-Fixed)"
       ]
     },
     {
       "ID": 110061000,
       "Entries": [
-        "AEG110_061 Torch for Gate"
+        "AEG110_061 Torch For Gate"
       ]
     },
     {
       "ID": 110062000,
       "Entries": [
-        "AEG110_062 Torch for Grave"
+        "AEG110_062 Torch For Grave"
       ]
     },
     {
       "ID": 110178000,
       "Entries": [
-        "AEG110_178 Glowing Town Light Source Dummy"
+        "AEG110_178 Shining City Dummy for Light Source"
       ]
     },
     {
@@ -3244,7 +3244,7 @@
     {
       "ID": 110301001,
       "Entries": [
-        "AEG110_301 Candle(Blue-White)"
+        "AEG110_301 Candle (Pale Blue)"
       ]
     },
     {
@@ -3256,7 +3256,7 @@
     {
       "ID": 110304001,
       "Entries": [
-        "AEG110_304 Candle(Blue-White)"
+        "AEG110_304 Candle (Pale Blue)"
       ]
     },
     {
@@ -3274,19 +3274,19 @@
     {
       "ID": 110318001,
       "Entries": [
-        "AEG110_318 Chandelier(Blue-White)"
+        "AEG110_318 Chandelier (Pale Blue)"
       ]
     },
     {
       "ID": 110345000,
       "Entries": [
-        "AEG110_345 Candlestick"
+        "AEG110_345 Candlestand"
       ]
     },
     {
       "ID": 110345001,
       "Entries": [
-        "AEG110_345 Candlestick(Blue-White)"
+        "AEG110_345 Candlestand (Pale Blue)"
       ]
     },
     {
@@ -3304,19 +3304,19 @@
     {
       "ID": 210283000,
       "Entries": [
-        "Mausoleum_Center Room_Statue Candle A"
+        "Mausoleum_Central Room_Statue Candle A"
       ]
     },
     {
       "ID": 210284000,
       "Entries": [
-        "Mausoleum_Center Room_Statue Candle B"
+        "Mausoleum_Central Room_Statue Candle B"
       ]
     },
     {
       "ID": 210639000,
       "Entries": [
-        "AEG210_639 GR Hanging Candlestick(217_002 Length Changed)"
+        "AEG210_639 GR Hanging Candlestand (217_002 Length Changed)"
       ]
     },
     {
@@ -3328,7 +3328,7 @@
     {
       "ID": 217000001,
       "Entries": [
-        "AEG217_000 GR Torch(With Bugs)"
+        "AEG217_000 GR Torch (With Bugs)"
       ]
     },
     {
@@ -3340,31 +3340,31 @@
     {
       "ID": 217000003,
       "Entries": [
-        "AEG217_000 GR_Torch_Exterior A"
+        "AEG217_000 GR_Torch_Outdoor A"
       ]
     },
     {
       "ID": 217000004,
       "Entries": [
-        "AEG217_000 GR_Torch_Exterior S"
+        "AEG217_000 GR_Torch_Outdoor S"
       ]
     },
     {
       "ID": 217000005,
       "Entries": [
-        "AEG217_000 GR Light None SFX-ID"
+        "AEG217_000 GR No-Light SFX-ID"
       ]
     },
     {
       "ID": 217000006,
       "Entries": [
-        "AEG217_000 GR Snowdrift Area"
+        "AEG217_000 For GR Drift Pile Area"
       ]
     },
     {
       "ID": 217000007,
       "Entries": [
-        "AEG217_000 GR Snowdrift Area No Light"
+        "AEG217_000 For GR Drift Pile Area No Light"
       ]
     },
     {
@@ -3376,7 +3376,7 @@
     {
       "ID": 217001001,
       "Entries": [
-        "AEG217_001 GR Wall Candle(With Bugs)"
+        "AEG217_001 GR Wall Candle (With Bugs)"
       ]
     },
     {
@@ -3388,139 +3388,139 @@
     {
       "ID": 217001003,
       "Entries": [
-        "AEG217_001 GR Wall Candle_Exterior A"
+        "AEG217_001 GR Wall Candle_Outdoor A"
       ]
     },
     {
       "ID": 217001004,
       "Entries": [
-        "AEG217_001 GR Wall Candle_Exterior S"
+        "AEG217_001 GR Wall Candle_Outdoor S"
       ]
     },
     {
       "ID": 217001005,
       "Entries": [
-        "AEG217_001 GR Light None SFX-ID"
+        "AEG217_001 GR No-Light SFX-ID"
       ]
     },
     {
       "ID": 217002000,
       "Entries": [
-        "AEG217_002 GR Hanging Candlestick"
+        "AEG217_002 GR Hanging Candlestand"
       ]
     },
     {
       "ID": 217003000,
       "Entries": [
-        "AEG217_003 GR Standing Candlestick Large (Ornate)"
+        "AEG217_003 GR Large Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217003001,
       "Entries": [
-        "AEG217_003 GR Standing Candlestick Large (Ornate)"
+        "AEG217_003 GR Large Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217004000,
       "Entries": [
-        "AEG217_004 GR Standing Candlestick Small (Ornate)"
+        "AEG217_004 GR Small Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217005000,
       "Entries": [
-        "AEG217_005 GR Standing Candlestick Multiple"
+        "AEG217_005 GR Multiple Standing Candlesticks"
       ]
     },
     {
       "ID": 217006000,
       "Entries": [
-        "AEG217_006 GR Hanging Candlestick"
+        "AEG217_006 GR Hanging Candlestand"
       ]
     },
     {
       "ID": 217007000,
       "Entries": [
-        "AEG217_007 GR Campfire Stand"
+        "AEG217_007 GR Bonfire Stand"
       ]
     },
     {
       "ID": 217007001,
       "Entries": [
-        "AEG217_007 GR Campfire Stand_Interior R"
+        "AEG217_007 GR Bonfire Stand_Interior R"
       ]
     },
     {
       "ID": 217007002,
       "Entries": [
-        "AEG217_007 GR Campfire Stand_Exterior A"
+        "AEG217_007 GR Bonfire Stand_Outdoor A"
       ]
     },
     {
       "ID": 217007003,
       "Entries": [
-        "AEG217_007 GR Campfire Stand_Exterior S"
+        "AEG217_007 GR Bonfire Stand_Outdoor S"
       ]
     },
     {
       "ID": 217007004,
       "Entries": [
-        "AEG217_007 GR Light None SFX-ID"
+        "AEG217_007 GR No-Light SFX-ID"
       ]
     },
     {
       "ID": 217008000,
       "Entries": [
-        "AEG217_008 GR Standing Candlestick Extra Large (Ornate)"
+        "AEG217_008 GR Extra Large Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217009000,
       "Entries": [
-        "AEG217_009 GR Standing Candlestick Extra Small (Ornate)"
+        "AEG217_009 GR Extra Small Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217011000,
       "Entries": [
-        "AEG217_011 GR Standing Candlestick Medium (Ornate)"
+        "AEG217_011 GR Extra Medium Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217012000,
       "Entries": [
-        "AEG217_012 GR Standing Candlestick Ultra Small (Ornate)"
+        "AEG217_012 GR Tiny Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 217012001,
       "Entries": [
-        "AEG217_012 GR Standing Candlestick Extra Small (Ornate) (With Bugs)"
+        "AEG217_012 GR Tiny Standing Candlestand (Ornate) (With Bugs)"
       ]
     },
     {
       "ID": 217012002,
       "Entries": [
-        "AEG217_012 GR Standing Candlestick Ultra Small (Ornate)_Interior R"
+        "AEG217_012 GR Tiny Standing Candlestand (Ornate)_Interior R"
       ]
     },
     {
       "ID": 217012003,
       "Entries": [
-        "AEG217_012 GR Standing Candlestick Ultra Small (Ornate)_Exterior A"
+        "AEG217_012 GR Tiny Standing Candlestand (Ornate)_Outdoor A"
       ]
     },
     {
       "ID": 217012004,
       "Entries": [
-        "AEG217_012 GR Standing Candlestick Extra Small (Ornate)_Outdoor S"
+        "AEG217_012 GR Tiny Standing Candlestand (Ornate)_Outdoor S"
       ]
     },
     {
       "ID": 217012005,
       "Entries": [
-        "AEG217_012 GR Standing Candlestick Extra Small (Ornate) No Light"
+        "AEG217_012 GR Tiny Standing Candlestand (Ornate) No Light"
       ]
     },
     {
@@ -3532,7 +3532,7 @@
     {
       "ID": 217016000,
       "Entries": [
-        "AEG217_016 Lantern NPC"
+        "AEG217_016 For Lantern NPC"
       ]
     },
     {
@@ -3574,19 +3574,19 @@
     {
       "ID": 217030004,
       "Entries": [
-        "AEG217_030 GR No Light SFX-ID"
+        "AEG217_030 GR No-Light SFX-ID"
       ]
     },
     {
       "ID": 217036000,
       "Entries": [
-        "AEG217_036 Candlestick"
+        "AEG217_036 Candlestand"
       ]
     },
     {
       "ID": 217037000,
       "Entries": [
-        "AEG217_037 GR Hanging Candlestick Short Chain"
+        "AEG217_037 GR Hanging Candlestand Short Chain"
       ]
     },
     {
@@ -3616,49 +3616,49 @@
     {
       "ID": 217084000,
       "Entries": [
-        "AEG217_084 GR Shelf Set 2"
+        "AEG217_084 GR Shelf Bundle 2"
       ]
     },
     {
       "ID": 217085000,
       "Entries": [
-        "AEG217_085 GR Shelf Set 3"
+        "AEG217_085 GR Shelf Bundle 3"
       ]
     },
     {
       "ID": 217090000,
       "Entries": [
-        "AEG217_090 Desk Set 1"
+        "AEG217_090 Desk Bundle 1"
       ]
     },
     {
       "ID": 217091000,
       "Entries": [
-        "AEG217_092 Desk Set 2"
+        "AEG217_092 Desk Bundle 2"
       ]
     },
     {
       "ID": 217097000,
       "Entries": [
-        "AEG217_097 Desk Set 8"
+        "AEG217_097 Desk Bundle 8"
       ]
     },
     {
       "ID": 217120000,
       "Entries": [
-        "AEG217_120 Luggage Set 01"
+        "AEG217_120 Luggage Bundle 01"
       ]
     },
     {
       "ID": 217125000,
       "Entries": [
-        "AEG217_125 Luggage Set 06"
+        "AEG217_125 Luggage Bundle 06"
       ]
     },
     {
       "ID": 217129000,
       "Entries": [
-        "AEG217_129 Standalone Candle_Non-destructible"
+        "AEG217_129 Single Candle_Non-Destructible"
       ]
     },
     {
@@ -3670,13 +3670,13 @@
     {
       "ID": 217228000,
       "Entries": [
-        "AEG217_228 Desk Set 1 (Ornate)"
+        "AEG217_228 Desk Bundle 1 (Ornate)"
       ]
     },
     {
       "ID": 217229000,
       "Entries": [
-        "AEG217_229 Desk Set 2 (Ornate)"
+        "AEG217_229 Desk Bundle 2 (Ornate)"
       ]
     },
     {
@@ -3688,25 +3688,25 @@
     {
       "ID": 220202000,
       "Entries": [
-        "AEG220_202 Royal Capital_GR Statue"
+        "AEG220_202 Leyndell_GR Statue"
       ]
     },
     {
       "ID": 220485000,
       "Entries": [
-        "AEG220_485_Royal Capital_Special Handrail"
+        "AEG220_485_Leyndell_Custom Handrail"
       ]
     },
     {
       "ID": 220486000,
       "Entries": [
-        "AEG220_485_Royal Capital_Special Handrail Post"
+        "AEG220_485_Leyndell_Custom Handrail Support"
       ]
     },
     {
       "ID": 221252000,
       "Entries": [
-        "AEG221_252_Royal Capital Base_In Front of Study"
+        "AEG221_252_Leyndell Base_Before the Study"
       ]
     },
     {
@@ -3718,73 +3718,73 @@
     {
       "ID": 221425000,
       "Entries": [
-        "AEG221_425_Royal Capital Base_Round Table Chamber_Fireplace"
+        "AEG221_425_Leyndell Base_Roundtable Hall_Fireplace"
       ]
     },
     {
       "ID": 221432000,
       "Entries": [
-        "AEG221_432_Royal Capital Base_Round Table Chamber_Candle Set A"
+        "AEG221_432_Leyndell Base_Roundtable Hall_Candle Set A"
       ]
     },
     {
       "ID": 221439000,
       "Entries": [
-        "AEG221_439_Royal Capital Base_Round Table Chamber_Candle Set C"
+        "AEG221_439_Leyndell Base_Roundtable Hall_Candle Set C"
       ]
     },
     {
       "ID": 221440000,
       "Entries": [
-        "AEG221_440_Royal Capital Base_Office Desk 2"
+        "AEG221_440_Leyndell Base_Office Desk 2"
       ]
     },
     {
       "ID": 221443000,
       "Entries": [
-        "AEG221_443_Royal Capital Base_West Corridor_Wall Decoration Set"
+        "AEG221_443_Leyndell Base_West Hallway_Wall Decoration Set"
       ]
     },
     {
       "ID": 221464000,
       "Entries": [
-        "AEG221_464_Royal Capital Base_Servant Study Desk (PV)"
+        "AEG221_464_Leyndell Base_Servant\u0027s Study Desk (For PV)"
       ]
     },
     {
       "ID": 221468000,
       "Entries": [
-        "AEG221_468_Royal Capital Base_Hanging Torch_Large"
+        "AEG221_468_Leyndell Base_Hanging Torch_Large"
       ]
     },
     {
       "ID": 221469000,
       "Entries": [
-        "AEG221_469_Royal Capital Base_Main Hall Chandelier"
+        "AEG221_469_Leyndell Base_Main Hall Chandelier"
       ]
     },
     {
       "ID": 221483000,
       "Entries": [
-        "AEG221_483 Royal Capital Base_Stockpile Set"
+        "AEG221_483 Leyndell Base_Stockpile Set"
       ]
     },
     {
       "ID": 221495000,
       "Entries": [
-        "AEG221_495 Royal Capital Base_Dining Desk A"
+        "AEG221_495 Leyndell Base_Dining Table A"
       ]
     },
     {
       "ID": 221496000,
       "Entries": [
-        "AEG221_496 Royal Capital Base_Dining Desk B"
+        "AEG221_496 Leyndell Base_Dining Table B"
       ]
     },
     {
       "ID": 221498000,
       "Entries": [
-        "AEG221_498_Farnese Workbench"
+        "AEG221_498_Farnese\u0027s Workbench"
       ]
     },
     {
@@ -3796,19 +3796,19 @@
     {
       "ID": 221519000,
       "Entries": [
-        "AEG221_519_Royal Capital_Servant Wall Shelf"
+        "AEG221_519_Leyndell_Servant Wall Shelf"
       ]
     },
     {
       "ID": 221524000,
       "Entries": [
-        "AEG221_524 Royal Capital Base_Troll_Forge Furnace"
+        "AEG221_524 Leyndell Base_Troll_Smithing Forge"
       ]
     },
     {
       "ID": 221528000,
       "Entries": [
-        "AEG221_528_Royal Capital Base_Throne Room_Candle Set"
+        "AEG221_528_Leyndell Base_Throne Room_Candle Set"
       ]
     },
     {
@@ -3820,457 +3820,457 @@
     {
       "ID": 221549000,
       "Entries": [
-        "AEG221_549_Castle Manor_2F West Corridor_Candles"
+        "AEG221_549_Manor_2F West Passage_Candle"
       ]
     },
     {
       "ID": 221550000,
       "Entries": [
-        "AEG221_550_Castle Manor_2F East Corridor_Candles"
+        "AEG221_550_Manor_2F East Passage_Candle"
       ]
     },
     {
       "ID": 221597000,
       "Entries": [
-        "AEG221_597 Royal Capital Base_Stockpile Set"
+        "AEG221_597 Leyndell Base_Stockpile Set"
       ]
     },
     {
       "ID": 221604000,
       "Entries": [
-        "AEG221_604_Royal Capital Base_Main Hall Chandelier"
+        "AEG221_604_Leyndell Base_Main Hall Chandelier"
       ]
     },
     {
       "ID": 221606000,
       "Entries": [
-        "AEG221_606_Base_Smithy Passage_Candles"
+        "AEG221_606_Base_Blacksmith Passage_Candle"
       ]
     },
     {
       "ID": 221607000,
       "Entries": [
-        "AEG221_607_Royal Capital Base_Throne Room_Standalone Candle"
+        "AEG221_607_Leyndell Base_Throne Room_Single Candle"
       ]
     },
     {
       "ID": 221608000,
       "Entries": [
-        "AEG221_608 Royal Capital Base_Dining Desk A"
+        "AEG221_608 Leyndell Base_Dining Table A"
       ]
     },
     {
       "ID": 221609000,
       "Entries": [
-        "AEG221_609 Royal Capital Base_Dining Desk B"
+        "AEG221_609 Leyndell Base_Dining Table B"
       ]
     },
     {
       "ID": 221618000,
       "Entries": [
-        "AEG221_622_Royal Capital Base_Stockpile Corridor Debris+Candles"
+        "AEG221_622_Leyndell Base_Storeroom Hallway Fragments\u002BCandle"
       ]
     },
     {
       "ID": 221621000,
       "Entries": [
-        "AEG221_621 Royal Capital Base_Stockpile Room"
+        "AEG221_621 Leyndell Base_Storeroom"
       ]
     },
     {
       "ID": 221622000,
       "Entries": [
-        "AEG221_622_Castle Manor_Stockpile Corridor Debris+Candles"
+        "AEG221_622_Manor_Storeroom Hallway Fragments\u002BCandle"
       ]
     },
     {
       "ID": 221639000,
       "Entries": [
-        "AEG221_639_Castle Manor_Spirit Ash Room_Candle Set"
+        "AEG221_639_Manor_Ashes Room_Candle Set"
       ]
     },
     {
       "ID": 221658000,
       "Entries": [
-        "AEG221_658_Castle Manor_Hyakuchi Lord's Desk"
+        "AEG221_658_Manor_Lord of a Hundred Wisdoms\u0027 Desk"
       ]
     },
     {
       "ID": 227004000,
       "Entries": [
-        "AEG227_004 GR Royal Capital Campfire Stand"
+        "AEG227_004 GR Leyndell Bonfire Stand"
       ]
     },
     {
       "ID": 227004001,
       "Entries": [
-        "AEG227_004 Royal Capital Campfire Stand_Arena Replacement"
+        "AEG227_004 Leyndell Campfire Stand_Colosseum Replacement"
       ]
     },
     {
       "ID": 227060000,
       "Entries": [
-        "AEG227_060 Royal Capital_Fireplace Firewood"
+        "AEG227_060 Leyndell_Fireplace Firewood"
       ]
     },
     {
       "ID": 228023000,
       "Entries": [
-        "AEG228_023_Outer Wall Lighthouse Candlestick"
+        "AEG228_023_Outer Castle Wall Lighthouse Candlestand"
       ]
     },
     {
       "ID": 228024000,
       "Entries": [
-        "AEG228_024_Outer Wall Lighthouse Candlestick"
+        "AEG228_024_Outer Castle Wall Lighthouse Candlestand"
       ]
     },
     {
       "ID": 228039000,
       "Entries": [
-        "AEG228_039 Royal Capital_GR Wall Candle"
+        "AEG228_039 Leyndell_GR Wall Candle"
       ]
     },
     {
       "ID": 228087000,
       "Entries": [
-        "AEG228_087 Royal Capital_GR Tall Candlestick"
+        "AEG228_087 Leyndell_GR Tall Candlestand"
       ]
     },
     {
       "ID": 228088000,
       "Entries": [
-        "AEG228_088 Royal Capital_GR Wall Torch (Plain)"
+        "AEG228_088 Leyndell_GR Wall Torch (Plain)"
       ]
     },
     {
       "ID": 228089000,
       "Entries": [
-        "AEG228_089 Royal Capital_Castle Manor Tall Candlestick"
+        "AEG228_089 Leyndell_Mansion Tall Candlestick"
       ]
     },
     {
       "ID": 228090000,
       "Entries": [
-        "AEG228_090 Royal Capital_Chandelier"
+        "AEG228_090 Leyndell_Chandelier"
       ]
     },
     {
       "ID": 228091000,
       "Entries": [
-        "AEG228_091 Royal Capital_Fireplace"
+        "AEG228_091 Leyndell_Fireplace"
       ]
     },
     {
       "ID": 228094000,
       "Entries": [
-        "AEG228_094_Royal Capital_Courtyard Corridor_Wall Torch"
+        "AEG228_094_Leyndell_Courtyard Corridor_Wall-Mounted Torch"
       ]
     },
     {
       "ID": 228094001,
       "Entries": [
-        "AEG228_094_Wall Torch_Arena Replacement"
+        "AEG228_094_Wall-Mounted Torch_Colosseum Replacement"
       ]
     },
     {
       "ID": 228095000,
       "Entries": [
-        "AEG228_095 Royal Capital_Dining Hall Candlestick"
+        "AEG228_095 Leyndell_Dining Hall Candlestand"
       ]
     },
     {
       "ID": 228096000,
       "Entries": [
-        "AEG228_096 Royal Capital_Dining Hall Desk"
+        "AEG228_096 Leyndell_Dining Hall Desk"
       ]
     },
     {
       "ID": 228097000,
       "Entries": [
-        "AEG228_097 Royal Capital_Dining Hall Chandelier"
+        "AEG228_097 Leyndell_Dining Hall Chandelier"
       ]
     },
     {
       "ID": 228104000,
       "Entries": [
-        "AEG228_104 Royal Capital_Dining Hall Fireplace"
+        "AEG228_104 Leyndell_Dining Hall Fireplace"
       ]
     },
     {
       "ID": 228110000,
       "Entries": [
-        "AEG228_110_Royal Capital_Kitchen Chandelier"
+        "AEG228_110_Leyndell_Kitchen Chandelier"
       ]
     },
     {
       "ID": 228113000,
       "Entries": [
-        "AEG228_113 Castle Manor_Kitchen_Cooking Table A"
+        "AEG228_113 Manor_Kitchen_Cooking Table A"
       ]
     },
     {
       "ID": 228116000,
       "Entries": [
-        "AEG228_116 Castle Manor_Kitchen_Placement Set A"
+        "AEG228_116 Manor_Kitchen_Placement Set A"
       ]
     },
     {
       "ID": 228129000,
       "Entries": [
-        "AEG228_129_Royal Capital_Servant"
+        "AEG228_129_Leyndell_Servant"
       ]
     },
     {
       "ID": 228131000,
       "Entries": [
-        "AEG228_131_Royal Capital_Servant Desk"
+        "AEG228_131_Leyndell_Servant Desk"
       ]
     },
     {
       "ID": 228132000,
       "Entries": [
-        "AEG228_132_Royal Capital_Servant Wall Shelf"
+        "AEG228_132_Leyndell_Servant Wall Shelf"
       ]
     },
     {
       "ID": 228133000,
       "Entries": [
-        "AEG228_133_Royal Capital_Servant Tall Candlestick"
+        "AEG228_133_Leyndell_Servant Long Candlestick"
       ]
     },
     {
       "ID": 228134000,
       "Entries": [
-        "AEG228_134_Royal Capital_Servant Study Desk"
+        "AEG228_134_Leyndell_Servant\u0027s Study Desk"
       ]
     },
     {
       "ID": 228136000,
       "Entries": [
-        "AEG228_136_Royal Capital_Servant Small Shelf"
+        "AEG228_136_Leyndell_Servant Small Shelf"
       ]
     },
     {
       "ID": 228142000,
       "Entries": [
-        "AEG228_142_Royal Capital_Study Bookshelf A"
+        "AEG228_142_Leyndell_Study Bookshelf A"
       ]
     },
     {
       "ID": 228145000,
       "Entries": [
-        "AEG228_145_Royal Capital_Study Bookshelf D"
+        "AEG228_145_Leyndell_Study Bookshelf D"
       ]
     },
     {
       "ID": 228146000,
       "Entries": [
-        "AEG228_146_Royal Capital_Study Desk A"
+        "AEG228_146_Leyndell_Study Desk A"
       ]
     },
     {
       "ID": 228149000,
       "Entries": [
-        "AEG228_149_Royal Capital_Study Storage Shelf"
+        "AEG228_149_Leyndell_Study Storage Shelf"
       ]
     },
     {
       "ID": 228150000,
       "Entries": [
-        "AEG228_150_Royal Capital_Study Fireplace"
+        "AEG228_150_Leyndell_Study Fireplace"
       ]
     },
     {
       "ID": 228152000,
       "Entries": [
-        "AEG228_152_Royal Capital_Study Bookshelf E"
+        "AEG228_152_Leyndell_Study Bookshelf E"
       ]
     },
     {
       "ID": 228153000,
       "Entries": [
-        "AEG228_153_Royal Capital_Study Desk B"
+        "AEG228_153_Leyndell_Study Desk B"
       ]
     },
     {
       "ID": 228157000,
       "Entries": [
-        "AEG228_157_Royal Capital_Throne Candlestick"
+        "AEG228_157_Leyndell_Throne Candlestand"
       ]
     },
     {
       "ID": 228159000,
       "Entries": [
-        "AEG228_159_Royal Capital_Throne Side Desk"
+        "AEG228_159_Leyndell_Throne-Side Desk"
       ]
     },
     {
       "ID": 228160000,
       "Entries": [
-        "AEG228_160_Royal Capital_Throne Wall Candlestick"
+        "AEG228_160_Leyndell_Throne Wall Candlestand"
       ]
     },
     {
       "ID": 228165000,
       "Entries": [
-        "AEG228_166_Royal Capital_Single Corpse"
+        "AEG228_166_Leyndell_Single Corpse"
       ]
     },
     {
       "ID": 228166000,
       "Entries": [
-        "AEG228_166_Royal Capital_Corpse Pile"
+        "AEG228_166_Leyndell_Corpse Pool"
       ]
     },
     {
       "ID": 228167000,
       "Entries": [
-        "AEG228_167_Royal Capital_Corpse Pile"
+        "AEG228_167_Leyndell_Corpse Pool"
       ]
     },
     {
       "ID": 228168000,
       "Entries": [
-        "AEG228_166_Royal Capital_Single Corpse"
+        "AEG228_166_Leyndell_Single Corpse"
       ]
     },
     {
       "ID": 228183000,
       "Entries": [
-        "AEG228_183_Royal Capital_Candlestick (Marika's Bed)"
+        "AEG228_183_Leyndell_Candlestand (Marika\u0027s Bed)"
       ]
     },
     {
       "ID": 228197000,
       "Entries": [
-        "AEG228_197_Royal Capital_Street Lantern"
+        "AEG228_197_Leyndell_City Lantern"
       ]
     },
     {
       "ID": 228198000,
       "Entries": [
-        "AEG228_198_Royal Capital_Street Lantern (Small)"
+        "AEG228_198_Leyndell_City Lantern (Small)"
       ]
     },
     {
       "ID": 228208000,
       "Entries": [
-        "AEG228_208_Royal Capital_Arena Interior Candlestick"
+        "AEG228_208_Leyndell_Colosseum Interior Candlestick"
       ]
     },
     {
       "ID": 228208001,
       "Entries": [
-        "AEG228_208_Royal Capital Candlestick_Arena Replacement"
+        "AEG228_208_Leyndell Candlestick_Colosseum Replacement"
       ]
     },
     {
       "ID": 228211000,
       "Entries": [
-        "AEG228_211 Royal Capital_Standing Candlestick (Ornate)"
+        "AEG228_211 Leyndell_Standing Candlestand (Ornate)"
       ]
     },
     {
       "ID": 228211001,
       "Entries": [
-        "AEG228_211 Royal Capital_Standing Candlestick Arena Replacement"
+        "AEG228_211 Leyndell_Standing Candelabra Colosseum Replacement"
       ]
     },
     {
       "ID": 228212000,
       "Entries": [
-        "AEG228_212 Royal Capital_Candle Large"
+        "AEG228_212 Leyndell_Large Candle"
       ]
     },
     {
       "ID": 228212001,
       "Entries": [
-        "AEG228_212 Royal Capital_Candle Large_Arena Replacement"
+        "AEG228_212 Leyndell_Large Candle_Colosseum Replacement"
       ]
     },
     {
       "ID": 228213000,
       "Entries": [
-        "AEG228_213 Royal Capital_Candle Small"
+        "AEG228_213 Leyndell_Small Candle"
       ]
     },
     {
       "ID": 228213001,
       "Entries": [
-        "AEG228_213 Royal Capital_Candle Small_Arena Replacement"
+        "AEG228_213 Leyndell_Small Candle_Colosseum Replacement"
       ]
     },
     {
       "ID": 228225000,
       "Entries": [
-        "AEG228_225 Royal Capital_Chest"
+        "AEG228_225 Leyndell_Chest"
       ]
     },
     {
       "ID": 228226000,
       "Entries": [
-        "AEG228_226 Royal Capital_Chest"
+        "AEG228_226 Leyndell_Chest"
       ]
     },
     {
       "ID": 228240000,
       "Entries": [
-        "AEG228_240 Royal Capital_Wall-mounted Candlestick"
+        "AEG228_240 Leyndell_Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 228245000,
       "Entries": [
-        "AEG228_240 Royal Capital_Desk Set"
+        "AEG228_240 Leyndell_Desk Set"
       ]
     },
     {
       "ID": 228246000,
       "Entries": [
-        "AEG228_246 Royal Capital Base_Ceiling Candle Set A"
+        "AEG228_246 Leyndell Base_Ceiling Candle Set A"
       ]
     },
     {
       "ID": 228247000,
       "Entries": [
-        "AEG228_247 Royal Capital Base_Ceiling Candle Set B"
+        "AEG228_247 Leyndell Base_Ceiling Candle Set B"
       ]
     },
     {
       "ID": 228248000,
       "Entries": [
-        "AEG228_248 Royal Capital Base_Ceiling Candle Set C"
+        "AEG228_248 Leyndell Base_Ceiling Candle Set C"
       ]
     },
     {
       "ID": 228249000,
       "Entries": [
-        "AEG228_249 Royal Capital_Fireplace Firewood"
+        "AEG228_249 Leyndell_Fireplace Firewood"
       ]
     },
     {
       "ID": 230413000,
       "Entries": [
-        "AEG230_413Underground Labyrinth Poison Swamp Wooden Coffin"
+        "AEG230_413 Underground Labyrinth Poison Swamp Wooden Coffin"
       ]
     },
     {
       "ID": 231250000,
       "Entries": [
-        "AEG231_250Underground Labyrinth Ancestor Spirit Forest_Candle"
+        "AEG231_250 Underground Labyrinth Ancestral Woods_Candle"
       ]
     },
     {
       "ID": 237000000,
       "Entries": [
-        "AEG237_000 Underground Labyrinth Wall-mounted Torch"
+        "AEG237_000 Underground Labyrinth Wall Torch"
       ]
     },
     {
       "ID": 237000001,
       "Entries": [
-        "AEG237_000_Underground Labyrinth Wall-mounted (Bug-covered)"
+        "AEG237_000_Underground Labyrinth Wall Hanging (With Bugs)"
       ]
     },
     {
@@ -4282,235 +4282,235 @@
     {
       "ID": 237002000,
       "Entries": [
-        "AEG237_002 Underground Labyrinth Standing Candlestick"
+        "AEG237_002 Underground Labyrinth Standing Candlestand"
       ]
     },
     {
       "ID": 237004000,
       "Entries": [
-        "AEG237_004 Rune Devourer Candlestick"
+        "AEG237_004 Rune Eater Candlestand"
       ]
     },
     {
       "ID": 237005000,
       "Entries": [
-        "AEG237_005 Rune Devourer Wall Candlestick"
+        "AEG237_005 Rune Eater Wall Candlestand"
       ]
     },
     {
       "ID": 237006000,
       "Entries": [
-        "AEG237_006 Rune Devourer Candlestick_Large"
+        "AEG237_006 Rune Eater Candlestand_Extra Large"
       ]
     },
     {
       "ID": 237016000,
       "Entries": [
-        "AEG237_016 Underground Labyrinth Wall-mounted Candlestick"
+        "AEG237_016 Underground Labyrinth Wall Candlestick"
       ]
     },
     {
       "ID": 237017000,
       "Entries": [
-        "AEG237_017 Marika Ruins_Candlestick_Exterior"
+        "AEG237_017 Marika Ruins_Candlestand_For Outside"
       ]
     },
     {
       "ID": 237019000,
       "Entries": [
-        "AEG237_019 Marika Ruins_Wall-mounted Candlestick"
+        "AEG237_019 Marika Ruins_Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 237023000,
       "Entries": [
-        "AEG237_023Underground Labyrinth_ Candle"
+        "AEG237_023 Underground Labyrinth_ Candle"
       ]
     },
     {
       "ID": 237024000,
       "Entries": [
-        "AEG237_024Underground Labyrinth_ Candle"
+        "AEG237_024 Underground Labyrinth_ Candle"
       ]
     },
     {
       "ID": 237027000,
       "Entries": [
-        "AEG003_071 Bonfire"
+        "AEG003_071 Site of Grace"
       ]
     },
     {
       "ID": 237031000,
       "Entries": [
-        "AEG237_031 Marika Ruins_Light_Triangle obj"
+        "AEG237_031 Marika Ruins_Light_Triangle Obj"
       ]
     },
     {
       "ID": 237032000,
       "Entries": [
-        "AEG237_032Underground Labyrinth Lantern"
+        "AEG237_032 Underground Labyrinth Lantern"
       ]
     },
     {
       "ID": 237032001,
       "Entries": [
-        "AEG237_032Underground Labyrinth Lantern"
+        "AEG237_032 Underground Labyrinth Lantern"
       ]
     },
     {
       "ID": 237037000,
       "Entries": [
-        "AEG237_037 Rune Devourer Wall-mounted Candlestick"
+        "AEG237_037 Rune Eater Wall Candlestand"
       ]
     },
     {
       "ID": 237038000,
       "Entries": [
-        "AEG237_038Underground Labyrinth Wall-mounted Candlestick"
+        "AEG237_038 Underground Labyrinth Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 237039000,
       "Entries": [
-        "AEG237_039 Rune Devourer Candlestick"
+        "AEG237_039 Rune Eater Candlestand"
       ]
     },
     {
       "ID": 237042000,
       "Entries": [
-        "AEG237_042 Marika Ruins Street Lamp"
+        "AEG237_042 Marika Ruins Streetlight"
       ]
     },
     {
       "ID": 237043000,
       "Entries": [
-        "AEG237_004 Rune Devourer Candlestick"
+        "AEG237_004 Rune Eater Candlestand"
       ]
     },
     {
       "ID": 237048000,
       "Entries": [
-        "AEG237_060 Marika Follower Statue"
+        "AEG237_060 Marika Kin Statue"
       ]
     },
     {
       "ID": 237051000,
       "Entries": [
-        "AEG237_051 Rune Devourer Candlestick"
+        "AEG237_051 Rune Eater Candlestand"
       ]
     },
     {
       "ID": 237057000,
       "Entries": [
-        "AEG237_057 Underground Labyrinth Standing Candlestick"
+        "AEG237_057 Underground Labyrinth Standing Candlestand"
       ]
     },
     {
       "ID": 237058000,
       "Entries": [
-        "AEG237_058 Underground Labyrinth Standing Candlestick"
+        "AEG237_058 Underground Labyrinth Standing Candlestand"
       ]
     },
     {
       "ID": 237060000,
       "Entries": [
-        "AEG237_060 Marika Follower Statue"
+        "AEG237_060 Marika Kin Statue"
       ]
     },
     {
       "ID": 237061000,
       "Entries": [
-        "AEG237_061Underground Labyrinth_ Candle"
+        "AEG237_061 Underground Labyrinth_ Candle"
       ]
     },
     {
       "ID": 237061001,
       "Entries": [
-        "AEG237_061Underground Labyrinth_ Candle"
+        "AEG237_061 Underground Labyrinth_ Candle"
       ]
     },
     {
       "ID": 237063000,
       "Entries": [
-        "AEG237_063 Underground Labyrinth Large Wall Lantern"
+        "AEG237_063 Underground Labyrinth Wall Stone Lantern Large"
       ]
     },
     {
       "ID": 237073000,
       "Entries": [
-        "AEG237_073 Plains Interior_Candlestick"
+        "AEG237_073 Plains Depths_Candlestand"
       ]
     },
     {
       "ID": 237074000,
       "Entries": [
-        "AEG237_074 Plains Interior_Candlestick"
+        "AEG237_074 Plains Depths_Candlestand"
       ]
     },
     {
       "ID": 237075000,
       "Entries": [
-        "AEG237_075 Plains Interior_Wall-mounted Candlestick"
+        "AEG237_075 Plains Depths_Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 237076000,
       "Entries": [
-        "AEG237_076 Plains Interior_Wall-mounted Candlestick"
+        "AEG237_076 Plains Depths_Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 237084000,
       "Entries": [
-        "AEG237_084 Rune Devourer Candlestick"
+        "AEG237_084 Rune Eater Candlestand"
       ]
     },
     {
       "ID": 237086000,
       "Entries": [
-        "AEG237_086 Rune Devourer Wall-mounted Candlestick"
+        "AEG237_086 Rune Eater Wall Candlestand"
       ]
     },
     {
       "ID": 237100000,
       "Entries": [
-        "AEG237_100 Underground Labyrinth Standing Candlestick"
+        "AEG237_100 Underground Labyrinth Standing Candlestand"
       ]
     },
     {
       "ID": 237101000,
       "Entries": [
-        "AEG237_101 Marika Ruins_Candlestick_Exterior"
+        "AEG237_101 Marika Ruins_Candlestand_For Outside"
       ]
     },
     {
       "ID": 237102000,
       "Entries": [
-        "AEG237_102 Marika Ruins_Wall-mounted Candlestick"
+        "AEG237_102 Marika Ruins_Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 237103000,
       "Entries": [
-        "AEG237_103Underground Labyrinth_ Candle"
+        "AEG237_103 Underground Labyrinth_ Candle"
       ]
     },
     {
       "ID": 237104000,
       "Entries": [
-        "AEG237_104Underground Labyrinth_ Candle"
+        "AEG237_104 Underground Labyrinth_ Candle"
       ]
     },
     {
       "ID": 237105000,
       "Entries": [
-        "AEG237_105 Marika Minion Statue"
+        "AEG237_105 Marika Kin Statue"
       ]
     },
     {
       "ID": 237106000,
       "Entries": [
-        "AEG237_106 Underground Labyrinth Standing Candlestick"
+        "AEG237_106 Underground Labyrinth Standing Candlestand"
       ]
     },
     {
@@ -4528,37 +4528,37 @@
     {
       "ID": 247012000,
       "Entries": [
-        "AEG247_012 Descending Ruins Large Candle"
+        "AEG247_012 Descending Ruins Candle Large"
       ]
     },
     {
       "ID": 247013000,
       "Entries": [
-        "AEG247_013 Descending Ruins Small Candle"
+        "AEG247_013 Descending Ruins Candle Small"
       ]
     },
     {
       "ID": 247014000,
       "Entries": [
-        "AEG247_014 Descending Ruins Candle_Floor"
+        "AEG247_014 Descending Ruins Candle_For Floor"
       ]
     },
     {
       "ID": 247015000,
       "Entries": [
-        "AEG247_015 Descending Ruins Candle_Floor"
+        "AEG247_015 Descending Ruins Candle_For Floor"
       ]
     },
     {
       "ID": 247016000,
       "Entries": [
-        "AEG247_016 Descending Ruins Candle_Memorial Tower 3-Tier"
+        "AEG247_016 Descending Ruins Candle_Memorial Tower 3 Tiers"
       ]
     },
     {
       "ID": 247017000,
       "Entries": [
-        "AEG247_017 Descending Ruins Candle_Memorial Tower 2-Tier"
+        "AEG247_017 Descending Ruins Candle_Memorial Tower 2 Tiers"
       ]
     },
     {
@@ -4582,13 +4582,13 @@
     {
       "ID": 247023000,
       "Entries": [
-        "AEG247_023 Descending Ruins Luxury Candlestick"
+        "AEG247_023 Descending Ruins Luxurious Candlestand"
       ]
     },
     {
       "ID": 247024000,
       "Entries": [
-        "AEG247_024 Descending Ruins Luxury Candlestick"
+        "AEG247_024 Descending Ruins Luxurious Candlestand"
       ]
     },
     {
@@ -4606,7 +4606,7 @@
     {
       "ID": 247027000,
       "Entries": [
-        "AEG247_027 Descending Ruins Bonfire Stand"
+        "AEG247_027 Descending Ruins Campfire Stand"
       ]
     },
     {
@@ -4630,13 +4630,13 @@
     {
       "ID": 247036000,
       "Entries": [
-        "AEG247_036 Descending Ruins Candle_Wall (count changed"
+        "AEG247_036 Descending Ruins Candle_Wall (Count Changed"
       ]
     },
     {
       "ID": 247038000,
       "Entries": [
-        "AEG247_038 Descending Ruins Lantern"
+        "AEG247_038 Descending Ruins Stone Lantern"
       ]
     },
     {
@@ -4648,25 +4648,25 @@
     {
       "ID": 237016000,
       "Entries": [
-        "AEG237_016 Marika Ruins_Wall Candlestick"
+        "AEG237_016 Marika Ruins_Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 250007000,
       "Entries": [
-        "AEG250_007 Monsan Three-Legged Bonfire"
+        "AEG250_007 Raya Lucaria 3 Legged Brazier"
       ]
     },
     {
       "ID": 250278000,
       "Entries": [
-        "AEG250_278_Round Table"
+        "AEG250_278_Roundtable"
       ]
     },
     {
       "ID": 250420000,
       "Entries": [
-        "AEG250_420_Birdcage_With Pillar (Small)"
+        "AEG250_420_Birdcage_With Pillars (Small)"
       ]
     },
     {
@@ -4684,7 +4684,7 @@
     {
       "ID": 250427000,
       "Entries": [
-        "AEG250_470_Birdcage_With Pillar (Medium)"
+        "AEG250_470_Birdcage_With Pillars (Medium)"
       ]
     },
     {
@@ -4714,175 +4714,175 @@
     {
       "ID": 250536000,
       "Entries": [
-        "AEG250_470_Birdcage_With Pillar (Large)"
+        "AEG250_470_Birdcage_With Pillars (Large)"
       ]
     },
     {
       "ID": 250599000,
       "Entries": [
-        "AEG250_599_Statue (with light source)"
+        "AEG250_599_Stone Statue (With Light Source)"
       ]
     },
     {
       "ID": 257031000,
       "Entries": [
-        "AEG258_137_Monsan Boss Room_Falling Chandelier"
+        "AEG258_137_Raya Lucaria Boss Room_Falling Chandelier"
       ]
     },
     {
       "ID": 258100000,
       "Entries": [
-        "AEG258_100_Monsan Standing Candlestick"
+        "AEG258_100_Raya Lucaria Standing Candlestick"
       ]
     },
     {
       "ID": 258101000,
       "Entries": [
-        "AEG258_101_Monsan Wall-Mounted Candlestick"
+        "AEG258_101_Raya Lucaria Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 258102000,
       "Entries": [
-        "AEG258_102_Monsan Hanging Candlestick"
+        "AEG258_102_Raya Lucaria Hanging Candlestick"
       ]
     },
     {
       "ID": 258103000,
       "Entries": [
-        "AEG258_103_Monsan Chandelier"
+        "AEG258_103_Raya Lucaria Chandelier"
       ]
     },
     {
       "ID": 258104000,
       "Entries": [
-        "AEG258_104_Monsan_Torch_(Stormveil Transplant)"
+        "AEG258_104_Raya Lucaria_Torch_(Stormveil Port)"
       ]
     },
     {
       "ID": 258105000,
       "Entries": [
-        "AEG258_105_Monsan_Lecture Hall Student Desk A"
+        "AEG258_105_Raya Lucaria_Auditorium Student Desk A"
       ]
     },
     {
       "ID": 258106000,
       "Entries": [
-        "AEG258_106_Monsan_Lecture Hall Student Desk B"
+        "AEG258_106_Raya Lucaria_Auditorium Student Desk B"
       ]
     },
     {
       "ID": 258108000,
       "Entries": [
-        "AEG258_108_Monsan_Lecture Hall Podium"
+        "AEG258_108_Raya Lucaria_Auditorium Podium"
       ]
     },
     {
       "ID": 258109000,
       "Entries": [
-        "AEG258_109_Monsan_Lecture Hall Student Desk C"
+        "AEG258_109_Raya Lucaria_Auditorium Student Desk C"
       ]
     },
     {
       "ID": 258114000,
       "Entries": [
-        "AEG258_114_Monsan_Lecture Hall Wall Candlestick"
+        "AEG258_114_Raya Lucaria_Auditorium Wall Candlestick"
       ]
     },
     {
       "ID": 258115000,
       "Entries": [
-        "AEG258_115_Monsan_Lecture Hall Candlestick B"
+        "AEG258_115_Raya Lucaria_Auditorium Candlestick B"
       ]
     },
     {
       "ID": 258116000,
       "Entries": [
-        "AEG258_116_Monsan_Lecture Hall Chandelier"
+        "AEG258_116_Raya Lucaria_Auditorium Chandelier"
       ]
     },
     {
       "ID": 258125000,
       "Entries": [
-        "AEG258_125_Monsan_Lecture Hall Ordinary Shelf B"
+        "AEG258_125_Raya Lucaria_Auditorium Generic Shelf B"
       ]
     },
     {
       "ID": 258129000,
       "Entries": [
-        "AEG258_129_Monsan_Ceiling Fire"
+        "AEG258_129_Raya Lucaria_Ceiling Fire"
       ]
     },
     {
       "ID": 258130000,
       "Entries": [
-        "AEG258_137_Monsan Lecture Hall Research Desk A"
+        "AEG258_137_Raya Lucaria Auditorium Research Desk A"
       ]
     },
     {
       "ID": 258137000,
       "Entries": [
-        "AEG258_137_Monsan Small Church Chandelier"
+        "AEG258_137_Raya Lucaria Small Church Chandelier"
       ]
     },
     {
       "ID": 258138000,
       "Entries": [
-        "AEG258_137_Monsan Boss Room_Chandelier"
+        "AEG258_137_Raya Lucaria Boss Room_Chandelier"
       ]
     },
     {
       "ID": 258139000,
       "Entries": [
-        "AEG258_139_Monsan_Lecture Hall Student Desk (Small)"
+        "AEG258_139_Raya Lucaria_Auditorium Student Desk (Small)"
       ]
     },
     {
       "ID": 258144000,
       "Entries": [
-        "AEG258_144_Monsan Lecture Hall Research Desk B"
+        "AEG258_144_Raya Lucaria Auditorium Research Desk B"
       ]
     },
     {
       "ID": 258145000,
       "Entries": [
-        "AEG258_145_Monsan Lecture Hall Research Desk C"
+        "AEG258_145_Raya Lucaria Auditorium Research Desk C"
       ]
     },
     {
       "ID": 258146000,
       "Entries": [
-        "AEG258_145_Monsan Candle A"
+        "AEG258_145_Raya Lucaria Candle A"
       ]
     },
     {
       "ID": 258147000,
       "Entries": [
-        "AEG258_145_Monsan Candle B"
+        "AEG258_145_Raya Lucaria Candle B"
       ]
     },
     {
       "ID": 258148000,
       "Entries": [
-        "AEG258_145_Monsan Candle A (Ground)"
+        "AEG258_145_Raya Lucaria Candle A (Ground)"
       ]
     },
     {
       "ID": 258149000,
       "Entries": [
-        "AEG258_145_Monsan Candle B (Ground)"
+        "AEG258_145_Raya Lucaria Candle B (Ground)"
       ]
     },
     {
       "ID": 258150000,
       "Entries": [
-        "AEG258_150_Monsan Slender Candlestick (Long)"
+        "AEG258_150_Raya Lucaria Slender Candlestand (Long)"
       ]
     },
     {
       "ID": 258151000,
       "Entries": [
-        "AEG258_151_Monsan Slender Candlestick (Short)"
+        "AEG258_151_Raya Lucaria Slender Candlestand (Short)"
       ]
     },
     {
@@ -4906,13 +4906,13 @@
     {
       "ID": 258156000,
       "Entries": [
-        "AEG258_101_Monsan Wall-Mounted Candlestick"
+        "AEG258_101_Raya Lucaria Wall-Mounted Candlestand"
       ]
     },
     {
       "ID": 258170000,
       "Entries": [
-        "AEG258_170_Wooden Box Asset (Small)"
+        "AEG258_170_Wooden Crate Asset (Small)"
       ]
     },
     {
@@ -4930,7 +4930,7 @@
     {
       "ID": 258174000,
       "Entries": [
-        "AEG258_174_Wall-Mounted Candlestick (No Light Source)"
+        "AEG258_174_Wall-Mounted Candlestand (No Light Source)"
       ]
     },
     {
@@ -4960,85 +4960,85 @@
     {
       "ID": 258179000,
       "Entries": [
-        "AEG258_179_Floor Candlestick Small (For Boss Room Cutscene)"
+        "AEG258_179_Small Floor Candlestand (For Boss Room Cutscene)"
       ]
     },
     {
       "ID": 258180000,
       "Entries": [
-        "AEG258_180_Floor Candlestick Large (For Boss Room Cutscene)"
+        "AEG258_180_Large Floor Candlestand (For Boss Room Cutscene)"
       ]
     },
     {
       "ID": 258181000,
       "Entries": [
-        "AEG258_181_Chandelier Front (For Boss Room Cutscene)"
+        "AEG258_181_Front Chandelier (For Boss Room Cutscene)"
       ]
     },
     {
       "ID": 258182000,
       "Entries": [
-        "AEG258_182_Chandelier Back (For Boss Room Cutscene)"
+        "AEG258_182_Back Chandelier (For Boss Room Cutscene)"
       ]
     },
     {
       "ID": 258183000,
       "Entries": [
-        "AEG258_183_Wall-mounted Candlestick (For Boss Room Cutscene)"
+        "AEG258_183_Wall-Mounted Candlestand (For Boss Room Cutscene)"
       ]
     },
     {
       "ID": 258184000,
       "Entries": [
-        "AEG258_184_Candlestick (For Boss Room Cutscene)"
+        "AEG258_184_Candlestand (For Boss Room Cutscene)"
       ]
     },
     {
       "ID": 260461000,
       "Entries": [
-        "AEG260_461 Rotten Great Tree Candlestick-holding Statue A (With Bugs)"
+        "AEG260_461 Rotten Great Tree Candle-Holding Statue A (With Bugs)"
       ]
     },
     {
       "ID": 260058000,
       "Entries": [
-        "AEG260_058 Rotten Great Tree Candlestick-holding Statue A (With Bugs)"
+        "AEG260_058 Rotten Great Tree Candle-Holding Statue A (With Bugs)"
       ]
     },
     {
       "ID": 260059000,
       "Entries": [
-        "AEG260_059 Rotten Great Tree Candlestick-holding Statue B (With Bugs)"
+        "AEG260_059 Rotten Great Tree Candlestick-Holding Statue B (With Bugs)"
       ]
     },
     {
       "ID": 260640000,
       "Entries": [
-        "AEG260_640 Rotten Great Tree Grace (Small)+2 Cocoons"
+        "AEG260_640 Rotten Great Tree Chalice (Small)\u002B2 Cocoons"
       ]
     },
     {
       "ID": 260641000,
       "Entries": [
-        "AEG260_640 Rotten Great Tree Grace (Large)+Cocoon Thread"
+        "AEG260_640 Rotten Great Tree Chalice (Large)\u002BCocoon Thread"
       ]
     },
     {
       "ID": 260642000,
       "Entries": [
-        "AEG260_640 Rotten Great Tree Grace (Small)+3 Cocoons"
+        "AEG260_640 Rotten Great Tree Chalice (Small)\u002B3 Cocoons"
       ]
     },
     {
       "ID": 260643000,
       "Entries": [
-        "AEG260_640 Rotten Great Tree Grace (Large)"
+        "AEG260_640 Rotten Great Tree Chalice (Large)"
       ]
     },
     {
       "ID": 267002000,
       "Entries": [
-        "AEG267_002 Rotten Great Tree Wall-mounted Candlestick (With Bugs)"
+        "AEG267_002 Rotten Great Tree Wall-Mounted Candlestick (With Bugs)"
       ]
     },
     {
@@ -5056,19 +5056,19 @@
     {
       "ID": 267011000,
       "Entries": [
-        "AEG267_011 Rotten Great Tree 3-legged Bonfire"
+        "AEG267_011 Rotten Great Tree 3 Legged Brazier"
       ]
     },
     {
       "ID": 267029000,
       "Entries": [
-        "AEG267_029_Rotten Great Tree_Wall-mounted Torch"
+        "AEG267_029_Rotten Great Tree_Wall-Mounted Torch"
       ]
     },
     {
       "ID": 267030000,
       "Entries": [
-        "AEG267_030_Rotten Great Tree_Stand Candlestick"
+        "AEG267_030_Rotten Great Tree_Candle Stand"
       ]
     },
     {
@@ -5080,7 +5080,7 @@
     {
       "ID": 267032000,
       "Entries": [
-        "AEG267_032 Rotten Great Tree Stone Bonfire"
+        "AEG267_032 Rotten Great Tree Stone Site of Grace"
       ]
     },
     {
@@ -5098,13 +5098,13 @@
     {
       "ID": 267035000,
       "Entries": [
-        "AEG267_035 Rotten Great Tree Stand Candlestick Medium (With Bugs)"
+        "AEG267_035 Rotten Great Tree Standing Candlestick Medium Size (With Bugs)"
       ]
     },
     {
       "ID": 267036000,
       "Entries": [
-        "AEG267_036 Rotten Great Tree Hanging Light (With Bugs)"
+        "AEG267_036 Rotten Great Tree Hanging Lighting (With Bugs)"
       ]
     },
     {
@@ -5116,25 +5116,25 @@
     {
       "ID": 267040000,
       "Entries": [
-        "AEG267_040 Rotten Great Tree Lower Level Candlestick_Long"
+        "AEG267_040 Rotten Great Tree Lower Candlestand_Long"
       ]
     },
     {
       "ID": 267041000,
       "Entries": [
-        "AEG267_041 Rotten Great Tree Lower Level Candlestick_Medium"
+        "AEG267_041 Rotten Great Tree Lower Candlestand_Medium"
       ]
     },
     {
       "ID": 267042000,
       "Entries": [
-        "AEG267_041 Rotten Great Tree Lower Level_Floor Candlestick"
+        "AEG267_041 Rotten Great Tree Lower Level_Placed Candlestand"
       ]
     },
     {
       "ID": 267045000,
       "Entries": [
-        "AEG267_045 Rotten Great Tree Lower Level Bonfire (Long)"
+        "AEG267_045 Rotten Great Tree Lower Level Site of Grace (Long)"
       ]
     },
     {
@@ -5152,31 +5152,31 @@
     {
       "ID": 267055000,
       "Entries": [
-        "AEG267_055 Wall-mounted Candlestick_Display Distance Adjusted Version"
+        "AEG267_055 Wall-Mounted Candlestand_Display Distance Adjusted Version"
       ]
     },
     {
       "ID": 267060000,
       "Entries": [
-        "AEG267_060 Candle_Floor_Display Distance Adjusted Version"
+        "AEG267_060 Candle_For Ground_Display Distance Adjusted Version"
       ]
     },
     {
       "ID": 267061000,
       "Entries": [
-        "AEG267_061 Candle_Wall_Corner_Display Distance Adjusted Version"
+        "AEG267_061 Candle_For Wall_Corner_Display Distance Adjusted Version"
       ]
     },
     {
       "ID": 267062000,
       "Entries": [
-        "AEG267_062 Candle_Wall_Straight_Display Distance Adjusted Version"
+        "AEG267_062 Candle_For Wall_Straight_Display Distance Adjusted Version"
       ]
     },
     {
       "ID": 270034000,
       "Entries": [
-        "AEG270_034 Lower Dungeon_Burned Corpse"
+        "AEG270_034 Lower Prison_Burned-at-the-Stake Corpse"
       ]
     },
     {
@@ -5188,13 +5188,13 @@
     {
       "ID": 270280000,
       "Entries": [
-        "AEG270_280_Lower Dungeon_Chimney A"
+        "AEG270_280_Lower Prison_Chimney A"
       ]
     },
     {
       "ID": 270430000,
       "Entries": [
-        "AEG270_430_Upper Level_Main Building_Exterior_Chimney_12m"
+        "AEG270_430_Upper Level_Main Building_Exterior Finish_Chimney_12m"
       ]
     },
     {
@@ -5206,7 +5206,7 @@
     {
       "ID": 270464000,
       "Entries": [
-        "AEG270_464_Volcano Prison_Ruined Church_Breakables Group"
+        "AEG270_464_Volcano Prison_Ruined Church_Broken Objects Cluster"
       ]
     },
     {
@@ -5218,37 +5218,37 @@
     {
       "ID": 270502000,
       "Entries": [
-        "AEG270_502_Boss Room_Cage Cell B"
+        "AEG270_502_Boss Room_Cage Prison B"
       ]
     },
     {
       "ID": 270503000,
       "Entries": [
-        "AEG270_503_Boss Room_Cage Cell C"
+        "AEG270_503_Boss Room_Cage Prison C"
       ]
     },
     {
       "ID": 270684000,
       "Entries": [
-        "AEG270_684_Volcano Prison_Ruined Church_Candle Stand Long"
+        "AEG270_684_Volcano Prison_Ruined Church_Long Candle Stand"
       ]
     },
     {
       "ID": 270685000,
       "Entries": [
-        "AEG270_685_Volcano Prison_Ruined Church_Candle Stand Short"
+        "AEG270_685_Volcano Prison_Ruined Church_Short Candle Stand"
       ]
     },
     {
       "ID": 270686000,
       "Entries": [
-        "AEG270_686_Volcano Prison_Abandoned Church_Floor_Candle A"
+        "AEG270_686_Volcano Prison_Ruined Church_Floor_Candle A"
       ]
     },
     {
       "ID": 270687000,
       "Entries": [
-        "AEG270_687_Volcano Prison_Abandoned Church_Floor_Candle B"
+        "AEG270_687_Volcano Prison_Ruined Church_Floor_Candle B"
       ]
     },
     {
@@ -5266,13 +5266,13 @@
     {
       "ID": 277033000,
       "Entries": [
-        "AEG277_033_Volcano Prison_Annex_Volcano Wall Candlestick"
+        "AEG277_033_Volcano Prison_Annex_Volcano Wall Candlestand"
       ]
     },
     {
       "ID": 277034000,
       "Entries": [
-        "AEG277_034_Volcano Prison_Annex_Candlestick"
+        "AEG277_034_Volcano Prison_Annex_Candlestand"
       ]
     },
     {
@@ -5308,7 +5308,7 @@
     {
       "ID": 277043000,
       "Entries": [
-        "AEG270_043_Volcano Prison_Annex_2F_Chandelier"
+        "AEG270_043_Volcano Prison_Annex_Floor 2_Chandelier"
       ]
     },
     {
@@ -5320,19 +5320,19 @@
     {
       "ID": 277048000,
       "Entries": [
-        "AEG277_048_Volcano Prison_Annex_Church Candle Holder"
+        "AEG277_048_Volcano Prison_Annex_Church Candle Stand"
       ]
     },
     {
       "ID": 277050000,
       "Entries": [
-        "AEG277_050_Volcano Prison_Annex_Bible Prop"
+        "AEG277_050_Volcano Prison_Annex_Scripture"
       ]
     },
     {
       "ID": 277052000,
       "Entries": [
-        "AEG277_052_Volcano Prison_Cage Cell (Floor)_"
+        "AEG277_052_Volcano Prison_Cage Prison (For Ground)_"
       ]
     },
     {
@@ -5362,7 +5362,7 @@
     {
       "ID": 277059000,
       "Entries": [
-        "AEG277_059_Volcano Prison_Barrel with Candles"
+        "AEG277_059_Volcano Prison_Barrel with Candle"
       ]
     },
     {
@@ -5374,37 +5374,37 @@
     {
       "ID": 277063000,
       "Entries": [
-        "AEG277_063_Volcano Prison_Annex_2F Desk A"
+        "AEG277_063_Volcano Prison_Annex_Floor 2 Desk A"
       ]
     },
     {
       "ID": 277064000,
       "Entries": [
-        "AEG277_064_Volcano Prison_Annex_2F Desk B"
+        "AEG277_064_Volcano Prison_Annex_Floor 2 Desk B"
       ]
     },
     {
       "ID": 277065000,
       "Entries": [
-        "AEG277_065_Stone Candlestick"
+        "AEG277_065_Stone Candlestand"
       ]
     },
     {
       "ID": 277065001,
       "Entries": [
-        "AEG277_065_Stone Candlestick"
+        "AEG277_065_Stone Candlestand"
       ]
     },
     {
       "ID": 277067000,
       "Entries": [
-        "AEG277_067_Volcano Prison_Annex Candlestick"
+        "AEG277_067_Volcano Prison_Annex Candlestand"
       ]
     },
     {
       "ID": 277070000,
       "Entries": [
-        "AEG277_070_Volcano Prison_Annex_Wall Candlestick (Guest Room)"
+        "AEG277_070_Volcano Prison_Annex_Wall Candlestand (For Guest Room)"
       ]
     },
     {
@@ -5422,31 +5422,31 @@
     {
       "ID": 277075000,
       "Entries": [
-        "AEG277_075_Volcano Prison_Outdoor Wall Lantern"
+        "AEG277_075_Volcano Prison_Outdoor Wall-Mounted Lantern"
       ]
     },
     {
       "ID": 277076000,
       "Entries": [
-        "AEG277_076_Lower Prison_Wall Candlestick"
+        "AEG277_076_Lower Prison_Wall Candlestand"
       ]
     },
     {
       "ID": 277076001,
       "Entries": [
-        "AEG277_076_Lower Prison_Wall Candlestick"
+        "AEG277_076_Lower Prison_Wall Candlestand"
       ]
     },
     {
       "ID": 277077000,
       "Entries": [
-        "AEG277_077_Lower Prison_Ceiling Candlestick"
+        "AEG277_077_Lower Prison_Ceiling Candlestand"
       ]
     },
     {
       "ID": 277082000,
       "Entries": [
-        "AEG277_082_Lower Prison_Floor Candlestick"
+        "AEG277_082_Lower Prison_Floor Candlestand"
       ]
     },
     {
@@ -5476,7 +5476,7 @@
     {
       "ID": 277120000,
       "Entries": [
-        "AEG277_120_Bonfire"
+        "AEG277_120_Campfire"
       ]
     },
     {
@@ -5488,79 +5488,79 @@
     {
       "ID": 277123000,
       "Entries": [
-        "AEG277_123_Main Building_Wall Candlestick"
+        "AEG277_123_Main Building_Wall Candlestand"
       ]
     },
     {
       "ID": 277127000,
       "Entries": [
-        "AEG277_127_Annex_Candlestick_Large_"
+        "AEG277_127_Annex_Candlestand_Large_"
       ]
     },
     {
       "ID": 277129000,
       "Entries": [
-        "AEG277_129_Annex_Candlestick_Lava Stone"
+        "AEG277_129_Annex_Candlestand_Lava Stone"
       ]
     },
     {
       "ID": 277130000,
       "Entries": [
-        "AEG277_130_Annex_Candlestick_Single"
+        "AEG277_130_Annex_Candlestand_Single"
       ]
     },
     {
       "ID": 300002000,
       "Entries": [
-        "AEG300_002_c4321_Wandering Lowly Soldier (Small Person) Poison Trap"
+        "AEG300_002_c4321_Wandering Lowly Soldier (Dwarf) Poison Trap"
       ]
     },
     {
       "ID": 400156000,
       "Entries": [
-        "AEG400_156 Candlestick (Large)"
+        "AEG400_156 Candlestand (Large)"
       ]
     },
     {
       "ID": 400161000,
       "Entries": [
-        "AEG400_161 Wall-mounted Torch"
+        "AEG400_161 Wall-Placed Torch"
       ]
     },
     {
       "ID": 400626000,
       "Entries": [
-        "AEG400_626 Candlestick (Large)"
+        "AEG400_626 Candlestand (Large)"
       ]
     },
     {
       "ID": 400626001,
       "Entries": [
-        "AEG400_626 Candlestick (Large)_Plains Replacement"
+        "AEG400_626 Candlestand (Large)_For Plains Replacement"
       ]
     },
     {
       "ID": 400628000,
       "Entries": [
-        "AEG400_628 Floor-standing Torch"
+        "AEG400_628 Floor Torch"
       ]
     },
     {
       "ID": 400628001,
       "Entries": [
-        "AEG400_628 Floor-standing Torch_Plains Replacement"
+        "AEG400_628 Floor Torch_For Plains Replacement"
       ]
     },
     {
       "ID": 400639000,
       "Entries": [
-        "AEG400_639 Wall-mounted Torch"
+        "AEG400_639 Wall-Placed Torch"
       ]
     },
     {
       "ID": 400639001,
       "Entries": [
-        "AEG400_639 Wall-mounted Torch_Plains Replacement"
+        "AEG400_639 Wall-Placed Torch_For Plains Replacement"
       ]
     },
     {
@@ -5572,13 +5572,13 @@
     {
       "ID": 400641000,
       "Entries": [
-        "AEG400_654 Standing Candlestick"
+        "AEG400_654 Standing Candlestand"
       ]
     },
     {
       "ID": 400641001,
       "Entries": [
-        "AEG400_654 Standing Candlestick_Plains Replacement"
+        "AEG400_654 Standing Candlestand_For Plains Replacement"
       ]
     },
     {
@@ -5590,7 +5590,7 @@
     {
       "ID": 400642001,
       "Entries": [
-        "AEG400_654 Candle_Plains Replacement"
+        "AEG400_654 Candle_For Plains Replacement"
       ]
     },
     {
@@ -5602,49 +5602,49 @@
     {
       "ID": 400643001,
       "Entries": [
-        "AEG400_654 Candle_Plains Replacement"
+        "AEG400_654 Candle_For Plains Replacement"
       ]
     },
     {
       "ID": 400654000,
       "Entries": [
-        "AEG400_654 Candlestick (Large)"
+        "AEG400_654 Candlestand (Large)"
       ]
     },
     {
       "ID": 400705000,
       "Entries": [
-        "AEG400_705 Arena Access OBJ"
+        "AEG400_705 Colosseum Access OBJ"
       ]
     },
     {
       "ID": 400705001,
       "Entries": [
-        "AEG400_705 Arena Access OBJ_Plains Replacement"
+        "AEG400_705 Colosseum Access OBJ_For Plains Replacement"
       ]
     },
     {
       "ID": 400706000,
       "Entries": [
-        "AEG400_705 Arena Access OBJ"
+        "AEG400_705 Colosseum Access OBJ"
       ]
     },
     {
       "ID": 400706001,
       "Entries": [
-        "AEG400_705 Arena Access OBJ_Plains Replacement"
+        "AEG400_705 Colosseum Access OBJ_For Plains Replacement"
       ]
     },
     {
       "ID": 400708000,
       "Entries": [
-        "AEG400_708 Arena Access OBJ(Royal Capital Legacy)"
+        "AEG400_708 Colosseum Access OBJ (Leyndell Legacy)"
       ]
     },
     {
       "ID": 700037000,
       "Entries": [
-        "AEG700_037 Bonfire (No Point Light)"
+        "AEG700_037 Campfire (No Point Light)"
       ]
     },
     {
@@ -5656,7 +5656,7 @@
     {
       "ID": 997310000,
       "Entries": [
-        "AEG997_310 Wind Check Electric Fan"
+        "AEG997_310 Wind Check Fan"
       ]
     },
     {

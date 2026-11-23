@@ -16,19 +16,19 @@
     {
       "ID": 1001,
       "Entries": [
-        "Open Sea Inner Sea"
+        "Open Sea Inland Sea"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Open Lake Audible Range 35m"
+        "Open Lake Hearing Range 35m"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        "Open Lake Audible Range 20m"
+        "Open Lake Hearing Range 20m"
       ]
     },
     {

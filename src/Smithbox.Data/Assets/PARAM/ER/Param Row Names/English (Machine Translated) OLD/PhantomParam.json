@@ -1,0 +1,395 @@
+{
+  "Name": "PhantomParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "[Deleted] Small White Phantom"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Weapon Enchant_Physical"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Weapon Enchant_Magic"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon Enchant_Frost"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Weapon Enchant_Holy"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Weapon Enchant_Sleep"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Weapon Enchant_Holy (No Anti-Undead Bonus)"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Weapon Enchant_Upper Magic"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Shield_Enchant_Magic"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Shield_Enchant_Physical"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Black Spirit"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "White Phantom"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "NPC white phantom (same appearance as 61)"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Rescue Spirit"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Spirit Ash summon"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Puppet Buddy"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Arena Buddy (Hostile)"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Arena Buddy (Hostile) Final Version"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "[DLC] Miquella buddy"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Defeated Soldier"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Circular Plaza Enemy"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Rennala's Summoning Magic"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Wandering Royal Army_Mausoleum Guard"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Spirit Animals of Spirit Tree Forest"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Animal Summoned by Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Godfrey Phantom"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Enemies appearing in Hero's Grave"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Tree Sentinel (Sorcerer) Phantom"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Glintstone Sorcery Phantom Enemy"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Scarab Metal"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Ruinator Phantom"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Talking Corpse"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Ranni Faction Phantom"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[DLC] Shadow enemy"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[DLC] Physalis spirit"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "[DLC] Summon Priests of the Divine Ones"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Wandering Phantom"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Message Phantom"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Death Replay Phantom"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Site of Grace Phantom"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[CS] s19_00_0020_Ranni summon"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "[CS] s19_00_0020_Marika statue disappearance glow_midway"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "[CS] s19_00_0020_Marika statue disappearance glow"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "[CS] s60_54_0001_PC_fire supplementary effect"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "[CS] s14_00_0010_Rennala summon A"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "[CS] s14_00_0010_Rennala summon B"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "[CS] s14_00_0010_Rennala summon C"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "[CS] s14_00_0010_Rennala summon D"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "[CS] s10_00_0010_Margit cut0010"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "[CS] s10_00_0010_Margit cut0020"
+      ]
+    },
+    {
+      "ID": 830,
+      "Entries": [
+        "[CS] s20_01_0010_Miquella"
+      ]
+    },
+    {
+      "ID": 831,
+      "Entries": [
+        "[CS] s20_01_0010_Miquella (transition)"
+      ]
+    },
+    {
+      "ID": 832,
+      "Entries": [
+        "[CS] s20_01_0010_Miquella (summon)"
+      ]
+    },
+    {
+      "ID": 833,
+      "Entries": [
+        "[CS] s20_01_0010_Child Miquella arm (summon)"
+      ]
+    },
+    {
+      "ID": 834,
+      "Entries": [
+        "[CS] s20_01_0010_Child Miquella arm"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "[CS] s61_44_0000_Complete Spiral Tower"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "[CS] s61_44_0000_Complete Spiral Tower (transition)"
+      ]
+    },
+    {
+      "ID": 890,
+      "Entries": [
+        "[CS] No change (transition)"
+      ]
+    },
+    {
+      "ID": 891,
+      "Entries": [
+        "[CS] Disappear (transition)"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "[Codename] Wandering Phantom"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "[Codename] Message Phantom"
+      ]
+    },
+    {
+      "ID": 922,
+      "Entries": [
+        "[Codename] Death Replay Phantom"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "[Codename] Bonfire Phantom"
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "Godfrey Statue Check"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "No Change (For Edit Base)"
+      ]
+    }
+  ]
+}

@@ -10,79 +10,79 @@
     {
       "ID": 10010,
       "Entries": [
-        "Stormveil Separated"
+        "Stormveil Outbuilding"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "Royal Capital"
+        "Leyndell"
       ]
     },
     {
       "ID": 35000,
       "Entries": [
-        "Royal Capital Underground Sewers"
+        "Leyndell Underground Sewers"
       ]
     },
     {
       "ID": 11050,
       "Entries": [
-        "Royal Capital (Ash)"
+        "Leyndell (Ash)"
       ]
     },
     {
       "ID": 19000,
       "Entries": [
-        "World Tree Hollow"
+        "Erdtree Hollow"
       ]
     },
     {
       "ID": 11100,
       "Entries": [
-        "Royal Capital (Base)"
+        "Leyndell (Base)"
       ]
     },
     {
       "ID": 12010,
       "Entries": [
-        "Underground Labyrinth・Poison Swamp Upper Level"
+        "Underground Labyrinth/Poison Swamp Upper Level"
       ]
     },
     {
       "ID": 12011,
       "Entries": [
-        "Underground Labyrinth・Poison Swamp Poison Lake"
+        "Underground Labyrinth/Poison Swamp Lake"
       ]
     },
     {
       "ID": 12012,
       "Entries": [
-        "Underground Labyrinth・Poison Swamp Lower Level"
+        "Underground Labyrinth/Poison Swamp Lower Level"
       ]
     },
     {
       "ID": 12020,
       "Entries": [
-        "Underground Labyrinth・Plains Upper Level"
+        "Underground Labyrinth/Plains Upper Level"
       ]
     },
     {
       "ID": 12070,
       "Entries": [
-        "Underground Labyrinth・Plains Lower Level"
+        "Underground Labyrinth/Plains Lower Level"
       ]
     },
     {
       "ID": 12050,
       "Entries": [
-        "Underground Labyrinth・Plains Interior"
+        "Underground Labyrinth/Plains Depths"
       ]
     },
     {
       "ID": 12030,
       "Entries": [
-        "Underground Labyrinth・Royal Capital"
+        "Underground Labyrinth/Leyndell"
       ]
     },
     {
@@ -94,7 +94,7 @@
     {
       "ID": 14000,
       "Entries": [
-        "Monsan"
+        "Raya Lucaria"
       ]
     },
     {
@@ -124,7 +124,7 @@
     {
       "ID": 61001,
       "Entries": [
-        "Seeker's Hill"
+        "Seeker\u0027s Hill"
       ]
     },
     {
@@ -148,37 +148,37 @@
     {
       "ID": 62001,
       "Entries": [
-        "Giant EV Front"
+        "Before Giant EV"
       ]
     },
     {
       "ID": 39200,
       "Entries": [
-        "Cliff Tunnel"
+        "Cliffside Tunnel"
       ]
     },
     {
       "ID": 62002,
       "Entries": [
-        "Hang Terrain"
+        "Hanging Terrain"
       ]
     },
     {
       "ID": 63000,
       "Entries": [
-        "Highland Zone"
+        "Altus Region"
       ]
     },
     {
       "ID": 63001,
       "Entries": [
-        "Volcano Zone"
+        "Volcanic Region"
       ]
     },
     {
       "ID": 63002,
       "Entries": [
-        "Royal Capital"
+        "Leyndell"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 64001,
       "Entries": [
-        "Ruins Descending Route"
+        "Descending Ruins Route"
       ]
     },
     {
@@ -202,7 +202,7 @@
     {
       "ID": 63003,
       "Entries": [
-        "Highland Snowfield Connection"
+        "Altus-Snowfield Connection"
       ]
     },
     {

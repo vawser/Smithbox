@@ -4,7 +4,7 @@
     {
       "ID": 1000,
       "Entries": [
-        "Detailed Status: Items"
+        "Detailed Stats: Tools"
       ]
     },
     {
@@ -16,13 +16,13 @@
     {
       "ID": 1020,
       "Entries": [
-        "Detailed Status: Items: End"
+        "Detailed Stats: Tools: End"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Detailed Status: Talisman"
+        "Detailed Stats: Talisman"
       ]
     },
     {
@@ -34,13 +34,13 @@
     {
       "ID": 1120,
       "Entries": [
-        "Detailed Status: Talisman: End"
+        "Detailed Stats: Talisman: End"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "Detailed Status: Oath Amulet"
+        "Detailed Stats: Covenant Amulet"
       ]
     },
     {
@@ -52,13 +52,13 @@
     {
       "ID": 1220,
       "Entries": [
-        "Detailed Status: Ring: End"
+        "Detailed Stats: Ring: End"
       ]
     },
     {
       "ID": 1300,
       "Entries": [
-        "Detailed Status: Elixir"
+        "Detailed Stats: Elixir"
       ]
     },
     {
@@ -70,13 +70,13 @@
     {
       "ID": 1316,
       "Entries": [
-        "Detailed Status: Elixir: End"
+        "Detailed Stats: Elixir: End"
       ]
     },
     {
       "ID": 1400,
       "Entries": [
-        "Detailed Status: Pot"
+        "Detailed Stats: Jar"
       ]
     },
     {
@@ -88,19 +88,19 @@
     {
       "ID": 1420,
       "Entries": [
-        "Detailed Status: Pot: End"
+        "Detailed Stats: Jar: End"
       ]
     },
     {
       "ID": 1500,
       "Entries": [
-        "Detailed Status: Other"
+        "Detailed Stats: Other"
       ]
     },
     {
       "ID": 1501,
       "Entries": [
-        "※ Upgrade materials"
+        "※ Upgrade Material, Valuables"
       ]
     },
     {
@@ -112,13 +112,13 @@
     {
       "ID": 1520,
       "Entries": [
-        "Detailed Status: Other: End"
+        "Detailed Stats: Other: End"
       ]
     },
     {
       "ID": 1600,
       "Entries": [
-        "Detailed Status: Spirit Ash Item"
+        "Detailed Stats: Buddy Item"
       ]
     },
     {
@@ -130,13 +130,13 @@
     {
       "ID": 1620,
       "Entries": [
-        "Detailed Status: Spirit Ash Item: End"
+        "Detailed Stats: Buddy Item: End"
       ]
     },
     {
       "ID": 1700,
       "Entries": [
-        "Detailed Status: Item Crafting Material"
+        "Detailed Stats: Item Crafting Material"
       ]
     },
     {
@@ -148,157 +148,157 @@
     {
       "ID": 1720,
       "Entries": [
-        "Detailed Status: Item Crafting Material: End"
+        "Detailed Stats: Item Crafting Material: End"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Detailed Status: Weapon *Excluding Catalysts"
+        "Detailed Stats: Weapon ※Except Catalysts"
       ]
     },
     {
       "ID": 2070,
       "Entries": [
-        "Detailed Status: Weapon *Excluding Catalysts End"
+        "Detailed Stats: Weapon ※Except Catalysts End"
       ]
     },
     {
       "ID": 2100,
       "Entries": [
-        "Magic Stone Selected: Detailed Status: Weapon *Non-Catalyst"
+        "Ash Selected: Detailed Stats: Weapon ※Except Catalysts"
       ]
     },
     {
       "ID": 2170,
       "Entries": [
-        "Magic Stone Selected: Detailed Status: Weapon *Non-Catalyst End"
+        "Ash Selected: Detailed Stats: Weapon ※Except Catalysts End"
       ]
     },
     {
       "ID": 2300,
       "Entries": [
-        "Detailed Status: Weapon: Catalyst Only"
+        "Detailed Stats: Weapon: Catalyst Only Only Attribute Scaling Item Help Differs"
       ]
     },
     {
       "ID": 2301,
       "Entries": [
-        "※ Sorcery type"
+        "※ Sorcery Type"
       ]
     },
     {
       "ID": 2370,
       "Entries": [
-        "Detailed Status: Weapon: Catalyst Only End"
+        "Detailed Stats: Weapon: Catalyst Only End"
       ]
     },
     {
       "ID": 2400,
       "Entries": [
-        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only"
+        "Ash Selected: Detailed Stats: Weapon: Catalyst Only Only Attribute Scaling Item Help Differs"
       ]
     },
     {
       "ID": 2401,
       "Entries": [
-        "※ Sorcery type"
+        "※ Sorcery Type"
       ]
     },
     {
       "ID": 2470,
       "Entries": [
-        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only End"
+        "Ash Selected: Detailed Stats: Weapon: Catalyst Only End"
       ]
     },
     {
       "ID": 2500,
       "Entries": [
-        "Detailed Status: Weapon: Catalyst Only"
+        "Detailed Stats: Weapon: Catalyst Only Only Attribute Scaling Item Help Differs"
       ]
     },
     {
       "ID": 2501,
       "Entries": [
-        "※ Incantation type"
+        "※ Incantation Type"
       ]
     },
     {
       "ID": 2570,
       "Entries": [
-        "Detailed Status: Weapon: Catalyst Only End"
+        "Detailed Stats: Weapon: Catalyst Only End"
       ]
     },
     {
       "ID": 2600,
       "Entries": [
-        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only"
+        "Ash Selected: Detailed Stats: Weapon: Catalyst Only Only Attribute Scaling Item Help Differs"
       ]
     },
     {
       "ID": 2601,
       "Entries": [
-        "※ Incantation type"
+        "※ Incantation Type"
       ]
     },
     {
       "ID": 2670,
       "Entries": [
-        "Magic Stone Selected: Detailed Status: Weapon: Catalyst Only End"
+        "Ash Selected: Detailed Stats: Weapon: Catalyst Only End"
       ]
     },
     {
       "ID": 4000,
       "Entries": [
-        "Detailed Status: Armor"
+        "Detailed Stats: Armor"
       ]
     },
     {
       "ID": 4027,
       "Entries": [
-        "Detailed Status: Armor: End"
+        "Detailed Stats: Armor: End"
       ]
     },
     {
       "ID": 5000,
       "Entries": [
-        "Detailed Status: Sorcery"
+        "Detailed Stats: Spells"
       ]
     },
     {
       "ID": 5018,
       "Entries": [
-        "Detailed Status: Sorcery: End"
+        "Detailed Stats: Spells: End"
       ]
     },
     {
       "ID": 6000,
       "Entries": [
-        "Detailed Status: Arrows"
+        "Detailed Stats: Arrow, Bolt"
       ]
     },
     {
       "ID": 6030,
       "Entries": [
-        "Detailed Status: Arrows"
+        "Detailed Stats: Arrow, Bolt: End"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "Detailed Status: Magic Stones"
+        "Detailed Stats: Magic Stone"
       ]
     },
     {
       "ID": 6520,
       "Entries": [
-        "Detailed Status: Magic Stones: End"
+        "Detailed Stats: Magic Stone: End"
       ]
     },
     {
       "ID": 7000,
       "Entries": [
-        "Recipe Detail: Tool"
+        "Recipe Details: Tools"
       ]
     },
     {
@@ -310,13 +310,13 @@
     {
       "ID": 7034,
       "Entries": [
-        "Recipe Detail: Tool: Terminal"
+        "Recipe Details: Tools: End"
       ]
     },
     {
       "ID": 7100,
       "Entries": [
-        "Recipe Detail: Arrow/Bolt"
+        "Recipe Details: Arrow/Bolt"
       ]
     },
     {
@@ -328,13 +328,13 @@
     {
       "ID": 7134,
       "Entries": [
-        "Recipe Detail: Arrow/Bolt: Terminal"
+        "Recipe Details: Arrow/Bolt: End"
       ]
     },
     {
       "ID": 7200,
       "Entries": [
-        "Recipe Detail: Pot"
+        "Recipe Details: Jar"
       ]
     },
     {
@@ -346,31 +346,31 @@
     {
       "ID": 7234,
       "Entries": [
-        "Recipe Detail: Tool: Terminal"
+        "Recipe Details: Tools: End"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "Player Status (Character Data): Page 1"
+        "Player Status (Character Data) : Page 1"
       ]
     },
     {
       "ID": 10027,
       "Entries": [
-        "Player Status (Character Data): Page 1: End"
+        "Player Status (Character Data) : Page 1: End"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "Player Status (Character Data): Page 2"
+        "Player Status (Character Data) : Page 2"
       ]
     },
     {
       "ID": 11040,
       "Entries": [
-        "Player Status (Character Data): Page 2: End"
+        "Player Status (Character Data) : Page 2: End"
       ]
     },
     {
@@ -382,259 +382,259 @@
     {
       "ID": 15007,
       "Entries": [
-        "Status: Page 2: Center: Terminus"
+        "Status: Page 2: Center: End"
       ]
     },
     {
       "ID": 15500,
       "Entries": [
-        "Status: Common to Pages 1 and 2: Left Side"
+        "Status: 1"
       ]
     },
     {
       "ID": 15519,
       "Entries": [
-        "Status: Common to Pages 1 and 2: Left Side: Terminus"
+        "Status: 1"
       ]
     },
     {
       "ID": 16000,
       "Entries": [
-        "Status: Page 1 (Player Stats)"
+        "Status: Page 1 (Player Status)"
       ]
     },
     {
       "ID": 16046,
       "Entries": [
-        "Status: Page 1: Terminus"
+        "Status: Page 1: End"
       ]
     },
     {
       "ID": 20000,
       "Entries": [
-        "Inventory: Upper"
+        "Inventory: Upper Section"
       ]
     },
     {
       "ID": 20002,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20100,
       "Entries": [
-        "Shop Display: Upper"
+        "Sales Shop: Upper Section"
       ]
     },
     {
       "ID": 20102,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20200,
       "Entries": [
-        "Sell Shop: Upper"
+        "Sell Shop: Upper Section"
       ]
     },
     {
       "ID": 20202,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20300,
       "Entries": [
-        "Equip: Upper"
+        "Equipment: Upper Section"
       ]
     },
     {
       "ID": 20303,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20400,
       "Entries": [
-        "Weapon Upgrade: Upper"
+        "Weapon Upgrade: Upper Section"
       ]
     },
     {
       "ID": 20402,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20500,
       "Entries": [
-        "Magic Stone Equip: Upper"
+        "Ash Attachment: Upper Section"
       ]
     },
     {
       "ID": 20502,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20600,
       "Entries": [
-        "Repair: Upper"
+        "Repair: Upper Section"
       ]
     },
     {
       "ID": 20602,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20700,
       "Entries": [
-        "Alchemy Furnace: Upper"
+        "Refining Furnace: Upper Section"
       ]
     },
     {
       "ID": 20702,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20800,
       "Entries": [
-        "Dragon Communion Shop: Upper"
+        "Dragon Communion Shop: Upper Section"
       ]
     },
     {
       "ID": 20802,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 20900,
       "Entries": [
-        "Other item selection: top"
+        "Other Item Selection: Upper Section"
       ]
     },
     {
       "ID": 20902,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21000,
       "Entries": [
-        "Magic Stone Equip: Selected Magic Stone Data"
+        "Ash Attachment: Selected Magic Stone Data"
       ]
     },
     {
       "ID": 21006,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21100,
       "Entries": [
-        "Soul Refinement: Upper"
+        "Soul Smelting: Upper Section"
       ]
     },
     {
       "ID": 21102,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21200,
       "Entries": [
-        "Free Shop: Upper"
+        "Free Shop: Upper Section"
       ]
     },
     {
       "ID": 21202,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21300,
       "Entries": [
-        "Dragon Communion Shop: Upper"
+        "Dragon Communion Shop: Upper Section"
       ]
     },
     {
       "ID": 21301,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21400,
       "Entries": [
-        "Puppet Buddy Shop: Upper"
+        "Puppet Buddy Shop: Upper Section"
       ]
     },
     {
       "ID": 21401,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21500,
       "Entries": [
-        "Air Magic Stone Copy: Upper"
+        "Empty Magic Stone Copy: Upper Section"
       ]
     },
     {
       "ID": 21501,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 21600,
       "Entries": [
-        "Dragon Communion (Veil-exclusive) Shop: Upper"
+        "Dragon Communion (Veil Exclusive) Shop: Upper Section"
       ]
     },
     {
       "ID": 21601,
       "Entries": [
-        "Terminal"
+        "End"
       ]
     },
     {
       "ID": 22000,
       "Entries": [
-        "Quantity Select Dialog: Tool"
+        "Quantity Selection Dialog: Tools, Arrow/Bolt"
       ]
     },
     {
       "ID": 22030,
       "Entries": [
-        "Quantity Select Dialog: Tool"
+        "Quantity Selection Dialog: Tools, Arrow/Bolt: End"
       ]
     },
     {
       "ID": 23000,
       "Entries": [
-        "Quantity Select Dialog: Pot"
+        "Quantity Selection Dialog: Jar"
       ]
     },
     {
       "ID": 23030,
       "Entries": [
-        "Quantity Select Dialog: Pot: End"
+        "Quantity Selection Dialog: Jar: End"
       ]
     },
     {
@@ -646,7 +646,7 @@
     {
       "ID": 23804,
       "Entries": [
-        "Elixir: Terminal"
+        "Elixir: End"
       ]
     },
     {
@@ -676,13 +676,13 @@
     {
       "ID": 32000,
       "Entries": [
-        "Multiplayer Bottom: Cooperative Sign"
+        "Multiplayer Bottom: Co-op Sign"
       ]
     },
     {
       "ID": 32003,
       "Entries": [
-        "Multiplayer Bottom: Cooperative Sign: End"
+        "Multiplayer Bottom: Co-op Sign: End"
       ]
     },
     {
@@ -736,13 +736,13 @@
     {
       "ID": 40000,
       "Entries": [
-        "Character Creation Top: Upper"
+        "Character Creation Top: Upper Section"
       ]
     },
     {
       "ID": 40005,
       "Entries": [
-        "Character Creation Top: Lower"
+        "Character Creation Top: Lower Section"
       ]
     },
     {

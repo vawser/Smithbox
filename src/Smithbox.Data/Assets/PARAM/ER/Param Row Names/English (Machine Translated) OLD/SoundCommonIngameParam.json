@@ -1,0 +1,89 @@
+{
+  "Name": "SoundCommonIngameParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Constant map ambient SoundId. Played from the constant sound source upon entering the map"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Damage Sound Generation Effective Distance from Listener [m] (0 or Less: No Limit) [GR] SEQ10487 [Sound] Want to space out hit sounds"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Damage Sound Same Asset"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "PC Speed-Based Wind Sound [sec]"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Wait Time Between Field BGM Transitions [sec]"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Generic Wait Time When Switching Location Type [sec]"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Caravan claude restriction offset distance [m] (negative value disables all-distance load restriction)"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Caravan claude restriction slack [m]"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Character Sound Effect Activation Distance Slack [m] [GR] SEQ03076"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Asset Bank Load Restriction Offset Distance [m]"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Asset Bank Load Restriction Slack [m]"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Asset Sound Playback Effective Distance Slack [m]"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Default voice bank release delay time. Also used as parameter start offset. *Affects memory; consult PG before changing*"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "vc207 Grafted King"
+      ]
+    }
+  ]
+}

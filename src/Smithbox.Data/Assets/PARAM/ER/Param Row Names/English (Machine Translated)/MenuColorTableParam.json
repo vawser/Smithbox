@@ -4,73 +4,73 @@
     {
       "ID": 0,
       "Entries": [
-        "Must Not Extinguish"
+        "Do Not Delete"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Generic color: used for tattoo/bruise color"
+        "Generic Color : Tattoo/Birthmark Color"
       ]
     },
     {
       "ID": 1101,
       "Entries": [
-        "Skin Tone: used with flesh-colored skin"
+        "Skin Color : Used in Skin Color"
       ]
     },
     {
       "ID": 1201,
       "Entries": [
-        "Hair color: used for hair"
+        "Hair Color : Hair"
       ]
     },
     {
       "ID": 1202,
       "Entries": [
-        "※ Black hair"
+        "※ Black Hair, Chestnut Hair, Red Hair, Blond Hair, Silver Hair, White Hair Etc"
       ]
     },
     {
       "ID": 1301,
       "Entries": [
-        "Eye color: used for eye color"
+        "Eyeball Color : Eye Color"
       ]
     },
     {
       "ID": 1401,
       "Entries": [
-        "Makeup Color: used for Blush"
+        "Makeup Color : Dark Circles"
       ]
     },
     {
       "ID": 1402,
       "Entries": [
-        "⇒ Eye bag color"
+        "⇒ Dark Circle Color"
       ]
     },
     {
       "ID": 1421,
       "Entries": [
-        "⇒ Blush color"
+        "⇒ Cheek Color"
       ]
     },
     {
       "ID": 1441,
       "Entries": [
-        "⇒ Eyeliner color"
+        "⇒ Eyeliner Color"
       ]
     },
     {
       "ID": 1461,
       "Entries": [
-        "⇒ Eyeshadow color (upper/lower common)"
+        "⇒ Eyeshadow Color (Top/Bottom Common)"
       ]
     },
     {
       "ID": 1481,
       "Entries": [
-        "⇒ Lipstick color"
+        "⇒ Lipstick Color"
       ]
     }
   ]

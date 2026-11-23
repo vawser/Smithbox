@@ -4,19 +4,19 @@
     {
       "ID": 0,
       "Entries": [
-        "None (default"
+        "None (Default Used When String Not Found)"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Yes."
+        "Present"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Wall Deflect"
+        "Wall Bounce"
       ]
     }
   ]

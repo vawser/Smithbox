@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Default leg equipment. Do not delete. Used when no param exists"
+        "For Default Leg Armor.Do Not Delete.This is Used if No Param"
       ]
     },
     {
@@ -16,7 +16,7 @@
     {
       "ID": 101,
       "Entries": [
-        "Candle"
+        "Wax"
       ]
     },
     {
@@ -28,19 +28,19 @@
     {
       "ID": 103,
       "Entries": [
-        "Weapon Meat"
+        "Weapon Flesh"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Shield_Iron"
+        "Shield Iron"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Shield_Wood"
+        "Shield Wood"
       ]
     },
     {
@@ -76,7 +76,7 @@
     {
       "ID": 111,
       "Entries": [
-        "Dragon Meat"
+        "Dragon Flesh"
       ]
     },
     {
@@ -100,7 +100,7 @@
     {
       "ID": 115,
       "Entries": [
-        "Hair"
+        "Fur"
       ]
     },
     {
@@ -112,13 +112,13 @@
     {
       "ID": 117,
       "Entries": [
-        "Feather"
+        "Blade"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Carrion"
+        "Rotten Flesh"
       ]
     },
     {
@@ -136,7 +136,7 @@
     {
       "ID": 121,
       "Entries": [
-        "Death Spirit"
+        "Wraith"
       ]
     },
     {
@@ -160,7 +160,7 @@
     {
       "ID": 125,
       "Entries": [
-        "Fire"
+        "Flame"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 127,
       "Entries": [
-        "Shield_Stone"
+        "Shield Stone"
       ]
     },
     {
@@ -184,7 +184,7 @@
     {
       "ID": 129,
       "Entries": [
-        "Shield_Heavy_Iron"
+        "Shield Heavy Iron"
       ]
     },
     {
@@ -220,25 +220,25 @@
     {
       "ID": 135,
       "Entries": [
-        "Ghost White (For Guard)"
+        "Ghost White (For Guarding)"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Ghost Black (For Guard)"
+        "Ghost Black (For Guarding)"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "Ghost Enemy White(For Guard)"
+        "Ghost Enemy White (For Guarding)"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "Ghost Enemy Black(For Guard)"
+        "Ghost Enemy Black (For Guarding)"
       ]
     },
     {
@@ -250,13 +250,13 @@
     {
       "ID": 140,
       "Entries": [
-        "Eye Glow"
+        "Eye Glint"
       ]
     },
     {
       "ID": 141,
       "Entries": [
-        "Eclipse"
+        "Erosion"
       ]
     },
     {
@@ -280,7 +280,7 @@
     {
       "ID": 145,
       "Entries": [
-        "Body Fluid"
+        "Bodily Fluid"
       ]
     },
     {
@@ -298,7 +298,7 @@
     {
       "ID": 148,
       "Entries": [
-        "Maggot weak point"
+        "Maggot Weak Point"
       ]
     },
     {
@@ -334,7 +334,7 @@
     {
       "ID": 154,
       "Entries": [
-        "Weapon Pumice"
+        "Weapon Light Stone"
       ]
     },
     {
@@ -358,43 +358,43 @@
     {
       "ID": 158,
       "Entries": [
-        "Weapon Secret Glyph"
+        "Weapon Cipher"
       ]
     },
     {
       "ID": 159,
       "Entries": [
-        "Weapon Ring Finger"
+        "Weapon Ringed Finger"
       ]
     },
     {
       "ID": 160,
       "Entries": [
-        "Shield_Light_Iron"
+        "Shield Light Iron"
       ]
     },
     {
       "ID": 161,
       "Entries": [
-        "Shield_Heavy_Wood"
+        "Shield Heavy Wood"
       ]
     },
     {
       "ID": 162,
       "Entries": [
-        "Shield_Heavy_Stone"
+        "Shield Heavy Stone"
       ]
     },
     {
       "ID": 163,
       "Entries": [
-        "Shield_Crystal"
+        "Shield Crystal"
       ]
     },
     {
       "ID": 164,
       "Entries": [
-        "Shield_Spirit"
+        "Shield Spirit"
       ]
     },
     {

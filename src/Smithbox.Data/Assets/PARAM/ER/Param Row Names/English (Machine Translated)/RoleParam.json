@@ -10,7 +10,7 @@
     {
       "ID": 1,
       "Entries": [
-        "Co-op sign"
+        "Co-op Sign"
       ]
     },
     {
@@ -22,7 +22,7 @@
     {
       "ID": 3,
       "Entries": [
-        "Wander"
+        "Wandering"
       ]
     },
     {
@@ -76,19 +76,19 @@
     {
       "ID": 12,
       "Entries": [
-        "Invader"
+        "Intruder"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "For Arena"
+        "For Colosseum"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "Blood Writing Message Phantom"
+        "Bloodmessage Phantom"
       ]
     },
     {
@@ -112,13 +112,13 @@
     {
       "ID": 18,
       "Entries": [
-        "Invasion_A_Limited"
+        "Invasion_A_Finite"
       ]
     },
     {
       "ID": 19,
       "Entries": [
-        "Co-op sign_NPC"
+        "Co-op Sign_NPC"
       ]
     },
     {
@@ -148,7 +148,7 @@
     {
       "ID": 10001,
       "Entries": [
-        "White Ghost (Red Hunt White Covenant)"
+        "White Ghost (Red Hunter White Covenant)"
       ]
     },
     {
@@ -202,7 +202,7 @@
     {
       "ID": 50002,
       "Entries": [
-        "Black Ghost (Rosalia Covenant)"
+        "Black Ghost (Rosaria Covenant)"
       ]
     },
     {
@@ -244,7 +244,7 @@
     {
       "ID": 90001,
       "Entries": [
-        "White Ghost (Red Hunt 2 Covenant)"
+        "White Ghost (Red Hunter 2 Covenant)"
       ]
     },
     {
@@ -256,7 +256,7 @@
     {
       "ID": 1000001,
       "Entries": [
-        "White Ghost_CodeName"
+        "White Ghost_Codename"
       ]
     },
     {
@@ -268,7 +268,7 @@
     {
       "ID": 1000003,
       "Entries": [
-        "Wander_Codename"
+        "Wandering_Codename"
       ]
     },
     {
@@ -280,19 +280,19 @@
     {
       "ID": 1000014,
       "Entries": [
-        "Blood Writing Message Phantom_Codename"
+        "Bloodmessage Phantom_Codename"
       ]
     },
     {
       "ID": 1000000001,
       "Entries": [
-        "Invasion_NPC World Invasion_Multiplayer Enabled (Miquella Faction Battle)_Former Host PC"
+        "Invasion_NPC World Invasion_With Multiplayer (Miquella Group Fight)_Former Host PC"
       ]
     },
     {
       "ID": 1000000002,
       "Entries": [
-        "Invasion_NPC World Invasion_Multiplayer Enabled (Miquella Faction Battle)_PC Ally"
+        "Invasion_NPC World Invasion_With Multiplayer (Miquella Group Fight)_PC\u0027s Ally"
       ]
     }
   ]

@@ -10,67 +10,67 @@
     {
       "ID": 20000000,
       "Entries": [
-        "Black Knife Descendant"
+        "Black Knife Assassin"
       ]
     },
     {
       "ID": 20100000,
       "Entries": [
-        "Lost Kin_Knight Dual Wield"
+        "Lost Race_Knight Dual Wield"
       ]
     },
     {
       "ID": 20200000,
       "Entries": [
-        "Lost Kin_Knight Halberd"
+        "Lost Race_Knight Halberd"
       ]
     },
     {
       "ID": 20300000,
       "Entries": [
-        "Insectoid Golem Appearance Variant 2_Hatchet_Magic Jar Type 1"
+        "Insect-Man Golem Appearance 2 Hatchet Magic Pot Type 1"
       ]
     },
     {
       "ID": 20300001,
       "Entries": [
-        "Insectoid Golem Appearance Variant 2_Hatchet_Magic Jar Type 2"
+        "Insect-Man Golem Appearance 2 Hatchet Magic Pot Type 2"
       ]
     },
     {
       "ID": 20400000,
       "Entries": [
-        "WolfRider"
+        "Wolf Rider"
       ]
     },
     {
       "ID": 20500000,
       "Entries": [
-        "Red-Eye Guardian"
+        "Red-Eyed Guardian"
       ]
     },
     {
       "ID": 20600000,
       "Entries": [
-        "Direct Lineage of Marika Straight Sword"
+        "Marika\u0027s Direct Line Straight Sword"
       ]
     },
     {
       "ID": 20600001,
       "Entries": [
-        "Direct Lineage of Marika Dagger"
+        "Marika\u0027s Direct Line Dagger"
       ]
     },
     {
       "ID": 20700000,
       "Entries": [
-        "Marika Slime No Shield (Copy)"
+        "Marika Slime Shieldless (Copy)"
       ]
     },
     {
       "ID": 20700001,
       "Entries": [
-        "Marika Slime Copy Destination Costume Change NPC"
+        "Marika Slime Copy Target Dress-Up NPC"
       ]
     },
     {
@@ -82,25 +82,25 @@
     {
       "ID": 20900000,
       "Entries": [
-        "Ancestral Follower (Male) Bow"
+        "Ancestor Worshipper (Male) Bow"
       ]
     },
     {
       "ID": 21000000,
       "Entries": [
-        "Children of Radagon Wing"
+        "Children of Radagon Blade"
       ]
     },
     {
       "ID": 21100000,
       "Entries": [
-        "Frog-man Sword B1"
+        "Frogman Sword B1"
       ]
     },
     {
       "ID": 21100001,
       "Entries": [
-        "Frog-man Sword B2"
+        "Frogman Sword B2"
       ]
     },
     {
@@ -118,67 +118,67 @@
     {
       "ID": 21300000,
       "Entries": [
-        "Buried Skeleton Bidirectional Sword"
+        "Buried Skeleton Twin Curved Swords"
       ]
     },
     {
       "ID": 21400000,
       "Entries": [
-        "Servants of the Moon Small 1"
+        "Moon Attendants Small 1"
       ]
     },
     {
       "ID": 21400001,
       "Entries": [
-        "Servants of the Moon Small 2"
+        "Moon Attendants Small 2"
       ]
     },
     {
       "ID": 21400002,
       "Entries": [
-        "Servants of the Moon Small 3"
+        "Moon Attendants Small 3"
       ]
     },
     {
       "ID": 21400003,
       "Entries": [
-        "Servants of the Moon Small 4"
+        "Moon Attendants Small 4"
       ]
     },
     {
       "ID": 21500000,
       "Entries": [
-        "Rotten Undead 1"
+        "Rotten Hollow 1"
       ]
     },
     {
       "ID": 21500001,
       "Entries": [
-        "Rotten Undead 2"
+        "Rotten Hollow 2"
       ]
     },
     {
       "ID": 21500002,
       "Entries": [
-        "Rotten Undead 3"
+        "Rotten Hollow 3"
       ]
     },
     {
       "ID": 21500003,
       "Entries": [
-        "Rotten Undead 4"
+        "Rotten Hollow 4"
       ]
     },
     {
       "ID": 21600000,
       "Entries": [
-        "Perfumer Sorcerer (Decadence) Dagger"
+        "Perfumer Sorcerer (Corrupted) Dagger"
       ]
     },
     {
       "ID": 21700000,
       "Entries": [
-        "Scholar Perfumer (Court) Shield"
+        "Perfumer Sorcerer (Court) Shield"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 21900000,
       "Entries": [
-        "Glintstone Sorcerer Two-tone Blue-Purple"
+        "Glintstone Sorcerer 2 Color Blue-Purple"
       ]
     },
     {
@@ -202,31 +202,31 @@
     {
       "ID": 22100000,
       "Entries": [
-        "Wandering Glintstone Sorcerer"
+        "Stray Glintstone Sorcerer"
       ]
     },
     {
       "ID": 22200000,
       "Entries": [
-        "Rune-eating Bubble Magic 1"
+        "Rune Eater Bubble Magic 1"
       ]
     },
     {
       "ID": 22200001,
       "Entries": [
-        "Rune-eating Bubble Magic 2"
+        "Rune Eater Bubble Magic 2"
       ]
     },
     {
       "ID": 22300000,
       "Entries": [
-        "Godskin Apostle Reaper"
+        "Cleanrot Knights Reaper"
       ]
     },
     {
       "ID": 22400000,
       "Entries": [
-        "Rot's Kin"
+        "Rot Kindred"
       ]
     },
     {
@@ -256,31 +256,31 @@
     {
       "ID": 22700000,
       "Entries": [
-        "Giant Flame Monk Mace"
+        "Giant\u0027s Fire Monk Mace"
       ]
     },
     {
       "ID": 22800000,
       "Entries": [
-        "Giant Flame Monk (Godskin Garb) Curved Sword"
+        "Giant\u0027s Fire Monk (Godskin Garb) Curved Sword"
       ]
     },
     {
       "ID": 22900000,
       "Entries": [
-        "Children of Ghouls No Throat Sac Lava Whip"
+        "Children of the Ghouls No Throat Sac Lava Whip"
       ]
     },
     {
       "ID": 23000000,
       "Entries": [
-        "Descendants of the Intelligent Beast_Greatweapon + Lightning Enchant 1"
+        "Descendants of the Intelligent Beast Large Weapon\u002BLightning Enchant 1"
       ]
     },
     {
       "ID": 23000001,
       "Entries": [
-        "Descendants of the Intelligent Beast_Greatweapon + Lightning Enchant 2"
+        "Descendants of the Intelligent Beast Large Weapon\u002BLightning Enchant 2"
       ]
     },
     {
@@ -328,67 +328,67 @@
     {
       "ID": 23310000,
       "Entries": [
-        "Breed on Upgrade: Dog Rat 1"
+        "Multiplies with Upgrade: Dog Rat 1"
       ]
     },
     {
       "ID": 23310001,
       "Entries": [
-        "Breed on Upgrade: Dog Rat 2"
+        "Multiplies with Upgrade: Dog Rat 2"
       ]
     },
     {
       "ID": 23310002,
       "Entries": [
-        "Breed on Upgrade: Dog Rat 3"
+        "Multiplies with Upgrade: Dog Rat 3"
       ]
     },
     {
       "ID": 23310003,
       "Entries": [
-        "Breed on Upgrade: Dog Rat 4"
+        "Multiplies with Upgrade: Dog Rat 4"
       ]
     },
     {
       "ID": 23320000,
       "Entries": [
-        "Further Breed on Upgrade: Dog Rat 1"
+        "Multiplies Further with Upgrade: Dog Rat 1"
       ]
     },
     {
       "ID": 23320001,
       "Entries": [
-        "Further Breed on Upgrade: Dog Rat 2"
+        "Multiplies Further with Upgrade: Dog Rat 2"
       ]
     },
     {
       "ID": 23320002,
       "Entries": [
-        "Further Breed on Upgrade: Dog Rat 3"
+        "Multiplies Further with Upgrade: Dog Rat 3"
       ]
     },
     {
       "ID": 23320003,
       "Entries": [
-        "Further Breed on Upgrade: Dog Rat 4"
+        "Multiplies Further with Upgrade: Dog Rat 4"
       ]
     },
     {
       "ID": 23320004,
       "Entries": [
-        "Further Breed on Upgrade: Dog Rat 5"
+        "Multiplies Further with Upgrade: Dog Rat 5"
       ]
     },
     {
       "ID": 23400000,
       "Entries": [
-        "Gray Demi-Human_Basic Curved Sword + Shield"
+        "Gray Demi-Human_Basic Scimitar\u002BShield"
       ]
     },
     {
       "ID": 23400001,
       "Entries": [
-        "Gray Demi-Human_Basic Curved Sword"
+        "Gray Demi-Human_Basic Scimitar"
       ]
     },
     {
@@ -412,7 +412,7 @@
     {
       "ID": 23500000,
       "Entries": [
-        "Undead Dog (Large): Rot"
+        "Hollow Dog (Large): Rot"
       ]
     },
     {
@@ -424,73 +424,73 @@
     {
       "ID": 23700000,
       "Entries": [
-        "Stormhawk Helmet On"
+        "Storm Hawk With Helmet"
       ]
     },
     {
       "ID": 23800000,
       "Entries": [
-        "Stormhawk (Unarmed)"
+        "Storm Hawk (Unarmed)"
       ]
     },
     {
       "ID": 23900000,
       "Entries": [
-        "Bolas Hound"
+        "Hound of Bolas"
       ]
     },
     {
       "ID": 24000000,
       "Entries": [
-        "Grave Robber Noble Straight Sword"
+        "Grave-Robbing Noble Straight Sword"
       ]
     },
     {
       "ID": 24000001,
       "Entries": [
-        "Grave Robber Noble Straight Sword_Model Variant"
+        "Grave-Robbing Noble Straight Sword_Different Model"
       ]
     },
     {
       "ID": 24000002,
       "Entries": [
-        "Grave Robber Noble Rapier"
+        "Grave-Robbing Noble Rapier"
       ]
     },
     {
       "ID": 24000003,
       "Entries": [
-        "Grave Robber Noble Torch"
+        "Grave-Robbing Noble Torch"
       ]
     },
     {
       "ID": 24000004,
       "Entries": [
-        "Grave Robber Noble Torch_Model Variant"
+        "Grave-Robbing Noble Torch_Different Model"
       ]
     },
     {
       "ID": 24100000,
       "Entries": [
-        "Grave Robber Noble Magic"
+        "Grave-Robbing Noble Magic"
       ]
     },
     {
       "ID": 24200000,
       "Entries": [
-        "Wandering Lowly Soldier (Demi-Human) Long-Handled Cleaver 1"
+        "Wandering Lowly Soldier (Dwarf) Long-Hafted Machete 1"
       ]
     },
     {
       "ID": 24200001,
       "Entries": [
-        "Wandering Lowly Soldier (Demi-Human) Long-Handled Cleaver 2"
+        "Wandering Lowly Soldier (Dwarf) Long-Hafted Machete 2"
       ]
     },
     {
       "ID": 24200002,
       "Entries": [
-        "Wandering Lowly Soldier (Demi-Human) Long-Handled Cleaver 3"
+        "Wandering Lowly Soldier (Dwarf) Long-Hafted Machete 3"
       ]
     },
     {
@@ -502,67 +502,67 @@
     {
       "ID": 24400000,
       "Entries": [
-        "Land Barnacle 1"
+        "Land Squirt 1"
       ]
     },
     {
       "ID": 24400001,
       "Entries": [
-        "Land Barnacle 2"
+        "Land Squirt 2"
       ]
     },
     {
       "ID": 24400002,
       "Entries": [
-        "Land Barnacle 3"
+        "Land Squirt 3"
       ]
     },
     {
       "ID": 24500000,
       "Entries": [
-        "Runeeating Flower (Child Plant) Normal Type 1"
+        "Rune-Eating Flower (Offshoot) Normal Species 1"
       ]
     },
     {
       "ID": 24500001,
       "Entries": [
-        "Runeeating Flower (Child Plant) Normal Type 2"
+        "Rune-Eating Flower (Offshoot) Normal Species 2"
       ]
     },
     {
       "ID": 24500002,
       "Entries": [
-        "Runeeating Flower (Child Plant) Normal Type 3"
+        "Rune-Eating Flower (Offshoot) Normal Species 3"
       ]
     },
     {
       "ID": 24500003,
       "Entries": [
-        "Runeeating Flower (Child Plant) Normal Type 4"
+        "Rune-Eating Flower (Offshoot) Normal Species 4"
       ]
     },
     {
       "ID": 24500004,
       "Entries": [
-        "Runeeating Flower (Child Plant) Normal Type 5"
+        "Rune-Eating Flower (Offshoot) Normal Species 5"
       ]
     },
     {
       "ID": 24600000,
       "Entries": [
-        "Living Jar（Small） Fire Pot 1"
+        "Living Jar (Small) Fire Pot 1"
       ]
     },
     {
       "ID": 24600001,
       "Entries": [
-        "Living Jar（Small） Fire Pot 2"
+        "Living Jar (Small) Fire Pot 2"
       ]
     },
     {
       "ID": 24600002,
       "Entries": [
-        "Living Jar（Small） Fire Pot 3"
+        "Living Jar (Small) Fire Pot 3"
       ]
     },
     {
@@ -574,49 +574,49 @@
     {
       "ID": 24800000,
       "Entries": [
-        "Spirit Ash summon_Generic Greatshield 1"
+        "Buddy_Generic Greatshield 1"
       ]
     },
     {
       "ID": 24800001,
       "Entries": [
-        "Spirit Ash summon_Generic Greatshield 2"
+        "Buddy_Generic Greatshield 2"
       ]
     },
     {
       "ID": 24800002,
       "Entries": [
-        "Spirit Ash summon_Generic Greatshield 3"
+        "Buddy_Generic Greatshield 3"
       ]
     },
     {
       "ID": 24800003,
       "Entries": [
-        "Spirit Ash summon_Generic Greatshield 4"
+        "Buddy_Generic Greatshield 4"
       ]
     },
     {
       "ID": 24800004,
       "Entries": [
-        "Spirit Ash summon_Generic Greatshield 5"
+        "Buddy_Generic Greatshield 5"
       ]
     },
     {
       "ID": 24900000,
       "Entries": [
-        "Buddy_Generic Bow1"
+        "Buddy_Generic Bow 1"
       ]
     },
     {
       "ID": 24900001,
       "Entries": [
-        "Buddy_Generic Bow2"
+        "Buddy_Generic Bow 2"
       ]
     },
     {
       "ID": 24900002,
       "Entries": [
-        "Buddy_Generic Bow3"
+        "Buddy_Generic Bow 3"
       ]
     },
     {
@@ -634,37 +634,37 @@
     {
       "ID": 25100000,
       "Entries": [
-        "Royal Army: Monsan Faction Soldier Greatsword"
+        "Royal Army: Raya Lucaria Faction Soldier Greatsword"
       ]
     },
     {
       "ID": 25100001,
       "Entries": [
-        "Royal Army: Monsan Faction Foot Soldier Dagger"
+        "Royal Army: Raya Lucaria Faction Foot Soldier Dagger"
       ]
     },
     {
       "ID": 25100002,
       "Entries": [
-        "Royal Army: Monsan Faction Foot Soldier Straight Sword"
+        "Royal Army: Raya Lucaria Faction Foot Soldier Straight Sword"
       ]
     },
     {
       "ID": 25200000,
       "Entries": [
-        "Royal Army: Royal Capital Faction Soldier Spear Greatshield 1"
+        "Royal Army: Leyndell Faction Soldier Spear and Greatshield 1"
       ]
     },
     {
       "ID": 25200001,
       "Entries": [
-        "Royal Army: Royal Capital Faction Soldier Spear Greatshield 2"
+        "Royal Army: Leyndell Faction Soldier Spear and Greatshield 2"
       ]
     },
     {
       "ID": 25300000,
       "Entries": [
-        "Royal Army: Plains Faction Soldier Straight Sword + Torch"
+        "Royal Army: Plains Faction Soldier Straight Sword\u002BTorch"
       ]
     },
     {
@@ -730,7 +730,7 @@
     {
       "ID": 25600000,
       "Entries": [
-        "Royal Army Special Knight: Royal Capital Faction Dragon-Worshipping Knight"
+        "Royal Army Special Knight: Leyndell Faction Dragon Worshipper Knight"
       ]
     },
     {
@@ -748,31 +748,31 @@
     {
       "ID": 25900000,
       "Entries": [
-        "Costume Change NPC (Puppet)_Daughter of Scholar Hundred-Wisdom (Nepheli)"
+        "Dress-Up NPC (Puppet)_Daughter of the Lord of a Hundred Wisdoms (Nepheli)"
       ]
     },
     {
       "ID": 26000000,
       "Entries": [
-        "Costume Change NPC (Puppet)_Event (Feces Eater)"
+        "Dress-Up NPC (Puppet)_Event (Dung Eater)"
       ]
     },
     {
       "ID": 26100000,
       "Entries": [
-        "Costume Change NPC (Puppet)_Mr. A (Fallen Saint)"
+        "Dress-Up NPC (Puppet)_Person A (Fallen Saint)"
       ]
     },
     {
       "ID": 26200000,
       "Entries": [
-        "Costume Change NPC (Puppet)_Mr. B (Sleep User)"
+        "Dress-Up NPC (Puppet)_Person B (Sleep User)"
       ]
     },
     {
       "ID": 26300000,
       "Entries": [
-        "Costume Change NPC (Puppet)_Mr. C (Pot User)"
+        "Dress-Up NPC (Puppet)_Person C (Pot User)"
       ]
     }
   ]

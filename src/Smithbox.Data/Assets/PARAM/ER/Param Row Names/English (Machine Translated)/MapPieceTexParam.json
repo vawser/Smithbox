@@ -4,7 +4,7 @@
     {
       "ID": 10,
       "Entries": [
-        "Green North: Immediately After Start"
+        "Green North: Right After Start"
       ]
     },
     {
@@ -16,7 +16,7 @@
     {
       "ID": 12,
       "Entries": [
-        "Green North: Plains"
+        "Green North: Flat Land"
       ]
     },
     {
@@ -28,19 +28,19 @@
     {
       "ID": 14,
       "Entries": [
-        "Green North: Town Surroundings"
+        "Green North: Around Town"
       ]
     },
     {
       "ID": 19,
       "Entries": [
-        "Green 1 North Side_No Multiplayer"
+        "Green 1 North Side_Multiplayer Prohibited"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Green North: Stormhill"
+        "Green North: Storm Land"
       ]
     },
     {
@@ -112,91 +112,91 @@
     {
       "ID": 48,
       "Entries": [
-        "Lake Main Around Raya Lucaria Tower"
+        "Lake Main Around Ranni\u0027s Tower"
       ]
     },
     {
       "ID": 49,
       "Entries": [
-        "Lake Main Multi Disabled"
+        "Lake Main No Multiplayer"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Lake Main In Front of Giant EV"
+        "Lake Main Before Giant EV"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "Lake Overhang Terrain"
+        "Lake Hanging Terrain"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        "Lake Overhang Terrain_Master Support"
+        "Lake Hanging Terrain_Master Compatible"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        "Highland Outside Castle Wall_Carriage Graveyard"
+        "Altus Outside Castle Walls_Carriage Graveyard"
       ]
     },
     {
       "ID": 71,
       "Entries": [
-        "Highland Outside Walls_Fort"
+        "Altus Outside Castle Walls_Fort"
       ]
     },
     {
       "ID": 72,
       "Entries": [
-        "Highland Outside Walls_Main Street"
+        "Altus Outside Castle Walls_Main Street"
       ]
     },
     {
       "ID": 73,
       "Entries": [
-        "Highland Outside Walls_Deracine Forest"
+        "Altus Outside Castle Walls_Déraciné Forest"
       ]
     },
     {
       "ID": 74,
       "Entries": [
-        "Highland Outside Walls_Back Street"
+        "Altus Outside Castle Walls_Back Street"
       ]
     },
     {
       "ID": 75,
       "Entries": [
-        "Highland Outside Walls_Dragon Worship Land"
+        "Altus Outside Castle Walls_Dragon Cult Land"
       ]
     },
     {
       "ID": 80,
       "Entries": [
-        "Highland Inside Walls"
+        "Altus Inside Castle Walls"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Highland Volcano Upper Level"
+        "Altus Volcano Upper Level"
       ]
     },
     {
       "ID": 91,
       "Entries": [
-        "Highland Volcano Upper Level Volcano Prison Surroundings"
+        "Altus Volcano Upper Level Around Volcano Prison"
       ]
     },
     {
       "ID": 95,
       "Entries": [
-        "Highland Volcano Lower Level"
+        "Altus Volcano Lower Level"
       ]
     },
     {
@@ -232,55 +232,55 @@
     {
       "ID": 120,
       "Entries": [
-        "Plains Descending Ruins Origin"
+        "Plains From Descending Ruins"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Plains Descending Ruins Origin Dragon's Nest"
+        "Plains From Descending Ruins Dragon Nest"
       ]
     },
     {
       "ID": 130,
       "Entries": [
-        "Highland Forbidden Area"
+        "Altus Forbidden Lands"
       ]
     },
     {
       "ID": 139,
       "Entries": [
-        "Highland Forbidden Area_Multiplayer Prohibited"
+        "Altus Forbidden Lands_No Multiplayer"
       ]
     },
     {
       "ID": 140,
       "Entries": [
-        "Snowy Mountain Giant"
+        "Snow Mountain Giant"
       ]
     },
     {
       "ID": 141,
       "Entries": [
-        "Snowy Mountain Ice Lake"
+        "Snow Mountain Ice Lake"
       ]
     },
     {
       "ID": 142,
       "Entries": [
-        "Snowy Mountain Sub-route"
+        "Snow Mountain Sub-Route"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        "Snowy Mountain Fort"
+        "Snow Mountain Fort"
       ]
     },
     {
       "ID": 150,
       "Entries": [
-        "Snowy Mountain Giant Grave"
+        "Snow Mountain Giant Graveyard"
       ]
     },
     {

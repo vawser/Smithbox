@@ -4,19 +4,19 @@
     {
       "ID": 10,
       "Entries": [
-        "TestMagicStone1"
+        "Test Ash 1"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "TestMagicStone2"
+        "Test Ash 2"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "TestMagicStone3"
+        "Test Ash 3"
       ]
     },
     {
@@ -34,733 +34,733 @@
     {
       "ID": 80,
       "Entries": [
-        "Attribute Change Test_Standard"
+        "Affinity Change Test_Standard"
       ]
     },
     {
       "ID": 81,
       "Entries": [
-        "Attribute Change Test_Strength"
+        "Affinity Change Test_Strength"
       ]
     },
     {
       "ID": 82,
       "Entries": [
-        "Attribute Change Test_Dexterity"
+        "Affinity Change Test_Dexterity"
       ]
     },
     {
       "ID": 83,
       "Entries": [
-        "Attribute Change Test_Quality"
+        "Affinity Change Test_Quality"
       ]
     },
     {
       "ID": 84,
       "Entries": [
-        "Attribute Change Test_Holy"
+        "Affinity Change Test_Sacred"
       ]
     },
     {
       "ID": 85,
       "Entries": [
-        "Attribute Change Test_Magic"
+        "Affinity Change Test_Magic"
       ]
     },
     {
       "ID": 86,
       "Entries": [
-        "Attribute Change Test_Spirit"
+        "Affinity Change Test_Spirit"
       ]
     },
     {
       "ID": 87,
       "Entries": [
-        "Attribute Change Test_Warrior Fire"
+        "Affinity Change Test_Warrior Flame"
       ]
     },
     {
       "ID": 88,
       "Entries": [
-        "Attribute Change Test_Sorcerer Fire"
+        "Affinity Change Test_Caster Flame"
       ]
     },
     {
       "ID": 89,
       "Entries": [
-        "Attribute Change Test_Lightning"
+        "Affinity Change Test_Lightning"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Attribute Change Test_Blood"
+        "Affinity Change Test_Blood"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Generic Skill Test Magic Stone_Aerial Forward Roll Slam"
+        "Generic Skill Test Ash_Midair Forward Flip Slam"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Generic Skill Test Magic Stone_Piercing Thrust"
+        "Generic Skill Test Ash_Piercing Thrust"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Generic Skill Test Magic Stone_Piercing Katana"
+        "Generic Skill Test Ash_Piercing Katana"
       ]
     },
     {
       "ID": 103,
       "Entries": [
-        "Generic Skill Test Magic Stone_Whirlwind Slash"
+        "Generic Skill Test Ash_Spinning Slash"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Generic Skill Test Magic Stone_Spinning Sweep"
+        "Generic Skill Test Ash_Spinning Sweep"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Generic Skill Test Magic Stone_Charge"
+        "Generic Skill Test Ash_Charge"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lunge + Upward Slash"
+        "Generic Skill Test Ash_Step-In\u002BUpward Slash"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lunge + Spin"
+        "Generic Skill Test Ash_Step-In\u002BSpin"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Generic Skill Test Magic Stone_Drain Multi-Thrust"
+        "Generic Skill Test Ash_Drain Multi-Thrust"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Generic Skill Test Magic Stone_Multi-hit Thrust"
+        "Generic Skill Test Ash_Multi-Thrust"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stance Frenzy・Axe"
+        "Generic Skill Test Ash_Stance Flurry/Axe"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stance Frenzy・Halberd"
+        "Generic Skill Test Ash_Stance Flurry/Halberd"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Generic Skill Test Magic Stone_Single Hit Frenzy"
+        "Generic Skill Test Ash_Single Flurry"
       ]
     },
     {
       "ID": 113,
       "Entries": [
-        "Generic Skill Test Magic Stone_Sumo Train"
+        "Generic Skill Test Ash_Sumo Train"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        "Generic Skill Test Magic Stone_Iaido (Katana)"
+        "Generic Skill Test Ash_Iai (Katana)"
       ]
     },
     {
       "ID": 115,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stance (Straight Sword)"
+        "Generic Skill Test Ash_Stance (Straight Sword)"
       ]
     },
     {
       "ID": 116,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lunging Upthrust"
+        "Generic Skill Test Ash_Step-In Upthrust"
       ]
     },
     {
       "ID": 117,
       "Entries": [
-        "Generic Skill Test Magic Stone_Torch Attack"
+        "Generic Skill Test Ash_Torch Attack"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Generic Skill Test Magic Stone_Diving Enchanted Slash"
+        "Generic Skill Test Ash_Leaping Enchant Slash"
       ]
     },
     {
       "ID": 119,
       "Entries": [
-        "Generic Skill Test Magic Stone_Two-Hit Poison"
+        "Generic Skill Test Ash_Two-Hit Sure Poison"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Generic Skill Test Magic Stone_Baton Attack"
+        "Generic Skill Test Ash_Baton Attack"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Generic Skill Test Magic Stone_Black Knight Stance"
+        "Generic Skill Test Ash_Black Knight Stance"
       ]
     },
     {
       "ID": 122,
       "Entries": [
-        "Generic Skill Test Magic Stone_Storm Leaping Downward Thrust"
+        "Generic Skill Test Ash_Storm Leap Downthrust"
       ]
     },
     {
       "ID": 123,
       "Entries": [
-        "Generic Skill Test Magic Stone_Storm Spinning Sweep"
+        "Generic Skill Test Ash_Storm Spinning Sweep"
       ]
     },
     {
       "ID": 124,
       "Entries": [
-        "Generic Skill Test Magic Stone_Funnel + Thrust"
+        "Generic Skill Test Ash_Funnel\u002BThrust"
       ]
     },
     {
       "ID": 125,
       "Entries": [
-        "Generic Skill Test Magic Stone_Magic Attack + Enchant"
+        "Generic Skill Test Ash_Magic Attack\u002BEnchant"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gae Bolg"
+        "Generic Skill Test Ash_Gáe Bolg"
       ]
     },
     {
       "ID": 127,
       "Entries": [
-        "Generic Skill Test Magic Stone_Mid-Range Bullet + Approach"
+        "Generic Skill Test Ash_Mid-Range Projectile\u002BApproach"
       ]
     },
     {
       "ID": 128,
       "Entries": [
-        "Generic Skill Test Magic Stone_Blood Slash"
+        "Generic Skill Test Ash_Blood Slash"
       ]
     },
     {
       "ID": 129,
       "Entries": [
-        "Generic Skill Test Magic Stone_Drain Attack"
+        "Generic Skill Test Ash_Drain Attack"
       ]
     },
     {
       "ID": 130,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lava Placement"
+        "Generic Skill Test Ash_Lava Placement"
       ]
     },
     {
       "ID": 131,
       "Entries": [
-        "Generic Skill Test Magic Stone_Great Recovery Slam"
+        "Generic Skill Test Ash_Great Heal Strike"
       ]
     },
     {
       "ID": 132,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gravity Pull"
+        "Generic Skill Test Ash_Gravity Pull"
       ]
     },
     {
       "ID": 133,
       "Entries": [
-        "Generic Skill Test Magic Stone_Sonic Boom"
+        "Generic Skill Test Ash_Sonic Boom"
       ]
     },
     {
       "ID": 134,
       "Entries": [
-        "Generic Skill Test Magic Stone_Phantom Double Slash"
+        "Generic Skill Test Ash_Phantom Double Slash"
       ]
     },
     {
       "ID": 135,
       "Entries": [
-        "Generic Skill Test Magic Stone_Earthquake"
+        "Generic Skill Test Ash_Earthquake"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Generic Skill Test Magic Stone_World Tree Quake"
+        "Generic Skill Test Ash_World Tree Earthquake"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "Generic Skill Test Magic Stone_Flame Sweep + Coated Slash"
+        "Generic Skill Test Ash_Flame Sweep\u002BWreathed Slash"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "Generic Skill Test Magic Stone_Continuous Lightning Strike"
+        "Generic Skill Test Ash_Chain Lightning"
       ]
     },
     {
       "ID": 139,
       "Entries": [
-        "Generic Skill Test Magic Stone_Lightning Strike + Downward Slash"
+        "Generic Skill Test Ash_Lightning Strike\u002BDownward Slash"
       ]
     },
     {
       "ID": 140,
       "Entries": [
-        "Generic Skill Test Magic Stone_Soul Colossal Sword"
+        "Generic Skill Test Ash_Greatsword of Souls"
       ]
     },
     {
       "ID": 141,
       "Entries": [
-        "Generic Skill Test Magic Stone_Soul Colossal Sword_2-Stage"
+        "Generic Skill Test Ash_Greatsword of Souls_Phase 2"
       ]
     },
     {
       "ID": 142,
       "Entries": [
-        "Generic Skill Test Magic Stone_Vacuum Wave Slash"
+        "Generic Skill Test Ash_Vacuum Slash"
       ]
     },
     {
       "ID": 143,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Tornado"
+        "Generic Skill Test Ash_Fire Tornado"
       ]
     },
     {
       "ID": 144,
       "Entries": [
-        "Generic Skill Test Magic Stone_Miquella's Halo"
+        "Generic Skill Test Ash_Miquella\u0027s Halo"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        "Generic Skill Test Magic Stone_Shield Bash"
+        "Generic Skill Test Ash_Shield Bash"
       ]
     },
     {
       "ID": 147,
       "Entries": [
-        "Generic Skill Test Magic Stone_Power Deflect"
+        "Generic Skill Test Ash_Mighty Deflect"
       ]
     },
     {
       "ID": 148,
       "Entries": [
-        "Generic Skill Test Magic Stone_Parry"
+        "Generic Skill Test Ash_Parry"
       ]
     },
     {
       "ID": 149,
       "Entries": [
-        "Generic Skill Test Magic Stone_Buckler Parry"
+        "Generic Skill Test Ash_Buckler Parry"
       ]
     },
     {
       "ID": 151,
       "Entries": [
-        "Generic Skill Test Magic Stone_Magic Parry"
+        "Generic Skill Test Ash_Magic Parry"
       ]
     },
     {
       "ID": 152,
       "Entries": [
-        "Generic Skill Test Magic Stone_Projectile Parry"
+        "Generic Skill Test Ash_Projectile Parry"
       ]
     },
     {
       "ID": 153,
       "Entries": [
-        "Generic Skill Test Magic Stone_Remote Parry"
+        "Generic Skill Test Ash_Remote Parry"
       ]
     },
     {
       "ID": 154,
       "Entries": [
-        "Generic Skill Test Magic Stone_Charge Bash"
+        "Generic Skill Test Ash_Charge Bash"
       ]
     },
     {
       "ID": 155,
       "Entries": [
-        "Generic Skill Test Magic Stone_Piercing Shot"
+        "Generic Skill Test Ash_Piercing Shot"
       ]
     },
     {
       "ID": 156,
       "Entries": [
-        "Generic Skill Test Magic Stone_Rapid Fire"
+        "Generic Skill Test Ash_Rapid Fire"
       ]
     },
     {
       "ID": 157,
       "Entries": [
-        "Generic Skill Test Magic Stone_Power Shot"
+        "Generic Skill Test Ash_Power Shot"
       ]
     },
     {
       "ID": 158,
       "Entries": [
-        "Generic Skill Test Magic Stone_Homing Shot"
+        "Generic Skill Test Ash_Homing Shot"
       ]
     },
     {
       "ID": 159,
       "Entries": [
-        "Generic Skill Test Magic Stone_Arcing Shot"
+        "Generic Skill Test Ash_Arc Shot"
       ]
     },
     {
       "ID": 160,
       "Entries": [
-        "Generic Skill Test Magic Stone_Arrow Rain"
+        "Generic Skill Test Ash_Arrow Rain"
       ]
     },
     {
       "ID": 161,
       "Entries": [
-        "Generic Skill Test Magic Stone_Invisible Shot"
+        "Generic Skill Test Ash_Unseen Shot"
       ]
     },
     {
       "ID": 163,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stomp・Ground Leveling"
+        "Generic Skill Test Ash_Stomp/Ground Leveling"
       ]
     },
     {
       "ID": 164,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stomp・Frost Tread"
+        "Generic Skill Test Ash_Stomp/Frost Stomp"
       ]
     },
     {
       "ID": 165,
       "Entries": [
-        "Generic Skill Test Magic Stone_Stomp・Storm"
+        "Generic Skill Test Ash_Stomp/Storm"
       ]
     },
     {
       "ID": 166,
       "Entries": [
-        "Generic Skill Test Magic Stone_Kick"
+        "Generic Skill Test Ash_Kick"
       ]
     },
     {
       "ID": 167,
       "Entries": [
-        "Generic Skill Test Magic Stone_Rolling Attack"
+        "Generic Skill Test Ash_Rolling Attack"
       ]
     },
     {
       "ID": 168,
       "Entries": [
-        "Generic Skill Test Magic Stone_Single Hit Area Skill"
+        "Generic Skill Test Ash_Single Area Skill"
       ]
     },
     {
       "ID": 169,
       "Entries": [
-        "Generic Skill Test Magic Stone_Hip Drop"
+        "Generic Skill Test Ash_Hip Drop"
       ]
     },
     {
       "ID": 170,
       "Entries": [
-        "Generic Skill Test Magic Stone_Hip Drop + Magic Bullet"
+        "Generic Skill Test Ash_Hip Drop\u002BMagic Projectile"
       ]
     },
     {
       "ID": 171,
       "Entries": [
-        "Generic Skill Test Magic Stone_Ground Upheaval Magic Bullet"
+        "Generic Skill Test Ash_Ground-Lifting Magic Projectile"
       ]
     },
     {
       "ID": 173,
       "Entries": [
-        "Generic Skill Test Magic Stone_Concentrate"
+        "Generic Skill Test Ash_Concentrate"
       ]
     },
     {
       "ID": 174,
       "Entries": [
-        "Generic Skill Test Magic Stone_Self-harm/Curse"
+        "Generic Skill Test Ash_Self-Harm/Curse"
       ]
     },
     {
       "ID": 175,
       "Entries": [
-        "Generic Skill Test Magic Stone_Oath of the Sun"
+        "Generic Skill Test Ash_Oath of the Sun"
       ]
     },
     {
       "ID": 176,
       "Entries": [
-        "Generic Skill Test Magic Stone_Holy Enchant"
+        "Generic Skill Test Ash_Holy Enchant"
       ]
     },
     {
       "ID": 177,
       "Entries": [
-        "Generic Skill Test Magic Stone_Seppuku Enchant"
+        "Generic Skill Test Ash_Seppuku Enchant"
       ]
     },
     {
       "ID": 178,
       "Entries": [
-        "Generic Skill Test Magic Stone_Rock Enchant"
+        "Generic Skill Test Ash_Rock Enchant"
       ]
     },
     {
       "ID": 179,
       "Entries": [
-        "Generic Skill Test Magic Stone_Area Holy Enchant"
+        "Generic Skill Test Ash_Area Holy Enchant"
       ]
     },
     {
       "ID": 180,
       "Entries": [
-        "Generic Skill Test Magic Stone_War Cry"
+        "Generic Skill Test Ash_War Cry"
       ]
     },
     {
       "ID": 181,
       "Entries": [
-        "Generic Skill Test Magic Stone_Ultrasonic War Cry"
+        "Generic Skill Test Ash_Ultrasonic War Cry"
       ]
     },
     {
       "ID": 182,
       "Entries": [
-        "Generic Skill Test Magic Stone_Thunder War Cry"
+        "Generic Skill Test Ash_Thunder War Cry"
       ]
     },
     {
       "ID": 183,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gladiator War Cry"
+        "Generic Skill Test Ash_Gladiator War Cry"
       ]
     },
     {
       "ID": 184,
       "Entries": [
-        "Generic Skill Test Magic Stone_Troll War Cry"
+        "Generic Skill Test Ash_Troll\u0027s War Cry"
       ]
     },
     {
       "ID": 185,
       "Entries": [
-        "Generic Skill Test Magic Stone_Patience"
+        "Generic Skill Test Ash_Endure"
       ]
     },
     {
       "ID": 186,
       "Entries": [
-        "Generic Skill Test Magic Stone_Momentary Invincibility"
+        "Generic Skill Test Ash_Brief Invincibility"
       ]
     },
     {
       "ID": 187,
       "Entries": [
-        "Generic Skill Test Magic Stone_Sanctuary"
+        "Generic Skill Test Ash_Sanctuary"
       ]
     },
     {
       "ID": 190,
       "Entries": [
-        "Generic Skill Test Magic Stone_Quickstep"
+        "Generic Skill Test Ash_Quickstep"
       ]
     },
     {
       "ID": 191,
       "Entries": [
-        "Generic Skill Test Magic Stone_Gehlmann Step"
+        "Generic Skill Test Ash_Gehrman Step"
       ]
     },
     {
       "ID": 192,
       "Entries": [
-        "Generic Skill Test Magic Stone_Substitution Jutsu"
+        "Generic Skill Test Ash_Substitution Technique"
       ]
     },
     {
       "ID": 194,
       "Entries": [
-        "Generic Skill Test Magic Stone_Phantom Summon"
+        "Generic Skill Test Ash_Phantom Summon"
       ]
     },
     {
       "ID": 195,
       "Entries": [
-        "Generic Skill Test Magic Stone_Double Slash"
+        "Generic Skill Test Ash_Double Slash"
       ]
     },
     {
       "ID": 196,
       "Entries": [
-        "Generic Skill Test Magic Stone_Fire Breath"
+        "Generic Skill Test Ash_Fire Breath"
       ]
     },
     {
       "ID": 197,
       "Entries": [
-        "Generic Skill Test Magic Stone_Blood Throw"
+        "Generic Skill Test Ash_Blood Throw"
       ]
     },
     {
       "ID": 198,
       "Entries": [
-        "Generic Skill Test Magic Stone_Light Wall Parry"
+        "Generic Skill Test Ash_Light Wall Parry"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Standard Variant_Aerial Forward Roll Slam"
+        "Standard Follow-Up_Midair Forward Flip Slam"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Standard Variant_Piercing Thrust"
+        "Standard Follow-Up_Piercing Thrust"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "Standard Variant_Spinning Slash"
+        "Standard Follow-Up_Spinning Slash"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "Standard Variant_Spinning Sweep"
+        "Standard Follow-Up_Spinning Sweep"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Magic Variant_Funnel + Thrust"
+        "Magic Follow-Up_Funnel\u002BThrust"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "Blood Variant_Bleed Effect Application"
+        "Blood Follow-Up_Bleed Effect Grant"
       ]
     },
     {
       "ID": 1006,
       "Entries": [
-        "Warrior Fire Variant_Lava Placement"
+        "Warrior Flame Follow-Up_Lava Placement"
       ]
     },
     {
       "ID": 1007,
       "Entries": [
-        "Magic Variant_Gravity Pull"
+        "Magic Follow-Up_Gravity Pull"
       ]
     },
     {
       "ID": 1008,
       "Entries": [
-        "Quality Variant_Sonic Boom"
+        "Quality Follow-Up_Sonic Boom"
       ]
     },
     {
       "ID": 1009,
       "Entries": [
-        "Strength Variant_Earthquake"
+        "Strength Follow-Up_Earthquake"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Sorcerer Fire Variant_Flame Sweep+Flame Cut"
+        "Caster Flame Follow-Up_Flame Sweep\u002BWreathed Slash"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        "Lightning Variant_Continuous Lightning Strike"
+        "Lightning Follow-Up_Chain Lightning"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "Magic Variant_Soul Colossal Sword_2-stage"
+        "Magic Follow-Up_Greatsword of Souls_Phase 2"
       ]
     },
     {
       "ID": 1013,
       "Entries": [
-        "Heavy Variant_Stomp/Ground Leveling"
+        "Heavy Follow-Up_Stomp/Ground Leveling"
       ]
     },
     {
       "ID": 1014,
       "Entries": [
-        "Quality Variant_Concentrate"
+        "Quality Follow-Up_Concentrate"
       ]
     },
     {
       "ID": 1015,
       "Entries": [
-        "Holy Variant_Sanctuary"
+        "Sacred Follow-Up_Sanctuary"
       ]
     },
     {
       "ID": 1016,
       "Entries": [
-        "Dexterity Variant_Quickstep"
+        "Dexterity Follow-Up_Quickstep"
       ]
     },
     {
       "ID": 1017,
       "Entries": [
-        "Dexterity Variant_Substitute Jutsu"
+        "Dexterity Follow-Up_Substitution Technique"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "Airborne Forward Roll Slam"
+        "Midair Forward Flip Slam"
       ]
     },
     {
@@ -772,7 +772,7 @@
     {
       "ID": 10200,
       "Entries": [
-        "Piercing Katana (Fang Thrust)"
+        "Piercing Katana"
       ]
     },
     {
@@ -790,13 +790,13 @@
     {
       "ID": 10600,
       "Entries": [
-        "Lunge+Upward Slash"
+        "Step-In\u002BUpward Slash"
       ]
     },
     {
       "ID": 10700,
       "Entries": [
-        "Lunge+Spin"
+        "Step-In\u002BSpin"
       ]
     },
     {
@@ -808,25 +808,25 @@
     {
       "ID": 10900,
       "Entries": [
-        "Multi-Hit Thrust"
+        "Multi-Thrust"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "Loop Frenzy Axe"
+        "Loop Flurry/Axe"
       ]
     },
     {
       "ID": 11100,
       "Entries": [
-        "Loop Frenzy Halberd"
+        "Loop Flurry/Halberd"
       ]
     },
     {
       "ID": 11200,
       "Entries": [
-        "Combo Frenzy"
+        "Combo Flurry"
       ]
     },
     {
@@ -850,19 +850,19 @@
     {
       "ID": 11600,
       "Entries": [
-        "Lunge Upthrust"
+        "Step-In Upthrust"
       ]
     },
     {
       "ID": 11800,
       "Entries": [
-        "Diving Enchant Slash"
+        "Leaping Enchant Slash"
       ]
     },
     {
       "ID": 11900,
       "Entries": [
-        "Two Hits Poison"
+        "Two-Hit Sure Poison"
       ]
     },
     {
@@ -874,7 +874,7 @@
     {
       "ID": 12200,
       "Entries": [
-        "Stormleap Plunge"
+        "Storm Leap Downthrust"
       ]
     },
     {
@@ -892,7 +892,7 @@
     {
       "ID": 20000,
       "Entries": [
-        "Funnel+Thrust"
+        "Funnel\u002BThrust"
       ]
     },
     {
@@ -904,13 +904,13 @@
     {
       "ID": 20200,
       "Entries": [
-        "Gae Bolg"
+        "Gáe Bolg"
       ]
     },
     {
       "ID": 20300,
       "Entries": [
-        "Mid-Range Bullet + Approach"
+        "Mid-Range Projectile\u002BApproach"
       ]
     },
     {
@@ -934,7 +934,7 @@
     {
       "ID": 20800,
       "Entries": [
-        "Greater Recovery Strike"
+        "Great Heal Strike"
       ]
     },
     {
@@ -946,7 +946,7 @@
     {
       "ID": 21000,
       "Entries": [
-        "Sonic Blade"
+        "Sonic Boom"
       ]
     },
     {
@@ -958,43 +958,43 @@
     {
       "ID": 21300,
       "Entries": [
-        "Golden Tree Quake"
+        "World Tree Earthquake"
       ]
     },
     {
       "ID": 21400,
       "Entries": [
-        "Fire Sweep + Enveloping Slash"
+        "Flame Sweep\u002BWreathed Slash"
       ]
     },
     {
       "ID": 21600,
       "Entries": [
-        "Continuous Lightning Strike"
+        "Chain Lightning"
       ]
     },
     {
       "ID": 21700,
       "Entries": [
-        "Lightning + Downward Slash"
+        "Lightning Strike\u002BDownward Slash"
       ]
     },
     {
       "ID": 21800,
       "Entries": [
-        "Soul Colossal Sword"
+        "Greatsword of Souls"
       ]
     },
     {
       "ID": 21900,
       "Entries": [
-        "Soul Colossal Sword_2-Stage"
+        "Greatsword of Souls_Phase 2"
       ]
     },
     {
       "ID": 22000,
       "Entries": [
-        "Vacuum Wave Slash"
+        "Vacuum Slash"
       ]
     },
     {
@@ -1006,7 +1006,7 @@
     {
       "ID": 22200,
       "Entries": [
-        "Radiant Halo of Miquella"
+        "Miquella\u0027s Halo"
       ]
     },
     {
@@ -1048,7 +1048,7 @@
     {
       "ID": 30100,
       "Entries": [
-        "Mighty Parry"
+        "Mighty Deflect"
       ]
     },
     {
@@ -1072,7 +1072,7 @@
     {
       "ID": 30700,
       "Entries": [
-        "Ranged Parry"
+        "Remote Parry"
       ]
     },
     {
@@ -1102,7 +1102,7 @@
     {
       "ID": 40100,
       "Entries": [
-        "Continuous Shot"
+        "Rapid Fire"
       ]
     },
     {
@@ -1120,7 +1120,7 @@
     {
       "ID": 40500,
       "Entries": [
-        "Arcing Shot"
+        "Arc Shot"
       ]
     },
     {
@@ -1132,13 +1132,13 @@
     {
       "ID": 50100,
       "Entries": [
-        "Stomp・Frost Step"
+        "Stomp/Frost Stomp"
       ]
     },
     {
       "ID": 50200,
       "Entries": [
-        "Stomp・Storm"
+        "Stomp/Storm"
       ]
     },
     {
@@ -1156,7 +1156,7 @@
     {
       "ID": 50500,
       "Entries": [
-        "Single-shot area skill"
+        "Single Area Skill"
       ]
     },
     {
@@ -1168,19 +1168,19 @@
     {
       "ID": 50700,
       "Entries": [
-        "HipDrop+Magic Bullet"
+        "Hip Drop\u002BMagic Projectile"
       ]
     },
     {
       "ID": 50800,
       "Entries": [
-        "Ground Upheaval Magic Bullet"
+        "Ground-Lifting Magic Projectile"
       ]
     },
     {
       "ID": 50900,
       "Entries": [
-        "Bare Hands Earthquake"
+        "Unarmed Earthquake"
       ]
     },
     {
@@ -1192,7 +1192,7 @@
     {
       "ID": 60100,
       "Entries": [
-        "Upper Concentrate"
+        "Greater Concentrate"
       ]
     },
     {
@@ -1204,7 +1204,7 @@
     {
       "ID": 60300,
       "Entries": [
-        "Sun Oath"
+        "Oath of the Sun"
       ]
     },
     {
@@ -1252,7 +1252,7 @@
     {
       "ID": 65300,
       "Entries": [
-        "Troll War Cry"
+        "Troll\u0027s War Cry"
       ]
     },
     {
@@ -1270,13 +1270,13 @@
     {
       "ID": 70100,
       "Entries": [
-        "Momentary invincibility"
+        "Brief Invincibility"
       ]
     },
     {
       "ID": 70200,
       "Entries": [
-        "Sacred Area"
+        "Sanctuary"
       ]
     },
     {
@@ -1294,7 +1294,7 @@
     {
       "ID": 80200,
       "Entries": [
-        "Substitute Technique"
+        "Substitution Technique"
       ]
     },
     {

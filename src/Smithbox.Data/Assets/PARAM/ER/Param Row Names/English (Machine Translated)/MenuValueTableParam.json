@@ -4,25 +4,25 @@
     {
       "ID": 50,
       "Entries": [
-        "Weight Category"
+        "Weight Class"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Consumable Type"
+        "Consumption Type"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Table Converting Values to E-S Letters"
+        "Value to E~Table to Convert to S Letter"
       ]
     },
     {
       "ID": 110,
       "Entries": [
-        "Oath"
+        "Covenant"
       ]
     },
     {
@@ -34,7 +34,7 @@
     {
       "ID": 121,
       "Entries": [
-        "Converts the value of the Weapon Type (WEP_TYPE) in the weapon param"
+        "Weapon Param\u0027s [Weapon Type] (WEP_TYPE) Convert Value"
       ]
     },
     {
@@ -46,19 +46,19 @@
     {
       "ID": 301,
       "Entries": [
-        "Convert Jar Group ID to Text"
+        "Convert Pot Group ID to Text"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Transformation Details"
+        "Alteration Content"
       ]
     },
     {
       "ID": 401,
       "Entries": [
-        "Convert gem param's Weapon Attribute ID (gemAttr) to text"
+        "Magic Stone Param\u0027s [Weapon Affinity ID] (gemAttr) Convert to Text"
       ]
     }
   ]

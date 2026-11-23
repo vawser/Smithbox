@@ -10,25 +10,25 @@
     {
       "ID": 1,
       "Entries": [
-        "Polite / Noble bow"
+        "Courteous / Noble\u0027s Bow"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Religious Bow"
+        "Reverential Bow"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Female Bow"
+        "Feminine Bow"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "War Declaration Bow"
+        "Polite Bow"
       ]
     },
     {
@@ -40,115 +40,115 @@
     {
       "ID": 6,
       "Entries": [
-        "Welcome"
+        "Warm Welcome"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Wave Hand"
+        "Wave"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Yo! (raises hand)"
+        "\u0022\u0022Yo!\u0022!\u0022"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Guh!"
+        "Thumbs Up!!"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Female Polite Bow"
+        "Feminine Polite Bow"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Point Forward"
+        "Point Forwards"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Point Upward"
+        "Point Upwards"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Point Downward"
+        "Point Downwards"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Beckoning"
+        "Beckon"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Stop"
+        "Wait!"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "It's not time to panic yet (Calm down)."
+        "Calm Down!"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Nods with hand on chin"
+        "Nod in Thought"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Dogeza"
+        "Prostrate"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Plea for Mercy"
+        "Grovel for Mercy"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Yay Yay Oh"
+        "Rallying Cry"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Oh"
+        "Oh!"
       ]
     },
     {
       "ID": 52,
       "Entries": [
-        "I swear it on my sword"
+        "By My Sword"
       ]
     },
     {
       "ID": 53,
       "Entries": [
-        "I swear it on my sword 2"
+        "By My Sword 2"
       ]
     },
     {
       "ID": 54,
       "Entries": [
-        "Chest Beating (Fire Monk)"
+        "Beat Chest"
       ]
     },
     {
@@ -160,67 +160,67 @@
     {
       "ID": 60,
       "Entries": [
-        "Clap"
+        "Applause"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        "Leaping Joy"
+        "Jump for Joy"
       ]
     },
     {
       "ID": 71,
       "Entries": [
-        "Two-handed Rejoice"
+        "Two-Handed Joy"
       ]
     },
     {
       "ID": 72,
       "Entries": [
-        "Spins around happily (female-oriented)"
+        "Fancy Spin (For Women)"
       ]
     },
     {
       "ID": 73,
       "Entries": [
-        "I've got it!"
+        "Eureka!!"
       ]
     },
     {
       "ID": 80,
       "Entries": [
-        "Collapses in a heap"
+        "Slump Down"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Sit Down Pose"
+        "Patches\u0027 Crouch"
       ]
     },
     {
       "ID": 91,
       "Entries": [
-        "Cross-legged"
+        "Cross-Legged"
       ]
     },
     {
       "ID": 92,
       "Entries": [
-        "Kneeling on one knee"
+        "One-Knee Sit"
       ]
     },
     {
       "ID": 93,
       "Entries": [
-        "Female Sitting"
+        "Feminine Sit"
       ]
     },
     {
       "ID": 94,
       "Entries": [
-        "Cross-legged sleep"
+        "Dozing Cross-Legged"
       ]
     },
     {
@@ -238,13 +238,13 @@
     {
       "ID": 97,
       "Entries": [
-        "Playing Dead"
+        "Play Dead"
       ]
     },
     {
       "ID": 98,
       "Entries": [
-        "Yurt Standing"
+        "Yurt Stand"
       ]
     },
     {
@@ -268,37 +268,37 @@
     {
       "ID": 103,
       "Entries": [
-        "Raise Both Hands and Shout Ha"
+        "Raise Both Hands \u0022Hah\u0022"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Golden Order To-Pose"
+        "Golden Order Side Pose"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Golden Order inverted-T pose"
+        "Golden Order Reverse Side Pose"
       ]
     },
     {
       "ID": 106,
       "Entries": [
-        "Golden Order T-Pose"
+        "Golden Order T Pose"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Ring Pose"
+        "The Ring Pose"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Ring Pose (Alternate Route)"
+        "The Ring Pose (Alternate Route)"
       ]
     },
     {
@@ -310,19 +310,19 @@
     {
       "ID": 111,
       "Entries": [
-        "[DLC] Challenge to a fight"
+        "[DLC] Challenge to Battle"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "[DLC] Two-finger pose"
+        "[DLC] Two Fingers Pose"
       ]
     },
     {
       "ID": 113,
       "Entries": [
-        "[DLC] Miquella ring pose"
+        "[DLC] Miquella\u0027s Ring Pose"
       ]
     },
     {
@@ -334,13 +334,13 @@
     {
       "ID": 115,
       "Entries": [
-        "[DLC] Maiden pose"
+        "[DLC] Maiden\u0027s Pose"
       ]
     },
     {
       "ID": 116,
       "Entries": [
-        "[DLC] Miquella ring pose (alternate route)"
+        "[DLC] Miquella\u0027s Ring Pose (Alternate Route)"
       ]
     }
   ]

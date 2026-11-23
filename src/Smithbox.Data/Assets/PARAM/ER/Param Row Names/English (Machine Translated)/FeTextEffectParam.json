@@ -10,7 +10,7 @@
     {
       "ID": 1,
       "Entries": [
-        "Boss Defeat (Legacy Boss Series)"
+        "Boss Defeat (Legacy Boss Type)"
       ]
     },
     {
@@ -22,7 +22,7 @@
     {
       "ID": 3,
       "Entries": [
-        "Boss Defeat (Small Exploration Series)"
+        "Boss Defeat (Small Exploration Type)"
       ]
     },
     {
@@ -52,37 +52,37 @@
     {
       "ID": 9,
       "Entries": [
-        "Objective Complete (Cooperator)"
+        "Objective Achieved (Cooperator)"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Site of Grace Presentation"
+        "Site of Grace Effect"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "Arena Start"
+        "Colosseum Start"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "Arena Victory"
+        "Colosseum Victory"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Arena Draw"
+        "Colosseum Draw"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "Arena Defeat"
+        "Colosseum Defeat"
       ]
     },
     {
@@ -94,7 +94,7 @@
     {
       "ID": 21,
       "Entries": [
-        "Acquiring Major Rune"
+        "Great Rune Acquisition"
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "ID": 23,
       "Entries": [
-        "Invader Repel (Hostile Sign)"
+        "Invader Repelled (Hostile Sign)"
       ]
     },
     {
@@ -124,13 +124,13 @@
     {
       "ID": 30,
       "Entries": [
-        "Multiplayer Rank Up: Cooperative Sign Rank 1"
+        "Multiplayer Rank Up: Co-op Sign Rank 1"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Multiplayer Rank Up: Cooperative Sign Rank 2"
+        "Multiplayer Rank Up: Co-op Sign Rank 2"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 41,
       "Entries": [
-        "Died from drinking poison"
+        "Death by Drinking Poison"
       ]
     },
     {

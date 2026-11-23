@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Silence (Default"
+        "Silent (Default Used When String Not Found)"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Flagstone"
+        "Cobblestone"
       ]
     },
     {
@@ -22,7 +22,7 @@
     {
       "ID": 3,
       "Entries": [
-        "Earth"
+        "Soil"
       ]
     },
     {
@@ -34,7 +34,7 @@
     {
       "ID": 5,
       "Entries": [
-        "Grass Ground"
+        "Grassland"
       ]
     },
     {
@@ -76,7 +76,7 @@
     {
       "ID": 12,
       "Entries": [
-        "Blood Flesh"
+        "Flesh and Blood"
       ]
     },
     {
@@ -124,19 +124,19 @@
     {
       "ID": 20,
       "Entries": [
-        "Water (puddle)"
+        "Water (Puddle)"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Water (ankle)"
+        "Water (Ankle)"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Water (below knee)"
+        "Water (Below Knee)"
       ]
     },
     {
@@ -154,19 +154,19 @@
     {
       "ID": 25,
       "Entries": [
-        "Poison Swamp(Knee Deep)"
+        "Poison Swamp (Below Knee)"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Poison Swamp(Puddle Level)"
+        "Poison Swamp (Puddle Level)"
       ]
     },
     {
       "ID": 27,
       "Entries": [
-        "Water (waist and above)"
+        "Water (Above Waist)"
       ]
     },
     {
@@ -184,19 +184,19 @@
     {
       "ID": 30,
       "Entries": [
-        "Eclipse"
+        "Erosion"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "God Tomb Net"
+        "Divine Grave Net"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "Cloud"
+        "Clouds"
       ]
     },
     {
@@ -214,49 +214,49 @@
     {
       "ID": 35,
       "Entries": [
-        "Maggot"
+        "Maggots"
       ]
     },
     {
       "ID": 36,
       "Entries": [
-        "Deadly Poison Swamp (Puddle Level)"
+        "Toxic Swamp (Puddle Level)"
       ]
     },
     {
       "ID": 37,
       "Entries": [
-        "Deadly Poison Swamp (Shallow)"
+        "Toxic Swamp (Shallow)"
       ]
     },
     {
       "ID": 38,
       "Entries": [
-        "Deadly Poison Swamp (Deep)"
+        "Toxic Swamp (Deep)"
       ]
     },
     {
       "ID": 39,
       "Entries": [
-        "Deadly Poison Swamp (Knee-Deep)"
+        "Toxic Swamp (Below Knee)"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "FDP Map Specific"
+        "FDP Map Unique"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "FDP Map Specific"
+        "FDP Map Unique"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "FDP Map Specific"
+        "FDP Map Unique"
       ]
     },
     {
@@ -280,13 +280,13 @@
     {
       "ID": 46,
       "Entries": [
-        "Plague Swamp(Shallow)"
+        "Plague Swamp (Shallow)"
       ]
     },
     {
       "ID": 47,
       "Entries": [
-        "Plague Swamp(Deep)"
+        "Plague Swamp (Deep)"
       ]
     },
     {
@@ -304,7 +304,7 @@
     {
       "ID": 52,
       "Entries": [
-        "Cursed Swamp"
+        "Curse Swamp"
       ]
     },
     {
@@ -346,19 +346,19 @@
     {
       "ID": 103,
       "Entries": [
-        "Weapon Meat"
+        "Weapon Flesh"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Shield_Iron"
+        "Shield Iron"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Shield_Wood"
+        "Shield Wood"
       ]
     },
     {
@@ -442,7 +442,7 @@
     {
       "ID": 119,
       "Entries": [
-        "Lava Weak Point"
+        "Lava Weakness"
       ]
     },
     {
@@ -454,7 +454,7 @@
     {
       "ID": 121,
       "Entries": [
-        "spirit"
+        "Spirit"
       ]
     },
     {
@@ -478,19 +478,19 @@
     {
       "ID": 125,
       "Entries": [
-        "Shell"
+        "Carapace"
       ]
     },
     {
       "ID": 126,
       "Entries": [
-        "Spirit Weakpoint"
+        "Spirit Weakness"
       ]
     },
     {
       "ID": 127,
       "Entries": [
-        "Shield_Stone"
+        "Shield Stone"
       ]
     },
     {
@@ -502,7 +502,7 @@
     {
       "ID": 129,
       "Entries": [
-        "Shield_Heavy_Iron"
+        "Shield Heavy Iron"
       ]
     },
     {
@@ -538,25 +538,25 @@
     {
       "ID": 135,
       "Entries": [
-        "Ghost White (For Guard)"
+        "Ghost White (For Guarding)"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Ghost Black (For Guard)"
+        "Ghost Black (For Guarding)"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "Ghost Enemy White(For Guard)"
+        "Ghost Enemy White (For Guarding)"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "Ghost Enemy Black(For Guard)"
+        "Ghost Enemy Black (For Guarding)"
       ]
     },
     {
@@ -568,7 +568,7 @@
     {
       "ID": 140,
       "Entries": [
-        "Ancient Gold"
+        "Old Gold"
       ]
     },
     {
@@ -586,7 +586,7 @@
     {
       "ID": 143,
       "Entries": [
-        "Spirit Generic Weakpoint"
+        "Spirit Generic Weakness"
       ]
     },
     {
@@ -598,13 +598,13 @@
     {
       "ID": 145,
       "Entries": [
-        "Body Fluid"
+        "Bodily Fluid"
       ]
     },
     {
       "ID": 146,
       "Entries": [
-        "Body Fluid Weak Point"
+        "Body Fluid Weakness"
       ]
     },
     {
@@ -616,7 +616,7 @@
     {
       "ID": 148,
       "Entries": [
-        "Rot Weak Point"
+        "Rot Weakness"
       ]
     },
     {
@@ -652,7 +652,7 @@
     {
       "ID": 154,
       "Entries": [
-        "Weapon Pumice"
+        "Weapon Light Stone"
       ]
     },
     {
@@ -676,43 +676,43 @@
     {
       "ID": 158,
       "Entries": [
-        "Weapon Secret Glyph"
+        "Weapon Cipher"
       ]
     },
     {
       "ID": 159,
       "Entries": [
-        "Weapon Ring Finger"
+        "Weapon Ringed Finger"
       ]
     },
     {
       "ID": 160,
       "Entries": [
-        "Shield_Light_Iron"
+        "Shield Light Iron"
       ]
     },
     {
       "ID": 161,
       "Entries": [
-        "Shield_Heavy_Wood"
+        "Shield Heavy Wood"
       ]
     },
     {
       "ID": 162,
       "Entries": [
-        "Shield_Heavy_Stone"
+        "Shield Heavy Stone"
       ]
     },
     {
       "ID": 163,
       "Entries": [
-        "Shield_Crystal"
+        "Shield Crystal"
       ]
     },
     {
       "ID": 164,
       "Entries": [
-        "Shield_Spirit"
+        "Shield Spirit"
       ]
     },
     {
@@ -736,13 +736,13 @@
     {
       "ID": 168,
       "Entries": [
-        "Universe of Mass"
+        "Cosmos With Mass"
       ]
     },
     {
       "ID": 171,
       "Entries": [
-        "Scale"
+        "Scales"
       ]
     },
     {
@@ -754,25 +754,25 @@
     {
       "ID": 173,
       "Entries": [
-        "Scale Weak Point(Large)"
+        "Scale Weak Point (Large)"
       ]
     },
     {
       "ID": 174,
       "Entries": [
-        "Scale(Hard)"
+        "Scales (Hard)"
       ]
     },
     {
       "ID": 176,
       "Entries": [
-        "c5280 Hoozuki Dematerialize(Shadow)"
+        "c5280 Lantern Dematerialize (Black Shadow)"
       ]
     },
     {
       "ID": 151114,
       "Entries": [
-        "Erdtree Greatsword (Weapon Heavy + Rune)"
+        "Golden Tree Greatsword (Weapon Heavy Iron\u002BRune)"
       ]
     }
   ]

@@ -1,0 +1,785 @@
+{
+  "Name": "WeatherLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default Parameter"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Generic Weather: Fair Skies"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Generic Weather: Clear"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Generic Weather: Light Overcast"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Generic Weather: Cloudy"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Generic Weather: Rain"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Generic Weather: Heavy Rain"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Generic Weather: Storm"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "Generic Weather: Storm (Guardian End)"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "Generic Weather: Storm (Lightning)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Generic Weather: Snow"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Generic Weather: Snow (Special)"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Generic Weather: Heavy Snow"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Generic Weather: Blizzard"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Generic Weather: Fog"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Generic Weather: Dense Fog"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Generic Weather: Dense Fog (Rain)"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Generic Weather: Sandstorm"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Generic Weather: Reserve Weather 3"
+      ]
+    },
+    {
+      "ID": 100000000,
+      "Entries": [
+        "Stormveil"
+      ]
+    },
+    {
+      "ID": 100100000,
+      "Entries": [
+        "Stormveil_Separated"
+      ]
+    },
+    {
+      "ID": 110000000,
+      "Entries": [
+        "Royal Capital"
+      ]
+    },
+    {
+      "ID": 110500000,
+      "Entries": [
+        "Royal Capital (Ash)"
+      ]
+    },
+    {
+      "ID": 111000000,
+      "Entries": [
+        "Base"
+      ]
+    },
+    {
+      "ID": 120100000,
+      "Entries": [
+        "Underground Labyrinth: Poison Swamp"
+      ]
+    },
+    {
+      "ID": 120200000,
+      "Entries": [
+        "Underground Labyrinth: Plains"
+      ]
+    },
+    {
+      "ID": 120300000,
+      "Entries": [
+        "Underground Labyrinth: Royal Capital"
+      ]
+    },
+    {
+      "ID": 120400000,
+      "Entries": [
+        "Underground Labyrinth: Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 120500000,
+      "Entries": [
+        "Underground Labyrinth: Greater"
+      ]
+    },
+    {
+      "ID": 120600000,
+      "Entries": [
+        "Underground Labyrinth: Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 120700000,
+      "Entries": [
+        "Underground Labyrinth:"
+      ]
+    },
+    {
+      "ID": 120800000,
+      "Entries": [
+        "Underground Labyrinth:"
+      ]
+    },
+    {
+      "ID": 120900000,
+      "Entries": [
+        "Underground Labyrinth:"
+      ]
+    },
+    {
+      "ID": 130000000,
+      "Entries": [
+        "Descending Ruins"
+      ]
+    },
+    {
+      "ID": 140000000,
+      "Entries": [
+        "Monsan"
+      ]
+    },
+    {
+      "ID": 140000001,
+      "Entries": [
+        "Monsan_Night"
+      ]
+    },
+    {
+      "ID": 150000000,
+      "Entries": [
+        "Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 150000010,
+      "Entries": [
+        "Rotten Great Tree_Upper Level"
+      ]
+    },
+    {
+      "ID": 160000000,
+      "Entries": [
+        "Prison Castle"
+      ]
+    },
+    {
+      "ID": 180000000,
+      "Entries": [
+        "Tutorial"
+      ]
+    },
+    {
+      "ID": 190000000,
+      "Entries": [
+        "Final Boss"
+      ]
+    },
+    {
+      "ID": 300000000,
+      "Entries": [
+        "Catacombs 1-1"
+      ]
+    },
+    {
+      "ID": 300100000,
+      "Entries": [
+        "Catacombs 1-2"
+      ]
+    },
+    {
+      "ID": 300200000,
+      "Entries": [
+        "Catacombs 1-3"
+      ]
+    },
+    {
+      "ID": 300300000,
+      "Entries": [
+        "Catacombs 1-4"
+      ]
+    },
+    {
+      "ID": 300400000,
+      "Entries": [
+        "Catacombs 1-5"
+      ]
+    },
+    {
+      "ID": 300500000,
+      "Entries": [
+        "Catacombs 2-1"
+      ]
+    },
+    {
+      "ID": 300600000,
+      "Entries": [
+        "Catacombs 2-2"
+      ]
+    },
+    {
+      "ID": 300700000,
+      "Entries": [
+        "Catacombs 2-3"
+      ]
+    },
+    {
+      "ID": 300800000,
+      "Entries": [
+        "Catacombs 3-1"
+      ]
+    },
+    {
+      "ID": 300900000,
+      "Entries": [
+        "Catacombs 3-2"
+      ]
+    },
+    {
+      "ID": 301000000,
+      "Entries": [
+        "Catacombs 3-3"
+      ]
+    },
+    {
+      "ID": 301100000,
+      "Entries": [
+        "Catacombs 3-4"
+      ]
+    },
+    {
+      "ID": 301200000,
+      "Entries": [
+        "Catacombs 3-5"
+      ]
+    },
+    {
+      "ID": 301300000,
+      "Entries": [
+        "Catacombs 3-6"
+      ]
+    },
+    {
+      "ID": 301400000,
+      "Entries": [
+        "Catacombs 4-1"
+      ]
+    },
+    {
+      "ID": 301500000,
+      "Entries": [
+        "Catacombs 4-2"
+      ]
+    },
+    {
+      "ID": 301600000,
+      "Entries": [
+        "Catacombs 4-3"
+      ]
+    },
+    {
+      "ID": 301700000,
+      "Entries": [
+        "Catacombs 5-1"
+      ]
+    },
+    {
+      "ID": 301800000,
+      "Entries": [
+        "Catacombs 5-2"
+      ]
+    },
+    {
+      "ID": 301900000,
+      "Entries": [
+        "Catacombs 5-3"
+      ]
+    },
+    {
+      "ID": 302000000,
+      "Entries": [
+        "Catacombs 5-4"
+      ]
+    },
+    {
+      "ID": 310000000,
+      "Entries": [
+        "Cave 1-1"
+      ]
+    },
+    {
+      "ID": 310100000,
+      "Entries": [
+        "Cave 1-2"
+      ]
+    },
+    {
+      "ID": 310200000,
+      "Entries": [
+        "Cave 1-3"
+      ]
+    },
+    {
+      "ID": 310300000,
+      "Entries": [
+        "Cave1-4"
+      ]
+    },
+    {
+      "ID": 310400000,
+      "Entries": [
+        "Cave2-1"
+      ]
+    },
+    {
+      "ID": 310500000,
+      "Entries": [
+        "Cave2-2"
+      ]
+    },
+    {
+      "ID": 310600000,
+      "Entries": [
+        "Cave2-3"
+      ]
+    },
+    {
+      "ID": 310700000,
+      "Entries": [
+        "Cave3-1"
+      ]
+    },
+    {
+      "ID": 310900000,
+      "Entries": [
+        "Cave3-3"
+      ]
+    },
+    {
+      "ID": 311000000,
+      "Entries": [
+        "Cave4-1"
+      ]
+    },
+    {
+      "ID": 311100000,
+      "Entries": [
+        "Cave4-4"
+      ]
+    },
+    {
+      "ID": 311200000,
+      "Entries": [
+        "Cave5-1"
+      ]
+    },
+    {
+      "ID": 311500000,
+      "Entries": [
+        "Cave1-5"
+      ]
+    },
+    {
+      "ID": 311700000,
+      "Entries": [
+        "Cave1-6"
+      ]
+    },
+    {
+      "ID": 311800000,
+      "Entries": [
+        "Cave3-3"
+      ]
+    },
+    {
+      "ID": 311900000,
+      "Entries": [
+        "Cave3-4"
+      ]
+    },
+    {
+      "ID": 312000000,
+      "Entries": [
+        "Cave4-3"
+      ]
+    },
+    {
+      "ID": 312100000,
+      "Entries": [
+        "Cave4-1"
+      ]
+    },
+    {
+      "ID": 312200000,
+      "Entries": [
+        "Cave5-2"
+      ]
+    },
+    {
+      "ID": 320000000,
+      "Entries": [
+        "Tunnel 1-1"
+      ]
+    },
+    {
+      "ID": 320100000,
+      "Entries": [
+        "Tunnel 1-2"
+      ]
+    },
+    {
+      "ID": 320200000,
+      "Entries": [
+        "Tunnel 2-1"
+      ]
+    },
+    {
+      "ID": 320300000,
+      "Entries": [
+        "Tunnel 2-2"
+      ]
+    },
+    {
+      "ID": 320400000,
+      "Entries": [
+        "Tunnel 3-1"
+      ]
+    },
+    {
+      "ID": 320500000,
+      "Entries": [
+        "Tunnel 3-2"
+      ]
+    },
+    {
+      "ID": 320600000,
+      "Entries": [
+        "Tunnel3-3"
+      ]
+    },
+    {
+      "ID": 320700000,
+      "Entries": [
+        "Tunnel4-1"
+      ]
+    },
+    {
+      "ID": 320800000,
+      "Entries": [
+        "Tunnel4-2"
+      ]
+    },
+    {
+      "ID": 320900000,
+      "Entries": [
+        "Tunnel4-3"
+      ]
+    },
+    {
+      "ID": 321000000,
+      "Entries": [
+        "Tunnel4-4"
+      ]
+    },
+    {
+      "ID": 321100000,
+      "Entries": [
+        "Tunnel5-1"
+      ]
+    },
+    {
+      "ID": 321200000,
+      "Entries": [
+        "Tunnel5-2"
+      ]
+    },
+    {
+      "ID": 340000000,
+      "Entries": [
+        "True Divine Tower"
+      ]
+    },
+    {
+      "ID": 341000000,
+      "Entries": [
+        "Divine Tower (Green)"
+      ]
+    },
+    {
+      "ID": 341100000,
+      "Entries": [
+        "Divine Tower (Lake)"
+      ]
+    },
+    {
+      "ID": 341200000,
+      "Entries": [
+        "Divine Tower (Mountain)"
+      ]
+    },
+    {
+      "ID": 341300000,
+      "Entries": [
+        "Divine Tower (Snow)"
+      ]
+    },
+    {
+      "ID": 341400000,
+      "Entries": [
+        "Divine Tower (Plains)"
+      ]
+    },
+    {
+      "ID": 341500000,
+      "Entries": [
+        "Divine Tower (Sea)"
+      ]
+    },
+    {
+      "ID": 341600000,
+      "Entries": [
+        "Divine Tower (Lake)_Reversed"
+      ]
+    },
+    {
+      "ID": 350000000,
+      "Entries": [
+        "Royal Capital Underground Sewers"
+      ]
+    },
+    {
+      "ID": 392000000,
+      "Entries": [
+        "Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 400000000,
+      "Entries": [
+        "Arena"
+      ]
+    },
+    {
+      "ID": 600000000,
+      "Entries": [
+        "Crater Lake (Essentially Default)"
+      ]
+    },
+    {
+      "ID": 610000000,
+      "Entries": [
+        "Open Green: North"
+      ]
+    },
+    {
+      "ID": 610000001,
+      "Entries": [
+        "Open Green: North"
+      ]
+    },
+    {
+      "ID": 611000000,
+      "Entries": [
+        "Open Green: North_Stormhill"
+      ]
+    },
+    {
+      "ID": 615000000,
+      "Entries": [
+        "Open Green: South"
+      ]
+    },
+    {
+      "ID": 620000000,
+      "Entries": [
+        "Open Lake: General"
+      ]
+    },
+    {
+      "ID": 620000001,
+      "Entries": [
+        "Open Lake: General (Night)"
+      ]
+    },
+    {
+      "ID": 620000010,
+      "Entries": [
+        "Open Lake: Around Ranni's Tower"
+      ]
+    },
+    {
+      "ID": 620000020,
+      "Entries": [
+        "Open Lake: Hang Terrain Lower"
+      ]
+    },
+    {
+      "ID": 620000021,
+      "Entries": [
+        "Open Lake: Hang Terrain Lower (Night)"
+      ]
+    },
+    {
+      "ID": 620000100,
+      "Entries": [
+        "Open Lake: General"
+      ]
+    },
+    {
+      "ID": 620000101,
+      "Entries": [
+        "Open Lake: General (Night)"
+      ]
+    },
+    {
+      "ID": 630000000,
+      "Entries": [
+        "Open Highland: Royal Capital"
+      ]
+    },
+    {
+      "ID": 630000001,
+      "Entries": [
+        "Open Highland: Royal Capital_Morning Twilight"
+      ]
+    },
+    {
+      "ID": 635000000,
+      "Entries": [
+        "Open Highland: Volcano"
+      ]
+    },
+    {
+      "ID": 638000000,
+      "Entries": [
+        "Open Highland: Connection"
+      ]
+    },
+    {
+      "ID": 640000000,
+      "Entries": [
+        "Open Plains:"
+      ]
+    },
+    {
+      "ID": 641000000,
+      "Entries": [
+        "Open Plains: Radahn Desert"
+      ]
+    },
+    {
+      "ID": 645000000,
+      "Entries": [
+        "Open Plains: Descending Ruins Origin"
+      ]
+    },
+    {
+      "ID": 650000000,
+      "Entries": [
+        "Open Snowy Mountain：Giant"
+      ]
+    },
+    {
+      "ID": 651000000,
+      "Entries": [
+        "Open Snowy Mountain：Giant After Frozen Lake"
+      ]
+    },
+    {
+      "ID": 652000000,
+      "Entries": [
+        "Open Snowy Mountain：Giant Fire Cauldron"
+      ]
+    },
+    {
+      "ID": 655000000,
+      "Entries": [
+        "Open Snowy Mountain：Snowfield"
+      ]
+    },
+    {
+      "ID": 655000010,
+      "Entries": [
+        "Open Snowy Mountain：Snowfield_Heavy Snow"
+      ]
+    },
+    {
+      "ID": 655000020,
+      "Entries": [
+        "Open Snowy Mountain：Snowfield_Blizzard"
+      ]
+    }
+  ]
+}

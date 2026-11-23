@@ -1,0 +1,2267 @@
+{
+  "Name": "FinalDamageRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Dual-wield jump attack"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Straight Sword_Powerstance Jump Attack"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Colossal Sword_Powerstance Jump Attack"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Thrusting Sword_powerstance jump attack"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Heavy Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Heavy Thrusting Sword_Powerstance_Jump Attack"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Curved Sword"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Curved Sword_Dual Jump Attack"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Katana"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Katana_powerstance jump attack"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Twinblade_PowerstanceJumpAttack"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Axe_PowerstanceJumpAttack"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Spear_Dual-Wield_Jump Attack"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Colossal Axe-hammer_Dual Jump Attack"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Skill Base"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Skill_0.75x"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Skill_0.7x"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Skill_0.65x"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Skill_0.6x"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Skill_0.55x"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Skill_0.5x"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Skill Base_SA Attack Weak"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Skill_SA Attack 2x"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Skill_SA Attack 3x"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Skill_SA Attack 4x"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "Skill_SA Attack 5x"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Skill_SA Attack 6x"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "Skill_SA Attack 7x"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "Skill_SA Attack 8x"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "Skill_SA Attack 9x"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Skill_SA Attack 10x"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "Drain Attack"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Magic Basic"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Magic_0.8x"
+      ]
+    },
+    {
+      "ID": 24020,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 24021,
+      "Entries": [
+        "Soul Crystal Spear"
+      ]
+    },
+    {
+      "ID": 24080,
+      "Entries": [
+        "Soul Greatcannon"
+      ]
+    },
+    {
+      "ID": 24100,
+      "Entries": [
+        "Blast Magic"
+      ]
+    },
+    {
+      "ID": 24120,
+      "Entries": [
+        "Soul Great Hammer"
+      ]
+    },
+    {
+      "ID": 24300,
+      "Entries": [
+        "Giant Floating Soul Arrow"
+      ]
+    },
+    {
+      "ID": 24360,
+      "Entries": [
+        "Crystal Moon"
+      ]
+    },
+    {
+      "ID": 24361,
+      "Entries": [
+        "Frost Moon"
+      ]
+    },
+    {
+      "ID": 24370,
+      "Entries": [
+        "Soul Rain"
+      ]
+    },
+    {
+      "ID": 24380,
+      "Entries": [
+        "Giant Arrow"
+      ]
+    },
+    {
+      "ID": 24381,
+      "Entries": [
+        "Multi-Warhead Ultimate Arrow"
+      ]
+    },
+    {
+      "ID": 24390,
+      "Entries": [
+        "Placed Soul Arrow"
+      ]
+    },
+    {
+      "ID": 24410,
+      "Entries": [
+        "Frost Tornado"
+      ]
+    },
+    {
+      "ID": 24430,
+      "Entries": [
+        "Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 24431,
+      "Entries": [
+        "Ice Greatsword"
+      ]
+    },
+    {
+      "ID": 24440,
+      "Entries": [
+        "Caria Swift Sword"
+      ]
+    },
+    {
+      "ID": 24450,
+      "Entries": [
+        "Soul Thrusting Greatsword"
+      ]
+    },
+    {
+      "ID": 24500,
+      "Entries": [
+        "Shotgun Magic (Rennala)"
+      ]
+    },
+    {
+      "ID": 24620,
+      "Entries": [
+        "Invisible Spear"
+      ]
+    },
+    {
+      "ID": 24700,
+      "Entries": [
+        "Meteor"
+      ]
+    },
+    {
+      "ID": 24701,
+      "Entries": [
+        "Meteor (Astel)"
+      ]
+    },
+    {
+      "ID": 24710,
+      "Entries": [
+        "Gravity Magic (Rock)"
+      ]
+    },
+    {
+      "ID": 24720,
+      "Entries": [
+        "Pull Gravity Bullet"
+      ]
+    },
+    {
+      "ID": 24800,
+      "Entries": [
+        "Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 24820,
+      "Entries": [
+        "Seething Chaos"
+      ]
+    },
+    {
+      "ID": 24910,
+      "Entries": [
+        "Thorned Nito Sword"
+      ]
+    },
+    {
+      "ID": 25010,
+      "Entries": [
+        "Great Fire Explosion"
+      ]
+    },
+    {
+      "ID": 25100,
+      "Entries": [
+        "Small Bubble"
+      ]
+    },
+    {
+      "ID": 25101,
+      "Entries": [
+        "Great Bubble"
+      ]
+    },
+    {
+      "ID": 26000,
+      "Entries": [
+        "Fire Burst/Great Fire Burst"
+      ]
+    },
+    {
+      "ID": 26001,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 26020,
+      "Entries": [
+        "Bursting Fireball (Fire Shotgun)"
+      ]
+    },
+    {
+      "ID": 26100,
+      "Entries": [
+        "Giant Fireball"
+      ]
+    },
+    {
+      "ID": 26110,
+      "Entries": [
+        "Living Flame"
+      ]
+    },
+    {
+      "ID": 26210,
+      "Entries": [
+        "Black Fireball"
+      ]
+    },
+    {
+      "ID": 26230,
+      "Entries": [
+        "Sweeping Black Flame"
+      ]
+    },
+    {
+      "ID": 26240,
+      "Entries": [
+        "Launch Force"
+      ]
+    },
+    {
+      "ID": 26300,
+      "Entries": [
+        "Fire Burst (Greater)"
+      ]
+    },
+    {
+      "ID": 26400,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 26410,
+      "Entries": [
+        "Wrath of God"
+      ]
+    },
+    {
+      "ID": 26710,
+      "Entries": [
+        "Order Wheel"
+      ]
+    },
+    {
+      "ID": 26800,
+      "Entries": [
+        "Rock Shotgun"
+      ]
+    },
+    {
+      "ID": 26810,
+      "Entries": [
+        "Rock Throw"
+      ]
+    },
+    {
+      "ID": 26820,
+      "Entries": [
+        "SpearFormation_Linear_CreepingClaw"
+      ]
+    },
+    {
+      "ID": 26830,
+      "Entries": [
+        "Spear_Cone_Self-Centered"
+      ]
+    },
+    {
+      "ID": 26900,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 26940,
+      "Entries": [
+        "Lightning Stake"
+      ]
+    },
+    {
+      "ID": 26941,
+      "Entries": [
+        "Double Lightning Stake"
+      ]
+    },
+    {
+      "ID": 26950,
+      "Entries": [
+        "Lightning Naginata"
+      ]
+    },
+    {
+      "ID": 27010,
+      "Entries": [
+        "Lava Breath"
+      ]
+    },
+    {
+      "ID": 27050,
+      "Entries": [
+        "Ancient Dragon Breath"
+      ]
+    },
+    {
+      "ID": 27060,
+      "Entries": [
+        "Dragon Claw"
+      ]
+    },
+    {
+      "ID": 27080,
+      "Entries": [
+        "Dragon Bite"
+      ]
+    },
+    {
+      "ID": 27090,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 27240,
+      "Entries": [
+        "Great Rot Magic"
+      ]
+    },
+    {
+      "ID": 27300,
+      "Entries": [
+        "Madness Throw"
+      ]
+    },
+    {
+      "ID": 27320,
+      "Entries": [
+        "Chaos Beam from Eyes"
+      ]
+    },
+    {
+      "ID": 27500,
+      "Entries": [
+        "Armor Skill (Tail)"
+      ]
+    },
+    {
+      "ID": 27510,
+      "Entries": [
+        "Armor Skill (Shoulder Horn)"
+      ]
+    },
+    {
+      "ID": 27530,
+      "Entries": [
+        "Black Sword (Malenia)"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Corpse Sword_Up to 15m"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Corpse Sword_Up to 20m"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Corpse Sword_Up to 25m"
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "Corpse Sword_25m+"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Malgit's Sword of Death"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Dagger_R1_1stHitGroup (incl. Running)"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Dagger_R1_2ndHitOnward"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Dagger_R1_ChargeInterrupted"
+      ]
+    },
+    {
+      "ID": 100105,
+      "Entries": [
+        "Dagger_HighMultiplier (Jump"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "Dagger_DualWield_Multi_1stHit"
+      ]
+    },
+    {
+      "ID": 100805,
+      "Entries": [
+        "Dagger_DualWield_Multi_2ndHitOnward"
+      ]
+    },
+    {
+      "ID": 100860,
+      "Entries": [
+        "Dagger_DualWield_SimultaneousHit"
+      ]
+    },
+    {
+      "ID": 100890,
+      "Entries": [
+        "Dagger_DualWield_Jump"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Straight Sword R1 Opening Hit Series (Including Running"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Straight Sword R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Straight Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 200105,
+      "Entries": [
+        "Straight Sword High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 200800,
+      "Entries": [
+        "Straight Sword Dual-Wield Multi-Hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 200805,
+      "Entries": [
+        "Straight Sword Dual-Wield Multi-Hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 200860,
+      "Entries": [
+        "Straight Sword Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 200890,
+      "Entries": [
+        "Straight Sword Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Greatsword R1 initial hit variants (including running)"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "Greatsword R1 2nd hit onward"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Greatsword R1 charge interrupted"
+      ]
+    },
+    {
+      "ID": 300105,
+      "Entries": [
+        "Greatsword high multiplier (jump"
+      ]
+    },
+    {
+      "ID": 300800,
+      "Entries": [
+        "Greatsword powerstance multi-hit 1st hit"
+      ]
+    },
+    {
+      "ID": 300805,
+      "Entries": [
+        "Greatsword powerstance multi-hit 2nd hit onward"
+      ]
+    },
+    {
+      "ID": 300860,
+      "Entries": [
+        "Greatsword powerstance simultaneous hit"
+      ]
+    },
+    {
+      "ID": 300890,
+      "Entries": [
+        "Greatsword powerstance jump"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Colossal Sword R1 Initial Hit Series (incl. Running)"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Colossal Sword R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Colossal Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 400105,
+      "Entries": [
+        "Colossal Sword High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 400800,
+      "Entries": [
+        "Colossal Sword Dual 1st Multi-hit"
+      ]
+    },
+    {
+      "ID": 400805,
+      "Entries": [
+        "Colossal Sword Dual 2nd Multi-hit Onward"
+      ]
+    },
+    {
+      "ID": 400860,
+      "Entries": [
+        "Colossal Sword Dual Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 400890,
+      "Entries": [
+        "Colossal Sword Dual Jump"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Thrusting Sword R1 Initial Hit Group (Including Dash"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "Thrusting Sword R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "Thrusting Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 500105,
+      "Entries": [
+        "Thrusting Sword High Multiplier Group (Jump"
+      ]
+    },
+    {
+      "ID": 500800,
+      "Entries": [
+        "Thrusting Sword Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 500805,
+      "Entries": [
+        "Thrusting Sword Dual-wield Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 500860,
+      "Entries": [
+        "Thrusting Sword Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 500890,
+      "Entries": [
+        "Thrusting Sword Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Heavy Thrusting Sword R1 Initial Hits (incl. Running)"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "Heavy Thrusting Sword R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 600100,
+      "Entries": [
+        "Heavy Thrusting Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 600105,
+      "Entries": [
+        "Heavy Thrusting Sword High Multiplier (Jump"
+      ]
+    },
+    {
+      "ID": 600800,
+      "Entries": [
+        "Heavy Thrusting Sword Dual-Wield Multi-Hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 600805,
+      "Entries": [
+        "Heavy Thrusting Sword Dual-Wield Multi-Hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 600860,
+      "Entries": [
+        "Heavy Thrusting Sword Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 600890,
+      "Entries": [
+        "Heavy Thrusting Sword Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Curved Sword R1 First Hit Series (including Running"
+      ]
+    },
+    {
+      "ID": 700010,
+      "Entries": [
+        "Curved Sword R1 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "Curved Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 700105,
+      "Entries": [
+        "Curved Sword High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 700800,
+      "Entries": [
+        "Curved Sword Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 700805,
+      "Entries": [
+        "Curved Sword Dual-wield Multi-hit 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 700860,
+      "Entries": [
+        "Curved Sword Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 700890,
+      "Entries": [
+        "Curved Sword Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Greatsword R1 First Hit Series (Including Running"
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        "Greatsword R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 800100,
+      "Entries": [
+        "Greatsword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 800105,
+      "Entries": [
+        "Greatsword High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 800800,
+      "Entries": [
+        "Greatsword Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 800805,
+      "Entries": [
+        "Greatsword Dual-wield Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 800860,
+      "Entries": [
+        "Greatsword Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 800890,
+      "Entries": [
+        "Greatsword Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Katana R1 Initial Hit (incl. Running)"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Katana R1 Hit2 onward"
+      ]
+    },
+    {
+      "ID": 900100,
+      "Entries": [
+        "Katana R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 900105,
+      "Entries": [
+        "Katana High Multiplier (Jump"
+      ]
+    },
+    {
+      "ID": 900800,
+      "Entries": [
+        "Katana DualWield Multi-hit Hit1"
+      ]
+    },
+    {
+      "ID": 900805,
+      "Entries": [
+        "Katana DualWield Multi-hit Hit2 onward"
+      ]
+    },
+    {
+      "ID": 900860,
+      "Entries": [
+        "Katana DualWield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 900890,
+      "Entries": [
+        "Katana DualWield Jump"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Twinblade R1 First Hit Group (includes running"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Twinblade R1 Hit 2 onward"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "Twinblade R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1000105,
+      "Entries": [
+        "Twinblade High Multiplier Group (Jump"
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "Twinblade Dual-wield Multi-hit Hit 1"
+      ]
+    },
+    {
+      "ID": 1000805,
+      "Entries": [
+        "Twinblade Dual-wield Multi-hit Hit 2 onward"
+      ]
+    },
+    {
+      "ID": 1000860,
+      "Entries": [
+        "Twinblade Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1000890,
+      "Entries": [
+        "Twinblade Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Hammer R1 Opener Group (incl. Running"
+      ]
+    },
+    {
+      "ID": 1100010,
+      "Entries": [
+        "Hammer R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Hammer R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1100105,
+      "Entries": [
+        "Hammer High-Multiplier Group (Jump"
+      ]
+    },
+    {
+      "ID": 1100800,
+      "Entries": [
+        "Hammer Dual-Wield Multi-Hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1100805,
+      "Entries": [
+        "Hammer Dual-Wield Multi-Hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1100860,
+      "Entries": [
+        "Hammer Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1100890,
+      "Entries": [
+        "Hammer Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Greathammer R1 First Hit Variants (Including Running)"
+      ]
+    },
+    {
+      "ID": 1200010,
+      "Entries": [
+        "Greathammer R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1200100,
+      "Entries": [
+        "Greathammer R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1200105,
+      "Entries": [
+        "Greathammer High Multiplier Variants (Jump"
+      ]
+    },
+    {
+      "ID": 1200800,
+      "Entries": [
+        "Greathammer Dual 1st Hit Multi-hit"
+      ]
+    },
+    {
+      "ID": 1200805,
+      "Entries": [
+        "Greathammer Dual 2nd Hit Onward Multi-hit"
+      ]
+    },
+    {
+      "ID": 1200860,
+      "Entries": [
+        "Greathammer Dual Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1200890,
+      "Entries": [
+        "Greathammer Dual Jump"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Flail R1 Initial Hit Series (incl. Running"
+      ]
+    },
+    {
+      "ID": 1300010,
+      "Entries": [
+        "Flail R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1300100,
+      "Entries": [
+        "Flail R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1300105,
+      "Entries": [
+        "Flail High-multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 1300800,
+      "Entries": [
+        "Flail Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1300805,
+      "Entries": [
+        "Flail Dual-wield Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1300860,
+      "Entries": [
+        "Flail Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1300890,
+      "Entries": [
+        "Flail Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "Axe R1 Initial Hit Series (incl. Running"
+      ]
+    },
+    {
+      "ID": 1400010,
+      "Entries": [
+        "Axe R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1400100,
+      "Entries": [
+        "Axe R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1400105,
+      "Entries": [
+        "Axe High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 1400800,
+      "Entries": [
+        "Axe Dual-Wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1400805,
+      "Entries": [
+        "Axe Dual-Wield Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1400860,
+      "Entries": [
+        "Axe Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1400890,
+      "Entries": [
+        "Axe Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Greataxe R1 First Hit Types (Including Running etc.)"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "Greataxe R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "Greataxe_R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1500105,
+      "Entries": [
+        "Greataxe_High Multiplier Types (Jump"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Greataxe_Dual Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1500805,
+      "Entries": [
+        "Greataxe_Dual Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 1500860,
+      "Entries": [
+        "Greataxe_Dual Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1500890,
+      "Entries": [
+        "Greataxe_Dual Jump"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Spear_R1_InitialHit (incl. Dash)"
+      ]
+    },
+    {
+      "ID": 1600010,
+      "Entries": [
+        "Spear_R1_2ndHitOnward"
+      ]
+    },
+    {
+      "ID": 1600100,
+      "Entries": [
+        "Spear_R1_ChargeInterrupted"
+      ]
+    },
+    {
+      "ID": 1600105,
+      "Entries": [
+        "Spear_HighMultiplier (Jump"
+      ]
+    },
+    {
+      "ID": 1600800,
+      "Entries": [
+        "Spear_DualWield_MultiHit_1stHit"
+      ]
+    },
+    {
+      "ID": 1600805,
+      "Entries": [
+        "Spear_DualWield_MultiHit_2ndHitOnward"
+      ]
+    },
+    {
+      "ID": 1600860,
+      "Entries": [
+        "Spear_DualWield_SimultaneousHit"
+      ]
+    },
+    {
+      "ID": 1600890,
+      "Entries": [
+        "Spear_DualWield_Jump"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Great Spear_R1 First Hit Series (incl. Running)"
+      ]
+    },
+    {
+      "ID": 1700010,
+      "Entries": [
+        "Great Spear_R1 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 1700100,
+      "Entries": [
+        "Great Spear_R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1700105,
+      "Entries": [
+        "Great Spear_High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 1700800,
+      "Entries": [
+        "Great Spear_Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1700805,
+      "Entries": [
+        "Great Spear_Dual-wield Multi-hit 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 1700860,
+      "Entries": [
+        "Great Spear_Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1700890,
+      "Entries": [
+        "Great Spear_Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Halberd R1 Opener Series (incl. Running etc.)"
+      ]
+    },
+    {
+      "ID": 1800010,
+      "Entries": [
+        "Halberd R1 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 1800100,
+      "Entries": [
+        "Halberd R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1800105,
+      "Entries": [
+        "Halberd High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 1800800,
+      "Entries": [
+        "Halberd Powerstance Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1800805,
+      "Entries": [
+        "Halberd Powerstance Multi-hit 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 1800860,
+      "Entries": [
+        "Halberd Powerstance Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1800890,
+      "Entries": [
+        "Halberd Powerstance Jump"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Scythe R1 Initial Hit Series (incl. Running"
+      ]
+    },
+    {
+      "ID": 1900010,
+      "Entries": [
+        "Scythe R1 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 1900100,
+      "Entries": [
+        "Scythe R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 1900105,
+      "Entries": [
+        "Scythe High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 1900800,
+      "Entries": [
+        "Scythe Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 1900805,
+      "Entries": [
+        "Scythe Dual-wield Multi-hit 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 1900860,
+      "Entries": [
+        "Scythe Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 1900890,
+      "Entries": [
+        "Scythe Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Whip R1 First Hit Type (including running etc.)"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "Whip R1 2nd hit onward"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Whip R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 2000105,
+      "Entries": [
+        "Whip High Multiplier Type (Jump"
+      ]
+    },
+    {
+      "ID": 2000800,
+      "Entries": [
+        "Whip Powerstance Multi-hit 1st hit"
+      ]
+    },
+    {
+      "ID": 2000805,
+      "Entries": [
+        "Whip Powerstance Multi-hit 2nd hit onward"
+      ]
+    },
+    {
+      "ID": 2000860,
+      "Entries": [
+        "Whip Powerstance Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 2000890,
+      "Entries": [
+        "Whip Powerstance Jump"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Fist R1 Opener Family (Incl. Running"
+      ]
+    },
+    {
+      "ID": 2100010,
+      "Entries": [
+        "Fist R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 2100100,
+      "Entries": [
+        "Fist R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 2100105,
+      "Entries": [
+        "Fist High Multiplier Family (Jump"
+      ]
+    },
+    {
+      "ID": 2100800,
+      "Entries": [
+        "Fist Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 2100805,
+      "Entries": [
+        "Fist Dual-wield Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 2100860,
+      "Entries": [
+        "Fist Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 2100890,
+      "Entries": [
+        "Fist Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "Claw R1 Initial Hit Series (incl. Running"
+      ]
+    },
+    {
+      "ID": 2200010,
+      "Entries": [
+        "Claw R1 2nd Hit and Onward"
+      ]
+    },
+    {
+      "ID": 2200100,
+      "Entries": [
+        "Claw R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 2200105,
+      "Entries": [
+        "Claw High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 2200800,
+      "Entries": [
+        "Claw Dual-Wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 2200805,
+      "Entries": [
+        "Claw Dual-Wield Multi-hit 2nd Hit and Onward"
+      ]
+    },
+    {
+      "ID": 2200860,
+      "Entries": [
+        "Claw Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 2200890,
+      "Entries": [
+        "Claw Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "Colossal Axe-hammer R1 Initial Hit Series (incl. Running)"
+      ]
+    },
+    {
+      "ID": 2300010,
+      "Entries": [
+        "Colossal Axe-hammer R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 2300100,
+      "Entries": [
+        "Colossal Axe-hammer R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 2300105,
+      "Entries": [
+        "Colossal Axe-hammer High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 2300800,
+      "Entries": [
+        "Colossal Axe-hammer Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 2300805,
+      "Entries": [
+        "Colossal Axe-hammer Dual-wield Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 2300860,
+      "Entries": [
+        "Colossal Axe-hammer Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 2300890,
+      "Entries": [
+        "Colossal Axe-hammer Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Torch R1 First Hit Series (incl. Running"
+      ]
+    },
+    {
+      "ID": 2400010,
+      "Entries": [
+        "Torch R1 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 2400100,
+      "Entries": [
+        "Torch R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 2400105,
+      "Entries": [
+        "Torch High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 2400800,
+      "Entries": [
+        "Torch Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 2400805,
+      "Entries": [
+        "Torch Dual-wield Multi-hit 2nd Hit onward"
+      ]
+    },
+    {
+      "ID": 2400860,
+      "Entries": [
+        "Torch Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 2400890,
+      "Entries": [
+        "Torch Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "Small Shield R1 Initial Hit Series (Including Running"
+      ]
+    },
+    {
+      "ID": 3000010,
+      "Entries": [
+        "Small Shield R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3000100,
+      "Entries": [
+        "Small Shield R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3000105,
+      "Entries": [
+        "Small Shield High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3000800,
+      "Entries": [
+        "Small Shield Dual-Wield Multi-Hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 3000805,
+      "Entries": [
+        "Small Shield Dual-Wield Multi-Hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3000860,
+      "Entries": [
+        "Small Shield Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3000890,
+      "Entries": [
+        "Small Shield Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Medium Shield R1 First Hit Series (Including Running"
+      ]
+    },
+    {
+      "ID": 3100010,
+      "Entries": [
+        "Medium Shield R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3100100,
+      "Entries": [
+        "Medium Shield R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3100105,
+      "Entries": [
+        "Medium Shield High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3100800,
+      "Entries": [
+        "Medium Shield Dual-Wield Multi-Hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 3100805,
+      "Entries": [
+        "Medium Shield Dual-Wield Multi-Hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3100860,
+      "Entries": [
+        "Medium Shield Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3100890,
+      "Entries": [
+        "Medium Shield Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "GreatShield_R1_InitialHit (incl. Running etc.)"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "GreatShield_R1_2ndHitOnward"
+      ]
+    },
+    {
+      "ID": 3200100,
+      "Entries": [
+        "GreatShield_R1_ChargeInterrupted"
+      ]
+    },
+    {
+      "ID": 3200105,
+      "Entries": [
+        "GreatShield_HighMultiplier (Jump"
+      ]
+    },
+    {
+      "ID": 3200800,
+      "Entries": [
+        "GreatShield_DualWield_MultiHit_1stHit"
+      ]
+    },
+    {
+      "ID": 3200805,
+      "Entries": [
+        "GreatShield_DualWield_MultiHit_2ndHitOnward"
+      ]
+    },
+    {
+      "ID": 3200860,
+      "Entries": [
+        "GreatShield_DualWield_SimultaneousHit"
+      ]
+    },
+    {
+      "ID": 3200890,
+      "Entries": [
+        "GreatShield_DualWield_Jump"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "Catalyst_R1 First Hit Series (including Running"
+      ]
+    },
+    {
+      "ID": 3300010,
+      "Entries": [
+        "Catalyst_R1 2nd Hit and Onward"
+      ]
+    },
+    {
+      "ID": 3300100,
+      "Entries": [
+        "Catalyst_R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3300105,
+      "Entries": [
+        "Catalyst_High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3300800,
+      "Entries": [
+        "Catalyst_Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 3300805,
+      "Entries": [
+        "Catalyst_Dual-wield Multi-hit 2nd Hit and Onward"
+      ]
+    },
+    {
+      "ID": 3300860,
+      "Entries": [
+        "Catalyst_Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3300890,
+      "Entries": [
+        "Catalyst_Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "Catalyst_R1 First Hit Series (including Running"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "Catalyst_R1 2nd Hit and Onward"
+      ]
+    },
+    {
+      "ID": 3400100,
+      "Entries": [
+        "Catalyst_R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3400105,
+      "Entries": [
+        "Catalyst_High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3400800,
+      "Entries": [
+        "Catalyst_Dual-wield Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 3400805,
+      "Entries": [
+        "Catalyst_Dual-wield Multi-hit 2nd Hit and Onward"
+      ]
+    },
+    {
+      "ID": 3400860,
+      "Entries": [
+        "Catalyst_Dual-wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3400890,
+      "Entries": [
+        "Catalyst_Dual-wield Jump"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Reverse-Grip Sword R1 First Hit Series (incl. Running"
+      ]
+    },
+    {
+      "ID": 3500001,
+      "Entries": [
+        "Reverse-Grip Sword R1 Running"
+      ]
+    },
+    {
+      "ID": 3500010,
+      "Entries": [
+        "Reverse-Grip Sword R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3500100,
+      "Entries": [
+        "Reverse-Grip Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3500105,
+      "Entries": [
+        "Reverse-Grip Sword High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3500800,
+      "Entries": [
+        "Reverse-Grip Sword Dual Multi-hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 3500805,
+      "Entries": [
+        "Reverse-Grip Sword Dual Multi-hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3500810,
+      "Entries": [
+        "Reverse-Grip Sword Dual R1 Running 1st Hit"
+      ]
+    },
+    {
+      "ID": 3500815,
+      "Entries": [
+        "Reverse-Grip Sword Dual R1 Running 2nd Hit"
+      ]
+    },
+    {
+      "ID": 3500860,
+      "Entries": [
+        "Reverse-Grip Sword Dual Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3500890,
+      "Entries": [
+        "Reverse-Grip Sword Dual Jump"
+      ]
+    },
+    {
+      "ID": 3550000,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword R1 First Hit Series (incl. Dash"
+      ]
+    },
+    {
+      "ID": 3550001,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword R1 Dash"
+      ]
+    },
+    {
+      "ID": 3550010,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword R1 Hit 2 onward"
+      ]
+    },
+    {
+      "ID": 3550100,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3550105,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3550800,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword Dual Multi-hit 1"
+      ]
+    },
+    {
+      "ID": 3550805,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword Dual Multi-hit 2 onward"
+      ]
+    },
+    {
+      "ID": 3550810,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword Dual R1 Dash Hit 1"
+      ]
+    },
+    {
+      "ID": 3550815,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword Dual R1 Dash Hit 2"
+      ]
+    },
+    {
+      "ID": 3550860,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword Dual Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3550890,
+      "Entries": [
+        "Ancestral Reverse-Grip Sword Dual Jump"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Patas R1 Initial Hit Series (Including Running)"
+      ]
+    },
+    {
+      "ID": 3600010,
+      "Entries": [
+        "Patas R1 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3600100,
+      "Entries": [
+        "Patas R1 Charge Interrupted"
+      ]
+    },
+    {
+      "ID": 3600105,
+      "Entries": [
+        "Patas High Multiplier Series (Jump"
+      ]
+    },
+    {
+      "ID": 3600800,
+      "Entries": [
+        "Patas Dual-Wield Multi-Hit 1st Hit"
+      ]
+    },
+    {
+      "ID": 3600805,
+      "Entries": [
+        "Patas Dual-Wield Multi-Hit 2nd Hit Onward"
+      ]
+    },
+    {
+      "ID": 3600860,
+      "Entries": [
+        "Patas Dual-Wield Simultaneous Hit"
+      ]
+    },
+    {
+      "ID": 3600890,
+      "Entries": [
+        "Patas Dual-Wield Jump"
+      ]
+    },
+    {
+      "ID": 22004710,
+      "Entries": [
+        "Supernova Explosion_Suction"
+      ]
+    },
+    {
+      "ID": 22006210,
+      "Entries": [
+        "Heavy Oil Large Ball"
+      ]
+    },
+    {
+      "ID": 22006300,
+      "Entries": [
+        "Teleport Ignition"
+      ]
+    },
+    {
+      "ID": 22006900,
+      "Entries": [
+        "Death Knight Thunder Spear_First Hit"
+      ]
+    },
+    {
+      "ID": 22006901,
+      "Entries": [
+        "Death Knight Thunder Spear_Follow-up"
+      ]
+    },
+    {
+      "ID": 22007600,
+      "Entries": [
+        "Stand Magic"
+      ]
+    },
+    {
+      "ID": 22007730,
+      "Entries": [
+        "Whirlwind Launch"
+      ]
+    },
+    {
+      "ID": 22007731,
+      "Entries": [
+        "Whirlwind Launch_Push Out"
+      ]
+    },
+    {
+      "ID": 22007740,
+      "Entries": [
+        "Machine Gun Feather"
+      ]
+    },
+    {
+      "ID": 22007820,
+      "Entries": [
+        "Charge Fire Ball_Charge/Landing"
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
     {
       "ID": 1,
       "Entries": [
-        "Flagstone"
+        "Cobblestone"
       ]
     },
     {
@@ -16,7 +16,7 @@
     {
       "ID": 3,
       "Entries": [
-        "Earth"
+        "Soil"
       ]
     },
     {
@@ -28,7 +28,7 @@
     {
       "ID": 5,
       "Entries": [
-        "Grass Ground"
+        "Grassland"
       ]
     },
     {
@@ -70,7 +70,7 @@
     {
       "ID": 12,
       "Entries": [
-        "Blood Flesh"
+        "Flesh and Blood"
       ]
     },
     {
@@ -124,7 +124,7 @@
     {
       "ID": 21,
       "Entries": [
-        "Water (Ankle Level)"
+        "Water (Ankle Deep)"
       ]
     },
     {
@@ -148,7 +148,7 @@
     {
       "ID": 25,
       "Entries": [
-        "Poison Swamp (Knee Deep)"
+        "Poison Swamp (Below Knee)"
       ]
     },
     {
@@ -160,7 +160,7 @@
     {
       "ID": 27,
       "Entries": [
-        "Water (Waist Height and Above)"
+        "Water (Above Waist)"
       ]
     },
     {
@@ -178,19 +178,19 @@
     {
       "ID": 30,
       "Entries": [
-        "Eclipse"
+        "Erosion"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "God Tomb Net"
+        "Divine Grave Net"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "Cloud"
+        "Clouds"
       ]
     },
     {
@@ -208,31 +208,31 @@
     {
       "ID": 35,
       "Entries": [
-        "Maggot"
+        "Maggots"
       ]
     },
     {
       "ID": 36,
       "Entries": [
-        "Deadly Poison Swamp (Puddle Level)"
+        "Toxic Swamp (Puddle Level)"
       ]
     },
     {
       "ID": 37,
       "Entries": [
-        "Deadly Poison Swamp (Shallow)"
+        "Toxic Swamp (Shallow)"
       ]
     },
     {
       "ID": 38,
       "Entries": [
-        "Deadly Poison Swamp (Up to Knee)"
+        "Toxic Swamp (Up to Knees)"
       ]
     },
     {
       "ID": 39,
       "Entries": [
-        "Deadly Poison Swamp (Waist-High or Above)"
+        "Toxic Swamp (Above Waist)"
       ]
     },
     {
@@ -244,13 +244,13 @@
     {
       "ID": 41,
       "Entries": [
-        "Church of Pilgrimage Water Surface"
+        "Cathedral Church Water Surface"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Anor Londo Boss Room"
+        "Anor Boss Room"
       ]
     },
     {
@@ -298,7 +298,7 @@
     {
       "ID": 52,
       "Entries": [
-        "Cursed Swamp"
+        "Curse Swamp"
       ]
     },
     {
@@ -328,7 +328,7 @@
     {
       "ID": 101,
       "Entries": [
-        "Candle"
+        "Wax"
       ]
     },
     {
@@ -340,19 +340,19 @@
     {
       "ID": 103,
       "Entries": [
-        "Weapon Meat"
+        "Weapon Flesh"
       ]
     },
     {
       "ID": 104,
       "Entries": [
-        "Shield_Iron"
+        "Shield Iron"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Shield_Wood"
+        "Shield Wood"
       ]
     },
     {
@@ -388,7 +388,7 @@
     {
       "ID": 111,
       "Entries": [
-        "Dragon Meat"
+        "Dragon Flesh"
       ]
     },
     {
@@ -412,7 +412,7 @@
     {
       "ID": 115,
       "Entries": [
-        "Hair"
+        "Fur"
       ]
     },
     {
@@ -424,13 +424,13 @@
     {
       "ID": 117,
       "Entries": [
-        "Feather"
+        "Blade"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Carrion"
+        "Rotten Flesh"
       ]
     },
     {
@@ -448,7 +448,7 @@
     {
       "ID": 121,
       "Entries": [
-        "Death Spirit"
+        "Wraith"
       ]
     },
     {
@@ -472,7 +472,7 @@
     {
       "ID": 125,
       "Entries": [
-        "Fire"
+        "Flame"
       ]
     },
     {
@@ -484,7 +484,7 @@
     {
       "ID": 127,
       "Entries": [
-        "Shield_Stone"
+        "Shield Stone"
       ]
     },
     {
@@ -496,7 +496,7 @@
     {
       "ID": 129,
       "Entries": [
-        "Shield_Heavy_Iron"
+        "Shield Heavy Iron"
       ]
     },
     {
@@ -532,25 +532,25 @@
     {
       "ID": 135,
       "Entries": [
-        "Ghost White(For Guard)"
+        "Ghost White (For Guarding)"
       ]
     },
     {
       "ID": 136,
       "Entries": [
-        "Ghost Black (For Guard)"
+        "Ghost Black (For Guarding)"
       ]
     },
     {
       "ID": 137,
       "Entries": [
-        "Ghost Enemy White(For Guard)"
+        "Ghost Enemy White (For Guarding)"
       ]
     },
     {
       "ID": 138,
       "Entries": [
-        "Ghost Enemy Black(For Guard)"
+        "Ghost Enemy Black (For Guarding)"
       ]
     },
     {
@@ -562,13 +562,13 @@
     {
       "ID": 140,
       "Entries": [
-        "Eye Glow"
+        "Eye Glint"
       ]
     },
     {
       "ID": 141,
       "Entries": [
-        "Eclipse"
+        "Erosion"
       ]
     },
     {
@@ -592,7 +592,7 @@
     {
       "ID": 145,
       "Entries": [
-        "Body Fluid"
+        "Bodily Fluid"
       ]
     },
     {
@@ -610,7 +610,7 @@
     {
       "ID": 148,
       "Entries": [
-        "Eclipse_Weak Point"
+        "Erosion_Weak Point"
       ]
     }
   ]

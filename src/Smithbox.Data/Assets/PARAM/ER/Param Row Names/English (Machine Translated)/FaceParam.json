@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Do not delete this row. Do not enter data either."
+        "Do Not Delete This Row.Do Not Enter Data Either"
       ]
     },
     {
@@ -34,7 +34,7 @@
     {
       "ID": 5,
       "Entries": [
-        "Category Investigation"
+        "For Category Investigation"
       ]
     },
     {
@@ -88,73 +88,73 @@
     {
       "ID": 14,
       "Entries": [
-        "Skill Icon Capture"
+        "For Skill Icon Capture"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "[NT] Arts Warrior_M"
+        "[NT Version] Skill Warrior_Male"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "[NT] Arts Warrior_F"
+        "[NT Version] Skill Warrior_Female"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "[NT] Sorcery Knight_M"
+        "[NT Version] Spellblade_Male"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "[NT] Sorcery Knight_F"
+        "[NT Version] Spellblade_Female"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "[NT] Cleric_M"
+        "[NT Version] Cleric_Male"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "[NT] Cleric_F"
+        "[NT Version] Cleric_Female"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "[NT] Barbarian_M"
+        "[NT Version] Barbarian_Male"
       ]
     },
     {
       "ID": 27,
       "Entries": [
-        "[NT] Barbarian_F"
+        "[NT Version] Barbarian_Female"
       ]
     },
     {
       "ID": 28,
       "Entries": [
-        "[NT] Senior Knight_M"
+        "[NT Version] High Knight_Male"
       ]
     },
     {
       "ID": 29,
       "Entries": [
-        "[NT] Senior Knight_F"
+        "[NT Version] High Knight_Female"
       ]
     },
     {
       "ID": 342,
       "Entries": [
-        "[Animation Check] 342_Demi-Human Needlewoman (After Rebirth)"
+        "[For Animation Check] 342_Demi-Human Seamstress (After Rebirth)"
       ]
     },
     {
@@ -178,13 +178,13 @@
     {
       "ID": 1003,
       "Entries": [
-        "Character Creation [Appearance] A_Lone Face"
+        "Character Creation [Appearance] A_Aloof Face"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Character creation [Appearance] A_Northern face"
+        "Character Creation [Appearance] A_Northern Face"
       ]
     },
     {
@@ -208,13 +208,13 @@
     {
       "ID": 1008,
       "Entries": [
-        "Character creation [Appearance] A_Night person face"
+        "Character Creation [Appearance] A_Nightfolk Face"
       ]
     },
     {
       "ID": 1009,
       "Entries": [
-        "Character Creation [Appearance] A_Outlander Face"
+        "Character Creation [Appearance] A_Rare Visitor Face"
       ]
     },
     {
@@ -238,7 +238,7 @@
     {
       "ID": 2003,
       "Entries": [
-        "Character Creation [Appearance] B_Lone Face"
+        "Character Creation [Appearance] B_Aloof Face"
       ]
     },
     {
@@ -268,157 +268,157 @@
     {
       "ID": 2008,
       "Entries": [
-        "Character Creation [Appearance] B_Night Person Face"
+        "Character Creation [Appearance] B_Nightfolk Face"
       ]
     },
     {
       "ID": 2009,
       "Entries": [
-        "Character Creation [Appearance] B_Outlander Face"
+        "Character Creation [Appearance] B_Rare Visitor Face"
       ]
     },
     {
       "ID": 3100,
       "Entries": [
-        "[Character Creation Origin Select_Exiled Knight_Male]"
+        "[For Character Creation Origin Selection_Exiled Knight_Male]"
       ]
     },
     {
       "ID": 3101,
       "Entries": [
-        "[Character Creation Origin Select_Exiled Knight_Female]"
+        "[For Character Creation Origin Selection_Exiled Knight_Female]"
       ]
     },
     {
       "ID": 3102,
       "Entries": [
-        "[Character Creation Origin Select_Dancing Swordsman_Male]"
+        "[For Character Creation Origin Selection_Dancing Swordsman_Male]"
       ]
     },
     {
       "ID": 3103,
       "Entries": [
-        "[Character Creation Origin Select_Dancing Swordsman_Female]"
+        "[For Character Creation Origin Selection_Dancing Swordsman_Female]"
       ]
     },
     {
       "ID": 3104,
       "Entries": [
-        "[For Character Creation Class Select_Barbarian_Male]"
+        "[For Character Creation Origin Selection_Barbarian_Male]"
       ]
     },
     {
       "ID": 3105,
       "Entries": [
-        "[For Character Creation Class Select_Barbarian_Female]"
+        "[For Character Creation Origin Selection_Barbarian_Female]"
       ]
     },
     {
       "ID": 3106,
       "Entries": [
-        "[For Character Creation Class Select_Assassin Light Armor_Male]"
+        "[For Character Creation Origin Selection_Assassin Light Gear_Male]"
       ]
     },
     {
       "ID": 3107,
       "Entries": [
-        "[For Character Creation Class Select_Assassin Light Armor_Female]"
+        "[For Character Creation Origin Selection_Assassin Light Gear_Female]"
       ]
     },
     {
       "ID": 3108,
       "Entries": [
-        "[For Character Creation Class Select_Astrologer_Male]"
+        "[For Character Creation Origin Selection_Astrologer_Male]"
       ]
     },
     {
       "ID": 3109,
       "Entries": [
-        "[For Character Creation Class Select_Astrologer_Female]"
+        "[For Character Creation Origin Selection_Astrologer_Female]"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        "[Character Creation Origin Select_Persecuted Clergy B_Male]"
+        "[For Character Creation Origin Selection_Persecuted Cleric B_Male]"
       ]
     },
     {
       "ID": 3111,
       "Entries": [
-        "[Character Creation Origin Select_Persecuted Clergy B_Female]"
+        "[For Character Creation Origin Selection_Persecuted Cleric B_Female]"
       ]
     },
     {
       "ID": 3112,
       "Entries": [
-        "[For Character Creation Class Select_Assassin Knight_Male]"
+        "[For Character Creation Origin Selection_Assassin Knight_Male]"
       ]
     },
     {
       "ID": 3113,
       "Entries": [
-        "[For Character Creation Class Select_Assassin Knight_Female]"
+        "[For Character Creation Origin Selection_Assassin Knight_Female]"
       ]
     },
     {
       "ID": 3114,
       "Entries": [
-        "[For Character Creation Class Select_Samurai (Light Armor)_Male]"
+        "[For Character Creation Origin Selection_Samurai (Light)_Male]"
       ]
     },
     {
       "ID": 3115,
       "Entries": [
-        "[For Character Creation Class Select_Samurai (Light Armor)_Female]"
+        "[For Character Creation Origin Selection_Samurai (Light)_Female]"
       ]
     },
     {
       "ID": 3116,
       "Entries": [
-        "[Character Creation Origin Select_Condemned Prisoner (A)_Male]"
+        "[For Character Creation Origin Selection_Death Row Prisoner (A)_Male]"
       ]
     },
     {
       "ID": 3117,
       "Entries": [
-        "[For Character Creation Class Select_Death Row Convict (A)_Female]"
+        "[For Character Creation Origin Selection_Death Row Prisoner (A)_Female]"
       ]
     },
     {
       "ID": 3118,
       "Entries": [
-        "[Character Creation Origin Select_Nude_Male]"
+        "[For Character Creation Origin Selection_Naked_Male]"
       ]
     },
     {
       "ID": 3119,
       "Entries": [
-        "[Character Creation Origin Select_Nude_Female]"
+        "[For Character Creation Origin Selection_Naked_Female]"
       ]
     },
     {
       "ID": 3120,
       "Entries": [
-        "[Character Creation Origin Select_Light Knight_Male]"
+        "[For Character Creation Origin Selection_Light Knight_Male]"
       ]
     },
     {
       "ID": 3121,
       "Entries": [
-        "[Character Creation Origin Select_Light Knight_Female]"
+        "[For Character Creation Origin Selection_Light Knight_Female]"
       ]
     },
     {
       "ID": 3122,
       "Entries": [
-        "[Character Creation Origin Select_Heavy Knight_Male]"
+        "[For Character Creation Origin Selection_Heavy Knight_Male]"
       ]
     },
     {
       "ID": 3123,
       "Entries": [
-        "[Character Creation Origin Select_Heavy Knight_Female]"
+        "[For Character Creation Origin Selection_Heavy Knight_Female]"
       ]
     },
     {
@@ -430,7 +430,7 @@
     {
       "ID": 10000,
       "Entries": [
-        "DesignTestCreation_1"
+        "For Design Test Creation_1"
       ]
     },
     {
@@ -1756,1435 +1756,1435 @@
     {
       "ID": 23000,
       "Entries": [
-        "[GR Costume Change NPC] _300_Volcano Manor Mistress"
+        "[GR Dress-Up NPC]_300_Lady of Volcano Manor"
       ]
     },
     {
       "ID": 23010,
       "Entries": [
-        "[GR Costume Change NPC] _301_Battlefield Doctor"
+        "[GR Dress-Up NPC]_301_Battlefield Medic"
       ]
     },
     {
       "ID": 23020,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23030,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23040,
       "Entries": [
-        "[GR Costume Change NPC] _304_Wounded Knight"
+        "[GR Dress-Up NPC]_304_Scarred Knight"
       ]
     },
     {
       "ID": 23050,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23060,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23070,
       "Entries": [
-        "[GR Costume Change NPC] _307_Suspicious Puppeteer"
+        "[GR Dress-Up NPC]_307_Suspicious Puppeteer"
       ]
     },
     {
       "ID": 23080,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23090,
       "Entries": [
-        "[GR Costume Change NPC] _309_Bandit Chief"
+        "[GR Dress-Up NPC]_309_Bandit Chief"
       ]
     },
     {
       "ID": 23100,
       "Entries": [
-        "[GR Costume NPC]_310_Castle Lord's Daughter"
+        "[GR Dress-Up NPC]_310_Lord\u0027s Daughter"
       ]
     },
     {
       "ID": 23110,
       "Entries": [
-        "[GR Costume NPC]_311_Peninsula Fort Lord"
+        "[GR Dress-Up NPC]_311_Lord of the Peninsula Fort"
       ]
     },
     {
       "ID": 23120,
       "Entries": [
-        "[GR Costume NPC]_312_Plains Fort Lord"
+        "[GR Dress-Up NPC]_312_Lord of Plains Fort"
       ]
     },
     {
       "ID": 23130,
       "Entries": [
-        "[GR Costume NPC]_313_Volcano Manor Recruiter"
+        "[GR Dress-Up NPC]_313_Volcano Manor Recruiter"
       ]
     },
     {
       "ID": 23140,
       "Entries": [
-        "[GR Costume NPC]_314_Mununu"
+        "[GR Dress-Up NPC]_314_Munou"
       ]
     },
     {
       "ID": 23150,
       "Entries": [
-        "[GR Costume NPC]_315_Mununu Partner NPC"
+        "[GR Dress-Up NPC]_315_Munou\u0027s Partner NPC"
       ]
     },
     {
       "ID": 23160,
       "Entries": [
-        "[GR Costume NPC]_316_Academy Female Sorcerer"
+        "[GR Dress-Up NPC]_316_Academy Sorceress"
       ]
     },
     {
       "ID": 23162,
       "Entries": [
-        "[GR Costume NPC]_316_Academy Female Sorcerer (Glintstone 100%)"
+        "[GR Dress-Up NPC]_316_Academy Sorceress (Glintstone 100%)"
       ]
     },
     {
       "ID": 23170,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23180,
       "Entries": [
-        "[GR Costume NPC]_318_Host of Chaos (Yupa)"
+        "[GR Dress-Up NPC]_318_Host of Chaos (Yura)"
       ]
     },
     {
       "ID": 23190,
       "Entries": [
-        "[GR Costume NPC]_319_D"
+        "[GR Dress-Up NPC]_319_D"
       ]
     },
     {
       "ID": 23192,
       "Entries": [
-        "[GR Costume NPC]_319_D (Danny)"
+        "[GR Dress-Up NPC]_319_D (Danny)"
       ]
     },
     {
       "ID": 23200,
       "Entries": [
-        "[GR Costume NPC]_320_Wandering Noble Farnese"
+        "[GR Dress-Up NPC]_320_Exiled Noble Farnese"
       ]
     },
     {
       "ID": 23210,
       "Entries": [
-        "[GR Costume NPC]_321_Watchtower Noble"
+        "[GR Dress-Up NPC]_321_Watchtower Noble"
       ]
     },
     {
       "ID": 23220,
       "Entries": [
-        "[GR Costume NPC]_322_Bedfellow Maiden"
+        "[GR Dress-Up NPC]_322_Bedfellow Maiden, Yura"
       ]
     },
     {
       "ID": 23230,
       "Entries": [
-        "[GR Costume NPC]_323_Dung Eater"
+        "[GR Dress-Up NPC]_323_Dung Eater"
       ]
     },
     {
       "ID": 23240,
       "Entries": [
-        "[GR Costume NPC]_324_Hundred-Wisdom Lord"
+        "[GR Dress-Up NPC]_324_Lord of a Hundred Wisdoms, Gideon=Ofnir"
       ]
     },
     {
       "ID": 23250,
       "Entries": [
-        "[GR Costume NPC]_325_Rogier"
+        "[GR Dress-Up NPC]_325_Rogier"
       ]
     },
     {
       "ID": 23260,
       "Entries": [
-        "[GR Costume NPC]_326_Volcano Manor Strongest Knight (Mergatz)"
+        "[GR Dress-Up NPC]_326_Volcano Manor\u0027s Strongest Knight (Merkatz)"
       ]
     },
     {
       "ID": 23270,
       "Entries": [
-        "[GR Costume NPC]_327_Dragon-Feast Female Warrior"
+        "[GR Dress-Up NPC]_327_Dragon Communion Warrior Woman"
       ]
     },
     {
       "ID": 23280,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23290,
       "Entries": [
-        "[GR Costume NPC]_329_Death Faction (Underground Labyrinth Royal Capital Consecutive Boss)"
+        "[GR Dress-Up NPC]_329_Death Faction (Underground Labyrinth Leyndell Consecutive Boss Fight)"
       ]
     },
     {
       "ID": 23300,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23310,
       "Entries": [
-        "[GR Costume NPC]_331_Crab-Eating NPC"
+        "[GR Dress-Up NPC]_331_Crab-Eating NPC"
       ]
     },
     {
       "ID": 23320,
       "Entries": [
-        "[GR Costume NPC]_332_Volcano Manor Ghost"
+        "[GR Dress-Up NPC]_332_Volcano Manor Ghost"
       ]
     },
     {
       "ID": 23330,
       "Entries": [
-        "[GR Costume NPC]_333_Unreturning Glintstone Sorcerer"
+        "[GR Dress-Up NPC]_333_Glintstone Sorcerer Who Can\u0027t Return"
       ]
     },
     {
       "ID": 23340,
       "Entries": [
-        "[GR Costume NPC]_334_Hundred-Wisdom Lord's Daughter (Nefeli)"
+        "[GR Dress-Up NPC]_334_Daughter of the Lord of a Hundred Wisdoms (Nepheli)"
       ]
     },
     {
       "ID": 23350,
       "Entries": [
-        "[GR Costume NPC]_335_Jiko-bo"
+        "[GR Dress-Up NPC]_335_Jiko-bo"
       ]
     },
     {
       "ID": 23360,
       "Entries": [
-        "[GR Costume NPC]_336_Wounded Knight Priestess"
+        "[GR Dress-Up NPC]_336_Scarred Knight\u0027s Maiden"
       ]
     },
     {
       "ID": 23370,
       "Entries": [
-        "[GR Costume NPC]_337_Royal Capital Old Man"
+        "[GR Dress-Up NPC]_337_Leyndell Old Man"
       ]
     },
     {
       "ID": 23380,
       "Entries": [
-        "[GR Costume NPC]_338_Collapsed Priestess"
+        "[GR Dress-Up NPC]_338_Collapsed Exhausted Maiden"
       ]
     },
     {
       "ID": 23390,
       "Entries": [
-        "[GR Costume NPC]_339_Hundred-Wisdom Lord's Underling"
+        "[GR Dress-Up NPC]_339_Lord of a Hundred Wisdoms\u0027 Henchman"
       ]
     },
     {
       "ID": 23400,
       "Entries": [
-        "[GR Costume NPC]_340_A Crushed Finger"
+        "[GR Dress-Up NPC]_340_A Certain Crushed Finger"
       ]
     },
     {
       "ID": 23410,
       "Entries": [
-        "[GR Costume NPC]_341_Mad Finger Maiden"
+        "[GR Dress-Up NPC]_341_Mad Finger Maiden"
       ]
     },
     {
       "ID": 23420,
       "Entries": [
-        "[GR Costume NPC]_342_Demi-Human Seamstress (After Rebirth)"
+        "[GR Dress-Up NPC]_342_Demi-Human Seamstress (After Rebirth)"
       ]
     },
     {
       "ID": 23430,
       "Entries": [
-        "[GR Costume NPC]_343_Nerius"
+        "[GR Dress-Up NPC]_343_Nerius"
       ]
     },
     {
       "ID": 23440,
       "Entries": [
-        "[GR Costume NPC]_344_ Tragos"
+        "[GR Dress-Up NPC]_344_ Tragoth"
       ]
     },
     {
       "ID": 23450,
       "Entries": [
-        "[GR Costume NPC]_345_Volcano Manor Request Target 1"
+        "[GR Dress-Up NPC]_345_Mountain Manor\u0027s Request Target 1"
       ]
     },
     {
       "ID": 23460,
       "Entries": [
-        "[GR Costume NPC]_346_Volcano Manor Request Target 2"
+        "[GR Dress-Up NPC]_346_Volcano Manor Request Target 2"
       ]
     },
     {
       "ID": 23470,
       "Entries": [
-        "[GR Costume NPC]_347_Volcano Manor Request Target 3 (Munou's Brother)"
+        "[GR Dress-Up NPC]_347_Volcano Manor Request Target 3 (Munou\u0027s Older Brother)"
       ]
     },
     {
       "ID": 23480,
       "Entries": [
-        "[GR Costume NPC]_348 Malenia's Daughter"
+        "[GR Dress-Up NPC]_348 Malenia\u0027s Daughter"
       ]
     },
     {
       "ID": 23481,
       "Entries": [
-        "[GR Costume NPC]_348 Malenia's Daughter_Hair Binding"
+        "[GR Dress-Up NPC]_348 Malenia\u0027s Daughter_Hair Tie"
       ]
     },
     {
       "ID": 23490,
       "Entries": [
-        "[GR Costume NPC]_349_Rot Elder"
+        "[GR Dress-Up NPC]_349_Rot Elder"
       ]
     },
     {
       "ID": 23500,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23510,
       "Entries": [
-        "[GR Costume NPC]_351_Gold Mask Attendant"
+        "[GR Dress-Up NPC]_351_Gold Mask\u0027s Attendant"
       ]
     },
     {
       "ID": 23520,
       "Entries": [
-        "[GR Costume NPC]_352_Divine Tower Lake NPC"
+        "[GR Dress-Up NPC]_352_Divine Tower Lake NPC"
       ]
     },
     {
       "ID": 23530,
       "Entries": [
-        "[GR Costume NPC]_353_Meat Cleaver NPC"
+        "[GR Dress-Up NPC]_353_Meat Cleaver NPC"
       ]
     },
     {
       "ID": 23540,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23550,
       "Entries": [
-        "[GR Costume NPC]_355_Church 5-2 NPC"
+        "[GR Dress-Up NPC]_355_Church 5-2NPC"
       ]
     },
     {
       "ID": 23560,
       "Entries": [
-        "[GR Costume NPC]_356_Circular Plaza 2-1 NPC"
+        "[GR Dress-Up NPC]_356_Circular Plaza 2-1NPC"
       ]
     },
     {
       "ID": 23570,
       "Entries": [
-        "[GR Costume NPC]_357_Hidden Passage Stairs Back NPC_Volcano Prison"
+        "[GR Dress-Up NPC]_357_NPC Behind Hidden Passage Stairs_Volcano Prison"
       ]
     },
     {
       "ID": 23580,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23590,
       "Entries": [
-        "[GR Costume NPC]_359_Monsan_Before Boss EV (Rennala's Escort Knight)"
+        "[GR Dress-Up NPC]_359_Raya Lucaria_Before Boss EV (Rennala\u0027s Guard Knight)"
       ]
     },
     {
       "ID": 23600,
       "Entries": [
-        "[GR Costume Change NPC] 360_Round Table First Tarnished Survivor_A"
+        "[GR Dress-Up NPC] 360_Survivor of the Roundtable\u0027s First Tarnished_A"
       ]
     },
     {
       "ID": 23610,
       "Entries": [
-        "[GR Costume NPC]_361_Bedfellows_1"
+        "[GR Dress-Up NPC]_361_Bedfellows_1"
       ]
     },
     {
       "ID": 23611,
       "Entries": [
-        "[GR Costume NPC]_361_Bedfellows_2"
+        "[GR Dress-Up NPC]_361_Bedfellows_2"
       ]
     },
     {
       "ID": 23612,
       "Entries": [
-        "[GR Costume NPC]_361_Bedfellows_3"
+        "[GR Dress-Up NPC]_361_Bedfellows_3"
       ]
     },
     {
       "ID": 23620,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23630,
       "Entries": [
-        "[GR Costume NPC]_363_Puppet_Mr. A (Fallen Saintess)"
+        "[GR Dress-Up NPC]_363_Puppet_Person A (Fallen Saint)"
       ]
     },
     {
       "ID": 23640,
       "Entries": [
-        "[GR Costume NPC]_364_Puppet_Mr. B (Sleep User)"
+        "[GR Dress-Up NPC]_364_Puppet_Person B (Sleep User"
       ]
     },
     {
       "ID": 23650,
       "Entries": [
-        "[GR Costume NPC]_365_Puppet_Mr. C (Pot User)"
+        "[GR Dress-Up NPC]_365_Puppet_Person C (Pot User)"
       ]
     },
     {
       "ID": 23660,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23670,
       "Entries": [
-        "[GR Costume NPC]_367_Cave 5-2 (Snail Summoned Spirit)"
+        "[GR Dress-Up NPC]_367_Cave 5-2 (Spirit Summoned by Snake-Snail)"
       ]
     },
     {
       "ID": 23680,
       "Entries": [
-        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Ballista)"
+        "[GR Dress-Up NPC]_368_Marika Ruins 2 (Transforming Slime_Ballista)"
       ]
     },
     {
       "ID": 23681,
       "Entries": [
-        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Straight Sword)"
+        "[GR Dress-Up NPC]_368_Marika Ruins 2 (Transforming Slime_Straight Sword)"
       ]
     },
     {
       "ID": 23682,
       "Entries": [
-        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Colossal Sword)"
+        "[GR Dress-Up NPC]_368_Marika Ruins 2 (Transforming Slime_Colossal Sword)"
       ]
     },
     {
       "ID": 23683,
       "Entries": [
-        "[GR Costume NPC]_368_Marika Ruins 2 (Transforming Slime_Spear Shield)"
+        "[GR Dress-Up NPC]_368_Marika Ruins 2 (Transforming Slime_Spear and Shield)"
       ]
     },
     {
       "ID": 23690,
       "Entries": [
-        "[GR Costume NPC]_369_Volcano Manor Mob"
+        "[GR Dress-Up NPC]_369_Volcano Manor Mob"
       ]
     },
     {
       "ID": 23700,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23710,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23720,
       "Entries": [
-        "[GR Costume NPC]_372_Highland Fort West (Sculpture Dump Minor Lord)"
+        "[GR Dress-Up NPC]_372_West Side of Altus Fort (Petty Lord of the Statue Dump)"
       ]
     },
     {
       "ID": 23730,
       "Entries": [
-        "[GR Costume NPC]_373_Plains Arena Front Red Phantom 1_Offline"
+        "[GR Dress-Up NPC]_373_Red Phantom 1 Before Plains Colosseum_For Offline"
       ]
     },
     {
       "ID": 23740,
       "Entries": [
-        "[GR Costume NPC]_374_Plains Arena Front Red Phantom 2_Offline"
+        "[GR Dress-Up NPC]_374_Red Phantom 2 Before Plains Colosseum_For Offline"
       ]
     },
     {
       "ID": 23750,
       "Entries": [
-        "[GR Costume NPC]_375_Plains Arena Front Red Phantom 3_Offline"
+        "[GR Dress-Up NPC]_375_Red Phantom 3 Before Plains Colosseum_For Offline"
       ]
     },
     {
       "ID": 23760,
       "Entries": [
-        "[GR Costume NPC]_376_Cave 3-4 (Instant Death User)"
+        "[GR Dress-Up NPC]_376_Cave 3-4 (Instant Death User)"
       ]
     },
     {
       "ID": 23770,
       "Entries": [
-        "[GR Costume NPC]_377_Underground Labyrinth Plains Depths Blood Swamp Area"
+        "[GR Dress-Up NPC]_377_Blood Swamp Area in Underground Labyrinth Plains Depths"
       ]
     },
     {
       "ID": 23780,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23790,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23800,
       "Entries": [
-        "[GR Costume Change NPC] 380_Round Table First Tarnished Survivor_B"
+        "[GR Dress-Up NPC] 380_Survivor of the Roundtable\u0027s First Tarnished_B"
       ]
     },
     {
       "ID": 23810,
       "Entries": [
-        "[GR Costume Change NPC]"
+        "[GR Dress-Up NPC]"
       ]
     },
     {
       "ID": 23820,
       "Entries": [
-        "[GR Costume NPC]_382_Open Snowy Mountain Seaside Tower 5-1_Boss Tier"
+        "[GR Dress-Up NPC]_382_Open Snow Mountain Seaside Tower 5-1_Boss-Class"
       ]
     },
     {
       "ID": 23830,
       "Entries": [
-        "[GR Costume NPC]_383_Open Snowy Mountain Seaside Tower 5-1_Trash"
+        "[GR Dress-Up NPC]_383_Open Snow Mountain Seaside Tower 5-1_Small Fry"
       ]
     },
     {
       "ID": 23840,
       "Entries": [
-        "[GR Costume NPC]_384_Volcano Manor 2F Enemy"
+        "[GR Dress-Up NPC]_384_Volcano Manor 2F Enemy"
       ]
     },
     {
       "ID": 23850,
       "Entries": [
-        "[GR Costume NPC]_385_Base 1F Enemy"
+        "[GR Dress-Up NPC]_385_Base 1F Enemy"
       ]
     },
     {
       "ID": 23860,
       "Entries": [
-        "[GR Costume NPC]_386_Royal Capital Underground Catacombs"
+        "[GR Dress-Up NPC]_386_Leyndell Catacombs"
       ]
     },
     {
       "ID": 23870,
       "Entries": [
-        "[GR Costume NPC]_387_Millicent's Sister A"
+        "[GR Dress-Up NPC]_387_Millicent\u0027s Sister A"
       ]
     },
     {
       "ID": 23880,
       "Entries": [
-        "[GR Costume NPC]_388_Millicent's Sister B"
+        "[GR Dress-Up NPC]_388_Millicent\u0027s Sister B"
       ]
     },
     {
       "ID": 23890,
       "Entries": [
-        "[GR Costume NPC]_389_Millicent's Sister C"
+        "[GR Dress-Up NPC]_389_Millicent\u0027s Sister C"
       ]
     },
     {
       "ID": 23900,
       "Entries": [
-        "[GR Costume NPC]_390_Millicent's Sister D"
+        "[GR Dress-Up NPC]_390_Millicent\u0027s Sister D"
       ]
     },
     {
       "ID": 23910,
       "Entries": [
-        "[GR Costume NPC]_391_Valley Event Target"
+        "[GR Dress-Up NPC]_391_Varré Event Target"
       ]
     },
     {
       "ID": 24700,
       "Entries": [
-        "[GR Costume NPC]_Patch1.17_New Lucatiel"
+        "[GR Dress-Up NPC]_Patch1.17_New Lucatiel"
       ]
     },
     {
       "ID": 24710,
       "Entries": [
-        "[GR Costume NPC]_Patch1.17_Golden Mask Lord's First Disciple"
+        "[GR Dress-Up NPC]_Patch1.17_Gold Mask\u0027s First Disciple"
       ]
     },
     {
       "ID": 27000,
       "Entries": [
-        "[GR Costume NPC]_Talking Corpse_Beside Arena Gate"
+        "[GR Dress-Up NPC]_Talking Corpse_Beside the Colosseum Gate"
       ]
     },
     {
       "ID": 27001,
       "Entries": [
-        "[GR Costume Change NPC]Talking Corpse_Inside Lake Fort Room"
+        "[GR Dress-Up NPC] Talking Corpse_Inside Lake Fort Room"
       ]
     },
     {
       "ID": 27002,
       "Entries": [
-        "[GR Costume Change NPC]Talking Corpse_Entrance of Plains Dragon Zone"
+        "[GR Dress-Up NPC] Talking Corpse_Entrance to Plains Dragon Zone"
       ]
     },
     {
       "ID": 27003,
       "Entries": [
-        "[GR Costume Change NPC]Talking Corpse_For Tutorial Guidance"
+        "[GR Dress-Up NPC] Talking Corpse_For Tutorial Guidance"
       ]
     },
     {
       "ID": 27900,
       "Entries": [
-        "[GR Costume NPC]_D's Mourned Corpse"
+        "[GR Dress-Up NPC]_Corpse Mourned by D"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30001,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30019,
       "Entries": [
-        "ForTestCreation_NT Cleric"
+        "For Test Creation_NT Cleric"
       ]
     },
     {
       "ID": 30020,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30021,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30022,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30023,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30024,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30025,
       "Entries": [
-        "ForTestCreation_NT SkillWarrior"
+        "For Test Creation_NT Skill Warrior"
       ]
     },
     {
       "ID": 30026,
       "Entries": [
-        "ForTestCreation_NT Barbarian"
+        "For Test Creation_NT Barbarian"
       ]
     },
     {
       "ID": 30027,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30028,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30029,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30030,
       "Entries": [
-        "ForTestCreation_NT MagicKnight"
+        "For Test Creation_NT Spellblade"
       ]
     },
     {
       "ID": 30031,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30032,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30033,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30034,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30035,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30036,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30037,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30038,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30039,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30040,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30041,
       "Entries": [
-        "ForTestCreation_NT BattlefieldDoctor"
+        "For Test Creation_NT Battlefield Medic"
       ]
     },
     {
       "ID": 30042,
       "Entries": [
-        "ForTestCreation_NT MercenarySwordsman"
+        "For Test Creation_NT Mercenary Swordsman"
       ]
     },
     {
       "ID": 30043,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30044,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30045,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30046,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30047,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30048,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30049,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30050,
       "Entries": [
-        "ForTestCreation_OldCastellan"
+        "For Test Creation_Old Castle Lord"
       ]
     },
     {
       "ID": 30051,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30052,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30053,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30054,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30055,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30056,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30057,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30058,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30059,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30060,
       "Entries": [
-        "ForTestCreation_NPC GlintstoneSorcererB"
+        "For Test Creation_NPC Glintstone Sorcerer B"
       ]
     },
     {
       "ID": 30061,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30062,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30063,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30064,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30065,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30066,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30067,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30068,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30069,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30070,
       "Entries": [
-        "ForTestCreation_NobleExileFarnese"
+        "For Test Creation_Exiled Noble Farnese"
       ]
     },
     {
       "ID": 30071,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30072,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30073,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30074,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30075,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30076,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30077,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30078,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30079,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30080,
       "Entries": [
-        "ForTestCreation_Yulia(Dress)"
+        "For Test Creation_Yura (Dress)"
       ]
     },
     {
       "ID": 30081,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30082,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30083,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30084,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30085,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30086,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30087,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30088,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30089,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30090,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30091,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30092,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30093,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30094,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30095,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30096,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30097,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30098,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30099,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30100,
       "Entries": [
-        "ForTestCreation_BelowForGDSave"
+        "For Test Creation_Below for GD Storage"
       ]
     },
     {
       "ID": 30101,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30102,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30103,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30104,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30105,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30106,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30107,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30108,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30109,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30110,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30111,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30112,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30113,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30114,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30115,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30116,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30117,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30118,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30119,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30120,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30121,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30122,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30123,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30124,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30125,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30126,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30127,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30128,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30129,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30130,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30131,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30132,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30133,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30134,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30135,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30136,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 30137,
       "Entries": [
-        "ForTestCreation"
+        "For Test Creation"
       ]
     },
     {
       "ID": 80000,
       "Entries": [
-        "[Override 1] Madness Fire_Burn"
+        "[Overwrite 1] Frenzied Flame_Burn"
       ]
     },
     {
       "ID": 81000,
       "Entries": [
-        "[Override 2] Madness Fire_Eyeball"
+        "[Overwrite 2] Frenzied Flame_Eyeball"
       ]
     },
     {
       "ID": 81001,
       "Entries": [
-        "[Override 2] Blood_Eyeball"
+        "[Overwrite 2] Blood_Eyeball"
       ]
     },
     {
       "ID": 81002,
       "Entries": [
-        "[Override 2] Erdtree Feast_Eyeball"
+        "[Overwrite 2] Dragon Communion_Eyeball"
       ]
     },
     {
       "ID": 81003,
       "Entries": [
-        "[Override 2] Silver_Eyeball"
+        "[Overwrite 2] Silver_Eyeball"
       ]
     },
     {
       "ID": 90000,
       "Entries": [
-        "[Test] Eyeball Part ID Override"
+        "[Test] Eyeball Part ID Overwrite"
       ]
     },
     {
       "ID": 90001,
       "Entries": [
-        "[Test] Iris Color Override"
+        "[Test] Iris Color Overwrite"
       ]
     },
     {
       "ID": 90002,
       "Entries": [
-        "[Test] Crystalline Opacity Overwrite"
+        "[Test] Lens Clouding Overwrite"
       ]
     },
     {
       "ID": 90003,
       "Entries": [
-        "[Test] Lens Opacity Color Override"
+        "[Test] Lens Clouding Color Overwrite"
       ]
     },
     {
       "ID": 90004,
       "Entries": [
-        "[Test] Sclera Color Override"
+        "[Test] Eye White Color Overwrite"
       ]
     },
     {
       "ID": 90005,
       "Entries": [
-        "[Test] Burn Scar Override"
+        "[Test] Burn Scar Overwrite"
       ]
     },
     {
@@ -3262,181 +3262,181 @@
     {
       "ID": 99991,
       "Entries": [
-        "DLC Debug Use"
+        "For DLC Debug"
       ]
     },
     {
       "ID": 99992,
       "Entries": [
-        "DLC Debug Use"
+        "For DLC Debug"
       ]
     },
     {
       "ID": 2024030,
       "Entries": [
-        "[GR Costume NPC]_403_Dragon Communion Ahab"
+        "[GR Dress-Up NPC]_403_Dragon Communion Ahab"
       ]
     },
     {
       "ID": 2024032,
       "Entries": [
-        "[GR Costume NPC]_403_Dragon Communion Ahab_Limbs Paralyzed"
+        "[GR Dress-Up NPC]_403_Dragon Communion Ahab_Quadriplegia"
       ]
     },
     {
       "ID": 2024060,
       "Entries": [
-        "[GR Costume NPC]_406_Dragon Communion Priest"
+        "[GR Dress-Up NPC]_406_Dragon Communion Priest"
       ]
     },
     {
       "ID": 2024070,
       "Entries": [
-        "[GR Costume NPC]_407_Cave Boss (Dragon Communion NPC)"
+        "[GR Dress-Up NPC]_407_Cave Boss (Dragon Communion NPC)"
       ]
     },
     {
       "ID": 2024090,
       "Entries": [
-        "[GR Costume NPC]_409_Finger Reader Lord's Assassin"
+        "[GR Dress-Up NPC]_409_Finger Hunter\u0027s Assassin"
       ]
     },
     {
       "ID": 2024120,
       "Entries": [
-        "[GR Costume NPC]_412_Finger Reader Lord's Assassin_Twins"
+        "[GR Dress-Up NPC]_412_Finger Hunter\u0027s Assassin_Twins"
       ]
     },
     {
       "ID": 2024130,
       "Entries": [
-        "[GR Costume NPC]_413_Demigod Hunter"
+        "[GR Dress-Up NPC]_413_God-Man Hunter"
       ]
     },
     {
       "ID": 2024140,
       "Entries": [
-        "[GR Costume NPC]_414_Miquella's Army③ Demigod"
+        "[GR Dress-Up NPC]_414_Miquella Group 3 God-Man"
       ]
     },
     {
       "ID": 2024150,
       "Entries": [
-        "[GR Costume NPC]_415_Miquella's Army⑥ Malenia Faction"
+        "[GR Dress-Up NPC]_415_Miquella Group 6 Malenia Faction"
       ]
     },
     {
       "ID": 2024160,
       "Entries": [
-        "[GR Costume NPC]_416_Miquella's Army④ Bloody Lord's Retainer"
+        "[GR Dress-Up NPC]_416_Miquella Group 4 Lord of Blood Subordinate"
       ]
     },
     {
       "ID": 2024170,
       "Entries": [
-        "[GR Costume NPC]_417_Miquella's Army② Radahn Soldier"
+        "[GR Dress-Up NPC]_417_Miquella Group 2 Radahn Soldier"
       ]
     },
     {
       "ID": 2024180,
       "Entries": [
-        "[GR Costume NPC]_418_Miquella's Army① Leader"
+        "[GR Dress-Up NPC]_418_Miquella Group 1 Leader"
       ]
     },
     {
       "ID": 2024190,
       "Entries": [
-        "[GR Costume NPC]_419_Miquella's Army⑤ Triina Faction"
+        "[GR Dress-Up NPC]_419_Miquella Group 5 Trina Faction"
       ]
     },
     {
       "ID": 2024200,
       "Entries": [
-        "[GR Costume NPC]_420_Finger Reader Lord"
+        "[GR Dress-Up NPC]_420_Finger Hunter"
       ]
     },
     {
       "ID": 2024201,
       "Entries": [
-        "[GR Costume NPC]_420_Finger Reader Lord_Combat"
+        "[GR Dress-Up NPC]_420_Finger Hunter_Combat"
       ]
     },
     {
       "ID": 2024210,
       "Entries": [
-        "[GR Costume NPC]_421_Shrine NPC① _Bear Armor"
+        "[GR Dress-Up NPC]_421_Shrine NPC 1_Bear Equipment"
       ]
     },
     {
       "ID": 2024220,
       "Entries": [
-        "[GR Costume NPC]_422_Shrine NPC② _Dancer Swordsman"
+        "[GR Dress-Up NPC]_422_Shrine NPC 2_Dancer Swordsman"
       ]
     },
     {
       "ID": 2024230,
       "Entries": [
-        "[GR Costume NPC]_423_Shrine NPC③ _Swordmaster Warrior"
+        "[GR Dress-Up NPC]_423_Shrine NPC 3_Swordmaster Warrior"
       ]
     },
     {
       "ID": 2024240,
       "Entries": [
-        "[GR Costume NPC]_424_Shrine NPC④ _Heavy Armor②"
+        "[GR Dress-Up NPC]_424_Shrine NPC 4_Heavy Armor 2"
       ]
     },
     {
       "ID": 2024250,
       "Entries": [
-        "[GR Costume NPC]_425_Babel Upper Level Boss"
+        "[GR Dress-Up NPC]_425_Babel Upper Level Boss"
       ]
     },
     {
       "ID": 2024260,
       "Entries": [
-        "[GR Costume NPC]_426_Babel Upper Level Assist Slot"
+        "[GR Dress-Up NPC]_426_Babel Upper Level Helper Slot"
       ]
     },
     {
       "ID": 2024270,
       "Entries": [
-        "[GR Costume NPC]_427_Prison Boss"
+        "[GR Dress-Up NPC]_427_Prison Boss"
       ]
     },
     {
       "ID": 2024280,
       "Entries": [
-        "[GR Costume NPC]_428_Pot-Making Village NPC"
+        "[GR Dress-Up NPC]_428_Jar-Making Village NPC"
       ]
     },
     {
       "ID": 2024290,
       "Entries": [
-        "[GR Costume NPC]_429_Abyssal Forest NPC"
+        "[GR Dress-Up NPC]_429_Abyssal Woods NPC"
       ]
     },
     {
       "ID": 2024310,
       "Entries": [
-        "[GR Costume NPC]_431_Beast Claw NPC"
+        "[GR Dress-Up NPC]_431_Beast Claw NPC"
       ]
     },
     {
       "ID": 2024320,
       "Entries": [
-        "[GR Costume NPC]_432_Highway Fort Church Front NPC"
+        "[GR Dress-Up NPC]_432_Highway Fort Church Front NPC"
       ]
     },
     {
       "ID": 2024500,
       "Entries": [
-        "[GR Costume NPC]_Patch1.17_New Lucatiel"
+        "[GR Dress-Up NPC]_Patch1.17_New Lucatiel"
       ]
     },
     {
       "ID": 2024510,
       "Entries": [
-        "[GR Costume NPC]_Patch1.17_Golden Mask Lord's First Disciple"
+        "[GR Dress-Up NPC]_Patch1.17_Gold Mask\u0027s First Disciple"
       ]
     }
   ]

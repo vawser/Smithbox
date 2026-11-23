@@ -10,19 +10,19 @@
     {
       "ID": 1,
       "Entries": [
-        "Lightweight+"
+        "Lightweight\u002B"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Medium Load"
+        "Medium Weight"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Medium Load+"
+        "Medium Weight\u002B"
       ]
     },
     {
@@ -40,79 +40,79 @@
     {
       "ID": 16,
       "Entries": [
-        "Super Lightweight"
+        "Ultralight"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Camouflage_Light"
+        "Mimicry_Lightweight"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Camouflage_Light+"
+        "Mimicry_Lightweight\u002B"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Camouflage_Medium Load"
+        "Mimicry_Medium Weight"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Camouflage_Medium Load+"
+        "Mimicry_Medium Weight\u002B"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Camouflage_Heavy"
+        "Mimicry_Weight"
       ]
     },
     {
       "ID": 35,
       "Entries": [
-        "Camouflage_Overweight"
+        "Mimicry_Overweight"
       ]
     },
     {
       "ID": 36,
       "Entries": [
-        "Camouflage_Ultralight"
+        "Mimicry_Ultralight"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Underwater (Deep)_Light Load"
+        "Underwater (Deep)_Lightweight"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Underwater (Deep)_Light Load+"
+        "Underwater (Deep)_Lightweight\u002B"
       ]
     },
     {
       "ID": 45,
       "Entries": [
-        "Underwater (Deep)_Medium Load"
+        "Underwater (Deep)_Medium Weight"
       ]
     },
     {
       "ID": 46,
       "Entries": [
-        "Underwater (Deep)_Medium Load+"
+        "Underwater (Deep)_Medium Weight\u002B"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Underwater (Deep)_Heavy Load"
+        "Underwater (Deep)_Weight"
       ]
     },
     {
@@ -124,37 +124,37 @@
     {
       "ID": 56,
       "Entries": [
-        "Underwater (Deep)_Super Light Load"
+        "Underwater (Deep)_Ultralight"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "[SP] Guard Alert_Light Load"
+        "[SP] Guard Alert_Lightweight"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        "[SP] Guard Alert_Light Load+"
+        "[SP] Guard Alert_Lightweight\u002B"
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        "[SP] Guard Alert_Medium Load"
+        "[SP] Guard Alert_Medium Weight"
       ]
     },
     {
       "ID": 66,
       "Entries": [
-        "[SP] Guard Alert_Medium Load+"
+        "[SP] Guard Alert_Medium Weight\u002B"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        "[SP] Guard Alert_Heavy Load"
+        "[SP] Guard Alert_Weight"
       ]
     },
     {
@@ -208,25 +208,25 @@
     {
       "ID": 106,
       "Entries": [
-        "Scale Miner In Combat"
+        "Scaled Miner In Combat"
       ]
     },
     {
       "ID": 107,
       "Entries": [
-        "Scale Miner Non-combat (Sack)"
+        "Scaled Miner Out of Combat (Bag)"
       ]
     },
     {
       "ID": 108,
       "Entries": [
-        "Scale Miner Non-combat (Pickle)"
+        "Scaled Miner Out of Combat (Pickle)"
       ]
     },
     {
       "ID": 109,
       "Entries": [
-        "Giant Spider_Peering Down"
+        "Giant Spider Peek In"
       ]
     },
     {
@@ -250,19 +250,19 @@
     {
       "ID": 113,
       "Entries": [
-        "Storm Beast (Child Ray)_Flopping Wait"
+        "Storm Beast (Baby Ray) Flopping Wait"
       ]
     },
     {
       "ID": 114,
       "Entries": [
-        "Scale Miner Non-combat (Bare Hands)"
+        "Scaled Miner Out of Combat (Unarmed)"
       ]
     },
     {
       "ID": 115,
       "Entries": [
-        "Octopus Head Combat"
+        "Octopus Head In Combat"
       ]
     },
     {
@@ -280,37 +280,37 @@
     {
       "ID": 118,
       "Entries": [
-        "Shadow Woman_Disappear Use"
+        "Shadow Woman_For Vanishing"
       ]
     },
     {
       "ID": 119,
       "Entries": [
-        "Blood Mite Dedicated"
+        "Blood Tick Exclusive"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Parry Aim"
+        "Aiming for Parry"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "[DLC]Enemy Basic In combat (version without run/turn animations)"
+        "[DLC] Enemy Basic In Combat (Running/Version Without Turn Animation)"
       ]
     },
     {
       "ID": 900,
       "Entries": [
-        "PG for 4-Legged Type"
+        "PG 4 Legged Type"
       ]
     },
     {
       "ID": 910,
       "Entries": [
-        "[GR] Test_First Logic"
+        "[GR] Test_My First Logic"
       ]
     }
   ]

@@ -1,0 +1,251 @@
+{
+  "Name": "MapNameTexParam_m61",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Graveyard Plains First Half (-)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Graveyard Plains First Half (-) / Graveyard Plains Second Half (-)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Graveyard Plains First Half (-) / Graveyard Plains Directly Below (-)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Graveyard Plains First Half (+)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Graveyard Plains Second Half (-)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Graveyard Plains Second Half (-) / Central Fort Rear"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Graveyard Plains Second Half (-) / Graveyard Plains Second Half (+)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Graveyard Plains Second Half (+)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Graveyard Plains Second Half (+) / Graveyard Plains Second Half (-)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Graveyard Plains Directly Below (-)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Graveyard Plains Direct Below (-) / Graveyard Plains Second Half (-)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Graveyard Plains Directly Below (-) / Mohenjo-daro (-)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Graveyard Plains Directly Below (+)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Graveyard Plains Directly Below (+) / Graveyard Plains Second Half (-)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Graveyard Plains Ark (-)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Graveyard Plains Ark (-) - Dragon Mountain Foot"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Graveyard Plains Ark (-) - Dragon Mountain West"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Graveyard Plains Ark (+)"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Dragon Mountain (-)"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Dragon Mountain (+)"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Dragon Mountain Foothills (-)"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Dragon Mountain Foothills (+)"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Dragon Mountain Foothills (+) / Graveyard Plains First Half"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Dragon Mountain West (-)"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Dragon Mountain West (-) / Graveyard Plains First Half"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Mohenjo-Daro (-)"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Mohenjo-Daro (+)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Central Fort Rear (-)"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Central Fort Rear (+)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Abyss (-)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Abyss (-) / Graveyard Plains First Half"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Abyss (-) / Graveyard Plains Second Half"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Abyss (-) / Dragon Mountain"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Abyss (-) / Dragon Mountain Foothills"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Abyss (-) / Dragon Mountain Foothills (+)"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Abyss (-) / Dragon Mountain West"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Abyss (+)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Abyss (+) / Graveyard Plains First Half"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Roadside Fort (-)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Road Fort (+)"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Other"
+      ]
+    }
+  ]
+}

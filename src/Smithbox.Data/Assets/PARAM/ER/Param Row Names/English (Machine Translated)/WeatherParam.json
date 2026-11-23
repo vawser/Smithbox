@@ -16,7 +16,7 @@
     {
       "ID": 10,
       "Entries": [
-        "Light Overcast"
+        "Light Clouds"
       ]
     },
     {
@@ -46,7 +46,7 @@
     {
       "ID": 31,
       "Entries": [
-        "Storm (for Guardian Lineage battle)"
+        "Storm (For Guardian\u0027s Descendant Fight)"
       ]
     },
     {
@@ -64,7 +64,7 @@
     {
       "ID": 50,
       "Entries": [
-        "Mist"
+        "Fog"
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "ID": 84,
       "Entries": [
-        "Spare Weather 4 ↓Unused spare. If spare weather is used in product"
+        "Spare Weather 4 ↓Unused Spare.When Using Spare Weather in Product, Please Share With Everyone"
       ]
     },
     {
@@ -136,19 +136,19 @@
     {
       "ID": 99,
       "Entries": [
-        "For environment map photography. Unused in product [GR] SEQ13778"
+        "For Environment Map Capture.Unused in Product [GR] SEQ13778"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Lake Area_Clear"
+        "Lake Area_Clear Skies"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Lake Area_Light Overcast"
+        "Lake Area_Light Clouds"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 1040,
       "Entries": [
-        "Lake Area_Snow_Lake Fort Only"
+        "Lake Area_Snow_Lake Fort Exclusive"
       ]
     },
     {
@@ -196,31 +196,31 @@
     {
       "ID": 2010,
       "Entries": [
-        "Highland Area_Light Overcast"
+        "Altus Area_Light Clouds"
       ]
     },
     {
       "ID": 2011,
       "Entries": [
-        "Highland Area_Cloudy"
+        "Altus Area_Cloudy"
       ]
     },
     {
       "ID": 2020,
       "Entries": [
-        "Highland Area_Rain"
+        "Altus Area_Rain"
       ]
     },
     {
       "ID": 2021,
       "Entries": [
-        "Highland Area_Heavy Rain"
+        "Altus Area_Heavy Rain"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Volcano Area_Light Overcast"
+        "Volcano Area_Light Clouds"
       ]
     },
     {
@@ -232,7 +232,7 @@
     {
       "ID": 3010,
       "Entries": [
-        "Plains Area_Light Overcast"
+        "Plains Area_Light Clouds"
       ]
     },
     {
@@ -244,13 +244,13 @@
     {
       "ID": 3101,
       "Entries": [
-        "Desert Area_Clear"
+        "Desert Area_Clear Skies"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        "Desert Area_Light Overcast"
+        "Desert Area_Light Clouds"
       ]
     },
     {
@@ -268,121 +268,121 @@
     {
       "ID": 4000,
       "Entries": [
-        "Snowy Mountain Area Upper Level Clear"
+        "Snow Mountain Area Upper Level_Clear"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Snowy Mountain Area Upper Level Light Overcast"
+        "Snow Mountain Area Upper Level_Light Clouds"
       ]
     },
     {
       "ID": 4011,
       "Entries": [
-        "Snowy Mountain Area Upper Level Cloudy"
+        "Snow Mountain Area Upper Level_Cloudy"
       ]
     },
     {
       "ID": 4040,
       "Entries": [
-        "Snowy Mountain Area Upper Level Snow"
+        "Snow Mountain Area Upper Level_Snow"
       ]
     },
     {
       "ID": 4110,
       "Entries": [
-        "Snowy Mountain Area Lower Level Light Overcast"
+        "Snow Mountain Area_Lower Level_Light Clouds"
       ]
     },
     {
       "ID": 4111,
       "Entries": [
-        "Snowy Mountain Area Lower Level Cloudy"
+        "Snow Mountain Area_Lower Level_Cloudy"
       ]
     },
     {
       "ID": 4140,
       "Entries": [
-        "Snowy Mountain Area Lower Level Snow"
+        "Snow Mountain Area_Lower Level_Snow"
       ]
     },
     {
       "ID": 4201,
       "Entries": [
-        "Snowy Mountain Entrance_Clear Skies"
+        "Snow Mountain Entrance_Clear Skies"
       ]
     },
     {
       "ID": 4210,
       "Entries": [
-        "Snowy Mountain Entrance_Light Overcast"
+        "Snow Mountain Entrance_Light Clouds"
       ]
     },
     {
       "ID": 4211,
       "Entries": [
-        "Snowy Mountain Entrance_Cloudy"
+        "Snow Mountain Entrance_Cloudy"
       ]
     },
     {
       "ID": 4220,
       "Entries": [
-        "Snowy Mountain Entrance_Rain"
+        "Snow Mountain Entrance_Rain"
       ]
     },
     {
       "ID": 4221,
       "Entries": [
-        "Snowy Mountain Entrance_Heavy Rain"
+        "Snow Mountain Entrance_Heavy Rain"
       ]
     },
     {
       "ID": 4230,
       "Entries": [
-        "Snowy Mountain Entrance_Storm"
+        "Snow Mountain Entrance_Storm"
       ]
     },
     {
       "ID": 4231,
       "Entries": [
-        "Snowy Mountain Entrance_Storm (For Guardian Lineage Battle)"
+        "Snow Mountain Entrance_Storm (For Guardian\u0027s Descendant Fight)"
       ]
     },
     {
       "ID": 4240,
       "Entries": [
-        "Snowy Mountain Entrance_Snow"
+        "Snow Mountain Entrance_Snow"
       ]
     },
     {
       "ID": 4241,
       "Entries": [
-        "Snowy Mountain Entrance_Heavy Snow"
+        "Snow Mountain Entrance_Heavy Snow"
       ]
     },
     {
       "ID": 4250,
       "Entries": [
-        "Snowy Mountain Entrance_Fog"
+        "Snow Mountain Entrance_Fog"
       ]
     },
     {
       "ID": 4251,
       "Entries": [
-        "Snowy Mountain Entrance_Dense Fog"
+        "Snow Mountain Entrance_Dense Fog"
       ]
     },
     {
       "ID": 4252,
       "Entries": [
-        "Snowy Mountain Entrance_Dense Fog (Rain)"
+        "Snow Mountain Entrance_Dense Fog (Rain)"
       ]
     },
     {
       "ID": 4260,
       "Entries": [
-        "Snowy Mountain Entrance_Sandstorm"
+        "Snow Mountain Entrance_Sandstorm"
       ]
     },
     {
@@ -394,31 +394,31 @@
     {
       "ID": 100031,
       "Entries": [
-        "m10_00 Stormveil_Storm (for Children of the Ancestor fight)"
+        "m10_00 Stormveil_Storm (For Guardian\u0027s Descendant Fight)"
       ]
     },
     {
       "ID": 110020,
       "Entries": [
-        "m11_00_Royal Capital_Rain"
+        "m11_00_Leyndell_Rain"
       ]
     },
     {
       "ID": 110021,
       "Entries": [
-        "m11_00 Royal Capital_Heavy Rain"
+        "m11_00 Leyndell_Heavy Rain"
       ]
     },
     {
       "ID": 110521,
       "Entries": [
-        "m11_05 Royal Capital Ash_Heavy Rain"
+        "m11_05 Leyndell Ash_Heavy Rain"
       ]
     },
     {
       "ID": 111001,
       "Entries": [
-        "m11_10_Base_Clear"
+        "m11_10_Base_Clear Skies"
       ]
     },
     {
@@ -436,19 +436,19 @@
     {
       "ID": 120311,
       "Entries": [
-        "m12_03 Underground Labyrinth_Royal Capital_Cloudy"
+        "m12_03 Underground Labyrinth_Leyndell_Cloudy"
       ]
     },
     {
       "ID": 130001,
       "Entries": [
-        "m13_00 Descending Ruins_Clear"
+        "m13_00 Descending Ruins_Clear Skies"
       ]
     },
     {
       "ID": 130010,
       "Entries": [
-        "m13_00 Descending Ruins_Light Overcast"
+        "m13_00 Descending Ruins_Light Clouds"
       ]
     },
     {
@@ -472,13 +472,13 @@
     {
       "ID": 140001,
       "Entries": [
-        "m14_00 Monsan_Clear"
+        "m14_00 Raya Lucaria_Clear Skies"
       ]
     },
     {
       "ID": 140020,
       "Entries": [
-        "m14_00 Monsan_Rain"
+        "m14_00 Raya Lucaria_Rain"
       ]
     },
     {
@@ -514,7 +514,7 @@
     {
       "ID": 341251,
       "Entries": [
-        "m34_12 Divine Tower 3 Highland_Dense Fog"
+        "m34_12 Divine Tower 3 Altus_Dense Fog"
       ]
     },
     {
@@ -544,13 +544,13 @@
     {
       "ID": 341501,
       "Entries": [
-        "m34_15 Divine Tower 6 Crater Lake_Clear"
+        "m34_15 Divine Tower 6 Crater Lake_Clear Skies"
       ]
     },
     {
       "ID": 341510,
       "Entries": [
-        "m34_15 Divine Tower 6 Crater Lake_Light Overcast"
+        "m34_15 Divine Tower 6 Crater Lake_Light Clouds"
       ]
     },
     {
@@ -586,31 +586,31 @@
     {
       "ID": 392010,
       "Entries": [
-        "m39_20 Cliff Tunnel_Light Overcast"
+        "m39_20 Cliffside Tunnel_Light Clouds"
       ]
     },
     {
       "ID": 392011,
       "Entries": [
-        "m39_20 Cliff Tunnel_Cloudy"
+        "m39_20 Cliffside Tunnel_Cloudy"
       ]
     },
     {
       "ID": 392020,
       "Entries": [
-        "m39_20 Cliff Tunnel_Rain"
+        "m39_20 Cliffside Tunnel_Rain"
       ]
     },
     {
       "ID": 392021,
       "Entries": [
-        "m39_20 Cliff Tunnel_Heavy Rain"
+        "m39_20 Cliffside Tunnel_Heavy Rain"
       ]
     },
     {
       "ID": 392030,
       "Entries": [
-        "m39_20 Cliff Tunnel_Storm"
+        "m39_20 Cliffside Tunnel_Storm"
       ]
     }
   ]

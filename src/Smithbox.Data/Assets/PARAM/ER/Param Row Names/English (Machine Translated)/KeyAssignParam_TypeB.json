@@ -10,25 +10,25 @@
     {
       "ID": 1,
       "Entries": [
-        "Running (Forward Movement)"
+        "Run (Move Forward)"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Running (Backward Movement)"
+        "Run (Move Backward)"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Running (Left Movement)"
+        "Run (Move Left)"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "Running (Right Movement)"
+        "Run (Move Right)"
       ]
     },
     {
@@ -40,7 +40,7 @@
     {
       "ID": 6,
       "Entries": [
-        "Dash/Backstep/Rolling"
+        "Dash/Backstep/Roll"
       ]
     },
     {
@@ -52,31 +52,31 @@
     {
       "ID": 8,
       "Entries": [
-        "Camera Move Up"
+        "Camera Up"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Camera Move Down"
+        "Camera Down"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Camera Move Left / Lock-On Switch (Left)"
+        "Camera Left/Lock-On Switch (Left)"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Camera Move Right / Lock-On Switch (Right)"
+        "Camera Right/Lock-On Switch (Right)"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Camera Reset / Lock-On"
+        "Camera Reset/Lock-On"
       ]
     },
     {
@@ -88,67 +88,67 @@
     {
       "ID": 14,
       "Entries": [
-        "Item Switch"
+        "Switch Item"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Right weapon switch"
+        "Switch Right Weapon"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "Left weapon switch"
+        "Switch Left Weapon"
       ]
     },
     {
       "ID": 17,
       "Entries": [
-        "Right hand (normal attack)"
+        "Right Hand (Normal Attack)"
       ]
     },
     {
       "ID": 18,
       "Entries": [
-        "Right hand (heavy attack)"
+        "Right Hand (Heavy Attack)"
       ]
     },
     {
       "ID": 19,
       "Entries": [
-        "Left hand (normal attack)"
+        "Left Hand (Normal Attack)"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Left hand (strong attack)"
+        "Left Hand (Heavy Attack)"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Item Use"
+        "Use Item"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Control Action"
+        "Action"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Two-handed Hold (Right) Stance"
+        "Two-Handing (Right) Stance"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Main Menu Display"
+        "Show Main Menu"
       ]
     },
     {
@@ -160,13 +160,13 @@
     {
       "ID": 26,
       "Entries": [
-        "Cursor Move (Up)"
+        "Cursor Move (Top)"
       ]
     },
     {
       "ID": 27,
       "Entries": [
-        "Cursor Move (Down)"
+        "Cursor Move (Bottom)"
       ]
     },
     {
@@ -184,13 +184,13 @@
     {
       "ID": 30,
       "Entries": [
-        "Map Cursor Move (Up)"
+        "Map Cursor Move (Top)"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Map Cursor Move (Down)"
+        "Map Cursor Move (Bottom)"
       ]
     },
     {
@@ -250,31 +250,31 @@
     {
       "ID": 41,
       "Entries": [
-        "Function 1: Status Switch etc. *1"
+        "Function 1: Status Switch Etc ※1"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Function 2: Display Switch / Unequip etc. *2"
+        "Function 2: Toggle Display/Unequip Etc ※2"
       ]
     },
     {
       "ID": 43,
       "Entries": [
-        "Expand Sub-Menu"
+        "Open Sub-Menu"
       ]
     },
     {
       "ID": 44,
       "Entries": [
-        "Window Scroll (Up)"
+        "Window Scroll (Top)"
       ]
     },
     {
       "ID": 45,
       "Entries": [
-        "Window Scroll (Down)"
+        "Window Scroll (Bottom)"
       ]
     },
     {
@@ -286,19 +286,19 @@
     {
       "ID": 47,
       "Entries": [
-        "Function 3: Simple/Detailed Display Switch etc."
+        "Function 3: Simple Display/Toggle Detailed Display Etc"
       ]
     },
     {
       "ID": 48,
       "Entries": [
-        "Menu Page Scroll (Up)"
+        "Menu Page Turn (Top)"
       ]
     },
     {
       "ID": 49,
       "Entries": [
-        "Menu Page Scroll (Down)"
+        "Menu Page Turn (Bottom)"
       ]
     },
     {

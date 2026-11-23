@@ -1,0 +1,17 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_GrassHitType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Not touching (default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Touching (normal grass)"
+      ]
+    }
+  ]
+}

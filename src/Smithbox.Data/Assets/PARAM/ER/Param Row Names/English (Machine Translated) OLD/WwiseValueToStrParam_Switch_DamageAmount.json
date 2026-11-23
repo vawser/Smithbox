@@ -1,0 +1,17 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_DamageAmount",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Small (default used when string is not found)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Large"
+      ]
+    }
+  ]
+}

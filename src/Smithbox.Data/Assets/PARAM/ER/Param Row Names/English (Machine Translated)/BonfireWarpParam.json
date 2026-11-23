@@ -10,7 +10,7 @@
     {
       "ID": 100000,
       "Entries": [
-        "m10_00 Stormveil Castle: Grafted King"
+        "m10_00 Stormveil Castle: The Grafted King"
       ]
     },
     {
@@ -34,25 +34,25 @@
     {
       "ID": 100004,
       "Entries": [
-        "m10_00 Stormveil Castle: Cliff Road"
+        "m10_00 Stormveil Castle: Cliff Path"
       ]
     },
     {
       "ID": 100005,
       "Entries": [
-        "m10_00 Stormveil Castle: Watchtower"
+        "m10_00 Stormveil Castle: Watch Tower"
       ]
     },
     {
       "ID": 100006,
       "Entries": [
-        "m10_00 Stormveil Castle: Checkpoint Rampart"
+        "m10_00 Stormveil Castle: Checkpoint Castle Wall"
       ]
     },
     {
       "ID": 100007,
       "Entries": [
-        "m10_00 Stormveil Castle: Before Grafted King"
+        "m10_00 Stormveil Castle: Before the Grafted King"
       ]
     },
     {
@@ -64,103 +64,103 @@
     {
       "ID": 110000,
       "Entries": [
-        "m11_00 Royal Capital: Great Tree Stage"
+        "m11_00 Leyndell: Great Tree Stage"
       ]
     },
     {
       "ID": 110001,
       "Entries": [
-        "m11_00 Royal Capital: Great Tree Cathedral"
+        "m11_00 Leyndell: Great Tree Cathedral"
       ]
     },
     {
       "ID": 110002,
       "Entries": [
-        "m11_00 Royal Capital: Royal Capital Entrance"
+        "m11_00 Leyndell: Leyndell Entrance"
       ]
     },
     {
       "ID": 110003,
       "Entries": [
-        "m11_00 Royal Capital: Lower Level Church"
+        "m11_00 Leyndell: Lower Church"
       ]
     },
     {
       "ID": 110004,
       "Entries": [
-        "m11_00 Royal Capital: Lower Level Bridge"
+        "m11_00 Leyndell: Lower Level Great Bridge"
       ]
     },
     {
       "ID": 110005,
       "Entries": [
-        "m11_00 Royal Capital: City Walls"
+        "m11_00 Leyndell: Castle Wall in Town"
       ]
     },
     {
       "ID": 110007,
       "Entries": [
-        "m11_00 Royal Capital: Queen's Bedchamber"
+        "m11_00 Leyndell: Queen\u0027s Bedchamber"
       ]
     },
     {
       "ID": 110008,
       "Entries": [
-        "m11_00 Royal Capital: Castle Manor First Floor"
+        "m11_00 Leyndell: Mansion First Floor"
       ]
     },
     {
       "ID": 110009,
       "Entries": [
-        "m11_00 Royal Capital: Before Divine Tower"
+        "m11_00 Leyndell: Before Divine Tower"
       ]
     },
     {
       "ID": 110500,
       "Entries": [
-        "m11_05 Royal Capital (Ash): Performance Stage"
+        "m11_05 Leyndell (Ash): Performance Stage"
       ]
     },
     {
       "ID": 110501,
       "Entries": [
-        "m11_00 Royal Capital (Ash): Great Tree Cathedral"
+        "m11_00 Leyndell (Ash): Great Tree Cathedral"
       ]
     },
     {
       "ID": 110502,
       "Entries": [
-        "m11_05 Royal Capital (Ash): Royal Capital Entrance"
+        "m11_05 Leyndell (Ash): Leyndell Entrance"
       ]
     },
     {
       "ID": 110503,
       "Entries": [
-        "m11_05 Royal Capital (Ash): Royal Capital Ash Pool"
+        "m11_05 Leyndell (Ash): Leyndell Ash Pool"
       ]
     },
     {
       "ID": 110504,
       "Entries": [
-        "m11_05 Royal Capital (Ash): Queen's Bedchamber"
+        "m11_05 Leyndell (Ash): Queen\u0027s Bedchamber"
       ]
     },
     {
       "ID": 110505,
       "Entries": [
-        "m11_05 Royal Capital (Ash): Front of Divine Tower"
+        "m11_05 Leyndell (Ash): Before Divine Tower"
       ]
     },
     {
       "ID": 111000,
       "Entries": [
-        "m11_10 Royal Capital (Base):"
+        "m11_10 Leyndell (Base):"
       ]
     },
     {
       "ID": 120100,
       "Entries": [
-        "m12_01 Underground Labyrinth: Poison Swamp Ruinator Boss Room"
+        "m12_01 Underground Labyrinth: Poison Swamp Ravager Boss Room"
       ]
     },
     {
@@ -172,13 +172,13 @@
     {
       "ID": 120102,
       "Entries": [
-        "m12_01 Underground Labyrinth: Poison Swamp Beside Waterway Gate"
+        "m12_01 Underground Labyrinth: Beside Poison Swamp Floodgate"
       ]
     },
     {
       "ID": 120103,
       "Entries": [
-        "m12_01 Underground Labyrinth: Poison Swamp Ruins Island Rear"
+        "m12_01 Underground Labyrinth: After Poison Swamp Ruins Island"
       ]
     },
     {
@@ -190,13 +190,13 @@
     {
       "ID": 120105,
       "Entries": [
-        "m12_01 Underground Labyrinth: Poison Swamp Front of Marika Ruins"
+        "m12_01 Underground Labyrinth: Before Poison Swamp Marika Ruins"
       ]
     },
     {
       "ID": 120106,
       "Entries": [
-        "m12_01 Underground Labyrinth: Poison Swamp Great Poison Swamp Lake Front"
+        "m12_01 Underground Labyrinth: Before Poison Swamp Great Poison Lake"
       ]
     },
     {
@@ -208,13 +208,13 @@
     {
       "ID": 120109,
       "Entries": [
-        "m12_01 Underground Labyrinth: Poison Swamp Behind Marika Ruins"
+        "m12_01 Underground Labyrinth: After Poison Swamp Marika Ruins"
       ]
     },
     {
       "ID": 120200,
       "Entries": [
-        "m12_02 Underground Labyrinth: Plains Royal Capital Gargoyle Boss Room"
+        "m12_02 Underground Labyrinth: Plains Leyndell Gargoyle Boss Room"
       ]
     },
     {
@@ -232,7 +232,7 @@
     {
       "ID": 120204,
       "Entries": [
-        "m12_02 Underground Labyrinth: Plains Ancestor Spirit Front"
+        "m12_02 Underground Labyrinth: Before Plains Ancestor Spirit"
       ]
     },
     {
@@ -256,43 +256,43 @@
     {
       "ID": 120209,
       "Entries": [
-        "m12_02 Underground Labyrinth: Plains Front of Elevator to Open Plains"
+        "m12_02 Underground Labyrinth: Before Plains Open Plains-Bound Elevator"
       ]
     },
     {
       "ID": 120300,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital Guardian Lineage Boss Room"
+        "m12_03 Underground Labyrinth: Leyndell Guardian\u0027s Descendant Boss Room"
       ]
     },
     {
       "ID": 120301,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital Royal Capital Sewers Side Entrance"
+        "m12_03 Underground Labyrinth: Leyndell Leyndell Sewer Side Entrance"
       ]
     },
     {
       "ID": 120302,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital Plains Side Entrance"
+        "m12_03 Underground Labyrinth: Leyndell Plains Side Entrance"
       ]
     },
     {
       "ID": 120303,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital Marika Ruins Front"
+        "m12_03 Underground Labyrinth: Before Leyndell Marika Ruins"
       ]
     },
     {
       "ID": 120304,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital Walking Mausoleum Front"
+        "m12_03 Underground Labyrinth: Before Leyndell Walking Mausoleum"
       ]
     },
     {
       "ID": 120305,
       "Entries": [
-        "m12_03 Underground Labyrinth: Royal Capital Front of Boss Room"
+        "m12_03 Underground Labyrinth: Before Leyndell Boss Room"
       ]
     },
     {
@@ -304,25 +304,25 @@
     {
       "ID": 120500,
       "Entries": [
-        "m12_05 Underground Labyrinth: Plains Interior Boss Room"
+        "m12_05 Underground Labyrinth: Plains Hinterland Boss Room"
       ]
     },
     {
       "ID": 120501,
       "Entries": [
-        "m12_05 Underground Labyrinth: Plains Interior Underground Forest Entrance"
+        "m12_05 Underground Labyrinth: Plains Hinterland Underground Forest Entrance"
       ]
     },
     {
       "ID": 120502,
       "Entries": [
-        "m12_05 Underground Labyrinth: Plains Interior Underground Mountain Entrance"
+        "m12_05 Underground Labyrinth: Plains Hinterland Underground Mountain Entrance"
       ]
     },
     {
       "ID": 120503,
       "Entries": [
-        "m12_05 Underground Labyrinth: Plains Interior Underground Mountain Elevator Front"
+        "m12_05 Underground Labyrinth: Before Plains Hinterland Underground Mountain Elevator"
       ]
     },
     {
@@ -340,7 +340,7 @@
     {
       "ID": 120700,
       "Entries": [
-        "m12_07 Underground Labyrinth: Plains Misty Forest Elevator Front"
+        "m12_07 Underground Labyrinth: Before Plains Mist Forest Elevator"
       ]
     },
     {
@@ -358,13 +358,13 @@
     {
       "ID": 130001,
       "Entries": [
-        "m13_00 Descending Ruins: Back Boss Room"
+        "m13_00 Descending Ruins: Hidden Boss Room"
       ]
     },
     {
       "ID": 130002,
       "Entries": [
-        "m13_00 Descending Ruins: Mid Boss Room"
+        "m13_00 Descending Ruins: Mid-Boss Room"
       ]
     },
     {
@@ -376,7 +376,7 @@
     {
       "ID": 130004,
       "Entries": [
-        "m13_00 Descending Ruins: Castle Wall Top"
+        "m13_00 Descending Ruins: Atop Castle Wall"
       ]
     },
     {
@@ -388,25 +388,25 @@
     {
       "ID": 130006,
       "Entries": [
-        "m13_00 Descending Ruins: Cross-section Ruins First Half Upper Level"
+        "m13_00 Descending Ruins: Cross-Section Ruins First Half Upper Level"
       ]
     },
     {
       "ID": 130007,
       "Entries": [
-        "m13_00 Descending Ruins: Cross-section Ruins First Half Lower Level"
+        "m13_00 Descending Ruins: Cross-Section Ruins First Half Lower Level"
       ]
     },
     {
       "ID": 130008,
       "Entries": [
-        "m13_00 Descending Ruins: Upper Level Garden"
+        "m13_00 Descending Ruins: Upper Garden"
       ]
     },
     {
       "ID": 130009,
       "Entries": [
-        "m13_00 Descending Ruins: Rooftop"
+        "m13_00 Descending Ruins: Atop Roof"
       ]
     },
     {
@@ -418,25 +418,25 @@
     {
       "ID": 140000,
       "Entries": [
-        "m14_00 Monsan: Boss Room"
+        "m14_00 Raya Lucaria: Boss Room"
       ]
     },
     {
       "ID": 140001,
       "Entries": [
-        "m14_00 Monsan: Mid Boss Room"
+        "m14_00 Raya Lucaria: Mid-Boss Room"
       ]
     },
     {
       "ID": 140002,
       "Entries": [
-        "m14_00 Monsan: Church Small Room"
+        "m14_00 Raya Lucaria: Church Small Room"
       ]
     },
     {
       "ID": 140003,
       "Entries": [
-        "m14_00 Monsan: Academy Backyard"
+        "m14_00 Raya Lucaria: Behind Academy"
       ]
     },
     {
@@ -454,7 +454,7 @@
     {
       "ID": 150002,
       "Entries": [
-        "m15_00 Rotten Great Tree Rot Hollow Front"
+        "m15_00 Rotten Great Tree Rot Before the Hollow"
       ]
     },
     {
@@ -466,13 +466,13 @@
     {
       "ID": 150004,
       "Entries": [
-        "m15_00 Rotten Great Tree Rot Malenia Room Front"
+        "m15_00 Rotten Great Tree Rot Just Before Malenia Room"
       ]
     },
     {
       "ID": 150005,
       "Entries": [
-        "m15_00 Rotten Great Tree Great Tree Tree Guard"
+        "m15_00 Rotten Great Tree Great Tree Tree Sentinel"
       ]
     },
     {
@@ -484,7 +484,7 @@
     {
       "ID": 150007,
       "Entries": [
-        "m15_00 Rotten Great Tree Great Tree Residential Area"
+        "m15_00 Rotten Great Tree Great Tree Residential District"
       ]
     },
     {
@@ -508,7 +508,7 @@
     {
       "ID": 160002,
       "Entries": [
-        "m16_00 Volcano Prison: Manor"
+        "m16_00 Volcano Prison: Mansion"
       ]
     },
     {
@@ -520,13 +520,13 @@
     {
       "ID": 160004,
       "Entries": [
-        "m16_00 Volcano Prison: Noble Manor"
+        "m16_00 Volcano Prison: Noble Mansion"
       ]
     },
     {
       "ID": 160005,
       "Entries": [
-        "m16_00 Volcano Prison: King of Ghouls Front Room"
+        "m16_00 Volcano Prison: Room Before Ghoul King"
       ]
     },
     {
@@ -826,31 +826,31 @@
     {
       "ID": 320500,
       "Entries": [
-        "m32_05 Catacombs 3-3"
+        "m32_05 Tunnel 3-3"
       ]
     },
     {
       "ID": 320700,
       "Entries": [
-        "m32_07 Catacombs 4-1"
+        "m32_07 Tunnel 4-1"
       ]
     },
     {
       "ID": 320701,
       "Entries": [
-        "m32_07 Catacombs 4-1 Open Green Side"
+        "m32_07 Tunnel 4-1 Open Green Side"
       ]
     },
     {
       "ID": 320800,
       "Entries": [
-        "m32_08 Catacombs 4-2"
+        "m32_08 Tunnel 4-2"
       ]
     },
     {
       "ID": 321100,
       "Entries": [
-        "m32_11 Catacombs 5-1"
+        "m32_11 Tunnel 5-1"
       ]
     },
     {
@@ -886,19 +886,19 @@
     {
       "ID": 341200,
       "Entries": [
-        "m34_12 Divine Tower (Highland): Summit"
+        "m34_12 Divine Tower (Altus): Summit"
       ]
     },
     {
       "ID": 341201,
       "Entries": [
-        "m34_12 Catacombs 3-2"
+        "m34_12 Tunnel 3-2"
       ]
     },
     {
       "ID": 341202,
       "Entries": [
-        "m34_12 Divine Tower (Highland): Entrance"
+        "m34_12 Divine Tower (Altus): Entrance"
       ]
     },
     {
@@ -916,13 +916,13 @@
     {
       "ID": 341400,
       "Entries": [
-        "m34_14 Divine Tower (Snowy Mountain): Entrance"
+        "m34_14 Divine Tower (Snow Mountain): Entrance"
       ]
     },
     {
       "ID": 341401,
       "Entries": [
-        "m34_14 Divine Tower (Snowy Mountain): Summit"
+        "m34_14 Divine Tower (Snow Mountain): Summit"
       ]
     },
     {
@@ -934,49 +934,49 @@
     {
       "ID": 350000,
       "Entries": [
-        "m35_00 Royal Capital Underground: Before Altar (Boss Bonfire)"
+        "m35_00 Leyndell Underground: Before Altar (Boss Site of Grace)"
       ]
     },
     {
       "ID": 350001,
       "Entries": [
-        "m35_00 Royal Capital Underground: Main Street"
+        "m35_00 Leyndell Underground: Main Street"
       ]
     },
     {
       "ID": 350002,
       "Entries": [
-        "m35_00 Royal Capital Underground: Great Bottom"
+        "m35_00 Leyndell Underground: Great Bottom"
       ]
     },
     {
       "ID": 350003,
       "Entries": [
-        "m35_00 Royal Capital Underground Catacombs"
+        "m35_00 Leyndell Underground Catacombs"
       ]
     },
     {
       "ID": 350004,
       "Entries": [
-        "m35_00 Royal Capital Underground: Lowest Level"
+        "m35_00 Leyndell Underground: Lowest Level"
       ]
     },
     {
       "ID": 390000,
       "Entries": [
-        "m39_20 Cliff Tunnel"
+        "m39_20 Cliffside Tunnel"
       ]
     },
     {
       "ID": 390001,
       "Entries": [
-        "m39_20 Cliff Tunnel"
+        "m39_20 Cliffside Tunnel"
       ]
     },
     {
       "ID": 390002,
       "Entries": [
-        "m39_20 Cliff Tunnel"
+        "m39_20 Cliffside Tunnel"
       ]
     },
     {
@@ -988,7 +988,7 @@
     {
       "ID": 61423601,
       "Entries": [
-        "Open Map: Green Area First Half_Start Point"
+        "Open Map: Green Area First Half_Starting Point"
       ]
     },
     {
@@ -1018,7 +1018,7 @@
     {
       "ID": 61443500,
       "Entries": [
-        "Open Map: Green Area First Half_Before Great Bridge"
+        "Open Map: Green Area First Half_Just Before Great Bridge"
       ]
     },
     {
@@ -1036,49 +1036,49 @@
     {
       "ID": 61423700,
       "Entries": [
-        "Open Map: Green Area First Half_In Front of Checkpoint"
+        "Open Map: Green Area First Half_Before Checkpoint"
       ]
     },
     {
       "ID": 61433500,
       "Entries": [
-        "Open Map: Green Area First Half_Aguir Lake Pillar Ruins Area"
+        "Open Map: Green Area First Half_Lake Agheel Pillar Ruins Area"
       ]
     },
     {
       "ID": 61443700,
       "Entries": [
-        "Open Map: Green Area First Half_In Front of Misty Forest"
+        "Open Map: Green Area First Half_Before Mistwood"
       ]
     },
     {
       "ID": 61433800,
       "Entries": [
-        "Open Map: Green Area First Half_River Upstream"
+        "Open Map: Green Area First Half_Upstream"
       ]
     },
     {
       "ID": 61433900,
       "Entries": [
-        "Open Map: Green Area First Half_Before Bridge to Plains"
+        "Open Map: Green Area First Half_Before Bridge Toward Plains"
       ]
     },
     {
       "ID": 61423800,
       "Entries": [
-        "Open Map: Green Area First Half_Gypsy Shack"
+        "Open Map: Green Area First Half_Gypsy\u0027s Shack"
       ]
     },
     {
       "ID": 61443900,
       "Entries": [
-        "Open Map: Green Area First Half_Near Ruins 1-8"
+        "Open Map: Green Area First Half_Ruins 1-Near 8"
       ]
     },
     {
       "ID": 61443600,
       "Entries": [
-        "Open Map: Green Area First Half_Tenebre Inn Ruins_Basement"
+        "Open Map: Green Area First Half_Former Tenebre Inn_Basement"
       ]
     },
     {
@@ -1090,7 +1090,7 @@
     {
       "ID": 61443300,
       "Entries": [
-        "Open Map: Green Area Second Half_In Front of Collapsed Wall"
+        "Open Map: Green Area Second Half_Before Collapsed Wall"
       ]
     },
     {
@@ -1108,7 +1108,7 @@
     {
       "ID": 61443302,
       "Entries": [
-        "Open Map: Green Area Second Half_Outskirts of Village 1-1"
+        "Open Map: Green Area Second Half_Village 1-Outskirts of 1"
       ]
     },
     {
@@ -1138,13 +1138,13 @@
     {
       "ID": 61433101,
       "Entries": [
-        "Open Map: Green Area Second Half_Green Fort_Toward Back"
+        "Open Map: Green Area Second Half_Green Fort_To the Back"
       ]
     },
     {
       "ID": 61433102,
       "Entries": [
-        "Open Map: Green Area Second Half_Green Fort_In Front of Seaside Single Bridge"
+        "Open Map: Green Area Second Half_Green Fort_Before Coastal Single-Log Bridge"
       ]
     },
     {
@@ -1162,31 +1162,31 @@
     {
       "ID": 62394000,
       "Entries": [
-        "Open Map: Lake Area First Half_First Lake Church"
+        "Open Map: Lake Area First Half_Lake First Church"
       ]
     },
     {
       "ID": 62384000,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Submerged Forest"
+        "Open Map: Lake Area First Half_Before Sunken Forest"
       ]
     },
     {
       "ID": 62384100,
       "Entries": [
-        "Open Map: Lake Area First Half_Submerged Forest Interior_Before Ruins"
+        "Open Map: Lake Area First Half_Inside Sunken Forest_Before Ruins"
       ]
     },
     {
       "ID": 62374200,
       "Entries": [
-        "Open Map: Lake Area First Half_Submerged Forest Interior_Above Large Floating Island"
+        "Open Map: Lake Area First Half_Inside Sunken Forest_Atop Large Floating Island"
       ]
     },
     {
       "ID": 62374400,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Submerged City"
+        "Open Map: Lake Area First Half_Before Sunken City"
       ]
     },
     {
@@ -1198,13 +1198,13 @@
     {
       "ID": 62354600,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Monsan"
+        "Open Map: Lake Area First Half_Before Raya Lucaria"
       ]
     },
     {
       "ID": 62364800,
       "Entries": [
-        "Open Map: Lake Area First Half_Road_In Front of Crest Gate"
+        "Open Map: Lake Area First Half_Highway_Before Emblem Checkpoint"
       ]
     },
     {
@@ -1216,13 +1216,13 @@
     {
       "ID": 62385000,
       "Entries": [
-        "Open Map: Lake Area First Half_Royal Capital Elevator Front"
+        "Open Map: Lake Area First Half_Before Leyndell Elevator"
       ]
     },
     {
       "ID": 62334600,
       "Entries": [
-        "Open Map: Lake Area First Half_Bell Tower Group Foot"
+        "Open Map: Lake Area First Half_Foot of Bell Tower Cluster"
       ]
     },
     {
@@ -1234,7 +1234,7 @@
     {
       "ID": 62344800,
       "Entries": [
-        "Open Map: Lake Area First Half_In Front of Royal Ruins"
+        "Open Map: Lake Area First Half_Before Royal Ruins"
       ]
     },
     {
@@ -1246,7 +1246,7 @@
     {
       "ID": 62355003,
       "Entries": [
-        "Open Map: Lake Area First Half_In Front of Lake Fort Main Gate"
+        "Open Map: Lake Area First Half_Before Lake Fort Main Gate"
       ]
     },
     {
@@ -1270,19 +1270,19 @@
     {
       "ID": 62334400,
       "Entries": [
-        "Open Map: Lake Area First Half_House at Giant Rock Foot"
+        "Open Map: Lake Area First Half_House at Foot of Giant Boulder"
       ]
     },
     {
       "ID": 62354300,
       "Entries": [
-        "Open Map: Lake Area First Half_Foly_Before Leg Cripple Village"
+        "Open Map: Lake Area First Half_Foley_Before Lame Village"
       ]
     },
     {
       "ID": 62344200,
       "Entries": [
-        "Open Map: Lake Area First Half_Leg Cripple Village"
+        "Open Map: Lake Area First Half_Cripple Village"
       ]
     },
     {
@@ -1300,7 +1300,7 @@
     {
       "ID": 62384501,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Divine Tower"
+        "Open Map: Lake Area First Half_Just Before Divine Tower"
       ]
     },
     {
@@ -1312,7 +1312,7 @@
     {
       "ID": 62384700,
       "Entries": [
-        "Open Map: Lake Area First Half_Maze Area"
+        "Open Map: Lake Area First Half_Maze Zone"
       ]
     },
     {
@@ -1324,19 +1324,19 @@
     {
       "ID": 62334700,
       "Entries": [
-        "Open Map: Lake Area First Half_Bell Tower Group Summit"
+        "Open Map: Lake Area First Half_Bell Tower Cluster Summit"
       ]
     },
     {
       "ID": 62345000,
       "Entries": [
-        "Open Map：Lake Area First Half_Ranni Main Tower_2F"
+        "Open Map: Lake Area First Half_Ranni Main Tower_2F"
       ]
     },
     {
       "ID": 62385001,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Cliff Tunnel"
+        "Open Map: Lake Area First Half_Before Cliffside Tunnel"
       ]
     },
     {
@@ -1360,31 +1360,31 @@
     {
       "ID": 62364500,
       "Entries": [
-        "Open Map: Lake Area First Half_Submerged City Edge"
+        "Open Map: Lake Area First Half_Edge of Submerged City"
       ]
     },
     {
       "ID": 62384600,
       "Entries": [
-        "Open Map: Lake Area First Half_In Front of Maze Area"
+        "Open Map: Lake Area First Half_Before Maze Zone"
       ]
     },
     {
       "ID": 62364901,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Valley"
+        "Open Map: Lake Area First Half_Before the Valley"
       ]
     },
     {
       "ID": 62364301,
       "Entries": [
-        "Open Map: Lake Area First Half_Before Church 2-3"
+        "Open Map: Lake Area First Half_Church 2-Before 3"
       ]
     },
     {
       "ID": 62344300,
       "Entries": [
-        "Open Map: Lake Area First Half_Sorcerer's Tower 2-1"
+        "Open Map: Lake Area First Half_Sorcerer\u0027s Tower 2-1"
       ]
     },
     {
@@ -1414,13 +1414,13 @@
     {
       "ID": 62354700,
       "Entries": [
-        "Open Map: Lake Area First Half_Below Monsan Collapsed Bridge"
+        "Open Map: Lake Area First Half_Below Raya Lucaria Ruined Bridge"
       ]
     },
     {
       "ID": 62344600,
       "Entries": [
-        "Open Map: Lake Area First Half_Below Bell Tower Group_Lake Forest Area"
+        "Open Map: Lake Area First Half_Below the Bell Towers_Lake Woods Area"
       ]
     },
     {
@@ -1438,7 +1438,7 @@
     {
       "ID": 62345001,
       "Entries": [
-        "Open Map: Lake Area First Half_Rani Main Tower Top Floor"
+        "Open Map: Lake Area First Half_Ranni Main Tower Top Floor"
       ]
     },
     {
@@ -1450,175 +1450,175 @@
     {
       "ID": 62354200,
       "Entries": [
-        "Open Map: Lake Area Second Half_Grand Church"
+        "Open Map: Lake Area Second Half_Great Church"
       ]
     },
     {
       "ID": 62334000,
       "Entries": [
-        "Open Map: Lake Area Second Half_Sorcerer's Tower 2-6"
+        "Open Map: Lake Area Second Half_Sorcerer\u0027s Tower 2-6"
       ]
     },
     {
       "ID": 63375100,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Before Carriage Cemetery"
       ]
     },
     {
       "ID": 63385002,
       "Entries": [
-        "Open Map：Highland Area Large EV Front"
+        "Open Map: Altus Area Before Large EV"
       ]
     },
     {
       "ID": 63385100,
       "Entries": [
-        "Open Map：Highland Area Entrance"
+        "Open Map: Altus Area Entrance"
       ]
     },
     {
       "ID": 63395100,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Road Fork"
       ]
     },
     {
       "ID": 63405200,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Before Collapsed Bridge"
       ]
     },
     {
       "ID": 63415201,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Beside Road to Hero\u0027s Grave"
       ]
     },
     {
       "ID": 63405300,
       "Entries": [
-        "Open Map：Highland Area Deracine Forest Slope Entrance"
+        "Open Map: Altus Area Déraciné Forest Slope Entrance"
       ]
     },
     {
       "ID": 63405400,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Below Viaduct"
       ]
     },
     {
       "ID": 63415400,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Windmill Village"
       ]
     },
     {
       "ID": 63425100,
       "Entries": [
-        "Open Map：Highland Area Inside Castle Wall Plaza"
+        "Open Map: Altus Area Plaza Inside Castle Walls"
       ]
     },
     {
       "ID": 63435000,
       "Entries": [
-        "Open Map：Highland Area Small Erdtree Church"
+        "Open Map: Altus Area Small Erdtree Church"
       ]
     },
     {
       "ID": 63435300,
       "Entries": [
-        "Open Map：Highland Area House 3-2"
+        "Open Map: Altus Area House 3-2"
       ]
     },
     {
       "ID": 63435301,
       "Entries": [
-        "Open Map：Highland Area Great Battlefield Ruins"
+        "Open Map: Altus Area Great Battlefield Ruins"
       ]
     },
     {
       "ID": 63425500,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Windmill Village Summit"
       ]
     },
     {
       "ID": 63455200,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Atop Bridge Before Leyndell"
       ]
     },
     {
       "ID": 63395300,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Volcano Entrance"
       ]
     },
     {
       "ID": 63385400,
       "Entries": [
-        "Open Map：Highland Area Twin Mountain Hut"
+        "Open Map: Altus Area Twin Mountain Hut"
       ]
     },
     {
       "ID": 63365401,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Before Summit Plaza"
       ]
     },
     {
       "ID": 63365402,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Battlefield Ruins"
       ]
     },
     {
       "ID": 63375200,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area River Entrance"
       ]
     },
     {
       "ID": 63355300,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Before Seaside Tower"
       ]
     },
     {
       "ID": 63365200,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Village Midslope"
       ]
     },
     {
       "ID": 63375300,
       "Entries": [
-        "Open Map：Highland Area Demi-Human Village Deepest Part"
+        "Open Map: Altus Area Deepest Part of Demi-Human Village"
       ]
     },
     {
       "ID": 63395400,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Fort Entrance"
       ]
     },
     {
       "ID": 63395401,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Fort Gate"
       ]
     },
     {
       "ID": 63395402,
       "Entries": [
-        "Open Map: Highland Area"
+        "Open Map: Altus Area Fort Boss Defeated"
       ]
     },
     {
       "ID": 64464000,
       "Entries": [
-        "Open Map: Plains Area Entrance Church 4-1 Interior"
+        "Open Map: Plains Area Entrance Church 4-Inside 1"
       ]
     },
     {
@@ -1630,7 +1630,7 @@
     {
       "ID": 64473900,
       "Entries": [
-        "Open Map: Plains Area Sea Watchtower 4-1 Front"
+        "Open Map: Plains Area Sea Watchtower 4-Before 1"
       ]
     },
     {
@@ -1642,7 +1642,7 @@
     {
       "ID": 64483600,
       "Entries": [
-        "Open Map: Plains Area First Half_Dragon Feast Church"
+        "Open Map: Plains Area First Half_Dragon Communion Church"
       ]
     },
     {
@@ -1654,13 +1654,13 @@
     {
       "ID": 64483800,
       "Entries": [
-        "Open Map: Plains Area Poison Swamp Exploration Start"
+        "Open Map: Plains Area Poison Swamp Exploration Start Point"
       ]
     },
     {
       "ID": 64483801,
       "Entries": [
-        "Open Map: Plains Area Between Road and Poison Swamp"
+        "Open Map: Plains Area Between Highway and Poison Swamp"
       ]
     },
     {
@@ -1678,7 +1678,7 @@
     {
       "ID": 64493700,
       "Entries": [
-        "Open Map: Plains Area Checkpoint Front"
+        "Open Map: Plains Area Before Checkpoint"
       ]
     },
     {
@@ -1696,7 +1696,7 @@
     {
       "ID": 64493900,
       "Entries": [
-        "Open Map: Plains Area Plains Town After Clear"
+        "Open Map: Plains Area After Plains Town Cleared"
       ]
     },
     {
@@ -1714,7 +1714,7 @@
     {
       "ID": 64503600,
       "Entries": [
-        "Open Map: Plains Area First Half_Fort Bridge Front"
+        "Open Map: Plains Area First Half_Before Fort Great Bridge"
       ]
     },
     {
@@ -1744,7 +1744,7 @@
     {
       "ID": 64484001,
       "Entries": [
-        "Open Map: Plains Area Second Half Entrance"
+        "Open Map: Plains Area Latter Half Entrance"
       ]
     },
     {
@@ -1756,7 +1756,7 @@
     {
       "ID": 64504000,
       "Entries": [
-        "Open Map: Plains Area Small World Tree Fork"
+        "Open Map: Plains Area Fork Before Small World Tree"
       ]
     },
     {
@@ -1768,139 +1768,139 @@
     {
       "ID": 64514300,
       "Entries": [
-        "Open Map: Plains Area Marike Building Front"
+        "Open Map: Before Plains Area Maliketh Building"
       ]
     },
     {
       "ID": 64524100,
       "Entries": [
-        "Open Map: Plains Area Sorcerer's Tower 4-1"
+        "Open Map: Plains Area Sorcerer\u0027s Tower 4-1"
       ]
     },
     {
       "ID": 64524200,
       "Entries": [
-        "Open Map: Plains Area After Great Bridge"
+        "Open Map: After Plains Area Great Bridge"
       ]
     },
     {
       "ID": 65475100,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Royal Capital EV Descent Point"
+        "Open Map: Snow Mountain Area_Leyndell EV Descent Point"
       ]
     },
     {
       "ID": 65495300,
       "Entries": [
-        "Open Map: Snowy Mountain Area_After Large EV_In Front of Ruins"
+        "Open Map: Snow Mountain Area_After Great EV_Before Ruins"
       ]
     },
     {
       "ID": 65495301,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Large EV"
+        "Open Map: Snow Mountain Area_Large EV"
       ]
     },
     {
       "ID": 65515600,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Great Canyon Entrance"
+        "Open Map: Snow Mountain Area_Great Gorge Entrance"
       ]
     },
     {
       "ID": 65525700,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Ice Lake"
+        "Open Map: Snow Mountain Area_Ice Lake"
       ]
     },
     {
       "ID": 65545500,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Church 5-1"
+        "Open Map: Snow Mountain Area_Church 5-1"
       ]
     },
     {
       "ID": 65525400,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Giant Graveyard Entrance"
+        "Open Map: Snow Mountain Area_Giant Graveyard Entrance"
       ]
     },
     {
       "ID": 65515300,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Church 5-2"
+        "Open Map: Snow Mountain Area_Church 5-2"
       ]
     },
     {
       "ID": 65525300,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Giant Graveyard Upper Level"
+        "Open Map: Snow Mountain Area_Giant Graveyard Upper Level"
       ]
     },
     {
       "ID": 65535200,
       "Entries": [
-        "Open Map: Snowy Mountain Area_After Giant Defeated"
+        "Open Map: Snow Mountain Area_After Giant Defeat"
       ]
     },
     {
       "ID": 65545300,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Giant's Flame Cauldron"
+        "Open Map: Snow Mountain Area_Fire Giant\u0027s Forge"
       ]
     },
     {
       "ID": 65525600,
       "Entries": [
-        "Open Map: Snowy Mountain Area_In Front of Seaside Tower 5-1"
+        "Open Map: Snow Mountain Area_Seaside Tower 5-Before 1"
       ]
     },
     {
       "ID": 65515700,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Before Enclave Branch"
+        "Open Map: Snow Mountain Area_Before Detached Fork"
       ]
     },
     {
       "ID": 65515701,
       "Entries": [
-        "Open Map: Snowy Mountain Area_In Front of Fort"
+        "Open Map: Snow Mountain Area_Before Fort"
       ]
     },
     {
       "ID": 65515702,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Fort_Church Interior"
+        "Open Map: Snow Mountain Area_Fort_Church Interior"
       ]
     },
     {
       "ID": 65515703,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Fort_After Veteran General Defeated"
+        "Open Map: Snow Mountain Area_Fort_After Veteran Defeated"
       ]
     },
     {
       "ID": 65495400,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Snowfield Start"
+        "Open Map: Snow Mountain Area_Snowfield Start"
       ]
     },
     {
       "ID": 65495500,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Snowfield Center"
+        "Open Map: Snow Mountain Area_Snowfield Center"
       ]
     },
     {
       "ID": 65485700,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Snow Town"
+        "Open Map: Snow Mountain Area_Snow Town"
       ]
     },
     {
       "ID": 65475800,
       "Entries": [
-        "Open Map: Snowy Mountain Area_Church at the End"
+        "Open Map: Snow Mountain Area_Church at the End"
       ]
     }
   ]

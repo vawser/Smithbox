@@ -4,43 +4,43 @@
     {
       "ID": 0,
       "Entries": [
-        "R1 Attack"
+        "R1 Attack, R1 Attack Combo"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Bow+Magic Charged"
+        "Bow\u002BMagic Charge"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "R2 Attack"
+        "R2 Attack, R2 Attack Combo"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Bow+Magic Charged"
+        "Bow\u002BMagic Charge"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "L1 Attack"
+        "L1 Attack, L1 Attack Combo"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Bow+Magic Charged"
+        "Bow\u002BMagic Charge"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Parry"
+        "Parry, Skill: Axe"
       ]
     },
     {
@@ -64,13 +64,13 @@
     {
       "ID": 12,
       "Entries": [
-        "One-handed/Two-handed Toggle"
+        "One-Handed/Two-Hand Switch"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "Item Use"
+        "Use Item"
       ]
     },
     {
@@ -88,13 +88,13 @@
     {
       "ID": 16,
       "Entries": [
-        "Left weapon switch"
+        "Switch Left Weapon"
       ]
     },
     {
       "ID": 17,
       "Entries": [
-        "Right weapon switch"
+        "Switch Right Weapon"
       ]
     },
     {
@@ -148,49 +148,49 @@
     {
       "ID": 26,
       "Entries": [
-        "Guard movement ↑"
+        "Guard Move ↑"
       ]
     },
     {
       "ID": 27,
       "Entries": [
-        "Guard movement ↑←"
+        "Guard Move ↑←"
       ]
     },
     {
       "ID": 28,
       "Entries": [
-        "Guard movement ↑→"
+        "Guard Move ↑→"
       ]
     },
     {
       "ID": 29,
       "Entries": [
-        "Guard movement ←"
+        "Guard Move ←"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Guard movement →"
+        "Guard Move →"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Guard movement ↓"
+        "Guard Move ↓"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "Guard movement ↓←"
+        "Guard Move ↓←"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        "Guard movement ↓→"
+        "Guard Move ↓→"
       ]
     },
     {
@@ -208,49 +208,49 @@
     {
       "ID": 36,
       "Entries": [
-        "Rolling ↑"
+        "Roll ↑"
       ]
     },
     {
       "ID": 37,
       "Entries": [
-        "Rolling ↑←"
+        "Roll ↑←"
       ]
     },
     {
       "ID": 38,
       "Entries": [
-        "Rolling ↑→"
+        "Roll ↑→"
       ]
     },
     {
       "ID": 39,
       "Entries": [
-        "Rolling ←"
+        "Roll ←"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Rolling →"
+        "Roll →"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Rolling ↓"
+        "Roll ↓"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "Rolling ↓←"
+        "Roll ↓←"
       ]
     },
     {
       "ID": 43,
       "Entries": [
-        "Rolling ↓→"
+        "Roll ↓→"
       ]
     },
     {
@@ -268,97 +268,97 @@
     {
       "ID": 50,
       "Entries": [
-        "Lock-step ↑"
+        "Lock Step ↑"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Lock-step ↑←"
+        "Lock Step ↑←"
       ]
     },
     {
       "ID": 52,
       "Entries": [
-        "Lock-step ↑→"
+        "Lock Step ↑→"
       ]
     },
     {
       "ID": 53,
       "Entries": [
-        "Lock-step ←"
+        "Lock Step ←"
       ]
     },
     {
       "ID": 54,
       "Entries": [
-        "Lock-step →"
+        "Lock Step →"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        "Lock-step ↓"
+        "Lock Step ↓"
       ]
     },
     {
       "ID": 56,
       "Entries": [
-        "Lock-step ↓←"
+        "Lock Step ↓←"
       ]
     },
     {
       "ID": 57,
       "Entries": [
-        "Lock-step ↓→"
+        "Lock Step ↓→"
       ]
     },
     {
       "ID": 58,
       "Entries": [
-        "Skill Stance Movement ↑"
+        "Skill Stance Move ↑"
       ]
     },
     {
       "ID": 59,
       "Entries": [
-        "Skill Stance Movement ↑←"
+        "Skill Stance Move ↑←"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "Skill Stance Movement ↑→"
+        "Skill Stance Move ↑→"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        "Skill Stance Movement ←"
+        "Skill Stance Move ←"
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        "Skill Stance Movement →"
+        "Skill Stance Move →"
       ]
     },
     {
       "ID": 63,
       "Entries": [
-        "Skill Stance Movement ↓"
+        "Skill Stance Move ↓"
       ]
     },
     {
       "ID": 64,
       "Entries": [
-        "Skill Stance Movement ↓←"
+        "Skill Stance Move ↓←"
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        "Skill Stance Movement ↓→"
+        "Skill Stance Move ↓→"
       ]
     },
     {
@@ -460,13 +460,13 @@
     {
       "ID": 82,
       "Entries": [
-        "Shield_Thrust_R1Attack"
+        "Shield Poke R1 Attack"
       ]
     },
     {
       "ID": 83,
       "Entries": [
-        "Shield_Thrust_R2Attack(Reserve)"
+        "Shield Poke R2 Attack (Spare)"
       ]
     },
     {
@@ -490,19 +490,19 @@
     {
       "ID": 90,
       "Entries": [
-        "Ladder"
+        "Ladder, Ascending"
       ]
     },
     {
       "ID": 91,
       "Entries": [
-        "Ladder"
+        "Ladder, Descending"
       ]
     },
     {
       "ID": 92,
       "Entries": [
-        "Left hand weapon two-handed grip"
+        "Left Hand Weapon Two-Handed"
       ]
     },
     {
@@ -514,7 +514,7 @@
     {
       "ID": 94,
       "Entries": [
-        "Dismount"
+        "Descend"
       ]
     },
     {
@@ -526,7 +526,7 @@
     {
       "ID": 97,
       "Entries": [
-        "Movement Jump (for Mount Check)"
+        "Movement Jump (For Mount Check)"
       ]
     },
     {
@@ -538,7 +538,7 @@
     {
       "ID": 99,
       "Entries": [
-        "Buddy Dismiss Request"
+        "Buddy Return Request"
       ]
     },
     {
@@ -796,907 +796,907 @@
     {
       "ID": 1000,
       "Entries": [
-        "Gesture ID00"
+        "Gesture ID 00"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Gesture ID01"
+        "Gesture ID 01"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "Gesture ID02"
+        "Gesture ID 02"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "Gesture ID03"
+        "Gesture ID 03"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Gesture ID04"
+        "Gesture ID 04"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "Gesture ID05"
+        "Gesture ID 05"
       ]
     },
     {
       "ID": 1006,
       "Entries": [
-        "Gesture ID06"
+        "Gesture ID 06"
       ]
     },
     {
       "ID": 1007,
       "Entries": [
-        "Gesture ID07"
+        "Gesture ID 07"
       ]
     },
     {
       "ID": 1008,
       "Entries": [
-        "Gesture ID08"
+        "Gesture ID 08"
       ]
     },
     {
       "ID": 1009,
       "Entries": [
-        "Gesture ID09"
+        "Gesture ID 09"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Gesture ID10"
+        "Gesture ID 10"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        "Gesture ID11"
+        "Gesture ID 11"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "Gesture ID12"
+        "Gesture ID 12"
       ]
     },
     {
       "ID": 1013,
       "Entries": [
-        "Gesture ID13"
+        "Gesture ID 13"
       ]
     },
     {
       "ID": 1014,
       "Entries": [
-        "Gesture ID14"
+        "Gesture ID 14"
       ]
     },
     {
       "ID": 1015,
       "Entries": [
-        "Gesture ID15"
+        "Gesture ID 15"
       ]
     },
     {
       "ID": 1016,
       "Entries": [
-        "Gesture ID16"
+        "Gesture ID 16"
       ]
     },
     {
       "ID": 1017,
       "Entries": [
-        "Gesture ID17"
+        "Gesture ID 17"
       ]
     },
     {
       "ID": 1018,
       "Entries": [
-        "Gesture ID18"
+        "Gesture ID 18"
       ]
     },
     {
       "ID": 1019,
       "Entries": [
-        "Gesture ID19"
+        "Gesture ID 19"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "Gesture ID20"
+        "Gesture ID 20"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        "Gesture ID21"
+        "Gesture ID 21"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        "Gesture ID22"
+        "Gesture ID 22"
       ]
     },
     {
       "ID": 1023,
       "Entries": [
-        "Gesture ID23"
+        "Gesture ID 23"
       ]
     },
     {
       "ID": 1024,
       "Entries": [
-        "Gesture ID24"
+        "Gesture ID 24"
       ]
     },
     {
       "ID": 1025,
       "Entries": [
-        "Gesture ID25"
+        "Gesture ID 25"
       ]
     },
     {
       "ID": 1026,
       "Entries": [
-        "Gesture ID26"
+        "Gesture ID 26"
       ]
     },
     {
       "ID": 1027,
       "Entries": [
-        "Gesture ID27"
+        "Gesture ID 27"
       ]
     },
     {
       "ID": 1028,
       "Entries": [
-        "Gesture ID28"
+        "Gesture ID 28"
       ]
     },
     {
       "ID": 1029,
       "Entries": [
-        "Gesture ID29"
+        "Gesture ID 29"
       ]
     },
     {
       "ID": 1030,
       "Entries": [
-        "Gesture ID30"
+        "Gesture ID 30"
       ]
     },
     {
       "ID": 1031,
       "Entries": [
-        "Gesture ID31"
+        "Gesture ID 31"
       ]
     },
     {
       "ID": 1032,
       "Entries": [
-        "Gesture ID32"
+        "Gesture ID 32"
       ]
     },
     {
       "ID": 1033,
       "Entries": [
-        "Gesture ID33"
+        "Gesture ID 33"
       ]
     },
     {
       "ID": 1034,
       "Entries": [
-        "Gesture ID34"
+        "Gesture ID 34"
       ]
     },
     {
       "ID": 1035,
       "Entries": [
-        "Gesture ID35"
+        "Gesture ID 35"
       ]
     },
     {
       "ID": 1036,
       "Entries": [
-        "Gesture ID36"
+        "Gesture ID 36"
       ]
     },
     {
       "ID": 1037,
       "Entries": [
-        "Gesture ID37"
+        "Gesture ID 37"
       ]
     },
     {
       "ID": 1038,
       "Entries": [
-        "Gesture ID38"
+        "Gesture ID 38"
       ]
     },
     {
       "ID": 1039,
       "Entries": [
-        "Gesture ID39"
+        "Gesture ID 39"
       ]
     },
     {
       "ID": 1040,
       "Entries": [
-        "Gesture ID40"
+        "Gesture ID 40"
       ]
     },
     {
       "ID": 1041,
       "Entries": [
-        "Gesture ID41"
+        "Gesture ID 41"
       ]
     },
     {
       "ID": 1042,
       "Entries": [
-        "Gesture ID42"
+        "Gesture ID 42"
       ]
     },
     {
       "ID": 1043,
       "Entries": [
-        "Gesture ID43"
+        "Gesture ID 43"
       ]
     },
     {
       "ID": 1044,
       "Entries": [
-        "Gesture ID44"
+        "Gesture ID 44"
       ]
     },
     {
       "ID": 1045,
       "Entries": [
-        "Gesture ID45"
+        "Gesture ID 45"
       ]
     },
     {
       "ID": 1046,
       "Entries": [
-        "Gesture ID46"
+        "Gesture ID 46"
       ]
     },
     {
       "ID": 1047,
       "Entries": [
-        "Gesture ID47"
+        "Gesture ID 47"
       ]
     },
     {
       "ID": 1048,
       "Entries": [
-        "Gesture ID48"
+        "Gesture ID 48"
       ]
     },
     {
       "ID": 1049,
       "Entries": [
-        "Gesture ID49"
+        "Gesture ID 49"
       ]
     },
     {
       "ID": 1050,
       "Entries": [
-        "Gesture ID50"
+        "Gesture ID 50"
       ]
     },
     {
       "ID": 1051,
       "Entries": [
-        "Gesture ID51"
+        "Gesture ID 51"
       ]
     },
     {
       "ID": 1052,
       "Entries": [
-        "Gesture ID52"
+        "Gesture ID 52"
       ]
     },
     {
       "ID": 1053,
       "Entries": [
-        "Gesture ID53"
+        "Gesture ID 53"
       ]
     },
     {
       "ID": 1054,
       "Entries": [
-        "Gesture ID54"
+        "Gesture ID 54"
       ]
     },
     {
       "ID": 1055,
       "Entries": [
-        "Gesture ID55"
+        "Gesture ID 55"
       ]
     },
     {
       "ID": 1056,
       "Entries": [
-        "Gesture ID56"
+        "Gesture ID 56"
       ]
     },
     {
       "ID": 1057,
       "Entries": [
-        "Gesture ID57"
+        "Gesture ID 57"
       ]
     },
     {
       "ID": 1058,
       "Entries": [
-        "Gesture ID58"
+        "Gesture ID 58"
       ]
     },
     {
       "ID": 1059,
       "Entries": [
-        "Gesture ID59"
+        "Gesture ID 59"
       ]
     },
     {
       "ID": 1060,
       "Entries": [
-        "Gesture ID60"
+        "Gesture ID 60"
       ]
     },
     {
       "ID": 1061,
       "Entries": [
-        "Gesture ID61"
+        "Gesture ID 61"
       ]
     },
     {
       "ID": 1062,
       "Entries": [
-        "Gesture ID62"
+        "Gesture ID 62"
       ]
     },
     {
       "ID": 1063,
       "Entries": [
-        "Gesture ID63"
+        "Gesture ID 63"
       ]
     },
     {
       "ID": 1064,
       "Entries": [
-        "Gesture ID64"
+        "Gesture ID 64"
       ]
     },
     {
       "ID": 1065,
       "Entries": [
-        "Gesture ID65"
+        "Gesture ID 65"
       ]
     },
     {
       "ID": 1066,
       "Entries": [
-        "Gesture ID66"
+        "Gesture ID 66"
       ]
     },
     {
       "ID": 1067,
       "Entries": [
-        "Gesture ID67"
+        "Gesture ID 67"
       ]
     },
     {
       "ID": 1068,
       "Entries": [
-        "Gesture ID68"
+        "Gesture ID 68"
       ]
     },
     {
       "ID": 1069,
       "Entries": [
-        "Gesture ID69"
+        "Gesture ID 69"
       ]
     },
     {
       "ID": 1070,
       "Entries": [
-        "Gesture ID70"
+        "Gesture ID 70"
       ]
     },
     {
       "ID": 1071,
       "Entries": [
-        "Gesture ID71"
+        "Gesture ID 71"
       ]
     },
     {
       "ID": 1072,
       "Entries": [
-        "Gesture ID72"
+        "Gesture ID 72"
       ]
     },
     {
       "ID": 1073,
       "Entries": [
-        "Gesture ID73"
+        "Gesture ID 73"
       ]
     },
     {
       "ID": 1074,
       "Entries": [
-        "Gesture ID74"
+        "Gesture ID 74"
       ]
     },
     {
       "ID": 1075,
       "Entries": [
-        "Gesture ID75"
+        "Gesture ID 75"
       ]
     },
     {
       "ID": 1076,
       "Entries": [
-        "Gesture ID76"
+        "Gesture ID 76"
       ]
     },
     {
       "ID": 1077,
       "Entries": [
-        "Gesture ID77"
+        "Gesture ID 77"
       ]
     },
     {
       "ID": 1078,
       "Entries": [
-        "Gesture ID78"
+        "Gesture ID 78"
       ]
     },
     {
       "ID": 1079,
       "Entries": [
-        "Gesture ID79"
+        "Gesture ID 79"
       ]
     },
     {
       "ID": 1080,
       "Entries": [
-        "Gesture ID80"
+        "Gesture ID 80"
       ]
     },
     {
       "ID": 1081,
       "Entries": [
-        "Gesture ID81"
+        "Gesture ID 81"
       ]
     },
     {
       "ID": 1082,
       "Entries": [
-        "Gesture ID82"
+        "Gesture ID 82"
       ]
     },
     {
       "ID": 1083,
       "Entries": [
-        "Gesture ID83"
+        "Gesture ID 83"
       ]
     },
     {
       "ID": 1084,
       "Entries": [
-        "Gesture ID84"
+        "Gesture ID 84"
       ]
     },
     {
       "ID": 1085,
       "Entries": [
-        "Gesture ID85"
+        "Gesture ID 85"
       ]
     },
     {
       "ID": 1086,
       "Entries": [
-        "Gesture ID86"
+        "Gesture ID 86"
       ]
     },
     {
       "ID": 1087,
       "Entries": [
-        "Gesture ID87"
+        "Gesture ID 87"
       ]
     },
     {
       "ID": 1088,
       "Entries": [
-        "Gesture ID88"
+        "Gesture ID 88"
       ]
     },
     {
       "ID": 1089,
       "Entries": [
-        "Gesture ID89"
+        "Gesture ID 89"
       ]
     },
     {
       "ID": 1090,
       "Entries": [
-        "Gesture ID90"
+        "Gesture ID 90"
       ]
     },
     {
       "ID": 1091,
       "Entries": [
-        "Gesture ID91"
+        "Gesture ID 91"
       ]
     },
     {
       "ID": 1092,
       "Entries": [
-        "Gesture ID92"
+        "Gesture ID 92"
       ]
     },
     {
       "ID": 1093,
       "Entries": [
-        "Gesture ID93"
+        "Gesture ID 93"
       ]
     },
     {
       "ID": 1094,
       "Entries": [
-        "Gesture ID94"
+        "Gesture ID 94"
       ]
     },
     {
       "ID": 1095,
       "Entries": [
-        "Gesture ID95"
+        "Gesture ID 95"
       ]
     },
     {
       "ID": 1096,
       "Entries": [
-        "Gesture ID96"
+        "Gesture ID 96"
       ]
     },
     {
       "ID": 1097,
       "Entries": [
-        "Gesture ID97"
+        "Gesture ID 97"
       ]
     },
     {
       "ID": 1098,
       "Entries": [
-        "Gesture ID98"
+        "Gesture ID 98"
       ]
     },
     {
       "ID": 1099,
       "Entries": [
-        "Gesture ID99"
+        "Gesture ID 99"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Gesture ID100"
+        "Gesture ID 100"
       ]
     },
     {
       "ID": 1101,
       "Entries": [
-        "Gesture ID101"
+        "Gesture ID 101"
       ]
     },
     {
       "ID": 1102,
       "Entries": [
-        "Gesture ID102"
+        "Gesture ID 102"
       ]
     },
     {
       "ID": 1103,
       "Entries": [
-        "Gesture ID103"
+        "Gesture ID 103"
       ]
     },
     {
       "ID": 1104,
       "Entries": [
-        "Gesture ID104"
+        "Gesture ID 104"
       ]
     },
     {
       "ID": 1105,
       "Entries": [
-        "Gesture ID105"
+        "Gesture ID 105"
       ]
     },
     {
       "ID": 1106,
       "Entries": [
-        "Gesture ID106"
+        "Gesture ID 106"
       ]
     },
     {
       "ID": 1107,
       "Entries": [
-        "Gesture ID107"
+        "Gesture ID 107"
       ]
     },
     {
       "ID": 1108,
       "Entries": [
-        "Gesture ID108"
+        "Gesture ID 108"
       ]
     },
     {
       "ID": 1109,
       "Entries": [
-        "Gesture ID109"
+        "Gesture ID 109"
       ]
     },
     {
       "ID": 1110,
       "Entries": [
-        "Gesture ID110"
+        "Gesture ID 110"
       ]
     },
     {
       "ID": 1111,
       "Entries": [
-        "Gesture ID111"
+        "Gesture ID 111"
       ]
     },
     {
       "ID": 1112,
       "Entries": [
-        "Gesture ID112"
+        "Gesture ID 112"
       ]
     },
     {
       "ID": 1113,
       "Entries": [
-        "Gesture ID113"
+        "Gesture ID 113"
       ]
     },
     {
       "ID": 1114,
       "Entries": [
-        "Gesture ID114"
+        "Gesture ID 114"
       ]
     },
     {
       "ID": 1115,
       "Entries": [
-        "Gesture ID115"
+        "Gesture ID 115"
       ]
     },
     {
       "ID": 1116,
       "Entries": [
-        "Gesture ID116"
+        "Gesture ID 116"
       ]
     },
     {
       "ID": 1117,
       "Entries": [
-        "Gesture ID117"
+        "Gesture ID 117"
       ]
     },
     {
       "ID": 1118,
       "Entries": [
-        "Gesture ID118"
+        "Gesture ID 118"
       ]
     },
     {
       "ID": 1119,
       "Entries": [
-        "Gesture ID119"
+        "Gesture ID 119"
       ]
     },
     {
       "ID": 1120,
       "Entries": [
-        "Gesture ID120"
+        "Gesture ID 120"
       ]
     },
     {
       "ID": 1121,
       "Entries": [
-        "Gesture ID121"
+        "Gesture ID 121"
       ]
     },
     {
       "ID": 1122,
       "Entries": [
-        "Gesture ID122"
+        "Gesture ID 122"
       ]
     },
     {
       "ID": 1123,
       "Entries": [
-        "Gesture ID123"
+        "Gesture ID 123"
       ]
     },
     {
       "ID": 1124,
       "Entries": [
-        "Gesture ID124"
+        "Gesture ID 124"
       ]
     },
     {
       "ID": 1125,
       "Entries": [
-        "Gesture ID125"
+        "Gesture ID 125"
       ]
     },
     {
       "ID": 1126,
       "Entries": [
-        "Gesture ID126"
+        "Gesture ID 126"
       ]
     },
     {
       "ID": 1127,
       "Entries": [
-        "Gesture ID127"
+        "Gesture ID 127"
       ]
     },
     {
       "ID": 1128,
       "Entries": [
-        "Gesture ID128"
+        "Gesture ID 128"
       ]
     },
     {
       "ID": 1129,
       "Entries": [
-        "Gesture ID129"
+        "Gesture ID 129"
       ]
     },
     {
       "ID": 1130,
       "Entries": [
-        "Gesture ID130"
+        "Gesture ID 130"
       ]
     },
     {
       "ID": 1131,
       "Entries": [
-        "Gesture ID131"
+        "Gesture ID 131"
       ]
     },
     {
       "ID": 1132,
       "Entries": [
-        "Gesture ID132"
+        "Gesture ID 132"
       ]
     },
     {
       "ID": 1133,
       "Entries": [
-        "Gesture ID133"
+        "Gesture ID 133"
       ]
     },
     {
       "ID": 1134,
       "Entries": [
-        "Gesture ID134"
+        "Gesture ID 134"
       ]
     },
     {
       "ID": 1135,
       "Entries": [
-        "Gesture ID135"
+        "Gesture ID 135"
       ]
     },
     {
       "ID": 1136,
       "Entries": [
-        "Gesture ID136"
+        "Gesture ID 136"
       ]
     },
     {
       "ID": 1137,
       "Entries": [
-        "Gesture ID137"
+        "Gesture ID 137"
       ]
     },
     {
       "ID": 1138,
       "Entries": [
-        "Gesture ID138"
+        "Gesture ID 138"
       ]
     },
     {
       "ID": 1139,
       "Entries": [
-        "Gesture ID139"
+        "Gesture ID 139"
       ]
     },
     {
       "ID": 1140,
       "Entries": [
-        "Gesture ID140"
+        "Gesture ID 140"
       ]
     },
     {
       "ID": 1141,
       "Entries": [
-        "Gesture ID141"
+        "Gesture ID 141"
       ]
     },
     {
       "ID": 1142,
       "Entries": [
-        "Gesture ID142"
+        "Gesture ID 142"
       ]
     },
     {
       "ID": 1143,
       "Entries": [
-        "Gesture ID143"
+        "Gesture ID 143"
       ]
     },
     {
       "ID": 1144,
       "Entries": [
-        "Gesture ID144"
+        "Gesture ID 144"
       ]
     },
     {
       "ID": 1145,
       "Entries": [
-        "Gesture ID145"
+        "Gesture ID 145"
       ]
     },
     {
       "ID": 1146,
       "Entries": [
-        "Gesture ID146"
+        "Gesture ID 146"
       ]
     },
     {
       "ID": 1147,
       "Entries": [
-        "Gesture ID147"
+        "Gesture ID 147"
       ]
     },
     {
       "ID": 1148,
       "Entries": [
-        "Gesture ID148"
+        "Gesture ID 148"
       ]
     },
     {
       "ID": 1149,
       "Entries": [
-        "Gesture ID149"
+        "Gesture ID 149"
       ]
     },
     {
       "ID": 1150,
       "Entries": [
-        "Gesture ID150"
+        "Gesture ID 150"
       ]
     },
     {

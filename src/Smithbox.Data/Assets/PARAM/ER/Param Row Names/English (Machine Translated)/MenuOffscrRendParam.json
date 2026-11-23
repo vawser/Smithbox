@@ -4,67 +4,67 @@
     {
       "ID": 0,
       "Entries": [
-        "For Character Creation Preview <Full Body>"
+        "For Character Creation Preview\u003CWhole Body\u003E"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "For Character Creation Preview <Face>"
+        "For Character Creation Preview\u003CFace\u003E"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Status Menu For <Full Body>"
+        "For Status Menu\u003CWhole Body\u003E"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Ranking Menu Use <Full Body>"
+        "For Ranking Menu\u003CWhole Body\u003E"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "For Character Creation Grid <Face>"
+        "For Character Creation Grid\u003CFace\u003E"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Kick menu for <face>"
+        "For Kick Menu\u003CFace\u003E"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Status Menu For <Face>"
+        "For Status Menu\u003CFace\u003E"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "Ranking Menu Use <Face>"
+        "For Ranking Menu\u003CFace\u003E"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "For Summon Sign <Face>"
+        "For Summon Sign\u003CFace\u003E"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Game End Confirmation Menu Face"
+        "For Quit Game Confirmation Menu\u003CFace\u003E"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "For Profile Selection <Face>"
+        "For Profile Selection\u003CFace\u003E"
       ]
     }
   ]

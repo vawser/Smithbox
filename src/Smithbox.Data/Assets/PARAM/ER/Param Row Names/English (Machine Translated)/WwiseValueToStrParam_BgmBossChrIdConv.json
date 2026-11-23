@@ -4,13 +4,13 @@
     {
       "ID": 203000,
       "Entries": [
-        "Major Boss 6 Rennala"
+        "Major Boss 6 Fertile Rennala"
       ]
     },
     {
       "ID": 203001,
       "Entries": [
-        "Major Boss 6B Rennala (Round Table Echo)"
+        "Major Boss 6B Fertile Rennala (Round Chant)"
       ]
     },
     {
@@ -28,13 +28,13 @@
     {
       "ID": 213000,
       "Entries": [
-        "Major Boss 7 Margit (Stormveil)"
+        "Major Boss 7 Margit (Edinburgh)"
       ]
     },
     {
       "ID": 213001,
       "Entries": [
-        "Major Boss 8 Margit (Royal Capital)"
+        "Major Boss 8 Margit (Leyndell)"
       ]
     },
     {
@@ -46,13 +46,13 @@
     {
       "ID": 356000,
       "Entries": [
-        "Major Boss 5 Godskin Apostle"
+        "Major Boss 5 Godskin Priest"
       ]
     },
     {
       "ID": 451000,
       "Entries": [
-        "Major Boss Lineage of the Guardian"
+        "Major Boss Guardian\u0027s Descendant"
       ]
     },
     {
@@ -64,7 +64,7 @@
     {
       "ID": 467000,
       "Entries": [
-        "Major Boss 9 Ancestor Spirit"
+        "Major Boss 9 Ancestral Spirit"
       ]
     },
     {
@@ -88,13 +88,13 @@
     {
       "ID": 473000,
       "Entries": [
-        "Major Boss 2 Radahn (Scrawny Horse)"
+        "Major Boss 2 Radahn of the Scrawny Horse"
       ]
     },
     {
       "ID": 475000,
       "Entries": [
-        "Major Boss 1 Grafted King"
+        "Major Boss 1 The Grafted King"
       ]
     },
     {
@@ -112,43 +112,43 @@
     {
       "ID": 502000,
       "Entries": [
-        "DLC02 Knight of the Night-Eyed Queen (Ark Boss)"
+        "DLC02 Gloam-Eyed Queen\u0027s Knight (Ark Boss)"
       ]
     },
     {
       "ID": 503000,
       "Entries": [
-        "DLC02 Crimson Rot Warrior (Babel Boss)"
+        "DLC02 Scarlet Rot Warrior (Babel Boss)"
       ]
     },
     {
       "ID": 505000,
       "Entries": [
-        "DLC02 King of Chaos (Manor Boss)"
+        "DLC02 Lord of Chaos (Manor Boss)"
       ]
     },
     {
       "ID": 512000,
       "Entries": [
-        "DLC02 Tempest Bell (Open Boss)"
+        "DLC02 Bayle the Dread (Open Boss)"
       ]
     },
     {
       "ID": 513000,
       "Entries": [
-        "DLC02 Marika's Son"
+        "DLC02 Son of Marika, Messmer (Central Fort Boss)"
       ]
     },
     {
       "ID": 520000,
       "Entries": [
-        "DLC02 Finger Nursery (Underground Fort Boss)"
+        "DLC02 Finger Seedbed (Underground Fort Boss)"
       ]
     },
     {
       "ID": 521000,
       "Entries": [
-        "DLC02 Divine Beast Lion Dance (Babel Boss)"
+        "DLC02 Divine Beast Dancing Lion (Babel Boss)"
       ]
     },
     {
@@ -160,139 +160,139 @@
     {
       "ID": 523000,
       "Entries": [
-        "DLC02 TBD (Shadow Erdtree Boss)"
+        "DLC02 Undecided (Shadow Erdtree Boss)"
       ]
     },
     {
       "ID": 530000,
       "Entries": [
-        "DLC02 Messmer's Sword (Central Fort Boss)"
+        "DLC02 Messmer\u0027s Sword (Central Fort Boss)"
       ]
     },
     {
       "ID": 920100,
       "Entries": [
-        "Mid Boss 4 Death Kin"
+        "Mid-Boss 4 Kindred of Death"
       ]
     },
     {
       "ID": 920200,
       "Entries": [
-        "Mid Boss 6 Golden Tree Knights"
+        "Mid-Boss 6 Knights of the Erdtree"
       ]
     },
     {
       "ID": 920300,
       "Entries": [
-        "Mid Boss 7 Wyvern"
+        "Mid-Boss 7 Wyvern"
       ]
     },
     {
       "ID": 920400,
       "Entries": [
-        "Mid Boss 9 Marika Ruins Group"
+        "Mid-Boss 9 Marika Ruins Type"
       ]
     },
     {
       "ID": 920500,
       "Entries": [
-        "Mid Boss 10 Monsan Royal Lineage"
+        "Mid-Boss 10 Raya Lucaria Royal Family Type"
       ]
     },
     {
       "ID": 920600,
       "Entries": [
-        "Mid Boss World Tree Demon"
+        "Mid-Boss World Tree Demon"
       ]
     },
     {
       "ID": 920700,
       "Entries": [
-        "Mid Boss Astel"
+        "Mid-Boss Astel"
       ]
     },
     {
       "ID": 920800,
       "Entries": [
-        "Mid Boss Meteorite Beast (Astel Arrange)"
+        "Mid-Boss Meteoric Iron Beast (Astel Arrangement)"
       ]
     },
     {
       "ID": 920900,
       "Entries": [
-        "Mid Boss Ruins Basement Boss"
+        "Mid-Boss Ruins Basement Boss"
       ]
     },
     {
       "ID": 921000,
       "Entries": [
-        "Mid Boss Dark Knights"
+        "Mid-Boss Knights of Darkness"
       ]
     },
     {
       "ID": 921100,
       "Entries": [
-        "Mid Boss New Circular Circle"
+        "Mid-Boss New Circular Circle"
       ]
     },
     {
       "ID": 921200,
       "Entries": [
-        "Mid Boss Abyss Boss"
+        "Mid-Boss Abyss Boss"
       ]
     },
     {
       "ID": 921300,
       "Entries": [
-        "Mid Boss Field Boss Guardian Lineage"
+        "Mid-Boss Field Boss Guardian\u0027s Descendant"
       ]
     },
     {
       "ID": 921400,
       "Entries": [
-        "Mid Boss Runewolf"
+        "Mid-Boss Rune Wolf"
       ]
     },
     {
       "ID": 921500,
       "Entries": [
-        "Mid Boss Black Knife Descendant"
+        "Mid-Boss Black Knife Assassin"
       ]
     },
     {
       "ID": 921600,
       "Entries": [
-        "Mid Boss Greater Demon Phantom"
+        "Mid-Boss Greater Demon Phantom"
       ]
     },
     {
       "ID": 921700,
       "Entries": [
-        "Mid Boss Blood Attribute NPC (Invader Greater Faction Theme)"
+        "Mid-Boss Blood Element NPC (Invasion Greater Faction Song)"
       ]
     },
     {
       "ID": 925000,
       "Entries": [
-        "Mid Boss 8 Circular Circle"
+        "Mid-Boss 8 Circular Ring"
       ]
     },
     {
       "ID": 930000,
       "Entries": [
-        "Mid Boss 1 Catacombs"
+        "Mid-Boss 1 Catacombs"
       ]
     },
     {
       "ID": 931000,
       "Entries": [
-        "Mid Boss 2 Cave"
+        "Mid-Boss 2 Cave"
       ]
     },
     {
       "ID": 932000,
       "Entries": [
-        "Mid Boss 5 Tunnel"
+        "Mid-Boss 5 Tunnel"
       ]
     },
     {
@@ -310,31 +310,31 @@
     {
       "ID": 942000,
       "Entries": [
-        "DLC_Godborn Priests"
+        "DLC_Godskin Priests"
       ]
     },
     {
       "ID": 943000,
       "Entries": [
-        "DLC_Michella Faction Battle"
+        "DLC_Miquella Group Fight"
       ]
     },
     {
       "ID": 944000,
       "Entries": [
-        "DLC_Michella Faction Battle Final"
+        "DLC_Miquella Group Fight Last"
       ]
     },
     {
       "ID": 950000,
       "Entries": [
-        "Mid Boss 3 Fort"
+        "Mid-Boss 3 Fort"
       ]
     },
     {
       "ID": 10000000,
       "Entries": [
-        "BgmEnemyType Product Use"
+        "BgmEnemyType for Product"
       ]
     },
     {
@@ -436,19 +436,19 @@
     {
       "ID": 11000023,
       "Entries": [
-        "Invalid Treatment State"
+        "State Treated as Disabled"
       ]
     },
     {
       "ID": 11000029,
       "Entries": [
-        "[GR] SEQ34732 [Sound][BGM]Play dedicated BGM during Radahn Festival"
+        "[GR] SEQ34732 [Sound] [BGM] Play Exclusive BGM During Radahn Festival"
       ]
     },
     {
       "ID": 11000030,
       "Entries": [
-        "[GR] SEQ34732 [Sound][BGM]Play dedicated BGM during Radahn Festival"
+        "[GR] SEQ34732 [Sound] [BGM] Play Exclusive BGM During Radahn Festival"
       ]
     },
     {

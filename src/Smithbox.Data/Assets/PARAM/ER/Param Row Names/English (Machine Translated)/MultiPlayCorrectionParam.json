@@ -4,13 +4,13 @@
     {
       "ID": 0,
       "Entries": [
-        "Must Not Extinguish"
+        "Do Not Delete"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Trash Enemy Default"
+        "Small Fry Default"
       ]
     },
     {
@@ -34,25 +34,25 @@
     {
       "ID": 203000,
       "Entries": [
-        "Rennala of the Full Moon"
+        "Fertile Rennala"
       ]
     },
     {
       "ID": 203100,
       "Entries": [
-        "Rennala of the Full Moon (After HU)"
+        "Fertile Rennala (Post-HU)"
       ]
     },
     {
       "ID": 211000,
       "Entries": [
-        "Black Blade Malenia"
+        "Maliketh the Black Blade"
       ]
     },
     {
       "ID": 212000,
       "Entries": [
-        "Arbitrating Malenia"
+        "Arbiter Malenia"
       ]
     },
     {
@@ -64,31 +64,31 @@
     {
       "ID": 219000,
       "Entries": [
-        "Crumbling Marika"
+        "Collapsed Marika"
       ]
     },
     {
       "ID": 219200,
       "Entries": [
-        "Crumbling Marika (Post-HU)"
+        "Collapsed Marika (Post-HU)"
       ]
     },
     {
       "ID": 305000,
       "Entries": [
-        "Aged Veteran General"
+        "Old Veteran General"
       ]
     },
     {
       "ID": 325000,
       "Entries": [
-        "Tree Sentinel (Aberration)"
+        "Tree Sentinel (Deformed)"
       ]
     },
     {
       "ID": 325100,
       "Entries": [
-        "Tree Sentinel (Chief)"
+        "Tree Sentinel (Leader)"
       ]
     },
     {
@@ -100,19 +100,19 @@
     {
       "ID": 356000,
       "Entries": [
-        "Godskin Apostle"
+        "Godskin Priest"
       ]
     },
     {
       "ID": 357000,
       "Entries": [
-        "Godskin Apostle (Another)"
+        "Godskin Priest (Another)"
       ]
     },
     {
       "ID": 451000,
       "Entries": [
-        "Guardian Lineage"
+        "Guardian\u0027s Descendant"
       ]
     },
     {
@@ -124,19 +124,19 @@
     {
       "ID": 465000,
       "Entries": [
-        "Ruinator"
+        "The Desolator"
       ]
     },
     {
       "ID": 467000,
       "Entries": [
-        "Ancestor Spirit"
+        "Ancestral Spirit"
       ]
     },
     {
       "ID": 468000,
       "Entries": [
-        "Meteoric Beast"
+        "Meteoric Iron Beast"
       ]
     },
     {
@@ -148,25 +148,25 @@
     {
       "ID": 472000,
       "Entries": [
-        "Godfrey the Beast-clad"
+        "Beast-Clad Godfrey"
       ]
     },
     {
       "ID": 472100,
       "Entries": [
-        "Godfrey the Beast-clad (After HU)"
+        "Beast-Clad Godfrey (Post-HU)"
       ]
     },
     {
       "ID": 473000,
       "Entries": [
-        "Radahn (Scrawny Horse)"
+        "Radahn of the Scrawny Horse"
       ]
     },
     {
       "ID": 475000,
       "Entries": [
-        "Grafted King"
+        "The Grafted King"
       ]
     },
     {
@@ -184,19 +184,19 @@
     {
       "ID": 491000,
       "Entries": [
-        "King's Mole"
+        "King\u0027s Mole"
       ]
     },
     {
       "ID": 495000,
       "Entries": [
-        "Night King Followers"
+        "Night King\u0027s Kindred"
       ]
     },
     {
       "ID": 496000,
       "Entries": [
-        "Night King Followers (Giant Skeleton)"
+        "Night King\u0027s Kindred (Giant Skeleton)"
       ]
     },
     {

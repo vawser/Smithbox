@@ -4,19 +4,19 @@
     {
       "ID": 0,
       "Entries": [
-        "Entry 0 is used as the default when a parameter is not found"
+        "Number 0 Is Used as Default When Param Not Found, But, Basically Not Expected to Be Used"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "All Low Placement (Debug Override Behavior Check)"
+        "All Low Ground (For Debug Overwrite Operation Check)"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "All High Placement (Debug Override Behavior Check)"
+        "All High Ground (For Debug Overwrite Operation Check)"
       ]
     },
     {
@@ -52,49 +52,49 @@
     {
       "ID": 111100,
       "Entries": [
-        "m61_11_11_02(LOD2)_Graveyard Plains Side"
+        "m61_11_11_02 (LOD2)_Graveyard Plains Side"
       ]
     },
     {
       "ID": 111101,
       "Entries": [
-        "m61_11_11_02(LOD2)_Mohenjo Daro Side"
+        "m61_11_11_02 (LOD2)_Mohenjo-daro Side"
       ]
     },
     {
       "ID": 111200,
       "Entries": [
-        "m61_11_12_02(LOD2)_Graveyard Plains Side"
+        "m61_11_12_02 (LOD2)_Graveyard Plains Side"
       ]
     },
     {
       "ID": 111201,
       "Entries": [
-        "m61_11_12_02(LOD2)_Mohenjo Daro Side"
+        "m61_11_12_02 (LOD2)_Mohenjo-daro Side"
       ]
     },
     {
       "ID": 120900,
       "Entries": [
-        "m61_12_09_02(LOD2) Graveyard Plains Side"
+        "m61_12_09_02 (LOD2) Graveyard Plains Side"
       ]
     },
     {
       "ID": 120901,
       "Entries": [
-        "m61_12_09_02(LOD2) Deeproot Depths Side"
+        "m61_12_09_02 (LOD2) Abyss Forest Side"
       ]
     },
     {
       "ID": 121000,
       "Entries": [
-        "m61_12_10_02(LOD2)_Graveyard Plains Side"
+        "m61_12_10_02 (LOD2)_Graveyard Plains Side"
       ]
     },
     {
       "ID": 121001,
       "Entries": [
-        "m61_12_10_02(LOD2)_Deeproot Depths Side"
+        "m61_12_10_02 (LOD2)_Abyss Forest Side"
       ]
     },
     {
@@ -106,13 +106,13 @@
     {
       "ID": 121200,
       "Entries": [
-        "m61_12_12_02(LOD2) Graveyard Plains Side"
+        "m61_12_12_02 (LOD2) Graveyard Plains Side"
       ]
     },
     {
       "ID": 121201,
       "Entries": [
-        "m61_12_12_02(LOD2) Shadow Erdtree Foot Side"
+        "m61_12_12_02 (LOD2) Foot Side of the Shadow Erdtree"
       ]
     },
     {
@@ -124,13 +124,13 @@
     {
       "ID": 131000,
       "Entries": [
-        "m61_13_10_02(LOD2)_Graveyard Plains Side"
+        "m61_13_10_02 (LOD2)_Graveyard Plains Side"
       ]
     },
     {
       "ID": 131001,
       "Entries": [
-        "m61_13_10_02(LOD2) Deeproot Depths Side"
+        "m61_13_10_02 (LOD2) Abyss Forest Side"
       ]
     },
     {

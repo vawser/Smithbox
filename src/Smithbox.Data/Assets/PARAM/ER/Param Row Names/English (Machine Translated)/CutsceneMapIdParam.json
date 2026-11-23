@@ -4,25 +4,25 @@
     {
       "ID": 0,
       "Entries": [
-        "Default data. Do not delete. Used when no param exists"
+        "Default Data.Do Not Delete.Used if No Param"
       ]
     },
     {
       "ID": 10000010,
       "Entries": [
-        "s10_00_0010_Boss Battle: Margit the Fell Omen_Battle Start"
+        "s10_00_0010_Boss Fight: Margit the Fell Omen_Battle Start"
       ]
     },
     {
       "ID": 10000020,
       "Entries": [
-        "s10_00_0020_Boss Battle: Grafted King_Battle Start"
+        "s10_00_0020_Boss Fight: The Grafted King_Battle Start"
       ]
     },
     {
       "ID": 10000030,
       "Entries": [
-        "s10_00_0030_Boss Battle: Grafted King_HU"
+        "s10_00_0030_Boss Fight: The Grafted King_HU"
       ]
     },
     {
@@ -34,109 +34,109 @@
     {
       "ID": 10000050,
       "Entries": [
-        "s10_00_0050_[Blackout CS] Gatekeeper Trap Triggered"
+        "s10_00_0050_[Fade-Out CS] Gatekeeper Trap Activation"
       ]
     },
     {
       "ID": 10010000,
       "Entries": [
-        "s10_01_0000_[Blackout CS] Grafted Spider_Defeat *With Dialogue"
+        "s10_01_0000_[Fade-Out CS] Grafted Spider_Defeat ※With Dialogue"
       ]
     },
     {
       "ID": 10010001,
       "Entries": [
-        "s10_01_0001_[Blackout CS] Grafted Spider_Victory *No Dialogue"
+        "s10_01_0001_[Fade-Out CS] Grafted Spider_Victory ※No Dialogue"
       ]
     },
     {
       "ID": 11000040,
       "Entries": [
-        "s11_00_0040_Boss Battle: Margit the Fell Omen (2nd Fight)_Battle Start"
+        "s11_00_0040_Boss Fight: Margit the Fell Omen (Fight 2)_Battle Start"
       ]
     },
     {
       "ID": 11050010,
       "Entries": [
-        "s11_05_0010_Boss Battle: Godfrey the Beast-clad_Battle Start"
+        "s11_05_0010_Boss Fight: Beast-Clad Godfrey_Battle Start"
       ]
     },
     {
       "ID": 11050020,
       "Entries": [
-        "s11_05_0020_Boss Battle: Godfrey the Beast-clad_HU"
+        "s11_05_0020_Boss Fight: Beast-Clad Godfrey_HU"
       ]
     },
     {
       "ID": 12010000,
       "Entries": [
-        "s12_01_0000 Warp to Underground Labyrinth (Poison Swamp Boss)_First Half"
+        "s12_01_0000 Underground Labyrinth (Poison Swamp Boss) Warp To_First Half"
       ]
     },
     {
       "ID": 12010001,
       "Entries": [
-        "s12_01_0001 Warp to Underground Labyrinth (Poison Swamp Boss)_Second Half"
+        "s12_01_0001 Underground Labyrinth (Poison Swamp Boss) Warp To_Second Half"
       ]
     },
     {
       "ID": 12020000,
       "Entries": [
-        "s12_02_0000_Warp to Underground Labyrinth (Royal Capital)_First Half"
+        "s12_02_0000_Underground Labyrinth (Leyndell) Warp To_First Half"
       ]
     },
     {
       "ID": 12020001,
       "Entries": [
-        "s12_02_0001_Warp to Underground Labyrinth (Royal Capital)_Second Half"
+        "s12_02_0001_Underground Labyrinth (Leyndell) Warp To_Second Half"
       ]
     },
     {
       "ID": 12030010,
       "Entries": [
-        "s12_03_0010_Warp to Underground Labyrinth (Poison Swamp)_First Half"
+        "s12_03_0010_Underground Labyrinth (Poison Swamp) Warp To_First Half"
       ]
     },
     {
       "ID": 12030011,
       "Entries": [
-        "s12_03_0011_Warp to Underground Labyrinth (Poison Swamp)_Second Half"
+        "s12_03_0011_Underground Labyrinth (Poison Swamp) Warp To_Second Half"
       ]
     },
     {
       "ID": 12030020,
       "Entries": [
-        "s12_03_0020 [Blackout CS] Entering the Dream"
+        "s12_03_0020 [Fade-Out CS] Enter the Dream"
       ]
     },
     {
       "ID": 12030021,
       "Entries": [
-        "s12_03_0021 [Blackout CS] Returning to the Dream"
+        "s12_03_0021 [Fade-Out CS] Return to the Dream"
       ]
     },
     {
       "ID": 12050020,
       "Entries": [
-        "s12_05_0020_Boss Battle: Greater Demon_Battle Start"
+        "s12_05_0020_Boss Fight: Greater Demon_Battle Start"
       ]
     },
     {
       "ID": 12060000,
       "Entries": [
-        "s12_06_0000_Bond with Ranni"
+        "s12_06_0000_Pact with Ranni"
       ]
     },
     {
       "ID": 13000010,
       "Entries": [
-        "s13_00_0010_Boss Battle: Ancient Dragon_Battle Start"
+        "s13_00_0010_Boss Fight: Ancient Dragon_Battle Start"
       ]
     },
     {
       "ID": 13000040,
       "Entries": [
-        "s13_00_0040_Boss Battle: Maliketh the Black Blade_HU"
+        "s13_00_0040_Boss Fight: Maliketh the Black Blade_HU"
       ]
     },
     {
@@ -148,97 +148,97 @@
     {
       "ID": 13000052,
       "Entries": [
-        "s13_00_0052_World Tree Burning (Pre-render Asset A)"
+        "s13_00_0052_World Tree Burning (Pre-Render Material A)"
       ]
     },
     {
       "ID": 13000054,
       "Entries": [
-        "s13_00_0054_World Tree Burning (Pre-render Asset B)"
+        "s13_00_0054_World Tree Burning (Pre-Render Material B)"
       ]
     },
     {
       "ID": 13000055,
       "Entries": [
-        "s13_00_0055_World Tree Burning (Pre-render)"
+        "s13_00_0055_World Tree Burning (Pre-Render)"
       ]
     },
     {
       "ID": 13000056,
       "Entries": [
-        "s13_00_0056_World Tree Burning (Pre-render Asset C)"
+        "s13_00_0056_World Tree Burning (Pre-Render Material C)"
       ]
     },
     {
       "ID": 13000058,
       "Entries": [
-        "s13_00_0058_World Tree Burning (Pre-render Asset D)"
+        "s13_00_0058_World Tree Burning (Pre-Render Material D)"
       ]
     },
     {
       "ID": 13000060,
       "Entries": [
-        "s13_00_0060_World Tree Burning (Royal Capital"
+        "s13_00_0060_World Tree Burning (Leyndell/Ash)"
       ]
     },
     {
       "ID": 14000000,
       "Entries": [
-        "s14_00_0000_Boss Battle: Rennala of the Full Moon_Battle Start"
+        "s14_00_0000_Boss Fight: Fertile Rennala_Battle Start"
       ]
     },
     {
       "ID": 14000001,
       "Entries": [
-        "s14_00_0001_Boss Battle: Rennala of the Full Moon_Battle Start (Light Test)"
+        "s14_00_0001_Boss Fight: Fertile Rennala_Battle Start (Light Test)"
       ]
     },
     {
       "ID": 14000010,
       "Entries": [
-        "s14_00_0010_Boss Battle: Rennala of the Full Moon_HU"
+        "s14_00_0010_Boss Fight: Fertile Rennala_HU"
       ]
     },
     {
       "ID": 15000000,
       "Entries": [
-        "s15_00_0000_Boss Battle: Malenia_Battle Start"
+        "s15_00_0000_Boss Fight: Malenia_Battle Start"
       ]
     },
     {
       "ID": 15000010,
       "Entries": [
-        "s15_00_0010_Boss Battle: Malenia_HU"
+        "s15_00_0010_Boss Fight: Malenia_HU"
       ]
     },
     {
       "ID": 15000020,
       "Entries": [
-        "s15_00_0020_Miquella the Bountiful"
+        "s15_00_0020_Miquella of Abundance"
       ]
     },
     {
       "ID": 16000000,
       "Entries": [
-        "s16_00_0000_Mid-Boss Bridge Opened"
+        "s16_00_0000_Bridge Before Mid-Boss Opens"
       ]
     },
     {
       "ID": 16000010,
       "Entries": [
-        "s16_00_0010_[Blackout CS] Warp to Ghoul King Boss Room"
+        "s16_00_0010_[Fade-Out CS] Warp to King of Ghouls Boss Room"
       ]
     },
     {
       "ID": 16000020,
       "Entries": [
-        "s16_00_0020_Boss Battle: Ghoul King_HU"
+        "s16_00_0020_Boss Fight: King of Ghouls_HU"
       ]
     },
     {
       "ID": 19000000,
       "Entries": [
-        "s19_00_0000_Crumbling Marika_HU"
+        "s19_00_0000_Collapsed Marika_HU"
       ]
     },
     {
@@ -256,13 +256,13 @@
     {
       "ID": 19000015,
       "Entries": [
-        "s19_00_0015_Ending A (Second Half Royal Capital)"
+        "s19_00_0015_Ending A (Second Half Leyndell)"
       ]
     },
     {
       "ID": 19000019,
       "Entries": [
-        "s19_00_0019_Ending A-1 (For Pre-render)"
+        "s19_00_0019_Ending A-1 (For Pre-Render)"
       ]
     },
     {
@@ -292,25 +292,25 @@
     {
       "ID": 19000032,
       "Entries": [
-        "s19_00_0032_Ending C (Prerender: Sky of Dark Flame)"
+        "s19_00_0032_Ending C (For Pre-Render: Frenzied Flame Sky)"
       ]
     },
     {
       "ID": 19000034,
       "Entries": [
-        "s19_00_0034_Ending C (Prerender: Second Half)"
+        "s19_00_0034_Ending C (For Pre-Render: Second Half)"
       ]
     },
     {
       "ID": 19000040,
       "Entries": [
-        "s19_00_0040_Crumbling Marika Fight Start"
+        "s19_00_0040_Collapsed Marika Fight Start"
       ]
     },
     {
       "ID": 19000050,
       "Entries": [
-        "s19_00_0050_[Blackout CS] Crumbling Marika HU Defeated"
+        "s19_00_0050_[Fade-Out CS] Collapsed Marika HU Defeated"
       ]
     },
     {
@@ -328,7 +328,7 @@
     {
       "ID": 19000069,
       "Entries": [
-        "s19_00_0069_Ending A-2 (Prerender)"
+        "s19_00_0069_Ending A-2 (For Pre-Render)"
       ]
     },
     {
@@ -346,7 +346,7 @@
     {
       "ID": 19000079,
       "Entries": [
-        "s19_00_0079_Ending A-3 (Prerender)"
+        "s19_00_0079_Ending A-3 (For Pre-Render)"
       ]
     },
     {
@@ -364,109 +364,109 @@
     {
       "ID": 19000089,
       "Entries": [
-        "s19_00_0089_Ending A-4 (Prerender)"
+        "s19_00_0089_Ending A-4 (For Pre-Render)"
       ]
     },
     {
       "ID": 31000000,
       "Entries": [
-        "s31_00_0000 [Blackout CS] Opens Patch's Trapped Chest Without Prompt"
+        "s31_00_0000 [Fade-Out CS] Opening Patches\u0027 Trap Chest on Your Own"
       ]
     },
     {
       "ID": 31000001,
       "Entries": [
-        "s31_00_0001 [Blackout CS] Opens Patch's Trapped Chest When Prompted"
+        "s31_00_0001 [Fade-Out CS] Opening Patches\u0027 Trap Chest When Prompted"
       ]
     },
     {
       "ID": 34100000,
       "Entries": [
-        "s34_10_0000_Cataclysm: Crater (Green)_Before"
+        "s34_10_0000_Cataclysm: Crater (Green)_Front"
       ]
     },
     {
       "ID": 34100002,
       "Entries": [
-        "s34_10_0002_Cataclysm: Crater (Green)_After"
+        "s34_10_0002_Cataclysm: Crater (Green)_Back"
       ]
     },
     {
       "ID": 34110000,
       "Entries": [
-        "s34_11_0000_Inverted Tower Reversal"
+        "s34_11_0000_Inverted Tower Flip"
       ]
     },
     {
       "ID": 34110001,
       "Entries": [
-        "s34_11_0001_Inverted Tower Reversal-Restore"
+        "s34_11_0001_Inverted Tower Flip-Restoration"
       ]
     },
     {
       "ID": 34110010,
       "Entries": [
-        "s34_11_0010_Warp from Inverted Tower Bottom Floor to Bridge of God"
+        "s34_11_0010_Warp from Inverted Tower Bottom to Divine Bridge"
       ]
     },
     {
       "ID": 34130000,
       "Entries": [
-        "s34_13_0000_Cataclysm: Crater (Plains)_Before"
+        "s34_13_0000_Cataclysm: Crater (Plains)_Front"
       ]
     },
     {
       "ID": 34130002,
       "Entries": [
-        "s34_13_0002_Cataclysm: Crater (Plains)_After"
+        "s34_13_0002_Cataclysm: Crater (Plains)_Back"
       ]
     },
     {
       "ID": 35000000,
       "Entries": [
-        "s35_00_0000_Receiving the Mad Flame"
+        "s35_00_0000_Receiving the Frenzied Flame"
       ]
     },
     {
       "ID": 35000010,
       "Entries": [
-        "s35_00_0010_[Blackout CS] Defiles Dung Eater with Curse"
+        "s35_00_0010_[Fade-Out CS] Defile Dung Eater with Curse"
       ]
     },
     {
       "ID": 35000020,
       "Entries": [
-        "s35_00_0020_[Blackout CS] Defiles Dung Eater with Curse and Dies"
+        "s35_00_0020_[Fade-Out CS] Defile Dung Eater with Curse, Perish"
       ]
     },
     {
       "ID": 60370000,
       "Entries": [
-        "s60_37_0000 Patch Push Off Cliff"
+        "s60_37_0000 Patches Push-Off"
       ]
     },
     {
       "ID": 60380000,
       "Entries": [
-        "s60_38_0000_Giant Elevator Activation_Lake→Highland (First Half)"
+        "s60_38_0000_Giant Elevator Activation_Lake → Altus (First Half)"
       ]
     },
     {
       "ID": 60380001,
       "Entries": [
-        "s60_38_0001_Giant Elevator Activation_Lake→Highland (Second Half)"
+        "s60_38_0001_Giant Elevator Activation_Lake → Altus (Second Half)"
       ]
     },
     {
       "ID": 60380010,
       "Entries": [
-        "s60_38_0010_Giant Elevator Activation_Highland→Lake (First Half)"
+        "s60_38_0010_Giant Elevator Activation_Altus → Lake (First Half)"
       ]
     },
     {
       "ID": 60380011,
       "Entries": [
-        "s60_38_0011_Giant Elevator Activation_Highland→Lake (Second Half)"
+        "s60_38_0011_Giant Elevator Activation_Altus → Lake (Second Half)"
       ]
     },
     {
@@ -526,73 +526,73 @@
     {
       "ID": 60490000,
       "Entries": [
-        "s60_49_0000_Giant Elevator Activation_Highland→Snowy Mountain (First Half)"
+        "s60_49_0000_Giant Elevator Activation_Altus → Snow Mountain (First Half)"
       ]
     },
     {
       "ID": 60490001,
       "Entries": [
-        "s60_49_0001_Giant Elevator Activation_Highland→Snowy Mountain (Second Half)"
+        "s60_49_0001_Giant Elevator Activation_Altus → Snow Mountain (Second Half)"
       ]
     },
     {
       "ID": 60490010,
       "Entries": [
-        "s60_49_0010_Giant Elevator Activation_Snowy Mountain→Highland (First Half)"
+        "s60_49_0010_Giant Elevator Activation_Snow Mountain → Altus (First Half)"
       ]
     },
     {
       "ID": 60490011,
       "Entries": [
-        "s60_49_0011_Giant Elevator Activation_Snowy Mountain→Highland (Second Half)"
+        "s60_49_0011_Giant Elevator Activation_Snow Mountain → Altus (Second Half)"
       ]
     },
     {
       "ID": 60490020,
       "Entries": [
-        "s60_49_0020_Giant Elevator Activation_Highland→Mid Snowy Mountain (First Half)"
+        "s60_49_0020_Giant Elevator Activation_Altus → Snow Mountain Midway (First Half)"
       ]
     },
     {
       "ID": 60490021,
       "Entries": [
-        "s60_49_0021_Giant Elevator Activation_Highland→Mid Snowy Mountain (Second Half)"
+        "s60_49_0021_Giant Elevator Activation_Altus → Snow Mountain Midway (Second Half)"
       ]
     },
     {
       "ID": 60490030,
       "Entries": [
-        "s60_49_0030_Giant Elevator Activation_Mid Snowy Mountain→Highland (First Half)"
+        "s60_49_0030_Giant Elevator Activation_Snow Mountain Midway → Altus (First Half)"
       ]
     },
     {
       "ID": 60490031,
       "Entries": [
-        "s60_49_0031_Giant Elevator Activation_Mid Snowy Mountain→Highland (Second Half)"
+        "s60_49_0031_Giant Elevator Activation_Snow Mountain Midway → Altus (Second Half)"
       ]
     },
     {
       "ID": 60500000,
       "Entries": [
-        "s60_50_0000_[Blackout CS] Malenia's Daughter Inserts Needle to Suppress Rot"
+        "s60_50_0000_[Fade-Out CS] Malenia\u0027s Daughter Inserts Needle to Suppress Rot"
       ]
     },
     {
       "ID": 60510000,
       "Entries": [
-        "s60_51_0000_Boss Fight: Scrawny Horse Radahn_Fight Start"
+        "s60_51_0000_Boss Fight: Radahn of the Scrawny Horse_Battle Start"
       ]
     },
     {
       "ID": 60510010,
       "Entries": [
-        "s60_51_0010_Scrawny Horse Radahn Defeated (Meteor Fall)"
+        "s60_51_0010_Radahn of the Scrawny Horse Defeated (Meteor Fall)"
       ]
     },
     {
       "ID": 60510011,
       "Entries": [
-        "s60_51_0011_Scrawny Horse Radahn Defeated (Meteor Fall)_Separate Grid"
+        "s60_51_0011_Radahn of the Scrawny Horse Defeated (Meteor Fall)_Different Grid"
       ]
     },
     {
@@ -604,25 +604,25 @@
     {
       "ID": 60540000,
       "Entries": [
-        "s60_54_0000_Obtaining Giant's Flame_First Half"
+        "s60_54_0000_Obtaining the Fire of the Giants_First Half"
       ]
     },
     {
       "ID": 60540001,
       "Entries": [
-        "s60_54_0001_Obtaining Giant's Flame (Mad Flame Route)_First Half"
+        "s60_54_0001_Obtaining the Fire of the Giants (Frenzied Flame Route)_First Half"
       ]
     },
     {
       "ID": 60540010,
       "Entries": [
-        "s60_54_0010_Obtaining Giant's Flame_Second Half"
+        "s60_54_0010_Obtaining the Fire of the Giants_Second Half"
       ]
     },
     {
       "ID": 60540011,
       "Entries": [
-        "s60_54_0011_Obtaining Giant's Flame (Mad Flame Route)_Second Half"
+        "s60_54_0011_Obtaining the Fire of the Giants (Frenzied Flame Route)_Second Half"
       ]
     },
     {
@@ -670,13 +670,13 @@
     {
       "ID": 91000000,
       "Entries": [
-        "s91_00_0000_Scrawny Horse Radahn_Fight Start_Work Use"
+        "s91_00_0000_Radahn of the Scrawny Horse_Battle Start_For Work"
       ]
     },
     {
       "ID": 91000010,
       "Entries": [
-        "s91_00_0010_Bountiful Miquella_Work Use"
+        "s91_00_0010_Miquella of Abundance_For Work"
       ]
     },
     {

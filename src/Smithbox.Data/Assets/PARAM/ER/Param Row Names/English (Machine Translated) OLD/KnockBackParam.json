@@ -1,0 +1,47 @@
+{
+  "Name": "KnockBackParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Generic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For PC"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Enemy Generic old"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Enemy Generic Test"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Enemy Generic old2"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Enemy Generic old3"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Enemy Generic_FDP"
+      ]
+    }
+  ]
+}

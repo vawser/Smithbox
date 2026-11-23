@@ -4,109 +4,109 @@
     {
       "ID": 10,
       "Entries": [
-        "Graveyard Plains First Half (80)"
+        "Graveyard Plains/First Half (80)"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Graveyard Plains First Half / Graveyard Plains Second Half"
+        "Graveyard Plains/First Half / Graveyard Plains/Second Half"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Graveyard Plains First Half / Roadside Fort"
+        "Graveyard Plains/First Half / Highway Fort"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "Graveyard Plains First Half / Roadside Fort (Low)"
+        "Graveyard Plains/First Half / Highway Fort (Low)"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "Graveyard Plains First Half (80): First Time"
+        "Graveyard Plains/First Half (80): First Time"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Road Fort"
+        "Highway Fort"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "Road Fort / Graveyard Plains Second Half"
+        "Highway Fort / Graveyard Plains/Second Half"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Graveyard Plains Second Half"
+        "Graveyard Plains/Second Half"
       ]
     },
     {
       "ID": 21,
       "Entries": [
-        "Graveyard Plains Second Half / Mohenjo-daro"
+        "Graveyard Plains/Second Half / Mohenjo-daro"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Graveyard Plains Second Half / Central Fort Rear"
+        "Graveyard Plains/Second Half / Behind Central Fort"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Graveyard Plains Ark"
+        "Graveyard Plains/Ark"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Graveyard Plains Ark / Dragon Mountain West"
+        "Graveyard Plains/Ark / Dragon Mountain/West"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "Graveyard Plains Ark / Dragon Mountain Foot"
+        "Graveyard Plains/Ark / Dragon Mountain/Foothills"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        "Graveyard Plains Ark / Dragon Mountain (Weak)"
+        "Graveyard Plains/Ark / Dragon Mountain (Weak)"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "Dragon Mountain West"
+        "Dragon Mountain/West"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Dragon Mountain West / Graveyard Plains First Half"
+        "Dragon Mountain/West / Graveyard Plains/First Half"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Dragon Mountain Foothills"
+        "Dragon Mountain/Foothills"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Dragon Mountain Foothills / Graveyard Plains First Half"
+        "Dragon Mountain/Foothills / Graveyard Plains/First Half"
       ]
     },
     {
@@ -130,7 +130,7 @@
     {
       "ID": 70,
       "Entries": [
-        "Central Fort Rear"
+        "Central Fort/Rear"
       ]
     },
     {
@@ -142,25 +142,25 @@
     {
       "ID": 81,
       "Entries": [
-        "Abyss / Graveyard Plains First Half"
+        "Abyss / Graveyard Plains/First Half"
       ]
     },
     {
       "ID": 82,
       "Entries": [
-        "Abyss / Graveyard Plains Second Half"
+        "Abyss / Graveyard Plains/Second Half"
       ]
     },
     {
       "ID": 83,
       "Entries": [
-        "Abyss / Dragon Mountain West"
+        "Abyss / Dragon Mountain/West"
       ]
     },
     {
       "ID": 84,
       "Entries": [
-        "Abyss / Dragon Mountain Foothills"
+        "Abyss / Dragon Mountain/Foothills"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 90,
       "Entries": [
-        "Mohenjo-Daro"
+        "Mohenjo-daro"
       ]
     },
     {

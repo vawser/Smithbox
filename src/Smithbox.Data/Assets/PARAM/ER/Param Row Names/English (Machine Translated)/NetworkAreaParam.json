@@ -10,19 +10,19 @@
     {
       "ID": 300000,
       "Entries": [
-        "Eclipse Royal Castle 1"
+        "Eclipse Castle 1"
       ]
     },
     {
       "ID": 301000,
       "Entries": [
-        "Eclipse Royal Castle 2"
+        "Eclipse Castle 2"
       ]
     },
     {
       "ID": 302000,
       "Entries": [
-        "Eclipse Royal Castle 3"
+        "Eclipse Castle 3"
       ]
     },
     {
@@ -52,25 +52,25 @@
     {
       "ID": 360000,
       "Entries": [
-        "God Tomb"
+        "Divine Tomb"
       ]
     },
     {
       "ID": 370000,
       "Entries": [
-        "Anor Londo Ruins"
+        "Anor Ruins"
       ]
     },
     {
       "ID": 380000,
       "Entries": [
-        "Ruined Capital"
+        "Ruined City"
       ]
     },
     {
       "ID": 390000,
       "Entries": [
-        "Underground Prison"
+        "Dungeon"
       ]
     },
     {

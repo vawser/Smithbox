@@ -1,0 +1,137 @@
+{
+  "Name": "CutsceneWeatherOverrideGparamConvertParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Clear"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Clear Skies"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Light Overcast"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Cloudy"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Rain"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Heavy Rain"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Storm"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Storm"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Snow"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Heavy Snow"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Mist"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Dense Fog"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Dense Fog Rain"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Sandstorm"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Blizzard"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Storm (Lightning)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Special Snow (Spare Weather 3)"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Spare Weather 4 ↓Unused spare in product."
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Spare Weather 5"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Spare Weather 6"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Spare Weather 7"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Spare Weather 8"
+      ]
+    }
+  ]
+}

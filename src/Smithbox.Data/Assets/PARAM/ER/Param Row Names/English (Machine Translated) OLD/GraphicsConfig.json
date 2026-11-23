@@ -1,0 +1,59 @@
+{
+  "Name": "GraphicsConfig",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Win"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "PS4 Pro"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "XBoxOne"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "XBoxOneX"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "PS5"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "XBoxSeriesS"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "XBoxSeriesX"
+      ]
+    }
+  ]
+}

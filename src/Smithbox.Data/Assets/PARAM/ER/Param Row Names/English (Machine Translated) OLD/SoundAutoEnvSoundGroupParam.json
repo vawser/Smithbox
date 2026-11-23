@@ -1,0 +1,41 @@
+{
+  "Name": "SoundAutoEnvSoundGroupParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default Parameter"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Open Sea Beach"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Open Sea Inner Sea"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Open Lake Audible Range 35m"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Open Lake Audible Range 20m"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "River"
+      ]
+    }
+  ]
+}

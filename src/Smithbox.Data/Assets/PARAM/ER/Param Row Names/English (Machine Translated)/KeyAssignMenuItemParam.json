@@ -16,31 +16,31 @@
     {
       "ID": 3,
       "Entries": [
-        "Movement (Forward)"
+        "Movement (Front)"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "Move (Back)"
+        "Movement (Back)"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Move (Left)"
+        "Movement (Left)"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Move (Right)"
+        "Movement (Right)"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Backstep"
+        "Backstep, Roll, Dash"
       ]
     },
     {
@@ -52,49 +52,49 @@
     {
       "ID": 9,
       "Entries": [
-        "Crouch / Crouch Release"
+        "Crouch/Stand Up"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Camera Operation"
+        "Camera Control"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Camera Operation"
+        "Camera Control, Change Lock-On Target (Top)"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Camera Operation"
+        "Camera Control, Change Lock-On Target (Bottom)"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "Camera Operation"
+        "Camera Control, Change Lock-On Target (Left)"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "Camera Operation"
+        "Camera Control, Change Lock-On Target (Right)"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Camera Reset"
+        "Camera Reset, Lock Target/Release"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "Weapon Switch"
+        "Switch Weapon"
       ]
     },
     {
@@ -106,19 +106,19 @@
     {
       "ID": 18,
       "Entries": [
-        "Item Switch"
+        "Switch Item"
       ]
     },
     {
       "ID": 19,
       "Entries": [
-        "Right hand weapon switch"
+        "Switch Right Hand Weapon"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Left hand weapon switch"
+        "Switch Left Hand Weapon"
       ]
     },
     {
@@ -130,37 +130,37 @@
     {
       "ID": 22,
       "Entries": [
-        "Attack (Right Hand Weapon"
+        "Attack (Right-Hand Weapon, Two-Handed Weapon)"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Heavy Attack (Right-hand Weapon"
+        "Heavy Attack (Right-Hand Weapon, Two-Handed Weapon)"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Guard (Left hand weapon)"
+        "Guard (Left-Hand Weapon)"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Skill"
+        "Ash of War"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Item Use"
+        "Use Item"
       ]
     },
     {
       "ID": 27,
       "Entries": [
-        "Event Action (Examine"
+        "Event Action (Examine, Open etc.)"
       ]
     }
   ]

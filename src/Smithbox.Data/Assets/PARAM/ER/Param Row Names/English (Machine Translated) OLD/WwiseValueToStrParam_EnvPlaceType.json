@@ -1,0 +1,263 @@
+{
+  "Name": "WwiseValueToStrParam_EnvPlaceType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "000:Ambient Sound_Green Area"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "010:Ambient Sound_Lake Area"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "020:Ambient Sound_Highland Area"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "030:Ambient Sound_Plains Area"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "040:Ambient Sound_Snowy Mountain Area"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "050:Ambient Sound_m61 Graveyard Plains"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "051:Ambient Sound_m61 Graveyard Plains (Second Half)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "052:Ambient Sound_m61 Mohenjo-daro"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "053:Ambient Sound_m61 Dark World Tree"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "054:Ambient Sound_m61 Abyss Forest"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "100:Ambient Sound_Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "110:Ambient Sound_Royal Capital"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "120:Ambient Sound_Underground Labyrinth"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "130:Ambient Sound_Descending Ruins"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "140:Ambient Sound_Academy"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "150:Ambient Sound_Rotten Great Tree"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "160:Ambient Sound_Volcano Prison"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "180:Ambient Sound_Tutorial Map"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "190:Ambient Sound_Ritual"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "200:Ambient Sound_m20 Babel (Lower Level)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "201Ambient Sound_:m20 Babel (Upper Level)"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "202:Ambient Sound_m20 Babel (After Revival)"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "210:Ambient Sound_m21 Central Fort"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "220:Ambient Sound_m22 Ark"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "221:Ambient Sound_NPC Torina"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "250:Ambient Sound_m25 Underground Space"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "280:Ambient Sound_m28 Manor"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "300:Ambient Sound_Catacombs"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "310:Ambient Sound_Cave"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "320:Ambient Sound_Tunnel"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "340:Ambient Sound_Tower"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "350:Ambient Sound_Royal Capital Underground"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "390:Ambient Sound_Cliff Tunnel"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "400:Environment Sound_m40 Catacombs"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "410:Ambient Sound_m41 Prison"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "420:Ambient Sound_m42 Forge"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "430:Ambient Sound_m43 Cave"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "500:Environment Sound_Fort"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "550:Ambient Sound_Highway Fort"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "560:Ambient Sound_Dragon Mountain"
+      ]
+    },
+    {
+      "ID": 561,
+      "Entries": [
+        "561:Ambient Sound_Open Frontier"
+      ]
+    },
+    {
+      "ID": 562,
+      "Entries": [
+        "562:Ambient Sound_Finger Ruins"
+      ]
+    },
+    {
+      "ID": 563,
+      "Entries": [
+        "563:Ambient Sound_Marika Village"
+      ]
+    }
+  ]
+}

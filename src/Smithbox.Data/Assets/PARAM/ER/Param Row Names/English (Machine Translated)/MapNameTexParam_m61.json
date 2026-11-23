@@ -4,109 +4,109 @@
     {
       "ID": 10,
       "Entries": [
-        "Graveyard Plains First Half (-)"
+        "Graveyard Plains/First Half (-)"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "Graveyard Plains First Half (-) / Graveyard Plains Second Half (-)"
+        "Graveyard Plains/First Half (-) / Graveyard Plains/Second Half (-)"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Graveyard Plains First Half (-) / Graveyard Plains Directly Below (-)"
+        "Graveyard Plains/First Half (-) / Graveyard Plains/Directly Below (-)"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Graveyard Plains First Half (+)"
+        "Graveyard Plains/First Half (\u002B)"
       ]
     },
     {
       "ID": 20,
       "Entries": [
-        "Graveyard Plains Second Half (-)"
+        "Graveyard Plains/Second Half (-)"
       ]
     },
     {
       "ID": 22,
       "Entries": [
-        "Graveyard Plains Second Half (-) / Central Fort Rear"
+        "Graveyard Plains/Second Half (-) / Central Fort/Rear"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Graveyard Plains Second Half (-) / Graveyard Plains Second Half (+)"
+        "Graveyard Plains/Second Half (-) / Graveyard Plains/Second Half (\u002B)"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Graveyard Plains Second Half (+)"
+        "Graveyard Plains/Second Half (\u002B)"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Graveyard Plains Second Half (+) / Graveyard Plains Second Half (-)"
+        "Graveyard Plains/Second Half (\u002B) / Graveyard Plains/Second Half (-)"
       ]
     },
     {
       "ID": 30,
       "Entries": [
-        "Graveyard Plains Directly Below (-)"
+        "Graveyard Plains/Directly Below (-)"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "Graveyard Plains Direct Below (-) / Graveyard Plains Second Half (-)"
+        "Graveyard Plains/Directly Below (-) / Graveyard Plains/Second Half (-)"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        "Graveyard Plains Directly Below (-) / Mohenjo-daro (-)"
+        "Graveyard Plains/Directly Below (-) / Mohenjo-daro (-)"
       ]
     },
     {
       "ID": 35,
       "Entries": [
-        "Graveyard Plains Directly Below (+)"
+        "Graveyard Plains/Directly Below (\u002B)"
       ]
     },
     {
       "ID": 36,
       "Entries": [
-        "Graveyard Plains Directly Below (+) / Graveyard Plains Second Half (-)"
+        "Graveyard Plains/Directly Below (\u002B) / Cemetery Plains Latter Half (-)"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "Graveyard Plains Ark (-)"
+        "Graveyard Plains/Ark (-)"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "Graveyard Plains Ark (-) - Dragon Mountain Foot"
+        "Graveyard Plains/Ark (-) - Dragon Mountain/Foothills"
       ]
     },
     {
       "ID": 52,
       "Entries": [
-        "Graveyard Plains Ark (-) - Dragon Mountain West"
+        "Graveyard Plains/Ark (-) - Dragon Mountain/West"
       ]
     },
     {
       "ID": 55,
       "Entries": [
-        "Graveyard Plains Ark (+)"
+        "Graveyard Plains/Ark (\u002B)"
       ]
     },
     {
@@ -118,61 +118,61 @@
     {
       "ID": 65,
       "Entries": [
-        "Dragon Mountain (+)"
+        "Dragon Mountain (\u002B)"
       ]
     },
     {
       "ID": 70,
       "Entries": [
-        "Dragon Mountain Foothills (-)"
+        "Dragon Mountain/Foothills (-)"
       ]
     },
     {
       "ID": 75,
       "Entries": [
-        "Dragon Mountain Foothills (+)"
+        "Dragon Mountain/Foothills (\u002B)"
       ]
     },
     {
       "ID": 76,
       "Entries": [
-        "Dragon Mountain Foothills (+) / Graveyard Plains First Half"
+        "Dragon Mountain/Foothills (\u002B) / Graveyard Plains/First Half"
       ]
     },
     {
       "ID": 80,
       "Entries": [
-        "Dragon Mountain West (-)"
+        "Dragon Mountain/West (-)"
       ]
     },
     {
       "ID": 81,
       "Entries": [
-        "Dragon Mountain West (-) / Graveyard Plains First Half"
+        "Dragon Mountain/West (-) / Graveyard Plains/First Half"
       ]
     },
     {
       "ID": 90,
       "Entries": [
-        "Mohenjo-Daro (-)"
+        "Mohenjo-daro (-)"
       ]
     },
     {
       "ID": 95,
       "Entries": [
-        "Mohenjo-Daro (+)"
+        "Mohenjo-daro (\u002B)"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Central Fort Rear (-)"
+        "Central Fort/Rear (-)"
       ]
     },
     {
       "ID": 105,
       "Entries": [
-        "Central Fort Rear (+)"
+        "Central Fort/Rear (\u002B)"
       ]
     },
     {
@@ -184,13 +184,13 @@
     {
       "ID": 111,
       "Entries": [
-        "Abyss (-) / Graveyard Plains First Half"
+        "Abyss (-) / Graveyard Plains/First Half"
       ]
     },
     {
       "ID": 112,
       "Entries": [
-        "Abyss (-) / Graveyard Plains Second Half"
+        "Abyss (-) / Graveyard Plains/Second Half"
       ]
     },
     {
@@ -202,43 +202,43 @@
     {
       "ID": 114,
       "Entries": [
-        "Abyss (-) / Dragon Mountain Foothills"
+        "Abyss (-) / Dragon Mountain/Foothills"
       ]
     },
     {
       "ID": 115,
       "Entries": [
-        "Abyss (-) / Dragon Mountain Foothills (+)"
+        "Abyss (-) / Dragon Mountain/Foothills (\u002B)"
       ]
     },
     {
       "ID": 116,
       "Entries": [
-        "Abyss (-) / Dragon Mountain West"
+        "Abyss (-) / Dragon Mountain/West"
       ]
     },
     {
       "ID": 117,
       "Entries": [
-        "Abyss (+)"
+        "Abyss (\u002B)"
       ]
     },
     {
       "ID": 118,
       "Entries": [
-        "Abyss (+) / Graveyard Plains First Half"
+        "Abyss (\u002B) / Graveyard Plains/First Half"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "Roadside Fort (-)"
+        "Highway Fort (-)"
       ]
     },
     {
       "ID": 121,
       "Entries": [
-        "Road Fort (+)"
+        "Highway Fort (\u002B)"
       ]
     },
     {
