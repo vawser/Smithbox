@@ -184,15 +184,15 @@ public partial class FxEffectList
             GUI.Tooltip(LOC.Get("FX_EffectList_Resource_TT"));
         }
 
-        // Import an .fxr file, and the Project Check: FXR3 only (a DLSE project has neither yet)
-        bool structure = Data.CanEditStructure;
-        ImGui.BeginDisabled(!structure);
+        // Import an effect file: every format
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Download}##fxImport", DPI.IconButtonSize))
             RequestImport();
-        TooltipEvenDisabled(LOC.Get(!structure ? "FX_Structure_TT" : "FX_EffectList_Import_TT"));
+        GUI.Tooltip(LOC.Get("FX_EffectList_Import_TT", Ext));
 
-        // Project Check
+        // Project Check: FXR3 only (its checks read FXR nodes)
+        bool structure = Data.CanEditStructure;
+        ImGui.BeginDisabled(!structure);
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.CheckSquare}##fxProjectCheck", DPI.IconButtonSize))
         {
@@ -538,33 +538,34 @@ public partial class FxEffectList
 
         ImGui.Separator();
 
-        // DLSE effects can't be added, removed, renumbered, reverted, compared or exported as FXRs yet
-        ImGui.BeginDisabled(!Data.CanEditStructure);
+        // Every format (DS2 / DS2S keep their .sfxparam records in step on save, FFX Older Games Plan §22.8).
+        // An id with two versions (DES) keeps each in its own binders: its binders and id aren't changed as one
+        bool versions = targets.Any(HasVersions);
 
         if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Duplicate")}##fxDuplicate", InputManager.GetHint(KeybindID.Duplicate), false, single))
             RequestDuplicate(entry);
         GUI.Tooltip(LOC.Get("FX_EffectList_Duplicate_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Binders")}##fxBinders"))
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Binders")}##fxBinders", "", false, !versions))
             RequestBinders(targets);
-        GUI.Tooltip(LOC.Get("FX_EffectList_Binders_TT"));
+        TooltipEvenDisabled(versions ? LOC.Get("FX_EffectList_Versions_TT") : LOC.Get("FX_EffectList_Binders_TT"));
 
         if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Delete")}##fxDelete", InputManager.GetHint(KeybindID.Delete)))
             RequestDelete(targets);
         GUI.Tooltip(LOC.Get("FX_EffectList_Delete_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Change_Id")}##fxChangeId", "", false, single))
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Change_Id")}##fxChangeId", "", false, single && !versions))
             RequestChangeId(entry);
-        GUI.Tooltip(LOC.Get("FX_EffectList_Change_Id_TT"));
+        TooltipEvenDisabled(versions ? LOC.Get("FX_EffectList_Versions_TT") : LOC.Get("FX_EffectList_Change_Id_TT"));
 
         ImGui.Separator();
 
-        bool canRevert = targets.Any(CanRevert);
+        bool canRevert = targets.Any(CanRevertAny);
         if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Revert")}##fxRevert", "", false, canRevert))
-            Deferred.Add(() => Revert(targets.Where(CanRevert).ToList()));
+            Deferred.Add(() => Revert(targets.Where(CanRevertAny).ToList()));
         GUI.Tooltip(LOC.Get(canRevert ? "FX_EffectList_Revert_TT" : "FX_EffectList_Revert_None_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Compare_Vanilla")}##fxCompareVanilla", "", false, single && CanRevert(entry)))
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Compare_Vanilla")}##fxCompareVanilla", "", false, single && CanRevert(Shown(entry))))
             RequestCompareVanilla(entry);
         GUI.Tooltip(LOC.Get("FX_EffectList_Compare_Vanilla_TT"));
 
@@ -579,8 +580,6 @@ public partial class FxEffectList
             RequestCompareWith(entry);
         }
         GUI.Tooltip(LOC.Get("FX_EffectList_Compare_With_TT"));
-
-        ImGui.EndDisabled();
 
         ImGui.Separator();
 
@@ -612,9 +611,9 @@ public partial class FxEffectList
             RequestAlias(entry);
         GUI.Tooltip(LOC.Get("FX_EffectList_Edit_Alias_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get(single ? "FX_EffectList_Export" : "FX_EffectList_Export_Many")}##fxExport", "", false, Data.CanEditStructure))
+        if (ImGui.MenuItem($"{LOC.Get(single ? "FX_EffectList_Export" : "FX_EffectList_Export_Many", Ext)}##fxExport"))
             Deferred.Add(() => Export(targets));
-        GUI.Tooltip(LOC.Get("FX_EffectList_Export_TT"));
+        GUI.Tooltip(LOC.Get("FX_EffectList_Export_TT", Ext));
     }
 
     private void UsedByMenu(FxEntry entry)
@@ -709,7 +708,7 @@ public partial class FxEffectList
     /// <summary>Duplicate and Delete on the selected effect(s), while the Effect List has focus.</summary>
     public void Shortcuts()
     {
-        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectList) || ImGui.GetIO().WantTextInput || !Data.CanEditStructure)
+        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectList) || ImGui.GetIO().WantTextInput)
             return;
         var entry = Editor.Selection.Entry;
         if (entry == null || !Bank.Entries.ContainsKey(entry.Id))
@@ -747,7 +746,8 @@ public partial class FxEffectList
     private void OnEffectsChanged()
     {
         var selected = Editor.Selection.Entry;
-        if (selected != null && (!Bank.Entries.TryGetValue(selected.Id, out var e) || e != selected))
+        // A version (DES) stays selected while its id is in the bank
+        if (selected != null && (!Bank.Entries.TryGetValue(selected.Id, out var e) || e != selected.Main))
             Editor.Selection.SelectEntry(null);
         else
             Editor.Selection.ClearItem();

@@ -100,7 +100,6 @@
 - Add FX Reloader: support for DES/SDT/ER/NR/AC6
 - FX placement in map seems slightly off (candle flames too high), missing factor that positions them properly?
 
-- Continue FFX Older Games Plan.md
 
 #----------------------------------------------------
 # EMEVD Editor TODO

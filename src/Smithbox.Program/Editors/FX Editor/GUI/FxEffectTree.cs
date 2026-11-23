@@ -154,8 +154,9 @@ public partial class FxEffectTree
             FilterMatches.Clear();
         }
 
+        // Older games: what can be edited (everything, from F8; FFX Older Games Plan §22)
         if (!Data.CanEditStructure)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get(Data.CanEditDlseStructure || Data.CanEditFxr1Structure ? "FX_Dlse_Notice_Structure" : "FX_Dlse_Notice"));
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_Dlse_Notice_Effects"));
 
         // A DES id with different effects in different binders: one version per content, picked here
         DisplayVersionPicker(entry);

@@ -63,8 +63,33 @@ public partial class FxEffectList
 
     // ---------------------------------------------------------------- binders
 
-    private List<FileDictionaryEntry> AllBinders =>
-        Editor.Project.Locator.SfxFiles?.Entries?.OrderBy(e => e.Filename, StringComparer.OrdinalIgnoreCase).ToList() ?? new();
+    /// <summary>
+    /// The sfx binders an effect can be put in. Where the game ships a binder twice (DES, DS2: x.ffxbnd beside
+    /// x.ffxbnd.dcx), only the .dcx is listed, as the bank indexes it; saving writes the twin with it.
+    /// </summary>
+    private List<FileDictionaryEntry> AllBinders
+    {
+        get
+        {
+            var all = Editor.Project.Locator.SfxFiles?.Entries?.OrderBy(e => e.Filename, StringComparer.OrdinalIgnoreCase).ToList() ?? new();
+            if (!Bank.IsFfx)
+                return all;
+            var paths = all.Select(b => b.Path).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            return all.Where(b => !(b.Path.EndsWith(".ffxbnd", StringComparison.OrdinalIgnoreCase) && paths.Contains(b.Path + ".dcx"))).ToList();
+        }
+    }
+
+    /// <summary>The version of an id the Effect Tree shows (DES ids can have two), else the entry itself.</summary>
+    private FxEntry Shown(FxEntry entry) => Editor.Selection.Entry is { } s && s.Main == entry.Main ? s : entry;
+
+    /// <summary>
+    /// The id holds different effects in different binders (DES, decision §8.5): its binders and id can't be changed
+    /// as one, since each version keeps its own binders.
+    /// </summary>
+    private static bool HasVersions(FxEntry entry) => entry.Main.Versions?.Count > 1;
+
+    /// <summary>"Export .ffx", "Import .fxr": the game's effect file extension, for the labels.</summary>
+    private string Ext => Bank.EffectExtension;
 
     // A sample FXR name per binder (the folder its effects are stored under), rebuilt when the bank changes
     private Dictionary<string, string> SampleNames;
@@ -76,13 +101,14 @@ public partial class FxEffectList
         if (SampleNames == null || SampleVersion != Bank.Version)
         {
             SampleNames = new(StringComparer.OrdinalIgnoreCase);
-            foreach (var e in Bank.Entries.Values)
+            // Every version's binders: DES's ds_sfxbnd_main keeps its effects in its own folder (Main\tmp\Effect\)
+            foreach (var e in Bank.AllEntries)
                 foreach (var b in e.Binders)
                     SampleNames.TryAdd(b.Binder.Path, b.InternalName);
             SampleVersion = Bank.Version;
         }
-        var sample = SampleNames.GetValueOrDefault(binder.Path) ?? SampleNames.Values.FirstOrDefault() ?? $"sfx\\effect\\{stem}.fxr";
-        return FxBank.SiblingName(sample, stem, ".fxr");
+        var sample = SampleNames.GetValueOrDefault(binder.Path) ?? SampleNames.Values.FirstOrDefault() ?? $"sfx\\effect\\{stem}{Ext}";
+        return FxBank.SiblingName(sample, stem, Ext);
     }
 
     private string BinderSearch = "";
@@ -196,6 +222,7 @@ public partial class FxEffectList
 
     private void RequestDuplicate(FxEntry entry)
     {
+        entry = Shown(entry);
         DuplicateSource = entry;
         DuplicateId = Bank.FreeId(entry.Id + 1);
         DuplicateTicks = entry.Binders.ToDictionary(b => b.Binder.Path, _ => 1, StringComparer.OrdinalIgnoreCase);
@@ -211,7 +238,7 @@ public partial class FxEffectList
         ImGui.InputInt($"##{id}", ref value);
         value = Math.Max(0, value);
         ImGui.SameLine();
-        ImGui.TextDisabled($"f{value:D9}");
+        ImGui.TextDisabled(Bank.StemFor(value));
         bool taken = Bank.IsIdTaken(value);
         if (taken)
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_EffectTree_Extract_Taken"));
@@ -251,27 +278,23 @@ public partial class FxEffectList
         ImGui.EndPopup();
     }
 
-    /// <summary>The effect as it is now (unsaved edits included), as a separate copy.</summary>
-    private FXR CopyOf(FxEntry entry)
-    {
-        var fxr = entry.IsLoaded ? entry.Fxr : Bank.ReadCopy(entry);
-        if (fxr == null)
-            return null;
-        if (fxr.Version == FXR.FXRVersion.Sekiro)
-            fxr.RebuildReferences();
-        // A write and read gives a copy with nothing shared with the original
-        return FXR.Read(fxr.Write());
-    }
+    /// <summary>
+    /// The effect as it is now (unsaved edits included), as a separate file object of the game's format (FXR, FFXDLSE
+    /// or FXR1; a write and read, so nothing is shared with the original). Null when it can't be read.
+    /// </summary>
+    private object CopyOf(FxEntry entry) => Bank.ReadFileCopy(entry);
 
-    private FxEntry MakeEntry(int id, FXR fxr, IEnumerable<string> binderPaths, byte[] resourceList)
+    /// <summary>A new effect entry holding <paramref name="file"/> under <paramref name="id"/> (set inside the file too), in the given binders.</summary>
+    private FxEntry MakeEntry(int id, object file, IEnumerable<string> binderPaths, byte[] resourceList)
     {
         var binders = AllBinders.ToDictionary(b => b.Path, StringComparer.OrdinalIgnoreCase);
-        var stem = $"f{id:D9}";
-        fxr.Id = id;
-        return new FxEntry
+        var stem = Bank.StemFor(id);
+        Model.FfxEffectFile.SetId(file, id);
+        var entry = new FxEntry
         {
             Id = id,
-            Fxr = fxr,
+            // The older games' names aren't f<id:D9> (DES / DS1 pad to 7 digits)
+            NameStem = Bank.IsFfx ? stem : null,
             Binders = binderPaths
                 .Where(binders.ContainsKey)
                 .Select(p => new FxBinderRef(binders[p], NameIn(binders[p], stem)))
@@ -279,9 +302,11 @@ public partial class FxEffectList
                 .ToList(),
             ResourceList = resourceList,
         };
+        FxBank.SetLoaded(entry, file);
+        return entry;
     }
 
-    /// <summary>A copy of the effect under a new id, in the given binders (written on save).</summary>
+    /// <summary>A copy of the effect under a new id, in the given binders (written on save). For an id with versions, the one shown is copied.</summary>
     public void DuplicateEffect(FxEntry source, int id, List<string> binderPaths)
     {
         if (Bank.IsIdTaken(id))
@@ -292,6 +317,9 @@ public partial class FxEffectList
         var created = MakeEntry(id, fxr, binderPaths, source.ResourceList);
         if (created.Binders.Count == 0)
             return;
+        // DS2 / DS2S: the copy gets the source's effect-table record (§22.8)
+        created.NeedsRecord = Bank.HasEffectTable;
+        created.RecordFrom = source.Id;
         Execute(new FxEntryPresenceAction(Bank, new() { created }, true, OnEffectsChanged));
         Select(created);
         Editor.Selection.FocusEntry = true;
@@ -364,8 +392,8 @@ public partial class FxEffectList
     /// <summary>Deletes the effects; their files leave every binder on save. Undo brings them back.</summary>
     public void DeleteEffects(List<FxEntry> targets)
     {
-        // Loaded, so that undoing after the save can write them back
-        var list = targets.Where(t => Bank.Load(t)).ToList();
+        // Loaded, every version (DES), so that undoing after the save can write them back
+        var list = targets.Select(t => t.Main).Distinct().Where(t => t.AllVersions.All(Bank.Load)).ToList();
         if (list.Count == 0)
             return;
         Execute(new FxEntryPresenceAction(Bank, list, false, OnEffectsChanged));
@@ -378,15 +406,18 @@ public partial class FxEffectList
     private static bool CanRevert(FxEntry e) =>
         e.Vanilla == FxVanillaState.Modified && e.VanillaPacked != null || e.Vanilla == FxVanillaState.Same && e.IsLoaded && e.IsDirty;
 
-    /// <summary>Replaces each effect's content with the game's (undoable; saved like any edit).</summary>
+    /// <summary>Whether any version of the id can be reverted.</summary>
+    private static bool CanRevertAny(FxEntry e) => e.AllVersions.Any(CanRevert);
+
+    /// <summary>Replaces each effect's content with the game's (undoable; saved like any edit). Every version of an id that differs is reverted.</summary>
     public void Revert(List<FxEntry> targets)
     {
         var actions = new List<EditorAction>();
-        foreach (var t in targets)
+        foreach (var t in targets.SelectMany(t => t.AllVersions).Distinct().Where(CanRevert))
         {
             if (!Bank.Load(t))
                 continue;
-            var vanilla = Bank.ReadVanilla(t);
+            var vanilla = Bank.ReadVanillaFile(t);
             if (vanilla != null)
                 actions.Add(new FxReplaceEffectAction(Bank, t, vanilla, OnEffectsChanged));
         }
@@ -465,22 +496,25 @@ public partial class FxEffectList
 
     // ---------------------------------------------------------------- export / import
 
-    /// <summary>Writes the effects (unsaved edits included) as .fxr files: one picked path, or a folder for several.</summary>
+    /// <summary>
+    /// Writes the effects (unsaved edits included) as the game's effect files (.fxr; .ffx for DES, DS1, DS1R, DS2,
+    /// DS2S): one picked path, or a folder for several. An id with versions writes the one shown.
+    /// </summary>
     public void Export(List<FxEntry> targets)
     {
         if (targets.Count == 1)
         {
-            if (!PlatformUtils.Instance.SaveFileDialog(LOC.Get("FX_EffectList_Export"), new[] { "fxr" }, out var path) || string.IsNullOrEmpty(path))
+            if (!PlatformUtils.Instance.SaveFileDialog(LOC.Get("FX_EffectList_Export", Ext), new[] { Ext[1..] }, out var path) || string.IsNullOrEmpty(path))
                 return;
-            if (!path.EndsWith(".fxr", StringComparison.OrdinalIgnoreCase))
-                path += ".fxr";
-            WriteEffect(targets[0], path);
+            if (!path.EndsWith(Ext, StringComparison.OrdinalIgnoreCase))
+                path += Ext;
+            WriteEffect(Shown(targets[0]), path);
             return;
         }
 
-        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("FX_EffectList_Export_Many"), out var folder) || string.IsNullOrEmpty(folder))
+        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("FX_EffectList_Export_Many", Ext), out var folder) || string.IsNullOrEmpty(folder))
             return;
-        int written = targets.Count(t => WriteEffect(t, Path.Join(folder, $"{t.Stem}.fxr")));
+        int written = targets.Count(t => WriteEffect(Shown(t), Path.Join(folder, $"{t.Stem}{Ext}")));
         Smithbox.Log(this, LOC.Get("FX_EffectList_Export_Done_Many", written, folder));
     }
 
@@ -488,10 +522,10 @@ public partial class FxEffectList
     {
         try
         {
-            var fxr = CopyOf(entry);
-            if (fxr == null)
+            var file = CopyOf(entry);
+            if (file == null)
                 return false;
-            File.WriteAllBytes(path, fxr.Write());
+            File.WriteAllBytes(path, Model.FfxEffectFile.Write(file));
             Smithbox.Log(this, LOC.Get("FX_EffectList_Export_Done", entry.Stem, path));
             return true;
         }
@@ -502,31 +536,34 @@ public partial class FxEffectList
         }
     }
 
-    private FXR ImportFxr;
+    private object ImportFile;
     private string ImportPath;
     private int ImportId;
     private bool ImportReplace;
     private Dictionary<string, int> ImportTicks = new();
     private string ImportVersionWarning;
 
+    /// <summary>The older formats can't play a file of another kind at all (DES's stream in DS2, a DS1 file in DS1R), so it's refused.</summary>
+    private bool ImportRefused;
+
     private void RequestImport()
     {
-        if (!PlatformUtils.Instance.OpenFileDialog(LOC.Get("FX_EffectList_Import"), new[] { "fxr" }, out var path) || string.IsNullOrEmpty(path))
+        if (!PlatformUtils.Instance.OpenFileDialog(LOC.Get("FX_EffectList_Import", Ext), new[] { Ext[1..] }, out var path) || string.IsNullOrEmpty(path))
             return;
         try
         {
-            ImportFxr = FXR.Read(File.ReadAllBytes(path));
+            ImportFile = Model.FfxEffectFile.Read(Data.Format, File.ReadAllBytes(path));
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("FX_EffectList_Import_Failed", path), e);
+            Smithbox.LogError(this, LOC.Get("FX_EffectList_Import_Failed", path, Ext), e);
             return;
         }
         ImportPath = path;
 
-        // The id from the file name (f000620400.fxr), else the header's
+        // The id from the file name (f000620400.fxr, f0000030.ffx), else the header's
         var match = Regex.Match(Path.GetFileNameWithoutExtension(path), @"^f(\d+)$", RegexOptions.IgnoreCase);
-        ImportId = match.Success && int.TryParse(match.Groups[1].Value, out var fromName) ? fromName : ImportFxr.Id;
+        ImportId = match.Success && int.TryParse(match.Groups[1].Value, out var fromName) ? fromName : Model.FfxEffectFile.GetId(ImportFile) ?? 0;
         ImportReplace = Bank.Entries.ContainsKey(ImportId);
         if (!ImportReplace && Bank.IsIdTaken(ImportId))
             ImportId = Bank.FreeId(ImportId);
@@ -535,18 +572,20 @@ public partial class FxEffectList
         var near = Editor.Selection.Entry ?? Bank.Entries.Values.FirstOrDefault();
         ImportTicks = near?.Binders.ToDictionary(b => b.Binder.Path, _ => 1, StringComparer.OrdinalIgnoreCase) ?? new();
 
-        // An effect from another game won't play here
-        var sample = Bank.Entries.Values.FirstOrDefault(e => e.IsLoaded)?.Fxr ?? Bank.ReadCopy(Bank.Entries.Values.First());
-        ImportVersionWarning = sample != null && sample.Version != ImportFxr.Version
-            ? LOC.Get("FX_EffectList_Import_Version", ImportFxr.Version, sample.Version)
-            : null;
+        // An effect from another game won't play here: FXR3 versions are warned about, the older formats' refused
+        var first = Bank.Entries.Values.FirstOrDefault(e => e.IsLoaded) ?? Bank.Entries.Values.FirstOrDefault();
+        var sample = first?.File ?? (first != null ? Bank.ReadFileCopy(first) : null);
+        string have = Model.FfxEffectFile.Signature(ImportFile), want = sample != null ? Model.FfxEffectFile.Signature(sample) : have;
+        ImportRefused = Bank.IsFfx && have != want;
+        ImportVersionWarning = have == want ? null
+            : LOC.Get(ImportRefused ? "FX_EffectList_Import_Format" : "FX_EffectList_Import_Version", have, want);
         BinderSearch = "";
         ImportToOpen = true;
     }
 
     private void DisplayImportPopup()
     {
-        if (!BeginModal($"{LOC.Get("FX_EffectList_Import")}###{ImportPopup}", ref ImportToOpen))
+        if (!BeginModal($"{LOC.Get("FX_EffectList_Import", Ext)}###{ImportPopup}", ref ImportToOpen))
             return;
 
         GUI.WrappedText(LOC.Get("FX_EffectList_Import_Explain", Path.GetFileName(ImportPath ?? "")));
@@ -566,8 +605,9 @@ public partial class FxEffectList
             ImGui.SetNextItemWidth(200 * DPI.UIScale());
             ImGui.InputInt("##fxImportId", ref ImportId);
             ImGui.SameLine();
-            ImGui.TextDisabled($"f{ImportId:D9}");
-            GUI.WrappedText(LOC.Get("FX_EffectList_Import_Replace_Explain", $"f{ImportId:D9}"));
+            var target = Bank.Entries.TryGetValue(ImportId, out var t) ? t.Stem : Bank.StemFor(ImportId);
+            ImGui.TextDisabled(target);
+            GUI.WrappedText(LOC.Get("FX_EffectList_Import_Replace_Explain", target));
             ok = Bank.Entries.ContainsKey(ImportId);
         }
         else
@@ -582,10 +622,10 @@ public partial class FxEffectList
             }
         }
 
-        ImGui.BeginDisabled(!ok);
+        ImGui.BeginDisabled(!ok || ImportRefused);
         if (ImGui.Button($"{LOC.Get("FX_EffectList_Import_Confirm")}##fxImportConfirm"))
         {
-            var fxr = ImportFxr;
+            var fxr = ImportFile;
             int id = ImportId;
             bool replace = ImportReplace;
             var paths = ImportTicks.Where(t => t.Value > 0).Select(t => t.Key).ToList();
@@ -597,16 +637,22 @@ public partial class FxEffectList
         ImGui.EndPopup();
     }
 
-    /// <summary>An effect read from a file: replacing an existing effect's content, or as a new effect.</summary>
-    public void Import(FXR fxr, int id, bool replace, List<string> binderPaths)
+    /// <summary>
+    /// An effect read from a file (an FXR, FFXDLSE or FXR1 object): replacing an existing effect's content, or as a new
+    /// effect. Over an id with versions (DES), the version shown is replaced.
+    /// </summary>
+    public void Import(object fxr, int id, bool replace, List<string> binderPaths)
     {
         if (replace)
         {
-            if (!Bank.Entries.TryGetValue(id, out var target) || !Bank.Load(target))
+            if (!Bank.Entries.TryGetValue(id, out var target))
                 return;
-            fxr.Id = id;
+            target = Shown(target);
+            if (!Bank.Load(target))
+                return;
+            Model.FfxEffectFile.SetId(fxr, id);
             Execute(new FxReplaceEffectAction(Bank, target, fxr, OnEffectsChanged));
-            Select(target);
+            Select(target.Main);
         }
         else
         {
@@ -615,11 +661,14 @@ public partial class FxEffectList
             var created = MakeEntry(id, fxr, binderPaths, null);
             if (created.Binders.Count == 0)
                 return;
+            // DS2 / DS2S: a file from outside gets the tables' commonest (default) record
+            created.NeedsRecord = Bank.HasEffectTable;
+            created.RecordFrom = -1;
             Execute(new FxEntryPresenceAction(Bank, new() { created }, true, OnEffectsChanged));
             Select(created);
         }
         Editor.Selection.FocusEntry = true;
-        Smithbox.Log(this, LOC.Get("FX_EffectList_Import_Done", Path.GetFileName(ImportPath ?? ""), $"f{id:D9}"));
+        Smithbox.Log(this, LOC.Get("FX_EffectList_Import_Done", Path.GetFileName(ImportPath ?? ""), Bank.Entries.TryGetValue(id, out var e) ? e.Stem : Bank.StemFor(id)));
     }
 
     // ---------------------------------------------------------------- compare
@@ -628,23 +677,45 @@ public partial class FxEffectList
     private List<FxDifference> Differences = new();
     private string CompareFilter = "";
 
-    private void ShowCompare(string a, FXR fa, string b, FXR fb)
+    /// <summary>
+    /// Compares two file objects: FXRs value by value through FxCompare (as before); the older formats through the
+    /// model (FFX Older Games Plan §22, F8), keyed by states, exits, actions and named values.
+    /// </summary>
+    private void ShowCompare(string a, object fa, string b, object fb)
     {
         if (fa == null || fb == null)
             return;
         CompareTitleA = a;
         CompareTitleB = b;
-        Differences = FxCompare.Diff(fa, fb);
+        if (fa is FXR xa && fb is FXR xb)
+            Differences = FxCompare.Diff(xa, xb);
+        else
+        {
+            var ma = Data.Adapt(fa);
+            var mb = Data.Adapt(fb);
+            if (ma == null || mb == null)
+                return;
+            Differences = Model.FxModelCompare.Diff(ma, mb).Select(d => new FxDifference(d.Key, d.A, d.B)).ToList();
+        }
         CompareFilter = "";
         CompareToOpen = true;
     }
 
-    private void RequestCompareVanilla(FxEntry entry) =>
-        ShowCompare(entry.Stem, entry.IsLoaded ? entry.Fxr : Bank.ReadCopy(entry),
-            LOC.Get("FX_EffectList_Compare_Vanilla_Label"), Bank.ReadVanilla(entry));
+    /// <summary>The effect as it is now: the loaded object (read only here), else a copy from its packed bytes.</summary>
+    private object Current(FxEntry entry) => entry.File ?? Bank.ReadFileCopy(entry);
 
-    private void RequestCompare(FxEntry a, FxEntry b) =>
-        ShowCompare(a.Stem, a.IsLoaded ? a.Fxr : Bank.ReadCopy(a), b.Stem, b.IsLoaded ? b.Fxr : Bank.ReadCopy(b));
+    private void RequestCompareVanilla(FxEntry entry)
+    {
+        entry = Shown(entry);
+        ShowCompare(entry.Stem, Current(entry), LOC.Get("FX_EffectList_Compare_Vanilla_Label"), Bank.ReadVanillaFile(entry));
+    }
+
+    private void RequestCompare(FxEntry a, FxEntry b)
+    {
+        a = Shown(a);
+        b = Shown(b);
+        ShowCompare(a.Stem, Current(a), b.Stem, Current(b));
+    }
 
     private FxEntry CompareWithSource;
     private int CompareWithId;
@@ -744,6 +815,8 @@ public partial class FxEffectList
 
     private void RequestChangeId(FxEntry entry)
     {
+        if (HasVersions(entry))
+            return;
         ChangeIdSource = entry;
         ChangeIdValue = Bank.FreeId(entry.Id + 1);
         Usage.StartScan();
@@ -806,12 +879,15 @@ public partial class FxEffectList
     /// </summary>
     public void ChangeId(FxEntry source, int id, List<FxEntry> hosts)
     {
-        if (Bank.IsIdTaken(id) || !Bank.Load(source))
+        if (Bank.IsIdTaken(id) || HasVersions(source) || !Bank.Load(source))
             return;
         var fxr = CopyOf(source);
         if (fxr == null)
             return;
         var created = MakeEntry(id, fxr, source.Binders.Select(b => b.Binder.Path), source.ResourceList);
+        // DS2 / DS2S: the record moves with it (the new id's copied from the old one's, which the delete removes)
+        created.NeedsRecord = Bank.HasEffectTable;
+        created.RecordFrom = source.Id;
 
         var actions = new List<EditorAction>
         {
@@ -824,6 +900,25 @@ public partial class FxEffectList
         {
             if (host == source || !Bank.Load(host))
                 continue;
+
+            // Older formats: the host's effect calls (DLSE Param37, FXR1 EffectCallNode) pointed at the new id, in a
+            // copy that replaces the host's content; every version of a DES host holds its own calls
+            if (host.Fxr == null)
+            {
+                foreach (var version in host.AllVersions)
+                {
+                    if (!Bank.Load(version))
+                        continue;
+                    var copy = Bank.ReadFileCopy(version);
+                    int n = copy == null ? 0 : Model.FfxEffectFile.RetargetCalls(copy, source.Id, id);
+                    if (n == 0)
+                        continue;
+                    actions.Add(new FxReplaceEffectAction(Bank, version, copy, OnEffectsChanged));
+                    updated += n;
+                }
+                continue;
+            }
+
             foreach (var node in FXR.Walk(host.Fxr.Root))
             {
                 if (node.Type != FxNodeOps.ProxyType || FxProxyOps.Target(node) != source.Id)

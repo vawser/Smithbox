@@ -91,29 +91,30 @@ public class FxMembershipAction : EditorAction
 }
 
 /// <summary>
-/// Swaps an effect's whole content for another FXR (Revert to Vanilla, Import over an effect). Undo puts the old
-/// object back, so earlier undo steps, which point into it, still apply.
+/// Swaps an effect's whole content for another file object of its format: an FXR, or an older game's FFXDLSE / FXR1
+/// (Revert to Vanilla, Import over an effect, Change ID's callers; FFX Older Games Plan §22). Undo puts the old object
+/// back, so earlier undo steps, which point into it, still apply. The model is rebuilt from whichever object is in.
 /// </summary>
 public class FxReplaceEffectAction : EditorAction
 {
     private readonly FxBank Bank;
     private readonly FxEntry Entry;
-    private readonly FXR Old;
-    private readonly FXR New;
+    private readonly object Old;
+    private readonly object New;
     private readonly Action Changed;
 
-    public FxReplaceEffectAction(FxBank bank, FxEntry entry, FXR replacement, Action changed = null)
+    public FxReplaceEffectAction(FxBank bank, FxEntry entry, object replacement, Action changed = null)
     {
         Bank = bank;
         Entry = entry;
-        Old = entry.Fxr;
+        Old = entry.File;
         New = replacement;
         Changed = changed;
     }
 
     public override ActionEvent Execute()
     {
-        Entry.Fxr = New;
+        FxBank.SetLoaded(Entry, New);
         Bank.MarkDirty(Entry);
         Changed?.Invoke();
         return ActionEvent.NoEvent;
@@ -121,7 +122,7 @@ public class FxReplaceEffectAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        Entry.Fxr = Old;
+        FxBank.SetLoaded(Entry, Old);
         Bank.MarkDirty(Entry);
         Changed?.Invoke();
         return ActionEvent.NoEvent;

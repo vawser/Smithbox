@@ -95,6 +95,8 @@ public class FxBank : IDisposable
             var models = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
             // DLSE: every copy of each id, in binder order, grouped into versions once every binder is read
             var copies = new Dictionary<int, List<DlseCopy>>();
+            bool effectTable = false;
+            var tableBinders = new List<FileDictionaryEntry>();
             foreach (var binder in binders)
             {
                 if (token.IsCancellationRequested)
@@ -120,6 +122,14 @@ public class FxBank : IDisposable
 
                         foreach (var file in reader.Files)
                         {
+                            // DS2 / DS2S keep a per-effect table (FFX Older Games Plan §22.2): effects can't be added or removed until it's understood
+                            if (file.Name.EndsWith(".sfxparam", StringComparison.OrdinalIgnoreCase))
+                            {
+                                effectTable = true;
+                                if (!tableBinders.Contains(binder))
+                                    tableBinders.Add(binder);
+                            }
+
                             // Effect textures (s<id>[_type].tpf): which binders hold them, for the viewport
                             if (TryParseTexture(file.Name, out var texture))
                             {
@@ -206,6 +216,8 @@ public class FxBank : IDisposable
 
             _finishedTextures = textures;
             _finishedModels = models;
+            _finishedEffectTable = effectTable;
+            _finishedTableBinders = tableBinders;
             _finished.Enqueue(entries);
         }, token);
     }
@@ -216,6 +228,17 @@ public class FxBank : IDisposable
     /// </summary>
     public Dictionary<string, List<FxBinderRef>> Textures { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
     private volatile Dictionary<string, List<FxBinderRef>> _finishedTextures;
+
+    /// <summary>
+    /// The binders hold per-effect tables (.sfxparam: DS2, DS2S), kept in step when effects are added, renumbered or
+    /// deleted (FFX Older Games Plan §22.8, F8b). Filled by indexing.
+    /// </summary>
+    public bool HasEffectTable { get; private set; }
+    private volatile bool _finishedEffectTable;
+
+    /// <summary>The binders holding effect tables (DS2: sfx9999; DS2S: sfx9999 and sfx9999_Append). Filled by indexing.</summary>
+    public List<FileDictionaryEntry> TableBinders { get; private set; } = new();
+    private volatile List<FileDictionaryEntry> _finishedTableBinders;
 
     /// <summary>Effect models by name (s88300), with the binders holding them. Filled by indexing.</summary>
     public Dictionary<string, List<FxBinderRef>> Models { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
@@ -333,6 +356,79 @@ public class FxBank : IDisposable
         }
     }
 
+    /// <summary>
+    /// The game's copy of the effect as a file object of this game's format (FXR, FFXDLSE or FXR1), read fresh; null
+    /// when the game has none (FFX Older Games Plan §22, F8: Revert and Compare with Vanilla for every format).
+    /// </summary>
+    public object ReadVanillaFile(FxEntry entry)
+    {
+        if (!IsFfx)
+            return ReadVanilla(entry);
+        try
+        {
+            return entry.Vanilla switch
+            {
+                FxVanillaState.Modified when entry.VanillaPacked != null => Model.FfxEffectFile.Read(Data.Format, Unpack(entry.VanillaPacked, entry.VanillaLength)),
+                // Same: the packed copy is the game's, unless an unsaved edit is all that differs (then the packed bytes still are)
+                FxVanillaState.Same when entry.Packed != null => Model.FfxEffectFile.Read(Data.Format, Unpack(entry.Packed, entry.PackedLength)),
+                _ => null,
+            };
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// The effect as it is now (unsaved edits included), as a separate file object of any format; null when it can't
+    /// be read. Off the main thread only for an unloaded entry.
+    /// </summary>
+    public object ReadFileCopy(FxEntry entry)
+    {
+        try
+        {
+            if (entry.File != null)
+                return Model.FfxEffectFile.Copy(entry.File);
+            var packed = entry.Packed;
+            return packed == null ? null : Model.FfxEffectFile.Read(Data.Format, Unpack(packed, entry.PackedLength));
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>Puts a file object of this game's format in the entry as its loaded effect (the model is rebuilt from it).</summary>
+    public static void SetLoaded(FxEntry entry, object file)
+    {
+        entry.Fxr = file as FXR;
+        entry.Ffx = file as FFXDLSE;
+        entry.Fxr1 = file as FXR1;
+        entry.ModelCache = null;
+    }
+
+    /// <summary>
+    /// How many digits the game pads effect names to: the shortest name in the bank (7 for DES, DS1, DS1R, DS2; 9 for
+    /// BB and the FXR3 games), as vanilla names longer ids at their own length (§22.6).
+    /// </summary>
+    public int NameWidth
+    {
+        get
+        {
+            if (_nameWidthVersion != Version)
+            {
+                _nameWidth = Entries.Values.Select(e => e.Stem.Length - 1).Where(n => n > 0).DefaultIfEmpty(9).Min();
+                _nameWidthVersion = Version;
+            }
+            return _nameWidth;
+        }
+    }
+    private int _nameWidth = 9, _nameWidthVersion = -1;
+
+    /// <summary>The file name stem a new effect with this id gets in this game (f0000030, f000620400).</summary>
+    public string StemFor(int id) => IsFfx ? Model.FfxEffectFile.Stem(id, NameWidth) : $"f{id:D9}";
+
     /// <summary>s88300.flver(.dcx), or DS2's s000010.flv, with any folder, to s88300.</summary>
     public static bool TryParseModel(string internalName, out string name)
     {
@@ -403,6 +499,8 @@ public class FxBank : IDisposable
             Entries = entries;
             Textures = _finishedTextures ?? Textures;
             Models = _finishedModels ?? Models;
+            HasEffectTable = _finishedEffectTable;
+            TableBinders = _finishedTableBinders ?? new();
             IsIndexing = false;
             IsIndexed = true;
             Version++;
@@ -591,7 +689,12 @@ public class FxBank : IDisposable
     {
         Deleted.Remove(entry);
         Entries[entry.Id] = entry;
-        entry.IsDirty = true;
+        // Every version of the id (DES): after a save removed their files, each is written back to its own binders
+        foreach (var v in entry.AllVersions)
+            v.IsDirty = true;
+        // DS2 / DS2S: a save that deleted it also removed its table records, which come back with it
+        if (entry.RecordBodies != null)
+            entry.NeedsRecord = true;
         Version++;
     }
 
@@ -605,12 +708,13 @@ public class FxBank : IDisposable
     public List<(FxEntry entry, FxBinderRef where)> PendingRemovals()
     {
         var result = new List<(FxEntry, FxBinderRef)>();
-        foreach (var e in Entries.Values)
+        // Every version of an id (DES keeps two under some ids, each in its own binders)
+        foreach (var e in AllEntries)
             if (e.OnDisk.Count > 0 && e.MembershipChanged)
                 foreach (var r in e.OnDisk.Values)
                     if (!e.InBinder(r.Binder.Path))
                         result.Add((e, r));
-        foreach (var e in Deleted)
+        foreach (var e in Deleted.SelectMany(d => d.AllVersions))
             foreach (var r in e.OnDisk.Values)
                 result.Add((e, r));
         return result;
@@ -652,8 +756,13 @@ public class FxBank : IDisposable
         if (IsFfx)
         {
             var dlse = entries.Where(e => e.Ffx != null || e.Fxr1 != null).ToList();
+            var dlseRemovals = PendingRemovals();
+            var dlseDeleted = Deleted.ToList();
+            // DS2 / DS2S effect tables: new ids that need a record, deleted ids whose record goes (§22.8)
+            var recordAdds = HasEffectTable ? AllEntries.Where(e => e.NeedsRecord).ToList() : new();
+            var recordRemoves = HasEffectTable ? dlseDeleted.Where(d => !Entries.ContainsKey(d.Id)).ToList() : new();
             await Task.Yield();
-            return SaveDlse(dlse);
+            return SaveDlse(dlse, dlseRemovals, dlseDeleted, recordAdds, recordRemoves);
         }
         var list = entries.Where(e => e.Fxr != null).ToList();
         var removals = PendingRemovals();
@@ -779,16 +888,21 @@ public class FxBank : IDisposable
     /// Saves the older games' effects (DLSE: DES, DS2, DS2S; FXR1: DS1, DS1R): each into the binders holding its version, which are read and written once
     /// each, BND3 or BND4, with the binder's own compression (DES DCX_EDGE, DS2 and DS1R DFLT, DS1 none). Where the game also ships the
     /// binder uncompressed next to it (x.ffxbnd beside x.ffxbnd.dcx), that copy is written too, so both stay the same.
-    /// Effects are only changed, never added or removed (structure edits are FXR3 only).
+    /// A binder an effect wasn't in gets its file, and files of deleted effects or binders an effect left are removed,
+    /// laid out as the binder numbers its files (FFX Older Games Plan §22, F8; <see cref="Model.FfxBinders.SchemeOf"/>).
     /// </summary>
-    private bool SaveDlse(List<FxEntry> list)
+    private bool SaveDlse(List<FxEntry> list, List<(FxEntry entry, FxBinderRef where)> removals, List<FxEntry> deleted,
+        List<FxEntry> recordAdds, List<FxEntry> recordRemoves)
     {
-        if (list.Count == 0)
+        bool tables = recordAdds.Count > 0 || recordRemoves.Count > 0;
+        if (list.Count == 0 && removals.Count == 0 && !tables)
         {
             Smithbox.Log(this, LOC.Get("FX_Data_Save_Nothing"));
             return true;
         }
         Smithbox.Log(this, LOC.Get("FX_Data_Save_Start", list.Count, list.Sum(e => e.Binders.Count), Project.Descriptor.ProjectPath));
+        if (removals.Count > 0)
+            Smithbox.Log(this, LOC.Get("FX_Data_Save_Removals", removals.Count));
 
         var bytes = new Dictionary<FxEntry, byte[]>();
         foreach (var entry in list)
@@ -809,29 +923,69 @@ public class FxBank : IDisposable
             }
         }
 
+        // Every binder touched: by a write (replacing the file, or adding it where the effect wasn't yet), or by a removal
         var work = bytes.Keys
-            .SelectMany(e => e.Binders.Select(b => (binder: b.Binder, entry: e, r: b)))
+            .SelectMany(e => e.Binders.Select(b => (binder: b.Binder, entry: e, r: b, remove: false)))
+            .Concat(removals.Select(x => (binder: x.where.Binder, x.entry, r: x.where, remove: true)))
             .GroupBy(x => x.binder.Path, StringComparer.OrdinalIgnoreCase)
+            .Select(g => (binder: g.First().binder, items: g.ToList()))
             .ToList();
+        // The binders holding effect tables are written when a record changes, even if no effect file in them does
+        if (tables)
+            foreach (var tb in TableBinders)
+                if (!work.Any(w => w.binder.Path.Equals(tb.Path, StringComparison.OrdinalIgnoreCase)))
+                    work.Add((tb, new()));
         SaveTotal = work.Count;
         SaveDone = 0;
 
         bool ok = true;
+        bool tablesOk = true;
         var saved = new HashSet<FxEntry>(bytes.Keys);
-        foreach (var group in work)
+        var done = new List<(FxEntry entry, FxBinderRef r, bool remove)>();
+        foreach (var (binderEntry, group) in work)
         {
-            var binderEntry = group.First().binder;
             SaveCurrent = binderEntry.Filename;
+            bool isTableBinder = tables && TableBinders.Any(t => t.Path.Equals(binderEntry.Path, StringComparison.OrdinalIgnoreCase));
             try
             {
-                var written = Model.FfxBinders.Write(FS.ReadFile(binderEntry.Path).Value,
-                    group.Select(x => (x.r.InternalName, bytes[x.entry])).ToList(), out var missing, out var plain);
+                var writes = group.Where(x => !x.remove).ToList();
+                var edit = new Model.FfxBinders.Edit(
+                    Replace: writes.Where(x => x.entry.OnDisk.ContainsKey(binderEntry.Path)).Select(x => (x.r.InternalName, bytes[x.entry])).ToList(),
+                    Add: writes.Where(x => !x.entry.OnDisk.ContainsKey(binderEntry.Path)).Select(x => (x.r.InternalName, bytes[x.entry], x.entry.Id)).ToList(),
+                    Remove: group.Where(x => x.remove).Select(x => x.r.InternalName).ToList())
+                {
+                    TableAdds = isTableBinder
+                        ? recordAdds.Select(e => (e.Id, e.RecordFrom, (IReadOnlyDictionary<string, byte[]>)e.RecordBodies?.GetValueOrDefault(binderEntry.Path))).ToList()
+                        : null,
+                    TableRemoves = isTableBinder ? recordRemoves.Select(e => e.Id).ToList() : null,
+                };
+                var written = Model.FfxBinders.Write(FS.ReadFile(binderEntry.Path).Value, edit, out var missing, out var plain);
+                if (isTableBinder)
+                {
+                    foreach (var t in edit.UnreadTables)
+                    {
+                        Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Table", t, binderEntry.Path));
+                        tablesOk = ok = false;
+                    }
+                    if (edit.RecordsAdded > 0 || edit.RecordsRemoved > 0)
+                        Smithbox.Log(this, LOC.Get("FX_Data_Saved_Table", binderEntry.Filename, edit.RecordsAdded, edit.RecordsRemoved));
+                    // Kept with the deleted effect, so undoing the delete puts the same records back
+                    foreach (var ((id, table), rec) in edit.RemovedRecords)
+                    {
+                        var owner = recordRemoves.First(e => e.Id == id);
+                        owner.RecordBodies ??= new(StringComparer.OrdinalIgnoreCase);
+                        if (!owner.RecordBodies.TryGetValue(binderEntry.Path, out var byTable))
+                            owner.RecordBodies[binderEntry.Path] = byTable = new(StringComparer.OrdinalIgnoreCase);
+                        byTable[table] = rec;
+                    }
+                }
+                bool groupOk = true;
                 foreach (var name in missing)
                 {
                     var entry = group.First(x => x.r.InternalName == name).entry;
                     Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Find_Effect", entry.Stem, binderEntry.Path));
                     saved.Remove(entry);
-                    ok = false;
+                    ok = groupOk = false;
                 }
                 Project.VFS.ProjectFS.WriteFile(binderEntry.Path, written);
                 Smithbox.Log(this, LOC.Get("FX_Data_Saved_Binder", binderEntry.Path, group.Count(), written.Length / 1024));
@@ -843,6 +997,8 @@ public class FxBank : IDisposable
                     Project.VFS.ProjectFS.WriteFile(twin, plain);
                     Smithbox.Log(this, LOC.Get("FX_Data_Saved_Binder", twin, group.Count(), plain.Length / 1024));
                 }
+                if (groupOk)
+                    done.AddRange(group.Select(x => (x.entry, x.r, x.remove)));
             }
             catch (Exception e)
             {
@@ -850,9 +1006,28 @@ public class FxBank : IDisposable
                 foreach (var x in group)
                     saved.Remove(x.entry);
                 ok = false;
+                if (isTableBinder)
+                    tablesOk = false;
             }
             SaveDone++;
         }
+
+        // Records now in every table: the next save leaves them be
+        if (tables && tablesOk)
+            foreach (var e in recordAdds)
+                e.NeedsRecord = false;
+
+        // The binders now hold what was written to them
+        foreach (var (entry, r, remove) in done)
+        {
+            if (remove)
+                entry.OnDisk.Remove(r.Binder.Path);
+            else
+                entry.OnDisk[r.Binder.Path] = r;
+        }
+        foreach (var e in deleted)
+            if (e.AllVersions.All(v => v.OnDisk.Count == 0))
+                Deleted.Remove(e);
 
         // An effect is saved once every binder of its version took it
         foreach (var (entry, data) in bytes)
@@ -860,6 +1035,7 @@ public class FxBank : IDisposable
             if (!saved.Contains(entry))
                 continue;
             entry.IsDirty = false;
+            entry.IsNew = false;
             UpdateVanillaState(entry, data);
             entry.Packed = Pack(data);
             entry.PackedLength = data.Length;

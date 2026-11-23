@@ -41,9 +41,8 @@ public class FxData : IDisposable
     public bool IsFfx => Format is Model.FxFormat.Dlse or Model.FxFormat.Fxr1;
 
     /// <summary>
-    /// Effects can be added, removed, duplicated, renumbered, moved between binders, imported, exported, compared and
-    /// project-checked: FXR3 only. DLSE and FXR1 effects have their values and exits edited and saved (FFX Older Games
-    /// Plan F3b, F3c, F4b); their structure comes later (F7).
+    /// The FXR3-only features: the project check and FXR3's tree tools. The Effect List's whole-effect operations work
+    /// for every format (FFX Older Games Plan §22, F8; DS2 / DS2S's .sfxparam records are kept in step on save).
     /// </summary>
     public bool CanEditStructure => Format == Model.FxFormat.Fxr3;
 
@@ -193,6 +192,18 @@ public class FxData : IDisposable
         }
         return entry.ModelCache;
     }
+
+    /// <summary>
+    /// A model view of a file object that isn't an entry's loaded effect (a vanilla copy, a file read for Compare), or
+    /// null. Not cached: each call adapts afresh.
+    /// </summary>
+    public Model.IFxEffect Adapt(object file) => file switch
+    {
+        FXR fxr => Model.FxrModel.Adapt(fxr, Schema, Game),
+        FFXDLSE ffx => Model.FfxModel.Adapt(ffx, FfxSchema, FfxGame),
+        FXR1 fxr1 => Model.Fxr1Model.Adapt(fxr1, FfxSchema, FfxGame),
+        _ => null,
+    };
 
     /// <summary>The model adapter of an item of the entry's effect (an FxrNode, FxrAction, …), or null.</summary>
     public object Adapt(FxEntry entry, object item) => item == null ? null : Effect(entry)?.Adapt(item);

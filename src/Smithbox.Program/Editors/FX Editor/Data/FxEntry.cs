@@ -132,6 +132,22 @@ public class FxEntry
     /// <summary>For a new effect: the effect whose ffxreslist the new one starts from, when it has no <see cref="ResourceList"/>.</summary>
     public int ResourceListFrom = -1;
 
+    /// <summary>
+    /// DS2 / DS2S (FFX Older Games Plan §22.8): the next save gives this id a record in the binders' effect tables
+    /// (.sfxparam) when it has none: a copy of <see cref="RecordBodies"/> when kept, else of <see cref="RecordFrom"/>'s
+    /// record (the effect it was duplicated or renumbered from), else the tables' commonest. Cleared once saved.
+    /// </summary>
+    public bool NeedsRecord;
+
+    /// <summary>The effect whose table record a new one copies; -1 for the default record.</summary>
+    public int RecordFrom = -1;
+
+    /// <summary>
+    /// The records a save removed when this effect was deleted, by binder path and table file name, so undoing the
+    /// delete after that save puts the same records back.
+    /// </summary>
+    public Dictionary<string, Dictionary<string, byte[]>> RecordBodies;
+
     /// <summary>The Particles alias name, or empty.</summary>
     public string Alias = "";
 
