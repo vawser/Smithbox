@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.FxEditor.Model;
+using StudioCore.Keybinds;
 
 namespace StudioCore.Editors.FxEditor;
 
@@ -65,6 +66,20 @@ public partial class FxEffectTree
             ImGui.EndMenu();
         }
         GUI.Tooltip(LOC.Get("FX_Dlse_Action_Add_TT"));
+
+        bool pasteAction = DlseClipAction != null && DlseClipFits(entry);
+        if (ImGui.MenuItem($"{LOC.Get("FX_Dlse_Paste_Into_State")}##fxDlsePasteState", InputManager.GetHint(KeybindID.Paste), false, pasteAction))
+            Deferred.Add(() => DlseEdit(entry, state, (fx, f) => state.Actions.Add(FFXDLSE.Clone(DlseClipAction, f.Format))));
+        GUI.Tooltip(DlsePasteTooltip(entry, DlseClipAction != null));
+
+        if (ImGui.MenuItem($"{LOC.Get("FX_Dlse_Exit_Add")}##fxDlseExitAdd"))
+            Deferred.Add(() => DlseEdit(entry, state, (fx, f) =>
+            {
+                var t = Data.DlseTemplates(f.Format)?.NewExit();
+                if (t != null)
+                    state.Triggers.Add(t);
+            }));
+        GUI.Tooltip(LOC.Get("FX_Dlse_Exit_Add_TT"));
         ImGui.Separator();
 
         if (ImGui.MenuItem($"{LOC.Get("FX_Dlse_State_Add")}##fxDlseStateAdd"))
@@ -119,6 +134,16 @@ public partial class FxEffectTree
         if (!ImGui.BeginPopupContextItem($"##fxDlseAction_{id}"))
             return;
         Editor.Selection.SelectItem(source);
+
+        // copy / paste after: an action into a state's list, a call into a call list (same game)
+        if (ImGui.MenuItem($"{LOC.Get("FX_Dlse_Copy")}##fxDlseCopy", InputManager.GetHint(KeybindID.Copy)))
+            DlseCopy(entry, source);
+        GUI.Tooltip(LOC.Get("FX_Dlse_Copy_TT"));
+        bool canPaste = DlseCanPasteAfter(entry, source);
+        if (ImGui.MenuItem($"{LOC.Get("FX_Dlse_Paste_After")}##fxDlsePaste", InputManager.GetHint(KeybindID.Paste), false, canPaste))
+            Deferred.Add(() => DlsePasteAfter(entry, source));
+        GUI.Tooltip(DlsePasteTooltip(entry, source is FFXDLSE.Action ? DlseClipAction != null : DlseClipParam != null));
+        ImGui.Separator();
 
         if (source is FFXDLSE.Action action)
         {
@@ -201,6 +226,130 @@ public partial class FxEffectTree
                 ImGui.CloseCurrentPopup();
         }
         ImGui.EndPopup();
+    }
+
+    // ---------------------------------------------------------------- clipboard (§21.7)
+
+    // a copied state action or call-list entry, deep-copied when taken; pasted only into the same game (layouts and
+    // param type ids differ between DES, DS2 and DS2S)
+    private FFXDLSE.Action DlseClipAction;
+    private FFXDLSE.Param DlseClipParam;
+    private SoulsFormats.FfxGame DlseClipGame;
+    private string DlseClipSource;
+
+    private void DlseCopy(FxEntry entry, object source)
+    {
+        var format = entry.Ffx.Format;
+        DlseClipAction = source is FFXDLSE.Action a ? FFXDLSE.Clone(a, format) : null;
+        DlseClipParam = source is FFXDLSE.Param p ? FFXDLSE.Clone(p, format) : null;
+        DlseClipGame = Data.FfxGame;
+        DlseClipSource = entry.Stem;
+    }
+
+    private bool DlseClipFits(FxEntry entry) => DlseClipGame == Data.FfxGame && entry?.Ffx != null;
+
+    /// <summary>A copied action goes after a state action; a copied call after an entry of a call list.</summary>
+    private bool DlseCanPasteAfter(FxEntry entry, object target)
+    {
+        if (!DlseClipFits(entry))
+            return false;
+        return target switch
+        {
+            FFXDLSE.Action a => DlseClipAction != null && ActionList(entry.Ffx, a).List != null,
+            FFXDLSE.Param p => DlseClipParam != null && CallList(entry.Ffx, p) != null,
+            _ => false,
+        };
+    }
+
+    private void DlsePasteAfter(FxEntry entry, object target)
+    {
+        if (!DlseCanPasteAfter(entry, target))
+            return;
+        if (target is FFXDLSE.Action a)
+            DlseEdit(entry, a, (fx, f) => { var l = ActionList(f, a).List; l.Insert(l.IndexOf(a) + 1, FFXDLSE.Clone(DlseClipAction, f.Format)); });
+        else if (target is FFXDLSE.Param p)
+            DlseEdit(entry, p, (fx, f) => { var l = CallList(f, p).Params; l.Insert(l.IndexOf(p) + 1, FFXDLSE.Clone(DlseClipParam, f.Format)); });
+    }
+
+    private string DlsePasteTooltip(FxEntry entry, bool kindCopied)
+    {
+        if (!kindCopied)
+            return LOC.Get("FX_Dlse_Paste_Empty");
+        if (!DlseClipFits(entry))
+            return LOC.Get("FX_Dlse_Paste_Game", DlseClipGame);
+        return LOC.Get("FX_Dlse_Paste_TT", DlseClipSource);
+    }
+
+    // ---------------------------------------------------------------- shortcuts
+
+    /// <summary>FXR3's tree keys for DLSE items: Copy / Paste / Duplicate / Delete / Reorder on the selected one.</summary>
+    private void DlseShortcuts(FxEntry entry)
+    {
+        var item = Editor.Selection.Item;
+        if (item is FFXDLSE.State state)
+        {
+            var fx = OwnerOf(entry.Ffx, state);
+            if (fx == null)
+                return;
+            int i = fx.StateMap.States.IndexOf(state), n = fx.StateMap.States.Count;
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+                Deferred.Add(() => DlseEdit(entry, state, (e, f) => FfxStructure.DuplicateState(e, f.Format, e.StateMap.States.IndexOf(state))));
+            else if (InputManager.IsPressed(KeybindID.Delete) && n > 1)
+            {
+                PendingDlseDelete = state;
+                DlseDeleteToOpen = true;
+            }
+            else if (InputManager.IsPressed(KeybindID.Reorder_Up) && i > 0)
+                Deferred.Add(() => DlseEdit(entry, state, (e, f) => FfxStructure.SwapStates(e, i, i - 1)));
+            else if (InputManager.IsPressed(KeybindID.Reorder_Down) && i < n - 1)
+                Deferred.Add(() => DlseEdit(entry, state, (e, f) => FfxStructure.SwapStates(e, i, i + 1)));
+            else if (InputManager.IsPressed(KeybindID.Paste) && DlseClipAction != null && DlseClipFits(entry))
+                Deferred.Add(() => DlseEdit(entry, state, (e, f) => state.Actions.Add(FFXDLSE.Clone(DlseClipAction, f.Format))));
+            return;
+        }
+
+        if (item is not (FFXDLSE.Action or FFXDLSE.Param37 or FFXDLSE.Param38))
+            return;
+        if (InputManager.IsPressed(KeybindID.Copy))
+        {
+            DlseCopy(entry, item);
+            return;
+        }
+        if (InputManager.IsPressed(KeybindID.Paste))
+        {
+            if (DlseCanPasteAfter(entry, item))
+                Deferred.Add(() => DlsePasteAfter(entry, item));
+            return;
+        }
+
+        if (item is FFXDLSE.Action action)
+        {
+            var list = ActionList(entry.Ffx, action).List;
+            if (list == null)
+                return;
+            DlseListKeys(entry, action, list, l => FFXDLSE.Clone(l, entry.Ffx.Format), f => ActionList(f, action).List, list.Count > 0);
+        }
+        else
+        {
+            var param = (FFXDLSE.Param)item;
+            var list = CallList(entry.Ffx, param);
+            if (list == null)
+                return;
+            DlseListKeys(entry, param, list.Params, p => FFXDLSE.Clone(p, entry.Ffx.Format), f => CallList(f, param).Params, list.Params.Count > 1);
+        }
+    }
+
+    private void DlseListKeys<T>(FxEntry entry, T item, List<T> list, Func<T, T> clone, Func<FFXDLSE, List<T>> listOf, bool canDelete) where T : class
+    {
+        int i = list.IndexOf(item);
+        if (InputManager.IsPressed(KeybindID.Duplicate))
+            Deferred.Add(() => DlseEdit(entry, item, (fx, f) => { var l = listOf(f); FfxStructure.Duplicate(l, l.IndexOf(item), clone); }));
+        else if (InputManager.IsPressed(KeybindID.Delete) && canDelete)
+            Deferred.Add(() => DlseEdit(entry, item, (fx, f) => { var l = listOf(f); FfxStructure.Delete(l, l.IndexOf(item)); }));
+        else if (InputManager.IsPressed(KeybindID.Reorder_Up) && i > 0)
+            Deferred.Add(() => DlseEdit(entry, item, (fx, f) => { var l = listOf(f); int j = l.IndexOf(item); FfxStructure.Move(l, j, j - 1); }));
+        else if (InputManager.IsPressed(KeybindID.Reorder_Down) && i >= 0 && i < list.Count - 1)
+            Deferred.Add(() => DlseEdit(entry, item, (fx, f) => { var l = listOf(f); int j = l.IndexOf(item); FfxStructure.Move(l, j, j + 1); }));
     }
 
     // ---------------------------------------------------------------- edits

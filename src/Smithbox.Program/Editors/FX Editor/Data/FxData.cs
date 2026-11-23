@@ -54,6 +54,28 @@ public class FxData : IDisposable
     /// </summary>
     public bool CanEditDlseStructure => Format == Model.FxFormat.Dlse;
 
+    /// <summary>
+    /// Inside an FXR1 / FXR v2 effect (DS1, DS1R, BB): a root's states, exits and actions, and call-list entries can be
+    /// added, duplicated, deleted and moved (FFX Older Games Plan §21.8, F7b). Whole effects still can't.
+    /// </summary>
+    public bool CanEditFxr1Structure => Format == Model.FxFormat.Fxr1;
+
+    private Model.Fxr1Structure.Templates fxr1Templates;
+
+    /// <summary>
+    /// The FXR1 action and exit templates of this project, built on first use in two passes over every effect of the
+    /// bank (the effects are read one at a time and dropped), then kept until the bank is reloaded.
+    /// </summary>
+    public Model.Fxr1Structure.Templates Fxr1Templates()
+    {
+        if (fxr1Templates == null && Bank != null)
+        {
+            var entries = Bank.Entries.Values.ToList();
+            fxr1Templates = new Model.Fxr1Structure.Templates(() => entries.Select(Bank.ReadFxr1Copy).Where(f => f != null));
+        }
+        return fxr1Templates;
+    }
+
     private Model.FfxStructure.Templates dlseTemplates;
 
     /// <summary>
@@ -65,8 +87,8 @@ public class FxData : IDisposable
         if (dlseTemplates == null && Bank != null)
         {
             var effects = Bank.Entries.Values.Select(Bank.ReadFfxCopy).Where(f => f != null)
-                .SelectMany(f => f.Effect.Variants?.Count > 0 ? f.Effect.Variants.Select(v => v.Effect) : [f.Effect]);
-            dlseTemplates = new Model.FfxStructure.Templates(format, effects);
+                .SelectMany(f => f.Effect.Variants?.Count > 0 ? f.Effect.Variants.Select(v => v.Effect) : [f.Effect]).ToList();
+            dlseTemplates = new Model.FfxStructure.Templates(format, effects).WithExits(effects);
         }
         return dlseTemplates;
     }
@@ -106,6 +128,7 @@ public class FxData : IDisposable
             }
             Bank = new FxBank(this, Project);
             dlseTemplates = null;
+            fxr1Templates = null;
             return true;
         }
 
@@ -122,6 +145,7 @@ public class FxData : IDisposable
 
         Bank = new FxBank(this, Project);
         dlseTemplates = null;
+        fxr1Templates = null;
         return true;
     }
 
@@ -182,5 +206,6 @@ public class FxData : IDisposable
         Bank?.Dispose();
         Bank = null;
         dlseTemplates = null;
+        fxr1Templates = null;
     }
 }

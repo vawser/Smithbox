@@ -137,6 +137,98 @@ public static class FfxStructure
     public static bool IsCallList(FFXDLSE.ParamList list) =>
         list?.Params.Count > 0 && list.Params.All(p => p is FFXDLSE.Param37 or FFXDLSE.Param38);
 
+    // ---------------------------------------------------------------- value types (§21.7)
+
+    /// <summary>The value family of a body class: the classes a slot may switch between keep their family.</summary>
+    public static string Family(int bodyClass) => bodyClass switch
+    {
+        1 or 5 or 6 => "int",
+        7 or 9 or 11 or 12 or 13 => "float",
+        15 or 17 or 18 or 19 or 20 or 21 => "colour",
+        _ => null,
+    };
+
+    /// <summary>The DS2-scheme class of a file type id (DES ids differ; <see cref="FFXDLSE.Param.DesBodyClass"/>).</summary>
+    public static int BodyClass(int fileType, FFXDLSE.StreamFormat format) =>
+        format == FFXDLSE.StreamFormat.DES && FFXDLSE.Param.DesBodyClass.TryGetValue(fileType, out int b) ? b : fileType;
+
+    /// <summary>Whether a param can become <paramref name="fileType"/>: a different type of the same family.</summary>
+    public static bool CanChangeType(FFXDLSE.Param param, int fileType, FFXDLSE.StreamFormat format)
+    {
+        int from = BodyClass(param.FileType, format), to = BodyClass(fileType, format);
+        return from != to && Family(from) is { } f && Family(to) == f;
+    }
+
+    /// <summary>
+    /// Replaces param <paramref name="index"/> of a list with one of <paramref name="fileType"/>, keeping its value:
+    /// a constant becomes one key at time 0, a sequence becomes a constant of its first key, sequences keep their keys,
+    /// and the cubic types (13, 21) get zero tangents (dropped going the other way). Ints round. Returns false when
+    /// the types aren't of one family.
+    /// </summary>
+    public static bool ChangeType(FFXDLSE.ParamList list, int index, int fileType, FFXDLSE.StreamFormat format)
+    {
+        if (list == null || index < 0 || index >= list.Params.Count || !CanChangeType(list.Params[index], fileType, format))
+            return false;
+        var keys = Keys(list.Params[index]);
+        if (keys.Count == 0)
+            keys.Add((0, new float[4]));
+        var made = Make(BodyClass(fileType, format), keys);
+        if (made == null)
+            return false;
+        made.FileType = fileType;
+        list.Params[index] = made;
+        return true;
+    }
+
+    private static List<(float Tick, float[] V)> Keys(FFXDLSE.Param p)
+    {
+        static float[] C(FFXDLSE.PrimitiveColor c) => new[] { c.R, c.G, c.B, c.A };
+        return p switch
+        {
+            FFXDLSE.Param1 x => [(0, new float[] { x.Int })],
+            FFXDLSE.Param5 x => x.TickInts.Select(k => (k.Tick, new float[] { k.Int })).ToList(),
+            FFXDLSE.Param6 x => x.TickInts.Select(k => (k.Tick, new float[] { k.Int })).ToList(),
+            FFXDLSE.Param7 x => [(0, new[] { x.Float })],
+            FFXDLSE.Param9 x => x.TickFloats.Select(k => (k.Tick, new[] { k.Float })).ToList(),
+            FFXDLSE.Param11 x => x.TickFloats.Select(k => (k.Tick, new[] { k.Float })).ToList(),
+            FFXDLSE.Param12 x => x.TickFloats.Select(k => (k.Tick, new[] { k.Float })).ToList(),
+            FFXDLSE.Param13 x => x.TickFloat3s.Select(k => (k.Tick, new[] { k.Float1 })).ToList(),
+            FFXDLSE.Param15 x => [(0, C(x.Color))],
+            FFXDLSE.Param17 x => x.TickColors.Select(k => (k.Tick, C(k.Color))).ToList(),
+            FFXDLSE.Param18 x => x.TickColors.Select(k => (k.Tick, C(k.Color))).ToList(),
+            FFXDLSE.Param19 x => x.TickColors.Select(k => (k.Tick, C(k.Color))).ToList(),
+            FFXDLSE.Param20 x => x.TickColors.Select(k => (k.Tick, C(k.Color))).ToList(),
+            FFXDLSE.Param21 x => x.TickColor3s.Select(k => (k.Tick, C(k.Color1))).ToList(),
+            _ => [],
+        };
+    }
+
+    private static FFXDLSE.Param Make(int bodyClass, List<(float Tick, float[] V)> keys)
+    {
+        static FFXDLSE.PrimitiveColor Col(float[] v) => new() { R = At(v, 0), G = At(v, 1), B = At(v, 2), A = v.Length > 3 ? v[3] : 1 };
+        static float At(float[] v, int i) => i < v.Length ? v[i] : v.Length > 0 ? v[0] : 0;
+        static int I(float[] v) => (int)MathF.Round(At(v, 0));
+        var first = keys[0].V;
+        return bodyClass switch
+        {
+            1 => new FFXDLSE.Param1 { Int = I(first) },
+            5 => new FFXDLSE.Param5 { TickInts = keys.Select(k => new FFXDLSE.TickInt(k.Tick, I(k.V))).ToList() },
+            6 => new FFXDLSE.Param6 { TickInts = keys.Select(k => new FFXDLSE.TickInt(k.Tick, I(k.V))).ToList() },
+            7 => new FFXDLSE.Param7 { Float = At(first, 0) },
+            9 => new FFXDLSE.Param9 { TickFloats = keys.Select(k => new FFXDLSE.TickFloat(k.Tick, At(k.V, 0))).ToList() },
+            11 => new FFXDLSE.Param11 { TickFloats = keys.Select(k => new FFXDLSE.TickFloat(k.Tick, At(k.V, 0))).ToList() },
+            12 => new FFXDLSE.Param12 { TickFloats = keys.Select(k => new FFXDLSE.TickFloat(k.Tick, At(k.V, 0))).ToList() },
+            13 => new FFXDLSE.Param13 { TickFloat3s = keys.Select(k => new FFXDLSE.TickFloat3(k.Tick, At(k.V, 0), 0, 0)).ToList() },
+            15 => new FFXDLSE.Param15 { Color = Col(first) },
+            17 => new FFXDLSE.Param17 { TickColors = keys.Select(k => new FFXDLSE.TickColor(k.Tick, Col(k.V))).ToList() },
+            18 => new FFXDLSE.Param18 { TickColors = keys.Select(k => new FFXDLSE.TickColor(k.Tick, Col(k.V))).ToList() },
+            19 => new FFXDLSE.Param19 { TickColors = keys.Select(k => new FFXDLSE.TickColor(k.Tick, Col(k.V))).ToList() },
+            20 => new FFXDLSE.Param20 { TickColors = keys.Select(k => new FFXDLSE.TickColor(k.Tick, Col(k.V))).ToList() },
+            21 => new FFXDLSE.Param21 { TickColor3s = keys.Select(k => new FFXDLSE.TickColor3(k.Tick, Col(k.V), new FFXDLSE.PrimitiveColor(), new FFXDLSE.PrimitiveColor())).ToList() },
+            _ => null,
+        };
+    }
+
     // ---------------------------------------------------------------- templates
 
     /// <summary>
@@ -165,6 +257,55 @@ public static class FfxStructure
                 }
             foreach (var (id, forms) in counts)
                 byId[id] = forms.Values.OrderByDescending(f => f.Count).First().First;
+        }
+
+        private FFXDLSE.Trigger exit;
+        private int exitUses;
+
+
+        /// <summary>
+        /// A new exit: the commonest vanilla exit condition (compared with its target set aside), ending the effect
+        /// (target −1). Its target and values are then edited as any exit's (F3c). Null when no effect has an exit.
+        /// </summary>
+        public FFXDLSE.Trigger NewExit()
+        {
+            if (exit == null)
+                return null;
+            var t = FFXDLSE.Clone(exit, format);
+            t.StateIndex = -1;
+            return t;
+        }
+
+        /// <summary>How often the exit template's condition occurs.</summary>
+        public int ExitUses => exitUses;
+
+        /// <summary>Collects the exit template from the effects (called by the constructor's caller once).</summary>
+        public Templates WithExits(IEnumerable<FFXDLSE.FXEffect> effects)
+        {
+            var forms = new Dictionary<string, (int Count, FFXDLSE.Trigger First)>();
+            foreach (var fx in effects)
+                foreach (var t in fx.StateMap.States.SelectMany(s => s.Triggers))
+                {
+                    int target = t.StateIndex;
+                    t.StateIndex = -1;
+                    string key = Convert.ToBase64String(ExitBytes(t));
+                    t.StateIndex = target;
+                    forms[key] = forms.TryGetValue(key, out var f) ? (f.Count + 1, f.First) : (1, t);
+                }
+            if (forms.Count > 0)
+            {
+                var best = forms.Values.OrderByDescending(f => f.Count).First();
+                exit = FFXDLSE.Clone(best.First, format);
+                exitUses = best.Count;
+            }
+            return this;
+        }
+
+        private byte[] ExitBytes(FFXDLSE.Trigger t)
+        {
+            var fx = new FFXDLSE { Format = format };
+            fx.Effect.StateMap.States.Add(new FFXDLSE.State { Triggers = { t } });
+            return fx.Write();
         }
 
         /// <summary>The action ids with a template, with how often each occurs.</summary>

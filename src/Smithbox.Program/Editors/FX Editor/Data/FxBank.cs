@@ -525,6 +525,27 @@ public class FxBank : IDisposable
         }
     }
 
+    /// <summary>
+    /// An FXR1 / FXR v2 game's effect as a separate copy (FFX Older Games Plan §21.8, F7b templates): the loaded file
+    /// written and read back when the entry is loaded, else read from the packed bytes. Null when it can't be read.
+    /// </summary>
+    public FXR1 ReadFxr1Copy(FxEntry entry)
+    {
+        if (Data.Format != Model.FxFormat.Fxr1)
+            return null;
+        try
+        {
+            if (entry.Fxr1 != null)
+                return FXR1.Read(entry.Fxr1.Write());
+            var packed = entry.Packed;
+            return packed == null ? null : FXR1.Read(Unpack(packed, entry.PackedLength));
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     /// <summary>Adds an effect made in the editor. It's written into its binders on the next save.</summary>
     public void AddNew(FxEntry entry)
     {

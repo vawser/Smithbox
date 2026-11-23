@@ -490,6 +490,9 @@ public class FxInspector
                 ImGui.TextDisabled(label);
             if (ImGui.IsItemHovered())
                 ImGui.SetTooltip(Tooltip(value));
+            // a DLSE slot's value type (constant ↔ sequence …), among the types vanilla uses for it (§21.7)
+            if (Data.CanEditDlseStructure && entry?.Ffx != null && action is Model.FfxActionAdapter dlse && value is Model.IFxTypedValue)
+                DisplayDlseTypeMenu(entry, dlse, value);
 
             ImGui.TableSetColumnIndex(1);
             ImGui.SetNextItemWidth(-1);
@@ -512,6 +515,53 @@ public class FxInspector
         }
 
         ImGui.EndTable();
+    }
+
+    /// <summary>
+    /// The right-click menu of a DLSE slot's name: its value type, switched among the types vanilla uses for that slot
+    /// (the schema's types) within one family (int, float, colour). The value is kept: a constant becomes one key at 0,
+    /// a sequence a constant of its first key (FfxStructure.ChangeType). One undoable structure edit.
+    /// </summary>
+    private void DisplayDlseTypeMenu(FxEntry entry, Model.FfxActionAdapter action, Model.IFxValue value)
+    {
+        if (!ImGui.BeginPopupContextItem($"##fxDlseType_{value.Name}"))
+            return;
+        var view = action.View;
+        int index = view.IndexOf(value.Name);
+        var list = action.Source switch
+        {
+            SoulsFormats.FFXDLSE.Action a => a.ParamList,
+            SoulsFormats.FFXDLSE.Param38 c => c.ParamList,
+            SoulsFormats.FFXDLSE.Param37 e => e.ParamList,
+            _ => null,
+        };
+        var param = list != null && index >= 0 && index < list.Params.Count ? list.Params[index] : null;
+        var format = entry.Ffx.Format;
+
+        ImGui.TextDisabled(LOC.Get("FX_Dlse_Value_Type"));
+        bool any = false;
+        foreach (int t in view.ParamDef(index)?.Types ?? [])
+        {
+            if (param == null)
+                break;
+            bool current = t == param.FileType;
+            bool can = Model.FfxStructure.CanChangeType(param, t, format);
+            if (!current && !can)
+                continue;
+            any = true;
+            var name = Data.FfxSchema?.ValueType(t, Data.FfxGame)?.Name ?? $"{t}";
+            if (ImGui.MenuItem($"{name} ({t})##fxDlseType{t}", "", current, can))
+            {
+                int to = t;
+                var p = param;
+                Editor.ActionManager.ExecuteAction(new FxDlseStructureAction(Editor, entry,
+                    f => Model.FfxStructure.ChangeType(list, list.Params.IndexOf(p), to, f.Format)));
+            }
+        }
+        if (!any)
+            ImGui.TextDisabled(LOC.Get("FX_Dlse_Value_Type_None"));
+        GUI.Tooltip(LOC.Get("FX_Dlse_Value_Type_TT"));
+        ImGui.EndPopup();
     }
 
     /// <summary>

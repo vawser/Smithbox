@@ -762,6 +762,18 @@
     { "Key": "FX_Dlse_Call_Delete", "Text": "Delete Call" },
     { "Key": "FX_Dlse_Call_Delete_TT", "Text": "Remove this call from its list. A list keeps at least one call." },
     { "Key": "FX_Dlse_Call_Fixed_TT", "Text": "This call fills one of its action's fixed slots, so it can't be copied, removed or moved. Only lists made of calls can change length." },
-    { "Key": "FX_Dlse_Move_TT", "Text": "Move this item one place up or down in its list. The order of a state's actions and of a list's calls can change how the effect plays." }
+    { "Key": "FX_Dlse_Move_TT", "Text": "Move this item one place up or down in its list. The order of a state's actions and of a list's calls can change how the effect plays." },
+    { "Key": "FX_Dlse_Exit_Add", "Text": "Add Exit" },
+    { "Key": "FX_Dlse_Exit_Add_TT", "Text": "Add an exit that ends the effect, with this project's most common exit condition. Change its target and values in the Inspector." },
+    { "Key": "FX_Dlse_Copy", "Text": "Copy" },
+    { "Key": "FX_Dlse_Copy_TT", "Text": "Copy this action or call, with its values and calls, to paste into another state or list of this game." },
+    { "Key": "FX_Dlse_Paste_After", "Text": "Paste After" },
+    { "Key": "FX_Dlse_Paste_Into_State", "Text": "Paste Action" },
+    { "Key": "FX_Dlse_Paste_TT", "Text": "Insert a copy of the copied item (from {0}). An action goes into a state's actions, a call into a list of calls." },
+    { "Key": "FX_Dlse_Paste_Empty", "Text": "Nothing of this kind has been copied: copy a state action to paste an action, or a call to paste a call." },
+    { "Key": "FX_Dlse_Paste_Game", "Text": "The copied item comes from {0}; it can only be pasted into effects of the same game." },
+    { "Key": "FX_Dlse_Value_Type", "Text": "Value type" },
+    { "Key": "FX_Dlse_Value_Type_None", "Text": "This slot has only one type in this game's effects." },
+    { "Key": "FX_Dlse_Value_Type_TT", "Text": "Switch this slot between the value types the game's own effects use for it, keeping its value: a constant becomes a curve with one key at 0, a curve becomes a constant of its first key, and curves keep their keys." }
   ]
 }

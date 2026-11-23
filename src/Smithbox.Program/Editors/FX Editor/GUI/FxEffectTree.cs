@@ -155,7 +155,7 @@ public partial class FxEffectTree
         }
 
         if (!Data.CanEditStructure)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get(Data.CanEditDlseStructure ? "FX_Dlse_Notice_Structure" : "FX_Dlse_Notice"));
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get(Data.CanEditDlseStructure || Data.CanEditFxr1Structure ? "FX_Dlse_Notice_Structure" : "FX_Dlse_Notice"));
 
         // A DES id with different effects in different binders: one version per content, picked here
         DisplayVersionPicker(entry);
@@ -185,6 +185,7 @@ public partial class FxEffectTree
 
         DisplayPopups(entry);
         DisplayDlsePopups(entry);
+        DisplayFxr1Popups(entry);
 
         foreach (var op in Deferred)
             op();
@@ -200,7 +201,10 @@ public partial class FxEffectTree
         bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", states.Count)}##fxStates{idPrefix}", ImGuiTreeNodeFlags.DefaultOpen);
         // a DLSE effect's states have their own menu (§21, F7a)
         bool dlse = Data.CanEditDlseStructure && entry.Ffx != null && states.Count > 0 && states[0].Source is FFXDLSE.State;
-        if (!Filtering && dlse)
+        bool fxr1 = Data.CanEditFxr1Structure && entry.Fxr1 != null && states.Count > 0 && states[0].Source is FXR1.FXState;
+        if (!Filtering && fxr1)
+            DisplayFxr1StatesMenu(entry, (FXR1.FXState)states[0].Source, idPrefix);
+        else if (!Filtering && dlse)
             DisplayDlseStatesMenu(entry, (FFXDLSE.State)states[0].Source, idPrefix);
         else if (!Filtering && canAdd && ImGui.BeginPopupContextItem($"##fxStatesContext{idPrefix}"))
         {
@@ -232,7 +236,9 @@ public partial class FxEffectTree
             TreeRow(state.Source);
             if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
                 Editor.Selection.SelectItem(state.Source);
-            if (dlse && state.Source is FFXDLSE.State dlseState)
+            if (fxr1 && state.Source is FXR1.FXState fxr1State)
+                DisplayFxr1StateMenu(entry, fxr1State, i, states.Count, idPrefix);
+            else if (dlse && state.Source is FFXDLSE.State dlseState)
                 DisplayDlseStateMenu(entry, dlseState, i, states.Count, idPrefix);
             else if (state.Source is FxrState fxrState)
                 DisplayStateContextMenu(entry, fxrState, i);
@@ -426,7 +432,9 @@ public partial class FxEffectTree
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             Editor.Selection.SelectItem(action.Source);
 
-        if (Data.CanEditDlseStructure && entry.Ffx != null && action.Source is FFXDLSE.Action or FFXDLSE.Param37 or FFXDLSE.Param38)
+        if (Data.CanEditFxr1Structure && entry.Fxr1 != null && action.Source is FXR1.FXAction or FXR1.FXNode.ActionCallNode or FXR1.FXNode.EffectCallNode)
+            DisplayFxr1ActionMenu(entry, action.Source, $"{idPrefix}{actionId}");
+        else if (Data.CanEditDlseStructure && entry.Ffx != null && action.Source is FFXDLSE.Action or FFXDLSE.Param37 or FFXDLSE.Param38)
             DisplayDlseActionMenu(entry, action.Source, $"{idPrefix}{actionId}");
         else if (action.Source is FxrAction fxrAction)
             DisplayActionContextMenu(entry, fxrAction, actionId);
@@ -1070,6 +1078,17 @@ public partial class FxEffectTree
             return;
 
         var entry = Editor.Selection.Entry;
+        // DLSE effects: their own items (§21.7)
+        if (entry?.Fxr1 != null && Data.CanEditFxr1Structure)
+        {
+            Fxr1Shortcuts(entry);
+            return;
+        }
+        if (entry?.Ffx != null && Data.CanEditDlseStructure)
+        {
+            DlseShortcuts(entry);
+            return;
+        }
         if (entry?.Fxr == null)
             return;
 
