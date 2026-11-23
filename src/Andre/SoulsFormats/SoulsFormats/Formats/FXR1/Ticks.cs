@@ -210,13 +210,16 @@ namespace SoulsFormats
                 }
                 br.StepOut();
 
+                // Every key's value, then every key's in tangent, then every out tangent (as ReadListDirectly).
+                // Read key by key instead, BB's cubic sizes had "tangents" of 7.5 … 20 and second keys of π/4;
+                // read this way every tangent is an angle in [0, π/2] (FFX plan §20.31).
                 br.StepIn(valueOffset);
                 for (int i = 0; i < count; i++)
-                {
                     ticks[i].X = br.ReadSingle();
+                for (int i = 0; i < count; i++)
                     ticks[i].Y = br.ReadSingle();
+                for (int i = 0; i < count; i++)
                     ticks[i].Z = br.ReadSingle();
-                }
                 br.StepOut();
 
                 return ticks;
@@ -228,12 +231,13 @@ namespace SoulsFormats
                 var flattenedValues = new List<float>(ticks.Count);
 
                 for (int i = 0; i < ticks.Count; i++)
-                {
                     times.Add(ticks[i].Time);
+                for (int i = 0; i < ticks.Count; i++)
                     flattenedValues.Add(ticks[i].X);
+                for (int i = 0; i < ticks.Count; i++)
                     flattenedValues.Add(ticks[i].Y);
+                for (int i = 0; i < ticks.Count; i++)
                     flattenedValues.Add(ticks[i].Z);
-                }
 
                 env.RegisterPointer(times);
                 env.RegisterPointer(flattenedValues);

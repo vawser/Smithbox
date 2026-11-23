@@ -6829,46 +6829,51 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterDegree",
               "types": [
                 9,
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSpeed",
               "types": [
                 11,
                 82,
                 91
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk04",
+              "name": "particleScaleX",
               "types": [
                 11,
                 13,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk05",
+              "name": "particleScaleY",
               "types": [
                 11,
                 13,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "emitterDirectionMode",
               "types": [
                 1
               ],
@@ -6879,10 +6884,11 @@
                 1,
                 2,
                 3
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -6891,23 +6897,26 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 13,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "particleColor",
               "types": [
                 19,
                 20,
                 21
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 10 slots (the agreeing prefix) (FFX plan Â§20.27)."
             }
           ]
         }
@@ -7164,16 +7173,18 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk07",
@@ -7188,7 +7199,7 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -7197,13 +7208,15 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "particleScaleZ",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk10",
@@ -7212,10 +7225,11 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "particleColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk12",
@@ -7474,47 +7488,53 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterRadius",
               "types": [
                 9,
                 11,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "emitterDegree",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
               "types": [
                 11,
                 82,
                 91
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "emitterDirectionMode",
@@ -7532,7 +7552,7 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -7541,7 +7561,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk09",
@@ -7552,11 +7573,12 @@
               "max": 0.800000011920929
             },
             {
-              "name": "unk10",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "emitterDistributionMode",
@@ -7572,12 +7594,13 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "particleColor",
               "types": [
                 19,
                 20,
                 21
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 13 slots (the agreeing prefix) (FFX plan Â§20.27)."
             }
           ]
         }
@@ -7813,50 +7836,56 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterRadius",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "emitterDegree",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk05",
-              "types": [
-                11,
-                13,
-                82
-              ]
-            },
-            {
-              "name": "unk06",
+              "name": "particleScaleX",
               "types": [
                 11,
                 13,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "particleScaleY",
+              "types": [
+                11,
+                13,
+                82
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
+            },
+            {
+              "name": "emitterDistributionMode",
               "types": [
                 1
               ],
@@ -7865,10 +7894,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -7877,18 +7907,20 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 13,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "emitterMovementMode",
               "types": [
                 1
               ],
@@ -7897,14 +7929,16 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk11",
+              "name": "particleColor",
               "types": [
                 19,
                 21
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 12 slots (the agreeing prefix) (FFX plan Â§20.27)."
             }
           ]
         }
@@ -8179,65 +8213,73 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterSizeX",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "emitterSizeY",
               "types": [
                 11,
                 13,
                 150
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSizeZ",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk04",
+              "name": "emitterDegree",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk05",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "emitterSpeed",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "particleScaleX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "particleScaleY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "emitterDistributionMode",
               "types": [
                 1
               ],
@@ -8246,10 +8288,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -8258,7 +8301,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk11",
@@ -8272,14 +8316,15 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk13",
+              "name": "emitterMovementMode",
               "types": [
                 1
               ],
@@ -8292,15 +8337,17 @@
                 3,
                 4,
                 6
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk14",
+              "name": "particleColor",
               "types": [
                 19,
                 20,
                 21
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             }
           ]
         }
@@ -11852,50 +11899,57 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterDegreeX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "emitterDegreeY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "emitterDirectionMode",
               "types": [
                 1
               ],
@@ -11903,10 +11957,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -11915,13 +11970,15 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "particleColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 11 slots (the agreeing prefix) (FFX plan Â§20.27)."
             }
           ]
         }
