@@ -240,14 +240,11 @@ public static class FfxEffectDefBuilder
             // the emit action's count (a56's second param, §20.11); one when the node type has none
             config.PerEmission = Value(At("perEmission"), FxArgument.ActiveTime) ?? FxValue.Constant(1);
 
-            // transform: an a35 call (offset x/y/z, rotation x/y/z in degrees, provisional from the value ranges)
+            // the node actions among the call's values, by their slot names (§20.23: FXR3's ids and field order):
+            // a35 / a36 Static / RandomNodeTransform, a34 NodeSpin, a1 NodeAcceleration
             for (int k = 0; k < values.Count; k++)
-                if (values[k] is IFxCallValue { Call: { TypeId: 35 } t } && t.Values.Count >= 6)
-                {
-                    var v = t.Values.Select(x => (float)(x.Get()?.FirstOrDefault() ?? 0)).ToArray();
-                    config.Offset = new Vector3(v[0], v[1], v[2]);
-                    config.Rotation = new Vector3(v[3], v[4], v[5]);
-                }
+                if (values[k] is IFxCallValue { Call: { } na })
+                    NodeActions(config, na);
 
             var emitter = CallAt("emitter");
             var appearance = CallAt("appearance");
@@ -293,6 +290,49 @@ public static class FfxEffectDefBuilder
 
         // ---------------------------------------------------------------- actions
 
+        /// <summary>
+        /// A node action passed to a node type (§20.23), read by its slot names as FXR3's: the transform (offset,
+        /// rotation in degrees, and for RandomNodeTransform their variances), the spin (angular speed and multiplier
+        /// per axis) and the acceleration (speed and acceleration along Z, acceleration along Y). (provisional) A
+        /// Float2 range reads its first value; the spin is taken as degrees per second.
+        /// </summary>
+        private void NodeActions(FxConfigDef c, IFxAction a)
+        {
+            // the action's own slots only: DS1's a1 also carries an ActionData record (Unk1 257, OffsetX / OffsetY, …)
+            // that isn't the node acceleration's layout
+            var n = new Dictionary<string, IFxValue>(StringComparer.OrdinalIgnoreCase);
+            foreach (var v in a.Values)
+                if (v.Name != null) n.TryAdd(v.Name, v);
+            float F(string name) => (float)(n.GetValueOrDefault(name)?.Get()?.FirstOrDefault() ?? 0);
+            Vector3 V3(string prefix) => new(F(prefix + "X"), F(prefix + "Y"), F(prefix + "Z"));
+            if (n.ContainsKey("offsetX"))
+            {
+                c.Offset = V3("offset");
+                c.Rotation = V3("rotation");
+                if (n.ContainsKey("offsetVarianceX"))
+                {
+                    c.OffsetVariance = V3("offsetVariance");
+                    c.RotationVariance = V3("rotationVariance");
+                }
+            }
+            if (n.ContainsKey("angularSpeedX"))
+                c.NodeSpin = new[] { "X", "Y", "Z" }.SelectMany(ax => new[]
+                {
+                    Value(n.GetValueOrDefault("angularSpeed" + ax), FxArgument.ActiveTime),
+                    Value(n.GetValueOrDefault("angularSpeedMultiplier" + ax), FxArgument.ActiveTime),
+                }).ToArray();
+            if (n.ContainsKey("accelerationZ") || n.ContainsKey("speedZ"))
+            {
+                // NodeSpeed (a120 / a121, §20.24) has a speed multiplier and no acceleration Z; the others accelerate
+                c.NodeMove = n.ContainsKey("accelerationZ") ? FxNodeMoveKind.Acceleration : FxNodeMoveKind.Speed;
+                c.NodeSpeedMultiplierZ = Value(n.GetValueOrDefault("speedMultiplierZ"), FxArgument.ActiveTime);
+                c.NodeSpeedZ = Value(n.GetValueOrDefault("speedZ"), FxArgument.ActiveTime);
+                c.NodeAccelerationZ = Value(n.GetValueOrDefault("accelerationZ"), FxArgument.ActiveTime);
+                c.NodeAccelerationMultiplierZ = Value(n.GetValueOrDefault("accelerationMultiplierZ"), FxArgument.ActiveTime);
+                c.NodeAccelerationY = Value(n.GetValueOrDefault("accelerationY"), FxArgument.ActiveTime);
+            }
+        }
+
         /// <summary>An action's values by name: its own, then its ActionData's (FXR1), case-insensitive.</summary>
         private Dictionary<string, IFxValue> Named(IFxAction a)
         {
@@ -318,7 +358,20 @@ public static class FfxEffectDefBuilder
             IFxValue V(string name) => n.GetValueOrDefault(name);
             switch (a.TypeId)
             {
-                case 28: case 33: case 45: c.Shape = FxShapeKind.Point; break;
+                case 28: c.Shape = FxShapeKind.Point; break;
+                // the two-angle cones (§20.22): an elliptic cone spreads elliptically, a four-sided pyramid rectangularly,
+                // over their X / Y angles (provisional: the angles read as a28's degree, a half-angle in degrees)
+                case 33 or 45:
+                    c.Shape = FxShapeKind.Point;
+                    var dx = Value(V("emitterDegreeX"), FxArgument.ActiveTime);
+                    var dy = Value(V("emitterDegreeY"), FxArgument.ActiveTime);
+                    if (dx != null || dy != null)
+                    {
+                        c.Spread = a.TypeId == 33 ? FxSpreadKind.Elliptical : FxSpreadKind.Rectangular;
+                        c.SpreadAngleX = dx ?? dy;
+                        c.SpreadAngleY = dy ?? dx;
+                    }
+                    break;
                 case 29: c.Shape = FxShapeKind.Rectangle; c.ShapeSizeX = Value(V("emitterSize") ?? V("emitterSizeX"), FxArgument.ActiveTime); c.ShapeSizeY = c.ShapeSizeX; break;
                 case 30: c.Shape = FxShapeKind.Disk; c.ShapeRadius = Value(V("emitterRadius"), FxArgument.ActiveTime); break;
                 case 31: c.Shape = FxShapeKind.Sphere; c.ShapeRadius = Value(V("emitterRadius"), FxArgument.ActiveTime); c.EmitInside = true; break;
@@ -337,6 +390,19 @@ public static class FfxEffectDefBuilder
             if (degree != null) { c.Spread = FxSpreadKind.Circular; c.SpreadAngle = degree; }
             var speed = Value(V("emitterSpeed"), FxArgument.ActiveTime);
             if (speed != null) { c.ParticleMove = FxParticleMoveKind.Speed; c.ParticleMoveSpeed = speed; }
+
+            // the emitter's particle modifier (§20.22: FXR3 ParticleModifier's scale X / Y / Z, colour and uniform scale,
+            // written by every DS2 emitter compile outside its block): multipliers on the particles' size and colour.
+            // (provisional) a ParamFloat's variation isn't applied, as elsewhere
+            if (V("particleScaleX") is { } psx)
+            {
+                c.ParticleScaleX = Value(psx, FxArgument.ActiveTime);
+                c.ParticleScaleY = Value(V("particleScaleY"), FxArgument.ActiveTime);
+                c.ParticleScaleZ = Value(V("particleScaleZ"), FxArgument.ActiveTime);
+                c.UniformScale = (V("uniformScale")?.Get()?.FirstOrDefault() ?? 0) != 0;
+            }
+            if (V("particleColor") is { } pc)
+                c.ParticleColor = Value(pc, FxArgument.ActiveTime);
         }
 
         private void Movement(FxConfigDef c, IFxAction a)
@@ -345,8 +411,18 @@ public static class FfxEffectDefBuilder
             // (provisional) gravity pulls down, in the runtime's units, over the particle's age
             var g = Value(n.GetValueOrDefault("gravity"), FxArgument.ParticleAge);
             if (g != null) c.ParticleGravity = g;
+            // FXR3's ParticleSpeed family (BB's a60 / a64 / a65, §20.24): the particles' speed and its multiplier
+            // (provisional: a Float2 multiplier range reads its first value)
+            var speed = Value(n.GetValueOrDefault("speed"), FxArgument.ParticleAge);
+            if (speed != null)
+            {
+                c.ParticleMove = FxParticleMoveKind.Speed;
+                c.ParticleMoveSpeed = speed;
+                c.ParticleMoveSpeedMultiplier = Value(n.GetValueOrDefault("speedMultiplier"), FxArgument.ParticleAge);
+            }
             if (c.ParticleMove == FxParticleMoveKind.None) c.ParticleMove = FxParticleMoveKind.Speed;
-            if (a.TypeId is not (55 or 84 or 105)) Note($"movement a{a.TypeId}");
+            // noted only when the action names neither (DS1's a55 often stores an empty FXField 28 as its gravity: no value, nothing lost)
+            if (!n.ContainsKey("gravity") && !n.ContainsKey("speed")) Note($"movement a{a.TypeId}");
         }
 
         private void Appearance(FxConfigDef c, IFxAction a)
@@ -363,7 +439,9 @@ public static class FfxEffectDefBuilder
                 return;
             if (Light(c, app, n))
                 return;
-            if (a.TypeId is not (27 or 59 or 70 or 71 or 15000 or 15001))
+            if (GpuParticles(c, app, a, n))
+                return;
+            if (a.TypeId is not (20 or 27 or 59 or 70 or 71 or 15000 or 15001))
             {
                 var t = a.Values.FirstOrDefault(v => v.Resource == "texture") ?? n.Values.FirstOrDefault(v => v.Resource == "texture");
                 if (t != null && a.TypeId is 43 or 107)
@@ -411,6 +489,24 @@ public static class FfxEffectDefBuilder
             var tex = V("textureID", "TextureID", "TextureID1") ?? a.Values.FirstOrDefault(v => v.Resource == "texture")
                 ?? n.Values.FirstOrDefault(v => v.Resource == "texture");
             bb.Texture = (int)(tex?.Get()?.FirstOrDefault() ?? 0);
+
+            // a multi-texture billboard (DS1's a70 ActionData, DS2's a70 / a15001 by the same field names, §20.18): its
+            // second and third textures as layers, each scrolling and offset in UV. (provisional) UV units per second as
+            // FXR3's, the layers combined as FXR3's opacity mode 0 (colours multiplied, opacity layer 1's alpha)
+            int Id(string name) => (int)(V(name)?.Get()?.FirstOrDefault() ?? 0);
+            if (Id("textureID2") > 0 || Id("textureID3") > 0)
+            {
+                bb.Kind = FxBillboardKind.MultiTexture;
+                bb.Layer2 = Id("textureID2");
+                bb.Layer3 = Id("textureID3");
+                for (int i = 0; i < 3; i++)
+                {
+                    bb.LayerSpeedU[i] = Value(V($"tex{i + 1}UVScrollX"), FxArgument.ParticleAge);
+                    bb.LayerSpeedV[i] = Value(V($"tex{i + 1}UVScrollY"), FxArgument.ParticleAge);
+                    bb.LayerOffsetU[i] = Value(V($"tex{i + 1}UVOffsetX"), FxArgument.ParticleAge);
+                    bb.LayerOffsetV[i] = Value(V($"tex{i + 1}UVOffsetY"), FxArgument.ParticleAge);
+                }
+            }
             // (provisional) the same blend mode numbers as FXR3
             bb.BlendMode = (int)(V("blendMode")?.Get()?.FirstOrDefault() ?? 2);
             bb.Columns = Math.Max(1, (int)(V("animFrameSliceCountPerRow")?.Get()?.FirstOrDefault() ?? 1));
@@ -418,16 +514,17 @@ public static class FfxEffectDefBuilder
             bb.FrameIndex = Value(V("animFrameInitial"), FxArgument.ParticleAge);
             bb.FrameIndexOffset = Value(V("animFrameTimeline"), FxArgument.ParticleAge);
 
-            // (provisional) size: scale 2 is the billboard's size over the particle's age, scale 1 a factor on it
+            // (provisional) size: scale 2 is the billboard's size over the particle's age, scale 1 a factor on it; a
+            // single scale pair (a59's scaleX / scaleY, DS1 ActionData 59 and DS2, §20.19) is the size itself
             // a missing axis takes the other one's size (a15001 has scale 2's Y named, not its X)
-            var width = Value(V("scale2X"), FxArgument.ParticleAge) ?? Value(V("scale1X", "scale"), FxArgument.ParticleAge);
-            var height = Value(V("scale2Y"), FxArgument.ParticleAge) ?? Value(V("scale1Y", "scale"), FxArgument.ParticleAge);
+            var width = Value(V("scale2X"), FxArgument.ParticleAge) ?? Value(V("scale1X", "scaleX", "scale"), FxArgument.ParticleAge);
+            var height = Value(V("scale2Y"), FxArgument.ParticleAge) ?? Value(V("scale1Y", "scaleY", "scale"), FxArgument.ParticleAge);
             bb.Width = width ?? height ?? FxValue.Constant(1);
             bb.Height = height ?? bb.Width;
             if (V("scale2X") != null && V("scale1X") != null)
             {
-                c.ParticleScaleX = Value(V("scale1X"), FxArgument.ParticleAge);
-                c.ParticleScaleY = Value(V("scale1Y"), FxArgument.ParticleAge);
+                c.ParticleScaleX ??= Value(V("scale1X"), FxArgument.ParticleAge);
+                c.ParticleScaleY ??= Value(V("scale1Y"), FxArgument.ParticleAge);
             }
             bb.Size = bb.Width;
 
@@ -436,8 +533,8 @@ public static class FfxEffectDefBuilder
             bb.Color2 = Colour(n, "color2") ?? Colour(n, "color");
             bb.Color3 = Colour(n, "color3");
             TypedColours(a, bb);
-            bb.RotationZ = Angle(V("rotZ"));
-            var rs = Angle(V("rotSpeedZ"));
+            bb.RotationZ = Angle(a, V("rotZ"));
+            var rs = Angle(a, V("rotSpeedZ"));
             if (rs != null) bb.AngularSpeed = new FxValue[] { null, null, null, null, rs, null };
 
             app.Billboard = bb;
@@ -456,16 +553,19 @@ public static class FfxEffectDefBuilder
         /// </summary>
         private void TypedColours(IFxAction a, FxBillboardDef bb)
         {
-            if (a.Values.Any(v => v.Name != null && v.Name.StartsWith("color", StringComparison.OrdinalIgnoreCase)))
-                return;
             var sequences = a.Values.Where(v => v is IFxTypedValue { TypeName: { } tn } && tn.StartsWith("RGBA") && tn.Contains("Sequence")).ToList();
             if (sequences.Count == 0)
                 return;
+            // the first: the colour, unless a slot names one; the second: the multiplier, unless it has a name of its
+            // own (DES's a71 names its two colours color1 / color2; DS2's a59 names only its colour, §20.19)
             if (bb.Color1 == null && bb.Color2 == null)
                 bb.Color2 = Value(sequences[0], FxArgument.ParticleAge);
-            if (bb.Color3 == null && sequences.Count >= 2)
+            if (bb.Color3 == null && sequences.Count >= 2 && IsDefaultName(sequences[1].Name))
                 bb.Color3 = Value(sequences[1], FxArgument.ParticleAge);
         }
+
+        private static bool IsDefaultName(string name) =>
+            name == null || System.Text.RegularExpressions.Regex.IsMatch(name, @"^(unk|texture|sound|effect|action|param)\d\d$");
 
         /// <summary>
         /// Tracer (a40), distortion (a43) and radial blur (a107), from DS1's ActionData field names (FXR1 games; the
@@ -501,7 +601,9 @@ public static class FfxEffectDefBuilder
                     app.Billboard = new FxBillboardDef
                     {
                         Kind = FxBillboardKind.Distortion,
-                        Texture = Int("TextureID1", 0),
+                        // the mask; DS2's a43 has none (TextureID1 0 in every instance, §20.20): the normal map then
+                        // stands in, as the unnamed fallback drew it (§20.15)
+                        Texture = Int("TextureID1", 0) > 0 ? Int("TextureID1", 0) : Int("TextureID2", 0),
                         Layer2 = Int("TextureID2", 0),
                         DistortionMode = Math.Clamp(Int("DistortionMode", 1), 0, 4),
                         DistortionShape = Math.Clamp(Int("ShapeMode", 0), 0, 2),
@@ -553,6 +655,42 @@ public static class FfxEffectDefBuilder
         }
 
         /// <summary>
+        /// A GPU particle system (BB's a10000, FXR3's GPUStandardParticle, §20.25–26), from the slots named after FXR3's
+        /// fields: textures, emitter shape / size / rotation / distribution, particle offset and speed with their
+        /// ranges. Run by the node, as FXR3's. (provisional) What BB doesn't name yet keeps the runtime's defaults: 10
+        /// particles per emission, one emission a second, a one-second life, size 1, white; the blend mode is additive.
+        /// </summary>
+        private bool GpuParticles(FxConfigDef c, FxAppearanceDef app, IFxAction a, Dictionary<string, IFxValue> n)
+        {
+            if (!n.ContainsKey("particleSpeedMinX") || !n.ContainsKey("emitterSizeX"))
+                return false;
+            float F(string name, float fallback = 0) => (float)(n.GetValueOrDefault(name)?.Get()?.FirstOrDefault() ?? fallback);
+            Vector3 V3(string prefix) => new(F(prefix + "X"), F(prefix + "Y"), F(prefix + "Z"));
+            var d = new FxGpuParticleDef
+            {
+                Texture = (int)F("texture", 1),
+                Shape = (int)F("emitterShape", 1),
+                EmitterSize = V3("emitterSize"),
+                EmitterRotation = V3("emitterRotation"),
+                Distribution = F("emitterDistribution"),
+                Offset = V3("particleOffset"),
+                OffsetMin = V3("particleOffsetMin"),
+                OffsetMax = V3("particleOffsetMax"),
+                Speed = V3("particleSpeed"),
+                SpeedMin = V3("particleSpeedMin"),
+                SpeedMax = V3("particleSpeedMax"),
+                BlendMode = (int)F("blendMode", 4),
+                // as FXR3's builder falls back when the interval isn't named (0 would emit every frame)
+                IntervalMin = 1,
+                IntervalMax = 1,
+            };
+            app.GpuParticles = d;
+            c.GpuSystems.Add(app);
+            Note($"appearance a{a.TypeId} (GPU particles, count / timing / size provisional)");
+            return true;
+        }
+
+        /// <summary>
         /// Model appearances (a3 / a61 model appearance, a108 Particle3D): the model id, its size (scale 2 over the
         /// particle's age × scale 1, as billboards; provisional), rotation and speed, colours, blend mode and the
         /// particle's duration. Tinted by the effect's colours (provisional).
@@ -578,16 +716,16 @@ public static class FfxEffectDefBuilder
             m.SizeZ = Axis("Z") ?? m.SizeX;
             if (V("scale2X") != null && V("scale1X") != null)
             {
-                c.ParticleScaleX = Value(V("scale1X"), FxArgument.ParticleAge);
-                c.ParticleScaleY = Value(V("scale1Y"), FxArgument.ParticleAge);
-                c.ParticleScaleZ = Value(V("scale1Z"), FxArgument.ParticleAge);
+                c.ParticleScaleX ??= Value(V("scale1X"), FxArgument.ParticleAge);
+                c.ParticleScaleY ??= Value(V("scale1Y"), FxArgument.ParticleAge);
+                c.ParticleScaleZ ??= Value(V("scale1Z"), FxArgument.ParticleAge);
             }
-            m.RotationX = Angle(V("rotX"));
-            m.RotationY = Angle(V("rotY"));
-            m.RotationZ = Angle(V("rotZ"));
-            var sx = Angle(V("rotSpeedX"));
-            var sy = Angle(V("rotSpeedY"));
-            var sz = Angle(V("rotSpeedZ"));
+            m.RotationX = Angle(a, V("rotX"));
+            m.RotationY = Angle(a, V("rotY"));
+            m.RotationZ = Angle(a, V("rotZ"));
+            var sx = Angle(a, V("rotSpeedX"));
+            var sy = Angle(a, V("rotSpeedY"));
+            var sz = Angle(a, V("rotSpeedZ"));
             m.AngularSpeed = new[] { sx, null, sy, null, sz, null }; // the renderer indexes it unchecked
             m.Color1 = Colour(n, "color1");
             m.Color2 = Colour(n, "color2") ?? Colour(n, "color");
@@ -647,17 +785,31 @@ public static class FfxEffectDefBuilder
         }
 
         /// <summary>
-        /// A rotation or rotation speed in degrees, over the particle's age. DS2 stores radians (rotZ is the range
-        /// [0, 6.28], speeds like 10.47); the other games are taken as degrees (provisional).
+        /// A rotation or rotation speed in degrees, over the particle's age. Degrees unless the action's schema slot
+        /// says <c>unit: "radians"</c> (§20.17): DS2's a71 stores its rotations as radians ([0, 6.28]), while DS2's own
+        /// a15000 / a15001 store degrees ([90, 90], [0, 360], [180, 180]), so the unit is per slot, not per game.
         /// </summary>
-        private FxValue Angle(IFxValue v)
+        private FxValue Angle(IFxAction a, IFxValue v)
         {
             var c = v == null ? null : ToCurve(v);
             if (c == null)
                 return null;
-            if (game is FfxGame.DS2 or FfxGame.DS2S)
+            if (SlotOf(a, v)?.Unit == "radians")
                 for (int i = 0; i < c.Components; i++) c.ScaleComponent(i, 180 / Math.PI);
             return FxValue.FromCurve(c, FxArgument.ParticleAge);
+        }
+
+        /// <summary>The schema slot an action's own value is in, or null (an ActionData value, no layout).</summary>
+        private FfxParamDef SlotOf(IFxAction a, IFxValue v)
+        {
+            var layout = schema.Layout(a.TypeId, game);
+            if (layout == null)
+                return null;
+            var values = a.Values;
+            for (int k = 0; k < values.Count && k < layout.Params.Count; k++)
+                if (ReferenceEquals(values[k], v))
+                    return layout.Params[k];
+            return null;
         }
 
         /// <summary>A time in seconds; a negative one (-1 frame) means endless and reads -1.</summary>

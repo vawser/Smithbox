@@ -1,3 +1,10 @@
 #---------------------
 # TODO 
 #---------------------
+
+1640 Solid white sphere, texture has black background
+3655 seems to occilate on end-frame, probably fades out in-game
+3742 grayscale gradient texture shown
+5000 one element has still lightning texture
+5050 light glow seems too strong
+8627 static lightning texture

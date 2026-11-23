@@ -141,6 +141,7 @@ namespace SoulsFormats
                             Max = p.TryGetProperty("max", out var mx) ? mx.GetDouble() : null,
                             Seen = p.TryGetProperty("seen", out var sn) ? sn.EnumerateArray().Select(x => x.GetDouble()).ToArray() : null,
                             Desc = Str(p, "desc"),
+                            Unit = Str(p, "unit"),
                         });
                     }
                 }
@@ -214,6 +215,11 @@ namespace SoulsFormats
         /// <summary>The distinct constant values seen, when there were only a few.</summary>
         public double[] Seen;
         public string Desc;
+        /// <summary>
+        /// The unit the slot's values are stored in, when it isn't the usual one (hand field): "radians" for an angle
+        /// slot that holds radians (DS2's a71 rotations) where the others hold degrees. Null: the usual unit.
+        /// </summary>
+        public string Unit;
     }
 
     /// <summary>

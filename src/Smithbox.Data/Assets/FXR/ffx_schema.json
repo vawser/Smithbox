@@ -1115,8 +1115,9 @@
       }
     },
     "1": {
-      "name": "Action1",
+      "name": "NodeAcceleration",
       "category": "",
+      "desc": "FXR3's NodeAcceleration, same id: a node's speed along Z and its acceleration. DS2 has seven slots where FXR3 has the four properties then three ints and a float; only the four are named (FFX plan §20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -1196,28 +1197,32 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's speedZ (same id, first of its properties); a Float2 range ([5, 5], [10, 15]) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationZ; mostly 0 (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationMultiplierZ; [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationY; mostly 0 (FFX plan §20.23)."
             },
             {
               "name": "unk04",
@@ -1263,29 +1268,33 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's speedZ (same id, first of its properties); a Float2 range ([5, 5], [10, 15]) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationZ; mostly 0 (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationMultiplierZ; [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationY; mostly 0 (FFX plan §20.23)."
             },
             {
               "name": "unk04",
@@ -1333,30 +1342,34 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's speedZ (same id, first of its properties); a Float2 range ([5, 5], [10, 15]) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationZ; mostly 0 (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationMultiplierZ; [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeAcceleration's accelerationY; mostly 0 (FFX plan §20.23)."
             },
             {
               "name": "unk04",
@@ -1472,7 +1485,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "modelID",
               "types": [
                 41
               ],
@@ -1485,28 +1498,32 @@
                 4020,
                 4030,
                 4040
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +30, DS1 ActionData 61's ModelID in DS1R's wide layout; values: model ids 4000–4040; a3 compiles into a61's block (block id 61), as DS1 packs ActionData 61 on a3 (FFX plan §20.20)."
             },
             {
-              "name": "unk01",
+              "name": "scale1X",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +48, DS1 ActionData 61's Scale1X in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk02",
+              "name": "scale1Y",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +58, DS1 ActionData 61's Scale1Y in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk03",
+              "name": "scale1Z",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +68, DS1 ActionData 61's Scale1Z in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk04",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -1515,16 +1532,18 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +38, DS1 ActionData 61's BlendMode in DS1R's wide layout; values: 2 / 4 (FFX plan §20.20)."
             },
             {
-              "name": "unk05",
+              "name": "color",
               "types": [
                 20
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +108…+138, DS1 ActionData 61's ColorR / G / B / A in DS1R's wide layout; values: one RGBA filling the four channel fields (FFX plan §20.20)."
             },
             {
-              "name": "unk06",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -1532,7 +1551,8 @@
               "max": 2,
               "seen": [
                 2
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +34, DS1 ActionData 61's Orientation in DS1R's wide layout; values: 2 (FFX plan §20.20)."
             },
             {
               "name": "unk07",
@@ -3981,7 +4001,7 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -3989,22 +4009,25 @@
               "max": 30,
               "seen": [
                 30
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +30, DS1 ActionData 59's TextureID in DS1R's wide layout; values: a20 compiles into a59's block (block id 59), as DS1 packs ActionData 59 on a20 (FFX plan §20.20)."
             },
             {
-              "name": "unk01",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +50, DS1 ActionData 59's ScaleY in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk02",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 59's ScaleX in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk03",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -4012,10 +4035,11 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +38, DS1 ActionData 59's OrientationMode in DS1R's wide layout; values: 1 (FFX plan §20.20)."
             },
             {
-              "name": "unk04",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -4023,16 +4047,18 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +3C, DS1 ActionData 59's BlendMode in DS1R's wide layout; values: 0 (FFX plan §20.20)."
             },
             {
-              "name": "unk05",
+              "name": "color",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +D8…+108, DS1 ActionData 59's ColorR / G / B / A in DS1R's wide layout; values: one RGBA filling the four channel fields (FFX plan §20.20)."
             },
             {
-              "name": "unk06",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -4040,10 +4066,11 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +90, DS1 ActionData 59's AnimFrameSliceCountPerRow in DS1R's wide layout; values: 1 (FFX plan §20.20)."
             },
             {
-              "name": "unk07",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -4051,13 +4078,15 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +94, DS1 ActionData 59's AnimFrameTotalCount in DS1R's wide layout; values: 1 (FFX plan §20.20)."
             },
             {
-              "name": "unk08",
+              "name": "animFrameTimeline",
               "types": [
                 6
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A8, DS1 ActionData 59's AnimFrameTimeline in DS1R's wide layout; values: an int sequence (FFX plan §20.20)."
             },
             {
               "name": "texture09",
@@ -6706,18 +6735,20 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "particleScaleX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk05",
+              "name": "particleScaleY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterDirectionMode",
@@ -6733,7 +6764,7 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -6742,21 +6773,24 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
-              "name": "unk08",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
-              "name": "unk09",
+              "name": "particleColor",
               "types": [
                 19,
                 20
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             }
           ]
         },
@@ -7004,16 +7038,18 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "unk07",
@@ -7027,7 +7063,7 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -7036,13 +7072,15 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
-              "name": "unk09",
+              "name": "particleScaleZ",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "unk10",
@@ -7052,11 +7090,12 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "particleColor",
               "types": [
                 19,
                 20
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             },
             {
               "name": "unk12",
@@ -7320,16 +7359,18 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterDirectionMode",
@@ -7345,7 +7386,7 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -7354,7 +7395,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
               "name": "unk09",
@@ -7370,10 +7412,11 @@
               ]
             },
             {
-              "name": "unk10",
+              "name": "particleScaleZ",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterDistributionMode",
@@ -7388,10 +7431,11 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "particleColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             }
           ]
         },
@@ -7668,16 +7712,18 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterDistributionMode",
@@ -7692,7 +7738,7 @@
               ]
             },
             {
-              "name": "unk08",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -7701,13 +7747,15 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
-              "name": "unk09",
+              "name": "particleScaleZ",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterMovementMode",
@@ -7722,10 +7770,11 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "particleColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             }
           ]
         },
@@ -8016,16 +8065,18 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk08",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterDistributionMode",
@@ -8040,7 +8091,7 @@
               ]
             },
             {
-              "name": "unk10",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -8049,7 +8100,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
               "name": "unk11",
@@ -8063,10 +8115,11 @@
               ]
             },
             {
-              "name": "unk12",
+              "name": "particleScaleZ",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
               "name": "emitterMovementMode",
@@ -8083,10 +8136,11 @@
               ]
             },
             {
-              "name": "unk14",
+              "name": "particleColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             }
           ]
         },
@@ -8254,49 +8308,56 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterDegreeX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "EllipticCone: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. Angles 0–180 (15 / 30 / 45 / 90 / 180), as a28's emitterDegree. (FFX plan §20.22)."
             },
             {
-              "name": "unk02",
+              "name": "emitterDegreeY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "EllipticCone: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. The second angle, 0–180. (FFX plan §20.22)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "EllipticCone: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. Float sequences 0 / ±1, as a28's emitterSpread. (FFX plan §20.22)."
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
               "types": [
                 82
-              ]
+              ],
+              "desc": "EllipticCone: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. ParamFloats, as a28's emitterSpeed. (FFX plan §20.22)."
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
-              "name": "unk07",
+              "name": "particleScaleZ",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
-              "name": "unk08",
+              "name": "emitterDirectionMode",
               "types": [
                 1
               ],
@@ -8304,10 +8365,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "EllipticCone: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. An int, as a28's emitterDirectionMode. (FFX plan §20.22)."
             },
             {
-              "name": "unk09",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -8315,13 +8377,15 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
-              "name": "unk10",
+              "name": "particleColor",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             }
           ]
         },
@@ -8329,8 +8393,9 @@
       }
     },
     "34": {
-      "name": "Action34",
+      "name": "NodeSpin",
       "category": "",
+      "desc": "FXR3's NodeSpin, same id: an angular speed and its multiplier range per axis (DS2: sequence, Float2 [1, 1], three times), then an int (DS2 / BB; DS1 has six slots) (FFX plan §20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -8366,42 +8431,48 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "angularSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "angularSpeedY",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "angularSpeedZ",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
               "name": "unk06",
@@ -8423,44 +8494,50 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "angularSpeedX",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "angularSpeedY",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "angularSpeedZ",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             }
           ]
         },
@@ -8470,43 +8547,49 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "angularSpeedX",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "angularSpeedY",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "angularSpeedZ",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             }
           ]
         },
@@ -8516,44 +8599,50 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "angularSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "angularSpeedY",
               "types": [
                 11,
                 13,
                 150
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "angularSpeedZ",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
               "name": "unk06",
@@ -8572,8 +8661,9 @@
       }
     },
     "35": {
-      "name": "Action35",
+      "name": "StaticNodeTransform",
       "category": "",
+      "desc": "A node's offset and rotation (degrees): FXR3's StaticNodeTransform, same id, six floats as FXR3's offset / rotation vec3s. Values: offsets −3.5 … 5, angles in multiples of 15 within ±180 (FFX plan §20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -8581,52 +8671,58 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
               "min": -30,
-              "max": 55
+              "max": 55,
+              "desc": "FXR3 StaticNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
               "min": -34,
-              "max": 15
+              "max": 15,
+              "desc": "FXR3 StaticNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
               "min": -20,
-              "max": 30
+              "max": 30,
+              "desc": "FXR3 StaticNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
               "min": -90,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 StaticNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
               "min": -180,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 StaticNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
               "min": -45,
-              "max": 295
+              "max": 295,
+              "desc": "FXR3 StaticNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         },
@@ -8636,52 +8732,58 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
               "min": -5000,
-              "max": 25
+              "max": 25,
+              "desc": "FXR3 StaticNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
               "min": -1000,
-              "max": 75
+              "max": 75,
+              "desc": "FXR3 StaticNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
               "min": -2000,
-              "max": 1000
+              "max": 1000,
+              "desc": "FXR3 StaticNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
               "min": -110,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 StaticNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
               "min": -120,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 StaticNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
               "min": -45,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 StaticNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         },
@@ -8692,52 +8794,58 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
               "min": -20,
-              "max": 60
+              "max": 60,
+              "desc": "FXR3 StaticNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
               "min": -40,
-              "max": 60
+              "max": 60,
+              "desc": "FXR3 StaticNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
               "min": -47,
-              "max": 30
+              "max": 30,
+              "desc": "FXR3 StaticNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
               "min": -200,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 StaticNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
               "min": -180,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 StaticNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
               "min": -90,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 StaticNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         },
@@ -8748,60 +8856,67 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
               "min": -550,
-              "max": 300
+              "max": 300,
+              "desc": "FXR3 StaticNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
               "min": -100,
-              "max": 260
+              "max": 260,
+              "desc": "FXR3 StaticNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
               "min": -550,
-              "max": 309.2090148925781
+              "max": 309.2090148925781,
+              "desc": "FXR3 StaticNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
               "min": -180,
-              "max": 270
+              "max": 270,
+              "desc": "FXR3 StaticNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
               "min": -157.5,
-              "max": 325
+              "max": 325,
+              "desc": "FXR3 StaticNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
               "min": -90,
-              "max": 270
+              "max": 270,
+              "desc": "FXR3 StaticNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         }
       }
     },
     "36": {
-      "name": "Action36",
+      "name": "RandomNodeTransform",
       "category": "",
+      "desc": "FXR3's RandomNodeTransform, same id: offset, rotation, then their variances (twelve floats). DS2: rotation variance 180 in about half the instances, a random full turn (FFX plan §20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -8809,15 +8924,16 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
               "min": -0.75,
-              "max": 0.75
+              "max": 0.75,
+              "desc": "FXR3 RandomNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
@@ -8828,10 +8944,11 @@
                 0.20000000298023224,
                 0.4000000059604645,
                 0.5
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
@@ -8845,10 +8962,11 @@
                 0.30000001192092896,
                 0.75,
                 1.5
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
@@ -8858,10 +8976,11 @@
                 -2,
                 0,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
@@ -8869,10 +8988,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
@@ -8880,10 +9000,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk06",
+              "name": "offsetVarianceX",
               "types": [
                 7
               ],
@@ -8898,10 +9019,11 @@
                 0.20000000298023224,
                 0.5,
                 2.5
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "offsetVarianceY",
               "types": [
                 7
               ],
@@ -8915,10 +9037,11 @@
                 0.30000001192092896,
                 0.5,
                 1.2000000476837158
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "offsetVarianceZ",
               "types": [
                 7
               ],
@@ -8933,31 +9056,35 @@
                 0.20000000298023224,
                 0.5,
                 2.5
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "rotationVarianceX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "rotationVarianceY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "rotationVarianceZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         },
@@ -8967,7 +9094,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
@@ -8975,10 +9102,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
@@ -8987,10 +9115,11 @@
               "seen": [
                 -0.05000000074505806,
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
@@ -9002,10 +9131,11 @@
                 -0.5,
                 0,
                 0.10000000149011612
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
@@ -9019,10 +9149,11 @@
                 15,
                 45,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
@@ -9033,10 +9164,11 @@
                 15,
                 180,
                 270
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
@@ -9048,10 +9180,11 @@
                 30,
                 90,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk06",
+              "name": "offsetVarianceX",
               "types": [
                 7
               ],
@@ -9059,10 +9192,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "offsetVarianceY",
               "types": [
                 7
               ],
@@ -9070,10 +9204,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "offsetVarianceZ",
               "types": [
                 7
               ],
@@ -9081,10 +9216,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "rotationVarianceX",
               "types": [
                 7
               ],
@@ -9095,10 +9231,11 @@
                 2.5,
                 5,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotationVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "rotationVarianceY",
               "types": [
                 7
               ],
@@ -9107,10 +9244,11 @@
               "seen": [
                 0,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "rotationVarianceZ",
               "types": [
                 7
               ],
@@ -9120,7 +9258,8 @@
                 0,
                 90,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         },
@@ -9131,7 +9270,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
@@ -9146,10 +9285,11 @@
                 0.029999999329447746,
                 0.22499999403953552,
                 0.44999998807907104
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
@@ -9158,10 +9298,11 @@
               "seen": [
                 -0.020400000736117363,
                 0
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
@@ -9176,10 +9317,11 @@
                 0.125,
                 0.18000000715255737,
                 0.25
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
@@ -9189,10 +9331,11 @@
                 -90,
                 0,
                 180
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
@@ -9205,10 +9348,11 @@
                 180,
                 225,
                 315
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
@@ -9218,10 +9362,11 @@
                 0,
                 180,
                 360
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk06",
+              "name": "offsetVarianceX",
               "types": [
                 7
               ],
@@ -9231,10 +9376,11 @@
                 0,
                 0.019999999552965164,
                 0.02500000037252903
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "offsetVarianceY",
               "types": [
                 7
               ],
@@ -9245,10 +9391,11 @@
                 0.014999999664723873,
                 0.019999999552965164,
                 0.02500000037252903
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "offsetVarianceZ",
               "types": [
                 7
               ],
@@ -9258,10 +9405,11 @@
                 0,
                 0.009999999776482582,
                 0.02500000037252903
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "rotationVarianceX",
               "types": [
                 7
               ],
@@ -9274,18 +9422,20 @@
                 120,
                 180,
                 360
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotationVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "rotationVarianceY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "rotationVarianceZ",
               "types": [
                 7
               ],
@@ -9298,7 +9448,8 @@
                 120,
                 180,
                 360
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         },
@@ -9309,47 +9460,52 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "offsetX",
               "types": [
                 7
               ],
               "min": -2,
-              "max": 2
+              "max": 2,
+              "desc": "FXR3 RandomNodeTransform's offset X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk01",
+              "name": "offsetY",
               "types": [
                 7
               ],
               "min": -1,
-              "max": 10
+              "max": 10,
+              "desc": "FXR3 RandomNodeTransform's offset Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk02",
+              "name": "offsetZ",
               "types": [
                 7
               ],
               "min": -5,
-              "max": 3
+              "max": 3,
+              "desc": "FXR3 RandomNodeTransform's offset Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk03",
+              "name": "rotationX",
               "types": [
                 7
               ],
               "min": -40,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotation X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk04",
+              "name": "rotationY",
               "types": [
                 7
               ],
               "min": -150,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotation Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk05",
+              "name": "rotationZ",
               "types": [
                 7
               ],
@@ -9362,26 +9518,29 @@
                 30,
                 180,
                 360
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's rotation Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk06",
+              "name": "offsetVarianceX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 1
+              "max": 1,
+              "desc": "FXR3 RandomNodeTransform's offsetVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "offsetVarianceY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 1
+              "max": 1,
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "offsetVarianceZ",
               "types": [
                 7
               ],
@@ -9396,31 +9555,35 @@
                 0.15000000596046448,
                 0.25,
                 0.5
-              ]
+              ],
+              "desc": "FXR3 RandomNodeTransform's offsetVariance Z (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "rotationVarianceX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance X (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "rotationVarianceY",
               "types": [
                 7
               ],
               "min": -5,
-              "max": 180
+              "max": 180,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Y (same id, same order) (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "rotationVarianceZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 360
+              "max": 360,
+              "desc": "FXR3 RandomNodeTransform's rotationVariance Z (same id, same order) (FFX plan §20.23)."
             }
           ]
         }
@@ -9558,7 +9721,7 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -9569,7 +9732,8 @@
                 92,
                 93,
                 190
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +30, DS1 ActionData 40's TextureID in DS1R's wide layout; values: textures 77 / 92 / 93 / 190 (FFX plan §20.20)."
             },
             {
               "name": "texture01",
@@ -9583,7 +9747,7 @@
               ]
             },
             {
-              "name": "unk02",
+              "name": "trailThickness",
               "types": [
                 1
               ],
@@ -9592,7 +9756,8 @@
               "seen": [
                 1,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 40's TrailThickness in DS1R's wide layout; values: 1 / 4 (FFX plan §20.20)."
             },
             {
               "name": "unk03",
@@ -9607,7 +9772,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -9618,10 +9783,11 @@
                 2,
                 3,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +38, DS1 ActionData 40's OrientationMode in DS1R's wide layout; values: 0 / 2 / 3 / 4 (FFX plan §20.20)."
             },
             {
-              "name": "unk06",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -9629,7 +9795,8 @@
               "max": 4,
               "seen": [
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +3C, DS1 ActionData 40's BlendMode in DS1R's wide layout; values: 4 (additive) in every instance (FFX plan §20.20)."
             },
             {
               "name": "unk07",
@@ -9671,7 +9838,7 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "trailLength",
               "types": [
                 1
               ],
@@ -9684,7 +9851,8 @@
                 30,
                 40,
                 60
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +90, DS1 ActionData 40's TrailLength in DS1R's wide layout; values: 10–60 segments (FFX plan §20.20)."
             },
             {
               "name": "unk12",
@@ -9701,16 +9869,18 @@
               ]
             },
             {
-              "name": "unk13",
+              "name": "trailFadeIn",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +108, DS1 ActionData 40's TrailFadeIn in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk14",
+              "name": "trailFadeOut",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +118, DS1 ActionData 40's TrailFadeOut in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
               "name": "unk15",
@@ -10981,7 +11151,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "distortionMode",
               "types": [
                 1
               ],
@@ -10989,10 +11159,11 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +3C, DS1 ActionData 43's DistortionMode in DS1R's wide layout; values: 1 (normal map) (FFX plan §20.20)."
             },
             {
-              "name": "unk01",
+              "name": "shapeMode",
               "types": [
                 1
               ],
@@ -11000,10 +11171,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 43's ShapeMode in DS1R's wide layout; values: 0 (FFX plan §20.20)."
             },
             {
-              "name": "unk02",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -11012,7 +11184,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +44, DS1 ActionData 43's OrientationMode in DS1R's wide layout; values: 0 / 1 (FFX plan §20.20)."
             },
             {
               "name": "unk03",
@@ -11066,37 +11239,42 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "stretchingDistance",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +80, DS1 ActionData 43's StretchingDistance in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk10",
+              "name": "distortionIntensity",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +90, DS1 ActionData 43's DistortionIntensity in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk11",
+              "name": "wobblingSpeed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A0, DS1 ActionData 43's WobblingSpeed in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk12",
+              "name": "waveSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +C0, DS1 ActionData 43's WaveSpreed (sic) in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "unk13",
+              "name": "flowSpeed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +D0, DS1 ActionData 43's FlowSpeed in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
-              "name": "texture14",
+              "name": "textureID2",
               "types": [
                 40
               ],
@@ -11105,7 +11283,8 @@
               "seen": [
                 101,
                 900012
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +38, DS1 ActionData 43's TextureID2 in DS1R's wide layout; values: s000101 ×13 (f0000132's normal map) / 900012 ×25: the normal map (FFX plan §20.20)."
             },
             {
               "name": "unk15",
@@ -11119,13 +11298,14 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "color",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +E0…+110, DS1 ActionData 43's ColorR / G / B / A in DS1R's wide layout; values: one RGBA filling the four channel fields (FFX plan §20.20)."
             },
             {
-              "name": "unk17",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -11134,10 +11314,11 @@
               "seen": [
                 0,
                 2
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +48, DS1 ActionData 43's BlendMode in DS1R's wide layout; values: 0 / 2 (FFX plan §20.20)."
             },
             {
-              "name": "texture18",
+              "name": "textureID1",
               "types": [
                 40
               ],
@@ -11145,7 +11326,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +34, DS1 ActionData 43's TextureID1 in DS1R's wide layout; values: 0 in every instance (no mask) (FFX plan §20.20)."
             },
             {
               "name": "texture19",
@@ -11159,10 +11341,11 @@
               ]
             },
             {
-              "name": "unk20",
+              "name": "wobblingRadius",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +B0, DS1 ActionData 43's WobblingRadius in DS1R's wide layout; values: float sequences (FFX plan §20.20)."
             },
             {
               "name": "unk21",
@@ -11533,54 +11716,61 @@
               ]
             },
             {
-              "name": "unk01",
+              "name": "emitterDegreeX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FoursidedPyramid: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. Angles 0–180 (15 / 30 / 45 / 90 / 180), as a28's emitterDegree. (FFX plan §20.22)."
             },
             {
-              "name": "unk02",
+              "name": "emitterDegreeY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FoursidedPyramid: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. The second angle, 0–180. (FFX plan §20.22)."
             },
             {
-              "name": "unk03",
+              "name": "emitterSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FoursidedPyramid: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. Float sequences 0 / ±1, as a28's emitterSpread. (FFX plan §20.22)."
             },
             {
-              "name": "unk04",
+              "name": "emitterSpeed",
               "types": [
                 11,
                 13,
                 82
-              ]
+              ],
+              "desc": "FoursidedPyramid: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. ParamFloats, as a28's emitterSpeed. (FFX plan §20.22)."
             },
             {
-              "name": "unk05",
+              "name": "particleScaleX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +0: FXR3 ParticleModifier's scaleX, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: three equal ParamFloats with [sy] / [sz]: 1, 1.25 ±0.2, 2 ±0.5 (FFX plan §20.22)."
             },
             {
-              "name": "unk06",
+              "name": "particleScaleY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +8: FXR3 ParticleModifier's scaleY, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
-              "name": "unk07",
+              "name": "particleScaleZ",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +10: FXR3 ParticleModifier's scaleZ, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: equal to scale X (FFX plan §20.22)."
             },
             {
-              "name": "unk08",
+              "name": "emitterDirectionMode",
               "types": [
                 1
               ],
@@ -11588,10 +11778,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FoursidedPyramid: a28 (Cone)'s layout with a second angle; DarkSoulsII.exe compiles [1]–[4] to block +28 / +38 / +48 / +58 and the int to +68, as a28's [1]–[3] to +28–+48 and its direction mode to +58. An int, as a28's emitterDirectionMode. (FFX plan §20.22)."
             },
             {
-              "name": "unk09",
+              "name": "uniformScale",
               "types": [
                 1
               ],
@@ -11600,14 +11791,16 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +20: FXR3 ParticleModifier's uniformScale, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: 0 / 1 (FFX plan §20.22)."
             },
             {
-              "name": "unk10",
+              "name": "particleColor",
               "types": [
                 19,
                 20
-              ]
+              ],
+              "desc": "DarkSoulsII.exe's emitter compiles write it outside the block, to the out struct's +18: FXR3 ParticleModifier's color, in its order (scale X / Y / Z, colour, uniform scale; DS2 keeps the speed in the emitter). Values over every emitter: RGBA [1, 1, 1, 1] (FFX plan §20.22)."
             }
           ]
         },
@@ -12353,26 +12546,29 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11,
                 13,
                 14,
                 149
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a55 [0]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "movementFalloff",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a55 [1]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "movementFalloffMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a55 [2]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -12911,24 +13107,27 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
               ],
               "min": 7,
-              "max": 900008
+              "max": 900008,
+              "desc": "DarkSoulsII.exe compiles it to block +30, DS1 a59 ActionData's TextureID in DS1R's wide layout (FFX plan §20.19)."
             },
             {
-              "name": "unk01",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Evaluated by the compile with no traced destination; DS1's ScaleX comes first after the blend mode. Float sequences 0.05–30, nearly always equal to [2] (FFX plan §20.19)."
             },
             {
-              "name": "unk02",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Evaluated by the compile with no traced destination; DS1's ScaleY. Float sequences, nearly always equal to [1] (FFX plan §20.19)."
             },
             {
               "name": "unk03",
@@ -12967,7 +13166,7 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -12976,7 +13175,8 @@
               "seen": [
                 1,
                 2
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +38, DS1 a59 ActionData's OrientationMode in DS1R's wide layout (FFX plan §20.19). Values 1 / 2."
             },
             {
               "name": "blendMode",
@@ -12993,13 +13193,14 @@
               "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split."
             },
             {
-              "name": "unk08",
+              "name": "color",
               "types": [
                 19
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +D8…+108, DS1 a59 ActionData's ColorR / G / B / A in DS1R's wide layout (FFX plan §20.19). One RGBA value fills the four channel fields."
             },
             {
-              "name": "unk09",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -13008,10 +13209,11 @@
               "seen": [
                 1,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +90, DS1 a59 ActionData's AnimFrameSliceCountPerRow in DS1R's wide layout (FFX plan §20.19). Values 1 / 4."
             },
             {
-              "name": "unk10",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -13020,13 +13222,15 @@
               "seen": [
                 1,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +94, DS1 a59 ActionData's AnimFrameTotalCount in DS1R's wide layout (FFX plan §20.19). Values 1 / 4."
             },
             {
-              "name": "unk11",
+              "name": "animFrameTimeline",
               "types": [
                 6
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A8, DS1 a59 ActionData's AnimFrameTimeline in DS1R's wide layout (FFX plan §20.19). An int sequence (0, 0 → 1)."
             },
             {
               "name": "texture12",
@@ -13117,10 +13321,11 @@
               ]
             },
             {
-              "name": "unk20",
+              "name": "animFrameInitial",
               "types": [
                 79
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +98, DS1 a59 ActionData's AnimFrameInitial in DS1R's wide layout (FFX plan §20.19). An Int2 range ([0, 0], [1, 3]): a random first frame."
             },
             {
               "name": "unk21",
@@ -13152,16 +13357,18 @@
               ]
             },
             {
-              "name": "unk25",
+              "name": "uvShiftX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +B8, DS1 a59 ActionData's UVShiftX in DS1R's wide layout (FFX plan §20.19)."
             },
             {
-              "name": "unk26",
+              "name": "uvShiftY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +C8, DS1 a59 ActionData's UVShiftY in DS1R's wide layout (FFX plan §20.19)."
             },
             {
               "name": "unk27",
@@ -14108,8 +14315,9 @@
       }
     },
     "60": {
-      "name": "Action60",
+      "name": "ParticleSpeed",
       "category": "",
+      "desc": "FXR3's ParticleSpeed, same id: gravity, speed, its multiplier range, an int and a float (FFX plan §20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -14117,25 +14325,28 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeed's gravity (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "speed",
               "types": [
                 11,
                 13,
                 149
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeed's speed (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "speedMultiplier",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeed's speedMultiplier (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -14402,12 +14613,13 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "modelID",
               "types": [
                 41
               ],
               "min": 10,
-              "max": 8520
+              "max": 8520,
+              "desc": "DarkSoulsII.exe compiles it to block +30, DS1 ActionData 61's ModelID in DS1R's wide layout; values: model ids 10–200 (FFX plan §20.20)."
             },
             {
               "name": "unk01",
@@ -14552,13 +14764,14 @@
               ]
             },
             {
-              "name": "unk15",
+              "name": "animFrameTimeline",
               "types": [
                 6
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +B8, DS1 ActionData 61's AnimFrameTimeline in DS1R's wide layout; values: an int sequence, as a59's (FFX plan §20.20)."
             },
             {
-              "name": "unk16",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -14566,10 +14779,11 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A0, DS1 ActionData 61's AnimFrameSliceCountPerRow in DS1R's wide layout; values: 1 (FFX plan §20.20)."
             },
             {
-              "name": "unk17",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -14577,13 +14791,15 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A4, DS1 ActionData 61's AnimFrameTotalCount in DS1R's wide layout; values: 1 (FFX plan §20.20)."
             },
             {
-              "name": "unk18",
+              "name": "animFrameInitial",
               "types": [
                 79
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A8, DS1 ActionData 61's AnimFrameInitial in DS1R's wide layout; values: an Int2 range, as a59's (FFX plan §20.20)."
             },
             {
               "name": "unk19",
@@ -14610,7 +14826,7 @@
               ]
             },
             {
-              "name": "unk21",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -14618,7 +14834,8 @@
               "max": 2,
               "seen": [
                 2
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +34, DS1 ActionData 61's Orientation in DS1R's wide layout; values: 2 (FFX plan §20.20)."
             },
             {
               "name": "unk22",
@@ -14701,16 +14918,18 @@
               ]
             },
             {
-              "name": "unk31",
+              "name": "uvShiftX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +C8, DS1 ActionData 61's UVShiftX in DS1R's wide layout; values: Float2 (FFX plan §20.20)."
             },
             {
-              "name": "unk32",
+              "name": "uvShiftY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +D8, DS1 ActionData 61's UVShiftY in DS1R's wide layout; values: Float2 (FFX plan §20.20)."
             },
             {
               "name": "unk33",
@@ -15986,8 +16205,9 @@
       }
     },
     "64": {
-      "name": "Action64",
+      "name": "ParticleSpeedRandomTurns",
       "category": "",
+      "desc": "FXR3's ParticleSpeedRandomTurns, same id (FFX plan §20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -15995,24 +16215,27 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeedRandomTurns's gravity (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "speed",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeedRandomTurns's speed (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "speedMultiplier",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeedRandomTurns's speedMultiplier (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -16026,14 +16249,15 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "maxTurnAngle",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk05",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -16044,15 +16268,17 @@
                 2,
                 5,
                 10
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             }
           ]
         }
       }
     },
     "65": {
-      "name": "Action65",
+      "name": "ParticleSpeedPartialFollow",
       "category": "",
+      "desc": "FXR3's ParticleSpeedPartialFollow, same id (FFX plan §20.24).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -16097,22 +16323,25 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeedPartialFollow's gravity (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "speed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeedPartialFollow's speed (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "speedMultiplier",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 ParticleSpeedPartialFollow's speedMultiplier (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -16127,13 +16356,14 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk05",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -16142,14 +16372,16 @@
               "seen": [
                 0,
                 5
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             },
             {
-              "name": "unk06",
+              "name": "followFactor",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3's followFactor (same id); a sequence, as DS2 a105's followRate (FFX plan §20.24)."
             }
           ]
         }
@@ -16965,28 +17197,31 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID1",
               "types": [
                 40
               ],
               "min": 6,
-              "max": 900001
+              "max": 900001,
+              "desc": "DarkSoulsII.exe compiles it to block +40, DS1 a70 ActionData's TextureID1 in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "texture02",
+              "name": "textureID2",
               "types": [
                 40
               ],
               "min": 18,
-              "max": 100
+              "max": 100,
+              "desc": "DarkSoulsII.exe compiles it to block +44, DS1 a70 ActionData's TextureID2 in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "texture03",
+              "name": "textureID3",
               "types": [
                 40
               ],
               "min": 19,
-              "max": 180
+              "max": 180,
+              "desc": "DarkSoulsII.exe compiles it to block +48, DS1 a70 ActionData's TextureID3 in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
               "name": "unk04",
@@ -16995,7 +17230,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -17007,7 +17242,8 @@
                 2,
                 3,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +4C, DS1 a70 ActionData's OrientationMode in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18). Values 1 / 2 / 4 / 6, as a15000 [4] orientationMode."
             },
             {
               "name": "blendMode",
@@ -17023,96 +17259,110 @@
               "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split. a70 [6] (a15001's position): DXT1 4 ×21, 2 ×18 (its other texture layers may carry the alpha); DXT5 2 ×216, 4 ×27 (§20.16)."
             },
             {
-              "name": "unk07",
+              "name": "tex1UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +118, DS1 a70 ActionData's Tex1UVScrollX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk08",
+              "name": "tex1UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +128, DS1 a70 ActionData's Tex1UVScrollY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk09",
+              "name": "tex1UVOffsetX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +F8, DS1 a70 ActionData's Tex1UVOffsetX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk10",
+              "name": "tex1UVOffsetY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +108, DS1 a70 ActionData's Tex1UVOffsetY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk11",
+              "name": "tex2UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +158, DS1 a70 ActionData's Tex2UVScrollX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk12",
+              "name": "tex2UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +168, DS1 a70 ActionData's Tex2UVScrollY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk13",
+              "name": "tex2UVOffsetX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +138, DS1 a70 ActionData's Tex2UVOffsetX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk14",
+              "name": "tex2UVOffsetY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +148, DS1 a70 ActionData's Tex2UVOffsetY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk15",
+              "name": "tex3UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +198, DS1 a70 ActionData's Tex3UVScrollX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk16",
+              "name": "tex3UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +1A8, DS1 a70 ActionData's Tex3UVScrollY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk17",
+              "name": "tex3UVOffsetX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +178, DS1 a70 ActionData's Tex3UVOffsetX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk18",
+              "name": "tex3UVOffsetY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +188, DS1 a70 ActionData's Tex3UVOffsetY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk19",
+              "name": "scale2X",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +78, DS1 a70 ActionData's Scale2X in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk20",
+              "name": "scale2Y",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +88, DS1 a70 ActionData's Scale2Y in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
               "name": "unk21",
@@ -17150,61 +17400,70 @@
               ]
             },
             {
-              "name": "unk25",
+              "name": "rotX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +98, DS1 a70 ActionData's RotX in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk26",
+              "name": "rotY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A8, DS1 a70 ActionData's RotY in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk27",
+              "name": "rotZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +B8, DS1 a70 ActionData's RotZ in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
-              "name": "unk28",
+              "name": "rotSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed (degrees per second, as a sequence over the particle's life), DS1's RotSpeedX after the rotations; uncompiled in DS2 (the compile evaluates it with its range). Z holds 30 / 60 / 90, X and Y 0 (FFX plan §20.18)."
             },
             {
-              "name": "unk29",
+              "name": "rotSpeedXMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed X's random multiplier range: [1, 1], or [-1, 1] for a random direction (FFX plan §20.18)."
             },
             {
-              "name": "unk30",
+              "name": "rotSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed (degrees per second, as a sequence over the particle's life), DS1's RotSpeedY after the rotations; uncompiled in DS2 (the compile evaluates it with its range). Z holds 30 / 60 / 90, X and Y 0 (FFX plan §20.18)."
             },
             {
-              "name": "unk31",
+              "name": "rotSpeedYMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Y's random multiplier range: [1, 1], or [-1, 1] for a random direction (FFX plan §20.18)."
             },
             {
-              "name": "unk32",
+              "name": "rotSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed (degrees per second, as a sequence over the particle's life), DS1's RotSpeedZ after the rotations; uncompiled in DS2 (the compile evaluates it with its range). Z holds 30 / 60 / 90, X and Y 0 (FFX plan §20.18)."
             },
             {
-              "name": "unk33",
+              "name": "rotSpeedZMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Z's random multiplier range: [1, 1], or [-1, 1] for a random direction (FFX plan §20.18)."
             },
             {
-              "name": "unk34",
+              "name": "attachedBool",
               "types": [
                 1
               ],
@@ -17214,7 +17473,8 @@
                 0,
                 1,
                 2
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +34, DS1 a70 ActionData's AttachedBool in DS1R's wide layout, which DS2's a70 follows field for field (FFX plan §20.18)."
             },
             {
               "name": "unk35",
@@ -17251,7 +17511,7 @@
               ]
             },
             {
-              "name": "unk38",
+              "name": "alphaMode",
               "types": [
                 1
               ],
@@ -17260,7 +17520,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +26C, DS1 ActionData 70's AlphaMode in DS1R's wide layout; values: 0 ×92, 1 ×190 (DS1R: 0 ×134, 1 ×500). Not FXR3's layer opacity mode: both values occur with all-DXT1 and all-DXT5 layer sets (FFX plan §20.20)."
             },
             {
               "name": "unk39",
@@ -18943,57 +19204,69 @@
               "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 14 to +98 of the compiled block, DS1 ActionData71's RotX; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 81
-              ]
+              ],
+              "unit": "radians"
             },
             {
               "name": "rotY",
               "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 15 to +A8 of the compiled block, DS1 ActionData71's RotY; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 81
-              ]
+              ],
+              "unit": "radians"
             },
             {
               "name": "rotZ",
               "nameSource": "DarkSoulsII.exe: the a71 compile function writes slot 16 to +B8 of the compiled block, DS1 ActionData71's RotZ; in a run of consistent slots anchored by slots named attachedBool, blendMode, scale2X, scale2Y, animFrameSliceCountPerRow, animFrameTotalCount that land on their DS1 fields",
               "types": [
                 81
-              ]
+              ],
+              "unit": "radians"
             },
             {
-              "name": "unk17",
+              "name": "rotSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed X: the same speed + multiplier-range pairs as a70 / a15001, after the rotations (FFX plan §20.18).",
+              "unit": "radians"
             },
             {
-              "name": "unk18",
+              "name": "rotSpeedXMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed X's random multiplier range ([1, 1], [-1, 1]) (FFX plan §20.18)."
             },
             {
-              "name": "unk19",
+              "name": "rotSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed Y: the same speed + multiplier-range pairs as a70 / a15001, after the rotations (FFX plan §20.18).",
+              "unit": "radians"
             },
             {
-              "name": "unk20",
+              "name": "rotSpeedYMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Y's random multiplier range ([1, 1], [-1, 1]) (FFX plan §20.18)."
             },
             {
-              "name": "unk21",
+              "name": "rotSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed Z: the same speed + multiplier-range pairs as a70 / a15001, after the rotations (FFX plan §20.18).",
+              "unit": "radians"
             },
             {
-              "name": "unk22",
+              "name": "rotSpeedZMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Z's random multiplier range ([1, 1], [-1, 1]) (FFX plan §20.18)."
             },
             {
               "name": "attachedBool",
@@ -20945,8 +21218,9 @@
       }
     },
     "83": {
-      "name": "Action83",
+      "name": "NodeAccelerationRandomTurns",
       "category": "",
+      "desc": "FXR3's NodeAccelerationRandomTurns, same id: a1's four node properties, an int, a float, the turn angle and interval (FFX plan §20.24).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -21043,28 +21317,32 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -21089,13 +21367,14 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk07",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -21103,7 +21382,8 @@
               "max": 15,
               "seen": [
                 15
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             }
           ]
         },
@@ -21114,28 +21394,32 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -21160,13 +21444,14 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk07",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -21181,7 +21466,8 @@
                 6,
                 12,
                 15
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             }
           ]
         },
@@ -21192,28 +21478,32 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationRandomTurns's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -21238,13 +21528,14 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk07",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -21256,7 +21547,8 @@
                 2,
                 5,
                 30
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             }
           ]
         }
@@ -21273,10 +21565,11 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DES a84 [0]: gravity in DS2 a84, DS1 a84 and DES a55 [0] (value pairing, §11); every movement layout begins with it (FFX plan §20.24)."
             },
             {
               "name": "unk01",
@@ -21402,27 +21695,30 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11,
                 13,
                 149,
                 150
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a84 [0]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "movementFalloff",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a84 [1]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "movementFalloffMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a84 [2]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -21439,20 +21735,22 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "turnAngle",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a84 [4]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk05",
+              "name": "turnInterval",
               "types": [
                 1
               ],
               "min": 0,
-              "max": 45
+              "max": 45,
+              "desc": "BB's layout is DS2's, type for type: DS2 a84 [5]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             }
           ]
         }
@@ -25225,10 +25523,11 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DES a105 [0]: gravity in DS2 a105, DS1 a105 and DES a55 [0]; every movement layout begins with it (FFX plan §20.24)."
             },
             {
               "name": "unk01",
@@ -25376,26 +25675,29 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "gravity",
               "types": [
                 11,
                 12,
                 13,
                 149
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a105 [0]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "movementFalloff",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a105 [1]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "movementFalloffMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a105 [2]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -25411,13 +25713,14 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "turnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a105 [4]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk05",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -25431,23 +25734,26 @@
                 5,
                 6,
                 30
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a105 [5]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             },
             {
-              "name": "unk06",
+              "name": "followRate",
               "types": [
                 11,
                 13,
                 14
-              ]
+              ],
+              "desc": "BB's layout is DS2's, type for type: DS2 a105 [6]'s name (from DarkSoulsII.exe's compile, §20.6) (FFX plan §20.24)."
             }
           ]
         }
       }
     },
     "106": {
-      "name": "Action106",
+      "name": "NodeAccelerationPartialFollow",
       "category": "",
+      "desc": "FXR3's NodeAccelerationPartialFollow, same id: a1's four node properties, an int, a float, the turn angle and interval, the follow factor (FFX plan §20.24).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -25455,28 +25761,32 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -25501,13 +25811,14 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk07",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -25516,13 +25827,15 @@
               "seen": [
                 0,
                 5
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             },
             {
-              "name": "unk08",
+              "name": "followFactor",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's followFactor (same id); a sequence, as DS2 a105's followRate (FFX plan §20.24)."
             }
           ]
         },
@@ -25611,29 +25924,33 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationPartialFollow's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -25659,13 +25976,14 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk07",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -25678,14 +25996,16 @@
                 4,
                 5,
                 30
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             },
             {
-              "name": "unk08",
+              "name": "followFactor",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3's followFactor (same id); a sequence, as DS2 a105's followRate (FFX plan §20.24)."
             }
           ]
         }
@@ -27282,8 +27602,9 @@
       }
     },
     "113": {
-      "name": "Action113",
+      "name": "NodeAccelerationSpin",
       "category": "",
+      "desc": "FXR3's NodeAccelerationSpin, same id: a1's four node properties, an int and a float, then a34's three spin pairs (FFX plan §20.24).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -27291,28 +27612,32 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -27337,40 +27662,46 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "angularSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "angularSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "angularSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
               "name": "unk12",
@@ -27403,29 +27734,33 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81,
                 91
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -27451,40 +27786,46 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "angularSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "angularSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "angularSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
               "name": "unk12",
@@ -27605,29 +27946,33 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24). A Float2 range."
             },
             {
-              "name": "unk01",
+              "name": "accelerationZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk03",
+              "name": "accelerationY",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeAccelerationSpin's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk04",
@@ -27652,45 +27997,51 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "angularSpeedX",
               "types": [
                 11,
                 12,
                 13,
                 150
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedX (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk07",
+              "name": "angularSpeedMultiplierX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierX; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk08",
+              "name": "angularSpeedY",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedY (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk09",
+              "name": "angularSpeedMultiplierY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierY; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
-              "name": "unk10",
+              "name": "angularSpeedZ",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedZ (same id, same order); degrees per second (FFX plan §20.23)."
             },
             {
-              "name": "unk11",
+              "name": "angularSpeedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpin's angularSpeedMultiplierZ; a Float2 range, [1, 1] (FFX plan §20.23)."
             },
             {
               "name": "unk12",
@@ -27985,8 +28336,9 @@
       }
     },
     "120": {
-      "name": "Action120",
+      "name": "NodeSpeed",
       "category": "",
+      "desc": "FXR3's NodeSpeed, same id; BB's six slots follow its properties then its ints (FFX plan §20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -27994,23 +28346,26 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "FXR3 NodeSpeed's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "speedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpeed's speedMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpeed's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -28050,8 +28405,9 @@
       }
     },
     "121": {
-      "name": "Action121",
+      "name": "NodeSpeedRandomTurns",
       "category": "",
+      "desc": "FXR3's NodeSpeedRandomTurns, same id (FFX plan §20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -28059,22 +28415,25 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "speedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpeedRandomTurns's speedZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk01",
+              "name": "speedMultiplierZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "FXR3 NodeSpeedRandomTurns's speedMultiplierZ (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
-              "name": "unk02",
+              "name": "accelerationY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 NodeSpeedRandomTurns's accelerationY (same id; the slot kinds follow its order) (FFX plan §20.24)."
             },
             {
               "name": "unk03",
@@ -28099,13 +28458,14 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "maxTurnAngle",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3's maxTurnAngle (same id); a sequence, as DS2 a84's turnAngle (FFX plan §20.24)."
             },
             {
-              "name": "unk06",
+              "name": "turnInterval",
               "types": [
                 1
               ],
@@ -28113,15 +28473,17 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "FXR3's turnInterval (same id); an int, as DS2 a84's turnInterval (FFX plan §20.24)."
             }
           ]
         }
       }
     },
     "10000": {
-      "name": "Action10000",
+      "name": "GPUStandardParticle",
       "category": "",
+      "desc": "FXR3's GPUStandardParticle, same id (BB 216 slots, FXR3 228 props). Named where BB's slots align with FXR3's fields1 by kind and values: the textures, the emitter's 12-float run, the particle offset / speed runs; the ints between don't follow FXR3's order (FFX plan §20.25).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -28157,13 +28519,14 @@
               ]
             },
             {
-              "name": "texture02",
+              "name": "texture",
               "types": [
                 40
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's texture (same id; BB's run lines up with FXR3's fields1 by kind); values texture ids (FFX plan §20.25)."
             },
             {
-              "name": "unk03",
+              "name": "normalMap",
               "types": [
                 1,
                 40
@@ -28173,7 +28536,8 @@
               "seen": [
                 0,
                 99999
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's normalMap (same id; BB's run lines up with FXR3's fields1 by kind); values 99999 (none), 99993 (FFX plan §20.25)."
             },
             {
               "name": "unk04",
@@ -28187,7 +28551,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "emitterShape",
               "types": [
                 1
               ],
@@ -28199,7 +28563,8 @@
                 3,
                 4,
                 5
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emitterShape: the fifth of its six leading ints (f1_0, texture, f1_2, normalMap, emitterShape, f1_5); BB has its normal map before f1_2. Values 1–5, FXR3's shape range (1 box, 4 cylinder, 5 sphere …) (FFX plan §20.26)."
             },
             {
               "name": "unk06",
@@ -28214,31 +28579,34 @@
               ]
             },
             {
-              "name": "unk07",
+              "name": "emitterSizeX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 60
+              "max": 60,
+              "desc": "FXR3 GPUStandardParticle's emitterSizeX (same id; BB's run lines up with FXR3's fields1 by kind); values 0.001–25 (FFX plan §20.25)."
             },
             {
-              "name": "unk08",
+              "name": "emitterSizeY",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 22.5
+              "max": 22.5,
+              "desc": "FXR3 GPUStandardParticle's emitterSizeY (same id; BB's run lines up with FXR3's fields1 by kind); values 0.001–25 (FFX plan §20.25)."
             },
             {
-              "name": "unk09",
+              "name": "emitterSizeZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 60
+              "max": 60,
+              "desc": "FXR3 GPUStandardParticle's emitterSizeZ (same id; BB's run lines up with FXR3's fields1 by kind); values 0.001–25 (FFX plan §20.25)."
             },
             {
-              "name": "unk10",
+              "name": "emitterRotationX",
               "types": [
                 7
               ],
@@ -28247,10 +28615,11 @@
               "seen": [
                 0,
                 90
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emitterRotationX (same id; BB's run lines up with FXR3's fields1 by kind); values 90 / 75 / 0 (degrees) (FFX plan §20.25)."
             },
             {
-              "name": "unk11",
+              "name": "emitterRotationY",
               "types": [
                 7
               ],
@@ -28261,10 +28630,11 @@
                 45,
                 75,
                 90
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emitterRotationY (same id; BB's run lines up with FXR3's fields1 by kind); values 90 / 75 / 0 (degrees) (FFX plan §20.25)."
             },
             {
-              "name": "unk12",
+              "name": "emitterRotationZ",
               "types": [
                 7
               ],
@@ -28272,7 +28642,8 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emitterRotationZ (same id; BB's run lines up with FXR3's fields1 by kind); values 90 / 75 / 0 (degrees) (FFX plan §20.25)."
             },
             {
               "name": "unk13",
@@ -28314,7 +28685,7 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "emitterDistribution",
               "types": [
                 7
               ],
@@ -28329,7 +28700,8 @@
                 0.4000000059604645,
                 0.5,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's emitterDistribution (same id; BB's run lines up with FXR3's fields1 by kind); values 0.05–1 (FFX plan §20.25)."
             },
             {
               "name": "unk17",
@@ -28612,7 +28984,7 @@
               ]
             },
             {
-              "name": "unk45",
+              "name": "particleOffsetX",
               "types": [
                 7
               ],
@@ -28620,18 +28992,20 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetX (same id; BB's run lines up with FXR3's fields1 by kind); values almost all 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk46",
+              "name": "particleOffsetY",
               "types": [
                 7
               ],
               "min": -1.5,
-              "max": 10
+              "max": 10,
+              "desc": "FXR3 GPUStandardParticle's particleOffsetY (same id; BB's run lines up with FXR3's fields1 by kind); values almost all 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk47",
+              "name": "particleOffsetZ",
               "types": [
                 7
               ],
@@ -28640,10 +29014,11 @@
               "seen": [
                 0,
                 0.25
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetZ (same id; BB's run lines up with FXR3's fields1 by kind); values almost all 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk48",
+              "name": "particleOffsetMinX",
               "types": [
                 7
               ],
@@ -28652,10 +29027,11 @@
               "seen": [
                 -1,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetMinX (same id; BB's run lines up with FXR3's fields1 by kind); values 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk49",
+              "name": "particleOffsetMinY",
               "types": [
                 7
               ],
@@ -28663,10 +29039,11 @@
               "max": 0,
               "seen": [
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetMinY (same id; BB's run lines up with FXR3's fields1 by kind); values 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk50",
+              "name": "particleOffsetMinZ",
               "types": [
                 7
               ],
@@ -28675,10 +29052,11 @@
               "seen": [
                 -1,
                 0
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetMinZ (same id; BB's run lines up with FXR3's fields1 by kind); values 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk51",
+              "name": "particleOffsetMaxX",
               "types": [
                 7
               ],
@@ -28687,10 +29065,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetMaxX (same id; BB's run lines up with FXR3's fields1 by kind); values 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk52",
+              "name": "particleOffsetMaxY",
               "types": [
                 7
               ],
@@ -28699,10 +29078,11 @@
               "seen": [
                 0,
                 0.6000000238418579
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetMaxY (same id; BB's run lines up with FXR3's fields1 by kind); values 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk53",
+              "name": "particleOffsetMaxZ",
               "types": [
                 7
               ],
@@ -28711,7 +29091,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleOffsetMaxZ (same id; BB's run lines up with FXR3's fields1 by kind); values 0 (FFX plan §20.25)."
             },
             {
               "name": "unk54",
@@ -28725,7 +29106,7 @@
               ]
             },
             {
-              "name": "unk55",
+              "name": "particleSpeedX",
               "types": [
                 7
               ],
@@ -28738,71 +29119,80 @@
                 0,
                 1,
                 5
-              ]
+              ],
+              "desc": "FXR3 GPUStandardParticle's particleSpeedX (same id; BB's run lines up with FXR3's fields1 by kind); values −0.7 … 10 (FFX plan §20.25)."
             },
             {
-              "name": "unk56",
+              "name": "particleSpeedY",
               "types": [
                 7
               ],
               "min": -0.75,
-              "max": 5
+              "max": 5,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedY (same id; BB's run lines up with FXR3's fields1 by kind); values −0.7 … 10 (FFX plan §20.25)."
             },
             {
-              "name": "unk57",
+              "name": "particleSpeedZ",
               "types": [
                 7
               ],
               "min": -0.0010000000474974513,
-              "max": 25
+              "max": 25,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedZ (same id; BB's run lines up with FXR3's fields1 by kind); values −0.7 … 10 (FFX plan §20.25)."
             },
             {
-              "name": "unk58",
+              "name": "particleSpeedMinX",
               "types": [
                 7
               ],
               "min": -30,
-              "max": 0.15000000596046448
+              "max": 0.15000000596046448,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedMinX (same id; BB's run lines up with FXR3's fields1 by kind); values always ≤ 0, mirroring the max (−3.75 / 3.75) (FFX plan §20.25)."
             },
             {
-              "name": "unk59",
+              "name": "particleSpeedMinY",
               "types": [
                 7
               ],
               "min": -12.5,
-              "max": 1
+              "max": 1,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedMinY (same id; BB's run lines up with FXR3's fields1 by kind); values always ≤ 0, mirroring the max (−3.75 / 3.75) (FFX plan §20.25)."
             },
             {
-              "name": "unk60",
+              "name": "particleSpeedMinZ",
               "types": [
                 7
               ],
               "min": -30,
-              "max": 0.5
+              "max": 0.5,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedMinZ (same id; BB's run lines up with FXR3's fields1 by kind); values always ≤ 0, mirroring the max (−3.75 / 3.75) (FFX plan §20.25)."
             },
             {
-              "name": "unk61",
+              "name": "particleSpeedMaxX",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 30
+              "max": 30,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedMaxX (same id; BB's run lines up with FXR3's fields1 by kind); values always ≥ 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk62",
+              "name": "particleSpeedMaxY",
               "types": [
                 7
               ],
               "min": -0.30000001192092896,
-              "max": 12.5
+              "max": 12.5,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedMaxY (same id; BB's run lines up with FXR3's fields1 by kind); values always ≥ 0 (FFX plan §20.25)."
             },
             {
-              "name": "unk63",
+              "name": "particleSpeedMaxZ",
               "types": [
                 7
               ],
               "min": 0,
-              "max": 30
+              "max": 30,
+              "desc": "FXR3 GPUStandardParticle's particleSpeedMaxZ (same id; BB's run lines up with FXR3's fields1 by kind); values always ≥ 0 (FFX plan §20.25)."
             },
             {
               "name": "unk64",
@@ -30580,8 +30970,9 @@
       }
     },
     "10003": {
-      "name": "Action10003",
+      "name": "LightShaft",
       "category": "",
+      "desc": "FXR3's LightShaft, same id (BB 24 slots, FXR3 40) (FFX plan §20.25).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -30595,13 +30986,14 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "texture",
               "types": [
                 40
-              ]
+              ],
+              "desc": "FXR3 LightShaft's fields1 texture; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
-              "name": "unk02",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -30609,19 +31001,22 @@
               "max": 4,
               "seen": [
                 4
-              ]
+              ],
+              "desc": "FXR3 LightShaft's fields1 blendMode; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
-              "name": "unk03",
+              "name": "width",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 LightShaft's properties1 width (BB keeps it among the fields); same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
-              "name": "unk04",
+              "name": "height",
               "types": [
                 11
-              ]
+              ],
+              "desc": "FXR3 LightShaft's properties1 height; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
               "name": "unk05",
@@ -30706,7 +31101,7 @@
               ]
             },
             {
-              "name": "unk11",
+              "name": "layers",
               "types": [
                 1
               ],
@@ -30721,7 +31116,8 @@
                 23,
                 30,
                 50
-              ]
+              ],
+              "desc": "FXR3 LightShaft's fields1 layers, after its six floats [5]–[10]; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
               "name": "unk12",
@@ -30735,23 +31131,26 @@
               ]
             },
             {
-              "name": "unk13",
+              "name": "color1",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 LightShaft's properties1 color1; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
-              "name": "unk14",
+              "name": "color2",
               "types": [
                 19,
                 20
-              ]
+              ],
+              "desc": "FXR3 LightShaft's properties1 color2; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
-              "name": "unk15",
+              "name": "color3",
               "types": [
                 19
-              ]
+              ],
+              "desc": "FXR3 LightShaft's properties1 color3; same id, kinds in FXR3's order (FFX plan §20.25)."
             },
             {
               "name": "unk16",
@@ -35936,40 +36335,46 @@
               ]
             },
             {
-              "name": "unk17",
+              "name": "rotSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed X: the same speed + multiplier-range pairs as a70 / a15001, after the rotations (FFX plan §20.18)."
             },
             {
-              "name": "unk18",
+              "name": "rotSpeedXMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed X's random multiplier range ([1, 1], [-1, 1]) (FFX plan §20.18)."
             },
             {
-              "name": "unk19",
+              "name": "rotSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed Y: the same speed + multiplier-range pairs as a70 / a15001, after the rotations (FFX plan §20.18)."
             },
             {
-              "name": "unk20",
+              "name": "rotSpeedYMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Y's random multiplier range ([1, 1], [-1, 1]) (FFX plan §20.18)."
             },
             {
-              "name": "unk21",
+              "name": "rotSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed Z: the same speed + multiplier-range pairs as a70 / a15001, after the rotations (FFX plan §20.18)."
             },
             {
-              "name": "unk22",
+              "name": "rotSpeedZMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Z's random multiplier range ([1, 1], [-1, 1]) (FFX plan §20.18)."
             },
             {
               "name": "attachedBool",
@@ -36334,28 +36739,31 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID1",
               "types": [
                 40
               ],
               "min": 7,
-              "max": 900001
+              "max": 900001,
+              "desc": "DarkSoulsII.exe compiles it to block +40: a70's TextureID1 slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "texture02",
+              "name": "textureID2",
               "types": [
                 40
               ],
               "min": 18,
-              "max": 303
+              "max": 303,
+              "desc": "DarkSoulsII.exe compiles it to block +44: a70's TextureID2 slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "texture03",
+              "name": "textureID3",
               "types": [
                 40
               ],
               "min": 2,
-              "max": 195
+              "max": 195,
+              "desc": "DarkSoulsII.exe compiles it to block +48: a70's TextureID3 slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
               "name": "unk04",
@@ -36364,7 +36772,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -36375,7 +36783,8 @@
                 2,
                 4,
                 6
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +4C: a70's OrientationMode slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18). Values 1 / 2 / 4 / 6, as a15000 [4] orientationMode."
             },
             {
               "name": "blendMode",
@@ -36391,96 +36800,110 @@
               "desc": "Blend mode, as FXR3 numbers it (0 / 4 add, 2 alpha). Evidence (§20.15): over every DS2S instance, value 2 (alpha) never draws a DXT1 texture (no alpha), DXT1 textures only take 0 or 4, while DXT5 ones take every value; a15000's blendMode (a71's layout) shows the same split. a15001 [6]: DXT1 4 ×239, 2 ×3; DXT5 2 ×2187, 4 ×571; [5] holds a15000 [4] orientationMode's values (§20.16)."
             },
             {
-              "name": "unk07",
+              "name": "tex1UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +140: a70's Tex1UVScrollX slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk08",
+              "name": "tex1UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +150: a70's Tex1UVScrollY slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk09",
+              "name": "tex1UVOffsetX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +120: a70's Tex1UVOffsetX slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk10",
+              "name": "tex1UVOffsetY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +130: a70's Tex1UVOffsetY slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk11",
+              "name": "tex2UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +180: a70's Tex2UVScrollX slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk12",
+              "name": "tex2UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +190: a70's Tex2UVScrollY slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk13",
+              "name": "tex2UVOffsetX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +160: a70's Tex2UVOffsetX slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk14",
+              "name": "tex2UVOffsetY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +170: a70's Tex2UVOffsetY slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk15",
+              "name": "tex3UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +1C0: a70's Tex3UVScrollX slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk16",
+              "name": "tex3UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +1D0: a70's Tex3UVScrollY slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk17",
+              "name": "tex3UVOffsetX",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +1A0: a70's Tex3UVOffsetX slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk18",
+              "name": "tex3UVOffsetY",
               "types": [
                 11,
                 82
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +1B0: a70's Tex3UVOffsetY slot, 0x28 later; a15001 writes slots 7–18 in exactly a70's order and is the game's SfxFxClusterAppearance_MultiTextureBillboard (FFX plan §20.18)."
             },
             {
-              "name": "unk19",
+              "name": "scale2X",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +78, as a15000 [10] scale2X; same value type, float sequences 0–135 (a15000 0–22) (FFX plan §20.17)."
             },
             {
-              "name": "unk20",
+              "name": "scale2Y",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +88, as a15000 [11] scale2Y; same value type, float sequences 0–100 (FFX plan §20.17)."
             },
             {
               "name": "unk21",
@@ -36497,61 +36920,70 @@
               ]
             },
             {
-              "name": "unk23",
+              "name": "rotX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +98, as a15000 [14] rotX; same value type, Float2 ranges in degrees ([0,0], [90,90], [0,360]) (FFX plan §20.17)."
             },
             {
-              "name": "unk24",
+              "name": "rotY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +A8, as a15000 [15] rotY; same value type, Float2 ranges in degrees (FFX plan §20.17)."
             },
             {
-              "name": "unk25",
+              "name": "rotZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +B8, as a15000 [16] rotZ; same value type, Float2 ranges in degrees ([0,360] ×2113, [0,30], [90,90], [180,180]) (FFX plan §20.17)."
             },
             {
-              "name": "unk26",
+              "name": "rotSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed (degrees per second, as a sequence over the particle's life), DS1's RotSpeedX after the rotations; uncompiled in DS2 (the compile evaluates it with its range). Z holds 30 / 60 / 90, X and Y 0 (FFX plan §20.18)."
             },
             {
-              "name": "unk27",
+              "name": "rotSpeedXMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed X's random multiplier range: [1, 1], or [-1, 1] for a random direction (FFX plan §20.18)."
             },
             {
-              "name": "unk28",
+              "name": "rotSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed (degrees per second, as a sequence over the particle's life), DS1's RotSpeedY after the rotations; uncompiled in DS2 (the compile evaluates it with its range). Z holds 30 / 60 / 90, X and Y 0 (FFX plan §20.18)."
             },
             {
-              "name": "unk29",
+              "name": "rotSpeedYMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Y's random multiplier range: [1, 1], or [-1, 1] for a random direction (FFX plan §20.18)."
             },
             {
-              "name": "unk30",
+              "name": "rotSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "Rotation speed (degrees per second, as a sequence over the particle's life), DS1's RotSpeedZ after the rotations; uncompiled in DS2 (the compile evaluates it with its range). Z holds 30 / 60 / 90, X and Y 0 (FFX plan §20.18)."
             },
             {
-              "name": "unk31",
+              "name": "rotSpeedZMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "The rotation speed Z's random multiplier range: [1, 1], or [-1, 1] for a random direction (FFX plan §20.18)."
             },
             {
-              "name": "unk32",
+              "name": "attachedBool",
               "types": [
                 1
               ],
@@ -36561,7 +36993,8 @@
                 0,
                 1,
                 2
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +34, as a15000 [23] attachedBool; same value type, ints 0 / 1 / 2, as a15000's (FFX plan §20.17)."
             },
             {
               "name": "unk33",
