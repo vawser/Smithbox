@@ -184,12 +184,13 @@ public partial class FxEffectList
             GUI.Tooltip(LOC.Get("FX_EffectList_Resource_TT"));
         }
 
-        // Import an .fxr file, and the Project Check: FXR3 only (a read-only DLSE project has neither yet)
-        ImGui.BeginDisabled(Data.IsReadOnly);
+        // Import an .fxr file, and the Project Check: FXR3 only (a DLSE project has neither yet)
+        bool structure = Data.CanEditStructure;
+        ImGui.BeginDisabled(!structure);
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Download}##fxImport", DPI.IconButtonSize))
             RequestImport();
-        TooltipEvenDisabled(LOC.Get(Data.IsReadOnly ? "FX_ReadOnly_TT" : "FX_EffectList_Import_TT"));
+        TooltipEvenDisabled(LOC.Get(!structure ? "FX_Structure_TT" : "FX_EffectList_Import_TT"));
 
         // Project Check
         ImGui.SameLine();
@@ -198,7 +199,7 @@ public partial class FxEffectList
             ProjectCheck.Run();
             ProjectCheckToOpen = true;
         }
-        TooltipEvenDisabled(LOC.Get(Data.IsReadOnly ? "FX_ReadOnly_TT" : "FX_EffectList_Project_Check_TT"));
+        TooltipEvenDisabled(LOC.Get(!structure ? "FX_Structure_TT" : "FX_EffectList_Project_Check_TT"));
         ImGui.EndDisabled();
     }
 
@@ -222,9 +223,9 @@ public partial class FxEffectList
 
     private bool PassesMode(FxEntry e) => Mode switch
     {
-        FxListFilter.Modified => e.Vanilla == FxVanillaState.Modified,
-        FxListFilter.Added => e.Vanilla == FxVanillaState.Added,
-        FxListFilter.Unsaved => e.IsLoaded && e.IsDirty || e.MembershipChanged,
+        FxListFilter.Modified => e.CombinedVanilla == FxVanillaState.Modified,
+        FxListFilter.Added => e.CombinedVanilla == FxVanillaState.Added,
+        FxListFilter.Unsaved => e.AnyUnsaved,
         FxListFilter.Favorites => Favorites.IsFavorite(e.Id),
         FxListFilter.Recent => Favorites.Recent.Contains(e.Id),
         FxListFilter.UsesResource => Usage.UsesResource(e, ResourceText),
@@ -419,13 +420,15 @@ public partial class FxEffectList
         if (Favorites.IsFavorite(entry.Id))
             marks += $"{Icons.Star} ";
 
-        bool unsaved = entry.IsDirty && entry.IsLoaded || entry.MembershipChanged;
+        // An id with several versions (DES) counts as one row: unsaved when any version is, all their binders
+        bool unsaved = entry.AnyUnsaved;
         var label = $"{marks}{entry.Stem}{(unsaved ? "*" : "")}";
-        if (entry.Binders.Count > 1)
-            label += $"  [{LOC.Get("FX_EffectList_Binder_Count", entry.Binders.Count)}]";
+        int binderCount = entry.AllVersions.Sum(v => v.Binders.Count);
+        if (binderCount > 1)
+            label += $"  [{LOC.Get("FX_EffectList_Binder_Count", binderCount)}]";
 
         // The ## suffix keeps the ID stable when the label changes. Modified / added effects take the shared colour.
-        var coloured = VanillaMarkers.PushColour(entry.Vanilla.ToStatus());
+        var coloured = VanillaMarkers.PushColour(entry.CombinedVanilla.ToStatus());
         var clicked = ImGui.Selectable($" {label}##fxEffect_{entry.Id}", IsPicked(entry));
         VanillaMarkers.PopColour(coloured);
 
@@ -462,17 +465,19 @@ public partial class FxEffectList
 
     private string RowTooltip(FxEntry entry)
     {
-        var lines = entry.Binders.Select(b => b.Binder.Path).ToList();
+        var lines = entry.Versions == null
+            ? entry.Binders.Select(b => b.Binder.Path).ToList()
+            : entry.Versions.Select((v, i) => LOC.Get("FX_EffectList_Version_Binders", i + 1, string.Join(", ", v.Binders.Select(b => b.Binder.Path)))).ToList();
         var leaving = entry.OnDisk.Values.Where(r => !entry.InBinder(r.Binder.Path)).ToList();
         foreach (var r in leaving)
             lines.Add(LOC.Get("FX_EffectList_Leaving_Binder", r.Binder.Path));
         foreach (var b in entry.Binders.Where(b => !entry.OnDisk.ContainsKey(b.Binder.Path) && !entry.IsNew))
             lines.Add(LOC.Get("FX_EffectList_Joining_Binder", b.Binder.Filename));
-        if (entry.Vanilla != FxVanillaState.Same)
-            lines.Add(LOC.Get($"FX_EffectList_Vanilla_{entry.Vanilla}"));
-        // DES keeps different effects under one id in different binders; the first binder's is the one shown
-        if (entry.CopyVersions > 1)
-            lines.Add(LOC.Get("FX_EffectList_Copies_Differ", entry.CopyVersions, entry.Binders.FirstOrDefault()?.Binder.Filename ?? ""));
+        if (entry.CombinedVanilla != FxVanillaState.Same)
+            lines.Add(LOC.Get($"FX_EffectList_Vanilla_{entry.CombinedVanilla}"));
+        // DES keeps different effects under one id in different binders: each is a version, picked in the Effect Tree
+        if (entry.Versions != null)
+            lines.Add(LOC.Get("FX_EffectList_Copies_Differ", entry.Versions.Count));
         return string.Join("\n", lines);
     }
 
@@ -533,8 +538,8 @@ public partial class FxEffectList
 
         ImGui.Separator();
 
-        // Effects of a read-only project (DLSE, F3a) are looked at, not changed, compared or exported as FXRs
-        ImGui.BeginDisabled(Data.IsReadOnly);
+        // DLSE effects can't be added, removed, renumbered, reverted, compared or exported as FXRs yet
+        ImGui.BeginDisabled(!Data.CanEditStructure);
 
         if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Duplicate")}##fxDuplicate", InputManager.GetHint(KeybindID.Duplicate), false, single))
             RequestDuplicate(entry);
@@ -607,7 +612,7 @@ public partial class FxEffectList
             RequestAlias(entry);
         GUI.Tooltip(LOC.Get("FX_EffectList_Edit_Alias_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get(single ? "FX_EffectList_Export" : "FX_EffectList_Export_Many")}##fxExport", "", false, !Data.IsReadOnly))
+        if (ImGui.MenuItem($"{LOC.Get(single ? "FX_EffectList_Export" : "FX_EffectList_Export_Many")}##fxExport", "", false, Data.CanEditStructure))
             Deferred.Add(() => Export(targets));
         GUI.Tooltip(LOC.Get("FX_EffectList_Export_TT"));
     }
@@ -704,7 +709,7 @@ public partial class FxEffectList
     /// <summary>Duplicate and Delete on the selected effect(s), while the Effect List has focus.</summary>
     public void Shortcuts()
     {
-        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectList) || ImGui.GetIO().WantTextInput || Data.IsReadOnly)
+        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectList) || ImGui.GetIO().WantTextInput || !Data.CanEditStructure)
             return;
         var entry = Editor.Selection.Entry;
         if (entry == null || !Bank.Entries.ContainsKey(entry.Id))

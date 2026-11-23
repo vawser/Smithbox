@@ -337,6 +337,14 @@ public interface IFxCurveValue
     IReadOnlyList<int> ModifierTypes { get; }
 }
 
+/// <summary>
+/// Capability: a curve whose function, loop flag and component count are fixed by its stored type (DLSE sequences);
+/// only its keys can change. <see cref="IFxCurveValue.SetCurve"/> ignores a curve with another shape.
+/// </summary>
+public interface IFxFixedCurveShape
+{
+}
+
 /// <summary>One member of a value's enum.</summary>
 public sealed record FxEnumMember(string Name, int Value, string Description);
 

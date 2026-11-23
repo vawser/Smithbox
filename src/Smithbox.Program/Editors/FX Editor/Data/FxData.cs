@@ -31,11 +31,15 @@ public class FxData : IDisposable
 
     public SoulsFormats.FfxGame FfxGame;
 
+    /// <summary>The project's effects are DLSE class streams (DES, DS2, DS2S).</summary>
+    public bool IsDlse => Format == Model.FxFormat.Dlse;
+
     /// <summary>
-    /// The project's effects can be looked at but not changed: DLSE effects are shown read-only until editing and
-    /// saving them is built (FFX Older Games Plan, F3b).
+    /// Effects can be added, removed, duplicated, renumbered, moved between binders, imported, exported, compared and
+    /// project-checked: FXR3 only. DLSE effects have their values edited and saved (FFX Older Games Plan F3b); their
+    /// structure comes later (F7).
     /// </summary>
-    public bool IsReadOnly => Format != Model.FxFormat.Fxr3;
+    public bool CanEditStructure => Format == Model.FxFormat.Fxr3;
 
     public FxBank Bank;
 

@@ -276,8 +276,6 @@ public class FxInspector
             GUI.WrappedText(LOC.Get("FX_Inspector_Slot", action.Slot));
         if (action.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, action.Description);
-        if (Data.IsReadOnly)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_ReadOnly_Notice"));
 
         // Options
         GUI.Spacer();
@@ -358,10 +356,6 @@ public class FxInspector
 
             ImGui.TableSetColumnIndex(1);
             ImGui.SetNextItemWidth(-1);
-            // Read-only effects (DLSE, F3a) show their fields disabled; a keyframed curve still opens in the Curve
-            // Editor, to be looked at
-            bool disabled = Data.IsReadOnly && value.Kind != Model.FxValueKind.Curve;
-            ImGui.BeginDisabled(disabled);
             switch (value.Kind)
             {
                 case Model.FxValueKind.Int or Model.FxValueKind.Float or Model.FxValueKind.Bool or Model.FxValueKind.Vector:
@@ -375,12 +369,9 @@ public class FxInspector
                     ImGui.TextUnformatted(list == null || list.Count == 0 ? "—" : string.Join(", ", list));
                     break;
                 case Model.FxValueKind.Other when action.Source is not FxrAction:
-                    ImGui.EndDisabled();
                     DisplayOther(value);
-                    ImGui.BeginDisabled(disabled);
                     break;
             }
-            ImGui.EndDisabled();
         }
 
         ImGui.EndTable();
@@ -623,7 +614,7 @@ public class FxInspector
         // The typed TPF first, then the plain one, as FxTextureLibrary looks them up
         var file = ResourceName(resource, textureType, shown);
         bool known = true;
-        if (Data.IsReadOnly && resource is "texture" or "model")
+        if (Data.IsDlse && resource is "texture" or "model")
         {
             // DES and DS2 name resources with 4 or 6 digits (s0003, s000002): found by id in the bank's names
             var names = resource == "texture" ? Data.Bank.Textures : Data.Bank.Models;

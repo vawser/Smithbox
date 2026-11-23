@@ -201,16 +201,15 @@ public class FxEditorScreen : EditorScreen
         if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fxFileMenu"))
             return;
 
-        // Save (nothing to save in a read-only project: DLSE effects, F3a)
-        bool canSave = Data?.IsReadOnly != true;
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##fxSave", InputManager.GetHint(KeybindID.Save), false, canSave))
+        // Save
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##fxSave", InputManager.GetHint(KeybindID.Save)))
             Save();
-        GUI.Tooltip(LOC.Get(canSave ? "FX_Menu_Save_TT" : "FX_ReadOnly_TT"));
+        GUI.Tooltip(LOC.Get("FX_Menu_Save_TT"));
 
         // Save All
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##fxSaveAll", "", false, canSave))
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##fxSaveAll"))
             SaveAll();
-        GUI.Tooltip(LOC.Get(canSave ? "FX_Menu_SaveAll_TT" : "FX_ReadOnly_TT"));
+        GUI.Tooltip(LOC.Get("FX_Menu_SaveAll_TT"));
 
         ImGui.Separator();
 

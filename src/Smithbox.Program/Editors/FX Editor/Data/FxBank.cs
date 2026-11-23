@@ -93,8 +93,8 @@ public class FxBank : IDisposable
             var entries = new SortedDictionary<int, FxEntry>();
             var textures = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
             var models = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
-            // DLSE: the different contents seen per id, to count CopyVersions
-            var versions = new Dictionary<int, List<byte[]>>();
+            // DLSE: every copy of each id, in binder order, grouped into versions once every binder is read
+            var copies = new Dictionary<int, List<DlseCopy>>();
             foreach (var binder in binders)
             {
                 if (token.IsCancellationRequested)
@@ -140,23 +140,23 @@ public class FxBank : IDisposable
 
                             if (!TryParseId(file.Name, effectExtension, out var id))
                                 continue;
-                            if (!entries.TryGetValue(id, out var entry))
-                            {
-                                entry = new FxEntry { Id = id, Alias = aliases.GetValueOrDefault(id, "") };
-                                if (dlse)
-                                    entry.NameStem = Path.GetFileNameWithoutExtension(file.Name.Replace('\\', '/'));
-                                entries[id] = entry;
-                            }
 
                             if (dlse)
                             {
-                                var copy = reader.ReadFile(file).ToArray();
-                                if (!versions.TryGetValue(id, out var seen))
-                                    versions[id] = seen = new();
-                                if (!seen.Any(s => s.AsSpan().SequenceEqual(copy)))
-                                    seen.Add(copy);
-                                entry.CopyVersions = seen.Count;
+                                if (!copies.TryGetValue(id, out var list))
+                                    copies[id] = list = new();
+                                byte[] original = null;
+                                vanilla?.TryGetValue(file.Name, out original);
+                                list.Add(new DlseCopy(new FxBinderRef(binder, file.Name), reader.ReadFile(file).ToArray(), vanilla != null, original));
+                                continue;
                             }
+
+                            if (!entries.TryGetValue(id, out var entry))
+                            {
+                                entry = new FxEntry { Id = id, Alias = aliases.GetValueOrDefault(id, "") };
+                                entries[id] = entry;
+                            }
+
                             var r = new FxBinderRef(binder, file.Name);
                             entry.Binders.Add(r);
                             entry.OnDisk[binder.Path] = r;
@@ -196,6 +196,10 @@ public class FxBank : IDisposable
                 IndexedBinders++;
             }
 
+            if (dlse)
+                foreach (var (id, list) in copies)
+                    entries[id] = MakeVersions(id, list, aliases.GetValueOrDefault(id, ""));
+
             // Each binder was decompressed whole (textures included, up to ~350 MB in ER); release those
             // buffers now rather than whenever the GC gets round to them
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: false, compacting: true);
@@ -229,6 +233,70 @@ public class FxBank : IDisposable
             if (file.Name.EndsWith(EffectExtension, StringComparison.OrdinalIgnoreCase))
                 result[file.Name] = reader.ReadFile(file).ToArray();
         return result;
+    }
+
+    /// <summary>One binder's copy of a DLSE effect, as read by indexing.</summary>
+    private sealed record DlseCopy(FxBinderRef Where, byte[] Bytes, bool VanillaKnown, byte[] Vanilla);
+
+    /// <summary>
+    /// The entry of a DLSE id: its copies grouped by content, in binder order, one entry per version (DES keeps
+    /// different effects under one id in ds_sfxbnd_main and the other binders). The first version is the bank's entry
+    /// and lists them all in <see cref="FxEntry.Versions"/>; each only holds the binders with its content.
+    /// </summary>
+    private static FxEntry MakeVersions(int id, List<DlseCopy> list, string alias)
+    {
+        var groups = new List<List<DlseCopy>>();
+        foreach (var c in list)
+        {
+            var group = groups.FirstOrDefault(g => g[0].Bytes.AsSpan().SequenceEqual(c.Bytes));
+            if (group == null)
+                groups.Add(group = new());
+            group.Add(c);
+        }
+
+        var versions = new List<FxEntry>();
+        foreach (var group in groups)
+        {
+            var first = group[0];
+            var entry = new FxEntry
+            {
+                Id = id,
+                Alias = alias,
+                NameStem = Path.GetFileNameWithoutExtension(first.Where.InternalName.Replace('\\', '/')),
+                CopyVersions = groups.Count,
+                Packed = Pack(first.Bytes),
+                PackedLength = first.Bytes.Length,
+            };
+            // A binder holding the file twice under one name (DS2S sfx9999_Append) counts once: saving writes both
+            foreach (var c in group)
+            {
+                if (!entry.Binders.Contains(c.Where))
+                    entry.Binders.Add(c.Where);
+                entry.OnDisk[c.Where.Binder.Path] = c.Where;
+            }
+
+            // How it compares with the game's copy, judged from the binder it's read from (as for FXR3)
+            if (first.VanillaKnown)
+            {
+                if (first.Vanilla == null)
+                    entry.Vanilla = FxVanillaState.Added;
+                else if (!first.Vanilla.AsSpan().SequenceEqual(first.Bytes))
+                {
+                    entry.Vanilla = FxVanillaState.Modified;
+                    entry.VanillaPacked = Pack(first.Vanilla);
+                    entry.VanillaLength = first.Vanilla.Length;
+                }
+            }
+            versions.Add(entry);
+        }
+
+        if (versions.Count > 1)
+        {
+            versions[0].Versions = versions;
+            foreach (var v in versions.Skip(1))
+                v.Primary = versions[0];
+        }
+        return versions[0];
     }
 
     /// <summary>The effects are DLSE class streams (.ffx in BND3 or BND4 binders: DES, DS2, DS2S).</summary>
@@ -484,7 +552,10 @@ public class FxBank : IDisposable
     }
 
     /// <summary>Whether a save has anything to do: modified effects, or files to add or remove.</summary>
-    public bool HasChanges => Deleted.Count > 0 || Entries.Values.Any(e => e.IsLoaded && e.IsDirty);
+    public bool HasChanges => Deleted.Count > 0 || AllEntries.Any(e => e.IsLoaded && e.IsDirty);
+
+    /// <summary>Every entry, with every version of the ids that have several (DES).</summary>
+    public IEnumerable<FxEntry> AllEntries => Entries.Values.SelectMany(e => e.Versions ?? (IEnumerable<FxEntry>)new[] { e });
 
     /// <summary>Every file the next save removes: from binders an effect left, and every file of a deleted effect.</summary>
     public List<(FxEntry entry, FxBinderRef where)> PendingRemovals()
@@ -525,15 +596,20 @@ public class FxBank : IDisposable
             entry.IsDirty = true;
     }
 
-    public IEnumerable<FxEntry> DirtyEntries => Entries.Values.Where(e => e.IsLoaded && e.IsDirty);
+    public IEnumerable<FxEntry> DirtyEntries => AllEntries.Where(e => e.IsLoaded && e.IsDirty);
 
     // ---------------------------------------------------------------- save
 
     /// <summary>Saves the given effects. Each binder they touch is read and written once.</summary>
     public async Task<bool> Save(IEnumerable<FxEntry> entries)
     {
-        // What to do is settled on the calling (main) thread, before the work moves off it. Only FXRs are saved:
-        // DLSE effects are read-only until saving them is built (FFX Older Games Plan, F3b)
+        // What to do is settled on the calling (main) thread, before the work moves off it
+        if (IsDlse)
+        {
+            var dlse = entries.Where(e => e.Ffx != null).ToList();
+            await Task.Yield();
+            return SaveDlse(dlse);
+        }
         var list = entries.Where(e => e.Fxr != null).ToList();
         var removals = PendingRemovals();
         var deleted = Deleted.ToList();
@@ -651,6 +727,95 @@ public class FxBank : IDisposable
         // The binders were decompressed and recompressed whole; release those buffers
         GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: false, compacting: true);
 
+        return ok;
+    }
+
+    /// <summary>
+    /// Saves DLSE effects (DES, DS2, DS2S): each into the binders holding its version, which are read and written once
+    /// each, BND3 or BND4, with the binder's own compression (DES DCX_EDGE, DS2 DFLT). Where the game also ships the
+    /// binder uncompressed next to it (x.ffxbnd beside x.ffxbnd.dcx), that copy is written too, so both stay the same.
+    /// Effects are only changed, never added or removed (structure edits are FXR3 only).
+    /// </summary>
+    private bool SaveDlse(List<FxEntry> list)
+    {
+        if (list.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("FX_Data_Save_Nothing"));
+            return true;
+        }
+        Smithbox.Log(this, LOC.Get("FX_Data_Save_Start", list.Count, list.Sum(e => e.Binders.Count), Project.Descriptor.ProjectPath));
+
+        var bytes = new Dictionary<FxEntry, byte[]>();
+        foreach (var entry in list)
+        {
+            try
+            {
+                bytes[entry] = entry.Ffx.Write();
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Write_Effect", entry.Stem), e);
+            }
+        }
+
+        var work = bytes.Keys
+            .SelectMany(e => e.Binders.Select(b => (binder: b.Binder, entry: e, r: b)))
+            .GroupBy(x => x.binder.Path, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        SaveTotal = work.Count;
+        SaveDone = 0;
+
+        bool ok = true;
+        var saved = new HashSet<FxEntry>(bytes.Keys);
+        foreach (var group in work)
+        {
+            var binderEntry = group.First().binder;
+            SaveCurrent = binderEntry.Filename;
+            try
+            {
+                var written = Model.FfxBinders.Write(FS.ReadFile(binderEntry.Path).Value,
+                    group.Select(x => (x.r.InternalName, bytes[x.entry])).ToList(), out var missing, out var plain);
+                foreach (var name in missing)
+                {
+                    var entry = group.First(x => x.r.InternalName == name).entry;
+                    Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Find_Effect", entry.Stem, binderEntry.Path));
+                    saved.Remove(entry);
+                    ok = false;
+                }
+                Project.VFS.ProjectFS.WriteFile(binderEntry.Path, written);
+                Smithbox.Log(this, LOC.Get("FX_Data_Saved_Binder", binderEntry.Path, group.Count(), written.Length / 1024));
+
+                // The uncompressed twin the game also ships (DES: every binder; DS2: sfx9999)
+                var twin = Model.FfxBinders.TwinOf(binderEntry.Path);
+                if (twin != null && FS.FileExists(twin))
+                {
+                    Project.VFS.ProjectFS.WriteFile(twin, plain);
+                    Smithbox.Log(this, LOC.Get("FX_Data_Saved_Binder", twin, group.Count(), plain.Length / 1024));
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Write_Binder", binderEntry.Path), e);
+                foreach (var x in group)
+                    saved.Remove(x.entry);
+                ok = false;
+            }
+            SaveDone++;
+        }
+
+        // An effect is saved once every binder of its version took it
+        foreach (var (entry, data) in bytes)
+        {
+            if (!saved.Contains(entry))
+                continue;
+            entry.IsDirty = false;
+            UpdateVanillaState(entry, data);
+            entry.Packed = Pack(data);
+            entry.PackedLength = data.Length;
+        }
+
+        SaveCurrent = null;
+        GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: false, compacting: true);
         return ok;
     }
 

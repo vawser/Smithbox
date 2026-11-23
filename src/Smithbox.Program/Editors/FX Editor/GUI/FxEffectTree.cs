@@ -154,8 +154,11 @@ public class FxEffectTree
             FilterMatches.Clear();
         }
 
-        if (Data.IsReadOnly)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_ReadOnly_Notice"));
+        if (!Data.CanEditStructure)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_Dlse_Notice"));
+
+        // A DES id with different effects in different binders: one version per content, picked here
+        DisplayVersionPicker(entry);
 
         // A DES wrapper effect: one complete effect per variant, picked here
         effect = DisplayVariantPicker(entry, effect);
@@ -411,6 +414,37 @@ public class FxEffectTree
                 DisplayAction(entry, call, ref id, idPrefix);
             ImGui.TreePop();
         }
+    }
+
+    // ---------------------------------------------------------------- versions (DES ids with different copies)
+
+    /// <summary>
+    /// The version picker for an id whose binders hold different effects (DES: ds_sfxbnd_main against the others).
+    /// Each version is its own entry, edited and saved only to its binders (decision §8.5 of the FFX plan).
+    /// </summary>
+    private void DisplayVersionPicker(FxEntry entry)
+    {
+        var versions = entry.Main.Versions;
+        if (versions == null)
+            return;
+
+        static string Label(FxEntry v, int i, int n) =>
+            $"{LOC.Get("FX_EffectTree_Version", i + 1, n, v.VersionLabel)}{(v.IsDirty && v.IsLoaded ? "*" : "")}";
+
+        int current = Math.Max(0, versions.IndexOf(entry));
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##fxVersion", Label(entry, current, versions.Count)))
+        {
+            for (int v = 0; v < versions.Count; v++)
+                if (ImGui.Selectable($"{Label(versions[v], v, versions.Count)}##fxVersion{v}", v == current))
+                {
+                    // After the tree is drawn: it is walking this version's objects now
+                    var picked = versions[v];
+                    Deferred.Add(() => Editor.Selection.SelectVersion(picked));
+                }
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Version_TT"));
     }
 
     // ---------------------------------------------------------------- variants (DES wrapper effects)

@@ -70,6 +70,33 @@ public class FxEntry
     public int CopyVersions = 1;
 
     /// <summary>
+    /// On the bank's entry of an id with several versions (DES: ds_sfxbnd_main against the other binders), every
+    /// version, this one first. Each version is a full entry: its own binders (only those holding that content), bytes,
+    /// loaded file, dirty flag and vanilla state, so it is loaded, edited and saved on its own (decision §8.5). Null
+    /// when the id has one version.
+    /// </summary>
+    public List<FxEntry> Versions;
+
+    /// <summary>For a version other than the first: the bank's entry of its id. Null otherwise.</summary>
+    public FxEntry Primary;
+
+    /// <summary>The bank's entry of this id: <see cref="Primary"/>, or this one.</summary>
+    public FxEntry Main => Primary ?? this;
+
+    /// <summary>Every version of this id (just this entry when it has one).</summary>
+    public IEnumerable<FxEntry> AllVersions => Main.Versions ?? (IEnumerable<FxEntry>)new[] { this };
+
+    /// <summary>Which binders hold this version, for the version picker (e.g. "ds_sfxbnd_main").</summary>
+    public string VersionLabel => string.Join(", ", Binders.Select(b => b.Binder.Filename));
+
+    /// <summary>How the id compares with the game: Modified when any version is, else this entry's state.</summary>
+    public FxVanillaState CombinedVanilla =>
+        Versions != null && Versions.Any(v => v.Vanilla == FxVanillaState.Modified) ? FxVanillaState.Modified : Vanilla;
+
+    /// <summary>Any version has unsaved edits or binder changes.</summary>
+    public bool AnyUnsaved => AllVersions.Any(v => v.IsDirty && v.IsLoaded || v.MembershipChanged);
+
+    /// <summary>
     /// The model view of the loaded effect (<see cref="FxData.Effect"/>), kept while the same file object is loaded,
     /// so its adapters keep their identity. Format-neutral code reads the effect through it.
     /// </summary>

@@ -231,8 +231,40 @@ public sealed class FfxExpression : IFxExpression
 }
 
 /// <summary>A state action or a nested action call: an action id and a param list, read through FfxActionView.</summary>
-public class FfxActionAdapter : IFxAction
+public class FfxActionAdapter : IFxAction, IFxSnapshot
 {
+    // ---------------------------------------------------------------- IFxSnapshot
+    // Value edits never change the list's structure (which params, of which types), so an action's state is each
+    // param's value: constants, keys, int lists. Restoring sets them back; an unchanged one is left alone.
+
+    private sealed record ParamState(Param Param, double[] Constant, FxrCurve Curve, List<int> List);
+
+    public object Snapshot()
+    {
+        var values = Values;
+        var state = new List<ParamState>(values.Count);
+        foreach (FfxValueAdapter v in values)
+            state.Add(new ParamState(v.Param, v.Get(), v.Kind == FxValueKind.Curve ? v.GetCurve() : null, v.GetList()));
+        return state;
+    }
+
+    public void Restore(object state)
+    {
+        if (state is not List<ParamState> saved)
+            throw new ArgumentException("Not a snapshot of a DLSE action.");
+        var list = List;
+        for (int i = 0; i < saved.Count && i < list.Params.Count; i++)
+        {
+            var s = saved[i];
+            if (!ReferenceEquals(list.Params[i], s.Param))
+                throw new InvalidOperationException("The action's params changed since the snapshot.");
+            var v = Owner.Value(this, s.Param, i);
+            if (s.Constant != null) v.Set(s.Constant);
+            if (s.Curve != null) v.SetCurve(s.Curve);
+            if (s.List != null) v.SetList(s.List);
+        }
+    }
+
     protected readonly FfxEffectAdapter Owner;
     private readonly Func<FfxActionView> makeView;
     private readonly object source;
@@ -333,7 +365,7 @@ public sealed class FfxEffectCallAdapter : FfxActionAdapter, IFxProxy
 /// One param. Its name and position come from the action it was last read through (<see cref="At"/>), since the
 /// adapter is cached by the param object and the same param can only sit in one list.
 /// </summary>
-public sealed class FfxValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFxCallValue, IFxArgumentValue, IFxWrappedValue, IFxTypedValue
+public sealed class FfxValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFxCallValue, IFxArgumentValue, IFxWrappedValue, IFxTypedValue, IFxFixedCurveShape
 {
     private readonly FfxEffectAdapter owner;
     public Param Param { get; }

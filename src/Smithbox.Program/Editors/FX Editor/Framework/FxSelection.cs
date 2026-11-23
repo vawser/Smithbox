@@ -38,7 +38,8 @@ public class FxSelection
 
     public void SelectEntry(FxEntry entry)
     {
-        if (entry == Entry)
+        // Clicking an id's row again keeps the version picked in the Effect Tree
+        if (entry == Entry || entry != null && Entry?.Primary == entry)
             return;
 
         // A value mid-edit belongs to the effect it was typed for: committed before the Inspector stops showing it
@@ -48,6 +49,19 @@ public class FxSelection
             return;
 
         Entry = entry;
+        Item = null;
+        Property = null;
+    }
+
+    /// <summary>Switches to another version of the selected id (the Effect Tree's version picker).</summary>
+    public void SelectVersion(FxEntry version)
+    {
+        if (version == null || version == Entry || version.Main != Entry?.Main)
+            return;
+        Editor.FlushEdits();
+        if (!Editor.Data.Bank.Load(version))
+            return;
+        Entry = version;
         Item = null;
         Property = null;
     }
@@ -64,7 +78,8 @@ public class FxSelection
 
     public void SelectProperty(string name) => Property = name;
 
-    public bool IsSelected(FxEntry entry) => entry == Entry;
+    /// <summary>The entry, or one of its versions (DES), is the selected one.</summary>
+    public bool IsSelected(FxEntry entry) => entry == Entry || entry != null && Entry?.Primary == entry;
 
     public bool IsSelected(object item) => item != null && ReferenceEquals(item, Item);
 

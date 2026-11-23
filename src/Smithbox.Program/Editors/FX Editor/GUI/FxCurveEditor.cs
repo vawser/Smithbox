@@ -69,23 +69,14 @@ public class FxCurveEditor
         Prepare(entry, action, name, curveValue);
 
         DisplayHeader(action, value);
-
-        // A read-only effect's curve (DLSE, F3a) is shown, with the controls disabled, and never committed
-        bool readOnly = Data.IsReadOnly;
-        if (readOnly)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_ReadOnly_Notice"));
-        ImGui.BeginDisabled(readOnly);
-        DisplayFunction();
+        // A DLSE sequence's interpolation and loop come from its stored type: only its keys are edited
+        DisplayFunction(value is Model.IFxFixedCurveShape);
         DisplayGraph(value, fxrProperty);
         DisplayKeys();
-        ImGui.EndDisabled();
         if (fxrAction != null)
             DisplayModifiers(entry, fxrAction, Data.View(entry, fxrAction), name);
 
-        if (readOnly)
-            Dirty = false;
-        else
-            CommitIfIdle(entry, action, name);
+        CommitIfIdle(entry, action, name);
 
         ImGui.EndChild();
     }
@@ -189,12 +180,21 @@ public class FxCurveEditor
         _ => argument,
     };
 
-    private void DisplayFunction()
+    private void DisplayFunction(bool fixedShape)
     {
         // Function
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_CurveEditor_Function_Header"), LOC.Get("FX_CurveEditor_Function_Header_TT"));
 
+        ImGui.BeginDisabled(fixedShape);
+        DisplayFunctionControls();
+        ImGui.EndDisabled();
+        if (fixedShape)
+            ImGui.TextDisabled(LOC.Get("FX_CurveEditor_Fixed_Shape"));
+    }
+
+    private void DisplayFunctionControls()
+    {
         var current = Working.Function <= FxrPropertyFunction.Constant ? FxrPropertyFunction.Constant : Working.Function;
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##fxCurveFunction", FunctionName(current)))
