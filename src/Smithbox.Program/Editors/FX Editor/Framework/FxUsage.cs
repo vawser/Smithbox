@@ -63,6 +63,12 @@ public class FxUsage
             foreach (var entry in entries)
             {
                 var fxr = Bank.ReadCopy(entry);
+                // the older games (DLSE, FXR1 / v2; FFX Older Games Plan §21.9): through the model
+                if (fxr == null && ModelCopy(entry) is { } model)
+                {
+                    starts[entry.Id] = Model.FxModelUsage.Targets(model);
+                    resources[entry.Id] = Model.FxModelUsage.Resources(model);
+                }
                 if (fxr != null)
                 {
                     starts[entry.Id] = Targets(fxr);
@@ -152,15 +158,49 @@ public class FxUsage
         return set;
     }
 
+    // ---------------------------------------------------------------- the older games, through the model (§21.9)
+
+    /// <summary>An unloaded older-game effect read as a separate copy and adapted (null for FXR3 or when unreadable).</summary>
+    private Model.IFxEffect ModelCopy(FxEntry entry)
+    {
+        // loaded effects are read live on the main thread (LoadedModel); the scan, on its own task, keeps off them
+        if (entry.IsLoaded)
+            return null;
+        var data = Editor.Data;
+        try
+        {
+            return data.Format switch
+            {
+                Model.FxFormat.Dlse when Bank.ReadFfxCopy(entry) is { } f => Model.FfxModel.Adapt(f, data.FfxSchema, data.FfxGame),
+                Model.FxFormat.Fxr1 when Bank.ReadFxr1Copy(entry) is { } f => Model.Fxr1Model.Adapt(f, data.FfxSchema, data.FfxGame),
+                _ => null,
+            };
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>A loaded older-game effect as it is now (unsaved edits included), or null.</summary>
+    private Model.IFxEffect LoadedModel(FxEntry entry) => entry.Fxr == null && entry.File != null ? Editor.Data.Effect(entry) : null;
+
     /// <summary>The effects this one starts: live when it's loaded, else from the scan (null before one).</summary>
     public List<int> Starts(FxEntry entry)
     {
         if (entry.Fxr != null)
             return Targets(entry.Fxr);
+        if (LoadedModel(entry) is { } loaded)
+            return Model.FxModelUsage.Targets(loaded);
         if (ScanStarts.TryGetValue(entry.Id, out var list))
             return list;
         // Not scanned (made after the scan, or the scan hasn't run): read it now, once
         var fxr = Bank.ReadCopy(entry);
+        if (fxr == null && ModelCopy(entry) is { } m)
+        {
+            ScanStarts[entry.Id] = list = Model.FxModelUsage.Targets(m);
+            return list;
+        }
         list = fxr == null ? new() : Targets(fxr);
         ScanStarts[entry.Id] = list;
         return list;
@@ -177,7 +217,7 @@ public class FxUsage
                     result.Add(e);
         // Loaded ones as they are now, unsaved edits included (few are loaded at once)
         foreach (var e in Bank.Entries.Values)
-            if (e.Fxr != null && e.Id != id && Targets(e.Fxr).Contains(id))
+            if (e.Id != id && (e.Fxr != null ? Targets(e.Fxr).Contains(id) : LoadedModel(e) is { } lm && Model.FxModelUsage.Targets(lm).Contains(id)))
                 result.Add(e);
         return result.OrderBy(e => e.Id).ToList();
     }
@@ -187,6 +227,8 @@ public class FxUsage
     {
         if (entry.Fxr != null)
             return ResourceNames(entry.Fxr, Editor.Data.Schema, Editor.Data.Game);
+        if (LoadedModel(entry) is { } loaded)
+            return Model.FxModelUsage.Resources(loaded);
         return ScanResources.TryGetValue(entry.Id, out var set) ? set : new HashSet<string>();
     }
 
