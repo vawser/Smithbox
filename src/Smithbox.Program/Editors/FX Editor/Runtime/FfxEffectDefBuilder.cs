@@ -578,6 +578,8 @@ public static class FfxEffectDefBuilder
             IFxValue V(params string[] names) => names.Select(x => n.GetValueOrDefault(x)).FirstOrDefault(x => x != null);
             int Int(string name, int fallback) => (int)(V(name)?.Get()?.FirstOrDefault() ?? fallback);
             float Float(string name, float fallback) => (float)(V(name)?.Get()?.FirstOrDefault() ?? fallback);
+            // BB writes 99999 (or 9999x) for "no texture" (§20.28): none
+            int Tex(string name) => Int(name, 0) is var t && t >= 99990 ? 0 : t;
 
             switch (a.TypeId)
             {
@@ -603,8 +605,8 @@ public static class FfxEffectDefBuilder
                         Kind = FxBillboardKind.Distortion,
                         // the mask; DS2's a43 has none (TextureID1 0 in every instance, §20.20): the normal map then
                         // stands in, as the unnamed fallback drew it (§20.15)
-                        Texture = Int("TextureID1", 0) > 0 ? Int("TextureID1", 0) : Int("TextureID2", 0),
-                        Layer2 = Int("TextureID2", 0),
+                        Texture = Tex("TextureID1") > 0 ? Tex("TextureID1") : Tex("TextureID2"),
+                        Layer2 = Tex("TextureID2"),
                         DistortionMode = Math.Clamp(Int("DistortionMode", 1), 0, 4),
                         DistortionShape = Math.Clamp(Int("ShapeMode", 0), 0, 2),
                         Orientation = 1,

@@ -1117,7 +1117,7 @@
     "1": {
       "name": "NodeAcceleration",
       "category": "",
-      "desc": "FXR3's NodeAcceleration, same id: a node's speed along Z and its acceleration. DS2 has seven slots where FXR3 has the four properties then three ints and a float; only the four are named (FFX plan §20.23).",
+      "desc": "FXR3's NodeAcceleration, same id: a node's speed along Z and its acceleration. DS2 has seven slots where FXR3 has the four properties then three ints and a float; only the four are named (FFX plan Â§20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -4283,25 +4283,28 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk01",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk03",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -4309,10 +4312,11 @@
               "max": 1,
               "seen": [
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk04",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -4321,17 +4325,19 @@
               "seen": [
                 0,
                 4
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk05",
+              "name": "color",
               "types": [
                 19,
                 21
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -4341,10 +4347,11 @@
                 1,
                 5,
                 8
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -4354,14 +4361,16 @@
                 1,
                 5,
                 32
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "animFrameTimeline",
               "types": [
                 5,
                 6
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 15 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "texture09",
@@ -4961,7 +4970,7 @@
       "name": "PointLight24",
       "category": "Appearance",
       "source": "FXR3 PointLight's slot order (diffuse, specular, radius, 10 10 10); exe FrpgFxDrawEntityHostPointLight (§20.14)",
-      "desc": "A point light. Its slots follow FXR3's PointLight (609): diffuse colour (alpha = intensity), specular colour, radius; [9]–[11] are 10 in every instance, as 609's three 10s. BB's 40-slot form ends in 609's flicker and view-distance values (100). DarkSoulsRemastered.exe has FrpgFxDrawEntityHostPointLight. (FFX plan §20.14)",
+      "desc": "A point light. Its slots follow FXR3's PointLight (609): diffuse colour (alpha = intensity), specular colour, radius; [9]â\u0080\u0093[11] are 10 in every instance, as 609's three 10s. BB's 40-slot form ends in 609's flicker and view-distance values (100). DarkSoulsRemastered.exe has FrpgFxDrawEntityHostPointLight. (FFX plan Â§20.14)",
       "games": {
         "DES": {
           "paramCounts": [
@@ -5798,7 +5807,7 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID",
               "types": [
                 40
               ],
@@ -5807,7 +5816,8 @@
               "seen": [
                 20,
                 24
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 27's TextureID in DS1R's wide layout; values: texture ids (FFX plan Â§20.20)."
             },
             {
               "name": "unk02",
@@ -5816,7 +5826,7 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -5825,13 +5835,15 @@
               "seen": [
                 2,
                 4
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +44, DS1 ActionData 27's BlendMode in DS1R's wide layout; values: DS2S 2 ×41, 4 ×1; BB 4 ×170, 5 ×3 (FFX plan Â§20.20)."
             },
             {
-              "name": "unk04",
+              "name": "scaleMult",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +60, DS1 ActionData 27's ScaleMult in DS1R's wide layout; values: float sequences (FFX plan Â§20.20)."
             },
             {
               "name": "unk05",
@@ -6117,10 +6129,11 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +40, DS1 ActionData 27's TextureID in DS1R's wide layout; values: texture ids (FFX plan Â§20.20)."
             },
             {
               "name": "unk02",
@@ -6129,7 +6142,7 @@
               ]
             },
             {
-              "name": "unk03",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -6139,15 +6152,17 @@
                 0,
                 4,
                 5
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +44, DS1 ActionData 27's BlendMode in DS1R's wide layout; values: DS2S 2 ×41, 4 ×1; BB 4 ×170, 5 ×3 (FFX plan Â§20.20)."
             },
             {
-              "name": "unk04",
+              "name": "scaleMult",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +60, DS1 ActionData 27's ScaleMult in DS1R's wide layout; values: float sequences (FFX plan Â§20.20)."
             },
             {
               "name": "unk05",
@@ -8395,7 +8410,7 @@
     "34": {
       "name": "NodeSpin",
       "category": "",
-      "desc": "FXR3's NodeSpin, same id: an angular speed and its multiplier range per axis (DS2: sequence, Float2 [1, 1], three times), then an int (DS2 / BB; DS1 has six slots) (FFX plan §20.23).",
+      "desc": "FXR3's NodeSpin, same id: an angular speed and its multiplier range per axis (DS2: sequence, Float2 [1, 1], three times), then an int (DS2 / BB; DS1 has six slots) (FFX plan Â§20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -8663,7 +8678,7 @@
     "35": {
       "name": "StaticNodeTransform",
       "category": "",
-      "desc": "A node's offset and rotation (degrees): FXR3's StaticNodeTransform, same id, six floats as FXR3's offset / rotation vec3s. Values: offsets −3.5 … 5, angles in multiples of 15 within ±180 (FFX plan §20.23).",
+      "desc": "A node's offset and rotation (degrees): FXR3's StaticNodeTransform, same id, six floats as FXR3's offset / rotation vec3s. Values: offsets â\u0088\u00923.5 â\u0080¦ 5, angles in multiples of 15 within Â±180 (FFX plan Â§20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -8916,7 +8931,7 @@
     "36": {
       "name": "RandomNodeTransform",
       "category": "",
-      "desc": "FXR3's RandomNodeTransform, same id: offset, rotation, then their variances (twelve floats). DS2: rotation variance 180 in about half the instances, a random full turn (FFX plan §20.23).",
+      "desc": "FXR3's RandomNodeTransform, same id: offset, rotation, then their variances (twelve floats). DS2: rotation variance 180 in about half the instances, a random full turn (FFX plan Â§20.23).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -10214,10 +10229,11 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "texture01",
@@ -10226,7 +10242,7 @@
               ]
             },
             {
-              "name": "unk02",
+              "name": "trailThickness",
               "types": [
                 1
               ],
@@ -10236,7 +10252,8 @@
                 1,
                 8,
                 32
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk03",
@@ -10253,7 +10270,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -10264,10 +10281,11 @@
                 1,
                 3,
                 4
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -10278,7 +10296,8 @@
                 2,
                 4,
                 5
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk07",
@@ -10320,12 +10339,13 @@
               "max": 5
             },
             {
-              "name": "unk11",
+              "name": "trailLength",
               "types": [
                 1
               ],
               "min": 1,
-              "max": 200
+              "max": 200,
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk12",
@@ -10344,16 +10364,18 @@
               ]
             },
             {
-              "name": "unk13",
+              "name": "trailFadeIn",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk14",
+              "name": "trailFadeOut",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk15",
@@ -11378,7 +11400,7 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "distortionMode",
               "types": [
                 1
               ],
@@ -11387,10 +11409,11 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk01",
+              "name": "shapeMode",
               "types": [
                 1
               ],
@@ -11400,10 +11423,11 @@
                 0,
                 1,
                 2
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -11412,7 +11436,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk03",
@@ -11471,43 +11496,49 @@
               ]
             },
             {
-              "name": "unk09",
+              "name": "stretchingDistance",
               "types": [
                 11,
                 12,
                 13,
                 149
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "distortionIntensity",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk11",
+              "name": "wobblingSpeed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk12",
+              "name": "waveSpread",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk13",
+              "name": "flowSpeed",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture14",
+              "name": "textureID2",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk15",
@@ -11522,15 +11553,16 @@
               ]
             },
             {
-              "name": "unk16",
+              "name": "color",
               "types": [
                 19,
                 21,
                 22
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk17",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -11540,13 +11572,15 @@
                 0,
                 2,
                 4
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture18",
+              "name": "textureID1",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "texture19",
@@ -11555,11 +11589,12 @@
               ]
             },
             {
-              "name": "unk20",
+              "name": "wobblingRadius",
               "types": [
                 11,
                 12
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk21",
@@ -13551,13 +13586,14 @@
           ],
           "params": [
             {
-              "name": "texture00",
+              "name": "textureID",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk01",
+              "name": "scaleX",
               "types": [
                 11,
                 12,
@@ -13565,10 +13601,11 @@
                 14,
                 149,
                 150
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk02",
+              "name": "scaleY",
               "types": [
                 11,
                 12,
@@ -13576,7 +13613,8 @@
                 14,
                 149,
                 150
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk03",
@@ -13607,7 +13645,7 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -13617,10 +13655,11 @@
                 1,
                 2,
                 4
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -13631,20 +13670,22 @@
                 2,
                 4,
                 5
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "color",
               "types": [
                 19,
                 20,
                 21,
                 151,
                 152
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -13654,10 +13695,11 @@
                 1,
                 4,
                 8
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -13669,14 +13711,16 @@
                 16,
                 32,
                 64
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk11",
+              "name": "animFrameTimeline",
               "types": [
                 5,
                 6
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "texture12",
@@ -13761,10 +13805,11 @@
               ]
             },
             {
-              "name": "unk20",
+              "name": "animFrameInitial",
               "types": [
                 79
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk21",
@@ -13797,16 +13842,18 @@
               ]
             },
             {
-              "name": "unk25",
+              "name": "uvShiftX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk26",
+              "name": "uvShiftY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 32 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk27",
@@ -14317,7 +14364,7 @@
     "60": {
       "name": "ParticleSpeed",
       "category": "",
-      "desc": "FXR3's ParticleSpeed, same id: gravity, speed, its multiplier range, an int and a float (FFX plan §20.24).",
+      "desc": "FXR3's ParticleSpeed, same id: gravity, speed, its multiplier range, an int and a float (FFX plan Â§20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -15438,10 +15485,11 @@
           ],
           "params": [
             {
-              "name": "unk00",
+              "name": "modelID",
               "types": [
                 41
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk01",
@@ -15581,14 +15629,15 @@
               ]
             },
             {
-              "name": "unk15",
+              "name": "animFrameTimeline",
               "types": [
                 5,
                 6
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk16",
+              "name": "animFrameSliceCountPerRow",
               "types": [
                 1
               ],
@@ -15597,10 +15646,11 @@
               "seen": [
                 1,
                 8
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk17",
+              "name": "animFrameTotalCount",
               "types": [
                 1
               ],
@@ -15609,13 +15659,15 @@
               "seen": [
                 1,
                 64
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk18",
+              "name": "animFrameInitial",
               "types": [
                 79
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk19",
@@ -15638,7 +15690,7 @@
               "max": 35000
             },
             {
-              "name": "unk21",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -15648,7 +15700,8 @@
                 0,
                 1,
                 2
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk22",
@@ -15732,16 +15785,18 @@
               ]
             },
             {
-              "name": "unk31",
+              "name": "uvShiftX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk32",
+              "name": "uvShiftY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 37 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk33",
@@ -16207,7 +16262,7 @@
     "64": {
       "name": "ParticleSpeedRandomTurns",
       "category": "",
-      "desc": "FXR3's ParticleSpeedRandomTurns, same id (FFX plan §20.24).",
+      "desc": "FXR3's ParticleSpeedRandomTurns, same id (FFX plan Â§20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -16278,7 +16333,7 @@
     "65": {
       "name": "ParticleSpeedPartialFollow",
       "category": "",
-      "desc": "FXR3's ParticleSpeedPartialFollow, same id (FFX plan §20.24).",
+      "desc": "FXR3's ParticleSpeedPartialFollow, same id (FFX plan Â§20.24).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -17899,22 +17954,25 @@
               ]
             },
             {
-              "name": "texture01",
+              "name": "textureID1",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture02",
+              "name": "textureID2",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "texture03",
+              "name": "textureID3",
               "types": [
                 40
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk04",
@@ -17923,7 +17981,7 @@
               ]
             },
             {
-              "name": "unk05",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -17935,10 +17993,11 @@
                 2,
                 4,
                 7
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk06",
+              "name": "blendMode",
               "types": [
                 1
               ],
@@ -17949,94 +18008,109 @@
                 2,
                 4,
                 5
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "tex1UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "tex1UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "tex1UVOffsetX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk10",
+              "name": "tex1UVOffsetY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk11",
+              "name": "tex2UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk12",
+              "name": "tex2UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk13",
+              "name": "tex2UVOffsetX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk14",
+              "name": "tex2UVOffsetY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk15",
+              "name": "tex3UVScrollX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk16",
+              "name": "tex3UVScrollY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk17",
+              "name": "tex3UVOffsetX",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk18",
+              "name": "tex3UVOffsetY",
               "types": [
                 82
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk19",
+              "name": "scale2X",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk20",
+              "name": "scale2Y",
               "types": [
                 11,
                 13,
                 149
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk21",
@@ -18077,61 +18151,70 @@
               ]
             },
             {
-              "name": "unk25",
+              "name": "rotX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk26",
+              "name": "rotY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk27",
+              "name": "rotZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk28",
+              "name": "rotSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk29",
+              "name": "rotSpeedXMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk30",
+              "name": "rotSpeedY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk31",
+              "name": "rotSpeedYMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk32",
+              "name": "rotSpeedZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk33",
+              "name": "rotSpeedZMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk34",
+              "name": "attachedBool",
               "types": [
                 1
               ],
@@ -18141,7 +18224,8 @@
                 0,
                 1,
                 3
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk35",
@@ -18178,7 +18262,7 @@
               ]
             },
             {
-              "name": "unk38",
+              "name": "alphaMode",
               "types": [
                 1
               ],
@@ -18187,7 +18271,8 @@
               "seen": [
                 0,
                 1
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 47 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "unk39",
@@ -19601,7 +19686,7 @@
               ]
             },
             {
-              "name": "unk04",
+              "name": "orientationMode",
               "types": [
                 1
               ],
@@ -19613,7 +19698,8 @@
                 2,
                 4,
                 7
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "blendMode",
@@ -19657,18 +19743,20 @@
               "max": 64
             },
             {
-              "name": "unk08",
+              "name": "animFrameInitial",
               "types": [
                 79
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk09",
+              "name": "animFrameTimeline",
               "types": [
                 3,
                 5,
                 6
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "scale2X",
@@ -19708,61 +19796,76 @@
               ]
             },
             {
-              "name": "unk14",
+              "name": "rotX",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27).",
+              "unit": "radians"
             },
             {
-              "name": "unk15",
+              "name": "rotY",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27).",
+              "unit": "radians"
             },
             {
-              "name": "unk16",
+              "name": "rotZ",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27).",
+              "unit": "radians"
             },
             {
-              "name": "unk17",
+              "name": "rotSpeedX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27).",
+              "unit": "radians"
             },
             {
-              "name": "unk18",
+              "name": "rotSpeedXMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk19",
+              "name": "rotSpeedY",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27).",
+              "unit": "radians"
             },
             {
-              "name": "unk20",
+              "name": "rotSpeedYMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk21",
+              "name": "rotSpeedZ",
               "types": [
                 11,
                 12,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27).",
+              "unit": "radians"
             },
             {
-              "name": "unk22",
+              "name": "rotSpeedZMult",
               "types": [
                 81
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 38 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "attachedBool",
@@ -21220,7 +21323,7 @@
     "83": {
       "name": "NodeAccelerationRandomTurns",
       "category": "",
-      "desc": "FXR3's NodeAccelerationRandomTurns, same id: a1's four node properties, an int, a float, the turn angle and interval (FFX plan §20.24).",
+      "desc": "FXR3's NodeAccelerationRandomTurns, same id: a1's four node properties, an int, a float, the turn angle and interval (FFX plan Â§20.24).",
       "games": {
         "DES": {
           "paramCounts": [
@@ -25753,7 +25856,7 @@
     "106": {
       "name": "NodeAccelerationPartialFollow",
       "category": "",
-      "desc": "FXR3's NodeAccelerationPartialFollow, same id: a1's four node properties, an int, a float, the turn angle and interval, the follow factor (FFX plan §20.24).",
+      "desc": "FXR3's NodeAccelerationPartialFollow, same id: a1's four node properties, an int, a float, the turn angle and interval, the follow factor (FFX plan Â§20.24).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -27604,7 +27707,7 @@
     "113": {
       "name": "NodeAccelerationSpin",
       "category": "",
-      "desc": "FXR3's NodeAccelerationSpin, same id: a1's four node properties, an int and a float, then a34's three spin pairs (FFX plan §20.24).",
+      "desc": "FXR3's NodeAccelerationSpin, same id: a1's four node properties, an int and a float, then a34's three spin pairs (FFX plan Â§20.24).",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -28338,7 +28441,7 @@
     "120": {
       "name": "NodeSpeed",
       "category": "",
-      "desc": "FXR3's NodeSpeed, same id; BB's six slots follow its properties then its ints (FFX plan §20.24).",
+      "desc": "FXR3's NodeSpeed, same id; BB's six slots follow its properties then its ints (FFX plan Â§20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -28407,7 +28510,7 @@
     "121": {
       "name": "NodeSpeedRandomTurns",
       "category": "",
-      "desc": "FXR3's NodeSpeedRandomTurns, same id (FFX plan §20.24).",
+      "desc": "FXR3's NodeSpeedRandomTurns, same id (FFX plan Â§20.24).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -28483,7 +28586,7 @@
     "10000": {
       "name": "GPUStandardParticle",
       "category": "",
-      "desc": "FXR3's GPUStandardParticle, same id (BB 216 slots, FXR3 228 props). Named where BB's slots align with FXR3's fields1 by kind and values: the textures, the emitter's 12-float run, the particle offset / speed runs; the ints between don't follow FXR3's order (FFX plan §20.25).",
+      "desc": "FXR3's GPUStandardParticle, same id (BB 216 slots, FXR3 228 props). Named where BB's slots align with FXR3's fields1 by kind and values: the textures, the emitter's 12-float run, the particle offset / speed runs; the ints between don't follow FXR3's order (FFX plan Â§20.25).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -30972,7 +31075,7 @@
     "10003": {
       "name": "LightShaft",
       "category": "",
-      "desc": "FXR3's LightShaft, same id (BB 24 slots, FXR3 40) (FFX plan §20.25).",
+      "desc": "FXR3's LightShaft, same id (BB 24 slots, FXR3 40) (FFX plan Â§20.25).",
       "games": {
         "BB": {
           "paramCounts": [
@@ -35498,7 +35601,7 @@
       "name": "SpotLight",
       "category": "Appearance",
       "source": "FXR3 SpotLight's id and slot order (no multipliers); DarkSoulsII.exe SfxFxDrawEntityHostSpotLight (§20.14)",
-      "desc": "DS2's spot light: FXR3's SpotLight (11000, same id) without its two multipliers: diffuse, specular, near (0.001), far (10–40), radiusX / radiusY (25–50). [13] / [14] are a second RGBA pair, not mapped yet. DarkSoulsII.exe has SfxFxDrawEntityHostSpotLight. (FFX plan §20.14)",
+      "desc": "DS2's spot light: FXR3's SpotLight (11000, same id) without its two multipliers: diffuse, specular, near (0.001), far (10â\u0080\u009340), radiusX / radiusY (25â\u0080\u009350). [13] / [14] are a second RGBA pair, not mapped yet. DarkSoulsII.exe has SfxFxDrawEntityHostSpotLight. (FFX plan Â§20.14)",
       "games": {
         "DS2": {
           "paramCounts": [
@@ -35815,7 +35918,7 @@
       "name": "PointLight",
       "category": "Appearance",
       "source": "a24's slot order; DarkSoulsII.exe SfxFxDrawEntityHostPointLight (§20.14)",
-      "desc": "DS2's point light: diffuse colour (alpha fades the light in and out), specular colour, radius (0–25). [10] / [11] are a second RGBA pair (alpha 1–6), not mapped yet. DarkSoulsII.exe has SfxFxDrawEntityHostPointLight; its id sits next to a11000 as FXR3's lights do. (FFX plan §20.14)",
+      "desc": "DS2's point light: diffuse colour (alpha fades the light in and out), specular colour, radius (0â\u0080\u009325). [10] / [11] are a second RGBA pair (alpha 1â\u0080\u00936), not mapped yet. DarkSoulsII.exe has SfxFxDrawEntityHostPointLight; its id sits next to a11000 as FXR3's lights do. (FFX plan Â§20.14)",
       "games": {
         "DS2": {
           "paramCounts": [
