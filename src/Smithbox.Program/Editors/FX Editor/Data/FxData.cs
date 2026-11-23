@@ -47,6 +47,30 @@ public class FxData : IDisposable
     /// </summary>
     public bool CanEditStructure => Format == Model.FxFormat.Fxr3;
 
+    /// <summary>
+    /// Inside a DLSE effect (DES, DS2, DS2S): states, exits, a state's actions and call-list entries can be added,
+    /// duplicated, deleted and moved, and actions added from templates (FFX Older Games Plan §21, F7a). The effects
+    /// themselves still can't (<see cref="CanEditStructure"/>).
+    /// </summary>
+    public bool CanEditDlseStructure => Format == Model.FxFormat.Dlse;
+
+    private Model.FfxStructure.Templates dlseTemplates;
+
+    /// <summary>
+    /// The DLSE action templates of this project: for each action id, its commonest instance over every effect in the
+    /// bank. Built on first use (reads every effect once, a few seconds), then kept until the bank is reloaded.
+    /// </summary>
+    public Model.FfxStructure.Templates DlseTemplates(SoulsFormats.FFXDLSE.StreamFormat format)
+    {
+        if (dlseTemplates == null && Bank != null)
+        {
+            var effects = Bank.Entries.Values.Select(Bank.ReadFfxCopy).Where(f => f != null)
+                .SelectMany(f => f.Effect.Variants?.Count > 0 ? f.Effect.Variants.Select(v => v.Effect) : [f.Effect]);
+            dlseTemplates = new Model.FfxStructure.Templates(format, effects);
+        }
+        return dlseTemplates;
+    }
+
     public FxBank Bank;
 
     /// <summary>
@@ -81,6 +105,7 @@ public class FxData : IDisposable
                 return false;
             }
             Bank = new FxBank(this, Project);
+            dlseTemplates = null;
             return true;
         }
 
@@ -96,6 +121,7 @@ public class FxData : IDisposable
         }
 
         Bank = new FxBank(this, Project);
+        dlseTemplates = null;
         return true;
     }
 
@@ -155,5 +181,6 @@ public class FxData : IDisposable
     {
         Bank?.Dispose();
         Bank = null;
+        dlseTemplates = null;
     }
 }

@@ -14,7 +14,7 @@ namespace StudioCore.Editors.FxEditor;
 /// as templates and given notes; configs duplicated, deleted and assigned to states; actions copied and pasted over
 /// actions of the same kind (FX Effect Tree Actions Plan).
 /// </summary>
-public class FxEffectTree
+public partial class FxEffectTree
 {
     private readonly FxEditorView Editor;
 
@@ -155,7 +155,7 @@ public class FxEffectTree
         }
 
         if (!Data.CanEditStructure)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_Dlse_Notice"));
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get(Data.CanEditDlseStructure ? "FX_Dlse_Notice_Structure" : "FX_Dlse_Notice"));
 
         // A DES id with different effects in different binders: one version per content, picked here
         DisplayVersionPicker(entry);
@@ -184,6 +184,7 @@ public class FxEffectTree
         ImGui.EndChild();
 
         DisplayPopups(entry);
+        DisplayDlsePopups(entry);
 
         foreach (var op in Deferred)
             op();
@@ -197,7 +198,11 @@ public class FxEffectTree
     private void DisplayStates(FxEntry entry, IReadOnlyList<Model.IFxState> states, string idPrefix, bool canAdd)
     {
         bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", states.Count)}##fxStates{idPrefix}", ImGuiTreeNodeFlags.DefaultOpen);
-        if (!Filtering && canAdd && ImGui.BeginPopupContextItem($"##fxStatesContext{idPrefix}"))
+        // a DLSE effect's states have their own menu (§21, F7a)
+        bool dlse = Data.CanEditDlseStructure && entry.Ffx != null && states.Count > 0 && states[0].Source is FFXDLSE.State;
+        if (!Filtering && dlse)
+            DisplayDlseStatesMenu(entry, (FFXDLSE.State)states[0].Source, idPrefix);
+        else if (!Filtering && canAdd && ImGui.BeginPopupContextItem($"##fxStatesContext{idPrefix}"))
         {
             if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_State_Add")}##fxStatesAdd"))
                 Deferred.Add(() => AddState(entry));
@@ -227,7 +232,9 @@ public class FxEffectTree
             TreeRow(state.Source);
             if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
                 Editor.Selection.SelectItem(state.Source);
-            if (state.Source is FxrState fxrState)
+            if (dlse && state.Source is FFXDLSE.State dlseState)
+                DisplayDlseStateMenu(entry, dlseState, i, states.Count, idPrefix);
+            else if (state.Source is FxrState fxrState)
                 DisplayStateContextMenu(entry, fxrState, i);
             if (open)
             {
@@ -419,7 +426,9 @@ public class FxEffectTree
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             Editor.Selection.SelectItem(action.Source);
 
-        if (action.Source is FxrAction fxrAction)
+        if (Data.CanEditDlseStructure && entry.Ffx != null && action.Source is FFXDLSE.Action or FFXDLSE.Param37 or FFXDLSE.Param38)
+            DisplayDlseActionMenu(entry, action.Source, $"{idPrefix}{actionId}");
+        else if (action.Source is FxrAction fxrAction)
             DisplayActionContextMenu(entry, fxrAction, actionId);
 
         if (calls.Count > 0 && open)

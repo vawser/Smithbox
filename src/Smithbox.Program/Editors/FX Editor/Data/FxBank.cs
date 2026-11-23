@@ -504,6 +504,27 @@ public class FxBank : IDisposable
         }
     }
 
+    /// <summary>
+    /// A DLSE game's effect as a separate copy (FFX Older Games Plan §21, F7a templates): the loaded file written and
+    /// read back when the entry is loaded (so edits count), else read from the packed bytes. Null when it can't be read.
+    /// </summary>
+    public FFXDLSE ReadFfxCopy(FxEntry entry)
+    {
+        if (!IsFfx)
+            return null;
+        try
+        {
+            if (entry.Ffx != null)
+                return FFXDLSE.Read(entry.Ffx.Write());
+            var packed = entry.Packed;
+            return packed == null ? null : FFXDLSE.Read(Unpack(packed, entry.PackedLength));
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     /// <summary>Adds an effect made in the editor. It's written into its binders on the next save.</summary>
     public void AddNew(FxEntry entry)
     {
