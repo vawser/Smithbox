@@ -685,6 +685,30 @@
     { "Key": "FX_CurveEditor_Modifier_Factor", "Text": "Factor by external value (value, factor)" },
     { "Key": "FX_CurveEditor_Modifier_Factor_Key_TT", "Text": "A key of the factor curve: the external value, then the factor for each component." },
     { "Key": "FX_Display_Loading_Effects", "Text": "Loading effects: {0} of {1} ready. Playback waits until they have loaded." },
-    { "Key": "FX_Display_Loading_Map_Effects", "Text": "Loading effects: {0} of {1} ready. Each starts once it has loaded." }
+    { "Key": "FX_Display_Loading_Map_Effects", "Text": "Loading effects: {0} of {1} ready. Each starts once it has loaded." },
+
+    { "Key": "FX_ReadOnly_Notice", "Text": "Read-only: effects of this game can be looked at, but not edited or saved yet." },
+    { "Key": "FX_ReadOnly_TT", "Text": "Not available yet for this game's effects, which are read-only for now." },
+    { "Key": "FX_EffectList_Copies_Differ", "Text": "The binders hold {0} different effects with this id. The one in {1} is shown." },
+    { "Key": "FX_EffectTree_Variant", "Text": "Variant {0} of {1}" },
+    { "Key": "FX_EffectTree_Variant_TT", "Text": "This effect is made of several complete effects with the same id (Demon's Souls). Pick the one to show." },
+    { "Key": "FX_Action_Effect_Params", "Text": "Effect Params {0}" },
+    { "Key": "FX_Action_Effect_Call", "Text": "Effect Call: {0}" },
+    { "Key": "FX_Operand_CurrentTick", "Text": "Current Tick" },
+    { "Key": "FX_Operand_TotalTick", "Text": "Total Tick" },
+    { "Key": "FX_Operand_ArgumentA", "Text": "Argument {0} (eval 2, {1})" },
+    { "Key": "FX_Operand_ArgumentB", "Text": "Argument {0} (eval 3, {1})" },
+    { "Key": "FX_Operand_ChildExists", "Text": "Child Exists" },
+    { "Key": "FX_Operand_ParentExists", "Text": "Parent Exists" },
+    { "Key": "FX_Operand_DistanceFromCamera", "Text": "Distance From Camera" },
+    { "Key": "FX_Operand_EmittersStopped", "Text": "Emitters Stopped" },
+    { "Key": "FX_Inspector_Ffx_State_TT", "Text": "A state runs its own actions. Its exits decide when the effect moves to another state or ends." },
+    { "Key": "FX_Inspector_State_No_Exits", "Text": "No exits: the effect stays in this state." },
+    { "Key": "FX_Inspector_State_Actions", "Text": "Actions: {0}" },
+    { "Key": "FX_Inspector_Call_TT", "Text": "The called action or effect. Click to select it in the Effect Tree." },
+    { "Key": "FX_Inspector_Wrapped", "Text": "{0} × {1}" },
+    { "Key": "FX_Inspector_Wrapped_TT", "Text": "A value stored with a factor next to it." },
+    { "Key": "FX_Inspector_Argument_Value", "Text": "Argument {0} ({1})" },
+    { "Key": "FX_Inspector_Value_Type", "Text": "Stored as {0} (type {1})" }
   ]
 }

@@ -69,13 +69,23 @@ public class FxCurveEditor
         Prepare(entry, action, name, curveValue);
 
         DisplayHeader(action, value);
+
+        // A read-only effect's curve (DLSE, F3a) is shown, with the controls disabled, and never committed
+        bool readOnly = Data.IsReadOnly;
+        if (readOnly)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_ReadOnly_Notice"));
+        ImGui.BeginDisabled(readOnly);
         DisplayFunction();
         DisplayGraph(value, fxrProperty);
         DisplayKeys();
+        ImGui.EndDisabled();
         if (fxrAction != null)
             DisplayModifiers(entry, fxrAction, Data.View(entry, fxrAction), name);
 
-        CommitIfIdle(entry, action, name);
+        if (readOnly)
+            Dirty = false;
+        else
+            CommitIfIdle(entry, action, name);
 
         ImGui.EndChild();
     }

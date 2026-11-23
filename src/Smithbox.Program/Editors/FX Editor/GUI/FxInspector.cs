@@ -50,6 +50,9 @@ public class FxInspector
             case Model.IFxConfig config:
                 GUI.WrappedText(LOC.Get("FX_Inspector_Config", FxNames.Config(config), config.Actions.Count));
                 break;
+            case Model.IFxState modelState:
+                DisplayModelState(modelState);
+                break;
             default:
                 GUI.WrappedText(LOC.Get("FX_Inspector_No_Selection"));
                 break;
@@ -240,6 +243,22 @@ public class FxInspector
         }
     }
 
+    /// <summary>A state through the model (DLSE; FXR3 states have their own editor above): its exits and actions.</summary>
+    private void DisplayModelState(Model.IFxState state)
+    {
+        GUI.SimpleHeader(LOC.Get("FX_Inspector_State_Header", state.Index), LOC.Get("FX_Inspector_Ffx_State_TT"));
+        if (state.Transitions.Count == 0)
+            GUI.WrappedText(LOC.Get("FX_Inspector_State_No_Exits"));
+        foreach (var t in state.Transitions)
+            GUI.WrappedText(FxNames.Condition(t));
+
+        GUI.Spacer();
+        GUI.WrappedText(LOC.Get("FX_Inspector_State_Actions", state.Actions.Count));
+        foreach (var action in state.Actions)
+            if (ImGui.Selectable($"{FxNames.Action(action)}##fxStateAction_{action.GetHashCode()}"))
+                Editor.Selection.SelectItem(action.Source);
+    }
+
     private void DisplayNode(Model.IFxNode node)
     {
         int configs = node is Model.IFxConfigured c ? c.Configs.Count : 0;
@@ -257,6 +276,8 @@ public class FxInspector
             GUI.WrappedText(LOC.Get("FX_Inspector_Slot", action.Slot));
         if (action.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, action.Description);
+        if (Data.IsReadOnly)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_ReadOnly_Notice"));
 
         // Options
         GUI.Spacer();
@@ -337,6 +358,10 @@ public class FxInspector
 
             ImGui.TableSetColumnIndex(1);
             ImGui.SetNextItemWidth(-1);
+            // Read-only effects (DLSE, F3a) show their fields disabled; a keyframed curve still opens in the Curve
+            // Editor, to be looked at
+            bool disabled = Data.IsReadOnly && value.Kind != Model.FxValueKind.Curve;
+            ImGui.BeginDisabled(disabled);
             switch (value.Kind)
             {
                 case Model.FxValueKind.Int or Model.FxValueKind.Float or Model.FxValueKind.Bool or Model.FxValueKind.Vector:
@@ -349,16 +374,71 @@ public class FxInspector
                     var list = lv.GetList();
                     ImGui.TextUnformatted(list == null || list.Count == 0 ? "—" : string.Join(", ", list));
                     break;
+                case Model.FxValueKind.Other when action.Source is not FxrAction:
+                    ImGui.EndDisabled();
+                    DisplayOther(value);
+                    ImGui.BeginDisabled(disabled);
+                    break;
             }
+            ImGui.EndDisabled();
         }
 
         ImGui.EndTable();
     }
 
+    /// <summary>
+    /// A value that is neither a number nor a curve (DLSE): a call (selecting it in the tree), an argument the effect
+    /// is given, or a value wrapped with a factor.
+    /// </summary>
+    private void DisplayOther(Model.IFxValue value)
+    {
+        switch (value)
+        {
+            case Model.IFxCallValue { Call: { } call }:
+                if (ImGui.Selectable($"→ {FxNames.Action(call)}##fxCall_{value.Name}"))
+                    Editor.Selection.SelectItem(call.Source);
+                GUI.Tooltip(LOC.Get("FX_Inspector_Call_TT"));
+                break;
+            case Model.IFxWrappedValue { Inner: { } inner } wrapped:
+                ImGui.TextUnformatted(LOC.Get("FX_Inspector_Wrapped", Summary(inner), string.Join(", ", wrapped.Factor.Select(F))));
+                GUI.Tooltip(LOC.Get("FX_Inspector_Wrapped_TT"));
+                break;
+            default:
+                ImGui.TextUnformatted(Summary(value));
+                break;
+        }
+    }
+
+    /// <summary>One line for any value: its numbers, keys, list, argument or call.</summary>
+    private static string Summary(Model.IFxValue value)
+    {
+        switch (value)
+        {
+            case Model.IFxArgumentValue arg when arg.ArgumentIndex >= 0 || arg.Extra.Count > 0:
+                return LOC.Get("FX_Inspector_Argument_Value", arg.ArgumentIndex, string.Join(", ", arg.Extra));
+            case Model.IFxCallValue { Call: { } call }:
+                return $"→ {FxNames.Action(call)}";
+            case Model.IFxWrappedValue { Inner: { } inner } wrapped:
+                return LOC.Get("FX_Inspector_Wrapped", Summary(inner), string.Join(", ", wrapped.Factor.Select(F)));
+        }
+        switch (value.Kind)
+        {
+            case Model.FxValueKind.Curve when value is Model.IFxCurveValue cv && cv.GetCurve() is { } curve:
+                return LOC.Get("FX_Inspector_Curve_Summary", curve.Function, curve.Keyframes.Count, curve.Loop ? LOC.Get("FX_Inspector_Curve_Loop") : "");
+            case Model.FxValueKind.IntList when value is Model.IFxListValue lv:
+                return string.Join(", ", lv.GetList() ?? new List<int>());
+        }
+        return value.Get() is double[] d ? string.Join(", ", d.Select(F)) : "—";
+    }
+
+    private static string F(double v) => v.ToString("G6", CultureInfo.InvariantCulture);
+
     private static string Tooltip(Model.IFxValue value)
     {
         var lines = new List<string> { value.Name };
         if (value.Description != null) lines.Add(value.Description);
+        if (value is Model.IFxTypedValue typed)
+            lines.Add(LOC.Get("FX_Inspector_Value_Type", typed.TypeName ?? "?", typed.FileType));
         if (value.Argument != null) lines.Add(LOC.Get("FX_Inspector_Argument", value.Argument));
         if (value.IsConverted) lines.Add(LOC.Get("FX_Inspector_Converted"));
         if (!value.IsStored) lines.Add(LOC.Get("FX_Inspector_Not_Stored"));
@@ -543,7 +623,16 @@ public class FxInspector
         // The typed TPF first, then the plain one, as FxTextureLibrary looks them up
         var file = ResourceName(resource, textureType, shown);
         bool known = true;
-        if (resource == "texture")
+        if (Data.IsReadOnly && resource is "texture" or "model")
+        {
+            // DES and DS2 name resources with 4 or 6 digits (s0003, s000002): found by id in the bank's names
+            var names = resource == "texture" ? Data.Bank.Textures : Data.Bank.Models;
+            var name = Data.Bank.ResourceName(names, shown);
+            known = name != null;
+            if (known)
+                file = resource == "texture" ? $"{name}.tpf" : name;
+        }
+        else if (resource == "texture")
         {
             var plain = $"s{shown:D5}";
             known = Data.Bank.Textures.ContainsKey(Path.GetFileNameWithoutExtension(file));

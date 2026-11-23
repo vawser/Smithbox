@@ -38,8 +38,20 @@ public static class EditorConditions
         return true;
     }
 
-    /// <summary>The FX Editor: FXR effects of the games the FXR schema covers</summary>
+    /// <summary>
+    /// The FX Editor: FXR effects of the games the FXR schema covers, and the DLSE effects of DES, DS2 and DS2S
+    /// (read-only for now: FFX Older Games Plan, F3a)
+    /// </summary>
     public static bool SupportsFxEditor(ProjectType curType)
+    {
+        return SupportsFxPlayback(curType) || curType is ProjectType.DES or ProjectType.DS2 or ProjectType.DS2S;
+    }
+
+    /// <summary>
+    /// Effect playback (the FX Editor's viewport, and effects shown in the Map, Time Act, Projectile, Cutscene and Lua
+    /// editors): the FXR3 games, whose effects the runtime can build
+    /// </summary>
+    public static bool SupportsFxPlayback(ProjectType curType)
     {
         return curType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
     }
@@ -55,7 +67,7 @@ public static class EditorConditions
 
     /// <summary>
     /// The Projectile Editor: the games whose bullet params the simulation reads (BulletDefinition). Its effects also
-    /// need the FX Editor (<see cref="SupportsFxEditor"/>).
+    /// need FX playback (<see cref="SupportsFxPlayback"/>).
     /// </summary>
     public static bool SupportsProjectileEditor(ProjectType curType)
     {

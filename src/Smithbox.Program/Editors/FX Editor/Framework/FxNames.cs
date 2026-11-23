@@ -98,6 +98,15 @@ public static class FxNames
         Model.FxExpressionKind.External => LOC.Get("FX_Operand_External", e.Index),
         Model.FxExpressionKind.StateTime => LOC.Get("FX_Operand_StateTime"),
         Model.FxExpressionKind.Unknown when e.Index == -2 => LOC.Get("FX_Operand_UnkMinus2"),
+        // DLSE evaluators
+        Model.FxExpressionKind.CurrentTick => LOC.Get("FX_Operand_CurrentTick"),
+        Model.FxExpressionKind.TotalTick => LOC.Get("FX_Operand_TotalTick"),
+        Model.FxExpressionKind.ArgumentA => LOC.Get("FX_Operand_ArgumentA", e.Index, e.Value ?? 0),
+        Model.FxExpressionKind.ArgumentB => LOC.Get("FX_Operand_ArgumentB", e.Index, e.Value ?? 0),
+        Model.FxExpressionKind.ChildExists => LOC.Get("FX_Operand_ChildExists"),
+        Model.FxExpressionKind.ParentExists => LOC.Get("FX_Operand_ParentExists"),
+        Model.FxExpressionKind.DistanceFromCamera => LOC.Get("FX_Operand_DistanceFromCamera"),
+        Model.FxExpressionKind.EmittersStopped => LOC.Get("FX_Operand_EmittersStopped"),
         _ => LOC.Get("FX_Operand_Unknown", e.Index),
     };
 
@@ -107,6 +116,11 @@ public static class FxNames
     /// <summary>"Appearance: BillboardEx", or "Action 600 (raw)" when the schema doesn't apply.</summary>
     public static string Action(Model.IFxAction action)
     {
+        // DLSE: the effect's own param lists, and calls of other effects
+        if (action is Model.IFxEffectParams list)
+            return LOC.Get("FX_Action_Effect_Params", list.ListIndex);
+        if (action is Model.IFxProxy call)
+            return LOC.Get("FX_Action_Effect_Call", call.TargetEffect);
         if (action.Name == null)
             return LOC.Get("FX_Action_Unknown", action.TypeId);
         var name = action.Slot != null ? $"{action.Slot}: {action.Name}" : action.Name;

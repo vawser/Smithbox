@@ -15,9 +15,27 @@ public class FxData : IDisposable
 {
     public ProjectEntry Project;
 
+    /// <summary>
+    /// The FXR schema, for the FXR3 games only. It stays null for the DLSE games, so code that reads effects as FXRs
+    /// (playback in other editors, FxDefCache) sees no effects there rather than receiving DLSE ones.
+    /// </summary>
     public FxrSchema Schema;
 
     public FxrGame Game;
+
+    /// <summary>The effect format of the project's game.</summary>
+    public Model.FxFormat Format = Model.FxFormat.Fxr3;
+
+    /// <summary>The FFX schema (Assets/FXR/ffx_schema.json), for the DLSE games only.</summary>
+    public FfxSchema FfxSchema;
+
+    public SoulsFormats.FfxGame FfxGame;
+
+    /// <summary>
+    /// The project's effects can be looked at but not changed: DLSE effects are shown read-only until editing and
+    /// saving them is built (FFX Older Games Plan, F3b).
+    /// </summary>
+    public bool IsReadOnly => Format != Model.FxFormat.Fxr3;
 
     public FxBank Bank;
 
@@ -37,6 +55,24 @@ public class FxData : IDisposable
         await Task.Yield();
 
         Game = ToFxrGame(Project.Descriptor.ProjectType);
+
+        if (ToFfxGame(Project.Descriptor.ProjectType) is SoulsFormats.FfxGame ffxGame)
+        {
+            Format = Model.FxFormat.Dlse;
+            FfxGame = ffxGame;
+            var ffxPath = Path.Join(AppContext.BaseDirectory, "Assets", "FXR", "ffx_schema.json");
+            try
+            {
+                FfxSchema = FfxSchema.Load(ffxPath);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Load_Schema", ffxPath), e);
+                return false;
+            }
+            Bank = new FxBank(this, Project);
+            return true;
+        }
 
         var path = Path.Join(AppContext.BaseDirectory, "Assets", "FXR", "fxr_schema.json");
         try
@@ -63,6 +99,15 @@ public class FxData : IDisposable
         _ => FxrGame.ER,
     };
 
+    /// <summary>The FFX game of a project whose effects are DLSE class streams; null for every other game.</summary>
+    public static SoulsFormats.FfxGame? ToFfxGame(ProjectType type) => type switch
+    {
+        ProjectType.DES => SoulsFormats.FfxGame.DES,
+        ProjectType.DS2 => SoulsFormats.FfxGame.DS2,
+        ProjectType.DS2S => SoulsFormats.FfxGame.DS2S,
+        _ => null,
+    };
+
     /// <summary>
     /// The entry's effect through the format-neutral model (Model/), or null when it isn't loaded. The same object is
     /// returned while the entry holds the same file object, so adapters keep their identity across frames; replacing
@@ -70,10 +115,18 @@ public class FxData : IDisposable
     /// </summary>
     public Model.IFxEffect Effect(FxEntry entry)
     {
-        if (entry?.Fxr == null)
+        var file = entry?.File;
+        if (file == null)
             return null;
-        if (entry.ModelCache == null || !ReferenceEquals(entry.ModelCache.Source, entry.Fxr))
-            entry.ModelCache = Model.FxrModel.Adapt(entry.Fxr, Schema, Game);
+        if (entry.ModelCache == null || !ReferenceEquals(entry.ModelCache.Source, file))
+        {
+            entry.ModelCache = file switch
+            {
+                FXR fxr => Model.FxrModel.Adapt(fxr, Schema, Game),
+                FFXDLSE ffx => Model.FfxModel.Adapt(ffx, FfxSchema, FfxGame),
+                _ => null,
+            };
+        }
         return entry.ModelCache;
     }
 

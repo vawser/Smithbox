@@ -35,11 +35,12 @@ public class FxProjectCheck
     {
         var bank = Editor.Data.Bank;
         var results = new List<FxProblem>();
-        var effects = bank.Entries.Values.Where(IsChanged).ToList();
+        // The checks read FXRs; DLSE projects have none to check yet (read-only, F3a)
+        var effects = Editor.Data.IsReadOnly ? new List<FxEntry>() : bank.Entries.Values.Where(IsChanged).ToList();
 
         foreach (var entry in effects)
         {
-            var fxr = entry.IsLoaded ? entry.Fxr : bank.ReadCopy(entry);
+            var fxr = entry.Fxr ?? bank.ReadCopy(entry);
             if (fxr == null)
             {
                 results.Add(new FxProblem(entry, "", LOC.Get("FX_ProjectCheck_Unreadable")));

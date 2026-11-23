@@ -82,6 +82,18 @@ public enum FxExpressionKind
     TotalTick,
     /// <summary>Anything else; <see cref="IFxExpression.Index"/> holds the format's own type id.</summary>
     Unknown,
+    /// <summary>DLSE Evaluatable2: an unknown int and an argument index (<see cref="IFxExpression.Index"/>; the int is <see cref="IFxExpression.Value"/>).</summary>
+    ArgumentA,
+    /// <summary>DLSE Evaluatable3: as <see cref="ArgumentA"/>, a different evaluator.</summary>
+    ArgumentB,
+    /// <summary>DLSE: the effect has a child effect running.</summary>
+    ChildExists,
+    /// <summary>DLSE: the effect has a parent effect.</summary>
+    ParentExists,
+    /// <summary>DLSE: the distance from the camera.</summary>
+    DistanceFromCamera,
+    /// <summary>DLSE: every emitter has stopped.</summary>
+    EmittersStopped,
 }
 
 /// <summary>A condition, as a tree: FXR3 conditions are one Compare of two leaves; DLSE nests And/Or/Not.</summary>
@@ -109,6 +121,55 @@ public enum FxNodeKind
     Basic,
     NodeEmitter,
     Unknown,
+}
+
+/// <summary>Capability: an effect made of several complete effects with the same id (22 DeS wrapper files).</summary>
+public interface IFxVariants
+{
+    /// <summary>The variants, each a complete effect; the effect's own states and root are the first variant's.</summary>
+    IReadOnlyList<IFxEffect> Variants { get; }
+}
+
+/// <summary>Capability: an action that is a list of effect-level params (DLSE effect ParamList1 / ParamList2).</summary>
+public interface IFxEffectParams
+{
+    /// <summary>1 or 2.</summary>
+    int ListIndex { get; }
+}
+
+/// <summary>Capability: a value that calls an action or effect (DLSE action / effect calls).</summary>
+public interface IFxCallValue
+{
+    /// <summary>The called action; an effect call implements <see cref="IFxProxy"/>.</summary>
+    IFxAction Call { get; }
+}
+
+/// <summary>Capability: a value taken from the effect's arguments (DLSE indexed / "ref" params).</summary>
+public interface IFxArgumentValue
+{
+    int ArgumentIndex { get; }
+
+    /// <summary>The other ints the param stores (the first, and DeS type 66's third).</summary>
+    IReadOnlyList<int> Extra { get; }
+}
+
+/// <summary>Capability: a value wrapping another one with a factor (DLSE ParamFloat 82, ParamRGBA 84).</summary>
+public interface IFxWrappedValue
+{
+    IFxValue Inner { get; }
+
+    /// <summary>The float (82) or colour (84) stored next to the inner value.</summary>
+    IReadOnlyList<double> Factor { get; }
+}
+
+/// <summary>Capability: a value whose stored type the file names (DLSE param types).</summary>
+public interface IFxTypedValue
+{
+    /// <summary>The type id as the file stores it (DeS ids for DeS).</summary>
+    int FileType { get; }
+
+    /// <summary>The schema's name for the type, or null.</summary>
+    string TypeName { get; }
 }
 
 /// <summary>An item of the effect tree.</summary>
@@ -189,7 +250,7 @@ public interface IFxAction
     /// <summary>The named values in layout order, or the raw values of an untyped action.</summary>
     IReadOnlyList<IFxValue> Values { get; }
 
-    /// <summary>Actions nested inside this one (DLSE action calls). Empty for FXR3.</summary>
+    /// <summary>Actions nested inside this one (DLSE action and effect calls, in param order). Empty for FXR3.</summary>
     IReadOnlyList<IFxAction> Calls { get; }
 
     object Source { get; }

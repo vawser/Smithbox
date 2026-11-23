@@ -184,11 +184,12 @@ public partial class FxEffectList
             GUI.Tooltip(LOC.Get("FX_EffectList_Resource_TT"));
         }
 
-        // Import an .fxr file
+        // Import an .fxr file, and the Project Check: FXR3 only (a read-only DLSE project has neither yet)
+        ImGui.BeginDisabled(Data.IsReadOnly);
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Download}##fxImport", DPI.IconButtonSize))
             RequestImport();
-        GUI.Tooltip(LOC.Get("FX_EffectList_Import_TT"));
+        TooltipEvenDisabled(LOC.Get(Data.IsReadOnly ? "FX_ReadOnly_TT" : "FX_EffectList_Import_TT"));
 
         // Project Check
         ImGui.SameLine();
@@ -197,7 +198,15 @@ public partial class FxEffectList
             ProjectCheck.Run();
             ProjectCheckToOpen = true;
         }
-        GUI.Tooltip(LOC.Get("FX_EffectList_Project_Check_TT"));
+        TooltipEvenDisabled(LOC.Get(Data.IsReadOnly ? "FX_ReadOnly_TT" : "FX_EffectList_Project_Check_TT"));
+        ImGui.EndDisabled();
+    }
+
+    /// <summary>A tooltip that also shows over a disabled item, so it can say why it's disabled.</summary>
+    private static void TooltipEvenDisabled(string text)
+    {
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(text);
     }
 
     private void ScanProgress()
@@ -461,6 +470,9 @@ public partial class FxEffectList
             lines.Add(LOC.Get("FX_EffectList_Joining_Binder", b.Binder.Filename));
         if (entry.Vanilla != FxVanillaState.Same)
             lines.Add(LOC.Get($"FX_EffectList_Vanilla_{entry.Vanilla}"));
+        // DES keeps different effects under one id in different binders; the first binder's is the one shown
+        if (entry.CopyVersions > 1)
+            lines.Add(LOC.Get("FX_EffectList_Copies_Differ", entry.CopyVersions, entry.Binders.FirstOrDefault()?.Binder.Filename ?? ""));
         return string.Join("\n", lines);
     }
 
@@ -521,6 +533,9 @@ public partial class FxEffectList
 
         ImGui.Separator();
 
+        // Effects of a read-only project (DLSE, F3a) are looked at, not changed, compared or exported as FXRs
+        ImGui.BeginDisabled(Data.IsReadOnly);
+
         if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Duplicate")}##fxDuplicate", InputManager.GetHint(KeybindID.Duplicate), false, single))
             RequestDuplicate(entry);
         GUI.Tooltip(LOC.Get("FX_EffectList_Duplicate_TT"));
@@ -560,6 +575,8 @@ public partial class FxEffectList
         }
         GUI.Tooltip(LOC.Get("FX_EffectList_Compare_With_TT"));
 
+        ImGui.EndDisabled();
+
         ImGui.Separator();
 
         if (single)
@@ -590,7 +607,7 @@ public partial class FxEffectList
             RequestAlias(entry);
         GUI.Tooltip(LOC.Get("FX_EffectList_Edit_Alias_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get(single ? "FX_EffectList_Export" : "FX_EffectList_Export_Many")}##fxExport"))
+        if (ImGui.MenuItem($"{LOC.Get(single ? "FX_EffectList_Export" : "FX_EffectList_Export_Many")}##fxExport", "", false, !Data.IsReadOnly))
             Deferred.Add(() => Export(targets));
         GUI.Tooltip(LOC.Get("FX_EffectList_Export_TT"));
     }
@@ -687,7 +704,7 @@ public partial class FxEffectList
     /// <summary>Duplicate and Delete on the selected effect(s), while the Effect List has focus.</summary>
     public void Shortcuts()
     {
-        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectList) || ImGui.GetIO().WantTextInput)
+        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectList) || ImGui.GetIO().WantTextInput || Data.IsReadOnly)
             return;
         var entry = Editor.Selection.Entry;
         if (entry == null || !Bank.Entries.ContainsKey(entry.Id))

@@ -155,7 +155,7 @@ public class FxUsage
     /// <summary>The effects this one starts: live when it's loaded, else from the scan (null before one).</summary>
     public List<int> Starts(FxEntry entry)
     {
-        if (entry.IsLoaded)
+        if (entry.Fxr != null)
             return Targets(entry.Fxr);
         if (ScanStarts.TryGetValue(entry.Id, out var list))
             return list;
@@ -177,7 +177,7 @@ public class FxUsage
                     result.Add(e);
         // Loaded ones as they are now, unsaved edits included (few are loaded at once)
         foreach (var e in Bank.Entries.Values)
-            if (e.IsLoaded && e.Id != id && Targets(e.Fxr).Contains(id))
+            if (e.Fxr != null && e.Id != id && Targets(e.Fxr).Contains(id))
                 result.Add(e);
         return result.OrderBy(e => e.Id).ToList();
     }
@@ -185,7 +185,7 @@ public class FxUsage
     /// <summary>The effect's texture and model names: live when it's loaded, else from the scan (empty before one).</summary>
     public HashSet<string> Resources(FxEntry entry)
     {
-        if (entry.IsLoaded)
+        if (entry.Fxr != null)
             return ResourceNames(entry.Fxr, Editor.Data.Schema, Editor.Data.Game);
         return ScanResources.TryGetValue(entry.Id, out var set) ? set : new HashSet<string>();
     }

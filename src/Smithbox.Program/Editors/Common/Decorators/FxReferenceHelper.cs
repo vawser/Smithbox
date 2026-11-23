@@ -50,8 +50,9 @@ public static class FxReferenceHelper
         if (!IsAvailable(project) || !TryGetId(value, out var id))
             return;
 
-        var stem = $"f{id:D9}";
         var bank = project.Handler.FxData?.Bank;
+        // The file's own name where the bank has it (DES and DS2 names have fewer digits)
+        var stem = bank != null && bank.Entries.TryGetValue(id, out var known) ? known.Stem : $"f{id:D9}";
 
         if (bank != null && bank.IsIndexed && !bank.Entries.ContainsKey(id))
         {

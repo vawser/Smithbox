@@ -121,7 +121,7 @@ public sealed class MapEffectPlayback : IDisposable
     public float Speed = 1.0f;
 
     /// <summary>Whether the game is one the FX runtime reads</summary>
-    public bool IsSupportedGame => EditorConditions.SupportsFxEditor(_project.Descriptor.ProjectType);
+    public bool IsSupportedGame => EditorConditions.SupportsFxPlayback(_project.Descriptor.ProjectType);
 
     /// <summary>
     /// Whether asset effects are read for the game. AC6 is left out: the field read as the SFX relative id there

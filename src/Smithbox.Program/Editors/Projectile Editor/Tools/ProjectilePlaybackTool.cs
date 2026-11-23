@@ -112,7 +112,7 @@ public class ProjectilePlaybackTool
             return;
         }
 
-        if (!EditorConditions.SupportsFxEditor(View.Project.Descriptor.ProjectType))
+        if (!EditorConditions.SupportsFxPlayback(View.Project.Descriptor.ProjectType))
         {
             ImGui.TextDisabled(LOC.Get("PROJECTILE_Effects_Unsupported"));
             return;

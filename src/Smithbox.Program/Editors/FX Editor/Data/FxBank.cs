@@ -62,6 +62,16 @@ public class FxBank : IDisposable
             .OrderBy(e => e.Path, StringComparer.OrdinalIgnoreCase)
             .ToList() ?? new();
 
+        // DES and DS2 ship some binders twice, as x.ffxbnd and x.ffxbnd.dcx with the same files; the .dcx is the one
+        // read (DS2S ships only the .dcx copies)
+        if (IsDlse)
+        {
+            var paths = binders.Select(b => b.Path).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            binders = binders.Where(b => !(b.Path.EndsWith(".ffxbnd", StringComparison.OrdinalIgnoreCase) && paths.Contains(b.Path + ".dcx"))).ToList();
+        }
+        bool dlse = IsDlse;
+        var effectExtension = EffectExtension;
+
         TotalBinders = binders.Count;
         IndexedBinders = 0;
         IsIndexing = true;
@@ -83,6 +93,8 @@ public class FxBank : IDisposable
             var entries = new SortedDictionary<int, FxEntry>();
             var textures = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
             var models = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
+            // DLSE: the different contents seen per id, to count CopyVersions
+            var versions = new Dictionary<int, List<byte[]>>();
             foreach (var binder in binders)
             {
                 if (token.IsCancellationRequested)
@@ -92,7 +104,7 @@ public class FxBank : IDisposable
                 {
                     if (FS.FileExists(binder.Path))
                     {
-                        var reader = new BND4Reader(FS.ReadFile(binder.Path).Value);
+                        var reader = dlse ? OpenBinder(FS.ReadFile(binder.Path).Value) : new BND4Reader(FS.ReadFile(binder.Path).Value);
 
                         // Only a binder the project has saved can differ from the game's: its effects are compared
                         // with the game's copy of the binder (FX Effect List Actions Plan §1)
@@ -126,12 +138,24 @@ public class FxBank : IDisposable
                                 continue;
                             }
 
-                            if (!TryParseId(file.Name, out var id))
+                            if (!TryParseId(file.Name, effectExtension, out var id))
                                 continue;
                             if (!entries.TryGetValue(id, out var entry))
                             {
                                 entry = new FxEntry { Id = id, Alias = aliases.GetValueOrDefault(id, "") };
+                                if (dlse)
+                                    entry.NameStem = Path.GetFileNameWithoutExtension(file.Name.Replace('\\', '/'));
                                 entries[id] = entry;
+                            }
+
+                            if (dlse)
+                            {
+                                var copy = reader.ReadFile(file).ToArray();
+                                if (!versions.TryGetValue(id, out var seen))
+                                    versions[id] = seen = new();
+                                if (!seen.Any(s => s.AsSpan().SequenceEqual(copy)))
+                                    seen.Add(copy);
+                                entry.CopyVersions = seen.Count;
                             }
                             var r = new FxBinderRef(binder, file.Name);
                             entry.Binders.Add(r);
@@ -193,23 +217,39 @@ public class FxBank : IDisposable
     public Dictionary<string, List<FxBinderRef>> Models { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
     private volatile Dictionary<string, List<FxBinderRef>> _finishedModels;
 
-    /// <summary>The game's own copy of a binder: its FXRs' bytes by internal name. Empty when the game has no such binder.</summary>
+    /// <summary>The game's own copy of a binder: its effects' bytes by internal name. Empty when the game has no such binder.</summary>
     private Dictionary<string, byte[]> ReadVanillaEffects(string path)
     {
         var result = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
         var vfs = Project.VFS.VanillaFS;
         if (!vfs.FileExists(path))
             return result;
-        var reader = new BND4Reader(vfs.ReadFile(path).Value);
+        var reader = IsDlse ? OpenBinder(vfs.ReadFile(path).Value) : new BND4Reader(vfs.ReadFile(path).Value);
         foreach (var file in reader.Files)
-            if (file.Name.EndsWith(".fxr", StringComparison.OrdinalIgnoreCase))
+            if (file.Name.EndsWith(EffectExtension, StringComparison.OrdinalIgnoreCase))
                 result[file.Name] = reader.ReadFile(file).ToArray();
         return result;
+    }
+
+    /// <summary>The effects are DLSE class streams (.ffx in BND3 or BND4 binders: DES, DS2, DS2S).</summary>
+    public bool IsDlse => Data.Format == Model.FxFormat.Dlse;
+
+    /// <summary>The effect files' extension in this game's binders.</summary>
+    public string EffectExtension => IsDlse ? ".ffx" : ".fxr";
+
+    /// <summary>A BND3 (DES) or BND4 (DS2) binder, compressed or not.</summary>
+    private static BinderReader OpenBinder(Memory<byte> bytes)
+    {
+        if (DCX.Is(bytes))
+            bytes = DCX.Decompress(bytes);
+        return bytes.Length >= 4 && bytes.Span[..4].SequenceEqual("BND3"u8) ? new BND3Reader(bytes) : new BND4Reader(bytes);
     }
 
     /// <summary>The game's copy of the effect, read fresh; null when it has none (or it's the same as the project's, see <see cref="ReadCopy"/>).</summary>
     public FXR ReadVanilla(FxEntry entry)
     {
+        if (IsDlse)
+            return null;
         try
         {
             return entry.Vanilla switch
@@ -225,16 +265,37 @@ public class FxBank : IDisposable
         }
     }
 
-    /// <summary>s88300.flver(.dcx), with any folder, to s88300.</summary>
+    /// <summary>s88300.flver(.dcx), or DS2's s000010.flv, with any folder, to s88300.</summary>
     public static bool TryParseModel(string internalName, out string name)
     {
         name = Path.GetFileName(internalName.Replace('\\', '/'));
         if (name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
             name = name[..^4];
-        if (!name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase))
+        if (name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase))
+            name = name[..^6];
+        else if (name.EndsWith(".flv", StringComparison.OrdinalIgnoreCase))
+            name = name[..^4];
+        else
             return false;
-        name = name[..^6];
         return name.Length > 1 && name[0] is 's' or 'S';
+    }
+
+    /// <summary>
+    /// The name of the texture (or model) with this id as a binder holds it, whatever its digit count (DES s0003,
+    /// DS2 s000002, FXR3 s88610); null when no binder holds one. A typed texture (s88610_a) is found from its id too.
+    /// </summary>
+    public string ResourceName(Dictionary<string, List<FxBinderRef>> names, int id)
+    {
+        foreach (var name in names.Keys)
+        {
+            var digits = name[1..];
+            int underscore = digits.IndexOf('_');
+            if (underscore >= 0)
+                digits = digits[..underscore];
+            if (int.TryParse(digits, out var n) && n == id)
+                return name;
+        }
+        return null;
     }
 
     /// <summary>s88610_a.tpf(.dcx), with any folder, to s88610_a.</summary>
@@ -282,13 +343,16 @@ public class FxBank : IDisposable
     }
 
     /// <summary>f000620400.fxr (with any folder) to 620400.</summary>
-    public static bool TryParseId(string internalName, out int id)
+    public static bool TryParseId(string internalName, out int id) => TryParseId(internalName, ".fxr", out id);
+
+    /// <summary>f000620400.fxr, or f0000030.ffx with <paramref name="extension"/> ".ffx" (with any folder), to the id.</summary>
+    public static bool TryParseId(string internalName, string extension, out int id)
     {
         id = 0;
         var name = Path.GetFileName(internalName.Replace('\\', '/'));
-        if (!name.EndsWith(".fxr", StringComparison.OrdinalIgnoreCase) || name.Length < 2 || name[0] is not ('f' or 'F'))
+        if (!name.EndsWith(extension, StringComparison.OrdinalIgnoreCase) || name.Length < 2 || name[0] is not ('f' or 'F'))
             return false;
-        return int.TryParse(name[1..^4], out id);
+        return int.TryParse(name[1..^extension.Length], out id);
     }
 
     // ---------------------------------------------------------------- load
@@ -310,7 +374,7 @@ public class FxBank : IDisposable
         {
             try
             {
-                entry.Fxr = FXR.Read(Unpack(entry.Packed, entry.PackedLength));
+                SetFile(entry, Unpack(entry.Packed, entry.PackedLength));
                 entry.IsDirty = false;
                 return true;
             }
@@ -323,14 +387,14 @@ public class FxBank : IDisposable
 
         try
         {
-            var reader = new BND4Reader(FS.ReadFile(source.Binder.Path).Value);
+            var reader = IsDlse ? OpenBinder(FS.ReadFile(source.Binder.Path).Value) : new BND4Reader(FS.ReadFile(source.Binder.Path).Value);
             var file = reader.Files.FirstOrDefault(f => f.Name == source.InternalName);
             if (file == null)
             {
                 Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Find_Effect", entry.Stem, source.Binder.Path));
                 return false;
             }
-            entry.Fxr = FXR.Read(reader.ReadFile(file));
+            SetFile(entry, reader.ReadFile(file));
             entry.IsDirty = false;
             return true;
         }
@@ -341,12 +405,24 @@ public class FxBank : IDisposable
         }
     }
 
+    /// <summary>Reads the effect's bytes into the entry, as this game's format.</summary>
+    private void SetFile(FxEntry entry, Memory<byte> bytes)
+    {
+        if (IsDlse)
+            entry.Ffx = FFXDLSE.Read(bytes);
+        else
+            entry.Fxr = FXR.Read(bytes);
+    }
+
     /// <summary>
     /// A separate copy of the effect, read from the packed bytes without loading the entry (for surveys of the whole
-    /// bank, which shouldn't keep thousands of effects in memory). Null if it can't be read. Safe off the main thread.
+    /// bank, which shouldn't keep thousands of effects in memory). Null if it can't be read, and for DLSE games
+    /// (the surveys read FXRs). Safe off the main thread.
     /// </summary>
     public FXR ReadCopy(FxEntry entry)
     {
+        if (IsDlse)
+            return null;
         try
         {
             var packed = entry.Packed;
@@ -438,6 +514,7 @@ public class FxBank : IDisposable
         if (entry.IsNew)
             return true;
         entry.Fxr = null;
+        entry.Ffx = null;
         entry.IsDirty = false;
         return Load(entry);
     }
@@ -455,8 +532,9 @@ public class FxBank : IDisposable
     /// <summary>Saves the given effects. Each binder they touch is read and written once.</summary>
     public async Task<bool> Save(IEnumerable<FxEntry> entries)
     {
-        // What to do is settled on the calling (main) thread, before the work moves off it
-        var list = entries.Where(e => e.IsLoaded).ToList();
+        // What to do is settled on the calling (main) thread, before the work moves off it. Only FXRs are saved:
+        // DLSE effects are read-only until saving them is built (FFX Older Games Plan, F3b)
+        var list = entries.Where(e => e.Fxr != null).ToList();
         var removals = PendingRemovals();
         var deleted = Deleted.ToList();
 

@@ -131,7 +131,7 @@ public class FxEffectTree
 
         ImGui.BeginChild("FxEffectTreeSection", ImGuiChildFlags.Borders);
 
-        if (entry?.Fxr == null)
+        if (entry?.File == null)
         {
             GUI.WrappedText(LOC.Get("FX_EffectTree_No_Effect"));
             ImGui.EndChild();
@@ -141,14 +141,29 @@ public class FxEffectTree
         TreeRows.Clear();
 
         var effect = Data.Effect(entry);
-        Notes.EnsureLoaded(entry);
-        RefreshInfo(entry);
-        RefreshFilter(entry);
+        // Summaries, checks, notes and the search read the FXR3 tree; DLSE effects show their structure only (F3a)
+        if (entry.Fxr != null)
+        {
+            Notes.EnsureLoaded(entry);
+            RefreshInfo(entry);
+            RefreshFilter(entry);
+        }
+        else
+        {
+            FilterShown.Clear();
+            FilterMatches.Clear();
+        }
+
+        if (Data.IsReadOnly)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_ReadOnly_Notice"));
+
+        // A DES wrapper effect: one complete effect per variant, picked here
+        effect = DisplayVariantPicker(entry, effect);
 
         // States
         var states = effect.States;
         bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", states.Count)}##fxStates", ImGuiTreeNodeFlags.DefaultOpen);
-        if (!Filtering && ImGui.BeginPopupContextItem("##fxStatesContext"))
+        if (!Filtering && entry.Fxr != null && ImGui.BeginPopupContextItem("##fxStatesContext"))
         {
             if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_State_Add")}##fxStatesAdd"))
                 Deferred.Add(() => AddState(entry));
@@ -161,8 +176,10 @@ public class FxEffectTree
             {
                 var state = states[i];
                 var transitions = state.Transitions;
+                // DLSE states hold their own actions (FXR3 states have none: their actions are in node configs)
+                var stateActions = state.Actions;
                 var flags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow;
-                if (transitions.Count == 0) flags |= ImGuiTreeNodeFlags.Leaf;
+                if (transitions.Count == 0 && stateActions.Count == 0) flags |= ImGuiTreeNodeFlags.Leaf;
                 if (Editor.Selection.IsSelected(state.Source)) flags |= ImGuiTreeNodeFlags.Selected;
 
                 var stateLabel = LOC.Get("FX_EffectTree_State", i);
@@ -181,6 +198,9 @@ public class FxEffectTree
                 {
                     foreach (var t in transitions)
                         GUI.WrappedText(FxNames.Condition(t));
+                    int stateActionId = 0;
+                    foreach (var action in stateActions)
+                        DisplayAction(entry, action, ref stateActionId, $"s{i}_");
                     ImGui.TreePop();
                 }
             }
@@ -360,7 +380,7 @@ public class FxEffectTree
         ImGui.TreePop();
     }
 
-    private void DisplayAction(FxEntry entry, Model.IFxAction action, ref int id)
+    private void DisplayAction(FxEntry entry, Model.IFxAction action, ref int id, string idPrefix = "")
     {
         // Empty FXR3 slots (type 0 with nothing stored) aren't worth a row
         if (action.Source is FxrAction empty && empty.Type == 0
@@ -368,16 +388,64 @@ public class FxEffectTree
             return;
 
         int actionId = id++;
-        var flags = ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen | ImGuiTreeNodeFlags.SpanAvailWidth;
+
+        // DLSE actions can call other actions and effects; the calls sit under the action
+        var calls = action.Calls;
+        var flags = ImGuiTreeNodeFlags.SpanAvailWidth;
+        flags |= calls.Count == 0
+            ? ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen
+            : ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.OpenOnDoubleClick;
         if (Editor.Selection.IsSelected(action.Source)) flags |= ImGuiTreeNodeFlags.Selected;
 
-        ImGui.TreeNodeEx($"{FxNames.Action(action)}##fxAction_{actionId}", flags);
+        bool open = ImGui.TreeNodeEx($"{FxNames.Action(action)}##fxAction_{idPrefix}{actionId}", flags);
         TreeRow(action.Source);
-        if (ImGui.IsItemClicked())
+        if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             Editor.Selection.SelectItem(action.Source);
 
         if (action.Source is FxrAction fxrAction)
             DisplayActionContextMenu(entry, fxrAction, actionId);
+
+        if (calls.Count > 0 && open)
+        {
+            foreach (var call in calls)
+                DisplayAction(entry, call, ref id, idPrefix);
+            ImGui.TreePop();
+        }
+    }
+
+    // ---------------------------------------------------------------- variants (DES wrapper effects)
+
+    private FxEntry VariantEntry;
+    private int VariantIndex;
+
+    /// <summary>The variant picker for an effect made of variants; returns the variant to show (or the effect itself).</summary>
+    private Model.IFxEffect DisplayVariantPicker(FxEntry entry, Model.IFxEffect effect)
+    {
+        if (effect is not Model.IFxVariants { Variants.Count: > 0 } wrapper)
+            return effect;
+
+        if (VariantEntry != entry)
+        {
+            VariantEntry = entry;
+            VariantIndex = 0;
+        }
+        var variants = wrapper.Variants;
+        VariantIndex = Math.Clamp(VariantIndex, 0, variants.Count - 1);
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##fxVariant", LOC.Get("FX_EffectTree_Variant", VariantIndex + 1, variants.Count)))
+        {
+            for (int v = 0; v < variants.Count; v++)
+                if (ImGui.Selectable($"{LOC.Get("FX_EffectTree_Variant", v + 1, variants.Count)}##fxVariant{v}", v == VariantIndex))
+                {
+                    VariantIndex = v;
+                    Editor.Selection.ClearItem();
+                }
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Variant_TT"));
+
+        return variants[VariantIndex];
     }
 
     // ---------------------------------------------------------------- arrow keys

@@ -48,8 +48,26 @@ public class FxEntry
     /// <summary>The binders whose files hold this effect now, by binder path: set by indexing and by each save.</summary>
     public Dictionary<string, FxBinderRef> OnDisk = new(StringComparer.OrdinalIgnoreCase);
 
-    /// <summary>The loaded effect, null until selected.</summary>
+    /// <summary>The loaded effect (FXR3 games), null until selected.</summary>
     public FXR Fxr;
+
+    /// <summary>The loaded effect (DES, DS2, DS2S: DLSE class streams), null until selected.</summary>
+    public FFXDLSE Ffx;
+
+    /// <summary>The loaded file object, whichever format it is: <see cref="Fxr"/> or <see cref="Ffx"/>.</summary>
+    public object File => (object)Fxr ?? Ffx;
+
+    /// <summary>
+    /// The file name without its extension where the game's names don't follow f&lt;id:D9&gt; (DES and DS2 use 7
+    /// digits, and DES some 9); null for the FXR3 games.
+    /// </summary>
+    public string NameStem;
+
+    /// <summary>
+    /// How many different contents the binders holding this id have. Vanilla FXR3 copies are identical (1), but DES
+    /// keeps different effects with the same id in different binders (FFX Older Games Plan §14.2).
+    /// </summary>
+    public int CopyVersions = 1;
 
     /// <summary>
     /// The model view of the loaded effect (<see cref="FxData.Effect"/>), kept while the same file object is loaded,
@@ -87,10 +105,10 @@ public class FxEntry
     /// <summary>The Particles alias name, or empty.</summary>
     public string Alias = "";
 
-    public bool IsLoaded => Fxr != null;
+    public bool IsLoaded => File != null;
 
-    /// <summary>The name the game uses for the file, e.g. f000620400.</summary>
-    public string Stem => $"f{Id:D9}";
+    /// <summary>The name the game uses for the file, e.g. f000620400 (FXR3) or f0000030 (DES, DS2).</summary>
+    public string Stem => NameStem ?? $"f{Id:D9}";
 
     /// <summary>Whether a binder is in <see cref="Binders"/>.</summary>
     public bool InBinder(string path) => Binders.Any(b => b.Binder.Path.Equals(path, StringComparison.OrdinalIgnoreCase));
