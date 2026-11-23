@@ -98,6 +98,9 @@ public class FxBillboardRenderableProxy : RenderableProxy
     // at its new place; how much of its source is in view is tested in the shader)
     private bool _noDepth;
 
+    // Distortion / RadialBlur read the scene colour behind them: drawn after everything else (RenderKey.ScreenEffect)
+    private bool _screenEffect;
+
     public unsafe FxBillboardRenderableProxy(MeshRenderables renderables)
     {
         _renderablesSet = renderables;
@@ -121,13 +124,15 @@ public class FxBillboardRenderableProxy : RenderableProxy
         lock (_lock)
         {
             bool noDepth = (material.Flags & FxBillboardMaterial.FlagLensFlare) != 0;
-            bool newBlend = material.BlendMode != (uint)_blendMode || noDepth != _noDepth;
+            bool screenEffect = (material.Flags & (FxBillboardMaterial.FlagDistortion | FxBillboardMaterial.FlagRadialBlur)) != 0;
+            bool newBlend = material.BlendMode != (uint)_blendMode || noDepth != _noDepth || screenEffect != _screenEffect;
             _material = material;
             _materialDirty = true;
             if (newBlend)
             {
                 _blendMode = (int)material.BlendMode;
                 _noDepth = noDepth;
+                _screenEffect = screenEffect;
                 if (_renderable != -1)
                     ScheduleRenderableConstruction();
             }
@@ -324,8 +329,8 @@ public class FxBillboardRenderableProxy : RenderableProxy
 
         var bounds = _bounds;
         _renderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
-        _renderablesSet.cRenderKeys[_renderable] = new RenderKey(RenderKey.BackToFrontStart);
-        _renderablesSet.cBackToFront[_renderable] = true;
+        _renderablesSet.cRenderKeys[_renderable] = new RenderKey(_screenEffect ? RenderKey.ScreenEffect : RenderKey.BackToFrontStart);
+        _renderablesSet.cBackToFront[_renderable] = !_screenEffect;
 
         // Particles can't be picked: picking frames draw them the same way, writing no ids
         _renderablesSet.cPipelines[_renderable] = pipeline;

@@ -603,9 +603,10 @@ public static class FfxEffectDefBuilder
                     app.Billboard = new FxBillboardDef
                     {
                         Kind = FxBillboardKind.Distortion,
-                        // the mask; DS2's a43 has none (TextureID1 0 in every instance, §20.20): the normal map then
-                        // stands in, as the unnamed fallback drew it (§20.15)
-                        Texture = Tex("TextureID1") > 0 ? Tex("TextureID1") : Tex("TextureID2"),
+                        // the mask; DS2's a43 has none (TextureID1 0 in every instance, §20.20), nor do most of BB's:
+                        // then none (the shader's full mask). The normal map used to stand in, but its colour,
+                        // about (0.5, 0.5, 1), tinted the scene dark blue: BB f000000052's black disc (§20.32)
+                        Texture = Tex("TextureID1"),
                         Layer2 = Tex("TextureID2"),
                         DistortionMode = Math.Clamp(Int("DistortionMode", 1), 0, 4),
                         DistortionShape = Math.Clamp(Int("ShapeMode", 0), 0, 2),

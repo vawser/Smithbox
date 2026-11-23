@@ -45,10 +45,19 @@ public struct RenderKey : IComparable<RenderKey>, IComparable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static RenderKey CreateBackToFront(float cameraDistance)
     {
-        var cameraDistanceInt = (uint)Math.Clamp(cameraDistance * 1000f, 0f, 4.0e9f);
+        // At least 2, so the two top keys stay free: ScreenEffect, then ulong.MaxValue (overdrawn debug primitives)
+        var cameraDistanceInt = (uint)Math.Clamp(cameraDistance * 1000f, 2f, 4.0e9f);
 
         return new RenderKey(BackToFrontStart | (uint.MaxValue - cameraDistanceInt));
     }
+
+    /// <summary>
+    /// The key of draws that read the scene colour behind them (the FX Editor's Distortion and RadialBlur): after
+    /// every other draw, translucent ones included, so the copy they read, taken just before the first of them, has
+    /// what is in front of the opaque scene too (FFX plan §20.34). Only overdrawn debug primitives (ulong.MaxValue)
+    /// come after.
+    /// </summary>
+    public const ulong ScreenEffect = ulong.MaxValue - 1;
 
     public int CompareTo(RenderKey other)
     {

@@ -464,13 +464,22 @@ public class SceneRenderPipeline
 
         SceneDepth.Capture(Device, cl, Target.Depth);
 
-        // The colour behind the transparent draws, for the FX Editor's screen effects; only while one asks for it
-        SceneColor.Capture(Device, cl, Target.Color);
-
         // Before the volumetric fog's draw: the copy has ended the target's render pass, and the distance fog's
         // parameters can only be written outside one (the two fogs are never on for the same game)
         DistanceFog.Apply(Device, cl, this);
         Fog.Apply(Device, cl, this);
+    }
+
+    /// <summary>
+    ///     Copies <see cref="Target" />'s colour for the FX Editor's screen effects (Distortion, RadialBlur), only while
+    ///     one asks for it. Taken before the first of them, which sort after every other draw
+    ///     (<see cref="RenderKey.ScreenEffect" />), so the copy has the fog and the translucent draws in it too.
+    ///     Taken after the opaque draws instead, a screen effect painted that over the particles drawn before it
+    ///     (FFX plan §20.34).
+    /// </summary>
+    public void CaptureSceneColor(CommandList cl)
+    {
+        SceneColor.Capture(Device, cl, Target.Color);
     }
 
     public void SetViewportSetupAction(Action<GraphicsDevice, CommandList> action)

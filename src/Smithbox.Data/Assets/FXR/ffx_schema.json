@@ -11290,22 +11290,25 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "scaleX",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +50, DS1 ActionData 43's ScaleX in DS1R's wide layout; values: float sequences 0.75–25; X = Z with Y apart (0.75 / 1 / 0.75), flat discs with Z = 0 (FFX plan Â§20.20)."
             },
             {
-              "name": "unk07",
+              "name": "scaleY",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +60, DS1 ActionData 43's ScaleY in DS1R's wide layout; values: float sequences, as ScaleX (FFX plan Â§20.20)."
             },
             {
-              "name": "unk08",
+              "name": "scaleZ",
               "types": [
                 11
-              ]
+              ],
+              "desc": "DarkSoulsII.exe compiles it to block +70, DS1 ActionData 43's ScaleZ in DS1R's wide layout; values: float sequences, as ScaleX (FFX plan Â§20.20)."
             },
             {
               "name": "stretchingDistance",
@@ -11520,27 +11523,30 @@
               ]
             },
             {
-              "name": "unk06",
+              "name": "scaleX",
               "types": [
                 11,
                 13,
                 149
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk07",
+              "name": "scaleY",
               "types": [
                 11,
                 13,
                 149
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
-              "name": "unk08",
+              "name": "scaleZ",
               "types": [
                 11,
                 13
-              ]
+              ],
+              "desc": "DS2's name for this slot: BB's layout agrees with DS2's in value kind slot for slot over its first 22 slots (the agreeing prefix) (FFX plan Â§20.27)."
             },
             {
               "name": "stretchingDistance",

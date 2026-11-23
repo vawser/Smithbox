@@ -50,6 +50,10 @@ public class FxTextureLibrary : IResourceEventListener
         if (name == null)
             return 0;
 
+        // Read as data, not colour (BB names many normal maps without "_n", e.g. s02600)
+        if (type == "n")
+            NormalNames.Add(name);
+
         if (Loaded.TryGetValue(name, out var handle))
             return handle.IsLoaded ? handle.Get()?.GPUTexture?.TexHandle ?? 0 : 0;
 
@@ -163,6 +167,52 @@ public class FxTextureLibrary : IResourceEventListener
     private readonly Dictionary<string, List<(string Name, string InternalName, Kind Kind)>> Pending = new(StringComparer.OrdinalIgnoreCase);
     private Task Reading;
 
+    // Textures asked for as normal maps: kept UNORM by AsColour
+    private readonly HashSet<string> NormalNames = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// BB's PS4 TPFs give their colour textures UNORM DXGI formats (BC1 71, BC3 77, BC7 98), so the pool samples them
+    /// without sRGB decoding, while the other games' sfx textures (DDS DXT1 / DXT5) are decoded as sRGB, as the
+    /// billboard shader and the tone map expect. Read as UNORM, BB effects were too bright and their textures' dark
+    /// rims stayed visible: f000000117's 2.5 × 7.5 additive glow (s01000) showed its rectangle (FFX plan §20.35).
+    /// Here a PS4 TPF's formats are switched to their _SRGB twins, for the FX textures only; maps and characters are
+    /// unchanged. Normal maps (asked for as "n") are left as they are.
+    /// </summary>
+    private static byte[] AsColour(byte[] bytes)
+    {
+        try
+        {
+            var raw = SoulsFormats.DCX.Is(bytes) ? SoulsFormats.DCX.Decompress(bytes).ToArray() : bytes;
+            var tpf = SoulsFormats.TPF.Read(raw);
+            if (tpf.Platform != SoulsFormats.TPF.TPFPlatform.PS4)
+                return bytes;
+            bool changed = false;
+            foreach (var t in tpf.Textures)
+            {
+                if (t.Header == null)
+                    continue;
+                int srgb = (SoulsFormats.DDS.DXGI_FORMAT)t.Header.DXGIFormat switch
+                {
+                    SoulsFormats.DDS.DXGI_FORMAT.BC1_UNORM => (int)SoulsFormats.DDS.DXGI_FORMAT.BC1_UNORM_SRGB,
+                    SoulsFormats.DDS.DXGI_FORMAT.BC2_UNORM => (int)SoulsFormats.DDS.DXGI_FORMAT.BC2_UNORM_SRGB,
+                    SoulsFormats.DDS.DXGI_FORMAT.BC3_UNORM => (int)SoulsFormats.DDS.DXGI_FORMAT.BC3_UNORM_SRGB,
+                    SoulsFormats.DDS.DXGI_FORMAT.BC7_UNORM => (int)SoulsFormats.DDS.DXGI_FORMAT.BC7_UNORM_SRGB,
+                    _ => t.Header.DXGIFormat,
+                };
+                if (srgb != t.Header.DXGIFormat)
+                {
+                    t.Header.DXGIFormat = srgb;
+                    changed = true;
+                }
+            }
+            return changed ? tpf.Write() : bytes;
+        }
+        catch
+        {
+            return bytes;
+        }
+    }
+
     private void StartLoad(string name, Kind kind)
     {
         var index = kind == Kind.Model ? Host.Data.Bank.Models : Host.Data.Bank.Textures;
@@ -272,6 +322,7 @@ public class FxTextureLibrary : IResourceEventListener
         Pending.Remove(path);
         var fs = Host.Project.VFS.FS;
         var materials = Host.Project.Handler.MaterialData?.PrimaryBank;
+        var normals = new HashSet<string>(NormalNames, StringComparer.OrdinalIgnoreCase);
 
         Reading = Task.Run(() =>
         {
@@ -305,6 +356,8 @@ public class FxTextureLibrary : IResourceEventListener
                     List<string> textures = null;
                     if (kind == Kind.Model)
                         textures = MaterialTextures(bytes, materials);
+                    else if (!normals.Contains(name))
+                        bytes = AsColour(bytes);
                     Read.Enqueue((name, kind, bytes, textures));
                 }
             }

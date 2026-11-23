@@ -846,6 +846,7 @@ public static class SceneRenderer
 
         // The batch of each set that scene depth is captured ahead of, or -1
         private readonly int[] _depthCaptureBatch = [-1, -1];
+        private readonly int[] _colorCaptureBatch = [-1, -1];
         private bool _startNewBatch;
 
         public IndirectDrawEncoder(uint initialCallCount)
@@ -956,6 +957,7 @@ public static class SceneRenderer
             _indirectDrawCount[_stagingSet] = 0;
             _batchCount[_stagingSet] = 0;
             _depthCaptureBatch[_stagingSet] = -1;
+            _colorCaptureBatch[_stagingSet] = -1;
             _startNewBatch = false;
         }
 
@@ -965,6 +967,16 @@ public static class SceneRenderer
         public void CaptureDepthBeforeNextDraw()
         {
             _depthCaptureBatch[_stagingSet] = (int)_batchCount[_stagingSet];
+            _startNewBatch = true;
+        }
+
+        /// <summary>
+        ///     Has the scene colour copied before the next draw that is added: the first screen effect's
+        ///     (<see cref="RenderKey.ScreenEffect" />), so it reads the translucent draws before it too
+        /// </summary>
+        public void CaptureColorBeforeNextDraw()
+        {
+            _colorCaptureBatch[_stagingSet] = (int)_batchCount[_stagingSet];
             _startNewBatch = true;
         }
 
@@ -1126,6 +1138,12 @@ public static class SceneRenderer
                 {
                     pipeline.CaptureSceneDepth(cl);
                     captured = true;
+                }
+
+                // Before the first screen effect (after the depth copy, which a lone screen effect also starts)
+                if (i == _colorCaptureBatch[_renderSet])
+                {
+                    pipeline.CaptureSceneColor(cl);
                 }
 
                 cl.SetCheckpoint($"{queueName}: Draw batch {i + 1} of {_batchCount[_renderSet]}: {_batches[(MAX_BATCH * _renderSet) + i]._pipeline.Name}");
@@ -1388,6 +1406,7 @@ public static class SceneRenderer
 
             ctx = Profiler.TracyCZoneN(1, "RenderQueue::Execute encode draws");
             var captureDepth = CapturesSceneDepth;
+            var captureColor = CapturesSceneDepth;
 
             // While loading nothing is put in the queue, though its setup above still runs, so its targets are
             // cleared as usual. The draws are submitted a frame after they are encoded, so the first frame after
@@ -1403,6 +1422,12 @@ public static class SceneRenderer
                 {
                     captureDepth = false;
                     _drawEncoders[_nextBuffer].CaptureDepthBeforeNextDraw();
+                }
+
+                if (captureColor && obj.Key.Value == RenderKey.ScreenEffect)
+                {
+                    captureColor = false;
+                    _drawEncoders[_nextBuffer].CaptureColorBeforeNextDraw();
                 }
 
                 var o = Renderables[obj.ItemIndex];
