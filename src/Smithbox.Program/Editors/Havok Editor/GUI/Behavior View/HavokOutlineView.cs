@@ -240,7 +240,12 @@ public class HavokOutlineView
     {
         var symbols = Owner.Symbols;
 
+        // Read here, while the Contents window is current (its focus is what's checked); uses last frame's rows
+        HandleKeys();
+
         ImGui.BeginChild("havokBehaviorElementListSection");
+
+        Rows.Clear();
 
         if (symbols != null)
         {
@@ -251,19 +256,154 @@ public class HavokOutlineView
             for (var i = 0; i < symbols.BehaviorGraphs.Count; i++)
             {
                 ImGui.PushID(i);
-                DrawNode(symbols, symbols.BehaviorGraphs[i], ancestors, 0);
+                DrawNode(symbols, symbols.BehaviorGraphs[i], ancestors, 0, -1);
                 ImGui.PopID();
             }
         }
 
-        // Opened once; after that the user can close them again
+        (LastRows, Rows) = (Rows, LastRows);
+
+        // Opened (or closed) once; after that the user can change them again
         RevealNodes.Clear();
         RevealModifiers.Clear();
+        CloseNodes.Clear();
 
         ImGui.EndChild();
     }
 
-    private void DrawNode(HavokBehaviorSymbols symbols, object node, HashSet<object> ancestors, int depth)
+    #region Keys
+    /// <summary>
+    /// A drawn row of the tree, in draw order. A shared node is drawn once per parent, so it can have several.
+    /// </summary>
+    private struct Row
+    {
+        public object Obj;
+        public bool IsModifier;
+        public bool IsLeaf;
+        public bool IsOpen;
+
+        /// <summary>The row of the node it's drawn under, or -1</summary>
+        public int Parent;
+    }
+
+    // This frame's rows, and last frame's (which the keys move through, as they're read before the tree is drawn)
+    private List<Row> Rows = new();
+    private List<Row> LastRows = new();
+
+    /// <summary>
+    /// The row of the selected node, so stepping from a shared node goes on from the copy that was selected
+    /// </summary>
+    private int SelectedRow = -1;
+
+    /// <summary>
+    /// Nodes and modifier lists to close on the next draw (Left)
+    /// </summary>
+    private readonly HashSet<object> CloseNodes = new(ReferenceEqualityComparer.Instance);
+
+    // Set by a key step, so the tree scrolls to the new selection if it's out of view
+    private bool KeyScroll = false;
+
+    private int FindSelectedRow()
+    {
+        if (Selected == null)
+            return -1;
+
+        if (SelectedRow >= 0 && SelectedRow < LastRows.Count && ReferenceEquals(LastRows[SelectedRow].Obj, Selected))
+            return SelectedRow;
+
+        return LastRows.FindIndex(r => ReferenceEquals(r.Obj, Selected));
+    }
+
+    /// <summary>
+    /// Up / Down step through the shown rows; Right opens a node (or goes to its first child if it's open), Left
+    /// closes it (or goes to the node above if it's closed)
+    /// </summary>
+    private void HandleKeys()
+    {
+        if (LastRows.Count == 0 || !HavokListKeys.HasFocus())
+            return;
+
+        var io = ImGui.GetIO();
+
+        // Alt+Left / Right are Back and Forward
+        if (io.KeyCtrl || io.KeyAlt || io.KeyShift)
+            return;
+
+        var current = FindSelectedRow();
+        var step = GUI.ListStepKey();
+
+        if (step != 0)
+        {
+            var target = HavokListKeys.StepIndex(current, LastRows.Count, step);
+
+            if (target >= 0)
+                SelectRow(target);
+
+            return;
+        }
+
+        if (current < 0)
+            return;
+
+        var row = LastRows[current];
+
+        if (ImGui.IsKeyPressed(ImGuiKey.RightArrow))
+        {
+            if (row.IsLeaf)
+                return;
+
+            if (!row.IsOpen)
+            {
+                if (row.IsModifier)
+                    RevealModifiers.Add(row.Obj);
+                else
+                    RevealNodes.Add(row.Obj);
+            }
+            else if (current + 1 < LastRows.Count && LastRows[current + 1].Parent == current)
+            {
+                SelectRow(current + 1);
+            }
+        }
+        else if (ImGui.IsKeyPressed(ImGuiKey.LeftArrow))
+        {
+            if (!row.IsLeaf && row.IsOpen)
+                CloseNodes.Add(row.Obj);
+            else if (row.Parent >= 0)
+                SelectRow(row.Parent);
+        }
+    }
+
+    private void SelectRow(int index)
+    {
+        var row = LastRows[index];
+
+        if (row.IsModifier)
+        {
+            Selected = row.Obj;
+            Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
+        }
+        else
+        {
+            // Into the history like a click, so Back returns to the node stepped from
+            SelectFromTree(row.Obj);
+        }
+
+        SelectedRow = index;
+        KeyScroll = true;
+    }
+
+    /// <summary>
+    /// Records a drawn row and returns its index. Call right after the row's TreeNodeEx.
+    /// </summary>
+    private int AddRow(object obj, bool isModifier, bool isLeaf, bool isOpen, int parentRow)
+    {
+        Rows.Add(new Row { Obj = obj, IsModifier = isModifier, IsLeaf = isLeaf, IsOpen = isOpen, Parent = parentRow });
+
+        return Rows.Count - 1;
+    }
+    #endregion
+
+    private void DrawNode(HavokBehaviorSymbols symbols, object node, HashSet<object> ancestors, int depth, int parentRow)
     {
         var searching = IsSearching;
 
@@ -303,6 +443,8 @@ public class HavokOutlineView
                 ImGui.SetNextItemOpen(true);
             else if (RevealNodes.Contains(node))
                 ImGui.SetNextItemOpen(true);
+            else if (CloseNodes.Contains(node))
+                ImGui.SetNextItemOpen(false);
         }
 
         // Vanilla state: Modified / Added colour, explained in the tooltip
@@ -312,8 +454,16 @@ public class HavokOutlineView
         VanillaMarkers.PopColour(coloured);
         VanillaMarkers.Tooltip(status);
 
+        var rowIndex = AddRow(node, false, isLeaf, open, parentRow);
+
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
+        {
             SelectFromTree(node);
+            SelectedRow = rowIndex;
+        }
+
+        if (isSelected && rowIndex == SelectedRow)
+            HavokListKeys.ScrollIfRequested(ref KeyScroll);
 
         if (ImGui.BeginPopupContextItem("##outlineNodeMenu"))
         {
@@ -348,14 +498,14 @@ public class HavokOutlineView
             for (var i = 0; i < children.Count; i++)
             {
                 ImGui.PushID(i);
-                DrawNode(symbols, children[i], ancestors, depth + 1);
+                DrawNode(symbols, children[i], ancestors, depth + 1, rowIndex);
                 ImGui.PopID();
             }
 
             if (modifier != null)
             {
                 ImGui.PushID("modifier");
-                DrawModifier(symbols, modifier, new HashSet<object>(ReferenceEqualityComparer.Instance), 0);
+                DrawModifier(symbols, modifier, new HashSet<object>(ReferenceEqualityComparer.Instance), 0, rowIndex);
                 ImGui.PopID();
             }
 
@@ -373,7 +523,7 @@ public class HavokOutlineView
     /// A modifier under its modifier generator (Modifiers toggle): its name and type, a modifier list's entries below
     /// it. Selecting one shows it in Properties; its menu is the Modifiers category's.
     /// </summary>
-    private void DrawModifier(HavokBehaviorSymbols symbols, object modifier, HashSet<object> ancestors, int depth)
+    private void DrawModifier(HavokBehaviorSymbols symbols, object modifier, HashSet<object> ancestors, int depth, int parentRow)
     {
         if (modifier == null)
             return;
@@ -400,6 +550,8 @@ public class HavokOutlineView
 
         if (!isLeaf && RevealModifiers.Contains(modifier))
             ImGui.SetNextItemOpen(true);
+        else if (!isLeaf && CloseNodes.Contains(modifier))
+            ImGui.SetNextItemOpen(false);
 
         var status = Owner.Changes.ObjectStatus(modifier);
         var coloured = VanillaMarkers.PushColour(status);
@@ -407,11 +559,17 @@ public class HavokOutlineView
         VanillaMarkers.PopColour(coloured);
         VanillaMarkers.Tooltip(status);
 
+        var rowIndex = AddRow(modifier, true, isLeaf, open, parentRow);
+
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
         {
             Selected = modifier;
+            SelectedRow = rowIndex;
             Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
         }
+
+        if (isSelected && rowIndex == SelectedRow)
+            HavokListKeys.ScrollIfRequested(ref KeyScroll);
 
         if (ImGui.BeginPopupContextItem("##outlineModifierMenu"))
         {
@@ -442,7 +600,7 @@ public class HavokOutlineView
             for (var i = 0; i < entries.Count; i++)
             {
                 ImGui.PushID(i);
-                DrawModifier(symbols, entries[i], ancestors, depth + 1);
+                DrawModifier(symbols, entries[i], ancestors, depth + 1, rowIndex);
                 ImGui.PopID();
             }
 

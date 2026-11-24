@@ -16,6 +16,9 @@ public class HavokStateMachineView
     public List<IStateMachine> SelectedStateMachines = new();
     private List<IStateMachine> StateMachines = new();
 
+    // Set by an arrow key step, so the list scrolls to the new selection if it's out of view
+    private bool ScrollToSelection = false;
+
     public HavokStateMachineView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
         View = view;
@@ -55,6 +58,23 @@ public class HavokStateMachineView
 
     public void DisplayTabContents()
     {
+        // Up / Down step the selection through the rows that pass the filter
+        var step = HavokListKeys.GetStep();
+
+        if (step != 0)
+        {
+            var visible = StateMachines.Where(e => EditorFilters.IsMatch(Owner.PropFilter, HavokTypeUtils.GetName(e), Owner.ExactPropFilter)).ToList();
+            var current = SelectedStateMachines.FirstOrDefault();
+            var row = HavokListKeys.StepIndex(current == null ? -1 : visible.IndexOf(current), visible.Count, step);
+
+            if (row >= 0)
+            {
+                SelectedStateMachines.Clear();
+                SelectedStateMachines.Add(visible[row]);
+                ScrollToSelection = true;
+            }
+        }
+
         ImGui.BeginChild("havokBehaviorElementListSection");
 
         for (int i = 0; i < StateMachines.Count; i++)
@@ -74,6 +94,9 @@ public class HavokStateMachineView
             var clicked = ImGui.Selectable($"{entryName}##stateMachine_{entryName}{i}", selected);
             VanillaMarkers.PopColour(coloured);
             VanillaMarkers.Tooltip(status);
+
+            if (selected && ReferenceEquals(entry, SelectedStateMachines.FirstOrDefault()))
+                HavokListKeys.ScrollIfRequested(ref ScrollToSelection);
 
             if (clicked)
             {

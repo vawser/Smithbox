@@ -16,6 +16,9 @@ public class HavokAnimationSelectorView
     public List<ICustomManualSelectorGenerator> SelectedAnimSelectors = new();
     private List<ICustomManualSelectorGenerator> AnimSelectors = new();
 
+    // Set by an arrow key step, so the list scrolls to the new selection if it's out of view
+    private bool ScrollToSelection = false;
+
     public HavokAnimationSelectorView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
         View = view;
@@ -55,6 +58,23 @@ public class HavokAnimationSelectorView
 
     public void DisplayTabContents()
     {
+        // Up / Down step the selection through the rows that pass the filter
+        var step = HavokListKeys.GetStep();
+
+        if (step != 0)
+        {
+            var visible = AnimSelectors.Where(e => EditorFilters.IsMatch(Owner.PropFilter, HavokTypeUtils.GetName(e), Owner.ExactPropFilter)).ToList();
+            var current = SelectedAnimSelectors.FirstOrDefault();
+            var row = HavokListKeys.StepIndex(current == null ? -1 : visible.IndexOf(current), visible.Count, step);
+
+            if (row >= 0)
+            {
+                SelectedAnimSelectors.Clear();
+                SelectedAnimSelectors.Add(visible[row]);
+                ScrollToSelection = true;
+            }
+        }
+
         ImGui.BeginChild("havokBehaviorElementListSection");
 
         for (int i = 0; i < AnimSelectors.Count; i++)
@@ -74,6 +94,9 @@ public class HavokAnimationSelectorView
             var clicked = ImGui.Selectable($"{entryName}##animSelector_{entryName}{i}", selected);
             VanillaMarkers.PopColour(coloured);
             VanillaMarkers.Tooltip(status);
+
+            if (selected && ReferenceEquals(entry, SelectedAnimSelectors.FirstOrDefault()))
+                HavokListKeys.ScrollIfRequested(ref ScrollToSelection);
 
             if (clicked)
             {

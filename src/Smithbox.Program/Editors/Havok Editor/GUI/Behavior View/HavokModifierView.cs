@@ -97,6 +97,9 @@ public class HavokModifierView
             return;
         }
 
+        // Read here, while the Contents window is current (its focus is what's checked)
+        var step = HavokListKeys.GetStep();
+
         // List
         ImGui.BeginChild("havokBehaviorElementListSection");
 
@@ -113,6 +116,17 @@ public class HavokModifierView
                 continue;
 
             Visible.Add(modifier);
+        }
+
+        // Up / Down step the selection through the shown rows
+        var stepRow = HavokListKeys.StepIndex(Selected == null ? -1 : Visible.IndexOf(Selected), Visible.Count, step);
+
+        if (stepRow >= 0)
+        {
+            Selected = Visible[stepRow];
+            Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
+
+            GUI.ScrollClippedRowIntoView(ImGui.GetCursorPosY(), stepRow);
         }
 
         var scrollTo = ScrollToSelection ? Visible.IndexOf(Selected) : -1;

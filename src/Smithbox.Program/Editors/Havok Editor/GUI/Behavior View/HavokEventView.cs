@@ -254,6 +254,9 @@ public partial class HavokEventView
 
     public void DisplayTabContents()
     {
+        // Read here, while the Contents window is current (its focus is what's checked)
+        var step = HavokListKeys.GetStep();
+
         ImGui.BeginChild("havokBehaviorElementListSection");
 
         var names = Owner.Symbols?.EventNames;
@@ -297,6 +300,19 @@ public partial class HavokEventView
                 continue;
 
             Visible.Add(i);
+        }
+
+        // Up / Down step a single selection through the shown rows
+        var stepRow = HavokListKeys.StepIndex(Visible.IndexOf(SelectedIndex), Visible.Count, step);
+
+        if (stepRow >= 0)
+        {
+            SelectedIndices.Clear();
+            SelectedIndices.Add(Visible[stepRow]);
+            SelectedIndex = Visible[stepRow];
+            Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
+
+            GUI.ScrollClippedRowIntoView(ImGui.GetCursorPosY(), stepRow);
         }
 
         var scrollTo = ScrollToSelection ? Visible.IndexOf(SelectedIndex) : -1;

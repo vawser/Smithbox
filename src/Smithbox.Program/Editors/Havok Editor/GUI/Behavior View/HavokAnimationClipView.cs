@@ -73,12 +73,19 @@ public class HavokAnimationClipView
 
     public void DisplayTabContents()
     {
-        var tblFlags  = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
+        // Stretch sizing: with fixed-fit columns the space left over after the last one showed as an empty third column
+        var tblFlags  = ImGuiTableFlags.SizingStretchProp | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
 
         UpdateFilteredClips();
 
         if (ImGui.BeginTable($"havokBehaviorElementListSection", 2, tblFlags))
         {
+            ImGui.TableSetupColumn("##clipName", ImGuiTableColumnFlags.WidthStretch, 1f);
+            ImGui.TableSetupColumn("##clipAlias", ImGuiTableColumnFlags.WidthStretch, 1f);
+
+            // Up / Down step the selection (inside the table, which is the window that scrolls)
+            StepSelection(HavokListKeys.GetStep());
+
             // Only the visible rows are drawn
             var clipper = new ImGuiListClipper();
             clipper.Begin(FilteredClips.Count);
@@ -146,6 +153,27 @@ public class HavokAnimationClipView
 
             ImGui.EndTable();
         }
+    }
+
+    /// <summary>
+    /// Moves the selection one row up or down the filtered list, and scrolls to it if it's out of view
+    /// </summary>
+    private void StepSelection(int step)
+    {
+        if (step == 0)
+            return;
+
+        var current = SelectedAnimationClips.FirstOrDefault();
+        var currentRow = current == null ? -1 : FilteredClips.FindIndex(i => ReferenceEquals(AnimationClips[i], current));
+        var row = HavokListKeys.StepIndex(currentRow, FilteredClips.Count, step);
+
+        if (row < 0)
+            return;
+
+        SelectedAnimationClips.Clear();
+        SelectedAnimationClips.Add(AnimationClips[FilteredClips[row]]);
+
+        GUI.ScrollClippedRowIntoView(ImGui.GetCursorPosY(), row);
     }
 
     /// <summary>

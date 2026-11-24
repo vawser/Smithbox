@@ -74,11 +74,36 @@ public class HavokVariableView
         DisplayTabContents();
     }
 
+    // Set by an arrow key step, so the list scrolls to the new selection if it's out of view
+    private bool KeyScroll = false;
+
     public void DisplayTabContents()
     {
-        ImGui.BeginChild("havokBehaviorElementListSection");
-
         var names = Owner.Symbols?.VariableNames;
+
+        // Up / Down step the selection through the rows that pass the filter
+        var step = HavokListKeys.GetStep();
+
+        if (step != 0 && names != null)
+        {
+            var visible = new List<int>();
+
+            for (int i = 0; i < names.Count; i++)
+            {
+                if (EditorFilters.IsMatch(Owner.PropFilter, names[i] as string ?? "", Owner.ExactPropFilter))
+                    visible.Add(i);
+            }
+
+            var row = HavokListKeys.StepIndex(visible.IndexOf(SelectedIndex), visible.Count, step);
+
+            if (row >= 0)
+            {
+                SelectedIndex = visible[row];
+                KeyScroll = true;
+            }
+        }
+
+        ImGui.BeginChild("havokBehaviorElementListSection");
 
         if (names != null)
         {
@@ -116,6 +141,9 @@ public class HavokVariableView
                     ImGui.SetScrollHereY();
                     ScrollToSelection = false;
                 }
+
+                if (selected)
+                    HavokListKeys.ScrollIfRequested(ref KeyScroll);
             }
         }
 

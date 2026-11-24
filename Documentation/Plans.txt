@@ -63,7 +63,6 @@
 #----------------------------------------------------
 # Havok/Behavior Editor TODO
 #----------------------------------------------------
-- Add Behavior Merge tool
 - Add Behavior templates
  
 - Remove third column in Animation Clip view
