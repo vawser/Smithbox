@@ -288,6 +288,56 @@ public partial class HavokBehaviorSymbols
 
         return names[index] as string ?? "";
     }
+
+    /// <summary>
+    /// Which copy of its name the entry at an index is: 0 for the first, 1 for the second ... (DS3 and SDT repeat
+    /// event names, e.g. State00_WC)
+    /// </summary>
+    public static int OccurrenceOf(IList names, int index)
+    {
+        if (names == null || index < 0 || index >= names.Count)
+            return 0;
+
+        var name = names[index] as string ?? "";
+        var occurrence = 0;
+
+        for (var i = 0; i < index; i++)
+        {
+            if ((names[i] as string ?? "") == name)
+                occurrence++;
+        }
+
+        return occurrence;
+    }
+
+    /// <summary>
+    /// The index of a given copy of a name; the first copy when the list has fewer copies than that; -1 if it lacks the
+    /// name. When two files have the same repeated names (a mod's file and the game's), each field keeps its own copy.
+    /// </summary>
+    public static int IndexOfName(IList names, string name, int occurrence)
+    {
+        if (names == null || name == null)
+            return -1;
+
+        var first = -1;
+        var seen = 0;
+
+        for (var i = 0; i < names.Count; i++)
+        {
+            if ((names[i] as string ?? "") != name)
+                continue;
+
+            if (seen == occurrence)
+                return i;
+
+            if (first < 0)
+                first = i;
+
+            seen++;
+        }
+
+        return first;
+    }
     #endregion
 
     #region States

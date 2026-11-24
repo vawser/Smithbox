@@ -10,10 +10,12 @@ public enum HavokChangeStatus { Added, Removed, Modified }
 /// <summary>
 /// One field that differs from the game's copy. Revertable ones are value fields: <see cref="Owner"/>'s
 /// <see cref="Field"/> (element <see cref="Index"/> of a value list, or -1) goes back to <see cref="VanillaValue"/>,
-/// or, for an event or variable field, to the current index of <see cref="VanillaName"/>.
+/// or, for an event or variable field, to the current index of <see cref="VanillaName"/> (its copy
+/// <see cref="VanillaOccurrence"/>, as DS3 and SDT repeat event names).
 /// </summary>
 public record HavokFieldChange(string Path, string OldText, string NewText, bool Revertable,
-    object Owner, FieldInfo Field, int Index, object VanillaValue, HavokIndexRole Role, string VanillaName);
+    object Owner, FieldInfo Field, int Index, object VanillaValue, HavokIndexRole Role, string VanillaName,
+    int VanillaOccurrence = 0);
 
 /// <summary>
 /// An event, variable or named object that the open file adds, removes or changes against the game's copy
@@ -241,16 +243,21 @@ public class HavokBehaviorDiff
 
         if (role is HavokIndexRole.Event or HavokIndexRole.Variable or HavokIndexRole.CharacterProperty)
         {
-            var nameA = HavokBehaviorSymbols.GetName(Current.GetNames(role), ToInt(va));
-            var nameB = HavokBehaviorSymbols.GetName(Vanilla.GetNames(role), ToInt(vb));
+            // By name and copy: DS3 and SDT repeat event names, and each copy is its own event
+            var currentNames = Current.GetNames(role);
+            var vanillaNames = Vanilla.GetNames(role);
+            var nameA = HavokBehaviorSymbols.GetName(currentNames, ToInt(va));
+            var nameB = HavokBehaviorSymbols.GetName(vanillaNames, ToInt(vb));
+            var copyA = HavokBehaviorSymbols.OccurrenceOf(currentNames, ToInt(va));
+            var copyB = HavokBehaviorSymbols.OccurrenceOf(vanillaNames, ToInt(vb));
 
-            if (nameA == nameB)
+            if (nameA == nameB && copyA == copyB)
                 return;
 
-            var revertable = nameB == null ? ToInt(vb) == -1 : IndexOf(Current.GetNames(role), nameB) >= 0;
+            var revertable = nameB == null ? ToInt(vb) == -1 : HavokBehaviorSymbols.IndexOfName(currentNames, nameB, copyB) >= 0;
 
-            changes.Add(new(path, nameB ?? ToInt(vb).ToString(), nameA ?? ToInt(va).ToString(), revertable,
-                owner, field, -1, vb, role, nameB));
+            changes.Add(new(path, NameText(vanillaNames, ToInt(vb)), NameText(currentNames, ToInt(va)), revertable,
+                owner, field, -1, vb, role, nameB, copyB));
             return;
         }
 
@@ -357,25 +364,29 @@ public class HavokBehaviorDiff
         _ => value.ToString()
     };
 
+    /// <summary>
+    /// An index field's text: its name, with the copy number where the list repeats the name (State00_WC [2]), or the
+    /// raw index if it names nothing
+    /// </summary>
+    private static string NameText(IList names, int index)
+    {
+        var name = HavokBehaviorSymbols.GetName(names, index);
+
+        if (name == null)
+            return index.ToString();
+
+        var copy = HavokBehaviorSymbols.OccurrenceOf(names, index);
+        var repeated = copy > 0 || HavokBehaviorSymbols.IndexOfName(names, name, 1) != index;
+
+        return repeated ? $"{name} [{copy + 1}]" : name;
+    }
+
     private static int ToInt(object value)
     {
         try { return value == null ? -1 : Convert.ToInt32(value); }
         catch { return -1; }
     }
 
-    private static int IndexOf(IList names, string name)
-    {
-        if (names == null)
-            return -1;
-
-        for (var i = 0; i < names.Count; i++)
-        {
-            if ((names[i] as string ?? "") == name)
-                return i;
-        }
-
-        return -1;
-    }
     #endregion
 
     #region Revert
@@ -391,7 +402,8 @@ public class HavokBehaviorDiff
         if (change.Role is HavokIndexRole.None)
             return change.VanillaValue;
 
-        var index = change.VanillaName == null ? -1 : IndexOf(current.GetNames(change.Role), change.VanillaName);
+        var index = change.VanillaName == null ? -1
+            : HavokBehaviorSymbols.IndexOfName(current.GetNames(change.Role), change.VanillaName, change.VanillaOccurrence);
 
         if (change.VanillaName != null && index < 0)
             return null;

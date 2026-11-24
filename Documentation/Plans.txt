@@ -61,11 +61,13 @@
     - FBX to HKX
         
 #----------------------------------------------------
-# Havok Editor TODO
+# Havok/Behavior Editor TODO
 #----------------------------------------------------
 - Add Behavior Merge tool
 - Add Behavior templates
  
+- Remove third column in Animation Clip view
+- Add arrow key nav to the outline/list views
 - Generate meta names/descs
  
 - Character Reloader: add support for DS2S / DS1R
@@ -113,10 +115,6 @@
 #----------------------------------------------------
 - Add support for Wwise sound add/replace
 - Add support for FMOD sound add/replace
-
-#----------------------------------------------------
-# Behavior Editor TODO
-#----------------------------------------------------
 
 #----------------------------------------------------
 # FaceGen Editor TODO

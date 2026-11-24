@@ -7,9 +7,9 @@ namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
 /// One field of a copied generator that names an event, variable or character property, by its name in the source
-/// file (null if it named nothing)
+/// file (null if it named nothing), and which copy of that name it is (DS3 and SDT repeat event names: 0 is the first)
 /// </summary>
-public record HavokSnapshotRef(object Owner, FieldInfo Field, HavokIndexRole Role, string Name);
+public record HavokSnapshotRef(object Owner, FieldInfo Field, HavokIndexRole Role, string Name, int Occurrence = 0);
 
 /// <summary>
 /// A selector, state machine or clip as copied, for pasting into another behavior file: a copy sharing nothing with
@@ -87,9 +87,10 @@ public static partial class HavokBehaviorOperations
                     role = HavokIndexRole.CharacterProperty;
 
                 var index = ToInt(field.GetValue(original));
-                var name = HavokBehaviorSymbols.GetName(symbols.GetNames(role), index);
+                var names = symbols.GetNames(role);
+                var name = HavokBehaviorSymbols.GetName(names, index);
 
-                snapshot.Refs.Add(new(copy, field, role, name));
+                snapshot.Refs.Add(new(copy, field, role, name, name == null ? 0 : HavokBehaviorSymbols.OccurrenceOf(names, index)));
 
                 if (role is HavokIndexRole.Variable && name != null && !snapshot.Variables.ContainsKey(name))
                 {
@@ -252,7 +253,7 @@ public static partial class HavokBehaviorOperations
             if (copies.GetValueOrDefault(reference.Owner) is not { } owner)
                 continue;
 
-            var index = IndexOfName(symbols.GetNames(reference.Role), reference.Name);
+            var index = HavokBehaviorSymbols.IndexOfName(symbols.GetNames(reference.Role), reference.Name, reference.Occurrence);
 
             if (index < 0 && reference.Role is HavokIndexRole.Variable or HavokIndexRole.CharacterProperty &&
                 HavokBehaviorSymbols.GetField(owner.GetType(), "m_memberPath") != null)
