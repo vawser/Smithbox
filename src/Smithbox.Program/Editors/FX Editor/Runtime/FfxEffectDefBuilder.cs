@@ -295,7 +295,7 @@ public static class FfxEffectDefBuilder
         /// rotation in degrees, and for RandomNodeTransform their variances), the spin (angular speed and multiplier
         /// per axis) and the acceleration (speed and acceleration along Z, acceleration along Y). (provisional) A
         /// Float2 range reads its first value; the spin speed is converted to degrees per second when its slot is
-        /// <c>unit: "radians"</c> (as every older game's a34 / a113 is, FFX Schema Gaps Plan S5).
+        /// <c>unit: "radians"</c> (as every older game's a34 / a113 is, FX.md S5).
         /// </summary>
         private void NodeActions(FxConfigDef c, IFxAction a)
         {
@@ -320,7 +320,7 @@ public static class FfxEffectDefBuilder
                 c.NodeSpin = new[] { "X", "Y", "Z" }.SelectMany(ax => new[]
                 {
                     // the speed in the slot's unit: the older games store node spin as radians per second (S5 of the
-                    // FFX Schema Gaps Plan: 3.14 = 180°/s, 17.45 = 1000°/s), the runtime turns it in degrees per second
+                    // FX.md: 3.14 = 180°/s, 17.45 = 1000°/s), the runtime turns it in degrees per second
                     Angle(a, n.GetValueOrDefault("angularSpeed" + ax), FxArgument.ActiveTime),
                     Value(n.GetValueOrDefault("angularSpeedMultiplier" + ax), FxArgument.ActiveTime),
                 }).ToArray();
@@ -827,7 +827,7 @@ public static class FfxEffectDefBuilder
                 d.LimitEmissions = F("limitEmissionCount") != 0;
                 d.EmissionLimit = (int)F("emissionCountLimit");
                 float life = F("particleDuration", 30) + (F("particleDurationMin") + F("particleDurationMax")) / 2;
-                // the life multiplier (FFX Schema Gaps Plan S7b: BB [163], DS3's fields1 [119]), as FXR3's builder applies it
+                // the life multiplier (FX.md S7b: BB [163], DS3's fields1 [119]), as FXR3's builder applies it
                 d.Duration = Math.Max(1, life) * frame * F("particleDurationMultiplier", 1);
             }
             else
@@ -847,7 +847,7 @@ public static class FfxEffectDefBuilder
                 d.SizeXMax = F("particleSizeXMax");
                 d.SizeYMin = F("particleSizeYMin");
                 d.SizeYMax = F("particleSizeYMax");
-                // FFX Schema Gaps Plan S7b: BB [165], DS3's fields1 [121]
+                // FX.md S7b: BB [165], DS3's fields1 [121]
                 d.SizeMultiplier = F("particleSizeMultiplier", 1);
                 d.GrowthRateX = Value(n.GetValueOrDefault("particleGrowthRateX"), FxArgument.ParticleAge);
                 d.GrowthRateY = Value(n.GetValueOrDefault("particleGrowthRateY"), FxArgument.ParticleAge);

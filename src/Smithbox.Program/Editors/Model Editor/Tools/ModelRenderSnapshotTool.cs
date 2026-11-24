@@ -70,7 +70,7 @@ public class RenderSnapshotEntry
 /// <summary>
 /// Render Snapshots: loads each model of the game's snapshot set in turn, frames it from a fixed angle at a fixed
 /// size, waits for its resources and the auto exposure to settle, and saves the tone mapped scene as a PNG. A run is
-/// compared with a baseline by Tools/RenderSnapshotDiff. Plan: Documentation/Shader Family Split Plan.md, S1.
+/// compared with a baseline by Tools/RenderSnapshotDiff. Plan: Claude/Documentation/Rendering.md (Shader family split), S1.
 /// </summary>
 public class ModelRenderSnapshotTool : IAutomatedCapture
 {

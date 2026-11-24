@@ -28,7 +28,7 @@ public class MaterialTemplate
 
 /// <summary>
 /// A census of every loaded material by shader path, built once in the background. In vanilla ER/NR/AC6 most shaders'
-/// materials share one param set (Documentation/Claude/Material Editor Plan.md, F2), so it stands for what a material
+/// materials share one param set (Claude/Documentation/Materials and Textures.md (Material Editor), F2), so it stands for what a material
 /// of that shader is expected to have. Built from the bank as loaded, so a project's own materials count too.
 /// </summary>
 public class MaterialTemplates

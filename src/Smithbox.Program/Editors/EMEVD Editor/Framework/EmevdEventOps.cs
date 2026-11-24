@@ -13,7 +13,7 @@ public record EmevdHit(string File, long EventId, int Line, string What)
 public record EmevdQuery(long? Value, string Instruction, bool MatchFloats);
 
 /// <summary>
-/// Event-level operations and project scans for P5 (Claude/Documentation/EMEVD Block Editor Analysis.md): copying an
+/// Event-level operations and project scans for P5 (Claude/Documentation/EMEVD and ESD.md (EMEVD Editor)): copying an
 /// event, finding a free ID, the Initialize Event calls that start an event, and the value/instruction search. Pure, so
 /// EmevdEditorCheck runs the same code.
 /// </summary>

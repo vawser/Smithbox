@@ -6,7 +6,7 @@ using System.Linq;
 namespace StudioCore.Editors.FxEditor.Model;
 
 /// <summary>
-/// DS2 / DS2S's per-effect tables (FFX Older Games Plan §22.8, F8b), kept in sfx9999(_Append) as
+/// DS2 / DS2S's per-effect tables (FX.md, FFX §22.8, F8b), kept in sfx9999(_Append) as
 /// sfxParameter.sfxparam ("sfxp" v5, 64-byte records) and sfxDebugParameter.sfxparam ("sfxd" v1, 8-byte records).
 /// Both: a 32-byte header ("sfxp"/"sfxd", version, record count, header size 0x20, zeros), then the records sorted
 /// strictly by their first word, the effect id. Records are optional for the game (19 vanilla effects have none, 257

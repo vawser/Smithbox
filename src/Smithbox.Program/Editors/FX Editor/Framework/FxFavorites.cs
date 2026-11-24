@@ -5,7 +5,7 @@ namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
 /// Favorite effects, kept with the project in &lt;project&gt;/.smithbox/Project/FX/Favorites.json, and the effects
-/// selected recently in this session (FX Effect List Actions Plan, phase C).
+/// selected recently in this session (FX.md (Effect List and Effect Tree actions), phase C).
 /// </summary>
 public class FxFavorites
 {

@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
-/// The selected event as a column of Scratch-style blocks (Claude/Documentation/EMEVD Block Editor Analysis.md, §5
+/// The selected event as a column of Scratch-style blocks (Claude/Documentation/EMEVD and ESD.md (EMEVD Editor), §5
 /// Option A): a hat block for the event header, then one block per instruction.
 ///
 /// Structured (P3, the default): skips and gotos that nest are C-blocks holding the lines they jump over, with an

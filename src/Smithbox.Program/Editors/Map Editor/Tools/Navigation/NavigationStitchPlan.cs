@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// Re-stitching a map's connections (Navigation Editor Plan, Phase 3): finding the connections whose edges no longer fit
+// Re-stitching a map's connections (Navigation.md, Phase 3): finding the connections whose edges no longer fit
 // and the open boundary edges that fit each other, then making those changes in the NVA and NVC files. Kept free of the
 // rest of Smithbox; NavSurvey `stitchedit` runs it on every map.
 

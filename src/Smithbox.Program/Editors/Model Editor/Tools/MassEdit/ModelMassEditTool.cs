@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Finds dummies, materials, bones, meshes and model headers with a filter, then edits or deletes every match in one
 /// step. The filter is matched by <see cref="ModelQueryRunner"/>, as the searches are. Follows the Time Act Editor's
-/// mass edit. See Claude/Documentation/Model Editor Mass Edit Plan.md.
+/// mass edit. See Claude/Documentation/Model Editor.md §2 Features, mass edit.
 /// </summary>
 public partial class ModelMassEditTool
 {

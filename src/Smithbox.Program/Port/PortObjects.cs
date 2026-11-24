@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Port;
 
 /// <summary>
-/// DS3 objects as ER assets (Smithbox Port Plan.md §4.6, decision D2: static and breakable objects; animated and cloth
+/// DS3 objects as ER assets (Game Port.md §1 Smithbox.Port §4.6, decision D2: static and breakable objects; animated and cloth
 /// ones left out). Per object model the MSB places: the objbnd's FLVERs (intact and _1 broken state) through the map
 /// piece converter in object mode, its own TPF into the texture jobs, its physics through <see cref="PortPhysics"/>,
 /// the asset's geombnd and _l geomhkxbnd (the pot AEG099_200's layout), and an AssetEnvironmentGeometryParam row

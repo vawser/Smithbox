@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.FxEditor;
 
-/// <summary>The billboard appearance actions the renderer draws (FX Editor Plan, phase V3).</summary>
+/// <summary>The billboard appearance actions the renderer draws (FX.md, phase V3).</summary>
 public enum FxBillboardKind
 {
     PointSprite,      // 600
@@ -226,7 +226,7 @@ public sealed class FxBillboardDef
     }
 
     /// <summary>
-    /// One particle's billboard values (FX Editor Plan §10.4):
+    /// One particle's billboard values (FX.md §10.4):
     /// - Colour: color1 and color2 clamped to 0–1, times color3 (unclamped), times the ParticleModifier's colour;
     ///   rgb × rgbMultiplier, alpha × alphaMultiplier and the node's fade.
     /// - Size: width/height (or PointSprite's size), × the ParticleModifier's scale, × a random scale variation

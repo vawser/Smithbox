@@ -22,7 +22,7 @@ public enum LuaPlayerAction
 }
 
 /// <summary>
-/// The Lua Editor's First Person Mode (see Claude/Documentation/Lua Editor NPC Simulation Analysis.md §6): the user
+/// The Lua Editor's First Person Mode (see Claude/Documentation/Lua and AI.md (AI Simulation) §6): the user
 /// becomes the target, walking the viewport's camera in first person with the Map Editor's controls (its mouse capture
 /// and keys), over the flat ground the characters stand on. The target is placed at the player's feet each frame,
 /// facing the way they look, so the battle goal reads its distance and facing from them as it does from a target moved

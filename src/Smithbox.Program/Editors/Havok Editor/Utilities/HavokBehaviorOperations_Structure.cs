@@ -8,7 +8,7 @@ namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
 /// Duplicate and delete (selectors, state machines, variables) and variable bindings.
-/// The rules come from the game files (Tools/BehaviorSurvey editsurvey; see Documentation/Claude/Havok Behavior Structure Edits.md).
+/// The rules come from the game files (Tools/BehaviorSurvey editsurvey; see Claude/Documentation/Behavior.md (Havok behavior edits)).
 /// </summary>
 public static partial class HavokBehaviorOperations
 {

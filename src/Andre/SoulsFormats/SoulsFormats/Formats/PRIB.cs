@@ -11,7 +11,7 @@ namespace SoulsFormats
     /// map pieces placed on it. There is one file per authoring layout (the parts' MSB SibPath), packed in
     /// <c>/map/&lt;area&gt;/&lt;map&gt;/&lt;map&gt;.relationinfobnd.dcx</c>, and only legacy dungeons have them.
     /// The game matches parts by <see cref="PartRef.Key"/> (type, model and instance), never by name.
-    /// Extension: .relationinfo. See Claude/Documentation/RelationInfo Format.md.
+    /// Extension: .relationinfo. See Claude/Documentation/Formats.md (PRIB).
     /// </summary>
     public class PRIB : SoulsFile<PRIB>
     {

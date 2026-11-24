@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Vanilla Compare: what the active map changes from its vanilla MSB. Lists its modified and added objects (click to
 /// select) and the vanilla objects it no longer has, each with Restore. Compared on request, as a whole map takes a
-/// moment; the list says when edits have made it out of date. Plan: Documentation/Map Editor Vanilla Compare.md.
+/// moment; the list says when edits have made it out of date. Plan: Claude/Documentation/Map Editor.md (Vanilla Compare).
 /// </summary>
 public class VanillaCompareTool
 {

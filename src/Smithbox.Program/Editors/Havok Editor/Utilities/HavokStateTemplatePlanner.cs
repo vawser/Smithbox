@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// Plans a State template (Claude/Documentation/Havok Behavior Templates Plan.md): new states in a machine, each a copy
+/// Plans a State template (Claude/Documentation/Behavior.md (Havok behavior edits)): new states in a machine, each a copy
 /// of a template state playing one new animation, with copies of the template's wildcards on renamed events.
 ///
 /// The template state is one of the machine whose name matches the template's TemplateMatch, whose number is its

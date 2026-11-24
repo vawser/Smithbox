@@ -9,7 +9,7 @@ using static SoulsFormats.FXR1.FXNode;
 
 namespace StudioCore.Editors.FxEditor.Model;
 
-// FXR1 adapters for the FX model (DS1, DS1R; Claude/Documentation/FFX Older Games Plan.md §18). They wrap the FXR1
+// FXR1 adapters for the FX model (DS1, DS1R; Claude/Documentation/FX.md, FFX §18). They wrap the FXR1
 // port's own objects; nothing is copied, so edits through an adapter edit the file object, and an unchanged value set
 // back leaves the file byte-identical (the port's writer reproduces every vanilla file).
 //
@@ -551,7 +551,7 @@ public class Fxr1ActionAdapter : IFxAction, IFxSnapshot
     public int TypeId { get; }
     public object Source => source;
 
-    /// <summary>The layout for this action's current node count (its per-count tail when it has one, FFX Schema Gaps Plan S7c).</summary>
+    /// <summary>The layout for this action's current node count (its per-count tail when it has one, FX.md S7c).</summary>
     public FfxActionLayout Layout => def != null && def.Games.TryGetValue(Owner.Game, out var l) ? l.ForCount(Container?.FXNodes?.Count ?? 0) : null;
     public FfxParamDef ParamDef(int index) => Layout is { } l && index < l.Params.Count ? l.Params[index] : null;
 

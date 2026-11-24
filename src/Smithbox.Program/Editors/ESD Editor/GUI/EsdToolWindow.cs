@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.EsdEditor;
 
 /// <summary>
-/// The ESD Editor's Tools window: Search, Called By and Palette (see Claude/Documentation/Tool UI Styling.md)
+/// The ESD Editor's Tools window: Search, Called By and Palette (see Claude/Documentation/UI.md (Tools window conventions))
 /// </summary>
 public class EsdToolWindow
 {

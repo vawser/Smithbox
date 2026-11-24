@@ -7,7 +7,7 @@ namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
 /// The EMEVD Editor: event scripts as Scratch-style blocks, using Smithbox's own instruction layouts
-/// (Assets/EMEVD/Layouts). P1: read-only flat blocks; see Claude/Documentation/EMEVD Block Editor Analysis.md for
+/// (Assets/EMEVD/Layouts). P1: read-only flat blocks; see Claude/Documentation/EMEVD and ESD.md (EMEVD Editor) for
 /// the phases.
 /// </summary>
 public class EmevdEditorScreen : EditorScreen

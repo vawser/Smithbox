@@ -4,7 +4,7 @@ using System.Collections;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// State templates (Claude/Documentation/Havok Behavior Templates Plan.md): a new state copied from a template state of
+/// State templates (Claude/Documentation/Behavior.md (Havok behavior edits)): a new state copied from a template state of
 /// the same machine, playing one new animation, with a copy of each wildcard into the template state, on events named
 /// as the template's with its ID replaced (W_Attack3000 and W_Event3000 for an NPC attack slot).
 /// </summary>

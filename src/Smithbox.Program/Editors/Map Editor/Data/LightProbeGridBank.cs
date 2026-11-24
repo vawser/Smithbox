@@ -25,7 +25,7 @@ namespace StudioCore.Editors.MapEditor;
 /// Not traced, taken from the data: the coefficients are fixed point over 1024, as LightMask is (typical L0 500 or so
 /// outdoors, 0.49, near DS3's GPARAM hemisphere of 0.5); bands 1-3 are along Y, Z, X, the usual order of L1 spherical
 /// harmonics, with Y up (band 1 is mostly positive, light from above); no sign flips.
-/// See Documentation/Older Games/Analysis.md.
+/// See Claude/Documentation/Lighting.md §4 Older games.
 /// </para>
 /// </summary>
 public class LightProbeGridBank

@@ -312,7 +312,7 @@ namespace SoulsFormats
                 }
             }
 
-            // ================================================================ writing (FFX Older Games Plan Â§17, F4)
+            // ================================================================ writing (FX.md, FFX Â§17, F4)
             //
             // The original tool's layout, found from every vanilla DS1 effect (FfxSurvey --fxr1diff / --fxr1order):
             // objects are grouped by kind into sections, in a fixed order, and within a section they come in the order

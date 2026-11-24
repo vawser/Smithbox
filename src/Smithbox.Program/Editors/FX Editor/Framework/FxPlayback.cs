@@ -1,7 +1,7 @@
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The viewport's playback clock and the inputs an effect is previewed with (FX Editor Plan §10.2): the preview
+/// The viewport's playback clock and the inputs an effect is previewed with (FX.md §10.2): the preview
 /// state and the external values the game would set (0 = Terminate, 1 = precipitation, 2 = time of day, ...).
 /// The effect runtime (phase V2) reads its time and inputs from here; until then only the clock runs.
 /// </summary>

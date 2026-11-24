@@ -8,7 +8,7 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The tool's header, drawn above the tabs whichever is open (Collision Editor UX Analysis, R3): whether collision is
+/// The tool's header, drawn above the tabs whichever is open (Collision.md (Collision Editor), R3): whether collision is
 /// drawn, what the viewport's clicks and keys do, and edits that haven't been committed, with Commit and Discard. So
 /// the state that changes what the viewport does, and what isn't in the project yet, is always visible.
 /// </summary>

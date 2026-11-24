@@ -16,7 +16,7 @@ namespace SoulsFormats
 
         /// <summary>
         /// 1: FXR v1 (DS1, DS1R). 2: FXR v2 (Bloodborne): 32-byte containers holding a small record instead of
-        /// ActionData and modifier, a new root layout and container nodes 141–148 (FFX Older Games Plan §19). Always wide.
+        /// ActionData and modifier, a new root layout and container nodes 141–148 (FX.md, FFX §19). Always wide.
         /// </summary>
         public int Version { get; set; } = 1;
 
@@ -30,7 +30,7 @@ namespace SoulsFormats
 
         public FXNode RootFXNode { get; set; }
 
-        // Ported from DSAnimStudio's SoulsAssetPipeline (Claude/Reference/DSAnimStudio, FFX Older Games Plan §8.3, F4).
+        // Ported from DSAnimStudio's SoulsAssetPipeline (Claude/Reference/DSAnimStudio, FX.md, FFX §8.3, F4).
         // The XML read/write entry points were dropped (they pulled XmlSerializer into SoulsFormats); the XID
         // flattening below has no callers left and goes once the F4 writer is settled.
 

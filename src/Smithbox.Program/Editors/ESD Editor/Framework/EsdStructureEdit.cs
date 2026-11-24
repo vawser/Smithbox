@@ -105,7 +105,7 @@ public readonly record struct EsdEditPlan(IEsdOp Op, string Refusal, long NewId 
 }
 
 /// <summary>
-/// P4's structural edits (Claude/Documentation/ESD Block Editor Analysis.md §8): edits that add or remove states and
+/// P4's structural edits (Claude/Documentation/EMEVD and ESD.md (ESD Editor) §8): edits that add or remove states and
 /// machines while keeping every transition going somewhere that exists. Each returns one op built from EsdEdits'
 /// reversible ops, or a refusal (a LOC key the editor shows). Gated by EsdSurvey structedit: on every vanilla machine,
 /// done → written and read back as edited, no new problems, no new unreached states, the code view still valid;

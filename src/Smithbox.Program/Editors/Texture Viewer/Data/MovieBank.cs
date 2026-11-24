@@ -9,7 +9,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 /// <summary>
 /// The Scaleform movies (/menu/*.gfx) of the Texture Viewer's GFx mode: the file list, the movies read so far, and
-/// their saves to the project (loose, as the game reads them). See Claude/Documentation/Scaleform Editor Analysis.md.
+/// their saves to the project (loose, as the game reads them). See Claude/Documentation/Scaleform.md.
 /// </summary>
 public class MovieBank
 {

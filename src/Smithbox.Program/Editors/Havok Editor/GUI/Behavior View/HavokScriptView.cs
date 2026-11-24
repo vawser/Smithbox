@@ -6,7 +6,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// The Script window: the shown behavior file's paired action scripts (HavokScriptIndex), read only, with line
 /// numbers, a function list, find, and Back. Call sites and callbacks elsewhere jump here (ShowLine).
-/// See Claude/Documentation/Havok Behavior HKS Cross-Reference Plan.md.
+/// See Claude/Documentation/Behavior.md (Havok behavior views).
 /// </summary>
 public class HavokScriptView
 {

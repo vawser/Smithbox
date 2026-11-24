@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// The NVA's gate nodes (Navigation Editor Plan, Phase 3: Gate nodes). Kept free of the rest of Smithbox; NavSurvey
+// The NVA's gate nodes (Navigation.md, Phase 3: Gate nodes). Kept free of the rest of Smithbox; NavSurvey
 // `gateedit` runs it on every map.
 //
 // What the game's files do (NavSurvey gatesurvey, 997 maps, 9,243 gates):

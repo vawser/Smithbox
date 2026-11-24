@@ -46,7 +46,7 @@ public class IconSource
 ///    sheets reuse ids), or when the group sets RestrictToInternalFiles;
 ///  - the first entry for a (prefix, id) wins: the group's own File binder first, then the listed sheets, then the
 ///    layout order. Later ones are counted as conflicts.
-/// See Documentation/Claude/Icon Preview Mod Support.md.
+/// See Claude/Documentation/Param Editor.md (Icon preview).
 /// </summary>
 public class IconIndex
 {

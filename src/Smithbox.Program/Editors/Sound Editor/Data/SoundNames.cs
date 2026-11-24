@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.SoundEditor;
 
 /// <summary>
-/// The names the Sound Editor shows, from three sources (Claude/Documentation/Sound Editor Plan.md §3):
+/// The names the Sound Editor shows, from three sources (Claude/Documentation/Sound Editor.md §3):
 /// <list type="number">
 /// <item>File aliases: a bank's character / asset / map, from the project's Characters, Assets and MapNames aliases.</item>
 /// <item>Sound aliases: the project's Sounds aliases, keyed by the sound ID inside a sample or media name

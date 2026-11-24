@@ -36,7 +36,7 @@ public class EmevdMassChange
 }
 
 /// <summary>
-/// The mass edit (P6, Claude/Documentation/EMEVD Block Editor Analysis.md): finds integer arg values and plans their
+/// The mass edit (P6, Claude/Documentation/EMEVD and ESD.md (EMEVD Editor)): finds integer arg values and plans their
 /// replacement. Pure, so EmevdEditorCheck runs the same code.
 ///
 /// Never planned: skip counts and goto labels (the structure owns them), args a parameter writes (they hold

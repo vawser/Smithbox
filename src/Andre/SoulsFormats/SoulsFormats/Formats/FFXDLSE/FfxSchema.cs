@@ -15,14 +15,14 @@ namespace SoulsFormats
         DS2S,
         DS1,
         DS1R,
-        /// <summary>Bloodborne: FXR v2 (FFX Older Games Plan §19).</summary>
+        /// <summary>Bloodborne: FXR v2 (FX.md, FFX §19).</summary>
         BB,
     }
 
     /// <summary>
     /// Layout and names of the FFX actions per game, generated from vanilla data by Claude/Tools/FfxSurvey --schema
     /// (Smithbox.Data/Assets/FXR/ffx_schema.json). Value type ids use DS2's numbering; DeS file ids are mapped
-    /// through <see cref="DesValueTypes"/>. See Claude/Documentation/FFX Older Games Plan.md §10.
+    /// through <see cref="DesValueTypes"/>. See Claude/Documentation/FX.md, FFX §10.
     /// </summary>
     public class FfxSchema
     {
@@ -41,7 +41,7 @@ namespace SoulsFormats
         private readonly Dictionary<int, FfxActionDef> actions = new();
 
         /// <summary>
-        /// Named int values (hand data, FFX Schema Gaps Plan S3), keyed by name. One enum per game where the values
+        /// Named int values (hand data, FX.md S3), keyed by name. One enum per game where the values
         /// differ (e.g. "BlendMode_DS2"); a slot names its enum in <see cref="FfxParamDef.Enum"/>. Same layout as
         /// fxr_schema.json's enums.
         /// </summary>
@@ -155,7 +155,7 @@ namespace SoulsFormats
                     foreach (var p in ps.EnumerateArray())
                         layout.Params.Add(ReadParam(p, i++));
                 }
-                // per-count tails (FFX Schema Gaps Plan S7c): "variants": { "<count>": { "from": i, "params": [...] } }
+                // per-count tails (FX.md S7c): "variants": { "<count>": { "from": i, "params": [...] } }
                 if (g.Value.TryGetProperty("variants", out var vs) && vs.ValueKind == JsonValueKind.Object)
                     foreach (var v in vs.EnumerateObject())
                     {
@@ -244,7 +244,7 @@ namespace SoulsFormats
         public List<FfxParamDef> Params = new();
 
         /// <summary>
-        /// Per-count tails (hand data, FFX Schema Gaps Plan S7c): an instance with this many params keeps
+        /// Per-count tails (hand data, FX.md S7c): an instance with this many params keeps
         /// <see cref="Params"/> up to <see cref="FfxLayoutVariant.From"/> and the variant's slots from there, because a
         /// shorter list isn't always a prefix of the longest (DS2's a15001 drops floats from the middle of its tail).
         /// </summary>

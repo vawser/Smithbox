@@ -69,7 +69,7 @@ public class EmevdInstrDef
     public string Key;
     public string Name;
     public string JapaneseName;
-    /// <summary>Own, Shared, Borrowed, Exe or Inferred (Claude/Documentation/EMEVD Layouts.md)</summary>
+    /// <summary>Own, Shared, Borrowed, Exe or Inferred (Claude/Documentation/EMEVD and ESD.md (Layouts))</summary>
     public string Confidence;
     public string Source;
     public string Exe;

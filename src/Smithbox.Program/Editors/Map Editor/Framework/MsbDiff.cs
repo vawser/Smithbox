@@ -18,7 +18,7 @@ public sealed record MsbFieldDiff(string Path, object Owner, PropertyInfo Proper
 /// <summary>
 /// Compares MSB entries with their vanilla counterparts. Self-contained (SoulsFormats and reflection only), so
 /// Claude/Tools/VanillaCompareSurvey compiles this same file to check it against game data.
-/// Plan: Documentation/Map Editor Vanilla Compare.md.
+/// Plan: Claude/Documentation/Map Editor.md (Vanilla Compare).
 /// </summary>
 public static class MsbDiff
 {

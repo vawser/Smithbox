@@ -11,7 +11,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <summary>
 /// Finds animations or events with a filter built from pickers, then edits, creates or deletes across every match
 /// in one undoable step. The filter is matched by <see cref="TimeActQueryRunner"/>, as the searches are.
-/// See Documentation/Claude/TAE Mass Edit Plan.md.
+/// See Claude/Documentation/Time Act.md (Features).
 /// </summary>
 public partial class TimeActMassEditTool
 {

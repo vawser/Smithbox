@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 // The per-file cost graph of DS3, BB and SDT (hkaiDirectedGraphExplicitCost), kept in step with its mesh. Kept free of the
-// rest of Smithbox, so Tools/NavSurvey can link it. See Documentation/Claude/Navigation Editor Other Games Plan.md, N5.
+// rest of Smithbox, so Tools/NavSurvey can link it. See Claude/Documentation/Navigation.md, N5.
 //
 // How the game's graphs are built (NavSurvey costgraph, DS3 710 / SDT 604 / BB 217 files, every one the same):
 // - each face names its cluster (Face.m_clusterIndex), with no face outside one; one node per cluster, about 15 faces

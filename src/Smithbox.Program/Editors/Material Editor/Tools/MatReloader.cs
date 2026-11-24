@@ -6,7 +6,7 @@ namespace StudioCore.Editors.MaterialEditor;
 
 /// <summary>
 /// The Material Reloader's work in a running MATBIN game (ER, NR, AC6), over the project's shared GameLink: lists the
-/// materials loaded models use, and reloads materials from bytes. See Claude/Documentation/MATBIN Live Reload Analysis.md.
+/// materials loaded models use, and reloads materials from bytes. See Claude/Documentation/Materials and Textures.md (Material Reloader).
 /// The AOBs and offsets come from Assets/Material Reloader/{game}/*.json (MaterialReloaderOffsets); the connection,
 /// quit out and reload world are GameLink's.
 ///

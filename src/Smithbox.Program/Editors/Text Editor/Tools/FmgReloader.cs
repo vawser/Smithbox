@@ -6,8 +6,8 @@ namespace StudioCore.Editors.TextEditor;
 
 /// <summary>
 /// The FMG Reloader's work in a running game (ER, NR, AC6, DS3), over the project's shared GameLink: reads which FMGs
-/// the game holds, and replaces one with the editor's copy. See Claude/Documentation/FMG Live Reload Analysis.md and
-/// FMG Reloader Other Games.md. The connection itself (which exe, the process handle) is GameLink's.
+/// the game holds, and replaces one with the editor's copy. See Claude/Documentation/Text Editor.md (FMG Reloader) and
+/// Text Editor.md (FMG Reloader). The connection itself (which exe, the process handle) is GameLink's.
 ///
 /// How the games hold text (the same FD4 message repository in all of them; found at runtime by game-independent code
 /// shapes, checked on every exe by Claude/Tools/FmgReloadAob probe):

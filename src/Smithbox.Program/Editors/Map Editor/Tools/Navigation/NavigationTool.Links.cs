@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The View tab's Links group (Navigation Editor Plan, Phase 3): adding a link (a pair of user edges) between two faces
+/// The View tab's Links group (Navigation.md, Phase 3): adding a link (a pair of user edges) between two faces
 /// picked in the viewport, and removing one from the face inspector. See NavUserEdges for how the game lays them out.
 /// </summary>
 public partial class NavigationTool

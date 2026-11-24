@@ -11,7 +11,7 @@ namespace StudioCore.Editors.TextureViewer;
 /// The Texture Viewer's GFx mode (Scaleform Editor, phases 2–3): a menu movie opened from the Movies tab. While a movie
 /// is open the view's File List shows its display list, the Texture List its images, the Viewer the stage, and
 /// Properties the selected instance. Instance names and frame labels are what the game looks elements up by, so they
-/// are read-only unless renaming is unlocked. See Claude/Documentation/Scaleform Editor Analysis.md.
+/// are read-only unless renaming is unlocked. See Claude/Documentation/Scaleform.md.
 /// </summary>
 public partial class MovieView
 {

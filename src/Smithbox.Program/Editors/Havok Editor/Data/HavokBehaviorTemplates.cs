@@ -24,7 +24,7 @@ public class HavokTemplateGroup
 }
 
 /// <summary>
-/// A ready-made gameplay pattern (Claude/Documentation/Havok Behavior Templates Plan.md). The Category kind registers a
+/// A ready-made gameplay pattern (Claude/Documentation/Behavior.md (Havok behavior edits)). The Category kind registers a
 /// new animation category: clips aNEW_ID added to the selectors that play ID, for the IDs of the ticked groups, or for
 /// every ID a reference category is registered for.
 /// </summary>

@@ -18,7 +18,7 @@ public enum FxDebugLayer
 }
 
 /// <summary>
-/// Builds the debug wireframes of an effect (FX Editor Plan, phase V1): each node's origin as a small set of axes,
+/// Builds the debug wireframes of an effect (FX.md, phase V1): each node's origin as a small set of axes,
 /// and each emitter shape at its node's transform, in world space with the effect at the origin.
 ///
 /// This is a static picture of the effect in one state, at time 0:

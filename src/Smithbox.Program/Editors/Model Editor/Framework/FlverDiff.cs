@@ -45,7 +45,7 @@ public sealed record FlverFieldDiff(string Path, FlverDiffKind Kind, object Owne
 /// Pairs the objects of an edited FLVER with those of its vanilla FLVER and lists what differs. Indices into the
 /// node and material lists are compared by the names they point at, so adding, removing or moving objects doesn't
 /// make the objects that refer to them look changed. Used by the Model Editor's Vanilla Compare
-/// (<c>ModelVanillaCompare</c>). Plan: Documentation/Model Editor Second Review.md, R6.
+/// (<c>ModelVanillaCompare</c>). Plan: Claude/Documentation/Model Editor.md, R6.
 /// </summary>
 public sealed class FlverDiff
 {

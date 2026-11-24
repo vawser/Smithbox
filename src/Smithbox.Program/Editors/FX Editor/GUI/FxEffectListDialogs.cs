@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.FxEditor;
 
-/// <summary>The Effect List's dialogs and the operations behind them (FX Effect List Actions Plan, phases A–D).</summary>
+/// <summary>The Effect List's dialogs and the operations behind them (FX.md (Effect List and Effect Tree actions), phases A–D).</summary>
 public partial class FxEffectList
 {
     private const string DuplicatePopup = "fxListDuplicatePopup";
@@ -679,7 +679,7 @@ public partial class FxEffectList
 
     /// <summary>
     /// Compares two file objects: FXRs value by value through FxCompare (as before); the older formats through the
-    /// model (FFX Older Games Plan §22, F8), keyed by states, exits, actions and named values.
+    /// model (FX.md, FFX §22, F8), keyed by states, exits, actions and named values.
     /// </summary>
     private void ShowCompare(string a, object fa, string b, object fb)
     {

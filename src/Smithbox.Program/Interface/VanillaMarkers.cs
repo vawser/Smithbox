@@ -10,7 +10,7 @@ namespace StudioCore.Application;
 /// How every editor shows a <see cref="VanillaStatus" />: the shared Modified / Added text colour and the tooltip.
 /// By the user's choice there are no icons: a modified or added item is marked by its colour alone. All of it is off
 /// when Interface_Vanilla_Highlight is off, so one toggle covers every editor.
-/// Plan: Claude/Documentation/Vanilla Modified-Added Parity.md.
+/// Plan: Claude/Documentation/UI.md (Vanilla state).
 /// </summary>
 public static class VanillaMarkers
 {

@@ -10,7 +10,7 @@ namespace StudioCore.Memory;
 /// The world step's save/load handler (ER 0x140AFD060, NR 0x140C383C0, AC6 0x141272440) loads the save slot in
 /// GameMan +LoadSlot when it isn't -1, through RequestLoad (ER 0x14067C500, NR 0x1406B15C0, AC6 0x140B91170) and
 /// LoadGame, which restarts the world from that save. The games only ever reset that field, so this looks like a
-/// leftover developer path. See Claude/Documentation/MATBIN Live Reload Analysis.md §5d and §5g.
+/// leftover developer path. See Claude/Documentation/Materials and Textures.md (Material Reloader) §5d and §5g.
 ///
 /// - Save first (ER, NR): a save request byte (GameMan +SaveRequest) writes the current state, so the reload loses
 ///   nothing. AC6 has no such byte (its saves go through a request code), so it loads the last save as it is.

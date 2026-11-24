@@ -62,7 +62,7 @@ public struct FxBillboardMaterial
 }
 
 /// <summary>
-/// A batch of billboard particles of one appearance (FX Editor Plan, phase V3): one instanced draw of
+/// A batch of billboard particles of one appearance (FX.md, phase V3): one instanced draw of
 /// <see cref="DbgPrimFxQuad"/>, the particles sorted back to front, the batch itself sorted with the other
 /// translucent draws by its centre. The FX Editor hands it new particles each frame with <see cref="SetParticles"/>.
 /// It draws into the HDR scene target with depth testing and no depth writes, in a pipeline per blend mode.

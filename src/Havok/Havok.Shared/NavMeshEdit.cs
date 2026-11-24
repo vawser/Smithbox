@@ -10,7 +10,7 @@ namespace Havok.Shared;
 // The members keep the Havok field names (m_faces, m_startEdgeIndex, ...): each view is a window onto those fields,
 // implemented explicitly on the class that has them, so the view and the field are the same data under the same name.
 // The objects a document holds are the views; nothing is copied or wrapped, so an edit is an edit of the document.
-// See Documentation/Claude/Navigation Editor Other Games Plan.md, Phase N1.
+// See Claude/Documentation/Navigation.md, Phase N1.
 
 /// <summary>hkaiNavMesh::EdgeFlagBits, the same values in every SDK (hk2014 lacks the last two names).</summary>
 [Flags]

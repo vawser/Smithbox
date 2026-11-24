@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 /// Lists the undo history of the view, oldest first, with what each step did and which maps it changed. Clicking a
 /// step goes back to just before it (undoing it and everything after, in every map), or, for a step that was
 /// undone, redoes up to it. A map filter shows the steps of one map, and how many steps unloading it would drop.
-/// Plan: Documentation/Map Editor Review - Third Pass.md, R5.
+/// Plan: Claude/Documentation/Map Editor.md (Editing rules), R5.
 /// </summary>
 public class MapHistoryTool
 {

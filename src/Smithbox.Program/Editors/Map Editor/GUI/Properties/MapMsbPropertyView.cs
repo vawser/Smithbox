@@ -1018,7 +1018,7 @@ public class MapMsbPropertyView
 
     /// <summary>
     /// Compare with Vanilla: the object's fields that differ from its vanilla counterpart, each with Revert, and
-    /// Revert Object. Plan: Documentation/Map Editor Vanilla Compare.md.
+    /// Revert Object. Plan: Claude/Documentation/Map Editor.md (Vanilla Compare).
     /// </summary>
     private void PropEditorVanillaCompare(MsbEntity ent)
     {

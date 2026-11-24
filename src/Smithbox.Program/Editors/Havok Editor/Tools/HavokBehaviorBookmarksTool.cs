@@ -5,7 +5,7 @@ namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
 /// Bookmarks (Behavior Editor Tools window): the bookmarked states, generators, clips and modifiers of every behavior
-/// file, the shown file's first. Clicking one opens its file and shows it. See Tool UI Styling.md.
+/// file, the shown file's first. Clicking one opens its file and shows it. See UI.md (Tools window conventions).
 /// </summary>
 public class HavokBehaviorBookmarksTool
 {

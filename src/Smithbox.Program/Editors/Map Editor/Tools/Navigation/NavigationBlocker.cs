@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// A box that navmesh generation goes around (Navmesh Generation Plan, Blockers): Origin + a·AxisX + b·AxisY + c·AxisZ
+/// A box that navmesh generation goes around (Navigation.md, Blockers): Origin + a·AxisX + b·AxisY + c·AxisZ
 /// for a, b, c in [0, 1]. The axes may be any lengths and directions (a rotated, scaled part), but are taken to be at right
 /// angles, as a part's transform keeps them. AxisY is the box's up.
 /// </summary>

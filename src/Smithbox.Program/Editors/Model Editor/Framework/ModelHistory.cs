@@ -30,7 +30,7 @@ public sealed class ParkedModel
 }
 
 /// <summary>
-/// Names undo steps for the History tool. Plan: Documentation/Model Editor Second Review.md, R5.
+/// Names undo steps for the History tool. Plan: Claude/Documentation/Model Editor.md, R5.
 /// </summary>
 public static class ModelHistory
 {

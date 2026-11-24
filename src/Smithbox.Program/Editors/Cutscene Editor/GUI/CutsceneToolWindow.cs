@@ -3,7 +3,7 @@ using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.CutsceneEditor;
 
-/// <summary>The Cutscene Editor's Tools window (see Claude/Documentation/Tool UI Styling.md): General → Cutscene Filters.</summary>
+/// <summary>The Cutscene Editor's Tools window (see Claude/Documentation/UI.md (Tools window conventions)): General → Cutscene Filters.</summary>
 public class CutsceneToolWindow
 {
     private readonly CutsceneEditorView Editor;

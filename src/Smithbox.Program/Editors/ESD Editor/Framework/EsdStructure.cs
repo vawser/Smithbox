@@ -111,7 +111,7 @@ public class EsdCode
 }
 
 /// <summary>
-/// The code view's structure (Claude/Documentation/ESD Block Editor Analysis.md §4-5, P3): a machine's states placed
+/// The code view's structure (Claude/Documentation/EMEVD and ESD.md (ESD Editor) §4-5, P3): a machine's states placed
 /// by the dominator tree of its transition graph.
 ///
 /// - A state reached by exactly one transition (and not a loop head) is drawn inside that transition (Inline), so

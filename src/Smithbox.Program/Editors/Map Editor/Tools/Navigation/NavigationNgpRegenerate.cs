@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// The NGP mode's whole-map regeneration (Navigation Editor DS2 Plan, Phase G6): the Havok mode's Regenerate, for the
+// The NGP mode's whole-map regeneration (Navigation.md (NGP (DS2, DS2S)), Phase G6): the Havok mode's Regenerate, for the
 // .ngp file. One generation over the map's collision, pruned to what the seeds reach, split into the map's navmeshes
 // (one per MSB navmesh part, so the MSB is not touched), with the face flags carried over, steep faces marked as drops,
 // and the gates found again along the cuts. Renderer-free, so NavSurvey checks it on the game files.

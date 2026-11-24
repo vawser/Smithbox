@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Port;
 
 // Assets/Game Port/DS3_ER/Materials.json: what the DS3 -> ER material port reads. Written by the genmaterials mode of
-// Claude/Tools/Ds3ErPortSurvey from the ER game files and the rules of Material Mapping.md §3. Param values are kept as
+// Claude/Tools/Ds3ErPortSurvey from the ER game files and the rules of Materials and Textures.md (DS3 → ER material port) §3. Param values are kept as
 // invariant strings so a param of any MATBIN type round-trips.
 
 public sealed class PortConfig
@@ -56,7 +56,7 @@ public sealed class PortRule
     /// <summary>null = either; true / false = the material is / isn't metal.</summary>
     public bool? Metallic { get; set; }
     public string Shader { get; set; }
-    /// <summary>direct, open (an open question in Material Mapping.md) or handcheck.</summary>
+    /// <summary>direct, open (an open question in Materials and Textures.md (DS3 → ER material port)) or handcheck.</summary>
     public string Status { get; set; }
     public string Note { get; set; }
 

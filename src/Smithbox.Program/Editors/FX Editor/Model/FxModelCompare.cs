@@ -7,7 +7,7 @@ using System.Linq;
 namespace StudioCore.Editors.FxEditor.Model;
 
 /// <summary>
-/// Compares two effects of any format value by value, through the model (FFX Older Games Plan §22, F8): each effect is
+/// Compares two effects of any format value by value, through the model (FX.md, FFX §22, F8): each effect is
 /// flattened into keyed lines (states with their exits and actions, then the node tree), and the keys are matched, as
 /// FxCompare does for FXR3. Actions are keyed by type and how many of that type came before, so one inserted action
 /// doesn't shift every later one. SoulsFormats + BCL only, so the check tools can link it.

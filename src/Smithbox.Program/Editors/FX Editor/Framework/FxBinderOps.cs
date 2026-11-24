@@ -3,8 +3,8 @@ using SoulsFormats;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// Adding and removing effect files in an sfx binder the way vanilla lays them out (FX Effect Tree Actions Plan §E,
-/// FX Effect List Actions Plan §2). Only SoulsFormats is used, so the check tool compiles this file on its own.
+/// Adding and removing effect files in an sfx binder the way vanilla lays them out (FX.md (Effect List and Effect Tree actions) §E,
+/// FX.md (Effect List and Effect Tree actions) §2). Only SoulsFormats is used, so the check tool compiles this file on its own.
 /// </summary>
 public static class FxBinderOps
 {

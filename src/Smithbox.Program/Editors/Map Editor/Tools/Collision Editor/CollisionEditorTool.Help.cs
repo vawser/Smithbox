@@ -5,7 +5,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Built-in help (Collision Editor UX Analysis, R9), as the Navigation tool has it: a ? button at the end of the tab
+/// Built-in help (Collision.md (Collision Editor), R9), as the Navigation tool has it: a ? button at the end of the tab
 /// bar opens the open tab's description and steps (GUI.TabHelpButton), a ? beside the Brush combo explains the chosen
 /// mode (GUI.HelpButton), and a glossary of the collision terms is opened from the header, so tooltips and the tabs
 /// themselves can stay short.

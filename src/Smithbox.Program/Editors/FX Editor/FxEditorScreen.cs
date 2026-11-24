@@ -11,7 +11,7 @@ using Veldrid.Sdl2;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The FX Editor: browse and edit FXR effects (FX Editor Plan, milestone E1+E2), with a viewport (phase V1). Each
+/// The FX Editor: browse and edit FXR effects (FX.md, milestone E1+E2), with a viewport (phase V1). Each
 /// view (<see cref="FxEditorView"/>) has its own Effect List, Effect Tree, Action Inspector, Viewport and Tools
 /// window; the screen keeps what the views share: the bank, saving, and the notes, favorites, templates and scans.
 /// </summary>

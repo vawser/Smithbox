@@ -33,7 +33,7 @@ public static class TimeActBehaviorRegistration
             return false;
         }
 
-        // Only the games whose behaviors were surveyed (Claude/Documentation/TAE Behavior Auto Registration Analysis.md)
+        // Only the games whose behaviors were surveyed (Claude/Documentation/Time Act.md (Features))
         if (project.Descriptor.ProjectType is not (ProjectType.ER or ProjectType.NR or ProjectType.DS3 or ProjectType.SDT))
         {
             reason = LOC.Get("TAE_Register_Unsupported_Game");

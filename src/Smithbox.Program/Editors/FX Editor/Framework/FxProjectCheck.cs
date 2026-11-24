@@ -6,7 +6,7 @@ namespace StudioCore.Editors.FxEditor;
 public record FxProblem(FxEntry Entry, string Where, string Text);
 
 /// <summary>
-/// The Project Check (FX Effect List Actions Plan, phase D): the Effect Tree's structure checks, plus resource and
+/// The Project Check (FX.md (Effect List and Effect Tree actions), phase D): the Effect Tree's structure checks, plus resource and
 /// binder checks, over every effect the project has changed (modified from vanilla, added, unsaved, or with binder
 /// changes waiting). Unloaded effects are read from their packed copies.
 /// </summary>

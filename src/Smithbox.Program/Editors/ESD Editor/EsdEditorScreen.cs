@@ -9,7 +9,7 @@ namespace StudioCore.Editors.EsdEditor;
 /// The ESD Editor: EzState machines (NPC talk, character, menu, DS2 AI/event scripts) as blocks, with names from
 /// Smithbox's catalogue (Assets/ESD/Catalogues, from ESDLang's documentation, used with permission). P2: the state
 /// view edits values, targets, commands, transitions and states, with undo and save; see
-/// Claude/Documentation/ESD Block Editor Analysis.md for the phases.
+/// Claude/Documentation/EMEVD and ESD.md (ESD Editor) for the phases.
 /// </summary>
 public class EsdEditorScreen : EditorScreen
 {

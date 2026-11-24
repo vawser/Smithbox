@@ -42,7 +42,7 @@ public sealed record LuaTimeActLogEntry(float SceneTime, long Animation, float C
 
 /// <summary>
 /// The TimeAct of the clip the Lua viewer's character is playing: its TAE events step with the clip, and those that
-/// spawn effects and bullets show them in the viewport (see Claude/Documentation/Lua Editor TAE Simulation.md).
+/// spawn effects and bullets show them in the viewport (see Claude/Documentation/Lua and AI.md (AI Simulation)).
 /// <list type="bullet">
 /// <item>The clip's TAE animation comes from the Time Act Editor's bank (so unsaved TAE edits show), found in the
 /// character's animation sets as its clips are; an animation that imports another's events plays those.</item>

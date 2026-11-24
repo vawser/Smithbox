@@ -4,7 +4,7 @@ using System.Collections;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// Event edits: add, delete, and deleting one transition (Claude/Documentation/Havok Behavior Events Category Plan.md).
+/// Event edits: add, delete, and deleting one transition (Claude/Documentation/Behavior.md (Havok behavior views)).
 /// A state or machine with no transitions holds null, not an empty array (every ER and DS3 file, eventsurvey),
 /// so removing the last transition of a list sets its holder's field to null.
 /// </summary>

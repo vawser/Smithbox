@@ -5,7 +5,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.FaceGenEditor;
 
 /// <summary>
-/// The FaceGen Editor's Tools window (see Claude/Documentation/Tool UI Styling.md):
+/// The FaceGen Editor's Tools window (see Claude/Documentation/UI.md (Tools window conventions)):
 /// General → Viewport Filters; Editing → Randomise; Validation → Face Check; Preview → Character Preview,
 /// Animation Browser.
 /// </summary>

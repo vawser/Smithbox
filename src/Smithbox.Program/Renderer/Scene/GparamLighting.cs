@@ -114,7 +114,7 @@ public class GparamShadow
 /// The lighting of a map at one time of day, from its GPARAMs: the LightSet, Tone Map, Shadows, EnvironmentConfig and
 /// Setting Info groups. Colors keep the game's convention of rgb with an intensity in w.
 /// A value that isn't found keeps these defaults, which are those of row 0 in Elden Ring's mapbase at t4.
-/// See Documentation/Full GI/Gparam Lighting.md.
+/// See Claude/Documentation/Lighting.md §2 GPARAM lighting.
 /// </summary>
 public class GparamLighting
 {
@@ -203,7 +203,7 @@ public class GparamLighting
     /// <summary>
     /// The TimeOfDay keys of the game's seven timezones (CutsceneGparamTimeParam: morning, noon A, noon B, evening,
     /// night, deep night A, deep night B), at which Elden Ring keys its lighting. Elden Ring's seven irradiance
-    /// volume bakes are these in order: bake N is lit as key N (Gparam Lighting.md, Phase 5).
+    /// volume bakes are these in order: bake N is lit as key N (Lighting.md §2 GPARAM lighting, Phase 5).
     /// </summary>
     public static readonly float[] TimeKeys = { 0.0f, 4.0f, 8.0f, 12.0f, 15.0f, 21.0f, 22.5f };
 
@@ -243,7 +243,7 @@ public class GparamLighting
 
     /// <summary>
     /// The direction a light with this GPARAM angle travels in: negative elevations point down, as all the game's
-    /// files have them. Checked against the game in the Map Editor (Gparam Lighting.md, Phase 2).
+    /// files have them. Checked against the game in the Map Editor (Lighting.md §2 GPARAM lighting, Phase 2).
     /// </summary>
     public static Vector3 AngleToDirection(Vector2 angle)
     {

@@ -15,7 +15,7 @@ public interface IMapHistoryItem
 
 /// <summary>
 /// Names undo steps and walks the history of a view: undo to a step, redo to a step, and how unloading a map
-/// shortens it. Plan: Documentation/Map Editor Review - Third Pass.md, R5.
+/// shortens it. Plan: Claude/Documentation/Map Editor.md (Editing rules), R5.
 /// </summary>
 public static class MapHistory
 {

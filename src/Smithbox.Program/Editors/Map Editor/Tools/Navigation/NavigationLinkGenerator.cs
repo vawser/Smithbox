@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// Jump and fall links for a generated navmesh (Navmesh Generation Plan, Links): from every boundary edge, a search
+// Jump and fall links for a generated navmesh (Navigation.md, Links): from every boundary edge, a search
 // outward for the first navmesh surface within reach, joined by a user-edge link chosen by the height change.
 // Kept free of the rest of Smithbox; NavSurvey `navgen` runs it, and `linkgeom` measures the game's own links.
 //

@@ -7,7 +7,7 @@ namespace StudioCore.Editors.FxEditor;
 public record FxDifference(string Key, string A, string B);
 
 /// <summary>
-/// Compares two effects value by value (FX Effect List Actions Plan, phase D). Each effect is flattened into keyed
+/// Compares two effects value by value (FX.md (Effect List and Effect Tree actions), phase D). Each effect is flattened into keyed
 /// lines (state conditions, then every node's actions and properties by tree position) and the keys are matched.
 /// Nodes are matched by position, as the game references them, so a node inserted early shows as later nodes changing.
 /// Only SoulsFormats is used, so the check tool compiles this file on its own.

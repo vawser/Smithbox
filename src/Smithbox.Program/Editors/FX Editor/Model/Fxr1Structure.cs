@@ -6,7 +6,7 @@ using System.Text;
 namespace StudioCore.Editors.FxEditor.Model;
 
 /// <summary>
-/// Structure edits on an FXR1 / FXR v2 effect (DS1, DS1R, BB; FFX Older Games Plan §21.8, F7b): a root's states, their
+/// Structure edits on an FXR1 / FXR v2 effect (DS1, DS1R, BB; FX.md, FFX §21.8, F7b): a root's states, their
 /// exits and actions, and the entries of call lists, with actions and exits from vanilla templates. An FXR1 effect is
 /// an object graph: an exit's target is the <see cref="FXR1.FXState"/> itself (null ends the effect), so states
 /// reorder without renumbering, and a deleted state's incoming exits end the effect. SoulsFormats + BCL only.

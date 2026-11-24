@@ -5,7 +5,7 @@ using StudioCore.Editors.FxEditor.Model;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// A structure edit of a DLSE effect (FFX Older Games Plan §21, F7a): a state, exit, action or call-list entry added,
+/// A structure edit of a DLSE effect (FX.md, FFX §21, F7a): a state, exit, action or call-list entry added,
 /// duplicated, deleted or moved. The whole effect is snapshotted to bytes before and after. The first execute edits
 /// the loaded file in place; redo and undo put a freshly read copy in the entry, so the model is rebuilt
 /// (<see cref="FxData.Effect"/> is keyed on the file object) and the selection, which held the old objects, is cleared.

@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Port;
 
 /// <summary>
-/// DS3 map pieces into ER map pieces (Material Mapping.md §3-5, §8.2): each DS3 material becomes a MATBIN from its
+/// DS3 map pieces into ER map pieces (Materials and Textures.md (DS3 → ER material port) §3-5, §8.2): each DS3 material becomes a MATBIN from its
 /// shader's template (one per distinct result over the whole map, names kept across runs by the manifest), the FLVER
 /// takes ER's header, skeleton set, the donors' GX lists and layouts, and its vertices are rebuilt for those layouts.
 /// The textures the MATBINs name are collected as jobs for <see cref="PortTextures"/>.
@@ -557,7 +557,7 @@ public sealed class PortPieces
 
     /// <summary>
     /// Whether a DS3 material is metal: the share of its specular map's pixels whose linear F0 luma is above
-    /// MetallicThreshold (0.1: dielectrics sit at 0.02-0.08), against MetallicCoverage (Material Mapping.md M7).
+    /// MetallicThreshold (0.1: dielectrics sit at 0.02-0.08), against MetallicCoverage (Materials and Textures.md (DS3 → ER material port) M7).
     /// </summary>
     private MetalInfo Metal(string spec)
     {
@@ -713,7 +713,7 @@ public sealed class PortPieces
                     if (blend && m.Index == 0) cols.Add(new FLVER.VertexColor(c.A, 1f, 1f, 1f));
                     // ER writes COLOR1.x to RT1.w, the vertex AO slot (GBuffer.md), and keeps G and B at 0 (m10: 2,394
                     // meshes). DS3 has no vertex AO there: COLOR1.x is unused, and COLOR1.w reaches RT1.w only as decal
-                    // opacity when FC_AlphaRef.z is set, else RT1.w is 0 (DS3 Painted World Rendering.md). So neither
+                    // opacity when FC_AlphaRef.z is set, else RT1.w is 0 (Rendering.md (Per-game material and model fixes)). So neither
                     // DS3 channel is occlusion: copied as R, m40's loose tiles (304871_03, R = 0) went black, and
                     // taking A instead blackened the stairs (004320, A 0.06) and patches of the ash (004600)
                     // (2026-11-22). ER R is 1, no occlusion.

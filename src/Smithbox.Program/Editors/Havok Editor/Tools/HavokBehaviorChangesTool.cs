@@ -6,7 +6,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// Changes (Behavior Editor Tools window): what the open behavior file adds, removes or changes against the game's
 /// copy, from the behavior view's change index (the same comparison the lists are coloured by), with value fields
-/// revertable one by one or per object. See Claude/Documentation/Havok Behavior Changes Plan.md and Tool UI Styling.md.
+/// revertable one by one or per object. See Claude/Documentation/Behavior.md (Havok behavior tools) and UI.md (Tools window conventions).
 /// </summary>
 public class HavokBehaviorChangesTool
 {

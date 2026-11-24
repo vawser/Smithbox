@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// The Save Check window: what <see cref="MapCheck" /> found in the maps a save was about to write. It isn't modal,
 /// so problems can be fixed in the editor while it is open, then checked again. Opened by File › Save when an issue
-/// stops the save, and by File › Check Maps Now. Plan: Documentation/Map Editor Save Check.md.
+/// stops the save, and by File › Check Maps Now. Plan: Claude/Documentation/Map Editor.md (Save Check).
 /// </summary>
 public class MapSaveCheckWindow
 {

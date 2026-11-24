@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.FxEditor;
 
-// The FX runtime (FX Editor Plan §10.2–10.3). Everything in Runtime/ uses only SoulsFormats and the BCL, so
+// The FX runtime (FX.md §10.2–10.3). Everything in Runtime/ uses only SoulsFormats and the BCL, so
 // Claude/Tools/FxRuntimeSurvey compiles the same files.
 
 /// <summary>What a property's curve is evaluated at (the schema's <c>argument</c>).</summary>

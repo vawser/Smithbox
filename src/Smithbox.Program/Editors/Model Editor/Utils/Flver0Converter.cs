@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// The Model and Time Act Editors hold a model as a FLVER2. Demon's Souls models are FLVER0, so they are converted on
 /// read and converted back on save (<see cref="WriteEditorFlver"/>); the Model Editor saves DES models, the Time Act
 /// Editor does not. The viewport draws them from the file itself (FlverResource reads FLVER0).
-/// See Documentation/Claude/Older Games/DES Model Display.md and DES Model Save.md.
+/// See Claude/Documentation/Model Editor.md §4.1 DES display fixes and Model Editor.md §4.2 DES saving.
 /// </summary>
 public static class Flver0Converter
 {

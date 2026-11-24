@@ -62,9 +62,9 @@ public record BhvField(int Offset, BhvFieldType Type, string LabelKey, string En
 }
 
 /// <summary>
-/// Where the known fields sit in each blob, by version and file kind. Sources: Claude/Documentation/BHV Format.md
+/// Where the known fields sit in each blob, by version and file kind. Sources: Claude/Documentation/Behavior.md (AC6 BHV format)
 /// (enummatch, parammatch, refmatch, animmatch, exe accessors and runtime capture) and the P0 renumber survey in
-/// Claude/Documentation/BHV Editor Analysis.md, which accepted the index slots below on every vanilla file.
+/// Claude/Documentation/Behavior.md (AC6 Behavior Editor), which accepted the index slots below on every vanilla file.
 /// </summary>
 public static class BhvLayout
 {

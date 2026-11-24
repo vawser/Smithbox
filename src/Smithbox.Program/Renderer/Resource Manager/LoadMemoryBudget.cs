@@ -13,7 +13,7 @@ namespace StudioCore.Renderer;
 ///         a model, collision or navmesh once it is parsed, a texture once it is uploaded to the GPU. Reading waits
 ///         while the budget is used up, so a load can't read far ahead of what parsing and uploading can keep up
 ///         with. Without it, a large map reads everything in parallel and waits gigabytes of decompressed data on the
-///         upload queue. See Claude/Documentation/Map Load Memory Analysis.md.
+///         upload queue. See Claude/Documentation/Map Editor.md (Map load memory).
 ///     </para>
 /// </summary>
 public static class LoadMemoryBudget

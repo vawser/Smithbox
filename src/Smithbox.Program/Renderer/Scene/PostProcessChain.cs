@@ -66,7 +66,7 @@ public abstract class PostProcessPass
 
 /// <summary>
 ///     The screen effects between a <see cref="SceneRenderPipeline" />'s scene and its tone map: bloom, fog, light
-///     shafts and the rest (Documentation/Post Processing/Plan.md). The passes run in the order they were added, each
+///     shafts and the rest (Claude/Documentation/Lighting.md §3 Post effects). The passes run in the order they were added, each
 ///     from the last one's output into the other of two textures, so they cost no memory until one is active. The
 ///     tone map then reads <see cref="Run" />'s result, which is the scene itself when nothing ran.
 /// </summary>

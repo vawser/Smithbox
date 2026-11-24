@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Compares the loaded model of a view with the model as the game ships it, for the Vanilla Compare tool: what is
 /// modified, added and removed, field by field, and the actions that revert them. The diff itself is
-/// <see cref="FlverDiff" />. Plan: Documentation/Model Editor Second Review.md, R6.
+/// <see cref="FlverDiff" />. Plan: Claude/Documentation/Model Editor.md, R6.
 /// </summary>
 public class ModelVanillaCompare
 {

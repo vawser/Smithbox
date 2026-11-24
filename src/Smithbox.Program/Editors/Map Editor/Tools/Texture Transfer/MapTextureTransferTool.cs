@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// Texture Transfer: finds the map textures the selected map's map pieces and objects use that its map texture binders
-/// don't hold, and copies them in from the binders that do (Claude/Documentation/Map Texture Transfer.md).
+/// don't hold, and copies them in from the binders that do (Claude/Documentation/Map Editor.md (Texture Transfer)).
 /// </summary>
 public class MapTextureTransferTool
 {

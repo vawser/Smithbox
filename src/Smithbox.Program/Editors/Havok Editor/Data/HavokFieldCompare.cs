@@ -20,7 +20,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// list node is Modified when anything below it differs.
 /// </para>
 /// The game's file is read once, in the background (HavokBank.ReadVanillaDocument); pairings and statuses are
-/// rebuilt after each edit, undo or redo (Invalidate). Plan: Claude/Documentation/Vanilla Modified-Added Parity.md.
+/// rebuilt after each edit, undo or redo (Invalidate). Plan: Claude/Documentation/UI.md (Vanilla state).
 /// </summary>
 public class HavokFieldCompare
 {

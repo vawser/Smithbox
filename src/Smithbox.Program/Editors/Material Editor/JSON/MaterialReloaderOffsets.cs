@@ -9,7 +9,7 @@ namespace StudioCore.Editors.MaterialEditor;
 /// Read from Assets/Material Reloader/{game}/*.json. The connection itself (which exe, quit out, reload world) is
 /// GameLink's, from Assets/Game Link. Every address is found by AOB, so a group usually keeps working on later
 /// versions; the reloader tries the group for the running version first, then the others, newest first.
-/// See Claude/Documentation/MATBIN Live Reload Analysis.md.
+/// See Claude/Documentation/Materials and Textures.md (Material Reloader).
 /// </summary>
 public class MaterialReloaderOffsets
 {

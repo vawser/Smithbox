@@ -23,7 +23,7 @@ public class ScaleformReloadCode
 /// <summary>
 /// One game version's addresses and layouts for the Scaleform Reloader, from
 /// Assets/Scaleform Reloader/&lt;GAME&gt;/&lt;exe version&gt;.json. Ported from gfx-reloader (MIT, lugia19), dll/src/game.rs.
-/// See Claude/Documentation/Scaleform Reloader Plan.md.
+/// See Claude/Documentation/Scaleform.md §5 Scaleform Reloader.
 /// </summary>
 public class ScaleformReloadOffsets
 {

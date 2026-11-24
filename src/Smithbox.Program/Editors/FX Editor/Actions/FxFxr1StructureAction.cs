@@ -5,7 +5,7 @@ using StudioCore.Editors.FxEditor.Model;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// A structure edit of an FXR1 / FXR v2 effect (DS1, DS1R, BB; FFX Older Games Plan §21.8, F7b), as
+/// A structure edit of an FXR1 / FXR v2 effect (DS1, DS1R, BB; FX.md, FFX §21.8, F7b), as
 /// <see cref="FxDlseStructureAction"/> is for DLSE: whole-file snapshots before and after; the first run edits in place,
 /// undo and redo put a freshly read copy in the entry (the model is rebuilt, the selection cleared).
 /// </summary>

@@ -16,10 +16,10 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Navigation tool's NGP mode, for DS2 and DS2S (Navigation Editor DS2 Plan, Phases G0 and G1). These games keep a
+/// The Navigation tool's NGP mode, for DS2 and DS2S (Navigation.md (NGP (DS2, DS2S)), Phases G0 and G1). These games keep a
 /// map's navigation in one .ngp file: a mesh per MSB navmesh part, the gates where meshes meet and the gate graph. The
 /// mode draws it over the map (faces by their flags, edges, gates, links), picks faces and gates, paints the face flags
-/// (level, type, attributes; NGP Format.md section 6), lists the gates, and checks it all. Every edit is one undoable
+/// (level, type, attributes; Navigation.md (NGP (DS2, DS2S)) section 6), lists the gates, and checks it all. Every edit is one undoable
 /// action (NavigationNgpEditAction); the map's save writes the file (NgpBank).
 /// </summary>
 public partial class NavigationTool

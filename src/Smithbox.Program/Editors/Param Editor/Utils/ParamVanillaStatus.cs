@@ -10,7 +10,7 @@ namespace StudioCore.Editors.ParamEditor;
 /// <summary>
 /// Vanilla status of param rows and fields for editors built on params (FaceGen, Projectile), using the same test
 /// as the Param Editor's row list: a row is Added when the vanilla param has no row of its ID, Modified when it is
-/// in the primary bank's vanilla diff cache. Plan: Claude/Documentation/Vanilla Modified-Added Parity.md.
+/// in the primary bank's vanilla diff cache. Plan: Claude/Documentation/UI.md (Vanilla state).
 /// </summary>
 public static class ParamVanillaStatus
 {

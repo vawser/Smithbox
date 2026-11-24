@@ -4,7 +4,7 @@ namespace StudioCore.Editors.BehaviorEditor;
 
 /// <summary>
 /// The AC6 TDF enums the BHV fields are typed by (Assets/PARAM/AC6/Tdfs, Shift-JIS). Matched by value in P0's
-/// enummatch survey; see Claude/Documentation/BHV Format.md.
+/// enummatch survey; see Claude/Documentation/Behavior.md (AC6 BHV format).
 /// </summary>
 public class BhvEnums
 {

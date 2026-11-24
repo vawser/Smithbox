@@ -7,8 +7,8 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// The Navigation tool's NGP mode (DS2, DS2S; Navigation Editor DS2 Plan, Phases G0 and G1): the map's one .ngp file,
-// its meshes joined to the MSB navmesh parts by position, the flag field's meaning (NGP Format.md, section 6) and the
+// The Navigation tool's NGP mode (DS2, DS2S; Navigation.md (NGP (DS2, DS2S)), Phases G0 and G1): the map's one .ngp file,
+// its meshes joined to the MSB navmesh parts by position, the flag field's meaning (Navigation.md (NGP (DS2, DS2S)), section 6) and the
 // flag edit. Renderer-free, so Tools/NavSurvey links it and checks it on the game files.
 
 /// <summary>The NGP games and how their files are laid out.</summary>
@@ -137,7 +137,7 @@ public static class NgpReader
 public enum NgpColorBy { Flags, Type, Level, Attributes }
 
 /// <summary>
-/// The face flag field (NGP Format.md, sections 6.4 to 6.6): bits 0-2 the level, a body-size gate; bits 3-6 the type;
+/// The face flag field (Navigation.md (NGP (DS2, DS2S)), sections 6.4 to 6.6): bits 0-2 the level, a body-size gate; bits 3-6 the type;
 /// bits 7-10 the attributes; nothing above. Names are LOC keys, MAP_Navigation_Ngp_Type_{Name} and so on.
 /// </summary>
 public static class NgpFlags
@@ -169,7 +169,7 @@ public static class NgpFlags
 
     /// <summary>
     /// The 16 type values and their names: those the game handles (door threshold, ladder, rope, one-way drop, event
-    /// area) from the exe, the others from where their faces lie (NGP Format.md 6.5).
+    /// area) from the exe, the others from where their faces lie (Navigation.md (NGP (DS2, DS2S)) 6.5).
     /// </summary>
     public static readonly (uint Value, string Name)[] Types =
     {
@@ -200,7 +200,7 @@ public static class NgpFlags
     /// <summary>
     /// The CHR_WEIGHT_TYPE values (0 None … 7 Very Enormous) a level admits: an enemy's query level is its weight type
     /// minus one (None and Minimum both 0), and a face accepts it if its level is greater (DarkSoulsII.exe 0x14042ED50,
-    /// 0x140BAF0D0). That weightType is the source is likely, not proven (NGP Format.md 6.4).
+    /// 0x140BAF0D0). That weightType is the source is likely, not proven (Navigation.md (NGP (DS2, DS2S)) 6.4).
     /// </summary>
     public static IEnumerable<int> WeightTypesAdmitted(uint level)
         => Enumerable.Range(0, 8).Where(w => Math.Max(0, w - 1) < (int)level);

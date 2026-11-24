@@ -11,7 +11,7 @@ namespace StudioCore.Editors.GparamEditor;
 /// vanilla colours. A group or field the game's file lacks is Added; one whose values differ (count, ID, time of day
 /// or value) is Modified, and a group is Modified when any of its fields is added, modified or removed.
 /// The game's GPARAM is read once per file and kept (it never changes); results are cached until the next edit, undo
-/// or redo (Invalidate, wired to the view's ActionManager). Plan: Claude/Documentation/Vanilla Modified-Added Parity.md.
+/// or redo (Invalidate, wired to the view's ActionManager). Plan: Claude/Documentation/UI.md (Vanilla state).
 /// </summary>
 public class GparamVanillaCompare
 {

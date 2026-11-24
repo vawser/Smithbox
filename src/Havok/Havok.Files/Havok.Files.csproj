@@ -3,7 +3,7 @@
     <!-- Unified Havok library, Phase 6: the HavokFile facade (plan §2.3). It reads any supported file into a
          HavokDocument, picking the format engine, tagfile dialect and generated class set from the file itself.
          It's a project of its own because it references every class set, and they reference Havok.Core.
-         (Documentation/Claude/Unified Havok Library Plan.md) -->
+         (Claude/Documentation/Havok Library.md) -->
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>

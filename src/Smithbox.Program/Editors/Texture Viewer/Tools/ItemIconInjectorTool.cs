@@ -17,7 +17,7 @@ namespace StudioCore.Editors.TextureViewer;
 /// The Item Icon Injector (Texture Editor Tools window, GFX category): adds an item icon by id. The image goes into a
 /// MENU_ItemIcon_NNNNN cell of the hi icon sheets and their low twins (through Texture Import's cell jobs), and every
 /// movie with the icon's page shows it on the page's frame (ItemIconPages), all in one undoable action. Shown when a
-/// movie of the project has item icon pages (SDT). See Claude/Documentation/Item Icon Injector Plan.md.
+/// movie of the project has item icon pages (SDT). See Claude/Documentation/Param Editor.md (Item icon injector).
 /// </summary>
 public class ItemIconInjectorTool
 {

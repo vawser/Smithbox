@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// A map piece of one map to be copied into another (Claude/Documentation/Map Piece Port.md)
+/// A map piece of one map to be copied into another (Claude/Documentation/Map Editor.md (Map Piece Port))
 /// </summary>
 public class MapPiecePortPlan
 {

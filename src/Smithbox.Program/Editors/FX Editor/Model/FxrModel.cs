@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace StudioCore.Editors.FxEditor.Model;
 
-// FXR3 adapters for the FX model (Claude/Documentation/FFX Older Games Plan.md §12). They wrap FXR's own objects and
+// FXR3 adapters for the FX model (Claude/Documentation/FX.md, FFX §12). They wrap FXR's own objects and
 // FxrActionView; nothing is copied, so edits through an adapter edit the FXR, and edits made directly show up.
 
 /// <summary>Builds the model view of an FXR.</summary>

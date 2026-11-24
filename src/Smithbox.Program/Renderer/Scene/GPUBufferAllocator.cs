@@ -399,7 +399,7 @@ public class GPUBufferAllocator
         // Allocate can resize the buffer from a loader thread at any moment (a map load allocates thousands of
         // materials). Unlocked, a resize landing between MigrateIfPending and the write sent the write to the new
         // buffer before the migration copy, which then overwrote it with the old buffer's contents: the material
-        // kept its defaults (untextured BB map pieces, see Claude/Documentation/BB Untextured Map Pieces.md).
+        // kept its defaults (untextured BB map pieces, see Claude/Documentation/Materials and Textures.md (Material fidelity)).
         // Under the lock, the migration copy, the staging buffer and the backing buffer all belong to one size.
 
         public void FillBuffer<T>(T[] data, Action completionHandler = null) where T : struct

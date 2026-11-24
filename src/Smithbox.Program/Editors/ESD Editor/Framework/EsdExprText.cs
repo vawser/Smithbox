@@ -11,7 +11,7 @@ namespace StudioCore.Editors.EsdEditor;
 public record EsdParseError(string Message, int Position);
 
 /// <summary>
-/// The editable text form of ESD expressions (P4 text input; Claude/Documentation/ESD Block Editor Analysis.md §9
+/// The editable text form of ESD expressions (P4 text input; Claude/Documentation/EMEVD and ESD.md (ESD Editor) §9
 /// decision 5): Format writes a tree as text, Parse reads text back into a tree, Merge keeps an old expression's exact
 /// bytes wherever the new tree matches it.
 ///

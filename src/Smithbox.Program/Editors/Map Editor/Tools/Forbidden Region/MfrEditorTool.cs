@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <see cref="MfrEditAction"/>, recomputing the boxes' quadtree cells; the map's save writes the file.
 ///
 /// The viewport side (picking boxes, the gizmo, placing a box on a surface) is in MfrEditorTool.Viewport.
-/// See Claude/Documentation/MFR Format.md.
+/// See Claude/Documentation/Formats.md (MFR).
 /// </summary>
 public partial class MfrEditorTool
 {

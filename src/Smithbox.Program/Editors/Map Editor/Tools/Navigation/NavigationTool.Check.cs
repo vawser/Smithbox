@@ -7,7 +7,7 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Going to a Check issue (Navigation Editor UX Analysis, R6): a click on an issue's row draws its navmesh's set, picks
+/// Going to a Check issue (Navigation.md, R6): a click on an issue's row draws its navmesh's set, picks
 /// its face, chooses its gate or selects its model, and frames it in the viewport. The issue only holds a NameID, so
 /// the navmesh is found again in the drawn data once the overlay is up to date.
 /// </summary>

@@ -46,7 +46,7 @@ public enum MaterialDeformer
     /// <summary>
     /// A cutscene's baked vertex animation (the [VA_Frame] shaders). The cutscene sets the textures and the frame through
     /// <see cref="FlverResource.FlverMaterial.SetVertexAnimation"/>; without them the model keeps its bind pose.
-    /// See Claude/Documentation/Cutscene Vertex Animation.md
+    /// See Claude/Documentation/Rendering.md (Per-game material and model fixes)
     /// </summary>
     VatFrame,
 
@@ -350,7 +350,7 @@ public class MaterialFurRecipe
 /// How a paint shader (AC6's ColorMaterial family) builds its surface ({GAME}_Paint.json). A paint slot is picked per
 /// pixel by the mask's red and mixed in by its green over a base texture, then layers (wear, dirt, damage, and a top one)
 /// are lerped over it by weights worked out from the own normal and albedo. The own albedo then multiplies the whole by
-/// <see cref="Scale"/>. See Claude/Documentation/AC6 Paint Materials.md.
+/// <see cref="Scale"/>. See Claude/Documentation/Materials and Textures.md (Material fidelity).
 /// Textures are sampler slots: "7" is Texture2D_7, "A0" Texture2DArray_0. Values are parameter names without the shader
 /// prefix ("snp_0_float_6"), with ":N" for a component, or numbers. A colour parameter is its rgb times its intensity.
 /// </summary>
@@ -444,7 +444,7 @@ public class MaterialPaintWeight
 /// An AC6 energy effect (P[LaserBlade]_001: laser blades, energy wings, thrusters), unlit and additive. Its textures,
 /// colours and values by role; FlverResource and FlverShader.frag's LaserSurface know what each role does. Textures are
 /// sampler slots ("3" is Texture2D_3), colours and values parameter names without the shader prefix, or numbers. A
-/// colour is its rgb times its intensity. See Claude/Documentation/AC6 Laser Blades.md.
+/// colour is its rgb times its intensity. See Claude/Documentation/Rendering.md (Per-game material and model fixes).
 /// </summary>
 public class MaterialLaserRecipe
 {
@@ -949,7 +949,7 @@ public class MaterialResolvedReflectWater
 /// <summary>
 /// The two-layer blend of the GXFlver MulMask and DirtMask shaders (Bloodborne's and DS3's M[ARSN]_blend materials),
 /// from DS3's GXFlver_ColDifSpcBumpMulMaskDOL and GXFlver_ColDifSpcBumpDirtMaskDOL disassembly
-/// (Claude/Documentation/BB Mask Blend.md). With a the vertex color's alpha and k = mask.r * P.x + P.z:
+/// (Claude/Documentation/Materials and Textures.md (Material fidelity)). With a the vertex color's alpha and k = mask.r * P.x + P.z:
 /// w = k &gt; 0 ? sat(a(1 + k)) : sat(a + k(1 - a)), smoothstepped (w²(3 - 2w)), and the layers are lerp(1, 2, w).
 /// P is FC_BlendMaskParam, from the FLVER material's GX01 (BlendMaskIntensity), see FlverResource.
 /// </summary>

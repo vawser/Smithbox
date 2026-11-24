@@ -1,6 +1,6 @@
 // The flying navigation volume of Armored Core VI (hkaiNavVolume): building its cells, edges and cell tree from
 // collision, in place of Havok's generator, which Smithbox doesn't have. The rules come from the game's 20 volumes and
-// the calibration in Claude/Documentation/AC6 Flying Navigation Regeneration Analysis.md (sections 2, 4 and 6):
+// the calibration in Claude/Documentation/Navigation.md (AC6 flying navigation) (sections 2, 4 and 6):
 // - the volume is a grid of ~10 m voxels; a voxel is solid when a collision triangle overlaps its box enlarged by a
 //   margin (0.1 voxel), and free otherwise; nothing is filled inside closed objects;
 // - the cells are axis-aligned boxes that tile the free voxels exactly, grown greedily (x, then z, then y);

@@ -109,7 +109,7 @@ public class FxBank : IDisposable
                         var reader = dlse ? OpenBinder(FS.ReadFile(binder.Path).Value) : new BND4Reader(FS.ReadFile(binder.Path).Value);
 
                         // Only a binder the project has saved can differ from the game's: its effects are compared
-                        // with the game's copy of the binder (FX Effect List Actions Plan §1)
+                        // with the game's copy of the binder (FX.md (Effect List and Effect Tree actions) §1)
                         Dictionary<string, byte[]> vanilla = null;
                         if (Project.VFS.ProjectFS.FileExists(binder.Path))
                             vanilla = ReadVanillaEffects(binder.Path);
@@ -122,7 +122,7 @@ public class FxBank : IDisposable
 
                         foreach (var file in reader.Files)
                         {
-                            // DS2 / DS2S keep a per-effect table (FFX Older Games Plan §22.2): effects can't be added or removed until it's understood
+                            // DS2 / DS2S keep a per-effect table (FX.md, FFX §22.2): effects can't be added or removed until it's understood
                             if (file.Name.EndsWith(".sfxparam", StringComparison.OrdinalIgnoreCase))
                             {
                                 effectTable = true;
@@ -231,7 +231,7 @@ public class FxBank : IDisposable
 
     /// <summary>
     /// The binders hold per-effect tables (.sfxparam: DS2, DS2S), kept in step when effects are added, renumbered or
-    /// deleted (FFX Older Games Plan §22.8, F8b). Filled by indexing.
+    /// deleted (FX.md, FFX §22.8, F8b). Filled by indexing.
     /// </summary>
     public bool HasEffectTable { get; private set; }
     private volatile bool _finishedEffectTable;
@@ -358,7 +358,7 @@ public class FxBank : IDisposable
 
     /// <summary>
     /// The game's copy of the effect as a file object of this game's format (FXR, FFXDLSE or FXR1), read fresh; null
-    /// when the game has none (FFX Older Games Plan §22, F8: Revert and Compare with Vanilla for every format).
+    /// when the game has none (FX.md, FFX §22, F8: Revert and Compare with Vanilla for every format).
     /// </summary>
     public object ReadVanillaFile(FxEntry entry)
     {
@@ -603,7 +603,7 @@ public class FxBank : IDisposable
     }
 
     /// <summary>
-    /// A DLSE game's effect as a separate copy (FFX Older Games Plan §21, F7a templates): the loaded file written and
+    /// A DLSE game's effect as a separate copy (FX.md, FFX §21, F7a templates): the loaded file written and
     /// read back when the entry is loaded (so edits count), else read from the packed bytes. Null when it can't be read.
     /// </summary>
     public FFXDLSE ReadFfxCopy(FxEntry entry)
@@ -624,7 +624,7 @@ public class FxBank : IDisposable
     }
 
     /// <summary>
-    /// An FXR1 / FXR v2 game's effect as a separate copy (FFX Older Games Plan §21.8, F7b templates): the loaded file
+    /// An FXR1 / FXR v2 game's effect as a separate copy (FX.md, FFX §21.8, F7b templates): the loaded file
     /// written and read back when the entry is loaded, else read from the packed bytes. Null when it can't be read.
     /// </summary>
     public FXR1 ReadFxr1Copy(FxEntry entry)
@@ -658,7 +658,7 @@ public class FxBank : IDisposable
 
     /// <summary>
     /// Effects deleted in the editor whose files are still in binders: the next save removes them
-    /// (FX Effect List Actions Plan §2). Their ids stay taken until then.
+    /// (FX.md (Effect List and Effect Tree actions) §2). Their ids stay taken until then.
     /// </summary>
     public List<FxEntry> Deleted = new();
 
@@ -889,7 +889,7 @@ public class FxBank : IDisposable
     /// each, BND3 or BND4, with the binder's own compression (DES DCX_EDGE, DS2 and DS1R DFLT, DS1 none). Where the game also ships the
     /// binder uncompressed next to it (x.ffxbnd beside x.ffxbnd.dcx), that copy is written too, so both stay the same.
     /// A binder an effect wasn't in gets its file, and files of deleted effects or binders an effect left are removed,
-    /// laid out as the binder numbers its files (FFX Older Games Plan §22, F8; <see cref="Model.FfxBinders.SchemeOf"/>).
+    /// laid out as the binder numbers its files (FX.md, FFX §22, F8; <see cref="Model.FfxBinders.SchemeOf"/>).
     /// </summary>
     private bool SaveDlse(List<FxEntry> list, List<(FxEntry entry, FxBinderRef where)> removals, List<FxEntry> deleted,
         List<FxEntry> recordAdds, List<FxEntry> recordRemoves)
@@ -1093,7 +1093,7 @@ public class FxBank : IDisposable
     /// ER, AC6 and NR keep f&lt;id&gt;.ffxreslist next to each FXR: the build tool's list of the effect's source
     /// resources (textures as s&lt;id&gt;_&lt;type&gt;.tif, models as s&lt;id&gt;.sib), including ones it derives from models
     /// that can't be rebuilt from the FXR. So the stored list is kept as is, and only resources the effect
-    /// references directly that are missing from it are appended (FX Editor Plan §2).
+    /// references directly that are missing from it are appended (FX.md §2).
     /// </summary>
     private void UpdateResourceList(BND4 bnd, FxEntry entry)
     {

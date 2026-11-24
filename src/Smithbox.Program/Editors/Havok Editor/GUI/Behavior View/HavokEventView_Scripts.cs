@@ -7,7 +7,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// The Events view's links to the action scripts (HavokScriptIndex): which events the shown file's paired scripts
 /// name, where (call sites, opened in the Script window), and the W_ names they use that this file lacks.
 /// A script not naming an event proves nothing: the game fires many itself (W_Damage, W_Death ...).
-/// See Claude/Documentation/Havok Behavior HKS Cross-Reference Plan.md.
+/// See Claude/Documentation/Behavior.md (Havok behavior views).
 /// </summary>
 public partial class HavokEventView
 {

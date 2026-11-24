@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The world map built from the game's own map tiles, as the game's map menu does (ER and NR). See
-/// Claude/Documentation/World Map Tiles.md.
+/// Claude/Documentation/Map Editor.md (World map).
 ///
 /// ER: menu/71_maptile.tpfbhd/.tpfbdt, tiles MENU_MapTile_Mmm_Ll_xx_yy_ffffffff, 256x256: map Mmm (M00 Lands
 /// Between, M10 Shadow of the Erdtree), level Ll, cell (xx, yy) with yy counting from the south, and a set of map

@@ -8,7 +8,7 @@ namespace StudioCore.Editors.EsdEditor;
 /// <summary>
 /// The state view: the selected machine's states as blocks. Each state is a hat block, with its entry / while / exit
 /// commands, then its conditions as C-blocks (the transition's test as reporter chips, its target, its pass commands
-/// and nested subconditions). Read-only in P1; see Claude/Documentation/ESD Block Editor Analysis.md.
+/// and nested subconditions). Read-only in P1; see Claude/Documentation/EMEVD and ESD.md (ESD Editor).
 /// </summary>
 public class EsdStateView
 {

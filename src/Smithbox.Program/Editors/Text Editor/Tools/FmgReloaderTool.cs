@@ -9,7 +9,7 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// FMG Reloader (ER, NR, AC6, DS3): replaces FMGs in the running game with the editor's copies, so text edits can be tested without
 /// a restart. Lists the FMGs the game holds; a click selects that FMG here. See
-/// Claude/Documentation/FMG Live Reload Analysis.md.
+/// Claude/Documentation/Text Editor.md (FMG Reloader).
 /// </summary>
 public class FmgReloaderTool
 {

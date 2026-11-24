@@ -3,7 +3,7 @@ using System.Numerics;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// Runs the selected effect for the viewport (FX Editor Plan, phase V2). It follows the playback clock: forward
+/// Runs the selected effect for the viewport (FX.md, phase V2). It follows the playback clock: forward
 /// steps simulate on, and a clock that goes back (restart, loop, scrubbing) replays from time 0 with the same seed,
 /// so the same time always shows the same particles. An edit, undo or redo rebuilds the effect and replays it to
 /// the current time.

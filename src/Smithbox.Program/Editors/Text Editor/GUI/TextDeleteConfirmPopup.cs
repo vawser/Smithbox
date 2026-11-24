@@ -44,7 +44,7 @@ public class TextDeleteConfirmPopup
         }
 
         // Set width, auto height: with AlwaysAutoResize alone, wrapped text never wraps
-        // (see Documentation/Claude/Tool UI Styling.md, Modals)
+        // (see Claude/Documentation/UI.md (Tools window conventions), Modals)
         ImGui.SetNextWindowSize(new System.Numerics.Vector2(460, 0) * DPI.UIScale(), ImGuiCond.Always);
 
         if (ImGui.BeginPopupModal(title, ImGuiWindowFlags.AlwaysAutoResize))

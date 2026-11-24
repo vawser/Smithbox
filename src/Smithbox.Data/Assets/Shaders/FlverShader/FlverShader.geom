@@ -28,7 +28,7 @@ layout(location = 12) flat in uint gsin_flags[];
 	layout(location = 13) flat in uint gsin_lightmap[];
 	layout(location = 14) flat in mat3 gsin_modelToWorld[];
 #endif
-layout(location = 17) flat in uvec2 gsin_lightingSet[];
+layout(location = 17) flat in uvec4 gsin_lightingSet[];
 #ifdef MATERIAL_UV3
 	layout(location = 19) in vec2 gsin_texcoord3[];
 #endif
@@ -52,7 +52,7 @@ layout(location = 12) flat out uint fsin_flags;
 	layout(location = 13) flat out uint fsin_lightmap;
 	layout(location = 14) flat out mat3 fsin_modelToWorld;
 #endif
-layout(location = 17) flat out uvec2 fsin_lightingSet;
+layout(location = 17) flat out uvec4 fsin_lightingSet;
 #ifdef MATERIAL_UV3
 	layout(location = 19) out vec2 fsin_texcoord3;
 #endif

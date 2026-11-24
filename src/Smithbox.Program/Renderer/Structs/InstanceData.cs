@@ -47,7 +47,25 @@ public struct InstanceData
     /// </summary>
     public uint Fade;
 
-    // Reserved: fills the 16 byte row
-    public uint LightingPad1;
-    public uint LightingPad2;
+    /// <summary>
+    ///     A colour the flver shader multiplies the albedo (and its alpha) by, as half floats: R and G in
+    ///     <see cref="TintRG" />, B and A in <see cref="TintBA" />. Both 0, the default, is no tint. An effect's
+    ///     RichModel particles take their colour this way (<see cref="MeshRenderableProxy.Tint" />).
+    /// </summary>
+    public uint TintRG;
+    public uint TintBA;
+
+    /// <summary>Packs a tint for <see cref="TintRG" /> and <see cref="TintBA" />; null is no tint.</summary>
+    public static (uint RG, uint BA) PackTint(Vector4? tint)
+    {
+        if (tint is not { } t)
+            return (0u, 0u);
+        static uint Half(float v) => BitConverter.HalfToUInt16Bits((Half)v);
+        uint rg = Half(t.X) | (Half(t.Y) << 16);
+        uint ba = Half(t.Z) | (Half(t.W) << 16);
+        // An all-zero tint would read as none: keep the alpha's lowest bit so it still blacks the model out
+        if (rg == 0 && ba == 0)
+            ba = 1;
+        return (rg, ba);
+    }
 }

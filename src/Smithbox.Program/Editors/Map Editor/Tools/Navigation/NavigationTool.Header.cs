@@ -5,7 +5,7 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The tool's header, drawn above the tabs whichever is open (Navigation Editor UX Analysis, R2): the overlay toggle and
+/// The tool's header, drawn above the tabs whichever is open (Navigation.md, R2): the overlay toggle and
 /// set, which viewport mode takes the clicks, the picked face and selected model, and uncommitted vertex edits. So the
 /// state that changes what a click in the viewport does is always visible.
 /// </summary>

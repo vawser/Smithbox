@@ -14,7 +14,7 @@ namespace StudioCore.Editors.FxEditor;
 public record FxExternalUse(int Id, string Kind, string Source, string Label, string Command);
 
 /// <summary>
-/// References to effects from TAE events and MSB map objects (FX Editor Plan §22, phase E5). Reading every anibnd
+/// References to effects from TAE events and MSB map objects (FX.md §22, phase E5). Reading every anibnd
 /// and every map takes minutes in ER, so it runs only when asked, on a background task, and the result is cached in
 /// &lt;project&gt;/.smithbox/Project/FX/References.json for later sessions. The cache is marked out of date when a
 /// time act or map file in the project is newer than the scan.

@@ -16,7 +16,7 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Navigation tool's NVM mode, for DeS, DS1 and DS1R (Navigation Editor Other Games Plan, Phase N6). These games
+/// The Navigation tool's NVM mode, for DeS, DS1 and DS1R (Navigation.md, Phase N6). These games
 /// keep their navigation in NVM files (one per MSB navmesh part, in the map's NVM binder), an MCP of rooms (one per part)
 /// and an MCG graph whose nodes sit on gate triangles. The mode draws them over the map, picks triangles and nodes,
 /// paints triangle flags, edits the NVM entities (triangle sets an event can disable), moves vertices with the Edit

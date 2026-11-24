@@ -8,7 +8,7 @@ namespace StudioCore.Editors.MapEditor;
 
 // The jump and drop links of DS3, BB and SDT: user edge setups (hkaiUserEdgeSetupArray), which the game turns into user
 // edges when it loads the navmesh, as their meshes have none baked in. Kept free of the rest of Smithbox, so
-// Tools/NavSurvey can link it. See Documentation/Claude/Navigation Editor Other Games Plan.md, N5.
+// Tools/NavSurvey can link it. See Claude/Documentation/Navigation.md, N5.
 //
 // How the game's setups sit (NavSurvey setups; DS3 650, SDT 1,288, BB 62 in the surveyed maps):
 // - every BB and SDT setup and 452 of DS3's 650 are in the mesh's own (local) space; the rest of DS3's are world space;

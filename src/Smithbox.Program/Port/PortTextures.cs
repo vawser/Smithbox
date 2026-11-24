@@ -20,7 +20,7 @@ public sealed class TextureJob
 }
 
 /// <summary>
-/// The AET textures of a port (Material Mapping.md §8.3), one TPF per container (asset/aet/aetGGG/aetGGG_NNN.tpf.dcx)
+/// The AET textures of a port (Materials and Textures.md (DS3 → ER material port) §8.3), one TPF per container (asset/aet/aetGGG/aetGGG_NNN.tpf.dcx)
 /// with the fields of an ER AET TPF, plus its low-detail twin (_l):
 /// <list type="bullet">
 /// <item>Copy: the DS3 DDS as it is (DS3 and ER use the same formats per role)</item>

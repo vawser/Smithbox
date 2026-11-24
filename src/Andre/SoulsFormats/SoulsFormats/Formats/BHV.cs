@@ -30,7 +30,7 @@ namespace SoulsFormats
     /// All offsets in the file are relative to 0x20. The data is written in a fixed sequential order:
     /// header, preamble, states, state data, transitions, transition params, conditions, condition data,
     /// animations, struct C, struct D, struct DA, strings. Variable-length payloads are sized from that order.
-    /// See Claude/Documentation/BHV Format.md.
+    /// See Claude/Documentation/Behavior.md (AC6 BHV format).
     /// </remarks>
     public class BHV : SoulsFile<BHV>
     {

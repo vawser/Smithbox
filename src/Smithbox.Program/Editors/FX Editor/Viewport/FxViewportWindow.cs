@@ -9,7 +9,7 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The FX Editor's viewport (FX Editor Plan, phase V1): the grid, the shared viewport environment's lighting, and the
+/// The FX Editor's viewport (FX.md, phase V1): the grid, the shared viewport environment's lighting, and the
 /// selected effect's node origins and emitter shapes as debug wireframes (<see cref="FxDebugShapes"/>).
 /// </summary>
 public class FxViewportWindow

@@ -3,7 +3,7 @@ using SoulsFormats;
 namespace StudioCore.Editors.FxEditor.Model;
 
 /// <summary>
-/// Structure edits on a DLSE effect (DES / DS2 / DS2S; FFX Older Games Plan §21, F7a): states, exits, a state's
+/// Structure edits on a DLSE effect (DES / DS2 / DS2S; FX.md, FFX §21, F7a): states, exits, a state's
 /// actions, the entries of a call list, and new actions from vanilla templates. Each operation works on one
 /// <see cref="FFXDLSE.FXEffect"/> (a DES wrapper's chosen variant, or the effect itself) and keeps the effect valid:
 /// exit targets follow their states (−1 ends the effect), and the ResourceSet is completed on save (F3c's keep +

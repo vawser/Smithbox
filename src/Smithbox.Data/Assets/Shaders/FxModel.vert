@@ -1,7 +1,7 @@
 #version 450
 #extension GL_GOOGLE_include_directive : require
 
-// Vertex stage of the FX Editor's Model particles (FX Editor Plan §18, FxModelRenderableProxy.cs): a FLVER submesh
+// Vertex stage of the FX Editor's Model particles (FX.md §18, FxModelRenderableProxy.cs): a FLVER submesh
 // drawn once per particle, coloured by the effect. One 96 byte slot per instance, laid out as FxModelGpu; a batch
 // is allocated 96 byte aligned and drawn with its first instance at (start / 96), so instance i reads slot i.
 //

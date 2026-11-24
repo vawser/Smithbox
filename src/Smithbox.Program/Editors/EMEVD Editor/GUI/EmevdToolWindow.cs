@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
-/// The EMEVD Editor's Tools window: Search, Called By, Palette and Problems (see Claude/Documentation/Tool UI Styling.md)
+/// The EMEVD Editor's Tools window: Search, Called By, Palette and Problems (see Claude/Documentation/UI.md (Tools window conventions))
 /// </summary>
 public class EmevdToolWindow
 {

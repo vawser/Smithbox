@@ -462,6 +462,31 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     private bool IsFading => _opacity < 1 && UsesFlverShader;
 
+    private Vector4? _tint;
+
+    /// <summary>
+    ///     A colour the flver shader multiplies the mesh's albedo by (rgb, and alpha for a transparent material), as
+    ///     the game tints an effect's RichModel particle by the effect's colour. Null, the default, is none. A change
+    ///     only updates the instance. Written to <see cref="InstanceData.TintRG" /> and <see cref="InstanceData.TintBA" />.
+    /// </summary>
+    public Vector4? Tint
+    {
+        get => _tint;
+        set
+        {
+            if (_tint == value)
+                return;
+
+            _tint = value;
+            ScheduleRenderableUpdate();
+
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.Tint = value;
+            }
+        }
+    }
+
     /// <summary>
     ///     The lighting set this mesh is lit by: an entry of its view's
     ///     <see cref="SceneRenderPipeline.SceneLightingBuffer" />, 0 for the view's own lighting. Written to
@@ -534,6 +559,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.ReceivesShadow = _receivesShadow;
             child.Lightmap = _lightmap;
             child.LightSet = _lightSet;
+            child.Tint = _tint;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -1134,6 +1160,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         // The lighting set has a lane of its own; only the flver shader reads it
         dat.LightingSet = UsesFlverShader ? _lightSet : 0u;
         dat.Fade = UsesFlverShader ? BitConverter.SingleToUInt32Bits(1 - _opacity) : 0u;
+        (dat.TintRG, dat.TintBA) = InstanceData.PackTint(UsesFlverShader ? _tint : null);
 
         if (_meshProvider.BoneBuffer != null)
         {

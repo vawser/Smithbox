@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// The NGP mode's geometry helpers (Navigation Editor DS2 Plan, Phase G5): a ladder strip at a ladder object and a drop
+// The NGP mode's geometry helpers (Navigation.md (NGP (DS2, DS2S)), Phase G5): a ladder strip at a ladder object and a drop
 // strip from a ledge to the floor below. Both cut their joins into the floors, as the game's own data does. Vanilla
 // strips are manifold: no ladder face shares an edge with two other faces, so the floor ends where a strip joins it.
 // Renderer-free, so NavSurvey checks them on the game files (`nvm GAME ngp-strips`).

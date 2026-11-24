@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ModelEditor;
 public sealed record GrassBuildOptions(float MaxAngle, float[] Densities);
 
 /// <summary>
-/// Builds Sekiro GRASS files by the rules of the 772 vanilla ones (GrassSurvey, Claude/Documentation/GRASS Builder.md):
+/// Builds Sekiro GRASS files by the rules of the 772 vanilla ones (GrassSurvey, Claude/Documentation/Formats.md (GRASS)):
 /// <list type="bullet">
 /// <item>Each face's normal is normalize(cross(C - A, B - A)). FLVER triangles are wound the same way (99.9% point
 /// along their vertex normals), so copying a triangle keeps the side it faces.</item>

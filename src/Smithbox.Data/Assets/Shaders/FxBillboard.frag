@@ -124,7 +124,7 @@ float ViewDepth(float depth)
 	return abs(projection[3][2] / (depth * projection[2][3] - projection[2][2]));
 }
 
-// ---------------------------------------------------------------- screen effects (FX Editor Plan §20.7)
+// ---------------------------------------------------------------- screen effects (FX.md §20.7)
 
 // The scene colour behind the transparent draws (SceneColor.cs), at a screen uv
 vec3 SceneAt(uint scene, vec2 suv)

@@ -1,5 +1,5 @@
 // The game a pipeline draws for, and the family of games that share its shading model.
-// See Documentation/Shader Family Split Plan.md (§3, Appendix A).
+// See Claude/Documentation/Rendering.md (Shader family split) (§3, Appendix A).
 //
 // c_gameID is specialization constant 0, the project's ProjectType (FlverResource sets it), so the IDs here must be
 // ProjectType's values. The family constants are worked out from it when the pipeline is made, so the branches of the

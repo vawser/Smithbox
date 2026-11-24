@@ -7,7 +7,7 @@ namespace StudioCore.Editors.SoundEditor;
 /// <summary>
 /// Read-only FMOD sample bank: FSB5 (DS2, DS2S, BB, DS3, SDT) and FSB4 (DS1, DS1R, DS2, BB). Header, sample table
 /// and names only; the audio is left to vgmstream. Encrypted banks (the DS3/SDT music banks) are decrypted with the
-/// game's key first. See Claude/Documentation/Sound Editor Plan.md §2a.
+/// game's key first. See Claude/Documentation/Sound Editor.md §2a.
 /// <para>Kept free of Smithbox dependencies: Claude/Tools/SoundSurvey links this file.</para>
 /// </summary>
 public sealed class FsbFile

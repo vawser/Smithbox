@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TextureViewer;
 /// control block, which Smithbox reads and writes from outside. One allocation near the exe:
 ///   page 0: header (magic, control block address), three trampolines, the hook code (assembled with Iced);
 ///   page 1: the control block.
-/// The hooks are never taken out; the Enabled flag turns them off. See Claude/Documentation/Scaleform Reloader Plan.md.
+/// The hooks are never taken out; the Enabled flag turns them off. See Claude/Documentation/Scaleform.md §5 Scaleform Reloader.
 /// </summary>
 public static class ScaleformHooks
 {

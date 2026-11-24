@@ -6,7 +6,7 @@ namespace SoulsFormats
     {
         /// <summary>
         /// FXR v2 (Bloodborne): the small record an action-call container can point to, where FXR v1 has ActionData.
-        /// Two kinds are seen in every vanilla file (FfxSurvey --bbwalk, FFX Older Games Plan §19): kind 1, 48 bytes
+        /// Two kinds are seen in every vanilla file (FfxSurvey --bbwalk, FX.md, FFX §19): kind 1, 48 bytes
         /// (i32 1, i32 flags 0/1/256/257, then zeros, -0.0f and 1.0f in vanilla); kind 0, 8 bytes (i32 0, i32 n). Neither
         /// holds pointers, so the bytes are kept as read; their meaning is unknown.
         /// </summary>

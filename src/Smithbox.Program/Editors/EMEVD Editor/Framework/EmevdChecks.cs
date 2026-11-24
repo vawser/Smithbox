@@ -27,7 +27,7 @@ public enum EmevdProblemKind
 public record EmevdProblem(EmevdProblemKind Kind, long EventId, int Line, string Detail);
 
 /// <summary>
-/// The checks pass (Claude/Documentation/EMEVD Block Editor Analysis.md §4): the mistakes an edit can make that the
+/// The checks pass (Claude/Documentation/EMEVD and ESD.md (EMEVD Editor) §4): the mistakes an edit can make that the
 /// game wouldn't report, it would just behave differently. Pure, so EmevdEditorCheck runs it on every vanilla event
 /// and around every test edit.
 /// </summary>
@@ -97,7 +97,7 @@ public static class EmevdChecks
     }
 
     /// <summary>
-    /// The own-flag pass over one file (ER; Claude/Documentation/ER Event Flags.md, "Event IDs as flags"). Every event
+    /// The own-flag pass over one file (ER; Claude/Documentation/EMEVD and ESD.md (Elden Ring event flags), "Event IDs as flags"). Every event
     /// instance has an own flag that the game turns on when the instance first ends, and that one-shot events check
     /// (Target Event Flag Type 2) to skip themselves after a reload. For each Initialize Event / Initialize Common Event
     /// line whose started event checks its own flag, reports an own flag the game doesn't store, or one that another

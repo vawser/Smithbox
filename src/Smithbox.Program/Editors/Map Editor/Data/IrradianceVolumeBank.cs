@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor;
 /// Boxes are linked to volumes as the game links them, see <see cref="ResolveVolumeId" />: in ER and NR by the
 /// ID property (EnvMapNumber) when it is 0 or more, or else by the name (Env_Box203 is volume 203);
 /// every vanilla box leaves the property at -1. In AC6 by the EnvMapEffectBox_UnkT32 property.
-/// See Documentation/Full GI for how the game uses this data.
+/// See Claude/Documentation/Lighting.md for how the game uses this data.
 /// </summary>
 public class IrradianceVolumeBank
 {
@@ -89,7 +89,7 @@ public class IrradianceVolumeBank
 
         var volumes = LoadVolumes(map.Name);
 
-        // Temporary diagnostics for checking the links, see Full GI Plan.md phase 1
+        // Temporary diagnostics for checking the links, see Lighting.md §1 Irradiance volumes phase 1
         var summary = Summarise(map);
         Smithbox.Log(this, LOC.Get("MAP_GI_Load_Summary",
             map.Name,

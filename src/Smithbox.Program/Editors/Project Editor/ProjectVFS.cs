@@ -118,7 +118,7 @@ public class ProjectVFS : IDisposable
 
     /// <summary>
     /// Demon's Souls ships most of its files twice, as X and X.dcx, with the same data (see
-    /// Documentation/Claude/Older Games/DES Model Display.md). Which one the game reads can't be told from its files,
+    /// Claude/Documentation/Model Editor.md §4.1 DES display fixes). Which one the game reads can't be told from its files,
     /// so a written X.dcx is also written, decompressed, to X wherever the game or project has X. The file lists only
     /// show the .dcx (ProjectFileLocator), so the plain copy is never edited on its own.
     /// </summary>

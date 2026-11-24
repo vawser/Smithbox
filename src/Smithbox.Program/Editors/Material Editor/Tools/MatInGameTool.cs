@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MaterialEditor;
 /// <summary>
 /// Material Reloader (ER, NR, AC6): lists the running game's loaded models and the materials they use, refreshed every few
 /// seconds, newest first if asked, with a click selecting the material here; reloads the selected material in the
-/// game from the editor's copy, then optionally reloads the world. See Claude/Documentation/Material Reloader UX Analysis.md.
+/// game from the editor's copy, then optionally reloads the world. See Claude/Documentation/Materials and Textures.md (Material Reloader).
 /// </summary>
 public class MatInGameTool
 {

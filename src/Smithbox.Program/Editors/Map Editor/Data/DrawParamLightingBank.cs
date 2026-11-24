@@ -25,7 +25,7 @@ public record struct DrawParamRows(int Light, int ToneMap, int Shadow, int ToneC
 /// bank: the one most of the map's pieces use, or the one the viewport menu chose. Fields are read by name and
 /// converted to float, so the s32 fields of DES and the s16 ones of DS1 read alike.
 /// </para>
-/// See Documentation/Claude/Older Games/DES DrawParam Lighting Plan.md.
+/// See Claude/Documentation/Lighting.md §5 Demon's Souls DrawParam lighting.
 /// </summary>
 public class DrawParamLightingBank
 {

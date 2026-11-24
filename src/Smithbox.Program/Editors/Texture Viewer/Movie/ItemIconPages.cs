@@ -9,7 +9,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 /// <summary>
 /// An item icon page of a movie: a 1000-frame sprite whose frame f shows icon Page * 1000 + f (SDT's
-/// …MENU_ItemIcon_01000_22, placed as State_1). See Claude/Documentation/Item Icon Injector Plan.md.
+/// …MENU_ItemIcon_01000_22, placed as State_1). See Claude/Documentation/Param Editor.md (Item icon injector).
 /// </summary>
 public sealed class ItemIconPage
 {

@@ -8,7 +8,7 @@
 // - The SIMD tree is a real tree, unlike DS3's stub, but without 2018's leaf and compact flags: each lane holds
 //   value << 1 | isLeaf, the value being a child node index or a primitive's shape key. Node 0 is an empty sentinel and
 //   node 1 the root.
-// (Documentation/Claude/Collision Generator All Versions.md)
+// (Claude/Documentation/Collision.md (Collision Generator))
 namespace Havok.hk2016.Builders;
 
 using System.Numerics;

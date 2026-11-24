@@ -9,7 +9,7 @@ namespace StudioCore.Editors.FxEditor;
 public record FxParamUse(string Param, int RowId, string RowName, string Field);
 
 /// <summary>
-/// What uses each effect and what each effect uses (FX Effect List Actions Plan, phase B): the effects that start it
+/// What uses each effect and what each effect uses (FX.md (Effect List and Effect Tree actions), phase B): the effects that start it
 /// through a Proxy node, the param fields that hold its id, and the textures and models it draws with.
 ///
 /// The effects are scanned on a background task from their packed copies; loaded effects, which may have unsaved
@@ -63,7 +63,7 @@ public class FxUsage
             foreach (var entry in entries)
             {
                 var fxr = Bank.ReadCopy(entry);
-                // the older games (DLSE, FXR1 / v2; FFX Older Games Plan §21.9): through the model
+                // the older games (DLSE, FXR1 / v2; FX.md, FFX §21.9): through the model
                 if (fxr == null && ModelCopy(entry) is { } model)
                 {
                     starts[entry.Id] = Model.FxModelUsage.Targets(model);

@@ -14,7 +14,7 @@ namespace SoulsFormats
     /// The tag stream is kept losslessly. Tags with a typed class (placements, sprites, edit texts, shapes, external
     /// images, frame labels) are decoded, but only if re-encoding the decoded tag gives back the same bytes; any other
     /// tag, or one that fails that check, keeps its raw body (see <see cref="TypedFallbacks"/>). Scripts (DoABC,
-    /// SymbolClass) are raw. See Claude/Documentation/Scaleform Editor Analysis.md.
+    /// SymbolClass) are raw. See Claude/Documentation/Scaleform.md.
     /// </summary>
     public partial class GFX : SoulsFile<GFX>
     {

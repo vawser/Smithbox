@@ -3,7 +3,7 @@ using SoulsFormats;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// A config's fixed action slots (FX Editor Plan §23, phase E4), from the schema's config slot table (fxr-main's
+/// A config's fixed action slots (FX.md §23, phase E4), from the schema's config slot table (fxr-main's
 /// ConfigActionSlots). Basic (1004) configs have 15 slots and NodeEmitter (1005) 10, in file order, each holding one
 /// action or an empty one (type 0, header 0/1/0, no data); DS3 has 13 and 9, the force slots it has no actions for.
 /// Every vanilla config of DS3, SDT, ER, AC6 and NR has each action in its slot (FxTreeEditCheck --slots).

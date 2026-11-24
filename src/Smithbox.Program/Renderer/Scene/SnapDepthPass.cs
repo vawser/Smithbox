@@ -43,7 +43,7 @@ public sealed class SnapDepthResult
 /// <summary>
 ///     Finds where the Map Editor's Snap to Mesh lands, for one <see cref="SceneRenderPipeline" />: the scene's depth
 ///     drawn orthographically along the snap direction over the selection's footprint, with the selection left out,
-///     then reduced per group by SnapDepth.comp and read back. See Documentation/Claude/Snap To Mesh GPU.md.
+///     then reduced per group by SnapDepth.comp and read back. See Claude/Documentation/Map Editor.md (Snap to Mesh).
 ///     <para>
 ///         As <see cref="RainOcclusion" />, the meshes are drawn with their depth pipelines, and a queue draws what was
 ///         put in it a frame later than it was put there (or in the same frame), so a request puts the meshes in for

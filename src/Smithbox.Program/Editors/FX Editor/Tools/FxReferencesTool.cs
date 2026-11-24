@@ -5,7 +5,7 @@ using System.Numerics;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// References (FX Editor Plan §22, phase E5): what uses the selected effect, and what it starts. Effects starting it
+/// References (FX.md §22, phase E5): what uses the selected effect, and what it starts. Effects starting it
 /// through Proxy nodes and param fields come from the Effect List's Used By index; TAE events and map objects from a
 /// scan of every time act and map, run on request and kept in the project (<see cref="FxExternalReferences"/>).
 /// Each entry opens where it is.

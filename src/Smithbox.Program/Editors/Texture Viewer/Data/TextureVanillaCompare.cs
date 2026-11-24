@@ -17,7 +17,7 @@ namespace StudioCore.Editors.TextureViewer;
 /// container is Added, of an unchanged one Unchanged; in a modified container, a TPF is Added when the game's
 /// container lacks it and Modified when its bytes differ, and a texture likewise by its name and bytes.
 /// Both containers are read and indexed in the background, once per container; a write to the project's copy (any
-/// ProjectFS write) drops that container's index. Plan: Claude/Documentation/Vanilla Modified-Added Parity.md.
+/// ProjectFS write) drops that container's index. Plan: Claude/Documentation/UI.md (Vanilla state).
 /// </summary>
 public class TextureVanillaCompare
 {

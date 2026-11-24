@@ -3,7 +3,7 @@
 // sun. The entries after it are for per-part lighting sets (Demon's Souls' LightIDs).
 //
 // Read single fields, as LIGHTING.sun.color, never the whole entry into a local: copying a struct out of a storage
-// buffer is what crashed the NVIDIA driver's shader compiler (see DES Light Set Redesign.md).
+// buffer is what crashed the NVIDIA driver's shader compiler (see Lighting.md §5.1 Light set design).
 #ifndef SCENE_LIGHTING_GLSL
 #define SCENE_LIGHTING_GLSL
 

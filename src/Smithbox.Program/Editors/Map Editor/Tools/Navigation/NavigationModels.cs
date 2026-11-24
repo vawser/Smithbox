@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// Removing a navmesh model and duplicating one (Navigation Editor Plan, Phase 3), without renumbering anything. Kept
+// Removing a navmesh model and duplicating one (Navigation.md, Phase 3), without renumbering anything. Kept
 // free of the rest of Smithbox; NavSurvey `modeledit` runs it on every map.
 //
 // What refers to a navmesh entry (NavSurvey modelsurvey):

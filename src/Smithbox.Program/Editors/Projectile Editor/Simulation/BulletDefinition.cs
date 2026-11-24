@@ -182,7 +182,7 @@ public sealed class BulletDefinition
 
     public BulletIgnoredBehavior Ignored { get; init; }
 
-    // The rules below follow eldenring.exe (Claude/Documentation/ER Projectile Analysis.md). Each comes from a field,
+    // The rules below follow eldenring.exe (Claude/Documentation/Param Editor.md (Projectile Editor)). Each comes from a field,
     // so a game without the field doesn't have it
 
     // How often the whole volley fires again while its emitter lasts (shootInterval), or 0 for once

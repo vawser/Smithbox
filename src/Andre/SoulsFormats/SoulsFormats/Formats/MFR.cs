@@ -8,7 +8,7 @@ namespace SoulsFormats
     /// An Elden Ring "Multi Forbidden Region" file: oriented boxes, one file per map, in which the game won't save the
     /// player's position or limits multiplayer. Each box is filed under the quadtree cell that holds its XZ footprint
     /// (<see cref="Entry.Cell"/>), so the game can find the boxes near a point. Coordinates are map-local, like the MSB.
-    /// Extension: .mfr (loose, DCX compressed). See Claude/Documentation/MFR Format.md.
+    /// Extension: .mfr (loose, DCX compressed). See Claude/Documentation/Formats.md (MFR).
     /// </summary>
     public class MFR : SoulsFile<MFR>
     {

@@ -2,7 +2,7 @@
 // both class sets (Havok.hk2018 defines HK2018, Havok.hk2019 defines HK2019), so it is written once and still typed
 // against each SDK's classes. The two differ only where marked: 2018 composite shapes have a material table, 2019
 // extern meshes have m_isMutable. The algorithms are in Havok.Shared/Builders. DS3 (hk2014) lays the compressed mesh
-// out differently and keeps its own generator in Smithbox. (Documentation/Claude/Havok Phase 6.4 Collision Generator.md)
+// out differently and keeps its own generator in Smithbox. (Claude/Documentation/Havok Library.md (Shared views and builders))
 #if HK2018
 namespace Havok.hk2018.Builders;
 #elif HK2019

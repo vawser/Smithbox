@@ -42,20 +42,20 @@ public class FxData : IDisposable
 
     /// <summary>
     /// The FXR3-only features: the project check and FXR3's tree tools. The Effect List's whole-effect operations work
-    /// for every format (FFX Older Games Plan §22, F8; DS2 / DS2S's .sfxparam records are kept in step on save).
+    /// for every format (FX.md, FFX §22, F8; DS2 / DS2S's .sfxparam records are kept in step on save).
     /// </summary>
     public bool CanEditStructure => Format == Model.FxFormat.Fxr3;
 
     /// <summary>
     /// Inside a DLSE effect (DES, DS2, DS2S): states, exits, a state's actions and call-list entries can be added,
-    /// duplicated, deleted and moved, and actions added from templates (FFX Older Games Plan §21, F7a). The effects
+    /// duplicated, deleted and moved, and actions added from templates (FX.md, FFX §21, F7a). The effects
     /// themselves still can't (<see cref="CanEditStructure"/>).
     /// </summary>
     public bool CanEditDlseStructure => Format == Model.FxFormat.Dlse;
 
     /// <summary>
     /// Inside an FXR1 / FXR v2 effect (DS1, DS1R, BB): a root's states, exits and actions, and call-list entries can be
-    /// added, duplicated, deleted and moved (FFX Older Games Plan §21.8, F7b). Whole effects still can't.
+    /// added, duplicated, deleted and moved (FX.md, FFX §21.8, F7b). Whole effects still can't.
     /// </summary>
     public bool CanEditFxr1Structure => Format == Model.FxFormat.Fxr1;
 

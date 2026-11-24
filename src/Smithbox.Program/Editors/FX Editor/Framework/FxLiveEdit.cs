@@ -3,7 +3,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// Live editing (FX Editor Plan, phase V6): a value being typed, dragged or picked shows in the preview before it's
+/// Live editing (FX.md, phase V6): a value being typed, dragged or picked shows in the preview before it's
 /// committed. The change is applied to the effect for real, by the same snapshot action a commit makes but outside
 /// the undo stack, and taken back before the commit (or when the edit is abandoned), so the undo stack only ever holds
 /// the one committed step. One live change exists at a time; showing another takes the first back.

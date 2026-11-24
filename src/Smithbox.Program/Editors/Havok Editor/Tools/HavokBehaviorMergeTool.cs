@@ -7,7 +7,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// Merge (Behavior Editor Tools window): brings another version of the open behavior file (theirs: a loose .hkx or a
 /// behbnd entry) into the project's, three ways against a base (the game's copy, or a picked file). Phase 1 of
-/// Claude/Documentation/Havok Behavior Merge Analysis.md: the events and variables theirs adds, variable definitions and
+/// Claude/Documentation/Behavior.md (Havok behavior tools): the events and variables theirs adds, variable definitions and
 /// the value fields of objects all three have; structure is listed as notes.
 /// <para>
 /// Analyze reads ours from the saved file, off the UI thread; Apply (the only way to apply) turns the plan into one undo

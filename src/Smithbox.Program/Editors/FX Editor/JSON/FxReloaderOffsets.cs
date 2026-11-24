@@ -9,7 +9,7 @@ namespace StudioCore.Editors.FxEditor;
 /// The memory offsets used by the FX Reloader (FxReloader), one group per game executable version.
 /// Read from Assets/FX Reloader/{game}/*.json. The connection itself (which exe, quit out, reload world) is GameLink's.
 /// The reloader tries the group for the running version first, then the others, newest first.
-/// See Claude/Documentation/FX Reloader Analysis.md.
+/// See Claude/Documentation/FX.md (FX Reloader).
 /// </summary>
 public class FxReloaderOffsets
 {

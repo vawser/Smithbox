@@ -47,7 +47,7 @@ public class EmevdTemplateParam
 }
 
 /// <summary>
-/// A ready-made event pattern (P6 templates, Claude/Documentation/EMEVD Block Editor Analysis.md): lines with their
+/// A ready-made event pattern (P6 templates, Claude/Documentation/EMEVD and ESD.md (EMEVD Editor)): lines with their
 /// event parameters, and fill-in fields. Inserted as lines into the selected event (like a paste) or as a new event.
 /// </summary>
 public class EmevdTemplate

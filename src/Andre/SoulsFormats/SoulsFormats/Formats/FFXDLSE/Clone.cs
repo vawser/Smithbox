@@ -4,7 +4,7 @@ namespace SoulsFormats
 {
     public partial class FFXDLSE
     {
-        // Deep copies for structure editing (FFX Older Games Plan §21, F7a). Each object is written with its own
+        // Deep copies for structure editing (FX.md, FFX §21, F7a). Each object is written with its own
         // class table and read back, so the copy has exactly the original's fields and class versions (DES's v3 / v4
         // FXEffect, DS2's v5 …) without a hand-written clone per class.
 

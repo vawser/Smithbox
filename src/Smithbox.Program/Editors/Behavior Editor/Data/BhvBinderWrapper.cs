@@ -9,7 +9,7 @@ namespace StudioCore.Editors.BehaviorEditor;
 /// <summary>
 /// A behbnd and its .bhv files. Saving reads the project's copy of the binder again and replaces only the bytes of
 /// changed .bhv entries, so the other entries (tae_action .tae files), IDs, flags, order and compression stay as
-/// they are; P0 found every AC6 behbnd rewrites byte-identical (Claude/Documentation/BHV Editor Analysis.md).
+/// they are; P0 found every AC6 behbnd rewrites byte-identical (Claude/Documentation/Behavior.md (AC6 Behavior Editor)).
 /// </summary>
 public class BhvBinderWrapper
 {

@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// The Map Information Editor mode of the Map Information window: paints the four index layers of the ER
 /// mapinfotexbnd tiles (map piece, map name, weather, mimicry) over the world map.
-/// See Claude/Documentation/MapInfoTex Editor.md.
+/// See Claude/Documentation/Map Editor.md (MapInfoTex editor).
 /// </summary>
 public class MapInfoEditor
 {

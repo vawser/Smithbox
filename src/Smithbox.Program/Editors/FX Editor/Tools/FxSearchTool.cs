@@ -13,7 +13,7 @@ namespace StudioCore.Editors.FxEditor;
 public record FxSearchMatch(int EffectId, string NodePath, int Config, int Action, string Label);
 
 /// <summary>
-/// Search (FX Editor Plan §22, phase E5): actions across every effect (or the changed ones) by type or name, values
+/// Search (FX.md §22, phase E5): actions across every effect (or the changed ones) by type or name, values
 /// by name with an optional range (fields, constants and every curve key), and textures or models by id. Runs on a
 /// background task over the effects' packed copies (loaded effects as they are now); each match opens its action.
 /// </summary>

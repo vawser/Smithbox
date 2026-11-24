@@ -13,7 +13,7 @@ using Veldrid.Sdl2;
 namespace StudioCore.Editors.CutsceneEditor;
 
 /// <summary>
-/// The Cutscene Editor (Cutscene Editor Analysis). Each view (<see cref="CutsceneEditorView" />) plays a cut of an MQB
+/// The Cutscene Editor (Cutscene Editor.md). Each view (<see cref="CutsceneEditorView" />) plays a cut of an MQB
 /// cutscene in its own viewport: its actors on their models, animated by the cut's Havok file, and its camera, which the
 /// viewport can look through. The screen keeps what the views share: the menus, saving, commands, the clipboard, the
 /// event templates and the session's map and collision choices.

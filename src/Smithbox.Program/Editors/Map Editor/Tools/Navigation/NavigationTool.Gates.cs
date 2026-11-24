@@ -13,7 +13,7 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Gates tab (Navigation Editor Plan, Phase 3: Gate nodes): the NVA's gate nodes of the drawn set, picked and moved
+/// The Gates tab (Navigation.md, Phase 3: Gate nodes): the NVA's gate nodes of the drawn set, picked and moved
 /// on the overlay, with the chosen navmesh's gates, their cost table, adding and removing gates, and rebuilding them
 /// from the connections. All editing goes through the overlay; see NavGates for the rules.
 /// </summary>

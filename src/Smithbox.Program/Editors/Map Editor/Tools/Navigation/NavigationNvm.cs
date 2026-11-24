@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// The navigation data of DeS, DS1 and DS1R (family C of the Navigation Editor Other Games Plan, Phase N6), joined as an
+// The navigation data of DeS, DS1 and DS1R (family C of the Navigation.md, Phase N6), joined as an
 // NvmMap: the MSB's navmesh parts, the NVM file each loads, the map's MCP (rooms) and MCG (graph). What links them was
 // surveyed on every map (NavSurvey `nvm <GAME> links`):
 // - room r of the MCP is the map's r-th MSB navmesh part (own rooms come first, LocalIndex = r), and its box is the

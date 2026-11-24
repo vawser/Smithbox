@@ -6,7 +6,7 @@ namespace StudioCore.Editors.FxEditor;
 /// <summary>
 /// The FX Reloader's work in a running game (DS3, SDT, ER, AC6, NR), over the project's shared GameLink: lists the
 /// effects the game has loaded with how many of each are playing, and replaces an effect's data with new FXR bytes.
-/// See Claude/Documentation/FX Reloader Analysis.md (F1, F4).
+/// See Claude/Documentation/FX.md (FX Reloader) (F1, F4).
 /// The AOBs and offsets come from Assets/FX Reloader/{game}/*.json (FxReloaderOffsets).
 ///
 /// How the game holds effects (offsets as in ER 2.7.2.0; per game in the data files):

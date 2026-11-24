@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The Map Information window: the world map with the map tiles over it (World Map mode), and the editor for the
-/// ER mapinfotexbnd layers (Map Information Editor mode). See Claude/Documentation/World Map Assessment.md.
+/// ER mapinfotexbnd layers (Map Information Editor mode). See Claude/Documentation/Map Editor.md (World map).
 /// </summary>
 public class WorldMapTool : IResourceEventListener
 {

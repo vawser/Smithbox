@@ -6,7 +6,7 @@ namespace StudioCore.Editors.MaterialEditor;
 /// <summary>
 /// MATBIN keys. Every one in ER, NR, AC6 and DB_NT is the Adler-32 of a UTF-16LE string, no terminator:
 /// MATBIN.Key of SourcePath, Param.Key of Name, Sampler.Key of Type.
-/// See Documentation/Claude/Material Editor Plan.md, R1. No editor dependencies, so tools can link it.
+/// See Claude/Documentation/Materials and Textures.md (Material Editor), R1. No editor dependencies, so tools can link it.
 /// </summary>
 public static class MaterialKeys
 {

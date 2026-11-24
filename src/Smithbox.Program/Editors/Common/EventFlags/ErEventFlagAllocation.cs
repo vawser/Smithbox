@@ -26,7 +26,7 @@ public sealed class EventFlagInfo
 /// allocated is ignored by the game: it always reads off and writes do nothing.
 /// Port of the game's start-up registration (CSEventFlagManImp, eldenring.exe 1405D3B20), built from the project's
 /// four eventflagalloclist files (so a mod's lists apply) and the exe's tile table (Assets/EVENTFLAG/ER/Tile Table.json).
-/// See Claude/Documentation/ER Event Flags.md.
+/// See Claude/Documentation/EMEVD and ESD.md (Elden Ring event flags).
 /// </summary>
 public sealed class ErEventFlagAllocation
 {

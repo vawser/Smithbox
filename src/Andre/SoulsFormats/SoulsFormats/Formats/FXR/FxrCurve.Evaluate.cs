@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SoulsFormats
 {
     /// <summary>
-    /// Curve evaluation (FX Editor Plan §10.3), ported from fxr-main 32.1.3's <c>valueAt</c>: Stepped, Linear,
+    /// Curve evaluation (FX.md §10.3), ported from fxr-main 32.1.3's <c>valueAt</c>: Stepped, Linear,
     /// Bezier, Hermite (fxr-main's approximation) and ComponentHermite, with loop. Modifiers are not applied here,
     /// as in fxr-main. Evaluate the curve as stored (<see cref="Decode"/>), not one scaled for display:
     /// <see cref="ScaleComponent"/> also scales Hermite tangents, which are angles.

@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// Sets one of a config's action slots (FX Editor Plan §23): its action takes the given contents (an example action of
+/// Sets one of a config's action slots (FX.md §23): its action takes the given contents (an example action of
 /// the chosen type, or an empty one to clear the slot). The action object stays in place, so the tree's selection holds;
 /// a config shorter than the slot is padded with empty actions first, and undo takes the padding off again.
 /// </summary>

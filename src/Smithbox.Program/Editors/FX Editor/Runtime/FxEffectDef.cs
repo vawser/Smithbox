@@ -6,7 +6,7 @@ using System.Linq;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// An FXR read into what the runtime needs (FX Editor Plan §10.2): the state conditions and the node tree, each
+/// An FXR read into what the runtime needs (FX.md §10.2): the state conditions and the node tree, each
 /// node's configs reduced to their timing, transform, movement, emitter, shape, spread, particle and termination
 /// values. Built once per FXR (and again after an edit), so the simulation never reads the schema.
 /// </summary>
@@ -216,6 +216,13 @@ public sealed class FxConfigDef
     public FxParticleMoveKind ParticleMove;
     public FxValue ParticleGravity, ParticleMoveSpeed, ParticleMoveSpeedMultiplier, ParticleAcceleration, ParticleAccelerationMultiplier;
 
+    /// <summary>
+    /// The PartialFollow variants: how much of the node's movement each step carries its unattached particles with
+    /// it (0 none, 1 as if attached), over the particle's age. Without followRotation only the translation is followed.
+    /// </summary>
+    public FxValue ParticleFollowFactor;
+    public bool ParticleFollowRotation = true;
+
     // NodeForceMovement (731 speed / 733 acceleration) and ParticleForceMovement (732 / 734): how strongly the node,
     // or the particles it emits, follow the forces acting where they are (plan §20)
     public FxNodeMoveKind NodeForceMove;
@@ -401,7 +408,7 @@ public sealed class FxConfigDef
     /// <summary>
     /// The Speed and Acceleration families share property names: speedZ (+ multiplier), accelerationZ
     /// (+ multiplier) and accelerationY. Their random-turn, partial-follow and spin variants move like the base
-    /// action here; the turns and follows are left out.
+    /// action here; the turns and follows are left out (the particle movement's partial follow is simulated).
     /// </summary>
     private static void ReadNodeMovement(FxConfigDef def, FxrActionView view)
     {
@@ -443,6 +450,8 @@ public sealed class FxConfigDef
         def.ParticleMoveSpeedMultiplier = Prop(view, "speedMultiplier");
         def.ParticleAcceleration = Prop(view, "acceleration");
         def.ParticleAccelerationMultiplier = Prop(view, "accelerationMultiplier");
+        def.ParticleFollowFactor = name.Contains("PartialFollow", StringComparison.Ordinal) ? Prop(view, "followFactor") : null;
+        def.ParticleFollowRotation = Int(view, "followRotation", 1) != 0;
     }
 
     // ---------------------------------------------------------------- reading

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.FxEditor.Model;
 
-// The FX Editor's format-neutral effect model (Claude/Documentation/FFX Older Games Plan.md §5.1, §12).
+// The FX Editor's format-neutral effect model (Claude/Documentation/FX.md, FFX §5.1, §12).
 // Each effect format has adapters implementing these interfaces over its own SoulsFormats classes; panels work on the
 // interfaces and ask for optional capabilities (IFxConfigured, IFxProxy, IFxCurveValue, IFxListValue) where a feature
 // only exists in some formats. This folder uses only SoulsFormats and the BCL, so check tools can link its sources,

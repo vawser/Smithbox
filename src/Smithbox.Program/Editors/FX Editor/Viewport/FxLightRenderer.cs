@@ -4,7 +4,7 @@ using System.Numerics;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The running effect's PointLight and SpotLight particles as scene lights (FX Editor Plan, phase V4). The scene
+/// The running effect's PointLight and SpotLight particles as scene lights (FX.md, phase V4). The scene
 /// draws at most <see cref="SceneLightList.MaxLights"/> lights, the camera light included, so the brightest ones are
 /// kept. They light the models in the viewport (model particles, and in time the preview character or map).
 /// </summary>

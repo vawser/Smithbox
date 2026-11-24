@@ -6,7 +6,7 @@ using System.Linq;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// Curve and modifier edits for the Curve Editor (FX Editor Plan, phase E3), on <see cref="FxrCurve"/>s in display
+/// Curve and modifier edits for the Curve Editor (FX.md, phase E3), on <see cref="FxrCurve"/>s in display
 /// units as <see cref="FxrActionView.GetCurve"/> gives them. SoulsFormats and BCL only, so
 /// Claude/Tools/FxCurveEditCheck can link it and check every edit against the writer.
 /// </summary>

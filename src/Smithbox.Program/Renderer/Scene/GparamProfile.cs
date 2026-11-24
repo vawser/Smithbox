@@ -29,7 +29,7 @@ public enum GparamExposureModel
 /// <summary>
 ///     What differs between the games whose maps are lit from GPARAMs: which files a field falls back to, how the Tone
 ///     Map group gives the exposure, which screen effects the game has, and where its color grading LUTs are.
-///     See Documentation/Older Games/Analysis.md.
+///     See Claude/Documentation/Lighting.md §4 Older games.
 /// </summary>
 public sealed class GparamProfile
 {
@@ -38,7 +38,7 @@ public sealed class GparamProfile
 
     /// <summary>
     ///     The game has no GPARAM: its maps are lit from the DrawParam banks instead (Demon's Souls), see
-    ///     DrawParamLightingBank and Documentation/Claude/Older Games/DES DrawParam Lighting Plan.md
+    ///     DrawParamLightingBank and Claude/Documentation/Lighting.md §5 Demon's Souls DrawParam lighting
     /// </summary>
     public bool DrawParamLighting { get; private init; }
 

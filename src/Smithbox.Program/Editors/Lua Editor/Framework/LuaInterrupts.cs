@@ -8,7 +8,7 @@ namespace StudioCore.Editors.LuaEditor;
 public sealed record LuaInterruptFiring(float SceneTime, LuaInterruptResult Result, string Via);
 
 /// <summary>
-/// Fires the battle goal's Goal.Interrupt (see Claude/Documentation/Lua Editor NPC Simulation Analysis.md §5):
+/// Fires the battle goal's Goal.Interrupt (see Claude/Documentation/Lua and AI.md (AI Simulation) §5):
 /// <list type="bullet">
 /// <item>by itself, when the character's TAE puts on a SpEffect the goal observes on TARGET_SELF
 /// (AddObserveSpecialEffectAttribute): INTERUPT_ActivateSpecialEffect with that SpEffect;</item>

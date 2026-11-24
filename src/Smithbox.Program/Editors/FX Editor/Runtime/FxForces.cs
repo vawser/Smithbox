@@ -9,7 +9,7 @@ public enum FxForceKind { Wind, Gravity, Turbulence, Cancel }
 public enum FxForceShape { Boundless = 0, Sphere = 1, Box = 2, Cylinder = 3, SquarePrism = 4 }
 
 /// <summary>
-/// A force appearance (FX Editor Plan §20): WindForce (10300), GravityForce (10301), TurbulenceForce (10303) or
+/// A force appearance (FX.md §20): WindForce (10300), GravityForce (10301), TurbulenceForce (10303) or
 /// CancelForce. Like lights, it's placed by the instances its config emits (every vanilla force config has a
 /// OneTimeEmitter), each a volume with the node's rotation at the instance's position.
 /// </summary>
@@ -83,7 +83,7 @@ public struct FxForceVolume
 }
 
 /// <summary>
-/// The forces acting in a running effect (FX Editor Plan §20): the volumes its own force appearances place, plus the
+/// The forces acting in a running effect (FX.md §20): the volumes its own force appearances place, plus the
 /// preview wind standing in for the game's weather (boundless, along a set direction). Gathered once per update of the
 /// top-level effect, so a particle feels the volumes as they were at the end of the previous update.
 /// </summary>

@@ -6,7 +6,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 
 /// <summary>
 /// The Cutscene Editor's viewport scene: the actors and cameras of the selected cut, lit by the shared viewport
-/// environment. The map behind them comes in a later phase (see Cutscene Editor Analysis).
+/// environment. The map behind them comes in a later phase (see Cutscene Editor.md).
 /// </summary>
 public class CutsceneUniverse : IUniverse
 {

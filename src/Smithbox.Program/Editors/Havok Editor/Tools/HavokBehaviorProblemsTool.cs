@@ -7,7 +7,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// Problems (Behavior Editor Tools window): the validator's results. In the File scope, for the shown file: checked
 /// when a file is first shown, and again with Check; clicking a problem shows its object in the Outline. The Binder,
 /// Modified and All scopes check those files in the background (HavokBehaviorScan), and clicking a problem opens its
-/// file first. See Claude/Documentation/Havok Behavior Scoped Tools Plan.md and Tool UI Styling.md.
+/// file first. See Claude/Documentation/Behavior.md (Havok behavior tools) and UI.md (Tools window conventions).
 /// </summary>
 public class HavokBehaviorProblemsTool
 {

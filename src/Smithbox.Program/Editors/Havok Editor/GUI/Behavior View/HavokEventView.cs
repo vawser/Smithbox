@@ -9,7 +9,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// The behavior graph's events: each one's name, info, and what uses it (the transitions it triggers, and the fields
 /// that send or listen for it). In the game's files an event drives at most two or three transitions, mostly
 /// wildcards, so a row names where it leads (Tools/BehaviorSurvey eventsurvey).
-/// See Claude/Documentation/Havok Behavior Events Category Plan.md.
+/// See Claude/Documentation/Behavior.md (Havok behavior views).
 /// </summary>
 public partial class HavokEventView
 {

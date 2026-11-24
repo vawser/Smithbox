@@ -40,7 +40,7 @@ public static class EditorConditions
 
     /// <summary>
     /// The FX Editor: FXR effects of the games the FXR schema covers, the DLSE effects of DES, DS2 and DS2S, and the
-    /// FXR1 effects of DS1, DS1R and Bloodborne (values and exits edited, no structure or preview yet: FFX Older Games Plan F3, F4b, F6)
+    /// FXR1 effects of DS1, DS1R and Bloodborne (values and exits edited, no structure or preview yet: FX.md, FFX F3, F4b, F6)
     /// </summary>
     public static bool SupportsFxEditor(ProjectType curType)
     {
@@ -57,7 +57,7 @@ public static class EditorConditions
     }
 
     /// <summary>
-    /// The Cutscene Editor: the games whose MQBs and cut Havok files are read in full (Cutscene Editor Analysis, phases
+    /// The Cutscene Editor: the games whose MQBs and cut Havok files are read in full (Cutscene Editor.md, phases
     /// 0 and 1). BB and DS2 aren't surveyed yet.
     /// </summary>
     public static bool SupportsCutsceneEditor(ProjectType curType)
@@ -133,7 +133,7 @@ public static class EditorConditions
 
     /// <summary>
     /// The Lua Editor: the games whose Lua binders Claude/Tools/LuaAiSurvey has checked (decompiled text faithful,
-    /// .luagnl rebuilt from it). See Claude/Documentation/Lua Editor Game Expansion.md.
+    /// .luagnl rebuilt from it). See Claude/Documentation/Lua and AI.md.
     /// NR: 472/472 decompile, 469 recompile byte-identical, every binder, .luagnl and .luainfo round trips.
     /// SDT: per-map binders; 672/672 decompile and recompile, 656/672 byte-identical (102010_battle's stray goto fixed
     /// by DSLuaDecompiler's RemoveFallthroughJumpsPass).

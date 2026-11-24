@@ -18,7 +18,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </list>
 /// An empty <c>materialName</c> means every vertex-animated material of the model. The textures are in the cutscene's own
 /// texture binders, which <see cref="CutsceneModelPool.LoadVertexAnimationTextures" /> loads. Parameters are read from the
-/// MQB every frame, so edits show at once. See Claude/Documentation/Cutscene Vertex Animation.md
+/// MQB every frame, so edits show at once. See Claude/Documentation/Rendering.md (Per-game material and model fixes)
 /// </summary>
 public sealed class CutsceneVertexAnimation
 {

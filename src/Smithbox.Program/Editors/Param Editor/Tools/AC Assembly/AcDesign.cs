@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ParamEditor;
 /// wrapped in an <c>ASMC</c> zlib container.
 /// <para>
 /// The header, trailer and every section are kept as read, so a file round-trips; only the values the tool edits are
-/// rewritten. See Claude/Documentation/AC6 Design Files.md.
+/// rewritten. See Claude/Documentation/Formats.md (AC6 design files).
 /// </para>
 /// </summary>
 public class AcDesign

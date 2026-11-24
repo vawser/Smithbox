@@ -37,7 +37,7 @@ public record HavokCrossPastePlan(List<string> MissingEvents, List<string> Missi
     int AnimationsToAdd, int EffectsReused, string Error);
 
 /// <summary>
-/// Cross-file paste: see Claude/Documentation/Havok Behavior Cross-File Paste Plan.md
+/// Cross-file paste: see Claude/Documentation/Behavior.md (Havok behavior edits)
 /// </summary>
 public static partial class HavokBehaviorOperations
 {

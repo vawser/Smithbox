@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor;
 /// direction over the selection's footprint without the selection, looked at from the plane through the centre of
 /// each box, so a selection already sunk into the ground is lifted out onto it.
 /// While the tool's section is open, a wire arrow from the face of each box to where it lands previews the snap,
-/// following the selection a few frames behind. See Documentation/Claude/Snap To Mesh GPU.md.
+/// following the selection a few frames behind. See Claude/Documentation/Map Editor.md (Snap to Mesh).
 /// </summary>
 public class SnapToMeshAction
 {

@@ -8,7 +8,7 @@ namespace StudioCore.Editors.BehaviorEditor;
 
 /// <summary>
 /// The Behavior Editor. In AC6: .bhv state machines (chr behbnds); P2: field and hex editing with undo, see
-/// Claude/Documentation/BHV Editor Analysis.md for the phases.
+/// Claude/Documentation/Behavior.md (AC6 Behavior Editor) for the phases.
 /// In the other Havok games: the behbnds' Havok behaviors, with the Havok Editor's behavior windows (a Havok Editor
 /// screen in behavior mode), whose file list holds every behbnd's behavior files.
 /// </summary>

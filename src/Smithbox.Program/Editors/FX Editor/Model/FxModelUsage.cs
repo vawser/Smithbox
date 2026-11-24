@@ -1,7 +1,7 @@
 namespace StudioCore.Editors.FxEditor.Model;
 
 /// <summary>
-/// What an older-game effect uses, through the model (FFX Older Games Plan §21.9): the effects it calls and its
+/// What an older-game effect uses, through the model (FX.md, FFX §21.9): the effects it calls and its
 /// textures and models. Used by the FX Editor's Used By / Uses Resource for DES, DS2, DS2S, DS1, DS1R and BB (FXR3 has
 /// its own, FxUsage.Targets / ResourceNames). SoulsFormats + BCL only, so the check tools can link it.
 /// </summary>

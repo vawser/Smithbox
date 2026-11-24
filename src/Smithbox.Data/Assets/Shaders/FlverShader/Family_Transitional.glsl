@@ -2,7 +2,7 @@
 // GameFamily.glsl). GGX lighting like the modern games, with the gloss kept in the specular texture, which
 // MaterialBinding routes to the shininess row (read through c_roughnessFromShininess in the core).
 // No hook overrides the shared core yet: a rule for these games alone goes here, so it can't reach the others.
-// The hooks are dispatched by Families.glsl. Plan: Documentation/Shader Family Split Plan.md, S3.
+// The hooks are dispatched by Families.glsl. Plan: Claude/Documentation/Rendering.md (Shader family split), S3.
 
 bool Transitional_ShadeLight(Surface s, float LdotN, float NdotH, vec3 radiance, vec3 specularRadiance, out vec3 light)
 {

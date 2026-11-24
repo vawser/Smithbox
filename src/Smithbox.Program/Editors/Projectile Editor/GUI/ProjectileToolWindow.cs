@@ -5,7 +5,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.ProjectileEditor;
 
 /// <summary>
-/// The Projectile Editor's Tools window (see Claude/Documentation/Tool UI Styling.md):
+/// The Projectile Editor's Tools window (see Claude/Documentation/UI.md (Tools window conventions)):
 /// General → Playback (with the simulation's setup), Simulation Filters.
 /// </summary>
 public class ProjectileToolWindow

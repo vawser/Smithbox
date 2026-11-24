@@ -107,7 +107,7 @@ void main()
 		return;
 	}
 
-	// Lens flare mode (FX Editor Plan §20.8): a camera-facing quad at the source, world-sized, moved on screen along
+	// Lens flare mode (FX.md §20.8): a camera-facing quad at the source, world-sized, moved on screen along
 	// the reflection vector (1 Radial: through the screen centre; 2 Horizontal: mirrored left-right) by the flare's
 	// offset, and faded by the attenuation radius (the screen centre must lie within the sphere of that radius
 	// around the source). The source's screen position, depth and radius go to the fragment stage in fsin_layer3,

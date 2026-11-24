@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The box tree of an NVM (DeS, DS1, DS1R), rebuilt the way the game files have it (Navigation Editor Other Games Plan,
+/// The box tree of an NVM (DeS, DS1, DS1R), rebuilt the way the game files have it (Navigation.md,
 /// Phase N6): a quadtree of depth 3 under the root box, every inner box split at its XZ midpoint into four children
 /// (1 = min X min Z, 2 = max X min Z, 3 = max X max Z, 4 = min X max Z), every box spanning the root's Y, and each of the
 /// 64 leaves listing the triangles whose XZ footprint touches it. Renderer-free, so Tools/NavSurvey checks it against

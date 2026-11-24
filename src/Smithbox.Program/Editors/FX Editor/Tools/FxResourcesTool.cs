@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// Resources (FX Editor Plan §22, phase E5): the textures and models the selected effect uses, with the actions using
+/// Resources (FX.md §22, phase E5): the textures and models the selected effect uses, with the actions using
 /// each, the file the game loads for it and the binders holding it, flagged when no binder holds it or none of the
 /// effect's own binders does. Each row selects its action, or lists every effect using the resource.
 /// </summary>

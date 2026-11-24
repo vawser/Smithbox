@@ -20,7 +20,7 @@ public sealed record ModelInstance(string MapName, string PartName, string PartT
 /// <summary>
 /// Model Instance Finder: which map parts use a model. Every map is read once in the background into an index of
 /// model name → parts, and the maps themselves are let go. Results list every part, grouped by map; clicking one
-/// loads the map in the Map Editor and selects it. Plan: Documentation/Model Editor Second Review.md, R10.
+/// loads the map in the Map Editor and selects it. Plan: Claude/Documentation/Model Editor.md, R10.
 /// </summary>
 public class ModelInstanceFinder
 {

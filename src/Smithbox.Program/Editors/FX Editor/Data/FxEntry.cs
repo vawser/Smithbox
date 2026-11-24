@@ -33,7 +33,7 @@ public static class FxVanillaStateExtensions
 
 /// <summary>
 /// One effect id. Vanilla stores identical copies of an effect in every binder that needs it, so the editor
-/// edits the effect once and saves it to all of them (FX Editor Plan, decision 1).
+/// edits the effect once and saves it to all of them (FX.md, decision 1).
 /// </summary>
 public class FxEntry
 {
@@ -41,7 +41,7 @@ public class FxEntry
 
     /// <summary>
     /// Every binder that should hold this effect, in binder path order. The first is read from. Saving makes the
-    /// binders match: see <see cref="OnDisk"/> (FX Effect List Actions Plan §2).
+    /// binders match: see <see cref="OnDisk"/> (FX.md (Effect List and Effect Tree actions) §2).
     /// </summary>
     public List<FxBinderRef> Binders = new();
 
@@ -68,7 +68,7 @@ public class FxEntry
 
     /// <summary>
     /// How many different contents the binders holding this id have. Vanilla FXR3 copies are identical (1), but DES
-    /// keeps different effects with the same id in different binders (FFX Older Games Plan §14.2).
+    /// keeps different effects with the same id in different binders (FX.md, FFX §14.2).
     /// </summary>
     public int CopyVersions = 1;
 
@@ -133,7 +133,7 @@ public class FxEntry
     public int ResourceListFrom = -1;
 
     /// <summary>
-    /// DS2 / DS2S (FFX Older Games Plan §22.8): the next save gives this id a record in the binders' effect tables
+    /// DS2 / DS2S (FX.md, FFX §22.8): the next save gives this id a record in the binders' effect tables
     /// (.sfxparam) when it has none: a copy of <see cref="RecordBodies"/> when kept, else of <see cref="RecordFrom"/>'s
     /// record (the effect it was duplicated or renumbered from), else the tables' commonest. Cleared once saved.
     /// </summary>

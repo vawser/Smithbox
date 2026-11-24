@@ -80,7 +80,7 @@ public sealed record ModelCheckFinding(
 
 /// <summary>
 /// Checks a FLVER for what would break its save, or the model in game. Used by the Model Editor before saving (see
-/// <c>ModelCheck</c>). Plan and survey results: Documentation/Model Editor Second Review.md, R4.
+/// <c>ModelCheck</c>). Plan and survey results: Claude/Documentation/Model Editor.md, R4.
 /// </summary>
 public static class ModelCheckRules
 {

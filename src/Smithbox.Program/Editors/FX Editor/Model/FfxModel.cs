@@ -6,7 +6,7 @@ using static SoulsFormats.FFXDLSE;
 
 namespace StudioCore.Editors.FxEditor.Model;
 
-// DLSE adapters for the FX model (DES, DS2, DS2S; Claude/Documentation/FFX Older Games Plan.md §14). They wrap
+// DLSE adapters for the FX model (DES, DS2, DS2S; Claude/Documentation/FX.md, FFX §14). They wrap
 // FFXDLSE's own objects and read names through FfxSchema / FfxActionView; nothing is copied, so edits through an
 // adapter edit the file object, and an unchanged value set back leaves the file byte-identical.
 //
@@ -808,7 +808,7 @@ public sealed class FfxValueAdapter : IFxValue, IFxCurveValue, IFxListValue, IFx
 }
 
 /// <summary>
-/// A schema slot's enum for the Inspector's combo (FFX Schema Gaps Plan S3), shared by the DLSE and FXR1 adapters.
+/// A schema slot's enum for the Inspector's combo (FX.md S3), shared by the DLSE and FXR1 adapters.
 /// Null / empty when the slot names no enum or the enum isn't in the schema.
 /// </summary>
 internal static class FfxEnums

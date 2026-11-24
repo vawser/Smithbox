@@ -148,7 +148,7 @@ public sealed class NavRegenResult
 }
 
 /// <summary>
-/// A whole-map regeneration of the navigation data (Navigation Full Regeneration Analysis.md, steps 1-5):
+/// A whole-map regeneration of the navigation data (Navigation.md, steps 1-5):
 /// 1. one generation of each set over all the walkable geometry;
 /// 2. pruned to the faces reachable, over edges and jump and fall links, from the seeds;
 /// 3. each face labelled with the collision model under it (through assets to the collision below them), and the mesh split

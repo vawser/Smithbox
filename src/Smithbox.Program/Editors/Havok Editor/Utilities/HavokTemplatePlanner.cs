@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// Plans a Category template (Claude/Documentation/Havok Behavior Templates Plan.md): for each animation aNEW_ID, the
+/// Plans a Category template (Claude/Documentation/Behavior.md (Havok behavior edits)): for each animation aNEW_ID, the
 /// selectors (CustomManualSelectorGenerator) that get its clip, and the clip each one copies.
 ///
 /// IDs come from the ticked groups (targets: the selectors with the ID, of the template's offset types, with clips), or

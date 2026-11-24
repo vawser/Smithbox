@@ -6,7 +6,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// Paste into another behavior file: an Apply-only dialog listing what the target lacks (events and variables,
 /// ticked to be created; character properties, whose bindings are dropped; animation names to add). See
-/// Claude/Documentation/Havok Behavior Cross-File Paste Plan.md.
+/// Claude/Documentation/Behavior.md (Havok behavior edits).
 /// </summary>
 public partial class HavokBehaviorActionsView
 {

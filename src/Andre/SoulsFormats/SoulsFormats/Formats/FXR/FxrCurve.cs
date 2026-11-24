@@ -18,7 +18,7 @@ namespace SoulsFormats
     }
 
     /// <summary>
-    /// A property's value decoded from its raw fields (FXR Format Plan §2.4): a constant, or keyframes
+    /// A property's value decoded from its raw fields (FX.md (FXR Format Plan (layers)) §2.4): a constant, or keyframes
     /// for Stepped/Linear/Bezier/Hermite, or one scalar keyframe list per component for AC6's
     /// ComponentHermite.
     /// </summary>

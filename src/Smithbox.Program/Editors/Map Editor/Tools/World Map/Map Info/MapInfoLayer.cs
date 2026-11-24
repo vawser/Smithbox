@@ -3,7 +3,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// The four index layers of an ER mapinfotexbnd. Each pixel of a layer is the ID of a row in its param,
 /// the _m61 variant for the m61 tiles; 255 is the "none" row.
-/// See Claude/Documentation/MapInfoTex Editor.md.
+/// See Claude/Documentation/Map Editor.md (MapInfoTex editor).
 /// </summary>
 public enum MapInfoLayer
 {

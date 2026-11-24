@@ -12,7 +12,7 @@ namespace StudioCore.Editors.FxEditor;
 ///
 /// Nodes can be hidden in playback, soloed, copied and pasted (across effects), duplicated, deleted, moved, saved
 /// as templates and given notes; configs duplicated, deleted and assigned to states; actions copied and pasted over
-/// actions of the same kind (FX Effect Tree Actions Plan).
+/// actions of the same kind (FX.md (Effect List and Effect Tree actions)).
 /// </summary>
 public partial class FxEffectTree
 {
@@ -154,7 +154,7 @@ public partial class FxEffectTree
             FilterMatches.Clear();
         }
 
-        // Older games: what can be edited (everything, from F8; FFX Older Games Plan §22)
+        // Older games: what can be edited (everything, from F8; FX.md, FFX §22)
         if (!Data.CanEditStructure)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.6f }, LOC.Get("FX_Dlse_Notice_Effects"));
 

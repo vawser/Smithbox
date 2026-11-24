@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The Curve Editor (FX Editor Plan, phase E3): the property picked in the Action Inspector, as a graph and a key
+/// The Curve Editor (FX.md, phase E3): the property picked in the Action Inspector, as a graph and a key
 /// table, with its function, loop flag and modifiers.
 ///
 /// It edits a working copy of the curve in display units (seconds, degrees, ...), except Hermite tangents, which

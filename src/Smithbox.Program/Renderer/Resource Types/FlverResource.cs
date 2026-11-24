@@ -251,7 +251,7 @@ public class FlverResource : IResource, IDisposable
 
         // Duskbloods FLVERs only give paths for albedo slots, and most that differ from the MATBIN name the
         // normal map (810 of 882 in DB_NT), so the MATBIN's path wins where it has one.
-        // See Documentation/Claude/DB_NT Textures.md
+        // See Claude/Documentation/Materials and Textures.md (Material fidelity)
         var profile = RenderProfile.Of(curProject);
 
         if (mpath != "" && type != null && profile.MatbinTexturePaths)
@@ -2055,7 +2055,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         // Nothing but placeholders: DS3's M[A] join meshes of m38_00_00_00_005430, whose only texture is dummy128, drew
-        // as flat untextured walls (Claude/Documentation/DS3 Carthus Rendering.md). A character-creator material is
+        // as flat untextured walls (Claude/Documentation/Rendering.md (Per-game material and model fixes)). A character-creator material is
         // left alone, as its textures come from the character (ER's FaceGen skin lists only placeholders)
         // A slot whose definition names a texture of its own isn't a placeholder: an ER MATBIN does that for c3950's
         // glowing claws, whose FLVER lists only dummies
@@ -3799,7 +3799,7 @@ public class FlverResource : IResource, IDisposable
 
     /// <summary>
     /// Whether a vertex attribute can hold a cutscene vertex animation's column: a TEXCOORD1-3 byte attribute. The
-    /// highest one a mesh has holds it (Claude/Documentation/Cutscene Vertex Animation.md).
+    /// highest one a mesh has holds it (Claude/Documentation/Rendering.md (Per-game material and model fixes)).
     /// </summary>
     private static bool IsVatFrameColumnCandidate(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index)
     {
@@ -5666,7 +5666,7 @@ public class FlverResource : IResource, IDisposable
         /// k = I(2 mask - 1). The shader scales the alpha up by 1 + k for k above 0 and pulls it toward k below, so
         /// alpha 0 and 1 stay the pure layers and the centred mask moves the transition either way (BB keeps 3616 of its
         /// blend meshes at alpha 0.5). Inferred from the shader and the data, not read from the game's code
-        /// (Claude/Documentation/BB Mask Blend.md)
+        /// (Claude/Documentation/Materials and Textures.md (Material fidelity))
         /// </summary>
         public static (float X, float Z) MaskBlendParam(float intensity) => (2f * intensity, -intensity);
 

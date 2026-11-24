@@ -16,7 +16,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <item>From 1000 it is X × 1000 + ZZZ (ER's Torrent: 3100 on Sand is 303100).</item>
 /// </list>
 /// From Claude/Tools/FootSfxSurvey over the ER, DS3 and Sekiro params and effect binders; see
-/// Claude/Documentation/TAE Floor Effects Analysis.md.
+/// Claude/Documentation/Time Act.md (Simulation).
 /// </summary>
 public static class TimeActFloorEffects
 {

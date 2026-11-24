@@ -6,7 +6,7 @@ namespace SoulsFormats
     /// <summary>
     /// The enemy navigation file of DS2 and DS2 SOTFS: navmeshes, the gates between them and the gate graph. Extension: .ngp
     /// Coordinates are map-local; the game adds the map offset (the MSB MapOffset event) at load.
-    /// Mesh i is the MSB's i-th navmesh part. See Claude/Documentation/NGP Format.md.
+    /// Mesh i is the MSB's i-th navmesh part. See Claude/Documentation/Navigation.md (NGP (DS2, DS2S)).
     /// </summary>
     public class NGP : SoulsFile<NGP>
     {
@@ -362,7 +362,7 @@ namespace SoulsFormats
             /// <summary>
             /// Per face: bits 0-2 level, a body-size gate (an enemy of level q uses it only if level &gt; q; 7 = everyone).
             /// Bits 3-6 type (mask 0x78): 0x00 ground, 0x10 door threshold, 0x20 ladder, 0x30 rope, 0x40 one-way drop,
-            /// 0x48 event-switchable area, 0x58 water (others: see NGP Format.md).
+            /// 0x48 event-switchable area, 0x58 water (others: see Navigation.md (NGP (DS2, DS2S))).
             /// Bits 7-10 attributes: 0x100 blocked (locked door, fog wall, script barrier), 0x200 door closed,
             /// 0x400 closed door passable, 0x80 unknown.
             /// </summary>

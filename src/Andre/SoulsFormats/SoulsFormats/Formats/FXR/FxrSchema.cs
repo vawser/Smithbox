@@ -28,7 +28,7 @@ namespace SoulsFormats
 
     /// <summary>
     /// Named, typed layout of every FXR action per game, generated from fxr-main's YAML by
-    /// Tools/FxrSchemaGen (Smithbox.Data/Assets/FXR/fxr_schema.json). See FXR Format Plan, Layer 2.
+    /// Tools/FxrSchemaGen (Smithbox.Data/Assets/FXR/fxr_schema.json). See FX.md (FXR Format Plan (layers)), Layer 2.
     /// </summary>
     public class FxrSchema
     {

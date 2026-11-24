@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// The Model Editor's EDGE Editor: the grapple points, hangable ledges and huggable walls of a Sekiro object's EDGE
 /// file (in its objbnd, in the object's own space), with the feature set of the Map Editor's EDGE Editor (see
-/// Claude/Documentation/EDGE Viewport Editing.md §15): live markers for the whole file, the entry list by chain, the
+/// Claude/Documentation/Map Editor.md (EDGE editing) §15): live markers for the whole file, the entry list by chain, the
 /// selected entry's fields, Duplicate/Delete, picking and moving points in the viewport, adding grapple points and
 /// drawing ledges and walls, split/join/delete, creating a file for an object without one, and the checks with fixes.
 /// It uses the same pure rules (<see cref="EdgeHandles"/>, <see cref="EdgeAuthoring"/>, <see cref="EdgeChecks"/>).

@@ -10,7 +10,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Lists the undo history of the loaded model, oldest first. Clicking a step goes back to just before it, or, for a
 /// step that was undone, redoes up to it. Below that are the models this view keeps with their history after being
-/// switched away from, which can be loaded again or forgotten. Plan: Documentation/Model Editor Second Review.md, R5.
+/// switched away from, which can be loaded again or forgotten. Plan: Claude/Documentation/Model Editor.md, R5.
 /// </summary>
 public class ModelHistoryTool
 {

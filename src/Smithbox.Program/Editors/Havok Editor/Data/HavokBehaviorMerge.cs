@@ -178,7 +178,7 @@ public record HavokMergeNote(HavokMergeNoteKind Kind, string Text);
 /// <summary>
 /// The three-way merge of a behavior file: base (the game's copy, or a picked file), ours (the project's saved
 /// file) and theirs (the incoming file), paired by identity (events and variables by name, named objects by type and
-/// name, as Phase 0 of Claude/Documentation/Havok Behavior Merge Analysis.md found them unique).
+/// name, as Phase 0 of Claude/Documentation/Behavior.md (Havok behavior tools) found them unique).
 /// <para>
 /// Phase 1: events and variables theirs adds, variable definitions and the value fields of objects all three have.
 /// Phase 2: keyed lists. Entries of states, selectors, modifier lists, transition arrays, binding sets, blenders,

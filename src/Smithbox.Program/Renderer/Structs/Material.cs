@@ -324,7 +324,7 @@ public struct MaterialCustomize
     /// <summary>
     ///     AC6's ColorMaterial shaders (<see cref="MaterialPaint" />): the albedo, normal, gloss and metallic built from a
     ///     paint slot picked by a mask and a chain of detail layers. Not a ChrCustomize colouring: its entries are
-    ///     <see cref="MaterialWithPaint" />, in the same place. See Claude/Documentation/AC6 Paint Materials.md
+    ///     <see cref="MaterialWithPaint" />, in the same place. See Claude/Documentation/Materials and Textures.md (Material fidelity)
     /// </summary>
     public const uint ModePaint = 10;
 }
@@ -440,7 +440,7 @@ public struct MaterialWithPaint
 ///     after its <see cref="MaterialDeform" /> (which moves the vertices, MaterialDeformer.Laser). Read by
 ///     FlverShader.frag's LaserSurface as 18 vec4s (LaserVec), in this order. Texture words hold one index in the low 16
 ///     bits and another in the high, 0 for none; each tiling vec4 is xy for the low texture and zw for the high. See
-///     Claude/Documentation/AC6 Laser Blades.md
+///     Claude/Documentation/Rendering.md (Per-game material and model fixes)
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct MaterialLaser

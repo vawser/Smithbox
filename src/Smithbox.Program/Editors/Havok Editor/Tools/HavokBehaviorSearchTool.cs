@@ -8,7 +8,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// Search (Behavior Editor Tools window): events, variables, animations, states or any named object, in the shown
 /// file, its binder, the files the project has changed, or every behavior file (HavokBehaviorScan). Clicking a result
-/// opens its file and shows it. See Claude/Documentation/Havok Behavior Scoped Tools Plan.md and Tool UI Styling.md.
+/// opens its file and shows it. See Claude/Documentation/Behavior.md (Havok behavior tools) and UI.md (Tools window conventions).
 /// </summary>
 public class HavokBehaviorSearchTool
 {

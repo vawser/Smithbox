@@ -6,7 +6,7 @@ using StudioCore.Keybinds;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The effect tree's structure menus for DLSE effects (DES, DS2, DS2S; FFX Older Games Plan §21, F7a): states and
+/// The effect tree's structure menus for DLSE effects (DES, DS2, DS2S; FX.md, FFX §21, F7a): states and
 /// their exits, a state's actions and the entries of call lists, with actions added from the project's templates.
 /// Every change is one <see cref="FxDlseStructureAction"/>, undone through a whole-effect snapshot.
 /// </summary>

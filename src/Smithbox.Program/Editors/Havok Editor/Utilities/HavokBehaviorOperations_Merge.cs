@@ -5,7 +5,7 @@ using System.Reflection;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// Applying a behavior merge plan (HavokBehaviorMerge) to the live file. See Claude/Documentation/Havok Behavior Merge Analysis.md.
+/// Applying a behavior merge plan (HavokBehaviorMerge) to the live file. See Claude/Documentation/Behavior.md (Havok behavior tools).
 /// </summary>
 public static partial class HavokBehaviorOperations
 {

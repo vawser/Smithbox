@@ -50,7 +50,7 @@ public sealed class TransferReport
 /// <summary>
 /// Data Transfer: dummies and materials out of one model (<see cref="Extract" />) into the format of
 /// <see cref="ModelTransferFile" />, and from it into the loaded model as one undo step (<see cref="BuildImport" />).
-/// The same format is written to and read from JSON. Plan: Documentation/Model Editor Second Review.md, R9.
+/// The same format is written to and read from JSON. Plan: Claude/Documentation/Model Editor.md, R9.
 /// </summary>
 public static class ModelDataTransfer
 {

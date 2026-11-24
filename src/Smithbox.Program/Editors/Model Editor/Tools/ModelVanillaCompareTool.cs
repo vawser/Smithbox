@@ -12,7 +12,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Vanilla Compare: how the loaded model differs from the game's own. Counts per list, the selected object's fields
 /// against vanilla with per-field and whole-object revert, lists of modified, added and removed objects (removed
-/// ones can be restored), and Revert Model to Vanilla. Plan: Documentation/Model Editor Second Review.md, R6.
+/// ones can be restored), and Revert Model to Vanilla. Plan: Claude/Documentation/Model Editor.md, R6.
 /// </summary>
 public class ModelVanillaCompareTool
 {

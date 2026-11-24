@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor;
 /// where the game won't save the player's position (SaveLimit) or limits multiplayer (MultiplayLimit). The boxes come
 /// from <see cref="MfrBank"/>, so the Forbidden Region Editor's edits show straight away; the editor's selected and
 /// hovered boxes are drawn in their own colours. The boxes aren't MSB entries and aren't picked by the viewport's
-/// selection. See Claude/Documentation/MFR Format.md.
+/// selection. See Claude/Documentation/Formats.md (MFR).
 /// </summary>
 public class MapForbiddenRegionTool
 {

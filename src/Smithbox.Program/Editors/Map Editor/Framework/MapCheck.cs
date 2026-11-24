@@ -58,7 +58,7 @@ public sealed record MapCheckIssue(
 /// <summary>
 /// Checks loaded maps for what would make a save fail (broken references, DS2 duplicate IDs) or is probably a
 /// mistake (duplicate names and entity IDs, missing param rows). Used before a save (the Save Check window) and by
-/// the Map Validator tool. Plan: Documentation/Map Editor Save Check.md.
+/// the Map Validator tool. Plan: Claude/Documentation/Map Editor.md (Save Check).
 /// </summary>
 public static class MapCheck
 {

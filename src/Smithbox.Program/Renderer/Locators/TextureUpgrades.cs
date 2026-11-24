@@ -15,7 +15,7 @@ namespace StudioCore.Renderer;
 /// the copy, which the texture name index (or the character rule) then loads from its container.
 /// <para>
 /// Only copies strictly larger than the original are listed: many prefixed copies are the same size or smaller.
-/// Generated from vanilla data by Claude/Tools/BbChrTexProbe (--pairs). See Claude/Documentation/BB Character Textures.md.
+/// Generated from vanilla data by Claude/Tools/BbChrTexProbe (--pairs). See Claude/Documentation/Materials and Textures.md (Material fidelity).
 /// </para>
 /// </summary>
 public static class TextureUpgrades

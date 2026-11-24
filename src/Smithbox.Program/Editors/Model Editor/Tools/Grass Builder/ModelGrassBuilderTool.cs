@@ -16,7 +16,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// The Model Editor's GRASS Builder: gives a map piece or asset a GRASS file built from chosen FLVER meshes, or rebuilds
 /// the one it has. Faces can be limited by how steep they are, and every vertex starts with the chosen density in each
 /// of the six slots (the part's six GrassTypeParam IDs). The file follows the vanilla rules, the same in SDT, ER, AC6
-/// and NR (see <see cref="GrassBuilder"/>, Claude/Documentation/GRASS Builder.md and GRASS Later Games.md).
+/// and NR (see <see cref="GrassBuilder"/>, Claude/Documentation/Formats.md (GRASS) and Formats.md (GRASS)).
 /// <para>
 /// A build is one <see cref="ModelGrassEditAction"/> on the view's history, and the model's save writes the file
 /// (adding it to the binder when it is new). Only the models whose parts name grass types are offered

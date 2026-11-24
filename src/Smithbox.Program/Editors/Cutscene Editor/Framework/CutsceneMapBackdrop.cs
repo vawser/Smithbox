@@ -16,7 +16,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// <summary>
 /// The map behind a cut: the map pieces and assets of one map, drawn but not entities, so nothing of the map can be
 /// changed here. The map is placed at the origin, as offset.sib places cuts in the space of their map (Godrick's cut
-/// s10_00_0020 stands where m10_00_00_00's c4750 enemy does; see Cutscene Editor Analysis, phase 3).
+/// s10_00_0020 stands where m10_00_00_00's c4750 enemy does; see Cutscene Editor.md, phase 3).
 /// <para>
 /// A copy of the Gparam Editor's map loader (GparamUniverse), without its lighting environment, kept apart so the
 /// two editors don't depend on each other. The MSB is the Map Editor's copy if it has read the map, else one read here.

@@ -6,11 +6,11 @@ namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
 /// Draws the running effect's Model and RichModel particles: the appearance's FLVER at each particle.
-/// - Model (605), FX Editor Plan §18: coloured by the effect. Each appearance has a batch per FLVER submesh
+/// - Model (605), FX.md §18: coloured by the effect. Each appearance has a batch per FLVER submesh
 ///   (FxModelRenderableProxy, FxModel.vert/frag), drawn instanced with the particles' transforms, colours, uv
 ///   scrolling and sprite frames, in the appearance's blend mode.
 /// - RichModel (10015), phase V4: through the scene's model renderer with the model's own materials, lit as other
-///   models are. Each appearance keeps a pool of mesh renderables; each frame the first ones are placed at the
+///   models are, the albedo tinted by the effect's colour (MeshRenderableProxy.Tint) as the game's instance colour. Each appearance keeps a pool of mesh renderables; each frame the first ones are placed at the
 ///   particles and the rest hidden.
 /// A model whose meshes have no uvs (texturing turned off draws every FLVER that way) uses the RichModel path.
 /// </summary>
@@ -162,8 +162,9 @@ public class FxModelRenderer
                 if (pool.Used >= MaxPerAppearance)
                     continue;
 
-                if (!def.Evaluate(p.Node, p.Particle, p.Position, eye, cameraForward, out var world))
+                if (!def.EvaluateInstance(p.Node, p.Particle, p.Position, eye, cameraForward, out var richInstance))
                     continue;
+                var world = richInstance.World;
 
                 if (pool.Used == pool.Meshes.Count)
                 {
@@ -175,6 +176,9 @@ public class FxModelRenderer
                 int slot = pool.Used++;
                 var target = pool.Meshes[slot];
                 target.World = world;
+                // The game's G-buffer shaders multiply the albedo by the instance colour: the effect's colour here.
+                // Older-format models without an FXR3 action keep their own colours.
+                target.Tint = def.Action != null ? richInstance.Color : null;
                 if (!target.Visible)
                     target.Visible = true;
                 Animate(pool, slot, def, p.Particle);

@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Checks a map's NGP (Phase G0), with the rules the game files hold (NGP Format.md; Tools/NgpSurvey strict, links,
+/// Checks a map's NGP (Phase G0), with the rules the game files hold (Navigation.md (NGP (DS2, DS2S)); Tools/NgpSurvey strict, links,
 /// gaterebuild). The vanilla files pass it without errors (NavSurvey `ngp validate`); its warnings are things a few
 /// vanilla meshes do too, which the Check tab marks inherited. Issues name the mesh in Room and the face in Face, so the
 /// Check tab can go to them.

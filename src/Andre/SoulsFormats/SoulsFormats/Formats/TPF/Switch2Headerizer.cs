@@ -14,7 +14,7 @@ namespace SoulsFormats
     /// first mip's block size. Formats are given by <see cref="TexHeader.DXGIFormat"/>, including the DXGI ASTC
     /// values (133..187), which are decoded to R8G8B8A8 here as desktop GPUs mostly cannot sample ASTC.
     /// </para>
-    /// See Documentation/Claude/DB_NT Textures.md
+    /// See Claude/Documentation/Materials and Textures.md (Material fidelity)
     /// </summary>
     public static class Switch2Headerizer
     {

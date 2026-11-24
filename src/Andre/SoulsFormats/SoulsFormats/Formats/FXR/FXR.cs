@@ -8,7 +8,7 @@ namespace SoulsFormats
     /// Particle effect definition for DS3, SDT, ER, AC6 and NR (FXR version 4/5).
     /// Lossless structural model: every record keeps its raw values, and fields are raw 32-bit words.
     /// Named and typed access is layered on top through the FXR schema.
-    /// See Documentation/Claude/FXR Format Plan.md.
+    /// See Claude/Documentation/FX.md (FXR Format Plan (layers)).
     /// </summary>
     public partial class FXR : SoulsFile<FXR>
     {

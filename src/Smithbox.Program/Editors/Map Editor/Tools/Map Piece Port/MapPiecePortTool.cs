@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The Model Browser's port of another map's map piece into the selected map: the prompt, the write, the model
-/// assignment and the texture copy (Claude/Documentation/Map Piece Port.md).
+/// assignment and the texture copy (Claude/Documentation/Map Editor.md (Map Piece Port)).
 /// </summary>
 public class MapPiecePortTool
 {

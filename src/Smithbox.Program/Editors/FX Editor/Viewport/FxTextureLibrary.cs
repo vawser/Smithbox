@@ -5,7 +5,7 @@ using System.Collections.Concurrent;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The textures and models the viewport's particles draw with (FX Editor Plan §10.4).
+/// The textures and models the viewport's particles draw with (FX.md §10.4).
 /// - Textures: an id and type become a TPF name (s88610_a, or s88610 when the game has no typed one), found in the
 ///   binder index the bank built. Until a texture has loaded its handle is 0, which the shader draws as a soft spot.
 /// - Models (phase V4): s&lt;id&gt;.flver, from the same index. When one is read, the textures its materials name

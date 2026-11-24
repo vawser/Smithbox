@@ -5,7 +5,7 @@ namespace StudioCore.Renderer;
 
 /// <summary>
 ///     A copy of a pipeline's scene colour, taken with <see cref="SceneDepth" /> after the opaque draws, for what is
-///     drawn after them to read what is behind it: the FX Editor's Distortion and RadialBlur particles (FX Editor Plan
+///     drawn after them to read what is behind it: the FX Editor's Distortion and RadialBlur particles (FX.md
 ///     §20.7). It costs a full-size copy each frame, so it's only taken while something asks for it (<see cref="Wanted" />).
 ///     Shaders read it by index from the global texture pool, at a screen position.
 /// </summary>

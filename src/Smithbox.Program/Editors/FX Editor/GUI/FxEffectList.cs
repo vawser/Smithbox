@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.FxEditor;
 
-/// <summary>What the Effect List shows, besides the search (FX Effect List Actions Plan, phase C).</summary>
+/// <summary>What the Effect List shows, besides the search (FX.md (Effect List and Effect Tree actions), phase C).</summary>
 public enum FxListFilter
 {
     All,
@@ -20,7 +20,7 @@ public enum FxListFilter
 
 /// <summary>
 /// Every effect id in the project's sfx binders, with alias names, a search and filters, and the actions on whole
-/// effects (FX Effect List Actions Plan): duplicating, binder membership, deleting, reverting, Used By, comparing,
+/// effects (FX.md (Effect List and Effect Tree actions)): duplicating, binder membership, deleting, reverting, Used By, comparing,
 /// importing and exporting, changing an id and the Project Check. The dialogs are in FxEffectListDialogs.cs.
 /// </summary>
 public partial class FxEffectList
@@ -538,7 +538,7 @@ public partial class FxEffectList
 
         ImGui.Separator();
 
-        // Every format (DS2 / DS2S keep their .sfxparam records in step on save, FFX Older Games Plan §22.8).
+        // Every format (DS2 / DS2S keep their .sfxparam records in step on save, FX.md, FFX §22.8).
         // An id with two versions (DES) keeps each in its own binders: its binders and id aren't changed as one
         bool versions = targets.Any(HasVersions);
 

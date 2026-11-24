@@ -6,7 +6,7 @@ namespace StudioCore.Editors.FxEditor;
 /// Turning a Proxy node into the nodes of the effect it starts (Inline), and a branch into an effect of its own
 /// started by a Proxy node (Extract). Only SoulsFormats is used, so the check tool compiles this file on its own.
 ///
-/// What decides whether the result plays the same (from the vanilla survey, FX Effect Tree Actions Plan §E):
+/// What decides whether the result plays the same (from the vanilla survey, FX.md (Effect List and Effect Tree actions) §E):
 /// - A Proxy node holds only its SFXReference (action 132): no configs, no transform, so its effect runs at its
 ///   parent's place. Its children can move up into the parent unless the parent emits its children (NodeEmitter)
 ///   or picks one by distance (LevelsOfDetail).

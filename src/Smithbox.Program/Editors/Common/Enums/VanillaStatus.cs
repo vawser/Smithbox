@@ -2,7 +2,7 @@ namespace StudioCore.Editors.Common;
 
 /// <summary>
 /// How an item (a file, an entry, an object, a field) compares with the game's own copy. Shared by every editor's
-/// vanilla comparison and drawn by VanillaMarkers. Plan: Claude/Documentation/Vanilla Modified-Added Parity.md.
+/// vanilla comparison and drawn by VanillaMarkers. Plan: Claude/Documentation/UI.md (Vanilla state).
 /// </summary>
 public enum VanillaStatus
 {

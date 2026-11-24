@@ -6,7 +6,7 @@ using System.Linq;
 namespace StudioCore.Editors.FxEditor.Model;
 
 /// <summary>
-/// Whole-effect helpers for the older formats (FFX Older Games Plan §22, F8): reading and writing an effect file of any
+/// Whole-effect helpers for the older formats (FX.md, FFX §22, F8): reading and writing an effect file of any
 /// format, its id, the effect calls that point at another id, and what kind of file it is. SoulsFormats + BCL only, so
 /// Claude/Tools/FxModelCheck runs the same code.
 /// </summary>

@@ -41,7 +41,7 @@ public class EsdRole
 }
 
 /// <summary>
-/// Arg roles for P5 links (Claude/Documentation/ESD Block Editor Analysis.md §4.3): inferred from the catalogue's
+/// Arg roles for P5 links (Claude/Documentation/EMEVD and ESD.md (ESD Editor) §4.3): inferred from the catalogue's
 /// role hint (ESDLang's) and the arg's name, the same for commands and functions. The param and FMG each role names
 /// were chosen by EsdSurvey roles, which scores every rule against the values vanilla passes (param row IDs from
 /// Assets/PARAM/&lt;GAME&gt;/Param Row Names, FMG IDs from the game's msgbnds).

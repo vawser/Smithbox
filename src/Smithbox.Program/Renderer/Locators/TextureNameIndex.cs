@@ -18,7 +18,7 @@ namespace StudioCore.Renderer;
 /// The files are generated from vanilla game data by Claude/Tools/TextureIndexGen, so users never scan anything.
 /// Textures a project adds in new containers aren't in them. Names the AET rule finds, and containers no model reads
 /// from (envmaps, DOL lightmaps, colour grading, menu, font), are left out of the files.
-/// See Claude/Documentation/Texture Name Index Plan.md.
+/// See Claude/Documentation/Materials and Textures.md (Texture Editor).
 /// </para>
 /// </summary>
 public static class TextureNameIndex

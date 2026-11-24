@@ -6,7 +6,7 @@ namespace StudioCore.Renderer;
 /// The screen effects of a map's GPARAMs, at one time of day: what the post-processing passes read. Resolved with
 /// <see cref="GparamLighting" />, through the same chain of files, at value ID 0 except where noted. Values that
 /// aren't found keep these defaults, which are Elden Ring's mapbase (or m10_00_0000 for the groups mapbase leaves
-/// out). Nothing is drawn from these yet; see Documentation/Post Processing/Plan.md for which phase uses each.
+/// out). Nothing is drawn from these yet; see Claude/Documentation/Lighting.md §3 Post effects for which phase uses each.
 /// </summary>
 public class GparamPostEffects
 {

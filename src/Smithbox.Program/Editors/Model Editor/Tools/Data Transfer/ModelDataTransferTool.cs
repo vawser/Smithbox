@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Data Transfer: copies dummies and materials (with their texture paths and GX lists) into the loaded model from
 /// another model, or from a JSON file, and exports the loaded model's to JSON. Bones are found by name in the target,
-/// and every import is one undo step. Plan: Documentation/Model Editor Second Review.md, R9.
+/// and every import is one undo step. Plan: Claude/Documentation/Model Editor.md, R9.
 /// </summary>
 public class ModelDataTransferTool
 {

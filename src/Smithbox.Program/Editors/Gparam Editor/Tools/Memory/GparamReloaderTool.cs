@@ -7,7 +7,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
 /// Gparam Reloader (Tools window, Game Memory): pushes the selected GPARAM into the running game, replacing the copy
-/// the game uses, and lists the GPARAMs the game has loaded. See Claude/Documentation/Gparam Reloader Analysis.md.
+/// the game uses, and lists the GPARAMs the game has loaded. See Claude/Documentation/Gparam.md (Gparam Reloader).
 /// </summary>
 public class GparamReloaderTool
 {

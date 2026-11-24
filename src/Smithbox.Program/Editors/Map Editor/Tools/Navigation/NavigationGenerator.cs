@@ -9,7 +9,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-// Generating a navmesh from collision (Navigation Editor Plan, Phase 4; Navmesh Generation Plan): Recast (DotRecast)
+// Generating a navmesh from collision (Navigation.md, Phase 4; Navigation.md): Recast (DotRecast)
 // voxelises the collision's walkable surfaces into convex polygons, which become an hkaiNavMesh laid out as the game's
 // are, with a face tree for its query mediator. Kept free of the rest of Smithbox; NavSurvey `navgen` runs it on the
 // game's collision and compares the result with the game's own navmeshes.

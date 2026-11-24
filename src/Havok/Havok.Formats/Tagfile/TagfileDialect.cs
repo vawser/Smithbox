@@ -5,7 +5,7 @@ namespace Havok.Formats.Tagfile;
 /// padding, partial type bodies, member extra values, an absent PTCH), so the dialect mostly decides how files are
 /// written.
 ///
-/// The 2018 and 2019 HKLib serializers were two copies of one engine (see the Unified Havok Library Plan, Phase 2).
+/// The 2018 and 2019 HKLib serializers were two copies of one engine (see the Havok Library.md, Phase 2).
 /// The true format differences are <see cref="SdkVersion" />, the string section names and their padding byte. The
 /// rest are writer behaviours HKLib's 2019 copy gained to reproduce AC6 files byte for byte; they are switches here so
 /// they can be measured on the other SDKs.

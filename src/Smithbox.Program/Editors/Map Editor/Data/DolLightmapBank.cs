@@ -13,7 +13,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// DS3's lightmaps of its map pieces, the DOL textures: what the game lights the pieces with in place of the light
-/// probes, which only light its objects and characters. See Documentation/Older Games/Analysis.md.
+/// probes, which only light its objects and characters. See Claude/Documentation/Lighting.md §4 Older games.
 /// <para>
 /// They are in map/mAA/gi_env_mAA.tpfbhd, every map of the area together, as
 /// AABBCCDD_mXXXXXX_gi_NNNN_00_dol_0K[_atlasIII][_l]: the map, the piece's model, the bake NNNN (the map's BTAB and

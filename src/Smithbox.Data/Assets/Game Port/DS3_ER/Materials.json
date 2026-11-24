@@ -1,6 +1,6 @@
 {
   "Generated": "2026-11-21 19:17 by Claude/Tools/Ds3ErPortSurvey genmaterials",
-  "Notes": "DS3 -\u003E ER material port. Rules: Claude/Documentation/Material Mapping.md \u00A73. Templates: dominant values over all ER MATBINs of each shader.",
+  "Notes": "DS3 -\u003E ER material port. Rules: Claude/Documentation/Materials and Textures.md (DS3 → ER material port) \u00A73. Templates: dominant values over all ER MATBINs of each shader.",
   "CopiedParams": [
     "g_AlphaRef",
     "g_BlendMode",

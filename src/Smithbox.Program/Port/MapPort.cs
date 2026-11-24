@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Port;
 
-/// <summary>What a map port is asked to do (Smithbox Port Plan.md §2).</summary>
+/// <summary>What a map port is asked to do (Game Port.md §1 Smithbox.Port §2).</summary>
 public sealed class PortRequest
 {
     public ProjectDescriptor Input;
@@ -36,7 +36,7 @@ public sealed class PortRequest
 }
 
 /// <summary>
-/// A whole DS3 map into an existing ER map (Smithbox Port Plan.md, P1 and P1a): every map piece the DS3 MSB places,
+/// A whole DS3 map into an existing ER map (Game Port.md §1 Smithbox.Port, P1 and P1a): every map piece the DS3 MSB places,
 /// with its materials and textures, the h and l collision, and the MSB parts at their DS3 transforms plus the offset.
 /// Reads the input project, writes the output project's folder only. Runs on a background thread.
 /// </summary>
@@ -611,7 +611,7 @@ public sealed class MapPort
     /// <summary>
     /// ER draws a part with no draw groups everywhere (95% of ER's assets have none; only the legacy dungeons cull by
     /// group), and DS3's group bits mean nothing in an ER map. So every group array is cleared, and the alternate
-    /// groups a vanilla template carries (UseAltGroups swaps or merges them in on load, MSBE Exe Analysis §1) are
+    /// groups a vanilla template carries (UseAltGroups swaps or merges them in on load, MSB Research.md (Parts (ER)) §1) are
     /// switched off, as is the unrelated DisplayGroupStruct. All-bits groups did not work: in game the template's
     /// alternate groups merged over them and many pieces didn't draw.
     /// </summary>
@@ -679,7 +679,7 @@ public sealed class MapPort
     private const string ShellTemplateMap = "m30_00_00_00";
 
     /// <summary>
-    /// A light-blocking shell around the ported map, as ER's catacombs have one (Smithbox Port Plan.md §4.9): their
+    /// A light-blocking shell around the ported map, as ER's catacombs have one (Game Port.md §1 Smithbox.Port §4.9): their
     /// map piece m000000 is a black (m39_12_001, c80_SYSTEX_BLACK), double-sided hull round the dungeon, placed as a
     /// shadow-only part (IsShadowOnly, PartsDrawParamID 2044), so it isn't drawn but keeps the sun out. Here: a closed
     /// box over the port's bounds, built on that piece's FLVER (material, GX list, layout) and placed with a copy of its

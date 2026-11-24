@@ -61,7 +61,7 @@ public sealed class RefIdQuery
 /// <summary>
 /// Dummies: select them by reference ID, and offset or set the reference IDs of many at once. Dummy IDs are what TAE
 /// events, params and SFX refer to. Also gives the dummy rows of Contents their Select All With Ref ID item, and the
-/// Contents filter its "ref:" form. Plan: Documentation/Model Editor Second Review.md, R8.
+/// Contents filter its "ref:" form. Plan: Claude/Documentation/Model Editor.md, R8.
 /// </summary>
 public class ModelDummyTool
 {

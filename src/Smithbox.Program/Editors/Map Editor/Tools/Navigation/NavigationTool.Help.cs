@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Built-in help (Navigation Editor UX Analysis, R7): a ? button at the end of each tab bar opens the open tab's
+/// Built-in help (Navigation.md, R7): a ? button at the end of each tab bar opens the open tab's
 /// description and steps (GUI.TabHelpButton), ? buttons beside the Tool and Brush combos explain the chosen entry
 /// (GUI.HelpButton), and a glossary of the navigation terms is opened from the header, so tooltips and the tabs
 /// themselves can stay short.

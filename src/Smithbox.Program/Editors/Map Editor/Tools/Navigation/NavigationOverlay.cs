@@ -8,7 +8,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 // The geometry the Navigation tool draws over a map, and the face picking it uses. Kept free of the renderer, so
-// Tools/NavSurvey can build it from the game files (Navigation Editor Plan, Phase 1).
+// Tools/NavSurvey can build it from the game files (Navigation.md, Phase 1).
 
 /// <summary>
 /// The things the overlay can draw. Each is drawn in its own colour; faces in one colour per face data value.
@@ -59,7 +59,7 @@ public enum NavOverlayLayer
 
     /// <summary>
     /// The bounds of the loaded assets whose AssetEnvironmentGeometryParam row has a navimeshFlag: the game cuts or marks
-    /// the navmesh under them at runtime (ER Navigation Exe Analysis.md, R5). Drawn by the tool, not the overlay builder.
+    /// the navmesh under them at runtime (Navigation.md, R5). Drawn by the tool, not the overlay builder.
     /// </summary>
     RuntimeCuts,
 

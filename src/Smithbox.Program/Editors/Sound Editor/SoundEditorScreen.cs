@@ -7,7 +7,7 @@ namespace StudioCore.Editors.SoundEditor;
 
 /// <summary>
 /// The Sound Editor: lists the sound banks of FMOD games (DS1–SDT .fsb) and Wwise games (ER, NR, AC6, DB_NT .bnk/.wem)
-/// and plays their sounds through vgmstream. S2 is read-only; see Claude/Documentation/Sound Editor Plan.md.
+/// and plays their sounds through vgmstream. S2 is read-only; see Claude/Documentation/Sound Editor.md.
 /// </summary>
 public class SoundEditorScreen : EditorScreen, IDisposable
 {

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Where each game keeps its map textures, for the Texture Transfer tool (Claude/Documentation/Map Texture Transfer.md).
+/// Where each game keeps its map textures, for the Texture Transfer tool (Claude/Documentation/Map Editor.md (Texture Transfer)).
 /// DS1/DS1R/BB/DS3/SDT: four binders per area, map/mAA/mAA_0000..0003.tpfbhd, shared by every map of the area.
 /// DS2/DS2S: one binder per map, model/map/tAA_BB_CC_DD.tpfbhd. The lightmap binders (gi_env) and DS2's _low twins
 /// (BND4 files under a .tpfbhd name) are not map texture binders here. DES and the asset games aren't supported.

@@ -7,7 +7,7 @@ namespace StudioCore.Editors.SoundEditor;
 /// <summary>
 /// Read-only Wwise SoundBank (BKHD v135 in ER/NR/AC6, v150 in DB_NT): header, in-bank media (DIDX/DATA), Sound
 /// objects (which media each plays and whether it is streamed), event IDs and STID bank names. The HIRC event graph
-/// is S4. See Claude/Documentation/Sound Editor Plan.md §2a.
+/// is S4. See Claude/Documentation/Sound Editor.md §2a.
 /// <para>Kept free of Smithbox dependencies: Claude/Tools/SoundSurvey links this file.</para>
 /// </summary>
 public sealed class WwiseBank

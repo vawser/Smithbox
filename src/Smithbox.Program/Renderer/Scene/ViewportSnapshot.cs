@@ -14,7 +14,7 @@ public sealed record SnapshotPixels(int Width, int Height, byte[] Rgba);
 
 /// <summary>
 ///     Takes one viewport's tone mapped scene off the GPU, for the render snapshots that check a renderer change
-///     against a baseline (Documentation/Shader Family Split Plan.md, S1). <see cref="Request" /> asks for the next
+///     against a baseline (Claude/Documentation/Rendering.md (Shader family split), S1). <see cref="Request" /> asks for the next
 ///     frame; the viewport calls <see cref="Record" /> where it tone maps that frame, which draws the image again into
 ///     a target of its own and copies it to a staging texture, and <see cref="Update" /> every frame, which reads it
 ///     once the frames in flight are done with it.

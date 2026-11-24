@@ -15,7 +15,7 @@ public readonly record struct LuaListConstant(string Name, double Value, int Fir
 /// <summary>
 /// Text work for creating and duplicating battle and logic scripts: how a script registers its goals, renaming a copy
 /// for its new goal ID, the lines of the list scripts, and the minimal scripts a new goal starts from. See
-/// Claude/Documentation/Lua Editor Script Create Duplicate Delete.md.
+/// Claude/Documentation/Lua and AI.md (Text editing).
 /// </summary>
 public static class LuaScriptStructure
 {

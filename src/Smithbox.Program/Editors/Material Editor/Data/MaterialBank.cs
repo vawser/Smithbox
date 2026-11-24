@@ -196,7 +196,7 @@ public class MaterialBank : IDisposable
     /// The binders in the order their names override each other, later winning: by path, so a base binder
     /// comes before its DLC ones (allmaterial, allmaterial_dlc01, allmaterial_dlc02), with devpatch binders last.
     /// ER and NR hold a few names in both a base and a DLC binder with different content, and DES has the same
-    /// MTDs in mtd.mtdbnd and mtd.mtdbnd.dcx; see Documentation/Claude/Material Editor Plan.md, R2.
+    /// MTDs in mtd.mtdbnd and mtd.mtdbnd.dcx; see Claude/Documentation/Materials and Textures.md (Material Editor), R2.
     /// Within a binder, the later file of a repeated name wins.
     /// </summary>
     private static IEnumerable<(FileDictionaryEntry entry, TWrapper wrapper)> LoadOrder<TWrapper>(

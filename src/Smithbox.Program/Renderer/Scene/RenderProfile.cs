@@ -24,7 +24,7 @@ public enum RenderFamily
 /// The one place the renderer's model code asks "which game is this?", in place of lists of project types scattered
 /// through FlverResource, so a new game is one entry here and every list stays in step with the shaders.
 /// The GPARAM side (post effects, exposure, LUTs) is <see cref="GparamProfile"/>.
-/// Plan: Documentation/Shader Family Split Plan.md, S4 (Appendix A5 lists what each flag replaced).
+/// Plan: Claude/Documentation/Rendering.md (Shader family split), S4 (Appendix A5 lists what each flag replaced).
 /// </summary>
 /// <remarks>
 /// This file uses nothing but <see cref="ProjectType"/>, so tools can compile it in; the selected project's profile
@@ -50,7 +50,7 @@ public sealed partial class RenderProfile
 
     /// <summary>
     /// A MATBIN's sampler path wins over the FLVER's texture path: Duskbloods FLVERs only give paths for albedo
-    /// slots (Documentation/Claude/DB_NT Textures.md)
+    /// slots (Claude/Documentation/Materials and Textures.md (Material fidelity))
     /// </summary>
     public bool MatbinTexturePaths { get; private init; }
 

@@ -1,7 +1,7 @@
 // Legacy family: Demon's Souls and Dark Souls: Prepare to Die (c_isLegacy, see GameFamily.glsl).
 // Phong lighting, the HemEnv env cubemaps, and Demon's Souls' material lightmaps and vertex colors.
 // The hooks are dispatched by Families.glsl; a hook that returns false leaves the shared core's path to run.
-// Plan: Documentation/Shader Family Split Plan.md, S3.
+// Plan: Claude/Documentation/Rendering.md (Shader family split), S3.
 
 // Traditional Phong: no Fresnel or roughness, a fixed power 4 highlight
 bool Legacy_ShadeLight(Surface s, float LdotN, float NdotH, vec3 radiance, vec3 specularRadiance, out vec3 light)

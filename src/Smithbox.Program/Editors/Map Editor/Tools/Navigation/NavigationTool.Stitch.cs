@@ -7,7 +7,7 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The View tab's Stitch group (Navigation Editor Plan, Phase 3): finds the connections of the drawn set whose edges no
+/// The View tab's Stitch group (Navigation.md, Phase 3): finds the connections of the drawn set whose edges no
 /// longer fit, and the open boundary edges that fit each other, within the map and across its NVC files with loaded
 /// neighbours, then makes those changes as one undo. See NavStitchPlanner.
 /// </summary>

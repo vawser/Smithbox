@@ -127,7 +127,7 @@ public class HavokScanSink
 /// <summary>
 /// Runs a scoped tool over behavior files: the open file live, files with unsaved edits from the editor's copy (on
 /// the UI thread), and the rest from their stored copy on worker threads, with progress and cancel.
-/// See Claude/Documentation/Havok Behavior Scoped Tools Plan.md.
+/// See Claude/Documentation/Behavior.md (Havok behavior tools).
 /// </summary>
 public class HavokBehaviorScan
 {

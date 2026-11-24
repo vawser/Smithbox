@@ -23,7 +23,7 @@ namespace StudioCore.Application;
 /// Comparisons run on one background worker and are cached by (path, size, write time), so <see cref="Get" /> is
 /// cheap enough for the draw loop. Until a compare finishes the file reports None (draws uncoloured). A write through
 /// ProjectFS drops that file's entry. <see cref="Version" /> goes up whenever a result changes, for lists that cache
-/// per-row state. Plan: Claude/Documentation/Vanilla Modified-Added Parity.md (Phase 0, item 4).
+/// per-row state. Plan: Claude/Documentation/UI.md (Vanilla state) (Phase 0, item 4).
 /// </summary>
 public sealed class ProjectFileStatus : IDisposable
 {

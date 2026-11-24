@@ -11,7 +11,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// A character action script (action/script/*.hks) as text, with where each string literal is, which function each
 /// line is in, and where each function is defined. Compiled scripts (every vanilla ER, NR and DS3 one but two) are
 /// decompiled with the vendored HksDecompiler; source text (modded scripts, DS3 enemycommon.hks) is read as it is.
-/// See Claude/Documentation/Havok Behavior HKS Cross-Reference Plan.md.
+/// See Claude/Documentation/Behavior.md (Havok behavior views).
 /// </summary>
 public class HavokScript
 {

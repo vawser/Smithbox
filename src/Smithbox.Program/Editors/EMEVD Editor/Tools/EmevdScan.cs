@@ -5,7 +5,7 @@ using System.Numerics;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
-/// A scan over event files on a background task, for the Called By and Search tools (Tool UI Styling.md, Long work):
+/// A scan over event files on a background task, for the Called By and Search tools (UI.md (Tools window conventions), Long work):
 /// the file list and inputs are snapshotted on the main thread, hits come back through a queue emptied while the tool
 /// draws, progress is shown with a Cancel button, and starting again cancels the run in progress. Files not read yet
 /// are read by the task (EmevdFileWrapper.EnsureLoaded is locked for this).

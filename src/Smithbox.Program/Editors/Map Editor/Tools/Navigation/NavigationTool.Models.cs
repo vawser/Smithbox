@@ -9,7 +9,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Models tab (Navigation Editor Plan, Phase 3): the map's navmesh models, removing one (it becomes a placeholder)
+/// The Models tab (Navigation.md, Phase 3): the map's navmesh models, removing one (it becomes a placeholder)
 /// and duplicating one into a free placeholder pair, moved by an offset. See NavModelEdit.
 /// </summary>
 public partial class NavigationTool

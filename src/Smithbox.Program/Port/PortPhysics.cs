@@ -9,7 +9,7 @@ using H18 = Havok.hk2018;
 namespace StudioCore.Port;
 
 /// <summary>
-/// DS3 object physics (hk2014 hknp) as ER asset physics (hk2018 hknp), Smithbox Port Plan.md §4.6. A file's bodies are
+/// DS3 object physics (hk2014 hknp) as ER asset physics (hk2018 hknp), Game Port.md §1 Smithbox.Port §4.6. A file's bodies are
 /// rebuilt on fresh copies of an ER template body, material and motion properties (the AEG099_200 pot's broken state:
 /// ER's defaults for quality, motion ID, drag), with DS3's motion type, mass, transform, friction, restitution and
 /// motion settings. Polytopes and spheres are copied field by field (flags by name: the two SDKs number them

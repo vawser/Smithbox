@@ -45,7 +45,7 @@ public sealed class LuaScriptPlan
 
 /// <summary>
 /// Creating, duplicating and deleting battle and logic scripts, with the goals they register (see
-/// Claude/Documentation/Lua Editor Script Create Duplicate Delete.md). These are structural edits: written on save,
+/// Claude/Documentation/Lua and AI.md (Text editing)). These are structural edits: written on save,
 /// not on the undo stack (a list script's added constant lines are, as an edit of that script).
 /// </summary>
 public class LuaScriptCommands

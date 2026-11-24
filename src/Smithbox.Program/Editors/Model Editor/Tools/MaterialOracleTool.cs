@@ -37,7 +37,7 @@ public class MaterialOracleEntry
 }
 
 /// <summary>
-/// The Smithbox side of the material oracle (Claude/Documentation/Material Fidelity/Oracle.md, O2), run unattended by
+/// The Smithbox side of the material oracle (Claude/Documentation/Materials and Textures.md (Material fidelity), O2), run unattended by
 /// <c>--material-oracle</c>. For each entry it loads the model, shows only the material's meshes, and captures what the
 /// flver shader computes for them in UV space (<see cref="MaterialOracleCapture" />): albedo, metallic, normal, gloss,
 /// emissive and coverage, as float files and PNGs in &lt;root&gt;/&lt;GAME&gt;/smithbox/&lt;material&gt;/. Claude/Tools/

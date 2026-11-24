@@ -5,7 +5,7 @@ using StudioCore.Renderer;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The FX Editor's viewport scene (FX Editor Plan, phase V1): the grid, the shared viewport environment's
+/// The FX Editor's viewport scene (FX.md, phase V1): the grid, the shared viewport environment's
 /// lighting and the selected effect's debug shapes. Particles join it once the runtime exists (V2, V3).
 /// </summary>
 public class FxUniverse : IUniverse

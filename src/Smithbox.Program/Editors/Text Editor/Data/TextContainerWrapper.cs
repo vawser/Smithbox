@@ -125,7 +125,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
             }
         }
         // Hide Base containers as they are not used: nightreign.exe loads only item_dlc01 and menu_dlc01
-        // (see Claude/Documentation/FMG Reloader Other Games.md §1.1)
+        // (see Claude/Documentation/Text Editor.md (FMG Reloader) §1.1)
         if (Project.Descriptor.ProjectType is ProjectType.NR)
         {
             if (FileEntry.Filename == "item" ||

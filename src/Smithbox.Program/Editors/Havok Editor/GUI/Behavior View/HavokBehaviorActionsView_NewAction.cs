@@ -8,7 +8,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// New Action: from a state's (or its selector's) right-click menu, a dialog that adds a new state playing a new
 /// animation, copied from that state, with an event and a wildcard transition into it, as one undo step. Applied with
-/// the dialog's Apply button only, as it has several inputs. See Claude/Documentation/Havok Behavior New Action Plan.md.
+/// the dialog's Apply button only, as it has several inputs. See Claude/Documentation/Behavior.md (Havok behavior edits).
 /// </summary>
 public partial class HavokBehaviorActionsView
 {

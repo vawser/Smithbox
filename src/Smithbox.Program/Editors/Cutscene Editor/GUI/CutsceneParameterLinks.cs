@@ -39,7 +39,7 @@ public enum CutsceneLinkKind
 /// <summary>
 /// Links from MQB event and timeline parameters to what their values name: described under the value in the
 /// Properties panel, and opened in the editor that owns it from a right-click menu on the value or the description,
-/// as the Param Editor's field references are (Cutscene Editor Analysis, parameter links).
+/// as the Param Editor's field references are (Cutscene Editor.md, parameter links).
 /// Roles go by parameter name, which is the same in every game:
 /// <list type="bullet">
 /// <item>talkParamId: the TalkParam row and its subtitle text (the row's field with an FmgRef, else msgId in

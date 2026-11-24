@@ -4,7 +4,7 @@
 //
 // A hook that returns false (or leaves its inout alone) means "use the shared core's path", so the GGX/PBR code
 // isn't copied into every family. A rule for one game goes inside its family's file, tested by c_gameID there.
-// Plan: Documentation/Shader Family Split Plan.md, S3.
+// Plan: Claude/Documentation/Rendering.md (Shader family split), S3.
 //
 // Included after the core's helpers (Surface, EnvLight, Hemisphere, the material rows and the g_ globals), as the
 // hooks use them; ShadeLight, which comes before them, uses the prototype declared above it.

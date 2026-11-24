@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The NGP mode's rebuild engine (Navigation Editor DS2 Plan, Phase G2): every table that follows from the meshes'
+/// The NGP mode's rebuild engine (Navigation.md (NGP (DS2, DS2S)), Phase G2): every table that follows from the meshes'
 /// vertices, faces and face flags, so an edit only changes those and calls <see cref="Rebuild"/>.
 ///
 /// Per mesh, only for the meshes an edit changed (the vanilla data breaks the edge rule in 144 meshes, which an untouched

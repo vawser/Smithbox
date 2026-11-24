@@ -9,7 +9,7 @@ namespace StudioCore.Editors.GparamEditor;
 /// Read from Assets/Gparam Reloader/{game}/*.json. The connection itself is GameLink's, from Assets/Game Link.
 /// Every function address is found by AOB, so a group usually keeps working on later versions; the reloader tries the
 /// group for the running version first, then the others, newest first.
-/// See Claude/Documentation/Gparam Reloader Analysis.md.
+/// See Claude/Documentation/Gparam.md (Gparam Reloader).
 /// </summary>
 public class GparamReloaderOffsets
 {

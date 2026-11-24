@@ -16,7 +16,7 @@ namespace StudioCore.Editors.MapEditor;
 /// edgebhd holds one of per collision. The points are relative to the collision part. Each change swaps the
 /// collision's whole file through an <see cref="EdgeEditAction"/>, and the map's save writes the edgebhd.
 ///
-/// Claude/Documentation/EDGE Viewport Editing.md: the entries of the selected collision part, their fields, Duplicate
+/// Claude/Documentation/Map Editor.md (EDGE editing): the entries of the selected collision part, their fields, Duplicate
 /// and Delete (M1), and picking and moving their points in the viewport (M3, EdgeEditorTool.Viewport).
 /// </summary>
 public partial class EdgeEditorTool

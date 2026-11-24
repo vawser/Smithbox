@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Map Editor's Navigation tool (Navigation Editor Plan, Phase 0): a summary of a loaded ER map's navigation data
+/// The Map Editor's Navigation tool (Navigation.md, Phase 0): a summary of a loaded ER map's navigation data
 /// (NVA, navmesh files, NVC files) and a check of its invariants. Issues the vanilla game files also have are
 /// marked as inherited, so only what the project changed stands out.
 /// </summary>

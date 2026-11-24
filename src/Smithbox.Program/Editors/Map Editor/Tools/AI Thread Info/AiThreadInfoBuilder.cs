@@ -9,7 +9,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Builds the rows of an AITH file (AC6 "AI thread info", one per mission) from the maps it covers.
 /// A row refers to an Enemy part by its index in its map's MSB and gives it a worker slot out of 5, 6 and 12.
-/// See Claude/Documentation/AITH Format.md.
+/// See Claude/Documentation/Formats.md (AITH).
 /// </summary>
 public static partial class AiThreadInfoBuilder
 {

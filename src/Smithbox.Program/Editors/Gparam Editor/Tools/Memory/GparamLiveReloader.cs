@@ -19,7 +19,7 @@ namespace StudioCore.Editors.GparamEditor;
 /// A push writes a changed value where the live value still equals the old value of the same field and ID, so values of
 /// IDs that aren't active, and fields the game doesn't register (about half: SSAO, most directional light and shadow
 /// fields), are left alone. Values revert when the map reloads (the file on disk is read again).
-/// See Claude/Documentation/Gparam Reloader DS3 SDT DS2 Analysis.md §7–8.
+/// See Claude/Documentation/Gparam.md (Gparam Reloader) §7–8.
 /// </summary>
 public class GparamLiveReloader
 {

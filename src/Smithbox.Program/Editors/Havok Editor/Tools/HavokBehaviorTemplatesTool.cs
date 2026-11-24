@@ -7,7 +7,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// <summary>
 /// Templates (Behavior Editor Tools window): a wizard that applies a gameplay pattern (an Ash of War, a weapon moveset,
 /// an idle category) to the shown behavior file as one undo step. Templates are JSON files, built-in and per project
-/// (Claude/Documentation/Havok Behavior Templates Plan.md). Several inputs, so applied with the Apply button only.
+/// (Claude/Documentation/Behavior.md (Havok behavior edits)). Several inputs, so applied with the Apply button only.
 /// </summary>
 public class HavokBehaviorTemplatesTool
 {

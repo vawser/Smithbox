@@ -13,7 +13,7 @@ namespace StudioCore.Editors.MapEditor;
 ///
 /// Edits go through <see cref="MfrEditAction"/>, which swaps the whole document and marks the map's
 /// <see cref="MapFileType.MFR"/> dirty; <see cref="Save"/> writes it from the map's save. See
-/// Claude/Documentation/MFR Format.md.
+/// Claude/Documentation/Formats.md (MFR).
 /// </summary>
 public class MfrBank
 {

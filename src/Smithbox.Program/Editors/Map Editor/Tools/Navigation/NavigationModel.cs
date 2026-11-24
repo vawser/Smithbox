@@ -8,7 +8,7 @@ namespace StudioCore.Editors.MapEditor;
 
 // The Elden Ring navigation data of a map, joined across its files: the NVA, the navmesh HKX files of its nvmhktbnd,
 // and the NVC files that connect it to its neighbours. Kept free of the rest of Smithbox, so Tools/NavSurvey
-// can build it from the game files and check it on every map. See Documentation/Claude/Navigation Editor Plan.md.
+// can build it from the game files and check it on every map. See Claude/Documentation/Navigation.md.
 
 /// <summary>
 /// The two navmesh sets of a map. Every navmesh model has one of each: an `n` file and an `o` file in the nvmhktbnd,
@@ -23,7 +23,7 @@ public enum NavmeshSet
 /// <summary>
 /// What the game does with the face data and user edge data bits, from its navmesh cost modifier (CS::CSChrCostModifier,
 /// eldenring.exe 0x1402E2550 passability, 0x1402E2A60 its per-bit rules, 0x1402E1C70 cost). See
-/// Documentation/Claude/Navmesh Face Data Bits.md. The Map Editor shows the names with the MAP_Navigation_Bit_ texts.
+/// Claude/Documentation/Navigation.md (ER face data and edge data bits). The Map Editor shows the names with the MAP_Navigation_Bit_ texts.
 /// </summary>
 public static class NavFaceDataBits
 {

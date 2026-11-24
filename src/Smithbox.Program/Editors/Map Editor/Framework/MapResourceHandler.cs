@@ -403,7 +403,7 @@ public class MapResourceHandler
         // containers hold many textures no loaded model uses (about half of them for ER's m11_00_00_00), which would
         // take GPU memory for nothing, so only the asked for ones are loaded from the model texture containers.
         // A texture asked for later (e.g. by a model loaded afterwards) is found by the missing texture pass.
-        // See Claude/Documentation/Map Load Memory Analysis.md
+        // See Claude/Documentation/Map Editor.md (Map load memory)
         HashSet<string> requested = ResourceManager.DefaultPool.GetRequestedUnloadedNames<TextureResource>();
 
         // Map

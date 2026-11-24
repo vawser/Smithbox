@@ -34,7 +34,7 @@ public class PartTransferPort
 /// <summary>
 /// Part Transfer: copies map pieces and objects of another loaded map into the selected map. Map pieces belong to a
 /// map, so their models are ported under new IDs of the target map; objects are shared, but most use their area's
-/// map textures, which are copied too (Claude/Documentation/Map Part Transfer.md).
+/// map textures, which are copied too (Claude/Documentation/Map Editor.md (Part Transfer)).
 /// </summary>
 public class MapPartTransferTool
 {

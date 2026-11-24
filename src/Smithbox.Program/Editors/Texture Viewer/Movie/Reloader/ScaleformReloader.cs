@@ -14,7 +14,7 @@ namespace StudioCore.Editors.TextureViewer;
 /// The Scaleform Reloader (Texture Viewer, GFX): makes the running game (ER, AC6: any game with offsets in
 /// Assets/Scaleform Reloader) load edited menu movies without a restart. A native port of gfx-reloader (MIT, lugia19):
 /// the hooks (ScaleformHooks) do the game-thread work; everything else is done from here. One per project.
-/// See Claude/Documentation/Scaleform Reloader Plan.md.
+/// See Claude/Documentation/Scaleform.md §5 Scaleform Reloader.
 /// </summary>
 public class ScaleformReloader
 {

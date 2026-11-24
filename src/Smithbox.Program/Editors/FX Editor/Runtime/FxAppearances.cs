@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.FxEditor;
 
-// Appearances drawn in phase V4 (FX Editor Plan §10.4): trails, lines, models and lights. Like FxBillboard.cs, these
+// Appearances drawn in phase V4 (FX.md §10.4): trails, lines, models and lights. Like FxBillboard.cs, these
 // only read the action through the schema and evaluate per particle; the renderers live outside Runtime/.
 
 /// <summary>A trail point a tracer particle left behind, in world space.</summary>
@@ -339,7 +339,7 @@ public sealed class FxLineDef
     }
 }
 
-/// <summary>A model particle as drawn (FX Editor Plan §18): its transform, colour, uv offset and sprite frame.</summary>
+/// <summary>A model particle as drawn (FX.md §18): its transform, colour, uv offset and sprite frame.</summary>
 public struct FxModelInstance
 {
     public Matrix4x4 World;
@@ -512,7 +512,14 @@ public sealed class FxModelDef
         // From world up alone, a node turned about its Z (ER 450420's spirals, 450341's aura under a -180° X node)
         // drew its model turned around its own axis, out of line with the tracers and billboards beside it.
         var upHint = Orientation == 2 ? Vector3.TransformNormal(Vector3.UnitY, node.World) : Vector3.UnitY;
-        instance.World = Matrix4x4.CreateScale(sx, sy, sz) * rotation * Look(forward, upHint) * Matrix4x4.CreateTranslation(position);
+
+        // Model (605) meshes along the particle (2) are built along their Y axis: their Y is turned onto Z before the
+        // action's rotations, so rotationZ rolls them about the travel and rotationX 180 turns them end for end.
+        // ER 523002 and its family: cone 83050 (tip at +Y) with rotationX 180 and a backward speed, or rotationX 0
+        // and none (523082), opens backward from the projectile's head in game. RichModel (10015) meshes are built
+        // along Z (523002's crystal 84016) and take no turn.
+        var axis = Orientation == 2 && Action.Type == 605 ? YToZ : Matrix4x4.Identity;
+        instance.World = Matrix4x4.CreateScale(sx, sy, sz) * axis * rotation * Look(forward, upHint) * Matrix4x4.CreateTranslation(position);
         instance.Color = color;
         instance.UvOffset = new Vector2(
             (OffsetU?.Scalar(ctx) ?? 0) + (SpeedU?.Scalar(ctx) ?? 0) * (SpeedMultiplierU?.Scalar(ctx) ?? 1) * p.Age,
@@ -520,6 +527,9 @@ public sealed class FxModelDef
         instance.Frame = (FrameIndex?.Scalar(ctx) ?? 0) + (FrameIndexOffset?.Scalar(ctx) ?? 0);
         return true;
     }
+
+    /// <summary>Turns +Y onto +Z (and +Z onto -Y): a quarter turn about X.</summary>
+    private static readonly Matrix4x4 YToZ = Matrix4x4.CreateRotationX(MathF.PI / 2);
 
     private static float Vary(float variation, uint seed, uint salt) =>
         variation == 1 ? 1 : variation + (1 - variation) * FxValue.Unit(seed, 0xA511E9B3u * salt);

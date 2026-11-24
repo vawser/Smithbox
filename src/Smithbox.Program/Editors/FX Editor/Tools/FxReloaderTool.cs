@@ -9,7 +9,7 @@ namespace StudioCore.Editors.FxEditor;
 /// <summary>
 /// FX Reloader (DS3, SDT, ER, AC6, NR): reloads the selected effect in the running game from the editor's copy, lists the effects the game
 /// has loaded with how many of each are playing (a click selects it here), and keeps a history of sends.
-/// See Claude/Documentation/FX Reloader Analysis.md (F1).
+/// See Claude/Documentation/FX.md (FX Reloader) (F1).
 /// </summary>
 public class FxReloaderTool
 {

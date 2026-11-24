@@ -128,7 +128,7 @@ layout(location = 12) flat in uint fsin_flags;
 	layout(location = 14) flat in mat3 fsin_modelToWorld;
 #endif
 // The lighting set the instance is lit by, see g_lightingSet
-layout(location = 17) flat in uvec2 fsin_lightingSet; // x: the lighting set, y: the fade (InstanceData.glsl)
+layout(location = 17) flat in uvec4 fsin_lightingSet; // x: the lighting set, y: the fade, zw: the tint (InstanceData.glsl)
 #ifdef MATERIAL_UV3
 	// The third UV set, a DES multi texture material's lightmap UV (FlverResource.LookupDesLightmap)
 	layout(location = 19) in vec2 fsin_texcoord3;
@@ -799,7 +799,7 @@ vec4 g_customizeMask = vec4(1.0);
 
 // ---------------------------------------------------------------------------------------------
 // AC6 paint materials (c_customize 10): the ColorMaterial shaders, see MaterialPaint and
-// Claude/Documentation/AC6 Paint Materials.md. PaintSurface works out the albedo, and the normal, gloss and metallic
+// Claude/Documentation/Materials and Textures.md (Material fidelity). PaintSurface works out the albedo, and the normal, gloss and metallic
 // for later, in one go
 // ---------------------------------------------------------------------------------------------
 
@@ -1667,7 +1667,7 @@ vec3 LightRadiance(sceneLight light, vec3 worldPos, out vec3 L)
 
 // ---------------------------------------------------------------------------------------------
 // Irradiance volumes (AC6, ER, NR), as the game's GXEnvMapRegion and forward flver shaders read them.
-// See Documentation/Full GI/Shaders.md.
+// See Claude/Documentation/Lighting.md §1.3 Shading.
 // ---------------------------------------------------------------------------------------------
 
 // A texel holds one band of the light's spherical harmonics for each color channel, signed around 0.5,
@@ -1822,7 +1822,7 @@ bool MapLighting()
 }
 
 // The lighting set the draw is lit by (SceneLighting.glsl, LIGHTING): the sun, hemisphere and model lights. Always
-// the view's own set (entry 0) until per-part sets are drawn, see DES Light Set Redesign.md. Every read is of a
+// the view's own set (entry 0) until per-part sets are drawn, see Lighting.md §5.1 Light set design. Every read is of a
 // single field: no lighting struct is copied out of the buffer.
 
 // The direction the sun's light travels in, normalized
@@ -2606,7 +2606,7 @@ float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
 #ifdef MATERIAL_DEFORM
 // AC6's energy effects (c_surface 6, P[LaserBlade]_001: laser blades, energy wings, thrusters), entries 4 to 9 after the
 // material (MaterialLaser), read as 18 vec4s. Its vertices are swelled by FlverShader.vert's DeformLaser.
-// See Claude/Documentation/AC6 Laser Blades.md
+// See Claude/Documentation/Rendering.md (Per-game material and model fixes)
 vec4 LaserVec(uint i)
 {
 	return paintdata[g_mat + 4u + i / 3u].v[i % 3u];
@@ -2931,6 +2931,14 @@ void main()
 	}
 
 	FamilyAlbedo(diffuseColor);
+
+	// An effect's RichModel particle (InstanceData.Tint) takes the effect's colour on its albedo, as the game's
+	// G-buffer shaders multiply it by the instance colour; zw are half floats (rg, ba), both 0 for no tint
+	if (fsin_lightingSet.z != 0u || fsin_lightingSet.w != 0u)
+	{
+		vec4 tint = vec4(unpackHalf2x16(fsin_lightingSet.z), unpackHalf2x16(fsin_lightingSet.w));
+		diffuseColor = clamp(diffuseColor * tint, 0.0, 1.0);
+	}
 
 	// DES's and DS1's "Col" shaders take the vertex color: their fur shells (DS1R c1200) are darkened toward the roots
 	// by its color and faded out at their edges by its alpha
@@ -3521,7 +3529,7 @@ void main()
 
 	litColor += glow;
 
-	// The material oracle (Claude/Documentation/Material Fidelity/Oracle.md): the surface's own values, laid out for
+	// The material oracle (Claude/Documentation/Materials and Textures.md (Material fidelity)): the surface's own values, laid out for
 	// the targets' precision rather than lit. Color: albedo before the metal's share, a metallic. Surface: the world
 	// normal as the game's G-buffer stores it (n * 0.5 + 0.5, unflipped, as the drawing is in UV space), w gloss.
 	// Indirect: 1 where a pixel was drawn. Glow: the emissive light.

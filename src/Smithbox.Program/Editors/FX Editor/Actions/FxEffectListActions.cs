@@ -5,7 +5,7 @@ namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
 /// Adds effects to the bank (Duplicate to New ID, Import) or deletes them, and the reverse on undo. A deleted effect's
-/// files are removed on the next save; one restored after that save is written back (FX Effect List Actions Plan §2).
+/// files are removed on the next save; one restored after that save is written back (FX.md (Effect List and Effect Tree actions) §2).
 /// </summary>
 public class FxEntryPresenceAction : EditorAction
 {
@@ -92,7 +92,7 @@ public class FxMembershipAction : EditorAction
 
 /// <summary>
 /// Swaps an effect's whole content for another file object of its format: an FXR, or an older game's FFXDLSE / FXR1
-/// (Revert to Vanilla, Import over an effect, Change ID's callers; FFX Older Games Plan §22). Undo puts the old object
+/// (Revert to Vanilla, Import over an effect, Change ID's callers; FX.md, FFX §22). Undo puts the old object
 /// back, so earlier undo steps, which point into it, still apply. The model is rebuilt from whichever object is in.
 /// </summary>
 public class FxReplaceEffectAction : EditorAction

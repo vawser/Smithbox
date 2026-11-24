@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Compares loaded maps with their vanilla MSBs (MapData.VanillaBank, over VanillaFS), for the Map Contents
 /// highlighting, Properties › Compare with Vanilla and the Vanilla Compare tool. Shared by every view.
-/// Plan: Documentation/Map Editor Vanilla Compare.md. The diff itself is MsbDiff.
+/// Plan: Claude/Documentation/Map Editor.md (Vanilla Compare). The diff itself is MsbDiff.
 /// </summary>
 public class MapVanillaCompare
 {

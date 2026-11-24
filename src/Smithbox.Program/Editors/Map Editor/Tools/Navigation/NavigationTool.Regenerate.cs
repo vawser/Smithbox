@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Regenerate tab's Regenerate Map group (Navigation Full Regeneration Analysis.md, steps 1-5): the whole navigation of
+/// The Regenerate tab's Regenerate Map group (Navigation.md, steps 1-5): the whole navigation of
 /// the map built again from its high collision and its assets' collision, as one undo. The generation runs in the
 /// background (NavRegenerate.Prepare); the NVA, connections, gates, node banks and NVC files are rebuilt when it is done
 /// (NavRegenerate.Apply). It uses the Generate group's n and o settings.

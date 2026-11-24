@@ -52,7 +52,7 @@ public sealed class FxRuntimeContext
 }
 
 /// <summary>
-/// One running effect (FX Editor Plan §10.2): its state machine and node tree. <see cref="Update"/> steps it; a
+/// One running effect (FX.md §10.2): its state machine and node tree. <see cref="Update"/> steps it; a
 /// replay from time 0 with the same seed gives the same effect, which is how the viewport seeks.
 ///
 /// What's simulated, and the assumptions made where fxr-main's descriptions leave a gap, are listed in plan §13.
@@ -454,7 +454,12 @@ public sealed class FxNodeInstance
         if (active && Config != null)
             Move(dt);
 
+        var previousWorld = World;
+        bool hadWorld = WorldSet;
         UpdateWorld(parentWorld);
+        WorldSet = true;
+        if (hadWorld)
+            FollowNode(previousWorld);
 
         if (Def.Kind == FxNodeKind.Proxy && active)
             UpdateProxy(dt);
@@ -622,6 +627,38 @@ public sealed class FxNodeInstance
     /// <summary>A world vector in the node's space, keeping its length (for forces).</summary>
     private Vector3 WorldToLocalVector(Vector3 v) =>
         Matrix4x4.Invert(World, out var inv) ? Vector3.TransformNormal(v, inv) : v;
+
+    /// <summary>True once <see cref="World"/> has been worked out, so the next update can tell how far the node moved.</summary>
+    private bool WorldSet;
+
+    /// <summary>
+    /// The PartialFollow particle movements: unattached particles (in world space) are carried by followFactor
+    /// (over the particle's age) of the node's movement since the last update, rotation included unless
+    /// followRotation is off. Runs before this update's emissions, so new particles start where they are emitted.
+    /// </summary>
+    private void FollowNode(Matrix4x4 previousWorld)
+    {
+        var follow = Config?.ParticleFollowFactor;
+        if (follow == null || Particles.Count == 0)
+            return;
+        if (!Matrix4x4.Invert(previousWorld, out var inverse))
+            return;
+
+        var delta = inverse * World;
+        var shift = World.Translation - previousWorld.Translation;
+        bool rotation = Config.ParticleFollowRotation;
+
+        foreach (var p in Particles)
+        {
+            if (p.Local)
+                continue;
+            float f = follow.Scalar(Ctx(p.Age, p.EmissionTime, p.Seed));
+            if (f == 0)
+                continue;
+            var carried = rotation ? Vector3.Transform(p.Position, delta) : p.Position + shift;
+            p.Position += (carried - p.Position) * f;
+        }
+    }
 
     /// <summary>
     /// The node's world transform: spin, then its movement (in its own axes), then its NodeTransform, then the

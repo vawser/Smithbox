@@ -9,7 +9,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// time act animations. An animation aCCC_NNNNNN is played by a selector with m_animId N whose offset type gives
 /// category C, through its child clip aCCC_NNNNNN.
 ///
-/// Rules (Claude/Documentation/TAE Behavior Auto Registration Analysis.md, checked against ER, NR, DS3 and SDT):
+/// Rules (Claude/Documentation/Time Act.md (Features), checked against ER, NR, DS3 and SDT):
 ///   - every selector of the file with m_animId N gets the clip: selectors sharing an ID hold the same categories
 ///   - only if its offset type admits C: another selector of the file with the same offset type has a clip of C
 ///     (98-99.8% precise, at least 99.5% recall in vanilla)

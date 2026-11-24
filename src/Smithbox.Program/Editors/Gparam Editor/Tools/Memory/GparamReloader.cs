@@ -6,7 +6,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
 /// The Gparam Reloader's work in the running game (ER, NR, AC6), over the project's shared GameLink: lists the GPARAMs the game
-/// has loaded, and replaces one with new bytes. See Claude/Documentation/Gparam Reloader Analysis.md.
+/// has loaded, and replaces one with new bytes. See Claude/Documentation/Gparam.md (Gparam Reloader).
 /// The AOBs and offsets come from Assets/Gparam Reloader/{game}/*.json (GparamReloaderOffsets).
 ///
 /// How the game holds GPARAMs (ER offsets):

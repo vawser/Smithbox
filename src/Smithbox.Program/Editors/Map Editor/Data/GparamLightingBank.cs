@@ -14,13 +14,13 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Reads the lighting of maps from their GPARAMs: the sun, hemisphere ambient and exposure
 /// (<see cref="GparamLighting" />). Armored Core VI, Elden Ring, Nightreign, Sekiro, DS3 and Bloodborne; what differs
-/// between them is in <see cref="GparamProfile" /> (Documentation/Older Games/Analysis.md).
+/// between them is in <see cref="GparamProfile" /> (Claude/Documentation/Lighting.md §4 Older games).
 /// The map's GPARAMs only hold what differs from the shared ones, so each field is looked up in the chosen file
 /// (mAA_BB_0000 by default), then mapbase, then default. Within a file a field holds values by ID, numbered
 /// separately in each group: LightSet's ID 0 is the scene's lighting and 100 the lighting of models, with ID 0 used
 /// when a file has no value for the ID asked for. Each ID can hold several values through the day, keyed by
 /// TimeOfDay, which are interpolated.
-/// See Documentation/Full GI/Gparam Lighting.md.
+/// See Claude/Documentation/Lighting.md §2 GPARAM lighting.
 /// </summary>
 public class GparamLightingBank
 {

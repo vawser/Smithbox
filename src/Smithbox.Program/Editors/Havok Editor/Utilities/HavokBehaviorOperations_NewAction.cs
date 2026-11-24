@@ -5,7 +5,7 @@ namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
 /// New Action: a new state with a copy of a template state's selector retargeted to a new animation, an event, and a
-/// wildcard transition on it into the new state, as one undo step (Claude/Documentation/Havok Behavior New Action Plan.md)
+/// wildcard transition on it into the new state, as one undo step (Claude/Documentation/Behavior.md (Havok behavior edits))
 /// </summary>
 public static partial class HavokBehaviorOperations
 {

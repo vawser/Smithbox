@@ -9,7 +9,7 @@ namespace StudioCore.Renderer;
 public sealed record MaterialOracleImages(int Width, int Height, float[] Color, float[] Surface, float[] Indirect, float[] Glow);
 
 /// <summary>
-/// The material oracle's readback (Claude/Documentation/Material Fidelity/Oracle.md, O2). While <see cref="Active" />, the
+/// The material oracle's readback (Claude/Documentation/Materials and Textures.md (Material fidelity), O2). While <see cref="Active" />, the
 /// flver shader draws in UV space and writes its material values (lighting view 6, see FlverShader.frag), and the
 /// pipelines leave out face culling, as a mesh's winding in UV space says nothing about which side faces the camera.
 /// A requested capture copies the scene target's attachments after the opaque draws

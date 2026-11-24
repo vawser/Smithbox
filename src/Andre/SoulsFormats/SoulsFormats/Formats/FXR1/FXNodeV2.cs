@@ -44,7 +44,7 @@ namespace SoulsFormats
 
 
         // FXR v2 (Bloodborne) node types the v1 files don't have, found by Claude/Tools/FfxSurvey --bbnodes / --bbwalk
-        // over every vanilla BB effect (FFX Older Games Plan §19). Value ids follow DS2's DLSE param numbering (40 texture,
+        // over every vanilla BB effect (FX.md, FFX §19). Value ids follow DS2's DLSE param numbering (40 texture,
         // 82 / 84 wrappers, 83 two colours); 141–148 are container nodes. All varints are 8 bytes (v2 files are wide).
         public abstract partial class FXNode
         {

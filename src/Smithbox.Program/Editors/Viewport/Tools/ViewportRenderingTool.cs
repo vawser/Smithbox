@@ -847,7 +847,7 @@ public class ViewportRenderingTool
 
     /// <summary>
     /// The lighting the loaded maps' GPARAMs give (AC6, ER, NR), for the scene and for models, and where each value
-    /// came from, and what the viewports are lit with, see Gparam Lighting.md
+    /// came from, and what the viewports are lit with, see Lighting.md §2 GPARAM lighting
     /// </summary>
     private void MapLightingTab(VulkanViewport viewport, MapEditorView view)
     {
@@ -1459,7 +1459,7 @@ public class ViewportRenderingTool
 
     /// <summary>
     /// How the image is finished: the tone map, then the screen effects the maps' GPARAMs ask for
-    /// (Documentation/Post Processing/Plan.md), which of them the viewport draws, and per map what its files give and
+    /// (Claude/Documentation/Lighting.md §3 Post effects), which of them the viewport draws, and per map what its files give and
     /// where each value came from. Without a GPARAM bank only the tone map is offered.
     /// </summary>
     private void PostEffectsTab(VulkanViewport viewport, GparamLightingBank bank, List<(string MapId, string File)> maps)

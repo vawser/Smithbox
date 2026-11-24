@@ -10,7 +10,7 @@ namespace StudioCore.Editors.LuaEditor;
 /// <summary>
 /// The Lua Editor: the Lua scripts in a project's binders (the AI of ER and NR, *.luabnd), as text. Bytecode is decompiled when a
 /// script is first shown; an edited script is saved as Shift-JIS source, which the game loads. See
-/// Claude/Documentation/ER AI Editor Analysis.md.
+/// Claude/Documentation/Lua and AI.md.
 /// </summary>
 public class LuaEditorScreen : EditorScreen
 {

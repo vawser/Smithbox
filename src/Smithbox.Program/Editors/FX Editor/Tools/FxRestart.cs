@@ -10,7 +10,7 @@ namespace StudioCore.Editors.FxEditor;
 /// Restarts effects that are already playing, so they pick up a reload: weapon resident effects (buffs, infused
 /// weapons) and SpEffect effects (auras, status effects). Each param field that names the effect is set to -1 in the
 /// game for a moment, then put back; the game removes the effect and spawns it again, from the reloaded data.
-/// The same trick as EvenTorset's fxr-ws-reloader. See Claude/Documentation/FX Reloader Analysis.md (F1b).
+/// The same trick as EvenTorset's fxr-ws-reloader. See Claude/Documentation/FX.md (FX Reloader) (F1b).
 ///
 /// The fields, found in the game's own params (not the project's, so unsaved param edits don't matter):
 ///   EquipParamWeapon residentSfxId_1..4 (with residentSfx_DmyId_1..4) = the effect

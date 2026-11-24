@@ -7,7 +7,7 @@ using static SoulsFormats.FXR1.FXNode;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The effect tree's structure menus for FXR1 / FXR v2 effects (DS1, DS1R, BB; FFX Older Games Plan §21.8, F7b), as
+/// The effect tree's structure menus for FXR1 / FXR v2 effects (DS1, DS1R, BB; FX.md, FFX §21.8, F7b), as
 /// FxEffectTree.Dlse.cs is for DLSE: a root's states and exits, a state's actions, call-list entries, templates,
 /// copy / paste and the tree keys. An FXR1 exit's target is its state object, so states move without renumbering, and
 /// a deleted state's incoming exits end the effect. Every change is one <see cref="FxFxr1StructureAction"/>.

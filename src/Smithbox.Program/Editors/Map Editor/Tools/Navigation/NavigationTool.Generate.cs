@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Models tab's Generate group (Navigation Editor Plan, Phase 4; Navmesh Generation Plan): generates a model's n and
+/// The Models tab's Generate group (Navigation.md, Phase 4; Navigation.md): generates a model's n and
 /// o navmeshes from collision models of the map, in place of the selected model's or into a free placeholder, as one
 /// undo. The generation runs in the background; the edit is made when it is done. See NavigationGenerator.
 /// </summary>
@@ -625,7 +625,7 @@ public partial class NavigationTool
 
     /// <summary>
     /// Bake tagged assets the game cuts out of the navmesh at runtime too. Off by default: the game's own navmeshes run
-    /// under them (ER Navigation Exe Analysis.md, R5), and most of them break, after which the game's cut goes away; a
+    /// under them (Navigation.md, R5), and most of them break, after which the game's cut goes away; a
     /// baked hole would stay.
     /// </summary>
     private bool BakeRuntimeCuts;

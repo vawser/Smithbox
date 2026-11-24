@@ -14,7 +14,7 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The View tab (Navigation Editor Plan, Phase 1): an overlay of a map's navmesh set in the viewport, coloured by face
+/// The View tab (Navigation.md, Phase 1): an overlay of a map's navmesh set in the viewport, coloured by face
 /// data, with its connections, user edges and gate nodes, and a face inspector picked in the viewport.
 /// </summary>
 public partial class NavigationTool

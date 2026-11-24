@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.BehaviorEditor;
 
 /// <summary>
-/// The Behavior Editor's Tools window: Search, Used By and Problems (see Claude/Documentation/Tool UI Styling.md)
+/// The Behavior Editor's Tools window: Search, Used By and Problems (see Claude/Documentation/UI.md (Tools window conventions))
 /// </summary>
 public class BhvToolWindow
 {

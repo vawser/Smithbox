@@ -30,7 +30,7 @@ public record HavokChange(HavokChangeKind Kind, HavokChangeStatus Status, string
 /// The open behavior file against the game's copy, paired by identity rather than position (events and variables
 /// by name, named objects by type, name and their place among same-named objects of that type), so an inserted
 /// state or a deleted event doesn't mark everything after it as changed. Event and variable fields are compared by
-/// the names they resolve to. See Claude/Documentation/Havok Behavior Changes Plan.md.
+/// the names they resolve to. See Claude/Documentation/Behavior.md (Havok behavior tools).
 /// </summary>
 public class HavokBehaviorDiff
 {

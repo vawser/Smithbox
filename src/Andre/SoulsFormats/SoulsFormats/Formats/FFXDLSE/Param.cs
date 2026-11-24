@@ -61,7 +61,7 @@ namespace SoulsFormats
             /// <summary>
             /// DeS numbers param types differently from DS2. Each DeS type id maps to the DS2 class with the same body;
             /// several DeS ids share a body (the two-int "indexed" types, the int types), so the id is kept in <see cref="FileType"/>.
-            /// Decoded from every vanilla DeS file by FfxSurvey --census (Claude/Documentation/FFX Older Games Plan.md, F1).
+            /// Decoded from every vanilla DeS file by FfxSurvey --census (Claude/Documentation/FX.md, FFX, F1).
             /// </summary>
             public static readonly IReadOnlyDictionary<int, int> DesBodyClass = new Dictionary<int, int>
             {

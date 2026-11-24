@@ -16,7 +16,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// For each game it opens a temporary project on the vanilla data named by game_data.txt (in
 /// &lt;root&gt;/.projects/&lt;GAME&gt;, never added to the project list), runs the Model Editor's Render Snapshots
 /// tool, unloads it, then closes Smithbox. The user's projects and settings are left as they were. Progress goes to
-/// &lt;root&gt;/automation.log. Plan: Documentation/Shader Family Split Plan.md, S1.
+/// &lt;root&gt;/automation.log. Plan: Claude/Documentation/Rendering.md (Shader family split), S1.
 /// </summary>
 public static class RenderSnapshotAutomation
 {

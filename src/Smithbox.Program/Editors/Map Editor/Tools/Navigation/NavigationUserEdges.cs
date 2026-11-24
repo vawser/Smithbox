@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 // Adding and removing user edges (jump, ladder and drop links) in an hkaiNavMesh, laid out as the game's files lay them
-// out (Navigation Editor Plan, Phase 3; NavSurvey useredges, cachedump and linkedit check it). Kept free of the rest of
+// out (Navigation.md, Phase 3; NavSurvey useredges, cachedump and linkedit check it). Kept free of the rest of
 // Smithbox, so NavSurvey can run it on every map.
 //
 // How the game's files hold user edges:

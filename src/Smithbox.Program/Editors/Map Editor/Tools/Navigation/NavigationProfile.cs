@@ -4,7 +4,7 @@ namespace StudioCore.Editors.MapEditor;
 
 // What differs between the games the Navigation tool works on, so its model, validator and edits ask a profile rather
 // than test for a game. Kept free of the rest of Smithbox, so Tools/NavSurvey can link it.
-// See Documentation/Claude/Navigation Editor Other Games Plan.md, sections 4.1 and Phases N2 and N3.
+// See Claude/Documentation/Navigation.md, sections 4.1 and Phases N2 and N3.
 
 /// <summary>What a game's n NameIDs are built from.</summary>
 public enum NavNameIdKind

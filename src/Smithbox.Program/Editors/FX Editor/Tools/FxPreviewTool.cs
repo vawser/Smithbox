@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The viewport's playback bar and preview inputs (FX Editor Plan, phase V1): play/pause/restart, speed, the time
+/// The viewport's playback bar and preview inputs (FX.md, phase V1): play/pause/restart, speed, the time
 /// scrubber, loop, the preview state and the external values, and what the debug shapes show.
 /// </summary>
 public class FxPreviewTool

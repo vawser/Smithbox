@@ -7,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 // Finding the connections between navmeshes from their geometry: two boundary edges of different navmeshes of the same
-// set that lie along each other (Navigation Editor Plan, Phase 3, re-stitching). The same idea as Havok's
+// set that lie along each other (Navigation.md, Phase 3, re-stitching). The same idea as Havok's
 // hkaiNavMeshEdgeMatchingParameters. Kept free of the rest of Smithbox; NavSurvey `stitch` checks it against the game's
 // own connectors.
 //

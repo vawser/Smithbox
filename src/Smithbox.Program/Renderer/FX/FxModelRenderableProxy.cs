@@ -65,7 +65,7 @@ public sealed class FxModelSubmesh
 }
 
 /// <summary>
-/// The Model particles of one appearance on one FLVER submesh (FX Editor Plan §18): one instanced draw of the
+/// The Model particles of one appearance on one FLVER submesh (FX.md §18): one instanced draw of the
 /// submesh's own geometry with FxModel.vert/frag, coloured by the effect. As the billboard batches, it draws into
 /// the HDR scene target with a pipeline per blend mode (and layout, topology and culling). Translucent batches sort
 /// back to front and don't write depth; Normal blend on an opaque material writes it, so a solid model hides itself.

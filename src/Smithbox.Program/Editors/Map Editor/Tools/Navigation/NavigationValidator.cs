@@ -137,7 +137,7 @@ public enum NavIssueCode
 }
 
 /// <summary>
-/// Checks the invariants of a map's navigation data (Navigation Editor Plan, section 5). The vanilla game files
+/// Checks the invariants of a map's navigation data (Navigation.md, section 5). The vanilla game files
 /// pass it without errors (Tools/NavSurvey `validate`); the warnings are things a few game files do too.
 /// </summary>
 public static class NavigationValidator

@@ -146,7 +146,7 @@ public static class IconLayouts
     /// BB MENU_Icon sheets (/menu/common.tpf): 80 px cells, 12 x 12 on 1024 sheets; 06001 and 07001 are 32 px cells, 32 x 4.
     /// The 03001-04002 gem sheets number on from 3000 without a gap. The ID ranges are unchanged from the earlier layouts;
     /// accessory (rune) icons 4000-4043, GemEffect and SpEffect (8800+) icons are not placed by these grids
-    /// (see Documentation/Claude/Icon Preview Mod Support.md).
+    /// (see Claude/Documentation/Param Editor.md (Icon preview)).
     /// </summary>
     public static void GenerateIconLayouts_BB()
     {
@@ -172,7 +172,7 @@ public static class IconLayouts
     /// BB rune icons, as (icon id, cell index on MENU_Icon_04002). GemeffectParam.gemIconIdOffset 1200-1254 are the
     /// Caryll runes, 13 per tier in sheet order from cell 56 (cell = offset - 1144); the covenant runes 1013-1015 and
     /// 1049-1051 sit 200 below their cells (the cyan ones). Found by matching rune effects to glyphs; see
-    /// Documentation/Claude/Icon Preview Mod Support.md.
+    /// Claude/Documentation/Param Editor.md (Icon preview).
     /// </summary>
     public static List<(int Id, int Cell)> BB_RuneCells()
     {
