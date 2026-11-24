@@ -1747,7 +1747,7 @@ public class Entity : ISelectable, IDisposable
     {
         PropChangeAction act = new(this, WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
-        act.AddPropertyChange(prop, CFG.Current.SavedPosition);
+        act.AddPropertyChange(prop, CFG.Current.MapEditor.SavedPosition);
 
         act.SetPostExecutionAction(undo =>
         {
@@ -1759,7 +1759,7 @@ public class Entity : ISelectable, IDisposable
     {
         PropChangeAction act = new(this, WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
-        act.AddPropertyChange(prop, CFG.Current.SavedRotation);
+        act.AddPropertyChange(prop, CFG.Current.MapEditor.SavedRotation);
 
         act.SetPostExecutionAction(undo =>
         {
@@ -1772,7 +1772,7 @@ public class Entity : ISelectable, IDisposable
     {
         PropChangeAction act = new(this, WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
-        act.AddPropertyChange(prop, CFG.Current.SavedScale);
+        act.AddPropertyChange(prop, CFG.Current.MapEditor.SavedScale);
 
         act.SetPostExecutionAction(undo =>
         {
@@ -2025,7 +2025,7 @@ public class Entity : ISelectable, IDisposable
 
         if (!IsFreeformEntity)
         {
-            if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
+            if (!CFG.Current.Viewport.Viewport_Enable_Rendering || !HasTransform)
                 return;
         }
 
@@ -2047,7 +2047,7 @@ public class Entity : ISelectable, IDisposable
 
         if (!IsFreeformEntity)
         {
-            if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
+            if (!CFG.Current.Viewport.Viewport_Enable_Rendering || !HasTransform)
                 return;
         }
 

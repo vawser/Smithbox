@@ -117,7 +117,7 @@ public class AutoExposurePass : PostProcessPass
 
     public override bool IsActive(GparamLighting lighting)
     {
-        var active = CFG.Current.Viewport_Post_Auto_Exposure && lighting is { AutoExposure: true };
+        var active = RenderSettings.Viewport.Viewport_Post_Auto_Exposure && lighting is { AutoExposure: true };
 
         if (!active)
         {
@@ -139,7 +139,7 @@ public class AutoExposurePass : PostProcessPass
 
         Params.Exposure = new Vector4(lighting.MiddleGray, settings.AdaptionMin, settings.AdaptionMax, settings.CenterWeight);
         Params.Adapt = new Vector4(Math.Clamp(seconds, 0.0f, 0.5f), settings.LightAdaptSpeed, settings.DarkAdaptSpeed,
-            lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale);
+            lighting.Exposure * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale);
         Params.Control = new Vector4(WasActive ? 0.0f : 1.0f, 0.0f, 0.0f, 0.0f);
         // Copied through a staging buffer, which also ends the scene's render pass, so the barriers below are
         // outside one

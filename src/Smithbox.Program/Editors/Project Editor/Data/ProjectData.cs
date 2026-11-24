@@ -94,14 +94,14 @@ public class ProjectData : IDisposable
 
         HashSet<string> sourceDirectories = new();
 
-        if(CFG.Current.Project_Alias_Editor_Use_Base_Source)
+        if(CFG.Current.Project.Project_Alias_Editor_Use_Base_Source)
         {
             var baseDir = Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
 
             sourceDirectories.Add(baseDir);
         }
 
-        if (CFG.Current.Project_Alias_Editor_Use_Project_Source)
+        if (CFG.Current.Project.Project_Alias_Editor_Use_Project_Source)
         {
             var projectDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
 

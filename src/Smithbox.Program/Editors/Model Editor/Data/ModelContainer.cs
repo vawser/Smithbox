@@ -247,7 +247,7 @@ public class ModelContainer : ObjectContainer
             // object, in the space its points are in (see ModelEntity.GetWorldMatrix)
             if (wrapper.EdgeInCollisionSpace
                 && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan
-                && CFG.Current.ModelEditor_ModelLoad_Collisions)
+                && CFG.Current.ModelEditor.ModelEditor_ModelLoad_Collisions)
             {
                 AssignEdgeCollisionDrawable(newObject, wrapper);
             }
@@ -272,7 +272,7 @@ public class ModelContainer : ObjectContainer
         {
             var newObject = new ModelEntity(View.Universe, this, wrapper.HKX, ModelEntityType.HKX);
 
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.ModelEditor_ModelLoad_Collisions)
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.ModelEditor.ModelEditor_ModelLoad_Collisions)
             {
                 AssignCollisionDrawable(newObject, wrapper);
             }
@@ -683,7 +683,7 @@ public class ModelContainer : ObjectContainer
     /// </summary>
     public bool RequestPreview(ModelWrapper wrapper)
     {
-        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || !CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || !CFG.Current.Viewport.Viewport_Enable_Rendering)
             return false;
 
         if (wrapper?.FLVER == null || wrapper.Container != this)

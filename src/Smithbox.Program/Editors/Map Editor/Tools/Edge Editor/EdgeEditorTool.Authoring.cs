@@ -393,9 +393,9 @@ public partial class EdgeEditorTool
 
         var color = Mode switch
         {
-            EdgeEditMode.AddGrapple => CFG.Current.Viewport_Edge_Grapple_Color,
-            EdgeEditMode.DrawHang => CFG.Current.Viewport_Edge_Hang_Color,
-            _ => CFG.Current.Viewport_Edge_Hug_Color
+            EdgeEditMode.AddGrapple => CFG.Current.Viewport.Viewport_Edge_Grapple_Color,
+            EdgeEditMode.DrawHang => CFG.Current.Viewport.Viewport_Edge_Hang_Color,
+            _ => CFG.Current.Viewport.Viewport_Edge_Hug_Color
         };
 
         if (PreviewLine == null)
@@ -410,7 +410,7 @@ public partial class EdgeEditorTool
             PreviewPoint.DrawFilter = RenderFilter.EdgePoint;
         }
 
-        var size = MathF.Max(CFG.Current.Viewport_Edge_Point_Size, 0.01f);
+        var size = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.01f);
         var from = GetDrawFromWorld();
 
         // The point being placed: the grapple under the cursor, or where the chain is drawn from
@@ -430,7 +430,7 @@ public partial class EdgeEditorTool
 
         if (from is Vector3 f && target.Part != null && Vector3.Distance(f, target.World) > 1e-3f)
         {
-            PreviewLine.World = MsbEntity.GetEdgeSegmentTransform(f, target.World, MathF.Max(CFG.Current.Viewport_Edge_Segment_Radius, 0.01f));
+            PreviewLine.World = MsbEntity.GetEdgeSegmentTransform(f, target.World, MathF.Max(CFG.Current.Viewport.Viewport_Edge_Segment_Radius, 0.01f));
             PreviewLine.Visible = true;
         }
         else

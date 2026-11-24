@@ -38,9 +38,9 @@ public class ChangeFmgEntryText : EditorAction, ITextActionTarget
         Entry.Text = NewText;
         if (IsSyncAction)
         {
-            if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
+            if (CFG.Current.TextEditor.TextEditor_Language_Sync_Apply_Prefix)
             {
-                Entry.Text = $"{CFG.Current.TextEditor_Language_Sync_Prefix}{NewText}";
+                Entry.Text = $"{CFG.Current.TextEditor.TextEditor_Language_Sync_Prefix}{NewText}";
             }
         }
 

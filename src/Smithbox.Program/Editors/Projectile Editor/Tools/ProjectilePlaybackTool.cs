@@ -80,17 +80,17 @@ public class ProjectilePlaybackTool
             View.ViewportWindow.FrameSimulation();
         GUI.Tooltip(LOC.Get("PROJECTILE_Frame_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("PROJECTILE_Auto_Play_On_Select")}##projectileAutoPlay", ref CFG.Current.ProjectileEditor_Auto_Play_On_Select);
+        ImGui.Checkbox($"{LOC.Get("PROJECTILE_Auto_Play_On_Select")}##projectileAutoPlay", ref CFG.Current.ProjectileEditor.ProjectileEditor_Auto_Play_On_Select);
         GUI.Tooltip(LOC.Get("PROJECTILE_Auto_Play_On_Select_TT"));
 
         // Options
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("PROJECTILE_Playback_Options_Header"), "");
 
-        ImGui.Checkbox($"{LOC.Get("PROJECTILE_Loop")}##projectileLoop", ref CFG.Current.ProjectileEditor_Loop);
+        ImGui.Checkbox($"{LOC.Get("PROJECTILE_Loop")}##projectileLoop", ref CFG.Current.ProjectileEditor.ProjectileEditor_Loop);
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##projectileSpeed", ref CFG.Current.ProjectileEditor_Speed, 0.05f, 2f, $"{LOC.Get("PROJECTILE_Speed")}: %.2f");
+        ImGui.SliderFloat("##projectileSpeed", ref CFG.Current.ProjectileEditor.ProjectileEditor_Speed, 0.05f, 2f, $"{LOC.Get("PROJECTILE_Speed")}: %.2f");
 
         // Effects
         GUI.Spacer();

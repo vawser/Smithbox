@@ -126,7 +126,7 @@ public class HavokSelection
         BinderAliasCache.Clear();
         BinderAliasVersion++;
 
-        if (!CFG.Current.HavokEditor_BinderList_Display_Aliases)
+        if (!CFG.Current.HavokEditor.HavokEditor_BinderList_Display_Aliases)
             return;
 
         foreach (var entry in entries)
@@ -180,7 +180,7 @@ public class HavokSelection
 
     public void AddToFileAliasCache(string filename)
     {
-        if (!CFG.Current.HavokEditor_FileList_Display_Aliases)
+        if (!CFG.Current.HavokEditor.HavokEditor_FileList_Display_Aliases)
             return;
 
         var alias = "";

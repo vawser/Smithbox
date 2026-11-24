@@ -241,8 +241,8 @@ public class MapInfoEditor
         if (Tool == PaintTool.Brush)
         {
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderInt("##mapInfoBrushSize", ref CFG.Current.MapInfo_BrushSize, 1, 64,
-                LOC.Get("MAP_MapInfo_Brush_Size_Format", CFG.Current.MapInfo_BrushSize, CFG.Current.MapInfo_BrushSize * 4));
+            ImGui.SliderInt("##mapInfoBrushSize", ref CFG.Current.MapEditor.MapInfo_BrushSize, 1, 64,
+                LOC.Get("MAP_MapInfo_Brush_Size_Format", CFG.Current.MapEditor.MapInfo_BrushSize, CFG.Current.MapEditor.MapInfo_BrushSize * 4));
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Brush_Size_TT"));
         }
 
@@ -257,15 +257,15 @@ public class MapInfoEditor
         GUI.SimpleHeader(LOC.Get("MAP_MapInfo_Display_Header"), LOC.Get("MAP_MapInfo_Display_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.SliderFloat("##mapInfoOpacity", ref CFG.Current.MapInfo_Opacity, 0.05f, 1.0f, LOC.Get("MAP_MapInfo_Opacity_Format")))
+        if (ImGui.SliderFloat("##mapInfoOpacity", ref CFG.Current.MapEditor.MapInfo_Opacity, 0.05f, 1.0f, LOC.Get("MAP_MapInfo_Opacity_Format")))
             LutVersion++;
         GUI.Tooltip(LOC.Get("MAP_MapInfo_Opacity_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Highlight_Selected")}##mapInfoHighlight", ref CFG.Current.MapInfo_HighlightSelected))
+        if (ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Highlight_Selected")}##mapInfoHighlight", ref CFG.Current.MapEditor.MapInfo_HighlightSelected))
             LutVersion++;
         GUI.Tooltip(LOC.Get("MAP_MapInfo_Highlight_Selected_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Show_Outlines")}##mapInfoOutlines", ref CFG.Current.MapInfo_ShowTileOutlines);
+        ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Show_Outlines")}##mapInfoOutlines", ref CFG.Current.MapEditor.MapInfo_ShowTileOutlines);
         GUI.Tooltip(LOC.Get("MAP_MapInfo_Show_Outlines_TT"));
 
         // Actions
@@ -386,7 +386,7 @@ public class MapInfoEditor
             if (handle is { Resident: true })
                 drawList.AddImage(new ImTextureID(handle.TexHandle), min, max);
 
-            if (CFG.Current.MapInfo_ShowTileOutlines)
+            if (CFG.Current.MapEditor.MapInfo_ShowTileOutlines)
             {
                 var color = tile.Modified ? UI.Current.ImGui_ModifiedFilter_Text : new Vector4(1, 1, 1, 0.35f);
                 drawList.AddRect(min, max, ImGui.GetColorU32(color), 0, ImDrawFlags.None, 1.0f);
@@ -404,7 +404,7 @@ public class MapInfoEditor
             // Brush outline
             if (Tool == PaintTool.Brush)
             {
-                var radius = CFG.Current.MapInfo_BrushSize * 0.5f / MapInfoTexTile.Size * grid.Size * zoom.X;
+                var radius = CFG.Current.MapEditor.MapInfo_BrushSize * 0.5f / MapInfoTexTile.Size * grid.Size * zoom.X;
                 drawList.AddCircle(ImGui.GetMousePos(), MathF.Max(radius, 1.0f), ImGui.GetColorU32(new Vector4(1, 1, 1, 0.8f)));
             }
         }
@@ -454,7 +454,7 @@ public class MapInfoEditor
             }
 
             Bank.PaintLine(area, Layer, LastPaintPoint.X, LastPaintPoint.Y, global.X, global.Y,
-                CFG.Current.MapInfo_BrushSize * 0.5f, SelectedValue);
+                CFG.Current.MapEditor.MapInfo_BrushSize * 0.5f, SelectedValue);
 
             LastPaintPoint = global;
         }
@@ -607,7 +607,7 @@ public class MapInfoEditor
     private uint[] BuildLut(bool dlc)
     {
         var lut = new uint[256];
-        var alpha = (byte)Math.Clamp(CFG.Current.MapInfo_Opacity * 255f, 0, 255);
+        var alpha = (byte)Math.Clamp(CFG.Current.MapEditor.MapInfo_Opacity * 255f, 0, 255);
         var faded = (byte)(alpha / 5);
 
         for (var i = 0; i < 256; i++)
@@ -620,7 +620,7 @@ public class MapInfoEditor
 
         lut[MapInfoLayers.None] = 0;
 
-        if (CFG.Current.MapInfo_HighlightSelected)
+        if (CFG.Current.MapEditor.MapInfo_HighlightSelected)
         {
             for (var i = 0; i < 256; i++)
             {

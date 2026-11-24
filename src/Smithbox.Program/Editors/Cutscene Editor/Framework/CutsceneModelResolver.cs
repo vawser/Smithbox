@@ -55,7 +55,7 @@ public sealed record CutsceneModel(CutsceneModelKind Kind, string ModelName)
         {
             case CutsceneModelKind.Character:
                 Add(ModelLocator.GetChrModel(project, ModelName, ModelName));
-                if (CFG.Current.Viewport_Enable_Texturing)
+                if (CFG.Current.Viewport.Viewport_Enable_Texturing)
                 {
                     Add(TextureLocator.GetCharacterTextureVirtualPath(project, ModelName, false));
                     Add(TextureLocator.GetCharacterTextureVirtualPath(project, ModelName, true));
@@ -68,13 +68,13 @@ public sealed record CutsceneModel(CutsceneModelKind Kind, string ModelName)
 
             case CutsceneModelKind.Asset:
                 Add(ModelLocator.GetObjModel(project, ModelName, ModelName));
-                if (CFG.Current.Viewport_Enable_Texturing)
+                if (CFG.Current.Viewport.Viewport_Enable_Texturing)
                     Add(TextureLocator.GetAssetTextureVirtualPath(project, ModelName));
                 break;
 
             case CutsceneModelKind.Object:
                 Add(ModelLocator.GetObjModel(project, ModelName, ModelName));
-                if (CFG.Current.Viewport_Enable_Texturing)
+                if (CFG.Current.Viewport.Viewport_Enable_Texturing)
                     Add(TextureLocator.GetObjectTextureVirtualPath(project, ModelName));
                 break;
         }

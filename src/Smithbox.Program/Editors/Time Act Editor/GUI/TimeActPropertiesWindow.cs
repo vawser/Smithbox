@@ -141,13 +141,13 @@ public class TimeActPropertiesWindow
         // Field Name Mode
         ImGui.SameLine();
 
-        var mode = CFG.Current.TimeActEditor_Field_Name_Mode;
+        var mode = CFG.Current.TimeActEditor.TimeActEditor_Field_Name_Mode;
         var next = mode is TimeActFieldNameMode.Annotation ? TimeActFieldNameMode.Internal : TimeActFieldNameMode.Annotation;
 
         ImGui.AlignTextToFramePadding();
         if (ImGui.Button($"{(mode is TimeActFieldNameMode.Annotation ? Icons.Book : Icons.Code)}##timeActFieldNameMode"))
         {
-            CFG.Current.TimeActEditor_Field_Name_Mode = next;
+            CFG.Current.TimeActEditor.TimeActEditor_Field_Name_Mode = next;
         }
         GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Field_Name_Mode_TT",
             GetFieldNameModeName(mode), GetFieldNameModeName(next)));
@@ -155,11 +155,11 @@ public class TimeActPropertiesWindow
         // Obsolete Fields
         ImGui.SameLine();
 
-        var hidden = CFG.Current.TimeActEditor_Hide_Obsolete_Fields;
+        var hidden = CFG.Current.TimeActEditor.TimeActEditor_Hide_Obsolete_Fields;
 
         if (ImGui.Button($"{(hidden ? Icons.EyeSlash : Icons.Eye)}##timeActHideObsoleteFields"))
         {
-            CFG.Current.TimeActEditor_Hide_Obsolete_Fields = !hidden;
+            CFG.Current.TimeActEditor.TimeActEditor_Hide_Obsolete_Fields = !hidden;
         }
         GUI.Tooltip(LOC.Get(hidden
             ? "TAE_PropertiesWindow_Obsolete_Fields_Hidden_TT"
@@ -168,11 +168,11 @@ public class TimeActPropertiesWindow
         // Reverse Links: the Imported By and Identical Events sections
         ImGui.SameLine();
 
-        var showLinks = CFG.Current.TimeActEditor_Display_Reverse_Links;
+        var showLinks = CFG.Current.TimeActEditor.TimeActEditor_Display_Reverse_Links;
 
         if (ImGui.Button($"{(showLinks ? Icons.Link : Icons.ChainBroken)}##timeActDisplayReverseLinks"))
         {
-            CFG.Current.TimeActEditor_Display_Reverse_Links = !showLinks;
+            CFG.Current.TimeActEditor.TimeActEditor_Display_Reverse_Links = !showLinks;
         }
         GUI.Tooltip(LOC.Get(showLinks
             ? "TAE_PropertiesWindow_Reverse_Links_Shown_TT"
@@ -326,7 +326,7 @@ public class TimeActPropertiesWindow
 
                     var meta = Project.Handler.TimeActData.GetFieldMeta(ev, parameter.Name);
 
-                    if (meta?.Obsolete == true && CFG.Current.TimeActEditor_Hide_Obsolete_Fields)
+                    if (meta?.Obsolete == true && CFG.Current.TimeActEditor.TimeActEditor_Hide_Obsolete_Fields)
                         continue;
 
                     var annotation = Project.Handler.TimeActData.GetFieldAnnotation(ev, parameter.Name);
@@ -1121,7 +1121,7 @@ public class TimeActPropertiesWindow
     {
         var source = View.Selection.SelectedTimeActContainerWrapper;
 
-        if (!CFG.Current.TimeActEditor_Display_Reverse_Links)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Display_Reverse_Links)
             return;
 
         GUI.Spacer();
@@ -1164,7 +1164,7 @@ public class TimeActPropertiesWindow
     {
         var source = View.Selection.SelectedTimeActContainerWrapper;
 
-        if (source == null || !CFG.Current.TimeActEditor_Display_Reverse_Links)
+        if (source == null || !CFG.Current.TimeActEditor.TimeActEditor_Display_Reverse_Links)
             return;
 
         GUI.Spacer();
@@ -1758,7 +1758,7 @@ public class TimeActPropertiesWindow
 
         if (annotation != null && annotation.Name.Length > 0)
         {
-            lines.Add(CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation
+            lines.Add(CFG.Current.TimeActEditor.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation
                 ? LOC.Get("TAE_PropertiesWindow_Field_Internal_Name", parameter.Name)
                 : LOC.Get("TAE_PropertiesWindow_Field_Annotation_Name", annotation.Name));
         }
@@ -1839,7 +1839,7 @@ public class TimeActPropertiesWindow
 
     private void DisplayParamReference(TAE.Event ev, string key, TimeActField meta)
     {
-        if (meta.ParamRef == "" || !CFG.Current.ParamEditor_Field_List_Display_References ||
+        if (meta.ParamRef == "" || !CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References ||
             Project.Handler.ParamEditor?.ViewHandler.ActiveView is not { } paramView)
         {
             return;
@@ -1892,7 +1892,7 @@ public class TimeActPropertiesWindow
     /// </summary>
     private void DisplayBehaviorReference(TAE.Event ev, string key, TimeActField meta)
     {
-        if (meta.BehaviorRef == "" || !CFG.Current.ParamEditor_Field_List_Display_References ||
+        if (meta.BehaviorRef == "" || !CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References ||
             Project.Handler.ParamEditor?.ViewHandler.ActiveView is not { } paramView ||
             View.Selection.SelectedTimeActContainerWrapper is not { } source)
         {
@@ -1999,7 +1999,7 @@ public class TimeActPropertiesWindow
     /// </summary>
     private void DisplayProjectEnum(TAE.Event ev, string key, TimeActField meta)
     {
-        if (meta.ProjectEnum == "" || !CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (meta.ProjectEnum == "" || !CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var projectEnum = ProjectEnumHelper.GetEnum(Project, meta.ProjectEnum);
@@ -2036,7 +2036,7 @@ public class TimeActPropertiesWindow
     /// </summary>
     private void DisplayAlias(TAE.Event ev, string key, TimeActField meta)
     {
-        if (meta.Alias == "" || !CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (meta.Alias == "" || !CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         if (!Enum.TryParse(meta.Alias, out ProjectAliasType aliasType) || aliasType is ProjectAliasType.None)

@@ -149,20 +149,20 @@ public class EditorVisibilityAction
     {
         if (ImGui.BeginMenu("Toggle Editor Visibility by Tag"))
         {
-            ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
+            ImGui.InputText("##targetTag", ref CFG.Current.MapEditor.Toolbar_Tag_Visibility_Target, 255);
             GUI.Tooltip("Specify which tag the map objects will be filtered by.");
 
             if (ImGui.MenuItem("Enable Visibility"))
             {
-                CFG.Current.Toolbar_Tag_Visibility_State_Enabled = true;
-                CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
+                CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Enabled = true;
+                CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Disabled = false;
 
                 ApplyEditorVisibilityChangeByTag();
             }
             if (ImGui.MenuItem("Disable Visibility"))
             {
-                CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
-                CFG.Current.Toolbar_Tag_Visibility_State_Disabled = true;
+                CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Enabled = false;
+                CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Disabled = true;
 
                 ApplyEditorVisibilityChangeByTag();
             }
@@ -211,7 +211,7 @@ public class EditorVisibilityAction
         GUI.Spacer();
         GUI.SimpleHeader("Target Tag", "Toggle the visibility of map objects with the associated alias tag (i.e. LOD).");
 
-        GUI.HintTextInput("TagToggleInput", ref CFG.Current.Toolbar_Tag_Visibility_Target, "Enter the tag you want to target...");
+        GUI.HintTextInput("TagToggleInput", ref CFG.Current.MapEditor.Toolbar_Tag_Visibility_Target, "Enter the tag you want to target...");
 
         GUI.MultiButtonInput("tagActions",
             "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleTagAction,
@@ -250,16 +250,16 @@ public class EditorVisibilityAction
 
     public void MakeVisibleTagAction()
     {
-        CFG.Current.Toolbar_Tag_Visibility_State_Enabled = true;
-        CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
+        CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Enabled = true;
+        CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Disabled = false;
 
         ApplyEditorVisibilityChangeByTag();
     }
 
     public void MakeInvisibleTagAction()
     {
-        CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
-        CFG.Current.Toolbar_Tag_Visibility_State_Disabled = true;
+        CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Enabled = false;
+        CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Disabled = true;
 
         ApplyEditorVisibilityChangeByTag();
     }
@@ -382,7 +382,7 @@ public class EditorVisibilityAction
             return;
         }
 
-        var target = CFG.Current.Toolbar_Tag_Visibility_Target;
+        var target = CFG.Current.MapEditor.Toolbar_Tag_Visibility_Target;
 
         // Built once, so each part is a lookup rather than a walk over thousands of aliases
         var taggedAssets = GetTaggedAliasIDs(ProjectAliasType.Assets, target);
@@ -411,11 +411,11 @@ public class EditorVisibilityAction
                 if (!taggedAssets.Contains(modelName) && !taggedMapPieces.Contains(mapPieceID))
                     continue;
 
-                if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
+                if (CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Enabled)
                 {
                     obj.EditorVisible = true;
                 }
-                if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
+                if (CFG.Current.MapEditor.Toolbar_Tag_Visibility_State_Disabled)
                 {
                     obj.EditorVisible = false;
                 }

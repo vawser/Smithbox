@@ -183,7 +183,7 @@ public class GparamEditorView : IEditorView
         // Viewport
         ViewportWindow.Display(dockspaceId);
 
-        if (CFG.Current.Interface_GparamEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_GparamEditor_ToolWindow)
         {
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

@@ -144,21 +144,21 @@ public class ParamDataImportTab
 
             // Append New Rows
             ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Ignore_Existing_Rows")}##toggleIgnoreExistingRows",
-                ref CFG.Current.Param_CSV_Ignore_Existing_Rows);
+                ref CFG.Current.ParamEditor.Param_CSV_Ignore_Existing_Rows);
 
             GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Ignore_Existing_Rows_TT"));
 
             // Append New Rows
             ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode",
-                ref CFG.Current.Param_CSV_Append_Only);
+                ref CFG.Current.ParamEditor.Param_CSV_Append_Only);
 
             GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
 
-            if (CFG.Current.Param_CSV_Append_Only)
+            if (CFG.Current.ParamEditor.Param_CSV_Append_Only)
             {
                 // Replace Existing Rows
                 ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisting",
-                    ref CFG.Current.Param_CSV_Replace_Row);
+                    ref CFG.Current.ParamEditor.Param_CSV_Replace_Row);
 
                 GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
             }

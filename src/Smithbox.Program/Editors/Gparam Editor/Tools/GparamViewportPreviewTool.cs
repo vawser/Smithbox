@@ -118,17 +118,17 @@ public class GparamViewportPreviewTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("GPARAM_ViewportPreview_Options_Header"), LOC.Get("GPARAM_ViewportPreview_Options_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("GPARAM_ViewportPreview_Auto_Load")}##gparamViewportAutoLoad", ref CFG.Current.GparamEditor_Viewport_Auto_Load_Map);
+        ImGui.Checkbox($"{LOC.Get("GPARAM_ViewportPreview_Auto_Load")}##gparamViewportAutoLoad", ref CFG.Current.GparamEditor.GparamEditor_Viewport_Auto_Load_Map);
         GUI.Tooltip(LOC.Get("GPARAM_ViewportPreview_Auto_Load_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("GPARAM_ViewportPreview_Load_Assets")}##gparamViewportLoadAssets", ref CFG.Current.GparamEditor_Viewport_Load_Assets);
+        ImGui.Checkbox($"{LOC.Get("GPARAM_ViewportPreview_Load_Assets")}##gparamViewportLoadAssets", ref CFG.Current.GparamEditor.GparamEditor_Viewport_Load_Assets);
         GUI.Tooltip(LOC.Get("GPARAM_ViewportPreview_Load_Assets_TT"));
 
         // Time of Day: the Map Editor's, set in the Viewport Rendering section's Map Lighting tab, unless following
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("GPARAM_ViewportPreview_Time_Header"), LOC.Get("GPARAM_ViewportPreview_Time_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("GPARAM_ViewportPreview_Follow_Value_Time")}##gparamViewportFollowTime", ref CFG.Current.GparamEditor_Viewport_Follow_Value_Time);
+        ImGui.Checkbox($"{LOC.Get("GPARAM_ViewportPreview_Follow_Value_Time")}##gparamViewportFollowTime", ref CFG.Current.GparamEditor.GparamEditor_Viewport_Follow_Value_Time);
         GUI.Tooltip(LOC.Get("GPARAM_ViewportPreview_Follow_Value_Time_TT"));
 
         GUI.WrappedText(LOC.Get("GPARAM_ViewportPreview_Lit_At", View.ViewportWindow.GetHours().ToString("0.00")));

@@ -59,7 +59,7 @@ public class TextShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
+            CFG.Current.Interface.Interface_TextEditor_ToolWindow = !CFG.Current.Interface.Interface_TextEditor_ToolWindow;
         }
 
         // While a text box has keyboard focus (search bar, entry text, ID input),
@@ -201,7 +201,7 @@ public class TextShortcuts
 
         if (activeView != null)
         {
-            activeView.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+            activeView.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor.TextEditor_Text_Clipboard_Include_ID);
         }
     }
 }

@@ -117,37 +117,37 @@ public class ModelEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.ModelEditor_Allow_Unmodified_Save = !CFG.Current.ModelEditor_Allow_Unmodified_Save;
+                CFG.Current.ModelEditor.ModelEditor_Allow_Unmodified_Save = !CFG.Current.ModelEditor.ModelEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Allow_Unmodified_Save);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.ModelEditor_Allow_Automatic_Save = !CFG.Current.ModelEditor_Allow_Automatic_Save;
+                CFG.Current.ModelEditor.ModelEditor_Allow_Automatic_Save = !CFG.Current.ModelEditor.ModelEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Allow_Automatic_Save);
 
             ImGui.Separator();
 
             // Check Models Before Saving
             if (ImGui.MenuItem($"{LOC.Get("MODEL_SaveCheck_Menu_Enabled")}##saveCheckEnabled"))
             {
-                CFG.Current.ModelEditor_SaveCheck_Enabled = !CFG.Current.ModelEditor_SaveCheck_Enabled;
+                CFG.Current.ModelEditor.ModelEditor_SaveCheck_Enabled = !CFG.Current.ModelEditor.ModelEditor_SaveCheck_Enabled;
             }
             GUI.Tooltip(LOC.Get("MODEL_SaveCheck_Menu_Enabled_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_SaveCheck_Enabled);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_SaveCheck_Enabled);
 
             // Stop on Warnings
             if (ImGui.MenuItem($"{LOC.Get("MODEL_SaveCheck_Menu_Stop_On_Warnings")}##saveCheckWarnings", "", false,
-                CFG.Current.ModelEditor_SaveCheck_Enabled))
+                CFG.Current.ModelEditor.ModelEditor_SaveCheck_Enabled))
             {
-                CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings = !CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings;
+                CFG.Current.ModelEditor.ModelEditor_SaveCheck_Stop_On_Warnings = !CFG.Current.ModelEditor.ModelEditor_SaveCheck_Stop_On_Warnings;
             }
             GUI.Tooltip(LOC.Get("MODEL_SaveCheck_Menu_Stop_On_Warnings_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_SaveCheck_Stop_On_Warnings);
 
             // Check the loaded model now, without saving
             var loaded = ViewHandler.ActiveView?.Selection.SelectedModelWrapper;
@@ -170,12 +170,12 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     private bool PassesSaveCheck(List<ModelWrapper> models, bool autoSave, bool skipCheck, Action saveWithoutCheck)
     {
-        if (autoSave || skipCheck || !CFG.Current.ModelEditor_SaveCheck_Enabled || models.Count == 0)
+        if (autoSave || skipCheck || !CFG.Current.ModelEditor.ModelEditor_SaveCheck_Enabled || models.Count == 0)
             return true;
 
         var issues = ModelCheck.Run(Project, models);
 
-        if (ModelCheck.StopsSave(issues, CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings))
+        if (ModelCheck.StopsSave(issues, CFG.Current.ModelEditor.ModelEditor_SaveCheck_Stop_On_Warnings))
         {
             SaveCheckWindow.Open(issues, models, saveWithoutCheck);
 
@@ -248,7 +248,7 @@ public class ModelEditorScreen : EditorScreen
                 // History: opens the History tool
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_History_Menu")}##historyAction"))
                 {
-                    CFG.Current.Interface_ModelEditor_ToolWindow = true;
+                    CFG.Current.Interface.Interface_ModelEditor_ToolWindow = true;
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_History_Menu_TT"));
@@ -283,27 +283,27 @@ public class ModelEditorScreen : EditorScreen
             // Individual Windows
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows")}##windows"))
             {
-                CFG.Current.Interface_ModelEditor_EditorDisplayType = EditorDisplayType.Windows;
+                CFG.Current.Interface.Interface_ModelEditor_EditorDisplayType = EditorDisplayType.Windows;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_EditorDisplayType == EditorDisplayType.Windows);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_ModelEditor_EditorDisplayType == EditorDisplayType.Windows);
 
             // Tabbed Panels
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels")}##tabbedPanels"))
             {
-                CFG.Current.Interface_ModelEditor_EditorDisplayType = EditorDisplayType.TabbedPanels;
+                CFG.Current.Interface.Interface_ModelEditor_EditorDisplayType = EditorDisplayType.TabbedPanels;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_EditorDisplayType == EditorDisplayType.TabbedPanels);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_ModelEditor_EditorDisplayType == EditorDisplayType.TabbedPanels);
 
             ImGui.Separator();
 
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_View_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
+                CFG.Current.Interface.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface.Interface_ModelEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_ModelEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -326,10 +326,10 @@ public class ModelEditorScreen : EditorScreen
                 // Include Alias in Search
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Container_Include_Alias_in_Search")}##includeAliasInSearchToggle"))
                 {
-                    CFG.Current.ModelEditor_Containers_IncludeAliasInSearch = !CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
+                    CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch = !CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_Editor_Container_Include_Alias_in_Search_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Containers_IncludeAliasInSearch);
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch);
 
                 ImGui.EndMenu();
             }
@@ -340,10 +340,10 @@ public class ModelEditorScreen : EditorScreen
                 // Auto-Select First Entries
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Files_AutoSelect_First")}##autoSelectFirstFileToggle"))
                 {
-                    CFG.Current.ModelEditor_Files_AutoLoadFirstEntry = !CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
+                    CFG.Current.ModelEditor.ModelEditor_Files_AutoLoadFirstEntry = !CFG.Current.ModelEditor.ModelEditor_Files_AutoLoadFirstEntry;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_Editor_Files_AutoSelect_First_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Files_AutoLoadFirstEntry);
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Files_AutoLoadFirstEntry);
 
                 ImGui.EndMenu();
             }
@@ -354,18 +354,18 @@ public class ModelEditorScreen : EditorScreen
                 // Display Node Name in Mesh Entry
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry")}##nodeNameInMeshEntryToggle"))
                 {
-                    CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry = !CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry;
+                    CFG.Current.ModelEditor.ModelEditor_Contents_NodeNameInMeshEntry = !CFG.Current.ModelEditor.ModelEditor_Contents_NodeNameInMeshEntry;
                 }
                 GUI.Tooltip($"{LOC.Get("MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry_TT")}");
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Contents_NodeNameInMeshEntry);
 
                 // Highlight Changes from Vanilla
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Vanilla_Highlight")}##vanillaHighlightToggle"))
                 {
-                    CFG.Current.ModelEditor_Vanilla_Highlight = !CFG.Current.ModelEditor_Vanilla_Highlight;
+                    CFG.Current.ModelEditor.ModelEditor_Vanilla_Highlight = !CFG.Current.ModelEditor.ModelEditor_Vanilla_Highlight;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_Vanilla_Highlight_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Vanilla_Highlight);
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Vanilla_Highlight);
 
                 ImGui.EndMenu();
             }
@@ -376,10 +376,10 @@ public class ModelEditorScreen : EditorScreen
                 // Live Preview
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Viewport_Live_Preview")}##livePreviewToggle"))
                 {
-                    CFG.Current.ModelEditor_Viewport_Live_Preview = !CFG.Current.ModelEditor_Viewport_Live_Preview;
+                    CFG.Current.ModelEditor.ModelEditor_Viewport_Live_Preview = !CFG.Current.ModelEditor.ModelEditor_Viewport_Live_Preview;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_Editor_Viewport_Live_Preview_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Viewport_Live_Preview);
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Viewport_Live_Preview);
 
                 // Refresh Viewport
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Viewport_Refresh")}##refreshViewport", false,
@@ -466,7 +466,7 @@ public class ModelEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
+        if (autoSave && CFG.Current.ModelEditor.ModelEditor_Allow_Automatic_Save || !autoSave)
         {
             var wrapper = activeView.Selection.SelectedModelWrapper;
 
@@ -488,7 +488,7 @@ public class ModelEditorScreen : EditorScreen
     public void SaveModel(ModelWrapper wrapper, bool autoSave = false, bool skipCheck = false)
     {
         // Only a model the save will write is checked
-        var willWrite = wrapper.IsDirty || CFG.Current.ModelEditor_Allow_Unmodified_Save;
+        var willWrite = wrapper.IsDirty || CFG.Current.ModelEditor.ModelEditor_Allow_Unmodified_Save;
 
         if (willWrite && !PassesSaveCheck(new List<ModelWrapper> { wrapper }, autoSave, skipCheck,
             () => SaveModelWithoutCheck(wrapper)))
@@ -539,7 +539,7 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll(bool autoSave = false, bool skipCheck = false)
     {
-        if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
+        if (autoSave && CFG.Current.ModelEditor.ModelEditor_Allow_Automatic_Save || !autoSave)
         {
             if (!PassesSaveCheck(GetUnsavedModels(), autoSave, skipCheck, () => SaveAll(skipCheck: true)))
                 return;

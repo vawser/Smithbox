@@ -55,9 +55,9 @@ public class MapResourceHandler
     public void SetupHumanEnemySubstitute()
     {
         using var __subScope = Profiler.TracyZoneAuto();
-        if (CFG.Current.MapEditor_ModelLoad_Characters)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_Characters)
         {
-            var chrId = CFG.Current.MapEditor_Character_Substitution_ID;
+            var chrId = CFG.Current.MapEditor.MapEditor_Character_Substitution_ID;
 
             var modelAsset = ModelLocator.GetChrModel(View.Project, chrId, chrId);
 
@@ -196,7 +196,7 @@ public class MapResourceHandler
         }
 
         // DS3's lightmaps of the area's map pieces, one binder for every map of the area, see DolLightmapBank
-        if (CFG.Current.Viewport_Map_Lightmaps && GparamProfile.For(View.Project.Descriptor.ProjectType).HasDolLightmaps)
+        if (CFG.Current.Viewport.Viewport_Map_Lightmaps && GparamProfile.For(View.Project.Descriptor.ProjectType).HasDolLightmaps)
         {
             var lightmaps = TextureLocator.GetDolLightmapVirtualPath(AdjustedMapID);
 
@@ -288,7 +288,7 @@ public class MapResourceHandler
             // BND
             assets.Add(TextureLocator.GetCharacterTextureVirtualPath(project, modelName, true));
 
-            if (CFG.Current.MapEditor_Enable_Character_Composition &&
+            if (CFG.Current.MapEditor.MapEditor_Enable_Character_Composition &&
                 CharacterComposition.IsComposite(modelName) &&
                 CharacterComposition.GetCommonTexture(project) is { } commonTexture)
             {
@@ -356,20 +356,20 @@ public class MapResourceHandler
             }
         }
 
-        Reserve(CFG.Current.MapEditor_ModelLoad_MapPieces, LoadList_MapPiece_Model, LOC.Get("MAP_ResourceManager_Map_Piece_Models"));
-        Reserve(CFG.Current.MapEditor_ModelLoad_Characters, LoadList_Character_Model, LOC.Get("MAP_ResourceManager_Character_Models"));
-        Reserve(CFG.Current.MapEditor_ModelLoad_Objects, LoadList_Asset_Model, GetObjectModelsName(View.Project));
-        Reserve(CFG.Current.MapEditor_ModelLoad_Collisions, LoadList_Collision, LOC.Get("MAP_ResourceManager_Collision_Models"));
-        Reserve(CFG.Current.MapEditor_ModelLoad_Collisions, LoadList_ConnectCollision, LOC.Get("MAP_ResourceManager_Connect_Collision_Models"));
-        Reserve(CFG.Current.MapEditor_ModelLoad_Navmeshes, LoadList_Navmesh, LOC.Get("MAP_ResourceManager_Navmesh_Models"));
+        Reserve(CFG.Current.MapEditor.MapEditor_ModelLoad_MapPieces, LoadList_MapPiece_Model, LOC.Get("MAP_ResourceManager_Map_Piece_Models"));
+        Reserve(CFG.Current.MapEditor.MapEditor_ModelLoad_Characters, LoadList_Character_Model, LOC.Get("MAP_ResourceManager_Character_Models"));
+        Reserve(CFG.Current.MapEditor.MapEditor_ModelLoad_Objects, LoadList_Asset_Model, GetObjectModelsName(View.Project));
+        Reserve(CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions, LoadList_Collision, LOC.Get("MAP_ResourceManager_Collision_Models"));
+        Reserve(CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions, LoadList_ConnectCollision, LOC.Get("MAP_ResourceManager_Connect_Collision_Models"));
+        Reserve(CFG.Current.MapEditor.MapEditor_ModelLoad_Navmeshes, LoadList_Navmesh, LOC.Get("MAP_ResourceManager_Navmesh_Models"));
 
-        if (!CFG.Current.Viewport_Enable_Texturing)
+        if (!CFG.Current.Viewport.Viewport_Enable_Texturing)
             return;
 
-        Reserve(CFG.Current.MapEditor_TextureLoad_MapPieces, LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"));
-        Reserve(CFG.Current.MapEditor_TextureLoad_Characters, LoadList_Character_Texture, LOC.Get("MAP_ResourceManager_Character_Textures"));
-        Reserve(CFG.Current.MapEditor_TextureLoad_Objects, LoadList_Asset_Texture, GetObjectTexturesName(View.Project));
-        Reserve(CFG.Current.MapEditor_TextureLoad_Misc, LoadList_Other_Texture, LOC.Get("MAP_ResourceManager_Miscellaneous_Textures"));
+        Reserve(CFG.Current.MapEditor.MapEditor_TextureLoad_MapPieces, LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"));
+        Reserve(CFG.Current.MapEditor.MapEditor_TextureLoad_Characters, LoadList_Character_Texture, LOC.Get("MAP_ResourceManager_Character_Textures"));
+        Reserve(CFG.Current.MapEditor.MapEditor_TextureLoad_Objects, LoadList_Asset_Texture, GetObjectTexturesName(View.Project));
+        Reserve(CFG.Current.MapEditor.MapEditor_TextureLoad_Misc, LoadList_Other_Texture, LOC.Get("MAP_ResourceManager_Miscellaneous_Textures"));
     }
 
     /// <summary>
@@ -396,7 +396,7 @@ public class MapResourceHandler
 
     public List<Task> LoadTextures(List<Task> tasks, MapContainer map)
     {
-        if (!CFG.Current.Viewport_Enable_Texturing)
+        if (!CFG.Current.Viewport.Viewport_Enable_Texturing)
             return tasks;
 
         // The models are loaded by now, and their materials have asked the pool for the textures they use. Texture
@@ -407,7 +407,7 @@ public class MapResourceHandler
         HashSet<string> requested = ResourceManager.DefaultPool.GetRequestedUnloadedNames<TextureResource>();
 
         // Map
-        if (CFG.Current.MapEditor_TextureLoad_MapPieces)
+        if (CFG.Current.MapEditor.MapEditor_TextureLoad_MapPieces)
         {
             task = LoadAssets(LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"), ResourceType.Texture,
                 onlyNames: requested);
@@ -415,7 +415,7 @@ public class MapResourceHandler
         }
 
         // Character
-        if (CFG.Current.MapEditor_TextureLoad_Characters)
+        if (CFG.Current.MapEditor.MapEditor_TextureLoad_Characters)
         {
             task = LoadAssets(LoadList_Character_Texture, LOC.Get("MAP_ResourceManager_Character_Textures"), ResourceType.Texture,
                 onlyNames: requested);
@@ -423,7 +423,7 @@ public class MapResourceHandler
         }
 
         // Asset
-        if (CFG.Current.MapEditor_TextureLoad_Objects)
+        if (CFG.Current.MapEditor.MapEditor_TextureLoad_Objects)
         {
             task = LoadAssets(LoadList_Asset_Texture, GetObjectTexturesName(View.Project), ResourceType.Texture,
                 onlyNames: requested);
@@ -431,7 +431,7 @@ public class MapResourceHandler
         }
 
         // Other Textures
-        if (CFG.Current.MapEditor_TextureLoad_Misc)
+        if (CFG.Current.MapEditor.MapEditor_TextureLoad_Misc)
         {
             task = LoadAssets(LoadList_Other_Texture, LOC.Get("MAP_ResourceManager_Miscellaneous_Textures"), ResourceType.Texture);
             tasks.Add(task);
@@ -446,28 +446,28 @@ public class MapResourceHandler
         var modelTypes = ResourceType.Flver | ResourceType.Texture;
 
         // MapPieces
-        if (CFG.Current.MapEditor_ModelLoad_MapPieces)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_MapPieces)
         {
             task = LoadAssets(LoadList_MapPiece_Model, LOC.Get("MAP_ResourceManager_Map_Piece_Models"), modelTypes);
             tasks.Add(task);
         }
 
         // Characters
-        if (CFG.Current.MapEditor_ModelLoad_Characters)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_Characters)
         {
             task = LoadAssets(LoadList_Character_Model, LOC.Get("MAP_ResourceManager_Character_Models"), modelTypes);
             tasks.Add(task);
         }
 
         // Objects
-        if (CFG.Current.MapEditor_ModelLoad_Objects)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_Objects)
         {
             task = LoadAssets(LoadList_Asset_Model, GetObjectModelsName(View.Project), modelTypes);
             tasks.Add(task);
         }
 
         // Collisions: only the collisions this map uses are loaded from the collision archives
-        if (CFG.Current.MapEditor_ModelLoad_Collisions)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions)
         {
             task = LoadAssets(LoadList_Collision, LOC.Get("MAP_ResourceManager_Collision_Models"),
                 ResourceType.CollisionHKX, onlyListedAssets: true);
@@ -475,7 +475,7 @@ public class MapResourceHandler
         }
 
         // Connect Collisions: stored in the same files as the low collisions, so they are loaded into their own pool
-        if (CFG.Current.MapEditor_ModelLoad_Collisions)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions)
         {
             task = LoadAssets(LoadList_ConnectCollision, LOC.Get("MAP_ResourceManager_Connect_Collision_Models"),
                 ResourceType.CollisionHKX, ResourceManager.ConnectCollisionPool, onlyListedAssets: true,
@@ -484,7 +484,7 @@ public class MapResourceHandler
         }
 
         // Navmesh
-        if (CFG.Current.MapEditor_ModelLoad_Navmeshes)
+        if (CFG.Current.MapEditor.MapEditor_ModelLoad_Navmeshes)
         {
             var type = ResourceType.NavmeshHKX;
 

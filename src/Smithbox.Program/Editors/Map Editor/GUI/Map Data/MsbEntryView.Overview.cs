@@ -279,7 +279,7 @@ public partial class MsbEntryView
             View.ViewportSelection.AddSelection(ent);
         }
 
-        GUI.Tooltip(CFG.Current.MapDataEditor_EntryView_Follow_Selection
+        GUI.Tooltip(CFG.Current.MapEditor.MapDataEditor_EntryView_Follow_Selection
             ? "Click to select it and show it in its category."
             : "Click to select it.");
     }

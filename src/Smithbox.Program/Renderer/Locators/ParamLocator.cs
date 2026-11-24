@@ -74,9 +74,9 @@ public static class ParamLocator
         var srcFolder = GetParamAssetsDir(project);
 
 #if DEBUG
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
-            srcFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}");
+            srcFolder = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(project)}");
         }
 #endif
 

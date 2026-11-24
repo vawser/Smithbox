@@ -38,7 +38,7 @@ public class AutomaticPreviewTool
         {
             ImGui.BeginTooltip();
 
-            var properties = CFG.Current.QuickView_TargetProperties;
+            var properties = CFG.Current.MapEditor.QuickView_TargetProperties;
 
             foreach (var property in properties)
             {
@@ -61,7 +61,7 @@ public class AutomaticPreviewTool
     {
         if (!InitTargetProperties)
         {
-            curTargetProperties = CFG.Current.QuickView_TargetProperties;
+            curTargetProperties = CFG.Current.MapEditor.QuickView_TargetProperties;
             InitTargetProperties = true;
         }
 
@@ -69,7 +69,7 @@ public class AutomaticPreviewTool
         if (ImGui.Button($"{Icons.Plus}##quickViewPropAdd", DPI.IconButtonSize))
         {
             curTargetProperties.Add("");
-            CFG.Current.QuickView_TargetProperties = curTargetProperties;
+            CFG.Current.MapEditor.QuickView_TargetProperties = curTargetProperties;
         }
         GUI.Tooltip("Add property input.");
 
@@ -83,7 +83,7 @@ public class AutomaticPreviewTool
             if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove", DPI.IconButtonSize))
             {
                 curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
-                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+                CFG.Current.MapEditor.QuickView_TargetProperties = curTargetProperties;
             }
             GUI.Tooltip("Remove last property input.");
 
@@ -94,7 +94,7 @@ public class AutomaticPreviewTool
             if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove", DPI.IconButtonSize))
             {
                 curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
-                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+                CFG.Current.MapEditor.QuickView_TargetProperties = curTargetProperties;
             }
             GUI.Tooltip("Remove last property input.");
         }
@@ -105,7 +105,7 @@ public class AutomaticPreviewTool
         if (ImGui.Button("Reset##quickViewPropReset", DPI.StandardButtonSize))
         {
             curTargetProperties = new List<string>() { "" };
-            CFG.Current.QuickView_TargetProperties = curTargetProperties;
+            CFG.Current.MapEditor.QuickView_TargetProperties = curTargetProperties;
         }
         GUI.Tooltip("Reset property inputs.");
 
@@ -119,7 +119,7 @@ public class AutomaticPreviewTool
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 curTargetProperties[i] = curProperty;
-                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+                CFG.Current.MapEditor.QuickView_TargetProperties = curTargetProperties;
             }
         }
 
@@ -128,7 +128,7 @@ public class AutomaticPreviewTool
             if (ImGui.Button("Add Property", DPI.StandardButtonSize))
             {
                 curTargetProperties.Add("");
-                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+                CFG.Current.MapEditor.QuickView_TargetProperties = curTargetProperties;
             }
             GUI.Tooltip("Add property input.");
         }

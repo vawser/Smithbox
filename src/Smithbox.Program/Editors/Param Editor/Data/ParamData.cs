@@ -283,7 +283,7 @@ public class ParamData : IDisposable
         switch (Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DES)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
@@ -291,7 +291,7 @@ public class ParamData : IDisposable
 
             case ProjectType.DS1:
             case ProjectType.DS1R:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS1)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DS1)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
@@ -299,42 +299,42 @@ public class ParamData : IDisposable
 
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS2)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DS2)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.BB:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_BB)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_BB)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.DS3:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS3)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DS3)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.ER:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_ER)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_ER)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.AC6:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_AC6)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_AC6)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
                 break;
 
             case ProjectType.NR:
-                if (CFG.Current.ParamEditor_Stripped_Row_Name_Load_NR)
+                if (CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_NR)
                 {
                     RowNameHelper.RowNameRestore(Project);
                 }
@@ -759,7 +759,7 @@ public class ParamData : IDisposable
 
     public ParamAnnotationEntry GetParamAnnotations(string paramType)
     {
-        var curLangString = CFG.Current.ParamEditor_Annotation_Language;
+        var curLangString = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
         var curLang = ParamAnnotationLanguages.Languages.FirstOrDefault(e => e.Name == curLangString);
 
         if (curLang == null)
@@ -818,15 +818,15 @@ public class ParamData : IDisposable
         var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
 #if DEBUG
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
-            rootMetaDir = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Meta");
+            rootMetaDir = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Meta");
         }
 #endif
 
         var projectMetaDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Meta");
 
-        if (CFG.Current.Param_Editor_Enable_Param_Meta_Override)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Param_Meta_Override)
         {
             CreateProjectParamMeta();
         }
@@ -839,7 +839,7 @@ public class ParamData : IDisposable
 
             try
             {
-                if(CFG.Current.Param_Editor_Enable_Param_Meta_Override)
+                if(CFG.Current.ParamEditor.Param_Editor_Enable_Param_Meta_Override)
                 {
                     meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
@@ -901,9 +901,9 @@ public class ParamData : IDisposable
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Annotations", lang.Folder);
 
 #if DEBUG
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
-                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Annotations", lang.Folder);
+                sourceFolder = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Annotations", lang.Folder);
             }
 #endif
 
@@ -974,7 +974,7 @@ public class ParamData : IDisposable
 
         Enums = new();
 
-        if (CFG.Current.Param_Editor_Enable_Param_Enum_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Param_Enum_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
@@ -1001,14 +1001,14 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Param_Enum_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Param_Enum_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Enums");
 
 #if DEBUG
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
-                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Enums");
+                sourceFolder = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Enums");
             }
 #endif
             if (Path.Exists(sourceFolder))
@@ -1043,7 +1043,7 @@ public class ParamData : IDisposable
 
         GraphAnnotations = new();
 
-        if (CFG.Current.Param_Editor_Enable_Graph_Annotation_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Graph_Annotation_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
@@ -1065,7 +1065,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Graph_Annotation_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Graph_Annotation_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Graph Annotations");
 
@@ -1094,7 +1094,7 @@ public class ParamData : IDisposable
 
         RowFmgAnnotations = new();
 
-        if (CFG.Current.Param_Editor_Enable_Row_FMG_Annotation_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Row_FMG_Annotation_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Row FMG Annotations");
@@ -1116,14 +1116,14 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Row_FMG_Annotation_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Row_FMG_Annotation_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Row FMG Annotations");
 
 #if DEBUG
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
-                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Row FMG Annotations");
+                sourceFolder = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Row FMG Annotations");
             }
 #endif
 
@@ -1153,7 +1153,7 @@ public class ParamData : IDisposable
 
         IconConfigurations = new();
 
-        if (CFG.Current.Param_Editor_Enable_Icon_Configuration_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Icon_Configuration_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
@@ -1180,13 +1180,13 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Icon_Configuration_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Icon_Configuration_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Icon Configurations");
 #if DEBUG
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
-                sourceFolder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Icon Configurations");
+                sourceFolder = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, $@"\src\Smithbox.Data\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Icon Configurations");
             }
 #endif
 
@@ -1253,7 +1253,7 @@ public class ParamData : IDisposable
 
         ParamCategories = new();
 
-        if (CFG.Current.Param_Editor_Enable_Param_Category_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Param_Category_Addition)
         {
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
@@ -1279,7 +1279,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Param_Category_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Param_Category_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Categories");
 
@@ -1314,7 +1314,7 @@ public class ParamData : IDisposable
 
         ParamCommutativityGroups = new();
 
-        if (CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Param_Commutativity_Group_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
@@ -1341,7 +1341,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Param_Commutativity_Group_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Param Commutativity Groups");
 
@@ -1376,7 +1376,7 @@ public class ParamData : IDisposable
 
         FieldReferenceGroups = new();
 
-        if (CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Param_Field_Reference_Group_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
@@ -1403,7 +1403,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Param_Field_Reference_Group_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Reference Groups");
 
@@ -1438,7 +1438,7 @@ public class ParamData : IDisposable
 
         FieldLayouts = new();
 
-        if (CFG.Current.Param_Editor_Enable_Field_Layout_Addition)
+        if (CFG.Current.ParamEditor.Param_Editor_Enable_Field_Layout_Addition)
         {
             // Build project-local first, so it takes precedence over the base versions
             var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
@@ -1465,7 +1465,7 @@ public class ParamData : IDisposable
             }
         }
 
-        if (!CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override)
+        if (!CFG.Current.ParamEditor.Param_Editor_Enable_Param_Field_Layout_Override)
         {
             var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Field Layouts");
 
@@ -1498,7 +1498,7 @@ public class ParamData : IDisposable
     {
         await Task.Yield();
 
-        var lang = CFG.Current.ParamEditor_Import_Language;
+        var lang = CFG.Current.ParamEditor.ParamEditor_Import_Language;
         var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Table Names", lang);
 
         if (!Directory.Exists(srcDir))

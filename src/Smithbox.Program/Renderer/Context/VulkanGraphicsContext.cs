@@ -40,10 +40,10 @@ public class VulkanGraphicsContext : IGraphicsContext
 
         WindowCreateInfo windowCI = new()
         {
-            X = CFG.Current.GFX_Display_X,
-            Y = CFG.Current.GFX_Display_Y,
-            WindowWidth = CFG.Current.GFX_Display_Width,
-            WindowHeight = CFG.Current.GFX_Display_Height,
+            X = RenderSettings.Graphics.GFX_Display_X,
+            Y = RenderSettings.Graphics.GFX_Display_Y,
+            WindowWidth = RenderSettings.Graphics.GFX_Display_Width,
+            WindowHeight = RenderSettings.Graphics.GFX_Display_Height,
             WindowInitialState = WindowState.Maximized
         };
         WindowPlacement.Sanitize(ref windowCI);
@@ -74,8 +74,8 @@ public class VulkanGraphicsContext : IGraphicsContext
 
         ResourceFactory factory = _gd.ResourceFactory;
         _imGuiRenderer = new VulkanImGuiRenderer(_gd, _gd.SwapchainFramebuffer.OutputDescription,
-            CFG.Current.GFX_Display_Width,
-            CFG.Current.GFX_Display_Height, ColorSpaceHandling.Legacy);
+            RenderSettings.Graphics.GFX_Display_Width,
+            RenderSettings.Graphics.GFX_Display_Height, ColorSpaceHandling.Legacy);
     }
 
     public void Draw(ProjectOrchestrator projectManager)
@@ -95,8 +95,8 @@ public class VulkanGraphicsContext : IGraphicsContext
             if (width == 0 || height == 0)
                 return;
 
-            CFG.Current.GFX_Display_Width = width;
-            CFG.Current.GFX_Display_Height = height;
+            RenderSettings.Graphics.GFX_Display_Width = width;
+            RenderSettings.Graphics.GFX_Display_Height = height;
 
             _gd.ResizeMainWindow((uint)width, (uint)height);
             CommandList cl = _gd.ResourceFactory.CreateCommandList();
@@ -115,8 +115,8 @@ public class VulkanGraphicsContext : IGraphicsContext
 
             if (WindowPlacement.ShouldSavePosition(_window))
             {
-                CFG.Current.GFX_Display_X = x;
-                CFG.Current.GFX_Display_Y = y;
+                RenderSettings.Graphics.GFX_Display_X = x;
+                RenderSettings.Graphics.GFX_Display_Y = y;
             }
         }
 

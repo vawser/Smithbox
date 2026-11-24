@@ -45,8 +45,8 @@ public class CollisionEditorFallProtection
     /// game's.
     /// </summary>
     private ref float Height => ref IsAc6
-        ? ref CFG.Current.MapEditor_CollisionEditor_Fall_Height_AC6
-        : ref CFG.Current.MapEditor_CollisionEditor_Fall_Height;
+        ? ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Height_AC6
+        : ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Height;
 
     /// <summary>The bodies of an f file's physics system, of the game's Havok version. Null if it has none.</summary>
     public System.Collections.IList GetBodies(Havok.HavokDocument document)
@@ -83,7 +83,7 @@ public class CollisionEditorFallProtection
     public void DisplayOptions()
     {
         // Direction
-        var direction = CFG.Current.MapEditor_CollisionEditor_Fall_Direction;
+        var direction = CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Direction;
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##collisionFallDirection", LOC.Get(direction.GetDisplayName())))
@@ -91,7 +91,7 @@ public class CollisionEditorFallProtection
             foreach (var value in Enum.GetValues<FallProtectionDirection>())
             {
                 if (ImGui.Selectable($"{LOC.Get(value.GetDisplayName())}##collisionFallDirection{value}", value == direction))
-                    CFG.Current.MapEditor_CollisionEditor_Fall_Direction = value;
+                    CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Direction = value;
             }
 
             ImGui.EndCombo();
@@ -99,13 +99,13 @@ public class CollisionEditorFallProtection
         GUI.Tooltip($"{LOC.Get("MAP_CollisionEditor_Fall_Direction_Header_TT")}\n\n{LOC.Get("MAP_CollisionEditor_Fall_Direction_Input_TT")}");
 
         // Drop Edges
-        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Fall_Drop_Only")}##collisionFallDropOnly", ref CFG.Current.MapEditor_CollisionEditor_Fall_Drop_Only);
+        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Fall_Drop_Only")}##collisionFallDropOnly", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Drop_Only);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Fall_Drop_Only_TT"));
 
-        if (CFG.Current.MapEditor_CollisionEditor_Fall_Drop_Only)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Drop_Only)
         {
-            if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Fall_Min_Drop")}##collisionFallMinDrop", ref CFG.Current.MapEditor_CollisionEditor_Fall_Min_Drop, 0.1f, 1.0f, "%.2f"))
-                CFG.Current.MapEditor_CollisionEditor_Fall_Min_Drop = MathF.Max(0f, CFG.Current.MapEditor_CollisionEditor_Fall_Min_Drop);
+            if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Fall_Min_Drop")}##collisionFallMinDrop", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Min_Drop, 0.1f, 1.0f, "%.2f"))
+                CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Min_Drop = MathF.Max(0f, CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Min_Drop);
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Fall_Min_Drop_TT"));
         }
 
@@ -115,8 +115,8 @@ public class CollisionEditorFallProtection
         GUI.Tooltip($"{LOC.Get("MAP_CollisionEditor_Fall_Height_Header_TT")}\n\n{LOC.Get("MAP_CollisionEditor_Fall_Height_Input_TT")}");
 
         // Collision Filter
-        if (ImGui.InputInt($"{LOC.Get("MAP_CollisionEditor_Fall_Filter_Header")}##collisionFallFilter", ref CFG.Current.MapEditor_CollisionEditor_Fall_Filter))
-            CFG.Current.MapEditor_CollisionEditor_Fall_Filter = Math.Max(0, CFG.Current.MapEditor_CollisionEditor_Fall_Filter);
+        if (ImGui.InputInt($"{LOC.Get("MAP_CollisionEditor_Fall_Filter_Header")}##collisionFallFilter", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Filter))
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Filter = Math.Max(0, CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Filter);
         GUI.Tooltip($"{LOC.Get("MAP_CollisionEditor_Fall_Filter_Header_TT")}\n\n{LOC.Get("MAP_CollisionEditor_Fall_Filter_Input_TT")}");
     }
 
@@ -135,9 +135,9 @@ public class CollisionEditorFallProtection
 
         CollisionEditorFallShapes.DropFilter drop = null;
 
-        if (CFG.Current.MapEditor_CollisionEditor_Fall_Drop_Only)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Drop_Only)
         {
-            var minDrop = CFG.Current.MapEditor_CollisionEditor_Fall_Min_Drop;
+            var minDrop = CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Min_Drop;
             var ground = new FallGround();
             ground.Add(triangles, world);
 
@@ -153,7 +153,7 @@ public class CollisionEditorFallProtection
         }
 
         return CollisionEditorFallShapes.BuildWalls(triangles, world,
-            CFG.Current.MapEditor_CollisionEditor_Fall_Direction, Height, drop);
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Direction, Height, drop);
     }
 
     private static (Vector3 Min, Vector3 Max) GetWorldBounds(List<List<Vector3>> triangleLists, Matrix4x4 world)
@@ -254,7 +254,7 @@ public class CollisionEditorFallProtection
 
         try
         {
-            bodies = MakeBodies(walls, (uint)CFG.Current.MapEditor_CollisionEditor_Fall_Filter);
+            bodies = MakeBodies(walls, (uint)CFG.Current.MapEditor.MapEditor_CollisionEditor_Fall_Filter);
         }
         catch (Exception e)
         {

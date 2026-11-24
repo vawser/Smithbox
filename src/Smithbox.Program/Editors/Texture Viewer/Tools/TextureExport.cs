@@ -43,7 +43,7 @@ public class TextureExport
                 LOC.Get("TEXVIEW_TexExport_Header_Export_Directory"),
                 LOC.Get("TEXVIEW_TexExport_Header_Export_Directory_TT"));
 
-            GUI.SinglelineTextInput("exportDestinationInput", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+            GUI.SinglelineTextInput("exportDestinationInput", ref CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation);
 
             GUI.Spacer();
             GUI.SimpleHeader(
@@ -51,7 +51,7 @@ public class TextureExport
                 LOC.Get("TEXVIEW_TexExport_Header_Export_File_Type_TT"));
 
             var previewName = LOC.Get(
-                CFG.Current.TextureViewerToolbar_ExportTextureType.GetDisplayName());
+                CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureType.GetDisplayName());
 
             DPI.ApplyInputWidth();
             if (ImGui.BeginCombo("##ExportType", previewName))
@@ -64,7 +64,7 @@ public class TextureExport
 
                     if (ImGui.Selectable(displayName))
                     {
-                        CFG.Current.TextureViewerToolbar_ExportTextureType = type;
+                        CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureType = type;
                     }
                 }
                 ImGui.EndCombo();
@@ -78,12 +78,12 @@ public class TextureExport
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder")}##includeContainerFolderToggle", 
-                ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
+                ref CFG.Current.TextureViewer.TextureViewerToolbar_ExportTexture_IncludeFolder);
             GUI.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm")}##exportConfirmToggle", 
-                ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
+                ref CFG.Current.TextureViewer.TextureViewerToolbar_ExportTexture_DisplayConfirm);
             GUI.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT"));
 
             GUI.Spacer();
@@ -120,13 +120,13 @@ public class TextureExport
             LOC.Get("TEXVIEW_TexExport_Dialog_Select_Export_Dest"), out path);
         if (result)
         {
-            CFG.Current.TextureViewerToolbar_ExportTextureLocation = path;
+            CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation = path;
         }
     }
 
     public void OpenExportFolder()
     {
-        Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+        Process.Start("explorer.exe", CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation);
     }
 
     public void ExportTextureHandler()
@@ -137,7 +137,7 @@ public class TextureExport
         if (currentTexture != null)
         {
             var filename = currentTextureName;
-            var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
+            var exportPath = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation;
 
             if (exportPath != "")
             {
@@ -164,7 +164,7 @@ public class TextureExport
 
                 if (write)
                 {
-                    if (CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder)
+                    if (CFG.Current.TextureViewer.TextureViewerToolbar_ExportTexture_IncludeFolder)
                     {
                         var folder = currentTextureName;
                         var newFolderPath = Path.Join(exportPath, folder);
@@ -179,7 +179,7 @@ public class TextureExport
 
                     ExportTextureFile(exportFilePath, TexUtils.GetDdsBytes(View.Selection.SelectedTpf, View.Selection.SelectedTexture ?? currentTexture.GPUTexture.TpfTexture));
 
-                    if (CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm)
+                    if (CFG.Current.TextureViewer.TextureViewerToolbar_ExportTexture_DisplayConfirm)
                     {
                         Smithbox.Log(this, LOC.Get("TEXVIEW_TexExport_Log_Exported_Texture", filename));
                     }
@@ -198,7 +198,7 @@ public class TextureExport
 
     private void ExportTextureFile(string exportFilePath, byte[] bytes)
     {
-        TexUtils.ExportImage(exportFilePath, bytes, CFG.Current.TextureViewerToolbar_ExportTextureType);
+        TexUtils.ExportImage(exportFilePath, bytes, CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureType);
     }
 
     public async Task ExportTPFsFromContainerAsync(BinderContents binderContents)
@@ -222,7 +222,7 @@ public class TextureExport
 
     public void ExportTPFsFromContainer(BinderContents binderContents)
     {
-        var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
+        var exportPath = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation;
 
         int processed = 0;
         var total = binderContents.Files.Count;
@@ -266,7 +266,7 @@ public class TextureExport
 
     public void ExportTPF(TPF tpf, string filename)
     {
-        var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
+        var exportPath = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation;
 
         if (Directory.Exists(exportPath))
         {
@@ -300,7 +300,7 @@ public class TextureExport
 
     public void ExportTexturesFromContainer(BinderContents binderContents)
     {
-        var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
+        var exportPath = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation;
 
         int processed = 0;
         var total = binderContents.Files.Count;
@@ -396,7 +396,7 @@ public class TextureExport
 
     public void ExportTexture(TPF tpf, TPF.Texture tex)
     {
-        var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
+        var exportPath = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation;
 
         var texFilename = tex.Name;
         // Console payloads are headerized, so every export is a readable DDS
@@ -404,7 +404,7 @@ public class TextureExport
         var filepath = Path.Join(exportPath, $"{texFilename}");
 
         // For DDS, we can write to file directly (makes it quick).
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.DDS)
+        if (CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureType is TextureExportType.DDS)
         {
             File.WriteAllBytes($"{filepath}.dds", data);
         }

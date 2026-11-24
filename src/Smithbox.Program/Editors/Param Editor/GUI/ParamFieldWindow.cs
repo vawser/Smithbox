@@ -101,7 +101,7 @@ public class ParamFieldWindow
 
         if (meta != null)
         {
-            useGroups = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
+            useGroups = CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layouts
                              && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
         }
 
@@ -131,7 +131,7 @@ public class ParamFieldWindow
             List<string> pinnedFields =
                 Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
 
-            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + GetPinnedFrozenRowCount(pinnedFields));
             }
@@ -148,14 +148,14 @@ public class ParamFieldWindow
                 }
 
                 // Vanilla
-                if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
+                if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
                 }
 
                 // Aux
-                if (CFG.Current.Param_ShowAuxColumn)
+                if (CFG.Current.ParamEditor.Param_ShowAuxColumn)
                 {
                     foreach ((var name, Param.Row r) in auxRows)
                     {
@@ -175,7 +175,7 @@ public class ParamFieldWindow
 
             var (cols, vcols, auxCols) = GetFilteredColumns(curRow, auxRows, propSearchString, activeParam);
 
-            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 if (pinnedFields?.Count > 0)
                 {
@@ -213,7 +213,7 @@ public class ParamFieldWindow
         // Field Table
         if (EditorTableUtils.ImGuiTableGroupedColumns("ParamFieldsT", columnCount))
         {
-            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + GetPinnedFrozenRowCount(pinnedFields));
             }
@@ -230,14 +230,14 @@ public class ParamFieldWindow
                 }
 
                 // Vanilla
-                if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
+                if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
                 }
 
                 // Aux
-                if (CFG.Current.Param_ShowAuxColumn)
+                if (CFG.Current.ParamEditor.Param_ShowAuxColumn)
                 {
                     foreach ((var name, Param.Row r) in auxRows)
                     {
@@ -256,7 +256,7 @@ public class ParamFieldWindow
             DisplayRowFields(curRow, meta, annotations, vanillaRow, auxRows, compareRow, ref infoImGuiID, activeParam, columnCount);
 
             // Pinned Fields
-            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 if (pinnedFields?.Count > 0)
                 {
@@ -272,7 +272,7 @@ public class ParamFieldWindow
             ImGui.EndTable();
         }
 
-        bool useLayout = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
+        bool useLayout = CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layouts
                          && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
 
         var groupsDef = useLayout
@@ -349,7 +349,7 @@ public class ParamFieldWindow
         // Determine column count
         var columnCount = 2;
 
-        if (CFG.Current.Param_ShowVanillaColumn)
+        if (CFG.Current.ParamEditor.Param_ShowVanillaColumn)
         {
             columnCount++;
         }
@@ -359,7 +359,7 @@ public class ParamFieldWindow
             columnCount++;
         }
 
-        if (CFG.Current.Param_ShowAuxColumn && showParamCompare)
+        if (CFG.Current.ParamEditor.Param_ShowAuxColumn && showParamCompare)
         {
             columnCount += auxRows.Count;
         }
@@ -418,65 +418,65 @@ public class ParamFieldWindow
 
             if (ImGui.Button($"{Icons.Book}"))
             {
-                if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source)
+                if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Source)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Community;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Community;
                 }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
+                else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Source_Community;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Source_Community;
                 }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
+                else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Community_Source;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Community_Source;
                 }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+                else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
                 }
             }
 
             GUI.Tooltip(
-                LOC.Get("PARAM_FieldWindow_FieldNameMode_Hint", LOC.Get(CFG.Current.ParamEditor_FieldNameMode.GetDisplayName())));
+                LOC.Get("PARAM_FieldWindow_FieldNameMode_Hint", LOC.Get(CFG.Current.ParamEditor.ParamEditor_FieldNameMode.GetDisplayName())));
 
             // Toggle: Display Vanilla Columns
             GUI.DisplayToggleButton("vanillaColToggle", Icons.AddressBook,
-                ref CFG.Current.Param_ShowVanillaColumn,
+                ref CFG.Current.ParamEditor.Param_ShowVanillaColumn,
                 "PARAM_FieldWindow_VanillaCol_Hidden",
                 "PARAM_FieldWindow_VanillaCol_Visible",
                 "PARAM_FieldWindow_VanillaCol_Hint");
 
             // Toggle: Display Auxiliary Columns
             GUI.DisplayToggleButton("auxColToggle", Icons.AddressBookO,
-                ref CFG.Current.Param_ShowAuxColumn,
+                ref CFG.Current.ParamEditor.Param_ShowAuxColumn,
                 "PARAM_FieldWindow_AuxCol_Hidden",
                 "PARAM_FieldWindow_AuxCol_Visible",
                 "PARAM_FieldWindow_AuxCol_Hint");
 
             // Toggle: Display Field Layouts
             GUI.DisplayToggleButton("fieldLayoutToggle", Icons.Cubes,
-                ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts,
+                ref CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layouts,
                 "PARAM_FieldWindow_FieldLayout_Hidden",
                 "PARAM_FieldWindow_FieldLayout_Visible",
                 "PARAM_FieldWindow_FieldLayout_Hint");
 
             // Toggle: Display Offset Column
             GUI.DisplayToggleButton("offsetColToggle", Icons.MapSigns,
-                ref CFG.Current.ParamEditor_Field_List_Display_Offsets,
+                ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Offsets,
                 "PARAM_FieldWindow_FieldOffset_Hidden",
                 "PARAM_FieldWindow_FieldOffset_Visible",
                 "PARAM_FieldWindow_FieldOffset_Hint");
 
             // Toggle: Display Padding
             GUI.DisplayToggleButton("paddingToggle", Icons.Hubzilla,
-                ref CFG.Current.ParamEditor_Field_List_Display_Padding,
+                ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding,
                 "PARAM_FieldWindow_FieldPadding_Hidden",
                 "PARAM_FieldWindow_FieldPadding_Visible",
                 "PARAM_FieldWindow_FieldPadding_Hint");
 
             // Toggle: Display Modified Background
             GUI.DisplayToggleButton("modifiedBackgroundToggle", Icons.Bars,
-                ref CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg,
+                ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Modified_Field_Bg,
                 "PARAM_FieldWindow_ModifiedBg_Hidden",
                 "PARAM_FieldWindow_ModifiedBg_Visible",
                 "PARAM_FieldWindow_ModifiedBg_Hint");
@@ -498,7 +498,7 @@ public class ParamFieldWindow
 
     private void DisplayGraph(bool isActiveView, Param.Row row, ParamMeta meta)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Graph)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Graph)
             return;
 
         if (meta == null)
@@ -598,7 +598,7 @@ public class ParamFieldWindow
         if (meta == null)
             return;
 
-        List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
+        List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.ParamEditor.ParamEditor_Field_List_Allow_Rearrangement
             ? [.. meta.AlternateOrder]
             : [];
 
@@ -611,13 +611,13 @@ public class ParamFieldWindow
         }
 
         if (meta != null
-            && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
+            && CFG.Current.ParamEditor.ParamEditor_Field_List_Allow_Rearrangement
             && (meta is { AlternateOrder: null } || meta.AlternateOrder.Count != fieldOrder.Count))
         {
             meta.AlternateOrder = [.. fieldOrder];
         }
 
-        bool useLayout = CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts
+        bool useLayout = CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layouts
                          && Project.Handler.ParamData.FieldLayouts.Entries.Any(e => e.Name == meta.FieldLayout);
 
         var groupsDef = useLayout
@@ -643,7 +643,7 @@ public class ParamFieldWindow
             var groupedFieldNames = new HashSet<string>(
                 groupsDef.Groups.SelectMany(g => g.Fields.Select(f => f)));
 
-            if (CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Top)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Top)
             {
                 DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
             }
@@ -659,10 +659,10 @@ public class ParamFieldWindow
                 if (layoutFields.Count == 0)
                     continue;
 
-                if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Collapsible)
+                if (CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Collapsible)
                 {
                     var name = layout.GetName();
-                    if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                    if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
                         name = "";
 
                     bool open = ImGui.CollapsingHeader(
@@ -685,9 +685,9 @@ public class ParamFieldWindow
                         ImGui.EndTable();
                     }
                 }
-                else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
+                else if (CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
                 {
-                    if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                    if (CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
                     {
                         GUI.SimpleHeader($"{layout.GetName()}", "");
                     }
@@ -708,12 +708,12 @@ public class ParamFieldWindow
                         ImGui.EndTable();
                     }
 
-                    if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
+                    if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
                     {
                         ImGui.Separator();
                     }
                 }
-                else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Separator)
+                else if (CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Separator)
                 {
                     if (hasChanceLot)
                     {
@@ -735,7 +735,7 @@ public class ParamFieldWindow
                 }
             }
 
-            if (CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Bottom)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Unsorted_Field_Placement is FieldLayoutUnsortedPlacement.Bottom)
             {
                 DisplayUnsortedFields(fieldOrder, groupedFieldNames, meta, annotations, row, vrow, auxRows, crow, cols, vcols, auxCols, activeParam, columnCount);
             }
@@ -744,7 +744,7 @@ public class ParamFieldWindow
 
     private void DisplayChance(Param.Row row, FieldLayoutEntry layout)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints)
             return;
 
         var chanceLot = layout.ChanceLot;
@@ -813,7 +813,7 @@ public class ParamFieldWindow
 
     private void DisplayTotalChance(Param.Row row, FieldLayout layout)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints)
             return;
 
         var chanceLot = layout.TotalChanceLot;
@@ -959,7 +959,7 @@ public class ParamFieldWindow
 
         if (miscFieldOrder.Count > 0)
         {
-            if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Collapsible)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Collapsible)
             {
                 bool open = ImGui.CollapsingHeader(
                     $"Unsorted##grp_{activeParam}_misc",
@@ -976,7 +976,7 @@ public class ParamFieldWindow
                     ImGui.EndTable();
                 }
             }
-            else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
+            else if (CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
             {
                 GUI.SimpleHeader($"{LOC.Get("PARAM_FieldWindow_Header_Unsorted")}", "");
 
@@ -991,7 +991,7 @@ public class ParamFieldWindow
                     ImGui.EndTable();
                 }
             }
-            else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Separator)
+            else if (CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Separator)
             {
                 if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
                 {
@@ -1071,7 +1071,7 @@ public class ParamFieldWindow
 
         object newval = null;
 
-        if (!CFG.Current.ParamEditor_Field_List_Display_Padding && metaContext.IsPadding)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding && metaContext.IsPadding)
         {
             return;
         }
@@ -1153,7 +1153,7 @@ public class ParamFieldWindow
             }
             else if (diffVanilla)
             {
-                if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
+                if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Modified_Field_Bg)
                 {
                     ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ParamDiffBackgroundColor);
                 }
@@ -1199,7 +1199,7 @@ public class ParamFieldWindow
             var isRowIdField = col == null && proprow?.Name == nameof(Param.Row.ID);
 
             // Param Reference Buttons
-            if (CFG.Current.ParamEditor_Field_List_Display_Map_Link)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Map_Link)
             {
                 // These are placed at the top, in the ID row
                 if (isRowIdField)
@@ -1211,7 +1211,7 @@ public class ParamFieldWindow
                 }
             }
 
-            if (CFG.Current.ParamEditor_Field_List_Display_Model_Link)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Model_Link)
             {
                 // These are placed at the top, in the ID row
                 if (isRowIdField)
@@ -1247,12 +1247,12 @@ public class ParamFieldWindow
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Conflict_Background);
         }
 
-        if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
+        if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
         {
             Comparison_ValueColumn(metaContext, activeParam, vanillaval, propType, row, "vanilla", cellMeta, internalName);
         }
 
-        if (CFG.Current.Param_ShowAuxColumn)
+        if (CFG.Current.ParamEditor.Param_ShowAuxColumn)
         {
             for (var i = 0; i < auxVals.Count; i++)
             {
@@ -1260,7 +1260,7 @@ public class ParamFieldWindow
                 {
                     if (!conflict && diffAuxVanilla[i])
                     {
-                        if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
+                        if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Modified_Field_Bg)
                         {
                             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ParamDiffBackgroundColor);
                         }
@@ -1407,7 +1407,7 @@ public class ParamFieldWindow
 
         if (!string.IsNullOrWhiteSpace(altName))
         {
-            switch (CFG.Current.ParamEditor_FieldNameMode)
+            switch (CFG.Current.ParamEditor.ParamEditor_FieldNameMode)
             {
                 case ParamFieldNameMode.Source:
                     printedName = internalName;
@@ -1427,13 +1427,13 @@ public class ParamFieldWindow
             }
         }
 
-        if (fieldOffset != null && CFG.Current.ParamEditor_Field_List_Display_Offsets)
+        if (fieldOffset != null && CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Offsets)
         {
             printedName = $"{fieldOffset} {printedName}";
         }
 
         // Display coloring if field is not covered by META or Annotations
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
             if (cellMeta == null && fieldAnnotation == null)
             {
@@ -1476,8 +1476,8 @@ public class ParamFieldWindow
         // Information
         if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Info_Header")}##infoMenuHeader"))
         {
-            var displayAttributes = CFG.Current.ParamEditor_Field_Context_Display_Field_Attributes;
-            var displayDescription = CFG.Current.ParamEditor_Field_Context_Display_Field_Description;
+            var displayAttributes = CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Field_Attributes;
+            var displayDescription = CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Field_Description;
 
             // Field Information
             if (col != null)
@@ -1714,7 +1714,7 @@ public class ParamFieldWindow
             isDisplayingAdditionalElements = true;
         }
 
-        if (CFG.Current.ParamEditor_Field_Context_Display_Reference_Search)
+        if (CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Reference_Search)
         {
             if (metaContext.DisplayVirtualReference || metaContext.DisplayExternalReference)
             {

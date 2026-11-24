@@ -20,8 +20,8 @@ public class ModelViewportFilters
     /// </summary>
     public void Update()
     {
-        View.RenderScene.SetDrawFilter(RenderFilter.Dummies, CFG.Current.ModelEditor_DisplayDummies);
-        View.RenderScene.SetDrawFilter(RenderFilter.Nodes, CFG.Current.ModelEditor_DisplayNodes);
+        View.RenderScene.SetDrawFilter(RenderFilter.Dummies, CFG.Current.ModelEditor.ModelEditor_DisplayDummies);
+        View.RenderScene.SetDrawFilter(RenderFilter.Nodes, CFG.Current.ModelEditor.ModelEditor_DisplayNodes);
     }
 
     public void Display()
@@ -42,46 +42,46 @@ public class ModelViewportFilters
             // Dummies
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly")}##dummyPolyToggle"))
             {
-                CFG.Current.ModelEditor_DisplayDummies = !CFG.Current.ModelEditor_DisplayDummies;
+                CFG.Current.ModelEditor.ModelEditor_DisplayDummies = !CFG.Current.ModelEditor.ModelEditor_DisplayDummies;
             }
-            ticked = CFG.Current.ModelEditor_DisplayDummies;
+            ticked = CFG.Current.ModelEditor.ModelEditor_DisplayDummies;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Dummy Labels
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels")}##dummyPolyLabelsToggle"))
             {
-                CFG.Current.ModelEditor_DisplayDummyLabels = !CFG.Current.ModelEditor_DisplayDummyLabels;
+                CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels = !CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels;
             }
-            ticked = CFG.Current.ModelEditor_DisplayDummyLabels;
+            ticked = CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Nodes
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone")}##boneToggle"))
             {
-                CFG.Current.ModelEditor_DisplayNodes = !CFG.Current.ModelEditor_DisplayNodes;
+                CFG.Current.ModelEditor.ModelEditor_DisplayNodes = !CFG.Current.ModelEditor.ModelEditor_DisplayNodes;
             }
-            ticked = CFG.Current.ModelEditor_DisplayNodes;
+            ticked = CFG.Current.ModelEditor.ModelEditor_DisplayNodes;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Bone Labels
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone_Labels")}##boneLabelsToggle"))
             {
-                CFG.Current.ModelEditor_DisplayNodeLabels = !CFG.Current.ModelEditor_DisplayNodeLabels;
+                CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels = !CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels;
             }
-            ticked = CFG.Current.ModelEditor_DisplayNodeLabels;
+            ticked = CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Labels on the selection only
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Labels_Selected_Only")}##labelsSelectedOnlyToggle"))
             {
-                CFG.Current.ModelEditor_Labels_Selected_Only = !CFG.Current.ModelEditor_Labels_Selected_Only;
+                CFG.Current.ModelEditor.ModelEditor_Labels_Selected_Only = !CFG.Current.ModelEditor.ModelEditor_Labels_Selected_Only;
             }
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Labels_Selected_Only_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_Labels_Selected_Only);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_Labels_Selected_Only);
 
             // Collision
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Collision")}##collisionToggle"))
@@ -97,10 +97,10 @@ public class ModelViewportFilters
             {
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_EdgePoints")}##edgePointsToggle"))
                 {
-                    CFG.Current.ModelEditor_DisplayEdgePoints = !CFG.Current.ModelEditor_DisplayEdgePoints;
+                    CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints = !CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_EdgePoints_TT"));
-                GUI.ShowActiveStatus(CFG.Current.ModelEditor_DisplayEdgePoints);
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints);
             }
 
             ImGui.EndMenu();

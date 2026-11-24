@@ -60,7 +60,7 @@ public class MapTileOutlineTool
     /// </summary>
     public bool IsSupported => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
 
-    private bool IsEnabled => IsSupported && CFG.Current.MapEditor_Display_Tile_Outlines;
+    private bool IsEnabled => IsSupported && CFG.Current.MapEditor.MapEditor_Display_Tile_Outlines;
 
     /// <summary>
     /// The tile's size step (0 small, 1 medium, 2 large), or -1 if the map isn't an overworld tile
@@ -238,9 +238,9 @@ public class MapTileOutlineTool
 
     private static Vector3 GetColorValue(int scale) => scale switch
     {
-        0 => CFG.Current.MapEditor_Tile_Outline_Small_Color,
-        1 => CFG.Current.MapEditor_Tile_Outline_Medium_Color,
-        _ => CFG.Current.MapEditor_Tile_Outline_Large_Color
+        0 => CFG.Current.MapEditor.MapEditor_Tile_Outline_Small_Color,
+        1 => CFG.Current.MapEditor.MapEditor_Tile_Outline_Medium_Color,
+        _ => CFG.Current.MapEditor.MapEditor_Tile_Outline_Large_Color
     };
 
     private static Color GetColor(int scale)
@@ -310,14 +310,14 @@ public class MapTileOutlineTool
 
         ImGui.SameLine();
 
-        var enabled = CFG.Current.MapEditor_Display_Tile_Outlines;
+        var enabled = CFG.Current.MapEditor.MapEditor_Display_Tile_Outlines;
 
         if (enabled)
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
 
         if (ImGui.Button($"{Icons.Th}##tileOutlineToggle", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_Display_Tile_Outlines = !enabled;
+            CFG.Current.MapEditor.MapEditor_Display_Tile_Outlines = !enabled;
         }
 
         if (enabled)
@@ -330,9 +330,9 @@ public class MapTileOutlineTool
             ImGui.TextUnformatted(LOC.Get("MAP_Tile_Outline_Colors_Header"));
             ImGui.Separator();
 
-            ColorEdit("MAP_Tile_Outline_Small_Color", ref CFG.Current.MapEditor_Tile_Outline_Small_Color);
-            ColorEdit("MAP_Tile_Outline_Medium_Color", ref CFG.Current.MapEditor_Tile_Outline_Medium_Color);
-            ColorEdit("MAP_Tile_Outline_Large_Color", ref CFG.Current.MapEditor_Tile_Outline_Large_Color);
+            ColorEdit("MAP_Tile_Outline_Small_Color", ref CFG.Current.MapEditor.MapEditor_Tile_Outline_Small_Color);
+            ColorEdit("MAP_Tile_Outline_Medium_Color", ref CFG.Current.MapEditor.MapEditor_Tile_Outline_Medium_Color);
+            ColorEdit("MAP_Tile_Outline_Large_Color", ref CFG.Current.MapEditor.MapEditor_Tile_Outline_Large_Color);
 
             ImGui.EndPopup();
         }

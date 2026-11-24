@@ -97,7 +97,7 @@ public class CutsceneViewportWindow
     {
         eye = forward = up = default;
         fovRadians = 0;
-        if (Viewport is not VulkanViewport vk || CFG.Current.CutsceneEditor_Look_Through_Camera)
+        if (Viewport is not VulkanViewport vk || CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera)
             return false;
 
         var transform = vk.ViewportCamera.CameraTransform;
@@ -105,7 +105,7 @@ public class CutsceneViewportWindow
         forward = Vector3.Normalize(Vector3.Transform(Vector3.UnitZ, transform.Rotation));
         up = Vector3.Normalize(Vector3.Transform(Vector3.UnitY, transform.Rotation));
 
-        var vertical = (vk.ViewportCamera.FovOverrideDegrees ?? CFG.Current.Viewport_Camera_FOV) * MathF.PI / 180f;
+        var vertical = (vk.ViewportCamera.FovOverrideDegrees ?? CFG.Current.Viewport.Viewport_Camera_FOV) * MathF.PI / 180f;
         fovRadians = CutsceneCamera.FileFovRadians(vertical, Aspect);
         return true;
     }
@@ -147,7 +147,7 @@ public class CutsceneViewportWindow
         var frame = Editor.Playback.Frame;
         var camera = scene?.ActiveCamera(frame);
 
-        var lookThrough = CFG.Current.CutsceneEditor_Look_Through_Camera && scene != null && camera?.Skeleton != null;
+        var lookThrough = CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera && scene != null && camera?.Skeleton != null;
 
         if (lookThrough)
         {
@@ -177,10 +177,10 @@ public class CutsceneViewportWindow
 
         var scene = Editor.Scene;
         var frame = (int)MathF.Round(Editor.Playback.Frame);
-        var key = (scene, frame, CFG.Current.CutsceneEditor_Display_Camera_Path, CFG.Current.CutsceneEditor_Display_Camera,
-            CFG.Current.CutsceneEditor_Display_Markers, CFG.Current.CutsceneEditor_Look_Through_Camera,
-            CFG.Current.CutsceneEditor_Camera_Forward_Axis, CFG.Current.CutsceneEditor_Camera_Up_Axis,
-            CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal, MathF.Round(Aspect, 2), PlacementSignature(scene));
+        var key = (scene, frame, CFG.Current.CutsceneEditor.CutsceneEditor_Display_Camera_Path, CFG.Current.CutsceneEditor.CutsceneEditor_Display_Camera,
+            CFG.Current.CutsceneEditor.CutsceneEditor_Display_Markers, CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera,
+            CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Forward_Axis, CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Up_Axis,
+            CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Fov_Is_Horizontal, MathF.Round(Aspect, 2), PlacementSignature(scene));
 
         if (key == BuiltKey)
             return;
@@ -207,13 +207,13 @@ public class CutsceneViewportWindow
         };
 
         // The animations' roots (each HKT's placement): markers like the actors' below
-        if (CFG.Current.CutsceneEditor_Display_Markers)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Display_Markers)
         {
             foreach (var placement in scene.Placements.Values)
                 CutsceneDebugLines.AddAxes(lines[CutsceneLineLayer.Root], placement.At(frame), 1.0f);
         }
 
-        if (CFG.Current.CutsceneEditor_Display_Camera_Path)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Display_Camera_Path)
         {
             foreach (var camera in scene.Cameras)
             {
@@ -247,14 +247,14 @@ public class CutsceneViewportWindow
 
         // The camera at this frame; not while looking through it, as it would fill the view
         var active = scene.ActiveCamera(frame);
-        if (CFG.Current.CutsceneEditor_Display_Camera && active?.Skeleton != null && !CFG.Current.CutsceneEditor_Look_Through_Camera)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Display_Camera && active?.Skeleton != null && !CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera)
         {
             CutsceneCamera.GetView(active.World(frame, scene.RootOf(active.Resource, frame)), out var eye, out var forward, out var up);
             CutsceneDebugLines.AddFrustum(lines[CutsceneLineLayer.Camera], eye, forward, up,
                 active.VerticalFovRadians(frame, Aspect), Aspect, 1.0f);
         }
 
-        if (CFG.Current.CutsceneEditor_Display_Markers)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Display_Markers)
         {
             foreach (var actor in scene.Actors)
             {

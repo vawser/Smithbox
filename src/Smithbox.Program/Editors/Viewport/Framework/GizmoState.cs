@@ -19,28 +19,28 @@ public static class GizmoState
     {
         if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Display")}##displayGizmos"))
         {
-            CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
+            CFG.Current.Viewport.Viewport_Render_Gizmos = !CFG.Current.Viewport.Viewport_Render_Gizmos;
             viewport.DelayPicking();
         }
-        GUI.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
+        GUI.ShowActiveStatus(CFG.Current.Viewport.Viewport_Render_Gizmos);
         GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Display_TT"));
 
-        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Gizmo_Menu_Input_Size")}##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Gizmo_Menu_Input_Size")}##gizmoScale", ref CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
 
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
-            if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale < 0.01)
+            if (CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale < 0.01)
             {
-                CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 0.01f;
+                CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale = 0.01f;
             }
-            if (CFG.Current.Viewport_Gizmo_Size_Distance_Scale > 5.0)
+            if (CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale > 5.0)
             {
-                CFG.Current.Viewport_Gizmo_Size_Distance_Scale = 5.0f;
+                CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale = 5.0f;
             }
         }
 
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Gizmo_Menu_Input_Snap_Rotation_Step")}##gizmoSnapRotationStep",
-            ref CFG.Current.Viewport_Gizmo_Snap_Rotation_Step, 0f, 90f, "%.1f", ImGuiSliderFlags.AlwaysClamp);
+            ref CFG.Current.Viewport.Viewport_Gizmo_Snap_Rotation_Step, 0f, 90f, "%.1f", ImGuiSliderFlags.AlwaysClamp);
         GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Input_Snap_Rotation_Step_TT"));
 
         if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Gizmo_Menu_Header_Mode")}##modeMenuHeader"))

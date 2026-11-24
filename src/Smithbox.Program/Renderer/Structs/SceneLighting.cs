@@ -68,7 +68,7 @@ public struct SceneLightingData
     /// </summary>
     public void SetEnv(GparamEnvLighting env, float exposure)
     {
-        var on = env is { Enabled: true } && CFG.Current.Viewport_Map_DrawParam_Env_Lighting;
+        var on = env is { Enabled: true } && RenderSettings.Viewport.Viewport_Map_DrawParam_Env_Lighting;
 
         EnvDiffuseScale = on ? EnvScale(env.DiffuseColor, exposure) : Vector4.Zero;
         EnvSpecularScale = on ? EnvScale(env.SpecularColor, exposure) : Vector4.Zero;

@@ -29,7 +29,7 @@ public class ParamShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
+            CFG.Current.Interface.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface.Interface_ParamEditor_ToolWindow;
         }
 
         // Row shortcuts only apply while the row list is shown. With a stay param open, the normal param's

@@ -38,7 +38,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_SkipHavokLoad);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_SkipHavokLoad);
             }
         };
     }
@@ -58,7 +58,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Hold_Idle_Poses_On_Load);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Hold_Idle_Poses_On_Load);
             }
         };
     }
@@ -81,7 +81,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Map_List_Enable_Load_on_Double_Click);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Map_List_Enable_Load_on_Double_Click);
             }
         };
     }
@@ -100,7 +100,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Map_List_Display_Map_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Map_List_Display_Map_Aliases);
             }
         };
     }
@@ -123,7 +123,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Map_Contents_Display_Character_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Map_Contents_Display_Character_Aliases);
             }
         };
     }
@@ -142,7 +142,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Map_Contents_Display_Asset_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Map_Contents_Display_Asset_Aliases);
             }
         };
     }
@@ -161,7 +161,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Map_Contents_Display_Map_Piece_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Map_Contents_Display_Map_Piece_Aliases);
             }
         };
     }
@@ -180,7 +180,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Map_Contents_Display_Treasure_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Map_Contents_Display_Treasure_Aliases);
             }
         };
     }
@@ -203,7 +203,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Enable_Commmunity_Names);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Enable_Commmunity_Names);
             }
         };
     }
@@ -223,7 +223,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Unknown_Properties);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Unknown_Properties);
             }
         };
     }
@@ -243,7 +243,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Enable_Referenced_Rename);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Enable_Referenced_Rename);
             }
         };
     }
@@ -265,7 +265,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Property_Attributes);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Property_Attributes);
             }
         };
     }
@@ -286,7 +286,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Additional_Information_at_Top);
             }
         };
     }
@@ -306,7 +306,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Behavior_Information);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Behavior_Information);
             }
         };
     }
@@ -326,7 +326,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Reference_Information);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Information);
             }
         };
     }
@@ -346,7 +346,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Reference_Name);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Name);
             }
         };
     }
@@ -365,7 +365,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Entity_ID);
             }
         };
     }
@@ -384,7 +384,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Properties_Display_Reference_Alias);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Alias);
             }
         };
     }
@@ -407,7 +407,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Enable_Character_Composition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Enable_Character_Composition);
             }
         };
     }
@@ -426,7 +426,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Enable_Character_Substitution);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Enable_Character_Substitution);
             }
         };
     }
@@ -447,7 +447,7 @@ public class MapEditorPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputeValue", ref CFG.Current.MapEditor_Character_Substitution_ID, 255);
+                ImGui.InputText("##inputeValue", ref CFG.Current.MapEditor.MapEditor_Character_Substitution_ID, 255);
             }
         };
     }
@@ -470,7 +470,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Model_Selector_Display_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Aliases);
             }
         };
     }
@@ -489,7 +489,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Model_Selector_Display_Tags);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Tags);
             }
         };
     }
@@ -508,7 +508,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Low_Detail_Entries);
             }
         };
     }
@@ -531,7 +531,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Selection_Group_Enable_Shortcuts);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Selection_Group_Enable_Shortcuts);
             }
         };
     }
@@ -550,7 +550,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Selection_Group_Frame_Selection_On_Use);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Selection_Group_Frame_Selection_On_Use);
             }
         };
     }
@@ -569,7 +569,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Selection_Group_Enable_Quick_Creation);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Selection_Group_Enable_Quick_Creation);
             }
         };
     }
@@ -588,7 +588,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Selection_Group_Confirm_Delete);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Selection_Group_Confirm_Delete);
             }
         };
     }
@@ -607,7 +607,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Selection_Group_Show_Keybind);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Selection_Group_Show_Keybind);
             }
         };
     }
@@ -626,7 +626,7 @@ public class MapEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Selection_Group_Show_Tags);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor.MapEditor_Selection_Group_Show_Tags);
             }
         };
     }

@@ -194,9 +194,9 @@ public partial class HavokFileView
     private void UpdateBehaviorRows(Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> bankDict,
         HavokBehaviorFileIndex index)
     {
-        var fullPath = CFG.Current.BehaviorEditor_FileList_Display_Full_Path;
-        var aliases = CFG.Current.BehaviorEditor_FileList_Display_Aliases;
-        var supportFiles = CFG.Current.BehaviorEditor_FileList_Show_Support_Files;
+        var fullPath = CFG.Current.BehaviorEditor.BehaviorEditor_FileList_Display_Full_Path;
+        var aliases = CFG.Current.BehaviorEditor.BehaviorEditor_FileList_Display_Aliases;
+        var supportFiles = CFG.Current.BehaviorEditor.BehaviorEditor_FileList_Show_Support_Files;
 
         if (RowsIndexCompleted == index.Completed
             && RowsBankVersion == View.HavokBank.FileListVersion
@@ -317,21 +317,21 @@ public partial class HavokFileView
 
         // Toggle: Full Paths
         GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
-            ref CFG.Current.BehaviorEditor_FileList_Display_Full_Path,
+            ref CFG.Current.BehaviorEditor.BehaviorEditor_FileList_Display_Full_Path,
             "HAVOK_FileView_FilePath_Display_Short",
             "HAVOK_FileView_FilePath_Display_Full",
             "HAVOK_FileView_FilePath_Display_TT");
 
         // Toggle: Aliases
         GUI.DisplayToggleButton("aliasToggle", Icons.Book,
-            ref CFG.Current.BehaviorEditor_FileList_Display_Aliases,
+            ref CFG.Current.BehaviorEditor.BehaviorEditor_FileList_Display_Aliases,
             "HAVOK_FileView_FilePath_Display_Alias_Hide",
             "HAVOK_FileView_FilePath_Display_Alias_Show",
             "HAVOK_FileView_FilePath_Display_Alias_TT");
 
         // Toggle: Character and project files
         GUI.DisplayToggleButton("supportFileToggle", Icons.FilesO,
-            ref CFG.Current.BehaviorEditor_FileList_Show_Support_Files,
+            ref CFG.Current.BehaviorEditor.BehaviorEditor_FileList_Show_Support_Files,
             "BHV_Havok_Support_Files_Hide",
             "BHV_Havok_Support_Files_Show",
             "BHV_Havok_Support_Files_TT");

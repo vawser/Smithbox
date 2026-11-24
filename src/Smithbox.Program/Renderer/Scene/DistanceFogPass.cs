@@ -50,7 +50,7 @@ public class DistanceFogPass
 
     public static bool IsActive(GparamLighting lighting)
     {
-        return RenderMode.PostEffects && CFG.Current.Viewport_Post_Distance_Fog &&
+        return RenderMode.PostEffects && RenderSettings.Viewport.Viewport_Post_Distance_Fog &&
                lighting is { PostEffects.DistanceFog: { Enabled: true, MaxDensity: > 0.0f } };
     }
 
@@ -65,7 +65,7 @@ public class DistanceFogPass
         }
 
         var fog = lighting.PostEffects.DistanceFog;
-        var exposure = lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+        var exposure = lighting.Exposure * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale;
 
         var begin = fog.Begin;
         var end = Math.Max(fog.End, begin + 0.01f);

@@ -115,15 +115,15 @@ public class EntAddAction : ViewportAction, IMapHistoryItem
             MapContainer.MarkEntityDirty(Map, msbEnt);
 
             // Prefab-specific
-            if (CFG.Current.Prefab_ApplyUniqueInstanceID)
+            if (CFG.Current.MapEditor.Prefab_ApplyUniqueInstanceID)
             {
                 MapEditorActionHelper.SetUniqueInstanceID(View, msbEnt, Map, IdCache);
             }
-            if (CFG.Current.Prefab_ApplyUniqueEntityID)
+            if (CFG.Current.MapEditor.Prefab_ApplyUniqueEntityID)
             {
                 MapEditorActionHelper.SetUniqueEntityID(View, msbEnt, Map, IdCache);
             }
-            if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
+            if (CFG.Current.MapEditor.Prefab_ApplySpecificEntityGroupID)
             {
                 MapEditorActionHelper.SetSpecificEntityGroupID(View, msbEnt, Map);
             }

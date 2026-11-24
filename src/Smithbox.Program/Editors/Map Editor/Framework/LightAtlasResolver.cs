@@ -30,7 +30,7 @@ public class LightAtlasResolver
     // Automatically adjust existing references when a Part's name changes
     public void AutomaticAdjustment(Entity ent, string oldName, string newName)
     {
-        if (!CFG.Current.MapEditor_LightAtlas_AutomaticAdjust)
+        if (!CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdjust)
             return;
 
         if (!View.LightAtlasBank.CanUse() || !EntityHelper.IsPart(ent))
@@ -67,7 +67,7 @@ public class LightAtlasResolver
     // Automatically remove entries when part is deleted, returning the entries to remove
     public List<Entity> AutomaticDeletion(Entity ent)
     {
-        if (!CFG.Current.MapEditor_LightAtlas_AutomaticDelete)
+        if (!CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticDelete)
             return new();
 
         if (!View.LightAtlasBank.CanUse() || !EntityHelper.IsPart(ent))
@@ -132,7 +132,7 @@ public class LightAtlasResolver
     {
         var added = new List<MsbEntity>();
 
-        if (!CFG.Current.MapEditor_LightAtlas_AutomaticAdd)
+        if (!CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdd)
             return added;
 
         if (!View.LightAtlasBank.CanUse() || Parent.LightAtlasParents.Count == 0)

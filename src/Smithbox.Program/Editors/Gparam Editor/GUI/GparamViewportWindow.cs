@@ -170,7 +170,7 @@ public class GparamViewportWindow
 
         AutoLoadedFile = file;
 
-        if (!CFG.Current.GparamEditor_Viewport_Auto_Load_Map || !View.Universe.CanLoadMaps())
+        if (!CFG.Current.GparamEditor.GparamEditor_Viewport_Auto_Load_Map || !View.Universe.CanLoadMaps())
             return;
 
         var map = View.Universe.FindMapForFile(file);
@@ -192,14 +192,14 @@ public class GparamViewportWindow
     /// </summary>
     public float GetHours()
     {
-        if (CFG.Current.GparamEditor_Viewport_Follow_Value_Time && View.Selection.SelectedFieldValues.Count > 0 &&
+        if (CFG.Current.GparamEditor.GparamEditor_Viewport_Follow_Value_Time && View.Selection.SelectedFieldValues.Count > 0 &&
             View.Selection.GetSelectedField() is { } field &&
             field.Values.Select(v => v.TimeOfDay).Distinct().Skip(1).Any())
         {
             return View.Selection.SelectedFieldValues.Values.First().TimeOfDay;
         }
 
-        return CFG.Current.Viewport_Map_Lighting_Hours;
+        return CFG.Current.Viewport.Viewport_Map_Lighting_Hours;
     }
 
     private void UpdateLighting()
@@ -214,8 +214,8 @@ public class GparamViewportWindow
         var map = View.Universe.LoadedMapId;
         var hours = GetHours();
         // The Map Editor's weather, as for the time of day, so both editors light a map alike
-        var weather = CFG.Current.Viewport_Map_Lighting_Weather;
-        var weatherOutdoor = CFG.Current.Viewport_Map_Lighting_Weather_Outdoor;
+        var weather = CFG.Current.Viewport.Viewport_Map_Lighting_Weather;
+        var weatherOutdoor = CFG.Current.Viewport.Viewport_Map_Lighting_Weather_Outdoor;
 
         // A shared GPARAM with no map loaded has nothing to light
         if (file == null && map == null)

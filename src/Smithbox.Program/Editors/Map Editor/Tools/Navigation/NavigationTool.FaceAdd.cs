@@ -530,8 +530,8 @@ public partial class NavigationTool
             return;
         }
 
-        var cornerColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color);
-        var hoverColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
+        var cornerColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color);
+        var hoverColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Color);
 
         FaceLinePrim ??= new DbgPrimLineBatch(new List<(Vector3, Vector3)> { (Vector3.Zero, Vector3.UnitX) });
         FaceOrbs ??= Enumerable.Range(0, 4).Select(_ => MakeFaceProxy(scene, RenderableHelper._placementOrb, cornerColor)).ToArray();

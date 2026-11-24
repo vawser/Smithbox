@@ -206,10 +206,10 @@ public class CutsceneEditorView : IEditorView
     /// <summary>With Play Through on, starts reading the cut after the one shown, so moving on to it doesn't wait</summary>
     private void PrefetchNextCut()
     {
-        if (!CFG.Current.CutsceneEditor_Continue_To_Next_Cut || SelectedFile?.Mqb is not { } mqb)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Continue_To_Next_Cut || SelectedFile?.Mqb is not { } mqb)
             return;
 
-        var next = SelectedCut + 1 < mqb.Cuts.Count ? SelectedCut + 1 : CFG.Current.CutsceneEditor_Loop ? 0 : -1;
+        var next = SelectedCut + 1 < mqb.Cuts.Count ? SelectedCut + 1 : CFG.Current.CutsceneEditor.CutsceneEditor_Loop ? 0 : -1;
         if (next < 0 || next == SelectedCut || Prefetch is { } p && p.File == SelectedFile && p.Cut == next)
             return;
 
@@ -277,12 +277,12 @@ public class CutsceneEditorView : IEditorView
         ViewportWindow.OnSceneChanged();
 
         // The same map for every cut of a cutscene: LoadMap keeps the one drawn
-        if (CFG.Current.CutsceneEditor_Load_Map)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map)
             LoadMapFor(Scene.File);
 
         PrefetchNextCut();
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log)
             Smithbox.Log(this, Scene.Describe() + $"  map: {CurrentMapFor(Scene.File) ?? "none"} (loaded {Backdrop.LoadedMapId ?? "none"})" +
                                $"  models: {Models.Reused} kept from earlier cuts, {Models.Created} loaded, {Models.MeshCount} held");
     }
@@ -310,7 +310,7 @@ public class CutsceneEditorView : IEditorView
         }
 
         MapForCutscene[file.Name] = mapId;
-        if (CFG.Current.CutsceneEditor_Load_Map)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map)
             Backdrop.LoadMap(mapId);
     }
 
@@ -483,7 +483,7 @@ public class CutsceneEditorView : IEditorView
         Window($"{LOC.Get("CUTSCENE_Window_Properties")}###cutsceneEditor_Properties_{ViewIndex}", dockspaceId, EditorFocusContext.CutsceneEditor_Properties, PropertiesView.Display);
 
         // Its own menu bar (View, Options), as the other editors' Tools windows have
-        if (CFG.Current.Interface_CutsceneEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_CutsceneEditor_ToolWindow)
             Window($"{LOC.Get("CUTSCENE_Window_Tools")}###cutsceneEditor_Tools_{ViewIndex}", dockspaceId, EditorFocusContext.CutsceneEditor_Tools, ToolWindow.Display, GUI.GetInnerWindowFlags());
 
         // The viewport window sets the focus (and the active view) itself
@@ -571,7 +571,7 @@ public class CutsceneEditorView : IEditorView
     private void UpdateMapGroups()
     {
         var chosen = ChosenCollision;
-        var key = (Scene, Backdrop.LoadedMapId, Backdrop.CollisionVersion, CFG.Current.CutsceneEditor_Map_Use_Draw_Groups,
+        var key = (Scene, Backdrop.LoadedMapId, Backdrop.CollisionVersion, CFG.Current.CutsceneEditor.CutsceneEditor_Map_Use_Draw_Groups,
             Scene?.File.KeysVersion ?? 0, chosen);
         if (key == MapGroupsFor || Backdrop.LoadedMapId == null)
             return;
@@ -589,9 +589,9 @@ public class CutsceneEditorView : IEditorView
                 excluded.Add(actor.Name);
         }
 
-        Backdrop.ApplyGroups(CameraStart(), CFG.Current.CutsceneEditor_Map_Use_Draw_Groups, excluded, chosen);
+        Backdrop.ApplyGroups(CameraStart(), CFG.Current.CutsceneEditor.CutsceneEditor_Map_Use_Draw_Groups, excluded, chosen);
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log)
             Smithbox.Log(this, LOC.Get("CUTSCENE_Map_Groups_Log", Backdrop.StandingOn ?? "-",
                 Backdrop.ActiveDisplay?.Sum(w => System.Numerics.BitOperations.PopCount(w)) ?? 0,
                 Backdrop.ShownCount, Backdrop.PartCount, excluded.Count));
@@ -600,7 +600,7 @@ public class CutsceneEditorView : IEditorView
     /// <summary>The map's own characters: the map is read again, with or without them</summary>
     public void SetMapCharacters(bool on)
     {
-        CFG.Current.CutsceneEditor_Map_Load_Characters = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Map_Load_Characters = on;
 
         var map = Backdrop.LoadedMapId;
         Backdrop.UnloadMap();
@@ -641,7 +641,7 @@ public class CutsceneEditorView : IEditorView
         // The parts of the look before are kept by no cut any more
         Models.DiscardUnused(CutscenePlayerParts.PoolPrefix);
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log)
             Smithbox.Log(this, LOC.Get("CUTSCENE_Player_Dressed", string.Join(", ", appearance.Parts.Select(p => p.Name))));
     }
 
@@ -651,7 +651,7 @@ public class CutsceneEditorView : IEditorView
     /// <summary>The map behind the cut: loaded or let go</summary>
     public void SetLoadMap(bool on)
     {
-        CFG.Current.CutsceneEditor_Load_Map = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map = on;
         if (!on)
             Backdrop.UnloadMap();
         else if (SelectedFile != null)
@@ -661,7 +661,7 @@ public class CutsceneEditorView : IEditorView
     /// <summary>The map's assets: the map is read again, with or without them</summary>
     public void SetMapAssets(bool on)
     {
-        CFG.Current.CutsceneEditor_Map_Load_Assets = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Map_Load_Assets = on;
 
         var map = Backdrop.LoadedMapId;
         Backdrop.UnloadMap();
@@ -672,7 +672,7 @@ public class CutsceneEditorView : IEditorView
     /// <summary>The actors' models: the cut is built again; turned off, the models kept for later cuts go too</summary>
     public void SetLoadModels(bool on)
     {
-        CFG.Current.CutsceneEditor_Load_Models = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Load_Models = on;
         Rebuild();
 
         if (!on)
@@ -681,21 +681,21 @@ public class CutsceneEditorView : IEditorView
 
     public void SetPlayVoices(bool on)
     {
-        CFG.Current.CutsceneEditor_Play_Voices = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Play_Voices = on;
         if (!on)
             Subtitles.StopVoice();
     }
 
     public void SetDisplayEffects(bool on)
     {
-        CFG.Current.CutsceneEditor_Display_Effects = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Display_Effects = on;
         if (!on)
             Effects.Clear();
     }
 
     public void SetPlaySounds(bool on)
     {
-        CFG.Current.CutsceneEditor_Play_Sounds = on;
+        CFG.Current.CutsceneEditor.CutsceneEditor_Play_Sounds = on;
         if (!on)
             Sounds.StopAll();
     }
@@ -725,7 +725,7 @@ public class CutsceneEditorView : IEditorView
 
             if (Playback.ReachedEnd && SelectedFile?.Mqb is { } mqb)
             {
-                var next = SelectedCut + 1 < mqb.Cuts.Count ? SelectedCut + 1 : CFG.Current.CutsceneEditor_Loop ? 0 : -1;
+                var next = SelectedCut + 1 < mqb.Cuts.Count ? SelectedCut + 1 : CFG.Current.CutsceneEditor.CutsceneEditor_Loop ? 0 : -1;
                 if (next >= 0)
                     SelectCut(next);
                 else

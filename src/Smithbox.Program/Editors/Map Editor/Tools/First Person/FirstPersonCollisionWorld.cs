@@ -76,10 +76,10 @@ public class FirstPersonCollisionWorld
     private record struct Settings(HavokCollisionType Layer, bool FallProtection, bool Assets, bool DummyAssets);
 
     private static Settings CurrentSettings() => new(
-        CFG.Current.MapEditor_FirstPerson_Layer is HavokCollisionType.High ? HavokCollisionType.High : HavokCollisionType.Low,
-        CFG.Current.MapEditor_FirstPerson_Fall_Protection,
-        CFG.Current.MapEditor_FirstPerson_Assets,
-        CFG.Current.MapEditor_FirstPerson_Dummy_Assets);
+        CFG.Current.MapEditor.MapEditor_FirstPerson_Layer is HavokCollisionType.High ? HavokCollisionType.High : HavokCollisionType.Low,
+        CFG.Current.MapEditor.MapEditor_FirstPerson_Fall_Protection,
+        CFG.Current.MapEditor.MapEditor_FirstPerson_Assets,
+        CFG.Current.MapEditor.MapEditor_FirstPerson_Dummy_Assets);
 
     #region Invalidation
 
@@ -168,7 +168,7 @@ public class FirstPersonCollisionWorld
     /// </summary>
     public bool RequestBuild(bool force = false)
     {
-        if (!CanUse() || !CFG.Current.MapEditor_ModelLoad_Collisions)
+        if (!CanUse() || !CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions)
             return false;
 
         if (BuildTask != null)

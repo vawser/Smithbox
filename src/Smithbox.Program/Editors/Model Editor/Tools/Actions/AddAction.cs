@@ -249,7 +249,7 @@ public class AddAction
 
         var camera = viewport.ViewportCamera.CameraTransform;
         var direction = Vector3.Transform(Vector3.UnitZ, camera.RotationMatrix);
-        var point = camera.Position + direction * CFG.Current.Toolbar_Move_to_Camera_Offset;
+        var point = camera.Position + direction * CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset;
 
         return Matrix4x4.Invert(container.DisplayMatrix, out var fromDisplay)
             ? Vector3.Transform(point, fromDisplay)

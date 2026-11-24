@@ -37,14 +37,14 @@ public class ParamReloader
     {
         var paramData = Project.Handler.ParamData;
 
-        if (CFG.Current.ParamReloader_Use_Latest_Offset)
+        if (CFG.Current.ParamEditor.ParamReloader_Use_Latest_Offset)
         {
             if (paramData.ParamReloaderOffsets != null &&
                 paramData.ParamReloaderOffsets.Groups != null)
             {
                 var entries = paramData.ParamReloaderOffsets.Groups.Select(entry => entry.exeVersion).ToArray();
 
-                CFG.Current.ParamReloader_Current_Offsets = entries.Count() - 1;
+                CFG.Current.ParamEditor.ParamReloader_Current_Offsets = entries.Count() - 1;
             }
         }
     }

@@ -52,7 +52,7 @@ public static class MeshProviderCache
     public static FlverMeshProvider GetFlverMeshProvider(ResourceHandle<FlverResource> handle,
         IEnumerable<int>? masks, string uid)
     {
-        if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks)
+        if (masks == null || !RenderSettings.Viewport.Viewport_Enable_Model_Masks)
         {
             return GetFlverMeshProvider(handle, uid);
         }
@@ -65,7 +65,7 @@ public static class MeshProviderCache
     public static FlverMeshProvider GetFlverMeshProvider(ResourceHandle<FlverResource> handle,
         IEnumerable<int>? masks)
     {
-        if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks)
+        if (masks == null || !RenderSettings.Viewport.Viewport_Enable_Model_Masks)
         {
             return GetFlverMeshProvider(handle);
         }

@@ -106,21 +106,21 @@ public static class ViewportGridSettingsMigration
             return;
         }
 
-        if (!root.TryGetProperty(nameof(Application.CFG.MapEditor_Grids), out _))
+        if (!root.TryGetProperty(nameof(Application.MapEditorSettings.MapEditor_Grids), out _))
         {
-            MigrateSet(root, "MapEditor", cfg.MapEditor_Grids, true);
+            MigrateSet(root, "MapEditor", cfg.MapEditor.MapEditor_Grids, true);
         }
 
-        var hasModelGrids = root.TryGetProperty(nameof(Application.CFG.ModelEditor_Grids), out _);
+        var hasModelGrids = root.TryGetProperty(nameof(Application.ModelEditorSettings.ModelEditor_Grids), out _);
         if (!hasModelGrids)
         {
-            MigrateSet(root, "ModelEditor", cfg.ModelEditor_Grids, false);
+            MigrateSet(root, "ModelEditor", cfg.ModelEditor.ModelEditor_Grids, false);
         }
 
         // The Time Act Editor used the Model Editor's grids, so it starts from a copy of them
-        if (!root.TryGetProperty(nameof(Application.CFG.TimeActEditor_Grids), out _) && !hasModelGrids)
+        if (!root.TryGetProperty(nameof(Application.TimeActEditorSettings.TimeActEditor_Grids), out _) && !hasModelGrids)
         {
-            cfg.TimeActEditor_Grids = cfg.ModelEditor_Grids.Clone();
+            cfg.TimeActEditor.TimeActEditor_Grids = cfg.ModelEditor.ModelEditor_Grids.Clone();
         }
     }
 

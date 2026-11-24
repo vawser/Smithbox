@@ -314,7 +314,7 @@ public sealed class LuaTimeAct : IDisposable
             if (BuildEffectCue(play, play.Events[i], i) is { } cue)
                 cues.Add(cue);
         }
-        if (CFG.Current.LuaEditor_TimeAct_Effects && CFG.Current.LuaEditor_Display_Tae_Effects && EffectsAvailable && cues.Count > 0)
+        if (CFG.Current.LuaEditor.LuaEditor_TimeAct_Effects && CFG.Current.LuaEditor.LuaEditor_Display_Tae_Effects && EffectsAvailable && cues.Count > 0)
         {
             Anchors.AddRange(cues.Select(c => c.Anchor));
             Effects.AddCues(cues.Select(c => c.Cue));
@@ -370,7 +370,7 @@ public sealed class LuaTimeAct : IDisposable
 
         if (ev.Parameters == null)
         {
-            if (CFG.Current.LuaEditor_TimeAct_Log_All_Events)
+            if (CFG.Current.LuaEditor.LuaEditor_TimeAct_Log_All_Events)
                 AddLog(play, ev, LuaTimeActLogKind.Event, name, LOC.Get("LUA_TAE_No_Template"));
             return;
         }
@@ -404,7 +404,7 @@ public sealed class LuaTimeAct : IDisposable
             return;
         }
 
-        if (CFG.Current.LuaEditor_TimeAct_Log_All_Events)
+        if (CFG.Current.LuaEditor.LuaEditor_TimeAct_Log_All_Events)
             AddLog(play, ev, LuaTimeActLogKind.Event, name, Summary(ev));
     }
 
@@ -569,7 +569,7 @@ public sealed class LuaTimeAct : IDisposable
         {
             var id = number.ToInt32(null);
             if (data?.GetSimulationRole(ev) == TimeActSimulationRole.FloorEffect)
-                return TimeActFloorEffects.Resolve(Project, id, CFG.Current.TimeActEditor_Floor_Material);
+                return TimeActFloorEffects.Resolve(Project, id, CFG.Current.TimeActEditor.TimeActEditor_Floor_Material);
             return id > 0 ? id : null;
         }
         catch
@@ -668,7 +668,7 @@ public sealed class LuaTimeAct : IDisposable
     public bool EffectsReady => !PreloadWanted ||
                                 Collector == null && Project.Handler.FxData?.Bank is { IsIndexed: true } && Effects.Preload.IsDone;
 
-    private bool PreloadWanted => CFG.Current.LuaEditor_TimeAct_Effects && EffectsAvailable && Viewer.Self != null;
+    private bool PreloadWanted => CFG.Current.LuaEditor.LuaEditor_TimeAct_Effects && EffectsAvailable && Viewer.Self != null;
 
     /// <summary>What the preload is doing, for the Battle Simulation (null when ready)</summary>
     public string? PreloadStatus
@@ -693,7 +693,7 @@ public sealed class LuaTimeAct : IDisposable
     {
         var self = Viewer.Self;
         var cfg = CFG.Current;
-        var key = (self, self?.AnimationName, cfg.LuaEditor_Display_Tae_Effects, cfg.LuaEditor_Display_Bullet_Effects, cfg.LuaEditor_Display_Hit_Effects);
+        var key = (self, self?.AnimationName, cfg.LuaEditor.LuaEditor_Display_Tae_Effects, cfg.LuaEditor.LuaEditor_Display_Bullet_Effects, cfg.LuaEditor.LuaEditor_Display_Hit_Effects);
 
         if (!PreloadWanted || self == null || self.IsLoading)
         {
@@ -799,13 +799,13 @@ public sealed class LuaTimeAct : IDisposable
 
                         if (data.GetSimulationRole(ev) == TimeActSimulationRole.Bullet)
                         {
-                            if (!CFG.Current.LuaEditor_TimeAct_Bullets || bulletParam == null ||
+                            if (!CFG.Current.LuaEditor.LuaEditor_TimeAct_Bullets || bulletParam == null ||
                                 !ResolveBullet(self.Name, ev, out _, out var row, out _))
                                 continue;
                             foreach (var id in BulletEffects(row!, bulletParam, seenBullets, cfg))
                                 yield return id;
                         }
-                        else if (cfg.LuaEditor_Display_Tae_Effects && IsEffectEvent(ev) && GetEffectId(ev) is { } effect)
+                        else if (cfg.LuaEditor.LuaEditor_Display_Tae_Effects && IsEffectEvent(ev) && GetEffectId(ev) is { } effect)
                         {
                             yield return effect;
                         }
@@ -826,9 +826,9 @@ public sealed class LuaTimeAct : IDisposable
             var bullet = pending.Pop();
             if (!seen.Add(bullet.ID))
                 continue;
-            if (cfg.LuaEditor_Display_Bullet_Effects && ProjectileParams.GetFlightEffect(bullet) is > 0 and var flight)
+            if (cfg.LuaEditor.LuaEditor_Display_Bullet_Effects && ProjectileParams.GetFlightEffect(bullet) is > 0 and var flight)
                 yield return flight;
-            if (cfg.LuaEditor_Display_Hit_Effects && ProjectileParams.GetHitEffect(bullet) is > 0 and var hit)
+            if (cfg.LuaEditor.LuaEditor_Display_Hit_Effects && ProjectileParams.GetHitEffect(bullet) is > 0 and var hit)
                 yield return hit;
             foreach (var (_, child) in ProjectileParams.GetChildBullets(bullet))
             {
@@ -843,7 +843,7 @@ public sealed class LuaTimeAct : IDisposable
         // First, so effects turned off unpin what was being preloaded too
         UpdatePreload();
 
-        if (!CFG.Current.LuaEditor_TimeAct_Effects || !EffectsAvailable)
+        if (!CFG.Current.LuaEditor.LuaEditor_TimeAct_Effects || !EffectsAvailable)
         {
             if (Effects.CueCount > 0)
             {
@@ -856,11 +856,11 @@ public sealed class LuaTimeAct : IDisposable
         Effects.Prune(SceneTime);
 
         // A kind the Viewport Filters turned off goes at once (what fires later isn't cued while it is off)
-        if (!CFG.Current.LuaEditor_Display_Tae_Effects)
+        if (!CFG.Current.LuaEditor.LuaEditor_Display_Tae_Effects)
             Effects.RemoveCues(c => c.Tag is TAE.Event);
-        if (!CFG.Current.LuaEditor_Display_Bullet_Effects)
+        if (!CFG.Current.LuaEditor.LuaEditor_Display_Bullet_Effects)
             Effects.RemoveCues(c => c.Tag is BulletEffectTag { Hit: false });
-        if (!CFG.Current.LuaEditor_Display_Hit_Effects)
+        if (!CFG.Current.LuaEditor.LuaEditor_Display_Hit_Effects)
             Effects.RemoveCues(c => c.Tag is BulletEffectTag { Hit: true });
 
         // The bank is read once something may show from it (indexing reads every sfx binder); the preload above starts it
@@ -902,7 +902,7 @@ public sealed class LuaTimeAct : IDisposable
 
     private void FireBullet(LuaTimeActPlay play, TAE.Event ev, string name)
     {
-        if (!CFG.Current.LuaEditor_TimeAct_Bullets)
+        if (!CFG.Current.LuaEditor.LuaEditor_TimeAct_Bullets)
             return;
 
         if (!ResolveBullet(play.Character.Name, ev, out var behavior, out var bulletRow, out var failure))
@@ -952,7 +952,7 @@ public sealed class LuaTimeAct : IDisposable
 
         var bullet = new Bullet { FiredAt = SceneTime, Anchor = anchor, Settings = settings, Result = result };
         Bullets.Add(bullet);
-        if (CFG.Current.LuaEditor_TimeAct_Effects && EffectsAvailable)
+        if (CFG.Current.LuaEditor.LuaEditor_TimeAct_Effects && EffectsAvailable)
             Effects.AddCues(BulletCues(bullet, bulletParam));
 
         var where = dummy >= 0 && dummyWorld == null ? LOC.Get("LUA_TAE_Dummy_Missing", dummy)
@@ -1040,8 +1040,8 @@ public sealed class LuaTimeAct : IDisposable
     /// <summary>Each bullet's flight effect along its flight, and its hit effect where it landed (as the filters allow)</summary>
     private static List<FxCue> BulletCues(Bullet bullet, Param bulletParam)
     {
-        var showFlight = CFG.Current.LuaEditor_Display_Bullet_Effects;
-        var showHit = CFG.Current.LuaEditor_Display_Hit_Effects;
+        var showFlight = CFG.Current.LuaEditor.LuaEditor_Display_Bullet_Effects;
+        var showHit = CFG.Current.LuaEditor.LuaEditor_Display_Hit_Effects;
         var cues = new List<FxCue>();
         var start = bullet.FiredAt;
         var anchor = bullet.Anchor;
@@ -1090,7 +1090,7 @@ public sealed class LuaTimeAct : IDisposable
         // A bullet is kept a little after its flight, for its impact marker
         Bullets.RemoveAll(b => SceneTime - b.FiredAt > b.Result.Duration + 1.0f);
 
-        if (!CFG.Current.LuaEditor_TimeAct_Bullets || Bullets.Count == 0)
+        if (!CFG.Current.LuaEditor.LuaEditor_TimeAct_Bullets || Bullets.Count == 0)
         {
             HideLines();
             return;
@@ -1106,11 +1106,11 @@ public sealed class LuaTimeAct : IDisposable
             var local = new Dictionary<Color, List<(Vector3, Vector3)>>();
             var flightTime = SceneTime - bullet.FiredAt;
 
-            if (CFG.Current.LuaEditor_Display_Trails)
+            if (CFG.Current.LuaEditor.LuaEditor_Display_Trails)
                 ProjectileViewportWindow.AddTrails(local, bullet.Result, flightTime);
             ProjectileViewportWindow.AddProjectiles(local, bullet.Result, flightTime,
-                CFG.Current.LuaEditor_Display_Bullets, CFG.Current.LuaEditor_Display_Reach);
-            if (CFG.Current.LuaEditor_Display_Impacts)
+                CFG.Current.LuaEditor.LuaEditor_Display_Bullets, CFG.Current.LuaEditor.LuaEditor_Display_Reach);
+            if (CFG.Current.LuaEditor.LuaEditor_Display_Impacts)
                 ProjectileViewportWindow.AddImpacts(local, bullet.Result, flightTime);
 
             foreach (var (color, list) in local)

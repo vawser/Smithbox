@@ -60,7 +60,7 @@ public class GparamFileList
 
         // Toggle: Aliases
         GUI.DisplayToggleButton("aliasToggle", Icons.StickyNote,
-            ref CFG.Current.GparamEditor_File_List_Display_Aliases,
+            ref CFG.Current.GparamEditor.GparamEditor_File_List_Display_Aliases,
             "GPARAM_FileList_Alias_Toggle_Hide",
             "GPARAM_FileList_Alias_Toggle_Show",
             "GPARAM_FileList_Alias_Toggle_TT");
@@ -70,7 +70,7 @@ public class GparamFileList
         {
             // Toggle: GPARAMBND
             GUI.DisplayToggleButton("gparambndToggle", Icons.Database,
-                ref CFG.Current.GparamEditor_File_List_Display_BB_BND_Files,
+                ref CFG.Current.GparamEditor.GparamEditor_File_List_Display_BB_BND_Files,
                 "GPARAM_FileList_TargetBnd_Toggle_GPARAM",
                 "GPARAM_FileList_TargetBnd_Toggle_GPARAMBND",
                 "GPARAM_FileList_TargetBnd_Toggle_TT");
@@ -91,7 +91,7 @@ public class GparamFileList
             // For BB, toggle which gparam files are displayed
             if (Project.Descriptor.ProjectType is ProjectType.BB)
             {
-                if (CFG.Current.GparamEditor_File_List_Display_BB_BND_Files)
+                if (CFG.Current.GparamEditor.GparamEditor_File_List_Display_BB_BND_Files)
                 {
                     if (entry.Key.Extension == "gparam")
                         continue;
@@ -131,7 +131,7 @@ public class GparamFileList
 
         if (Project.Descriptor.ProjectType is ProjectType.BB)
         {
-            if (CFG.Current.GparamEditor_File_List_Display_BB_BND_Files)
+            if (CFG.Current.GparamEditor.GparamEditor_File_List_Display_BB_BND_Files)
             {
                 filename = $"{filename} [BND]";
             }
@@ -189,7 +189,7 @@ public class GparamFileList
             }
         }
 
-        if (CFG.Current.GparamEditor_File_List_Display_Aliases)
+        if (CFG.Current.GparamEditor.GparamEditor_File_List_Display_Aliases)
         {
             GUI.DisplayAlias(alias);
         }

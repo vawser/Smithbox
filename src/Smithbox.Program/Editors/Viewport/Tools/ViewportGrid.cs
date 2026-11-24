@@ -79,8 +79,8 @@ public class ViewportGrid
                 Matrix4x4.CreateTranslation(offset.X * sectionSize, 0, offset.Y * sectionSize) *
                 gridWorld;
 
-            var opacity = Math.Clamp(CFG.Current.Viewport_Grid_Opacity, 0f, 1f);
-            var hiddenOpacity = Math.Clamp(CFG.Current.Viewport_Grid_Hidden_Opacity, 0f, 1f);
+            var opacity = Math.Clamp(CFG.Current.Viewport.Viewport_Grid_Opacity, 0f, 1f);
+            var hiddenOpacity = Math.Clamp(CFG.Current.Viewport.Viewport_Grid_Hidden_Opacity, 0f, 1f);
 
             Apply(Grid, config, cells, offset, world, opacity);
 
@@ -105,10 +105,10 @@ public class ViewportGrid
     {
         proxy.BaseColor = GetViewGridColor(config.Color, opacity);
         proxy.GridCells = cells;
-        proxy.GridMajorInterval = CFG.Current.Viewport_Grid_Major_Line_Interval;
-        proxy.GridFadeDistance = Math.Max(CFG.Current.Viewport_Grid_Fade_Distance, 0f);
-        proxy.GridAxisLines = CFG.Current.Viewport_Grid_Display_Axis_Lines;
-        proxy.GridLineWidth = Math.Clamp(CFG.Current.Viewport_Grid_Line_Width, 0.25f, 8f);
+        proxy.GridMajorInterval = CFG.Current.Viewport.Viewport_Grid_Major_Line_Interval;
+        proxy.GridFadeDistance = Math.Max(CFG.Current.Viewport.Viewport_Grid_Fade_Distance, 0f);
+        proxy.GridAxisLines = CFG.Current.Viewport.Viewport_Grid_Display_Axis_Lines;
+        proxy.GridLineWidth = Math.Clamp(CFG.Current.Viewport.Viewport_Grid_Line_Width, 0.25f, 8f);
         proxy.GridOffset = offset;
         proxy.Visible = true;
         proxy.World = world;

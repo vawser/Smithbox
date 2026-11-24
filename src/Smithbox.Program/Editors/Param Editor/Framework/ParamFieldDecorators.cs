@@ -221,7 +221,7 @@ public class ParamFieldDecorators
                     ProjectAliasType.Sounds, out List<AliasEntry> sounds))
                 {
                     // inline Play, in front of the alias text
-                    if (CFG.Current.ParamEditor_Field_List_Display_Enums)
+                    if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
                         SoundReferenceHelper.PlayButton(ParentView.Project, oldval, internalName);
 
                     AliasEnumHelper.Hint(ParentView, sounds, oldval.ToString());
@@ -239,7 +239,7 @@ public class ParamFieldDecorators
                 }
 
                 // ER: a warning when the game doesn't store the flag
-                if (CFG.Current.ParamEditor_Field_List_Display_Enums
+                if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums
                     && ConditionalAliasEnumHelper.IsActive(row, metaContext.EventFlagConditionalField, metaContext.EventFlagConditionalValue)
                     && long.TryParse(oldval?.ToString(), out var flag))
                 {
@@ -505,9 +505,9 @@ public class FieldMetaContext
         ActiveParam = activeParam;
         InternalName = internalName;
 
-        DisplayEnums = CFG.Current.ParamEditor_Field_List_Display_Enums;
-        DisplayTextReferences = CFG.Current.ParamEditor_Field_List_Display_References;
-        DisplayTextureReferences = CFG.Current.ParamEditor_Field_List_Display_Icon_Preview;
+        DisplayEnums = CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums;
+        DisplayTextReferences = CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References;
+        DisplayTextureReferences = CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Icon_Preview;
 
         if (fieldMeta != null)
         {
@@ -657,9 +657,9 @@ public static class FieldTooltipHelper
 {
     public static void IconTooltip(ParamEditorView curView, FieldMetaContext context, PARAMDEF.Field fieldDef)
     {
-        var tooltipMode = CFG.Current.ParamEditor_Field_List_Tooltip_Mode;
+        var tooltipMode = CFG.Current.ParamEditor.ParamEditor_Field_List_Tooltip_Mode;
         var displayDescription = true;
-        var displayAttributes = CFG.Current.ParamEditor_Field_List_Display_Field_Attributes;
+        var displayAttributes = CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Field_Attributes;
 
         // Help icon text
         if (tooltipMode is ParamTooltipMode.OnIcon)
@@ -706,9 +706,9 @@ public static class FieldTooltipHelper
 
     public static void HoverTooltip(ParamEditorView curView, FieldMetaContext context, PARAMDEF.Field fieldDef)
     {
-        var tooltipMode = CFG.Current.ParamEditor_Field_List_Tooltip_Mode;
+        var tooltipMode = CFG.Current.ParamEditor.ParamEditor_Field_List_Tooltip_Mode;
         var displayDescription = true;
-        var displayAttributes = CFG.Current.ParamEditor_Field_List_Display_Field_Attributes;
+        var displayAttributes = CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Field_Attributes;
 
         // Help hover text
         if (tooltipMode is ParamTooltipMode.OnFieldName)
@@ -754,7 +754,7 @@ public static class EnumHelper
 
     public static void Label(ParamEditorView curView, ParamEnum pEnum)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         if (pEnum != null && pEnum.Name != null)
@@ -767,7 +767,7 @@ public static class EnumHelper
 
     public static void Hint(ParamEditorView curView, Dictionary<string, string> enumValues, string value)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
@@ -822,7 +822,7 @@ public static class AliasEnumHelper
 
     public static void Label(ParamEditorView curView, List<AliasEntry> entries, string value, string nameTitle, string descTitle, bool isCharacterAlias = false)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var inactiveEnum = false;
@@ -861,7 +861,7 @@ public static class AliasEnumHelper
 
     public static void Hint(ParamEditorView curView, List<AliasEntry> entries, string value, bool isCharacterAlias = false)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var inactiveEnum = false;
@@ -975,7 +975,7 @@ public static class ConditionalAliasEnumHelper
 
     public static void Label(ParamEditorView curView, string name, Param.Row row, string limitField, string limitValue)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var inactiveEnum = false;
@@ -1006,7 +1006,7 @@ public static class ConditionalAliasEnumHelper
 
     public static void Hint(ParamEditorView curView, List<AliasEntry> entries, string value, Param.Row row, string conditionalField, string conditionalValue)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var inactiveEnum = false;
@@ -1195,7 +1195,7 @@ public static class TextReferenceHelper
 {
     public static void Label(ParamEditorView curView, List<FMGRef> fmgRef, Param.Row context, string overrideName = "")
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References)
             return;
 
         if (fmgRef == null)
@@ -1296,7 +1296,7 @@ public static class TextReferenceHelper
 
     public static void Hint(ParamEditorView curView, List<FMGRef> fmgNames, Param.Row context, dynamic oldval)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References)
             return;
 
         List<string> textsToPrint = new List<string>();
@@ -1358,7 +1358,7 @@ public static class TextReferenceHelper
 
         List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, reftypes, context, oldval);
 
-        var language = CFG.Current.TextEditor_Primary_Category;
+        var language = CFG.Current.TextEditor.TextEditor_Primary_Category;
 
         int index = 0;
 
@@ -1430,7 +1430,7 @@ public static class TextureReferenceHelper
 
     public static void Label(ParamEditorView curView, IconConfig iconConfig, Param.Row context)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Icon_Preview)
             return;
 
         if (iconConfig == null)
@@ -1444,7 +1444,7 @@ public static class TextureReferenceHelper
 
     public static void Hint(ParamEditorView curView, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Icon_Preview)
             return;
 
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
@@ -1455,7 +1455,7 @@ public static class TextureReferenceHelper
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
-            if (CFG.Current.ParamEditor_Field_List_Display_Icon_Preview)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Icon_Preview)
             {
                 CachedTexture cachedTexture = Smithbox.TextureManager.IconManager.HandleIcon(context, fieldIcon, oldval, fieldName, columnIndex);
 
@@ -1838,7 +1838,7 @@ public static class TileReferenceHelper
 {
     public static void Label(ParamEditorView curView, string enumType)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         ImGui.AlignTextToFramePadding();
@@ -1847,7 +1847,7 @@ public static class TileReferenceHelper
 
     public static void Hint(ParamEditorView curView, string enumType, string value)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         if (curView.Project.Handler.ProjectData.Aliases
@@ -2138,7 +2138,7 @@ public static class GroupReferenceHelper
 
     public static void Label(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References)
             return;
 
         if (groupRef == null || groupRef == "" || refCache.Count == 0)
@@ -2151,7 +2151,7 @@ public static class GroupReferenceHelper
         ImGui.BeginGroup();
         foreach (var entry in refCache)
         {
-            if (CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName)
+            if (CFG.Current.ParamEditor.ParamEditor_Field_List_GroupReference_DisplayCommunityName)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted($"  <{entry.DisplayName}>");
@@ -2169,7 +2169,7 @@ public static class GroupReferenceHelper
 
     public static void Hint(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References)
             return;
 
         if (groupRef == null || groupRef == "" || refCache.Count == 0)

@@ -127,13 +127,13 @@ public class ParamDeltaImporter
         if (groups.Count == 0)
             return false;
 
-        var addRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows;
-        var modRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows;
-        var delRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
+        var addRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Added_Rows;
+        var modRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Modified_Rows;
+        var delRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
 
-        var restrictRowAdd = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
-        var restrictRowMod = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
-        var allowOverwrite = CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
+        var restrictRowAdd = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
+        var restrictRowMod = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
+        var allowOverwrite = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
 
         var fallbackTemplate = vanillaParam?.Rows.FirstOrDefault() ?? param.Rows.FirstOrDefault();
         var changed = false;
@@ -200,13 +200,13 @@ public class ParamDeltaImporter
         if (rowDeltas.Count == 0)
             return false;
 
-        var addRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows;
-        var modRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows;
-        var delRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
+        var addRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Added_Rows;
+        var modRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Modified_Rows;
+        var delRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
 
-        var restrictRowAdd = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
-        var restrictRowMod = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
-        var allowOverwrite = CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
+        var restrictRowAdd = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
+        var restrictRowMod = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
+        var allowOverwrite = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
 
         // Keyed by row instance, so it tells apart rows that share an ID
         HashSet<Param.Row> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);

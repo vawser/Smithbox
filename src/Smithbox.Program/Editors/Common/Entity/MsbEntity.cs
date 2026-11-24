@@ -67,7 +67,7 @@ public class MsbEntity : Entity
 
     // Regions drawn as wireframes (and DS2's event locations, drawn as boxes) become icons while unselected
     public override bool ShowAsIcon =>
-        CFG.Current.MapEditor_Region_Icons &&
+        CFG.Current.MapEditor.MapEditor_Region_Icons &&
         Owner is MapUniverse &&
         Type is MsbEntityType.Region or MsbEntityType.DS2EventLocation;
 
@@ -164,7 +164,7 @@ public class MsbEntity : Entity
         if (RenderSceneMesh is not MeshRenderableProxy mesh)
             return;
 
-        if (!CFG.Current.Viewport_Shadows_Use_Msb_Flags || Type != MsbEntityType.Part)
+        if (!CFG.Current.Viewport.Viewport_Shadows_Use_Msb_Flags || Type != MsbEntityType.Part)
         {
             mesh.CastsShadow = true;
             mesh.ReceivesShadow = true;
@@ -412,7 +412,7 @@ public class MsbEntity : Entity
         CollisionSceneMesh = null;
         PrefabMemberCollisionMeshes = null;
 
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions ||
+        if (!CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions ||
             !curUniverse.GetCurrentScene().DrawFilter.HasFlag(RenderFilter.ObjectCollision))
             return;
 
@@ -616,14 +616,14 @@ public class MsbEntity : Entity
 
         List<EdgePointMesh> meshes = new(markers.Markers.Count * 2);
 
-        var pointSize = Math.Max(CFG.Current.Viewport_Edge_Point_Size, 0.01f);
-        var radius = Math.Max(CFG.Current.Viewport_Edge_Segment_Radius, 0.005f);
+        var pointSize = Math.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.01f);
+        var radius = Math.Max(CFG.Current.Viewport.Viewport_Edge_Segment_Radius, 0.005f);
 
         foreach (var marker in markers.Markers)
         {
             // The selected entry is drawn a little larger, in its own colour and over the geometry
             var grow = marker.Selected ? 1.4f : 1.0f;
-            var color = marker.Selected ? CFG.Current.Viewport_Edge_Selected_Color : GetEdgeColor(marker);
+            var color = marker.Selected ? CFG.Current.Viewport.Viewport_Edge_Selected_Color : GetEdgeColor(marker);
 
             var (cylinder, local) = marker.Kind switch
             {
@@ -643,13 +643,13 @@ public class MsbEntity : Entity
     public static Vector3 GetEdgeColor(EdgeMarker marker)
     {
         if (marker.Kind is EdgeMarkerKind.Pull or EdgeMarkerKind.PullLine)
-            return CFG.Current.Viewport_Edge_Pull_Color;
+            return CFG.Current.Viewport.Viewport_Edge_Pull_Color;
 
         return marker.Type switch
         {
-            EDGE.EdgeType.Grapple => CFG.Current.Viewport_Edge_Grapple_Color,
-            EDGE.EdgeType.Hang => CFG.Current.Viewport_Edge_Hang_Color,
-            _ => CFG.Current.Viewport_Edge_Hug_Color
+            EDGE.EdgeType.Grapple => CFG.Current.Viewport.Viewport_Edge_Grapple_Color,
+            EDGE.EdgeType.Hang => CFG.Current.Viewport.Viewport_Edge_Hang_Color,
+            _ => CFG.Current.Viewport.Viewport_Edge_Hug_Color
         };
     }
 
@@ -692,16 +692,16 @@ public class MsbEntity : Entity
 
         List<WallMesh> meshes = new();
 
-        if (CFG.Current.MapEditor_Wall_Display_Cells)
+        if (CFG.Current.MapEditor.MapEditor_Wall_Display_Cells)
         {
-            AddWallMeshes(meshes, scene, cells.Walls, CFG.Current.Viewport_Wall_Fill_Color);
-            AddWallMeshes(meshes, scene, cells.OtherCollisionWalls, CFG.Current.Viewport_Wall_Other_Collision_Color);
-            AddWallMeshes(meshes, scene, cells.None, CFG.Current.Viewport_Wall_None_Color);
+            AddWallMeshes(meshes, scene, cells.Walls, CFG.Current.Viewport.Viewport_Wall_Fill_Color);
+            AddWallMeshes(meshes, scene, cells.OtherCollisionWalls, CFG.Current.Viewport.Viewport_Wall_Other_Collision_Color);
+            AddWallMeshes(meshes, scene, cells.None, CFG.Current.Viewport.Viewport_Wall_None_Color);
         }
 
-        if (CFG.Current.MapEditor_Wall_Display_NoJump)
+        if (CFG.Current.MapEditor.MapEditor_Wall_Display_NoJump)
         {
-            AddWallMeshes(meshes, scene, cells.NoJump, CFG.Current.Viewport_Wall_NoJump_Color);
+            AddWallMeshes(meshes, scene, cells.NoJump, CFG.Current.Viewport.Viewport_Wall_NoJump_Color);
         }
 
         WallMeshes = meshes;
@@ -724,7 +724,7 @@ public class MsbEntity : Entity
     /// </summary>
     public static DebugPrimitiveRenderableProxy CreateWallProxy(RenderScene scene, IDbgPrim primitive, Vector3 color)
     {
-        var fill = ColorHelper.GetTransparencyColor(color / 255.0f, CFG.Current.Viewport_Wall_Alpha);
+        var fill = ColorHelper.GetTransparencyColor(color / 255.0f, CFG.Current.Viewport.Viewport_Wall_Alpha);
 
         return new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, primitive)
         {
@@ -758,7 +758,7 @@ public class MsbEntity : Entity
 
     private void LoadGrassTextures(string modelName)
     {
-        if (!CFG.Current.Viewport_Enable_Texturing || !CFG.Current.MapEditor_TextureLoad_Objects)
+        if (!CFG.Current.Viewport.Viewport_Enable_Texturing || !CFG.Current.MapEditor.MapEditor_TextureLoad_Objects)
             return;
 
         var curUniverse = Owner as MapUniverse;
@@ -1693,15 +1693,15 @@ public class MsbEntity : Entity
     /// </summary>
     public void LoadModelTextures()
     {
-        if (!CFG.Current.Viewport_Enable_Texturing || string.IsNullOrEmpty(ModelName))
+        if (!CFG.Current.Viewport.Viewport_Enable_Texturing || string.IsNullOrEmpty(ModelName))
             return;
 
         var curUniverse = Owner as MapUniverse;
         var curProject = curUniverse.Project;
 
         var loadTextures = ModelName.StartsWith('c')
-            ? CFG.Current.MapEditor_TextureLoad_Characters
-            : CFG.Current.MapEditor_TextureLoad_Objects;
+            ? CFG.Current.MapEditor.MapEditor_TextureLoad_Characters
+            : CFG.Current.MapEditor.MapEditor_TextureLoad_Objects;
 
         if (loadTextures)
         {
@@ -1837,7 +1837,7 @@ public class MsbEntity : Entity
     /// </summary>
     private bool TryAssignCompositeCharacter(string modelName)
     {
-        if (!CFG.Current.MapEditor_Enable_Character_Composition || !CharacterComposition.IsComposite(modelName))
+        if (!CFG.Current.MapEditor.MapEditor_Enable_Character_Composition || !CharacterComposition.IsComposite(modelName))
             return false;
 
         var curUniverse = Owner as MapUniverse;

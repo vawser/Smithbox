@@ -285,7 +285,7 @@ public class GparamMapEnvironment : IDisposable
 
         var found = new List<(float Distance, MapLightData Data)>();
 
-        var radius = Math.Max(CFG.Current.Viewport_BTL_Light_Radius, 0.0f);
+        var radius = Math.Max(CFG.Current.Viewport.Viewport_BTL_Light_Radius, 0.0f);
         var intensityScale = MapLightCollector.GetIntensityScale(lighting);
 
         foreach (var (light, world) in Lights)
@@ -302,7 +302,7 @@ public class GparamMapEnvironment : IDisposable
 
         InRangeCount = found.Count;
 
-        var count = Math.Min(found.Count, Math.Clamp(CFG.Current.Viewport_BTL_Light_Max_Count, 0, SceneLightTable.Capacity));
+        var count = Math.Min(found.Count, Math.Clamp(CFG.Current.Viewport.Viewport_BTL_Light_Max_Count, 0, SceneLightTable.Capacity));
 
         for (var i = 0; i < count; i++)
             LightEntries[i] = found[i].Data;

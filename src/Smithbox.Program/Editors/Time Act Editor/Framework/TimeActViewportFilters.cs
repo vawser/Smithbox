@@ -23,8 +23,8 @@ public class TimeActViewportFilters
     /// </summary>
     public void Update()
     {
-        View.RenderScene.SetDrawFilter(RenderFilter.Dummies, CFG.Current.TimeActEditor_DisplayDummies);
-        View.RenderScene.SetDrawFilter(RenderFilter.Nodes, CFG.Current.TimeActEditor_DisplayNodes);
+        View.RenderScene.SetDrawFilter(RenderFilter.Dummies, CFG.Current.TimeActEditor.TimeActEditor_DisplayDummies);
+        View.RenderScene.SetDrawFilter(RenderFilter.Nodes, CFG.Current.TimeActEditor.TimeActEditor_DisplayNodes);
     }
 
     public void Display()
@@ -45,36 +45,36 @@ public class TimeActViewportFilters
             // Dummies
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly")}##dummyPolyToggle"))
             {
-                CFG.Current.TimeActEditor_DisplayDummies = !CFG.Current.TimeActEditor_DisplayDummies;
+                CFG.Current.TimeActEditor.TimeActEditor_DisplayDummies = !CFG.Current.TimeActEditor.TimeActEditor_DisplayDummies;
             }
-            ticked = CFG.Current.TimeActEditor_DisplayDummies;
+            ticked = CFG.Current.TimeActEditor.TimeActEditor_DisplayDummies;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Dummy Labels
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels")}##dummyPolyLabelsToggle"))
             {
-                CFG.Current.TimeActEditor_DisplayDummyLabels = !CFG.Current.TimeActEditor_DisplayDummyLabels;
+                CFG.Current.TimeActEditor.TimeActEditor_DisplayDummyLabels = !CFG.Current.TimeActEditor.TimeActEditor_DisplayDummyLabels;
             }
-            ticked = CFG.Current.TimeActEditor_DisplayDummyLabels;
+            ticked = CFG.Current.TimeActEditor.TimeActEditor_DisplayDummyLabels;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_DummyPoly_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Nodes
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone")}##boneToggle"))
             {
-                CFG.Current.TimeActEditor_DisplayNodes = !CFG.Current.TimeActEditor_DisplayNodes;
+                CFG.Current.TimeActEditor.TimeActEditor_DisplayNodes = !CFG.Current.TimeActEditor.TimeActEditor_DisplayNodes;
             }
-            ticked = CFG.Current.TimeActEditor_DisplayNodes;
+            ticked = CFG.Current.TimeActEditor.TimeActEditor_DisplayNodes;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_TT"));
             GUI.ShowActiveStatus(ticked);
 
             // Bone Labels
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Bone_Labels")}##boneLabelsToggle"))
             {
-                CFG.Current.TimeActEditor_DisplayNodeLabels = !CFG.Current.TimeActEditor_DisplayNodeLabels;
+                CFG.Current.TimeActEditor.TimeActEditor_DisplayNodeLabels = !CFG.Current.TimeActEditor.TimeActEditor_DisplayNodeLabels;
             }
-            ticked = CFG.Current.TimeActEditor_DisplayNodeLabels;
+            ticked = CFG.Current.TimeActEditor.TimeActEditor_DisplayNodeLabels;
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 

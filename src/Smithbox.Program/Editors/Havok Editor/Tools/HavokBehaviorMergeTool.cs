@@ -178,11 +178,11 @@ public class HavokBehaviorMergeTool
     {
         if (ImGui.Button($"{LOC.Get("HAVOK_Merge_Pick")}##{id}Pick"))
         {
-            var folder = picked.Path.Length > 0 ? Path.GetDirectoryName(picked.Path) : CFG.Current.BehaviorEditor_Merge_Last_Folder;
+            var folder = picked.Path.Length > 0 ? Path.GetDirectoryName(picked.Path) : CFG.Current.BehaviorEditor.BehaviorEditor_Merge_Last_Folder;
 
             if (PlatformUtils.Instance.OpenFileDialog(LOC.Get("HAVOK_Merge_Pick"), FileFilters, folder, out var path) && !string.IsNullOrEmpty(path))
             {
-                CFG.Current.BehaviorEditor_Merge_Last_Folder = Path.GetDirectoryName(path) ?? "";
+                CFG.Current.BehaviorEditor.BehaviorEditor_Merge_Last_Folder = Path.GetDirectoryName(path) ?? "";
                 StartListing(picked, path, file);
             }
         }

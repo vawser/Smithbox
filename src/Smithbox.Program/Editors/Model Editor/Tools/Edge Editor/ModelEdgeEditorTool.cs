@@ -199,7 +199,7 @@ public partial class ModelEdgeEditorTool
 
     private void DisplayVisibility()
     {
-        if (CFG.Current.ModelEditor_DisplayEdgePoints)
+        if (CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints)
             return;
 
         // Visibility
@@ -210,7 +210,7 @@ public partial class ModelEdgeEditorTool
 
         GUI.MultiButtonInput("modelEdgeEditorVisibility",
             "modelEdgeEditorShowPoints", LOC.Get("MAP_EdgeEditor_Show_Points"), LOC.Get("MODEL_EdgeEditor_Show_Points_TT"),
-            () => CFG.Current.ModelEditor_DisplayEdgePoints = true);
+            () => CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints = true);
     }
 
     // Whether the Display group is open; closed by default so the entries stay near the top
@@ -229,20 +229,20 @@ public partial class ModelEdgeEditorTool
         if (!ShowAppearance)
             return;
 
-        ColorEntry("modelEdgeColorGrapple", "MAP_EdgeEditor_Color_Grapple", ref CFG.Current.Viewport_Edge_Grapple_Color);
-        ColorEntry("modelEdgeColorPull", "MAP_EdgeEditor_Color_Pull", ref CFG.Current.Viewport_Edge_Pull_Color);
-        ColorEntry("modelEdgeColorHang", "MAP_EdgeEditor_Color_Hang", ref CFG.Current.Viewport_Edge_Hang_Color);
-        ColorEntry("modelEdgeColorHug", "MAP_EdgeEditor_Color_Hug", ref CFG.Current.Viewport_Edge_Hug_Color);
-        ColorEntry("modelEdgeColorSelected", "MAP_EdgeEditor_Color_Selected", ref CFG.Current.Viewport_Edge_Selected_Color);
-        ColorEntry("modelEdgeColorHover", "MAP_EdgeEditor_Color_Hover", ref CFG.Current.Viewport_Edge_Hover_Color);
+        ColorEntry("modelEdgeColorGrapple", "MAP_EdgeEditor_Color_Grapple", ref CFG.Current.Viewport.Viewport_Edge_Grapple_Color);
+        ColorEntry("modelEdgeColorPull", "MAP_EdgeEditor_Color_Pull", ref CFG.Current.Viewport.Viewport_Edge_Pull_Color);
+        ColorEntry("modelEdgeColorHang", "MAP_EdgeEditor_Color_Hang", ref CFG.Current.Viewport.Viewport_Edge_Hang_Color);
+        ColorEntry("modelEdgeColorHug", "MAP_EdgeEditor_Color_Hug", ref CFG.Current.Viewport.Viewport_Edge_Hug_Color);
+        ColorEntry("modelEdgeColorSelected", "MAP_EdgeEditor_Color_Selected", ref CFG.Current.Viewport.Viewport_Edge_Selected_Color);
+        ColorEntry("modelEdgeColorHover", "MAP_EdgeEditor_Color_Hover", ref CFG.Current.Viewport.Viewport_Edge_Hover_Color);
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat($"##modelEdgePointSize", ref CFG.Current.Viewport_Edge_Point_Size, 0.02f, 1.0f,
+        ImGui.SliderFloat($"##modelEdgePointSize", ref CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.02f, 1.0f,
             LOC.Get("MAP_EdgeEditor_Point_Size_Format"));
         GUI.Tooltip(LOC.Get("MAP_EdgeEditor_Point_Size_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat($"##modelEdgeSegmentRadius", ref CFG.Current.Viewport_Edge_Segment_Radius, 0.01f, 0.5f,
+        ImGui.SliderFloat($"##modelEdgeSegmentRadius", ref CFG.Current.Viewport.Viewport_Edge_Segment_Radius, 0.01f, 0.5f,
             LOC.Get("MAP_EdgeEditor_Segment_Radius_Format"));
         GUI.Tooltip(LOC.Get("MAP_EdgeEditor_Segment_Radius_TT"));
     }
@@ -271,7 +271,7 @@ public partial class ModelEdgeEditorTool
         if (wrapper?.EDGE == null || index < 0 || index >= wrapper.EDGE.Edges.Count)
             return;
 
-        CFG.Current.ModelEditor_DisplayEdgePoints = true;
+        CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints = true;
         FocusOnNextDraw = true;
 
         SelectedWrapper = wrapper;
@@ -303,8 +303,8 @@ public partial class ModelEdgeEditorTool
             max = Vector3.Max(max, w);
         }
 
-        var pad = new Vector3(Math.Max(CFG.Current.Viewport_Edge_Point_Size, 0.25f));
-        viewport.FrameBox(new BoundingBox(min - pad, max + pad), CFG.Current.Viewport_Frame_Offset, CFG.Current.Viewport_Frame_Distance);
+        var pad = new Vector3(Math.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.25f));
+        viewport.FrameBox(new BoundingBox(min - pad, max + pad), CFG.Current.Viewport.Viewport_Frame_Offset, CFG.Current.Viewport.Viewport_Frame_Distance);
     }
 
     #endregion

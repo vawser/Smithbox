@@ -130,35 +130,35 @@ public class HavokPropertyView
 
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNameToggle", Icons.Book,
-            ref CFG.Current.HavokEditor_Properties_Display_Community_Names,
+            ref CFG.Current.HavokEditor.HavokEditor_Properties_Display_Community_Names,
             "HAVOK_PropertyView_Field_Name_Toggle_Internal",
             "HAVOK_PropertyView_Field_Name_Toggle_Community",
             "HAVOK_PropertyView_Field_Name_Toggle_TT");
 
         // Toggle: Type Column
         GUI.DisplayToggleButton("typeColToggle", Icons.Calculator,
-            ref CFG.Current.HavokEditor_Properties_Display_Type_Column,
+            ref CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column,
             "HAVOK_PropertyView_Type_Column_Toggle_Hide",
             "HAVOK_PropertyView_Type_Column_Toggle_Show",
             "HAVOK_PropertyView_Type_Column_Toggle_TT");
 
         // Toggle: Mesh Data
         GUI.DisplayToggleButton("meshDataToggle", Icons.Database,
-            ref CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields,
+            ref CFG.Current.HavokEditor.HavokEditor_Properties_Display_Raw_Data_Fields,
             "HAVOK_PropertyView_Mesh_Data_Toggle_Hide",
             "HAVOK_PropertyView_Mesh_Data_Toggle_Show",
             "HAVOK_PropertyView_Mesh_Data_Toggle_TT");
 
         // Toggle: Tree Auto-Open
         GUI.DisplayToggleButton("treeAutoOpenToggle", Icons.Tree,
-            ref CFG.Current.HavokEditor_Properties_Auto_Open_Tree,
+            ref CFG.Current.HavokEditor.HavokEditor_Properties_Auto_Open_Tree,
             "HAVOK_PropertyView_TreeState_Open",
             "HAVOK_PropertyView_TreeState_Closed",
             "HAVOK_PropertyView_TreeState_TT");
 
         // Toggle: Property Bags
         GUI.DisplayToggleButton("propBagToggle", Icons.ShoppingBag,
-            ref CFG.Current.HavokEditor_Properties_Display_Property_Bags,
+            ref CFG.Current.HavokEditor.HavokEditor_Properties_Display_Property_Bags,
             "HAVOK_PropertyView_PropBag_Hide",
             "HAVOK_PropertyView_PropBag_Show",
             "HAVOK_PropertyView_PropBag_TT");
@@ -251,7 +251,7 @@ public class HavokPropertyView
         var type = root.GetType();
 
         var columnCount = 2;
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             columnCount = 3;
         }
@@ -268,7 +268,7 @@ public class HavokPropertyView
 
         ImGui.NextColumn();
 
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -329,7 +329,7 @@ public class HavokPropertyView
         ImGui.NextColumn();
 
         // Blank
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -356,7 +356,7 @@ public class HavokPropertyView
         {
             var treeFlags = ImGuiTreeNodeFlags.None;
 
-            if(CFG.Current.HavokEditor_Properties_Auto_Open_Tree)
+            if(CFG.Current.HavokEditor.HavokEditor_Properties_Auto_Open_Tree)
             {
                 treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
             }
@@ -367,7 +367,7 @@ public class HavokPropertyView
 
             if (classMeta != null)
             {
-                if (CFG.Current.HavokEditor_Properties_Display_Community_Names)
+                if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Community_Names)
                 {
                     fieldName = HavokMetaHelper.GetFieldName(classMeta, prop.Name);
                 }
@@ -377,7 +377,7 @@ public class HavokPropertyView
 
             Type typ = prop.FieldType;
 
-            if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags)
+            if (!CFG.Current.HavokEditor.HavokEditor_Properties_Display_Property_Bags)
             {
                 if (typ.Name == "hkPropertyBag")
                     continue;
@@ -410,7 +410,7 @@ public class HavokPropertyView
                 StatusTooltip(fieldDescription, arrayStatus, arrayColoured);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
-                if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
                 {
                     PropContextRowOpener("arrayTypeCol");
 
@@ -451,7 +451,7 @@ public class HavokPropertyView
                             ImGui.SetNextItemWidth(-1);
                             ImGui.Text("");
                             ImGui.NextColumn();
-                            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                            if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
                             {
                                 PropContextRowOpener("arrayTypeEntryCol");
 
@@ -513,7 +513,7 @@ public class HavokPropertyView
                     ImGui.SetNextItemWidth(-1);
                     ImGui.Text("");
                     ImGui.NextColumn();
-                    if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                    if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
                     {
                         PropContextRowOpener("classTypeCol");
 
@@ -605,16 +605,16 @@ public class HavokPropertyView
 
         if (SearchCacheFilter != PropFilter ||
             SearchCacheExact != ExactPropFilter ||
-            SearchCacheRawData != CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields ||
-            SearchCachePropertyBags != CFG.Current.HavokEditor_Properties_Display_Property_Bags ||
+            SearchCacheRawData != CFG.Current.HavokEditor.HavokEditor_Properties_Display_Raw_Data_Fields ||
+            SearchCachePropertyBags != CFG.Current.HavokEditor.HavokEditor_Properties_Display_Property_Bags ||
             !ReferenceEquals(SearchCacheRoot, root))
         {
             SubtreeMatchCache.Clear();
 
             SearchCacheFilter = PropFilter;
             SearchCacheExact = ExactPropFilter;
-            SearchCacheRawData = CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields;
-            SearchCachePropertyBags = CFG.Current.HavokEditor_Properties_Display_Property_Bags;
+            SearchCacheRawData = CFG.Current.HavokEditor.HavokEditor_Properties_Display_Raw_Data_Fields;
+            SearchCachePropertyBags = CFG.Current.HavokEditor.HavokEditor_Properties_Display_Property_Bags;
             SearchCacheRoot = root;
         }
     }
@@ -661,7 +661,7 @@ public class HavokPropertyView
     {
         var typ = prop.FieldType;
 
-        if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags && typ.Name == "hkPropertyBag")
+        if (!CFG.Current.HavokEditor.HavokEditor_Properties_Display_Property_Bags && typ.Name == "hkPropertyBag")
             return false;
 
         Type elementType = null;
@@ -720,7 +720,7 @@ public class HavokPropertyView
 
             var isRawData = HavokMetaHelper.IsRawData(havokMeta, prop.Name);
 
-            if (!CFG.Current.HavokEditor_Properties_Display_Raw_Data_Fields)
+            if (!CFG.Current.HavokEditor.HavokEditor_Properties_Display_Raw_Data_Fields)
             {
                 if (isRawData)
                 {
@@ -823,7 +823,7 @@ public class HavokPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
 
@@ -1387,7 +1387,7 @@ public class HavokPropertyView
 
         ImGui.NextColumn();
 
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -1437,7 +1437,7 @@ public class HavokPropertyView
 
                         ImGui.NextColumn();
 
-                        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+                        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
                         {
                             PropContextRowOpener("listTypeCol");
 

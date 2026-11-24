@@ -12,7 +12,7 @@ public static class PropInfo_ReferencesTo
 {
     public static void Display(MapEditorView view, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
-        if (!CFG.Current.MapEditor_Field_List_Display_References)
+        if (!CFG.Current.MapEditor.MapEditor_Field_List_Display_References)
             return;
 
         if (firstEnt.References.Count == 0)

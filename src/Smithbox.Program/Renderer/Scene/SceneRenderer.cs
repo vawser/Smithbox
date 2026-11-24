@@ -158,11 +158,11 @@ public static class SceneRenderer
         Lightmaps = new LightmapTable(MaterialBufferAllocator);
         // The limit is typed freely in the preferences. A size of 0 is invalid for a Vulkan buffer, and a large
         // count would overflow the size, either of which fails startup and silently falls back to OpenGL.
-        var boneLimit = Math.Clamp(CFG.Current.Viewport_Limit_Buffer_Flver_Bone, MinBoneLimit, MaxBoneLimit);
-        if (boneLimit != CFG.Current.Viewport_Limit_Buffer_Flver_Bone)
+        var boneLimit = Math.Clamp(RenderSettings.Viewport.Viewport_Limit_Buffer_Flver_Bone, MinBoneLimit, MaxBoneLimit);
+        if (boneLimit != RenderSettings.Viewport.Viewport_Limit_Buffer_Flver_Bone)
         {
             Smithbox.LogWarning(typeof(SceneRenderer),
-                $"The FLVER bone buffer limit of {CFG.Current.Viewport_Limit_Buffer_Flver_Bone} is outside " +
+                $"The FLVER bone buffer limit of {RenderSettings.Viewport.Viewport_Limit_Buffer_Flver_Bone} is outside " +
                 $"{MinBoneLimit} to {MaxBoneLimit}, so {boneLimit} is used.");
         }
 
@@ -1303,7 +1303,7 @@ public static class SceneRenderer
             // Create per frame in flight resources
             for (var i = 0; i < _bufferCount; i++)
             {
-                _drawEncoders.Add(new IndirectDrawEncoder(CFG.Current.Viewport_Limit_Buffer_Indirect_Draw));
+                _drawEncoders.Add(new IndirectDrawEncoder(RenderSettings.Viewport.Viewport_Limit_Buffer_Indirect_Draw));
                 _resourcesUpdatedFence.Add(device.ResourceFactory.CreateFence(i != 0));
             }
 

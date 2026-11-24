@@ -23,11 +23,11 @@ public class GameOffsetsEntry
         // ParamReloader_Current_Offsets is a global CFG value, but the offset groups are
         // per-game. After switching to a project of another game the stored index can point
         // past the end of this game's list, so fall back to the latest offsets.
-        var index = CFG.Current.ParamReloader_Current_Offsets;
-        if (CFG.Current.ParamReloader_Use_Latest_Offset || index < 0 || index >= groups.Count)
+        var index = CFG.Current.ParamEditor.ParamReloader_Current_Offsets;
+        if (CFG.Current.ParamEditor.ParamReloader_Use_Latest_Offset || index < 0 || index >= groups.Count)
         {
             index = groups.Count - 1;
-            CFG.Current.ParamReloader_Current_Offsets = index;
+            CFG.Current.ParamEditor.ParamReloader_Current_Offsets = index;
         }
 
         var data = groups[index];

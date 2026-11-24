@@ -137,7 +137,7 @@ public class HavokNavmeshResource : IResource, IDisposable
 
             // DS3 and BB draw in the configured navmesh colour; the later games use a fixed one
             Vector3 color = curProject?.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB
-                ? CFG.Current.Viewport_Navmesh_Color
+                ? RenderSettings.Viewport.Viewport_Navmesh_Color
                 : new Vector3(157, 53, 255);
 
             IHavokNavMesh mesh = Document?.ObjectsOf<IHavokNavMesh>().FirstOrDefault();

@@ -27,7 +27,7 @@ public class ChangeEnumOptionField : EditorAction
                 OptionEntry.Key = $"{NewValue}";
                 break;
             case ProjectEnumOptionFieldType.Name:
-                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+                var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
                 if (OptionEntry.Names.Any(e => e.Language == curLang))
                 {
@@ -48,7 +48,7 @@ public class ChangeEnumOptionField : EditorAction
                 OptionEntry.Key = $"{OldValue}";
                 break;
             case ProjectEnumOptionFieldType.Name:
-                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+                var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
                 if (OptionEntry.Names.Any(e => e.Language == curLang))
                 {

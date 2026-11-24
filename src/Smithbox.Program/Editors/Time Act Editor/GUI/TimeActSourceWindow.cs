@@ -211,7 +211,7 @@ public class TimeActSourceWindow
 
                 if (alias != "")
                 {
-                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                    GUI.DisplayAlias(alias, CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
                 }
             }
         }

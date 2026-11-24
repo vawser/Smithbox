@@ -138,7 +138,7 @@ public class ParamDeltaPatcher
 
         // Toggle: Display All
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Display_All")}##displayAllToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
 
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -148,32 +148,32 @@ public class ParamDeltaPatcher
 
         // Toggle: Include Modified Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified")}##includeModifiedToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Modified_Rows);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified_TT"));
 
         // Toggle: Include Added Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added")}##includeAddedToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Added_Rows);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added_TT"));
 
         // Toggle: Include Deleted Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted")}##includeDeletedToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted_TT"));
 
         // Toggle: Restrict Row Modification
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify")}##restrictModifyToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify_TT"));
 
         // Toggle: Restrict Row Addition
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition")}##restrictAddToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition_TT"));
 
         // Toggle: Allow Row Overwrite
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite")}##allowOverwriteToggle",
-            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite);
+            ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite_TT"));
 
         GUI.Spacer();
@@ -458,7 +458,7 @@ public class ParamDeltaPatcher
             LOC.Get("PARAM_DeltaPatcher_Header_Options"),
             LOC.Get("PARAM_DeltaPatcher_Header_Options_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed")}##ignoreIndexedToggle", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed")}##ignoreIndexedToggle", ref CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
         GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed_TT"));
 
         GUI.Spacer();

@@ -125,18 +125,18 @@ public class GparamEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.GparamEditor_Allow_Unmodified_Save = !CFG.Current.GparamEditor_Allow_Unmodified_Save;
+                CFG.Current.GparamEditor.GparamEditor_Allow_Unmodified_Save = !CFG.Current.GparamEditor.GparamEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.GparamEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.GparamEditor.GparamEditor_Allow_Unmodified_Save);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.GparamEditor_Allow_Automatic_Save = !CFG.Current.GparamEditor_Allow_Automatic_Save;
+                CFG.Current.GparamEditor.GparamEditor_Allow_Automatic_Save = !CFG.Current.GparamEditor.GparamEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.GparamEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.GparamEditor.GparamEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -291,9 +291,9 @@ public class GparamEditorScreen : EditorScreen
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("GPARAM_View_Toggle_Tools")}##toggleTools"))
             {
-                CFG.Current.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface_GparamEditor_ToolWindow;
+                CFG.Current.Interface.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface.Interface_GparamEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_GparamEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -349,7 +349,7 @@ public class GparamEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        if(autoSave && CFG.Current.GparamEditor_Allow_Automatic_Save || !autoSave)
+        if(autoSave && CFG.Current.GparamEditor.GparamEditor_Allow_Automatic_Save || !autoSave)
         {
             var targetScript = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == activeView.Selection.SelectedFileEntry.Filename && e.Key.Extension == activeView.Selection.SelectedFileEntry.Extension);
 
@@ -409,7 +409,7 @@ public class GparamEditorScreen : EditorScreen
 
     public async void SaveAll(bool autoSave = false)
     {
-        if (autoSave && CFG.Current.GparamEditor_Allow_Automatic_Save || !autoSave)
+        if (autoSave && CFG.Current.GparamEditor.GparamEditor_Allow_Automatic_Save || !autoSave)
         {
             await Project.Handler.GparamData.PrimaryBank.SaveAllGraphicsParams();
         }

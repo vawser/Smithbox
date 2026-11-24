@@ -117,7 +117,7 @@ public class FxViewportWindow
     private void FollowEffect()
     {
         var position = Runtime.EffectWorld.Translation;
-        if (Viewport is VulkanViewport vk && LastEffectPosition is { } last && CFG.Current.FxEditor_Preview_Motion_Follow
+        if (Viewport is VulkanViewport vk && LastEffectPosition is { } last && CFG.Current.FxEditor.FxEditor_Preview_Motion_Follow
             && Editor.Playback.Motion != 0)
         {
             var delta = position - last;
@@ -137,9 +137,9 @@ public class FxViewportWindow
             return;
 
         var instance = Runtime.Instance;
-        bool markers = CFG.Current.FxEditor_Viewport_Display_Particle_Markers;
-        bool lightMarkers = CFG.Current.FxEditor_Viewport_Display_Light_Markers && Lights.DrawnLights > 0;
-        var highlightNode = CFG.Current.FxEditor_EffectTree_Highlight_Selected ? SelectedNode() : null;
+        bool markers = CFG.Current.FxEditor.FxEditor_Viewport_Display_Particle_Markers;
+        bool lightMarkers = CFG.Current.FxEditor.FxEditor_Viewport_Display_Light_Markers && Lights.DrawnLights > 0;
+        var highlightNode = CFG.Current.FxEditor.FxEditor_EffectTree_Highlight_Selected ? SelectedNode() : null;
         if (instance == null || !markers && !lightMarkers && highlightNode == null)
         {
             if (LastParticleTime >= 0)
@@ -301,8 +301,8 @@ public class FxViewportWindow
         var entry = Editor.Selection.Entry;
         // Live changes (a value mid-edit) move the wireframes too
         var key = (entry, (object)entry?.Fxr, Editor.Selection.Item, Editor.Playback.PreviewState, (EditVersion, Editor.Live.Version),
-            Editor.Playback.Version, CFG.Current.FxEditor_Viewport_Display_Emitter_Shapes,
-            CFG.Current.FxEditor_Viewport_Display_Node_Axes);
+            Editor.Playback.Version, CFG.Current.FxEditor.FxEditor_Viewport_Display_Emitter_Shapes,
+            CFG.Current.FxEditor.FxEditor_Viewport_Display_Node_Axes);
 
         if (key.Equals(BuiltKey))
             return;
@@ -322,7 +322,7 @@ public class FxViewportWindow
         if (entry?.File != null && entry != FramedEntry)
         {
             FramedEntry = entry;
-            if (CFG.Current.FxEditor_Viewport_Auto_Frame)
+            if (CFG.Current.FxEditor.FxEditor_Viewport_Auto_Frame)
                 Frame(shapes);
         }
     }

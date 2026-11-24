@@ -457,7 +457,7 @@ public class TimeActGraphWindow
 
         var scale = DPI.UIScale();
 
-        var gutter = CFG.Current.TimeActEditor_Graph_Display_Event_Names ? GutterWidth * scale : 0;
+        var gutter = CFG.Current.TimeActEditor.TimeActEditor_Graph_Display_Event_Names ? GutterWidth * scale : 0;
         var ruler = RulerHeight * scale;
         var rowHeight = RowHeight * scale;
 
@@ -489,7 +489,7 @@ public class TimeActGraphWindow
         var viewPos = ImGui.GetWindowPos();
         var viewSize = ImGui.GetWindowSize();
 
-        var baseFrameWidth = CFG.Current.TimeActEditor_Graph_Frame_Width * scale;
+        var baseFrameWidth = CFG.Current.TimeActEditor.TimeActEditor_Graph_Frame_Width * scale;
 
         HandleZoomRequests(viewSize.X - gutter - ImGui.GetStyle().ScrollbarSize, baseFrameWidth, frameDuration,
             firstFrame, lastFrame, timelineEnd);
@@ -848,7 +848,7 @@ public class TimeActGraphWindow
     /// </summary>
     private void LayoutTimeline(List<TAE.Event> events, float frameDuration)
     {
-        if (!CFG.Current.TimeActEditor_Graph_Display_Outside_Playback)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Graph_Display_Outside_Playback)
         {
             LayoutFirstFrame = 0;
             LayoutLastFrame = (int)MathF.Ceiling(View.Playback.PlaybackDuration / frameDuration);
@@ -1443,7 +1443,7 @@ public class TimeActGraphWindow
     private static void DrawOutsidePlayback(ImDrawListPtr drawList, float timelineStartX, float playbackStartX,
         float playbackEndX, float timelineEndX, float top, float bottom, uint tintColor, uint lineColor)
     {
-        if (CFG.Current.TimeActEditor_Graph_Display_Outside_Playback)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Graph_Display_Outside_Playback)
         {
             drawList.AddRectFilled(new Vector2(timelineStartX, top), new Vector2(playbackStartX, bottom), tintColor);
             drawList.AddRectFilled(new Vector2(playbackEndX, top), new Vector2(timelineEndX, bottom), tintColor);

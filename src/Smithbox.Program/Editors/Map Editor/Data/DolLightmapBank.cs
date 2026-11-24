@@ -63,7 +63,7 @@ public class DolLightmapBank
 
     public bool CanUse()
     {
-        return CFG.Current.Viewport_Map_Lightmaps &&
+        return CFG.Current.Viewport.Viewport_Map_Lightmaps &&
                GparamProfile.For(Project.Descriptor.ProjectType).HasDolLightmaps;
     }
 
@@ -186,7 +186,7 @@ public class DolLightmapBank
 
         // The game's scale of the lightmaps isn't known, so the profile's and the viewport's go on the GPARAM's color
         var scale = GparamProfile.For(Project.Descriptor.ProjectType).LightmapScale *
-                    Math.Max(CFG.Current.Viewport_Map_Lightmap_Intensity, 0.0f);
+                    Math.Max(CFG.Current.Viewport.Viewport_Map_Lightmap_Intensity, 0.0f);
 
         // Bloodborne binds a 1x1 placeholder lightmap for a part without lightmap (seen in the game's frames): its light
         // is taken as a constant, matched to in-game screenshots

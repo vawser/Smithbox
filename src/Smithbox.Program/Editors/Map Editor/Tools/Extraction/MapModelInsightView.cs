@@ -98,7 +98,7 @@ public class MapModelInsightView
 
         GUI.Spacer();
         GUI.SimpleHeader("Export Directory", "The directory to export the model/texture data to.");
-        GUI.SinglelineTextInput("extractDir", ref CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
+        GUI.SinglelineTextInput("extractDir", ref CFG.Current.MapEditor.MapEditor_ModelDataExtraction_DefaultOutputFolder);
 
         GUI.MultiButtonInput("extractDirActions",
             "setDirectory", "Set Export Directory", "", SetExportDirectory,
@@ -108,7 +108,7 @@ public class MapModelInsightView
         GUI.SimpleHeader("Extraction Type", "");
 
         GUI.SetInputWidth();
-        if (ImGui.BeginCombo("##extractTypeSelect", CFG.Current.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
+        if (ImGui.BeginCombo("##extractTypeSelect", CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
         {
             foreach (var typ in Enum.GetValues(typeof(ResourceExtractionType)))
             {
@@ -116,17 +116,17 @@ public class MapModelInsightView
 
                 if (ImGui.Selectable(curEntry.GetDisplayName()))
                 {
-                    CFG.Current.MapEditor_ModelDataExtraction_Type = (ResourceExtractionType)typ;
+                    CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type = (ResourceExtractionType)typ;
                 }
             }
 
             ImGui.EndCombo();
         }
-        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
+        if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
         {
             GUI.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
         }
-        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
+        if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
         {
             GUI.Tooltip("Files when extracted will be contained with the container files they belong to.");
         }
@@ -134,7 +134,7 @@ public class MapModelInsightView
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
 
-        ImGui.Checkbox("Include Folder", ref CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder);
+        ImGui.Checkbox("Include Folder", ref CFG.Current.MapEditor.MapEditor_ModelDataExtraction_IncludeFolder);
         GUI.Tooltip("If enabled, a folder will be created to contain the files, titled with the name of the FLVER model.");
 
         GUI.Spacer();
@@ -199,7 +199,7 @@ public class MapModelInsightView
     public void ExtractFlverAction()
     {
         var entry = View.ModelInsightTool.SelectedFlverEntry;
-        var outputFolder = CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder;
+        var outputFolder = CFG.Current.MapEditor.MapEditor_ModelDataExtraction_DefaultOutputFolder;
 
         if(outputFolder == "")
         {
@@ -219,7 +219,7 @@ public class MapModelInsightView
     public void ExtractTextureAction()
     {
         var entry = View.ModelInsightTool.SelectedFlverEntry;
-        var outputFolder = CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder;
+        var outputFolder = CFG.Current.MapEditor.MapEditor_ModelDataExtraction_DefaultOutputFolder;
 
         if (outputFolder == "")
         {
@@ -239,7 +239,7 @@ public class MapModelInsightView
     public void ExtractMaterialAction()
     {
         var entry = View.ModelInsightTool.SelectedFlverEntry;
-        var outputFolder = CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder;
+        var outputFolder = CFG.Current.MapEditor.MapEditor_ModelDataExtraction_DefaultOutputFolder;
 
         if (outputFolder == "")
         {
@@ -262,13 +262,13 @@ public class MapModelInsightView
         var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
         if (result)
         {
-            CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder = path;
+            CFG.Current.MapEditor.MapEditor_ModelDataExtraction_DefaultOutputFolder = path;
         }
     }
 
     public void OpenExportDirectory()
     {
-        Process.Start("explorer.exe", CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
+        Process.Start("explorer.exe", CFG.Current.MapEditor.MapEditor_ModelDataExtraction_DefaultOutputFolder);
     }
 
     public void ExtractFLVER(ProjectEntry project, MapFlverInsightEntry entry, string outputDirectory)
@@ -290,7 +290,7 @@ public class MapModelInsightView
 
         var writeDir = outputDirectory;
 
-        if (CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder)
+        if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_IncludeFolder)
         {
             writeDir = Path.Combine(outputDirectory, entry.Name);
 
@@ -300,13 +300,13 @@ public class MapModelInsightView
             }
         }
 
-        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
+        if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
         {
             var writePath = Path.Combine(writeDir, fileName);
             File.WriteAllBytes(writePath, virtFile.GetData().ToArray());
         }
 
-        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
+        if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
         {
             var containerType = ModelEditorUtils.GetContainerTypeFromPath(relativePath);
 
@@ -380,7 +380,7 @@ public class MapModelInsightView
 
             var writeDir = outputDirectory;
 
-            if (CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder)
+            if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_IncludeFolder)
             {
                 writeDir = Path.Combine(outputDirectory, entry.Name);
 
@@ -453,7 +453,7 @@ public class MapModelInsightView
 
             var writeDir = outputDirectory;
 
-            if (CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder)
+            if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_IncludeFolder)
             {
                 writeDir = Path.Combine(outputDirectory, entry.Name);
 
@@ -463,7 +463,7 @@ public class MapModelInsightView
                 }
             }
 
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
+            if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
             {
                 if (!writtenFiles.Contains(fileName))
                 {
@@ -475,7 +475,7 @@ public class MapModelInsightView
                 }
             }
 
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
+            if (CFG.Current.MapEditor.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
             {
                 var containerType = ModelEditorUtils.GetContainerTypeFromPath(relativePath);
 

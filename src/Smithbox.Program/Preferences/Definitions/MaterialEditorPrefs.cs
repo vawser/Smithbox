@@ -30,7 +30,7 @@ public class MaterialEditorPrefs
             Description = "PREF_MaterialEditor_Properties_Display_Community_Names_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.MaterialEditor_Properties_Display_Community_Names);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Community_Names);
             }
         };
     }

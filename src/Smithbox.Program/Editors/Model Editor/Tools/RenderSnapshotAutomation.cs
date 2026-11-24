@@ -140,11 +140,11 @@ public static class RenderSnapshotAutomation
         if (++Frames < StartupFrames)
             return;
 
-        SavedRenderMode = CFG.Current.Viewport_Render_Mode;
-        SavedFolder = CFG.Current.ModelEditor_RenderSnapshot_Folder;
+        SavedRenderMode = CFG.Current.Viewport.Viewport_Render_Mode;
+        SavedFolder = CFG.Current.ModelEditor.ModelEditor_RenderSnapshot_Folder;
 
-        CFG.Current.Viewport_Render_Mode = (int)ViewportRenderMode.Game;
-        CFG.Current.ModelEditor_RenderSnapshot_Folder = Root;
+        CFG.Current.Viewport.Viewport_Render_Mode = (int)ViewportRenderMode.Game;
+        CFG.Current.ModelEditor.ModelEditor_RenderSnapshot_Folder = Root;
 
         GameIndex = 0;
         StartGame();
@@ -378,8 +378,8 @@ public static class RenderSnapshotAutomation
 
         CurrentStage = Stage.Done;
 
-        CFG.Current.Viewport_Render_Mode = SavedRenderMode;
-        CFG.Current.ModelEditor_RenderSnapshot_Folder = SavedFolder;
+        CFG.Current.Viewport.Viewport_Render_Mode = SavedRenderMode;
+        CFG.Current.ModelEditor.ModelEditor_RenderSnapshot_Folder = SavedFolder;
 
         Write(Failures == 0 ? "Done" : $"Done, with {Failures} failure(s)");
         Log?.Dispose();

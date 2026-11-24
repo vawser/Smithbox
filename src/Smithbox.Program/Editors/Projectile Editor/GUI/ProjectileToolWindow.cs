@@ -28,10 +28,10 @@ public class ProjectileToolWindow
         // General
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_General"));
 
-        if (CFG.Current.Interface_ProjectileEditor_Tool_Playback)
+        if (CFG.Current.Interface.Interface_ProjectileEditor_Tool_Playback)
             PlaybackTool.OnToolWindow();
 
-        if (CFG.Current.Interface_ProjectileEditor_Tool_SimulationFilters)
+        if (CFG.Current.Interface.Interface_ProjectileEditor_Tool_SimulationFilters)
             SimulationFiltersTool.OnToolWindow();
 
         Sections.End();

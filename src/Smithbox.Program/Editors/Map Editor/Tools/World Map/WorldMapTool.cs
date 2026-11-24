@@ -62,7 +62,7 @@ public class WorldMapTool : IResourceEventListener
         };
 
         if (map != null && Project.Descriptor.ProjectType is ProjectType.NR
-            && CFG.Current.WorldMapDisplayUnderground && GameTiles?.HasUnderground(map) == true)
+            && CFG.Current.MapEditor.WorldMapDisplayUnderground && GameTiles?.HasUnderground(map) == true)
         {
             map += WorldMapTileSet.UndergroundSuffix;
         }
@@ -146,7 +146,7 @@ public class WorldMapTool : IResourceEventListener
     /// </summary>
     public void ToggleWindow()
     {
-        CFG.Current.Interface_MapEditor_MapInformation = !CFG.Current.Interface_MapEditor_MapInformation;
+        CFG.Current.Interface.Interface_MapEditor_MapInformation = !CFG.Current.Interface.Interface_MapEditor_MapInformation;
     }
 
     private void BuildLayouts()
@@ -319,24 +319,24 @@ public class WorldMapTool : IResourceEventListener
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_MapInfo_Tile_Display_Header"), LOC.Get("MAP_MapInfo_Tile_Display_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Tiles")}##worldMapTiles", ref CFG.Current.WorldMapDisplayTiles);
+        ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Tiles")}##worldMapTiles", ref CFG.Current.MapEditor.WorldMapDisplayTiles);
         GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Tiles_TT"));
 
-        if (CFG.Current.WorldMapDisplayTiles)
+        if (CFG.Current.MapEditor.WorldMapDisplayTiles)
         {
-            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Small")}##worldMapTilesSmall", ref CFG.Current.WorldMapDisplaySmallTiles);
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Small")}##worldMapTilesSmall", ref CFG.Current.MapEditor.WorldMapDisplaySmallTiles);
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Small_TT"));
 
-            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Medium")}##worldMapTilesMedium", ref CFG.Current.WorldMapDisplayMediumTiles);
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Medium")}##worldMapTilesMedium", ref CFG.Current.MapEditor.WorldMapDisplayMediumTiles);
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Medium_TT"));
 
-            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Large")}##worldMapTilesLarge", ref CFG.Current.WorldMapDisplayLargeTiles);
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Large")}##worldMapTilesLarge", ref CFG.Current.MapEditor.WorldMapDisplayLargeTiles);
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Large_TT"));
         }
 
         if (Project.Descriptor.ProjectType is ProjectType.NR)
         {
-            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Filter_Restrict")}##worldMapFilterRestrict", ref CFG.Current.WorldMapFilter_RestrictBySource);
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Filter_Restrict")}##worldMapFilterRestrict", ref CFG.Current.MapEditor.WorldMapFilter_RestrictBySource);
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Filter_Restrict_TT"));
 
             if (GameTiles != null)
@@ -344,7 +344,7 @@ public class WorldMapTool : IResourceEventListener
                 GUI.Spacer();
                 GUI.SimpleHeader(LOC.Get("MAP_MapInfo_Map_Display_Header"), LOC.Get("MAP_MapInfo_Map_Display_Header_TT"));
 
-                ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Underground")}##worldMapUnderground", ref CFG.Current.WorldMapDisplayUnderground);
+                ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Underground")}##worldMapUnderground", ref CFG.Current.MapEditor.WorldMapDisplayUnderground);
                 GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Underground_TT"));
             }
         }
@@ -358,7 +358,7 @@ public class WorldMapTool : IResourceEventListener
     /// </summary>
     public void Display(uint dockspaceId, int viewIndex, uint viewportDockId)
     {
-        if (!IsAvailable(Project) || !CFG.Current.Interface_MapEditor_MapInformation)
+        if (!IsAvailable(Project) || !CFG.Current.Interface.Interface_MapEditor_MapInformation)
             return;
 
         BuildLayouts();
@@ -562,18 +562,18 @@ public class WorldMapTool : IResourceEventListener
 
     private void DrawTileOverlay(ImDrawListPtr drawList)
     {
-        if (!CFG.Current.WorldMapDisplayTiles)
+        if (!CFG.Current.MapEditor.WorldMapDisplayTiles)
             return;
 
         foreach (var tile in GetTileList())
         {
-            if (tile.TileType is WorldMapTileType.Small && !CFG.Current.WorldMapDisplaySmallTiles)
+            if (tile.TileType is WorldMapTileType.Small && !CFG.Current.MapEditor.WorldMapDisplaySmallTiles)
                 continue;
 
-            if (tile.TileType is WorldMapTileType.Medium && !CFG.Current.WorldMapDisplayMediumTiles)
+            if (tile.TileType is WorldMapTileType.Medium && !CFG.Current.MapEditor.WorldMapDisplayMediumTiles)
                 continue;
 
-            if (tile.TileType is WorldMapTileType.Large && !CFG.Current.WorldMapDisplayLargeTiles)
+            if (tile.TileType is WorldMapTileType.Large && !CFG.Current.MapEditor.WorldMapDisplayLargeTiles)
                 continue;
 
             Vector2 drawStart = ImageMin + new Vector2(tile.X, tile.Y) * MapZoomFactor;
@@ -684,7 +684,7 @@ public class WorldMapTool : IResourceEventListener
     /// </summary>
     private bool IsInCurrentSource(WorldMapTile tile)
     {
-        if (!CFG.Current.WorldMapFilter_RestrictBySource)
+        if (!CFG.Current.MapEditor.WorldMapFilter_RestrictBySource)
             return true;
 
         var variant = CurrentMapSource switch

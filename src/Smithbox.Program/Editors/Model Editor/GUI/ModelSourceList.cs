@@ -142,11 +142,11 @@ public class ModelContainerList
         // Filters as you type, like the other lists, and when the options the filter uses change
         bool filterChanged = ContainerListFilter != _previousFilter
             || ExactContainerListFilter != _previousExactFilter
-            || CFG.Current.ModelEditor_Containers_IncludeAliasInSearch != _previousIncludeAlias;
+            || CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch != _previousIncludeAlias;
 
         _previousFilter = ContainerListFilter;
         _previousExactFilter = ExactContainerListFilter;
-        _previousIncludeAlias = CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
+        _previousIncludeAlias = CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch;
 
         bool tabChanged = _previousTab != CurrentTab;
 
@@ -159,13 +159,13 @@ public class ModelContainerList
 
         // Load Mode
         var loadMode = LOC.Get("MODEL_SourceList_Toggle_Load_Mode_Select");
-        if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick)
             loadMode = LOC.Get("MODEL_SourceList_Toggle_Load_Mode_Double_Click");
 
         ImGui.AlignTextToFramePadding();
         if (ImGui.Button($"{Icons.Bars}"))
         {
-            CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick = !CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
+            CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick = !CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick;
         }
         GUI.Tooltip(LOC.Get("MODEL_SourceList_Toggle_Load_Mode_TT", loadMode));
 
@@ -237,7 +237,7 @@ public class ModelContainerList
                 continue;
             }
 
-            if (CFG.Current.ModelEditor_Containers_IncludeAliasInSearch
+            if (CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch
                 && AliasTypeMap.TryGetValue(CurrentTab, out var aliasType))
             {
                 nameAlias = AliasHelper.GetAlias(Project, modelName, CurrentTab); // collapsed below
@@ -339,7 +339,7 @@ public class ModelContainerList
                     displayedName, modelListType);
 
                 var flags = ImGuiSelectableFlags.None;
-                if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
+                if (CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick)
                 {
                     flags = ImGuiSelectableFlags.AllowDoubleClick;
                 }
@@ -360,7 +360,7 @@ public class ModelContainerList
                 {
                     SelectModel(fileEntry);
 
-                    if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
+                    if (CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick)
                     {
                         if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
@@ -389,7 +389,7 @@ public class ModelContainerList
 
                 if (alias != "")
                 {
-                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                    GUI.DisplayAlias(alias, CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
                 }
 
                 // Context Menu

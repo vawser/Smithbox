@@ -86,7 +86,7 @@ public partial class FirstPersonTool
 
     private bool IsEnabled => CanUse();
 
-    public static FirstPersonCapsule PlayerCapsule => new(CFG.Current.MapEditor_FirstPerson_Radius, CFG.Current.MapEditor_FirstPerson_Height);
+    public static FirstPersonCapsule PlayerCapsule => new(CFG.Current.MapEditor.MapEditor_FirstPerson_Radius, CFG.Current.MapEditor.MapEditor_FirstPerson_Height);
 
     /// <summary>How the player moves, from the settings.</summary>
     public static FirstPersonMoveSettings MoveSettings
@@ -94,13 +94,13 @@ public partial class FirstPersonTool
         get
         {
             var settings = FirstPersonMoveSettings.Default;
-            settings.WalkSpeed = MathF.Max(0.1f, CFG.Current.MapEditor_FirstPerson_Walk_Speed);
-            settings.RunSpeed = MathF.Max(settings.WalkSpeed, CFG.Current.MapEditor_FirstPerson_Run_Speed);
-            settings.Gravity = MathF.Max(0.1f, CFG.Current.MapEditor_FirstPerson_Gravity);
-            settings.JumpHeight = MathF.Max(0f, CFG.Current.MapEditor_FirstPerson_Jump_Height);
-            settings.StepHeight = Math.Clamp(CFG.Current.MapEditor_FirstPerson_Step_Height, 0f, CFG.Current.MapEditor_FirstPerson_Height * 0.5f);
-            settings.MaxSlopeCos = MathF.Cos(Math.Clamp(CFG.Current.MapEditor_FirstPerson_Max_Slope, 0f, 89f) * MathF.PI / 180f);
-            settings.SlideNotStandable = CFG.Current.MapEditor_FirstPerson_Slide_Not_Standable;
+            settings.WalkSpeed = MathF.Max(0.1f, CFG.Current.MapEditor.MapEditor_FirstPerson_Walk_Speed);
+            settings.RunSpeed = MathF.Max(settings.WalkSpeed, CFG.Current.MapEditor.MapEditor_FirstPerson_Run_Speed);
+            settings.Gravity = MathF.Max(0.1f, CFG.Current.MapEditor.MapEditor_FirstPerson_Gravity);
+            settings.JumpHeight = MathF.Max(0f, CFG.Current.MapEditor.MapEditor_FirstPerson_Jump_Height);
+            settings.StepHeight = Math.Clamp(CFG.Current.MapEditor.MapEditor_FirstPerson_Step_Height, 0f, CFG.Current.MapEditor.MapEditor_FirstPerson_Height * 0.5f);
+            settings.MaxSlopeCos = MathF.Cos(Math.Clamp(CFG.Current.MapEditor.MapEditor_FirstPerson_Max_Slope, 0f, 89f) * MathF.PI / 180f);
+            settings.SlideNotStandable = CFG.Current.MapEditor.MapEditor_FirstPerson_Slide_Not_Standable;
             return settings;
         }
     }
@@ -262,7 +262,7 @@ public partial class FirstPersonTool
         => Color.FromArgb(255, (int)Math.Clamp(c.X, 0, 255), (int)Math.Clamp(c.Y, 0, 255), (int)Math.Clamp(c.Z, 0, 255));
 
     private static Color StateColor(FirstPersonSpawnState state)
-        => ToColor(state == FirstPersonSpawnState.Ready ? CFG.Current.MapEditor_FirstPerson_Spawn_Color : CFG.Current.MapEditor_FirstPerson_Blocked_Color);
+        => ToColor(state == FirstPersonSpawnState.Ready ? CFG.Current.MapEditor.MapEditor_FirstPerson_Spawn_Color : CFG.Current.MapEditor.MapEditor_FirstPerson_Blocked_Color);
 
     private void UpdateDrawing()
     {
@@ -323,7 +323,7 @@ public partial class FirstPersonTool
 
     private DebugPrimitiveRenderableProxy MakeProxy(IDbgPrim prim)
     {
-        var color = ToColor(CFG.Current.MapEditor_FirstPerson_Spawn_Color);
+        var color = ToColor(CFG.Current.MapEditor.MapEditor_FirstPerson_Spawn_Color);
 
         return new DebugPrimitiveRenderableProxy(Scene.OpaqueRenderables, prim)
         {
@@ -380,7 +380,7 @@ public partial class FirstPersonTool
         }
 
         // The eye, as a short cross
-        var eye = CFG.Current.MapEditor_FirstPerson_Eye_Height;
+        var eye = CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height;
         lines.Add((new Vector3(-r * 0.5f, eye, 0), new Vector3(r * 0.5f, eye, 0)));
         lines.Add((new Vector3(0, eye, -r * 0.5f), new Vector3(0, eye, r * 0.5f)));
 
@@ -418,7 +418,7 @@ public partial class FirstPersonTool
             return;
         }
 
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
+        if (!CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions)
         {
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Collision_Loading_Off"));
             ImGui.EndChild();
@@ -522,7 +522,7 @@ public partial class FirstPersonTool
             if (status.MapPartsFallback > 0 || status.MapPartsMissing > 0)
                 GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Map_Other", status.MapPartsFallback, status.MapPartsMissing));
 
-            if (CFG.Current.MapEditor_FirstPerson_Assets)
+            if (CFG.Current.MapEditor.MapEditor_FirstPerson_Assets)
                 GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Assets", status.AssetPlacements, status.AssetModels, $"{status.AssetTriangles:N0}"));
 
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Cost", $"{status.MemoryBytes / (1024.0 * 1024.0):0.0}", $"{status.Milliseconds / 1000.0:0.0}"));
@@ -546,7 +546,7 @@ public partial class FirstPersonTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_FirstPerson_Layer_Header"), LOC.Get("MAP_FirstPerson_Layer_Header_TT"));
 
-        var layer = CFG.Current.MapEditor_FirstPerson_Layer is HavokCollisionType.High ? HavokCollisionType.High : HavokCollisionType.Low;
+        var layer = CFG.Current.MapEditor.MapEditor_FirstPerson_Layer is HavokCollisionType.High ? HavokCollisionType.High : HavokCollisionType.Low;
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##mapFirstPersonLayer", LOC.Get(layer.GetDisplayName())))
@@ -554,22 +554,22 @@ public partial class FirstPersonTool
             foreach (var type in new[] { HavokCollisionType.Low, HavokCollisionType.High })
             {
                 if (ImGui.Selectable($"{LOC.Get(type.GetDisplayName())}##mapFirstPersonLayer{type}", type == layer))
-                    CFG.Current.MapEditor_FirstPerson_Layer = type;
+                    CFG.Current.MapEditor.MapEditor_FirstPerson_Layer = type;
             }
 
             ImGui.EndCombo();
         }
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Layer_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Fall_Protection")}##mapFirstPersonFall", ref CFG.Current.MapEditor_FirstPerson_Fall_Protection);
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Fall_Protection")}##mapFirstPersonFall", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Fall_Protection);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Fall_Protection_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Assets")}##mapFirstPersonAssets", ref CFG.Current.MapEditor_FirstPerson_Assets);
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Assets")}##mapFirstPersonAssets", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Assets);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Assets_TT"));
 
-        if (CFG.Current.MapEditor_FirstPerson_Assets)
+        if (CFG.Current.MapEditor.MapEditor_FirstPerson_Assets)
         {
-            ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Dummy_Assets")}##mapFirstPersonDummies", ref CFG.Current.MapEditor_FirstPerson_Dummy_Assets);
+            ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Dummy_Assets")}##mapFirstPersonDummies", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Dummy_Assets);
             GUI.Tooltip(LOC.Get("MAP_FirstPerson_Dummy_Assets_TT"));
         }
     }
@@ -583,63 +583,63 @@ public partial class FirstPersonTool
         var changed = false;
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##mapFirstPersonEyeHeight", ref CFG.Current.MapEditor_FirstPerson_Eye_Height, 0.5f, 3.0f, LOC.Get("MAP_FirstPerson_Eye_Height_Format"));
+        changed |= ImGui.SliderFloat("##mapFirstPersonEyeHeight", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height, 0.5f, 3.0f, LOC.Get("MAP_FirstPerson_Eye_Height_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Eye_Height_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##mapFirstPersonHeight", ref CFG.Current.MapEditor_FirstPerson_Height, 0.5f, 3.5f, LOC.Get("MAP_FirstPerson_Height_Format"));
+        changed |= ImGui.SliderFloat("##mapFirstPersonHeight", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Height, 0.5f, 3.5f, LOC.Get("MAP_FirstPerson_Height_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Height_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##mapFirstPersonRadius", ref CFG.Current.MapEditor_FirstPerson_Radius, 0.1f, 1.0f, LOC.Get("MAP_FirstPerson_Radius_Format"));
+        changed |= ImGui.SliderFloat("##mapFirstPersonRadius", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Radius, 0.1f, 1.0f, LOC.Get("MAP_FirstPerson_Radius_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Radius_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##mapFirstPersonSlope", ref CFG.Current.MapEditor_FirstPerson_Max_Slope, 10f, 80f, LOC.Get("MAP_FirstPerson_Max_Slope_Format"));
+        changed |= ImGui.SliderFloat("##mapFirstPersonSlope", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Max_Slope, 10f, 80f, LOC.Get("MAP_FirstPerson_Max_Slope_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Max_Slope_TT"));
 
         // The head stays inside the capsule
-        CFG.Current.MapEditor_FirstPerson_Height = MathF.Max(CFG.Current.MapEditor_FirstPerson_Height, CFG.Current.MapEditor_FirstPerson_Eye_Height + 0.1f);
+        CFG.Current.MapEditor.MapEditor_FirstPerson_Height = MathF.Max(CFG.Current.MapEditor.MapEditor_FirstPerson_Height, CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height + 0.1f);
 
         // Movement
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_FirstPerson_Movement_Header"), LOC.Get("MAP_FirstPerson_Movement_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##mapFirstPersonWalkSpeed", ref CFG.Current.MapEditor_FirstPerson_Walk_Speed, 0.5f, 15f, LOC.Get("MAP_FirstPerson_Walk_Speed_Format"));
+        ImGui.SliderFloat("##mapFirstPersonWalkSpeed", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Walk_Speed, 0.5f, 15f, LOC.Get("MAP_FirstPerson_Walk_Speed_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Walk_Speed_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##mapFirstPersonRunSpeed", ref CFG.Current.MapEditor_FirstPerson_Run_Speed, 0.5f, 30f, LOC.Get("MAP_FirstPerson_Run_Speed_Format"));
+        ImGui.SliderFloat("##mapFirstPersonRunSpeed", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Run_Speed, 0.5f, 30f, LOC.Get("MAP_FirstPerson_Run_Speed_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Run_Speed_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##mapFirstPersonJumpHeight", ref CFG.Current.MapEditor_FirstPerson_Jump_Height, 0f, 5f, LOC.Get("MAP_FirstPerson_Jump_Height_Format"));
+        ImGui.SliderFloat("##mapFirstPersonJumpHeight", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Jump_Height, 0f, 5f, LOC.Get("MAP_FirstPerson_Jump_Height_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Jump_Height_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##mapFirstPersonGravity", ref CFG.Current.MapEditor_FirstPerson_Gravity, 1f, 60f, LOC.Get("MAP_FirstPerson_Gravity_Format"));
+        ImGui.SliderFloat("##mapFirstPersonGravity", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Gravity, 1f, 60f, LOC.Get("MAP_FirstPerson_Gravity_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Gravity_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##mapFirstPersonStepHeight", ref CFG.Current.MapEditor_FirstPerson_Step_Height, 0f, 1f, LOC.Get("MAP_FirstPerson_Step_Height_Format"));
+        ImGui.SliderFloat("##mapFirstPersonStepHeight", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Step_Height, 0f, 1f, LOC.Get("MAP_FirstPerson_Step_Height_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Step_Height_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Slide_Not_Standable")}##mapFirstPersonSlide", ref CFG.Current.MapEditor_FirstPerson_Slide_Not_Standable);
+        changed |= ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Slide_Not_Standable")}##mapFirstPersonSlide", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Slide_Not_Standable);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Slide_Not_Standable_TT"));
 
         if (ImGui.Button($"{LOC.Get("MAP_FirstPerson_Player_Reset")}##mapFirstPersonPlayerReset", new Vector2(-1, 0)))
         {
-            CFG.Current.MapEditor_FirstPerson_Eye_Height = 1.5f;
-            CFG.Current.MapEditor_FirstPerson_Height = 1.7f;
-            CFG.Current.MapEditor_FirstPerson_Radius = 0.35f;
-            CFG.Current.MapEditor_FirstPerson_Max_Slope = 50f;
-            CFG.Current.MapEditor_FirstPerson_Walk_Speed = 4f;
-            CFG.Current.MapEditor_FirstPerson_Run_Speed = 7f;
-            CFG.Current.MapEditor_FirstPerson_Jump_Height = 1f;
-            CFG.Current.MapEditor_FirstPerson_Gravity = 20f;
-            CFG.Current.MapEditor_FirstPerson_Step_Height = 0.45f;
-            CFG.Current.MapEditor_FirstPerson_Slide_Not_Standable = true;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height = 1.5f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Height = 1.7f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Radius = 0.35f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Max_Slope = 50f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Walk_Speed = 4f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Run_Speed = 7f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Jump_Height = 1f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Gravity = 20f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Step_Height = 0.45f;
+            CFG.Current.MapEditor.MapEditor_FirstPerson_Slide_Not_Standable = true;
             changed = true;
         }
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Player_Reset_TT"));

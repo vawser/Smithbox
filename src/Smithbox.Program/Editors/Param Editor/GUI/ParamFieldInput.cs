@@ -121,7 +121,7 @@ public class ParamFieldInput
         else if (typ == typeof(float))
         {
             // Display in-game form of this property (i.e. 75% instead of 0.25)
-            if (metaContext.IsInvertedPercentage && CFG.Current.ParamEditor_Field_Input_Display_Traditional_Percentage)
+            if (metaContext.IsInvertedPercentage && CFG.Current.ParamEditor.ParamEditor_Field_Input_Display_Traditional_Percentage)
             {
                 float fakeVal = (1 - (float)oldval) * 100;
 
@@ -260,7 +260,7 @@ public class ParamFieldInput
                 {
                     SetPendingInteger<T>(number, ref newval);
                 }
-                else if (CFG.Current.ParamEditor_Field_Input_Clamp_Out_Of_Range)
+                else if (CFG.Current.ParamEditor.ParamEditor_Field_Input_Clamp_Out_Of_Range)
                 {
                     var clamped = Math.Clamp(number, min, max);
                     SetPendingInteger<T>(clamped, ref newval);

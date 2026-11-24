@@ -39,7 +39,7 @@ public class MapToolWindow
                     View.WorldMapTool.ToggleWindow();
                 }
                 GUI.Tooltip(LOC.Get("MAP_MapInfo_Open_TT", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)));
-                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapInformation);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_MapEditor_MapInformation);
             }
 
             if (ImGui.BeginMenu("Miscellaneous"))

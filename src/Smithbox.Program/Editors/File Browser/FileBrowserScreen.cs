@@ -170,9 +170,9 @@ public class FileBrowserScreen : EditorScreen
         {
             if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_ViewToggle_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
+                CFG.Current.Interface.Interface_FileBrowser_ToolView = !CFG.Current.Interface.Interface_FileBrowser_ToolView;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ToolView);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_FileBrowser_ToolView);
 
             ImGui.Separator();
 

@@ -138,17 +138,17 @@ public class EmevdEditorScreen : EditorScreen
 
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.EmevdEditor_Allow_Unmodified_Save = !CFG.Current.EmevdEditor_Allow_Unmodified_Save;
+                CFG.Current.EmevdEditor.EmevdEditor_Allow_Unmodified_Save = !CFG.Current.EmevdEditor.EmevdEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor.EmevdEditor_Allow_Unmodified_Save);
 
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.EmevdEditor_Allow_Automatic_Save = !CFG.Current.EmevdEditor_Allow_Automatic_Save;
+                CFG.Current.EmevdEditor.EmevdEditor_Allow_Automatic_Save = !CFG.Current.EmevdEditor.EmevdEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor.EmevdEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -188,39 +188,39 @@ public class EmevdEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Structured")}##structuredToggle"))
             {
-                CFG.Current.EmevdEditor_Structured_View = !CFG.Current.EmevdEditor_Structured_View;
+                CFG.Current.EmevdEditor.EmevdEditor_Structured_View = !CFG.Current.EmevdEditor.EmevdEditor_Structured_View;
             }
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Structured_TT"));
-            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Structured_View);
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor.EmevdEditor_Structured_View);
 
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Arg_Names")}##argNamesToggle"))
             {
-                CFG.Current.EmevdEditor_Show_Arg_Names = !CFG.Current.EmevdEditor_Show_Arg_Names;
+                CFG.Current.EmevdEditor.EmevdEditor_Show_Arg_Names = !CFG.Current.EmevdEditor.EmevdEditor_Show_Arg_Names;
             }
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Arg_Names_TT"));
-            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Show_Arg_Names);
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor.EmevdEditor_Show_Arg_Names);
 
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_Comments_Toggle")}##commentsToggle"))
             {
-                CFG.Current.EmevdEditor_Show_Comments = !CFG.Current.EmevdEditor_Show_Comments;
+                CFG.Current.EmevdEditor.EmevdEditor_Show_Comments = !CFG.Current.EmevdEditor.EmevdEditor_Show_Comments;
             }
             GUI.Tooltip(LOC.Get("EMEVD_Comments_Toggle_TT"));
-            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Show_Comments);
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor.EmevdEditor_Show_Comments);
 
             // DS2 / SotFS: MustSub calls shown as the SpEffectMustSub event they run
             if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Inline_MustSub")}##inlineMustSubToggle"))
                 {
-                    CFG.Current.EmevdEditor_Inline_MustSub_Calls = !CFG.Current.EmevdEditor_Inline_MustSub_Calls;
+                    CFG.Current.EmevdEditor.EmevdEditor_Inline_MustSub_Calls = !CFG.Current.EmevdEditor.EmevdEditor_Inline_MustSub_Calls;
                 }
                 GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Inline_MustSub_TT"));
-                GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Inline_MustSub_Calls);
+                GUI.ShowActiveStatus(CFG.Current.EmevdEditor.EmevdEditor_Inline_MustSub_Calls);
             }
 
             ImGui.Separator();
 
-            var structured = CFG.Current.EmevdEditor_Structured_View && View.BlockView.CurrentScript != null;
+            var structured = CFG.Current.EmevdEditor.EmevdEditor_Structured_View && View.BlockView.CurrentScript != null;
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Collapse_All")}##collapseAll", "", false, structured))
                 View.BlockView.SetAllCollapsed(true);
             GUI.Tooltip(LOC.Get("EMEVD_View_Collapse_All_TT"));
@@ -233,10 +233,10 @@ public class EmevdEditorScreen : EditorScreen
 
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Tools")}##toolWindowToggle"))
             {
-                CFG.Current.Interface_EmevdEditor_ToolWindow = !CFG.Current.Interface_EmevdEditor_ToolWindow;
+                CFG.Current.Interface.Interface_EmevdEditor_ToolWindow = !CFG.Current.Interface.Interface_EmevdEditor_ToolWindow;
             }
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Tools_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_EmevdEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -271,11 +271,11 @@ public class EmevdEditorScreen : EditorScreen
     {
         var bank = Bank;
 
-        if (bank != null && (!autoSave || CFG.Current.EmevdEditor_Allow_Automatic_Save))
+        if (bank != null && (!autoSave || CFG.Current.EmevdEditor.EmevdEditor_Allow_Automatic_Save))
         {
             var selected = View?.Selection.SelectedFile;
 
-            if (!autoSave && selected is { IsLoaded: true, IsDirty: false } && CFG.Current.EmevdEditor_Allow_Unmodified_Save)
+            if (!autoSave && selected is { IsLoaded: true, IsDirty: false } && CFG.Current.EmevdEditor.EmevdEditor_Allow_Unmodified_Save)
                 selected.IsDirty = true;
 
             if (bank.GetDirtyFiles().Count == 0)

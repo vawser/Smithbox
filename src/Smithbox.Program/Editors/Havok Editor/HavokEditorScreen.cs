@@ -39,20 +39,20 @@ public class HavokEditorScreen : EditorScreen
     // Each mode has its own save and window settings
     public bool AllowUnmodifiedSave
     {
-        get => BehaviorMode ? CFG.Current.BehaviorEditor_Allow_Unmodified_Save : CFG.Current.HavokEditor_Allow_Unmodified_Save;
-        set { if (BehaviorMode) CFG.Current.BehaviorEditor_Allow_Unmodified_Save = value; else CFG.Current.HavokEditor_Allow_Unmodified_Save = value; }
+        get => BehaviorMode ? CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Unmodified_Save : CFG.Current.HavokEditor.HavokEditor_Allow_Unmodified_Save;
+        set { if (BehaviorMode) CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Unmodified_Save = value; else CFG.Current.HavokEditor.HavokEditor_Allow_Unmodified_Save = value; }
     }
 
     public bool AllowAutomaticSave
     {
-        get => BehaviorMode ? CFG.Current.BehaviorEditor_Allow_Automatic_Save : CFG.Current.HavokEditor_Allow_Automatic_Save;
-        set { if (BehaviorMode) CFG.Current.BehaviorEditor_Allow_Automatic_Save = value; else CFG.Current.HavokEditor_Allow_Automatic_Save = value; }
+        get => BehaviorMode ? CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Automatic_Save : CFG.Current.HavokEditor.HavokEditor_Allow_Automatic_Save;
+        set { if (BehaviorMode) CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Automatic_Save = value; else CFG.Current.HavokEditor.HavokEditor_Allow_Automatic_Save = value; }
     }
 
     public bool ShowToolWindow
     {
-        get => BehaviorMode ? CFG.Current.Interface_BehaviorEditor_ToolWindow : CFG.Current.Interface_HavokEditor_ToolWindow;
-        set { if (BehaviorMode) CFG.Current.Interface_BehaviorEditor_ToolWindow = value; else CFG.Current.Interface_HavokEditor_ToolWindow = value; }
+        get => BehaviorMode ? CFG.Current.Interface.Interface_BehaviorEditor_ToolWindow : CFG.Current.Interface.Interface_HavokEditor_ToolWindow;
+        set { if (BehaviorMode) CFG.Current.Interface.Interface_BehaviorEditor_ToolWindow = value; else CFG.Current.Interface.Interface_HavokEditor_ToolWindow = value; }
     }
 
     /// <summary>Set the focus to one of the editor's windows, as belonging to this instance</summary>
@@ -342,68 +342,68 @@ public class HavokEditorScreen : EditorScreen
                 // Search
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Search")}##behaviorSearchToolToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Search = !CFG.Current.Interface_BehaviorEditor_Tool_Search;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Search = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Search;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Search);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Search);
 
                 // Templates
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Templates")}##behaviorTemplatesToolToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Templates = !CFG.Current.Interface_BehaviorEditor_Tool_Templates;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Templates = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Templates;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Templates);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Templates);
 
                 // Changes
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Changes")}##behaviorChangesToolToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Changes = !CFG.Current.Interface_BehaviorEditor_Tool_Changes;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Changes = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Changes;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Changes);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Changes);
 
                 // Merge
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Merge")}##behaviorMergeToolToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Merge = !CFG.Current.Interface_BehaviorEditor_Tool_Merge;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Merge = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Merge;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Merge);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Merge);
 
                 // Bookmarks
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Bookmarks")}##behaviorBookmarksToolToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks = !CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Bookmarks = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Bookmarks;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Bookmarks);
 
                 // Problems
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Problems")}##behaviorProblemsToolToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Problems = !CFG.Current.Interface_BehaviorEditor_Tool_Problems;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Problems = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Problems;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Problems);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Problems);
 
                 // Character Selector
                 if (ImGui.MenuItem($"{LOC.Get("BHV_Viewer_View_Toggle_Character_Selector")}##behaviorCharacterSelectorToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector = !CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Selector = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Selector;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Selector);
 
                 // Character Preview
                 if (ImGui.MenuItem($"{LOC.Get("BHV_Viewer_View_Toggle_Character_Preview")}##behaviorCharacterPreviewToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview = !CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Preview = !CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Preview;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Preview);
 
                 ImGui.Separator();
 
                 // Viewport (and its Animation window)
                 if (ImGui.MenuItem($"{LOC.Get("BHV_Viewer_View_Toggle_Viewport")}##behaviorViewportToggle"))
                 {
-                    CFG.Current.Interface_BehaviorEditor_Viewport = !CFG.Current.Interface_BehaviorEditor_Viewport;
+                    CFG.Current.Interface.Interface_BehaviorEditor_Viewport = !CFG.Current.Interface.Interface_BehaviorEditor_Viewport;
                 }
                 GUI.Tooltip(LOC.Get("BHV_Viewer_View_Toggle_Viewport_TT"));
-                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Viewport);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_Viewport);
             }
 
             ImGui.Separator();

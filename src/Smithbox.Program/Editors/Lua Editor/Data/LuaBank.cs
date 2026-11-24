@@ -732,7 +732,7 @@ public class LuaScript
                 {
                     try
                     {
-                        _text = LuaDecompile.ToText(Bytes, CFG.Current.LuaEditor_Readable_Names);
+                        _text = LuaDecompile.ToText(Bytes, CFG.Current.LuaEditor.LuaEditor_Readable_Names);
                         SavedText = _text;
                         IsDecompileIncomplete = IsBytecode && LuaDecompile.IsIncomplete(_text);
                     }

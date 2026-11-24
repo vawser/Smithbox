@@ -97,7 +97,7 @@ public static class ProjectileParams
     /// </summary>
     public static Param.Row? FindAttackRow(ProjectEntry project, int id, out string? paramName)
     {
-        var preferEnemy = CFG.Current.ProjectileEditor_UseEnemyAttacks;
+        var preferEnemy = CFG.Current.ProjectileEditor.ProjectileEditor_UseEnemyAttacks;
         var first = preferEnemy ? EnemyAttackParam : PlayerAttackParam;
         var second = preferEnemy ? PlayerAttackParam : EnemyAttackParam;
 

@@ -100,7 +100,7 @@ public class SettingsEditor
         }
 
         // Developer, from the Help menu
-        if (CFG.Current.Developer_Enable_Tools &&
+        if (CFG.Current.Developer.Developer_Enable_Tools &&
             ImGui.BeginMenu($"{LOC.Get("SETTINGS_Menu_Developer")}##developerMenuHeader"))
         {
             Smithbox.Instance.DeveloperPanel.DisplayDropdown();

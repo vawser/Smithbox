@@ -168,7 +168,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
             prettyName = "Blocked Words";
 
         // Only show DLC type in non-Simple mode
-        if (!CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
+        if (!CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers)
         {
             if (name.Contains("dlc01") || name.Contains("dlc1"))
                 prettyName = $"{prettyName} - DLC 1";

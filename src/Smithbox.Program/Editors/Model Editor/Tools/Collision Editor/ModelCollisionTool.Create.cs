@@ -62,7 +62,7 @@ public partial class ModelCollisionTool
         // Meshes
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Flver_Meshes_Header"),
-            LOC.Get("MAP_CollisionEditor_Create_Flver_Meshes_Header_TT"), ref CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes);
+            LOC.Get("MAP_CollisionEditor_Create_Flver_Meshes_Header_TT"), ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Meshes);
 
         if (ImGui.Button($"{LOC.Get("MAP_CollisionEditor_Create_Flver_All")}##modelCollisionCreateAll"))
             Array.Fill(CreateMeshes, true);
@@ -73,7 +73,7 @@ public partial class ModelCollisionTool
             Array.Fill(CreateMeshes, false);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_None_TT"));
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Meshes)
         {
             ImGui.BeginChild("modelCollisionCreateMeshList", new Vector2(0, 150 * DPI.UIScale()), ImGuiChildFlags.Borders);
 
@@ -89,9 +89,9 @@ public partial class ModelCollisionTool
         // Material
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Material_Header"), LOC.Get("MAP_CollisionEditor_Create_Material_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Material);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Material);
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Create_Material)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Material)
         {
             CreateMaterialPicker ??= new CollisionMaterialPicker(Project);
             CreateMaterialPicker.Display(ref CreateMaterialId, null);
@@ -108,8 +108,8 @@ public partial class ModelCollisionTool
             if (files.UsesLayerBinders)
             {
                 ref var chosen = ref type is HavokCollisionType.High
-                    ? ref CFG.Current.ModelEditor_CollisionTool_Create_High
-                    : ref CFG.Current.ModelEditor_CollisionTool_Create_Low;
+                    ? ref CFG.Current.ModelEditor.ModelEditor_CollisionTool_Create_High
+                    : ref CFG.Current.ModelEditor.ModelEditor_CollisionTool_Create_Low;
 
                 ImGui.Checkbox($"{LOC.Get(type.GetDisplayName())}##modelCollisionCreateLayer{type}", ref chosen);
                 GUI.Tooltip(LOC.Get("MODEL_CollisionTool_Create_Layer_TT"));
@@ -144,38 +144,38 @@ public partial class ModelCollisionTool
     {
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header"),
-            LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header_TT"), ref CFG.Current.MapEditor_CollisionEditor_Show_Flver_Simplify);
+            LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header_TT"), ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Simplify);
 
-        if (!CFG.Current.MapEditor_CollisionEditor_Show_Flver_Simplify)
+        if (!CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Simplify)
         {
-            if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+            if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify)
                 GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Applying"));
             return;
         }
 
         ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify")}##modelCollisionCreateSimplify",
-            ref CFG.Current.MapEditor_CollisionEditor_Flver_Simplify);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.MapEditor_CollisionEditor_Flver_Simplify);
+        ImGui.BeginDisabled(!CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify);
 
-        var target = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target;
+        var target = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target;
         if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Target")}##modelCollisionCreateSimplifyTarget", ref target, 5f, 10f, "%.0f%%"))
-            CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target = Math.Clamp(target, 1f, 100f);
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target = Math.Clamp(target, 1f, 100f);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Target_TT"));
 
-        var error = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error;
+        var error = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error;
         if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Max_Error")}##modelCollisionCreateSimplifyError", ref error, 0.05f, 0.25f, "%.3f m"))
-            CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error = MathF.Max(error, 0.001f);
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error = MathF.Max(error, 0.001f);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Max_Error_TT"));
 
         ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders")}##modelCollisionCreateSimplifyLock",
-            ref CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders_TT"));
 
         ImGui.EndDisabled();
 
-        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify && SimplifiedFrom > 0)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify && SimplifiedFrom > 0)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Result", SimplifiedFrom, SimplifiedTo,
                 $"{100.0 * SimplifiedTo / SimplifiedFrom:0.#}"));
@@ -219,10 +219,10 @@ public partial class ModelCollisionTool
 
         var targets = new List<HavokCollisionType>();
 
-        if (CFG.Current.ModelEditor_CollisionTool_Create_High)
+        if (CFG.Current.ModelEditor.ModelEditor_CollisionTool_Create_High)
             targets.Add(HavokCollisionType.High);
 
-        if (CFG.Current.ModelEditor_CollisionTool_Create_Low)
+        if (CFG.Current.ModelEditor.ModelEditor_CollisionTool_Create_Low)
             targets.Add(HavokCollisionType.Low);
 
         return targets;
@@ -514,15 +514,15 @@ public partial class ModelCollisionTool
         if (indices.Count == 0)
             return false;
 
-        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify)
         {
             var before = indices.Count / 3;
 
             (vertices, indices, materials) = CollisionMeshSimplifier.Simplify(welded, indices, materials, new CollisionMeshSimplifier.Settings
             {
-                TargetRatio = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target / 100f,
-                MaxError = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error,
-                LockBorders = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders
+                TargetRatio = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target / 100f,
+                MaxError = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error,
+                LockBorders = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders
             });
 
             SimplifiedFrom = before;

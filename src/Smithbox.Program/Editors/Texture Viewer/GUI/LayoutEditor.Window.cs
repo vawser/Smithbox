@@ -134,10 +134,10 @@ public partial class LayoutEditor
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TEXVIEW_Layout_Display_Header"), LOC.Get("TEXVIEW_Layout_Display_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TEXVIEW_Layout_Show_Cells")}##layoutShowCells", ref CFG.Current.TextureViewerLayout_ShowCells);
+        ImGui.Checkbox($"{LOC.Get("TEXVIEW_Layout_Show_Cells")}##layoutShowCells", ref CFG.Current.TextureViewer.TextureViewerLayout_ShowCells);
         GUI.Tooltip(LOC.Get("TEXVIEW_Layout_Show_Cells_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TEXVIEW_Layout_Show_Names")}##layoutShowNames", ref CFG.Current.TextureViewerLayout_ShowNames);
+        ImGui.Checkbox($"{LOC.Get("TEXVIEW_Layout_Show_Names")}##layoutShowNames", ref CFG.Current.TextureViewer.TextureViewerLayout_ShowNames);
         GUI.Tooltip(LOC.Get("TEXVIEW_Layout_Show_Names_TT"));
 
         if (!IsEditable)
@@ -152,8 +152,8 @@ public partial class LayoutEditor
 
         GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Snap"));
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputInt("##layoutSnap", ref CFG.Current.TextureViewerLayout_Snap);
-        CFG.Current.TextureViewerLayout_Snap = Math.Clamp(CFG.Current.TextureViewerLayout_Snap, 1, 512);
+        ImGui.InputInt("##layoutSnap", ref CFG.Current.TextureViewer.TextureViewerLayout_Snap);
+        CFG.Current.TextureViewer.TextureViewerLayout_Snap = Math.Clamp(CFG.Current.TextureViewer.TextureViewerLayout_Snap, 1, 512);
         GUI.Tooltip(LOC.Get("TEXVIEW_Layout_Snap_TT"));
     }
     #endregion
@@ -194,7 +194,7 @@ public partial class LayoutEditor
             "delete", LOC.Get("TEXVIEW_Layout_Delete"), LOC.Get("TEXVIEW_Layout_Delete_TT"),
             DeleteSelected, IsEditable && Selected.Count > 0,
 
-            "export", LOC.Get("TEXVIEW_Layout_Export"), LOC.Get("TEXVIEW_Layout_Export_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation),
+            "export", LOC.Get("TEXVIEW_Layout_Export"), LOC.Get("TEXVIEW_Layout_Export_TT", CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation),
             () => Status = ExportSelected(), Selected.Count > 0);
 
         // The sheet's pixels under the cells (PC TPFs; the layout itself can be read-only)
@@ -519,12 +519,12 @@ public partial class LayoutEditor
 
         string[] scaleLabels = [LOC.Get("TEXVIEW_Layout_Twin_Scale_Guess"), LOC.Get("TEXVIEW_Layout_Twin_Scale_Full"), LOC.Get("TEXVIEW_Layout_Twin_Scale_Half")];
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.BeginCombo("##layoutTwinScale", scaleLabels[Math.Clamp(CFG.Current.TextureViewerTwin_ScaleMode, 0, 2)]))
+        if (ImGui.BeginCombo("##layoutTwinScale", scaleLabels[Math.Clamp(CFG.Current.TextureViewer.TextureViewerTwin_ScaleMode, 0, 2)]))
         {
             for (int i = 0; i < scaleLabels.Length; i++)
             {
-                if (ImGui.Selectable($"{scaleLabels[i]}##twinScale{i}", CFG.Current.TextureViewerTwin_ScaleMode == i))
-                    CFG.Current.TextureViewerTwin_ScaleMode = i;
+                if (ImGui.Selectable($"{scaleLabels[i]}##twinScale{i}", CFG.Current.TextureViewer.TextureViewerTwin_ScaleMode == i))
+                    CFG.Current.TextureViewer.TextureViewerTwin_ScaleMode = i;
             }
             ImGui.EndCombo();
         }
@@ -647,7 +647,7 @@ public partial class LayoutEditor
     /// <summary>Crops each selected cell from the sheet into a PNG in the export folder (the TODO's "export icon").</summary>
     private string ExportSelected()
     {
-        var folder = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
+        var folder = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation;
         if (string.IsNullOrEmpty(folder) || !Directory.Exists(folder))
             return LOC.Get("TEXVIEW_TexExport_Log_Export_Dir_Not_Set");
 

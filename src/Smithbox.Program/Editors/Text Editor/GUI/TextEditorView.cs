@@ -194,7 +194,7 @@ public class TextEditorView : IEditorView
 
         ImGui.End();
 
-        if (CFG.Current.Interface_TextEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_TextEditor_ToolWindow)
         {
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

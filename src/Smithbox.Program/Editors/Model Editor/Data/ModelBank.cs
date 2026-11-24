@@ -850,7 +850,7 @@ public class ModelWrapper
         var folder = Parent.Path.Substring(0, Parent.Path.LastIndexOf('/') + 1);
 
         // Not every asset has both collision types, so fall back to the other one
-        var suffixes = CFG.Current.CurrentHavokCollisionType is HavokCollisionType.High
+        var suffixes = CFG.Current.Viewport.CurrentHavokCollisionType is HavokCollisionType.High
             ? new[] { "h", "l" }
             : new[] { "l", "h" };
 
@@ -1077,7 +1077,7 @@ public class ModelWrapper
     /// </summary>
     public bool Save()
     {
-        if (!CFG.Current.ModelEditor_Allow_Unmodified_Save && !IsDirty)
+        if (!CFG.Current.ModelEditor.ModelEditor_Allow_Unmodified_Save && !IsDirty)
         {
             Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", Name));
             return false;

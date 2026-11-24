@@ -39,7 +39,7 @@ public class ParamListWindow
         DisplayTitle();
         DisplayHeader(isActiveView);
 
-        if (CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
+        if (CFG.Current.ParamEditor.ParamEditor_Param_List_Pinned_Stay_Visible)
         {
             DisplayPinnedParams();
         }
@@ -47,7 +47,7 @@ public class ParamListWindow
         ImGui.BeginChild("paramTypes");
         FocusManager.SetFocus(EditorFocusContext.ParamEditor_ParamList);
 
-        if (!CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
+        if (!CFG.Current.ParamEditor.ParamEditor_Param_List_Pinned_Stay_Visible)
         {
             DisplayPinnedParams();
         }
@@ -125,7 +125,7 @@ public class ParamListWindow
         {
             // Toggle: Table List
             GUI.DisplayToggleButton("tableListView", Icons.Table,
-                ref CFG.Current.ParamEditor_Display_Table_List,
+                ref CFG.Current.ParamEditor.ParamEditor_Display_Table_List,
                 "PARAM_ParamWindow_ToggleTableGroup_Hidden",
                 "PARAM_ParamWindow_ToggleTableGroup_Visible",
                 "PARAM_ParamWindow_ToggleTableGroup_Hint");
@@ -133,14 +133,14 @@ public class ParamListWindow
 
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNamesToggle", Icons.Book,
-            ref CFG.Current.ParamEditor_Param_List_Display_Community_Names,
+            ref CFG.Current.ParamEditor.ParamEditor_Param_List_Display_Community_Names,
             "PARAM_ParamWindow_ToggleCommunityNames_Source",
             "PARAM_ParamWindow_ToggleCommunityNames_Community",
             "PARAM_ParamWindow_ToggleCommunityNames_Hint");
 
         // Toggle: Param Categories
         GUI.DisplayToggleButton("paramCategoriesToggle", Icons.Cubes,
-            ref CFG.Current.ParamEditor_Param_List_Display_Categories,
+            ref CFG.Current.ParamEditor.ParamEditor_Param_List_Display_Categories,
             "PARAM_ParamWindow_ToggleCategories_Hidden",
             "PARAM_ParamWindow_ToggleCategories_Visible",
             "PARAM_ParamWindow_ToggleCategories_Hint");
@@ -149,7 +149,7 @@ public class ParamListWindow
         {
             // Toggle: Stay Params
             GUI.DisplayToggleButton("stayParamToggle", Icons.Database,
-                ref CFG.Current.ParamEditor_Param_List_Display_StayParams,
+                ref CFG.Current.ParamEditor.ParamEditor_Param_List_Display_StayParams,
                 "PARAM_ParamWindow_ToggleStayParams_Hidden",
                 "PARAM_ParamWindow_ToggleStayParams_Visible",
                 "PARAM_ParamWindow_ToggleStayParams_Hint");
@@ -159,7 +159,7 @@ public class ParamListWindow
         {
             // Toggle: Far Model Params
             GUI.DisplayToggleButton("farModelParamToggle", Icons.Map,
-                ref CFG.Current.ParamEditor_Param_List_Display_FarModelParams,
+                ref CFG.Current.ParamEditor.ParamEditor_Param_List_Display_FarModelParams,
                 "PARAM_ParamWindow_ToggleFarModelParams_Hidden",
                 "PARAM_ParamWindow_ToggleFarModelParams_Visible",
                 "PARAM_ParamWindow_ToggleFarModelParams_Hint");
@@ -266,7 +266,7 @@ public class ParamListWindow
                 var keyList = list.Where(param => param.Item1 == primaryBank)
                     .Select(param => primaryBank.GetKeyForParam(param.Item2)).ToList();
 
-                if (CFG.Current.ParamEditor_Param_List_Sort_Alphabetically)
+                if (CFG.Current.ParamEditor.ParamEditor_Param_List_Sort_Alphabetically)
                 {
                     keyList.Sort();
                 }
@@ -301,7 +301,7 @@ public class ParamListWindow
         var categoryObj = Editor.Project.Handler.ParamData.ParamCategories;
         var categories = Editor.Project.Handler.ParamData.ParamCategories.Categories;
 
-        if (categories != null && CFG.Current.ParamEditor_Param_List_Display_Categories)
+        if (categories != null && CFG.Current.ParamEditor.ParamEditor_Param_List_Display_Categories)
         {
             var generalParamList = new List<string>();
 
@@ -393,7 +393,7 @@ public class ParamListWindow
 
         // DS3 Stay Params: grouped like the other categories
         if (Project.Descriptor.ProjectType is ProjectType.DS3
-            && CFG.Current.ParamEditor_Param_List_Display_StayParams
+            && CFG.Current.ParamEditor.ParamEditor_Param_List_Display_StayParams
             && Project.Handler.ParamData.PrimaryBank.StayParams.Count > 0
             && ImGui.CollapsingHeader($"{LOC.Get("PARAM_ParamWindow_Category_StayParams")}##stayParamCategory",
                 ImGuiTreeNodeFlags.DefaultOpen))
@@ -403,7 +403,7 @@ public class ParamListWindow
 
         // SDT Far Model Params: grouped like the other categories
         if (Project.Descriptor.ProjectType is ProjectType.SDT
-            && CFG.Current.ParamEditor_Param_List_Display_FarModelParams
+            && CFG.Current.ParamEditor.ParamEditor_Param_List_Display_FarModelParams
             && farModelKeyList.Count > 0
             && ImGui.CollapsingHeader($"{LOC.Get("PARAM_ParamWindow_Category_FarModelParams")}##farModelParamCategory",
                 ImGuiTreeNodeFlags.DefaultOpen))
@@ -500,7 +500,7 @@ public class ParamListWindow
     /// </summary>
     private string GetParamDisplayName(string paramKey, Param p)
     {
-        if (!CFG.Current.ParamEditor_Param_List_Display_Community_Names || p?.AppliedParamdef == null)
+        if (!CFG.Current.ParamEditor.ParamEditor_Param_List_Display_Community_Names || p?.AppliedParamdef == null)
             return paramKey;
 
         var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
@@ -643,7 +643,7 @@ public class ParamListWindow
             }
 
             // Wiki
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
                 if (ImGui.BeginMenu($"{LOC.Get("PARAM_ParamWindow_Context_Wiki_Header")}##wikiMenuHeader"))
                 {

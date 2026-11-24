@@ -43,7 +43,7 @@ public class HavokBank : IDisposable
     /// <summary>
     /// Whether Save also writes the selected file when it has no changes (the owning editor's setting)
     /// </summary>
-    public Func<bool> AllowUnmodifiedSave = () => CFG.Current.HavokEditor_Allow_Unmodified_Save;
+    public Func<bool> AllowUnmodifiedSave = () => CFG.Current.HavokEditor.HavokEditor_Allow_Unmodified_Save;
 
     /// <summary>
     /// The in-memory copy of each binder that file actions have touched. File actions change it instead of

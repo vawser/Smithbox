@@ -11,8 +11,8 @@ public static class PropPositionAction
 {
     public static void CopyCurrentPosition(PropertyInfo prop, object obj)
     {
-        CFG.Current.SavedPosition = (Vector3)obj;
-        //CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
+        CFG.Current.MapEditor.SavedPosition = (Vector3)obj;
+        //CFG.Current.MapEditor.SavedPosition = (Vector3)prop.GetValue(obj, null);
     }
 
     public static void PasteSavedPosition(MapEditorView view, ViewportSelection _selection)

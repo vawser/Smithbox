@@ -92,7 +92,7 @@ public partial class LayoutEditor
 
     private int Snap(float v)
     {
-        var s = Math.Max(1, CFG.Current.TextureViewerLayout_Snap);
+        var s = Math.Max(1, CFG.Current.TextureViewer.TextureViewerLayout_Snap);
         return (int)MathF.Round(v / s) * s;
     }
 
@@ -256,14 +256,14 @@ public partial class LayoutEditor
             var max = imageMin + new Vector2(r.Right, r.Bottom) * scale;
             drawList.AddRect(min, max, color, 0, ImDrawFlags.None, thickness);
 
-            if (CFG.Current.TextureViewerLayout_ShowNames && max.X - min.X > 40 && max.Y - min.Y > 14)
+            if (CFG.Current.TextureViewer.TextureViewerLayout_ShowNames && max.X - min.X > 40 && max.Y - min.Y > 14)
             {
                 var name = c.Name.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ? c.Name[..^4] : c.Name;
                 drawList.AddText(min + new Vector2(2, 1), color, name);
             }
         }
 
-        if (CFG.Current.TextureViewerLayout_ShowCells)
+        if (CFG.Current.TextureViewer.TextureViewerLayout_ShowCells)
         {
             foreach (var c in Atlas.SubTextures)
             {

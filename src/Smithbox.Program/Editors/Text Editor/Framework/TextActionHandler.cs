@@ -76,7 +76,7 @@ public class TextActionHandler
             claimedIds.Add(newId);
 
             // If this is enabled, just use the current entry ID
-            if(CFG.Current.TextEditor_Text_Entry_List_Ignore_ID_Check)
+            if(CFG.Current.TextEditor.TextEditor_Text_Entry_List_Ignore_ID_Check)
             {
                 newId = curEntry.ID;
             }
@@ -140,7 +140,7 @@ public class TextActionHandler
 
                 // Respect Allow Duplicate ID: don't create an entry whose ID already exists
                 // in any FMG of the group, or that another duplicate in this batch claimed.
-                if (!CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID)
+                if (!CFG.Current.TextEditor.TextEditor_Text_Entry_Allow_Duplicate_ID)
                 {
                     if (!IsIdFree(groupFmgs, newId, lookup: lookup) || !claimedIds.Add(newId))
                     {
@@ -185,7 +185,7 @@ public class TextActionHandler
 
         var group = Parent.EntryGroupManager.GetEntryGroup(entry, lookup);
 
-        if (group != null && group.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        if (group != null && group.SupportsGrouping && CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
             foreach (var slot in group.Slots)
             {
@@ -251,7 +251,7 @@ public class TextActionHandler
             return actions;
 
         // Duplicate every entry of the group together (each slot that has one)
-        if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
             foreach (var slot in fmgEntryGroup.Slots)
             {
@@ -367,7 +367,7 @@ public class TextActionHandler
             return actions;
 
         // Delete every entry of the group together (each slot that has one)
-        if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
             foreach (var slot in fmgEntryGroup.Slots)
             {
@@ -419,7 +419,7 @@ public class TextActionHandler
         if (entries.Count == 0)
             return;
 
-        var groupingOn = CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries;
+        var groupingOn = CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries;
         var lookup = new FmgEntryLookup();
         var copied = new List<TextEntryClipboard.CopiedEntry>();
 
@@ -445,7 +445,7 @@ public class TextActionHandler
 
         TextEntryClipboard.Set(copied);
 
-        CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+        CopyEntryTextToClipboard(CFG.Current.TextEditor.TextEditor_Text_Clipboard_Include_ID);
 
         Smithbox.Log(this, LOC.Get("TEXT_EntryClipboard_Copied", copied.Count));
     }
@@ -467,7 +467,7 @@ public class TextActionHandler
         // The target's group slots by meaning, when grouping is on and the FMG is grouped
         var slotWrappers = new Dictionary<string, TextFmgWrapper>(StringComparer.OrdinalIgnoreCase);
 
-        if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        if (CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
             foreach (var (slot, wrapper) in Parent.EntryGroupManager.GetGroupWrappers(fmgWrapper.ID))
             {
@@ -576,7 +576,7 @@ public class TextActionHandler
     /// </summary>
     public void RevertToVanilla()
     {
-        if (!CFG.Current.TextEditor_Include_Vanilla_Cache)
+        if (!CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache)
         {
             Smithbox.LogWarning(this, LOC.Get("TEXT_Vanilla_Cache_Disabled"));
             return;
@@ -690,7 +690,7 @@ public class TextActionHandler
 
             var newText = $"{entry.Text}";
 
-            if (CFG.Current.TextEditor_Text_Clipboard_Escape_New_Lines)
+            if (CFG.Current.TextEditor.TextEditor_Text_Clipboard_Escape_New_Lines)
             {
                 newText = newText.Replace("\n", "\\n");
             }

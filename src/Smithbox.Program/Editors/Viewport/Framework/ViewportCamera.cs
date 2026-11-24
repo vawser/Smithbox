@@ -77,9 +77,9 @@ public class ViewportCamera
     private bool PreviousResetActionPress;
 
     // Perspective projection
-    public float CameraMoveSpeed_Fast = CFG.Current.Viewport_Camera_MoveSpeed_Fast;
-    public float CameraMoveSpeed_Normal = CFG.Current.Viewport_Camera_MoveSpeed_Normal;
-    public float CameraMoveSpeed_Slow = CFG.Current.Viewport_Camera_MoveSpeed_Slow;
+    public float CameraMoveSpeed_Fast = CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Fast;
+    public float CameraMoveSpeed_Normal = CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Normal;
+    public float CameraMoveSpeed_Slow = CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Slow;
 
     /// <summary>
     ///     Scales the perspective move speeds for the scale of what this viewport shows, so the shared speeds suit
@@ -89,7 +89,7 @@ public class ViewportCamera
     public float MoveSpeedFactor = 1.0f;
 
     // Orthographic projection
-    public float OrthographicSize = CFG.Current.Viewport_DefaultOrthographicSize;
+    public float OrthographicSize = CFG.Current.Viewport.Viewport_DefaultOrthographicSize;
     public float OrthographicMinSize = 0.1f;
     public float OrthographicMaxSize = 20000.0f;
 
@@ -97,7 +97,7 @@ public class ViewportCamera
     ///     How far ahead of the camera the thing being looked at is. Framing sets it. An oblique view is unsheared at
     ///     this depth, and switching between perspective and orthographic keeps what is at this depth the same size.
     /// </summary>
-    public float FocusDistance = CFG.Current.Viewport_DefaultOrthographicSize / (2.0f * MathF.Tan(30.0f * MathF.PI / 180.0f));
+    public float FocusDistance = CFG.Current.Viewport.Viewport_DefaultOrthographicSize / (2.0f * MathF.Tan(30.0f * MathF.PI / 180.0f));
 
     // Shares of the view's height moved (A/D/Q/E) and zoomed (W/S, as e^rate) per second in orthographic
     private const float OrthographicMoveRate = 0.75f;
@@ -114,7 +114,7 @@ public class ViewportCamera
     ///     of a building seen from above. It replaces the near and far clips while it is on.
     /// </summary>
     public bool SliceEnabled;
-    public float SliceHalfDepth = CFG.Current.Viewport_Slice_Half_Depth;
+    public float SliceHalfDepth = CFG.Current.Viewport.Viewport_Slice_Half_Depth;
 
     public const float SliceMinHalfDepth = 0.05f;
     public const float SliceMaxHalfDepth = 5000.0f;
@@ -125,14 +125,14 @@ public class ViewportCamera
     /// <summary>The view depths drawn by an orthographic or oblique view: the slice's, or the clip settings'</summary>
     public (float Near, float Far) OrthographicDepthRange => IsSlicing
         ? (FocusDistance - SliceHalfDepth, FocusDistance + SliceHalfDepth)
-        : (CFG.Current.Viewport_Orthographic_Near_Clip, CFG.Current.Viewport_Orthographic_Far_Clip);
+        : (CFG.Current.Viewport.Viewport_Orthographic_Near_Clip, CFG.Current.Viewport.Viewport_Orthographic_Far_Clip);
 
     // Oblique projection
-    public float ObliqueAngle = CFG.Current.Viewport_DefaultObliqueAngle;
-    public float ObliqueScaling = CFG.Current.Viewport_DefaultObliqueScaling;
+    public float ObliqueAngle = CFG.Current.Viewport.Viewport_DefaultObliqueAngle;
+    public float ObliqueScaling = CFG.Current.Viewport.Viewport_DefaultObliqueScaling;
 
     // Pan sensitivity for orthographic/oblique modes
-    public float PanSensitivity = CFG.Current.Viewport_MousePan_Sensitivity;
+    public float PanSensitivity = CFG.Current.Viewport.Viewport_MousePan_Sensitivity;
 
     public ViewportCamera(IViewport viewport, Rectangle bounds)
     {
@@ -400,8 +400,8 @@ public class ViewportCamera
                 // the press point for the hover checks that decide whether the viewport takes input
                 SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressPos.X, (int)MousePressPos.Y);
 
-                var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
-                var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
+                var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * CFG.Current.Viewport.Viewport_Camera_Sensitivity;
+                var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * CFG.Current.Viewport.Viewport_Camera_Sensitivity;
 
                 Vector3 eu = CameraTransform.EulerRotation;
                 eu.Y -= camH;
@@ -546,7 +546,7 @@ public class ViewportCamera
     /// <summary>
     ///     tan(fov / 2) of the perspective camera, which relates a view height to the distance it is seen at.
     /// </summary>
-    public static float HalfFovTangent => MathF.Tan(CFG.Current.Viewport_Camera_FOV * MathF.PI / 360.0f);
+    public static float HalfFovTangent => MathF.Tan(CFG.Current.Viewport.Viewport_Camera_FOV * MathF.PI / 360.0f);
 
     /// <summary>
     /// Sets the camera projection type
@@ -561,7 +561,7 @@ public class ViewportCamera
         KeepFocusSize(previous, type);
 
         // An oblique view slanted off a free rotation is hard to read, so it starts square to the nearest axis
-        if (type is ViewMode.Oblique && previous is not ViewMode.Oblique && CFG.Current.Viewport_Oblique_Snap_To_Axis)
+        if (type is ViewMode.Oblique && previous is not ViewMode.Oblique && CFG.Current.Viewport.Viewport_Oblique_Snap_To_Axis)
         {
             SnapToNearestAxis();
         }
@@ -585,8 +585,8 @@ public class ViewportCamera
         ObliqueAngle = 45.0f;
         ObliqueScaling = preset is ObliquePreset.Cabinet ? 0.5f : 1.0f;
 
-        CFG.Current.Viewport_DefaultObliqueAngle = ObliqueAngle;
-        CFG.Current.Viewport_DefaultObliqueScaling = ObliqueScaling;
+        CFG.Current.Viewport.Viewport_DefaultObliqueAngle = ObliqueAngle;
+        CFG.Current.Viewport.Viewport_DefaultObliqueScaling = ObliqueScaling;
 
         if (ViewMode is not ViewMode.Oblique)
         {
@@ -680,7 +680,7 @@ public class ViewportCamera
         if (newSize == oldSize)
             return;
 
-        if (BoundingRect.Width > 0 && BoundingRect.Height > 0 && CFG.Current.Viewport_Orthographic_Zoom_To_Cursor)
+        if (BoundingRect.Width > 0 && BoundingRect.Height > 0 && CFG.Current.Viewport.Viewport_Orthographic_Zoom_To_Cursor)
         {
             // The cursor in -1..1 across the view, up positive
             var nx = 2.0f * (cursor.X - BoundingRect.Left) / BoundingRect.Width - 1.0f;
@@ -756,7 +756,7 @@ public class ViewportCamera
     public void SetSliceHalfDepth(float halfDepth)
     {
         SliceHalfDepth = Math.Clamp(halfDepth, SliceMinHalfDepth, SliceMaxHalfDepth);
-        CFG.Current.Viewport_Slice_Half_Depth = SliceHalfDepth;
+        CFG.Current.Viewport.Viewport_Slice_Half_Depth = SliceHalfDepth;
         UpdateProjectionMatrix();
     }
 
@@ -792,7 +792,7 @@ public class ViewportCamera
         var (forward, up) = GetPresetViewAxes(view);
         LookAlong(forward, up);
 
-        if (ViewMode is ViewMode.Perspective && CFG.Current.Viewport_Preset_View_Switch_To_Orthographic)
+        if (ViewMode is ViewMode.Perspective && CFG.Current.Viewport.Viewport_Preset_View_Switch_To_Orthographic)
         {
             SetProjectionType(ViewMode.Orthographic);
             EnteredOrthographicForView = true;
@@ -911,10 +911,10 @@ public class ViewportCamera
         return ViewportUtils.CreatePerspective(
             Viewport.Device,
             true,
-            (FovOverrideDegrees ?? CFG.Current.Viewport_Camera_FOV) * (float)Math.PI / 180.0f,
+            (FovOverrideDegrees ?? CFG.Current.Viewport.Viewport_Camera_FOV) * (float)Math.PI / 180.0f,
             aspectRatio,
-            CFG.Current.Viewport_Perspective_Near_Clip,
-            CFG.Current.Viewport_Perspective_Far_Clip);
+            CFG.Current.Viewport.Viewport_Perspective_Near_Clip,
+            CFG.Current.Viewport.Viewport_Perspective_Far_Clip);
     }
 
     private Matrix4x4 CreateOrthographicMatrix(float aspectRatio)

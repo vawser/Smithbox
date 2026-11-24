@@ -263,7 +263,7 @@ public partial class MsbEntryView
         DisplayToggle("entryOnlyChanged", Icons.Pencil, ref _onlyChanged,
             "Changed only: show only the entries added or modified since vanilla.");
 
-        DisplayToggle("entryFollowSelection", Icons.Crosshairs, ref CFG.Current.MapDataEditor_EntryView_Follow_Selection,
+        DisplayToggle("entryFollowSelection", Icons.Crosshairs, ref CFG.Current.MapEditor.MapDataEditor_EntryView_Follow_Selection,
             "Follow selection: an entity selected in the viewport or Map Content is shown here, switching category if needed.");
 
         DisplayNewButton();
@@ -331,7 +331,7 @@ public partial class MsbEntryView
     /// </summary>
     private void UpdateFollowSelection()
     {
-        if (!CFG.Current.MapDataEditor_EntryView_Follow_Selection)
+        if (!CFG.Current.MapEditor.MapDataEditor_EntryView_Follow_Selection)
             return;
 
         // Only a single selection, so building up a multi-selection doesn't jump between categories

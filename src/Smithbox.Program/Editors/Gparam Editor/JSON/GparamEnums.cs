@@ -25,7 +25,7 @@ public class GparamEnumEntry
     {
         Key = key;
 
-        var curLang = CFG.Current.GparamEditor_Annotation_Language;
+        var curLang = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
         Names.Add(new GparamCategoryTextEntry(curLang, key));
 
@@ -34,7 +34,7 @@ public class GparamEnumEntry
 
     public string GetName()
     {
-        var curLang = CFG.Current.GparamEditor_Annotation_Language;
+        var curLang = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
         if (Names.Any(e => e.Language == curLang))
         {
@@ -67,14 +67,14 @@ public class GparamEnumOption : IComparable
     {
         Key = key;
 
-        var curLang = CFG.Current.GparamEditor_Annotation_Language;
+        var curLang = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
         Names.Add(new GparamCategoryTextEntry(curLang, name));
     }
 
     public string GetName()
     {
-        var curLang = CFG.Current.GparamEditor_Annotation_Language;
+        var curLang = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
         if (Names.Any(e => e.Language == curLang))
         {

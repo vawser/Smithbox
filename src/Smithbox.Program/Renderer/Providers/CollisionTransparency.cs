@@ -5,7 +5,7 @@ namespace StudioCore.Renderer;
 
 /// <summary>
 ///     Pipeline state shared by collision and navmesh meshes, which are see-through to the degree set by
-///     <see cref="CFG.Viewport_Collision_Opacity" />. The opacity itself reaches the shaders through
+///     <see cref="ViewportSettings.Viewport_Collision_Opacity" />. The opacity itself reaches the shaders through
 ///     <see cref="SceneParam.CollisionOpacity" />, so only crossing between see-through and opaque needs a rebuild.
 /// </summary>
 public static class CollisionTransparency
@@ -17,7 +17,7 @@ public static class CollisionTransparency
     ///     Below full opacity the meshes stop writing depth, so that their own hidden faces show through.
     ///     At full opacity they write it again, as otherwise faces would draw over each other in index order.
     /// </summary>
-    public static bool IsTransparent => CFG.Current.Viewport_Collision_Opacity < 1.0f;
+    public static bool IsTransparent => RenderSettings.Viewport.Viewport_Collision_Opacity < 1.0f;
 
     public static BlendStateDescription BlendState => IsTransparent
         ? BlendStateDescription.SingleAlphaBlend

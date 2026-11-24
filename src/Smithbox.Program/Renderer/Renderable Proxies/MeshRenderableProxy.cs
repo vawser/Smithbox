@@ -273,7 +273,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             var baseVisible = visible;
 
-            if (CFG.Current.Viewport_Enable_Selection_Outline &&
+            if (RenderSettings.Viewport.Viewport_Enable_Selection_Outline &&
                 !_meshProvider.SelectedRenderBaseMesh && _renderOutline)
             {
                 baseVisible = false;
@@ -1005,7 +1005,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _renderablesSet.cSceneVis[_renderable]._renderFilter = _drawfilter;
         _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
 
-        if (_renderOutline && CFG.Current.Viewport_Enable_Selection_Outline)
+        if (_renderOutline && RenderSettings.Viewport.Viewport_Enable_Selection_Outline)
         {
             pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, BlendStateDescription.SingleOverrideBlend);
             pipelineDescription.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqual;

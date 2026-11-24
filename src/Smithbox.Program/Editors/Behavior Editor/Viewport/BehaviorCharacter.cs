@@ -279,7 +279,7 @@ public sealed class BehaviorCharacter : IDisposable
             animator.SetPlaying(start.Playing);
         }
 
-        animator.ApplyRootMotion = CFG.Current.BehaviorEditor_Viewport_Root_Motion;
+        animator.ApplyRootMotion = CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Root_Motion;
     }
 
     /// <summary>The meshes to frame the camera on, or false while they're still loading</summary>

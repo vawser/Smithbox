@@ -137,7 +137,7 @@ public class GlobalTextSearch
                 var result = searchResults[i];
 
                 // Ignore results from unused containers if in Simple mode
-                if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
+                if (CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers)
                 {
                     if (result.ContainerWrapper.IsContainerUnused())
                     {
@@ -163,14 +163,14 @@ public class GlobalTextSearch
 
                 // Container
                 var containerName = result.ContainerName;
-                if (CFG.Current.TextEditor_Container_List_Display_Community_Names)
+                if (CFG.Current.TextEditor.TextEditor_Container_List_Display_Community_Names)
                 {
                     containerName = result.ContainerWrapper.GetContainerDisplayName();
                 }
 
                 // FMG
                 var fmgName = result.FmgName;
-                if (CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
+                if (CFG.Current.TextEditor.TextEditor_Text_File_List_Display_Community_Names)
                 {
                     fmgName = TextUtils.GetFmgDisplayName(Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }

@@ -105,7 +105,7 @@ public class CutsceneFades
     /// <param name="top">The top of the window's content, below its menu bar</param>
     public void DrawOverlay(float x, float y, float width, float height, float top)
     {
-        if (!CFG.Current.CutsceneEditor_Display_Fades || Editor.Scene == null || width <= 0 || height <= 0)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Display_Fades || Editor.Scene == null || width <= 0 || height <= 0)
             return;
 
         if (ColorAt(Editor.Playback.Frame) is not { } color)

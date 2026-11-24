@@ -163,7 +163,7 @@ public class MapUniverse : IUniverse
 
         if (!ignoreHavokLoad)
         {
-            if (!CFG.Current.MapEditor_SkipHavokLoad)
+            if (!CFG.Current.MapEditor.MapEditor_SkipHavokLoad)
             {
                 using var __havokZone = Profiler.TracyZoneAuto("HavokZone");
 
@@ -233,7 +233,7 @@ public class MapUniverse : IUniverse
                 newMap.LoadMSB(resourceHandler.Msb);
 
                 // The load lists are only read by the model and texture loads, which need the renderer
-                if (Smithbox.Instance.HasRenderer && CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.HasRenderer && CFG.Current.Viewport.Viewport_Enable_Rendering)
                 {
                     resourceHandler.SetupHumanEnemySubstitute();
 
@@ -267,7 +267,7 @@ public class MapUniverse : IUniverse
                 View.HavokNavmeshBank.LoadNVVA(newMap);
                 __navScope.Dispose();
 
-                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
                 {
                     // Handle the map offsets for games that use a tile system
                     // This is what adjusts the map position/rotation so they are presented in the same way they appear in-game.
@@ -312,7 +312,7 @@ public class MapUniverse : IUniverse
                 Project.Handler.MapData.PrimaryBank.Maps[fileEntry].MapContainer = newMap;
                 newMap.LoadState = MapContentLoadState.Loaded;
 
-                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
                 {
                     // Select the map as soon as its RootObject is available, rather than at the end of all jobs.
                     // This runs on a thread pool thread, and the selection is read by the UI every frame, so it is
@@ -325,7 +325,7 @@ public class MapUniverse : IUniverse
 
                 var tasks = new List<Task>();
 
-                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
                 {
                     tasks = resourceHandler.LoadModels(tasks, newMap);
 
@@ -333,7 +333,7 @@ public class MapUniverse : IUniverse
                     await Task.WhenAll(tasks);
                     Profiler.TracyFiberEnter("loadMapAsync");
 
-                    if (CFG.Current.Viewport_Enable_Texturing)
+                    if (CFG.Current.Viewport.Viewport_Enable_Texturing)
                     {
                         tasks = resourceHandler.LoadTextures(tasks, newMap);
 
@@ -354,7 +354,7 @@ public class MapUniverse : IUniverse
                     HasProcessedMapLoad = true;
                 }
 
-                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
                 {
                     // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
                     foreach (Entity obj in newMap.Objects)
@@ -381,8 +381,8 @@ public class MapUniverse : IUniverse
                 // Textures in containers the load lists can't name, inside the session so they are part of this load
                 // rather than one that starts after it. Last, as building the drawables above can start loads of its
                 // own (grass, composite characters) whose models ask for textures too.
-                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
-                    CFG.Current.Viewport_Enable_Texturing)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering &&
+                    CFG.Current.Viewport.Viewport_Enable_Texturing)
                 {
                     Profiler.TracyFiberLeave();
                     await ResourceManager.LoadMissingTexturesAsync();
@@ -868,7 +868,7 @@ public class MapUniverse : IUniverse
     /// </summary>
     private bool ShouldSaveFile(MapContainer map, MapFileType fileType)
     {
-        return CFG.Current.MapEditor_Allow_Unmodified_Save || map.IsDirty(fileType);
+        return CFG.Current.MapEditor.MapEditor_Allow_Unmodified_Save || map.IsDirty(fileType);
     }
 
     /// <summary>
@@ -896,7 +896,7 @@ public class MapUniverse : IUniverse
     /// </summary>
     public void SaveMap(MapContainer map)
     {
-        if (!CFG.Current.MapEditor_Allow_Unmodified_Save && map.DirtyFiles is MapFileType.None)
+        if (!CFG.Current.MapEditor.MapEditor_Allow_Unmodified_Save && map.DirtyFiles is MapFileType.None)
         {
             Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", map.Name));
             return;
@@ -1043,7 +1043,7 @@ public class MapUniverse : IUniverse
 
             Smithbox.LogError(this, LOC.Get("MAP_Universe_Save_Map_FAIL", map.Name), e);
 
-            if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
+            if (!CFG.Current.MapEditor.MapEditor_IgnoreSaveExceptions)
             {
                 throw new SavingFailedException(Path.GetFileName(map.Name), e);
             }
@@ -1404,7 +1404,7 @@ public class MapUniverse : IUniverse
 
         if (File.Exists(path))
         {
-            if (CFG.Current.Project_Enable_Backup_Saves)
+            if (CFG.Current.Project.Project_Enable_Backup_Saves)
             {
                 if (!File.Exists(path + ".bak"))
                 {

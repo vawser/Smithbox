@@ -39,14 +39,14 @@ public sealed class FxDisplaySettings
     public FxDisplaySettings ReadFxEditorConfig()
     {
         var c = CFG.Current;
-        Billboards = c.FxEditor_Viewport_Display_Billboards;
-        ScreenEffects = c.FxEditor_Viewport_Display_Screen_Effects;
-        LensFlares = c.FxEditor_Viewport_Display_Lens_Flares;
-        GpuParticles = c.FxEditor_Viewport_Display_Gpu_Particles;
-        Models = c.FxEditor_Viewport_Display_Models;
-        Lights = c.FxEditor_Viewport_Display_Lights;
-        BillboardBrightness = c.FxEditor_Viewport_Billboard_Brightness;
-        LightBrightness = c.FxEditor_Viewport_Light_Brightness;
+        Billboards = c.FxEditor.FxEditor_Viewport_Display_Billboards;
+        ScreenEffects = c.FxEditor.FxEditor_Viewport_Display_Screen_Effects;
+        LensFlares = c.FxEditor.FxEditor_Viewport_Display_Lens_Flares;
+        GpuParticles = c.FxEditor.FxEditor_Viewport_Display_Gpu_Particles;
+        Models = c.FxEditor.FxEditor_Viewport_Display_Models;
+        Lights = c.FxEditor.FxEditor_Viewport_Display_Lights;
+        BillboardBrightness = c.FxEditor.FxEditor_Viewport_Billboard_Brightness;
+        LightBrightness = c.FxEditor.FxEditor_Viewport_Light_Brightness;
         return this;
     }
 }

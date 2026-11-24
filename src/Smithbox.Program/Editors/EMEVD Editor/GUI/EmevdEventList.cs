@@ -41,14 +41,14 @@ public class EmevdEventList
 
         // Toggle: line counts
         GUI.DisplayToggleButton("emevdEventCountToggle", Icons.Hashtag,
-            ref CFG.Current.EmevdEditor_Event_List_Display_Line_Count,
+            ref CFG.Current.EmevdEditor.EmevdEditor_Event_List_Display_Line_Count,
             "EMEVD_EventList_Count_Toggle_Hide",
             "EMEVD_EventList_Count_Toggle_Show",
             "EMEVD_EventList_Count_Toggle_TT");
 
         // Toggle: aliases
         GUI.DisplayToggleButton("emevdEventAliasToggle", Icons.StickyNote,
-            ref CFG.Current.EmevdEditor_Event_List_Display_Aliases,
+            ref CFG.Current.EmevdEditor.EmevdEditor_Event_List_Display_Aliases,
             "EMEVD_EventList_Alias_Toggle_Hide",
             "EMEVD_EventList_Alias_Toggle_Show",
             "EMEVD_EventList_Alias_Toggle_TT");
@@ -150,14 +150,14 @@ public class EmevdEventList
                     ImGui.EndPopup();
                 }
 
-                var name = CFG.Current.EmevdEditor_Event_List_Display_Aliases ? DisplayName(file, ev) : "";
+                var name = CFG.Current.EmevdEditor.EmevdEditor_Event_List_Display_Aliases ? DisplayName(file, ev) : "";
                 if (!string.IsNullOrEmpty(name))
                 {
                     ImGui.SameLine();
                     ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                 }
 
-                if (CFG.Current.EmevdEditor_Event_List_Display_Line_Count)
+                if (CFG.Current.EmevdEditor.EmevdEditor_Event_List_Display_Line_Count)
                 {
                     ImGui.SameLine();
                     ImGui.TextDisabled(LOC.Get("EMEVD_EventList_Event_Info", ev.Instructions.Count));

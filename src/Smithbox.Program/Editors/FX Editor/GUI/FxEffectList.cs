@@ -84,14 +84,14 @@ public partial class FxEffectList
 
         // Toggle: Aliases
         GUI.DisplayToggleButton("fxAliasToggle", Icons.StickyNote,
-            ref CFG.Current.FxEditor_EffectList_Display_Aliases,
+            ref CFG.Current.FxEditor.FxEditor_EffectList_Display_Aliases,
             "FX_EffectList_Alias_Toggle_Hide",
             "FX_EffectList_Alias_Toggle_Show",
             "FX_EffectList_Alias_Toggle_TT");
 
         // Toggle: Flat list / grouped by binder
         GUI.DisplayToggleButton("fxGroupToggle", Icons.FolderOpen,
-            ref CFG.Current.FxEditor_EffectList_Group_By_Binder,
+            ref CFG.Current.FxEditor.FxEditor_EffectList_Group_By_Binder,
             "FX_EffectList_Group_Toggle_Flat",
             "FX_EffectList_Group_Toggle_Grouped",
             "FX_EffectList_Group_Toggle_TT");
@@ -136,7 +136,7 @@ public partial class FxEffectList
             ScanProgress();
 
         DrawnLists.Clear();
-        if (CFG.Current.FxEditor_EffectList_Group_By_Binder)
+        if (CFG.Current.FxEditor.FxEditor_EffectList_Group_By_Binder)
             DisplayGrouped();
         else
             DisplayRows(Cache, true, "");
@@ -235,7 +235,7 @@ public partial class FxEffectList
 
     private void RebuildCache()
     {
-        bool aliases = CFG.Current.FxEditor_EffectList_Display_Aliases;
+        bool aliases = CFG.Current.FxEditor.FxEditor_EffectList_Display_Aliases;
         var key = (Bank.Version, Filter, ExactFilter, aliases, Mode, ResourceText, Edits, Usage.HasScan,
             ProjectCheck.RanAt, Favorites.Count, Favorites.Recent.Count > 0 ? Favorites.Recent[0] : -1);
 
@@ -451,7 +451,7 @@ public partial class FxEffectList
                 ImGui.SetScrollHereY(0.5f);
         }
 
-        if (CFG.Current.FxEditor_EffectList_Display_Aliases && !string.IsNullOrEmpty(entry.Alias))
+        if (CFG.Current.FxEditor.FxEditor_EffectList_Display_Aliases && !string.IsNullOrEmpty(entry.Alias))
         {
             GUI.DisplayAlias(entry.Alias);
         }

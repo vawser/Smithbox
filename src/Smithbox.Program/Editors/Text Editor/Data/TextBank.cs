@@ -99,7 +99,7 @@ public class TextBank : IDisposable
                     FmgWrappers = new()
                 };
 
-                if (containerCategory == CFG.Current.TextEditor_Primary_Category)
+                if (containerCategory == CFG.Current.TextEditor.TextEditor_Primary_Category)
                 {
                     // Leave a container that can't be read out of the bank, as before
                     // (LoadFmgWrappers logs why)
@@ -133,7 +133,7 @@ public class TextBank : IDisposable
         {
             if (type is FmgWrapperLoadType.PrimaryLanguage)
             {
-                if (entry.Value.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                if (entry.Value.ContainerDisplayCategory != CFG.Current.TextEditor.TextEditor_Primary_Category)
                 {
                     continue;
                 }
@@ -427,7 +427,7 @@ public class TextBank : IDisposable
         if (entry == null || containerWrapper == null || containerWrapper.FmgWrappers == null)
             return false;
 
-        if (!CFG.Current.TextEditor_Allow_Unmodified_Save)
+        if (!CFG.Current.TextEditor.TextEditor_Allow_Unmodified_Save)
         {
             if (!containerWrapper.IsDirty())
             {
@@ -603,7 +603,7 @@ public class TextBank : IDisposable
         if (entry == null || containerWrapper == null || containerWrapper.FmgWrappers == null)
             return false;
 
-        if (!CFG.Current.TextEditor_Allow_Unmodified_Save)
+        if (!CFG.Current.TextEditor.TextEditor_Allow_Unmodified_Save)
         {
             if (!containerWrapper.IsDirty())
             {

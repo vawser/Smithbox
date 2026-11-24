@@ -35,8 +35,8 @@ public static class ParamRowDuplicate
         }
 
         int insertIndex = -1;
-        var offset = CFG.Current.Param_Toolbar_Duplicate_Offset;
-        var amount = CFG.Current.Param_Toolbar_Duplicate_Amount;
+        var offset = CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset;
+        var amount = CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Amount;
 
         var IsInTableGroupMode = curView.ParamTableWindow.IsInTableGroupMode(curParamKey);
 
@@ -137,8 +137,8 @@ public static class ParamRowDuplicate
             return new List<Param.Row>();
 
         var insertIndex = -1;
-        var offset = CFG.Current.Param_Toolbar_Duplicate_Offset;
-        var amount = CFG.Current.Param_Toolbar_Duplicate_Amount;
+        var offset = CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset;
+        var amount = CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Amount;
 
         // AddParamsAction clones the rows itself, so the selected rows are passed as they are
         List<Param.Row> rowsToInsert = new(rows);
@@ -193,19 +193,19 @@ public static class ParamRowDuplicate
     {
         var enabled = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        if (CFG.Current.Param_Toolbar_Duplicate_AffectAttackField)
+        if (CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectAttackField)
             enabled.Add(Target_Attack);
 
-        if (CFG.Current.Param_Toolbar_Duplicate_AffectBulletField)
+        if (CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectBulletField)
             enabled.Add(Target_Bullet);
 
-        if (CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField)
+        if (CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectBehaviorField)
             enabled.Add(Target_Behavior);
 
-        if (CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField)
+        if (CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectSpEffectField)
             enabled.Add(Target_SpEffect);
 
-        if (CFG.Current.Param_Toolbar_Duplicate_AffectSourceField)
+        if (CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectSourceField)
             enabled.Add(Target_Source);
 
         return enabled;
@@ -281,19 +281,19 @@ public static class ParamRowDuplicate
         var kinds = new HashSet<string>(fields.SelectMany(f => f.Targets), StringComparer.OrdinalIgnoreCase);
 
         if (kinds.Contains(Target_Attack))
-            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Attack")}##dupRefAttack", ref CFG.Current.Param_Toolbar_Duplicate_AffectAttackField);
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Attack")}##dupRefAttack", ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectAttackField);
 
         if (kinds.Contains(Target_Bullet))
-            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Bullet")}##dupRefBullet", ref CFG.Current.Param_Toolbar_Duplicate_AffectBulletField);
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Bullet")}##dupRefBullet", ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectBulletField);
 
         if (kinds.Contains(Target_Behavior))
-            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Behavior")}##dupRefBehavior", ref CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField);
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Behavior")}##dupRefBehavior", ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectBehaviorField);
 
         if (kinds.Contains(Target_SpEffect))
-            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_SpEffect")}##dupRefSpEffect", ref CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField);
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_SpEffect")}##dupRefSpEffect", ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectSpEffectField);
 
         if (kinds.Contains(Target_Source))
-            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Source")}##dupRefSource", ref CFG.Current.Param_Toolbar_Duplicate_AffectSourceField);
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Source")}##dupRefSource", ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_AffectSourceField);
 
         var enabled = GetEnabledDeepCopyTargets();
         var affected = fields.Where(f => f.Targets.Any(enabled.Contains)).Select(f => f.Field).ToList();
@@ -301,7 +301,7 @@ public static class ParamRowDuplicate
         if (affected.Count == 0)
             return;
 
-        var offset = CFG.Current.Param_Toolbar_Duplicate_Offset;
+        var offset = CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset;
 
         if (offset == 0)
         {
@@ -370,7 +370,7 @@ public static class ParamRowDuplicate
 
                 if (ImGui.MenuItem($"{entry}"))
                 {
-                    CFG.Current.Param_Toolbar_CommutativeDuplicate_Target = entry;
+                    CFG.Current.ParamEditor.Param_Toolbar_CommutativeDuplicate_Target = entry;
 
                     DuplicateCommutativeRow(curView);
                 }
@@ -384,7 +384,7 @@ public static class ParamRowDuplicate
         if (curParamKey == null)
             return;
 
-        var targetParamName = CFG.Current.Param_Toolbar_CommutativeDuplicate_Target;
+        var targetParamName = CFG.Current.ParamEditor.Param_Toolbar_CommutativeDuplicate_Target;
 
         if (targetParamName == "")
             return;
@@ -428,9 +428,9 @@ public static class ParamRowDuplicate
 
         List<EditorAction> actions = new List<EditorAction>();
 
-        var offset = CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset;
+        var offset = CFG.Current.ParamEditor.Param_Toolbar_CommutativeDuplicate_Offset;
 
-        var replaceExisting = CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows;
+        var replaceExisting = CFG.Current.ParamEditor.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows;
 
         actions.Add(new AddParamsAction(curView.Editor, targetParam, "legacystring", rowsToInsert, false, replaceExisting, insertIndex, offset, false));
 

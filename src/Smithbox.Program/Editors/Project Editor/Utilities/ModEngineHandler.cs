@@ -42,7 +42,7 @@ public static class ModEngineHandler
     /// <returns>The profile's path, or null if there is none.</returns>
     public static string FindME3Profile(ProjectEntry curProject)
     {
-        var profileDir = CFG.Current.Project_ME3_Profile_Directory;
+        var profileDir = CFG.Current.Project.Project_ME3_Profile_Directory;
 
         if (string.IsNullOrEmpty(profileDir) || !Directory.Exists(profileDir))
             return null;
@@ -64,10 +64,10 @@ public static class ModEngineHandler
 
     public static void CreateME3Profile(ProjectEntry curProject)
     {
-        if (CFG.Current.Project_ME3_Profile_Directory == "")
+        if (CFG.Current.Project.Project_ME3_Profile_Directory == "")
             return;
 
-        if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
+        if (!Directory.Exists(CFG.Current.Project.Project_ME3_Profile_Directory))
         {
             Smithbox.Log(typeof(ModEngineHandler),
                 LOC.Get("PROJECT_Util_ME3_Profile_Missing"));
@@ -100,7 +100,7 @@ public static class ModEngineHandler
 
         var profileString = $"profileVersion = \"v1\"\r\nnatives = []\r\n\r\n[[packages]] \r\nid = \"{projectName}\" \r\nsource = \"{absPath}\" \r\n\r\n[[supports]]\r\ngame = \"{gametype}\"\r\n";
 
-        var writePath = Path.Combine(CFG.Current.Project_ME3_Profile_Directory, $"{projectName}.me3");
+        var writePath = Path.Combine(CFG.Current.Project.Project_ME3_Profile_Directory, $"{projectName}.me3");
 
         try
         {
@@ -133,10 +133,10 @@ public static class ModEngineHandler
 
     public static void LaunchME3Mod(ProjectEntry curProject)
     {
-        if (CFG.Current.Project_ME3_Profile_Directory == "")
+        if (CFG.Current.Project.Project_ME3_Profile_Directory == "")
             return;
 
-        if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
+        if (!Directory.Exists(CFG.Current.Project.Project_ME3_Profile_Directory))
             return;
 
         var targetFile = FindME3Profile(curProject);
@@ -147,7 +147,7 @@ public static class ModEngineHandler
             var startInfo = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
-                WorkingDirectory = CFG.Current.Project_ME3_Profile_Directory,
+                WorkingDirectory = CFG.Current.Project.Project_ME3_Profile_Directory,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
@@ -166,7 +166,7 @@ public static class ModEngineHandler
         }
         else
         {
-            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Find_Profile_FAIL", CFG.Current.Project_ME3_Profile_Directory));
+            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Find_Profile_FAIL", CFG.Current.Project.Project_ME3_Profile_Directory));
         }
     }
 }

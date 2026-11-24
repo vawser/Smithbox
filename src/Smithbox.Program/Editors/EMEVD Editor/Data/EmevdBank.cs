@@ -198,7 +198,7 @@ public class EmevdBank
             {
                 bnd = SFUtil.DecryptDS2Regulation(bytes);
 
-                if (!toFs.FileExists($"{RegulationPath}.bak") && CFG.Current.Project_Enable_Backup_Saves)
+                if (!toFs.FileExists($"{RegulationPath}.bak") && CFG.Current.Project.Project_Enable_Backup_Saves)
                     toFs.WriteFile($"{RegulationPath}.bak", bytes);
             }
         }

@@ -190,9 +190,9 @@ public partial class MfrEditorTool
         var best = float.MaxValue;
 
         // The same rule as the overlay: Show Boxes and the type toggles, plus the selected box
-        var showAll = CFG.Current.MapEditor_Display_Forbidden_Regions;
-        var showSave = showAll && CFG.Current.MapEditor_Forbidden_Region_Show_Save_Limit;
-        var showMulti = showAll && CFG.Current.MapEditor_Forbidden_Region_Show_Multiplay_Limit;
+        var showAll = CFG.Current.MapEditor.MapEditor_Display_Forbidden_Regions;
+        var showSave = showAll && CFG.Current.MapEditor.MapEditor_Forbidden_Region_Show_Save_Limit;
+        var showMulti = showAll && CFG.Current.MapEditor.MapEditor_Forbidden_Region_Show_Multiplay_Limit;
 
         foreach (var map in GetDrawnMaps())
         {

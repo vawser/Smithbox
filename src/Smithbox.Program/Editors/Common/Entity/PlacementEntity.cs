@@ -34,7 +34,7 @@ public class PlacementEntity : Entity
     /// </summary>
     public override void UpdateRenderModel()
     {
-        if(!CFG.Current.Viewport_Enable_Rendering)
+        if(!CFG.Current.Viewport.Viewport_Enable_Rendering)
         {
             return;
         }
@@ -51,7 +51,7 @@ public class PlacementEntity : Entity
 
             if (this.RenderSceneMesh != null)
             {
-                if (CFG.Current.DisplayPlacementOrb)
+                if (CFG.Current.MapEditor.DisplayPlacementOrb)
                 {
                     this.RenderSceneMesh.Visible = true;
                 }

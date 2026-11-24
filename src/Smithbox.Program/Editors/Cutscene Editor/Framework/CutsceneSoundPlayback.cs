@@ -63,7 +63,7 @@ public class CutsceneSoundPlayback : IDisposable
     {
         RefreshEvents(scene);
 
-        if (!CFG.Current.CutsceneEditor_Play_Sounds || !IsAvailable || scene == null)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Play_Sounds || !IsAvailable || scene == null)
         {
             if (WasPlaying)
                 StopAll();
@@ -164,7 +164,7 @@ public class CutsceneSoundPlayback : IDisposable
         var match = SoundReferenceHelper.Find(Project, id.ToString(), letter).FirstOrDefault();
         Matches[e] = match;
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log && match == null && Logged.Add((id, letter)))
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log && match == null && Logged.Add((id, letter)))
             Smithbox.Log(this, LOC.Get("CUTSCENE_Sound_Log_Missing", id, letter ?? "?"));
 
         return match;
@@ -240,7 +240,7 @@ public class CutsceneSoundPlayback : IDisposable
 
         var entry = playable[Random.Next(playable.Count)];
         var player = GetPlayer(entry.Source);
-        player.Volume = CFG.Current.SoundEditor_Volume;
+        player.Volume = CFG.Current.SoundEditor.SoundEditor_Volume;
         player.Loop = false;
         player.Play(entry.Source);
     }

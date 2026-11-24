@@ -56,7 +56,7 @@ public class FmgReloaderTool
         GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Hint"));
 
         // Polls only while the tool is shown
-        if (CFG.Current.TextEditor_FmgReloader_AutoRefresh &&
+        if (CFG.Current.TextEditor.TextEditor_FmgReloader_AutoRefresh &&
             (Reloader.LastPoll == null || (DateTime.Now - Reloader.LastPoll.Value).TotalSeconds >= RefreshSeconds))
         {
             Reloader.RequestPoll();
@@ -91,7 +91,7 @@ public class FmgReloaderTool
                 GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Kept", $"{Reloader.KeptBytes / 1024.0:0.#}"));
         }
 
-        ImGui.Checkbox($"{LOC.Get("TEXT_FmgReloader_Auto_Refresh")}##fmgReloaderAutoRefresh", ref CFG.Current.TextEditor_FmgReloader_AutoRefresh);
+        ImGui.Checkbox($"{LOC.Get("TEXT_FmgReloader_Auto_Refresh")}##fmgReloaderAutoRefresh", ref CFG.Current.TextEditor.TextEditor_FmgReloader_AutoRefresh);
         GUI.Tooltip(LOC.Get("TEXT_FmgReloader_Auto_Refresh_TT", RefreshSeconds));
 
         GUI.MultiButtonInput("fmgReloaderRefreshActions",
@@ -100,7 +100,7 @@ public class FmgReloaderTool
             "fmgReloaderDetach", LOC.Get("TEXT_FmgReloader_Detach"), LOC.Get("TEXT_FmgReloader_Detach_TT"),
             () =>
             {
-                CFG.Current.TextEditor_FmgReloader_AutoRefresh = false;
+                CFG.Current.TextEditor.TextEditor_FmgReloader_AutoRefresh = false;
                 Reloader.Detach();
             });
     }
@@ -163,7 +163,7 @@ public class FmgReloaderTool
             }
         }
 
-        ImGui.Checkbox($"{LOC.Get("TEXT_FmgReloader_Send_On_Save")}##fmgReloaderSendOnSave", ref CFG.Current.TextEditor_FmgReloader_SendOnSave);
+        ImGui.Checkbox($"{LOC.Get("TEXT_FmgReloader_Send_On_Save")}##fmgReloaderSendOnSave", ref CFG.Current.TextEditor.TextEditor_FmgReloader_SendOnSave);
         GUI.Tooltip(LOC.Get("TEXT_FmgReloader_Send_On_Save_TT"));
 
         var last = Reloader.LastReload;

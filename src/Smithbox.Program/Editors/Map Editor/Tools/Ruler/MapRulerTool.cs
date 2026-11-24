@@ -270,11 +270,11 @@ public class MapRulerTool
 
     #region Drawing
 
-    private static float PointRadius => Math.Max(CFG.Current.MapEditor_Ruler_Point_Size, 0.01f);
+    private static float PointRadius => Math.Max(CFG.Current.MapEditor.MapEditor_Ruler_Point_Size, 0.01f);
 
-    private static Color LineColor => ToColor(CFG.Current.MapEditor_Ruler_Color);
+    private static Color LineColor => ToColor(CFG.Current.MapEditor.MapEditor_Ruler_Color);
 
-    private static Color SelectedColor => ToColor(CFG.Current.MapEditor_Ruler_Selected_Color);
+    private static Color SelectedColor => ToColor(CFG.Current.MapEditor.MapEditor_Ruler_Selected_Color);
 
     private static Color ToColor(Vector3 c)
         => Color.FromArgb(255, (int)Math.Clamp(c.X, 0, 255), (int)Math.Clamp(c.Y, 0, 255), (int)Math.Clamp(c.Z, 0, 255));
@@ -380,7 +380,7 @@ public class MapRulerTool
     /// </summary>
     public void DrawLabels(VulkanViewport viewport)
     {
-        if (!CFG.Current.MapEditor_Ruler_Show_Label || viewport.Owner is not MapUniverse)
+        if (!CFG.Current.MapEditor.MapEditor_Ruler_Show_Label || viewport.Owner is not MapUniverse)
             return;
 
         if (Start is not Vector3 a || End is not Vector3 b)
@@ -394,7 +394,7 @@ public class MapRulerTool
         var drawList = ImGui.GetWindowDrawList();
         var origin = new Vector2(viewport.X, viewport.Y);
         var shadow = ImGui.GetColorU32(new Vector4(0, 0, 0, 1));
-        var c = CFG.Current.MapEditor_Ruler_Color;
+        var c = CFG.Current.MapEditor.MapEditor_Ruler_Color;
         var color = ImGui.GetColorU32(new Vector4(c / 255f, 1));
         var text = LOC.Get("MAP_Ruler_Label", $"{Vector3.Distance(a, b):0.##}");
 
@@ -464,27 +464,27 @@ public class MapRulerTool
         GUI.SimpleHeader(LOC.Get("MAP_Ruler_Display_Header"), LOC.Get("MAP_Ruler_Display_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.SliderFloat("##mapRulerPointSize", ref CFG.Current.MapEditor_Ruler_Point_Size, 0.02f, 2.0f, "%.2f m"))
+        if (ImGui.SliderFloat("##mapRulerPointSize", ref CFG.Current.MapEditor.MapEditor_Ruler_Point_Size, 0.02f, 2.0f, "%.2f m"))
             UpdateDrawing();
         GUI.Tooltip(LOC.Get("MAP_Ruler_Point_Size_TT"));
 
-        var color = CFG.Current.MapEditor_Ruler_Color / 255f;
+        var color = CFG.Current.MapEditor.MapEditor_Ruler_Color / 255f;
         if (ImGui.ColorEdit3($"{LOC.Get("MAP_Ruler_Color")}##mapRulerColor", ref color))
         {
-            CFG.Current.MapEditor_Ruler_Color = color * 255f;
+            CFG.Current.MapEditor.MapEditor_Ruler_Color = color * 255f;
             UpdateDrawing();
         }
         GUI.Tooltip(LOC.Get("MAP_Ruler_Color_TT"));
 
-        var selectedColor = CFG.Current.MapEditor_Ruler_Selected_Color / 255f;
+        var selectedColor = CFG.Current.MapEditor.MapEditor_Ruler_Selected_Color / 255f;
         if (ImGui.ColorEdit3($"{LOC.Get("MAP_Ruler_Selected_Color")}##mapRulerSelectedColor", ref selectedColor))
         {
-            CFG.Current.MapEditor_Ruler_Selected_Color = selectedColor * 255f;
+            CFG.Current.MapEditor.MapEditor_Ruler_Selected_Color = selectedColor * 255f;
             UpdateDrawing();
         }
         GUI.Tooltip(LOC.Get("MAP_Ruler_Selected_Color_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_Ruler_Show_Label")}##mapRulerShowLabel", ref CFG.Current.MapEditor_Ruler_Show_Label);
+        ImGui.Checkbox($"{LOC.Get("MAP_Ruler_Show_Label")}##mapRulerShowLabel", ref CFG.Current.MapEditor.MapEditor_Ruler_Show_Label);
         GUI.Tooltip(LOC.Get("MAP_Ruler_Show_Label_TT"));
 
         ImGui.EndChild();

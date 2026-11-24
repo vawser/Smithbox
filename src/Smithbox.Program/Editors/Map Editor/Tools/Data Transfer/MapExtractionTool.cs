@@ -68,7 +68,7 @@ public class MapExtractionTool
         GUI.SimpleHeader(LOC.Get("MAP_MapExtraction_Output_Header"), LOC.Get("MAP_MapExtraction_Output_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputText("##mapExtractionOutputDir", ref CFG.Current.MapEditor_MapExtraction_OutputDirectory, 1024);
+        ImGui.InputText("##mapExtractionOutputDir", ref CFG.Current.MapEditor.MapEditor_MapExtraction_OutputDirectory, 1024);
         GUI.Tooltip(LOC.Get("MAP_MapExtraction_Output_Input_TT"));
 
         GUI.MultiButtonInput("mapExtractionOutputActions",
@@ -80,30 +80,30 @@ public class MapExtractionTool
         GUI.SimpleHeader(LOC.Get("MAP_MapExtraction_File_Name_Header"), LOC.Get("MAP_MapExtraction_File_Name_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputText("##mapExtractionFileName", ref CFG.Current.MapEditor_MapExtraction_FileName, 255);
+        ImGui.InputText("##mapExtractionFileName", ref CFG.Current.MapEditor.MapEditor_MapExtraction_FileName, 255);
         GUI.Tooltip(LOC.Get("MAP_MapExtraction_File_Name_Input_TT"));
 
         // Textures
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_MapExtraction_Textures_Header"), LOC.Get("MAP_MapExtraction_Textures_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Include_Textures")}##mapExtractionIncludeTextures", ref CFG.Current.MapEditor_MapExtraction_IncludeTextures);
+        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Include_Textures")}##mapExtractionIncludeTextures", ref CFG.Current.MapEditor.MapEditor_MapExtraction_IncludeTextures);
         GUI.Tooltip(LOC.Get("MAP_MapExtraction_Include_Textures_TT"));
 
-        if (CFG.Current.MapEditor_MapExtraction_IncludeTextures)
+        if (CFG.Current.MapEditor.MapEditor_MapExtraction_IncludeTextures)
         {
-            ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Include_Material_Maps")}##mapExtractionIncludeMaps", ref CFG.Current.MapEditor_MapExtraction_IncludeMaterialMaps);
+            ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Include_Material_Maps")}##mapExtractionIncludeMaps", ref CFG.Current.MapEditor.MapEditor_MapExtraction_IncludeMaterialMaps);
             GUI.Tooltip(LOC.Get("MAP_MapExtraction_Include_Material_Maps_TT"));
 
             ImGui.SetNextItemWidth(-1);
-            if (ImGui.BeginCombo("##mapExtractionTextureFormat", LOC.Get($"MAP_MapExtraction_Format_{CFG.Current.MapEditor_MapExtraction_TextureFormat}")))
+            if (ImGui.BeginCombo("##mapExtractionTextureFormat", LOC.Get($"MAP_MapExtraction_Format_{CFG.Current.MapEditor.MapEditor_MapExtraction_TextureFormat}")))
             {
                 foreach (var format in Enum.GetValues<MapExtractionTextureFormat>())
                 {
                     if (ImGui.Selectable($"{LOC.Get($"MAP_MapExtraction_Format_{format}")}##mapExtractionFormat{format}",
-                        format == CFG.Current.MapEditor_MapExtraction_TextureFormat))
+                        format == CFG.Current.MapEditor.MapEditor_MapExtraction_TextureFormat))
                     {
-                        CFG.Current.MapEditor_MapExtraction_TextureFormat = format;
+                        CFG.Current.MapEditor.MapEditor_MapExtraction_TextureFormat = format;
                     }
                 }
 
@@ -116,13 +116,13 @@ public class MapExtractionTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_MapExtraction_Options_Header"), LOC.Get("MAP_MapExtraction_Options_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Centre")}##mapExtractionCentre", ref CFG.Current.MapEditor_MapExtraction_CentreAtOrigin);
+        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Centre")}##mapExtractionCentre", ref CFG.Current.MapEditor.MapEditor_MapExtraction_CentreAtOrigin);
         GUI.Tooltip(LOC.Get("MAP_MapExtraction_Centre_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Flip_UVs")}##mapExtractionFlipUVs", ref CFG.Current.MapEditor_MapExtraction_FlipUVs);
+        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Flip_UVs")}##mapExtractionFlipUVs", ref CFG.Current.MapEditor.MapEditor_MapExtraction_FlipUVs);
         GUI.Tooltip(LOC.Get("MAP_MapExtraction_Flip_UVs_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Mirror_X")}##mapExtractionMirrorX", ref CFG.Current.MapEditor_MapExtraction_MirrorX);
+        ImGui.Checkbox($"{LOC.Get("MAP_MapExtraction_Mirror_X")}##mapExtractionMirrorX", ref CFG.Current.MapEditor.MapEditor_MapExtraction_MirrorX);
         GUI.Tooltip(LOC.Get("MAP_MapExtraction_Mirror_X_TT"));
 
         // Actions
@@ -167,7 +167,7 @@ public class MapExtractionTool
 
     private void StartExport(List<Entity> selection)
     {
-        var outputDirectory = CFG.Current.MapEditor_MapExtraction_OutputDirectory;
+        var outputDirectory = CFG.Current.MapEditor.MapEditor_MapExtraction_OutputDirectory;
 
         if (string.IsNullOrWhiteSpace(outputDirectory) || !Directory.Exists(outputDirectory))
         {
@@ -176,7 +176,7 @@ public class MapExtractionTool
             return;
         }
 
-        var fileName = MapObjExporter.Sanitize(Path.GetFileNameWithoutExtension(CFG.Current.MapEditor_MapExtraction_FileName ?? ""));
+        var fileName = MapObjExporter.Sanitize(Path.GetFileNameWithoutExtension(CFG.Current.MapEditor.MapEditor_MapExtraction_FileName ?? ""));
 
         // Everything the export needs from the viewport is read here, on the main thread
         var skipped = new List<string>();
@@ -194,19 +194,19 @@ public class MapExtractionTool
             return;
         }
 
-        var centre = CFG.Current.MapEditor_MapExtraction_CentreAtOrigin && bounds != null
+        var centre = CFG.Current.MapEditor.MapEditor_MapExtraction_CentreAtOrigin && bounds != null
             ? (bounds.Value.Min + bounds.Value.Max) / 2
             : Vector3.Zero;
 
         var options = new MapExtractionOptions(
             outputDirectory,
             fileName,
-            CFG.Current.MapEditor_MapExtraction_IncludeTextures,
-            CFG.Current.MapEditor_MapExtraction_IncludeMaterialMaps,
-            CFG.Current.MapEditor_MapExtraction_TextureFormat,
-            CFG.Current.MapEditor_MapExtraction_FlipUVs,
-            CFG.Current.MapEditor_MapExtraction_MirrorX,
-            CFG.Current.MapEditor_MapExtraction_CentreAtOrigin);
+            CFG.Current.MapEditor.MapEditor_MapExtraction_IncludeTextures,
+            CFG.Current.MapEditor.MapEditor_MapExtraction_IncludeMaterialMaps,
+            CFG.Current.MapEditor.MapEditor_MapExtraction_TextureFormat,
+            CFG.Current.MapEditor.MapEditor_MapExtraction_FlipUVs,
+            CFG.Current.MapEditor.MapEditor_MapExtraction_MirrorX,
+            CFG.Current.MapEditor.MapEditor_MapExtraction_CentreAtOrigin);
 
         var export = new MapObjExporter(Project, options, parts, centre);
         var cancel = new CancellationTokenSource();
@@ -268,13 +268,13 @@ public class MapExtractionTool
     {
         if (PlatformUtils.Instance.OpenFolderDialog(LOC.Get("MAP_MapExtraction_Set_Output"), out var path))
         {
-            CFG.Current.MapEditor_MapExtraction_OutputDirectory = path;
+            CFG.Current.MapEditor.MapEditor_MapExtraction_OutputDirectory = path;
         }
     }
 
     private void OpenOutputDirectory()
     {
-        var path = CFG.Current.MapEditor_MapExtraction_OutputDirectory;
+        var path = CFG.Current.MapEditor.MapEditor_MapExtraction_OutputDirectory;
 
         if (!string.IsNullOrWhiteSpace(path) && Directory.Exists(path))
         {

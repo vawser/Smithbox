@@ -107,18 +107,18 @@ public class CutsceneTimelineView
 
         ImGui.SameLine();
         ImGui.SetNextItemWidth(70 * DPI.UIScale());
-        ImGui.DragFloat("##cutsceneSpeed", ref CFG.Current.CutsceneEditor_Playback_Speed, 0.01f, 0.05f, 4f, "%.2fx");
+        ImGui.DragFloat("##cutsceneSpeed", ref CFG.Current.CutsceneEditor.CutsceneEditor_Playback_Speed, 0.01f, 0.05f, 4f, "%.2fx");
         GUI.Tooltip(LOC.Get("CUTSCENE_Timeline_Speed_TT"));
 
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_Timeline_Loop")}##cutsceneLoop", ref CFG.Current.CutsceneEditor_Loop);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_Timeline_Loop")}##cutsceneLoop", ref CFG.Current.CutsceneEditor.CutsceneEditor_Loop);
 
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_Timeline_Next_Cut")}##cutsceneNextCut", ref CFG.Current.CutsceneEditor_Continue_To_Next_Cut);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_Timeline_Next_Cut")}##cutsceneNextCut", ref CFG.Current.CutsceneEditor.CutsceneEditor_Continue_To_Next_Cut);
         GUI.Tooltip(LOC.Get("CUTSCENE_Timeline_Next_Cut_TT"));
 
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_Timeline_Look_Through")}##cutsceneLookThrough", ref CFG.Current.CutsceneEditor_Look_Through_Camera);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_Timeline_Look_Through")}##cutsceneLookThrough", ref CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Look_Through_TT"));
 
         ImGui.SameLine();

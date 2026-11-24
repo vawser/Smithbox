@@ -111,7 +111,7 @@ public class SsrPass : PostProcessPass
     public override bool IsActive(GparamLighting lighting)
     {
         // Reflections are traced from the eye, which an orthographic view hasn't got
-        return CFG.Current.Viewport_Post_Ssr && (lighting?.PostEffects.Ssr ?? Defaults).Enabled && !Owner.IsOrthographic;
+        return RenderSettings.Viewport.Viewport_Post_Ssr && (lighting?.PostEffects.Ssr ?? Defaults).Enabled && !Owner.IsOrthographic;
     }
 
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)
@@ -144,7 +144,7 @@ public class SsrPass : PostProcessPass
             // GLSL reads the matrix as uploaded, so its [c][r] is M(c+1)(r+1) here
             Depth = new Vector4(projection.M33, projection.M43, projection.M34, Owner.SceneDepth.TextureIndex),
             Eye = scene.EyePosition,
-            Strength = new Vector4(Math.Max(CFG.Current.Viewport_Post_Ssr_Strength, 0.0f), 0.0f, 0.0f, 0.0f)
+            Strength = new Vector4(Math.Max(RenderSettings.Viewport.Viewport_Post_Ssr_Strength, 0.0f), 0.0f, 0.0f, 0.0f)
         };
 
         var trace = baseParam;

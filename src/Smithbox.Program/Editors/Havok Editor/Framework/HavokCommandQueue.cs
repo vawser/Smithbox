@@ -98,13 +98,13 @@ public class HavokCommandQueue
         // The binder list's collision type filter would hide the binder: shown with every type instead
         if (category is HavokCategoryMode.Map_Collision)
         {
-            var filter = CFG.Current.HavokEditor_FileList_Collision_Type_Filter;
+            var filter = CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter;
             var hidden = (filter == 1 && !binderName.StartsWith("l"))
                 || (filter == 2 && !binderName.StartsWith("h"))
                 || (filter == 3 && !binderName.StartsWith("f"));
 
             if (hidden)
-                CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 0;
+                CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter = 0;
         }
 
         var files = view.HavokBank.GetBank(category)?.TryGetValue(binder, out var bankFiles) == true

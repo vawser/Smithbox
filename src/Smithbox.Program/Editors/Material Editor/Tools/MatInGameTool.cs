@@ -62,7 +62,7 @@ public class MatInGameTool
         View.Editor.Vanilla.EnsureLoading();
 
         // Polls only while the tool is shown
-        if (CFG.Current.MaterialEditor_InGame_AutoRefresh &&
+        if (CFG.Current.MaterialEditor.MaterialEditor_InGame_AutoRefresh &&
             (Reloader.LastPoll == null || (DateTime.Now - Reloader.LastPoll.Value).TotalSeconds >= RefreshSeconds))
         {
             Reloader.RequestPoll();
@@ -88,7 +88,7 @@ public class MatInGameTool
         else
             GUI.WrappedText(message);
 
-        ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Auto_Refresh")}##materialInGameAutoRefresh", ref CFG.Current.MaterialEditor_InGame_AutoRefresh);
+        ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Auto_Refresh")}##materialInGameAutoRefresh", ref CFG.Current.MaterialEditor.MaterialEditor_InGame_AutoRefresh);
         GUI.Tooltip(LOC.Get("MAT_InGameTool_Auto_Refresh_TT", RefreshSeconds));
 
         GUI.MultiButtonInput("materialInGameRefreshActions",
@@ -97,7 +97,7 @@ public class MatInGameTool
             "materialInGameDetach", LOC.Get("MAT_InGameTool_Detach"), LOC.Get("MAT_InGameTool_Detach_TT"),
             () =>
             {
-                CFG.Current.MaterialEditor_InGame_AutoRefresh = false;
+                CFG.Current.MaterialEditor.MaterialEditor_InGame_AutoRefresh = false;
                 Reloader.Detach();
             });
     }
@@ -111,7 +111,7 @@ public class MatInGameTool
         // Afterwards: applies to every send below, and to send on save. Only the actions this game offers are listed
         // (ER: both; NR, AC6: reload world). The setting is shared by every game, so a choice this game doesn't have
         // is shown as "Nothing" without being changed, and the reloader skips it.
-        CFG.Current.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor_InGame_AfterReload, 0, 2);
+        CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, 0, 2);
 
         if (Link.OffersWorldActions)
         {
@@ -123,11 +123,11 @@ public class MatInGameTool
                 choices.Add((MatReloader.AfterReload.QuitOut, LOC.Get("MAT_InGameTool_After_Quit_Out")));
 
             var labels = choices.Select(c => c.Label).ToArray();
-            var index = Math.Max(0, choices.FindIndex(c => (int)c.Value == CFG.Current.MaterialEditor_InGame_AfterReload));
+            var index = Math.Max(0, choices.FindIndex(c => (int)c.Value == CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload));
 
             ImGui.SetNextItemWidth(-1);
             if (ImGui.Combo("##materialInGameAfterReload", ref index, labels, labels.Length))
-                CFG.Current.MaterialEditor_InGame_AfterReload = (int)choices[index].Value;
+                CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload = (int)choices[index].Value;
             GUI.Tooltip(LOC.Get("MAT_InGameTool_After_TT"));
         }
 
@@ -175,11 +175,11 @@ public class MatInGameTool
                 {
                     var items = MatReloadSource.Dirty(Bank, View.Editor);
                     if (items.Count > 0)
-                        Reloader.RequestReloadMany(items, (MatReloader.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Modified);
+                        Reloader.RequestReloadMany(items, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Modified);
                 });
         }
 
-        ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Send_On_Save")}##materialInGameSendOnSave", ref CFG.Current.MaterialEditor_InGame_SendOnSave);
+        ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Send_On_Save")}##materialInGameSendOnSave", ref CFG.Current.MaterialEditor.MaterialEditor_InGame_SendOnSave);
         GUI.Tooltip(LOC.Get("MAT_InGameTool_Send_On_Save_TT"));
 
         var last = Reloader.LastReload;
@@ -259,7 +259,7 @@ public class MatInGameTool
     private void Send(MatReloader.SendItem item, MatReloader.SendSource source)
     {
         if (item != null)
-            Reloader.RequestReload(item.Name, item.Bytes, (MatReloader.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, source);
+            Reloader.RequestReload(item.Name, item.Bytes, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, source);
     }
 
     // History
@@ -391,7 +391,7 @@ public class MatInGameTool
         GUI.Tooltip(LOC.Get("MAT_InGameTool_Kind_TT"));
 
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Sort_Recent")}##materialInGameSortRecent", ref CFG.Current.MaterialEditor_InGame_SortRecent);
+        ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Sort_Recent")}##materialInGameSortRecent", ref CFG.Current.MaterialEditor.MaterialEditor_InGame_SortRecent);
         GUI.Tooltip(LOC.Get("MAT_InGameTool_Sort_Recent_TT", RecentSeconds));
 
         if (ImGui.BeginTabBar("materialInGameBrowseTabs"))
@@ -532,7 +532,7 @@ public class MatInGameTool
         var loaded = Reloader.Models;
         var filter = Filter.Trim();
 
-        var key = (models, inUse, loaded, filter, Kind, CFG.Current.MaterialEditor_InGame_SortRecent, ExpandedVersion,
+        var key = (models, inUse, loaded, filter, Kind, CFG.Current.MaterialEditor.MaterialEditor_InGame_SortRecent, ExpandedVersion,
             Usage.ScannedAt, Bank);
         if (Equals(key, RowsKey))
             return CachedRows;
@@ -623,7 +623,7 @@ public class MatInGameTool
     /// <summary>Newest first when sorting by recently loaded (the ones loaded at connection last), else by name</summary>
     private static int CompareRecent(DateTime aTime, bool aInitial, DateTime bTime, bool bInitial, string aName, string bName)
     {
-        if (CFG.Current.MaterialEditor_InGame_SortRecent)
+        if (CFG.Current.MaterialEditor.MaterialEditor_InGame_SortRecent)
         {
             if (aInitial != bInitial)
                 return aInitial ? 1 : -1;

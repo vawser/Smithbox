@@ -162,14 +162,14 @@ public class EsdEditorScreen : EditorScreen
         {
             // Code view
             if (ImGui.MenuItem($"{LOC.Get("ESD_Code_Toggle")}##esdCodeViewToggle"))
-                CFG.Current.EsdEditor_Code_View = !CFG.Current.EsdEditor_Code_View;
+                CFG.Current.EsdEditor.EsdEditor_Code_View = !CFG.Current.EsdEditor.EsdEditor_Code_View;
             GUI.Tooltip(LOC.Get("ESD_Code_Toggle_TT"));
-            GUI.ShowActiveStatus(CFG.Current.EsdEditor_Code_View);
+            GUI.ShowActiveStatus(CFG.Current.EsdEditor.EsdEditor_Code_View);
 
             // Tools window
             if (ImGui.MenuItem($"{LOC.Get("ESD_View_Toggle_Tools")}##esdToolWindowToggle"))
-                CFG.Current.Interface_EsdEditor_ToolWindow = !CFG.Current.Interface_EsdEditor_ToolWindow;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ToolWindow);
+                CFG.Current.Interface.Interface_EsdEditor_ToolWindow = !CFG.Current.Interface.Interface_EsdEditor_ToolWindow;
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_EsdEditor_ToolWindow);
 
             ImGui.Separator();
 

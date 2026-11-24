@@ -56,9 +56,9 @@ public class GrassBank
 
         Visible = visible;
 
-        if (visible && Density != CFG.Current.MapEditor_Grass_Density)
+        if (visible && Density != CFG.Current.MapEditor.MapEditor_Grass_Density)
         {
-            Density = CFG.Current.MapEditor_Grass_Density;
+            Density = CFG.Current.MapEditor.MapEditor_Grass_Density;
             refresh = true;
         }
 

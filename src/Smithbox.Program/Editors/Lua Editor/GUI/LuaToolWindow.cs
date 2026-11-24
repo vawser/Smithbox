@@ -8,7 +8,7 @@ namespace StudioCore.Editors.LuaEditor;
 /// Act Outline, the selected script's definitions, and the Global Search, a string or value in every script. Simulation: the Battle Simulation, the selected battle goal run on
 /// its character in the viewport, and First Person Mode, walking as its target. Viewport: the Viewport Filters (what the viewport shows of the simulation: effects,
 /// bullet lines, the target), and the shared Grid Configuration tool, for the simulation viewport's grids (saved in
-/// CFG.LuaEditor_Grids).
+/// LuaEditorSettings.LuaEditor_Grids).
 /// </summary>
 public class LuaToolWindow
 {

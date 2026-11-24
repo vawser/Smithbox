@@ -135,7 +135,7 @@ public sealed class CutsceneCamera
         var clip = BaseSkeleton != null ? BaseClip : Clip;
         var slot = skeleton != null ? FovSlotOf(skeleton) : -1;
         if (skeleton == null || clip == null || slot < 0)
-            return CFG.Current.Viewport_Camera_FOV * MathF.PI / 180f;
+            return CFG.Current.Viewport.Viewport_Camera_FOV * MathF.PI / 180f;
 
         return clip.SampleSlot(skeleton, slot, Math.Clamp(frame, 0, Math.Max(0, clip.FrameCount - 1)));
     }
@@ -193,9 +193,9 @@ public sealed class CutsceneCamera
     /// <summary>The vertical field of view in radians for an aspect ratio, from the file's value and the options.</summary>
     public float VerticalFovRadians(float frame, float aspect)
     {
-        var fov = FovRadians(frame) ?? CFG.Current.Viewport_Camera_FOV * MathF.PI / 180f;
+        var fov = FovRadians(frame) ?? CFG.Current.Viewport.Viewport_Camera_FOV * MathF.PI / 180f;
 
-        if (CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal && aspect > 0)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Fov_Is_Horizontal && aspect > 0)
             fov = 2 * MathF.Atan(MathF.Tan(fov / 2) / aspect);
 
         return fov;
@@ -207,7 +207,7 @@ public sealed class CutsceneCamera
     /// </summary>
     public static float FileFovRadians(float verticalRadians, float aspect)
     {
-        if (CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal && aspect > 0)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Fov_Is_Horizontal && aspect > 0)
             return 2 * MathF.Atan(MathF.Tan(verticalRadians / 2) * aspect);
 
         return verticalRadians;
@@ -217,8 +217,8 @@ public sealed class CutsceneCamera
     public static void GetView(Matrix4x4 world, out Vector3 eye, out Vector3 forward, out Vector3 up)
     {
         eye = world.Translation;
-        forward = Vector3.Normalize(Vector3.TransformNormal(Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor_Camera_Forward_Axis), world));
-        up = Vector3.Normalize(Vector3.TransformNormal(Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor_Camera_Up_Axis), world));
+        forward = Vector3.Normalize(Vector3.TransformNormal(Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Forward_Axis), world));
+        up = Vector3.Normalize(Vector3.TransformNormal(Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Up_Axis), world));
 
         if (!float.IsFinite(forward.X + forward.Y + forward.Z))
             forward = Vector3.UnitZ;

@@ -46,7 +46,7 @@ public class EsdSearchTool
         ValueText = value.ToString(CultureInfo.InvariantCulture);
         FlagsOnly = flagsOnly;
         AllFiles = true;
-        CFG.Current.Interface_EsdEditor_ToolWindow = true;
+        CFG.Current.Interface.Interface_EsdEditor_ToolWindow = true;
         FocusNext = true;
         Start(value);
     }

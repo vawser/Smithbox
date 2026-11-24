@@ -63,9 +63,9 @@ public class HavokCollisionBank
     {
         return type switch
         {
-            HavokCollisionType.Low => CFG.Current.MapEditor_Display_Low_Collision,
-            HavokCollisionType.High => CFG.Current.MapEditor_Display_High_Collision,
-            HavokCollisionType.FallProtection => CFG.Current.MapEditor_Display_FallProtection_Collision,
+            HavokCollisionType.Low => CFG.Current.MapEditor.MapEditor_Display_Low_Collision,
+            HavokCollisionType.High => CFG.Current.MapEditor.MapEditor_Display_High_Collision,
+            HavokCollisionType.FallProtection => CFG.Current.MapEditor.MapEditor_Display_FallProtection_Collision,
             _ => false
         };
     }
@@ -102,18 +102,18 @@ public class HavokCollisionBank
         switch (type)
         {
             case HavokCollisionType.Low:
-                CFG.Current.MapEditor_Display_Low_Collision = visible;
+                CFG.Current.MapEditor.MapEditor_Display_Low_Collision = visible;
                 break;
             case HavokCollisionType.High:
-                CFG.Current.MapEditor_Display_High_Collision = visible;
+                CFG.Current.MapEditor.MapEditor_Display_High_Collision = visible;
                 break;
             case HavokCollisionType.FallProtection:
-                CFG.Current.MapEditor_Display_FallProtection_Collision = visible;
+                CFG.Current.MapEditor.MapEditor_Display_FallProtection_Collision = visible;
                 break;
         }
 
         // The Model Editor displays a single type, which follows the one displayed here
-        CFG.Current.CurrentHavokCollisionType = PrimaryCollisionType;
+        CFG.Current.Viewport.CurrentHavokCollisionType = PrimaryCollisionType;
 
         RefreshCollision();
     }
@@ -135,7 +135,7 @@ public class HavokCollisionBank
     public void OnLoadMap(string mapId)
     {
         using var __scope = Profiler.TracyZoneAuto();
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
+        if (!CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions)
             return;
 
         // DES and DS1 keep each collision as a loose file in the map's folder

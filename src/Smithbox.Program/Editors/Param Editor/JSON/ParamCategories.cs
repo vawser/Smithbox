@@ -23,7 +23,7 @@ public class ParamCategoryEntry
 
     public string GetDisplayName()
     {
-        var curLang = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
         if(DisplayNames.Any(e => e.Language == curLang))
         {

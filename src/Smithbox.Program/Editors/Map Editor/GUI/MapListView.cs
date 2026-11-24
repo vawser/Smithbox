@@ -195,14 +195,14 @@ public class MapListView : IActionEventHandler
     /// </summary>
     private void DisplayBtlVariantToggleButton()
     {
-        var enabled = CFG.Current.MapEditor_Lights_Default_BTL_Variant_Only;
+        var enabled = CFG.Current.MapEditor.MapEditor_Lights_Default_BTL_Variant_Only;
 
         if (enabled)
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
 
         if (ImGui.Button($"{Icons.LightbulbO}##btlVariantToggle", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_Lights_Default_BTL_Variant_Only = !enabled;
+            CFG.Current.MapEditor.MapEditor_Lights_Default_BTL_Variant_Only = !enabled;
         }
 
         if (enabled)
@@ -246,7 +246,7 @@ public class MapListView : IActionEventHandler
                         _pendingCollapse = null;
                         _selectedMaps.Add(curWrapper.Name);
 
-                        if (CFG.Current.MapEditor_Map_List_Enable_Load_on_Double_Click)
+                        if (CFG.Current.MapEditor.MapEditor_Map_List_Enable_Load_on_Double_Click)
                         {
                             OnDoubleClick(curWrapper, loadType);
                         }
@@ -260,7 +260,7 @@ public class MapListView : IActionEventHandler
                 var mapId = curWrapper.Name;
                 var displayedName = $"{mapId}";
 
-                if (CFG.Current.MapEditor_Map_List_Display_Map_Aliases)
+                if (CFG.Current.MapEditor.MapEditor_Map_List_Display_Map_Aliases)
                 {
                     var mapName = _cachedMapNameAliases.TryGetValue(mapId, out var cachedName) ? cachedName : "";
                     displayedName = $"{mapId}: {mapName}";
@@ -283,25 +283,25 @@ public class MapListView : IActionEventHandler
 
                 // The saved MSB against the game's: unloaded maps take the shared modified / added colour. Loaded maps
                 // keep the loaded colour, so their vanilla state isn't shown here
-                var vanillaStatus = VanillaMarkers.Enabled(CFG.Current.MapEditor_Vanilla_Highlight)
+                var vanillaStatus = VanillaMarkers.Enabled(CFG.Current.MapEditor.MapEditor_Vanilla_Highlight)
                     ? Project.VFS.FileStatus(curWrapper.Path)
                     : VanillaStatus.None;
 
                 if (saveError != null)
                 {
                     // A failed save (an autosave, which shows no dialog) stays marked until the map saves
-                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_Invalid_Text_Color, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_Invalid_Text_Color, CFG.Current.Interface.Interface_Alias_Wordwrap_Map_Editor);
                     GUI.Tooltip(LOC.Get("MAP_List_Save_Failed_TT", saveError));
                 }
                 else if (loadType == MapContentLoadState.Loaded)
                 {
-                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface.Interface_Alias_Wordwrap_Map_Editor);
                 }
                 else
                 {
                     GUI.DisplayColoredAlias(displayedName,
                         VanillaMarkers.Colour(vanillaStatus) ?? UI.Current.ImGui_Default_Text_Color,
-                        CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                        CFG.Current.Interface.Interface_Alias_Wordwrap_Map_Editor);
                     VanillaMarkers.Tooltip(vanillaStatus);
                 }
 

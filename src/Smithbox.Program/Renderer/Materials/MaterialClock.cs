@@ -49,8 +49,8 @@ public static class MaterialClock
     {
         get
         {
-            var angle = CFG.Current.Viewport_Wind_Direction * MathF.PI / 180.0f;
-            var strength = CFG.Current.Viewport_Wind_Strength;
+            var angle = RenderSettings.Viewport.Viewport_Wind_Direction * MathF.PI / 180.0f;
+            var strength = RenderSettings.Viewport.Viewport_Wind_Strength;
 
             return new Vector4(MathF.Sin(angle), MathF.Cos(angle),
                 WindSteadyForce * strength, WindWaveForce * strength);
@@ -78,24 +78,24 @@ public static class MaterialClock
             }
 
             // Kept in both modes
-            Add(CFG.Current.Viewport_Material_Layer_Blending, MaterialFeatures.LayerBlending);
-            Add(CFG.Current.Viewport_Material_Unlit, MaterialFeatures.Unlit);
-            Add(CFG.Current.Viewport_Material_Water, MaterialFeatures.Water);
-            Add(CFG.Current.Viewport_Material_Fur, MaterialFeatures.Fur);
+            Add(RenderSettings.Viewport.Viewport_Material_Layer_Blending, MaterialFeatures.LayerBlending);
+            Add(RenderSettings.Viewport.Viewport_Material_Unlit, MaterialFeatures.Unlit);
+            Add(RenderSettings.Viewport.Viewport_Material_Water, MaterialFeatures.Water);
+            Add(RenderSettings.Viewport.Viewport_Material_Fur, MaterialFeatures.Fur);
 
             if (!RenderMode.IsGame)
             {
                 return current;
             }
 
-            Add(CFG.Current.Viewport_Material_Wind, MaterialFeatures.Wind);
-            Add(CFG.Current.Viewport_Material_Vertex_Animation, MaterialFeatures.VertexAnimation);
-            Add(CFG.Current.Viewport_Material_Sway, MaterialFeatures.Sway);
-            Add(CFG.Current.Viewport_Material_Birds, MaterialFeatures.Birds);
-            Add(CFG.Current.Viewport_Material_Overlays, MaterialFeatures.Overlays);
-            Add(CFG.Current.Viewport_Material_Magma, MaterialFeatures.Magma);
-            Add(CFG.Current.Viewport_Material_Emissive, MaterialFeatures.Emissive);
-            Add(CFG.Current.Viewport_Material_UV_Scroll, MaterialFeatures.UvScroll);
+            Add(RenderSettings.Viewport.Viewport_Material_Wind, MaterialFeatures.Wind);
+            Add(RenderSettings.Viewport.Viewport_Material_Vertex_Animation, MaterialFeatures.VertexAnimation);
+            Add(RenderSettings.Viewport.Viewport_Material_Sway, MaterialFeatures.Sway);
+            Add(RenderSettings.Viewport.Viewport_Material_Birds, MaterialFeatures.Birds);
+            Add(RenderSettings.Viewport.Viewport_Material_Overlays, MaterialFeatures.Overlays);
+            Add(RenderSettings.Viewport.Viewport_Material_Magma, MaterialFeatures.Magma);
+            Add(RenderSettings.Viewport.Viewport_Material_Emissive, MaterialFeatures.Emissive);
+            Add(RenderSettings.Viewport.Viewport_Material_UV_Scroll, MaterialFeatures.UvScroll);
 
             return current;
         }
@@ -120,7 +120,7 @@ public static class MaterialClock
             }
 
             // Paused in Editor mode, so Game mode picks the animation up where it was left
-            if (CFG.Current.Viewport_Enable_Material_Animation && RenderMode.IsGame)
+            if (RenderSettings.Viewport.Viewport_Enable_Material_Animation && RenderMode.IsGame)
             {
                 Clock.Start();
             }

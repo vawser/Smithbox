@@ -136,7 +136,7 @@ public class ProjectileViewportWindow
 
         var camera = vk.ViewportCamera;
         var forward = Vector3.Transform(Vector3.UnitZ, camera.CameraTransform.Rotation);
-        var fov = float.DegreesToRadians(camera.FovOverrideDegrees ?? CFG.Current.Viewport_Camera_FOV);
+        var fov = float.DegreesToRadians(camera.FovOverrideDegrees ?? CFG.Current.Viewport.Viewport_Camera_FOV);
 
         camera.CameraTransform.Position = center - forward * (radius / MathF.Sin(fov * 0.5f));
     }
@@ -165,8 +165,8 @@ public class ProjectileViewportWindow
 
         var settings = View.Simulator.Settings;
         var cfg = CFG.Current;
-        var key = (settings, cfg.ProjectileEditor_Display_Ground_Grid, cfg.ProjectileEditor_Display_Wall,
-            cfg.ProjectileEditor_Display_Target_Path);
+        var key = (settings, cfg.ProjectileEditor.ProjectileEditor_Display_Ground_Grid, cfg.ProjectileEditor.ProjectileEditor_Display_Wall,
+            cfg.ProjectileEditor.ProjectileEditor_Display_Target_Path);
 
         if (key == SceneryFor)
             return;
@@ -175,7 +175,7 @@ public class ProjectileViewportWindow
 
         var lines = new Dictionary<Color, List<(Vector3, Vector3)>>();
 
-        if (CFG.Current.ProjectileEditor_Display_Ground_Grid)
+        if (CFG.Current.ProjectileEditor.ProjectileEditor_Display_Ground_Grid)
         {
             var minor = Lines(lines, Color.FromArgb(255, 70, 70, 70));
             var major = Lines(lines, Color.FromArgb(255, 120, 120, 120));
@@ -191,10 +191,10 @@ public class ProjectileViewportWindow
         }
 
         // Only what is drawn: the wall and target are simulated either way
-        if (settings.SimulateWall && cfg.ProjectileEditor_Display_Wall)
+        if (settings.SimulateWall && cfg.ProjectileEditor.ProjectileEditor_Display_Wall)
             AddWall(Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.WallColor)), settings);
 
-        if (settings.SimulateTarget && settings.IsTargetMoving && cfg.ProjectileEditor_Display_Target_Path)
+        if (settings.SimulateTarget && settings.IsTargetMoving && cfg.ProjectileEditor.ProjectileEditor_Display_Target_Path)
             AddTargetPath(Lines(lines, ProjectileDebugLines.ToColor(Dim(ProjectileFormat.TargetColor, 0.5f))), settings);
 
         Scenery.Show(View.RenderScene!, lines);
@@ -208,9 +208,9 @@ public class ProjectileViewportWindow
         var simulator = View.Simulator;
         var settings = simulator.Settings;
         var cfg = CFG.Current;
-        var key = (simulator.Version, simulator.Time, settings, cfg.ProjectileEditor_Display_Trails,
-            cfg.ProjectileEditor_Display_Reach, cfg.ProjectileEditor_Display_Bullets, cfg.ProjectileEditor_Display_Impacts,
-            cfg.ProjectileEditor_Display_Target);
+        var key = (simulator.Version, simulator.Time, settings, cfg.ProjectileEditor.ProjectileEditor_Display_Trails,
+            cfg.ProjectileEditor.ProjectileEditor_Display_Reach, cfg.ProjectileEditor.ProjectileEditor_Display_Bullets, cfg.ProjectileEditor.ProjectileEditor_Display_Impacts,
+            cfg.ProjectileEditor.ProjectileEditor_Display_Target);
 
         if (key == BulletsFor)
             return;
@@ -225,7 +225,7 @@ public class ProjectileViewportWindow
         var lines = new Dictionary<Color, List<(Vector3, Vector3)>>();
         var time = simulator.Time;
 
-        if (settings.SimulateTarget && cfg.ProjectileEditor_Display_Target)
+        if (settings.SimulateTarget && cfg.ProjectileEditor.ProjectileEditor_Display_Target)
         {
             var target = Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.TargetColor));
             var position = settings.GetTargetPosition(time);
@@ -237,12 +237,12 @@ public class ProjectileViewportWindow
 
         if (simulator.Result is { } result)
         {
-            if (CFG.Current.ProjectileEditor_Display_Trails)
+            if (CFG.Current.ProjectileEditor.ProjectileEditor_Display_Trails)
                 AddTrails(lines, result, time);
 
-            AddProjectiles(lines, result, time, cfg.ProjectileEditor_Display_Bullets, cfg.ProjectileEditor_Display_Reach);
+            AddProjectiles(lines, result, time, cfg.ProjectileEditor.ProjectileEditor_Display_Bullets, cfg.ProjectileEditor.ProjectileEditor_Display_Reach);
 
-            if (cfg.ProjectileEditor_Display_Impacts)
+            if (cfg.ProjectileEditor.ProjectileEditor_Display_Impacts)
                 AddImpacts(lines, result, time);
         }
 
@@ -399,7 +399,7 @@ public class ProjectileViewportWindow
         var simulator = View.Simulator;
         var settings = simulator.Settings;
 
-        if (simulator.Result is not { } result || !settings.SimulateTarget || !CFG.Current.ProjectileEditor_Display_Damage)
+        if (simulator.Result is not { } result || !settings.SimulateTarget || !CFG.Current.ProjectileEditor.ProjectileEditor_Display_Damage)
             return;
 
         var time = simulator.Time;

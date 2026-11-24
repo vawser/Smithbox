@@ -47,23 +47,23 @@ public class AssetBrowserTool
         GUI.WrappedText(Hint);
         GUI.Spacer();
 
-        if (ImGui.RadioButton($"{LOC.Get("EDITOR_ModelPreview_List_Mode")}##assetBrowserListMode", !CFG.Current.Interface_Asset_Browser_Use_Previews))
+        if (ImGui.RadioButton($"{LOC.Get("EDITOR_ModelPreview_List_Mode")}##assetBrowserListMode", !CFG.Current.Interface.Interface_Asset_Browser_Use_Previews))
         {
-            CFG.Current.Interface_Asset_Browser_Use_Previews = false;
+            CFG.Current.Interface.Interface_Asset_Browser_Use_Previews = false;
         }
         GUI.Tooltip(LOC.Get("EDITOR_ModelPreview_List_Mode_TT"));
 
         ImGui.SameLine();
 
-        if (ImGui.RadioButton($"{LOC.Get("EDITOR_ModelPreview_Preview_Mode")}##assetBrowserPreviewMode", CFG.Current.Interface_Asset_Browser_Use_Previews))
+        if (ImGui.RadioButton($"{LOC.Get("EDITOR_ModelPreview_Preview_Mode")}##assetBrowserPreviewMode", CFG.Current.Interface.Interface_Asset_Browser_Use_Previews))
         {
-            CFG.Current.Interface_Asset_Browser_Use_Previews = true;
+            CFG.Current.Interface.Interface_Asset_Browser_Use_Previews = true;
         }
         GUI.Tooltip(LOC.Get("EDITOR_ModelPreview_Preview_Mode_TT"));
 
         GUI.Spacer();
 
-        if (CFG.Current.Interface_Asset_Browser_Use_Previews)
+        if (CFG.Current.Interface.Interface_Asset_Browser_Use_Previews)
         {
             Browser.DisplayOptions();
         }
@@ -72,7 +72,7 @@ public class AssetBrowserTool
 
         UpdateFilteredEntries();
 
-        if (CFG.Current.Interface_Asset_Browser_Use_Previews)
+        if (CFG.Current.Interface.Interface_Asset_Browser_Use_Previews)
         {
             Browser.Display("assetBrowser", FilteredEntries, OnActivate);
         }

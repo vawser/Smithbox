@@ -58,14 +58,14 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     private unsafe void ProcessMesh(NVM mesh)
     {
-        byte navR = (byte)CFG.Current.Viewport_Navmesh_Color.X;
-        byte navG = (byte)CFG.Current.Viewport_Navmesh_Color.Y;
-        byte navB = (byte)CFG.Current.Viewport_Navmesh_Color.Z;
+        byte navR = (byte)RenderSettings.Viewport.Viewport_Navmesh_Color.X;
+        byte navG = (byte)RenderSettings.Viewport.Viewport_Navmesh_Color.Y;
+        byte navB = (byte)RenderSettings.Viewport.Viewport_Navmesh_Color.Z;
         byte navA = 255;
 
-        byte navGateR = (byte)CFG.Current.Viewport_Navmesh_Gate_Color.X;
-        byte navGateG = (byte)CFG.Current.Viewport_Navmesh_Gate_Color.Y;
-        byte navGateB = (byte)CFG.Current.Viewport_Navmesh_Gate_Color.Z;
+        byte navGateR = (byte)RenderSettings.Viewport.Viewport_Navmesh_Gate_Color.X;
+        byte navGateG = (byte)RenderSettings.Viewport.Viewport_Navmesh_Gate_Color.Y;
+        byte navGateB = (byte)RenderSettings.Viewport.Viewport_Navmesh_Gate_Color.Z;
         byte navGateA = 255;
 
         List<Vector3> verts = mesh.Vertices;

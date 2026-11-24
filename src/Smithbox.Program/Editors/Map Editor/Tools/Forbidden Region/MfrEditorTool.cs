@@ -79,7 +79,7 @@ public partial class MfrEditorTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_MfrEditor_Display_Header"), LOC.Get("MAP_MfrEditor_Display_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_MfrEditor_Show_Boxes")}##mfrShowBoxes", ref CFG.Current.MapEditor_Display_Forbidden_Regions);
+        ImGui.Checkbox($"{LOC.Get("MAP_MfrEditor_Show_Boxes")}##mfrShowBoxes", ref CFG.Current.MapEditor.MapEditor_Display_Forbidden_Regions);
         GUI.Tooltip(LOC.Get("MAP_MfrEditor_Show_Boxes_TT"));
 
         MapForbiddenRegionTool.DisplayOptions();
@@ -676,7 +676,7 @@ public partial class MfrEditorTool
         var a = Vector3.Transform(min, root);
         var b = Vector3.Transform(max, root);
 
-        viewport.FrameBox(new BoundingBox(Vector3.Min(a, b), Vector3.Max(a, b)), CFG.Current.Viewport_Frame_Offset, CFG.Current.Viewport_Frame_Distance);
+        viewport.FrameBox(new BoundingBox(Vector3.Min(a, b), Vector3.Max(a, b)), CFG.Current.Viewport.Viewport_Frame_Offset, CFG.Current.Viewport.Viewport_Frame_Distance);
     }
 
     private static Vector3 ToMap(MapContainer map, Vector3 world)

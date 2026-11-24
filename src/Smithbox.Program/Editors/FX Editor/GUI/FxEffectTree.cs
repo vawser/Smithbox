@@ -262,15 +262,15 @@ public partial class FxEffectTree
         EditorFilters.DisplaySearchbar("fxEditor_EffectTree", ref Filter, ref ExactFilter);
 
         GUI.DisplayToggleButton("fxTreeHighlight", Icons.Crosshairs,
-            ref CFG.Current.FxEditor_EffectTree_Highlight_Selected,
+            ref CFG.Current.FxEditor.FxEditor_EffectTree_Highlight_Selected,
             "FX_EffectTree_Highlight_Off", "FX_EffectTree_Highlight_On", "FX_EffectTree_Highlight_TT");
 
         GUI.DisplayToggleButton("fxTreeSummaries", Icons.Tag,
-            ref CFG.Current.FxEditor_EffectTree_Show_Summaries,
+            ref CFG.Current.FxEditor.FxEditor_EffectTree_Show_Summaries,
             "FX_EffectTree_Summaries_Off", "FX_EffectTree_Summaries_On", "FX_EffectTree_Summaries_TT");
 
         GUI.DisplayToggleButton("fxTreeChecks", Icons.ExclamationTriangle,
-            ref CFG.Current.FxEditor_EffectTree_Show_Checks,
+            ref CFG.Current.FxEditor.FxEditor_EffectTree_Show_Checks,
             "FX_EffectTree_Checks_Off", "FX_EffectTree_Checks_On", "FX_EffectTree_Checks_TT");
 
         var root = entry?.Fxr?.Root;
@@ -309,7 +309,7 @@ public partial class FxEffectTree
         var label = FxNames.Node(node);
         if (children.Count > 0)
             label = $"{label} ({children.Count})";
-        if (CFG.Current.FxEditor_EffectTree_Show_Summaries && info?.Summary != null)
+        if (CFG.Current.FxEditor.FxEditor_EffectTree_Show_Summaries && info?.Summary != null)
             label = proxy ? $"{label} → {info.Summary}" : $"{label}: {info.Summary}";
         else if (proxy && info?.Summary != null)
             label = $"{label} → {info.Summary}";
@@ -588,7 +588,7 @@ public partial class FxEffectTree
 
     private static void DisplayProblems(NodeInfo info)
     {
-        if (!CFG.Current.FxEditor_EffectTree_Show_Checks || info?.Problems is not { Count: > 0 } problems)
+        if (!CFG.Current.FxEditor.FxEditor_EffectTree_Show_Checks || info?.Problems is not { Count: > 0 } problems)
             return;
 
         ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);

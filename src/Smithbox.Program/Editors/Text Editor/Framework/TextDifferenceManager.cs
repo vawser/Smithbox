@@ -117,7 +117,7 @@ public class TextDifferenceManager
             return;
 
         // Leave empty if disabled
-        if(!CFG.Current.TextEditor_Include_Vanilla_Cache)
+        if(!CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache)
         {
             return;
         }
@@ -261,7 +261,7 @@ public class TextDifferenceManager
     /// </summary>
     public VanillaStatus FmgStatus(TextContainerWrapper container, TextFmgWrapper fmg)
     {
-        if (!CFG.Current.TextEditor_Include_Vanilla_Cache || container == null || fmg?.File == null)
+        if (!CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache || container == null || fmg?.File == null)
             return VanillaStatus.None;
 
         if (FmgStatusCache.TryGetValue(fmg, out var cached) && cached.Version == Version)

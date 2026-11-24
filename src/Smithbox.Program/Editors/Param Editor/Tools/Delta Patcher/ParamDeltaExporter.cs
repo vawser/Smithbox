@@ -105,7 +105,7 @@ public class ParamDeltaExporter
             var isTableParam = ParamRowGroups.IsTableParam(Patcher.Project, primaryParam.Key);
 
             // Skip indexed params if the option is enabled
-            if (CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows && isTableParam)
+            if (CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows && isTableParam)
                 continue;
 
             if (Patcher.Selection.CurrentParamMode is DeltaExportMode.Selected)

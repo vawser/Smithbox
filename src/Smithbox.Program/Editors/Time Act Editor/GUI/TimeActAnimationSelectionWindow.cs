@@ -69,7 +69,7 @@ public class TimeActAnimationSelectionWindow
 
         ImGui.SameLine();
 
-        var mode = CFG.Current.TimeActEditor_Animation_List_Alias_Display;
+        var mode = CFG.Current.TimeActEditor.TimeActEditor_Animation_List_Alias_Display;
         var next = GetNextAliasDisplayMode(mode);
 
         var icon = mode switch
@@ -82,7 +82,7 @@ public class TimeActAnimationSelectionWindow
         ImGui.AlignTextToFramePadding();
         if (ImGui.Button($"{icon}##timeActAnimationAliasDisplay"))
         {
-            CFG.Current.TimeActEditor_Animation_List_Alias_Display = next;
+            CFG.Current.TimeActEditor.TimeActEditor_Animation_List_Alias_Display = next;
         }
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Alias_Display_TT",
             GetAliasDisplayModeName(mode), GetAliasDisplayModeName(next)));
@@ -112,7 +112,7 @@ public class TimeActAnimationSelectionWindow
         if (alias == "")
             return;
 
-        switch (CFG.Current.TimeActEditor_Animation_List_Alias_Display)
+        switch (CFG.Current.TimeActEditor.TimeActEditor_Animation_List_Alias_Display)
         {
             case TimeActAliasDisplayMode.Wrap:
                 GUI.DisplayAlias(alias, true);
@@ -201,7 +201,7 @@ public class TimeActAnimationSelectionWindow
 
                 var selected = View.Selection.SelectedAnimation == animation;
 
-                var alias = CFG.Current.TimeActEditor_Animation_List_Alias_Display == TimeActAliasDisplayMode.Hide
+                var alias = CFG.Current.TimeActEditor.TimeActEditor_Animation_List_Alias_Display == TimeActAliasDisplayMode.Hide
                     ? ""
                     : AliasHelper.GetAnimationAlias(Project, source.Name, name);
 
@@ -476,9 +476,9 @@ public class TimeActAnimationSelectionWindow
 
         // Open Export Folder
         if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Open_Export_Folder")}##openAnimationExportFolder", "",
-            false, Directory.Exists(CFG.Current.TimeActEditor_Export_Directory)))
+            false, Directory.Exists(CFG.Current.TimeActEditor.TimeActEditor_Export_Directory)))
         {
-            Process.Start("explorer.exe", CFG.Current.TimeActEditor_Export_Directory);
+            Process.Start("explorer.exe", CFG.Current.TimeActEditor.TimeActEditor_Export_Directory);
         }
     }
     #endregion
@@ -888,10 +888,10 @@ public class TimeActAnimationSelectionWindow
         if (animations.Count == 0)
             return;
 
-        if (!Directory.Exists(CFG.Current.TimeActEditor_Export_Directory) && !TimeActSelectionWindow.SelectExportFolder())
+        if (!Directory.Exists(CFG.Current.TimeActEditor.TimeActEditor_Export_Directory) && !TimeActSelectionWindow.SelectExportFolder())
             return;
 
-        var folder = Path.Join(CFG.Current.TimeActEditor_Export_Directory, source.Name, "hkx");
+        var folder = Path.Join(CFG.Current.TimeActEditor.TimeActEditor_Export_Directory, source.Name, "hkx");
 
         TimeActAnimationFiles files;
 

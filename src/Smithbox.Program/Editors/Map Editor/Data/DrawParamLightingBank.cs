@@ -78,11 +78,11 @@ public class DrawParamLightingBank
     {
         switch (bank)
         {
-            case ToneMapBank: return ref CFG.Current.Viewport_Map_DrawParam_ToneMap_Row;
-            case ShadowBank: return ref CFG.Current.Viewport_Map_DrawParam_Shadow_Row;
-            case ToneCorrectBank: return ref CFG.Current.Viewport_Map_DrawParam_ToneCorrect_Row;
-            case FogBank: return ref CFG.Current.Viewport_Map_DrawParam_Fog_Row;
-            default: return ref CFG.Current.Viewport_Map_DrawParam_Light_Row;
+            case ToneMapBank: return ref CFG.Current.Viewport.Viewport_Map_DrawParam_ToneMap_Row;
+            case ShadowBank: return ref CFG.Current.Viewport.Viewport_Map_DrawParam_Shadow_Row;
+            case ToneCorrectBank: return ref CFG.Current.Viewport.Viewport_Map_DrawParam_ToneCorrect_Row;
+            case FogBank: return ref CFG.Current.Viewport.Viewport_Map_DrawParam_Fog_Row;
+            default: return ref CFG.Current.Viewport.Viewport_Map_DrawParam_Light_Row;
         }
     }
 
@@ -196,7 +196,7 @@ public class DrawParamLightingBank
     /// </summary>
     public GparamLighting ResolveForViewport(IEnumerable<MapContainer> maps)
     {
-        if (!CanUse() || !CFG.Current.Viewport_Map_Lighting)
+        if (!CanUse() || !CFG.Current.Viewport.Viewport_Map_Lighting)
             return null;
 
         var map = GetLitMap(maps);
@@ -255,7 +255,7 @@ public class DrawParamLightingBank
     {
         var litMap = scene != null ? GetLitMap(maps) : null;
 
-        if (litMap == null || !CFG.Current.Viewport_Map_DrawParam_Per_Part || ChosenRow(LightBank) >= 0)
+        if (litMap == null || !CFG.Current.Viewport.Viewport_Map_DrawParam_Per_Part || ChosenRow(LightBank) >= 0)
         {
             ClearPartLighting();
             return PartSets;

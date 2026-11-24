@@ -35,9 +35,9 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                if (ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Frame_Rate, 20.0f, 240.0f))
+                if (ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport.Viewport_Frame_Rate, 20.0f, 240.0f))
                 {
-                    CFG.Current.Viewport_Frame_Rate = (float)Math.Round(CFG.Current.Viewport_Frame_Rate);
+                    CFG.Current.Viewport.Viewport_Frame_Rate = (float)Math.Round(CFG.Current.Viewport.Viewport_Frame_Rate);
                 }
             }
         };
@@ -62,7 +62,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Rendering);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Rendering);
             }
         };
     }
@@ -82,7 +82,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Texturing);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Texturing);
             }
         };
     }
@@ -102,7 +102,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Culling);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Culling);
             }
         };
     }
@@ -124,7 +124,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                Utils.ImGui_InputUint("##inputValue", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
+                Utils.ImGui_InputUint("##inputValue", ref CFG.Current.Viewport.Viewport_Limit_Buffer_Indirect_Draw);
             }
         };
     }
@@ -146,7 +146,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                Utils.ImGui_InputUint("##inputValue", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
+                Utils.ImGui_InputUint("##inputValue", ref CFG.Current.Viewport.Viewport_Limit_Buffer_Flver_Bone);
             }
         };
     }
@@ -179,7 +179,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                var current = (LoadMemoryBudget.Profile)CFG.Current.Viewport_Load_Memory_Profile;
+                var current = (LoadMemoryBudget.Profile)CFG.Current.Viewport.Viewport_Load_Memory_Profile;
                 var preview = LoadMemoryProfiles.FirstOrDefault(p => p.Profile == current).Name ?? "";
 
                 DPI.ApplyInputWidth();
@@ -189,7 +189,7 @@ public class ViewportPrefs
                     {
                         if (ImGui.Selectable(LOC.Get(name), profile == current))
                         {
-                            CFG.Current.Viewport_Load_Memory_Profile = (int)profile;
+                            CFG.Current.Viewport.Viewport_Load_Memory_Profile = (int)profile;
                         }
 
                         GUI.Tooltip(LOC.Get($"{name}_TT"));
@@ -224,12 +224,12 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.BeginDisabled(CFG.Current.Viewport_Load_Memory_Profile != (int)LoadMemoryBudget.Profile.Custom);
+                ImGui.BeginDisabled(CFG.Current.Viewport.Viewport_Load_Memory_Profile != (int)LoadMemoryBudget.Profile.Custom);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Load_Memory_Budget_MB, 256, 1024))
+                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport.Viewport_Load_Memory_Budget_MB, 256, 1024))
                 {
-                    CFG.Current.Viewport_Load_Memory_Budget_MB = Math.Max(0, CFG.Current.Viewport_Load_Memory_Budget_MB);
+                    CFG.Current.Viewport.Viewport_Load_Memory_Budget_MB = Math.Max(0, CFG.Current.Viewport.Viewport_Load_Memory_Budget_MB);
                 }
 
                 ImGui.EndDisabled();
@@ -253,12 +253,12 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.BeginDisabled(CFG.Current.Viewport_Load_Memory_Profile != (int)LoadMemoryBudget.Profile.Custom);
+                ImGui.BeginDisabled(CFG.Current.Viewport.Viewport_Load_Memory_Profile != (int)LoadMemoryBudget.Profile.Custom);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Load_Container_Readers, 1, 4))
+                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport.Viewport_Load_Container_Readers, 1, 4))
                 {
-                    CFG.Current.Viewport_Load_Container_Readers = Math.Clamp(CFG.Current.Viewport_Load_Container_Readers, 0, 256);
+                    CFG.Current.Viewport.Viewport_Load_Container_Readers = Math.Clamp(CFG.Current.Viewport.Viewport_Load_Container_Readers, 0, 256);
                 }
 
                 ImGui.EndDisabled();
@@ -284,7 +284,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Model_Masks);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Model_Masks);
             }
         };
     }
@@ -304,7 +304,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_LOD_Facesets);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_LOD_Facesets);
             }
         };
     }
@@ -326,7 +326,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Flat_Model_Brightness);
+                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport.Viewport_Flat_Model_Brightness);
             }
         };
     }
@@ -347,7 +347,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport_Flat_Model_Saturation);
+                ImGui.InputFloat("##inputValue", ref CFG.Current.Viewport.Viewport_Flat_Model_Saturation);
             }
         };
     }
@@ -371,7 +371,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Outline);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Selection_Outline);
             }
         };
     }
@@ -390,7 +390,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Tint);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Selection_Tint);
             }
         };
     }
@@ -410,7 +410,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Dithering);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Selection_Dithering);
             }
         };
     }
@@ -429,7 +429,7 @@ public class ViewportPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.DragFloat("##inputValue", ref CFG.Current.Viewport_Selection_Dither_Opacity);
+                ImGui.DragFloat("##inputValue", ref CFG.Current.Viewport.Viewport_Selection_Dither_Opacity);
             }
         };
     }
@@ -449,7 +449,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Box_Selection);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection);
             }
         };
     }
@@ -469,7 +469,7 @@ public class ViewportPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.DragFloat3("##inputValue", ref CFG.Current.Viewport_Frame_Distance);
+                ImGui.DragFloat3("##inputValue", ref CFG.Current.Viewport.Viewport_Frame_Distance);
             }
         };
     }
@@ -489,7 +489,7 @@ public class ViewportPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.DragFloat3("##inputValue", ref CFG.Current.Viewport_Frame_Offset);
+                ImGui.DragFloat3("##inputValue", ref CFG.Current.Viewport.Viewport_Frame_Offset);
             }
         };
     }
@@ -514,7 +514,7 @@ public class ViewportPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport_Wireframe_Color_Variance, 0.0f, 1.0f);
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Viewport.Viewport_Wireframe_Color_Variance, 0.0f, 1.0f);
             }
         };
     }
@@ -542,36 +542,36 @@ public class ViewportPrefs
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Bg_Color")}##Viewport_Bg_Color", 
-                    ref CFG.Current.Viewport_Bg_Color);
+                    ref CFG.Current.Viewport.Viewport_Bg_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Selection_Outline_Color")}##Viewport_Selection_Outline_Color",
-                    ref CFG.Current.Viewport_Selection_Outline_Color);
+                    ref CFG.Current.Viewport.Viewport_Selection_Outline_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Selection_Tint_Color")}##Viewport_Selection_Tint_Color",
-                    ref CFG.Current.Viewport_Selection_Tint_Color);
+                    ref CFG.Current.Viewport.Viewport_Selection_Tint_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Untextured_Selection_Tint_Color")}##Viewport_Untextured_Selection_Tint_Color",
-                    ref CFG.Current.Viewport_Untextured_Selection_Tint_Color);
+                    ref CFG.Current.Viewport.Viewport_Untextured_Selection_Tint_Color);
 
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Selection_Tint_Strength")}##Viewport_Selection_Tint_Strength",
-                    ref CFG.Current.Viewport_Selection_Tint_Strength, 0.0f, 1.0f);
+                    ref CFG.Current.Viewport.Viewport_Selection_Tint_Strength, 0.0f, 1.0f);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    if (CFG.Current.Viewport_Selection_Tint_Strength < 0.0f)
-                        CFG.Current.Viewport_Selection_Tint_Strength = 0.0f;
+                    if (CFG.Current.Viewport.Viewport_Selection_Tint_Strength < 0.0f)
+                        CFG.Current.Viewport.Viewport_Selection_Tint_Strength = 0.0f;
 
-                    if (CFG.Current.Viewport_Selection_Tint_Strength > 1.0f)
-                        CFG.Current.Viewport_Selection_Tint_Strength = 1.0f;
+                    if (CFG.Current.Viewport.Viewport_Selection_Tint_Strength > 1.0f)
+                        CFG.Current.Viewport.Viewport_Selection_Tint_Strength = 1.0f;
                 }
             }
         };
@@ -600,32 +600,32 @@ public class ViewportPrefs
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Gizmo_X_Base_Color")}##Viewport_Gizmo_X_Base_Color",
-                    ref CFG.Current.Viewport_Gizmo_X_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Gizmo_X_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Gizmo_X_Highlight_Color")}##Viewport_Gizmo_X_Highlight_Color",
-                    ref CFG.Current.Viewport_Gizmo_X_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Gizmo_X_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Gizmo_Y_Base_Color")}##Viewport_Gizmo_Y_Base_Color",
-                    ref CFG.Current.Viewport_Gizmo_Y_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Gizmo_Y_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Gizmo_Y_Highlight_Color")}##Viewport_Gizmo_Y_Highlight_Color",
-                    ref CFG.Current.Viewport_Gizmo_Y_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Gizmo_Y_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Gizmo_Z_Base_Color")}##Viewport_Gizmo_Z_Base_Color",
-                    ref CFG.Current.Viewport_Gizmo_Z_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Gizmo_Z_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Gizmo_Z_Highlight_Color")}##Viewport_Gizmo_Z_Highlight_Color",
-                    ref CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Gizmo_Z_Highlight_Color);
             }
         };
     }
@@ -650,64 +650,64 @@ public class ViewportPrefs
                     LOC.Get("PREF_Viewport_Header_Parts"),
                     LOC.Get("PREF_Viewport_Header_Parts_TT"));
 
-                var curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Collision_Color);
+                var curColor = Utils.GetDecimalColor(CFG.Current.Viewport.Viewport_Collision_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Collision_Color")}##Viewport_Collision_Color",
                     ref curColor))
                 {
-                    CFG.Current.Viewport_Collision_Color = Utils.GetRgbColor(curColor);
+                    CFG.Current.Viewport.Viewport_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
-                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_High_Collision_Color);
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport.Viewport_High_Collision_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_High_Collision_Color")}##Viewport_High_Collision_Color",
                     ref curColor))
                 {
-                    CFG.Current.Viewport_High_Collision_Color = Utils.GetRgbColor(curColor);
+                    CFG.Current.Viewport.Viewport_High_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
-                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_FallProtection_Collision_Color);
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport.Viewport_FallProtection_Collision_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_FallProtection_Collision_Color")}##Viewport_FallProtection_Collision_Color",
                     ref curColor))
                 {
-                    CFG.Current.Viewport_FallProtection_Collision_Color = Utils.GetRgbColor(curColor);
+                    CFG.Current.Viewport.Viewport_FallProtection_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
-                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Connect_Collision_Color);
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport.Viewport_Connect_Collision_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Connect_Collision_Color")}##Viewport_Connect_Collision_Color",
                     ref curColor))
                 {
-                    CFG.Current.Viewport_Connect_Collision_Color = Utils.GetRgbColor(curColor);
+                    CFG.Current.Viewport.Viewport_Connect_Collision_Color = Utils.GetRgbColor(curColor);
                 }
 
-                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Navmesh_Color);
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport.Viewport_Navmesh_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Navmesh_Color")}##Viewport_Navmesh_Color",
                     ref curColor))
                 {
-                    CFG.Current.Viewport_Navmesh_Color = Utils.GetRgbColor(curColor);
+                    CFG.Current.Viewport.Viewport_Navmesh_Color = Utils.GetRgbColor(curColor);
                 }
 
-                curColor = Utils.GetDecimalColor(CFG.Current.Viewport_Navmesh_Gate_Color);
+                curColor = Utils.GetDecimalColor(CFG.Current.Viewport.Viewport_Navmesh_Gate_Color);
                 DPI.ApplyInputWidth();
                 if (ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Navmesh_Gate_Color")}##Viewport_Navmesh_Gate_Color",
                     ref curColor))
                 {
-                    CFG.Current.Viewport_Navmesh_Gate_Color = Utils.GetRgbColor(curColor);
+                    CFG.Current.Viewport.Viewport_Navmesh_Gate_Color = Utils.GetRgbColor(curColor);
                 }
 
                 DPI.ApplyInputWidth();
                 ImGui.SliderFloat(
                     $"{LOC.Get("PREF_Viewport_Collision_Opacity")}##Viewport_Collision_Opacity",
-                    ref CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+                    ref CFG.Current.Viewport.Viewport_Collision_Opacity, 0.0f, 1.0f);
                 GUI.Tooltip(LOC.Get("PREF_Viewport_Collision_Opacity_TT"));
             }
         };
@@ -736,208 +736,208 @@ public class ViewportPrefs
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Box_Region_Base_Color")}##Viewport_Box_Region_Base_Color",
-                    ref CFG.Current.Viewport_Box_Region_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Box_Region_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Box_Region_Highlight_Color")}##Viewport_Box_Region_Highlight_Color",
-                    ref CFG.Current.Viewport_Box_Region_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Box_Region_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Cylinder_Region_Base_Color")}##Viewport_Cylinder_Region_Base_Color",
-                    ref CFG.Current.Viewport_Cylinder_Region_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Cylinder_Region_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Cylinder_Region_Highlight_Color")}##Viewport_Cylinder_Region_Highlight_Color",
-                    ref CFG.Current.Viewport_Cylinder_Region_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Cylinder_Region_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Sphere_Region_Base_Color")}##Viewport_Sphere_Region_Base_Color",
-                    ref CFG.Current.Viewport_Sphere_Region_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Sphere_Region_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Sphere_Region_Highlight_Color")}##Viewport_Sphere_Region_Highlight_Color",
-                    ref CFG.Current.Viewport_Sphere_Region_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Sphere_Region_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Point_Region_Base_Color")}##Viewport_Point_Region_Base_Color",
-                    ref CFG.Current.Viewport_Point_Region_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Point_Region_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Point_Region_Highlight_Color")}##Viewport_Point_Region_Highlight_Color",
-                    ref CFG.Current.Viewport_Point_Region_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Point_Region_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Region_Selection_Fill_Alpha")}##Viewport_Region_Selection_Fill_Alpha",
-                    ref CFG.Current.Viewport_Region_Selection_Fill_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Region_Selection_Fill_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Dummy_Polygon_Base_Color")}##Viewport_Dummy_Polygon_Base_Color",
-                    ref CFG.Current.Viewport_Dummy_Polygon_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Dummy_Polygon_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Dummy_Polygon_Highlight_Color")}##Viewport_Dummy_Polygon_Highlight_Color",
-                    ref CFG.Current.Viewport_Dummy_Polygon_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Dummy_Polygon_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Dummy_Polygon_Alpha")}##Viewport_Dummy_Polygon_Alpha",
-                    ref CFG.Current.Viewport_Dummy_Polygon_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Dummy_Polygon_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Bone_Marker_Base_Color")}##Viewport_Bone_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Bone_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Bone_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Bone_Marker_Highlight_Color")}##Viewport_Bone_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Bone_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Bone_Marker_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Bone_Marker_Alpha")}##Viewport_Bone_Marker_Alpha",
-                    ref CFG.Current.Viewport_Bone_Marker_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Bone_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Character_Marker_Base_Color")}##Viewport_Character_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Character_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Character_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Character_Marker_Highlight_Color")}##Viewport_Character_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Character_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Character_Marker_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Character_Marker_Alpha")}##Viewport_Character_Marker_Alpha",
-                    ref CFG.Current.Viewport_Character_Marker_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Character_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Object_Marker_Base_Color")}##Viewport_Object_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Object_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Object_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Object_Marker_Highlight_Color")}##Viewport_Object_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Object_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Object_Marker_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Object_Marker_Alpha")}##Viewport_Object_Marker_Alpha",
-                    ref CFG.Current.Viewport_Object_Marker_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Object_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Player_Marker_Base_Color")}##Viewport_Player_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Player_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Player_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Player_Marker_Highlight_Color")}##Viewport_Player_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Player_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Player_Marker_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Player_Marker_Alpha")}##Viewport_Player_Marker_Alpha",
-                    ref CFG.Current.Viewport_Player_Marker_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Player_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Other_Marker_Base_Color")}##Viewport_Other_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Other_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Other_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Other_Marker_Highlight_Color")}##Viewport_Other_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Other_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Other_Marker_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Other_Marker_Alpha")}##Viewport_Other_Marker_Alpha",
-                    ref CFG.Current.Viewport_Other_Marker_Alpha, 1.0f, 1.0f, 100.0f);
+                    ref CFG.Current.Viewport.Viewport_Other_Marker_Alpha, 1.0f, 1.0f, 100.0f);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Point_Light_Highlight_Color")}##Viewport_Point_Light_Highlight_Color",
-                    ref CFG.Current.Viewport_Point_Light_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Point_Light_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Spot_Light_Highlight_Color")}##Viewport_Splot_Light_Highlight_Color",
-                    ref CFG.Current.Viewport_Spot_Light_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Spot_Light_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Directional_Light_Highlight_Color")}##Viewport_Directional_Light_Highlight_Color",
-                    ref CFG.Current.Viewport_Directional_Light_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Directional_Light_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.DragFloat(
                     $"{LOC.Get("PREF_Viewport_Light_Intensity_Scale")}##Viewport_Light_Intensity_Scale",
-                    ref CFG.Current.Viewport_Light_Intensity_Scale, 0.1f, 0.1f, 1000.0f);
+                    ref CFG.Current.Viewport.Viewport_Light_Intensity_Scale, 0.1f, 0.1f, 1000.0f);
                 GUI.Tooltip(LOC.Get("PREF_Viewport_Light_Intensity_Scale_TT"));
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Auto_Invade_Marker_Base_Color")}##Viewport_Auto_Invade_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Auto_Invade_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Auto_Invade_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Auto_Invade_Marker_Highlight_Color")}##Viewport_Auto_Invade_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Auto_Invade_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Auto_Invade_Marker_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_MultiPlayer_Wall_Base_Color")}##Viewport_MultiPlayer_Wall_Base_Color",
-                    ref CFG.Current.Viewport_MultiPlayer_Wall_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_MultiPlayer_Wall_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_MultiPlayer_Wall_Highlight_Color")}##Viewport_MultiPlayer_Wall_Highlight_Color",
-                    ref CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_MultiPlayer_Wall_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Map_Limit_Wall_Base_Color")}##Viewport_Map_Limit_Wall_Base_Color",
-                    ref CFG.Current.Viewport_Map_Limit_Wall_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Map_Limit_Wall_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Fog_Volume_Base_Color")}##Viewport_Fog_Volume_Base_Color",
-                    ref CFG.Current.Viewport_Fog_Volume_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Fog_Volume_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Fog_Volume_Highlight_Color")}##Viewport_Fog_Volume_Highlight_Color",
-                    ref CFG.Current.Viewport_Fog_Volume_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Fog_Volume_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Map_Limit_Wall_Highlight_Color")}##Viewport_Map_Limit_Wall_Highlight_Color",
-                    ref CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Map_Limit_Wall_Highlight_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Level_Connector_Marker_Base_Color")}##Viewport_Level_Connector_Marker_Base_Color",
-                    ref CFG.Current.Viewport_Level_Connector_Marker_Base_Color);
+                    ref CFG.Current.Viewport.Viewport_Level_Connector_Marker_Base_Color);
 
                 DPI.ApplyInputWidth();
                 ImGui.ColorEdit3(
                     $"{LOC.Get("PREF_Viewport_Level_Connector_Marker_Highlight_Color")}##Viewport_Level_Connector_Marker_Highlight_Color",
-                    ref CFG.Current.Viewport_Level_Connector_Marker_Highlight_Color);
+                    ref CFG.Current.Viewport.Viewport_Level_Connector_Marker_Highlight_Color);
             }
         };
     }
@@ -1023,12 +1023,12 @@ public class ViewportPrefs
 
                 ImGui.Text(LOC.Get("PREF_FilterPreset_Configure_Filters"));
 
-                ViewportFilterPresetEditor(1, CFG.Current.Viewport_Filter_Preset_1);
-                ViewportFilterPresetEditor(2, CFG.Current.Viewport_Filter_Preset_2);
-                ViewportFilterPresetEditor(3, CFG.Current.Viewport_Filter_Preset_3);
-                ViewportFilterPresetEditor(4, CFG.Current.Viewport_Filter_Preset_4);
-                ViewportFilterPresetEditor(5, CFG.Current.Viewport_Filter_Preset_5);
-                ViewportFilterPresetEditor(6, CFG.Current.Viewport_Filter_Preset_6);
+                ViewportFilterPresetEditor(1, CFG.Current.Viewport.Viewport_Filter_Preset_1);
+                ViewportFilterPresetEditor(2, CFG.Current.Viewport.Viewport_Filter_Preset_2);
+                ViewportFilterPresetEditor(3, CFG.Current.Viewport.Viewport_Filter_Preset_3);
+                ViewportFilterPresetEditor(4, CFG.Current.Viewport.Viewport_Filter_Preset_4);
+                ViewportFilterPresetEditor(5, CFG.Current.Viewport.Viewport_Filter_Preset_5);
+                ViewportFilterPresetEditor(6, CFG.Current.Viewport.Viewport_Filter_Preset_6);
             }
         };
     }

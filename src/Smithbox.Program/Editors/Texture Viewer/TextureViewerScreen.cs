@@ -139,21 +139,21 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Menubar_Toggle_View_Properties")}##propertiesViewToggle"))
             {
-                CFG.Current.Interface_TextureViewer_Properties = !CFG.Current.Interface_TextureViewer_Properties;
+                CFG.Current.Interface.Interface_TextureViewer_Properties = !CFG.Current.Interface.Interface_TextureViewer_Properties;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_TextureViewer_Properties);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Menubar_Toggle_View_Layout")}##layoutViewToggle"))
             {
-                CFG.Current.Interface_TextureViewer_Layout = !CFG.Current.Interface_TextureViewer_Layout;
+                CFG.Current.Interface.Interface_TextureViewer_Layout = !CFG.Current.Interface.Interface_TextureViewer_Layout;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Layout);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_TextureViewer_Layout);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Menubar_Toggle_View_Tools")}##toolsViewToggle"))
             {
-                CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
+                CFG.Current.Interface.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface.Interface_TextureViewer_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_TextureViewer_ToolWindow);
 
             ImGui.Separator();
 

@@ -42,25 +42,25 @@ public class LowDetailVisibilityAction
         GUI.Spacer();
         GUI.SimpleHeader("Detection", "How a model is judged to be low detail. A model that meets either enabled check counts.");
 
-        ImGui.Checkbox("Low Detail Naming##lowDetailNaming", ref CFG.Current.Toolbar_LowDetail_Use_Naming);
+        ImGui.Checkbox("Low Detail Naming##lowDetailNaming", ref CFG.Current.MapEditor.Toolbar_LowDetail_Use_Naming);
         GUI.Tooltip("Count models with a material or texture named as low detail, such as m30_00_low_hall_03_a or a name containing 'lod'.\n\nThis is rarely wrong, but only some low detail models are named this way.");
 
-        ImGui.Checkbox("Low Triangle Density##lowDetailDensity", ref CFG.Current.Toolbar_LowDetail_Use_Density);
+        ImGui.Checkbox("Low Triangle Density##lowDetailDensity", ref CFG.Current.MapEditor.Toolbar_LowDetail_Use_Density);
         GUI.Tooltip("Count large models that have few triangles for their surface area.\n\nThis finds more of the low detail models, but can also find simple geometry such as flat floors and water.");
 
-        if (CFG.Current.Toolbar_LowDetail_Use_Density)
+        if (CFG.Current.MapEditor.Toolbar_LowDetail_Use_Density)
         {
             GUI.SetInputWidth();
-            if (ImGui.DragFloat("Max Density##lowDetailMaxDensity", ref CFG.Current.Toolbar_LowDetail_Max_Density, 0.05f, 0.0f, 100.0f, "%.2f tris/m²"))
+            if (ImGui.DragFloat("Max Density##lowDetailMaxDensity", ref CFG.Current.MapEditor.Toolbar_LowDetail_Max_Density, 0.05f, 0.0f, 100.0f, "%.2f tris/m²"))
             {
-                CFG.Current.Toolbar_LowDetail_Max_Density = Math.Max(0.0f, CFG.Current.Toolbar_LowDetail_Max_Density);
+                CFG.Current.MapEditor.Toolbar_LowDetail_Max_Density = Math.Max(0.0f, CFG.Current.MapEditor.Toolbar_LowDetail_Max_Density);
             }
             GUI.Tooltip("Models with fewer triangles than this per square metre of surface count as low detail.");
 
             GUI.SetInputWidth();
-            if (ImGui.DragFloat("Min Size##lowDetailMinSize", ref CFG.Current.Toolbar_LowDetail_Min_Size, 1.0f, 0.0f, 10000.0f, "%.0f m"))
+            if (ImGui.DragFloat("Min Size##lowDetailMinSize", ref CFG.Current.MapEditor.Toolbar_LowDetail_Min_Size, 1.0f, 0.0f, 10000.0f, "%.0f m"))
             {
-                CFG.Current.Toolbar_LowDetail_Min_Size = Math.Max(0.0f, CFG.Current.Toolbar_LowDetail_Min_Size);
+                CFG.Current.MapEditor.Toolbar_LowDetail_Min_Size = Math.Max(0.0f, CFG.Current.MapEditor.Toolbar_LowDetail_Min_Size);
             }
             GUI.Tooltip("Only models whose bounding box is at least this long, corner to corner, are checked for density.\n\nSmall props are often simple, so this keeps them from counting.");
         }
@@ -192,7 +192,7 @@ public class LowDetailVisibilityAction
             return false;
         }
 
-        if (!CFG.Current.Toolbar_LowDetail_Use_Naming && !CFG.Current.Toolbar_LowDetail_Use_Density)
+        if (!CFG.Current.MapEditor.Toolbar_LowDetail_Use_Naming && !CFG.Current.MapEditor.Toolbar_LowDetail_Use_Density)
         {
             Smithbox.LogError<LowDetailVisibilityAction>("No detection check is enabled.");
             return false;
@@ -253,11 +253,11 @@ public class LowDetailVisibilityAction
         var density = area > 0.0f ? flver.DetailTriangleCount / area : float.MaxValue;
         var size = (flver.Bounds.Max - flver.Bounds.Min).Length() * linearScale;
 
-        var isNamed = CFG.Current.Toolbar_LowDetail_Use_Naming && flver.HasLowDetailNaming;
+        var isNamed = CFG.Current.MapEditor.Toolbar_LowDetail_Use_Naming && flver.HasLowDetailNaming;
 
-        var isSparse = CFG.Current.Toolbar_LowDetail_Use_Density &&
-            density < CFG.Current.Toolbar_LowDetail_Max_Density &&
-            size >= CFG.Current.Toolbar_LowDetail_Min_Size;
+        var isSparse = CFG.Current.MapEditor.Toolbar_LowDetail_Use_Density &&
+            density < CFG.Current.MapEditor.Toolbar_LowDetail_Max_Density &&
+            size >= CFG.Current.MapEditor.Toolbar_LowDetail_Min_Size;
 
         if (!isNamed && !isSparse)
             return null;

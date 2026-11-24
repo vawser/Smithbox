@@ -57,7 +57,7 @@ public static class LoadMemoryBudget
     {
         get
         {
-            var mb = (Profile)CFG.Current.Viewport_Load_Memory_Profile switch
+            var mb = (Profile)RenderSettings.Viewport.Viewport_Load_Memory_Profile switch
             {
                 Profile.Low => 512,
                 // Between Low and High: on ER's m11_00_00_00, High (24 readers) never had more than 1.3 GB in flight,
@@ -65,7 +65,7 @@ public static class LoadMemoryBudget
                 Profile.Balanced => 1024,
                 Profile.High => 8192,
                 Profile.Unlimited => 0,
-                _ => Math.Max(0, CFG.Current.Viewport_Load_Memory_Budget_MB)
+                _ => Math.Max(0, RenderSettings.Viewport.Viewport_Load_Memory_Budget_MB)
             };
 
             return mb * 1024L * 1024L;
@@ -81,13 +81,13 @@ public static class LoadMemoryBudget
         {
             var cores = Environment.ProcessorCount;
 
-            return (Profile)CFG.Current.Viewport_Load_Memory_Profile switch
+            return (Profile)RenderSettings.Viewport.Viewport_Load_Memory_Profile switch
             {
                 Profile.Low => 2,
                 Profile.Balanced => Math.Max(2, cores / 2),
                 Profile.High => Math.Max(2, cores),
                 Profile.Unlimited => 0,
-                _ => Math.Max(0, CFG.Current.Viewport_Load_Container_Readers)
+                _ => Math.Max(0, RenderSettings.Viewport.Viewport_Load_Container_Readers)
             };
         }
     }

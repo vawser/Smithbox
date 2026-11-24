@@ -199,7 +199,7 @@ public static class HavokPropertyDecorators
         }
 
         // Type column
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -264,7 +264,7 @@ public static class HavokPropertyDecorators
             HavokBehaviorSymbols.GetMemberPath(binding), index, bitIndex ?? -1));
 
         // Type column
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -334,7 +334,7 @@ public static class HavokPropertyDecorators
         }
 
         // Type column
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -380,7 +380,7 @@ public static class HavokPropertyDecorators
         }
 
         // Type column
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -539,14 +539,14 @@ public static class HavokPropertyDecorators
 
         if (view is MapEditorView)
         {
-            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+            if (CFG.Current.MapEditor.MapEditor_HavokEdit_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }
         }
         else if (view is HavokEditorView)
         {
-            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }
@@ -602,14 +602,14 @@ public static class HavokPropertyDecorators
 
         if (view is MapEditorView)
         {
-            if (CFG.Current.MapEditor_HavokEdit_Display_Type_Column)
+            if (CFG.Current.MapEditor.MapEditor_HavokEdit_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }
         }
         else if (view is HavokEditorView)
         {
-            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }
@@ -698,7 +698,7 @@ public static class HavokPropertyDecorators
             }
 
             // Advanced even after a click, so the rows below stay aligned
-            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }

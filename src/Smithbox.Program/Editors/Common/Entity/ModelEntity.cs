@@ -67,7 +67,7 @@ public class ModelEntity : Entity
         if (Type is not ModelEntityType.Mesh || RenderSceneMesh == null || Container is not ModelContainer container)
             return;
 
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL || !CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL || !CFG.Current.Viewport.Viewport_Enable_Rendering)
             return;
 
         // A drag in progress is drawn as the move it will write, beneath it the move the drawable hasn't caught up

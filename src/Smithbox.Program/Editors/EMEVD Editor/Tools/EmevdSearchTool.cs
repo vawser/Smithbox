@@ -41,7 +41,7 @@ public class EmevdSearchTool
         InstructionText = "";
         Scope = EmevdSearchScope.AllFiles;
 
-        CFG.Current.Interface_EmevdEditor_ToolWindow = true;
+        CFG.Current.Interface.Interface_EmevdEditor_ToolWindow = true;
         FocusNext = true;
 
         Run(new EmevdQuery(value, null, MatchFloats));

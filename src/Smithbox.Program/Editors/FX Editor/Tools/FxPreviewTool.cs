@@ -55,11 +55,11 @@ public class FxPreviewTool
             "fxFrame", LOC.Get("FX_PreviewTool_Frame"), LOC.Get("FX_PreviewTool_Frame_TT"),
             () => Editor.ViewportWindow.Frame());
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Auto_Frame")}##fxAutoFrame", ref CFG.Current.FxEditor_Viewport_Auto_Frame);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Auto_Frame")}##fxAutoFrame", ref CFG.Current.FxEditor.FxEditor_Viewport_Auto_Frame);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Auto_Frame_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Live_Preview")}##fxLivePreview", ref CFG.Current.FxEditor_Live_Preview)
-            && !CFG.Current.FxEditor_Live_Preview)
+        if (ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Live_Preview")}##fxLivePreview", ref CFG.Current.FxEditor.FxEditor_Live_Preview)
+            && !CFG.Current.FxEditor.FxEditor_Live_Preview)
             Editor.Live.Revert();
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Live_Preview_TT"));
 
@@ -77,22 +77,22 @@ public class FxPreviewTool
         if (playback.Motion == 1)
         {
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderFloat("##fxMotionSpeed", ref CFG.Current.FxEditor_Preview_Motion_Speed, 0.1f, 100f, LOC.Get("FX_PreviewTool_Motion_Speed_Format"), ImGuiSliderFlags.Logarithmic);
+            ImGui.SliderFloat("##fxMotionSpeed", ref CFG.Current.FxEditor.FxEditor_Preview_Motion_Speed, 0.1f, 100f, LOC.Get("FX_PreviewTool_Motion_Speed_Format"), ImGuiSliderFlags.Logarithmic);
             GUI.Tooltip(LOC.Get("FX_PreviewTool_Motion_Speed_TT"));
         }
         else if (playback.Motion == 2)
         {
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderFloat("##fxSwingRadius", ref CFG.Current.FxEditor_Preview_Swing_Radius, 0.1f, 10f, LOC.Get("FX_PreviewTool_Swing_Radius_Format"), ImGuiSliderFlags.Logarithmic);
+            ImGui.SliderFloat("##fxSwingRadius", ref CFG.Current.FxEditor.FxEditor_Preview_Swing_Radius, 0.1f, 10f, LOC.Get("FX_PreviewTool_Swing_Radius_Format"), ImGuiSliderFlags.Logarithmic);
             GUI.Tooltip(LOC.Get("FX_PreviewTool_Swing_Radius_TT"));
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderFloat("##fxSwingSpeed", ref CFG.Current.FxEditor_Preview_Swing_Speed, 10f, 2000f, LOC.Get("FX_PreviewTool_Swing_Speed_Format"), ImGuiSliderFlags.Logarithmic);
+            ImGui.SliderFloat("##fxSwingSpeed", ref CFG.Current.FxEditor.FxEditor_Preview_Swing_Speed, 10f, 2000f, LOC.Get("FX_PreviewTool_Swing_Speed_Format"), ImGuiSliderFlags.Logarithmic);
             GUI.Tooltip(LOC.Get("FX_PreviewTool_Swing_Speed_TT"));
         }
 
         if (playback.Motion != 0)
         {
-            ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Motion_Follow")}##fxMotionFollow", ref CFG.Current.FxEditor_Preview_Motion_Follow);
+            ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Motion_Follow")}##fxMotionFollow", ref CFG.Current.FxEditor.FxEditor_Preview_Motion_Follow);
             GUI.Tooltip(LOC.Get("FX_PreviewTool_Motion_Follow_TT"));
         }
 
@@ -100,18 +100,18 @@ public class FxPreviewTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Forces_Header"), LOC.Get("FX_PreviewTool_Forces_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Effect_Forces")}##fxEffectForces", ref CFG.Current.FxEditor_Preview_Effect_Forces);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Effect_Forces")}##fxEffectForces", ref CFG.Current.FxEditor.FxEditor_Preview_Effect_Forces);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Effect_Forces_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Wind")}##fxPreviewWind", ref CFG.Current.FxEditor_Preview_Wind);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Wind")}##fxPreviewWind", ref CFG.Current.FxEditor.FxEditor_Preview_Wind);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Wind_TT"));
-        if (CFG.Current.FxEditor_Preview_Wind)
+        if (CFG.Current.FxEditor.FxEditor_Preview_Wind)
         {
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderFloat("##fxWindYaw", ref CFG.Current.FxEditor_Preview_Wind_Yaw, -180f, 180f, LOC.Get("FX_PreviewTool_Wind_Yaw_Format"));
+            ImGui.SliderFloat("##fxWindYaw", ref CFG.Current.FxEditor.FxEditor_Preview_Wind_Yaw, -180f, 180f, LOC.Get("FX_PreviewTool_Wind_Yaw_Format"));
             GUI.Tooltip(LOC.Get("FX_PreviewTool_Wind_Yaw_TT"));
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderFloat("##fxWindStrength", ref CFG.Current.FxEditor_Preview_Wind_Strength, 0.1f, 100f, LOC.Get("FX_PreviewTool_Wind_Strength_Format"), ImGuiSliderFlags.Logarithmic);
+            ImGui.SliderFloat("##fxWindStrength", ref CFG.Current.FxEditor.FxEditor_Preview_Wind_Strength, 0.1f, 100f, LOC.Get("FX_PreviewTool_Wind_Strength_Format"), ImGuiSliderFlags.Logarithmic);
             GUI.Tooltip(LOC.Get("FX_PreviewTool_Wind_Strength_TT"));
         }
 
@@ -182,34 +182,34 @@ public class FxPreviewTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Display_Header"), LOC.Get("FX_PreviewTool_Display_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Billboards")}##fxShowBillboards", ref CFG.Current.FxEditor_Viewport_Display_Billboards);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Billboards")}##fxShowBillboards", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Billboards);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Billboards_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Screen_Effects")}##fxShowScreenEffects", ref CFG.Current.FxEditor_Viewport_Display_Screen_Effects);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Screen_Effects")}##fxShowScreenEffects", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Screen_Effects);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Screen_Effects_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Lens_Flares")}##fxShowLensFlares", ref CFG.Current.FxEditor_Viewport_Display_Lens_Flares);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Lens_Flares")}##fxShowLensFlares", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Lens_Flares);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Lens_Flares_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Gpu_Particles")}##fxShowGpuParticles", ref CFG.Current.FxEditor_Viewport_Display_Gpu_Particles);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Gpu_Particles")}##fxShowGpuParticles", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Gpu_Particles);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Gpu_Particles_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Models")}##fxShowModels", ref CFG.Current.FxEditor_Viewport_Display_Models);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Models")}##fxShowModels", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Models);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Models_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Lights")}##fxShowLights", ref CFG.Current.FxEditor_Viewport_Display_Lights);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Lights")}##fxShowLights", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Lights);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Lights_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Light_Markers")}##fxShowLightMarkers", ref CFG.Current.FxEditor_Viewport_Display_Light_Markers);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Light_Markers")}##fxShowLightMarkers", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Light_Markers);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Light_Markers_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Particles")}##fxShowParticles", ref CFG.Current.FxEditor_Viewport_Display_Particle_Markers);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Particles")}##fxShowParticles", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Particle_Markers);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Particles_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Shapes")}##fxShowShapes", ref CFG.Current.FxEditor_Viewport_Display_Emitter_Shapes);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Shapes")}##fxShowShapes", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Emitter_Shapes);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Shapes_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Axes")}##fxShowAxes", ref CFG.Current.FxEditor_Viewport_Display_Node_Axes);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Axes")}##fxShowAxes", ref CFG.Current.FxEditor.FxEditor_Viewport_Display_Node_Axes);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Axes_TT"));
 
         if (fxr != null)
@@ -220,7 +220,7 @@ public class FxPreviewTool
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Brightness_Header"), LOC.Get("FX_PreviewTool_Brightness_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##fxBillboardBrightness", ref CFG.Current.FxEditor_Viewport_Billboard_Brightness, 0.01f, 10f, "%.2fx", ImGuiSliderFlags.Logarithmic);
+        ImGui.SliderFloat("##fxBillboardBrightness", ref CFG.Current.FxEditor.FxEditor_Viewport_Billboard_Brightness, 0.01f, 10f, "%.2fx", ImGuiSliderFlags.Logarithmic);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Brightness_TT"));
 
         // Light Brightness
@@ -228,7 +228,7 @@ public class FxPreviewTool
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Light_Brightness_Header"), LOC.Get("FX_PreviewTool_Light_Brightness_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##fxLightBrightness", ref CFG.Current.FxEditor_Viewport_Light_Brightness, 0.001f, 100f, "%.3fx", ImGuiSliderFlags.Logarithmic);
+        ImGui.SliderFloat("##fxLightBrightness", ref CFG.Current.FxEditor.FxEditor_Viewport_Light_Brightness, 0.001f, 100f, "%.3fx", ImGuiSliderFlags.Logarithmic);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Light_Brightness_TT"));
 
         // Billboards drawn, and textures no binder holds

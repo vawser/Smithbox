@@ -512,7 +512,7 @@ public partial class NavigationTool
         if (scene == null)
             return;
 
-        var cursorColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
+        var cursorColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Color);
 
         VertexCursorWire ??= RenderableHelper.GetDetectionSphereProxy(scene, cursorColor);
         VertexCursorFill ??= RenderableHelper.GetDetectionSphereFillProxy(scene, cursorColor);
@@ -520,8 +520,8 @@ public partial class NavigationTool
         {
             Pickable = false,
             RenderOverlay = true,
-            BaseColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color),
-            HighlightedColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color)
+            BaseColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color),
+            HighlightedColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color)
         };
 
         var fill = ColorHelper.GetTransparencyColor(cursorColor, VertexCursorOpacity);

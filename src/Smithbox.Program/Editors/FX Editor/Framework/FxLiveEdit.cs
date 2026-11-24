@@ -20,7 +20,7 @@ public class FxLiveEdit
     /// <summary>Bumped whenever the live change is shown or taken back, so the preview rebuilds.</summary>
     public int Version { get; private set; }
 
-    public static bool Enabled => CFG.Current.FxEditor_Live_Preview;
+    public static bool Enabled => CFG.Current.FxEditor.FxEditor_Live_Preview;
 
     public bool IsShowing => Applied != null;
 

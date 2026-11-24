@@ -88,36 +88,36 @@ public class ReplicateAction
                     switch (ReplicateType)
                     {
                         case ReplicateType.Line:
-                            CFG.Current.Replicator_Mode_Line = true;
-                            CFG.Current.Replicator_Mode_Circle = false;
-                            CFG.Current.Replicator_Mode_Square = false;
-                            CFG.Current.Replicator_Mode_Sphere = false;
-                            CFG.Current.Replicator_Mode_Box = false;
-                            CFG.Current.Replicator_Mode_Group = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Line = true;
+                            CFG.Current.MapEditor.Replicator_Mode_Circle = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Square = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Sphere = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Box = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Group = false;
                             break;
                         case ReplicateType.Circle:
-                            CFG.Current.Replicator_Mode_Line = false;
-                            CFG.Current.Replicator_Mode_Circle = true;
-                            CFG.Current.Replicator_Mode_Square = false;
-                            CFG.Current.Replicator_Mode_Sphere = false;
-                            CFG.Current.Replicator_Mode_Box = false;
-                            CFG.Current.Replicator_Mode_Group = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Line = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Circle = true;
+                            CFG.Current.MapEditor.Replicator_Mode_Square = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Sphere = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Box = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Group = false;
                             break;
                         case ReplicateType.Square:
-                            CFG.Current.Replicator_Mode_Line = false;
-                            CFG.Current.Replicator_Mode_Circle = false;
-                            CFG.Current.Replicator_Mode_Square = true;
-                            CFG.Current.Replicator_Mode_Sphere = false;
-                            CFG.Current.Replicator_Mode_Box = false;
-                            CFG.Current.Replicator_Mode_Group = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Line = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Circle = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Square = true;
+                            CFG.Current.MapEditor.Replicator_Mode_Sphere = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Box = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Group = false;
                             break;
                         case ReplicateType.Group:
-                            CFG.Current.Replicator_Mode_Line = false;
-                            CFG.Current.Replicator_Mode_Circle = false;
-                            CFG.Current.Replicator_Mode_Square = false;
-                            CFG.Current.Replicator_Mode_Sphere = false;
-                            CFG.Current.Replicator_Mode_Box = false;
-                            CFG.Current.Replicator_Mode_Group = true;
+                            CFG.Current.MapEditor.Replicator_Mode_Line = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Circle = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Square = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Sphere = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Box = false;
+                            CFG.Current.MapEditor.Replicator_Mode_Group = true;
                             break;
                     }
                 }
@@ -127,7 +127,7 @@ public class ReplicateAction
         }
 
         // Group
-        if (CFG.Current.Replicator_Mode_Group)
+        if (CFG.Current.MapEditor.Replicator_Mode_Group)
         {
             GUI.WrappedText("Use to create a scattered group of map objects (automatically applies scramble configuration).");
 
@@ -135,12 +135,12 @@ public class ReplicateAction
             GUI.SimpleHeader("Amount to Create", "Amount to Create", "The amount of new map objects to create.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Group_Clone_Amount);
+            ImGui.InputInt("##Amount", ref CFG.Current.MapEditor.Replicator_Group_Clone_Amount);
             GUI.Tooltip("The amount of new entities to create (from the first selection).");
         }
 
         // Line
-        if (CFG.Current.Replicator_Mode_Line)
+        if (CFG.Current.MapEditor.Replicator_Mode_Line)
         {
             GUI.WrappedText("Use to create a line of map objects.");
 
@@ -148,14 +148,14 @@ public class ReplicateAction
             GUI.SimpleHeader("Line - Amount to Create", "Amount to Create", "The amount of replication instances to apply.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
+            ImGui.InputInt("##Amount", ref CFG.Current.MapEditor.Replicator_Line_Clone_Amount);
             GUI.Tooltip("The amount of new entities to create (from the first selection).");
 
             GUI.Spacer();
             GUI.SimpleHeader("Line - Create Offset", "Offset per Create", "The offset to apply per each replication instance.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputInt("##Offset", ref CFG.Current.Replicator_Line_Position_Offset);
+            ImGui.InputInt("##Offset", ref CFG.Current.MapEditor.Replicator_Line_Position_Offset);
             GUI.Tooltip("The distance between each newly created entity.");
 
             GUI.Spacer();
@@ -175,19 +175,19 @@ public class ReplicateAction
                         switch (AxisType)
                         {
                             case ReplicateLineAxis.X:
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_X = true;
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_Z = false;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_X = true;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Y = false;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Z = false;
                                 break;
                             case ReplicateLineAxis.Y:
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_X = false;
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_Y = true;
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_Z = false;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_X = false;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Y = true;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Z = false;
                                 break;
                             case ReplicateLineAxis.Z:
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_X = false;
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
-                                CFG.Current.Replicator_Line_Position_Offset_Axis_Z = true;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_X = false;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Y = false;
+                                CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Z = true;
                                 break;
                         }
                     }
@@ -198,7 +198,7 @@ public class ReplicateAction
         }
 
         // Circle
-        if (CFG.Current.Replicator_Mode_Circle)
+        if (CFG.Current.MapEditor.Replicator_Mode_Circle)
         {
             GUI.WrappedText("Use to create a circle of map objects.");
 
@@ -206,23 +206,23 @@ public class ReplicateAction
             GUI.SimpleHeader("Circle - Size", "Size", "The amount of replication instances to apply to form the circle.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputInt("##Size", ref CFG.Current.Replicator_Circle_Size);
+            ImGui.InputInt("##Size", ref CFG.Current.MapEditor.Replicator_Circle_Size);
             GUI.Tooltip("The number of points within the circle on which the entities are placed.");
 
             GUI.Spacer();
             GUI.SimpleHeader("Circle - Radius", "Circle Radius", "The circle radius to use during the replication process.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
+            ImGui.SliderFloat("##Radius", ref CFG.Current.MapEditor.Replicator_Circle_Radius, 0.1f, 100);
             GUI.Tooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
 
-            if (CFG.Current.Replicator_Circle_Size < 1)
-                CFG.Current.Replicator_Circle_Size = 1;
+            if (CFG.Current.MapEditor.Replicator_Circle_Size < 1)
+                CFG.Current.MapEditor.Replicator_Circle_Size = 1;
 
         }
 
         // Square
-        if (CFG.Current.Replicator_Mode_Square)
+        if (CFG.Current.MapEditor.Replicator_Mode_Square)
         {
             GUI.WrappedText("Use to create a square of map objects.");
 
@@ -230,55 +230,55 @@ public class ReplicateAction
             GUI.SimpleHeader("Square - Size", "Size", "The amount of replication instances to apply to form the square.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputInt("##Size", ref CFG.Current.Replicator_Square_Size);
+            ImGui.InputInt("##Size", ref CFG.Current.MapEditor.Replicator_Square_Size);
             GUI.Tooltip("The number of points on one side of the square on which the entities are placed.");
 
             GUI.Spacer();
             GUI.SimpleHeader("Square - Width", "Width", "The amount of replication instances to that form the width of the square.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputFloat("##Width", ref CFG.Current.Replicator_Square_Width);
+            ImGui.InputFloat("##Width", ref CFG.Current.MapEditor.Replicator_Square_Width);
             GUI.Tooltip("The width of the square on which to place the entities.");
 
             GUI.Spacer();
             GUI.SimpleHeader("Square - Height", "Height", "The amount of replication instances to that form the height of the square.", UI.Current.ImGui_Default_Text_Color);
 
             GUI.SetInputWidth();
-            ImGui.InputFloat("##Depth", ref CFG.Current.Replicator_Square_Depth);
+            ImGui.InputFloat("##Depth", ref CFG.Current.MapEditor.Replicator_Square_Depth);
             GUI.Tooltip("The depth of the square on which to place the entities.");
 
-            if (CFG.Current.Replicator_Square_Width < 1)
-                CFG.Current.Replicator_Square_Width = 1;
+            if (CFG.Current.MapEditor.Replicator_Square_Width < 1)
+                CFG.Current.MapEditor.Replicator_Square_Width = 1;
 
-            if (CFG.Current.Replicator_Square_Size < 2)
-                CFG.Current.Replicator_Square_Size = 2;
+            if (CFG.Current.MapEditor.Replicator_Square_Size < 2)
+                CFG.Current.MapEditor.Replicator_Square_Size = 2;
 
-            if (CFG.Current.Replicator_Square_Depth < 1)
-                CFG.Current.Replicator_Square_Depth = 1;
+            if (CFG.Current.MapEditor.Replicator_Square_Depth < 1)
+                CFG.Current.MapEditor.Replicator_Square_Depth = 1;
         }
 
         GUI.Spacer();
         GUI.SimpleHeader("Options", "Options", "The options for the replication process.", UI.Current.ImGui_Default_Text_Color);
 
-        if (CFG.Current.Replicator_Mode_Line)
+        if (CFG.Current.MapEditor.Replicator_Mode_Line)
         {
-            ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.Replicator_Line_Offset_Direction_Flipped);
+            ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.MapEditor.Replicator_Line_Offset_Direction_Flipped);
             GUI.Tooltip("When enabled, the position offset will be applied in the opposite direction.");
         }
 
-        if (!CFG.Current.Replicator_Mode_Group)
+        if (!CFG.Current.MapEditor.Replicator_Mode_Group)
         {
-            ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
+            ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.MapEditor.Replicator_Apply_Scramble_Configuration);
             GUI.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
         }
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2 && View.Project.Descriptor.ProjectType != ProjectType.AC6)
         {
-            if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID))
+            if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.MapEditor.Replicator_Increment_Entity_ID))
             {
-                if (CFG.Current.Replicator_Increment_Entity_ID)
+                if (CFG.Current.MapEditor.Replicator_Increment_Entity_ID)
                 {
-                    CFG.Current.Replicator_Clear_Entity_ID = false;
+                    CFG.Current.MapEditor.Replicator_Clear_Entity_ID = false;
                 }
             }
             GUI.Tooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
@@ -286,28 +286,28 @@ public class ReplicateAction
 
         if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
-            ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
+            ImGui.Checkbox("Increment Instance ID", ref CFG.Current.MapEditor.Replicator_Increment_InstanceID);
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
-            ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_PartNames);
+            ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.MapEditor.Replicator_Increment_PartNames);
             GUI.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
         }
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
-            if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Replicator_Clear_Entity_ID))
+            if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.MapEditor.Replicator_Clear_Entity_ID))
             {
-                if (CFG.Current.Replicator_Clear_Entity_ID)
+                if (CFG.Current.MapEditor.Replicator_Clear_Entity_ID)
                 {
-                    CFG.Current.Replicator_Increment_Entity_ID = false;
+                    CFG.Current.MapEditor.Replicator_Increment_Entity_ID = false;
                 }
             }
             GUI.Tooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
 
-            ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Replicator_Clear_Entity_Group_IDs);
+            ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.MapEditor.Replicator_Clear_Entity_Group_IDs);
             GUI.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
         }
 

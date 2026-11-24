@@ -577,7 +577,7 @@ public class FxReloader
                 // Pointless before a world reload, which restarts everything.
                 var reloadedIds = results.Where(r => r.Outcome is ReloadOutcome.Reloaded).Select(r => r.Id).ToList();
 
-                if (reloadedIds.Count > 0 && CFG.Current.FxEditor_InGame_RestartAfterReload && Restarter.IsAvailable &&
+                if (reloadedIds.Count > 0 && CFG.Current.FxEditor.FxEditor_InGame_RestartAfterReload && Restarter.IsAvailable &&
                     !(after is AfterReload.ReloadWorld && Link.CanReloadWorld))
                 {
                     FxRestart.Result restart;

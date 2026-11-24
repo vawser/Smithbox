@@ -88,7 +88,7 @@ public class EntRenameAction : ViewportAction, IMapHistoryItem
 
         MoveCommunityName(entity.MapID, oldName, name);
 
-        if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
+        if (CFG.Current.MapEditor.MapEditor_MapContentGroup_AutoAdjustName)
         {
             View.SelectionGroupsTool.UpdateMapGroupEntry(oldName, name);
         }

@@ -33,7 +33,7 @@ public enum ToneMapOperator
     BloodborneExp = 4
 }
 
-/// <summary>The viewport setting for tone mapping, CFG.Viewport_ToneMap</summary>
+/// <summary>The viewport setting for tone mapping, ViewportSettings.Viewport_ToneMap</summary>
 public enum ToneMapSetting
 {
     /// <summary>The map's GPARAM Tone Map group, or <see cref="ToneMapOperator.Clamp" /> without map lighting</summary>
@@ -111,9 +111,9 @@ public class ToneMapPass
     /// </summary>
     public static (ToneMapOperator Operator, float WhitePoint) Resolve(GparamLighting lighting)
     {
-        var whitePoint = Math.Max(CFG.Current.Viewport_ToneMap_White_Point, 1e-3f);
+        var whitePoint = Math.Max(RenderSettings.Viewport.Viewport_ToneMap_White_Point, 1e-3f);
 
-        switch ((ToneMapSetting)CFG.Current.Viewport_ToneMap)
+        switch ((ToneMapSetting)RenderSettings.Viewport.Viewport_ToneMap)
         {
             case ToneMapSetting.Clamp:
                 return (ToneMapOperator.Clamp, whitePoint);
@@ -163,7 +163,7 @@ public class ToneMapPass
 
         // The LUTs either side of the time of day; with only one found, both are it
         var grading = lighting?.PostEffects.ColorGrading;
-        var grade = !passThrough && RenderMode.PostEffects && CFG.Current.Viewport_Post_Color_Grading &&
+        var grade = !passThrough && RenderMode.PostEffects && RenderSettings.Viewport.Viewport_Post_Color_Grading &&
                     grading is { Enabled: true, Luts: not null } && (grading.Slot >= 0 || grading.NextSlot >= 0);
         var slot = grade ? grading.Slot >= 0 ? grading.Slot : grading.NextSlot : 0;
         var nextSlot = grade ? grading.NextSlot >= 0 ? grading.NextSlot : slot : 0;
@@ -172,7 +172,7 @@ public class ToneMapPass
             grade ? GetLutAtlas(gd, grading.Luts) : GetNoLuts(gd));
 
         var (op, whitePoint) = passThrough ? (ToneMapOperator.Clamp, 1.0f) : Resolve(lighting);
-        var exposure = passThrough ? 1.0f : Math.Max(CFG.Current.Viewport_ToneMap_Exposure, 0.0f);
+        var exposure = passThrough ? 1.0f : Math.Max(RenderSettings.Viewport.Viewport_ToneMap_Exposure, 0.0f);
 
         Params.Settings = new Vector4(exposure, (float)op, whitePoint, applyAutoExposure ? 1.0f : 0.0f);
         Params.Offset = new Vector4(offset, 0.0f, 0.0f);
@@ -181,7 +181,7 @@ public class ToneMapPass
         // divided by it. z: k, w: c, white point slot: the saturation
         if (op == ToneMapOperator.BloodborneExp)
         {
-            var gparamExposure = Math.Max((lighting?.Exposure ?? 1.0f) * CFG.Current.Viewport_Map_Lighting_Exposure_Scale, 1e-4f);
+            var gparamExposure = Math.Max((lighting?.Exposure ?? 1.0f) * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale, 1e-4f);
             Params.Offset = new Vector4(offset, BloodborneToneK / gparamExposure, BloodborneToneC);
             Params.Settings.Z = BloodborneToneSaturation;
         }
@@ -191,7 +191,7 @@ public class ToneMapPass
 
         // The older games' colour correction (Demon's Souls' ToneCorrectBank); the identity otherwise
         var correction = lighting?.ToneCorrection;
-        var correct = !passThrough && RenderMode.PostEffects && CFG.Current.Viewport_Post_Tone_Correction &&
+        var correct = !passThrough && RenderMode.PostEffects && RenderSettings.Viewport.Viewport_Post_Tone_Correction &&
                       correction is { Enabled: true };
         Params.CorrectionA = correct ? new Vector4(correction.Brightness, correction.Saturation) : Vector4.One;
         Params.CorrectionB = correct ? new Vector4(correction.Contrast, correction.Hue) : new Vector4(1.0f, 1.0f, 1.0f, 0.0f);

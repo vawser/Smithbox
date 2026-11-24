@@ -210,7 +210,7 @@ public partial class EdgeEditorTool
             () =>
             {
                 scene.SetDrawFilter(RenderFilter.EdgePoint, true);
-                CFG.Current.MapEditor_BasicFilter_EdgePoint = true;
+                CFG.Current.MapEditor.MapEditor_BasicFilter_EdgePoint = true;
             });
     }
 
@@ -231,21 +231,21 @@ public partial class EdgeEditorTool
 
         var changed = false;
 
-        changed |= ColorEntry("edgeColorGrapple", "MAP_EdgeEditor_Color_Grapple", ref CFG.Current.Viewport_Edge_Grapple_Color);
-        changed |= ColorEntry("edgeColorPull", "MAP_EdgeEditor_Color_Pull", ref CFG.Current.Viewport_Edge_Pull_Color);
-        changed |= ColorEntry("edgeColorHang", "MAP_EdgeEditor_Color_Hang", ref CFG.Current.Viewport_Edge_Hang_Color);
-        changed |= ColorEntry("edgeColorHug", "MAP_EdgeEditor_Color_Hug", ref CFG.Current.Viewport_Edge_Hug_Color);
-        changed |= ColorEntry("edgeColorSelected", "MAP_EdgeEditor_Color_Selected", ref CFG.Current.Viewport_Edge_Selected_Color);
-        ColorEntry("edgeColorHover", "MAP_EdgeEditor_Color_Hover", ref CFG.Current.Viewport_Edge_Hover_Color);
+        changed |= ColorEntry("edgeColorGrapple", "MAP_EdgeEditor_Color_Grapple", ref CFG.Current.Viewport.Viewport_Edge_Grapple_Color);
+        changed |= ColorEntry("edgeColorPull", "MAP_EdgeEditor_Color_Pull", ref CFG.Current.Viewport.Viewport_Edge_Pull_Color);
+        changed |= ColorEntry("edgeColorHang", "MAP_EdgeEditor_Color_Hang", ref CFG.Current.Viewport.Viewport_Edge_Hang_Color);
+        changed |= ColorEntry("edgeColorHug", "MAP_EdgeEditor_Color_Hug", ref CFG.Current.Viewport.Viewport_Edge_Hug_Color);
+        changed |= ColorEntry("edgeColorSelected", "MAP_EdgeEditor_Color_Selected", ref CFG.Current.Viewport.Viewport_Edge_Selected_Color);
+        ColorEntry("edgeColorHover", "MAP_EdgeEditor_Color_Hover", ref CFG.Current.Viewport.Viewport_Edge_Hover_Color);
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat($"##edgePointSize", ref CFG.Current.Viewport_Edge_Point_Size, 0.02f, 1.0f,
+        ImGui.SliderFloat($"##edgePointSize", ref CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.02f, 1.0f,
             LOC.Get("MAP_EdgeEditor_Point_Size_Format"));
         GUI.Tooltip(LOC.Get("MAP_EdgeEditor_Point_Size_TT"));
         changed |= ImGui.IsItemDeactivatedAfterEdit();
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat($"##edgeSegmentRadius", ref CFG.Current.Viewport_Edge_Segment_Radius, 0.01f, 0.5f,
+        ImGui.SliderFloat($"##edgeSegmentRadius", ref CFG.Current.Viewport.Viewport_Edge_Segment_Radius, 0.01f, 0.5f,
             LOC.Get("MAP_EdgeEditor_Segment_Radius_Format"));
         GUI.Tooltip(LOC.Get("MAP_EdgeEditor_Segment_Radius_TT"));
         changed |= ImGui.IsItemDeactivatedAfterEdit();
@@ -293,8 +293,8 @@ public partial class EdgeEditorTool
             max = Vector3.Max(max, w);
         }
 
-        var pad = new Vector3(Math.Max(CFG.Current.Viewport_Edge_Point_Size, 0.5f));
-        viewport.FrameBox(new BoundingBox(min - pad, max + pad), CFG.Current.Viewport_Frame_Offset, CFG.Current.Viewport_Frame_Distance);
+        var pad = new Vector3(Math.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.5f));
+        viewport.FrameBox(new BoundingBox(min - pad, max + pad), CFG.Current.Viewport.Viewport_Frame_Offset, CFG.Current.Viewport.Viewport_Frame_Distance);
     }
 
     private void DisplayEntries(MsbEntity part, EDGE edge)

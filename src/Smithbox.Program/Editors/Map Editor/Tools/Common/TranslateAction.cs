@@ -27,7 +27,7 @@ public class TranslateAction
     {
         if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode))
         {
-            CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication = !CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication;
+            CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_DiscreteApplication = !CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_DiscreteApplication;
         }
 
         if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Cycle_Type))
@@ -48,7 +48,7 @@ public class TranslateAction
         bool zMovement_Positive = false;
         bool zMovement_Negative = false;
 
-        if (CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication)
+        if (CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_DiscreteApplication)
         {
             if (InputManager.IsPressed(KeybindID.MapEditor_Position_Increment_Positive_X))
             {
@@ -153,22 +153,22 @@ public class TranslateAction
 
         var currentIncrement = "";
 
-        switch (CFG.Current.MapEditor_Selection_Position_IncrementType)
+        switch (CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType)
         {
             case 0:
-                currentIncrement = $"Position Increment 0: {CFG.Current.MapEditor_Selection_Position_Increment_0}";
+                currentIncrement = $"Position Increment 0: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0}";
                 break;
             case 1:
-                currentIncrement = $"Position Increment 1: {CFG.Current.MapEditor_Selection_Position_Increment_1}";
+                currentIncrement = $"Position Increment 1: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1}";
                 break;
             case 2:
-                currentIncrement = $"Position Increment 2: {CFG.Current.MapEditor_Selection_Position_Increment_2}";
+                currentIncrement = $"Position Increment 2: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2}";
                 break;
             case 3:
-                currentIncrement = $"Position Increment 3: {CFG.Current.MapEditor_Selection_Position_Increment_3}";
+                currentIncrement = $"Position Increment 3: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3}";
                 break;
             case 4:
-                currentIncrement = $"Position Increment 4: {CFG.Current.MapEditor_Selection_Position_Increment_4}";
+                currentIncrement = $"Position Increment 4: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4}";
                 break;
         }
 
@@ -184,20 +184,20 @@ public class TranslateAction
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
 
-        ImGui.Checkbox("Display position increment type", ref CFG.Current.Viewport_DisplayTranslationIncrement);
+        ImGui.Checkbox("Display position increment type", ref CFG.Current.Viewport.Viewport_DisplayTranslationIncrement);
         GUI.Tooltip("Display the current position increment type you are using in the information panel.");
 
-        ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication);
+        ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_DiscreteApplication);
         GUI.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode)}");
 
         GUI.Spacer();
         GUI.SimpleHeader("Position Increment: 0", "");
 
         GUI.SetInputWidth();
-        var unit0 = CFG.Current.MapEditor_Selection_Position_Increment_0;
+        var unit0 = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
         if (ImGui.SliderFloat("##positionIncrement0", ref unit0, 0.0f, 999.0f))
         {
-            CFG.Current.MapEditor_Selection_Position_Increment_0 = unit0;
+            CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0 = unit0;
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
@@ -206,10 +206,10 @@ public class TranslateAction
 
         GUI.SetInputWidth();
 
-        var unit1 = CFG.Current.MapEditor_Selection_Position_Increment_1;
+        var unit1 = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1;
         if (ImGui.SliderFloat("##positionIncrement1", ref unit1, 0.0f, 999.0f))
         {
-            CFG.Current.MapEditor_Selection_Position_Increment_1 = unit1;
+            CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1 = unit1;
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
@@ -218,10 +218,10 @@ public class TranslateAction
 
         GUI.SetInputWidth();
 
-        var unit2 = CFG.Current.MapEditor_Selection_Position_Increment_2;
+        var unit2 = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2;
         if (ImGui.SliderFloat("##positionIncrement2", ref unit2, 0.0f, 999.0f))
         {
-            CFG.Current.MapEditor_Selection_Position_Increment_2 = unit2;
+            CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2 = unit2;
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
@@ -230,10 +230,10 @@ public class TranslateAction
 
         GUI.SetInputWidth();
 
-        var unit3 = CFG.Current.MapEditor_Selection_Position_Increment_3;
+        var unit3 = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3;
         if (ImGui.SliderFloat("##positionIncrement3", ref unit3, 0.0f, 999.0f))
         {
-            CFG.Current.MapEditor_Selection_Position_Increment_3 = unit3;
+            CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3 = unit3;
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
@@ -242,10 +242,10 @@ public class TranslateAction
 
         GUI.SetInputWidth();
 
-        var unit4 = CFG.Current.MapEditor_Selection_Position_Increment_4;
+        var unit4 = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4;
         if (ImGui.SliderFloat("##positionIncrement4", ref unit4, 0.0f, 999.0f))
         {
-            CFG.Current.MapEditor_Selection_Position_Increment_4 = unit4;
+            CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4 = unit4;
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
@@ -361,18 +361,18 @@ public class TranslateAction
     {
         if (decrement)
         {
-            CFG.Current.MapEditor_Selection_Position_IncrementType -= 1;
-            if (CFG.Current.MapEditor_Selection_Position_IncrementType < 0)
+            CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType -= 1;
+            if (CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType < 0)
             {
-                CFG.Current.MapEditor_Selection_Position_IncrementType = 4;
+                CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType = 4;
             }
         }
         else
         {
-            CFG.Current.MapEditor_Selection_Position_IncrementType += 1;
-            if (CFG.Current.MapEditor_Selection_Position_IncrementType > 4)
+            CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType += 1;
+            if (CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType > 4)
             {
-                CFG.Current.MapEditor_Selection_Position_IncrementType = 0;
+                CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType = 0;
             }
         }
     }
@@ -382,36 +382,36 @@ public class TranslateAction
         bool yMovement_Positive = false, bool yMovement_Negative = false, 
         bool zMovement_Positive = false, bool zMovement_Negative = false)
     {
-        var x_increment = CFG.Current.MapEditor_Selection_Position_Increment_0;
-        var y_increment = CFG.Current.MapEditor_Selection_Position_Increment_0;
-        var z_increment = CFG.Current.MapEditor_Selection_Position_Increment_0;
+        var x_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
+        var y_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
+        var z_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
 
-        switch (CFG.Current.MapEditor_Selection_Position_IncrementType)
+        switch (CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType)
         {
             case 0:
-                x_increment = CFG.Current.MapEditor_Selection_Position_Increment_0;
-                y_increment = CFG.Current.MapEditor_Selection_Position_Increment_0;
-                z_increment = CFG.Current.MapEditor_Selection_Position_Increment_0;
+                x_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
+                y_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
+                z_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0;
                 break;
             case 1:
-                x_increment = CFG.Current.MapEditor_Selection_Position_Increment_1;
-                y_increment = CFG.Current.MapEditor_Selection_Position_Increment_1;
-                z_increment = CFG.Current.MapEditor_Selection_Position_Increment_1;
+                x_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1;
+                y_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1;
+                z_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1;
                 break;
             case 2:
-                x_increment = CFG.Current.MapEditor_Selection_Position_Increment_2;
-                y_increment = CFG.Current.MapEditor_Selection_Position_Increment_2;
-                z_increment = CFG.Current.MapEditor_Selection_Position_Increment_2;
+                x_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2;
+                y_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2;
+                z_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2;
                 break;
             case 3:
-                x_increment = CFG.Current.MapEditor_Selection_Position_Increment_3;
-                y_increment = CFG.Current.MapEditor_Selection_Position_Increment_3;
-                z_increment = CFG.Current.MapEditor_Selection_Position_Increment_3;
+                x_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3;
+                y_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3;
+                z_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3;
                 break;
             case 4:
-                x_increment = CFG.Current.MapEditor_Selection_Position_Increment_4;
-                y_increment = CFG.Current.MapEditor_Selection_Position_Increment_4;
-                z_increment = CFG.Current.MapEditor_Selection_Position_Increment_4;
+                x_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4;
+                y_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4;
+                z_increment = CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4;
                 break;
         }
 
@@ -481,22 +481,22 @@ public class TranslateAction
 
     public void DisplayViewportHint()
     {
-        switch (CFG.Current.MapEditor_Selection_Position_IncrementType)
+        switch (CFG.Current.MapEditor.MapEditor_Selection_Position_IncrementType)
         {
             case 0:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_0}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_0}");
                 break;
             case 1:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_1}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_1}");
                 break;
             case 2:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_2}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_2}");
                 break;
             case 3:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_3}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_3}");
                 break;
             case 4:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_4}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor.MapEditor_Selection_Position_Increment_4}");
                 break;
         }
         GUI.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");

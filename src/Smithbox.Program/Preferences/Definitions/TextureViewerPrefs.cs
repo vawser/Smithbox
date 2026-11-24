@@ -30,7 +30,7 @@ public class TextureViewerPrefs
             Description = "PREF_TextureViewer_File_List_Display_Character_Aliases_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Character_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer.TextureViewer_File_List_Display_Character_Aliases);
             }
         };
     }
@@ -48,7 +48,7 @@ public class TextureViewerPrefs
             Description = "PREF_TextureViewer_File_List_Display_Asset_Aliases_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Asset_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer.TextureViewer_File_List_Display_Asset_Aliases);
             }
         };
     }
@@ -66,7 +66,7 @@ public class TextureViewerPrefs
             Description = "PREF_TextureViewer_File_List_Display_Part_Aliases_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Part_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer.TextureViewer_File_List_Display_Part_Aliases);
             }
         };
     }
@@ -84,7 +84,7 @@ public class TextureViewerPrefs
             Description = "PREF_TextureViewer_File_List_Display_Low_Detail_Entries_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Low_Detail_Entries);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer.TextureViewer_File_List_Display_Low_Detail_Entries);
             }
         };
     }
@@ -105,7 +105,7 @@ public class TextureViewerPrefs
             Description = "PREF_TextureViewer_File_List_Display_Particle_Aliases_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Particle_Aliases);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer.TextureViewer_File_List_Display_Particle_Aliases);
             }
         };
     }

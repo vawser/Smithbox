@@ -44,60 +44,60 @@ public class ViewportMenu
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Controls")}##controlsToggle"))
             {
-                CFG.Current.Viewport_DisplayControls = !CFG.Current.Viewport_DisplayControls;
+                CFG.Current.Viewport.Viewport_DisplayControls = !CFG.Current.Viewport.Viewport_DisplayControls;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
+            GUI.ShowActiveStatus(CFG.Current.Viewport.Viewport_DisplayControls);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Controls_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Profiling")}##profilingToggle"))
             {
-                CFG.Current.Viewport_Display_Profiling = !CFG.Current.Viewport_Display_Profiling;
+                CFG.Current.Viewport.Viewport_Display_Profiling = !CFG.Current.Viewport.Viewport_Display_Profiling;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
+            GUI.ShowActiveStatus(CFG.Current.Viewport.Viewport_Display_Profiling);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Profiling_TT"));
 
             if (Owner is MapUniverse mapUniverse)
             {
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Active_Map")}##activeMapToggle"))
                 {
-                    CFG.Current.Viewport_DisplayActiveMap = !CFG.Current.Viewport_DisplayActiveMap;
+                    CFG.Current.Viewport.Viewport_DisplayActiveMap = !CFG.Current.Viewport.Viewport_DisplayActiveMap;
                     Parent.DelayPicking();
                 }
-                GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayActiveMap);
+                GUI.ShowActiveStatus(CFG.Current.Viewport.Viewport_DisplayActiveMap);
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Active_Map_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Translation_Increment")}##translationIncrementToggle"))
                 {
-                    CFG.Current.Viewport_DisplayTranslationIncrement = !CFG.Current.Viewport_DisplayTranslationIncrement;
+                    CFG.Current.Viewport.Viewport_DisplayTranslationIncrement = !CFG.Current.Viewport.Viewport_DisplayTranslationIncrement;
                     Parent.DelayPicking();
                 }
-                GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayTranslationIncrement);
+                GUI.ShowActiveStatus(CFG.Current.Viewport.Viewport_DisplayTranslationIncrement);
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Translation_Increment_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Rotation_Increment")}##rotationIncrementToggle"))
                 {
-                    CFG.Current.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport_DisplayRotationIncrement;
+                    CFG.Current.Viewport.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport.Viewport_DisplayRotationIncrement;
                     Parent.DelayPicking();
                 }
-                GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
+                GUI.ShowActiveStatus(CFG.Current.Viewport.Viewport_DisplayRotationIncrement);
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Rotation_Increment_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Viewport_Tooltip")}##viewportTooltipToggle"))
                 {
-                    CFG.Current.QuickView_DisplayTooltip = !CFG.Current.QuickView_DisplayTooltip;
+                    CFG.Current.MapEditor.QuickView_DisplayTooltip = !CFG.Current.MapEditor.QuickView_DisplayTooltip;
                     Parent.DelayPicking();
                 }
-                GUI.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
+                GUI.ShowActiveStatus(CFG.Current.MapEditor.QuickView_DisplayTooltip);
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Compass")}##compassToggle"))
                 {
-                    CFG.Current.DisplayCompass = !CFG.Current.DisplayCompass;
+                    CFG.Current.Viewport.DisplayCompass = !CFG.Current.Viewport.DisplayCompass;
                     Parent.DelayPicking();
                 }
-                GUI.ShowActiveStatus(CFG.Current.DisplayCompass);
+                GUI.ShowActiveStatus(CFG.Current.Viewport.DisplayCompass);
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Compass_TT"));
             }
 
@@ -116,23 +116,23 @@ public class ViewportMenu
         switch (Owner)
         {
             case MapUniverse map:
-                CFG.Current.Interface_MapEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_MapEditor_ToolWindow = true;
                 tool = map.View.RenderingTool;
                 break;
             case ModelUniverse model:
-                CFG.Current.Interface_ModelEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_ModelEditor_ToolWindow = true;
                 tool = model.View.RenderingTool;
                 break;
             case TimeActUniverse timeAct:
-                CFG.Current.Interface_TimeActEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_TimeActEditor_ToolWindow = true;
                 tool = timeAct.View.RenderingTool;
                 break;
             case GparamUniverse gparam:
-                CFG.Current.Interface_GparamEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_GparamEditor_ToolWindow = true;
                 tool = gparam.View.RenderingTool;
                 break;
             case FxUniverse fx:
-                CFG.Current.Interface_FxEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_FxEditor_ToolWindow = true;
                 tool = fx.View.RenderingTool;
                 break;
         }
@@ -182,23 +182,23 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Settings")}##settingsMenuHeader"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Rendering")}##renderToggle", CFG.Current.Viewport_Enable_Rendering))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Rendering")}##renderToggle", CFG.Current.Viewport.Viewport_Enable_Rendering))
             {
-                CFG.Current.Viewport_Enable_Rendering = !CFG.Current.Viewport_Enable_Rendering;
+                CFG.Current.Viewport.Viewport_Enable_Rendering = !CFG.Current.Viewport.Viewport_Enable_Rendering;
                 Parent.DelayPicking();
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Rendering_TT"));
 
-            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Texturing")}##textureToggle", CFG.Current.Viewport_Enable_Texturing))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Texturing")}##textureToggle", CFG.Current.Viewport.Viewport_Enable_Texturing))
             {
-                CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
+                CFG.Current.Viewport.Viewport_Enable_Texturing = !CFG.Current.Viewport.Viewport_Enable_Texturing;
                 Parent.DelayPicking();
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Texturing_TT"));
 
-            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling")}##cullingToggle", CFG.Current.Viewport_Enable_Culling))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling")}##cullingToggle", CFG.Current.Viewport.Viewport_Enable_Culling))
             {
-                CFG.Current.Viewport_Enable_Culling = !CFG.Current.Viewport_Enable_Culling;
+                CFG.Current.Viewport.Viewport_Enable_Culling = !CFG.Current.Viewport.Viewport_Enable_Culling;
                 Parent.DelayPicking();
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling_TT"));
@@ -229,25 +229,25 @@ public class ViewportMenu
 
             if (pipeline?.UseIrradianceVolumes == true)
             {
-                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Global_Illumination")}##giToggle", CFG.Current.Viewport_GI_Enable))
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Global_Illumination")}##giToggle", CFG.Current.Viewport.Viewport_GI_Enable))
                 {
-                    CFG.Current.Viewport_GI_Enable = !CFG.Current.Viewport_GI_Enable;
+                    CFG.Current.Viewport.Viewport_GI_Enable = !CFG.Current.Viewport.Viewport_GI_Enable;
                 }
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Global_Illumination_TT"));
             }
 
             if (pipeline?.UseMapLighting == true)
             {
-                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Lighting")}##lightingToggle", CFG.Current.Viewport_Map_Lighting))
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Lighting")}##lightingToggle", CFG.Current.Viewport.Viewport_Map_Lighting))
                 {
-                    CFG.Current.Viewport_Map_Lighting = !CFG.Current.Viewport_Map_Lighting;
+                    CFG.Current.Viewport.Viewport_Map_Lighting = !CFG.Current.Viewport.Viewport_Map_Lighting;
                 }
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Lighting_TT"));
             }
 
-            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Shadows")}##shadowsToggle", CFG.Current.Viewport_Shadows))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Shadows")}##shadowsToggle", CFG.Current.Viewport.Viewport_Shadows))
             {
-                CFG.Current.Viewport_Shadows = !CFG.Current.Viewport_Shadows;
+                CFG.Current.Viewport.Viewport_Shadows = !CFG.Current.Viewport.Viewport_Shadows;
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Shadows_TT"));
 
@@ -267,9 +267,9 @@ public class ViewportMenu
 
             if (Owner is MapUniverse mapUniverse)
             {
-                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Model_Masks")}##modelMaskToggle", CFG.Current.Viewport_Enable_Model_Masks))
+                if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Model_Masks")}##modelMaskToggle", CFG.Current.Viewport.Viewport_Enable_Model_Masks))
                 {
-                    CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
+                    CFG.Current.Viewport.Viewport_Enable_Model_Masks = !CFG.Current.Viewport.Viewport_Enable_Model_Masks;
                     Parent.DelayPicking();
                 }
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Model_Masks_TT"));
@@ -292,7 +292,7 @@ public class ViewportMenu
                 {
                     ImGui.DragFloat(
                         $"{LOC.Get("VIEWPORT_Menubar_Setting_Orb_Distance")}##orbDistance", 
-                        ref CFG.Current.PlacementOrb_Distance, 0.1f, 1f, 100f);
+                        ref CFG.Current.MapEditor.PlacementOrb_Distance, 0.1f, 1f, 100f);
 
                     GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Orb_Distance_TT"));
 
@@ -303,13 +303,13 @@ public class ViewportMenu
                 {
                     ImGui.DragInt(
                         $"{LOC.Get("VIEWPORT_Menubar_Setting_Compass_Size")}##compassSize",
-                        ref CFG.Current.CompassSize, 1, 16, 512);
+                        ref CFG.Current.Viewport.CompassSize, 1, 16, 512);
 
                     GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Compass_Size_TT"));
 
                     ImGui.DragFloat(
                         $"{LOC.Get("VIEWPORT_Menubar_Setting_Compass_North_Offset")}##compassNorthOffset",
-                        ref CFG.Current.CompassNorthOffset, 0.1f, -360.0f, 360f);
+                        ref CFG.Current.Viewport.CompassNorthOffset, 0.1f, -360.0f, 360f);
 
                     GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Compass_North_Offset_TT"));
 
@@ -341,13 +341,13 @@ public class ViewportMenu
 
         if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Editor")}##renderModeEditor", "", mode == ViewportRenderMode.Editor))
         {
-            CFG.Current.Viewport_Render_Mode = (int)ViewportRenderMode.Editor;
+            CFG.Current.Viewport.Viewport_Render_Mode = (int)ViewportRenderMode.Editor;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Editor_TT"));
 
         if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Game")}##renderModeGame", "", mode == ViewportRenderMode.Game))
         {
-            CFG.Current.Viewport_Render_Mode = (int)ViewportRenderMode.Game;
+            CFG.Current.Viewport.Viewport_Render_Mode = (int)ViewportRenderMode.Game;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Render_Mode_Game_TT"));
 
@@ -357,13 +357,13 @@ public class ViewportMenu
 
         if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Diffuse")}##texturingDiffuse", "", texturing == ViewportTexturingMode.Diffuse))
         {
-            CFG.Current.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Diffuse;
+            CFG.Current.Viewport.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Diffuse;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Diffuse_TT"));
 
         if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Normal")}##texturingNormal", "", texturing == ViewportTexturingMode.Normal))
         {
-            CFG.Current.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Normal;
+            CFG.Current.Viewport.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Normal;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Normal_TT"));
 
@@ -378,30 +378,30 @@ public class ViewportMenu
     /// </summary>
     private void WireframeMenu()
     {
-        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe")}##wireframeToggle", "", CFG.Current.Viewport_Wireframe_Enable))
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe")}##wireframeToggle", "", CFG.Current.Viewport.Viewport_Wireframe_Enable))
         {
-            CFG.Current.Viewport_Wireframe_Enable = !CFG.Current.Viewport_Wireframe_Enable;
+            CFG.Current.Viewport.Viewport_Wireframe_Enable = !CFG.Current.Viewport.Viewport_Wireframe_Enable;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_TT"));
 
         if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Settings")}##wireframeSettings"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Only")}##wireframeOnly", "", CFG.Current.Viewport_Wireframe_Only))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Only")}##wireframeOnly", "", CFG.Current.Viewport.Viewport_Wireframe_Only))
             {
-                CFG.Current.Viewport_Wireframe_Only = !CFG.Current.Viewport_Wireframe_Only;
+                CFG.Current.Viewport.Viewport_Wireframe_Only = !CFG.Current.Viewport.Viewport_Wireframe_Only;
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Only_TT"));
 
             ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Color")}##wireframeColor",
-                ref CFG.Current.Viewport_Wireframe_Line_Color);
+                ref CFG.Current.Viewport.Viewport_Wireframe_Line_Color);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Color_TT"));
 
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Opacity")}##wireframeOpacity",
-                ref CFG.Current.Viewport_Wireframe_Line_Opacity, 0.0f, 1.0f);
+                ref CFG.Current.Viewport.Viewport_Wireframe_Line_Opacity, 0.0f, 1.0f);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Opacity_TT"));
 
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Width")}##wireframeWidth",
-                ref CFG.Current.Viewport_Wireframe_Line_Width, 0.5f, 8.0f);
+                ref CFG.Current.Viewport.Viewport_Wireframe_Line_Width, 0.5f, 8.0f);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Width_TT"));
 
             ImGui.EndMenu();
@@ -421,7 +421,7 @@ public class ViewportMenu
         {
             ImGui.DragFloat(
                 $"{LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size")}##dummyMeshSize",
-                ref CFG.Current.DummyMeshSize, 0.1f, 0.0001f, 1f);
+                ref CFG.Current.Viewport.DummyMeshSize, 0.1f, 0.0001f, 1f);
 
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size_TT"));
 
@@ -433,7 +433,7 @@ public class ViewportMenu
 
             ImGui.DragFloat(
                 $"{LOC.Get("VIEWPORT_Menubar_Setting_Node_Size")}##nodeMeshSize",
-                ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
+                ref CFG.Current.Viewport.NodeMeshSize, 0.1f, 0.0001f, 1f);
 
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Node_Size_TT"));
 
@@ -445,7 +445,7 @@ public class ViewportMenu
 
             ImGui.DragFloat(
                 $"{LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale")}##labelScale",
-                ref CFG.Current.ModelEditor_LabelScale, 0.05f, 0.25f, 5f);
+                ref CFG.Current.ModelEditor.ModelEditor_LabelScale, 0.05f, 0.25f, 5f);
 
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Label_Scale_TT"));
 
@@ -459,10 +459,10 @@ public class ViewportMenu
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Map_Pieces")}##mapPieceToggle"))
             {
-                CFG.Current.MapEditor_ModelLoad_MapPieces = !CFG.Current.MapEditor_ModelLoad_MapPieces;
+                CFG.Current.MapEditor.MapEditor_ModelLoad_MapPieces = !CFG.Current.MapEditor.MapEditor_ModelLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_ModelLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_ML_Objects");
 
@@ -480,31 +480,31 @@ public class ViewportMenu
 
             if (ImGui.MenuItem($"{name}##objectToggle"))
             {
-                CFG.Current.MapEditor_ModelLoad_Objects = !CFG.Current.MapEditor_ModelLoad_Objects;
+                CFG.Current.MapEditor.MapEditor_ModelLoad_Objects = !CFG.Current.MapEditor.MapEditor_ModelLoad_Objects;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Objects);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_ModelLoad_Objects);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Characters")}##characterToggle"))
             {
-                CFG.Current.MapEditor_ModelLoad_Characters = !CFG.Current.MapEditor_ModelLoad_Characters;
+                CFG.Current.MapEditor.MapEditor_ModelLoad_Characters = !CFG.Current.MapEditor.MapEditor_ModelLoad_Characters;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_ModelLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Collisions")}##collisionToggle"))
             {
-                CFG.Current.MapEditor_ModelLoad_Collisions = !CFG.Current.MapEditor_ModelLoad_Collisions;
+                CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions = !CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Collisions);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Navmeshes")}##navmeshToggle"))
             {
-                CFG.Current.MapEditor_ModelLoad_Navmeshes = !CFG.Current.MapEditor_ModelLoad_Navmeshes;
+                CFG.Current.MapEditor.MapEditor_ModelLoad_Navmeshes = !CFG.Current.MapEditor.MapEditor_ModelLoad_Navmeshes;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Navmeshes);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_ModelLoad_Navmeshes);
 
 
             ImGui.EndMenu();
@@ -518,10 +518,10 @@ public class ViewportMenu
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Map_Pieces")}##mapPieceToggle"))
             {
-                CFG.Current.MapEditor_TextureLoad_MapPieces = !CFG.Current.MapEditor_TextureLoad_MapPieces;
+                CFG.Current.MapEditor.MapEditor_TextureLoad_MapPieces = !CFG.Current.MapEditor.MapEditor_TextureLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_TextureLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_TL_Objects");
 
@@ -539,24 +539,24 @@ public class ViewportMenu
 
             if (ImGui.MenuItem($"{name}##objectToggle"))
             {
-                CFG.Current.MapEditor_TextureLoad_Objects = !CFG.Current.MapEditor_TextureLoad_Objects;
+                CFG.Current.MapEditor.MapEditor_TextureLoad_Objects = !CFG.Current.MapEditor.MapEditor_TextureLoad_Objects;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Objects);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_TextureLoad_Objects);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Characters")}##characterToggle"))
             {
-                CFG.Current.MapEditor_TextureLoad_Characters = !CFG.Current.MapEditor_TextureLoad_Characters;
+                CFG.Current.MapEditor.MapEditor_TextureLoad_Characters = !CFG.Current.MapEditor.MapEditor_TextureLoad_Characters;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_TextureLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Misc")}##miscToggle"))
             {
-                CFG.Current.MapEditor_TextureLoad_Misc = !CFG.Current.MapEditor_TextureLoad_Misc;
+                CFG.Current.MapEditor.MapEditor_TextureLoad_Misc = !CFG.Current.MapEditor.MapEditor_TextureLoad_Misc;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Misc);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_TextureLoad_Misc);
 
             ImGui.EndMenu();
         }
@@ -569,10 +569,10 @@ public class ViewportMenu
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Map_Pieces")}##mapPieceToggle"))
             {
-                CFG.Current.ModelEditor_ModelLoad_MapPieces = !CFG.Current.ModelEditor_ModelLoad_MapPieces;
+                CFG.Current.ModelEditor.ModelEditor_ModelLoad_MapPieces = !CFG.Current.ModelEditor.ModelEditor_ModelLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_ModelLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_ML_Objects");
 
@@ -590,24 +590,24 @@ public class ViewportMenu
 
             if (ImGui.MenuItem($"{name}##objectToggle"))
             {
-                CFG.Current.ModelEditor_ModelLoad_Objects = !CFG.Current.ModelEditor_ModelLoad_Objects;
+                CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects = !CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Objects);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Characters")}##characterToggle"))
             {
-                CFG.Current.ModelEditor_ModelLoad_Characters = !CFG.Current.ModelEditor_ModelLoad_Characters;
+                CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters = !CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Parts")}##partsToggle"))
             {
-                CFG.Current.ModelEditor_ModelLoad_Parts = !CFG.Current.ModelEditor_ModelLoad_Parts;
+                CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts = !CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Parts);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts);
 
             ImGui.EndMenu();
         }
@@ -620,10 +620,10 @@ public class ViewportMenu
         {
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Map_Pieces")}##mapPieceToggle"))
             {
-                CFG.Current.ModelEditor_TextureLoad_MapPieces = !CFG.Current.ModelEditor_TextureLoad_MapPieces;
+                CFG.Current.ModelEditor.ModelEditor_TextureLoad_MapPieces = !CFG.Current.ModelEditor.ModelEditor_TextureLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_TextureLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_TL_Objects");
 
@@ -641,31 +641,31 @@ public class ViewportMenu
 
             if (ImGui.MenuItem($"{name}##objectToggle"))
             {
-                CFG.Current.ModelEditor_TextureLoad_Objects = !CFG.Current.ModelEditor_TextureLoad_Objects;
+                CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects = !CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Objects);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Characters")}##characterToggle"))
             {
-                CFG.Current.ModelEditor_TextureLoad_Characters = !CFG.Current.ModelEditor_TextureLoad_Characters;
+                CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters = !CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Parts")}##partsToggle"))
             {
-                CFG.Current.ModelEditor_TextureLoad_Parts = !CFG.Current.ModelEditor_TextureLoad_Parts;
+                CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts = !CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Parts);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Misc")}##miscToggle"))
             {
-                CFG.Current.ModelEditor_TextureLoad_Misc = !CFG.Current.ModelEditor_TextureLoad_Misc;
+                CFG.Current.ModelEditor.ModelEditor_TextureLoad_Misc = !CFG.Current.ModelEditor.ModelEditor_TextureLoad_Misc;
                 Parent.DelayPicking();
             }
-            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Misc);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Misc);
 
             ImGui.EndMenu();
         }

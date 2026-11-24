@@ -566,7 +566,7 @@ public class ProjectConfigureMenu
     /// </summary>
     private string GetNewProjectFolder()
     {
-        var root = CFG.Current.Project_Default_Mod_Directory;
+        var root = CFG.Current.Project.Project_Default_Mod_Directory;
         var name = Descriptor.ProjectName?.Trim() ?? "";
 
         if (string.IsNullOrWhiteSpace(root) || !Directory.Exists(root) || name == "")
@@ -797,11 +797,11 @@ public class ProjectConfigureMenu
         var newProjectPath = "";
         bool result;
 
-        if (CFG.Current.Project_Default_Mod_Directory != "")
+        if (CFG.Current.Project.Project_Default_Mod_Directory != "")
         {
             result = PlatformUtils.Instance.OpenFolderDialog(
                 LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"),
-                out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
+                out newProjectPath, CFG.Current.Project.Project_Default_Mod_Directory);
         }
         else
         {
@@ -825,10 +825,10 @@ public class ProjectConfigureMenu
         var newDataPath = "";
         bool result;
 
-        if (CFG.Current.Project_Default_Data_Directory != "")
+        if (CFG.Current.Project.Project_Default_Data_Directory != "")
         {
             result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project_Default_Data_Directory);
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project.Project_Default_Data_Directory);
         }
         else
         {
@@ -942,7 +942,7 @@ public class ProjectConfigureMenu
 
     public void CreateProfileAction()
     {
-        if (CFG.Current.Project_ME3_Profile_Directory == "")
+        if (CFG.Current.Project.Project_ME3_Profile_Directory == "")
         {
             var profilePath = "";
             var result =
@@ -952,7 +952,7 @@ public class ProjectConfigureMenu
             if (!result)
                 return;
 
-            CFG.Current.Project_ME3_Profile_Directory = profilePath;
+            CFG.Current.Project.Project_ME3_Profile_Directory = profilePath;
         }
 
         ModEngineHandler.CreateME3Profile(Project);

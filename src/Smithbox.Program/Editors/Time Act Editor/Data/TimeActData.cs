@@ -245,7 +245,7 @@ public class TimeActData : IDisposable
     /// </summary>
     public string GetFieldDisplayName(TAE.Template.EventTemplate eventTemplate, string parameterName)
     {
-        if (CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
+        if (CFG.Current.TimeActEditor.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
             GetFieldAnnotation(eventTemplate, parameterName) is { Name.Length: > 0 } annotation)
         {
             return annotation.Name;
@@ -260,7 +260,7 @@ public class TimeActData : IDisposable
     /// </summary>
     public string GetFieldDisplayName(TAE.Event ev, string parameterName)
     {
-        if (CFG.Current.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
+        if (CFG.Current.TimeActEditor.TimeActEditor_Field_Name_Mode is TimeActFieldNameMode.Annotation &&
             GetFieldAnnotation(ev, parameterName) is { Name.Length: > 0 } annotation)
         {
             return annotation.Name;
@@ -325,9 +325,9 @@ public class TimeActData : IDisposable
         var folder = Path.Join(AppContext.BaseDirectory, "Assets", "TAE", ProjectUtils.GetGameDirectory(game));
 
 #if DEBUG
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
-            folder = Path.Join(CFG.Current.Developer_Smithbox_Build_Folder, "src", "Smithbox.Data", "Assets", "TAE",
+            folder = Path.Join(CFG.Current.Developer.Developer_Smithbox_Build_Folder, "src", "Smithbox.Data", "Assets", "TAE",
                 ProjectUtils.GetGameDirectory(game));
         }
 #endif
@@ -438,7 +438,7 @@ public class TimeActData : IDisposable
     /// </summary>
     private static string GetAnnotationPath(string folder, string defName)
     {
-        foreach (var language in new[] { CFG.Current.ParamEditor_Annotation_Language, "English" })
+        foreach (var language in new[] { CFG.Current.ParamEditor.ParamEditor_Annotation_Language, "English" })
         {
             if (string.IsNullOrEmpty(language))
                 continue;
@@ -467,7 +467,7 @@ public class TimeActData : IDisposable
         }
 
         string NameOf(ParamEnumOption option) =>
-            option.Names.FirstOrDefault(n => n.Language == CFG.Current.ParamEditor_Annotation_Language)?.Text
+            option.Names.FirstOrDefault(n => n.Language == CFG.Current.ParamEditor.ParamEditor_Annotation_Language)?.Text
             ?? option.Names.FirstOrDefault(n => n.Language == "English")?.Text
             ?? option.Names.FirstOrDefault()?.Text
             ?? option.Key;

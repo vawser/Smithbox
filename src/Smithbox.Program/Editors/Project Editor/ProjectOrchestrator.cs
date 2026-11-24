@@ -338,7 +338,7 @@ public class ProjectOrchestrator : IDisposable
         }
 
         // A render snapshot run loads its own projects
-        if (CFG.Current.Project_Enable_Auto_Load && !StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Active)
+        if (CFG.Current.Project.Project_Enable_Auto_Load && !StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Active)
         {
             // Auto-load marks a single project (SetAsAutoLoad clears the others), so the first marked is used. A
             // snapshot is iterated, as the user can add projects while this one loads.
@@ -439,7 +439,7 @@ public class ProjectOrchestrator : IDisposable
     /// <returns>Whether the project loaded.</returns>
     public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null, LoadFocus focus = LoadFocus.ProjectEditor)
     {
-        return LoadProject(curProject, CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded, focus);
+        return LoadProject(curProject, CFG.Current.Project.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded, focus);
     }
 
     /// <summary>

@@ -131,7 +131,7 @@ public class ModelSelectionMenu
             var modelName = entry.Filename;
             var nameAlias = "";
 
-            if (CFG.Current.ModelEditor_Containers_IncludeAliasInSearch
+            if (CFG.Current.ModelEditor.ModelEditor_Containers_IncludeAliasInSearch
                 && AliasTypeMap.TryGetValue(CurrentTab, out var aliasType))
             {
                 nameAlias = AliasHelper.GetAlias(Project, modelName, CurrentTab); // collapsed below
@@ -177,7 +177,7 @@ public class ModelSelectionMenu
                     displayedName, modelListType);
 
                 var flags = ImGuiSelectableFlags.None;
-                if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
+                if (CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick)
                 {
                     flags = ImGuiSelectableFlags.AllowDoubleClick;
                 }
@@ -199,7 +199,7 @@ public class ModelSelectionMenu
 
                 if (alias != "")
                 {
-                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                    GUI.DisplayAlias(alias, CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
                 }
             }
         }

@@ -80,11 +80,11 @@ public class DuplicateAction
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
-            if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID))
+            if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID))
             {
-                if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
+                if (CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID)
                 {
-                    CFG.Current.Toolbar_Duplicate_Clear_Entity_ID = false;
+                    CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID = false;
                 }
             }
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
@@ -96,43 +96,43 @@ public class DuplicateAction
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
-            ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
+            ImGui.Checkbox("Increment Instance ID", ref CFG.Current.MapEditor.Toolbar_Duplicate_Increment_InstanceID);
             GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
 
-            ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_PartNames);
+            ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.MapEditor.Toolbar_Duplicate_Increment_PartNames);
             GUI.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
         }
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
-            if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_ID))
+            if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID))
             {
-                if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
+                if (CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID)
                 {
-                    CFG.Current.Toolbar_Duplicate_Increment_Entity_ID = false;
+                    CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID = false;
                 }
             }
             GUI.Tooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
 
-            ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs);
+            ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_Group_IDs);
             GUI.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
         }
 
-        ImGui.Checkbox("Place at List End", ref CFG.Current.Toolbar_Duplicate_Place_at_List_End);
+        ImGui.Checkbox("Place at List End", ref CFG.Current.MapEditor.Toolbar_Duplicate_Place_at_List_End);
         GUI.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
 
-        ImGui.Checkbox("Paste at Placement Orb", ref CFG.Current.MapEditor_Paste_At_Placement_Orb);
+        ImGui.Checkbox("Paste at Placement Orb", ref CFG.Current.MapEditor.MapEditor_Paste_At_Placement_Orb);
         GUI.Tooltip($"When enabled, pasted map objects are moved so the centre of the group is at the placement orb, keeping their layout. When disabled, they keep the positions they were copied with (see Keep World Position).\n\nShortcut: {InputManager.GetHint(KeybindID.Paste)}");
 
-        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##pasteKeepWorld", ref CFG.Current.MapEditor_Keep_World_Position_Across_Maps);
+        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##pasteKeepWorld", ref CFG.Current.MapEditor.MapEditor_Keep_World_Position_Across_Maps);
         GUI.Tooltip(LOC.Get("MAP_Keep_World_Position_TT"));
 
-        ImGui.Checkbox("Randomise Rotation", ref CFG.Current.Toolbar_Duplicate_Randomise_Rotation);
+        ImGui.Checkbox("Randomise Rotation", ref CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation);
         GUI.Tooltip("When enabled, a duplicated map object's rotation is randomised.");
 
-        if(CFG.Current.Toolbar_Duplicate_Randomise_Rotation)
+        if(CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation)
         {
-            var preview = $"{CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir.ToString()}";
+            var preview = $"{CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir.ToString()}";
 
             GUI.Spacer();
             GUI.SimpleHeader("Rotation Parameters", "");
@@ -143,11 +143,11 @@ public class DuplicateAction
                 foreach(var val in Enum.GetValues(typeof(RandomiseRotationDirection)))
                 {
                     var curType = (RandomiseRotationDirection)val;
-                    var selected = CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir == curType;
+                    var selected = CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir == curType;
 
                     if (ImGui.Selectable($"{curType.ToString()}", selected))
                     {
-                        CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir = curType;
+                        CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir = curType;
                     }
                 }
 
@@ -155,10 +155,10 @@ public class DuplicateAction
             }
 
             GUI.SetInputWidth();
-            ImGui.DragFloat("Rotation Range##dupeRandomizeRange", ref CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
-            if(CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range < 0)
+            ImGui.DragFloat("Rotation Range##dupeRandomizeRange", ref CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range);
+            if(CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range < 0)
             {
-                CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range = 0;
+                CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range = 0;
             }
         }
 
@@ -191,15 +191,15 @@ public class DuplicateAction
                 targetBTL: null,
                 duplicateToMap: false,
                 createMapGroupEntry: false,
-                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
-                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
-                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
-                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
-                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
-                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
-                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range,
-                placeAtListEnd: CFG.Current.Toolbar_Duplicate_Place_at_List_End);
+                incrementEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range,
+                placeAtListEnd: CFG.Current.MapEditor.Toolbar_Duplicate_Place_at_List_End);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

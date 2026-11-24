@@ -132,8 +132,8 @@ public class TimeActEventDisplay
             _visuals.Clear();
         }
 
-        var showMarkers = CFG.Current.TimeActEditor_Display_Event_Markers;
-        var showAttacks = CFG.Current.TimeActEditor_Display_Attack_Capsules;
+        var showMarkers = CFG.Current.TimeActEditor.TimeActEditor_Display_Event_Markers;
+        var showAttacks = CFG.Current.TimeActEditor.TimeActEditor_Display_Attack_Capsules;
 
         if (animation != null && container != null && (showMarkers || showAttacks))
         {
@@ -156,7 +156,7 @@ public class TimeActEventDisplay
                 var progress = end > ev.StartTime ? Math.Clamp((time - ev.StartTime) / (end - ev.StartTime), 0, 1) : 0;
 
                 // Attacks and bullets are shown at the size they really hit at
-                var scale = isMarker ? CFG.Current.TimeActEditor_Event_Marker_Size * (1 + progress * MarkerGrowth) : 1;
+                var scale = isMarker ? CFG.Current.TimeActEditor.TimeActEditor_Event_Marker_Size * (1 + progress * MarkerGrowth) : 1;
 
                 foreach (TimeActVisualShape shape in visual.Shapes)
                 {

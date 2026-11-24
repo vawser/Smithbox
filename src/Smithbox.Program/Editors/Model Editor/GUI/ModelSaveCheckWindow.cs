@@ -65,7 +65,7 @@ public class ModelSaveCheckWindow
         Issues = ModelCheck.Run(Project, Models);
     }
 
-    private bool StopsSave => ModelCheck.StopsSave(Issues, CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings);
+    private bool StopsSave => ModelCheck.StopsSave(Issues, CFG.Current.ModelEditor.ModelEditor_SaveCheck_Stop_On_Warnings);
 
     public void Display()
     {

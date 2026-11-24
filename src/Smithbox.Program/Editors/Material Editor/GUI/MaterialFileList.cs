@@ -78,11 +78,11 @@ public class MaterialFileList
 
         if (ImGui.Button($"{Icons.Bars}"))
         {
-            CFG.Current.MaterialEditor_FileList_DisplayFullPath = !CFG.Current.MaterialEditor_FileList_DisplayFullPath;
+            CFG.Current.MaterialEditor.MaterialEditor_FileList_DisplayFullPath = !CFG.Current.MaterialEditor.MaterialEditor_FileList_DisplayFullPath;
         }
 
         var displayPathMode = LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Hide");
-        if (CFG.Current.MaterialEditor_FileList_DisplayFullPath)
+        if (CFG.Current.MaterialEditor.MaterialEditor_FileList_DisplayFullPath)
             displayPathMode = LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Show");
 
         GUI.Tooltip(LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Hint", displayPathMode));
@@ -92,10 +92,10 @@ public class MaterialFileList
 
         if (ImGui.Button($"{Icons.Filter}##modifiedOnlyToggle"))
         {
-            CFG.Current.MaterialEditor_FileList_Modified_Only = !CFG.Current.MaterialEditor_FileList_Modified_Only;
+            CFG.Current.MaterialEditor.MaterialEditor_FileList_Modified_Only = !CFG.Current.MaterialEditor.MaterialEditor_FileList_Modified_Only;
         }
 
-        GUI.Tooltip(LOC.Get(CFG.Current.MaterialEditor_FileList_Modified_Only
+        GUI.Tooltip(LOC.Get(CFG.Current.MaterialEditor.MaterialEditor_FileList_Modified_Only
             ? "MAT_FileList_Modified_Only_On_TT"
             : "MAT_FileList_Modified_Only_Off_TT"));
 
@@ -111,7 +111,7 @@ public class MaterialFileList
         if (binder != null && (Parent.Selection.SourceType is MaterialSourceType.MTD || MaterialUtils.SupportsMATBIN(Project)))
         {
             // Binder order, unreadable files included where they are
-            var modifiedOnly = CFG.Current.MaterialEditor_FileList_Modified_Only;
+            var modifiedOnly = CFG.Current.MaterialEditor.MaterialEditor_FileList_Modified_Only;
             var vanilla = Parent.Editor.Vanilla;
 
             var filteredEntries = new List<string>();
@@ -502,7 +502,7 @@ public class MaterialFileList
     {
         var newName = path;
 
-        if(!CFG.Current.MaterialEditor_FileList_DisplayFullPath)
+        if(!CFG.Current.MaterialEditor.MaterialEditor_FileList_DisplayFullPath)
         {
             newName = Path.GetFileNameWithoutExtension(newName);
         }

@@ -99,7 +99,7 @@ public class TextEntryList
 
         // Toggle: Null Entries
         GUI.DisplayToggleButton("nullEntryToggle", Icons.Tag,
-            ref CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries,
+            ref CFG.Current.TextEditor.TextEditor_Text_Entry_List_Display_Null_Entries,
             "TEXT_EntryList_NullEntries_Hidden",
             "TEXT_EntryList_NullEntries_Visible",
             "TEXT_EntryList_NullEntries_Hint");
@@ -177,7 +177,7 @@ public class TextEntryList
 
         // With truncated names every row is one line high, so only the rows in view are drawn.
         // Untruncated multi-line names make rows uneven, which the clipper can't handle.
-        if (!CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
+        if (!CFG.Current.TextEditor.TextEditor_Text_Entry_List_Truncate_Name)
         {
             foreach (var (index, entry) in _visibleRows)
             {
@@ -232,7 +232,7 @@ public class TextEntryList
     {
         var dataVersion = TextFinder.CurrentDataVersion;
         var diffVersion = Parent.DifferenceManager.Version;
-        var showNull = CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries;
+        var showNull = CFG.Current.TextEditor.TextEditor_Text_Entry_List_Display_Null_Entries;
 
         var stale = _rowsFmg != fmg ||
             _rowsEntryCount != fmg.Entries.Count ||
@@ -289,7 +289,7 @@ public class TextEntryList
     /// </summary>
     public bool IsEntryVisible(FMG.Entry entry)
     {
-        if (!CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries && entry.Text == null)
+        if (!CFG.Current.TextEditor.TextEditor_Text_Entry_List_Display_Null_Entries && entry.Text == null)
             return false;
 
         // Ignore normal match if a special conditional commands has been used
@@ -425,7 +425,7 @@ public class TextEntryList
 
         if (contents != null)
         {
-            if (CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
+            if (CFG.Current.TextEditor.TextEditor_Text_Entry_List_Truncate_Name)
             {
                 if (contents.Contains("\n"))
                 {
@@ -437,7 +437,7 @@ public class TextEntryList
         {
             displayedText = "";
 
-            if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text)
+            if (CFG.Current.TextEditor.TextEditor_Text_Entry_List_Display_Null_Text)
             {
                 displayedText = $"<null>";
             }
@@ -488,7 +488,7 @@ public class TextEntryList
         {
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(1);
-            ImGui.TextDisabled(LOC.Get(CFG.Current.TextEditor_Include_Vanilla_Cache
+            ImGui.TextDisabled(LOC.Get(CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache
                 ? "TEXT_Vanilla_No_Deleted_Entries"
                 : "TEXT_Vanilla_Cache_Disabled"));
             return;

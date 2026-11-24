@@ -58,7 +58,7 @@ public class EsdEditorView
         Window("ESD_Window_Machines", "esdEditor_Machines", EditorFocusContext.EsdEditor_MachineList, dockspaceId, MachineList.Draw);
         Window("ESD_Window_States", "esdEditor_States", EditorFocusContext.EsdEditor_States, dockspaceId, StateView.Draw);
         Window("ESD_Window_Properties", "esdEditor_Properties", EditorFocusContext.EsdEditor_Properties, dockspaceId, Properties.Draw);
-        if (CFG.Current.Interface_EsdEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_EsdEditor_ToolWindow)
             Window("ESD_Window_Tools", "esdEditor_Tools", EditorFocusContext.EsdEditor_Tools, dockspaceId, ToolWindow.Draw, GUI.GetInnerWindowFlags());
 
         // Edits change the lists the windows draw from, so they run once every window is drawn

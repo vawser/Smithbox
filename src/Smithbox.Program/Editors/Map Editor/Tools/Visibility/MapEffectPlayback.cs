@@ -194,7 +194,7 @@ public sealed class MapEffectPlayback : IDisposable
 
     public void Update()
     {
-        if (!CFG.Current.MapEditor_Display_Effects || !IsSupportedGame || !IsAvailable || !Smithbox.Instance.HasRenderer)
+        if (!CFG.Current.MapEditor.MapEditor_Display_Effects || !IsSupportedGame || !IsAvailable || !Smithbox.Instance.HasRenderer)
         {
             if (_running.Count > 0 || _instances.Count > 0)
                 Clear();
@@ -249,8 +249,8 @@ public sealed class MapEffectPlayback : IDisposable
         _sources.Clear();
 
         var cfg = CFG.Current;
-        var regions = cfg.MapEditor_Effects_Sfx || cfg.MapEditor_Effects_WindSfx || cfg.MapEditor_Effects_MessageSfx;
-        var assets = cfg.MapEditor_Effects_Assets && SupportsAssetEffects;
+        var regions = cfg.MapEditor.MapEditor_Effects_Sfx || cfg.MapEditor.MapEditor_Effects_WindSfx || cfg.MapEditor.MapEditor_Effects_MessageSfx;
+        var assets = cfg.MapEditor.MapEditor_Effects_Assets && SupportsAssetEffects;
 
         if (!regions && !assets)
             return;
@@ -258,11 +258,11 @@ public sealed class MapEffectPlayback : IDisposable
         var (eye, _) = GetCamera();
 
         HashSet<Entity>? selected = null;
-        if (cfg.MapEditor_Effects_Selected_Only)
+        if (cfg.MapEditor.MapEditor_Effects_Selected_Only)
             selected = _view.ViewportSelection.GetSelection().OfType<Entity>().ToHashSet();
 
         // Assets out of range aren't looked up, as a map has thousands of them
-        var maxDistSq = cfg.MapEditor_Effects_Max_Distance * cfg.MapEditor_Effects_Max_Distance;
+        var maxDistSq = cfg.MapEditor.MapEditor_Effects_Max_Distance * cfg.MapEditor.MapEditor_Effects_Max_Distance;
 
         foreach (var wrapper in _project.Handler.MapData.PrimaryBank.Maps.Values)
         {
@@ -345,9 +345,9 @@ public sealed class MapEffectPlayback : IDisposable
 
         string? property = obj.GetType().Name switch
         {
-            "SFX" when cfg.MapEditor_Effects_Sfx => "EffectID",
-            "WindSFX" when cfg.MapEditor_Effects_WindSfx => "EffectID",
-            "Message" when cfg.MapEditor_Effects_MessageSfx => "MessageSfxID",
+            "SFX" when cfg.MapEditor.MapEditor_Effects_Sfx => "EffectID",
+            "WindSFX" when cfg.MapEditor.MapEditor_Effects_WindSfx => "EffectID",
+            "Message" when cfg.MapEditor.MapEditor_Effects_MessageSfx => "MessageSfxID",
             _ => null
         };
 
@@ -506,8 +506,8 @@ public sealed class MapEffectPlayback : IDisposable
     private void StepEffects(Vector3 eye, float advance)
     {
         var cfg = CFG.Current;
-        var maxDistSq = cfg.MapEditor_Effects_Max_Distance * cfg.MapEditor_Effects_Max_Distance;
-        var maxCount = Math.Max(0, cfg.MapEditor_Effects_Max_Count);
+        var maxDistSq = cfg.MapEditor.MapEditor_Effects_Max_Distance * cfg.MapEditor.MapEditor_Effects_Max_Distance;
+        var maxCount = Math.Max(0, cfg.MapEditor.MapEditor_Effects_Max_Count);
 
         // The nearest elements in range run; the rest are dropped
         var wanted = new Dictionary<(Entity, int), Source>();
@@ -516,7 +516,7 @@ public sealed class MapEffectPlayback : IDisposable
             if (wanted.Count >= maxCount)
                 break;
 
-            if (source.DistanceSq > maxDistSq && !cfg.MapEditor_Effects_Selected_Only)
+            if (source.DistanceSq > maxDistSq && !cfg.MapEditor.MapEditor_Effects_Selected_Only)
                 break;
 
             wanted.TryAdd((source.Entity, source.Slot), source);

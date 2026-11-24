@@ -30,7 +30,7 @@ public class ModelEditorPrefs
             Description = "PREF_ModelEditor_Properties_Enable_Commmunity_Names_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Commmunity_Names);
             }
         };
     }

@@ -75,7 +75,7 @@ public class LuaEditorScreen : EditorScreen
             GUI.GetInnerWindowFlags() | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
         // The battle simulation follows the selected script even while its tool is closed (it is drawn in the Tools window)
         BattleView.Sync();
-        if (CFG.Current.Interface_LuaEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_LuaEditor_ToolWindow)
             Window("LUA_Window_Tools", "luaEditor_Tools", EditorFocusContext.LuaEditor_Tools, dsid, ToolWindow.Draw);
 
         // The AI simulation's viewport: one window, docked with the others
@@ -236,24 +236,24 @@ public class LuaEditorScreen : EditorScreen
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
             if (ImGui.MenuItem($"{LOC.Get("LUA_View_Toggle_Tools")}##luaToolWindowToggle"))
-                CFG.Current.Interface_LuaEditor_ToolWindow = !CFG.Current.Interface_LuaEditor_ToolWindow;
-            GUI.ShowActiveStatus(CFG.Current.Interface_LuaEditor_ToolWindow);
+                CFG.Current.Interface.Interface_LuaEditor_ToolWindow = !CFG.Current.Interface.Interface_LuaEditor_ToolWindow;
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_LuaEditor_ToolWindow);
 
             ImGui.Separator();
 
             if (ImGui.MenuItem($"{LOC.Get("LUA_View_Line_Numbers")}##luaLineNumbers"))
-                CFG.Current.LuaEditor_Show_Line_Numbers = !CFG.Current.LuaEditor_Show_Line_Numbers;
-            GUI.ShowActiveStatus(CFG.Current.LuaEditor_Show_Line_Numbers);
+                CFG.Current.LuaEditor.LuaEditor_Show_Line_Numbers = !CFG.Current.LuaEditor.LuaEditor_Show_Line_Numbers;
+            GUI.ShowActiveStatus(CFG.Current.LuaEditor.LuaEditor_Show_Line_Numbers);
 
             if (ImGui.MenuItem($"{LOC.Get("LUA_View_Users")}##luaUsers"))
-                CFG.Current.LuaEditor_File_List_Display_Users = !CFG.Current.LuaEditor_File_List_Display_Users;
+                CFG.Current.LuaEditor.LuaEditor_File_List_Display_Users = !CFG.Current.LuaEditor.LuaEditor_File_List_Display_Users;
             GUI.Tooltip(LOC.Get("LUA_View_Users_TT"));
-            GUI.ShowActiveStatus(CFG.Current.LuaEditor_File_List_Display_Users);
+            GUI.ShowActiveStatus(CFG.Current.LuaEditor.LuaEditor_File_List_Display_Users);
 
             if (ImGui.MenuItem($"{LOC.Get("LUA_View_Readable_Names")}##luaReadableNames"))
-                CFG.Current.LuaEditor_Readable_Names = !CFG.Current.LuaEditor_Readable_Names;
+                CFG.Current.LuaEditor.LuaEditor_Readable_Names = !CFG.Current.LuaEditor.LuaEditor_Readable_Names;
             GUI.Tooltip(LOC.Get("LUA_View_Readable_Names_TT"));
-            GUI.ShowActiveStatus(CFG.Current.LuaEditor_Readable_Names);
+            GUI.ShowActiveStatus(CFG.Current.LuaEditor.LuaEditor_Readable_Names);
 
             ImGui.EndMenu();
         }

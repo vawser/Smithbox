@@ -97,27 +97,27 @@ public class ViewportFiltersAction
         GUI.Spacer();
         GUI.SimpleHeader("Region Display", "Change how regions are displayed in the viewport.");
 
-        var regionIcons = CFG.Current.MapEditor_Region_Icons;
+        var regionIcons = CFG.Current.MapEditor.MapEditor_Region_Icons;
         if (ImGui.Checkbox("Region Icons##regionIcons", ref regionIcons))
         {
             View.RegionIconTool.SetEnabled(regionIcons);
         }
         GUI.Tooltip("Display each unselected region as a clickable icon at its centre instead of its wireframe. Clicking the icon selects the region, and its wireframe is displayed while it is selected.");
 
-        if (CFG.Current.MapEditor_Region_Icons)
+        if (CFG.Current.MapEditor.MapEditor_Region_Icons)
         {
-            ImGui.Checkbox("Hide Behind Geometry##regionIconOcclusion", ref CFG.Current.MapEditor_Region_Icon_Occlusion);
+            ImGui.Checkbox("Hide Behind Geometry##regionIconOcclusion", ref CFG.Current.MapEditor.MapEditor_Region_Icon_Occlusion);
             GUI.Tooltip("Hide an icon while the map's geometry is in front of it, as a mesh would be. The test is a few frames behind the camera, so icons can take a moment to appear or hide while it moves.");
 
             GUI.SetInputWidth();
-            ImGui.SliderFloat("Max Distance##regionIconMaxDistance", ref CFG.Current.MapEditor_Region_Icon_Max_Distance, 10.0f, 5000.0f, "%.0f", ImGuiSliderFlags.Logarithmic);
+            ImGui.SliderFloat("Max Distance##regionIconMaxDistance", ref CFG.Current.MapEditor.MapEditor_Region_Icon_Max_Distance, 10.0f, 5000.0f, "%.0f", ImGuiSliderFlags.Logarithmic);
             GUI.Tooltip("Only regions within this distance of the camera are displayed as icons. Ctrl+Click to type a value.");
 
-            var color = CFG.Current.MapEditor_Region_Icon_Color / 255f;
+            var color = CFG.Current.MapEditor.MapEditor_Region_Icon_Color / 255f;
             GUI.SetInputWidth();
             if (ImGui.ColorEdit3("Icon Color##regionIconColor", ref color))
             {
-                CFG.Current.MapEditor_Region_Icon_Color = color * 255f;
+                CFG.Current.MapEditor.MapEditor_Region_Icon_Color = color * 255f;
             }
             GUI.Tooltip("The colour of the region icons.");
         }
@@ -210,17 +210,17 @@ public class ViewportFiltersAction
         GUI.Spacer();
         GUI.SimpleHeader("Effects", "Play the particle effects that map elements place, such as SFX and WindSFX regions.");
 
-        var enabled = cfg.MapEditor_Display_Effects;
+        var enabled = cfg.MapEditor.MapEditor_Display_Effects;
         if (ImGui.Checkbox("Display Effects##mapEffectsDisplay", ref enabled))
         {
-            cfg.MapEditor_Display_Effects = enabled;
+            cfg.MapEditor.MapEditor_Display_Effects = enabled;
 
             if (enabled)
                 playback.Play();
         }
         GUI.Tooltip("Play the effects of the map elements in range of the camera. This is drawn with the FX Editor's renderer, so the FX Editor must be enabled for the project.");
 
-        if (!cfg.MapEditor_Display_Effects)
+        if (!cfg.MapEditor.MapEditor_Display_Effects)
             return;
 
         if (!playback.IsAvailable)
@@ -260,17 +260,17 @@ public class ViewportFiltersAction
         GUI.Tooltip("The playback speed of the effects. 1 is the game's speed.");
 
         // Which elements
-        if (ImGui.Checkbox("SFX##mapEffectsSfx", ref cfg.MapEditor_Effects_Sfx))
+        if (ImGui.Checkbox("SFX##mapEffectsSfx", ref cfg.MapEditor.MapEditor_Effects_Sfx))
             playback.Invalidate();
         GUI.Tooltip("Play the effects of SFX regions.");
 
-        if (ImGui.Checkbox("Wind SFX##mapEffectsWindSfx", ref cfg.MapEditor_Effects_WindSfx))
+        if (ImGui.Checkbox("Wind SFX##mapEffectsWindSfx", ref cfg.MapEditor.MapEditor_Effects_WindSfx))
             playback.Invalidate();
         GUI.Tooltip("Play the effects of WindSFX regions.");
 
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            if (ImGui.Checkbox("Message Sign##mapEffectsMessageSfx", ref cfg.MapEditor_Effects_MessageSfx))
+            if (ImGui.Checkbox("Message Sign##mapEffectsMessageSfx", ref cfg.MapEditor.MapEditor_Effects_MessageSfx))
                 playback.Invalidate();
             GUI.Tooltip("Play the sign effect of Message regions that set one.");
         }
@@ -280,22 +280,22 @@ public class ViewportFiltersAction
             var assetName = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT ? "Object" : "Asset";
             var paramName = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT ? "ModelSfxParam" : "AssetModelSfxParam";
 
-            if (ImGui.Checkbox($"{assetName} Effects##mapEffectsAssets", ref cfg.MapEditor_Effects_Assets))
+            if (ImGui.Checkbox($"{assetName} Effects##mapEffectsAssets", ref cfg.MapEditor.MapEditor_Effects_Assets))
                 playback.Invalidate();
             GUI.Tooltip($"Play the effects a {assetName.ToLower()} places on its dummy polys through {paramName} (the row of its model, plus its SFX relative ID). A relative ID of -1 places none.");
         }
 
-        if (ImGui.Checkbox("Selected Only##mapEffectsSelectedOnly", ref cfg.MapEditor_Effects_Selected_Only))
+        if (ImGui.Checkbox("Selected Only##mapEffectsSelectedOnly", ref cfg.MapEditor.MapEditor_Effects_Selected_Only))
             playback.Invalidate();
         GUI.Tooltip("Play only the effects of the selected map elements, whatever their distance from the camera.");
 
         // Limits, as a map can place hundreds of effects
         GUI.SetInputWidth();
-        ImGui.DragFloat("Max Distance##mapEffectsMaxDistance", ref cfg.MapEditor_Effects_Max_Distance, 1.0f, 1.0f, 5000.0f, "%.0f");
+        ImGui.DragFloat("Max Distance##mapEffectsMaxDistance", ref cfg.MapEditor.MapEditor_Effects_Max_Distance, 1.0f, 1.0f, 5000.0f, "%.0f");
         GUI.Tooltip("Only effects within this distance of the camera are played.");
 
         GUI.SetInputWidth();
-        ImGui.SliderInt("Max Effects##mapEffectsMaxCount", ref cfg.MapEditor_Effects_Max_Count, 1, 256);
+        ImGui.SliderInt("Max Effects##mapEffectsMaxCount", ref cfg.MapEditor.MapEditor_Effects_Max_Count, 1, 256);
         GUI.Tooltip("The most effects played at once; the nearest to the camera are played first.");
 
         // Status

@@ -246,11 +246,11 @@ public class IrradianceVolumeBank
     /// bakes are known to match the GPARAM timezones (bake N = timezone N).
     /// </summary>
     public bool BakesFollowTime => Project.Descriptor.ProjectType is ProjectType.ER &&
-        CFG.Current.Viewport_Map_Lighting && CFG.Current.Viewport_Map_Lighting_Follow_Bakes;
+        CFG.Current.Viewport.Viewport_Map_Lighting && CFG.Current.Viewport.Viewport_Map_Lighting_Follow_Bakes;
 
     /// <summary>
     /// The bakes whose envmap files are loaded with a map. When the bakes follow the time of day: every bake of the
-    /// map if <see cref="CFG.Viewport_Map_Lighting_Load_All_Bakes" /> is set, so moving through the day never waits
+    /// map if <see cref="ViewportSettings.Viewport_Map_Lighting_Load_All_Bakes" /> is set, so moving through the day never waits
     /// for a load, else the timezones either side of the current time, with the rest queued by
     /// <see cref="ResolveBakes(IEnumerable{string}, float?)" /> as the time reaches them. Otherwise the Global
     /// Illumination tab's bake and the bake it blends towards.
@@ -261,10 +261,10 @@ public class IrradianceVolumeBank
         {
             var available = GetBakeFiles(mapId).Keys.ToHashSet();
 
-            if (CFG.Current.Viewport_Map_Lighting_Load_All_Bakes)
+            if (CFG.Current.Viewport.Viewport_Map_Lighting_Load_All_Bakes)
                 return available;
 
-            var wanted = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+            var wanted = GparamLighting.TimezonesAt(CFG.Current.Viewport.Viewport_Map_Lighting_Hours);
             var current = new HashSet<int> { wanted.From };
 
             // The bake blended towards is only needed part way between two timezones
@@ -275,10 +275,10 @@ public class IrradianceVolumeBank
             return current;
         }
 
-        var bakes = new HashSet<int> { CFG.Current.Viewport_GI_Bake };
+        var bakes = new HashSet<int> { CFG.Current.Viewport.Viewport_GI_Bake };
 
-        if (CFG.Current.Viewport_GI_Bake_Blend)
-            bakes.Add(CFG.Current.Viewport_GI_Blend_Bake);
+        if (CFG.Current.Viewport.Viewport_GI_Bake_Blend)
+            bakes.Add(CFG.Current.Viewport.Viewport_GI_Blend_Bake);
 
         return bakes;
     }
@@ -381,13 +381,13 @@ public class IrradianceVolumeBank
         {
             FollowedBakes = null;
 
-            return (CFG.Current.Viewport_GI_Bake,
-                CFG.Current.Viewport_GI_Bake_Blend ? CFG.Current.Viewport_GI_Blend_Bake : -1,
-                CFG.Current.Viewport_GI_Blend_Ratio);
+            return (CFG.Current.Viewport.Viewport_GI_Bake,
+                CFG.Current.Viewport.Viewport_GI_Bake_Blend ? CFG.Current.Viewport.Viewport_GI_Blend_Bake : -1,
+                CFG.Current.Viewport.Viewport_GI_Blend_Ratio);
         }
 
         // The time of day of the Map Editor's lighting, unless a viewport lights at its own
-        var wanted = GparamLighting.TimezonesAt(hours ?? CFG.Current.Viewport_Map_Lighting_Hours);
+        var wanted = GparamLighting.TimezonesAt(hours ?? CFG.Current.Viewport.Viewport_Map_Lighting_Hours);
         var ready = true;
 
         // At a timezone's own time nothing is blended towards, so the next timezone's bake isn't needed yet

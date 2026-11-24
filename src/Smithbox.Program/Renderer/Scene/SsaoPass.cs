@@ -116,7 +116,7 @@ public class SsaoPass : PostProcessPass
 
     public override bool IsActive(GparamLighting lighting)
     {
-        return CFG.Current.Viewport_Post_Ssao;
+        return RenderSettings.Viewport.Viewport_Post_Ssao;
     }
 
     /// <summary>
@@ -163,7 +163,7 @@ public class SsaoPass : PostProcessPass
             // GLSL reads the matrix as uploaded, so its [c][r] is M(c+1)(r+1) here
             Depth = new Vector4(projection.M33, projection.M43, projection.M34, Owner.SceneDepth.TextureIndex),
             Eye = new Vector4(SsaoEye(scene), MathF.Abs(projection.M22)),
-            Strength = new Vector4(Math.Max(CFG.Current.Viewport_Post_Ssao_Strength, 0.0f), 0.0f, 0.0f, 0.0f)
+            Strength = new Vector4(Math.Max(RenderSettings.Viewport.Viewport_Post_Ssao_Strength, 0.0f), 0.0f, 0.0f, 0.0f)
         };
 
         // Every step's parameters first: each update is a copy, which can't happen inside the render passes below

@@ -57,7 +57,7 @@ public class FxaaPass
 
     public bool IsActive(GparamLighting lighting)
     {
-        if (!RenderMode.PostEffects || !CFG.Current.Viewport_Post_Fxaa)
+        if (!RenderMode.PostEffects || !RenderSettings.Viewport.Viewport_Post_Fxaa)
         {
             return false;
         }

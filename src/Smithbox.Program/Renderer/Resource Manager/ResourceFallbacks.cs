@@ -125,7 +125,7 @@ internal static class ResourceFallbacks
             var ruleMatched = false;
 
             // DS1: map textures can be loose TPFs named after the texture
-            if (CFG.Current.MapEditor_TextureLoad_MapPieces && project.Descriptor.ProjectType is ProjectType.DS1)
+            if (CFG.Current.MapEditor.MapEditor_TextureLoad_MapPieces && project.Descriptor.ProjectType is ProjectType.DS1)
             {
                 var path = Path.Join(project.Descriptor.DataPath, "map", "tx", $"{name}.tpf");
                 if (File.Exists(path) && !pool.IsContainerLoaded(path))
@@ -137,7 +137,7 @@ internal static class ResourceFallbacks
 
             // DS1: unpacked, a character's textures are loose TPFs named after the texture, in the character's folder
             // (chr/c5220/c5220_01.tpf), which the packed game keeps in its chrtpfbhd. The project's copy wins
-            if (CFG.Current.MapEditor_TextureLoad_Characters && project.Descriptor.ProjectType is ProjectType.DS1)
+            if (CFG.Current.MapEditor.MapEditor_TextureLoad_Characters && project.Descriptor.ProjectType is ProjectType.DS1)
             {
                 Match chr = ChrIdPrefix.Match(name);
                 if (chr.Success)
@@ -163,7 +163,7 @@ internal static class ResourceFallbacks
 
             // Asset textures are in the AET container named by the first 10 characters of the texture name.
             // These are loaded after the models since many models use textures from other assets.
-            if (CFG.Current.MapEditor_TextureLoad_Objects &&
+            if (CFG.Current.MapEditor.MapEditor_TextureLoad_Objects &&
                 project.Descriptor.ProjectType is ProjectType.ER 
                 or ProjectType.AC6 
                 or ProjectType.NR
@@ -176,7 +176,7 @@ internal static class ResourceFallbacks
 
             // Character textures whose container is named after a different character than the model
             // e.g. the chrbnd is c2025 but the texbnd is c2029
-            if (CFG.Current.MapEditor_TextureLoad_Characters)
+            if (CFG.Current.MapEditor.MapEditor_TextureLoad_Characters)
             {
                 Match m = ChrIdPrefix.Match(name);
                 if (m.Success)

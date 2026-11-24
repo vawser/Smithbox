@@ -58,7 +58,7 @@ public class CutsceneSubtitles : IDisposable
         RefreshEvents(scene);
 
         var active = ActiveAt(frame).FirstOrDefault(e => Entry(e.TalkId).Voice != null);
-        var activeEvent = playing && CFG.Current.CutsceneEditor_Play_Voices ? active.Event : null;
+        var activeEvent = playing && CFG.Current.CutsceneEditor.CutsceneEditor_Play_Voices ? active.Event : null;
 
         // Leaving the event, stopping, or another line: the voice stops
         if (VoiceEvent != null && (activeEvent != VoiceEvent || !playing))
@@ -125,7 +125,7 @@ public class CutsceneSubtitles : IDisposable
         VoiceMatch = matches.FirstOrDefault();
         VoiceMatch?.Container.BeginLoad();
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log && Logged.Add(talkId))
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log && Logged.Add(talkId))
             Smithbox.Log(this, LOC.Get("CUTSCENE_Voice_Log", talkId, voice.Field, voice.Id,
                 VoiceMatch?.Label ?? LOC.Get(Editor.Project.Handler.SoundData?.Index?.IsBuilt == true ? "CUTSCENE_Voice_Log_No_Event" : "CUTSCENE_Voice_Log_Indexing")));
     }
@@ -177,7 +177,7 @@ public class CutsceneSubtitles : IDisposable
             return;
 
         Player ??= new SoundPlayer();
-        Player.Volume = CFG.Current.SoundEditor_Volume;
+        Player.Volume = CFG.Current.SoundEditor.SoundEditor_Volume;
         Player.Loop = false;
         Player.Play(entry.Source);
     }
@@ -199,7 +199,7 @@ public class CutsceneSubtitles : IDisposable
     /// </summary>
     public void DrawOverlay(float x, float y, float width, float height)
     {
-        if (!CFG.Current.CutsceneEditor_Display_Subtitles || Editor.Scene == null || width <= 0 || height <= 0)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Display_Subtitles || Editor.Scene == null || width <= 0 || height <= 0)
             return;
 
         var lines = new List<string>();

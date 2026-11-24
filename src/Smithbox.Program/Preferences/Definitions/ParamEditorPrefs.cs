@@ -43,7 +43,7 @@ public class ParamEditorPrefs
 
                 var languages = curProject.Handler.ParamData.ParamAnnotationLanguages;
 
-                var curLanguage = languages.Languages.FirstOrDefault(e => e.Name == CFG.Current.ParamEditor_Annotation_Language);
+                var curLanguage = languages.Languages.FirstOrDefault(e => e.Name == CFG.Current.ParamEditor.ParamEditor_Annotation_Language);
 
                 var previewName = LOC.Get(curLanguage.Key);
 
@@ -56,7 +56,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.ParamEditor_Annotation_Language = entry.Name;
+                            CFG.Current.ParamEditor.ParamEditor_Annotation_Language = entry.Name;
                         }
                     }
                     ImGui.EndCombo();
@@ -89,7 +89,7 @@ public class ParamEditorPrefs
 
                 var languages = curProject.Handler.ParamData.RowImportLanguages;
 
-                var curLanguage = languages.Options.FirstOrDefault(e => e.Name == CFG.Current.ParamEditor_Import_Language);
+                var curLanguage = languages.Options.FirstOrDefault(e => e.Name == CFG.Current.ParamEditor.ParamEditor_Import_Language);
 
                 var previewName = LOC.Get(curLanguage.Key);
 
@@ -102,7 +102,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.ParamEditor_Import_Language = entry.Name;
+                            CFG.Current.ParamEditor.ParamEditor_Import_Language = entry.Name;
                         }
                     }
                     ImGui.EndCombo();
@@ -125,7 +125,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Enable_Compact_Mode_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Enable_Compact_Mode);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Enable_Compact_Mode);
             }
         };
     }
@@ -144,7 +144,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Enable_Table_Borders_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Enable_Table_Borders);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Enable_Table_Borders);
             }
         };
     }
@@ -171,7 +171,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Loose_Param_Mode_DS2_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Loose_Param_Mode_DS2);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS2);
             }
         };
     }
@@ -194,7 +194,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Repack_Loose_Params_DS2_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Repack_Loose_Params_DS2);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Repack_Loose_Params_DS2);
             }
         };
     }
@@ -217,7 +217,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Loose_Param_Mode_DS3_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Loose_Param_Mode_DS3);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS3);
             }
         };
     }
@@ -240,7 +240,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_DES_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_DES);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DES);
             }
         };
     }
@@ -264,7 +264,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_DS1_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_DS1);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DS1);
             }
         };
     }
@@ -288,7 +288,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_DS2_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_DS2);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DS2);
             }
         };
     }
@@ -311,7 +311,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_BB_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_BB);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_BB);
             }
         };
     }
@@ -334,7 +334,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_DS3_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_DS3);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DS3);
             }
         };
     }
@@ -357,7 +357,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_SDT_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_SDT);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_SDT);
             }
         };
     }
@@ -380,7 +380,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_ER_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_ER);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_ER);
             }
         };
     }
@@ -403,7 +403,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_AC6_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_AC6);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_AC6);
             }
         };
     }
@@ -426,7 +426,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Name_Strip_NR_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Name_Strip_NR);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_NR);
             }
         };
     }
@@ -449,7 +449,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_DES_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_DES);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DES);
             }
         };
     }
@@ -473,7 +473,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_DS1_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS1);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DS1);
             }
         };
     }
@@ -497,7 +497,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_DS2_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS2);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DS2);
             }
         };
     }
@@ -520,7 +520,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_BB_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_BB);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_BB);
             }
         };
     }
@@ -543,7 +543,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_DS3_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_DS3);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_DS3);
             }
         };
     }
@@ -566,7 +566,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_SDT_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_SDT);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_SDT);
             }
         };
     }
@@ -589,7 +589,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_ER_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_ER);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_ER);
             }
         };
     }
@@ -612,7 +612,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_AC6_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_AC6);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_AC6);
             }
         };
     }
@@ -635,7 +635,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Stripped_Row_Name_Load_NR_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Stripped_Row_Name_Load_NR);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Stripped_Row_Name_Load_NR);
             }
         };
     }
@@ -657,7 +657,7 @@ public class ParamEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_CompressionOverride.GetDisplayName()))
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor.ParamEditor_CompressionOverride.GetDisplayName()))
                 {
                     foreach (var entry in Enum.GetValues(typeof(ParamSaveCompressionType)))
                     {
@@ -665,7 +665,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(type.GetDisplayName()))
                         {
-                            CFG.Current.ParamEditor_CompressionOverride = (ParamSaveCompressionType)entry;
+                            CFG.Current.ParamEditor.ParamEditor_CompressionOverride = (ParamSaveCompressionType)entry;
                         }
                     }
                     ImGui.EndCombo();
@@ -688,7 +688,7 @@ public class ParamEditorPrefs
             Description = "PREF_Project_Enable_Timestamp_Backup_Saves_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Comprehensive_Backups);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Enable_Comprehensive_Backups);
             }
         };
     }
@@ -722,7 +722,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamReloader_Use_Latest_Offset_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamReloader_Use_Latest_Offset);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamReloader_Use_Latest_Offset);
             }
         };
     }
@@ -763,7 +763,7 @@ public class ParamEditorPrefs
 
                 var paramData = curProject.Handler.ParamData;
 
-                var index = CFG.Current.ParamReloader_Current_Offsets;
+                var index = CFG.Current.ParamEditor.ParamReloader_Current_Offsets;
 
                 if (curProject.Descriptor.ProjectType is ProjectType.Undefined)
                     return;
@@ -782,7 +782,7 @@ public class ParamEditorPrefs
                 DPI.ApplyInputWidth();
                 if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                 {
-                    CFG.Current.ParamReloader_Current_Offsets = index;
+                    CFG.Current.ParamEditor.ParamReloader_Current_Offsets = index;
                 }
             }
         };
@@ -805,7 +805,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Param_List_Pinned_Stay_Visible_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Param_List_Pinned_Stay_Visible);
             }
         };
     }
@@ -823,7 +823,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Param_List_Sort_Alphabetically_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Param_List_Sort_Alphabetically);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Param_List_Sort_Alphabetically);
             }
         };
     }
@@ -841,7 +841,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Param_List_Display_Community_Names_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_param", ref CFG.Current.ParamEditor_Param_List_Display_Community_Names);
+                ImGui.Checkbox("##inputValue_param", ref CFG.Current.ParamEditor.ParamEditor_Param_List_Display_Community_Names);
             }
         };
     }
@@ -859,7 +859,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Param_List_Display_Categories_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Param_List_Display_Categories);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Param_List_Display_Categories);
             }
         };
     }
@@ -880,7 +880,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_List_Pinned_Stay_Visible_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_row", ref CFG.Current.ParamEditor_Row_List_Pinned_Stay_Visible);
+                ImGui.Checkbox("##inputValue_row", ref CFG.Current.ParamEditor.ParamEditor_Row_List_Pinned_Stay_Visible);
             }
         };
     }
@@ -898,7 +898,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_List_Enable_Line_Wrapping_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_List_Enable_Line_Wrapping);
             }
         };
     }
@@ -916,7 +916,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_List_Enable_Row_Grouping_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_List_Enable_Row_Grouping);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_List_Enable_Row_Grouping);
             }
         };
     }
@@ -934,7 +934,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_List_Display_Decorators_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_row", ref CFG.Current.ParamEditor_Row_List_Display_Decorators);
+                ImGui.Checkbox("##inputValue_row", ref CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Decorators);
             }
         };
     }
@@ -952,7 +952,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_List_Row_FMG_Prefer_Base_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_List_Row_FMG_Prefer_Base);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_List_Row_FMG_Prefer_Base);
             }
         };
     }
@@ -974,7 +974,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Pinned_Stay_Visible_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible);
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Pinned_Stay_Visible);
             }
         };
     }
@@ -992,7 +992,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Allow_Rearrangement_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Allow_Rearrangement);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Allow_Rearrangement);
             }
         };
     }
@@ -1013,7 +1013,7 @@ public class ParamEditorPrefs
             Draw = () => {
                 DPI.ApplyInputWidth();
 
-                var previewName = LOC.Get(CFG.Current.ParamEditor_FieldNameMode.GetDisplayName());
+                var previewName = LOC.Get(CFG.Current.ParamEditor.ParamEditor_FieldNameMode.GetDisplayName());
 
                 if (ImGui.BeginCombo("##inputValue", previewName))
                 {
@@ -1025,7 +1025,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.ParamEditor_FieldNameMode = (ParamFieldNameMode)entry;
+                            CFG.Current.ParamEditor.ParamEditor_FieldNameMode = (ParamFieldNameMode)entry;
                         }
                     }
                     ImGui.EndCombo();
@@ -1047,7 +1047,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Offsets_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Offsets);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Offsets);
             }
         };
     }
@@ -1065,7 +1065,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Color_Picker_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Color_Picker);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Color_Picker);
             }
         };
     }
@@ -1083,7 +1083,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Graph_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Graph);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Graph);
             }
         };
     }
@@ -1101,7 +1101,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Map_Link_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Map_Link);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Map_Link);
             }
         };
     }
@@ -1119,7 +1119,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Model_Link_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Model_Link);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Model_Link);
             }
         };
     }
@@ -1137,7 +1137,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Padding_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Padding);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding);
             }
         };
     }
@@ -1155,7 +1155,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Decorators_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Display_Decorators);
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Decorators);
             }
         };
     }
@@ -1174,7 +1174,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_References_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Display_References);
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References);
             }
         };
     }
@@ -1193,7 +1193,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Enums_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor_Field_List_Display_Enums);
+                ImGui.Checkbox("##inputValue_field", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums);
             }
         };
     }
@@ -1212,7 +1212,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Field_Attributes_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Field_Attributes);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Field_Attributes);
             }
         };
     }
@@ -1230,7 +1230,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Display_Icon_Preview_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Display_Icon_Preview);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Icon_Preview);
             }
         };
     }
@@ -1250,7 +1250,7 @@ public class ParamEditorPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.DragFloat("##inputValue", ref CFG.Current.ParamEditor_Field_List_Icon_Preview_Scale, 0.1f, 0.1f, 10.0f);
+                ImGui.DragFloat("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Icon_Preview_Scale, 0.1f, 0.1f, 10.0f);
             }
         };
     }
@@ -1271,7 +1271,7 @@ public class ParamEditorPrefs
             Draw = () => {
                 DPI.ApplyInputWidth();
 
-                var previewName = LOC.Get(CFG.Current.ParamEditor_Field_List_Tooltip_Mode.GetDisplayName());
+                var previewName = LOC.Get(CFG.Current.ParamEditor.ParamEditor_Field_List_Tooltip_Mode.GetDisplayName());
 
                 if (ImGui.BeginCombo("##inputValue", previewName))
                 {
@@ -1283,7 +1283,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.ParamEditor_Field_List_Tooltip_Mode = (ParamTooltipMode)entry;
+                            CFG.Current.ParamEditor.ParamEditor_Field_List_Tooltip_Mode = (ParamTooltipMode)entry;
                         }
                     }
                     ImGui.EndCombo();
@@ -1305,7 +1305,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_GroupReference_DisplayCommunityName_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_GroupReference_DisplayCommunityName);
             }
         };
     }
@@ -1328,7 +1328,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Enable_Field_Layouts_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layouts);
             }
         };
     }
@@ -1346,7 +1346,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Enable_Field_Layout_Category_Names_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Category_Names);
             }
         };
     }
@@ -1364,7 +1364,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints);
             }
         };
     }
@@ -1386,7 +1386,7 @@ public class ParamEditorPrefs
             Draw = () => {
                 DPI.ApplyInputWidth();
 
-                var previewName = LOC.Get(CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type.GetDisplayName());
+                var previewName = LOC.Get(CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type.GetDisplayName());
 
                 if (ImGui.BeginCombo("##inputValue", previewName))
                 {
@@ -1398,7 +1398,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type = (FieldLayoutMode)entry;
+                            CFG.Current.ParamEditor.ParamEditor_Field_List_Field_Layout_Display_Type = (FieldLayoutMode)entry;
                         }
                     }
                     ImGui.EndCombo();
@@ -1423,7 +1423,7 @@ public class ParamEditorPrefs
             Draw = () => {
                 DPI.ApplyInputWidth();
 
-                var previewName = LOC.Get(CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement.GetDisplayName());
+                var previewName = LOC.Get(CFG.Current.ParamEditor.ParamEditor_Field_List_Unsorted_Field_Placement.GetDisplayName());
 
                 if (ImGui.BeginCombo("##inputValue", previewName))
                 {
@@ -1435,7 +1435,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.ParamEditor_Field_List_Unsorted_Field_Placement = (FieldLayoutUnsortedPlacement)entry;
+                            CFG.Current.ParamEditor.ParamEditor_Field_List_Unsorted_Field_Placement = (FieldLayoutUnsortedPlacement)entry;
                         }
                     }
                     ImGui.EndCombo();
@@ -1460,7 +1460,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Input_Display_Traditional_Percentage_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Input_Display_Traditional_Percentage);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Input_Display_Traditional_Percentage);
             }
         };
     }
@@ -1479,7 +1479,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Input_Clamp_Out_Of_Range_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Input_Clamp_Out_Of_Range);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Input_Clamp_Out_Of_Range);
             }
         };
     }
@@ -1500,7 +1500,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Row_Name_Input_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Row_Name_Input);
             }
         };
     }
@@ -1518,7 +1518,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Shortcut_Tools_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Shortcut_Tools);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Shortcut_Tools);
             }
         };
     }
@@ -1536,7 +1536,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Pin_Options_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Pin_Options);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Pin_Options);
             }
         };
     }
@@ -1554,7 +1554,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Comparison_Options_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Comparison_Options);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Comparison_Options);
             }
         };
     }
@@ -1572,7 +1572,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Reverse_Lookup_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Reverse_Lookup);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Reverse_Lookup);
             }
         };
     }
@@ -1590,7 +1590,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Proliferate_Name_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Proliferate_Name);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Proliferate_Name);
             }
         };
     }
@@ -1608,7 +1608,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Inherit_Name_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Inherit_Name);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Inherit_Name);
             }
         };
     }
@@ -1626,7 +1626,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Row_Context_Display_Row_Name_Tools_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Tools);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Row_Name_Tools);
             }
         };
     }
@@ -1648,7 +1648,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Field_Name_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Name);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Field_Name);
             }
         };
     }
@@ -1666,7 +1666,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Field_Description_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Description);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Field_Description);
             }
         };
     }
@@ -1684,7 +1684,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Field_Attributes_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Attributes);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Field_Attributes);
             }
         };
     }
@@ -1702,7 +1702,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Pin_Options_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Pin_Options);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Pin_Options);
             }
         };
     }
@@ -1720,7 +1720,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Comparison_Options_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Comparison_Options);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Comparison_Options);
             }
         };
     }
@@ -1738,7 +1738,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Field_Value_Distribution_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Field_Value_Distribution);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Field_Value_Distribution);
             }
         };
     }
@@ -1756,7 +1756,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Searchbar_Options_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Searchbar_Options);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Searchbar_Options);
             }
         };
     }
@@ -1774,7 +1774,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_References_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_References);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_References);
             }
         };
     }
@@ -1792,7 +1792,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Field_Context_Display_Reference_Search_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Reference_Search);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Reference_Search);
             }
         };
     }
@@ -1813,7 +1813,7 @@ public class ParamEditorPrefs
             Description = "PREF_ParamEditor_Show_Advanced_Mass_Edit_Commands_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Show_Advanced_Mass_Edit_Commands);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Show_Advanced_Mass_Edit_Commands);
             }
         };
     }
@@ -1843,7 +1843,7 @@ public class ParamEditorPrefs
                 if (curProject.Handler == null)
                     return;
 
-                if (ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Meta_Override))
+                if (ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Meta_Override))
                 {
                     if (curProject != null)
                     {
@@ -1869,7 +1869,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Enum_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Enum_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Enum_Addition);
             }
         };
     }
@@ -1888,7 +1888,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Enum_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Enum_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Enum_Override);
             }
         };
     }
@@ -1907,7 +1907,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Category_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Category_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Category_Addition);
             }
         };
     }
@@ -1926,7 +1926,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Category_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Category_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Category_Override);
             }
         };
     }
@@ -1945,7 +1945,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Commutativity_Group_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Commutativity_Group_Addition);
             }
         };
     }
@@ -1964,7 +1964,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Commutativity_Group_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Commutativity_Group_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Commutativity_Group_Override);
             }
         };
     }
@@ -1983,7 +1983,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Field_Reference_Group_Addition);
             }
         };
     }
@@ -2002,7 +2002,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Reference_Group_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Field_Reference_Group_Override);
             }
         };
     }
@@ -2021,7 +2021,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Field_Layout_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Field_Layout_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Field_Layout_Addition);
             }
         };
     }
@@ -2040,7 +2040,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Param_Field_Layout_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Field_Layout_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Param_Field_Layout_Override);
             }
         };
     }
@@ -2059,7 +2059,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Icon_Configuration_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Icon_Configuration_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Icon_Configuration_Addition);
             }
         };
     }
@@ -2078,7 +2078,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Icon_Configuration_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Icon_Configuration_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Icon_Configuration_Override);
             }
         };
     }
@@ -2097,7 +2097,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Graph_Annotation_Addition_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Graph_Annotation_Addition);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Graph_Annotation_Addition);
             }
         };
     }
@@ -2116,7 +2116,7 @@ public class ParamEditorPrefs
             Description = "PREF_Param_Editor_Enable_Graph_Annotation_Override_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Graph_Annotation_Override);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.Param_Editor_Enable_Graph_Annotation_Override);
             }
         };
     }

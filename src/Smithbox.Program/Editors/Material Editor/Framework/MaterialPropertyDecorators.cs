@@ -59,7 +59,7 @@ public static class MaterialPropertyDecorators
             }
         }
 
-        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
         }

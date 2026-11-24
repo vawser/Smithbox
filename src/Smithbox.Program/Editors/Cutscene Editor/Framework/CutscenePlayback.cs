@@ -27,16 +27,16 @@ public class CutscenePlayback
 
         if (Playing)
         {
-            Frame += dt * framerate * CFG.Current.CutsceneEditor_Playback_Speed;
+            Frame += dt * framerate * CFG.Current.CutsceneEditor.CutsceneEditor_Playback_Speed;
 
             if (Frame > last)
             {
-                if (CFG.Current.CutsceneEditor_Continue_To_Next_Cut)
+                if (CFG.Current.CutsceneEditor.CutsceneEditor_Continue_To_Next_Cut)
                 {
                     ReachedEnd = true;
                     Frame = last;
                 }
-                else if (CFG.Current.CutsceneEditor_Loop)
+                else if (CFG.Current.CutsceneEditor.CutsceneEditor_Loop)
                 {
                     Frame = last > 0 ? Frame % last : 0;
                 }

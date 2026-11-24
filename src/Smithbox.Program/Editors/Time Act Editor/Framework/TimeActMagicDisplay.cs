@@ -98,7 +98,7 @@ public class TimeActMagicDisplay
     /// </summary>
     public Param.Row? GetMagic()
     {
-        var id = CFG.Current.TimeActEditor_Cast_Magic_ID;
+        var id = CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_ID;
 
         if (id < 0 || ProjectileParams.GetSpellParamName(_project) is not { } paramName)
             return null;
@@ -126,7 +126,7 @@ public class TimeActMagicDisplay
         var magic = GetMagic();
         var bulletParam = ProjectileParams.GetSpellBulletParam(_project);
 
-        if (!CFG.Current.TimeActEditor_Sim_Magic || animation == null || container == null || data == null ||
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Sim_Magic || animation == null || container == null || data == null ||
             _view.RenderScene == null || magic == null || bulletParam == null)
         {
             ClearCasts();
@@ -135,7 +135,7 @@ public class TimeActMagicDisplay
             return;
         }
 
-        var charged = CFG.Current.TimeActEditor_Cast_Magic_Charged;
+        var charged = CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_Charged;
         var bullets = ProjectileParams.GetCastBullets(magic, charged);
 
         // Any edit, undo or redo in the Param Editor may have changed the magic or its bullets, as may a reload
@@ -225,7 +225,7 @@ public class TimeActMagicDisplay
     /// </summary>
     private void UpdateEffects(float time, Param bulletParam)
     {
-        if (!CFG.Current.TimeActEditor_Display_Effects || _project.Handler.FxData is not { Bank: not null, Schema: not null } ||
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Display_Effects || _project.Handler.FxData is not { Bank: not null, Schema: not null } ||
             _view.RenderScene == null)
         {
             ClearEffects();

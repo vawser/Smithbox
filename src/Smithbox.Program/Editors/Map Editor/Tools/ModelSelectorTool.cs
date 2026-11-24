@@ -51,17 +51,17 @@ public class ModelSelectorTool
     {
         ImGui.BeginChild("ModelSelectorToolSection", ImGuiChildFlags.Borders);
 
-        if (ImGui.RadioButton("List##modelSelectorListMode", !CFG.Current.MapEditor_Model_Selector_Use_Previews))
+        if (ImGui.RadioButton("List##modelSelectorListMode", !CFG.Current.MapEditor.MapEditor_Model_Selector_Use_Previews))
         {
-            CFG.Current.MapEditor_Model_Selector_Use_Previews = false;
+            CFG.Current.MapEditor.MapEditor_Model_Selector_Use_Previews = false;
         }
         GUI.Tooltip("Display the models as a list of names.");
 
         ImGui.SameLine();
 
-        if (ImGui.RadioButton("3D Previews##modelSelectorPreviewMode", CFG.Current.MapEditor_Model_Selector_Use_Previews))
+        if (ImGui.RadioButton("3D Previews##modelSelectorPreviewMode", CFG.Current.MapEditor.MapEditor_Model_Selector_Use_Previews))
         {
-            CFG.Current.MapEditor_Model_Selector_Use_Previews = true;
+            CFG.Current.MapEditor.MapEditor_Model_Selector_Use_Previews = true;
         }
         GUI.Tooltip("Display the models as a grid of 3D previews.");
 
@@ -73,32 +73,32 @@ public class ModelSelectorTool
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
 
-        ImGui.Checkbox("Load Textures on Create##modelSelectorLoadTexturesOnCreate", ref CFG.Current.MapEditor_Model_Selector_Load_Textures_On_Create);
+        ImGui.Checkbox("Load Textures on Create##modelSelectorLoadTexturesOnCreate", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Load_Textures_On_Create);
         GUI.Tooltip("When a map object is created from a model (with nothing selected), load that model's textures, which may be in a texture file the map didn't load.");
 
-        ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Name);
+        ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Update_Name);
         GUI.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
         if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
-            ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Instance_ID);
+            ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Update_Instance_ID);
             GUI.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
         }
 
         if (MapPiecePort.IsSupported(Project.Descriptor.ProjectType))
         {
-            ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Show_Other_Maps")}##modelSelectorShowOtherMaps", ref CFG.Current.MapEditor_Model_Selector_Show_Other_Maps);
+            ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Show_Other_Maps")}##modelSelectorShowOtherMaps", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Show_Other_Maps);
             GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Option_Show_Other_Maps_TT"));
 
-            if (CFG.Current.MapEditor_Model_Selector_Show_Other_Maps)
+            if (CFG.Current.MapEditor.MapEditor_Model_Selector_Show_Other_Maps)
             {
-                ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Prompt")}##modelSelectorPromptPort", ref CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port);
+                ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Prompt")}##modelSelectorPromptPort", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Prompt_Map_Piece_Port);
                 GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Option_Prompt_TT"));
 
-                if (CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port
+                if (CFG.Current.MapEditor.MapEditor_Model_Selector_Prompt_Map_Piece_Port
                     && MapPiecePort.CanCopyTextures(Project.Descriptor.ProjectType))
                 {
-                    ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Textures")}##modelSelectorPortTextures", ref CFG.Current.MapEditor_Model_Selector_Port_Textures);
+                    ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Textures")}##modelSelectorPortTextures", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Port_Textures);
                     GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Option_Textures_TT"));
                 }
             }
@@ -107,10 +107,10 @@ public class ModelSelectorTool
         PortTool.Display();
 
         // TOOD
-        //ImGui.Checkbox("Update Params on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_NpcParams);
+        //ImGui.Checkbox("Update Params on Switch", ref CFG.Current.MapEditor.MapEditor_Model_Selector_Update_NpcParams);
         //UIHelper.Tooltip("When a map object is switched to a new form, update the NpcParam and NpcThinkParam to the closest suitable rows (based on the character ID).");
 
-        var usePreviews = CFG.Current.MapEditor_Model_Selector_Use_Previews;
+        var usePreviews = CFG.Current.MapEditor.MapEditor_Model_Selector_Use_Previews;
 
         GUI.Spacer();
         GUI.SimpleHeader(usePreviews ? "3D Previews" : "List", "");
@@ -276,7 +276,7 @@ public class ModelSelectorTool
             _ => Project.Locator.MapPieceFiles.Entries.Count
         };
 
-        var key = (kind, mapId, fileCount, ModelFilter, ExactModelFilter, CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries);
+        var key = (kind, mapId, fileCount, ModelFilter, ExactModelFilter, CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Low_Detail_Entries);
 
         if (key == ChoicesKey)
             return Choices;
@@ -306,7 +306,7 @@ public class ModelSelectorTool
     /// </summary>
     private string DisplayMapPieceSourcePicker(string targetMap)
     {
-        if (!CFG.Current.MapEditor_Model_Selector_Show_Other_Maps || !MapPiecePort.IsSupported(Project.Descriptor.ProjectType))
+        if (!CFG.Current.MapEditor.MapEditor_Model_Selector_Show_Other_Maps || !MapPiecePort.IsSupported(Project.Descriptor.ProjectType))
             return null;
 
         var targetAssetMap = PathBuilder.GetAssetMapID(Project, targetMap);
@@ -383,7 +383,7 @@ public class ModelSelectorTool
         if (isOwn)
             return null;
 
-        if (CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
+        if (CFG.Current.MapEditor.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
             GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("MAP_MapPiecePort_Source_Other", targetMap));
         else
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_MapPiecePort_Source_Other_Swap", targetMap));
@@ -459,7 +459,7 @@ public class ModelSelectorTool
                     SelectNextEntry = false;
                     _selectedEntry = choice.ID;
 
-                    if (!create && (portTargetMap == null || !CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port))
+                    if (!create && (portTargetMap == null || !CFG.Current.MapEditor.MapEditor_Model_Selector_Prompt_Map_Piece_Port))
                         ApplyChoice(choice, selectionType, mapId, portTargetMap);
                 }
 
@@ -490,7 +490,7 @@ public class ModelSelectorTool
         {
             // Prompt Port: ported into the selected map through the prompt. Off: a plain swap to the model name,
             // which the selected map then resolves in its own folder, as a swap within the map does
-            if (CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
+            if (CFG.Current.MapEditor.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
                 BeginPort(choice, mapId, portTargetMap);
             else
                 ApplyMapAssetSelection(choice.ModelName, selectionType, portTargetMap);
@@ -573,7 +573,7 @@ public class ModelSelectorTool
 
     private bool FilterSelectionList(ModelChoice choice)
     {
-        if (!CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries
+        if (!CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Low_Detail_Entries
             && choice.ID.EndsWith("_l", StringComparison.OrdinalIgnoreCase))
         {
             return false;
@@ -586,13 +586,13 @@ public class ModelSelectorTool
 
     private void DisplaySelectableAlias(ModelChoice choice)
     {
-        if (CFG.Current.MapEditor_Model_Selector_Display_Aliases && choice.Alias != "")
+        if (CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Aliases && choice.Alias != "")
         {
             GUI.DisplayAlias(choice.Alias);
         }
 
         // Tags
-        if (CFG.Current.MapEditor_Model_Selector_Display_Tags && choice.Tags.Count > 0)
+        if (CFG.Current.MapEditor.MapEditor_Model_Selector_Display_Tags && choice.Tags.Count > 0)
         {
             AliasHelper.DisplayTagAlias(string.Join(" ", choice.Tags));
         }
@@ -868,13 +868,13 @@ public class ModelSelectorTool
                 actlist.Add(action);
 
 
-                if (CFG.Current.MapEditor_Model_Selector_Update_Name)
+                if (CFG.Current.MapEditor.MapEditor_Model_Selector_Update_Name)
                 {
                     var updateNameAction = UpdateEntityName(modelName, s);
                     actlist.Add(updateNameAction);
                 }
 
-                if (CFG.Current.MapEditor_Model_Selector_Update_Instance_ID)
+                if (CFG.Current.MapEditor.MapEditor_Model_Selector_Update_Instance_ID)
                 {
                     if (s.WrappedObject is MSBE.Part || s.WrappedObject is MSB_AC6.Part)
                     {

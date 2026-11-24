@@ -218,34 +218,34 @@ public class MapContentView
         GUI.Tooltip(LOC.Get("MAP_Contents_Hide_All_Action_TT"));
 
         // Toggle: Name Display Type
-        var curNameDisplayType = CFG.Current.MapEditor_MapObjectName_DisplayType;
+        var curNameDisplayType = CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType;
 
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.List}", DPI.IconButtonSize))
         {
             if (curNameDisplayType is MapObjectNameDisplayType.Internal)
             {
-                CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Community;
+                CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Community;
             }
             else if (curNameDisplayType is MapObjectNameDisplayType.Community)
             {
-                CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community;
+                CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community;
             }
             else if (curNameDisplayType is MapObjectNameDisplayType.Internal_Community)
             {
-                CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_FMG;
+                CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_FMG;
             }
             else if (curNameDisplayType is MapObjectNameDisplayType.Internal_FMG)
             {
-                CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Community_FMG;
+                CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Community_FMG;
             }
             else if (curNameDisplayType is MapObjectNameDisplayType.Community_FMG)
             {
-                CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community_FMG;
+                CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community_FMG;
             }
             else if (curNameDisplayType is MapObjectNameDisplayType.Internal_Community_FMG)
             {
-                CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal;
+                CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal;
             }
         }
 
@@ -280,7 +280,7 @@ public class MapContentView
 
         // Toggle: Tree Auto-Open
         GUI.DisplayToggleButton("autoTreeOpenToggle", Icons.Tree,
-            ref CFG.Current.MapEditor_MapContentList_Auto_Open_Tree,
+            ref CFG.Current.MapEditor.MapEditor_MapContentList_Auto_Open_Tree,
             "MAP_Contents_TreeState_Open",
             "MAP_Contents_TreeState_Closed",
             "MAP_Contents_TreeState_TT");
@@ -301,7 +301,7 @@ public class MapContentView
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
-        if(CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+        if(CFG.Current.MapEditor.MapEditor_MapContentList_Auto_Open_Tree)
         {
             treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
         }
@@ -328,7 +328,7 @@ public class MapContentView
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
             var mapName = AliasHelper.GetMapNameAlias(View.Project, map.Name);
-            GUI.DisplayAlias(mapName, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+            GUI.DisplayAlias(mapName, CFG.Current.Interface.Interface_Alias_Wordwrap_Map_Editor);
         }
 
         ImGui.EndGroup();
@@ -377,7 +377,7 @@ public class MapContentView
     /// </summary>
     public bool PushVanillaColour(Entity e)
     {
-        if (!CFG.Current.MapEditor_Vanilla_Highlight)
+        if (!CFG.Current.MapEditor.MapEditor_Vanilla_Highlight)
             return false;
 
         var status = View.Editor.VanillaCompare.GetStatus(e);
@@ -562,7 +562,7 @@ public class MapContentView
             {
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
 
-                if(CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+                if(CFG.Current.MapEditor.MapEditor_MapContentList_Auto_Open_Tree)
                 {
                     treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
                 }
@@ -911,7 +911,7 @@ public class MapContentView
         {
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
-            if(CFG.Current.MapEditor_MapContentList_Auto_Open_Tree)
+            if(CFG.Current.MapEditor.MapEditor_MapContentList_Auto_Open_Tree)
             {
                 treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
             }
@@ -948,7 +948,7 @@ public class MapContentView
             var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap;
 
             var displayName = key;
-            var displayType = CFG.Current.MapEditor_MapObjectName_DisplayType;
+            var displayType = CFG.Current.MapEditor.MapEditor_MapObjectName_DisplayType;
 
             if (e.SupportsName && e.PrettyName != null && e.PrettyName != "null" && e.PrettyName != "")
             {

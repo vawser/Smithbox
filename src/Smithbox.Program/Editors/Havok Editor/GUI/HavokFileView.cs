@@ -168,7 +168,7 @@ public partial class HavokFileView
                     continue;
                 }
 
-                if (CFG.Current.HavokEditor_FileList_Display_Full_Path)
+                if (CFG.Current.HavokEditor.HavokEditor_FileList_Display_Full_Path)
                 {
                     displayName = entry.Key;
                 }
@@ -250,7 +250,7 @@ public partial class HavokFileView
                         DisplayContextMenu(bankDict, View.Selection.BinderFileEntry, filepath, displayName);
                     }
 
-                    if (CFG.Current.HavokEditor_FileList_Display_Aliases && alias != null)
+                    if (CFG.Current.HavokEditor.HavokEditor_FileList_Display_Aliases && alias != null)
                     {
                         GUI.DisplayAlias(alias);
                     }
@@ -351,14 +351,14 @@ public partial class HavokFileView
 
         // Toggle: Full Paths
         GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
-            ref CFG.Current.HavokEditor_FileList_Display_Full_Path,
+            ref CFG.Current.HavokEditor.HavokEditor_FileList_Display_Full_Path,
             "HAVOK_FileView_FilePath_Display_Short",
             "HAVOK_FileView_FilePath_Display_Full",
             "HAVOK_FileView_FilePath_Display_TT");
 
         // Toggle: Aliases
         GUI.DisplayToggleButton("aliasToggle", Icons.Book,
-            ref CFG.Current.HavokEditor_FileList_Display_Aliases,
+            ref CFG.Current.HavokEditor.HavokEditor_FileList_Display_Aliases,
             "HAVOK_FileView_FilePath_Display_Alias_Hide",
             "HAVOK_FileView_FilePath_Display_Alias_Show",
             "HAVOK_FileView_FilePath_Display_Alias_TT");

@@ -29,7 +29,7 @@ public class FileShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
+            CFG.Current.Interface.Interface_FileBrowser_ToolView = !CFG.Current.Interface.Interface_FileBrowser_ToolView;
         }
     }
 }

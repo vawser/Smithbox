@@ -744,7 +744,7 @@ public class VulkanViewport : IViewport
                 IsActiveViewport = false;
             }
 
-            if (CFG.Current.QuickView_DisplayTooltip)
+            if (CFG.Current.MapEditor.QuickView_DisplayTooltip)
             {
                 mapUniverse.View.AutomaticPreviewTool.HandleQuickViewTooltip();
             }
@@ -995,11 +995,11 @@ public class VulkanViewport : IViewport
 
         if (ViewportCamera.ViewMode is ViewMode.Perspective)
         {
-            float halfFovY = CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 360.0f;
+            float halfFovY = CFG.Current.Viewport.Viewport_Camera_FOV * (float)Math.PI / 360.0f;
             float halfFovX = (float)Math.Atan(Math.Tan(halfFovY) * aspectRatio);
 
             // The near clip is added so that small models aren't cut by it
-            dist = radius / (float)Math.Sin(Math.Min(halfFovX, halfFovY)) + CFG.Current.Viewport_Perspective_Near_Clip;
+            dist = radius / (float)Math.Sin(Math.Min(halfFovX, halfFovY)) + CFG.Current.Viewport.Viewport_Perspective_Near_Clip;
         }
         else
         {

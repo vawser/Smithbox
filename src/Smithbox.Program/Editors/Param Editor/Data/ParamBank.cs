@@ -126,7 +126,7 @@ public class ParamBank : IDisposable
         }
 
         // Only save if the params have been modified
-        if (!CFG.Current.ParamEditor_Allow_Unmodified_Save && !IsDirty())
+        if (!CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save && !IsDirty())
         {
             Smithbox.Log(this, LOC.Get("PARAM_Data_Skip_Save", Name));
             return false;
@@ -194,15 +194,15 @@ public class ParamBank : IDisposable
     {
         return Project.Descriptor.ProjectType switch
         {
-            ProjectType.DES => CFG.Current.ParamEditor_Row_Name_Strip_DES,
-            ProjectType.DS1 or ProjectType.DS1R => CFG.Current.ParamEditor_Row_Name_Strip_DS1,
-            ProjectType.DS2 or ProjectType.DS2S => CFG.Current.ParamEditor_Row_Name_Strip_DS2,
-            ProjectType.DS3 => CFG.Current.ParamEditor_Row_Name_Strip_DS3,
-            ProjectType.BB => CFG.Current.ParamEditor_Row_Name_Strip_BB,
-            ProjectType.SDT => CFG.Current.ParamEditor_Row_Name_Strip_SDT,
-            ProjectType.ER => CFG.Current.ParamEditor_Row_Name_Strip_ER,
-            ProjectType.AC6 => CFG.Current.ParamEditor_Row_Name_Strip_AC6,
-            ProjectType.NR => CFG.Current.ParamEditor_Row_Name_Strip_NR,
+            ProjectType.DES => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DES,
+            ProjectType.DS1 or ProjectType.DS1R => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DS1,
+            ProjectType.DS2 or ProjectType.DS2S => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DS2,
+            ProjectType.DS3 => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_DS3,
+            ProjectType.BB => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_BB,
+            ProjectType.SDT => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_SDT,
+            ProjectType.ER => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_ER,
+            ProjectType.AC6 => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_AC6,
+            ProjectType.NR => CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_NR,
             // DB_NT and DB never stripped (their strip calls are commented out). They used to restore names from
             // disk on every save, which overwrote renames made since the last strip, so they now do neither.
             _ => false
@@ -327,7 +327,7 @@ public class ParamBank : IDisposable
     /// </summary>
     private bool ShouldWriteBinder(IBinder binder)
     {
-        return CFG.Current.ParamEditor_Allow_Unmodified_Save || IsBinderDirty(binder);
+        return CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save || IsBinderDirty(binder);
     }
 
     /// <summary>
@@ -339,7 +339,7 @@ public class ParamBank : IDisposable
         if (IsBinderDirty(binder))
             return true;
 
-        return CFG.Current.ParamEditor_Allow_Unmodified_Save && isTouched();
+        return CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save && isTouched();
     }
 
     /// <summary>
@@ -347,7 +347,7 @@ public class ParamBank : IDisposable
     /// </summary>
     private bool ShouldWriteLooseParam(string paramName)
     {
-        return CFG.Current.ParamEditor_Allow_Unmodified_Save || IsParamDirty(paramName);
+        return CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save || IsParamDirty(paramName);
     }
     #endregion
 
@@ -1040,7 +1040,7 @@ public class ParamBank : IDisposable
 
             try
             {
-                if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
+                if (CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS2)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = Project.Handler.ParamData.ParamDefs[lp.ParamType];
@@ -1176,7 +1176,7 @@ public class ParamBank : IDisposable
 
             try
             {
-                if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
+                if (CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS2)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = Project.Handler.ParamData.ParamDefs[lp.ParamType];
@@ -1234,7 +1234,7 @@ public class ParamBank : IDisposable
             // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
             if (!toFs.FileExists($"{paramPath}.bak"))
             {
-                if (CFG.Current.Project_Enable_Backup_Saves)
+                if (CFG.Current.Project.Project_Enable_Backup_Saves)
                 {
                     toFs.WriteFile($"{paramPath}.bak", data);
                 }
@@ -1248,12 +1248,12 @@ public class ParamBank : IDisposable
 
         var writeRegulation = true;
 
-        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
+        if (!CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
             if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
             {
-                if (CFG.Current.ParamEditor_Repack_Loose_Params_DS2)
+                if (CFG.Current.ParamEditor.ParamEditor_Repack_Loose_Params_DS2)
                 {
                     paramBnd.Dispose();
                     paramPath = $@"enc_regulation.bnd.dcx";
@@ -1267,7 +1267,7 @@ public class ParamBank : IDisposable
                         // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
                         if (!toFs.FileExists($@"{paramPath}.bak"))
                         {
-                            if (CFG.Current.Project_Enable_Backup_Saves)
+                            if (CFG.Current.Project.Project_Enable_Backup_Saves)
                             {
                                 toFs.WriteFile($"{paramPath}.bak", data);
                             }
@@ -1307,7 +1307,7 @@ public class ParamBank : IDisposable
                 }
             }
         }
-        else if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
+        else if (CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS2)
         {
             // Save params loosely: Strip params from regulation and write all params loosely.
 
@@ -1365,7 +1365,7 @@ public class ParamBank : IDisposable
         }
         else
         {
-            if (CFG.Current.ParamEditor_Loose_Param_Mode_DS3 && TargetFS.FileExists(looseFilePath))
+            if (CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS3 && TargetFS.FileExists(looseFilePath))
             {
                 try
                 {
@@ -1487,7 +1487,7 @@ public class ParamBank : IDisposable
         }
 
         // If not loose write out the new regulation
-        if (!CFG.Current.ParamEditor_Loose_Param_Mode_DS3)
+        if (!CFG.Current.ParamEditor.ParamEditor_Loose_Param_Mode_DS3)
         {
             if (ShouldWriteBinder(paramBnd))
             {
@@ -1516,7 +1516,7 @@ public class ParamBank : IDisposable
             }
 
             // Flush stay params to Data0.bdt
-            var isStayParamsDirty = CFG.Current.ParamEditor_Allow_Unmodified_Save || StayParams.Keys.Any(IsParamDirty);
+            var isStayParamsDirty = CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save || StayParams.Keys.Any(IsParamDirty);
 
             if (StayParams.Count > 0 && isStayParamsDirty)
             {
@@ -2448,7 +2448,7 @@ public class ParamBank : IDisposable
 
         //BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        //if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
+        //if (CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_NR)
         //{
         //    RowNameHelper.RowNameStrip(Project);
         //}
@@ -2665,7 +2665,7 @@ public class ParamBank : IDisposable
 
         //BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        //if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
+        //if (CFG.Current.ParamEditor.ParamEditor_Row_Name_Strip_NR)
         //{
         //    RowNameHelper.RowNameStrip(Project);
         //}

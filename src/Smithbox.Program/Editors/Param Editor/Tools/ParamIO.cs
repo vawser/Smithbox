@@ -387,7 +387,7 @@ public static class ParamIO
             }
 
             // If a user only wants to import new rows from the CSV
-            if(CFG.Current.Param_CSV_Ignore_Existing_Rows)
+            if(CFG.Current.ParamEditor.Param_CSV_Ignore_Existing_Rows)
             {
                 if (row != null)
                     continue;

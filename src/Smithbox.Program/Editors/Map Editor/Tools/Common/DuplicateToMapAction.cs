@@ -109,7 +109,7 @@ public class DuplicateToMapAction
 
         MapTargetPicker.Display(View, "targetMapSelect", ref TargetMap);
 
-        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##duplicateKeepWorld", ref CFG.Current.MapEditor_Keep_World_Position_Across_Maps);
+        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##duplicateKeepWorld", ref CFG.Current.MapEditor.MapEditor_Keep_World_Position_Across_Maps);
         GUI.Tooltip(LOC.Get("MAP_Keep_World_Position_TT"));
 
         var targetMap = View.Selection.ResolveTargetMap(TargetMap);
@@ -187,20 +187,20 @@ public class DuplicateToMapAction
                 targetBTL: btlParent,
                 duplicateToMap: true,
                 createMapGroupEntry: false,
-                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
-                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
-                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
-                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
-                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
-                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
-                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+                incrementEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range);
 
         ViewportAction duplicate = action;
 
         // The copies stay where the sources are in the world, rather than at the same local coordinates in the other
         // map (another tile in ER and NR). Each source's frame is taken now, as the step runs after the clones exist.
-        if (CFG.Current.MapEditor_Keep_World_Position_Across_Maps)
+        if (CFG.Current.MapEditor.MapEditor_Keep_World_Position_Across_Maps)
         {
             var sourceFrames = mapObjects.ToDictionary(e => e, MapPlacement.GetParentWorld);
 
@@ -365,25 +365,25 @@ public class DuplicateToMapAction
                 targetBTL: btlParent,
                 duplicateToMap: true,
                 createMapGroupEntry: false,
-                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
-                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
-                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
-                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
-                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
-                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
-                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
+                incrementEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range);
 
         var actions = new List<ViewportAction> { action };
 
         // Moved in the same undo step, once the clones exist; the orb's position is taken now, at the paste
-        if (CFG.Current.MapEditor_Paste_At_Placement_Orb && view.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport)
+        if (CFG.Current.MapEditor.MapEditor_Paste_At_Placement_Orb && view.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport)
         {
             var target = view.ViewportWindow.GetPlacementPosition();
 
             actions.Add(new DeferredAction(() => PullToCameraAction.BuildMoveToPointAction(action.CreatedClones, target)));
         }
-        else if (CFG.Current.MapEditor_Keep_World_Position_Across_Maps)
+        else if (CFG.Current.MapEditor.MapEditor_Keep_World_Position_Across_Maps)
         {
             // Without the orb, the pasted objects go where the copied ones were in the world, rather than at the
             // same local coordinates in the target map (another tile in ER and NR)

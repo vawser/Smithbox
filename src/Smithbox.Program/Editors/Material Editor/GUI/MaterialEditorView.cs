@@ -125,7 +125,7 @@ public class MaterialEditorView : IEditorView
 
         ImGui.End();
 
-        if (CFG.Current.Interface_MaterialEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_MaterialEditor_ToolWindow)
         {
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

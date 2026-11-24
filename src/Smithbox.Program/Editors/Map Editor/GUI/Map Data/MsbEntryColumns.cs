@@ -44,7 +44,7 @@ public static class MsbEntryColumns
         if (entryType == null)
             return new List<string>();
 
-        if (CFG.Current.MapDataEditor_EntryView_Columns.TryGetValue(GetKey(entryType), out var columns))
+        if (CFG.Current.MapEditor.MapDataEditor_EntryView_Columns.TryGetValue(GetKey(entryType), out var columns))
             return columns;
 
         if (sample == null)
@@ -61,7 +61,7 @@ public static class MsbEntryColumns
     /// </summary>
     public static void SetColumns(Type entryType, List<string> columns)
     {
-        CFG.Current.MapDataEditor_EntryView_Columns[GetKey(entryType)] = columns;
+        CFG.Current.MapEditor.MapDataEditor_EntryView_Columns[GetKey(entryType)] = columns;
     }
 
     /// <summary>
@@ -69,12 +69,12 @@ public static class MsbEntryColumns
     /// </summary>
     public static void ResetColumns(Type entryType)
     {
-        CFG.Current.MapDataEditor_EntryView_Columns.Remove(GetKey(entryType));
+        CFG.Current.MapEditor.MapDataEditor_EntryView_Columns.Remove(GetKey(entryType));
     }
 
     public static bool HasCustomColumns(Type entryType)
     {
-        return CFG.Current.MapDataEditor_EntryView_Columns.ContainsKey(GetKey(entryType));
+        return CFG.Current.MapEditor.MapDataEditor_EntryView_Columns.ContainsKey(GetKey(entryType));
     }
 
     private static string GetKey(Type entryType) => entryType.FullName;

@@ -108,7 +108,7 @@ public class MapTextureTransferTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_TextureTransfer_Scope_Header"), LOC.Get("MAP_TextureTransfer_Scope_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_TextureTransfer_Selection_Only")}##mapTextureTransferSelectionOnly", ref CFG.Current.MapEditor_TextureTransfer_SelectionOnly);
+        ImGui.Checkbox($"{LOC.Get("MAP_TextureTransfer_Selection_Only")}##mapTextureTransferSelectionOnly", ref CFG.Current.MapEditor.MapEditor_TextureTransfer_SelectionOnly);
         GUI.Tooltip(LOC.Get("MAP_TextureTransfer_Selection_Only_TT"));
 
         // Actions
@@ -375,7 +375,7 @@ public class MapTextureTransferTool
         // Everything the scan needs is read here, on the main thread
         var parts = map.Objects.Where(e => EntityHelper.IsPartMapPiece(e) || EntityHelper.IsPartAsset(e));
 
-        if (CFG.Current.MapEditor_TextureTransfer_SelectionOnly)
+        if (CFG.Current.MapEditor.MapEditor_TextureTransfer_SelectionOnly)
         {
             var selected = View.ViewportSelection.GetSelection().OfType<Entity>().ToHashSet();
             parts = parts.Where(selected.Contains);

@@ -27,7 +27,7 @@ public class MapLightCollector
     private readonly MapEditorView View;
 
     // The light entities of each loaded map, found again when the map's objects change in number or the BTL variant
-    // toggle (CFG.MapEditor_Lights_Default_BTL_Variant_Only) changes
+    // toggle (MapEditorSettings.MapEditor_Lights_Default_BTL_Variant_Only) changes
     private readonly Dictionary<MapContainer, (int ObjectCount, bool DefaultVariantOnly, List<MsbEntity> Lights)> MapLights = new();
 
     private readonly MapLightData[] Entries = new MapLightData[SceneLightTable.Capacity];
@@ -73,7 +73,7 @@ public class MapLightCollector
         var selected = View.ViewportSelection.GetSelection().OfType<MsbEntity>().ToHashSet();
         var found = new List<(float Distance, MapLightData Data)>();
 
-        var radius = Math.Max(CFG.Current.Viewport_BTL_Light_Radius, 0.0f);
+        var radius = Math.Max(CFG.Current.Viewport.Viewport_BTL_Light_Radius, 0.0f);
         // Game mode reduced to the map's lights draws without the GPARAM, so its exposure isn't theirs either
         var intensityScale = GetIntensityScale(RenderMode.MapLightsOnly ? null : SceneRenderer.MapLighting);
 
@@ -103,7 +103,7 @@ public class MapLightCollector
 
         InRangeCount = found.Count;
 
-        var count = Math.Min(found.Count, Math.Clamp(CFG.Current.Viewport_BTL_Light_Max_Count, 0, SceneLightTable.Capacity));
+        var count = Math.Min(found.Count, Math.Clamp(CFG.Current.Viewport.Viewport_BTL_Light_Max_Count, 0, SceneLightTable.Capacity));
 
         for (var i = 0; i < count; i++)
             Entries[i] = found[i].Data;
@@ -167,7 +167,7 @@ public class MapLightCollector
     {
         var bank = View.DrawParamLightingBank;
 
-        if (!CFG.Current.Viewport_Map_DrawParam_Point_Lights || bank == null || !bank.CanUse())
+        if (!CFG.Current.Viewport.Viewport_Map_DrawParam_Point_Lights || bank == null || !bank.CanUse())
             return;
 
         var pointLights = bank.GetBank(map.Name, DrawParamLightingBank.PointLightBank);
@@ -210,7 +210,7 @@ public class MapLightCollector
             var isSelected = selected.Contains(eventEntity) || selected.Contains(region);
             var distance = eye.HasValue ? Vector3.Distance(position, eye.Value) : float.MaxValue;
 
-            if (!isSelected && (!CFG.Current.Viewport_BTL_Lights_Near_Camera || distance > radius))
+            if (!isSelected && (!CFG.Current.Viewport.Viewport_BTL_Lights_Near_Camera || distance > radius))
                 continue;
 
             var color = new Vector3(
@@ -237,11 +237,11 @@ public class MapLightCollector
 
     public static bool IsNearCamera(BTL.Light light, float distance, float radius)
     {
-        if (!CFG.Current.Viewport_BTL_Lights_Near_Camera || distance > radius)
+        if (!CFG.Current.Viewport.Viewport_BTL_Lights_Near_Camera || distance > radius)
             return false;
 
         // The game turns a light on within its ViewDistance of the camera; 0 is taken as no limit
-        if (CFG.Current.Viewport_BTL_Light_Use_Enable_Distance && light.ViewDistance > 0.0f && distance > light.ViewDistance)
+        if (CFG.Current.Viewport.Viewport_BTL_Light_Use_Enable_Distance && light.ViewDistance > 0.0f && distance > light.ViewDistance)
             return false;
 
         return true;
@@ -256,14 +256,14 @@ public class MapLightCollector
     {
 
         return mapLighting != null
-            ? mapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale
-            : CFG.Current.Viewport_Light_Intensity_Scale;
+            ? mapLighting.Exposure * CFG.Current.Viewport.Viewport_Map_Lighting_Exposure_Scale
+            : CFG.Current.Viewport.Viewport_Light_Intensity_Scale;
     }
 
     private List<MsbEntity> GetLights(MapContainer map)
     {
         var objectCount = map.Objects.Count;
-        var defaultVariantOnly = CFG.Current.MapEditor_Lights_Default_BTL_Variant_Only;
+        var defaultVariantOnly = CFG.Current.MapEditor.MapEditor_Lights_Default_BTL_Variant_Only;
 
         if (MapLights.TryGetValue(map, out var cached) && cached.ObjectCount == objectCount &&
             cached.DefaultVariantOnly == defaultVariantOnly)

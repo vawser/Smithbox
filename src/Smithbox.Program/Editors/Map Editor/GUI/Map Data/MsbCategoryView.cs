@@ -57,7 +57,7 @@ public class MsbCategoryView
 
         // Toggle: Empty Display
         GUI.DisplayToggleButton("emptyDisplayToggle", Icons.Book,
-            ref CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories,
+            ref CFG.Current.MapEditor.MapDataEditor_CategoryView_Display_Empty_Base_Categories,
             "MAPDAT_CategoryView_Toggle_Empty_Hide",
             "MAPDAT_CategoryView_Toggle_Empty_Show",
             "MAPDAT_CategoryView_Toggle_Empty_TT");
@@ -83,7 +83,7 @@ public class MsbCategoryView
                 var count = GetBaseCategoryCount(name, type);
 
                 // Skip empty base categories if the toggle is off
-                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories && count == 0)
+                if (!CFG.Current.MapEditor.MapDataEditor_CategoryView_Display_Empty_Base_Categories && count == 0)
                 {
                     continue;
                 }
@@ -153,7 +153,7 @@ public class MsbCategoryView
 
         // Toggle: Empty Display
         GUI.DisplayToggleButton("emptyDisplayToggle", Icons.Book,
-            ref CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories,
+            ref CFG.Current.MapEditor.MapDataEditor_CategoryView_Display_Empty_Sub_Categories,
             "MAPDAT_CategoryView_Toggle_Empty_Sub_Hide",
             "MAPDAT_CategoryView_Toggle_Empty_Sub_Show",
             "MAPDAT_CategoryView_Toggle_Empty_Sub_TT");
@@ -182,7 +182,7 @@ public class MsbCategoryView
                 var count = View.MapDataView.EntryView.GetCachedEntryCount(type);
 
                 // Skip empty sub-categories if the toggle is off
-                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories && count == 0)
+                if (!CFG.Current.MapEditor.MapDataEditor_CategoryView_Display_Empty_Sub_Categories && count == 0)
                 {
                     continue;
                 }

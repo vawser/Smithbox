@@ -256,11 +256,11 @@ public class ItemIconInjectorTool
         ImGui.SameLine();
         if (ImGui.Button($"{LOC.Get("TEXVIEW_IconInjector_Browse")}##itemIconBrowse"))
         {
-            if (PlatformUtils.Instance.OpenFileDialog(LOC.Get("TEXVIEW_IconInjector_Dialog"), TextureEncoder.FileDialogFilters, CFG.Current.TextureViewerImport_LastFolder, out var path)
+            if (PlatformUtils.Instance.OpenFileDialog(LOC.Get("TEXVIEW_IconInjector_Dialog"), TextureEncoder.FileDialogFilters, CFG.Current.TextureViewer.TextureViewerImport_LastFolder, out var path)
                 && !string.IsNullOrEmpty(path))
             {
                 ImagePath = path;
-                CFG.Current.TextureViewerImport_LastFolder = Path.GetDirectoryName(path);
+                CFG.Current.TextureViewer.TextureViewerImport_LastFolder = Path.GetDirectoryName(path);
             }
         }
 
@@ -302,7 +302,7 @@ public class ItemIconInjectorTool
             GUI.Tooltip(LOC.Get("TEXVIEW_IconInjector_Sheet_TT"));
 
             // Shared with Texture Import's option, so both tools grow sheets the same way
-            ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Grow_Sheet")}##itemIconGrowSheet", ref CFG.Current.TextureViewerImport_GrowSheet);
+            ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Grow_Sheet")}##itemIconGrowSheet", ref CFG.Current.TextureViewer.TextureViewerImport_GrowSheet);
             GUI.Tooltip(LOC.Get("TEXVIEW_IconInjector_Grow_Sheet_TT"));
         }
 

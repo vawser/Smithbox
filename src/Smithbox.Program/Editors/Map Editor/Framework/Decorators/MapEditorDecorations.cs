@@ -518,12 +518,12 @@ public static class MapEditorDecorations
 
         var displayText = $"";
 
-        if(CFG.Current.MapEditor_Properties_Display_Reference_Name)
+        if(CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Name)
         {
             displayText = $"{entity.PrettyName}";
         }
 
-        if (CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Entity_ID)
         {
             var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
 
@@ -531,7 +531,7 @@ public static class MapEditorDecorations
             {
                 var newText = $"{entId}";
 
-                if (CFG.Current.MapEditor_Properties_Display_Reference_Name)
+                if (CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Name)
                 {
                     displayText = $"{displayText} - {newText}";
                 }
@@ -542,9 +542,9 @@ public static class MapEditorDecorations
             }
         }
 
-        if (CFG.Current.MapEditor_Properties_Display_Reference_Alias)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Alias)
         {
-            if (!CFG.Current.MapEditor_Properties_Display_Reference_Name && !CFG.Current.MapEditor_Properties_Display_Reference_Entity_ID)
+            if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Name && !CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Entity_ID)
             {
                 if (alias is null or "")
                 {

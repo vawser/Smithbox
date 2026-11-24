@@ -185,7 +185,7 @@ public partial class CollisionEditorTool
             return;
         }
 
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions || CFG.Current.MapEditor_SkipHavokLoad)
+        if (!CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions || CFG.Current.MapEditor.MapEditor_SkipHavokLoad)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Collision_Not_Loaded"));
             ImGui.EndChild();
@@ -276,9 +276,9 @@ public partial class CollisionEditorTool
         // Controls
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Controls_Header"), LOC.Get("MAP_CollisionEditor_Controls_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Controls);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Controls);
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Controls)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Controls)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Brush", InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action)));
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Modes",
@@ -295,15 +295,15 @@ public partial class CollisionEditorTool
         // Cursor Display: rarely changed, so closed by default
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Cursor_Display_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Display_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Cursor_Display);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Cursor_Display);
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Cursor_Display)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Cursor_Display)
         {
             // Cursor Opacity
             GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header_TT"));
 
             ImGui.SetNextItemWidth(-1);
-            ImGui.SliderFloat("##collisionEditorCursorOpacity", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha, 0f, 100f, "%.0f%%");
+            ImGui.SliderFloat("##collisionEditorCursorOpacity", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Fill_Alpha, 0f, 100f, "%.0f%%");
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Input_TT"));
         }
 
@@ -316,7 +316,7 @@ public partial class CollisionEditorTool
     private void DisplayLayer()
     {
         var bank = View.HavokCollisionBank;
-        var layer = CFG.Current.MapEditor_CollisionEditor_Layer;
+        var layer = CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer;
 
         // Layer
         GUI.Spacer();
@@ -329,7 +329,7 @@ public partial class CollisionEditorTool
             {
                 if (ImGui.Selectable($"{LOC.Get(type.GetDisplayName())}##collisionEditorLayer{type}", type == layer))
                 {
-                    CFG.Current.MapEditor_CollisionEditor_Layer = type;
+                    CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer = type;
 
                     // The cursor and stroke belong to the layer they were on
                     EndStroke();
@@ -360,13 +360,13 @@ public partial class CollisionEditorTool
     /// </summary>
     private void DisplayLinkOptions()
     {
-        var layer = CFG.Current.MapEditor_CollisionEditor_Layer;
+        var layer = CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer;
 
         // Linked Layers
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Link_Header"), LOC.Get("MAP_CollisionEditor_Link_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Link_Toggle")}##collisionEditorLink", ref CFG.Current.MapEditor_CollisionEditor_Link_Layers);
+        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Link_Toggle")}##collisionEditorLink", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Layers);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Link_Toggle_TT"));
 
         if (GetLinkedLayer(layer) is not { } linked)
@@ -375,7 +375,7 @@ public partial class CollisionEditorTool
             return;
         }
 
-        if (!CFG.Current.MapEditor_CollisionEditor_Link_Layers)
+        if (!CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Layers)
             return;
 
         GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Link_Follows", LOC.Get(linked.GetDisplayName()), LOC.Get(layer.GetDisplayName())));
@@ -385,8 +385,8 @@ public partial class CollisionEditorTool
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Link_Distance_Header"), LOC.Get("MAP_CollisionEditor_Link_Distance_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##collisionEditorLinkDistance", ref CFG.Current.MapEditor_CollisionEditor_Link_Distance))
-            CFG.Current.MapEditor_CollisionEditor_Link_Distance = Math.Max(0f, CFG.Current.MapEditor_CollisionEditor_Link_Distance);
+        if (ImGui.InputFloat("##collisionEditorLinkDistance", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Distance))
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Distance = Math.Max(0f, CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Distance);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Link_Distance_Input_TT"));
     }
 
@@ -424,9 +424,9 @@ public partial class CollisionEditorTool
         // Cursor
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Cursor_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Cursor);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Cursor);
 
-        if (!CFG.Current.MapEditor_CollisionEditor_Show_Cursor)
+        if (!CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Cursor)
             return;
 
         if (scene != null && !scene.DrawFilter.HasFlag(RenderFilter.Collision))
@@ -450,9 +450,9 @@ public partial class CollisionEditorTool
 
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Moves",
                 brushed.Sum(m => m.Falloff.Count), brushed.Select(m => m.File).Distinct().Count(),
-                $"{CFG.Current.MapEditor_CollisionEditor_Brush_Radius:0.###}"));
+                $"{CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Radius:0.###}"));
 
-            if (CFG.Current.MapEditor_CollisionEditor_Link_Layers && GetLinkedLayer(hit.File.Type) != null)
+            if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Layers && GetLinkedLayer(hit.File.Type) != null)
             {
                 var linkedName = GetLinkedFileName(hit.File.FileName);
                 var linked = linkedName != null && Files.ContainsKey(linkedName) ? linkedName : null;
@@ -487,8 +487,8 @@ public partial class CollisionEditorTool
         if (IsDragStroke && DragMoves != null)
             return DragMoves;
 
-        var key = (hit.File, hit.Body, hit.Point, CFG.Current.MapEditor_CollisionEditor_Brush_Radius,
-            CFG.Current.MapEditor_CollisionEditor_Link_Distance, CFG.Current.MapEditor_CollisionEditor_Link_Layers);
+        var key = (hit.File, hit.Body, hit.Point, CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Radius,
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Distance, CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Layers);
 
         if (CursorMoves == null || !key.Equals(CursorMovesKey))
         {
@@ -692,7 +692,7 @@ public partial class CollisionEditorTool
     /// </summary>
     private CollisionEditorFile GetLinkedFile(CollisionEditorFile file)
     {
-        if (!CFG.Current.MapEditor_CollisionEditor_Link_Layers || GetLinkedLayer(file.Type) == null)
+        if (!CFG.Current.MapEditor.MapEditor_CollisionEditor_Link_Layers || GetLinkedLayer(file.Type) == null)
             return null;
 
         var linkedName = GetLinkedFileName(file.FileName);
@@ -773,7 +773,7 @@ public partial class CollisionEditorTool
     private Hit RayCast(Ray ray)
     {
         Hit nearest = null;
-        var layerLetter = GetLayerLetter(CFG.Current.MapEditor_CollisionEditor_Layer);
+        var layerLetter = GetLayerLetter(CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer);
 
         foreach (var entity in GetCollisionParts())
         {
@@ -1049,9 +1049,9 @@ public partial class CollisionEditorTool
     {
         var color = type switch
         {
-            HavokCollisionType.High => CFG.Current.Viewport_High_Collision_Color,
-            HavokCollisionType.FallProtection => CFG.Current.Viewport_FallProtection_Collision_Color,
-            _ => CFG.Current.Viewport_Collision_Color
+            HavokCollisionType.High => CFG.Current.Viewport.Viewport_High_Collision_Color,
+            HavokCollisionType.FallProtection => CFG.Current.Viewport.Viewport_FallProtection_Collision_Color,
+            _ => CFG.Current.Viewport.Viewport_Collision_Color
         };
 
         return Color.FromArgb(255, (int)color.X, (int)color.Y, (int)color.Z);
@@ -1087,14 +1087,14 @@ public partial class CollisionEditorTool
             return;
         }
 
-        var cursorColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
+        var cursorColor = ToColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Color);
 
         // A wireframe over a translucent fill, so the collision under a large brush can still be seen
         CursorWire ??= RenderableHelper.GetDetectionSphereProxy(scene, cursorColor);
         CursorFill ??= RenderableHelper.GetDetectionSphereFillProxy(scene, cursorColor);
 
         // Follows the option as it is changed
-        var fill = ColorHelper.GetTransparencyColor(cursorColor, CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha);
+        var fill = ColorHelper.GetTransparencyColor(cursorColor, CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Fill_Alpha);
 
         if (CursorFill.BaseColor != fill)
         {
@@ -1106,12 +1106,12 @@ public partial class CollisionEditorTool
         {
             Pickable = false,
             RenderOverlay = true,
-            BaseColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color),
-            HighlightedColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color)
+            BaseColor = ToColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color),
+            HighlightedColor = ToColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color)
         };
 
         // The detection spheres have a radius of 1
-        var size = Math.Max(0.01f, CFG.Current.MapEditor_CollisionEditor_Brush_Radius);
+        var size = Math.Max(0.01f, CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Radius);
         var cursorWorld = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(GetCursorPosition(target));
 
         // The hit triangle's nearest corner, where it is now (a drag carries it): small, so it doesn't hide the

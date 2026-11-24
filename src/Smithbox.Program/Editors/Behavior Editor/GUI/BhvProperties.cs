@@ -284,7 +284,7 @@ public class BhvProperties
 
         View.Format.FieldTable(id, file, blob, fields);
 
-        if (CFG.Current.BehaviorEditor_Properties_Show_Hex)
+        if (CFG.Current.BehaviorEditor.BehaviorEditor_Properties_Show_Hex)
             View.Format.HexView(id, file, blob, fields);
     }
     #endregion

@@ -1229,10 +1229,10 @@ public class DisplayGroupTool
         int bitCount = dg.RenderGroups.Length * BitsPerWord;
 
         // Show Unused
-        var showUnused = CFG.Current.MapEditor_DisplayGroups_Show_Unused;
+        var showUnused = CFG.Current.MapEditor.MapEditor_DisplayGroups_Show_Unused;
         if (ImGui.Checkbox($"{LOC.Get("MAP_DisplayGroups_Show_Unused")}##displayGroupsShowUnused", ref showUnused))
         {
-            CFG.Current.MapEditor_DisplayGroups_Show_Unused = showUnused;
+            CFG.Current.MapEditor.MapEditor_DisplayGroups_Show_Unused = showUnused;
         }
         GUI.Tooltip(LOC.Get("MAP_DisplayGroups_Show_Unused_TT"));
 

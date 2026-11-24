@@ -70,8 +70,8 @@ public class FileUnpackerTool
         Project = project;
 
         UnpackDirectory = project.Descriptor.DataPath;
-        if (CFG.Current.UnpackDirectory != "")
-            UnpackDirectory = CFG.Current.UnpackDirectory;
+        if (CFG.Current.FileBrowser.UnpackDirectory != "")
+            UnpackDirectory = CFG.Current.FileBrowser.UnpackDirectory;
 
         UpdateBaseFileDictionary();
     }
@@ -92,10 +92,10 @@ public class FileUnpackerTool
         GUI.HintTextInput("##unpackDirectory", ref UnpackDirectory, LOC.Get("FILE_FileUnpacker_Unpack_Hint"));
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
-            CFG.Current.UnpackDirectory = UnpackDirectory;
+            CFG.Current.FileBrowser.UnpackDirectory = UnpackDirectory;
         }
 
-        ImGui.SliderInt($"{LOC.Get("FILE_FileUnpacker_Threads")}##unpackThreads", ref CFG.Current.FileBrowser_Unpack_Threads, 1, 32);
+        ImGui.SliderInt($"{LOC.Get("FILE_FileUnpacker_Threads")}##unpackThreads", ref CFG.Current.FileBrowser.FileBrowser_Unpack_Threads, 1, 32);
         GUI.Tooltip(LOC.Get("FILE_FileUnpacker_Threads_TT"));
 
         GUI.Spacer();
@@ -288,7 +288,7 @@ public class FileUnpackerTool
         if (result)
         {
             UnpackDirectory = unpackDirectory;
-            CFG.Current.UnpackDirectory = unpackDirectory;
+            CFG.Current.FileBrowser.UnpackDirectory = unpackDirectory;
         }
     }
 
@@ -520,7 +520,7 @@ public class FileUnpackerTool
 
             var options = new ParallelOptions
             {
-                MaxDegreeOfParallelism = Math.Clamp(CFG.Current.FileBrowser_Unpack_Threads, 1, 64),
+                MaxDegreeOfParallelism = Math.Clamp(CFG.Current.FileBrowser.FileBrowser_Unpack_Threads, 1, 64),
                 CancellationToken = token
             };
 

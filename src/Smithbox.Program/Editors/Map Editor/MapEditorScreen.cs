@@ -133,37 +133,37 @@ public class MapEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.MapEditor_Allow_Unmodified_Save = !CFG.Current.MapEditor_Allow_Unmodified_Save;
+                CFG.Current.MapEditor.MapEditor_Allow_Unmodified_Save = !CFG.Current.MapEditor.MapEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_Allow_Unmodified_Save);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.MapEditor_Allow_Automatic_Save = !CFG.Current.MapEditor_Allow_Automatic_Save;
+                CFG.Current.MapEditor.MapEditor_Allow_Automatic_Save = !CFG.Current.MapEditor.MapEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_Allow_Automatic_Save);
 
             ImGui.Separator();
 
             // Check Maps Before Saving
             if (ImGui.MenuItem($"{LOC.Get("MAP_SaveCheck_Menu_Enabled")}##saveCheckEnabled"))
             {
-                CFG.Current.MapEditor_SaveCheck_Enabled = !CFG.Current.MapEditor_SaveCheck_Enabled;
+                CFG.Current.MapEditor.MapEditor_SaveCheck_Enabled = !CFG.Current.MapEditor.MapEditor_SaveCheck_Enabled;
             }
             GUI.Tooltip(LOC.Get("MAP_SaveCheck_Menu_Enabled_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_SaveCheck_Enabled);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_SaveCheck_Enabled);
 
             // Stop on Warnings
             if (ImGui.MenuItem($"{LOC.Get("MAP_SaveCheck_Menu_Stop_On_Warnings")}##saveCheckWarnings", "", false,
-                CFG.Current.MapEditor_SaveCheck_Enabled))
+                CFG.Current.MapEditor.MapEditor_SaveCheck_Enabled))
             {
-                CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings = !CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings;
+                CFG.Current.MapEditor.MapEditor_SaveCheck_Stop_On_Warnings = !CFG.Current.MapEditor.MapEditor_SaveCheck_Stop_On_Warnings;
             }
             GUI.Tooltip(LOC.Get("MAP_SaveCheck_Menu_Stop_On_Warnings_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_SaveCheck_Stop_On_Warnings);
 
             // Show the last report
             if (ImGui.MenuItem($"{LOC.Get("MAP_SaveCheck_Menu_Check_Now")}##saveCheckNow"))
@@ -234,7 +234,7 @@ public class MapEditorScreen : EditorScreen
                 // History: opens the tool that lists the steps
                 if (ImGui.MenuItem($"{LOC.Get("MAP_History_Menu_History")}##historyAction"))
                 {
-                    CFG.Current.Interface_MapEditor_ToolWindow = true;
+                    CFG.Current.Interface.Interface_MapEditor_ToolWindow = true;
 
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
@@ -289,37 +289,37 @@ public class MapEditorScreen : EditorScreen
             // Individual Windows
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows")}##windows"))
             {
-                CFG.Current.Interface_MapEditor_EditorDisplayType = EditorDisplayType.Windows;
+                CFG.Current.Interface.Interface_MapEditor_EditorDisplayType = EditorDisplayType.Windows;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_Windows_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_EditorDisplayType == EditorDisplayType.Windows);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_MapEditor_EditorDisplayType == EditorDisplayType.Windows);
 
             // Tabbed Panels
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels")}##tabbedPanels"))
             {
-                CFG.Current.Interface_MapEditor_EditorDisplayType = EditorDisplayType.TabbedPanels;
+                CFG.Current.Interface.Interface_MapEditor_EditorDisplayType = EditorDisplayType.TabbedPanels;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Options_EditorDisplay_Action_TabbedPanels_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_EditorDisplayType == EditorDisplayType.TabbedPanels);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_MapEditor_EditorDisplayType == EditorDisplayType.TabbedPanels);
 
             ImGui.Separator();
 
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("MAP_View_Toggle_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
+                CFG.Current.Interface.Interface_MapEditor_ToolWindow = !CFG.Current.Interface.Interface_MapEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_MapEditor_ToolWindow);
 
             // Map Information
             if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 if (ImGui.MenuItem($"{LOC.Get("MAP_MapInfo_Window_Title")}##mapInformationToggle"))
                 {
-                    CFG.Current.Interface_MapEditor_MapInformation = !CFG.Current.Interface_MapEditor_MapInformation;
+                    CFG.Current.Interface.Interface_MapEditor_MapInformation = !CFG.Current.Interface.Interface_MapEditor_MapInformation;
                 }
                 GUI.Tooltip(LOC.Get("MAP_MapInfo_Open_TT", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)));
-                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapInformation);
+                GUI.ShowActiveStatus(CFG.Current.Interface.Interface_MapEditor_MapInformation);
             }
 
             ImGui.Separator();
@@ -359,49 +359,49 @@ public class MapEditorScreen : EditorScreen
             // Filter Presets
             if (ImGui.BeginMenu($"{LOC.Get("MAP_Filter_Header_FilterPresets")}##filterPresetsMenuHeader"))
             {
-                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_1.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport.Viewport_Filter_Preset_1.Name))
                 {
-                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_1.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport.Viewport_Filter_Preset_1.Filters;
 
                     activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
-                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_2.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport.Viewport_Filter_Preset_2.Name))
                 {
-                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_2.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport.Viewport_Filter_Preset_2.Filters;
 
                     activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
-                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_3.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport.Viewport_Filter_Preset_3.Name))
                 {
-                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_3.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport.Viewport_Filter_Preset_3.Filters;
 
                     activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
-                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_4.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport.Viewport_Filter_Preset_4.Name))
                 {
-                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_4.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport.Viewport_Filter_Preset_4.Filters;
 
                     activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
-                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_5.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport.Viewport_Filter_Preset_5.Name))
                 {
-                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_5.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport.Viewport_Filter_Preset_5.Filters;
 
                     activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
                 }
 
-                if (ImGui.MenuItem(CFG.Current.Viewport_Filter_Preset_6.Name))
+                if (ImGui.MenuItem(CFG.Current.Viewport.Viewport_Filter_Preset_6.Name))
                 {
-                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport_Filter_Preset_6.Filters;
+                    activeView.ViewportHandler.ActiveViewport.RenderScene.DrawFilter = CFG.Current.Viewport.Viewport_Filter_Preset_6.Filters;
 
                     activeView.BasicFilters.StoreFilterState();
                     activeView.DelayPicking();
@@ -552,10 +552,10 @@ public class MapEditorScreen : EditorScreen
                 // Highlight Changes from Vanilla
                 if (ImGui.MenuItem($"{LOC.Get("MAP_Vanilla_Highlight")}##vanillaHighlight"))
                 {
-                    CFG.Current.MapEditor_Vanilla_Highlight = !CFG.Current.MapEditor_Vanilla_Highlight;
+                    CFG.Current.MapEditor.MapEditor_Vanilla_Highlight = !CFG.Current.MapEditor.MapEditor_Vanilla_Highlight;
                 }
                 GUI.Tooltip(LOC.Get("MAP_Vanilla_Highlight_TT"));
-                GUI.ShowActiveStatus(CFG.Current.MapEditor_Vanilla_Highlight);
+                GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_Vanilla_Highlight);
 
                 ImGui.EndMenu();
             }
@@ -568,26 +568,26 @@ public class MapEditorScreen : EditorScreen
                     // Automatic Adjust
                     if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Adjust_Toggle")}##autoAdjustAction"))
                     {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor_LightAtlas_AutomaticAdjust;
+                        CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdjust = !CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdjust;
                     }
                     GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Adjust_Toggle_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdjust);
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdjust);
 
                     // Automatic Add
                     if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Add_Toggle")}##autoAddAction"))
                     {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor_LightAtlas_AutomaticAdd;
+                        CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdd = !CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdd;
                     }
                     GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Add_Toggle_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticAdd);
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticAdd);
 
                     // Automatic Delete
                     if (ImGui.MenuItem($"{LOC.Get("MAP_Options_LightAtlas_Automatic_Delete_Toggle")}##autoDeleteAction"))
                     {
-                        CFG.Current.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor_LightAtlas_AutomaticDelete;
+                        CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticDelete = !CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticDelete;
                     }
                     GUI.Tooltip(LOC.Get("MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT"));
-                    GUI.ShowActiveStatus(CFG.Current.MapEditor_LightAtlas_AutomaticDelete);
+                    GUI.ShowActiveStatus(CFG.Current.MapEditor.MapEditor_LightAtlas_AutomaticDelete);
 
                     ImGui.EndMenu();
                 }
@@ -746,12 +746,12 @@ public class MapEditorScreen : EditorScreen
 
         // The save check: problems in the maps about to be written are listed in the Save Check window, and
         // nothing is saved if any of them stops the save. Autosaves keep their old behaviour (U10).
-        if (!autoSave && !skipCheck && CFG.Current.MapEditor_SaveCheck_Enabled)
+        if (!autoSave && !skipCheck && CFG.Current.MapEditor.MapEditor_SaveCheck_Enabled)
         {
             var maps = GetMapsToSave();
             var issues = MapCheck.Run(Project, maps);
 
-            if (MapCheck.StopsSave(issues, CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings))
+            if (MapCheck.StopsSave(issues, CFG.Current.MapEditor.MapEditor_SaveCheck_Stop_On_Warnings))
             {
                 SaveCheckWindow.Open(issues, maps);
                 Smithbox.Log(this, LOC.Get("MAP_SaveCheck_Log_Stopped", issues.Count(i => i.Severity is MapCheckSeverity.Error),
@@ -766,7 +766,7 @@ public class MapEditorScreen : EditorScreen
         try
         {
             // Saves the modified files of all loaded maps, including their collision and navmesh binders
-            if (autoSave && CFG.Current.MapEditor_Allow_Automatic_Save || !autoSave)
+            if (autoSave && CFG.Current.MapEditor.MapEditor_Allow_Automatic_Save || !autoSave)
             {
                 activeView.Universe.SaveAllMaps();
 
@@ -852,7 +852,7 @@ public class MapEditorScreen : EditorScreen
         return Project.Handler.MapData.PrimaryBank.Maps.Values
             .Select(w => w.MapContainer)
             .Where(m => m != null && m.LoadState is MapContentLoadState.Loaded &&
-                (CFG.Current.MapEditor_Allow_Unmodified_Save || m.IsDirty(MapFileType.MSB)))
+                (CFG.Current.MapEditor.MapEditor_Allow_Unmodified_Save || m.IsDirty(MapFileType.MSB)))
             .ToList();
     }
 

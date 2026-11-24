@@ -80,7 +80,7 @@ public static class ModelPropertyDecorators
             }
         }
 
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -133,7 +133,7 @@ public static class ModelPropertyDecorators
                 }
             }
 
-            if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+            if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
             {
                 ImGui.NextColumn();
             }
@@ -185,7 +185,7 @@ public static class ModelPropertyDecorators
                 }
             }
 
-            if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+            if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
             {
                 ImGui.NextColumn();
             }
@@ -237,7 +237,7 @@ public static class ModelPropertyDecorators
                 }
             }
 
-            if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+            if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
             {
                 ImGui.NextColumn();
             }
@@ -389,7 +389,7 @@ public static class ModelPropertyDecorators
             return;
         }
 
-        var exportType = CFG.Current.TextureViewerToolbar_ExportTextureType;
+        var exportType = CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureType;
 
         var exportDirectory = Path.Join(view.Project.Descriptor.ProjectPath, "output");
         var exportFilePath = Path.Join(exportDirectory, texture.Name);

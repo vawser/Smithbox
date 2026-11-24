@@ -53,7 +53,7 @@ public class MapForbiddenRegionTool
 
     // Drawn while the toggle is on, and while the editor edits in the viewport (for its selected box)
     private bool IsEnabled => IsSupported &&
-        (CFG.Current.MapEditor_Display_Forbidden_Regions || View.MfrEditorTool.IsEditing);
+        (CFG.Current.MapEditor.MapEditor_Display_Forbidden_Regions || View.MfrEditorTool.IsEditing);
 
     #region Viewport
 
@@ -106,9 +106,9 @@ public class MapForbiddenRegionTool
             View.MfrEditorTool.GetHighlight(map, out var selected, out var hovered);
 
             // Show Boxes governs every box; while editing with it off, only the selected box is drawn
-            var showAll = CFG.Current.MapEditor_Display_Forbidden_Regions;
-            var state = (showAll && CFG.Current.MapEditor_Forbidden_Region_Show_Save_Limit,
-                showAll && CFG.Current.MapEditor_Forbidden_Region_Show_Multiplay_Limit,
+            var showAll = CFG.Current.MapEditor.MapEditor_Display_Forbidden_Regions;
+            var state = (showAll && CFG.Current.MapEditor.MapEditor_Forbidden_Region_Show_Save_Limit,
+                showAll && CFG.Current.MapEditor.MapEditor_Forbidden_Region_Show_Multiplay_Limit,
                 GetColor(MFR.EntryType.SaveLimit), GetColor(MFR.EntryType.MultiplayLimit),
                 selected, hovered);
 
@@ -137,8 +137,8 @@ public class MapForbiddenRegionTool
                 proxy.World = local * root;
 
                 // Selected over hovered, both drawn over the geometry
-                var color = i == selected ? ToColor(CFG.Current.MapEditor_Forbidden_Region_Selected_Color)
-                    : i == hovered ? ToColor(CFG.Current.MapEditor_Forbidden_Region_Hovered_Color)
+                var color = i == selected ? ToColor(CFG.Current.MapEditor.MapEditor_Forbidden_Region_Selected_Color)
+                    : i == hovered ? ToColor(CFG.Current.MapEditor.MapEditor_Forbidden_Region_Hovered_Color)
                     : GetColor(type);
 
                 SetColor(proxy, color);
@@ -202,8 +202,8 @@ public class MapForbiddenRegionTool
     public static Color GetColor(MFR.EntryType type)
     {
         return ToColor(type == MFR.EntryType.MultiplayLimit
-            ? CFG.Current.MapEditor_Forbidden_Region_Multiplay_Limit_Color
-            : CFG.Current.MapEditor_Forbidden_Region_Save_Limit_Color);
+            ? CFG.Current.MapEditor.MapEditor_Forbidden_Region_Multiplay_Limit_Color
+            : CFG.Current.MapEditor.MapEditor_Forbidden_Region_Save_Limit_Color);
     }
 
     private static Color ToColor(Vector3 c)
@@ -234,14 +234,14 @@ public class MapForbiddenRegionTool
 
         ImGui.SameLine();
 
-        var enabled = CFG.Current.MapEditor_Display_Forbidden_Regions;
+        var enabled = CFG.Current.MapEditor.MapEditor_Display_Forbidden_Regions;
 
         if (enabled)
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
 
         if (ImGui.Button($"{Icons.Ban}##forbiddenRegionToggle", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_Display_Forbidden_Regions = !enabled;
+            CFG.Current.MapEditor.MapEditor_Display_Forbidden_Regions = !enabled;
         }
 
         if (enabled)
@@ -262,16 +262,16 @@ public class MapForbiddenRegionTool
         ImGui.TextUnformatted(LOC.Get("MAP_Forbidden_Region_Options_Header"));
         ImGui.Separator();
 
-        ImGui.Checkbox($"##showSave", ref CFG.Current.MapEditor_Forbidden_Region_Show_Save_Limit);
+        ImGui.Checkbox($"##showSave", ref CFG.Current.MapEditor.MapEditor_Forbidden_Region_Show_Save_Limit);
         ImGui.SameLine();
-        ColorEdit("MAP_Forbidden_Region_Save_Limit", ref CFG.Current.MapEditor_Forbidden_Region_Save_Limit_Color);
+        ColorEdit("MAP_Forbidden_Region_Save_Limit", ref CFG.Current.MapEditor.MapEditor_Forbidden_Region_Save_Limit_Color);
 
-        ImGui.Checkbox($"##showMultiplay", ref CFG.Current.MapEditor_Forbidden_Region_Show_Multiplay_Limit);
+        ImGui.Checkbox($"##showMultiplay", ref CFG.Current.MapEditor.MapEditor_Forbidden_Region_Show_Multiplay_Limit);
         ImGui.SameLine();
-        ColorEdit("MAP_Forbidden_Region_Multiplay_Limit", ref CFG.Current.MapEditor_Forbidden_Region_Multiplay_Limit_Color);
+        ColorEdit("MAP_Forbidden_Region_Multiplay_Limit", ref CFG.Current.MapEditor.MapEditor_Forbidden_Region_Multiplay_Limit_Color);
 
-        ColorEdit("MAP_Forbidden_Region_Selected", ref CFG.Current.MapEditor_Forbidden_Region_Selected_Color);
-        ColorEdit("MAP_Forbidden_Region_Hovered", ref CFG.Current.MapEditor_Forbidden_Region_Hovered_Color);
+        ColorEdit("MAP_Forbidden_Region_Selected", ref CFG.Current.MapEditor.MapEditor_Forbidden_Region_Selected_Color);
+        ColorEdit("MAP_Forbidden_Region_Hovered", ref CFG.Current.MapEditor.MapEditor_Forbidden_Region_Hovered_Color);
     }
 
     private static void ColorEdit(string key, ref Vector3 value)

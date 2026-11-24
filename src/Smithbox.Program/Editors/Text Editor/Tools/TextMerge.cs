@@ -140,7 +140,7 @@ public class TextMerge
             var currentContainer = primaryEntry.Value;
 
             if (mergePrimaryLanguageOnly &&
-                CFG.Current.TextEditor_Primary_Category != currentContainer.ContainerDisplayCategory)
+                CFG.Current.TextEditor.TextEditor_Primary_Category != currentContainer.ContainerDisplayCategory)
             {
                 continue;
             }

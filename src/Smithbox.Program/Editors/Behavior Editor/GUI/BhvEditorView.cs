@@ -81,7 +81,7 @@ public class BhvEditorView
         Window("BHV_Window_Properties", "behaviorEditor_Properties", EditorFocusContext.BehaviorEditor_Properties, dockspaceId, Properties.Draw);
         Window("BHV_Window_Graph", "behaviorEditor_Graph", EditorFocusContext.BehaviorEditor_States, dockspaceId, Graph.Draw);
 
-        if (CFG.Current.Interface_BehaviorEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_BehaviorEditor_ToolWindow)
             Window("BHV_Window_Tools", "behaviorEditor_Tools", EditorFocusContext.BehaviorEditor_Tools, dockspaceId, ToolWindow.Draw, GUI.GetInnerWindowFlags());
 
         Structure.DrawPopups();

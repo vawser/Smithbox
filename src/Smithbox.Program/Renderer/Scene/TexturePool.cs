@@ -716,7 +716,7 @@ public class TexturePool
         public unsafe void FillWithTPF(GraphicsDevice d, CommandList cl, TPF.TPFPlatform platform, TPF.Texture tex,
             string name)
         {
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
                 ResourceViewer.ProcessedTextures.Add(name);
                 ResourceViewer.TexConsumptionSize += tex.Bytes.Length;

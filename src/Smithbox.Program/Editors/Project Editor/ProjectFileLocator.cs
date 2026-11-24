@@ -120,39 +120,8 @@ public class ProjectFileLocator : IDisposable
         }
 
         var folder = Path.Join(AppContext.BaseDirectory, "Assets", "File Dictionaries");
-        var file = "";
-
-        // Build the file dictionary JSON objects here
-        switch (Project.Descriptor.ProjectType)
-        {
-            case ProjectType.DES:
-                file = "DES-File-Dictionary.json"; break;
-            case ProjectType.DS1:
-                file = "DS1-File-Dictionary.json"; break;
-            case ProjectType.DS1R:
-                file = "DS1R-File-Dictionary.json"; break;
-            case ProjectType.DS2:
-                file = "DS2-File-Dictionary.json"; break;
-            case ProjectType.DS2S:
-                file = "DS2S-File-Dictionary.json"; break;
-            case ProjectType.DS3:
-                file = "DS3-File-Dictionary.json"; break;
-            case ProjectType.BB:
-                file = "BB-File-Dictionary.json"; break;
-            case ProjectType.SDT:
-                file = "SDT-File-Dictionary.json"; break;
-            case ProjectType.ER:
-                file = "ER-File-Dictionary.json"; break;
-            case ProjectType.AC6:
-                file = "AC6-File-Dictionary.json"; break;
-            case ProjectType.NR:
-                file = "NR-File-Dictionary.json"; break;
-            case ProjectType.DB:
-                file = "DB-File-Dictionary.json"; break;
-            case ProjectType.DB_NT:
-                file = "DB-NT-File-Dictionary.json"; break;
-            default: break;
-        }
+        // The game's file dictionary JSON, or none
+        var file = Project.Profile.FileDictionaryName ?? "";
 
         if (!silent)
         {
@@ -220,7 +189,7 @@ public class ProjectFileLocator : IDisposable
             });
         }
 
-        if (CFG.Current.Project_Scan_Directory_For_Additions)
+        if (CFG.Current.Project.Project_Scan_Directory_For_Additions)
         {
             var projectFileDictionary = BuildProjectFileDictionary(
                 Project.Descriptor.ProjectPath,
@@ -275,7 +244,7 @@ public class ProjectFileLocator : IDisposable
     /// </summary>
     public List<FileDictionaryEntry> FindNewProjectFiles(bool ignoreScanSetting = false)
     {
-        if (!ignoreScanSetting && !CFG.Current.Project_Scan_Directory_For_Additions)
+        if (!ignoreScanSetting && !CFG.Current.Project.Project_Scan_Directory_For_Additions)
             return new();
 
         var current = FileDictionary;
@@ -344,7 +313,7 @@ public class ProjectFileLocator : IDisposable
             if (IsExcludedFromScan(relativePath))
                 continue;
 
-            if (CFG.Current.Project_Scan_Directory_Strict_Mode)
+            if (CFG.Current.Project.Project_Scan_Directory_Strict_Mode)
             {
                 // If project relative path already exists in vanilla directory, ignore it as we don't need to include it
                 if (existingPaths.Contains(relativePath))
@@ -453,6 +422,7 @@ public class ProjectFileLocator : IDisposable
     {
         var allEntries = FileDictionary.Entries;
         var projectType = Project.Descriptor.ProjectType;
+        var profile = Project.Profile;
 
         // Initialize all lists
         var mapFiles = new HashSet<FileDictionaryEntry>();
@@ -522,42 +492,42 @@ public class ProjectFileLocator : IDisposable
                 mapFiles.Add(entry);
 
             // Character files
-            if (ShouldAddToChrFiles(entry, projectType, isSd))
+            if (ShouldAddToChrFiles(entry, profile, isSd))
                 chrFiles.Add(entry);
 
             // Asset files
-            if (ShouldAddToAssetFiles(entry, projectType, isSd))
+            if (ShouldAddToAssetFiles(entry, profile, isSd))
             {
                 assetFiles.Add(entry);
             }
 
-            if (ShouldAddToHavokAssetFiles(entry, projectType, isSd))
+            if (ShouldAddToHavokAssetFiles(entry, profile, isSd))
             {
                 havokAssetFiles.Add(entry);
             }
 
             // Part files
-            if (ShouldAddToPartFiles(entry, projectType, isSd))
+            if (ShouldAddToPartFiles(entry, profile, isSd))
             {
                 partFiles.Add(entry);
                 havokPartFiles.Add(entry);
             }
 
             // Collision files
-            if (ShouldAddToCollisionFiles(entry, projectType, isMap, isSd))
+            if (ShouldAddToCollisionFiles(entry, profile, isMap, isSd))
             {
                 collisionFiles.Add(entry);
                 havokCollisionFiles.Add(entry);
             }
 
             // Navmesh files
-            if (ShouldAddToNavmeshFiles(entry, projectType, isMap, isSd))
+            if (ShouldAddToNavmeshFiles(entry, profile, isMap, isSd))
             {
                 havokNavmeshFiles.Add(entry);
             }
 
             // Map piece files
-            if (ShouldAddToMapPieceFiles(entry, projectType, isMap, isSd))
+            if (ShouldAddToMapPieceFiles(entry, profile, isMap, isSd))
                 mapPieceFiles.Add(entry);
 
             // Light files
@@ -659,7 +629,7 @@ public class ProjectFileLocator : IDisposable
                     gparamFiles.Add(entry);
             }
 
-            if (projectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (profile.Ds2Layout)
             {
                 if (folder.StartsWith("/filter") && ext == "fltparam" && !isSd)
                     gparamFiles.Add(entry);
@@ -673,18 +643,18 @@ public class ProjectFileLocator : IDisposable
             if (folder.StartsWith("/msg") && ext == "msgbnd" && !isSd)
                 textFiles.Add(entry);
 
-            if (projectType is ProjectType.DS2 or ProjectType.DS2S && folder.StartsWith("/menu") && ext == "fmg" && !isSd)
+            if (profile.Ds2Layout && folder.StartsWith("/menu") && ext == "fmg" && !isSd)
                 textFiles.Add(entry);
 
             // Materials
-            if (ShouldAddToMtdFiles(entry, projectType) && !isSd)
+            if (ShouldAddToMtdFiles(entry, profile) && !isSd)
                 mtdFiles.Add(entry);
 
             if (folder.StartsWith("/material") && ext == "matbinbnd" && !isSd)
                 matbinFiles.Add(entry);
 
             // Textures
-            if (ShouldAddToTextureFiles(entry, projectType) && !isSd)
+            if (ShouldAddToTextureFiles(entry, profile) && !isSd)
                 textureFiles.Add(entry);
 
             if (ext == "tpfbhd" && !isSd)
@@ -710,7 +680,7 @@ public class ProjectFileLocator : IDisposable
             }
 
             // Character: the chrbnds, or DS2's and DS2S's model/chr/cNNNN.bnd (ragdolls and character physics)
-            if (ShouldAddToChrFiles(entry, projectType, isSd))
+            if (ShouldAddToChrFiles(entry, profile, isSd))
             {
                 havokCharacterFiles.Add(entry);
             }
@@ -847,99 +817,105 @@ public class ProjectFileLocator : IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToChrFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    private static bool ShouldAddToChrFiles(FileDictionaryEntry entry, GameProfile profile, bool isSd)
     {
-        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+        if (profile.Ds2Layout)
             return entry.Extension == "bnd" && entry.Folder.StartsWith("/model/chr");
 
         return entry.Extension == "chrbnd" && !isSd;
     }
 
+    /// <summary>
+    /// Whether a file outside the low-detail archives, or the game has none: the games with sd archives leave their
+    /// copies out of these lists
+    /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToAssetFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    private static bool IsFullDetail(GameProfile profile, bool isSd) => !profile.LowDetailArchives || !isSd;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToAssetFiles(FileDictionaryEntry entry, GameProfile profile, bool isSd)
     {
-        return projectType switch
+        if (profile.Type is ProjectType.Undefined)
+            return false;
+
+        if (profile.Ds2Layout)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj");
+
+        if (profile.AssetLayout is not GameAssetLayout.None)
+            return entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && IsFullDetail(profile, isSd);
+
+        return entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToHavokAssetFiles(FileDictionaryEntry entry, GameProfile profile, bool isSd)
+    {
+        if (profile.Type is ProjectType.Undefined)
+            return false;
+
+        if (profile.Ds2Layout)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj");
+
+        if (profile.AssetLayout is not GameAssetLayout.None)
+            return entry.Extension == "geomhkxbnd" && entry.Folder.StartsWith("/asset") && IsFullDetail(profile, isSd);
+
+        return entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj");
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToPartFiles(FileDictionaryEntry entry, GameProfile profile, bool isSd)
+    {
+        if (profile.Type is ProjectType.Undefined)
+            return false;
+
+        if (profile.Ds2Layout)
+            return entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts");
+
+        return entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && IsFullDetail(profile, isSd);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool ShouldAddToCollisionFiles(FileDictionaryEntry entry, GameProfile profile, bool isMap, bool isSd)
+    {
+        return profile.MapCollision switch
         {
-            ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
-            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && !isSd,
+            MapCollisionLayout.Ds2Binders => entry.Extension == "hkxbhd" && entry.Folder.StartsWith("/model/map"),
+            MapCollisionLayout.LooseHkx => isMap && entry.Extension == "hkx",
+            MapCollisionLayout.HkxBhd or MapCollisionLayout.LayeredHkxBhd
+                => isMap && entry.Extension == "hkxbhd" && IsFullDetail(profile, isSd),
             _ => false
         };
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToHavokAssetFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    private static bool ShouldAddToNavmeshFiles(FileDictionaryEntry entry, GameProfile profile, bool isMap, bool isSd)
     {
-        return projectType switch
-        {
-            ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
-            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => entry.Extension == "geomhkxbnd" && entry.Folder.StartsWith("/asset") && !isSd,
-            _ => false
-        };
+        return profile.Navmesh is MapNavmeshLayout.NvmHktBnd && isMap && entry.Extension == "nvmhktbnd" && !isSd;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToPartFiles(FileDictionaryEntry entry, ProjectType projectType, bool isSd)
+    private static bool ShouldAddToMapPieceFiles(FileDictionaryEntry entry, GameProfile profile, bool isMap, bool isSd)
     {
-        return projectType switch
-        {
-            ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
-            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts"),
-            ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,
-            _ => false
-        };
+        if (profile.Ds2Layout)
+            return entry.Extension == "mapbhd" && entry.Folder.StartsWith("/model/map");
+
+        if (profile.LooseMapPieces)
+            return isMap && entry.Extension == "flver";
+
+        return isMap && entry.Extension == "mapbnd" && IsFullDetail(profile, isSd);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToCollisionFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
+    private static bool ShouldAddToMtdFiles(FileDictionaryEntry entry, GameProfile profile)
     {
-        return projectType switch
-        {
-            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "hkxbhd" && entry.Folder.StartsWith("/model/map"),
-            ProjectType.DS1 or ProjectType.DES => isMap && entry.Extension == "hkx",
-            ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => isMap && entry.Extension == "hkxbhd",
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => isMap && entry.Extension == "hkxbhd" && !isSd,
-            _ => false
-        };
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToNavmeshFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
-    {
-        return projectType switch
-        {
-            ProjectType.DS3 or ProjectType.SDT or ProjectType.BB or ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => isMap && entry.Extension == "nvmhktbnd" && !isSd,
-            _ => false
-        };
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToMapPieceFiles(FileDictionaryEntry entry, ProjectType projectType, bool isMap, bool isSd)
-    {
-        return projectType switch
-        {
-            ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "mapbhd" && entry.Folder.StartsWith("/model/map"),
-            ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DES => isMap && entry.Extension == "flver",
-            ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => isMap && entry.Extension == "mapbnd" && !isSd,
-            _ => isMap && entry.Extension == "mapbnd"
-        };
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToMtdFiles(FileDictionaryEntry entry, ProjectType projectType)
-    {
-        if (projectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (profile.Ds2Layout)
             return entry.Extension == "bnd" && entry.Folder.StartsWith("/material") && entry.Filename == "allmaterialbnd";
 
         return entry.Extension == "mtdbnd" && entry.Folder.StartsWith("/mtd");
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static bool ShouldAddToTextureFiles(FileDictionaryEntry entry, ProjectType projectType)
+    private static bool ShouldAddToTextureFiles(FileDictionaryEntry entry, GameProfile profile)
     {
         var ext = entry.Extension;
         var folder = entry.Folder;
@@ -960,7 +936,7 @@ public class ProjectFileLocator : IDisposable
             return true;
 
         // DS2/DS2S special cases - bnd files in specific folders
-        if (projectType is ProjectType.DS2S or ProjectType.DS2)
+        if (profile.Ds2Layout)
         {
             if (ext == "bnd" && (folder == "/model/obj" || folder.Contains("/model/parts")))
                 return true;

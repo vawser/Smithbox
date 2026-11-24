@@ -84,9 +84,9 @@ public class HavokBinderView
 
     private void UpdateFilteredEntries(HashSet<FileDictionaryEntry> entries)
     {
-        var fullPath = CFG.Current.HavokEditor_BinderList_Display_Full_Path;
+        var fullPath = CFG.Current.HavokEditor.HavokEditor_BinderList_Display_Full_Path;
         var collisionType = View.Selection.CategoryMode is HavokCategoryMode.Map_Collision
-            ? CFG.Current.HavokEditor_FileList_Collision_Type_Filter
+            ? CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter
             : 0;
 
         if (FilteredSource == entries
@@ -179,7 +179,7 @@ public class HavokBinderView
                     PopulateFileList(true);
                 }
 
-                if (CFG.Current.HavokEditor_BinderList_Display_Aliases
+                if (CFG.Current.HavokEditor.HavokEditor_BinderList_Display_Aliases
                     && View.Selection.BinderAliasCache.TryGetValue(entry.Filename, out var alias))
                 {
                     // Not wrapped: a wrapped alias would make the row taller than the clipper expects
@@ -201,14 +201,14 @@ public class HavokBinderView
 
         // Toggle: Full Paths
         GUI.DisplayToggleButton("fullPathToggle", Icons.FileText,
-            ref CFG.Current.HavokEditor_BinderList_Display_Full_Path,
+            ref CFG.Current.HavokEditor.HavokEditor_BinderList_Display_Full_Path,
             "HAVOK_BinderView_BinderPath_Display_Short",
             "HAVOK_BinderView_BinderPath_Display_Full",
             "HAVOK_BinderView_BinderPath_Display_TT");
 
         // Toggle: Aliases
         GUI.DisplayToggleButton("aliasToggle", Icons.Book,
-            ref CFG.Current.HavokEditor_BinderList_Display_Aliases,
+            ref CFG.Current.HavokEditor.HavokEditor_BinderList_Display_Aliases,
             "HAVOK_BinderView_BinderPath_Display_Alias_Hide",
             "HAVOK_BinderView_BinderPath_Display_Alias_Show",
             "HAVOK_BinderView_BinderPath_Display_Alias_TT");
@@ -220,38 +220,38 @@ public class HavokBinderView
 
             if (ImGui.Button($"{Icons.Database}##collisionTypeToggle", DPI.IconButtonSize))
             {
-                if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 0)
+                if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 0)
                 {
-                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 1;
+                    CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter = 1;
                 }
-                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 1)
+                else if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 1)
                 {
-                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 2;
+                    CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter = 2;
                 }
-                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 2)
+                else if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 2)
                 {
-                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 3;
+                    CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter = 3;
                 }
-                else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 3)
+                else if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 3)
                 {
-                    CFG.Current.HavokEditor_FileList_Collision_Type_Filter = 0;
+                    CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter = 0;
                 }
             }
 
             var toggleMode = "";
-            if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 0)
+            if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 0)
             {
                 toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_All");
             }
-            else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 1)
+            else if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 1)
             {
                 toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_Low");
             }
-            else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 2)
+            else if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 2)
             {
                 toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_High");
             }
-            else if (CFG.Current.HavokEditor_FileList_Collision_Type_Filter == 3)
+            else if (CFG.Current.HavokEditor.HavokEditor_FileList_Collision_Type_Filter == 3)
             {
                 toggleMode = LOC.Get("HAVOK_FileView_FilePath_Collision_Type_Filter_Fall");
             }

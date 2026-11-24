@@ -191,7 +191,7 @@ public class TexEditorView : IEditorView
         ImGui.End();
 
         // Properties
-        if (CFG.Current.Interface_TextureViewer_Properties)
+        if (CFG.Current.Interface.Interface_TextureViewer_Properties)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
@@ -217,7 +217,7 @@ public class TexEditorView : IEditorView
         }
 
         // Layout (T5)
-        if (CFG.Current.Interface_TextureViewer_Layout)
+        if (CFG.Current.Interface.Interface_TextureViewer_Layout)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
@@ -236,7 +236,7 @@ public class TexEditorView : IEditorView
             ImGui.End();
         }
 
-        if (CFG.Current.Interface_TextureViewer_ToolWindow)
+        if (CFG.Current.Interface.Interface_TextureViewer_ToolWindow)
         {
             /// Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

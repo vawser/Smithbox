@@ -47,7 +47,7 @@ public class TimeActRootMotionDisplay
     {
         HavokRootMotion? rootMotion = animator?.CurrentClip?.RootMotion;
 
-        if (!CFG.Current.TimeActEditor_Display_Root_Motion || animator == null || rootMotion == null)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Display_Root_Motion || animator == null || rootMotion == null)
         {
             Hide();
             return;

@@ -60,7 +60,7 @@ public class EsdFileList
     /// <summary>An alias after a list item's name, in the alias colour</summary>
     private static void AliasText(string alias)
     {
-        if (!CFG.Current.EsdEditor_File_List_Display_Aliases || string.IsNullOrEmpty(alias))
+        if (!CFG.Current.EsdEditor.EsdEditor_File_List_Display_Aliases || string.IsNullOrEmpty(alias))
             return;
 
         ImGui.SameLine();
@@ -76,14 +76,14 @@ public class EsdFileList
 
         // Toggle: ESD and machine counts
         GUI.DisplayToggleButton("esdFileCountToggle", Icons.Hashtag,
-            ref CFG.Current.EsdEditor_File_List_Display_Counts,
+            ref CFG.Current.EsdEditor.EsdEditor_File_List_Display_Counts,
             "ESD_FileList_Count_Toggle_Hide",
             "ESD_FileList_Count_Toggle_Show",
             "ESD_FileList_Count_Toggle_TT");
 
         // Toggle: aliases
         GUI.DisplayToggleButton("esdFileAliasToggle", Icons.StickyNote,
-            ref CFG.Current.EsdEditor_File_List_Display_Aliases,
+            ref CFG.Current.EsdEditor.EsdEditor_File_List_Display_Aliases,
             "ESD_FileList_Alias_Toggle_Hide",
             "ESD_FileList_Alias_Toggle_Show",
             "ESD_FileList_Alias_Toggle_TT");
@@ -467,7 +467,7 @@ public class EsdFileList
                     ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);
                     GUI.Tooltip(file.LoadError);
                 }
-                else if (CFG.Current.EsdEditor_File_List_Display_Counts)
+                else if (CFG.Current.EsdEditor.EsdEditor_File_List_Display_Counts)
                 {
                     ImGui.SameLine();
                     ImGui.TextDisabled(LOC.Get("ESD_FileList_Machine_Count", file.Esd.StateGroups.Count));
@@ -500,7 +500,7 @@ public class EsdFileList
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);
             GUI.Tooltip(container.LoadError ?? file.LoadError);
         }
-        else if (CFG.Current.EsdEditor_File_List_Display_Counts)
+        else if (CFG.Current.EsdEditor.EsdEditor_File_List_Display_Counts)
         {
             if (container.IsLoaded && container.IsBinder)
             {

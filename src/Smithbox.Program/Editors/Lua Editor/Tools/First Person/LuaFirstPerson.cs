@@ -109,11 +109,11 @@ public sealed class LuaFirstPerson : IViewportWalker
         var c = CFG.Current;
         switch (action)
         {
-            case LuaPlayerAction.Attack: return ref c.LuaEditor_FirstPerson_Attack_Interrupt;
-            case LuaPlayerAction.Guard: return ref c.LuaEditor_FirstPerson_Guard_Interrupt;
-            case LuaPlayerAction.Estus: return ref c.LuaEditor_FirstPerson_Estus_Interrupt;
-            case LuaPlayerAction.Roll: return ref c.LuaEditor_FirstPerson_Roll_Interrupt;
-            default: return ref c.LuaEditor_FirstPerson_Jump_Interrupt;
+            case LuaPlayerAction.Attack: return ref c.LuaEditor.LuaEditor_FirstPerson_Attack_Interrupt;
+            case LuaPlayerAction.Guard: return ref c.LuaEditor.LuaEditor_FirstPerson_Guard_Interrupt;
+            case LuaPlayerAction.Estus: return ref c.LuaEditor.LuaEditor_FirstPerson_Estus_Interrupt;
+            case LuaPlayerAction.Roll: return ref c.LuaEditor.LuaEditor_FirstPerson_Roll_Interrupt;
+            default: return ref c.LuaEditor.LuaEditor_FirstPerson_Jump_Interrupt;
         }
     }
 
@@ -122,11 +122,11 @@ public sealed class LuaFirstPerson : IViewportWalker
         var c = CFG.Current;
         switch (action)
         {
-            case LuaPlayerAction.Attack: return ref c.LuaEditor_FirstPerson_Attack_SpEffects;
-            case LuaPlayerAction.Guard: return ref c.LuaEditor_FirstPerson_Guard_SpEffects;
-            case LuaPlayerAction.Estus: return ref c.LuaEditor_FirstPerson_Estus_SpEffects;
-            case LuaPlayerAction.Roll: return ref c.LuaEditor_FirstPerson_Roll_SpEffects;
-            default: return ref c.LuaEditor_FirstPerson_Jump_SpEffects;
+            case LuaPlayerAction.Attack: return ref c.LuaEditor.LuaEditor_FirstPerson_Attack_SpEffects;
+            case LuaPlayerAction.Guard: return ref c.LuaEditor.LuaEditor_FirstPerson_Guard_SpEffects;
+            case LuaPlayerAction.Estus: return ref c.LuaEditor.LuaEditor_FirstPerson_Estus_SpEffects;
+            case LuaPlayerAction.Roll: return ref c.LuaEditor.LuaEditor_FirstPerson_Roll_SpEffects;
+            default: return ref c.LuaEditor.LuaEditor_FirstPerson_Jump_SpEffects;
         }
     }
 
@@ -135,11 +135,11 @@ public sealed class LuaFirstPerson : IViewportWalker
         var c = CFG.Current;
         switch (action)
         {
-            case LuaPlayerAction.Attack: return ref c.LuaEditor_FirstPerson_Attack_Duration;
-            case LuaPlayerAction.Guard: return ref c.LuaEditor_FirstPerson_Guard_Duration;
-            case LuaPlayerAction.Estus: return ref c.LuaEditor_FirstPerson_Estus_Duration;
-            case LuaPlayerAction.Roll: return ref c.LuaEditor_FirstPerson_Roll_Duration;
-            default: return ref c.LuaEditor_FirstPerson_Jump_Duration;
+            case LuaPlayerAction.Attack: return ref c.LuaEditor.LuaEditor_FirstPerson_Attack_Duration;
+            case LuaPlayerAction.Guard: return ref c.LuaEditor.LuaEditor_FirstPerson_Guard_Duration;
+            case LuaPlayerAction.Estus: return ref c.LuaEditor.LuaEditor_FirstPerson_Estus_Duration;
+            case LuaPlayerAction.Roll: return ref c.LuaEditor.LuaEditor_FirstPerson_Roll_Duration;
+            default: return ref c.LuaEditor.LuaEditor_FirstPerson_Jump_Duration;
         }
     }
 
@@ -323,7 +323,7 @@ public sealed class LuaFirstPerson : IViewportWalker
         var shadow = ImGui.GetColorU32(new Vector4(0, 0, 0, 0.6f));
         var centre = ViewportCentre(viewport);
 
-        if (IsCaptured && CFG.Current.LuaEditor_FirstPerson_Crosshair)
+        if (IsCaptured && CFG.Current.LuaEditor.LuaEditor_FirstPerson_Crosshair)
         {
             var arm = 6 * scale;
             foreach (var (color, offset) in new[] { (shadow, Vector2.One), (white, Vector2.Zero) })
@@ -384,7 +384,7 @@ public sealed class LuaFirstPerson : IViewportWalker
     {
         if (delta == Vector2.Zero)
             return;
-        var speed = camera.CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
+        var speed = camera.CameraTurnSpeedMouse * CFG.Current.Viewport.Viewport_Camera_Sensitivity;
         var euler = camera.CameraTransform.EulerRotation;
         euler.Y += delta.X * speed;
         euler.X = Math.Clamp(euler.X + delta.Y * speed, -LookLimit, LookLimit);
@@ -403,7 +403,7 @@ public sealed class LuaFirstPerson : IViewportWalker
         {
             // A roll carries the player its distance over its time, whatever the keys say
             var step = Math.Min(dt, RollLeft);
-            Feet += RollDirection * (cfg.LuaEditor_FirstPerson_Roll_Distance / Math.Max(cfg.LuaEditor_FirstPerson_Roll_Time, 0.05f)) * step;
+            Feet += RollDirection * (cfg.LuaEditor.LuaEditor_FirstPerson_Roll_Distance / Math.Max(cfg.LuaEditor.LuaEditor_FirstPerson_Roll_Time, 0.05f)) * step;
             RollLeft -= dt;
         }
         else if (withKeys)
@@ -419,9 +419,9 @@ public sealed class LuaFirstPerson : IViewportWalker
                 move = Vector3.Normalize(move);
 
             // A guard walks slowly, as in the games
-            var speed = Guarding ? cfg.LuaEditor_FirstPerson_Walk_Speed * 0.5f
-                : InputManager.IsDown(KeybindID.MapEditor_FirstPerson_Run) ? cfg.LuaEditor_FirstPerson_Run_Speed
-                : cfg.LuaEditor_FirstPerson_Walk_Speed;
+            var speed = Guarding ? cfg.LuaEditor.LuaEditor_FirstPerson_Walk_Speed * 0.5f
+                : InputManager.IsDown(KeybindID.MapEditor_FirstPerson_Run) ? cfg.LuaEditor.LuaEditor_FirstPerson_Run_Speed
+                : cfg.LuaEditor.LuaEditor_FirstPerson_Walk_Speed;
             Feet += move * speed * dt;
             RollDirection = move.LengthSquared() > FacingTolerance ? Vector3.Normalize(move) : facing;
         }
@@ -456,7 +456,7 @@ public sealed class LuaFirstPerson : IViewportWalker
 
         if (InputManager.IsPressed(KeybindID.LuaEditor_FirstPerson_Roll) && OnGround && RollLeft <= 0)
         {
-            RollLeft = CFG.Current.LuaEditor_FirstPerson_Roll_Time;
+            RollLeft = CFG.Current.LuaEditor.LuaEditor_FirstPerson_Roll_Time;
             if (RollDirection.LengthSquared() < FacingTolerance)
                 RollDirection = Facing(camera);
             Perform(LuaPlayerAction.Roll, camera);
@@ -464,7 +464,7 @@ public sealed class LuaFirstPerson : IViewportWalker
 
         if (InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Jump) && OnGround)
         {
-            VerticalSpeed = CFG.Current.LuaEditor_FirstPerson_Jump_Speed;
+            VerticalSpeed = CFG.Current.LuaEditor.LuaEditor_FirstPerson_Jump_Speed;
             Feet.Y = 0.001f;
             Perform(LuaPlayerAction.Jump, camera);
         }
@@ -494,14 +494,14 @@ public sealed class LuaFirstPerson : IViewportWalker
         if (InterruptOf(action) is { Length: > 0 } type)
             Viewer.Interrupts.Fire(type.Trim(), null, via);
 
-        if (action == LuaPlayerAction.Attack && CFG.Current.LuaEditor_FirstPerson_Attack_Damaged && Viewer.Self is { } self)
+        if (action == LuaPlayerAction.Attack && CFG.Current.LuaEditor.LuaEditor_FirstPerson_Attack_Damaged && Viewer.Self is { } self)
         {
             var toSelf = self.Position - Feet;
             toSelf.Y = 0;
             var distance = toSelf.Length();
             var inFront = distance < FacingTolerance ||
                           Vector3.Dot(Vector3.Normalize(toSelf), Facing(camera)) >= MathF.Cos(AttackHalfAngle * MathF.PI / 180);
-            if (distance <= CFG.Current.LuaEditor_FirstPerson_Attack_Reach && inFront)
+            if (distance <= CFG.Current.LuaEditor.LuaEditor_FirstPerson_Attack_Reach && inFront)
                 Viewer.Interrupts.Fire("Damaged", null, via);
         }
     }
@@ -529,6 +529,6 @@ public sealed class LuaFirstPerson : IViewportWalker
             return;
         var camera = viewport.ViewportCamera;
         Viewer.SetTargetPose(Feet, Facing(camera));
-        camera.CameraTransform.Position = Feet + new Vector3(0, CFG.Current.LuaEditor_FirstPerson_Eye_Height, 0);
+        camera.CameraTransform.Position = Feet + new Vector3(0, CFG.Current.LuaEditor.LuaEditor_FirstPerson_Eye_Height, 0);
     }
 }

@@ -27,7 +27,7 @@ public class EsdStateView
     private bool CachedCodeView;
     private EsdCode Code;
 
-    public bool IsCodeView => CFG.Current.EsdEditor_Code_View;
+    public bool IsCodeView => CFG.Current.EsdEditor.EsdEditor_Code_View;
 
     // The machine's problems (EsdChecks), by the condition or command they're on
     private List<EsdProblem> Problems = new();
@@ -165,18 +165,18 @@ public class EsdStateView
         GUI.Tooltip(LOC.Get("ESD_States_Back_TT"));
 
         ImGui.SameLine();
-        var code = CFG.Current.EsdEditor_Code_View;
+        var code = CFG.Current.EsdEditor.EsdEditor_Code_View;
         if (ImGui.Checkbox($"{LOC.Get("ESD_Code_Toggle")}##esdCodeView", ref code))
         {
-            CFG.Current.EsdEditor_Code_View = code;
+            CFG.Current.EsdEditor.EsdEditor_Code_View = code;
             selection.ScrollToItem = true;
         }
         GUI.Tooltip(LOC.Get("ESD_Code_Toggle_TT"));
 
         ImGui.SameLine();
-        var showComments = CFG.Current.EsdEditor_Show_Comments;
+        var showComments = CFG.Current.EsdEditor.EsdEditor_Show_Comments;
         if (ImGui.Checkbox($"{LOC.Get("ESD_Comments_Toggle")}##esdShowComments", ref showComments))
-            CFG.Current.EsdEditor_Show_Comments = showComments;
+            CFG.Current.EsdEditor.EsdEditor_Show_Comments = showComments;
         GUI.Tooltip(LOC.Get("ESD_Comments_Toggle_TT"));
 
         if (selection.Machine is { } machine && selection.SelectedMachine is long id)
@@ -517,7 +517,7 @@ public class EsdStateView
         var width = ImGui.GetContentRegionAvail().X;
 
         // The comment column takes the right of the view while the machine has comments (or one is being written)
-        var showComments = CFG.Current.EsdEditor_Show_Comments && Comments != null && (MachineHasComments() || EditCommentBlock != null);
+        var showComments = CFG.Current.EsdEditor.EsdEditor_Show_Comments && Comments != null && (MachineHasComments() || EditCommentBlock != null);
         var commentW = 240f * DPI.UIScale();
         var commentGap = 16f * DPI.UIScale();
         var blocksW = Math.Max(width - (showComments ? commentW + commentGap : 0f), 420f * DPI.UIScale());
@@ -620,7 +620,7 @@ public class EsdStateView
             var editorBottom = DrawCommentColumn(drawList, tops, first, last, lineH, blockH, editorH, x1, cx0, cx1, origin);
             totalH = Math.Max(totalH, editorBottom - origin.Y + 8f);
         }
-        else if (EditCommentBlock != null && !CFG.Current.EsdEditor_Show_Comments)
+        else if (EditCommentBlock != null && !CFG.Current.EsdEditor.EsdEditor_Show_Comments)
         {
             // Comments hidden while one was open (an editor opened this frame, from a block's menu, shows next frame)
             CommentDiag("editor closed: comments hidden");
@@ -666,7 +666,7 @@ public class EsdStateView
         EditCommentRow = Rows.IndexOf(row);
         CommentText = Comments.Get(block) ?? "";
         FocusComment = true;
-        CFG.Current.EsdEditor_Show_Comments = true;
+        CFG.Current.EsdEditor.EsdEditor_Show_Comments = true;
         CommentDiag($"begin on {row.Kind} (state {row.StateId}), row {EditCommentRow} of {Rows.Count}");
     }
 

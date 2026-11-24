@@ -64,7 +64,7 @@ public class ProjectVFS : IDisposable
 
             var andreGame = Project.Descriptor.ProjectType.AsAndreGame();
 
-            if(CFG.Current.Project_VFS_Prefer_Loose_Files)
+            if(CFG.Current.Project.Project_VFS_Prefer_Loose_Files)
             {
                 fileSystems.Add(VanillaRealFS);
             }
@@ -85,7 +85,7 @@ public class ProjectVFS : IDisposable
                 VanillaFS = EmptyVirtualFileSystem.Instance;
             }
 
-            if (!CFG.Current.Project_VFS_Prefer_Loose_Files)
+            if (!CFG.Current.Project.Project_VFS_Prefer_Loose_Files)
             {
                 fileSystems.Add(VanillaRealFS);
             }

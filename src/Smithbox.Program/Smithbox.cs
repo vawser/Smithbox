@@ -161,7 +161,7 @@ public class Smithbox
 
         if (CurrentBackend is RenderingBackend.OpenGL)
         {
-            if (!CFG.Current.Block_OpenGL_Warning)
+            if (!CFG.Current.Program.Block_OpenGL_Warning)
             {
                 var dialog = PlatformUtils.Instance.MessageBox(
                     LOC.Get("SYS_OpenGL_Warning_Text"),
@@ -171,7 +171,7 @@ public class Smithbox
 
                 if(dialog is DialogResult.OK)
                 {
-                    CFG.Current.Block_OpenGL_Warning = true;
+                    CFG.Current.Program.Block_OpenGL_Warning = true;
                     CFG.Save();
                 }
             }
@@ -259,12 +259,12 @@ public class Smithbox
             "LOG_Action_Log",
             evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
             //fade time is calculated to be the configured fade time in frames, but we need ms.
-            () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
+            () => (enabled: CFG.Current.Program.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Program.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Program.Logger_Enable_Color_Fade)
         );
         WarningLogger = new(
             "LOG_Error_Log",
             evt => evt.Level is LogLevel.Warning or LogLevel.Error && !IsHiddenFileDictionaryWarning(evt),
-            () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
+            () => (enabled: CFG.Current.Program.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Program.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Program.Logger_Enable_Color_Fade)
         );
         HighPriorityLogSubscription = TaskLogs.Subscribe(
             evt => evt.Priority == LogPriority.High
@@ -279,7 +279,7 @@ public class Smithbox
     {
         return evt.Level is LogLevel.Warning
             && evt.Category == typeof(Andre.IO.VFS.ArchiveBinderVirtualFileSystem).FullName
-            && CFG.Current is { Logger_Hide_File_Dictionary_Warnings: true };
+            && CFG.Current is { Program.Logger_Hide_File_Dictionary_Warnings: true };
     }
 
     private void Setup()
@@ -291,14 +291,17 @@ public class Smithbox
         CFG.Load();
         UI.Load();
 
+        // The renderer reads its sections of the loaded configuration (before the graphics context is made)
+        RenderSettings.Use(CFG.Current.Viewport, CFG.Current.Graphics);
+
         PreferencesUtil.Setup();
 
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
         BinaryReaderEx.CurrentProjectType = "";
-        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_Ignore_Read_Asserts;
-        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_Apply_DCX_Heuristic;
+        BinaryReaderEx.IgnoreAsserts = CFG.Current.Program.System_Ignore_Read_Asserts;
+        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.Program.System_Apply_DCX_Heuristic;
     }
 
 
@@ -363,7 +366,7 @@ public class Smithbox
     {
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
 
-        var scaleFine = (float)Math.Round(CFG.Current.Interface_Font_Size * DPI.UIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface.Interface_Font_Size * DPI.UIScale());
 
         // The CJK ranges of the additional fonts hold tens of thousands of glyphs. ImGui makes the atlas at most
         // 4096 wide and grows it in height, which at a large font size or UI scale can pass the largest texture
@@ -427,7 +430,7 @@ public class Smithbox
 
         // The first font of an atlas can't be a merge font, so the built-in one stands in when the English font
         // can't be used. Otherwise a bad font path in the preferences would fail every launch.
-        if (!AddEnglishFont(fonts, cfg, CFG.Current.English_Font, scale))
+        if (!AddEnglishFont(fonts, cfg, CFG.Current.Interface.English_Font, scale))
         {
             cfg.MergeMode = false;
             cfg.GlyphMinAdvanceX = 5.0f;
@@ -438,11 +441,11 @@ public class Smithbox
 
         if (includeAdditional)
         {
-            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_1, scale);
-            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_2, scale);
-            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_3, scale);
-            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_4, scale);
-            AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_5, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Interface.Additional_Font_1, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Interface.Additional_Font_2, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Interface.Additional_Font_3, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Interface.Additional_Font_4, scale);
+            AddAdditionaFont(fonts, cfg, CFG.Current.Interface.Additional_Font_5, scale);
         }
 
         AddIconFont(fonts, cfg, scale);
@@ -654,7 +657,7 @@ public class Smithbox
             else
             {
                 // Clamped to the preference slider's range: a hand-edited 0 would make the frame limiter wait forever
-                _desiredFrameLengthSeconds = 1.0 / Math.Clamp(CFG.Current.Viewport_Frame_Rate, 20.0f, 240.0f);
+                _desiredFrameLengthSeconds = 1.0 / Math.Clamp(CFG.Current.Viewport.Viewport_Frame_Rate, 20.0f, 240.0f);
             }
 
             var currentFrameTicks = sw.ElapsedTicks;
@@ -847,7 +850,7 @@ public class Smithbox
         // Show popups for high priority log events
         if (HighPriorityLogSubscription.TryDequeue(out var evt))
         {
-            if (evt.Priority == LogPriority.High && CFG.Current.Logger_Enable_Log_Popups)
+            if (evt.Priority == LogPriority.High && CFG.Current.Program.Logger_Enable_Log_Popups)
             {
                 var popupMessage = evt.Message;
 
@@ -904,7 +907,7 @@ public class Smithbox
                     }
                     GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Github_TT"));
 
-                    if (CFG.Current.Developer_Enable_Tools)
+                    if (CFG.Current.Developer.Developer_Enable_Tools)
                     {
                         DeveloperPanel.DisplayDropdown();
                     }

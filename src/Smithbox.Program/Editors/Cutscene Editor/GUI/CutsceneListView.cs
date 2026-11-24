@@ -104,7 +104,7 @@ public class CutsceneListView
             ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Loading", backdrop.LoadingMapId));
         else if (backdrop.LoadedMapId != null)
             ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Loaded", backdrop.LoadedMapId, backdrop.PieceCount, backdrop.PartCount));
-        else if (!CFG.Current.CutsceneEditor_Load_Map)
+        else if (!CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map)
             ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Off"));
     }
 

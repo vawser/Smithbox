@@ -194,14 +194,14 @@ public class MassEditPopupMenu
 
         // Toggle: Append New Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_Checkbox_Append_Mode")}##toggleAppendMode", 
-            ref CFG.Current.Param_CSV_Append_Only);
+            ref CFG.Current.ParamEditor.Param_CSV_Append_Only);
         GUI.Tooltip(LOC.Get("PARAM_MassEdit_Checkbox_Append_Mode_TT"));
 
-        if (CFG.Current.Param_CSV_Append_Only)
+        if (CFG.Current.ParamEditor.Param_CSV_Append_Only)
         {
             // Toggle: Replace Existing Rows
             ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_Checkbox_Replace_Existing")}##toggleReplaceExisting", 
-                ref CFG.Current.Param_CSV_Replace_Row);
+                ref CFG.Current.ParamEditor.Param_CSV_Replace_Row);
             GUI.Tooltip(LOC.Get("Replace existing rows instead of updating them (they will be moved to the end)"));
         }
 
@@ -284,8 +284,8 @@ public class MassEditPopupMenu
         var delimiter = CFG.Current.Param_Export_Delimiter[0];
 
         (var result, CompoundAction action) = ParamIO.ApplyCSV(Parent.Project, Parent.CurrentView.GetPrimaryBank(),
-                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), CFG.Current.Param_CSV_Append_Only,
-                CFG.Current.Param_CSV_Append_Only && CFG.Current.Param_CSV_Replace_Row, delimiter);
+                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), CFG.Current.ParamEditor.Param_CSV_Append_Only,
+                CFG.Current.ParamEditor.Param_CSV_Append_Only && CFG.Current.ParamEditor.Param_CSV_Replace_Row, delimiter);
 
         if (action != null)
         {

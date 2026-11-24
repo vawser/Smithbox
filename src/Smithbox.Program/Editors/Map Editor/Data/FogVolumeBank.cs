@@ -217,13 +217,13 @@ public class FogVolumeBank
         var lighting = Project.Handler.MapData.GparamLightingBank;
 
         var own = lighting.GetDefaultFile(mapId);
-        var chosen = CFG.Current.Viewport_Map_Lighting ? lighting.ChooseFile(mapId, CFG.Current.Viewport_Map_Lighting_File) : own;
+        var chosen = CFG.Current.Viewport.Viewport_Map_Lighting ? lighting.ChooseFile(mapId, CFG.Current.Viewport.Viewport_Map_Lighting_File) : own;
 
         // The chosen weather's shared overlays first, as the map lighting reads them: Elden Ring's outdoor ones set
         // the overworld's shared fog IDs (1101, 1160, 1300, 1307). The area's other GPARAMs come last, in ListFiles'
         // order: the plain ones (mAA_BB_0100) before those for events and weather.
-        var overlays = CFG.Current.Viewport_Map_Lighting
-            ? lighting.GetWeatherOverlays(CFG.Current.Viewport_Map_Lighting_Weather)
+        var overlays = CFG.Current.Viewport.Viewport_Map_Lighting
+            ? lighting.GetWeatherOverlays(CFG.Current.Viewport.Viewport_Map_Lighting_Weather)
             : new List<string>();
 
         var names = overlays
@@ -245,7 +245,7 @@ public class FogVolumeBank
         if (rows.Count == 0)
             return FogVolumeSettings.Default;
 
-        return ReadSettings(rows, fogId, CFG.Current.Viewport_Map_Lighting_Hours);
+        return ReadSettings(rows, fogId, CFG.Current.Viewport.Viewport_Map_Lighting_Hours);
     }
 
     /// <summary>
@@ -257,9 +257,9 @@ public class FogVolumeBank
         if (!CanUse())
             return;
 
-        var inputs = (CFG.Current.Viewport_Map_Lighting, CFG.Current.Viewport_Map_Lighting_File ?? "",
-            CFG.Current.Viewport_Map_Lighting_Weather, CFG.Current.Viewport_Map_Lighting_Weather_Outdoor,
-            CFG.Current.Viewport_Map_Lighting_Hours);
+        var inputs = (CFG.Current.Viewport.Viewport_Map_Lighting, CFG.Current.Viewport.Viewport_Map_Lighting_File ?? "",
+            CFG.Current.Viewport.Viewport_Map_Lighting_Weather, CFG.Current.Viewport.Viewport_Map_Lighting_Weather_Outdoor,
+            CFG.Current.Viewport.Viewport_Map_Lighting_Hours);
 
         if (SettingsInputs != inputs)
         {

@@ -233,8 +233,8 @@ public partial class EdgeEditorTool
     /// </summary>
     private PickHit PickAll(Vector3 origin, Vector3 direction)
     {
-        var pointRadius = MathF.Max(CFG.Current.Viewport_Edge_Point_Size * 1.6f, 0.08f);
-        var segmentRadius = MathF.Max(CFG.Current.Viewport_Edge_Segment_Radius * 3.0f, 0.08f);
+        var pointRadius = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size * 1.6f, 0.08f);
+        var segmentRadius = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Segment_Radius * 3.0f, 0.08f);
 
         PickHit handleHit = new(null, null, -1, float.MaxValue);
         PickHit segmentHit = new(null, null, -1, float.MaxValue);
@@ -511,11 +511,11 @@ public partial class EdgeEditorTool
 
         if (HoverMesh == null)
         {
-            HoverMesh = RenderableHelper.GetEdgeMarkerWireProxy(scene, false, CFG.Current.Viewport_Edge_Hover_Color, true);
+            HoverMesh = RenderableHelper.GetEdgeMarkerWireProxy(scene, false, CFG.Current.Viewport.Viewport_Edge_Hover_Color, true);
             HoverMesh.DrawFilter = RenderFilter.EdgePoint;
         }
 
-        var size = MathF.Max(CFG.Current.Viewport_Edge_Point_Size, 0.01f) * (handle.Kind is EdgeHandleKind.Pull ? 1.2f : 1.9f);
+        var size = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.01f) * (handle.Kind is EdgeHandleKind.Pull ? 1.2f : 1.9f);
         var position = Vector3.Transform(handle.Position, part.GetWorldMatrix());
 
         HoverMesh.World = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(position);

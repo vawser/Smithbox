@@ -151,7 +151,7 @@ public class ProjectAliasMenu
             GUI.Tooltip(LOC.Get("META_AliasMenu_Menu_Save_Local_Aliases_TT", saveFolder));
 
             // Save Base Aliases
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
                 if (ImGui.Selectable($"{LOC.Get("META_AliasMenu_Menu_Save_Base_Aliases")}##saveBaseAliasesAction"))
                 {
@@ -173,21 +173,21 @@ public class ProjectAliasMenu
             // Base Source
             if (ImGui.MenuItem($"{LOC.Get("META_AliasMenu_Menu_Base_Source")}##baseSourceSelect"))
             {
-                CFG.Current.Project_Alias_Editor_Use_Base_Source = !CFG.Current.Project_Alias_Editor_Use_Base_Source;
+                CFG.Current.Project.Project_Alias_Editor_Use_Base_Source = !CFG.Current.Project.Project_Alias_Editor_Use_Base_Source;
 
                 curProject.Handler.ProjectData.ReloadAliases();
             }
-            GUI.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Base_Source);
+            GUI.ShowActiveStatus(CFG.Current.Project.Project_Alias_Editor_Use_Base_Source);
             GUI.Tooltip(LOC.Get("META_AliasMenu_Menu_Base_Source_TT"));
 
             // Project Source
             if (ImGui.MenuItem($"{LOC.Get("META_AliasMenu_Menu_Project_Source")}##projectSourceSelect"))
             {
-                CFG.Current.Project_Alias_Editor_Use_Project_Source = !CFG.Current.Project_Alias_Editor_Use_Project_Source;
+                CFG.Current.Project.Project_Alias_Editor_Use_Project_Source = !CFG.Current.Project.Project_Alias_Editor_Use_Project_Source;
 
                 curProject.Handler.ProjectData.ReloadAliases();
             }
-            GUI.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Project_Source);
+            GUI.ShowActiveStatus(CFG.Current.Project.Project_Alias_Editor_Use_Project_Source);
             GUI.Tooltip(LOC.Get("META_AliasMenu_Menu_Project_Source_TT"));
 
             ImGui.EndMenu();
@@ -201,7 +201,7 @@ public class ProjectAliasMenu
         // Options
         if (ImGui.BeginMenu($"{LOC.Get("META_AliasMenu_Menu_Options")}##optionsMenuHeader"))
         {
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
                 // Save Shortcut applies to Base Source
                 if (ImGui.BeginMenu($"{LOC.Get("META_AliasMenu_Menu_Save")}##saveMenuHeader"))
@@ -209,7 +209,7 @@ public class ProjectAliasMenu
                     // Save Shortcut 
                     ImGui.Checkbox(
                         $"{LOC.Get("META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}##saveShortcutToggleAction", 
-                        ref CFG.Current.Project_Alias_Editor_Save_Applies_To_Base);
+                        ref CFG.Current.Project.Project_Alias_Editor_Save_Applies_To_Base);
 
                     GUI.Tooltip(
                         LOC.Get("META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source_TT"));
@@ -224,7 +224,7 @@ public class ProjectAliasMenu
                 // Insert New at Top
                 ImGui.Checkbox(
                     $"{LOC.Get("META_AliasMenu_Menu_Insert_New_At_Top")}##insertAtTopToggleAction", 
-                    ref CFG.Current.Project_Alias_Editor_Add_Insert_At_Top);
+                    ref CFG.Current.Project.Project_Alias_Editor_Add_Insert_At_Top);
 
                 GUI.Tooltip(
                     LOC.Get("META_AliasMenu_Menu_Insert_New_At_Top_TT"));
@@ -241,12 +241,12 @@ public class ProjectAliasMenu
                     LOC.Get("META_AliasMenu_Header_Export_Delimiter_TT"));
 
                 ImGui.InputText("##exportDelimiter", 
-                    ref CFG.Current.Project_Alias_Export_Delimiter, 255);
+                    ref CFG.Current.Project.Project_Alias_Export_Delimiter, 255);
 
                 // Ignore Empty on Export
                 ImGui.Checkbox(
                     $"{LOC.Get("META_AliasMenu_Checkbox_Ignore_Empty_On_Export")}##ignoreEmptyToggle", 
-                    ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
+                    ref CFG.Current.Project.Project_Alias_Editor_Export_Ignore_Empty);
 
                 GUI.Tooltip(
                     LOC.Get("META_AliasMenu_Checkbox_Ignore_Empty_On_Export_TT"));
@@ -336,7 +336,7 @@ public class ProjectAliasMenu
             // Save
             if (InputManager.IsPressed(KeybindID.Save))
             {
-                if (CFG.Current.Project_Alias_Editor_Save_Applies_To_Base)
+                if (CFG.Current.Project.Project_Alias_Editor_Save_Applies_To_Base)
                 {
                     SaveBaseAliases();
                 }
@@ -449,13 +449,13 @@ public class ProjectAliasMenu
 
                     foreach (var aliasEntry in source)
                     {
-                        if (CFG.Current.Project_Alias_Editor_Export_Ignore_Empty)
+                        if (CFG.Current.Project.Project_Alias_Editor_Export_Ignore_Empty)
                         {
                             if (aliasEntry.Name == "")
                                 continue;
                         }
 
-                        var line = $"{aliasEntry.ID}{CFG.Current.Project_Alias_Export_Delimiter}{aliasEntry.Name}";
+                        var line = $"{aliasEntry.ID}{CFG.Current.Project.Project_Alias_Export_Delimiter}{aliasEntry.Name}";
                         entries.Add(line);
                     }
 
@@ -463,7 +463,7 @@ public class ProjectAliasMenu
                     PlatformUtils.Instance.SetClipboardText(output);
                 }
 
-                if (CFG.Current.Developer_Enable_Tools)
+                if (CFG.Current.Developer.Developer_Enable_Tools)
                 {
                     // Copy Entries as Table
                     if (ImGui.Selectable($"{LOC.Get("META_AliasMenu_Action_Copy_Entries_As_Table")}##copyEntriesAsTableAction"))
@@ -627,10 +627,10 @@ public class ProjectAliasMenu
 
         var sources = new List<string>();
 
-        if (CFG.Current.Project_Alias_Editor_Use_Base_Source)
+        if (CFG.Current.Project.Project_Alias_Editor_Use_Base_Source)
             sources.Add(LOC.Get("META_AliasMenu_Source_Base"));
 
-        if (CFG.Current.Project_Alias_Editor_Use_Project_Source)
+        if (CFG.Current.Project.Project_Alias_Editor_Use_Project_Source)
             sources.Add(LOC.Get("META_AliasMenu_Source_Project"));
 
         var sourceText = sources.Count > 0 ? string.Join(", ", sources) : LOC.Get("META_AliasMenu_Source_None");
@@ -869,7 +869,7 @@ public class ProjectAliasMenu
         };
 
         var index = source.Count;
-        if(CFG.Current.Project_Alias_Editor_Add_Insert_At_Top)
+        if(CFG.Current.Project.Project_Alias_Editor_Add_Insert_At_Top)
         {
             index = 0;
         }

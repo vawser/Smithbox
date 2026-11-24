@@ -51,24 +51,24 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
         TargetMap = targetMap;
         TargetBTL = targetBTL;
 
-        if (CFG.Current.Replicator_Mode_Group)
-            iterationCount = CFG.Current.Replicator_Group_Clone_Amount;
+        if (CFG.Current.MapEditor.Replicator_Mode_Group)
+            iterationCount = CFG.Current.MapEditor.Replicator_Group_Clone_Amount;
 
-        if (CFG.Current.Replicator_Mode_Line)
-            iterationCount = CFG.Current.Replicator_Line_Clone_Amount;
+        if (CFG.Current.MapEditor.Replicator_Mode_Line)
+            iterationCount = CFG.Current.MapEditor.Replicator_Line_Clone_Amount;
 
-        if (CFG.Current.Replicator_Mode_Circle)
-            iterationCount = CFG.Current.Replicator_Circle_Size;
+        if (CFG.Current.MapEditor.Replicator_Mode_Circle)
+            iterationCount = CFG.Current.MapEditor.Replicator_Circle_Size;
 
-        if (CFG.Current.Replicator_Mode_Square)
+        if (CFG.Current.MapEditor.Replicator_Mode_Square)
         {
-            iterationCount = CFG.Current.Replicator_Square_Size * 4 - 1;
+            iterationCount = CFG.Current.MapEditor.Replicator_Square_Size * 4 - 1;
             currentSquareSide = ReplicateSquareSideType.Bottom;
 
-            squareTopCount = CFG.Current.Replicator_Square_Size;
-            squareLeftCount = CFG.Current.Replicator_Square_Size - 1;
-            squareRightCount = CFG.Current.Replicator_Square_Size;
-            squareBottomCount = CFG.Current.Replicator_Square_Size;
+            squareTopCount = CFG.Current.MapEditor.Replicator_Square_Size;
+            squareLeftCount = CFG.Current.MapEditor.Replicator_Square_Size - 1;
+            squareRightCount = CFG.Current.MapEditor.Replicator_Square_Size;
+            squareBottomCount = CFG.Current.MapEditor.Replicator_Square_Size;
         }
     }
 
@@ -157,23 +157,23 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
                 CloneSources.Add(source);
 
                 // Apply other property changes
-                if (CFG.Current.Replicator_Increment_Entity_ID)
+                if (CFG.Current.MapEditor.Replicator_Increment_Entity_ID)
                 {
                     MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
                 }
-                if (CFG.Current.Replicator_Increment_InstanceID)
+                if (CFG.Current.MapEditor.Replicator_Increment_InstanceID)
                 {
                     MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
                 }
-                if (CFG.Current.Replicator_Increment_PartNames)
+                if (CFG.Current.MapEditor.Replicator_Increment_PartNames)
                 {
                     MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
                 }
-                if (CFG.Current.Replicator_Clear_Entity_ID)
+                if (CFG.Current.MapEditor.Replicator_Clear_Entity_ID)
                 {
                     MapEditorActionHelper.ClearEntityID(View, newobj, map);
                 }
-                if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
+                if (CFG.Current.MapEditor.Replicator_Clear_Entity_Group_IDs)
                 {
                     MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
                 }
@@ -239,37 +239,37 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
         var newRot = objT.Rotation;
         var newScale = objT.Scale;
 
-        if (CFG.Current.Replicator_Mode_Line)
+        if (CFG.Current.MapEditor.Replicator_Mode_Line)
         {
-            var posOffset = CFG.Current.Replicator_Line_Position_Offset * (1 + iteration);
+            var posOffset = CFG.Current.MapEditor.Replicator_Line_Position_Offset * (1 + iteration);
 
-            if (CFG.Current.Replicator_Line_Offset_Direction_Flipped)
+            if (CFG.Current.MapEditor.Replicator_Line_Offset_Direction_Flipped)
             {
                 posOffset = posOffset * -1;
             }
 
-            if (CFG.Current.Replicator_Line_Position_Offset_Axis_X)
+            if (CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_X)
             {
                 newPos = new Vector3(newPos[0] + posOffset, newPos[1], newPos[2]);
             }
 
-            if (CFG.Current.Replicator_Line_Position_Offset_Axis_Y)
+            if (CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Y)
             {
                 newPos = new Vector3(newPos[0], newPos[1] + posOffset, newPos[2]);
             }
 
-            if (CFG.Current.Replicator_Line_Position_Offset_Axis_Z)
+            if (CFG.Current.MapEditor.Replicator_Line_Position_Offset_Axis_Z)
             {
                 newPos = new Vector3(newPos[0], newPos[1], newPos[2] + posOffset);
             }
         }
 
-        if (CFG.Current.Replicator_Mode_Circle)
+        if (CFG.Current.MapEditor.Replicator_Mode_Circle)
         {
             // 360.0: an int division gave uneven spacing for counts that do not divide 360
-            double angleIncrement = 360.0 / CFG.Current.Replicator_Circle_Size;
+            double angleIncrement = 360.0 / CFG.Current.MapEditor.Replicator_Circle_Size;
 
-            double radius = CFG.Current.Replicator_Circle_Radius;
+            double radius = CFG.Current.MapEditor.Replicator_Circle_Radius;
             double angle = angleIncrement * iteration;
             double rad = angle * (Math.PI / 180);
 
@@ -280,7 +280,7 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
             newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
 
-        if (CFG.Current.Replicator_Mode_Square)
+        if (CFG.Current.MapEditor.Replicator_Mode_Square)
         {
             if (currentSquareSide == ReplicateSquareSideType.Bottom && squareBottomCount <= 0)
             {
@@ -301,7 +301,7 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
             // Bottom
             if (currentSquareSide == ReplicateSquareSideType.Bottom)
             {
-                float width_increment = CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size * squareBottomCount;
+                float width_increment = CFG.Current.MapEditor.Replicator_Square_Width / CFG.Current.MapEditor.Replicator_Square_Size * squareBottomCount;
                 float x = newPos[0] - width_increment;
 
                 newPos = new Vector3(x, newPos[1], newPos[2]);
@@ -312,10 +312,10 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
             // Left
             if (currentSquareSide == ReplicateSquareSideType.Left)
             {
-                float width_increment = CFG.Current.Replicator_Square_Width;
+                float width_increment = CFG.Current.MapEditor.Replicator_Square_Width;
                 float x = newPos[0] - width_increment;
 
-                float height_increment = CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size * squareLeftCount;
+                float height_increment = CFG.Current.MapEditor.Replicator_Square_Depth / CFG.Current.MapEditor.Replicator_Square_Size * squareLeftCount;
                 float z = newPos[2] + height_increment;
 
                 newPos = new Vector3(x, newPos[1], z);
@@ -326,10 +326,10 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
             // Top
             if (currentSquareSide == ReplicateSquareSideType.Top)
             {
-                float width_increment = CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size * squareTopCount;
+                float width_increment = CFG.Current.MapEditor.Replicator_Square_Width / CFG.Current.MapEditor.Replicator_Square_Size * squareTopCount;
                 float x = newPos[0] - width_increment;
 
-                float height_increment = CFG.Current.Replicator_Square_Depth;
+                float height_increment = CFG.Current.MapEditor.Replicator_Square_Depth;
                 float z = newPos[2] + height_increment;
 
                 newPos = new Vector3(x, newPos[1], z);
@@ -340,7 +340,7 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
             // Right
             if (currentSquareSide == ReplicateSquareSideType.Right)
             {
-                float height_increment = CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size * squareRightCount;
+                float height_increment = CFG.Current.MapEditor.Replicator_Square_Depth / CFG.Current.MapEditor.Replicator_Square_Size * squareRightCount;
                 float z = newPos[2] + height_increment;
 
                 newPos = new Vector3(newPos[0], newPos[1], z);
@@ -349,12 +349,12 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
             }
         }
 
-        if (CFG.Current.Replicator_Mode_Sphere)
+        if (CFG.Current.MapEditor.Replicator_Mode_Sphere)
         {
             // 360.0: an int division gave uneven spacing for counts that do not divide 360
-            double angleIncrement = 360.0 / CFG.Current.Replicator_Circle_Size;
+            double angleIncrement = 360.0 / CFG.Current.MapEditor.Replicator_Circle_Size;
 
-            double radius = CFG.Current.Replicator_Circle_Radius;
+            double radius = CFG.Current.MapEditor.Replicator_Circle_Radius;
             double angle = angleIncrement * iteration;
             double rad = angle * (Math.PI / 180);
 
@@ -391,7 +391,7 @@ public class EntReplicateAction : ViewportAction, IMapHistoryItem
 
     public void ApplyScrambleTransform(MsbEntity newobj)
     {
-        if (CFG.Current.Replicator_Apply_Scramble_Configuration | CFG.Current.Replicator_Mode_Group)
+        if (CFG.Current.MapEditor.Replicator_Apply_Scramble_Configuration | CFG.Current.MapEditor.Replicator_Mode_Group)
         {
             Transform scrambledTransform = View.ScrambleAction.GetScrambledTransform(newobj);
 

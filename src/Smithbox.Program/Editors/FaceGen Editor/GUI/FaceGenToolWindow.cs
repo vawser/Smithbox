@@ -35,25 +35,25 @@ public class FaceGenToolWindow
         // General
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_General"));
 
-        if (CFG.Current.Interface_FaceGenEditor_Tool_ViewportFilters)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Tool_ViewportFilters)
             ViewportFiltersTool.OnToolWindow();
 
         // Editing
-        if (CFG.Current.Interface_FaceGenEditor_Tool_Randomise)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Tool_Randomise)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
             RandomiseTool.OnToolWindow();
         }
 
         // Data Transfer
-        if (CFG.Current.Interface_FaceGenEditor_Tool_FaceLibrary)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Tool_FaceLibrary)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
             LibraryTool.OnToolWindow();
         }
 
         // Validation
-        if (CFG.Current.Interface_FaceGenEditor_Tool_FaceCheck)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Tool_FaceCheck)
         {
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
             CheckTool.OnToolWindow();
@@ -62,10 +62,10 @@ public class FaceGenToolWindow
         // Preview
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Preview"));
 
-        if (CFG.Current.Interface_FaceGenEditor_Tool_CharacterPreview)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Tool_CharacterPreview)
             View.CharacterPreview.OnToolWindow();
 
-        if (CFG.Current.Interface_FaceGenEditor_Tool_AnimationBrowser)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Tool_AnimationBrowser)
             View.AnimationTool.OnToolWindow();
 
         Sections.End();

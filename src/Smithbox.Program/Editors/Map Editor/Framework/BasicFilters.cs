@@ -17,26 +17,26 @@ public class BasicFilters
         // Each is set outright rather than toggled, as the stored filter may not agree with the CFG vars.
         var scene = View.ViewportHandler.ActiveViewport.RenderScene;
 
-        scene.SetDrawFilter(RenderFilter.MapPiece, CFG.Current.MapEditor_BasicFilter_MapPiece);
-        scene.SetDrawFilter(RenderFilter.Object, CFG.Current.MapEditor_BasicFilter_Object);
-        scene.SetDrawFilter(RenderFilter.Character, CFG.Current.MapEditor_BasicFilter_Character);
-        scene.SetDrawFilter(RenderFilter.DummyEnemy, CFG.Current.MapEditor_BasicFilter_DummyEnemy);
-        scene.SetDrawFilter(RenderFilter.DummyAsset, CFG.Current.MapEditor_BasicFilter_DummyAsset);
-        scene.SetDrawFilter(RenderFilter.Region, CFG.Current.MapEditor_BasicFilter_Region);
-        scene.SetDrawFilter(RenderFilter.Light, CFG.Current.MapEditor_BasicFilter_Light);
-        scene.SetDrawFilter(RenderFilter.Collision, CFG.Current.MapEditor_BasicFilter_Collision);
-        scene.SetDrawFilter(RenderFilter.ConnectCollision, CFG.Current.MapEditor_BasicFilter_ConnectCollision);
-        scene.SetDrawFilter(RenderFilter.ObjectCollision, CFG.Current.MapEditor_BasicFilter_ObjectCollision);
-        scene.SetDrawFilter(RenderFilter.Grass, CFG.Current.MapEditor_BasicFilter_Grass);
-        scene.SetDrawFilter(RenderFilter.EdgePoint, CFG.Current.MapEditor_BasicFilter_EdgePoint);
-        scene.SetDrawFilter(RenderFilter.Wall, CFG.Current.MapEditor_BasicFilter_Wall);
-        scene.SetDrawFilter(RenderFilter.Navmesh, CFG.Current.MapEditor_BasicFilter_Navmesh);
-        scene.SetDrawFilter(RenderFilter.NavVolume, CFG.Current.MapEditor_BasicFilter_NavVolume);
-        scene.SetDrawFilter(RenderFilter.SpeedTree, CFG.Current.MapEditor_BasicFilter_SpeedTree);
-        scene.SetDrawFilter(RenderFilter.AutoInvade, CFG.Current.MapEditor_BasicFilter_InvasionPoint);
-        scene.SetDrawFilter(RenderFilter.MultiPlayerWall, CFG.Current.MapEditor_BasicFilter_MultiPlayerWall);
-        scene.SetDrawFilter(RenderFilter.MapLimit, CFG.Current.MapEditor_BasicFilter_MapLimit);
-        scene.SetDrawFilter(RenderFilter.FogVolume, CFG.Current.MapEditor_BasicFilter_FogVolume);
+        scene.SetDrawFilter(RenderFilter.MapPiece, CFG.Current.MapEditor.MapEditor_BasicFilter_MapPiece);
+        scene.SetDrawFilter(RenderFilter.Object, CFG.Current.MapEditor.MapEditor_BasicFilter_Object);
+        scene.SetDrawFilter(RenderFilter.Character, CFG.Current.MapEditor.MapEditor_BasicFilter_Character);
+        scene.SetDrawFilter(RenderFilter.DummyEnemy, CFG.Current.MapEditor.MapEditor_BasicFilter_DummyEnemy);
+        scene.SetDrawFilter(RenderFilter.DummyAsset, CFG.Current.MapEditor.MapEditor_BasicFilter_DummyAsset);
+        scene.SetDrawFilter(RenderFilter.Region, CFG.Current.MapEditor.MapEditor_BasicFilter_Region);
+        scene.SetDrawFilter(RenderFilter.Light, CFG.Current.MapEditor.MapEditor_BasicFilter_Light);
+        scene.SetDrawFilter(RenderFilter.Collision, CFG.Current.MapEditor.MapEditor_BasicFilter_Collision);
+        scene.SetDrawFilter(RenderFilter.ConnectCollision, CFG.Current.MapEditor.MapEditor_BasicFilter_ConnectCollision);
+        scene.SetDrawFilter(RenderFilter.ObjectCollision, CFG.Current.MapEditor.MapEditor_BasicFilter_ObjectCollision);
+        scene.SetDrawFilter(RenderFilter.Grass, CFG.Current.MapEditor.MapEditor_BasicFilter_Grass);
+        scene.SetDrawFilter(RenderFilter.EdgePoint, CFG.Current.MapEditor.MapEditor_BasicFilter_EdgePoint);
+        scene.SetDrawFilter(RenderFilter.Wall, CFG.Current.MapEditor.MapEditor_BasicFilter_Wall);
+        scene.SetDrawFilter(RenderFilter.Navmesh, CFG.Current.MapEditor.MapEditor_BasicFilter_Navmesh);
+        scene.SetDrawFilter(RenderFilter.NavVolume, CFG.Current.MapEditor.MapEditor_BasicFilter_NavVolume);
+        scene.SetDrawFilter(RenderFilter.SpeedTree, CFG.Current.MapEditor.MapEditor_BasicFilter_SpeedTree);
+        scene.SetDrawFilter(RenderFilter.AutoInvade, CFG.Current.MapEditor.MapEditor_BasicFilter_InvasionPoint);
+        scene.SetDrawFilter(RenderFilter.MultiPlayerWall, CFG.Current.MapEditor.MapEditor_BasicFilter_MultiPlayerWall);
+        scene.SetDrawFilter(RenderFilter.MapLimit, CFG.Current.MapEditor.MapEditor_BasicFilter_MapLimit);
+        scene.SetDrawFilter(RenderFilter.FogVolume, CFG.Current.MapEditor.MapEditor_BasicFilter_FogVolume);
     }
 
     /// <summary>
@@ -47,28 +47,28 @@ public class BasicFilters
     {
         var filter = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter;
 
-        CFG.Current.MapEditor_BasicFilter_MapPiece = filter.HasFlag(RenderFilter.MapPiece);
-        CFG.Current.MapEditor_BasicFilter_Object = filter.HasFlag(RenderFilter.Object);
-        CFG.Current.MapEditor_BasicFilter_Character = filter.HasFlag(RenderFilter.Character);
-        CFG.Current.MapEditor_BasicFilter_DummyEnemy = filter.HasFlag(RenderFilter.DummyEnemy);
-        CFG.Current.MapEditor_BasicFilter_DummyAsset = filter.HasFlag(RenderFilter.DummyAsset);
-        CFG.Current.MapEditor_BasicFilter_Region = filter.HasFlag(RenderFilter.Region);
-        CFG.Current.MapEditor_BasicFilter_Light = filter.HasFlag(RenderFilter.Light);
-        CFG.Current.MapEditor_BasicFilter_Collision = filter.HasFlag(RenderFilter.Collision);
-        CFG.Current.MapEditor_BasicFilter_ConnectCollision = filter.HasFlag(RenderFilter.ConnectCollision);
-        CFG.Current.MapEditor_BasicFilter_ObjectCollision = filter.HasFlag(RenderFilter.ObjectCollision);
-        CFG.Current.MapEditor_BasicFilter_Grass = filter.HasFlag(RenderFilter.Grass);
-        CFG.Current.MapEditor_BasicFilter_EdgePoint = filter.HasFlag(RenderFilter.EdgePoint);
-        CFG.Current.MapEditor_BasicFilter_Wall = filter.HasFlag(RenderFilter.Wall);
-        CFG.Current.MapEditor_BasicFilter_Navmesh = filter.HasFlag(RenderFilter.Navmesh);
-        CFG.Current.MapEditor_BasicFilter_NavVolume = filter.HasFlag(RenderFilter.NavVolume);
-        CFG.Current.MapEditor_BasicFilter_SpeedTree = filter.HasFlag(RenderFilter.SpeedTree);
-        CFG.Current.MapEditor_BasicFilter_InvasionPoint = filter.HasFlag(RenderFilter.AutoInvade);
-        CFG.Current.MapEditor_BasicFilter_MultiPlayerWall = filter.HasFlag(RenderFilter.MultiPlayerWall);
-        CFG.Current.MapEditor_BasicFilter_MapLimit = filter.HasFlag(RenderFilter.MapLimit);
-        CFG.Current.MapEditor_BasicFilter_FogVolume = filter.HasFlag(RenderFilter.FogVolume);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_MapPiece = filter.HasFlag(RenderFilter.MapPiece);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Object = filter.HasFlag(RenderFilter.Object);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Character = filter.HasFlag(RenderFilter.Character);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_DummyEnemy = filter.HasFlag(RenderFilter.DummyEnemy);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_DummyAsset = filter.HasFlag(RenderFilter.DummyAsset);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Region = filter.HasFlag(RenderFilter.Region);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Light = filter.HasFlag(RenderFilter.Light);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Collision = filter.HasFlag(RenderFilter.Collision);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_ConnectCollision = filter.HasFlag(RenderFilter.ConnectCollision);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_ObjectCollision = filter.HasFlag(RenderFilter.ObjectCollision);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Grass = filter.HasFlag(RenderFilter.Grass);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_EdgePoint = filter.HasFlag(RenderFilter.EdgePoint);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Wall = filter.HasFlag(RenderFilter.Wall);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_Navmesh = filter.HasFlag(RenderFilter.Navmesh);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_NavVolume = filter.HasFlag(RenderFilter.NavVolume);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_SpeedTree = filter.HasFlag(RenderFilter.SpeedTree);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_InvasionPoint = filter.HasFlag(RenderFilter.AutoInvade);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_MultiPlayerWall = filter.HasFlag(RenderFilter.MultiPlayerWall);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_MapLimit = filter.HasFlag(RenderFilter.MapLimit);
+        CFG.Current.MapEditor.MapEditor_BasicFilter_FogVolume = filter.HasFlag(RenderFilter.FogVolume);
 
-        CFG.Current.LastSceneFilter = filter;
+        CFG.Current.MapEditor.LastSceneFilter = filter;
     }
 
     public void Display()

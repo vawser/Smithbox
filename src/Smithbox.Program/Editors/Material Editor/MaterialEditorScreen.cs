@@ -110,18 +110,18 @@ public class MaterialEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.MaterialEditor_Allow_Unmodified_Save = !CFG.Current.MaterialEditor_Allow_Unmodified_Save;
+                CFG.Current.MaterialEditor.MaterialEditor_Allow_Unmodified_Save = !CFG.Current.MaterialEditor.MaterialEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor.MaterialEditor_Allow_Unmodified_Save);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.MaterialEditor_Allow_Automatic_Save = !CFG.Current.MaterialEditor_Allow_Automatic_Save;
+                CFG.Current.MaterialEditor.MaterialEditor_Allow_Automatic_Save = !CFG.Current.MaterialEditor.MaterialEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor.MaterialEditor_Allow_Automatic_Save);
 
 
             ImGui.EndMenu();
@@ -177,17 +177,17 @@ public class MaterialEditorScreen : EditorScreen
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("MAT_View_Toggle_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
+                CFG.Current.Interface.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface.Interface_MaterialEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_MaterialEditor_ToolWindow);
 
             // Live Preview
             if (ImGui.MenuItem($"{LOC.Get("MAT_View_Toggle_Live_Preview")}##livePreviewToggle"))
             {
-                CFG.Current.MaterialEditor_Live_Preview = !CFG.Current.MaterialEditor_Live_Preview;
+                CFG.Current.MaterialEditor.MaterialEditor_Live_Preview = !CFG.Current.MaterialEditor.MaterialEditor_Live_Preview;
             }
             GUI.Tooltip(LOC.Get("MAT_View_Toggle_Live_Preview_TT"));
-            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Live_Preview);
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor.MaterialEditor_Live_Preview);
 
             ImGui.Separator();
 
@@ -218,11 +218,11 @@ public class MaterialEditorScreen : EditorScreen
     {
         var bank = Project.Handler.MaterialData?.PrimaryBank;
 
-        if (bank != null && (!autoSave || CFG.Current.MaterialEditor_Allow_Automatic_Save))
+        if (bank != null && (!autoSave || CFG.Current.MaterialEditor.MaterialEditor_Allow_Automatic_Save))
         {
             var selected = ViewHandler.ActiveView?.Selection.SelectedFileWrapper;
 
-            if (!autoSave && selected != null && !selected.IsDirty && CFG.Current.MaterialEditor_Allow_Unmodified_Save)
+            if (!autoSave && selected != null && !selected.IsDirty && CFG.Current.MaterialEditor.MaterialEditor_Allow_Unmodified_Save)
             {
                 selected.IsDirty = true;
             }
@@ -235,7 +235,7 @@ public class MaterialEditorScreen : EditorScreen
             else
             {
                 // Material Reloader: what this save writes also goes to the running game, if asked
-                var toGame = !autoSave && CFG.Current.MaterialEditor_InGame_SendOnSave
+                var toGame = !autoSave && CFG.Current.MaterialEditor.MaterialEditor_InGame_SendOnSave
                     && Reloader.IsReady
                     ? MatReloadSource.Dirty(bank, this)
                     : null;
@@ -243,7 +243,7 @@ public class MaterialEditorScreen : EditorScreen
                 bank.SaveAllDirty();
 
                 if (toGame?.Count > 0)
-                    Reloader.RequestReloadMany(toGame, (MatReloader.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Save);
+                    Reloader.RequestReloadMany(toGame, (MatReloader.AfterReload)CFG.Current.MaterialEditor.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Save);
             }
 
             // With live preview off, saving is when the viewports catch up

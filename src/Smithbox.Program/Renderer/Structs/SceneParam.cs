@@ -103,7 +103,7 @@ public unsafe struct SceneParam
     public uint LightmapStart;
 
     /// <summary>
-    ///     What FlverShader.frag draws in place of the lit color, CFG.Viewport_Lighting_Debug_View: 0 the lit color,
+    ///     What FlverShader.frag draws in place of the lit color, ViewportSettings.Viewport_Lighting_Debug_View: 0 the lit color,
     ///     1 where the light from around comes from, 2 that light alone, 3 the share of the sun let through, 4 the
     ///     albedo unlit, which Editor mode sets (see RenderMode), with the lighting skipped, 5 the same with the
     ///     normal-mapped normals kept for Texturing (Normal). Also in what was padding.
@@ -217,7 +217,7 @@ public unsafe struct SceneParam
     public Vector4 CameraClip;
 
     /// <summary>
-    ///     The wireframe view's lines, CFG.Viewport_Wireframe_*: rgb their display color, a how opaque they are over the
+    ///     The wireframe view's lines, RenderSettings.Viewport.Viewport_Wireframe_*: rgb their display color, a how opaque they are over the
     ///     surfaces. Only the _wire shader variants read it, which draw while the view is on, see
     ///     <see cref="MeshRenderables.cWireframePipelines" />.
     /// </summary>

@@ -73,7 +73,7 @@ public partial class ModelEdgeEditorTool
     private record EdgeContext(ModelWrapper Wrapper, EDGE Edge, List<EdgeHandle> Handles, Matrix4x4 Space, Matrix4x4 ToEdge);
 
     /// <summary>True while the tool takes the viewport's clicks.</summary>
-    public bool IsEditing => Editing && ImGui.GetFrameCount() - LastDrawnFrame <= 2 && CFG.Current.ModelEditor_DisplayEdgePoints;
+    public bool IsEditing => Editing && ImGui.GetFrameCount() - LastDrawnFrame <= 2 && CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints;
 
     private List<EdgeHandle> GetHandles(EDGE edge)
     {
@@ -116,7 +116,7 @@ public partial class ModelEdgeEditorTool
     {
         var wrapper = CanUse() ? GetWrapper() : null;
 
-        View.RenderScene.SetDrawFilter(RenderFilter.EdgePoint, CFG.Current.ModelEditor_DisplayEdgePoints);
+        View.RenderScene.SetDrawFilter(RenderFilter.EdgePoint, CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints);
 
         if (wrapper?.EDGE == null)
         {
@@ -237,8 +237,8 @@ public partial class ModelEdgeEditorTool
     /// </summary>
     private PickHit Pick(EdgeContext context, Vector3 origin, Vector3 direction)
     {
-        var pointRadius = MathF.Max(CFG.Current.Viewport_Edge_Point_Size * 1.6f, 0.04f);
-        var segmentRadius = MathF.Max(CFG.Current.Viewport_Edge_Segment_Radius * 3.0f, 0.04f);
+        var pointRadius = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size * 1.6f, 0.04f);
+        var segmentRadius = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Segment_Radius * 3.0f, 0.04f);
 
         PickHit handleHit = new(null, -1, float.MaxValue);
         PickHit segmentHit = new(null, -1, float.MaxValue);
@@ -469,11 +469,11 @@ public partial class ModelEdgeEditorTool
 
         if (HoverMesh == null)
         {
-            HoverMesh = RenderableHelper.GetEdgeMarkerWireProxy(scene, false, CFG.Current.Viewport_Edge_Hover_Color, true);
+            HoverMesh = RenderableHelper.GetEdgeMarkerWireProxy(scene, false, CFG.Current.Viewport.Viewport_Edge_Hover_Color, true);
             HoverMesh.DrawFilter = RenderFilter.EdgePoint;
         }
 
-        var size = MathF.Max(CFG.Current.Viewport_Edge_Point_Size, 0.01f) * (handle.Kind is EdgeHandleKind.Pull ? 1.2f : 1.9f);
+        var size = MathF.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.01f) * (handle.Kind is EdgeHandleKind.Pull ? 1.2f : 1.9f);
         var position = Vector3.Transform(handle.Position, space);
 
         HoverMesh.World = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(position);
@@ -520,7 +520,7 @@ public partial class ModelEdgeEditorTool
 
         DisplayModes();
 
-        if (!CFG.Current.ModelEditor_DisplayEdgePoints)
+        if (!CFG.Current.ModelEditor.ModelEditor_DisplayEdgePoints)
         {
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_EdgeEditor_Editing_Needs_Points"));
         }

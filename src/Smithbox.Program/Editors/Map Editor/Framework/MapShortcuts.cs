@@ -41,7 +41,7 @@ public class MapShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
+            CFG.Current.Interface.Interface_MapEditor_ToolWindow = !CFG.Current.Interface.Interface_MapEditor_ToolWindow;
         }
 
         // Save

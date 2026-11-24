@@ -249,7 +249,7 @@ public class ParamRowNameTool
 
             // Toggle: Replace Empty Names Only
             ImGui.Checkbox($"{LOC.Get("PARAM_RowNames_Checkbox_Replace_Empty_Names_Only")}##toggleEmptyNameImport", 
-                ref CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly);
+                ref CFG.Current.ParamEditor.Param_RowNameImport_ReplaceEmptyNamesOnly);
             GUI.Tooltip(LOC.Get("PARAM_RowNames_Checkbox_Replace_Empty_Names_Only_TT"));
 
             ImGui.EndMenu();

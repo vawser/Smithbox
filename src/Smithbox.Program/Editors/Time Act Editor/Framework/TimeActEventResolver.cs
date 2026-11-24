@@ -357,7 +357,7 @@ public class TimeActEventResolver
             new TimeActVisualShape(ToLocalDummy(container, dummy), -1, MagicRadius, GetWeaponPartOfDummy(container, dummy, -1))
         };
 
-        var status = GetMagicStatus(_project, CFG.Current.TimeActEditor_Cast_Magic_ID, CFG.Current.TimeActEditor_Cast_Magic_Charged);
+        var status = GetMagicStatus(_project, CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_ID, CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_Charged);
 
         return new TimeActEventVisual(TimeActVisualKind.Magic, shapes,
             $"{LOC.Get(dummy >= 0 ? "TAE_EventDisplay_On_Dummy" : "TAE_EventDisplay_On_Body", dummy)}\n{status}");

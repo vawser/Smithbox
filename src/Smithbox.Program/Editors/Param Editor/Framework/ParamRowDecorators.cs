@@ -42,7 +42,7 @@ public class ParamRowDecorators
     /// </summary>
     public void RefreshFmgDecorator(string targetParam = "")
     {
-        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+        if (!CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Decorators)
         {
             ClearAll();
             return;
@@ -63,7 +63,7 @@ public class ParamRowDecorators
     {
         ClearAll();
 
-        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+        if (!CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Decorators)
             return;
 
         CachedParam = targetParam;
@@ -146,7 +146,7 @@ public class FmgRowDecorator
 
     public void DecorateParam(Param.Row row)
     {
-        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+        if (!CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Decorators)
             return;
 
         PopulateDecorator();
@@ -170,7 +170,7 @@ public class FmgRowDecorator
 
     public void DecorateContextMenuItems(Param.Row row)
     {
-        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+        if (!CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Decorators)
             return;
 
         PopulateDecorator();

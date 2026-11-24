@@ -45,11 +45,11 @@ public class TextContainerList
 
         if (ImGui.Button($"{Icons.Bars}##displayPrimaryCategoryOnlyToggle"))
         {
-            CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only = !CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only;
+            CFG.Current.TextEditor.TextEditor_Container_List_Display_Primary_Category_Only = !CFG.Current.TextEditor.TextEditor_Container_List_Display_Primary_Category_Only;
         }
 
         var categoryMode = LOC.Get("TEXT_ContainerList_Category_Mode_Primary_Only");
-        if (!CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only)
+        if (!CFG.Current.TextEditor.TextEditor_Container_List_Display_Primary_Category_Only)
             categoryMode = LOC.Get("TEXT_ContainerList_Category_Mode_All");
 
         GUI.Tooltip(LOC.Get("TEXT_ContainerList_Category_Mode_TT", categoryMode));
@@ -65,7 +65,7 @@ public class TextContainerList
         {
             ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
 
-            if (category == CFG.Current.TextEditor_Primary_Category)
+            if (category == CFG.Current.TextEditor.TextEditor_Primary_Category)
             {
                 flags = ImGuiTreeNodeFlags.DefaultOpen;
             }
@@ -215,7 +215,7 @@ public class TextContainerList
         var displayName = wrapper.FileEntry.Filename;
 
         // Display community name instead of raw container filename
-        if(CFG.Current.TextEditor_Container_List_Display_Community_Names)
+        if(CFG.Current.TextEditor.TextEditor_Container_List_Display_Community_Names)
         {
             // To get nice DS2 names, apply the FMG display name stuff on the container level
             if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -229,7 +229,7 @@ public class TextContainerList
         }
 
         // If in Simple mode, hide unused containers
-        if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
+        if (CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers)
         {
             if(wrapper.IsContainerUnused())
             {
@@ -238,7 +238,7 @@ public class TextContainerList
         }
 
         var isMatch = EditorFilters.IsMatch(ContainerListFilter, displayName, ExactContainerListFilter,
-            () => CFG.Current.TextEditor_Include_Vanilla_Cache ? Project.VFS.FileStatus(wrapper.FileEntry.Path) : VanillaStatus.None);
+            () => CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache ? Project.VFS.FileStatus(wrapper.FileEntry.Path) : VanillaStatus.None);
 
         if (isMatch)
         {
@@ -252,7 +252,7 @@ public class TextContainerList
             // Selected and identified by the file entry itself: the display index depended on
             // which DS2 headers were expanded, so the highlight moved when one collapsed.
             // The saved container against the game's copy (Added / Modified; identical copies stay uncoloured)
-            var status = CFG.Current.TextEditor_Include_Vanilla_Cache
+            var status = CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache
                 ? Project.VFS.FileStatus(wrapper.FileEntry.Path)
                 : VanillaStatus.None;
             var coloured = VanillaMarkers.PushColour(status);
@@ -299,7 +299,7 @@ public class TextContainerList
             }
 
             // Display hint if normal File List is displayed to user knows about the game's usage of the containers
-            if (!CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
+            if (!CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers)
             {
                 if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
@@ -320,7 +320,7 @@ public class TextContainerList
                     }
                 }
             }
-            if (CFG.Current.TextEditor_Container_List_Display_Source_Path)
+            if (CFG.Current.TextEditor.TextEditor_Container_List_Display_Source_Path)
             {
                 GUI.Tooltip(LOC.Get("TEXT_ContainerList_Source_Path_TT", wrapper.FileEntry.Path));
             }
@@ -329,9 +329,9 @@ public class TextContainerList
 
     public bool AllowedCategory(TextContainerCategory category)
     {
-        if (CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only)
+        if (CFG.Current.TextEditor.TextEditor_Container_List_Display_Primary_Category_Only)
         {
-            if (category == CFG.Current.TextEditor_Primary_Category)
+            if (category == CFG.Current.TextEditor.TextEditor_Primary_Category)
             {
                 return true;
             }

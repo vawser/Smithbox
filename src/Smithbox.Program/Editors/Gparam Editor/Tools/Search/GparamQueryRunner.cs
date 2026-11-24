@@ -87,7 +87,7 @@ public class GparamQueryRunner
         if (Project.Descriptor.ProjectType is not ProjectType.BB)
             return true;
 
-        return CFG.Current.GparamEditor_File_List_Display_BB_BND_Files
+        return CFG.Current.GparamEditor.GparamEditor_File_List_Display_BB_BND_Files
             ? fileEntry.Extension != "gparam"
             : fileEntry.Extension != "gparambnd";
     }

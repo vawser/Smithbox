@@ -56,7 +56,7 @@ public class MapPropertyView
 
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNameToggle", Icons.Book,
-            ref CFG.Current.MapEditor_Properties_Enable_Commmunity_Names,
+            ref CFG.Current.MapEditor.MapEditor_Properties_Enable_Commmunity_Names,
             "MAP_Properties_Toggle_Community_Names_Internal",
             "MAP_Properties_Toggle_Community_Names_Community",
             "MAP_Properties_Toggle_Community_Names_TT");
@@ -220,21 +220,21 @@ public class MapPropertyView
     {
         // Toggle: Display Unknown
         GUI.DisplayToggleButton("displayUnkToggle", Icons.Eye,
-            ref CFG.Current.MapEditor_Properties_Display_Unknown_Properties,
+            ref CFG.Current.MapEditor.MapEditor_Properties_Display_Unknown_Properties,
             "MAP_Properties_Toggle_Unknown_Field_Hide",
             "MAP_Properties_Toggle_Unknown_Field_Show",
             "MAP_Properties_Toggle_Unknown_Field_TT");
 
         // Toggle: Display Padding
         GUI.DisplayToggleButton("displayPaddingToggle", Icons.Hubzilla,
-            ref CFG.Current.MapEditor_Field_List_Display_Padding,
+            ref CFG.Current.MapEditor.MapEditor_Field_List_Display_Padding,
             "MAP_Properties_Toggle_Padding_Hide",
             "MAP_Properties_Toggle_Padding_Show",
             "MAP_Properties_Toggle_Padding_TT");
 
         // Toggle: Display References
         GUI.DisplayToggleButton("displayReferencesToggle", Icons.Search,
-            ref CFG.Current.MapEditor_Field_List_Display_References,
+            ref CFG.Current.MapEditor.MapEditor_Field_List_Display_References,
             "MAP_Properties_Toggle_References_Hide",
             "MAP_Properties_Toggle_References_Show",
             "MAP_Properties_Toggle_References_TT");

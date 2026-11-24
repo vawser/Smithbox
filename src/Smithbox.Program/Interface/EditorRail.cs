@@ -25,7 +25,7 @@ public static class EditorHost
         ImGuiWindowFlags.NoBringToFrontOnFocus;
 
     /// <summary>Width of the editor rail, which the host area starts after</summary>
-    public static float RailWidth => CFG.Current.Interface_Editor_Rail_Text_Labels
+    public static float RailWidth => CFG.Current.Interface.Interface_Editor_Rail_Text_Labels
         ? EditorRail.TextRailWidth()
         : MathF.Round(ImGui.GetFrameHeight() * 2.0f * EditorRail.IconScale);
 
@@ -68,10 +68,10 @@ public static class EditorRail
     private static readonly List<string> _shownIds = new();
 
     /// <summary>True when the user has a custom rail order, which drops the category separators</summary>
-    public static bool HasCustomOrder => CFG.Current.Interface_Editor_Rail_Order is { Count: > 0 };
+    public static bool HasCustomOrder => CFG.Current.Interface.Interface_Editor_Rail_Order is { Count: > 0 };
 
     /// <summary>The icon button scale, clamped in case the config was edited by hand</summary>
-    public static float IconScale => Math.Clamp(CFG.Current.Interface_Editor_Rail_Icon_Scale,
+    public static float IconScale => Math.Clamp(CFG.Current.Interface.Interface_Editor_Rail_Icon_Scale,
         CFG.MinRailIconScale, CFG.MaxRailIconScale);
 
     /// <summary>Every editor with a rail button, as its id and name key, in the default rail order</summary>
@@ -88,7 +88,7 @@ public static class EditorRail
     /// <summary>The user's color for an editor's rail button, if one is set</summary>
     public static bool TryGetColor(string id, out Vector4 color)
     {
-        if (CFG.Current.Interface_Editor_Rail_Colors?.TryGetValue(id, out var rgb) == true)
+        if (CFG.Current.Interface.Interface_Editor_Rail_Colors?.TryGetValue(id, out var rgb) == true)
         {
             color = new Vector4(rgb, 1.0f);
             return true;
@@ -101,7 +101,7 @@ public static class EditorRail
     /// <summary>Restores the registry's order, grouped by category</summary>
     public static void ResetOrder()
     {
-        CFG.Current.Interface_Editor_Rail_Order = new List<string>();
+        CFG.Current.Interface.Interface_Editor_Rail_Order = new List<string>();
         _dragId = null;
     }
 
@@ -116,7 +116,7 @@ public static class EditorRail
         if (!HasCustomOrder)
             return result;
 
-        var order = CFG.Current.Interface_Editor_Rail_Order;
+        var order = CFG.Current.Interface.Interface_Editor_Rail_Order;
 
         int Rank(EditorEntry entry)
         {
@@ -178,7 +178,7 @@ public static class EditorRail
         var target = order.IndexOf(neighbour) + (after ? 1 : 0);
         order.Insert(target, _dragId);
 
-        CFG.Current.Interface_Editor_Rail_Order = order;
+        CFG.Current.Interface.Interface_Editor_Rail_Order = order;
     }
 
     /// <summary>
@@ -239,7 +239,7 @@ public static class EditorRail
         {
             // The icons are font glyphs, so they grow with the buttons by scaling this window's font. Names
             // keep the normal size, as the text rail is sized to fit them.
-            ImGui.SetWindowFontScale(CFG.Current.Interface_Editor_Rail_Text_Labels ? 1.0f : IconScale);
+            ImGui.SetWindowFontScale(CFG.Current.Interface.Interface_Editor_Rail_Text_Labels ? 1.0f : IconScale);
 
             var buttonSize = railWidth - padding * 2;
 
@@ -390,7 +390,7 @@ public static class EditorRail
             pushed++;
         }
 
-        var textLabels = CFG.Current.Interface_Editor_Rail_Text_Labels;
+        var textLabels = CFG.Current.Interface.Interface_Editor_Rail_Text_Labels;
         bool clicked;
 
         if (textLabels)

@@ -104,33 +104,33 @@ public class TextLanguageSyncTool
         {
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Include_Default")}##includeDefault",
-                ref CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries);
+                ref CFG.Current.TextEditor.TextEditor_LanguageSync_IncludeDefaultEntries);
             GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Default_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Include_Added")}##includeAdded",
-                ref CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries);
+                ref CFG.Current.TextEditor.TextEditor_LanguageSync_IncludeUniqueEntries);
             GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Added_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Include_Modified")}##includeModified",
-                ref CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries);
+                ref CFG.Current.TextEditor.TextEditor_LanguageSync_IncludeModifiedEntries);
             GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Modified_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Apply_Prefix")}##applyPrefix",
-                ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
+                ref CFG.Current.TextEditor.TextEditor_Language_Sync_Apply_Prefix);
             GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Apply_Prefix_TT"));
         }
 
-        if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
+        if (CFG.Current.TextEditor.TextEditor_Language_Sync_Apply_Prefix)
         {
             GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get("TEXT_LanguageSync_Header_Sync_Prefix"),
                 LOC.Get("TEXT_LanguageSync_Header_Sync_Prefix_TT"));
 
-            GUI.SinglelineTextInput("##prefixTextInput", ref CFG.Current.TextEditor_Language_Sync_Prefix);
+            GUI.SinglelineTextInput("##prefixTextInput", ref CFG.Current.TextEditor.TextEditor_Language_Sync_Prefix);
         }
 
         GUI.Spacer();
@@ -243,11 +243,11 @@ public class TextLanguageSyncTool
 
                 if (proceed)
                 {
-                    if (CFG.Current.TextEditor_Language_Sync_Display_Primary_Only)
+                    if (CFG.Current.TextEditor.TextEditor_Language_Sync_Display_Primary_Only)
                     {
                         proceed = false;
 
-                        if (syncSrcWrapper.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
+                        if (syncSrcWrapper.ContainerDisplayCategory == CFG.Current.TextEditor.TextEditor_Primary_Category)
                         {
                             proceed = true;
                         }
@@ -267,7 +267,7 @@ public class TextLanguageSyncTool
                 {
                     var displayName = syncSrcWrapper.FileEntry.Filename;
 
-                    if (CFG.Current.TextEditor_Container_List_Display_Community_Names)
+                    if (CFG.Current.TextEditor.TextEditor_Container_List_Display_Community_Names)
                     {
                         // To get nice DS2 names, apply the FMG display name stuff on the container level
                         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -314,7 +314,7 @@ public class TextLanguageSyncTool
 
         var ids = new HashSet<int> { targetFmgId };
 
-        if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries &&
+        if (CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries &&
             targetContainer == View.Selection.SelectedContainerWrapper)
         {
             // Every FMG of the group (up to 10 slots)
@@ -376,7 +376,7 @@ public class TextLanguageSyncTool
                         foreach (var syncSrcEntry in syncSrcWrapper.File.Entries)
                         {
                             // Addition
-                            if (CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries && result.AdditionCache.ContainsKey(syncSrcEntry.ID))
+                            if (CFG.Current.TextEditor.TextEditor_LanguageSync_IncludeUniqueEntries && result.AdditionCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 var newText = result.AdditionCache[syncSrcEntry.ID];
 
@@ -405,7 +405,7 @@ public class TextLanguageSyncTool
                                 }
                             }
                             // Modified
-                            else if (CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries && result.ModifiedCache.ContainsKey(syncSrcEntry.ID))
+                            else if (CFG.Current.TextEditor.TextEditor_LanguageSync_IncludeModifiedEntries && result.ModifiedCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
@@ -416,7 +416,7 @@ public class TextLanguageSyncTool
                                 }
                             }
                             // Any
-                            else if (CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries && result.DefaultCache.ContainsKey(syncSrcEntry.ID))
+                            else if (CFG.Current.TextEditor.TextEditor_LanguageSync_IncludeDefaultEntries && result.DefaultCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
@@ -468,9 +468,9 @@ public class TextLanguageSyncTool
 
         var written = newText;
 
-        if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
+        if (CFG.Current.TextEditor.TextEditor_Language_Sync_Apply_Prefix)
         {
-            written = $"{CFG.Current.TextEditor_Language_Sync_Prefix}{newText}";
+            written = $"{CFG.Current.TextEditor.TextEditor_Language_Sync_Prefix}{newText}";
         }
 
         return targetEntry.Text != written;

@@ -45,9 +45,9 @@ public class CreateAction
         CreateAtPoint = new CreateAtPointTool(view, project, this);
 
         // The type flags persist in the config, so the combo has to start on the one they select
-        TargetBaseType = CFG.Current.Toolbar_Create_Light ? CreateTargetType.Light
-            : CFG.Current.Toolbar_Create_Region ? CreateTargetType.Region
-            : CFG.Current.Toolbar_Create_Event ? CreateTargetType.Event
+        TargetBaseType = CFG.Current.MapEditor.Toolbar_Create_Light ? CreateTargetType.Light
+            : CFG.Current.MapEditor.Toolbar_Create_Region ? CreateTargetType.Region
+            : CFG.Current.MapEditor.Toolbar_Create_Event ? CreateTargetType.Event
             : CreateTargetType.Part;
         SetTargetBaseType(TargetBaseType);
 
@@ -56,10 +56,10 @@ public class CreateAction
 
     private static void SetTargetBaseType(CreateTargetType type)
     {
-        CFG.Current.Toolbar_Create_Part = type == CreateTargetType.Part;
-        CFG.Current.Toolbar_Create_Region = type == CreateTargetType.Region;
-        CFG.Current.Toolbar_Create_Event = type == CreateTargetType.Event;
-        CFG.Current.Toolbar_Create_Light = type == CreateTargetType.Light;
+        CFG.Current.MapEditor.Toolbar_Create_Part = type == CreateTargetType.Part;
+        CFG.Current.MapEditor.Toolbar_Create_Region = type == CreateTargetType.Region;
+        CFG.Current.MapEditor.Toolbar_Create_Event = type == CreateTargetType.Event;
+        CFG.Current.MapEditor.Toolbar_Create_Light = type == CreateTargetType.Light;
     }
 
     /// <summary>
@@ -494,7 +494,7 @@ public class CreateAction
         });
 
         // The model's own container holds its mesh, but its textures can be in another the map load didn't request
-        if (CFG.Current.MapEditor_Model_Selector_Load_Textures_On_Create)
+        if (CFG.Current.MapEditor.MapEditor_Model_Selector_Load_Textures_On_Create)
         {
             if (string.IsNullOrEmpty(created.ModelName))
                 created.ModelName = modelName;

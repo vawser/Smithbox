@@ -48,8 +48,8 @@ public sealed class ProjectileEffects : IDisposable
     public bool IsAvailable => View.Project.Handler.FxData is { Bank: not null, Schema: not null } && View.RenderScene != null;
 
     /// <summary>Whether any effects are to be shown: FX on (Simulation Filters), with the flight or hit effects on</summary>
-    public static bool IsShowing => CFG.Current.ProjectileEditor_Display_Fx &&
-                                    (CFG.Current.ProjectileEditor_Display_Effects || CFG.Current.ProjectileEditor_Display_Hit_Effects);
+    public static bool IsShowing => CFG.Current.ProjectileEditor.ProjectileEditor_Display_Fx &&
+                                    (CFG.Current.ProjectileEditor.ProjectileEditor_Display_Effects || CFG.Current.ProjectileEditor.ProjectileEditor_Display_Hit_Effects);
 
     public FxBank? Bank => View.Project.Handler.FxData?.Bank;
 
@@ -76,7 +76,7 @@ public sealed class ProjectileEffects : IDisposable
             return;
         }
 
-        var key = (simulator.Version, CFG.Current.ProjectileEditor_Display_Effects, CFG.Current.ProjectileEditor_Display_Hit_Effects);
+        var key = (simulator.Version, CFG.Current.ProjectileEditor.ProjectileEditor_Display_Effects, CFG.Current.ProjectileEditor.ProjectileEditor_Display_Hit_Effects);
 
         if (key != CuesFor)
         {
@@ -106,8 +106,8 @@ public sealed class ProjectileEffects : IDisposable
         if (bulletParam == null)
             return cues;
 
-        var flights = CFG.Current.ProjectileEditor_Display_Effects;
-        var hits = CFG.Current.ProjectileEditor_Display_Hit_Effects;
+        var flights = CFG.Current.ProjectileEditor.ProjectileEditor_Display_Effects;
+        var hits = CFG.Current.ProjectileEditor.ProjectileEditor_Display_Hit_Effects;
 
         for (var i = 0; i < result.Tracks.Count; i++)
         {

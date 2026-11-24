@@ -316,7 +316,7 @@ public class GparamUniverse : IUniverse
         foreach (var part in msb.Parts.GetEntries())
         {
             var isPiece = EntityHelper.IsPartMapPiece(part);
-            var isAsset = !isPiece && CFG.Current.GparamEditor_Viewport_Load_Assets && EntityHelper.IsPartAsset(part);
+            var isAsset = !isPiece && CFG.Current.GparamEditor.GparamEditor_Viewport_Load_Assets && EntityHelper.IsPartAsset(part);
 
             if (!isPiece && !isAsset)
                 continue;
@@ -430,7 +430,7 @@ public class GparamUniverse : IUniverse
         var assetTextureJob = MapResourceHandler.GetObjectTexturesName(Project);
         var otherTextureJob = LOC.Get("MAP_ResourceManager_Miscellaneous_Textures");
 
-        var texturing = CFG.Current.Viewport_Enable_Texturing;
+        var texturing = CFG.Current.Viewport.Viewport_Enable_Texturing;
 
         ResourceLoadTracker.BeginSession(session);
 
@@ -571,7 +571,7 @@ public class GparamUniverse : IUniverse
     /// </summary>
     private static void ApplyShadowFlags(MeshRenderableProxy mesh, IMsbPart part)
     {
-        if (!CFG.Current.Viewport_Shadows_Use_Msb_Flags)
+        if (!CFG.Current.Viewport.Viewport_Shadows_Use_Msb_Flags)
         {
             mesh.CastsShadow = true;
             mesh.ReceivesShadow = true;

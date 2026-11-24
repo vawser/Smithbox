@@ -161,7 +161,7 @@ public static class RenderableHelper
 
         _dmySphereFwdUp = new DbgPrimWireSphereForwardUp(
             Transform.Default,
-            CFG.Current.DummyMeshSize,
+            RenderSettings.Viewport.DummyMeshSize,
             Color.Yellow,
             Color.Blue,
             Color.White,
@@ -269,7 +269,7 @@ public static class RenderableHelper
     {
         return new DbgPrimWireSphereWithArrows(
             Transform.Default,
-            CFG.Current.DummyMeshSize,
+            RenderSettings.Viewport.DummyMeshSize,
             Color.Blue,
             6,
             6,
@@ -285,7 +285,7 @@ public static class RenderableHelper
     {
         return new DbgPrimWireSphereWithArrows(
             Transform.Default,
-            CFG.Current.NodeMeshSize,
+            RenderSettings.Viewport.NodeMeshSize,
             Color.Blue,
             6,
             6,
@@ -295,9 +295,9 @@ public static class RenderableHelper
     // BOX REGION
     public static DebugPrimitiveRenderableProxy GetBoxRegionProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Box_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Box_Region_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
 
@@ -351,7 +351,7 @@ public static class RenderableHelper
 
     private static DebugPrimitiveRenderableProxy GetPlaceholderWireProxy(RenderScene scene, IDbgPrim prim, Color baseColor, Color highlightColor)
     {
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, prim);
 
@@ -368,7 +368,7 @@ public static class RenderableHelper
         // Placeholders are small, so unlike a region volume the fill stays clickable
         r.Pickable = true;
         r.Visible = true;
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, RenderSettings.Viewport.Viewport_Region_Selection_Fill_Alpha);
 
         return r;
     }
@@ -376,9 +376,9 @@ public static class RenderableHelper
     // CYLINDER REGION
     public static DebugPrimitiveRenderableProxy GetCylinderRegionProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Cylinder_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Cylinder_Region_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Cylinder_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Cylinder_Region_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionCylinder);
 
@@ -393,9 +393,9 @@ public static class RenderableHelper
     // SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetSphereRegionProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Sphere_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Sphere_Region_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 
@@ -409,9 +409,9 @@ public static class RenderableHelper
     // POINT REGION
     public static DebugPrimitiveRenderableProxy GetPointRegionProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Point_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Point_Region_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Point_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Point_Region_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
 
@@ -449,7 +449,7 @@ public static class RenderableHelper
     /// </summary>
     public static DebugPrimitiveRenderableProxy GetEdgeMarkerWireProxy(RenderScene scene, bool cylinder, Vector3 color, bool overlay)
     {
-        var tint = ColorHelper.GetTransparencyColor(color / 255.0f, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);
+        var tint = ColorHelper.GetTransparencyColor(color / 255.0f, RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha);
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, cylinder ? _regionCylinder : _regionPoint);
 
@@ -477,7 +477,7 @@ public static class RenderableHelper
 
     private static DebugPrimitiveRenderableProxy GetEdgeWireProxy(RenderScene scene, IDbgPrim prim)
     {
-        var color = ColorHelper.GetTransparencyColor(Color.Cyan, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);
+        var color = ColorHelper.GetTransparencyColor(Color.Cyan, RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha);
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, prim);
 
@@ -500,22 +500,22 @@ public static class RenderableHelper
     // REGION SELECTION FILL
     public static DebugPrimitiveRenderableProxy GetBoxRegionFillProxy(RenderScene scene)
     {
-        return GetRegionFillProxy(scene, _regionSolidBox, CFG.Current.Viewport_Box_Region_Highlight_Color);
+        return GetRegionFillProxy(scene, _regionSolidBox, RenderSettings.Viewport.Viewport_Box_Region_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetCylinderRegionFillProxy(RenderScene scene)
     {
-        return GetRegionFillProxy(scene, _regionSolidCylinder, CFG.Current.Viewport_Cylinder_Region_Highlight_Color);
+        return GetRegionFillProxy(scene, _regionSolidCylinder, RenderSettings.Viewport.Viewport_Cylinder_Region_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetSphereRegionFillProxy(RenderScene scene)
     {
-        return GetRegionFillProxy(scene, _regionSolidSphere, CFG.Current.Viewport_Sphere_Region_Highlight_Color);
+        return GetRegionFillProxy(scene, _regionSolidSphere, RenderSettings.Viewport.Viewport_Sphere_Region_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetPointRegionFillProxy(RenderScene scene)
     {
-        return GetRegionFillProxy(scene, _regionSolidPoint, CFG.Current.Viewport_Point_Region_Highlight_Color);
+        return GetRegionFillProxy(scene, _regionSolidPoint, RenderSettings.Viewport.Viewport_Point_Region_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetLightFillProxy(RenderScene scene)
@@ -525,7 +525,7 @@ public static class RenderableHelper
 
     private static DebugPrimitiveRenderableProxy GetRegionFillProxy(RenderScene scene, IDbgPrim prim, Vector3 color)
     {
-        var fillColor = ColorHelper.GetTransparencyColor(color, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+        var fillColor = ColorHelper.GetTransparencyColor(color, RenderSettings.Viewport.Viewport_Region_Selection_Fill_Alpha);
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, prim);
 
@@ -541,7 +541,7 @@ public static class RenderableHelper
     // ENEMY AI DETECTION
     public static DebugPrimitiveRenderableProxy GetDetectionSphereProxy(RenderScene scene, Color color)
     {
-        var wireColor = ColorHelper.GetTransparencyColor(color, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);
+        var wireColor = ColorHelper.GetTransparencyColor(color, RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha);
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 
@@ -564,22 +564,22 @@ public static class RenderableHelper
     // LIGHT
     public static DebugPrimitiveRenderableProxy GetPointLightProxy(RenderScene scene)
     {
-        return GetLightMarkerProxy(scene, CFG.Current.Viewport_Point_Light_Highlight_Color);
+        return GetLightMarkerProxy(scene, RenderSettings.Viewport.Viewport_Point_Light_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetSpotLightProxy(RenderScene scene)
     {
-        return GetLightMarkerProxy(scene, CFG.Current.Viewport_Spot_Light_Highlight_Color);
+        return GetLightMarkerProxy(scene, RenderSettings.Viewport.Viewport_Spot_Light_Highlight_Color);
     }
 
     public static DebugPrimitiveRenderableProxy GetDirectionalLightProxy(RenderScene scene)
     {
-        return GetLightMarkerProxy(scene, CFG.Current.Viewport_Directional_Light_Highlight_Color);
+        return GetLightMarkerProxy(scene, RenderSettings.Viewport.Viewport_Directional_Light_Highlight_Color);
     }
 
     private static DebugPrimitiveRenderableProxy GetLightMarkerProxy(RenderScene scene, Vector3 highlightColor)
     {
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
 
@@ -592,9 +592,9 @@ public static class RenderableHelper
     // MODEL EDITOR
     public static DebugPrimitiveRenderableProxy GetDummyPolyRegionProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Dummy_Polygon_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Dummy_Polygon_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Dummy_Polygon_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Dummy_Polygon_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _dmyPoint);
 
@@ -607,9 +607,9 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetDummyPolyForwardUpProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Dummy_Polygon_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Dummy_Polygon_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Dummy_Polygon_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Dummy_Polygon_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _dmySphereFwdUp);
 
@@ -622,9 +622,9 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetBonePointProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Bone_Marker_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Bone_Marker_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Bone_Marker_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Bone_Marker_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _jointSphere);
 
@@ -638,8 +638,8 @@ public static class RenderableHelper
     // Tree
     public static DebugPrimitiveRenderableProxy GetTreeProxy(MeshRenderables renderables)
     {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        var baseColor = RenderSettings.Viewport.Viewport_Box_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Box_Region_Highlight_Color;
         var transparency = 50.0f;
 
         DebugPrimitiveRenderableProxy r = new(renderables, _modelMarkerTree, false);
@@ -653,8 +653,8 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetSpeedTreeProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        var baseColor = RenderSettings.Viewport.Viewport_Box_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Box_Region_Highlight_Color;
         var transparency = 50.0f;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _modelMarkerTree);
@@ -668,9 +668,9 @@ public static class RenderableHelper
     // Asset
     public static DebugPrimitiveRenderableProxy GetPartProxy(MeshRenderables renderables)
     {
-        var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Sphere_Region_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Sphere_Region_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(renderables, _regionSphere);
 
@@ -700,9 +700,9 @@ public static class RenderableHelper
     // AUTO INVADE SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetAutoInvadeSphereProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Auto_Invade_Marker_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Auto_Invade_Marker_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Auto_Invade_Marker_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Auto_Invade_Marker_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 
@@ -717,9 +717,9 @@ public static class RenderableHelper
     // The unit boxes stand on the origin, so a panel scaled to its size rises from its position
     public static DebugPrimitiveRenderableProxy GetMultiPlayerWallProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_MultiPlayer_Wall_Base_Color;
-        var highlightColor = CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_MultiPlayer_Wall_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_MultiPlayer_Wall_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
 
@@ -731,15 +731,15 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetMultiPlayerWallFillProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_MultiPlayer_Wall_Base_Color;
-        var highlightColor = CFG.Current.Viewport_MultiPlayer_Wall_Highlight_Color;
+        var baseColor = RenderSettings.Viewport.Viewport_MultiPlayer_Wall_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_MultiPlayer_Wall_Highlight_Color;
 
         DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _regionSolidBox, baseColor);
 
         // Like a placeholder, the fill is the panel, so it is always displayed and clickable
         r.Pickable = true;
         r.Visible = true;
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, RenderSettings.Viewport.Viewport_Region_Selection_Fill_Alpha);
 
         return r;
     }
@@ -753,9 +753,9 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetFogVolumeWireProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Fog_Volume_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Fog_Volume_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Fog_Volume_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Fog_Volume_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _fogVolumeBox);
 
@@ -768,12 +768,12 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetFogVolumeFillProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Fog_Volume_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Fog_Volume_Highlight_Color;
+        var baseColor = RenderSettings.Viewport.Viewport_Fog_Volume_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Fog_Volume_Highlight_Color;
 
         // Not clickable, as fog volumes are often bigger than the map pieces in them
         DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _fogVolumeSolidBox, baseColor);
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, RenderSettings.Viewport.Viewport_Region_Selection_Fill_Alpha);
 
         return r;
     }
@@ -782,9 +782,9 @@ public static class RenderableHelper
     // Built as the multiplayer wall panels are, as both are walls that rise from a line
     public static DebugPrimitiveRenderableProxy GetMapLimitEdgeProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Map_Limit_Wall_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Map_Limit_Wall_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Map_Limit_Wall_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
 
@@ -796,14 +796,14 @@ public static class RenderableHelper
 
     public static DebugPrimitiveRenderableProxy GetMapLimitEdgeFillProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Map_Limit_Wall_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Map_Limit_Wall_Highlight_Color;
+        var baseColor = RenderSettings.Viewport.Viewport_Map_Limit_Wall_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Map_Limit_Wall_Highlight_Color;
 
         DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _regionSolidBox, baseColor);
 
         r.Pickable = true;
         r.Visible = true;
-        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, CFG.Current.Viewport_Region_Selection_Fill_Alpha);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, RenderSettings.Viewport.Viewport_Region_Selection_Fill_Alpha);
 
         return r;
     }
@@ -811,9 +811,9 @@ public static class RenderableHelper
     // LIGHT PROBE SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetLightProbeSphereProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.GFX_Renderable_LightProbeSphere_BaseColor;
-        var highlightColor = CFG.Current.GFX_Renderable_LightProbeSphere_HighlightColor;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Graphics.GFX_Renderable_LightProbeSphere_BaseColor;
+        var highlightColor = RenderSettings.Graphics.GFX_Renderable_LightProbeSphere_HighlightColor;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _lightProbe);
 
@@ -827,9 +827,9 @@ public static class RenderableHelper
     // LEVEL CONNECTOR SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetLevelConnectorSphereProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.Viewport_Level_Connector_Marker_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Level_Connector_Marker_Highlight_Color;
-        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+        var baseColor = RenderSettings.Viewport.Viewport_Level_Connector_Marker_Base_Color;
+        var highlightColor = RenderSettings.Viewport.Viewport_Level_Connector_Marker_Highlight_Color;
+        var transparency = RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 

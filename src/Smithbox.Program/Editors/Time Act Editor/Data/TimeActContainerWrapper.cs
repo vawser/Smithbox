@@ -463,7 +463,7 @@ public class TimeActContainerWrapper
     /// Whether KRAK compression is written as deflate instead: only for ER, which can load both
     /// </summary>
     private bool ConvertKrakToDeflate => Project.Descriptor.ProjectType is ProjectType.ER
-        && CFG.Current.TimeActEditor_Save_Krak_As_Deflate;
+        && CFG.Current.TimeActEditor.TimeActEditor_Save_Krak_As_Deflate;
 
     /// <summary>
     /// Switches the binder, and any of its files, from KRAK to deflate. A nested binder is converted separately.

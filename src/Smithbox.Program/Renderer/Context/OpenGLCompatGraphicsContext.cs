@@ -27,10 +27,10 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
     {
         WindowCreateInfo windowCI = new()
         {
-            X = CFG.Current.GFX_Display_X,
-            Y = CFG.Current.GFX_Display_Y,
-            WindowWidth = CFG.Current.GFX_Display_Width,
-            WindowHeight = CFG.Current.GFX_Display_Height,
+            X = RenderSettings.Graphics.GFX_Display_X,
+            Y = RenderSettings.Graphics.GFX_Display_Y,
+            WindowWidth = RenderSettings.Graphics.GFX_Display_Width,
+            WindowHeight = RenderSettings.Graphics.GFX_Display_Height,
             WindowInitialState = WindowState.Maximized
         };
         WindowPlacement.Sanitize(ref windowCI);
@@ -69,7 +69,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
         _context.SwapInterval(1);
         GL = new GL(_context);
 
-        _imGuiRenderer = new OpenGLImGuiRenderer(GL, CFG.Current.GFX_Display_Width, CFG.Current.GFX_Display_Height,
+        _imGuiRenderer = new OpenGLImGuiRenderer(GL, RenderSettings.Graphics.GFX_Display_Width, RenderSettings.Graphics.GFX_Display_Height,
             ColorSpaceHandling.Legacy);
     }
 
@@ -87,8 +87,8 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             // A minimized window reports no area, which isn't a size to open with next time
             if (width > 0 && height > 0)
             {
-                CFG.Current.GFX_Display_Width = width;
-                CFG.Current.GFX_Display_Height = height;
+                RenderSettings.Graphics.GFX_Display_Width = width;
+                RenderSettings.Graphics.GFX_Display_Height = height;
             }
 
             RecreateWindowFramebuffers();
@@ -104,8 +104,8 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
 
             if (WindowPlacement.ShouldSavePosition(Window))
             {
-                CFG.Current.GFX_Display_X = x;
-                CFG.Current.GFX_Display_Y = y;
+                RenderSettings.Graphics.GFX_Display_X = x;
+                RenderSettings.Graphics.GFX_Display_Y = y;
             }
         }
 

@@ -40,12 +40,12 @@ public class ModelPreviewBrowser
     {
         ImGui.SetNextItemWidth(100f * DPI.UIScale());
         ImGui.SliderInt($"{LOC.Get("EDITOR_ModelPreview_Size")}##modelPreviewSize",
-            ref CFG.Current.Interface_Model_Preview_Size, MinPreviewSize, MaxPreviewSize);
+            ref CFG.Current.Interface.Interface_Model_Preview_Size, MinPreviewSize, MaxPreviewSize);
         GUI.Tooltip(LOC.Get("EDITOR_ModelPreview_Size_TT"));
 
         // Typed values aren't limited by the slider
-        CFG.Current.Interface_Model_Preview_Size =
-            Math.Clamp(CFG.Current.Interface_Model_Preview_Size, MinPreviewSize, MaxPreviewSize);
+        CFG.Current.Interface.Interface_Model_Preview_Size =
+            Math.Clamp(CFG.Current.Interface.Interface_Model_Preview_Size, MinPreviewSize, MaxPreviewSize);
 
         ImGui.SameLine();
 
@@ -84,7 +84,7 @@ public class ModelPreviewBrowser
 
         var cache = ModelPreviewCache.Get(Project);
 
-        var size = (float)CFG.Current.Interface_Model_Preview_Size;
+        var size = (float)CFG.Current.Interface.Interface_Model_Preview_Size;
         var spacing = ImGui.GetStyle().ItemSpacing;
         var cellSize = new Vector2(size, size + ImGui.GetTextLineHeightWithSpacing());
 

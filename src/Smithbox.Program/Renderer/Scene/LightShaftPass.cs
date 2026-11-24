@@ -114,7 +114,7 @@ public class LightShaftPass : PostProcessPass
     public override bool IsActive(GparamLighting lighting)
     {
         // The shafts are traced from the eye, which an orthographic view hasn't got
-        return CFG.Current.Viewport_Post_Light_Shafts && lighting is { PostEffects.LightShaft.Enabled: true } &&
+        return RenderSettings.Viewport.Viewport_Post_Light_Shafts && lighting is { PostEffects.LightShaft.Enabled: true } &&
                !Owner.IsOrthographic;
     }
 
@@ -158,7 +158,7 @@ public class LightShaftPass : PostProcessPass
         across = across.LengthSquared() > 1e-12f ? Vector2.Normalize(across) : Vector2.UnitY;
         var parallelBlur = across * Math.Max(shaft.BlurRangeParallel, 0.0f);
 
-        var exposure = lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+        var exposure = lighting.Exposure * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale;
         var addExposure = 1.0f + (exposure - 1.0f) * Math.Clamp(shaft.ExposureInfluenceAddColor, 0.0f, 1.0f);
 
         var multiply = shaft.SkyMultiplyColor;

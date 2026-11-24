@@ -40,8 +40,8 @@ public class InterfacePrefs
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    CFG.Current.Interface_UI_Scale = (float)Math.Round(PreferencesUtil.TempScale * 20) / 20;
-                    PreferencesUtil.TempScale = CFG.Current.Interface_UI_Scale;
+                    CFG.Current.Interface.Interface_UI_Scale = (float)Math.Round(PreferencesUtil.TempScale * 20) / 20;
+                    PreferencesUtil.TempScale = CFG.Current.Interface.Interface_UI_Scale;
                     DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 }
 
@@ -49,8 +49,8 @@ public class InterfacePrefs
 
                 if (ImGui.Button("Reset", DPI.SelectorButtonSize))
                 {
-                    CFG.Current.Interface_UI_Scale = CFG.Default.Interface_UI_Scale;
-                    PreferencesUtil.TempScale = CFG.Current.Interface_UI_Scale;
+                    CFG.Current.Interface.Interface_UI_Scale = CFG.Default.Interface.Interface_UI_Scale;
+                    PreferencesUtil.TempScale = CFG.Current.Interface.Interface_UI_Scale;
                     DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 }
             }
@@ -71,7 +71,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Scale_by_DPI_TT",
 
             Draw = () => {
-                ImGui.Checkbox($"##inputValue", ref CFG.Current.Interface_Scale_by_DPI);
+                ImGui.Checkbox($"##inputValue", ref CFG.Current.Interface.Interface_Scale_by_DPI);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
@@ -102,12 +102,12 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface_Font_Size, CFG.MinFontSize, CFG.MaxFontSize, "%.0f",
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface.Interface_Font_Size, CFG.MinFontSize, CFG.MaxFontSize, "%.0f",
                     ImGuiSliderFlags.AlwaysClamp);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    CFG.Current.Interface_Font_Size = (float)Math.Round(CFG.Current.Interface_Font_Size);
+                    CFG.Current.Interface.Interface_Font_Size = (float)Math.Round(CFG.Current.Interface.Interface_Font_Size);
                     DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 }
             }
@@ -128,7 +128,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Alias_Wordwrap_General_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_General);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Alias_Wordwrap_General);
             }
         };
     }
@@ -147,7 +147,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Alias_Wordwrap_Map_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Alias_Wordwrap_Map_Editor);
             }
         };
     }
@@ -165,7 +165,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Alias_Wordwrap_Model_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
             }
         };
     }
@@ -183,7 +183,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Alias_Wordwrap_Animation_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Animation_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Alias_Wordwrap_Animation_Editor);
             }
         };
     }
@@ -201,7 +201,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Allow_Window_Movement_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Allow_Window_Movement);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Allow_Window_Movement);
             }
         };
     }
@@ -220,7 +220,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Tool_Window_Dropdown_Navigation_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Tool_Window_Dropdown_Navigation);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Tool_Window_Dropdown_Navigation);
             }
         };
     }
@@ -242,7 +242,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Editor_Rail_Text_Labels_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Editor_Rail_Text_Labels);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Editor_Rail_Text_Labels);
             }
         };
     }
@@ -264,7 +264,7 @@ public class InterfacePrefs
             Draw = () => {
                 DPI.ApplyInputWidth();
                 // AlwaysClamp keeps a typed (ctrl+click) value inside the range
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface_Editor_Rail_Icon_Scale,
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface.Interface_Editor_Rail_Icon_Scale,
                     CFG.MinRailIconScale, CFG.MaxRailIconScale, "%.2f", ImGuiSliderFlags.AlwaysClamp);
 
                 ImGui.SameLine();
@@ -272,7 +272,7 @@ public class InterfacePrefs
                 if (ImGui.Button($"{LOC.Get("PREF_Interface_Editor_Rail_Icon_Scale_Reset")}##resetRailIconScale",
                         DPI.SelectorButtonSize))
                 {
-                    CFG.Current.Interface_Editor_Rail_Icon_Scale = CFG.Default.Interface_Editor_Rail_Icon_Scale;
+                    CFG.Current.Interface.Interface_Editor_Rail_Icon_Scale = CFG.Default.Interface.Interface_Editor_Rail_Icon_Scale;
                 }
             }
         };
@@ -343,8 +343,8 @@ public class InterfacePrefs
                 Title = labelKey,
 
                 Draw = () => {
-                    CFG.Current.Interface_Editor_Rail_Colors ??= new Dictionary<string, Vector3>();
-                    var colors = CFG.Current.Interface_Editor_Rail_Colors;
+                    CFG.Current.Interface.Interface_Editor_Rail_Colors ??= new Dictionary<string, Vector3>();
+                    var colors = CFG.Current.Interface.Interface_Editor_Rail_Colors;
 
                     var isSet = colors.TryGetValue(editorId, out var color);
 
@@ -400,7 +400,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Display_Title_Headers_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Display_Title_Headers);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Display_Title_Headers);
             }
         };
     }
@@ -418,7 +418,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Display_Searchbar_Minimize_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Display_Searchbar_Minimize);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Display_Searchbar_Minimize);
             }
         };
     }
@@ -437,7 +437,7 @@ public class InterfacePrefs
             Description = "PREF_Interface_Vanilla_Highlight_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Vanilla_Highlight);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface.Interface_Vanilla_Highlight);
             }
         };
     }
@@ -461,7 +461,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.English_Font, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface.English_Font, 255);
 
                 ImGui.SameLine();
 
@@ -470,7 +470,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.English_Font = path;
+                        CFG.Current.Interface.English_Font = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -494,7 +494,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_1, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface.Additional_Font_1, 255);
 
                 ImGui.SameLine();
 
@@ -503,7 +503,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Additional_Font_1 = path;
+                        CFG.Current.Interface.Additional_Font_1 = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -527,7 +527,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_2, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface.Additional_Font_2, 255);
 
                 ImGui.SameLine();
 
@@ -536,7 +536,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Additional_Font_2 = path;
+                        CFG.Current.Interface.Additional_Font_2 = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -560,7 +560,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_3, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface.Additional_Font_3, 255);
 
                 ImGui.SameLine();
 
@@ -569,7 +569,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Additional_Font_3 = path;
+                        CFG.Current.Interface.Additional_Font_3 = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -593,7 +593,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_4, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface.Additional_Font_4, 255);
 
                 ImGui.SameLine();
 
@@ -602,7 +602,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Additional_Font_4 = path;
+                        CFG.Current.Interface.Additional_Font_4 = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -626,7 +626,7 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_5, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Interface.Additional_Font_5, 255);
 
                 ImGui.SameLine();
 
@@ -635,7 +635,7 @@ public class InterfacePrefs
                     PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Additional_Font_5 = path;
+                        CFG.Current.Interface.Additional_Font_5 = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
@@ -680,7 +680,7 @@ public class InterfacePrefs
                         if (ImGui.Selectable(entry, entry == PreferencesUtil.CurrentThemeName))
                         {
                             PreferencesUtil.CurrentThemeName = entry;
-                            CFG.Current.Interface_Selected_Theme = PreferencesUtil.CurrentThemeName;
+                            CFG.Current.Interface.Interface_Selected_Theme = PreferencesUtil.CurrentThemeName;
                             UI.LoadTheme(entry);
                         }
                     }

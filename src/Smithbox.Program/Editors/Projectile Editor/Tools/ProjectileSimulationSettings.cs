@@ -109,11 +109,11 @@ public class ProjectileSimulationSettings
         GUI.SimpleHeader(LOC.Get("PROJECTILE_Header_Setup"), "");
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##launchHeight", ref cfg.ProjectileEditor_LaunchHeight, 0, 20,
+        changed |= ImGui.SliderFloat("##launchHeight", ref cfg.ProjectileEditor.ProjectileEditor_LaunchHeight, 0, 20,
             $"{LOC.Get("PROJECTILE_Launch_Height")}: %.1f m");
 
         ImGui.SetNextItemWidth(-1);
-        changed |= ImGui.SliderFloat("##emitHeight", ref cfg.ProjectileEditor_EmitHeight, 0, 5,
+        changed |= ImGui.SliderFloat("##emitHeight", ref cfg.ProjectileEditor.ProjectileEditor_EmitHeight, 0, 5,
             $"{LOC.Get("PROJECTILE_Emit_Height")}: %.1f m");
         GUI.Tooltip(LOC.Get("PROJECTILE_Emit_Height_TT"));
 
@@ -121,20 +121,20 @@ public class ProjectileSimulationSettings
         if (projectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##fixedEmitRadius", ref cfg.ProjectileEditor_FixedEmitRadius, 0, 30,
+            changed |= ImGui.SliderFloat("##fixedEmitRadius", ref cfg.ProjectileEditor.ProjectileEditor_FixedEmitRadius, 0, 30,
                 $"{LOC.Get("PROJECTILE_Fixed_Emit_Radius")}: %.1f m");
             GUI.Tooltip(LOC.Get("PROJECTILE_Fixed_Emit_Radius_TT"));
         }
 
         ImGui.SetNextItemWidth(-1);
 
-        if (ImGui.BeginCombo("##castOrientation", $"{LOC.Get("PROJECTILE_Cast_Orientation")}: {ProjectileFormat.GetOrientationName(cfg.ProjectileEditor_Orientation)}"))
+        if (ImGui.BeginCombo("##castOrientation", $"{LOC.Get("PROJECTILE_Cast_Orientation")}: {ProjectileFormat.GetOrientationName(cfg.ProjectileEditor.ProjectileEditor_Orientation)}"))
         {
             foreach (var orientation in Enum.GetValues<CastOrientation>())
             {
-                if (ImGui.Selectable(ProjectileFormat.GetOrientationName(orientation), orientation == cfg.ProjectileEditor_Orientation))
+                if (ImGui.Selectable(ProjectileFormat.GetOrientationName(orientation), orientation == cfg.ProjectileEditor.ProjectileEditor_Orientation))
                 {
-                    cfg.ProjectileEditor_Orientation = orientation;
+                    cfg.ProjectileEditor.ProjectileEditor_Orientation = orientation;
                     changed = true;
                 }
             }
@@ -149,7 +149,7 @@ public class ProjectileSimulationSettings
         if (bulletParam?["shootInterval"] != null)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##emitterDuration", ref cfg.ProjectileEditor_EmitterDuration, 0, 10,
+            changed |= ImGui.SliderFloat("##emitterDuration", ref cfg.ProjectileEditor.ProjectileEditor_EmitterDuration, 0, 10,
                 $"{LOC.Get("PROJECTILE_Emitter_Duration")}: %.2f s");
             GUI.Tooltip(LOC.Get("PROJECTILE_Emitter_Duration_TT"));
         }
@@ -157,59 +157,59 @@ public class ProjectileSimulationSettings
         if (bulletParam?["dist"] != null)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##distanceScale", ref cfg.ProjectileEditor_DistanceScale, 0.1f, 3,
+            changed |= ImGui.SliderFloat("##distanceScale", ref cfg.ProjectileEditor.ProjectileEditor_DistanceScale, 0.1f, 3,
                 $"{LOC.Get("PROJECTILE_Distance_Scale")}: %.2f");
             GUI.Tooltip(LOC.Get("PROJECTILE_Distance_Scale_TT"));
         }
 
         if (bulletParam?["spBulletDistUpRate"] != null)
         {
-            changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Distance_Up_Effect")}##distanceUpEffect", ref cfg.ProjectileEditor_DistanceUpEffect);
+            changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Distance_Up_Effect")}##distanceUpEffect", ref cfg.ProjectileEditor.ProjectileEditor_DistanceUpEffect);
             GUI.Tooltip(LOC.Get("PROJECTILE_Distance_Up_Effect_TT"));
         }
 
         if (ImGui.Button($"{LOC.Get("PROJECTILE_Reroll")}##reroll"))
         {
-            cfg.ProjectileEditor_Seed++;
+            cfg.ProjectileEditor.ProjectileEditor_Seed++;
             changed = true;
         }
         GUI.Tooltip(LOC.Get("PROJECTILE_Reroll_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Enemy_Attacks")}##useEnemyAttacks", ref cfg.ProjectileEditor_UseEnemyAttacks);
+        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Enemy_Attacks")}##useEnemyAttacks", ref cfg.ProjectileEditor.ProjectileEditor_UseEnemyAttacks);
         GUI.Tooltip(LOC.Get("PROJECTILE_Enemy_Attacks_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Ground_Collision")}##groundCollision", ref cfg.ProjectileEditor_GroundCollision);
+        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Ground_Collision")}##groundCollision", ref cfg.ProjectileEditor.ProjectileEditor_GroundCollision);
         GUI.Tooltip(LOC.Get("PROJECTILE_Ground_Collision_TT"));
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Simulate_Wall")}##simulateWall", ref cfg.ProjectileEditor_SimulateWall);
+        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Simulate_Wall")}##simulateWall", ref cfg.ProjectileEditor.ProjectileEditor_SimulateWall);
         GUI.Tooltip(LOC.Get("PROJECTILE_Simulate_Wall_TT"));
 
-        if (cfg.ProjectileEditor_SimulateWall)
+        if (cfg.ProjectileEditor.ProjectileEditor_SimulateWall)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##wallDistance", ref cfg.ProjectileEditor_WallDistance, 0.5f, 100,
+            changed |= ImGui.SliderFloat("##wallDistance", ref cfg.ProjectileEditor.ProjectileEditor_WallDistance, 0.5f, 100,
                 $"{LOC.Get("PROJECTILE_Wall_Distance")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##wallWidth", ref cfg.ProjectileEditor_WallWidth, 1, 50,
+            changed |= ImGui.SliderFloat("##wallWidth", ref cfg.ProjectileEditor.ProjectileEditor_WallWidth, 1, 50,
                 $"{LOC.Get("PROJECTILE_Wall_Width")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##wallHeight", ref cfg.ProjectileEditor_WallHeight, 1, 50,
+            changed |= ImGui.SliderFloat("##wallHeight", ref cfg.ProjectileEditor.ProjectileEditor_WallHeight, 1, 50,
                 $"{LOC.Get("PROJECTILE_Wall_Height")}: %.1f m");
         }
 
-        if (cfg.ProjectileEditor_GroundCollision || cfg.ProjectileEditor_SimulateWall)
+        if (cfg.ProjectileEditor.ProjectileEditor_GroundCollision || cfg.ProjectileEditor.ProjectileEditor_SimulateWall)
         {
             ImGui.SetNextItemWidth(-1);
 
-            if (ImGui.BeginCombo("##surface", ProjectileFormat.GetSurfaceName(cfg.ProjectileEditor_Surface)))
+            if (ImGui.BeginCombo("##surface", ProjectileFormat.GetSurfaceName(cfg.ProjectileEditor.ProjectileEditor_Surface)))
             {
                 foreach (var surface in new[] { ImpactSurface.Map, ImpactSurface.Water })
                 {
-                    if (ImGui.Selectable(ProjectileFormat.GetSurfaceName(surface), surface == cfg.ProjectileEditor_Surface))
+                    if (ImGui.Selectable(ProjectileFormat.GetSurfaceName(surface), surface == cfg.ProjectileEditor.ProjectileEditor_Surface))
                     {
-                        cfg.ProjectileEditor_Surface = surface;
+                        cfg.ProjectileEditor.ProjectileEditor_Surface = surface;
                         changed = true;
                     }
                 }
@@ -219,36 +219,36 @@ public class ProjectileSimulationSettings
             GUI.Tooltip(LOC.Get("PROJECTILE_Surface_TT"));
         }
 
-        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Simulate_Target")}##simulateTarget", ref cfg.ProjectileEditor_SimulateTarget);
+        changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Simulate_Target")}##simulateTarget", ref cfg.ProjectileEditor.ProjectileEditor_SimulateTarget);
         GUI.Tooltip(LOC.Get("PROJECTILE_Simulate_Target_TT"));
 
-        if (cfg.ProjectileEditor_SimulateTarget)
+        if (cfg.ProjectileEditor.ProjectileEditor_SimulateTarget)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.DragFloat("##targetX", ref cfg.ProjectileEditor_TargetPosition.X, 0.1f, -200, 200,
+            changed |= ImGui.DragFloat("##targetX", ref cfg.ProjectileEditor.ProjectileEditor_TargetPosition.X, 0.1f, -200, 200,
                 $"{LOC.Get("PROJECTILE_Target_Right")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.DragFloat("##targetY", ref cfg.ProjectileEditor_TargetPosition.Y, 0.1f, -50, 200,
+            changed |= ImGui.DragFloat("##targetY", ref cfg.ProjectileEditor.ProjectileEditor_TargetPosition.Y, 0.1f, -50, 200,
                 $"{LOC.Get("PROJECTILE_Target_Height")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.DragFloat("##targetZ", ref cfg.ProjectileEditor_TargetPosition.Z, 0.1f, -200, 200,
+            changed |= ImGui.DragFloat("##targetZ", ref cfg.ProjectileEditor.ProjectileEditor_TargetPosition.Z, 0.1f, -200, 200,
                 $"{LOC.Get("PROJECTILE_Target_Forward")}: %.1f m");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##targetRadius", ref cfg.ProjectileEditor_TargetRadius, 0.1f, 10,
+            changed |= ImGui.SliderFloat("##targetRadius", ref cfg.ProjectileEditor.ProjectileEditor_TargetRadius, 0.1f, 10,
                 $"{LOC.Get("PROJECTILE_Target_Radius")}: %.1f m");
 
             changed |= DisplayTargetMotion();
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##behindTargetHeight", ref cfg.ProjectileEditor_BehindTargetHeight, 0, 30,
+            changed |= ImGui.SliderFloat("##behindTargetHeight", ref cfg.ProjectileEditor.ProjectileEditor_BehindTargetHeight, 0, 30,
                 $"{LOC.Get("PROJECTILE_Behind_Target_Height")}: %.1f m");
             GUI.Tooltip(LOC.Get("PROJECTILE_Behind_Target_TT"));
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##behindTargetDistance", ref cfg.ProjectileEditor_BehindTargetDistance, 0, 30,
+            changed |= ImGui.SliderFloat("##behindTargetDistance", ref cfg.ProjectileEditor.ProjectileEditor_BehindTargetDistance, 0, 30,
                 $"{LOC.Get("PROJECTILE_Behind_Target_Distance")}: %.1f m");
             GUI.Tooltip(LOC.Get("PROJECTILE_Behind_Target_TT"));
         }
@@ -266,13 +266,13 @@ public class ProjectileSimulationSettings
 
         ImGui.SetNextItemWidth(-1);
 
-        if (ImGui.BeginCombo("##targetMotion", $"{LOC.Get("PROJECTILE_Target_Motion")}: {ProjectileFormat.GetMotionName(cfg.ProjectileEditor_TargetMotion)}"))
+        if (ImGui.BeginCombo("##targetMotion", $"{LOC.Get("PROJECTILE_Target_Motion")}: {ProjectileFormat.GetMotionName(cfg.ProjectileEditor.ProjectileEditor_TargetMotion)}"))
         {
             foreach (var motion in Enum.GetValues<TargetMotion>())
             {
-                if (ImGui.Selectable(ProjectileFormat.GetMotionName(motion), motion == cfg.ProjectileEditor_TargetMotion))
+                if (ImGui.Selectable(ProjectileFormat.GetMotionName(motion), motion == cfg.ProjectileEditor.ProjectileEditor_TargetMotion))
                 {
-                    cfg.ProjectileEditor_TargetMotion = motion;
+                    cfg.ProjectileEditor.ProjectileEditor_TargetMotion = motion;
                     changed = true;
                 }
             }
@@ -281,14 +281,14 @@ public class ProjectileSimulationSettings
         }
         GUI.Tooltip(LOC.Get("PROJECTILE_Target_Motion_TT"));
 
-        if (cfg.ProjectileEditor_TargetMotion is not TargetMotion.Still)
+        if (cfg.ProjectileEditor.ProjectileEditor_TargetMotion is not TargetMotion.Still)
         {
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##targetSpeed", ref cfg.ProjectileEditor_TargetSpeed, 0.5f, 30,
+            changed |= ImGui.SliderFloat("##targetSpeed", ref cfg.ProjectileEditor.ProjectileEditor_TargetSpeed, 0.5f, 30,
                 $"{LOC.Get("PROJECTILE_Target_Speed")}: %.1f m/s");
 
             ImGui.SetNextItemWidth(-1);
-            changed |= ImGui.SliderFloat("##targetRange", ref cfg.ProjectileEditor_TargetRange, 0.5f, 30,
+            changed |= ImGui.SliderFloat("##targetRange", ref cfg.ProjectileEditor.ProjectileEditor_TargetRange, 0.5f, 30,
                 $"{LOC.Get("PROJECTILE_Target_Range")}: %.1f m");
         }
 

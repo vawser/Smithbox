@@ -59,15 +59,15 @@ public class ParamPinGroups
                 LOC.Get("PARAM_PinGroups_Header_Options_TT"));
 
             ImGui.Checkbox($"{LOC.Get("PARAM_PinGroups_Checkbox_Pinned_Params_Only")}##togglePinnedParams", 
-                ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
+                ref CFG.Current.ParamEditor.Param_PinGroups_ShowOnlyPinnedParams);
             GUI.Tooltip(LOC.Get("PARAM_PinGroups_Checkbox_Pinned_Params_Only_TT"));
 
             ImGui.Checkbox($"{LOC.Get("PARAM_PinGroups_Checkbox_Pinned_Rows_Only")}##togglePinnedRows",
-                ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
+                ref CFG.Current.ParamEditor.Param_PinGroups_ShowOnlyPinnedRows);
             GUI.Tooltip(LOC.Get("PARAM_PinGroups_Checkbox_Pinned_Rows_Only_TT"));
 
             ImGui.Checkbox($"{LOC.Get("PARAM_PinGroups_Checkbox_Pinned_Fields_Only")}##togglePinnedFields", 
-                ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
+                ref CFG.Current.ParamEditor.Param_PinGroups_ShowOnlyPinnedFields);
             GUI.Tooltip(LOC.Get("PARAM_PinGroups_Checkbox_Pinned_Fields_Only_TT"));
 
             // Display

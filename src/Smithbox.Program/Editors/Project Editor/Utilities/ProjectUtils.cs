@@ -163,7 +163,7 @@ public class ProjectUtils
     {
         try
         {
-            if(CFG.Current.Project_Enable_Comprehensive_Backups)
+            if(CFG.Current.Project.Project_Enable_Comprehensive_Backups)
             {
                 if(toFs.FileExists(assetPath))
                 {
@@ -187,13 +187,13 @@ public class ProjectUtils
             // Make a backup of the original file if a mod path doesn't exist
             if (toFs != curProject.VFS.ProjectFS && !toFs.FileExists($"{assetPath}.bak") && toFs.FileExists(assetPath))
             {
-                if (CFG.Current.Project_Enable_Backup_Saves)
+                if (CFG.Current.Project.Project_Enable_Backup_Saves)
                 {
                     toFs.Copy(assetPath, $"{assetPath}.bak");
                 }
             }
 
-            var compressionOverride = CFG.Current.ParamEditor_CompressionOverride;
+            var compressionOverride = CFG.Current.ParamEditor.ParamEditor_CompressionOverride;
 
             if (gameType == ProjectType.DS3 && item is BND4 bndDS3)
             {
@@ -265,7 +265,7 @@ public class ProjectUtils
                     bxf4.Dispose();
                 }
 
-                if (CFG.Current.Project_Enable_Backup_Saves)
+                if (CFG.Current.Project.Project_Enable_Backup_Saves)
                 {
                     if (toFs.FileExists(bhdPath))
                     {
@@ -303,7 +303,7 @@ public class ProjectUtils
                 d.Dispose();
             }
 
-            if (CFG.Current.Project_Enable_Backup_Saves)
+            if (CFG.Current.Project.Project_Enable_Backup_Saves)
             {
                 if (toFs.FileExists(assetPath))
                 {

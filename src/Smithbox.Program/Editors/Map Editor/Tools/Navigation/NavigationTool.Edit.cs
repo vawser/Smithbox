@@ -989,7 +989,7 @@ public partial class NavigationTool
         if (scene == null)
             return;
 
-        var cursorColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
+        var cursorColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Color);
 
         // A wireframe over a translucent fill, so the navmesh under a large cursor can still be seen
         VertexCursorWire ??= RenderableHelper.GetDetectionSphereProxy(scene, cursorColor);
@@ -999,8 +999,8 @@ public partial class NavigationTool
         {
             Pickable = false,
             RenderOverlay = true,
-            BaseColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color),
-            HighlightedColor = ToVertexColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color)
+            BaseColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color),
+            HighlightedColor = ToVertexColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color)
         };
 
         // Follows the option as it is changed

@@ -39,30 +39,30 @@ public class TimeActFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_FiltersTool_Playback_Header"), LOC.Get("TAE_FiltersTool_Playback_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Auto_Play")}##timeActFilterAutoPlay", ref CFG.Current.TimeActEditor_Auto_Play_Animation);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Auto_Play")}##timeActFilterAutoPlay", ref CFG.Current.TimeActEditor.TimeActEditor_Auto_Play_Animation);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Auto_Play_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Apply_Root_Motion")}##timeActFilterApplyRootMotion", ref CFG.Current.TimeActEditor_Apply_Root_Motion);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Apply_Root_Motion")}##timeActFilterApplyRootMotion", ref CFG.Current.TimeActEditor.TimeActEditor_Apply_Root_Motion);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Apply_Root_Motion_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Play_Event_Sounds")}##timeActFilterPlayEventSounds", ref CFG.Current.TimeActEditor_Play_Event_Sounds);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Play_Event_Sounds")}##timeActFilterPlayEventSounds", ref CFG.Current.TimeActEditor.TimeActEditor_Play_Event_Sounds);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Play_Event_Sounds_TT"));
 
         // Viewport
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_FiltersTool_Viewport_Header"), LOC.Get("TAE_FiltersTool_Viewport_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Event_Markers")}##timeActFilterEventMarkers", ref CFG.Current.TimeActEditor_Display_Event_Markers);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Event_Markers")}##timeActFilterEventMarkers", ref CFG.Current.TimeActEditor.TimeActEditor_Display_Event_Markers);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Event_Markers_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Attack_Capsules")}##timeActFilterAttackCapsules", ref CFG.Current.TimeActEditor_Display_Attack_Capsules);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Attack_Capsules")}##timeActFilterAttackCapsules", ref CFG.Current.TimeActEditor.TimeActEditor_Display_Attack_Capsules);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Attack_Capsules_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Root_Motion_Path")}##timeActFilterRootMotionPath", ref CFG.Current.TimeActEditor_Display_Root_Motion);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Root_Motion_Path")}##timeActFilterRootMotionPath", ref CFG.Current.TimeActEditor.TimeActEditor_Display_Root_Motion);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Root_Motion_Path_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Display_Effects")}##timeActFilterDisplayEffects", ref CFG.Current.TimeActEditor_Display_Effects)
-            && !CFG.Current.TimeActEditor_Display_Effects)
+        if (ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Display_Effects")}##timeActFilterDisplayEffects", ref CFG.Current.TimeActEditor.TimeActEditor_Display_Effects)
+            && !CFG.Current.TimeActEditor.TimeActEditor_Display_Effects)
         {
             View.Playback.Effects.Clear();
         }
@@ -73,24 +73,24 @@ public class TimeActFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_FiltersTool_Graph_Header"), LOC.Get("TAE_FiltersTool_Graph_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##timeActFilterOutsidePlayback", ref CFG.Current.TimeActEditor_Graph_Display_Outside_Playback);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##timeActFilterOutsidePlayback", ref CFG.Current.TimeActEditor.TimeActEditor_Graph_Display_Outside_Playback);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Outside_Playback_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Event_Names")}##timeActFilterEventNames", ref CFG.Current.TimeActEditor_Graph_Display_Event_Names);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Event_Names")}##timeActFilterEventNames", ref CFG.Current.TimeActEditor.TimeActEditor_Graph_Display_Event_Names);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Event_Names_TT"));
 
         // Lists
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_FiltersTool_Lists_Header"), LOC.Get("TAE_FiltersTool_Lists_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Vanilla_Markers")}##timeActFilterVanillaMarkers", ref CFG.Current.TimeActEditor_Display_Vanilla_Markers);
+        ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Vanilla_Markers")}##timeActFilterVanillaMarkers", ref CFG.Current.TimeActEditor.TimeActEditor_Display_Vanilla_Markers);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Vanilla_Markers_TT"));
     }
 
     /// <summary>Why effects may not show, or what the animation's effect events are doing</summary>
     private void DisplayEffectStatus()
     {
-        if (!CFG.Current.TimeActEditor_Display_Effects)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Display_Effects)
             return;
 
         var effects = View.Playback.Effects;

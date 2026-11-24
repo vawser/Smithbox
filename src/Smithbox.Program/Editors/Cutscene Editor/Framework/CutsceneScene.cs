@@ -354,7 +354,7 @@ public sealed class CutsceneScene : IDisposable
     public void StartLoads(ProjectEntry project, RenderScene? renderScene, CutsceneModelPool? pool = null,
         CharacterAppearance? playerAppearance = null)
     {
-        if (!CFG.Current.CutsceneEditor_Load_Models)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Load_Models)
             return;
 
         foreach (var actor in Actors)

@@ -1,0 +1,857 @@
+{
+    "ProjectType": 17,
+    "Languages": [
+        {
+            "Abbreviation": "engus",
+            "Language": "English",
+            "LanguageKey": "TEXT_Language_English"
+        },
+        {
+            "Abbreviation": "frafr",
+            "Language": "French",
+            "LanguageKey": "TEXT_Language_French"
+        },
+        {
+            "Abbreviation": "fraus",
+            "Language": "French (Canadian)",
+            "LanguageKey": "TEXT_Language_FrenchCanadian"
+        },
+        {
+            "Abbreviation": "deude",
+            "Language": "German",
+            "LanguageKey": "TEXT_Language_German"
+        },
+        {
+            "Abbreviation": "itait",
+            "Language": "Italian",
+            "LanguageKey": "TEXT_Language_Italian"
+        },
+        {
+            "Abbreviation": "jpnjp",
+            "Language": "Japanese",
+            "LanguageKey": "TEXT_Language_Japanese"
+        },
+        {
+            "Abbreviation": "korkr",
+            "Language": "Korean",
+            "LanguageKey": "TEXT_Language_Korean"
+        },
+        {
+            "Abbreviation": "nldnl",
+            "Language": "Dutch",
+            "LanguageKey": "TEXT_Language_Dutch"
+        },
+        {
+            "Abbreviation": "polpl",
+            "Language": "Polish",
+            "LanguageKey": "TEXT_Language_Polish"
+        },
+        {
+            "Abbreviation": "rusru",
+            "Language": "Russian",
+            "LanguageKey": "TEXT_Language_Russian"
+        },
+        {
+            "Abbreviation": "spaes",
+            "Language": "Spanish",
+            "LanguageKey": "TEXT_Language_Spanish"
+        },
+        {
+            "Abbreviation": "spaar",
+            "Language": "Spanish (Latin)",
+            "LanguageKey": "TEXT_Language_SpanishLatin"
+        },
+        {
+            "Abbreviation": "zhotw",
+            "Language": "Traditional Chinese",
+            "LanguageKey": "TEXT_Language_TraditionalChinese"
+        },
+        {
+            "Abbreviation": "zhocn",
+            "Language": "Simplified Chinese",
+            "LanguageKey": "TEXT_Language_SimplifiedChinese"
+        },
+        {
+            "Abbreviation": "thath",
+            "Language": "Thai",
+            "LanguageKey": "TEXT_Language_Thai"
+        },
+        {
+            "Abbreviation": "porbr",
+            "Language": "Portuguese (Latin)",
+            "LanguageKey": "TEXT_Language_PortugueseLatin"
+        },
+        {
+            "Abbreviation": "araae",
+            "Language": "Arabic",
+            "LanguageKey": "TEXT_Language_Arabic"
+        }
+    ],
+    "Containers": [
+        {
+            "OrderID": 1,
+            "FullName": "item_nt.msgbnd.dcx",
+            "SimpleName": "item_nt",
+            "ContainerName": "Item",
+            "VariantName": "Stock",
+            "DisplayName": "Item"
+        },
+        {
+            "OrderID": 2,
+            "FullName": "menu_nt.msgbnd.dcx",
+            "SimpleName": "menu_nt",
+            "ContainerName": "Menu",
+            "VariantName": "Stock",
+            "DisplayName": "Menu"
+        }
+    ],
+    "List": [
+        {
+            "ID": 10,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 11,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 12,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Armors",
+            "SecondaryDomain": "",
+            "DisplayName": "Armors"
+        },
+        {
+            "ID": 13,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 15,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 16,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 17,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Skills",
+            "SecondaryDomain": "",
+            "DisplayName": "Skills"
+        },
+        {
+            "ID": 18,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Characters",
+            "SecondaryDomain": "",
+            "DisplayName": "Characters"
+        },
+        {
+            "ID": 19,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Locations",
+            "SecondaryDomain": "",
+            "DisplayName": "Locations"
+        },
+        {
+            "ID": 20,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 21,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 22,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Armors",
+            "SecondaryDomain": "",
+            "DisplayName": "Armors"
+        },
+        {
+            "ID": 23,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 24,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Goods",
+            "SecondaryDomain": "",
+            "DisplayName": "Goods"
+        },
+        {
+            "ID": 25,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Weapons",
+            "SecondaryDomain": "",
+            "DisplayName": "Weapons"
+        },
+        {
+            "ID": 26,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Armors",
+            "SecondaryDomain": "",
+            "DisplayName": "Armors"
+        },
+        {
+            "ID": 27,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Accessories",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessories"
+        },
+        {
+            "ID": 30,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Item Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Item Dialog"
+        },
+        {
+            "ID": 40,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Skill Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Skill Dialog"
+        },
+        {
+            "ID": 41,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Item Get Notice",
+            "SecondaryDomain": "",
+            "DisplayName": "Item Get Notice"
+        },
+        {
+            "ID": 42,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Accessory Get Notice",
+            "SecondaryDomain": "",
+            "DisplayName": "Accessory Get Notice"
+        },
+        {
+            "ID": 400,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Person Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Person Mat"
+        },
+        {
+            "ID": 401,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Person Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Person Mat"
+        },
+        {
+            "ID": 402,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Person Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Person Mat"
+        },
+        {
+            "ID": 403,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "Stock",
+            "Domain": "Person Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Person Mat Awaken"
+        },
+        {
+            "ID": 410,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Profile Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Profile Mat"
+        },
+        {
+            "ID": 411,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Profile Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Profile Mat"
+        },
+        {
+            "ID": 412,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Profile Mat",
+            "SecondaryDomain": "",
+            "DisplayName": "Profile Mat"
+        },
+        {
+            "ID": 415,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Family Tree Sheet",
+            "SecondaryDomain": "",
+            "DisplayName": "Family Tree Sheet"
+        },
+        {
+            "ID": 416,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Family Tree Sheet",
+            "SecondaryDomain": "",
+            "DisplayName": "Family Tree Sheet"
+        },
+        {
+            "ID": 417,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Family Tree Sheet",
+            "SecondaryDomain": "",
+            "DisplayName": "Family Tree Sheet"
+        },
+        {
+            "ID": 422,
+            "Container": "Item",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Tribe Action",
+            "SecondaryDomain": "",
+            "DisplayName": "Tribe Action"
+        },
+        {
+            "ID": 424,
+            "Container": "Item",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Tribe Action",
+            "SecondaryDomain": "",
+            "DisplayName": "Tribe Action"
+        },
+        {
+            "ID": 425,
+            "Container": "Item",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Tribe Action",
+            "SecondaryDomain": "",
+            "DisplayName": "Tribe Action"
+        },
+        {
+            "ID": 426,
+            "Container": "Item",
+            "Role": "Effect",
+            "Variant": "Stock",
+            "Domain": "Tribe Action",
+            "SecondaryDomain": "",
+            "DisplayName": "Tribe Action"
+        },
+        {
+            "ID": 427,
+            "Container": "Item",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Tribe Action Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Tribe Action Dialog"
+        },
+        {
+            "ID": 1,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Talk Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "Talk Messages"
+        },
+        {
+            "ID": 50,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Text Embed Images",
+            "SecondaryDomain": "",
+            "DisplayName": "Text Embed Images"
+        },
+        {
+            "ID": 200,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Menu Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Menu Text"
+        },
+        {
+            "ID": 201,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Line Help",
+            "SecondaryDomain": "",
+            "DisplayName": "Line Help"
+        },
+        {
+            "ID": 202,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Key Guide",
+            "SecondaryDomain": "",
+            "DisplayName": "Key Guide"
+        },
+        {
+            "ID": 203,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "System Messages",
+            "SecondaryDomain": "",
+            "DisplayName": "System Messages"
+        },
+        {
+            "ID": 204,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Dialogue",
+            "SecondaryDomain": "",
+            "DisplayName": "Dialogue"
+        },
+        {
+            "ID": 207,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 208,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Tutorial Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tutorial Text"
+        },
+        {
+            "ID": 209,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Role Name",
+            "SecondaryDomain": "",
+            "DisplayName": "Role Name"
+        },
+        {
+            "ID": 210,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Sub Quest Caption",
+            "SecondaryDomain": "",
+            "DisplayName": "Sub Quest Caption"
+        },
+        {
+            "ID": 211,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Single Play Mission",
+            "SecondaryDomain": "",
+            "DisplayName": "Single Play Mission"
+        },
+        {
+            "ID": 212,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Single Play Mission",
+            "SecondaryDomain": "",
+            "DisplayName": "Single Play Mission"
+        },
+        {
+            "ID": 213,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Theme",
+            "SecondaryDomain": "",
+            "DisplayName": "Theme"
+        },
+        {
+            "ID": 214,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Theme",
+            "SecondaryDomain": "",
+            "DisplayName": "Theme"
+        },
+        {
+            "ID": 215,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Theme Block",
+            "SecondaryDomain": "",
+            "DisplayName": "Theme Block"
+        },
+        {
+            "ID": 216,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Theme Block",
+            "SecondaryDomain": "",
+            "DisplayName": "Theme Block"
+        },
+        {
+            "ID": 217,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Theme Block",
+            "SecondaryDomain": "",
+            "DisplayName": "Theme Block"
+        },
+        {
+            "ID": 218,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Chapter",
+            "SecondaryDomain": "",
+            "DisplayName": "Chapter"
+        },
+        {
+            "ID": 219,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Text Effect Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Text Effect Text"
+        },
+        {
+            "ID": 220,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Sub Quest Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Sub Quest Text"
+        },
+        {
+            "ID": 221,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Network System Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Network System Text"
+        },
+        {
+            "ID": 222,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Network Message Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Network Message Text"
+        },
+        {
+            "ID": 223,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text for Talk",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Talk"
+        },
+        {
+            "ID": 224,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Event Text for Map",
+            "SecondaryDomain": "",
+            "DisplayName": "Event Text for Map"
+        },
+        {
+            "ID": 226,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Common Sub Mission Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Common Sub Mission Text"
+        },
+        {
+            "ID": 227,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Action Button Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Action Button Text"
+        },
+        {
+            "ID": 228,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Phase_Result_Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Phase_Result_Text"
+        },
+        {
+            "ID": 229,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Environment Event",
+            "SecondaryDomain": "",
+            "DisplayName": "Environment Event"
+        },
+        {
+            "ID": 230,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Environment Event",
+            "SecondaryDomain": "",
+            "DisplayName": "Environment Event"
+        },
+        {
+            "ID": 231,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Environment Event",
+            "SecondaryDomain": "",
+            "DisplayName": "Environment Event"
+        },
+        {
+            "ID": 232,
+            "Container": "Menu",
+            "Role": "Effect",
+            "Variant": "Stock",
+            "Domain": "Environment Event",
+            "SecondaryDomain": "",
+            "DisplayName": "Environment Event"
+        },
+        {
+            "ID": 233,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Environment Event Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Environment Event Dialog"
+        },
+        {
+            "ID": 234,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Terms of Service",
+            "SecondaryDomain": "",
+            "DisplayName": "Terms of Service"
+        },
+        {
+            "ID": 235,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Buddy",
+            "SecondaryDomain": "",
+            "DisplayName": "Buddy"
+        },
+        {
+            "ID": 236,
+            "Container": "Menu",
+            "Role": "Summary",
+            "Variant": "Stock",
+            "Domain": "Buddy",
+            "SecondaryDomain": "",
+            "DisplayName": "Buddy"
+        },
+        {
+            "ID": 237,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Buddy",
+            "SecondaryDomain": "",
+            "DisplayName": "Buddy"
+        },
+        {
+            "ID": 238,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Role Text Name",
+            "SecondaryDomain": "",
+            "DisplayName": "Role Text Name"
+        },
+        {
+            "ID": 239,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "SubQuest Text Name",
+            "SecondaryDomain": "",
+            "DisplayName": "SubQuest Text Name"
+        },
+        {
+            "ID": 240,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "SubQuest Text Targets",
+            "SecondaryDomain": "",
+            "DisplayName": "SubQuest Text Targets"
+        },
+        {
+            "ID": 241,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "SubQuest Text Success",
+            "SecondaryDomain": "",
+            "DisplayName": "SubQuest Text Success"
+        },
+        {
+            "ID": 242,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "SubQuest Text Fail",
+            "SecondaryDomain": "",
+            "DisplayName": "SubQuest Text Fail"
+        },
+        {
+            "ID": 243,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "SubQuest Text Unable",
+            "SecondaryDomain": "",
+            "DisplayName": "SubQuest Text Unable"
+        },
+        {
+            "ID": 244,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "SubQuest Text Unable Ingame",
+            "SecondaryDomain": "",
+            "DisplayName": "SubQuest Text Unable Ingame"
+        },
+        {
+            "ID": 245,
+            "Container": "Menu",
+            "Role": "None",
+            "Variant": "Stock",
+            "Domain": "Buddy Dialog",
+            "SecondaryDomain": "",
+            "DisplayName": "Buddy Dialog"
+        },
+        {
+            "ID": 246,
+            "Container": "Menu",
+            "Role": "Title",
+            "Variant": "Stock",
+            "Domain": "Tips Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tips Text"
+        },
+        {
+            "ID": 247,
+            "Container": "Menu",
+            "Role": "Description",
+            "Variant": "Stock",
+            "Domain": "Tips Text",
+            "SecondaryDomain": "",
+            "DisplayName": "Tips Text"
+        }
+    ]
+}

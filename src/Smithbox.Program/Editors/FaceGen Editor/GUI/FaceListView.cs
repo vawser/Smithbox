@@ -408,11 +408,11 @@ public class FaceListView
         if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Duplicate_Header")}##faceGenDuplicateMenu"))
         {
             ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateOffset")}##faceGenDuplicateOffset",
-                ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+                ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset);
             GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateOffset_TT"));
 
             ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateAmount")}##faceGenDuplicateAmount",
-                ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+                ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Amount);
             GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateAmount_TT"));
 
             ImGui.Separator();
@@ -609,7 +609,7 @@ public class FaceListView
 
         if (pasted != null)
         {
-            if (CFG.Current.Param_PasteThenSelect && pasted.Count > 0)
+            if (CFG.Current.ParamEditor.Param_PasteThenSelect && pasted.Count > 0)
             {
                 View.Select(ParamName!, pasted[0]);
                 Selected.UnionWith(pasted);

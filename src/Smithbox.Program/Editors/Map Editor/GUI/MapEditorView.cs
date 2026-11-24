@@ -282,12 +282,12 @@ public class MapEditorView : IEditorView
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        if (CFG.Current.Interface_MapEditor_EditorDisplayType is EditorDisplayType.Windows)
+        if (CFG.Current.Interface.Interface_MapEditor_EditorDisplayType is EditorDisplayType.Windows)
         {
             DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);
         }
 
-        if (CFG.Current.Interface_MapEditor_EditorDisplayType is EditorDisplayType.TabbedPanels)
+        if (CFG.Current.Interface.Interface_MapEditor_EditorDisplayType is EditorDisplayType.TabbedPanels)
         {
             DisplayTabbedPanels(dockspaceId, viewIndex, doFocus, isActiveView);
         }
@@ -392,7 +392,7 @@ public class MapEditorView : IEditorView
 
         ImGui.End();
 
-        if (CFG.Current.Interface_MapEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_MapEditor_ToolWindow)
         {
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
@@ -495,7 +495,7 @@ public class MapEditorView : IEditorView
                 ImGui.EndTabItem();
             }
 
-            if (CFG.Current.Interface_MapEditor_ToolWindow)
+            if (CFG.Current.Interface.Interface_MapEditor_ToolWindow)
             {
                 if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Tools")))
                 {

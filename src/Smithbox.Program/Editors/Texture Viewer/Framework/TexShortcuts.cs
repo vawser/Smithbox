@@ -22,7 +22,7 @@ public class TexShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
+            CFG.Current.Interface.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface.Interface_TextureViewer_ToolWindow;
         }
 
         if (activeView == null)

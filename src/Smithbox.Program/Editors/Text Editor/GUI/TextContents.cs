@@ -28,7 +28,7 @@ public class TextContents
         ReferenceLookup = new TextReferenceLookup(view, project);
     }
 
-    private static bool ShowReference => CFG.Current.TextEditor_Contents_Show_Reference;
+    private static bool ShowReference => CFG.Current.TextEditor.TextEditor_Contents_Show_Reference;
 
     /// <summary>
     /// The bordered header strip under the title, as in the File List and Text Entries panels,
@@ -39,13 +39,13 @@ public class TextContents
         ImGui.BeginChild("textEditor_Contents_Section_Header", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
         // Preview toggle
-        var previewIcon = CFG.Current.TextEditor_Contents_Show_Text_Preview ? Icons.Eye : Icons.EyeSlash;
+        var previewIcon = CFG.Current.TextEditor.TextEditor_Contents_Show_Text_Preview ? Icons.Eye : Icons.EyeSlash;
         if (ImGui.Button($"{previewIcon}##toggleTextPreview", DPI.IconButtonSize))
         {
-            CFG.Current.TextEditor_Contents_Show_Text_Preview = !CFG.Current.TextEditor_Contents_Show_Text_Preview;
+            CFG.Current.TextEditor.TextEditor_Contents_Show_Text_Preview = !CFG.Current.TextEditor.TextEditor_Contents_Show_Text_Preview;
         }
         GUI.Tooltip(LOC.Get("TEXT_Contents_Preview_Toggle_TT",
-            LOC.Get(CFG.Current.TextEditor_Contents_Show_Text_Preview ? "TEXT_Contents_Preview_Shown" : "TEXT_Contents_Preview_Hidden")));
+            LOC.Get(CFG.Current.TextEditor.TextEditor_Contents_Show_Text_Preview ? "TEXT_Contents_Preview_Shown" : "TEXT_Contents_Preview_Hidden")));
 
         DisplayReferenceControls();
 
@@ -61,7 +61,7 @@ public class TextContents
 
         if (ImGui.Button($"{Icons.Columns}##toggleReference", DPI.IconButtonSize))
         {
-            CFG.Current.TextEditor_Contents_Show_Reference = !CFG.Current.TextEditor_Contents_Show_Reference;
+            CFG.Current.TextEditor.TextEditor_Contents_Show_Reference = !CFG.Current.TextEditor.TextEditor_Contents_Show_Reference;
         }
         GUI.Tooltip(LOC.Get("TEXT_Reference_Toggle_TT"));
 
@@ -74,21 +74,21 @@ public class TextContents
         if (ImGui.BeginCombo("##referenceSource", ReferenceLookup.SourceLabel()))
         {
             if (ImGui.Selectable($"{LOC.Get("TEXT_Reference_Source_Vanilla")}##refVanilla",
-                CFG.Current.TextEditor_Contents_Reference_Use_Vanilla))
+                CFG.Current.TextEditor.TextEditor_Contents_Reference_Use_Vanilla))
             {
-                CFG.Current.TextEditor_Contents_Reference_Use_Vanilla = true;
+                CFG.Current.TextEditor.TextEditor_Contents_Reference_Use_Vanilla = true;
             }
             GUI.Tooltip(LOC.Get("TEXT_Reference_Source_Vanilla_TT"));
 
             foreach (var language in TextUtils.GetSupportedLanguages(Project))
             {
-                var isCurrent = !CFG.Current.TextEditor_Contents_Reference_Use_Vanilla &&
-                    CFG.Current.TextEditor_Contents_Reference_Category == language;
+                var isCurrent = !CFG.Current.TextEditor.TextEditor_Contents_Reference_Use_Vanilla &&
+                    CFG.Current.TextEditor.TextEditor_Contents_Reference_Category == language;
 
                 if (ImGui.Selectable($"{LOC.Get(language.GetDisplayName())}##ref{language}", isCurrent))
                 {
-                    CFG.Current.TextEditor_Contents_Reference_Use_Vanilla = false;
-                    CFG.Current.TextEditor_Contents_Reference_Category = language;
+                    CFG.Current.TextEditor.TextEditor_Contents_Reference_Use_Vanilla = false;
+                    CFG.Current.TextEditor.TextEditor_Contents_Reference_Category = language;
                 }
             }
 
@@ -190,7 +190,7 @@ public class TextContents
         if (fmgEntryGroup != null)
         {
             // Display normally if entry has no groups, or it has been disabled
-            if (!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+            if (!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries)
             {
                 DisplayBasicTextInput(Parent.Selection._selectedFmgEntry);
             }
@@ -253,7 +253,7 @@ public class TextContents
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, warnings);
         }
 
-        if (!CFG.Current.TextEditor_Contents_Show_Text_Preview)
+        if (!CFG.Current.TextEditor.TextEditor_Contents_Show_Text_Preview)
             return;
 
         TextMarkupPreview.Display(id, text);
@@ -306,7 +306,7 @@ public class TextContents
         if (targets.Count == 0 || targets.All(e => e.ID == newId))
             return;
 
-        if (!CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID)
+        if (!CFG.Current.TextEditor.TextEditor_Text_Entry_Allow_Duplicate_ID)
         {
             // Check every FMG the change writes to, ignoring the entries being changed
             foreach (var target in targets)

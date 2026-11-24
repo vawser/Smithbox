@@ -51,28 +51,28 @@ public sealed class ProjectileSimulator
         {
             var cfg = CFG.Current;
 
-            return new SimulationSettings(cfg.ProjectileEditor_LaunchHeight,
-                cfg.ProjectileEditor_EmitHeight,
-                cfg.ProjectileEditor_FixedEmitRadius,
-                cfg.ProjectileEditor_BehindTargetHeight,
-                cfg.ProjectileEditor_BehindTargetDistance,
-                cfg.ProjectileEditor_Orientation,
-                cfg.ProjectileEditor_GroundCollision,
-                cfg.ProjectileEditor_SimulateWall,
-                cfg.ProjectileEditor_WallDistance,
-                cfg.ProjectileEditor_WallWidth,
-                cfg.ProjectileEditor_WallHeight,
-                cfg.ProjectileEditor_Surface,
-                cfg.ProjectileEditor_SimulateTarget,
-                cfg.ProjectileEditor_TargetPosition,
-                cfg.ProjectileEditor_TargetRadius,
-                cfg.ProjectileEditor_TargetMotion,
-                cfg.ProjectileEditor_TargetSpeed,
-                cfg.ProjectileEditor_TargetRange,
-                cfg.ProjectileEditor_Seed,
-                cfg.ProjectileEditor_EmitterDuration,
-                cfg.ProjectileEditor_DistanceScale,
-                cfg.ProjectileEditor_DistanceUpEffect);
+            return new SimulationSettings(cfg.ProjectileEditor.ProjectileEditor_LaunchHeight,
+                cfg.ProjectileEditor.ProjectileEditor_EmitHeight,
+                cfg.ProjectileEditor.ProjectileEditor_FixedEmitRadius,
+                cfg.ProjectileEditor.ProjectileEditor_BehindTargetHeight,
+                cfg.ProjectileEditor.ProjectileEditor_BehindTargetDistance,
+                cfg.ProjectileEditor.ProjectileEditor_Orientation,
+                cfg.ProjectileEditor.ProjectileEditor_GroundCollision,
+                cfg.ProjectileEditor.ProjectileEditor_SimulateWall,
+                cfg.ProjectileEditor.ProjectileEditor_WallDistance,
+                cfg.ProjectileEditor.ProjectileEditor_WallWidth,
+                cfg.ProjectileEditor.ProjectileEditor_WallHeight,
+                cfg.ProjectileEditor.ProjectileEditor_Surface,
+                cfg.ProjectileEditor.ProjectileEditor_SimulateTarget,
+                cfg.ProjectileEditor.ProjectileEditor_TargetPosition,
+                cfg.ProjectileEditor.ProjectileEditor_TargetRadius,
+                cfg.ProjectileEditor.ProjectileEditor_TargetMotion,
+                cfg.ProjectileEditor.ProjectileEditor_TargetSpeed,
+                cfg.ProjectileEditor.ProjectileEditor_TargetRange,
+                cfg.ProjectileEditor.ProjectileEditor_Seed,
+                cfg.ProjectileEditor.ProjectileEditor_EmitterDuration,
+                cfg.ProjectileEditor.ProjectileEditor_DistanceScale,
+                cfg.ProjectileEditor.ProjectileEditor_DistanceUpEffect);
         }
     }
 
@@ -92,7 +92,7 @@ public sealed class ProjectileSimulator
         Rebuild();
 
         Time = 0;
-        Playing = Result != null && CFG.Current.ProjectileEditor_Auto_Play_On_Select;
+        Playing = Result != null && CFG.Current.ProjectileEditor.ProjectileEditor_Auto_Play_On_Select;
     }
 
     public void Clear()
@@ -214,13 +214,13 @@ public sealed class ProjectileSimulator
         if (!Playing || Result == null)
             return;
 
-        Time += dt * CFG.Current.ProjectileEditor_Speed;
+        Time += dt * CFG.Current.ProjectileEditor.ProjectileEditor_Speed;
 
         if (Time < Result.Duration)
             return;
 
-        Time = CFG.Current.ProjectileEditor_Loop ? 0 : Result.Duration;
-        Playing = CFG.Current.ProjectileEditor_Loop;
+        Time = CFG.Current.ProjectileEditor.ProjectileEditor_Loop ? 0 : Result.Duration;
+        Playing = CFG.Current.ProjectileEditor.ProjectileEditor_Loop;
     }
 
     /// <summary>Play, or pause; a finished simulation starts over</summary>

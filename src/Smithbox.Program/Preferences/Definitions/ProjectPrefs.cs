@@ -33,7 +33,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Enable_Auto_Load_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Auto_Load);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Enable_Auto_Load);
             }
         };
     }
@@ -51,7 +51,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Enable_Automatic_Auto_Load_Assignment_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Enable_Automatic_Auto_Load_Assignment);
             }
         };
     }
@@ -72,7 +72,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Project_Default_Mod_Directory, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Project.Project_Default_Mod_Directory, 255);
 
                 ImGui.SameLine();
 
@@ -84,7 +84,7 @@ public class ProjectPrefs
 
                     if (result)
                     {
-                        CFG.Current.Project_Default_Mod_Directory = newProjectPath;
+                        CFG.Current.Project.Project_Default_Mod_Directory = newProjectPath;
                     }
                 }
             }
@@ -107,7 +107,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Project_Default_Data_Directory, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Project.Project_Default_Data_Directory, 255);
 
                 ImGui.SameLine();
 
@@ -119,7 +119,7 @@ public class ProjectPrefs
 
                     if (result)
                     {
-                        CFG.Current.Project_Default_Data_Directory = newDataPath;
+                        CFG.Current.Project.Project_Default_Data_Directory = newDataPath;
                     }
                 }
             }
@@ -139,7 +139,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Enable_Backup_Saves_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Backup_Saves);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Enable_Backup_Saves);
             }
         };
     }
@@ -157,7 +157,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Scan_Directory_For_Additions_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Scan_Directory_For_Additions);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Scan_Directory_For_Additions);
             }
         };
     }
@@ -175,7 +175,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Scan_Directory_Strict_Mode_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Scan_Directory_Strict_Mode);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Scan_Directory_Strict_Mode);
             }
         };
     }
@@ -193,7 +193,7 @@ public class ProjectPrefs
             Description = "PREF_Project_VFS_Prefer_Loose_Files_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_VFS_Prefer_Loose_Files);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_VFS_Prefer_Loose_Files);
             }
         };
     }
@@ -248,7 +248,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Enable_Automatic_Save_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Automatic_Save);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Enable_Automatic_Save);
             }
         };
     }
@@ -269,7 +269,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Project_Automatic_Save_Interval, 5f, 3600f);
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Project.Project_Automatic_Save_Interval, 5f, 3600f);
             }
         };
     }
@@ -288,7 +288,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Automatic_Save_Include_Map_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Map_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Automatic_Save_Include_Map_Editor);
             }
         };
     }
@@ -307,7 +307,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Automatic_Save_Include_Param_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Param_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Automatic_Save_Include_Param_Editor);
             }
         };
     }
@@ -326,7 +326,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Automatic_Save_Include_Text_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Text_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Automatic_Save_Include_Text_Editor);
             }
         };
     }
@@ -345,7 +345,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Automatic_Save_Include_Gparam_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Gparam_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Automatic_Save_Include_Gparam_Editor);
             }
         };
     }
@@ -364,7 +364,7 @@ public class ProjectPrefs
             Description = "PREF_Project_Automatic_Save_Include_Material_Editor_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Material_Editor);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Project.Project_Automatic_Save_Include_Material_Editor);
             }
         };
     }
@@ -387,7 +387,7 @@ public class ProjectPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Project_ME3_Profile_Directory, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Project.Project_ME3_Profile_Directory, 255);
 
                 ImGui.SameLine();
 
@@ -399,7 +399,7 @@ public class ProjectPrefs
 
                     if (result)
                     {
-                        CFG.Current.Project_ME3_Profile_Directory = newDataPath;
+                        CFG.Current.Project.Project_ME3_Profile_Directory = newDataPath;
                     }
                 }
 

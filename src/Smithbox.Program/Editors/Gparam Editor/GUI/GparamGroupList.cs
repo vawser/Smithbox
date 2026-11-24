@@ -51,7 +51,7 @@ public class GparamGroupList
 
         // Toggle: Display Empty Groups
         GUI.DisplayToggleButton("emptyGroupToggle", Icons.Book,
-            ref CFG.Current.GparamEditor_Group_List_Display_Empty_Group,
+            ref CFG.Current.GparamEditor.GparamEditor_Group_List_Display_Empty_Group,
             "GPARAM_GroupList_Empty_Groups_Toggle_Hide",
             "GPARAM_GroupList_Empty_Groups_Toggle_Show",
             "GPARAM_GroupList_Empty_Groups_Toggle_TT");
@@ -133,7 +133,7 @@ public class GparamGroupList
 
         // Groups with fields the viewport's renderer reads say so in their tooltip; the text colour is always the
         // vanilla state (modified / added against the game's file)
-        var isRendered = CFG.Current.GparamEditor_Highlight_Viewport_Fields &&
+        var isRendered = CFG.Current.GparamEditor.GparamEditor_Highlight_Viewport_Fields &&
                          View.ViewportWindow.LightingBank.IsRenderedGroup(group.Key);
 
         var vanillaStatus = View.VanillaCompare.GroupStatus(fileEntry, group);
@@ -162,7 +162,7 @@ public class GparamGroupList
 
         VanillaMarkers.PopColour(coloured);
 
-        var tooltip = CFG.Current.GparamEditor_Group_List_Display_Descriptions ? groupDesc : "";
+        var tooltip = CFG.Current.GparamEditor.GparamEditor_Group_List_Display_Descriptions ? groupDesc : "";
 
         if (isRendered)
         {
@@ -358,7 +358,7 @@ public class GparamGroupList
 
     private bool DisplayEmptyGroup(GPARAM.Param entry)
     {
-        if (!CFG.Current.GparamEditor_Group_List_Display_Empty_Group)
+        if (!CFG.Current.GparamEditor.GparamEditor_Group_List_Display_Empty_Group)
         {
             foreach (var fieldEntry in entry.Fields)
             {
@@ -429,7 +429,7 @@ public class GparamGroupList
                 curOption.ToAdd = curState;
             }
 
-            if (CFG.Current.GparamEditor_Group_List_Display_Descriptions)
+            if (CFG.Current.GparamEditor.GparamEditor_Group_List_Display_Descriptions)
             {
                 var desc = "";
 
@@ -458,7 +458,7 @@ public class GparamGroupList
     /// </summary>
     private void PopulateAddOptions()
     {
-        var language = CFG.Current.GparamEditor_Annotation_Language;
+        var language = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
         if (AddOptionsBuilt && AddOptionsLanguage == language)
             return;

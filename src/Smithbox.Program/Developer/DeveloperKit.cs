@@ -60,9 +60,9 @@ public class DeveloperKit
     {
         GUI.ConditionalHeader(
             LOC.Get("DEV_KIT_Data_Sources_Header"),
-            LOC.Get("DEV_KIT_Data_Sources_Header_TT"), ref CFG.Current.DEVKIT_DisplayDataSources);
+            LOC.Get("DEV_KIT_Data_Sources_Header_TT"), ref CFG.Current.Developer.DEVKIT_DisplayDataSources);
 
-        if (CFG.Current.DEVKIT_DisplayDataSources)
+        if (CFG.Current.Developer.DEVKIT_DisplayDataSources)
         {
             var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
@@ -72,20 +72,20 @@ public class DeveloperKit
                 ImGui.TableSetupColumn("SelectButton", ImGuiTableColumnFlags.WidthFixed);
                 ImGui.TableSetupColumn("InputText", ImGuiTableColumnFlags.WidthStretch);
 
-                DisplayEntry(LOC.Get("DEV_KIT_Col_Data_Folder"), ref CFG.Current.DEVKIT_DataPath_DataFolder);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_Output_Folder"), ref CFG.Current.DEVKIT_DataPath_OutputFolder);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DES"), ref CFG.Current.DEVKIT_DataPath_DES);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DS1"), ref CFG.Current.DEVKIT_DataPath_DS1);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DS1R"), ref CFG.Current.DEVKIT_DataPath_DS1R);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DS2"), ref CFG.Current.DEVKIT_DataPath_DS2);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DS2S"), ref CFG.Current.DEVKIT_DataPath_DS2S);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DS3"), ref CFG.Current.DEVKIT_DataPath_DS3);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_BB"), ref CFG.Current.DEVKIT_DataPath_BB);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_SDT"), ref CFG.Current.DEVKIT_DataPath_SDT);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_ER"), ref CFG.Current.DEVKIT_DataPath_ER);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_AC6"), ref CFG.Current.DEVKIT_DataPath_AC6);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_NR"), ref CFG.Current.DEVKIT_DataPath_NR);
-                DisplayEntry(LOC.Get("DEV_KIT_Col_DB"), ref CFG.Current.DEVKIT_DataPath_DB);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_Data_Folder"), ref CFG.Current.Developer.DEVKIT_DataPath_DataFolder);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_Output_Folder"), ref CFG.Current.Developer.DEVKIT_DataPath_OutputFolder);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DES"), ref CFG.Current.Developer.DEVKIT_DataPath_DES);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DS1"), ref CFG.Current.Developer.DEVKIT_DataPath_DS1);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DS1R"), ref CFG.Current.Developer.DEVKIT_DataPath_DS1R);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DS2"), ref CFG.Current.Developer.DEVKIT_DataPath_DS2);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DS2S"), ref CFG.Current.Developer.DEVKIT_DataPath_DS2S);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DS3"), ref CFG.Current.Developer.DEVKIT_DataPath_DS3);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_BB"), ref CFG.Current.Developer.DEVKIT_DataPath_BB);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_SDT"), ref CFG.Current.Developer.DEVKIT_DataPath_SDT);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_ER"), ref CFG.Current.Developer.DEVKIT_DataPath_ER);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_AC6"), ref CFG.Current.Developer.DEVKIT_DataPath_AC6);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_NR"), ref CFG.Current.Developer.DEVKIT_DataPath_NR);
+                DisplayEntry(LOC.Get("DEV_KIT_Col_DB"), ref CFG.Current.Developer.DEVKIT_DataPath_DB);
 
                 ImGui.EndTable();
             }
@@ -175,19 +175,19 @@ public class DeveloperKit
 
     public void GenerateProjects()
     {
-        GenerateProject(ProjectType.DES, CFG.Current.DEVKIT_DataPath_DES);
-        GenerateProject(ProjectType.DS1, CFG.Current.DEVKIT_DataPath_DS1);
-        GenerateProject(ProjectType.DS1R, CFG.Current.DEVKIT_DataPath_DS1R);
-        GenerateProject(ProjectType.DS2, CFG.Current.DEVKIT_DataPath_DS2);
-        GenerateProject(ProjectType.DS2S, CFG.Current.DEVKIT_DataPath_DS2S);
-        GenerateProject(ProjectType.DS3, CFG.Current.DEVKIT_DataPath_DS3);
-        GenerateProject(ProjectType.BB, CFG.Current.DEVKIT_DataPath_BB);
-        GenerateProject(ProjectType.SDT, CFG.Current.DEVKIT_DataPath_SDT);
-        GenerateProject(ProjectType.ER, CFG.Current.DEVKIT_DataPath_ER);
-        GenerateProject(ProjectType.AC6, CFG.Current.DEVKIT_DataPath_AC6);
-        GenerateProject(ProjectType.NR, CFG.Current.DEVKIT_DataPath_NR);
-        GenerateProject(ProjectType.DB_NT, CFG.Current.DEVKIT_DataPath_DB_NT);
-        GenerateProject(ProjectType.DB, CFG.Current.DEVKIT_DataPath_DB);
+        GenerateProject(ProjectType.DES, CFG.Current.Developer.DEVKIT_DataPath_DES);
+        GenerateProject(ProjectType.DS1, CFG.Current.Developer.DEVKIT_DataPath_DS1);
+        GenerateProject(ProjectType.DS1R, CFG.Current.Developer.DEVKIT_DataPath_DS1R);
+        GenerateProject(ProjectType.DS2, CFG.Current.Developer.DEVKIT_DataPath_DS2);
+        GenerateProject(ProjectType.DS2S, CFG.Current.Developer.DEVKIT_DataPath_DS2S);
+        GenerateProject(ProjectType.DS3, CFG.Current.Developer.DEVKIT_DataPath_DS3);
+        GenerateProject(ProjectType.BB, CFG.Current.Developer.DEVKIT_DataPath_BB);
+        GenerateProject(ProjectType.SDT, CFG.Current.Developer.DEVKIT_DataPath_SDT);
+        GenerateProject(ProjectType.ER, CFG.Current.Developer.DEVKIT_DataPath_ER);
+        GenerateProject(ProjectType.AC6, CFG.Current.Developer.DEVKIT_DataPath_AC6);
+        GenerateProject(ProjectType.NR, CFG.Current.Developer.DEVKIT_DataPath_NR);
+        GenerateProject(ProjectType.DB_NT, CFG.Current.Developer.DEVKIT_DataPath_DB_NT);
+        GenerateProject(ProjectType.DB, CFG.Current.Developer.DEVKIT_DataPath_DB);
 
         GeneratedProjects = true;
     }
@@ -284,7 +284,7 @@ public class DeveloperKit
             newFileDictionary.Entries.Add(newFileEntry);
         }
 
-        var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, "validated_file_dictionary.json");
+        var writePath = Path.Join(CFG.Current.Developer.DEVKIT_DataPath_OutputFolder, "validated_file_dictionary.json");
         var jsonString = JsonSerializer.Serialize(newFileDictionary, ProjectJsonSerializerContext.Default.FileDictionary);
         File.WriteAllText(writePath, jsonString);
     }
@@ -373,7 +373,7 @@ public class DeveloperKit
 
         foreach (var entry in SpeedTreeAssets)
         {
-            var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_SpeedTreeAssets.json");
+            var writePath = Path.Join(CFG.Current.Developer.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_SpeedTreeAssets.json");
 
             var speedTreeList = new SpeedTreeList();
 
@@ -459,7 +459,7 @@ public class DeveloperKit
 
         foreach (var entry in GrassAssets)
         {
-            var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_GrassAssets.json");
+            var writePath = Path.Join(CFG.Current.Developer.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_GrassAssets.json");
 
             var grassList = new GrassList();
 
@@ -546,7 +546,7 @@ public class DeveloperKit
 
         foreach (var entry in EdgeAssets)
         {
-            var writePath = Path.Join(CFG.Current.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_EdgeAssets.json");
+            var writePath = Path.Join(CFG.Current.Developer.DEVKIT_DataPath_OutputFolder, $"{entry.Key}_EdgeAssets.json");
 
             var grassList = new GrassList();
 

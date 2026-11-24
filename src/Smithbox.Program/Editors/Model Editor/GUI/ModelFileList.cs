@@ -53,7 +53,7 @@ public class ModelFileList
         if (!ApplyAutoLoadFirst && !ApplyAutoSelectPass)
             return;
 
-        var autoLoadFirst = ApplyAutoLoadFirst && CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
+        var autoLoadFirst = ApplyAutoLoadFirst && CFG.Current.ModelEditor.ModelEditor_Files_AutoLoadFirstEntry;
         var autoSelect = ApplyAutoSelectPass;
 
         ApplyAutoLoadFirst = false;
@@ -121,7 +121,7 @@ public class ModelFileList
             }
 
             // Loads the same way as the Source List: on a single click, or a double click if that is required there
-            var requireDoubleClick = CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
+            var requireDoubleClick = CFG.Current.ModelEditor.ModelEditor_ModelSourceList_RequireDoubleClick;
 
             if (ImGui.Selectable($"{displayedName}##modelSelectListEntry{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
             {

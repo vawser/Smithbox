@@ -217,7 +217,7 @@ public class SceneRenderPipeline
     ///     mode, or with <see cref="MapLightsOnly" />, which takes the fog, background and screen effects that follow
     ///     from it along.
     /// </summary>
-    public GparamLighting ActiveMapLighting => UseMapLighting && CFG.Current.Viewport_Map_Lighting && RenderMode.IsGame &&
+    public GparamLighting ActiveMapLighting => UseMapLighting && RenderSettings.Viewport.Viewport_Map_Lighting && RenderMode.IsGame &&
                                                !MapLightsOnly
         ? MapLightingSource != null ? MapLightingSource() : SceneRenderer.MapLighting
         : null;
@@ -236,14 +236,14 @@ public class SceneRenderPipeline
         {
             var lighting = ActiveMapLighting;
 
-            if (lighting == null || !CFG.Current.Viewport_Map_Lighting_Background)
+            if (lighting == null || !RenderSettings.Viewport.Viewport_Map_Lighting_Background)
             {
-                var display = CFG.Current.Viewport_Bg_Color;
+                var display = RenderSettings.Viewport.Viewport_Bg_Color;
                 return new RgbaFloat(display.X * display.X, display.Y * display.Y, display.Z * display.Z, 1.0f);
             }
 
             var bg = lighting.BackgroundColor;
-            var exposure = lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+            var exposure = lighting.Exposure * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale;
             var linear = Vector3.Max(new Vector3(bg.X, bg.Y, bg.Z) * bg.W * exposure, Vector3.Zero);
 
             return new RgbaFloat(linear.X, linear.Y, linear.Z, 1.0f);
@@ -299,7 +299,7 @@ public class SceneRenderPipeline
         );
 
         SceneParams = new SceneParam();
-        SceneParams.Projection = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
+        SceneParams.Projection = ViewportUtils.CreatePerspective(device, true, RenderSettings.Viewport.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
         SceneParams.View = Matrix4x4.CreateLookAt(new Vector3(0.0f, 2.0f, 0.0f), new Vector3(1.0f, 2.0f, 0.0f), Vector3.UnitY);
         SceneParams.EyePosition = new Vector4(0.0f, 2.0f, 0.0f, 0.0f);
         SceneParams.EnvMap = EnvMapTexture;
@@ -499,57 +499,57 @@ public class SceneRenderPipeline
         int targetx = 0, int targety = 0)
     {
         var selectionColor = new Vector4(
-            CFG.Current.Viewport_Selection_Tint_Color.X, 
-            CFG.Current.Viewport_Selection_Tint_Color.Y, 
-            CFG.Current.Viewport_Selection_Tint_Color.Z, 
-            CFG.Current.Viewport_Selection_Tint_Strength);
+            RenderSettings.Viewport.Viewport_Selection_Tint_Color.X, 
+            RenderSettings.Viewport.Viewport_Selection_Tint_Color.Y, 
+            RenderSettings.Viewport.Viewport_Selection_Tint_Color.Z, 
+            RenderSettings.Viewport.Viewport_Selection_Tint_Strength);
 
-        if(!CFG.Current.Viewport_Enable_Texturing)
+        if(!RenderSettings.Viewport.Viewport_Enable_Texturing)
         {
             selectionColor = new Vector4(
-            CFG.Current.Viewport_Untextured_Selection_Tint_Color.X,
-            CFG.Current.Viewport_Untextured_Selection_Tint_Color.Y,
-            CFG.Current.Viewport_Untextured_Selection_Tint_Color.Z,
-            CFG.Current.Viewport_Selection_Tint_Strength);
+            RenderSettings.Viewport.Viewport_Untextured_Selection_Tint_Color.X,
+            RenderSettings.Viewport.Viewport_Untextured_Selection_Tint_Color.Y,
+            RenderSettings.Viewport.Viewport_Untextured_Selection_Tint_Color.Z,
+            RenderSettings.Viewport.Viewport_Selection_Tint_Strength);
         }
 
         var outlineColor = new Vector4(
-            CFG.Current.Viewport_Selection_Outline_Color.X,
-            CFG.Current.Viewport_Selection_Outline_Color.Y,
-            CFG.Current.Viewport_Selection_Outline_Color.Z,
+            RenderSettings.Viewport.Viewport_Selection_Outline_Color.X,
+            RenderSettings.Viewport.Viewport_Selection_Outline_Color.Y,
+            RenderSettings.Viewport.Viewport_Selection_Outline_Color.Z,
             1.0f);
 
         uint enableDithering = 1;
-        if (!CFG.Current.Viewport_Enable_Selection_Dithering)
+        if (!RenderSettings.Viewport.Viewport_Enable_Selection_Dithering)
             enableDithering = 0;
 
         uint enableTinting = 1;
-        if (!CFG.Current.Viewport_Enable_Selection_Tint)
+        if (!RenderSettings.Viewport.Viewport_Enable_Selection_Tint)
             enableTinting = 0;
 
         Eye = eye;
         var orthographic = MathF.Abs(proj.M34) < 1e-6f;
         IsOrthographic = orthographic;
 
-        // The Viewport Rendering tool's Scene Lighting settings, kept in the CFG so they persist and every
+        // The Viewport Rendering tool's Scene Lighting settings, kept in the configuration's viewport section (RenderSettings.Viewport) so they persist and every
         // viewport shares them. Set before the sun is read for the shadows below.
-        var lightDirection = CFG.Current.Viewport_Scene_Light_Direction;
-        var sunColor = CFG.Current.Viewport_Scene_Sun_Color;
+        var lightDirection = RenderSettings.Viewport.Viewport_Scene_Light_Direction;
+        var sunColor = RenderSettings.Viewport.Viewport_Scene_Sun_Color;
         ViewportSunDirection = new Vector4(lightDirection, 0.0f);
         // Game mode reduced to the map's lights dims the base under them, the sun and the environment map's ambient,
         // by the Rendering tool's Base Light, so the lights stand out from it
-        var baseLight = MapLightsOnly ? Math.Clamp(CFG.Current.Viewport_Map_Lights_Only_Base_Scale, 0.0f, 1.0f) : 1.0f;
+        var baseLight = MapLightsOnly ? Math.Clamp(RenderSettings.Viewport.Viewport_Map_Lights_Only_Base_Scale, 0.0f, 1.0f) : 1.0f;
         SceneParams.AmbientLightMult = baseLight;
 
-        ViewportSunColor = new Vector4(sunColor, CFG.Current.Viewport_Scene_Sun_Intensity * baseLight);
-        SceneParams.DirectLightMult = CFG.Current.Viewport_Scene_Direct_Light_Mult;
-        SceneParams.IndirectLightMult = CFG.Current.Viewport_Scene_Indirect_Light_Mult;
-        SceneParams.SceneBrightness = CFG.Current.Viewport_Scene_Brightness;
+        ViewportSunColor = new Vector4(sunColor, RenderSettings.Viewport.Viewport_Scene_Sun_Intensity * baseLight);
+        SceneParams.DirectLightMult = RenderSettings.Viewport.Viewport_Scene_Direct_Light_Mult;
+        SceneParams.IndirectLightMult = RenderSettings.Viewport.Viewport_Scene_Indirect_Light_Mult;
+        SceneParams.SceneBrightness = RenderSettings.Viewport.Viewport_Scene_Brightness;
 
-        CameraLight.Enabled = CFG.Current.Viewport_Camera_Light;
-        CameraLight.Color = CFG.Current.Viewport_Camera_Light_Color;
-        CameraLight.Intensity = CFG.Current.Viewport_Camera_Light_Intensity;
-        CameraLight.Range = CFG.Current.Viewport_Camera_Light_Range;
+        CameraLight.Enabled = RenderSettings.Viewport.Viewport_Camera_Light;
+        CameraLight.Color = RenderSettings.Viewport.Viewport_Camera_Light_Color;
+        CameraLight.Intensity = RenderSettings.Viewport.Viewport_Camera_Light_Intensity;
+        CameraLight.Range = RenderSettings.Viewport.Viewport_Camera_Light_Range;
 
         // Editor mode lights by the viewport's sun and the environment map alone: no lights are gathered, and the
         // shader gets none to loop over
@@ -574,17 +574,17 @@ public class SceneRenderPipeline
         var materialTime = MaterialClock.Time;
         Vector4 wind = MaterialClock.Wind;
         var sceneDepth = _renderQueue.CapturesSceneDepth ? SceneDepth.TextureIndex : 0;
-        var shadowStrength = Math.Clamp(CFG.Current.Viewport_Shadow_Strength, 0.0f, 1.0f);
+        var shadowStrength = Math.Clamp(RenderSettings.Viewport.Viewport_Shadow_Strength, 0.0f, 1.0f);
 
         CollisionTransparency.Refresh();
-        var collisionOpacity = Math.Clamp(CFG.Current.Viewport_Collision_Opacity, 0.0f, 1.0f);
+        var collisionOpacity = Math.Clamp(RenderSettings.Viewport.Viewport_Collision_Opacity, 0.0f, 1.0f);
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
         var volumeTable = ActiveVolumeTable;
-        var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable && fullLighting;
-        var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
-            (CFG.Current.Viewport_GI_Auto_Exposure ? volumeTable.AutoExposure : 1.0f);
-        var irradianceFlags = CFG.Current.Viewport_GI_Normalize_Reflections ? 1u : 0u;
+        var useIrradianceVolumes = UseIrradianceVolumes && RenderSettings.Viewport.Viewport_GI_Enable && fullLighting;
+        var irradianceExposure = RenderSettings.Viewport.Viewport_GI_Intensity *
+            (RenderSettings.Viewport.Viewport_GI_Auto_Exposure ? volumeTable.AutoExposure : 1.0f);
+        var irradianceFlags = RenderSettings.Viewport.Viewport_GI_Normalize_Reflections ? 1u : 0u;
 
         // The map's GPARAM lighting is in the game's units, as the volumes' light is, so both take the GPARAM's
         // exposure instead of the volumes' auto exposure. The viewport's own sun settings are left as they are,
@@ -627,24 +627,24 @@ public class SceneRenderPipeline
 
         if (mapLighting != null)
         {
-            var exposure = mapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+            var exposure = mapLighting.Exposure * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale;
             mapExposure = exposure;
             var sun = mapLighting.Sun;
 
             // For the shadows and fog below; the shaders' sun is in the lighting sets, see FoldLighting
             mapLightDirection = new Vector4(sun.Direction, 0.0f);
             mapSunColor = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure);
-            irradianceExposure = CFG.Current.Viewport_GI_Intensity * exposure;
+            irradianceExposure = RenderSettings.Viewport.Viewport_GI_Intensity * exposure;
 
             mapEnvMapScale = new Vector4(new Vector3(mapLighting.EnvMapScale.X, mapLighting.EnvMapScale.Y, mapLighting.EnvMapScale.Z) * mapLighting.EnvMapScale.W, 1.0f);
             mapEnvMapSaturate = mapLighting.EnvMapSaturate;
 
             // DS3 and Bloodborne's probe grids are the whole ambient where they are; their shaders have no hemisphere
-            var hemiInsideVolumes = CFG.Current.Viewport_Map_Lighting_Hemi_Inside_Volumes && !GparamProfile.Current.HasLightProbes;
+            var hemiInsideVolumes = RenderSettings.Viewport.Viewport_Map_Lighting_Hemi_Inside_Volumes && !GparamProfile.Current.HasLightProbes;
             mapLightingFlags = 1u | (hemiInsideVolumes ? 2u : 0u);
 
             // Characters take the model set: its own sun, the fill lights, and its hemisphere
-            withModels = mapLighting.Models != null && CFG.Current.Viewport_Map_Lighting_Model_Lights;
+            withModels = mapLighting.Models != null && RenderSettings.Viewport.Viewport_Map_Lighting_Model_Lights;
 
             if (withModels)
             {
@@ -662,7 +662,7 @@ public class SceneRenderPipeline
         // The cascades follow the sun the shaders light with, and the GPARAM's Shadows group
         var sunDirection = mapLighting != null ? mapLightDirection : ViewportSunDirection;
         var sunIntensity = mapLighting != null ? mapSunColor.W : ViewportSunColor.W;
-        var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f && fullLighting;
+        var castShadows = RenderSettings.Viewport.Viewport_Shadows && sunIntensity > 0.0f && fullLighting;
 
         // Demon's Souls casts its shadows along a light of their own (ShadowBank), not the sun
         var shadowTravel = mapLighting?.Shadow.LightAngle is { } shadowAngle
@@ -678,13 +678,13 @@ public class SceneRenderPipeline
         DistanceFog.Prepare(fogLighting);
 
         // For the transparent draws, which come after the fog's own pass this frame
-        var fogVolume = CFG.Current.Viewport_Post_Fog_Transparents ? Fog.VolumeTextureIndex : 0;
+        var fogVolume = RenderSettings.Viewport.Viewport_Post_Fog_Transparents ? Fog.VolumeTextureIndex : 0;
         var fog = Fog.Parameters;
         var fogTargetSize = new Vector2(Target.Width, Target.Height);
 
         // Wet surfaces, from the chosen weather's Wet values
         var wet = mapLighting?.PostEffects.Wet;
-        var wetness = PostEffects && CFG.Current.Viewport_Post_Wet && wet != null
+        var wetness = PostEffects && RenderSettings.Viewport.Viewport_Post_Wet && wet != null
             ? Math.Clamp(wet.Wetness, 0.0f, 1.0f)
             : 0.0f;
         var wetAlbedo = wet != null
@@ -696,7 +696,7 @@ public class SceneRenderPipeline
 
         // The map of what the rain reaches, drawn again only when the camera has moved far or the casters changed
         var wetting = wetAlbedo.W > 0.0f || wetShininess.Y > 0.0f;
-        var rainMask = wetting && CFG.Current.Viewport_Post_Wet_Rain_Mask;
+        var rainMask = wetting && RenderSettings.Viewport.Viewport_Post_Wet_Rain_Mask;
         Rain?.Update(rainMask, eye,
             rainMask ? Scene.OpaqueRenderables.ShadowCasterSignature(Scene.DrawFilter, Scene.DisplayGroup) : 0);
         SnapDepth?.Update();
@@ -719,13 +719,13 @@ public class SceneRenderPipeline
             SceneParams.CursorPosition[0] = cursorx - targetx;
             SceneParams.CursorPosition[1] = cursory - targety;
 
-            SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_Flat_Model_Brightness;
-            SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Flat_Model_Saturation;
+            SceneParams.SimpleFlver_Brightness = RenderSettings.Viewport.Viewport_Flat_Model_Brightness;
+            SceneParams.SimpleFlver_Saturation = RenderSettings.Viewport.Viewport_Flat_Model_Saturation;
             SceneParams.SelectionColor = selectionColor;
             SceneParams.OutlineColor = outlineColor;
             SceneParams.EnableDithering = enableDithering;
             SceneParams.EnableTinting = enableTinting;
-            SceneParams.DitherOpacity = CFG.Current.Viewport_Selection_Dither_Opacity;
+            SceneParams.DitherOpacity = RenderSettings.Viewport.Viewport_Selection_Dither_Opacity;
             SceneParams.MaterialTime = materialTime;
             SceneParams.WindPeriod = MaterialClock.WindPeriod;
             SceneParams.MaterialFeatures = (uint)MaterialClock.Features;
@@ -748,7 +748,7 @@ public class SceneRenderPipeline
             SceneParams.LightingDebugView = MaterialOracleCapture.Active
                 ? MaterialOracleCapture.LightingView
                 : gameMode
-                    ? (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3)
+                    ? (uint)Math.Clamp(RenderSettings.Viewport.Viewport_Lighting_Debug_View, 0, 3)
                     : RenderMode.FullbrightView;
 
             SceneParams.LightCount = (uint)lights.Count;
@@ -808,14 +808,14 @@ public class SceneRenderPipeline
 
             // An orthographic camera sits in the middle of what it draws, so a clip round it would cut a hole there
             SceneParams.CameraClip = new Vector4(
-                CFG.Current.Viewport_Camera_Clip_Enabled && !orthographic ? CFG.Current.Viewport_Camera_Clip_Radius : 0.0f,
+                RenderSettings.Viewport.Viewport_Camera_Clip_Enabled && !orthographic ? RenderSettings.Viewport.Viewport_Camera_Clip_Radius : 0.0f,
                 0.0f, 0.0f, 0.0f);
 
             // Read by the _wire shader variants alone, which only draw while the wireframe view is on
-            SceneParams.WireframeColor = new Vector4(CFG.Current.Viewport_Wireframe_Line_Color,
-                Math.Clamp(CFG.Current.Viewport_Wireframe_Line_Opacity, 0.0f, 1.0f));
-            SceneParams.WireframeParams = new Vector4(Math.Clamp(CFG.Current.Viewport_Wireframe_Line_Width, 0.5f, 8.0f),
-                CFG.Current.Viewport_Wireframe_Only ? 1.0f : 0.0f, 0.0f, 0.0f);
+            SceneParams.WireframeColor = new Vector4(RenderSettings.Viewport.Viewport_Wireframe_Line_Color,
+                Math.Clamp(RenderSettings.Viewport.Viewport_Wireframe_Line_Opacity, 0.0f, 1.0f));
+            SceneParams.WireframeParams = new Vector4(Math.Clamp(RenderSettings.Viewport.Viewport_Wireframe_Line_Width, 0.5f, 8.0f),
+                RenderSettings.Viewport.Viewport_Wireframe_Only ? 1.0f : 0.0f, 0.0f, 0.0f);
 
             SceneParams.FogVolumeTexture = fogVolume;
             SceneParams.FogNear = fog.DepthRange.X;

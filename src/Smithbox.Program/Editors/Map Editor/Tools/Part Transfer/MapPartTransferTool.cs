@@ -149,15 +149,15 @@ public class MapPartTransferTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_PartTransfer_Options_Header"), LOC.Get("MAP_PartTransfer_Options_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_PartTransfer_Move_To_Orb")}##mapPartTransferMoveToOrb", ref CFG.Current.MapEditor_PartTransfer_Move_To_Orb);
+        ImGui.Checkbox($"{LOC.Get("MAP_PartTransfer_Move_To_Orb")}##mapPartTransferMoveToOrb", ref CFG.Current.MapEditor.MapEditor_PartTransfer_Move_To_Orb);
         GUI.Tooltip(LOC.Get("MAP_PartTransfer_Move_To_Orb_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_PartTransfer_Rename_Parts")}##mapPartTransferRenameParts", ref CFG.Current.MapEditor_PartTransfer_Rename_Parts);
+        ImGui.Checkbox($"{LOC.Get("MAP_PartTransfer_Rename_Parts")}##mapPartTransferRenameParts", ref CFG.Current.MapEditor.MapEditor_PartTransfer_Rename_Parts);
         GUI.Tooltip(LOC.Get("MAP_PartTransfer_Rename_Parts_TT"));
 
         if (CanCopyTextures)
         {
-            ImGui.Checkbox($"{LOC.Get("MAP_PartTransfer_Copy_Textures")}##mapPartTransferCopyTextures", ref CFG.Current.MapEditor_PartTransfer_Copy_Textures);
+            ImGui.Checkbox($"{LOC.Get("MAP_PartTransfer_Copy_Textures")}##mapPartTransferCopyTextures", ref CFG.Current.MapEditor.MapEditor_PartTransfer_Copy_Textures);
             GUI.Tooltip(LOC.Get("MAP_PartTransfer_Copy_Textures_TT"));
         }
         else if (MapPiecePort.TexturesAreGlobal(Type))
@@ -310,7 +310,7 @@ public class MapPartTransferTool
         PendingPorts = new();
         PendingProblems = new();
         PendingScan = null;
-        PendingCopyTextures = CanCopyTextures && CFG.Current.MapEditor_PartTransfer_Copy_Textures;
+        PendingCopyTextures = CanCopyTextures && CFG.Current.MapEditor.MapEditor_PartTransfer_Copy_Textures;
         StatusText = "";
 
         var sourceAssetMap = PathBuilder.GetAssetMapID(Project, source.Name);
@@ -610,18 +610,18 @@ public class MapPartTransferTool
                 targetBTL: null,
                 duplicateToMap: true,
                 createMapGroupEntry: false,
-                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
-                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
-                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
-                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
-                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs);
+                incrementEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_Group_IDs);
 
             var actions = new List<ViewportAction> { duplicate };
 
             // The clones exist only once the duplicate has run
             actions.Add(new DeferredAction(() => BuildModelSwitch(duplicate.CreatedClones, targetMap, modelMap)));
 
-            if (CFG.Current.MapEditor_PartTransfer_Move_To_Orb && View.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport)
+            if (CFG.Current.MapEditor.MapEditor_PartTransfer_Move_To_Orb && View.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport)
             {
                 var point = View.ViewportWindow.GetPlacementPosition();
                 actions.Add(new DeferredAction(() => PullToCameraAction.BuildMoveToPointAction(duplicate.CreatedClones, point)));
@@ -667,7 +667,7 @@ public class MapPartTransferTool
 
             actions.Add(clone.ChangeObjectProperty("ModelName", newModel));
 
-            if (CFG.Current.MapEditor_PartTransfer_Rename_Parts)
+            if (CFG.Current.MapEditor.MapEditor_PartTransfer_Rename_Parts)
             {
                 var name = UniqueName(newModel, names);
                 names.Add(name);

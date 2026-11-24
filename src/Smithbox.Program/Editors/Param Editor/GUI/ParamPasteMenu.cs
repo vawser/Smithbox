@@ -67,7 +67,7 @@ public class ParamPasteMenu
             return;
 
         // Selection management
-        if (CFG.Current.Param_PasteThenSelect && res.Count > 0)
+        if (CFG.Current.ParamEditor.Param_PasteThenSelect && res.Count > 0)
         {
             activeView.Selection.SetActiveRow(res[0], true);
 
@@ -124,12 +124,12 @@ public class ParamPasteMenu
 
         ImGui.Checkbox(
             $"{LOC.Get("PARAM_PasteMenu_Checkbox_Select_New_Rows")}##selectNewRowsAfterPasteToggle",
-            ref CFG.Current.Param_PasteThenSelect);
+            ref CFG.Current.ParamEditor.Param_PasteThenSelect);
 
         ImGui.Checkbox($"{LOC.Get("PARAM_PasteMenu_Checkbox_Paste_After_Selection")}##pasteAfterSelectionToggle",
-            ref CFG.Current.Param_PasteAfterSelection);
+            ref CFG.Current.ParamEditor.Param_PasteAfterSelection);
 
-        var pasteAfterSelection = CFG.Current.Param_PasteAfterSelection;
+        var pasteAfterSelection = CFG.Current.ParamEditor.Param_PasteAfterSelection;
 
         long offset = 0;
         string inputError = null;

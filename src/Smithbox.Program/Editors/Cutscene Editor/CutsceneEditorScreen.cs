@@ -171,13 +171,13 @@ public class CutsceneEditorScreen : EditorScreen
 
         // Tools window (what is shown and played back is its Cutscene Filters tool)
         if (ImGui.MenuItem($"{LOC.Get("CUTSCENE_View_Toggle_Tools")}##cutsceneToggleTools"))
-            CFG.Current.Interface_CutsceneEditor_ToolWindow = !CFG.Current.Interface_CutsceneEditor_ToolWindow;
-        GUI.ShowActiveStatus(CFG.Current.Interface_CutsceneEditor_ToolWindow);
+            CFG.Current.Interface.Interface_CutsceneEditor_ToolWindow = !CFG.Current.Interface.Interface_CutsceneEditor_ToolWindow;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_CutsceneEditor_ToolWindow);
 
         ImGui.Separator();
 
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Diagnostics"), "", CFG.Current.CutsceneEditor_Diagnostics_Log))
-            CFG.Current.CutsceneEditor_Diagnostics_Log = !CFG.Current.CutsceneEditor_Diagnostics_Log;
+        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Diagnostics"), "", CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log))
+            CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log = !CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log;
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Diagnostics_TT"));
 
         var scene = ActiveView?.Scene;
@@ -199,18 +199,18 @@ public class CutsceneEditorScreen : EditorScreen
         if (!ImGui.BeginMenu($"{LOC.Get("CUTSCENE_Menu_Camera")}##cutsceneCameraMenu"))
             return;
 
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Look_Through"), "", CFG.Current.CutsceneEditor_Look_Through_Camera))
-            CFG.Current.CutsceneEditor_Look_Through_Camera = !CFG.Current.CutsceneEditor_Look_Through_Camera;
+        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Look_Through"), "", CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera))
+            CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera = !CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera;
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Look_Through_TT"));
 
         ImGui.Separator();
 
-        AxisCombo(LOC.Get("CUTSCENE_Menu_Forward_Axis"), "##cutsceneForwardAxis", ref CFG.Current.CutsceneEditor_Camera_Forward_Axis);
-        AxisCombo(LOC.Get("CUTSCENE_Menu_Up_Axis"), "##cutsceneUpAxis", ref CFG.Current.CutsceneEditor_Camera_Up_Axis);
+        AxisCombo(LOC.Get("CUTSCENE_Menu_Forward_Axis"), "##cutsceneForwardAxis", ref CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Forward_Axis);
+        AxisCombo(LOC.Get("CUTSCENE_Menu_Up_Axis"), "##cutsceneUpAxis", ref CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Up_Axis);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Axes_TT"));
 
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Fov_Horizontal"), "", CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal))
-            CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal = !CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal;
+        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Fov_Horizontal"), "", CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Fov_Is_Horizontal))
+            CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Fov_Is_Horizontal = !CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Fov_Is_Horizontal;
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Fov_Horizontal_TT"));
 
         ImGui.EndMenu();

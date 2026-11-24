@@ -279,7 +279,7 @@ public class LuaBattleView
         // The player's guard or a SpEffect their action put on the target (First Person Mode) changes what
         // IsTargetGuard and HasSpecialEffectId(TARGET_ENE_0, …) answer; entering or leaving it frees or takes them
         // The team role (a rotating one changes on its own) changes which branch of Activate runs
-        var role = (CFG.Current.LuaEditor_Team_Role_Mode, Viewer.TeamRoleNow);
+        var role = (CFG.Current.LuaEditor.LuaEditor_Team_Role_Mode, Viewer.TeamRoleNow);
         if (EvaluatedRole != role)
         {
             EvaluatedRole = role;
@@ -510,10 +510,10 @@ public class LuaBattleView
         var timeAct = Viewer.TimeAct;
 
         // (What the viewport shows of the effects and bullets is the Viewport Filters tool's)
-        ImGui.Checkbox($"{LOC.Get("LUA_TAE_Show_Bullets")}##luaTaeBullets", ref CFG.Current.LuaEditor_TimeAct_Bullets);
+        ImGui.Checkbox($"{LOC.Get("LUA_TAE_Show_Bullets")}##luaTaeBullets", ref CFG.Current.LuaEditor.LuaEditor_TimeAct_Bullets);
         GUI.Tooltip(LOC.Get("LUA_TAE_Show_Bullets_TT"));
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("LUA_TAE_Log_All")}##luaTaeLogAll", ref CFG.Current.LuaEditor_TimeAct_Log_All_Events);
+        ImGui.Checkbox($"{LOC.Get("LUA_TAE_Log_All")}##luaTaeLogAll", ref CFG.Current.LuaEditor.LuaEditor_TimeAct_Log_All_Events);
         GUI.Tooltip(LOC.Get("LUA_TAE_Log_All_TT"));
 
         if (!timeAct.TimeActsAvailable)
@@ -521,7 +521,7 @@ public class LuaBattleView
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("LUA_TAE_Why_No_Editor"));
             return;
         }
-        if (!timeAct.EffectsAvailable && CFG.Current.LuaEditor_TimeAct_Effects)
+        if (!timeAct.EffectsAvailable && CFG.Current.LuaEditor.LuaEditor_TimeAct_Effects)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("LUA_TAE_No_Fx_Editor"));
         else if (timeAct.PreloadStatus is { } loading)
             ImGui.TextDisabled(loading);
@@ -688,7 +688,7 @@ public class LuaBattleView
     private void TeamRoleControls()
     {
         var cfg = CFG.Current;
-        var mode = Math.Clamp(cfg.LuaEditor_Team_Role_Mode, 0, TeamRoleModes.Length - 1);
+        var mode = Math.Clamp(cfg.LuaEditor.LuaEditor_Team_Role_Mode, 0, TeamRoleModes.Length - 1);
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##luaTeamRole", LOC.Get(TeamRoleModes[mode])))
@@ -696,23 +696,23 @@ public class LuaBattleView
             for (var i = 0; i < TeamRoleModes.Length; i++)
             {
                 if (ImGui.Selectable($"{LOC.Get(TeamRoleModes[i])}##luaTeamRole_{i}", i == mode))
-                    cfg.LuaEditor_Team_Role_Mode = i;
+                    cfg.LuaEditor.LuaEditor_Team_Role_Mode = i;
                 GUI.Tooltip(LOC.Get($"{TeamRoleModes[i]}_TT"));
             }
             ImGui.EndCombo();
         }
 
-        if (cfg.LuaEditor_Team_Role_Mode != 1)
+        if (cfg.LuaEditor.LuaEditor_Team_Role_Mode != 1)
             return;
 
         // Rotating: how long each turn lasts, and where it is now
         var half = (ImGui.GetContentRegionAvail().X - ImGui.GetStyle().ItemSpacing.X) / 2;
         ImGui.SetNextItemWidth(half);
-        ImGui.DragFloat("##luaTeamAttackTime", ref cfg.LuaEditor_Team_Attack_Time, 0.1f, 0.5f, 120f, LOC.Get("LUA_Battle_Team_Attack_Time"));
+        ImGui.DragFloat("##luaTeamAttackTime", ref cfg.LuaEditor.LuaEditor_Team_Attack_Time, 0.1f, 0.5f, 120f, LOC.Get("LUA_Battle_Team_Attack_Time"));
         GUI.Tooltip(LOC.Get("LUA_Battle_Team_Attack_Time_TT"));
         ImGui.SameLine();
         ImGui.SetNextItemWidth(half);
-        ImGui.DragFloat("##luaTeamSurroundTime", ref cfg.LuaEditor_Team_Surround_Time, 0.1f, 0f, 120f, LOC.Get("LUA_Battle_Team_Surround_Time"));
+        ImGui.DragFloat("##luaTeamSurroundTime", ref cfg.LuaEditor.LuaEditor_Team_Surround_Time, 0.1f, 0f, 120f, LOC.Get("LUA_Battle_Team_Surround_Time"));
         GUI.Tooltip(LOC.Get("LUA_Battle_Team_Surround_Time_TT"));
 
         var now = Viewer.TeamRoleNow == LuaViewer.RoleAttack ? LOC.Get("LUA_Battle_Team_Now_Attacking") : LOC.Get("LUA_Battle_Team_Now_Surrounding");
@@ -744,9 +744,9 @@ public class LuaBattleView
     {
         if (CharacterFamily(scriptCharacter) is not { } family)
             return null;
-        ImGui.Checkbox($"{LOC.Get("LUA_Battle_Limit_To_Character", $"{family}x")}##{id}", ref CFG.Current.LuaEditor_Limit_To_Script_Character);
+        ImGui.Checkbox($"{LOC.Get("LUA_Battle_Limit_To_Character", $"{family}x")}##{id}", ref CFG.Current.LuaEditor.LuaEditor_Limit_To_Script_Character);
         GUI.Tooltip(LOC.Get("LUA_Battle_Limit_To_Character_TT", scriptCharacter, $"{family}0", $"{family}9"));
-        return CFG.Current.LuaEditor_Limit_To_Script_Character ? family : null;
+        return CFG.Current.LuaEditor.LuaEditor_Limit_To_Script_Character ? family : null;
     }
 
     /// <summary>
@@ -887,7 +887,7 @@ public class LuaBattleView
                 }
                 ImGui.SameLine();
                 ImGui.TextDisabled(chr);
-                GUI.DisplayAlias(AliasOf(chr), CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                GUI.DisplayAlias(AliasOf(chr), CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
             }
         }
         clipper.End();
@@ -929,7 +929,7 @@ public class LuaBattleView
                     picked = chr;
                     changed = true;
                 }
-                GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                GUI.DisplayAlias(alias, CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
             }
             ImGui.EndCombo();
         }

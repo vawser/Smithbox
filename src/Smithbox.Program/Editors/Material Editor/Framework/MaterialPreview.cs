@@ -37,7 +37,7 @@ public static class MaterialPreview
     /// </summary>
     public static void Update(ProjectEntry project)
     {
-        if (Pending.IsEmpty || !CFG.Current.MaterialEditor_Live_Preview)
+        if (Pending.IsEmpty || !CFG.Current.MaterialEditor.MaterialEditor_Live_Preview)
             return;
 
         if (ImGui.IsAnyItemActive() || SinceChange.Elapsed < Settle)

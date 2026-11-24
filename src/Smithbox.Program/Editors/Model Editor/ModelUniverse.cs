@@ -85,13 +85,13 @@ public class ModelUniverse : IUniverse
         }
 
         // The model of a composite character is only a skeleton, so the rest of it comes from the part models
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
-            CFG.Current.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering &&
+            CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
         {
             newContainer.AssignCharacterParts(View.ModelCharacterPreview.GetAppearance());
         }
 
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
         {
             Selection.ClearSelection();
             Selection.AddSelection(newContainer.RootObject);
@@ -120,7 +120,7 @@ public class ModelUniverse : IUniverse
         // while used, but a fresh one also covers a save made while it was parked.
         container.MarkPreviewStale(immediate: true);
 
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
         {
             View.ViewportWindow.PendingFrameContainer = container;
         }
@@ -134,7 +134,7 @@ public class ModelUniverse : IUniverse
     /// </summary>
     private async Task LoadResources(ModelWrapper modelWrapper, ModelContainer container)
     {
-        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || !CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || !CFG.Current.Viewport.Viewport_Enable_Rendering)
             return;
 
         ResourceLoadTracker.BeginSession(modelWrapper.Name);
@@ -216,19 +216,19 @@ public class ModelUniverse : IUniverse
             }
         }
 
-        if (CFG.Current.Viewport_Enable_Texturing)
+        if (CFG.Current.Viewport.Viewport_Enable_Texturing)
         {
-            Reserve(CFG.Current.ModelEditor_TextureLoad_MapPieces, LoadList_Map_Texture, "Map Piece Textures");
-            Reserve(CFG.Current.ModelEditor_TextureLoad_Characters, LoadList_Character_Texture, "Character Textures");
-            Reserve(CFG.Current.ModelEditor_TextureLoad_Objects, LoadList_Asset_Texture, "Asset Textures");
-            Reserve(CFG.Current.ModelEditor_TextureLoad_Parts, LoadList_Part_Texture, "Part Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_MapPieces, LoadList_Map_Texture, "Map Piece Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters, LoadList_Character_Texture, "Character Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects, LoadList_Asset_Texture, "Asset Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts, LoadList_Part_Texture, "Part Textures");
         }
 
-        Reserve(CFG.Current.ModelEditor_ModelLoad_MapPieces, LoadList_MapPiece_Model, "Map Pieces");
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Characters, LoadList_Character_Model, "Characters");
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Objects, LoadList_Asset_Model, "Assets");
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Parts, LoadList_Part_Model, "Parts");
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Collisions, LoadList_Collision, "Collisions");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_MapPieces, LoadList_MapPiece_Model, "Map Pieces");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters, LoadList_Character_Model, "Characters");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects, LoadList_Asset_Model, "Assets");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts, LoadList_Part_Model, "Parts");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Collisions, LoadList_Collision, "Collisions");
     }
 
     public void SetupModelLoadList(string modelName, ModelContainerWrapper parent)
@@ -242,7 +242,7 @@ public class ModelUniverse : IUniverse
         var loadList = new List<ResourceDescriptor>();
 
         // MapPiece
-        if (CFG.Current.ModelEditor_ModelLoad_MapPieces)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_MapPieces)
         {
             if (modelName.StartsWith('m'))
             {
@@ -263,7 +263,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Character
-        if (CFG.Current.ModelEditor_ModelLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters)
         {
             if (modelName.StartsWith('c'))
             {
@@ -275,7 +275,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Object / Asset
-        if (CFG.Current.ModelEditor_ModelLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects)
         {
             if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
             {
@@ -287,7 +287,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Part
-        if (CFG.Current.ModelEditor_ModelLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts)
         {
             if (IsPartModelName(modelName))
             {
@@ -299,7 +299,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Collision
-        if (CFG.Current.ModelEditor_ModelLoad_Collisions)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Collisions)
         {
             if (modelName.StartsWith('h'))
             {
@@ -352,7 +352,7 @@ public class ModelUniverse : IUniverse
         LoadList_Map_Texture.Clear();
 
         // MAP
-        if (CFG.Current.ModelEditor_TextureLoad_MapPieces)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_MapPieces)
         {
             if (parent != null)
             {
@@ -370,7 +370,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Character
-        if (CFG.Current.ModelEditor_TextureLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters)
         {
             if (modelName.StartsWith('c'))
             {
@@ -395,7 +395,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Object
-        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects)
         {
             if (modelName.StartsWith('o'))
             {
@@ -416,7 +416,7 @@ public class ModelUniverse : IUniverse
         }
 
         // Part
-        if (CFG.Current.ModelEditor_TextureLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts)
         {
             if (IsPartModelName(modelName))
             {
@@ -428,7 +428,7 @@ public class ModelUniverse : IUniverse
         }
 
         // AAT
-        if (CFG.Current.ModelEditor_TextureLoad_Misc)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Misc)
         {
             if (View.Project.Descriptor.ProjectType is ProjectType.ER 
                 or ProjectType.AC6 
@@ -489,32 +489,32 @@ public class ModelUniverse : IUniverse
 
     public List<Task> LoadTextures(List<Task> tasks, ModelContainer container)
     {
-        if (!CFG.Current.Viewport_Enable_Texturing)
+        if (!CFG.Current.Viewport.Viewport_Enable_Texturing)
             return tasks;
 
         // Map Pieces
-        if (CFG.Current.ModelEditor_TextureLoad_MapPieces)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_MapPieces)
         {
             task = LoadAssets(LoadList_Map_Texture, "Map Piece Textures", ResourceType.Texture);
             tasks.Add(task);
         }
 
         // Character
-        if (CFG.Current.ModelEditor_TextureLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters)
         {
             task = LoadAssets(LoadList_Character_Texture, "Character Textures", ResourceType.Texture);
             tasks.Add(task);
         }
 
         // Objects / Assets
-        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects)
         {
             task = LoadAssets(LoadList_Asset_Texture, "Asset Textures", ResourceType.Texture);
             tasks.Add(task);
         }
 
         // Parts
-        if (CFG.Current.ModelEditor_TextureLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts)
         {
             task = LoadAssets(LoadList_Part_Texture, "Part Textures", ResourceType.Texture);
             tasks.Add(task);
@@ -529,35 +529,35 @@ public class ModelUniverse : IUniverse
         var modelTypes = ResourceType.Flver | ResourceType.Texture;
 
         // MapPieces
-        if (CFG.Current.ModelEditor_ModelLoad_MapPieces)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_MapPieces)
         {
             task = LoadAssets(LoadList_MapPiece_Model, "Map Pieces", modelTypes);
             tasks.Add(task);
         }
 
         // Characters
-        if (CFG.Current.ModelEditor_ModelLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters)
         {
             task = LoadAssets(LoadList_Character_Model, "Characters", modelTypes);
             tasks.Add(task);
         }
 
         // Objects
-        if (CFG.Current.ModelEditor_ModelLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects)
         {
             task = LoadAssets(LoadList_Asset_Model, "Assets", modelTypes);
             tasks.Add(task);
         }
 
         // Parts
-        if (CFG.Current.ModelEditor_ModelLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts)
         {
             task = LoadAssets(LoadList_Part_Model, "Parts", modelTypes);
             tasks.Add(task);
         }
 
         // Collisions: only the collisions that were asked for are loaded from the collision archive
-        if (CFG.Current.ModelEditor_ModelLoad_Collisions)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Collisions)
         {
             task = LoadAssets(LoadList_Collision, "Collisions", ResourceType.CollisionHKX, onlyListedAssets: true);
             tasks.Add(task);

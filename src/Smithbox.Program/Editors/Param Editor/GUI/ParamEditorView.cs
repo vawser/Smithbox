@@ -173,7 +173,7 @@ public class ParamEditorView : IEditorView
         }
 
         // Tools
-        if (CFG.Current.Interface_ParamEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_ParamEditor_ToolWindow)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);

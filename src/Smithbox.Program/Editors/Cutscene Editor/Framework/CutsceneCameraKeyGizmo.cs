@@ -31,7 +31,7 @@ public class CutsceneCameraKeyGizmoTarget : IGizmoTarget
     {
         get
         {
-            if (CFG.Current.CutsceneEditor_Look_Through_Camera || Editor.Scene is not { } scene ||
+            if (CFG.Current.CutsceneEditor.CutsceneEditor_Look_Through_Camera || Editor.Scene is not { } scene ||
                 Editor.SelectedCamera is not { PlaysKeys: true } camera || string.IsNullOrEmpty(camera.KeyId))
                 return null;
 

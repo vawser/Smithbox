@@ -57,7 +57,7 @@ public class GparamReloaderTool
         GUI.WrappedText(LOC.Get("GPARAM_Reloader_Hint"));
 
         // Polls only while the tool is shown
-        if (CFG.Current.GparamEditor_Reloader_AutoRefresh &&
+        if (CFG.Current.GparamEditor.GparamEditor_Reloader_AutoRefresh &&
             (Reloader.LastPoll == null || (DateTime.Now - Reloader.LastPoll.Value).TotalSeconds >= RefreshSeconds))
         {
             Reloader.RequestPoll();
@@ -83,7 +83,7 @@ public class GparamReloaderTool
         else
             GUI.WrappedText(message);
 
-        ImGui.Checkbox($"{LOC.Get("GPARAM_Reloader_Auto_Refresh")}##gparamReloaderAutoRefresh", ref CFG.Current.GparamEditor_Reloader_AutoRefresh);
+        ImGui.Checkbox($"{LOC.Get("GPARAM_Reloader_Auto_Refresh")}##gparamReloaderAutoRefresh", ref CFG.Current.GparamEditor.GparamEditor_Reloader_AutoRefresh);
         GUI.Tooltip(LOC.Get("GPARAM_Reloader_Auto_Refresh_TT", RefreshSeconds));
 
         GUI.MultiButtonInput("gparamReloaderRefreshActions",
@@ -92,7 +92,7 @@ public class GparamReloaderTool
             "gparamReloaderDetach", LOC.Get("GPARAM_Reloader_Detach"), LOC.Get("GPARAM_Reloader_Detach_TT"),
             () =>
             {
-                CFG.Current.GparamEditor_Reloader_AutoRefresh = false;
+                CFG.Current.GparamEditor.GparamEditor_Reloader_AutoRefresh = false;
                 Reloader.Detach();
             });
     }

@@ -143,7 +143,7 @@ public class ShadowCascades
             return;
         }
 
-        Resolution = (uint)Math.Clamp(CFG.Current.Viewport_Shadow_Resolution, 256, 8192);
+        Resolution = (uint)Math.Clamp(RenderSettings.Viewport.Viewport_Shadow_Resolution, 256, 8192);
         lightTravel = Vector3.Normalize(lightTravel);
 
         var count = Math.Clamp(settings.CascadeCount, 1, MaxCascades);
@@ -267,7 +267,7 @@ public class ShadowCascades
 
         // An orthographic cascade ends at its far side: past it is out of the map, so lit
         var fadeStart = orthographicFocus.HasValue && !perspective ? far : Math.Min(settings.FarFadeStart, far);
-        var biasScale = CFG.Current.Viewport_Shadow_Bias_Scale;
+        var biasScale = RenderSettings.Viewport.Viewport_Shadow_Bias_Scale;
 
         Parameters.FadeStart = fadeStart;
         Parameters.FadeEnd = Math.Max(far, fadeStart + 0.01f);

@@ -175,7 +175,7 @@ public static class RowNameHelper
                 {
                     if (index < nameEntry.Entries.Count)
                     {
-                        if (CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly)
+                        if (CFG.Current.ParamEditor.Param_RowNameImport_ReplaceEmptyNamesOnly)
                         {
                             if (row.Name == null || row.Name == "")
                             {
@@ -201,7 +201,7 @@ public static class RowNameHelper
         {
             foreach (var (row, nameEntry) in entry.Zip(rowNamesByID[entry.Key]))
             {
-                if (CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly)
+                if (CFG.Current.ParamEditor.Param_RowNameImport_ReplaceEmptyNamesOnly)
                 {
                     if (row.Name == null || row.Name == "")
                     {
@@ -584,7 +584,7 @@ public static class RowNameHelper
             var mapping = new Dictionary<int, string>();
             foreach (var entry in entries)
             {
-                var parts = entry.Split(CFG.Current.Param_Import_Delimiter);
+                var parts = entry.Split(CFG.Current.ParamEditor.Param_Import_Delimiter);
                 if (parts.Length > 1)
                 {
                     var id = parts[0];

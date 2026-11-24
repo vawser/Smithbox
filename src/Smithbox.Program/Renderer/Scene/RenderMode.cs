@@ -2,7 +2,7 @@ using StudioCore.Application;
 
 namespace StudioCore.Renderer;
 
-/// <summary>How the viewports draw the scene, <see cref="CFG.Viewport_Render_Mode" /></summary>
+/// <summary>How the viewports draw the scene, <see cref="ViewportSettings.Viewport_Render_Mode" /></summary>
 public enum ViewportRenderMode
 {
     /// <summary>Cheap lighting: surfaces are lit by the viewport's sun and the environment map alone, so their
@@ -14,7 +14,7 @@ public enum ViewportRenderMode
     Game = 1
 }
 
-/// <summary>What the textured image shows, <see cref="CFG.Viewport_Texturing_Mode" /></summary>
+/// <summary>What the textured image shows, <see cref="ViewportSettings.Viewport_Texturing_Mode" /></summary>
 public enum ViewportTexturingMode
 {
     Diffuse = 0,
@@ -29,12 +29,12 @@ public enum ViewportTexturingMode
 /// </summary>
 public static class RenderMode
 {
-    public static ViewportRenderMode Current => (ViewportRenderMode)CFG.Current.Viewport_Render_Mode;
+    public static ViewportRenderMode Current => (ViewportRenderMode)RenderSettings.Viewport.Viewport_Render_Mode;
 
     public static bool IsGame => Current == ViewportRenderMode.Game;
 
     /// <summary>Whether the screen effects run: Game mode with them switched on</summary>
-    public static bool PostEffects => IsGame && CFG.Current.Viewport_Post_Effects;
+    public static bool PostEffects => IsGame && RenderSettings.Viewport.Viewport_Post_Effects;
 
     /// <summary>
     ///     Whether Game mode lights the Map Editor's maps with their BTL lights alone, for the selected project's game
@@ -43,7 +43,7 @@ public static class RenderMode
     /// </summary>
     public static bool MapLightsOnly => IsGame && GparamProfile.Current.MapLightsOnly;
 
-    public static ViewportTexturingMode Texturing => (ViewportTexturingMode)CFG.Current.Viewport_Texturing_Mode;
+    public static ViewportTexturingMode Texturing => (ViewportTexturingMode)RenderSettings.Viewport.Viewport_Texturing_Mode;
 
     /// <summary>
     ///     The lighting debug view value the flver shader takes for Editor mode, see SceneParam.LightingDebugView. It

@@ -30,7 +30,7 @@ public class GparamShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface_GparamEditor_ToolWindow;
+            CFG.Current.Interface.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface.Interface_GparamEditor_ToolWindow;
         }
 
         // Save

@@ -74,26 +74,26 @@ public class ParamTableWindow
         ImGui.AlignTextToFramePadding();
         EditorFilters.ApplySearchbarWidth();
         ImGui.InputTextWithHint($"##rowGroupSearch",
-            CFG.Current.ParamEditor_Table_List_Search_Rows
+            CFG.Current.ParamEditor.ParamEditor_Table_List_Search_Rows
                 ? LOC.Get("PARAM_TableWindow_Search_Rows_Hint")
                 : LOC.Get("PARAM_TableWindow_Search_Hint"),
             ref CurrentTableGroupSearch, 256);
 
         // Toggle: search the groups' rows (row search syntax) instead of the group IDs and names
         GUI.DisplayToggleButton("tableListSearchRows", Icons.Filter,
-            ref CFG.Current.ParamEditor_Table_List_Search_Rows,
+            ref CFG.Current.ParamEditor.ParamEditor_Table_List_Search_Rows,
             "PARAM_TableWindow_ToggleSearchRows_Groups",
             "PARAM_TableWindow_ToggleSearchRows_Rows",
             "PARAM_TableWindow_ToggleSearchRows_Hint");
 
         // Toggle: row count / total weight columns
         GUI.DisplayToggleButton("tableListGroupStats", Icons.Calculator,
-            ref CFG.Current.ParamEditor_Table_List_Display_Group_Stats,
+            ref CFG.Current.ParamEditor.ParamEditor_Table_List_Display_Group_Stats,
             "PARAM_TableWindow_ToggleGroupStats_Hidden",
             "PARAM_TableWindow_ToggleGroupStats_Visible",
             "PARAM_TableWindow_ToggleGroupStats_Hint");
 
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickTableNameExport(Editor, Project);
         }
@@ -107,7 +107,7 @@ public class ParamTableWindow
                 _shownGroupCount.ToString("N0"), _totalGroupCount.ToString("N0")));
         }
 
-        if (CFG.Current.ParamEditor_Table_List_Search_Rows)
+        if (CFG.Current.ParamEditor.ParamEditor_Table_List_Search_Rows)
         {
             ParamFieldUtils.DisplaySearchError(_rowSearchError);
         }
@@ -125,7 +125,7 @@ public class ParamTableWindow
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
 
-        if (CFG.Current.ParamEditor_Enable_Table_Borders)
+        if (CFG.Current.ParamEditor.ParamEditor_Enable_Table_Borders)
         {
             tblFlags = tblFlags | ImGuiTableFlags.Borders;
         }
@@ -134,7 +134,7 @@ public class ParamTableWindow
             tblFlags = tblFlags | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
         }
 
-        var showStats = CFG.Current.ParamEditor_Table_List_Display_Group_Stats;
+        var showStats = CFG.Current.ParamEditor.ParamEditor_Table_List_Display_Group_Stats;
         var stats = showStats ? GetGroupStats() : null;
         var showWeight = stats?.HasWeight == true;
 
@@ -440,7 +440,7 @@ public class ParamTableWindow
     {
         _rowSearchError = null;
 
-        if (!CFG.Current.ParamEditor_Table_List_Search_Rows || CurrentTableGroupSearch == "")
+        if (!CFG.Current.ParamEditor.ParamEditor_Table_List_Search_Rows || CurrentTableGroupSearch == "")
             return null;
 
         var activeParam = ParentView.Selection.GetActiveParam();
@@ -815,7 +815,7 @@ public class ParamTableWindow
         // Refresh the names first: a rebuild bumps the name version
         GetTableNameLookup();
 
-        var rowMode = CFG.Current.ParamEditor_Table_List_Search_Rows;
+        var rowMode = CFG.Current.ParamEditor.ParamEditor_Table_List_Search_Rows;
         var rowSearch = rowMode ? GetActiveRowSearch() : null;
         var rowMatches = rowSearch?.MatchCounts;
 
@@ -1128,17 +1128,17 @@ public class ParamTableWindow
     {
         // Offset
         ImGui.InputInt($"{LOC.Get("PARAM_TableWindow_Duplicate_Offset")}##duplicateOffset", 
-            ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+            ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset);
         GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Offset_TT"));
 
         // Amount
         ImGui.InputInt($"{LOC.Get("PARAM_TableWindow_Duplicate_Amount")}##duplicateAmount", 
-            ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+            ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Amount);
         GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Amount_TT"));
 
         // Allow Unrestricted Duplicate
         ImGui.Checkbox($"{LOC.Get("PARAM_TableWindow_Duplicate_Toggle_Unrestricted")}##allowUnrestrictedDuplicate", 
-            ref CFG.Current.Param_TableGroupView_AllowDuplicateInject);
+            ref CFG.Current.ParamEditor.Param_TableGroupView_AllowDuplicateInject);
         GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Toggle_Unrestricted_TT"));
 
         // Apply
@@ -1177,8 +1177,8 @@ public class ParamTableWindow
     public void DuplicateTableGroup()
     {
         var curParamKey = ParentView.Selection.GetActiveParam();
-        var idOffset = CFG.Current.Param_Toolbar_Duplicate_Offset;
-        var allowUnrestricted = CFG.Current.Param_TableGroupView_AllowDuplicateInject;
+        var idOffset = CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset;
+        var allowUnrestricted = CFG.Current.ParamEditor.Param_TableGroupView_AllowDuplicateInject;
 
         if (curParamKey == null)
             return;
@@ -1196,7 +1196,7 @@ public class ParamTableWindow
         // Copy k (1..amount) gets the group ID + k * offset (see ParamRowDuplicate), so check every copy's ID,
         // not just the first, or later copies silently merge into existing groups
         var groupId = targetRows.First().ID;
-        var amount = Math.Max(1, CFG.Current.Param_Toolbar_Duplicate_Amount);
+        var amount = Math.Max(1, CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Amount);
         var existingIds = param.Rows.Select(e => e.ID).ToHashSet();
 
         var collides = false;
@@ -1541,7 +1541,7 @@ public class ParamTableWindow
 
     public bool IsInTableGroupMode(string activeParam)
     {
-        if (!CFG.Current.ParamEditor_Display_Table_List)
+        if (!CFG.Current.ParamEditor.ParamEditor_Display_Table_List)
             return false;
 
         if (Project.Handler.ParamData.TableParamList.Params.Count == 0)
@@ -1556,7 +1556,7 @@ public class ParamTableWindow
     }
     public bool AllowTableGroupToggle(string activeParam)
     {
-        if (!CFG.Current.ParamEditor_Display_Table_List)
+        if (!CFG.Current.ParamEditor.ParamEditor_Display_Table_List)
             return false;
 
         if (Project.Handler.ParamData.TableParamList.Params.Count == 0)
@@ -1583,7 +1583,7 @@ public class ParamTableWindow
 
         if (writeDir == "")
         {
-            var lang = CFG.Current.ParamEditor_Import_Language;
+            var lang = CFG.Current.ParamEditor.ParamEditor_Import_Language;
             targetDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Param Table Names", lang);
         }
 

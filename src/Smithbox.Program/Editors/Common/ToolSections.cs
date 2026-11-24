@@ -62,7 +62,7 @@ public class ToolSections
         }
 
         var scale = DPI.UIScale();
-        var useDropdown = CFG.Current.Interface_Tool_Window_Dropdown_Navigation
+        var useDropdown = CFG.Current.Interface.Interface_Tool_Window_Dropdown_Navigation
             || ImGui.GetContentRegionAvail().X < SideListMinWindowWidth * scale;
 
         if (useDropdown)
@@ -103,7 +103,7 @@ public class ToolSections
     {
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Options_Tools_Header")}##toolsOptionsMenu"))
         {
-            ImGui.Checkbox($"{LOC.Get("PREF_Interface_Tool_Window_Dropdown_Navigation")}##toolDropdownNavigation", ref CFG.Current.Interface_Tool_Window_Dropdown_Navigation);
+            ImGui.Checkbox($"{LOC.Get("PREF_Interface_Tool_Window_Dropdown_Navigation")}##toolDropdownNavigation", ref CFG.Current.Interface.Interface_Tool_Window_Dropdown_Navigation);
             GUI.Tooltip(LOC.Get("PREF_Interface_Tool_Window_Dropdown_Navigation_TT"));
 
             ImGui.EndMenu();

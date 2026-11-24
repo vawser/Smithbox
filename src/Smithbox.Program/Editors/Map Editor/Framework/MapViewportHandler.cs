@@ -27,7 +27,7 @@ public class MapViewportHandler
 
         var viewportWrapper = new ViewportWrapper(view, RenderScene, 0);
         viewportWrapper.Setup();
-        viewportWrapper.RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
+        viewportWrapper.RenderScene.DrawFilter = CFG.Current.MapEditor.LastSceneFilter;
 
         Viewports = [viewportWrapper];
         ActiveViewport = viewportWrapper;

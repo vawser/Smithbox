@@ -32,7 +32,7 @@ public class CompassTool : IResourceEventListener
 
     public void DisplayCompass()
     {
-        if (!CFG.Current.DisplayCompass)
+        if (!CFG.Current.Viewport.DisplayCompass)
             return;
 
         ViewportCamera camera = null;
@@ -60,7 +60,7 @@ public class CompassTool : IResourceEventListener
 
                 if (vulkanViewport != null)
                 {
-                    var compassPadding = (float)CFG.Current.CompassOffset;
+                    var compassPadding = (float)CFG.Current.Viewport.CompassOffset;
 
                     // Top-right corner of the viewport.
                     var position = new Vector2(
@@ -74,7 +74,7 @@ public class CompassTool : IResourceEventListener
                 {
                     float cameraYaw = camera.CameraTransform.EulerRotation.Y;
 
-                    float northOffset = (float)CFG.Current.CompassNorthOffset * (float)Math.PI / 180.0f;
+                    float northOffset = (float)CFG.Current.Viewport.CompassNorthOffset * (float)Math.PI / 180.0f;
                     float compassRotation = -cameraYaw + northOffset;
 
                     DrawRotatedImage(textureId, imageSize, compassRotation);
@@ -136,7 +136,7 @@ public class CompassTool : IResourceEventListener
 
             if (height != 0 && width != 0)
             {
-                float scale = (float)CFG.Current.CompassSize / MathF.Max(width, height);
+                float scale = (float)CFG.Current.Viewport.CompassSize / MathF.Max(width, height);
                 size = new Vector2(width * scale, height * scale);
             }
         }

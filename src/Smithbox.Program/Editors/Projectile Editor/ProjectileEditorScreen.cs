@@ -150,15 +150,15 @@ public class ProjectileEditorScreen : EditorScreen
             return;
 
         // Windows
-        Toggle("PROJECTILE_Window_List", ref CFG.Current.Interface_ProjectileEditor_List);
-        Toggle("PROJECTILE_Window_Properties", ref CFG.Current.Interface_ProjectileEditor_Properties);
-        Toggle("PROJECTILE_Window_Tools", ref CFG.Current.Interface_ProjectileEditor_ToolWindow);
+        Toggle("PROJECTILE_Window_List", ref CFG.Current.Interface.Interface_ProjectileEditor_List);
+        Toggle("PROJECTILE_Window_Properties", ref CFG.Current.Interface.Interface_ProjectileEditor_Properties);
+        Toggle("PROJECTILE_Window_Tools", ref CFG.Current.Interface.Interface_ProjectileEditor_ToolWindow);
 
         ImGui.Separator();
 
         // The Tools window's tools
-        Toggle("PROJECTILE_Tool_Playback", ref CFG.Current.Interface_ProjectileEditor_Tool_Playback);
-        Toggle("PROJECTILE_Tool_Simulation_Filters", ref CFG.Current.Interface_ProjectileEditor_Tool_SimulationFilters);
+        Toggle("PROJECTILE_Tool_Playback", ref CFG.Current.Interface.Interface_ProjectileEditor_Tool_Playback);
+        Toggle("PROJECTILE_Tool_Simulation_Filters", ref CFG.Current.Interface.Interface_ProjectileEditor_Tool_SimulationFilters);
 
         ImGui.EndMenu();
     }

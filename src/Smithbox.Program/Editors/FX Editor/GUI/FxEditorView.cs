@@ -106,17 +106,17 @@ public class FxEditorView : IEditorView
         if (CurveEditorFocusRequested)
         {
             CurveEditorFocusRequested = false;
-            if (CFG.Current.Interface_FxEditor_CurveEditor)
+            if (CFG.Current.Interface.Interface_FxEditor_CurveEditor)
                 ImGui.SetNextWindowFocus();
         }
 
-        if (CFG.Current.Interface_FxEditor_CurveEditor)
+        if (CFG.Current.Interface.Interface_FxEditor_CurveEditor)
             Window($"{LOC.Get("FX_Window_Curve_Editor")}###fxEditor_CurveEditor_{ViewIndex}", dockspaceId, EditorFocusContext.FxEditor_Inspector, CurveEditor.Display);
 
         // Viewport: the shared viewport window sets the focus (and the active view) itself
         ViewportWindow.Display(dockspaceId);
 
-        if (CFG.Current.Interface_FxEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_FxEditor_ToolWindow)
             Window($"{LOC.Get("FX_Window_Tools")}###fxEditor_Tools_{ViewIndex}", dockspaceId, EditorFocusContext.FxEditor_Tools, ToolWindow.Display, GUI.GetInnerWindowFlags());
     }
 
@@ -144,7 +144,7 @@ public class FxEditorView : IEditorView
     /// </summary>
     public void FocusCurveEditor()
     {
-        CFG.Current.Interface_FxEditor_CurveEditor = true;
+        CFG.Current.Interface.Interface_FxEditor_CurveEditor = true;
         CurveEditorFocusRequested = true;
     }
 

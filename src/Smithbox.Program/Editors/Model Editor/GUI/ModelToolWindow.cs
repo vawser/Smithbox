@@ -111,7 +111,7 @@ public class ModelToolWindow
         View.VanillaCompareTool.OnToolWindow();
 
         // Render Snapshots: a developer tool, for checking renderer changes against a baseline
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
             View.RenderSnapshotTool.OnToolWindow();
         }

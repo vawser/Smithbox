@@ -77,7 +77,7 @@ public class TimeActRumblePlayback
             _lastTime = time;
         }
 
-        if (CFG.Current.TimeActEditor_Sim_Rumble_Cam && playing && animation != null)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Sim_Rumble_Cam && playing && animation != null)
         {
             // A loop back to the start passes the events at the end, then those at the start
             if (time < _lastTime)
@@ -93,7 +93,7 @@ public class TimeActRumblePlayback
 
         _lastTime = time;
 
-        if (!CFG.Current.TimeActEditor_Sim_Rumble_Cam)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Sim_Rumble_Cam)
         {
             _active.Clear();
         }

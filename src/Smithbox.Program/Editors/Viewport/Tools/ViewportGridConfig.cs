@@ -48,12 +48,12 @@ public static class ViewportGridConfig
         // A config saved before a grid set existed leaves it null
         return editor switch
         {
-            ViewportGridEditor.Map => cfg.MapEditor_Grids ??= new ViewportGridSet(),
-            ViewportGridEditor.Model => cfg.ModelEditor_Grids ??= new ViewportGridSet(),
-            ViewportGridEditor.TimeAct => cfg.TimeActEditor_Grids ??= new ViewportGridSet(),
-            ViewportGridEditor.Gparam => cfg.GparamEditor_Grids ??= new ViewportGridSet(),
-            ViewportGridEditor.Fx => cfg.FxEditor_Grids ??= new ViewportGridSet(),
-            ViewportGridEditor.Lua => cfg.LuaEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Map => cfg.MapEditor.MapEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Model => cfg.ModelEditor.ModelEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.TimeAct => cfg.TimeActEditor.TimeActEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Gparam => cfg.GparamEditor.GparamEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Fx => cfg.FxEditor.FxEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Lua => cfg.LuaEditor.LuaEditor_Grids ??= new ViewportGridSet(),
             _ => throw new ArgumentOutOfRangeException(nameof(editor))
         };
     }

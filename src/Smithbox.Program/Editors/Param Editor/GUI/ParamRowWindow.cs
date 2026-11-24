@@ -242,20 +242,20 @@ public class ParamRowWindow
 
         // Toggle: Display Modified Background
         GUI.DisplayToggleButton("modifiedBackgroundToggle", Icons.Bars,
-            ref CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg,
+            ref CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Modified_Row_Bg,
             "PARAM_RowWindow_Toggle_Modified_Background_Hidden",
             "PARAM_RowWindow_Toggle_Modified_Background_Visible",
             "PARAM_RowWindow_Toggle_Modified_Background_Hint");
 
         // Toggle: Display Decorators
         GUI.DisplayToggleButton("modifiedBackgroundToggle", Icons.PaintBrush,
-            ref CFG.Current.ParamEditor_Row_List_Display_Decorators,
+            ref CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Decorators,
             "PARAM_RowWindow_Toggle_Text_Decorator_Hidden",
             "PARAM_RowWindow_Toggle_Text_Decorator_Visible",
             "PARAM_RowWindow_Toggle_Text_Decorator_Hint");
 
         // Quick Export
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickRowNameExport(Editor, Project);
         }
@@ -306,7 +306,7 @@ public class ParamRowWindow
             var key = Context.CompareColumn.Def.InternalName;
             var name = key;
 
-            if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
+            if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
             {
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
                 if (fieldAnnotation != null)
@@ -314,7 +314,7 @@ public class ParamRowWindow
                     name = fieldAnnotation.Name;
                 }
             }
-            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+            else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
             {
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
                 if (fieldAnnotation != null)
@@ -322,7 +322,7 @@ public class ParamRowWindow
                     name = $"{fieldAnnotation.Name} ({key})";
                 }
             }
-            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
+            else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
             {
                 var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
                 if (fieldAnnotation != null)
@@ -351,7 +351,7 @@ public class ParamRowWindow
 
             var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
 
-            if (CFG.Current.ParamEditor_Enable_Table_Borders)
+            if (CFG.Current.ParamEditor.ParamEditor_Enable_Table_Borders)
             {
                 tblFlags = tblFlags | ImGuiTableFlags.Borders;
             }
@@ -415,7 +415,7 @@ public class ParamRowWindow
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
 
-        if (CFG.Current.ParamEditor_Enable_Table_Borders)
+        if (CFG.Current.ParamEditor.ParamEditor_Enable_Table_Borders)
         {
             tblFlags = tblFlags | ImGuiTableFlags.Borders;
         }
@@ -460,7 +460,7 @@ public class ParamRowWindow
 
             if (Context.CurMeta != null)
             {
-                enableGrouping = CFG.Current.ParamEditor_Row_List_Enable_Row_Grouping && Context.CurMeta.ConsecutiveIDs;
+                enableGrouping = CFG.Current.ParamEditor.ParamEditor_Row_List_Enable_Row_Grouping && Context.CurMeta.ConsecutiveIDs;
             }
 
             // In table-group mode only the current group's rows are shown. Filter first so the clipper
@@ -525,7 +525,7 @@ public class ParamRowWindow
     /// </summary>
     private void DisplayRows(List<Param.Row> displayRows, bool[] selectionCache)
     {
-        if (CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping)
+        if (CFG.Current.ParamEditor.ParamEditor_Row_List_Enable_Line_Wrapping)
         {
             for (var i = 0; i < displayRows.Count; i++)
             {
@@ -603,7 +603,7 @@ public class ParamRowWindow
     private void HandleRowPresentation(bool[] selectionCache, int selectionCacheIndex,
         List<Param.Row> rowList, Param.Row row, bool isPinned)
     {
-        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
+        if (CFG.Current.ParamEditor.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 2.0f));
         }
@@ -643,7 +643,7 @@ public class ParamRowWindow
             ImGui.PopID();
         }
 
-        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
+        if (CFG.Current.ParamEditor.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PopStyleVar();
         }
@@ -938,7 +938,7 @@ public class ParamRowWindow
         var label = $@"{r.ID}";
 
         label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth(),
-            !CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
+            !CFG.Current.ParamEditor.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
 
         if (ID_EditRow == null || ID_EditRow != r)
         {
@@ -1150,7 +1150,7 @@ public class ParamRowWindow
             }
             pushed++;
 
-            if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
+            if (CFG.Current.ParamEditor.ParamEditor_Row_List_Display_Modified_Row_Bg)
             {
                 var bgColor = filterMatch
                     ? UI.Current.ParamRowModifiedFilterBackgroundColor
@@ -1213,7 +1213,7 @@ public class ParamRowWindow
         var label = $@"{Utils.ImGuiEscape(r.Name)}";
 
         label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth(),
-            !CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
+            !CFG.Current.ParamEditor.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
 
         if (Name_EditRow == null || Name_EditRow != r)
         {
@@ -1290,7 +1290,7 @@ public class ParamRowWindow
 
             if (imguiKey == "id")
             {
-                if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input && sourceRow != null)
+                if (CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Row_Name_Input && sourceRow != null)
                 {
                     ImGui.InputInt("##newRowId", ref _contextIdBuffer);
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Edit_Applies_To_Selection", selectedRows.Count));
@@ -1311,7 +1311,7 @@ public class ParamRowWindow
 
             if (imguiKey == "name")
             {
-                if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input && sourceRow != null)
+                if (CFG.Current.ParamEditor.ParamEditor_Row_Context_Display_Row_Name_Input && sourceRow != null)
                 {
                     ImGui.InputText("##nameMassEdit", ref _contextNameBuffer, 1024);
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Edit_Applies_To_Selection", selectedRows.Count));
@@ -1358,13 +1358,13 @@ public class ParamRowWindow
             {
                 // Offset
                 ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateOffset")}##duplicateOffset",
-                    ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+                    ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Offset);
 
                 GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateOffset_TT"));
 
                 // Amount
                 ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateAmount")}##duplicateAmount",
-                    ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+                    ref CFG.Current.ParamEditor.Param_Toolbar_Duplicate_Amount);
 
                 GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateAmount_TT"));
 

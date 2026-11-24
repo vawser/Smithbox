@@ -129,7 +129,7 @@ public class HavokData : IDisposable
 
         var targetDir = projDir;
 
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
             targetDir = srcDir;
         }

@@ -127,7 +127,7 @@ public class SoapstoneService : SoapstoneServiceV1
                 {
                     FmgLanguage lang;
 
-                    SoulsFmg.TryGetFmgLanguageEnum(projectResource.Game, CFG.Current.TextEditor_Primary_Category.ToString(), out lang);
+                    SoulsFmg.TryGetFmgLanguageEnum(projectResource.Game, CFG.Current.TextEditor.TextEditor_Primary_Category.ToString(), out lang);
 
                     EditorResource textResource = new()
                     {

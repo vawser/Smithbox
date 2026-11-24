@@ -98,21 +98,21 @@ public partial class CollisionEditorTool
         if (Active)
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Edit",
-                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Layer.GetDisplayName()),
+                LOC.Get(CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer.GetDisplayName()),
                 InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action),
-                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Brush_Mode.GetDisplayName()),
-                $"{CFG.Current.MapEditor_CollisionEditor_Brush_Radius:0.###}");
+                LOC.Get(CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Mode.GetDisplayName()),
+                $"{CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Radius:0.###}");
         }
         else if (MaterialActive && MaterialMode is CollisionMaterialMode.Select)
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Material_Select",
-                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Layer.GetDisplayName()),
+                LOC.Get(CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer.GetDisplayName()),
                 InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action));
         }
         else if (MaterialActive)
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Material",
-                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Layer.GetDisplayName()),
+                LOC.Get(CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer.GetDisplayName()),
                 InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action),
                 LOC.Get(MaterialMode.GetDisplayName()),
                 GetMaterialNames().Describe(GetPaintMaterial()));

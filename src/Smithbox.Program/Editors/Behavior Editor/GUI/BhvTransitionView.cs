@@ -49,7 +49,7 @@ public class BhvTransitionView
             ImGui.TextDisabled(LOC.Get("BHV_TransitionView_No_Outgoing"));
 
         var order = Enumerable.Range(0, state.Transitions.Count);
-        if (CFG.Current.BehaviorEditor_Transitions_Game_Order)
+        if (CFG.Current.BehaviorEditor.BehaviorEditor_Transitions_Game_Order)
             order = order.Reverse();
 
         foreach (var t in order)

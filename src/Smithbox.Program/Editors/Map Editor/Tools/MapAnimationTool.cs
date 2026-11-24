@@ -47,7 +47,7 @@ public class MapAnimationTool
     /// </summary>
     public void OnMapLoaded(MapContainer map)
     {
-        if (CFG.Current.MapEditor_Hold_Idle_Poses_On_Load && _panel.IsSupported)
+        if (CFG.Current.MapEditor.MapEditor_Hold_Idle_Poses_On_Load && _panel.IsSupported)
         {
             _loadedMaps.Enqueue(map);
         }
@@ -75,7 +75,7 @@ public class MapAnimationTool
             "Holds every corpse and other object in the loaded maps in the animation set on its map part.",
             PlayAssetPoses);
 
-        ImGui.Checkbox("Hold Idle Poses on Map Load##holdIdlePoses", ref CFG.Current.MapEditor_Hold_Idle_Poses_On_Load);
+        ImGui.Checkbox("Hold Idle Poses on Map Load##holdIdlePoses", ref CFG.Current.MapEditor.MapEditor_Hold_Idle_Poses_On_Load);
         GUI.Tooltip("Places characters and posed assets in the first frame of their animation once a map has loaded. This has no ongoing playback cost.");
         GUI.Spacer();
 

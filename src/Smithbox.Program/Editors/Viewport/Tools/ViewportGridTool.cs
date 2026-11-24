@@ -151,32 +151,32 @@ public class ViewportGridTool
                 LOC.Get("VIEWPORT_GridConfig_Shared_Header_TT"));
 
             if (ImGui.InputInt($"{LOC.Get("VIEWPORT_GridConfig_Major_Line_Interval")}##gridMajorInterval",
-                ref CFG.Current.Viewport_Grid_Major_Line_Interval))
+                ref CFG.Current.Viewport.Viewport_Grid_Major_Line_Interval))
             {
-                CFG.Current.Viewport_Grid_Major_Line_Interval = Math.Max(CFG.Current.Viewport_Grid_Major_Line_Interval, 0);
+                CFG.Current.Viewport.Viewport_Grid_Major_Line_Interval = Math.Max(CFG.Current.Viewport.Viewport_Grid_Major_Line_Interval, 0);
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Major_Line_Interval_TT"));
 
             ImGui.Checkbox($"{LOC.Get("VIEWPORT_GridConfig_Display_Axis_Lines")}##gridAxisLines",
-                ref CFG.Current.Viewport_Grid_Display_Axis_Lines);
+                ref CFG.Current.Viewport.Viewport_Grid_Display_Axis_Lines);
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Display_Axis_Lines_TT"));
 
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_GridConfig_Opacity")}##gridOpacity",
-                ref CFG.Current.Viewport_Grid_Opacity, 0.05f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
+                ref CFG.Current.Viewport.Viewport_Grid_Opacity, 0.05f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Opacity_TT"));
 
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_GridConfig_Hidden_Opacity")}##gridHiddenOpacity",
-                ref CFG.Current.Viewport_Grid_Hidden_Opacity, 0f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
+                ref CFG.Current.Viewport.Viewport_Grid_Hidden_Opacity, 0f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Hidden_Opacity_TT"));
 
             ImGui.SliderFloat($"{LOC.Get("VIEWPORT_GridConfig_Line_Width")}##gridLineWidth",
-                ref CFG.Current.Viewport_Grid_Line_Width, 0.5f, 4.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
+                ref CFG.Current.Viewport.Viewport_Grid_Line_Width, 0.5f, 4.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp);
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Line_Width_TT"));
 
             if (ImGui.InputFloat($"{LOC.Get("VIEWPORT_GridConfig_Fade_Distance")}##gridFadeDistance",
-                ref CFG.Current.Viewport_Grid_Fade_Distance))
+                ref CFG.Current.Viewport.Viewport_Grid_Fade_Distance))
             {
-                CFG.Current.Viewport_Grid_Fade_Distance = Math.Max(CFG.Current.Viewport_Grid_Fade_Distance, 0f);
+                CFG.Current.Viewport.Viewport_Grid_Fade_Distance = Math.Max(CFG.Current.Viewport.Viewport_Grid_Fade_Distance, 0f);
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_GridConfig_Fade_Distance_TT"));
 

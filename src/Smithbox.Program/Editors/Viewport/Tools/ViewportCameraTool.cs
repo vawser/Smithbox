@@ -78,8 +78,8 @@ public static class ViewportCameraTool
 
         SettingCheckbox($"{LOC.Get("VIEWPORT_Menubar_Preset_View_Switch_To_Orthographic")}##presetSwitchOrtho",
             LOC.Get("VIEWPORT_Menubar_Preset_View_Switch_To_Orthographic_TT"),
-            () => CFG.Current.Viewport_Preset_View_Switch_To_Orthographic,
-            v => CFG.Current.Viewport_Preset_View_Switch_To_Orthographic = v);
+            () => CFG.Current.Viewport.Viewport_Preset_View_Switch_To_Orthographic,
+            v => CFG.Current.Viewport.Viewport_Preset_View_Switch_To_Orthographic = v);
 
         // View Parameters
         GUI.Spacer();
@@ -171,15 +171,15 @@ public static class ViewportCameraTool
     private static void PerspectiveParameters(ViewportCamera camera)
     {
         SettingSlider($"{LOC.Get("VIEWPORT_Menubar_View_Near_Clip")}##nearClip", LOC.Get("VIEWPORT_Menubar_View_Near_Clip_TT"),
-            () => CFG.Current.Viewport_Perspective_Near_Clip, v => CFG.Current.Viewport_Perspective_Near_Clip = v,
+            () => CFG.Current.Viewport.Viewport_Perspective_Near_Clip, v => CFG.Current.Viewport.Viewport_Perspective_Near_Clip = v,
             0.01f, 100.0f, "%.2f", LogClamp);
 
         SettingSlider($"{LOC.Get("VIEWPORT_Menubar_View_Far_Clip")}##farClip", LOC.Get("VIEWPORT_Menubar_View_Far_Clip_TT"),
-            () => CFG.Current.Viewport_Perspective_Far_Clip, v => CFG.Current.Viewport_Perspective_Far_Clip = v,
+            () => CFG.Current.Viewport.Viewport_Perspective_Far_Clip, v => CFG.Current.Viewport.Viewport_Perspective_Far_Clip = v,
             0.01f, 1000000.0f, "%.0f", LogClamp);
 
         SettingSlider($"{LOC.Get("VIEWPORT_Menubar_Camera_FOV")}##cameraFov", LOC.Get("VIEWPORT_Menubar_Camera_FOV_TT"),
-            () => CFG.Current.Viewport_Camera_FOV, v => CFG.Current.Viewport_Camera_FOV = v,
+            () => CFG.Current.Viewport.Viewport_Camera_FOV, v => CFG.Current.Viewport.Viewport_Camera_FOV = v,
             40.0f, 140.0f, "%.0f", ImGuiSliderFlags.AlwaysClamp);
 
         // Camera Movement
@@ -190,28 +190,28 @@ public static class ViewportCameraTool
 
         SettingSlider($"{LOC.Get("VIEWPORT_Menubar_Camera_Sensitivity")}##cameraSensitivity",
             LOC.Get("VIEWPORT_Menubar_Camera_Sensitivity_TT"),
-            () => CFG.Current.Viewport_Camera_Sensitivity, v => CFG.Current.Viewport_Camera_Sensitivity = v,
+            () => CFG.Current.Viewport.Viewport_Camera_Sensitivity, v => CFG.Current.Viewport.Viewport_Camera_Sensitivity = v,
             0.0f, 0.1f, "%.3f", ImGuiSliderFlags.AlwaysClamp);
 
         // The speeds span four orders of magnitude, so the sliders are logarithmic to keep the low end usable
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Camera_Speed_Slow")}##cameraSpeedSlow",
             ref camera.CameraMoveSpeed_Slow, 0.1f, 9999.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
         {
-            CFG.Current.Viewport_Camera_MoveSpeed_Slow = camera.CameraMoveSpeed_Slow;
+            CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Slow = camera.CameraMoveSpeed_Slow;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Slow_TT"));
 
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Camera_Speed_Normal")}##cameraSpeedNormal",
             ref camera.CameraMoveSpeed_Normal, 0.1f, 9999.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
         {
-            CFG.Current.Viewport_Camera_MoveSpeed_Normal = camera.CameraMoveSpeed_Normal;
+            CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Normal = camera.CameraMoveSpeed_Normal;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Normal_TT"));
 
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast")}##cameraSpeedFast",
             ref camera.CameraMoveSpeed_Fast, 0.1f, 9999.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
         {
-            CFG.Current.Viewport_Camera_MoveSpeed_Fast = camera.CameraMoveSpeed_Fast;
+            CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Fast = camera.CameraMoveSpeed_Fast;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast_TT"));
 
@@ -226,35 +226,35 @@ public static class ViewportCameraTool
     {
         // A slider across two million units can't be moved finely, so the clips are dragged instead
         SettingDrag($"{LOC.Get("VIEWPORT_Menubar_Ortho_Near_Clip")}##orthoNearClip", LOC.Get("VIEWPORT_Menubar_Ortho_Near_Clip_TT"),
-            () => CFG.Current.Viewport_Orthographic_Near_Clip, v => CFG.Current.Viewport_Orthographic_Near_Clip = v,
+            () => CFG.Current.Viewport.Viewport_Orthographic_Near_Clip, v => CFG.Current.Viewport.Viewport_Orthographic_Near_Clip = v,
             10.0f, -1000000.0f, 1000000.0f, "%.0f");
 
         SettingDrag($"{LOC.Get("VIEWPORT_Menubar_Ortho_Far_Clip")}##orthoFarClip", LOC.Get("VIEWPORT_Menubar_Ortho_Far_Clip_TT"),
-            () => CFG.Current.Viewport_Orthographic_Far_Clip, v => CFG.Current.Viewport_Orthographic_Far_Clip = v,
+            () => CFG.Current.Viewport.Viewport_Orthographic_Far_Clip, v => CFG.Current.Viewport.Viewport_Orthographic_Far_Clip = v,
             10.0f, -1000000.0f, 1000000.0f, "%.0f");
 
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Ortho_Size")}##orthoSize",
             ref camera.OrthographicSize, camera.OrthographicMinSize, camera.OrthographicMaxSize, "%.1f",
             ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
         {
-            CFG.Current.Viewport_DefaultOrthographicSize = camera.OrthographicSize;
+            CFG.Current.Viewport.Viewport_DefaultOrthographicSize = camera.OrthographicSize;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Size_TT"));
 
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Ortho_Pan_Sensitivity")}##orthoPanSensitivity",
             ref camera.PanSensitivity, 1.0f, 100.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp))
         {
-            CFG.Current.Viewport_MousePan_Sensitivity = camera.PanSensitivity;
+            CFG.Current.Viewport.Viewport_MousePan_Sensitivity = camera.PanSensitivity;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT"));
 
         SettingCheckbox($"{LOC.Get("VIEWPORT_Menubar_Ortho_Zoom_To_Cursor")}##orthoZoomToCursor",
             LOC.Get("VIEWPORT_Menubar_Ortho_Zoom_To_Cursor_TT"),
-            () => CFG.Current.Viewport_Orthographic_Zoom_To_Cursor, v => CFG.Current.Viewport_Orthographic_Zoom_To_Cursor = v);
+            () => CFG.Current.Viewport.Viewport_Orthographic_Zoom_To_Cursor, v => CFG.Current.Viewport.Viewport_Orthographic_Zoom_To_Cursor = v);
 
         SettingCheckbox($"{LOC.Get("VIEWPORT_Menubar_Ortho_Scale_Bar")}##orthoScaleBar",
             LOC.Get("VIEWPORT_Menubar_Ortho_Scale_Bar_TT"),
-            () => CFG.Current.Viewport_DisplayScaleBar, v => CFG.Current.Viewport_DisplayScaleBar = v);
+            () => CFG.Current.Viewport.Viewport_DisplayScaleBar, v => CFG.Current.Viewport.Viewport_DisplayScaleBar = v);
     }
 
     private static void ObliqueParameters(ViewportCamera camera)
@@ -267,20 +267,20 @@ public static class ViewportCameraTool
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Oblique_Angle")}##obliqueAngle",
             ref camera.ObliqueAngle, 0.0f, 90.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp))
         {
-            CFG.Current.Viewport_DefaultObliqueAngle = camera.ObliqueAngle;
+            CFG.Current.Viewport.Viewport_DefaultObliqueAngle = camera.ObliqueAngle;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Angle_TT"));
 
         if (ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Oblique_Scaling")}##obliqueScaling",
             ref camera.ObliqueScaling, 0.0f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp))
         {
-            CFG.Current.Viewport_DefaultObliqueScaling = camera.ObliqueScaling;
+            CFG.Current.Viewport.Viewport_DefaultObliqueScaling = camera.ObliqueScaling;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Scaling_TT"));
 
         SettingCheckbox($"{LOC.Get("VIEWPORT_Menubar_Oblique_Snap_To_Axis")}##obliqueSnapToAxis",
             LOC.Get("VIEWPORT_Menubar_Oblique_Snap_To_Axis_TT"),
-            () => CFG.Current.Viewport_Oblique_Snap_To_Axis, v => CFG.Current.Viewport_Oblique_Snap_To_Axis = v);
+            () => CFG.Current.Viewport.Viewport_Oblique_Snap_To_Axis, v => CFG.Current.Viewport.Viewport_Oblique_Snap_To_Axis = v);
 
         GUI.MultiButtonInput("cameraObliquePresets",
             "obliqueCabinet", LOC.Get("VIEWPORT_Menubar_Oblique_Cabinet"), LOC.Get("VIEWPORT_Menubar_Oblique_Cabinet_TT"),
@@ -344,11 +344,11 @@ public static class ViewportCameraTool
 
         SettingCheckbox($"{LOC.Get("VIEWPORT_Menubar_Camera_Clip_Enabled")}##cameraClipEnabled",
             LOC.Get("VIEWPORT_Menubar_Camera_Clip_Enabled_TT"),
-            () => CFG.Current.Viewport_Camera_Clip_Enabled, v => CFG.Current.Viewport_Camera_Clip_Enabled = v);
+            () => CFG.Current.Viewport.Viewport_Camera_Clip_Enabled, v => CFG.Current.Viewport.Viewport_Camera_Clip_Enabled = v);
 
         SettingSlider($"{LOC.Get("VIEWPORT_Menubar_Camera_Clip_Radius")}##cameraClipRadius",
             LOC.Get("VIEWPORT_Menubar_Camera_Clip_Radius_TT"),
-            () => CFG.Current.Viewport_Camera_Clip_Radius, v => CFG.Current.Viewport_Camera_Clip_Radius = v,
+            () => CFG.Current.Viewport.Viewport_Camera_Clip_Radius, v => CFG.Current.Viewport.Viewport_Camera_Clip_Radius = v,
             0.1f, 1000.0f, "%.1f", LogClamp);
     }
 
@@ -358,40 +358,40 @@ public static class ViewportCameraTool
     /// </summary>
     private static void ResetCameraSettings(ViewportCamera camera)
     {
-        CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-        CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+        CFG.Current.Viewport.Viewport_Camera_FOV = CFG.Default.Viewport.Viewport_Camera_FOV;
+        CFG.Current.Viewport.Viewport_Camera_Sensitivity = CFG.Default.Viewport.Viewport_Camera_Sensitivity;
 
-        CFG.Current.Viewport_Perspective_Near_Clip = CFG.Default.Viewport_Perspective_Near_Clip;
-        CFG.Current.Viewport_Perspective_Far_Clip = CFG.Default.Viewport_Perspective_Far_Clip;
+        CFG.Current.Viewport.Viewport_Perspective_Near_Clip = CFG.Default.Viewport.Viewport_Perspective_Near_Clip;
+        CFG.Current.Viewport.Viewport_Perspective_Far_Clip = CFG.Default.Viewport.Viewport_Perspective_Far_Clip;
 
-        CFG.Current.Viewport_Camera_Clip_Enabled = CFG.Default.Viewport_Camera_Clip_Enabled;
-        CFG.Current.Viewport_Camera_Clip_Radius = CFG.Default.Viewport_Camera_Clip_Radius;
+        CFG.Current.Viewport.Viewport_Camera_Clip_Enabled = CFG.Default.Viewport.Viewport_Camera_Clip_Enabled;
+        CFG.Current.Viewport.Viewport_Camera_Clip_Radius = CFG.Default.Viewport.Viewport_Camera_Clip_Radius;
 
-        CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-        CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-        CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+        CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport.Viewport_Camera_MoveSpeed_Slow;
+        CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport.Viewport_Camera_MoveSpeed_Normal;
+        CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport.Viewport_Camera_MoveSpeed_Fast;
 
-        CFG.Current.Viewport_Orthographic_Near_Clip = CFG.Default.Viewport_Orthographic_Near_Clip;
-        CFG.Current.Viewport_Orthographic_Far_Clip = CFG.Default.Viewport_Orthographic_Far_Clip;
+        CFG.Current.Viewport.Viewport_Orthographic_Near_Clip = CFG.Default.Viewport.Viewport_Orthographic_Near_Clip;
+        CFG.Current.Viewport.Viewport_Orthographic_Far_Clip = CFG.Default.Viewport.Viewport_Orthographic_Far_Clip;
 
-        CFG.Current.Viewport_MousePan_Sensitivity = CFG.Default.Viewport_MousePan_Sensitivity;
-        CFG.Current.Viewport_Orthographic_Zoom_To_Cursor = CFG.Default.Viewport_Orthographic_Zoom_To_Cursor;
-        CFG.Current.Viewport_Preset_View_Switch_To_Orthographic = CFG.Default.Viewport_Preset_View_Switch_To_Orthographic;
-        CFG.Current.Viewport_Oblique_Snap_To_Axis = CFG.Default.Viewport_Oblique_Snap_To_Axis;
-        CFG.Current.Viewport_Slice_Half_Depth = CFG.Default.Viewport_Slice_Half_Depth;
-        CFG.Current.Viewport_DisplayScaleBar = CFG.Default.Viewport_DisplayScaleBar;
-        CFG.Current.Viewport_DefaultOrthographicSize = CFG.Default.Viewport_DefaultOrthographicSize;
+        CFG.Current.Viewport.Viewport_MousePan_Sensitivity = CFG.Default.Viewport.Viewport_MousePan_Sensitivity;
+        CFG.Current.Viewport.Viewport_Orthographic_Zoom_To_Cursor = CFG.Default.Viewport.Viewport_Orthographic_Zoom_To_Cursor;
+        CFG.Current.Viewport.Viewport_Preset_View_Switch_To_Orthographic = CFG.Default.Viewport.Viewport_Preset_View_Switch_To_Orthographic;
+        CFG.Current.Viewport.Viewport_Oblique_Snap_To_Axis = CFG.Default.Viewport.Viewport_Oblique_Snap_To_Axis;
+        CFG.Current.Viewport.Viewport_Slice_Half_Depth = CFG.Default.Viewport.Viewport_Slice_Half_Depth;
+        CFG.Current.Viewport.Viewport_DisplayScaleBar = CFG.Default.Viewport.Viewport_DisplayScaleBar;
+        CFG.Current.Viewport.Viewport_DefaultOrthographicSize = CFG.Default.Viewport.Viewport_DefaultOrthographicSize;
 
-        CFG.Current.Viewport_DefaultObliqueAngle = CFG.Default.Viewport_DefaultObliqueAngle;
-        CFG.Current.Viewport_DefaultObliqueScaling = CFG.Default.Viewport_DefaultObliqueScaling;
+        CFG.Current.Viewport.Viewport_DefaultObliqueAngle = CFG.Default.Viewport.Viewport_DefaultObliqueAngle;
+        CFG.Current.Viewport.Viewport_DefaultObliqueScaling = CFG.Default.Viewport.Viewport_DefaultObliqueScaling;
 
-        camera.CameraMoveSpeed_Slow = CFG.Current.Viewport_Camera_MoveSpeed_Slow;
-        camera.CameraMoveSpeed_Normal = CFG.Current.Viewport_Camera_MoveSpeed_Normal;
-        camera.CameraMoveSpeed_Fast = CFG.Current.Viewport_Camera_MoveSpeed_Fast;
-        camera.PanSensitivity = CFG.Current.Viewport_MousePan_Sensitivity;
-        camera.OrthographicSize = CFG.Current.Viewport_DefaultOrthographicSize;
-        camera.ObliqueAngle = CFG.Current.Viewport_DefaultObliqueAngle;
-        camera.ObliqueScaling = CFG.Current.Viewport_DefaultObliqueScaling;
-        camera.SliceHalfDepth = CFG.Current.Viewport_Slice_Half_Depth;
+        camera.CameraMoveSpeed_Slow = CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Slow;
+        camera.CameraMoveSpeed_Normal = CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Normal;
+        camera.CameraMoveSpeed_Fast = CFG.Current.Viewport.Viewport_Camera_MoveSpeed_Fast;
+        camera.PanSensitivity = CFG.Current.Viewport.Viewport_MousePan_Sensitivity;
+        camera.OrthographicSize = CFG.Current.Viewport.Viewport_DefaultOrthographicSize;
+        camera.ObliqueAngle = CFG.Current.Viewport.Viewport_DefaultObliqueAngle;
+        camera.ObliqueScaling = CFG.Current.Viewport.Viewport_DefaultObliqueScaling;
+        camera.SliceHalfDepth = CFG.Current.Viewport.Viewport_Slice_Half_Depth;
     }
 }

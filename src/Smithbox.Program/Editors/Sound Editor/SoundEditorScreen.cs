@@ -25,8 +25,8 @@ public class SoundEditorScreen : EditorScreen, IDisposable
     {
         Project = project;
 
-        Player.Volume = CFG.Current.SoundEditor_Volume;
-        Player.Loop = CFG.Current.SoundEditor_Loop;
+        Player.Volume = CFG.Current.SoundEditor.SoundEditor_Volume;
+        Player.Loop = CFG.Current.SoundEditor.SoundEditor_Loop;
 
         ViewHandler = new SoundViewHandler(this, project);
     }
@@ -159,17 +159,17 @@ public class SoundEditorScreen : EditorScreen, IDisposable
         {
             if (ImGui.MenuItem($"{LOC.Get("SOUND_View_Toggle_Play_On_Select")}##playOnSelect"))
             {
-                CFG.Current.SoundEditor_Play_On_Select = !CFG.Current.SoundEditor_Play_On_Select;
+                CFG.Current.SoundEditor.SoundEditor_Play_On_Select = !CFG.Current.SoundEditor.SoundEditor_Play_On_Select;
             }
             GUI.Tooltip(LOC.Get("SOUND_View_Toggle_Play_On_Select_TT"));
-            GUI.ShowActiveStatus(CFG.Current.SoundEditor_Play_On_Select);
+            GUI.ShowActiveStatus(CFG.Current.SoundEditor.SoundEditor_Play_On_Select);
 
             if (ImGui.MenuItem($"{LOC.Get("SOUND_View_Toggle_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_SoundEditor_ToolWindow = !CFG.Current.Interface_SoundEditor_ToolWindow;
+                CFG.Current.Interface.Interface_SoundEditor_ToolWindow = !CFG.Current.Interface.Interface_SoundEditor_ToolWindow;
             }
             GUI.Tooltip(LOC.Get("SOUND_View_Toggle_Tools_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_SoundEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_SoundEditor_ToolWindow);
 
             ImGui.Separator();
 

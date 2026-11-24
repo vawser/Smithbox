@@ -50,13 +50,13 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
         get
         {
             var cfg = CFG.Current;
-            switch (cfg.LuaEditor_Team_Role_Mode)
+            switch (cfg.LuaEditor.LuaEditor_Team_Role_Mode)
             {
                 case 0:
                     return RoleAttack;
                 case 1:
-                    var attack = Math.Max(cfg.LuaEditor_Team_Attack_Time, 0);
-                    var cycle = attack + Math.Max(cfg.LuaEditor_Team_Surround_Time, 0);
+                    var attack = Math.Max(cfg.LuaEditor.LuaEditor_Team_Attack_Time, 0);
+                    var cycle = attack + Math.Max(cfg.LuaEditor.LuaEditor_Team_Surround_Time, 0);
                     return cycle <= 0 || TimeAct.SceneTime % cycle < attack ? RoleAttack : RoleSurround;
                 default:
                     return null;
@@ -70,10 +70,10 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
         get
         {
             var cfg = CFG.Current;
-            if (cfg.LuaEditor_Team_Role_Mode != 1)
+            if (cfg.LuaEditor.LuaEditor_Team_Role_Mode != 1)
                 return null;
-            var attack = Math.Max(cfg.LuaEditor_Team_Attack_Time, 0);
-            var cycle = attack + Math.Max(cfg.LuaEditor_Team_Surround_Time, 0);
+            var attack = Math.Max(cfg.LuaEditor.LuaEditor_Team_Attack_Time, 0);
+            var cycle = attack + Math.Max(cfg.LuaEditor.LuaEditor_Team_Surround_Time, 0);
             if (cycle <= 0)
                 return null;
             var t = TimeAct.SceneTime % cycle;
@@ -454,14 +454,14 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
                 continue;
             // Only the character's clips have a TAE read for them; the target's blend by the default
             var known = TimeAct.Current is { } play && play.Character == character && play.AnimationId == character.CurrentClip;
-            character.UpdateBlend(dt, cfg.LuaEditor_Blend_Animations, known || character != Self,
-                known ? TimeAct.Current!.BlendDuration : null, cfg.LuaEditor_Blend_Default_Time);
+            character.UpdateBlend(dt, cfg.LuaEditor.LuaEditor_Blend_Animations, known || character != Self,
+                known ? TimeAct.Current!.BlendDuration : null, cfg.LuaEditor.LuaEditor_Blend_Default_Time);
         }
 
         // The target character, as the Viewport Filters show it (it is still there for distances and aiming)
         // Hidden too while the player walks as it, the camera being inside it
         FirstPerson.Update();
-        var showTarget = CFG.Current.LuaEditor_Display_Target && !FirstPerson.IsWalking;
+        var showTarget = CFG.Current.LuaEditor.LuaEditor_Display_Target && !FirstPerson.IsWalking;
         if (Target?.Mesh is { } targetMesh && targetMesh.Visible != showTarget)
             targetMesh.Visible = showTarget;
 

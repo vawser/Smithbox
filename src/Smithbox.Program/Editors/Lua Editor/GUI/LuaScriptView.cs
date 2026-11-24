@@ -211,7 +211,7 @@ public class LuaScriptView
                         ImGui.GetColorU32(ImGuiCol.FrameBg));
                 }
 
-                if (CFG.Current.LuaEditor_Show_Line_Numbers)
+                if (CFG.Current.LuaEditor.LuaEditor_Show_Line_Numbers)
                 {
                     ImGui.TextDisabled(lineNumber.ToString());
                     if (ImGui.IsItemClicked())
@@ -265,7 +265,7 @@ public class LuaScriptView
         {
             if (ImGui.Selectable($"{LOC.Get("LUA_Script_Search_All", SearchToken)}##luaScriptSearchAll"))
             {
-                CFG.Current.Interface_LuaEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_LuaEditor_ToolWindow = true;
                 Editor.ToolWindow.GlobalSearch.SearchFor(SearchToken, true);
             }
             GUI.Tooltip(LOC.Get("LUA_Script_Search_All_TT"));

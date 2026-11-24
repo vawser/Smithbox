@@ -57,7 +57,7 @@ public class RotateAction
         // Rotate (Fixed Increment)
         if (InputManager.IsPressed(KeybindID.MapEditor_Rotate_Fixed_Angle))
         {
-            SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
+            SetSelectionToFixedRotation(CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle);
         }
 
         // Reset Rotation
@@ -112,7 +112,7 @@ public class RotateAction
             // Rotate Fixed Angle
             if (ImGui.MenuItem("Rotate Selection (set angle)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Fixed_Angle)))
             {
-                SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
+                SetSelectionToFixedRotation(CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle);
             }
 
             // Reset Rotation
@@ -159,7 +159,7 @@ public class RotateAction
             // Rotate Fixed Increment
             if (ImGui.MenuItem("Rotate Selection (set angle)", InputManager.GetHint(KeybindID.MapEditor_Rotate_Fixed_Angle)))
             {
-                SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
+                SetSelectionToFixedRotation(CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle);
             }
 
             // Reset Rotation
@@ -186,22 +186,22 @@ public class RotateAction
 
         var currentIncrement = "";
 
-        switch (CFG.Current.Toolbar_Rotate_IncrementType)
+        switch (CFG.Current.MapEditor.Toolbar_Rotate_IncrementType)
         {
             case 0:
-                currentIncrement = $"Degree Increment 0: {CFG.Current.Toolbar_Rotate_Increment_0}°";
+                currentIncrement = $"Degree Increment 0: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_0}°";
                 break;
             case 1:
-                currentIncrement = $"Degree Increment 1: {CFG.Current.Toolbar_Rotate_Increment_1}°";
+                currentIncrement = $"Degree Increment 1: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_1}°";
                 break;
             case 2:
-                currentIncrement = $"Degree Increment 2: {CFG.Current.Toolbar_Rotate_Increment_2}°";
+                currentIncrement = $"Degree Increment 2: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_2}°";
                 break;
             case 3:
-                currentIncrement = $"Degree Increment 3: {CFG.Current.Toolbar_Rotate_Increment_3}°";
+                currentIncrement = $"Degree Increment 3: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_3}°";
                 break;
             case 4:
-                currentIncrement = $"Degree Increment 4: {CFG.Current.Toolbar_Rotate_Increment_4}°";
+                currentIncrement = $"Degree Increment 4: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_4}°";
                 break;
         }
 
@@ -217,10 +217,10 @@ public class RotateAction
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
 
-        ImGui.Checkbox("Rotate as Single Object", ref CFG.Current.Toolbar_Rotate_HandleAsSingleObject);
+        ImGui.Checkbox("Rotate as Single Object", ref CFG.Current.MapEditor.Toolbar_Rotate_HandleAsSingleObject);
         GUI.Tooltip("If enabled, a selection will multiple objects will rotate them as if they were a single object, rather than individually.");
 
-        ImGui.Checkbox("Display Rotation Increment in Viewport", ref CFG.Current.Viewport_DisplayRotationIncrement);
+        ImGui.Checkbox("Display Rotation Increment in Viewport", ref CFG.Current.Viewport.Viewport_DisplayRotationIncrement);
         GUI.Tooltip("Display the current degree increment type you are using in the information panel.");
 
         GUI.Spacer();
@@ -240,19 +240,19 @@ public class RotateAction
                     switch(RotationAxis)
                     {
                         case RotationAxis.X:
-                            CFG.Current.Toolbar_Rotate_X = true;
-                            CFG.Current.Toolbar_Rotate_Y = false;
-                            CFG.Current.Toolbar_Set_Rotate = false;
+                            CFG.Current.MapEditor.Toolbar_Rotate_X = true;
+                            CFG.Current.MapEditor.Toolbar_Rotate_Y = false;
+                            CFG.Current.MapEditor.Toolbar_Set_Rotate = false;
                             break;
                         case RotationAxis.Y:
-                            CFG.Current.Toolbar_Rotate_X = false;
-                            CFG.Current.Toolbar_Rotate_Y = true;
-                            CFG.Current.Toolbar_Set_Rotate = false;
+                            CFG.Current.MapEditor.Toolbar_Rotate_X = false;
+                            CFG.Current.MapEditor.Toolbar_Rotate_Y = true;
+                            CFG.Current.MapEditor.Toolbar_Set_Rotate = false;
                             break;
                         case RotationAxis.Set_Angle:
-                            CFG.Current.Toolbar_Rotate_X = false;
-                            CFG.Current.Toolbar_Rotate_Y = false;
-                            CFG.Current.Toolbar_Set_Rotate = true;
+                            CFG.Current.MapEditor.Toolbar_Rotate_X = false;
+                            CFG.Current.MapEditor.Toolbar_Rotate_Y = false;
+                            CFG.Current.MapEditor.Toolbar_Set_Rotate = true;
                             break;
                     }
                 }
@@ -261,11 +261,11 @@ public class RotateAction
             ImGui.EndCombo();
         }
 
-        if (CFG.Current.Toolbar_Set_Rotate)
+        if (CFG.Current.MapEditor.Toolbar_Set_Rotate)
         {
-            var x = CFG.Current.Toolbar_Rotate_FixedAngle[0];
-            var y = CFG.Current.Toolbar_Rotate_FixedAngle[1];
-            var z = CFG.Current.Toolbar_Rotate_FixedAngle[2];
+            var x = CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle[0];
+            var y = CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle[1];
+            var z = CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle[2];
 
             GUI.SimpleHeader("Set Axis", "Set Axis", "The axis of rotation to use for the set rotation action.", UI.Current.ImGui_Default_Text_Color);
 
@@ -290,7 +290,7 @@ public class RotateAction
             }
             GUI.Tooltip("Set the Z component of the set rotation action.");
 
-            CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
+            CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
         }
 
         GUI.Spacer();
@@ -298,10 +298,10 @@ public class RotateAction
 
         GUI.SetInputWidth();
 
-        var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
+        var rot0 = CFG.Current.MapEditor.Toolbar_Rotate_Increment_0;
         if (ImGui.SliderFloat("##degreeIncrement0", ref rot0, -360.0f, 360.0f))
         {
-            CFG.Current.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
+            CFG.Current.MapEditor.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
@@ -310,10 +310,10 @@ public class RotateAction
 
         GUI.SetInputWidth();
 
-        var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
+        var rot1 = CFG.Current.MapEditor.Toolbar_Rotate_Increment_1;
         if (ImGui.SliderFloat("##degreeIncrement1", ref rot1, -360.0f, 360.0f))
         {
-            CFG.Current.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
+            CFG.Current.MapEditor.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
@@ -322,10 +322,10 @@ public class RotateAction
 
         GUI.SetInputWidth();
 
-        var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
+        var rot2 = CFG.Current.MapEditor.Toolbar_Rotate_Increment_2;
         if (ImGui.SliderFloat("##degreeIncrement2", ref rot2, -360.0f, 360.0f))
         {
-            CFG.Current.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
+            CFG.Current.MapEditor.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
@@ -334,10 +334,10 @@ public class RotateAction
 
         GUI.SetInputWidth();
 
-        var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
+        var rot3 = CFG.Current.MapEditor.Toolbar_Rotate_Increment_3;
         if (ImGui.SliderFloat("##degreeIncrement3", ref rot3, -360.0f, 360.0f))
         {
-            CFG.Current.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
+            CFG.Current.MapEditor.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
@@ -346,10 +346,10 @@ public class RotateAction
 
         GUI.SetInputWidth();
 
-        var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
+        var rot4 = CFG.Current.MapEditor.Toolbar_Rotate_Increment_4;
         if (ImGui.SliderFloat("##degreeIncrement4", ref rot4, -360.0f, 360.0f))
         {
-            CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
+            CFG.Current.MapEditor.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
@@ -367,17 +367,17 @@ public class RotateAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            if (CFG.Current.Toolbar_Rotate_X)
+            if (CFG.Current.MapEditor.Toolbar_Rotate_X)
             {
                 ArbitraryRotation_Selection(new Vector3(1, 0, 0));
             }
-            if (CFG.Current.Toolbar_Rotate_Y)
+            if (CFG.Current.MapEditor.Toolbar_Rotate_Y)
             {
                 ArbitraryRotation_Selection(new Vector3(0, 1, 0));
             }
-            if (CFG.Current.Toolbar_Set_Rotate)
+            if (CFG.Current.MapEditor.Toolbar_Set_Rotate)
             {
-                SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
+                SetSelectionToFixedRotation(CFG.Current.MapEditor.Toolbar_Rotate_FixedAngle);
             }
         }
         else
@@ -429,7 +429,7 @@ public class RotateAction
                 rot_y = objT.EulerRotation.Y + radianRotateAmount;
             }
 
-            if (CFG.Current.Toolbar_Rotate_HandleAsSingleObject)
+            if (CFG.Current.MapEditor.Toolbar_Rotate_HandleAsSingleObject)
             {
                 newPos = Utils.RotateVectorAboutPoint(objT.Position, centerT.Position, Vector3.Abs(axis), radianRotateAmount);
             }
@@ -480,7 +480,7 @@ public class RotateAction
             Transform objT = s.GetLocalTransform();
             Transform newPos = Transform.Default;
 
-            if (CFG.Current.Toolbar_Rotate_HandleAsSingleObject)
+            if (CFG.Current.MapEditor.Toolbar_Rotate_HandleAsSingleObject)
             {
                 Vector3 pos = objT.Position;
 
@@ -539,40 +539,40 @@ public class RotateAction
     {
         if (decrement)
         {
-            CFG.Current.Toolbar_Rotate_IncrementType -= 1;
-            if (CFG.Current.Toolbar_Rotate_IncrementType < 0)
+            CFG.Current.MapEditor.Toolbar_Rotate_IncrementType -= 1;
+            if (CFG.Current.MapEditor.Toolbar_Rotate_IncrementType < 0)
             {
-                CFG.Current.Toolbar_Rotate_IncrementType = 4;
+                CFG.Current.MapEditor.Toolbar_Rotate_IncrementType = 4;
             }
         }
         else
         {
-            CFG.Current.Toolbar_Rotate_IncrementType += 1;
-            if (CFG.Current.Toolbar_Rotate_IncrementType > 4)
+            CFG.Current.MapEditor.Toolbar_Rotate_IncrementType += 1;
+            if (CFG.Current.MapEditor.Toolbar_Rotate_IncrementType > 4)
             {
-                CFG.Current.Toolbar_Rotate_IncrementType = 0;
+                CFG.Current.MapEditor.Toolbar_Rotate_IncrementType = 0;
             }
         }
     }
 
     public void DisplayViewportHint()
     {
-        switch (CFG.Current.Toolbar_Rotate_IncrementType)
+        switch (CFG.Current.MapEditor.Toolbar_Rotate_IncrementType)
         {
             case 0:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_0}°");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_0}°");
                 break;
             case 1:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_1}°");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_1}°");
                 break;
             case 2:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_2}°");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_2}°");
                 break;
             case 3:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_3}°");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_3}°");
                 break;
             case 4:
-                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_4}°");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.MapEditor.Toolbar_Rotate_Increment_4}°");
                 break;
         }
         GUI.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
@@ -580,24 +580,24 @@ public class RotateAction
 
     public float GetRadianRotateAmount()
     {
-        var amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_0;
+        var amount = (float)Math.PI / 180 * CFG.Current.MapEditor.Toolbar_Rotate_Increment_0;
 
-        switch (CFG.Current.Toolbar_Rotate_IncrementType)
+        switch (CFG.Current.MapEditor.Toolbar_Rotate_IncrementType)
         {
             case 0:
-                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_0;
+                amount = (float)Math.PI / 180 * CFG.Current.MapEditor.Toolbar_Rotate_Increment_0;
                 break;
             case 1:
-                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_1;
+                amount = (float)Math.PI / 180 * CFG.Current.MapEditor.Toolbar_Rotate_Increment_1;
                 break;
             case 2:
-                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_2;
+                amount = (float)Math.PI / 180 * CFG.Current.MapEditor.Toolbar_Rotate_Increment_2;
                 break;
             case 3:
-                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_3;
+                amount = (float)Math.PI / 180 * CFG.Current.MapEditor.Toolbar_Rotate_Increment_3;
                 break;
             case 4:
-                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_4;
+                amount = (float)Math.PI / 180 * CFG.Current.MapEditor.Toolbar_Rotate_Increment_4;
                 break;
         }
 

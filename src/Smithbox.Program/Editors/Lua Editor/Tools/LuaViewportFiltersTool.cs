@@ -33,36 +33,36 @@ public class LuaViewportFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("LUA_Filters_Effects_Header"), LOC.Get("LUA_Filters_Effects_Header_TT"));
 
-        Toggle("LUA_Filters_Fx", ref cfg.LuaEditor_TimeAct_Effects);
-        ImGui.BeginDisabled(!cfg.LuaEditor_TimeAct_Effects);
-        Toggle("LUA_Filters_Tae_Effects", ref cfg.LuaEditor_Display_Tae_Effects);
-        Toggle("LUA_Filters_Bullet_Effects", ref cfg.LuaEditor_Display_Bullet_Effects);
-        Toggle("LUA_Filters_Hit_Effects", ref cfg.LuaEditor_Display_Hit_Effects);
+        Toggle("LUA_Filters_Fx", ref cfg.LuaEditor.LuaEditor_TimeAct_Effects);
+        ImGui.BeginDisabled(!cfg.LuaEditor.LuaEditor_TimeAct_Effects);
+        Toggle("LUA_Filters_Tae_Effects", ref cfg.LuaEditor.LuaEditor_Display_Tae_Effects);
+        Toggle("LUA_Filters_Bullet_Effects", ref cfg.LuaEditor.LuaEditor_Display_Bullet_Effects);
+        Toggle("LUA_Filters_Hit_Effects", ref cfg.LuaEditor.LuaEditor_Display_Hit_Effects);
         ImGui.EndDisabled();
 
         // Bullet overlays
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("LUA_Filters_Overlays_Header"), LOC.Get("LUA_Filters_Overlays_Header_TT"));
 
-        Toggle("LUA_Filters_Bullets", ref cfg.LuaEditor_Display_Bullets);
-        Toggle("LUA_Filters_Reach", ref cfg.LuaEditor_Display_Reach);
-        Toggle("LUA_Filters_Trails", ref cfg.LuaEditor_Display_Trails);
-        Toggle("LUA_Filters_Impacts", ref cfg.LuaEditor_Display_Impacts);
+        Toggle("LUA_Filters_Bullets", ref cfg.LuaEditor.LuaEditor_Display_Bullets);
+        Toggle("LUA_Filters_Reach", ref cfg.LuaEditor.LuaEditor_Display_Reach);
+        Toggle("LUA_Filters_Trails", ref cfg.LuaEditor.LuaEditor_Display_Trails);
+        Toggle("LUA_Filters_Impacts", ref cfg.LuaEditor.LuaEditor_Display_Impacts);
 
         // Characters
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("LUA_Filters_Characters_Header"), "");
 
-        Toggle("LUA_Filters_Target", ref cfg.LuaEditor_Display_Target);
+        Toggle("LUA_Filters_Target", ref cfg.LuaEditor.LuaEditor_Display_Target);
 
         // Animation
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("LUA_Filters_Animation_Header"), "");
 
-        Toggle("LUA_Filters_Blend", ref cfg.LuaEditor_Blend_Animations);
-        ImGui.BeginDisabled(!cfg.LuaEditor_Blend_Animations);
+        Toggle("LUA_Filters_Blend", ref cfg.LuaEditor.LuaEditor_Blend_Animations);
+        ImGui.BeginDisabled(!cfg.LuaEditor.LuaEditor_Blend_Animations);
         ImGui.SetNextItemWidth(160 * DPI.UIScale());
-        ImGui.DragFloat($"{LOC.Get("LUA_Filters_Blend_Default")}##luaBlendDefault", ref cfg.LuaEditor_Blend_Default_Time, 0.01f, 0f, 2f, "%.2f s");
+        ImGui.DragFloat($"{LOC.Get("LUA_Filters_Blend_Default")}##luaBlendDefault", ref cfg.LuaEditor.LuaEditor_Blend_Default_Time, 0.01f, 0f, 2f, "%.2f s");
         GUI.Tooltip(LOC.Get("LUA_Filters_Blend_Default_TT"));
         ImGui.EndDisabled();
     }

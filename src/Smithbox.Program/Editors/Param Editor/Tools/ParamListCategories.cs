@@ -251,7 +251,7 @@ public class ParamListCategories
         isNewEntryMode = false;
 
         var nameEntry = new ParamCategoryNameEntry();
-        nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
+        nameEntry.Language = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
         nameEntry.Name = NewEntryName;
 
         var newCategoryEntry = new ParamCategoryEntry();

@@ -140,20 +140,20 @@ public class FaceGenEditorScreen : EditorScreen
         if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##faceGenViewMenu"))
             return;
 
-        Toggle("FACEGEN_Window_List", ref CFG.Current.Interface_FaceGenEditor_List);
-        Toggle("FACEGEN_Window_Properties", ref CFG.Current.Interface_FaceGenEditor_Properties);
-        Toggle("FACEGEN_Window_References", ref CFG.Current.Interface_FaceGenEditor_References);
-        Toggle("FACEGEN_Window_Tools", ref CFG.Current.Interface_FaceGenEditor_ToolWindow);
+        Toggle("FACEGEN_Window_List", ref CFG.Current.Interface.Interface_FaceGenEditor_List);
+        Toggle("FACEGEN_Window_Properties", ref CFG.Current.Interface.Interface_FaceGenEditor_Properties);
+        Toggle("FACEGEN_Window_References", ref CFG.Current.Interface.Interface_FaceGenEditor_References);
+        Toggle("FACEGEN_Window_Tools", ref CFG.Current.Interface.Interface_FaceGenEditor_ToolWindow);
 
         ImGui.Separator();
 
         // The Tools window's tools
-        Toggle("FACEGEN_Tool_Viewport_Filters", ref CFG.Current.Interface_FaceGenEditor_Tool_ViewportFilters);
-        Toggle("FACEGEN_Tool_Randomise", ref CFG.Current.Interface_FaceGenEditor_Tool_Randomise);
-        Toggle("FACEGEN_Tool_Face_Check", ref CFG.Current.Interface_FaceGenEditor_Tool_FaceCheck);
-        Toggle("FACEGEN_Tool_Face_Library", ref CFG.Current.Interface_FaceGenEditor_Tool_FaceLibrary);
-        Toggle("FACEGEN_Tool_Character_Preview", ref CFG.Current.Interface_FaceGenEditor_Tool_CharacterPreview);
-        Toggle("FACEGEN_Tool_Animation_Browser", ref CFG.Current.Interface_FaceGenEditor_Tool_AnimationBrowser);
+        Toggle("FACEGEN_Tool_Viewport_Filters", ref CFG.Current.Interface.Interface_FaceGenEditor_Tool_ViewportFilters);
+        Toggle("FACEGEN_Tool_Randomise", ref CFG.Current.Interface.Interface_FaceGenEditor_Tool_Randomise);
+        Toggle("FACEGEN_Tool_Face_Check", ref CFG.Current.Interface.Interface_FaceGenEditor_Tool_FaceCheck);
+        Toggle("FACEGEN_Tool_Face_Library", ref CFG.Current.Interface.Interface_FaceGenEditor_Tool_FaceLibrary);
+        Toggle("FACEGEN_Tool_Character_Preview", ref CFG.Current.Interface.Interface_FaceGenEditor_Tool_CharacterPreview);
+        Toggle("FACEGEN_Tool_Animation_Browser", ref CFG.Current.Interface.Interface_FaceGenEditor_Tool_AnimationBrowser);
 
         ImGui.Separator();
 

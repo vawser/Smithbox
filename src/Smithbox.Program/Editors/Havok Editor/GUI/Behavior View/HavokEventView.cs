@@ -475,7 +475,7 @@ public partial class HavokEventView
 
         ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
-        var columnCount = CFG.Current.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
+        var columnCount = CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
 
         ImGui.Columns(columnCount);
 
@@ -493,7 +493,7 @@ public partial class HavokEventView
             ImGui.NextColumn();
             ImGui.NextColumn();
 
-            if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+            if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
             {
                 ImGui.TextDisabled(info.GetType().FullName);
                 ImGui.NextColumn();
@@ -549,7 +549,7 @@ public partial class HavokEventView
 
         ImGui.NextColumn();
 
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
             ImGui.NextColumn();
     }
 
@@ -564,7 +564,7 @@ public partial class HavokEventView
         ImGui.TextDisabled(index.ToString());
         ImGui.NextColumn();
 
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
             ImGui.NextColumn();
     }
 

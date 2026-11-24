@@ -18,7 +18,7 @@ public static class ParamReferenceHelper
 {
     public static void Label(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References)
             return;
 
         if (paramRefs == null || paramRefs.Count == 0)
@@ -108,7 +108,7 @@ public static class ParamReferenceHelper
 
     public static void Hint(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context, dynamic oldval)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_References)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_References)
             return;
 
         if (paramRefs == null)

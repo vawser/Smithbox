@@ -84,7 +84,7 @@ public class ProjectileEditorView
         Simulator.Select(paramName, row);
 
         // The first row shown is framed; after that the camera stays where it was put, unless set to follow
-        if (framing || CFG.Current.ProjectileEditor_Frame_On_Select)
+        if (framing || CFG.Current.ProjectileEditor.ProjectileEditor_Frame_On_Select)
             ViewportWindow.FrameSimulation();
     }
 
@@ -92,14 +92,14 @@ public class ProjectileEditorView
 
     public void Display(uint dockspaceId)
     {
-        if (CFG.Current.Interface_ProjectileEditor_List)
+        if (CFG.Current.Interface.Interface_ProjectileEditor_List)
             Window($"{LOC.Get("PROJECTILE_Window_List")}{ListWindowId}", dockspaceId, EditorFocusContext.ProjectileEditor_List, ListView.Display);
 
-        if (CFG.Current.Interface_ProjectileEditor_Properties)
+        if (CFG.Current.Interface.Interface_ProjectileEditor_Properties)
             Window($"{LOC.Get("PROJECTILE_Window_Properties")}{PropertiesWindowId}", dockspaceId, EditorFocusContext.ProjectileEditor_Properties, PropertiesView.Display);
 
         // Playback and Simulation Filters
-        if (CFG.Current.Interface_ProjectileEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_ProjectileEditor_ToolWindow)
             Window($"{LOC.Get("PROJECTILE_Window_Tools")}{ToolWindowId}", dockspaceId, EditorFocusContext.ProjectileEditor_Tools, ToolWindow.Display);
 
         // The viewport window sets the focus itself

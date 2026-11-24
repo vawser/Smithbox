@@ -159,7 +159,7 @@ public class MapViewportView
             Vector3 forwardNormalized = Vector3.Normalize(forward);
 
             // Calculate the position in front of the camera using configured distance
-            Vector3 placementPosition = cameraPosition + forwardNormalized * CFG.Current.PlacementOrb_Distance;
+            Vector3 placementPosition = cameraPosition + forwardNormalized * CFG.Current.MapEditor.PlacementOrb_Distance;
 
             return placementPosition;
         }
@@ -191,7 +191,7 @@ public class MapViewportView
             Vector3 forwardNormalized = Vector3.Normalize(forward);
 
             // Calculate the placement position 5 units in front
-            Vector3 placementPosition = cameraPosition + forwardNormalized * CFG.Current.PlacementOrb_Distance;
+            Vector3 placementPosition = cameraPosition + forwardNormalized * CFG.Current.MapEditor.PlacementOrb_Distance;
 
             // Reconstruct the rotation from the view matrix
             Vector3 up = new Vector3(cameraWorldMatrix.M21, cameraWorldMatrix.M22, cameraWorldMatrix.M23);

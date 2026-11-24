@@ -83,7 +83,7 @@ public sealed class TimeActEffectPlayback : IDisposable
         var animation = _view.Selection.SelectedAnimation;
         var container = _view.Selection.SelectedTimeActModelWrapper?.Container;
 
-        if (!CFG.Current.TimeActEditor_Display_Effects || animation == null || container == null || !IsAvailable)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Display_Effects || animation == null || container == null || !IsAvailable)
         {
             if (_cuesFor.Animation != null || _player.CueCount > 0)
                 Clear();
@@ -219,7 +219,7 @@ public sealed class TimeActEffectPlayback : IDisposable
 
             // The ID of a floor-determined effect is an offset into the effects of the floor material underfoot
             if (_project.Handler.TimeActData?.GetSimulationRole(ev) == TimeActSimulationRole.FloorEffect)
-                return TimeActFloorEffects.Resolve(_project, id, CFG.Current.TimeActEditor_Floor_Material);
+                return TimeActFloorEffects.Resolve(_project, id, CFG.Current.TimeActEditor.TimeActEditor_Floor_Material);
 
             return id > 0 ? id : null;
         }

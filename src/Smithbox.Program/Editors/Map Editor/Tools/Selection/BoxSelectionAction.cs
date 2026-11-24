@@ -25,13 +25,13 @@ public class BoxSelectionAction
 
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
-        ImGui.Checkbox("Allow Box Selection", ref CFG.Current.Viewport_Enable_Box_Selection);
+        ImGui.Checkbox("Allow Box Selection", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection);
         GUI.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
 
         GUI.Spacer();
         GUI.SimpleHeader("Allowed Targets", "Which map objects can be selected by the box selection.");
 
-        ImGui.Checkbox("Map Piece", ref CFG.Current.Viewport_Enable_Box_Selection_MapPiece);
+        ImGui.Checkbox("Map Piece", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_MapPiece);
 
         var name = "Objects";
         if (Project.Descriptor.ProjectType is ProjectType.ER 
@@ -43,16 +43,16 @@ public class BoxSelectionAction
             name = "Assets";
         }
 
-        ImGui.Checkbox(name, ref CFG.Current.Viewport_Enable_Box_Selection_Asset);
+        ImGui.Checkbox(name, ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_Asset);
 
-        ImGui.Checkbox("Enemy", ref CFG.Current.Viewport_Enable_Box_Selection_Enemy);
+        ImGui.Checkbox("Enemy", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_Enemy);
 
-        ImGui.Checkbox("Player", ref CFG.Current.Viewport_Enable_Box_Selection_Player);
+        ImGui.Checkbox("Player", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_Player);
 
-        ImGui.Checkbox("Collision", ref CFG.Current.Viewport_Enable_Box_Selection_Collision);
+        ImGui.Checkbox("Collision", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_Collision);
 
-        ImGui.Checkbox("Light", ref CFG.Current.Viewport_Enable_Box_Selection_Light);
+        ImGui.Checkbox("Light", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_Light);
 
-        ImGui.Checkbox("Region", ref CFG.Current.Viewport_Enable_Box_Selection_Region);
+        ImGui.Checkbox("Region", ref CFG.Current.Viewport.Viewport_Enable_Box_Selection_Region);
     }
 }

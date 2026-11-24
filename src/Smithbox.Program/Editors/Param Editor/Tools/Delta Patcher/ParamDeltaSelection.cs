@@ -51,7 +51,7 @@ public class ParamDeltaSelection
                 entry.Filename = filename;
                 entry.Delta = Patcher.LoadDeltaPatch(filename);
 
-                if (CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries)
+                if (CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Display_All_Entries)
                 {
                     ImportList.Add(entry);
                 }

@@ -111,7 +111,7 @@ public class ParamEditorScreen : EditorScreen
             activeView.ToolMenu.ParamComparisonTool.HandleReportModal();
         }
 
-        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
+        if (CFG.Current.ParamEditor.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(1.0f, 1.0f) * scale);
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 1.0f) * scale);
@@ -130,7 +130,7 @@ public class ParamEditorScreen : EditorScreen
 
         ViewHandler.HandleViews(dsid);
 
-        if (CFG.Current.ParamEditor_Enable_Compact_Mode)
+        if (CFG.Current.ParamEditor.ParamEditor_Enable_Compact_Mode)
         {
             ImGui.PopStyleVar(3);
         }
@@ -147,7 +147,7 @@ public class ParamEditorScreen : EditorScreen
         {
             // Name the language the import will actually use (the Import language, not the Annotation one).
             // Fall back to the raw setting if it isn't in the list, rather than throwing.
-            var importLanguage = CFG.Current.ParamEditor_Import_Language;
+            var importLanguage = CFG.Current.ParamEditor.ParamEditor_Import_Language;
             var curLanguage = Project.Handler.ParamData.RowImportLanguages?.Options?
                 .FirstOrDefault(e => e.Name == importLanguage);
 
@@ -265,18 +265,18 @@ public class ParamEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.ParamEditor_Allow_Unmodified_Save = !CFG.Current.ParamEditor_Allow_Unmodified_Save;
+                CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save = !CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ParamEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.ParamEditor.ParamEditor_Allow_Unmodified_Save);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.ParamEditor_Allow_Automatic_Save = !CFG.Current.ParamEditor_Allow_Automatic_Save;
+                CFG.Current.ParamEditor.ParamEditor_Allow_Automatic_Save = !CFG.Current.ParamEditor.ParamEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.ParamEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.ParamEditor.ParamEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -314,7 +314,7 @@ public class ParamEditorScreen : EditorScreen
             // History: opens the Edit History tool (Tools window, General)
             if (ImGui.MenuItem($"{LOC.Get("PARAM_EditHistory_Menu")}##historyAction"))
             {
-                CFG.Current.Interface_ParamEditor_ToolWindow = true;
+                CFG.Current.Interface.Interface_ParamEditor_ToolWindow = true;
 
                 if (activeView != null)
                 {
@@ -393,9 +393,9 @@ public class ParamEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Tool_Window")}##toolsViewToggle"))
             {
-                CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
+                CFG.Current.Interface.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface.Interface_ParamEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_ParamEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -419,7 +419,7 @@ public class ParamEditorScreen : EditorScreen
 
     public async void Save(bool autoSave = false)
     {
-        if (autoSave && !CFG.Current.ParamEditor_Allow_Automatic_Save)
+        if (autoSave && !CFG.Current.ParamEditor.ParamEditor_Allow_Automatic_Save)
         {
             return;
         }

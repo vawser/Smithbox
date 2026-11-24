@@ -411,14 +411,14 @@ public class FxInspector
         GUI.WrappedText(action.Name != null ? $"{action.Name} ({action.TypeId})" : LOC.Get("FX_Action_Unknown", action.TypeId));
         if (action.Slot != null)
             GUI.WrappedText(LOC.Get("FX_Inspector_Slot", action.Slot));
-        if (action.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
+        if (action.Description != null && CFG.Current.FxEditor.FxEditor_Inspector_Show_Descriptions)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, action.Description);
 
         // Options
         GUI.Spacer();
-        ImGui.Checkbox($"{LOC.Get("FX_Inspector_Show_Raw")}##fxShowRaw", ref CFG.Current.FxEditor_Inspector_Show_Raw);
+        ImGui.Checkbox($"{LOC.Get("FX_Inspector_Show_Raw")}##fxShowRaw", ref CFG.Current.FxEditor.FxEditor_Inspector_Show_Raw);
         GUI.Tooltip(LOC.Get("FX_Inspector_Show_Raw_TT"));
-        ImGui.Checkbox($"{LOC.Get("FX_Inspector_Show_Unknown")}##fxShowUnknown", ref CFG.Current.FxEditor_Inspector_Show_Unknown);
+        ImGui.Checkbox($"{LOC.Get("FX_Inspector_Show_Unknown")}##fxShowUnknown", ref CFG.Current.FxEditor.FxEditor_Inspector_Show_Unknown);
         GUI.Tooltip(LOC.Get("FX_Inspector_Show_Unknown_TT"));
 
         if (!action.IsTyped)
@@ -431,7 +431,7 @@ public class FxInspector
             return;
         }
 
-        if (CFG.Current.FxEditor_Inspector_Show_Raw)
+        if (CFG.Current.FxEditor.FxEditor_Inspector_Show_Raw)
         {
             DisplayRaw(action);
             return;
@@ -451,8 +451,8 @@ public class FxInspector
         {
             GUI.Spacer();
             GUI.ConditionalHeader(LOC.Get("FX_Inspector_Unknown_Header"), LOC.Get("FX_Inspector_Unknown_Header_TT"),
-                ref CFG.Current.FxEditor_Inspector_Show_Unknown);
-            if (CFG.Current.FxEditor_Inspector_Show_Unknown)
+                ref CFG.Current.FxEditor.FxEditor_Inspector_Show_Unknown);
+            if (CFG.Current.FxEditor.FxEditor_Inspector_Show_Unknown)
                 DisplayValueTable("fxUnknownValues", entry, action, unknown);
         }
     }

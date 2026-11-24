@@ -128,7 +128,7 @@ public class TexTextureFileList
                 _ = View.ToolView.TextureExport.ExportTextureAsync(View.Selection.SelectedTpf, tex);
             }
             GUI.Tooltip(
-                LOC.Get("TEXVIEW_TextureList_Context_Action_Export_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
+                LOC.Get("TEXVIEW_TextureList_Context_Action_Export_TT", CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation));
 
             ImGui.Separator();
 

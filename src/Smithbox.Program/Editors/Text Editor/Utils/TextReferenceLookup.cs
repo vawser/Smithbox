@@ -35,10 +35,10 @@ public class TextReferenceLookup
     /// </summary>
     public string SourceLabel()
     {
-        if (CFG.Current.TextEditor_Contents_Reference_Use_Vanilla)
+        if (CFG.Current.TextEditor.TextEditor_Contents_Reference_Use_Vanilla)
             return LOC.Get("TEXT_Reference_Source_Vanilla");
 
-        return LOC.Get(CFG.Current.TextEditor_Contents_Reference_Category.GetDisplayName());
+        return LOC.Get(CFG.Current.TextEditor.TextEditor_Contents_Reference_Category.GetDisplayName());
     }
 
     /// <summary>
@@ -62,8 +62,8 @@ public class TextReferenceLookup
             _dataVersion = version;
         }
 
-        var useVanilla = CFG.Current.TextEditor_Contents_Reference_Use_Vanilla;
-        var category = CFG.Current.TextEditor_Contents_Reference_Category;
+        var useVanilla = CFG.Current.TextEditor.TextEditor_Contents_Reference_Use_Vanilla;
+        var category = CFG.Current.TextEditor.TextEditor_Contents_Reference_Category;
 
         var reference = GetReferenceContainer(selected, useVanilla, category);
 

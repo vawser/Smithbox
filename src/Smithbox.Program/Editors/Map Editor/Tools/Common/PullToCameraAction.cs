@@ -75,13 +75,13 @@ public class PullToCameraAction
         GUI.SimpleHeader("Camera Offset Distance", "Camera Offset Distance", "", UI.Current.ImGui_Default_Text_Color);
 
         GUI.SetInputWidth();
-        if (ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
+        if (ImGui.SliderFloat("##Offset distance", ref CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset, 0, 100))
         {
-            if (CFG.Current.Toolbar_Move_to_Camera_Offset < 0)
-                CFG.Current.Toolbar_Move_to_Camera_Offset = 0;
+            if (CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset < 0)
+                CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset = 0;
 
-            if (CFG.Current.Toolbar_Move_to_Camera_Offset > 100)
-                CFG.Current.Toolbar_Move_to_Camera_Offset = 100;
+            if (CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset > 100)
+                CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset = 100;
         }
         GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
 
@@ -103,7 +103,7 @@ public class PullToCameraAction
 
             Vector3 camDir = Vector3.Transform(Vector3.UnitZ, View.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
             Vector3 camPos = View.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.CameraTransform.Position;
-            Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
+            Vector3 targetCamPos = camPos + camDir * CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset;
 
             var action = BuildMoveToPointAction(sels, targetCamPos,
                 GizmoState.Origin == GizmoState.GizmosOrigin.BoundingBox);

@@ -50,9 +50,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DES);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DES);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DES;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -63,7 +64,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DES = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DES = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -112,9 +113,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS1);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DS1);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DS1;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -125,7 +127,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DS1 = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DS1 = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -173,9 +175,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS1R);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DS1R);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DS1R;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -186,7 +189,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DS1R = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DS1R = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -234,9 +237,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS2);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DS2);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DS2;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -247,7 +251,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DS2 = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DS2 = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -295,9 +299,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS2S);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DS2S);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DS2S;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -308,7 +313,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DS2S = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DS2S = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -356,9 +361,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_BB);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_BB);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_BB;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -369,7 +375,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_BB = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_BB = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -417,9 +423,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS3);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DS3);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DS3;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -430,7 +437,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DS3 = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DS3 = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -478,9 +485,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_SDT);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_SDT);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_SDT;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -491,7 +499,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_SDT = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_SDT = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -539,9 +547,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_ER);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_ER);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_ER;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -552,7 +561,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_ER = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_ER = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -600,9 +609,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_AC6);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_AC6);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_AC6;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -613,7 +623,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_AC6 = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_AC6 = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -661,9 +671,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_NR);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_NR);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_NR;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -674,7 +685,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_NR = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_NR = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -722,9 +733,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DB);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DB);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DB;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -735,7 +747,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DB = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DB = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -783,9 +795,10 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DB_NT);
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor.TextEditor_Primary_Language_DB_NT);
 
-                var previewName = LOC.Get(curLanguage.LanguageKey);
+                // The configured language may not be one the game has (or the game lists none: DB, DB_NT)
+                var previewName = curLanguage != null ? LOC.Get(curLanguage.LanguageKey) : CFG.Current.TextEditor.TextEditor_Primary_Language_DB_NT;
 
                 DPI.ApplyInputWidth();
                 if (ImGui.BeginCombo("##inputValue", previewName))
@@ -796,7 +809,7 @@ public class TextEditorPrefs
 
                         if (ImGui.Selectable(displayName))
                         {
-                            CFG.Current.TextEditor_Primary_Language_DB_NT = entry.Language;
+                            CFG.Current.TextEditor.TextEditor_Primary_Language_DB_NT = entry.Language;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             if (curProject.Handler.ParamEditor != null)
@@ -826,7 +839,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Include_Vanilla_Cache_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Include_Vanilla_Cache);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Include_Vanilla_Cache);
             }
         };
     }
@@ -848,7 +861,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Container_List_Display_Obsolete_Containers_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Container_List_Display_Obsolete_Containers);
             }
         };
     }
@@ -866,7 +879,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Container_List_Display_Primary_Category_Only_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Container_List_Display_Primary_Category_Only);
             }
         };
     }
@@ -884,7 +897,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Container_List_Hide_Unused_Containers_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Hide_Unused_Containers);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers);
             }
         };
     }
@@ -902,7 +915,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Container_List_Display_Community_Names_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Community_Names);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Container_List_Display_Community_Names);
             }
         };
     }
@@ -920,7 +933,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Container_List_Display_Source_Path_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Source_Path);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Container_List_Display_Source_Path);
             }
         };
     }
@@ -942,7 +955,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Text_File_List_Grouped_Display_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_File_List_Grouped_Display);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_File_List_Grouped_Display);
             }
         };
     }
@@ -960,7 +973,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Text_File_List_Display_ID_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_File_List_Display_ID);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_File_List_Display_ID);
             }
         };
     }
@@ -978,7 +991,7 @@ public class TextEditorPrefs
             Description = "PREF_TextEditor_Text_File_List_Display_Community_Names_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue2", ref CFG.Current.TextEditor_Text_File_List_Display_Community_Names);
+                ImGui.Checkbox("##inputValue2", ref CFG.Current.TextEditor.TextEditor_Text_File_List_Display_Community_Names);
             }
         };
     }
@@ -1000,7 +1013,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Entry_List_Display_Null_Text);
             }
         };
     }
@@ -1019,7 +1032,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Entry_List_Truncate_Name);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Entry_List_Truncate_Name);
             }
         };
     }
@@ -1038,7 +1051,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Entry_List_Ignore_ID_Check);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Entry_List_Ignore_ID_Check);
             }
         };
     }
@@ -1061,7 +1074,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Entry_Enable_Grouped_Entries);
             }
         };
     }
@@ -1080,7 +1093,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Entry_Allow_Duplicate_ID);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Entry_Allow_Duplicate_ID);
             }
         };
     }
@@ -1103,7 +1116,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Export_Include_Grouped_Entries);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Export_Include_Grouped_Entries);
             }
         };
     }
@@ -1122,7 +1135,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Export_Enable_Quick_Export);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Export_Enable_Quick_Export);
             }
         };
     }
@@ -1145,7 +1158,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Language_Sync_Display_Primary_Only);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Language_Sync_Display_Primary_Only);
             }
         };
     }
@@ -1164,7 +1177,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Language_Sync_Apply_Prefix);
             }
         };
     }
@@ -1185,7 +1198,7 @@ public class TextEditorPrefs
             Draw = () =>
             {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.TextEditor_Language_Sync_Prefix, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.TextEditor.TextEditor_Language_Sync_Prefix, 255);
             }
         };
     }
@@ -1208,7 +1221,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Clipboard_Include_ID);
             }
         };
     }
@@ -1227,7 +1240,7 @@ public class TextEditorPrefs
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_Clipboard_Escape_New_Lines);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor.TextEditor_Text_Clipboard_Escape_New_Lines);
             }
         };
     }

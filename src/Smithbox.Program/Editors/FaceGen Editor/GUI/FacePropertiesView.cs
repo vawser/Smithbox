@@ -102,7 +102,7 @@ public class FacePropertiesView
 
         // Toggle: internal names
         GUI.DisplayToggleButton("faceGenInternalNamesToggle", Icons.Book,
-            ref CFG.Current.FaceGenEditor_Show_Internal_Names,
+            ref CFG.Current.FaceGenEditor.FaceGenEditor_Show_Internal_Names,
             "FACEGEN_Properties_Names_Toggle_Display",
             "FACEGEN_Properties_Names_Toggle_Internal",
             "FACEGEN_Properties_Names_Toggle_TT");
@@ -216,7 +216,7 @@ public class FacePropertiesView
     /// </summary>
     private string DisplayName(Param param, string internalName, bool storesModes, FaceGenModelData model)
     {
-        if (CFG.Current.FaceGenEditor_Show_Internal_Names)
+        if (CFG.Current.FaceGenEditor.FaceGenEditor_Show_Internal_Names)
             return internalName;
 
         if (!storesModes && FaceGenMenu.Caption(Project, internalName) is { } caption)

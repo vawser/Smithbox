@@ -44,11 +44,11 @@ public class HavokToolView
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
             // Search
-            if (CFG.Current.Interface_BehaviorEditor_Tool_Search)
+            if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Search)
                 BehaviorSearch.OnToolWindow();
 
             // Actions
-            if (CFG.Current.Interface_BehaviorEditor_Tool_Templates)
+            if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Templates)
             {
                 ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Actions"));
 
@@ -60,36 +60,36 @@ public class HavokToolView
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
 
             // Changes
-            if (CFG.Current.Interface_BehaviorEditor_Tool_Changes)
+            if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Changes)
                 BehaviorChanges.OnToolWindow();
 
             // Merge
-            if (CFG.Current.Interface_BehaviorEditor_Tool_Merge)
+            if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Merge)
                 BehaviorMerge.OnToolWindow();
 
             // Bookmarks
-            if (CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks)
+            if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Bookmarks)
                 BehaviorBookmarks.OnToolWindow();
 
             // Validation
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
             // Problems
-            if (CFG.Current.Interface_BehaviorEditor_Tool_Problems)
+            if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Problems)
                 BehaviorProblems.OnToolWindow();
 
             // Viewport
             if (View.Editor.Viewer != null &&
-                (CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector || CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview))
+                (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Selector || CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Preview))
             {
                 ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
 
                 // Character Selector
-                if (CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector)
+                if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Selector)
                     View.Editor.Viewer.DisplayCharacterSelector();
 
                 // Character Preview
-                if (CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview)
+                if (CFG.Current.Interface.Interface_BehaviorEditor_Tool_Character_Preview)
                     View.Editor.Viewer.DisplayCharacterPreview();
             }
         }

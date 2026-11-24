@@ -78,7 +78,7 @@ public class WallPaintTool
         GUI.Spacer();
         GUI.SimpleHeader("wallPaintOptions", "Paint Options", "How painting in the viewport changes the triangles under the cursor.", UI.Current.ImGui_Default_Text_Color);
 
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions || CFG.Current.MapEditor_SkipHavokLoad)
+        if (!CFG.Current.MapEditor.MapEditor_ModelLoad_Collisions || CFG.Current.MapEditor.MapEditor_SkipHavokLoad)
         {
             GUI.WrappedText("Collision isn't loaded, so there is nothing to paint. Enable collision loading and load the map again.");
             GUI.WrappedText("");
@@ -160,20 +160,20 @@ public class WallPaintTool
             if (ImGui.Button("Display Walls##wallPaintShow"))
             {
                 scene.SetDrawFilter(RenderFilter.Wall, true);
-                CFG.Current.MapEditor_BasicFilter_Wall = true;
+                CFG.Current.MapEditor.MapEditor_BasicFilter_Wall = true;
             }
 
             GUI.WrappedText("");
         }
 
-        if (ImGui.Checkbox("WALL##wallDisplayCells", ref CFG.Current.MapEditor_Wall_Display_Cells))
+        if (ImGui.Checkbox("WALL##wallDisplayCells", ref CFG.Current.MapEditor.MapEditor_Wall_Display_Cells))
         {
             View.WallBank.RebuildAll();
         }
         GUI.Tooltip("Display the cells of the WALL files: which parts of each triangle are walls and which are not.");
 
         ImGui.SameLine();
-        if (ImGui.Checkbox("NOJUMPWALL##wallDisplayNoJump", ref CFG.Current.MapEditor_Wall_Display_NoJump))
+        if (ImGui.Checkbox("NOJUMPWALL##wallDisplayNoJump", ref CFG.Current.MapEditor.MapEditor_Wall_Display_NoJump))
         {
             View.WallBank.RebuildAll();
         }
@@ -191,15 +191,15 @@ public class WallPaintTool
     {
         GUI.WrappedText("Colors:");
 
-        LegendEntry(CFG.Current.Viewport_Wall_Fill_Color, "Wall",
+        LegendEntry(CFG.Current.Viewport.Viewport_Wall_Fill_Color, "Wall",
             "A wall of this collision.");
-        LegendEntry(CFG.Current.Viewport_Wall_Other_Collision_Color, "Wall (other collision)",
+        LegendEntry(CFG.Current.Viewport.Viewport_Wall_Other_Collision_Color, "Wall (other collision)",
             "A wall that belongs to a neighbouring collision, usually along the edge where the two meet.");
-        LegendEntry(CFG.Current.Viewport_Wall_None_Color, "Not Wall",
+        LegendEntry(CFG.Current.Viewport.Viewport_Wall_None_Color, "Not Wall",
             "Part of a triangle that is not a wall.");
-        LegendEntry(CFG.Current.Viewport_Wall_NoJump_Color, "No Jump",
+        LegendEntry(CFG.Current.Viewport.Viewport_Wall_NoJump_Color, "No Jump",
             "A triangle in the NOJUMPWALL file, which can't be jumped off. Drawn over its wall cells, so they are tinted by it.");
-        LegendEntry(CFG.Current.Viewport_Wall_Hover_Color, "Cursor",
+        LegendEntry(CFG.Current.Viewport.Viewport_Wall_Hover_Color, "Cursor",
             "The triangle that will be painted.");
 
         GUI.WrappedText("Collision without any of these colors isn't in the WALL file, so it isn't a wall. The game only lists steep triangles.");
@@ -354,7 +354,7 @@ public class WallPaintTool
 
             var primitive = new DbgPrimWallCells(new[] { (a + offset, b + offset, c + offset) });
             var proxy = MsbEntity.CreateWallProxy(View.ViewportHandler.ActiveViewport.RenderScene, primitive,
-                CFG.Current.Viewport_Wall_Hover_Color);
+                CFG.Current.Viewport.Viewport_Wall_Hover_Color);
 
             HoverMesh = new WallMesh(proxy, primitive);
         }

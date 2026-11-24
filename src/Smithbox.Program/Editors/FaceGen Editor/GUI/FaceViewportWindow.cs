@@ -111,7 +111,7 @@ public class FaceViewportWindow
     /// <summary>Whether the body is the female one: as the Viewport Filters tool says, or as the first character wearing the face is</summary>
     public bool IsFemale()
     {
-        switch (CFG.Current.FaceGenEditor_Body)
+        switch (CFG.Current.FaceGenEditor.FaceGenEditor_Body)
         {
             case 1:
                 return false;
@@ -263,7 +263,7 @@ public class FaceViewportWindow
 
         var camera = vk.ViewportCamera;
         var forward = Vector3.Transform(Vector3.UnitZ, camera.CameraTransform.Rotation);
-        var fov = float.DegreesToRadians(camera.FovOverrideDegrees ?? CFG.Current.Viewport_Camera_FOV);
+        var fov = float.DegreesToRadians(camera.FovOverrideDegrees ?? CFG.Current.Viewport.Viewport_Camera_FOV);
 
         camera.CameraTransform.Position = center - forward * (radius / MathF.Sin(fov * 0.5f));
     }
@@ -345,7 +345,7 @@ public class FaceViewportWindow
             return;
 
         // Without the shape, the base head: still written, so its edge stays pulled onto the body (FaceMorpher's seam)
-        if (!CFG.Current.FaceGenEditor_Apply_Shape)
+        if (!CFG.Current.FaceGenEditor.FaceGenEditor_Apply_Shape)
             shape = new float[shape.Length];
 
         if (!MorphPending && AppliedShape != null && shape.AsSpan().SequenceEqual(AppliedShape))
@@ -395,7 +395,7 @@ public class FaceViewportWindow
     /// </summary>
     private void LoadCommonTextures()
     {
-        if (CommonTexturesRequested || !CFG.Current.Viewport_Enable_Texturing)
+        if (CommonTexturesRequested || !CFG.Current.Viewport.Viewport_Enable_Texturing)
             return;
 
         var common = CharacterComposition.GetCommonTexture(Project);

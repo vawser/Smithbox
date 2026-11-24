@@ -135,11 +135,11 @@ public class ModelContentsView : IActionEventHandler
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Tree}##toggleAutoOpen"))
         {
-            CFG.Current.ModelEditor_Contents_Auto_Open_Tree = !CFG.Current.ModelEditor_Contents_Auto_Open_Tree;
+            CFG.Current.ModelEditor.ModelEditor_Contents_Auto_Open_Tree = !CFG.Current.ModelEditor.ModelEditor_Contents_Auto_Open_Tree;
         }
 
         var autoTreeMode = LOC.Get("MODEL_Contents_TreeState_Open");
-        if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+        if (CFG.Current.ModelEditor.ModelEditor_Contents_Auto_Open_Tree)
             autoTreeMode = LOC.Get("MODEL_Contents_TreeState_Closed");
 
         GUI.Tooltip(LOC.Get("MODEL_Contents_TreeState_TT", autoTreeMode));
@@ -148,10 +148,10 @@ public class ModelContentsView : IActionEventHandler
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Sitemap}##toggleNodeHierarchy"))
         {
-            CFG.Current.ModelEditor_Contents_Node_Hierarchy = !CFG.Current.ModelEditor_Contents_Node_Hierarchy;
+            CFG.Current.ModelEditor.ModelEditor_Contents_Node_Hierarchy = !CFG.Current.ModelEditor.ModelEditor_Contents_Node_Hierarchy;
         }
 
-        var hierarchyMode = CFG.Current.ModelEditor_Contents_Node_Hierarchy
+        var hierarchyMode = CFG.Current.ModelEditor.ModelEditor_Contents_Node_Hierarchy
             ? LOC.Get("MODEL_Contents_Node_Hierarchy_On")
             : LOC.Get("MODEL_Contents_Node_Hierarchy_Off");
 
@@ -192,7 +192,7 @@ public class ModelContentsView : IActionEventHandler
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
-        if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+        if (CFG.Current.ModelEditor.ModelEditor_Contents_Auto_Open_Tree)
         {
             treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
         }
@@ -413,7 +413,7 @@ public class ModelContentsView : IActionEventHandler
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
 
             // Filtering opens the categories, so the matches can be seen
-            if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree || isFiltering)
+            if (CFG.Current.ModelEditor.ModelEditor_Contents_Auto_Open_Tree || isFiltering)
             {
                 treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
             }
@@ -426,7 +426,7 @@ public class ModelContentsView : IActionEventHandler
 
             // The flat list is kept while filtering, as matches can be nested deep within the hierarchy
             var useHierarchy = cats.Key == ModelEntityType.Node
-                && CFG.Current.ModelEditor_Contents_Node_Hierarchy
+                && CFG.Current.ModelEditor.ModelEditor_Contents_Node_Hierarchy
                 && !isFiltering;
 
             var categoryOpen = ImGui.TreeNodeEx($"{cats.Key} ({countText})###category_{cats.Key}", treeflags);
@@ -812,7 +812,7 @@ public class ModelContentsView : IActionEventHandler
                 }
             }
 
-            if (CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry)
+            if (CFG.Current.ModelEditor.ModelEditor_Contents_NodeNameInMeshEntry)
             {
                 key = $"{meshName} [{nodeName}]";
             }
@@ -860,7 +860,7 @@ public class ModelContentsView : IActionEventHandler
 
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
-            if (CFG.Current.ModelEditor_Contents_Auto_Open_Tree)
+            if (CFG.Current.ModelEditor.ModelEditor_Contents_Auto_Open_Tree)
             {
                 treeflags = treeflags | ImGuiTreeNodeFlags.DefaultOpen;
             }

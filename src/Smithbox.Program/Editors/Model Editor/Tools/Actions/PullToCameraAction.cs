@@ -98,7 +98,7 @@ public class PullToCameraAction
 
             Vector3 camDir = Vector3.Transform(Vector3.UnitZ, View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
             Vector3 camPos = View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
-            Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
+            Vector3 targetCamPos = camPos + camDir * CFG.Current.MapEditor.Toolbar_Move_to_Camera_Offset;
 
             // An object whose parent is also selected follows its parent, so it isn't moved itself
             var moved = sels.Where(sel =>

@@ -263,7 +263,7 @@ namespace StudioCore.Logger.GUI
             var formatted =
                 $"[{logEvent.Time:HH:mm:ss}]{times} {msg}";
 
-            if(CFG.Current.Logger_Enable_Scope_Logging)
+            if(CFG.Current.Program.Logger_Enable_Scope_Logging)
             {
                 formatted =
                 $"[{logEvent.Time:HH:mm:ss}]{times} [{scopeName}] {msg}";

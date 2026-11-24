@@ -11,7 +11,7 @@ public static class PropScaleAction
 {
     public static void CopyCurrentScale(PropertyInfo prop, object obj)
     {
-        CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
+        CFG.Current.MapEditor.SavedScale = (Vector3)prop.GetValue(obj, null);
     }
 
     public static void PasteSavedScale(MapEditorView view, ViewportSelection _selection)

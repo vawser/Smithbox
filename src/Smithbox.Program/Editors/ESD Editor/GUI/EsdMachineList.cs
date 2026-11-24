@@ -42,21 +42,21 @@ public class EsdMachineList
 
         // Toggle: state counts
         GUI.DisplayToggleButton("esdMachineStateCountToggle", Icons.Hashtag,
-            ref CFG.Current.EsdEditor_Machine_List_Display_State_Count,
+            ref CFG.Current.EsdEditor.EsdEditor_Machine_List_Display_State_Count,
             "ESD_MachineList_State_Toggle_Hide",
             "ESD_MachineList_State_Toggle_Show",
             "ESD_MachineList_State_Toggle_TT");
 
         // Toggle: call counts
         GUI.DisplayToggleButton("esdMachineCallCountToggle", Icons.Phone,
-            ref CFG.Current.EsdEditor_Machine_List_Display_Call_Count,
+            ref CFG.Current.EsdEditor.EsdEditor_Machine_List_Display_Call_Count,
             "ESD_MachineList_Call_Toggle_Hide",
             "ESD_MachineList_Call_Toggle_Show",
             "ESD_MachineList_Call_Toggle_TT");
 
         // Toggle: aliases
         GUI.DisplayToggleButton("esdMachineAliasToggle", Icons.StickyNote,
-            ref CFG.Current.EsdEditor_Machine_List_Display_Aliases,
+            ref CFG.Current.EsdEditor.EsdEditor_Machine_List_Display_Aliases,
             "ESD_MachineList_Alias_Toggle_Hide",
             "ESD_MachineList_Alias_Toggle_Show",
             "ESD_MachineList_Alias_Toggle_TT");
@@ -155,14 +155,14 @@ public class EsdMachineList
 
                 ImGui.SameLine();
 
-                if (name.Length > 0 && CFG.Current.EsdEditor_Machine_List_Display_Aliases)
+                if (name.Length > 0 && CFG.Current.EsdEditor.EsdEditor_Machine_List_Display_Aliases)
                 {
                     ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                     ImGui.SameLine();
                 }
 
-                var calls = CFG.Current.EsdEditor_Machine_List_Display_Call_Count && Calls.TryGetValue(id, out var n) ? n : 0;
-                var states = CFG.Current.EsdEditor_Machine_List_Display_State_Count;
+                var calls = CFG.Current.EsdEditor.EsdEditor_Machine_List_Display_Call_Count && Calls.TryGetValue(id, out var n) ? n : 0;
+                var states = CFG.Current.EsdEditor.EsdEditor_Machine_List_Display_State_Count;
                 var info = (states, calls > 0) switch
                 {
                     (true, true) => LOC.Get("ESD_MachineList_Info_Called", machine.Count, calls),

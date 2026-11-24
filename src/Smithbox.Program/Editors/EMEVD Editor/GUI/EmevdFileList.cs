@@ -36,14 +36,14 @@ public class EmevdFileList
 
         // Toggle: event counts
         GUI.DisplayToggleButton("emevdFileCountToggle", Icons.Hashtag,
-            ref CFG.Current.EmevdEditor_File_List_Display_Event_Count,
+            ref CFG.Current.EmevdEditor.EmevdEditor_File_List_Display_Event_Count,
             "EMEVD_FileList_Count_Toggle_Hide",
             "EMEVD_FileList_Count_Toggle_Show",
             "EMEVD_FileList_Count_Toggle_TT");
 
         // Toggle: aliases
         GUI.DisplayToggleButton("emevdFileAliasToggle", Icons.StickyNote,
-            ref CFG.Current.EmevdEditor_File_List_Display_Aliases,
+            ref CFG.Current.EmevdEditor.EmevdEditor_File_List_Display_Aliases,
             "EMEVD_FileList_Alias_Toggle_Hide",
             "EMEVD_FileList_Alias_Toggle_Show",
             "EMEVD_FileList_Alias_Toggle_TT");
@@ -136,7 +136,7 @@ public class EmevdFileList
             ScrollToSelection = false;
         }
 
-        if (CFG.Current.EmevdEditor_File_List_Display_Aliases && !string.IsNullOrEmpty(alias))
+        if (CFG.Current.EmevdEditor.EmevdEditor_File_List_Display_Aliases && !string.IsNullOrEmpty(alias))
         {
             ImGui.SameLine();
             ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
@@ -148,7 +148,7 @@ public class EmevdFileList
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);
             GUI.Tooltip(file.LoadError);
         }
-        else if (file.IsLoaded && CFG.Current.EmevdEditor_File_List_Display_Event_Count)
+        else if (file.IsLoaded && CFG.Current.EmevdEditor.EmevdEditor_File_List_Display_Event_Count)
         {
             ImGui.SameLine();
             ImGui.TextDisabled(LOC.Get("EMEVD_FileList_Event_Count", file.Emevd.Events.Count));

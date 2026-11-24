@@ -26,14 +26,14 @@ public class FxPlayback
 
     public float Speed
     {
-        get => CFG.Current.FxEditor_Playback_Speed;
-        set => CFG.Current.FxEditor_Playback_Speed = Math.Clamp(value, 0.01f, 10f);
+        get => CFG.Current.FxEditor.FxEditor_Playback_Speed;
+        set => CFG.Current.FxEditor.FxEditor_Playback_Speed = Math.Clamp(value, 0.01f, 10f);
     }
 
     public bool Loop
     {
-        get => CFG.Current.FxEditor_Playback_Loop;
-        set => CFG.Current.FxEditor_Playback_Loop = value;
+        get => CFG.Current.FxEditor.FxEditor_Playback_Loop;
+        set => CFG.Current.FxEditor.FxEditor_Playback_Loop = value;
     }
 
     /// <summary>
@@ -42,8 +42,8 @@ public class FxPlayback
     /// </summary>
     public float Length
     {
-        get => CFG.Current.FxEditor_Playback_Length;
-        set => CFG.Current.FxEditor_Playback_Length = Math.Clamp(value, 0.1f, 600f);
+        get => CFG.Current.FxEditor.FxEditor_Playback_Length;
+        set => CFG.Current.FxEditor.FxEditor_Playback_Length = Math.Clamp(value, 0.1f, 600f);
     }
 
     public void Update(float dt)
@@ -84,13 +84,13 @@ public class FxPlayback
     /// <summary>How the preview moves the effect: 0 still, 1 forward (a projectile), 2 swing (a weapon).</summary>
     public int Motion
     {
-        get => CFG.Current.FxEditor_Preview_Motion;
-        set => CFG.Current.FxEditor_Preview_Motion = Math.Clamp(value, 0, 2);
+        get => CFG.Current.FxEditor.FxEditor_Preview_Motion;
+        set => CFG.Current.FxEditor.FxEditor_Preview_Motion = Math.Clamp(value, 0, 2);
     }
 
     /// <summary>The settings the motion depends on, so the runtime knows to replay when they change.</summary>
-    public (int, float, float, float) MotionKey => (Motion, CFG.Current.FxEditor_Preview_Motion_Speed,
-        CFG.Current.FxEditor_Preview_Swing_Radius, CFG.Current.FxEditor_Preview_Swing_Speed);
+    public (int, float, float, float) MotionKey => (Motion, CFG.Current.FxEditor.FxEditor_Preview_Motion_Speed,
+        CFG.Current.FxEditor.FxEditor_Preview_Swing_Radius, CFG.Current.FxEditor.FxEditor_Preview_Swing_Speed);
 
     /// <summary>
     /// The effect's world transform at a time, null when it stays still.
@@ -100,9 +100,9 @@ public class FxPlayback
     /// </summary>
     public Func<float, System.Numerics.Matrix4x4> MotionFunction()
     {
-        float speed = CFG.Current.FxEditor_Preview_Motion_Speed;
-        float radius = CFG.Current.FxEditor_Preview_Swing_Radius;
-        float degrees = CFG.Current.FxEditor_Preview_Swing_Speed;
+        float speed = CFG.Current.FxEditor.FxEditor_Preview_Motion_Speed;
+        float radius = CFG.Current.FxEditor.FxEditor_Preview_Swing_Radius;
+        float degrees = CFG.Current.FxEditor.FxEditor_Preview_Swing_Speed;
 
         return Motion switch
         {
@@ -126,15 +126,15 @@ public class FxPlayback
     /// </summary>
     public System.Numerics.Vector3 WindVector()
     {
-        if (!CFG.Current.FxEditor_Preview_Wind)
+        if (!CFG.Current.FxEditor.FxEditor_Preview_Wind)
             return System.Numerics.Vector3.Zero;
-        float a = CFG.Current.FxEditor_Preview_Wind_Yaw * (MathF.PI / 180f);
-        return new System.Numerics.Vector3(MathF.Sin(a), 0, MathF.Cos(a)) * CFG.Current.FxEditor_Preview_Wind_Strength;
+        float a = CFG.Current.FxEditor.FxEditor_Preview_Wind_Yaw * (MathF.PI / 180f);
+        return new System.Numerics.Vector3(MathF.Sin(a), 0, MathF.Cos(a)) * CFG.Current.FxEditor.FxEditor_Preview_Wind_Strength;
     }
 
     /// <summary>The settings the forces depend on, so the runtime knows to replay when they change.</summary>
-    public (bool, float, float, bool) ForceKey => (CFG.Current.FxEditor_Preview_Wind, CFG.Current.FxEditor_Preview_Wind_Yaw,
-        CFG.Current.FxEditor_Preview_Wind_Strength, CFG.Current.FxEditor_Preview_Effect_Forces);
+    public (bool, float, float, bool) ForceKey => (CFG.Current.FxEditor.FxEditor_Preview_Wind, CFG.Current.FxEditor.FxEditor_Preview_Wind_Yaw,
+        CFG.Current.FxEditor.FxEditor_Preview_Wind_Strength, CFG.Current.FxEditor.FxEditor_Preview_Effect_Forces);
 
     // ---------------------------------------------------------------- visibility
 

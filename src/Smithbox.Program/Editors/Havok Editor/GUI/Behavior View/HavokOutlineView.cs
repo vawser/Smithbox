@@ -226,7 +226,7 @@ public class HavokOutlineView
         ImGui.SameLine();
 
         // Modifiers under their modifier generators
-        ImGui.Checkbox($"{LOC.Get("HAVOK_OutlineView_Show_Modifiers")}##outlineShowModifiers", ref CFG.Current.BehaviorEditor_Outline_Show_Modifiers);
+        ImGui.Checkbox($"{LOC.Get("HAVOK_OutlineView_Show_Modifiers")}##outlineShowModifiers", ref CFG.Current.BehaviorEditor.BehaviorEditor_Outline_Show_Modifiers);
         GUI.Tooltip(LOC.Get("HAVOK_OutlineView_Show_Modifiers_TT"));
 
         ImGui.SameLine();
@@ -421,7 +421,7 @@ public class HavokOutlineView
         var children = symbols.GetOutlineChildren(node);
 
         // A modifier generator's modifier, drawn under it when the toggle is on
-        var modifier = CFG.Current.BehaviorEditor_Outline_Show_Modifiers && node.GetType().Name == "hkbModifierGenerator"
+        var modifier = CFG.Current.BehaviorEditor.BehaviorEditor_Outline_Show_Modifiers && node.GetType().Name == "hkbModifierGenerator"
             ? HavokBehaviorSymbols.GetValue(node, "m_modifier")
             : null;
 
@@ -621,7 +621,7 @@ public class HavokOutlineView
         if (symbols == null || modifier == null)
             return;
 
-        CFG.Current.BehaviorEditor_Outline_Show_Modifiers = true;
+        CFG.Current.BehaviorEditor.BehaviorEditor_Outline_Show_Modifiers = true;
 
         // The modifier generator above it, through the lists holding it
         RevealModifiers.Clear();
@@ -723,7 +723,7 @@ public class HavokOutlineView
 
         ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
-        var columnCount = CFG.Current.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
+        var columnCount = CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
 
         ImGui.Columns(columnCount);
 

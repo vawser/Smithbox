@@ -26,7 +26,7 @@ public class ParamEnumEntry
     {
         Key = key;
 
-        var curLang = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
         Names.Add(new ParamCategoryTextEntry(curLang, key));
 
@@ -35,7 +35,7 @@ public class ParamEnumEntry
 
     public string GetName()
     {
-        var curLang = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
         if (Names.Any(e => e.Language == curLang))
         {
@@ -68,14 +68,14 @@ public class ParamEnumOption : IComparable
     {
         Key = key;
 
-        var curLang = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
         Names.Add(new ParamCategoryTextEntry(curLang, name));
     }
 
     public string GetName()
     {
-        var curLang = CFG.Current.ParamEditor_Annotation_Language;
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
         if (Names.Any(e => e.Language == curLang))
         {

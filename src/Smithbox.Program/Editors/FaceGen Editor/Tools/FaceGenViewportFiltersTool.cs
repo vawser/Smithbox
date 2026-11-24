@@ -85,14 +85,14 @@ public class FaceGenViewportFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FACEGEN_ViewportFilters_Face_Header"), LOC.Get("FACEGEN_ViewportFilters_Face_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FACEGEN_Menu_Apply_Shape")}##faceGenApplyShape", ref cfg.FaceGenEditor_Apply_Shape);
+        ImGui.Checkbox($"{LOC.Get("FACEGEN_Menu_Apply_Shape")}##faceGenApplyShape", ref cfg.FaceGenEditor.FaceGenEditor_Apply_Shape);
         GUI.Tooltip(LOC.Get("FACEGEN_Menu_Apply_Shape_TT"));
     }
 
     private static void BodyOption(string locKey, int value)
     {
-        if (ImGui.RadioButton($"{LOC.Get(locKey)}##{locKey}", CFG.Current.FaceGenEditor_Body == value))
-            CFG.Current.FaceGenEditor_Body = value;
+        if (ImGui.RadioButton($"{LOC.Get(locKey)}##{locKey}", CFG.Current.FaceGenEditor.FaceGenEditor_Body == value))
+            CFG.Current.FaceGenEditor.FaceGenEditor_Body = value;
 
         GUI.Tooltip(LOC.Get($"{locKey}_TT"));
     }

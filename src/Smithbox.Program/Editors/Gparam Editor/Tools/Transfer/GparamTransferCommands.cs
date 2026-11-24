@@ -151,7 +151,7 @@ public class GparamTransferCommands
     public void SaveToFile(GparamTransferPayload payload)
     {
         if (!PlatformUtils.Instance.SaveFileDialog(LOC.Get("GPARAM_Transfer_Dialog_Export"),
-            new[] { FilterStrings.GparamJsonFilter }, CFG.Current.GparamEditor_Transfer_Last_Folder, out var path)
+            new[] { FilterStrings.GparamJsonFilter }, CFG.Current.GparamEditor.GparamEditor_Transfer_Last_Folder, out var path)
             || string.IsNullOrEmpty(path))
             return;
 
@@ -189,7 +189,7 @@ public class GparamTransferCommands
         origin = "";
 
         if (!PlatformUtils.Instance.OpenFileDialog(LOC.Get("GPARAM_Transfer_Dialog_Import"),
-            new[] { FilterStrings.GparamJsonFilter }, CFG.Current.GparamEditor_Transfer_Last_Folder, out var path)
+            new[] { FilterStrings.GparamJsonFilter }, CFG.Current.GparamEditor.GparamEditor_Transfer_Last_Folder, out var path)
             || string.IsNullOrEmpty(path))
             return null;
 
@@ -219,7 +219,7 @@ public class GparamTransferCommands
 
         if (!string.IsNullOrEmpty(folder))
         {
-            CFG.Current.GparamEditor_Transfer_Last_Folder = folder;
+            CFG.Current.GparamEditor.GparamEditor_Transfer_Last_Folder = folder;
         }
     }
 
@@ -573,10 +573,10 @@ public class GparamTransferCommands
     {
         switch (kind)
         {
-            case GparamTransferKind.Gparam: CFG.Current.GparamEditor_Transfer_File_Mode = modes.File; break;
-            case GparamTransferKind.Group: CFG.Current.GparamEditor_Transfer_Group_Mode = modes.Group; break;
-            case GparamTransferKind.Field: CFG.Current.GparamEditor_Transfer_Field_Mode = modes.Field; break;
-            case GparamTransferKind.Values: CFG.Current.GparamEditor_Transfer_Values_Mode = modes.Values; break;
+            case GparamTransferKind.Gparam: CFG.Current.GparamEditor.GparamEditor_Transfer_File_Mode = modes.File; break;
+            case GparamTransferKind.Group: CFG.Current.GparamEditor.GparamEditor_Transfer_Group_Mode = modes.Group; break;
+            case GparamTransferKind.Field: CFG.Current.GparamEditor.GparamEditor_Transfer_Field_Mode = modes.Field; break;
+            case GparamTransferKind.Values: CFG.Current.GparamEditor.GparamEditor_Transfer_Values_Mode = modes.Values; break;
         }
     }
 

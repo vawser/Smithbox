@@ -75,7 +75,7 @@ public class SelectionGroupsTool
             LOC.Get("MAP_SelectionGroups_Options_Header_TT"));
 
         ImGui.Checkbox($"{LOC.Get("MAP_SelectionGroups_Auto_Adjust_Name")}##selectionGroupsAutoAdjustName",
-            ref CFG.Current.MapEditor_MapContentGroup_AutoAdjustName);
+            ref CFG.Current.MapEditor.MapEditor_MapContentGroup_AutoAdjustName);
         GUI.Tooltip(LOC.Get("MAP_SelectionGroups_Auto_Adjust_Name_TT"));
 
         // Actions
@@ -270,15 +270,15 @@ public class SelectionGroupsTool
                 targetBTL: null,
                 duplicateToMap: false,
                 createMapGroupEntry: true,
-                incrementEntityID: CFG.Current.Toolbar_Duplicate_Increment_Entity_ID,
-                incrementInstanceID: CFG.Current.Toolbar_Duplicate_Increment_InstanceID,
-                incrementPartNames: CFG.Current.Toolbar_Duplicate_Increment_PartNames,
-                clearEntityID: CFG.Current.Toolbar_Duplicate_Clear_Entity_ID,
-                clearEntityGroupID: CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs,
-                randomiseRotation: CFG.Current.Toolbar_Duplicate_Randomise_Rotation,
-                randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
-                randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range,
-                placeAtListEnd: CFG.Current.Toolbar_Duplicate_Place_at_List_End);
+                incrementEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_Entity_ID,
+                incrementInstanceID: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_InstanceID,
+                incrementPartNames: CFG.Current.MapEditor.Toolbar_Duplicate_Increment_PartNames,
+                clearEntityID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_ID,
+                clearEntityGroupID: CFG.Current.MapEditor.Toolbar_Duplicate_Clear_Entity_Group_IDs,
+                randomiseRotation: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation,
+                randomRotationDir: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Dir,
+                randomRotationRange: CFG.Current.MapEditor.Toolbar_Duplicate_Randomise_Rotation_Range,
+                placeAtListEnd: CFG.Current.MapEditor.Toolbar_Duplicate_Place_at_List_End);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

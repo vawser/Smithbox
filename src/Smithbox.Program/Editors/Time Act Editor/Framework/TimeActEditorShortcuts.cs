@@ -29,7 +29,7 @@ public class TimeActEditorShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_TimeActEditor_ToolWindow = !CFG.Current.Interface_TimeActEditor_ToolWindow;
+            CFG.Current.Interface.Interface_TimeActEditor_ToolWindow = !CFG.Current.Interface.Interface_TimeActEditor_ToolWindow;
         }
 
         if (activeView == null)

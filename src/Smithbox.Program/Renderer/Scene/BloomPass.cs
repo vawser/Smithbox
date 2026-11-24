@@ -108,8 +108,8 @@ public class BloomPass : PostProcessPass
     public override bool IsActive(GparamLighting lighting)
     {
         return IsGlow
-            ? CFG.Current.Viewport_Post_Glow && lighting is { PostEffects.Glow.Enabled: true }
-            : CFG.Current.Viewport_Post_Bloom && lighting is { PostEffects.Bloom.Enabled: true };
+            ? RenderSettings.Viewport.Viewport_Post_Glow && lighting is { PostEffects.Glow.Enabled: true }
+            : RenderSettings.Viewport.Viewport_Post_Bloom && lighting is { PostEffects.Bloom.Enabled: true };
     }
 
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)
@@ -128,7 +128,7 @@ public class BloomPass : PostProcessPass
             // Blur RgbScale alone: with FinalColorScale (5) too, the egg of c2030 bloomed into a white disc, and a
             // fifth of that was judged right by eye against the game, which is RgbScale on its own
             shape = new Vector4(0.0f, Math.Max(glow.BlurSampleScale * glow.BlurSmoothness, 0.0f),
-                Math.Max(glow.BlurRgbScale * CFG.Current.Viewport_Post_Glow_Strength, 0.0f),
+                Math.Max(glow.BlurRgbScale * RenderSettings.Viewport.Viewport_Post_Glow_Strength, 0.0f),
                 1.0f / levels);
         }
         else
@@ -141,7 +141,7 @@ public class BloomPass : PostProcessPass
             // a flat area blooms by Alpha, times the game's own scale (Sekiro 0.5, matched by eye) and the viewport's
             const float levelWeight = 0.5f;
             var weightSum = (1.0f - MathF.Pow(levelWeight, levels)) / (1.0f - levelWeight);
-            var strength = GparamProfile.Current.BloomScale * CFG.Current.Viewport_Post_Bloom_Strength;
+            var strength = GparamProfile.Current.BloomScale * RenderSettings.Viewport.Viewport_Post_Bloom_Strength;
 
             settings = new Vector4(0.0f, bloom.Threshold, levelWeight, bloom.Luminance);
             shape = new Vector4(bloom.SaturateControl, Math.Max(bloom.GaussianRadiusScale, 0.0f),

@@ -216,7 +216,7 @@ public class TimeActSimulation
         SpeedMultiplier = 1;
         SpeedEvent = null;
         Array.Clear(MaskOverrides);
-        WeaponStyle = CFG.Current.TimeActEditor_Weapon_Style;
+        WeaponStyle = CFG.Current.TimeActEditor.TimeActEditor_Weapon_Style;
         WeaponLocationEvents.Clear();
         HideRightWeapon = false;
         HideLeftWeapon = false;
@@ -232,13 +232,13 @@ public class TimeActSimulation
             return;
 
         var data = _project.Handler.TimeActData;
-        var speedEvents = CFG.Current.TimeActEditor_Sim_Speed_Events;
-        var masks = CFG.Current.TimeActEditor_Sim_Model_Masks;
-        var weapons = CFG.Current.TimeActEditor_Sim_Weapons;
-        var additive = CFG.Current.TimeActEditor_Sim_Additive_Anims;
-        var opacity = CFG.Current.TimeActEditor_Sim_Opacity;
+        var speedEvents = CFG.Current.TimeActEditor.TimeActEditor_Sim_Speed_Events;
+        var masks = CFG.Current.TimeActEditor.TimeActEditor_Sim_Model_Masks;
+        var weapons = CFG.Current.TimeActEditor.TimeActEditor_Sim_Weapons;
+        var additive = CFG.Current.TimeActEditor.TimeActEditor_Sim_Additive_Anims;
+        var opacity = CFG.Current.TimeActEditor.TimeActEditor_Sim_Opacity;
 
-        if (CFG.Current.TimeActEditor_Sim_Turning)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Sim_Turning)
         {
             UpdateTurn(animation, data, time);
         }
@@ -330,7 +330,7 @@ public class TimeActSimulation
     private void AddAdditive(TAE.Event ev, TimeActData? data, float time, float playbackEnd)
     {
         // Events that only play while the character has a SpEffect, unless the user takes it as having it
-        if (!CFG.Current.TimeActEditor_Assume_SpEffects && NeedsSpEffect(ev))
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Assume_SpEffects && NeedsSpEffect(ev))
             return;
 
         var weight = GetAdditiveWeight(ev, time, playbackEnd);
@@ -438,7 +438,7 @@ public class TimeActSimulation
         if (turns.Count == 0 || time <= 0)
             return;
 
-        var target = CFG.Current.TimeActEditor_Turn_Target_Angle;
+        var target = CFG.Current.TimeActEditor.TimeActEditor_Turn_Target_Angle;
 
         var times = new List<float> { 0, time };
         foreach (var (ev, _) in turns)
@@ -531,7 +531,7 @@ public class TimeActSimulation
     /// </summary>
     public bool IsEventEnabled(TAE.Event ev)
     {
-        if (!CFG.Current.TimeActEditor_Sim_State_Info || _disabledStates.Count == 0)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Sim_State_Info || _disabledStates.Count == 0)
             return true;
 
         return GetStateInfo(ev) is not { } state || !_disabledStates.Contains(state);

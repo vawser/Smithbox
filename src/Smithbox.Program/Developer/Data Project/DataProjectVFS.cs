@@ -31,9 +31,9 @@ public class DataProjectVFS
         List<VirtualFileSystem> fileSystems = [];
 
         // Project File System
-        if (Directory.Exists(CFG.Current.DEVKIT_DataPath_OutputFolder))
+        if (Directory.Exists(CFG.Current.Developer.DEVKIT_DataPath_OutputFolder))
         {
-            ProjectFS = new RealVirtualFileSystem(CFG.Current.DEVKIT_DataPath_OutputFolder, false);
+            ProjectFS = new RealVirtualFileSystem(CFG.Current.Developer.DEVKIT_DataPath_OutputFolder, false);
             fileSystems.Add(ProjectFS);
         }
         else

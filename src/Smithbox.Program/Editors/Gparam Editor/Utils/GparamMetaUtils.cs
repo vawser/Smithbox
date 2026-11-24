@@ -12,7 +12,7 @@ public static class GparamMetaUtils
     public static GparamAnnotationEntry GetGroupAnnotation(ProjectEntry project, string groupId)
     {
         var gparamData = project.Handler.GparamData;
-        var entries = gparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == CFG.Current.GparamEditor_Annotation_Language);
+        var entries = gparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == CFG.Current.GparamEditor.GparamEditor_Annotation_Language);
 
         foreach(var entry in entries.Value.Params)
         {
@@ -51,7 +51,7 @@ public static class GparamMetaUtils
     public static GparamAnnotationFieldEntry GetFieldAnnotation(ProjectEntry project, string groupId, string fieldId)
     {
         var gparamData = project.Handler.GparamData;
-        var entries = gparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == CFG.Current.GparamEditor_Annotation_Language);
+        var entries = gparamData.Annotations.Entries.FirstOrDefault(e => e.Key.Name == CFG.Current.GparamEditor.GparamEditor_Annotation_Language);
 
         foreach (var entry in entries.Value.Params)
         {

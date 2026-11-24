@@ -456,7 +456,7 @@ public class CreateAtPointTool
                 continue;
 
             var name = prop.Name;
-            if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && meta != null && !meta.IsEmpty && !string.IsNullOrEmpty(meta.AltName))
+            if (CFG.Current.MapEditor.MapEditor_Properties_Enable_Commmunity_Names && meta != null && !meta.IsEmpty && !string.IsNullOrEmpty(meta.AltName))
             {
                 name = meta.AltName;
             }
@@ -489,7 +489,7 @@ public class CreateAtPointTool
         if (meta != null && meta.IndexProperty)
             return false;
 
-        if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties && prop.Name.StartsWith("unk", StringComparison.OrdinalIgnoreCase))
+        if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Unknown_Properties && prop.Name.StartsWith("unk", StringComparison.OrdinalIgnoreCase))
             return false;
 
         // The filter applies to the template's own fields, so a nested class shows whole once it matches

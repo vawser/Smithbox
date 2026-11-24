@@ -308,7 +308,7 @@ public class ParamWeaponGenerator
             if (container.IsContainerUnused())
                 continue;
 
-            if (container.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+            if (container.ContainerDisplayCategory != CFG.Current.TextEditor.TextEditor_Primary_Category)
                 continue;
 
             if (container.FmgWrappers == null)

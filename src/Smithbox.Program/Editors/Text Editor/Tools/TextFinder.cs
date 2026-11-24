@@ -44,7 +44,7 @@ public static class TextFinder
         }
 
         // Include the project and primary language, so switching either doesn't return stale text
-        var cacheName = $"{view.Project.GetHashCode()}|{CFG.Current.TextEditor_Primary_Category}|{fmgName}|{value}|{offset}";
+        var cacheName = $"{view.Project.GetHashCode()}|{CFG.Current.TextEditor.TextEditor_Primary_Category}|{fmgName}|{value}|{offset}";
 
         // Misses are cached too (as null): every missing reference used to rescan
         // every primary container, every frame.
@@ -80,7 +80,7 @@ public static class TextFinder
             if (entry.FmgWrappers == null)
                 continue;
 
-            if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
+            if (entry.ContainerDisplayCategory == CFG.Current.TextEditor.TextEditor_Primary_Category)
             {
                 foreach (var fmg in entry.FmgWrappers)
                 {
@@ -155,7 +155,7 @@ public static class TextFinder
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
-                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor.TextEditor_Primary_Category)
                 {
                     continue;
                 }
@@ -262,14 +262,14 @@ public static class TextFinder
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
-                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor.TextEditor_Primary_Category)
                 {
                     continue;
                 }
             }
 
             // Match the preview list: unused containers are hidden there, so don't change them either.
-            if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers && entry.IsContainerUnused())
+            if (CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers && entry.IsContainerUnused())
             {
                 continue;
             }

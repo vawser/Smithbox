@@ -227,9 +227,9 @@ public class FxEditorScreen : EditorScreen
 
         // Allow Automatic Save
         if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##fxAutoSave"))
-            CFG.Current.FxEditor_Allow_Automatic_Save = !CFG.Current.FxEditor_Allow_Automatic_Save;
+            CFG.Current.FxEditor.FxEditor_Allow_Automatic_Save = !CFG.Current.FxEditor.FxEditor_Allow_Automatic_Save;
         GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-        GUI.ShowActiveStatus(CFG.Current.FxEditor_Allow_Automatic_Save);
+        GUI.ShowActiveStatus(CFG.Current.FxEditor.FxEditor_Allow_Automatic_Save);
 
         ImGui.EndMenu();
     }
@@ -286,31 +286,31 @@ public class FxEditorScreen : EditorScreen
 
         // Descriptions
         if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Descriptions")}##fxToggleDescriptions"))
-            CFG.Current.FxEditor_Inspector_Show_Descriptions = !CFG.Current.FxEditor_Inspector_Show_Descriptions;
-        GUI.ShowActiveStatus(CFG.Current.FxEditor_Inspector_Show_Descriptions);
+            CFG.Current.FxEditor.FxEditor_Inspector_Show_Descriptions = !CFG.Current.FxEditor.FxEditor_Inspector_Show_Descriptions;
+        GUI.ShowActiveStatus(CFG.Current.FxEditor.FxEditor_Inspector_Show_Descriptions);
 
         // Raw values
         if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Raw")}##fxToggleRaw"))
-            CFG.Current.FxEditor_Inspector_Show_Raw = !CFG.Current.FxEditor_Inspector_Show_Raw;
-        GUI.ShowActiveStatus(CFG.Current.FxEditor_Inspector_Show_Raw);
+            CFG.Current.FxEditor.FxEditor_Inspector_Show_Raw = !CFG.Current.FxEditor.FxEditor_Inspector_Show_Raw;
+        GUI.ShowActiveStatus(CFG.Current.FxEditor.FxEditor_Inspector_Show_Raw);
 
         // Auto-framing a newly selected effect
         if (ImGui.MenuItem($"{LOC.Get("FX_PreviewTool_Auto_Frame")}##fxToggleAutoFrame"))
-            CFG.Current.FxEditor_Viewport_Auto_Frame = !CFG.Current.FxEditor_Viewport_Auto_Frame;
+            CFG.Current.FxEditor.FxEditor_Viewport_Auto_Frame = !CFG.Current.FxEditor.FxEditor_Viewport_Auto_Frame;
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Auto_Frame_TT"));
-        GUI.ShowActiveStatus(CFG.Current.FxEditor_Viewport_Auto_Frame);
+        GUI.ShowActiveStatus(CFG.Current.FxEditor.FxEditor_Viewport_Auto_Frame);
 
         ImGui.Separator();
 
         // Curve Editor
         if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Curve_Editor")}##fxToggleCurveEditor"))
-            CFG.Current.Interface_FxEditor_CurveEditor = !CFG.Current.Interface_FxEditor_CurveEditor;
-        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_CurveEditor);
+            CFG.Current.Interface.Interface_FxEditor_CurveEditor = !CFG.Current.Interface.Interface_FxEditor_CurveEditor;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_FxEditor_CurveEditor);
 
         // Tools window
         if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Tools")}##fxToggleTools"))
-            CFG.Current.Interface_FxEditor_ToolWindow = !CFG.Current.Interface_FxEditor_ToolWindow;
-        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_ToolWindow);
+            CFG.Current.Interface.Interface_FxEditor_ToolWindow = !CFG.Current.Interface.Interface_FxEditor_ToolWindow;
+        GUI.ShowActiveStatus(CFG.Current.Interface.Interface_FxEditor_ToolWindow);
 
         ImGui.Separator();
 
@@ -349,7 +349,7 @@ public class FxEditorScreen : EditorScreen
 
     public async void SaveAll(bool autoSave = false)
     {
-        if (autoSave && !CFG.Current.FxEditor_Allow_Automatic_Save)
+        if (autoSave && !CFG.Current.FxEditor.FxEditor_Allow_Automatic_Save)
             return;
 
         if (!autoSave)

@@ -127,7 +127,7 @@ public class ViewportEnvironment : IDisposable
         if (!CanUse() || Table == null)
             return;
 
-        var chosen = CFG.Current.Viewport_Environment_Map ?? "";
+        var chosen = CFG.Current.Viewport.Viewport_Environment_Map ?? "";
 
         if (ResolvedFor != chosen)
         {
@@ -142,7 +142,7 @@ public class ViewportEnvironment : IDisposable
             return;
         }
 
-        ActiveLighting = LightingBank.ResolveCached(MapId, CFG.Current.Viewport_Environment_Lighting_File);
+        ActiveLighting = LightingBank.ResolveCached(MapId, CFG.Current.Viewport.Viewport_Environment_Lighting_File);
 
         // Editor mode has no GI, so the volumes are only read, and their textures only held, in Game mode
         if (!RenderMode.IsGame)
@@ -156,7 +156,7 @@ public class ViewportEnvironment : IDisposable
 
         // A GPARAM changed by hand, chosen in the Rendering tool or saved or deleted in the Gparam Editor, loads the
         // volumes again; nothing else does but a change of map or mode, so a model load keeps them as they are
-        var lightingFile = CFG.Current.Viewport_Environment_Lighting_File ?? "";
+        var lightingFile = CFG.Current.Viewport.Viewport_Environment_Lighting_File ?? "";
 
         if (VolumesLoaded && (ReloadRequested ||
                               !string.Equals(LoadedLightingFile, lightingFile, StringComparison.OrdinalIgnoreCase)))
@@ -172,9 +172,9 @@ public class ViewportEnvironment : IDisposable
 
         var volumes = VolumeBank.GetMap(MapId);
 
-        VolumeId = volumes != null && CFG.Current.Viewport_Environment_Volume >= 0 &&
-                   volumes.HasVolume(CFG.Current.Viewport_Environment_Volume)
-            ? CFG.Current.Viewport_Environment_Volume
+        VolumeId = volumes != null && CFG.Current.Viewport.Viewport_Environment_Volume >= 0 &&
+                   volumes.HasVolume(CFG.Current.Viewport.Viewport_Environment_Volume)
+            ? CFG.Current.Viewport.Viewport_Environment_Volume
             : MedianVolumeId;
 
         if (volumes == null || VolumeId < 0)
@@ -370,7 +370,7 @@ public class ViewportEnvironment : IDisposable
         {
             // The region's unit box has its position at the bottom centre; it starts a little below the origin, so
             // models standing on it are inside
-            var size = Math.Max(CFG.Current.Viewport_Environment_Volume_Size, 1.0f);
+            var size = Math.Max(CFG.Current.Viewport.Viewport_Environment_Volume_Size, 1.0f);
             var world = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(0.0f, -size * 0.1f, 0.0f);
 
             if (IrradianceVolumeBank.TryBuildEntry(MapId, volumes, VolumeId, bake, blend.Bake, blend.Ratio, world,

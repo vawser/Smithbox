@@ -200,7 +200,7 @@ public class HavokModifierView
             ImGui.Separator();
         }
 
-        var columnCount = CFG.Current.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
+        var columnCount = CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
 
         ImGui.Columns(columnCount);
         View.PropertyView.HavokPropEditGeneric(Selected, HavokMetaHelper.GetMeta(Project, Selected.GetType()));

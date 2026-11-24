@@ -176,9 +176,9 @@ public class TimeActPlayback
             animator.Speed = held ? 0 : EffectiveSpeed;
 
             // Takes effect with the next pose, which a change of this asks for
-            animator.ApplyRootMotion = CFG.Current.TimeActEditor_Apply_Root_Motion;
-            animator.RootMotionScale = new HavokRootMotionScale(CFG.Current.TimeActEditor_Root_Motion_Scale_Ground,
-                CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn);
+            animator.ApplyRootMotion = CFG.Current.TimeActEditor.TimeActEditor_Apply_Root_Motion;
+            animator.RootMotionScale = new HavokRootMotionScale(CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Ground,
+                CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Turn);
             animator.Turn = Simulation.Turn * MathF.PI / 180;
             animator.RootOffset = _rootOffset;
 
@@ -194,7 +194,7 @@ public class TimeActPlayback
 
         EventDisplay.Update(animator, _time, PlaybackDuration);
         RootMotionDisplay.Update(animator);
-        RootMotionDisplay.UpdateTarget(animator, Simulation.HasTurnEvents, CFG.Current.TimeActEditor_Turn_Target_Angle);
+        RootMotionDisplay.UpdateTarget(animator, Simulation.HasTurnEvents, CFG.Current.TimeActEditor.TimeActEditor_Turn_Target_Angle);
 
         // While a clip is on its way the clock stands still, and the sounds wait with it
         Sounds.Update(_time, _playing && !IsClipLoading && !held);
@@ -227,8 +227,8 @@ public class TimeActPlayback
 
     private bool ShouldBlend()
     {
-        return CFG.Current.TimeActEditor_Sim_Blending &&
-               (View.ComboBuilderTool?.IsPlaying == true || CFG.Current.TimeActEditor_Blend_On_Animation_Change);
+        return CFG.Current.TimeActEditor.TimeActEditor_Sim_Blending &&
+               (View.ComboBuilderTool?.IsPlaying == true || CFG.Current.TimeActEditor.TimeActEditor_Blend_On_Animation_Change);
     }
 
     /// <summary>
@@ -256,7 +256,7 @@ public class TimeActPlayback
                 // Over, or gone back to before it began
                 if (_blendDuration <= 0 || elapsed < 0 || elapsed >= _blendDuration || animator.CurrentClip == null ||
                     animator.Package != _blendPackage ||
-                    !CFG.Current.TimeActEditor_Sim_Blending)
+                    !CFG.Current.TimeActEditor.TimeActEditor_Sim_Blending)
                 {
                     _blendFrom = null;
                 }
@@ -364,10 +364,10 @@ public class TimeActPlayback
 
         Matrix4x4 start = Matrix4x4.Identity;
 
-        if (CFG.Current.TimeActEditor_Apply_Root_Motion && Animator?.CurrentClip?.RootMotion is { } rootMotion)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Apply_Root_Motion && Animator?.CurrentClip?.RootMotion is { } rootMotion)
         {
-            start = rootMotion.Sample(startTime, new HavokRootMotionScale(CFG.Current.TimeActEditor_Root_Motion_Scale_Ground,
-                CFG.Current.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor_Root_Motion_Scale_Turn));
+            start = rootMotion.Sample(startTime, new HavokRootMotionScale(CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Ground,
+                CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Up, CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Turn));
         }
 
         _rootOffset = Matrix4x4.Invert(start, out Matrix4x4 inverseStart) ? inverseStart * carried : carried;
@@ -524,7 +524,7 @@ public class TimeActPlayback
         _playing = false;
         IsClipMissing = false;
 
-        _autoPlayCountdown = CFG.Current.TimeActEditor_Auto_Play_Animation && View.Selection.SelectedAnimation != null
+        _autoPlayCountdown = CFG.Current.TimeActEditor.TimeActEditor_Auto_Play_Animation && View.Selection.SelectedAnimation != null
             ? AutoPlayDelay
             : 0;
 

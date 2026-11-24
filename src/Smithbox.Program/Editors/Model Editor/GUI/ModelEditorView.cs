@@ -189,7 +189,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
             }
 
             // Redraw the model from its edits once they pause
-            if (CFG.Current.ModelEditor_Viewport_Live_Preview && wrapper.Container?.View == this)
+            if (CFG.Current.ModelEditor.ModelEditor_Viewport_Live_Preview && wrapper.Container?.View == this)
             {
                 wrapper.Container.MarkPreviewStale();
             }
@@ -330,7 +330,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     /// </summary>
     private bool CanPark(ModelWrapper wrapper)
     {
-        return CFG.Current.ModelEditor_History_Parked_Limit > 0 &&
+        return CFG.Current.ModelEditor.ModelEditor_History_Parked_Limit > 0 &&
                wrapper.Container?.View == this &&
                (ViewportActionManager.CanUndo() || ViewportActionManager.CanRedo());
     }
@@ -431,7 +431,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     private void EnforceParkLimit()
     {
         var parked = GetParkedModels();
-        var excess = parked.Count - Math.Max(0, CFG.Current.ModelEditor_History_Parked_Limit);
+        var excess = parked.Count - Math.Max(0, CFG.Current.ModelEditor.ModelEditor_History_Parked_Limit);
 
         if (excess <= 0)
             return;
@@ -538,12 +538,12 @@ public class ModelEditorView : IEditorView, IActionEventHandler
             loadedWrapper.Container.UpdatePreview(loadedWrapper);
         }
 
-        if (CFG.Current.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.Windows)
+        if (CFG.Current.Interface.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.Windows)
         {
             DisplayWindows(dockspaceId, viewIndex, doFocus, isActiveView);
         }
 
-        if (CFG.Current.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.TabbedPanels)
+        if (CFG.Current.Interface.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.TabbedPanels)
         {
             DisplayTabbedPanels(dockspaceId, viewIndex, doFocus, isActiveView);
         }
@@ -622,7 +622,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
         ImGui.End();
 
-        if (CFG.Current.Interface_ModelEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_ModelEditor_ToolWindow)
         {
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
@@ -738,7 +738,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
                 ImGui.EndTabItem();
             }
 
-            if (CFG.Current.Interface_ModelEditor_ToolWindow)
+            if (CFG.Current.Interface.Interface_ModelEditor_ToolWindow)
             {
                 if (ImGui.BeginTabItem(LOC.Get("MODEL_Window_Tools")))
                 {

@@ -82,7 +82,7 @@ public class SurfaceViewPass : PostProcessPass
                 return SurfaceView.Normals;
             }
 
-            return RenderMode.PostEffects ? (SurfaceView)CFG.Current.Viewport_Post_Surface_View : SurfaceView.None;
+            return RenderMode.PostEffects ? (SurfaceView)RenderSettings.Viewport.Viewport_Post_Surface_View : SurfaceView.None;
         }
     }
 

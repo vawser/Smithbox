@@ -32,7 +32,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_File_List_Display_Aliases_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue_file", ref CFG.Current.GparamEditor_File_List_Display_Aliases);
+                ImGui.Checkbox("##inputValue_file", ref CFG.Current.GparamEditor.GparamEditor_File_List_Display_Aliases);
             }
         };
     }
@@ -53,7 +53,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Group_List_Display_Descriptions_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Group_List_Display_Descriptions);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Group_List_Display_Descriptions);
             }
         };
     }
@@ -71,7 +71,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Group_List_Display_Empty_Group_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Group_List_Display_Empty_Group);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Group_List_Display_Empty_Group);
             }
         };
     }
@@ -92,7 +92,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Field_List_Display_Descriptions_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Field_List_Display_Descriptions);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Field_List_Display_Descriptions);
             }
         };
     }
@@ -110,7 +110,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Highlight_Viewport_Fields_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Highlight_Viewport_Fields);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Highlight_Viewport_Fields);
             }
         };
     }
@@ -131,7 +131,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Value_List_Display_Color_Edit_V4_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Color_Edit_V4);
             }
         };
     }
@@ -149,7 +149,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Time_Of_Day_Column);
             }
         };
     }
@@ -167,7 +167,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Value_List_Display_Information_Column_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Information_Column);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Information_Column);
             }
         };
     }
@@ -189,7 +189,7 @@ public class GparamEditorPrefs
             Description = "PREF_GparamEditor_Color_Edit_Mode_TT",
 
             Draw = () => {
-                var curMode = CFG.Current.GparamEditor_Color_Edit_Mode;
+                var curMode = CFG.Current.GparamEditor.GparamEditor_Color_Edit_Mode;
 
                 var previewName = LOC.Get(curMode.GetDisplayName());
 
@@ -204,7 +204,7 @@ public class GparamEditorPrefs
 
                         if (ImGui.Selectable(displayName, curMode == mode))
                         {
-                            CFG.Current.GparamEditor_Color_Edit_Mode = mode;
+                            CFG.Current.GparamEditor.GparamEditor_Color_Edit_Mode = mode;
                         }
                     }
 

@@ -277,7 +277,7 @@ public class TimeActEditorView : IEditorView
 
         ImGui.End();
 
-        if (CFG.Current.Interface_TimeActEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_TimeActEditor_ToolWindow)
         {
             // Tool Window
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

@@ -23,6 +23,9 @@ public class ProjectEntry
 {
     public ProjectDescriptor Descriptor;
 
+    /// <summary>What sets the project's game apart (its file layout and so on)</summary>
+    public GameProfile Profile => GameProfile.For(Descriptor.ProjectType);
+
     public ProjectVFS VFS;
     public ProjectFileLocator Locator;
     public ProjectEditorHandler Handler;
@@ -82,7 +85,7 @@ public class ProjectEntry
         }
 
         // Auto-Save
-        AutomaticSaveInterval = (int)CFG.Current.Project_Automatic_Save_Interval;
+        AutomaticSaveInterval = (int)CFG.Current.Project.Project_Automatic_Save_Interval;
 
         // Do this so we don't auto-save at init
         if (!AutomaticSaveSetup)
@@ -418,7 +421,7 @@ public class ProjectEntry
 
     private void PerformAutoSave()
     {
-        if (CFG.Current.Project_Enable_Automatic_Save)
+        if (CFG.Current.Project.Project_Enable_Automatic_Save)
         {
             if (Handler != null)
             {
@@ -426,7 +429,7 @@ public class ProjectEntry
                 {
                     Smithbox.Log(this, LOC.Get("PROJECT_Setup_AutoSave_Triggered"));
 
-                    if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
+                    if (CFG.Current.Project.Project_Automatic_Save_Include_Map_Editor)
                     {
                         if (Handler.MapEditor != null && Handler.FocusedEditor is MapEditorScreen)
                         {
@@ -434,7 +437,7 @@ public class ProjectEntry
                         }
                     }
 
-                    if (CFG.Current.AutomaticSave_ModelEditor)
+                    if (CFG.Current.Project.AutomaticSave_ModelEditor)
                     {
                         if (Handler.ModelEditor != null && Handler.FocusedEditor is ModelEditorScreen)
                         {
@@ -444,7 +447,7 @@ public class ProjectEntry
 
                     // The Projectile Editor edits the Param Editor's params, so they are saved while it is shown too.
                     // The FaceGen Editor is left out: its param edits are saved only when the user saves them.
-                    if (CFG.Current.Project_Automatic_Save_Include_Param_Editor &&
+                    if (CFG.Current.Project.Project_Automatic_Save_Include_Param_Editor &&
                         Handler.FocusedEditor is ParamEditorScreen
                             or StudioCore.Editors.ProjectileEditor.ProjectileEditorScreen)
                     {
@@ -454,7 +457,7 @@ public class ProjectEntry
                         }
                     }
 
-                    if (CFG.Current.Project_Automatic_Save_Include_Text_Editor && Handler.FocusedEditor is TextEditorScreen)
+                    if (CFG.Current.Project.Project_Automatic_Save_Include_Text_Editor && Handler.FocusedEditor is TextEditorScreen)
                     {
                         if (Handler.TextEditor != null)
                         {
@@ -463,7 +466,7 @@ public class ProjectEntry
                         }
                     }
 
-                    if (CFG.Current.Project_Automatic_Save_Include_Gparam_Editor && Handler.FocusedEditor is GparamEditorScreen)
+                    if (CFG.Current.Project.Project_Automatic_Save_Include_Gparam_Editor && Handler.FocusedEditor is GparamEditorScreen)
                     {
                         if (Handler.GparamEditor != null)
                         {
@@ -471,7 +474,7 @@ public class ProjectEntry
                         }
                     }
 
-                    if (CFG.Current.Project_Automatic_Save_Include_Material_Editor && Handler.FocusedEditor is MaterialEditorScreen)
+                    if (CFG.Current.Project.Project_Automatic_Save_Include_Material_Editor && Handler.FocusedEditor is MaterialEditorScreen)
                     {
                         if (Handler.MaterialEditor != null)
                         {

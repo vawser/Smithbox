@@ -86,51 +86,51 @@ public class StayParamFieldWindow
 
             if (ImGui.Button($"{Icons.Book}"))
             {
-                if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source)
+                if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Source)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Community;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Community;
                 }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
+                else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Source_Community;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Source_Community;
                 }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
+                else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Community_Source;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Community_Source;
                 }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+                else if (CFG.Current.ParamEditor.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
                 {
-                    CFG.Current.ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
+                    CFG.Current.ParamEditor.ParamEditor_FieldNameMode = ParamFieldNameMode.Source;
                 }
             }
 
             GUI.Tooltip(
-                LOC.Get("PARAM_SP_FieldWindow_FieldNameMode_Hint", LOC.Get(CFG.Current.ParamEditor_FieldNameMode.GetDisplayName())));
+                LOC.Get("PARAM_SP_FieldWindow_FieldNameMode_Hint", LOC.Get(CFG.Current.ParamEditor.ParamEditor_FieldNameMode.GetDisplayName())));
 
             // Toggle Field Padding
             ImGui.SameLine();
 
             if (ImGui.Button($"{Icons.Hubzilla}"))
             {
-                CFG.Current.ParamEditor_Field_List_Display_Padding = !CFG.Current.ParamEditor_Field_List_Display_Padding;
+                CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding = !CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding;
             }
 
             var fieldPaddingMode = LOC.Get("PARAM_SP_FieldWindow_FieldPadding_Visible");
-            if (!CFG.Current.ParamEditor_Field_List_Display_Padding)
+            if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding)
                 fieldPaddingMode = LOC.Get("PARAM_SP_FieldWindow_FieldPadding_Hidden");
 
             GUI.Tooltip(LOC.Get("PARAM_SP_FieldWindow_FieldPadding_Hint", fieldPaddingMode));
 
             // Toggle: Display Vanilla Columns
             GUI.DisplayToggleButton("stayVanillaColToggle", Icons.AddressBook,
-                ref CFG.Current.Param_ShowVanillaColumn,
+                ref CFG.Current.ParamEditor.Param_ShowVanillaColumn,
                 "PARAM_FieldWindow_VanillaCol_Hidden",
                 "PARAM_FieldWindow_VanillaCol_Visible",
                 "PARAM_FieldWindow_VanillaCol_Hint");
 
             // Toggle: Display Modified Background
             GUI.DisplayToggleButton("stayModifiedBackgroundToggle", Icons.Bars,
-                ref CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg,
+                ref CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Modified_Field_Bg,
                 "PARAM_FieldWindow_ModifiedBg_Hidden",
                 "PARAM_FieldWindow_ModifiedBg_Visible",
                 "PARAM_FieldWindow_ModifiedBg_Hint");
@@ -158,12 +158,12 @@ public class StayParamFieldWindow
         var vanillaStayParam = Project.Handler.ParamData.VanillaBank?.StayParams.GetValueOrDefault(activeParam);
 
         // Determine column count
-        var columnCount = CFG.Current.Param_ShowVanillaColumn ? 3 : 2;
+        var columnCount = CFG.Current.ParamEditor.Param_ShowVanillaColumn ? 3 : 2;
 
         // Field Table
         if (EditorTableUtils.ImGuiTableStdColumns("StayParamFieldsT", columnCount, false))
         {
-            List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
+            List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.ParamEditor.ParamEditor_Field_List_Allow_Rearrangement
                 ? [.. meta.AlternateOrder]
                 : [];
 
@@ -176,7 +176,7 @@ public class StayParamFieldWindow
             }
 
             if (meta != null
-                && CFG.Current.ParamEditor_Field_List_Allow_Rearrangement
+                && CFG.Current.ParamEditor.ParamEditor_Field_List_Allow_Rearrangement
                 && (meta is { AlternateOrder: null } || meta.AlternateOrder.Count != fieldOrder.Count))
             {
                 meta.AlternateOrder = [.. fieldOrder];
@@ -196,7 +196,7 @@ public class StayParamFieldWindow
 
                 object newval = null;
 
-                if (!CFG.Current.ParamEditor_Field_List_Display_Padding && metaContext.IsPadding)
+                if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding && metaContext.IsPadding)
                 {
                     continue;
                 }
@@ -261,7 +261,7 @@ public class StayParamFieldWindow
 
                     if (fieldDiff)
                     {
-                        if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
+                        if (CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Modified_Field_Bg)
                         {
                             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ParamDiffBackgroundColor);
                         }
@@ -295,7 +295,7 @@ public class StayParamFieldWindow
                 //------------------------------
                 // Vanilla Stay Param Value Column
                 //------------------------------
-                if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
+                if (CFG.Current.ParamEditor.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
 
@@ -328,7 +328,7 @@ public class StayParamFieldWindow
 
         if (!string.IsNullOrWhiteSpace(altName))
         {
-            switch (CFG.Current.ParamEditor_FieldNameMode)
+            switch (CFG.Current.ParamEditor.ParamEditor_FieldNameMode)
             {
                 case ParamFieldNameMode.Source:
                     printedName = internalName;

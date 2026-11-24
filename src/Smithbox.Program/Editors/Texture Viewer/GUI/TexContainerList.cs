@@ -143,7 +143,7 @@ public class TexContainerList
 
                     if (isMatch)
                     {
-                        if (!CFG.Current.TextureViewer_File_List_Display_Low_Detail_Entries)
+                        if (!CFG.Current.TextureViewer.TextureViewer_File_List_Display_Low_Detail_Entries)
                         {
                             if (entry.Key.Filename.Contains("_l"))
                             {
@@ -299,14 +299,14 @@ public class TexContainerList
                     _ = View.ToolView.TextureExport.ExportTPFsFromContainerAsync(entry.Value);
                 }
                 GUI.Tooltip(
-                    LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
+                    LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs_TT", CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation));
 
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_All_Textures")}##allTexturesAction"))
                 {
                     _ = View.ToolView.TextureExport.ExportTexturesFromContainerAsync(entry.Value);
                 }
                 GUI.Tooltip(
-                    LOC.Get("TEXVIEW_ContainerList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
+                    LOC.Get("TEXVIEW_ContainerList_Context_All_Textures_TT", CFG.Current.TextureViewer.TextureViewerToolbar_ExportTextureLocation));
 
                 ImGui.EndMenu();
             }

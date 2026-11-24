@@ -62,13 +62,13 @@ public sealed class ModelEdgeMarkers : IDisposable
         Clear();
 
         var markers = EdgeBank.GetMarkers(edge, selected);
-        var pointSize = Math.Max(CFG.Current.Viewport_Edge_Point_Size, 0.01f);
-        var radius = Math.Max(CFG.Current.Viewport_Edge_Segment_Radius, 0.005f);
+        var pointSize = Math.Max(CFG.Current.Viewport.Viewport_Edge_Point_Size, 0.01f);
+        var radius = Math.Max(CFG.Current.Viewport.Viewport_Edge_Segment_Radius, 0.005f);
 
         foreach (var marker in markers.Markers)
         {
             var grow = marker.Selected ? 1.4f : 1.0f;
-            var color = marker.Selected ? CFG.Current.Viewport_Edge_Selected_Color : MsbEntity.GetEdgeColor(marker);
+            var color = marker.Selected ? CFG.Current.Viewport.Viewport_Edge_Selected_Color : MsbEntity.GetEdgeColor(marker);
 
             var (cylinder, local) = marker.Kind switch
             {
@@ -113,13 +113,13 @@ public sealed class ModelEdgeMarkers : IDisposable
         hash.Add(edge.ID);
         hash.Add(edge.Edges.Count);
         hash.Add(selected);
-        hash.Add(CFG.Current.Viewport_Edge_Point_Size);
-        hash.Add(CFG.Current.Viewport_Edge_Segment_Radius);
-        hash.Add(CFG.Current.Viewport_Edge_Grapple_Color);
-        hash.Add(CFG.Current.Viewport_Edge_Pull_Color);
-        hash.Add(CFG.Current.Viewport_Edge_Hang_Color);
-        hash.Add(CFG.Current.Viewport_Edge_Hug_Color);
-        hash.Add(CFG.Current.Viewport_Edge_Selected_Color);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Point_Size);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Segment_Radius);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Grapple_Color);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Pull_Color);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Hang_Color);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Hug_Color);
+        hash.Add(CFG.Current.Viewport.Viewport_Edge_Selected_Color);
 
         foreach (var entry in edge.Edges)
         {

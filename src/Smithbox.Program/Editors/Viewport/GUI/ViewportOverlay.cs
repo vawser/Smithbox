@@ -31,7 +31,7 @@ public class ViewportOverlay
             fadeUniverse.View.Fades.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height, ImGui.GetCursorScreenPos().Y);
         }
 
-        if(CFG.Current.Viewport_DisplayControls)
+        if(CFG.Current.Viewport.Viewport_DisplayControls)
         {
             if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)
             {
@@ -51,7 +51,7 @@ public class ViewportOverlay
             ImGui.Text(LOC.Get("VIEWPORT_Overlay_Slice", $"{camera.SliceHalfDepth * 2.0f:0.##}", $"{camera.FocusDistance:0.##}"));
         }
 
-        if (camera.ViewMode is not ViewMode.Perspective && CFG.Current.Viewport_DisplayScaleBar)
+        if (camera.ViewMode is not ViewMode.Perspective && CFG.Current.Viewport.Viewport_DisplayScaleBar)
         {
             DrawScaleBar(camera);
         }
@@ -62,7 +62,7 @@ public class ViewportOverlay
             // The map that the content tree shows and new objects go into
             var activeMap = mapUniverse.View.Selection.SelectedMapContainer;
 
-            if (CFG.Current.Viewport_DisplayActiveMap && activeMap != null)
+            if (CFG.Current.Viewport.Viewport_DisplayActiveMap && activeMap != null)
             {
                 var alias = AliasHelper.GetMapNameAlias(mapUniverse.View.Project, activeMap.Name);
                 var mapText = string.IsNullOrEmpty(alias) ? activeMap.Name : $"{activeMap.Name}: {alias}";
@@ -70,11 +70,11 @@ public class ViewportOverlay
                 ImGui.Text(LOC.Get("VIEWPORT_Overlay_Active_Map", mapText));
             }
 
-            if (CFG.Current.Viewport_DisplayRotationIncrement)
+            if (CFG.Current.Viewport.Viewport_DisplayRotationIncrement)
             {
                 mapUniverse.View.RotateAction.DisplayViewportHint();
             }
-            if (CFG.Current.Viewport_DisplayTranslationIncrement)
+            if (CFG.Current.Viewport.Viewport_DisplayTranslationIncrement)
             {
                 mapUniverse.View.TranslateAction.DisplayViewportHint();
             }
@@ -113,18 +113,18 @@ public class ViewportOverlay
                 // Optionally only the selected ones, as a character has hundreds of dummies and bones
                 var selection = modelUniverse.View.ViewportSelection.GetSelection();
 
-                IEnumerable<Entity> Labelled(List<Entity> entities) => CFG.Current.ModelEditor_Labels_Selected_Only
+                IEnumerable<Entity> Labelled(List<Entity> entities) => CFG.Current.ModelEditor.ModelEditor_Labels_Selected_Only
                     ? entities.Where(selection.Contains)
                     : entities;
 
-                if (CFG.Current.ModelEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
+                if (CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
                 {
-                    DrawEntityLabels(Labelled(container.Dummies), CFG.Current.Viewport_Dummy_Polygon_Base_Color);
+                    DrawEntityLabels(Labelled(container.Dummies), CFG.Current.Viewport.Viewport_Dummy_Polygon_Base_Color);
                 }
 
-                if (CFG.Current.ModelEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
+                if (CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
                 {
-                    DrawEntityLabels(Labelled(container.Nodes), CFG.Current.Viewport_Bone_Marker_Base_Color);
+                    DrawEntityLabels(Labelled(container.Nodes), CFG.Current.Viewport.Viewport_Bone_Marker_Base_Color);
                 }
             }
         }
@@ -137,14 +137,14 @@ public class ViewportOverlay
 
             if (container != null)
             {
-                if (CFG.Current.TimeActEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
+                if (CFG.Current.TimeActEditor.TimeActEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
                 {
-                    DrawEntityLabels(container.Dummies, CFG.Current.Viewport_Dummy_Polygon_Base_Color);
+                    DrawEntityLabels(container.Dummies, CFG.Current.Viewport.Viewport_Dummy_Polygon_Base_Color);
                 }
 
-                if (CFG.Current.TimeActEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
+                if (CFG.Current.TimeActEditor.TimeActEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
                 {
-                    DrawEntityLabels(container.Nodes, CFG.Current.Viewport_Bone_Marker_Base_Color);
+                    DrawEntityLabels(container.Nodes, CFG.Current.Viewport.Viewport_Bone_Marker_Base_Color);
                 }
             }
         }
@@ -162,7 +162,7 @@ public class ViewportOverlay
         }
 
         // Profiling
-        if (CFG.Current.Viewport_Display_Profiling)
+        if (CFG.Current.Viewport.Viewport_Display_Profiling)
         {
             var vertexBufferSize = Renderer.SceneRenderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024;
             var indexBufferSize = Renderer.SceneRenderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024;
@@ -230,7 +230,7 @@ public class ViewportOverlay
     {
         var drawList = ImGui.GetWindowDrawList();
         var font = ImGui.GetFont();
-        var fontSize = ImGui.GetFontSize() * CFG.Current.ModelEditor_LabelScale;
+        var fontSize = ImGui.GetFontSize() * CFG.Current.ModelEditor.ModelEditor_LabelScale;
 
         var origin = new Vector2(Parent.X, Parent.Y);
         var textColor = ImGui.GetColorU32(new Vector4(color, 1f));

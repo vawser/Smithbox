@@ -88,7 +88,7 @@ public class ProjectEnumMenu
                 SaveLocalEnums();
             }
 
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
                 if (ImGui.Selectable($"{LOC.Get("META_EnumMenu_Menu_Save_Base_Enums")}##saveBaseEnumsAction"))
                 {
@@ -142,14 +142,14 @@ public class ProjectEnumMenu
         // Options
         if (ImGui.BeginMenu($"{LOC.Get("META_EnumMenu_Menu_Options")}##optionsMenuHeader"))
         {
-            if (CFG.Current.Developer_Enable_Tools)
+            if (CFG.Current.Developer.Developer_Enable_Tools)
             {
                 // Save Shortcut applies to Base Source
                 if (ImGui.BeginMenu($"{LOC.Get("META_EnumMenu_Menu_Save")}##saveMenuHeader"))
                 {
                     // Save Shortcut 
                     ImGui.Checkbox(
-                        $"{LOC.Get("META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}##saveShortcutToggle", ref CFG.Current.Project_Enum_Editor_Save_Applies_To_Base);
+                        $"{LOC.Get("META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}##saveShortcutToggle", ref CFG.Current.Project.Project_Enum_Editor_Save_Applies_To_Base);
 
                     GUI.Tooltip(
                         LOC.Get("META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source_TT"));
@@ -163,7 +163,7 @@ public class ProjectEnumMenu
             {
                 ImGui.Checkbox(
                     $"{LOC.Get("META_EnumMenu_Menu_Insert_New_At_Top")}##insertAtTopAction", 
-                    ref CFG.Current.Project_Enum_Editor_Add_Insert_At_Top);
+                    ref CFG.Current.Project.Project_Enum_Editor_Add_Insert_At_Top);
 
                 GUI.Tooltip(
                     LOC.Get("META_EnumMenu_Menu_Insert_New_At_Top_TT"));
@@ -181,7 +181,7 @@ public class ProjectEnumMenu
             // Save
             if (InputManager.IsPressed(KeybindID.Save))
             {
-                if(CFG.Current.Project_Enum_Editor_Save_Applies_To_Base)
+                if(CFG.Current.Project.Project_Enum_Editor_Save_Applies_To_Base)
                 {
                     SaveBaseEnums();
                 }
@@ -529,12 +529,12 @@ public class ProjectEnumMenu
     #region Name Column
     public void DisplayNameColumn(int index, ParamEnumOption curEntry)
     {
-        var curLanguageEntry = curEntry.Names.FirstOrDefault(e => e.Language == CFG.Current.ParamEditor_Annotation_Language);
+        var curLanguageEntry = curEntry.Names.FirstOrDefault(e => e.Language == CFG.Current.ParamEditor.ParamEditor_Annotation_Language);
 
         if(curLanguageEntry == null)
         {
             ImGui.Text(
-                LOC.Get("META_EnumMenu_Missing_Language_Entry", CFG.Current.ParamEditor_Annotation_Language));
+                LOC.Get("META_EnumMenu_Missing_Language_Entry", CFG.Current.ParamEditor.ParamEditor_Annotation_Language));
 
             return;
         }
@@ -646,14 +646,14 @@ public class ProjectEnumMenu
             {
                 new ParamCategoryTextEntry()
                 {
-                    Language = CFG.Current.ParamEditor_Annotation_Language,
+                    Language = CFG.Current.ParamEditor.ParamEditor_Annotation_Language,
                     Text = $"New Option",
                 }
             }
         };
 
         var index = source.Count;
-        if (CFG.Current.Project_Enum_Editor_Add_Insert_At_Top)
+        if (CFG.Current.Project.Project_Enum_Editor_Add_Insert_At_Top)
         {
             index = 0;
         }
@@ -688,7 +688,7 @@ public class ProjectEnumMenu
                 {
                     new ParamCategoryTextEntry()
                     {
-                        Language = CFG.Current.ParamEditor_Annotation_Language,
+                        Language = CFG.Current.ParamEditor.ParamEditor_Annotation_Language,
                         Text = $"{curName}_1",
                     }
                 }

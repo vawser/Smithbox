@@ -70,7 +70,7 @@ public sealed class CutsceneEffects : IDisposable
     /// <param name="eye">The viewport camera's position and forward direction, for sorting and facing particles</param>
     public void Update(CutsceneScene? scene, float frame, Vector3 eye, Vector3 forward)
     {
-        if (!CFG.Current.CutsceneEditor_Display_Effects || scene == null || !IsAvailable)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Display_Effects || scene == null || !IsAvailable)
         {
             if (CuesFor.Scene != null || Player.CueCount > 0)
             {
@@ -100,7 +100,7 @@ public sealed class CutsceneEffects : IDisposable
         Player.Update(frame / scene.Framerate, eye);
         Display!.Update(Player.Instances, eye, forward);
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log && Bank is { IsIndexed: true })
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log && Bank is { IsIndexed: true })
             LogMissing();
     }
 
@@ -110,7 +110,7 @@ public sealed class CutsceneEffects : IDisposable
         var cut = scene.Cut;
         var fps = scene.Framerate;
         var actors = scene.Actors.ToDictionary(a => a.ResourceIndex);
-        var log = CFG.Current.CutsceneEditor_Diagnostics_Log;
+        var log = CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log;
 
         for (var t = 0; t < cut.Timelines.Count; t++)
         {

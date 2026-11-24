@@ -216,8 +216,8 @@ public class ParamDataTransferTool
                 primaryBank,
                 csvString,
                 targetParam,
-                CFG.Current.Param_CSV_Append_Only,
-                CFG.Current.Param_CSV_Replace_Row,
+                CFG.Current.ParamEditor.Param_CSV_Append_Only,
+                CFG.Current.ParamEditor.Param_CSV_Replace_Row,
                 delimiter[0]);
 
         if (action != null)
@@ -701,12 +701,12 @@ public class ParamDataTransferTool
     {
         // Toggle: Append New Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode",
-            ref CFG.Current.Param_CSV_Append_Only);
+            ref CFG.Current.ParamEditor.Param_CSV_Append_Only);
         GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
 
         // Toggle: Replace Existing Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisitng",
-            ref CFG.Current.Param_CSV_Replace_Row);
+            ref CFG.Current.ParamEditor.Param_CSV_Replace_Row);
         GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
 
         var displayDelimiter = CFG.Current.Param_Export_Delimiter;

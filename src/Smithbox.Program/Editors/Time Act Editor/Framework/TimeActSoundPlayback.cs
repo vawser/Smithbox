@@ -84,7 +84,7 @@ public class TimeActSoundPlayback : IDisposable
         if (!_prepared)
             _prepared = Prepare();
 
-        if (!CFG.Current.TimeActEditor_Play_Event_Sounds || !IsAvailable || animation == null)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Play_Event_Sounds || !IsAvailable || animation == null)
         {
             _lastTime = time;
             _wasPlaying = playing;
@@ -134,7 +134,7 @@ public class TimeActSoundPlayback : IDisposable
     /// </summary>
     private bool Prepare()
     {
-        if (!CFG.Current.TimeActEditor_Play_Event_Sounds || !IsAvailable || _animation == null)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Play_Event_Sounds || !IsAvailable || _animation == null)
             return false;
 
         Index!.EnsureBuilt();
@@ -320,7 +320,7 @@ public class TimeActSoundPlayback : IDisposable
         var entry = playable[_random.Next(playable.Count)];
 
         var player = GetPlayer(entry.Source);
-        player.Volume = CFG.Current.SoundEditor_Volume;
+        player.Volume = CFG.Current.SoundEditor.SoundEditor_Volume;
         player.Loop = false;
         player.Play(entry.Source);
     }

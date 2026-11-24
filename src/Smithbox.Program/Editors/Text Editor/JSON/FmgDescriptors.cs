@@ -12,9 +12,10 @@ public class FmgDescriptors
 {
     public ProjectType ProjectType { get; set; }
 
-    public List<LanguageDescriptor> Languages { get; set; }
-    public List<FmgContainerDescriptor> Containers { get; set; }
-    public List<FmgDescriptor> List { get; set; }
+    // Empty, not null, when a game has no FMG Descriptor Registry.json (DB and DB_NT) or the file leaves one out
+    public List<LanguageDescriptor> Languages { get; set; } = new();
+    public List<FmgContainerDescriptor> Containers { get; set; } = new();
+    public List<FmgDescriptor> List { get; set; } = new();
 }
 
 public class FmgDescriptor

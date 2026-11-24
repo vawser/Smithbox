@@ -573,7 +573,7 @@ public static class GUI
         if (aliasName != "")
         {
             ImGui.SameLine();
-            if (CFG.Current.Interface_Alias_Wordwrap_General)
+            if (CFG.Current.Interface.Interface_Alias_Wordwrap_General)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
@@ -609,7 +609,7 @@ public static class GUI
         if (aliasName != "")
         {
             ImGui.SameLine();
-            if (CFG.Current.Interface_Alias_Wordwrap_General)
+            if (CFG.Current.Interface.Interface_Alias_Wordwrap_General)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(color, @$"{aliasName}");
@@ -647,7 +647,7 @@ public static class GUI
 
     public static void TitleHeader(string title, string tooltip)
     {
-        if(CFG.Current.Interface_Display_Title_Headers)
+        if(CFG.Current.Interface.Interface_Display_Title_Headers)
         {
             SimpleHeader(title, tooltip);
         }
@@ -781,7 +781,7 @@ public static class GUI
     {
         var flags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if (!CFG.Current.Interface_Allow_Window_Movement)
+        if (!CFG.Current.Interface.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }
@@ -792,7 +792,7 @@ public static class GUI
     {
         var flags = ImGuiWindowFlags.None | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
 
-        if (!CFG.Current.Interface_Allow_Window_Movement)
+        if (!CFG.Current.Interface.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }
@@ -803,7 +803,7 @@ public static class GUI
     {
         var flags = ImGuiWindowFlags.None | ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar;
 
-        if (!CFG.Current.Interface_Allow_Window_Movement)
+        if (!CFG.Current.Interface.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }
@@ -814,7 +814,7 @@ public static class GUI
     {
         var flags = ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav;
 
-        if (!CFG.Current.Interface_Allow_Window_Movement)
+        if (!CFG.Current.Interface.Interface_Allow_Window_Movement)
         {
             flags |= ImGuiWindowFlags.NoMove;
         }

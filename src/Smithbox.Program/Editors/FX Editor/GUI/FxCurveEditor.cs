@@ -167,7 +167,7 @@ public class FxCurveEditor
             GUI.WrappedText(LOC.Get("FX_CurveEditor_Argument", ArgumentName(value.Argument)));
         if (value.IsConverted)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, LOC.Get("FX_Inspector_Converted"));
-        if (value.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
+        if (value.Description != null && CFG.Current.FxEditor.FxEditor_Inspector_Show_Descriptions)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, value.Description);
     }
 

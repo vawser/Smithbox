@@ -115,11 +115,11 @@ public class HavokCollisionResource : IResource, IDisposable
     /// </summary>
     private void DetermineColor(ResourceLoadContext ctx)
     {
-        Color = CFG.Current.Viewport_Collision_Color;
+        Color = RenderSettings.Viewport.Viewport_Collision_Color;
 
         if (IsConnectCollision)
         {
-            Color = CFG.Current.Viewport_Connect_Collision_Color;
+            Color = RenderSettings.Viewport.Viewport_Connect_Collision_Color;
             return;
         }
 
@@ -129,10 +129,10 @@ public class HavokCollisionResource : IResource, IDisposable
         switch (char.ToLowerInvariant(ctx.FileName[0]))
         {
             case 'h':
-                Color = CFG.Current.Viewport_High_Collision_Color;
+                Color = RenderSettings.Viewport.Viewport_High_Collision_Color;
                 break;
             case 'f':
-                Color = CFG.Current.Viewport_FallProtection_Collision_Color;
+                Color = RenderSettings.Viewport.Viewport_FallProtection_Collision_Color;
                 break;
         }
     }

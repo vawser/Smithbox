@@ -580,7 +580,7 @@ public static class MapEditorActionHelper
     {
         if (view.Project.Descriptor.ProjectType == ProjectType.NR)
         {
-            var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
+            var newID = (uint)CFG.Current.MapEditor.Prefab_SpecificEntityGroupID;
             var added = false;
 
             var part = ent.WrappedObject as MSB_NR.Part;
@@ -607,7 +607,7 @@ public static class MapEditorActionHelper
         }
         else if (view.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
-            var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
+            var newID = (uint)CFG.Current.MapEditor.Prefab_SpecificEntityGroupID;
             var added = false;
 
             var part = ent.WrappedObject as MSB_AC6.Part;
@@ -629,7 +629,7 @@ public static class MapEditorActionHelper
         }
         else if (view.Project.Descriptor.ProjectType == ProjectType.ER)
         {
-            var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
+            var newID = (uint)CFG.Current.MapEditor.Prefab_SpecificEntityGroupID;
             var added = false;
 
             var part = ent.WrappedObject as MSBE.Part;
@@ -651,7 +651,7 @@ public static class MapEditorActionHelper
         }
         else if (view.Project.Descriptor.ProjectType == ProjectType.DS3)
         {
-            var newID = CFG.Current.Prefab_SpecificEntityGroupID;
+            var newID = CFG.Current.MapEditor.Prefab_SpecificEntityGroupID;
             var added = false;
 
             var part = ent.WrappedObject as MSB3.Part;
@@ -673,7 +673,7 @@ public static class MapEditorActionHelper
         }
         else if (view.Project.Descriptor.ProjectType == ProjectType.SDT)
         {
-            var newID = CFG.Current.Prefab_SpecificEntityGroupID;
+            var newID = CFG.Current.MapEditor.Prefab_SpecificEntityGroupID;
             var added = false;
 
             var part = ent.WrappedObject as MSBS.Part;

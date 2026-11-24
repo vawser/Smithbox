@@ -61,7 +61,7 @@ public class MapSaveCheckWindow
         Issues = MapCheck.Run(Project, Maps.Where(m => m?.LoadState is MapContentLoadState.Loaded));
     }
 
-    private bool StopsSave => MapCheck.StopsSave(Issues, CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings);
+    private bool StopsSave => MapCheck.StopsSave(Issues, CFG.Current.MapEditor.MapEditor_SaveCheck_Stop_On_Warnings);
 
     public void Display()
     {

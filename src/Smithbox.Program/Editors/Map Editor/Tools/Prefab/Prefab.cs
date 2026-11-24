@@ -149,12 +149,12 @@ internal class Prefab<T> : Prefab
         {
             var copy = ent.Clone();
             var entry = ent.WrappedObject as IMsbEntry;
-            if (!CFG.Current.Prefab_IncludeEntityID)
+            if (!CFG.Current.MapEditor.Prefab_IncludeEntityID)
             {
                 ent.GetType().GetProperty("EntityID")?.SetValue(ent, 0);
             }
 
-            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            if (!CFG.Current.MapEditor.Prefab_IncludeEntityGroupIDs)
             {
                 ent.GetType().GetProperty("EntityGroupIDs")?.SetValue(ent, new uint[] { });
             }

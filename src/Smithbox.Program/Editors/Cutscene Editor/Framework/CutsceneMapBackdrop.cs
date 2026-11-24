@@ -435,8 +435,8 @@ public class CutsceneMapBackdrop
         foreach (var part in parts)
         {
             var isPiece = EntityHelper.IsPartMapPiece(part);
-            var isAsset = !isPiece && CFG.Current.CutsceneEditor_Map_Load_Assets && EntityHelper.IsPartAsset(part);
-            var isCharacter = !isPiece && !isAsset && CFG.Current.CutsceneEditor_Map_Load_Characters && EntityHelper.IsPartEnemy(part);
+            var isAsset = !isPiece && CFG.Current.CutsceneEditor.CutsceneEditor_Map_Load_Assets && EntityHelper.IsPartAsset(part);
+            var isCharacter = !isPiece && !isAsset && CFG.Current.CutsceneEditor.CutsceneEditor_Map_Load_Characters && EntityHelper.IsPartEnemy(part);
 
             if (isCharacter)
             {
@@ -611,7 +611,7 @@ public class CutsceneMapBackdrop
         var pieceJob = LOC.Get("MAP_ResourceManager_Map_Piece_Models");
         var assetJob = MapResourceHandler.GetObjectModelsName(Project);
         var textureJob = LOC.Get("MAP_ResourceManager_Map_Textures");
-        var texturing = CFG.Current.Viewport_Enable_Texturing;
+        var texturing = CFG.Current.Viewport.Viewport_Enable_Texturing;
 
         ResourceLoadTracker.BeginSession(session);
 
@@ -695,7 +695,7 @@ public class CutsceneMapBackdrop
     /// <summary>Has the mesh cast and receive the sun's shadow as the part's MSB flags say, as the Map Editor does</summary>
     private static void ApplyShadowFlags(MeshRenderableProxy mesh, IMsbPart part)
     {
-        if (!CFG.Current.Viewport_Shadows_Use_Msb_Flags)
+        if (!CFG.Current.Viewport.Viewport_Shadows_Use_Msb_Flags)
         {
             mesh.CastsShadow = true;
             mesh.ReceivesShadow = true;

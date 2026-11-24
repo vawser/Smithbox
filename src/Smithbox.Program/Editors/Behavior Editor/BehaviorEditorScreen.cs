@@ -128,17 +128,17 @@ public class BehaviorEditorScreen : EditorScreen
 
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.BehaviorEditor_Allow_Unmodified_Save = !CFG.Current.BehaviorEditor_Allow_Unmodified_Save;
+                CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Unmodified_Save = !CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Unmodified_Save);
 
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.BehaviorEditor_Allow_Automatic_Save = !CFG.Current.BehaviorEditor_Allow_Automatic_Save;
+                CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Automatic_Save = !CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -174,26 +174,26 @@ public class BehaviorEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem($"{LOC.Get("BHV_View_Toggle_Hex")}##hexToggle"))
             {
-                CFG.Current.BehaviorEditor_Properties_Show_Hex = !CFG.Current.BehaviorEditor_Properties_Show_Hex;
+                CFG.Current.BehaviorEditor.BehaviorEditor_Properties_Show_Hex = !CFG.Current.BehaviorEditor.BehaviorEditor_Properties_Show_Hex;
             }
             GUI.Tooltip(LOC.Get("BHV_View_Toggle_Hex_TT"));
-            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor_Properties_Show_Hex);
+            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor.BehaviorEditor_Properties_Show_Hex);
 
             if (ImGui.MenuItem($"{LOC.Get("BHV_View_Toggle_Game_Order")}##gameOrderToggle"))
             {
-                CFG.Current.BehaviorEditor_Transitions_Game_Order = !CFG.Current.BehaviorEditor_Transitions_Game_Order;
+                CFG.Current.BehaviorEditor.BehaviorEditor_Transitions_Game_Order = !CFG.Current.BehaviorEditor.BehaviorEditor_Transitions_Game_Order;
             }
             GUI.Tooltip(LOC.Get("BHV_View_Toggle_Game_Order_TT"));
-            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor_Transitions_Game_Order);
+            GUI.ShowActiveStatus(CFG.Current.BehaviorEditor.BehaviorEditor_Transitions_Game_Order);
 
             ImGui.Separator();
 
             if (ImGui.MenuItem($"{LOC.Get("BHV_View_Toggle_Tools")}##toolWindowToggle"))
             {
-                CFG.Current.Interface_BehaviorEditor_ToolWindow = !CFG.Current.Interface_BehaviorEditor_ToolWindow;
+                CFG.Current.Interface.Interface_BehaviorEditor_ToolWindow = !CFG.Current.Interface.Interface_BehaviorEditor_ToolWindow;
             }
             GUI.Tooltip(LOC.Get("BHV_View_Toggle_Tools_TT"));
-            GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_BehaviorEditor_ToolWindow);
 
             ImGui.EndMenu();
         }
@@ -234,11 +234,11 @@ public class BehaviorEditorScreen : EditorScreen
 
         var bank = Bank;
 
-        if (bank != null && (!autoSave || CFG.Current.BehaviorEditor_Allow_Automatic_Save))
+        if (bank != null && (!autoSave || CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Automatic_Save))
         {
             var selected = View.Selection.SelectedFile;
 
-            if (!autoSave && selected != null && !selected.IsDirty && CFG.Current.BehaviorEditor_Allow_Unmodified_Save)
+            if (!autoSave && selected != null && !selected.IsDirty && CFG.Current.BehaviorEditor.BehaviorEditor_Allow_Unmodified_Save)
             {
                 selected.IsDirty = true;
             }

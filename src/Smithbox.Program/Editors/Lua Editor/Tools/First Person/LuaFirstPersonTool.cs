@@ -138,12 +138,12 @@ public class LuaFirstPersonTool
 
         // An attack that lands: Damaged too, when the character is within reach in front of the player
         var cfg = CFG.Current;
-        ImGui.Checkbox($"{LOC.Get("LUA_FirstPerson_Attack_Damaged")}##luaFpDamaged", ref cfg.LuaEditor_FirstPerson_Attack_Damaged);
+        ImGui.Checkbox($"{LOC.Get("LUA_FirstPerson_Attack_Damaged")}##luaFpDamaged", ref cfg.LuaEditor.LuaEditor_FirstPerson_Attack_Damaged);
         GUI.Tooltip(LOC.Get("LUA_FirstPerson_Attack_Damaged_TT"));
-        ImGui.BeginDisabled(!cfg.LuaEditor_FirstPerson_Attack_Damaged);
+        ImGui.BeginDisabled(!cfg.LuaEditor.LuaEditor_FirstPerson_Attack_Damaged);
         ImGui.SameLine();
         ImGui.SetNextItemWidth(120 * DPI.UIScale());
-        ImGui.DragFloat($"##luaFpReach", ref cfg.LuaEditor_FirstPerson_Attack_Reach, 0.05f, 0.1f, 50f, "%.2f m");
+        ImGui.DragFloat($"##luaFpReach", ref cfg.LuaEditor.LuaEditor_FirstPerson_Attack_Reach, 0.05f, 0.1f, 50f, "%.2f m");
         GUI.Tooltip(LOC.Get("LUA_FirstPerson_Attack_Reach_TT"));
         ImGui.EndDisabled();
     }
@@ -211,13 +211,13 @@ public class LuaFirstPersonTool
         GUI.SimpleHeader(LOC.Get("LUA_FirstPerson_Movement_Header"), "");
 
         var cfg = CFG.Current;
-        Drag("LUA_FirstPerson_Walk_Speed", ref cfg.LuaEditor_FirstPerson_Walk_Speed, 0.05f, 0.1f, 30f, "%.2f m/s");
-        Drag("LUA_FirstPerson_Run_Speed", ref cfg.LuaEditor_FirstPerson_Run_Speed, 0.05f, 0.1f, 30f, "%.2f m/s");
-        Drag("LUA_FirstPerson_Eye_Height", ref cfg.LuaEditor_FirstPerson_Eye_Height, 0.01f, 0.1f, 20f, "%.2f m");
-        Drag("LUA_FirstPerson_Jump_Speed", ref cfg.LuaEditor_FirstPerson_Jump_Speed, 0.05f, 0.5f, 30f, "%.2f m/s");
-        Drag("LUA_FirstPerson_Roll_Distance", ref cfg.LuaEditor_FirstPerson_Roll_Distance, 0.05f, 0.1f, 20f, "%.2f m");
-        Drag("LUA_FirstPerson_Roll_Time", ref cfg.LuaEditor_FirstPerson_Roll_Time, 0.01f, 0.05f, 5f, "%.2f s");
-        ImGui.Checkbox($"{LOC.Get("LUA_FirstPerson_Crosshair")}##luaFpCrosshair", ref cfg.LuaEditor_FirstPerson_Crosshair);
+        Drag("LUA_FirstPerson_Walk_Speed", ref cfg.LuaEditor.LuaEditor_FirstPerson_Walk_Speed, 0.05f, 0.1f, 30f, "%.2f m/s");
+        Drag("LUA_FirstPerson_Run_Speed", ref cfg.LuaEditor.LuaEditor_FirstPerson_Run_Speed, 0.05f, 0.1f, 30f, "%.2f m/s");
+        Drag("LUA_FirstPerson_Eye_Height", ref cfg.LuaEditor.LuaEditor_FirstPerson_Eye_Height, 0.01f, 0.1f, 20f, "%.2f m");
+        Drag("LUA_FirstPerson_Jump_Speed", ref cfg.LuaEditor.LuaEditor_FirstPerson_Jump_Speed, 0.05f, 0.5f, 30f, "%.2f m/s");
+        Drag("LUA_FirstPerson_Roll_Distance", ref cfg.LuaEditor.LuaEditor_FirstPerson_Roll_Distance, 0.05f, 0.1f, 20f, "%.2f m");
+        Drag("LUA_FirstPerson_Roll_Time", ref cfg.LuaEditor.LuaEditor_FirstPerson_Roll_Time, 0.01f, 0.05f, 5f, "%.2f s");
+        ImGui.Checkbox($"{LOC.Get("LUA_FirstPerson_Crosshair")}##luaFpCrosshair", ref cfg.LuaEditor.LuaEditor_FirstPerson_Crosshair);
     }
 
     private static void Drag(string key, ref float value, float speed, float min, float max, string format)

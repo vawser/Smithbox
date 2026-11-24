@@ -23,7 +23,7 @@ public class FxReloaderTool
 
     /// <summary>How often the game is read while the tool is shown (the setting, kept in range)</summary>
     private static float RefreshSeconds =>
-        Math.Clamp(CFG.Current.FxEditor_InGame_RefreshSeconds, MinRefreshSeconds, MaxRefreshSeconds);
+        Math.Clamp(CFG.Current.FxEditor.FxEditor_InGame_RefreshSeconds, MinRefreshSeconds, MaxRefreshSeconds);
 
     private bool ShowHistory = true;
     private string Filter = "";
@@ -59,7 +59,7 @@ public class FxReloaderTool
         GUI.WrappedText(LOC.Get("FX_Reloader_Hint"));
 
         // Polls only while the tool is shown
-        if (CFG.Current.FxEditor_InGame_AutoRefresh &&
+        if (CFG.Current.FxEditor.FxEditor_InGame_AutoRefresh &&
             (Reloader.LastPoll == null || (DateTime.Now - Reloader.LastPoll.Value).TotalSeconds >= RefreshSeconds))
         {
             Reloader.RequestPoll();
@@ -88,7 +88,7 @@ public class FxReloaderTool
         else
             GUI.WrappedText(message);
 
-        ImGui.Checkbox($"{LOC.Get("FX_Reloader_Auto_Refresh")}##fxReloaderAutoRefresh", ref CFG.Current.FxEditor_InGame_AutoRefresh);
+        ImGui.Checkbox($"{LOC.Get("FX_Reloader_Auto_Refresh")}##fxReloaderAutoRefresh", ref CFG.Current.FxEditor.FxEditor_InGame_AutoRefresh);
         GUI.Tooltip(LOC.Get("FX_Reloader_Auto_Refresh_TT", RefreshSeconds));
 
         // A slider, so a value applies as it's dragged; Ctrl+click types one, clamped to the range
@@ -96,7 +96,7 @@ public class FxReloaderTool
         var seconds = RefreshSeconds;
         ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);
         if (ImGui.SliderFloat("##fxReloaderRefreshSeconds", ref seconds, MinRefreshSeconds, MaxRefreshSeconds, LOC.Get("FX_Reloader_Refresh_Seconds_Format"), ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-            CFG.Current.FxEditor_InGame_RefreshSeconds = MathF.Round(Math.Clamp(seconds, MinRefreshSeconds, MaxRefreshSeconds), 1);
+            CFG.Current.FxEditor.FxEditor_InGame_RefreshSeconds = MathF.Round(Math.Clamp(seconds, MinRefreshSeconds, MaxRefreshSeconds), 1);
         GUI.Tooltip(LOC.Get("FX_Reloader_Refresh_Seconds_TT", MinRefreshSeconds, MaxRefreshSeconds, Reloader.LastPollMs));
 
         GUI.MultiButtonInput("fxReloaderRefreshActions",
@@ -105,12 +105,12 @@ public class FxReloaderTool
             "fxReloaderDetach", LOC.Get("FX_Reloader_Detach"), LOC.Get("FX_Reloader_Detach_TT"),
             () =>
             {
-                CFG.Current.FxEditor_InGame_AutoRefresh = false;
+                CFG.Current.FxEditor.FxEditor_InGame_AutoRefresh = false;
                 Reloader.Detach();
             });
     }
 
-    private FxReloader.AfterReload After => (FxReloader.AfterReload)CFG.Current.FxEditor_InGame_AfterReload;
+    private FxReloader.AfterReload After => (FxReloader.AfterReload)CFG.Current.FxEditor.FxEditor_InGame_AfterReload;
 
     // Reload
     private void DisplayReload()
@@ -120,7 +120,7 @@ public class FxReloaderTool
 
         // Afterwards: only the actions this game offers. The setting is shared by every game, so a choice this game
         // doesn't have is shown as "Nothing" without being changed, and the reloader skips it.
-        CFG.Current.FxEditor_InGame_AfterReload = Math.Clamp(CFG.Current.FxEditor_InGame_AfterReload, 0, 2);
+        CFG.Current.FxEditor.FxEditor_InGame_AfterReload = Math.Clamp(CFG.Current.FxEditor.FxEditor_InGame_AfterReload, 0, 2);
 
         if (Link.OffersWorldActions)
         {
@@ -132,11 +132,11 @@ public class FxReloaderTool
                 choices.Add((FxReloader.AfterReload.QuitOut, LOC.Get("FX_Reloader_After_Quit_Out")));
 
             var labels = choices.Select(c => c.Label).ToArray();
-            var index = Math.Max(0, choices.FindIndex(c => (int)c.Value == CFG.Current.FxEditor_InGame_AfterReload));
+            var index = Math.Max(0, choices.FindIndex(c => (int)c.Value == CFG.Current.FxEditor.FxEditor_InGame_AfterReload));
 
             ImGui.SetNextItemWidth(-1);
             if (ImGui.Combo("##fxReloaderAfterReload", ref index, labels, labels.Length))
-                CFG.Current.FxEditor_InGame_AfterReload = (int)choices[index].Value;
+                CFG.Current.FxEditor.FxEditor_InGame_AfterReload = (int)choices[index].Value;
             GUI.Tooltip(LOC.Get("FX_Reloader_After_TT"));
         }
 
@@ -197,7 +197,7 @@ public class FxReloaderTool
         // Restart: weapon and SpEffect effects that are playing, so they show a reload
         if (Reloader.Restarter.IsAvailable)
         {
-            ImGui.Checkbox($"{LOC.Get("FX_Reloader_Restart_After")}##fxReloaderRestartAfter", ref CFG.Current.FxEditor_InGame_RestartAfterReload);
+            ImGui.Checkbox($"{LOC.Get("FX_Reloader_Restart_After")}##fxReloaderRestartAfter", ref CFG.Current.FxEditor.FxEditor_InGame_RestartAfterReload);
             GUI.Tooltip(LOC.Get("FX_Reloader_Restart_After_TT"));
 
             if (entry != null && !Reloader.IsReloading)
@@ -507,7 +507,7 @@ public class FxReloaderTool
         GUI.Tooltip(LOC.Get("FX_Reloader_Filter_TT"));
 
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("FX_Reloader_Playing_First")}##fxReloaderPlayingFirst", ref CFG.Current.FxEditor_InGame_PlayingFirst);
+        ImGui.Checkbox($"{LOC.Get("FX_Reloader_Playing_First")}##fxReloaderPlayingFirst", ref CFG.Current.FxEditor.FxEditor_InGame_PlayingFirst);
         GUI.Tooltip(LOC.Get("FX_Reloader_Playing_First_TT"));
 
         var rows = BuildRows(loaded);
@@ -561,7 +561,7 @@ public class FxReloaderTool
     private List<FxReloader.LoadedEffect> BuildRows(IReadOnlyList<FxReloader.LoadedEffect> loaded)
     {
         var filter = Filter.Trim();
-        var key = (loaded, filter, CFG.Current.FxEditor_InGame_PlayingFirst, Bank);
+        var key = (loaded, filter, CFG.Current.FxEditor.FxEditor_InGame_PlayingFirst, Bank);
 
         if (Equals(key, RowsKey))
             return Rows;
@@ -571,7 +571,7 @@ public class FxReloaderTool
         if (filter.Length > 0)
             rows = rows.Where(e => NameOf(e.Id).Contains(filter, StringComparison.OrdinalIgnoreCase));
 
-        if (CFG.Current.FxEditor_InGame_PlayingFirst)
+        if (CFG.Current.FxEditor.FxEditor_InGame_PlayingFirst)
             rows = rows.OrderByDescending(e => e.Playing > 0).ThenBy(e => e.Id);
 
         RowsKey = key;

@@ -128,7 +128,7 @@ public class ModelVanillaCompare
     /// </summary>
     public bool PushHighlightColour(Entity entity)
     {
-        if (!CFG.Current.ModelEditor_Vanilla_Highlight)
+        if (!CFG.Current.ModelEditor.ModelEditor_Vanilla_Highlight)
             return false;
 
         switch (GetStatus(entity))

@@ -45,35 +45,35 @@ public class TimeActSimulationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Simulations_Header"), LOC.Get("TAE_SimulationTool_Simulations_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Speed_Events")}##timeActSimSpeedEvents", ref CFG.Current.TimeActEditor_Sim_Speed_Events);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Speed_Events")}##timeActSimSpeedEvents", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Speed_Events);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Speed_Events_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_State_Info")}##timeActSimStateInfo", ref CFG.Current.TimeActEditor_Sim_State_Info))
+        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_State_Info")}##timeActSimStateInfo", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_State_Info))
         {
             simulation.OnStateInfoToggled();
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_State_Info_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Model_Masks")}##timeActSimModelMasks", ref CFG.Current.TimeActEditor_Sim_Model_Masks);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Model_Masks")}##timeActSimModelMasks", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Model_Masks);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Model_Masks_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Weapons")}##timeActSimWeapons", ref CFG.Current.TimeActEditor_Sim_Weapons);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Weapons")}##timeActSimWeapons", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Weapons);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Weapons_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Turning")}##timeActSimTurning", ref CFG.Current.TimeActEditor_Sim_Turning);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Turning")}##timeActSimTurning", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Turning);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Turning_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Rumble_Cam")}##timeActSimRumbleCam", ref CFG.Current.TimeActEditor_Sim_Rumble_Cam)
-            && !CFG.Current.TimeActEditor_Sim_Rumble_Cam)
+        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Rumble_Cam")}##timeActSimRumbleCam", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Rumble_Cam)
+            && !CFG.Current.TimeActEditor.TimeActEditor_Sim_Rumble_Cam)
         {
             View.Playback.Rumble.StopAll();
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Rumble_Cam_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Opacity")}##timeActSimOpacity", ref CFG.Current.TimeActEditor_Sim_Opacity);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Opacity")}##timeActSimOpacity", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Opacity);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Opacity_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Magic")}##timeActSimMagic", ref CFG.Current.TimeActEditor_Sim_Magic);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Magic")}##timeActSimMagic", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Magic);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Magic_TT"));
 
         if (simulation.Opacity < 1)
@@ -81,24 +81,24 @@ public class TimeActSimulationTool
             GUI.WrappedText(LOC.Get("TAE_SimulationTool_Opacity_Status", (simulation.Opacity * 100).ToString("0")));
         }
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Additive_Anims")}##timeActSimAdditive", ref CFG.Current.TimeActEditor_Sim_Additive_Anims);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Additive_Anims")}##timeActSimAdditive", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Additive_Anims);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Additive_Anims_TT"));
 
-        if (CFG.Current.TimeActEditor_Sim_Additive_Anims)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Sim_Additive_Anims)
         {
             ImGui.Indent();
-            ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Assume_SpEffects")}##timeActSimAssumeSpEffects", ref CFG.Current.TimeActEditor_Assume_SpEffects);
+            ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Assume_SpEffects")}##timeActSimAssumeSpEffects", ref CFG.Current.TimeActEditor.TimeActEditor_Assume_SpEffects);
             GUI.Tooltip(LOC.Get("TAE_SimulationTool_Assume_SpEffects_TT"));
             ImGui.Unindent();
         }
 
-        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blending")}##timeActSimBlending", ref CFG.Current.TimeActEditor_Sim_Blending);
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blending")}##timeActSimBlending", ref CFG.Current.TimeActEditor.TimeActEditor_Sim_Blending);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Blending_TT"));
 
-        if (CFG.Current.TimeActEditor_Sim_Blending)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Sim_Blending)
         {
             ImGui.Indent();
-            ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blend_On_Change")}##timeActSimBlendOnChange", ref CFG.Current.TimeActEditor_Blend_On_Animation_Change);
+            ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Blend_On_Change")}##timeActSimBlendOnChange", ref CFG.Current.TimeActEditor.TimeActEditor_Blend_On_Animation_Change);
             GUI.Tooltip(LOC.Get("TAE_SimulationTool_Blend_On_Change_TT"));
             ImGui.Unindent();
         }
@@ -119,11 +119,11 @@ public class TimeActSimulationTool
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Turn_Header"), LOC.Get("TAE_SimulationTool_Turn_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##timeActSimTurnTarget", ref CFG.Current.TimeActEditor_Turn_Target_Angle, -180f, 180f,
+        ImGui.SliderFloat("##timeActSimTurnTarget", ref CFG.Current.TimeActEditor.TimeActEditor_Turn_Target_Angle, -180f, 180f,
             $"{LOC.Get("TAE_SimulationTool_Turn_Target")}: %.0f");
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Turn_Target_TT"));
 
-        if (CFG.Current.TimeActEditor_Sim_Turning && View.Selection.SelectedAnimation != null)
+        if (CFG.Current.TimeActEditor.TimeActEditor_Sim_Turning && View.Selection.SelectedAnimation != null)
         {
             GUI.WrappedText(simulation.HasTurnEvents
                 ? LOC.Get("TAE_SimulationTool_Turn_Status", simulation.Turn.ToString("0"))
@@ -144,19 +144,19 @@ public class TimeActSimulationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_SimulationTool_Root_Motion_Header"), LOC.Get("TAE_SimulationTool_Root_Motion_Header_TT"));
 
-        DisplayScale("TAE_SimulationTool_Root_Motion_Ground", "timeActSimRootGround", ref CFG.Current.TimeActEditor_Root_Motion_Scale_Ground);
-        DisplayScale("TAE_SimulationTool_Root_Motion_Up", "timeActSimRootUp", ref CFG.Current.TimeActEditor_Root_Motion_Scale_Up);
-        DisplayScale("TAE_SimulationTool_Root_Motion_Turn", "timeActSimRootTurn", ref CFG.Current.TimeActEditor_Root_Motion_Scale_Turn);
+        DisplayScale("TAE_SimulationTool_Root_Motion_Ground", "timeActSimRootGround", ref CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Ground);
+        DisplayScale("TAE_SimulationTool_Root_Motion_Up", "timeActSimRootUp", ref CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Up);
+        DisplayScale("TAE_SimulationTool_Root_Motion_Turn", "timeActSimRootTurn", ref CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Turn);
 
         if (ImGui.Button($"{LOC.Get("TAE_SimulationTool_Root_Motion_Reset")}##timeActSimRootReset"))
         {
-            CFG.Current.TimeActEditor_Root_Motion_Scale_Ground = 1f;
-            CFG.Current.TimeActEditor_Root_Motion_Scale_Up = 1f;
-            CFG.Current.TimeActEditor_Root_Motion_Scale_Turn = 1f;
+            CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Ground = 1f;
+            CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Up = 1f;
+            CFG.Current.TimeActEditor.TimeActEditor_Root_Motion_Scale_Turn = 1f;
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Root_Motion_Reset_TT"));
 
-        if (!CFG.Current.TimeActEditor_Apply_Root_Motion)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Apply_Root_Motion)
         {
             GUI.WrappedText(LOC.Get("TAE_SimulationTool_Root_Motion_Off"));
         }
@@ -185,17 +185,17 @@ public class TimeActSimulationTool
         string Label((int Id, string Name) material) =>
             string.IsNullOrEmpty(material.Name) ? $"{material.Id}" : $"{material.Id}: {material.Name}";
 
-        var current = materials.FindIndex(m => m.Id == CFG.Current.TimeActEditor_Floor_Material);
-        var preview = current >= 0 ? Label(materials[current]) : $"{CFG.Current.TimeActEditor_Floor_Material}";
+        var current = materials.FindIndex(m => m.Id == CFG.Current.TimeActEditor.TimeActEditor_Floor_Material);
+        var preview = current >= 0 ? Label(materials[current]) : $"{CFG.Current.TimeActEditor.TimeActEditor_Floor_Material}";
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##timeActSimFloorMaterial", preview))
         {
             foreach (var material in materials)
             {
-                if (ImGui.Selectable($"{Label(material)}##timeActSimFloor{material.Id}", material.Id == CFG.Current.TimeActEditor_Floor_Material))
+                if (ImGui.Selectable($"{Label(material)}##timeActSimFloor{material.Id}", material.Id == CFG.Current.TimeActEditor.TimeActEditor_Floor_Material))
                 {
-                    CFG.Current.TimeActEditor_Floor_Material = material.Id;
+                    CFG.Current.TimeActEditor.TimeActEditor_Floor_Material = material.Id;
 
                     // The effects are worked out once for the animation
                     View.Playback.Effects.Invalidate();
@@ -230,7 +230,7 @@ public class TimeActSimulationTool
         static string Label(Andre.Formats.Param.Row row) =>
             string.IsNullOrEmpty(row.Name) ? $"{row.ID}" : $"{row.ID}: {row.Name}";
 
-        var currentId = CFG.Current.TimeActEditor_Cast_Magic_ID;
+        var currentId = CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_ID;
         var current = View.Playback.MagicDisplay.GetMagic();
         var preview = current != null ? Label(current)
             : currentId >= 0 ? $"{currentId}"
@@ -278,13 +278,13 @@ public class TimeActSimulationTool
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Magic_Row_TT", paramName));
 
-        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Magic_Charged")}##timeActSimMagicCharged", ref CFG.Current.TimeActEditor_Cast_Magic_Charged))
+        if (ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Magic_Charged")}##timeActSimMagicCharged", ref CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_Charged))
         {
             View.Playback.EventDisplay.Invalidate();
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Magic_Charged_TT"));
 
-        GUI.WrappedText(TimeActEventResolver.GetMagicStatus(Project, currentId, CFG.Current.TimeActEditor_Cast_Magic_Charged));
+        GUI.WrappedText(TimeActEventResolver.GetMagicStatus(Project, currentId, CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_Charged));
 
         if (View.Playback.MagicDisplay.LatestResult is { } result)
         {
@@ -307,7 +307,7 @@ public class TimeActSimulationTool
 
     private void SetMagic(int id)
     {
-        CFG.Current.TimeActEditor_Cast_Magic_ID = id;
+        CFG.Current.TimeActEditor.TimeActEditor_Cast_Magic_ID = id;
 
         // The cast events say what they cast
         View.Playback.EventDisplay.Invalidate();
@@ -323,7 +323,7 @@ public class TimeActSimulationTool
 
     private static void DisplayWeaponStyle(TimeActSimulation simulation)
     {
-        var current = Array.FindIndex(WeaponStyles, s => s.Style == CFG.Current.TimeActEditor_Weapon_Style);
+        var current = Array.FindIndex(WeaponStyles, s => s.Style == CFG.Current.TimeActEditor.TimeActEditor_Weapon_Style);
         var names = WeaponStyles.Select(s => LOC.Get(s.Key)).ToArray();
 
         if (current < 0)
@@ -332,12 +332,12 @@ public class TimeActSimulationTool
         ImGui.SetNextItemWidth(-1);
         if (ImGui.Combo("##timeActSimWeaponStyle", ref current, names, names.Length))
         {
-            CFG.Current.TimeActEditor_Weapon_Style = WeaponStyles[current].Style;
+            CFG.Current.TimeActEditor.TimeActEditor_Weapon_Style = WeaponStyles[current].Style;
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Weapon_Style_TT"));
 
         // An event may have changed it since the start
-        if (simulation.WeaponStyle != CFG.Current.TimeActEditor_Weapon_Style)
+        if (simulation.WeaponStyle != CFG.Current.TimeActEditor.TimeActEditor_Weapon_Style)
         {
             GUI.WrappedText(LOC.Get("TAE_SimulationTool_Weapon_Style_Now", simulation.WeaponStyle));
         }
@@ -352,7 +352,7 @@ public class TimeActSimulationTool
 
     private void DisplayStates(TimeActSimulation simulation)
     {
-        if (!CFG.Current.TimeActEditor_Sim_State_Info)
+        if (!CFG.Current.TimeActEditor.TimeActEditor_Sim_State_Info)
         {
             GUI.WrappedText(LOC.Get("TAE_SimulationTool_States_Off"));
             return;

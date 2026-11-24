@@ -68,28 +68,28 @@ public class ModelPropertyView
 
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNameToggle", Icons.Book, 
-            ref CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names,
+            ref CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Commmunity_Names,
             "MODEL_Properties_Toggle_Community_Names_Internal",
             "MODEL_Properties_Toggle_Community_Names_Community",
             "MODEL_Properties_Toggle_Community_Names_TT");
 
         // Toggle: Type Column
         GUI.DisplayToggleButton("typeColToggle", Icons.Calculator, 
-            ref CFG.Current.ModelEditor_Properties_Enable_Type_Column,
+            ref CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column,
             "MODEL_Properties_Toggle_Type_Col_Hide",
             "MODEL_Properties_Toggle_Type_Col_Show",
             "MODEL_Properties_Toggle_Type_Col_TT");
 
         // Toggle: Mesh Data
         GUI.DisplayToggleButton("meshDataToggle", Icons.Database,
-            ref CFG.Current.ModelEditor_Properties_Enable_Mesh_Fields,
+            ref CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Mesh_Fields,
             "MODEL_PropertyView_Mesh_Data_Toggle_Hide",
             "MODEL_PropertyView_Mesh_Data_Toggle_Show",
             "MODEL_PropertyView_Mesh_Data_Toggle_TT");
 
         // Toggle: Tree Auto-Open
         GUI.DisplayToggleButton("treeAutoOpenToggle", Icons.Tree,
-            ref CFG.Current.ModelEditor_Properties_Auto_Open_Tree,
+            ref CFG.Current.ModelEditor.ModelEditor_Properties_Auto_Open_Tree,
             "MODEL_PropertyView_TreeState_Open",
             "MODEL_PropertyView_TreeState_Closed",
             "MODEL_PropertyView_TreeState_TT");
@@ -276,7 +276,7 @@ public class ModelPropertyView
         }
 
         var columnCount = 2;
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             columnCount = 3;
         }
@@ -293,7 +293,7 @@ public class ModelPropertyView
 
         ImGui.NextColumn();
 
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -336,7 +336,7 @@ public class ModelPropertyView
 
             var treeFlags = ImGuiTreeNodeFlags.None;
 
-            if (CFG.Current.ModelEditor_Properties_Auto_Open_Tree)
+            if (CFG.Current.ModelEditor.ModelEditor_Properties_Auto_Open_Tree)
             {
                 treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
             }
@@ -348,7 +348,7 @@ public class ModelPropertyView
 
             if (classMeta != null)
             {
-                if (CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names)
+                if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Commmunity_Names)
                 {
                     fieldName = ModelMetaHelper.GetFieldName(classMeta, prop.Name);
                 }
@@ -360,7 +360,7 @@ public class ModelPropertyView
 
             // Hidden mesh data is skipped whole, lists included: the vertex and face lists are lists of objects,
             // which the per-value check below never reaches
-            if (isMeshData && !CFG.Current.ModelEditor_Properties_Enable_Mesh_Fields)
+            if (isMeshData && !CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Mesh_Fields)
             {
                 id++;
                 continue;
@@ -378,7 +378,7 @@ public class ModelPropertyView
                 GUI.Tooltip(fieldDescription);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
-                if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                 {
                     PropContextRowOpener("arrayTypeCol");
 
@@ -407,7 +407,7 @@ public class ModelPropertyView
                             ImGui.Text("");
                             ImGui.NextColumn();
 
-                            if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                            if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                             {
                                 PropContextRowOpener("arrayTypeEntryCol");
 
@@ -466,7 +466,7 @@ public class ModelPropertyView
                     ImGui.SetNextItemWidth(-1);
                     ImGui.Text("");
                     ImGui.NextColumn();
-                    if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                    if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                     {
                         PropContextRowOpener("classTypeCol");
 
@@ -571,7 +571,7 @@ public class ModelPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             ImGui.NextColumn();
 
@@ -657,7 +657,7 @@ public class ModelPropertyView
         }
 
         // Keeps the row the same width as the others
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             ImGui.NextColumn();
 
@@ -731,7 +731,7 @@ public class ModelPropertyView
         ImGui.NextColumn();
         ImGui.NextColumn();
 
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -743,7 +743,7 @@ public class ModelPropertyView
     {
         var propName = prop.Name;
 
-        if(!CFG.Current.ModelEditor_Properties_Enable_Mesh_Fields)
+        if(!CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Mesh_Fields)
         {
             if (isMeshData)
                 return false;
@@ -823,7 +823,7 @@ public class ModelPropertyView
 
         ImGui.NextColumn();
 
-        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
         {
             ImGui.NextColumn();
         }
@@ -863,7 +863,7 @@ public class ModelPropertyView
 
                         ImGui.NextColumn();
 
-                        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                         {
                             PropContextRowOpener("listTypeCol");
 
@@ -918,7 +918,7 @@ public class ModelPropertyView
 
                         ImGui.NextColumn();
 
-                        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                        if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                         {
                             PropContextRowOpener("listTypeCol");
 
@@ -1026,7 +1026,7 @@ public class ModelPropertyView
 
                 ImGui.NextColumn();
 
-                if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                 {
                     PropContextRowOpener("nestedListTypeCol");
 
@@ -1068,7 +1068,7 @@ public class ModelPropertyView
 
                 ImGui.NextColumn();
 
-                if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+                if (CFG.Current.ModelEditor.ModelEditor_Properties_Enable_Type_Column)
                 {
                     PropContextRowOpener("nestedListClassTypeCol");
 

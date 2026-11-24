@@ -11,8 +11,8 @@ public static class PropRotationAction
 {
     public static void CopyCurrentRotation(PropertyInfo prop, object obj)
     {
-        CFG.Current.SavedRotation = (Vector3)obj;
-        //CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
+        CFG.Current.MapEditor.SavedRotation = (Vector3)obj;
+        //CFG.Current.MapEditor.SavedRotation = (Vector3)prop.GetValue(obj, null);
     }
 
     public static void PasteSavedRotation(MapEditorView view, ViewportSelection _selection)

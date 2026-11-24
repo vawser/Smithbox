@@ -108,11 +108,11 @@ public class MaterialProperties
 
         if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
-            CFG.Current.MaterialEditor_Properties_Display_Community_Names = !CFG.Current.MaterialEditor_Properties_Display_Community_Names;
+            CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Community_Names = !CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Community_Names;
         }
 
         var communityFieldNameMode = LOC.Get("MAT_Properties_DisplayCommunityNames_Internal");
-        if (CFG.Current.MaterialEditor_Properties_Display_Community_Names)
+        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Community_Names)
             communityFieldNameMode = LOC.Get("MAT_Properties_DisplayCommunityNames_Community");
 
         GUI.Tooltip(LOC.Get("MAT_Properties_DisplayCommunityNames_Hint", communityFieldNameMode));
@@ -122,11 +122,11 @@ public class MaterialProperties
 
         if (ImGui.Button($"{Icons.Calculator}##toggleTypeCol"))
         {
-            CFG.Current.MaterialEditor_Properties_Display_Type_Column = !CFG.Current.MaterialEditor_Properties_Display_Type_Column;
+            CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column = !CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column;
         }
 
         var typeColumnVis = LOC.Get("MAT_PropertyView_Type_Column_Toggle_Hide");
-        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
             typeColumnVis = LOC.Get("MAT_PropertyView_Type_Column_Toggle_Show");
 
         GUI.Tooltip(LOC.Get("MAT_PropertyView_Type_Column_Toggle_TT", typeColumnVis));
@@ -138,10 +138,10 @@ public class MaterialProperties
 
             if (ImGui.Button($"{Icons.FileImageO}##toggleTexturePreview", DPI.IconButtonSize))
             {
-                CFG.Current.MaterialEditor_Textures_Display_Preview = !CFG.Current.MaterialEditor_Textures_Display_Preview;
+                CFG.Current.MaterialEditor.MaterialEditor_Textures_Display_Preview = !CFG.Current.MaterialEditor.MaterialEditor_Textures_Display_Preview;
             }
 
-            var previewVis = CFG.Current.MaterialEditor_Textures_Display_Preview
+            var previewVis = CFG.Current.MaterialEditor.MaterialEditor_Textures_Display_Preview
                 ? LOC.Get("MAT_Texture_Preview_Shown")
                 : LOC.Get("MAT_Texture_Preview_Hidden");
 
@@ -203,7 +203,7 @@ public class MaterialProperties
         var type = sourceObj.GetType();
 
         var columnCount = 2;
-        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
         {
             columnCount = 3;
         }
@@ -222,7 +222,7 @@ public class MaterialProperties
 
             ImGui.NextColumn();
 
-            if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+            if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
             {
                 ImGui.NextColumn();
             }
@@ -289,7 +289,7 @@ public class MaterialProperties
 
             if (classMeta != null)
             {
-                if (CFG.Current.MaterialEditor_Properties_Display_Community_Names)
+                if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Community_Names)
                 {
                     fieldName = MaterialMetaHelper.GetFieldName(classMeta, prop.Name);
                 }
@@ -326,7 +326,7 @@ public class MaterialProperties
                 ImGui.NextColumn();
                 ImGui.NextColumn();
 
-                if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+                if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
                 {
                     var typeLabel = TypeLabel(typ);
 
@@ -365,7 +365,7 @@ public class MaterialProperties
                             ImGui.Text("");
                             ImGui.NextColumn();
 
-                            if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+                            if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
                             {
                                 var typeLabel = TypeLabel(o?.GetType() ?? arrtyp);
 
@@ -426,7 +426,7 @@ public class MaterialProperties
 
                     ImGui.NextColumn();
 
-                    if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+                    if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
                     {
                         var typeLabel = TypeLabel(value.GetType());
 
@@ -739,7 +739,7 @@ public class MaterialProperties
             UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
         }
 
-        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
         {
             ImGui.NextColumn();
 
@@ -752,7 +752,7 @@ public class MaterialProperties
 
         // The texture itself, on a row of its own under its path
         if (prop.Name == "Path" && containerObj is MATBIN.Sampler or MTD.Texture &&
-            CFG.Current.MaterialEditor_Textures_Display_Preview)
+            CFG.Current.MaterialEditor.MaterialEditor_Textures_Display_Preview)
         {
             ImGui.AlignTextToFramePadding();
             ImGui.TextDisabled(LOC.Get("MAT_Texture_Preview"));
@@ -763,7 +763,7 @@ public class MaterialProperties
 
             ImGui.NextColumn();
 
-            if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+            if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
                 ImGui.NextColumn();
         }
     }
@@ -905,7 +905,7 @@ public class MaterialProperties
 
         ImGui.NextColumn();
 
-        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
         {
             var typeLabel = TypeLabel(prop.PropertyType);
 
@@ -1026,7 +1026,7 @@ public class MaterialProperties
 
                         ImGui.NextColumn();
 
-                        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+                        if (CFG.Current.MaterialEditor.MaterialEditor_Properties_Display_Type_Column)
                         {
                             var typeLabel = TypeLabel(elem?.GetType() ?? elementType);
 

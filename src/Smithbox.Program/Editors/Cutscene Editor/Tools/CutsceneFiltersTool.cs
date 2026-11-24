@@ -37,24 +37,24 @@ public class CutsceneFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("CUTSCENE_FiltersTool_Scene_Header"), LOC.Get("CUTSCENE_FiltersTool_Scene_Header_TT"));
 
-        var loadMap = CFG.Current.CutsceneEditor_Load_Map;
+        var loadMap = CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Map")}##cutsceneFilterMap", ref loadMap))
             Editor.SetLoadMap(loadMap);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Map_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.CutsceneEditor_Load_Map);
-        var mapAssets = CFG.Current.CutsceneEditor_Map_Load_Assets;
+        ImGui.BeginDisabled(!CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map);
+        var mapAssets = CFG.Current.CutsceneEditor.CutsceneEditor_Map_Load_Assets;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Map_Assets")}##cutsceneFilterMapAssets", ref mapAssets))
             Editor.SetMapAssets(mapAssets);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Map_Assets_TT"));
 
-        var mapCharacters = CFG.Current.CutsceneEditor_Map_Load_Characters;
+        var mapCharacters = CFG.Current.CutsceneEditor.CutsceneEditor_Map_Load_Characters;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Map_Characters")}##cutsceneFilterMapCharacters", ref mapCharacters))
             Editor.SetMapCharacters(mapCharacters);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Map_Characters_TT"));
         ImGui.EndDisabled();
 
-        var models = CFG.Current.CutsceneEditor_Load_Models;
+        var models = CFG.Current.CutsceneEditor.CutsceneEditor_Load_Models;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Models")}##cutsceneFilterModels", ref models))
             Editor.SetLoadModels(models);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Models_TT"));
@@ -68,22 +68,22 @@ public class CutsceneFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("CUTSCENE_FiltersTool_Overlays_Header"), LOC.Get("CUTSCENE_FiltersTool_Overlays_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Camera_Path")}##cutsceneFilterCameraPath", ref CFG.Current.CutsceneEditor_Display_Camera_Path);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Camera_Path")}##cutsceneFilterCameraPath", ref CFG.Current.CutsceneEditor.CutsceneEditor_Display_Camera_Path);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Camera_Path_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Camera")}##cutsceneFilterCamera", ref CFG.Current.CutsceneEditor_Display_Camera);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Camera")}##cutsceneFilterCamera", ref CFG.Current.CutsceneEditor.CutsceneEditor_Display_Camera);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Camera_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Markers")}##cutsceneFilterMarkers", ref CFG.Current.CutsceneEditor_Display_Markers);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Markers")}##cutsceneFilterMarkers", ref CFG.Current.CutsceneEditor.CutsceneEditor_Display_Markers);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Display_Markers_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Subtitles")}##cutsceneFilterSubtitles", ref CFG.Current.CutsceneEditor_Display_Subtitles);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Subtitles")}##cutsceneFilterSubtitles", ref CFG.Current.CutsceneEditor.CutsceneEditor_Display_Subtitles);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Display_Subtitles_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Fades")}##cutsceneFilterFades", ref CFG.Current.CutsceneEditor_Display_Fades);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Fades")}##cutsceneFilterFades", ref CFG.Current.CutsceneEditor.CutsceneEditor_Display_Fades);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Fades_TT"));
 
-        var effects = CFG.Current.CutsceneEditor_Display_Effects;
+        var effects = CFG.Current.CutsceneEditor.CutsceneEditor_Display_Effects;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Effects")}##cutsceneFilterEffects", ref effects))
             Editor.SetDisplayEffects(effects);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Effects_TT"));
@@ -93,12 +93,12 @@ public class CutsceneFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("CUTSCENE_FiltersTool_Playback_Header"), LOC.Get("CUTSCENE_FiltersTool_Playback_Header_TT"));
 
-        var voices = CFG.Current.CutsceneEditor_Play_Voices;
+        var voices = CFG.Current.CutsceneEditor.CutsceneEditor_Play_Voices;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Voices")}##cutsceneFilterVoices", ref voices))
             Editor.SetPlayVoices(voices);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Play_Voices_TT"));
 
-        var sounds = CFG.Current.CutsceneEditor_Play_Sounds;
+        var sounds = CFG.Current.CutsceneEditor.CutsceneEditor_Play_Sounds;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Sounds")}##cutsceneFilterSounds", ref sounds))
             Editor.SetPlaySounds(sounds);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Play_Sounds_TT"));
@@ -111,7 +111,7 @@ public class CutsceneFiltersTool
     /// <summary>Why effects may not show, or what the cut's effect events are doing</summary>
     private void DisplayEffectStatus()
     {
-        if (!CFG.Current.CutsceneEditor_Display_Effects)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Display_Effects)
             return;
 
         var effects = Editor.Effects;
@@ -146,17 +146,17 @@ public class CutsceneFiltersTool
     {
         var backdrop = Editor.Backdrop;
 
-        if (!CFG.Current.CutsceneEditor_Load_Map || backdrop.LoadedMapId == null)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Load_Map || backdrop.LoadedMapId == null)
         {
             GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_No_Map"));
             return;
         }
 
-        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Draw_Groups")}##cutsceneFilterDrawGroups", ref CFG.Current.CutsceneEditor_Map_Use_Draw_Groups);
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Draw_Groups")}##cutsceneFilterDrawGroups", ref CFG.Current.CutsceneEditor.CutsceneEditor_Map_Use_Draw_Groups);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Draw_Groups_TT"));
 
         // What the draw groups came from, so a wrong guess shows
-        if (!CFG.Current.CutsceneEditor_Map_Use_Draw_Groups)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Map_Use_Draw_Groups)
             GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_Off", backdrop.ShownCount, backdrop.PartCount));
         else if (!backdrop.HasCollision)
             GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_No_Collision", backdrop.PartCount));
@@ -167,7 +167,7 @@ public class CutsceneFiltersTool
                 backdrop.StandingOn, backdrop.ActiveDisplay?.Sum(w => System.Numerics.BitOperations.PopCount(w)) ?? 0,
                 backdrop.ShownCount, backdrop.PartCount));
 
-        if (!CFG.Current.CutsceneEditor_Map_Use_Draw_Groups || backdrop.Collisions.Count == 0)
+        if (!CFG.Current.CutsceneEditor.CutsceneEditor_Map_Use_Draw_Groups || backdrop.Collisions.Count == 0)
             return;
 
         // The collision to stand on, for this cutscene (kept across its cuts)

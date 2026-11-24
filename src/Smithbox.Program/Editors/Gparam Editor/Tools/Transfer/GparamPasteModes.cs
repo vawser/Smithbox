@@ -76,10 +76,10 @@ public record GparamPasteModes(
     public static GparamPasteModes FromConfig()
     {
         return new GparamPasteModes(
-            CFG.Current.GparamEditor_Transfer_File_Mode,
-            CFG.Current.GparamEditor_Transfer_Group_Mode,
-            CFG.Current.GparamEditor_Transfer_Field_Mode,
-            CFG.Current.GparamEditor_Transfer_Values_Mode);
+            CFG.Current.GparamEditor.GparamEditor_Transfer_File_Mode,
+            CFG.Current.GparamEditor.GparamEditor_Transfer_Group_Mode,
+            CFG.Current.GparamEditor.GparamEditor_Transfer_Field_Mode,
+            CFG.Current.GparamEditor.GparamEditor_Transfer_Values_Mode);
     }
 
     public string Describe(GparamTransferKind kind)

@@ -29,7 +29,7 @@ public class MassEditToolMenu
     {
         Parent = parent;
 
-        Parent.State.QuickCommands = CFG.Current.ParamEditor_MassEdit_QuickCommands;
+        Parent.State.QuickCommands = CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands;
         UpdateQuickCommandPagination();
     }
 
@@ -150,7 +150,7 @@ public class MassEditToolMenu
     {
         Parent.State.QuickCommands.Add(Parent.State.CurrentMenuInput);
 
-        CFG.Current.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
+        CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
         CFG.Save();
 
         UpdateQuickCommandPagination();
@@ -160,7 +160,7 @@ public class MassEditToolMenu
     {
         var commandCount = Parent.State.QuickCommands.Count;
 
-        var pageCount = (commandCount + CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount - 1) / CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount;
+        var pageCount = (commandCount + CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands_PageCount - 1) / CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands_PageCount;
         if (pageCount < 1)
             pageCount = 1;
 
@@ -186,7 +186,7 @@ public class MassEditToolMenu
 
         // Page Count Input
         ImGui.PushItemWidth(100 * DPI.UIScale());
-        ImGui.InputInt("##pageCount", ref CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount);
+        ImGui.InputInt("##pageCount", ref CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands_PageCount);
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
             UpdateQuickCommandPagination();
@@ -238,9 +238,9 @@ public class MassEditToolMenu
 
         var pageIndex = CurrentQuickCommandPage;
 
-        for (int k = 0; k < CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount; k++)
+        for (int k = 0; k < CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands_PageCount; k++)
         {
-            var index = (CFG.Current.ParamEditor_MassEdit_QuickCommands_PageCount * pageIndex) + k;
+            var index = (CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands_PageCount * pageIndex) + k;
 
             if (Parent.State.QuickCommands.Count > index)
             {
@@ -275,7 +275,7 @@ public class MassEditToolMenu
             Parent.State.QuickCommands.Remove(Parent.State.CommandToRemove);
             Parent.State.CommandToRemove = null;
 
-            CFG.Current.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
+            CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
             CFG.Save();
 
             UpdateQuickCommandPagination();

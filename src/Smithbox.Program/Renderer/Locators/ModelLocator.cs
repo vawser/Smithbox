@@ -102,7 +102,7 @@ public static class ModelLocator
         }
         else if (project.Handler.MapEditor != null)
         {
-            targetType = CFG.Current.CurrentHavokCollisionType;
+            targetType = RenderSettings.Viewport.CurrentHavokCollisionType;
         }
 
         // Always use low for connect collisions

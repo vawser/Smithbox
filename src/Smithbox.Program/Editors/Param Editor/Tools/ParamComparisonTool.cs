@@ -447,7 +447,7 @@ public class ParamComparisonTool
             RowNameHelper.ImportRowNames(
                 Project,
                 Project.Handler.ParamData.PrimaryBank,
-                CFG.Current.ParamEditor_Import_Language);
+                CFG.Current.ParamEditor.ParamEditor_Import_Language);
         }
 
         if (ImportNamesOnGeneration_Compare)
@@ -457,7 +457,7 @@ public class ParamComparisonTool
                 RowNameHelper.ImportRowNames(
                     Project,
                     Project.Handler.ParamData.VanillaBank,
-                    CFG.Current.ParamEditor_Import_Language);
+                    CFG.Current.ParamEditor.ParamEditor_Import_Language);
             }
             else
             {
@@ -466,7 +466,7 @@ public class ParamComparisonTool
                     RowNameHelper.ImportRowNames(
                         Project,
                         auxBankValue,
-                        CFG.Current.ParamEditor_Import_Language);
+                        CFG.Current.ParamEditor.ParamEditor_Import_Language);
                 }
             }
         }

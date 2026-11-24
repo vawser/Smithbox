@@ -235,8 +235,8 @@ public sealed class CutsceneCameraKeys
 /// </summary>
 public static class CutsceneCameraRotation
 {
-    private static Vector3 Forward => CutsceneCamera.Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor_Camera_Forward_Axis);
-    private static Vector3 Up => CutsceneCamera.Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor_Camera_Up_Axis);
+    private static Vector3 Forward => CutsceneCamera.Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Forward_Axis);
+    private static Vector3 Up => CutsceneCamera.Axis((CutsceneCameraAxis)CFG.Current.CutsceneEditor.CutsceneEditor_Camera_Up_Axis);
 
     public static Quaternion FromAngles(Vector3 degrees) =>
         FromAngles(degrees, Forward, Up, Vector3.UnitX, Vector3.UnitY, Vector3.UnitZ);

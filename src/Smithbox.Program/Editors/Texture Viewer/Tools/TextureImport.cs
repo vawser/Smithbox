@@ -125,20 +125,20 @@ public class TextureImport
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TEXVIEW_TexImport_Format_Header"), LOC.Get("TEXVIEW_TexImport_Format_Header_TT"));
 
-        var preview = CFG.Current.TextureViewerImport_Format == 0
+        var preview = CFG.Current.TextureViewer.TextureViewerImport_Format == 0
             ? LOC.Get("TEXVIEW_TexImport_Format_Keep")
-            : TextureFormats.GetLabel(CFG.Current.TextureViewerImport_Format);
+            : TextureFormats.GetLabel(CFG.Current.TextureViewer.TextureViewerImport_Format);
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##textureImportFormat", preview))
         {
-            if (ImGui.Selectable($"{LOC.Get("TEXVIEW_TexImport_Format_Keep")}##formatKeep", CFG.Current.TextureViewerImport_Format == 0))
-                CFG.Current.TextureViewerImport_Format = 0;
+            if (ImGui.Selectable($"{LOC.Get("TEXVIEW_TexImport_Format_Keep")}##formatKeep", CFG.Current.TextureViewer.TextureViewerImport_Format == 0))
+                CFG.Current.TextureViewer.TextureViewerImport_Format = 0;
 
             foreach (var choice in TextureFormats.Choices)
             {
-                if (ImGui.Selectable($"{choice.Label}##format{choice.Dxgi}", CFG.Current.TextureViewerImport_Format == choice.Dxgi))
-                    CFG.Current.TextureViewerImport_Format = choice.Dxgi;
+                if (ImGui.Selectable($"{choice.Label}##format{choice.Dxgi}", CFG.Current.TextureViewer.TextureViewerImport_Format == choice.Dxgi))
+                    CFG.Current.TextureViewer.TextureViewerImport_Format = choice.Dxgi;
             }
 
             ImGui.EndCombo();
@@ -152,12 +152,12 @@ public class TextureImport
         string[] mipLabels = [LOC.Get("TEXVIEW_TexImport_Mips_Match"), LOC.Get("TEXVIEW_TexImport_Mips_Full"), LOC.Get("TEXVIEW_TexImport_Mips_None")];
 
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.BeginCombo("##textureImportMips", mipLabels[Math.Clamp(CFG.Current.TextureViewerImport_MipMode, 0, 2)]))
+        if (ImGui.BeginCombo("##textureImportMips", mipLabels[Math.Clamp(CFG.Current.TextureViewer.TextureViewerImport_MipMode, 0, 2)]))
         {
             for (int i = 0; i < mipLabels.Length; i++)
             {
-                if (ImGui.Selectable($"{mipLabels[i]}##mips{i}", CFG.Current.TextureViewerImport_MipMode == i))
-                    CFG.Current.TextureViewerImport_MipMode = i;
+                if (ImGui.Selectable($"{mipLabels[i]}##mips{i}", CFG.Current.TextureViewer.TextureViewerImport_MipMode == i))
+                    CFG.Current.TextureViewer.TextureViewerImport_MipMode = i;
             }
 
             ImGui.EndCombo();
@@ -168,7 +168,7 @@ public class TextureImport
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TEXVIEW_TexImport_Size_Header"), LOC.Get("TEXVIEW_TexImport_Size_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Match_Size")}##textureImportMatchSize", ref CFG.Current.TextureViewerImport_MatchSize);
+        ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Match_Size")}##textureImportMatchSize", ref CFG.Current.TextureViewer.TextureViewerImport_MatchSize);
         GUI.Tooltip(LOC.Get("TEXVIEW_TexImport_Match_Size_TT"));
 
         // Encoder
@@ -219,18 +219,18 @@ public class TextureImport
 
             string[] sizeLabels = [LOC.Get("TEXVIEW_TexImport_Cell_Size_Image"), LOC.Get("TEXVIEW_TexImport_Cell_Size_Selected")];
             ImGui.SetNextItemWidth(-1);
-            if (ImGui.BeginCombo("##textureImportCellSize", sizeLabels[Math.Clamp(CFG.Current.TextureViewerImport_CellSizeMode, 0, 1)]))
+            if (ImGui.BeginCombo("##textureImportCellSize", sizeLabels[Math.Clamp(CFG.Current.TextureViewer.TextureViewerImport_CellSizeMode, 0, 1)]))
             {
                 for (int i = 0; i < sizeLabels.Length; i++)
                 {
-                    if (ImGui.Selectable($"{sizeLabels[i]}##cellSize{i}", CFG.Current.TextureViewerImport_CellSizeMode == i))
-                        CFG.Current.TextureViewerImport_CellSizeMode = i;
+                    if (ImGui.Selectable($"{sizeLabels[i]}##cellSize{i}", CFG.Current.TextureViewer.TextureViewerImport_CellSizeMode == i))
+                        CFG.Current.TextureViewer.TextureViewerImport_CellSizeMode = i;
                 }
                 ImGui.EndCombo();
             }
             GUI.Tooltip(LOC.Get("TEXVIEW_TexImport_Cell_Size_TT"));
 
-            ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Grow_Sheet")}##textureImportGrow", ref CFG.Current.TextureViewerImport_GrowSheet);
+            ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Grow_Sheet")}##textureImportGrow", ref CFG.Current.TextureViewer.TextureViewerImport_GrowSheet);
             GUI.Tooltip(LOC.Get("TEXVIEW_TexImport_Grow_Sheet_TT"));
 
             GUI.ConditionalMultiButtonInput("textureImportNewCellActions",
@@ -290,7 +290,7 @@ public class TextureImport
         if (!PlatformUtils.Instance.OpenMultiFileDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Add"), TextureEncoder.FileDialogFilters, out var paths) || paths == null || paths.Count == 0)
             return;
 
-        CFG.Current.TextureViewerImport_LastFolder = Path.GetDirectoryName(paths[0]);
+        CFG.Current.TextureViewer.TextureViewerImport_LastFolder = Path.GetDirectoryName(paths[0]);
 
         var reference = View.Selection.SelectedTexture ?? target.Tpf.Textures.FirstOrDefault();
         var index = reference != null ? target.Tpf.Textures.IndexOf(reference) + 1 : target.Tpf.Textures.Count;
@@ -313,10 +313,10 @@ public class TextureImport
         if (target == null || IsRunning)
             return;
 
-        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Folder"), out var folder, CFG.Current.TextureViewerImport_LastFolder) || string.IsNullOrEmpty(folder))
+        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Folder"), out var folder, CFG.Current.TextureViewer.TextureViewerImport_LastFolder) || string.IsNullOrEmpty(folder))
             return;
 
-        CFG.Current.TextureViewerImport_LastFolder = folder;
+        CFG.Current.TextureViewer.TextureViewerImport_LastFolder = folder;
 
         var files = Directory.EnumerateFiles(folder)
             .Where(TextureEncoder.IsImageFile)
@@ -375,10 +375,10 @@ public class TextureImport
         if (target == null || tex == null || layout.Atlas == null || IsRunning)
             return;
 
-        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Cells_Folder"), out var folder, CFG.Current.TextureViewerImport_LastFolder) || string.IsNullOrEmpty(folder))
+        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Cells_Folder"), out var folder, CFG.Current.TextureViewer.TextureViewerImport_LastFolder) || string.IsNullOrEmpty(folder))
             return;
 
-        CFG.Current.TextureViewerImport_LastFolder = folder;
+        CFG.Current.TextureViewer.TextureViewerImport_LastFolder = folder;
 
         var files = Directory.EnumerateFiles(folder)
             .Where(TextureEncoder.IsImageFile)
@@ -426,7 +426,7 @@ public class TextureImport
         if (!PlatformUtils.Instance.OpenMultiFileDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Insert_Cells"), TextureEncoder.FileDialogFilters, out var paths) || paths == null || paths.Count == 0)
             return;
 
-        CFG.Current.TextureViewerImport_LastFolder = Path.GetDirectoryName(paths[0]);
+        CFG.Current.TextureViewer.TextureViewerImport_LastFolder = Path.GetDirectoryName(paths[0]);
 
         var atlas = layout.Atlas;
         var template = layout.Primary ?? atlas.SubTextures.LastOrDefault();
@@ -439,7 +439,7 @@ public class TextureImport
         foreach (var path in paths)
         {
             int w, h;
-            if (CFG.Current.TextureViewerImport_CellSizeMode == 1 && templateRect.W > 0)
+            if (CFG.Current.TextureViewer.TextureViewerImport_CellSizeMode == 1 && templateRect.W > 0)
             {
                 (w, h) = (templateRect.W, templateRect.H);
             }
@@ -455,7 +455,7 @@ public class TextureImport
             items.Add(($"{stem}{extension}", w, h, path));
         }
 
-        var plan = PlanNewCells(atlas, template, items, layout.SheetWidth, layout.SheetHeight, CFG.Current.TextureViewerImport_GrowSheet, failures);
+        var plan = PlanNewCells(atlas, template, items, layout.SheetWidth, layout.SheetHeight, CFG.Current.TextureViewer.TextureViewerImport_GrowSheet, failures);
 
         if (plan.Cells.Count == 0)
         {
@@ -503,7 +503,7 @@ public class TextureImport
             else
             {
                 // The low size: the name family's choice (or the sheet's), unless the user picked one
-                var scale = CFG.Current.TextureViewerTwin_ScaleMode switch
+                var scale = CFG.Current.TextureViewer.TextureViewerTwin_ScaleMode switch
                 {
                     1 => 1.0,
                     2 => 0.5,
@@ -518,7 +518,7 @@ public class TextureImport
 
         var failures = new List<string>();
         var template = twin.Atlas.SubTextures.LastOrDefault();
-        var plan = PlanNewCells(twin.Atlas, template, add, twin.SheetWidth, twin.SheetHeight, CFG.Current.TextureViewerImport_GrowSheet, failures);
+        var plan = PlanNewCells(twin.Atlas, template, add, twin.SheetWidth, twin.SheetHeight, CFG.Current.TextureViewer.TextureViewerImport_GrowSheet, failures);
 
         // New low cells cut their pixels from the hi sheet; half cells say so
         var cells = replace.Concat(plan.Cells.Select(c => c with { FromSheet = tex.Bytes, FromRect = sources[c.Name] })).ToList();
@@ -615,11 +615,11 @@ public class TextureImport
 
     private bool PickFile(string title, out string path)
     {
-        var ok = PlatformUtils.Instance.OpenFileDialog(title, TextureEncoder.FileDialogFilters, CFG.Current.TextureViewerImport_LastFolder, out path);
+        var ok = PlatformUtils.Instance.OpenFileDialog(title, TextureEncoder.FileDialogFilters, CFG.Current.TextureViewer.TextureViewerImport_LastFolder, out path);
 
         if (ok && !string.IsNullOrEmpty(path))
         {
-            CFG.Current.TextureViewerImport_LastFolder = Path.GetDirectoryName(path);
+            CFG.Current.TextureViewer.TextureViewerImport_LastFolder = Path.GetDirectoryName(path);
             return true;
         }
 
@@ -652,7 +652,7 @@ public class TextureImport
         // A new texture keeps its own size, and gets a full chain unless top level only was asked for
         request.ResizeWidth = 0;
         request.ResizeHeight = 0;
-        if (CFG.Current.TextureViewerImport_MipMode == 0)
+        if (CFG.Current.TextureViewer.TextureViewerImport_MipMode == 0)
             request.MipLevels = 0;
 
         var formatByte = TextureFormats.SuggestFormatByte(Project.Descriptor.ProjectType, target.Tpf, request.TargetFormat);
@@ -663,9 +663,9 @@ public class TextureImport
     /// <summary>The encode settings for replacing a texture described by info, from the tool's options.</summary>
     private static TextureEncodeRequest MakeRequest(TextureInfo info)
     {
-        var target = CFG.Current.TextureViewerImport_Format == 0 ? info.Dxgi : CFG.Current.TextureViewerImport_Format;
+        var target = CFG.Current.TextureViewer.TextureViewerImport_Format == 0 ? info.Dxgi : CFG.Current.TextureViewer.TextureViewerImport_Format;
 
-        int mips = CFG.Current.TextureViewerImport_MipMode switch
+        int mips = CFG.Current.TextureViewer.TextureViewerImport_MipMode switch
         {
             1 => 0,
             2 => 1,
@@ -681,8 +681,8 @@ public class TextureImport
             // Only when the format is kept: a legacy FourCC names the old format
             LegacyFourCC = target == info.Dxgi ? info.FourCC : null,
             MipLevels = mips,
-            ResizeWidth = CFG.Current.TextureViewerImport_MatchSize ? info.Width : 0,
-            ResizeHeight = CFG.Current.TextureViewerImport_MatchSize ? info.Height : 0,
+            ResizeWidth = CFG.Current.TextureViewer.TextureViewerImport_MatchSize ? info.Width : 0,
+            ResizeHeight = CFG.Current.TextureViewer.TextureViewerImport_MatchSize ? info.Height : 0,
         };
     }
 
@@ -722,7 +722,7 @@ public class TextureImport
             {
                 var before = failures.Count;
                 plan = PlanNewCells(first.Atlas, adds[0].Template, adds.Select(r => (r.CellName, r.CellWidth, r.CellHeight, r.ImagePath)).ToList(),
-                    first.SheetWidth, first.SheetHeight, CFG.Current.TextureViewerImport_GrowSheet, failures);
+                    first.SheetWidth, first.SheetHeight, CFG.Current.TextureViewer.TextureViewerImport_GrowSheet, failures);
 
                 if (failures.Count > before)
                     return false;

@@ -177,7 +177,7 @@ public class LuaFileList
         GUI.Tooltip(LOC.Get("LUA_FileList_Character_TT", chr));
         if (alias.Length == 0)
             return false;
-        GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+        GUI.DisplayAlias(alias, CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
         return true;
     }
 
@@ -187,7 +187,7 @@ public class LuaFileList
     /// </summary>
     private void UsersText(int? goalId, bool afterAlias)
     {
-        if (!CFG.Current.LuaEditor_File_List_Display_Users || goalId is not { } id)
+        if (!CFG.Current.LuaEditor.LuaEditor_File_List_Display_Users || goalId is not { } id)
             return;
 
         var users = Editor.Project.Handler.LuaData?.UsersOf(id);
@@ -234,7 +234,7 @@ public class LuaFileList
 
     private bool IsMatch(string name, int? goalId, string chr, Func<VanillaStatus> status)
     {
-        var users = CFG.Current.LuaEditor_File_List_Display_Users && goalId is { } id
+        var users = CFG.Current.LuaEditor.LuaEditor_File_List_Display_Users && goalId is { } id
             ? string.Join(" ", Editor.Project.Handler.LuaData?.UsersOf(id).Select(u => u.Name) ?? Array.Empty<string>())
             : "";
         // The character's ID and alias match too; "modified" / "added" match the vanilla state

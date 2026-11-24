@@ -197,7 +197,7 @@ public sealed class CutsceneModelPool : IDisposable
             OnlyNames = names
         });
 
-        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+        if (CFG.Current.CutsceneEditor.CutsceneEditor_Diagnostics_Log)
             Smithbox.Log(this, $"[Cutscene Editor] {file.Name}: loading {names.Count} vertex animation textures from {string.Join(", ", VertexAnimationContainers)}");
     }
 

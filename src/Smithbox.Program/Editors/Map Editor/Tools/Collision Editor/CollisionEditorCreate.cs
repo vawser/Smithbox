@@ -145,9 +145,9 @@ public class CollisionEditorCreate
     {
         switch (type)
         {
-            case "h": return ref CFG.Current.MapEditor_CollisionEditor_Create_High;
-            case "l": return ref CFG.Current.MapEditor_CollisionEditor_Create_Low;
-            default: return ref CFG.Current.MapEditor_CollisionEditor_Create_Fall;
+            case "h": return ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Create_High;
+            case "l": return ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Create_Low;
+            default: return ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Create_Fall;
         }
     }
 
@@ -228,9 +228,9 @@ public class CollisionEditorCreate
         // Fall Protection
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Fall_Header"), LOC.Get("MAP_CollisionEditor_Create_Fall_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Fall);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Fall);
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Create_Fall)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Fall)
             FallProtection.DisplayOptions();
     }
 
@@ -320,7 +320,7 @@ public class CollisionEditorCreate
                 : Vector3.Zero;
 
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Orb_Position",
-                $"{CFG.Current.PlacementOrb_Distance:0.#}", $"{orb.X:0.##}, {orb.Y:0.##}, {orb.Z:0.##}"));
+                $"{CFG.Current.MapEditor.PlacementOrb_Distance:0.#}", $"{orb.X:0.##}, {orb.Y:0.##}, {orb.Z:0.##}"));
         }
 
         // The shape's own inputs straight after it, as they change with it
@@ -328,7 +328,7 @@ public class CollisionEditorCreate
 
         // A User-Defined line is a wall, which faces sideways and has its own flip
         var usesFacing = Shape is not CollisionCreateShape.UserDefined
-            || CFG.Current.MapEditor_CollisionEditor_User_Mode is not CollisionUserDefinedMode.Line;
+            || CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode is not CollisionUserDefinedMode.Line;
 
         if (usesFacing)
         {
@@ -349,7 +349,7 @@ public class CollisionEditorCreate
 
                 ImGui.EndCombo();
             }
-            GUI.Tooltip(LOC.Get(Shape is CollisionCreateShape.UserDefined && CFG.Current.MapEditor_CollisionEditor_User_Mode is CollisionUserDefinedMode.Box
+            GUI.Tooltip(LOC.Get(Shape is CollisionCreateShape.UserDefined && CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode is CollisionUserDefinedMode.Box
                 ? "MAP_CollisionEditor_User_Facing_Box_TT"
                 : "MAP_CollisionEditor_Create_Facing_Input_TT"));
         }
@@ -357,9 +357,9 @@ public class CollisionEditorCreate
         // Collision Material
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Material_Header"), LOC.Get("MAP_CollisionEditor_Create_Material_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Material);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Material);
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Create_Material)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Material)
         {
             MaterialPicker.Display(ref MaterialId, []);
         }
@@ -470,9 +470,9 @@ public class CollisionEditorCreate
         // warnings and actions (and the FLVER meshes have a header of their own)
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Parameters_Header"), LOC.Get("MAP_CollisionEditor_Create_Parameters_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Parameters);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Parameters);
 
-        var open = CFG.Current.MapEditor_CollisionEditor_Show_Create_Parameters;
+        var open = CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Parameters;
 
         if (Shape is CollisionCreateShape.SelectedFlver)
         {
@@ -577,7 +577,7 @@ public class CollisionEditorCreate
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Flver_Meshes_Header"),
             LOC.Get("MAP_CollisionEditor_Create_Flver_Meshes_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Meshes);
 
         if (ImGui.Button($"{LOC.Get("MAP_CollisionEditor_Create_Flver_All")}##collisionCreateMeshesAll"))
         {
@@ -594,7 +594,7 @@ public class CollisionEditorCreate
         }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_None_TT"));
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Meshes)
         {
             ImGui.BeginChild("collisionCreateMeshList", new Vector2(0, 150 * DPI.UIScale()), ImGuiChildFlags.Borders);
 
@@ -641,40 +641,40 @@ public class CollisionEditorCreate
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header"),
             LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Flver_Simplify);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Simplify);
 
-        if (!CFG.Current.MapEditor_CollisionEditor_Show_Flver_Simplify)
+        if (!CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Flver_Simplify)
         {
             // Hidden, whether it runs is still said, as it changes what Create makes
-            if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+            if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify)
                 GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Applying"));
             return;
         }
 
         ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify")}##collisionCreateSimplify",
-            ref CFG.Current.MapEditor_CollisionEditor_Flver_Simplify);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_TT"));
 
-        ImGui.BeginDisabled(!CFG.Current.MapEditor_CollisionEditor_Flver_Simplify);
+        ImGui.BeginDisabled(!CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify);
 
-        var target = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target;
+        var target = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target;
         if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Target")}##collisionCreateSimplifyTarget", ref target, 5f, 10f, "%.0f%%"))
-            CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target = Math.Clamp(target, MinSimplifyTarget, MaxSimplifyTarget);
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target = Math.Clamp(target, MinSimplifyTarget, MaxSimplifyTarget);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Target_TT"));
 
-        var error = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error;
+        var error = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error;
         if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Max_Error")}##collisionCreateSimplifyError", ref error, 0.05f, 0.25f, "%.3f m"))
-            CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error = MathF.Max(error, MinSimplifyError);
+            CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error = MathF.Max(error, MinSimplifyError);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Max_Error_TT"));
 
         ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders")}##collisionCreateSimplifyLock",
-            ref CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders_TT"));
 
         ImGui.EndDisabled();
 
         // The last build's result, as of the last time the inputs changed
-        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify && SimplifiedFrom > 0)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify && SimplifiedFrom > 0)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Result", SimplifiedFrom, SimplifiedTo,
                 $"{100.0 * SimplifiedTo / SimplifiedFrom:0.#}"));
@@ -690,7 +690,7 @@ public class CollisionEditorCreate
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Preview_Header"),
             LOC.Get("MAP_CollisionEditor_Create_Preview_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Preview);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Preview);
 
         UpdateGeometry(map);
 
@@ -700,7 +700,7 @@ public class CollisionEditorCreate
             return;
         }
 
-        if (CFG.Current.MapEditor_CollisionEditor_Show_Create_Preview)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Show_Create_Preview)
         {
             var size = MathF.Min(ImGui.GetContentRegionAvail().X, MeshPreviewRenderer.Resolution * DPI.UIScale());
             size = MathF.Max(size, ModelPreviewBrowser.MinPreviewSize * DPI.UIScale());
@@ -755,7 +755,7 @@ public class CollisionEditorCreate
         if (!GeometryValid || !MeshPreviewRenderer.IsSupported)
             return;
 
-        var color = CFG.Current.Viewport_Collision_Color;
+        var color = CFG.Current.Viewport.Viewport_Collision_Color;
         Preview = MeshPreviewRenderer.Request(vertices, indices,
             Color.FromArgb(255, (byte)color.X, (byte)color.Y, (byte)color.Z));
     }
@@ -799,11 +799,11 @@ public class CollisionEditorCreate
                 key.Append(selected ? '1' : '0');
         }
 
-        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify)
         {
-            key.Append("|simplify/").Append(CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target)
-                .Append('/').Append(CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error)
-                .Append('/').Append(CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
+            key.Append("|simplify/").Append(CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target)
+                .Append('/').Append(CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error)
+                .Append('/').Append(CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
         }
 
         return key.ToString();
@@ -1157,15 +1157,15 @@ public class CollisionEditorCreate
             return false;
 
         // Simplified after the weld, as the collapses follow the edges the sources now share
-        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify)
         {
             var before = indices.Count / 3;
 
             (vertices, indices, materials) = CollisionMeshSimplifier.Simplify(welded, indices, materials, new CollisionMeshSimplifier.Settings
             {
-                TargetRatio = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target / 100f,
-                MaxError = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error,
-                LockBorders = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders
+                TargetRatio = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Target / 100f,
+                MaxError = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Max_Error,
+                LockBorders = CFG.Current.MapEditor.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders
             });
 
             SimplifiedFrom = before;

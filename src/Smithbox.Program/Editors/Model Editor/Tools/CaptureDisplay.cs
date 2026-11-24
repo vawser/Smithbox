@@ -19,11 +19,11 @@ public sealed class CaptureDisplay
     {
         Scene = scene;
         HidesGrid = hideGrid;
-        Dummies = CFG.Current.ModelEditor_DisplayDummies;
-        Nodes = CFG.Current.ModelEditor_DisplayNodes;
-        DummyLabels = CFG.Current.ModelEditor_DisplayDummyLabels;
-        NodeLabels = CFG.Current.ModelEditor_DisplayNodeLabels;
-        Grid = CFG.Current.Interface_ModelEditor_Viewport_Grid;
+        Dummies = CFG.Current.ModelEditor.ModelEditor_DisplayDummies;
+        Nodes = CFG.Current.ModelEditor.ModelEditor_DisplayNodes;
+        DummyLabels = CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels;
+        NodeLabels = CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels;
+        Grid = CFG.Current.Interface.Interface_ModelEditor_Viewport_Grid;
         Collision = scene?.DrawFilter.HasFlag(RenderFilter.Collision) ?? false;
     }
 
@@ -32,27 +32,27 @@ public sealed class CaptureDisplay
     {
         var saved = new CaptureDisplay(scene, hideGrid);
 
-        CFG.Current.ModelEditor_DisplayDummies = false;
-        CFG.Current.ModelEditor_DisplayNodes = false;
-        CFG.Current.ModelEditor_DisplayDummyLabels = false;
-        CFG.Current.ModelEditor_DisplayNodeLabels = false;
+        CFG.Current.ModelEditor.ModelEditor_DisplayDummies = false;
+        CFG.Current.ModelEditor.ModelEditor_DisplayNodes = false;
+        CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels = false;
+        CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels = false;
         scene?.SetDrawFilter(RenderFilter.Collision, false);
 
         if (hideGrid)
-            CFG.Current.Interface_ModelEditor_Viewport_Grid = false;
+            CFG.Current.Interface.Interface_ModelEditor_Viewport_Grid = false;
 
         return saved;
     }
 
     public void Restore()
     {
-        CFG.Current.ModelEditor_DisplayDummies = Dummies;
-        CFG.Current.ModelEditor_DisplayNodes = Nodes;
-        CFG.Current.ModelEditor_DisplayDummyLabels = DummyLabels;
-        CFG.Current.ModelEditor_DisplayNodeLabels = NodeLabels;
+        CFG.Current.ModelEditor.ModelEditor_DisplayDummies = Dummies;
+        CFG.Current.ModelEditor.ModelEditor_DisplayNodes = Nodes;
+        CFG.Current.ModelEditor.ModelEditor_DisplayDummyLabels = DummyLabels;
+        CFG.Current.ModelEditor.ModelEditor_DisplayNodeLabels = NodeLabels;
         Scene?.SetDrawFilter(RenderFilter.Collision, Collision);
 
         if (HidesGrid)
-            CFG.Current.Interface_ModelEditor_Viewport_Grid = Grid;
+            CFG.Current.Interface.Interface_ModelEditor_Viewport_Grid = Grid;
     }
 }

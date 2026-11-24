@@ -259,15 +259,15 @@ public class ModelHistoryTool
 
         // Kept Models
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MODEL_History_Tool_Kept_Header", kept.Count, CFG.Current.ModelEditor_History_Parked_Limit),
+        GUI.SimpleHeader(LOC.Get("MODEL_History_Tool_Kept_Header", kept.Count, CFG.Current.ModelEditor.ModelEditor_History_Parked_Limit),
             LOC.Get("MODEL_History_Tool_Kept_Header_TT"));
 
-        var limit = CFG.Current.ModelEditor_History_Parked_Limit;
+        var limit = CFG.Current.ModelEditor.ModelEditor_History_Parked_Limit;
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.SliderInt("##modelHistoryKeptLimit", ref limit, 0, 16))
         {
-            CFG.Current.ModelEditor_History_Parked_Limit = limit;
+            CFG.Current.ModelEditor.ModelEditor_History_Parked_Limit = limit;
         }
         GUI.Tooltip(LOC.Get("MODEL_History_Tool_Kept_Limit_TT"));
 

@@ -43,11 +43,11 @@ public class TextFileList
 
         if (ImGui.Button($"{Icons.Bars}##toggleDisplayMode"))
         {
-            CFG.Current.TextEditor_Text_File_List_Grouped_Display = !CFG.Current.TextEditor_Text_File_List_Grouped_Display;
+            CFG.Current.TextEditor.TextEditor_Text_File_List_Grouped_Display = !CFG.Current.TextEditor.TextEditor_Text_File_List_Grouped_Display;
         }
 
         var displayMode = LOC.Get("TEXT_FileList_Toggle_Grouped_Display");
-        if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
+        if (!CFG.Current.TextEditor.TextEditor_Text_File_List_Grouped_Display)
             displayMode = LOC.Get("TEXT_FileList_Toggle_Individual_Display");
 
         GUI.Tooltip(
@@ -84,7 +84,7 @@ public class TextFileList
     public void DisplayFmgListEntries()
     {
         // If not in Simple mode, display all FMG files fully
-        if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
+        if (!CFG.Current.TextEditor.TextEditor_Text_File_List_Grouped_Display)
         {
             var info = View.Selection.SelectedContainerWrapper;
 
@@ -331,18 +331,18 @@ public class TextFileList
         {
             var selectableName = $"{displayName}";
 
-            if (!CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
+            if (!CFG.Current.TextEditor.TextEditor_Text_File_List_Display_Community_Names)
             {
                 selectableName = $"{fmgName}";
             }
 
-            if (CFG.Current.TextEditor_Text_File_List_Display_ID)
+            if (CFG.Current.TextEditor.TextEditor_Text_File_List_Display_ID)
             {
                 selectableName = $"[{id}] {selectableName}";
             }
 
             // Only show DLC markers in non Simple mode
-            if(!CFG.Current.TextEditor_Text_File_List_Grouped_Display && dlcGroupingName != "")
+            if(!CFG.Current.TextEditor.TextEditor_Text_File_List_Grouped_Display && dlcGroupingName != "")
             {
                 selectableName = $"{selectableName} [{dlcGroupingName}]";
             }

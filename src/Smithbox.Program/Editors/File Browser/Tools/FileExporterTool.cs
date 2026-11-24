@@ -21,8 +21,8 @@ public class FileExporterTool
         Project = project;
 
         ExtractionPath = project.Descriptor.ProjectPath;
-        if (CFG.Current.ExtractDirectory != "")
-            ExtractionPath = CFG.Current.ExtractDirectory;
+        if (CFG.Current.FileBrowser.ExtractDirectory != "")
+            ExtractionPath = CFG.Current.FileBrowser.ExtractDirectory;
     }
 
     public void Display()
@@ -39,7 +39,7 @@ public class FileExporterTool
         GUI.HintTextInput("##outputDir", ref ExtractionPath, LOC.Get("FILE_FileExporter_Export_Dir_Hint"));
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
-            CFG.Current.ExtractDirectory = ExtractionPath;
+            CFG.Current.FileBrowser.ExtractDirectory = ExtractionPath;
         }
 
         GUI.Spacer();
@@ -47,24 +47,24 @@ public class FileExporterTool
             LOC.Get("FILE_FileExporter_Options_Header"),
             LOC.Get("FILE_FileExporter_Options_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FILE_FileExporter_Overwrite")}##exportOverwrite", ref CFG.Current.FileBrowser_Export_Overwrite);
+        ImGui.Checkbox($"{LOC.Get("FILE_FileExporter_Overwrite")}##exportOverwrite", ref CFG.Current.FileBrowser.FileBrowser_Export_Overwrite);
         GUI.Tooltip(LOC.Get("FILE_FileExporter_Overwrite_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FILE_FileExporter_Keep_Container_Path")}##exportKeepPath", ref CFG.Current.FileBrowser_Export_Keep_Container_Path);
+        ImGui.Checkbox($"{LOC.Get("FILE_FileExporter_Keep_Container_Path")}##exportKeepPath", ref CFG.Current.FileBrowser.FileBrowser_Export_Keep_Container_Path);
         GUI.Tooltip(LOC.Get("FILE_FileExporter_Keep_Container_Path_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FILE_FileExporter_Decompress")}##exportDecompress", ref CFG.Current.FileBrowser_Export_Decompress);
+        ImGui.Checkbox($"{LOC.Get("FILE_FileExporter_Decompress")}##exportDecompress", ref CFG.Current.FileBrowser.FileBrowser_Export_Decompress);
         GUI.Tooltip(LOC.Get("FILE_FileExporter_Decompress_TT"));
 
         // Texture format, as in the Texture Viewer's export
-        var textureType = CFG.Current.FileBrowser_Export_Texture_Type;
+        var textureType = CFG.Current.FileBrowser.FileBrowser_Export_Texture_Type;
         DPI.ApplyInputWidth();
         if (ImGui.BeginCombo($"{LOC.Get("FILE_FileExporter_Texture_Format")}##exportTextureType", LOC.Get(textureType.GetDisplayName())))
         {
             foreach (TextureExportType type in Enum.GetValues(typeof(TextureExportType)))
             {
                 if (ImGui.Selectable(LOC.Get(type.GetDisplayName()), type == textureType))
-                    CFG.Current.FileBrowser_Export_Texture_Type = type;
+                    CFG.Current.FileBrowser.FileBrowser_Export_Texture_Type = type;
             }
 
             ImGui.EndCombo();
@@ -140,7 +140,7 @@ public class FileExporterTool
         if (result)
         {
             ExtractionPath = newOutputDir;
-            CFG.Current.ExtractDirectory = newOutputDir;
+            CFG.Current.FileBrowser.ExtractDirectory = newOutputDir;
         }
     }
 
@@ -169,7 +169,7 @@ public class FileExporterTool
 
         foreach (var path in paths)
         {
-            var result = ExtractVfsPath(path, ExtractionPath, CFG.Current.FileBrowser_Export_Overwrite, logEach: false);
+            var result = ExtractVfsPath(path, ExtractionPath, CFG.Current.FileBrowser.FileBrowser_Export_Overwrite, logEach: false);
 
             var message = result switch
             {
@@ -366,7 +366,7 @@ public class FileExporterTool
     /// </summary>
     private string GetInnerFolder(string containerPath, string key)
     {
-        if (!CFG.Current.FileBrowser_Export_Keep_Container_Path)
+        if (!CFG.Current.FileBrowser.FileBrowser_Export_Keep_Container_Path)
             return ExtractionPath;
 
         var folder = GetContainerFolder(containerPath);
@@ -451,14 +451,14 @@ public class FileExporterTool
     /// </summary>
     private void WriteTexture(string folder, TPF tpf, TPF.Texture texture)
     {
-        var type = CFG.Current.FileBrowser_Export_Texture_Type;
+        var type = CFG.Current.FileBrowser.FileBrowser_Export_Texture_Type;
         var name = Path.GetFileName(texture.Name);
         var basePath = Path.Combine(folder, name);
         var writePath = basePath + TexUtils.GetExportExtension(type);
 
         try
         {
-            if (File.Exists(writePath) && !CFG.Current.FileBrowser_Export_Overwrite)
+            if (File.Exists(writePath) && !CFG.Current.FileBrowser.FileBrowser_Export_Overwrite)
             {
                 Smithbox.Log(this, LOC.Get("FILE_FileExporter_Skipped_Existing", writePath));
                 return;
@@ -496,7 +496,7 @@ public class FileExporterTool
             return;
         }
 
-        if (CFG.Current.FileBrowser_Export_Decompress && DCX.Is(data))
+        if (CFG.Current.FileBrowser.FileBrowser_Export_Decompress && DCX.Is(data))
         {
             data = DCX.Decompress(data);
 
@@ -508,7 +508,7 @@ public class FileExporterTool
 
         try
         {
-            if (File.Exists(writePath) && !CFG.Current.FileBrowser_Export_Overwrite)
+            if (File.Exists(writePath) && !CFG.Current.FileBrowser.FileBrowser_Export_Overwrite)
             {
                 Smithbox.Log(this, LOC.Get("FILE_FileExporter_Skipped_Existing", writePath));
                 return;
@@ -575,7 +575,7 @@ public class FileExporterTool
 
         var unpackPath = ExtractionPath;
         var folderName = folder.Name;
-        var overwrite = CFG.Current.FileBrowser_Export_Overwrite;
+        var overwrite = CFG.Current.FileBrowser.FileBrowser_Export_Overwrite;
 
         Task.Run(() =>
         {
@@ -647,7 +647,7 @@ public class FileExporterTool
         IsFolderExporting = true;
 
         var exportRoot = ExtractionPath;
-        var overwrite = CFG.Current.FileBrowser_Export_Overwrite;
+        var overwrite = CFG.Current.FileBrowser.FileBrowser_Export_Overwrite;
 
         Task.Run(() =>
         {
@@ -697,7 +697,7 @@ public class FileExporterTool
             var outRel = relPath.Replace('\\', '/').TrimStart('/');
 
             // Decompress DCX: the written file drops ".dcx", so check for that name
-            var decompress = CFG.Current.FileBrowser_Export_Decompress;
+            var decompress = CFG.Current.FileBrowser.FileBrowser_Export_Decompress;
             if (decompress && outRel.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
                 outRel = outRel[..^4];
 

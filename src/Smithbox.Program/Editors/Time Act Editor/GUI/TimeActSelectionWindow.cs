@@ -146,7 +146,7 @@ public class TimeActSelectionWindow
 
                 if (alias != "")
                 {
-                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                    GUI.DisplayAlias(alias, CFG.Current.Interface.Interface_Alias_Wordwrap_Model_Editor);
                 }
             }
         }
@@ -286,9 +286,9 @@ public class TimeActSelectionWindow
 
         // Open Export Folder
         if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Open_Export_Folder")}##openTimeActExportFolder", "",
-            false, Directory.Exists(CFG.Current.TimeActEditor_Export_Directory)))
+            false, Directory.Exists(CFG.Current.TimeActEditor.TimeActEditor_Export_Directory)))
         {
-            Process.Start("explorer.exe", CFG.Current.TimeActEditor_Export_Directory);
+            Process.Start("explorer.exe", CFG.Current.TimeActEditor.TimeActEditor_Export_Directory);
         }
 
         ImGui.EndPopup();
@@ -473,7 +473,7 @@ public class TimeActSelectionWindow
 
     public static string GetExportFolderLabel()
     {
-        var folder = CFG.Current.TimeActEditor_Export_Directory;
+        var folder = CFG.Current.TimeActEditor.TimeActEditor_Export_Directory;
 
         return string.IsNullOrEmpty(folder) ? LOC.Get("TAE_SelectionWindow_Export_Folder_Unset") : folder;
     }
@@ -483,7 +483,7 @@ public class TimeActSelectionWindow
         if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TAE_SelectionWindow_Dialog_Select_Export_Folder"), out var folder))
             return false;
 
-        CFG.Current.TimeActEditor_Export_Directory = folder;
+        CFG.Current.TimeActEditor.TimeActEditor_Export_Directory = folder;
 
         return true;
     }
@@ -494,10 +494,10 @@ public class TimeActSelectionWindow
     /// </summary>
     private void ExportTimeAct(TimeActContainerWrapper source, TimeActEntry entry)
     {
-        if (!Directory.Exists(CFG.Current.TimeActEditor_Export_Directory) && !SelectExportFolder())
+        if (!Directory.Exists(CFG.Current.TimeActEditor.TimeActEditor_Export_Directory) && !SelectExportFolder())
             return;
 
-        var exportPath = Path.Join(CFG.Current.TimeActEditor_Export_Directory, source.Name, $"{entry.Name}.tae");
+        var exportPath = Path.Join(CFG.Current.TimeActEditor.TimeActEditor_Export_Directory, source.Name, $"{entry.Name}.tae");
 
         if (File.Exists(exportPath))
         {

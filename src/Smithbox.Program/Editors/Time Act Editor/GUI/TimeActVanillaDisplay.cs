@@ -10,7 +10,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// </summary>
 public static class TimeActVanillaDisplay
 {
-    public static bool Enabled => CFG.Current.TimeActEditor_Display_Vanilla_Markers;
+    public static bool Enabled => CFG.Current.TimeActEditor.TimeActEditor_Display_Vanilla_Markers;
 
     public static Vector4? GetColor(TimeActVanillaStatus status) => status switch
     {

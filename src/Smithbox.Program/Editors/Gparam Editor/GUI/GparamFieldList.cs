@@ -129,7 +129,7 @@ public class GparamFieldList
 
         // Fields the viewport's renderer reads say so in their tooltip, so the user knows editing them can be
         // previewed; the text colour is always the vanilla state (modified / added against the game's file)
-        var isRendered = CFG.Current.GparamEditor_Highlight_Viewport_Fields &&
+        var isRendered = CFG.Current.GparamEditor.GparamEditor_Highlight_Viewport_Fields &&
                          View.ViewportWindow.LightingBank.IsRenderedField(group.Key, field.Key);
 
         var vanillaStatus = View.VanillaCompare.FieldStatus(fileEntry, group, field);
@@ -156,7 +156,7 @@ public class GparamFieldList
 
         VanillaMarkers.PopColour(coloured);
 
-        var tooltip = CFG.Current.GparamEditor_Field_List_Display_Descriptions ? fieldDesc : "";
+        var tooltip = CFG.Current.GparamEditor.GparamEditor_Field_List_Display_Descriptions ? fieldDesc : "";
 
         if (isRendered)
         {
@@ -408,7 +408,7 @@ public class GparamFieldList
                 curOption.ToAdd = curState;
             }
 
-            if (CFG.Current.GparamEditor_Field_List_Display_Descriptions)
+            if (CFG.Current.GparamEditor.GparamEditor_Field_List_Display_Descriptions)
             {
                 var desc = "";
 
@@ -446,7 +446,7 @@ public class GparamFieldList
         if (param == null)
             return;
 
-        var language = CFG.Current.GparamEditor_Annotation_Language;
+        var language = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
         if (AddOptionsGroupKey == param.Key && AddOptionsLanguage == language)
             return;

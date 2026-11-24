@@ -37,7 +37,7 @@ public class BoxSelection
 
     public void Update()
     {
-        if (CFG.Current.Viewport_Enable_Box_Selection && !Parent.Gizmos.IsMouseBusy())
+        if (CFG.Current.Viewport.Viewport_Enable_Box_Selection && !Parent.Gizmos.IsMouseBusy())
         {
             Vector2 mousePos = InputManager.MousePosition;
 
@@ -165,7 +165,7 @@ public class BoxSelection
 
                 if (curEnt is MsbEntity ent)
                 {
-                    if(!CFG.Current.Viewport_Enable_Box_Selection_MapPiece)
+                    if(!CFG.Current.Viewport.Viewport_Enable_Box_Selection_MapPiece)
                     {
                         if(EntityHelper.IsPartMapPiece(ent))
                         {
@@ -173,7 +173,7 @@ public class BoxSelection
                         }
                     }
 
-                    if (!CFG.Current.Viewport_Enable_Box_Selection_Asset)
+                    if (!CFG.Current.Viewport.Viewport_Enable_Box_Selection_Asset)
                     {
                         if (EntityHelper.IsPartAsset(ent) || EntityHelper.IsPartDummyAsset(ent) || EntityHelper.IsPartPrefabAsset(ent))
                         {
@@ -181,7 +181,7 @@ public class BoxSelection
                         }
                     }
 
-                    if (!CFG.Current.Viewport_Enable_Box_Selection_Enemy)
+                    if (!CFG.Current.Viewport.Viewport_Enable_Box_Selection_Enemy)
                     {
                         if (EntityHelper.IsPartEnemy(ent) || EntityHelper.IsPartDummyEnemy(ent))
                         {
@@ -189,7 +189,7 @@ public class BoxSelection
                         }
                     }
 
-                    if (!CFG.Current.Viewport_Enable_Box_Selection_Player)
+                    if (!CFG.Current.Viewport.Viewport_Enable_Box_Selection_Player)
                     {
                         if (EntityHelper.IsPartPlayer(ent))
                         {
@@ -197,7 +197,7 @@ public class BoxSelection
                         }
                     }
 
-                    if (!CFG.Current.Viewport_Enable_Box_Selection_Collision)
+                    if (!CFG.Current.Viewport.Viewport_Enable_Box_Selection_Collision)
                     {
                         if (EntityHelper.IsPartCollision(ent) || EntityHelper.IsPartConnectCollision(ent))
                         {
@@ -205,7 +205,7 @@ public class BoxSelection
                         }
                     }
 
-                    if (!CFG.Current.Viewport_Enable_Box_Selection_Region)
+                    if (!CFG.Current.Viewport.Viewport_Enable_Box_Selection_Region)
                     {
                         if (EntityHelper.IsRegion(ent))
                         {
@@ -213,7 +213,7 @@ public class BoxSelection
                         }
                     }
 
-                    if (!CFG.Current.Viewport_Enable_Box_Selection_Light)
+                    if (!CFG.Current.Viewport.Viewport_Enable_Box_Selection_Light)
                     {
                         if (EntityHelper.IsLight(ent))
                         {

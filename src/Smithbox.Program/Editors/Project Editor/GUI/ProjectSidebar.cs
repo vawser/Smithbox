@@ -61,7 +61,7 @@ public class ProjectSidebar
     // The groups whose projects are hidden, toggled by double-clicking the group's title. Kept in the config so it
     // survives a restart; read through CFG.Current each time, as reverting the preferences replaces it.
     private static List<string> CollapsedGroups =>
-        CFG.Current.Interface_Project_List_Collapsed_Groups ??= new List<string>();
+        CFG.Current.Interface.Interface_Project_List_Collapsed_Groups ??= new List<string>();
 
     private const string OpenGroupKey = "open";
 

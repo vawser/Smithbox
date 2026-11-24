@@ -307,11 +307,11 @@ public class CollisionEditorUserDefined
 
     #region Drawing
 
-    private static float PointRadius => Math.Max(CFG.Current.MapEditor_CollisionEditor_User_Point_Size, 0.01f);
+    private static float PointRadius => Math.Max(CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Point_Size, 0.01f);
 
-    private static Color PointColor => ToColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
+    private static Color PointColor => ToColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Cursor_Color);
 
-    private static Color SelectedColor => ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color);
+    private static Color SelectedColor => ToColor(CFG.Current.MapEditor.MapEditor_CollisionEditor_Vertex_Color);
 
     private static Color ToColor(Vector3 c)
         => Color.FromArgb(255, (int)Math.Clamp(c.X, 0, 255), (int)Math.Clamp(c.Y, 0, 255), (int)Math.Clamp(c.Z, 0, 255));
@@ -381,8 +381,8 @@ public class CollisionEditorUserDefined
                 segments.Add((Points[i], Points[i + 1]));
         }
 
-        var closed = CFG.Current.MapEditor_CollisionEditor_User_Mode is not CollisionUserDefinedMode.Line
-            || CFG.Current.MapEditor_CollisionEditor_User_Closed;
+        var closed = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode is not CollisionUserDefinedMode.Line
+            || CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Closed;
 
         if (closed && Points.Count > 2 && Vector3.DistanceSquared(Points[^1], Points[0]) > 1e-10f)
             segments.Add((Points[^1], Points[0]));
@@ -396,7 +396,7 @@ public class CollisionEditorUserDefined
     /// </summary>
     private void UpdatePreviewMesh(Func<string> previewKey, Func<(List<Vector3> Vertices, List<int> Indices)?> buildPreview)
     {
-        var shown = !Placing && !AwaitingPick && CFG.Current.MapEditor_CollisionEditor_User_Show_Preview;
+        var shown = !Placing && !AwaitingPick && CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Show_Preview;
 
         if (!shown)
         {
@@ -416,7 +416,7 @@ public class CollisionEditorUserDefined
             if (buildPreview() is not { } geometry)
                 return;
 
-            var color = CFG.Current.Viewport_Collision_Color;
+            var color = CFG.Current.Viewport.Viewport_Collision_Color;
             var provider = RawMeshProvider.FromTriangles(geometry.Vertices, geometry.Indices,
                 Color.FromArgb(255, (int)color.X, (int)color.Y, (int)color.Z));
 
@@ -522,7 +522,7 @@ public class CollisionEditorUserDefined
     /// </summary>
     public void DisplayShapeOptions()
     {
-        var mode = CFG.Current.MapEditor_CollisionEditor_User_Mode;
+        var mode = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode;
 
         // Mode
         ImGui.SetNextItemWidth(-1);
@@ -532,7 +532,7 @@ public class CollisionEditorUserDefined
             {
                 if (ImGui.Selectable($"{LOC.Get(value.GetDisplayName())}##collisionUserMode{value}", value == mode))
                 {
-                    CFG.Current.MapEditor_CollisionEditor_User_Mode = value;
+                    CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode = value;
                     DrawingDirty = true;
                 }
                 GUI.Tooltip(LOC.Get($"MAP_CollisionEditor_User_Mode_{value}_TT"));
@@ -542,13 +542,13 @@ public class CollisionEditorUserDefined
         }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Mode_Input_TT"));
 
-        mode = CFG.Current.MapEditor_CollisionEditor_User_Mode;
+        mode = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode;
 
         if (mode is CollisionUserDefinedMode.Line or CollisionUserDefinedMode.Box)
         {
-            var height = CFG.Current.MapEditor_CollisionEditor_User_Height;
+            var height = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Height;
             if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_User_Height")}##collisionUserHeight", ref height, 0.5f, 1.0f, "%.2f"))
-                CFG.Current.MapEditor_CollisionEditor_User_Height = MathF.Max(height, MinHeight);
+                CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Height = MathF.Max(height, MinHeight);
             GUI.Tooltip(LOC.Get(mode is CollisionUserDefinedMode.Line
                 ? "MAP_CollisionEditor_User_Height_Line_TT"
                 : "MAP_CollisionEditor_User_Height_Box_TT"));
@@ -556,11 +556,11 @@ public class CollisionEditorUserDefined
 
         if (mode is CollisionUserDefinedMode.Line)
         {
-            if (ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Closed")}##collisionUserClosed", ref CFG.Current.MapEditor_CollisionEditor_User_Closed))
+            if (ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Closed")}##collisionUserClosed", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Closed))
                 DrawingDirty = true;
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Closed_TT"));
 
-            ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Flip")}##collisionUserFlip", ref CFG.Current.MapEditor_CollisionEditor_User_Flip);
+            ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Flip")}##collisionUserFlip", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Flip);
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Flip_TT"));
         }
     }
@@ -571,14 +571,14 @@ public class CollisionEditorUserDefined
     /// </summary>
     public void DisplayPoints(string problem)
     {
-        var mode = CFG.Current.MapEditor_CollisionEditor_User_Mode;
+        var mode = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode;
 
         // Points
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_User_Points_Header"), LOC.Get("MAP_CollisionEditor_User_Points_Header_TT"));
 
         // Placement
-        var placement = CFG.Current.MapEditor_CollisionEditor_User_Placement;
+        var placement = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Placement;
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##collisionUserPlacement", LOC.Get(placement.GetDisplayName())))
@@ -587,7 +587,7 @@ public class CollisionEditorUserDefined
             {
                 if (ImGui.Selectable($"{LOC.Get(value.GetDisplayName())}##collisionUserPlacement{value}", value == placement))
                 {
-                    CFG.Current.MapEditor_CollisionEditor_User_Placement = value;
+                    CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Placement = value;
 
                     // Clicks only place points with a raycast
                     if (value is not CollisionUserDefinedPlacement.Raycast)
@@ -602,13 +602,13 @@ public class CollisionEditorUserDefined
         }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Placement_Input_TT"));
 
-        placement = CFG.Current.MapEditor_CollisionEditor_User_Placement;
+        placement = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Placement;
 
         if (placement is CollisionUserDefinedPlacement.Gizmo)
         {
             ImGui.SetNextItemWidth(-1);
-            if (ImGui.InputFloat("##collisionUserSpawnSpacing", ref CFG.Current.MapEditor_CollisionEditor_User_Spawn_Spacing, 0.5f, 1.0f, "%.2f m"))
-                CFG.Current.MapEditor_CollisionEditor_User_Spawn_Spacing = MathF.Max(CFG.Current.MapEditor_CollisionEditor_User_Spawn_Spacing, 0f);
+            if (ImGui.InputFloat("##collisionUserSpawnSpacing", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Spawn_Spacing, 0.5f, 1.0f, "%.2f m"))
+                CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Spawn_Spacing = MathF.Max(CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Spawn_Spacing, 0f);
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Spawn_Spacing_TT"));
         }
 
@@ -656,9 +656,9 @@ public class CollisionEditorUserDefined
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_User_Point_List_Header"),
             LOC.Get("MAP_CollisionEditor_User_Point_List_Header_TT"),
-            ref CFG.Current.MapEditor_CollisionEditor_User_Show_Points);
+            ref CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Show_Points);
 
-        if (CFG.Current.MapEditor_CollisionEditor_User_Show_Points && Points.Count > 0)
+        if (CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Show_Points && Points.Count > 0)
         {
             ImGui.BeginChild("collisionUserPointList", new Vector2(0, 150 * DPI.UIScale()), ImGuiChildFlags.Borders);
 
@@ -696,11 +696,11 @@ public class CollisionEditorUserDefined
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_User_Display_Header"), LOC.Get("MAP_CollisionEditor_User_Display_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.SliderFloat("##collisionUserPointSize", ref CFG.Current.MapEditor_CollisionEditor_User_Point_Size, 0.02f, 2.0f, "%.2f m"))
+        if (ImGui.SliderFloat("##collisionUserPointSize", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Point_Size, 0.02f, 2.0f, "%.2f m"))
             DrawingDirty = true;
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Point_Size_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Show_Preview")}##collisionUserShowPreview", ref CFG.Current.MapEditor_CollisionEditor_User_Show_Preview);
+        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Show_Preview")}##collisionUserShowPreview", ref CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Show_Preview);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Show_Preview_TT"));
     }
 
@@ -744,7 +744,7 @@ public class CollisionEditorUserDefined
         {
             var after = Selected >= 0 && Selected < Points.Count ? Selected : Points.Count - 1;
 
-            position = Points[after] + new Vector3(CFG.Current.MapEditor_CollisionEditor_User_Spawn_Spacing, 0, 0);
+            position = Points[after] + new Vector3(CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Spawn_Spacing, 0, 0);
             index = after + 1;
         }
 
@@ -792,10 +792,10 @@ public class CollisionEditorUserDefined
         var key = new StringBuilder();
         var cfg = CFG.Current;
 
-        key.Append(cfg.MapEditor_CollisionEditor_User_Mode).Append('/')
-            .Append(cfg.MapEditor_CollisionEditor_User_Height.ToString(CultureInfo.InvariantCulture)).Append('/')
-            .Append(cfg.MapEditor_CollisionEditor_User_Closed).Append('/')
-            .Append(cfg.MapEditor_CollisionEditor_User_Flip).Append('/')
+        key.Append(cfg.MapEditor.MapEditor_CollisionEditor_User_Mode).Append('/')
+            .Append(cfg.MapEditor.MapEditor_CollisionEditor_User_Height.ToString(CultureInfo.InvariantCulture)).Append('/')
+            .Append(cfg.MapEditor.MapEditor_CollisionEditor_User_Closed).Append('/')
+            .Append(cfg.MapEditor.MapEditor_CollisionEditor_User_Flip).Append('/')
             .Append(facingUp).Append('/')
             .Append(Version);
 
@@ -816,8 +816,8 @@ public class CollisionEditorUserDefined
         vertices = new List<Vector3>();
         indices = new List<int>();
 
-        var mode = CFG.Current.MapEditor_CollisionEditor_User_Mode;
-        var height = MathF.Max(CFG.Current.MapEditor_CollisionEditor_User_Height, MinHeight);
+        var mode = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Mode;
+        var height = MathF.Max(CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Height, MinHeight);
 
         if (Points.Count < GetMinimumPoints(mode))
             return LOC.Get("MAP_CollisionEditor_User_Too_Few_Points", GetMinimumPoints(mode));
@@ -837,7 +837,7 @@ public class CollisionEditorUserDefined
     private string BuildLine(float height, List<Vector3> vertices, List<int> indices)
     {
         var points = WithoutRepeats(Points, closed: false);
-        var closed = CFG.Current.MapEditor_CollisionEditor_User_Closed && points.Count > 2;
+        var closed = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Closed && points.Count > 2;
 
         if (closed && HorizontalDistance(points[^1], points[0]) < MinSpacing)
             points.RemoveAt(points.Count - 1);
@@ -853,7 +853,7 @@ public class CollisionEditorUserDefined
             vertices.Add(point + up);
         }
 
-        var flip = CFG.Current.MapEditor_CollisionEditor_User_Flip;
+        var flip = CFG.Current.MapEditor.MapEditor_CollisionEditor_User_Flip;
         var count = closed ? points.Count : points.Count - 1;
 
         for (var i = 0; i < count; i++)

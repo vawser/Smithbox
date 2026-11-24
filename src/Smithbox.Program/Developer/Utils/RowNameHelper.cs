@@ -33,7 +33,7 @@ public static class RowNameHelper
                 {
                     var curEntry = entries[i];
 
-                    var parts = curEntry.Split(CFG.Current.Param_Import_Delimiter);
+                    var parts = curEntry.Split(CFG.Current.ParamEditor.Param_Import_Delimiter);
                     if (parts.Length > 1)
                     {
                         var id = parts[0];

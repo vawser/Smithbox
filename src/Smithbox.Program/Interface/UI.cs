@@ -206,9 +206,9 @@ public class UI
 
     public static void Load()
     {
-        if(CFG.Current.Interface_Selected_Theme != "")
+        if(CFG.Current.Interface.Interface_Selected_Theme != "")
         {
-            LoadTheme(CFG.Current.Interface_Selected_Theme);
+            LoadTheme(CFG.Current.Interface.Interface_Selected_Theme);
         }
         else
         {

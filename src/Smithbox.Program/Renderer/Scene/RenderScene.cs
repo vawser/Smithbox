@@ -116,7 +116,7 @@ public class RenderScene
 
         // The wireframe view swaps in the meshes' _wire pipelines; picking keeps the usual ones, so a surface can
         // still be clicked between its lines
-        if (!queue.PickingEnabled && CFG.Current.Viewport_Wireframe_Enable)
+        if (!queue.PickingEnabled && RenderSettings.Viewport.Viewport_Wireframe_Enable)
         {
             OpaqueRenderables.BuildWireframePipelines(SceneRenderer.Factory);
             queue.SetDrawParameters(OpaqueRenderables.cDrawParameters, OpaqueRenderables.cPipelines,

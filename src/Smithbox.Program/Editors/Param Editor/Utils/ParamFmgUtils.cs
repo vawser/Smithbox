@@ -32,7 +32,7 @@ public static class ParamFmgUtils
             if (entry.IsContainerUnused())
                 continue;
 
-            if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+            if (entry.ContainerDisplayCategory != CFG.Current.TextEditor.TextEditor_Primary_Category)
                 continue;
 
             if (entry.FmgWrappers == null)
@@ -76,7 +76,7 @@ public static class ParamFmgUtils
                     {
                         // If we prefer base over DLC1/DLC2,
                         // don't add the DLC1/DLC2 entry if a base entry with the same ID already exists
-                        if (CFG.Current.ParamEditor_Row_List_Row_FMG_Prefer_Base)
+                        if (CFG.Current.ParamEditor.ParamEditor_Row_List_Row_FMG_Prefer_Base)
                         {
                             if (!entries.Any(e => e.ID == fmgEntry.ID))
                             {
@@ -97,7 +97,7 @@ public static class ParamFmgUtils
 
     public static string GetFmgRefCommandLine(ParamEditorScreen editor, Dictionary<int, FMG.Entry> _entryCache, Param.Row row)
     {
-        var category = CFG.Current.TextEditor_Primary_Category.ToString();
+        var category = CFG.Current.TextEditor.TextEditor_Primary_Category.ToString();
         if (_entryCache.Values.Count > 0)
         {
             var cachedEntry = _entryCache.Values.Where(e => e.ID == row.ID).FirstOrDefault();
@@ -111,7 +111,7 @@ public static class ParamFmgUtils
                 if (entry.IsContainerUnused())
                     continue;
 
-                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor.TextEditor_Primary_Category)
                     continue;
 
                 foreach (var fmgInfo in entry.FmgWrappers)
@@ -146,7 +146,7 @@ public static class ParamFmgUtils
         {
             foreach (var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
             {
-                if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_Primary_Category)
+                if (entry.ContainerDisplayCategory == CFG.Current.TextEditor.TextEditor_Primary_Category)
                 {
                     if (entry.FmgWrappers == null)
                         continue;
@@ -188,7 +188,7 @@ public static class ParamFmgUtils
 
     //    List<FMG.Entry> entries = new List<FMG.Entry>();
 
-    //    var language = CFG.Current.TextEditor_Primary_Category;
+    //    var language = CFG.Current.TextEditor.TextEditor_Primary_Category;
 
     //    var domainString = GetDomainName(paramName);
 

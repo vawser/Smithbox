@@ -85,7 +85,7 @@ public class MoveToMapAction
 
         MapTargetPicker.Display(View, "moveTargetMapSelect", ref TargetMap);
 
-        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##moveKeepWorld", ref CFG.Current.MapEditor_Keep_World_Position_Across_Maps);
+        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##moveKeepWorld", ref CFG.Current.MapEditor.MapEditor_Keep_World_Position_Across_Maps);
         GUI.Tooltip(LOC.Get("MAP_Keep_World_Position_TT"));
 
         var targetMap = View.Selection.ResolveTargetMap(TargetMap);
@@ -169,7 +169,7 @@ public class MoveToMapAction
 
         // The objects stay where they are in the world, rather than at the same local coordinates in the other map
         // (another tile in ER and NR). Their frames are taken now, before the move gives them new parents.
-        if (CFG.Current.MapEditor_Keep_World_Position_Across_Maps)
+        if (CFG.Current.MapEditor.MapEditor_Keep_World_Position_Across_Maps)
         {
             var frames = selection.Select(e => ((Entity)e, MapPlacement.GetParentWorld(e))).ToList();
 

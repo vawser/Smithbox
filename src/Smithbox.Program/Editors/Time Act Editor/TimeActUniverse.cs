@@ -43,11 +43,11 @@ public class TimeActUniverse : IUniverse
 
         if (RenderScene == null)
         {
-            CFG.Current.Viewport_Enable_Rendering = false;
+            CFG.Current.Viewport.Viewport_Enable_Rendering = false;
         }
         else
         {
-            CFG.Current.Viewport_Enable_Rendering = true;
+            CFG.Current.Viewport.Viewport_Enable_Rendering = true;
         }
     }
 
@@ -79,13 +79,13 @@ public class TimeActUniverse : IUniverse
         HasLoadedModel = true;
 
         // The model of a composite character is only a skeleton, so the rest of it comes from the part models
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
-            CFG.Current.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering &&
+            CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))
         {
             newContainer.AssignCharacterParts(View.CharacterPreview.GetAppearance());
         }
 
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
         {
             Selection.ClearSelection();
             Selection.AddSelection(newContainer.RootObject);
@@ -93,7 +93,7 @@ public class TimeActUniverse : IUniverse
             View.ViewportWindow.PendingFrameContainer = newContainer;
         }
 
-        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport.Viewport_Enable_Rendering)
         {
             ResourceLoadTracker.BeginSession(modelWrapper.Name);
 
@@ -131,16 +131,16 @@ public class TimeActUniverse : IUniverse
             }
         }
 
-        if (CFG.Current.Viewport_Enable_Texturing)
+        if (CFG.Current.Viewport.Viewport_Enable_Texturing)
         {
-            Reserve(CFG.Current.ModelEditor_TextureLoad_Characters, LoadList_Character_Texture, "Character Textures");
-            Reserve(CFG.Current.ModelEditor_TextureLoad_Objects, LoadList_Asset_Texture, "Asset Textures");
-            Reserve(CFG.Current.ModelEditor_TextureLoad_Parts, LoadList_Part_Texture, "Part Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters, LoadList_Character_Texture, "Character Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects, LoadList_Asset_Texture, "Asset Textures");
+            Reserve(CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts, LoadList_Part_Texture, "Part Textures");
         }
 
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Characters, LoadList_Character_Model, "Characters");
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Objects, LoadList_Asset_Model, "Assets");
-        Reserve(CFG.Current.ModelEditor_ModelLoad_Parts, LoadList_Part_Model, "Parts");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters, LoadList_Character_Model, "Characters");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects, LoadList_Asset_Model, "Assets");
+        Reserve(CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts, LoadList_Part_Model, "Parts");
     }
 
     public void SetupModelLoadList(string modelName, TimeActContainerWrapper parent)
@@ -152,7 +152,7 @@ public class TimeActUniverse : IUniverse
         var loadList = new List<ResourceDescriptor>();
 
         // Character
-        if (CFG.Current.ModelEditor_ModelLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters)
         {
             if (modelName.StartsWith('c'))
             {
@@ -164,7 +164,7 @@ public class TimeActUniverse : IUniverse
         }
 
         // Object / Asset
-        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects)
         {
             if (modelName.StartsWith('o') || (modelName.StartsWith("AEG") || modelName.StartsWith("aeg")))
             {
@@ -176,7 +176,7 @@ public class TimeActUniverse : IUniverse
         }
 
         // Part
-        if (CFG.Current.ModelEditor_ModelLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts)
         {
             if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
             modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
@@ -199,7 +199,7 @@ public class TimeActUniverse : IUniverse
         LoadList_Part_Texture.Clear();
 
         // Character
-        if (CFG.Current.ModelEditor_TextureLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters)
         {
             if (modelName.StartsWith('c'))
             {
@@ -224,7 +224,7 @@ public class TimeActUniverse : IUniverse
         }
 
         // Object
-        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects)
         {
             if (modelName.StartsWith('o'))
             {
@@ -245,7 +245,7 @@ public class TimeActUniverse : IUniverse
         }
 
         // Part
-        if (CFG.Current.ModelEditor_TextureLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts)
         {
             if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
             modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
@@ -261,7 +261,7 @@ public class TimeActUniverse : IUniverse
         }
 
         // AAT
-        if (CFG.Current.ModelEditor_TextureLoad_Misc)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Misc)
         {
             if (View.Project.Descriptor.ProjectType is ProjectType.ER
                 or ProjectType.AC6
@@ -315,25 +315,25 @@ public class TimeActUniverse : IUniverse
 
     public List<Task> LoadTextures(List<Task> tasks, TimeActContainer container)
     {
-        if (!CFG.Current.Viewport_Enable_Texturing)
+        if (!CFG.Current.Viewport.Viewport_Enable_Texturing)
             return tasks;
 
         // Character
-        if (CFG.Current.ModelEditor_TextureLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Characters)
         {
             task = LoadAssets(LoadList_Character_Texture, "Character Textures", ResourceType.Texture);
             tasks.Add(task);
         }
 
         // Objects / Assets
-        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Objects)
         {
             task = LoadAssets(LoadList_Asset_Texture, "Asset Textures", ResourceType.Texture);
             tasks.Add(task);
         }
 
         // Parts
-        if (CFG.Current.ModelEditor_TextureLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_TextureLoad_Parts)
         {
             task = LoadAssets(LoadList_Part_Texture, "Part Textures", ResourceType.Texture);
             tasks.Add(task);
@@ -348,21 +348,21 @@ public class TimeActUniverse : IUniverse
         var modelTypes = ResourceType.Flver | ResourceType.Texture;
 
         // Characters
-        if (CFG.Current.ModelEditor_ModelLoad_Characters)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Characters)
         {
             task = LoadAssets(LoadList_Character_Model, "Characters", modelTypes);
             tasks.Add(task);
         }
 
         // Objects
-        if (CFG.Current.ModelEditor_ModelLoad_Objects)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Objects)
         {
             task = LoadAssets(LoadList_Asset_Model, "Assets", modelTypes);
             tasks.Add(task);
         }
 
         // Parts
-        if (CFG.Current.ModelEditor_ModelLoad_Parts)
+        if (CFG.Current.ModelEditor.ModelEditor_ModelLoad_Parts)
         {
             task = LoadAssets(LoadList_Part_Model, "Parts", modelTypes);
             tasks.Add(task);

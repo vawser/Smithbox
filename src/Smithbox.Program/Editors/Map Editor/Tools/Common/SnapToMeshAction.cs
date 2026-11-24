@@ -33,7 +33,7 @@ public class SnapToMeshAction
         Project = project;
     }
 
-    // Matches CFG.MapEditor_SnapToMesh_Direction
+    // Matches MapEditorSettings.MapEditor_SnapToMesh_Direction
     private static readonly (string Name, Vector3 Direction)[] Directions =
     {
         ("Down (-Y)", -Vector3.UnitY),
@@ -45,7 +45,7 @@ public class SnapToMeshAction
     };
 
     private static Vector3 CurrentDirection =>
-        Directions[Math.Clamp(CFG.Current.MapEditor_SnapToMesh_Direction, 0, Directions.Length - 1)].Direction;
+        Directions[Math.Clamp(CFG.Current.MapEditor.MapEditor_SnapToMesh_Direction, 0, Directions.Length - 1)].Direction;
 
     #region Interface
 
@@ -95,7 +95,7 @@ public class SnapToMeshAction
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_SnapToMesh_Direction_Header"), LOC.Get("MAP_SnapToMesh_Direction_Header_TT"));
 
-        var directionIndex = Math.Clamp(CFG.Current.MapEditor_SnapToMesh_Direction, 0, Directions.Length - 1);
+        var directionIndex = Math.Clamp(CFG.Current.MapEditor.MapEditor_SnapToMesh_Direction, 0, Directions.Length - 1);
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##snapDirection", Directions[directionIndex].Name))
@@ -104,7 +104,7 @@ public class SnapToMeshAction
             {
                 if (ImGui.Selectable(Directions[i].Name, i == directionIndex))
                 {
-                    CFG.Current.MapEditor_SnapToMesh_Direction = i;
+                    CFG.Current.MapEditor.MapEditor_SnapToMesh_Direction = i;
                 }
             }
 
@@ -117,7 +117,7 @@ public class SnapToMeshAction
         GUI.SimpleHeader(LOC.Get("MAP_SnapToMesh_Offset_Header"), LOC.Get("MAP_SnapToMesh_Offset_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputFloat("##snapOffset", ref CFG.Current.MapEditor_SnapToMesh_Offset, 0.01f, 0.1f, "%.3f");
+        ImGui.InputFloat("##snapOffset", ref CFG.Current.MapEditor.MapEditor_SnapToMesh_Offset, 0.01f, 0.1f, "%.3f");
         GUI.Tooltip(LOC.Get("MAP_SnapToMesh_Offset_TT"));
 
         // Max Distance
@@ -125,10 +125,10 @@ public class SnapToMeshAction
         GUI.SimpleHeader(LOC.Get("MAP_SnapToMesh_MaxDistance_Header"), LOC.Get("MAP_SnapToMesh_MaxDistance_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##snapMaxDistance", ref CFG.Current.MapEditor_SnapToMesh_MaxDistance, 1.0f, 10.0f, "%.1f"))
+        if (ImGui.InputFloat("##snapMaxDistance", ref CFG.Current.MapEditor.MapEditor_SnapToMesh_MaxDistance, 1.0f, 10.0f, "%.1f"))
         {
-            if (CFG.Current.MapEditor_SnapToMesh_MaxDistance < 0.01f)
-                CFG.Current.MapEditor_SnapToMesh_MaxDistance = 0.01f;
+            if (CFG.Current.MapEditor.MapEditor_SnapToMesh_MaxDistance < 0.01f)
+                CFG.Current.MapEditor.MapEditor_SnapToMesh_MaxDistance = 0.01f;
         }
         GUI.Tooltip(LOC.Get("MAP_SnapToMesh_MaxDistance_TT"));
 
@@ -136,7 +136,7 @@ public class SnapToMeshAction
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_SnapToMesh_Options_Header"), LOC.Get("MAP_SnapToMesh_Options_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_SnapToMesh_Individually")}##snapIndividually", ref CFG.Current.MapEditor_SnapToMesh_Individually);
+        ImGui.Checkbox($"{LOC.Get("MAP_SnapToMesh_Individually")}##snapIndividually", ref CFG.Current.MapEditor.MapEditor_SnapToMesh_Individually);
         GUI.Tooltip(LOC.Get("MAP_SnapToMesh_Individually_TT"));
 
         // Actions
@@ -294,7 +294,7 @@ public class SnapToMeshAction
 
     private static List<List<Entity>> GetGroups(List<Entity> sels)
     {
-        var groups = CFG.Current.MapEditor_SnapToMesh_Individually
+        var groups = CFG.Current.MapEditor.MapEditor_SnapToMesh_Individually
             ? sels.Select(s => new List<Entity> { s }).ToList()
             : new List<List<Entity>> { sels };
 
@@ -306,9 +306,9 @@ public class SnapToMeshAction
     {
         var hash = new HashCode();
 
-        hash.Add(CFG.Current.MapEditor_SnapToMesh_Direction);
-        hash.Add(CFG.Current.MapEditor_SnapToMesh_MaxDistance);
-        hash.Add(CFG.Current.MapEditor_SnapToMesh_Individually);
+        hash.Add(CFG.Current.MapEditor.MapEditor_SnapToMesh_Direction);
+        hash.Add(CFG.Current.MapEditor.MapEditor_SnapToMesh_MaxDistance);
+        hash.Add(CFG.Current.MapEditor.MapEditor_SnapToMesh_Individually);
         hash.Add(sels.Count);
 
         foreach (var sel in sels)
@@ -341,7 +341,7 @@ public class SnapToMeshAction
         pass.Request(new SnapDepthRequest
         {
             Direction = CurrentDirection,
-            MaxDistance = CFG.Current.MapEditor_SnapToMesh_MaxDistance,
+            MaxDistance = CFG.Current.MapEditor.MapEditor_SnapToMesh_MaxDistance,
             Groups = groups.Select(GetGroupBounds).ToList(),
             Excluded = excluded,
             Tag = new RequestState { Pass = pass, GroupKey = groupKey, Signature = signature, Groups = groups }
@@ -370,7 +370,7 @@ public class SnapToMeshAction
         if (group >= result.SurfacePlanes.Length || result.SurfacePlanes[group] is not float plane)
             return null;
 
-        var move = plane - Vector3.Dot(direction, faceCenter) + CFG.Current.MapEditor_SnapToMesh_Offset;
+        var move = plane - Vector3.Dot(direction, faceCenter) + CFG.Current.MapEditor.MapEditor_SnapToMesh_Offset;
         return direction * move;
     }
 
@@ -420,7 +420,7 @@ public class SnapToMeshAction
         if (actions.Count == 0)
         {
             Smithbox.LogError<SnapToMeshAction>(
-                $"No mesh found within {CFG.Current.MapEditor_SnapToMesh_MaxDistance} units in the snap direction.");
+                $"No mesh found within {CFG.Current.MapEditor.MapEditor_SnapToMesh_MaxDistance} units in the snap direction.");
             View.DelayPicking();
             return;
         }

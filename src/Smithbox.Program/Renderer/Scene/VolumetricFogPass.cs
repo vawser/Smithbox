@@ -111,7 +111,7 @@ public class VolumetricFogPass
 
     public static bool IsActive(GparamLighting lighting)
     {
-        return RenderMode.PostEffects && CFG.Current.Viewport_Post_Volumetric_Fog &&
+        return RenderMode.PostEffects && RenderSettings.Viewport.Viewport_Post_Volumetric_Fog &&
                lighting is { PostEffects.VolumetricFog.Enabled: true };
     }
 
@@ -129,7 +129,7 @@ public class VolumetricFogPass
         }
 
         var fog = lighting.PostEffects.VolumetricFog;
-        var exposure = lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+        var exposure = lighting.Exposure * RenderSettings.Viewport.Viewport_Map_Lighting_Exposure_Scale;
 
         // Square cells: the target's aspect is the projection's
         var aspect = MathF.Abs(projection.M11) > 1e-6f ? MathF.Abs(projection.M22 / projection.M11) : 1.0f;
@@ -144,7 +144,7 @@ public class VolumetricFogPass
         // GameScale (1 in Nightreign, 1-12 in Sekiro) isn't in the game's shaders, so its code applies it; taken to
         // divide the density, untraced. Then the game's own scale (Sekiro 0.1, matched by eye), and the viewport's.
         var densityScale = GparamProfile.Current.FogDensityScale *
-                           Math.Max(CFG.Current.Viewport_Post_Fog_Density_Scale, 0.0f) / Math.Max(fog.GameScale, 1e-3f);
+                           Math.Max(RenderSettings.Viewport.Viewport_Post_Fog_Density_Scale, 0.0f) / Math.Max(fog.GameScale, 1e-3f);
 
         Params = new VolumetricFogParam
         {
@@ -159,8 +159,8 @@ public class VolumetricFogPass
             Direct = new Vector4(Light(fog.DirectColor, exposure), fog.DirHeightAtten),
             Opposite = new Vector4(Light(fog.OppositeColor, exposure), Math.Clamp(fog.ScatteringG, -0.95f, 0.95f)),
             Start = new Vector4(fog.SkyStartDistance, fog.DirStartDistance, fog.LocalLightScale, fog.LocalLightDistScale),
-            Sun = new Vector4(sunTravel, CFG.Current.Viewport_Post_Fog_Shadows ? 1.0f : 0.0f),
-            Flags = new Vector4(CFG.Current.Viewport_Post_Fog_Local_Lights ? 1.0f : 0.0f,
+            Sun = new Vector4(sunTravel, RenderSettings.Viewport.Viewport_Post_Fog_Shadows ? 1.0f : 0.0f),
+            Flags = new Vector4(RenderSettings.Viewport.Viewport_Post_Fog_Local_Lights ? 1.0f : 0.0f,
                 fog.EnableAnalyticalFog ? 1.0f : 0.0f, 0.0f, 0.0f)
         };
 

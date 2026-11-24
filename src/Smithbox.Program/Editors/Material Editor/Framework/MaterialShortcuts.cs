@@ -29,7 +29,7 @@ public class MaterialShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface_MaterialEditor_ToolWindow;
+            CFG.Current.Interface.Interface_MaterialEditor_ToolWindow = !CFG.Current.Interface.Interface_MaterialEditor_ToolWindow;
         }
 
         if (InputManager.IsPressed(KeybindID.Save))

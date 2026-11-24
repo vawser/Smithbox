@@ -46,14 +46,14 @@ public class GparamValueList
 
         // Toggle: Time of Day Column
         GUI.DisplayToggleButton("timeOfDayColumnToggle", Icons.CalendarTimesO,
-            ref CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column,
+            ref CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Time_Of_Day_Column,
             "GPARAM_ValueList_TimeOfDay_Column_Toggle_Hide",
             "GPARAM_ValueList_TimeOfDay_Column_Toggle_Show",
             "GPARAM_ValueList_TimeOfDay_Column_Toggle_TT");
 
         // Toggle: Information Column
         GUI.DisplayToggleButton("infoColumnToggle", Icons.Info,
-            ref CFG.Current.GparamEditor_Value_List_Display_Information_Column,
+            ref CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Information_Column,
             "GPARAM_ValueList_Info_Column_Toggle_Hide",
             "GPARAM_ValueList_Info_Column_Toggle_Show",
             "GPARAM_ValueList_Info_Column_Toggle_TT");
@@ -82,7 +82,7 @@ public class GparamValueList
 
         // The field's information is one block for the whole field, which a table row can't span, so it sits in a
         // column of its own beside the values
-        var showInfo = CFG.Current.GparamEditor_Value_List_Display_Information_Column;
+        var showInfo = CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Information_Column;
 
         if (showInfo)
         {
@@ -117,7 +117,7 @@ public class GparamValueList
     /// </summary>
     private void DisplayValueRows(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field)
     {
-        var showTimeOfDay = CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column;
+        var showTimeOfDay = CFG.Current.GparamEditor.GparamEditor_Value_List_Display_Time_Of_Day_Column;
         var columnCount = showTimeOfDay ? 4 : 3;
 
         var tableFlags = ImGuiTableFlags.Resizable | ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV |
@@ -300,7 +300,7 @@ public class GparamValueList
 
                 foreach (var entry in targetEnum.Options)
                 {
-                    var name = entry.Names.FirstOrDefault(e => e.Language == CFG.Current.GparamEditor_Annotation_Language);
+                    var name = entry.Names.FirstOrDefault(e => e.Language == CFG.Current.GparamEditor.GparamEditor_Annotation_Language);
 
                     if (name != null)
                     {

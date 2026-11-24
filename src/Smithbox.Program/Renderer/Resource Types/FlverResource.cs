@@ -98,7 +98,7 @@ public class FlverResource : IResource, IDisposable
         if (curProject == null)
             return false;
 
-        if (CFG.Current.Developer_Enable_Tools)
+        if (CFG.Current.Developer.Developer_Enable_Tools)
         {
             ResourceViewer.ProcessedMeshes.Add(ctx.QualifiedName);
             ResourceViewer.MeshConsumptionSize += bytes.Length;
@@ -1193,7 +1193,7 @@ public class FlverResource : IResource, IDisposable
             dest.ShaderName = @"FlverShader\FlverShader_blend";
             dest.LayoutType = MeshLayoutType.LayoutUV2;
         }
-        else if (dest.UsesLightmap && CFG.Current.Viewport_Map_Lightmaps)
+        else if (dest.UsesLightmap && RenderSettings.Viewport.Viewport_Map_Lightmaps)
         {
             // The blend variant for its second UV set, the lightmap's, with one layer, so nothing is blended
             dest.ShaderName = @"FlverShader\FlverShader_blend";
@@ -1891,7 +1891,7 @@ public class FlverResource : IResource, IDisposable
         // FLVER0 meshes are placed per mesh in ProcessMesh(FLVER0.Mesh), not per material: DES normals are
         // LayoutType.Color, whose W isn't a node index, and one material can serve both bind-pose and rigid meshes
 
-        if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
+        if (!RenderSettings.Viewport.Viewport_Enable_Texturing || ModelsOnly)
         {
             dest.ShaderName = @"SimpleFlver";
             dest.LayoutType = MeshLayoutType.LayoutSky;
@@ -1991,7 +1991,7 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private void LookupDesLightmap(FlverMaterial dest, IFlverMaterial mat, MaterialLayers layers)
     {
-        if (!CFG.Current.Viewport_Map_Lightmaps)
+        if (!RenderSettings.Viewport.Viewport_Map_Lightmaps)
             return;
 
         foreach (IFlverTexture? texture in mat.Textures)
@@ -2024,7 +2024,7 @@ public class FlverResource : IResource, IDisposable
         if (BbTextureDiag.IsTracedModel(Context?.Name))
         {
             dest.DiagTag = $"{Context?.Name} ({Context?.Pool?.Name}) mat '{matName}' mtd '{dest.MaterialName}'";
-            BbTextureDiag.Write($"MATERIAL {dest.DiagTag}: definition={(dest.Definition != null ? "found" : "NULL")} texturing={CFG.Current.Viewport_Enable_Texturing} modelsOnly={ModelsOnly}");
+            BbTextureDiag.Write($"MATERIAL {dest.DiagTag}: definition={(dest.Definition != null ? "found" : "NULL")} texturing={RenderSettings.Viewport.Viewport_Enable_Texturing} modelsOnly={ModelsOnly}");
         }
         if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
@@ -2068,7 +2068,7 @@ public class FlverResource : IResource, IDisposable
                 IsPlaceholderTexture(isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset));
         }
 
-        if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
+        if (!RenderSettings.Viewport.Viewport_Enable_Texturing || ModelsOnly)
         {
             dest.ShaderName = @"SimpleFlver";
             dest.LayoutType = MeshLayoutType.LayoutSky;
@@ -4422,7 +4422,7 @@ public class FlverResource : IResource, IDisposable
                 continue;
             }
             // The LODs of a SpeedTree model are whole meshes of their own, which would be drawn over each other
-            if ((!CFG.Current.Viewport_Enable_LOD_Facesets || HasSpeedTreeVertices) &&
+            if ((!RenderSettings.Viewport.Viewport_Enable_LOD_Facesets || HasSpeedTreeVertices) &&
                 faceset.Flags != FLVER2.FaceSet.FSFlags.None &&
                 faceset.Flags != FLVER2.FaceSet.FSFlags.EdgeCompressed)
             {
@@ -4997,7 +4997,7 @@ public class FlverResource : IResource, IDisposable
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
             return false;
 
-        if (!CFG.Current.Viewport_Enable_Rendering)
+        if (!RenderSettings.Viewport.Viewport_Enable_Rendering)
         {
             return true;
         }
@@ -5077,7 +5077,7 @@ public class FlverResource : IResource, IDisposable
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
             return false;
 
-        if (!CFG.Current.Viewport_Enable_Rendering)
+        if (!RenderSettings.Viewport.Viewport_Enable_Rendering)
         {
             return true;
         }
@@ -5230,7 +5230,7 @@ public class FlverResource : IResource, IDisposable
         {
             var faceset = new FlverFaceset(br, version, vertexIndicesSize, dataOffset);
             // The LODs of a SpeedTree model are whole meshes of their own, which would be drawn over each other
-            if ((!CFG.Current.Viewport_Enable_LOD_Facesets || HasSpeedTreeVertices) &&
+            if ((!RenderSettings.Viewport.Viewport_Enable_LOD_Facesets || HasSpeedTreeVertices) &&
                 faceset.flags != FLVER2.FaceSet.FSFlags.None &&
                 faceset.flags != FLVER2.FaceSet.FSFlags.EdgeCompressed)
             {
@@ -6090,7 +6090,7 @@ public class FlverResource : IResource, IDisposable
                 }
 
                 // Allow instant toggle if texture has been loaded in the past
-                if (!CFG.Current.Viewport_Enable_Texturing)
+                if (!RenderSettings.Viewport.Viewport_Enable_Texturing)
                 {
                     matTex = defaultTex;
                 }

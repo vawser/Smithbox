@@ -2204,6 +2204,7 @@ public enum Menu_MsgBndID_DB_NT
 }
 
 
+// The full release's own tables, not filled in yet: FmgIdTables gives DB the network test's (Item_/Menu_MsgBndID_DB_NT)
 public enum Item_MsgBndID_DB
 {
 }

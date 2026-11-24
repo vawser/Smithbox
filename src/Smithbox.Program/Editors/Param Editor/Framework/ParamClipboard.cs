@@ -88,7 +88,7 @@ public class ParamClipboard
             if (r == null)
                 continue;
 
-            switch (CFG.Current.Param_RowCopyBehavior)
+            switch (CFG.Current.ParamEditor.Param_RowCopyBehavior)
             {
                 case ParamRowCopyBehavior.ID:
                     lines.Add($"{r.ID}");

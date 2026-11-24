@@ -27,7 +27,7 @@ public class ModelShortcuts
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
         {
-            CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
+            CFG.Current.Interface.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface.Interface_ModelEditor_ToolWindow;
         }
 
         if (activeView == null)
@@ -80,7 +80,7 @@ public class ModelShortcuts
 
         GizmoState.OnShortcut();
 
-        //if(CFG.Current.Developer_Enable_Tools)
+        //if(CFG.Current.Developer.Developer_Enable_Tools)
         //{
         //    if (InputManager.IsPressed(KeybindID.CaptureThumbnailImage))
         //    {

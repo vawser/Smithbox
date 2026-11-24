@@ -300,7 +300,7 @@ public class ProjectilePropertiesView
             var annotation = paramData.GetFieldAnnotation(annotations, internalName);
             var context = new FieldMetaContext(FieldView!, meta, fieldMeta, annotation, paramName, internalName);
 
-            if (context.IsPadding && !CFG.Current.ParamEditor_Field_List_Display_Padding)
+            if (context.IsPadding && !CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Padding)
                 continue;
 
             var name = DisplayName(internalName, annotation);
@@ -401,7 +401,7 @@ public class ProjectilePropertiesView
                 anyShown = true;
             }
 
-            if (CFG.Current.ParamEditor_Field_Context_Display_Reference_Search &&
+            if (CFG.Current.ParamEditor.ParamEditor_Field_Context_Display_Reference_Search &&
                 (context.DisplayVirtualReference || context.DisplayExternalReference))
             {
                 VirtualParamReferenceHelper.ContextMenu(FieldView!, context.VirtualReference, oldval, row, field.InternalName);
@@ -436,10 +436,10 @@ public class ProjectilePropertiesView
     {
         var altName = annotation?.Name;
 
-        if (!CFG.Current.ProjectileEditor_Show_Community_Names || string.IsNullOrWhiteSpace(altName))
+        if (!CFG.Current.ProjectileEditor.ProjectileEditor_Show_Community_Names || string.IsNullOrWhiteSpace(altName))
             return internalName;
 
-        return CFG.Current.ParamEditor_FieldNameMode switch
+        return CFG.Current.ParamEditor.ParamEditor_FieldNameMode switch
         {
             ParamFieldNameMode.Source => internalName,
             ParamFieldNameMode.Source_Community => $"{internalName} ({altName})",

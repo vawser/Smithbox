@@ -116,29 +116,29 @@ public class TimeActEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.TimeActEditor_Allow_Unmodified_Save = !CFG.Current.TimeActEditor_Allow_Unmodified_Save;
+                CFG.Current.TimeActEditor.TimeActEditor_Allow_Unmodified_Save = !CFG.Current.TimeActEditor.TimeActEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor.TimeActEditor_Allow_Unmodified_Save);
 
             // Save KRAK as Deflate: ER loads deflate binders as well as KRAK ones, and deflate is much quicker to write
             if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
                 if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Save_Krak_As_Deflate")}##saveKrakAsDeflate"))
                 {
-                    CFG.Current.TimeActEditor_Save_Krak_As_Deflate = !CFG.Current.TimeActEditor_Save_Krak_As_Deflate;
+                    CFG.Current.TimeActEditor.TimeActEditor_Save_Krak_As_Deflate = !CFG.Current.TimeActEditor.TimeActEditor_Save_Krak_As_Deflate;
                 }
                 GUI.Tooltip(LOC.Get("TAE_Editor_Save_Krak_As_Deflate_TT"));
-                GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Save_Krak_As_Deflate);
+                GUI.ShowActiveStatus(CFG.Current.TimeActEditor.TimeActEditor_Save_Krak_As_Deflate);
             }
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.TimeActEditor_Allow_Automatic_Save = !CFG.Current.TimeActEditor_Allow_Automatic_Save;
+                CFG.Current.TimeActEditor.TimeActEditor_Allow_Automatic_Save = !CFG.Current.TimeActEditor.TimeActEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor.TimeActEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -176,7 +176,7 @@ public class TimeActEditorScreen : EditorScreen
                 // History: opens the tool that lists the steps
                 if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Edit_History")}##historyAction"))
                 {
-                    CFG.Current.Interface_TimeActEditor_ToolWindow = true;
+                    CFG.Current.Interface.Interface_TimeActEditor_ToolWindow = true;
 
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
@@ -194,9 +194,9 @@ public class TimeActEditorScreen : EditorScreen
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_View_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_TimeActEditor_ToolWindow = !CFG.Current.Interface_TimeActEditor_ToolWindow;
+                CFG.Current.Interface.Interface_TimeActEditor_ToolWindow = !CFG.Current.Interface.Interface_TimeActEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_TimeActEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -286,7 +286,7 @@ public class TimeActEditorScreen : EditorScreen
         if (activeView == null)
             return;
 
-        if (autoSave && CFG.Current.TimeActEditor_Allow_Automatic_Save || !autoSave)
+        if (autoSave && CFG.Current.TimeActEditor.TimeActEditor_Allow_Automatic_Save || !autoSave)
         {
             var source = activeView.Selection.SelectedTimeActContainerWrapper;
 
@@ -308,7 +308,7 @@ public class TimeActEditorScreen : EditorScreen
             if (source != null)
             {
                 // Only the selected source is written unmodified: Save All would rewrite every anibnd of the project
-                SaveSources([source], autoSave, CFG.Current.TimeActEditor_Allow_Unmodified_Save, onSaved: reportOthers);
+                SaveSources([source], autoSave, CFG.Current.TimeActEditor.TimeActEditor_Allow_Unmodified_Save, onSaved: reportOthers);
             }
             else
             {
@@ -326,7 +326,7 @@ public class TimeActEditorScreen : EditorScreen
 
     private void SaveAllSources(bool autoSave, bool showModal)
     {
-        if (autoSave && CFG.Current.TimeActEditor_Allow_Automatic_Save || !autoSave)
+        if (autoSave && CFG.Current.TimeActEditor.TimeActEditor_Allow_Automatic_Save || !autoSave)
         {
             var bank = Project.Handler.TimeActData.PrimaryBank;
 

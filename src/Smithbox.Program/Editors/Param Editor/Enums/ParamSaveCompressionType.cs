@@ -45,7 +45,7 @@ public static class ParamSaveCompression
 {
     public static DCX.Type GetCurrentOverride()
     {
-        var compressionOverride = CFG.Current.ParamEditor_CompressionOverride;
+        var compressionOverride = CFG.Current.ParamEditor.ParamEditor_CompressionOverride;
 
         switch(compressionOverride)
         {

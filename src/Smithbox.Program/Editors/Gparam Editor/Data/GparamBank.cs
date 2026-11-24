@@ -209,7 +209,7 @@ public class GparamBank : IDisposable
         if (!wrapper.IsLoaded())
             return false;
 
-        if (!CFG.Current.GparamEditor_Allow_Unmodified_Save)
+        if (!CFG.Current.GparamEditor.GparamEditor_Allow_Unmodified_Save)
         {
             if (!wrapper.IsDirty)
             {

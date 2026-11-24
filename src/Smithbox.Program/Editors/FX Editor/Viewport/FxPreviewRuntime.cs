@@ -150,7 +150,7 @@ public class FxPreviewRuntime
             Forces = new FxForceField
             {
                 Wind = Editor.Playback.WindVector(),
-                UseVolumes = CFG.Current.FxEditor_Preview_Effect_Forces,
+                UseVolumes = CFG.Current.FxEditor.FxEditor_Preview_Effect_Forces,
             },
         };
         // Seeded by the effect id, so a replay matches what was shown before

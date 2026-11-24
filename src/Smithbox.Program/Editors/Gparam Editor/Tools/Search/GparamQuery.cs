@@ -269,7 +269,7 @@ public class GparamQueryMatcher
 
         if (enumEntry != null)
         {
-            var language = CFG.Current.GparamEditor_Annotation_Language;
+            var language = CFG.Current.GparamEditor.GparamEditor_Annotation_Language;
 
             names = new();
 

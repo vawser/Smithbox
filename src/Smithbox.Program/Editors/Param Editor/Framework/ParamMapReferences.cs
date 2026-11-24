@@ -1511,7 +1511,7 @@ public static class ParamMapReferences
 
     public static void ColorPicker(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Color_Picker)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Color_Picker)
             return;
 
         if (activeParam == null)

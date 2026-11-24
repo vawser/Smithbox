@@ -274,7 +274,7 @@ public class HavokAnimationClipView
         ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
         var columnCount = 2;
-        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        if (CFG.Current.HavokEditor.HavokEditor_Properties_Display_Type_Column)
         {
             columnCount = 3;
         }

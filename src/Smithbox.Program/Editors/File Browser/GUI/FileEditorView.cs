@@ -75,7 +75,7 @@ public class FileEditorView : IEditorView
         ImGui.End();
 
 
-        if (CFG.Current.Interface_FileBrowser_ToolView)
+        if (CFG.Current.Interface.Interface_FileBrowser_ToolView)
         {
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

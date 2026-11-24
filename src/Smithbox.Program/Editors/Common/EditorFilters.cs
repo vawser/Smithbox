@@ -55,14 +55,14 @@ public static class EditorFilters
     /// </summary>
     public static void DisplaySearchbarSizeToggle()
     {
-        if (!CFG.Current.Interface_Display_Searchbar_Minimize)
+        if (!CFG.Current.Interface.Interface_Display_Searchbar_Minimize)
             return;
 
-        if (CFG.Current.Interface_Searchbar_Fixed_Width)
+        if (CFG.Current.Interface.Interface_Searchbar_Fixed_Width)
         {
             if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
             {
-                CFG.Current.Interface_Searchbar_Fixed_Width = false;
+                CFG.Current.Interface.Interface_Searchbar_Fixed_Width = false;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
         }
@@ -70,7 +70,7 @@ public static class EditorFilters
         {
             if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
             {
-                CFG.Current.Interface_Searchbar_Fixed_Width = true;
+                CFG.Current.Interface.Interface_Searchbar_Fixed_Width = true;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
         }
@@ -86,8 +86,8 @@ public static class EditorFilters
     {
         // Only use the fixed width while the toggle is shown, so hiding the
         // buttons can never leave the searchbar stuck at the small size.
-        if (CFG.Current.Interface_Display_Searchbar_Minimize
-            && CFG.Current.Interface_Searchbar_Fixed_Width)
+        if (CFG.Current.Interface.Interface_Display_Searchbar_Minimize
+            && CFG.Current.Interface.Interface_Searchbar_Fixed_Width)
             ImGui.SetNextItemWidth(80f * DPI.UIScale());
     }
 

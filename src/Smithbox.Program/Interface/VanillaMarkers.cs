@@ -14,7 +14,7 @@ namespace StudioCore.Application;
 public static class VanillaMarkers
 {
     /// <summary>Whether vanilla highlighting is on (the global toggle, and an editor's own toggle if it has one)</summary>
-    public static bool Enabled(bool editorToggle = true) => CFG.Current.Interface_Vanilla_Highlight && editorToggle;
+    public static bool Enabled(bool editorToggle = true) => CFG.Current.Interface.Interface_Vanilla_Highlight && editorToggle;
 
     /// <summary>Whether this status gets a colour and tooltip at all</summary>
     public static bool IsMarked(VanillaStatus status) => status is VanillaStatus.Modified or VanillaStatus.Added;

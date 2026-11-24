@@ -108,7 +108,7 @@ public class ModelExportTool
             LOC.Get("MODEL_ModelExport_SetOutputDirectory"),
             LOC.Get("MODEL_ModelExport_SetOutputDirectory_TT"));
 
-        GUI.SinglelineTextInputWithHint("outputDirInput", ref CFG.Current.ModelExport_Output_Directory,
+        GUI.SinglelineTextInputWithHint("outputDirInput", ref CFG.Current.ModelEditor.ModelExport_Output_Directory,
             LOC.Get("MODEL_Output_Dir_Hint"));
 
         GUI.MultiButtonInput("outputDirActions",
@@ -146,7 +146,7 @@ public class ModelExportTool
             LOC.Get("MODEL_ModelExport_Options_Header_TT"));
 
         // Flip UVs in OBJ
-        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_FlipOBJUVs")}##flipUvs", ref CFG.Current.ModelExport_FlipUVs);
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_FlipOBJUVs")}##flipUvs", ref CFG.Current.ModelEditor.ModelExport_FlipUVs);
 
         // Mirroring
         GUI.Spacer();
@@ -154,11 +154,11 @@ public class ModelExportTool
             LOC.Get("MODEL_ModelExport_Mirror_Header"),
             LOC.Get("MODEL_ModelExport_Mirror_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_X")}##mirrorX", ref CFG.Current.ModelExport_MirrorX);
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_X")}##mirrorX", ref CFG.Current.ModelEditor.ModelExport_MirrorX);
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_Y")}##mirrorY", ref CFG.Current.ModelExport_MirrorY);
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_Y")}##mirrorY", ref CFG.Current.ModelEditor.ModelExport_MirrorY);
         ImGui.SameLine();
-        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_Z")}##mirrorZ", ref CFG.Current.ModelExport_MirrorZ);
+        ImGui.Checkbox($"{LOC.Get("MODEL_ModelExport_Mirror_Z")}##mirrorZ", ref CFG.Current.ModelEditor.ModelExport_MirrorZ);
 
         // Forward Axis
         GUI.Spacer();
@@ -166,7 +166,7 @@ public class ModelExportTool
             LOC.Get("MODEL_ModelExport_ForwardAxis_Header"),
             LOC.Get("MODEL_ModelExport_ForwardAxis_Header_TT"));
 
-        DisplayAxisCombo("##forwardAxis", ref CFG.Current.ModelExport_ForwardAxis);
+        DisplayAxisCombo("##forwardAxis", ref CFG.Current.ModelEditor.ModelExport_ForwardAxis);
 
         // Up Axis
         GUI.Spacer();
@@ -174,7 +174,7 @@ public class ModelExportTool
             LOC.Get("MODEL_ModelExport_UpAxis_Header"),
             LOC.Get("MODEL_ModelExport_UpAxis_Header_TT"));
 
-        DisplayAxisCombo("##upAxis", ref CFG.Current.ModelExport_UpAxis);
+        DisplayAxisCombo("##upAxis", ref CFG.Current.ModelEditor.ModelExport_UpAxis);
 
     }
 
@@ -203,13 +203,13 @@ public class ModelExportTool
 
         if (result)
         {
-            CFG.Current.ModelExport_Output_Directory = path;
+            CFG.Current.ModelEditor.ModelExport_Output_Directory = path;
         }
     }
 
     public void OpenOutputDirectory()
     {
-        Process.Start("explorer.exe", CFG.Current.ModelExport_Output_Directory);
+        Process.Start("explorer.exe", CFG.Current.ModelEditor.ModelExport_Output_Directory);
     }
 
     public void DetectFlverSelectionMenu()
@@ -281,27 +281,27 @@ public class ModelExportTool
 
         var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
 
-        if (!ModelExportPaths.TryResolveFilePath(CFG.Current.ModelExport_Output_Directory, $"{flverName}.obj",
+        if (!ModelExportPaths.TryResolveFilePath(CFG.Current.ModelEditor.ModelExport_Output_Directory, $"{flverName}.obj",
                 ModelExportPaths.OutputDirectoryName, out var outputPath, out var pathError))
         {
             Smithbox.LogError(this, pathError);
             return;
         }
 
-        if (!FlverToObj.AreAxesValid(CFG.Current.ModelExport_ForwardAxis, CFG.Current.ModelExport_UpAxis))
+        if (!FlverToObj.AreAxesValid(CFG.Current.ModelEditor.ModelExport_ForwardAxis, CFG.Current.ModelEditor.ModelExport_UpAxis))
         {
             Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Invalid_Axes"));
             return;
         }
 
         var transform = FlverToObj.BuildTransform(
-            CFG.Current.ModelExport_ForwardAxis,
-            CFG.Current.ModelExport_UpAxis,
-            CFG.Current.ModelExport_MirrorX,
-            CFG.Current.ModelExport_MirrorY,
-            CFG.Current.ModelExport_MirrorZ);
+            CFG.Current.ModelEditor.ModelExport_ForwardAxis,
+            CFG.Current.ModelEditor.ModelExport_UpAxis,
+            CFG.Current.ModelEditor.ModelExport_MirrorX,
+            CFG.Current.ModelEditor.ModelExport_MirrorY,
+            CFG.Current.ModelEditor.ModelExport_MirrorZ);
 
-        FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelExport_FlipUVs, transform,
+        FlverToObj.Convert(curFlver, outputPath, null, CFG.Current.ModelEditor.ModelExport_FlipUVs, transform,
             SelectionMenu.FlverMeshSelection);
     }
 }

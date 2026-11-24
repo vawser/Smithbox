@@ -96,12 +96,12 @@ public class Gizmos
 
         if (camera != null && camera.ViewMode is not ViewMode.Perspective)
         {
-            var halfFov = CFG.Current.Viewport_Camera_FOV * MathF.PI / 360.0f;
-            return camera.OrthographicSize * CFG.Current.Viewport_Gizmo_Size_Distance_Scale /
+            var halfFov = CFG.Current.Viewport.Viewport_Camera_FOV * MathF.PI / 360.0f;
+            return camera.OrthographicSize * CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale /
                    (2.0f * MathF.Tan(halfFov));
         }
 
-        return (center - CameraPosition).Length() * CFG.Current.Viewport_Gizmo_Size_Distance_Scale;
+        return (center - CameraPosition).Length() * CFG.Current.Viewport.Viewport_Gizmo_Size_Distance_Scale;
     }
 
     private IGizmoTarget ActiveTarget => Target ?? SelectionTarget;
@@ -121,7 +121,7 @@ public class Gizmos
 
     /// <summary>
     /// Snapping is held while dragging: translation snaps to the snap grid's squares, rotation to
-    /// <see cref="CFG.Viewport_Gizmo_Snap_Rotation_Step" />.
+    /// <see cref="ViewportSettings.Viewport_Gizmo_Snap_Rotation_Step" />.
     /// </summary>
     private static bool IsSnapping()
     {
@@ -172,7 +172,7 @@ public class Gizmos
 
     public void Update(Ray ray, bool canCaptureMouse, bool isActiveViewport = true)
     {
-        if (!isActiveViewport || !CFG.Current.Viewport_Render_Gizmos)
+        if (!isActiveViewport || !CFG.Current.Viewport.Viewport_Render_Gizmos)
         {
             TranslationGizmo.SetVisibility(false);
             RotationGizmo.SetVisibility(false);
@@ -249,7 +249,7 @@ public class Gizmos
                     var x = Math.Max(-1.0f, Math.Min(1.0f, Vector3.Dot(delta, side)));
                     var angle = (float)Math.Atan2(x, y);
 
-                    var step = CFG.Current.Viewport_Gizmo_Snap_Rotation_Step;
+                    var step = CFG.Current.Viewport.Viewport_Gizmo_Snap_Rotation_Step;
                     if (IsSnapping() && step > 0f)
                     {
                         var stepRadians = Utils.DegToRadians(step);
@@ -433,34 +433,34 @@ public class TranslationGizmo
     public void UpdateColor()
     {
         X_Arrow_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Base_Color);
         X_Arrow_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Highlight_Color);
 
         Y_Arrow_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Base_Color);
         Y_Arrow_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Highlight_Color);
 
         Z_Arrow_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Base_Color);
         Z_Arrow_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Highlight_Color);
 
         X_Square_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Base_Color);
         X_Square_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Highlight_Color);
 
         Y_Square_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Base_Color);
         Y_Square_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Highlight_Color);
 
         Z_Square_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Base_Color);
         Z_Square_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Highlight_Color);
     }
 
     public GizmoState.Axis HandleHoveredAxis(Ray ray)
@@ -548,19 +548,19 @@ public class RotationGizmo
     public void UpdateColor()
     {
         X_Ring_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Base_Color);
         X_Ring_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Highlight_Color);
 
         Y_Ring_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Base_Color);
         Y_Ring_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Highlight_Color);
 
         Z_Ring_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Base_Color);
         Z_Ring_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Highlight_Color);
     }
 
     public GizmoState.Axis HandleHoveredAxis(Ray ray)
@@ -625,19 +625,19 @@ public class ScaleGizmo
     public void UpdateColor()
     {
         X_Cube_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Base_Color);
         X_Cube_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_X_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_X_Highlight_Color);
 
         Y_Cube_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Base_Color);
         Y_Cube_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Y_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Y_Highlight_Color);
 
         Z_Cube_Proxy.BaseColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Base_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Base_Color);
         Z_Cube_Proxy.HighlightedColor = GizmoHelper.GetGizmoColor(
-            CFG.Current.Viewport_Gizmo_Z_Highlight_Color);
+            CFG.Current.Viewport.Viewport_Gizmo_Z_Highlight_Color);
     }
 
     public GizmoState.Axis HandleHoveredAxis(Ray ray)

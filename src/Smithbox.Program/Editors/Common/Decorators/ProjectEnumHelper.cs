@@ -39,7 +39,7 @@ public static class ProjectEnumHelper
 
     public static void Label(ProjectEntry project, string enumType)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var enumEntry = GetEnum(project, enumType);
@@ -54,7 +54,7 @@ public static class ProjectEnumHelper
 
     public static void Hint(ProjectEntry project, string enumType, string value)
     {
-        if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
+        if (!CFG.Current.ParamEditor.ParamEditor_Field_List_Display_Enums)
             return;
 
         var enumEntry = GetEnum(project, enumType);

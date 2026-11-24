@@ -86,9 +86,9 @@ public class SoundEditorView : IDisposable
             return;
 
         if (!PlatformUtils.Instance.OpenFileDialog(LOC.Get("SOUND_Replace_Dialog"), SoundImport.Filters,
-                CFG.Current.SoundEditor_Import_Folder, out var file) || string.IsNullOrEmpty(file))
+                CFG.Current.SoundEditor.SoundEditor_Import_Folder, out var file) || string.IsNullOrEmpty(file))
             return;
-        CFG.Current.SoundEditor_Import_Folder = Path.GetDirectoryName(file);
+        CFG.Current.SoundEditor.SoundEditor_Import_Folder = Path.GetDirectoryName(file);
 
         var edit = SoundImport.Load(file, e.StreamPath, out var error);
         if (edit == null)
@@ -195,7 +195,7 @@ public class SoundEditorView : IDisposable
 
         RequestInfo(entry);
 
-        if (play || CFG.Current.SoundEditor_Play_On_Select)
+        if (play || CFG.Current.SoundEditor.SoundEditor_Play_On_Select)
             Play(entry);
     }
 
@@ -210,7 +210,7 @@ public class SoundEditorView : IDisposable
         if (first != null)
             RequestInfo(first);
 
-        if (first != null && (play || CFG.Current.SoundEditor_Play_On_Select))
+        if (first != null && (play || CFG.Current.SoundEditor.SoundEditor_Play_On_Select))
             Play(first);
     }
 
@@ -279,12 +279,12 @@ public class SoundEditorView : IDisposable
             return;
         }
 
-        var last = CFG.Current.SoundEditor_Export_Folder;
+        var last = CFG.Current.SoundEditor.SoundEditor_Export_Folder;
         if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("SOUND_Export_Dialog_Folder"), out var folder,
                 Directory.Exists(last) ? last : null) || string.IsNullOrEmpty(folder))
             return;
 
-        CFG.Current.SoundEditor_Export_Folder = folder;
+        CFG.Current.SoundEditor.SoundEditor_Export_Folder = folder;
         var target = subFolder ? Path.Combine(folder, SoundExportJob.Sanitize(label)) : folder;
         ExportJob = SoundExportJob.Start(target, label, format, entries, waitFor);
     }
@@ -319,12 +319,12 @@ public class SoundEditorView : IDisposable
         Window("SOUND_Window_Sounds", "soundEditor_Sounds", EditorFocusContext.SoundEditor_Sounds, dockspaceId, EntryList.Draw);
         Window("SOUND_Window_Properties", "soundEditor_Properties", EditorFocusContext.SoundEditor_Properties, dockspaceId, Properties.Draw);
         Window("SOUND_Window_Player", "soundEditor_Player", EditorFocusContext.SoundEditor_Sounds, dockspaceId, PlayerBar.Draw);
-        if (CFG.Current.Interface_SoundEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_SoundEditor_ToolWindow)
             DisplayToolWindow(dockspaceId);
 
         // keep settings in step with the player bar's controls
-        CFG.Current.SoundEditor_Volume = Player.Volume;
-        CFG.Current.SoundEditor_Loop = Player.Loop;
+        CFG.Current.SoundEditor.SoundEditor_Volume = Player.Volume;
+        CFG.Current.SoundEditor.SoundEditor_Loop = Player.Loop;
     }
 
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw)

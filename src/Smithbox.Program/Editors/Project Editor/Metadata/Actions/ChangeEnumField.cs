@@ -25,7 +25,7 @@ public class ChangeEnumField : EditorAction
         switch (ChangeType)
         {
             case ProjectEnumFieldType.Text:
-                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+                var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
                 if(Entry.Names.Any(e => e.Language == curLang))
                 {
@@ -46,7 +46,7 @@ public class ChangeEnumField : EditorAction
         switch (ChangeType)
         {
             case ProjectEnumFieldType.Text:
-                var curLang = CFG.Current.ParamEditor_Annotation_Language;
+                var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
 
                 if (Entry.Names.Any(e => e.Language == curLang))
                 {

@@ -26,7 +26,7 @@ public class TimeActEditorPrefs
             Description = "PREF_TimeActEditor_Graph_Frame_Width_TT",
 
             Draw = () => {
-                ImGui.DragFloat("##inputValue", ref CFG.Current.TimeActEditor_Graph_Frame_Width, 0.5f, 1f, 100f);
+                ImGui.DragFloat("##inputValue", ref CFG.Current.TimeActEditor.TimeActEditor_Graph_Frame_Width, 0.5f, 1f, 100f);
             }
         };
     }
@@ -47,7 +47,7 @@ public class TimeActEditorPrefs
             Description = "PREF_TimeActEditor_Event_Marker_Size_TT",
 
             Draw = () => {
-                ImGui.DragFloat("##inputValue", ref CFG.Current.TimeActEditor_Event_Marker_Size, 0.05f, 0.1f, 10f);
+                ImGui.DragFloat("##inputValue", ref CFG.Current.TimeActEditor.TimeActEditor_Event_Marker_Size, 0.05f, 0.1f, 10f);
             }
         };
     }

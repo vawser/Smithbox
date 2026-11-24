@@ -76,10 +76,10 @@ public class SystemPrefs
             Description = "PREF_System_Ignore_Read_Asserts_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Ignore_Read_Asserts);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.System_Ignore_Read_Asserts);
                 if(ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    BinaryReaderEx.IgnoreAsserts = CFG.Current.System_Ignore_Read_Asserts;
+                    BinaryReaderEx.IgnoreAsserts = CFG.Current.Program.System_Ignore_Read_Asserts;
                 }
             }
         };
@@ -99,7 +99,7 @@ public class SystemPrefs
             Description = "PREF_System_Apply_DCX_Heuristic_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Apply_DCX_Heuristic);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.System_Apply_DCX_Heuristic);
             }
         };
     }
@@ -121,7 +121,7 @@ public class SystemPrefs
             Description = "PREF_Logger_Enable_Action_Log_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Action_Log);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.Logger_Enable_Action_Log);
             }
         };
     }
@@ -142,7 +142,7 @@ public class SystemPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputInt("##inputValue", ref CFG.Current.Logger_Action_Fade_Time);
+                ImGui.InputInt("##inputValue", ref CFG.Current.Program.Logger_Action_Fade_Time);
             }
         };
     }
@@ -161,7 +161,7 @@ public class SystemPrefs
             Description = "PREF_Logger_Enable_Warning_Log_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Warning_Log);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.Logger_Enable_Warning_Log);
             }
         };
     }
@@ -182,7 +182,7 @@ public class SystemPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputInt("##inputValue", ref CFG.Current.Logger_Warning_Fade_Time);
+                ImGui.InputInt("##inputValue", ref CFG.Current.Program.Logger_Warning_Fade_Time);
             }
         };
     }
@@ -200,7 +200,7 @@ public class SystemPrefs
             Description = "PREF_Logger_Enable_Color_Fade_TT",
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Color_Fade);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.Logger_Enable_Color_Fade);
             }
         };
     }
@@ -219,7 +219,7 @@ public class SystemPrefs
             Description = "PREF_Logger_Enable_Log_Popups_TT",
             
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Log_Popups);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.Logger_Enable_Log_Popups);
             }
         };
     }
@@ -237,7 +237,7 @@ public class SystemPrefs
             Description = "PREF_Logger_Enable_Scope_Logging_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Scope_Logging);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.Logger_Enable_Scope_Logging);
             }
         };
     }
@@ -255,7 +255,7 @@ public class SystemPrefs
             Description = "PREF_Logger_Hide_File_Dictionary_Warnings_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Hide_File_Dictionary_Warnings);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Program.Logger_Hide_File_Dictionary_Warnings);
             }
         };
     }
@@ -277,7 +277,7 @@ public class SystemPrefs
             Description = "PREF_Developer_Enable_Tools_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Developer_Enable_Tools);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Developer.Developer_Enable_Tools);
             }
         };
     }
@@ -298,7 +298,7 @@ public class SystemPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Developer_Smithbox_Build_Folder, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Developer.Developer_Smithbox_Build_Folder, 255);
 
                 ImGui.SameLine();
 
@@ -310,7 +310,7 @@ public class SystemPrefs
 
                     if (result)
                     {
-                        CFG.Current.Developer_Smithbox_Build_Folder = smithboxBuildDir;
+                        CFG.Current.Developer.Developer_Smithbox_Build_Folder = smithboxBuildDir;
                     }
                 }
             }

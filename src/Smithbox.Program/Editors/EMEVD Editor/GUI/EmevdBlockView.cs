@@ -112,7 +112,7 @@ public class EmevdBlockView
             var selection = View.Selection;
             var ev = selection.SelectedEvent;
             var revision = selection.SelectedFile?.Revision ?? -1;
-            var structured = CFG.Current.EmevdEditor_Structured_View;
+            var structured = CFG.Current.EmevdEditor.EmevdEditor_Structured_View;
 
             if (ev != CachedEvent || revision != CachedRevision || structured != CachedStructured)
             {
@@ -400,7 +400,7 @@ public class EmevdBlockView
             return;
         }
 
-        var inline = CFG.Current.EmevdEditor_Inline_MustSub_Calls;
+        var inline = CFG.Current.EmevdEditor.EmevdEditor_Inline_MustSub_Calls;
         var linesStale = !ReferenceEquals(FilterScriptFor, Script) || FilterFor != FilterText || FilterExactFor != FilterExact
             || FilterInlineFor != inline || LineMatches?.Length != Script.Lines.Count;
 
@@ -643,7 +643,7 @@ public class EmevdBlockView
         var marginW = indexW + lanes * LaneWidth + 6f;
 
         // The comment column takes the right of the view while the event has comments (or one is being written)
-        var showComments = CFG.Current.EmevdEditor_Show_Comments && Comments != null && (EventHasComments() || EditCommentBlock != null);
+        var showComments = CFG.Current.EmevdEditor.EmevdEditor_Show_Comments && Comments != null && (EventHasComments() || EditCommentBlock != null);
         var commentW = 240f * DPI.UIScale();
         var commentGap = 16f * DPI.UIScale();
         var blocksW = showComments
@@ -794,7 +794,7 @@ public class EmevdBlockView
             var editorBottom = DrawCommentColumn(drawList, tops, first, last, origin, linesTop, hatH, lineH, editorH, blockX1, cx0, cx1);
             totalH = Math.Max(totalH, editorBottom - origin.Y + 8f);
         }
-        else if (EditCommentBlock != null && !CFG.Current.EmevdEditor_Show_Comments)
+        else if (EditCommentBlock != null && !CFG.Current.EmevdEditor.EmevdEditor_Show_Comments)
         {
             // Comments hidden while one was open
             EndCommentEdit(true);
@@ -854,7 +854,7 @@ public class EmevdBlockView
         EditCommentRow = line < 0 ? HatRow : LineRow[line];
         CommentText = Comments.Get(block) ?? "";
         FocusComment = true;
-        CFG.Current.EmevdEditor_Show_Comments = true;
+        CFG.Current.EmevdEditor.EmevdEditor_Show_Comments = true;
     }
 
     /// <summary>
@@ -1361,7 +1361,7 @@ public class EmevdBlockView
                 if (x > max.X)
                     break;
 
-                if (CFG.Current.EmevdEditor_Show_Arg_Names)
+                if (CFG.Current.EmevdEditor.EmevdEditor_Show_Arg_Names)
                 {
                     var argName = EmevdFormat.ArgName(arg);
                     drawList.AddText(new Vector2(x, y), dim, argName);
@@ -1599,7 +1599,7 @@ public class EmevdBlockView
     /// </summary>
     private EmevdInlined Inlined(EmevdLine line)
     {
-        var on = CFG.Current.EmevdEditor_Inline_MustSub_Calls;
+        var on = CFG.Current.EmevdEditor.EmevdEditor_Inline_MustSub_Calls;
         if (on != CachedInline)
         {
             InlinedCalls.Clear();

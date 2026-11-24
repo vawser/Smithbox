@@ -95,18 +95,18 @@ public class TextEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.TextEditor_Allow_Unmodified_Save = !CFG.Current.TextEditor_Allow_Unmodified_Save;
+                CFG.Current.TextEditor.TextEditor_Allow_Unmodified_Save = !CFG.Current.TextEditor.TextEditor_Allow_Unmodified_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.TextEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(CFG.Current.TextEditor.TextEditor_Allow_Unmodified_Save);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.TextEditor_Allow_Automatic_Save = !CFG.Current.TextEditor_Allow_Automatic_Save;
+                CFG.Current.TextEditor.TextEditor_Allow_Automatic_Save = !CFG.Current.TextEditor.TextEditor_Allow_Automatic_Save;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.TextEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(CFG.Current.TextEditor.TextEditor_Allow_Automatic_Save);
 
             ImGui.EndMenu();
         }
@@ -214,9 +214,9 @@ public class TextEditorScreen : EditorScreen
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_View_Tool_Window")}##toolWindowToggle"))
             {
-                CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
+                CFG.Current.Interface.Interface_TextEditor_ToolWindow = !CFG.Current.Interface.Interface_TextEditor_ToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface.Interface_TextEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -248,7 +248,7 @@ public class TextEditorScreen : EditorScreen
                 return;
             }
 
-            if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
+            if (autoSave && CFG.Current.TextEditor.TextEditor_Allow_Automatic_Save || !autoSave)
             {
                 // FMG Reloader: what this save writes also goes to the running game, if asked
                 var toGame = FmgsForGame(autoSave, wrapper);
@@ -308,7 +308,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll(bool autoSave = false)
     {
-        if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
+        if (autoSave && CFG.Current.TextEditor.TextEditor_Allow_Automatic_Save || !autoSave)
         {
             // FMG Reloader: what this save writes also goes to the running game, if asked
             var toGame = FmgsForGame(autoSave, null);
@@ -341,7 +341,7 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     private List<(TextContainerWrapper Container, TextFmgWrapper Fmg)> FmgsForGame(bool autoSave, TextContainerWrapper onlyContainer)
     {
-        if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || Reloader.Profile == null ||
+        if (autoSave || !CFG.Current.TextEditor.TextEditor_FmgReloader_SendOnSave || Reloader.Profile == null ||
             !Reloader.IsReady || string.IsNullOrEmpty(Reloader.Language))
             return null;
 

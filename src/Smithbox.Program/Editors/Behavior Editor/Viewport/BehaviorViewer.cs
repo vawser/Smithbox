@@ -153,7 +153,7 @@ public class BehaviorViewer : IDisposable
 
     private void UpdateAutoLoad()
     {
-        if (!CFG.Current.BehaviorEditor_Viewport_Auto_Load_Character)
+        if (!CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Auto_Load_Character)
             return;
 
         var binder = Editor.ViewHandler.ActiveView?.Selection.BinderFileEntry?.Filename;
@@ -198,7 +198,7 @@ public class BehaviorViewer : IDisposable
 
         Clips = GatherClips(view, selected);
 
-        if (selectionChanged && CFG.Current.BehaviorEditor_Viewport_Play_On_Select && Clips.Count > 0)
+        if (selectionChanged && CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Play_On_Select && Clips.Count > 0)
             Character?.Play(Clips[0].Animation);
     }
 
@@ -241,7 +241,7 @@ public class BehaviorViewer : IDisposable
         var activeView = Editor.ViewHandler.ActiveView ?? view;
         UpdateClips(activeView);
 
-        if (!CFG.Current.Interface_BehaviorEditor_Viewport)
+        if (!CFG.Current.Interface.Interface_BehaviorEditor_Viewport)
         {
             if (Viewport is VulkanViewport hidden)
                 hidden.Visible = false;
@@ -294,16 +294,16 @@ public class BehaviorViewer : IDisposable
         }
 
         // Options
-        var playOnSelect = CFG.Current.BehaviorEditor_Viewport_Play_On_Select;
+        var playOnSelect = CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Play_On_Select;
         if (ImGui.Checkbox($"{LOC.Get("BHV_Viewer_Play_On_Select")}##behaviorViewerPlayOnSelect", ref playOnSelect))
-            CFG.Current.BehaviorEditor_Viewport_Play_On_Select = playOnSelect;
+            CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Play_On_Select = playOnSelect;
         GUI.Tooltip(LOC.Get("BHV_Viewer_Play_On_Select_TT"));
 
         ImGui.SameLine();
 
-        var rootMotion = CFG.Current.BehaviorEditor_Viewport_Root_Motion;
+        var rootMotion = CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Root_Motion;
         if (ImGui.Checkbox($"{LOC.Get("BHV_Viewer_Root_Motion")}##behaviorViewerRootMotion", ref rootMotion))
-            CFG.Current.BehaviorEditor_Viewport_Root_Motion = rootMotion;
+            CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Root_Motion = rootMotion;
         GUI.Tooltip(LOC.Get("BHV_Viewer_Root_Motion_TT"));
 
         if (Character != null)
@@ -376,10 +376,10 @@ public class BehaviorViewer : IDisposable
         if (!ToolSections.Header($"{LOC.Get("BHV_Viewer_Character_Selector_Header")}##behaviorCharacterSelector"))
             return;
 
-        var autoLoad = CFG.Current.BehaviorEditor_Viewport_Auto_Load_Character;
+        var autoLoad = CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Auto_Load_Character;
         if (ImGui.Checkbox($"{LOC.Get("BHV_Viewer_Auto_Load")}##behaviorViewerAutoLoad", ref autoLoad))
         {
-            CFG.Current.BehaviorEditor_Viewport_Auto_Load_Character = autoLoad;
+            CFG.Current.BehaviorEditor.BehaviorEditor_Viewport_Auto_Load_Character = autoLoad;
 
             // Turned on: the selected behbnd's character comes in now
             LastBinder = null;

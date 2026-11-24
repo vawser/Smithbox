@@ -125,7 +125,7 @@ public class GparamLightingBank
 
         var file = !string.IsNullOrEmpty(chosen) && HasFile(chosen) ? chosen : own;
 
-        var weather = CFG.Current.Viewport_Map_Lighting_Weather;
+        var weather = CFG.Current.Viewport.Viewport_Map_Lighting_Weather;
 
         if (weather is > 0 and < 100 && file.Length == 11)
         {
@@ -223,7 +223,7 @@ public class GparamLightingBank
     {
         var overlays = new List<string>();
 
-        if (weather <= 0 || !CFG.Current.Viewport_Map_Lighting_Weather_Outdoor)
+        if (weather <= 0 || !CFG.Current.Viewport.Viewport_Map_Lighting_Weather_Outdoor)
             return overlays;
 
         var outdoor = $"{WeatherOverlayArea}{weather:D4}{WeatherOutdoorSuffix}";
@@ -376,7 +376,7 @@ public class GparamLightingBank
     /// </summary>
     public GparamLighting ResolveForViewport(IEnumerable<MapContainer> maps)
     {
-        if (!CanUse() || !CFG.Current.Viewport_Map_Lighting)
+        if (!CanUse() || !CFG.Current.Viewport.Viewport_Map_Lighting)
             return null;
 
         var files = Project.Locator.GparamFiles.Entries;
@@ -386,7 +386,7 @@ public class GparamLightingBank
             .FirstOrDefault(m => files.Any(e => e.Filename.Equals(GetDefaultFile(m.Name), StringComparison.OrdinalIgnoreCase)));
 
         // A map without a GPARAM of its own (e.g. a new map number) is lit with the chosen file, if the project has it
-        var chosen = CFG.Current.Viewport_Map_Lighting_File;
+        var chosen = CFG.Current.Viewport.Viewport_Map_Lighting_File;
 
         if (map == null && !string.IsNullOrEmpty(chosen) && HasFile(chosen))
             map = maps.OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase).FirstOrDefault();
@@ -394,7 +394,7 @@ public class GparamLightingBank
         if (map == null)
             return null;
 
-        return ResolveCached(map.Name, CFG.Current.Viewport_Map_Lighting_File);
+        return ResolveCached(map.Name, CFG.Current.Viewport.Viewport_Map_Lighting_File);
     }
 
     /// <summary>
@@ -405,8 +405,8 @@ public class GparamLightingBank
     public GparamLighting ResolveCached(string mapId, string chosen)
     {
         var file = ChooseFile(mapId, chosen);
-        var hours = CFG.Current.Viewport_Map_Lighting_Hours;
-        var overlays = GetWeatherOverlays(CFG.Current.Viewport_Map_Lighting_Weather);
+        var hours = CFG.Current.Viewport.Viewport_Map_Lighting_Hours;
+        var overlays = GetWeatherOverlays(CFG.Current.Viewport.Viewport_Map_Lighting_Weather);
 
         var cached = ViewportLighting;
 
@@ -485,7 +485,7 @@ public class GparamLightingBank
         if (string.IsNullOrEmpty(file))
             file = GetDefaultFile(mapId);
 
-        var weather = weatherOverride ?? CFG.Current.Viewport_Map_Lighting_Weather;
+        var weather = weatherOverride ?? CFG.Current.Viewport.Viewport_Map_Lighting_Weather;
 
         var profile = Profile;
 

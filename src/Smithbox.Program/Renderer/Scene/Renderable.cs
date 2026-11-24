@@ -216,7 +216,7 @@ public class MeshRenderables : Renderables
     public Pipeline[] cDepthPipelines;
 
     /// <summary>
-    ///     The pipeline that draws the renderable in the wireframe view (CFG.Viewport_Wireframe_Enable): its _wire shader
+    ///     The pipeline that draws the renderable in the wireframe view (ViewportSettings.Viewport_Wireframe_Enable): its _wire shader
     ///     variant, with a geometry stage. Null for one drawn as usual there. Built the first time the view needs it, from
     ///     <see cref="cWireframeDescriptions" />, so meshes cost nothing extra to load while the view is off.
     /// </summary>
@@ -356,7 +356,7 @@ public class MeshRenderables : Renderables
                 continue;
             }
 
-            if (CFG.Current.Viewport_Enable_Culling && frustum.Contains(ref cBounds[i]) == ContainmentType.Disjoint)
+            if (RenderSettings.Viewport.Viewport_Enable_Culling && frustum.Contains(ref cBounds[i]) == ContainmentType.Disjoint)
             {
                 continue;
             }
@@ -452,7 +452,7 @@ public class MeshRenderables : Renderables
             }
 
             ContainmentType intersect = frustum.Contains(ref cBounds[i]);
-            if (!CFG.Current.Viewport_Enable_Culling)
+            if (!RenderSettings.Viewport.Viewport_Enable_Culling)
             {
                 cCulled[i] = !cVisible[i]._valid || !cVisible[i]._visible;
             }

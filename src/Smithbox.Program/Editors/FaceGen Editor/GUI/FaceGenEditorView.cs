@@ -143,16 +143,16 @@ public class FaceGenEditorView
     {
         Revalidate();
 
-        if (CFG.Current.Interface_FaceGenEditor_List)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_List)
             Window($"{LOC.Get("FACEGEN_Window_List")}{ListWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_List, ListView.Display);
 
-        if (CFG.Current.Interface_FaceGenEditor_Properties)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_Properties)
             Window($"{LOC.Get("FACEGEN_Window_Properties")}{PropertiesWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_Properties, PropertiesView.Display);
 
-        if (CFG.Current.Interface_FaceGenEditor_References)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_References)
             Window($"{LOC.Get("FACEGEN_Window_References")}{ReferencesWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_References, ReferencesView.Display);
 
-        if (CFG.Current.Interface_FaceGenEditor_ToolWindow)
+        if (CFG.Current.Interface.Interface_FaceGenEditor_ToolWindow)
             Window($"{LOC.Get("FACEGEN_Window_Tools")}{ToolWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_Tools, ToolWindow.Display);
 
         // The viewport window sets the focus itself

@@ -67,7 +67,7 @@ public class TextCoverageReport
     private void DisplayContents()
     {
         if (SourceCategory == TextContainerCategory.None)
-            SourceCategory = CFG.Current.TextEditor_Primary_Category;
+            SourceCategory = CFG.Current.TextEditor.TextEditor_Primary_Category;
 
         GUI.WrappedText(LOC.Get("TEXT_Coverage_Hint"));
 
@@ -180,7 +180,7 @@ public class TextCoverageReport
     {
         var bank = Project.Handler.TextData.PrimaryBank;
         var isDS2 = Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S;
-        var hideUnused = CFG.Current.TextEditor_Container_List_Hide_Unused_Containers;
+        var hideUnused = CFG.Current.TextEditor.TextEditor_Container_List_Hide_Unused_Containers;
 
         var languages = TextUtils.GetSupportedLanguages(Project)
             .Where(l => l != SourceCategory && l is not TextContainerCategory.None and not TextContainerCategory.Common)

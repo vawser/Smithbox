@@ -105,7 +105,7 @@ public partial class FirstPersonTool
 
         HiddenHelpers = 0;
 
-        if (CFG.Current.MapEditor_FirstPerson_Hide_Helpers && viewport.RenderScene != null)
+        if (CFG.Current.MapEditor.MapEditor_FirstPerson_Hide_Helpers && viewport.RenderScene != null)
         {
             HiddenHelpers = viewport.RenderScene.DrawFilter & EditorHelpers;
             viewport.RenderScene.DrawFilter &= ~EditorHelpers;
@@ -156,10 +156,10 @@ public partial class FirstPersonTool
         var viewport = WalkViewport;
         var camera = viewport.ViewportCamera;
 
-        if (CFG.Current.MapEditor_FirstPerson_Keep_Camera)
+        if (CFG.Current.MapEditor.MapEditor_FirstPerson_Keep_Camera)
         {
             // Where the player stood, looking as they looked
-            camera.CameraTransform.Position = Controller.Feet + new Vector3(0, CFG.Current.MapEditor_FirstPerson_Eye_Height, 0);
+            camera.CameraTransform.Position = Controller.Feet + new Vector3(0, CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height, 0);
         }
         else
         {
@@ -353,7 +353,7 @@ public partial class FirstPersonTool
         if (delta == Vector2.Zero)
             return;
 
-        var speed = camera.CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
+        var speed = camera.CameraTurnSpeedMouse * CFG.Current.Viewport.Viewport_Camera_Sensitivity;
         var euler = camera.CameraTransform.EulerRotation;
 
         euler.Y += delta.X * speed;
@@ -414,7 +414,7 @@ public partial class FirstPersonTool
     /// <summary>The player to where the crosshair points, on the ground there or below.</summary>
     private void TeleportToCrosshair(ViewportCamera camera)
     {
-        var eye = Controller.Feet + new Vector3(0, CFG.Current.MapEditor_FirstPerson_Eye_Height, 0);
+        var eye = Controller.Feet + new Vector3(0, CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height, 0);
         var look = Vector3.Normalize(Vector3.Transform(Vector3.UnitZ, camera.CameraTransform.Rotation));
 
         if (FirstPersonController.FindStandingSpot(World.Current, PlayerCapsule, MoveSettings, eye, look, 5000, out var feet, out var target))
@@ -444,7 +444,7 @@ public partial class FirstPersonTool
             return;
 
         WalkViewport.ViewportCamera.CameraTransform.Position =
-            Controller.InterpolatedFeet + new Vector3(0, CFG.Current.MapEditor_FirstPerson_Eye_Height, 0);
+            Controller.InterpolatedFeet + new Vector3(0, CFG.Current.MapEditor.MapEditor_FirstPerson_Eye_Height, 0);
     }
 
     #region Tool Window
@@ -486,9 +486,9 @@ public partial class FirstPersonTool
         // Controls
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAP_FirstPerson_Controls_Header"), LOC.Get("MAP_FirstPerson_Controls_Header_TT"),
-            ref CFG.Current.MapEditor_FirstPerson_Show_Controls);
+            ref CFG.Current.MapEditor.MapEditor_FirstPerson_Show_Controls);
 
-        if (CFG.Current.MapEditor_FirstPerson_Show_Controls)
+        if (CFG.Current.MapEditor.MapEditor_FirstPerson_Show_Controls)
         {
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Move",
                 InputManager.GetHint(KeybindID.MoveForward), InputManager.GetHint(KeybindID.MoveLeft),
@@ -509,16 +509,16 @@ public partial class FirstPersonTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_FirstPerson_Display_Header"), LOC.Get("MAP_FirstPerson_Display_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Hide_Helpers")}##mapFirstPersonHideHelpers", ref CFG.Current.MapEditor_FirstPerson_Hide_Helpers);
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Hide_Helpers")}##mapFirstPersonHideHelpers", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Hide_Helpers);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Hide_Helpers_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Crosshair")}##mapFirstPersonCrosshair", ref CFG.Current.MapEditor_FirstPerson_Crosshair);
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Crosshair")}##mapFirstPersonCrosshair", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Crosshair);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Crosshair_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Show_Surface")}##mapFirstPersonShowSurface", ref CFG.Current.MapEditor_FirstPerson_Show_Surface);
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Show_Surface")}##mapFirstPersonShowSurface", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Show_Surface);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Show_Surface_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Keep_Camera")}##mapFirstPersonKeepCamera", ref CFG.Current.MapEditor_FirstPerson_Keep_Camera);
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Keep_Camera")}##mapFirstPersonKeepCamera", ref CFG.Current.MapEditor.MapEditor_FirstPerson_Keep_Camera);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Keep_Camera_TT"));
     }
 
@@ -535,7 +535,7 @@ public partial class FirstPersonTool
         var white = ImGui.GetColorU32(new Vector4(1, 1, 1, 0.85f));
         var shadow = ImGui.GetColorU32(new Vector4(0, 0, 0, 0.6f));
 
-        if (IsCaptured && CFG.Current.MapEditor_FirstPerson_Crosshair)
+        if (IsCaptured && CFG.Current.MapEditor.MapEditor_FirstPerson_Crosshair)
         {
             var c = ViewportCentre(viewport);
             var arm = 6 * scale;
@@ -559,7 +559,7 @@ public partial class FirstPersonTool
         drawList.AddText(at, white, text);
 
         // The surface underfoot: its collision material, named from the project's HitMtrlParam
-        if (CFG.Current.MapEditor_FirstPerson_Show_Surface && Controller != null)
+        if (CFG.Current.MapEditor.MapEditor_FirstPerson_Show_Surface && Controller != null)
         {
             var material = Controller.GroundMaterial;
             var surface = Controller.Noclip ? LOC.Get("MAP_FirstPerson_Surface_Flying")

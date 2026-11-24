@@ -120,7 +120,7 @@ public class MapMsbPropertyView
             {
                 var fieldMeta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, metaPrefix);
 
-                if (!CFG.Current.MapEditor_Field_List_Display_Padding && fieldMeta.IsPadding)
+                if (!CFG.Current.MapEditor.MapEditor_Field_List_Display_Padding && fieldMeta.IsPadding)
                     continue;
 
                 var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, cell.Def.InternalName);
@@ -136,7 +136,7 @@ public class MapMsbPropertyView
             {
                 var fieldMeta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(column.Def.InternalName, metaPrefix);
 
-                if (!CFG.Current.MapEditor_Field_List_Display_Padding && fieldMeta.IsPadding)
+                if (!CFG.Current.MapEditor.MapEditor_Field_List_Display_Padding && fieldMeta.IsPadding)
                     continue;
 
                 var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, column.Def.InternalName);
@@ -218,7 +218,7 @@ public class MapMsbPropertyView
         if (ImGui.BeginPopup("MsbPropContextMenu"))
         {
             // Info
-            if (CFG.Current.MapEditor_Properties_Display_Property_Attributes)
+            if (CFG.Current.MapEditor.MapEditor_Properties_Display_Property_Attributes)
             {
                 ParamFieldUtils.ImGui_DisplayPropertyInfo(prop);
                 ImGui.Separator();
@@ -313,7 +313,7 @@ public class MapMsbPropertyView
         var displayedName = visualName;
 
         // Name
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Enable_Commmunity_Names)
         {
             if (fieldAnnotation != null && fieldAnnotation.Name != "")
             {
@@ -417,7 +417,7 @@ public class MapMsbPropertyView
         // Field Name
         var fieldName = prop.Name;
 
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !fieldMeta.IsEmpty)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Enable_Commmunity_Names && !fieldMeta.IsEmpty)
         {
             fieldName = fieldMeta.AltName;
 
@@ -572,7 +572,7 @@ public class MapMsbPropertyView
 
                 if (ImGui.Button($"{LOC.Get("MAP_Rename_Enable_Referenced")}##enableReferencedRename"))
                 {
-                    CFG.Current.MapEditor_Properties_Enable_Referenced_Rename = true;
+                    CFG.Current.MapEditor.MapEditor_Properties_Enable_Referenced_Rename = true;
                 }
                 GUI.Tooltip(LOC.Get("MAP_Rename_Enable_Referenced_TT"));
             }
@@ -671,7 +671,7 @@ public class MapMsbPropertyView
         // References follow the new names when Referenced Rename is on, as for any rename
         var actions = new List<ViewportAction>
         {
-            new EntRenameAction(View, renamed, newNames, CFG.Current.MapEditor_Properties_Enable_Referenced_Rename)
+            new EntRenameAction(View, renamed, newNames, CFG.Current.MapEditor.MapEditor_Properties_Enable_Referenced_Rename)
         };
 
         actions.AddRange(idChanges);
@@ -934,7 +934,7 @@ public class MapMsbPropertyView
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
         var meta = View.Project.Handler.MapData.Meta.GetMeta(type, false);
 
-        if (CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
@@ -979,7 +979,7 @@ public class MapMsbPropertyView
         if (first.SupportsName)
         {
             // Name
-            if (CFG.Current.MapEditor_Properties_Enable_Referenced_Rename)
+            if (CFG.Current.MapEditor.MapEditor_Properties_Enable_Referenced_Rename)
             {
                 PropEditorNameWithRef(entities);
             }
@@ -1005,7 +1005,7 @@ public class MapMsbPropertyView
         // Bottom Decoration
         ImGui.Columns(1);
 
-        if (!CFG.Current.MapEditor_Properties_Display_Additional_Information_at_Top)
+        if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Additional_Information_at_Top)
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
@@ -1141,7 +1141,7 @@ public class MapMsbPropertyView
         if (meta != null && meta.IndexProperty)
             return false;
 
-        if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
+        if (!CFG.Current.MapEditor.MapEditor_Properties_Display_Unknown_Properties)
         {
             // Rough heuristic since all unknown fields start with Unk
             if (propName.StartsWith("unk", StringComparison.OrdinalIgnoreCase))
@@ -1218,7 +1218,7 @@ public class MapMsbPropertyView
             // Field Name
             var fieldName = prop.Name;
 
-            if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
+            if (CFG.Current.MapEditor.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
             {
                 fieldName = meta.AltName;
             }
@@ -1453,12 +1453,12 @@ public class MapMsbPropertyView
         var firstEnt = entSelection.FirstOrDefault();
         if (firstEnt.References is null) return;
 
-        if (CFG.Current.MapEditor_Properties_Display_Behavior_Information)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Display_Behavior_Information)
         {
             PropInfo_Region_Connection.Display(View, firstEnt);
             PropInfo_Part_ConnectCollision.Display(View, firstEnt);
         }
-        if (CFG.Current.MapEditor_Properties_Display_Reference_Information)
+        if (CFG.Current.MapEditor.MapEditor_Properties_Display_Reference_Information)
         {
             PropInfo_ReferencesTo.Display(View, firstEnt, View.ViewportHandler.ActiveViewport.Viewport, ref selection, ref refID);
             PropInfo_ReferencedBy.Display(View, firstEnt, View.ViewportHandler.ActiveViewport.Viewport, ref selection, ref refID);

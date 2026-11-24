@@ -70,7 +70,7 @@ public class MapPiecePortTool
 
         Plan = plan;
         NumberInput = plan.Number;
-        CopyTextures = CFG.Current.MapEditor_Model_Selector_Port_Textures && MapPiecePort.CanCopyTextures(Type);
+        CopyTextures = CFG.Current.MapEditor.MapEditor_Model_Selector_Port_Textures && MapPiecePort.CanCopyTextures(Type);
         Scan = null;
         StatusText = "";
 

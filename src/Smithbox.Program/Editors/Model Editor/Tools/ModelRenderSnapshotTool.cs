@@ -237,7 +237,7 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
         GUI.SimpleHeader(LOC.Get("MODEL_RenderSnapshot_Folder_Header"), LOC.Get("MODEL_RenderSnapshot_Folder_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputText("##modelRenderSnapshotFolder", ref CFG.Current.ModelEditor_RenderSnapshot_Folder, 512);
+        ImGui.InputText("##modelRenderSnapshotFolder", ref CFG.Current.ModelEditor.ModelEditor_RenderSnapshot_Folder, 512);
         GUI.Tooltip(LOC.Get("MODEL_RenderSnapshot_Folder_Input_TT"));
 
         // Actions
@@ -285,7 +285,7 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
         if (Set == null || Set.Models.Count == 0)
             return LOC.Get("MODEL_RenderSnapshot_Block_No_Set");
 
-        if (string.IsNullOrWhiteSpace(CFG.Current.ModelEditor_RenderSnapshot_Folder))
+        if (string.IsNullOrWhiteSpace(CFG.Current.ModelEditor.ModelEditor_RenderSnapshot_Folder))
             return LOC.Get("MODEL_RenderSnapshot_Block_No_Folder");
 
         if (View.ViewportWindow?.Viewport is not VulkanViewport)
@@ -327,7 +327,7 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
 
         RunSet = Set;
 
-        var gameFolder = Path.Join(CFG.Current.ModelEditor_RenderSnapshot_Folder, GameName);
+        var gameFolder = Path.Join(CFG.Current.ModelEditor.ModelEditor_RenderSnapshot_Folder, GameName);
         RunFolder = Path.Join(gameFolder, "Current");
 
         try
@@ -345,12 +345,12 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
         RunStart = DateTime.Now;
 
         // TAA's history and jitter differ frame to frame, so the run is drawn without it; FXAA stays as the GPARAM asks
-        SavedTaa = CFG.Current.Viewport_Post_Taa;
-        SavedFov = CFG.Current.Viewport_Camera_FOV;
-        SavedRenderMode = CFG.Current.Viewport_Render_Mode;
-        CFG.Current.Viewport_Render_Mode = (int)RunSet.RenderMode;
-        CFG.Current.Viewport_Post_Taa = false;
-        CFG.Current.Viewport_Camera_FOV = RunSet.Fov;
+        SavedTaa = CFG.Current.Viewport.Viewport_Post_Taa;
+        SavedFov = CFG.Current.Viewport.Viewport_Camera_FOV;
+        SavedRenderMode = CFG.Current.Viewport.Viewport_Render_Mode;
+        CFG.Current.Viewport.Viewport_Render_Mode = (int)RunSet.RenderMode;
+        CFG.Current.Viewport.Viewport_Post_Taa = false;
+        CFG.Current.Viewport.Viewport_Camera_FOV = RunSet.Fov;
 
         // The models alone: no dummy or bone markers, labels or asset collision (the grid stays, as the baselines have it)
         SavedDisplay = CaptureDisplay.Hide(View.RenderScene, hideGrid: false);
@@ -612,9 +612,9 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
             viewport.Snapshot.Cancel();
         }
 
-        CFG.Current.Viewport_Post_Taa = SavedTaa;
-        CFG.Current.Viewport_Camera_FOV = SavedFov;
-        CFG.Current.Viewport_Render_Mode = SavedRenderMode;
+        CFG.Current.Viewport.Viewport_Post_Taa = SavedTaa;
+        CFG.Current.Viewport.Viewport_Camera_FOV = SavedFov;
+        CFG.Current.Viewport.Viewport_Render_Mode = SavedRenderMode;
         SavedDisplay?.Restore();
         SavedDisplay = null;
         MaterialClock.FixedTime = null;
@@ -647,16 +647,16 @@ public class ModelRenderSnapshotTool : IAutomatedCapture
                     // The run's own, as the viewport's is put back before the manifest is written
                     ["RenderMode"] = (RunSet?.RenderMode ?? RenderMode.Current).ToString(),
                     ["Texturing"] = RenderMode.Texturing.ToString(),
-                    ["PostEffects"] = CFG.Current.Viewport_Post_Effects,
-                    ["AutoExposure"] = CFG.Current.Viewport_Post_Auto_Exposure,
-                    ["Bloom"] = CFG.Current.Viewport_Post_Bloom,
-                    ["Glow"] = CFG.Current.Viewport_Post_Glow,
-                    ["Fxaa"] = CFG.Current.Viewport_Post_Fxaa,
-                    ["Ssao"] = CFG.Current.Viewport_Post_Ssao,
-                    ["Ssr"] = CFG.Current.Viewport_Post_Ssr,
-                    ["ColorGrading"] = CFG.Current.Viewport_Post_Color_Grading,
-                    ["ToneCorrection"] = CFG.Current.Viewport_Post_Tone_Correction,
-                    ["MaterialAnimation"] = CFG.Current.Viewport_Enable_Material_Animation
+                    ["PostEffects"] = CFG.Current.Viewport.Viewport_Post_Effects,
+                    ["AutoExposure"] = CFG.Current.Viewport.Viewport_Post_Auto_Exposure,
+                    ["Bloom"] = CFG.Current.Viewport.Viewport_Post_Bloom,
+                    ["Glow"] = CFG.Current.Viewport.Viewport_Post_Glow,
+                    ["Fxaa"] = CFG.Current.Viewport.Viewport_Post_Fxaa,
+                    ["Ssao"] = CFG.Current.Viewport.Viewport_Post_Ssao,
+                    ["Ssr"] = CFG.Current.Viewport.Viewport_Post_Ssr,
+                    ["ColorGrading"] = CFG.Current.Viewport.Viewport_Post_Color_Grading,
+                    ["ToneCorrection"] = CFG.Current.Viewport.Viewport_Post_Tone_Correction,
+                    ["MaterialAnimation"] = CFG.Current.Viewport.Viewport_Enable_Material_Animation
                 },
                 Results = Results.Select(r => new { r.Container, r.Model, r.Image, r.Outcome, r.Dirty }).ToList()
             };

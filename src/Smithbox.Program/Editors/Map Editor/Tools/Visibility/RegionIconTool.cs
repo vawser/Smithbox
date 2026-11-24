@@ -52,14 +52,14 @@ public class RegionIconTool
         Project = project;
     }
 
-    private static bool IsEnabled => CFG.Current.MapEditor_Region_Icons;
+    private static bool IsEnabled => CFG.Current.MapEditor.MapEditor_Region_Icons;
 
     /// <summary>
     /// Turns the icons on or off: the wireframes of the unselected regions are hidden or shown again.
     /// </summary>
     public void SetEnabled(bool enabled)
     {
-        CFG.Current.MapEditor_Region_Icons = enabled;
+        CFG.Current.MapEditor.MapEditor_Region_Icons = enabled;
 
         foreach (var wrapper in Project.Handler.MapData.PrimaryBank.Maps.Values)
         {
@@ -116,11 +116,11 @@ public class RegionIconTool
 
         var cfg = CFG.Current;
         var camera = viewport.ViewportCamera.CameraTransform.Position;
-        var maxDistance = cfg.MapEditor_Region_Icon_Max_Distance;
+        var maxDistance = cfg.MapEditor.MapEditor_Region_Icon_Max_Distance;
         var maxDistanceSquared = maxDistance * maxDistance;
-        var color = ImGui.GetColorU32(new Vector4(cfg.MapEditor_Region_Icon_Color / 255f, 1f));
+        var color = ImGui.GetColorU32(new Vector4(cfg.MapEditor.MapEditor_Region_Icon_Color / 255f, 1f));
 
-        var occlusion = cfg.MapEditor_Region_Icon_Occlusion ? viewport.ViewPipeline?.IconOcclusion : null;
+        var occlusion = cfg.MapEditor.MapEditor_Region_Icon_Occlusion ? viewport.ViewPipeline?.IconOcclusion : null;
         var viewProjection = viewport.ViewportCamera.CameraTransform.CameraViewMatrixLH * viewport.ViewportCamera.ProjectionMatrix;
         var zeroToOne = viewport.Device.IsDepthRangeZeroToOne;
 

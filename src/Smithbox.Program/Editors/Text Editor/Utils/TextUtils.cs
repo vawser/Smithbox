@@ -17,19 +17,19 @@ public static class TextUtils
 
         switch(curProject.Descriptor.ProjectType)
         {
-            case ProjectType.DES:  return CFG.Current.TextEditor_Primary_Language_DES;
-            case ProjectType.DS1:  return CFG.Current.TextEditor_Primary_Language_DS1;
-            case ProjectType.DS1R: return CFG.Current.TextEditor_Primary_Language_DS1R;
-            case ProjectType.DS2:  return CFG.Current.TextEditor_Primary_Language_DS2;
-            case ProjectType.DS2S: return CFG.Current.TextEditor_Primary_Language_DS2S;
-            case ProjectType.BB:   return CFG.Current.TextEditor_Primary_Language_BB;
-            case ProjectType.DS3:  return CFG.Current.TextEditor_Primary_Language_DS3;
-            case ProjectType.SDT:  return CFG.Current.TextEditor_Primary_Language_SDT;
-            case ProjectType.ER:   return CFG.Current.TextEditor_Primary_Language_ER;
-            case ProjectType.AC6:  return CFG.Current.TextEditor_Primary_Language_AC6;
-            case ProjectType.NR:   return CFG.Current.TextEditor_Primary_Language_NR;
-            case ProjectType.DB_NT: return CFG.Current.TextEditor_Primary_Language_DB_NT;
-            case ProjectType.DB: return CFG.Current.TextEditor_Primary_Language_DB;
+            case ProjectType.DES:  return CFG.Current.TextEditor.TextEditor_Primary_Language_DES;
+            case ProjectType.DS1:  return CFG.Current.TextEditor.TextEditor_Primary_Language_DS1;
+            case ProjectType.DS1R: return CFG.Current.TextEditor.TextEditor_Primary_Language_DS1R;
+            case ProjectType.DS2:  return CFG.Current.TextEditor.TextEditor_Primary_Language_DS2;
+            case ProjectType.DS2S: return CFG.Current.TextEditor.TextEditor_Primary_Language_DS2S;
+            case ProjectType.BB:   return CFG.Current.TextEditor.TextEditor_Primary_Language_BB;
+            case ProjectType.DS3:  return CFG.Current.TextEditor.TextEditor_Primary_Language_DS3;
+            case ProjectType.SDT:  return CFG.Current.TextEditor.TextEditor_Primary_Language_SDT;
+            case ProjectType.ER:   return CFG.Current.TextEditor.TextEditor_Primary_Language_ER;
+            case ProjectType.AC6:  return CFG.Current.TextEditor.TextEditor_Primary_Language_AC6;
+            case ProjectType.NR:   return CFG.Current.TextEditor.TextEditor_Primary_Language_NR;
+            case ProjectType.DB_NT: return CFG.Current.TextEditor.TextEditor_Primary_Language_DB_NT;
+            case ProjectType.DB: return CFG.Current.TextEditor.TextEditor_Primary_Language_DB;
         }
 
         return "English";
@@ -89,81 +89,81 @@ public static class TextUtils
             switch (curProject.Descriptor.ProjectType)
             {
                 case ProjectType.DES:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DES))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DES))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DES = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DES = "English";
                     }
                     break;
                 case ProjectType.DS1:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS1))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DS1))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DS1 = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DS1 = "English";
                     }
                     break;
                 case ProjectType.DS1R:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS1R))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DS1R))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DS1R = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DS1R = "English";
                     }
                     break;
                 case ProjectType.DS2:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS2))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DS2))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DS2 = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DS2 = "English";
                     }
                     break;
                 case ProjectType.DS2S:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS2S))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DS2S))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DS2S = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DS2S = "English";
                     }
                     break;
                 case ProjectType.DS3:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DS3))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DS3))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DS3 = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DS3 = "English";
                     }
                     break;
                 case ProjectType.BB:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_BB))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_BB))
                     {
-                        CFG.Current.TextEditor_Primary_Language_BB = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_BB = "English";
                     }
                     break;
                 case ProjectType.SDT:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_SDT))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_SDT))
                     {
-                        CFG.Current.TextEditor_Primary_Language_SDT = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_SDT = "English";
                     }
                     break;
                 case ProjectType.ER:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_ER))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_ER))
                     {
-                        CFG.Current.TextEditor_Primary_Language_ER = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_ER = "English";
                     }
                     break;
                 case ProjectType.AC6:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_AC6))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_AC6))
                     {
-                        CFG.Current.TextEditor_Primary_Language_AC6 = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_AC6 = "English";
                     }
                     break;
                 case ProjectType.NR:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_NR))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_NR))
                     {
-                        CFG.Current.TextEditor_Primary_Language_NR = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_NR = "English";
                     }
                     break;
                 case ProjectType.DB_NT:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DB_NT))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DB_NT))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DB_NT = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DB_NT = "English";
                     }
                     break;
                 case ProjectType.DB:
-                    if (languages.Any(e => e.Language != CFG.Current.TextEditor_Primary_Language_DB))
+                    if (languages.Any(e => e.Language != CFG.Current.TextEditor.TextEditor_Primary_Language_DB))
                     {
-                        CFG.Current.TextEditor_Primary_Language_DB = "English";
+                        CFG.Current.TextEditor.TextEditor_Primary_Language_DB = "English";
                     }
                     break;
             }
@@ -253,427 +253,8 @@ public static class TextUtils
     /// </summary>
     public static string GetFmgDisplayName(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
-        var name = $"Unknown";
-
-        switch(project.Descriptor.ProjectType)
-        {
-            case ProjectType.DES:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DES)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName", 
-                            "DES", id, "Item", nameof(Item_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DES)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DES", id, "Menu", nameof(Menu_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSampleContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Sample_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Sample_MsgBndID_DES)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DES", id, "Sample", nameof(Sample_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS1: 
-            case ProjectType.DS1R: 
-                if(IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS1)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DS1", id, "Item", nameof(Item_MsgBndID_DS1), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS1)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DS1", id, "Menu", nameof(Menu_MsgBndID_DS1), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS2: 
-            case ProjectType.DS2S:
-                if (IsTalkFolderFmg(info))
-                {
-                    foreach(var entry in Enum.GetValues(typeof(TalkFmgName_DS2)))
-                    {
-                        var enumVal = (TalkFmgName_DS2)Enum.Parse(typeof(TalkFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if(internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetDisplayName();
-                        }
-                    }
-                }
-                else if (IsBloodMessageFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(BloodMessageFmgName_DS2)))
-                    {
-                        var enumVal = (BloodMessageFmgName_DS2)Enum.Parse(typeof(BloodMessageFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetDisplayName();
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var entry in Enum.GetValues(typeof(CommonFmgName_DS2)))
-                    {
-                        var enumVal = (CommonFmgName_DS2)Enum.Parse(typeof(CommonFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetDisplayName();
-                        }
-                    }
-                }
-                break;
-            case ProjectType.BB:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Item_MsgBndID_BB)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "BB", id, "Item", nameof(Item_MsgBndID_BB), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_BB)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "BB", id, "Menu", nameof(Menu_MsgBndID_BB), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS3:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS3)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DS3", id, "Item", nameof(Item_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS3)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DS3", id, "Menu", nameof(Menu_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_DS3)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DS3", id, "NgWord", nameof(NgWord_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.SDT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_SDT)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "SDT", id, "Item", nameof(Item_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_SDT)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "SDT", id, "Menu", nameof(Menu_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_SDT)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "SDT", id, "SellRegion", nameof(SellRegion_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.ER:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Item_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "ER", id, "Item", nameof(Item_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "ER", id, "Menu", nameof(Menu_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ER), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "ER", id, "NgWord", nameof(NgWord_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_ER), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "ER", id, "SellRegion", nameof(SellRegion_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.AC6:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Item_MsgBndID_AC6)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "AC6", id, "Item", nameof(Item_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_AC6)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "AC6", id, "Menu", nameof(Menu_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_AC6)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "AC6", id, "NgWord", nameof(NgWord_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.NR:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Item_MsgBndID_NR)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "NR", id, "Item", nameof(Item_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_NR)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "NR", id, "Menu", nameof(Menu_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_NR)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-
-            case ProjectType.DB_NT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DB_NT)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DB", id, "Item", nameof(Item_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DB_NT)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
-                            "DB", id, "Menu", nameof(Menu_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-
-            default: break;
-        }
-
-        return name;
+        return LookUpFmgName(project, info, id, fmgName, "Unknown", "TEXT_Util_Log_Missing_Enum_DisplayName",
+            e => e.GetDisplayName());
     }
 
     /// <summary>
@@ -681,376 +262,13 @@ public static class TextUtils
     /// </summary>
     public static string GetFmgInternalName(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
-        var name = $"";
+        // DS2's FMGs have no BND IDs: they are named by their file
+        if (project.Profile.Ds2Layout)
+            return fmgName;
 
-        switch (project.Descriptor.ProjectType)
-        {
-            case ProjectType.DES:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DES)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DES", id, "Item", nameof(Item_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DES)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DES", id, "Menu", nameof(Menu_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS1)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DS1", id, "Item", nameof(Item_MsgBndID_DS1), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS1)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DS1", id, "Menu", nameof(Menu_MsgBndID_DS1), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                name = fmgName;
-                break;
-            case ProjectType.BB:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Item_MsgBndID_BB)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "BB", id, "Item", nameof(Item_MsgBndID_BB), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_BB)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "BB", id, "Menu", nameof(Menu_MsgBndID_BB), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS3:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS3)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DS3", id, "Item", nameof(Item_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS3)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DS3", id, "Menu", nameof(Menu_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_DS3)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DS3", id, "NgWord", nameof(NgWord_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.SDT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_SDT)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "SDT", id, "Item", nameof(Item_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_SDT)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "SDT", id, "Menu", nameof(Menu_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_SDT)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "SDT", id, "SellRegion", nameof(SellRegion_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.ER:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Item_MsgBndID_ER)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "ER", id, "Item", nameof(Item_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_ER)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "ER", id, "Menu", nameof(Menu_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ER), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_ER)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "ER", id, "NgWord", nameof(NgWord_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_ER), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_ER)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "ER", id, "SellRegion", nameof(SellRegion_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.AC6:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Item_MsgBndID_AC6)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "AC6", id, "Item", nameof(Item_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_AC6)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "AC6", id, "Menu", nameof(Menu_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_AC6)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "AC6", id, "NgWord", nameof(NgWord_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-
-            case ProjectType.NR:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Item_MsgBndID_NR)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "NR", id, "Item", nameof(Item_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_NR)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "NR", id, "Menu", nameof(Menu_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_NR)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-
-            case ProjectType.DB_NT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DB_NT)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DB", id, "Item", nameof(Item_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DB_NT)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
-                            "DB", id, "Menu", nameof(Menu_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-
-            default: break;
-        }
-
-        return name;
+        // The sample FMGs (DES) have never had internal names
+        return LookUpFmgName(project, info, id, fmgName, "", "TEXT_Util_Log_Missing_Enum_InternalName",
+            e => e.ToString(), withSample: false);
     }
 
     /// <summary>
@@ -1058,851 +276,51 @@ public static class TextUtils
     /// </summary>
     public static string GetFmgGrouping(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
-        var name = $"Unknown";
-
-        switch (project.Descriptor.ProjectType)
-        {
-            case ProjectType.DES:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DES)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DES", id, "Item", nameof(Item_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DES)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DES", id, "Menu", nameof(Menu_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSampleContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Sample_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Sample_MsgBndID_DES)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DES", id, "Sample", nameof(Sample_MsgBndID_DES), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS1)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DS1", id, "Item", nameof(Item_MsgBndID_DS1), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS1)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DS1", id, "Menu", nameof(Menu_MsgBndID_DS1), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                if (IsTalkFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(TalkFmgName_DS2)))
-                    {
-                        var enumVal = (TalkFmgName_DS2)Enum.Parse(typeof(TalkFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetShortName();
-                        }
-                    }
-                }
-                else if (IsBloodMessageFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(BloodMessageFmgName_DS2)))
-                    {
-                        var enumVal = (BloodMessageFmgName_DS2)Enum.Parse(typeof(BloodMessageFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetShortName();
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var entry in Enum.GetValues(typeof(CommonFmgName_DS2)))
-                    {
-                        var enumVal = (CommonFmgName_DS2)Enum.Parse(typeof(CommonFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetShortName();
-                        }
-                    }
-                }
-                break;
-            case ProjectType.BB:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Item_MsgBndID_BB)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "BB", id, "Item", nameof(Item_MsgBndID_BB), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_BB)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "BB", id, "Menu", nameof(Menu_MsgBndID_BB), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DS3:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS3)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DS3", id, "Item", nameof(Item_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS3)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DS3", id, "Menu", nameof(Menu_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_DS3)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DS3", id, "NgWord", nameof(NgWord_MsgBndID_DS3), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.SDT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_SDT)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "SDT", id, "Item", nameof(Item_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_SDT)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "SDT", id, "Menu", nameof(Menu_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_SDT)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "SDT", id, "SellRegion", nameof(SellRegion_MsgBndID_SDT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.ER:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Item_MsgBndID_ER)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "ER", id, "Item", nameof(Item_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_ER)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "ER", id, "Menu", nameof(Menu_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ER), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_ER)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "ER", id, "NgWord", nameof(NgWord_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_ER), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_ER)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "ER", id, "SellRegion", nameof(SellRegion_MsgBndID_ER), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.AC6:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Item_MsgBndID_AC6)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "AC6", id, "Item", nameof(Item_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_AC6)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "AC6", id, "Menu", nameof(Menu_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_AC6)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "AC6", id, "NgWord", nameof(NgWord_MsgBndID_AC6), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.NR:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Item_MsgBndID_NR)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "NR", id, "Item", nameof(Item_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_NR)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "NR", id, "Menu", nameof(Menu_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_NR)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            case ProjectType.DB_NT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DB_NT)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DB", id, "Item", nameof(Item_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DB_NT)id;
-                        name = enumObj.GetShortName();
-                    }
-                    else
-                    {
-                        Smithbox.LogError(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
-                            "DB", id, "Menu", nameof(Menu_MsgBndID_DB_NT), fmgName, info.FileEntry.Path));
-                    }
-                }
-                break;
-            default: break;
-        }
-
-        return name;
+        return LookUpFmgName(project, info, id, fmgName, "Unknown", "TEXT_Util_Log_Missing_Enum_FmgGrouping",
+            e => e.GetShortName());
     }
 
     /// <summary>
-    /// Get the grouping string for a FMG based on the BND ID
+    /// Get the DLC grouping string for a FMG based on the BND ID
     /// </summary>
     public static string GetFmgDlcGrouping(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
-        var name = $"Unknown";
+        return LookUpFmgName(project, info, id, fmgName, "Unknown", "TEXT_Util_Log_Missing_Enum_DlcGrouping",
+            e => e.GetDescription(), dlcLog: true);
+    }
 
-        switch (project.Descriptor.ProjectType)
+    /// <summary>
+    /// Reads a name for a FMG from the enum the game names its container's FMGs with (<see cref="FmgIdTables"/>)
+    /// </summary>
+    /// <param name="unknown">What is returned when the game has no table for the container, or the ID isn't in it</param>
+    /// <param name="missingKey">The message logged when the ID isn't in the table</param>
+    /// <param name="read">Reads the name from the ID's enum member</param>
+    /// <param name="dlcLog">A missing ID is logged as information with the enum and ID only, as the DLC grouping
+    /// always was, instead of as an error with where it was found</param>
+    /// <param name="withSample">Whether the sample containers' table is used</param>
+    private static string LookUpFmgName(ProjectEntry project, TextContainerWrapper info, int id, string fmgName,
+        string unknown, string missingKey, Func<Enum, string> read, bool dlcLog = false, bool withSample = true)
+    {
+        if (!FmgIdTables.TryFind(project.Descriptor.ProjectType, info, out var kind, out var enumType, out var logName))
+            return unknown;
+
+        if (!withSample && kind is FmgContainerKind.Sample)
+            return unknown;
+
+        if (Enum.IsDefined(enumType, id))
+            return read((Enum)Enum.ToObject(enumType, id));
+
+        if (dlcLog)
         {
-            case ProjectType.DES:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DES)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_DES", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DES)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_DES", id));
-                    }
-                }
-                else if (IsSampleContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Sample_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Sample_MsgBndID_DES)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Sample_MsgBndID_DES", id));
-                    }
-                }
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS1)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_DS1", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS1)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_DS1", id));
-                    }
-                }
-                break;
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                if (IsTalkFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(TalkFmgName_DS2)))
-                    {
-                        var enumVal = (TalkFmgName_DS2)Enum.Parse(typeof(TalkFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetDescription();
-                        }
-                    }
-                }
-                else if (IsBloodMessageFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(BloodMessageFmgName_DS2)))
-                    {
-                        var enumVal = (BloodMessageFmgName_DS2)Enum.Parse(typeof(BloodMessageFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetDescription();
-                        }
-                    }
-                }
-                else
-                {
-                    foreach (var entry in Enum.GetValues(typeof(CommonFmgName_DS2)))
-                    {
-                        var enumVal = (CommonFmgName_DS2)Enum.Parse(typeof(CommonFmgName_DS2), entry.ToString());
-                        var internalName = enumVal.ToString();
-
-                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
-                        {
-                            name = enumVal.GetDescription();
-                        }
-                    }
-                }
-                break;
-            case ProjectType.BB:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Item_MsgBndID_BB)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_BB", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_BB)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_BB", id));
-                    }
-                }
-                break;
-            case ProjectType.DS3:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS3)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_DS3", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS3)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_DS3", id));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_DS3)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "NgWord_MsgBndID_DS3", id));
-                    }
-                }
-                break;
-            case ProjectType.SDT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_SDT)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_SDT", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_SDT)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_SDT", id));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_SDT)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "SellRegion_MsgBndID_SDT", id));
-                    }
-                }
-                break;
-            case ProjectType.ER:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Item_MsgBndID_ER)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_ER", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_ER)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_ER", id));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ER), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_ER)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "NgWord_MsgBndID_ER", id));
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_ER), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_ER)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "SellRegion_MsgBndID_ER", id));
-                    }
-                }
-                break;
-            case ProjectType.AC6:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Item_MsgBndID_AC6)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_AC6", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_AC6)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_AC6", id));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_AC6)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "NgWord_MsgBndID_AC6", id));
-                    }
-                }
-                break;
-            case ProjectType.NR:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Item_MsgBndID_NR)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_NR", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_NR)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_NR", id));
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_NR)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "NgWord_MsgBndID_NR", id));
-                    }
-                }
-                break;
-            case ProjectType.DB_NT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DB_NT)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Item_MsgBndID_DB_NT", id));
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DB_NT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DB_NT)id;
-                        name = enumObj.GetDescription();
-                    }
-                    else
-                    {
-                        Smithbox.Log(typeof(TextUtils),
-                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
-                            "Menu_MsgBndID_DB_NT", id));
-                    }
-                }
-                break;
-            default: break;
+            Smithbox.Log(typeof(TextUtils), LOC.Get(missingKey, enumType.Name, id));
+        }
+        else
+        {
+            Smithbox.LogError(typeof(TextUtils),
+                LOC.Get(missingKey, logName, id, kind.ToString(), enumType.Name, fmgName, info.FileEntry.Path));
         }
 
-        return name;
+        return unknown;
     }
 
     /// <summary>
@@ -2292,7 +710,7 @@ public static class TextUtils
 
     public static bool IsObsoleteContainer(ProjectEntry project, FileDictionaryEntry entry)
     {
-        if (!CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers)
+        if (!CFG.Current.TextEditor.TextEditor_Container_List_Display_Obsolete_Containers)
         {
             switch (project.Descriptor.ProjectType)
             {

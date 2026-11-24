@@ -127,8 +127,8 @@ public class MaterialOracleTool : IAutomatedCapture
         Directory.CreateDirectory(RunFolder);
         Results.Clear();
 
-        SavedTaa = CFG.Current.Viewport_Post_Taa;
-        CFG.Current.Viewport_Post_Taa = false;
+        SavedTaa = CFG.Current.Viewport.Viewport_Post_Taa;
+        CFG.Current.Viewport.Viewport_Post_Taa = false;
 
         // Only the material's meshes may draw: markers, labels, collision and the grid would land on the captured pixels
         SavedDisplay = CaptureDisplay.Hide(View.RenderScene, hideGrid: true);
@@ -445,7 +445,7 @@ public class MaterialOracleTool : IAutomatedCapture
             viewport.ViewPipeline.Oracle.Cancel();
         }
 
-        CFG.Current.Viewport_Post_Taa = SavedTaa;
+        CFG.Current.Viewport.Viewport_Post_Taa = SavedTaa;
         SavedDisplay?.Restore();
         SavedDisplay = null;
         MaterialClock.FixedTime = null;

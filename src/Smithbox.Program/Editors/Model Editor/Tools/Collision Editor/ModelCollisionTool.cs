@@ -85,8 +85,8 @@ public partial class ModelCollisionTool
 
     private static HavokCollisionType Layer
     {
-        get => CFG.Current.ModelEditor_CollisionTool_Layer is HavokCollisionType.High ? HavokCollisionType.High : HavokCollisionType.Low;
-        set => CFG.Current.ModelEditor_CollisionTool_Layer = value;
+        get => CFG.Current.ModelEditor.ModelEditor_CollisionTool_Layer is HavokCollisionType.High ? HavokCollisionType.High : HavokCollisionType.Low;
+        set => CFG.Current.ModelEditor.ModelEditor_CollisionTool_Layer = value;
     }
 
     /// <summary>The loaded model of this view, if any.</summary>
@@ -284,8 +284,8 @@ public partial class ModelCollisionTool
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Edit", LOC.Get(Layer.GetDisplayName()),
                 InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action),
-                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Brush_Mode.GetDisplayName()),
-                $"{CFG.Current.MapEditor_CollisionEditor_Brush_Radius:0.###}");
+                LOC.Get(CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Mode.GetDisplayName()),
+                $"{CFG.Current.MapEditor.MapEditor_CollisionEditor_Brush_Radius:0.###}");
         }
         else if (MaterialActive)
         {
@@ -465,7 +465,7 @@ public partial class ModelCollisionTool
 
     private static Color GetPreviewColor(HavokCollisionType type)
     {
-        var color = type is HavokCollisionType.High ? CFG.Current.Viewport_High_Collision_Color : CFG.Current.Viewport_Collision_Color;
+        var color = type is HavokCollisionType.High ? CFG.Current.Viewport.Viewport_High_Collision_Color : CFG.Current.Viewport.Viewport_Collision_Color;
 
         return Color.FromArgb(255, (int)color.X, (int)color.Y, (int)color.Z);
     }
