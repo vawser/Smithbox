@@ -47,18 +47,29 @@ public sealed class EditorEntry
     /// <summary>Localization key of the editor's name</summary>
     public string LabelKey;
 
+    /// <summary>
+    /// The ImGui id of the editor's window (after ###). Window state is saved under it, so it mustn't change.
+    /// </summary>
+    public string WindowId;
+
     public string Icon;
 
     public EditorCategory Category;
 
-    /// <summary>Whether the project has this editor: enabled in its descriptor, supported by its game, stub made</summary>
+    /// <summary>Whether the project has this editor: enabled in its descriptor, supported by its game, hosted</summary>
     public Func<ProjectEntry, bool> IsAvailable;
 
     /// <summary>The editor itself, or null while it is still being made</summary>
     public Func<ProjectEditorHandler, EditorScreen> Screen;
 
-    /// <summary>Draws the editor's window, through its stub</summary>
-    public Action<ProjectEditorHandler, float, string[]> Display;
+    /// <summary>Whether the editor is told (<see cref="EditorScreen.OnDefocus"/>) when its window isn't shown</summary>
+    public bool DefocusWhenHidden;
+
+    /// <summary>Draws the editor's window</summary>
+    public void Display(ProjectEditorHandler handler, float dt, string[] commands)
+    {
+        EditorStub.Display(this, handler, dt, commands);
+    }
 }
 
 /// <summary>
@@ -72,180 +83,165 @@ public static class EditorRegistry
     /// <summary>The id the Settings Editor is shown under. Like the Project Editor, it has no entry.</summary>
     public const string SettingsEditorId = "settings";
 
+    /// <summary>Whether the project's editor host is set up, so its editors' windows can be shown</summary>
+    private static bool IsHosted(ProjectEntry p) => p.Handler?.IsHostReady == true;
+
     public static readonly IReadOnlyList<EditorEntry> Entries = new List<EditorEntry>
     {
         new()
         {
-            Id = "file", LabelKey = "FILE_FileBrowser_Stub", Icon = Icons.FolderOpen, Category = EditorCategory.Project,
+            Id = "file", LabelKey = "FILE_FileBrowser_Stub", WindowId = "fileBrowserStub", Icon = Icons.FolderOpen, Category = EditorCategory.Project,
             IsAvailable = p => p.Descriptor.EnableFileBrowser &&
                                EditorConditions.SupportsFileBrowser(p.Descriptor.ProjectType) &&
-                               p.Handler?.FileBrowserStub != null,
-            Screen = h => h.FileBrowser,
-            Display = (h, dt, c) => h.FileBrowserStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.FileBrowser
         },
         new()
         {
-            Id = "map", LabelKey = "MAP_Editor_Stub", Icon = Icons.Map, Category = EditorCategory.World,
+            Id = "map", LabelKey = "MAP_Editor_Stub", WindowId = "mapEditor", Icon = Icons.Map, Category = EditorCategory.World,
             IsAvailable = p => p.Descriptor.EnableMapEditor &&
                                EditorConditions.SupportsMapEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.MapEditorStub != null,
-            Screen = h => h.MapEditor,
-            Display = (h, dt, c) => h.MapEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.MapEditor
         },
         new()
         {
-            Id = "model", LabelKey = "MODEL_Window_Model_Editor", Icon = Icons.Cube, Category = EditorCategory.Assets,
+            Id = "model", LabelKey = "MODEL_Window_Model_Editor", WindowId = "modelEditor", Icon = Icons.Cube, Category = EditorCategory.Assets,
             IsAvailable = p => p.Descriptor.EnableModelEditor &&
                                EditorConditions.SupportsModelEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.ModelEditorStub != null,
-            Screen = h => h.ModelEditor,
-            Display = (h, dt, c) => h.ModelEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.ModelEditor
         },
         new()
         {
-            Id = "material", LabelKey = "MAT_Editor_Stub", Icon = Icons.PaintBrush, Category = EditorCategory.Assets,
+            Id = "material", LabelKey = "MAT_Editor_Stub", WindowId = "materialEditor", Icon = Icons.PaintBrush, Category = EditorCategory.Assets,
             IsAvailable = p => p.Descriptor.EnableMaterialEditor &&
                                EditorConditions.SupportsMaterialEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.MaterialEditorStub != null,
+                               IsHosted(p),
             Screen = h => h.MaterialEditor,
-            Display = (h, dt, c) => h.MaterialEditorStub.Display(dt, c)
+            DefocusWhenHidden = true
         },
         new()
         {
-            Id = "texture", LabelKey = "TEXVIEW_Texture_Viewer_Stub", Icon = Icons.PictureO, Category = EditorCategory.Assets,
+            Id = "texture", LabelKey = "TEXVIEW_Texture_Viewer_Stub", WindowId = "textureViewerStub", Icon = Icons.PictureO, Category = EditorCategory.Assets,
             IsAvailable = p => p.Descriptor.EnableTextureViewer &&
                                EditorConditions.SupportsTextureViewer(p.Descriptor.ProjectType) &&
-                               p.Handler?.TextureViewerStub != null,
-            Screen = h => h.TextureViewer,
-            Display = (h, dt, c) => h.TextureViewerStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.TextureViewer
         },
         new()
         {
-            Id = "fx", LabelKey = "FX_Window_Fx_Editor", Icon = Icons.Magic, Category = EditorCategory.Assets,
+            Id = "fx", LabelKey = "FX_Window_Fx_Editor", WindowId = "fxEditor", Icon = Icons.Magic, Category = EditorCategory.Assets,
             IsAvailable = p => p.Descriptor.EnableFxEditor &&
                                EditorConditions.SupportsFxEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.FxEditorStub != null,
-            Screen = h => h.FxEditor,
-            Display = (h, dt, c) => h.FxEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.FxEditor
         },
         new()
         {
-            Id = "hkx", LabelKey = "HAVOK_Window_Havok_Editor", Icon = Icons.Cogs, Category = EditorCategory.Assets,
+            Id = "hkx", LabelKey = "HAVOK_Window_Havok_Editor", WindowId = "havokEditor", Icon = Icons.Cogs, Category = EditorCategory.Assets,
             IsAvailable = p => p.Descriptor.EnableHavokEditor &&
                                EditorConditions.SupportsHavokEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.HavokEditorStub != null,
-            Screen = h => h.HavokEditor,
-            Display = (h, dt, c) => h.HavokEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.HavokEditor
         },
         new()
         {
-            Id = "tae", LabelKey = "TAE_Editor_Title", Icon = Icons.HourglassHalf, Category = EditorCategory.Animation,
+            Id = "tae", LabelKey = "TAE_Editor_Title", WindowId = "timeActEditor", Icon = Icons.HourglassHalf, Category = EditorCategory.Animation,
             IsAvailable = p => p.Descriptor.EnableTimeActEditor &&
                                EditorConditions.SupportsTimeActEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.TimeActEditorStub != null,
-            Screen = h => h.TimeActEditor,
-            Display = (h, dt, c) => h.TimeActEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.TimeActEditor
         },
         new()
         {
-            Id = "cutscene", LabelKey = "CUTSCENE_Window_Cutscene_Editor", Icon = Icons.VideoCamera, Category = EditorCategory.Animation,
+            Id = "cutscene", LabelKey = "CUTSCENE_Window_Cutscene_Editor", WindowId = "cutsceneEditor", Icon = Icons.VideoCamera, Category = EditorCategory.Animation,
             IsAvailable = p => p.Descriptor.EnableCutsceneEditor &&
                                EditorConditions.SupportsCutsceneEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.CutsceneEditorStub != null,
-            Screen = h => h.CutsceneEditor,
-            Display = (h, dt, c) => h.CutsceneEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.CutsceneEditor
         },
         new()
         {
-            Id = "behavior", LabelKey = "BHV_Editor_Stub", Icon = Icons.Sitemap, Category = EditorCategory.Animation,
+            Id = "behavior", LabelKey = "BHV_Editor_Stub", WindowId = "behaviorEditor", Icon = Icons.Sitemap, Category = EditorCategory.Animation,
             IsAvailable = p => p.Descriptor.EnableBehaviorEditor &&
                                EditorConditions.SupportsBehaviorEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.BehaviorEditorStub != null,
-            Screen = h => h.BehaviorEditor,
-            Display = (h, dt, c) => h.BehaviorEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.BehaviorEditor
         },
         new()
         {
-            Id = "param", LabelKey = "PARAM_Window_Param_Editor", Icon = Icons.Table, Category = EditorCategory.Data,
+            Id = "param", LabelKey = "PARAM_Window_Param_Editor", WindowId = "paramEditor", Icon = Icons.Table, Category = EditorCategory.Data,
             IsAvailable = p => p.Descriptor.EnableParamEditor &&
                                EditorConditions.SupportsParamEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.ParamEditorStub != null,
-            Screen = h => h.ParamEditor,
-            Display = (h, dt, c) => h.ParamEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.ParamEditor
         },
         new()
         {
-            Id = "projectile", LabelKey = "PROJECTILE_Window_Projectile_Editor", Icon = Icons.Rocket, Category = EditorCategory.Data,
+            Id = "projectile", LabelKey = "PROJECTILE_Window_Projectile_Editor", WindowId = "projectileEditor", Icon = Icons.Rocket, Category = EditorCategory.Data,
             IsAvailable = p => p.Descriptor.EnableProjectileEditor &&
                                p.Descriptor.EnableParamEditor &&
                                EditorConditions.SupportsProjectileEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.ProjectileEditorStub != null,
-            Screen = h => h.ProjectileEditor,
-            Display = (h, dt, c) => h.ProjectileEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.ProjectileEditor
         },
         new()
         {
-            Id = "facegen", LabelKey = "FACEGEN_Window_FaceGen_Editor", Icon = Icons.User, Category = EditorCategory.Data,
+            Id = "facegen", LabelKey = "FACEGEN_Window_FaceGen_Editor", WindowId = "faceGenEditor", Icon = Icons.User, Category = EditorCategory.Data,
             IsAvailable = p => p.Descriptor.EnableFaceGenEditor &&
                                p.Descriptor.EnableParamEditor &&
                                EditorConditions.SupportsFaceGenEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.FaceGenEditorStub != null,
-            Screen = h => h.FaceGenEditor,
-            Display = (h, dt, c) => h.FaceGenEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.FaceGenEditor
         },
         new()
         {
-            Id = "text", LabelKey = "TEXT_Window_TextEditor", Icon = Icons.Font, Category = EditorCategory.Data,
+            Id = "text", LabelKey = "TEXT_Window_TextEditor", WindowId = "textEditorStub", Icon = Icons.Font, Category = EditorCategory.Data,
             IsAvailable = p => p.Descriptor.EnableTextEditor &&
                                EditorConditions.SupportsTextEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.TextEditorStub != null,
-            Screen = h => h.TextEditor,
-            Display = (h, dt, c) => h.TextEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.TextEditor
         },
         new()
         {
-            Id = "gparam", LabelKey = "GPARAM_Editor_Stub", Icon = Icons.SunO, Category = EditorCategory.Data,
+            Id = "gparam", LabelKey = "GPARAM_Editor_Stub", WindowId = "gparamEditorStub", Icon = Icons.SunO, Category = EditorCategory.Data,
             IsAvailable = p => p.Descriptor.EnableGparamEditor &&
                                EditorConditions.SupportsGraphicsParamEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.GparamEditorStub != null,
-            Screen = h => h.GparamEditor,
-            Display = (h, dt, c) => h.GparamEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.GparamEditor
         },
         new()
         {
-            Id = "emevd", LabelKey = "EMEVD_Editor_Stub", Icon = Icons.Code, Category = EditorCategory.Scripting,
+            Id = "emevd", LabelKey = "EMEVD_Editor_Stub", WindowId = "emevdEditor", Icon = Icons.Code, Category = EditorCategory.Scripting,
             IsAvailable = p => p.Descriptor.EnableEmevdEditor &&
                                EditorConditions.SupportsEmevdEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.EmevdEditorStub != null,
-            Screen = h => h.EmevdEditor,
-            Display = (h, dt, c) => h.EmevdEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.EmevdEditor
         },
         new()
         {
-            Id = "esd", LabelKey = "ESD_Editor_Stub", Icon = Icons.Hashtag, Category = EditorCategory.Scripting,
+            Id = "esd", LabelKey = "ESD_Editor_Stub", WindowId = "esdEditor", Icon = Icons.Hashtag, Category = EditorCategory.Scripting,
             IsAvailable = p => p.Descriptor.EnableEsdEditor &&
                                EditorConditions.SupportsEsdEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.EsdEditorStub != null,
-            Screen = h => h.EsdEditor,
-            Display = (h, dt, c) => h.EsdEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.EsdEditor
         },
         new()
         {
-            Id = "lua", LabelKey = "LUA_Editor_Stub", Icon = Icons.FileCodeO, Category = EditorCategory.Scripting,
+            Id = "lua", LabelKey = "LUA_Editor_Stub", WindowId = "luaEditor", Icon = Icons.FileCodeO, Category = EditorCategory.Scripting,
             IsAvailable = p => p.Descriptor.EnableLuaEditor &&
                                EditorConditions.SupportsLuaEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.LuaEditorStub != null,
-            Screen = h => h.LuaEditor,
-            Display = (h, dt, c) => h.LuaEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.LuaEditor
         },
         new()
         {
-            Id = "sound", LabelKey = "SOUND_Editor_Stub", Icon = Icons.VolumeUp, Category = EditorCategory.Audio,
+            Id = "sound", LabelKey = "SOUND_Editor_Stub", WindowId = "soundEditor", Icon = Icons.VolumeUp, Category = EditorCategory.Audio,
             IsAvailable = p => p.Descriptor.EnableSoundEditor &&
                                EditorConditions.SupportsSoundEditor(p.Descriptor.ProjectType) &&
-                               p.Handler?.SoundEditorStub != null,
-            Screen = h => h.SoundEditor,
-            Display = (h, dt, c) => h.SoundEditorStub.Display(dt, c)
+                               IsHosted(p),
+            Screen = h => h.SoundEditor
         },
     };
 

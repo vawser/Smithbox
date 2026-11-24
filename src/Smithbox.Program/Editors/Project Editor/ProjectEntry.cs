@@ -64,35 +64,7 @@ public class ProjectEntry
         }
         else if (Handler != null)
         {
-            if (Handler.MapEditorStub != null)
-                Handler.MapEditorStub.Draw(device, cl);
-
-            if (Handler.ModelEditorStub != null)
-                Handler.ModelEditorStub.Draw(device, cl);
-
-            if (Handler.TimeActEditorStub != null)
-                Handler.TimeActEditorStub.Draw(device, cl);
-
-            if (Handler.GparamEditorStub != null)
-                Handler.GparamEditorStub.Draw(device, cl);
-
-            if (Handler.FxEditorStub != null)
-                Handler.FxEditorStub.Draw(device, cl);
-
-            if (Handler.CutsceneEditorStub != null)
-                Handler.CutsceneEditorStub.Draw(device, cl);
-
-            if (Handler.ProjectileEditorStub != null)
-                Handler.ProjectileEditorStub.Draw(device, cl);
-
-            if (Handler.FaceGenEditorStub != null)
-                Handler.FaceGenEditorStub.Draw(device, cl);
-
-            if (Handler.LuaEditorStub != null)
-                Handler.LuaEditorStub.Draw(device, cl);
-
-            if (Handler.BehaviorEditorStub != null)
-                Handler.BehaviorEditorStub.Draw(device, cl);
+            EditorStub.Draw(Handler, device, cl);
 
             ModelPreviewCache.Draw(this);
             MeshPreviewRenderer.Draw();
@@ -129,35 +101,7 @@ public class ProjectEntry
     {
         if (Handler != null)
         {
-            if (Handler.MapEditorStub != null)
-                Handler.MapEditorStub.EditorResized(window, device);
-
-            if (Handler.ModelEditorStub != null)
-                Handler.ModelEditorStub.EditorResized(window, device);
-
-            if (Handler.TimeActEditorStub != null)
-                Handler.TimeActEditorStub.EditorResized(window, device);
-
-            if (Handler.GparamEditorStub != null)
-                Handler.GparamEditorStub.EditorResized(window, device);
-
-            if (Handler.FxEditorStub != null)
-                Handler.FxEditorStub.EditorResized(window, device);
-
-            if (Handler.CutsceneEditorStub != null)
-                Handler.CutsceneEditorStub.EditorResized(window, device);
-
-            if (Handler.ProjectileEditorStub != null)
-                Handler.ProjectileEditorStub.EditorResized(window, device);
-
-            if (Handler.FaceGenEditorStub != null)
-                Handler.FaceGenEditorStub.EditorResized(window, device);
-
-            if (Handler.LuaEditorStub != null)
-                Handler.LuaEditorStub.EditorResized(window, device);
-
-            if (Handler.BehaviorEditorStub != null)
-                Handler.BehaviorEditorStub.EditorResized(window, device);
+            EditorStub.EditorResized(Handler, window, device);
         }
     }
 
@@ -245,7 +189,7 @@ public class ProjectEntry
 
         try
         {
-            Handler.InitStubs();
+            Handler.InitHost();
         }
         catch (Exception e)
         {

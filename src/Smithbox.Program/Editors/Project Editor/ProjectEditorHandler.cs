@@ -42,53 +42,43 @@ public class ProjectEditorHandler : IDisposable
 
     // File Browser
     public FileBrowserScreen FileBrowser;
-    public FileBrowserStub FileBrowserStub;
 
     // Map Editor
     public MapData MapData;
     public MapEditorScreen MapEditor;
-    public MapEditorStub MapEditorStub;
 
     // Model Editor
     public ModelData ModelData;
     public ModelEditorScreen ModelEditor;
-    public ModelEditorStub ModelEditorStub;
 
     // TimeAct Editor
     public TimeActData TimeActData;
     public TimeActEditorScreen TimeActEditor;
-    public TimeActEditorStub TimeActEditorStub;
 
     // Param Editor
     public ParamData ParamData;
     public ParamEditorScreen ParamEditor;
-    public ParamEditorStub ParamEditorStub;
 
     // Text Editor
     public TextData TextData;
     public TextEditorScreen TextEditor;
-    public TextEditorStub TextEditorStub;
 
     // Graphics Param Editor
     public GparamData GparamData;
     public GparamEditorScreen GparamEditor;
-    public GparamEditorStub GparamEditorStub;
 
     // Material Editor
     public MaterialData MaterialData;
     public MaterialEditorScreen MaterialEditor;
-    public MaterialEditorStub MaterialEditorStub;
 
     // Texture Viewer
     public TextureViewerScreen TextureViewer;
-    public TextureViewerStub TextureViewerStub;
 
     // Map Param Editor
 
     // Havok Editor
     public HavokData HavokData;
     public HavokEditorScreen HavokEditor;
-    public HavokEditorStub HavokEditorStub;
 
     /// <summary>
     /// Whether the Behavior Editor is enabled and edits Havok behavior graphs (every Havok game but AC6, whose
@@ -106,45 +96,36 @@ public class ProjectEditorHandler : IDisposable
     // FX Editor
     public FxData FxData;
     public FxEditorScreen FxEditor;
-    public FxEditorStub FxEditorStub;
 
     // Cutscene Editor
     public CutsceneData CutsceneData;
     public CutsceneEditorScreen CutsceneEditor;
-    public CutsceneEditorStub CutsceneEditorStub;
 
     // Projectile Editor (reads and edits the Param Editor's params)
     public ProjectileEditorScreen ProjectileEditor;
-    public ProjectileEditorStub ProjectileEditorStub;
 
     // FaceGen Editor (reads and edits the Param Editor's face params)
     public StudioCore.Editors.FaceGenEditor.FaceGenEditorScreen FaceGenEditor;
-    public StudioCore.Editors.FaceGenEditor.FaceGenEditorStub FaceGenEditorStub;
 
     // Behavior Editor (AC6 .bhv)
     public BhvData BehaviorData;
     public BehaviorEditorScreen BehaviorEditor;
-    public BehaviorEditorStub BehaviorEditorStub;
 
     // EMEVD Editor (event scripts)
     public EmevdData EmevdData;
     public EmevdEditorScreen EmevdEditor;
-    public EmevdEditorStub EmevdEditorStub;
 
     // ESD Editor (EzState machines)
     public EsdData EsdData;
     public EsdEditorScreen EsdEditor;
-    public EsdEditorStub EsdEditorStub;
 
     // Lua Editor (AI scripts in .luabnd)
     public LuaData LuaData;
     public LuaEditorScreen LuaEditor;
-    public LuaEditorStub LuaEditorStub;
 
     // Sound Editor (FMOD / Wwise)
     public SoundData SoundData;
     public SoundEditorScreen SoundEditor;
-    public SoundEditorStub SoundEditorStub;
 
     // The lighting the Model and Time Act Editors' viewports borrow from a map, made when a viewport first asks
     private ViewportEnvironment _viewportEnvironment;
@@ -179,27 +160,15 @@ public class ProjectEditorHandler : IDisposable
         Project = project;
     }
 
-    public void InitStubs()
+    /// <summary>
+    /// Whether the editor host can show this project's editors' windows (each shows "loading" until its editor is
+    /// made). The windows themselves are drawn by <see cref="EditorStub"/> from the <see cref="EditorRegistry"/>.
+    /// </summary>
+    public bool IsHostReady { get; private set; }
+
+    public void InitHost()
     {
-        MapEditorStub = new(Project);
-        ModelEditorStub = new(Project);
-        TimeActEditorStub = new(Project);
-        TextEditorStub = new(Project);
-        ParamEditorStub = new(Project);
-        GparamEditorStub = new(Project);
-        MaterialEditorStub = new(Project);
-        TextureViewerStub = new(Project);
-        FileBrowserStub = new(Project);
-        HavokEditorStub = new(Project);
-        FxEditorStub = new(Project);
-        CutsceneEditorStub = new(Project);
-        ProjectileEditorStub = new(Project);
-        FaceGenEditorStub = new(Project);
-        BehaviorEditorStub = new(Project);
-        EmevdEditorStub = new(Project);
-        EsdEditorStub = new(Project);
-        LuaEditorStub = new(Project);
-        SoundEditorStub = new(Project);
+        IsHostReady = true;
     }
 
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
