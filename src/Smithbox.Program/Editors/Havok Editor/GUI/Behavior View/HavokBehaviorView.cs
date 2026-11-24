@@ -19,6 +19,7 @@ public class HavokBehaviorView
     public HavokStateMachineView StateMachineView;
     public HavokVariableView VariableView;
     public HavokEventView EventView;
+    public HavokModifierView ModifierView;
 
     /// <summary>The shown file against the game's copy: the lists' vanilla colours and the Changes tool</summary>
     public HavokBehaviorChangeIndex Changes;
@@ -52,6 +53,7 @@ public class HavokBehaviorView
         StateMachineView = new(view, this, project);
         VariableView = new(view, this, project);
         EventView = new(view, this, project);
+        ModifierView = new(view, this, project);
         Changes = new(view, project);
         Scripts = new(project);
         ScriptView = new(view, this);
@@ -72,6 +74,7 @@ public class HavokBehaviorView
         StateMachineView.ResetSelection();
         VariableView.ResetSelection();
         EventView.ResetSelection();
+        ModifierView.ResetSelection();
         OutlineView.ResetSelection();
         AnimationTableView.ResetSelection();
         GraphView.ResetSelection();
@@ -102,6 +105,7 @@ public class HavokBehaviorView
         StateMachineView.Setup(sourceObject);
         VariableView.Setup(sourceObject);
         EventView.Setup(sourceObject);
+        ModifierView.Setup(sourceObject);
         OutlineView.Setup(sourceObject);
         AnimationTableView.Setup(sourceObject);
         GraphView.Setup(sourceObject);
@@ -128,6 +132,7 @@ public class HavokBehaviorView
         (HavokBehaviorContentsMode.Clips, "HAVOK_BehaviorView_Tab_Clip_Generators", "HAVOK_BehaviorCategory_Clips_TT"),
         (HavokBehaviorContentsMode.Variables, "HAVOK_BehaviorView_Tab_Variables", "HAVOK_BehaviorCategory_Variables_TT"),
         (HavokBehaviorContentsMode.Events, "HAVOK_BehaviorView_Tab_Events", "HAVOK_BehaviorCategory_Events_TT"),
+        (HavokBehaviorContentsMode.Modifiers, "HAVOK_BehaviorView_Tab_Modifiers", "HAVOK_BehaviorCategory_Modifiers_TT"),
     };
 
     /// <summary>
@@ -149,6 +154,7 @@ public class HavokBehaviorView
         AnimationClipView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Clips);
         VariableView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Variables);
         EventView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Events);
+        ModifierView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Modifiers);
         GraphView.SetTabState(!contents);
     }
 
@@ -203,6 +209,7 @@ public class HavokBehaviorView
             case HavokBehaviorContentsMode.Clips: AnimationClipView.DisplayContents(); break;
             case HavokBehaviorContentsMode.Variables: VariableView.DisplayContents(); break;
             case HavokBehaviorContentsMode.Events: EventView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Modifiers: ModifierView.DisplayContents(); break;
         }
     }
 
@@ -232,6 +239,7 @@ public class HavokBehaviorView
             HavokBehaviorContentsMode.StateMachines => StateMachineView.SelectedStateMachines.FirstOrDefault(),
             HavokBehaviorContentsMode.Selectors => AnimationSelectorView.SelectedAnimSelectors.FirstOrDefault(),
             HavokBehaviorContentsMode.Clips => AnimationClipView.SelectedAnimationClips.FirstOrDefault(),
+            HavokBehaviorContentsMode.Modifiers => ModifierView.Selected,
             _ => null
         };
     }
@@ -329,9 +337,69 @@ public class HavokBehaviorView
     public System.Numerics.Vector2 PropertySectionSize =>
         new(0, UsedByHeight > 0 ? -UsedByHeight : 0);
 
+    /// <summary>
+    /// The outline nodes above an object (states and generators), outermost first: its breadcrumb
+    /// </summary>
+    public List<object> GetBreadcrumb(object obj)
+    {
+        if (Symbols == null || obj == null)
+            return new();
+
+        // The path is gathered walking up, so the nearest node comes first
+        var path = Symbols.GetOutlinePath(obj).Where(HavokBehaviorSymbols.IsOutlineNode).ToList();
+        path.Reverse();
+
+        return path;
+    }
+
+    /// <summary>
+    /// The selection's breadcrumb, above the property grid: each step shows that node in the Outline
+    /// </summary>
+    private void DisplayPropertiesBreadcrumb()
+    {
+        var selected = GetSelectedObject();
+
+        if (selected == null || Symbols == null)
+            return;
+
+        var path = GetBreadcrumb(selected);
+
+        if (path.Count == 0)
+            return;
+
+        // The last few steps: deep graphs would wrap the window otherwise
+        const int maxSteps = 6;
+        var start = Math.Max(0, path.Count - maxSteps);
+
+        if (start > 0)
+        {
+            ImGui.TextDisabled("…");
+            ImGui.SameLine(0, 2);
+        }
+
+        for (var i = start; i < path.Count; i++)
+        {
+            if (i > start)
+            {
+                ImGui.SameLine(0, 2);
+                ImGui.TextDisabled("›");
+                ImGui.SameLine(0, 2);
+            }
+
+            if (ImGui.SmallButton($"{HavokBehaviorSymbols.GetValue(path[i], "m_name") as string ?? HavokBehaviorSymbols.GetOutlineTag(path[i])}##propCrumb{i}"))
+                OutlineView.Navigate(path[i]);
+
+            GUI.Tooltip(HavokBehaviorSymbols.GetOutlineLabel(path[i]));
+        }
+
+        ImGui.Separator();
+    }
+
     public void DisplayProperties()
     {
         SyncCurrentViews();
+
+        DisplayPropertiesBreadcrumb();
 
         DisplayPropertyGrid();
 
@@ -377,6 +445,10 @@ public class HavokBehaviorView
         {
             EventView.DisplayProperties();
         }
+        else if (ModifierView.CanDisplayProperties())
+        {
+            ModifierView.DisplayProperties();
+        }
         else
         {
             GUI.WrappedText(LOC.Get("HAVOK_BehaviorView_No_Entry_Selected"));
@@ -406,6 +478,9 @@ public class HavokBehaviorView
 
         if (AnimationClipView.CanDisplayProperties())
             return AnimationClipView.SelectedAnimationClips.FirstOrDefault();
+
+        if (ModifierView.CanDisplayProperties())
+            return ModifierView.Selected;
 
         return null;
     }
@@ -496,7 +571,8 @@ public enum HavokBehaviorContentsMode
     Selectors,
     Clips,
     Variables,
-    Events
+    Events,
+    Modifiers
 }
 
 /// <summary>

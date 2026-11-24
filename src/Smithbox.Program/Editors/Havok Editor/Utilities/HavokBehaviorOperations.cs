@@ -354,11 +354,9 @@ public static partial class HavokBehaviorOperations
 
         if (internalIdField == null)
         {
-            if (sameAnimation == null)
-            {
-                error = LOC.Get("HAVOK_BehaviorActions_Error_Character_Bundle", animationName);
+            // A new animation: listed in the character file, in the same undo step
+            if (sameAnimation == null && !EnsureCharacterAnimation(context, animationName, steps, null, out error))
                 return null;
-            }
         }
         else if (sameAnimation != null)
         {

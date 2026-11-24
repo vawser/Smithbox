@@ -134,15 +134,40 @@ public static partial class HavokBehaviorOperations
             return null;
         }
 
-        var sourceName = HavokBehaviorSymbols.GetValue(source, "m_name") as string ?? "";
         var copy = HavokBehaviorCloner.Clone(source, symbols, keepShared: true);
+        var steps = PlaceGenerator(context, copy, placement, out error);
 
-        HavokBehaviorSymbols.GetField(copy.GetType(), "m_name")?.SetValue(copy, UniqueObjectName(symbols, copy.GetType(), sourceName));
+        if (steps == null)
+            return null;
 
         newObj = copy;
 
+        return Wrap(context, steps);
+    }
+
+    /// <summary>
+    /// The steps that place a copy (not yet in the file) where a placement is: at the end of its selector list, or in a
+    /// new state copied from the placement's state with the copy in the target's place. The copy is named uniquely.
+    /// Used by Paste (a copy from this file) and cross-file Paste (a copy from another).
+    /// </summary>
+    public static List<EditorAction> PlaceGenerator(HavokBehaviorContext context, object copy, HavokPlacement placement, out string error)
+    {
+        error = null;
+
+        var symbols = context.Symbols;
+
+        if (placement == null || placement.Kind is PlacementKind.Unsupported)
+        {
+            error = placement?.Description ?? LOC.Get("HAVOK_BehaviorActions_Error_Not_Referenced");
+            return null;
+        }
+
+        var sourceName = HavokBehaviorSymbols.GetValue(copy, "m_name") as string ?? "";
+
+        HavokBehaviorSymbols.GetField(copy.GetType(), "m_name")?.SetValue(copy, UniqueObjectName(symbols, copy.GetType(), sourceName));
+
         if (placement.Kind is PlacementKind.List)
-            return Wrap(context, new List<EditorAction> { AddToList(context, GetList(placement.Holder, "m_generators"), copy) });
+            return new List<EditorAction> { AddToList(context, GetList(placement.Holder, "m_generators"), copy) };
 
         // A new state: the target's state copied, with the pasted object where the target was
         var state = placement.Holder;
@@ -167,7 +192,7 @@ public static partial class HavokBehaviorOperations
         HavokBehaviorSymbols.GetField(stateCopy.GetType(), "m_name").SetValue(stateCopy, stateName);
         HavokBehaviorSymbols.GetField(stateCopy.GetType(), "m_stateId").SetValue(stateCopy, GetFreeStateID(placement.StateMachine));
 
-        return Wrap(context, new List<EditorAction> { AddToList(context, GetList(placement.StateMachine, "m_states"), stateCopy) });
+        return new List<EditorAction> { AddToList(context, GetList(placement.StateMachine, "m_states"), stateCopy) };
     }
     #endregion
 

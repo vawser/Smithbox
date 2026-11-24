@@ -104,6 +104,10 @@ public class HavokEditorScreen : EditorScreen
                 if (action is IHavokFileAction { FileWrapper: not null } fileAction)
                     pinned.Add(fileAction.FileWrapper);
 
+                // The steps of a compound edit may touch other files of the binder (the DS3 character file)
+                if (action is HavokCompoundAction compound)
+                    pinned.UnionWith(compound.AllWrappers);
+
                 // File actions can put their recorded wrappers back, so those stay as they are too
                 if (action is IHavokBinderAction binderAction)
                     pinned.UnionWith(binderAction.Wrappers);

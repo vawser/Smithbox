@@ -354,11 +354,9 @@ public static partial class HavokBehaviorOperations
         // HKX2 (DS3): no internal ID; the character file lists the animations the behavior uses
         if (internalIdField == null)
         {
+            // A new animation: listed in the character file, in the same undo step
             if (sameAnimation == null)
-            {
-                error = LOC.Get("HAVOK_BehaviorActions_Error_Character_Bundle", newAnimation);
-                return false;
-            }
+                return EnsureCharacterAnimation(context, newAnimation, steps, addedNames, out error);
 
             return true;
         }

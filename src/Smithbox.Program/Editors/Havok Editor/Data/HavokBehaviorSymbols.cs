@@ -47,6 +47,31 @@ public partial class HavokBehaviorSymbols
     public List<object> Clips { get; } = new();
 
     /// <summary>
+    /// Every modifier in the file (hkbModifier and its derived types, hkbModifierList included), in walk order
+    /// </summary>
+    public List<object> Modifiers { get; } = new();
+
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<Type, bool> ModifierTypes = new();
+
+    /// <summary>Whether the object is a modifier (derives from hkbModifier)</summary>
+    public static bool IsModifier(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        return ModifierTypes.GetOrAdd(obj.GetType(), type =>
+        {
+            for (var t = type; t != null; t = t.BaseType)
+            {
+                if (t.Name == "hkbModifier")
+                    return true;
+            }
+
+            return false;
+        });
+    }
+
+    /// <summary>
     /// Every object in the file
     /// </summary>
     public IEnumerable<object> Objects => AllObjects;
@@ -145,6 +170,9 @@ public partial class HavokBehaviorSymbols
                     Clips.Add(obj);
                     break;
             }
+
+            if (IsModifier(obj))
+                Modifiers.Add(obj);
 
             foreach (var field in fieldProvider(type))
             {

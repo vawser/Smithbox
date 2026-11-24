@@ -54,6 +54,24 @@ public class HavokStateMachineGraphView
     private const int OutputPinBase = 200000;
     private const int LinkBase = 300000;
 
+    // The "Any state" stub: drawn only for the wildcards asked for (the selected state's, or the highlighted event's),
+    // since in most machines wildcards reach every state
+    private const int AnyNodeId = 1000000;
+    private const int AnyPin = 1100000;
+    private const int WildcardLinkBase = 1200000;
+    private readonly List<(int To, List<object> Transitions)> WildcardLinks = new();
+
+    // Event highlight: transitions on events whose name contains the text
+    private string EventHighlight = "";
+
+    // Find a state: centres the view on the next match
+    private string StateFind = "";
+    private string StateFindFor;
+    private List<object> StateFindMatches = new();
+    private int StateFindIndex = -1;
+    private object CenterState;
+    private Vector2 PaneSize;
+
 
     public HavokStateMachineGraphView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
@@ -178,6 +196,156 @@ public class HavokStateMachineGraphView
             Owner.OutlineView.Navigate(SelectedState ?? StateMachine);
 
         ImGui.EndChild();
+
+        if (StateMachine == null)
+            return;
+
+        DisplayBreadcrumb();
+
+        // Highlight an event
+        ImGui.SetNextItemWidth(200f * DPI.UIScale());
+        ImGui.InputTextWithHint("##graphEventHighlight", LOC.Get("HAVOK_GraphView_Highlight_Hint"), ref EventHighlight, 255);
+        GUI.Tooltip(LOC.Get("HAVOK_GraphView_Highlight_TT"));
+
+        // Find a state
+        ImGui.SameLine();
+        ImGui.SetNextItemWidth(200f * DPI.UIScale());
+        ImGui.InputTextWithHint("##graphStateFind", LOC.Get("HAVOK_GraphView_Find_Hint"), ref StateFind, 255);
+        GUI.Tooltip(LOC.Get("HAVOK_GraphView_Find_TT"));
+
+        UpdateStateFind();
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(StateFindMatches.Count == 0);
+        if (ImGui.ArrowButton("##graphFindNext", ImGuiDir.Down))
+            StepStateFind();
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("HAVOK_GraphView_Find_Next_TT"));
+
+        if (StateFind.Length > 0)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextDisabled(LOC.Get("HAVOK_Script_Find_Count", StateFindIndex + 1, StateFindMatches.Count));
+        }
+    }
+
+    /// <summary>
+    /// The machines above the shown one, outermost first; clicking one shows it (Back returns)
+    /// </summary>
+    private void DisplayBreadcrumb()
+    {
+        var path = Owner.GetBreadcrumb(StateMachine).Where(n => n.GetType().Name == "hkbStateMachine").ToList();
+
+        if (path.Count == 0)
+            return;
+
+        ImGui.AlignTextToFramePadding();
+
+        for (var i = 0; i < path.Count; i++)
+        {
+            if (i > 0)
+            {
+                ImGui.SameLine(0, 2);
+                ImGui.TextDisabled("›");
+                ImGui.SameLine(0, 2);
+            }
+
+            if (ImGui.SmallButton($"{HavokBehaviorSymbols.GetValue(path[i], "m_name") ?? "?"}##graphCrumb{i}"))
+            {
+                FollowSelection = false;
+                Show(path[i], rememberCurrent: true);
+            }
+        }
+
+        ImGui.SameLine(0, 2);
+        ImGui.TextDisabled("›");
+        ImGui.SameLine(0, 2);
+        ImGui.Text(HavokBehaviorSymbols.GetValue(StateMachine, "m_name") as string ?? "?");
+    }
+
+    private void UpdateStateFind()
+    {
+        if (StateFind == StateFindFor)
+            return;
+
+        StateFindFor = StateFind;
+        StateFindMatches = new List<object>();
+        StateFindIndex = -1;
+
+        if (StateFind.Length == 0 || HavokBehaviorSymbols.GetValue(StateMachine, "m_states") is not IList states)
+            return;
+
+        foreach (var state in states)
+        {
+            if (state != null && (HavokBehaviorSymbols.GetValue(state, "m_name") as string ?? "").Contains(StateFind, StringComparison.OrdinalIgnoreCase))
+                StateFindMatches.Add(state);
+        }
+
+        // The first match at once
+        StepStateFind();
+    }
+
+    private void StepStateFind()
+    {
+        if (StateFindMatches.Count == 0)
+            return;
+
+        StateFindIndex = (StateFindIndex + 1) % StateFindMatches.Count;
+        CenterState = StateFindMatches[StateFindIndex];
+    }
+
+    /// <summary>
+    /// Whether a transition's event name contains the highlight text
+    /// </summary>
+    private bool IsHighlighted(object transition)
+    {
+        if (EventHighlight.Length == 0)
+            return false;
+
+        var name = HavokBehaviorSymbols.GetName(Owner.Symbols.EventNames, Convert.ToInt32(HavokBehaviorSymbols.GetValue(transition, "m_eventId") ?? -1));
+
+        return name != null && name.Contains(EventHighlight, StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// The wildcard transitions to draw from the Any stub: those into the selected state, and the highlighted ones
+    /// </summary>
+    private void BuildWildcardLinks(List<object> states)
+    {
+        WildcardLinks.Clear();
+
+        var wildcards = HavokBehaviorSymbols.GetValue(HavokBehaviorSymbols.GetValue(StateMachine, "m_wildcardTransitions"), "m_transitions") as IList;
+
+        if (wildcards == null)
+            return;
+
+        var selectedId = SelectedState == null ? int.MinValue : Convert.ToInt32(HavokBehaviorSymbols.GetValue(SelectedState, "m_stateId") ?? -1);
+        var byTarget = new Dictionary<int, List<object>>();
+
+        foreach (var transition in wildcards)
+        {
+            if (transition == null)
+                continue;
+
+            var to = Convert.ToInt32(HavokBehaviorSymbols.GetValue(transition, "m_toStateId") ?? -1);
+
+            if (to != selectedId && !IsHighlighted(transition))
+                continue;
+
+            if (!byTarget.TryGetValue(to, out var list))
+                byTarget[to] = list = new List<object>();
+
+            list.Add(transition);
+        }
+
+        for (var i = 0; i < states.Count; i++)
+        {
+            var id = Convert.ToInt32(HavokBehaviorSymbols.GetValue(states[i], "m_stateId") ?? -1);
+
+            if (byTarget.TryGetValue(id, out var list))
+                WildcardLinks.Add((i, list));
+        }
     }
 
     #region Graph
@@ -197,12 +365,30 @@ public class HavokStateMachineGraphView
         var wildcardEvents = GetWildcardEvents(StateMachine);
 
         BuildLinks(states);
+        BuildWildcardLinks(states);
+
+        // States a highlighted transition leads to
+        var highlightedTargets = new HashSet<int>();
+
+        foreach (var (_, to, transitions) in Links)
+        {
+            if (transitions.Any(IsHighlighted))
+                highlightedTargets.Add(to);
+        }
+
+        foreach (var (to, transitions) in WildcardLinks)
+        {
+            if (transitions.Any(IsHighlighted))
+                highlightedTargets.Add(to);
+        }
 
         if (LayoutDirty || Layout == null || Layout.Count != states.Count)
         {
             Layout = AutoLayout(states);
             LayoutDirty = false;
         }
+
+        PaneSize = ImGui.GetContentRegionAvail();
 
         ImNodes.BeginNodeEditor();
 
@@ -219,8 +405,13 @@ public class HavokStateMachineGraphView
 
             var stateId = Convert.ToInt32(HavokBehaviorSymbols.GetValue(state, "m_stateId") ?? -1);
             var isStart = stateId == startStateId;
+            var isHighlighted = highlightedTargets.Contains(i);
+            var titleColoured = isHighlighted || isStart;
 
-            if (isStart)
+            // A state a highlighted event leads to, else the start state
+            if (isHighlighted)
+                ImNodes.PushColorStyle(ImNodesCol.TitleBar, ImGui.GetColorU32(UI.Current.ImGui_AliasName_Text * new Vector4(0.6f, 0.6f, 0.6f, 1f)));
+            else if (isStart)
                 ImNodes.PushColorStyle(ImNodesCol.TitleBar, ImGui.GetColorU32(UI.Current.ImGui_Benefit_Text_Color * new Vector4(0.6f, 0.6f, 0.6f, 1f)));
 
             ImNodes.BeginNode(nodeId);
@@ -251,14 +442,26 @@ public class HavokStateMachineGraphView
             ImNodes.EndNode();
             ImNodes.SetNodeDraggable(nodeId, false);
 
-            if (isStart)
+            if (titleColoured)
                 ImNodes.PopColorStyle();
         }
 
+        var highlightColour = ImGui.GetColorU32(UI.Current.ImGui_AliasName_Text);
+
         for (var k = 0; k < Links.Count; k++)
         {
+            var highlighted = Links[k].Transitions.Any(IsHighlighted);
+
+            if (highlighted)
+                ImNodes.PushColorStyle(ImNodesCol.Link, highlightColour);
+
             ImNodes.Link(LinkBase + k, OutputPinBase + Links[k].From, InputPinBase + Links[k].To);
+
+            if (highlighted)
+                ImNodes.PopColorStyle();
         }
+
+        DisplayAnyNode(states, highlightColour);
 
         ImNodes.MiniMap(0.15f, ImNodesMiniMapLocation.BottomRight);
 
@@ -278,7 +481,73 @@ public class HavokStateMachineGraphView
             LayoutDirty = true;
         }
 
+        CenterOnRequested(states);
+
         HandleInteraction(states, wildcardEvents);
+    }
+
+    /// <summary>
+    /// The Any stub, left of the states its wildcard links lead to, with one link per target state
+    /// </summary>
+    private void DisplayAnyNode(List<object> states, uint highlightColour)
+    {
+        if (WildcardLinks.Count == 0)
+            return;
+
+        var minX = Layout.Values.Count == 0 ? 0 : Layout.Values.Min(p => p.X);
+        var targets = WildcardLinks.Select(w => Layout.TryGetValue(states[w.To], out var p) ? p.Y : 0).ToList();
+
+        ImNodes.SetNodeGridSpacePos(AnyNodeId, new Vector2(minX - CellSize.X * 0.8f, targets.Average()));
+
+        ImNodes.PushColorStyle(ImNodesCol.TitleBar, ImGui.GetColorU32(UI.Current.ImGui_AliasName_Text * new Vector4(0.45f, 0.45f, 0.45f, 1f)));
+        ImNodes.BeginNode(AnyNodeId);
+
+        ImNodes.BeginNodeTitleBar();
+        ImGui.Text(LOC.Get("HAVOK_GraphView_Any_State"));
+        ImNodes.EndNodeTitleBar();
+
+        ImNodes.BeginOutputAttribute(AnyPin);
+        ImGui.TextDisabled(LOC.Get("HAVOK_GraphView_Any_Count", WildcardLinks.Sum(w => w.Transitions.Count)));
+        ImNodes.EndOutputAttribute();
+
+        ImNodes.EndNode();
+        ImNodes.PopColorStyle();
+        ImNodes.SetNodeDraggable(AnyNodeId, false);
+
+        for (var k = 0; k < WildcardLinks.Count; k++)
+        {
+            ImNodes.PushColorStyle(ImNodesCol.Link, highlightColour);
+            ImNodes.Link(WildcardLinkBase + k, AnyPin, InputPinBase + WildcardLinks[k].To);
+            ImNodes.PopColorStyle();
+        }
+    }
+
+    /// <summary>
+    /// Centres the view on, and selects, the state the find asked for (after the nodes are drawn: imnodes only knows
+    /// the nodes it drew this frame)
+    /// </summary>
+    private void CenterOnRequested(List<object> states)
+    {
+        if (CenterState == null)
+            return;
+
+        var index = states.IndexOf(CenterState);
+        var state = CenterState;
+        CenterState = null;
+
+        if (index < 0 || !Layout.TryGetValue(state, out var target))
+            return;
+
+        var size = ImNodes.GetNodeDimensions(index + 1);
+        ImNodes.EditorContextResetPanning(-target + (PaneSize - size) * 0.5f);
+
+        ImNodes.ClearNodeSelection();
+        ImNodes.ClearLinkSelection();
+        ImNodes.SelectNode(index + 1);
+
+        SelectedState = state;
+        SelectedTransitions = null;
+        Owner.SelectionSource = HavokBehaviorSelectionSource.Graph;
     }
 
     private void HandleInteraction(List<object> states, Dictionary<int, List<int>> wildcardEvents)
@@ -313,6 +582,13 @@ public class HavokStateMachineGraphView
                 }
             }
         }
+        else if (ImNodes.IsLinkHovered(ref hoveredLink) && hoveredLink >= WildcardLinkBase && hoveredLink - WildcardLinkBase < WildcardLinks.Count)
+        {
+            var wildcard = WildcardLinks[hoveredLink - WildcardLinkBase];
+            ImGui.SetTooltip(LOC.Get("HAVOK_GraphView_Wildcards_TT", wildcard.Transitions.Count) + "\n" +
+                string.Join("\n", wildcard.Transitions.Select(t =>
+                    HavokBehaviorSymbols.GetName(symbols.EventNames, Convert.ToInt32(HavokBehaviorSymbols.GetValue(t, "m_eventId") ?? -1)) ?? "?")));
+        }
         else if (ImNodes.IsLinkHovered(ref hoveredLink) && hoveredLink >= LinkBase && hoveredLink - LinkBase < Links.Count)
         {
             var link = Links[hoveredLink - LinkBase];
@@ -330,18 +606,31 @@ public class HavokStateMachineGraphView
             var ids = new int[selectedNodes];
             ImNodes.GetSelectedNodes(ref ids[0]);
 
-            var index = ids[0] - 1;
-            SelectedState = index >= 0 && index < states.Count ? states[index] : null;
-            SelectedTransitions = null;
+            // The Any stub isn't a state: clicking it keeps the selection (and so its links)
+            if (ids[0] != AnyNodeId)
+            {
+                var index = ids[0] - 1;
+                SelectedState = index >= 0 && index < states.Count ? states[index] : null;
+                SelectedTransitions = null;
+            }
         }
         else if (selectedLinks > 0)
         {
             var ids = new int[selectedLinks];
             ImNodes.GetSelectedLinks(ref ids[0]);
 
-            var index = ids[0] - LinkBase;
-            SelectedTransitions = index >= 0 && index < Links.Count ? Links[index].Transitions : null;
-            SelectedState = null;
+            if (ids[0] >= WildcardLinkBase)
+            {
+                // A wildcard link: its transitions, keeping the state so the link stays drawn
+                var wildcardIndex = ids[0] - WildcardLinkBase;
+                SelectedTransitions = wildcardIndex < WildcardLinks.Count ? WildcardLinks[wildcardIndex].Transitions : null;
+            }
+            else
+            {
+                var index = ids[0] - LinkBase;
+                SelectedTransitions = index >= 0 && index < Links.Count ? Links[index].Transitions : null;
+                SelectedState = null;
+            }
         }
 
         // A link dragged from a state's output to a state's input: add a transition between them
@@ -595,11 +884,8 @@ public class HavokStateMachineGraphView
 
         ImGui.Columns(columnCount);
 
-        if (SelectedState != null)
-        {
-            View.PropertyView.HavokPropEditGeneric(SelectedState, HavokMetaHelper.GetMeta(Project, SelectedState.GetType()));
-        }
-        else if (SelectedTransitions != null)
+        // Transitions first: a wildcard link is selected with its target state kept
+        if (SelectedTransitions is { Count: > 0 })
         {
             // A link stands for every transition between its two states
             for (var i = 0; i < SelectedTransitions.Count; i++)
@@ -623,6 +909,10 @@ public class HavokStateMachineGraphView
 
                 ImGui.PopID();
             }
+        }
+        else if (SelectedState != null)
+        {
+            View.PropertyView.HavokPropEditGeneric(SelectedState, HavokMetaHelper.GetMeta(Project, SelectedState.GetType()));
         }
 
         ImGui.Columns(1);

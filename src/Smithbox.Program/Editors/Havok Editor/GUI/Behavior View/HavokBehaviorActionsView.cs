@@ -21,7 +21,7 @@ public partial class HavokBehaviorActionsView
     {
         None, AddAnimation, CloneState, AddTransition, AddVariable,
         BindVariable, DuplicateGenerator, DeleteGenerator, DuplicateVariable, DeleteVariable, DuplicateClip, Register,
-        AddEvent, DeleteEvent, NewAction
+        AddEvent, DeleteEvent, NewAction, CrossPaste
     }
 
     // Add / Delete Event
@@ -94,7 +94,12 @@ public partial class HavokBehaviorActionsView
         Owner = ownerView;
     }
 
-    private HavokBehaviorContext Context => new(View.Selection.SelectedFileWrapper, Owner.Symbols, Project);
+    // The character file list is only looked up (and the file loaded) when an edit needs it: a DS3 clip for a new animation
+    private HavokBehaviorContext Context => new(View.Selection.SelectedFileWrapper, Owner.Symbols, Project)
+    {
+        Character = () => HavokBehaviorOperations.FindCharacterAnimations(View.HavokBank, View.Selection.BinderFileEntry,
+            View.PropertyCache.GetCachedHavokFields)
+    };
 
     #region Menu
     /// <summary>
@@ -251,6 +256,10 @@ public partial class HavokBehaviorActionsView
     {
         public HavokFileWrapper File;
         public List<object> Generators = new();
+
+        // The same generators as taken at Copy, for pasting into another file, and the file they came from
+        public List<HavokGeneratorSnapshot> Snapshots = new();
+        public string SourceLabel = "";
         public List<HavokBehaviorOperations.HavokVariableSnapshot> Variables = new();
 
         public int Count => Generators.Count + Variables.Count;
@@ -268,6 +277,8 @@ public partial class HavokBehaviorActionsView
 
         Clipboard.File = View.Selection.SelectedFileWrapper;
         Clipboard.Generators = generators;
+        Clipboard.Snapshots = generators.Select(g => HavokBehaviorOperations.SnapshotGenerator(Project, Owner.Symbols, g)).ToList();
+        Clipboard.SourceLabel = $"{View.Selection.BinderFileEntry?.Filename}/{Path.GetFileName((View.Selection.FilePath ?? "").Replace("\\", "/"))}";
         Clipboard.Variables = new();
 
         Smithbox.Log(this, LOC.Get("HAVOK_BehaviorActions_Copied", generators.Count));
@@ -282,6 +293,7 @@ public partial class HavokBehaviorActionsView
 
         Clipboard.File = View.Selection.SelectedFileWrapper;
         Clipboard.Generators = new();
+        Clipboard.Snapshots = new();
         Clipboard.Variables = new() { snapshot };
 
         Smithbox.Log(this, LOC.Get("HAVOK_BehaviorActions_Copied", 1));
@@ -317,9 +329,10 @@ public partial class HavokBehaviorActionsView
 
         if (Clipboard.Generators.Count > 0)
         {
+            // Another file: the snapshots, remapped by name, after a preview of what the target lacks
             if (!ReferenceEquals(Clipboard.File, View.Selection.SelectedFileWrapper))
             {
-                Smithbox.LogError(this, LOC.Get("HAVOK_BehaviorActions_Error_Paste_Other_File"));
+                RequestCrossPaste(target, source);
                 return;
             }
 
@@ -411,6 +424,16 @@ public partial class HavokBehaviorActionsView
 
         if (!duplicate && !delete && !copy && !paste)
             return;
+
+        if (Owner.ContentsMode is HavokBehaviorContentsMode.Modifiers)
+        {
+            var modifier = Owner.ModifierView.Selected;
+
+            if (modifier != null && duplicate) DuplicateModifier(modifier);
+            if (modifier != null && delete) DeleteModifier(modifier);
+
+            return;
+        }
 
         if (Owner.ContentsMode is HavokBehaviorContentsMode.Events)
         {
@@ -731,6 +754,7 @@ public partial class HavokBehaviorActionsView
             Dialog.Register => LOC.Get("HAVOK_Register_Title"),
             Dialog.AddEvent => LOC.Get("HAVOK_BehaviorActions_Add_Event"),
             Dialog.NewAction => LOC.Get("HAVOK_NewAction_Title"),
+            Dialog.CrossPaste => LOC.Get("HAVOK_CrossPaste_Title"),
             Dialog.DeleteEvent => TargetEvents.Count > 1
                 ? LOC.Get("HAVOK_BehaviorActions_Delete_Events", TargetEvents.Count)
                 : LOC.Get("HAVOK_BehaviorActions_Delete_Event"),
@@ -764,6 +788,7 @@ public partial class HavokBehaviorActionsView
             case Dialog.AddEvent: DisplayAddEvent(); break;
             case Dialog.DeleteEvent: DisplayDeleteEvent(); break;
             case Dialog.NewAction: DisplayNewAction(out canApply); break;
+            case Dialog.CrossPaste: DisplayCrossPaste(out canApply); break;
         }
 
         // The Register dialog closes itself to switch file (it reopens once the other file is shown)
@@ -1485,6 +1510,15 @@ public partial class HavokBehaviorActionsView
                     ShowResult(newSelector);
                 break;
             }
+
+            case Dialog.CrossPaste:
+            {
+                action = ApplyCrossPaste(context, out var pasted, out error);
+
+                if (action != null)
+                    ShowResult(pasted);
+                break;
+            }
         }
 
         if (action == null)
@@ -1555,4 +1589,11 @@ public partial class HavokBehaviorActionsView
 /// <summary>
 /// What a behavior operation works on
 /// </summary>
-public record HavokBehaviorContext(HavokFileWrapper File, HavokBehaviorSymbols Symbols, ProjectEntry Project);
+public record HavokBehaviorContext(HavokFileWrapper File, HavokBehaviorSymbols Symbols, ProjectEntry Project)
+{
+    /// <summary>
+    /// The behbnd's character file animation list (DS3: Characters/cXXXX.hkx, m_animationBundleNameData), loaded on
+    /// first use; null where the edit has no binder to look in
+    /// </summary>
+    public Func<HavokCharacterAnimationList> Character { get; init; }
+}

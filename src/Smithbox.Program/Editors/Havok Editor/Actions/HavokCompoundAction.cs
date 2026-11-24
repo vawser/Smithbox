@@ -23,6 +23,32 @@ public class HavokCompoundAction : EditorAction, IHavokFileAction
 
     public bool HasActions => Actions.Count > 0;
 
+    /// <summary>
+    /// Every file the steps touch (a DS3 clip edit can also add to the character file), so the undo history keeps
+    /// them all loaded
+    /// </summary>
+    public IEnumerable<HavokFileWrapper> AllWrappers
+    {
+        get
+        {
+            if (FileWrapper != null)
+                yield return FileWrapper;
+
+            foreach (var action in Actions)
+            {
+                if (action is HavokCompoundAction inner)
+                {
+                    foreach (var wrapper in inner.AllWrappers)
+                        yield return wrapper;
+                }
+                else if (action is IHavokFileAction { FileWrapper: not null } fileAction)
+                {
+                    yield return fileAction.FileWrapper;
+                }
+            }
+        }
+    }
+
     public override ActionEvent Execute()
     {
         foreach (var action in Actions)

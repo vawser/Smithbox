@@ -225,6 +225,12 @@ public class HavokOutlineView
 
         ImGui.SameLine();
 
+        // Modifiers under their modifier generators
+        ImGui.Checkbox($"{LOC.Get("HAVOK_OutlineView_Show_Modifiers")}##outlineShowModifiers", ref CFG.Current.BehaviorEditor_Outline_Show_Modifiers);
+        GUI.Tooltip(LOC.Get("HAVOK_OutlineView_Show_Modifiers_TT"));
+
+        ImGui.SameLine();
+
         EditorFilters.DisplaySearchbar("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
 
         ImGui.EndChild();
@@ -252,6 +258,7 @@ public class HavokOutlineView
 
         // Opened once; after that the user can close them again
         RevealNodes.Clear();
+        RevealModifiers.Clear();
 
         ImGui.EndChild();
     }
@@ -272,7 +279,13 @@ public class HavokOutlineView
         }
 
         var children = symbols.GetOutlineChildren(node);
-        var isLeaf = children.Count == 0;
+
+        // A modifier generator's modifier, drawn under it when the toggle is on
+        var modifier = CFG.Current.BehaviorEditor_Outline_Show_Modifiers && node.GetType().Name == "hkbModifierGenerator"
+            ? HavokBehaviorSymbols.GetValue(node, "m_modifier")
+            : null;
+
+        var isLeaf = children.Count == 0 && modifier == null;
         var isSelected = ReferenceEquals(node, Selected);
 
         var flags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.OpenOnDoubleClick | ImGuiTreeNodeFlags.SpanAvailWidth;
@@ -339,11 +352,158 @@ public class HavokOutlineView
                 ImGui.PopID();
             }
 
+            if (modifier != null)
+            {
+                ImGui.PushID("modifier");
+                DrawModifier(symbols, modifier, new HashSet<object>(ReferenceEqualityComparer.Instance), 0);
+                ImGui.PopID();
+            }
+
             ancestors.Remove(node);
 
             ImGui.TreePop();
         }
     }
+
+    #region Modifiers
+    // The modifier lists to open so a modifier shown from elsewhere is visible
+    private readonly HashSet<object> RevealModifiers = new(ReferenceEqualityComparer.Instance);
+
+    /// <summary>
+    /// A modifier under its modifier generator (Modifiers toggle): its name and type, a modifier list's entries below
+    /// it. Selecting one shows it in Properties; its menu is the Modifiers category's.
+    /// </summary>
+    private void DrawModifier(HavokBehaviorSymbols symbols, object modifier, HashSet<object> ancestors, int depth)
+    {
+        if (modifier == null)
+            return;
+
+        var label = HavokBehaviorSymbols.GetValue(modifier, "m_name") as string ?? modifier.GetType().Name;
+
+        if (depth > MaxDepth || ancestors.Contains(modifier))
+        {
+            ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("HAVOK_OutlineView_Cycle", label));
+            return;
+        }
+
+        var entries = HavokBehaviorSymbols.GetValue(modifier, "m_modifiers") as System.Collections.IList;
+        var isLeaf = entries == null || entries.Count == 0;
+        var isSelected = ReferenceEquals(modifier, Selected);
+
+        var flags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.OpenOnDoubleClick | ImGuiTreeNodeFlags.SpanAvailWidth;
+
+        if (isLeaf)
+            flags |= ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
+
+        if (isSelected)
+            flags |= ImGuiTreeNodeFlags.Selected;
+
+        if (!isLeaf && RevealModifiers.Contains(modifier))
+            ImGui.SetNextItemOpen(true);
+
+        var status = Owner.Changes.ObjectStatus(modifier);
+        var coloured = VanillaMarkers.PushColour(status);
+        var open = ImGui.TreeNodeEx($"{label}##outlineModifier", flags);
+        VanillaMarkers.PopColour(coloured);
+        VanillaMarkers.Tooltip(status);
+
+        if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
+        {
+            Selected = modifier;
+            Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
+        }
+
+        if (ImGui.BeginPopupContextItem("##outlineModifierMenu"))
+        {
+            Selected = modifier;
+            Owner.ActionsView.DisplayModifierItems(modifier);
+            ImGui.EndPopup();
+        }
+
+        if (isSelected && ScrollToSelected)
+        {
+            ImGui.SetScrollHereY();
+            ScrollToSelected = false;
+        }
+
+        ImGui.SameLine();
+        ImGui.TextDisabled(HavokBehaviorSymbols.GetOutlineTag(modifier));
+
+        if (HavokBehaviorOperations.IsModifierEnabled(modifier) == false)
+        {
+            ImGui.SameLine();
+            ImGui.TextDisabled(LOC.Get("HAVOK_Modifiers_Disabled_Tag"));
+        }
+
+        if (open && !isLeaf)
+        {
+            ancestors.Add(modifier);
+
+            for (var i = 0; i < entries.Count; i++)
+            {
+                ImGui.PushID(i);
+                DrawModifier(symbols, entries[i], ancestors, depth + 1);
+                ImGui.PopID();
+            }
+
+            ancestors.Remove(modifier);
+
+            ImGui.TreePop();
+        }
+    }
+
+    /// <summary>
+    /// Shows a modifier in the Outline: turns the Modifiers toggle on, opens the tree down to its modifier generator
+    /// and the lists above it, and selects it
+    /// </summary>
+    public void ShowModifier(object modifier)
+    {
+        var symbols = Owner.Symbols;
+
+        if (symbols == null || modifier == null)
+            return;
+
+        CFG.Current.BehaviorEditor_Outline_Show_Modifiers = true;
+
+        // The modifier generator above it, through the lists holding it
+        RevealModifiers.Clear();
+        object generator = null;
+        var current = modifier;
+
+        for (var depth = 0; depth < 16 && current != null && generator == null; depth++)
+        {
+            object next = null;
+
+            foreach (var parent in symbols.GetParents(current))
+            {
+                if (parent.GetType().Name == "hkbModifierGenerator")
+                {
+                    generator = parent;
+                    break;
+                }
+
+                if (HavokBehaviorSymbols.IsModifier(parent))
+                {
+                    RevealModifiers.Add(parent);
+                    next = parent;
+                }
+            }
+
+            current = next;
+        }
+
+        if (generator == null)
+            return;
+
+        Navigate(generator);
+
+        // Open the generator itself too, so its modifier is drawn
+        RevealNodes.Add(generator);
+
+        Selected = modifier;
+        ScrollToSelected = true;
+    }
+    #endregion
 
     #region Search
     private bool IsSearching => !string.IsNullOrEmpty(Owner.PropFilter);

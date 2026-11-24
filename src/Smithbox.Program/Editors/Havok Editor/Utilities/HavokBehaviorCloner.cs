@@ -35,11 +35,23 @@ public static class HavokBehaviorCloner
 
         copies = copyMap;
 
-        return CloneValue(root, root, symbols, subtree, copyMap, alwaysCopy);
+        return CloneValue(root, root, symbols, subtree, copyMap, alwaysCopy, false);
+    }
+
+    /// <summary>
+    /// A copy of the root and everything below it, sharing nothing with the source, transition effects included:
+    /// for pasting into another file. Objects referenced twice inside are still copied once.
+    /// </summary>
+    public static object CloneAll(object root, out IReadOnlyDictionary<object, object> copies)
+    {
+        var copyMap = new Dictionary<object, object>(ReferenceEqualityComparer.Instance);
+        copies = copyMap;
+
+        return CloneValue(root, root, null, null, copyMap, null, true);
     }
 
     private static object CloneValue(object value, object root, HavokBehaviorSymbols symbols,
-        HashSet<object> subtree, Dictionary<object, object> copies, IReadOnlySet<object> alwaysCopy)
+        HashSet<object> subtree, Dictionary<object, object> copies, IReadOnlySet<object> alwaysCopy, bool copyAll)
     {
         if (value == null)
             return null;
@@ -52,7 +64,7 @@ public static class HavokBehaviorCloner
         if (copies.TryGetValue(value, out var existing))
             return existing;
 
-        if (!ReferenceEquals(value, root) && alwaysCopy?.Contains(value) != true)
+        if (!copyAll && !ReferenceEquals(value, root) && alwaysCopy?.Contains(value) != true)
         {
             if (IsTransitionEffect(type))
                 return value;
@@ -68,7 +80,7 @@ public static class HavokBehaviorCloner
             copies[value] = arrayCopy;
 
             for (var i = 0; i < array.Length; i++)
-                arrayCopy.SetValue(CloneValue(array.GetValue(i), root, symbols, subtree, copies, alwaysCopy), i);
+                arrayCopy.SetValue(CloneValue(array.GetValue(i), root, symbols, subtree, copies, alwaysCopy, copyAll), i);
 
             return arrayCopy;
         }
@@ -79,7 +91,7 @@ public static class HavokBehaviorCloner
             copies[value] = listCopy;
 
             foreach (var entry in list)
-                listCopy.Add(CloneValue(entry, root, symbols, subtree, copies, alwaysCopy));
+                listCopy.Add(CloneValue(entry, root, symbols, subtree, copies, alwaysCopy, copyAll));
 
             return listCopy;
         }
@@ -95,7 +107,7 @@ public static class HavokBehaviorCloner
             if (field.IsInitOnly)
                 continue;
 
-            field.SetValue(copy, CloneValue(field.GetValue(value), root, symbols, subtree, copies, alwaysCopy));
+            field.SetValue(copy, CloneValue(field.GetValue(value), root, symbols, subtree, copies, alwaysCopy, copyAll));
         }
 
         return copy;
