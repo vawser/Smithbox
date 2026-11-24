@@ -648,6 +648,10 @@ public class ProjectConfigureMenu
 
         var type = Descriptor.ProjectType;
 
+        // Three equal-width columns; each EditorToggle moves to the next cell, filling row by row.
+        if (!ImGui.BeginTable("##editorToggleTable", 3, ImGuiTableFlags.SizingStretchSame))
+            return;
+
         EditorToggle("PROJECT_Configuration_Checkbox_Visual_Map_Editor",
             ref Descriptor.EnableMapEditor, EditorConditions.SupportsMapEditor(type));
 
@@ -708,6 +712,8 @@ public class ProjectConfigureMenu
         // Material Data
         EditorToggle("PROJECT_Configuration_Checkbox_Material_Data",
             ref Descriptor.EnableExternalMaterialData, true);
+
+        ImGui.EndTable();
     }
 
     /// <summary>
@@ -716,6 +722,8 @@ public class ProjectConfigureMenu
     /// </summary>
     private void EditorToggle(string locKey, ref bool value, bool isSupported)
     {
+        ImGui.TableNextColumn();
+
         if (!isSupported)
         {
             var unsupported = false;
