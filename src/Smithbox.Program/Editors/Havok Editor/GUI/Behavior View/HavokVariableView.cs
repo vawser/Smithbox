@@ -93,7 +93,13 @@ public class HavokVariableView
 
                 var selected = SelectedIndex == i;
 
-                if (ImGui.Selectable($"{i}: {name}##variable_{i}", selected))
+                var status = Owner.Changes.VariableStatus(i);
+                var coloured = VanillaMarkers.PushColour(status);
+                var clicked = ImGui.Selectable($"{i}: {name}##variable_{i}", selected);
+                VanillaMarkers.PopColour(coloured);
+                VanillaMarkers.Tooltip(status);
+
+                if (clicked)
                 {
                     SelectedIndex = i;
                 }

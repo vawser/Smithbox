@@ -186,6 +186,9 @@ public class HavokAnimationTableView
 
                 var selected = ReferenceEquals(row.Selector, Selected);
 
+                var status = Owner.Changes.ObjectStatus(row.Selector);
+                var coloured = VanillaMarkers.PushColour(status);
+
                 if (ImGui.Selectable($"{row.Name}##animationRow{i}", selected,
                     ImGuiSelectableFlags.SpanAllColumns | ImGuiSelectableFlags.AllowDoubleClick))
                 {
@@ -193,6 +196,17 @@ public class HavokAnimationTableView
 
                     if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         Owner.OutlineView.Navigate(row.Selector);
+                }
+
+                VanillaMarkers.PopColour(coloured);
+                VanillaMarkers.Tooltip(status);
+
+                // The selector's menu: New Action, Duplicate, Delete, Copy, Paste
+                if (ImGui.BeginPopupContextItem($"animationRowMenu{i}"))
+                {
+                    Selected = row.Selector;
+                    Owner.ActionsView.DisplayGeneratorItems(row.Selector, HavokBehaviorActionsView.Source.Outline);
+                    ImGui.EndPopup();
                 }
 
                 GUI.Tooltip(LOC.Get("HAVOK_AnimationTable_Row_TT"));

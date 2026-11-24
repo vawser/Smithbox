@@ -99,7 +99,13 @@ public class HavokAnimationClipView
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
 
-                    if (ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected))
+                    var status = Owner.Changes.ObjectStatus(entry);
+                    var coloured = VanillaMarkers.PushColour(status);
+                    var clicked = ImGui.Selectable($"{entryName}##clipGenerator_{entryName}{i}", selected);
+                    VanillaMarkers.PopColour(coloured);
+                    VanillaMarkers.Tooltip(status);
+
+                    if (clicked)
                     {
                         if (InputManager.HasCtrlDown())
                         {

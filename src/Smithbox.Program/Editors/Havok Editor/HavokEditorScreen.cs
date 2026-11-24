@@ -324,6 +324,33 @@ public class HavokEditorScreen : EditorScreen
             }
             GUI.ShowActiveStatus(ShowToolWindow);
 
+            // The Behavior Editor's tools
+            if (BehaviorMode)
+            {
+                ImGui.Separator();
+
+                // Search
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Search")}##behaviorSearchToolToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Search = !CFG.Current.Interface_BehaviorEditor_Tool_Search;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Search);
+
+                // Changes
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Changes")}##behaviorChangesToolToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Changes = !CFG.Current.Interface_BehaviorEditor_Tool_Changes;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Changes);
+
+                // Problems
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Problems")}##behaviorProblemsToolToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Problems = !CFG.Current.Interface_BehaviorEditor_Tool_Problems;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Problems);
+            }
+
             ImGui.Separator();
 
             ViewHandler.DisplayMenu();
@@ -368,8 +395,11 @@ public class HavokEditorScreen : EditorScreen
             return;
         }
 
+        var saving = CaptureDirtyBehaviors(activeView, fileEntry);
+
         if (RunSave(() => data.SaveHavokFile(category, fileEntry, filePath), fileEntry.Path))
         {
+            ValidateSaved(activeView, saving);
             OnSaveComplete();
         }
     }
@@ -388,9 +418,11 @@ public class HavokEditorScreen : EditorScreen
             return;
 
         var data = activeView.HavokBank;
+        var saving = CaptureDirtyBehaviors(activeView, null);
 
         if (RunSave(() => data.SaveAllHavokFiles(), ""))
         {
+            ValidateSaved(activeView, saving);
             OnSaveComplete();
         }
     }
@@ -427,6 +459,51 @@ public class HavokEditorScreen : EditorScreen
         {
             Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", path), ex);
             return false;
+        }
+    }
+
+    /// <summary>
+    /// The behavior graphs with unsaved changes (of one binder, or all), so they can be checked once saved.
+    /// Empty outside the Behavior Editor.
+    /// </summary>
+    private List<(FileDictionaryEntry Binder, string Path, HavokFileWrapper Wrapper)> CaptureDirtyBehaviors(HavokEditorView view, FileDictionaryEntry onlyBinder)
+    {
+        var result = new List<(FileDictionaryEntry, string, HavokFileWrapper)>();
+
+        if (!BehaviorMode)
+            return result;
+
+        foreach (var (binder, files) in view.HavokBank.BehaviorBank)
+        {
+            if (onlyBinder != null && !ReferenceEquals(binder, onlyBinder))
+                continue;
+
+            foreach (var (path, wrapper) in files)
+            {
+                if (wrapper.IsDirty && wrapper.IsLoaded() && HavokBehaviorScan.IsBehaviorGraphPath(path))
+                    result.Add((binder, path, wrapper));
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Runs the validator on each behavior graph the save wrote, and warns in the log about those with problems.
+    /// Doesn't stop the save: the file is written either way.
+    /// </summary>
+    private void ValidateSaved(HavokEditorView view, List<(FileDictionaryEntry Binder, string Path, HavokFileWrapper Wrapper)> saved)
+    {
+        foreach (var (binder, path, wrapper) in saved)
+        {
+            if (wrapper.IsDirty || !wrapper.IsLoaded())
+                continue;
+
+            var symbols = HavokBehaviorSymbols.Build(wrapper.Root, view.PropertyCache.GetCachedHavokFields);
+            var count = HavokBehaviorValidator.Run(Project, symbols).Count;
+
+            if (count > 0)
+                Smithbox.LogWarning(this, LOC.Get("HAVOK_Save_Problems", $"{binder.Filename}/{Path.GetFileName(path.Replace('\\', '/'))}", count));
         }
     }
 

@@ -292,7 +292,12 @@ public class HavokOutlineView
                 ImGui.SetNextItemOpen(true);
         }
 
+        // Vanilla state: Modified / Added colour, explained in the tooltip
+        var status = Owner.Changes.ObjectStatus(node);
+        var coloured = VanillaMarkers.PushColour(status);
         var open = ImGui.TreeNodeEx($"{label}##outlineNode", flags);
+        VanillaMarkers.PopColour(coloured);
+        VanillaMarkers.Tooltip(status);
 
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             SelectFromTree(node);

@@ -1441,6 +1441,9 @@ public class CFG
     public bool BehaviorEditor_Properties_Show_Hex = true;
     public bool BehaviorEditor_Transitions_Game_Order = true;
     public bool Interface_BehaviorEditor_ToolWindow = true;
+    public bool Interface_BehaviorEditor_Tool_Search = true;
+    public bool Interface_BehaviorEditor_Tool_Problems = true;
+    public bool Interface_BehaviorEditor_Tool_Changes = true;
 
     // Havok behaviors: the file list of every behbnd's files
     public bool BehaviorEditor_FileList_Display_Full_Path = false;

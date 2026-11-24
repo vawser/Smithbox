@@ -69,7 +69,13 @@ public class HavokAnimationSelectorView
             if (!isMatch)
                 continue;
 
-            if (ImGui.Selectable($"{entryName}##animSelector_{entryName}{i}", selected))
+            var status = Owner.Changes.ObjectStatus(entry);
+            var coloured = VanillaMarkers.PushColour(status);
+            var clicked = ImGui.Selectable($"{entryName}##animSelector_{entryName}{i}", selected);
+            VanillaMarkers.PopColour(coloured);
+            VanillaMarkers.Tooltip(status);
+
+            if (clicked)
             {
                 if (InputManager.HasCtrlDown())
                 {

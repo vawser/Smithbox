@@ -568,6 +568,85 @@ public class HavokBank : IDisposable
         }
     }
 
+    /// <summary>
+    /// Reads the stored behavior graphs of a behbnd (project over game), each as its own document, for the scoped
+    /// Problems and Search: <paramref name="visit"/> gets each file's name and document, then the document is dropped.
+    /// With <paramref name="onlyChanged"/>, only files whose bytes differ from the game's copy, or that the game
+    /// lacks, are read. Doesn't touch the bank's own copies, so it can run off the UI thread.
+    /// Returns the names of the files that couldn't be read.
+    /// </summary>
+    public List<string> ReadStoredBehaviorFiles(FileDictionaryEntry fileEntry, bool onlyChanged, Func<string, bool> include,
+        Action<string, HavokDocument> visit, CancellationToken cancel)
+    {
+        var failed = new List<string>();
+        var profile = HavokTypeUtils.GetProfile(Project);
+
+        if (profile == null)
+            return failed;
+
+        using var binder = ReadContainer(fileEntry, false);
+
+        if (binder == null)
+            return failed;
+
+        Dictionary<string, Memory<byte>> vanillaBytes = null;
+
+        if (onlyChanged)
+        {
+            vanillaBytes = new(StringComparer.OrdinalIgnoreCase);
+
+            var vanillaFS = Project.VFS.VanillaFS;
+            using var vanilla = ReadContainer(fileEntry, false, p => vanillaFS.FileExists(p) ? vanillaFS.ReadFile(p) : null);
+
+            if (vanilla != null)
+            {
+                foreach (var f in vanilla.Files)
+                    vanillaBytes.TryAdd(f.Name, f.Bytes.ToArray());
+            }
+        }
+
+        HavokCompendium compendium = null;
+        var compendiumRead = false;
+
+        foreach (var file in binder.Files)
+        {
+            if (cancel.IsCancellationRequested)
+                break;
+
+            var name = file.Name.Replace('\\', '/');
+
+            if (!name.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) || !name.Contains(".hkx", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            if (!include(file.Name))
+                continue;
+
+            if (vanillaBytes != null && vanillaBytes.TryGetValue(file.Name, out var original) && file.Bytes.Span.SequenceEqual(original.Span))
+                continue;
+
+            try
+            {
+                var bytes = IsDcxFile(file.Name) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+                var usesCompendium = HavokFile.Sniff(bytes).UsesCompendium;
+
+                if (usesCompendium && !compendiumRead)
+                {
+                    compendium = ReadCompendium(binder, profile);
+                    compendiumRead = true;
+                }
+
+                visit(file.Name, HavokFile.Read(bytes, profile, usesCompendium ? compendium : null));
+            }
+            catch (Exception)
+            {
+                failed.Add(file.Name);
+            }
+        }
+
+        return failed;
+    }
+
     public static bool IsLooseFile(FileDictionaryEntry fileEntry)
     {
         return fileEntry != null &&
@@ -1013,11 +1092,14 @@ public class HavokBank : IDisposable
     /// The game's copy of a file inside a binder, read as a document (with the game's binder's compendium); null if
     /// the game's binder or the file isn't there. Reads the game's binder, so call it off the UI thread.
     /// </summary>
-    public HavokDocument ReadVanillaDocument(FileDictionaryEntry fileEntry, bool isCombined, string internalFilePath)
+    public HavokDocument ReadVanillaDocument(FileDictionaryEntry fileEntry, bool isCombined, string internalFilePath,
+        Action<HavokReadStage> stage = null)
     {
         var profile = HavokTypeUtils.GetProfile(Project);
         if (profile == null)
             return null;
+
+        stage?.Invoke(HavokReadStage.ReadBinder);
 
         var vanillaFS = Project.VFS.VanillaFS;
         var binder = ReadContainer(fileEntry, isCombined, p => vanillaFS.FileExists(p) ? vanillaFS.ReadFile(p) : null);
@@ -1026,7 +1108,11 @@ public class HavokBank : IDisposable
         if (file == null)
             return null;
 
+        stage?.Invoke(HavokReadStage.Decompress);
+
         var fileBytes = IsDcxFile(file.Name) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+        stage?.Invoke(HavokReadStage.Parse);
 
         var compendium = HavokFile.Sniff(fileBytes).UsesCompendium ? ReadCompendium(binder, profile) : null;
 

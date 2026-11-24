@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 
 namespace StudioCore.Editors.HavokEditor;
@@ -17,9 +18,12 @@ public class HavokBehaviorView
     public HavokAnimationSelectorView AnimationSelectorView;
     public HavokStateMachineView StateMachineView;
     public HavokVariableView VariableView;
+    public HavokEventView EventView;
+
+    /// <summary>The shown file against the game's copy: the lists' vanilla colours and the Changes tool</summary>
+    public HavokBehaviorChangeIndex Changes;
     public HavokOutlineView OutlineView;
     public HavokAnimationTableView AnimationTableView;
-    public HavokProblemsView ProblemsView;
     public HavokBehaviorActionsView ActionsView;
     public HavokStateMachineGraphView GraphView;
 
@@ -43,9 +47,10 @@ public class HavokBehaviorView
         AnimationSelectorView = new(view, this, project);
         StateMachineView = new(view, this, project);
         VariableView = new(view, this, project);
+        EventView = new(view, this, project);
+        Changes = new(view, project);
         OutlineView = new(view, this, project);
         AnimationTableView = new(view, this, project);
-        ProblemsView = new(view, this, project);
         ActionsView = new(view, this, project);
         GraphView = new(view, this, project);
     }
@@ -60,9 +65,9 @@ public class HavokBehaviorView
         AnimationSelectorView.ResetSelection();
         StateMachineView.ResetSelection();
         VariableView.ResetSelection();
+        EventView.ResetSelection();
         OutlineView.ResetSelection();
         AnimationTableView.ResetSelection();
-        ProblemsView.ResetSelection();
         GraphView.ResetSelection();
     }
 
@@ -90,9 +95,9 @@ public class HavokBehaviorView
         AnimationSelectorView.Setup(sourceObject);
         StateMachineView.Setup(sourceObject);
         VariableView.Setup(sourceObject);
+        EventView.Setup(sourceObject);
         OutlineView.Setup(sourceObject);
         AnimationTableView.Setup(sourceObject);
-        ProblemsView.Setup(sourceObject);
         GraphView.Setup(sourceObject);
     }
 
@@ -116,7 +121,7 @@ public class HavokBehaviorView
         (HavokBehaviorContentsMode.Selectors, "HAVOK_BehaviorView_Tab_Anim_Selectors", "HAVOK_BehaviorCategory_Selectors_TT"),
         (HavokBehaviorContentsMode.Clips, "HAVOK_BehaviorView_Tab_Clip_Generators", "HAVOK_BehaviorCategory_Clips_TT"),
         (HavokBehaviorContentsMode.Variables, "HAVOK_BehaviorView_Tab_Variables", "HAVOK_BehaviorCategory_Variables_TT"),
-        (HavokBehaviorContentsMode.Problems, "HAVOK_BehaviorView_Tab_Problems", "HAVOK_BehaviorCategory_Problems_TT"),
+        (HavokBehaviorContentsMode.Events, "HAVOK_BehaviorView_Tab_Events", "HAVOK_BehaviorCategory_Events_TT"),
     };
 
     /// <summary>
@@ -137,7 +142,7 @@ public class HavokBehaviorView
         AnimationSelectorView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Selectors);
         AnimationClipView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Clips);
         VariableView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Variables);
-        ProblemsView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Problems);
+        EventView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Events);
         GraphView.SetTabState(!contents);
     }
 
@@ -156,9 +161,6 @@ public class HavokBehaviorView
         {
             var label = LOC.Get(key);
 
-            if (mode is HavokBehaviorContentsMode.Problems && ProblemsView.ProblemCount > 0)
-                label = LOC.Get("HAVOK_BehaviorView_Tab_Problems_Count", ProblemsView.ProblemCount);
-
             // The Animations table needs selectors to list
             if (mode is HavokBehaviorContentsMode.Animations && Symbols.Selectors.Count == 0)
                 continue;
@@ -170,6 +172,13 @@ public class HavokBehaviorView
             }
 
             GUI.Tooltip(LOC.Get(tooltip));
+        }
+
+        // The vanilla colours wait for the game's copy: its progress, while it's read
+        if (Changes.IsLoading)
+        {
+            ImGui.Separator();
+            Changes.DrawProgress("behaviorCategoriesChangesProgress");
         }
     }
 
@@ -194,7 +203,7 @@ public class HavokBehaviorView
             case HavokBehaviorContentsMode.Selectors: AnimationSelectorView.DisplayContents(); break;
             case HavokBehaviorContentsMode.Clips: AnimationClipView.DisplayContents(); break;
             case HavokBehaviorContentsMode.Variables: VariableView.DisplayContents(); break;
-            case HavokBehaviorContentsMode.Problems: ProblemsView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Events: EventView.DisplayContents(); break;
         }
     }
 
@@ -229,6 +238,86 @@ public class HavokBehaviorView
     }
     #endregion
 
+
+    #region Jumps
+    // A scoped result in a file that isn't shown yet: resolved once that file's symbols are built
+    private HavokScanResult PendingJump;
+    private int PendingJumpFrames;
+
+    /// <summary>
+    /// Shows a Problems or Search result: in the shown file at once, otherwise the file is opened first
+    /// </summary>
+    public void JumpTo(HavokScanResult result)
+    {
+        if (result == null)
+            return;
+
+        if (IsShownFile(result))
+        {
+            Resolve(result);
+            return;
+        }
+
+        PendingJump = result;
+        PendingJumpFrames = 0;
+        EditorCommandQueue.AddCommand($"behavior/select/{result.Binder.Filename}/{Path.GetFileName(result.FilePath.Replace('\\', '/'))}");
+    }
+
+    private bool IsShownFile(HavokScanResult result)
+    {
+        var selection = View.Selection;
+
+        return Symbols != null && ReferenceEquals(selection.BinderFileEntry, result.Binder) && selection.FilePath != null &&
+            string.Equals(Path.GetFileName(selection.FilePath.Replace('\\', '/')), Path.GetFileName(result.FilePath.Replace('\\', '/')),
+                StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Called once a frame: finishes a jump into a file once it's shown (given up after a few seconds)
+    /// </summary>
+    public void ProcessPendingJump()
+    {
+        if (PendingJump == null)
+            return;
+
+        if (IsShownFile(PendingJump))
+        {
+            var result = PendingJump;
+            PendingJump = null;
+            Resolve(result);
+        }
+        else if (++PendingJumpFrames > 600)
+        {
+            PendingJump = null;
+        }
+    }
+
+    private void Resolve(HavokScanResult result)
+    {
+        switch (result.Jump)
+        {
+            case HavokScanJump.Event:
+                if (HavokBehaviorSymbols.GetName(Symbols.EventNames, result.Index) != null)
+                    EventView.RequestSelect(result.Index);
+                return;
+
+            case HavokScanJump.Variable:
+                if (HavokBehaviorSymbols.GetName(Symbols.VariableNames, result.Index) != null)
+                    VariableView.RequestSelect(result.Index);
+                return;
+        }
+
+        var target = result.Live != null && Symbols.Contains(result.Live) ? result.Live : result.Target?.Resolve(Symbols);
+
+        if (target == null)
+        {
+            Smithbox.LogWarning(this, LOC.Get("HAVOK_Scan_Target_Not_Found", result.Text));
+            return;
+        }
+
+        OutlineView.Navigate(target);
+    }
+    #endregion
 
     /// <summary>
     /// The height the Used By section took last frame, which the property grid above it leaves free
@@ -284,6 +373,10 @@ public class HavokBehaviorView
         else if (VariableView.CanDisplayProperties())
         {
             VariableView.DisplayProperties();
+        }
+        else if (EventView.CanDisplayProperties())
+        {
+            EventView.DisplayProperties();
         }
         else
         {
@@ -404,7 +497,7 @@ public enum HavokBehaviorContentsMode
     Selectors,
     Clips,
     Variables,
-    Problems
+    Events
 }
 
 /// <summary>

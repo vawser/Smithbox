@@ -105,6 +105,16 @@ public static class HavokPropertyDecorators
             GUI.Tooltip(isMissing
                 ? LOC.Get("HAVOK_BehaviorIndex_Missing_TT", roleName, index)
                 : LOC.Get("HAVOK_BehaviorIndex_TT", roleName));
+
+            // An event: right-click to show it in the Events category
+            if (role is HavokIndexRole.Event && !isNone && !isMissing &&
+                ImGui.BeginPopupContextItem($"behaviorIndexMenu_{prop.Name}"))
+            {
+                if (ImGui.MenuItem(LOC.Get("HAVOK_EventView_Show_In_Events")))
+                    view.PropertyView.BehaviorView.EventView.RequestSelect(index);
+
+                ImGui.EndPopup();
+            }
         }
 
         if (comboOpen)

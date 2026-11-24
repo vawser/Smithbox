@@ -275,6 +275,12 @@ public class HavokEditorView : IEditorView
         var behaviorView = PropertyView.BehaviorView;
         var fileOutlineView = PropertyView.FileOutlineView;
 
+        // A Problems or Search result waiting for its file to be shown
+        behaviorView.ProcessPendingJump();
+
+        // The shown file's changes against the game's copy, for the lists' colours
+        behaviorView.Changes.Update(behaviorView.IsShown ? behaviorView.Symbols : null);
+
         // Categories
         // -> What the Contents window lists: for a behavior (Outline, Animations, State Machines ...),
         //    for any other file (Outline)

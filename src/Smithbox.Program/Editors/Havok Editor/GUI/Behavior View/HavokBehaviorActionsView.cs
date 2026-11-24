@@ -20,8 +20,14 @@ public partial class HavokBehaviorActionsView
     private enum Dialog
     {
         None, AddAnimation, CloneState, AddTransition, AddVariable,
-        BindVariable, DuplicateGenerator, DeleteGenerator, DuplicateVariable, DeleteVariable, DuplicateClip, Register
+        BindVariable, DuplicateGenerator, DeleteGenerator, DuplicateVariable, DeleteVariable, DuplicateClip, Register,
+        AddEvent, DeleteEvent, NewAction
     }
+
+    // Add / Delete Event
+    private string EventName = "";
+    private List<int> TargetEvents = new();
+    private List<HavokBehaviorOperations.HavokEventDeletion> EventDeletions = new();
 
     // Duplicate clip / Delete (several)
     private List<object> TargetObjects = new();
@@ -111,6 +117,8 @@ public partial class HavokBehaviorActionsView
                 RequestCloneState(node);
             GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Clone_State_TT"));
 
+            DisplayNewActionItem(node, Source.Outline);
+
             if (ImGui.Selectable(LOC.Get("HAVOK_BehaviorActions_Add_Transition_From_State")))
                 RequestAddTransition(Owner.Symbols.FindOwningStateMachine(Owner.Symbols.GetParents(node).FirstOrDefault()), node);
             GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Add_Transition_TT"));
@@ -153,6 +161,10 @@ public partial class HavokBehaviorActionsView
             "hkbStateMachine" => ("HAVOK_BehaviorActions_Duplicate_State_Machine", "HAVOK_BehaviorActions_Delete_State_Machine"),
             _ => ("HAVOK_BehaviorActions_Duplicate_Clip", "HAVOK_BehaviorActions_Delete_Clip")
         };
+
+        // A selector held by a state: a new action copied from that state
+        if (typeName == "CustomManualSelectorGenerator")
+            DisplayNewActionItem(obj, source);
 
         if (ImGui.MenuItem(LOC.Get(duplicateKey), InputManager.GetHint(KeybindID.Duplicate)))
             RequestDuplicate(obj, source);
@@ -400,6 +412,16 @@ public partial class HavokBehaviorActionsView
         if (!duplicate && !delete && !copy && !paste)
             return;
 
+        if (Owner.ContentsMode is HavokBehaviorContentsMode.Events)
+        {
+            var events = Owner.EventView.GetSelection();
+
+            if (delete && events.Count > 0) RequestDeleteEvents(events);
+            if (copy && events.Count > 0) Owner.EventView.CopyNames(events);
+
+            return;
+        }
+
         if (Owner.ContentsMode is HavokBehaviorContentsMode.Variables)
         {
             var index = Owner.VariableView.SelectedIndex;
@@ -624,6 +646,43 @@ public partial class HavokBehaviorActionsView
         Request(Dialog.AddVariable);
     }
 
+    public void RequestAddEvent()
+    {
+        EventName = "";
+
+        Request(Dialog.AddEvent);
+    }
+
+    public void RequestDeleteEvents(IReadOnlyList<int> indices)
+    {
+        var count = Owner.Symbols?.EventNames?.Count ?? 0;
+
+        TargetEvents = indices.Where(i => i >= 0 && i < count).Distinct().OrderBy(i => i).ToList();
+
+        if (TargetEvents.Count == 0)
+            return;
+
+        EventDeletions = TargetEvents.Select(i => HavokBehaviorOperations.DescribeDeleteEvent(Context, i)).ToList();
+
+        Request(Dialog.DeleteEvent);
+    }
+
+    /// <summary>
+    /// Removes one transition straight away (undoable), from the Events view's uses
+    /// </summary>
+    public void DeleteTransition(object transition)
+    {
+        var action = HavokBehaviorOperations.DeleteTransition(Context, transition, out var error);
+
+        if (action == null)
+        {
+            Smithbox.LogError(this, error);
+            return;
+        }
+
+        View.ActionManager.ExecuteAction(action);
+    }
+
     private void Request(Dialog dialog)
     {
         PendingDialog = dialog;
@@ -670,6 +729,11 @@ public partial class HavokBehaviorActionsView
             Dialog.DuplicateVariable => LOC.Get("HAVOK_BehaviorActions_Duplicate_Variable"),
             Dialog.DeleteVariable => LOC.Get("HAVOK_BehaviorActions_Delete_Variable"),
             Dialog.Register => LOC.Get("HAVOK_Register_Title"),
+            Dialog.AddEvent => LOC.Get("HAVOK_BehaviorActions_Add_Event"),
+            Dialog.NewAction => LOC.Get("HAVOK_NewAction_Title"),
+            Dialog.DeleteEvent => TargetEvents.Count > 1
+                ? LOC.Get("HAVOK_BehaviorActions_Delete_Events", TargetEvents.Count)
+                : LOC.Get("HAVOK_BehaviorActions_Delete_Event"),
             _ => ""
         };
 
@@ -697,6 +761,9 @@ public partial class HavokBehaviorActionsView
             case Dialog.DeleteVariable: DisplayDeleteVariable(); break;
             case Dialog.DuplicateClip: DisplayDuplicateClip(out canApply); break;
             case Dialog.Register: DisplayRegister(out canApply); break;
+            case Dialog.AddEvent: DisplayAddEvent(); break;
+            case Dialog.DeleteEvent: DisplayDeleteEvent(); break;
+            case Dialog.NewAction: DisplayNewAction(out canApply); break;
         }
 
         // The Register dialog closes itself to switch file (it reopens once the other file is shown)
@@ -1232,6 +1299,73 @@ public partial class HavokBehaviorActionsView
 
         ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_BehaviorActions_Delete_Variable_Warning"));
     }
+
+    private void DisplayAddEvent()
+    {
+        ImGui.SetNextItemWidth(-1);
+        // The name is applied with the dialog's Apply button
+        ImGui.InputTextWithHint("##eventName", LOC.Get("HAVOK_BehaviorActions_New_Event_Hint"), ref EventName, 255);
+
+        ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_Add_Event_Note", Owner.Symbols.EventNames?.Count ?? 0));
+    }
+
+    private void DisplayDeleteEvent()
+    {
+        var symbols = Owner.Symbols;
+        var names = symbols.EventNames;
+
+        for (var e = 0; e < TargetEvents.Count; e++)
+        {
+            var index = TargetEvents[e];
+            var deletion = EventDeletions[e];
+
+            ImGui.Text(LOC.Get("HAVOK_BehaviorActions_Event", HavokBehaviorSymbols.GetName(names, index) ?? "", index));
+
+            // A few of each, so it's clear what stops happening
+            if (deletion.Transitions.Count > 0)
+            {
+                ImGui.BulletText(LOC.Get("HAVOK_BehaviorActions_Delete_Event_Transitions", deletion.Transitions.Count));
+
+                foreach (var use in deletion.Transitions.Take(6))
+                    ImGui.TextDisabled($"    {HavokBehaviorSymbols.DescribeEventUse(use)}");
+
+                if (deletion.Transitions.Count > 6)
+                    ImGui.TextDisabled($"    {LOC.Get("HAVOK_BehaviorActions_And_More", deletion.Transitions.Count - 6)}");
+            }
+
+            if (deletion.Fields.Count > 0)
+            {
+                ImGui.BulletText(LOC.Get("HAVOK_BehaviorActions_Delete_Event_Fields", deletion.Fields.Count));
+
+                foreach (var use in deletion.Fields.Take(6))
+                    ImGui.TextDisabled($"    {HavokBehaviorSymbols.DescribeEventUse(use)}");
+
+                if (deletion.Fields.Count > 6)
+                    ImGui.TextDisabled($"    {LOC.Get("HAVOK_BehaviorActions_And_More", deletion.Fields.Count - 6)}");
+
+                if (deletion.Fields.Any(u => u.Kind is HavokEventUseKind.StateMachineField))
+                    ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_BehaviorActions_Delete_Event_Machine_Field"));
+            }
+
+            if (deletion.Transitions.Count == 0 && deletion.Fields.Count == 0)
+                ImGui.BulletText(LOC.Get("HAVOK_BehaviorActions_Delete_Event_Unused"));
+
+            // Not more than a screenful for a large selection
+            if (e >= 7 && TargetEvents.Count > 8)
+            {
+                ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_And_More", TargetEvents.Count - 8));
+                break;
+            }
+        }
+
+        var after = (names?.Count ?? 0) - TargetEvents.Min() - TargetEvents.Count;
+
+        if (after > 0)
+            ImGui.BulletText(LOC.Get("HAVOK_BehaviorActions_Delete_Event_Shift", after));
+
+        ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_BehaviorActions_Delete_Event_Warning"));
+        ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_Delete_Undo_Note"));
+    }
     #endregion
 
     #region Apply
@@ -1324,6 +1458,29 @@ public partial class HavokBehaviorActionsView
             case Dialog.Register:
                 action = ApplyRegister(context, out error);
                 break;
+
+            case Dialog.AddEvent:
+                action = HavokBehaviorOperations.AddEvent(context, EventName.Trim(), out var eventIndex, out error);
+
+                if (action != null)
+                    Owner.EventView.RequestSelect(eventIndex);
+                break;
+
+            case Dialog.DeleteEvent:
+                action = HavokBehaviorOperations.DeleteEvents(context, TargetEvents, out error);
+
+                if (action != null)
+                    Owner.EventView.ResetSelection();
+                break;
+
+            case Dialog.NewAction:
+            {
+                action = ApplyNewAction(context, out var newSelector, out error);
+
+                if (action != null)
+                    ShowResult(newSelector);
+                break;
+            }
         }
 
         if (action == null)

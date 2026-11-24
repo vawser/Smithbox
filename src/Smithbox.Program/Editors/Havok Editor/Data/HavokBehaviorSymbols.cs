@@ -14,11 +14,12 @@ namespace StudioCore.Editors.HavokEditor;
 /// The parent map (and the list of binding sets) only changes when objects are added or removed,
 /// so it's rebuilt on structural edits, along with the other behavior tab lists.
 /// </summary>
-public class HavokBehaviorSymbols
+public partial class HavokBehaviorSymbols
 {
     private const BindingFlags FieldFlags = BindingFlags.Instance | BindingFlags.Public;
 
-    private static readonly Dictionary<(Type, string), FieldInfo> FieldLookup = new();
+    // Concurrent: the scoped Problems and Search read other files on a worker thread
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<(Type, string), FieldInfo> FieldLookup = new();
 
     /// <summary>
     /// hkbBehaviorGraphStringData: event, variable, character property and animation names
@@ -350,7 +351,7 @@ public class HavokBehaviorSymbols
         Skipped
     }
 
-    private static readonly Dictionary<Type, NodeKind> NodeKinds = new();
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<Type, NodeKind> NodeKinds = new();
 
     /// <summary>
     /// How many objects deep to look through intermediates for child nodes. The deepest route in ER and DS3 is
