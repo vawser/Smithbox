@@ -151,7 +151,7 @@ public class MassEditToolMenu
         Parent.State.QuickCommands.Add(Parent.State.CurrentMenuInput);
 
         CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
-        CFG.Save();
+        CFG.TrySave();
 
         UpdateQuickCommandPagination();
     }
@@ -276,7 +276,7 @@ public class MassEditToolMenu
             Parent.State.CommandToRemove = null;
 
             CFG.Current.ParamEditor.ParamEditor_MassEdit_QuickCommands = Parent.State.QuickCommands;
-            CFG.Save();
+            CFG.TrySave();
 
             UpdateQuickCommandPagination();
         }

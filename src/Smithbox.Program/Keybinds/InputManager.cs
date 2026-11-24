@@ -109,11 +109,8 @@ public static class InputManager
 
         DefaultKeyBindings.CreateDefaultBindings();
 
-        // A file that can't be read is left as it is, rather than saved over with the defaults, so the bindings
-        // in it aren't lost
-        var keybindsRead = true;
-        var mousebindsRead = true;
-
+        // A file that can't be read is copied (or, failing that, protected from being saved over for the session)
+        // before the defaults replace it, so the bindings in it aren't lost
         if (File.Exists(KeybindPath))
         {
             try
@@ -122,8 +119,8 @@ public static class InputManager
             }
             catch (Exception ex)
             {
-                keybindsRead = false;
                 LogLater(LogLevel.Error, LOC.Get("INPUT_Keybinds_Failed_Load"), ex);
+                ConfigFiles.KeepUnreadable(KeybindPath, typeof(InputManager));
             }
         }
 
@@ -139,20 +136,13 @@ public static class InputManager
             }
             catch (Exception ex)
             {
-                mousebindsRead = false;
                 LogLater(LogLevel.Error, LOC.Get("INPUT_Mousebinds_Failed_Load"), ex);
+                ConfigFiles.KeepUnreadable(MousebindPath, typeof(InputManager));
             }
         }
 
-        if (keybindsRead)
-        {
-            SaveKeybinds();
-        }
-
-        if (mousebindsRead)
-        {
-            SaveMousebinds();
-        }
+        SaveKeybinds();
+        SaveMousebinds();
     }
 
     public static void Update(Sdl2Window window, InputSnapshot snapshot, double delta)
@@ -419,31 +409,24 @@ public static class InputManager
 
     // ---------------- Serialization ----------------
 
-    public static void SaveKeybinds()
+    /// <summary>
+    /// Saves the keybinds. A failure is logged as a warning rather than thrown, as this runs on startup and exit.
+    /// </summary>
+    public static bool SaveKeybinds()
     {
         var filestring = JsonSerializer.Serialize(_bindings, ProjectJsonSerializerContext.Default.KeybindStore);
 
-        var dir = Path.GetDirectoryName(KeybindPath);
-
-        if (!Directory.Exists(dir))
-        {
-            Directory.CreateDirectory(dir);
-        }
-
-        File.WriteAllText(KeybindPath, filestring);
+        return ConfigFiles.TryWrite(KeybindPath, filestring, typeof(InputManager));
     }
-    public static void SaveMousebinds()
+
+    /// <summary>
+    /// Saves the mousebinds. A failure is logged as a warning rather than thrown, as this runs on startup and exit.
+    /// </summary>
+    public static bool SaveMousebinds()
     {
         var filestring = JsonSerializer.Serialize(_mouseBindings, ProjectJsonSerializerContext.Default.MousebindStore);
 
-        var dir = Path.GetDirectoryName(MousebindPath);
-
-        if (!Directory.Exists(dir))
-        {
-            Directory.CreateDirectory(dir);
-        }
-
-        File.WriteAllText(MousebindPath, filestring);
+        return ConfigFiles.TryWrite(MousebindPath, filestring, typeof(InputManager));
     }
 
     public static void LoadKeybinds(string path)

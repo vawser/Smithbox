@@ -257,7 +257,7 @@ public class CFG
         if (!File.Exists(file))
         {
             Current = new CFG();
-            Save();
+            TrySave();
         }
         else
         {
@@ -278,10 +278,24 @@ public class CFG
             {
                 Smithbox.LogError<CFG>($"{LOC.Get("SYS_CFG_Failed_To_Read", file)}", e);
 
+                // The read can fail on a file that is only locked for a moment, so it's copied before the defaults
+                // are saved over it
+                ConfigFiles.KeepUnreadable(file, typeof(CFG));
+
                 Current = new CFG();
-                Save();
+                TrySave();
             }
         }
+    }
+
+    /// <summary>
+    /// <see cref="Save"/>, logging a warning instead of throwing when the file can't be written.
+    /// </summary>
+    public static bool TrySave()
+    {
+        var file = Path.Combine(ProjectUtils.GetConfigurationFolder(), "Configuration.json");
+
+        return ConfigFiles.TryWrite(file, ToJson(Current), typeof(CFG));
     }
 
     /// <summary>
@@ -305,12 +319,7 @@ public class CFG
         var folder = ProjectUtils.GetConfigurationFolder();
         var file = Path.Combine(folder, "Configuration.json");
 
-        if(!Directory.Exists(folder))
-        {
-            Directory.CreateDirectory(folder);
-        }
-
-        File.WriteAllText(file, ToJson(Current));
+        ConfigFiles.Write(file, ToJson(Current));
     }
 
     /// <summary>

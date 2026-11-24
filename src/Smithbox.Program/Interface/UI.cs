@@ -224,7 +224,7 @@ public class UI
         if (!File.Exists(file))
         {
             Current = new UI();
-            Save();
+            TrySave();
         }
         else
         {
@@ -245,8 +245,12 @@ public class UI
             {
                 Smithbox.LogError<UI>(LOC.Get("INTERFACE_UI_Failed_Read", file), e);
 
+                // The read can fail on a file that is only locked for a moment, so it's copied before the defaults
+                // are saved over it
+                ConfigFiles.KeepUnreadable(file, typeof(UI));
+
                 Current = new UI();
-                Save();
+                TrySave();
             }
         }
     }
@@ -326,7 +330,18 @@ public class UI
 
         var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.UI);
 
-        File.WriteAllText(file, json);
+        ConfigFiles.Write(file, json);
+    }
+
+    /// <summary>
+    /// <see cref="Save"/>, logging a warning instead of throwing when the file can't be written.
+    /// </summary>
+    public static bool TrySave()
+    {
+        var file = Path.Combine(ProjectUtils.GetConfigurationFolder(), "Interface.json");
+        var json = JsonSerializer.Serialize(Current, ProjectJsonSerializerContext.Default.UI);
+
+        return ConfigFiles.TryWrite(file, json, typeof(UI));
     }
 
     /// <summary>

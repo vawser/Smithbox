@@ -316,7 +316,7 @@ public static class EditorRail
                         _dragId = null;
 
                         if (HasCustomOrder)
-                            CFG.Save();
+                            CFG.TrySave();
                     }
                 }
             }

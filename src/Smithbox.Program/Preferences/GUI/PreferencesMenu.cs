@@ -108,7 +108,7 @@ public class PreferencesMenu
     /// </summary>
     public void SaveAll()
     {
-        CFG.Save();
+        CFG.TrySave();
         Startup.Save();
         Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
     }
@@ -143,7 +143,7 @@ public class PreferencesMenu
     /// </summary>
     public void SavePreferences()
     {
-        CFG.Save();
+        CFG.TrySave();
         Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
     }
 

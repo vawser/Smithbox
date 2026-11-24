@@ -93,15 +93,15 @@ public static unsafe class Program
         return log;
     }
 
-    // The executable's folder, rather than the working directory, which can still be the launching folder here
-    private static readonly string CrashLogPath = Path.Join(AppContext.BaseDirectory, "Crash Logs");
     static void ExportCrashLog(List<string> exceptionInfo)
     {
-        var time = $"{DateTime.Now:yyyy-M-dd--HH-mm-ss}";
         exceptionInfo.Insert(0, $"Smithbox - Version {_version}\n");
-        Directory.CreateDirectory($"{CrashLogPath}");
-        var crashLogPath = Path.Join(CrashLogPath, $"Log {time}.txt");
-        File.WriteAllLines(crashLogPath, exceptionInfo);
+
+        // Null when no crash log folder could be written; the dialog then carries the whole log
+        var crashLogPath = CrashLogFile.Write(exceptionInfo);
+        var where = crashLogPath != null
+            ? $"Crash log has been generated at \"{crashLogPath}\"."
+            : "The crash log couldn't be written.";
 
         try
         {
@@ -109,11 +109,11 @@ public static unsafe class Program
             if (PlatformUtils.Instance == null)
                 PlatformUtils.InitializeWindows(null);
 
-            if (exceptionInfo.Count > 10)
-                PlatformUtils.Instance.MessageBox($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".",
+            if (exceptionInfo.Count > 10 && crashLogPath != null)
+                PlatformUtils.Instance.MessageBox($"Smithbox has run into an issue.\n{where}",
                     $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                PlatformUtils.Instance.MessageBox($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".\n\nCrash Log:\n{string.Join("\n", exceptionInfo)}",
+                PlatformUtils.Instance.MessageBox($"Smithbox has run into an issue.\n{where}\n\nCrash Log:\n{string.Join("\n", exceptionInfo)}",
                     $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         catch (Exception dialogException)

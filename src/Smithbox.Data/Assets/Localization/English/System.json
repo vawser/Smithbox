@@ -69,6 +69,18 @@
       "Text": "Failed to read the CFG file: {0}\nThe default configuration has been restored."
     },
     {
+      "Key": "SYS_Config_Save_Failed",
+      "Text": "Couldn't save {0}. Check that the file isn't read-only or open in another program."
+    },
+    {
+      "Key": "SYS_Config_Backed_Up",
+      "Text": "A copy of the unreadable file has been kept as {0}."
+    },
+    {
+      "Key": "SYS_Config_Backup_Failed",
+      "Text": "Couldn't make a copy of the unreadable file {0}, so it won't be saved over until Smithbox is restarted. Changes to these settings won't be kept."
+    },
+    {
       "Key": "SYS_FAILED_TO_SAVE_CONFIG",
       "Text": "Couldn't save the configuration during crash recovery.\nIf Smithbox keeps crashing on startup, delete the configuration in {0}\n\n{1} {2}"
     },

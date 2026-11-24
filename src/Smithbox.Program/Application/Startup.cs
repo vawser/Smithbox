@@ -68,7 +68,7 @@ public class Startup
     /// Saves without throwing. This runs before there is a logger or window, and the defaults are already in
     /// memory, so a folder that can't be written to shouldn't stop Smithbox from starting.
     /// </summary>
-    private static void TrySave()
+    public static void TrySave()
     {
         try
         {

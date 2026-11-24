@@ -172,7 +172,7 @@ public class Smithbox
                 if(dialog is DialogResult.OK)
                 {
                     CFG.Current.Program.Block_OpenGL_Warning = true;
-                    CFG.Save();
+                    CFG.TrySave();
                 }
             }
         }
@@ -237,21 +237,53 @@ public class Smithbox
         _context.Initialize();
     }
 
+    private static readonly object LoggerFactoryLock = new();
+
+    /// <summary>
+    /// Creates the logger factory and hands it to SoulsFormats and Andre. Called with <see cref="LoggerFactoryLock"/>
+    /// held.
+    /// </summary>
+    private static void CreateLoggerFactory()
+    {
+        LogsProvider = new TaskLogsProvider();
+        SbLoggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder.AddProvider(LogsProvider);
+#if DEBUG
+            builder.AddConsole();
+#endif
+        });
+        SbLogger = SbLoggerFactory.CreateLogger<Smithbox>();
+        SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
+        Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
+    }
+
+    /// <summary>
+    /// The logger factory, created on first use if <see cref="SetupLogging"/> hasn't run yet, so code that logs
+    /// before it (a field initializer, Program.Main) can't crash on a null factory. What's logged that early reaches
+    /// no log window, as the windows only receive the events logged after they subscribe.
+    /// </summary>
+    private static ILoggerFactory EnsureLoggerFactory()
+    {
+        var factory = SbLoggerFactory;
+        if (factory != null)
+            return factory;
+
+        lock (LoggerFactoryLock)
+        {
+            if (SbLoggerFactory == null)
+                CreateLoggerFactory();
+
+            return SbLoggerFactory;
+        }
+    }
+
     private void SetupLogging()
     {
-        if (LogsProvider is null)
+        lock (LoggerFactoryLock)
         {
-            LogsProvider = new TaskLogsProvider();
-            SbLoggerFactory = LoggerFactory.Create(builder =>
-            {
-                builder.AddProvider(LogsProvider);
-#if DEBUG
-                builder.AddConsole();
-#endif
-            });
-            SbLogger = SbLoggerFactory.CreateLogger<Smithbox>();
-            SoulsFormats.Util.Logging.LoggerFactory = SbLoggerFactory;
-            Andre.Core.AndreLogging.LoggerFactory = SbLoggerFactory;
+            if (LogsProvider is null)
+                CreateLoggerFactory();
         }
 
         // The settings are read when the logs are drawn, so CFG doesn't need to be loaded yet
@@ -317,9 +349,9 @@ public class Smithbox
     public void SaveConfiguration()
     {
         using var __tracy = Profiler.TracyZoneAuto();
-        Startup.Save();
-        CFG.Save();
-        UI.Save();
+        Startup.TrySave();
+        CFG.TrySave();
+        UI.TrySave();
         InputManager.SaveKeybinds();
     }
 
@@ -329,9 +361,9 @@ public class Smithbox
     private void Exit()
     {
         // Holds the language picked on the first launch, which is otherwise only saved from the preferences
-        Startup.Save();
-        CFG.Save();
-        UI.Save();
+        Startup.TrySave();
+        CFG.TrySave();
+        UI.TrySave();
         InputManager.SaveKeybinds();
         // Shutdown Tracy profiler if running
         Profiler.Shutdown();
@@ -993,12 +1025,12 @@ public class Smithbox
     /// <returns></returns>
     public static ILogger Logger<T>()
     {
-        return SbLoggerFactory.CreateLogger<T>();
+        return EnsureLoggerFactory().CreateLogger<T>();
     }
 
     public static ILogger Logger(Type type)
     {
-        return SbLoggerFactory.CreateLogger(type);
+        return EnsureLoggerFactory().CreateLogger(type);
     }
 
     public static void Log<T>(string message, LogLevel logLevel, LogPriority logPriority, Exception? exception = null, params object?[] args)
