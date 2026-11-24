@@ -1434,13 +1434,18 @@ public class CFG
 
     #region Behavior Editor
     ///------------------------------------------------------------
-    /// Behavior Editor (AC6 .bhv)
+    /// Behavior Editor (AC6 .bhv, and the other games' Havok behaviors)
     ///------------------------------------------------------------
     public bool BehaviorEditor_Allow_Unmodified_Save = false;
     public bool BehaviorEditor_Allow_Automatic_Save = true;
     public bool BehaviorEditor_Properties_Show_Hex = true;
     public bool BehaviorEditor_Transitions_Game_Order = true;
     public bool Interface_BehaviorEditor_ToolWindow = true;
+
+    // Havok behaviors: the file list of every behbnd's files
+    public bool BehaviorEditor_FileList_Display_Full_Path = false;
+    public bool BehaviorEditor_FileList_Display_Aliases = true;
+    public bool BehaviorEditor_FileList_Show_Support_Files = false;
     #endregion
 
     #region Sound Editor

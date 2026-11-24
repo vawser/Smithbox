@@ -85,8 +85,17 @@ public static class EditorConditions
             or ProjectType.SDT or ProjectType.ER or ProjectType.NR;
     }
 
-    /// <summary>The Behavior Editor: AC6 .bhv state machines in chr behbnds</summary>
+    /// <summary>
+    /// The Behavior Editor: AC6 .bhv state machines in chr behbnds, or for the other Havok games their behbnds' Havok
+    /// behavior graphs (edited with the Havok Editor's behavior windows)
+    /// </summary>
     public static bool SupportsBehaviorEditor(ProjectType curType)
+    {
+        return UsesBhvBehaviors(curType) || SupportsHavokEditor(curType);
+    }
+
+    /// <summary>The games whose behbnds hold .bhv state machines instead of Havok behavior graphs (AC6)</summary>
+    public static bool UsesBhvBehaviors(ProjectType curType)
     {
         return curType is ProjectType.AC6;
     }

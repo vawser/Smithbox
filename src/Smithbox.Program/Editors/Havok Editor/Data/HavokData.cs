@@ -212,10 +212,13 @@ public class HavokData : IDisposable
     #region Dispose
     public void Dispose()
     {
-        // Every view has its own character reloader and file watchers
-        if (Project.Handler.HavokEditor != null)
+        // Every view has its own character reloader and file watchers (in the Havok Editor and the Behavior Editor)
+        foreach (var screen in new[] { Project.Handler.HavokEditor, Project.Handler.BehaviorEditor?.HavokBehaviors })
         {
-            foreach (var view in Project.Handler.HavokEditor.ViewHandler.Views)
+            if (screen == null)
+                continue;
+
+            foreach (var view in screen.ViewHandler.Views)
             {
                 view?.Tools.CharacterReloader.Dispose();
             }

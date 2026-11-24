@@ -124,8 +124,8 @@ public class HavokViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditor);
-            if (ImGui.Begin($@"{displayTitle}###HavokEditorView##{view.ViewIndex}", GUI.GetDisplayViewWindowFlags()))
+            ImGui.SetNextWindowClass(ref Editor.EditorDockGroup);
+            if (ImGui.Begin($@"{displayTitle}###{(Editor.BehaviorMode ? "BehaviorHavokView" : "HavokEditorView")}##{view.ViewIndex}", GUI.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -153,7 +153,7 @@ public class HavokViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_HavokEdit_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_HavokEditorView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref Editor.ViewDockGroup);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

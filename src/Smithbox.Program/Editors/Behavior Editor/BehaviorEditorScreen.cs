@@ -1,24 +1,35 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.HavokEditor;
 using StudioCore.Keybinds;
 using System.Numerics;
 
 namespace StudioCore.Editors.BehaviorEditor;
 
 /// <summary>
-/// The Behavior Editor: AC6 .bhv state machines (chr behbnds). P2: field and hex editing with undo; see
+/// The Behavior Editor. In AC6: .bhv state machines (chr behbnds); P2: field and hex editing with undo, see
 /// Claude/Documentation/BHV Editor Analysis.md for the phases.
+/// In the other Havok games: the behbnds' Havok behaviors, with the Havok Editor's behavior windows (a Havok Editor
+/// screen in behavior mode), whose file list holds every behbnd's behavior files.
 /// </summary>
 public class BehaviorEditorScreen : EditorScreen
 {
     private ProjectEntry Project;
 
+    /// <summary>The AC6 .bhv editor (null in the other games)</summary>
     public BhvEditorView View;
+
+    /// <summary>The Havok behavior editor, outside AC6 (null in AC6)</summary>
+    public HavokEditorScreen HavokBehaviors;
 
     public BehaviorEditorScreen(ProjectEntry project)
     {
         Project = project;
-        View = new BhvEditorView(this, project);
+
+        if (EditorConditions.UsesBhvBehaviors(project.Descriptor.ProjectType))
+            View = new BhvEditorView(this, project);
+        else
+            HavokBehaviors = new HavokEditorScreen(project, true);
     }
 
     public string EditorName => "Behavior Editor##BehaviorEditor";
@@ -31,6 +42,12 @@ public class BehaviorEditorScreen : EditorScreen
 
     public void OnGUI(string[] commands)
     {
+        if (HavokBehaviors != null)
+        {
+            HavokBehaviors.OnGUI(commands);
+            return;
+        }
+
         MonitorShortcuts();
         ParseCommands(commands);
 
@@ -184,11 +201,20 @@ public class BehaviorEditorScreen : EditorScreen
 
     public List<string> GetUnsavedFiles()
     {
+        if (HavokBehaviors != null)
+            return HavokBehaviors.GetUnsavedFiles();
+
         return Bank?.GetDirtyFiles() ?? new();
     }
 
     public void SaveUnsaved()
     {
+        if (HavokBehaviors != null)
+        {
+            HavokBehaviors.SaveUnsaved();
+            return;
+        }
+
         Bank?.SaveAllDirty();
         Smithbox.Instance.SaveConfiguration();
     }
@@ -199,6 +225,13 @@ public class BehaviorEditorScreen : EditorScreen
     /// </summary>
     public void Save(bool autoSave = false)
     {
+        // Every binder with unsaved changes (the Save keybind of the Havok windows does the same)
+        if (HavokBehaviors != null)
+        {
+            HavokBehaviors.SaveAll(autoSave);
+            return;
+        }
+
         var bank = Bank;
 
         if (bank != null && (!autoSave || CFG.Current.BehaviorEditor_Allow_Automatic_Save))

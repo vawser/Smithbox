@@ -27,11 +27,22 @@ public class HavokCommandQueue
         if (initcmd == null || initcmd.Length == 0)
             return;
 
-        // Register time act animations in a character's behavior: "hkx/register/{character}/{full ID},{full ID},..."
-        // (sent by the Time Act Editor)
-        if (initcmd[0] == "register" && initcmd.Length >= 3)
+        if (Editor.BehaviorMode)
         {
-            Register(activeView, initcmd[1], initcmd[2]);
+            // Register time act animations in a character's behavior: "behavior/register/{character}/{full ID},{full ID},..."
+            // (sent by the Time Act Editor)
+            if (initcmd[0] == "register" && initcmd.Length >= 3)
+            {
+                Register(activeView, initcmd[1], initcmd[2]);
+            }
+
+            // Show a behbnd's file: "behavior/select/{binder name}/{file name}"
+            if (initcmd[0] == "select" && initcmd.Length >= 3)
+            {
+                Select(activeView, nameof(HavokCategoryMode.Behavior), initcmd[1], initcmd[2]);
+            }
+
+            return;
         }
 
         // Show a file in a binder: "hkx/select/{category}/{binder name}/{file name}"
@@ -49,6 +60,10 @@ public class HavokCommandQueue
     private void Select(HavokEditorView view, string categoryName, string binderName, string fileName)
     {
         if (!Enum.TryParse<HavokCategoryMode>(categoryName, out var category))
+            return;
+
+        // Behavior files are only shown by the Behavior Editor, and it shows nothing else
+        if ((category is HavokCategoryMode.Behavior) != Editor.BehaviorMode)
             return;
 
         var binders = category switch
@@ -107,6 +122,7 @@ public class HavokCommandQueue
         }
 
         view.FileView.SelectFile(file);
+        view.FileView.ScrollToSelection = true;
     }
 
     private static string FileName(string path) => System.IO.Path.GetFileName(path.Replace('\\', '/'));
@@ -155,6 +171,7 @@ public class HavokCommandQueue
             ?? files[0];
 
         view.FileView.SelectFile(file);
+        view.FileView.ScrollToSelection = true;
         view.PropertyView.BehaviorView.ActionsView.RequestRegister(character, binder, file, ids);
     }
 

@@ -22,7 +22,8 @@ public class HavokShortcuts
     {
         var activeView = Editor.ViewHandler.ActiveView;
 
-        if (!FocusManager.IsInHavokEditor())
+        // The Havok Editor and the Behavior Editor both draw these windows: only the focused one takes the keys
+        if (!FocusManager.IsInHavokEditor() || FocusManager.FocusOwner != Editor)
             return;
 
         // Saves every binder with unsaved changes (marked * in the binder list)

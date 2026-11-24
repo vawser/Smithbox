@@ -71,7 +71,7 @@ public class TimeActBank : IDisposable
     /// </summary>
     private List<FileDictionaryEntry> GetActionSourceFiles()
     {
-        if (!EditorConditions.SupportsBehaviorEditor(Project.Descriptor.ProjectType))
+        if (!EditorConditions.UsesBhvBehaviors(Project.Descriptor.ProjectType))
             return new();
 
         return Project.Locator.HavokBehaviorFiles.Entries

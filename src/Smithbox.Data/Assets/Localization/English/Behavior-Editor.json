@@ -385,6 +385,16 @@
     { "Key": "BHV_SearchTool_Results_Header_TT", "Text": "Click a row to select the record. The tag is the offset in the record." },
     { "Key": "BHV_SearchTool_Summary", "Text": "{0} matches in {1} files." },
 
-    { "Key": "BHV_HavokNote_AC6", "Text": "AC6 behbnds hold .bhv state machines, not Havok behaviors. Open them in the Behavior Editor (enable it in the project configuration)." }
+    { "Key": "BHV_HavokNote_AC6", "Text": "AC6 behbnds hold .bhv state machines, not Havok behaviors. Open them in the Behavior Editor (enable it in the project configuration)." },
+
+    { "Key": "BHV_Havok_Indexing", "Text": "Reading behbnds ({0}/{1})..." },
+    { "Key": "BHV_Havok_No_Behbnds", "Text": "The project has no behbnds." },
+    { "Key": "BHV_Havok_Index_Failed", "Text": "Behavior Editor: the behbnds couldn't be listed." },
+    { "Key": "BHV_Havok_Index_Unreadable", "Text": "Behavior Editor: {0} behbnds couldn't be read, so their files aren't listed." },
+    { "Key": "BHV_Havok_Kind_Character", "Text": "Character Data" },
+    { "Key": "BHV_Havok_Kind_Project", "Text": "Project Data" },
+    { "Key": "BHV_Havok_Support_Files_Show", "Text": "Show Character and Project Files" },
+    { "Key": "BHV_Havok_Support_Files_Hide", "Text": "Hide Character and Project Files" },
+    { "Key": "BHV_Havok_Support_Files_TT", "Text": "Toggle whether each behbnd's character and project files are listed with its behavior graphs.\n\nCurrent Mode:\n{0}" }
   ]
 }

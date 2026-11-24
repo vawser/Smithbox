@@ -41,6 +41,11 @@ public class HavokBank : IDisposable
     public Action<FileDictionaryEntry, Action> PreserveSelections;
 
     /// <summary>
+    /// Whether Save also writes the selected file when it has no changes (the owning editor's setting)
+    /// </summary>
+    public Func<bool> AllowUnmodifiedSave = () => CFG.Current.HavokEditor_Allow_Unmodified_Save;
+
+    /// <summary>
     /// The in-memory copy of each binder that file actions have touched. File actions change it instead of
     /// the file on disk, and loading, copying and saving read from it, so staged changes behave like saved ones.
     /// </summary>
@@ -545,6 +550,24 @@ public class HavokBank : IDisposable
     /// <summary>
     /// Whether the entry is a loose Havok file rather than a binder (DS1 and DeS map collision)
     /// </summary>
+    /// <summary>
+    /// The names of the files in a (non-combined) binder as stored in the project, or the game if the project has no copy.
+    /// Reads the binder on its own, so it can run off the UI thread; null if it can't be read.
+    /// </summary>
+    public List<string> ReadBinderFileNames(FileDictionaryEntry fileEntry)
+    {
+        try
+        {
+            using var binder = ReadContainer(fileEntry, false);
+
+            return binder?.Files.Select(f => f.Name).ToList();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
     public static bool IsLooseFile(FileDictionaryEntry fileEntry)
     {
         return fileEntry != null &&
@@ -691,7 +714,13 @@ public class HavokBank : IDisposable
         }
 
         StagedBinders.Add(fileEntry);
+        FileListVersion++;
     }
+
+    /// <summary>
+    /// Bumped whenever a binder's file list in the bank is read or changed, so lists built from it know to rebuild
+    /// </summary>
+    public int FileListVersion { get; private set; }
 
     /// <summary>
     /// Record the binder's file list and the wrapper of each file
@@ -896,6 +925,7 @@ public class HavokBank : IDisposable
             }
 
             bankDict[fileEntry] = files;
+            FileListVersion++;
         }
         catch (Exception ex)
         {
@@ -1027,7 +1057,7 @@ public class HavokBank : IDisposable
         var targets = files.Values.Where(e => e.IsLoaded() && e.IsDirty).ToList();
         var hasStagedChanges = StagedBinders.Contains(fileEntry);
 
-        if (CFG.Current.HavokEditor_Allow_Unmodified_Save && selectedFilePath != null)
+        if (AllowUnmodifiedSave() && selectedFilePath != null)
         {
             if (files.TryGetValue(selectedFilePath, out var selectedWrapper) && selectedWrapper.IsLoaded() && !selectedWrapper.IsDirty)
             {

@@ -8,7 +8,7 @@ using static StudioCore.Editors.HavokEditor.HavokFileView.FileAction;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokFileView
+public partial class HavokFileView
 {
     public HavokEditorView View;
     public ProjectEntry Project;
@@ -60,6 +60,13 @@ public class HavokFileView
             LOC.Get("HAVOK_FileView_Header_TT"));
 
         var data = View.HavokBank;
+
+        // The Behavior Editor lists the behbnds' files themselves, not one binder's
+        if (View.Editor.BehaviorMode)
+        {
+            DisplayBehaviorFileList(data.BehaviorBank);
+            return;
+        }
 
         if (View.Selection.CategoryMode is HavokCategoryMode.Animation)
         {

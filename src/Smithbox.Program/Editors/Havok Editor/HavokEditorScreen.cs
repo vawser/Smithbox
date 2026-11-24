@@ -24,14 +24,59 @@ public class HavokEditorScreen : EditorScreen
     /// </summary>
     public HavokBank HavokBank;
 
-    public HavokEditorScreen(ProjectEntry project)
+    /// <summary>
+    /// Hosted by the Behavior Editor (outside AC6): only behbnds are shown, as one list of their behavior files,
+    /// and the Category and Binder windows are left out. The Havok Editor itself has no Behavior category.
+    /// </summary>
+    public bool BehaviorMode { get; }
+
+    /// <summary>Makes the window and dockspace IDs unique to each mode, as both can be open at once</summary>
+    public string IdPrefix => BehaviorMode ? "behaviorhavok" : "havokeditor";
+
+    public ref ImGuiWindowClass EditorDockGroup => ref BehaviorMode ? ref GUI.DockGroup_BehaviorEditor : ref GUI.DockGroup_HavokEditor;
+    public ref ImGuiWindowClass ViewDockGroup => ref BehaviorMode ? ref GUI.DockGroup_BehaviorEditorView : ref GUI.DockGroup_HavokEditorView;
+
+    // Each mode has its own save and window settings
+    public bool AllowUnmodifiedSave
+    {
+        get => BehaviorMode ? CFG.Current.BehaviorEditor_Allow_Unmodified_Save : CFG.Current.HavokEditor_Allow_Unmodified_Save;
+        set { if (BehaviorMode) CFG.Current.BehaviorEditor_Allow_Unmodified_Save = value; else CFG.Current.HavokEditor_Allow_Unmodified_Save = value; }
+    }
+
+    public bool AllowAutomaticSave
+    {
+        get => BehaviorMode ? CFG.Current.BehaviorEditor_Allow_Automatic_Save : CFG.Current.HavokEditor_Allow_Automatic_Save;
+        set { if (BehaviorMode) CFG.Current.BehaviorEditor_Allow_Automatic_Save = value; else CFG.Current.HavokEditor_Allow_Automatic_Save = value; }
+    }
+
+    public bool ShowToolWindow
+    {
+        get => BehaviorMode ? CFG.Current.Interface_BehaviorEditor_ToolWindow : CFG.Current.Interface_HavokEditor_ToolWindow;
+        set { if (BehaviorMode) CFG.Current.Interface_BehaviorEditor_ToolWindow = value; else CFG.Current.Interface_HavokEditor_ToolWindow = value; }
+    }
+
+    /// <summary>Set the focus to one of the editor's windows, as belonging to this instance</summary>
+    public void SetFocus(EditorFocusContext focus)
+    {
+        FocusManager.SetFocus(focus, this);
+    }
+
+    /// <summary>The files of every behbnd, for the behavior mode's file list (null outside it)</summary>
+    public HavokBehaviorFileIndex BehaviorIndex;
+
+    public HavokEditorScreen(ProjectEntry project, bool behaviorMode = false)
     {
         Project = project;
+        BehaviorMode = behaviorMode;
 
         HavokBank = new(project);
+        HavokBank.AllowUnmodifiedSave = () => AllowUnmodifiedSave;
         HavokBank.GetPinnedWrappers = GetPinnedWrappers;
         HavokBank.GetPinnedBinders = GetPinnedBinders;
         HavokBank.PreserveSelections = PreserveSelections;
+
+        if (BehaviorMode)
+            BehaviorIndex = new HavokBehaviorFileIndex(project, HavokBank);
 
         ViewHandler = new HavokViewHandler(this, project);
 
@@ -186,8 +231,8 @@ public class HavokEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        var dsid = ImGui.GetID("DockSpace_HavokEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_HavokEditor);
+        var dsid = ImGui.GetID(BehaviorMode ? "DockSpace_BehaviorHavokEditor" : "DockSpace_HavokEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref EditorDockGroup);
 
         ViewHandler.HandleViews(dsid);
     }
@@ -216,18 +261,18 @@ public class HavokEditorScreen : EditorScreen
             // Allow Unmodified Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
             {
-                CFG.Current.HavokEditor_Allow_Unmodified_Save = !CFG.Current.HavokEditor_Allow_Unmodified_Save;
+                AllowUnmodifiedSave = !AllowUnmodifiedSave;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.HavokEditor_Allow_Unmodified_Save);
+            GUI.ShowActiveStatus(AllowUnmodifiedSave);
 
             // Allow Automatic Save
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
             {
-                CFG.Current.HavokEditor_Allow_Automatic_Save = !CFG.Current.HavokEditor_Allow_Automatic_Save;
+                AllowAutomaticSave = !AllowAutomaticSave;
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
-            GUI.ShowActiveStatus(CFG.Current.HavokEditor_Allow_Automatic_Save);
+            GUI.ShowActiveStatus(AllowAutomaticSave);
 
             ImGui.EndMenu();
         }
@@ -275,9 +320,9 @@ public class HavokEditorScreen : EditorScreen
             // Tools
             if (ImGui.MenuItem($"{LOC.Get("HAVOK_Window_View_Toggle_Tools")}##toolsToggle"))
             {
-                CFG.Current.Interface_HavokEditor_ToolWindow = !CFG.Current.Interface_HavokEditor_ToolWindow;
+                ShowToolWindow = !ShowToolWindow;
             }
-            GUI.ShowActiveStatus(CFG.Current.Interface_HavokEditor_ToolWindow);
+            GUI.ShowActiveStatus(ShowToolWindow);
 
             ImGui.Separator();
 
@@ -294,7 +339,7 @@ public class HavokEditorScreen : EditorScreen
     public void Save(bool autoSave = false)
     {
         // Autosave is checked first, so a disabled autosave does nothing (and logs nothing)
-        if (autoSave && !CFG.Current.HavokEditor_Allow_Automatic_Save)
+        if (autoSave && !AllowAutomaticSave)
             return;
 
         var activeView = ViewHandler.ActiveView;
@@ -334,7 +379,7 @@ public class HavokEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll(bool autoSave = false)
     {
-        if (autoSave && !CFG.Current.HavokEditor_Allow_Automatic_Save)
+        if (autoSave && !AllowAutomaticSave)
             return;
 
         var activeView = ViewHandler.ActiveView;

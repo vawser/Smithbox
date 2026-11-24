@@ -37,6 +37,10 @@ public class HavokEditorView : IEditorView
         _imguiId = imguiId;
 
         Selection = new(this, project);
+
+        // The Behavior Editor's views only show behbnds
+        if (editor.BehaviorMode)
+            Selection.CategoryMode = HavokCategoryMode.Behavior;
         // The shown file's own profile (a file of another SDK or variant reads with its own), else the game's
         var projectProfile = HavokTypeUtils.GetProfile(project);
         PropertyCache.ProfileSource = () => Selection.SelectedFileWrapper?.Document?.Profile ?? projectProfile;
@@ -186,19 +190,28 @@ public class HavokEditorView : IEditorView
     {
         HandleStructureChange();
 
+        // The Behavior Editor shows behbnds only, as one list of their files: no Category or Binder window
+        if (!Editor.BehaviorMode)
+            DisplayCategoryAndBinderWindows(dockspaceId, viewIndex);
+
+        DisplayCommonWindows(dockspaceId, viewIndex);
+    }
+
+    private void DisplayCategoryAndBinderWindows(uint dockspaceId, int viewIndex)
+    {
         // Category
         // -> Type of hkx to populate/reference
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Category_List")}##havokeditor_CategoryList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Category_List")}##{Editor.IdPrefix}_CategoryList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_CategoryList);
+                Editor.SetFocus(EditorFocusContext.HavokEditor_CategoryList);
                 Editor.ViewHandler.ActiveView = this;
             }
 
@@ -211,15 +224,15 @@ public class HavokEditorView : IEditorView
         // -> Binders that contain the specified type of hkx files
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Binder_List")}##havokeditor_BinderList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Binder_List")}##{Editor.IdPrefix}_BinderList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_BinderList);
+                Editor.SetFocus(EditorFocusContext.HavokEditor_BinderList);
                 Editor.ViewHandler.ActiveView = this;
             }
 
@@ -227,20 +240,23 @@ public class HavokEditorView : IEditorView
         }
 
         ImGui.End();
+    }
 
+    private void DisplayCommonWindows(uint dockspaceId, int viewIndex)
+    {
         // File List
         // -> The hkx files within a binder
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_File_List")}##havokeditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_File_List")}##{Editor.IdPrefix}_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_FileList);
+                Editor.SetFocus(EditorFocusContext.HavokEditor_FileList);
                 Editor.ViewHandler.ActiveView = this;
             }
 
@@ -264,12 +280,12 @@ public class HavokEditorView : IEditorView
         //    for any other file (Outline)
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Categories")}###havokeditor_BehaviorCategories_{viewIndex}", GUI.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Categories")}###{Editor.IdPrefix}_BehaviorCategories_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_BehaviorCategories);
+                Editor.SetFocus(EditorFocusContext.HavokEditor_BehaviorCategories);
                 Editor.ViewHandler.ActiveView = this;
             }
 
@@ -285,12 +301,12 @@ public class HavokEditorView : IEditorView
         // -> The selected category's list (the Outline tree, the Animations table ...)
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Contents")}##havokeditor_Contents_{viewIndex}", GUI.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Contents")}##{Editor.IdPrefix}_Contents_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_Contents);
+                Editor.SetFocus(EditorFocusContext.HavokEditor_Contents);
                 Editor.ViewHandler.ActiveView = this;
 
                 // The property panel follows the window clicked last
@@ -317,12 +333,12 @@ public class HavokEditorView : IEditorView
         if (showGraph)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-            if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Graph")}##havokeditor_Graph_{viewIndex}", GUI.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+            if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Graph")}##{Editor.IdPrefix}_Graph_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
-                    FocusManager.SetFocus(EditorFocusContext.HavokEditor_Graph);
+                    Editor.SetFocus(EditorFocusContext.HavokEditor_Graph);
                     Editor.ViewHandler.ActiveView = this;
 
                     if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
@@ -339,15 +355,15 @@ public class HavokEditorView : IEditorView
         // -> Editor for the havok properties (copy MapHavokPropertyView)
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Properties")}##havokeditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Properties")}##{Editor.IdPrefix}_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_Properties);
+                Editor.SetFocus(EditorFocusContext.HavokEditor_Properties);
                 Editor.ViewHandler.ActiveView = this;
             }
 
@@ -357,18 +373,18 @@ public class HavokEditorView : IEditorView
         ImGui.End();
 
         // Tools
-        if (CFG.Current.Interface_HavokEditor_ToolWindow)
+        if (Editor.ShowToolWindow)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-            if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Tools")}##havokeditor_Tools_{viewIndex}", GUI.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+            if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Tools")}##{Editor.IdPrefix}_Tools_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
 
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
-                    FocusManager.SetFocus(EditorFocusContext.HavokEditor_Tools);
+                    Editor.SetFocus(EditorFocusContext.HavokEditor_Tools);
                     Editor.ViewHandler.ActiveView = this;
                 }
 

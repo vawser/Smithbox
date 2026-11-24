@@ -90,6 +90,19 @@ public class ProjectEditorHandler : IDisposable
     public HavokEditorScreen HavokEditor;
     public HavokEditorStub HavokEditorStub;
 
+    /// <summary>
+    /// Whether the Behavior Editor is enabled and edits Havok behavior graphs (every Havok game but AC6, whose
+    /// behbnds hold .bhv state machines)
+    /// </summary>
+    public bool UsesHavokBehaviorEditor()
+    {
+        var type = Project.Descriptor.ProjectType;
+
+        return Project.Descriptor.EnableBehaviorEditor
+            && EditorConditions.SupportsBehaviorEditor(type)
+            && !EditorConditions.UsesBhvBehaviors(type);
+    }
+
     // FX Editor
     public FxData FxData;
     public FxEditorScreen FxEditor;
@@ -281,8 +294,8 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_gparamDataTask);
         }
 
-        // Havok Data
-        if (Project.Descriptor.EnableHavokEditor &&
+        // Havok Data (also for the Behavior Editor, which edits Havok behaviors outside AC6)
+        if ((Project.Descriptor.EnableHavokEditor || UsesHavokBehaviorEditor()) &&
             initType is ProjectInitType.ProjectDefined)
         {
             HavokData = new(Project);
@@ -310,9 +323,9 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_cutsceneDataTask);
         }
 
-        // Behavior (AC6 .bhv)
+        // Behavior (AC6 .bhv; the other games' Havok behaviors use the Havok Data)
         if (Project.Descriptor.EnableBehaviorEditor &&
-            EditorConditions.SupportsBehaviorEditor(Project.Descriptor.ProjectType) &&
+            EditorConditions.UsesBhvBehaviors(Project.Descriptor.ProjectType) &&
             initType is ProjectInitType.ProjectDefined)
         {
             BehaviorData = new(Project);
@@ -485,7 +498,7 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= TextureViewer;
         }
 
-        if (HavokData != null)
+        if (HavokData != null && Project.Descriptor.EnableHavokEditor)
         {
             HavokEditor = new HavokEditorScreen(Project);
             firstEditor ??= HavokEditor;
@@ -503,7 +516,7 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= CutsceneEditor;
         }
 
-        if (BehaviorData != null)
+        if (BehaviorData != null || (HavokData != null && UsesHavokBehaviorEditor()))
         {
             BehaviorEditor = new BehaviorEditorScreen(Project);
             firstEditor ??= BehaviorEditor;

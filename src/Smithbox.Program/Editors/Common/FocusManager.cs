@@ -9,11 +9,28 @@ public static class FocusManager
 {
     public static EditorFocusContext Focus = EditorFocusContext.None;
 
+    /// <summary>
+    /// The editor instance that set the focus last, where one editor's windows are drawn by more than one instance
+    /// (the Havok Editor's windows, in the Havok Editor and the Behavior Editor)
+    /// </summary>
+    public static object FocusOwner;
+
     public static void SetFocus(EditorFocusContext focus)
     {
         if (ImGui.IsWindowFocused(ImGuiFocusedFlags.RootAndChildWindows))
         {
             Focus = focus;
+            FocusOwner = null;
+        }
+    }
+
+    /// <summary>Set the focus, recording which editor instance it belongs to</summary>
+    public static void SetFocus(EditorFocusContext focus, object owner)
+    {
+        if (ImGui.IsWindowFocused(ImGuiFocusedFlags.RootAndChildWindows))
+        {
+            Focus = focus;
+            FocusOwner = owner;
         }
     }
 

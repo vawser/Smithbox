@@ -63,8 +63,6 @@
 #----------------------------------------------------
 # Havok Editor TODO
 #----------------------------------------------------
-- Remove Collision Generator tool (tooling in Map/Model Editor covers it properly now)
-
 - Add Behavior Merge tool
 - Add Behavior templates
  

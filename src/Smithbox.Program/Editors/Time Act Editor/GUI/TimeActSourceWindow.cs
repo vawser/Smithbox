@@ -97,7 +97,7 @@ public class TimeActSourceWindow
         }
 
         // Behavior: the action time acts of the behbnds, where they hold BHV state machines (AC6)
-        if (EditorConditions.SupportsBehaviorEditor(Project.Descriptor.ProjectType))
+        if (EditorConditions.UsesBhvBehaviors(Project.Descriptor.ProjectType))
         {
             if (ImGui.BeginTabItem($"{LOC.Get("TAE_SourceWindow_Tab_Behavior")}##behaviorTab", GetTabFlags(TimeActSourceListType.Behavior)))
             {

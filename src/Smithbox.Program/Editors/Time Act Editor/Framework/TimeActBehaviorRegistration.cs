@@ -7,15 +7,15 @@ using System.Linq;
 namespace StudioCore.Editors.TimeActEditor;
 
 /// <summary>
-/// Register in Behavior: asks the Havok Editor to add the behavior clips that time act animations need, so the
-/// game can play them. The Havok Editor owns the behavior file (its loading, undo and save), so this only sends
-/// the character and the full animation IDs: hkx/register/{character}/{id},{id},...
+/// Register in Behavior: asks the Behavior Editor to add the behavior clips that time act animations need, so the
+/// game can play them. The Behavior Editor owns the behavior file (its loading, undo and save), so this only sends
+/// the character and the full animation IDs: behavior/register/{character}/{id},{id},...
 /// The IDs are sent rather than read from disk there, so unsaved time act changes are included.
 /// </summary>
 public static class TimeActBehaviorRegistration
 {
     /// <summary>
-    /// Whether the source's character has a behavior the Havok Editor can open
+    /// Whether the source's character has a behavior the Behavior Editor can open
     /// </summary>
     public static bool CanRegister(ProjectEntry project, TimeActContainerWrapper source, out string reason)
     {
@@ -27,10 +27,9 @@ public static class TimeActBehaviorRegistration
             return false;
         }
 
-        if (!project.Descriptor.EnableHavokEditor || !EditorConditions.SupportsHavokEditor(project.Descriptor.ProjectType)
-            || project.Handler.HavokEditor == null)
+        if (!project.Handler.UsesHavokBehaviorEditor() || project.Handler.BehaviorEditor?.HavokBehaviors == null)
         {
-            reason = LOC.Get("TAE_Register_No_Havok_Editor");
+            reason = LOC.Get("TAE_Register_No_Behavior_Editor");
             return false;
         }
 
@@ -54,7 +53,7 @@ public static class TimeActBehaviorRegistration
     }
 
     /// <summary>
-    /// Sends the animations of a time act (all of them, or the ones given) to the Havok Editor's Register dialog
+    /// Sends the animations of a time act (all of them, or the ones given) to the Behavior Editor's Register dialog
     /// </summary>
     public static void Register(TimeActContainerWrapper source, TimeActEntry entry, IEnumerable<TAE.Animation> animations = null)
     {
@@ -75,6 +74,6 @@ public static class TimeActBehaviorRegistration
         if (ids.Count == 0)
             return;
 
-        EditorCommandQueue.AddCommand($"hkx/register/{source.Name}/{string.Join(",", ids)}");
+        EditorCommandQueue.AddCommand($"behavior/register/{source.Name}/{string.Join(",", ids)}");
     }
 }

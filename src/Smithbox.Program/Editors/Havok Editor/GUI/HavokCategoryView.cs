@@ -38,7 +38,8 @@ public class HavokCategoryView
             var curCategory = (HavokCategoryMode)category;
 
             // None is the "nothing selected" state, not a category to pick
-            if (curCategory is HavokCategoryMode.None)
+            // Behavior files are edited in the Behavior Editor
+            if (curCategory is HavokCategoryMode.None or HavokCategoryMode.Behavior)
                 continue;
 
             var selected = View.Selection.CategoryMode == curCategory;
