@@ -50,8 +50,30 @@ public static class HavokBehaviorCloner
         return CloneValue(root, root, null, null, copyMap, null, true);
     }
 
+    /// <summary>
+    /// A copy of the root and everything below it, except objects <paramref name="substitute"/> gives a replacement for
+    /// (e.g. the target file's own object of the same name), which are referenced instead and not looked into.
+    /// <paramref name="copies"/> is shared between calls, so objects copied by an earlier call are reused rather than
+    /// copied again; <paramref name="added"/> gets the (original, copy) pairs this call made.
+    /// </summary>
+    public static object CloneWith(object root, Func<object, object> substitute, Dictionary<object, object> copies,
+        List<(object Original, object Copy)> added)
+    {
+        var before = new HashSet<object>(copies.Keys, ReferenceEqualityComparer.Instance);
+        var copy = CloneValue(root, root, null, null, copies, null, true, substitute);
+
+        foreach (var (original, made) in copies)
+        {
+            if (!before.Contains(original))
+                added.Add((original, made));
+        }
+
+        return copy;
+    }
+
     private static object CloneValue(object value, object root, HavokBehaviorSymbols symbols,
-        HashSet<object> subtree, Dictionary<object, object> copies, IReadOnlySet<object> alwaysCopy, bool copyAll)
+        HashSet<object> subtree, Dictionary<object, object> copies, IReadOnlySet<object> alwaysCopy, bool copyAll,
+        Func<object, object> substitute = null)
     {
         if (value == null)
             return null;
@@ -63,6 +85,9 @@ public static class HavokBehaviorCloner
 
         if (copies.TryGetValue(value, out var existing))
             return existing;
+
+        if (substitute != null && substitute(value) is { } replacement)
+            return replacement;
 
         if (!copyAll && !ReferenceEquals(value, root) && alwaysCopy?.Contains(value) != true)
         {
@@ -80,7 +105,7 @@ public static class HavokBehaviorCloner
             copies[value] = arrayCopy;
 
             for (var i = 0; i < array.Length; i++)
-                arrayCopy.SetValue(CloneValue(array.GetValue(i), root, symbols, subtree, copies, alwaysCopy, copyAll), i);
+                arrayCopy.SetValue(CloneValue(array.GetValue(i), root, symbols, subtree, copies, alwaysCopy, copyAll, substitute), i);
 
             return arrayCopy;
         }
@@ -91,7 +116,7 @@ public static class HavokBehaviorCloner
             copies[value] = listCopy;
 
             foreach (var entry in list)
-                listCopy.Add(CloneValue(entry, root, symbols, subtree, copies, alwaysCopy, copyAll));
+                listCopy.Add(CloneValue(entry, root, symbols, subtree, copies, alwaysCopy, copyAll, substitute));
 
             return listCopy;
         }
@@ -107,7 +132,7 @@ public static class HavokBehaviorCloner
             if (field.IsInitOnly)
                 continue;
 
-            field.SetValue(copy, CloneValue(field.GetValue(value), root, symbols, subtree, copies, alwaysCopy, copyAll));
+            field.SetValue(copy, CloneValue(field.GetValue(value), root, symbols, subtree, copies, alwaysCopy, copyAll, substitute));
         }
 
         return copy;

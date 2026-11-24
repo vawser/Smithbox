@@ -1444,6 +1444,8 @@ public class CFG
     public bool Interface_BehaviorEditor_Tool_Search = true;
     public bool Interface_BehaviorEditor_Tool_Problems = true;
     public bool Interface_BehaviorEditor_Tool_Changes = true;
+    public bool Interface_BehaviorEditor_Tool_Merge = true;
+    public string BehaviorEditor_Merge_Last_Folder = "";
     public bool Interface_BehaviorEditor_Tool_Bookmarks = true;
     public bool BehaviorEditor_Outline_Show_Modifiers = false;
 

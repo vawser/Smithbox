@@ -36,6 +36,9 @@ public class HavokBehaviorChangeIndex
     private double DirtySince;
     private HavokBehaviorSymbols DiffSymbols;
 
+    // The symbols seen last frame, to notice when they're rebuilt
+    private HavokBehaviorSymbols SeenSymbols;
+
     private Dictionary<object, VanillaStatus> ObjectStatuses = new(ReferenceEqualityComparer.Instance);
     private VanillaStatus[] EventStatuses = Array.Empty<VanillaStatus>();
     private VanillaStatus[] VariableStatuses = Array.Empty<VanillaStatus>();
@@ -113,8 +116,13 @@ public class HavokBehaviorChangeIndex
         if (!ReferenceEquals(file, File))
             Reset(file);
 
-        if (!ReferenceEquals(symbols, DiffSymbols))
+        // New symbols (another file, or rebuilt after an edit): compare again once they've settled. Only on the change:
+        // marking every frame until the comparison ran would keep pushing the settle time back, so it never ran.
+        if (!ReferenceEquals(symbols, SeenSymbols))
+        {
+            SeenSymbols = symbols;
             MarkDirty();
+        }
 
         var stored = View.HavokBank.EntryStatus(View.Selection.BinderFileEntry, false, file.Key);
 
@@ -177,6 +185,7 @@ public class HavokBehaviorChangeIndex
         IsNewFile = false;
         IsUnchanged = false;
         DiffSymbols = null;
+        SeenSymbols = null;
         Dirty = true;
         DirtySince = 0;
         ClearStatuses();

@@ -14,6 +14,7 @@ public class HavokToolView
     public HavokBehaviorSearchTool BehaviorSearch;
     public HavokBehaviorProblemsTool BehaviorProblems;
     public HavokBehaviorChangesTool BehaviorChanges;
+    public HavokBehaviorMergeTool BehaviorMerge;
     public HavokBehaviorBookmarksTool BehaviorBookmarks;
 
     private ToolSections Sections = new();
@@ -27,6 +28,7 @@ public class HavokToolView
         BehaviorSearch = new(view, project);
         BehaviorProblems = new(view, project);
         BehaviorChanges = new(view, project);
+        BehaviorMerge = new(view, project);
         BehaviorBookmarks = new(view, project);
     }
 
@@ -49,6 +51,10 @@ public class HavokToolView
             // Changes
             if (CFG.Current.Interface_BehaviorEditor_Tool_Changes)
                 BehaviorChanges.OnToolWindow();
+
+            // Merge
+            if (CFG.Current.Interface_BehaviorEditor_Tool_Merge)
+                BehaviorMerge.OnToolWindow();
 
             // Bookmarks
             if (CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks)

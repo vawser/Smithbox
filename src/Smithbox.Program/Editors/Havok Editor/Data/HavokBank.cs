@@ -1119,6 +1119,101 @@ public class HavokBank : IDisposable
         return HavokFile.Read(fileBytes, profile, compendium);
     }
 
+    /// <summary>
+    /// The file as stored in the project (or the game, if the project has no copy of the binder), read as a document:
+    /// the saved file, without unsaved edits. Reads the binder on its own, so call it off the UI thread.
+    /// </summary>
+    public HavokDocument ReadStoredDocument(FileDictionaryEntry fileEntry, bool isCombined, string internalFilePath)
+    {
+        var profile = HavokTypeUtils.GetProfile(Project);
+        if (profile == null)
+            return null;
+
+        using var binder = ReadContainer(fileEntry, isCombined);
+
+        return ReadBinderDocument(binder, internalFilePath, profile, null);
+    }
+
+    /// <summary>
+    /// A Havok file outside the project: a loose .hkx (DCX or not), or an entry of a binder (.behbnd.dcx ...), found by
+    /// its path inside the binder, else by its file name. A file that needs a compendium uses its binder's, else the
+    /// one of <paramref name="compendiumBinder"/> (the open file's binder). Call it off the UI thread.
+    /// </summary>
+    public HavokDocument ReadExternalDocument(string path, string internalFilePath, FileDictionaryEntry compendiumBinder)
+    {
+        var profile = HavokTypeUtils.GetProfile(Project);
+        if (profile == null || !File.Exists(path))
+            return null;
+
+        var bytes = File.ReadAllBytes(path);
+        var raw = DCX.Is(bytes) ? DCX.Decompress(bytes).ToArray() : bytes;
+
+        HavokCompendium FallbackCompendium()
+        {
+            if (compendiumBinder == null)
+                return null;
+
+            using var own = ReadContainer(compendiumBinder, false);
+            return own == null ? null : ReadCompendium(own, profile);
+        }
+
+        if (BND4.Is(raw) || BND3.Is(raw))
+        {
+            using IBinder binder = BND4.Is(raw) ? BND4.Read(raw) : BND3.Read(raw);
+            return ReadBinderDocument(binder, internalFilePath, profile, FallbackCompendium);
+        }
+
+        var compendium = HavokFile.Sniff(raw).UsesCompendium ? FallbackCompendium() : null;
+
+        return HavokFile.Read(raw, profile, compendium);
+    }
+
+    /// <summary>
+    /// The behavior files (Behaviors/*.hkx) of a binder outside the project, or of a loose .hkx (its own name); empty if it
+    /// can't be read
+    /// </summary>
+    public static List<string> ListExternalBehaviorFiles(string path)
+    {
+        try
+        {
+            var bytes = File.ReadAllBytes(path);
+            var raw = DCX.Is(bytes) ? DCX.Decompress(bytes).ToArray() : bytes;
+
+            if (!BND4.Is(raw) && !BND3.Is(raw))
+                return new List<string> { Path.GetFileName(path) };
+
+            using IBinder binder = BND4.Is(raw) ? BND4.Read(raw) : BND3.Read(raw);
+
+            return binder.Files.Select(f => f.Name)
+                .Where(n => n.Contains(".hkx", StringComparison.OrdinalIgnoreCase) &&
+                    n.Replace('\\', '/').Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+        catch
+        {
+            return new List<string>();
+        }
+    }
+
+    private HavokDocument ReadBinderDocument(IBinder binder, string internalFilePath, HavokProfile profile, Func<HavokCompendium> fallbackCompendium)
+    {
+        var file = binder?.Files.FirstOrDefault(e => e.Name == internalFilePath)
+            ?? binder?.Files.FirstOrDefault(e => string.Equals(Path.GetFileName(e.Name.Replace('\\', '/')),
+                Path.GetFileName((internalFilePath ?? "").Replace('\\', '/')), StringComparison.OrdinalIgnoreCase));
+
+        if (file == null)
+            return null;
+
+        var fileBytes = IsDcxFile(file.Name) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+        HavokCompendium compendium = null;
+
+        if (HavokFile.Sniff(fileBytes).UsesCompendium)
+            compendium = ReadCompendium(binder, profile) ?? fallbackCompendium?.Invoke();
+
+        return HavokFile.Read(fileBytes, profile, compendium);
+    }
+
     private static HavokCompendium ReadCompendium(IBinder binder, HavokProfile profile)
     {
         var file = binder.Files.FirstOrDefault(e => e.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase));

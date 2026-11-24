@@ -353,6 +353,13 @@ public class HavokEditorScreen : EditorScreen
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Changes);
 
+                // Merge
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Merge")}##behaviorMergeToolToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Merge = !CFG.Current.Interface_BehaviorEditor_Tool_Merge;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Merge);
+
                 // Bookmarks
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Bookmarks")}##behaviorBookmarksToolToggle"))
                 {

@@ -774,7 +774,7 @@ public static partial class HavokBehaviorOperations
     #endregion
 
     #region Duplicate variable
-    private static bool IsQuadVariableType(string typeName) => typeName is "VARIABLE_TYPE_VECTOR3" or "VARIABLE_TYPE_VECTOR4" or "VARIABLE_TYPE_QUATERNION";
+    internal static bool IsQuadVariableType(string typeName) => typeName is "VARIABLE_TYPE_VECTOR3" or "VARIABLE_TYPE_VECTOR4" or "VARIABLE_TYPE_QUATERNION";
 
     /// <summary>
     /// Copies a variable to the end of the list with a new name: its info, bounds and initial value.
