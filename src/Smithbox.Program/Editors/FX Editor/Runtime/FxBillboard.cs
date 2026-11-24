@@ -344,6 +344,20 @@ public sealed class FxBillboardDef
         return true;
     }
 
+    /// <summary>
+    /// frameIndex: a sprite sheet cell. A random start (a modifier on it) is snapped to a whole cell, so each particle
+    /// starts on one pose; otherwise every particle blends two poses for its whole life, and the overlapping ones read
+    /// as a still smear (ER 523391's skeletons: 8 + random 0-8, then frameIndexOffset 0 to 8 over 0.4 s).
+    /// A curve without a modifier keeps its fraction, so frames still interpolate between keys.
+    /// </summary>
+    private float StartFrame(in FxEvalContext ctx)
+    {
+        if (FrameIndex == null)
+            return 0;
+        float f = FrameIndex.Scalar(ctx);
+        return FrameIndex.Modifiers.Count > 0 ? MathF.Floor(f) : f;
+    }
+
     // ---------------------------------------------------------------- reading
 
     private static FxValue Prop(FxrActionView view, string name)
