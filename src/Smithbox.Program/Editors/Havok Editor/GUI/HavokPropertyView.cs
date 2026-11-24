@@ -867,6 +867,9 @@ public class HavokPropertyView
         // A clip's animation, a CMSG's animation ID: what the character has for it
         HavokPropertyDecorators.BehaviorAnimationRow(View, havokMeta, prop, oldval);
 
+        // A script generator's callback: the action script function it calls
+        HavokPropertyDecorators.BehaviorScriptRow(View, prop, oldval, containerObj);
+
         UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
 
         ImGui.NextColumn();

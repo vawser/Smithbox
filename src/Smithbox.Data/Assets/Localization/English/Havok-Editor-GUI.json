@@ -37,6 +37,10 @@
       "Text": "Graph"
     },
     {
+      "Key": "HAVOK_Window_Script",
+      "Text": "Script"
+    },
+    {
       "Key": "HAVOK_Window_Tools",
       "Text": "Tools"
     },

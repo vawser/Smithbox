@@ -1350,6 +1350,10 @@ public partial class HavokBehaviorActionsView
             if (deletion.Transitions.Count == 0 && deletion.Fields.Count == 0)
                 ImGui.BulletText(LOC.Get("HAVOK_BehaviorActions_Delete_Event_Unused"));
 
+            // The action scripts that fire it by name: they'd name a missing event afterwards
+            foreach (var (script, lines) in Owner.EventView.ScriptsNaming(HavokBehaviorSymbols.GetName(names, index) ?? ""))
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_BehaviorActions_Delete_Event_Script", script, lines));
+
             // Not more than a screenful for a large selection
             if (e >= 7 && TargetEvents.Count > 8)
             {

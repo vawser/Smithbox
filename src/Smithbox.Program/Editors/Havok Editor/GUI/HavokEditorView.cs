@@ -357,6 +357,30 @@ public class HavokEditorView : IEditorView
             ImGui.End();
         }
 
+        // Script
+        // -> The shown behavior file's action scripts (decompiled), where call sites and callbacks jump to
+        if (behaviorView.IsShown)
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref Editor.ViewDockGroup);
+
+            if (behaviorView.ScriptView.FocusRequested)
+            {
+                ImGui.SetNextWindowFocus();
+                behaviorView.ScriptView.FocusRequested = false;
+            }
+
+            if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Script")}##{Editor.IdPrefix}_Script_{viewIndex}", GUI.GetInnerWindowFlags()))
+            {
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                    Editor.ViewHandler.ActiveView = this;
+
+                behaviorView.ScriptView.DisplayWindow();
+            }
+
+            ImGui.End();
+        }
+
         // Properties
         // -> Editor for the havok properties (copy MapHavokPropertyView)
 

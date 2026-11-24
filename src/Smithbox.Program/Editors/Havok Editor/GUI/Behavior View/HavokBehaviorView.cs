@@ -22,6 +22,10 @@ public class HavokBehaviorView
 
     /// <summary>The shown file against the game's copy: the lists' vanilla colours and the Changes tool</summary>
     public HavokBehaviorChangeIndex Changes;
+
+    /// <summary>The action scripts paired with behavior files, and the Script window that shows them</summary>
+    public HavokScriptIndex Scripts;
+    public HavokScriptView ScriptView;
     public HavokOutlineView OutlineView;
     public HavokAnimationTableView AnimationTableView;
     public HavokBehaviorActionsView ActionsView;
@@ -49,6 +53,8 @@ public class HavokBehaviorView
         VariableView = new(view, this, project);
         EventView = new(view, this, project);
         Changes = new(view, project);
+        Scripts = new(project);
+        ScriptView = new(view, this);
         OutlineView = new(view, this, project);
         AnimationTableView = new(view, this, project);
         ActionsView = new(view, this, project);
@@ -172,13 +178,6 @@ public class HavokBehaviorView
             }
 
             GUI.Tooltip(LOC.Get(tooltip));
-        }
-
-        // The vanilla colours wait for the game's copy: its progress, while it's read
-        if (Changes.IsLoading)
-        {
-            ImGui.Separator();
-            Changes.DrawProgress("behaviorCategoriesChangesProgress");
         }
     }
 

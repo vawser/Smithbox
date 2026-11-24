@@ -275,6 +275,71 @@ public static class HavokPropertyDecorators
     /// the time act entry and animation file for a clip (with a link to the Time Act Editor),
     /// the categories with a time act entry for a CMSG's ID.
     /// </summary>
+    /// <summary>
+    /// A row under a script generator's callback (m_onActivateScript, m_onPreUpdateScript, m_onGenerateScript ...):
+    /// where the shown file's paired action scripts define that function, with a link to it in the Script window.
+    /// The game's own files have a few callbacks no script defines (BehaviorSurvey hkssurvey), so it isn't an error.
+    /// </summary>
+    public static void BehaviorScriptRow(HavokEditorView view, FieldInfo prop, object val, object containerObj)
+    {
+        if (containerObj?.GetType().Name != "hkbScriptGenerator" || val is not string callback || callback.Length == 0)
+            return;
+
+        if (!prop.Name.StartsWith("m_on", StringComparison.Ordinal) || !prop.Name.EndsWith("Script", StringComparison.Ordinal))
+            return;
+
+        var behaviorView = view.PropertyView.BehaviorView;
+        var scripts = behaviorView.ScriptView.CurrentScripts();
+
+        if (scripts.Count == 0)
+            return;
+
+        // Stored with its call parentheses: Update()
+        var function = callback.Replace("()", "").Trim();
+
+        // Name column
+        ImGui.NextColumn();
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextDisabled($"  {LOC.Get("HAVOK_ScriptRow_Label")}");
+
+        // Value column
+        ImGui.NextColumn();
+        ImGui.AlignTextToFramePadding();
+
+        if (!HavokScriptIndex.AllReady(scripts))
+        {
+            ImGui.TextDisabled(LOC.Get("HAVOK_EventView_Scripts_Loading", string.Join(", ", scripts.Select(s => s.Name))));
+        }
+        else
+        {
+            var defining = scripts.FirstOrDefault(s => s.DefinitionOf(function) >= 0);
+
+            if (defining != null)
+            {
+                var line = defining.DefinitionOf(function);
+
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+                if (ImGui.Selectable($"{LOC.Get("HAVOK_ScriptRow_Found", defining.Name, line + 1)}##scriptRow_{prop.Name}"))
+                    behaviorView.ScriptView.ShowLine(defining, line);
+                ImGui.PopStyleColor();
+
+                GUI.Tooltip(LOC.Get("HAVOK_ScriptRow_Found_TT", function));
+            }
+            else
+            {
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color,
+                    LOC.Get("HAVOK_ScriptRow_Not_Found", string.Join(", ", scripts.Select(s => s.Name))));
+                GUI.Tooltip(LOC.Get("HAVOK_ScriptRow_Not_Found_TT", function));
+            }
+        }
+
+        // Type column
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+        }
+    }
+
     public static void BehaviorAnimationRow(HavokEditorView view, HavokClass havokMeta, FieldInfo prop, object val)
     {
         var fieldMeta = havokMeta?.Fields.FirstOrDefault(f => f.Field == prop.Name);

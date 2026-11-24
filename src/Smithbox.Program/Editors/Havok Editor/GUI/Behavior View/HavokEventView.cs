@@ -11,7 +11,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// wildcards, so a row names where it leads (Tools/BehaviorSurvey eventsurvey).
 /// See Claude/Documentation/Havok Behavior Events Category Plan.md.
 /// </summary>
-public class HavokEventView
+public partial class HavokEventView
 {
     private HavokEditorView View;
     private ProjectEntry Project;
@@ -27,7 +27,7 @@ public class HavokEventView
 
     private bool ScrollToSelection = false;
 
-    private enum EventFilter { All, Used, Unused, Duplicates }
+    private enum EventFilter { All, Used, Unused, Duplicates, NamedByScript, NotNamedByScript }
     private EventFilter Filter = EventFilter.All;
 
     // The uses of every event, rebuilt after any edit (a plain field edit doesn't rebuild the symbols)
@@ -222,6 +222,8 @@ public class HavokEventView
         GUI.Tooltip(LOC.Get("HAVOK_EventView_Copy_Name_TT"));
 
         ImGui.EndDisabled();
+
+        DisplayScriptStatus();
     }
 
     /// <summary>
@@ -263,6 +265,7 @@ public class HavokEventView
             return;
         }
 
+        var scriptNames = GetScriptNames();
         var uses = GetUses();
 
         Visible.Clear();
@@ -278,6 +281,8 @@ public class HavokEventView
                 EventFilter.Used => count > 0,
                 EventFilter.Unused => count == 0,
                 EventFilter.Duplicates => DuplicateNames.Contains(name),
+                EventFilter.NamedByScript => scriptNames.Contains(name),
+                EventFilter.NotNamedByScript => !scriptNames.Contains(name),
                 _ => true
             };
 
@@ -334,6 +339,13 @@ public class HavokEventView
                 VanillaMarkers.Tooltip(status);
 
                 var suffix = GetSuffix(i < uses.Length ? uses[i] : new());
+
+                // Named by one of the paired action scripts
+                if (scriptNames.Contains(name))
+                {
+                    ImGui.SameLine();
+                    ImGui.TextDisabled(LOC.Get("HAVOK_EventView_Script_Tag"));
+                }
 
                 if (suffix.Length > 0)
                 {
@@ -481,6 +493,7 @@ public class HavokEventView
         ImGui.Columns(1);
 
         DisplayUses(index);
+        DisplayScriptMentions(name);
 
         ImGui.EndChild();
     }
@@ -512,7 +525,7 @@ public class HavokEventView
             }
         }
 
-        GUI.Tooltip(LOC.Get("HAVOK_EventView_Rename_Warning_TT"));
+        GUI.Tooltip(RenameWarning(name));
 
         // Another event with the same name (allowed: the game's DS3 files have them)
         if (DuplicateNames.Contains(name))
