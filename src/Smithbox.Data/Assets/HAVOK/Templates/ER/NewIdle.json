@@ -1,0 +1,14 @@
+{
+  "Name": "New Idle",
+  "Description": "Registers a new idle (basic motion) category, copying an existing one: every selector in c0000.hkx that plays an animation of the reference category gets the new category's clip, copied from the reference's. Idle categories cover standing, walking, guarding, item use and more (a010 has over 200 animations), so the preview lists everything the reference has. Vanilla idle categories are a000, a002, a003 and a010-a017.",
+  "Kind": "Category",
+  "File": "c0000.hkx",
+  "OffsetTypes": [],
+  "Category": { "Default": 18, "Min": 0, "Max": 255 },
+  "Reference": { "Default": 10, "Min": 0, "Max": 255, "Required": true },
+  "Groups": [],
+  "Notes": [
+    "Set the weapon's EquipParamWeapon Weapon Motion Position - 1H / 2H (wepmotionOneHandId / wepmotionBothHandId) to {Category}.",
+    "Add the a{Category}_ animations to c0000's anibnd, with their time acts. Rows marked ! have no animation file yet: untick the ones you won't make."
+  ]
+}

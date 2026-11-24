@@ -1,0 +1,25 @@
+{
+  "Name": "Weapon Moveset",
+  "Description": "Registers a new weapon attack category (aCCC_03XXXX) for the attack selectors (WeaponCategoryRight, WeaponCategoryHandStyle, WeaponCategoryLeft) in c0000.hkx. With a reference category (an existing weapon type), each new clip copies the reference's clip (looping jump loops, variable bindings), and the Reference Category source copies every attack that weapon type has. Based on HkbEditor's weapon_moveset template (ndahn/HkbEditor).",
+  "Kind": "Category",
+  "File": "c0000.hkx",
+  "OffsetTypes": [ "WeaponCategoryRight", "WeaponCategoryHandStyle", "WeaponCategoryLeft" ],
+  "Category": { "Default": 250, "Min": 0, "Max": 255 },
+  "Reference": { "Default": 25, "Min": -1, "Max": 255 },
+  "Groups": [
+    { "Name": "Right hand", "Description": "One-handed attacks: light combo, heavies, running, rolling, backstep, guard counter.", "Default": true, "Ids": [ 30000, 30010, 30020, 30030, 30040, 30050, 30200, 30210, 30300, 30400, 30500, 30501, 30505, 30510, 30515, 30700 ] },
+    { "Name": "Both hands", "Description": "Two-handed attacks.", "Default": true, "Ids": [ 32000, 32010, 32020, 32030, 32040, 32050, 32200, 32210, 32300, 32400, 32500, 32501, 32505, 32510, 32515, 32700 ] },
+    { "Name": "Dual wield", "Description": "Paired (power stance) attacks.", "Default": false, "Ids": [ 34000, 34010, 34020, 34030, 34200, 34300, 34400 ] },
+    { "Name": "Left hand", "Description": "Off-hand attacks.", "Default": false, "Ids": [ 35000, 35010, 35020, 35030, 35040, 35050 ] },
+    { "Name": "Backstab and riposte", "Description": "Critical attacks (Throw_SM).", "Default": false, "Ids": [ 31700, 31710, 31719, 31720, 31730, 31750, 31760 ] },
+    { "Name": "Special heavies", "Description": "Weapon-specific heavy attacks.", "Default": false, "Ids": [ 30600, 30601, 30605, 30610, 30615, 32600, 32601, 32605, 32610, 32615 ] },
+    { "Name": "Warrior heavies", "Description": "Weapon-specific warrior heavy attacks.", "Default": false, "Ids": [ 30620, 30621, 30625, 30630, 30635, 32620, 32621, 32625, 32630, 32635 ] },
+    { "Name": "Jump attacks", "Description": "Jump attacks (NewJump StateMachine), right, both and dual. Use a reference so the jump loops copy its looping clips.", "Default": false, "Ids": [ 31030, 31040, 31050, 31060, 31070, 31230, 31240, 31250, 31260, 31270, 33030, 33040, 33050, 33060, 33070, 33230, 33240, 33250, 33260, 33270, 34530, 34540, 34550, 34560, 34570 ] },
+    { "Name": "Jump swing variations", "Description": "The jump attacks' landing swing variations.", "Default": false, "Ids": [ 31071, 31072, 31081, 31082, 31271, 31272, 31281, 31282, 33071, 33072, 33081, 33082, 33271, 33272, 33281, 33282, 34571, 34572, 34581, 34582 ] },
+    { "Name": "Mounted", "Description": "Attacks on Torrent (Ride_NoThrow_SM).", "Default": false, "Ids": [ 38000, 38010, 38020, 38100, 38110, 38200, 38300, 39000, 39010, 39020, 39100, 39110, 39200, 39300 ] }
+  ],
+  "Notes": [
+    "Set the weapon's EquipParamWeapon Weapon Motion Category (wepmotionCategory) to {Category}.",
+    "Add the a{Category}_ animations to c0000's anibnd, with their time acts."
+  ]
+}

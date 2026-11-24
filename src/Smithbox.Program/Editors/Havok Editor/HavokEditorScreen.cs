@@ -346,6 +346,13 @@ public class HavokEditorScreen : EditorScreen
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Search);
 
+                // Templates
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Templates")}##behaviorTemplatesToolToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Templates = !CFG.Current.Interface_BehaviorEditor_Tool_Templates;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Templates);
+
                 // Changes
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Changes")}##behaviorChangesToolToggle"))
                 {

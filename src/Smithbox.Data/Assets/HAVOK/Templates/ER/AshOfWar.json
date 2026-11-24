@@ -1,0 +1,32 @@
+{
+  "Name": "Ash of War",
+  "Description": "Registers a new skill animation category (a6XX-a9XX) for the skill selectors (SwordArtsCategory) in c0000.hkx: the full-body and half-body selectors of each skill animation. Tick the parts of a skill it has. Based on HkbEditor's ash_of_war template (ndahn/HkbEditor).",
+  "Kind": "Category",
+  "File": "c0000.hkx",
+  "OffsetTypes": [ "SwordArtsCategory" ],
+  "Category": { "Default": 650, "Min": 600, "Max": 999 },
+  "Reference": { "Default": -1, "Min": -1, "Max": 999 },
+  "Groups": [
+    { "Name": "Regular", "Description": "The skill (one- and two-handed).", "Default": true, "Ids": [ 40000, 40005 ] },
+    { "Name": "Follow-ups", "Description": "Follow-up attacks after the skill.", "Default": true, "Ids": [ 40010, 40015, 40020, 40025 ] },
+    { "Name": "Charge", "Description": "A chargeable skill: start, charged release and loop.", "Default": false, "Ids": [ 40000, 40003, 40004, 40005, 40008, 40009 ] },
+    { "Name": "Cancels", "Description": "Early (+1) and late (+2) cancel variants.", "Default": false, "Ids": [ 40001, 40002, 40006, 40007, 40031, 40036, 40041, 40046 ] },
+    { "Name": "Stance", "Description": "A stance skill: the stance and the attacks from it (in the DrawStance state machines).", "Default": false, "Ids": [ 40050, 40051, 40052, 40053, 40056, 40057, 40060, 40065, 40070, 40075 ] },
+    { "Name": "Shield", "Description": "A shield skill.", "Default": false, "Ids": [ 40040, 40045 ] },
+    { "Name": "Rolling", "Description": "A rolling skill, in each direction.", "Default": false, "Ids": [ 40080, 40081, 40082, 40083, 40084, 40085, 40086, 40087, 40088 ] },
+    { "Name": "Large weapons", "Description": "Variant for large weapons (+200).", "Default": true, "Ids": [ 40200, 40205 ] },
+    { "Name": "Polearms", "Description": "Variant for polearms (+300).", "Default": false, "Ids": [ 40300, 40305 ] },
+    { "Name": "Short swords and daggers", "Description": "Variant for short swords and daggers (+2000).", "Default": false, "Ids": [ 42000, 42005 ] },
+    { "Name": "Twinblades", "Description": "Variant for twinblades (+2400).", "Default": false, "Ids": [ 42400, 42405 ] },
+    { "Name": "Curved swords", "Description": "Variant for curved swords (+2800).", "Default": false, "Ids": [ 42800, 42805 ] },
+    { "Name": "Fists", "Description": "Variant for fists and claws (+4200).", "Default": false, "Ids": [ 44200, 44205 ] },
+    { "Name": "Large shields", "Description": "Variant for large shields (+4700).", "Default": false, "Ids": [ 44700, 44705 ] },
+    { "Name": "Small shields", "Description": "Variant for small shields (+4800).", "Default": false, "Ids": [ 44800, 44805 ] },
+    { "Name": "Backhand blades", "Description": "Variant for backhand blades (+5800).", "Default": false, "Ids": [ 45800, 45805 ] },
+    { "Name": "Dueling shields", "Description": "Variant for dueling shields (+5900).", "Default": false, "Ids": [ 45900, 45905 ] }
+  ],
+  "Notes": [
+    "Point the skill's SwordArtsParam row at the category: Sword Arts Type (swordArtsTypeNew) is the category minus 600 (0 is a600).",
+    "Add the a{Category}_ animations to c0000's anibnd, with their time acts."
+  ]
+}

@@ -1447,6 +1447,7 @@ public class CFG
     public bool Interface_BehaviorEditor_Tool_Merge = true;
     public string BehaviorEditor_Merge_Last_Folder = "";
     public bool Interface_BehaviorEditor_Tool_Bookmarks = true;
+    public bool Interface_BehaviorEditor_Tool_Templates = true;
     public bool BehaviorEditor_Outline_Show_Modifiers = false;
 
     // Havok behaviors: the file list of every behbnd's files
