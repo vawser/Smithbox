@@ -71,6 +71,10 @@ public class FxTextureLibrary : IResourceEventListener
         return Host.Data.Bank.ResourceName(Host.Data.Bank.Models, id) ?? name;
     }
 
+    /// <summary>The first binder holding a model (its anibnd sits beside it), null when none does or indexing isn't done.</summary>
+    public string ModelBinderPath(int id) =>
+        id > 0 && Host.Data.Bank.Models.TryGetValue(ModelName(id), out var list) && list.Count > 0 ? list[0].Binder.Path : null;
+
     /// <summary>A model's resource once it has loaded, null until then (or when no binder holds it).</summary>
     public ResourceHandle<FlverResource> GetModel(int id)
     {

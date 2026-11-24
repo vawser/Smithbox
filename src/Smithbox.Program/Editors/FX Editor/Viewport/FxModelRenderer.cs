@@ -25,10 +25,34 @@ public class FxModelRenderer
     {
         public ResourceHandle<FlverResource> Model;
         public readonly List<MeshRenderableProxy> Meshes = new();
+        /// <summary>Per mesh, its animator when the appearance plays an animation (null until first posed).</summary>
+        public readonly List<ModelAnimator> Animators = new();
         public int Used;
+
+        public void Dispose()
+        {
+            foreach (var mesh in Meshes)
+                mesh.Dispose();
+            foreach (var animator in Animators)
+                animator?.Dispose();
+        }
     }
 
     private readonly Dictionary<FxAppearanceDef, Pool> Pools = new();
+
+    // ---------------------------------------------------------------- RichModel animation (anibnd)
+
+    /// <summary>A model's animation, read once: the anibnd's package, the FLVER's rig and the clip played.</summary>
+    private sealed class Animation
+    {
+        public AnimationPackage Package;
+        public ModelRig Rig;
+        public AnimationEntry Entry;
+        public HavokClip Clip;
+    }
+
+    // By (model, anibnd, animation id); a null result means it can't be played (missing, or failed to read)
+    private readonly Dictionary<(int, int, int), Task<Animation>> Animations = new();
 
     // ---------------------------------------------------------------- Model: effect-coloured batches
 
@@ -148,10 +172,12 @@ public class FxModelRenderer
                     pool.Meshes.Add(mesh);
                 }
 
-                var target = pool.Meshes[pool.Used++];
+                int slot = pool.Used++;
+                var target = pool.Meshes[slot];
                 target.World = world;
                 if (!target.Visible)
                     target.Visible = true;
+                Animate(pool, slot, def, p.Particle);
                 drawn++;
             }
         }
@@ -171,13 +197,102 @@ public class FxModelRenderer
         DrawnModels = drawn;
     }
 
+    /// <summary>
+    /// Poses a pooled mesh by its particle's animation, once the anibnd and rig have loaded (in the background; the
+    /// model stands in its rest pose until then). The pose depends only on the particle's age, so a pool slot can
+    /// show a different particle each frame.
+    /// </summary>
+    private void Animate(Pool pool, int slot, FxModelDef def, FxParticle particle)
+    {
+        while (pool.Animators.Count <= slot)
+            pool.Animators.Add(null);
+
+        if (def.Anibnd <= 0)
+            return;
+
+        var task = GetAnimation(def);
+        if (task is not { IsCompletedSuccessfully: true } || task.Result is not { } animation)
+            return;
+
+        var animator = pool.Animators[slot];
+        if (animator == null)
+        {
+            animator = new ModelAnimator(animation.Package, animation.Rig);
+            if (!animator.Play(animation.Entry))
+            {
+                animator.Dispose();
+                return;
+            }
+            animator.SetPlaying(false);
+            pool.Animators[slot] = animator;
+        }
+
+        animator.Seek(def.AnimationTime(particle, animation.Clip.Duration));
+        animator.Update(0);
+        // Setting the animator again pushes the new pose to the mesh (MeshRenderableProxy.Animator)
+        pool.Meshes[slot].Animator = animator;
+    }
+
+    private Task<Animation> GetAnimation(FxModelDef def)
+    {
+        var key = (def.Model, def.Anibnd, def.Animation);
+        if (Animations.TryGetValue(key, out var task))
+            return task;
+
+        // The anibnd's binder: the one holding s<anibnd>.flver, else the model's own (they sit side by side)
+        var binder = Library.ModelBinderPath(def.Anibnd) ?? Library.ModelBinderPath(def.Model);
+        if (binder == null)
+            return null; // not indexed yet: asked again next frame
+
+        var fs = Host.Project.VFS.FS;
+        var game = Host.Project.Descriptor.ProjectType;
+        string anibnd = $"s{def.Anibnd:D5}", model = $"s{def.Model:D5}";
+        int animationId = def.Animation;
+
+        task = Task.Run(() =>
+        {
+            try
+            {
+                var package = AnimationPackage.Load(fs, game, AnimatedModelKind.Asset, anibnd, binder);
+                if (package == null)
+                    return null;
+
+                var entry = package.FindAnimation(animationId) ?? package.Animations.FirstOrDefault();
+                var clip = entry == null ? null : package.GetClip(entry);
+                var rig = fs.ReadFile(binder) is { } data ? ModelRig.Read(game, data, model) : null;
+                if (clip == null || rig == null)
+                {
+                    package.Dispose();
+                    return null;
+                }
+
+                return new Animation { Package = package, Rig = rig, Entry = entry, Clip = clip };
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"FX model {model}: couldn't read the animation of {anibnd}.anibnd", e);
+                return null;
+            }
+        });
+        Animations[key] = task;
+        return task;
+    }
+
+    /// <summary>Releases the loaded animations (their binders stay open while loaded). With the display.</summary>
+    public void ReleaseAnimations()
+    {
+        foreach (var task in Animations.Values)
+            if (task.IsCompletedSuccessfully)
+                task.Result?.Package.Dispose();
+        Animations.Clear();
+    }
+
     /// <summary>Drops the pools and batches no particle used this frame (their effects were rebuilt or ended).</summary>
     private void ReleaseUnused()
     {
         foreach (var (appearance, pool) in Pools.Where(kv => kv.Value.Used == 0).ToList())
         {
-            foreach (var mesh in pool.Meshes)
-                mesh.Dispose();
+            pool.Dispose();
             Pools.Remove(appearance);
         }
 
@@ -311,8 +426,7 @@ public class FxModelRenderer
     public void Clear()
     {
         foreach (var pool in Pools.Values)
-            foreach (var mesh in pool.Meshes)
-                mesh.Dispose();
+            pool.Dispose();
         Pools.Clear();
 
         foreach (var batch in Batches.Values)

@@ -54,6 +54,7 @@ public sealed class FxDisplay : IDisposable
     public void Dispose()
     {
         Clear();
+        Models.ReleaseAnimations();
         Textures.Clear();
     }
 

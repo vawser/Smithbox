@@ -252,25 +252,6 @@ vec4 ScreenEffect(fxMaterial m, uint flags, vec2 dx, vec2 dy)
 	return vec4(rgb, alpha);
 }
 
-// Over-bright colour (rgbMultiplier and an unclamped color3 reach 5-50 in vanilla effects): scaled by its brightest
-// channel rather than clamped per channel, which turned every tint into flat white (ER 450335's pale-blue burst at
-// rgb ×7.5). Past 1 the brightness grows slowly, and the colour goes a little toward white, so a hot core still
-// reads as hot. Into the HDR target the result is at most about 2, which leaves the tone mapping something to do.
-vec3 SoftBright(vec3 rgb)
-{
-	rgb = max(rgb, vec3(0.0));
-	float peak = max(rgb.r, max(rgb.g, rgb.b));
-	if (peak <= 1.0)
-	{
-		return rgb;
-	}
-	vec3 hue = rgb / peak;
-	float over = log2(peak);                          // 1 at ×2, 3 at ×8, 5.6 at ×50
-	vec3 tinted = mix(hue, vec3(1.0), clamp(over * 0.08, 0.0, 0.35));
-	float level = c_linearOutput ? 1.0 + 0.25 * min(over, 4.0) : 1.0;
-	return tinted * level;
-}
-
 // Lens flares: the share of the source the scene depth shows, from five samples across its disc (the centre and four
 // points at its radius). fsin_layer3: the source's screen uv, its depth (-1 off screen), its radius in uv height.
 // The depth is reversed (1 nearest), so a stored depth greater than the source's is something in front of it.
@@ -376,6 +357,7 @@ void main()
 	}
 
 	vec4 color = tex * fsin_color;
+
 	float alpha = clamp(color.a, 0.0, 1.0);
 
 	// Lens flares show as much as their source is in view
@@ -413,7 +395,14 @@ void main()
 		discard;
 	}
 
-	vec3 rgb = SoftBright(color.rgb * m.tuning.x);
+	// Over-bright colour stays as it is into the HDR target: the layers of an effect are told apart by how much
+	// brighter one is than another (ER 523391's additive skeletons, ×24, over its ×3 burst), which a compressing
+	// curve here took away
+	vec3 rgb = color.rgb * m.tuning.x;
+	if (!c_linearOutput)
+	{
+		rgb = clamp(rgb, 0.0, 1.0);
+	}
 
 	// Multiply: toward white where the particle is transparent, as the pipeline multiplies without alpha
 	if (m.extra.x == 3u)

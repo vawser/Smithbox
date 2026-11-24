@@ -2,14 +2,4 @@
 # TODO 
 #---------------------
 
-450335: skeletons not playing anim, white burst looks too harsh
-
-450341: orientation of arc not inline with dark aura
-
-450370: orientation of the distortion ring is wrong (vertical, should be horizontal)
-
-450383: spark looks blocky
-
-450384: spirl texture looks misaligned
-
-450420: spiral looks misaligned
+450330

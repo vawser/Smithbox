@@ -377,6 +377,24 @@ public sealed class FxModelDef
     public FxValue OffsetU, OffsetV, SpeedU, SpeedV, SpeedMultiplierU, SpeedMultiplierV, FrameIndex, FrameIndexOffset;
     public int Columns = 1, TotalFrames = 1;
 
+    /// <summary>
+    /// The model's own animation: an anibnd (sfx/hkx/s&lt;id&gt;.anibnd, nested in the effect binder beside the FLVER),
+    /// the animation id in it, whether it loops and how fast it plays. 0 / no anibnd for a still model.
+    /// ER 450330's skeletons are a RichModel playing s88760.anibnd's animation 0.
+    /// </summary>
+    public int Anibnd, Animation;
+    public bool LoopAnimation;
+    public float AnimationSpeed = 1;
+
+    /// <summary>Where a particle's animation is, in seconds: its age × the speed, wrapped when looping, else held at the end.</summary>
+    public float AnimationTime(FxParticle p, float duration)
+    {
+        float t = Math.Max(p.Age, 0) * AnimationSpeed;
+        if (duration <= 0)
+            return 0;
+        return LoopAnimation ? t % duration : Math.Min(t, duration);
+    }
+
     /// <summary>Model (605) particles are drawn by the FX model shader, coloured by the effect.</summary>
     /// <summary>For an older-format model (no FXR3 action): whether the effect's colours tint it.</summary>
     public bool ColouredByEffect;
@@ -427,6 +445,10 @@ public sealed class FxModelDef
             FrameIndexOffset = FxRead.Prop(view, "frameIndexOffset"),
             Columns = Math.Max(1, FxRead.Int(view, "columns", 1)),
             TotalFrames = Math.Max(1, FxRead.Int(view, "totalFrames", 1)),
+            Anibnd = FxRead.Int(view, "anibnd", 0),
+            Animation = FxRead.Int(view, "animation", 0),
+            LoopAnimation = FxRead.Int(view, "loopAnimation", 0) != 0,
+            AnimationSpeed = FxRead.Float(view, "animationSpeed", 1),
         };
     }
 
@@ -486,7 +508,11 @@ public sealed class FxModelDef
             _ => Vector3.UnitZ,
         };
 
-        instance.World = Matrix4x4.CreateScale(sx, sy, sz) * rotation * Look(forward) * Matrix4x4.CreateTranslation(position);
+        // Along the particle (2), the model keeps its node's roll: up is the node's Y, taken square to the travel.
+        // From world up alone, a node turned about its Z (ER 450420's spirals, 450341's aura under a -180° X node)
+        // drew its model turned around its own axis, out of line with the tracers and billboards beside it.
+        var upHint = Orientation == 2 ? Vector3.TransformNormal(Vector3.UnitY, node.World) : Vector3.UnitY;
+        instance.World = Matrix4x4.CreateScale(sx, sy, sz) * rotation * Look(forward, upHint) * Matrix4x4.CreateTranslation(position);
         instance.Color = color;
         instance.UvOffset = new Vector2(
             (OffsetU?.Scalar(ctx) ?? 0) + (SpeedU?.Scalar(ctx) ?? 0) * (SpeedMultiplierU?.Scalar(ctx) ?? 1) * p.Age,
@@ -505,10 +531,13 @@ public sealed class FxModelDef
         return f.LengthSquared() > 1e-10f ? Vector3.Normalize(f) : Vector3.UnitZ;
     }
 
-    private static Matrix4x4 Look(Vector3 forward)
+    private static Matrix4x4 Look(Vector3 forward, Vector3 upHint)
     {
         forward = forward.LengthSquared() > 1e-12f ? Vector3.Normalize(forward) : Vector3.UnitZ;
-        var up = MathF.Abs(forward.Y) < 0.99f ? Vector3.UnitY : Vector3.UnitX;
+        // The hint, unless it (nearly) lies along the forward axis; then world Y, then world X
+        var up = upHint.LengthSquared() > 1e-12f ? Vector3.Normalize(upHint) : Vector3.UnitY;
+        if (MathF.Abs(Vector3.Dot(up, forward)) > 0.99f)
+            up = MathF.Abs(forward.Y) < 0.99f ? Vector3.UnitY : Vector3.UnitX;
         var right = Vector3.Normalize(Vector3.Cross(up, forward));
         up = Vector3.Cross(forward, right);
         return new Matrix4x4(right.X, right.Y, right.Z, 0, up.X, up.Y, up.Z, 0, forward.X, forward.Y, forward.Z, 0, 0, 0, 0, 1);

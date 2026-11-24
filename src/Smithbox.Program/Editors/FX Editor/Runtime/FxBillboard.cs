@@ -184,6 +184,10 @@ public sealed class FxBillboardDef
         d.Layer2 = distortion ? IntValue(view, "normalMap", at0, 0) : 0;
         d.BlendMode = 2;
         d.Orientation = distortion ? IntValue(view, "orientation", at0, 1) : 1;
+        // A distortion is a volume in its node's space (sizeX/Y/Z, ellipsoid shapes): South (0, 3) follows the node's
+        // axes rather than the world's. ER 450370's ring is South under a node turned -90° about X, and lies flat in game.
+        if (distortion && d.Orientation is 0 or 3)
+            d.Orientation = 2;
         d.UniformScale = IntValue(view, "uniformScale", at0, 0) != 0;
         d.DepthBlend = true;
         d.InterpolateFrames = false;
@@ -302,7 +306,7 @@ public sealed class FxBillboardDef
             Position = position,
             Size = new Vector2(w, h),
             Rotation = new Vector3(Rot(RotationX, 0), Rot(RotationY, 1), Rot(RotationZ, 2)),
-            Frame = (FrameIndex?.Scalar(ctx) ?? 0) + (FrameIndexOffset?.Scalar(ctx) ?? 0),
+            Frame = StartFrame(ctx) + (FrameIndexOffset?.Scalar(ctx) ?? 0),
             Color = c,
             AlphaThreshold = (AlphaThreshold?.Scalar(ctx) ?? 0) / 255f,
             AlphaFadeThreshold = (AlphaFadeThreshold?.Scalar(ctx) ?? 0) / 255f,
