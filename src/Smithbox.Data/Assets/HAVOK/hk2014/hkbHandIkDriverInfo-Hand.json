@@ -1,0 +1,75 @@
+{
+  "Type": "HKX2.hkbHandIkDriverInfoHand",
+  "Fields": [
+    {
+      "Field": "m_elbowAxisLS",
+      "Name": "Elbow Axis",
+      "Description": "The axis the elbow bends around, in the elbow's space."
+    },
+    {
+      "Field": "m_backHandNormalLS",
+      "Name": "Back Of Hand Normal",
+      "Description": "The direction the back of the hand faces, in the wrist's space."
+    },
+    {
+      "Field": "m_handOffsetLS",
+      "Name": "Hand Offset",
+      "Description": "An offset from the wrist to the point placed on the target."
+    },
+    {
+      "Field": "m_handOrienationOffsetLS",
+      "Name": "Hand Orientation Offset",
+      "Description": "A rotation offset of the hand."
+    },
+    {
+      "Field": "m_maxElbowAngleDegrees",
+      "Name": "Max Elbow Angle",
+      "Description": "The most the elbow can bend, in degrees."
+    },
+    {
+      "Field": "m_minElbowAngleDegrees",
+      "Name": "Min Elbow Angle",
+      "Description": "The least the elbow can bend, in degrees."
+    },
+    {
+      "Field": "m_shoulderIndex",
+      "Name": "Shoulder Bone",
+      "Description": "The arm's shoulder bone."
+    },
+    {
+      "Field": "m_shoulderSiblingIndex",
+      "Name": "Shoulder Sibling Bone",
+      "Description": "A bone that follows the shoulder. -1 for none."
+    },
+    {
+      "Field": "m_elbowIndex",
+      "Name": "Elbow Bone",
+      "Description": "The arm's elbow bone."
+    },
+    {
+      "Field": "m_elbowSiblingIndex",
+      "Name": "Elbow Sibling Bone",
+      "Description": "A bone that follows the elbow. -1 for none."
+    },
+    {
+      "Field": "m_wristIndex",
+      "Name": "Wrist Bone",
+      "Description": "The arm's wrist bone."
+    },
+    {
+      "Field": "m_enforceEndPosition",
+      "Name": "Enforce End Position",
+      "Description": "Whether the hand reaches the target position exactly."
+    },
+    {
+      "Field": "m_enforceEndRotation",
+      "Name": "Enforce End Rotation",
+      "Description": "Whether the hand takes the target rotation exactly."
+    },
+    {
+      "Field": "m_localFrameName",
+      "Name": "Local Frame Name",
+      "Description": "A local frame of the hand placed on the target. Empty: the wrist."
+    }
+  ]
+}

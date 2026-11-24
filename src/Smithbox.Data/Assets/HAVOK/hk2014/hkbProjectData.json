@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hkbProjectData",
+  "Fields": [
+    {
+      "Field": "m_worldUpWS",
+      "Name": "World Up",
+      "Description": "The world's up direction."
+    },
+    {
+      "Field": "m_stringData",
+      "Name": "String Data",
+      "Description": "The project's file names and paths."
+    },
+    {
+      "Field": "m_defaultEventMode",
+      "Name": "Default Event Mode",
+      "Description": "The event mode of transitions set to Default."
+    }
+  ]
+}

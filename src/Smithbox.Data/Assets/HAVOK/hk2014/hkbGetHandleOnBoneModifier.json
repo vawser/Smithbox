@@ -1,0 +1,45 @@
+{
+  "Type": "HKX2.hkbGetHandleOnBoneModifier",
+  "Fields": [
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether the modifier runs. A disabled modifier leaves the pose it's given unchanged."
+    },
+    {
+      "Field": "m_handleOut",
+      "Name": "Handle Out",
+      "Description": "The handle made (output), usually bound to a variable for other modifiers to use."
+    },
+    {
+      "Field": "m_localFrameName",
+      "Name": "Local Frame Name",
+      "Description": "A local frame of the bone the handle is placed at. Empty: the bone itself."
+    },
+    {
+      "Field": "m_ragdollBoneIndex",
+      "Name": "Ragdoll Bone",
+      "Description": "The ragdoll bone the handle is on. -1 to use the animation bone."
+    },
+    {
+      "Field": "m_animationBoneIndex",
+      "Name": "Animation Bone",
+      "Description": "The animation bone the handle is on. -1 to use the ragdoll bone."
+    }
+  ]
+}

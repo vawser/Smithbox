@@ -1,17 +1,47 @@
 {
   "Type": "HKLib.hk2018.hkbEventDrivenBlendingObject",
   "Fields": [
-      {
-          "Field": "m_onEventId",
-          "Name": "On Event",
-          "Description": "The event that blends this in. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_offEventId",
-          "Name": "Off Event",
-          "Description": "The event that blends this out. -1 for none.",
-          "EventID": true
-      }
+    {
+      "Field": "m_onEventId",
+      "Name": "On Event",
+      "Description": "The event that blends this in. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_offEventId",
+      "Name": "Off Event",
+      "Description": "The event that blends this out. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_weight",
+      "Name": "Weight",
+      "Description": "How much this counts (0 to 1)."
+    },
+    {
+      "Field": "m_fadeInDuration",
+      "Name": "Fade In Duration",
+      "Description": "How long it takes to blend in, in seconds."
+    },
+    {
+      "Field": "m_fadeOutDuration",
+      "Name": "Fade Out Duration",
+      "Description": "How long it takes to blend out, in seconds."
+    },
+    {
+      "Field": "m_onByDefault",
+      "Name": "On By Default",
+      "Description": "Whether it's on when its owner activates."
+    },
+    {
+      "Field": "m_forceFullFadeDurations",
+      "Name": "Force Full Fade Durations",
+      "Description": "Whether a fade always takes its full duration, even when it starts part-way."
+    },
+    {
+      "Field": "m_fadeInOutCurve",
+      "Name": "Fade In / Out Curve",
+      "Description": "The shape of the fades: smooth, linear, ease in or ease out."
+    }
   ]
 }

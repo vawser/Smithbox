@@ -29,6 +29,8 @@
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 - Add fault-tolerant CSV import (i.e. CSVs from older paramdef versions)
 
+- Research into state infos 
+
 #----------------------------------------------------
 # Text Editor TODO
 #----------------------------------------------------
@@ -64,10 +66,6 @@
 # Havok/Behavior Editor TODO
 #----------------------------------------------------
 - Add Behavior templates
- 
-- Remove third column in Animation Clip view
-- Add arrow key nav to the outline/list views
-- Generate meta names/descs
  
 - Character Reloader: add support for DS2S / DS1R
 

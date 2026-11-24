@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkbCharacterControllerSetup",
+  "Fields": [
+    {
+      "Field": "m_rigidBodySetup",
+      "Name": "Rigid Body Setup",
+      "Description": "The capsule's body and shape."
+    },
+    {
+      "Field": "m_controllerCinfo",
+      "Name": "Controller Info",
+      "Description": "Character controller settings (not used by the games)."
+    }
+  ]
+}

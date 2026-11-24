@@ -1,17 +1,62 @@
 {
   "Type": "HKX2.hkbLayer",
   "Fields": [
-      {
-          "Field": "m_onEventId",
-          "Name": "On Event",
-          "Description": "The event that blends this in. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_offEventId",
-          "Name": "Off Event",
-          "Description": "The event that blends this out. -1 for none.",
-          "EventID": true
-      }
+    {
+      "Field": "m_onEventId",
+      "Name": "On Event",
+      "Description": "The event that blends this in. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_offEventId",
+      "Name": "Off Event",
+      "Description": "The event that blends this out. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_generator",
+      "Name": "Generator",
+      "Description": "The generator of this layer."
+    },
+    {
+      "Field": "m_weight",
+      "Name": "Weight",
+      "Description": "How much this layer counts (0 to 1)."
+    },
+    {
+      "Field": "m_boneWeights",
+      "Name": "Bone Weights",
+      "Description": "Per-bone weights for this layer. None: every bone has weight 1."
+    },
+    {
+      "Field": "m_fadeInDuration",
+      "Name": "Fade In Duration",
+      "Description": "How long the layer takes to blend in, in seconds."
+    },
+    {
+      "Field": "m_fadeOutDuration",
+      "Name": "Fade Out Duration",
+      "Description": "How long the layer takes to blend out, in seconds."
+    },
+    {
+      "Field": "m_onByDefault",
+      "Name": "On By Default",
+      "Description": "Whether the layer is on when the layer generator activates."
+    },
+    {
+      "Field": "m_useMotion",
+      "Name": "Use Motion",
+      "Description": "Whether this layer's root motion counts."
+    },
+    {
+      "Field": "m_forceFullFadeDurations",
+      "Name": "Force Full Fade Durations",
+      "Description": "Whether a fade always takes its full duration, even when it starts part-way."
+    }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "Type": "HKLib.hk2018.hkbBoneIndexArray",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_boneIndices",
+      "Name": "Bone Indices",
+      "Description": "Indices of bones in the skeleton."
+    }
+  ]
+}

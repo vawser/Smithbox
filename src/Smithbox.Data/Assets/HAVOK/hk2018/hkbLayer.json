@@ -1,0 +1,35 @@
+{
+  "Type": "HKLib.hk2018.hkbLayer",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_generator",
+      "Name": "Generator",
+      "Description": "The generator of this layer."
+    },
+    {
+      "Field": "m_boneWeights",
+      "Name": "Bone Weights",
+      "Description": "Per-bone weights for this layer. None: every bone has weight 1."
+    },
+    {
+      "Field": "m_useMotion",
+      "Name": "Use Motion",
+      "Description": "Whether this layer's root motion counts."
+    },
+    {
+      "Field": "m_blendingControlData",
+      "Name": "Blending Control Data",
+      "Description": "When and how fast the layer fades in and out, and its weight."
+    }
+  ]
+}

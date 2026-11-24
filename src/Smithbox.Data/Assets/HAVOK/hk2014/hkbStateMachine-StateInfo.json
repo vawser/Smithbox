@@ -1,0 +1,55 @@
+{
+  "Type": "HKX2.hkbStateMachineStateInfo",
+  "Fields": [
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_listeners",
+      "Name": "Listeners",
+      "Description": "Objects told when the state is entered or left."
+    },
+    {
+      "Field": "m_enterNotifyEvents",
+      "Name": "Enter Notify Events",
+      "Description": "Events sent when the state is entered."
+    },
+    {
+      "Field": "m_exitNotifyEvents",
+      "Name": "Exit Notify Events",
+      "Description": "Events sent when the state is left."
+    },
+    {
+      "Field": "m_transitions",
+      "Name": "Transitions",
+      "Description": "The transitions out of this state, each started by an event."
+    },
+    {
+      "Field": "m_generator",
+      "Name": "Generator",
+      "Description": "The generator that plays while this state is active."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The state's name."
+    },
+    {
+      "Field": "m_stateId",
+      "Name": "State ID",
+      "Description": "The state's ID, which transitions and the Start State refer to. Unique within its state machine."
+    },
+    {
+      "Field": "m_probability",
+      "Name": "Probability",
+      "Description": "The state's weight when a random state is picked (Random Transition Event, or the Random start state mode)."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether the state can be entered. A transition into a disabled state is ignored."
+    }
+  ]
+}

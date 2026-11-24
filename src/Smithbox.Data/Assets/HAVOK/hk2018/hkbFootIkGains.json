@@ -1,0 +1,60 @@
+{
+  "Type": "HKLib.hk2018.hkbFootIkGains",
+  "Fields": [
+    {
+      "Field": "m_onOffGain",
+      "Name": "On / Off Gain",
+      "Description": "How fast foot IK blends in and out."
+    },
+    {
+      "Field": "m_groundAscendingGain",
+      "Name": "Ground Ascending Gain",
+      "Description": "How fast a foot follows the ground up."
+    },
+    {
+      "Field": "m_groundDescendingGain",
+      "Name": "Ground Descending Gain",
+      "Description": "How fast a foot follows the ground down."
+    },
+    {
+      "Field": "m_footPlantedGain",
+      "Name": "Foot Planted Gain",
+      "Description": "How fast a planted foot moves to the ground."
+    },
+    {
+      "Field": "m_footRaisedGain",
+      "Name": "Foot Raised Gain",
+      "Description": "How fast a raised foot moves to the ground."
+    },
+    {
+      "Field": "m_footLockingGain",
+      "Name": "Foot Locking Gain",
+      "Description": "How strongly a planted foot is locked in place."
+    },
+    {
+      "Field": "m_ankleRotationGain",
+      "Name": "Ankle Rotation Gain",
+      "Description": "How fast the ankle rotates to the ground's slope."
+    },
+    {
+      "Field": "m_worldFromModelFeedbackGain",
+      "Name": "World From Model Feedback Gain",
+      "Description": "How fast the character's height is corrected to keep the feet on the ground."
+    },
+    {
+      "Field": "m_errorUpDownBias",
+      "Name": "Error Up / Down Bias",
+      "Description": "Whether the height correction favours moving up or down (0 to 1)."
+    },
+    {
+      "Field": "m_alignWorldFromModelGain",
+      "Name": "Align World From Model Gain",
+      "Description": "How fast the character tilts to match the ground."
+    },
+    {
+      "Field": "m_hipOrientationGain",
+      "Name": "Hip Orientation Gain",
+      "Description": "How fast the hips rotate to the ground."
+    }
+  ]
+}

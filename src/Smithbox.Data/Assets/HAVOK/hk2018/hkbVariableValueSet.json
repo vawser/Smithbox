@@ -1,0 +1,25 @@
+{
+  "Type": "HKLib.hk2018.hkbVariableValueSet",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_wordVariableValues",
+      "Name": "Word Variable Values",
+      "Description": "The values of the bool, int and real variables (one word each)."
+    },
+    {
+      "Field": "m_quadVariableValues",
+      "Name": "Quad Variable Values",
+      "Description": "The values of the vector4 and quaternion variables."
+    },
+    {
+      "Field": "m_variantVariableValues",
+      "Name": "Variant Variable Values",
+      "Description": "The values of the pointer variables."
+    }
+  ]
+}

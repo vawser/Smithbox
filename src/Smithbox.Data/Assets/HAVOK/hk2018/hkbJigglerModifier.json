@@ -1,0 +1,55 @@
+{
+  "Type": "HKLib.hk2018.hkbJigglerModifier",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether the modifier runs. A disabled modifier leaves the pose it's given unchanged."
+    },
+    {
+      "Field": "m_jigglerGroups",
+      "Name": "Jiggler Groups",
+      "Description": "The groups of bones that jiggle, each with its own physics."
+    },
+    {
+      "Field": "m_jiggleCoordinates",
+      "Name": "Jiggle Coordinates",
+      "Description": "The space the jiggle is simulated in: world (reacts to the character's movement) or model."
+    },
+    {
+      "Field": "m_offGain",
+      "Name": "Off Gain",
+      "Description": "How fast the jiggle blends out."
+    },
+    {
+      "Field": "m_onGain",
+      "Name": "On Gain",
+      "Description": "How fast the jiggle blends in."
+    },
+    {
+      "Field": "m_isOn",
+      "Name": "Is On",
+      "Description": "Whether the jiggle is on."
+    }
+  ]
+}

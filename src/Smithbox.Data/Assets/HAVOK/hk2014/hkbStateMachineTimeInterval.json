@@ -1,17 +1,27 @@
 {
   "Type": "HKX2.hkbStateMachineTimeInterval",
   "Fields": [
-      {
-          "Field": "m_enterEventId",
-          "Name": "Enter Event",
-          "Description": "The event sent when the interval is entered. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_exitEventId",
-          "Name": "Exit Event",
-          "Description": "The event sent when the interval is left. -1 for none.",
-          "EventID": true
-      }
+    {
+      "Field": "m_enterEventId",
+      "Name": "Enter Event",
+      "Description": "The event sent when the interval is entered. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_exitEventId",
+      "Name": "Exit Event",
+      "Description": "The event sent when the interval is left. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_enterTime",
+      "Name": "Enter Time",
+      "Description": "When the interval opens, in seconds after the state is entered (used when there's no enter event)."
+    },
+    {
+      "Field": "m_exitTime",
+      "Name": "Exit Time",
+      "Description": "When the interval closes, in seconds after the state is entered (used when there's no exit event). 0 for no end."
+    }
   ]
 }

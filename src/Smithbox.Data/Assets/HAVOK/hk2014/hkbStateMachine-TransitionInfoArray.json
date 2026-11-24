@@ -1,0 +1,10 @@
+{
+  "Type": "HKX2.hkbStateMachineTransitionInfoArray",
+  "Fields": [
+    {
+      "Field": "m_transitions",
+      "Name": "Transitions",
+      "Description": "The transitions."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "Type": "HKX2.hkbProjectStringData",
+  "Fields": [
+    {
+      "Field": "m_animationFilenames",
+      "Name": "Animation Filenames",
+      "Description": "The project's animation files."
+    },
+    {
+      "Field": "m_behaviorFilenames",
+      "Name": "Behavior Filenames",
+      "Description": "The project's behavior files."
+    },
+    {
+      "Field": "m_characterFilenames",
+      "Name": "Character Filenames",
+      "Description": "The project's character files."
+    },
+    {
+      "Field": "m_eventNames",
+      "Name": "Event Names",
+      "Description": "The project's events."
+    },
+    {
+      "Field": "m_animationPath",
+      "Name": "Animation Path",
+      "Description": "The folder of the animation files."
+    },
+    {
+      "Field": "m_behaviorPath",
+      "Name": "Behavior Path",
+      "Description": "The folder of the behavior files."
+    },
+    {
+      "Field": "m_characterPath",
+      "Name": "Character Path",
+      "Description": "The folder of the character files."
+    },
+    {
+      "Field": "m_scriptsPath",
+      "Name": "Scripts Path",
+      "Description": "The folder of the script files."
+    },
+    {
+      "Field": "m_fullPathToSource",
+      "Name": "Full Path To Source",
+      "Description": "Where the project was built from (the developer's path)."
+    }
+  ]
+}

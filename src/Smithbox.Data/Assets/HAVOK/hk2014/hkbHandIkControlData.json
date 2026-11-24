@@ -1,0 +1,65 @@
+{
+  "Type": "HKX2.hkbHandIkControlData",
+  "Fields": [
+    {
+      "Field": "m_targetPosition",
+      "Name": "Target Position",
+      "Description": "Where the hand is placed."
+    },
+    {
+      "Field": "m_targetRotation",
+      "Name": "Target Rotation",
+      "Description": "How the hand is turned."
+    },
+    {
+      "Field": "m_targetNormal",
+      "Name": "Target Normal",
+      "Description": "The surface normal the back of the hand aligns to."
+    },
+    {
+      "Field": "m_targetHandle",
+      "Name": "Target Handle",
+      "Description": "A handle the hand follows (overrides the position and rotation when set)."
+    },
+    {
+      "Field": "m_transformOnFraction",
+      "Name": "Transform On Fraction",
+      "Description": "How much the position / rotation target counts (0 to 1)."
+    },
+    {
+      "Field": "m_normalOnFraction",
+      "Name": "Normal On Fraction",
+      "Description": "How much the normal target counts (0 to 1)."
+    },
+    {
+      "Field": "m_fadeInDuration",
+      "Name": "Fade In Duration",
+      "Description": "How long the IK takes to blend in, in seconds."
+    },
+    {
+      "Field": "m_fadeOutDuration",
+      "Name": "Fade Out Duration",
+      "Description": "How long the IK takes to blend out, in seconds."
+    },
+    {
+      "Field": "m_extrapolationTimeStep",
+      "Name": "Extrapolation Time Step",
+      "Description": "How far ahead the target is extrapolated, in seconds."
+    },
+    {
+      "Field": "m_handleChangeSpeed",
+      "Name": "Handle Change Speed",
+      "Description": "How fast the hand moves to a new handle, when the change mode is constant velocity."
+    },
+    {
+      "Field": "m_handleChangeMode",
+      "Name": "Handle Change Mode",
+      "Description": "How the hand moves to a new handle: at once (abrupt) or at a constant velocity."
+    },
+    {
+      "Field": "m_fixUp",
+      "Name": "Fix Up",
+      "Description": "Whether the hand's position is fixed up after the rest of the pose."
+    }
+  ]
+}

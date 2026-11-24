@@ -1,0 +1,10 @@
+{
+  "Type": "HKX2.hkbVariableValue",
+  "Fields": [
+    {
+      "Field": "m_value",
+      "Name": "Value",
+      "Description": "The value, as a 32-bit word (a float's bits for real variables)."
+    }
+  ]
+}

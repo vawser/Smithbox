@@ -1,0 +1,15 @@
+{
+  "Type": "HKX2.hkbVariableBounds",
+  "Fields": [
+    {
+      "Field": "m_min",
+      "Name": "Min",
+      "Description": "The lowest value the variable can take."
+    },
+    {
+      "Field": "m_max",
+      "Name": "Max",
+      "Description": "The highest value the variable can take."
+    }
+  ]
+}

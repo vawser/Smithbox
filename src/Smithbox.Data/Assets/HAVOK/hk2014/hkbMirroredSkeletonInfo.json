@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hkbMirroredSkeletonInfo",
+  "Fields": [
+    {
+      "Field": "m_mirrorAxis",
+      "Name": "Mirror Axis",
+      "Description": "The axis animations are mirrored across."
+    },
+    {
+      "Field": "m_bonePairMap",
+      "Name": "Bone Pair Map",
+      "Description": "For each bone, the bone it's swapped with when mirroring (itself if none)."
+    },
+    {
+      "Field": "m_partitionPairMap",
+      "Name": "Partition Pair Map",
+      "Description": "For each bone partition, the partition it's swapped with when mirroring."
+    }
+  ]
+}

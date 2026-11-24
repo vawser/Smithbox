@@ -1,0 +1,65 @@
+{
+  "Type": "HKLib.hk2018.hkbEvaluateHandleModifier",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether the modifier runs. A disabled modifier leaves the pose it's given unchanged."
+    },
+    {
+      "Field": "m_handle",
+      "Name": "Handle",
+      "Description": "The handle evaluated, usually bound to a variable."
+    },
+    {
+      "Field": "m_handlePositionOut",
+      "Name": "Handle Position Out",
+      "Description": "The handle's position (output)."
+    },
+    {
+      "Field": "m_handleRotationOut",
+      "Name": "Handle Rotation Out",
+      "Description": "The handle's rotation (output)."
+    },
+    {
+      "Field": "m_isValidOut",
+      "Name": "Is Valid Out",
+      "Description": "Whether the handle is valid (output)."
+    },
+    {
+      "Field": "m_extrapolationTimeStep",
+      "Name": "Extrapolation Time Step",
+      "Description": "How far ahead the handle's position is extrapolated, in seconds."
+    },
+    {
+      "Field": "m_handleChangeSpeed",
+      "Name": "Handle Change Speed",
+      "Description": "How fast the output moves to a new handle, when the change mode is constant velocity."
+    },
+    {
+      "Field": "m_handleChangeMode",
+      "Name": "Handle Change Mode",
+      "Description": "How the output moves to a new handle: at once (abrupt) or at a constant velocity."
+    }
+  ]
+}

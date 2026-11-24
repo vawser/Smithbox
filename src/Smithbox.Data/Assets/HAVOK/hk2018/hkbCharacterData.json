@@ -1,0 +1,70 @@
+{
+  "Type": "HKLib.hk2018.hkbCharacterData",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_characterControllerSetup",
+      "Name": "Character Controller Setup",
+      "Description": "The character's physics capsule."
+    },
+    {
+      "Field": "m_modelUpMS",
+      "Name": "Model Up",
+      "Description": "The model's up direction, in model space."
+    },
+    {
+      "Field": "m_modelForwardMS",
+      "Name": "Model Forward",
+      "Description": "The model's forward direction, in model space."
+    },
+    {
+      "Field": "m_modelRightMS",
+      "Name": "Model Right",
+      "Description": "The model's right direction, in model space."
+    },
+    {
+      "Field": "m_characterPropertyInfos",
+      "Name": "Character Property Infos",
+      "Description": "The type and role of each character property."
+    },
+    {
+      "Field": "m_numBonesPerLod",
+      "Name": "Bones Per LOD",
+      "Description": "How many bones each level of detail animates."
+    },
+    {
+      "Field": "m_characterPropertyValues",
+      "Name": "Character Property Values",
+      "Description": "The character properties' values."
+    },
+    {
+      "Field": "m_stringData",
+      "Name": "String Data",
+      "Description": "The character's names: skins, animation bundles, rig, behavior file and others."
+    },
+    {
+      "Field": "m_boneAttachmentBoneIndices",
+      "Name": "Bone Attachment Bones",
+      "Description": "The bones each attachment is on."
+    },
+    {
+      "Field": "m_boneAttachmentTransforms",
+      "Name": "Bone Attachment Transforms",
+      "Description": "Each attachment's transform from its bone."
+    },
+    {
+      "Field": "m_scale",
+      "Name": "Scale",
+      "Description": "The character's scale."
+    },
+    {
+      "Field": "m_propertySheets",
+      "Name": "Property Sheets",
+      "Description": "The character's property sheets: foot IK, hand IK, mirroring and others."
+    }
+  ]
+}

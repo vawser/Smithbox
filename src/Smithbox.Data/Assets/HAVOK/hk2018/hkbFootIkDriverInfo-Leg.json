@@ -1,0 +1,115 @@
+{
+  "Type": "HKLib.hk2018.hkbFootIkDriverInfo+Leg",
+  "Fields": [
+    {
+      "Field": "m_kneeAxisLS",
+      "Name": "Knee Axis",
+      "Description": "The axis the knee bends around, in the knee's space."
+    },
+    {
+      "Field": "m_footEndLS",
+      "Name": "Foot End",
+      "Description": "The end of the foot (the toe), in the ankle's space."
+    },
+    {
+      "Field": "m_useFootEndToOnlyHeelRay",
+      "Name": "Use Foot End To Only Heel Ray",
+      "Description": "Whether only the heel ray is used for the foot end."
+    },
+    {
+      "Field": "m_useAlwaysContinuousFlag",
+      "Name": "Use Always Continuous",
+      "Description": "Whether the foot's ground is always tracked continuously."
+    },
+    {
+      "Field": "m_footPlantedAnkleHeightMS",
+      "Name": "Foot Planted Ankle Height",
+      "Description": "The ankle's height above the ground when the foot is planted, in model space."
+    },
+    {
+      "Field": "m_footRaisedAnkleHeightMS",
+      "Name": "Foot Raised Ankle Height",
+      "Description": "The ankle's height above the ground when the foot is raised, in model space."
+    },
+    {
+      "Field": "m_maxAnkleHeightMS",
+      "Name": "Max Ankle Height",
+      "Description": "The highest the ankle can be raised, in model space."
+    },
+    {
+      "Field": "m_minAnkleHeightMS",
+      "Name": "Min Ankle Height",
+      "Description": "The lowest the ankle can go, in model space."
+    },
+    {
+      "Field": "m_maxFootPitchDegrees",
+      "Name": "Max Foot Pitch",
+      "Description": "The most the foot can pitch, in degrees."
+    },
+    {
+      "Field": "m_minFootPitchDegrees",
+      "Name": "Min Foot Pitch",
+      "Description": "The least the foot can pitch, in degrees."
+    },
+    {
+      "Field": "m_maxFootRollDegrees",
+      "Name": "Max Foot Roll",
+      "Description": "The most the foot can roll, in degrees."
+    },
+    {
+      "Field": "m_minFootRollDegrees",
+      "Name": "Min Foot Roll",
+      "Description": "The least the foot can roll, in degrees."
+    },
+    {
+      "Field": "m_heelOffsetFromAnkle",
+      "Name": "Heel Offset From Ankle",
+      "Description": "Where the heel is, from the ankle."
+    },
+    {
+      "Field": "m_favorToeInterpenetrationOverSteepSlope",
+      "Name": "Favor Toe Interpenetration Over Steep Slope",
+      "Description": "How much the toe may sink into steep ground rather than the foot tilting fully."
+    },
+    {
+      "Field": "m_favorHeelInterpenetrationOverSteepSlope",
+      "Name": "Favor Heel Interpenetration Over Steep Slope",
+      "Description": "How much the heel may sink into steep ground rather than the foot tilting fully."
+    },
+    {
+      "Field": "m_maxKneeAngleDegrees",
+      "Name": "Max Knee Angle",
+      "Description": "The most the knee can bend, in degrees."
+    },
+    {
+      "Field": "m_minKneeAngleDegrees",
+      "Name": "Min Knee Angle",
+      "Description": "The least the knee can bend, in degrees."
+    },
+    {
+      "Field": "m_hipIndex",
+      "Name": "Hip Bone",
+      "Description": "The leg's hip bone."
+    },
+    {
+      "Field": "m_hipSiblingIndex",
+      "Name": "Hip Sibling Bone",
+      "Description": "A bone that follows the hip (such as a twist bone). -1 for none."
+    },
+    {
+      "Field": "m_kneeIndex",
+      "Name": "Knee Bone",
+      "Description": "The leg's knee bone."
+    },
+    {
+      "Field": "m_kneeSiblingIndex",
+      "Name": "Knee Sibling Bone",
+      "Description": "A bone that follows the knee. -1 for none."
+    },
+    {
+      "Field": "m_ankleIndex",
+      "Name": "Ankle Bone",
+      "Description": "The leg's ankle bone."
+    }
+  ]
+}

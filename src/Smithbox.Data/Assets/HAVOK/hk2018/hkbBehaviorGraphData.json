@@ -1,0 +1,45 @@
+{
+  "Type": "HKLib.hk2018.hkbBehaviorGraphData",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_attributeDefaults",
+      "Name": "Attribute Defaults",
+      "Description": "The default values of the graph's attributes."
+    },
+    {
+      "Field": "m_variableInfos",
+      "Name": "Variable Infos",
+      "Description": "The type and role of each variable, in variable index order."
+    },
+    {
+      "Field": "m_characterPropertyInfos",
+      "Name": "Character Property Infos",
+      "Description": "The type and role of each character property the graph reads."
+    },
+    {
+      "Field": "m_eventInfos",
+      "Name": "Event Infos",
+      "Description": "The flags of each event, in event index order."
+    },
+    {
+      "Field": "m_variableBounds",
+      "Name": "Variable Bounds",
+      "Description": "The min and max of each variable, in variable index order."
+    },
+    {
+      "Field": "m_variableInitialValues",
+      "Name": "Variable Initial Values",
+      "Description": "The value each variable starts with."
+    },
+    {
+      "Field": "m_stringData",
+      "Name": "String Data",
+      "Description": "The names of the graph's events, variables, attributes, character properties (and animations)."
+    }
+  ]
+}

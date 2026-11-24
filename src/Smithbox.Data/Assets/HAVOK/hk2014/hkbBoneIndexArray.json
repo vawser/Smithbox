@@ -1,0 +1,15 @@
+{
+  "Type": "HKX2.hkbBoneIndexArray",
+  "Fields": [
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_boneIndices",
+      "Name": "Bone Indices",
+      "Description": "Indices of bones in the skeleton."
+    }
+  ]
+}

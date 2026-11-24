@@ -1,0 +1,10 @@
+{
+  "Type": "HKX2.hkbEventInfo",
+  "Fields": [
+    {
+      "Field": "m_flags",
+      "Name": "Event Flags",
+      "Description": "Event options: silent (not sent to listeners), sync point, and others."
+    }
+  ]
+}

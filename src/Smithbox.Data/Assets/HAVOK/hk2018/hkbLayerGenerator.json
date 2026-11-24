@@ -1,0 +1,40 @@
+{
+  "Type": "HKLib.hk2018.hkbLayerGenerator",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_layers",
+      "Name": "Layers",
+      "Description": "The layers, each a generator added on top of the ones before it."
+    },
+    {
+      "Field": "m_indexOfSyncMasterChild",
+      "Name": "Index Of Sync Master Child",
+      "Description": "The layer the others are synced to. -1 for none."
+    },
+    {
+      "Field": "m_flags",
+      "Name": "Layer Flags",
+      "Description": "Layer options: sync."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "Type": "HKX2.hkbHandIkDriverInfo",
+  "Fields": [
+    {
+      "Field": "m_hands",
+      "Name": "Hands",
+      "Description": "The character's arms: their bones, axes and limits."
+    },
+    {
+      "Field": "m_fadeInOutCurve",
+      "Name": "Fade In / Out Curve",
+      "Description": "The shape of the IK's fades: smooth, linear, ease in or ease out."
+    }
+  ]
+}

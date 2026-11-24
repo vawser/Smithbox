@@ -1,0 +1,55 @@
+{
+  "Type": "HKLib.hk2018.hkbScriptGenerator",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_child",
+      "Name": "Child",
+      "Description": "The generator that plays."
+    },
+    {
+      "Field": "m_onActivateScript",
+      "Name": "On Activate Script",
+      "Description": "Lua run when the generator activates."
+    },
+    {
+      "Field": "m_onPreUpdateScript",
+      "Name": "On Pre-Update Script",
+      "Description": "Lua run before each update."
+    },
+    {
+      "Field": "m_onGenerateScript",
+      "Name": "On Generate Script",
+      "Description": "Lua run each time a pose is generated."
+    },
+    {
+      "Field": "m_onHandleEventScript",
+      "Name": "On Handle Event Script",
+      "Description": "Lua run for each event received."
+    },
+    {
+      "Field": "m_onDeactivateScript",
+      "Name": "On Deactivate Script",
+      "Description": "Lua run when the generator deactivates."
+    }
+  ]
+}

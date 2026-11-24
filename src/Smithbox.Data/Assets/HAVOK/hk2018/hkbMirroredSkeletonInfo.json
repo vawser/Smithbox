@@ -1,0 +1,25 @@
+{
+  "Type": "HKLib.hk2018.hkbMirroredSkeletonInfo",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_mirrorAxis",
+      "Name": "Mirror Axis",
+      "Description": "The axis animations are mirrored across."
+    },
+    {
+      "Field": "m_bonePairMap",
+      "Name": "Bone Pair Map",
+      "Description": "For each bone, the bone it's swapped with when mirroring (itself if none)."
+    },
+    {
+      "Field": "m_partitionPairMap",
+      "Name": "Partition Pair Map",
+      "Description": "For each bone partition, the partition it's swapped with when mirroring."
+    }
+  ]
+}

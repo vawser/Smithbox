@@ -1,0 +1,15 @@
+{
+  "Type": "HKX2.hkbRoleAttribute",
+  "Fields": [
+    {
+      "Field": "m_role",
+      "Name": "Role",
+      "Description": "How the value is used: default, or a special role (file name, bone index, event ID, variable index, attribute index, time, script, local frame, bone attachment, character property sheet)."
+    },
+    {
+      "Field": "m_flags",
+      "Name": "Role Flags",
+      "Description": "Role options: ragdoll, normalized, not variable, hidden, output, not character property, chain."
+    }
+  ]
+}

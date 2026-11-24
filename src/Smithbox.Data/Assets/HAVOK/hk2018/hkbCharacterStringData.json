@@ -1,0 +1,90 @@
+{
+  "Type": "HKLib.hk2018.hkbCharacterStringData",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_skinNames",
+      "Name": "Skin Names",
+      "Description": "The character's skins."
+    },
+    {
+      "Field": "m_boneAttachmentNames",
+      "Name": "Bone Attachment Names",
+      "Description": "The names of the bone attachments."
+    },
+    {
+      "Field": "m_animationBundleNameData",
+      "Name": "Animation Bundle Names",
+      "Description": "The animation bundles, each with the animations in it."
+    },
+    {
+      "Field": "m_animationBundleFilenameData",
+      "Name": "Animation Bundle Filenames",
+      "Description": "The animation bundles' file names."
+    },
+    {
+      "Field": "m_characterPropertyNames",
+      "Name": "Character Property Names",
+      "Description": "The character properties' names."
+    },
+    {
+      "Field": "m_retargetingSkeletonMapperFilenames",
+      "Name": "Retargeting Skeleton Mapper Filenames",
+      "Description": "Skeleton mappers for animations made for another rig."
+    },
+    {
+      "Field": "m_lodNames",
+      "Name": "LOD Names",
+      "Description": "The levels of detail's names."
+    },
+    {
+      "Field": "m_mirroredSyncPointSubstringsA",
+      "Name": "Mirrored Sync Point Substrings A",
+      "Description": "Sync point name parts swapped with the B list when mirroring (e.g. Left)."
+    },
+    {
+      "Field": "m_mirroredSyncPointSubstringsB",
+      "Name": "Mirrored Sync Point Substrings B",
+      "Description": "Sync point name parts swapped with the A list when mirroring (e.g. Right)."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The character's name."
+    },
+    {
+      "Field": "m_rigName",
+      "Name": "Rig Name",
+      "Description": "The skeleton file."
+    },
+    {
+      "Field": "m_ragdollName",
+      "Name": "Ragdoll Name",
+      "Description": "The ragdoll file."
+    },
+    {
+      "Field": "m_behaviorFilename",
+      "Name": "Behavior Filename",
+      "Description": "The character's behavior file."
+    },
+    {
+      "Field": "m_luaScriptOnCharacterActivated",
+      "Name": "Lua Script On Character Activated",
+      "Description": "Lua run when the character activates."
+    },
+    {
+      "Field": "m_luaScriptOnCharacterDeactivated",
+      "Name": "Lua Script On Character Deactivated",
+      "Description": "Lua run when the character deactivates."
+    },
+    {
+      "Field": "m_luaFiles",
+      "Name": "Lua Files",
+      "Description": "Lua files loaded for the character."
+    }
+  ]
+}

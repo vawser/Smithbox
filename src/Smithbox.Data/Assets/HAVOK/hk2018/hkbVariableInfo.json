@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkbVariableInfo",
+  "Fields": [
+    {
+      "Field": "m_role",
+      "Name": "Role",
+      "Description": "How the variable is used (default, or a special role such as a bone weight) and its flags."
+    },
+    {
+      "Field": "m_type",
+      "Name": "Type",
+      "Description": "The variable's type: bool, int8 / 16 / 32, real, pointer, vector4 or quaternion."
+    }
+  ]
+}

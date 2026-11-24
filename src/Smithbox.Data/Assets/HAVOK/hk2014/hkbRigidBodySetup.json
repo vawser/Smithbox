@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hkbRigidBodySetup",
+  "Fields": [
+    {
+      "Field": "m_collisionFilterInfo",
+      "Name": "Collision Filter Info",
+      "Description": "The body's collision filter."
+    },
+    {
+      "Field": "m_type",
+      "Name": "Type",
+      "Description": "The body's motion type: keyframed, dynamic or fixed."
+    },
+    {
+      "Field": "m_shapeSetup",
+      "Name": "Shape Setup",
+      "Description": "The body's shape."
+    }
+  ]
+}

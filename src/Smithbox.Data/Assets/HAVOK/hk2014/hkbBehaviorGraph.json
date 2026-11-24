@@ -1,0 +1,35 @@
+{
+  "Type": "HKX2.hkbBehaviorGraph",
+  "Fields": [
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_variableMode",
+      "Name": "Variable Mode",
+      "Description": "When the graph's variables are discarded: when the graph is inactive, or kept always."
+    },
+    {
+      "Field": "m_rootGenerator",
+      "Name": "Root Generator",
+      "Description": "The generator at the top of the graph, usually its root state machine."
+    },
+    {
+      "Field": "m_data",
+      "Name": "Data",
+      "Description": "The graph's variables, events and character properties."
+    }
+  ]
+}

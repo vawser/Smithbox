@@ -1,0 +1,20 @@
+{
+  "Type": "HKX2.hkbHandIkControlsModifierHand",
+  "Fields": [
+    {
+      "Field": "m_controlData",
+      "Name": "Control Data",
+      "Description": "The hand's target and how fast it's reached."
+    },
+    {
+      "Field": "m_handIndex",
+      "Name": "Hand Index",
+      "Description": "The hand, as its index in the character's hand IK setup."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether IK applies to this hand."
+    }
+  ]
+}

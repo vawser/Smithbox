@@ -1,0 +1,35 @@
+{
+  "Type": "HKLib.hk2018.hkbFootIkControlsModifier+Leg",
+  "Fields": [
+    {
+      "Field": "m_groundPosition",
+      "Name": "Ground Position",
+      "Description": "Where the ground is under the foot. Set by the game when it isn't using raycasts."
+    },
+    {
+      "Field": "m_ungroundedEvent",
+      "Name": "Ungrounded Event",
+      "Description": "The event sent when the foot finds no ground."
+    },
+    {
+      "Field": "m_verticalError",
+      "Name": "Vertical Error",
+      "Description": "How far the foot is from the ground (output)."
+    },
+    {
+      "Field": "m_hitSomething",
+      "Name": "Hit Something",
+      "Description": "Whether the foot's raycast found ground (output)."
+    },
+    {
+      "Field": "m_isPlantedMS",
+      "Name": "Is Planted",
+      "Description": "Whether the foot is planted (output)."
+    },
+    {
+      "Field": "m_enabled",
+      "Name": "Enabled",
+      "Description": "Whether IK applies to this leg."
+    }
+  ]
+}

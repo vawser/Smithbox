@@ -1,0 +1,75 @@
+{
+  "Type": "HKX2.hkbFootIkDriverInfoLeg",
+  "Fields": [
+    {
+      "Field": "m_kneeAxisLS",
+      "Name": "Knee Axis",
+      "Description": "The axis the knee bends around, in the knee's space."
+    },
+    {
+      "Field": "m_footEndLS",
+      "Name": "Foot End",
+      "Description": "The end of the foot (the toe), in the ankle's space."
+    },
+    {
+      "Field": "m_footPlantedAnkleHeightMS",
+      "Name": "Foot Planted Ankle Height",
+      "Description": "The ankle's height above the ground when the foot is planted, in model space."
+    },
+    {
+      "Field": "m_footRaisedAnkleHeightMS",
+      "Name": "Foot Raised Ankle Height",
+      "Description": "The ankle's height above the ground when the foot is raised, in model space."
+    },
+    {
+      "Field": "m_maxAnkleHeightMS",
+      "Name": "Max Ankle Height",
+      "Description": "The highest the ankle can be raised, in model space."
+    },
+    {
+      "Field": "m_minAnkleHeightMS",
+      "Name": "Min Ankle Height",
+      "Description": "The lowest the ankle can go, in model space."
+    },
+    {
+      "Field": "m_maxKneeAngleDegrees",
+      "Name": "Max Knee Angle",
+      "Description": "The most the knee can bend, in degrees."
+    },
+    {
+      "Field": "m_minKneeAngleDegrees",
+      "Name": "Min Knee Angle",
+      "Description": "The least the knee can bend, in degrees."
+    },
+    {
+      "Field": "m_hipIndex",
+      "Name": "Hip Bone",
+      "Description": "The leg's hip bone."
+    },
+    {
+      "Field": "m_hipSiblingIndex",
+      "Name": "Hip Sibling Bone",
+      "Description": "A bone that follows the hip (such as a twist bone). -1 for none."
+    },
+    {
+      "Field": "m_kneeIndex",
+      "Name": "Knee Bone",
+      "Description": "The leg's knee bone."
+    },
+    {
+      "Field": "m_kneeSiblingIndex",
+      "Name": "Knee Sibling Bone",
+      "Description": "A bone that follows the knee. -1 for none."
+    },
+    {
+      "Field": "m_ankleIndex",
+      "Name": "Ankle Bone",
+      "Description": "The leg's ankle bone."
+    },
+    {
+      "Field": "m_ForceFootGround",
+      "Name": "Force Foot Ground",
+      "Description": "Whether the foot is always kept on the ground."
+    }
+  ]
+}

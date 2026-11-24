@@ -1,0 +1,105 @@
+{
+  "Type": "HKLib.hk2018.CustomLookAtTwistModifier",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether the modifier runs. A disabled modifier leaves the pose it's given unchanged."
+    },
+    {
+      "Field": "m_ModifierID",
+      "Name": "Modifier ID",
+      "Description": "The ID the game uses to turn this look-at on and off and set its target."
+    },
+    {
+      "Field": "m_rotationAxisType",
+      "Name": "Rotation Axis Type",
+      "Description": "The order the two rotation axes are applied in: X then Y, or Y then X."
+    },
+    {
+      "Field": "m_SensingDummyPoly",
+      "Name": "Sensing Dummy Poly",
+      "Description": "The dummy poly (model point) the look-at senses its target from, such as the head."
+    },
+    {
+      "Field": "m_twistParam",
+      "Name": "Twist Params",
+      "Description": "The bone chains turned towards the target, each with its own rates."
+    },
+    {
+      "Field": "m_UpLimitAngle",
+      "Name": "Up Limit Angle",
+      "Description": "How far up the chain can turn, in degrees."
+    },
+    {
+      "Field": "m_DownLimitAngle",
+      "Name": "Down Limit Angle",
+      "Description": "How far down the chain can turn, in degrees."
+    },
+    {
+      "Field": "m_RightLimitAngle",
+      "Name": "Right Limit Angle",
+      "Description": "How far right the chain can turn, in degrees."
+    },
+    {
+      "Field": "m_LeftLimitAngle",
+      "Name": "Left Limit Angle",
+      "Description": "How far left the chain can turn, in degrees."
+    },
+    {
+      "Field": "m_UpMinimumAngle",
+      "Name": "Up Minimum Angle",
+      "Description": "The smallest upward turn, in degrees."
+    },
+    {
+      "Field": "m_DownMinimumAngle",
+      "Name": "Down Minimum Angle",
+      "Description": "The smallest downward turn, in degrees."
+    },
+    {
+      "Field": "m_RightMinimumAngle",
+      "Name": "Right Minimum Angle",
+      "Description": "The smallest turn to the right, in degrees."
+    },
+    {
+      "Field": "m_LeftMinimumAngle",
+      "Name": "Left Minimum Angle",
+      "Description": "The smallest turn to the left, in degrees."
+    },
+    {
+      "Field": "m_SensingAngle",
+      "Name": "Sensing Angle",
+      "Description": "The cone the target must be in to be looked at, in degrees."
+    },
+    {
+      "Field": "m_setAngleMethod",
+      "Name": "Set Angle Method",
+      "Description": "How the turn is spread over each chain: evenly (linear) or growing towards the end (ramped)."
+    },
+    {
+      "Field": "m_isAdditive",
+      "Name": "Is Additive",
+      "Description": "Whether the turn is added to the pose's rotation, rather than replacing it."
+    }
+  ]
+}

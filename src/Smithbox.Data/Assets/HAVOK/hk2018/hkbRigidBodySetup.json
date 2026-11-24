@@ -1,0 +1,20 @@
+{
+  "Type": "HKLib.hk2018.hkbRigidBodySetup",
+  "Fields": [
+    {
+      "Field": "m_collisionFilterInfo",
+      "Name": "Collision Filter Info",
+      "Description": "The body's collision filter."
+    },
+    {
+      "Field": "m_type",
+      "Name": "Type",
+      "Description": "The body's motion type: keyframed, dynamic or fixed."
+    },
+    {
+      "Field": "m_collisionShapeProfiles",
+      "Name": "Collision Shape Profiles",
+      "Description": "The body's shapes."
+    }
+  ]
+}

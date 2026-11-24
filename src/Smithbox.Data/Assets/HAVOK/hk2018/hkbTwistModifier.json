@@ -1,0 +1,65 @@
+{
+  "Type": "HKLib.hk2018.hkbTwistModifier",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_enable",
+      "Name": "Enable",
+      "Description": "Whether the modifier runs. A disabled modifier leaves the pose it's given unchanged."
+    },
+    {
+      "Field": "m_axisOfRotation",
+      "Name": "Axis Of Rotation",
+      "Description": "The axis the bones twist around."
+    },
+    {
+      "Field": "m_twistAngle",
+      "Name": "Twist Angle",
+      "Description": "How far the chain twists, in radians. Usually bound to a variable."
+    },
+    {
+      "Field": "m_startBoneIndex",
+      "Name": "Start Bone",
+      "Description": "The first bone of the twisted chain."
+    },
+    {
+      "Field": "m_endBoneIndex",
+      "Name": "End Bone",
+      "Description": "The last bone of the twisted chain."
+    },
+    {
+      "Field": "m_setAngleMethod",
+      "Name": "Set Angle Method",
+      "Description": "How the twist is spread over the chain: evenly (linear) or growing towards the end (ramped)."
+    },
+    {
+      "Field": "m_rotationAxisCoordinates",
+      "Name": "Rotation Axis Coordinates",
+      "Description": "The space the axis is in: model, the parent bone's, or each bone's own."
+    },
+    {
+      "Field": "m_isAdditive",
+      "Name": "Is Additive",
+      "Description": "Whether the twist is added to the pose's rotation, rather than replacing it."
+    }
+  ]
+}

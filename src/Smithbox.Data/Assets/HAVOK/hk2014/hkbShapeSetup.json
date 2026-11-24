@@ -1,0 +1,25 @@
+{
+  "Type": "HKX2.hkbShapeSetup",
+  "Fields": [
+    {
+      "Field": "m_capsuleHeight",
+      "Name": "Capsule Height",
+      "Description": "The capsule's height."
+    },
+    {
+      "Field": "m_capsuleRadius",
+      "Name": "Capsule Radius",
+      "Description": "The capsule's radius."
+    },
+    {
+      "Field": "m_fileName",
+      "Name": "File Name",
+      "Description": "A shape file, when the type is file."
+    },
+    {
+      "Field": "m_type",
+      "Name": "Type",
+      "Description": "The kind of shape: capsule or file."
+    }
+  ]
+}

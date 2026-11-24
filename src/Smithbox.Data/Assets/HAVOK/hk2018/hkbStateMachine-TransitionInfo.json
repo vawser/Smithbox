@@ -1,17 +1,57 @@
 {
   "Type": "HKLib.hk2018.hkbStateMachine+TransitionInfo",
   "Fields": [
-      {
-          "Field": "m_eventId",
-          "Name": "Event",
-          "Description": "The event that triggers this transition.",
-          "EventID": true
-      },
-      {
-          "Field": "m_toStateId",
-          "Name": "To State",
-          "Description": "The state this transition goes to, in the same state machine.",
-          "StateID": true
-      }
+    {
+      "Field": "m_eventId",
+      "Name": "Event",
+      "Description": "The event that triggers this transition.",
+      "EventID": true
+    },
+    {
+      "Field": "m_toStateId",
+      "Name": "To State",
+      "Description": "The state this transition goes to, in the same state machine.",
+      "StateID": true
+    },
+    {
+      "Field": "m_triggerInterval",
+      "Name": "Trigger Interval",
+      "Description": "When the transition can be started by its event, if the Use Trigger Interval flag is set."
+    },
+    {
+      "Field": "m_initiateInterval",
+      "Name": "Initiate Interval",
+      "Description": "When the transition can begin once triggered, if the Use Initiate Interval flag is set."
+    },
+    {
+      "Field": "m_transition",
+      "Name": "Transition Effect",
+      "Description": "How the old state blends into the new one. None: switch at once."
+    },
+    {
+      "Field": "m_condition",
+      "Name": "Condition",
+      "Description": "A condition that must hold for the transition to start, or that starts it without an event."
+    },
+    {
+      "Field": "m_fromNestedStateId",
+      "Name": "From Nested State",
+      "Description": "With the From Nested State flag, the state of the nested state machine the transition must come from."
+    },
+    {
+      "Field": "m_toNestedStateId",
+      "Name": "To Nested State",
+      "Description": "With the To Nested State flag, the state of the target's nested state machine to go to."
+    },
+    {
+      "Field": "m_priority",
+      "Name": "Priority",
+      "Description": "Which transition wins when several could start from the same event: the highest."
+    },
+    {
+      "Field": "m_flags",
+      "Name": "Transition Flags",
+      "Description": "Transition options: use trigger / initiate intervals, uninterruptible while playing or delayed, delay state change, disabled, disallow return to previous state or random transition, disable condition, allow self transition from any state, global / local wildcard, from / to nested state ID valid, abut at end of from generator."
+    }
   ]
 }

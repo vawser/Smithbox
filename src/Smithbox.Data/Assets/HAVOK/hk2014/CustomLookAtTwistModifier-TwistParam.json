@@ -1,0 +1,35 @@
+{
+  "Type": "HKX2.CustomLookAtTwistModifierTwistParam",
+  "Fields": [
+    {
+      "Field": "m_startBoneIndex",
+      "Name": "Start Bone",
+      "Description": "The first bone of the chain."
+    },
+    {
+      "Field": "m_endBoneIndex",
+      "Name": "End Bone",
+      "Description": "The last bone of the chain."
+    },
+    {
+      "Field": "m_targetRotationRate",
+      "Name": "Target Rotation Rate",
+      "Description": "How much of the turn towards the target this chain takes (0 to 1)."
+    },
+    {
+      "Field": "m_newTargetGain",
+      "Name": "New Target Gain",
+      "Description": "How fast the chain follows a new target (0 to 1 per frame)."
+    },
+    {
+      "Field": "m_onGain",
+      "Name": "On Gain",
+      "Description": "How fast the look-at blends in (0 to 1 per frame)."
+    },
+    {
+      "Field": "m_offGain",
+      "Name": "Off Gain",
+      "Description": "How fast the look-at blends out (0 to 1 per frame)."
+    }
+  ]
+}

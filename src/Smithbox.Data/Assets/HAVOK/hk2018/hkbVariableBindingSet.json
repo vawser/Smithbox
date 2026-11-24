@@ -1,0 +1,20 @@
+{
+  "Type": "HKLib.hk2018.hkbVariableBindingSet",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_bindings",
+      "Name": "Bindings",
+      "Description": "The bindings: each drives one field of the object (by its member path) from a variable or character property."
+    },
+    {
+      "Field": "m_indexOfBindingToEnable",
+      "Name": "Index Of Binding To Enable",
+      "Description": "The binding that drives the object's Enable field, so it's applied first. -1 for none."
+    }
+  ]
+}

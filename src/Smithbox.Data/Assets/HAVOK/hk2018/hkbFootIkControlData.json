@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkbFootIkControlData",
+  "Fields": [
+    {
+      "Field": "m_gains",
+      "Name": "Gains",
+      "Description": "How fast each part of the foot IK reacts."
+    },
+    {
+      "Field": "m_enabled",
+      "Name": "Enabled",
+      "Description": "Whether foot IK is on."
+    }
+  ]
+}

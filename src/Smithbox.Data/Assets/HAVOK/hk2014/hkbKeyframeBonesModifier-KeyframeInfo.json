@@ -1,0 +1,25 @@
+{
+  "Type": "HKX2.hkbKeyframeBonesModifierKeyframeInfo",
+  "Fields": [
+    {
+      "Field": "m_keyframedPosition",
+      "Name": "Keyframed Position",
+      "Description": "The position the bone is held at."
+    },
+    {
+      "Field": "m_keyframedRotation",
+      "Name": "Keyframed Rotation",
+      "Description": "The rotation the bone is held at."
+    },
+    {
+      "Field": "m_boneIndex",
+      "Name": "Bone",
+      "Description": "The bone held."
+    },
+    {
+      "Field": "m_isValid",
+      "Name": "Is Valid",
+      "Description": "Whether the keyframe applies."
+    }
+  ]
+}

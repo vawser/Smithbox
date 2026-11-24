@@ -1,20 +1,20 @@
 {
   "Type": "HKX2.hkRootLevelContainer+NamedVariant",
   "Fields": [
-      {
-          "Field": "m_name",
-          "Name": "Name",
-          "Description": ""
-      },
-      {
-          "Field": "m_className",
-          "Name": "Class Name",
-          "Description": ""
-      },
-      {
-          "Field": "m_variant",
-          "Name": "Variant",
-          "Description": ""
-      }
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The object's name in the file."
+    },
+    {
+      "Field": "m_className",
+      "Name": "Class Name",
+      "Description": "The object's class name."
+    },
+    {
+      "Field": "m_variant",
+      "Name": "Variant",
+      "Description": "The object."
+    }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "Type": "HKLib.hk2018.hkbFootIkDriverInfo",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_legs",
+      "Name": "Legs",
+      "Description": "The character's legs: their bones, axes and limits."
+    },
+    {
+      "Field": "m_raycastDistanceUp",
+      "Name": "Raycast Distance Up",
+      "Description": "How far above the foot the ground raycast starts."
+    },
+    {
+      "Field": "m_raycastDistanceDown",
+      "Name": "Raycast Distance Down",
+      "Description": "How far below the foot the ground raycast reaches."
+    },
+    {
+      "Field": "m_originalGroundHeightMS",
+      "Name": "Original Ground Height",
+      "Description": "The ground's height in the animations, in model space."
+    },
+    {
+      "Field": "m_verticalOffset",
+      "Name": "Vertical Offset",
+      "Description": "An offset added to the ground height found."
+    },
+    {
+      "Field": "m_collisionFilterInfo",
+      "Name": "Collision Filter Info",
+      "Description": "The collision filter of the ground raycasts."
+    },
+    {
+      "Field": "m_forwardAlignFraction",
+      "Name": "Forward Align Fraction",
+      "Description": "How much the character tilts forward / back to match the ground (0 to 1)."
+    },
+    {
+      "Field": "m_sidewaysAlignFraction",
+      "Name": "Sideways Align Fraction",
+      "Description": "How much the character tilts sideways to match the ground (0 to 1)."
+    },
+    {
+      "Field": "m_sidewaysSampleWidth",
+      "Name": "Sideways Sample Width",
+      "Description": "How far apart the sideways ground samples are."
+    },
+    {
+      "Field": "m_lockFeetWhenPlanted",
+      "Name": "Lock Feet When Planted",
+      "Description": "Whether planted feet are locked in place, so they don't slide."
+    },
+    {
+      "Field": "m_useCharacterUpVector",
+      "Name": "Use Character Up Vector",
+      "Description": "Whether the raycasts go along the character's up, not the world's."
+    },
+    {
+      "Field": "m_isQuadrupedNarrow",
+      "Name": "Is Quadruped Narrow",
+      "Description": "Whether the character is a narrow quadruped (aligned on its front and back legs only)."
+    },
+    {
+      "Field": "m_keepSourceFootEndAboveGround",
+      "Name": "Keep Source Foot End Above Ground",
+      "Description": "Whether the animation's foot end is kept above the ground."
+    },
+    {
+      "Field": "m_usefootEndToOnlyHeelRay",
+      "Name": "Use Foot End To Only Heel Ray",
+      "Description": "Whether only the heel ray is used for the foot end."
+    }
+  ]
+}

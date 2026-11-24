@@ -1,0 +1,70 @@
+{
+  "Type": "HKLib.hk2018.CustomDockingGenerator",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_dockingBone",
+      "Name": "Docking Bone",
+      "Description": "The bone that's docked to the target. -1 for the character's root."
+    },
+    {
+      "Field": "m_translationOffset",
+      "Name": "Translation Offset",
+      "Description": "An offset from the target's position."
+    },
+    {
+      "Field": "m_rotationOffset",
+      "Name": "Rotation Offset",
+      "Description": "An offset from the target's rotation."
+    },
+    {
+      "Field": "m_blendType",
+      "Name": "Blend Type",
+      "Description": "How the docking applies: blended in over the interval, or fully at once."
+    },
+    {
+      "Field": "m_flags",
+      "Name": "Docking Flags",
+      "Description": "Docking options: dock to the target's future position, override the animation's motion."
+    },
+    {
+      "Field": "m_child",
+      "Name": "Child",
+      "Description": "The generator that plays while docking."
+    },
+    {
+      "Field": "m_intervalStart",
+      "Name": "Interval Start",
+      "Description": "When the docking starts (a sync point of the child). -1 for its start."
+    },
+    {
+      "Field": "m_intervalEnd",
+      "Name": "Interval End",
+      "Description": "When the docking ends (a sync point of the child). -1 for its end."
+    },
+    {
+      "Field": "m_titleDokingType",
+      "Name": "Docking Type",
+      "Description": "The kind of docking the game sets up (an ID the game reads)."
+    }
+  ]
+}

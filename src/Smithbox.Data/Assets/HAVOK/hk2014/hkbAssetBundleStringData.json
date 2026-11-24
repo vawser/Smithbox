@@ -1,0 +1,15 @@
+{
+  "Type": "HKX2.hkbAssetBundleStringData",
+  "Fields": [
+    {
+      "Field": "m_bundleName",
+      "Name": "Bundle Name",
+      "Description": "The bundle's name."
+    },
+    {
+      "Field": "m_assetNames",
+      "Name": "Asset Names",
+      "Description": "The animations in the bundle."
+    }
+  ]
+}

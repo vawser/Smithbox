@@ -1,0 +1,60 @@
+{
+  "Type": "HKLib.hk2018.hkbJigglerGroup",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_boneIndices",
+      "Name": "Bones",
+      "Description": "The bones that jiggle."
+    },
+    {
+      "Field": "m_mass",
+      "Name": "Mass",
+      "Description": "How heavy the bones are."
+    },
+    {
+      "Field": "m_stiffness",
+      "Name": "Stiffness",
+      "Description": "How strongly the bones spring back to the pose (0 to 1)."
+    },
+    {
+      "Field": "m_damping",
+      "Name": "Damping",
+      "Description": "How fast the jiggle dies down (0 to 1)."
+    },
+    {
+      "Field": "m_maxElongation",
+      "Name": "Max Elongation",
+      "Description": "How far a bone can stretch from its pose length, as a fraction."
+    },
+    {
+      "Field": "m_maxCompression",
+      "Name": "Max Compression",
+      "Description": "How far a bone can shrink from its pose length, as a fraction."
+    },
+    {
+      "Field": "m_propagateToChildren",
+      "Name": "Propagate To Children",
+      "Description": "Whether a bone's jiggle moves its children too."
+    },
+    {
+      "Field": "m_affectSiblings",
+      "Name": "Affect Siblings",
+      "Description": "Whether the bones pull on their siblings."
+    },
+    {
+      "Field": "m_rotateBonesForSkinning",
+      "Name": "Rotate Bones For Skinning",
+      "Description": "Whether the parent bones are rotated to follow the jiggle, so the skin follows it."
+    }
+  ]
+}

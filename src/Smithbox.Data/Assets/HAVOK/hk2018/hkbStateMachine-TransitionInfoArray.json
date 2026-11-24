@@ -1,0 +1,15 @@
+{
+  "Type": "HKLib.hk2018.hkbStateMachine+TransitionInfoArray",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_transitions",
+      "Name": "Transitions",
+      "Description": "The transitions."
+    }
+  ]
+}

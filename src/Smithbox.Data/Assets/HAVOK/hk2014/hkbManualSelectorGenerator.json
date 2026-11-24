@@ -1,11 +1,51 @@
 {
   "Type": "HKX2.hkbManualSelectorGenerator",
   "Fields": [
-      {
-          "Field": "m_endOfClipEventId",
-          "Name": "End Of Clip Event",
-          "Description": "The event sent when the selected clip ends. -1 for none.",
-          "EventID": true
-      }
+    {
+      "Field": "m_endOfClipEventId",
+      "Name": "End Of Clip Event",
+      "Description": "The event sent when the selected clip ends. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_generators",
+      "Name": "Generators",
+      "Description": "The generators to choose from."
+    },
+    {
+      "Field": "m_selectedGeneratorIndex",
+      "Name": "Selected Generator Index",
+      "Description": "The index of the generator that plays. Usually bound to a variable."
+    },
+    {
+      "Field": "m_indexSelector",
+      "Name": "Index Selector",
+      "Description": "Picks the selected index when the selector activates. Overrides Selected Generator Index when set."
+    },
+    {
+      "Field": "m_selectedIndexCanChangeAfterActivate",
+      "Name": "Selected Index Can Change After Activate",
+      "Description": "Whether a change to the selected index after activation switches generator. Off: the choice is kept until the selector is activated again."
+    },
+    {
+      "Field": "m_generatorChangedTransitionEffect",
+      "Name": "Generator Changed Transition Effect",
+      "Description": "The transition effect used when the selected generator changes while active. None: switch at once."
+    }
   ]
 }

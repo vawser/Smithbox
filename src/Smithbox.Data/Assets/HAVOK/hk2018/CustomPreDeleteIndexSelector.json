@@ -1,0 +1,10 @@
+{
+  "Type": "HKLib.hk2018.CustomPreDeleteIndexSelector",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    }
+  ]
+}

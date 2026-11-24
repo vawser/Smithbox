@@ -1,0 +1,30 @@
+{
+  "Type": "HKX2.hkbModifierGenerator",
+  "Fields": [
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_modifier",
+      "Name": "Modifier",
+      "Description": "The modifier applied to the generator's pose."
+    },
+    {
+      "Field": "m_generator",
+      "Name": "Generator",
+      "Description": "The generator whose pose is modified."
+    }
+  ]
+}

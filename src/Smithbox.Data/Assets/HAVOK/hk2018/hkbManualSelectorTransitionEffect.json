@@ -1,0 +1,50 @@
+{
+  "Type": "HKLib.hk2018.hkbManualSelectorTransitionEffect",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_selfTransitionMode",
+      "Name": "Self Transition Mode",
+      "Description": "What happens when the transition goes from a state to itself: continue if the generator is cyclic and blend if not, continue, reset, or blend."
+    },
+    {
+      "Field": "m_eventMode",
+      "Name": "Event Mode",
+      "Description": "Which generators receive events during the transition: the default (from the project data), both (process all), or all but the from generator or the to generator."
+    },
+    {
+      "Field": "m_transitionEffects",
+      "Name": "Transition Effects",
+      "Description": "The transition effects to choose from."
+    },
+    {
+      "Field": "m_selectedIndex",
+      "Name": "Selected Index",
+      "Description": "The index of the transition effect that's used."
+    },
+    {
+      "Field": "m_indexSelector",
+      "Name": "Index Selector",
+      "Description": "Picks the selected index each time the transition starts. Overrides Selected Index when set."
+    }
+  ]
+}

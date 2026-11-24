@@ -1,0 +1,35 @@
+{
+  "Type": "HKLib.hk2018.hkbBlenderGeneratorChild",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_generator",
+      "Name": "Generator",
+      "Description": "The generator blended."
+    },
+    {
+      "Field": "m_boneWeights",
+      "Name": "Bone Weights",
+      "Description": "Per-bone weights for this child. None: every bone has weight 1."
+    },
+    {
+      "Field": "m_weight",
+      "Name": "Weight",
+      "Description": "The blend parameter value where this child has full weight (a parametric blend), or its weight."
+    },
+    {
+      "Field": "m_worldFromModelWeight",
+      "Name": "World From Model Weight",
+      "Description": "How much this child's root motion counts."
+    }
+  ]
+}

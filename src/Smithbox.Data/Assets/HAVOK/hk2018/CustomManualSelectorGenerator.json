@@ -1,17 +1,94 @@
 {
   "Type": "HKLib.hk2018.CustomManualSelectorGenerator",
   "Fields": [
-      {
-          "Field": "m_animId",
-          "Name": "Animation ID",
-          "Description": "The animation ID within a category (3000 for a000_003000). With an offset type other than None, the game adds the category at runtime, so the same ID can play from several time acts.",
-          "AnimationID": true
-      },
-      {
-          "Field": "m_isBasePoseAnim",
-          "Name": "Is Base Pose Animation",
-          "Description": "Nightreign only. True on almost every Nightreign selector (181,075 of 182,959 in the game files). Elden Ring files don't have this field.",
-          "ProjectTypes": [ "NR" ]
-      }
+    {
+      "Field": "m_animId",
+      "Name": "Animation ID",
+      "Description": "The animation ID within a category (3000 for a000_003000). With an offset type other than None, the game adds the category at runtime, so the same ID can play from several time acts.",
+      "AnimationID": true
+    },
+    {
+      "Field": "m_isBasePoseAnim",
+      "Name": "Is Base Pose Animation",
+      "Description": "Nightreign only. True on almost every Nightreign selector (181,075 of 182,959 in the game files). Elden Ring files don't have this field.",
+      "ProjectTypes": [
+        "NR"
+      ]
+    },
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_generators",
+      "Name": "Generators",
+      "Description": "The generators to choose from: one per variant of the animation (by weapon category, idle category, or animation offset; see Offset Type)."
+    },
+    {
+      "Field": "m_offsetType",
+      "Name": "Offset Type",
+      "Description": "How the game picks the generator: by an animation ID offset, the idle category, the weapon's category (right hand, left hand or hand style), the magic or sword art category, or none (always the first)."
+    },
+    {
+      "Field": "m_animeEndEventType",
+      "Name": "Animation End Event Type",
+      "Description": "What the game does when the animation ends: fire the next state's event, the state end event, or the idle event, or nothing."
+    },
+    {
+      "Field": "m_enableScript",
+      "Name": "Enable Script",
+      "Description": "Whether the action script's functions for this animation run while it plays."
+    },
+    {
+      "Field": "m_enableTae",
+      "Name": "Enable TAE",
+      "Description": "Whether the animation's time act events run while it plays."
+    },
+    {
+      "Field": "m_changeTypeOfSelectedIndexAfterActivate",
+      "Name": "Change Of Selected Index After Activate",
+      "Description": "What a change of the selected generator does after the selector has activated: nothing, a self transition, or an update to the new generator."
+    },
+    {
+      "Field": "m_generatorChangedTransitionEffect",
+      "Name": "Generator Changed Transition Effect",
+      "Description": "The transition effect used when the selected generator changes while active."
+    },
+    {
+      "Field": "m_checkAnimEndSlotNo",
+      "Name": "Check Animation End Slot",
+      "Description": "The animation slot whose end is checked for the end event. -1 for the default."
+    },
+    {
+      "Field": "m_replanningAI",
+      "Name": "Replanning AI",
+      "Description": "Whether the AI re-plans its actions when this animation starts."
+    },
+    {
+      "Field": "m_rideSync",
+      "Name": "Ride Sync",
+      "Description": "Whether the animation is synced between rider and mount (Elden Ring's Torrent)."
+    },
+    {
+      "Field": "m_additiveType",
+      "Name": "Additive Type",
+      "Description": "The additive animation type. 0 in every vanilla file."
+    }
   ]
 }

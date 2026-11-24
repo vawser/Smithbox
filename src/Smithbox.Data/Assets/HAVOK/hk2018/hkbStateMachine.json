@@ -1,41 +1,101 @@
 {
   "Type": "HKLib.hk2018.hkbStateMachine",
   "Fields": [
-      {
-          "Field": "m_startStateId",
-          "Name": "Start State",
-          "Description": "The state the state machine starts in.",
-          "StateID": true
-      },
-      {
-          "Field": "m_returnToPreviousStateEventId",
-          "Name": "Return To Previous State Event",
-          "Description": "The event that returns to the previous state. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_randomTransitionEventId",
-          "Name": "Random Transition Event",
-          "Description": "The event that moves to a random state. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_transitionToNextHigherStateEventId",
-          "Name": "Next Higher State Event",
-          "Description": "The event that moves to the state with the next higher state ID. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_transitionToNextLowerStateEventId",
-          "Name": "Next Lower State Event",
-          "Description": "The event that moves to the state with the next lower state ID. -1 for none.",
-          "EventID": true
-      },
-      {
-          "Field": "m_syncVariableIndex",
-          "Name": "Sync Variable",
-          "Description": "The variable the current state ID is written to. -1 for none.",
-          "VariableIndex": true
-      }
+    {
+      "Field": "m_startStateId",
+      "Name": "Start State",
+      "Description": "The state the state machine starts in.",
+      "StateID": true
+    },
+    {
+      "Field": "m_returnToPreviousStateEventId",
+      "Name": "Return To Previous State Event",
+      "Description": "The event that returns to the previous state. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_randomTransitionEventId",
+      "Name": "Random Transition Event",
+      "Description": "The event that moves to a random state. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_transitionToNextHigherStateEventId",
+      "Name": "Next Higher State Event",
+      "Description": "The event that moves to the state with the next higher state ID. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_transitionToNextLowerStateEventId",
+      "Name": "Next Lower State Event",
+      "Description": "The event that moves to the state with the next lower state ID. -1 for none.",
+      "EventID": true
+    },
+    {
+      "Field": "m_syncVariableIndex",
+      "Name": "Sync Variable",
+      "Description": "The variable the current state ID is written to. -1 for none.",
+      "VariableIndex": true
+    },
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_eventToSendWhenStateOrTransitionChanges",
+      "Name": "Event On State Change",
+      "Description": "The event sent whenever the state or the active transition changes."
+    },
+    {
+      "Field": "m_startStateIdSelector",
+      "Name": "Start State ID Selector",
+      "Description": "Picks the start state when the state machine activates. Overrides Start State when set."
+    },
+    {
+      "Field": "m_wrapAroundStateId",
+      "Name": "Wrap Around State ID",
+      "Description": "Whether the next higher / next lower state events wrap from the last state to the first (and back)."
+    },
+    {
+      "Field": "m_maxSimultaneousTransitions",
+      "Name": "Max Simultaneous Transitions",
+      "Description": "How many transitions can blend at once. A transition started while this many are active ends the oldest."
+    },
+    {
+      "Field": "m_startStateMode",
+      "Name": "Start State Mode",
+      "Description": "How the start state is picked when the state machine activates: Start State (default), synced, random (weighted by the states' probabilities), or by the Start State ID Selector (chooser)."
+    },
+    {
+      "Field": "m_selfTransitionMode",
+      "Name": "Self Transition Mode",
+      "Description": "What happens when the state machine transitions to itself (from a parent state machine): nothing, go to the start state, or always go to the start state (force)."
+    },
+    {
+      "Field": "m_states",
+      "Name": "States",
+      "Description": "The state machine's states."
+    },
+    {
+      "Field": "m_wildcardTransitions",
+      "Name": "Wildcard Transitions",
+      "Description": "Transitions from any state: an event moves to the target state whichever state is current."
+    }
   ]
 }

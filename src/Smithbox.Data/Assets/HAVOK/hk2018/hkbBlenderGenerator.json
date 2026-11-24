@@ -1,0 +1,65 @@
+{
+  "Type": "HKLib.hk2018.hkbBlenderGenerator",
+  "Fields": [
+    {
+      "Field": "m_propertyBag",
+      "Name": "Property Bag",
+      "Description": "Havok's attached properties (not used by the games)."
+    },
+    {
+      "Field": "m_variableBindingSet",
+      "Name": "Variable Bindings",
+      "Description": "The bindings that drive this object's fields from behavior variables or character properties each frame."
+    },
+    {
+      "Field": "m_userData",
+      "Name": "User Data",
+      "Description": "A value for the game's own use; Havok doesn't read it."
+    },
+    {
+      "Field": "m_name",
+      "Name": "Name",
+      "Description": "The node's name. Used to find it in the outline and in the action scripts; it doesn't have to be unique."
+    },
+    {
+      "Field": "m_referencePoseWeightThreshold",
+      "Name": "Reference Pose Weight Threshold",
+      "Description": "Below this total weight, the reference pose is blended in to fill the gap (0 to 1)."
+    },
+    {
+      "Field": "m_blendParameter",
+      "Name": "Blend Parameter",
+      "Description": "Where the blend is between the children's Weight values. Usually bound to a variable, such as a movement speed."
+    },
+    {
+      "Field": "m_minCyclicBlendParameter",
+      "Name": "Min Cyclic Blend Parameter",
+      "Description": "The lowest blend parameter value, when the blend is cyclic."
+    },
+    {
+      "Field": "m_maxCyclicBlendParameter",
+      "Name": "Max Cyclic Blend Parameter",
+      "Description": "The highest blend parameter value, when the blend is cyclic: it wraps to the min."
+    },
+    {
+      "Field": "m_indexOfSyncMasterChild",
+      "Name": "Index Of Sync Master Child",
+      "Description": "The child the others are synced to. -1 for none."
+    },
+    {
+      "Field": "m_flags",
+      "Name": "Blender Flags",
+      "Description": "Blend options: sync, smooth generator weights, don't deactivate children with zero weight, parametric blend, cyclic parametric blend, force dense pose, blend the motion of additive animations, velocity synchronization."
+    },
+    {
+      "Field": "m_subtractLastChild",
+      "Name": "Subtract Last Child",
+      "Description": "Whether the last child's pose is subtracted from the blend (an additive blend)."
+    },
+    {
+      "Field": "m_children",
+      "Name": "Children",
+      "Description": "The generators blended, each with its own weight and bone weights."
+    }
+  ]
+}

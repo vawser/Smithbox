@@ -1,11 +1,26 @@
 {
   "Type": "HKX2.hkbVariableBindingSetBinding",
   "Fields": [
-      {
-          "Field": "m_variableIndex",
-          "Name": "Variable",
-          "Description": "The variable (or character property, depending on the binding type) bound to the member path.",
-          "VariableIndex": true
-      }
+    {
+      "Field": "m_variableIndex",
+      "Name": "Variable",
+      "Description": "The variable (or character property, depending on the binding type) bound to the member path.",
+      "VariableIndex": true
+    },
+    {
+      "Field": "m_memberPath",
+      "Name": "Member Path",
+      "Description": "The field the binding drives, as a path from the object (e.g. selectedGeneratorIndex, or children:0/weight)."
+    },
+    {
+      "Field": "m_bitIndex",
+      "Name": "Bit Index",
+      "Description": "For a bool written into a flags field, the bit it sets. -1 for the whole field."
+    },
+    {
+      "Field": "m_bindingType",
+      "Name": "Binding Type",
+      "Description": "Whether the value comes from a behavior variable or a character property."
+    }
   ]
 }

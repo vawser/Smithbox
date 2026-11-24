@@ -1,10 +1,10 @@
 {
   "Type": "HKX2.hkRootLevelContainer",
   "Fields": [
-      {
-          "Field": "m_namedVariants",
-          "Name": "Named Variants",
-          "Description": ""
-      }
+    {
+      "Field": "m_namedVariants",
+      "Name": "Named Variants",
+      "Description": "The file's top-level objects, each with a name and class."
+    }
   ]
 }

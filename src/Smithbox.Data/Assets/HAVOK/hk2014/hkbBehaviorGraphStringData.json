@@ -1,0 +1,25 @@
+{
+  "Type": "HKX2.hkbBehaviorGraphStringData",
+  "Fields": [
+    {
+      "Field": "m_eventNames",
+      "Name": "Event Names",
+      "Description": "The events' names, in event index order. The game and the action scripts send events by name."
+    },
+    {
+      "Field": "m_attributeNames",
+      "Name": "Attribute Names",
+      "Description": "The attributes' names."
+    },
+    {
+      "Field": "m_variableNames",
+      "Name": "Variable Names",
+      "Description": "The variables' names, in variable index order. The game and the action scripts set variables by name."
+    },
+    {
+      "Field": "m_characterPropertyNames",
+      "Name": "Character Property Names",
+      "Description": "The character properties' names."
+    }
+  ]
+}
