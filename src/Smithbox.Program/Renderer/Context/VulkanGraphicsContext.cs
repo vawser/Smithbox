@@ -146,6 +146,7 @@ public class VulkanGraphicsContext : IGraphicsContext
         MainWindowFramebuffer?.Dispose();
         //MainWindowResourceSet?.Dispose();
         _gd?.Dispose();
+        GC.SuppressFinalize(this);
     }
 
     private void RecreateWindowFramebuffers(CommandList cl)

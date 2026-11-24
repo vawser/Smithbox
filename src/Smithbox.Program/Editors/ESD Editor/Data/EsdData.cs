@@ -63,5 +63,6 @@ public class EsdData : IDisposable
     {
         PrimaryBank = null;
         Catalog = null;
+        GC.SuppressFinalize(this);
     }
 }

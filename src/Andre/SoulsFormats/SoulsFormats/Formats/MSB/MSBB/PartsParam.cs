@@ -841,7 +841,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this object.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Collision that controls loading of the object.
@@ -968,7 +968,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this enemy.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// ID in NPCThinkParam determining AI properties.
@@ -1180,12 +1180,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this collision.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public SceneGparamConfigStruct SceneGparamConfigStruct { get; set; }
+                public new SceneGparamConfigStruct SceneGparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.

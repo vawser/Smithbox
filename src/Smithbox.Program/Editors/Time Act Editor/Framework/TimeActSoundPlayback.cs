@@ -355,5 +355,6 @@ public class TimeActSoundPlayback : IDisposable
             player.Dispose();
 
         _players.Clear();
+        GC.SuppressFinalize(this);
     }
 }

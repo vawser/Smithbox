@@ -990,17 +990,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GrassConfigStruct GrassConfigStruct { get; set; }
+                public new GrassConfigStruct GrassConfigStruct { get; set; }
 
                 /// <summary>
                 /// Creates a MapPiece with default values.
@@ -1056,7 +1056,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Reference to a map piece or collision; believed to determine when the object is loaded.
@@ -1197,7 +1197,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Creates an Object with default values.
@@ -1234,7 +1234,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// An ID in NPCThinkParam that determines the enemy's AI characteristics.
@@ -1452,7 +1452,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Creates an Enemy with default values.
@@ -1521,22 +1521,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                public new DisplayGroupStruct DisplayGroupStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public SceneGparamConfig SceneGparamConfig { get; set; }
+                public new SceneGparamConfig SceneGparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1792,7 +1792,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                public new DisplayGroupStruct DisplayGroupStruct { get; set; }
 
                 /// <summary>
                 /// The collision part to attach to.

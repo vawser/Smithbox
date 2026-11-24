@@ -317,6 +317,7 @@ public class TextData : IDisposable
         AuxBanks = null;
 
         FmgFiles = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

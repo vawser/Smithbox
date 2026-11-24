@@ -123,6 +123,7 @@ public class CommonData : IDisposable
     public void Dispose()
     {
         HavokMeta = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

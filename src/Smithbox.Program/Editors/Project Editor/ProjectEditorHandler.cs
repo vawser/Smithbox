@@ -587,6 +587,7 @@ public class ProjectEditorHandler : IDisposable
 
         _viewportEnvironment?.Dispose();
         _viewportEnvironment = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

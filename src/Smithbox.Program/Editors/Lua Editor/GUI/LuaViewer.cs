@@ -532,6 +532,7 @@ public class LuaViewer : IDisposable, ILuaScene, ILuaNpc
         Target?.Dispose();
         Panel.StopAll();
         (Viewport as VulkanViewport)?.Dispose();
+        GC.SuppressFinalize(this);
     }
 }
 
@@ -953,6 +954,7 @@ public class LuaCharacter : IDisposable
         Alive = false;
         Viewer.Panel.Stop(Key);
         Mesh?.Dispose();
+        GC.SuppressFinalize(this);
     }
 }
 

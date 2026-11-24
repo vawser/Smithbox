@@ -264,5 +264,6 @@ public class CutsceneSubtitles : IDisposable
         StopVoice();
         Player?.Dispose();
         Player = null;
+        GC.SuppressFinalize(this);
     }
 }

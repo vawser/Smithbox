@@ -178,8 +178,6 @@ namespace SoulsFormats
         /// </summary>
         public abstract class Part : Entry, IMsbPart
         {
-            private int version;
-
             // MAIN
             private protected abstract PartType Type { get; }
             private protected abstract bool HasUnkOffsetT50 { get; }
@@ -1340,37 +1338,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GrassConfigStruct GrassConfigStruct { get; set; }
+                public new GrassConfigStruct GrassConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct90 UnkStruct90 { get; set; }
+                public new UnkStruct90 UnkStruct90 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStructA0 UnkStructA0 { get; set; }
+                public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
                 /// Creates a MapPiece with default values.
@@ -1447,22 +1445,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1926,16 +1924,16 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Creates a Player with default values.
@@ -2000,12 +1998,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayStruct DisplayStruct { get; set; }
+                public new DisplayStruct DisplayStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2020,17 +2018,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStructA0 UnkStructA0 { get; set; }
+                public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
                 /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
@@ -2199,22 +2197,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Creates a DummyAsset with default values.
@@ -2306,27 +2304,27 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayStruct DisplayStruct { get; set; }
+                public new DisplayStruct DisplayStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStructA0 UnkStructA0 { get; set; }
+                public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
                 /// The collision part to attach to.
@@ -2428,42 +2426,42 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayStruct DisplayStruct { get; set; }
+                public new DisplayStruct DisplayStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GrassConfigStruct GrassConfigStruct { get; set; }
+                public new GrassConfigStruct GrassConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct88 UnkStruct88 { get; set; }
+                public new UnkStruct88 UnkStruct88 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct90 UnkStruct90 { get; set; }
+                public new UnkStruct90 UnkStruct90 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct98 UnkStruct98 { get; set; }
+                public new UnkStruct98 UnkStruct98 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStructA0 UnkStructA0 { get; set; }
+                public new UnkStructA0 UnkStructA0 { get; set; }
 
                 /// <summary>
                 /// Unknown.

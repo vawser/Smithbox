@@ -281,5 +281,6 @@ public class CutsceneSoundPlayback : IDisposable
         foreach (var player in Players)
             player.Dispose();
         Players.Clear();
+        GC.SuppressFinalize(this);
     }
 }

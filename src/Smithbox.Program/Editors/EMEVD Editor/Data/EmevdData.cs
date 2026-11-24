@@ -58,5 +58,6 @@ public class EmevdData : IDisposable
     {
         PrimaryBank = null;
         Catalog = null;
+        GC.SuppressFinalize(this);
     }
 }

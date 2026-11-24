@@ -1370,5 +1370,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     {
         UnregisterAndRelease();
         base.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

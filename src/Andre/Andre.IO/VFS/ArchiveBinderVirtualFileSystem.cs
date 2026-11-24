@@ -187,17 +187,17 @@ namespace Andre.IO.VFS
             }
         }
 
-        public class BinderVirtualFile(string? name, BHD5.FileHeader fileHeader, FileStream bdt, MemoryMappedFile btfMmf) : VirtualFile
+        public class BinderVirtualFile(string? name, BHD5.FileHeader fileHeader, FileStream? bdt, MemoryMappedFile btfMmf) : VirtualFile
         {
             public string? Name { get; } = name;
             public override bool IsReadOnly => true;
             public BHD5.FileHeader FileHeader { get; } = fileHeader;
-            public FileStream Bdt { get; } = bdt;
+            public FileStream? Bdt { get; } = bdt;
             private MemoryMappedFile btfMmf = btfMmf;
 
             public override Memory<byte> GetData() => FileHeader.ReadFileThreaded(Bdt);
             public override IMemoryOwner<byte> MemoryMapData()
-                => fileHeader.GetFile(btfMmf);
+                => FileHeader.GetFile(btfMmf);
         }
 
         public class BinderVirtualDirectory(string name) : VirtualDirectory

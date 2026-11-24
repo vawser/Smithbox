@@ -26,18 +26,18 @@ public class CompositeMeshProvider : MeshProvider
         return _parts[index];
     }
 
-    public override BoundingBox Bounds => throw new NotImplementedException();
+    public override BoundingBox Bounds => throw new NotSupportedException();
 
-    public override MeshLayoutType LayoutType => throw new NotImplementedException();
+    public override MeshLayoutType LayoutType => throw new NotSupportedException();
 
-    public override VertexLayoutDescription LayoutDescription => throw new NotImplementedException();
+    public override VertexLayoutDescription LayoutDescription => throw new NotSupportedException();
 
     public override VertexIndexBufferAllocator.VertexIndexBufferHandle GeometryBuffer =>
-        throw new NotImplementedException();
+        throw new NotSupportedException();
 
-    public override GPUBufferAllocator.GPUBufferHandle MaterialBuffer => throw new NotImplementedException();
+    public override GPUBufferAllocator.GPUBufferHandle MaterialBuffer => throw new NotSupportedException();
 
-    public override string ShaderName => throw new NotImplementedException();
+    public override string ShaderName => throw new NotSupportedException();
 
-    public override SpecializationConstant[] SpecializationConstants => throw new NotImplementedException();
+    public override SpecializationConstant[] SpecializationConstants => throw new NotSupportedException();
 }

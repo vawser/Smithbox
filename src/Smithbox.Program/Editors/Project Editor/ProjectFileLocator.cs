@@ -983,6 +983,7 @@ public class ProjectFileLocator : IDisposable
         TexturePackedFiles = null;
         ShoeboxFiles = null;
         MovieFiles = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

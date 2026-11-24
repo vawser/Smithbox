@@ -46,6 +46,7 @@ public class TextureData : IDisposable
     public void Dispose()
     {
         PrimaryBank?.Dispose();
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

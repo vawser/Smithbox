@@ -49,6 +49,7 @@ public class RefCount<T>(T value) : IDisposable
             isValid = false;
             if (Value is IDisposable d) d.Dispose();
         }
+        GC.SuppressFinalize(this);
     }
 
     /// <summary>
@@ -93,5 +94,6 @@ public class ChildResource<Parent, Child>(IDisposable parent, Child c) : RefCoun
     {
         base.Dispose();
         if (Refs == 0) ParentRef.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

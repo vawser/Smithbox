@@ -324,6 +324,7 @@ public class MaterialData : IDisposable
         //VanillaBank = null;
 
         MaterialMeta = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

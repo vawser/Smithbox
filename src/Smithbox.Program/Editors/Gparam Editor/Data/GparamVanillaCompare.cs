@@ -1,3 +1,4 @@
+#nullable enable annotations
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;

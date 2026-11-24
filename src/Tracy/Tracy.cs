@@ -1,4 +1,5 @@
-﻿// Tracy profiler interop for C#
+﻿#nullable enable annotations
+// Tracy profiler interop for C#
 // Requires TracyClient.dll to be present in current directory
 // You can build it by cloning https://github.com/wolfpld/tracy
 // and building it with BUILD_SHARED_LIBS=ON, TRACY_FIBERS=ON and TRACY_MANUAL_LIFETIME=ON

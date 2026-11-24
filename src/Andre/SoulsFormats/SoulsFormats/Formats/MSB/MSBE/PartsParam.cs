@@ -1512,37 +1512,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GrassConfigStruct GrassConfigStruct { get; set; }
+                public new GrassConfigStruct GrassConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct9 UnkStruct9 { get; set; }
+                public new UnkStruct9 UnkStruct9 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct11 UnkStruct11 { get; set; }
+                public new UnkStruct11 UnkStruct11 { get; set; }
 
                 /// <summary>
                 /// Creates a MapPiece with default values.
@@ -1619,22 +1619,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// An ID in NPCThinkParam that determines the enemy's AI characteristics.
@@ -1911,17 +1911,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1992,37 +1992,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                public new DisplayGroupStruct DisplayGroupStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public SceneGparamConfigStruct SceneGparamConfigStruct { get; set; }
+                public new SceneGparamConfigStruct SceneGparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct11 UnkStruct11 { get; set; }
+                public new UnkStruct11 UnkStruct11 { get; set; }
 
                 /// <summary>
                 /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
@@ -2296,22 +2296,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2409,27 +2409,27 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                public new DisplayGroupStruct DisplayGroupStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct11 UnkStruct11 { get; set; }
+                public new UnkStruct11 UnkStruct11 { get; set; }
 
                 /// <summary>
                 /// The collision part to attach to.
@@ -2556,42 +2556,42 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayDataStruct DisplayDataStruct { get; set; }
+                public new DisplayDataStruct DisplayDataStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                public new DisplayGroupStruct DisplayGroupStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GparamConfigStruct GparamConfigStruct { get; set; }
+                public new GparamConfigStruct GparamConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public GrassConfigStruct GrassConfigStruct { get; set; }
+                public new GrassConfigStruct GrassConfigStruct { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct8 UnkStruct8 { get; set; }
+                public new UnkStruct8 UnkStruct8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct9 UnkStruct9 { get; set; }
+                public new UnkStruct9 UnkStruct9 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public TileLoadConfig TileLoadConfig { get; set; }
+                public new TileLoadConfig TileLoadConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct11 UnkStruct11 { get; set; }
+                public new UnkStruct11 UnkStruct11 { get; set; }
 
                 /// <summary>
                 /// Unknown; not read by the game.

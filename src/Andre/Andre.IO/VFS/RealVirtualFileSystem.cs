@@ -86,7 +86,7 @@ namespace Andre.IO.VFS
                 return File.Exists(Path.Combine(path, fileName.TrimStart('/').TrimStart('\\')));
             }
 
-            public override bool TryGetFile(string fileName, out VirtualFile file)
+            public override bool TryGetFile(string fileName, [MaybeNullWhen(false)] out VirtualFile file)
             {
                 if (!FileExists(fileName))
                 {
@@ -161,7 +161,7 @@ namespace Andre.IO.VFS
 
             public override IEnumerable<string> EnumerateFileNames()
             {
-                return Directory.EnumerateFiles(path).Select(Path.GetFileName);
+                return Directory.EnumerateFiles(path).Select(f => Path.GetFileName(f));
             }
 
             public override IEnumerable<(string, VirtualFile)> EnumerateFiles()

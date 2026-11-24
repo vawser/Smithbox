@@ -218,5 +218,6 @@ public class FxData : IDisposable
         Bank = null;
         dlseTemplates = null;
         fxr1Templates = null;
+        GC.SuppressFinalize(this);
     }
 }

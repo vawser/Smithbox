@@ -358,5 +358,6 @@ public class CharacterReloaderTool : IDisposable
 
         Watchers.Clear();
         PendingReloads.Clear();
+        GC.SuppressFinalize(this);
     }
 }

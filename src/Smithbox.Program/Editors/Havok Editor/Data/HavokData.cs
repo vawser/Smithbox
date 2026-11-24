@@ -223,6 +223,7 @@ public class HavokData : IDisposable
                 view?.Tools.CharacterReloader.Dispose();
             }
         }
+        GC.SuppressFinalize(this);
     }
     #endregion
 

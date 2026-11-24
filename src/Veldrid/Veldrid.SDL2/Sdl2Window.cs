@@ -100,7 +100,8 @@ namespace Veldrid.Sdl2
             }
             else
             {
-                _window = SDL.CreateWindowFrom(windowHandle);
+                // The handle itself is the native pointer; the generic `in T` overload would pass its address
+                _window = SDL.CreateWindowFrom((void*)windowHandle);
                 WindowID = SDL.GetWindowID(_window);
                 Sdl2WindowRegistry.RegisterWindow(this);
                 PostWindowCreated(0);
@@ -1022,7 +1023,7 @@ namespace Veldrid.Sdl2
             {
                 if (WindowHandle != IntPtr.Zero)
                 {
-                    return SdlProvider.SDL.Value.CreateWindowFrom(WindowHandle);
+                    return SdlProvider.SDL.Value.CreateWindowFrom((void*)WindowHandle);
                 }
                 else
                 {

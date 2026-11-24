@@ -510,6 +510,7 @@ public class TimeActData : IDisposable
         PrimaryBank?.Dispose();
 
         PrimaryBank = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

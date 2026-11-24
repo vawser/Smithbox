@@ -295,7 +295,7 @@ namespace SoulsFormats
             /// <summary>
             /// The name of this entry; should generally be unique.
             /// </summary>
-            public abstract string Name { get; set; }
+            public new abstract string Name { get; set; }
         }
     }
 }

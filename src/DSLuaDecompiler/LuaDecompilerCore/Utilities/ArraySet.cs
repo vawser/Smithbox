@@ -8,9 +8,6 @@ namespace LuaDecompilerCore.Utilities;
 /// </summary>
 public struct ArraySet<T> : ICollection<T>, ISet<T>, IReadOnlyCollection<T>, IReadOnlySet<T>
 {
-    private int _count;
-    private int _count1;
-
     public IEnumerator<T> GetEnumerator()
     {
         throw new System.NotImplementedException();
@@ -136,9 +133,10 @@ public struct ArraySet<T> : ICollection<T>, ISet<T>, IReadOnlyCollection<T>, IRe
         throw new System.NotImplementedException();
     }
 
-    int ICollection<T>.Count => _count;
+    // Unfinished stub: nothing is ever stored, so the count is always 0 (as the never-assigned fields gave before)
+    int ICollection<T>.Count => 0;
 
     public bool IsReadOnly { get; }
 
-    int IReadOnlyCollection<T>.Count => _count1;
+    int IReadOnlyCollection<T>.Count => 0;
 }

@@ -393,5 +393,6 @@ public class GparamMapEnvironment : IDisposable
 
         VolumeTable?.Dispose();
         VolumeTable = null;
+        GC.SuppressFinalize(this);
     }
 }

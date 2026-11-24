@@ -87,10 +87,10 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
     {
         // Validate arguments
         if (targetScheduler == null)
-            throw new ArgumentNullException("underlyingScheduler");
+            throw new ArgumentNullException(nameof(targetScheduler));
 
         if (maxConcurrencyLevel < 0)
-            throw new ArgumentOutOfRangeException("concurrencyLevel");
+            throw new ArgumentOutOfRangeException(nameof(maxConcurrencyLevel));
 
         // Initialize only those fields relevant to use an underlying scheduler.  We don't
         // initialize the fields relevant to using our own custom threads.
@@ -134,7 +134,7 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
         // Validates arguments (some validation is left up to the Thread type itself).
         // If the thread count is 0, default to the number of logical processors.
         if (threadCount < 0)
-            throw new ArgumentOutOfRangeException("concurrencyLevel");
+            throw new ArgumentOutOfRangeException(nameof(threadCount));
 
         if (threadCount == 0)
             _concurrencyLevel = Environment.ProcessorCount;

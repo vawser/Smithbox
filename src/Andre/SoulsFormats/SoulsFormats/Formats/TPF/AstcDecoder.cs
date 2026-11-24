@@ -586,6 +586,9 @@ namespace SoulsFormats
             int ds = (1024 + bw / 2) / (bw - 1);
             int dt = (1024 + bh / 2) / (bh - 1);
 
+            // Hoisted out of the texel loop (CA2014). weight[1] is only written for dual-plane blocks,
+            // so for single-plane blocks it stays 0, as it did when it was re-allocated per texel.
+            Span<int> weight = stackalloc int[2];
             for (int t = 0; t < bh; t++)
             {
                 for (int s = 0; s < bw; s++)
@@ -603,7 +606,6 @@ namespace SoulsFormats
                     int w00 = 16 - fs - ft + w11;
                     int v0 = js + jt * gridW;
 
-                    Span<int> weight = stackalloc int[2];
                     for (int plane = 0; plane < planes; plane++)
                     {
                         int p00 = GridWeight(gridWeights, v0, plane, planes, weightCount);

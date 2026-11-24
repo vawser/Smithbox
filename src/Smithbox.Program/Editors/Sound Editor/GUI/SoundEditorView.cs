@@ -376,5 +376,6 @@ public class SoundEditorView : IDisposable
     public void Dispose()
     {
         // The player is the editor's, so it outlives the view
+        GC.SuppressFinalize(this);
     }
 }

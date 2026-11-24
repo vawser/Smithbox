@@ -363,11 +363,11 @@ public abstract class VirtualFileSystem : IDisposable
         => GetFile(path)?.Delete();
 
     public virtual void Copy(string from, string to)
-        => WriteFile(to, GetFile(from).GetData().ToArray());
+        => WriteFile(to, GetFileOrThrow(from).GetData().ToArray());
 
     public virtual void Move(string from, string to)
     {
-        WriteFile(to, GetFile(from).GetData().ToArray());
+        WriteFile(to, GetFileOrThrow(from).GetData().ToArray());
         Delete(from);
     }
 

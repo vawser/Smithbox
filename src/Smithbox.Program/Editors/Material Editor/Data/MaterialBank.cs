@@ -393,6 +393,7 @@ public class MaterialBank : IDisposable
         MTDReferences = null;
         MATBINReferences = null;
         Definitions = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

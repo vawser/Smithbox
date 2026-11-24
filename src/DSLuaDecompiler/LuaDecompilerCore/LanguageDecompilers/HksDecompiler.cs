@@ -612,7 +612,6 @@ public class HksDecompiler : ILanguageDecompiler
         var br = new BinaryReaderEx(false, function.Bytecode) { BigEndian = true };
         irFunction.BeginBlock.Instructions = new List<Instruction>(function.Bytecode.Length * 6 / 4);
         List<Instruction> instructions = new List<Instruction>(4);
-        Interval definedRegisters = new Interval();
 
         // Parameters that are declared but unused aren't counted in the function header's parameter count, but still
         // affect register allocation in the bytecode. By finding the first register defined that isn't a parameter, we
@@ -1307,12 +1306,6 @@ public class HksDecompiler : ILanguageDecompiler
                     }
 
                     throw new Exception($@"Unimplemented opcode {OpProperties[opcode].OpName}");
-                    if (OpProperties[opcode].OpName == null)
-                    {
-                        Console.WriteLine(opcode);
-                    }
-
-                    break;
             }
 
             foreach (var inst in instructions)

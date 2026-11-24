@@ -152,6 +152,7 @@ public class ProjectData : IDisposable
     {
         Aliases = null;
         eventFlags = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

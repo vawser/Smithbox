@@ -1720,6 +1720,7 @@ public class ParamData : IDisposable
         ParamReloaderOffsets = null;
         ParamCategories = null;
         ParamCommutativityGroups = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

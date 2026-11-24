@@ -123,7 +123,7 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     /// <inheritdoc cref="IDbgPrim.DepthBiasSlope" />
     public virtual float DepthBiasSlope => 0f;
 
-    public int IndexCount => throw new NotImplementedException();
+    public int IndexCount => throw new NotSupportedException();
 
     protected List<short> Indices = new();
     protected List<VertexPositionColorNormal> Vertices = new();
@@ -288,6 +288,7 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
 
     public void Dispose()
     {
-        throw new NotImplementedException();
+        Dispose(true);
+        GC.SuppressFinalize(this);
     }
 }

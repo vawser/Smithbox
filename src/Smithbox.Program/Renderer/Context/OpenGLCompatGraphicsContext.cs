@@ -121,6 +121,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
     public void Dispose()
     {
         //_imGuiRenderer?.Dispose();
+        GC.SuppressFinalize(this);
     }
 
     private void RecreateWindowFramebuffers()

@@ -88,5 +88,6 @@ public class LuaData : IDisposable
     {
         PrimaryBank = null;
         _users = null;
+        GC.SuppressFinalize(this);
     }
 }

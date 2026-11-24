@@ -6,7 +6,7 @@ namespace SoulsFormats.Formats.Morpheme.MorphemeBundle.Network.NodeAttrib
     public class NodeAttribSourceEventTrack : NodeAttribBase
     {
         public int trackCount;
-        public int padding;
+        public new int padding;
         public List<int> trackSignatures;
         public List<int> trackSize;
     }

@@ -67,7 +67,7 @@ namespace SoulsFormats
         /// <summary>
         /// Reads an array of bytes as the BHD and a file as the BDT.
         /// </summary>
-        public static BXF4 Read(Memory<byte> bhdBytes, string bdtPath)
+        public new static BXF4 Read(Memory<byte> bhdBytes, string bdtPath)
         {
             using MemoryMappedFile dataFile = MemoryMappedFile.CreateFromFile(bdtPath, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
             IMappedMemory fsData = dataFile.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
@@ -91,7 +91,7 @@ namespace SoulsFormats
         /// <summary>
         /// Reads two files as the BHD and BDT.
         /// </summary>
-        public static BXF4 Read(string bhdPath, string bdtPath)
+        public new static BXF4 Read(string bhdPath, string bdtPath)
         {
             using MemoryMappedFile headerFile = MemoryMappedFile.CreateFromFile(bhdPath, FileMode.Open, null, 0, MemoryMappedFileAccess.Read),
                 dataFile = MemoryMappedFile.CreateFromFile(bdtPath, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);

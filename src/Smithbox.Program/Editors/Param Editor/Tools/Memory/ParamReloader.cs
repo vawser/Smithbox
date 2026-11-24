@@ -526,7 +526,7 @@ public class ParamReloader
         {
             if (cell == null)
             {
-                throw new ArgumentException();
+                throw new ArgumentException("A cell is required unless flushing bits.", nameof(cell));
             }
 
             // The value is boxed as its own type (byte, sbyte, short, ...): an unboxing cast such as

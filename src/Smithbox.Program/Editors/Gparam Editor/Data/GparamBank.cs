@@ -342,6 +342,7 @@ public class GparamBank : IDisposable
         Entries.Clear();
 
         Entries = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

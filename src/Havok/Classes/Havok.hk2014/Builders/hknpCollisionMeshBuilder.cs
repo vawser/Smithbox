@@ -35,10 +35,6 @@ namespace Havok.hk2014.Builders
                         UsedIndices.Add(indices[(int)p * 3]);
                         UsedIndices.Add(indices[(int)p * 3 + 1]);
                         UsedIndices.Add(indices[(int)p * 3 + 2]);
-                        if (indices[(int)p * 3] == 4 || indices[(int)p * 3 + 1] == 4 || indices[(int)p * 3 + 2] == 4)
-                        {
-                            n.Primitive = n.Primitive;
-                        }
                     }
                     else
                     {
@@ -387,7 +383,7 @@ namespace Havok.hk2014.Builders
             // Physics scene data
             var physicsSceneData = new hknpPhysicsSceneData();
             variant.m_variant = physicsSceneData;
-            physicsSceneData.m_systemDatas = new List<hknpPhysicsSystemData>();
+            physicsSceneData.m_systemDatas = new List<hknpPhysicsSystemData?>();
 
             // Physics system data
             var physicsSystemData = new hknpPhysicsSystemData();
@@ -395,7 +391,7 @@ namespace Havok.hk2014.Builders
             physicsSystemData.m_name = "Default Physics System Data";
             physicsSystemData.m_materials = new List<hknpMaterial>();
             physicsSystemData.m_bodyCinfos = new List<hknpBodyCinfo>();
-            physicsSystemData.m_referencedObjects = new List<hkReferencedObject>();
+            physicsSystemData.m_referencedObjects = new List<hkReferencedObject?>();
 
             foreach (var m in _meshes)
             {

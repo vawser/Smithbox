@@ -649,6 +649,7 @@ public class TextBank : IDisposable
         Containers.Clear();
 
         Containers = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

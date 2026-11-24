@@ -233,6 +233,7 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         {
             resource.Dispose();
         }
+        GC.SuppressFinalize(this);
     }
 
     public void OnSetupDone()

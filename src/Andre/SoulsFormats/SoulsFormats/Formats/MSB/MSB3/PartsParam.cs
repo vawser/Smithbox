@@ -759,7 +759,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this map piece.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Creates a MapPiece with default values.
@@ -805,7 +805,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this object.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -931,7 +931,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this enemy.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1186,12 +1186,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this collision.
                 /// </summary>
-                public GparamConfig GparamConfig { get; set; }
+                public new GparamConfig GparamConfig { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public SceneGparamConfig SceneGparamConfig { get; set; }
+                public new SceneGparamConfig SceneGparamConfig { get; set; }
 
                 /// <summary>
                 /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.

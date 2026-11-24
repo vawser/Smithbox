@@ -160,7 +160,7 @@ namespace SoulsFormats
             private long CommonOffset { get; set; }
             private long TypeOffset { get; set; }
 
-            public string Name { get; set; }
+            public new string Name { get; set; }
 
             public int EventID { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using Andre.IO.VFS;
+﻿#nullable enable annotations
+using Andre.IO.VFS;
 using StudioCore.Editors.Common;
 using StudioCore.Logger;
 using System;
@@ -152,6 +153,7 @@ public class ProjectVFS : IDisposable
 
     public void Dispose()
     {
+        GC.SuppressFinalize(this);
         if (_disposed)
             return;
 

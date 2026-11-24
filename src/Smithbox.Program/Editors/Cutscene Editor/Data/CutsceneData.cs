@@ -205,5 +205,6 @@ public class CutsceneData : IDisposable
     public void Dispose()
     {
         Files = new();
+        GC.SuppressFinalize(this);
     }
 }

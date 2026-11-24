@@ -401,7 +401,6 @@ namespace SoulsFormats
                     return 100 + Math.Max(0, u.RootIndex) * 100 + rank;
                 return 1000000 + rank;
             }
-            private bool writingV2Tree;
 
             /// <summary>
             /// FXR v2: the action types whose values are packed (laid out in the tail, FFX plan §19): DS1's ActionData

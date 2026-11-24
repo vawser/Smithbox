@@ -895,6 +895,7 @@ public class ProjectOrchestrator : IDisposable
 
     public void Dispose()
     {
+        GC.SuppressFinalize(this);
         if (_disposed)
             return;
 

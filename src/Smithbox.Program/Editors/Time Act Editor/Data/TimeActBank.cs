@@ -218,6 +218,7 @@ public class TimeActBank : IDisposable
             Assets.Clear();
             Behaviors.Clear();
         }
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

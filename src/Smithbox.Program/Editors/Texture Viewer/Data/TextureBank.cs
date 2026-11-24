@@ -924,6 +924,7 @@ public class TextureBank : IDisposable
         ShoeboxEntries = null;
         Movies?.Dispose();
         Movies = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

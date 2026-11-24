@@ -1,4 +1,5 @@
-﻿using Andre.IO.VFS;
+﻿#nullable enable annotations
+using Andre.IO.VFS;
 using Havok;
 using Havok.Files;
 using Havok.Shared;
@@ -1917,6 +1918,7 @@ public class HavokBank : IDisposable
 
         WorkingBinders.Clear();
         StagedBinders.Clear();
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

@@ -35,6 +35,7 @@ public class IrradianceVolumeTable : IDisposable
     {
         Count = 0;
         _allocation?.Dispose();
+        GC.SuppressFinalize(this);
     }
 
     /// <summary>The index of the first entry in the material buffer, counted in entries</summary>

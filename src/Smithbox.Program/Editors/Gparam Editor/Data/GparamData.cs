@@ -204,6 +204,7 @@ public class GparamData : IDisposable
 
         Annotations = null;
         Enums = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

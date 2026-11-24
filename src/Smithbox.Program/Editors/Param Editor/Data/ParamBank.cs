@@ -3022,6 +3022,7 @@ public class ParamBank : IDisposable
 
         ClipboardRows.Clear();
         ClipboardRows = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

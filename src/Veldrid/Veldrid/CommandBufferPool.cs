@@ -64,7 +64,7 @@ namespace Veldrid
             {
                 vkDestroyCommandPool(_device.Device, _pool);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -82,7 +82,7 @@ namespace Veldrid
             {
                 ReleaseUnmanagedResources();
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }

@@ -56,17 +56,17 @@ public class DbgPrimSkybox : DbgPrim
         AddTri(bbr, tfr, bfr);
     }
 
-    public override MeshLayoutType LayoutType => throw new NotImplementedException();
+    public override MeshLayoutType LayoutType => throw new NotSupportedException();
 
-    public override VertexLayoutDescription LayoutDescription => throw new NotImplementedException();
+    public override VertexLayoutDescription LayoutDescription => throw new NotSupportedException();
 
-    public override BoundingBox Bounds => throw new NotImplementedException();
+    public override BoundingBox Bounds => throw new NotSupportedException();
 
-    public override BoundingBox FramingBounds => throw new NotImplementedException();
+    public override BoundingBox FramingBounds => throw new NotSupportedException();
 
-    public override string ShaderName => throw new NotImplementedException();
+    public override string ShaderName => throw new NotSupportedException();
 
-    public override SpecializationConstant[] SpecializationConstants => throw new NotImplementedException();
+    public override SpecializationConstant[] SpecializationConstants => throw new NotSupportedException();
 
     public override VkCullModeFlags CullMode => VkCullModeFlags.None;
 
@@ -74,7 +74,7 @@ public class DbgPrimSkybox : DbgPrim
 
     public override VkPrimitiveTopology Topology => VkPrimitiveTopology.TriangleList;
 
-    public override uint VertexSize => throw new NotImplementedException();
+    public override uint VertexSize => throw new NotSupportedException();
 
     public void AddTri(Vector3 a, Vector3 b, Vector3 c)
     {

@@ -165,7 +165,6 @@ public class Lua50Decompiler : ILanguageDecompiler
             var c = (instruction >> 6) & 0x1FF;
             var bx = (instruction >> 6) & 0x3FFFF;
             var sbx = (int)bx - (((1 << 18) - 1) >> 1);
-            var args = "";
 
             builder.Append($"{i / 4:D4}: ");
             

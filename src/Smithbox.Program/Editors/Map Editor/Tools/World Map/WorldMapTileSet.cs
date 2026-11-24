@@ -519,5 +519,6 @@ public class WorldMapTileSet : IDisposable
         Textures.Clear();
         MappedData?.Dispose();
         MappedData = null;
+        GC.SuppressFinalize(this);
     }
 }

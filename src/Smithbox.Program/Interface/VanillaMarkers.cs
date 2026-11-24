@@ -1,3 +1,4 @@
+#nullable enable annotations
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;

@@ -427,7 +427,7 @@ namespace SoulsFormats
             {
                 bw.Position = offsets[0];
                 byte[] bytes = new byte[stateSize];
-                bw.Stream.Read(bytes, 0, stateSize);
+                bw.Stream.ReadExactly(bytes, 0, stateSize);
                 bw.Position = offsets[1];
                 bw.WriteBytes(bytes);
             }

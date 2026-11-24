@@ -143,7 +143,7 @@ namespace SoulsFormats
         public abstract class Model : Entry, IMsbModel
         {
             // Main
-            public string Name { get; set; }
+            public new string Name { get; set; }
 
             // Index among models of the same type
             public int TypeIndex { get; set; }

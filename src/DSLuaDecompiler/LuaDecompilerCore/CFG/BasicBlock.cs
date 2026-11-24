@@ -30,7 +30,7 @@ namespace LuaDecompilerCore.CFG
         // Live analysis stuff
         public int BlockIndex;
         public HashSet<Identifier> KilledIdentifiers;
-        public HashSet<Identifier> UpwardExposed;
+        public HashSet<Identifier> UpwardExposed = null!; // set by Function's liveness analysis
         public HashSet<Identifier> LiveOut;
 
         /// <summary>

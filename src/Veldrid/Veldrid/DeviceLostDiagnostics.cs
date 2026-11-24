@@ -114,22 +114,25 @@ namespace Veldrid
                 if (count == 0)
                     continue;
 
-                VkCheckpointDataNV* data = stackalloc VkCheckpointDataNV[(int)count];
+                // Heap array rather than stackalloc: the count comes from the driver and this runs once per queue (CA2014)
+                VkCheckpointDataNV[] buffer = new VkCheckpointDataNV[count];
                 for (uint c = 0; c < count; c++)
-                    data[c] = new VkCheckpointDataNV();
+                    buffer[c] = new VkCheckpointDataNV();
 
-                vkGetQueueCheckpointDataNV(_queues[i], &count, data);
+                fixed (VkCheckpointDataNV* data = buffer)
+                    vkGetQueueCheckpointDataNV(_queues[i], &count, data);
+                var checkpoints = buffer.AsSpan(0, (int)count);
 
                 long lowest = long.MaxValue;
                 long highest = 0;
 
-                for (uint c = 0; c < count; c++)
+                foreach (ref readonly var checkpoint in checkpoints)
                 {
-                    long id = (long)data[c].pCheckpointMarker;
+                    long id = (long)checkpoint.pCheckpointMarker;
                     bool stillKnown = id > 0 && _nextCheckpoint - id < MaxCheckpoints;
                     string name = stillKnown ? _checkpointNames[id % MaxCheckpoints] : "(overwritten)";
 
-                    report.AppendLine($"    #{id} at {data[c].stage}: {name}");
+                    report.AppendLine($"    #{id} at {checkpoint.stage}: {name}");
 
                     if (id > 0)
                     {

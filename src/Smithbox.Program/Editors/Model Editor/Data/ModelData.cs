@@ -110,6 +110,7 @@ public class ModelData : IDisposable
         PrimaryBank = null;
 
         ModelMeta = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

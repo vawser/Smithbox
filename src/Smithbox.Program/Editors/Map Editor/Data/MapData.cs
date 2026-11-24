@@ -652,6 +652,7 @@ public class MapData : IDisposable
 
         AssetMasks = null;
         SpawnStates = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

@@ -69,6 +69,7 @@ public class MapBank : IDisposable
         }
 
         Maps = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }
@@ -143,6 +144,7 @@ public class MapWrapper : IDisposable
     {
         MSB = null;
         MapContainer = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

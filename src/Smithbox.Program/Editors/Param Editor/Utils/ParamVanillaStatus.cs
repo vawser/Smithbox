@@ -1,3 +1,4 @@
+#nullable enable annotations
 using Andre.Formats;
 using StudioCore.Editors.Common;
 using System.Collections.Generic;

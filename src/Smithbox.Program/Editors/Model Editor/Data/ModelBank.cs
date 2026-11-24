@@ -149,6 +149,7 @@ public class ModelBank : IDisposable
         Assets = null;
         Parts = null;
         Collisions = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

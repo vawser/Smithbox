@@ -187,6 +187,7 @@ namespace StudioCore.Logger.GUI
         public void Dispose()
         {
             TaskLogs.Unsubscribe(_subscription);
+            GC.SuppressFinalize(this);
         }
         
         // =============statics=============

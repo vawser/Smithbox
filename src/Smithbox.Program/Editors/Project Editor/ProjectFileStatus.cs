@@ -1,3 +1,4 @@
+#nullable enable annotations
 using Andre.IO.VFS;
 using SoulsFormats;
 using StudioCore.Editors.Common;

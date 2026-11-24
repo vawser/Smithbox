@@ -15,7 +15,7 @@ namespace StudioCore.Logger
     public void SetScopeProvider(IExternalScopeProvider? scopes)
         => _scopes = scopes;
 
-    public void Dispose() { }
+    public void Dispose() { GC.SuppressFinalize(this); }
 
     private sealed class TaskLogsLogger : ILogger
     {

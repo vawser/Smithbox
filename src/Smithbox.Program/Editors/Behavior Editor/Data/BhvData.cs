@@ -39,5 +39,6 @@ public class BhvData : IDisposable
     {
         PrimaryBank = null;
         Enums = null;
+        GC.SuppressFinalize(this);
     }
 }

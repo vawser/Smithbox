@@ -73,7 +73,7 @@ namespace SoulsFormats.Util
             byte[] input = new byte[paddedLength];
             byte[] output = new byte[cipher.GetOutputSize(paddedLength)];
 
-            inputStream.Read(input, 0, inputLength);
+            inputStream.ReadExactly(input, 0, inputLength);
             int len = cipher.ProcessBytes(input, 0, input.Length, output, 0);
             cipher.DoFinal(output, len);
             return output;

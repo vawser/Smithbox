@@ -17,7 +17,7 @@ namespace LuaDecompilerCore.IR
 
         public Dictionary<uint, Label> Labels { get; }
         
-        public LuaFile.Constant[] Constants { get; set; }
+        public LuaFile.Constant[] Constants { get; set; } = Array.Empty<LuaFile.Constant>();
 
         /// <summary>
         /// When the CFG has been converted to an AST
@@ -239,14 +239,6 @@ namespace LuaDecompilerCore.IR
             foreach (var register in allRegistersArray)
             {
                 identifierToId[register] = index++;
-            }
-
-            void BitSetFromSet(BitSetArray.BitSet target, HashSet<Identifier> set, bool invert = false)
-            {
-                foreach (var identifier in set)
-                {
-                    target[identifierToId[identifier]] = !invert;
-                }
             }
 
             HashSet<Identifier> SetFromBitSet(BitSetArray.BitSet set)

@@ -253,5 +253,6 @@ public class SoundEditorScreen : EditorScreen, IDisposable
             view.Dispose();
 
         Player.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

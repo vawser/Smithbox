@@ -396,5 +396,6 @@ public class ViewportEnvironment : IDisposable
         ReleaseTextures(new HashSet<string>());
         Table?.Dispose();
         Table = null;
+        GC.SuppressFinalize(this);
     }
 }

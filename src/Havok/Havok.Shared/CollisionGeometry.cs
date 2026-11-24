@@ -199,8 +199,6 @@ public static class CollisionGeometry
     /// <summary>A box about the origin: 12 triangles, wound outward.</summary>
     public static void AppendBox(Vector3 half, Matrix4x4 transform, List<Vector3> triangles)
     {
-        Vector3 C(int x, int y, int z) => new(x * half.X, y * half.Y, z * half.Z);
-
         // Each face by its outward axis and two in-plane axes, as a quad of two triangles
         foreach (var (n, u, v) in new[]
         {

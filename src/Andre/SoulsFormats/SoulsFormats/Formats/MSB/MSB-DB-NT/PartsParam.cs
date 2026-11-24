@@ -1663,8 +1663,8 @@ public partial class MSB_DB_NT
             public short Unk3E { get; set; } = -1;
             public int[] SpEffectSetParamIds { get; set; } = new int[4];
 
-            private int Unk50 { get; set; } = 0;
-            private int Unk54 { get; set; } = 0;
+            private new int Unk50 { get; set; } = 0;
+            private new int Unk54 { get; set; } = 0;
             private int Unk58 { get; set; } = 0;
             private int Unk5C { get; set; } = 0;
 
@@ -2642,7 +2642,7 @@ public partial class MSB_DB_NT
             public int PartIndex4 { get; set; } = -1;
             public int PartIndex5 { get; set; } = -1;
 
-            private int Unk50 { get; set; } = -1;
+            private new int Unk50 { get; set; } = -1;
             public int PartIndex6 { get; set; } = -1;
             public int Unk58 { get; set; } = -1;
             private int Unk5C { get; set; } = -1;

@@ -31,7 +31,7 @@ namespace Andre.IO.VFS
             return false;
         }
 
-        public override bool TryGetFile(VirtualFileSystem.VFSPath path, out VirtualFile file)
+        public override bool TryGetFile(VirtualFileSystem.VFSPath path, [MaybeNullWhen(false)] out VirtualFile file)
         {
             foreach (var fs in this.innerFileSystems)
             {

@@ -484,6 +484,7 @@ public class BehaviorViewer : IDisposable
         Panel.StopAll();
         (Viewport as VulkanViewport)?.Dispose();
         Viewport = null;
+        GC.SuppressFinalize(this);
     }
     #endregion
 }

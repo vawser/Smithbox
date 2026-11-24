@@ -1,3 +1,4 @@
+#nullable enable annotations
 using Havok;
 using StudioCore.Editors.Common;
 using System;

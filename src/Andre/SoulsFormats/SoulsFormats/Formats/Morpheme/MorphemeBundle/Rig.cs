@@ -54,7 +54,7 @@ namespace SoulsFormats.Formats.Morpheme.MorphemeBundle
             Read(br);
         }
 
-        public void Read(BinaryReaderEx br)
+        public override void Read(BinaryReaderEx br)
         {
             base.Read(br);
             var start = br.Position;

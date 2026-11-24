@@ -1132,5 +1132,6 @@ public class FxBank : IDisposable
     {
         _cancel?.Cancel();
         Entries = new();
+        GC.SuppressFinalize(this);
     }
 }

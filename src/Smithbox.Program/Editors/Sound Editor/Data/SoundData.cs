@@ -225,5 +225,6 @@ public class SoundData : IDisposable
         Containers = new();
         _wemPaths.Clear();
         VgmstreamCli.ClearTempFiles();
+        GC.SuppressFinalize(this);
     }
 }

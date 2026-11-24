@@ -122,7 +122,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
     public ITargetBlock<LoadFileResourceRequest> LoadFileResourceRequest => _loadFileResourcesTransform;
 
     public ITargetBlock<LoadTPFTextureResourceRequest> LoadTPFTextureResourceRequest =>
-        throw new NotImplementedException();
+        throw new NotSupportedException();
 }
 
 public class TextureLoadPipeline : IResourceLoadPipeline
@@ -173,8 +173,8 @@ public class TextureLoadPipeline : IResourceLoadPipeline
         }, options);
     }
 
-    public ITargetBlock<LoadByteResourceRequest> LoadByteResourceBlock => throw new NotImplementedException();
-    public ITargetBlock<LoadFileResourceRequest> LoadFileResourceRequest => throw new NotImplementedException();
+    public ITargetBlock<LoadByteResourceRequest> LoadByteResourceBlock => throw new NotSupportedException();
+    public ITargetBlock<LoadFileResourceRequest> LoadFileResourceRequest => throw new NotSupportedException();
 
     public ITargetBlock<LoadTPFTextureResourceRequest> LoadTPFTextureResourceRequest =>
         _loadTPFResourcesTransform;
