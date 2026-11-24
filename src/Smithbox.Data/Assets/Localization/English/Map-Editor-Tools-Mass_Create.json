@@ -2,7 +2,7 @@
   "Entries": [
     { "Key": "MAP_MassCreate_Tab_Create", "Text": "Create" },
     { "Key": "MAP_MassCreate_Tab_Mass_Create", "Text": "Mass Create" },
-    { "Key": "MAP_MassCreate_Hint", "Text": "Add a part for every character, or every asset of a category, to the target map. They are laid out in a grid that starts at the placement orb." },
+    { "Key": "MAP_MassCreate_Hint", "Text": "Add a part for every character, or for every asset in a category, to the target map. The parts are laid out in a grid starting at the placement orb." },
 
     { "Key": "MAP_MassCreate_Target_Map_Header", "Text": "Target Map" },
     { "Key": "MAP_MassCreate_Target_Map_Header_TT", "Text": "The map to create the parts in." },
@@ -18,19 +18,19 @@
     { "Key": "MAP_MassCreate_No_Asset_Part", "Text": "This game's MSB has no asset or object part, so assets can't be created this way." },
 
     { "Key": "MAP_MassCreate_Category_Header", "Text": "Asset Category" },
-    { "Key": "MAP_MassCreate_Category_Header_TT", "Text": "The category of assets to create. For AEG assets this is the AEG number (AEG099 for AEG099_001); for objects it is the first two digits (o00 for o000100)." },
+    { "Key": "MAP_MassCreate_Category_Header_TT", "Text": "The asset category to create. For AEG assets, this is the AEG number (AEG099 for AEG099_001); for objects, it is the first two digits (o00 for o000100)." },
     { "Key": "MAP_MassCreate_Category_TT", "Text": "The category to create, with the number of assets in it." },
     { "Key": "MAP_MassCreate_No_Assets", "Text": "No assets were found in the project's files." },
 
     { "Key": "MAP_MassCreate_Filter_Header", "Text": "Filter" },
-    { "Key": "MAP_MassCreate_Filter_Header_TT", "Text": "Only create the models that match the filter. Leave it empty to create all of them." },
+    { "Key": "MAP_MassCreate_Filter_Header_TT", "Text": "Only create models that match the filter. Leave empty to create all of them." },
 
     { "Key": "MAP_MassCreate_Layout_Header", "Text": "Layout" },
-    { "Key": "MAP_MassCreate_Layout_Header_TT", "Text": "How the parts are arranged. Each row runs along +X from the placement orb, and rows are added along +Z. When a grid is full, the next one starts beside it." },
+    { "Key": "MAP_MassCreate_Layout_Header_TT", "Text": "How the parts are arranged. Each row runs along +X from the placement orb, and rows are added along +Z. When a grid is full, the next one starts next to it." },
     { "Key": "MAP_MassCreate_Row_Length", "Text": "Per Row" },
     { "Key": "MAP_MassCreate_Row_Length_TT", "Text": "The number of parts in each row." },
     { "Key": "MAP_MassCreate_Max_Rows", "Text": "Max Rows" },
-    { "Key": "MAP_MassCreate_Max_Rows_TT", "Text": "The number of rows in a grid. Parts beyond this start a new grid beside the last." },
+    { "Key": "MAP_MassCreate_Max_Rows_TT", "Text": "The number of rows in a grid. Further parts start a new grid next to the last." },
     { "Key": "MAP_MassCreate_Layout_Summary", "Text": "{0} parts, in rows of {1}, up to {2} rows per grid: {3} grid(s)." },
 
     { "Key": "MAP_MassCreate_Spacing_Header", "Text": "Spacing" },
@@ -45,13 +45,13 @@
     { "Key": "MAP_MassCreate_Actions_Header", "Text": "Actions" },
     { "Key": "MAP_MassCreate_Actions_Header_TT", "Text": "" },
     { "Key": "MAP_MassCreate_Create", "Text": "Create {0} Parts" },
-    { "Key": "MAP_MassCreate_Create_TT", "Text": "Create the parts in the target map. This is a single action, so one undo removes all of them." },
+    { "Key": "MAP_MassCreate_Create_TT", "Text": "Create the parts in the target map. This is one action, so a single undo removes them all." },
     { "Key": "MAP_MassCreate_Progress", "Text": "Creating {0} / {1}" },
     { "Key": "MAP_MassCreate_Progress_Name", "Text": "Mass Created Parts" },
     { "Key": "MAP_MassCreate_Done", "Text": "Created {0} parts in {1}." },
 
     { "Key": "MAP_MassCreate_Models_Header", "Text": "Models ({0})" },
-    { "Key": "MAP_MassCreate_Models_Header_TT", "Text": "The models a part will be created for, in the order they are placed." },
+    { "Key": "MAP_MassCreate_Models_Header_TT", "Text": "The models to create parts for, in placement order." },
     { "Key": "MAP_MassCreate_No_Models", "Text": "No models match." }
   ]
 }

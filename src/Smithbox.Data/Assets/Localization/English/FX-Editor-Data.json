@@ -38,7 +38,7 @@
     },
     {
       "Key": "FX_Data_Save_Busy",
-      "Text": "[FX Editor] A save is still running; wait for it to finish."
+      "Text": "[FX Editor] A save is still running. Wait for it to finish."
     },
     {
       "Key": "FX_Data_Save_Start",

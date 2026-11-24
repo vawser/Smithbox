@@ -42,7 +42,7 @@
     },
     {
       "Key": "MAP_Filter_Header_Patrol_Route_Visibility_Action_Clear_TT",
-      "Text": "Clear the display of connections between patrol route nodes."
+      "Text": "Hide the connections between patrol route nodes."
     },
     {
       "Key": "MAP_Collision_Header_Low",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "MAP_Collision_Header_Low_TT",
-      "Text": "Visible collision will use the low-detail mesh.\nUsed for standard collision."
+      "Text": "Show collision using the low-detail mesh.\nUsed for standard collision."
     },
     {
       "Key": "MAP_Collision_Header_High",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "MAP_Collision_Header_High_TT",
-      "Text": "Visible collision will use the high-detail mesh.\nUsed for IK."
+      "Text": "Show collision using the high-detail mesh.\nUsed for IK."
     },
     {
       "Key": "MAP_Collision_Header_Fall_Protection",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "MAP_Collision_Header_Fall_Protection_TT",
-      "Text": "Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection."
+      "Text": "Show collision using the fall protection mesh.\nUsed for enemy fall protection."
     },
     {
       "Key": "MAP_Options_Header_Options",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "MAP_Options_Action_Unload_Current_TT",
-      "Text": "Unload the currently loaded and selected map."
+      "Text": "Unload the selected map."
     },
     {
       "Key": "MAP_Options_Action_Unload_All",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "MAP_Options_Dialog_Unload_Current",
-      "Text": "Unload current?"
+      "Text": "Unload the current map?"
     },
     {
       "Key": "MAP_Options_Dialog_Confirm",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "MAP_Universe_Save_Map_Unsupported",
-      "Text": "Saving maps is not supported for {0}."
+      "Text": "Saving maps isn't supported for {0}."
     },
     {
       "Key": "MAP_Universe_Dialog_Unload_Unsaved",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "MAP_Options_Header_List_Filters_TT",
-      "Text": "Select a list filter to narrow the map list down to a pre-defined set of maps."
+      "Text": "Select a list filter to narrow the map list to a predefined set of maps."
     },
     {
       "Key": "MAP_Options_ListFilter_Action_Select",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "MAP_Options_ListFilter_Action_Clear_TT",
-      "Text": "Clear the current list filter, resetting the filtering of the map list."
+      "Text": "Clear the current list filter and reset the map list."
     },
     {
       "Key": "MAP_Options_ListFilter_Action_Create",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "MAP_Options_ListFilter_Action_Create_TT",
-      "Text": "Create a new list filter. The filter terms support regular expressions."
+      "Text": "Create a list filter. Filter terms support regular expressions."
     },
     {
       "Key": "MAP_Options_ListFilter_Action_Edit",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Tree_TT",
-      "Text": "Display the content in the object type tree form."
+      "Text": "Display the content as a tree grouped by object type."
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Flat",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "MAP_Options_ContentDisplay_Action_Flat_TT",
-      "Text": "Display the content in the flat form."
+      "Text": "Display the content as a flat list."
     },
     {
       "Key": "MAP_Options_Header_NameDisplay",
@@ -206,11 +206,11 @@
     },
     {
       "Key": "MAP_Options_NameDisplay_Action_Internal_Text_TT",
-      "Text": "Display the internal map object name with the associated FMG name as the alias."
+      "Text": "Display the internal map object name, with the associated FMG name as the alias."
     },
     {
       "Key": "MAP_SaveException_Error_Log",
-      "Text": "{0}\nSelect referring map entity?"
+      "Text": "{0}\nSelect the referring map entity?"
     },
     {
       "Key": "MAP_SaveException_Error_Log_Title",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "MAP_SaveException_Error_MapEntity",
-      "Text": "Unable to find map entity {0}"
+      "Text": "Couldn't find map entity {0}."
     },
     {
       "Key": "MAP_Options_LightAtlas_Header",
@@ -230,7 +230,7 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Adjust_Toggle_TT",
-      "Text": "If enabled, when a part is renamed, if a light atlas entry points to it, the name reference within the entry is updated to the new name."
+      "Text": "When enabled, renaming a part also updates the name in any light atlas entry that points to it."
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Add_Toggle",
@@ -238,7 +238,7 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Add_Toggle_TT",
-      "Text": "If enabled, when map pieces or objects are added to a map or have their model changed, new light atlas entries pointing to them are created, inheriting the properties of the last part that shares the same model. If no part shares the model, you are asked whether to add a default entry."
+      "Text": "When enabled, adding map pieces or objects to a map, or changing their model, creates light atlas entries for them, copying the properties of the last part with the same model. If no part has the model, you are asked whether to add a default entry."
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle",
@@ -246,7 +246,7 @@
     },
     {
       "Key": "MAP_Options_LightAtlas_Automatic_Delete_Toggle_TT",
-      "Text": "If enabled, when parts are deleted, moved to another map or have their model changed, if there is a light atlas entry pointing to that part, the entry is deleted."
+      "Text": "When enabled, deleting parts, moving them to another map or changing their model also deletes any light atlas entry that points to them."
     },
     {
       "Key": "MAP_LightAtlas_Dialog_Add_Default_Title",
@@ -258,23 +258,23 @@
     },
     {
       "Key": "MAP_Universe_Log_Map_Already_Loading",
-      "Text": "A map is already in the process of loading."
+      "Text": "A map is already loading."
     },
     {
       "Key": "MAP_Universe_Log_DS2_Params_Not_Ready_for_Map",
-      "Text": "Cannot load DS2 maps when params are not loaded."
+      "Text": "Can't load DS2 maps until the params are loaded."
     },
     {
       "Key": "MAP_Universe_Log_Map_Already_Loaded",
-      "Text": "Map already loaded: {0}"
+      "Text": "The map is already loaded: {0}"
     },
     {
       "Key": "MAP_Universe_Map_Load_Failed",
-      "Text": "Map Load Failed (debug build)"
+      "Text": "Map load failed (debug build)"
     },
     {
       "Key": "MAP_Universe_DuplicateCheck_Hit",
-      "Text": "Duplicate EntityID: {0} is being used by multiple regions {1} and {2}"
+      "Text": "Duplicate EntityID: {0} is used by multiple regions, {1} and {2}."
     },
     {
       "Key": "MAP_Window_Map_List",
@@ -310,7 +310,7 @@
     },
     {
       "Key": "MAP_List_Save_Failed_TT",
-      "Text": "The last save of this map failed:\n{0}\n\nIt stays marked until the map saves."
+      "Text": "The last save of this map failed:\n{0}\n\nIt stays marked until the map is saved."
     },
     {
       "Key": "MAP_List_Loading_Marker",
@@ -334,15 +334,15 @@
     },
     {
       "Key": "MAP_List_Loading_Batch_TT",
-      "Text": "Loading now: {0}\nQueued: {1}\nOnce all are loaded, the map you asked for is made the active map, unless you pick another one meanwhile."
+      "Text": "Loading now: {0}\nQueued: {1}\nOnce all are loaded, the map you requested becomes the active map, unless you pick another in the meantime."
     },
     {
       "Key": "MAP_List_BTL_Variant_All_TT",
-      "Text": "Viewport lights: only the _0000 BTL file of each map is lit with, where a map has several (_0000, _0001, ...), as the game uses one of them.\n\nClick to light with the lights of all of the map's BTL files."
+      "Text": "Viewport lights: only each map's _0000 BTL file is used where a map has several (_0000, _0001, ...), because the game uses one of them.\n\nClick to use the lights of all the map's BTL files."
     },
     {
       "Key": "MAP_List_BTL_Variant_Default_TT",
-      "Text": "Viewport lights: the lights of all of each map's BTL files are lit with.\n\nClick to light only with the _0000 BTL file, where a map has several (_0000, _0001, ...), as the game uses one of them."
+      "Text": "Viewport lights: the lights of all each map's BTL files are used.\n\nClick to use only the _0000 BTL file where a map has several (_0000, _0001, ...), because the game uses one of them."
     },
     {
       "Key": "MAP_Tile_Outline_Show_TT",
@@ -370,11 +370,11 @@
     },
     {
       "Key": "MAP_Forbidden_Region_Show_TT",
-      "Text": "Show forbidden regions: the boxes from each loaded map's .mfr file. Inside a Save Limit box the game won't save the player's position; inside a Multiplay Limit box multiplayer is limited.\n\nThese boxes aren't MSB entries: they are display only.\n\nRight-click to pick which types to show and their colours."
+      "Text": "Show forbidden regions: the boxes from each loaded map's .mfr file. Inside a Save Limit box, the game doesn't save the player's position; inside a Multiplay Limit box, multiplayer is limited.\n\nThese boxes aren't MSB entries; they are for display only.\n\nRight-click to choose which types to show and their colours."
     },
     {
       "Key": "MAP_Forbidden_Region_Hide_TT",
-      "Text": "Hide forbidden regions.\n\nRight-click to pick which types to show and their colours."
+      "Text": "Hide forbidden regions.\n\nRight-click to choose which types to show and their colours."
     },
     {
       "Key": "MAP_Forbidden_Region_Options_Header",
@@ -434,11 +434,11 @@
     },
     {
       "Key": "MAP_List_Load_Adjacent_TT",
-      "Text": "Loads:\n{0}"
+      "Text": "Load:\n{0}"
     },
     {
       "Key": "MAP_List_Load_Adjacent_None_TT",
-      "Text": "No tile of the same size there to load: it doesn't exist, or is already loaded."
+      "Text": "No tile of the same size to load there: it doesn't exist, or is already loaded."
     },
     {
       "Key": "MAP_List_Load_Maps",
@@ -466,19 +466,19 @@
     },
     {
       "Key": "MAP_Universe_Unload_Save_Incomplete",
-      "Text": "{0} still has unsaved changes after saving, so it was kept loaded. Check the log for the file that failed."
+      "Text": "{0} still has unsaved changes after saving, so it stays loaded. Check the log for the file that failed."
     },
     {
       "Key": "MAP_Delete_Dialog_Broken_References",
-      "Text": "{0} references to the objects being deleted will break, and the map will fail to save until they are fixed:\n\n{1}\n\nYes: delete and clear these references\nNo: delete and keep them\nCancel: don't delete"
+      "Text": "{0} references to the objects being deleted will break, and the map won't save until they are fixed:\n\n{1}\n\nYes: delete and clear these references\nNo: delete and keep them\nCancel: don't delete"
     },
     {
       "Key": "MAP_Move_Dialog_Broken_References",
-      "Text": "{0} references between the objects being moved and those staying behind will break, as references only work within a map:\n\n{1}\n\nYes: move and clear these references\nNo: move and keep them\nCancel: don't move"
+      "Text": "{0} references between the objects being moved and those staying will break, because references only work within a map:\n\n{1}\n\nYes: move and clear these references\nNo: move and keep them\nCancel: don't move"
     },
     {
       "Key": "MAP_Move_Dialog_Name_Clash",
-      "Text": "{0} already has objects with these names, so the move was not made, as name references could no longer tell them apart:\n\n{1}{2}\n\nRename the objects (with Referenced Rename on, so references follow) and move them again."
+      "Text": "{0} already has objects with these names, so the move wasn't made: name references could no longer tell them apart.\n\n{1}{2}\n\nRename the objects (with Referenced Rename on, so references are updated) and move them again."
     },
     {
       "Key": "MAP_Move_Dialog_Name_Clash_More",
@@ -486,11 +486,11 @@
     },
     {
       "Key": "MAP_Move_No_Target_BTL",
-      "Text": "The selection holds lights, but no BTL of the target map has been picked."
+      "Text": "The selection contains lights, but no BTL of the target map is selected."
     },
     {
       "Key": "MAP_Rename_Name_Clash",
-      "Text": "\"{0}\" is already used by {1} in {2}, so the rename was not made: name references could no longer tell them apart."
+      "Text": "\"{0}\" is already used by {1} in {2}, so the rename wasn't made: name references could no longer tell them apart."
     },
     {
       "Key": "MAP_Rename_References_Will_Break",
@@ -514,7 +514,7 @@
     },
     {
       "Key": "MAP_Rename_Enable_Referenced_TT",
-      "Text": "Turns on Referenced Rename, so renaming an object also rewrites the name fields that point at it."
+      "Text": "Turn on Referenced Rename, so renaming an object also updates the name fields that point at it."
     },
     {
       "Key": "MAP_SaveException_Missing_Reference",
@@ -538,7 +538,7 @@
     },
     {
       "Key": "MAP_Target_Picker_Active_Map_TT",
-      "Text": "Follows the active map: the map of the last selected object, or the one picked in the Map List."
+      "Text": "Follows the active map: the map of the last selected object, or the map picked in the Map List."
     },
     {
       "Key": "MAP_Target_Picker_None",
@@ -550,7 +550,7 @@
     },
     {
       "Key": "MAP_Viewport_Context_Copy_TT",
-      "Text": "Copies the selected map objects, to paste into the active map.\n\nShortcut: {0}"
+      "Text": "Copy the selected map objects, to paste into the active map.\n\nShortcut: {0}"
     },
     {
       "Key": "MAP_Viewport_Context_Paste",

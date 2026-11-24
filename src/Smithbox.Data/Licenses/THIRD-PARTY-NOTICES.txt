@@ -63,6 +63,35 @@ xenia (texture tiling maths adapted in SoulsFormats TPF/Headerizer.cs)
   https://github.com/xenia-canary/xenia-canary
 
 
+Data, names and conventions derived from other projects
+-------------------------------------------------------
+These are credited here instead of in the user interface text.
+
+DarkScript3 (EMEVD Editor: the "Reference" arg types in the imported reference EMEDFs)
+  https://github.com/AinTunez/DarkScript3
+  License: see upstream (not yet verified for the bundled EMEDF data).
+
+fxr (FX Editor: Assets/FXR schema, display units, modifier tables and the Hermite
+curve approximation)
+  Copyright (c) EvenTorset. https://github.com/EvenTorset/fxr
+  License: see upstream (not yet verified for the bundled schema data).
+
+ESDLang (ESD Editor: call.Done() / call.Get() expression names)
+  Apache-2.0. See Licenses/ESDLang/LICENSE.txt.
+
+SoulsFormats (Map Editor: NVM triangle flag names; Param Mass Edit: field data type names)
+  GPL-3.0. See Licenses/SoulsFormats/LICENSE.txt.
+
+OBJ2HKX (Havok collision material property names, e.g. Safe1-3 and Slide1-2)
+  License: see upstream (not yet verified).
+
+gfx-reloader (Scaleform Reloader design; previously credited in the reloader's help text)
+  MIT. Copyright (c) 2026 lugia19. See Licenses/gfx-reloader/LICENSE.txt.
+
+Smithbox (previously credited in the Help menu and Settings > About as "Developed by Vawser")
+  Copyright (C) 2025-2026 Vawser and Smithbox contributors. See Licenses/Smithbox/LICENSE.txt.
+
+
 Native libraries
 ----------------
 Dear ImGui              MIT    Copyright (c) 2014-2025 Omar Cornut. https://github.com/ocornut/imgui

@@ -18,7 +18,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Description",
-      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume. Boxes are linked to volumes as the game links them: by the volume ID property when it is 0 or more, or else by the last three characters of the name (Env_Box203 is volume 203). The game skips boxes that aren't a Box shape or whose name isn't exactly 10 characters. Vanilla boxes leave the property at -1; Fill Volume IDs writes the ID the name gives into it, which changes nothing in game but keeps the link if the box is renamed. One undo reverts it."
+      "Text": "Each environment box (EnvMapEffectBox) lights the area inside it with a baked irradiance volume. Boxes link to volumes the same way the game links them: by the volume ID property when it is 0 or more, or otherwise by the last three characters of the name (Env_Box203 is volume 203). The game skips boxes that aren't a Box shape or whose name isn't exactly 10 characters. Vanilla boxes leave the property at -1. Fill Volume IDs writes the ID from the name into the property, which changes nothing in game but keeps the link if the box is renamed. One undo reverts it."
     },
     {
       "Key": "MAP_GI_Tool_Description_AC6",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Fill_TT",
-      "Text": "Set the volume ID property of the boxes that leave it at -1 to the ID their name gives. The game then finds the same volume, through the property. The map is marked as changed and is not saved until you save it."
+      "Text": "Set the volume ID property of boxes that leave it at -1 to the ID from their name. The game then finds the same volume through the property. The map is marked as changed, but isn't saved until you save it."
     },
     {
       "Key": "MAP_GI_Tool_Fill_Log",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "MAP_GI_Tool_Status_Linked_Property",
-      "Text": "Linked by the ID property, which the game uses over the name"
+      "Text": "Linked by the ID property, which the game uses instead of the name"
     },
     {
       "Key": "MAP_GI_Tool_Status_Linked_Property_No_Volume",
@@ -82,15 +82,15 @@
     },
     {
       "Key": "MAP_GI_Tool_Status_Not_Digits",
-      "Text": "The name doesn't end in three digits, so the game reads some other number from it."
+      "Text": "The name doesn't end in three digits, so the game reads a different number from it."
     },
     {
       "Key": "MAP_GI_Tool_Status_Skipped_Shape",
-      "Text": "The game skips this box: its shape is not a Box"
+      "Text": "The game skips this box: its shape isn't a Box"
     },
     {
       "Key": "MAP_GI_Tool_Status_Skipped_Name",
-      "Text": "The game skips this box: its name is not exactly 10 characters"
+      "Text": "The game skips this box: its name isn't exactly 10 characters"
     }
   ]
 }

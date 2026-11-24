@@ -2,7 +2,7 @@
   "Entries": [
     { "Key": "MAP_Ruler_Header", "Text": "Ruler" },
     { "Key": "MAP_ToolWindow_View_Toggle_Ruler", "Text": "Ruler" },
-    { "Key": "MAP_Ruler_Description", "Text": "Measures the distance between two points in the viewport. Place the points by clicking on what the viewport shows, then click a point's sphere to move it with the gizmo. The ruler isn't saved with the map." },
+    { "Key": "MAP_Ruler_Description", "Text": "Measure the distance between two points in the viewport. Click on what the viewport shows to place the points, then click a point's sphere to move it with the gizmo. The ruler isn't saved with the map." },
     { "Key": "MAP_Ruler_Label", "Text": "{0} m" },
 
     { "Key": "MAP_Ruler_Measure_Header", "Text": "Measure" },
@@ -10,7 +10,7 @@
     { "Key": "MAP_Ruler_Measure", "Text": "Measure" },
     { "Key": "MAP_Ruler_Measure_TT", "Text": "Click in the viewport to place the start point, then again to place the end point. Points land on the surface under the cursor." },
     { "Key": "MAP_Ruler_Cancel", "Text": "Cancel Placing" },
-    { "Key": "MAP_Ruler_Cancel_TT", "Text": "Stop placing points, keeping those already placed." },
+    { "Key": "MAP_Ruler_Cancel_TT", "Text": "Stop placing points, keeping any already placed." },
     { "Key": "MAP_Ruler_Clear", "Text": "Clear" },
     { "Key": "MAP_Ruler_Clear_TT", "Text": "Remove both points." },
     { "Key": "MAP_Ruler_Status_Placing_Start", "Text": "Click in the viewport to place the start point." },
@@ -35,7 +35,7 @@
     { "Key": "MAP_Ruler_Place_TT", "Text": "Click in the viewport to place this point on the surface under the cursor." },
     { "Key": "MAP_Ruler_Gizmo", "Text": "Move with Gizmo" },
     { "Key": "MAP_Ruler_Release_Gizmo", "Text": "Release Gizmo" },
-    { "Key": "MAP_Ruler_Gizmo_TT", "Text": "Puts the viewport gizmo on this point, so it can be dragged. Clicking the point's sphere in the viewport does the same; clicking elsewhere lets it go." },
+    { "Key": "MAP_Ruler_Gizmo_TT", "Text": "Put the viewport gizmo on this point, so you can drag it. Clicking the point's sphere in the viewport does the same; clicking elsewhere releases it." },
     { "Key": "MAP_Ruler_From_Selection", "Text": "Use Selection" },
     { "Key": "MAP_Ruler_From_Selection_TT", "Text": "Move this point to the position of the selected map object, or the average position of the selected objects." },
 
@@ -47,6 +47,6 @@
     { "Key": "MAP_Ruler_Selected_Color", "Text": "Gizmo Point Colour" },
     { "Key": "MAP_Ruler_Selected_Color_TT", "Text": "The colour of the point the gizmo is on." },
     { "Key": "MAP_Ruler_Show_Label", "Text": "Show Distance Label" },
-    { "Key": "MAP_Ruler_Show_Label_TT", "Text": "Show the distance in metres beside the middle of the line." }
+    { "Key": "MAP_Ruler_Show_Label_TT", "Text": "Show the distance in metres next to the middle of the line." }
   ]
 }

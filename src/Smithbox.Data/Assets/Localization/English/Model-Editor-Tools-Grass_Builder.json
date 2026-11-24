@@ -3,15 +3,15 @@
     { "Key": "MODEL_GrassBuilder_Header", "Text": "Grass" },
     { "Key": "MODEL_ToolWindow_View_Toggle_Grass_Builder", "Text": "GRASS Builder" },
     { "Key": "MODEL_GrassBuilder_Unsupported_Game", "Text": "GRASS files are used by Sekiro, Elden Ring, Armored Core VI and Nightreign." },
-    { "Key": "MODEL_GrassBuilder_Hint", "Text": "Give the loaded map piece or asset a GRASS file, built from its meshes. The game grows dynamic grass on the GRASS mesh, using the density of each vertex in six slots. The part in the MSB picks the grass type of each slot (its six GrassTypeParam IDs)." },
+    { "Key": "MODEL_GrassBuilder_Hint", "Text": "Give the loaded map piece or asset a GRASS file built from its meshes. The game grows dynamic grass on the GRASS mesh, using each vertex's density in six slots. The MSB part picks the grass type for each slot (its six GrassTypeParam IDs)." },
 
     { "Key": "MODEL_GrassBuilder_File_Header", "Text": "File" },
     { "Key": "MODEL_GrassBuilder_File_Header_TT", "Text": "The GRASS file of the model loaded in this view." },
     { "Key": "MODEL_GrassBuilder_No_Model", "Text": "Load a map piece or asset to build its GRASS file." },
-    { "Key": "MODEL_GrassBuilder_Not_Holder", "Text": "{0} isn't a map piece or asset. Only those use a GRASS file: only map piece and asset parts name the grass types." },
-    { "Key": "MODEL_GrassBuilder_Not_Holder_SDT", "Text": "{0} isn't a map piece. In Sekiro only map pieces (mapbnd) use a GRASS file: no object has one, and only map piece parts name the grass types." },
-    { "Key": "MODEL_GrassBuilder_Not_Holder_AC6", "Text": "{0} isn't an asset. In Armored Core VI only assets (geombnd) use a GRASS file: no map piece part names a grass type." },
-    { "Key": "MODEL_GrassBuilder_Open_World_Tile", "Text": "This is an open-world tile map piece. Their parts name grass types, but no vanilla one holds a GRASS file: the open world's grass comes from somewhere else. Whether the game reads a GRASS file here is untested." },
+    { "Key": "MODEL_GrassBuilder_Not_Holder", "Text": "{0} isn't a map piece or asset. Only these use a GRASS file, because only map piece and asset parts name grass types." },
+    { "Key": "MODEL_GrassBuilder_Not_Holder_SDT", "Text": "{0} isn't a map piece. In Sekiro, only map pieces (mapbnd) use a GRASS file: no object has one, and only map piece parts name grass types." },
+    { "Key": "MODEL_GrassBuilder_Not_Holder_AC6", "Text": "{0} isn't an asset. In Armored Core VI, only assets (geombnd) use a GRASS file: no map piece part names a grass type." },
+    { "Key": "MODEL_GrassBuilder_Open_World_Tile", "Text": "This is an open world tile map piece. Their parts name grass types, but no vanilla one has a GRASS file, because the open world's grass comes from elsewhere. Whether the game reads a GRASS file here is untested." },
     { "Key": "MODEL_GrassBuilder_No_File", "Text": "{0} has no GRASS file. Choose the meshes to grow grass on and the starting densities, then build one." },
     { "Key": "MODEL_GrassBuilder_File_Info", "Text": "{0}: {1} vertices, {2} faces, {3} volumes" },
     { "Key": "MODEL_GrassBuilder_New_File", "Text": "Built here. It is added to the model's binder when the model is saved." },
@@ -27,22 +27,22 @@
     { "Key": "MODEL_GrassBuilder_Mesh_Entry_TT", "Text": "Whether this mesh's triangles go into the GRASS mesh. Ground meshes are the usual choice." },
 
     { "Key": "MODEL_GrassBuilder_Faces_Header", "Text": "Faces" },
-    { "Key": "MODEL_GrassBuilder_Faces_Header_TT", "Text": "Which of the chosen meshes' triangles are kept, by the way they face." },
+    { "Key": "MODEL_GrassBuilder_Faces_Header_TT", "Text": "Which triangles of the chosen meshes are kept, by the direction they face." },
     { "Key": "MODEL_GrassBuilder_Max_Angle_Format", "Text": "Steepest: %.0f degrees from up" },
-    { "Key": "MODEL_GrassBuilder_Max_Angle_TT", "Text": "Triangles facing further from straight up than this are left out. 90 keeps walls, 180 keeps every triangle. Vanilla GRASS files cover walls and overhangs too." },
+    { "Key": "MODEL_GrassBuilder_Max_Angle_TT", "Text": "Triangles facing further from straight up than this are left out. 90 keeps walls; 180 keeps every triangle. Vanilla GRASS files also cover walls and overhangs." },
     { "Key": "MODEL_GrassBuilder_Faces_Kept", "Text": "{0} of {1} triangles kept." },
 
     { "Key": "MODEL_GrassBuilder_Densities_Header", "Text": "Densities" },
-    { "Key": "MODEL_GrassBuilder_Densities_Header_TT", "Text": "The density every vertex starts with, per slot. 0 grows none of that slot's grass, 1 is full density." },
+    { "Key": "MODEL_GrassBuilder_Densities_Header_TT", "Text": "The starting density of every vertex, per slot. 0 grows none of that slot's grass; 1 is full density." },
     { "Key": "MODEL_GrassBuilder_Density_Format", "Text": "Slot {0}: %.2f" },
     { "Key": "MODEL_GrassBuilder_Density_TT", "Text": "The density of slot {0}, whose grass type is the part's grass ID {0} in the MSB (GrassTypeParamID{0} in Sekiro, GrassParamId{0} in Elden Ring)." },
     { "Key": "MODEL_GrassBuilder_No_Density", "Text": "Every slot is 0, so the file would grow no grass." },
 
     { "Key": "MODEL_GrassBuilder_Actions_Header", "Text": "Actions" },
-    { "Key": "MODEL_GrassBuilder_Actions_Header_TT", "Text": "Build the GRASS file from the settings above. The build can be undone." },
+    { "Key": "MODEL_GrassBuilder_Actions_Header_TT", "Text": "Build the GRASS file from the settings above. You can undo the build." },
     { "Key": "MODEL_GrassBuilder_Rebuild_Note", "Text": "This map piece already has a GRASS file. Rebuilding replaces its mesh and painted densities with the settings above." },
     { "Key": "MODEL_GrassBuilder_Build", "Text": "Build GRASS File" },
-    { "Key": "MODEL_GrassBuilder_Build_TT", "Text": "Build {0} from the chosen meshes. It is added to the model's binder, beside its FLVER, when the model is saved." },
+    { "Key": "MODEL_GrassBuilder_Build_TT", "Text": "Build {0} from the chosen meshes. It is added to the model's binder, next to its FLVER, when the model is saved." },
     { "Key": "MODEL_GrassBuilder_Rebuild", "Text": "Rebuild GRASS File" },
     { "Key": "MODEL_GrassBuilder_Rebuild_TT", "Text": "Replace the contents of {0} with a mesh built from the chosen meshes." },
 
@@ -59,6 +59,6 @@
     { "Key": "MODEL_History_Grass_Build", "Text": "Build GRASS file for {0}" },
     { "Key": "MODEL_History_Grass_Rebuild", "Text": "Rebuild GRASS file for {0}" },
 
-    { "Key": "MODEL_Data_Grass_Already_In_Binder", "Text": "Didn't add the built GRASS file: {0} already holds one" }
+    { "Key": "MODEL_Data_Grass_Already_In_Binder", "Text": "Didn't add the built GRASS file: {0} already has one." }
   ]
 }

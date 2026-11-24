@@ -6,15 +6,15 @@
     },
     {
       "Key": "MAT_Shader_Known",
-      "Text": "From the shader table, made from the game's compiled shaders: what this shader does with its texture slots and params. It covers what the viewport uses, so a param without a use may still be read by the game."
+      "Text": "From the shader table, built from the game's compiled shaders: what this shader does with its texture slots and params. It covers what the viewport uses, so the game may still read a param with no listed use."
     },
     {
       "Key": "MAT_Shader_Known_Deformer",
-      "Text": "From the shader table, made from the game's compiled shaders: what this shader does with its texture slots and params. It moves its vertices ({0}). It covers what the viewport uses, so a param without a use may still be read by the game."
+      "Text": "From the shader table, built from the game's compiled shaders: what this shader does with its texture slots and params. It moves its vertices ({0}). It covers what the viewport uses, so the game may still read a param with no listed use."
     },
     {
       "Key": "MAT_Shader_Unknown",
-      "Text": "This game's shader table has nothing for this shader, so its params and slots can't be explained. Only params every shader shares are labelled."
+      "Text": "This game's shader table has no entry for this shader, so its params and slots can't be explained. Only params that every shader shares are labelled."
     },
     {
       "Key": "MAT_Shader_Slot",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "MAT_Shader_No_Sampler_TT",
-      "Text": "The shader samples this slot, but the material has no sampler for it. Some vanilla materials are like this (the FLVER can name the texture), so it isn't a problem by itself."
+      "Text": "The shader samples this slot, but the material has no sampler for it. Some vanilla materials are like this (the FLVER can name the texture), so this isn't a problem by itself."
     },
     {
       "Key": "MAT_Shader_Group_TT",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "MAT_Shader_Templates_Building",
-      "Text": "Gathering what the materials of each shader have..."
+      "Text": "Collecting the contents of each shader's materials..."
     },
     {
       "Key": "MAT_Shader_Missing",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "MAT_Properties_Color_Intensity_TT",
-      "Text": "Intensity: the colour is multiplied by this where the shader gives off light."
+      "Text": "Intensity: where the shader emits light, the colour is multiplied by this."
     },
     {
       "Key": "MAT_ToolWindow_View_Toggle_Shader_Info",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "MAT_ShaderTool_No_Shader",
-      "Text": "The selected material has no shader the shader table can look up."
+      "Text": "The selected material's shader isn't in the shader table."
     },
     {
       "Key": "MAT_ShaderTool_Shader_Header_TT",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "MAT_ShaderTool_Slots_Header_TT",
-      "Text": "Each texture slot the shader samples or the material fills: its sampler, UV group, UV set and what the shader uses it for."
+      "Text": "Each texture slot the shader samples or the material fills: its sampler, UV group, UV set, and what the shader uses it for."
     },
     {
       "Key": "MAT_ShaderTool_No_Slots",
@@ -182,11 +182,11 @@
     },
     {
       "Key": "MAT_ShaderTool_Missing_Header_TT",
-      "Text": "The params and samplers every other material with this shader has, and this one doesn't."
+      "Text": "The params and samplers that every other material with this shader has, but this one doesn't."
     },
     {
       "Key": "MAT_ShaderTool_None_Missing",
-      "Text": "The material has every param and sampler the shader's other materials all have."
+      "Text": "The material has every param and sampler that all the shader's other materials have."
     }
   ]
 }

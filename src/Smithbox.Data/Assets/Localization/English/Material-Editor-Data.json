@@ -2,19 +2,19 @@
   "Entries": [
     {
       "Key": "MAT_Data_Setup_Material_Display_Config_PASS",
-      "Text": "Setup Material Display Configuration."
+      "Text": "Set up the material display configuration."
     },
     {
       "Key": "MAT_Data_Setup_Material_Display_Config_FAIL",
-      "Text": "Failed to setup Material Display Configuration."
+      "Text": "Failed to set up the material display configuration."
     },
     {
       "Key": "MAT_Data_Setup_Primary_Bank_PASS",
-      "Text": "Setup Primary Bank."
+      "Text": "Set up the primary bank."
     },
     {
       "Key": "MAT_Data_Setup_Primary_Bank_FAIL",
-      "Text": "Failed to setup Primary Bank."
+      "Text": "Failed to set up the primary bank."
     },
     {
       "Key": "MAT_Data_Log_Failed_to_Read_MTD",
@@ -54,15 +54,15 @@
     },
     {
       "Key": "MAT_Data_Setup_Material_Meta_PASS",
-      "Text": "Setup Material meta for '{0}'"
+      "Text": "Set up material meta for '{0}'."
     },
     {
       "Key": "MAT_Data_Setup_Material_Meta_FAIL",
-      "Text": "Failed to setup Material meta for '{0}'"
+      "Text": "Failed to set up material meta for '{0}'."
     },
     {
       "Key": "MAT_Data_Deserialize_Material_Meta_FAIL",
-      "Text": "Failed to deserialize Material meta file: {0}"
+      "Text": "Failed to read the material meta file: {0}"
     },
     {
       "Key": "MAT_Data_Binder_Structure_Changed",

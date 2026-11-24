@@ -26,11 +26,11 @@
     },
     {
       "Key": "TEXT_Exporter_Modal_Action_Close_TT",
-      "Text": "Close the modal."
+      "Text": "Close the dialog."
     },
     {
       "Key": "TEXT_Exporter_Log_Filename_Empty",
-      "Text": "Filename is empty."
+      "Text": "The file name is empty."
     },
     {
       "Key": "TEXT_Exporter_Header_Export_Text",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Container_TT",
-      "Text": "Export all associated Text Files and the Text Entries within this container."
+      "Text": "Export all text files and text entries in this container."
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Text_File",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Text_File_TT",
-      "Text": "Export all associated entries within this Text File."
+      "Text": "Export all entries in this text file."
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Text_Entry",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Text_Entry_TT",
-      "Text": "Export all selected Text Entries."
+      "Text": "Export all selected text entries."
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Modified",
@@ -66,11 +66,11 @@
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Modified_TT",
-      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'."
+      "Text": "Only include modified text entries (and their text files)."
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Modified_TextEntry_TT",
-      "Text": "OOnly include Text Entries that are considered 'modified'."
+      "Text": "Only include modified text entries."
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Unique",
@@ -78,23 +78,23 @@
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Unique_TT",
-      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'."
+      "Text": "Only include unique text entries (and their text files)."
     },
     {
       "Key": "TEXT_Exporter_Action_Export_Unique_TextEntry_TT",
-      "Text": "Only include Text Entries that are considered 'unique'."
+      "Text": "Only include unique text entries."
     },
     {
       "Key": "TEXT_Exporter_Export_Text_Exists_Overwrite",
-      "Text": "Exported text already exists under this name. Overwrite?"
+      "Text": "Exported text with this name already exists. Overwrite it?"
     },
     {
       "Key": "TEXT_Exporter_Exported_Text_PASS",
-      "Text": "Exported text: {0} at {1}"
+      "Text": "Exported text {0} at {1}."
     },
     {
       "Key": "TEXT_Exporter_Exported_Text_FAIL",
-      "Text": "Failed to export text: {0} at {1}"
+      "Text": "Failed to export text {0} at {1}."
     }
   ]
 }

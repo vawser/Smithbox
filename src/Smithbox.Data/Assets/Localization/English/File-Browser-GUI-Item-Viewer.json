@@ -26,7 +26,7 @@
     },
     {
       "Key": "FILE_ItemViewer_Preview_Texture_Failed",
-      "Text": "This texture could not be shown."
+      "Text": "This texture can't be shown."
     },
     {
       "Key": "FILE_ItemViewer_Preview_Too_Large",

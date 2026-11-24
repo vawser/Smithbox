@@ -30,7 +30,7 @@
     },
     {
       "Key": "TEXT_Importer_Stored_Text_Key_Collision",
-      "Text": "Attempted to add stored text with existing key: {0}"
+      "Text": "Tried to add stored text with an existing key: {0}"
     },
     {
       "Key": "TEXT_Importer_Source_TT",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "TEXT_Importer_Source_Unknown_TT",
-      "Text": "Source container not recorded (exported by an older version)."
+      "Text": "The source container wasn't recorded (exported by an older version)."
     },
     {
       "Key": "TEXT_Importer_Container_Mismatch",
@@ -54,15 +54,15 @@
     },
     {
       "Key": "TEXT_Importer_Failed_JSON_String_Deserialization",
-      "Text": "Failed to deserialize JSON file string."
+      "Text": "Failed to read the JSON string."
     },
     {
       "Key": "TEXT_Importer_Stored_File_Skipped",
-      "Text": "Skipped stored text file {0}: it could not be read as stored text JSON."
+      "Text": "Skipped stored text file {0}: it couldn't be read as stored text JSON."
     },
     {
       "Key": "TEXT_Importer_Failed_JSON_File_Deserialization",
-      "Text": "Failed to deserialize JSON file: {0}."
+      "Text": "Failed to read the JSON file: {0}."
     },
     {
       "Key": "TEXT_Importer_Select_Stored_JSON",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "TEXT_Importer_Invalid_Selected_File",
-      "Text": "Selected file is invalid."
+      "Text": "The selected file isn't valid."
     }
   ]
 }

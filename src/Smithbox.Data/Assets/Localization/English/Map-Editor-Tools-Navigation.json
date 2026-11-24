@@ -10,11 +10,11 @@
     },
     {
       "Key": "MAP_Navigation_Unsupported_Game",
-      "Text": "This tool supports Elden Ring, Nightreign, The Duskbloods, Armored Core VI, Dark Souls III, Bloodborne, Sekiro, Demon's Souls, Dark Souls, Dark Souls Remastered and Dark Souls II (SOTFS included)."
+      "Text": "This tool supports Elden Ring, Nightreign, The Duskbloods, Armored Core VI, Dark Souls III, Bloodborne, Sekiro, Demon's Souls, Dark Souls, Dark Souls Remastered and Dark Souls II (including SOTFS)."
     },
     {
       "Key": "MAP_Navigation_Description",
-      "Text": "Views, edits, generates and checks the navigation data of a loaded map: the navmeshes its characters path-find on, and how they connect. Start in the Overlay tab, which draws the navmesh in the viewport; the editing tabs work on what it draws. A new navmesh usually goes Models (Generate), then Stitch, then Gates, then Check."
+      "Text": "View, edit, generate and check the navigation data of a loaded map: the navmeshes its characters use for pathfinding, and how they connect. Start in the Overlay tab, which draws the navmesh in the viewport; the editing tabs work on what it draws. A typical workflow for a new navmesh is Models (Generate), then Stitch, then Gates, then Check."
     },
     {
       "Key": "MAP_Navigation_No_Maps",
@@ -26,11 +26,11 @@
     },
     {
       "Key": "MAP_Navigation_No_Havok",
-      "Text": "This map's navmesh files can't be read, because Havok loading is skipped. Turn Havok loading on and load the map again."
+      "Text": "This map's navmesh files can't be read because Havok loading is skipped. Turn on Havok loading and reload the map."
     },
     {
       "Key": "MAP_Navigation_Not_Checked",
-      "Text": "Select Validate to check this map."
+      "Text": "Click Validate to check this map."
     },
     {
       "Key": "MAP_Navigation_Map_Header",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "MAP_Navigation_Map_TT",
-      "Text": "The loaded map every tab works on. Neighbouring maps that are also loaded are used where navmeshes cross maps (Stitch and Check); otherwise only this map's side of each NVC file is used."
+      "Text": "The loaded map every tab works on. Neighbouring maps that are also loaded are used where navmeshes cross maps (Stitch and Check); otherwise, only this map's side of each NVC file is used."
     },
     {
       "Key": "MAP_Navigation_Actions_Header",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "MAP_Navigation_Validate_TT",
-      "Text": "Reads the map's navmesh files and NVC files if they haven't been read yet, and checks them. The vanilla data of the map is then checked in the background, to mark the issues the game files also have."
+      "Text": "Read the map's navmesh files and NVC files if needed, and check them. The map's vanilla data is then checked in the background, to mark issues that the game files also have."
     },
     {
       "Key": "MAP_Navigation_Clear",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "MAP_Navigation_Clear_TT",
-      "Text": "Clears the results."
+      "Text": "Clear the results."
     },
     {
       "Key": "MAP_Navigation_Summary_Header",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "MAP_Navigation_Issues_Header_TT",
-      "Text": "What breaks the rules the game files follow. Errors are things the game files never do; warnings are unusual things a few game files also do."
+      "Text": "Rule breaks compared with the game files. Errors are things the game files never do; warnings are unusual things that a few game files also do."
     },
     {
       "Key": "MAP_Navigation_Issues_None_New",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "MAP_Navigation_Baseline_Failed",
-      "Text": "The vanilla data couldn't be checked, so no issue is marked as inherited: {0}"
+      "Text": "Couldn't check the vanilla data, so no issue is marked as inherited: {0}"
     },
     {
       "Key": "MAP_Navigation_Baseline_Inherited",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "MAP_Navigation_Show_Inherited_TT",
-      "Text": "Also list the issues the vanilla game files have. Some vanilla NVC files that pair an open world _00 tile with a _10 tile don't match the current navmeshes of one side."
+      "Text": "Also list issues that the vanilla game files have. Some vanilla NVC files that pair an open world _00 tile with a _10 tile don't match one side's current navmeshes."
     },
     {
       "Key": "MAP_Navigation_Column_Severity",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "MAP_Navigation_Issue_NameIdRule",
-      "Text": "The n entry at position {0} has NameID {1}; the game files would give it {2}."
+      "Text": "The n entry at position {0} has NameID {1}, but the game files would give it {2}."
     },
     {
       "Key": "MAP_Navigation_Issue_NameIdDuplicate",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "MAP_Navigation_Issue_FaceDataIndex",
-      "Text": "Navmesh {0} has FaceDataIndex {1}; it should be {2}, the faces of the entries before it."
+      "Text": "Navmesh {0} has FaceDataIndex {1}. It should be {2}, the total faces of the entries before it."
     },
     {
       "Key": "MAP_Navigation_Issue_FaceCountMismatch",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "MAP_Navigation_Issue_ModelIdName",
-      "Text": "Navmesh {0} has ModelID {1}, but its file {2} doesn't carry it. The game finds the file by the 6 digits after the map name."
+      "Text": "Navmesh {0} has ModelID {1}, but its file {2} doesn't include it. The game finds the file by the 6 digits after the map name."
     },
     {
       "Key": "MAP_Navigation_Issue_QuarterIgnored",
@@ -270,7 +270,7 @@
     },
     {
       "Key": "MAP_Navigation_View_Description",
-      "Text": "What the overlay draws: a navmesh set of the map over the viewport, its faces coloured by their face data, its edges by what they connect to, its jump and ladder links and its gate nodes. Show overlay and the set are above the tabs. The other tabs edit the drawn set."
+      "Text": "What the overlay draws: one navmesh set of the map over the viewport, with faces coloured by face data, edges by what they connect to, and its jump and ladder links and gate nodes. Show overlay and the set are above the tabs. The other tabs edit the drawn set."
     },
     {
       "Key": "MAP_Navigation_Face_Data_Description",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "MAP_Navigation_Picked_Links_Header_TT",
-      "Text": "The user edges of the picked face: where each leads, its blocked flag and edge data, and Remove link. Each change is one undo."
+      "Text": "The picked face's user edges: where each leads, its blocked flag and edge data, and Remove link. Each change is one undo step."
     },
     {
       "Key": "MAP_Navigation_Picked_Links_Face",
@@ -326,15 +326,15 @@
     },
     {
       "Key": "MAP_Navigation_Mode_Vertex_Edit",
-      "Text": "The viewport brush moves navmesh vertices while the left mouse button is held (Edit tab); clicks don't select."
+      "Text": "While the left mouse button is held, the viewport brush moves navmesh vertices (Edit tab). Clicks don't select."
     },
     {
       "Key": "MAP_Navigation_Mode_No_Overlay",
-      "Text": "{0} The overlay is off, so there is nothing to act on: tick Show overlay, or stop the mode."
+      "Text": "{0} The overlay is off, so there is nothing to act on. Tick Show overlay, or stop the mode."
     },
     {
       "Key": "MAP_Navigation_Mode_Stop_TT",
-      "Text": "Stops the mode, so clicks select map objects again. The picked face stays picked, and vertex edits stay pending."
+      "Text": "Stop the mode, so clicks select map objects again. The picked face stays picked, and vertex edits stay pending."
     },
     {
       "Key": "MAP_Navigation_Picked_Status",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "MAP_Navigation_Picked_Clear_TT",
-      "Text": "Clears the picked face."
+      "Text": "Clear the picked face."
     },
     {
       "Key": "MAP_Navigation_Model_Status",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "MAP_Navigation_Model_Clear_TT",
-      "Text": "Clears the selected model."
+      "Text": "Clear the selected model."
     },
     {
       "Key": "MAP_Navigation_Pending_Status",
@@ -366,15 +366,15 @@
     },
     {
       "Key": "MAP_Navigation_Check_Status_Stale",
-      "Text": "Edited since: validate again."
+      "Text": "Edited since the check. Validate again."
     },
     {
       "Key": "MAP_Navigation_Check_Stale",
-      "Text": "The map's navigation data has been edited since this check. Select Validate to check it again; going to an issue may land on the wrong face meanwhile."
+      "Text": "The map's navigation data was edited after this check. Click Validate to check it again; until then, going to an issue may land on the wrong face."
     },
     {
       "Key": "MAP_Navigation_Issue_Go_To_TT",
-      "Text": "Go to this issue: draws its set, then picks its face, chooses its gate (Gates tab) or selects its model, and frames it in the viewport."
+      "Text": "Go to this issue: draw its set, then pick its face, select its gate (Gates tab) or select its model, and frame it in the viewport."
     },
     {
       "Key": "MAP_Navigation_Issue_Go_To_Missing",
@@ -382,7 +382,7 @@
     },
     {
       "Key": "MAP_Navigation_Issue_Go_To_Gate",
-      "Text": "Chose gate {0} of navmesh {1}. The Gates tab lists it."
+      "Text": "Selected gate {0} of navmesh {1}. The Gates tab lists it."
     },
     {
       "Key": "MAP_Navigation_Issue_Go_To_Face",
@@ -394,39 +394,39 @@
     },
     {
       "Key": "MAP_Navigation_Help_Overlay",
-      "Text": "1. Tick Show overlay above the tabs, and choose the n or o set.\n2. Turn layers on or off: faces, edges, links and gates. Each line layer shows its colour.\n3. The other tabs edit what the overlay draws. The Map Editor's own navmesh drawing can be hidden with the Navmesh render filter."
+      "Text": "1. Tick Show overlay above the tabs, and choose the n or o set.\n2. Turn layers on or off: faces, edges, links and gates. Each line layer shows its colour.\n3. The other tabs edit what the overlay draws. To hide the Map Editor's own navmesh drawing, use the Navmesh render filter."
     },
     {
       "Key": "MAP_Navigation_Help_Regenerate",
-      "Text": "1. Load the map with Havok and collision loading on, and its neighbours if its NVC files should be joined too.\n2. Choose the options (the defaults suit a vanilla map: they keep what its navmesh reaches, its models, face data and links) and Regenerate Map. The n and o settings are the Models tab's Generate settings.\n3. When it is done, look over the result with the overlay, then Validate in the Check tab.\nThe whole regeneration is one undo; saving the map writes the NVA, the navmesh binder and the changed NVC files."
+      "Text": "1. Load the map with Havok and collision loading on, and also its neighbours if its NVC files should be joined.\n2. Choose the options (the defaults suit a vanilla map: they keep what its navmesh reaches, its models, face data and links), then click Regenerate Map. The n and o settings are the Models tab's Generate settings.\n3. When it finishes, review the result with the overlay, then click Validate in the Check tab.\nThe whole regeneration is one undo step. Saving the map writes the NVA, the navmesh binder and the changed NVC files."
     },
     {
       "Key": "MAP_Navigation_Help_Models",
-      "Text": "1. Generate: select collision parts or assets in the viewport (with the map's collision loaded), tick Blocker on parts to go around, choose the target, and Generate.\n2. Or Duplicate a model, moved by an offset, or Remove one, which leaves a placeholder.\n3. Then select Stitch model to join the new model to its neighbours.\nEach edit is one undo; saving the map writes the files."
+      "Text": "1. Generate: select collision parts or assets in the viewport (with the map's collision loaded), tick Blocker on parts to go around, choose the target, and click Generate.\n2. Or Duplicate a model, moved by an offset, or Remove one, which leaves a placeholder.\n3. Then click Stitch model to join the new model to its neighbours.\nEach edit is one undo step. Saving the map writes the files."
     },
     {
       "Key": "MAP_Navigation_Help_Stitch",
-      "Text": "Needs the overlay.\n1. Choose the scope: the drawn set, the picked face's navmesh, or the selected model.\n2. Find lists the broken connections and the new pairs. Nothing changes yet.\n3. Apply makes the changes as one undo; with Update gates on, it rebuilds the gates of the changed pairs too.\nEach set is stitched on its own: switch between n and o above the tabs and Find again."
+      "Text": "Needs the overlay.\n1. Choose the scope: the drawn set, the picked face's navmesh, or the selected model.\n2. Find lists the broken connections and the new pairs. Nothing changes yet.\n3. Apply makes the changes as one undo step. With Update gates on, it also rebuilds the gates of the changed pairs.\nEach set is stitched separately: switch between n and o above the tabs and click Find again."
     },
     {
       "Key": "MAP_Navigation_Help_Gates",
-      "Text": "Needs the overlay.\n1. Tick Pick and move gates, then click a face or a gate marker to choose its navmesh.\n2. Rebuild its gates after its connections change, or add, remove and drag gates by hand.\n3. Recompute its costs after its vertices were moved.\nGates join the navmeshes of one map for the game's long-range path finding; they never cross maps."
+      "Text": "Needs the overlay.\n1. Tick Pick and move gates, then click a face or a gate marker to choose its navmesh.\n2. Rebuild its gates after its connections change, or add, remove and drag gates by hand.\n3. Recompute its costs after moving its vertices.\nGates join the navmeshes of one map for the game's long-range pathfinding. They never cross maps."
     },
     {
       "Key": "MAP_Navigation_Help_Links",
-      "Text": "Needs the overlay.\n1. Tick Add links, and set Both ways and the edge data (Jump, Fall).\n2. Click the face a link starts from, then the face it leads to.\n3. Pick a face to see its links, block them or remove them.\nIn Dark Souls III, Bloodborne and Sekiro, links are user edge setups instead: a box at the ledge and one where it lands, on any navmesh."
+      "Text": "Needs the overlay.\n1. Tick Add links, and set Both ways and the edge data (Jump, Fall).\n2. Click the face the link starts from, then the face it leads to.\n3. Pick a face to see, block or remove its links.\nIn Dark Souls III, Bloodborne and Sekiro, links are user edge setups instead: a box at the ledge and one where it lands, on any navmesh."
     },
     {
       "Key": "MAP_Navigation_Help_FaceData",
-      "Text": "Needs the overlay.\n1. Tick Pick and click a face to see its data and edges, and type a new value.\n2. Or tick Paint, choose Set, Add bits or Remove bits and a value (the bits, or a legend entry's Use), and drag over faces.\n3. Each stroke is one undo. Face data changes no indices, so connections stay valid."
+      "Text": "Needs the overlay.\n1. Tick Pick and click a face to see its data and edges, and type a new value.\n2. Or tick Paint, choose Set, Add bits or Remove bits and a value (the bits, or a legend entry's Use), and drag over faces.\n3. Each stroke is one undo step. Face data changes no indices, so connections stay valid."
     },
     {
       "Key": "MAP_Navigation_Help_Edit",
-      "Text": "Needs the overlay.\n1. Start Navmesh Edit, pick a Brush mode (Raise, Lower, Drag or Smooth) and its Radius, and move the mouse over the drawn navmesh: the sphere shows what the brush reaches.\n2. Hold the left mouse button to brush. Raise, Lower and Smooth apply again at each interval while it is held; Drag slides the vertices under the brush with the mouse.\n3. Commit Changes writes the moved vertices as one undo; Discard Changes puts them back. Until then they stay pending, on any tab.\nAfter moving outer edges, stitch again; after large moves, recompute the gate costs."
+      "Text": "Needs the overlay.\n1. Click Start Navmesh Edit, pick a Brush mode (Raise, Lower, Drag or Smooth) and its Radius, and move the mouse over the drawn navmesh: the sphere shows the brush's reach.\n2. Hold the left mouse button to brush. While held, Raise, Lower and Smooth apply again at each interval; Drag slides the vertices under the brush with the mouse.\n3. Commit Changes writes the moved vertices as one undo step; Discard Changes restores them. Until then, they stay pending on any tab.\nAfter moving outer edges, stitch again. After large moves, recompute the gate costs."
     },
     {
       "Key": "MAP_Navigation_Help_Check",
-      "Text": "1. Validate checks the map against the rules the game files follow, then compares the result with the vanilla files in the background.\n2. New issues come from the project; inherited ones are in the vanilla files too.\n3. Click an issue to go to its navmesh, face or gate.\nValidate again after editing: the header says when the result is out of date.\nIn game (Elden Ring), the exe has debug switches Game.Navimesh.DisableNvc and Game.Navimesh.DisableNavimesh. With a tool that opens the debug menu, turning NVC off and on tells a cross-map edit's effect from an in-map one."
+      "Text": "1. Validate checks the map against the rules the game files follow, then compares the result with the vanilla files in the background.\n2. New issues come from the project; inherited issues are also in the vanilla files.\n3. Click an issue to go to its navmesh, face or gate.\nValidate again after editing. The header shows when the result is out of date.\nIn game (Elden Ring), the exe has the debug switches Game.Navimesh.DisableNvc and Game.Navimesh.DisableNavimesh. With a tool that opens the debug menu, toggling NVC off and on separates the effect of a cross-map edit from an in-map one."
     },
     {
       "Key": "MAP_Navigation_Glossary_Header",
@@ -434,7 +434,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_TT",
-      "Text": "What the navigation terms the tabs use mean."
+      "Text": "The navigation terms the tabs use."
     },
     {
       "Key": "MAP_Navigation_Glossary_Navmesh",
@@ -442,7 +442,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Navmesh_Text",
-      "Text": "The surface characters path-find on: faces (polygons) joined by edges. A map's NVA file lists its navmeshes, one entry per model and set; the meshes themselves are Havok files in the map's nvmhktbnd binder."
+      "Text": "The surface characters use for pathfinding: faces (polygons) joined by edges. A map's NVA file lists its navmeshes, one entry per model and set. The meshes themselves are Havok files in the map's nvmhktbnd binder."
     },
     {
       "Key": "MAP_Navigation_Glossary_Sets",
@@ -450,7 +450,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Sets_Text",
-      "Text": "Most games keep two navmeshes of each model: n for normal characters, and o for huge ones (Elden Ring's exe labels it Huge; its clearance reaches 5.1 m against n's 1.53 m). o usually has fewer faces. Each set has its own connections and links, and is edited on its own. The game tells the sets apart by the NameID (prefix 0/1 n, 2/3 o) and by the file's ID in the nvmhktbnd (10000s n, 20000s o), not by the file name. Armored Core VI has the n set only."
+      "Text": "Most games keep two navmeshes of each model: n for normal characters and o for huge ones (Elden Ring's exe labels it Huge; its clearance reaches 5.1 m, compared with 1.53 m for n). The o set usually has fewer faces. Each set has its own connections and links, and is edited separately. The game identifies the sets by the NameID (prefix 0/1 n, 2/3 o) and by the file's ID in the nvmhktbnd (10000s n, 20000s o), not by the file name. Armored Core VI has only the n set."
     },
     {
       "Key": "MAP_Navigation_Glossary_NameID",
@@ -458,7 +458,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_NameID_Text",
-      "Text": "The ID that connections, gates and node banks use for a navmesh. The game gives n entries NameIDs by a rule (from their place in the list or their model ID, depending on the game); an o entry repeats its n entry's NameID plus a fixed offset (2,000,000,000 in Elden Ring)."
+      "Text": "The ID that connections, gates and node banks use for a navmesh. The game gives n entries NameIDs by a rule (based on their position in the list or their model ID, depending on the game). An o entry repeats its n entry's NameID plus a fixed offset (2,000,000,000 in Elden Ring)."
     },
     {
       "Key": "MAP_Navigation_Glossary_Placeholder",
@@ -466,7 +466,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Placeholder_Text",
-      "Text": "A navmesh entry without faces. A free placeholder, with no faces in either set and no gates, can take a generated or copied model; removing a model turns it into one."
+      "Text": "A navmesh entry without faces. A free placeholder, with no faces in either set and no gates, can hold a generated or copied model. Removing a model turns it into a placeholder."
     },
     {
       "Key": "MAP_Navigation_Glossary_Quarters",
@@ -474,7 +474,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Quarters_Text",
-      "Text": "Some large Elden Ring navmeshes are split into four q files, and their n file is then empty. The game finds quarter k by the file's ID in the nvmhktbnd (40000 + 1000 × k) and the entry's Unk50 high byte. Quartered models can't be removed or copied, and a map that has them can't get new models; use a free placeholder there.\nOf a navmesh file's name, the game reads only the 6 model digits after the map part; the map part itself isn't read, which is why some _10 tiles carry their _00 tile's names."
+      "Text": "Some large Elden Ring navmeshes are split into four q files, and their n file is then empty. The game finds quarter k by the file's ID in the nvmhktbnd (40000 + 1000 × k) and the high byte of the entry's Unk50. Quartered models can't be removed or copied, and a map that has them can't get new models; use a free placeholder there.\nThe game reads only the 6 model digits after the map part of a navmesh file's name. It doesn't read the map part itself, which is why some _10 tiles use their _00 tile's names."
     },
     {
       "Key": "MAP_Navigation_Glossary_Connections",
@@ -482,7 +482,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Connections_Text",
-      "Text": "Joins between boundary edges of two navmeshes, so a path can cross from one to the other: NVA connectors within a map, NVC files between neighbouring maps. A boundary edge with no connection is open. The Stitch tab finds and makes them."
+      "Text": "Joins between boundary edges of two navmeshes, so a path can cross from one to the other: NVA connectors within a map, and NVC files between neighbouring maps. A boundary edge with no connection is open. The Stitch tab finds and creates them."
     },
     {
       "Key": "MAP_Navigation_Glossary_Links",
@@ -490,7 +490,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Links_Text",
-      "Text": "Jumps, drops and ladders between two faces of one navmesh. Each is a pair of user edges, one on each face; a one-way link has its edge back blocked. The edge data gives the kind: 0x2 jump, 0x4 fall, 0x10 extra cost."
+      "Text": "Jumps, drops and ladders between two faces of one navmesh. Each is a pair of user edges, one on each face; a one-way link has its return edge blocked. The edge data sets the kind: 0x2 jump, 0x4 fall, 0x10 extra cost."
     },
     {
       "Key": "MAP_Navigation_Glossary_Gates",
@@ -498,7 +498,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Gates_Text",
-      "Text": "Points where two navmeshes of a map meet, at most 16 per navmesh, each paired with a gate on the other side. The game's long-range path finding goes from gate to gate, using the walking cost stored between each two gates of a navmesh."
+      "Text": "Points where two navmeshes of a map meet, at most 16 per navmesh, each paired with a gate on the other side. The game's long-range pathfinding goes from gate to gate, using the walking cost stored between each pair of gates in a navmesh."
     },
     {
       "Key": "MAP_Navigation_Glossary_Clearance",
@@ -506,7 +506,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_Clearance_Text",
-      "Text": "How wide a character can be to pass, cached per edge and vertex in the navmesh file. Edits work it out again around what they change."
+      "Text": "How wide a character can be and still pass, cached per edge and vertex in the navmesh file. Edits recalculate it around what they change."
     },
     {
       "Key": "MAP_Navigation_Glossary_FaceData",
@@ -514,7 +514,7 @@
     },
     {
       "Key": "MAP_Navigation_Glossary_FaceData_Text",
-      "Text": "A 32-bit value per face that path finding reads: impassable, high cost, lava, ladder, gated (opened at runtime, as by a door), and others. The Face Data tab names the known bits and colours the faces by value."
+      "Text": "A 32-bit value per face that pathfinding reads: impassable, high cost, lava, ladder, gated (opened at runtime, for example by a door), and others. The Face Data tab names the known bits and colours the faces by value."
     },
     {
       "Key": "MAP_Navigation_Glossary_NodeBanks",
@@ -538,7 +538,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Select_Under_TT",
-      "Text": "Replaces the viewport selection with this map's collision parts whose bounds overlap the selected model's n navmesh, within 1 m: the usual input to generate the model again. Assets aren't included; add them to the selection by hand. Needs the map's collision loaded."
+      "Text": "Replace the viewport selection with this map's collision parts whose bounds overlap the selected model's n navmesh, within 1 m. These are the usual inputs for regenerating the model. Assets aren't included; add them to the selection by hand. Needs the map's collision loaded."
     },
     {
       "Key": "MAP_Navigation_Generate_Selected_Under",
@@ -546,7 +546,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Selected_Under_None",
-      "Text": "No collision part of this map overlaps model {1:D6}. Is the map's collision loaded?"
+      "Text": "No collision part in this map overlaps model {1:D6}. Check that the map's collision is loaded."
     },
     {
       "Key": "MAP_Navigation_Generate_Progress_Header",
@@ -554,7 +554,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Progress_Header_TT",
-      "Text": "The generation runs in the background. The bar shows which stage is running, not how long it has left."
+      "Text": "The generation runs in the background. The bar shows the current stage, not the time remaining."
     },
     {
       "Key": "MAP_Navigation_Generate_Stage_N",
@@ -574,7 +574,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Cancel_TT",
-      "Text": "Drops this generation: nothing is changed. The work already started finishes in the background, and what it makes is thrown away."
+      "Text": "Cancel this generation. Nothing is changed. Work already started finishes in the background, and its result is discarded."
     },
     {
       "Key": "MAP_Navigation_Generate_Cancelled",
@@ -586,7 +586,7 @@
     },
     {
       "Key": "MAP_Navigation_Overlay_Header_TT",
-      "Text": "What the overlay shows. It is drawn slightly above the navmesh, and can't be selected."
+      "Text": "What the overlay shows. It is drawn slightly above the navmesh and can't be selected."
     },
     {
       "Key": "MAP_Navigation_Overlay_Show",
@@ -594,7 +594,7 @@
     },
     {
       "Key": "MAP_Navigation_Overlay_Show_TT",
-      "Text": "Draws the overlay of the map picked above. Reading a map's navmesh files the first time can take a moment. The Map Editor's own navmesh drawing can be hidden with the Navmesh render filter, which doesn't hide the overlay."
+      "Text": "Draw the overlay of the map picked above. Reading a map's navmesh files for the first time can take a moment. To hide the Map Editor's own navmesh drawing, use the Navmesh render filter, which doesn't hide the overlay."
     },
     {
       "Key": "MAP_Navigation_Overlay_Set_N",
@@ -610,7 +610,7 @@
     },
     {
       "Key": "MAP_Navigation_Overlay_Set_O_TT",
-      "Text": "The o navmeshes (o files), the second half of the NVA's entries: the same ground as n, for huge characters (Elden Ring's exe labels the set Huge; its clearance values reach 5.1 m against n's 1.53 m). They usually have fewer faces."
+      "Text": "The o navmeshes (o files), the second half of the NVA's entries: the same ground as n, for huge characters (Elden Ring's exe labels the set Huge; its clearance values reach 5.1 m, compared with 1.53 m for n). They usually have fewer faces."
     },
     {
       "Key": "MAP_Navigation_Overlay_Opacity",
@@ -622,7 +622,7 @@
     },
     {
       "Key": "MAP_Navigation_Overlay_User_Edges_Without_Target",
-      "Text": "{0} user edges lead to a face that couldn't be found, and are drawn without an arc."
+      "Text": "{0} user edges lead to a face that couldn't be found, so they are drawn without an arc."
     },
     {
       "Key": "MAP_Navigation_Layers_Header",
@@ -630,7 +630,7 @@
     },
     {
       "Key": "MAP_Navigation_Layers_Header_TT",
-      "Text": "The parts of the overlay to draw, with the colour each is drawn in."
+      "Text": "The parts of the overlay to draw, and their colours."
     },
     {
       "Key": "MAP_Navigation_Layer_Faces",
@@ -638,7 +638,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_Faces_TT",
-      "Text": "The faces, filled in a colour for each face data value. The legend below lists the values."
+      "Text": "The faces, filled with a colour for each face data value. The legend below lists the values."
     },
     {
       "Key": "MAP_Navigation_Layer_InnerEdges",
@@ -646,7 +646,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_InnerEdges_TT",
-      "Text": "The edges between two faces of the same navmesh. Dense on large maps."
+      "Text": "Edges between two faces of the same navmesh. Dense on large maps."
     },
     {
       "Key": "MAP_Navigation_Layer_OpenEdges",
@@ -662,7 +662,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_ConnectedInMap_TT",
-      "Text": "Boundary edges an NVA connector joins to another navmesh of this map."
+      "Text": "Boundary edges that an NVA connector joins to another navmesh in this map."
     },
     {
       "Key": "MAP_Navigation_Layer_ConnectedCrossMap",
@@ -670,7 +670,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_ConnectedCrossMap_TT",
-      "Text": "Boundary edges an NVC file joins to a navmesh of a neighbouring map."
+      "Text": "Boundary edges that an NVC file joins to a navmesh in a neighbouring map."
     },
     {
       "Key": "MAP_Navigation_Layer_UserEdges",
@@ -702,7 +702,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_GateNodesUnpaired_TT",
-      "Text": "Gate nodes without a partner. The game's all point at a navmesh that already has 16 gates."
+      "Text": "Gate nodes without a partner. In the game's files, they all point at a navmesh that already has 16 gates."
     },
     {
       "Key": "MAP_Navigation_Layer_GateNodesBroken",
@@ -718,7 +718,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_GateCosts_TT",
-      "Text": "For the navmesh chosen in the Gates tab: a line between each two of its gates that can reach each other, labelled with the cost in metres."
+      "Text": "For the navmesh selected in the Gates tab: a line between each pair of its gates that can reach each other, labelled with the cost in metres."
     },
     {
       "Key": "MAP_Navigation_Layer_RuntimeCuts",
@@ -726,7 +726,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_RuntimeCuts_TT",
-      "Text": "The bounds of the loaded assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (Obstacle, Impassable or High Cost), filled in amber: the game cuts or marks the navmesh under them at runtime, and lifts that when the asset breaks. The game's own navmeshes run under these assets, so they needn't be cut out of a generated one. Only the assets the game cuts in the drawn set are shown: navimeshFlagApply Type 0 cuts the n set, Type 1 the o set, Type 2 both. Drawn for assets whose model is loaded, in every loaded map."
+      "Text": "The bounds of loaded assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (Obstacle, Impassable or High Cost), filled in amber. The game cuts or marks the navmesh under them at runtime, and lifts this when the asset breaks. The game's own navmeshes run under these assets, so they don't need to be cut out of a generated one. Only assets the game cuts in the drawn set are shown: navimeshFlagApply Type 0 cuts the n set, Type 1 the o set, and Type 2 both. Drawn for assets whose model is loaded, in every loaded map."
     },
     {
       "Key": "MAP_Navigation_Layer_FlyingVolume",
@@ -734,7 +734,7 @@
     },
     {
       "Key": "MAP_Navigation_Layer_FlyingVolume_TT",
-      "Text": "The overall shape of the map's flying navigation volume (the .nvvhktbnd that flying enemies path through), as an outline: its floor and ceiling shells and the box of its grid.\nThe floor is where the air over the terrain (or under a roof) ends going down, and the ceiling is the top of that air, for each patch of the map. Space inside or under the terrain, and holes inside the shape, aren't shown. The map is split into at most 128 patches on a side, so small details are smoothed out.\nRead from the project's files, so it shows the saved volume."
+      "Text": "The overall shape of the map's flying navigation volume (the .nvvhktbnd that flying enemies path through), as an outline: its floor and ceiling shells and the box of its grid.\nFor each patch of the map, the floor is where the air over the terrain (or under a roof) ends going down, and the ceiling is the top of that air. Space inside or under the terrain, and holes inside the shape, aren't shown. The map is split into at most 128 patches per side, so small details are smoothed out.\nRead from the project's files, so it shows the saved volume."
     },
     {
       "Key": "MAP_Navigation_Volume_Read_Failed",
@@ -746,7 +746,7 @@
     },
     {
       "Key": "MAP_Navigation_Legend_Header_TT",
-      "Text": "The face data values of the drawn faces, with the colour each is drawn in. Bits the game's navmesh code reads are named; the rest are listed by value only."
+      "Text": "The face data values of the drawn faces and their colours. Bits that the game's navmesh code reads are named; the rest are listed by value only."
     },
     {
       "Key": "MAP_Navigation_Legend_Entry",
@@ -834,7 +834,7 @@
     },
     {
       "Key": "MAP_Navigation_Paint_Header_TT",
-      "Text": "Change the face data of faces by dragging over them in the viewport. Each stroke is one undo. Face data changes no indices, so connections stay valid; the map's save writes the navmesh files."
+      "Text": "Change the face data of faces by dragging over them in the viewport. Each stroke is one undo step. Face data changes no indices, so connections stay valid. Saving the map writes the navmesh files."
     },
     {
       "Key": "MAP_Navigation_Paint_Mode",
@@ -842,7 +842,7 @@
     },
     {
       "Key": "MAP_Navigation_Paint_Mode_TT",
-      "Text": "While on, holding the picking button over the drawn set's faces paints them instead of selecting. Turns picking off, and turns itself off when you leave this tab."
+      "Text": "While on, holding the picking button over the drawn set's faces paints them instead of selecting. This turns off picking, and turns itself off when you leave this tab."
     },
     {
       "Key": "MAP_Navigation_Paint_Set",
@@ -870,11 +870,11 @@
     },
     {
       "Key": "MAP_Navigation_Paint_Value_TT",
-      "Text": "The value to paint, in hexadecimal. The bits below, and the Use buttons of the legend, set it too. The bits list every bit the game's navmesh code reads, by name, and any other bit the drawn faces use."
+      "Text": "The value to paint, in hexadecimal. The bits below and the legend's Use buttons also set it. The bits list every bit the game's navmesh code reads, by name, and any other bit the drawn faces use."
     },
     {
       "Key": "MAP_Navigation_Paint_Bit_TT",
-      "Text": "A bit the drawn faces use. What it means in game is unknown."
+      "Text": "A bit that the drawn faces use. Its meaning in game is unknown."
     },
     {
       "Key": "MAP_Navigation_Legend_Use",
@@ -886,7 +886,7 @@
     },
     {
       "Key": "MAP_Navigation_Face_Data_Edit_TT",
-      "Text": "The face's data in hexadecimal. Changing it is one undo."
+      "Text": "The face's data in hexadecimal. Changing it is one undo step."
     },
     {
       "Key": "MAP_Navigation_Edge_Blocked",
@@ -894,11 +894,11 @@
     },
     {
       "Key": "MAP_Navigation_Edge_Blocked_TT",
-      "Text": "The user edge's blocked flag (EDGE_BLOCKED). Changing it is one undo."
+      "Text": "The user edge's blocked flag (EDGE_BLOCKED). Changing it is one undo step."
     },
     {
       "Key": "MAP_Navigation_Edge_Data_Edit_TT",
-      "Text": "The user edge's data in hexadecimal: 0x2 for a jump, 0x4 for a fall (with the drop in tenths of a metre in the high byte), and 0x10 for an extra cost, e.g. 0x204 or 0x314 in the game files. Changing it is one undo."
+      "Text": "The user edge's data in hexadecimal: 0x2 for a jump, 0x4 for a fall (with the drop in tenths of a metre in the high byte), and 0x10 for an extra cost, e.g. 0x204 or 0x314 in the game files. Changing it is one undo step."
     },
     {
       "Key": "MAP_Navigation_Bit_Unknown",
@@ -910,7 +910,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_Impassable_TT",
-      "Text": "No character can cross the face. In Elden Ring, EMEVD 2003[13] adds or removes this bit at runtime on the faces of a node bank, by its entity ID, to block a path until an event flag is set."
+      "Text": "No character can cross the face. In Elden Ring, EMEVD 2003[13] adds or removes this bit at runtime on a node bank's faces, by its entity ID, to block a path until an event flag is set."
     },
     {
       "Key": "MAP_Navigation_Bit_HighCost",
@@ -918,7 +918,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_HighCost_TT",
-      "Text": "Crossing the face costs 100 times as much in path finding (not in sealed worlds)."
+      "Text": "Crossing the face costs 100 times as much in pathfinding (not in sealed worlds)."
     },
     {
       "Key": "MAP_Navigation_Bit_Checked",
@@ -926,7 +926,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_Checked_TT",
-      "Text": "Part of the bits that make the game check a character before it crosses the face, but no rule for it alone was found."
+      "Text": "One of the bits that make the game check a character before it crosses the face. No rule for this bit alone was found."
     },
     {
       "Key": "MAP_Navigation_Bit_Lava",
@@ -934,7 +934,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_Lava_TT",
-      "Text": "Only characters whose NpcThinkParam enables Lava navigation cross it, or, at an extra cost, characters in a state the game sets at runtime."
+      "Text": "Only characters whose NpcThinkParam enables Lava navigation cross it, or characters in a runtime state set by the game, at an extra cost."
     },
     {
       "Key": "MAP_Navigation_Bit_Ladder",
@@ -958,7 +958,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_Gated10000_TT",
-      "Text": "No character crosses the face unless 0x8000 is also set, which happens at runtime: a face that something in game opens, such as a door."
+      "Text": "No character crosses the face unless 0x8000 is also set, which happens at runtime: for a face that something in game opens, such as a door."
     },
     {
       "Key": "MAP_Navigation_Bit_HugeEnemy",
@@ -990,7 +990,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_HighCost2_TT",
-      "Text": "Crossing the face costs 100 times as much in path finding, on top of 0x8."
+      "Text": "Crossing the face costs 100 times as much in pathfinding, on top of 0x8."
     },
     {
       "Key": "MAP_Navigation_Bit_CharacterLimit",
@@ -998,7 +998,7 @@
     },
     {
       "Key": "MAP_Navigation_Bit_CharacterLimit_TT",
-      "Text": "Characters cross it only when a value of their physics (probably an angle) isn't above a limit stored in the navmesh. What the value is hasn't been identified. Only n faces use it."
+      "Text": "Characters cross it only when a value of their physics (probably an angle) isn't above a limit stored in the navmesh. The value hasn't been identified. Only n faces use it."
     },
     {
       "Key": "MAP_Navigation_Bit_Jump",
@@ -1038,7 +1038,7 @@
     },
     {
       "Key": "MAP_Navigation_Link_Mode_TT",
-      "Text": "While on, the first click on the drawn set picks the face a link starts from, and the second click the face it leads to, which adds the link. Turns picking and painting off, and turns itself off when you leave this tab."
+      "Text": "While on, the first click on the drawn set picks the face a link starts from, and the second click picks the face it leads to and adds the link. This turns off picking and painting, and turns itself off when you leave this tab."
     },
     {
       "Key": "MAP_Navigation_Link_Both_Ways",
@@ -1046,11 +1046,11 @@
     },
     {
       "Key": "MAP_Navigation_Link_Both_Ways_TT",
-      "Text": "Characters can use the link in both directions. When off, the edge back is blocked (EDGE_BLOCKED), as in the game's one-way links such as drops."
+      "Text": "Characters can use the link in both directions. When off, the return edge is blocked (EDGE_BLOCKED), as in the game's one-way links such as drops."
     },
     {
       "Key": "MAP_Navigation_Link_Edge_Data_TT",
-      "Text": "The edge data both edges of a new link get (hex). The game's links use 2 for a jump, and values ending in 04 or 14 for a fall, whose higher bits vary."
+      "Text": "The edge data (hex) given to both edges of a new link. The game's links use 2 for a jump, and values ending in 04 or 14 for a fall, with varying higher bits."
     },
     {
       "Key": "MAP_Navigation_Link_Clearance",
@@ -1058,7 +1058,7 @@
     },
     {
       "Key": "MAP_Navigation_Link_Clearance_TT",
-      "Text": "The clearance cache value of the new edges: how wide a character can use the link, as a fraction of the cache's ceiling (254 = the ceiling, 1.53 m in the n set and 5.1 m in the o set). The game's links use values such as 69, 102, 135 and 168."
+      "Text": "The clearance cache value of the new edges: how wide a character using the link can be, as a fraction of the cache's ceiling (254 = the ceiling, 1.53 m in the n set and 5.1 m in the o set). The game's links use values such as 69, 102, 135 and 168."
     },
     {
       "Key": "MAP_Navigation_Link_Pick_Start",
@@ -1078,15 +1078,15 @@
     },
     {
       "Key": "MAP_Navigation_Setup_Header_TT",
-      "Text": "This game builds its jump and drop links when it loads a navmesh, from user edge setups: two boxes, where the link starts (a ledge) and where it lands. Its navmeshes hold no user edges themselves."
+      "Text": "This game builds its jump and drop links from user edge setups when it loads a navmesh: two boxes, one where the link starts (a ledge) and one where it lands. Its navmeshes don't contain user edges themselves."
     },
     {
       "Key": "MAP_Navigation_Setup_Mode_TT",
-      "Text": "Click a face at a ledge, then where the link lands (on any navmesh). Box A goes on the face's boundary edge nearest the first click, box B at the second."
+      "Text": "Click a face at a ledge, then where the link lands (on any navmesh). Box A goes on the face's boundary edge nearest the first click, and box B at the second."
     },
     {
       "Key": "MAP_Navigation_Setup_Both_Ways_TT",
-      "Text": "A link both ways (a jump or ladder) rather than a drop from A to B. In SDT it gets the game's cost, 0.9 times its length."
+      "Text": "A two-way link (a jump or ladder) instead of a drop from A to B. In SDT, it gets the game's cost: 0.9 times its length."
     },
     {
       "Key": "MAP_Navigation_Setup_Pick_Start",
@@ -1138,7 +1138,7 @@
     },
     {
       "Key": "MAP_Navigation_Setup_Error_No_Ledge",
-      "Text": "The first face has no boundary edge to start a link from: pick a face at a ledge."
+      "Text": "The first face has no boundary edge to start a link from. Pick a face at a ledge."
     },
     {
       "Key": "MAP_Navigation_Setup_Error_No_Array",
@@ -1150,7 +1150,7 @@
     },
     {
       "Key": "MAP_Navigation_Link_Remove_TT",
-      "Text": "Removes this user edge and the edge it is paired with on the other face, with their vertices and clearance cache entries. Later user edges are renumbered. One undo."
+      "Text": "Remove this user edge and its paired edge on the other face, with their vertices and clearance cache entries. Later user edges are renumbered. One undo step."
     },
     {
       "Key": "MAP_Navigation_Link_Error_Same_Face",
@@ -1158,7 +1158,7 @@
     },
     {
       "Key": "MAP_Navigation_Link_Error_Face",
-      "Text": "The face is not in the navmesh."
+      "Text": "The face isn't in the navmesh."
     },
     {
       "Key": "MAP_Navigation_Link_Error_Other_Navmesh",
@@ -1166,15 +1166,15 @@
     },
     {
       "Key": "MAP_Navigation_Link_Error_Cache",
-      "Text": "A face's clearance cache block isn't laid out as expected, so the edit was not made."
+      "Text": "A face's clearance cache block isn't laid out as expected, so the edit wasn't made."
     },
     {
       "Key": "MAP_Navigation_Link_Error_Not_User_Edge",
-      "Text": "The edge is not a user edge."
+      "Text": "The edge isn't a user edge."
     },
     {
       "Key": "MAP_Navigation_Link_Error_Connections",
-      "Text": "A connection names a user edge of this navmesh, so its edges can't be renumbered. The edit was not made."
+      "Text": "A connection refers to a user edge of this navmesh, so its edges can't be renumbered. The edit wasn't made."
     },
     {
       "Key": "MAP_Navigation_Stitch_Header",
@@ -1182,7 +1182,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Header_TT",
-      "Text": "Re-stitch the connections of the drawn set: find the connections whose edges no longer fit, and the boundary edges of two navmeshes that lie along each other, within the map (NVA) and across its NVC files with loaded neighbours. Find shows what would change; Apply makes it, as one undo."
+      "Text": "Re-stitch the connections of the drawn set: find connections whose edges no longer fit, and boundary edges of two navmeshes that lie along each other, within the map (NVA) and across its NVC files with loaded neighbours. Find shows what would change; Apply makes the changes as one undo step."
     },
     {
       "Key": "MAP_Navigation_Stitch_Needs_Overlay",
@@ -1194,7 +1194,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Scope_All_TT",
-      "Text": "Look at the connections and edges of every navmesh of the drawn set."
+      "Text": "Check the connections and edges of every navmesh in the drawn set."
     },
     {
       "Key": "MAP_Navigation_Stitch_Scope_Picked",
@@ -1202,7 +1202,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Picked_Only_TT",
-      "Text": "Only look at the connections and edges of the navmesh of the picked face."
+      "Text": "Only check the connections and edges of the picked face's navmesh."
     },
     {
       "Key": "MAP_Navigation_Stitch_Scope_Model",
@@ -1210,7 +1210,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Scope_Model_TT",
-      "Text": "Only look at the connections and edges of the selected model's navmesh in the drawn set (n or o). Select the model in the Models tab; Stitch model after Generate or Duplicate selects it for you."
+      "Text": "Only check the connections and edges of the selected model's navmesh in the drawn set (n or o). Select the model in the Models tab; Stitch model after Generate or Duplicate selects it for you."
     },
     {
       "Key": "MAP_Navigation_Stitch_No_Model",
@@ -1218,7 +1218,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Model_Quarters",
-      "Text": "The selected model is split into quarters (q files): pick a face of the quarter to stitch and use the picked face's navmesh."
+      "Text": "The selected model is split into quarters (q files). Pick a face in the quarter to stitch, and use the picked face's navmesh scope."
     },
     {
       "Key": "MAP_Navigation_Stitch_Model_Not_In_Set",
@@ -1230,7 +1230,7 @@
     },
     {
       "Key": "MAP_Navigation_Models_Stitch_TT",
-      "Text": "Opens the Stitch tab on this model, with gates updated, and finds what joining it to its neighbours would change. Nothing changes until Apply. Stitch each set: switch to the other set above the tabs and Find again."
+      "Text": "Open the Stitch tab on this model, with gates updated, and find what joining it to its neighbours would change. Nothing changes until you click Apply. Stitch each set: switch to the other set above the tabs and click Find again."
     },
     {
       "Key": "MAP_Navigation_Stitch_Neighbours",
@@ -1238,7 +1238,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Neighbours_TT",
-      "Text": "Also join edges across the NVC files of this map, with the neighbour maps that are loaded with their navmesh files. Only existing NVC files are used, unless Make missing NVC files is ticked."
+      "Text": "Also join edges across this map's NVC files, with neighbouring maps that are loaded with their navmesh files. Only existing NVC files are used, unless Make missing NVC files is ticked."
     },
     {
       "Key": "MAP_Navigation_Stitch_Create_Nvc",
@@ -1246,7 +1246,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Create_Nvc_TT",
-      "Text": "Open world tiles only. Also join edges with the loaded tiles around this one (diagonals included) that have no NVC file with it, and make the file on Apply, as the game names it: the smaller map ID first, storing connections from that map to the other. It is saved to map/nvc in the project; the project's directory scan finds it when the project is opened again."
+      "Text": "Open world tiles only. Also join edges with loaded neighbouring tiles (including diagonals) that have no NVC file with this one, and create the file on Apply, named as the game names it: the smaller map ID first, storing connections from that map to the other. It is saved to map/nvc in the project, and the project's folder scan finds it when the project is reopened."
     },
     {
       "Key": "MAP_Navigation_Stitch_New_Nvcs",
@@ -1258,7 +1258,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Open_Only_TT",
-      "Text": "Only join edges that have no connection yet, which changes the game's data least. When off, an edge that already has a connection can get another, as the game's partly overlapping edges do: this repairs more, but also adds pairs the game left apart."
+      "Text": "Only join edges that have no connection yet, which changes the game's data the least. When off, an edge that already has a connection can get another, as the game's partly overlapping edges do. This repairs more, but also adds pairs that the game left unjoined."
     },
     {
       "Key": "MAP_Navigation_Stitch_Separation",
@@ -1266,7 +1266,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Separation_TT",
-      "Text": "The largest distance across, seen from above, between two edges that are joined. Half the game's connections are 0; 90% are under 2.3 cm."
+      "Text": "The largest horizontal distance (seen from above) between two edges that are joined. Half the game's connections are 0, and 90% are under 2.3 cm."
     },
     {
       "Key": "MAP_Navigation_Stitch_Step",
@@ -1282,7 +1282,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Overlap_TT",
-      "Text": "The shortest length two edges must overlap by to be joined."
+      "Text": "The minimum length two edges must overlap by to be joined."
     },
     {
       "Key": "MAP_Navigation_Stitch_Find",
@@ -1290,7 +1290,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Find_TT",
-      "Text": "Finds what a re-stitch of the drawn set would change, without changing anything."
+      "Text": "Find what a re-stitch of the drawn set would change, without changing anything."
     },
     {
       "Key": "MAP_Navigation_Stitch_No_Pick",
@@ -1318,7 +1318,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Remove_Broken_TT",
-      "Text": "Remove the connections whose indices no longer fit the meshes (the face is gone, or the edge isn't its own or isn't on the boundary), or whose two edges are more than 5 m apart."
+      "Text": "Remove connections whose indices no longer fit the meshes (the face is gone, or the edge isn't its own or isn't on the boundary), or whose two edges are more than 5 m apart."
     },
     {
       "Key": "MAP_Navigation_Stitch_Add_New",
@@ -1326,7 +1326,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Add_New_TT",
-      "Text": "Join the pairs found: within the map in both directions, as the game stores them, and across a map in the direction its NVC file stores."
+      "Text": "Join the pairs found: within the map in both directions, as the game stores them, and across maps in the direction their NVC file stores."
     },
     {
       "Key": "MAP_Navigation_Stitch_Apply",
@@ -1334,7 +1334,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Apply_TT",
-      "Text": "Makes the changes found, as one undo. The map's save writes its NVA and the changed NVC files."
+      "Text": "Make the changes found as one undo step. Saving the map writes its NVA and the changed NVC files."
     },
     {
       "Key": "MAP_Navigation_Stitch_Applied",
@@ -1382,7 +1382,7 @@
     },
     {
       "Key": "MAP_Navigation_Models_Header_TT",
-      "Text": "Every navmesh model of the map, with its face count in each set. Click one to select it."
+      "Text": "Every navmesh model in the map, with its face count in each set. Click one to select it."
     },
     {
       "Key": "MAP_Navigation_Models_Counts",
@@ -1394,7 +1394,7 @@
     },
     {
       "Key": "MAP_Navigation_Models_Select_Picked_TT",
-      "Text": "Selects the model of the face picked in the Face Data or Links tab."
+      "Text": "Select the model of the face picked in the Face Data or Links tab."
     },
     {
       "Key": "MAP_Navigation_Models_Column_Model",
@@ -1454,7 +1454,7 @@
     },
     {
       "Key": "MAP_Navigation_Models_Remove_TT",
-      "Text": "Removes the model's faces in both sets, its gate nodes and the gates that lead to it, every connection naming it (NVA, and the NVC files on this map's side), and its node bank faces. One undo."
+      "Text": "Remove the model's faces in both sets, its gate nodes and the gates that lead to it, every connection that refers to it (NVA, and the NVC files on this map's side), and its node bank faces. One undo step."
     },
     {
       "Key": "MAP_Navigation_Models_Removed",
@@ -1494,11 +1494,11 @@
     },
     {
       "Key": "MAP_Navigation_Models_Duplicate_TT",
-      "Text": "Copies the model, moved, into the placeholder. Its vertices, bounds and query tree move with it. The copy has no connections or gate nodes: Stitch model, shown after it is copied, joins it. One undo."
+      "Text": "Copy the model, moved, into the placeholder. Its vertices, bounds and query tree move with it. The copy has no connections or gate nodes; Stitch model, shown after copying, joins it. One undo step."
     },
     {
       "Key": "MAP_Navigation_Models_Duplicated",
-      "Text": "Model {0} copied into {1}. Next, join it to its neighbours: Stitch model, below."
+      "Text": "Copied model {0} into {1}. Next, join it to its neighbours with Stitch model, below."
     },
     {
       "Key": "MAP_Navigation_Model_Error_Quarters",
@@ -1514,7 +1514,7 @@
     },
     {
       "Key": "MAP_Navigation_Model_Error_Slot",
-      "Text": "The placeholder isn't free any more."
+      "Text": "The placeholder is no longer free."
     },
     {
       "Key": "MAP_Navigation_Generate_Header",
@@ -1522,11 +1522,11 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Header_TT",
-      "Text": "Generate a model's n and o navmeshes from the collision parts and assets selected in the viewport, with Recast. Each part's collision is used where the part is placed. The result is a starting point: it covers the walkable surfaces of what is selected, including places the game's navmeshes leave out (roofs, ledges)."
+      "Text": "Generate a model's n and o navmeshes with Recast from the collision parts and assets selected in the viewport. Each part's collision is used at the part's position. The result is a starting point: it covers the walkable surfaces of the selection, including places the game's navmeshes leave out (roofs, ledges)."
     },
     {
       "Key": "MAP_Navigation_Generate_No_Collision",
-      "Text": "The map's collision isn't loaded. Turn on collision loading in the Map Editor's settings and load the map again."
+      "Text": "The map's collision isn't loaded. Turn on collision loading in the Map Editor's settings and reload the map."
     },
     {
       "Key": "MAP_Navigation_Generate_Collision_Header",
@@ -1534,7 +1534,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Collision_Header_TT",
-      "Text": "What the generation reads, from the viewport selection: each collision part's low collision, and each asset's own low collision, placed where the part is (the high collision is for inverse kinematics and is never used). Select more parts (in any loaded map) to include them."
+      "Text": "What the generation reads from the viewport selection: each collision part's low collision, and each asset's own low collision, at the part's position (high collision is for inverse kinematics and is never used). Select more parts (in any loaded map) to include them."
     },
     {
       "Key": "MAP_Navigation_Generate_Collision_Count",
@@ -1546,7 +1546,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Replace_TT",
-      "Text": "The generated meshes replace the selected model's n and o files. Its connections and node bank faces name the old faces, so they are dropped: re-stitch it afterwards. Its gate nodes are kept."
+      "Text": "Replace the selected model's n and o files with the generated meshes. Its connections and node bank faces refer to the old faces, so they are dropped; re-stitch it afterwards. Its gate nodes are kept."
     },
     {
       "Key": "MAP_Navigation_Generate_Into_Slot",
@@ -1554,7 +1554,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Into_Slot_TT",
-      "Text": "The generated meshes go into a placeholder with no faces, as a new model."
+      "Text": "Put the generated meshes into a placeholder with no faces, as a new model."
     },
     {
       "Key": "MAP_Navigation_Generate_Name_After",
@@ -1562,7 +1562,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Name_After_TT",
-      "Text": "The placeholder takes the ID of the first chosen collision model, as the game's models have their collision's ID, if no other model has it. Its NameIDs don't change."
+      "Text": "If no other model has it, give the placeholder the ID of the first chosen collision model, the same way the game's models share their collision's ID. Its NameIDs don't change."
     },
     {
       "Key": "MAP_Navigation_Generate_No_Target",
@@ -1578,7 +1578,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Set_TT",
-      "Text": "The voxel and character settings this set is generated with. The defaults are tuned against the game's navmeshes."
+      "Text": "The voxel and character settings for generating this set. The defaults are tuned to match the game's navmeshes."
     },
     {
       "Key": "MAP_Navigation_Generate_Cell",
@@ -1586,7 +1586,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Cell_TT",
-      "Text": "The horizontal size of a voxel. Smaller follows the collision more closely, and takes longer."
+      "Text": "The horizontal size of a voxel. Smaller values follow the collision more closely, but take longer."
     },
     {
       "Key": "MAP_Navigation_Generate_Radius",
@@ -1594,7 +1594,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Radius_TT",
-      "Text": "How far the navmesh is kept from walls and ledges. It is rounded up to whole voxels."
+      "Text": "How far to keep the navmesh from walls and ledges. Rounded up to whole voxels."
     },
     {
       "Key": "MAP_Navigation_Generate_Height",
@@ -1626,7 +1626,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Cell_Height_TT",
-      "Text": "The vertical size of a voxel. Smaller places the faces closer to the collision's height and tells steps apart more finely, and takes more memory."
+      "Text": "The vertical size of a voxel. Smaller values place faces closer to the collision's height and separate steps more finely, but use more memory."
     },
     {
       "Key": "MAP_Navigation_Generate_Edge_Error",
@@ -1634,7 +1634,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Edge_Error_TT",
-      "Text": "How far a simplified boundary may stray from the voxels' outline. Smaller follows walls and ledges more closely, with more corners; larger cuts corners, and keeps the mesh further in from where the collision ends."
+      "Text": "How far a simplified boundary can stray from the voxels' outline. Smaller values follow walls and ledges more closely, with more corners; larger values cut corners and keep the mesh further in from where the collision ends."
     },
     {
       "Key": "MAP_Navigation_Generate_Min_Region",
@@ -1650,7 +1650,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Merge_Region_TT",
-      "Text": "Regions smaller than this are merged into their neighbours before the faces are made, so a floor gives fewer, larger regions. It changes how Recast's faces are laid out, not what is covered."
+      "Text": "Regions smaller than this are merged into their neighbours before faces are made, so a floor gives fewer, larger regions. This changes how Recast lays out the faces, not what is covered."
     },
     {
       "Key": "MAP_Navigation_Generate_Max_Corners",
@@ -1658,7 +1658,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Max_Corners_TT",
-      "Text": "The most corners a face Recast makes may have, 3 to 6. 3 gives triangles only; more gives fewer, larger faces. The face grid and the contour split can cut them further."
+      "Text": "The maximum corners per Recast face, from 3 to 6. 3 gives only triangles; more gives fewer, larger faces. The face grid and the contour split can cut them further."
     },
     {
       "Key": "MAP_Navigation_Generate_Snap",
@@ -1666,7 +1666,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Snap_TT",
-      "Text": "Move each vertex onto the collision surface just below or above it, as the game's navmeshes sit. Off, vertices stay at the voxels' heights, up to a cell height off the collision, and the contour split is not made (it needs the collision surface)."
+      "Text": "Move each vertex onto the collision surface just below or above it, like the game's navmeshes. When off, vertices stay at the voxels' heights, up to one cell height off the collision, and the contour split isn't made (it needs the collision surface)."
     },
     {
       "Key": "MAP_Navigation_Generate_Edge",
@@ -1674,7 +1674,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Edge_TT",
-      "Text": "The longest a boundary edge may be; 0 for no limit."
+      "Text": "The maximum length of a boundary edge. 0 for no limit."
     },
     {
       "Key": "MAP_Navigation_Generate_Face_Size",
@@ -1686,7 +1686,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Shape_TT",
-      "Text": "The general shape of the generated faces. Tiles cuts the mesh along a world grid into even squares. Triangles keeps the shape of the walkable area, as the game's navmeshes do: larger triangles across open ground, smaller ones along edges and bumps."
+      "Text": "The overall shape of the generated faces. Tiles cuts the mesh along a world grid into even squares. Triangles keeps the shape of the walkable area, like the game's navmeshes: larger triangles across open ground, and smaller ones along edges and bumps."
     },
     {
       "Key": "MAP_Navigation_Generate_Shape_Tiles",
@@ -1702,7 +1702,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Shape_Triangles_TT",
-      "Text": "Recast's own triangles, with edges longer than the max triangle edge halved and thin slivers turned onto their other diagonal where that gives fatter triangles that still lie on the collision."
+      "Text": "Recast's own triangles, with edges longer than the max triangle edge halved, and thin slivers flipped onto their other diagonal where that gives fatter triangles that still lie on the collision."
     },
     {
       "Key": "MAP_Navigation_Generate_Triangle_Edge",
@@ -1714,7 +1714,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Triangle_Edge_TT",
-      "Text": "The longest a triangle's edge may be across. Longer edges are halved, in both faces on them, until none is longer. Smaller gives more, smaller triangles; 0 keeps Recast's triangles at their own size, which can be long and thin across open ground. Coverage doesn't change."
+      "Text": "The maximum length of a triangle edge. Longer edges are halved, in both faces that share them, until none is longer. Smaller values give more, smaller triangles; 0 keeps Recast's triangles at their own size, which can be long and thin across open ground. Coverage doesn't change."
     },
     {
       "Key": "MAP_Navigation_Generate_Face_Size_Off",
@@ -1722,7 +1722,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Face_Size_TT",
-      "Text": "Splits every face along a world grid of this size, so the faces are even (links and face data are set per face): none is wider than the size across X or Z. The grid lines sit at whole multiples of the size, so neighbouring models split their shared borders alike. 0 keeps Recast's faces, which can be several metres across. Coverage doesn't change."
+      "Text": "Split every face along a world grid of this size, so the faces are even (links and face data are set per face), and none is wider than the size along X or Z. The grid lines are at whole multiples of the size, so neighbouring models split their shared borders the same way. 0 keeps Recast's faces, which can be several metres across. Coverage doesn't change."
     },
     {
       "Key": "MAP_Navigation_Generate_Spill",
@@ -1738,7 +1738,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Simplify_TT",
-      "Text": "Cleans the finished navmesh up: short edges are collapsed and sliver triangles turned onto the other diagonal, leaving fewer, fuller triangles, as the game's navmeshes have. A change is only made where every face stays within the error below of the collision, no face turns over or gets thinner, and the outline (walls, cuts, map borders) keeps its shape. The faces come out as triangles. On by default for Dark Souls II; off elsewhere, where the face grid evens the face sizes for links and face data."
+      "Text": "Clean up the finished navmesh: collapse short edges and flip sliver triangles onto the other diagonal, leaving fewer, fuller triangles like the game's navmeshes. A change is only made where every face stays within the error below of the collision, no face flips or gets thinner, and the outline (walls, cuts, map borders) keeps its shape. The faces become triangles. On by default for Dark Souls II; off elsewhere, where the face grid evens out face sizes for links and face data."
     },
     {
       "Key": "MAP_Navigation_Generate_Simplify_Error",
@@ -1746,7 +1746,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Simplify_Error_TT",
-      "Text": "How far a simplified face may stand off the collision, in metres. Higher gives fewer, larger faces that follow the ground less closely."
+      "Text": "How far a simplified face can stand off the collision, in metres. Higher values give fewer, larger faces that follow the ground less closely."
     },
     {
       "Key": "MAP_Navigation_Generate_Contour",
@@ -1758,7 +1758,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Contour_TT",
-      "Text": "How far a face may stand off the collision under it before it is split, in metres. The generated faces have corners only where their outline turns, so a mound or dip inside one is lost and the face cuts flat through it; the game's navmeshes follow the ground. With this on, faces are split, and their new corners put onto the collision, until no edge middle or face centre is further off than this. Lower follows the ground more closely, with more faces. Off keeps the flat faces.\nStarts at 0.15 m for Tiles and 0.4 m for Triangles (which then keeps sizes close to the game's triangles); changing the face shape moves it to the new shape's value unless it was changed by hand."
+      "Text": "How far a face can stand off the collision under it before it is split, in metres. Generated faces have corners only where their outline turns, so a mound or dip inside one is lost and the face cuts flat through it; the game's navmeshes follow the ground. With this on, faces are split, and their new corners placed on the collision, until no edge midpoint or face centre is further off than this. Lower values follow the ground more closely, with more faces. Off keeps the flat faces.\nStarts at 0.15 m for Tiles and 0.4 m for Triangles (which then keeps sizes close to the game's triangles). Changing the face shape sets it to the new shape's value, unless you changed it by hand."
     },
     {
       "Key": "MAP_Navigation_Generate_Contour_Edge",
@@ -1766,11 +1766,11 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Contour_Edge_TT",
-      "Text": "The shortest edge following the collision makes, in metres: smaller bumps than this are left as they are."
+      "Text": "The shortest edge that following the collision creates, in metres. Bumps smaller than this are left as they are."
     },
     {
       "Key": "MAP_Navigation_Generate_Spill_TT",
-      "Text": "Lets the navmesh reach this far out past a ledge of its collision, level with the ledge. Recast keeps the mesh an agent radius in from every edge; the spill moves the boundary vertices at a drop out to the ledge and then past it, so the faces either side of a jump or fall come close, as the game's AI needs to use the link (ER, NR). Vertices against a wall, or where the way out meets the collision or a blocker, stay where they are, and blockers still cut the spilled faces. 0 for none."
+      "Text": "Let the navmesh extend this far past a ledge of its collision, level with the ledge. Recast keeps the mesh one agent radius in from every edge; the spill moves the boundary vertices at a drop out to the ledge and beyond, so the faces on either side of a jump or fall come close together, as the game's AI needs to use the link (ER, NR). Vertices against a wall, or where the way out meets the collision or a blocker, stay where they are, and blockers still cut the spilled faces. 0 for none."
     },
     {
       "Key": "MAP_Navigation_Generate_Triangles_Only",
@@ -1778,7 +1778,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Triangles_Only_TT",
-      "Text": "Splits every face into triangles, after the grid. A corner on a straight edge, shared with a neighbour, is kept, so a few faces may have four corners."
+      "Text": "Split every face into triangles after the grid. A corner on a straight edge shared with a neighbour is kept, so a few faces may have four corners."
     },
     {
       "Key": "MAP_Navigation_Generate_Links",
@@ -1786,7 +1786,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Links_TT",
-      "Text": "Adds links between faces from the height change across each ledge and gap. From every boundary edge, about every metre, the first surface outward within the reach is linked: within the jump height either way as a jump, both ways (edge data 0x2); lower than that, down to the fall height, as a fall, one way (0x4, with the drop in tenths of a metre in the high byte, as the game's are). None where the path through the air meets collision or a blocker, or where the faces are already a short walk apart."
+      "Text": "Add links between faces based on the height change across each ledge and gap. From every boundary edge, about every metre, the first surface outward within reach is linked. Within the jump height either way, it becomes a two-way jump (edge data 0x2); lower, down to the fall height, a one-way fall (0x4, with the drop in tenths of a metre in the high byte, like the game's). No link is made where the path through the air meets collision or a blocker, or where the faces are already a short walk apart."
     },
     {
       "Key": "MAP_Navigation_Generate_Jump_Height",
@@ -1798,7 +1798,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Jump_Height_TT",
-      "Text": "Ends that differ in height by up to this, either way, are joined by a jump that goes both ways. The game's n jumps are mostly within 2.6 m. 0 makes falls only, as the game's o meshes have."
+      "Text": "Ends that differ in height by up to this, either way, are joined by a two-way jump. The game's n jumps are mostly within 2.6 m. 0 makes only falls, like the game's o meshes."
     },
     {
       "Key": "MAP_Navigation_Generate_Fall_Height",
@@ -1806,7 +1806,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Fall_Height_TT",
-      "Text": "The deepest drop a fall link goes down. Drops deeper than the jump height and the climb are falls, one way. The game's falls go down by up to about 15 m."
+      "Text": "The deepest drop a fall link goes down. Drops deeper than the jump height and the climb are one-way falls. The game's falls go down by up to about 15 m."
     },
     {
       "Key": "MAP_Navigation_Generate_Link_Reach",
@@ -1814,7 +1814,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Link_Reach_TT",
-      "Text": "How far out from a ledge or gap the landing is looked for, across. The game's links reach up to 5 m in n and 9 m in o."
+      "Text": "How far out from a ledge or gap to look for the landing, horizontally. The game's links reach up to 5 m in n and 9 m in o."
     },
     {
       "Key": "MAP_Navigation_Generate_Done_Links",
@@ -1830,7 +1830,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Reset_TT",
-      "Text": "Puts this set's settings back to the defaults, for the face shape chosen."
+      "Text": "Reset this set's settings to the defaults for the chosen face shape."
     },
     {
       "Key": "MAP_Navigation_Generate_Running",
@@ -1846,11 +1846,11 @@
     },
     {
       "Key": "MAP_Navigation_Generate_TT",
-      "Text": "Generates both sets in the background, then puts them in the target as one undo. The new meshes have no connections or gate nodes: Stitch model, shown when it is done, joins them."
+      "Text": "Generate both sets in the background, then put them in the target as one undo step. The new meshes have no connections or gate nodes; Stitch model, shown when done, joins them."
     },
     {
       "Key": "MAP_Navigation_Generate_Done",
-      "Text": "Generated {0} n faces and {1} o faces into model {2:D6}, from {3} collision triangles. Next, join it to its neighbours: Stitch model, below."
+      "Text": "Generated {0} n faces and {1} o faces into model {2:D6} from {3} collision triangles. Next, join it to its neighbours with Stitch model, below."
     },
     {
       "Key": "MAP_Navigation_Generate_Source_Collision",
@@ -1874,7 +1874,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Blocker_TT",
-      "Text": "Tag this part as a blocker: its collision is solid but never walkable, so the navmesh is generated around it, an agent radius away, and never under or on it. Tags last for the session, and every tagged part of a loaded map counts in each generation, selected or not."
+      "Text": "Tag this part as a blocker: its collision is solid but never walkable, so the navmesh is generated around it, one agent radius away, and never under or on it. Tags last for the session, and every tagged part in a loaded map counts in each generation, whether selected or not."
     },
     {
       "Key": "MAP_Navigation_Generate_Runtime_Cut",
@@ -1882,7 +1882,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Runtime_Cut_TT",
-      "Text": "This asset's AssetEnvironmentGeometryParam row has a navimeshFlag, so the game cuts or marks the navmesh under it at runtime, and drops that when the asset breaks (most of these assets turn to None after breaking). Its navimeshFlagApply says which navmeshes: Type 0 the n set only (normal characters, most assets), Type 1 the o set only (huge characters), Type 2 both. The game's own navmeshes run under such assets. As a blocker it is left out of generation unless Bake assets cut at runtime is ticked."
+      "Text": "This asset's AssetEnvironmentGeometryParam row has a navimeshFlag, so the game cuts or marks the navmesh under it at runtime, and removes this when the asset breaks (most of these assets become None after breaking). Its navimeshFlagApply sets which navmeshes: Type 0 the n set only (normal characters, most assets), Type 1 the o set only (huge characters), and Type 2 both. The game's own navmeshes run under such assets. As a blocker, it is left out of generation unless Bake assets cut at runtime is ticked."
     },
     {
       "Key": "MAP_Navigation_Generate_Runtime_Cut_Obstacle",
@@ -1902,7 +1902,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Bake_Runtime_Cuts_TT",
-      "Text": "Also cut tagged blockers whose asset has a navimeshFlag into the generated navmesh. Off by default: the game cuts the navmesh under them at runtime (Impassable makes the faces impassable, Obstacle and High Cost make them cost more) and lifts the cut when the asset breaks, while a baked hole stays. Tick it for an asset that never breaks or moves and should always be a hole."
+      "Text": "Also cut tagged blockers whose asset has a navimeshFlag into the generated navmesh. Off by default, because the game cuts the navmesh under them at runtime (Impassable makes the faces impassable; Obstacle and High Cost make them cost more) and lifts the cut when the asset breaks, while a baked hole stays. Tick it for an asset that never breaks or moves and should always be a hole."
     },
     {
       "Key": "MAP_Navigation_Generate_Blockers_Header",
@@ -1910,7 +1910,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Blockers_Header_TT",
-      "Text": "The parts tagged as blockers. Each generation goes around every one of them that is in a loaded map and within the area generated, whether it is selected or not."
+      "Text": "The parts tagged as blockers. Each generation goes around every blocker in a loaded map within the generated area, whether it is selected or not."
     },
     {
       "Key": "MAP_Navigation_Generate_Blockers_Count",
@@ -1922,7 +1922,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Blockers_Clear_TT",
-      "Text": "Untags every blocker."
+      "Text": "Untag every blocker."
     },
     {
       "Key": "MAP_Navigation_Generate_Blockers_Untag",
@@ -1954,7 +1954,7 @@
     },
     {
       "Key": "MAP_Navigation_Generate_Error_Model_Id",
-      "Text": "Another model of the map already has the collision model's ID. Untick \"Give it the collision model's ID\"."
+      "Text": "Another model in the map already has the collision model's ID. Untick \"Give it the collision model's ID\"."
     },
     {
       "Key": "MAP_Navigation_Model_Target_New",
@@ -1962,11 +1962,11 @@
     },
     {
       "Key": "MAP_Navigation_Model_Target_New_TT",
-      "Text": "Adds a new model: an n entry at the end of the n half of the NVA and an o entry at the end of the o half, as the game's files order them, with NameIDs by the game's rule. No existing NameID changes; gate nodes that point into the o half are moved with it."
+      "Text": "Add a new model: an n entry at the end of the NVA's n half and an o entry at the end of its o half, in the same order as the game's files, with NameIDs by the game's rule. No existing NameID changes, and gate nodes that point into the o half are moved with it."
     },
     {
       "Key": "MAP_Navigation_Model_Target_New_Id_TT",
-      "Text": "The new model's ModelID, which names its files. It starts at the collision model's ID (Generate) or the copied model's next (Duplicate), or the next free one after it."
+      "Text": "The new model's ModelID, which names its files. It starts at the collision model's ID (Generate) or the copied model's next ID (Duplicate), or the next free ID after it."
     },
     {
       "Key": "MAP_Navigation_Model_Target_New_Id_Taken",
@@ -1982,11 +1982,11 @@
     },
     {
       "Key": "MAP_Navigation_Model_Error_Add_Quarters",
-      "Text": "This map has navmeshes split into quarters, whose NameIDs follow their place in the NVA, so models can't be added to it. Use a free placeholder or replace a model."
+      "Text": "This map has navmeshes split into quarters, whose NameIDs depend on their position in the NVA, so models can't be added to it. Use a free placeholder or replace a model."
     },
     {
       "Key": "MAP_Navigation_Model_Error_Add_No_Rule",
-      "Text": "This game's NameIDs follow no rule the tool can repeat, so a new model can't be given one. Duplicate into a free placeholder instead."
+      "Text": "This game's NameIDs follow no rule the tool can reproduce, so a new model can't get one. Duplicate into a free placeholder instead."
     },
     {
       "Key": "MAP_Navigation_Model_Error_Add_Order",
@@ -2002,7 +2002,7 @@
     },
     {
       "Key": "MAP_Navigation_Overlay_Only_Selected_TT",
-      "Text": "Draw only the model selected in the Models tab, to tell it apart from the map's other navmeshes, e.g. a generated model on top of the game's."
+      "Text": "Draw only the model selected in the Models tab, to distinguish it from the map's other navmeshes, for example a generated model on top of the game's."
     },
     {
       "Key": "MAP_Navigation_Failed_Read",
@@ -2018,7 +2018,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Description",
-      "Text": "Edits navmeshes in the viewport, on the drawn navmesh set (Overlay tab). The Brush moves vertices: the nearest corner of the face under it can be raised, lowered or dragged, faces, edges and connections are kept, and on commit the navmesh's bounds, face tree and clearance values around the moved vertices are worked out again. Moving a map's outer edges can part them from a neighbouring map's navmesh: re-stitch (Stitch tab) or keep them in place. Add Face places a new triangle with three clicks; Remove Face removes the face clicked."
+      "Text": "Edit navmeshes in the viewport, on the drawn navmesh set (Overlay tab). The Brush moves vertices: raise, lower or drag the nearest corner of the face under it. Faces, edges and connections are kept, and on commit the navmesh's bounds, face tree and clearance values around the moved vertices are recalculated. Moving a map's outer edges can separate them from a neighbouring map's navmesh, so re-stitch (Stitch tab) or keep them in place. Add Face places a new triangle with three clicks; Remove Face removes the clicked face."
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_Header",
@@ -2030,7 +2030,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_Input_TT",
-      "Text": "Choose the brush, which moves vertices, Add Face, which places a new triangle, or Remove Face, which removes the face clicked."
+      "Text": "Choose the brush, which moves vertices; Add Face, which places a new triangle; or Remove Face, which removes the clicked face."
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_Brush",
@@ -2042,11 +2042,11 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_Brush_TT",
-      "Text": "Raises, lowers, drags or smooths the vertices under the brush while the button is held. The edits wait until they are committed."
+      "Text": "Raise, lower, drag or smooth the vertices under the brush while the button is held. Edits wait until committed."
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_AddFace_TT",
-      "Text": "Three clicks place the corners of a new triangle. A click near a vertex of the navmesh takes that vertex, so the triangle joins the faces on the edges it shares; elsewhere a new vertex goes where the cursor meets a drawn navmesh, or the height of the last corner. The first corner must be on a navmesh, which the triangle is added to. The third click adds it as one undoable edit. The new face takes the face data (or flags) of the face it joins; change them in the Face Data tab."
+      "Text": "Three clicks place the corners of a new triangle. A click near a navmesh vertex uses that vertex, so the triangle joins the faces on the edges it shares; elsewhere, a new vertex goes where the cursor meets a drawn navmesh, or at the last corner's height. The first corner must be on a navmesh, which the triangle is added to. The third click adds it as one undoable edit. The new face takes the face data (or flags) of the face it joins; change them in the Face Data tab."
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_Remove_Face",
@@ -2054,11 +2054,11 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Tool_RemoveFace_TT",
-      "Text": "The face under the cursor is outlined; a click removes it as one undoable edit. Links on the face or leading to it go with it, the edges of the faces it was joined to are left open, and vertices no other face uses go. Later faces move down one, so the navmesh's connections and node bank faces follow; those naming the face or its edges are dropped (re-stitch to join it again)."
+      "Text": "The face under the cursor is outlined, and a click removes it as one undoable edit. Links on the face or leading to it are removed, the edges of the faces it was joined to are left open, and vertices no other face uses are removed. Later faces move down one, so the navmesh's connections and node bank faces are updated; those that refer to the face or its edges are dropped (re-stitch to join it again)."
     },
     {
       "Key": "MAP_Navigation_Mode_Face_Remove",
-      "Text": "Clicks in the viewport remove the face under the cursor (Edit tab); clicks don't select."
+      "Text": "Clicks in the viewport remove the face under the cursor (Edit tab). Clicks don't select."
     },
     {
       "Key": "MAP_Navigation_Face_Remove_Header",
@@ -2086,7 +2086,7 @@
     },
     {
       "Key": "MAP_Navigation_Face_Removed_Graph",
-      "Text": "Removed face {1} from {0}: {2} links with it, {3} edges left open, {4} vertices dropped, {5} connections or bank faces dropped. The cost graph was built again, as it no longer fitted the mesh."
+      "Text": "Removed face {1} from {0}: {2} links with it, {3} edges left open, {4} vertices dropped, {5} connections or bank faces dropped. The cost graph was rebuilt because it no longer fitted the mesh."
     },
     {
       "Key": "MAP_Navigation_Face_Remove_Failed",
@@ -2098,15 +2098,15 @@
     },
     {
       "Key": "MAP_Navigation_Face_Error_Last",
-      "Text": "That is the navmesh's last face: remove the model in the Models tab instead."
+      "Text": "This is the navmesh's last face. Remove the model in the Models tab instead."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Mcg",
-      "Text": "That triangle is the only one an MCG edge lists at one of its nodes: remove the node or link it again in the Graph tab first."
+      "Text": "This triangle is the only one an MCG edge lists at one of its nodes. First remove the node or link it again in the Graph tab."
     },
     {
       "Key": "MAP_Navigation_Mode_Face_Add",
-      "Text": "Clicks in the viewport place the corners of a new face (Edit tab); clicks don't select."
+      "Text": "Clicks in the viewport place the corners of a new face (Edit tab). Clicks don't select."
     },
     {
       "Key": "MAP_Navigation_Face_Snap_Header",
@@ -2114,11 +2114,11 @@
     },
     {
       "Key": "MAP_Navigation_Face_Snap_Header_TT",
-      "Text": "How near the cursor a vertex must be for a corner to take it."
+      "Text": "How close to the cursor a vertex must be for a corner to use it."
     },
     {
       "Key": "MAP_Navigation_Face_Snap_Input_TT",
-      "Text": "In metres, from the line under the cursor. A taken vertex joins the new face to the faces around it; 0 never takes one."
+      "Text": "In metres, from the line under the cursor. A used vertex joins the new face to the faces around it. 0 never uses one."
     },
     {
       "Key": "MAP_Navigation_Face_Corners_Header",
@@ -2166,7 +2166,7 @@
     },
     {
       "Key": "MAP_Navigation_Face_Undo_Corner_TT",
-      "Text": "Removes the last corner placed."
+      "Text": "Remove the last placed corner."
     },
     {
       "Key": "MAP_Navigation_Face_Clear",
@@ -2174,11 +2174,11 @@
     },
     {
       "Key": "MAP_Navigation_Face_Clear_TT",
-      "Text": "Removes every corner placed, so the next click starts a new face."
+      "Text": "Remove all placed corners, so the next click starts a new face."
     },
     {
       "Key": "MAP_Navigation_Face_Control_Click",
-      "Text": "{0}: place a corner. The third adds the face."
+      "Text": "{0}: place a corner. The third corner adds the face."
     },
     {
       "Key": "MAP_Navigation_Face_Added",
@@ -2186,7 +2186,7 @@
     },
     {
       "Key": "MAP_Navigation_Face_Added_Graph",
-      "Text": "Added face {1} to {0}: {2} edges joined to existing faces, {3} new vertices. The cost graph was built again, as the face joins no cluster or more than one."
+      "Text": "Added face {1} to {0}: {2} edges joined to existing faces, {3} new vertices. The cost graph was rebuilt because the face joins no cluster or more than one."
     },
     {
       "Key": "MAP_Navigation_Face_Failed",
@@ -2194,7 +2194,7 @@
     },
     {
       "Key": "MAP_Navigation_Face_Error_Pending",
-      "Text": "{0} has brush edits waiting: commit or discard them before adding a face to it."
+      "Text": "{0} has pending brush edits. Commit or discard them before adding a face to it."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Corners",
@@ -2202,19 +2202,19 @@
     },
     {
       "Key": "MAP_Navigation_Face_Error_File",
-      "Text": "The navmesh file couldn't be read for the edit."
+      "Text": "Couldn't read the navmesh file for the edit."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Vertex",
-      "Text": "A corner names a vertex the navmesh's faces don't use (a link's own vertex, or one out of range)."
+      "Text": "A corner refers to a vertex that the navmesh's faces don't use (a link's own vertex, or one out of range)."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Degenerate",
-      "Text": "The face would have no area seen from above (two corners at one place, or standing on its edge): place the last corner elsewhere."
+      "Text": "Seen from above, the face would have no area (two corners in one place, or standing on its edge). Place the last corner elsewhere."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Overlap",
-      "Text": "The face would lie over a face that shares one of its edges: place the last corner on the open side of the edge."
+      "Text": "The face would overlap a face that shares one of its edges. Place the last corner on the open side of the edge."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Edge_Taken",
@@ -2222,15 +2222,15 @@
     },
     {
       "Key": "MAP_Navigation_Face_Error_Edge_Connected",
-      "Text": "One of the face's edges joins another navmesh (a connection in the NVA or an NVC file): the face can't join it. Place the corners so the face doesn't share that edge."
+      "Text": "One of the face's edges joins another navmesh (a connection in the NVA or an NVC file), so the face can't join it. Place the corners so the face doesn't share that edge."
     },
     {
       "Key": "MAP_Navigation_Face_Error_Cache",
-      "Text": "The navmesh's clearance cache isn't laid out as its faces are, where the face would change it, so it can't be kept in step."
+      "Text": "The navmesh's clearance cache isn't laid out like its faces where the face would change it, so it can't be kept in sync."
     },
     {
       "Key": "MAP_Navigation_Edit_Needs_Overlay",
-      "Text": "Tick Show overlay above the tabs to edit: the cursor works on the navmesh set it draws."
+      "Text": "Tick Show overlay above the tabs to edit. The cursor works on the navmesh set the overlay draws."
     },
     {
       "Key": "MAP_Navigation_Edit_Actions_Header",
@@ -2246,7 +2246,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Start_TT",
-      "Text": "Shows the brush on the navmesh under the mouse, so its vertices can be moved by holding the left mouse button; clicks in the viewport brush instead of selecting. Turns off picking, painting and linking, and the Collision Editor's brush, which uses the same keys. Stops when you leave this tab; edits that aren't committed are kept."
+      "Text": "Show the brush on the navmesh under the mouse, so you can move its vertices by holding the left mouse button. Clicks in the viewport brush instead of selecting. This turns off picking, painting and linking, and the Collision Editor's brush, which uses the same keys. Stops when you leave this tab; uncommitted edits are kept."
     },
     {
       "Key": "MAP_Navigation_Edit_Stop",
@@ -2254,7 +2254,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Stop_TT",
-      "Text": "Hides the cursor. Edits that haven't been committed are kept, and can be committed or discarded later."
+      "Text": "Hide the cursor. Uncommitted edits are kept, and you can commit or discard them later."
     },
     {
       "Key": "MAP_Navigation_Edit_Commit",
@@ -2262,7 +2262,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Commit_TT",
-      "Text": "Puts the moved vertices in the edited navmesh files, with their bounds, face trees and nearby clearance values worked out again. Can be undone; saving the map writes the navmesh binder."
+      "Text": "Write the moved vertices into the edited navmesh files, recalculating their bounds, face trees and nearby clearance values. You can undo this. Saving the map writes the navmesh binder."
     },
     {
       "Key": "MAP_Navigation_Edit_Discard",
@@ -2270,7 +2270,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Discard_TT",
-      "Text": "Puts every moved vertex back where it was."
+      "Text": "Restore every moved vertex to its original position."
     },
     {
       "Key": "MAP_Navigation_Edit_Discarded",
@@ -2282,11 +2282,11 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Clearance",
-      "Text": "{0}: clearance worked out again in {1} cache(s): {2} vertex values, {3} edge values and {4} pair values changed ({5} cache(s) left as they were)."
+      "Text": "{0}: recalculated clearance in {1} cache(s): {2} vertex values, {3} edge values and {4} pair values changed ({5} cache(s) unchanged)."
     },
     {
       "Key": "MAP_Navigation_Edit_Commit_Failed",
-      "Text": "{0} couldn't be rebuilt with its moved vertices. Nothing was committed."
+      "Text": "Couldn't rebuild {0} with its moved vertices. Nothing was committed."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Header",
@@ -2294,7 +2294,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Header_TT",
-      "Text": "Which other navmeshes of the map the brush moves. Neighbours of the same set take the same falloff as the brushed navmesh; the other set's vertices within the link distance of the brush's centre move fully, then the radius fades them out."
+      "Text": "Which other navmeshes in the map the brush moves. Neighbours in the same set use the same falloff as the brushed navmesh. The other set's vertices within the link distance of the brush's centre move fully, then fade out across the radius."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Neighbours",
@@ -2302,7 +2302,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Neighbours_TT",
-      "Text": "The map's other navmeshes of the same set under the brush move with the same falloff, so edges joined to them stay joined. Off, only the navmesh under the cursor moves."
+      "Text": "Move the map's other navmeshes of the same set under the brush with the same falloff, so edges joined to them stay joined. When off, only the navmesh under the cursor moves."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Other_Set",
@@ -2310,7 +2310,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Other_Set_TT",
-      "Text": "The other set's navmeshes follow too: o for an edit of n, n for an edit of o. The sets are the same ground for different agent sizes, but their vertices rarely coincide; those within the link distance of the brush's centre move fully. Smooth flattens each set towards its own plane."
+      "Text": "Also move the other set's navmeshes: o when editing n, and n when editing o. The sets are the same ground for different agent sizes, but their vertices rarely coincide, so only those within the link distance of the brush's centre move fully. Smooth flattens each set towards its own plane."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Distance_Header",
@@ -2322,20 +2322,20 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Distance_Input_TT",
-      "Text": "In metres. Past it, the radius fades them out."
+      "Text": "In metres. Beyond this, vertices fade out across the radius."
     },
     { "Key": "MAP_Navigation_Edit_Brush_Header", "Text": "Brush" },
     { "Key": "MAP_Navigation_Edit_Brush_Header_TT", "Text": "What holding the left mouse button does to the vertices under the brush. The mode keys switch it between strokes." },
     { "Key": "MAP_Navigation_Edit_Brush_Mode_Input_TT", "Text": "The brush mode. Raise, Lower and Smooth apply at each interval while the button is held; Drag follows the mouse." },
-    { "Key": "MAP_Navigation_Edit_Brush_Mode_Raise_TT", "Text": "Raise: lifts the vertices under the brush by the step at each interval while the button is held, the centre most." },
-    { "Key": "MAP_Navigation_Edit_Brush_Mode_Lower_TT", "Text": "Lower: sinks the vertices under the brush by the step at each interval while the button is held, the centre most." },
-    { "Key": "MAP_Navigation_Edit_Brush_Mode_Drag_TT", "Text": "Drag: takes the vertices under the brush when the button goes down, and slides them with the mouse at their height until it is let go." },
-    { "Key": "MAP_Navigation_Edit_Brush_Mode_Smooth_TT", "Text": "Smooth: pulls the vertices under the brush towards the plane that best fits them at each interval while the button is held. Bumps flatten; slopes and ramps keep their angle." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Raise_TT", "Text": "Raise: lift the vertices under the brush by the step at each interval while the button is held, most at the centre." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Lower_TT", "Text": "Lower: sink the vertices under the brush by the step at each interval while the button is held, most at the centre." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Drag_TT", "Text": "Drag: grab the vertices under the brush when the button is pressed, and slide them with the mouse at their height until it is released." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Smooth_TT", "Text": "Smooth: pull the vertices under the brush towards their best-fit plane at each interval while the button is held. Bumps flatten; slopes and ramps keep their angle." },
     { "Key": "MAP_Navigation_Edit_Smooth_Strength_Header", "Text": "Strength" },
-    { "Key": "MAP_Navigation_Edit_Smooth_Strength_Header_TT", "Text": "How much of the way to the plane the vertices at the brush's centre move each interval; those further out move less." },
+    { "Key": "MAP_Navigation_Edit_Smooth_Strength_Header_TT", "Text": "How far towards the plane the vertices at the brush's centre move each interval. Vertices further out move less." },
     { "Key": "MAP_Navigation_Edit_Smooth_Strength_Input_TT", "Text": "100% puts the centre vertices on the plane in one interval." },
     { "Key": "MAP_Navigation_Edit_Brush_Interval_Header", "Text": "Interval" },
-    { "Key": "MAP_Navigation_Edit_Brush_Interval_Header_TT", "Text": "How often the brush applies again while the button is held. It also applies once when the button goes down." },
+    { "Key": "MAP_Navigation_Edit_Brush_Interval_Header_TT", "Text": "How often the brush applies again while the button is held. It also applies once when the button is pressed." },
     { "Key": "MAP_Navigation_Edit_Brush_Interval_Input_TT", "Text": "The time in seconds between applications." },
     { "Key": "MAP_Navigation_Edit_Control_Brush", "Text": "Hold {0}: brush the navmesh under the cursor." },
     { "Key": "MAP_Navigation_Edit_Control_Modes", "Text": "{0} Raise, {1} Lower, {2} Drag, {3} Smooth: switch the brush mode." },
@@ -2347,7 +2347,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Step_Header_TT",
-      "Text": "How far the vertex at the brush's centre moves each interval; those further out move less."
+      "Text": "How far the vertex at the brush's centre moves each interval. Vertices further out move less."
     },
     {
       "Key": "MAP_Navigation_Edit_Step_Input_TT",
@@ -2359,11 +2359,11 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Radius_Header_TT",
-      "Text": "The size of the brush: every vertex within it moves, less the further it is from the centre. Shown by the brush sphere."
+      "Text": "The size of the brush, shown by the brush sphere. Every vertex within it moves, less the further it is from the centre."
     },
     {
       "Key": "MAP_Navigation_Edit_Radius_Input_TT",
-      "Text": "In metres. With no vertex inside the brush, the nearest corner of the face under it moves alone."
+      "Text": "In metres. If no vertex is inside the brush, only the nearest corner of the face under it moves."
     },
     {
       "Key": "MAP_Navigation_Edit_Cursor_Opacity_Header",
@@ -2383,7 +2383,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Controls_Header_TT",
-      "Text": "The brush works while the mouse is over the viewport; holding the right or middle button flies the camera instead. The mode keys work while no mouse button is held. They can be changed in the keybind and mousebind settings."
+      "Text": "The brush works while the mouse is over the viewport; holding the right or middle button flies the camera instead. The mode keys work while no mouse button is held. You can change them in the keybind and mousebind settings."
     },
     {
       "Key": "MAP_Navigation_Edit_Cursor_Header",
@@ -2423,7 +2423,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Pending_Other_Map",
-      "Text": "These edits are on {0}. Pick that map above to see and continue them, or commit or discard them."
+      "Text": "These edits are on {0}. Pick that map above to view and continue them, or to commit or discard them."
     },
     {
       "Key": "MAP_Navigation_Tab_Gates",
@@ -2431,7 +2431,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Description",
-      "Text": "The gate nodes of the drawn set: the points where two navmeshes of the map meet, which the game's high-level path graph runs through, with the walking cost between each two gates of a navmesh. Gate nodes never cross maps."
+      "Text": "The gate nodes of the drawn set: the points where two navmeshes in the map meet, which the game's high-level path graph runs through, with the walking cost between each pair of gates in a navmesh. Gate nodes never cross maps."
     },
     {
       "Key": "MAP_Navigation_Gates_Pick_Header",
@@ -2439,7 +2439,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Pick_Header_TT",
-      "Text": "Choosing a navmesh and a gate on the overlay."
+      "Text": "Select a navmesh and a gate on the overlay."
     },
     {
       "Key": "MAP_Navigation_Gates_Mode",
@@ -2447,7 +2447,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Mode_TT",
-      "Text": "A click on a gate's marker chooses it and its navmesh; a click on a face chooses that face's navmesh. Click the chosen gate again and drag to move it: it slides along its navmesh's connection edges to its target, its partner moves with it, and the costs are walked again on release. Clicks don't select map objects meanwhile. Turns itself off when you leave this tab."
+      "Text": "Clicking a gate's marker selects it and its navmesh; clicking a face selects that face's navmesh. Click the selected gate again and drag to move it: it slides along its navmesh's connection edges to its target, its partner moves with it, and the costs are recalculated on release. Meanwhile, clicks don't select map objects. Turns off automatically when you leave this tab."
     },
     {
       "Key": "MAP_Navigation_Gates_Navmesh_Header",
@@ -2459,7 +2459,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_None",
-      "Text": "No navmesh chosen. Turn on picking above and click a face or a gate on the overlay."
+      "Text": "No navmesh selected. Turn on picking above and click a face or a gate on the overlay."
     },
     {
       "Key": "MAP_Navigation_Gates_Navmesh",
@@ -2471,7 +2471,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Rebuild_One_TT",
-      "Text": "Replaces the gates between this navmesh and each navmesh of the map it is connected to, on both sides: one gate per run of connection edges, at the middle of the overlap of its longest connection. The costs are walked again; costs between other gates of its neighbours are kept."
+      "Text": "Replace the gates between this navmesh and each map navmesh it connects to, on both sides: one gate per run of connection edges, at the middle of its longest connection's overlap. The costs are recalculated; costs between its neighbours' other gates are kept."
     },
     {
       "Key": "MAP_Navigation_Gates_Recompute",
@@ -2479,11 +2479,11 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Recompute_TT",
-      "Text": "Walks the cost between each two of this navmesh's gates again, over its faces, e.g. after its vertices were moved. Hand-set costs are replaced."
+      "Text": "Recalculate the cost between each pair of this navmesh's gates across its faces, for example after moving its vertices. Hand-set costs are replaced."
     },
     {
       "Key": "MAP_Navigation_Gates_Recomputed",
-      "Text": "Costs walked again."
+      "Text": "Recalculated the costs."
     },
     {
       "Key": "MAP_Navigation_Gates_Rebuild_Header",
@@ -2491,7 +2491,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Rebuild_Header_TT",
-      "Text": "Building gates from the connections, as the game's files lay them out."
+      "Text": "Build gates from the connections, laid out like the game's files."
     },
     {
       "Key": "MAP_Navigation_Gates_Join",
@@ -2499,7 +2499,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Join_TT",
-      "Text": "Connection edges to the same navmesh within this distance of each other are one run, which gets one gate. 5 m matches the game's gate count for 70% of navmesh pairs."
+      "Text": "Connection edges to the same navmesh within this distance of each other count as one run, which gets one gate. 5 m matches the game's gate count for 70% of navmesh pairs."
     },
     {
       "Key": "MAP_Navigation_Gates_Rebuild_All",
@@ -2507,7 +2507,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Rebuild_All_TT",
-      "Text": "Rebuilds the gates of every navmesh of the drawn set. The result follows the game's rules but places only about 40% of the game's gates exactly where the game has them, so this replaces the game's own gates."
+      "Text": "Rebuild the gates of every navmesh in the drawn set. The result follows the game's rules, but places only about 40% of gates exactly where the game has them, so this replaces the game's own gates."
     },
     {
       "Key": "MAP_Navigation_Gates_Problems",
@@ -2519,7 +2519,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_List_Header_TT",
-      "Text": "The chosen navmesh's gates. Click a row to choose the gate."
+      "Text": "The selected navmesh's gates. Click a row to select the gate."
     },
     {
       "Key": "MAP_Navigation_Gates_List_Empty",
@@ -2539,7 +2539,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Select_TT",
-      "Text": "Chooses this gate, which the viewport draws larger."
+      "Text": "Select this gate. The viewport draws it larger."
     },
     {
       "Key": "MAP_Navigation_Gates_Leads_To",
@@ -2567,7 +2567,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Status_UnpairedFull_TT",
-      "Text": "No partner, because the target navmesh has 16 gates. The game's files do this."
+      "Text": "No partner, because the target navmesh has 16 gates. The game's files also do this."
     },
     {
       "Key": "MAP_Navigation_Gates_Status_Unpaired",
@@ -2575,7 +2575,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Status_Unpaired_TT",
-      "Text": "No partner although the target has room, which the game's files never do. Rebuilding the navmesh's gates pairs it."
+      "Text": "No partner even though the target has room, which the game's files never do. Rebuilding the navmesh's gates pairs it."
     },
     {
       "Key": "MAP_Navigation_Gates_Status_Broken",
@@ -2591,7 +2591,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Remove_TT",
-      "Text": "Removes this gate and its partner, with their cost rows and columns."
+      "Text": "Remove this gate and its partner, with their cost rows and columns."
     },
     {
       "Key": "MAP_Navigation_Gates_Removed",
@@ -2607,11 +2607,11 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Costs_Header_TT",
-      "Text": "The walking cost in metres from each gate (row) to each other (column), as the game stores it: in centimetres, up to 655 m. '-' means unreachable. Setting a cell sets its mirror too, as the game's tables are symmetric."
+      "Text": "The walking cost in metres from each gate (row) to each other gate (column), as stored by the game: in centimetres, up to 655 m. '-' means unreachable. Setting a cell also sets its mirror, because the game's tables are symmetric."
     },
     {
       "Key": "MAP_Navigation_Gates_Costs_Not_Stored",
-      "Text": "This game's files store no costs between gates (every one is -), so gate edits leave them unset. A cost typed here is written as given."
+      "Text": "This game's files store no costs between gates (all are -), so gate edits leave them unset. A cost you type here is written as entered."
     },
     {
       "Key": "MAP_Navigation_Gates_Cost_TT",
@@ -2627,11 +2627,11 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Add_Header_TT",
-      "Text": "Adding a gate between the chosen navmesh and one it is connected to."
+      "Text": "Add a gate between the selected navmesh and a navmesh it connects to."
     },
     {
       "Key": "MAP_Navigation_Gates_Add_No_Neighbours",
-      "Text": "This navmesh isn't connected to any other navmesh of the map."
+      "Text": "This navmesh isn't connected to any other navmesh in the map."
     },
     {
       "Key": "MAP_Navigation_Gates_Neighbour",
@@ -2647,7 +2647,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Add_TT",
-      "Text": "Adds a gate on the connection to that navmesh, and its partner there if that navmesh has room. Drag it to where it should be."
+      "Text": "Add a gate on the connection to that navmesh, and its partner there if that navmesh has room. Drag it to where it should be."
     },
     {
       "Key": "MAP_Navigation_Gates_Added",
@@ -2659,7 +2659,7 @@
     },
     {
       "Key": "MAP_Navigation_Gates_Moved",
-      "Text": "Gate moved, and its costs walked again."
+      "Text": "Moved the gate and recalculated its costs."
     },
     {
       "Key": "MAP_Navigation_Gates_Error_Not_Connected",
@@ -2679,7 +2679,7 @@
     },
     {
       "Key": "MAP_Navigation_Stitch_Update_Gates_TT",
-      "Text": "Also rebuilds the gates of each pair of the map's navmeshes whose connections the re-stitch changes, so a new or moved model gets gates."
+      "Text": "Also rebuild the gates of each pair of map navmeshes whose connections the re-stitch changes, so a new or moved model gets gates."
     },
     {
       "Key": "MAP_Navigation_Stitch_Gates_Updated",
@@ -2687,7 +2687,7 @@
     },
     {
       "Key": "MAP_Navigation_Issue_GateCount",
-      "Text": "Navmesh {0} has {1} gate nodes; the game allows 16."
+      "Text": "Navmesh {0} has {1} gate nodes, but the game allows 16."
     },
     {
       "Key": "MAP_Navigation_Issue_GateNotConnected",
@@ -2695,23 +2695,23 @@
     },
     {
       "Key": "MAP_Navigation_Issue_GatePairBroken",
-      "Text": "Gate {1} of navmesh {0} names gate {3} of navmesh {2} as its partner, which doesn't point back."
+      "Text": "Gate {1} of navmesh {0} lists gate {3} of navmesh {2} as its partner, but that gate doesn't point back."
     },
     {
       "Key": "MAP_Navigation_Issue_GateUnpaired",
-      "Text": "Gate {1} of navmesh {0} has no partner in navmesh {2}, although that navmesh has room."
+      "Text": "Gate {1} of navmesh {0} has no partner in navmesh {2}, even though that navmesh has room."
     },
     {
       "Key": "MAP_Navigation_Issue_GateCostCount",
-      "Text": "Gate {1} of navmesh {0} has {2} costs; the game's have 16."
+      "Text": "Gate {1} of navmesh {0} has {2} costs, but the game's gates have 16."
     },
     {
       "Key": "MAP_Navigation_Issue_GateCostSelf",
-      "Text": "Gate {1} of navmesh {0} costs {2} to itself; the game's cost 0."
+      "Text": "Gate {1} of navmesh {0} has a cost of {2} to itself, but the game's gates have 0."
     },
     {
       "Key": "MAP_Navigation_Issue_GateCostAsymmetric",
-      "Text": "Gates {1} and {2} of navmesh {0} cost {3} one way and {4} the other; the game's tables are symmetric."
+      "Text": "Gates {1} and {2} of navmesh {0} cost {3} one way and {4} the other, but the game's tables are symmetric."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Header",
@@ -2719,11 +2719,11 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Header_TT",
-      "Text": "Build the map's whole navigation again from its collision and its assets: every model's n and o navmesh, the NVA, the connections, gates and node banks, and the NVC files to loaded neighbours. One undo."
+      "Text": "Rebuild the map's whole navigation from its collision and assets: every model's n and o navmesh, the NVA, the connections, gates and node banks, and the NVC files to loaded neighbours. One undo step."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Description",
-      "Text": "Generates each set once over the map's low collision, placed by its collision parts (new and edited collision included), and every asset's collision (with the n and o settings of the Models tab's Generate group), keeps what is reachable from the map's enemies and players, and splits it into one navmesh per collision model, joined to each other exactly. On a vanilla catacomb or cave this covers 85-92% of the game's navmesh, with 86-98% of it on the game's. Doors, gates and fog walls are solid in the input, so rooms behind them may be cut off: check the result with the overlay and Validate. Maps with quarter (q) files aren't supported."
+      "Text": "Generate each set once over the map's low collision, placed by its collision parts (including new and edited collision), and every asset's collision (with the n and o settings of the Models tab's Generate group). Keep what is reachable from the map's enemies and players, and split it into one navmesh per collision model, joined to each other exactly. On a vanilla catacomb or cave, this covers 85-92% of the game's navmesh, with 86-98% of it on the game's navmesh. Doors, gates and fog walls are solid in the input, so rooms behind them may be cut off; check the result with the overlay and Validate. Maps with quarter (q) files aren't supported."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Error_Quarters",
@@ -2735,7 +2735,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Error_Input",
-      "Text": "No collision to generate from. Load the map with collision on (and Havok loading on)."
+      "Text": "No collision to generate from. Load the map with collision and Havok loading on."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Collision_Source",
@@ -2743,7 +2743,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Collision_Source_TT",
-      "Text": "Which collision the navmesh is generated from: each collision part's low (l) or high (h) collision file, and each asset's own of the same type."
+      "Text": "The collision to generate the navmesh from: each collision part's low (l) or high (h) collision file, and each asset's own file of the same type."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Collision_Low",
@@ -2759,7 +2759,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Collision_High_TT",
-      "Text": "The high collision (h files), which is for inverse kinematics (feet on the ground). It lies lower and rougher than the low, so a navmesh made from it sits lower and covers less. Parts with no high file are left out and logged."
+      "Text": "The high collision (h files), used for inverse kinematics (feet on the ground). It is lower and rougher than the low collision, so a navmesh made from it sits lower and covers less. Parts with no high file are left out and logged."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Seed_Current",
@@ -2767,7 +2767,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Seed_Current_TT",
-      "Text": "Also keep the generated faces joined to the places the map's navmesh covers now. On a vanilla map this keeps the areas the game's navmesh reaches, which few enemies may stand in (Roundtable Hold has six); without it only what the map's enemies and players reach is kept."
+      "Text": "Also keep generated faces joined to the areas the map's navmesh currently covers. On a vanilla map, this keeps the areas the game's navmesh reaches, which few enemies may stand in (Roundtable Hold has six). Without it, only what the map's enemies and players reach is kept."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Keep_Models",
@@ -2775,7 +2775,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Keep_Models_TT",
-      "Text": "Put each new face in the model of the current face under it, so the map keeps its own split into navmeshes. Elsewhere, and with this off, the collision model under the face decides (the game's navmesh models are named after collision models)."
+      "Text": "Put each new face in the model of the current face under it, so the map keeps its own split into navmeshes. Elsewhere, and when off, the collision model under the face decides (the game's navmesh models are named after collision models)."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Keep_Face_Data",
@@ -2783,7 +2783,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Keep_Face_Data_TT",
-      "Text": "Give each new face the face data of the current face under it, where there is one: the authored bits (character limit, gated, impassable) can't be derived from the collision."
+      "Text": "Give each new face the face data of the current face under it, where there is one. The authored bits (character limit, gated, impassable) can't be worked out from the collision."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Current_Face_Height",
@@ -2791,7 +2791,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Current_Face_Height_TT",
-      "Text": "How far above or below a new face the current face it keeps the model and face data of may be (the nearest in height wins), and how far a node bank face looks for the new face at its old place.\nThe new navmesh follows the collision, which in the open world often lies 1.5 to 2.5 m off the game's navmesh: too low a value leaves patches with no face data and in the wrong model. Too high a value can take the data of a floor above or below.\nCtrl+click to type a value."
+      "Text": "How far above or below a new face the current face can be for its model and face data to be kept (the nearest in height wins), and how far a node bank face searches for the new face at its old position.\nThe new navmesh follows the collision, which in the open world is often 1.5 to 2.5 m off the game's navmesh. Too low a value leaves patches with no face data and in the wrong model; too high a value can take the data of a floor above or below.\nCtrl+click to type a value."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Derive_Face_Data",
@@ -2799,7 +2799,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Derive_Face_Data_TT",
-      "Text": "Set Lava (0x1000) on faces over collision of surface 7 (Lava), and 0x20000 over surfaces 43 and 46 (Scarlet Swamp), as the game's navmeshes have them. Kept face data wins where both apply."
+      "Text": "Set Lava (0x1000) on faces over surface 7 (Lava) collision, and 0x20000 over surfaces 43 and 46 (Scarlet Swamp), like the game's navmeshes. Kept face data takes priority where both apply."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Skip_Runtime_Cuts",
@@ -2807,7 +2807,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Skip_Runtime_Cuts_TT",
-      "Text": "Leave out of the input the assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (mostly breakables): the game cuts the navmesh under them at runtime and its own navmeshes run under them."
+      "Text": "Leave out of the input the assets whose AssetEnvironmentGeometryParam row has a navimeshFlag (mostly breakables). The game cuts the navmesh under them at runtime, and its own navmeshes run under them."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Links_N",
@@ -2815,7 +2815,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Links_N_TT",
-      "Text": "Find jumps and falls between the n set's faces, as the Generate group's links do (its jump, fall and reach settings). A link between two navmeshes moves the face it lands on into the navmesh it starts from, as the game's links stay within their navmesh."
+      "Text": "Find jumps and falls between the n set's faces, like the Generate group's links (using its jump, fall and reach settings). A link between two navmeshes moves the face it lands on into the navmesh it starts from, because the game's links stay within their navmesh."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Links_O",
@@ -2823,7 +2823,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Links_O_TT",
-      "Text": "Find falls for the o set too. Off by default: the game's o navmeshes have almost none (0-80 a map, against hundreds found), and none of those found matched one of the game's."
+      "Text": "Also find falls for the o set. Off by default: the game's o navmeshes have almost none (0-80 per map, compared with hundreds found), and none of those found matched the game's."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Keep_Links",
@@ -2831,7 +2831,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Keep_Links_TT",
-      "Text": "Carry over the current navmesh's jump and fall links whose two ends land on kept new faces (or within 1.5 m of one), with their edge data and direction. Generated links that repeat one, or join the same two faces, are left out. On vanilla caves and catacombs this keeps 88-100% of the game's links outside the areas cut off behind gates."
+      "Text": "Keep the current navmesh's jump and fall links whose two ends land on kept new faces (or within 1.5 m of one), with their edge data and direction. Generated links that duplicate one, or join the same two faces, are left out. On vanilla caves and catacombs, this keeps 88-100% of the game's links outside areas cut off behind gates."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Stitch",
@@ -2839,7 +2839,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Stitch_TT",
-      "Text": "Join the new navmeshes' open border edges to the loaded neighbour maps through their NVC files, as the Stitch tab does."
+      "Text": "Join the new navmeshes' open border edges to the loaded neighbouring maps through their NVC files, like the Stitch tab."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Snap_Borders",
@@ -2847,7 +2847,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Snap_Borders_TT",
-      "Text": "Move the new navmesh's border vertices onto the edges the current navmesh joins to other maps (its NVC connections). Recast keeps the mesh the agent radius and up to the max edge error in from where the collision ends, too far apart for the re-stitch to join it to the neighbour's edge again. Only vertices on a boundary edge along such an edge, and close to it, move."
+      "Text": "Move the new navmesh's border vertices onto the edges the current navmesh joins to other maps (its NVC connections). Recast keeps the mesh one agent radius plus up to the max edge error in from where the collision ends, which is too far for the re-stitch to rejoin it to the neighbour's edge. Only vertices on a boundary edge along such an edge, and close to it, move."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Borders_Done",
@@ -2855,7 +2855,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Neighbours_Not_Loaded",
-      "Text": "The connections with these maps were removed and not made again, as they aren't loaded (or Join loaded neighbours is off): {0}. Load them and use the Stitch tab, or undo, load them and regenerate."
+      "Text": "The connections with these maps were removed and not recreated, because they aren't loaded (or Join loaded neighbours is off): {0}. Load them and use the Stitch tab, or undo, load them and regenerate."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Related_Tiles",
@@ -2863,7 +2863,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Related_Tiles_TT",
-      "Text": "Also build from the collision of the assets in the loaded maps that overlap this tile: its _01 and _02 parent tiles (where the game places large assets that span several tiles) and the eight small tiles around it (assets reaching over the border). Their collision is cut to this tile's area, so the navmesh stays on the tile. Load the parent tiles in the Map Editor first; the result names any that aren't loaded."
+      "Text": "Also build from the collision of assets in the loaded maps that overlap this tile: its _01 and _02 parent tiles (where the game places large assets spanning several tiles) and the eight small tiles around it (assets reaching over the border). Their collision is cut to this tile's area, so the navmesh stays on the tile. Load the parent tiles in the Map Editor first; the result lists any that aren't loaded."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Related_Done",
@@ -2879,7 +2879,7 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_TT",
-      "Text": "Regenerate the map's whole navigation. It runs in the background; the edit is made when it is done, as one undo. Save afterwards to write the NVA, the navmesh binder and the changed NVC files."
+      "Text": "Regenerate the map's whole navigation in the background. The edit is made when it finishes, as one undo step. Save afterwards to write the NVA, the navmesh binder and the changed NVC files."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Running",
@@ -2891,11 +2891,11 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Cancel_TT",
-      "Text": "Drop the regeneration's result when it is done; nothing is changed."
+      "Text": "Discard the regeneration's result when it finishes. Nothing is changed."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Failed",
-      "Text": "The regeneration failed; nothing was changed. See the log."
+      "Text": "The regeneration failed, so nothing was changed. See the log."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Done",
@@ -2903,15 +2903,15 @@
     },
     {
       "Key": "MAP_Navigation_Regenerate_Barriers_Done",
-      "Text": "{0} barrier assets (evergaol and fog walls: collision all of material 29) left out, as the game's navmesh runs through them."
+      "Text": "{0} barrier assets (evergaol and fog walls: collision all of material 29) were left out, because the game's navmesh runs through them."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Stealth_Done",
-      "Text": "{0} bush and grass assets had their stealth volumes left out, as characters walk through them."
+      "Text": "The stealth volumes of {0} bush and grass assets were left out, because characters walk through them."
     },
     {
       "Key": "MAP_Navigation_Regenerate_Skipped",
-      "Text": "Left as they were (their files are shared with another entry): models {0}."
+      "Text": "Left unchanged (their files are shared with another entry): models {0}."
     }
   ]
 }

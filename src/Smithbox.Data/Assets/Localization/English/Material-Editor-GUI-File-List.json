@@ -18,7 +18,7 @@
     },
     {
       "Key": "MAT_FileList_DisplayFullPath_Toggle_Hint",
-      "Text": "Toggle the display of the full path.\nCurrent Mode: {0}"
+      "Text": "Toggle the full path.\nCurrent Mode: {0}"
     },
     {
       "Key": "MAT_FileList_Action_Duplicate",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "MAT_FileList_Action_Rename_TT",
-      "Text": "Give this material a new name. Models name their materials, so any model using the old name will no longer find it."
+      "Text": "Rename this material. Models refer to their materials by name, so any model using the old name will no longer find it."
     },
     {
       "Key": "MAT_FileList_Action_Delete",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "MAT_FileList_Action_Delete_TT",
-      "Text": "Remove this material from its binder. Undo brings it back."
+      "Text": "Remove this material from its binder. Undo restores it."
     },
     {
       "Key": "MAT_FileList_Duplicate_Title",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "MAT_FileList_Duplicate_Hint",
-      "Text": "A copy of {0} is added to {1}, after it. A MATBIN's Source Path and key follow the new name."
+      "Text": "A copy of {0} is added to {1}, after the original. A MATBIN's Source Path and key are updated to the new name."
     },
     {
       "Key": "MAT_FileList_Rename_Title",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "MAT_FileList_Rename_Hint",
-      "Text": "{0} in {1} gets a new name, in the same folder. A MATBIN's Source Path and key follow the new name."
+      "Text": "{0} in {1} gets a new name in the same folder. A MATBIN's Source Path and key are updated to the new name."
     },
     {
       "Key": "MAT_FileList_Name_Header",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "MAT_FileList_Name_Header_TT",
-      "Text": "The material's name, without folder or extension. This is the name a model's material uses."
+      "Text": "The material's name, without folder or extension. This is the name a model's material refers to."
     },
     {
       "Key": "MAT_FileList_Name_Empty",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "MAT_FileList_Name_Invalid",
-      "Text": "The name can't contain folder separators or characters a file name can't have."
+      "Text": "The name can't contain folder separators or characters that aren't allowed in file names."
     },
     {
       "Key": "MAT_FileList_Name_Taken",
@@ -98,11 +98,11 @@
     },
     {
       "Key": "MAT_FileList_Delete_Warning",
-      "Text": "Models that use this material will no longer find it. Undo brings it back until the editor is closed."
+      "Text": "Models that use this material will no longer find it. Undo restores it until the editor is closed."
     },
     {
       "Key": "MAT_FileList_Unreadable_File_TT",
-      "Text": "This file failed to read, so it can't be edited. See the log for the error.\nSaving this binder keeps the file as it is."
+      "Text": "This file couldn't be read, so it can't be edited. See the log for the error.\nSaving this binder keeps the file unchanged."
     }
   ]
 }

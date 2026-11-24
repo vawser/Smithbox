@@ -18,7 +18,7 @@
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_TPF_TT",
-      "Text": "Export this file to your current export directory: {0}"
+      "Text": "Export this file to your export folder: {0}"
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_All_Textures",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_All_Textures_TT",
-      "Text": "Export all textures files within this file to your current export directory: {0}"
+      "Text": "Export all texture files in this file to your export folder: {0}"
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Copy_Path",

@@ -6,15 +6,15 @@
     },
     {
       "Key": "PARAM_MapRef_Action_View_In_Map_Bonfire_TT",
-      "Text": "Loads the map this bonfire is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately."
+      "Text": "Load the map this bonfire is in and select the bonfire's Enemy map object, ready to frame."
     },
     {
       "Key": "PARAM_MapRef_Action_View_In_Map_Lamp_TT",
-      "Text": "Loads the map this lamp is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately."
+      "Text": "Load the map this lamp is in and select the lamp's Enemy map object, ready to frame."
     },
     {
       "Key": "PARAM_MapRef_Action_View_In_Map_Boss_TT",
-      "Text": "Loads the map this boss is located in and selects the boss Enemy map object automatically, allowing you to frame it immediately."
+      "Text": "Load the map this boss is in and select the boss's Enemy map object, ready to frame."
     },
     {
       "Key": "PARAM_MapRef_Action_View_Model",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_MapRef_Action_View_Model_TT",
-      "Text": "View this model in the Model Editor, loading it automatically."
+      "Text": "Load and view this model in the Model Editor."
     },
     {
       "Key": "PARAM_MapRef_Action_View_Model_ID",
@@ -30,11 +30,11 @@
     },
     {
       "Key": "PARAM_MapRef_Action_View_In_Map_BuddyStone_TT",
-      "Text": "Loads the map and select the buddy stone enemy map object."
+      "Text": "Load the map and select the buddy stone's Enemy map object."
     },
     {
       "Key": "PARAM_MapRef_Action_View_In_Map_treasure_TT",
-      "Text": "Loads the map and selects the asset that holds this treasure."
+      "Text": "Load the map and select the asset that holds this treasure."
     }
   ]
 }

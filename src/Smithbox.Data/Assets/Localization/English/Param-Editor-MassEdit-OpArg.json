@@ -2,11 +2,11 @@
   "Entries": [
     {
       "Key": "PARAM_OpArg_Default_TT",
-      "Text": "Gives the specified value."
+      "Text": "Return the given value."
     },
     {
       "Key": "PARAM_OpArg_Self_TT",
-      "Text": "Gives the value of the currently selected value."
+      "Text": "Return the selected value."
     },
     {
       "Key": "PARAM_OpArg_Field_Hint",
@@ -14,27 +14,27 @@
     },
     {
       "Key": "PARAM_OpArg_Field_TT",
-      "Text": "Gives the value of the given cell/field for the currently selected row and param."
+      "Text": "Return the value of the given cell/field for the selected row and param."
     },
     {
       "Key": "PARAM_OpArg_Field_Error_Locate_Field",
-      "Text": "Could not locate field {0}."
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_Vanilla_TT",
-      "Text": "Gives the value of the equivalent cell/field in the vanilla regulation or parambnd for the currently selected cell/field, row and param.\nWill fail if a row does not have a vanilla equivilent. Consider using && !added."
+      "Text": "Gives the value of the matching cell/field in the vanilla regulation or parambnd for the selected cell/field, row and param.\nFails if a row has no vanilla equivalent. Consider using && !added."
     },
     {
       "Key": "PARAM_OpArg_Vanilla_Error_Locate_Vanilla_Param",
-      "Text": "Could not locate vanilla param for {0}."
+      "Text": "Couldn't find the vanilla param for {0}."
     },
     {
       "Key": "PARAM_OpArg_Vanilla_Error_Locate_Vanilla_Row",
-      "Text": "Could not locate vanilla row {0}."
+      "Text": "Couldn't find vanilla row {0}."
     },
     {
       "Key": "PARAM_OpArg_Vanilla_Error_Locate_Property",
-      "Text": "Could not locate given field or property."
+      "Text": "Couldn't find the given field or property."
     },
     {
       "Key": "PARAM_OpArg_Aux_Hint",
@@ -42,23 +42,23 @@
     },
     {
       "Key": "PARAM_OpArg_Aux_TT",
-      "Text": "Gives the value of the equivalent cell/field in the specified regulation or parambnd for the currently selected cell/field, row and param.\nWill fail if a row does not have an aux equivilent. Consider using && auxprop ID .*"
+      "Text": "Gives the value of the matching cell/field in the given regulation or parambnd for the selected cell/field, row and param.\nFails if a row has no auxiliary equivalent. Consider using && auxprop ID .*"
     },
     {
       "Key": "PARAM_OpArg_Aux_Error_Locate_Param_Bank",
-      "Text": "Could not locate paramBank {0}."
+      "Text": "Couldn't find param bank {0}."
     },
     {
       "Key": "PARAM_OpArg_Aux_Error_Locate_Aux_Param",
-      "Text": "Could not locate aux param for {0}."
+      "Text": "Couldn't find the auxiliary param for {0}."
     },
     {
       "Key": "PARAM_OpArg_Aux_Error_Locate_Aux_Row",
-      "Text": "Could not locate aux row {0}."
+      "Text": "Couldn't find auxiliary row {0}."
     },
     {
       "Key": "PARAM_OpArg_Aux_Error_Locate_Property",
-      "Text": "Could not locate given field or property."
+      "Text": "Couldn't find the given field or property."
     },
     {
       "Key": "PARAM_OpArg_VanillaField_Hint",
@@ -66,19 +66,19 @@
     },
     {
       "Key": "PARAM_OpArg_VanillaField_TT",
-      "Text": "Gives the value of the specified cell/field in the vanilla regulation or parambnd for the currently selected row and param.\nWill fail if a row does not have a vanilla equivilent. Consider using && !added"
+      "Text": "Gives the value of the given cell/field in the vanilla regulation or parambnd for the selected row and param.\nFails if a row has no vanilla equivalent. Consider using && !added"
     },
     {
       "Key": "PARAM_OpArg_VanillaField_Error_Locate_Vanilla_Param",
-      "Text": "Could not locate vanilla param for {0}"
+      "Text": "Couldn't find the vanilla param for {0}."
     },
     {
       "Key": "PARAM_OpArg_VanillaField_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_VanillaField_Error_Locate_Vanilla_Row",
-      "Text": "Could not locate vanilla row {0}"
+      "Text": "Couldn't find vanilla row {0}."
     },
     {
       "Key": "PARAM_OpArg_AuxField_Hint_1",
@@ -90,23 +90,23 @@
     },
     {
       "Key": "PARAM_OpArg_AuxField_TT",
-      "Text": "Gives the value of the specified cell/field in the specified regulation or parambnd for the currently selected row and param.\nWill fail if a row does not have an aux equivilent. Consider using && auxprop ID .*"
+      "Text": "Gives the value of the given cell/field in the given regulation or parambnd for the selected row and param.\nFails if a row has no auxiliary equivalent. Consider using && auxprop ID .*"
     },
     {
       "Key": "PARAM_OpArg_AuxField_Error_Locate_Param_Bank",
-      "Text": "Could not locate paramBank {0}"
+      "Text": "Couldn't find param bank {0}."
     },
     {
       "Key": "PARAM_OpArg_AuxField_Error_Locate_Aux_Param",
-      "Text": "Could not locate aux param for {0}"
+      "Text": "Couldn't find the auxiliary param for {0}."
     },
     {
       "Key": "PARAM_OpArg_AuxField_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_AuxField_Error_Locate_Aux_Row",
-      "Text": "Could not locate aux row {0}"
+      "Text": "Couldn't find auxiliary row {0}."
     },
     {
       "Key": "PARAM_OpArg_ParamLookup_Hint_1",
@@ -122,19 +122,19 @@
     },
     {
       "Key": "PARAM_OpArg_ParamLookup_TT",
-      "Text": "Returns the specific value specified by the exact param, row and field."
+      "Text": "Gives the value of the exact param, row and field given."
     },
     {
       "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Param",
-      "Text": "Could not find param {0}"
+      "Text": "Couldn't find param {0}."
     },
     {
       "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Field",
-      "Text": "Could not find field {0} in param {1}"
+      "Text": "Couldn't find field {0} in param {1}."
     },
     {
       "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Row",
-      "Text": "Could not find row {0} in param {1}"
+      "Text": "Couldn't find row {0} in param {1}."
     },
     {
       "Key": "PARAM_OpArg_Average_Hint_1",
@@ -146,11 +146,11 @@
     },
     {
       "Key": "PARAM_OpArg_Average_TT",
-      "Text": "Gives the mean value of the cells/fields found using the given selector, for the currently selected param."
+      "Text": "Gives the mean value of the cells/fields found with the given selector, for the selected param."
     },
     {
       "Key": "PARAM_OpArg_Average_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_Average_Error_Invalid_Type",
@@ -166,11 +166,11 @@
     },
     {
       "Key": "PARAM_OpArg_Median_TT",
-      "Text": "Gives the median value of the cells/fields found using the given selector, for the currently selected param."
+      "Text": "Gives the median value of the cells/fields found with the given selector, for the selected param."
     },
     {
       "Key": "PARAM_OpArg_Median_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_Mode_Hint_1",
@@ -182,11 +182,11 @@
     },
     {
       "Key": "PARAM_OpArg_Mode_TT",
-      "Text": "Gives the most common value of the cells/fields found using the given selector, for the currently selected param."
+      "Text": "Gives the most common value of the cells/fields found with the given selector, for the selected param."
     },
     {
       "Key": "PARAM_OpArg_Mode_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_Min_Hint_1",
@@ -198,11 +198,11 @@
     },
     {
       "Key": "PARAM_OpArg_Min_TT",
-      "Text": "Gives the smallest value from the cells/fields found using the given param, row selector and field."
+      "Text": "Gives the smallest value of the cells/fields found with the given param, row selector and field."
     },
     {
       "Key": "PARAM_OpArg_Min_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_Max_Hint_1",
@@ -214,11 +214,11 @@
     },
     {
       "Key": "PARAM_OpArg_Max_TT",
-      "Text": "Gives the largest value from the cells/fields found using the given param, row selector and field."
+      "Text": "Gives the largest value of the cells/fields found with the given param, row selector and field."
     },
     {
       "Key": "PARAM_OpArg_Max_Error_Locate_Field",
-      "Text": "Could not locate field {0}"
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_OpArg_Random_Hint_1",
@@ -230,15 +230,15 @@
     },
     {
       "Key": "PARAM_OpArg_Random_Hint_TT",
-      "Text": "Gives a random decimal number between the given values for each selected value"
+      "Text": "Gives a random decimal number between the given values for each selected value."
     },
     {
       "Key": "PARAM_OpArg_Random_Error_Parse_Min_Max_Values",
-      "Text": "Could not parse min and max random values"
+      "Text": "Couldn't read the minimum and maximum random values."
     },
     {
       "Key": "PARAM_OpArg_Random_Error_Max_Higher_Than_Min",
-      "Text": "Random max must be greater than min"
+      "Text": "The random maximum must be greater than the minimum."
     },
     {
       "Key": "PARAM_OpArg_RandInt_Hint_1",
@@ -254,11 +254,11 @@
     },
     {
       "Key": "PARAM_OpArg_RandInt_Error_Parse_Min_Max_Values",
-      "Text": "Could not parse min and max random values"
+      "Text": "Couldn't read the minimum and maximum random values."
     },
     {
       "Key": "PARAM_OpArg_RandInt_Error_Max_Higher_Than_Min",
-      "Text": "Random max must be greater than min"
+      "Text": "The random maximum must be greater than the minimum."
     },
     {
       "Key": "PARAM_OpArg_RandFrom_Hint_1",
@@ -274,23 +274,23 @@
     },
     {
       "Key": "PARAM_OpArg_RandFrom_TT",
-      "Text": "Gives a random value from the cells/fields found using the given param, row selector and field, for each selected value."
+      "Text": "Gives a random value from the cells/fields found with the given param, row selector and field, for each selected value."
     },
     {
       "Key": "PARAM_OpArg_ParamIndex_TT",
-      "Text": "Gives an integer for the current selected param, beginning at 0 and increasing by 1 for each param selected."
+      "Text": "Gives an integer for the selected param, starting at 0 and increasing by 1 for each selected param."
     },
     {
       "Key": "PARAM_OpArg_RowIndex_TT",
-      "Text": "Gives an integer for the current selected row, beginning at 0 and increasing by 1 for each row selected."
+      "Text": "Gives an integer for the selected row, starting at 0 and increasing by 1 for each selected row."
     },
     {
       "Key": "PARAM_OpArg_FieldIndex_TT",
-      "Text": "Gives an integer for the current selected cell/field, beginning at 0 and increasing by 1 for each cell/field selected."
+      "Text": "Gives an integer for the selected cell/field, starting at 0 and increasing by 1 for each selected cell/field."
     },
     {
       "Key": "PARAM_OpArg_ContextualArg_Wrong_Arg_Count",
-      "Text": "Contextual value {0} has wrong number of arguments. Expected {1}"
+      "Text": "Contextual value {0} has the wrong number of arguments. Expected {1}."
     }
   ]
 }

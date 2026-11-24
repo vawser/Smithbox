@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "TEXT_TextMerge_Hint",
-      "Text": "Use this to merge a target project's text files into your current project.\n\nMerging will bring all unique text from the target project into your project.\nIncludes modified text if enabled."
+      "Text": "Merge a target project's text files into your current project.\n\nMerging brings all unique text from the target project into your project.\nModified text is included if enabled."
     },
     {
       "Key": "TEXT_TextMerge_Header_Target_Project",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT",
-      "Text": "If enabled, then only the primary language FMGs will be merged."
+      "Text": "Merge only the primary language FMGs."
     },
     {
       "Key": "TEXT_TextMerge_Checkbox_Replace_Modified",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "TEXT_TextMerge_Checkbox_Replace_Modified_TT",
-      "Text": "If enabled, then modified rows from the target will overwrite existing rows in our project. If not, then they will be ignored, and only unique rows will be merged."
+      "Text": "When enabled, modified rows from the target overwrite existing rows in your project. When disabled, they are ignored and only unique rows are merged."
     },
     {
       "Key": "TEXT_TextMerge_Header_Actions",
@@ -54,11 +54,11 @@
     },
     {
       "Key": "TEXT_TextMerge_Log_No_Target_Project",
-      "Text": "No project has been targeted."
+      "Text": "No target project is selected."
     },
     {
       "Key": "TEXT_TextMerge_Log_Merge_In_Progress",
-      "Text": "Merge is already in progress."
+      "Text": "A merge is already in progress."
     },
     {
       "Key": "TEXT_TextMerge_Log_Merged_Text_PASS",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "TEXT_TextMerge_Log_Merged_Text_FAIL",
-      "Text": "Failed to merge text from {0}"
+      "Text": "Failed to merge text from {0}."
     }
   ]
 }

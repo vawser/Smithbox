@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "PARAM_RowName_Dialog_Prompt",
-      "Text": "Do you wish to import {0} row names?"
+      "Text": "Import {0} row names?"
     },
     {
       "Key": "PARAM_Menubar_Header_Param_Row",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PARAM_Menubar_Action_Duplicate_TT",
-      "Text": "Duplicates the currently selected rows."
+      "Text": "Duplicate the selected rows."
     },
     {
       "Key": "PARAM_Menubar_Action_Duplicate_to_Commutative_Param",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_Menubar_Action_Duplicate_to_Commutative_Param_TT",
-      "Text": "Duplicates the currently selected rows into another param that shares the same underlying param definition."
+      "Text": "Duplicate the selected rows into another param with the same param definition."
     },
     {
       "Key": "PARAM_Menubar_Action_Delete",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_Menubar_Action_Delete_TT",
-      "Text": "Deletes the currently selected rows."
+      "Text": "Delete the selected rows."
     },
     {
       "Key": "PARAM_Menubar_Action_Copy",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PARAM_Menubar_Action_Copy_TT",
-      "Text": "Copies the currently selected rows to clipboard."
+      "Text": "Copy the selected rows to the clipboard."
     },
     {
       "Key": "PARAM_Menubar_Action_Paste",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PARAM_Menubar_Action_Paste_TT",
-      "Text": "Pastes rows within the clipboard into the currently selected param."
+      "Text": "Paste the rows on the clipboard into the selected param."
     },
     {
       "Key": "PARAM_Menubar_Action_Jump",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PARAM_Menubar_Action_Jump_TT",
-      "Text": "Jumps the editor focus to the currently selected row."
+      "Text": "Scroll to the selected row."
     },
     {
       "Key": "PARAM_Menubar_View_Editor",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PARAM_Undo_All_Dialog_Prompt",
-      "Text": "Undo all {0} action(s) in this session? They can be redone afterwards, but any new edit will clear the redo history."
+      "Text": "Undo all {0} action(s) in this session? You can redo them afterwards, but any new edit clears the redo history."
     },
     {
       "Key": "PARAM_Action_Name_Edit_Value",
@@ -114,19 +114,19 @@
     },
     {
       "Key": "PARAM_Data_Skip_Save",
-      "Text": "Params have not been modified, so save was ignored: {0}"
+      "Text": "Skipped saving: the params haven't been modified: {0}"
     },
     {
       "Key": "PARAM_Param_Save_in_Progress",
-      "Text": "Param saving already in progress."
+      "Text": "The params are already being saved."
     },
     {
       "Key": "PARAM_Data_Edited_During_Save",
-      "Text": "{0} param(s) were edited while saving. They are still marked as modified, so save again to write those edits."
+      "Text": "{0} param(s) were edited during the save. They are still marked as modified, so save again to write those edits."
     },
     {
       "Key": "PARAM_Action_Blocked_During_Save",
-      "Text": "Params are being saved. Adding, removing or reordering rows, undo/redo and mass edits are disabled until the save finishes."
+      "Text": "The params are being saved. Adding, removing or reordering rows, undo/redo and mass edits are disabled until the save finishes."
     },
     {
       "Key": "PARAM_FieldInput_Invalid_Value_TT",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "PARAM_EditHistory_Hint",
-      "Text": "The undo history of the Param Editor, oldest first. Click a step to go back to before it, or click a greyed (undone) step to redo up to it. Undone steps can be redone until you make a new edit."
+      "Text": "The Param Editor's undo history, oldest first. Click a step to go back to before it, or click a greyed-out (undone) step to redo up to it. You can redo undone steps until you make a new edit."
     },
     {
       "Key": "PARAM_EditHistory_Steps_Header",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "PARAM_EditHistory_Steps_Header_TT",
-      "Text": "Every step that can be undone or redone. The highlighted step is the current state; greyed steps were undone."
+      "Text": "Every step you can undo or redo. The highlighted step is the current state; greyed-out steps were undone."
     },
     {
       "Key": "PARAM_EditHistory_Empty",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_TT",
-      "Text": "Make this param the same as vanilla: modified rows get their vanilla values (keeping their names), added rows are removed, deleted rows come back, and the vanilla row order is restored. Says what will change and asks first. Can be undone."
+      "Text": "Make this param match vanilla: modified rows get their vanilla values (keeping their names), added rows are removed, deleted rows are restored, and the vanilla row order is restored. Shows what will change and asks first. You can undo this."
     },
     {
       "Key": "PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_No_Vanilla_TT",
@@ -226,7 +226,7 @@
     },
     {
       "Key": "PARAM_Reset_Param_Dialog_Prompt",
-      "Text": "Reset {0} to vanilla?\n\n{1} modified row(s) will get their vanilla values (names are kept)\n{2} added row(s) will be removed\n{3} deleted row(s) will be restored\nThe vanilla row order will be restored.\n\nThis can be undone."
+      "Text": "Reset {0} to vanilla?\n\n{1} modified row(s) get their vanilla values (names are kept)\n{2} added row(s) are removed\n{3} deleted row(s) are restored\nThe vanilla row order is restored.\n\nYou can undo this."
     },
     {
       "Key": "PARAM_Reset_Param_Already_Vanilla",
@@ -282,7 +282,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Preview_Header",
-      "Text": "Preview only, nothing was changed:"
+      "Text": "Preview only. Nothing was changed:"
     },
     {
       "Key": "PARAM_MassEdit_Result_Param_Stats",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "PARAM_CSV_Import_Failed",
-      "Text": "The CSV couldn't be imported, and nothing was changed: {0}"
+      "Text": "Couldn't import the CSV, so nothing was changed: {0}"
     }
   ]
 }

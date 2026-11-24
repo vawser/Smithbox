@@ -6,7 +6,7 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Hint",
-      "Text": "Use this tool to reload characters in the running game, so changes to their files (behaviors, animations, Havok scripts, etc.) are applied without restarting."
+      "Text": "Reload characters in the running game, so changes to their files (behaviors, animations, Havok scripts, etc.) apply without a restart."
     },
     {
       "Key": "COMMON_CharacterReloader_Not_Supported",
@@ -14,11 +14,11 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Inclusion_Toggle_All_TT",
-      "Text": "Add all characters to reload list."
+      "Text": "Add all characters to the reload list."
     },
     {
       "Key": "COMMON_CharacterReloader_Inclusion_Clear_All_TT",
-      "Text": "Clear all characters from reload list."
+      "Text": "Clear all characters from the reload list."
     },
     {
       "Key": "COMMON_CharacterReloader_Inclusion_List_Header",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Inclusion_List_Header_TT",
-      "Text": "If a character is included below, then it will be reloaded."
+      "Text": "Characters included below are reloaded."
     },
     {
       "Key": "COMMON_CharacterReloader_Actions_Header",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Reload_Characters_TT",
-      "Text": "Reload all of the characters included above."
+      "Text": "Reload all the characters included above."
     },
     {
       "Key": "COMMON_CharacterReloader_Options_Header",
@@ -58,11 +58,11 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Detect_File_Changes_TT",
-      "Text": "If enabled, an included character is automatically reloaded when one of its files in the project is saved externally."
+      "Text": "When enabled, an included character reloads automatically when one of its project files is saved by another program."
     },
     {
       "Key": "COMMON_CharacterReloader_Error_Failed_Create_Watcher",
-      "Text": "Failed to create file watcher."
+      "Text": "Failed to create the file watcher."
     },
     {
       "Key": "COMMON_CharacterReloader_Error_Failed_Game_Process",
@@ -114,11 +114,11 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Error_No_Characters_Enabled",
-      "Text": "No characters have been included."
+      "Text": "No characters are included."
     },
     {
       "Key": "COMMON_CharacterReloader_Log_Reloaded_Character",
-      "Text": "Requested reload of character {0}"
+      "Text": "Requested reload of character {0}."
     }
   ]
 }

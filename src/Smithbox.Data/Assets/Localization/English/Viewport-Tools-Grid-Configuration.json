@@ -34,7 +34,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Toggle_Grid_Visibility_TT",
-      "Text": "Toggle the visibility of the currently selected grid."
+      "Text": "Show or hide the selected grid."
     },
     {
       "Key": "VIEWPORT_GridConfig_Grid_Position_Header",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Grid_Position_Header_TT",
-      "Text": "The position configuration for the grid."
+      "Text": "The grid's position."
     },
     {
       "Key": "VIEWPORT_GridConfig_Position_X",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Position_X_TT",
-      "Text": "The position of the grid on the X-axis."
+      "Text": "The grid's position on the X axis."
     },
     {
       "Key": "VIEWPORT_GridConfig_Position_Y",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Position_Y_TT",
-      "Text": "The position of the grid on the Y-axis."
+      "Text": "The grid's position on the Y axis."
     },
     {
       "Key": "VIEWPORT_GridConfig_Position_Z",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Position_Z_TT",
-      "Text": "The position of the grid on the Z-axis."
+      "Text": "The grid's position on the Z axis."
     },
     {
       "Key": "VIEWPORT_GridConfig_Grid_Rotation_Header",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Grid_Rotation_Header_TT",
-      "Text": "The rotation configuration for the grid."
+      "Text": "The grid's rotation."
     },
     {
       "Key": "VIEWPORT_GridConfig_Rotation_X",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Rotation_X_TT",
-      "Text": "The rotation of the grid on the X-axis."
+      "Text": "The grid's rotation on the X axis."
     },
     {
       "Key": "VIEWPORT_GridConfig_Rotation_Y",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Rotation_Y_TT",
-      "Text": "The rotation of the grid on the Y-axis."
+      "Text": "The grid's rotation on the Y axis."
     },
     {
       "Key": "VIEWPORT_GridConfig_Rotation_Z",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Rotation_Z_TT",
-      "Text": "The rotation of the grid on the Z-axis."
+      "Text": "The grid's rotation on the Z axis."
     },
     {
       "Key": "VIEWPORT_GridConfig_Grids_Header",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Follow_Camera_TT",
-      "Text": "Keep the drawn part of this grid centered under the camera, so it never runs out however far you travel. Grid Size then sets how far it reaches from the camera.\n\nThe lines and axes stay where the grid's position puts them, and snapping is unchanged."
+      "Text": "Keep the drawn part of this grid centred under the camera, so it never runs out however far you travel. Grid Size then sets how far it reaches from the camera.\n\nThe lines and axes stay where the grid's position puts them, and snapping is unchanged."
     },
     {
       "Key": "VIEWPORT_GridConfig_Placement_Header",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Move_Grid_TT",
-      "Text": "Toggle grid movement mode. While active, the viewport gizmo is placed at the center of this grid and moves or rotates the grid instead of the selection.\n\nUse the gizmo translate and rotate modes to switch between moving and rotating. Grid moves cannot be undone."
+      "Text": "Toggle grid movement mode. While active, the viewport gizmo is placed at the centre of this grid and moves or rotates the grid instead of the selection.\n\nUse the gizmo's translate and rotate modes to switch between moving and rotating. Grid moves can't be undone."
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Move_Grid_To_Selection",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Move_Grid_To_Selection_TT",
-      "Text": "Move the center of this grid to the current selection."
+      "Text": "Move the centre of this grid to the selection."
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Align_Grid_To_Selection",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Align_Grid_To_Selection_TT",
-      "Text": "Rotate this grid to match the rotation of the current selection."
+      "Text": "Rotate this grid to match the selection's rotation."
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Position",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Position_TT",
-      "Text": "Move this grid back to the world origin."
+      "Text": "Move this grid to the world origin."
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Rotation",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Action_Reset_Grid_Rotation_TT",
-      "Text": "Clear the rotation of this grid."
+      "Text": "Clear this grid's rotation."
     },
     {
       "Key": "VIEWPORT_GridConfig_Move_Grid_Hidden_Warning",
@@ -198,11 +198,11 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Color_Header_TT",
-      "Text": "The color configuration for the grid."
+      "Text": "The grid's colour."
     },
     {
       "Key": "VIEWPORT_GridConfig_Color_Input_TT",
-      "Text": "The color of the grid."
+      "Text": "The colour of the grid."
     },
     {
       "Key": "VIEWPORT_GridConfig_Square_Size_Header",
@@ -210,11 +210,11 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Square_Size_Header_TT",
-      "Text": "The grid square size configuration for the grid."
+      "Text": "The size of the grid's squares."
     },
     {
       "Key": "VIEWPORT_GridConfig_Square_Size_Input_TT",
-      "Text": "The size of an individual grid square."
+      "Text": "The size of one grid square."
     },
     {
       "Key": "VIEWPORT_GridConfig_Size",
@@ -222,11 +222,11 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Size_TT",
-      "Text": "The size configuration for the grid."
+      "Text": "The grid's size."
     },
     {
       "Key": "VIEWPORT_GridConfig_Size_Input_TT",
-      "Text": "The number of grid squares either side of the center of the grid."
+      "Text": "The number of grid squares on each side of the grid's centre."
     },
     {
       "Key": "VIEWPORT_GridConfig_Shared_Header",
@@ -242,7 +242,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Major_Line_Interval_TT",
-      "Text": "The number of grid squares between major lines. Major lines are drawn brighter and stay visible further away than the other lines.\n\nSet to 0 or 1 to disable major lines."
+      "Text": "The number of grid squares between major lines. Major lines are drawn brighter and stay visible further away than other lines.\n\nSet to 0 or 1 to disable major lines."
     },
     {
       "Key": "VIEWPORT_GridConfig_Display_Axis_Lines",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Display_Axis_Lines_TT",
-      "Text": "Draw the grid's own X axis in red and Z axis in blue through its center, so its orientation is visible after rotating it."
+      "Text": "Draw the grid's own X axis in red and Z axis in blue through its centre, so its orientation is visible after rotating it."
     },
     {
       "Key": "VIEWPORT_GridConfig_Opacity",
@@ -266,7 +266,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Hidden_Opacity_TT",
-      "Text": "Show the parts of the grid hidden behind geometry, at this fraction of the grid's opacity.\n\nSet to 0 to hide them, as normal."
+      "Text": "Show the parts of the grid hidden behind geometry, at this fraction of the grid's opacity.\n\nSet to 0 to hide them as normal."
     },
     {
       "Key": "VIEWPORT_GridConfig_Line_Width",
@@ -274,7 +274,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Line_Width_TT",
-      "Text": "Scales the width of the grid lines. At 1, lines are 1 pixel wide, major lines 1.5 and axis lines 2."
+      "Text": "Scale the width of the grid lines. At 1, lines are 1 pixel wide, major lines 1.5 and axis lines 2."
     },
     {
       "Key": "VIEWPORT_GridConfig_Fade_Distance",
@@ -282,7 +282,7 @@
     },
     {
       "Key": "VIEWPORT_GridConfig_Fade_Distance_TT",
-      "Text": "The distance from the camera at which the grid has faded out. The fade starts at half this distance.\n\nSet to 0 to disable the fade."
+      "Text": "The distance from the camera at which the grid has fully faded out. The fade starts at half this distance.\n\nSet to 0 to disable the fade."
     },
     {
       "Key": "VIEWPORT_GridConfig_Actions_Header",

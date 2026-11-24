@@ -18,7 +18,7 @@
     },
     {
       "Key": "MAT_Properties_DisplayCommunityNames_Hint",
-      "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle field names between internal and community names.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAT_Properties_Object_Type",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "MAT_Properties_Derived_Key_TT",
-      "Text": "The Adler-32 hash of {0} (UTF-16), as every vanilla MATBIN has it.\nIt is updated when {0} is edited."
+      "Text": "The Adler-32 hash of {0} (UTF-16), as in every vanilla MATBIN.\nIt updates when {0} is edited."
     },
     {
       "Key": "MAT_Properties_Stale_Key_TT",
@@ -119,7 +119,7 @@
     },
     {
       "Key": "MAT_PropertyView_Type_Column_Toggle_TT",
-      "Text": "Toggle the visibilty of the field type column.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the field type column.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAT_Properties_Header_Parameters",
@@ -135,7 +135,7 @@
     },
     {
       "Key": "MAT_Properties_Header_Textures_TT",
-      "Text": "The material's samplers (MATBIN) or textures (MTD), with a preview of each texture: the one a viewport has loaded, or else read from the project once the textures are scanned."
+      "Text": "The material's samplers (MATBIN) or textures (MTD), with a preview of each texture: the one loaded in a viewport, or else read from the project once the textures are scanned."
     }
   ]
 }

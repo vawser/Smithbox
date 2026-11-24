@@ -34,11 +34,11 @@
     },
     {
       "Key": "TEXT_ContainerList_Is_Primary_Container_TT",
-      "Text": "This container is the only one used by the game.\nOnly use this one."
+      "Text": "This is the only container the game uses.\nUse only this one."
     },
     {
       "Key": "TEXT_ContainerList_Obsolete_Container_TT",
-      "Text": "This container is no longer used by the game.\nDo not use this one."
+      "Text": "The game no longer uses this container.\nDon't use it."
     },
     {
       "Key": "TEXT_ContainerList_Source_Path_TT",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "TEXT_ContainerList_Context_Filename",
-      "Text": "Filename: {0}"
+      "Text": "File name: {0}"
     },
     {
       "Key": "TEXT_ContainerList_Context_Path",
@@ -66,11 +66,11 @@
     },
     {
       "Key": "TEXT_ContainerList_Display_Sub_Category",
-      "Text": "Display Sub-Category: {0}"
+      "Text": "Display Subcategory: {0}"
     },
     {
       "Key": "TEXT_ContainerList_Context_Compression_Type",
-      "Text": "Compression TYpe: {0}"
+      "Text": "Compression Type: {0}"
     }
   ]
 }

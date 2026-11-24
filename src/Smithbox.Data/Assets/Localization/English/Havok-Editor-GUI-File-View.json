@@ -6,15 +6,15 @@
     },
     {
       "Key": "HAVOK_FileView_Header_TT",
-      "Text": "Ctrl + Right-Click will multi-select files within the file list."
+      "Text": "Ctrl+right-click to select several files in the file list."
     },
     {
       "Key": "HAVOK_FileView_No_Source_File_Selected",
-      "Text": "No source file has been selected yet."
+      "Text": "No source file is selected."
     },
     {
       "Key": "HAVOK_FileView_Bank_Missing_Source_File",
-      "Text": "Bank does not contain a source file with this path:\n{0}"
+      "Text": "The bank has no source file with this path:\n{0}"
     },
     {
       "Key": "HAVOK_FileView_FilePath_Display_Short",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "HAVOK_FileView_FilePath_Display_Alias_TT",
-      "Text": "Toggle the display of aliases in the file list.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle aliases in the file list.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_Low",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "HAVOK_FileView_FilePath_Collision_Type_Filter_TT",
-      "Text": "Set an auto-filter for the Source List based on collision type.\n\nCurrent Mode:\n{0}"
+      "Text": "Set an automatic filter for the Source List by collision type.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Copy",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Copy_TT",
-      "Text": "Copy the current file selection to clipboard.\nShortcut: {0}"
+      "Text": "Copy the selected files to the clipboard.\nShortcut: {0}"
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Paste",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Paste_TT",
-      "Text": "Paste the current clipboard contents as new files into the current binder.\nShortcut: {0}\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox."
+      "Text": "Paste the clipboard contents as new files into the current binder.\nShortcut: {0}\n\nWarning: this changes the binder file immediately, and Undo can't reverse it."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Paste_Log",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Delete_TT",
-      "Text": "Delete the current file selection from the current binder.\nShortcut: {0}\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox."
+      "Text": "Delete the selected files from the current binder.\nShortcut: {0}\n\nWarning: this changes the binder file immediately, and Undo can't reverse it."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Delete_Log",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Rename_TT",
-      "Text": "Rename the current file selection within the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox."
+      "Text": "Rename the selected files in the current binder.\n\nWarning: this changes the binder file immediately, and Undo can't reverse it."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Rename_Log",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Insert_TT",
-      "Text": "Insert the selected external HKX files into the current binder.\n\nWARNING: this action will affect the binder file immediately, and cannot be undone via the undo action in Smithbox."
+      "Text": "Insert the selected external HKX files into the current binder.\n\nWarning: this changes the binder file immediately, and Undo can't reverse it."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Insert_Log",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Export_Log",
-      "Text": "Exported {0} to project directory"
+      "Text": "Exported {0} to the project folder."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_CopyName",
@@ -166,11 +166,11 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_ChangeCompression_TT",
-      "Text": "Changes the compression type used for this internal file."
+      "Text": "Change the compression type of this internal file."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_ChangeCompression_Log",
-      "Text": "Recompressed file: {0}: changed from {1} to {2}"
+      "Text": "Recompressed file {0}: changed from {1} to {2}"
     },
     {
       "Key": "HAVOK_FileView_ContextAction_ChangeCompression_Skipped_Log",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Rename_Invalid_Name",
-      "Text": "Can't rename to \"{0}\": the name must be a non-empty file name without path separators or invalid characters."
+      "Text": "Can't rename to \"{0}\": the name must be a file name that isn't empty and has no path separators or invalid characters."
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Rename_Name_Taken",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "HAVOK_FileView_ContextAction_Used_Unsaved_Changes_Log",
-      "Text": "Used the unsaved changes of {0}"
+      "Text": "Used the unsaved changes of {0}."
     },
     {
       "Key": "HAVOK_FileView_Hidden_Files",

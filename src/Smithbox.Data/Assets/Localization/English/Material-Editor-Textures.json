@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "MAT_Texture_Empty_TT",
-      "Text": "No texture path: the model's own texture is used, if it gives one. Right-click to pick a texture."
+      "Text": "No texture path: the model's own texture is used, if it has one. Right-click to pick a texture."
     },
     {
       "Key": "MAT_Texture_Indexed_TT",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "MAT_Texture_Scan_TT",
-      "Text": "List every texture name in the project's texture files, to check paths and pick from. Runs in the background (about 10 seconds to a minute or more, depending on the game) and is kept for later sessions."
+      "Text": "List every texture name in the project's texture files, to check paths and pick from. Runs in the background (from about 10 seconds to over a minute, depending on the game), and the result is kept for later sessions."
     },
     {
       "Key": "MAT_Texture_Picker_Title",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "MAT_Texture_Picker_Hint",
-      "Text": "The {0} texture names in the project's texture files. The path keeps its folder and extension and takes the name you pick: the game finds the texture by name."
+      "Text": "The {0} texture names in the project's texture files. The path keeps its folder and extension and uses the name you pick, because the game finds textures by name."
     },
     {
       "Key": "MAT_Texture_Picker_Filter_TT",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "MAT_Texture_Reload_Preview_TT",
-      "Text": "Read the texture again for the preview, after it was edited or saved."
+      "Text": "Reread the texture for the preview after editing or saving it."
     }
   ]
 }

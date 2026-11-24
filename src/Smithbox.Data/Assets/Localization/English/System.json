@@ -34,15 +34,15 @@
     },
     {
       "Key": "SYS_VULKAN_CONTEXT_FAILED",
-      "Text": "Failed to create Vulkan context, falling back to OpenGL"
+      "Text": "Failed to create a Vulkan context, so OpenGL is used instead."
     },
     {
       "Key": "SYS_SOAPSTONE_SERVER_RUNNING",
-      "Text": "Soapstone server is running."
+      "Text": "The Soapstone server is running."
     },
     {
       "Key": "SYS_SOAPSTONE_SERVER_STOPPED",
-      "Text": "Soapstone server is stopped."
+      "Text": "The Soapstone server is stopped."
     },
     {
       "Key": "SYS_Warning_Header",
@@ -62,23 +62,19 @@
     },
     {
       "Key": "SYS_CFG_Failed_To_Deserialize",
-      "Text": "Failed to deserialize CFG file: {0}"
+      "Text": "Failed to read the CFG file: {0}"
     },
     {
       "Key": "SYS_CFG_Failed_To_Read",
-      "Text": "Failed to read CFG file: {0}\nRestored default configuration."
+      "Text": "Failed to read the CFG file: {0}\nThe default configuration has been restored."
     },
     {
       "Key": "SYS_FAILED_TO_SAVE_CONFIG",
-      "Text": "Unable to save config during crash recovery.\nIf you continue to crash on startup, delete config in {0}\n\n{1} {2}"
+      "Text": "Couldn't save the configuration during crash recovery.\nIf Smithbox keeps crashing on startup, delete the configuration in {0}\n\n{1} {2}"
     },
     {
       "Key": "SYS_EXCEPTION_DETAILS",
       "Text": "Exception Details:"
-    },
-    {
-      "Key": "HELP_Developed_By",
-      "Text": "Developed by Vawser."
     },
     {
       "Key": "HELP_Current_Version",
@@ -90,15 +86,15 @@
     },
     {
       "Key": "HELP_Action_Go_To_Github",
-      "Text": "Go to Github Repository"
+      "Text": "Go to GitHub Repository"
     },
     {
       "Key": "HELP_Action_Go_To_Github_TT",
-      "Text": "Go to the Github repository page."
+      "Text": "Open the GitHub repository page."
     },
     {
       "Key": "HELP_Action_Go_To_Wiki_TT",
-      "Text": "Go to the SoulsModding Wiki."
+      "Text": "Open the SoulsModding wiki."
     },
     {
       "Key": "HELP_Wiki_Link",
@@ -126,7 +122,7 @@
     },
     {
       "Key": "SYS_Editor_Loading",
-      "Text": "Editor is loading..."
+      "Text": "The editor is loading..."
     },
     {
       "Key": "SYS_OpenGL_Warning_Caption",
@@ -134,19 +130,19 @@
     },
     {
       "Key": "SYS_OpenGL_Warning_Text",
-      "Text": "This version of Smithbox disables the viewports of the Map and Model Editor.\nYou should only use this version if you cannot run the Smithbox.Vulkan executable.\n\nClick OK to block this message from ever appearing again."
+      "Text": "This version of Smithbox disables the Map and Model Editor viewports.\nOnly use this version if you can't run the Smithbox.Vulkan executable.\n\nClick OK to stop showing this message."
     },
     {
       "Key": "SYS_OpenGL_Viewport_Blocked",
-      "Text": "The viewport for this editor is disabled as the Smithbox.OpenGL executable was used."
+      "Text": "This editor's viewport is disabled because the Smithbox.OpenGL executable is in use."
     },
     {
       "Key": "SYS_OpenGL_Texture_Viewer_Blocked",
-      "Text": "The texture editor for this editor is disabled as the Smithbox.OpenGL executable was used."
+      "Text": "This editor's texture editor is disabled because the Smithbox.OpenGL executable is in use."
     },
     {
       "Key": "SYS_OpenGL_Icon_Preview_Blocked",
-      "Text": "Icon preview is disabled\nas the Smithbox.OpenGL executable was used."
+      "Text": "Icon preview is disabled\nbecause the Smithbox.OpenGL executable is in use."
     }
   ]
 }

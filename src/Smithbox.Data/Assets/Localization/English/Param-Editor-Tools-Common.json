@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_ProliferateRowName_Log_Failed_to_Find_Field",
-      "Text": "Failed to find field with internal name of: {0}"
+      "Text": "Failed to find a field with the internal name: {0}"
     },
     {
       "Key": "PARAM_QuickSearch_Search_For_References",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PARAM_QuickSearch_Search_For_References_TT",
-      "Text": "Jump to the 'Field Value Finder' tool, searching for this row ID."
+      "Text": "Open the Field Value Finder tool and search for this row ID."
     },
     {
       "Key": "PARAM_ReverseLookup_Search_for_References",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "PARAM_ReverseLookup_No_Reference",
-      "Text": "This param is not referenced."
+      "Text": "Nothing references this param."
     },
     {
       "Key": "PARAM_RowSort_Sort_Rows",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "PARAM_RowSort_Sort_Rows_Hint",
-      "Text": "Use this to sort the ordering of the rows within the currently selected param.\nThis tool will respective row-index ordering for params with multiple rows of the same ID."
+      "Text": "Sort the rows of the selected param.\nFor params with multiple rows of the same ID, this tool respects their row index order."
     },
     {
       "Key": "PARAM_RowSort_Header_Actions",
@@ -58,11 +58,11 @@
     },
     {
       "Key": "PARAM_RowSort_Sort_Rows_Action_TT",
-      "Text": "Applies the row sorting algorithm."
+      "Text": "Sort the rows."
     },
     {
       "Key": "PARAM_RowSort_Log_Sort_Rows",
-      "Text": "Param rows sorted for {0}"
+      "Text": "Sorted the param rows of {0}."
     }
   ]
 }

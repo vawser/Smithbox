@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "FILE_FileUnpacker_Hint",
-      "Text": "Use this tool to unpack all game files from the data archives."
+      "Text": "Unpack all game files from the data archives."
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Dir_Header",
@@ -10,11 +10,11 @@
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Dir_Header_TT",
-      "Text": "The directory to unpack the game files to."
+      "Text": "The folder to unpack the game files to."
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Hint",
-      "Text": "Set the unpack directory..."
+      "Text": "Set the unpack folder..."
     },
     {
       "Key": "FILE_FileUnpacker_Actions_Header",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Set_Unpack_Dir_TT",
-      "Text": "Set the directory that the game files are unpacking into."
+      "Text": "Set the folder the game files are unpacked to."
     },
     {
       "Key": "FILE_FileUnpacker_Unpack",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_TT",
-      "Text": "Start the unpacking process."
+      "Text": "Start unpacking."
     },
     {
       "Key": "FILE_FileUnpacker_Delete",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Delete_TT",
-      "Text": "Delete the files the unpacker created in the current unpack directory. Files that were already there are never touched."
+      "Text": "Delete the files the unpacker created in the unpack folder. Files that were already there are never touched."
     },
     {
       "Key": "FILE_FileUnpacker_Selective_Unpack_Header",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Selective_Toggle_All_TT",
-      "Text": "Toggle the state of all checkboxes for Selective Unpack."
+      "Text": "Toggle all Selective Unpack checkboxes."
     },
     {
       "Key": "FILE_FileUnpacker_Unpacking_Status",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Cancel_Unpack_TT",
-      "Text": "This will cancel the game data unpack."
+      "Text": "Cancel the unpack."
     },
     {
       "Key": "FILE_FileUnpacker_Deleting_Status",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Cancel_Delete_TT",
-      "Text": "This will cancel the delete."
+      "Text": "Cancel the delete."
     },
     {
       "Key": "FILE_FileUnpacker_Failed_Unpack_Header",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Dir_Not_Set",
-      "Text": "Unpack directory has not been set."
+      "Text": "The unpack folder isn't set."
     },
     {
       "Key": "FILE_FileUnpacker_Game_Data_Already_Unpacked",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Failed_Unpack_Entry",
-      "Text": "Failed to add."
+      "Text": "Failed to add the entry."
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Cancelled",
@@ -150,11 +150,11 @@
     },
     {
       "Key": "FILE_FileUnpacker_Failed_Deserialize_File_Dict",
-      "Text": "Failed to deserialize file dictionary: {0}"
+      "Text": "Failed to read the file dictionary: {0}"
     },
     {
       "Key": "FILE_FileUnpacker_Failed_Read_File_Dict",
-      "Text": "Failed to read file dictionary: {0}"
+      "Text": "Failed to read the file dictionary: {0}"
     },
     {
       "Key": "FILE_FileUnpacker_Root_Files",
@@ -162,11 +162,11 @@
     },
     {
       "Key": "FILE_FileUnpacker_Delete_Confirm",
-      "Text": "Delete {0} files that the unpacker created in:\n{1}\n\nOnly files listed in the unpack manifest are deleted. Folders are removed only once empty.\n\nThis cannot be undone. Continue?"
+      "Text": "Delete {0} files that the unpacker created in:\n{1}\n\nOnly files listed in the unpack manifest are deleted. Folders are removed only when empty.\n\nThis can't be undone. Continue?"
     },
     {
       "Key": "FILE_FileUnpacker_No_Manifest",
-      "Text": "No unpack manifest found in {0}. Nothing was deleted: only files created by the unpacker (recorded in its manifest) can be deleted."
+      "Text": "No unpack manifest found in {0}. Nothing was deleted: only files the unpacker created (recorded in its manifest) can be deleted."
     },
     {
       "Key": "FILE_FileUnpacker_Manifest_Read_Failed",
@@ -178,11 +178,11 @@
     },
     {
       "Key": "FILE_FileUnpacker_Invalid_Path",
-      "Text": "Path resolves outside the unpack directory."
+      "Text": "The path resolves outside the unpack folder."
     },
     {
       "Key": "FILE_FileUnpacker_Invalid_Path_Delete",
-      "Text": "Skipped manifest entry outside the unpack directory: {0}"
+      "Text": "Skipped a manifest entry outside the unpack folder: {0}"
     },
     {
       "Key": "FILE_FileUnpacker_Failed_File_Delete",
@@ -198,11 +198,11 @@
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Summary",
-      "Text": "Unpack finished in {4}: {0} written, {1} already present (skipped), {2} failed. Directory: {3}"
+      "Text": "Unpack finished in {4}: {0} written, {1} already present (skipped), {2} failed. Folder: {3}"
     },
     {
       "Key": "FILE_FileUnpacker_Unpack_Summary_Cancelled",
-      "Text": "Unpack cancelled after {4}: {0} written, {1} already present (skipped), {2} failed. Directory: {3}"
+      "Text": "Unpack cancelled after {4}: {0} written, {1} already present (skipped), {2} failed. Folder: {3}"
     },
     {
       "Key": "FILE_FileUnpacker_Threads",
@@ -210,15 +210,15 @@
     },
     {
       "Key": "FILE_FileUnpacker_Threads_TT",
-      "Text": "How many files are unpacked at the same time. Higher is faster on an SSD; on a hard drive, 2 to 4 is usually best."
+      "Text": "How many files to unpack at the same time. Higher is faster on an SSD; on a hard drive, 2 to 4 is usually best."
     },
     {
       "Key": "FILE_FileUnpacker_Delete_Summary",
-      "Text": "Delete finished: {0} files deleted, {1} empty folders removed, {2} failed. Directory: {3}"
+      "Text": "Delete finished: {0} files deleted, {1} empty folders removed, {2} failed. Folder: {3}"
     },
     {
       "Key": "FILE_FileUnpacker_Delete_Summary_Cancelled",
-      "Text": "Delete cancelled: {0} files deleted, {1} empty folders removed, {2} failed. Directory: {3}"
+      "Text": "Delete cancelled: {0} files deleted, {1} empty folders removed, {2} failed. Folder: {3}"
     }
   ]
 }

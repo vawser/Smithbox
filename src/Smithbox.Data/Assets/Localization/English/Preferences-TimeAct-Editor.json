@@ -18,7 +18,7 @@
     },
     {
       "Key": "PREF_TimeActEditor_Event_Marker_Size_TT",
-      "Text": "Multiplies the size of the effect and sound markers in the viewport. Attacks and bullets always display at their true size."
+      "Text": "Scale the effect and sound markers in the viewport. Attacks and bullets always show at their true size."
     },
     {
       "Key": "PREF_TimeActEditor_Graph_Frame_Width",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "PREF_TimeActEditor_Graph_Frame_Width_TT",
-      "Text": "The width in pixels of a frame in the event graph, before any zoom is applied."
+      "Text": "The width of a frame in the event graph, in pixels, before zoom."
     }
   ]
 }

@@ -10,7 +10,7 @@
     },
     {
       "Key": "MODEL_Properties_Toggle_Community_Names_TT",
-      "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle field names between internal and community names.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MODEL_Properties_Toggle_Type_Col_Hide",
@@ -22,19 +22,19 @@
     },
     {
       "Key": "MODEL_PropertyView_TreeState_Open",
-      "Text": "Tree Nodes are opened automatically."
+      "Text": "Tree nodes open automatically."
     },
     {
       "Key": "MODEL_PropertyView_TreeState_Closed",
-      "Text": "Tree Nodes require the user to open them."
+      "Text": "Tree nodes must be opened manually."
     },
     {
       "Key": "MODEL_PropertyView_TreeState_TT",
-      "Text": "Toggle the opening behavior of tree nodes.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle whether tree nodes open automatically.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MODEL_Properties_Toggle_Type_Col_TT",
-      "Text": "Toggle the display of the Type column.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the Type column.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MODEL_PropertyView_Mesh_Data_Toggle_Hide",
@@ -46,11 +46,11 @@
     },
     {
       "Key": "MODEL_PropertyView_Mesh_Data_Toggle_TT",
-      "Text": "Toggle the visibilty of fields tagged as 'mesh data'.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle fields tagged as 'mesh data'.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MODEL_Properties_Multi_Edit",
-      "Text": "Editing Multiple Objects.\nChanges will be applied to all selected objects."
+      "Text": "Editing multiple objects.\nChanges apply to all selected objects."
     },
     {
       "Key": "MODEL_Properties_Mixed_Types",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "MODEL_Properties_Collision_Read_Only",
-      "Text": "Collision is shown for reference only: the Model Editor doesn't save it. Use the Collision Editor in the Map Editor to change collision."
+      "Text": "Collision is shown for reference only, and the Model Editor doesn't save it. To change collision, use the Collision Editor in the Map Editor."
     },
     {
       "Key": "MODEL_Properties_Edge_Model_Space",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "MODEL_Properties_Edge_Collision_Space",
-      "Text": "This EDGE file belongs to collision {0} (it only shares the map piece's number). Its points are in that collision's space and lie on the collision, which is drawn with them; most are on other map pieces, not this one."
+      "Text": "This EDGE file belongs to collision {0} (it only shares the map piece's number). Its points are in that collision's space and lie on the collision, which is drawn with them. Most are on other map pieces, not this one."
     },
     {
       "Key": "MODEL_Properties_Edge_Read_Only",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "MODEL_Properties_Edge_Placed_By_TT",
-      "Text": "The map piece part and collision part of the map's MSB (as saved) that place the collision relative to the map piece. Only changes the display: the EDGE file isn't changed."
+      "Text": "The map piece part and collision part in the map's MSB (as saved) that place the collision relative to the map piece. This only changes the display, not the EDGE file."
     },
     {
       "Key": "MODEL_Properties_Reference_None",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "MODEL_Properties_Reference_Maintained_TT",
-      "Text": "Kept in step with the bones' Parent Index by the editor. Change a bone's parent to change these."
+      "Text": "The editor keeps this in sync with the bones' Parent Index. Change a bone's parent to change these."
     },
     {
       "Key": "MODEL_Properties_Parent_Refused",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "MODEL_Properties_Search_Hint_TT",
-      "Text": "Search matches the field names.\n\nStart the search with val: to match field values instead, e.g. val:1000.\nWith the exact match box ticked, the value must match in full."
+      "Text": "Search matches field names.\n\nStart the search with val: to match field values instead, e.g. val:1000.\nWith the exact match box ticked, the whole value must match."
     },
     {
       "Key": "MODEL_Properties_Select_to_Edit",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "MODEL_Properties_No_Selection",
-      "Text": "Nothing has been selected."
+      "Text": "Nothing is selected."
     },
     {
       "Key": "MODEL_Properties_Col_Object_Type",
@@ -194,11 +194,11 @@
     },
     {
       "Key": "MODEL_Properties_Material_Preview_Export_Texture_TT",
-      "Text": "Export this texture to the output folder in the project directory, using the export type set in the Texture Editor."
+      "Text": "Export this texture to the output folder in the project folder, using the export type set in the Texture Editor."
     },
     {
       "Key": "MODEL_Properties_Material_Preview_Log_Texture_Not_Loaded",
-      "Text": "Unable to export, the texture is not loaded: {0}"
+      "Text": "Can't export: the texture isn't loaded: {0}"
     },
     {
       "Key": "MODEL_Properties_Material_Preview_Log_Texture_Exported",

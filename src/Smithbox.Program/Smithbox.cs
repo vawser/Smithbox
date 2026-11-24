@@ -880,7 +880,6 @@ public class Smithbox
                 // Help
                 if (ImGui.BeginMenu($"{LOC.Get("PROGRAM_Menu_Header_Help")}##helpMenuHeader"))
                 {
-                    ImGui.Text(LOC.Get("HELP_Developed_By"));
                     ImGui.Text(LOC.Get("HELP_Current_Version", _version));
 
                     ImGui.Separator();

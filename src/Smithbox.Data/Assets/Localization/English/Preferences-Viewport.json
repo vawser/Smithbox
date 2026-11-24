@@ -6,7 +6,7 @@
     },
     {
       "Key": "PREF_Viewport_Frame_Rate_TT",
-      "Text": "Adjusts the frame rate of the viewport."
+      "Text": "The viewport's frame rate."
     },
     {
       "Key": "PREF_Viewport_Enable_Rendering",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Rendering_TT",
-      "Text": "If enabled, model rendering will occur within the viewport."
+      "Text": "Render models in the viewport."
     },
     {
       "Key": "PREF_Viewport_Enable_Texturing",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Texturing_TT",
-      "Text": "If enabled, texture rendering will occur within the viewport."
+      "Text": "Render textures in the viewport."
     },
     {
       "Key": "PREF_Viewport_Enable_Culling",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Culling_TT",
-      "Text": "If enabled, entities outside of the camera frustum to be culled within the viewport."
+      "Text": "Cull entities outside the camera frustum in the viewport."
     },
     {
       "Key": "PREF_Viewport_Limit_Buffer_Indirect_Draw",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PREF_Viewport_Limit_Buffer_Indirect_Draw_TT",
-      "Text": "This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception."
+      "Text": "The maximum size of the indirect draw buffer. Exceeding it throws an exception."
     },
     {
       "Key": "PREF_Viewport_Limit_Buffer_Flver_Bone",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PREF_Viewport_Limit_Buffer_Flver_Bone_TT",
-      "Text": "This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception."
+      "Text": "The maximum size of the FLVER bone buffer. Exceeding it throws an exception."
     },
     {
       "Key": "PREF_Viewport_Enable_Model_Masks",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Model_Masks_TT",
-      "Text": "If enabled, model masks will be accounted for when rendering viewport objects."
+      "Text": "Apply model masks when rendering viewport objects."
     },
     {
       "Key": "PREF_Viewport_Enable_LOD_Facesets",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_LOD_Facesets_TT",
-      "Text": "If enabled, render all facesets for all FLVER meshes, including LOD ones."
+      "Text": "Render all facesets of all FLVER meshes, including LOD facesets."
     },
     {
       "Key": "PREF_Viewport_Flat_Model_Brightness",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "PREF_Viewport_Flat_Model_Brightness_TT",
-      "Text": "Change the brightness of untextured models."
+      "Text": "The brightness of untextured models."
     },
     {
       "Key": "PREF_Viewport_Flat_Model_Saturation",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PREF_Viewport_Flat_Model_Saturation_TT",
-      "Text": "Change the saturation of untextured models."
+      "Text": "The saturation of untextured models."
     },
     {
       "Key": "PREF_Viewport_Enable_Selection_Outline",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Selection_Outline_TT",
-      "Text": "If enabled, a selection outline will display alongside the selection tint on selected viewport objects.\nNote: the outline is error-prone when hundreds (or more) of viewport objects are selected."
+      "Text": "Show a selection outline as well as the selection tint on selected viewport objects.\nNote: the outline is unreliable when hundreds of viewport objects or more are selected."
     },
     {
       "Key": "PREF_Viewport_Enable_Selection_Tint",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Selection_Tint_TT",
-      "Text": "If enabled, selected objects will be tinted."
+      "Text": "Tint selected objects."
     },
     {
       "Key": "PREF_Viewport_Enable_Selection_Dithering",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Selection_Dithering_TT",
-      "Text": "If enabled, a selected model will be dithered."
+      "Text": "Dither a selected model."
     },
     {
       "Key": "PREF_Viewport_Selection_Dither_Opacity",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PREF_Viewport_Selection_Dither_Opacity_TT",
-      "Text": "Determines the strength of the opacity applied during dithering."
+      "Text": "The strength of the opacity used for dithering."
     },
     {
       "Key": "PREF_Viewport_Enable_Box_Selection",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PREF_Viewport_Enable_Box_Selection_TT",
-      "Text": "If enabled, you can click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)"
+      "Text": "Click and drag to select multiple objects (Ctrl: subtract, Shift: add)."
     },
     {
       "Key": "PREF_Viewport_Frame_Distance",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "PREF_Viewport_Frame_Distance_TT",
-      "Text": "Determine the distance the camera is placed at when framing a selection in the viewport."
+      "Text": "The camera's distance when framing a selection in the viewport."
     },
     {
       "Key": "PREF_Viewport_Frame_Offset",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "PREF_Viewport_Frame_Offset_TT",
-      "Text": "Determine the offset applied to the camera when framing a selection in the viewport."
+      "Text": "The camera offset when framing a selection in the viewport."
     },
     {
       "Key": "PREF_Viewport_Wireframe_Color_Variance",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "PREF_Viewport_Wireframe_Color_Variance_TT",
-      "Text": "The variance factor when adjusting the coloring of wireframe viewport objects."
+      "Text": "How much the colours of wireframe viewport objects vary."
     },
     {
       "Key": "PREF_Viewport_Header_General",
@@ -198,27 +198,27 @@
     },
     {
       "Key": "PREF_Viewport_Gizmo_X_Base_Color",
-      "Text": "X-Axis: Base Color"
+      "Text": "X Axis: Base Colour"
     },
     {
       "Key": "PREF_Viewport_Gizmo_X_Highlight_Color",
-      "Text": "X-Axis: Highlight Color"
+      "Text": "X Axis: Highlight Colour"
     },
     {
       "Key": "PREF_Viewport_Gizmo_Y_Base_Color",
-      "Text": "Y-Axis: Base Color"
+      "Text": "Y Axis: Base Colour"
     },
     {
       "Key": "PREF_Viewport_Gizmo_Y_Highlight_Color",
-      "Text": "Y-Axis: Highlight Color"
+      "Text": "Y Axis: Highlight Colour"
     },
     {
       "Key": "PREF_Viewport_Gizmo_Z_Base_Color",
-      "Text": "Z-Axis: Base Color"
+      "Text": "Z Axis: Base Colour"
     },
     {
       "Key": "PREF_Viewport_Gizmo_Z_Highlight_Color",
-      "Text": "Z-Axis: Highlight Color"
+      "Text": "Z Axis: Highlight Colour"
     },
     {
       "Key": "PREF_Viewport_Collision_Color",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "PREF_Viewport_Collision_Opacity_TT",
-      "Text": "How opaque the faces of collision and navmeshes are. Below 1.0, faces behind them, including their own far side, show through."
+      "Text": "How opaque collision and navmesh faces are. Below 1.0, faces behind them, including their own far side, show through."
     },
     {
       "Key": "PREF_Viewport_Box_Region_Base_Color",
@@ -374,7 +374,7 @@
     },
     {
       "Key": "PREF_Viewport_Light_Intensity_Scale_TT",
-      "Text": "Multiplies the diffuse power of a selected BTL light, to adjust how brightly it lights the viewport. This does not change the BTL file."
+      "Text": "Multiply the diffuse power of a selected BTL light to adjust how brightly it lights the viewport. This doesn't change the BTL file."
     },
     {
       "Key": "PREF_Viewport_Directional_Light_Highlight_Color",
@@ -438,7 +438,7 @@
     },
     {
       "Key": "PREF_FilterPreset_Configure_Filters",
-      "Text": "Configure each of the six filter presets available."
+      "Text": "Configure each of the six filter presets."
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile",
@@ -446,7 +446,7 @@
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile_TT",
-      "Text": "How much memory loading maps and models may use at once. Loading reads files ahead of what can be processed and sent to the GPU; a lower limit holds less of that at once, so loading peaks lower but takes longer. A higher limit loads faster on a machine with memory to spare. Applies to loads started after it is changed."
+      "Text": "How much memory loading maps and models can use at once. Loading reads files ahead of what can be processed and sent to the GPU. A lower limit holds less at once, so memory use peaks lower but loading takes longer. A higher limit loads faster on a machine with memory to spare. Applies to loads started after the change."
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile_Summary",
@@ -470,7 +470,7 @@
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile_Balanced_TT",
-      "Text": "Holds at most 1 GB of loading data at once and reads with half of the processor's cores."
+      "Text": "Holds at most 1 GB of loading data at once and reads with half the processor's cores."
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile_High",
@@ -486,7 +486,7 @@
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile_Unlimited_TT",
-      "Text": "No limit: reads everything as fast as it can. Fastest, but a large map can peak at many GB."
+      "Text": "No limit: reads everything as fast as possible. Fastest, but a large map can peak at many GB."
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Profile_Custom",
@@ -502,7 +502,7 @@
     },
     {
       "Key": "PREF_Viewport_Load_Memory_Budget_MB_TT",
-      "Text": "With the Custom limit: the most loading data, in MB, held at once (read but not yet processed, or not yet on the GPU). 0 for no limit."
+      "Text": "With the Custom limit: the maximum loading data, in MB, held at once (read but not yet processed, or not yet on the GPU). 0 for no limit."
     },
     {
       "Key": "PREF_Viewport_Load_Container_Readers",
@@ -510,7 +510,7 @@
     },
     {
       "Key": "PREF_Viewport_Load_Container_Readers_TT",
-      "Text": "With the Custom limit: how many files are read at the same time, over every load. 0 for no limit."
+      "Text": "With the Custom limit: how many files are read at the same time, across all loads. 0 for no limit."
     }
   ]
 }

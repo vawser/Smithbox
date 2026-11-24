@@ -2,19 +2,19 @@
   "Entries": [
     {
       "Key": "PROJECT_Util_ME3_Profile_Missing",
-      "Text": "The current ME3 profile directory does not exist. Please configure the ME3 profile directory within the settings to a valid directory."
+      "Text": "The ME3 profile folder doesn't exist. Set the ME3 profile folder to a valid folder in the settings."
     },
     {
       "Key": "PROJECT_Util_ME3_Find_Profile_FAIL",
-      "Text": "[Project] Failed to find profile: {0}"
+      "Text": "[Project] Failed to find the profile: {0}"
     },
     {
       "Key": "PROJECT_Util_Project_Type_Not_Set",
-      "Text": "Project Type has not been set."
+      "Text": "The project type isn't set."
     },
     {
       "Key": "PROJECT_Util_Missing_Suitable_VFS",
-      "Text": "No suitable VFS was found for writes."
+      "Text": "No suitable VFS was found for writing."
     },
     {
       "Key": "PROJECT_Util_Failed_To_Save",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PROJECT_Util_Missing_Directory_For_Backup",
-      "Text": "Directory not found: {0}"
+      "Text": "Folder not found: {0}"
     },
     {
       "Key": "PROJECT_Util_Failed_To_Delete",

@@ -22,7 +22,7 @@
     },
     {
       "Key": "UNSAVED_Save_Incomplete",
-      "Text": "Some changes could not be saved, and are listed below. See the log for why."
+      "Text": "Some changes couldn't be saved and are listed below. See the log for details."
     },
     {
       "Key": "UNSAVED_Editor_Entry",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "UNSAVED_Action_Discard_TT",
-      "Text": "Continue and lose the listed changes."
+      "Text": "Continue and discard the listed changes."
     },
     {
       "Key": "UNSAVED_Action_Cancel",

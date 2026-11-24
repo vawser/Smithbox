@@ -6,7 +6,7 @@
     },
     {
       "Key": "PREF_TextEditor_Primary_Language_TT",
-      "Text": "Determines which language is treated as the default for other various features."
+      "Text": "The language treated as the default by other features."
     },
     {
       "Key": "PREF_TextEditor_Include_Vanilla_Cache",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PREF_TextEditor_Include_Vanilla_Cache_TT",
-      "Text": "If enabled, unique and modified rows will be highlighted."
+      "Text": "Highlight unique and modified rows."
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Obsolete_Containers",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Obsolete_Containers_TT",
-      "Text": "If enabled, obsolete containers will be displayed in the list. These are containers the game (for the current project type) no longer reads."
+      "Text": "Show obsolete containers in the list: containers the game (for the current project type) no longer reads."
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Primary_Category_Only",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Primary_Category_Only_TT",
-      "Text": "If enabled, only the primary category containers are displayed in the list."
+      "Text": "Show only the primary category's containers in the list."
     },
     {
       "Key": "PREF_TextEditor_Container_List_Hide_Unused_Containers",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PREF_TextEditor_Container_List_Hide_Unused_Containers_TT",
-      "Text": "If enabled, unused containers are no longer displayed in the list."
+      "Text": "Hide unused containers in the list."
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Community_Names",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Community_Names_TT",
-      "Text": "If enabled, the community names for containers are used instead of their raw filenames."
+      "Text": "Show container community names instead of their raw file names."
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Source_Path",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PREF_TextEditor_Container_List_Display_Source_Path_TT",
-      "Text": "If enabled, the source path for a container will be displayed withi its tooltip."
+      "Text": "Show a container's source path in its tooltip."
     },
     {
       "Key": "PREF_TextEditor_Text_File_List_Grouped_Display",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_File_List_Grouped_Display_TT",
-      "Text": "If enabled, non-title files that belong to a entry group will be hidden."
+      "Text": "Hide non-title files that belong to an entry group."
     },
     {
       "Key": "PREF_TextEditor_Text_File_List_Display_ID",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_File_List_Display_ID_TT",
-      "Text": "If enabled, the FMG ID of the text file is listed with its name."
+      "Text": "Show each text file's FMG ID with its name."
     },
     {
       "Key": "PREF_TextEditor_Text_File_List_Display_Community_Names",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_File_List_Display_Community_Names_TT",
-      "Text": "If enabled, the community names for a text file are displayed instead of its raw filename."
+      "Text": "Show text file community names instead of their raw file names."
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_List_Display_Null_Text",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_List_Display_Null_Text_TT",
-      "Text": "If enabled, null text will be represented with the '<null>' text."
+      "Text": "Show null text as '<null>'."
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_List_Truncate_Name",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_List_Truncate_Name_TT",
-      "Text": "If enabled, the entry name will be truncated if it is too long."
+      "Text": "Truncate long entry names."
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check_TT",
-      "Text": "If enabled, duplicate will produce entries with the same entry ID as the source."
+      "Text": "Let duplicating create entries with the same ID as the source."
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries_TT",
-      "Text": "If enabled, entries that form a Title, Summary, Description and Effect group will display all entries within the Text Entry window."
+      "Text": "For entries that form a Title, Summary, Description and Effect group, show all the group's entries in the Text Entry window."
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID_TT",
-      "Text": "If enabled, an ID change that would result in a duplicate ID will be permitted."
+      "Text": "Allow ID changes that result in a duplicate ID."
     },
     {
       "Key": "PREF_TextEditor_Text_Export_Include_Grouped_Entries",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Export_Include_Grouped_Entries_TT",
-      "Text": "If enabled, the other memebers of a grouped source entry will be included upon exporting."
+      "Text": "Include the other members of a grouped entry when exporting."
     },
     {
       "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export_TT",
-      "Text": "If enabled, the export file is automatically named instead of displaying the Export Text prompt for the user. Will overwrite the existing quick export file each time."
+      "Text": "Name the export file automatically instead of showing the Export Text prompt. Each quick export overwrites the previous quick export file."
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only_TT",
-      "Text": "If enabled, only show your primary categoryin the selection dropdown."
+      "Text": "Show only your primary category in the selection drop-down."
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Apply_Prefix",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Apply_Prefix_TT",
-      "Text": "If enabled, a prefix is added to all text in the synced language container."
+      "Text": "Add a prefix to all text in the synced language container."
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Prefix",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Prefix_TT",
-      "Text": "The prefix that is added to synced text."
+      "Text": "The prefix to add to synced text."
     },
     {
       "Key": "PREF_TextEditor_Text_Clipboard_Include_ID",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Clipboard_Include_ID_TT",
-      "Text": "If enabled, the entry ID is included in the saved clipboard text."
+      "Text": "Include the entry ID in copied clipboard text."
     },
     {
       "Key": "PREF_TextEditor_Text_Clipboard_Escape_New_Lines",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Clipboard_Escape_New_Lines_TT",
-      "Text": "If enabled, new lines are escaped so the saved clipboard text does not contain actually new lines."
+      "Text": "Escape new lines, so copied clipboard text contains no actual line breaks."
     }
   ]
 }

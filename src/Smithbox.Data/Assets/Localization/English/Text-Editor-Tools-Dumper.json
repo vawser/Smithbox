@@ -10,7 +10,7 @@
     },
     {
       "Key": "TEXT_Dumper_Action_Dump_TT",
-      "Text": "Dumps all the FMG contents into individual text files for data-mining."
+      "Text": "Dump all FMG contents into separate text files for data mining."
     },
     {
       "Key": "TEXT_Dumper_Dialog_Select_Directory",

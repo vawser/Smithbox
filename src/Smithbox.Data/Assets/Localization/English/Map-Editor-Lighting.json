@@ -6,7 +6,7 @@
     },
     {
       "Key": "MAP_Lighting_Failed_Read_LUT",
-      "Text": "Failed to read the color grading LUTs {0} for map lighting."
+      "Text": "Failed to read the colour grading LUTs {0} for map lighting."
     },
     {
       "Key": "MAP_Lighting_Timezone_Morning",

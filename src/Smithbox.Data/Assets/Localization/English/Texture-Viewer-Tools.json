@@ -18,7 +18,7 @@
     },
     {
       "Key": "TEXVIEW_Tools_Action_Export_Texture_TT",
-      "Text": "Export currently selected texture."
+      "Text": "Export the selected texture."
     }
   ]
 }

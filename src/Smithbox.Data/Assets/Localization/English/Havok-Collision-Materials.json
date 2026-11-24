@@ -10,7 +10,7 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Input_TT",
-      "Text": "The material ID that is written: the surface row plus the property in the hundreds, for example 429 is surface 29 with Slide1. Type an ID here to use a value the lists above don't offer."
+      "Text": "The material ID that is written: the surface row plus the property in the hundreds. For example, 429 is surface 29 with Slide1. Type an ID here to use a value that the lists above don't offer."
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Applying",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Surface_TT",
-      "Text": "The surface, from the project's HitMtrlParam rows. It sets the footstep sounds, hit effects and swamp or water behaviour. Rename rows in the Param Editor to change the names shown here."
+      "Text": "The surface, from the project's HitMtrlParam rows. It sets footstep sounds, hit effects, and swamp or water behaviour. Rename rows in the Param Editor to change the names shown here."
     },
     {
       "Key": "HAVOK_CollisionGen_Material_No_Param",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Property_TT",
-      "Text": "An extra property added to the surface in the hundreds of the material ID, named as in the OBJ2HKX exporter."
+      "Text": "An extra property added to the surface, in the hundreds of the material ID."
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Property_None",

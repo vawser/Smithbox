@@ -18,7 +18,7 @@
     },
     {
       "Key": "GPARAM_ValueList_TimeOfDay_Column_Toggle_TT",
-      "Text": "Toggle the display of the Time of Day column.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the Time of Day column.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "GPARAM_ValueList_Info_Column_Toggle_Show",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "GPARAM_ValueList_Info_Column_Toggle_TT",
-      "Text": "Toggle the display of the Information column.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the Information column.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "GPARAM_ValueList_Row_Header",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "GPARAM_ValueList_Empty_Selectable_TT",
-      "Text": "Click to add new value."
+      "Text": "Click to add a new value."
     },
     {
       "Key": "GPARAM_ValueList_Context_Duplicate_Header",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "GPARAM_ValueList_Context_Dupe_Submit_Action_TT",
-      "Text": "Duplicate the selected value row, assigning the specified ID below as the new id."
+      "Text": "Duplicate the selected value row, using the ID below as the new ID."
     },
     {
       "Key": "GPARAM_ValueList_Context_Delete_Action",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "GPARAM_ValueList_Context_Copy_ID_Action_TT",
-      "Text": "Copy the value ID to clipboard."
+      "Text": "Copy the value ID to the clipboard."
     },
     {
       "Key": "GPARAM_ValueList_Context_Copy_Value_Action",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "GPARAM_ValueList_Context_Copy_Value_Action_TT",
-      "Text": "Copy the value to clipboard."
+      "Text": "Copy the value to the clipboard."
     },
     {
       "Key": "GPARAM_ValueList_Context_Target_Header",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "GPARAM_ValueList_Context_Target_In_Global_Search_TT",
-      "Text": "Fill the Global Search with this value's ID, group and field, to find it in every file of the project."
+      "Text": "Fill the Global Search with this value's ID, group and field, to find it in every file in the project."
     }
   ]
 }

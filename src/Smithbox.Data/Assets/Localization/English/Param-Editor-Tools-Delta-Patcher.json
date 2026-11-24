@@ -26,7 +26,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Import_Hint",
-      "Text": "Import a param delta file here."
+      "Text": "Import a param delta file."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Import_Mode",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Import_Mode_TT",
-      "Text": "Determines the internal logic used during import."
+      "Text": "How the import is processed."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Options",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Display_All_TT",
-      "Text": "If enabled, delta entries for all project types are displayed. Otherwise, only entries for the current project type are displayed."
+      "Text": "When enabled, delta entries for all project types are shown. Otherwise, only entries for the current project type are shown."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Include_Modified",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Include_Modified_TT",
-      "Text": "If enabled, rows considered 'modified' within the delta will be applied. This means the import will modify rows within the primary bank with the same row ID and index as those in the delta."
+      "Text": "When enabled, rows marked 'modified' in the delta are applied: the import modifies rows in the primary bank with the same row ID and index as those in the delta."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbx_Include_Added",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbx_Include_Added_TT",
-      "Text": "If enabled, rows considered 'added' within the delta will be applied. This means the import will add these rows to the primary bank."
+      "Text": "When enabled, rows marked 'added' in the delta are applied: the import adds these rows to the primary bank."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Include_Deleted",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Include_Deleted_TT",
-      "Text": "If enabled, rows considered 'delete' within the delta will be applied. This means the import will delete these rows from the primary bank."
+      "Text": "When enabled, rows marked 'deleted' in the delta are applied: the import deletes these rows from the primary bank."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Modify",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Modify_TT",
-      "Text": "If enabled, row modifications will only occur if the row hasn't already been modified."
+      "Text": "When enabled, rows are only modified if they haven't already been modified."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Addition",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Restrict_Addition_TT",
-      "Text": "If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank."
+      "Text": "When enabled, rows are only added if the row ID doesn't already exist in the primary bank."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Allow_Overwrite",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Allow_Overwrite_TT",
-      "Text": "If enabled, row additions that collide with an existing row ID will overwrite it (rather than being inserted alongside of)."
+      "Text": "When enabled, added rows that collide with an existing row ID overwrite it instead of being inserted alongside it."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Actions",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Import_Delta_TT",
-      "Text": "Import the currently selected import entry."
+      "Text": "Import the selected entry."
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Refresh_List",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Refresh_List_TT",
-      "Text": "Refresh the import list for deltas (so it includes newly added deltas)."
+      "Text": "Refresh the delta import list to include newly added deltas."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Entries",
@@ -158,11 +158,11 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_ImportContext_Action_Delete_TT",
-      "Text": "Deletes this delta file."
+      "Text": "Delete this delta file."
     },
     {
       "Key": "PARAM_DeltaPatcher_Export_Hint",
-      "Text": "Export a param delta file here."
+      "Text": "Export a param delta file."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Filename",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Filename_TT",
-      "Text": "The name assigned to the delta file."
+      "Text": "The delta file's name."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Tags",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Tags_TT",
-      "Text": "The tags assigned to the delta file."
+      "Text": "The delta file's tags."
     },
     {
       "Key": "PARAM_DeltaPatcher_Filename_Input_Hint",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Tags_Input_Hint",
-      "Text": "Enter the associated tags for the exported file..."
+      "Text": "Enter the tags for the exported file..."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Param_Type",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Param_Type_TT",
-      "Text": "Determines which params are selected for export."
+      "Text": "Which params to export."
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Selection_Type",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Header_Selection_Type_TT",
-      "Text": "Determines which rows are selected for export."
+      "Text": "Which rows to export."
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Ignore_Indexed",
@@ -210,7 +210,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Checkbox_Ignore_Indexed_TT",
-      "Text": "If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta."
+      "Text": "When enabled, indexed params (whose rows depend on row index as well as ID) are ignored when producing the delta."
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Export_Delta",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Export_Delta_TT",
-      "Text": "Exports the param delta into the export directory."
+      "Text": "Export the param delta to the export folder."
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Open_Delta_Folder",
@@ -226,27 +226,27 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Action_Open_Delta_Folder_TT",
-      "Text": "Opent the directory that the exported deltas are stored in."
+      "Text": "Open the folder where exported deltas are stored."
     },
     {
       "Key": "PARAM_DeltaPatcher_Deserialize_Patch_FAIL",
-      "Text": "Failed to deserialize delta patch: {0}"
+      "Text": "Failed to read the delta patch: {0}"
     },
     {
       "Key": "PARAM_DeltaPatcher_Read_Patch_FAIL",
-      "Text": "Failed to read delta patch: {0}"
+      "Text": "Failed to read the delta patch: {0}"
     },
     {
       "Key": "PARAM_DeltaPatcher_Find_Patch_FAIL",
-      "Text": "Failed to find delta patch: {0}"
+      "Text": "Failed to find the delta patch: {0}"
     },
     {
       "Key": "PARAM_DeltaPatcher_Write_Missing_Filename",
-      "Text": "Failed to write delta patch for {0} as filename is empty."
+      "Text": "Failed to write the delta patch for {0}: the file name is empty."
     },
     {
       "Key": "PARAM_DeltaPatcher_Write_Patch_FAIL",
-      "Text": "Failed to write delta patch: {0}"
+      "Text": "Failed to write the delta patch: {0}"
     },
     {
       "Key": "PARAM_DeltaPatcher_Import_Preview_Modal",
@@ -310,7 +310,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Group_Toggle_TT",
-      "Text": "A row table group is applied as a whole: all of its rows replace the group with the same ID, or none of them do."
+      "Text": "A row table group is applied as a whole: either all of its rows replace the group with the same ID, or none do."
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Action_Import",
@@ -318,7 +318,7 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Log_Import_PASS",
-      "Text": "Imported selected param delta patch: {0}"
+      "Text": "Imported the selected param delta patch: {0}"
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Action_Cancel",
@@ -326,15 +326,15 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Export_Param_Toggle_TT",
-      "Text": "Determines if this element is included in the delta export."
+      "Text": "Whether this element is included in the delta export."
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Export_Row_Toggle_TT",
-      "Text": "Determines if this element is included in the delta export."
+      "Text": "Whether this element is included in the delta export."
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Export_Field_Toggle_TT",
-      "Text": "Determines if this element is included in the delta export."
+      "Text": "Whether this element is included in the delta export."
     },
     {
       "Key": "PARAM_DeltaPatcher_Preview_Action_Export",
@@ -346,11 +346,11 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Importer_Finished_Import",
-      "Text": "Finished '{0}' param delta import."
+      "Text": "Finished the '{0}' param delta import."
     },
     {
       "Key": "PARAM_DeltaPatcher_Importer_Failed_Import",
-      "Text": "'{0}' param delta import failed."
+      "Text": "The '{0}' param delta import failed."
     },
     {
       "Key": "PARAM_DeltaPatcher_Phase_Processing",
@@ -358,11 +358,11 @@
     },
     {
       "Key": "PARAM_DeltaPatcher_Exporter_Filename_Empty",
-      "Text": "Filename must not be empty."
+      "Text": "The file name can't be empty."
     },
     {
       "Key": "PARAM_DeltaPatcher_Exporter_Overwrite_Patch",
-      "Text": "Do you want to overwrite this delta patch file: {0}"
+      "Text": "Overwrite this delta patch file? {0}"
     },
     {
       "Key": "PARAM_DeltaPatcher_Exporter_Delta_Failed",

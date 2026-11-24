@@ -306,7 +306,7 @@
     },
     {
       "Key": "PREF_Action_Revert_All_TT",
-      "Text": "Reverts all preferences to their default value."
+      "Text": "Revert all preferences to their default values."
     },
     {
       "Key": "PREF_Menu_Header_Viewport",
@@ -318,7 +318,7 @@
     },
     {
       "Key": "PREF_Action_Viewport_General_TT",
-      "Text": "Reverts all preferences in the Viewport General section to their default value."
+      "Text": "Revert all Viewport General preferences to their default values."
     },
     {
       "Key": "PREF_Action_Viewport_Rendering",
@@ -326,7 +326,7 @@
     },
     {
       "Key": "PREF_Action_Viewport_Rendering_TT",
-      "Text": "Reverts all preferences in the Viewport Rendering section to their default value."
+      "Text": "Revert all Viewport Rendering preferences to their default values."
     },
     {
       "Key": "PREF_Action_Viewport_Model_Rendering",
@@ -334,7 +334,7 @@
     },
     {
       "Key": "PREF_Action_Viewport_Model_Rendering_TT",
-      "Text": "Reverts all preferences in the Viewport Model Rendering section to their default value."
+      "Text": "Revert all Viewport Model Rendering preferences to their default values."
     },
     {
       "Key": "PREF_Action_Viewport_Selection",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "PREF_Action_Viewport_Selection_TT",
-      "Text": "Reverts all preferences in the Viewport Selection section to their default value."
+      "Text": "Revert all Viewport Selection preferences to their default values."
     },
     {
       "Key": "PREF_Action_Viewport_Coloring",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "PREF_Action_Viewport_Coloring_TT",
-      "Text": "Reverts all preferences in the Viewport Coloring section to their default value."
+      "Text": "Revert all Viewport Colouring preferences to their default values."
     },
     {
       "Key": "PREF_Action_Viewport_Display_Preset",
@@ -358,11 +358,11 @@
     },
     {
       "Key": "PREF_Action_Viewport_Display_Preset_TT",
-      "Text": "Reverts all preferences in the Viewport Display Preset section to their default value."
+      "Text": "Revert all Viewport Display Preset preferences to their default values."
     },
     {
       "Key": "PREF_No_Preferences_Yet",
-      "Text": "No preferences yet for this editor."
+      "Text": "This editor has no preferences yet."
     }
   ]
 }

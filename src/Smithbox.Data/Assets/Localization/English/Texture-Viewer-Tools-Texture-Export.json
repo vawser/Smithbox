@@ -34,7 +34,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Data_Export_Hint",
-      "Text": "Export the currently viewed texture."
+      "Text": "Export the texture being viewed."
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Export_Directory",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Export_Type_Select_TT",
-      "Text": "The file type the exported texture will be saved as. Affects the context menu export functions too."
+      "Text": "The file type to save exported textures as. Also applies to the context menu export actions."
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Options",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT",
-      "Text": "Place the exported texture in a folder with the title of the texture container."
+      "Text": "Put the exported texture in a folder named after the texture container."
     },
     {
       "Key": "TEXVIEW_TexExport_Checkbox_Display_Export_Confirm",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT",
-      "Text": "Display the confirmation message box after each export."
+      "Text": "Show a confirmation message after each export."
     },
     {
       "Key": "TEXVIEW_TexExport_Header_Actions",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Action_Select_Export_Folder_TT",
-      "Text": "Select the folder in which exported textures are placed."
+      "Text": "Select the folder for exported textures."
     },
     {
       "Key": "TEXVIEW_TexExport_Action_Open_Export_Folder",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Action_Open_Export_Folder_TT",
-      "Text": "Open the current output directory in a file explorer."
+      "Text": "Open the output folder in File Explorer."
     },
     {
       "Key": "TEXVIEW_TexExport_Action_Export_Texture",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Action_Export_Texture_TT",
-      "Text": "Export the currently viewed texture."
+      "Text": "Export the texture being viewed."
     },
     {
       "Key": "TEXVIEW_TexExport_Dialog_Select_Export_Dest",
@@ -118,23 +118,23 @@
     },
     {
       "Key": "TEXVIEW_TexExport_Dialog_Overwrite_File",
-      "Text": "Overwrite existing file at {0}?"
+      "Text": "Overwrite the existing file at {0}?"
     },
     {
       "Key": "TEXVIEW_TexExport_Log_Invalid_Directory",
-      "Text": "Directory is not valid."
+      "Text": "The folder isn't valid."
     },
     {
       "Key": "TEXVIEW_TexExport_Log_Exported_Texture",
-      "Text": "{0} exported."
+      "Text": "Exported {0}."
     },
     {
       "Key": "TEXVIEW_TexExport_Log_Export_Dir_Not_Set",
-      "Text": "Export Destination is not set."
+      "Text": "The export destination isn't set."
     },
     {
       "Key": "TEXVIEW_TexExport_Log_No_Texture_Viewed",
-      "Text": "No texture is currently being viewed."
+      "Text": "No texture is being viewed."
     },
     {
       "Key": "TEXVIEW_TexExport_Log_Texture_Export_Failed",

@@ -6,7 +6,7 @@
     },
     {
       "Key": "PREF_MaterialEditor_Properties_Display_Community_Names_TT",
-      "Text": "If enabled, display community names in the properties list."
+      "Text": "Show community names in the properties list."
     }
   ]
 }

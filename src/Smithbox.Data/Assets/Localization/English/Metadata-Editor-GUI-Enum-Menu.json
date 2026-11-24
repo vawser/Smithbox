@@ -22,11 +22,11 @@
     },
     {
       "Key": "META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source",
-      "Text": "Save Shortcut applies to Base Source"
+      "Text": "Save Shortcut Saves to Base Source"
     },
     {
       "Key": "META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source_TT",
-      "Text": "If enabled, the save shortcut will save to base aliases, rather than local."
+      "Text": "When enabled, the save shortcut saves to the base enums instead of the local ones."
     },
     {
       "Key": "META_EnumMenu_Menu_Add",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "META_EnumMenu_Menu_Insert_New_At_Top_TT",
-      "Text": "If enabled, adding a new enum option via the icon button will place it at the top of the list, rather than the bottom."
+      "Text": "When enabled, adding an enum option with the icon button places it at the top of the list instead of the bottom."
     },
     {
       "Key": "META_EnumMenu_Menu_Edit",
@@ -74,15 +74,15 @@
     },
     {
       "Key": "META_EnumMenu_Button_Add_Enum_Option_TT",
-      "Text": "Add new enum option entry."
+      "Text": "Add an enum option."
     },
     {
       "Key": "META_EnumMenu_Button_Sort_Enum_Options_TT",
-      "Text": "Sort enum option list alphanumerically."
+      "Text": "Sort the enum options alphanumerically."
     },
     {
       "Key": "META_EnumMenu_Button_Read_Only_Toggle_TT",
-      "Text": "Toggle whether the enum options are editable or not.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle whether the enum options can be edited.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "META_EnumMenu_Enum_Read_Only_Active",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "META_EnumMenu_Missing_Language_Entry",
-      "Text": "No name for current language ({0})"
+      "Text": "No name for the current language ({0})"
     },
     {
       "Key": "META_EnumMenu_Saved_Project_Aliases",

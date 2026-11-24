@@ -6,7 +6,7 @@
     },
     {
       "Key": "MAP_Filters_Map_Pieces_TT",
-      "Text": "Toggle the display of map objects classified as 'Map pieces'."
+      "Text": "Show or hide map pieces."
     },
     {
       "Key": "MAP_Filters_Objects_Title",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "MAP_Filters_Objects_TT",
-      "Text": "Toggle the display of map objects classified as 'Objects'."
+      "Text": "Show or hide objects."
     },
     {
       "Key": "MAP_Filters_Assets_Title",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "MAP_Filters_Assets_TT",
-      "Text": "Toggle the display of map objects classified as 'Assets'."
+      "Text": "Show or hide assets."
     },
     {
       "Key": "MAP_Filters_Characters_Title",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "MAP_Filters_Characters_TT",
-      "Text": "Toggle the display of map objects classified as 'Characters'."
+      "Text": "Show or hide characters."
     },
     {
       "Key": "MAP_Filters_Dummy_Enemies_Title",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "MAP_Filters_Dummy_Enemies_TT",
-      "Text": "Toggle the display of map objects classified as 'Dummy Enemies'."
+      "Text": "Show or hide dummy enemies."
     },
     {
       "Key": "MAP_Filters_Dummy_Assets_Title",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "MAP_Filters_Dummy_Assets_TT",
-      "Text": "Toggle the display of map objects classified as 'Dummy Assets'."
+      "Text": "Show or hide dummy assets."
     },
     {
       "Key": "MAP_Filters_Dummy_Objects_Title",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "MAP_Filters_Dummy_Objects_TT",
-      "Text": "Toggle the display of map objects classified as 'Dummy Objects'."
+      "Text": "Show or hide dummy objects."
     },
     {
       "Key": "MAP_Filters_Regions_Title",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "MAP_Filters_Regions_TT",
-      "Text": "Toggle the display of map objects classified as 'Regions'."
+      "Text": "Show or hide regions."
     },
     {
       "Key": "MAP_Filters_Lights_Title",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "MAP_Filters_Lights_TT",
-      "Text": "Toggle the display of map objects classified as 'Lights'."
+      "Text": "Show or hide lights."
     },
     {
       "Key": "MAP_Filters_Collisions_Title",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "MAP_Filters_Collisions_TT",
-      "Text": "Toggle the display of map objects classified as 'Collisions'."
+      "Text": "Show or hide collisions."
     },
     {
       "Key": "MAP_Filters_Connect_Collisions_Title",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "MAP_Filters_Connect_Collisions_TT",
-      "Text": "Toggle the display of map objects classified as 'Connect Collisions'."
+      "Text": "Show or hide connect collisions."
     },
     {
       "Key": "MAP_Filters_Object_Collisions_Title",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "MAP_Filters_Object_Collisions_TT",
-      "Text": "Toggle the display of the collision meshes of objects. These are read when first displayed, so turning this on can take a moment."
+      "Text": "Show or hide the collision meshes of objects. They are read when first shown, so turning this on can take a moment."
     },
     {
       "Key": "MAP_Filters_Asset_Collisions_Title",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "MAP_Filters_Asset_Collisions_TT",
-      "Text": "Toggle the display of the collision meshes of assets. These are read when first displayed, so turning this on can take a moment."
+      "Text": "Show or hide the collision meshes of assets. They are read when first shown, so turning this on can take a moment."
     },
     {
       "Key": "MAP_Filters_Grass_Title",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "MAP_Filters_Grass_TT",
-      "Text": "Toggle the display of the grass laid upon map pieces and assets. It is built when first displayed, and its layout only approximates the game's."
+      "Text": "Show or hide the grass on map pieces and assets. It is built when first shown, and its layout only approximates the game's."
     },
     {
       "Key": "MAP_Filters_Edge_Points_Title",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "MAP_Filters_Edge_Points_TT",
-      "Text": "Toggle the display of the EDGE points of collisions and objects: the grapple points, hangable ledges and huggable walls. These are read when first displayed, and can't be selected or edited here."
+      "Text": "Show or hide the EDGE points of collisions and objects: grapple points, hangable ledges and huggable walls. They are read when first shown, and can't be selected or edited here."
     },
     {
       "Key": "MAP_Filters_Walls_Title",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "MAP_Filters_Walls_TT",
-      "Text": "Toggle the display of the WALL and NOJUMPWALL files of collisions: which parts of the low collision are walls, which are not, and which can't be jumped off. These are read when first displayed, and can be painted with the Wall Painting tool."
+      "Text": "Show or hide the WALL and NOJUMPWALL files of collisions: which parts of the low collision are walls, which aren't, and which can't be jumped off. They are read when first shown, and you can paint them with the Wall Painting tool."
     },
     {
       "Key": "MAP_Filters_Navmeshes_Title",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "MAP_Filters_Navmeshes_TT",
-      "Text": "Toggle the display of map objects classified as 'Navmeshes'."
+      "Text": "Show or hide navmeshes."
     },
     {
       "Key": "MAP_Filters_Nav_Volumes_Title",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "MAP_Filters_Nav_Volumes_TT",
-      "Text": "Toggle the display of the nav volumes used for flying movement (NVVA). These are made of hundreds of thousands of cells, so they are hidden by default."
+      "Text": "Show or hide the nav volumes used for flying movement (NVVA). They contain hundreds of thousands of cells, so they are hidden by default."
     },
     {
       "Key": "MAP_Filters_Speed_Trees_Title",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "MAP_Filters_Speed_Trees_TT",
-      "Text": "Toggle the display of map objects classified as 'Speed Trees'."
+      "Text": "Show or hide SpeedTrees."
     },
     {
       "Key": "MAP_Filters_Invasion_Points_Title",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "MAP_Filters_Invasion_Points_TT",
-      "Text": "Toggle the display of map objects classified as 'Invasion Points'."
+      "Text": "Show or hide invasion points."
     },
     {
       "Key": "MAP_Filters_Multiplayer_Walls_Title",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "MAP_Filters_Multiplayer_Walls_TT",
-      "Text": "Toggle the display of the MPW files of open world tiles: the panels of the walls that keep players in a tile during multiplayer."
+      "Text": "Show or hide the MPW files of open world tiles: the wall panels that keep players in a tile during multiplayer."
     },
     {
       "Key": "MAP_Filters_Map_Limits_Title",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "MAP_Filters_Map_Limits_TT",
-      "Text": "Toggle the display of the MSLD files of maps: the walls around the areas of a mission."
+      "Text": "Show or hide the MSLD files of maps: the walls around a mission's areas."
     },
     {
       "Key": "MAP_Filters_Fog_Volumes_Title",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "MAP_Filters_Fog_Volumes_TT",
-      "Text": "Toggle the display of the FVB files of maps: the boxes of volumetric fog, drawn with the settings of the map's graphics params."
+      "Text": "Show or hide the FVB files of maps: the volumetric fog boxes, drawn with the settings of the map's graphics params."
     },
     {
       "Key": "MAP_Filters_Light_Probes_Title",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "MAP_Filters_Light_Probes_TT",
-      "Text": "Toggle the display of map objects classified as 'Light Probes'."
+      "Text": "Show or hide light probes."
     },
     {
       "Key": "MAP_Filters_DS2_Region0",
@@ -842,7 +842,7 @@
     },
     {
       "Key": "MAP_Filters_Common_Toggle_Region_Visibility_OFF_TT",
-      "Text": "Toggle the visibility of regions of all types to invisible."
+      "Text": "Hide regions of all types."
     },
     {
       "Key": "MAP_Filters_Common_Toggle_Region_Visibility_ON",
@@ -850,11 +850,11 @@
     },
     {
       "Key": "MAP_Filters_Common_Toggle_Region_Visibility_ON_TT",
-      "Text": "Toggle the visibility of regions of all types to visible."
+      "Text": "Show regions of all types."
     },
     {
       "Key": "MAP_Filters_Specific_Toggle_TT",
-      "Text": "Toggle the visibility of regions of the {0} type."
+      "Text": "Show or hide regions of the {0} type."
     },
     {
       "Key": "MAP_Filters_Toggle_Action",

@@ -1,7 +1,7 @@
 {
   "Entries": [
     { "Key": "MAP_Port_Header", "Text": "Port" },
-    { "Key": "MAP_Port_Description", "Text": "Ports a whole Dark Souls III map into an existing map of this project ({0}): every map piece the DS3 map places, with its materials and textures, its collision, and the map's parts at their DS3 positions plus the offset. The source project is only read." },
+    { "Key": "MAP_Port_Description", "Text": "Port a whole Dark Souls III map into an existing map in this project ({0}): every map piece the DS3 map places, with its materials and textures, its collision, and the map's parts at their DS3 positions plus the offset. The source project is only read." },
 
     { "Key": "MAP_Port_Source_Header", "Text": "Source Project" },
     { "Key": "MAP_Port_Source_Header_TT", "Text": "The Dark Souls III project the map is read from. Projects are created in the Project Editor." },
@@ -18,7 +18,7 @@
 
     { "Key": "MAP_Port_Actions_Header", "Text": "Actions" },
     { "Key": "MAP_Port_Progress_Header", "Text": "Progress" },
-    { "Key": "MAP_Port_Running_Note", "Text": "Don't load {0} until the port has finished." },
+    { "Key": "MAP_Port_Running_Note", "Text": "Don't load {0} until the port finishes." },
 
     { "Key": "MAP_Port_Unload_Prompt_Title", "Text": "Unload Target Map" },
     { "Key": "MAP_Port_Unload_Prompt", "Text": "{0} is loaded in the Map Editor. The port rewrites its files, so it must be unloaded first.\n\nUnload {0} and start the port?" },
@@ -27,11 +27,11 @@
     { "Key": "MAP_Port_Started", "Text": "Porting {0} of {1} into {2}." },
     { "Key": "MAP_Port_Finished_Log", "Text": "Port into {0} finished; {1} new files added to the project's file lists." },
     { "Key": "MAP_Port_Finished_Failures_Log", "Text": "Port into {0} finished with problems: {1} failed checks, {2} warnings. See the Port tool's log." },
-    { "Key": "MAP_Port_Register_Failed", "Text": "Could not add the ported files to the project's file lists. Reload the project to see them." },
-    { "Key": "MAP_Port_Params_Unavailable", "Text": "The Param Editor's {0} param isn't loaded, so the {1} asset param rows were not added. Load the params and port again." },
-    { "Key": "MAP_Port_Params_No_Template", "Text": "{0} has no template row {1}, so row {2} was not added." },
+    { "Key": "MAP_Port_Register_Failed", "Text": "Couldn't add the ported files to the project's file lists. Reload the project to see them." },
+    { "Key": "MAP_Port_Params_Unavailable", "Text": "The Param Editor's {0} param isn't loaded, so the {1} asset param rows weren't added. Load the params and port again." },
+    { "Key": "MAP_Port_Params_No_Template", "Text": "{0} has no template row {1}, so row {2} wasn't added." },
     { "Key": "MAP_Port_Params_Action", "Text": "Port: {0} rows in {1}" },
     { "Key": "MAP_Port_Params_Applied", "Text": "Port: added or replaced {0} rows in {1} in the Param Editor. Save the params to write them to regulation.bin." },
-    { "Key": "MAP_Port_Params_Apply_Failed", "Text": "Could not add the ported asset param rows in the Param Editor." }
+    { "Key": "MAP_Port_Params_Apply_Failed", "Text": "Couldn't add the ported asset param rows in the Param Editor." }
   ]
 }

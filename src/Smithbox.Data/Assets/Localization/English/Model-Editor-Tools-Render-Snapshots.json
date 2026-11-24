@@ -2,7 +2,7 @@
   "Entries": [
     { "Key": "MODEL_ToolWindow_View_Toggle_Render_Snapshots", "Text": "Render Snapshots" },
     { "Key": "MODEL_RenderSnapshot_Header", "Text": "Render Snapshots" },
-    { "Key": "MODEL_RenderSnapshot_Hint", "Text": "Captures every model of this game's snapshot set from a fixed angle and size, in Game mode, and saves each as a PNG. Compare a run with a baseline using Tools/RenderSnapshotDiff to see which games a renderer change affected. Keep the viewport on screen while it runs." },
+    { "Key": "MODEL_RenderSnapshot_Hint", "Text": "Capture every model in this game's snapshot set from a fixed angle and size in Game mode, and save each as a PNG. Compare a run with a baseline using Tools/RenderSnapshotDiff to see which games a renderer change affected. Keep the viewport on screen during the run." },
 
     { "Key": "MODEL_RenderSnapshot_Set_Header", "Text": "Snapshot Set" },
     { "Key": "MODEL_RenderSnapshot_Set_Header_TT", "Text": "The models to capture, read from Assets/Snapshots/<GAME>.json. Generate it with RenderSnapshotDiff's pick mode." },
@@ -10,7 +10,7 @@
     { "Key": "MODEL_RenderSnapshot_Set_Unreadable", "Text": "The snapshot set {0} can't be read: {1}" },
     { "Key": "MODEL_RenderSnapshot_Set_Summary", "Text": "{0} models, {1} x {2}, yaw {3}°, pitch {4}°" },
     { "Key": "MODEL_RenderSnapshot_Reload_Set", "Text": "Reload Snapshot Set" },
-    { "Key": "MODEL_RenderSnapshot_Reload_Set_TT", "Text": "Reads the snapshot set file again, after it has been regenerated or edited." },
+    { "Key": "MODEL_RenderSnapshot_Reload_Set_TT", "Text": "Reread the snapshot set file after regenerating or editing it." },
 
     { "Key": "MODEL_RenderSnapshot_Folder_Header", "Text": "Output Folder" },
     { "Key": "MODEL_RenderSnapshot_Folder_Header_TT", "Text": "Where the images are written. Each run replaces <folder>/<GAME>/Current." },
@@ -19,9 +19,9 @@
     { "Key": "MODEL_RenderSnapshot_Actions_Header", "Text": "Actions" },
     { "Key": "MODEL_RenderSnapshot_Actions_Header_TT", "Text": "Start or stop a run." },
     { "Key": "MODEL_RenderSnapshot_Capture", "Text": "Capture Snapshot Set" },
-    { "Key": "MODEL_RenderSnapshot_Capture_TT", "Text": "Loads each model of the set in turn, waits for its textures and the exposure to settle, and saves the image. TAA is turned off and the material clock is held still for the run, then put back." },
+    { "Key": "MODEL_RenderSnapshot_Capture_TT", "Text": "Load each model in the set in turn, wait for its textures and the exposure to settle, and save the image. TAA is turned off and the material clock is paused for the run, then both are restored." },
     { "Key": "MODEL_RenderSnapshot_Cancel", "Text": "Cancel" },
-    { "Key": "MODEL_RenderSnapshot_Cancel_TT", "Text": "Stops the run. The images saved so far are kept, and the manifest marks the run as incomplete." },
+    { "Key": "MODEL_RenderSnapshot_Cancel_TT", "Text": "Stop the run. Images saved so far are kept, and the manifest marks the run as incomplete." },
 
     { "Key": "MODEL_RenderSnapshot_Block_No_Set", "Text": "There is no snapshot set for this game." },
     { "Key": "MODEL_RenderSnapshot_Block_No_Folder", "Text": "Choose an output folder first." },

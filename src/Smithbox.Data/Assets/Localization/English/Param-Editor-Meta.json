@@ -2,19 +2,19 @@
   "Entries": [
     {
       "Key": "PARAM_Meta_Mismatched_XML_Version",
-      "Text": "Mismatched XML version; current version: {0}, file version: {1}"
+      "Text": "XML version mismatch. Current version: {0}, file version: {1}"
     },
     {
       "Key": "PARAM_Meta_Color_Edit_Missing_Name_Property",
-      "Text": "PARAM META: {0} - Unable to populate ParamColorEdit Name property for {1}"
+      "Text": "PARAM META: {0} - Couldn't fill the ParamColorEdit Name property for {1}."
     },
     {
       "Key": "PARAM_Meta_Color_Edit_Missing_Fields_Property",
-      "Text": "PARAM META: {0} - Unable to populate ParamColorEdit Fields property for {1}"
+      "Text": "PARAM META: {0} - Couldn't fill the ParamColorEdit Fields property for {1}."
     },
     {
       "Key": "PARAM_Meta_Color_Edit_Missing_PlacedField_Property",
-      "Text": "PARAM META: {0} - Unable to populate ParamColorEdit PlacedField property for {1}"
+      "Text": "PARAM META: {0} - Couldn't fill the ParamColorEdit PlacedField property for {1}."
     },
     {
       "Key": "PARAM_Meta_ParamRef_Missing_String",
@@ -22,11 +22,11 @@
     },
     {
       "Key": "PARAM_Meta_ParamDisplayName_Missing_Param_Property",
-      "Text": "PARAM META: {0} - Unable to populate ParamDisplayName Param property for {1}"
+      "Text": "PARAM META: {0} - Couldn't fill the ParamDisplayName Param property for {1}."
     },
     {
       "Key": "PARAM_Meta_ParamDisplayName_Missing_Name_Property",
-      "Text": "PARAM META: {0} - Unable to populate ParamDisplayName Name property for {1}"
+      "Text": "PARAM META: {0} - Couldn't fill the ParamDisplayName Name property for {1}."
     }
   ]
 }

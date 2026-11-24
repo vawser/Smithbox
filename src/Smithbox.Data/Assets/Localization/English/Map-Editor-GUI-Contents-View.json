@@ -2,27 +2,27 @@
   "Entries": [
     {
       "Key": "MAP_Contents_TreeState_Open",
-      "Text": "Tree Nodes are opened automatically."
+      "Text": "Tree nodes open automatically."
     },
     {
       "Key": "MAP_Contents_TreeState_Closed",
-      "Text": "Tree Nodes require the user to open them."
+      "Text": "Tree nodes must be opened manually."
     },
     {
       "Key": "MAP_Contents_TreeState_TT",
-      "Text": "Toggle the opening behavior of tree nodes.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle whether tree nodes open automatically.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAP_Contents_Show_All_Action_TT",
-      "Text": "Force all map objects within this map to be shown."
+      "Text": "Show all map objects in this map."
     },
     {
       "Key": "MAP_Contents_Hide_All_Action_TT",
-      "Text": "Force all map objects within this map to be hidden."
+      "Text": "Hide all map objects in this map."
     },
     {
       "Key": "MAP_Contents_Name_Display_Type_TT",
-      "Text": "Determines how the map object name(s) are displayed: {0}"
+      "Text": "How map object names are displayed: {0}"
     },
     {
       "Key": "MAP_Contents_Name_Display_Type_Raw",

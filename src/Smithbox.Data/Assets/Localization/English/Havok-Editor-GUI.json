@@ -50,11 +50,11 @@
     },
     {
       "Key": "HAVOK_Undo_Showing_File",
-      "Text": "Showing {0} in {1}, which the undo/redo changes."
+      "Text": "Showing {0} in {1}, which the undo or redo changes."
     },
     {
       "Key": "HAVOK_Undo_Showing_Binder",
-      "Text": "Showing {0}, whose file list the undo/redo changes."
+      "Text": "Showing {0}, whose file list the undo or redo changes."
     },
     {
       "Key": "HAVOK_FileOutline_No_File",

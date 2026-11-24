@@ -34,11 +34,11 @@
     },
     {
       "Key": "PARAM_DataFinder_Action_Add_Param_Target_TT",
-      "Text": "Add new param target input row."
+      "Text": "Add a param target input row."
     },
     {
       "Key": "PARAM_DataFinder_Action_Remove_Param_Target_TT",
-      "Text": "Remove last added param target input row."
+      "Text": "Remove the last added param target input row."
     },
     {
       "Key": "PARAM_DataFinder_Action_Reset_Param_Target",
@@ -46,11 +46,11 @@
     },
     {
       "Key": "PARAM_DataFinder_Action_Reset_Param_Target_TT",
-      "Text": "Reset param target input rows."
+      "Text": "Reset the param target input rows."
     },
     {
       "Key": "PARAM_DataFinder_Header_Options_TT",
-      "Text": "Which params to search. Leave blank to target all params."
+      "Text": "Which params to search. Leave blank to search all params."
     },
     {
       "Key": "PARAM_DataFinder_Param_Target_Include_TT",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PARAM_DataFinder_Header_Options_TT",
-      "Text": ""
+      "Text": "Which params to search. Leave blank to search all params."
     },
     {
       "Key": "PARAM_DataFinder_Header_Search",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_DataFinder_Action_Search_TT",
-      "Text": "Execute a search looking for the specified term, within the targeted params (if applicable)."
+      "Text": "Search for the given term in the targeted params (if any)."
     },
     {
       "Key": "PARAM_DataFinder_Action_Clear",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PARAM_DataFinder_Header_Search_Results_TT",
-      "Text": "The results of the last search performed."
+      "Text": "The results of the last search."
     },
     {
       "Key": "PARAM_DataFinder_Search_Term",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "PARAM_FieldNameFinder_Hint",
-      "Text": "Display all fields and the respective params they appear in based on the search text."
+      "Text": "Show all fields that match the search text, and the params they appear in."
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Include_Community_Name",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Include_Community_Name_TT",
-      "Text": "Include the community name text for a field in the search."
+      "Text": "Include each field's community name in the search."
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Include_Description",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Include_Description_TT",
-      "Text": "Include the description text for a field in the search."
+      "Text": "Include each field's description in the search."
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Complete_Word_Match",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Complete_Word_Match_TT",
-      "Text": "When matching, ensure the search term is an exact match for a word, not a partial element of the word.\nFor internal names, this will split the string based on capitalization before checking."
+      "Text": "Only match whole words, not parts of words.\nInternal names are split at capital letters before checking."
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Display_Community_Name",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PARAM_FieldNameFinder_Checkbox_Display_Community_Name_TT",
-      "Text": "Display the community name for the field instead of the internal name."
+      "Text": "Show the field's community name instead of its internal name."
     },
     {
       "Key": "PARAM_FieldNameFinder_Results_Column_Header",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "PARAM_FieldValueFinder_Hint",
-      "Text": "Display all instances of a specified field value."
+      "Text": "Show all instances of a given field value."
     },
     {
       "Key": "PARAM_FieldValueFinder_Checkbox_Enable_Range_Search",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "PARAM_FieldValueFinder_Checkbox_Enable_Range_Search_TT",
-      "Text": "If enabled, the search will search for matches between a start and end value."
+      "Text": "When enabled, search for matches between a start and end value."
     },
     {
       "Key": "PARAM_FieldValueFinder_Checkbox_Display_First_Match",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "PARAM_FieldValueFinder_Checkbox_Display_First_Match_TT",
-      "Text": "Only display the first match within a param, instead of all matches."
+      "Text": "Show only the first match in each param, instead of all matches."
     },
     {
       "Key": "PARAM_FieldValueFinder_Checkbox_Display_Community_Name",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "PARAM_FieldValueFinder_Checkbox_Display_Community_Name_TT",
-      "Text": "Display the community name for the field instead of the internal name."
+      "Text": "Show the field's community name instead of its internal name."
     },
     {
       "Key": "PARAM_FieldValueFinder_Results_Column_Header",
@@ -230,7 +230,7 @@
     },
     {
       "Key": "PARAM_RowNameFinder_Hint",
-      "Text": "Display all instances of a specificed row name."
+      "Text": "Show all instances of a given row name."
     },
     {
       "Key": "PARAM_RowNameFinder_Input_Row_Index",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "PARAM_RowIdFinder_Hint",
-      "Text": "Display all instances of a specificed row ID."
+      "Text": "Show all instances of a given row ID."
     },
     {
       "Key": "PARAM_RowIdFinder_Input_Row_Index",
@@ -274,11 +274,11 @@
     },
     {
       "Key": "PARAM_IdSetFinder_Hint",
-      "Text": "Display param that contains the specified set of rows."
+      "Text": "Show the params that contain the given set of rows."
     },
     {
       "Key": "PARAM_IdSetFinder_Search_TT",
-      "Text": "The ID set to search for. Split with a space."
+      "Text": "The ID set to search for, separated by spaces."
     },
     {
       "Key": "PARAM_IdSetFinder_Results_Column_Header",
@@ -290,11 +290,11 @@
     },
     {
       "Key": "PARAM_ValueSetFinder_Hint",
-      "Text": "Display fields that make use of a specified set of values."
+      "Text": "Show fields that use a given set of values."
     },
     {
       "Key": "PARAM_ValueSetFinder_Search_TT",
-      "Text": "The value set to search for. Split with a space."
+      "Text": "The value set to search for, separated by spaces."
     },
     {
       "Key": "PARAM_ValueSetFinder_Results_Column_Header",

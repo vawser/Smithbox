@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Hint",
-      "Text": "Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields."
+      "Text": "Create a pin group from your pinned params, rows or fields, or select an existing pin group to replace your pinned params, rows or fields."
     },
     {
       "Key": "PARAM_PinGroups_Header_Options",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Checkbox_Pinned_Params_Only_TT",
-      "Text": "When enabled, only pinned params will appear in the param list."
+      "Text": "When enabled, only pinned params appear in the param list."
     },
     {
       "Key": "PARAM_PinGroups_Checkbox_Pinned_Rows_Only",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Checkbox_Pinned_Rows_Only_TT",
-      "Text": "When enabled, only pinned rows will appear in the rows list."
+      "Text": "When enabled, only pinned rows appear in the row list."
     },
     {
       "Key": "PARAM_PinGroups_Checkbox_Pinned_Fields_Only",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Checkbox_Pinned_Fields_Only_TT",
-      "Text": "When enabled, only pinned fields will appear in the param list."
+      "Text": "When enabled, only pinned fields appear in the field list."
     },
     {
       "Key": "PARAM_PinGroups_Header_Display",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Clear_Param_Pins_TT",
-      "Text": "Clear the current pinned params."
+      "Text": "Clear the pinned params."
     },
     {
       "Key": "PARAM_PinGroups_Action_Clear_Row_Pins",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Clear_Row_Pins_TT",
-      "Text": "Clear the current pinned rows."
+      "Text": "Clear the pinned rows."
     },
     {
       "Key": "PARAM_PinGroups_Action_Clear_Field_Pins",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Clear_Field_Pins_TT",
-      "Text": "Clear the current pinned fields."
+      "Text": "Clear the pinned fields."
     },
     {
       "Key": "PARAM_PinGroups_Header_Creation",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Header_Creation_TT",
-      "Text": "Actions for creating new pin groups based on the currently pinned params, rows or fields."
+      "Text": "Create pin groups from the pinned params, rows or fields."
     },
     {
       "Key": "PARAM_PinGroups_Input_Name_Hint",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Create_Param_Pin_Group_TT",
-      "Text": "Create a new pin group based on the currently pinned params."
+      "Text": "Create a pin group from the pinned params."
     },
     {
       "Key": "PARAM_PinGroups_Action_Create_Row_Pin_Group",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Create_Row_Pin_Group_TT",
-      "Text": "Create a new pin group based on the currently pinned rows."
+      "Text": "Create a pin group from the pinned rows."
     },
     {
       "Key": "PARAM_PinGroups_Action_Create_Field_Pin_Group",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Create_Field_Pin_Group_TT",
-      "Text": "Create a new pin group based on the currently pinned fields."
+      "Text": "Create a pin group from the pinned fields."
     },
     {
       "Key": "PARAM_PinGroups_Action_Display_Param_Pin_Group",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Display_Param_Pin_Group_TT",
-      "Text": "Display the current param pin groups."
+      "Text": "Show the param pin groups."
     },
     {
       "Key": "PARAM_PinGroups_Action_Display_Row_Pin_Group",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Display_Row_Pin_Group_TT",
-      "Text": "Display the current row pin groups."
+      "Text": "Show the row pin groups."
     },
     {
       "Key": "PARAM_PinGroups_Action_Display_Field_Pin_Group",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "PARAM_PinGroups_Action_Display_Field_Pin_Group_TT",
-      "Text": "Display the current field pin groups."
+      "Text": "Show the field pin groups."
     },
     {
       "Key": "PARAM_PinGroups_Header_Param_Groups",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "PARAM_PinGroups_ParamGroup_Set_TT",
-      "Text": "Double-click to set current param pins to this group."
+      "Text": "Double-click to set the param pins to this group."
     },
     {
       "Key": "PARAM_PinGroups_Action_Delete",
@@ -170,11 +170,11 @@
     },
     {
       "Key": "PARAM_PinGroups_RowGroup_Set_TT",
-      "Text": "Double-click to set current row pins to this group."
+      "Text": "Double-click to set the row pins to this group."
     },
     {
       "Key": "PARAM_PinGroups_FieldGroup_Set_TT",
-      "Text": "Double-click to set current field pins to this group."
+      "Text": "Double-click to set the field pins to this group."
     },
     {
       "Key": "PARAM_PinGroups_Alias_Params",
@@ -190,23 +190,23 @@
     },
     {
       "Key": "PARAM_PinGroups_Empty_Group_Name",
-      "Text": "Group name cannot be empty."
+      "Text": "The group name can't be empty."
     },
     {
       "Key": "PARAM_PinGroups_Load_Pin_Group_FAIL",
-      "Text": "Failed to load pin group: {0} at {1}"
+      "Text": "Failed to load pin group {0} at {1}."
     },
     {
       "Key": "PARAM_PinGroups_Dialog_Overwrite_Existing_Group",
-      "Text": "{0} already exists as a {1}. Are you sure you want to overwrite it?"
+      "Text": "{0} already exists as a {1}. Overwrite it?"
     },
     {
       "Key": "PARAM_PinGroups_Save_Pin_Group_PASS",
-      "Text": "Saved pin group: {0} at {1}"
+      "Text": "Saved pin group {0} at {1}."
     },
     {
       "Key": "PARAM_PinGroups_Save_Pin_Group_FAIL",
-      "Text": "Failed to save pin group: {0} at {1}"
+      "Text": "Failed to save pin group {0} at {1}."
     }
   ]
 }

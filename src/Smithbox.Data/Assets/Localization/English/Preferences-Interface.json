@@ -6,15 +6,15 @@
     },
     {
       "Key": "PREF_Interface_UI_Scale_TT",
-      "Text": "Adjusts the scaling of the user interface throughout all of Smithbox."
+      "Text": "The scale of the user interface throughout Smithbox."
     },
     {
       "Key": "PREF_Interface_Scale_by_DPI",
-      "Text": "Interface Scale affected by DPI"
+      "Text": "Scale Interface by DPI"
     },
     {
       "Key": "PREF_Interface_Scale_by_DPI_TT",
-      "Text": "Multiplies the user interface scale by your monitor's DPI setting."
+      "Text": "Multiply the interface scale by your monitor's DPI setting."
     },
     {
       "Key": "PREF_Interface_Font_Size",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PREF_Interface_Font_Size_TT",
-      "Text": "Adjusts the size of the font in Smithbox."
+      "Text": "The font size in Smithbox."
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Text_Labels",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Text_Labels_TT",
-      "Text": "If enabled, the editor rail shows each editor as a button with its name. Otherwise, it shows icon buttons."
+      "Text": "Show each editor in the editor rail as a button with its name. When off, the rail shows icon buttons."
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Icon_Scale",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Icon_Scale_TT",
-      "Text": "Adjusts the size of the editor rail's icon buttons and their icons. Has no effect while editor names are shown."
+      "Text": "The size of the editor rail's icon buttons and icons. Has no effect while editor names are shown."
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Icon_Scale_Reset",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Order_TT",
-      "Text": "Ctrl+Left Click and drag an editor rail button to move it. A custom order drops the category separators. Reset restores the default order."
+      "Text": "Ctrl+click and drag an editor rail button to move it. A custom order removes the category separators. Reset restores the default order."
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Order_Reset",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Colors_TT",
-      "Text": "Colors each editor's icon (or name) in the editor rail. Reset returns an editor to the theme's text color."
+      "Text": "Colour each editor's icon (or name) in the editor rail. Reset returns an editor to the theme's text colour."
     },
     {
       "Key": "PREF_Interface_Editor_Rail_Colors_Reset",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_General_TT",
-      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate."
+      "Text": "Wrap aliases at the window edge. When off, they are truncated."
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_Map_Editor",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_Map_Editor_TT",
-      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only."
+      "Text": "Wrap aliases at the window edge in the Map Editor. When off, they are truncated."
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_Model_Editor",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_Model_Editor_TT",
-      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only."
+      "Text": "Wrap aliases at the window edge in the Model Editor. When off, they are truncated."
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_Animation_Editor",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "PREF_Interface_Alias_Wordwrap_Animation_Editor_TT",
-      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Animation Editor only."
+      "Text": "Wrap aliases at the window edge in the Animation Editor. When off, they are truncated."
     },
     {
       "Key": "PREF_Interface_Allow_Window_Movement",
@@ -106,15 +106,15 @@
     },
     {
       "Key": "PREF_Interface_Allow_Window_Movement_TT",
-      "Text": "If enabled, the internal windows can be moved and docked freely."
+      "Text": "Allow the internal windows to be moved and docked freely."
     },
     {
       "Key": "PREF_Interface_Tool_Window_Dropdown_Navigation",
-      "Text": "Always Use Dropdown Tool Navigation"
+      "Text": "Always Use Drop-down Tool Navigation"
     },
     {
       "Key": "PREF_Interface_Tool_Window_Dropdown_Navigation_TT",
-      "Text": "If enabled, the Tools windows always pick the tool to show from a dropdown at the top. Otherwise they list the tools down the left side, and switch to the dropdown only when the window is narrow."
+      "Text": "Always pick the tool in the Tools windows from a drop-down list at the top. When off, the tools are listed down the left side, and the drop-down is used only when the window is narrow."
     },
     {
       "Key": "PREF_English_Font",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "PREF_English_Font_TT",
-      "Text": "Set the font used for English characters. .ttf and .otf expected."
+      "Text": "The font for English characters (.ttf or .otf)."
     },
     {
       "Key": "PREF_Set_Font",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "PREF_Additional_Font_1_TT",
-      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+      "Text": "An additional font for non-English characters (.ttf or .otf)."
     },
     {
       "Key": "PREF_Additional_Font_2",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "PREF_Additional_Font_2_TT",
-      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+      "Text": "An additional font for non-English characters (.ttf or .otf)."
     },
     {
       "Key": "PREF_Additional_Font_3",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "PREF_Additional_Font_3_TT",
-      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+      "Text": "An additional font for non-English characters (.ttf or .otf)."
     },
     {
       "Key": "PREF_Additional_Font_4",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "PREF_Additional_Font_4_TT",
-      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+      "Text": "An additional font for non-English characters (.ttf or .otf)."
     },
     {
       "Key": "PREF_Additional_Font_5",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "PREF_Additional_Font_5_TT",
-      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+      "Text": "An additional font for non-English characters (.ttf or .otf)."
     },
     {
       "Key": "PREF_Theme_Selection",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "PREF_Theme_Selection_TT",
-      "Text": "Select the interface theme to use for Smithbox."
+      "Text": "The interface theme for Smithbox."
     },
     {
       "Key": "PREF_Theme_Reset",
@@ -618,7 +618,7 @@
     },
     {
       "Key": "PREF_Interface_Display_Title_Headers_TT",
-      "Text": "If enabled, title headers are displayed."
+      "Text": "Show title headers."
     },
     {
       "Key": "PREF_Interface_Display_Searchbar_Minimize",
@@ -626,7 +626,7 @@
     },
     {
       "Key": "PREF_Interface_Display_Searchbar_Minimize_TT",
-      "Text": "If enabled, the searchbar minimize toggle buttons are displayed."
+      "Text": "Show the search bar's minimize buttons."
     },
     {
       "Key": "PREF_Interface_Vanilla_Highlight",
@@ -634,7 +634,7 @@
     },
     {
       "Key": "PREF_Interface_Vanilla_Highlight_TT",
-      "Text": "If enabled, editors colour and mark items that differ from the game's data (modified) or that the game doesn't have (added). The colours are set in the Theme Builder under Vanilla Comparison."
+      "Text": "Colour and mark items in editors that differ from the game's data (modified) or that the game doesn't have (added). Set the colours in the Theme Builder under Vanilla Comparison."
     },
     {
       "Key": "PREF_Theme_Editor_Vanilla",
@@ -642,7 +642,7 @@
     },
     {
       "Key": "PREF_Theme_Editor_Vanilla_TT",
-      "Text": "Colours every editor uses for items compared with the game's data."
+      "Text": "The colours every editor uses for items compared with the game's data."
     },
     {
       "Key": "PREF_CE_ImGui_Vanilla_Modified_Text",

@@ -2,23 +2,23 @@
   "Entries": [
     {
       "Key": "PROJECT_Data_Setup_Aliases_PASS",
-      "Text": "[Project] Setup aliases for '{0}'"
+      "Text": "[Project] Set up aliases for '{0}'."
     },
     {
       "Key": "PROJECT_Data_Setup_Aliases_FAIL",
-      "Text": "[Project] Failed to setup aliases for '{0}'"
+      "Text": "[Project] Failed to set up aliases for '{0}'."
     },
     {
       "Key": "PROJECT_Data_Reload_Aliases_PASS",
-      "Text": "[Project] Reloaded aliases for '{0}'"
+      "Text": "[Project] Reloaded aliases for '{0}'."
     },
     {
       "Key": "PROJECT_Data_Reload_Aliases_FAIL",
-      "Text": "[Project] Failed to reloaded aliases for '{0}'"
+      "Text": "[Project] Failed to reload aliases for '{0}'."
     },
     {
       "Key": "PROJECT_Data_Deseralize_Alias_FAIL",
-      "Text": "[Project] Failed to deserialize the aliases: '{0}'"
+      "Text": "[Project] Failed to read the aliases: '{0}'"
     },
     {
       "Key": "PROJECT_Data_Read_Alias_FAIL",
@@ -26,91 +26,91 @@
     },
     {
       "Key": "PROJECT_Data_Setup_Project_Data_PASS",
-      "Text": "[Project] Setup Project Data."
+      "Text": "[Project] Set up the project data."
     },
     {
       "Key": "PROJECT_Data_Setup_Project_Data_FAIL",
-      "Text": "[Project] Failed to setup Project Data."
+      "Text": "[Project] Failed to set up the project data."
     },
     {
       "Key": "PROJECT_Data_Setup_Map_Data_PASS",
-      "Text": "[Visual Map Editor] Setup Map Data Banks."
+      "Text": "[Visual Map Editor] Set up the map data banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Map_Data_FAIL",
-      "Text": "[Visual Map Editor] Failed to setup Map Data Banks."
+      "Text": "[Visual Map Editor] Failed to set up the map data banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Model_Data_PASS",
-      "Text": "[Model Editor] Setup Model Data Banks."
+      "Text": "[Model Editor] Set up the model data banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Model_Data_FAIL",
-      "Text": "[Model Editor] Failed to setup Model Data Banks."
+      "Text": "[Model Editor] Failed to set up the model data banks."
     },
     {
       "Key": "PROJECT_Data_Setup_TimeAct_Data_PASS",
-      "Text": "[Time Act Editor] Setup Time Act Data Banks."
+      "Text": "[Time Act Editor] Set up the time act data banks."
     },
     {
       "Key": "PROJECT_Data_Setup_TimeAct_Data_FAIL",
-      "Text": "[Time Act Editor] Failed to setup Time Act Data Banks."
+      "Text": "[Time Act Editor] Failed to set up the time act data banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Material_Data_PASS",
-      "Text": "[Material Data] Setup Material Data."
+      "Text": "[Material Data] Set up the material data."
     },
     {
       "Key": "PROJECT_Data_Setup_Material_Data_FAIL",
-      "Text": "[Material Data] Failed to setup Material Data."
+      "Text": "[Material Data] Failed to set up the material data."
     },
     {
       "Key": "PROJECT_Data_Setup_Param_Data_PASS",
-      "Text": "[Param Editor] Setup PARAM Banks."
+      "Text": "[Param Editor] Set up the PARAM banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Param_Data_FAIL",
-      "Text": "[Param Editor] Failed to setup PARAM Banks."
+      "Text": "[Param Editor] Failed to set up the PARAM banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Text_Data_PASS",
-      "Text": "[Text Editor] Setup FMG Banks.."
+      "Text": "[Text Editor] Set up the FMG banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Text_Data_FAIL",
-      "Text": "[Text Editor] Failed to setup FMG Banks."
+      "Text": "[Text Editor] Failed to set up the FMG banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Gparam_Data_PASS",
-      "Text": "[Graphics Param Editor] Setup GPARAM Banks."
+      "Text": "[Gparam Editor] Set up the GPARAM banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Gparam_Data_FAIL",
-      "Text": "[Graphics Param Editor] Failed to setup GPARAM Banks."
+      "Text": "[Gparam Editor] Failed to set up the GPARAM banks."
     },
     {
       "Key": "PROJECT_Data_Setup_Texture_Data_PASS",
-      "Text": "[Texture Editor] Setup the Texture Bank."
+      "Text": "[Texture Editor] Set up the texture bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Texture_Data_FAIL",
-      "Text": "[Texture Editor] Failed to setup Texture Bank."
+      "Text": "[Texture Editor] Failed to set up the texture bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Anim_Data_PASS",
-      "Text": "[Animation Editor] Setup Animation Bank."
+      "Text": "[Animation Editor] Set up the animation bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Anim_Data_FAIL",
-      "Text": "[Animation Editor] Failed to setup Animation Bank."
+      "Text": "[Animation Editor] Failed to set up the animation bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Havok_Data_PASS",
-      "Text": "[Havok Editor] Setup Havok Bank."
+      "Text": "[Havok Editor] Set up the Havok bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Havok_Data_FAIL",
-      "Text": "[Havok Editor] Failed to setup Havok Bank."
+      "Text": "[Havok Editor] Failed to set up the Havok bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Fx_Data_PASS",
@@ -170,11 +170,11 @@
     },
     {
       "Key": "PROJECT_Data_Setup_Common_Data_PASS",
-      "Text": "[Project] Setup Common Data."
+      "Text": "[Project] Set up the common data."
     },
     {
       "Key": "PROJECT_Data_Setup_Common_Data_FAIL",
-      "Text": "[Project] Failed to setup Common Data."
+      "Text": "[Project] Failed to set up the common data."
     }
   ]
 }

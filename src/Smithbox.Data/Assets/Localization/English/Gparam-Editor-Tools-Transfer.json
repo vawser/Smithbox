@@ -86,11 +86,11 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Field_Need_Group",
-      "Text": "The data is a field: select the group to put it in."
+      "Text": "The data is a field. Select the group to put it in."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Values_Need_Field",
-      "Text": "The data is values: select the field to put them in."
+      "Text": "The data is values. Select the field to put them in."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Values_Wrong_Type",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Nothing_Missing",
-      "Text": "Every {0} in the data is already in {1}: nothing to add."
+      "Text": "Every {0} in the data is already in {1}. Nothing to add."
     },
     {
       "Key": "GPARAM_Transfer_Describe_Add_Missing",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Mode_File_Merge_TT",
-      "Text": "Replace the groups whose key the pasted GPARAM has, add the ones the file is missing, and keep the rest."
+      "Text": "Replace the groups whose keys the pasted GPARAM has, add the groups the file is missing, and keep the rest."
     },
     {
       "Key": "GPARAM_Transfer_Mode_Keyed_MatchKey_TT",
@@ -178,11 +178,11 @@
     },
     {
       "Key": "GPARAM_Transfer_Mode_Keyed_AddMissing_TT",
-      "Text": "Add only the entries whose key is missing. Existing entries are left alone."
+      "Text": "Add only the entries whose key is missing. Existing entries are left unchanged."
     },
     {
       "Key": "GPARAM_Transfer_Mode_Keyed_ReplaceSelected_TT",
-      "Text": "Replace the selected entry with the pasted one, in its place, even if their keys differ. Takes one entry."
+      "Text": "Replace the selected entry with the pasted one in the same position, even if their keys differ. Takes one entry."
     },
     {
       "Key": "GPARAM_Transfer_Mode_Values_InsertAfter_TT",
@@ -222,7 +222,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Copy_Action_TT",
-      "Text": "Copy to the clipboard, to paste into this or another GPARAM. The data is JSON text, so it can also be pasted into a text editor."
+      "Text": "Copy to the clipboard, to paste into this or another GPARAM. The data is JSON text, so you can also paste it into a text editor."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Action",
@@ -230,7 +230,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Action_TT",
-      "Text": "Paste the clipboard where it belongs: a GPARAM or groups into the selected file, fields into the selected group, values into the selected field.\n\nDefault modes:\n{0}"
+      "Text": "Paste the clipboard where it belongs: a GPARAM or groups into the selected file, fields into the selected group, and values into the selected field.\n\nDefault modes:\n{0}"
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Action",
@@ -238,7 +238,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Action_TT",
-      "Text": "Choose how the clipboard is pasted, and see what it will do first."
+      "Text": "Choose how to paste the clipboard, and preview the result first."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Title",
@@ -246,7 +246,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Hint",
-      "Text": "The result follows the selection: change it in the lists while this window is open."
+      "Text": "The result depends on the selection. You can change it in the lists while this window is open."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Clipboard_Header",
@@ -254,7 +254,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Clipboard_Header_TT",
-      "Text": "What will be pasted, read when this window was opened."
+      "Text": "What will be pasted, read when this window opened."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Mode_Header",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Apply_TT",
-      "Text": "Paste with the chosen mode. Can be undone."
+      "Text": "Paste with the chosen mode. You can undo this."
     },
     {
       "Key": "GPARAM_Transfer_Paste_Special_Cancel",
@@ -306,7 +306,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Describe_Payload_Legacy",
-      "Text": "An export from an older Smithbox: where it came from isn't recorded."
+      "Text": "An export from an older Smithbox version. Its source isn't recorded."
     },
     {
       "Key": "GPARAM_Transfer_Confirm_Title",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Export_Action_TT",
-      "Text": "Save to a JSON file you name, to share or keep. Holds the same data as Copy."
+      "Text": "Save to a JSON file you name, to share or keep. It holds the same data as Copy."
     },
     {
       "Key": "GPARAM_Transfer_Import_Action",
@@ -358,7 +358,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Import_Action_TT",
-      "Text": "Open an exported JSON file (a GPARAM, groups, a field or values) and choose how it goes into the selection. Exports from older Smithbox versions work too."
+      "Text": "Open an exported JSON file (a GPARAM, groups, a field or values) and choose how it goes into the selection. Exports from older Smithbox versions also work."
     },
     {
       "Key": "GPARAM_Transfer_Dialog_Export",
@@ -398,7 +398,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Hint",
-      "Text": "Load data once, then apply it to as many files, groups or fields as needed: select each target in the lists and press Apply."
+      "Text": "Load data once, then apply it to as many files, groups or fields as needed: select each target in the lists and click Apply."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Data_Header",
@@ -406,11 +406,11 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Data_Header_TT",
-      "Text": "The data held by this panel. It stays until cleared or replaced, whatever is copied in the meantime."
+      "Text": "The data held by this panel. It stays until you clear or replace it, whatever you copy in the meantime."
     },
     {
       "Key": "GPARAM_Transfer_Panel_No_Data",
-      "Text": "Nothing loaded. Copy something in the lists, then load it from the clipboard, or load an exported file."
+      "Text": "Nothing loaded. Copy something in the lists and load it from the clipboard, or load an exported file."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Load_Clipboard",
@@ -418,7 +418,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Load_Clipboard_TT",
-      "Text": "Hold what the clipboard has: data copied with Copy GPARAM, Group, Field or Values."
+      "Text": "Hold the clipboard's contents: data copied with Copy GPARAM, Group, Field or Values."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Load_File",
@@ -426,7 +426,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Load_File_TT",
-      "Text": "Hold the data of an exported JSON file. Exports from older Smithbox versions work too."
+      "Text": "Hold the data of an exported JSON file. Exports from older Smithbox versions also work."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Clear",
@@ -434,7 +434,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Clear_TT",
-      "Text": "Let go of the held data."
+      "Text": "Clear the held data."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Items_Header",
@@ -462,7 +462,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Mode_Header_TT",
-      "Text": "How the data is placed. This is the same setting Paste uses for this kind of data."
+      "Text": "How the data is placed. Paste uses the same setting for this kind of data."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Result_Header",
@@ -482,7 +482,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Apply_TT",
-      "Text": "Apply the data to the current selection. Can be undone. The data stays held, to apply again elsewhere."
+      "Text": "Apply the data to the current selection. You can undo this. The data stays held, so you can apply it again elsewhere."
     },
     {
       "Key": "GPARAM_Transfer_Panel_Save",
@@ -498,7 +498,7 @@
     },
     {
       "Key": "GPARAM_Transfer_Panel_Copy_Json_TT",
-      "Text": "Put the held data on the clipboard, to paste it in the lists or into a text editor."
+      "Text": "Copy the held data to the clipboard, to paste it in the lists or into a text editor."
     }
   ]
 }

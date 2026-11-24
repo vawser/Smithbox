@@ -2,11 +2,11 @@
   "Entries": [
     {
       "Key": "PARAM_Tools_Memory_Missing_AOB",
-      "Text": "Unable to find AOB in memory for {0}."
+      "Text": "Couldn't find the AOB in memory for {0}."
     },
     {
       "Key": "PARAM_Tools_Memory_No_Game_Process",
-      "Text": "No game process found for {0}. Please start the game first."
+      "Text": "No game process found for {0}. Start the game first."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Param_ID",
@@ -18,7 +18,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Hint",
-      "Text": "Gives the selected item to the player in the running game. Load a character first."
+      "Text": "Give the selected item to the player in the running game. Load a character first."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Unsupported_Param",
@@ -30,15 +30,15 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Item_Header_TT",
-      "Text": "The row that is given. For stackable items, every selected row is given."
+      "Text": "The row to give. For stackable items, every selected row is given."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Item_Selected_Count",
-      "Text": "{0} rows selected: all of them are given."
+      "Text": "{0} rows selected, and all of them are given."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Item_Designer_Active_Only",
-      "Text": "{0} rows selected: with designer choices set, only the active row is given."
+      "Text": "{0} rows selected. With designer choices set, only the active row is given."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Number_of_Spawned_Items_TT",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Quantity_Input_TT",
-      "Text": "Number of items to give, from 1 to 999."
+      "Text": "The number of items to give, from 1 to 999."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Reinforcement_Level_TT",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Reinforce_Input_TT",
-      "Text": "Upgrade level, from 0 to {0}."
+      "Text": "The upgrade level, from 0 to {0}."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Gem_Header_TT",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Durability_TT",
-      "Text": "The durability the item is given with."
+      "Text": "The item's durability when given."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Durability_Input_TT",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Action_Reset_Designer_TT",
-      "Text": "Set every slot back to Random."
+      "Text": "Reset every slot to Random."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Designer_Header",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Designer_Missing_Params",
-      "Text": "The designer needs the {0} and {1} params, which are not loaded."
+      "Text": "The designer needs the {0} and {1} params, which aren't loaded."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Designer_No_Slots",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Active_Row",
-      "Text": "No active row selected. Please select a row in the Param Editor."
+      "Text": "No active row selected. Select a row in the Param Editor."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Number_of_Spawned_Items",
@@ -174,11 +174,11 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Offsets",
-      "Text": "No ItemGib offsets found."
+      "Text": "No Item Gib offsets found."
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Param",
-      "Text": "No param selected yet for Item Gib."
+      "Text": "No param selected for Item Gib."
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Rows",
@@ -190,11 +190,11 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_EquipParamWeapon",
-      "Text": "EquipParamWeapon with ID {0} not found."
+      "Text": "EquipParamWeapon with ID {0} wasn't found."
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Game_Offset",
-      "Text": "No GameOffset exist for Item Gib."
+      "Text": "No game offset exists for Item Gib."
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_Header",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_Hint",
-      "Text": "Applies the selected SpEffect to the player in the running game, for example a Nightreign dormant power. Load a character first."
+      "Text": "Apply the selected SpEffect to the player in the running game, for example a Nightreign dormant power. Load a character first."
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_Select_Param",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_SpEffect_Header_TT",
-      "Text": "The SpEffect that is applied: the active row."
+      "Text": "The SpEffect to apply: the active row."
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_Actions_Header",
@@ -238,11 +238,11 @@
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_Unresolved",
-      "Text": "Unable to locate the game's apply SpEffect function. This game version may not be supported yet."
+      "Text": "Couldn't find the game's apply SpEffect function. This game version may not be supported yet."
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_No_Player",
-      "Text": "The player character is not loaded yet. Load a character, then try again."
+      "Text": "The player character isn't loaded yet. Load a character, then try again."
     },
     {
       "Key": "PARAM_Tools_SpEffectGib_Given",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Unresolved",
-      "Text": "Unable to locate the game's item give function. This game version may not be supported yet."
+      "Text": "Couldn't find the game's give item function. This game version may not be supported yet."
     },
     {
       "Key": "PARAM_Tools_ItemGib_Version_Mismatch",
@@ -258,7 +258,7 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Manager",
-      "Text": "The game's item manager is not ready yet. Load a character, then try again."
+      "Text": "The game's item manager isn't ready yet. Load a character, then try again."
     },
     {
       "Key": "PARAM_Tools_Reloader_Header",
@@ -266,7 +266,7 @@
     },
     {
       "Key": "PARAM_Tools_Reloader_Hint",
-      "Text": "WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs."
+      "Text": "Warning: the Param Reloader only works for existing rows.\nRestart the game for new rows and changed row IDs."
     },
     {
       "Key": "PARAM_Tools_Reloader_Header_Actions",
@@ -282,7 +282,7 @@
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_Reload_Individual_TT",
-      "Text": "Reloads the currently selected param in-game.\nShortcut: {0}"
+      "Text": "Reload the selected param in game.\nShortcut: {0}"
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_Reload_All",
@@ -290,7 +290,7 @@
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_Reload_All_TT",
-      "Text": "Reloads all params in-game.\nShortcut: {0}"
+      "Text": "Reload all params in game.\nShortcut: {0}"
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_Current_Param",
@@ -298,7 +298,7 @@
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_Current_Param_TT",
-      "Text": "WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\nShortcuts: {0}"
+      "Text": "Warning: the Param Reloader only works for existing rows.\nRestart the game for new rows and changed row IDs.\nShortcuts: {0}"
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_All_Params",
@@ -306,47 +306,47 @@
     },
     {
       "Key": "PARAM_Tools_Reloader_Action_All_Params_TT",
-      "Text": "WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\nShortcuts: {0}"
+      "Text": "Warning: the Param Reloader only works for existing rows.\nRestart the game for new rows and changed row IDs.\nShortcuts: {0}"
     },
     {
       "Key": "PARAM_Tools_Reloader_No_Actions",
-      "Text": "No actions avaliable for this project type."
+      "Text": "No actions are available for this project type."
     },
     {
       "Key": "PARAM_Tools_Reloader_Task_Success",
-      "Text": "Param reloader has updated the in-game params."
+      "Text": "The Param Reloader updated the in-game params."
     },
     {
       "Key": "PARAM_Tools_Reloader_Task_Fail",
-      "Text": "Param reloader has failed."
+      "Text": "The Param Reloader failed."
     },
     {
       "Key": "PARAM_Tools_Reloader_Missing_Game",
-      "Text": "Unable to find running game."
+      "Text": "Couldn't find the running game."
     },
     {
       "Key": "PARAM_Tools_Reloader_Invalid_Param",
-      "Text": "Cannot reload {0} in Param Reloader."
+      "Text": "The Param Reloader can't reload {0}."
     },
     {
       "Key": "PARAM_Tools_Reloader_Missing_AOB",
-      "Text": "Param Reloader cannot reload {0} because the given AOB was not found."
+      "Text": "The Param Reloader can't reload {0} because the given AOB wasn't found."
     },
     {
       "Key": "PARAM_Tools_Reloader_Missing_Base_Address",
-      "Text": "Failed to find base address."
+      "Text": "Failed to find the base address."
     },
     {
       "Key": "PARAM_Tools_Reloader_Missing_Param_Offset",
-      "Text": "Cannot find param offset for {0} in Param Reloader."
+      "Text": "The Param Reloader can't find the param offset for {0}."
     },
     {
       "Key": "PARAM_Tools_Reloader_Invalid_Offset",
-      "Text": "ParamType {0} has invalid offset or no rows for Param Reloader."
+      "Text": "ParamType {0} has an invalid offset or no rows for the Param Reloader."
     },
     {
       "Key": "PARAM_Tools_Reloader_Missing_In_Editor",
-      "Text": "ParamType {0}: row {1} index {2} is in memory but not in editor during Param Reloader opeation.\nTry saving params and restarting game."
+      "Text": "ParamType {0}: row {1} index {2} is in memory but not in the editor during the Param Reloader operation.\nTry saving the params and restarting the game."
     },
     {
       "Key": "PARAM_Tools_Reloader_Missing_Bitfield_Type",
@@ -366,19 +366,19 @@
     },
     {
       "Key": "PARAM_Tools_Reloader_No_Param_Selected",
-      "Text": "No param has been selected yet for the Param Reloder."
+      "Text": "No param is selected for the Param Reloader."
     },
     {
       "Key": "PARAM_Tools_Reloader_Cannot_Reload",
-      "Text": "Param Reloader cannot reload for this project."
+      "Text": "The Param Reloader can't reload this project."
     },
     {
       "Key": "PARAM_Tools_Reloader_Map_Not_Loaded",
-      "Text": "{0} was not reloaded: the game has map {1} loaded."
+      "Text": "{0} wasn't reloaded: the game has map {1} loaded."
     },
     {
       "Key": "PARAM_Tools_Reloader_Map_Params_Skipped",
-      "Text": "Skipped {0} map params of maps that are not loaded (the game has map {1} loaded)."
+      "Text": "Skipped {0} map params for maps that aren't loaded (the game has map {1} loaded)."
     }
   ]
 }

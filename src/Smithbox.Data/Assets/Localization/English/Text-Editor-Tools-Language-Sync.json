@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "TEXT_LanguageSync_Hint",
-      "Text": "Use this to sync changes made to your source language to all other languages instantly."
+      "Text": "Sync changes in your source language to all other languages at once."
     },
     {
       "Key": "TEXT_LanguageSync_Header_Source_Lang",
@@ -10,7 +10,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Header_Source_Lang_TT",
-      "Text": "The language text to apply to the sync process against the target languages."
+      "Text": "The language whose text is synced to the target languages."
     },
     {
       "Key": "TEXT_LanguageSync_Header_Target_Lang",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Lang_Select_TT",
-      "Text": "If enabled, this language will be synced to."
+      "Text": "Sync to this language."
     },
     {
       "Key": "TEXT_LanguageSync_Header_Options",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Include_Default_TT",
-      "Text": "If enabled, all entries will be synced."
+      "Text": "Sync all entries."
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Include_Added",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Include_Added_TT",
-      "Text": "If enabled, added entries will be synced."
+      "Text": "Sync added entries."
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Include_Modified",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Include_Modified_TT",
-      "Text": "If enabled, modified entries will be synced."
+      "Text": "Sync modified entries."
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Apply_Prefix",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Checkbox_Apply_Prefix_TT",
-      "Text": "The prefix to apply to the synced text."
+      "Text": "Add a prefix to the synced text."
     },
     {
       "Key": "TEXT_LanguageSync_Header_Sync_Prefix",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Header_Sync_Prefix_TT",
-      "Text": "The prefix to apply to text that has been synced."
+      "Text": "The prefix to add to synced text."
     },
     {
       "Key": "TEXT_LanguageSync_Header_Actions",
@@ -90,11 +90,11 @@
     },
     {
       "Key": "TEXT_LanguageSync_Action_Sync_TT",
-      "Text": "Apply language sync with specified parameters."
+      "Text": "Sync languages with the given settings."
     },
     {
       "Key": "TEXT_LanguageSync_Log_No_Source_Language",
-      "Text": "No source language has been selected."
+      "Text": "No source language is selected."
     },
     {
       "Key": "TEXT_LanguageSync_Header_Sync_With",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "TEXT_LanguageSync_Header_Sync_With_TT",
-      "Text": "Sync all unique changes from another category into this category.\n\nUse this on the category you want to bring the changes IN TO."
+      "Text": "Sync all unique changes from another category into this category.\n\nUse this on the category you want to bring the changes INTO."
     },
     {
       "Key": "TEXT_LanguageSync_Action_Sync_TT",
@@ -118,11 +118,11 @@
     },
     {
       "Key": "TEXT_LanguageSync_No_Vanilla_Source",
-      "Text": "Skipped text file {0}: no vanilla {1} version was found to compare against, so its changes can't be worked out."
+      "Text": "Skipped text file {0}: no vanilla {1} version was found to compare against, so its changes can't be determined."
     },
     {
       "Key": "TEXT_LanguageSync_No_Source_Language",
-      "Text": "No source language has been selected."
+      "Text": "No source language is selected."
     }
   ]
 }

@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_ImportTab_Hint",
-      "Text": "Use this section to import comma-separated values, applying the data to your current project."
+      "Text": "Import comma-separated values and apply the data to your current project."
     },
     {
       "Key": "PARAM_DataTransfer_Header_CSV_Input",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Import_Mode_TT",
-      "Text": "Whether to import CSV for the current selection, or all params."
+      "Text": "Whether to import CSV for the current selection or for all params."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Import_Type",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Import_Type_TT",
-      "Text": "The type of import to apply. Determines how the CSV data is interpreted."
+      "Text": "The type of import, which sets how the CSV data is interpreted."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Specific_Field",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Specific_Field_TT",
-      "Text": "The field to target from the import source."
+      "Text": "The field to target in the import source."
     },
     {
       "Key": "PARAM_DataTransfer_Specific_Field_Hint",
@@ -74,11 +74,11 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Import_Directory_TT",
-      "Text": "The directory to import the CSV data from."
+      "Text": "The folder to import the CSV data from."
     },
     {
       "Key": "PARAM_DataTransfer_Import_Dir_Hint",
-      "Text": "Assign the directory..."
+      "Text": "Set the folder..."
     },
     {
       "Key": "PARAM_DataTransfer_Action_Set_Import_Directory",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Action_Set_Import_Directory_TT",
-      "Text": "Set the import directory to source the CSV files from."
+      "Text": "Set the import folder for the CSV files."
     },
     {
       "Key": "PARAM_DataTransfer_Action_Open_Import_Directory",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Action_Open_Import_Directory_TT",
-      "Text": "Open the import directory in a file explorer."
+      "Text": "Open the import folder in File Explorer."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Options",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Checkbox_Append_Mode_TT",
-      "Text": "Append new rows instead of ID based insertion (this will create out-of-order IDs)"
+      "Text": "Append new rows instead of inserting them by ID. This creates out-of-order IDs."
     },
     {
       "Key": "PARAM_DataTransfer_Checkbox_Ignore_Existing_Rows",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Checkbox_Ignore_Existing_Rows_TT",
-      "Text": "Existing rows will be ignored during import. This means only new rows from the CSV will be added, edits to existing rows will be skipped."
+      "Text": "Ignore existing rows during import: only new rows from the CSV are added, and edits to existing rows are skipped."
     },
     {
       "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing_TT",
-      "Text": "Replace existing rows instead of updating them (they will be moved to the end)"
+      "Text": "Replace existing rows instead of updating them. Replaced rows move to the end."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Actions",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Action_Import_From_Source_TT",
-      "Text": "Import and apply CSVs from the defined source folder."
+      "Text": "Import and apply the CSVs from the source folder."
     },
     {
       "Key": "PARAM_DataTransfer_Action_File_Import",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Log_No_Param_Selected",
-      "Text": "No param has been selected."
+      "Text": "No param is selected."
     },
     {
       "Key": "PARAM_DataTransfer_Dialog_Select_File",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Log_Invalid_Param_Target",
-      "Text": "Aborting CSV import, no param has been selected yet."
+      "Text": "CSV import cancelled: no param is selected."
     },
     {
       "Key": "PARAM_DataTransfer_Tab_Export",
@@ -206,7 +206,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_ExportTab_Hint",
-      "Text": "Use this section to export comma-separated values from your current project."
+      "Text": "Export comma-separated values from your current project."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Type",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Type_TT",
-      "Text": "Determines which elements of the param and row data are exported."
+      "Text": "Which parts of the param and row data to export."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Mode",
@@ -222,7 +222,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Mode_TT",
-      "Text": "Determines whether to export the CSV to the output window or to file."
+      "Text": "Whether to export the CSV to the output window or to a file."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Directory",
@@ -230,11 +230,11 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Directory_TT",
-      "Text": "The directory to export the CSV data to."
+      "Text": "The folder to export the CSV data to."
     },
     {
       "Key": "PARAM_DataTransfer_Export_Dir_Hint",
-      "Text": "Assign the directory..."
+      "Text": "Set the folder..."
     },
     {
       "Key": "PARAM_DataTransfer_Action_Set_Export_Directory",
@@ -242,7 +242,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Action_Set_Export_Directory_TT",
-      "Text": "Set the export directory for the exported CSV files."
+      "Text": "Set the export folder for the CSV files."
     },
     {
       "Key": "PARAM_DataTransfer_Action_Open_Export_Directory",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Action_Open_Export_Directory_TT",
-      "Text": "Open the export directory in a file explorer."
+      "Text": "Open the export folder in File Explorer."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Filename",
@@ -258,7 +258,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Filename_TT",
-      "Text": "The filename to export the CSV data under (if blank the param name is used)"
+      "Text": "The file name for the exported CSV data. If blank, the param name is used."
     },
     {
       "Key": "PARAM_DataTransfer_Export_Filename_Hint",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Action_Export_to_File_TT",
-      "Text": "Export the CSV param data to file."
+      "Text": "Export the CSV param data to a file."
     },
     {
       "Key": "PARAM_DataTransfer_Dialog_Select_Import_Destination",
@@ -306,11 +306,11 @@
     },
     {
       "Key": "PARAM_DataTransfer_Log_No_Export_Directory",
-      "Text": "Export directory has not been set."
+      "Text": "The export folder isn't set."
     },
     {
       "Key": "PARAM_DataTransfer_Log_Invalid_Export_Directory",
-      "Text": "Export directory is invalid."
+      "Text": "The export folder isn't valid."
     },
     {
       "Key": "PARAM_DataTransfer_Export_String",
@@ -326,7 +326,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Log_No_Selected_Param",
-      "Text": "No param has been selected."
+      "Text": "No param is selected."
     },
     {
       "Key": "PARAM_DataTransfer_Log_Missing_Param_Data",
@@ -334,15 +334,15 @@
     },
     {
       "Key": "PARAM_DataTransfer_Saved_Selected_Param_CSV_to_Clipboard",
-      "Text": "Saved selected param CSV to clipboard."
+      "Text": "Copied the selected param CSV to the clipboard."
     },
     {
       "Key": "PARAM_DataTransfer_Saved_Modified_Rows_CSV_to_Clipboard",
-      "Text": "Saved modified rows CSV to clipboard."
+      "Text": "Copied the modified rows CSV to the clipboard."
     },
     {
       "Key": "PARAM_DataTransfer_Saved_Selected_Rows_CSV_to_Clipboard",
-      "Text": "Saved selected rows CSV to clipboard."
+      "Text": "Copied the selected rows CSV to the clipboard."
     },
     {
       "Key": "PARAM_DataTransfer_Saved_Selected_Param_CSV_to_File",
@@ -422,7 +422,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Write_File_FAIL",
-      "Text": "Failed to write file for CSV: {0}"
+      "Text": "Failed to write the CSV file: {0}"
     },
     {
       "Key": "PARAM_DataTransfer_Write_file_PASS",
@@ -430,31 +430,31 @@
     },
     {
       "Key": "PARAM_CSV_Invalid_Param_Name",
-      "Text": "Invalid Param Name."
+      "Text": "The param name isn't valid."
     },
     {
       "Key": "PARAM_CSV_No_Param_Selected",
-      "Text": "No Param Selected."
+      "Text": "No param is selected."
     },
     {
       "Key": "PARAM_CSV_Invalid_Data_Type_Parse",
-      "Text": "Unable to parse CSV into correct data types."
+      "Text": "Couldn't convert the CSV to the correct data types."
     },
     {
       "Key": "PARAM_CSV_Empty_File",
-      "Text": "CSV is empty."
+      "Text": "The CSV is empty."
     },
     {
       "Key": "PARAM_CSV_Missing_Header",
-      "Text": "CSV missing expected header row starting with ID."
+      "Text": "The CSV is missing the expected header row starting with ID."
     },
     {
       "Key": "PARAM_CSV_Failed_to_Assign_Value_To_Field",
-      "Text": "Could not assign {0} to field {1}."
+      "Text": "Couldn't assign {0} to field {1}."
     },
     {
       "Key": "PARAM_CSV_Failed_to_Convert_String_to_Value",
-      "Text": "Failed to convert CSV string to value."
+      "Text": "Failed to convert a CSV string to a value."
     },
     {
       "Key": "PARAM_CSV_Result_Effect",
@@ -462,23 +462,23 @@
     },
     {
       "Key": "PARAM_CSV_Wrong_Field_Name",
-      "Text": "CSV has wrong field name."
+      "Text": "The CSV has a wrong field name."
     },
     {
       "Key": "PARAM_CSV_Wrong_Value_Count",
-      "Text": "CSV has wrong number of values."
+      "Text": "The CSV has the wrong number of values."
     },
     {
       "Key": "PARAM_CSV_Failed_to_Locate_Row",
-      "Text": "Could not locate row {0}"
+      "Text": "Couldn't find row {0}."
     },
     {
       "Key": "PARAM_CSV_Failed_to_Locate_Row_Iteration",
-      "Text": "Could not locate row {0}, iteration {1}"
+      "Text": "Couldn't find row {0}, iteration {1}."
     },
     {
       "Key": "PARAM_CSV_Failed_to_Locate_Field",
-      "Text": "Could not locate field {0}."
+      "Text": "Couldn't find field {0}."
     },
     {
       "Key": "PARAM_CSV_Row_Result_Effect",
@@ -486,7 +486,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Invalid_Import_Directory",
-      "Text": "Defined import directory does not exist."
+      "Text": "The import folder doesn't exist."
     },
     {
       "Key": "PARAM_DataTransfer_Header_Export_Window",
@@ -502,7 +502,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Header_Field_Selector_TT",
-      "Text": "Determine which fields to include in export CSV."
+      "Text": "Which fields to include in the exported CSV."
     },
     {
       "Key": "PARAM_DataTransfer_Export_CSV_to_Window",
@@ -514,7 +514,7 @@
     },
     {
       "Key": "PARAM_DataTransfer_Export_Window_Section_Invalid",
-      "Text": "You need to use the File export mode if exporting multiple params."
+      "Text": "Use the File export mode to export multiple params."
     },
     {
       "Key": "PARAM_DataTransfer_FieldSelector_Toggle_All",

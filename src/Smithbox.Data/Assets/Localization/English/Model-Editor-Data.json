@@ -50,23 +50,23 @@
     },
     {
       "Key": "MODEL_Data_Write_FLVER_Log",
-      "Text": "Written FLVER file: {0}"
+      "Text": "Wrote FLVER file: {0}"
     },
     {
       "Key": "MODEL_Data_Write_CLM2_Log",
-      "Text": "Written CLM2 file: {0}"
+      "Text": "Wrote CLM2 file: {0}"
     },
     {
       "Key": "MODEL_Data_Write_HKXPWV_Log",
-      "Text": "Written HKXPWV file: {0}"
+      "Text": "Wrote HKXPWV file: {0}"
     },
     {
       "Key": "MODEL_Data_Write_GRASS_Log",
-      "Text": "Written GRASS file: {0}"
+      "Text": "Wrote GRASS file: {0}"
     },
     {
       "Key": "MODEL_Data_Write_EDGE_Log",
-      "Text": "Written EDGE file: {0}"
+      "Text": "Wrote EDGE file: {0}"
     },
     {
       "Key": "MODEL_Data_Failed_To_Read_Edge_Placement",
@@ -74,23 +74,23 @@
     },
     {
       "Key": "MODEL_Data_Setup_Primary_Bank_PASS",
-      "Text": "Setup the Primary Bank."
+      "Text": "Set up the primary bank."
     },
     {
       "Key": "MODEL_Data_Setup_Primary_Bank_FAIL",
-      "Text": "Failed to setup the Primary Bank."
+      "Text": "Failed to set up the primary bank."
     },
     {
       "Key": "MODEL_Data_Setup_Model_Meta_PASS",
-      "Text": "Setup the Model Meta."
+      "Text": "Set up the model meta."
     },
     {
       "Key": "MODEL_Data_Setup_Model_Meta_FAIL",
-      "Text": "Failed to setup the Model Meta."
+      "Text": "Failed to set up the model meta."
     },
     {
       "Key": "MODEL_Data_Log_Failed_Model_Meta",
-      "Text": "Failed to deserialize Model Meta file: {0}"
+      "Text": "Failed to read the model meta file: {0}"
     }
   ]
 }

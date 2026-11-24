@@ -30,7 +30,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Controls_TT",
-      "Text": "Toggle the display of the Control instructions in the top-left corner."
+      "Text": "Show or hide the control instructions in the top-left corner."
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Profiling",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Profiling_TT",
-      "Text": "Toggle the display of the Profiling information in the top-left corner."
+      "Text": "Show or hide the profiling information in the top-left corner."
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Translation_Increment",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Translation_Increment_TT",
-      "Text": "Toggle the display of the current Translation Increment in the top-left corner."
+      "Text": "Show or hide the current translation increment in the top-left corner."
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Rotation_Increment",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Rotation_Increment_TT",
-      "Text": "Toggle the display of the current Rotation Increment in the top-left corner."
+      "Text": "Show or hide the current rotation increment in the top-left corner."
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Viewport_Tooltip",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT",
-      "Text": "Toggle the display of the viewport tooltip on hover."
+      "Text": "Show or hide the viewport tooltip on hover."
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Placement_Orb",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Placement_Orb_TT",
-      "Text": "Toggle the display of the placement orb within the viewport."
+      "Text": "Show or hide the placement orb in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Compass",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Compass_TT",
-      "Text": "Toggle the display of the compass within the viewport."
+      "Text": "Show or hide the compass in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Header_Camera",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Open_Camera_Tool_TT",
-      "Text": "Opens the Tools window at the Camera section of its Rendering tools, which holds the view mode, preset views, projection and movement settings."
+      "Text": "Open the Tools window at the Camera section of its Rendering tools, which has the view mode, preset views, projection and movement settings."
     },
     {
       "Key": "VIEWPORT_Camera_Tool_Hint",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "VIEWPORT_Camera_Tool_Reset_Header_TT",
-      "Text": "Put the camera settings back to their defaults."
+      "Text": "Reset the camera settings to their defaults."
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Scale_Bar",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Scale_Bar_TT",
-      "Text": "Shows a bar of a round length in the bottom left corner. In an orthographic view a metre is the same size everywhere, so the bar measures the whole view."
+      "Text": "Show a bar of a round length in the bottom-left corner. In an orthographic view, a metre is the same size everywhere, so the bar measures the whole view."
     },
     {
       "Key": "VIEWPORT_Menubar_Slice",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_TT",
-      "Text": "Draws only a slab of depth around the focus, in place of the near and far clips. Looking down, it shows one floor of a building as a plan."
+      "Text": "Draw only a slab of depth around the focus, instead of using the near and far clips. Looking down, it shows one floor of a building as a plan."
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_Enabled",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_Enabled_TT",
-      "Text": "Only draw what is within the slice. Alt and the mouse wheel change its thickness; Shift, Alt and the wheel move it nearer or further. Box selection only takes what is in the slice."
+      "Text": "Only draw what is within the slice. Alt+mouse wheel changes its thickness; Shift+Alt+mouse wheel moves it nearer or further. Box selection only selects what is in the slice."
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_Thickness",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_Thickness_TT",
-      "Text": "How deep the slice is, in metres, centred on its distance."
+      "Text": "The slice's depth in metres, centred on its distance."
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_Distance",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Slice_Distance_TT",
-      "Text": "How far ahead of the camera the middle of the slice is. Framing a selection puts it there."
+      "Text": "How far ahead of the camera the middle of the slice is. Framing a selection puts the slice there."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Cabinet",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Cabinet_TT",
-      "Text": "45 degrees, depth drawn at half scale. The usual oblique look, with little distortion."
+      "Text": "45 degrees, with depth drawn at half scale. The usual oblique look, with little distortion."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Cavalier",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Cavalier_TT",
-      "Text": "45 degrees, depth drawn at full scale, so lengths along every axis can be measured."
+      "Text": "45 degrees, with depth drawn at full scale, so you can measure lengths along every axis."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Plan",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Plan_TT",
-      "Text": "Looks down with depth at full scale: the ground plan is true to scale and heights rise up the screen at 45 degrees."
+      "Text": "Looks down with depth at full scale: the ground plan is true to scale, and heights rise up the screen at 45 degrees."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Snap_To_Axis",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Snap_To_Axis_TT",
-      "Text": "Switching to Oblique turns the camera to the nearest world axis, as a slanted view off a free rotation is hard to read."
+      "Text": "When switching to Oblique, turn the camera to the nearest world axis, because a slanted view from a free rotation is hard to read."
     },
     {
       "Key": "VIEWPORT_Overlay_Slice",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Snap_View_To_Axis_TT",
-      "Text": "Turn the camera to the world axis nearest to where it is looking, with the nearest axis as up."
+      "Text": "Turn the camera to the world axis nearest its view direction, with the nearest axis as up."
     },
     {
       "Key": "VIEWPORT_Menubar_Preset_View_Switch_To_Orthographic",
@@ -222,7 +222,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Preset_View_Switch_To_Orthographic_TT",
-      "Text": "Choosing a view from Perspective switches to Orthographic, and rotating the camera afterwards switches back to Perspective."
+      "Text": "Choosing a view in Perspective switches to Orthographic, and rotating the camera afterwards switches back to Perspective."
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Zoom_To_Cursor",
@@ -230,7 +230,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Zoom_To_Cursor_TT",
-      "Text": "The mouse wheel zooms about the point under the cursor rather than the centre of the view."
+      "Text": "Zoom the mouse wheel about the point under the cursor instead of the centre of the view."
     },
     {
       "Key": "VIEWPORT_Menubar_View_Parameters",
@@ -246,7 +246,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_View_Near_Clip_TT",
-      "Text": "Set the minimum distance at which entities will be rendered within the viewport."
+      "Text": "The minimum distance at which entities are rendered in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_View_Far_Clip",
@@ -254,7 +254,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_View_Far_Clip_TT",
-      "Text": "Set the maximum distance at which entities will be rendered within the viewport."
+      "Text": "The maximum distance at which entities are rendered in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Clip",
@@ -270,7 +270,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Clip_Enabled_TT",
-      "Text": "If enabled, models, collision and navmeshes within the clip radius of the camera are not drawn and cannot be selected by clicking."
+      "Text": "Don't draw models, collision and navmeshes within the camera's clip radius, and don't let clicks select them."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Clip_Radius",
@@ -278,7 +278,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Clip_Radius_TT",
-      "Text": "The distance from the camera, in meters, within which geometry is clipped."
+      "Text": "The distance from the camera, in metres, within which geometry is clipped."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_FOV",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_FOV_TT",
-      "Text": "Set the field of view used by the camera."
+      "Text": "The camera's field of view."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Sensitivity",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Sensitivity_TT",
-      "Text": "Mouse sensitivty for turning the camera."
+      "Text": "The mouse sensitivity for turning the camera."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Slow",
@@ -302,7 +302,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Slow_TT",
-      "Text": "Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving."
+      "Text": "The camera speed while holding Shift."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Normal",
@@ -310,7 +310,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Normal_TT",
-      "Text": "Set the speed at which the camera will move whilst moving normally."
+      "Text": "The normal camera speed."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Fast",
@@ -318,7 +318,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Fast_TT",
-      "Text": "Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving."
+      "Text": "The camera speed while holding Ctrl."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Speed_Factor",
@@ -346,7 +346,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT",
-      "Text": "The speed of middle mouse panning. At 25 the scene follows the cursor exactly; lower is slower, higher is faster."
+      "Text": "The speed of middle mouse panning. At 25, the scene follows the cursor exactly; lower is slower and higher is faster."
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Size",
@@ -362,7 +362,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Angle_TT",
-      "Text": "The screen direction, in degrees, that things nearer the camera are drawn towards: 0 is right, 90 is up. The framed selection stays in place as it changes."
+      "Text": "The screen direction, in degrees, towards which things nearer the camera are drawn: 0 is right and 90 is up. The framed selection stays in place as it changes."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Scaling",
@@ -370,7 +370,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Scaling_TT",
-      "Text": "How far depth is drawn across the screen per unit of depth: 0.5 is cabinet, 1.0 is cavalier, 0 is a plain orthographic view."
+      "Text": "How far depth is drawn across the screen per unit of depth: 0.5 is cabinet, 1.0 is cavalier, and 0 is a plain orthographic view."
     },
     {
       "Key": "VIEWPORT_Menubar_Action_Reset_Camera_Settings",
@@ -390,7 +390,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Animation_TT",
-      "Text": "If enabled, materials that animate over time will play in the viewport. If disabled, they hold their current frame."
+      "Text": "Play materials that animate over time in the viewport. When off, they hold their current frame."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wind_Strength",
@@ -398,7 +398,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wind_Strength_TT",
-      "Text": "How strongly vegetation moves in the viewport. The game's own wind varies by place, so this is an approximation of it."
+      "Text": "How strongly vegetation moves in the viewport. The game's own wind varies by place, so this is an approximation."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wind_Direction",
@@ -446,7 +446,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Layer_Blending_TT",
-      "Text": "Materials blend their texture layers. If disabled, only the first layer is shown."
+      "Text": "Materials blend their texture layers. When off, only the first layer is shown."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Overlays",
@@ -486,7 +486,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Unlit_TT",
-      "Text": "Sky, clouds and flames are drawn unlit. This stands in for the game's shaders, which rely on its scene."
+      "Text": "Sky, clouds and flames are drawn unlit. This stands in for the game's shaders, which depend on its scene."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Water",
@@ -494,7 +494,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Water_TT",
-      "Text": "Water gets moving ripples and a smooth surface. This stands in for the game's shaders, which rely on its scene."
+      "Text": "Water gets moving ripples and a smooth surface. This stands in for the game's shaders, which depend on its scene."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Material_Fur",
@@ -530,7 +530,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Enable_TT",
-      "Text": "Light models inside environment boxes with the map's baked irradiance volumes, instead of the environment map. Outside every box, models keep the environment map's light."
+      "Text": "Light models inside environment boxes with the map's baked irradiance volumes instead of the environment map. Outside every box, models keep the environment map's light."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Auto_Exposure",
@@ -546,7 +546,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Intensity_TT",
-      "Text": "Multiplies the volumes' light. With Auto Exposure off this is the exposure itself; around 25 matches typical maps."
+      "Text": "Multiply the volumes' light. With Auto Exposure off, this is the exposure itself; about 25 matches typical maps."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Bake",
@@ -554,7 +554,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Bake_TT",
-      "Text": "The bake of the irradiance volumes to light the maps with, the NN of the map's envmap_NN files. Bakes are probably times of day; most Nightreign maps only have bake 0. A change applies the next time a map is loaded."
+      "Text": "The irradiance volume bake to light the maps with: the NN of the map's envmap_NN files. Bakes are probably times of day; most Nightreign maps only have bake 0. A change applies the next time a map loads."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Bake_Blend",
@@ -562,7 +562,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Bake_Blend_TT",
-      "Text": "Blend the volumes' light towards a second bake, as the game does between times of day. The second bake's textures load with the map, so switching this on or changing the bake applies the next time a map is loaded."
+      "Text": "Blend the volumes' light towards a second bake, as the game does between times of day. The second bake's textures load with the map, so turning this on or changing the bake applies the next time a map loads."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Blend_Bake",
@@ -578,7 +578,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Blend_Ratio_TT",
-      "Text": "How far towards the second bake: 0 is the first bake, 1 the second. Applies at once."
+      "Text": "How far to blend towards the second bake: 0 is the first bake and 1 the second. Applies immediately."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Normalize_Reflections",
@@ -598,7 +598,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Enable_TT",
-      "Text": "Take the sun's direction, color and intensity, the hemisphere ambient light, and the exposure from the map's GPARAMs, as the game does. The irradiance volumes then take the same exposure instead of their auto exposure, and the hemisphere replaces the grey environment map for ambient light and reflections. With several maps loaded, the first by name with its own GPARAM lights them all."
+      "Text": "Take the sun's direction, colour and intensity, the hemisphere ambient light and the exposure from the map's GPARAMs, as the game does. The irradiance volumes then use the same exposure instead of their auto exposure, and the hemisphere replaces the grey environment map for ambient light and reflections. With several maps loaded, the first (by name) with its own GPARAM lights them all."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Exposure_Scale",
@@ -606,7 +606,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Exposure_Scale_TT",
-      "Text": "Multiplies the GPARAM's exposure. Most maps switch on the game's auto exposure, which adjusts the exposure to what is on screen; Smithbox uses the GPARAM's value as it is, so some maps may look too bright or too dark."
+      "Text": "Multiply the GPARAM's exposure. Most maps turn on the game's auto exposure, which adjusts the exposure to what is on screen. Smithbox uses the GPARAM's value unchanged, so some maps may look too bright or too dark."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes",
@@ -614,7 +614,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Hemi_Inside_Volumes_TT",
-      "Text": "The GPARAM's hemisphere light (sky color from above, ground color from below) lights what the irradiance volumes don't cover, and the reflections. With this on it also adds to the volumes' light, which matches the game."
+      "Text": "The GPARAM's hemisphere light (sky colour from above, ground colour from below) lights what the irradiance volumes don't cover, and the reflections. With this on, it also adds to the volumes' light, which matches the game."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmaps",
@@ -622,11 +622,11 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmaps_TT",
-      "Text": "Light DS3's map pieces with their lightmaps (the DOL textures of gi_env), as the game does, in place of the light probes. Applies to maps loaded after it is changed."
+      "Text": "Light DS3's map pieces with their lightmaps (the DOL textures of gi_env) instead of the light probes, as the game does. Applies to maps loaded after the change."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmaps_DES_TT",
-      "Text": "Light Demon's Souls map pieces with their baked lightmaps (the g_Lightmap textures), in place of the ambient light. Layered materials have no room for the lightmap's UV set and go without. Applies to maps loaded after it is changed."
+      "Text": "Light Demon's Souls map pieces with their baked lightmaps (the g_Lightmap textures) instead of the ambient light. Layered materials have no room for the lightmap's UV set, so they go without. Applies to maps loaded after the change."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity",
@@ -634,7 +634,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity_TT",
-      "Text": "The viewport's scale on the lightmaps' light. How the game scales them isn't known, so match the map pieces against the game (or against the light-probe-lit objects beside them) and report the value."
+      "Text": "The viewport's scale for the lightmaps' light. How the game scales them is unknown, so compare the map pieces with the game (or with the light-probe-lit objects next to them) and report the value."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_View",
@@ -642,7 +642,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_View_TT",
-      "Text": "Draws a part of the map lighting in place of the lit image. Source: where each surface's light from around comes from, green a lightmap, blue light probes or irradiance volumes, red the hemisphere, yellow a lightmapped material whose part found no lightmap. Ambient: that light alone, without the surface's color. Sun Mask: how much of the sun each surface lets through, white all, black none."
+      "Text": "Draw one part of the map lighting instead of the lit image. Source: where each surface's ambient light comes from: green a lightmap, blue light probes or irradiance volumes, red the hemisphere, and yellow a lightmapped material whose part found no lightmap. Ambient: that light alone, without the surface's colour. Sun Mask: how much sun each surface lets through, from white (all) to black (none)."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Debug_Off",
@@ -666,7 +666,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_From_Collision_TT",
-      "Text": "Light with {0}, the GPARAM the selected collision's scene GPARAM picks (its sub ID N picks mAA_BB_0N00), as the game does while the player is on it."
+      "Text": "Light with {0}, the GPARAM chosen by the selected collision's scene GPARAM (its sub ID N picks mAA_BB_0N00), as the game does while the player is on it."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_From_Collision_None_TT",
@@ -678,7 +678,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_TT",
-      "Text": "Light with a weather, by its GparamId in WeatherParam: the area's own version of the GPARAM (mAA_BB_CCWW) where there is one, and the shared outdoor overlays m00_00_WWWW_weatheroutdoor and _weatherbase over it, which are what rain and snow change."
+      "Text": "Light with a weather, by its GparamId in WeatherParam: the area's own version of the GPARAM (mAA_BB_CCWW) where one exists, with the shared outdoor overlays m00_00_WWWW_weatheroutdoor and _weatherbase over it, which rain and snow change."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_Outdoor",
@@ -686,7 +686,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_Outdoor_TT",
-      "Text": "Read the weather's shared overlays (m00_00_WWWW_weatheroutdoor, then _weatherbase) before the map's own GPARAM, as the game does outdoors. Their light, tone map, fog and Wet values replace the map's. Switch off for an interior."
+      "Text": "Read the weather's shared overlays (m00_00_WWWW_weatheroutdoor, then _weatherbase) before the map's own GPARAM, as the game does outdoors. Their light, tone map, fog and Wet values replace the map's. Turn off for interiors."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Weather_None",
@@ -702,7 +702,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Follow_Bakes_TT",
-      "Text": "Light with the irradiance volume bakes of the time of day, blending between the two timezones either side of it, as the game does: bake N is timezone N. The bakes a time needs are loaded as the time reaches them, unless every bake is loaded with the map (see below)."
+      "Text": "Light with the irradiance volume bakes for the time of day, blending between the two timezones on either side, as the game does (bake N is timezone N). The bakes a time needs load when the time reaches them, unless every bake is loaded with the map (see below)."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Load_All_Bakes",
@@ -710,7 +710,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Load_All_Bakes_TT",
-      "Text": "Load the irradiance volumes of every time of day when a map is loaded, so the time can be changed without waiting for them. Each bake takes hundreds of MB of GPU memory on a large map. When off, a map loads only the bakes of the current time of day, and the others load as the time reaches them. Applies to maps loaded after it is changed."
+      "Text": "Load the irradiance volumes for every time of day when a map loads, so you can change the time without waiting. Each bake uses hundreds of MB of GPU memory on a large map. When off, a map loads only the current time's bakes, and the others load when the time reaches them. Applies to maps loaded after the change."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Bakes_Follow_Time",
@@ -726,11 +726,11 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Background",
-      "Text": "Use the GPARAM's Background Color"
+      "Text": "Use the GPARAM's Background Colour"
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Background_TT",
-      "Text": "Fill the viewport's background with the BG color of the map's GPARAM (Setting Info), at the GPARAM's exposure, instead of the background color of the settings."
+      "Text": "Fill the viewport background with the BG colour of the map's GPARAM (Setting Info), at the GPARAM's exposure, instead of the background colour from the settings."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Active",
@@ -770,7 +770,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Radius_TT",
-      "Text": "How far from the camera a light can be and still shine."
+      "Text": "The maximum distance from the camera at which a light still shines."
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Enable_Distance",
@@ -778,7 +778,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Enable_Distance_TT",
-      "Text": "Also only light with a light within its own EnableDist of the camera, as the game turns it on. An EnableDist of 0 is taken as no limit."
+      "Text": "Only light with lights within their own EnableDist of the camera, as the game turns them on. An EnableDist of 0 means no limit."
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Max_Count",
@@ -786,11 +786,11 @@
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Max_Count_TT",
-      "Text": "The most lights shaded at once, the nearest kept. Every pixel checks each of them, so lower this if the viewport slows down."
+      "Text": "The maximum number of lights shaded at once, keeping the nearest. Every pixel checks each of them, so lower this if the viewport slows down."
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Intensity_Map_TT",
-      "Text": "Not used while the map's GPARAMs light the viewport: the lights' power is in the game's units, so it takes the GPARAM's exposure ({0:0.###}), as the sun does."
+      "Text": "Not used while the map's GPARAMs light the viewport: the lights' power is in the game's units, so it uses the GPARAM's exposure ({0:0.###}), like the sun."
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Status",
@@ -798,7 +798,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Auto_Exposure_Map_TT",
-      "Text": "Not used while the map's GPARAMs light the viewport: the volumes take the GPARAM's exposure, as the sun does."
+      "Text": "Not used while the map's GPARAMs light the viewport: the volumes use the GPARAM's exposure, like the sun."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_File",
@@ -806,7 +806,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_File_TT",
-      "Text": "The GPARAM each value is looked for in first. Values it doesn't have come from mapbase, then default.\nAny of the project's GPARAMs can be chosen: one from another area lights every loaded map."
+      "Text": "The GPARAM where each value is looked up first. Values it doesn't have come from mapbase, then default.\nYou can choose any of the project's GPARAMs; one from another area lights every loaded map."
     },
     {
       "Key": "VIEWPORT_Menubar_Map_Lighting_File_Filter",
@@ -914,7 +914,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Shaded_Volumes_TT",
-      "Text": "The linked environment boxes whose four textures of the bake are on the GPU. Boxes the game skips are left out."
+      "Text": "The linked environment boxes whose four bake textures are on the GPU. Boxes the game skips are left out."
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Map_Status",
@@ -926,7 +926,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Unlinked",
-      "Text": "Environment boxes without a volume: {0}, skipped by the game: {1}"
+      "Text": "Environment boxes without a volume: {0}. Skipped by the game: {1}"
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Open_Tool",
@@ -934,7 +934,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_GI_Open_Tool_TT",
-      "Text": "Open the Irradiance Volumes tab of the Validation tools, which lists each environment box's volume and can fill their volume ID property from their names."
+      "Text": "Open the Irradiance Volumes tab of the Validation tools, which lists each environment box's volume and can fill in their volume ID property from their names."
     },
     {
       "Key": "VIEWPORT_Menubar_Header_Gizmos",
@@ -966,7 +966,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Display_TT",
-      "Text": "Toggle the display of gizmos."
+      "Text": "Show or hide gizmos."
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Input_Size",
@@ -990,7 +990,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Translate_TT",
-      "Text": "Set the gizmo to Translation mode."
+      "Text": "Set the gizmo to Translate mode."
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Rotate",
@@ -998,7 +998,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Rotate_TT",
-      "Text": "Set the gizmo to Rotation mode."
+      "Text": "Set the gizmo to Rotate mode."
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Scale",
@@ -1018,7 +1018,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Space_Local_TT",
-      "Text": "Place the gizmo origin based on the selection's local position."
+      "Text": "Place the gizmo origin using the selection's local position."
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Space_World",
@@ -1026,7 +1026,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Space_World_TT",
-      "Text": "Place the gizmo origin based on the selection's world position."
+      "Text": "Place the gizmo origin using the selection's world position."
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Header_Origin",
@@ -1038,7 +1038,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_World_TT",
-      "Text": "Orient the gizmo origin based on the world position."
+      "Text": "Orient the gizmo origin using the world position."
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box",
@@ -1046,7 +1046,7 @@
     },
     {
       "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box_TT",
-      "Text": "Orient the gizmo origin based on the bounding box."
+      "Text": "Orient the gizmo origin using the bounding box."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Rendering",
@@ -1054,7 +1054,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Rendering_TT",
-      "Text": "Whether to render objects in the viewport."
+      "Text": "Render objects in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Texturing",
@@ -1062,7 +1062,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Texturing_TT",
-      "Text": "Whether to render textures in the viewport."
+      "Text": "Render textures in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Editor",
@@ -1070,7 +1070,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Editor_TT",
-      "Text": "Draws surfaces fullbright, with their textures unlit. Map lighting, global illumination, shadows, fog and post effects are turned off, whatever the Rendering tool says."
+      "Text": "Draw surfaces fullbright, with their textures unlit. Map lighting, global illumination, shadows, fog and post effects are off, whatever the Rendering tool says."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Game",
@@ -1078,7 +1078,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Render_Mode_Game_TT",
-      "Text": "Lights the scene as the game does. Map lighting, global illumination, shadows, fog and post effects follow the settings in the Rendering tool."
+      "Text": "Light the scene as the game does. Map lighting, global illumination, shadows, fog and post effects follow the Rendering tool's settings."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Texturing_Diffuse",
@@ -1086,7 +1086,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Texturing_Diffuse_TT",
-      "Text": "Shows the textured image."
+      "Text": "Show the textured image."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Texturing_Normal",
@@ -1094,7 +1094,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Texturing_Normal_TT",
-      "Text": "Shows the surfaces' normals in place of the image: the Normals surface view."
+      "Text": "Show the surfaces' normals instead of the image (the Normals surface view)."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe",
@@ -1102,7 +1102,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe_TT",
-      "Text": "Draws lines along the triangles of FLVER models, over their surfaces or alone. Selected models take the selection color for their lines, in place of their outline."
+      "Text": "Draw lines along the triangles of FLVER models, over their surfaces or by themselves. Selected models draw their lines in the selection colour instead of an outline."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe_Settings",
@@ -1114,7 +1114,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe_Only_TT",
-      "Text": "Leaves the surfaces out, so only the lines show and what is behind can be seen between them. Faces turned away from the camera are still left out."
+      "Text": "Leave out the surfaces, so only the lines show and you can see what is behind between them. Faces turned away from the camera are still left out."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe_Color",
@@ -1122,7 +1122,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe_Color_TT",
-      "Text": "The color of the lines."
+      "Text": "The colour of the lines."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Wireframe_Opacity",
@@ -1146,7 +1146,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Culling_TT",
-      "Text": "Whether to cull objects in the viewport outside of the camera frustum."
+      "Text": "Cull objects outside the camera frustum in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Global_Illumination",
@@ -1154,7 +1154,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Global_Illumination_TT",
-      "Text": "Whether models are lit by the baked irradiance volumes. When off, they take the ambient light outside the volumes instead. The same switch as the Global Illumination tab of the Rendering tool."
+      "Text": "Light models with the baked irradiance volumes. When off, they use the ambient light from outside the volumes. This is the same setting as the Global Illumination tab of the Rendering tool."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Lighting",
@@ -1162,7 +1162,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Lighting_TT",
-      "Text": "Whether the viewports are lit by the map's GPARAM lighting: its sun, hemisphere, exposure, tone map and background. When off, the Scene Lighting tab's own sun and settings are used. The same switch as the Map Lighting tab of the Rendering tool."
+      "Text": "Light the viewports with the map's GPARAM lighting: its sun, hemisphere, exposure, tone map and background. When off, the Scene Lighting tab's own sun and settings are used. This is the same setting as the Map Lighting tab of the Rendering tool."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Shadows",
@@ -1170,7 +1170,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Shadows_TT",
-      "Text": "Whether the sun casts shadows. When off, the shadow maps aren't drawn. The same switch as the Shadows tab of the Rendering tool."
+      "Text": "Make the sun cast shadows. When off, the shadow maps aren't drawn. This is the same setting as the Shadows tab of the Rendering tool."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks",
@@ -1178,7 +1178,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks_TT",
-      "Text": "Whether to attempt to hide model masks based on entity NpcParam flags."
+      "Text": "Try to hide model masks using each entity's NpcParam flags."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Orb_Distance",
@@ -1186,7 +1186,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Orb_Distance_TT",
-      "Text": "Determines the distance in front of the camera the placement orb is."
+      "Text": "How far in front of the camera the placement orb is."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Compass_Size",
@@ -1194,7 +1194,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Compass_Size_TT",
-      "Text": "Determines the size of the compass."
+      "Text": "The size of the compass."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Compass_North_Offset",
@@ -1202,7 +1202,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Compass_North_Offset_TT",
-      "Text": "Determines the angle offset when determining which direction is north."
+      "Text": "The angle offset used to determine which direction is north."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Dummy_Size",
@@ -1210,7 +1210,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Dummy_Size_TT",
-      "Text": "Determines the radius of the dummy polygon mesh."
+      "Text": "The radius of the dummy polygon mesh."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Node_Size",
@@ -1218,7 +1218,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Node_Size_TT",
-      "Text": "Determines the radius of the node mesh."
+      "Text": "The radius of the node mesh."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Label_Scale",
@@ -1226,7 +1226,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Label_Scale_TT",
-      "Text": "Determines the size of the dummy polygon ID and bone name text in the viewport."
+      "Text": "The size of the dummy polygon ID and bone name text in the viewport."
     },
     {
       "Key": "VIEWPORT_Menubar_Model_Load_Header",
@@ -1234,7 +1234,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Model_Load_Header_TT",
-      "Text": "Toggle which models are loaded during a map load."
+      "Text": "Choose which models load with a map."
     },
     {
       "Key": "VIEWPORT_Menubar_ML_Map_Pieces",
@@ -1270,7 +1270,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Texture_Load_Header_TT",
-      "Text": "Toggle which textures are loaded during a map load."
+      "Text": "Choose which textures load with a map."
     },
     {
       "Key": "VIEWPORT_Menubar_TL_Map_Pieces",
@@ -1298,11 +1298,11 @@
     },
     {
       "Key": "VIEWPORT_Overlay_Perspective_Controls",
-      "Text": "Holding click on the viewport will enable camera controls.\nUse WASD to navigate.\nUse right click to rotate the camera.\nHold Shift to temporarily speed up and Ctrl to temporarily slow down.\nScroll the mouse wheel to adjust overall speed.\nNumpad 7, 1 and 3 give the top, front and right views; add Alt for the opposite view.\nHold Ctrl, Alt and left click to make a box selection."
+      "Text": "Hold a mouse button in the viewport to control the camera.\nUse WASD to move.\nRight-click and drag to rotate the camera.\nHold Shift to temporarily speed up, or Ctrl to slow down.\nScroll the mouse wheel to adjust the overall speed.\nNumpad 7, 1 and 3 give the top, front and right views; add Alt for the opposite view.\nHold Ctrl+Alt and left-click to make a box selection."
     },
     {
       "Key": "VIEWPORT_Overlay_OrthoOblique_Controls",
-      "Text": "Holding click on the viewport will enable camera controls.\nPan the screen with the middle mouse button.\nUse right click to rotate the camera.\nScroll the mouse wheel, or use W and S, to zoom.\nUse A, D, Q and E to move across the view.\nFraming a selection zooms to fit it.\nNumpad 7, 1 and 3 give the top, front and right views; add Alt for the opposite view.\nNumpad 9 snaps to the nearest axis and Numpad 5 cycles the view mode.\nNumpad 0 toggles the slice; Alt and the wheel set its thickness, and Shift, Alt and the wheel move it.\nHold Ctrl, Alt and left click to make a box selection."
+      "Text": "Hold a mouse button in the viewport to control the camera.\nPan with the middle mouse button.\nRight-click and drag to rotate the camera.\nScroll the mouse wheel, or use W and S, to zoom.\nUse A, D, Q and E to move across the view.\nFraming a selection zooms to fit it.\nNumpad 7, 1 and 3 give the top, front and right views; add Alt for the opposite view.\nNumpad 9 snaps to the nearest axis, and Numpad 5 cycles the view mode.\nNumpad 0 toggles the slice; Alt+mouse wheel sets its thickness, and Shift+Alt+mouse wheel moves it.\nHold Ctrl+Alt and left-click to make a box selection."
     },
     {
       "Key": "VIEWPORT_Overlay_Cull_Time",
@@ -1314,7 +1314,7 @@
     },
     {
       "Key": "VIEWPORT_Overlay_Scene_Render_CPU_Time",
-      "Text": "Scene Render CPU time: {0} ms"
+      "Text": "Scene render CPU time: {0} ms"
     },
     {
       "Key": "VIEWPORT_Overlay_Visible_Objects",
@@ -1322,11 +1322,11 @@
     },
     {
       "Key": "VIEWPORT_Overlay_Vertex_Buffers_Size",
-      "Text": "Vertex Buffers Size: {0} MB"
+      "Text": "Vertex buffers size: {0} MB"
     },
     {
       "Key": "VIEWPORT_Overlay_Index_Buffers_Size",
-      "Text": "Index Buffers Size: {0} MB"
+      "Text": "Index buffers size: {0} MB"
     },
     {
       "Key": "VIEWPORT_Rendering_Tab_Tone_Map",
@@ -1342,7 +1342,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Tone_Map_TT",
-      "Text": "How the viewport's HDR scene is brought down to the screen. From GPARAM uses the map's Tone Map group under map lighting: ToneMapMode 8, which every Elden Ring GPARAM uses, is a Reinhard curve whose white point is the Reinhard Contrast times the Reinhard White Balance, and 7 is the filmic curve. This is an approximation of the game's curves, and anything without map lighting is clipped. Clamp clips at white, as the viewport did before it had an HDR target."
+      "Text": "How the viewport's HDR scene is mapped to the screen. From GPARAM uses the map's Tone Map group under map lighting: ToneMapMode 8, which every Elden Ring GPARAM uses, is a Reinhard curve whose white point is the Reinhard Contrast times the Reinhard White Balance, and 7 is the filmic curve. This approximates the game's curves, and anything without map lighting is clipped. Clamp clips at white, as the viewport did before it had an HDR target."
     },
     {
       "Key": "VIEWPORT_Rendering_Tone_Map_Gparam",
@@ -1366,7 +1366,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Tone_Map_Exposure_TT",
-      "Text": "Multiplies the scene before the curve. The GPARAM's exposure is already applied to the map's lighting, so this is on top of it."
+      "Text": "Multiply the scene before the curve. The GPARAM's exposure is already applied to the map's lighting, so this is added on top."
     },
     {
       "Key": "VIEWPORT_Rendering_Tone_Map_White_Point",
@@ -1374,7 +1374,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Tone_Map_White_Point_TT",
-      "Text": "The brightness that the Reinhard curve takes to white, when the curve is set to Reinhard. From GPARAM uses the map's own."
+      "Text": "The brightness that the Reinhard curve maps to white, when the curve is set to Reinhard. From GPARAM uses the map's own value."
     },
     {
       "Key": "VIEWPORT_Rendering_Tone_Map_Active",
@@ -1386,7 +1386,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadows_TT",
-      "Text": "Shadows cast by the sun, in up to four cascades. Under map lighting the cascade splits, the far fade and the bias come from the map's GPARAM Shadows group; otherwise from Elden Ring's mapbase. Only models drawn with the full material shader cast and receive them."
+      "Text": "Shadows cast by the sun, in up to four cascades. Under map lighting, the cascade splits, far fade and bias come from the map's GPARAM Shadows group; otherwise, from Elden Ring's mapbase. Only models drawn with the full material shader cast and receive shadows."
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Resolution",
@@ -1394,7 +1394,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Resolution_TT",
-      "Text": "The size of each cascade's shadow map. The four cascades share one map twice this size on each side, for each viewport."
+      "Text": "The size of each cascade's shadow map. The four cascades share one map twice this size on each side, per viewport."
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Strength",
@@ -1402,7 +1402,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Strength_TT",
-      "Text": "How much of the sun a shadow takes away: 1 for all of it."
+      "Text": "How much sunlight a shadow blocks: 1 blocks all of it."
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Bias_Scale",
@@ -1410,7 +1410,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Bias_Scale_TT",
-      "Text": "Multiplies the GPARAM's Depth Bias and Slope Scaled Depth Bias. Raise it if surfaces shade themselves in stripes, lower it if shadows come away from what casts them."
+      "Text": "Multiply the GPARAM's Depth Bias and Slope Scaled Depth Bias. Raise it if surfaces shade themselves in stripes; lower it if shadows separate from what casts them."
     },
     {
       "Key": "VIEWPORT_Rendering_Shadows_Msb_Flags",
@@ -1418,7 +1418,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadows_Msb_Flags_TT",
-      "Text": "Whether parts cast shadows as their IsShadowSrc or IsShadowOnly says, and receive them as their IsShadowDest says (ShadowSource and ShadowDest in DS3 and Bloodborne; in Elden Ring the Is Sun Shadow Source, Is Shadow Only and Is Shadow Destination flags, each only when its override is on). Otherwise every part does both. Applies to parts as they are loaded or edited, so reload the map to apply it to all of them."
+      "Text": "Make parts cast shadows as set by their IsShadowSrc or IsShadowOnly, and receive them as set by their IsShadowDest (ShadowSource and ShadowDest in DS3 and Bloodborne; in Elden Ring, the Is Sun Shadow Source, Is Shadow Only and Is Shadow Destination flags, each only when its override is on). Otherwise, every part does both. Applies to parts as they are loaded or edited, so reload the map to apply it to all of them."
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Active",
@@ -1426,7 +1426,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Shadow_Inactive",
-      "Text": "No shadows are being drawn."
+      "Text": "No shadows are drawn."
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_Map",
@@ -1434,7 +1434,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_Map_TT",
-      "Text": "The map whose GPARAM lighting and irradiance bake light this editor's viewports, as it has no map of its own. Lit with: {0}. Shared by the Model and Time Act Editors."
+      "Text": "The map whose GPARAM lighting and irradiance bake light this editor's viewports, because it has no map of its own. Lit with: {0}. Shared by the Model and Time Act Editors."
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_Map_Default",
@@ -1450,7 +1450,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_Volume_TT",
-      "Text": "The irradiance volume of the map's bake to light with. Automatic takes the one whose average light is the median of the map's, among those with the most bakes."
+      "Text": "The irradiance volume of the map's bake to light with. Automatic picks the one whose average light is the map's median, among those with the most bakes."
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_Volume_Auto",
@@ -1466,7 +1466,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_Volume_Size_TT",
-      "Text": "The size of the box the volume is stretched over, centred on the origin. The volume's own box isn't read, so this isn't the game's scale; a smaller box shows more of the volume's variation across the model."
+      "Text": "The size of the box the volume is stretched over, centred on the origin. The volume's own box isn't read, so this isn't the game's scale. A smaller box shows more of the volume's variation across the model."
     },
     {
       "Key": "VIEWPORT_Rendering_Environment_No_Volume",
@@ -1490,7 +1490,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Effects_Enable_TT",
-      "Text": "Draws the screen effects of the map's GPARAMs between the scene and the tone map: bloom, fog, light shafts and others, each with a switch of its own once it is drawn. Off: the scene goes straight to the tone map."
+      "Text": "Draw the screen effects of the map's GPARAMs between the scene and the tone map: bloom, fog, light shafts and others, each with its own switch once drawn. When off, the scene goes directly to the tone map."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Effects_Active",
@@ -1498,7 +1498,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Effects_None_Active",
-      "Text": "No screen effects are drawn. They need the map's lighting (Map Lighting tab), and FXAA its switch."
+      "Text": "No screen effects are drawn. They need the map's lighting (Map Lighting tab), and FXAA needs its switch."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Enable",
@@ -1506,7 +1506,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Enable_TT",
-      "Text": "Where the GPARAM's Tone Map switches auto exposure on, adjusts the exposure to what is on screen: by Middle Gray minus the scene's mean log2 light, within Adaption Min to Max, at the adapt speeds. Off: the GPARAM's Exposure as it is."
+      "Text": "Where the GPARAM's Tone Map turns on auto exposure, adjust the exposure to what is on screen: by Middle Gray minus the scene's mean log2 light, within Adaption Min to Max, at the adapt speeds. When off, the GPARAM's Exposure is used unchanged."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Status",
@@ -1514,7 +1514,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Auto_Exposure_Status_TT",
-      "Text": "The scene's mean is in the game's light units, before any exposure. If the image looks too dark or bright against the game, report these numbers with the map and time."
+      "Text": "The scene's mean is in the game's light units, before any exposure. If the image looks too dark or bright compared with the game, report these numbers with the map and time."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Bloom_Enable",
@@ -1522,7 +1522,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Bloom_Enable_TT",
-      "Text": "Where the GPARAM's Bloom group is on, blurs what is brighter than Glare Threshold over Glare Num Levels levels and adds it at Bloom Alpha."
+      "Text": "Where the GPARAM's Bloom group is on, blur what is brighter than Glare Threshold over Glare Num Levels levels, and add it at Bloom Alpha."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fxaa_Enable",
@@ -1530,7 +1530,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fxaa_Enable_TT",
-      "Text": "Smooths jagged edges after the tone map, with the GPARAM Anti-Alias group's FXAA values (Elden Ring's mapbase without map lighting). Used for every Anti-Alias Type but TAA's (5), and for that too when TAA is off."
+      "Text": "Smooth jagged edges after the tone map, with the GPARAM Anti-Alias group's FXAA values (Elden Ring's mapbase without map lighting). Used for every Anti-Alias Type except TAA (5), and for TAA too when TAA is off."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Taa_Enable",
@@ -1538,7 +1538,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Taa_Enable_TT",
-      "Text": "Where the GPARAM Anti-Alias group's type is TAA (5, Elden Ring's mapbase), the scene is drawn a sub-pixel off each frame over JitterCount frames and blended into a history, by Feedback Weight, less with depth, and sharpened by Sharpen Intensity. Smooths edges, grass and SSAO/SSR noise while the camera is still; replaces FXAA."
+      "Text": "Where the GPARAM Anti-Alias group's type is TAA (5, Elden Ring's mapbase), draw the scene a sub-pixel off each frame over JitterCount frames, blend it into a history by Feedback Weight (less with depth), and sharpen it by Sharpen Intensity. Smooths edges, grass and SSAO/SSR noise while the camera is still. Replaces FXAA."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Enable",
@@ -1546,7 +1546,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Volumetric_Fog_Enable_TT",
-      "Text": "Where the GPARAM's VolumetricFog group is on, hazes the scene with its height fog out to Far Depth (and to Fog End Depth with Enable Analytical Fog), lit by the Sky Light and Dir Light colors. Needs map lighting."
+      "Text": "Where the GPARAM's VolumetricFog group is on, haze the scene with its height fog out to Far Depth (and to Fog End Depth with Enable Analytical Fog), lit by the Sky Light and Dir Light colours. Needs map lighting."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Transparents_Enable",
@@ -1554,7 +1554,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Transparents_Enable_TT",
-      "Text": "Transparent flvers (water, glass, foliage cards) fog themselves at their own depth with the same fog, as they are drawn over the fogged scene. Alpha blended ones get the fog's light too; additive ones are only dimmed."
+      "Text": "Make transparent FLVERs (water, glass, foliage cards) fog themselves at their own depth with the same fog, because they are drawn over the fogged scene. Alpha-blended ones also get the fog's light; additive ones are only dimmed."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Shadows_Enable",
@@ -1562,7 +1562,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Shadows_Enable_TT",
-      "Text": "Shades the fog's sunlight with the sun's shadow maps, which gives shafts of shadow through gaps. Needs Shadows on."
+      "Text": "Shade the fog's sunlight with the sun's shadow maps, which creates shafts of shadow through gaps. Needs Shadows on."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Enable",
@@ -1570,7 +1570,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Enable_TT",
-      "Text": "In a weather whose WeatherParam wets things (Wet Time above 0), surfaces facing the sky darken towards the GPARAM Wet group's Override Albedo and turn glossier towards Override Shininess, by Albedo Rate and Shininess Rate; walls half as much. Needs a weather and Outdoor Weather."
+      "Text": "In a weather whose WeatherParam makes things wet (Wet Time above 0), surfaces facing the sky darken towards the GPARAM Wet group's Override Albedo and become glossier towards Override Shininess, by Albedo Rate and Shininess Rate; walls change half as much. Needs a weather and Outdoor Weather."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Enable",
@@ -1578,15 +1578,15 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Enable_TT",
-      "Text": "Keeps surfaces under roofs, arches and tree canopies dry, from a depth map of the scene seen straight down over 256 m round the camera. It is drawn again when the camera moves 32 m or the map's models change. Past the square, everything facing the sky is wet."
+      "Text": "Keep surfaces under roofs, arches and tree canopies dry, using a top-down depth map of the scene covering 256 m around the camera. It is redrawn when the camera moves 32 m or the map's models change. Outside that square, everything facing the sky is wet."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status",
-      "Text": "Rain mask: round x {0}, z {1}, drawn {2} times"
+      "Text": "Rain mask: around x {0}, z {1}, drawn {2} times"
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Wet_Rain_Mask_Status_TT",
-      "Text": "Where the map of what the rain reaches was last drawn round. The count should only go up as the camera moves 32 m or models load, not every frame."
+      "Text": "Where the map of what the rain reaches was last centred. The count should only increase when the camera moves 32 m or models load, not every frame."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Light_Shafts_Enable",
@@ -1594,7 +1594,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Light_Shafts_Enable_TT",
-      "Text": "Where the GPARAM's LightShaft group is on, rays fan out from the sun where the sky shows round it, colored by Sky Multiply Color and Sky Add Color, whose intensity (w) is 0 at many times of day. Needs map lighting."
+      "Text": "Where the GPARAM's LightShaft group is on, fan rays out from the sun where the sky shows around it, coloured by Sky Multiply Color and Sky Add Color, whose intensity (w) is 0 at many times of day. Needs map lighting."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Surface_View",
@@ -1602,7 +1602,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Surface_View_TT",
-      "Text": "Shows what the screen space effects read in place of the image: the normals, roughness and specular of opaque flvers as they are, or the indirect diffuse light, tone mapped. Pixels no flver drew are dark grey."
+      "Text": "Show what the screen space effects read instead of the image: the normals, roughness and specular of opaque FLVERs as they are, or the tone-mapped indirect diffuse light. Pixels that no FLVER drew are dark grey."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Surface_View_None",
@@ -1646,7 +1646,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Glow_Enable_TT",
-      "Text": "Where the GPARAM's Glow Filter is on (Elden Ring's mapbase, so every map), what surfaces give off themselves (emissive textures, magma) is blurred over Glow NumLevels levels and added round them, however bright the scene is. Only opaque models glow. Needs map lighting."
+      "Text": "Where the GPARAM's Glow Filter is on (Elden Ring's mapbase, so every map), blur what surfaces emit (emissive textures, magma) over Glow NumLevels levels and add it around them, however bright the scene is. Only opaque models glow. Needs map lighting."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Glow_Strength",
@@ -1654,7 +1654,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Glow_Strength_TT",
-      "Text": "The viewport's own scale on the glow, on top of the GPARAM's Blur RgbScale. 1 is the GPARAM as read."
+      "Text": "The viewport's own scale for the glow, on top of the GPARAM's Blur RgbScale. 1 is the GPARAM's value as read."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Bloom_Strength",
@@ -1662,7 +1662,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Bloom_Strength_TT",
-      "Text": "The viewport's own scale on the bloom, on top of the GPARAM's GlareBloom Alpha and the game's own scale (Sekiro 0.5, matched against the game). 1 is the game as matched. The game sets part of its bloom's strength in its code, which isn't known, so if a game's bloom looks too strong or weak, set this to match and report the value."
+      "Text": "The viewport's own scale for the bloom, on top of the GPARAM's GlareBloom Alpha and the game's own scale (Sekiro 0.5, matched against the game). 1 is the game as matched. The game sets part of its bloom strength in its code, which is unknown, so if a game's bloom looks too strong or weak, adjust this to match and report the value."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Density_Scale",
@@ -1670,7 +1670,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Density_Scale_TT",
-      "Text": "The viewport's own scale on the fog's density, on top of the GPARAM's (already divided by its GameScale, which Sekiro sets to 1-12) and the game's own scale (Sekiro 0.1, matched against the game). 1 is the game as matched. If a game's fog looks too thick or thin, set this to match and report the value, with the time of day and the game scale the Post Effects table shows."
+      "Text": "The viewport's own scale for the fog density, on top of the GPARAM's (already divided by its GameScale, which Sekiro sets to 1-12) and the game's own scale (Sekiro 0.1, matched against the game). 1 is the game as matched. If a game's fog looks too thick or thin, adjust this to match and report the value, with the time of day and the game scale shown in the Post Effects table."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssr_Enable",
@@ -1678,7 +1678,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssr_Enable_TT",
-      "Text": "Where the GPARAM's SSR group is on, glossy surfaces reflect what is on screen in place of the environment's reflection, with its reject thresholds, ray steps and fades (Elden Ring's maps all take mapbase's). Where a ray finds nothing, the environment's reflection stays. Water and glass, which are transparent, aren't reflective yet. Runs with or without map lighting."
+      "Text": "Where the GPARAM's SSR group is on, make glossy surfaces reflect what is on screen instead of the environment, with its reject thresholds, ray steps and fades (all Elden Ring maps use mapbase's). Where a ray finds nothing, the environment reflection stays. Water and glass, which are transparent, aren't reflective yet. Works with or without map lighting."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssr_Strength",
@@ -1686,7 +1686,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssr_Strength_TT",
-      "Text": "How much of the environment's reflection SSR replaces where its rays hit: 1 all of it, as read from the GPARAM, 0 none."
+      "Text": "How much of the environment reflection SSR replaces where its rays hit: 1 replaces all of it (as read from the GPARAM), and 0 none."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssao_Enable",
@@ -1694,7 +1694,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssao_Enable_TT",
-      "Text": "Darkens the ambient light in creases and where surfaces meet, with the GPARAM SSAO group's values (Elden Ring's maps all take mapbase's). Only the indirect light is taken away, so sunlit faces keep their sun. Runs with or without map lighting."
+      "Text": "Darken the ambient light in creases and where surfaces meet, with the GPARAM SSAO group's values (all Elden Ring maps use mapbase's). Only indirect light is reduced, so sunlit faces keep their sunlight. Works with or without map lighting."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssao_Strength",
@@ -1702,7 +1702,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Ssao_Strength_TT",
-      "Text": "The viewport's own scale on how much SSAO darkens, on top of the GPARAM's AO Scale and AO Offset. 1 is the GPARAM as read."
+      "Text": "The viewport's own scale for how much SSAO darkens, on top of the GPARAM's AO Scale and AO Offset. 1 is the GPARAM's value as read."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable",
@@ -1710,7 +1710,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Fog_Local_Lights_Enable_TT",
-      "Text": "Adds the map's lights near the camera to the fog, by Local Light Scale, over their range times Local Light Dist Scale."
+      "Text": "Add the map's lights near the camera to the fog, by Local Light Scale, over their range times Local Light Dist Scale."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Effects_Column_Effect",
@@ -1830,7 +1830,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Color_Grading_Enable_TT",
-      "Text": "Where the GPARAM's ColorGrading group is on, the image goes through the LUT its LutSourceId names, from the maps' mAA_cgrading textures, blending between the two LUTs either side of the time of day. Needs map lighting."
+      "Text": "Where the GPARAM's ColorGrading group is on, pass the image through the LUT named by its LutSourceId, from the maps' mAA_cgrading textures, blending between the two LUTs on either side of the time of day. Needs map lighting."
     },
     {
       "Key": "VIEWPORT_Rendering_Post_Row_Wet",
@@ -1842,7 +1842,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Action_Reset_Camera_Settings_TT",
-      "Text": "Puts the clipping distances, field of view, sensitivity, move speeds, pan sensitivity, orthographic size and oblique settings back to their defaults."
+      "Text": "Reset the clipping distances, field of view, sensitivity, move speeds, pan sensitivity, orthographic size and oblique settings to their defaults."
     },
     {
       "Key": "VIEWPORT_Menubar_Camera_Movement",
@@ -1858,7 +1858,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Map_Lights_Only",
-      "Text": "Game mode shows this game's maps with their BTL lights only:"
+      "Text": "In Game mode, this game's maps are shown with their BTL lights only:"
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Base_Light",
@@ -1866,7 +1866,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Base_Light_TT",
-      "Text": "How much of the viewport's sun and environment map ambient lights the map under its BTL lights, as this game's maps are shown with their BTL lights only. 0 leaves only the BTL lights; 1 is Editor mode's full base."
+      "Text": "How much of the viewport's sun and environment map ambient lights the map under its BTL lights, because this game's maps are shown with their BTL lights only. 0 leaves only the BTL lights; 1 is Editor mode's full base light."
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Open_Rendering_Tool",
@@ -1874,7 +1874,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Setting_Open_Rendering_Tool_TT",
-      "Text": "Opens the Viewport Rendering section of the tool window, which has every lighting, shadow, post effect and material setting."
+      "Text": "Open the Viewport Rendering section of the tool window, which has every lighting, shadow, post effect and material setting."
     },
     {
       "Key": "VIEWPORT_Menubar_Scene_Light_Direction_TT",
@@ -1882,15 +1882,15 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Scene_Direct_Light_Mult_TT",
-      "Text": "Multiplies the direct light: the sun and the other lights."
+      "Text": "Multiply the direct light: the sun and the other lights."
     },
     {
       "Key": "VIEWPORT_Menubar_Scene_Indirect_Light_Mult_TT",
-      "Text": "Multiplies the indirect light: the ambient and environment light."
+      "Text": "Multiply the indirect light: the ambient and environment light."
     },
     {
       "Key": "VIEWPORT_Menubar_Scene_Light_Brightness_TT",
-      "Text": "Multiplies the brightness of the whole scene."
+      "Text": "Multiply the brightness of the whole scene."
     },
     {
       "Key": "VIEWPORT_Rendering_Sun_Color",
@@ -1898,7 +1898,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Sun_Color_TT",
-      "Text": "The color of the sun."
+      "Text": "The sun's colour."
     },
     {
       "Key": "VIEWPORT_Rendering_Sun_Intensity",
@@ -1934,11 +1934,11 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Grass_Density_TT",
-      "Text": "How many grass blades are drawn. Changing it rebuilds the grass, so it applies when the slider is let go."
+      "Text": "How many grass blades are drawn. Changing it rebuilds the grass, so it applies when you release the slider."
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Intensity_From_Map",
-      "Text": "Map lighting gives the intensity."
+      "Text": "Map lighting sets the intensity."
     },
     {
       "Key": "VIEWPORT_Rendering_Map_Lighting_Disabled",
@@ -1946,7 +1946,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Materials_Game_Mode_Only",
-      "Text": "Editor render mode switches off everything but layer blending, the shader types, grass and collision opacity. Switch to Game mode to change the rest."
+      "Text": "Editor render mode turns off everything except layer blending, the shader types, grass and collision opacity. Switch to Game mode to change the rest."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Settings",
@@ -1962,7 +1962,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Status_TT",
-      "Text": "What the viewport is drawing right now. Click the eye to show or hide this section in every tab."
+      "Text": "What the viewport is currently drawing. Click the eye to show or hide this section in every tab."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Resolved_Values",
@@ -1970,7 +1970,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Resolved_Values_TT",
-      "Text": "Per loaded map, the values its GPARAMs give and the file each comes from. Click the eye to show or hide this section in every tab."
+      "Text": "For each loaded map, the values its GPARAMs give and the file each comes from. Click the eye to show or hide this section in every tab."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Debug",
@@ -2006,7 +2006,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_LightBank_Row_TT",
-      "Text": "The LightBank row the viewport is lit with: the sun (light 0), the fill lights (1 and 2), the specular colour and the hemisphere. By default the row most of the map's pieces use."
+      "Text": "The LightBank row that lights the viewport: the sun (light 0), the fill lights (1 and 2), the specular colour and the hemisphere. By default, the row most of the map's pieces use."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_ToneMapBank_Row",
@@ -2014,7 +2014,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_ToneMapBank_Row_TT",
-      "Text": "The ToneMapBank row the exposure, its adaptation and the bloom are read from. By default the row most of the map's pieces use."
+      "Text": "The ToneMapBank row for the exposure, its adaptation and the bloom. By default, the row most of the map's pieces use."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Most_Used",
@@ -2034,7 +2034,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_FogBank_Row_TT",
-      "Text": "The FogBank row the distance fog is read from: where it begins and ends, how thick it gets and its colour. By default the row most of the map's pieces use."
+      "Text": "The FogBank row for the distance fog: where it begins and ends, how thick it gets, and its colour. By default, the row most of the map's pieces use."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Distance_Fog",
@@ -2042,7 +2042,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Distance_Fog_TT",
-      "Text": "Draw the FogBank row's distance fog over the opaque draws. Demon's Souls' fog is often close (tens of meters), so it can hide much of a map at a distance."
+      "Text": "Draw the FogBank row's distance fog over the opaque draws. Demon's Souls' fog is often close (tens of metres), so it can hide much of a map at a distance."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Fog_Values",
@@ -2054,7 +2054,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Per_Part_TT",
-      "Text": "Light each map piece, object and character with the LightBank row its own LightID picks, as the game lights each part, rather than all of them with one row. The exposure, shadows, fog and tone correction stay the map's. Choosing a Light Bank row below lights everything with that row instead."
+      "Text": "Light each map piece, object and character with the LightBank row its own LightID picks, as the game lights each part, instead of lighting them all with one row. The exposure, shadows, fog and tone correction stay the map's. Choosing a Light Bank row below lights everything with that row instead."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Per_Part_Counts",
@@ -2074,7 +2074,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Env_Lighting_TT",
-      "Text": "Light the map's materials as the game's HemEnv shaders do (MTD g_LightingType 3): by the hemisphere and the LightBank row's env cubemaps from the area's mAA_9999.tpf, without the sun. Characters and equipment (g_LightingType 1) keep the row's three lights. Off, every material takes the sun."
+      "Text": "Light the map's materials like the game's HemEnv shaders (MTD g_LightingType 3): by the hemisphere and the LightBank row's env cubemaps from the area's mAA_9999.tpf, without the sun. Characters and equipment (g_LightingType 1) keep the row's three lights. When off, every material is lit by the sun."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Env_Values",
@@ -2086,7 +2086,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Point_Lights_TT",
-      "Text": "Light the viewport with the map's Light events, as the game does: each at the region whose index is its PointLightID, with the colour, strength and reach of the PointLightBank row its Point Light Bank ID names (-1 is no light). They share the BTL lights' camera radius and limit; a selected event or region lights wherever it is."
+      "Text": "Light the viewport with the map's Light events, as the game does: each at the region whose index is its PointLightID, with the colour, strength and reach of the PointLightBank row named by its Point Light Bank ID (-1 is no light). They share the BTL lights' camera radius and limit; a selected event or region lights wherever it is."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Env_Off",
@@ -2102,7 +2102,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_ShadowBank_Row_TT",
-      "Text": "The ShadowBank row the shadows are read from: their own light direction (not the sun's), how dark they are, and how far from the camera they reach. Demon's Souls' shadows are short, often ending 10 to 60 m away. By default the row most of the map's pieces use."
+      "Text": "The ShadowBank row for the shadows: their own light direction (not the sun's), how dark they are, and how far from the camera they reach. Demon's Souls' shadows are short, often ending 10 to 60 m away. By default, the row most of the map's pieces use."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_ToneCorrectBank_Row",
@@ -2110,7 +2110,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_ToneCorrectBank_Row_TT",
-      "Text": "The ToneCorrectBank row the colour correction is read from: brightness and contrast per channel, saturation and hue. By default the row most of the map's pieces use."
+      "Text": "The ToneCorrectBank row for the colour correction: brightness and contrast per channel, saturation and hue. By default, the row most of the map's pieces use."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Most_Used_All",
@@ -2118,7 +2118,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Most_Used_All_TT",
-      "Text": "Go back to the rows most of the map's pieces use, for every bank."
+      "Text": "Return every bank to the rows most of the map's pieces use."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_Tone_Correction",
@@ -2158,7 +2158,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Sun_TT",
-      "Text": "The viewport's own sun, used when map lighting doesn't give one."
+      "Text": "The viewport's own sun, used when map lighting doesn't provide one."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Multipliers",
@@ -2166,7 +2166,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Multipliers_TT",
-      "Text": "Scales applied on top of the light the scene is given."
+      "Text": "Scales applied on top of the scene's light."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Camera_Light",
@@ -2222,11 +2222,11 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Tone_Map_TT",
-      "Text": "How the HDR scene is brought down to the screen."
+      "Text": "How the HDR scene is mapped to the screen."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Post_Effects_TT",
-      "Text": "The screen effects the maps' GPARAMs ask for."
+      "Text": "The screen effects the maps' GPARAMs request."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Image",
@@ -2234,7 +2234,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Image_TT",
-      "Text": "Exposure, bloom, glow and color grading."
+      "Text": "Exposure, bloom, glow and colour grading."
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Anti_Aliasing",
@@ -2302,7 +2302,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Gparam_Source_TT",
-      "Text": "The Gparam Editor lights its map with the GPARAM selected in its file list, including unsaved edits. Pick the map in the Viewport Preview section. The weather and time of day are the Map Editor's, so both editors light a map alike."
+      "Text": "The Gparam Editor lights its map with the GPARAM selected in its file list, including unsaved edits. Pick the map in the Viewport Preview section. The weather and time of day are the Map Editor's, so both editors light a map the same way."
     },
     {
       "Key": "VIEWPORT_Rendering_Gparam_File",
@@ -2330,7 +2330,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Toggle_Active_Map_TT",
-      "Text": "Show the active map (the map the content tree shows and new objects go into) in the viewport overlay."
+      "Text": "Show the active map (the map shown in the content tree, where new objects go) in the viewport overlay."
     },
     {
       "Key": "VIEWPORT_Overlay_Active_Map",

@@ -6,7 +6,7 @@
     },
     {
       "Key": "TEXT_TextSearch_Header_Search_Filter_TT",
-      "Text": "The search term to filter by.\nCan use regular expressions."
+      "Text": "The search term to filter by.\nRegular expressions are supported."
     },
     {
       "Key": "TEXT_TextSearch_Header_Filter_Type",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXT_TextSearch_Header_Filter_Type_TT",
-      "Text": "Which text category the search will include."
+      "Text": "Which text category to search."
     },
     {
       "Key": "TEXT_TextSearch_Filter_Type_TT",
@@ -26,11 +26,11 @@
     },
     {
       "Key": "TEXT_TextSearch_Header_Match_Type_TT",
-      "Text": "Which element of a text entry is matched against."
+      "Text": "Which part of a text entry to match against."
     },
     {
       "Key": "TEXT_TextSearch_Match_Type_TT",
-      "Text": "The element of a text entry that is matched against."
+      "Text": "The part of a text entry to match against."
     },
     {
       "Key": "TEXT_TextSearch_Header_Options",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "TEXT_TextSearch_Checkbox_Ignore_Case_TT",
-      "Text": "Ignore case sensitivity if enabled."
+      "Text": "Ignore case when matching."
     },
     {
       "Key": "TEXT_TextSearch_Heder_Actions",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "TEXT_TextSearch_Action_Search_TT",
-      "Text": "Execute the text search with the specified parameters."
+      "Text": "Run the text search with the given settings."
     },
     {
       "Key": "TEXT_TextSearch_Action_Clear_Result",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "TEXT_TextSearch_Action_Clear_Result_TT",
-      "Text": "Clears the result list."
+      "Text": "Clear the result list."
     },
     {
       "Key": "TEXT_TextSearch_Action_Copy_Results",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "TEXT_TextSearch_Action_Copy_Results_TT",
-      "Text": "Copy the result list to clipboard."
+      "Text": "Copy the result list to the clipboard."
     },
     {
       "Key": "TEXT_TextSearch_Header_Results",
@@ -86,19 +86,19 @@
     },
     {
       "Key": "TEXT_TextSearch_Header_Results_TT",
-      "Text": "The results from a text search."
+      "Text": "The results of the text search."
     },
     {
       "Key": "TEXT_TextSearch_Already_Searched",
-      "Text": "No text entries found matching the filter."
+      "Text": "No text entries match the filter."
     },
     {
       "Key": "TEXT_TextSearch_No_Search_Term",
-      "Text": "No search term specified."
+      "Text": "No search term entered."
     },
     {
       "Key": "TEXT_TextSearch_Invalid_Regex",
-      "Text": "Invalid regex in search filter."
+      "Text": "The search filter regex isn't valid."
     },
     {
       "Key": "TEXT_TextSearch_No_Results_To_Copy",

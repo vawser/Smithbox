@@ -18,7 +18,7 @@
     },
     {
       "Key": "PARAM_ListCat_Action_Save_TT",
-      "Text": "Save the current changes made to categories."
+      "Text": "Save the changes to the categories."
     },
     {
       "Key": "PARAM_ListCat_Action_Restore",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "PARAM_ListCat_Action_Create_Entry_TT",
-      "Text": "Create a new category."
+      "Text": "Create a category."
     },
     {
       "Key": "PARAM_ListCat_Action_Edit_Entry",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PARAM_ListCat_NewEntry_Action_Finalize_TT",
-      "Text": "Finalize the creation of this new category."
+      "Text": "Create this category."
     },
     {
       "Key": "PARAM_ListCat_Entry_Options",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_ListCat_Checkbox_Force_Top_TT",
-      "Text": "If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle)."
+      "Text": "When on, this param category always appears at the top (in alphabetical order with other categories that have this setting)."
     },
     {
       "Key": "PARAM_ListCat_Checkbox_Force_Bottom",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PARAM_ListCat_Checkbox_Force_Bottom_TT",
-      "Text": "If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle)."
+      "Text": "When on, this param category always appears at the bottom (in alphabetical order with other categories that have this setting)."
     },
     {
       "Key": "PARAM_ListCat_Entry_Header_Parameters",
@@ -122,11 +122,11 @@
     },
     {
       "Key": "PARAM_ListCat_Add_Param_Target_TT",
-      "Text": "Add new param target input row."
+      "Text": "Add a param target input row."
     },
     {
       "Key": "PARAM_ListCat_Remove_Param_Target_TT",
-      "Text": "Remove last added param target input row."
+      "Text": "Remove the last added param target input row."
     },
     {
       "Key": "PARAM_ListCat_Reset_Param_Target",
@@ -134,11 +134,11 @@
     },
     {
       "Key": "PARAM_ListCat_Reset_Param_Target_TT",
-      "Text": "Reset param target input rows."
+      "Text": "Reset the param target input rows."
     },
     {
       "Key": "PARAM_ListCat_Param_Target_Include_TT",
-      "Text": "The param to include within this category."
+      "Text": "The param to include in this category."
     },
     {
       "Key": "PARAM_ListCat_EditEntry_Header",
@@ -154,11 +154,11 @@
     },
     {
       "Key": "PARAM_ListCat_EditEntry_Action_Finalize_TT",
-      "Text": "Finalize the editing of this category."
+      "Text": "Save the changes to this category."
     },
     {
       "Key": "PARAM_ListCat_Failed_Write",
-      "Text": "Failed to write project param categorie."
+      "Text": "Failed to write the project's param categories."
     }
   ]
 }

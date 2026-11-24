@@ -10,15 +10,15 @@
     },
     {
       "Key": "MAP_Properties_Toggle_Community_Names_TT",
-      "Text": "Toggle which field names are displayed in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle which field names the property editor shows.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAP_Properties_Go_To_TT",
-      "Text": "Go To: show the selected object in the Map Contents tree, opening its tree nodes and scrolling to it. With several selected, the first is shown. Its map becomes the active map if it isn't already."
+      "Text": "Go To: show the selected object in the Map Contents tree, expanding its tree nodes and scrolling to it. With several objects selected, the first is shown. Its map becomes the active map."
     },
     {
       "Key": "MAP_Properties_Havok_Editor_TT",
-      "Text": "Open in Havok Editor: show this collision part's collision file, {0}, in the Havok Editor. The first displayed collision type (Low, High, Fall Protection) the map has a file of is shown.\n\nUnsaved collision edits made in the Map Editor are not in the Havok Editor until the map is saved."
+      "Text": "Open in Havok Editor: show this collision part's collision file, {0}, in the Havok Editor. The first displayed collision type (Low, High, Fall Protection) that the map has a file for is shown.\n\nUnsaved collision edits made in the Map Editor don't appear in the Havok Editor until the map is saved."
     },
     {
       "Key": "MAP_Properties_Havok_Editor_Unavailable_TT",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "MAP_Properties_Havok_Editor_Navmesh_TT",
-      "Text": "Open in Havok Editor: show this navmesh entry's navmesh file, {0}, in the Havok Editor. It is the file the entry's faces are in: its own n or o file, or its quarter's q file.\n\nUnsaved navmesh edits made in the Map Editor are not in the Havok Editor until the map is saved."
+      "Text": "Open in Havok Editor: show this navmesh entry's navmesh file, {0}, in the Havok Editor. This is the file that holds the entry's faces: its own n or o file, or its quarter's q file.\n\nUnsaved navmesh edits made in the Map Editor don't appear in the Havok Editor until the map is saved."
     },
     {
       "Key": "MAP_Properties_Havok_Editor_Navmesh_Unavailable_TT",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "MAP_Properties_Toggle_Unknown_Field_TT",
-      "Text": "Toggle the display of unknown fields in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle unknown fields in the property editor.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAP_Properties_Toggle_Padding_Hide",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "MAP_Properties_Toggle_Padding_TT",
-      "Text": "Toggle the display of padding fields in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle padding fields in the property editor.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAP_Properties_Toggle_References_Show",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "MAP_Properties_Toggle_References_TT",
-      "Text": "Toggle the display of Referenced By and References To section in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the Referenced By and References To sections in the property editor.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

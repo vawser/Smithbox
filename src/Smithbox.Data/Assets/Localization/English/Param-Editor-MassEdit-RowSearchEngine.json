@@ -6,15 +6,15 @@
     },
     {
       "Key": "PARAM_RSE_Modified_TT",
-      "Text": "Selects rows which do not match the vanilla version, or are added. Ignores row name."
+      "Text": "Selects rows that differ from the vanilla version or are added. Ignores row names."
     },
     {
       "Key": "PARAM_RSE_AuxModified_TT",
-      "Text": "Selects rows which do not match the aux version, or are added. Ignores row name."
+      "Text": "Selects rows that differ from the auxiliary version or are added. Ignores row names."
     },
     {
       "Key": "PARAM_RSE_ModifiedFilter_TT",
-      "Text": "Selects modified rows which match the rules of the Modified Filter tool. Matches nothing when the filter is off or has no enabled rules."
+      "Text": "Selects modified rows that match the rules of the Modified Filter tool. Matches nothing when the filter is off or has no enabled rules."
     },
     {
       "Key": "PARAM_RSE_Named_TT",
@@ -22,19 +22,19 @@
     },
     {
       "Key": "PARAM_RSE_Selected_TT",
-      "Text": "Selects rows that are already manually selected."
+      "Text": "Selects rows that are already selected manually."
     },
     {
       "Key": "PARAM_RSE_Added_TT",
-      "Text": "Selects rows where the ID is not found in the vanilla param."
+      "Text": "Selects rows whose ID isn't in the vanilla param."
     },
     {
       "Key": "PARAM_RSE_Mergable",
-      "Text": "Selects rows which are not modified in the primary regulation or parambnd and there is exactly one equivalent row in another regulation or parambnd that is modified."
+      "Text": "Selects rows that aren't modified in the primary regulation or parambnd, and that have exactly one modified equivalent row in another regulation or parambnd."
     },
     {
       "Key": "PARAM_RSE_Conflicts_TT",
-      "Text": "Selects rows which, among all equivalents in the primary and additional regulations or parambnds, there is more than row 1 which is modified."
+      "Text": "Selects rows where more than one of the equivalents across the primary and additional regulations or parambnds is modified."
     },
     {
       "Key": "PARAM_RSE_ID_Hint_1",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "PARAM_RSE_ID_Hint",
-      "Text": "Selects rows whose ID matches the given regex"
+      "Text": "Selects rows whose ID matches the given regex."
     },
     {
       "Key": "PARAM_RSE_IdRange_Hint_1",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PARAM_RSE_Name_TT",
-      "Text": "Selects rows whose Name matches the given regex."
+      "Text": "Selects rows whose name matches the given regex."
     },
     {
       "Key": "PARAM_RSE_Prop_Hint_1",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "PARAM_RSE_Prop_Hint_TT",
-      "Text": "Selects rows where the specified field has a value that matches the given regex."
+      "Text": "Selects rows where the given field's value matches the given regex."
     },
     {
       "Key": "PARAM_RSE_PropRange_Hint_1",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PARAM_RSE_PropRange_TT",
-      "Text": "Selects rows where the specified field has a value that falls in the given numerical range"
+      "Text": "Selects rows where the given field's value is in the given numerical range."
     },
     {
       "Key": "PARAM_RSE_Positive_Hint_1",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "PARAM_RSE_Positive_TT",
-      "Text": "Selects rows where the specified field has a value that is a positive, non-zero number."
+      "Text": "Selects rows where the given field's value is a positive, non-zero number."
     },
     {
       "Key": "PARAM_RSE_Negative_Hint_1",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "PARAM_RSE_Negative_TT",
-      "Text": "Selects rows where the specified field has a value that is a negative, non-zero number."
+      "Text": "Selects rows where the given field's value is a negative, non-zero number."
     },
     {
       "Key": "PARAM_RSE_PropRef_Hint_1",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PARAM_RSE_PropRef_TT",
-      "Text": "Selects rows where the specified field that references another param has a value referencing a row whose name matches the given regex."
+      "Text": "Selects rows where the given field references a row (in another param) whose name matches the given regex."
     },
     {
       "Key": "PARAM_RSE_PropWhere_Hint_1",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "PARAM_RSE_PropWhere_TT",
-      "Text": "Selects rows where the specified field appears when the given cell/field search is given."
+      "Text": "Selects rows where the given field appears in the results of the given cell/field search."
     },
     {
       "Key": "PARAM_RSE_Fmg_Hint_1",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "PARAM_RSE_Fmg_TT",
-      "Text": "Selects rows which have an attached FMG and that FMG's text matches the given regex."
+      "Text": "Selects rows that have an attached FMG whose text matches the given regex."
     },
     {
       "Key": "PARAM_RSE_VanillaProp_Hint_1",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "PARAM_RSE_VanillaProp_TT",
-      "Text": "Selects rows where the vanilla equivilent of that row has a value for the given field that matches the given regex."
+      "Text": "Selects rows whose vanilla equivalent has a value for the given field that matches the given regex."
     },
     {
       "Key": "PARAM_RSE_VanillaPropRange_Hint_1",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PARAM_RSE_VanillaPropRange_TT",
-      "Text": "Selects rows where the vanilla equivilent of that row has a value for the given field that falls in the given numerical range."
+      "Text": "Selects rows whose vanilla equivalent has a value for the given field in the given numerical range."
     },
     {
       "Key": "PARAM_RSE_AuxProp_Hint_1",
@@ -182,11 +182,11 @@
     },
     {
       "Key": "PARAM_RSE_AuxProp_TT",
-      "Text": "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that matches the given regex.\nCan be used to determine if an aux row exists."
+      "Text": "Selects rows whose equivalent in the given regulation or parambnd has a value for the given field that matches the given regex.\nUse it to check whether an auxiliary row exists."
     },
     {
       "Key": "PARAM_RSE_AuxProp_Error_Missing_AuxBank",
-      "Text": "Unable to find auxbank: {0}"
+      "Text": "Couldn't find auxiliary bank: {0}"
     },
     {
       "Key": "PARAM_RSE_AuxPropRange_Hint_1",
@@ -206,11 +206,11 @@
     },
     {
       "Key": "PARAM_RSE_AuxPropRange_TT",
-      "Text": "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that falls in the given range."
+      "Text": "Selects rows whose equivalent in the given regulation or parambnd has a value for the given field in the given range."
     },
     {
       "Key": "PARAM_RSE_AuxPropRange_Error_Missing_AuxBank",
-      "Text": "Unable to find auxbank: {0}"
+      "Text": "Couldn't find auxiliary bank: {0}"
     },
     {
       "Key": "PARAM_RSE_SemiJoin_Hint_1",
@@ -230,15 +230,15 @@
     },
     {
       "Key": "PARAM_RSE_SemiJoin_TT",
-      "Text": "Selects all rows where the value of a given field is any of the values in the second given field found in the given param using the given row selector."
+      "Text": "Selects all rows where the given field's value is any of the values of the second given field, found in the given param with the given row selector."
     },
     {
       "Key": "PARAM_RSE_SemiJoin_Error_Cannot_Find_Param",
-      "Text": "Could not find param: {0}"
+      "Text": "Couldn't find param: {0}"
     },
     {
       "Key": "PARAM_RSE_SemiJoin_Error_Cannot_Find_Field",
-      "Text": "Could not find field: {0}"
+      "Text": "Couldn't find field: {0}"
     },
     {
       "Key": "PARAM_RSE_Unique_Hint_1",
@@ -246,11 +246,11 @@
     },
     {
       "Key": "PARAM_RSE_Unique_TT",
-      "Text": "Selects all rows where the value in the given field is unique."
+      "Text": "Selects all rows where the given field's value is unique."
     },
     {
       "Key": "PARAM_RSE_Unique_Error_Cannot_Find_Field",
-      "Text": "Could not find field: {0}"
+      "Text": "Couldn't find field: {0}"
     },
     {
       "Key": "PARAM_RSE_Default_Hint_1",
@@ -258,7 +258,7 @@
     },
     {
       "Key": "PARAM_RSE_Default_TT",
-      "Text": "Selects rows where either the ID or Name matches the given regex, except in strict/massedit mode."
+      "Text": "Selects rows whose ID or name matches the given regex, except in strict/massedit mode."
     }
   ]
 }

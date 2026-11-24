@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_Upgrader_Version_Mismatch_Hint",
-      "Text": "Project primary bank version is below current game version: {0} < {1} -- Open the Param Upgrader tool in the Tools window."
+      "Text": "The project's primary bank version is older than the current game version: {0} < {1}. Open the Param Upgrader tool in the Tools window."
     },
     {
       "Key": "PARAM_Upgrader_Hint",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "PARAM_Upgrader_No_Upgrade_Needed",
-      "Text": "No need to upgrade params."
+      "Text": "The params don't need upgrading."
     },
     {
       "Key": "PARAM_Upgrader_Action_Check_for_Conflicts",
@@ -66,19 +66,19 @@
     },
     {
       "Key": "PARAM_Upgrader_Log_Missing_Upgrader_Info",
-      "Text": "Failed to find load upgrader information."
+      "Text": "Failed to find the upgrader information."
     },
     {
       "Key": "PARAM_Upgrader_Log_Missing_Old_Regulation_File",
-      "Text": "Failed to find old regulation file."
+      "Text": "Failed to find the old regulation file."
     },
     {
       "Key": "PARAM_Upgrader_Upgraded_Primary_Bank_Params",
-      "Text": "Upgraded primary bank params successfully."
+      "Text": "Upgraded the primary bank params."
     },
     {
       "Key": "PARAM_Upgrader_Primary_Already_Upgraded",
-      "Text": "Primary bank is already fully upgraded."
+      "Text": "The primary bank is already fully upgraded."
     },
     {
       "Key": "PARAM_Upgrader_Failed_SpEffect_Store",
@@ -86,11 +86,11 @@
     },
     {
       "Key": "PARAM_Upgrader_Applied_MassEdit_Commands",
-      "Text": "Applied upgrader mass edit commands."
+      "Text": "Applied the upgrader mass edit commands."
     },
     {
       "Key": "PARAM_Upgrader_Conflict_Check_Passed",
-      "Text": "Checked for conflicts successfully."
+      "Text": "Conflict check passed."
     },
     {
       "Key": "PARAM_Upgrader_Conflict_Check_Failed",
@@ -98,11 +98,11 @@
     },
     {
       "Key": "PARAM_Upgrader_Deserialize_Upgrader_Info_Failed",
-      "Text": "Failed to deserialize Upgrader Information."
+      "Text": "Failed to read the upgrader information."
     },
     {
       "Key": "PARAM_Upgrader_Read_Upgrader_Info_Failed",
-      "Text": "Failed to load Upgrader Information."
+      "Text": "Failed to load the upgrader information."
     }
   ]
 }

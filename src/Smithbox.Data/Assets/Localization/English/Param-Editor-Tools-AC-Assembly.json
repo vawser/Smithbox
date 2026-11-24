@@ -1,28 +1,28 @@
 {
   "Entries": [
     { "Key": "PARAM_AcAssembly_Header", "Text": "AC Assembly" },
-    { "Key": "PARAM_AcAssembly_Hint", "Text": "Edits the design file of the selected CharaInitParam row: the file in param/asmparam/asmparam.designbnd named by the row's assemDataID. In game the design overrides the row's equip fields, so this is where the AC's parts, names and paint come from. Changes are saved with the params (or with Save Designs), and can be undone." },
+    { "Key": "PARAM_AcAssembly_Hint", "Text": "Edit the design file of the selected CharaInitParam row: the file in param/asmparam/asmparam.designbnd named by the row's assemDataID. In game, the design overrides the row's equip fields, so it sets the AC's parts, names and paint. Changes are saved with the params (or with Save Designs), and you can undo them." },
 
     { "Key": "PARAM_AcAssembly_Select_Row", "Text": "Select a CharaInitParam row." },
     { "Key": "PARAM_AcAssembly_Row", "Text": "Row: {0} {1}" },
     { "Key": "PARAM_AcAssembly_AssemDataID", "Text": "assemDataID: {0}" },
-    { "Key": "PARAM_AcAssembly_No_AssemDataID", "Text": "This row has no design: its assemDataID is not set. Create one below, or point the row at an existing design." },
-    { "Key": "PARAM_AcAssembly_No_Design", "Text": "There is no design file {0} in asmparam.designbnd. Some vanilla rows (such as 800 to 807) point at designs that aren't in it." },
+    { "Key": "PARAM_AcAssembly_No_AssemDataID", "Text": "This row has no design, because its assemDataID isn't set. Create one below, or point the row at an existing design." },
+    { "Key": "PARAM_AcAssembly_No_Design", "Text": "asmparam.designbnd has no design file {0}. Some vanilla rows (such as 800 to 807) point at designs that aren't in it." },
     { "Key": "PARAM_AcAssembly_File", "Text": "File: {0} ({1}, Assemble version {2})" },
     { "Key": "PARAM_AcAssembly_Uncompressed", "Text": "uncompressed" },
 
     { "Key": "PARAM_AcAssembly_Header_Create", "Text": "Create Design" },
-    { "Key": "PARAM_AcAssembly_Header_Create_TT", "Text": "Adds a design file for this row, copied from a template design. When the row has no assemDataID, it is set to the new design's ID." },
+    { "Key": "PARAM_AcAssembly_Header_Create_TT", "Text": "Add a design file for this row, copied from a template design. If the row has no assemDataID, it is set to the new design's ID." },
     { "Key": "PARAM_AcAssembly_New_ID", "Text": "Design ID" },
-    { "Key": "PARAM_AcAssembly_New_ID_TT", "Text": "The ID of the new design file, written to the row's assemDataID. Vanilla designs mostly use their row's ID, so that's suggested when it's free, else the next free ID after it." },
+    { "Key": "PARAM_AcAssembly_New_ID_TT", "Text": "The ID of the new design file, written to the row's assemDataID. Vanilla designs mostly use their row's ID, so that is suggested when free; otherwise, the next free ID after it." },
     { "Key": "PARAM_AcAssembly_New_ID_Invalid", "Text": "The design ID must be above 0." },
-    { "Key": "PARAM_AcAssembly_New_ID_Exists", "Text": "This ID already has a design: {0}. Pick another ID to create a new one, or link the row to it. Edits to a shared design change every row that uses it." },
+    { "Key": "PARAM_AcAssembly_New_ID_Exists", "Text": "This ID already has a design: {0}. Pick another ID to create a new one, or link the row to this one. Edits to a shared design change every row that uses it." },
     { "Key": "PARAM_AcAssembly_Link", "Text": "Link to Design" },
-    { "Key": "PARAM_AcAssembly_Link_TT", "Text": "Sets the row's assemDataID to this design without creating a file." },
-    { "Key": "PARAM_AcAssembly_Create_Link_TT", "Text": "Creates the design file from the template, with the parts taken from the row's equip fields, and sets the row's assemDataID to it. One undo step undoes both." },
-    { "Key": "PARAM_AcAssembly_Template_TT", "Text": "The design to copy. Its names, paint, decals and markings are kept; its parts are replaced by the row's equip fields." },
+    { "Key": "PARAM_AcAssembly_Link_TT", "Text": "Set the row's assemDataID to this design without creating a file." },
+    { "Key": "PARAM_AcAssembly_Create_Link_TT", "Text": "Create the design file from the template, with parts taken from the row's equip fields, and set the row's assemDataID to it. One undo step reverses both." },
+    { "Key": "PARAM_AcAssembly_Template_TT", "Text": "The design to copy. Its names, paint, decals and markings are kept, and its parts are replaced with the row's equip fields." },
     { "Key": "PARAM_AcAssembly_Create", "Text": "Create Design" },
-    { "Key": "PARAM_AcAssembly_Create_TT", "Text": "Creates the design file from the template, with the parts taken from the row's equip fields." },
+    { "Key": "PARAM_AcAssembly_Create_TT", "Text": "Create the design file from the template, with parts taken from the row's equip fields." },
     { "Key": "PARAM_AcAssembly_Filter_Hint", "Text": "Filter..." },
 
     { "Key": "PARAM_AcAssembly_Header_Names", "Text": "Names" },
@@ -51,13 +51,13 @@
     { "Key": "PARAM_AcAssembly_Empty", "Text": "(empty)" },
     { "Key": "PARAM_AcAssembly_Missing_Row", "Text": "(no such row)" },
     { "Key": "PARAM_AcAssembly_Fill_From_Row", "Text": "Fill Parts from Row" },
-    { "Key": "PARAM_AcAssembly_Fill_From_Row_TT", "Text": "Sets the parts from the row's equip fields: equip_Wep_Right/Left for the arm units, equip_Bolt/Arrow for the right/left back units, equip_Helm, equip_Armer, equip_Gaunt, equip_Leg, equip_Booster_Main, equip_Fcs, equip_Generator and equip_AssaultDrive." },
+    { "Key": "PARAM_AcAssembly_Fill_From_Row_TT", "Text": "Set the parts from the row's equip fields: equip_Wep_Right/Left for the arm units, equip_Bolt/Arrow for the right/left back units, equip_Helm, equip_Armer, equip_Gaunt, equip_Leg, equip_Booster_Main, equip_Fcs, equip_Generator and equip_AssaultDrive." },
     { "Key": "PARAM_AcAssembly_Other_Slots", "Text": "Other Slots" },
-    { "Key": "PARAM_AcAssembly_Other_Slots_TT", "Text": "The Assemble values whose use isn't known, as stored. In vanilla designs slots 12 and 13 hold the BackRail Weapon Loader rows (299300 and 299100), and 7 and 14 are empty." },
+    { "Key": "PARAM_AcAssembly_Other_Slots_TT", "Text": "The Assemble values whose use is unknown, as stored. In vanilla designs, slots 12 and 13 hold the BackRail Weapon Loader rows (299300 and 299100), and 7 and 14 are empty." },
     { "Key": "PARAM_AcAssembly_Slot_Index", "Text": "Slot {0}" },
 
     { "Key": "PARAM_AcAssembly_Header_Coloring", "Text": "Coloring" },
-    { "Key": "PARAM_AcAssembly_Header_Coloring_TT", "Text": "The paint in the design's Coloring section: 14 records of six colours each. Which part each record paints is not mapped yet. In vanilla designs records 6, 7, 9 and 10 are almost always the default grey." },
+    { "Key": "PARAM_AcAssembly_Header_Coloring_TT", "Text": "The paint in the design's Coloring section: 14 records of six colours each. Which part each record paints isn't mapped yet. In vanilla designs, records 6, 7, 9 and 10 are almost always the default grey." },
     { "Key": "PARAM_AcAssembly_Coloring_Record", "Text": "Record {0}" },
     { "Key": "PARAM_AcAssembly_Coloring_Record_TT", "Text": "The coloring record to edit." },
     { "Key": "PARAM_AcAssembly_Color_Main", "Text": "Main" },
@@ -67,13 +67,13 @@
     { "Key": "PARAM_AcAssembly_Color_Joint", "Text": "Joint" },
     { "Key": "PARAM_AcAssembly_Color_Device", "Text": "Device" },
     { "Key": "PARAM_AcAssembly_Extra_Colors", "Text": "Other Colours" },
-    { "Key": "PARAM_AcAssembly_Extra_Colors_TT", "Text": "The record's four further colours, at offset 48. Their meaning is not known." },
+    { "Key": "PARAM_AcAssembly_Extra_Colors_TT", "Text": "The record's four additional colours, at offset 48. Their meaning is unknown." },
     { "Key": "PARAM_AcAssembly_Extra_Color", "Text": "Colour {0}" },
     { "Key": "PARAM_AcAssembly_Copy_Record_To_All", "Text": "Copy Record to All" },
-    { "Key": "PARAM_AcAssembly_Copy_Record_To_All_TT", "Text": "Copies this whole record (its colours and other values) over the other 13." },
+    { "Key": "PARAM_AcAssembly_Copy_Record_To_All_TT", "Text": "Copy this whole record (its colours and other values) over the other 13." },
 
     { "Key": "PARAM_AcAssembly_Save", "Text": "Save Designs" },
-    { "Key": "PARAM_AcAssembly_Save_TT", "Text": "Writes asmparam.designbnd to the project. Saving the params does this too." },
+    { "Key": "PARAM_AcAssembly_Save_TT", "Text": "Write asmparam.designbnd to the project. Saving the params also does this." },
     { "Key": "PARAM_AcAssembly_Unsaved", "Text": "Unsaved changes" },
     { "Key": "PARAM_AcAssembly_Saved", "Text": "Saved {0}." },
 
@@ -84,9 +84,9 @@
     { "Key": "PARAM_AcAssembly_Action_Fill", "Text": "AC Assembly: fill design {0} from row" },
     { "Key": "PARAM_AcAssembly_Action_Coloring", "Text": "AC Assembly: change coloring of design {0}" },
 
-    { "Key": "PARAM_AcAssembly_Error_No_Binder", "Text": "Could not find {0} in the project or the game data." },
-    { "Key": "PARAM_AcAssembly_Error_Read_Binder", "Text": "Could not read asmparam.designbnd: {0}" },
-    { "Key": "PARAM_AcAssembly_Error_Write_Binder", "Text": "Could not write asmparam.designbnd: {0}" },
-    { "Key": "PARAM_AcAssembly_Error_Read_Design", "Text": "Could not read {0}: {1}" }
+    { "Key": "PARAM_AcAssembly_Error_No_Binder", "Text": "Couldn't find {0} in the project or the game data." },
+    { "Key": "PARAM_AcAssembly_Error_Read_Binder", "Text": "Couldn't read asmparam.designbnd: {0}" },
+    { "Key": "PARAM_AcAssembly_Error_Write_Binder", "Text": "Couldn't write asmparam.designbnd: {0}" },
+    { "Key": "PARAM_AcAssembly_Error_Read_Design", "Text": "Couldn't read {0}: {1}" }
   ]
 }

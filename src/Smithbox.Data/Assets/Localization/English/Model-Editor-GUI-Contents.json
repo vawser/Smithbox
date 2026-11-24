@@ -10,23 +10,23 @@
     },
     {
       "Key": "MODEL_Contents_No_Flver_Hint",
-      "Text": "No FLVER has been loaded yet."
+      "Text": "No FLVER is loaded."
     },
     {
       "Key": "MODEL_Contents_Has_Collision_Hint",
-      "Text": "This FLVER has in-built collision."
+      "Text": "This FLVER has built-in collision."
     },
     {
       "Key": "MODEL_Contents_Lacks_Collision_Hint",
-      "Text": "This FLVER lacks in-built collision."
+      "Text": "This FLVER has no built-in collision."
     },
     {
       "Key": "MODEL_Contents_Toggle_Show_All_TT",
-      "Text": "Force all model objects to be shown."
+      "Text": "Show all model objects."
     },
     {
       "Key": "MODEL_Contents_Toggle_Hide_All_TT",
-      "Text": "Force all model objects to be hidden."
+      "Text": "Hide all model objects."
     },
     {
       "Key": "MODEL_Contents_Context_Info_Header",
@@ -50,23 +50,23 @@
     },
     {
       "Key": "MODEL_Contents_Visibility_Button_TT",
-      "Text": "Toggle visibility state of this model object."
+      "Text": "Show or hide this model object."
     },
     {
       "Key": "MODEL_Contents_TreeState_Open",
-      "Text": "Tree Nodes are opened automatically."
+      "Text": "Tree nodes open automatically."
     },
     {
       "Key": "MODEL_Contents_TreeState_Closed",
-      "Text": "Tree Nodes require the user to open them."
+      "Text": "Tree nodes must be opened manually."
     },
     {
       "Key": "MODEL_Contents_TreeState_TT",
-      "Text": "Toggle the opening behavior of tree nodes.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle whether tree nodes open automatically.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MODEL_Contents_Node_Hierarchy_TT",
-      "Text": "Toggle how nodes are listed.\n\nCurrent Mode:\n{0}\n\nIn the hierarchy, drag a bone onto another bone to place it under that bone, or onto the Node header to place it at the top of the skeleton. Drag a dummy onto a bone to attach it to that bone or move it into the bone's space.\nBones and dummies keep their place in the model when moved."
+      "Text": "Toggle how nodes are listed.\n\nCurrent Mode:\n{0}\n\nIn the hierarchy, drag a bone onto another bone to place it under that bone, or onto the Node header to place it at the top of the skeleton. Drag a dummy onto a bone to attach it to that bone or move it into the bone's space.\nMoved bones and dummies keep their position in the model."
     },
     {
       "Key": "MODEL_Contents_Drop_Into_Own_Child",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "MODEL_Contents_Drop_Dummy_Attach_TT",
-      "Text": "The dummy follows this bone (its Attach Bone). It stays where it is."
+      "Text": "The dummy follows this bone (its Attach Bone) and keeps its position."
     },
     {
       "Key": "MODEL_Contents_Drop_Dummy_Parent",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "MODEL_Contents_Drop_Dummy_Parent_TT",
-      "Text": "The dummy's position is measured from this bone (its Parent Bone), and it is listed under it. It stays where it is.\n\nThe games place each dummy in a Dmypoly group bone, so this is rarely what is wanted."
+      "Text": "The dummy's position is measured from this bone (its Parent Bone), and it is listed under it. It keeps its position.\n\nThe games place each dummy in a Dmypoly group bone, so this is rarely what you want."
     },
     {
       "Key": "MODEL_Contents_Node_Hierarchy_On",

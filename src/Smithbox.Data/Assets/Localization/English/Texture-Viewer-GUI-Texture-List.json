@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXVIEW_TextureList_Context_Action_Export_TT",
-      "Text": "Export this file to your current export directory: {0}"
+      "Text": "Export this file to your export folder: {0}"
     },
     {
       "Key": "TEXVIEW_TextureList_Context_Action_Copy_Name",

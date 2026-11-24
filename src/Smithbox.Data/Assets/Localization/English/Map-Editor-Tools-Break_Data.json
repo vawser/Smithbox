@@ -22,15 +22,15 @@
     },
     {
       "Key": "MAP_Break_Data_No_MSB",
-      "Text": "Skipped the Break Data of {0}: its MSB could not be found."
+      "Text": "Skipped the Break Data of {0}: its MSB couldn't be found."
     },
     {
       "Key": "MAP_Break_Data_Unsaved_Map",
-      "Text": "{0} has unsaved changes, which are not included in its Break Data. Save the map and generate again."
+      "Text": "{0} has unsaved changes, which aren't included in its Break Data. Save the map and generate again."
     },
     {
       "Key": "MAP_Break_Data_Map_PASS",
-      "Text": "Generated the Break Data of {0}: {1} objects kept their vanilla data, {2} were given a copy from their model."
+      "Text": "Generated the Break Data of {0}: {1} objects kept their vanilla data, and {2} got a copy from their model."
     },
     {
       "Key": "MAP_Break_Data_Map_FAIL",

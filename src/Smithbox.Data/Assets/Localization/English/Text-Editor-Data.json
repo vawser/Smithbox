@@ -2,47 +2,47 @@
   "Entries": [
     {
       "Key": "TEXT_Data_FMG_Descriptor_Setup_PASS",
-      "Text": "Setup the FMG Descriptor data."
+      "Text": "Set up the FMG descriptor data."
     },
     {
       "Key": "TEXT_Data_FMG_Descriptor_Setup_FAIL",
-      "Text": "Failed to setup the FMG Descriptor data."
+      "Text": "Failed to set up the FMG descriptor data."
     },
     {
       "Key": "TEXT_Data_Incremental_Templates_Setup_PASS",
-      "Text": "Setup the Incremental Templates."
+      "Text": "Set up the incremental templates."
     },
     {
       "Key": "TEXT_Data_Incremental_Templates_Setup_FAIL",
-      "Text": "Failed to setup Incremental Templates."
+      "Text": "Failed to set up the incremental templates."
     },
     {
       "Key": "TEXT_Data_Primary_Bank_Setup_PASS",
-      "Text": "Setup the Primary Bank."
+      "Text": "Set up the primary bank."
     },
     {
       "Key": "TEXT_Data_Primary_Bank_Setup_FAIL",
-      "Text": "Failed to setup the Primary Bank."
+      "Text": "Failed to set up the primary bank."
     },
     {
       "Key": "TEXT_Data_Vanilla_Bank_Setup_PASS",
-      "Text": "Setup the Vanilla Bank."
+      "Text": "Set up the vanilla bank."
     },
     {
       "Key": "TEXT_Data_Vanilla_Bank_Setup_FAIL",
-      "Text": "Failed to setup the Vanilla Bank."
+      "Text": "Failed to set up the vanilla bank."
     },
     {
       "Key": "TEXT_Data_Aux_Bank_Setup_PASS",
-      "Text": "Setup the Auxiliary Bank for {0}."
+      "Text": "Set up the auxiliary bank for {0}."
     },
     {
       "Key": "TEXT_Data_Aux_Bank_Setup_FAIL",
-      "Text": "Failed to setup the Auxiliary Bank for {0}."
+      "Text": "Failed to set up the auxiliary bank for {0}."
     },
     {
       "Key": "TEXT_Data_Deserialize_Incremental_Template_FAIL",
-      "Text": "Failed to deserialize incremental template: {0}"
+      "Text": "Failed to read an incremental template: {0}"
     },
     {
       "Key": "TEXT_Data_Other_Languages_Preloaded",
@@ -50,19 +50,19 @@
     },
     {
       "Key": "TEXT_Data_Incremental_Template_Folder_Missing",
-      "Text": "Incremental template folder not found, so no templates are available: {0}"
+      "Text": "The incremental template folder wasn't found, so no templates are available: {0}"
     },
     {
       "Key": "TEXT_Data_Read_Incremental_Template_FAIL",
-      "Text": "Failed to read incremental template: {0}"
+      "Text": "Failed to read an incremental template: {0}"
     },
     {
       "Key": "TEXT_Data_Deserialize_FMG_Descriptors_FAIL",
-      "Text": "Failed to deserialize FMG descriptor registry: {0}"
+      "Text": "Failed to read the FMG descriptor registry: {0}"
     },
     {
       "Key": "TEXT_Data_Read_FMG_Descriptors_FAIL",
-      "Text": "Failed to read FMG descriptor registry: {0}"
+      "Text": "Failed to read the FMG descriptor registry: {0}"
     },
     {
       "Key": "TEXT_Data_Load_FMG_Container_FAIL",
@@ -74,11 +74,11 @@
     },
     {
       "Key": "TEXT_Data_Load_FMG_Wrapper_FAIL",
-      "Text": "FMG Wrapper load failed."
+      "Text": "Failed to load the FMG wrapper."
     },
     {
       "Key": "TEXT_Data_Find_FMG_Wrapper_FAIL",
-      "Text": "Failed to find FMG Wrapper file: {0}"
+      "Text": "Failed to find the FMG wrapper file: {0}"
     },
     {
       "Key": "TEXT_Data_Load_FMG_FAIL",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "TEXT_Data_Find_File_VFS_FAIL",
-      "Text": "Failed to find {0} from VFS for {1}."
+      "Text": "Failed to find {0} in VFS for {1}."
     },
     {
       "Key": "TEXT_Data_Write_File_FAIL",

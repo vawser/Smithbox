@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "TEXVIEW_Encoder_Log_No_GPU",
-      "Text": "No D3D11 device for the GPU texture encoder ({0}); BC6H/BC7 imports use the slower, lower quality CPU encoder."
+      "Text": "No D3D11 device for the GPU texture encoder ({0}), so BC6H/BC7 imports use the slower, lower-quality CPU encoder."
     },
     {
       "Key": "TEXVIEW_ToolWindow_View_Toggle_Import_Texture",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Hint",
-      "Text": "Replace a texture's image, add textures, or replace every texture of the selected TPF that has an image with its name in a folder. DDS, PNG, TGA, TIFF, BMP, JPEG and WEBP files can be imported. Every import can be undone."
+      "Text": "Replace a texture's image, add textures, or replace every texture in the selected TPF that has a matching image in a folder. You can import DDS, PNG, TGA, TIFF, BMP, JPEG and WEBP files. You can undo every import."
     },
     {
       "Key": "TEXVIEW_TexImport_No_TPF",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Selected_Header_TT",
-      "Text": "The texture that Replace Selected Texture replaces, and which new textures are added after."
+      "Text": "The texture that Replace Selected Texture replaces, and after which new textures are added."
     },
     {
       "Key": "TEXVIEW_TexImport_Selected_Info",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Format_Header_TT",
-      "Text": "The compression format the imported image is written in."
+      "Text": "The compression format to write the imported image in."
     },
     {
       "Key": "TEXVIEW_TexImport_Format_Keep",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Format_TT",
-      "Text": "Keep the format of the texture being replaced (recommended: the game expects it), or choose one. When the format changes, the TPF format byte is set to the one the game uses for it."
+      "Text": "Keep the replaced texture's format (recommended, because the game expects it), or choose one. When the format changes, the TPF format byte is set to the value the game uses for it."
     },
     {
       "Key": "TEXVIEW_TexImport_Mips_Header",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Mips_TT",
-      "Text": "Match: a texture with a full chain gets a full chain at the new size, one with fewer levels keeps its count. New textures get a full chain unless Top level only is chosen. A DDS file with the right format, size and mips is used as it is."
+      "Text": "Match: a texture with a full chain gets a full chain at the new size, and one with fewer levels keeps its count. New textures get a full chain unless Top level only is chosen. A DDS file with the right format, size and mips is used as is."
     },
     {
       "Key": "TEXVIEW_TexImport_Size_Header",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Match_Size_TT",
-      "Text": "Scale the imported image to the size of the texture it replaces. Off: the image keeps its own size. Block compressed formats need sizes divisible by 4."
+      "Text": "Scale the imported image to the size of the texture it replaces. When off, the image keeps its own size. Block-compressed formats need sizes divisible by 4."
     },
     {
       "Key": "TEXVIEW_TexImport_Encoder_Header",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Encoder_Pending",
-      "Text": "The GPU encoder starts with the first BC6H/BC7 import. Without a GPU, the quick CPU encoder is used."
+      "Text": "The GPU encoder starts with the first BC6H/BC7 import. Without a GPU, the fast CPU encoder is used."
     },
     {
       "Key": "TEXVIEW_TexImport_Actions_Header",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Replace_Folder_TT",
-      "Text": "Replace every texture of the selected TPF that has an image file with the same name in a folder (a .dds wins over other formats). Textures without a file are left as they are."
+      "Text": "Replace every texture in the selected TPF that has an image file with the same name in a folder (a .dds takes priority over other formats). Textures without a file are left unchanged."
     },
     {
       "Key": "TEXVIEW_TexImport_Progress_Header",
@@ -174,15 +174,15 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Status_No_Matches",
-      "Text": "None of the {0} textures has an image with its name in {1}."
+      "Text": "None of the {0} textures has a matching image in {1}."
     },
     {
       "Key": "TEXVIEW_TexImport_Status_Done",
-      "Text": "Applied {0} of {1} files ({2} on the GPU, {3} DDS files used as they are) in {4} ms."
+      "Text": "Applied {0} of {1} files ({2} on the GPU, {3} DDS files used as is) in {4} ms."
     },
     {
       "Key": "TEXVIEW_TexImport_Status_Cancelled",
-      "Text": "Cancelled: nothing was changed."
+      "Text": "Cancelled. Nothing was changed."
     },
     {
       "Key": "TEXVIEW_TexImport_Log_Failed",
@@ -234,7 +234,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Data_Header_TT",
-      "Text": "The selected texture's entry in the TPF. Each change is committed when the field loses focus, and can be undone."
+      "Text": "The selected texture's entry in the TPF. Each change is committed when you leave the field, and you can undo it."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Name",
@@ -242,7 +242,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Name_TT",
-      "Text": "The texture's name. Materials find their textures by name, so renaming one breaks the materials that use it."
+      "Text": "The texture's name. Materials find their textures by name, so renaming a texture breaks the materials that use it."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Format_Byte",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Format_Byte_TT",
-      "Text": "The TPF's format value for this texture. It should match the DDS format (for example 102 for BC7, 0 for BC1 in Elden Ring)."
+      "Text": "The TPF's format value for this texture. It should match the DDS format (for example, 102 for BC7 and 0 for BC1 in Elden Ring)."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Flags1",
@@ -266,7 +266,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Type_TT",
-      "Text": "Texture, cubemap, volume or array; it comes from the image."
+      "Text": "Texture, cubemap, volume or array. This comes from the image."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Mipmaps",
@@ -274,7 +274,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Mipmaps_TT",
-      "Text": "The TPF's mip count; it comes from the image."
+      "Text": "The TPF's mip count. This comes from the image."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_DDS_Size",
@@ -290,7 +290,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_DDS_Format_TT",
-      "Text": "The DXGI format in the image's DDS header, and whether it uses a DX10 or a legacy (DXT1/DXT5/ATI) header."
+      "Text": "The DXGI format in the image's DDS header, and whether it uses a DX10 or legacy (DXT1/DXT5/ATI) header."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_Data_Size",
@@ -306,7 +306,7 @@
     },
     {
       "Key": "TEXVIEW_Properties_Texture_FloatStruct_TT",
-      "Text": "Extra values some textures carry (Dark Souls III and Bloodborne GI textures, Dark Souls II skies). Their meaning is unknown."
+      "Text": "Extra values that some textures have (Dark Souls III and Bloodborne GI textures, Dark Souls II skies). Their meaning is unknown."
     },
     {
       "Key": "TEXVIEW_Properties_Texture_FloatStruct_Value",
@@ -334,7 +334,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Replace_Cell_TT",
-      "Text": "Put an image file into the selected layout cells, scaled to each cell's size. Only the sheet's blocks under the cells are re-encoded; every other icon keeps its bytes. One undoable step."
+      "Text": "Put an image file into the selected layout cells, scaled to each cell's size. Only the sheet's blocks under the cells are re-encoded, so every other icon keeps its bytes. One undoable step."
     },
     {
       "Key": "TEXVIEW_TexImport_Replace_Cells_Folder",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Replace_Cells_Folder_TT",
-      "Text": "Put every image of a folder into the layout cell with its name (MENU_ItemIcon_00123.png goes into that cell, or a cell sharing its rectangle), all as one undoable step. Cells without a file are left as they are."
+      "Text": "Put every image in a folder into the layout cell with its name (MENU_ItemIcon_00123.png goes into that cell, or a cell with the same rectangle), as one undoable step. Cells without a file are left unchanged."
     },
     {
       "Key": "TEXVIEW_TexImport_Dialog_Replace_Cell",
@@ -354,11 +354,11 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Status_No_Cell_Matches",
-      "Text": "None of the {0} cells has an image with its name in {1}."
+      "Text": "None of the {0} cells has a matching image in {1}."
     },
     {
       "Key": "TEXVIEW_TexImport_Cells_Changed",
-      "Text": "{0} changed while the cells were being encoded; nothing was applied. Try again."
+      "Text": "{0} changed while the cells were being encoded, so nothing was applied. Try again."
     },
     {
       "Key": "TEXVIEW_TexImport_New_Cells_Header",
@@ -366,7 +366,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_New_Cells_Header_TT",
-      "Text": "Add images to the sheet as new layout cells (e.g. new item icons). Each is placed in free space on whole blocks, so no other icon is re-encoded."
+      "Text": "Add images to the sheet as new layout cells (e.g. new item icons). Each one is placed in free space on whole blocks, so no other icon is re-encoded."
     },
     {
       "Key": "TEXVIEW_TexImport_Cell_Size_Image",
@@ -378,7 +378,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Cell_Size_TT",
-      "Text": "The size of each new cell: the image's own size, or the size of the selected (or last) cell, the image scaled to it."
+      "Text": "The size of each new cell: the image's own size, or the size of the selected (or last) cell, with the image scaled to it."
     },
     {
       "Key": "TEXVIEW_TexImport_Grow_Sheet",
@@ -386,7 +386,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Grow_Sheet_TT",
-      "Text": "When a new cell doesn't fit, double the sheet (height first, up to 8192). The existing pixels are copied as they are; the atlas size in the layout follows."
+      "Text": "When a new cell doesn't fit, double the sheet (height first, up to 8192). The existing pixels are copied unchanged, and the atlas size in the layout is updated."
     },
     {
       "Key": "TEXVIEW_TexImport_Insert_Cells",
@@ -394,7 +394,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Insert_Cells_TT",
-      "Text": "Add each image as a new cell named after its file (MENU_ItemIcon_12345.png), formatted like the selected (or last) cell, its pixels pasted into the sheet. One undoable step."
+      "Text": "Add each image as a new cell named after its file (MENU_ItemIcon_12345.png), formatted like the selected (or last) cell, with its pixels pasted into the sheet. One undoable step."
     },
     {
       "Key": "TEXVIEW_TexImport_Dialog_Insert_Cells",
@@ -414,7 +414,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Cell_Exists",
-      "Text": "{0}: a cell with this name already exists; use Replace Selected Cells to change it."
+      "Text": "{0}: a cell with this name already exists. Use Replace Selected Cells to change it."
     },
     {
       "Key": "TEXVIEW_TexImport_Cell_No_Space",
@@ -458,7 +458,7 @@
     },
     {
       "Key": "TEXVIEW_TpfCommands_Rename_Hint",
-      "Text": "The new name of {0}. Its folder and extension are kept. The game looks TPFs up by name, so a renamed TPF is only found by what refers to the new name."
+      "Text": "The new name of {0}. Its folder and extension are kept. The game finds TPFs by name, so only references to the new name will find a renamed TPF."
     },
     {
       "Key": "TEXVIEW_TpfCommands_Log_Copied",
@@ -470,7 +470,7 @@
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Paste_Textures_TT",
-      "Text": "Paste the copied textures into this TPF, after the selected texture. Names in use get a number added."
+      "Text": "Paste the copied textures into this TPF, after the selected texture. Names already in use get a number added."
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Add_TPF",
@@ -478,7 +478,7 @@
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Add_TPF_TT",
-      "Text": "Add a new, empty TPF to this container after this one, made like it (platform, compression, layout)."
+      "Text": "Add a new, empty TPF to this container after this one, set up the same way (platform, compression, layout)."
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Duplicate_TPF",
@@ -494,7 +494,7 @@
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Rename_TPF_TT",
-      "Text": "Change this TPF's name inside the container."
+      "Text": "Rename this TPF inside the container."
     },
     {
       "Key": "TEXVIEW_InternalFileList_Context_Delete_TPF",
@@ -510,7 +510,7 @@
     },
     {
       "Key": "TEXVIEW_TextureList_Context_Action_Copy_TT",
-      "Text": "Copy this texture, to paste it into another PC TPF (in any container or view)."
+      "Text": "Copy this texture, to paste into another PC TPF (in any container or view)."
     },
     {
       "Key": "TEXVIEW_TextureList_Context_Action_Paste",
@@ -526,7 +526,7 @@
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_Copy_As_TT",
-      "Text": "Write a copy of this container, with any unsaved edits, into the project under a new name, e.g. c2010_h to c2011_h for a new character. Files inside that carry the old name are renamed too."
+      "Text": "Write a copy of this container, including unsaved edits, into the project under a new name, e.g. c2010_h to c2011_h for a new character. Files inside that use the old name are also renamed."
     },
     {
       "Key": "TEXVIEW_ContainerList_Copy_As_Title",
@@ -542,7 +542,7 @@
     },
     {
       "Key": "TEXVIEW_Copy_Name_Taken",
-      "Text": "A texture container named {0} already exists; the editor finds containers by name."
+      "Text": "A texture container named {0} already exists. The editor finds containers by name."
     },
     {
       "Key": "TEXVIEW_Copy_Log_Copied_To_Project",

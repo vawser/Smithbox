@@ -1,13 +1,13 @@
 {
   "Entries": [
     { "Key": "MAP_CreateAtPoint_Tab", "Text": "Create at Point" },
-    { "Key": "MAP_CreateAtPoint_Hint", "Text": "Set up a part or region, then click in the viewport to place it. The first click puts a marker on the surface under the cursor, and a click on the marker creates the object there. Clicking elsewhere moves the marker, so a double-click places and creates in one go. Press Escape to stop placing." },
+    { "Key": "MAP_CreateAtPoint_Hint", "Text": "Set up a part or region, then click in the viewport to place it. The first click puts a marker on the surface under the cursor, and clicking the marker creates the object there. Clicking elsewhere moves the marker, so a double-click places and creates in one step. Press Escape to stop placing." },
 
     { "Key": "MAP_CreateAtPoint_Target_Map_Header", "Text": "Target Map" },
     { "Key": "MAP_CreateAtPoint_Target_Map_Header_TT", "Text": "The map to create the object in." },
     { "Key": "MAP_CreateAtPoint_No_Map", "Text": "Load a map, or pick a loaded one, to create objects in." },
-    { "Key": "MAP_CreateAtPoint_No_Type", "Text": "Pick a sub type to set up its properties." },
-    { "Key": "MAP_CreateAtPoint_Template_Failed", "Text": "A {0} could not be created." },
+    { "Key": "MAP_CreateAtPoint_No_Type", "Text": "Pick a subtype to set up its properties." },
+    { "Key": "MAP_CreateAtPoint_Template_Failed", "Text": "Couldn't create a {0}." },
 
     { "Key": "MAP_CreateAtPoint_Base_Type_Header", "Text": "Base Type" },
     { "Key": "MAP_CreateAtPoint_Base_Type_Header_TT", "Text": "The kind of map object to create. Only parts and regions have a position to place." },
@@ -19,14 +19,14 @@
     { "Key": "MAP_CreateAtPoint_Sub_Type_Header", "Text": "Sub Type" },
     { "Key": "MAP_CreateAtPoint_Sub_Type_Header_TT", "Text": "The type of part or region to create." },
     { "Key": "MAP_CreateAtPoint_Sub_Type_None", "Text": "None" },
-    { "Key": "MAP_CreateAtPoint_Sub_Type_TT", "Text": "Changing the type starts its properties afresh." },
+    { "Key": "MAP_CreateAtPoint_Sub_Type_TT", "Text": "Changing the type resets its properties." },
 
     { "Key": "MAP_CreateAtPoint_Placement_Header", "Text": "Placement" },
     { "Key": "MAP_CreateAtPoint_Placement_Header_TT", "Text": "How the object is placed and named." },
     { "Key": "MAP_CreateAtPoint_Height_Offset_Format", "Text": "Height Offset: %.2f m" },
-    { "Key": "MAP_CreateAtPoint_Height_Offset_TT", "Text": "Raises (or lowers) the object above the clicked point, along the world's up axis." },
+    { "Key": "MAP_CreateAtPoint_Height_Offset_TT", "Text": "Raise (or lower) the object above the clicked point, along the world's up axis." },
     { "Key": "MAP_CreateAtPoint_Keep_Placing", "Text": "Keep Placing" },
-    { "Key": "MAP_CreateAtPoint_Keep_Placing_TT", "Text": "Keep placing after an object is created, so several can be placed in a row." },
+    { "Key": "MAP_CreateAtPoint_Keep_Placing_TT", "Text": "Keep placing after an object is created, so you can place several in a row." },
     { "Key": "MAP_CreateAtPoint_Auto_Name", "Text": "Name Automatically" },
     { "Key": "MAP_CreateAtPoint_Auto_Name_TT", "Text": "Give each object a name the map doesn't use yet. Parts are named after their model (with a unique instance ID for Elden Ring and Nightreign), and regions after their type." },
     { "Key": "MAP_CreateAtPoint_Name_TT", "Text": "The name the object is created with." },
@@ -49,7 +49,7 @@
     { "Key": "MAP_CreateAtPoint_Status_Nothing_Hit", "Text": "Nothing was under the cursor to place the point on." },
     { "Key": "MAP_CreateAtPoint_Status_Created", "Text": "Created {0} in {1}." },
     { "Key": "MAP_CreateAtPoint_Place", "Text": "Place in Viewport" },
-    { "Key": "MAP_CreateAtPoint_Place_TT", "Text": "Start placing: click in the viewport to put down the point, then click it again to create the object." },
+    { "Key": "MAP_CreateAtPoint_Place_TT", "Text": "Start placing: click in the viewport to place the point, then click it again to create the object." },
     { "Key": "MAP_CreateAtPoint_Create", "Text": "Create at Point" },
     { "Key": "MAP_CreateAtPoint_Create_TT", "Text": "Create the object at the placed point." },
     { "Key": "MAP_CreateAtPoint_Cancel", "Text": "Cancel" },
@@ -58,14 +58,14 @@
     { "Key": "MAP_CreateAtPoint_Point_Header", "Text": "Point" },
     { "Key": "MAP_CreateAtPoint_Point_Header_TT", "Text": "The world position the object will be created at, before the height offset." },
     { "Key": "MAP_CreateAtPoint_Position_TT", "Text": "Drag or type to adjust the point." },
-    { "Key": "MAP_CreateAtPoint_Point_Not_Set", "Text": "No point has been placed." },
+    { "Key": "MAP_CreateAtPoint_Point_Not_Set", "Text": "No point is placed." },
 
     { "Key": "MAP_CreateAtPoint_Properties_Header", "Text": "Properties: {0}" },
     { "Key": "MAP_CreateAtPoint_Properties_Header_TT", "Text": "The properties each created object starts with. The position comes from the clicked point." },
     { "Key": "MAP_CreateAtPoint_Reset", "Text": "Reset Properties" },
-    { "Key": "MAP_CreateAtPoint_Reset_TT", "Text": "Set the properties back to the type's defaults." },
+    { "Key": "MAP_CreateAtPoint_Reset_TT", "Text": "Reset the properties to the type's defaults." },
     { "Key": "MAP_CreateAtPoint_From_Selection", "Text": "Copy from Selection" },
-    { "Key": "MAP_CreateAtPoint_From_Selection_TT", "Text": "Take the properties of a selected object of the same type." },
+    { "Key": "MAP_CreateAtPoint_From_Selection_TT", "Text": "Copy the properties of a selected object of the same type." },
 
     { "Key": "MAP_CreateAtPoint_Overlay_Place", "Text": "Click to place point" },
     { "Key": "MAP_CreateAtPoint_Overlay_Confirm", "Text": "Click to create {0}" }

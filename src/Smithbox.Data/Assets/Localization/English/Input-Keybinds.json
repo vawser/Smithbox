@@ -6,7 +6,7 @@
     },
     {
       "Key": "KEY_Move_Forward_TT",
-      "Text": "Within the viewport, this will move the camera forward."
+      "Text": "Move the camera forward in the viewport."
     },
     {
       "Key": "KEY_Move_Backward",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "KEY_Move_Backward_TT",
-      "Text": "Within the viewport, this will move the camera backward."
+      "Text": "Move the camera backward in the viewport."
     },
     {
       "Key": "KEY_Move_Left",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "KEY_Move_Left_TT",
-      "Text": "Within the viewport, this will move the camera to the left."
+      "Text": "Move the camera left in the viewport."
     },
     {
       "Key": "KEY_Move_Right",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "KEY_Move_Right_TT",
-      "Text": "Within the viewport, this will move the camera to the right."
+      "Text": "Move the camera right in the viewport."
     },
     {
       "Key": "KEY_Move_Up",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "KEY_Move_Up_TT",
-      "Text": "Within the viewport, this will move the camera upwards."
+      "Text": "Move the camera up in the viewport."
     },
     {
       "Key": "KEY_Move_Down",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "KEY_Move_Down_TT",
-      "Text": "Within the viewport, this will move the camera downwards."
+      "Text": "Move the camera down in the viewport."
     },
     {
       "Key": "KEY_Frame",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "KEY_Frame_TT",
-      "Text": "Within the viewport, this will frame the currently selected viewport object in the centre of the screen."
+      "Text": "Centre the selected viewport object on the screen."
     },
     {
       "Key": "KEY_Pull",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "KEY_Pull_TT",
-      "Text": "Within the viewport, this will move the currently selected viewport object to the camera's location."
+      "Text": "Move the selected viewport object to the camera's position."
     },
     {
       "Key": "KEY_Reset",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "KEY_Reset_TT",
-      "Text": "Within the viewport, this reset the camera's location."
+      "Text": "Reset the camera's position in the viewport."
     },
     {
       "Key": "KEY_Cycle_Gizmo_Translation_Mode",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "KEY_Cycle_Gizmo_Translation_Mode_TT",
-      "Text": "Within the viewport, this will switch the viewport object gizmo to 'Translate'."
+      "Text": "Switch the viewport gizmo to Translate."
     },
     {
       "Key": "KEY_Cycle_Gizmo_Rotation_Mode",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "KEY_Cycle_Gizmo_Rotation_Mode_TT",
-      "Text": "Within the viewport, this will switch the viewport object gizmo to 'Rotate'."
+      "Text": "Switch the viewport gizmo to Rotate."
     },
     {
       "Key": "KEY_Cycle_Gizmo_Scale_Mode",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "KEY_Cycle_Gizmo_Scale_Mode_TT",
-      "Text": "Within the viewport, this will switch the viewport object gizmo to 'Scale'."
+      "Text": "Switch the viewport gizmo to Scale."
     },
     {
       "Key": "KEY_Cycle_Gizmo_Origin_Mode",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "KEY_Cycle_Gizmo_Origin_Mode_TT",
-      "Text": "Within the viewport, this will switch the viewport object gizmo origin type."
+      "Text": "Switch the viewport gizmo's origin type."
     },
     {
       "Key": "KEY_Cycle_Gizmo_Space_Mode",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "KEY_Cycle_Gizmo_Space_Mode_TT",
-      "Text": "Within the viewport, this will switch the viewport object gizmo worldspace type."
+      "Text": "Switch the viewport gizmo between world and local space."
     },
     {
       "Key": "KEY_Cycle_Render_Outline_Mode",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "KEY_Cycle_Render_Outline_Mode_TT",
-      "Text": "Within the viewport, this will switch the currently selected viewport object's rendering type."
+      "Text": "Switch the rendering type of the selected viewport object."
     },
     {
       "Key": "KEY_Viewport_View_Top",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "KEY_Viewport_View_Top_TT",
-      "Text": "Within the viewport, look straight down, keeping the focus in view."
+      "Text": "Look straight down in the viewport, keeping the focus in view."
     },
     {
       "Key": "KEY_Viewport_View_Bottom",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "KEY_Viewport_View_Bottom_TT",
-      "Text": "Within the viewport, look straight up, keeping the focus in view."
+      "Text": "Look straight up in the viewport, keeping the focus in view."
     },
     {
       "Key": "KEY_Viewport_View_Front",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "KEY_Viewport_View_Front_TT",
-      "Text": "Within the viewport, look along +Z, keeping the focus in view."
+      "Text": "Look along +Z in the viewport, keeping the focus in view."
     },
     {
       "Key": "KEY_Viewport_View_Back",
@@ -150,7 +150,7 @@
     },
     {
       "Key": "KEY_Viewport_View_Back_TT",
-      "Text": "Within the viewport, look along -Z, keeping the focus in view."
+      "Text": "Look along -Z in the viewport, keeping the focus in view."
     },
     {
       "Key": "KEY_Viewport_View_Right",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "KEY_Viewport_View_Right_TT",
-      "Text": "Within the viewport, look along -X, keeping the focus in view."
+      "Text": "Look along -X in the viewport, keeping the focus in view."
     },
     {
       "Key": "KEY_Viewport_View_Left",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "KEY_Viewport_View_Left_TT",
-      "Text": "Within the viewport, look along +X, keeping the focus in view."
+      "Text": "Look along +X in the viewport, keeping the focus in view."
     },
     {
       "Key": "KEY_Viewport_Snap_View_To_Axis",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "KEY_Viewport_Snap_View_To_Axis_TT",
-      "Text": "Within the viewport, turn the camera to the world axis nearest to where it is looking."
+      "Text": "Turn the viewport camera to the world axis nearest its view direction."
     },
     {
       "Key": "KEY_Viewport_Cycle_View_Mode",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "KEY_Viewport_Cycle_View_Mode_TT",
-      "Text": "Within the viewport, switch between the Perspective, Orthographic and Oblique view modes."
+      "Text": "Switch the viewport between Perspective, Orthographic and Oblique view modes."
     },
     {
       "Key": "KEY_Viewport_Toggle_Slice",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "KEY_Viewport_Toggle_Slice_TT",
-      "Text": "Within an orthographic or oblique viewport, only draw a slab of depth around the focus."
+      "Text": "In an orthographic or oblique viewport, draw only a slab of depth around the focus."
     },
     {
       "Key": "KEY_Save",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "KEY_Save_TT",
-      "Text": "This will save the currently focused editor."
+      "Text": "Save the focused editor."
     },
     {
       "Key": "KEY_Undo",
@@ -206,7 +206,7 @@
     },
     {
       "Key": "KEY_Undo_TT",
-      "Text": "This will undo the most recent action."
+      "Text": "Undo the most recent action."
     },
     {
       "Key": "KEY_Redo",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "KEY_Redo_TT",
-      "Text": "This will redo the most recently undone action"
+      "Text": "Redo the most recently undone action."
     },
     {
       "Key": "KEY_Undo_Repeat",
@@ -222,7 +222,7 @@
     },
     {
       "Key": "KEY_Undo_Repeat_TT",
-      "Text": "This will undo the most recent action repeatly whilst held."
+      "Text": "Undo actions repeatedly while held."
     },
     {
       "Key": "KEY_Redo_Repeat",
@@ -230,7 +230,7 @@
     },
     {
       "Key": "KEY_Redo_Repeat_TT",
-      "Text": "This will redo the most recently undone action repeatly whilst held."
+      "Text": "Redo undone actions repeatedly while held."
     },
     {
       "Key": "KEY_Up",
@@ -238,7 +238,7 @@
     },
     {
       "Key": "KEY_Up_TT",
-      "Text": "Within a list, this will move the selection one space up."
+      "Text": "Move the selection up one place in a list."
     },
     {
       "Key": "KEY_Down",
@@ -246,7 +246,7 @@
     },
     {
       "Key": "KEY_Down_TT",
-      "Text": "Within a list, this will move the selection one space down."
+      "Text": "Move the selection down one place in a list."
     },
     {
       "Key": "KEY_Left",
@@ -254,7 +254,7 @@
     },
     {
       "Key": "KEY_Left_TT",
-      "Text": "Within a list, this will move the selection one space to the left."
+      "Text": "Move the selection left one place in a list."
     },
     {
       "Key": "KEY_Right",
@@ -262,7 +262,7 @@
     },
     {
       "Key": "KEY_Right_TT",
-      "Text": "Within a list, this will move the selection one space to the right."
+      "Text": "Move the selection right one place in a list."
     },
     {
       "Key": "KEY_Add",
@@ -270,7 +270,7 @@
     },
     {
       "Key": "KEY_Add_TT",
-      "Text": "This will add a new entry to the list."
+      "Text": "Add a new entry to the list."
     },
     {
       "Key": "KEY_Select_All",
@@ -278,7 +278,7 @@
     },
     {
       "Key": "KEY_Select_All_TT",
-      "Text": "This will select all entries within a list."
+      "Text": "Select all entries in a list."
     },
     {
       "Key": "KEY_Copy",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "KEY_Copy_TT",
-      "Text": "Copy the currently selected entries into a clipboard."
+      "Text": "Copy the selected entries to the clipboard."
     },
     {
       "Key": "KEY_Paste",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "KEY_Paste_TT",
-      "Text": "Paste the entries that reside within the clipboard into the list."
+      "Text": "Paste the entries on the clipboard into the list."
     },
     {
       "Key": "KEY_Duplicate",
@@ -302,7 +302,7 @@
     },
     {
       "Key": "KEY_Duplicate_TT",
-      "Text": "When an entry is selected, this will duplicate the entry within the list."
+      "Text": "Duplicate the selected entry in the list."
     },
     {
       "Key": "KEY_Delete",
@@ -310,7 +310,7 @@
     },
     {
       "Key": "KEY_Delete_TT",
-      "Text": "When an entry is selected, this will delete the entry from the list."
+      "Text": "Delete the selected entry from the list."
     },
     {
       "Key": "KEY_Jump",
@@ -318,7 +318,7 @@
     },
     {
       "Key": "KEY_Jump_TT",
-      "Text": "When an entry is selected, this will focus the entry to the centre of the user's screen."
+      "Text": "Scroll the selected entry to the centre of the screen."
     },
     {
       "Key": "KEY_Find",
@@ -334,7 +334,7 @@
     },
     {
       "Key": "KEY_Reorder_Up_TT",
-      "Text": "When in a list, the selected entry is moved up one space."
+      "Text": "Move the selected entry up one place in the list."
     },
     {
       "Key": "KEY_Reorder_Down",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "KEY_Reorder_Down_TT",
-      "Text": "When in a list, the selected entry is moved down one space."
+      "Text": "Move the selected entry down one place in the list."
     },
     {
       "Key": "KEY_Reorder_Top",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "KEY_Reorder_Top_TT",
-      "Text": "When in a list, the selected entry is moved to the top of the list."
+      "Text": "Move the selected entry to the top of the list."
     },
     {
       "Key": "KEY_Reorder_Bottom",
@@ -358,7 +358,7 @@
     },
     {
       "Key": "KEY_Reorder_Bottom_TT",
-      "Text": "When in a list, the selected entry is moved to the bottom of the list."
+      "Text": "Move the selected entry to the bottom of the list."
     },
     {
       "Key": "KEY_Apply_to_All",
@@ -366,7 +366,7 @@
     },
     {
       "Key": "KEY_Apply_to_All_TT",
-      "Text": "When in a list, holding this button will cause the action to apply to all entries."
+      "Text": "Hold this key in a list to apply the action to all entries."
     },
     {
       "Key": "KEY_Toggle_Tools_Menu",
@@ -374,7 +374,7 @@
     },
     {
       "Key": "KEY_Toggle_Tools_Menu_TT",
-      "Text": "Toggle the visibility of the Tools menu within the current editor."
+      "Text": "Show or hide the Tools menu in the current editor."
     },
     {
       "Key": "KEY_MapEditor_Toggle_World_Map_Menu",
@@ -382,7 +382,7 @@
     },
     {
       "Key": "KEY_MapEditor_Toggle_World_Map_Menu_TT",
-      "Text": "Toggle the visibility of the Map Information window (world map and Map Information Editor)."
+      "Text": "Show or hide the Map Information window (world map and Map Information Editor)."
     },
     {
       "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level",
@@ -390,7 +390,7 @@
     },
     {
       "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level_TT",
-      "Text": "Resets the zoom level within the World Map tool."
+      "Text": "Reset the zoom level in the World Map tool."
     },
     {
       "Key": "KEY_MapEditor_Create_Map_Object",
@@ -398,7 +398,7 @@
     },
     {
       "Key": "KEY_MapEditor_Create_Map_Object_TT",
-      "Text": "Creates a new map object."
+      "Text": "Create a new map object."
     },
     {
       "Key": "KEY_MapEditor_Duplicate_To_Map",
@@ -406,7 +406,7 @@
     },
     {
       "Key": "KEY_MapEditor_Duplicate_To_Map_TT",
-      "Text": "Opens the 'Duplicate to Map' menu."
+      "Text": "Open the Duplicate to Map menu."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Raise",
@@ -414,7 +414,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Raise_TT",
-      "Text": "While editing collision with the Collision Editor, switches the brush to Raise."
+      "Text": "Switch the Collision Editor brush to Raise while editing collision."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Lower",
@@ -422,7 +422,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Lower_TT",
-      "Text": "While editing collision with the Collision Editor, switches the brush to Lower."
+      "Text": "Switch the Collision Editor brush to Lower while editing collision."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Drag",
@@ -430,7 +430,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Drag_TT",
-      "Text": "While editing collision with the Collision Editor, switches the brush to Drag."
+      "Text": "Switch the Collision Editor brush to Drag while editing collision."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Smooth",
@@ -438,7 +438,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Smooth_TT",
-      "Text": "While editing collision with the Collision Editor, switches the brush to Smooth."
+      "Text": "Switch the Collision Editor brush to Smooth while editing collision."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Paint_Material",
@@ -446,7 +446,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Paint_Material_TT",
-      "Text": "While painting collision materials with the Collision Editor, switches the brush to Paint."
+      "Text": "Switch the Collision Editor brush to Paint while painting collision materials."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Pick_Material",
@@ -454,7 +454,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Pick_Material_TT",
-      "Text": "While painting collision materials with the Collision Editor, switches the brush to Pick, which takes the material of the face clicked."
+      "Text": "Switch the Collision Editor brush to Pick while painting collision materials. Pick takes the material of the clicked face."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Select_Material",
@@ -462,7 +462,7 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Select_Material_TT",
-      "Text": "While painting collision materials with the Collision Editor, switches the brush to Select, which selects the face clicked so its hit material ID can be edited."
+      "Text": "Switch the Collision Editor brush to Select while painting collision materials. Select selects the clicked face so you can edit its hit material ID."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Raise",
@@ -470,7 +470,7 @@
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Raise_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Raise."
+      "Text": "Switch the brush to Raise while editing navmesh vertices in the Navigation Editor's Edit tab."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Lower",
@@ -478,7 +478,7 @@
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Lower_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Lower."
+      "Text": "Switch the brush to Lower while editing navmesh vertices in the Navigation Editor's Edit tab."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Drag",
@@ -486,7 +486,7 @@
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Drag_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Drag."
+      "Text": "Switch the brush to Drag while editing navmesh vertices in the Navigation Editor's Edit tab."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Smooth",
@@ -494,7 +494,7 @@
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Smooth_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Smooth."
+      "Text": "Switch the brush to Smooth while editing navmesh vertices in the Navigation Editor's Edit tab."
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Jump",
@@ -502,7 +502,7 @@
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Jump_TT",
-      "Text": "While walking in first person, jumps. Walking uses the viewport movement keys."
+      "Text": "Jump while walking in first person. Walking uses the viewport movement keys."
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Run",
@@ -510,7 +510,7 @@
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Run_TT",
-      "Text": "While walking in first person, runs while held."
+      "Text": "Run while held, when walking in first person."
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Release",
@@ -518,7 +518,7 @@
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Release_TT",
-      "Text": "While walking in first person, gives the mouse back to the editor and pauses. Pressed again while paused, leaves first person. Click in the viewport to carry on walking."
+      "Text": "While walking in first person, release the mouse to the editor and pause. Press again while paused to leave first person. Click in the viewport to resume walking."
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Noclip",
@@ -526,7 +526,7 @@
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Noclip_TT",
-      "Text": "While walking in first person, turns flying through walls on or off. In noclip the player flies where the camera looks, and Jump rises. Turning it off drops the player from where they are, if there's room."
+      "Text": "While walking in first person, toggle flying through walls. In noclip, the player flies where the camera looks, and Jump rises. Turning it off drops the player from their current position, if there's room."
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Teleport",
@@ -534,7 +534,7 @@
     },
     {
       "Key": "KEY_MapEditor_FirstPerson_Teleport_TT",
-      "Text": "While walking in first person, moves the player to where the crosshair points: onto the ground there, or onto the ground below if it points at a wall."
+      "Text": "While walking in first person, move the player to where the crosshair points: onto the ground there, or onto the ground below if it points at a wall."
     },
     {
       "Key": "KEY_LuaEditor_FirstPerson_Roll",
@@ -542,7 +542,7 @@
     },
     {
       "Key": "KEY_LuaEditor_FirstPerson_Roll_TT",
-      "Text": "While walking as the target in the Lua Editor's First Person Mode, rolls the way you move. The roll reaches the AI as the First Person Mode tool sets it."
+      "Text": "While walking as the target in the Lua Editor's First Person Mode, roll in the direction you're moving. The AI sees the roll as the First Person Mode tool sets it."
     },
     {
       "Key": "KEY_LuaEditor_FirstPerson_Estus",
@@ -550,7 +550,7 @@
     },
     {
       "Key": "KEY_LuaEditor_FirstPerson_Estus_TT",
-      "Text": "While walking as the target in the Lua Editor's First Person Mode, drinks an estus flask. It reaches the AI as the First Person Mode tool sets it (UseItem by default)."
+      "Text": "While walking as the target in the Lua Editor's First Person Mode, drink an estus flask. The AI sees it as the First Person Mode tool sets it (UseItem by default)."
     },
     {
       "Key": "KEY_MapEditor_Rotate_X_Axis",
@@ -558,7 +558,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_X_Axis_TT",
-      "Text": "Rotates the selection one increment on the positive X-axis."
+      "Text": "Rotate the selection one increment on the positive X axis."
     },
     {
       "Key": "KEY_MapEditor_Rotate_Y_Axis",
@@ -566,7 +566,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Y_Axis_TT",
-      "Text": "Rotates the selection one increment on the positive Y-axis."
+      "Text": "Rotate the selection one increment on the positive Y axis."
     },
     {
       "Key": "KEY_MapEditor_Rotate_Pivot_Y_Axis",
@@ -574,7 +574,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Pivot_Y_Axis_TT",
-      "Text": "Pivots the selection one increment on the positive Y-axis."
+      "Text": "Pivot the selection one increment on the positive Y axis."
     },
     {
       "Key": "KEY_MapEditor_Rotate_Minus_X_Axis",
@@ -582,7 +582,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Minus_X_Axis_TT",
-      "Text": "Rotates the selection one increment on the negative X-axis."
+      "Text": "Rotate the selection one increment on the negative X axis."
     },
     {
       "Key": "KEY_MapEditor_Rotate_Minus_Y_Axis",
@@ -590,7 +590,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Minus_Y_Axis_TT",
-      "Text": "Rotates the selection one increment on the negative Y-axis."
+      "Text": "Rotate the selection one increment on the negative Y axis."
     },
     {
       "Key": "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis",
@@ -598,7 +598,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis_TT",
-      "Text": "Pivots the selection one increment on the negative Y-axis."
+      "Text": "Pivot the selection one increment on the negative Y axis."
     },
     {
       "Key": "KEY_MapEditor_Rotate_Fixed_Angle",
@@ -606,7 +606,7 @@
     },
     {
       "Key": "KEY_MapEditor_Rotate_Fixed_Angle_TT",
-      "Text": "Rotates the selection by the configured set angle."
+      "Text": "Rotate the selection by the configured angle."
     },
     {
       "Key": "KEY_MapEditor_Reset_Rotation",
@@ -614,7 +614,7 @@
     },
     {
       "Key": "KEY_MapEditor_Reset_Rotation_TT",
-      "Text": "Resets the selection's rotation to <0,0,0>"
+      "Text": "Reset the selection's rotation to <0,0,0>."
     },
     {
       "Key": "KEY_MapEditor_Scramble",
@@ -622,7 +622,7 @@
     },
     {
       "Key": "KEY_MapEditor_Scramble_TT",
-      "Text": "Applies the scramble parameters to the selection."
+      "Text": "Apply the scramble parameters to the selection."
     },
     {
       "Key": "KEY_MapEditor_Replicate",
@@ -630,7 +630,7 @@
     },
     {
       "Key": "KEY_MapEditor_Replicate_TT",
-      "Text": "Applies the replicate parameters to the selection."
+      "Text": "Apply the replicate parameters to the selection."
     },
     {
       "Key": "KEY_MapEditor_Make_Dummy_Object",
@@ -638,7 +638,7 @@
     },
     {
       "Key": "KEY_MapEditor_Make_Dummy_Object_TT",
-      "Text": "Makes the selection a DummyObject or DummyAsset (causes information loss)."
+      "Text": "Make the selection a DummyObject or DummyAsset. Some information is lost."
     },
     {
       "Key": "KEY_MapEditor_Make_Normal_Object",
@@ -646,7 +646,7 @@
     },
     {
       "Key": "KEY_MapEditor_Make_Normal_Object_TT",
-      "Text": "Makes the selection an Object or Asset."
+      "Text": "Make the selection an Object or Asset."
     },
     {
       "Key": "KEY_MapEditor_Enable_Game_Presence_Object",
@@ -654,7 +654,7 @@
     },
     {
       "Key": "KEY_MapEditor_Enable_Game_Presence_TT",
-      "Text": "Enables the Game Presence boolean for the selection."
+      "Text": "Enable Game Presence for the selection."
     },
     {
       "Key": "KEY_MapEditor_Disable_Game_Presence_Object",
@@ -662,7 +662,7 @@
     },
     {
       "Key": "KEY_MapEditor_Disable_Game_Presence_TT",
-      "Text": "Disables the Game Presence boolean for the selection."
+      "Text": "Disable Game Presence for the selection."
     },
     {
       "Key": "KEY_MapEditor_Visibility_Flip",
@@ -670,7 +670,7 @@
     },
     {
       "Key": "KEY_MapEditor_Visibility_Flip_TT",
-      "Text": "Flip the current visibility state for the selection."
+      "Text": "Flip the visibility of the selection."
     },
     {
       "Key": "KEY_MapEditor_Visibility_Enable",
@@ -678,7 +678,7 @@
     },
     {
       "Key": "KEY_MapEditor_Visibility_Enable_TT",
-      "Text": "Forces the selection to be visible."
+      "Text": "Make the selection visible."
     },
     {
       "Key": "KEY_MapEditor_Visibility_Disable",
@@ -686,7 +686,7 @@
     },
     {
       "Key": "KEY_MapEditor_Visibility_Disable_TT",
-      "Text": "Forces the selection to be invisible."
+      "Text": "Make the selection invisible."
     },
     {
       "Key": "KEY_MapEditor_Global_Visibility_Flip",
@@ -694,7 +694,7 @@
     },
     {
       "Key": "KEY_MapEditor_Global_Visibility_Flip_TT",
-      "Text": "Flip the current visibility state for all map objects."
+      "Text": "Flip the visibility of all map objects."
     },
     {
       "Key": "KEY_MapEditor_Global_Visibility_Enable",
@@ -702,7 +702,7 @@
     },
     {
       "Key": "KEY_MapEditor_Global_Visibility_Enable_TT",
-      "Text": "Forces all map objects to be visible."
+      "Text": "Make all map objects visible."
     },
     {
       "Key": "KEY_MapEditor_Global_Visibility_Disable",
@@ -710,7 +710,7 @@
     },
     {
       "Key": "KEY_MapEditor_Global_Visibility_Disable_TT",
-      "Text": "Forces all map objects to be invisible."
+      "Text": "Make all map objects invisible."
     },
     {
       "Key": "KEY_MapEditor_Configure_Grid_Placement",
@@ -718,7 +718,7 @@
     },
     {
       "Key": "KEY_MapEditor_Configure_Grid_Placement_TT",
-      "Text": "Toggle the Grid Placement menu."
+      "Text": "Show or hide the Grid Placement menu."
     },
     {
       "Key": "KEY_MapEditor_Cycle_Selected_Grid_Type",
@@ -726,7 +726,7 @@
     },
     {
       "Key": "KEY_MapEditor_Cycle_Selected_Grid_Type_TT",
-      "Text": "Cycle through which grid the grid placement tool moves the selection to."
+      "Text": "Cycle which grid the grid placement tool moves the selection to."
     },
     {
       "Key": "KEY_MapEditor_Move_to_Primary_Grid",
@@ -734,7 +734,7 @@
     },
     {
       "Key": "KEY_MapEditor_Move_to_Primary_Grid_TT",
-      "Text": "Moves the selection to the primary grid (based on the grid placment parameters)."
+      "Text": "Move the selection to the primary grid, using the grid placement parameters."
     },
     {
       "Key": "KEY_MapEditor_Move_to_Secondary_Grid",
@@ -742,7 +742,7 @@
     },
     {
       "Key": "KEY_MapEditor_Move_to_Secondary_Grid_TT",
-      "Text": "Moves the selection to the secondary grid (based on the grid placment parameters)."
+      "Text": "Move the selection to the secondary grid, using the grid placement parameters."
     },
     {
       "Key": "KEY_MapEditor_Move_to_Tertiary_Grid",
@@ -750,7 +750,7 @@
     },
     {
       "Key": "KEY_MapEditor_Move_to_Tertiary_Grid_TT",
-      "Text": "Moves the selection to the tertiary grid (based on the grid placment parameters)."
+      "Text": "Move the selection to the tertiary grid, using the grid placement parameters."
     },
     {
       "Key": "KEY_MapEditor_SelectAll_Configurable",
@@ -766,7 +766,7 @@
     },
     {
       "Key": "KEY_MapEditor_SelectAll_ObjectType_TT",
-      "Text": "Select all map objects that have the same object type as the current selection."
+      "Text": "Select all map objects with the same object type as the selection."
     },
     {
       "Key": "KEY_MapEditor_SelectAll_ModelName",
@@ -774,7 +774,7 @@
     },
     {
       "Key": "KEY_MapEditor_SelectAll_ModelName_TT",
-      "Text": "Select all map objects that have the same model name as the current selection."
+      "Text": "Select all map objects with the same model name as the selection."
     },
     {
       "Key": "KEY_MapEditor_SelectAll_Ceremony",
@@ -782,7 +782,7 @@
     },
     {
       "Key": "KEY_MapEditor_SelectAll_Ceremony_TT",
-      "Text": "Select all map objects that have the same ceremony layer as the current selection."
+      "Text": "Select all map objects with the same ceremony layer as the selection."
     },
     {
       "Key": "KEY_MapEditor_Create_Selection_Group",
@@ -790,7 +790,7 @@
     },
     {
       "Key": "KEY_MapEditor_Create_Selection_Group_TT",
-      "Text": "Automatically create a selection group from the current selection."
+      "Text": "Create a selection group from the selection."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_0",
@@ -798,7 +798,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_0_TT",
-      "Text": "Select the map objects in a group with the Group 0 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 0 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_1",
@@ -806,7 +806,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_1_TT",
-      "Text": "Select the map objects in a group with the Group 1 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 1 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_2",
@@ -814,7 +814,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_2_TT",
-      "Text": "Select the map objects in a group with the Group 2 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 2 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_3",
@@ -822,7 +822,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_3_TT",
-      "Text": "Select the map objects in a group with the Group 3 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 3 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_4",
@@ -830,7 +830,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_4_TT",
-      "Text": "Select the map objects in a group with the Group 4 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 4 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_5",
@@ -838,7 +838,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_5_TT",
-      "Text": "Select the map objects in a group with the Group 5 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 5 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_6",
@@ -846,7 +846,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_6_TT",
-      "Text": "Select the map objects in a group with the Group 6 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 6 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_7",
@@ -854,7 +854,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_7_TT",
-      "Text": "Select the map objects in a group with the Group 7 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 7 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_8",
@@ -862,7 +862,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_8_TT",
-      "Text": "Select the map objects in a group with the Group 8 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 8 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_9",
@@ -870,7 +870,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_9_TT",
-      "Text": "Select the map objects in a group with the Group 9 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 9 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Select_Group_10",
@@ -878,7 +878,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Group_10_TT",
-      "Text": "Select the map objects in a group with the Group 10 shortcut assigned."
+      "Text": "Select the map objects in the group assigned the Group 10 shortcut."
     },
     {
       "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type",
@@ -918,55 +918,55 @@
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode_TT",
-      "Text": "Toggle whether the 'discrete mode' shortcut detection is used for translation increment movements."
+      "Text": "Toggle whether translation increment moves use the discrete mode shortcut detection."
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Positive_X",
-      "Text": "Translate Selection by Increment (+ x-axis)"
+      "Text": "Translate Selection by Increment (+ X axis)"
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Positive_X_TT",
-      "Text": "Move the selection on the positive X-axis by the current translation increment."
+      "Text": "Move the selection along the positive X axis by the current translation increment."
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Negative_X",
-      "Text": "Translate Selection by Increment (- x-axis)"
+      "Text": "Translate Selection by Increment (- X axis)"
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Negative_X_TT",
-      "Text": "Move the selection on the negative X-axis by the current translation increment."
+      "Text": "Move the selection along the negative X axis by the current translation increment."
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Positive_Y",
-      "Text": "Translate Selection by Increment (+ y-axis)"
+      "Text": "Translate Selection by Increment (+ Y axis)"
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Positive_Y_TT",
-      "Text": "Move the selection on the positive Y-axis by the current translation increment."
+      "Text": "Move the selection along the positive Y axis by the current translation increment."
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Negative_Y",
-      "Text": "Translate Selection by Increment (- x-axis)"
+      "Text": "Translate Selection by Increment (- Y axis)"
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Negative_Y_TT",
-      "Text": "Move the selection on the negative Y-axis by the current translation increment."
+      "Text": "Move the selection along the negative Y axis by the current translation increment."
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Positive_Z",
-      "Text": "Translate Selection by Increment (+ z-axis)"
+      "Text": "Translate Selection by Increment (+ Z axis)"
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Positive_Z_TT",
-      "Text": "Move the selection on the positive Z-axis by the current translation increment."
+      "Text": "Move the selection along the positive Z axis by the current translation increment."
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Negative_Z",
-      "Text": "Translate Selection by Increment (- x-axis)"
+      "Text": "Translate Selection by Increment (- Z axis)"
     },
     {
       "Key": "KEY_MapEditor_Position_Increment_Negative_Z_TT",
-      "Text": "Move the selection on the negative Z-axis by the current translation increment."
+      "Text": "Move the selection along the negative Z axis by the current translation increment."
     },
     {
       "Key": "KEY_MapEditor_Toggle_Patrol_Route_Visuals",
@@ -974,7 +974,7 @@
     },
     {
       "Key": "KEY_MapEditor_Toggle_Patrol_Route_Visuals_TT",
-      "Text": "Toggles the visibility of patrol routes in the viewport."
+      "Text": "Show or hide patrol routes in the viewport."
     },
     {
       "Key": "KEY_MapEditor_View_Display_Group",
@@ -982,7 +982,7 @@
     },
     {
       "Key": "KEY_MapEditor_View_Display_Group_TT",
-      "Text": "View all map objects with the same display group as the current selection."
+      "Text": "Show all map objects with the same display group as the selection."
     },
     {
       "Key": "KEY_MapEditor_View_Draw_Group",
@@ -990,7 +990,7 @@
     },
     {
       "Key": "KEY_MapEditor_View_Draw_Group_TT",
-      "Text": "View all map objects with the same draw group as the current selection."
+      "Text": "Show all map objects with the same draw group as the selection."
     },
     {
       "Key": "KEY_MapEditor_Apply_Display_Group",
@@ -998,7 +998,7 @@
     },
     {
       "Key": "KEY_MapEditor_Apply_Display_Group_TT",
-      "Text": "Apply display group change in the Display Groups tool to the current selection."
+      "Text": "Apply the display group change in the Display Groups tool to the selection."
     },
     {
       "Key": "KEY_MapEditor_Apply_Draw_Group",
@@ -1006,7 +1006,7 @@
     },
     {
       "Key": "KEY_MapEditor_Apply_Draw_Group_TT",
-      "Text": "Apply draw group change in the Display Groups tool to the current selection."
+      "Text": "Apply the draw group change in the Display Groups tool to the selection."
     },
     {
       "Key": "KEY_MapEditor_Hide_All_Display_Groups",
@@ -1030,7 +1030,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Display_Group_Highlights_TT",
-      "Text": "Show the groups of the Display Groups preset applied or saved most recently."
+      "Text": "Show the groups of the most recently applied or saved Display Groups preset."
     },
     {
       "Key": "KEY_MapEditor_Select_Collision_References",
@@ -1038,7 +1038,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Collision_References_TT",
-      "Text": "elects all map objects that reference the currently selected collision(s)."
+      "Text": "Select all map objects that reference the selected collisions."
     },
     {
       "Key": "KEY_MapEditor_Select_Referenced_Collision",
@@ -1046,7 +1046,7 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Referenced_Collision_TT",
-      "Text": "Selects the collisions referenced by the currently selected part(s)."
+      "Text": "Select the collisions referenced by the selected parts."
     },
     {
       "Key": "KEY_MapEditor_Deselect_All",
@@ -1054,7 +1054,7 @@
     },
     {
       "Key": "KEY_MapEditor_Deselect_All_TT",
-      "Text": "Clear selection."
+      "Text": "Clear the selection."
     },
     {
       "Key": "KEY_MapEditor_Create_Map_Group_Entry",
@@ -1062,7 +1062,7 @@
     },
     {
       "Key": "KEY_MapEditor_Create_Map_Group_Entry_TT",
-      "Text": "Create a new map contents group from the current selection."
+      "Text": "Create a new map contents group from the selection."
     },
     {
       "Key": "KEY_ModelEditor_Select_Primitives_Only",
@@ -1070,7 +1070,7 @@
     },
     {
       "Key": "KEY_ModelEditor_Select_Primitives_Only_TT",
-      "Text": "When held, only dummies and nodes will be selected by a viewport click."
+      "Text": "While held, clicking in the viewport selects only dummies and nodes."
     },
     {
       "Key": "KEY_ParamEditor_Focus_Searchbar",
@@ -1078,7 +1078,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Focus_Searchbar_TT",
-      "Text": "Focuses the searchbar input."
+      "Text": "Focus the search bar."
     },
     {
       "Key": "KEY_ParamEditor_Apply_Mass_Edit",
@@ -1086,7 +1086,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Apply_Mass_Edit_TT",
-      "Text": "Applies the current mass edit command."
+      "Text": "Apply the current mass edit command."
     },
     {
       "Key": "KEY_ParamEditor_View_Mass_Edit",
@@ -1094,7 +1094,7 @@
     },
     {
       "Key": "KEY_ParamEditor_View_Mass_Edit_TT",
-      "Text": "Toggle the Mass Edit menu."
+      "Text": "Show or hide the Mass Edit menu."
     },
     {
       "Key": "KEY_ParamEditor_Import_CSV",
@@ -1102,7 +1102,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Import_CSV_TT",
-      "Text": "Toggle the Import CSV menu."
+      "Text": "Show or hide the Import CSV menu."
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV",
@@ -1110,7 +1110,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_TT",
-      "Text": "Toggle the Export CSV menu."
+      "Text": "Show or hide the Export CSV menu."
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Names",
@@ -1118,7 +1118,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Names_TT",
-      "Text": "Open the Export CSV menu, filled with row names for current param."
+      "Text": "Open the Export CSV menu, filled with the current param's row names."
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Param",
@@ -1126,7 +1126,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Param_TT",
-      "Text": "Open the Export CSV menu, filled with row data for current param."
+      "Text": "Open the Export CSV menu, filled with the current param's row data."
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_All_Rows",
@@ -1134,7 +1134,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_All_Rows_TT",
-      "Text": "Open the Export CSV menu, filled with row data for current param."
+      "Text": "Open the Export CSV menu, filled with the current param's row data."
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Modified_Rows",
@@ -1142,7 +1142,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Modified_Rows_TT",
-      "Text": "Open the Export CSV menu, filled with modified row data for current param."
+      "Text": "Open the Export CSV menu, filled with the current param's modified row data."
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Selected_Rows",
@@ -1150,7 +1150,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Export_CSV_Selected_Rows_TT",
-      "Text": "Open the Export CSV menu, filled with selected row data for current param."
+      "Text": "Open the Export CSV menu, filled with the current param's selected row data."
     },
     {
       "Key": "KEY_ParamEditor_Reload_All_Params",
@@ -1158,7 +1158,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Reload_All_Params_TT",
-      "Text": "Reload all params, refreshing param data in-game (if supported)."
+      "Text": "Reload all params, refreshing the param data in game (if supported)."
     },
     {
       "Key": "KEY_ParamEditor_Reload_Selected_Param",
@@ -1166,7 +1166,7 @@
     },
     {
       "Key": "KEY_ParamEditor_Reload_Selected_Param_TT",
-      "Text": "Reload selected param, refreshing param data in-game (if supported)."
+      "Text": "Reload the selected param, refreshing its data in game (if supported)."
     },
     {
       "Key": "KEY_ParamEditor_RowList_Sort_Rows",
@@ -1174,7 +1174,7 @@
     },
     {
       "Key": "KEY_ParamEditor_RowList_Sort_Rows_TT",
-      "Text": "Applies row sort to all rows for the current param."
+      "Text": "Sort all rows of the current param."
     },
     {
       "Key": "KEY_ParamEditor_RowList_Jump_to_Row_ID",
@@ -1182,7 +1182,7 @@
     },
     {
       "Key": "KEY_ParamEditor_RowList_Jump_to_Row_ID_TT",
-      "Text": "Toggles the Jump to Row menu."
+      "Text": "Show or hide the Jump to Row menu."
     },
     {
       "Key": "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name",
@@ -1190,7 +1190,7 @@
     },
     {
       "Key": "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name_TT",
-      "Text": "Applies the referenced row name inheritance (if configured)."
+      "Text": "Apply referenced row name inheritance (if configured)."
     },
     {
       "Key": "KEY_TextEditor_Focus_Searchbar",
@@ -1198,7 +1198,7 @@
     },
     {
       "Key": "KEY_TextEditor_Focus_Searchbar_TT",
-      "Text": "Focuses the search bar input."
+      "Text": "Focus the search bar."
     },
     {
       "Key": "KEY_TextEditor_Create_New_Entry",
@@ -1206,7 +1206,7 @@
     },
     {
       "Key": "KEY_TextEditor_Create_New_Entry_TT",
-      "Text": "Toggles the Text Entry Creator menu."
+      "Text": "Show or hide the Text Entry Creator menu."
     },
     {
       "Key": "KEY_TextEditor_Paste_As_New_Entries",
@@ -1214,7 +1214,7 @@
     },
     {
       "Key": "KEY_TextEditor_Paste_As_New_Entries_TT",
-      "Text": "Pastes the copied text entries as new entries, each at the next free ID after its own."
+      "Text": "Paste the copied text entries as new entries, each at the next free ID after its own."
     },
     {
       "Key": "KEY_TextEditor_Configurable_Duplicate",
@@ -1222,7 +1222,7 @@
     },
     {
       "Key": "KEY_TextEditor_Configurable_Duplicate_TT",
-      "Text": "Toggles the Configurable Duplicate menu."
+      "Text": "Show or hide the Configurable Duplicate menu."
     },
     {
       "Key": "KEY_GparamEditor_Add_Missing_Groups",
@@ -1230,7 +1230,7 @@
     },
     {
       "Key": "KEY_GparamEditor_Add_Missing_Groups_TT",
-      "Text": "Adds all of the missing groups for the currently selected graphics param."
+      "Text": "Add all missing groups to the selected GPARAM."
     },
     {
       "Key": "KEY_GparamEditor_Add_Missing_Fields",
@@ -1238,7 +1238,7 @@
     },
     {
       "Key": "KEY_GparamEditor_Add_Missing_Fields_TT",
-      "Text": "Adds all of the missing fields for the currently selected group."
+      "Text": "Add all missing fields to the selected group."
     },
     {
       "Key": "KEY_TextureViewer_Export_Texture",
@@ -1246,7 +1246,7 @@
     },
     {
       "Key": "KEY_TextureViewer_Export_Texture_TT",
-      "Text": "Exports the currently selected texture."
+      "Text": "Export the selected texture."
     },
     {
       "Key": "KEY_TextureViewer_Reset_Zoom_Level",
@@ -1254,7 +1254,7 @@
     },
     {
       "Key": "KEY_TextureViewer_Reset_Zoom_Level_TT",
-      "Text": "Resets the zoom level to default."
+      "Text": "Reset the zoom level to the default."
     },
     {
       "Key": "KEY_CaptureThumbnailImage",
@@ -1262,7 +1262,7 @@
     },
     {
       "Key": "KEY_CaptureThumbnailImage_TT",
-      "Text": "Captures a thumbnail based on the current viewport."
+      "Text": "Capture a thumbnail from the current viewport."
     },
     {
       "Key": "KEY_HavokEditor_Navigate_Back",
@@ -1278,7 +1278,7 @@
     },
     {
       "Key": "KEY_HavokEditor_Navigate_Forward_TT",
-      "Text": "In the Havok Editor's behavior outline, go forward again after going back."
+      "Text": "In the Havok Editor's behavior outline, go forward again."
     },
     {
       "Key": "KEY_ProjectileEditor_Toggle_Playback",

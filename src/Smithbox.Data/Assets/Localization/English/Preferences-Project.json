@@ -2,11 +2,11 @@
   "Entries": [
     {
       "Key": "PREF_Project_Enable_Auto_Load",
-      "Text": "Enable Auto-Load on Smithbox Start"
+      "Text": "Auto-Load Project on Smithbox Start"
     },
     {
       "Key": "PREF_Project_Enable_Auto_Load_TT",
-      "Text": "If enabled, a previously loaded project will be loaded automatically upon starting Smithbox."
+      "Text": "Load the previous project automatically when Smithbox starts."
     },
     {
       "Key": "PREF_Project_Enable_Automatic_Auto_Load_Assignment",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PREF_Project_Enable_Automatic_Auto_Load_Assignment_TT",
-      "Text": "If enabled, loading a project will automatically flag it to 'auto-load'."
+      "Text": "Mark each project you load for auto-load."
     },
     {
       "Key": "PREF_Project_Default_Mod_Directory",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PREF_Project_Default_Mod_Directory_TT",
-      "Text": "The default directory to use during the project directory selection when creating a new project."
+      "Text": "The default folder offered when choosing the project folder for a new project."
     },
     {
       "Key": "PREF_Project_Default_Data_Directory",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PREF_Project_Default_Data_Directory_TT",
-      "Text": "The default directory to use during the data directory selection when creating a new project."
+      "Text": "The default folder offered when choosing the data folder for a new project."
     },
     {
       "Key": "PREF_Project_Enable_Backup_Saves",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PREF_Project_Enable_Backup_Saves_TT",
-      "Text": "If enabled, backup files are created during save events (i.e. .bak and .prev files)."
+      "Text": "Create backup files (.bak and .prev) when saving."
     },
     {
       "Key": "PREF_Project_Enable_Timestamp_Backup_Saves",
@@ -46,23 +46,23 @@
     },
     {
       "Key": "PREF_Project_Enable_Timestamp_Backup_Saves_TT",
-      "Text": "If enabled, timestamped backups will be created for regulation files upon save."
+      "Text": "Create timestamped backups of regulation files on save."
     },
     {
       "Key": "PREF_Project_Scan_Directory_For_Additions",
-      "Text": "Enable Project Directory Addition Detection"
+      "Text": "Detect New Files in the Project Folder"
     },
     {
       "Key": "PREF_Project_Scan_Directory_For_Additions_TT",
-      "Text": "If enabled, new files that only reside in the project directory will be detected. Required if you are working with custom files and wnat them to appear in Smithbox.\nIf disabled, project startup is quicker."
+      "Text": "Detect new files that exist only in the project folder. Needed if you work with custom files and want them to appear in Smithbox.\nWhen off, projects start faster."
     },
     {
       "Key": "PREF_Project_Scan_Directory_Strict_Mode",
-      "Text": "Enable Strict Project Directory Scan"
+      "Text": "Strict Project Folder Scan"
     },
     {
       "Key": "PREF_Project_Scan_Directory_Strict_Mode_TT",
-      "Text": "If enabled, the additional validation will be performed before adding a file to the project's file list."
+      "Text": "Validate each file further before adding it to the project's file list."
     },
     {
       "Key": "PREF_Project_VFS_Prefer_Loose_Files",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "PREF_Project_VFS_Prefer_Loose_Files_TT",
-      "Text": "If enabled, the VFS will prefer loose files over the internal files within archives."
+      "Text": "Make the VFS prefer loose files over the files inside archives."
     },
     {
       "Key": "PREF_Project_Enable_Automatic_Save",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PREF_Project_Enable_Automatic_Save_TT",
-      "Text": "If enabled, all enabled editors will automatically save."
+      "Text": "Save all enabled editors automatically."
     },
     {
       "Key": "PREF_Project_Automatic_Save_Interval",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PREF_Project_Automatic_Save_Interval_TT",
-      "Text": "The rate at which the automatic save occurs. In seconds."
+      "Text": "How often the automatic save runs, in seconds."
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Map_Editor",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Map_Editor_TT",
-      "Text": "If enabled, the Map Editor is automatically saved."
+      "Text": "Include the Map Editor in automatic saves."
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Param_Editor",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Param_Editor_TT",
-      "Text": "If enabled, the Param Editor is automatically saved."
+      "Text": "Include the Param Editor in automatic saves."
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Text_Editor",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Text_Editor_TT",
-      "Text": "If enabled, the Text Editor is automatically saved."
+      "Text": "Include the Text Editor in automatic saves."
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Gparam_Editor",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Gparam_Editor_TT",
-      "Text": "If enabled, the Graphics Param Editor is automatically saved."
+      "Text": "Include the Gparam Editor in automatic saves."
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Material_Editor",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "PREF_Project_Automatic_Save_Include_Material_Editor_TT",
-      "Text": "If enabled, the Material Editor is automatically saved."
+      "Text": "Include the Material Editor in automatic saves."
     },
     {
       "Key": "PREF_Project_ME3_Profile_Directory",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "PREF_Project_ME3_Profile_Directory_TT",
-      "Text": "Select the directory you want the generated ME3 profiles to be placed in."
+      "Text": "The folder to put generated ME3 profiles in."
     }
   ]
 }

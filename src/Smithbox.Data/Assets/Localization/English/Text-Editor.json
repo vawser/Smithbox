@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXT_Save_All_File_FAIL",
-      "Text": "Failed to save all modified text files"
+      "Text": "Failed to save all modified text files."
     },
     {
       "Key": "TEXT_Menubar_Action_Create",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "TEXT_Menubar_Action_Duplicate_TT",
-      "Text": "Duplicate the currently selected text entries."
+      "Text": "Duplicate the selected text entries."
     },
     {
       "Key": "TEXT_Menubar_Action_Delete",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "TEXT_Menubar_Action_Delete_TT",
-      "Text": "Delete the currently selected text entries."
+      "Text": "Delete the selected text entries."
     },
     {
       "Key": "TEXT_Menubar_View_Tool_Window",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "TEXT_Util_Log_Missing_Enum_DlcGrouping",
-      "Text": "{0}: {1} not defined."
+      "Text": "{0}: {1} isn't defined."
     }
   ]
 }

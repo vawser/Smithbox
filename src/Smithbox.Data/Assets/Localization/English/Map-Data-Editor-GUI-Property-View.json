@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAPDAT_Properties_Toggle_Community_Names_TT",
-      "Text": "Toggle which field names are displayed in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle which field names the property editor shows.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAPDAT_Properties_Toggle_Unknown_Field_Hide",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "MAPDAT_Properties_Toggle_Unknown_Field_TT",
-      "Text": "Toggle the display of unknown fields in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle unknown fields in the property editor.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAPDAT_Properties_Toggle_Padding_Hide",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "MAPDAT_Properties_Toggle_Padding_TT",
-      "Text": "Toggle the display of padding fields in the property editor.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle padding fields in the property editor.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

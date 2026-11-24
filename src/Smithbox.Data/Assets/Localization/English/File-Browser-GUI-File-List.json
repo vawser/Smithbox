@@ -6,7 +6,7 @@
     },
     {
       "Key": "FILE_FileList_Header_TT",
-      "Text": "Every file the project can see. Search by name, or use ext:flver,tpf to search by extension and path:/chr/c2 to search by path. Ctrl-click and Shift-click select several files."
+      "Text": "Every file the project can see. Search by name, use ext:flver,tpf to search by extension, or path:/chr/c2 to search by path. Ctrl+click and Shift+click select several files."
     },
     {
       "Key": "FILE_FileList_Reveal_TT",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "FILE_Actions_Copy_To_Project_Exists",
-      "Text": "The project already has {0}; nothing was copied."
+      "Text": "The project already has {0}. Nothing was copied."
     },
     {
       "Key": "FILE_Actions_Copy_To_Project_Not_Found",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "FILE_Actions_Export_TT",
-      "Text": "Export this file to the export directory, as Export Container File in the Tools window."
+      "Text": "Export this file to the export folder, like Export Container File in the Tools window."
     },
     {
       "Key": "FILE_Actions_Export_Folder",
@@ -142,11 +142,11 @@
     },
     {
       "Key": "FILE_Actions_Show_In_Explorer_TT",
-      "Text": "Open the project's copy in Explorer, or the game's loose copy when the project has none. Unavailable for files that only exist inside the game archives."
+      "Text": "Open the project's copy in Explorer, or the game's loose copy if the project has none. Unavailable for files that exist only inside the game archives."
     },
     {
       "Key": "FILE_Actions_Show_In_Explorer_Missing",
-      "Text": "No copy of {0} exists on disk (it is only inside the game archives)."
+      "Text": "No copy of {0} exists on disk. It is only inside the game archives."
     },
     {
       "Key": "FILE_FileList_Building",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "FILE_FileList_Refresh_Scan_Failed",
-      "Text": "Failed to scan the project folder for new files; the list was refreshed without them."
+      "Text": "Failed to scan the project folder for new files. The list was refreshed without them."
     }
   ]
 }

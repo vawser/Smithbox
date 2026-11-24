@@ -14,7 +14,7 @@
     },
     {
       "Key": "PROJECT_Sidebar_Import_Project_TT",
-      "Text": "Create a project from a 'project.json' file, as written by older versions of Smithbox or other tools."
+      "Text": "Create a project from a 'project.json' file written by an older version of Smithbox or another tool."
     },
     {
       "Key": "PROJECT_Sidebar_No_Projects",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PROJECT_Start_Body",
-      "Text": "Everything you edit belongs to a project. A project pairs your mod's folder, where Smithbox saves your changes, with the game's data folder, which it reads the original files from. The game folder is only written to if you make it the project folder.\n\nCreate a project to get started."
+      "Text": "Everything you edit belongs to a project. A project pairs your mod's folder, where Smithbox saves your changes, with the game's data folder, where it reads the original files. Smithbox only writes to the game folder if you make it the project folder.\n\nCreate a project to get started."
     },
     {
       "Key": "PROJECT_Start_Detected_Header",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "PROJECT_Open_Load_Last_TT",
-      "Text": "Load the project that was last loaded."
+      "Text": "Load the last loaded project."
     },
     {
       "Key": "PROJECT_Create_Title",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "PROJECT_Create_Hint",
-      "Text": "Fill in each step. A tick shows a step is ready; a warning is worth checking but won't stop the project being created."
+      "Text": "Complete each step. A tick means the step is ready; a warning is worth checking but doesn't stop the project being created."
     },
     {
       "Key": "PROJECT_Create_Step_Game",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "PROJECT_Create_Step_Data",
-      "Text": "2. Game Data Directory"
+      "Text": "2. Game Data Folder"
     },
     {
       "Key": "PROJECT_Create_Step_Name",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PROJECT_Create_Step_Project",
-      "Text": "4. Project Directory"
+      "Text": "4. Project Folder"
     },
     {
       "Key": "PROJECT_Create_Advanced",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PROJECT_Create_Loading_TT",
-      "Text": "Create the project. Another project is loading, so this one is created without being loaded; load it once the other has finished."
+      "Text": "Create the project. Another project is loading, so this one is created without loading it; load it once the other finishes."
     },
     {
       "Key": "PROJECT_Create_Cancel",
@@ -122,11 +122,11 @@
     },
     {
       "Key": "PROJECT_Create_New_Folder",
-      "Text": "Create Folder in Default Mod Directory"
+      "Text": "Create Folder in Default Mod Folder"
     },
     {
       "Key": "PROJECT_Create_New_Folder_TT",
-      "Text": "Create a folder named after the project and use it as the project directory:\n{0}"
+      "Text": "Create a folder named after the project and use it as the project folder:\n{0}"
     },
     {
       "Key": "PROJECT_Create_New_Folder_Failed",
@@ -138,27 +138,27 @@
     },
     {
       "Key": "PROJECT_Field_Type_Fixed",
-      "Text": "The game can't be changed once a project is created. Create a new project for a different game."
+      "Text": "The game can't be changed after a project is created. Create a new project for a different game."
     },
     {
       "Key": "PROJECT_Field_Data_Path_Missing",
-      "Text": "Pick the game's data directory."
+      "Text": "Pick the game's data folder."
     },
     {
       "Key": "PROJECT_Field_Data_Path_Not_Found",
-      "Text": "The data directory doesn't exist."
+      "Text": "The data folder doesn't exist."
     },
     {
       "Key": "PROJECT_Field_Project_Path_Missing",
-      "Text": "Pick the folder your mod is kept in."
+      "Text": "Pick your mod's folder."
     },
     {
       "Key": "PROJECT_Field_Project_Path_Not_Found",
-      "Text": "The project directory doesn't exist."
+      "Text": "The project folder doesn't exist."
     },
     {
       "Key": "PROJECT_Field_Name_Missing",
-      "Text": "Enter a name, or pick a project directory to use its folder name."
+      "Text": "Enter a name, or pick a project folder to use its name."
     },
     {
       "Key": "PROJECT_Field_Name_Missing_Edit",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PROJECT_Field_Name_From_Folder",
-      "Text": "Left empty, the project is named after its folder."
+      "Text": "If left empty, the project is named after its folder."
     },
     {
       "Key": "PROJECT_Header_Project_Path",
@@ -226,7 +226,7 @@
     },
     {
       "Key": "PROJECT_Header_Switch_TT",
-      "Text": "Make this loaded project the one the editors show."
+      "Text": "Make the editors show this loaded project."
     },
     {
       "Key": "PROJECT_Header_Reload_TT",
@@ -282,7 +282,7 @@
     },
     {
       "Key": "PROJECT_Tab_Not_Selected_Body",
-      "Text": "This project is loaded, but the editors are showing another one. Switch to this project to {0}."
+      "Text": "This project is loaded, but the editors are showing another project. Switch to this project to {0}."
     },
     {
       "Key": "PROJECT_Tab_No_Data_Title",
@@ -298,7 +298,7 @@
     },
     {
       "Key": "PROJECT_Tab_Enums_No_Params_Body",
-      "Text": "Enums are param data, and the Param Editor is disabled for this project. Enable it in the Overview's Editors section, then press Update."
+      "Text": "Enums are param data, and the Param Editor is disabled for this project. Enable it in the Overview's Editors section, then click Update."
     },
     {
       "Key": "PROJECT_Tab_Enums_Enable_Params",
@@ -314,7 +314,7 @@
     },
     {
       "Key": "PROJECT_Overview_Settings_TT",
-      "Text": "Show or hide the project's name, game, directories and group tag."
+      "Text": "Show or hide the project's name, game, folders and group tag."
     },
     {
       "Key": "PROJECT_Overview_Editors",
@@ -334,7 +334,7 @@
     },
     {
       "Key": "PROJECT_Overview_Editors_Hint",
-      "Text": "The editors this project loads. Changes are applied with Update, which reloads the project if it is loaded."
+      "Text": "The editors this project loads. Click Update to apply changes, which reloads the project if it is loaded."
     },
     {
       "Key": "PROJECT_Overview_ME3",
@@ -354,7 +354,7 @@
     },
     {
       "Key": "PROJECT_Overview_Remove_Project_TT",
-      "Text": "Remove this project from Smithbox. The files in the project directory are not touched."
+      "Text": "Remove this project from Smithbox. The files in the project folder aren't touched."
     },
     {
       "Key": "PROJECT_Overview_No_Changes",
@@ -362,11 +362,11 @@
     },
     {
       "Key": "PROJECT_Overview_Unsaved_Changes",
-      "Text": "Unsaved changes. Press Update to apply them, or Revert to discard them."
+      "Text": "Unsaved changes. Click Update to apply them, or Revert to discard them."
     },
     {
       "Key": "PROJECT_Overview_Unsaved_Changes_Active",
-      "Text": "Unsaved changes. Press Update to apply them, which reloads the project, or Revert to discard them."
+      "Text": "Unsaved changes. Click Update to apply them (this reloads the project), or Revert to discard them."
     },
     {
       "Key": "PROJECT_Overview_Update_Blocked_TT",

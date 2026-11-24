@@ -10,11 +10,11 @@
     },
     {
       "Key": "GPARAM_SearchTool_Local_Hint",
-      "Text": "Find groups, fields and values in the selected file by their names and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. The deepest input given decides what is found: groups, fields, or the values of fields. Click a result to jump to it."
+      "Text": "Find groups, fields and values in the selected file by name and value. Fill in any of the inputs: empty inputs are ignored, and the rest must all match. The deepest input filled in decides what is found: groups, fields or field values. Click a result to jump to it."
     },
     {
       "Key": "GPARAM_SearchTool_Global_Hint",
-      "Text": "Find files, groups, fields and values in every file of the project by their names and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. The deepest input given decides what is found: files, groups, fields, or the values of fields. Click a result to open its file and jump to it."
+      "Text": "Find files, groups, fields and values in every file in the project by name and value. Fill in any of the inputs: empty inputs are ignored, and the rest must all match. The deepest input filled in decides what is found: files, groups, fields or field values. Click a result to open its file and jump to it."
     },
     {
       "Key": "GPARAM_SearchTool_No_File",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_File_TT",
-      "Text": "Matches the file name or alias."
+      "Text": "Match the file name or alias."
     },
     {
       "Key": "GPARAM_SearchTool_Group",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Group_TT",
-      "Text": "Matches the internal or annotated name of a group."
+      "Text": "Match the internal or annotated name of a group."
     },
     {
       "Key": "GPARAM_SearchTool_Field",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Field_TT",
-      "Text": "Matches the internal or annotated name of a field."
+      "Text": "Match the internal or annotated name of a field."
     },
     {
       "Key": "GPARAM_SearchTool_Value",
@@ -78,11 +78,11 @@
     },
     {
       "Key": "GPARAM_SearchTool_Value_TT",
-      "Text": "Matches the value rows of fields: their value, ID or time of day, as chosen on the left. A value also matches by the name of its enum option. Vectors and colours are written as numbers split by commas, colours as R, G, B, A."
+      "Text": "Match the value rows of fields by value, ID or time of day, as chosen on the left. A value also matches by its enum option name. Write vectors and colours as numbers separated by commas (colours as R, G, B, A)."
     },
     {
       "Key": "GPARAM_SearchTool_Value_Target_TT",
-      "Text": "Which part of a value row the value is matched against."
+      "Text": "The part of a value row to match against."
     },
     {
       "Key": "GPARAM_SearchTool_Value_Target_Value",
@@ -106,11 +106,11 @@
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Contains_TT",
-      "Text": "The value contains the text. With Exact Match, it must equal it, and numbers are compared as numbers."
+      "Text": "The value contains the text. With Exact Match, it must equal the text, and numbers are compared as numbers."
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Equals_TT",
-      "Text": "The value equals the input. Numbers are compared as numbers, so 1 finds 1.0. A vector or colour equals a list of the same count of numbers, or a single number that any of its components equals."
+      "Text": "The value equals the input. Numbers are compared as numbers, so 1 finds 1.0. A vector or colour matches a list with the same number of components, or a single number that any of its components equals."
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Not_Equals_TT",
@@ -118,23 +118,23 @@
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Less_TT",
-      "Text": "The value is less than the number. For a vector or colour, any of its components."
+      "Text": "The value is less than the number. For a vector or colour, any component counts."
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Less_Or_Equal_TT",
-      "Text": "The value is less than or equal to the number. For a vector or colour, any of its components."
+      "Text": "The value is less than or equal to the number. For a vector or colour, any component counts."
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Greater_TT",
-      "Text": "The value is greater than the number. For a vector or colour, any of its components."
+      "Text": "The value is greater than the number. For a vector or colour, any component counts."
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Greater_Or_Equal_TT",
-      "Text": "The value is greater than or equal to the number. For a vector or colour, any of its components."
+      "Text": "The value is greater than or equal to the number. For a vector or colour, any component counts."
     },
     {
       "Key": "GPARAM_SearchTool_Comparison_Between_TT",
-      "Text": "The value is between the two numbers, inclusive. For a vector or colour, any of its components."
+      "Text": "The value is between the two numbers, inclusive. For a vector or colour, any component counts."
     },
     {
       "Key": "GPARAM_SearchTool_Value_Low_Hint",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Value_Between_TT",
-      "Text": "The range, inclusive. Either end can be left empty."
+      "Text": "The range, inclusive. Either end can be empty."
     },
     {
       "Key": "GPARAM_SearchTool_Options_Header",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Options_Header_TT",
-      "Text": "How the inputs are matched, and the results listed."
+      "Text": "How the inputs are matched and the results listed."
     },
     {
       "Key": "GPARAM_SearchTool_Exact",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Exact_TT",
-      "Text": "Inputs must equal the text rather than be contained in it. Numbers are compared as numbers, so 1 finds 1.0."
+      "Text": "Inputs must equal the text instead of being contained in it. Numbers are compared as numbers, so 1 finds 1.0."
     },
     {
       "Key": "GPARAM_SearchTool_Unique_Values",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Unique_Values_TT",
-      "Text": "List only the first result of each value found, to see which values are in use."
+      "Text": "List only the first result for each value found, to see which values are in use."
     },
     {
       "Key": "GPARAM_SearchTool_Actions_Header",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Search_TT",
-      "Text": "Runs the search. Leaving an input after changing it, or pressing Enter in it, does the same."
+      "Text": "Run the search. Leaving an input after changing it, or pressing Enter in it, does the same."
     },
     {
       "Key": "GPARAM_SearchTool_Clear",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Clear_TT",
-      "Text": "Empties the inputs and the results."
+      "Text": "Clear the inputs and the results."
     },
     {
       "Key": "GPARAM_SearchTool_Progress_Header",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Cancel_TT",
-      "Text": "Stops the search. The results found so far are kept."
+      "Text": "Stop the search. Results found so far are kept."
     },
     {
       "Key": "GPARAM_SearchTool_Results_Header",
@@ -226,7 +226,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Results_Header_TT",
-      "Text": "Click a result to jump to it. The filter narrows the list down without searching again."
+      "Text": "Click a result to jump to it. The filter narrows the list without searching again."
     },
     {
       "Key": "GPARAM_SearchTool_Results",
@@ -234,7 +234,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Results_Truncated",
-      "Text": "Over {0} results; only the first {0} are shown. Narrow the search to see the rest."
+      "Text": "More than {0} results; only the first {0} are shown. Narrow the search to see the rest."
     },
     {
       "Key": "GPARAM_SearchTool_Results_Filtered",
@@ -246,7 +246,7 @@
     },
     {
       "Key": "GPARAM_SearchTool_Send_To_Mass_Edit_TT",
-      "Text": "Finds these results again in the Mass Edit, to edit, delete or duplicate all of them at once."
+      "Text": "Find these results again in Mass Edit, to edit, delete or duplicate them all at once."
     },
     {
       "Key": "GPARAM_SearchTool_Jump_TT",

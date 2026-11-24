@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAT_SearchTool_Hint",
-      "Text": "Finds materials, and the params, samplers and textures in them, across the binders of the current tab. Every box filled in must match. The results can then be edited together."
+      "Text": "Find materials, and the params, samplers and textures in them, across the binders of the current tab. Every filled-in box must match. You can then edit the results together."
     },
     {
       "Key": "MAT_SearchTool_Scope_Header",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "MAT_SearchTool_Scope_All",
-      "Text": "Every binder of this tab"
+      "Text": "Every binder in this tab"
     },
     {
       "Key": "MAT_SearchTool_Scope_Binder",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "MAT_SearchTool_Entry_Header_TT",
-      "Text": "Part of a param's name or a sampler's or texture's type (e.g. snp_0_color or AlbedoMap). With this, value or path filled in, the results are entries, not materials."
+      "Text": "Part of a param's name, or a sampler's or texture's type (e.g. snp_0_color or AlbedoMap). When this, the value or the path is filled in, the results are entries, not materials."
     },
     {
       "Key": "MAT_SearchTool_Value_Header",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "MAT_SearchTool_Value_Header_TT",
-      "Text": "A param's value. Lists of numbers are written comma separated (1, 0.5, 0). The comparisons other than Contains read it as a number, and a list matches when any of its numbers does."
+      "Text": "A param's value. Write lists of numbers separated by commas (1, 0.5, 0). All comparisons except Contains read it as a number, and a list matches when any of its numbers matches."
     },
     {
       "Key": "MAT_SearchTool_Comparison_TT",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "MAT_SearchTool_Exact_TT",
-      "Text": "Texts must equal the input rather than contain it (ignoring case). Exact numbers compare as numbers, so 1 finds 1.0."
+      "Text": "Text must equal the input instead of containing it (not case-sensitive). Exact numbers are compared as numbers, so 1 finds 1.0."
     },
     {
       "Key": "MAT_SearchTool_Actions_Header",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "MAT_SearchTool_Search_TT",
-      "Text": "Find what matches every box filled in."
+      "Text": "Find what matches every filled-in box."
     },
     {
       "Key": "MAT_SearchTool_Clear",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "MAT_SearchTool_Clear_TT",
-      "Text": "Empty the inputs and the results."
+      "Text": "Clear the inputs and the results."
     },
     {
       "Key": "MAT_SearchTool_Results_Header",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "MAT_SearchTool_Results_Capped",
-      "Text": "The list shows the first {0}; editing applies to all of them."
+      "Text": "The list shows the first {0}, but editing applies to all of them."
     },
     {
       "Key": "MAT_SearchTool_Edit_Values_Header",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "MAT_SearchTool_Operation_TT",
-      "Text": "Set: the value to give (one number for every component, or one per component; true/false for bools). Add / Multiply: numbers added to or multiplying each component."
+      "Text": "Set: the value to use (one number for every component, or one per component; true/false for bools). Add / Multiply: numbers to add to or multiply each component by."
     },
     {
       "Key": "MAT_SearchTool_Operation_Set",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "MAT_SearchTool_Apply_Values_TT",
-      "Text": "Change every param result as one undo step. Values the input doesn't fit are left as they are."
+      "Text": "Change every param result as one undo step. Values that don't fit the input are left unchanged."
     },
     {
       "Key": "MAT_SearchTool_Edit_Paths_Header",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "MAT_SearchTool_Edit_Paths_Header_TT",
-      "Text": "Replace text in the path of every sampler or texture in the results (ignoring case), e.g. to point them at your own textures."
+      "Text": "Replace text in the path of every sampler or texture in the results (not case-sensitive), for example to point them at your own textures."
     },
     {
       "Key": "MAT_SearchTool_Find",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "MAT_SearchTool_Applied",
-      "Text": "Changed {0}, left {1} the input didn't fit."
+      "Text": "Changed {0}, and left {1} that the input didn't fit."
     },
     {
       "Key": "MAT_Transfer_Menu_Hint",
@@ -210,7 +210,7 @@
     },
     {
       "Key": "MAT_Transfer_Copy_TT",
-      "Text": "Put the whole material on the clipboard as JSON, to paste over another material or keep elsewhere."
+      "Text": "Copy the whole material to the clipboard as JSON, to paste over another material or keep elsewhere."
     },
     {
       "Key": "MAT_Transfer_Paste",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "MAT_Transfer_Paste_TT",
-      "Text": "Replace this material's contents with the material on the clipboard (copied as JSON). Its name stays. One undo brings it back."
+      "Text": "Replace this material's contents with the material on the clipboard (copied as JSON). Its name stays the same. One undo restores it."
     },
     {
       "Key": "MAT_Transfer_Export",
@@ -234,7 +234,7 @@
     },
     {
       "Key": "MAT_Transfer_Import_TT",
-      "Text": "Add the material of a JSON file to this binder, after this one and in its folder, under the name the file gives (numbered if taken)."
+      "Text": "Add the material from a JSON file to this binder, after this one and in its folder, using the name from the file (numbered if taken)."
     },
     {
       "Key": "MAT_Transfer_Copied",
@@ -266,7 +266,7 @@
     },
     {
       "Key": "MAT_Transfer_Wrong_Kind",
-      "Text": "That is a {0}, and this is a {1} binder."
+      "Text": "That is a {0}, but this is a {1} binder."
     },
     {
       "Key": "MAT_Transfer_Bad_Param",
@@ -278,7 +278,7 @@
     },
     {
       "Key": "MAT_Entry_Copy_TT",
-      "Text": "Put this param, sampler or texture on the clipboard as JSON, to paste into another material's list of the same kind."
+      "Text": "Copy this param, sampler or texture to the clipboard as JSON, to paste into another material's list of the same kind."
     },
     {
       "Key": "MAT_Entry_Paste_After",
@@ -290,7 +290,7 @@
     },
     {
       "Key": "MAT_Entry_Paste_Over_TT",
-      "Text": "Replace this entry with the one on the clipboard. Undo brings it back."
+      "Text": "Replace this entry with the one on the clipboard. Undo restores it."
     },
     {
       "Key": "MAT_Entry_Paste_End",
@@ -298,7 +298,7 @@
     },
     {
       "Key": "MAT_Entry_Paste_TT",
-      "Text": "Add the entry on the clipboard (copied with Copy Entry) to this list. A MATBIN's keys are worked out from its text."
+      "Text": "Add the entry on the clipboard (copied with Copy Entry) to this list. A MATBIN's keys are calculated from its text."
     },
     {
       "Key": "MAT_Entry_Paste_Not_Entry",
@@ -306,7 +306,7 @@
     },
     {
       "Key": "MAT_Entry_Paste_Wrong_List",
-      "Text": "That entry is from a {0}'s {1}, and this is a {2}'s {3}."
+      "Text": "That entry is from a {0}'s {1}, but this is a {2}'s {3}."
     },
     {
       "Key": "MAT_Entry_Paste_Bad",

@@ -82,7 +82,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Menu_Input_TT",
-      "Text": "Type in the mass edit commands you wish to apply here. Commands are separated by ; and stages by :. Write \\; or \\: for a literal ; or : in a value or search (e.g. selection: Name: = Sword\\; Fire)."
+      "Text": "Type the mass edit commands to apply here. Separate commands with ; and stages with :. Write \\; or \\: for a literal ; or : in a value or search (e.g. selection: Name: = Sword\\; Fire)."
     },
     {
       "Key": "PARAM_MassEdit_Header_Output",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Submit_TT",
-      "Text": "Execute the current mass edit commands."
+      "Text": "Run the current mass edit commands."
     },
     {
       "Key": "PARAM_MassEdit_Header_CSV_Export",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard_TT",
-      "Text": "Copy the current output to clipboard."
+      "Text": "Copy the current output to the clipboard."
     },
     {
       "Key": "PARAM_MassEdit_Header_CSV_Export_Field",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Checkbox_Append_Mode_TT",
-      "Text": "Append new rows instead of ID based insertion (this will create out-of-order IDs)"
+      "Text": "Append new rows instead of inserting them by ID. This creates out-of-order IDs."
     },
     {
       "Key": "PARAM_MassEdit_Checkbox_Replace_Existing",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Checkbox_Replace_Existing_TT",
-      "Text": "Replace existing rows instead of updating them (they will be moved to the end)"
+      "Text": "Replace existing rows instead of updating them. Replaced rows move to the end."
     },
     {
       "Key": "PARAM_MassEdit_Action_Import_CSV",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Paste_Clipboard_TT",
-      "Text": "Paste text from the clipboard into the Import text box. Use this for large text pastes."
+      "Text": "Paste text from the clipboard into the Import text box. Use this for large pastes."
     },
     {
       "Key": "PARAM_MassEdit_Header_Result",
@@ -206,7 +206,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Command_Palette_TT",
-      "Text": "Write and execute mass edit commands here."
+      "Text": "Write and run mass edit commands here."
     },
     {
       "Key": "PARAM_MassEdit_Header_Input",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Header_Input_TT",
-      "Text": "Type in the mass edit commands you wish to apply here. Commands are separated by ; and stages by :. Write \\; or \\: for a literal ; or : in a value or search (e.g. selection: Name: = Sword\\; Fire)."
+      "Text": "Type the mass edit commands to apply here. Separate commands with ; and stages with :. Write \\; or \\: for a literal ; or : in a value or search (e.g. selection: Name: = Sword\\; Fire)."
     },
     {
       "Key": "PARAM_MassEdit_Action_Apply_Script",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Header_Output_Command_Palette",
-      "Text": "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command"
+      "Text": "The result of the previous Mass Edit command.\n\nRemember to manage the clipboard between edits with the 'clear' command."
     },
     {
       "Key": "PARAM_MassEdit_Template_Hint",
@@ -270,7 +270,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Edit_Template_Script_TT",
-      "Text": "Edit the currently selected template script."
+      "Text": "Edit the selected template script."
     },
     {
       "Key": "PARAM_MassEdit_Action_Update_Template_List",
@@ -278,7 +278,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Update_Template_List_TT",
-      "Text": "Update the sourcing of the template list to reflect the addition of new scripts."
+      "Text": "Refresh the template list to include new scripts."
     },
     {
       "Key": "PARAM_MassEdit_Action_Open_Template_Folder",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Open_Template_Folder_TT",
-      "Text": "Opens the directory that stores the templates with a file explorer."
+      "Text": "Open the templates folder in File Explorer."
     },
     {
       "Key": "PARAM_MassEdit_Header_Template_Contents",
@@ -326,23 +326,23 @@
     },
     {
       "Key": "PARAM_MassEdit_Input_New_Template_TT",
-      "Text": "The file name used for this template."
+      "Text": "The file name for this template."
     },
     {
       "Key": "PARAM_MassEdit_Log_Template_Name_Empty",
-      "Text": "Mass Edit Template name must not be empty."
+      "Text": "The Mass Edit template name can't be empty."
     },
     {
       "Key": "PARAM_MassEdit_Log_Saved_Template",
-      "Text": "Saved Mass Edit Template {0} at {1}"
+      "Text": "Saved Mass Edit template {0} at {1}."
     },
     {
       "Key": "PARAM_MassEdit_Log_Failed_Save_Template",
-      "Text": "Failed to save Mass Edit Template {0} at {1}"
+      "Text": "Failed to save Mass Edit template {0} at {1}."
     },
     {
       "Key": "PARAM_MassEdit_Log_Template_Name_Exists",
-      "Text": "Mass Edit template with this name already exists: {0}."
+      "Text": "A Mass Edit template with this name already exists: {0}."
     },
     {
       "Key": "PARAM_MassEdit_Log_Failed_Template_Load",
@@ -350,11 +350,11 @@
     },
     {
       "Key": "PARAM_MassEdit_Log_Missing_Template_Dir",
-      "Text": "Failed to find Mass Edit template directory: {0}"
+      "Text": "Failed to find the Mass Edit template folder: {0}"
     },
     {
       "Key": "PARAM_MassEdit_Delimiter_Hint",
-      "Text": "Define the delimiter symbol..."
+      "Text": "Enter the delimiter..."
     },
     {
       "Key": "PARAM_MassEdit_Result_Success_Cells_Affected",
@@ -370,51 +370,51 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Global_Op_Arg_Count",
-      "Text": "Invalid number of arguments for operation {0} (line {1}) - Read {2} args, expected {3}"
+      "Text": "Wrong number of arguments for operation {0} (line {1}): read {2}, expected {3}."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Missing_Variable_Filter",
-      "Text": "Could not find variable filter. Add : and one of {0} (line {1})"
+      "Text": "Couldn't find the variable filter. Add : and one of {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op",
-      "Text": "Could not find var operation. Check your colon placement. (line {0})"
+      "Text": "Couldn't find the variable operation. Check your colon placement (line {0})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op_Symbol",
-      "Text": "Could not find operation to perform. Add : and one of + - * / replace (line {0})"
+      "Text": "Couldn't find an operation to perform. Add : and one of + - * / replace (line {0})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Var_Op_Arg_Count",
-      "Text": "Invalid number of arguments for operation {0} (line {1})"
+      "Text": "Wrong number of arguments for operation {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Param_Row_Filter_Missing",
-      "Text": "Could not find paramrow filter. Add : and one of {0} (line {1})"
+      "Text": "Couldn't find the param/row filter. Add : and one of {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Row_Op_Missing",
-      "Text": "Could not find cell filter or row operation. Check your colon placement. (line {0})"
+      "Text": "Couldn't find a cell filter or row operation. Check your colon placement (line {0})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Param_Filter_Missing",
-      "Text": "Could not find param filter. Add : and one of {0} (line {1})"
+      "Text": "Couldn't find the param filter. Add : and one of {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing",
-      "Text": "Could not find row filter. Check your colon placement. (line {0})"
+      "Text": "Couldn't find the row filter. Check your colon placement (line {0})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing_Op",
-      "Text": "Could not find row filter. Add : and one of {0} (line {1})"
+      "Text": "Couldn't find the row filter. Add : and one of {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Missing",
-      "Text": "Could not find cell/property filter. Add : and one of {0} or Name (0 args) (line {1})"
+      "Text": "Couldn't find the cell/property filter. Add : and one of {0} or Name (0 args) (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Missing_Cell_Op",
-      "Text": "Could not find operation to perform. Check your colon placement. (line {0})"
+      "Text": "Couldn't find an operation to perform. Check your colon placement (line {0})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Row_Op_Unknown",
@@ -422,11 +422,11 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Row_Op_Invalid_Arg_Count",
-      "Text": "Invalid number of arguments for operation {0} (line {1})"
+      "Text": "Wrong number of arguments for operation {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Missing_Symbol",
-      "Text": "Could not find operation to perform. Add : and one of + - * / replace (line {0})"
+      "Text": "Couldn't find an operation to perform. Add : and one of + - * / replace (line {0})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown",
@@ -434,7 +434,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Invalid_Arg_Count",
-      "Text": "Invalid number of arguments for operation {0} (line {1})"
+      "Text": "Wrong number of arguments for operation {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_On_Line",
@@ -446,23 +446,23 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Invalid_Var_Op",
-      "Text": "Error performing var operation {0} (line {1})"
+      "Text": "Error performing variable operation {0} (line {1})"
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Param_Stage_Invalid_Arg_Count",
-      "Text": "Invalid number of arguments for operation {0} (line {1})"
+      "Text": "Wrong number of arguments for operation {0} (line {1})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Invalid_Row_Op",
-      "Text": "Could not perform operation {0} {1} on row (line {2})"
+      "Text": "Couldn't perform operation {0} {1} on the row (line {2})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Type",
-      "Text": "Type is not correct: {0}"
+      "Text": "The type isn't correct: {0}"
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Cast",
-      "Text": "Cannot cast to correct type: {0}"
+      "Text": "Can't convert to the correct type: {0}"
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown_Error",
@@ -470,15 +470,15 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_ID",
-      "Text": "Could not perform operation {0} {1} on ID ({2}) (line {3})"
+      "Text": "Couldn't perform operation {0} {1} on ID ({2}) (line {3})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Name",
-      "Text": "Could not perform operation {0} {1} on Name ({2}) (line {3})"
+      "Text": "Couldn't perform operation {0} {1} on Name ({2}) (line {3})."
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Field",
-      "Text": "Could not perform operation {0} {1} on field {2} ({3}) (line {4})"
+      "Text": "Couldn't perform operation {0} {1} on field {2} ({3}) (line {4})."
     },
     {
       "Key": "PARAM_MassEdit_Header_Quick_Commands",
@@ -494,11 +494,11 @@
     },
     {
       "Key": "PARAM_MassEdit_Action_Add_Quick_Command_TT",
-      "Text": "Add the current mass input as a quick command to the list."
+      "Text": "Add the current mass edit input to the quick command list."
     },
     {
       "Key": "PARAM_MassEdit_Page_Count_TT",
-      "Text": "The current number of items per page."
+      "Text": "The number of items per page."
     },
     {
       "Key": "PARAM_MassEdit_Current_Page",
@@ -514,7 +514,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Rollback_Failed",
-      "Text": "Undoing the earlier commands failed ({0}); some of their changes may still be applied."
+      "Text": "Undoing the earlier commands failed ({0}). Some of their changes may still be applied."
     }
   ]
 }

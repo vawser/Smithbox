@@ -6,7 +6,7 @@
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Character_Aliases_TT",
-      "Text": "If enabled, character aliases are displayed."
+      "Text": "Show character aliases."
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Asset_Aliases",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Asset_Aliases_TT",
-      "Text": "If enabled, asset (object) aliases are displayed."
+      "Text": "Show asset (object) aliases."
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Part_Aliases",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Part_Aliases_TT",
-      "Text": "If enabled, part aliases are displayed."
+      "Text": "Show part aliases."
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Low_Detail_Entries",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Low_Detail_Entries_TT",
-      "Text": "If enabled, low detail entries are displayed."
+      "Text": "Show low detail entries."
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Particle_Aliases",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "PREF_TextureViewer_File_List_Display_Particle_Aliases_TT",
-      "Text": "If enabled, particle aliases are displayed."
+      "Text": "Show particle aliases."
     }
   ]
 }

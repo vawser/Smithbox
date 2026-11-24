@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_Copy_to_Project_TT",
-      "Text": "Copy this file into your project unchanged (with unsaved edits, it is saved instead). You don't need this to edit it: Save always writes edited files into the project."
+      "Text": "Copy this file into your project unchanged (if it has unsaved edits, it is saved instead). You don't need this to edit it: Save always writes edited files into the project."
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_Header_Export",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_All_TPFs_TT",
-      "Text": "Export all the TPFs in this container to your current export directory : {0}"
+      "Text": "Export all TPFs in this container to your export folder: {0}"
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_All_Textures",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_All_Textures_TT",
-      "Text": "Export all textures files within the TPFs in this container to your current export directory: {0}"
+      "Text": "Export all texture files in this container's TPFs to your export folder: {0}"
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_Copy_Path",

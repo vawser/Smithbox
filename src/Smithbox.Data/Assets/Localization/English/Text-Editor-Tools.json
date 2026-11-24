@@ -54,7 +54,7 @@
     },
     {
       "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_PASS",
-      "Text": "Selected text entry has been copied to the clipboard."
+      "Text": "Copied the selected text entry to the clipboard."
     },
     {
       "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_FAIL",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_Result",
-      "Text": "Text Entry Contents copied to clipboard."
+      "Text": "Copied the text entry contents to the clipboard."
     }
   ]
 }

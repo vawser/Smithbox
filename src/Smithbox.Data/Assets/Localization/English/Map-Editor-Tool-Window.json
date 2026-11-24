@@ -34,7 +34,7 @@
     },
     {
       "Key": "MAP_SnapToMesh_Hint",
-      "Text": "Move the selection along an axis until its bounding box meets the nearest drawn model (map piece, asset, character) in that direction. Only what the viewport shows is snapped to; collision and navmeshes aren't."
+      "Text": "Move the selection along an axis until its bounding box meets the nearest drawn model (map piece, asset, character) in that direction. The selection only snaps to what the viewport shows, not to collision or navmeshes."
     },
     {
       "Key": "MAP_SnapToMesh_Unavailable",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "MAP_SnapToMesh_Offset_TT",
-      "Text": "How far past the surface the selection is placed, along the snap direction.\nPositive values sink the selection into the target, negative values leave a gap."
+      "Text": "How far past the surface the selection is placed, along the snap direction.\nPositive values sink the selection into the target; negative values leave a gap."
     },
     {
       "Key": "MAP_SnapToMesh_MaxDistance_Header",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "MAP_SnapToMesh_MaxDistance_TT",
-      "Text": "How far the face of the bounding box may move to reach a mesh. Meshes further away are ignored."
+      "Text": "How far the face of the bounding box can move to reach a mesh. Meshes further away are ignored."
     },
     {
       "Key": "MAP_SnapToMesh_Options_Header",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "MAP_SnapToMesh_Individually_TT",
-      "Text": "Snap each selected object by its own bounding box, instead of moving the whole selection together by its combined bounding box.\nThe objects share one depth view, so a widely spread selection is snapped less precisely."
+      "Text": "Snap each selected object by its own bounding box, instead of moving the whole selection together by its combined bounding box.\nThe objects share one depth view, so a widely spread selection snaps less precisely."
     },
     {
       "Key": "MAP_SnapToMesh_Actions_Header",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "MAP_SnapToMesh_Apply_TT",
-      "Text": "Move the current selection along the snap direction until it meets the nearest mesh."
+      "Text": "Move the selection along the snap direction until it meets the nearest mesh."
     },
     {
       "Key": "MAP_ToolWindow_Scramble",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Hint",
-      "Text": "Store selections of map objects as groups, so you can re-select or edit them later. Groups are saved per project and per map. Pick a group in the list to see its actions."
+      "Text": "Save selections of map objects as groups, to reselect or edit them later. Groups are saved per project and per map. Pick a group in the list to see its actions."
     },
     {
       "Key": "MAP_SelectionGroups_No_Map",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Auto_Adjust_Name_TT",
-      "Text": "When a map object is renamed, update its name in the groups that hold it. Groups store map objects by name, so without this a renamed object drops out of its groups."
+      "Text": "When a map object is renamed, update its name in the groups that hold it. Groups store map objects by name, so without this, a renamed object drops out of its groups."
     },
     {
       "Key": "MAP_SelectionGroups_Actions_Header",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Create_TT",
-      "Text": "Create a new selection group holding the selected map objects.\nShortcut: {0}"
+      "Text": "Create a selection group from the selected map objects.\nShortcut: {0}"
     },
     {
       "Key": "MAP_SelectionGroups_Create_Context",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Create_Context_TT",
-      "Text": "Create a new selection group from the current selection. It is listed in the Selection Groups section of the Tools window."
+      "Text": "Create a selection group from the selection. It is listed in the Selection Groups section of the Tools window."
     },
     {
       "Key": "MAP_SelectionGroups_No_Group_Selected",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Name_TT",
-      "Text": "Edit the name of this group."
+      "Text": "Edit this group's name."
     },
     {
       "Key": "MAP_SelectionGroups_Selection_Header",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Select_TT",
-      "Text": "Replace the current selection with the map objects in this group, and frame them in the viewport."
+      "Text": "Replace the selection with the map objects in this group, and frame them in the viewport."
     },
     {
       "Key": "MAP_SelectionGroups_Add_To_Selection",
@@ -226,7 +226,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Add_To_Selection_TT",
-      "Text": "Add the map objects in this group to the current selection. Shift+Click on the group in the list does the same."
+      "Text": "Add the map objects in this group to the selection. Shift+clicking the group in the list does the same."
     },
     {
       "Key": "MAP_SelectionGroups_Objects_Header",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Duplicate_TT",
-      "Text": "Duplicate the map objects in this group, and create a new group holding the copies. Uses the settings of the Duplicate tool."
+      "Text": "Duplicate the map objects in this group, and create a group holding the copies. Uses the Duplicate tool's settings."
     },
     {
       "Key": "MAP_SelectionGroups_Edit_Contents_Header",
@@ -266,7 +266,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Add_Selected_TT",
-      "Text": "Add the selected map objects to this group, if they are not already in it."
+      "Text": "Add the selected map objects to this group, if they aren't already in it."
     },
     {
       "Key": "MAP_SelectionGroups_Remove_Selected",
@@ -306,7 +306,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Delete_Header_TT",
-      "Text": "Delete the group, its map objects, or both. Deleting map objects can be undone; deleting a group cannot."
+      "Text": "Delete the group, its map objects, or both. You can undo deleting map objects, but not deleting a group."
     },
     {
       "Key": "MAP_SelectionGroups_Delete_Group",
@@ -322,7 +322,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Delete_Group_And_Objects_TT",
-      "Text": "Delete the map objects in this group, and then the group."
+      "Text": "Delete the map objects in this group, then the group."
     },
     {
       "Key": "MAP_SelectionGroups_Delete_Objects",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Groups_Header_TT",
-      "Text": "The selection groups of the active map.\nClick: select the group. Double-click: select and frame its contents. Shift+Click: add its contents to the current selection."
+      "Text": "The selection groups of the active map.\nClick: select the group. Double-click: select and frame its contents. Shift+click: add its contents to the selection."
     },
     {
       "Key": "MAP_ToolWindow_Viewport_Filters",

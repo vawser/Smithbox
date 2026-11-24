@@ -38,7 +38,7 @@
     },
     {
       "Key": "GPARAM_FieldList_Context_Copy_Key_Action_TT",
-      "Text": "Copy the field key to clipboard."
+      "Text": "Copy the field key to the clipboard."
     },
     {
       "Key": "GPARAM_FieldList_Context_Copy_Name_Action",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "GPARAM_FieldList_Context_Copy_Name_Action_TT",
-      "Text": "Copy the field name to clipboard."
+      "Text": "Copy the field name to the clipboard."
     },
     {
       "Key": "GPARAM_FieldList_Context_Target_Header",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "GPARAM_FieldList_Context_Target_In_Global_Search_TT",
-      "Text": "Fill the Global Search with this field, to find it in every file of the project."
+      "Text": "Fill the Global Search with this field, to find it in every file in the project."
     },
     {
       "Key": "GPARAM_FieldList_Fields_To_Add_Header",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "GPARAM_FieldList_Fields_To_Add_Toggle_All_TT",
-      "Text": "Tick every field, or untick them all if all are ticked."
+      "Text": "Tick every field, or untick all of them if all are ticked."
     }
   ]
 }

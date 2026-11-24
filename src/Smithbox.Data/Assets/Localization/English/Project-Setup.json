@@ -2,15 +2,15 @@
   "Entries": [
     {
       "Key": "PROJECT_Setup_Failed_Init_Undefined_Type",
-      "Text": "Project initialization failed. Project Type is undefined."
+      "Text": "Project initialization failed: the project type isn't defined."
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Bad_Project_Path",
-      "Text": "Project initialization failed. Project path does not exist: {0}"
+      "Text": "Project initialization failed: the project path doesn't exist: {0}"
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Bad_Data_Path",
-      "Text": "Project initialization failed. Data path does not exist: {0}"
+      "Text": "Project initialization failed: the data path doesn't exist: {0}"
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Failed_DLL_Setup",
@@ -22,15 +22,15 @@
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Failed_Editor_Stub_Setup",
-      "Text": "Failed to setup editor stubs"
+      "Text": "Failed to set up the editor stubs."
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Failed_Locator_Setup",
-      "Text": "Failed to setup file locator"
+      "Text": "Failed to set up the file locator."
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Failed_Project_Data_Setup",
-      "Text": "Failed to setup project data"
+      "Text": "Failed to set up the project data."
     },
     {
       "Key": "PROJECT_Setup_Failed_Init_Failed_Project_Editor_Setup",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PROJECT_Setup_File_Directory_Derserialize_FAIL",
-      "Text": "Failed to deserialize the file dictionary: {0}"
+      "Text": "Failed to read the file dictionary: {0}"
     },
     {
       "Key": "PROJECT_Setup_File_Directory_Read_FAIL",
@@ -98,11 +98,11 @@
     },
     {
       "Key": "PROJECT_Setup_Load_Project_FAIL",
-      "Text": "Failed to load project: {0}"
+      "Text": "Failed to load the project: {0}"
     },
     {
       "Key": "PROJECT_Setup_Read_Project_FAIL",
-      "Text": "Failed to read project: {0}"
+      "Text": "Failed to read the project: {0}"
     },
     {
       "Key": "PROJECT_Setup_Project_Phase_Start",
@@ -118,11 +118,11 @@
     },
     {
       "Key": "PROJECT_Setup_Read_Legacy_Project_FAIL",
-      "Text": "Failed to read legacy project JSON: {0}"
+      "Text": "Failed to read the legacy project JSON: {0}"
     },
     {
       "Key": "PROJECT_Setup_Create_Not_Loaded_Loading",
-      "Text": "[Project] Created the project. It was not loaded, as another project is loading."
+      "Text": "[Project] Created the project. It wasn't loaded, because another project is loading."
     },
     {
       "Key": "PROJECT_Setup_Update_Deferred_Loading",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "PROJECT_Load_Failed_Message",
-      "Text": "The project \"{0}\" could not be loaded.\n\n{1}"
+      "Text": "Couldn't load the project \"{0}\".\n\n{1}"
     },
     {
       "Key": "PROJECT_Load_Failed_Init",

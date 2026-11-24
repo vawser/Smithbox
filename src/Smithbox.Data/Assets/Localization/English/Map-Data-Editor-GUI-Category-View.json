@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAPDAT_CategoryView_Toggle_Empty_TT",
-      "Text": "Toggle the display of empty base categories.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle empty base categories.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "MAPDAT_CategoryView_Toggle_Empty_Sub_Hide",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "MAPDAT_CategoryView_Toggle_Empty_Sub_TT",
-      "Text": "Toggle the display of empty sub categories.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle empty subcategories.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

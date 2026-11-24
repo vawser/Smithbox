@@ -10,7 +10,7 @@
     },
     {
       "Key": "LOG_Toggle_Display",
-      "Text": "Toggle the display of the {0} logger."
+      "Text": "Show or hide the {0} log."
     },
     {
       "Key": "LOG_Clear_Log",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "LOG_Copy_To_Clipboard_TT",
-      "Text": "Copy all log entries to clipboard."
+      "Text": "Copy all log entries to the clipboard."
     }
   ]
 }

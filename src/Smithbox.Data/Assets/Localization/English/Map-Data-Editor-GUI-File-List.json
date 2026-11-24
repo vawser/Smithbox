@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAPDAT_FileList_Toggle_Map_Cache_TT",
-      "Text": "Determines whether to re-load a map when a entry is selected, or to cache a load and use that on subsequent selections.\n\nCurrent Mode:\n{0}"
+      "Text": "Choose whether to reload a map each time an entry is selected, or to cache the load and reuse it for later selections.\n\nCurrent Mode:\n{0}"
     }
   ]
 }

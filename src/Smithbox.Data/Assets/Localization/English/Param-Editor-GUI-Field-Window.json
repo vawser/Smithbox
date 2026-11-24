@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "PARAM_FieldWindow_SelectRow_Hint",
-      "Text": "Select a row to see properties."
+      "Text": "Select a row to see its properties."
     },
     {
       "Key": "PARAM_FieldWindow_Title",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldNameMode_Hint",
-      "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle field names between internal and community names.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_VanillaCol_Hidden",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_VanillaCol_Hint",
-      "Text": "Toggle the display of the vanilla columns.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the vanilla columns.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_AuxCol_Hidden",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_AuxCol_Hint",
-      "Text": "Toggle the display of the auxiliary columns.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the auxiliary columns.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_FieldLayout_Hidden",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldLayout_Hint",
-      "Text": "Toggle the display of field layouts.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle field layouts.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_FieldOffset_Hidden",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldOffset_Hint",
-      "Text": "Toggle the display of the field offset column.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the field offset column.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_FieldPadding_Hidden",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_FieldPadding_Hint",
-      "Text": "Toggle the display of padding field.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle padding fields.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_ModifiedBg_Visible",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_ModifiedBg_Hint",
-      "Text": "Toggle the display of the background color on modified fields.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the background colour on modified fields.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_FieldWindow_Name_Prop",
@@ -118,11 +118,11 @@
     },
     {
       "Key": "PARAM_FieldWindow_LotChance_Always",
-      "Text": "This lot will always occur."
+      "Text": "This lot always occurs."
     },
     {
       "Key": "PARAM_FieldWindow_LotChance_Never",
-      "Text": "This lot will never occur."
+      "Text": "This lot never occurs."
     },
     {
       "Key": "PARAM_FieldWindow_LotChance_Percent",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_Context_No_Desc",
-      "Text": "Info regarding this field has not been written."
+      "Text": "No description has been written for this field."
     },
     {
       "Key": "PARAM_FieldWindow_Context_Action_Copy_Field_Name",
@@ -218,7 +218,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_Context_Action_Unpin_All_TT",
-      "Text": "Unpin all of the pinned fields in the current param."
+      "Text": "Unpin all pinned fields in the current param."
     },
     {
       "Key": "PARAM_FieldWindow_Context_Action_Unpin_All_Params",
@@ -226,7 +226,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_Context_Action_Unpin_All_Params_TT",
-      "Text": "Unpin all of the pinned fields in every param."
+      "Text": "Unpin all pinned fields in every param."
     },
     {
       "Key": "PARAM_FieldWindow_Context_Comparison_Header",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "PARAM_FieldWindow_Context_Action_Set_Target_Field_TT",
-      "Text": "Set the target field in the Row Context Menu for the Name Manipulation Inherit actions to this field's internal name."
+      "Text": "Set the Row Context Menu's target field for the Name Manipulation Inherit actions to this field's internal name."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "MODEL_Tools_Log_No_Object_Selected",
-      "Text": "No object selected."
+      "Text": "No object is selected."
     },
     {
       "Key": "MODEL_Tools_Action_Delete_Title",
@@ -10,11 +10,11 @@
     },
     {
       "Key": "MODEL_Tools_Action_Delete_Context_TT",
-      "Text": "Delete the currently selected model objects.\n\nShortcut: {0}"
+      "Text": "Delete the selected model objects.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Delete_Menu_TT",
-      "Text": "Delete the currently selected model objects."
+      "Text": "Delete the selected model objects."
     },
     {
       "Key": "MODEL_Tools_Action_Add_Title",
@@ -26,11 +26,11 @@
     },
     {
       "Key": "MODEL_Tools_Action_Add_Dummy_TT",
-      "Text": "Adds a dummy with the next free reference ID.\n\nWith a bone selected, the dummy sits on it and follows it.\nWith a dummy selected, it joins that dummy's group at the same place.\nOtherwise it is placed in front of the camera.\n\nIts group (parent bone) is the one the model's dummies on the same bone use most."
+      "Text": "Add a dummy with the next free reference ID.\n\nWith a bone selected, the dummy sits on it and follows it.\nWith a dummy selected, it joins that dummy's group at the same position.\nOtherwise, it is placed in front of the camera.\n\nIts group (parent bone) is the one most used by the model's dummies on the same bone."
     },
     {
       "Key": "MODEL_Tools_Action_Add_Dummy_No_Nodes",
-      "Text": "A dummy needs a bone to belong to, and this model has none."
+      "Text": "A dummy needs a bone to belong to, but this model has none."
     },
     {
       "Key": "MODEL_Tools_Action_Add_Bone",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Add_Bone_TT",
-      "Text": "Adds a bone under the selected bone, at its origin, or at the top of the skeleton if no bone is selected.\n\nThe new bone is added to the end of the bone list, so no existing bone index changes."
+      "Text": "Add a bone under the selected bone, at its origin, or at the top of the skeleton if no bone is selected.\n\nThe new bone goes at the end of the bone list, so no existing bone index changes."
     },
     {
       "Key": "MODEL_Tools_Action_Add_Material",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Add_Material_TT",
-      "Text": "Adds a copy of the selected material, or of the model's first material, under a new name.\n\nMove a mesh onto it by setting the mesh's Material Index."
+      "Text": "Add a copy of the selected material (or the model's first material) under a new name.\n\nTo move a mesh onto it, set the mesh's Material Index."
     },
     {
       "Key": "MODEL_Tools_Action_Duplicate_Title",
@@ -54,11 +54,11 @@
     },
     {
       "Key": "MODEL_Tools_Action_Duplicate_Context_TT",
-      "Text": "Duplicate the currently selected map objects.\n\nShortcut: {0}"
+      "Text": "Duplicate the selected model objects.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Duplicate_Menu_TT",
-      "Text": "Duplicate the currently selected map objects."
+      "Text": "Duplicate the selected model objects."
     },
     {
       "Key": "MODEL_Tools_Action_Frame_Context_Title",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Frame_Context_TT",
-      "Text": "Frames the current selection in the viewport.\n\nShortcut: {0}"
+      "Text": "Frame the selection in the viewport.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Frame_Menu_Title",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Frame_Menu_TT",
-      "Text": "Frames the current selection in the viewport."
+      "Text": "Frame the selection in the viewport."
     },
     {
       "Key": "MODEL_Tools_Action_GoTo_Title",
@@ -86,11 +86,11 @@
     },
     {
       "Key": "MODEL_Tools_Action_Pull_Context_TT",
-      "Text": "Move the current selection to the camera position.\n\nShortcut: {0}"
+      "Text": "Move the selection to the camera position.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Pull_Menu_TT",
-      "Text": "Move the current selection to the camera position."
+      "Text": "Move the selection to the camera position."
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Up_Title",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Up_Context_TT",
-      "Text": "Move the currently selected model objects up by one in the model object list  for this object type.\n\nShortcut: {0}"
+      "Text": "Move the selected model objects up one place in this object type's list.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Down_Title",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Down_Context_TT",
-      "Text": "Move the currently selected model objects down by one in the model object list  for this object type.\n\nShortcut: {0}"
+      "Text": "Move the selected model objects down one place in this object type's list.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Top_Title",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Top_Context_TT",
-      "Text": "Move the currently selected model objects to the top of the model object list for this object type.\n\nShortcut: {0}"
+      "Text": "Move the selected model objects to the top of this object type's list.\n\nShortcut: {0}"
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Bottom_Title",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "MODEL_Tools_Action_Reorder_Bottom_Context_TT",
-      "Text": "Move the currently selected model objects to the bottom of the model object list for this object type.\n\nShortcut: {0}"
+      "Text": "Move the selected model objects to the bottom of this object type's list.\n\nShortcut: {0}"
     }
   ]
 }

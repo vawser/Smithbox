@@ -10,7 +10,7 @@
     },
     {
       "Key": "PARAM_SE_CommandsForHelp_Default_Args",
-      "Text": "or omit specifying and use default ({0} args)"
+      "Text": "or leave it out to use the default ({0} args)"
     }
   ]
 }

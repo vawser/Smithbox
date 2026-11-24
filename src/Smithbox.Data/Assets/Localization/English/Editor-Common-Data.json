@@ -14,7 +14,7 @@
     },
     {
       "Key": "EDITOR_Menubar_Action_SaveAll_TT",
-      "Text": "Save all files that have been modified."
+      "Text": "Save all modified files."
     },
     {
       "Key": "EDITOR_Menubar_Allow_Unmodified_Save",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "EDITOR_Menubar_Allow_Unmodified_Save_TT",
-      "Text": "If enabled, saving unmodified files is allowed."
+      "Text": "Allow saving files that haven't been modified."
     },
     {
       "Key": "EDITOR_Menubar_Allow_Automatic_Save",
@@ -30,15 +30,15 @@
     },
     {
       "Key": "EDITOR_Menubar_Allow_Automatic_Save_TT",
-      "Text": "If enabled, automatic saving can occur."
+      "Text": "Allow automatic saving."
     },
     {
       "Key": "EDITOR_Data_Save_File",
-      "Text": "File has been saved: {0}"
+      "Text": "Saved file: {0}"
     },
     {
       "Key": "EDITOR_Data_Skip_File_Save",
-      "Text": "File has not been modified, so save was ignored: {0}"
+      "Text": "Skipped saving an unmodified file: {0}"
     },
     {
       "Key": "EDITOR_Data_Failed_Locate_Container",

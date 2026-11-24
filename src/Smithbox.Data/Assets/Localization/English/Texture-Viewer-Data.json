@@ -2,19 +2,19 @@
   "Entries": [
     {
       "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_FAIL",
-      "Text": "Failed to setup the Primary Texture bank."
+      "Text": "Failed to set up the primary texture bank."
     },
     {
       "Key": "TEXVIEW_DataSetup_Load_Primary_Bank_PASS",
-      "Text": "Setup the Primary Texture bank."
+      "Text": "Set up the primary texture bank."
     },
     {
       "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_FAIL",
-      "Text": "Failed to setup the Preview Texture bank."
+      "Text": "Failed to set up the preview texture bank."
     },
     {
       "Key": "TEXVIEW_DataSetup_Load_Preview_Bank_PASS",
-      "Text": "Setup the Preview Texture bank."
+      "Text": "Set up the preview texture bank."
     },
     {
       "Key": "TEXVIEW_DataSetup_Log_Failed_TPF_Read",
@@ -22,15 +22,15 @@
     },
     {
       "Key": "TEXVIEW_DataSetup_Log_Failed_BND4_Read",
-      "Text": "Failed to read {0} as BND4 in {1}"
+      "Text": "Failed to read {0} as BND4 in {1}."
     },
     {
       "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Read",
-      "Text": "Failed to read {0} from VFS in {1}"
+      "Text": "Failed to read {0} from VFS in {1}."
     },
     {
       "Key": "TEXVIEW_DataSetup_Log_Failed_VFS_Find",
-      "Text": "Failed to find {0} from VFS in {1}"
+      "Text": "Failed to find {0} in VFS in {1}."
     },
     {
       "Key": "TEXVIEW_Save_Log_Saved_Container",
@@ -46,11 +46,11 @@
     },
     {
       "Key": "TEXVIEW_Save_Log_Refresh_Failed",
-      "Text": "Saved, but the other editors could not be refreshed; reload the map or model to see the changes."
+      "Text": "Saved, but the other editors couldn't be refreshed. Reload the map or model to see the changes."
     },
     {
       "Key": "TEXVIEW_Save_Log_Unsupported_Container",
-      "Text": "Failed to save {0}: unsupported container type."
+      "Text": "Failed to save {0}: the container type isn't supported."
     }
   ]
 }

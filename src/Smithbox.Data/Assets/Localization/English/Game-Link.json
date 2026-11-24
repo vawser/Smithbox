@@ -22,7 +22,7 @@
     },
     {
       "Key": "GAMELINK_State_Open_Failed",
-      "Text": "Couldn't open the game process (error {0}). EAC may be running, or Smithbox may need the same rights as the game."
+      "Text": "Couldn't open the game process (error {0}). EAC may be running, or Smithbox may need the same permissions as the game."
     },
     {
       "Key": "GAMELINK_World_Header",
@@ -34,15 +34,15 @@
     },
     {
       "Key": "GAMELINK_World_Reload_TT",
-      "Text": "Save, then load the same save again without going to the title screen."
+      "Text": "Save, then reload the same save without returning to the title screen."
     },
     {
       "Key": "GAMELINK_World_Reload_No_Save_TT",
-      "Text": "Load the game's last save again without going to the title screen. The game isn't saved first."
+      "Text": "Reload the game's last save without returning to the title screen. The game isn't saved first."
     },
     {
       "Key": "GAMELINK_World_No_Save_Warning",
-      "Text": "This game can't be saved from here: Reload World loads its last save, so progress since then is lost."
+      "Text": "This game can't be saved from here. Reload World loads its last save, so any progress since then is lost."
     },
     {
       "Key": "GAMELINK_World_Running",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "GAMELINK_World_Done",
-      "Text": "{0}  Saved and reloading the world."
+      "Text": "{0}  Saved; reloading the world."
     },
     {
       "Key": "GAMELINK_World_Done_No_Save",
@@ -70,15 +70,15 @@
     },
     {
       "Key": "GAMELINK_World_Save_Not_Taken",
-      "Text": "The game didn't save within 10 seconds, so the world wasn't reloaded. Is a world loaded?"
+      "Text": "The game didn't save within 10 seconds, so the world wasn't reloaded. Check that a world is loaded."
     },
     {
       "Key": "GAMELINK_World_Load_Not_Taken",
-      "Text": "The game didn't start the load within 10 seconds, so the request was withdrawn."
+      "Text": "The game didn't start loading within 10 seconds, so the request was withdrawn."
     },
     {
       "Key": "GAMELINK_World_Failed",
-      "Text": "Reload world failed: {0}"
+      "Text": "Failed to reload the world: {0}"
     },
     {
       "Key": "GAMELINK_QuitOut",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "GAMELINK_QuitOut_Not_Taken",
-      "Text": "The game didn't act on the quit request within 5 seconds, so it was withdrawn. Is a world loaded?"
+      "Text": "The game didn't respond to the quit request within 5 seconds, so it was withdrawn. Check that a world is loaded."
     },
     {
       "Key": "GAMELINK_QuitOut_Not_In_World",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "GAMELINK_QuitOut_Failed",
-      "Text": "Quit out failed: {0}"
+      "Text": "Failed to quit out: {0}"
     }
   ]
 }

@@ -6,7 +6,7 @@
     },
     {
       "Key": "PREF_GparamEditor_File_List_Display_Aliases_TT",
-      "Text": "If enabled, aliases are displayed in the file list."
+      "Text": "Show aliases in the file list."
     },
     {
       "Key": "PREF_GparamEditor_Group_List_Display_Descriptions",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PREF_GparamEditor_Group_List_Display_Descriptions_TT",
-      "Text": "If enabled, the group descriptions are displayed on hover."
+      "Text": "Show group descriptions on hover."
     },
     {
       "Key": "PREF_GparamEditor_Group_List_Display_Empty_Group",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PREF_GparamEditor_Group_List_Display_Empty_Group_TT",
-      "Text": "If enabled, empty groups with no fields are displayed."
+      "Text": "Show empty groups that have no fields."
     },
     {
       "Key": "PREF_GparamEditor_Field_List_Display_Descriptions",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PREF_GparamEditor_Field_List_Display_Descriptions_TT",
-      "Text": "If enabled, the field descriptions are displayed on hover."
+      "Text": "Show field descriptions on hover."
     },
     {
       "Key": "PREF_GparamEditor_Highlight_Viewport_Fields",
@@ -38,23 +38,23 @@
     },
     {
       "Key": "PREF_GparamEditor_Highlight_Viewport_Fields_TT",
-      "Text": "If enabled, the tooltips of the groups and fields the viewport's renderer reads say so, so you know edits to them can be previewed. (List colours always show the vanilla state.)"
+      "Text": "Note in the tooltips of groups and fields that the viewport's renderer reads them, so you know you can preview edits to them. (List colours always show the vanilla state.)"
     },
     {
       "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4",
-      "Text": "Display Color Edit for 4-digit Properties"
+      "Text": "Show Colour Picker for 4-Component Properties"
     },
     {
       "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4_TT",
-      "Text": "If enabled, the color picker will be displayed on properties with a 4-digit type."
+      "Text": "Show the colour picker on properties with a 4-component type."
     },
     {
       "Key": "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column",
-      "Text": "Display Time of Day Column"
+      "Text": "Show Time of Day Column"
     },
     {
       "Key": "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column_TT",
-      "Text": "If enabled, the time of day column is displayed in the Value section."
+      "Text": "Show the time of day column in the Value section."
     },
     {
       "Key": "PREF_GparamEditor_Value_List_Display_Information_Column",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PREF_GparamEditor_Value_List_Display_Information_Column_TT",
-      "Text": "If enabled, the information column is displayed in the Value section."
+      "Text": "Show the information column in the Value section."
     },
     {
       "Key": "PREF_GparamEditor_Color_Edit_Mode",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "PREF_GparamEditor_Color_Edit_Mode_TT",
-      "Text": "Determines how the color edit displays the numeric data."
+      "Text": "How the colour picker shows the numeric data."
     }
   ]
 }

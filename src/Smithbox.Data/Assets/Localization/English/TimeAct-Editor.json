@@ -10,7 +10,7 @@
     },
     {
       "Key": "TAE_Universe_Model_Already_Loaded",
-      "Text": "Model '{0}' is already loaded"
+      "Text": "Model '{0}' is already loaded."
     },
     {
       "Key": "TAE_Editor_Source_Window",
@@ -62,11 +62,11 @@
     },
     {
       "Key": "TAE_SourceWindow_Open_In_Other_View",
-      "Text": "{0} is already open in view [{1}], so that view has been brought forward. A source can only be open in one view at a time."
+      "Text": "{0} is already open in view [{1}], so that view was brought forward. A source can only be open in one view at a time."
     },
     {
       "Key": "TAE_SourceWindow_Open_In_Other_View_TT",
-      "Text": "Open in view [{0}]. Selecting it brings that view forward, as a source can only be open in one view at a time."
+      "Text": "Open in view [{0}]. Selecting it brings that view forward, because a source can only be open in one view at a time."
     },
     {
       "Key": "TAE_SourceWindow_Action_Source_Name",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Vanilla_Markers_TT",
-      "Text": "Colours the time acts, animations and events that differ from the game's version: changed ones as the Param Editor colours changed rows, and new ones as it colours added rows. Events get a mark in their corner. The * after a name still means unsaved."
+      "Text": "Colour the time acts, animations and events that differ from the game's version: changed ones like the Param Editor's changed rows, and new ones like its added rows. Events get a mark in their corner. A * after a name still means unsaved."
     },
     {
       "Key": "TAE_Vanilla_Status_Same",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "TAE_Vanilla_Revert_TimeAct_TT",
-      "Text": "Puts the whole time act back as the game has it: its header and every animation. Only offered when the game has this time act and it has been changed. This can be undone, and is written on save."
+      "Text": "Revert the whole time act to the game's version: its header and every animation. Only offered when the game has this time act and it has been changed. You can undo this, and it is written on save."
     },
     {
       "Key": "TAE_Vanilla_Restore_Animations",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "TAE_Vanilla_Restore_Animations_TT",
-      "Text": "Adds back the game's animations that this time act no longer has, under their own IDs. Select the time act first, as it has to be read to know which are missing."
+      "Text": "Restore the game's animations that this time act no longer has, under their own IDs. Select the time act first, because it must be read to find which are missing."
     },
     {
       "Key": "TAE_Vanilla_Revert_Animation",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "TAE_Vanilla_Revert_Animation_TT",
-      "Text": "Puts the animation back as the game has the animation of this ID: its mini header, file name, events and event groups. Only offered when the game has it and it has been changed. This can be undone."
+      "Text": "Revert the animation to the game's version of the animation with this ID: its mini header, file name, events and event groups. Only offered when the game has it and it has been changed. You can undo this."
     },
     {
       "Key": "TAE_Vanilla_Revert_Event",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "TAE_Vanilla_Revert_Event_TT",
-      "Text": "Puts the selected events that the game has in a changed form back as the game has them: times, Unk04 and parameters. Events are matched with the game's by lining up the unchanged ones, then pairing the rest by type in order. New events aren't affected, and groups are left as they are."
+      "Text": "Revert the selected events that the game has in a changed form to the game's version: times, Unk04 and parameters. Events are matched with the game's by lining up the unchanged ones, then pairing the rest by type in order. New events aren't affected, and groups are left unchanged."
     },
     {
       "Key": "TAE_PropertiesWindow_Reverse_Links_Shown_TT",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Imported_By_TT",
-      "Text": "The animations of this source whose mini header points at this one. Import HKX plays this animation's motion. Import Other Anim plays its motion and its events too, so an edit here changes them as well. Opening this reads every time act of the source."
+      "Text": "The animations in this source whose mini header points at this one. Import HKX plays this animation's motion. Import Other Anim also plays its events, so an edit here changes them too. Opening this reads every time act in the source."
     },
     {
       "Key": "TAE_PropertiesWindow_Imported_By_None",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Identical_Events_TT",
-      "Text": "The events of other animations of this source with the same type, Unk04 and parameters as this one. Useful to see how far a shared event reaches before changing it. Opening this reads every time act of the source."
+      "Text": "Events in other animations of this source with the same type, Unk04 and parameters as this one. Useful to see how widely a shared event is used before changing it. Opening this reads every time act in the source."
     },
     {
       "Key": "TAE_PropertiesWindow_Identical_Events_Same_Times",
@@ -226,7 +226,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Identical_Events_None",
-      "Text": "No other event of this source is the same."
+      "Text": "No other event in this source is the same."
     },
     {
       "Key": "TAE_PropertiesWindow_Identical_Events_Count",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Vanilla_Revert_TT",
-      "Text": "Puts this back as the game has it. This can be undone."
+      "Text": "Revert this to the game's version. You can undo this."
     },
     {
       "Key": "TAE_Vanilla_Detail_Header",
@@ -346,23 +346,23 @@
     },
     {
       "Key": "TAE_Data_Failed_To_Read_Template",
-      "Text": "Failed to read time act template: {0}"
+      "Text": "Failed to read the time act template: {0}"
     },
     {
       "Key": "TAE_Editor_Options_Event_Markers",
-      "Text": "Display Effect and Sound Markers"
+      "Text": "Show Effect and Sound Markers"
     },
     {
       "Key": "TAE_Editor_Options_Event_Markers_TT",
-      "Text": "If enabled, a shape appears in the viewport where effects and sounds play, and grows over the event."
+      "Text": "Show a shape in the viewport where effects and sounds play, which grows over the event."
     },
     {
       "Key": "TAE_Editor_Options_Attack_Capsules",
-      "Text": "Display Attack and Bullet Capsules"
+      "Text": "Show Attack and Bullet Capsules"
     },
     {
       "Key": "TAE_Editor_Options_Attack_Capsules_TT",
-      "Text": "If enabled, the hit capsules of attack and bullet events appear in the viewport while they are active."
+      "Text": "Show the hit capsules of attack and bullet events in the viewport while they are active."
     },
     {
       "Key": "TAE_Editor_Options_Apply_Root_Motion",
@@ -370,7 +370,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Apply_Root_Motion_TT",
-      "Text": "If enabled, the model moves and turns with the root motion of the animation, as the character does in game. It returns to the start each time the animation loops."
+      "Text": "Move and turn the model with the animation's root motion, as the character does in game. It returns to the start each time the animation loops."
     },
     {
       "Key": "TAE_Editor_Options_Play_Event_Sounds",
@@ -378,7 +378,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Play_Event_Sounds_TT",
-      "Text": "If enabled, sound events play their sound as the playback passes their start, using the banks the Sound Editor reads. Needs the Sound Editor to be enabled for the project, and uses its volume."
+      "Text": "Play each sound event's sound when playback passes its start, using the banks the Sound Editor reads. Needs the Sound Editor enabled for the project, and uses its volume."
     },
     {
       "Key": "TAE_Editor_Options_Root_Motion_Path",
@@ -386,7 +386,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Root_Motion_Path_TT",
-      "Text": "If enabled, a green line in the viewport shows the path the root motion of the animation takes, and a white arrow shows where the root is and which way it faces at the current time."
+      "Text": "Show the animation's root motion path as a green line in the viewport, and the root's position and facing at the current time as a white arrow."
     },
     {
       "Key": "TAE_Editor_Options_Display_Effects",
@@ -394,7 +394,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Display_Effects_TT",
-      "Text": "If enabled, FFX events play their effect in the viewport while they run, on the dummy poly they spawn on. One-shot effects run to their own end; the others stop at the end of their event. Which particle kinds are drawn, and how bright, follows the FX Editor's Viewport Rendering options."
+      "Text": "Play FFX events' effects in the viewport while they run, on the dummy poly they spawn on. One-shot effects run until they end; others stop at the end of their event. The FX Editor's Viewport Rendering options control which particle kinds are drawn and how bright they are."
     },
     {
       "Key": "TAE_FiltersTool_Effects_No_Fx",
@@ -418,7 +418,7 @@
     },
     {
       "Key": "TAE_EventDisplay_On_Body",
-      "Text": "Displayed at the center of the body."
+      "Text": "Displayed at the centre of the body."
     },
     {
       "Key": "TAE_EventDisplay_Attack",
@@ -446,7 +446,7 @@
     },
     {
       "Key": "TAE_EventDisplay_No_Params",
-      "Text": "Params aren't loaded, so this event can't be displayed."
+      "Text": "The params aren't loaded, so this event can't be displayed."
     },
     {
       "Key": "TAE_EventDisplay_No_Judge",
@@ -454,7 +454,7 @@
     },
     {
       "Key": "TAE_EventDisplay_No_Weapon",
-      "Text": "This attack needs a weapon: equip one with the Character Preview tool."
+      "Text": "This attack needs a weapon. Equip one with the Character Preview tool."
     },
     {
       "Key": "TAE_EventDisplay_No_Behavior",
@@ -466,7 +466,7 @@
     },
     {
       "Key": "TAE_EventDisplay_Failed_To_Read_Weapon",
-      "Text": "Failed to read the dummy polys of {0}"
+      "Text": "Failed to read the dummy polys of {0}."
     },
     {
       "Key": "TAE_Editor_Options_Auto_Play",
@@ -474,7 +474,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Auto_Play_TT",
-      "Text": "If enabled, an animation starts playing once it has stayed selected for half a second."
+      "Text": "Start playing an animation once it has been selected for half a second."
     },
     {
       "Key": "TAE_Editor_Options_Outside_Playback",
@@ -482,7 +482,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Outside_Playback_TT",
-      "Text": "If enabled, the event graph also shows the frames before the start and after the end of the animation, so events that run past them are fully visible."
+      "Text": "Also show the frames before the start and after the end of the animation in the event graph, so events that run past them are fully visible."
     },
     {
       "Key": "TAE_Editor_Options_Event_Names",
@@ -490,7 +490,7 @@
     },
     {
       "Key": "TAE_Editor_Options_Event_Names_TT",
-      "Text": "If enabled, the event graph shows the name of each track in a column on its left."
+      "Text": "Show each track's name in a column on the left of the event graph."
     },
     {
       "Key": "TAE_Editor_Save_Not_Supported",
@@ -514,7 +514,7 @@
     },
     {
       "Key": "TAE_Editor_Save_Already_Running",
-      "Text": "The time acts are still being saved. Try again once the save has finished."
+      "Text": "The time acts are still being saved. Try again when the save finishes."
     },
     {
       "Key": "TAE_Editor_Save_Krak_As_Deflate",
@@ -522,7 +522,7 @@
     },
     {
       "Key": "TAE_Editor_Save_Krak_As_Deflate_TT",
-      "Text": "If enabled, KRAK-compressed binders are written with deflate compression (DCX_DFLT 11000.44.9.15) instead. Elden Ring loads both, and deflate is much quicker to write. The files are larger than with KRAK."
+      "Text": "Write KRAK-compressed binders with deflate compression (DCX_DFLT 11000.44.9.15) instead. Elden Ring loads both, and deflate is much faster to write, but the files are larger than with KRAK."
     },
     {
       "Key": "TAE_Editor_Background_Save_Failed",
@@ -538,7 +538,7 @@
     },
     {
       "Key": "TAE_Editor_Edit_History_TT",
-      "Text": "Opens the Edit History tool, which lists the edits that can be undone and redone, and where each was made."
+      "Text": "Open the Edit History tool, which lists the edits you can undo and redo, and where each was made."
     },
     {
       "Key": "TAE_ToolWindow_View_Toggle_History",
@@ -590,7 +590,7 @@
     },
     {
       "Key": "TAE_HistoryTool_Hint",
-      "Text": "The edits made in this view, oldest first, with the source, time act and animation of each. Click an edit to go back to just before it, or click an undone (dimmed) edit to redo up to it. Undo and redo first open what they change, so it can be seen."
+      "Text": "The edits made in this view, oldest first, with each one's source, time act and animation. Click an edit to go back to just before it, or click an undone (dimmed) edit to redo up to it. Undo and redo first open what they change, so you can see it."
     },
     {
       "Key": "TAE_HistoryTool_Steps_Header",
@@ -598,7 +598,7 @@
     },
     {
       "Key": "TAE_HistoryTool_Steps_Header_TT",
-      "Text": "The highlighted edit is the latest one applied. The history is kept when another source is opened, until the view is closed."
+      "Text": "The highlighted edit is the latest applied. The history is kept when another source is opened, until the view is closed."
     },
     {
       "Key": "TAE_HistoryTool_Empty",
@@ -618,7 +618,7 @@
     },
     {
       "Key": "TAE_HistoryTool_Actions_Header_TT",
-      "Text": "Undo or redo one edit, the same as the shortcuts."
+      "Text": "Undo or redo one edit, like the shortcuts."
     },
     {
       "Key": "TAE_HistoryTool_Undo",
@@ -626,7 +626,7 @@
     },
     {
       "Key": "TAE_HistoryTool_Undo_TT",
-      "Text": "Undoes the latest edit, after opening what it changes."
+      "Text": "Undo the latest edit, after opening what it changes."
     },
     {
       "Key": "TAE_HistoryTool_Redo",
@@ -634,7 +634,7 @@
     },
     {
       "Key": "TAE_HistoryTool_Redo_TT",
-      "Text": "Redoes the next undone edit, after opening what it changes."
+      "Text": "Redo the next undone edit, after opening what it changes."
     },
     {
       "Key": "TAE_HistoryTool_Viewport_Step",
@@ -746,15 +746,15 @@
     },
     {
       "Key": "TAE_SaveCheck_Unsorted_Animations",
-      "Text": "{0} {1}: the animations are out of ID order, which no time act of the game is. Fix: sort them by ID."
+      "Text": "{0} {1}: the animations aren't in ID order, unlike every time act in the game. Fix: sort them by ID."
     },
     {
       "Key": "TAE_SaveCheck_Duplicate_Animation_ID",
-      "Text": "{0} {1}: {3} animations share the ID of {2}, which no time act of the game has. Change the IDs by hand."
+      "Text": "{0} {1}: {3} animations share the ID of {2}, which no time act in the game does. Change the IDs by hand."
     },
     {
       "Key": "TAE_SaveCheck_Ungrouped_Events",
-      "Text": "{0} {1}: {2} event(s) are outside the event groups of the animation, which no animation of the game has. They can't be fixed for you."
+      "Text": "{0} {1}: {2} event(s) are outside the animation's event groups, which no animation in the game has. They can't be fixed automatically."
     },
     {
       "Key": "TAE_SaveCheck_More_Issues",
@@ -762,11 +762,11 @@
     },
     {
       "Key": "TAE_SaveCheck_Dialog",
-      "Text": "{0} problem(s) were found in the time acts about to be saved, {1} of which can be fixed for you:\n\n{2}\n\nYes: fix what can be fixed, then save (the fixes can be undone).\nNo: save as they are.\nCancel: don't save."
+      "Text": "{0} problem(s) were found in the time acts about to be saved, and {1} of them can be fixed automatically:\n\n{2}\n\nYes: fix what can be fixed, then save (you can undo the fixes).\nNo: save as they are.\nCancel: don't save."
     },
     {
       "Key": "TAE_SaveCheck_Cancelled",
-      "Text": "Save cancelled, as problems were found in the time acts."
+      "Text": "Save cancelled because problems were found in the time acts."
     },
     {
       "Key": "TAE_SaveCheck_Fixed",
@@ -774,7 +774,7 @@
     },
     {
       "Key": "TAE_Editor_Save_Other_Sources_Unsaved",
-      "Text": "{0} other source(s) still have unsaved time act changes, as Save only writes the open source. Use Save All to write them: {1}"
+      "Text": "{0} other source(s) still have unsaved time act changes, because Save only writes the open source. Use Save All to write them: {1}"
     },
     {
       "Key": "TAE_Editor_Failed_To_Save_Source",
@@ -810,7 +810,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Zoom_TT",
-      "Text": "Zoom the timeline. Hold Ctrl and scroll over the graph to zoom around the cursor.\n\nWith the cursor over the graph:\nLeft / Right: move the selected events a frame (ten with Shift), or step the playhead if none are selected.\nComma / Period: step the playhead a frame (ten with Shift).\nHome / End: go to the start or end of playback.\nHold Alt while dragging to move off whole frames.\nRight-click a track name for its menu."
+      "Text": "Zoom the timeline. Hold Ctrl and scroll over the graph to zoom around the cursor.\n\nWith the cursor over the graph:\nLeft / Right: move the selected events one frame (ten with Shift), or step the playhead if none are selected.\nComma / Period: step the playhead one frame (ten with Shift).\nHome / End: go to the start or end of playback.\nHold Alt while dragging to move by fractions of a frame.\nRight-click a track name for its menu."
     },
     {
       "Key": "TAE_GraphWindow_To_Start_TT",
@@ -818,11 +818,11 @@
     },
     {
       "Key": "TAE_GraphWindow_Previous_Frame_TT",
-      "Text": "Step back a frame, or ten with Shift (Comma)."
+      "Text": "Step back one frame, or ten with Shift (Comma)."
     },
     {
       "Key": "TAE_GraphWindow_Next_Frame_TT",
-      "Text": "Step on a frame, or ten with Shift (Period)."
+      "Text": "Step forward one frame, or ten with Shift (Period)."
     },
     {
       "Key": "TAE_GraphWindow_To_End_TT",
@@ -830,11 +830,11 @@
     },
     {
       "Key": "TAE_GraphWindow_Zoom_Fit_TT",
-      "Text": "Zoom so the whole timeline fits the graph."
+      "Text": "Zoom to fit the whole timeline in the graph."
     },
     {
       "Key": "TAE_GraphWindow_Zoom_Selection_TT",
-      "Text": "Zoom to the selected events, and scroll to them."
+      "Text": "Zoom and scroll to the selected events."
     },
     {
       "Key": "TAE_GraphWindow_Show_All_Types_Solo",
@@ -846,7 +846,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Show_All_Types_TT",
-      "Text": "Some event types are left off the graph, in every animation, from the track menu. Click to show them all again."
+      "Text": "Some event types are hidden from the graph in every animation, from the track menu. Click to show them all again."
     },
     {
       "Key": "TAE_GraphWindow_Track_Collapsed_Label",
@@ -866,7 +866,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Track_Collapse_TT",
-      "Text": "Draws every event of this type on one row, over each other, to save room. Stays so for every animation."
+      "Text": "Draw every event of this type on one row, overlapping, to save space. Applies to every animation."
     },
     {
       "Key": "TAE_GraphWindow_Track_Hide",
@@ -874,7 +874,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Track_Hide_TT",
-      "Text": "Leaves this type of event off the graph, in every animation, until it is shown again. Hidden events can't be selected."
+      "Text": "Hide this type of event from the graph in every animation until you show it again. Hidden events can't be selected."
     },
     {
       "Key": "TAE_GraphWindow_Track_Solo",
@@ -886,7 +886,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Track_Solo_TT",
-      "Text": "Shows only this type of event, in every animation, to follow it through them."
+      "Text": "Show only this type of event in every animation, to follow it across them."
     },
     {
       "Key": "TAE_GraphWindow_Track_Show_All",
@@ -910,7 +910,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Event_Filter_TT",
-      "Text": "Events that don't match are drawn duller.\n\nField Value: events with a field whose name contains Field, set to Value. For example: SpEffectID 450\nField=Value: the same, for field names with spaces in them.\nValue: events with any field set to Value. For example: 450\nAny other text: events whose name contains it. For example: Invoke, or [96] for an event type.\n\nNumbers match by value, so hex fields can be searched in decimal, and enum fields by name or number."
+      "Text": "Events that don't match are drawn dimmer.\n\nField Value: events with a field whose name contains Field, set to Value. For example: SpEffectID 450\nField=Value: the same, for field names that contain spaces.\nValue: events with any field set to Value. For example: 450\nAny other text: events whose name contains it. For example: Invoke, or [96] for an event type.\n\nNumbers match by value, so you can search hex fields in decimal, and enum fields by name or number."
     },
     {
       "Key": "TAE_GraphWindow_Select_All",
@@ -954,15 +954,15 @@
     },
     {
       "Key": "TAE_GraphWindow_Read_Only",
-      "Text": "Read only: time acts can't be saved for this game."
+      "Text": "Read-only: time acts can't be saved for this game."
     },
     {
       "Key": "TAE_GraphWindow_Imported_Read_Only",
-      "Text": "Read only: events imported from {0}."
+      "Text": "Read-only: events imported from {0}."
     },
     {
       "Key": "TAE_GraphWindow_Imported_Missing",
-      "Text": "Read only: events imported from {0}, which isn't in this source."
+      "Text": "Read-only: events imported from {0}, which isn't in this source."
     },
     {
       "Key": "TAE_GraphWindow_Go_To_Source",
@@ -970,7 +970,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Go_To_Source_TT",
-      "Text": "Opens the animation these events belong to, in {0}, where they can be edited."
+      "Text": "Open the animation these events belong to, in {0}, where you can edit them."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Import_Source_Link",
@@ -982,7 +982,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Imported_Read_Only_TT",
-      "Text": "This animation's mini header is Import Other Anim, so it plays the events of the animation it imports.\nEdit them in that animation, or change the mini header to Standard to give this one events of its own."
+      "Text": "This animation's mini header is Import Other Anim, so it plays the events of the animation it imports.\nEdit them in that animation, or change the mini header to Standard to give this animation its own events."
     },
     {
       "Key": "TAE_GraphWindow_No_Templates",
@@ -998,7 +998,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_No_Template",
-      "Text": "No template fits event type {0}, so its parameters are edited as raw bytes. Each row keeps its length, as the game reads a set size for each type."
+      "Text": "No template fits event type {0}, so its parameters are edited as raw bytes. Each row keeps its length, because the game reads a fixed size for each type."
     },
     {
       "Key": "TAE_PropertiesWindow_Time_To_End",
@@ -1006,11 +1006,11 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Time_TT",
-      "Text": "Type a time in seconds (0.5), or in frames with an f after it (15f). The frame in brackets is only shown, and can be left in when editing. An end time of exactly 100 makes the event last to the end of the animation; any other time, longer ones included, is kept as it is."
+      "Text": "Type a time in seconds (0.5), or in frames followed by f (15f). The frame in brackets is for display only and can be left in when editing. An end time of exactly 100 makes the event last until the end of the animation; any other time, including longer ones, is kept as entered."
     },
     {
       "Key": "TAE_PropertiesWindow_Invalid_Time",
-      "Text": "'{0}' is not a time for {1}: type seconds (0.5) or frames (15f)."
+      "Text": "'{0}' isn't a valid time for {1}. Type seconds (0.5) or frames (15f)."
     },
     {
       "Key": "TAE_PropertiesWindow_Unk04",
@@ -1030,7 +1030,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Event_Group_TT",
-      "Text": "The group the event belongs to in this animation. It is shown but not edited, as what group types and data mean isn't known well enough. In the game's files the group type is often not the event's own type."
+      "Text": "The event's group in this animation. It is shown but can't be edited, because the meaning of group types and data isn't well enough known. In the game's files, the group type often differs from the event's own type."
     },
     {
       "Key": "TAE_PropertiesWindow_Event_Group_Data_Type",
@@ -1046,7 +1046,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Event_Group_None_TT",
-      "Text": "The event is outside the event groups of the animation, which no animation of the game has. Saving warns about it."
+      "Text": "The event is outside the animation's event groups, which no animation in the game has. Saving warns about it."
     },
     {
       "Key": "TAE_PropertiesWindow_Raw_Empty",
@@ -1054,11 +1054,11 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Raw_Invalid",
-      "Text": "'{0}' is not {1} bytes of hex, so the row was left as it was."
+      "Text": "'{0}' isn't {1} bytes of hex, so the row was left unchanged."
     },
     {
       "Key": "TAE_PropertiesWindow_Raw_Row_TT",
-      "Text": "Type the bytes of this row in hex, with or without spaces. What each four bytes read as:"
+      "Text": "Type this row's bytes in hex, with or without spaces. How each four bytes are read:"
     },
     {
       "Key": "TAE_PropertiesWindow_Force_Template_Header",
@@ -1066,7 +1066,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Force_Template_Unreadable",
-      "Text": "The template can't read this event even past its fixed values, so it can't be applied: {0}"
+      "Text": "The template can't read this event, even past its fixed values, so it can't be applied: {0}"
     },
     {
       "Key": "TAE_PropertiesWindow_Force_Template_Summary",
@@ -1102,7 +1102,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Force_Template_Warning",
-      "Text": "The event is then edited and saved through the template, so the bytes above are lost when the time act is saved. This is for trying out a template on this event. It can be undone until then."
+      "Text": "The event is then edited and saved through the template, so the bytes above are lost when the time act is saved. Use this to try a template on this event. You can undo it until then."
     },
     {
       "Key": "TAE_PropertiesWindow_Force_Template_Apply",
@@ -1118,7 +1118,7 @@
     },
     {
       "Key": "TAE_TemplateFit_Mismatch",
-      "Text": "The {0} template doesn't write this event back exactly: at byte {1} the file has {2} but the template writes {3} (event {4} bytes, template {5}). It is left as raw bytes so nothing is lost on save."
+      "Text": "The {0} template doesn't write this event back exactly: at byte {1}, the file has {2} but the template writes {3} (event {4} bytes, template {5}). It stays as raw bytes so nothing is lost on save."
     },
     {
       "Key": "TAE_TemplateFit_Failed",
@@ -1126,7 +1126,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Invalid_Value",
-      "Text": "'{0}' is not a valid {1} value."
+      "Text": "'{0}' isn't a valid {1} value."
     },
     {
       "Key": "TAE_SelectionWindow_List_Header",
@@ -1178,11 +1178,11 @@
     },
     {
       "Key": "TAE_SearchTool_Local_Hint",
-      "Text": "Find animations and events in the selected source by their names, properties, fields and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. Click a result to jump to it."
+      "Text": "Find animations and events in the selected source by name, property, field and value. Fill in any of the inputs: empty inputs are ignored, and the rest must all match. Click a result to jump to it."
     },
     {
       "Key": "TAE_SearchTool_Global_Hint",
-      "Text": "Find animations and events in every source of the project by their names, properties, fields and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. Click a result to open its source and jump to it."
+      "Text": "Find animations and events in every source in the project by name, property, field and value. Fill in any of the inputs: empty inputs are ignored, and the rest must all match. Click a result to open its source and jump to it."
     },
     {
       "Key": "TAE_SearchTool_Global_Scanning",
@@ -1202,15 +1202,15 @@
     },
     {
       "Key": "TAE_SearchTool_Cancel_TT",
-      "Text": "Stops the search. The results found so far are kept."
+      "Text": "Stop the search. Results found so far are kept."
     },
     {
       "Key": "TAE_SearchTool_Search_TT",
-      "Text": "Runs the search. Leaving an input after changing it, or pressing Enter in it, does the same."
+      "Text": "Run the search. Leaving an input after changing it, or pressing Enter in it, does the same."
     },
     {
       "Key": "TAE_SearchTool_Clear_TT",
-      "Text": "Empties the inputs and the results."
+      "Text": "Clear the inputs and the results."
     },
     {
       "Key": "TAE_SearchTool_Options_Header",
@@ -1242,7 +1242,7 @@
     },
     {
       "Key": "TAE_SearchTool_Results_Header_TT",
-      "Text": "Click a result to jump to it. The filter narrows the list down without searching again."
+      "Text": "Click a result to jump to it. The filter narrows the list without searching again."
     },
     {
       "Key": "TAE_SearchTool_Results_Filtered",
@@ -1266,7 +1266,7 @@
     },
     {
       "Key": "TAE_SearchTool_Scope_TT",
-      "Text": "Search the selected time act only, or every time act of the selected source."
+      "Text": "Search only the selected time act, or every time act in the selected source."
     },
     {
       "Key": "TAE_SearchTool_Scope_Current",
@@ -1282,7 +1282,7 @@
     },
     {
       "Key": "TAE_SearchTool_Animation_TT",
-      "Text": "Matches the animation name and alias, or the values of its properties: ID, file name and the animation it imports."
+      "Text": "Match the animation name and alias, or its property values: ID, file name and the animation it imports."
     },
     {
       "Key": "TAE_SearchTool_Event",
@@ -1290,7 +1290,7 @@
     },
     {
       "Key": "TAE_SearchTool_Event_TT",
-      "Text": "Matches the event type ID or name."
+      "Text": "Match the event type ID or name."
     },
     {
       "Key": "TAE_SearchTool_Field",
@@ -1298,7 +1298,7 @@
     },
     {
       "Key": "TAE_SearchTool_Field_TT",
-      "Text": "Matches the internal or annotated name of an event field, including the start and end times. Without an event, the animation properties are matched too."
+      "Text": "Match the internal or annotated name of an event field, including the start and end times. Without an event, animation properties are also matched."
     },
     {
       "Key": "TAE_SearchTool_Value",
@@ -1306,7 +1306,7 @@
     },
     {
       "Key": "TAE_SearchTool_Value_TT",
-      "Text": "Matches the value of any event field or animation property, or the name of an enum value. When a field is also given, the value must be in that field."
+      "Text": "Match the value of any event field or animation property, or the name of an enum value. When a field is also given, the value must be in that field."
     },
     {
       "Key": "TAE_SearchTool_Exact",
@@ -1314,7 +1314,7 @@
     },
     {
       "Key": "TAE_SearchTool_Exact_TT",
-      "Text": "Inputs must equal the text rather than be contained in it. Numbers are compared as numbers, so 1 finds 1.0."
+      "Text": "Inputs must equal the text instead of being contained in it. Numbers are compared as numbers, so 1 finds 1.0."
     },
     {
       "Key": "TAE_SearchTool_Search",
@@ -1330,7 +1330,7 @@
     },
     {
       "Key": "TAE_SearchTool_Results_Truncated",
-      "Text": "Over {0} results; only the first {0} are shown. Narrow the search to see the rest."
+      "Text": "More than {0} results; only the first {0} are shown. Narrow the search to see the rest."
     },
     {
       "Key": "TAE_SearchTool_Jump_TT",
@@ -1342,11 +1342,11 @@
     },
     {
       "Key": "TAE_Data_Setup_Primary_Bank_FAIL",
-      "Text": "Failed to setup the Primary Bank."
+      "Text": "Failed to set up the primary bank."
     },
     {
       "Key": "TAE_Data_Setup_Primary_Bank_PASS",
-      "Text": "Setup the Primary Bank."
+      "Text": "Set up the primary bank."
     },
     {
       "Key": "TAE_SelectionWindow_Context_Duplicate",
@@ -1354,7 +1354,7 @@
     },
     {
       "Key": "TAE_SelectionWindow_Context_Duplicate_TT",
-      "Text": "Adds a copy of this time act under the next free category. The binder is updated when the source is saved."
+      "Text": "Add a copy of this time act under the next free category. The binder is updated when the source is saved."
     },
     {
       "Key": "TAE_SelectionWindow_Context_Delete",
@@ -1362,7 +1362,7 @@
     },
     {
       "Key": "TAE_SelectionWindow_Context_Delete_TT",
-      "Text": "Removes this time act. The binder is updated when the source is saved."
+      "Text": "Remove this time act. The binder is updated when the source is saved."
     },
     {
       "Key": "TAE_SelectionWindow_Context_Export",
@@ -1370,7 +1370,7 @@
     },
     {
       "Key": "TAE_SelectionWindow_Context_Export_TT",
-      "Text": "Writes this time act as a .tae file, including any unsaved changes, to a folder named after its source within the export folder.\nExport folder: {0}"
+      "Text": "Write this time act as a .tae file, including unsaved changes, to a folder named after its source in the export folder.\nExport folder: {0}"
     },
     {
       "Key": "TAE_SelectionWindow_Context_Set_Export_Folder",
@@ -1378,7 +1378,7 @@
     },
     {
       "Key": "TAE_SelectionWindow_Context_Set_Export_Folder_TT",
-      "Text": "Selects the folder that time acts are exported to.\nExport folder: {0}"
+      "Text": "Select the folder to export time acts to.\nExport folder: {0}"
     },
     {
       "Key": "TAE_SelectionWindow_Context_Open_Export_Folder",
@@ -1398,7 +1398,7 @@
     },
     {
       "Key": "TAE_SelectionWindow_Duplicated",
-      "Text": "Duplicated time act {0} as {1}"
+      "Text": "Duplicated time act {0} as {1}."
     },
     {
       "Key": "TAE_SelectionWindow_Exported",
@@ -1414,15 +1414,15 @@
     },
     {
       "Key": "TAE_SelectionWindow_Context_Rename_TT",
-      "Text": "The new name of the time act, in the form {0}. The number is the category of its animations, so it must not be used by another time act.\nIt is renamed once you press Enter or leave the field. The binder is updated when the source is saved."
+      "Text": "The time act's new name, in the format {0}. The number is the category of its animations, so no other time act can use it.\nIt is renamed when you press Enter or leave the field. The binder is updated when the source is saved."
     },
     {
       "Key": "TAE_SelectionWindow_Renamed",
-      "Text": "Renamed time act {0} to {1}"
+      "Text": "Renamed time act {0} to {1}."
     },
     {
       "Key": "TAE_Name_Invalid_Mask",
-      "Text": "The name must be in the form {0}, where X is a digit."
+      "Text": "The name must be in the format {0}, where X is a digit."
     },
     {
       "Key": "TAE_Name_Already_Exists",
@@ -1434,11 +1434,11 @@
     },
     {
       "Key": "TAE_SelectionWindow_Context_Import_TT",
-      "Text": "Adds a .tae file to this source. If the file's name is a free time act name it is kept, and if it is already used you can replace that time act. Otherwise it goes in the next free category. The binder is updated when the source is saved."
+      "Text": "Add a .tae file to this source. If the file name is a free time act name, it is kept; if it is already in use, you can replace that time act. Otherwise, it goes in the next free category. The binder is updated when the source is saved."
     },
     {
       "Key": "TAE_SelectionWindow_Action_Source_Disabled_TT",
-      "Text": "Not available for an action time act: the behbnd holds one, under a fixed binder ID and name, and its animation IDs have no clips. Its events can be edited."
+      "Text": "Not available for an action time act: the behbnd holds one, under a fixed binder ID and name, and its animation IDs have no clips. You can edit its events."
     },
     {
       "Key": "TAE_SelectionWindow_Dialog_Select_Import_File",
@@ -1450,11 +1450,11 @@
     },
     {
       "Key": "TAE_SelectionWindow_Imported",
-      "Text": "Imported {0} as time act {1}"
+      "Text": "Imported {0} as time act {1}."
     },
     {
       "Key": "TAE_SelectionWindow_Import_Failed",
-      "Text": "Failed to read time act file: {0}"
+      "Text": "Failed to read the time act file: {0}"
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Header",
@@ -1490,11 +1490,11 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Multiple_Events_Same_Type",
-      "Text": "{0} events of the same type are selected. The values shown are those of the first, and changes apply to all of them."
+      "Text": "{0} events of the same type are selected. The first event's values are shown, and changes apply to all of them."
     },
     {
       "Key": "TAE_PropertiesWindow_Multiple_Events_Different_Type",
-      "Text": "{0} events of different types are selected. Only the first is shown, and changes apply to it alone."
+      "Text": "{0} events of different types are selected. Only the first is shown, and changes apply only to it."
     },
     {
       "Key": "TAE_PropertiesWindow_Field_Name_Mode_TT",
@@ -1542,7 +1542,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Behavior_Link_TT",
-      "Text": "The behavior rows this judge ID can pick, best first. For c0000 the first row follows the weapon held in the viewport.\nCtrl+click to go to the first row, Ctrl+Shift+click to open it in a new view, or right-click to go to any of them."
+      "Text": "The behavior rows this judge ID can pick, best match first. For c0000, the first row follows the weapon held in the viewport.\nCtrl+click to go to the first row, Ctrl+Shift+click to open it in a new view, or right-click to go to any of them."
     },
     {
       "Key": "TAE_PropertiesWindow_Field_Info_Header",
@@ -1574,7 +1574,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Field_Invalid_Default",
-      "Text": "The default value {0} in the meta is not a valid {1}."
+      "Text": "The default value {0} in the meta isn't a valid {1}."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Header",
@@ -1598,11 +1598,11 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_ID_TT",
-      "Text": "The ID of the animation, which its name and motion come from. For player characters this is the ID within the time act's category. It must not be used by another animation of the time act."
+      "Text": "The animation's ID, which sets its name and motion. For player characters, this is the ID within the time act's category. No other animation in the time act can use it."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_ID_In_Use",
-      "Text": "The animation ID {0} is already used by another animation of this time act."
+      "Text": "Another animation in this time act already uses animation ID {0}."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_File_Name",
@@ -1634,7 +1634,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Loop_By_Default_TT",
-      "Text": "Makes the animation loop by default. Only relevant for animations that aren't controlled by ESD or HKS, such as ObjAct animations."
+      "Text": "Loop the animation by default. Only relevant for animations not controlled by ESD or HKS, such as ObjAct animations."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Imports_HKX",
@@ -1642,7 +1642,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Imports_HKX_TT",
-      "Text": "Whether the motion is taken from the HKX of the animation in Import HKX Source."
+      "Text": "Take the motion from the HKX of the animation in Import HKX Source."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Import_HKX_Source",
@@ -1658,7 +1658,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Allow_Delay_Load_TT",
-      "Text": "Whether the animation can be loaded from a delay-load anibnd, such as the c0000_cXXXX.anibnd player throw anibnds."
+      "Text": "Allow the animation to load from a delay-load anibnd, such as the c0000_cXXXX.anibnd player throw anibnds."
     },
     {
       "Key": "TAE_PropertiesWindow_Animation_Import_From",
@@ -1682,7 +1682,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Format_TT",
-      "Text": "The game format the time act is written in. It can't be changed, as it decides how the rest of the file is laid out."
+      "Text": "The game format the time act is written in. It can't be changed, because it sets the layout of the rest of the file."
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Format_Big_Endian",
@@ -1702,7 +1702,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_ID_TT",
-      "Text": "The ID stored in the time act's header. This is separate from its name and binder ID, which renaming changes."
+      "Text": "The ID stored in the time act's header. It is separate from its name and binder ID, which renaming changes."
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Flags",
@@ -1710,7 +1710,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Flags_TT",
-      "Text": "Eight bytes of unknown flags, typed as hex. Spaces between the bytes are optional."
+      "Text": "Eight bytes of unknown flags, in hex. Spaces between the bytes are optional."
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Event_Bank",
@@ -1718,7 +1718,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Event_Bank_TT",
-      "Text": "The set of events the time act uses. This can differ within a game, and is often different for objects."
+      "Text": "The set of events the time act uses. This can vary within a game, and often differs for objects."
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Skeleton_Name",
@@ -1726,7 +1726,7 @@
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Skeleton_Name_TT",
-      "Text": "The .hkt skeleton file the time act refers to. Leave it empty to write no name."
+      "Text": "The .hkt skeleton file the time act refers to. Leave empty to write no name."
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Sib_Name",
@@ -1734,11 +1734,11 @@
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Sib_Name_TT",
-      "Text": "The .sib file the time act refers to. Leave it empty to write no name."
+      "Text": "The .sib file the time act refers to. Leave empty to write no name."
     },
     {
       "Key": "TAE_PropertiesWindow_TimeAct_Invalid_Value",
-      "Text": "'{0}' is not a valid value for {1}"
+      "Text": "'{0}' isn't a valid value for {1}."
     },
     {
       "Key": "TAE_SelectionWindow_Import_Wrong_Format",
@@ -1750,7 +1750,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Create_TT",
-      "Text": "Adds an empty animation after the selected one, under the next free ID."
+      "Text": "Add an empty animation after the selected one, under the next free ID."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Duplicate",
@@ -1758,7 +1758,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Duplicate_TT",
-      "Text": "Adds a copy of this animation and its events after it, under the next free ID. Its HKX file is not copied."
+      "Text": "Add a copy of this animation and its events after it, under the next free ID. Its HKX file isn't copied."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Copy",
@@ -1766,7 +1766,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Copy_TT",
-      "Text": "Copies this animation and its events, so they can be pasted into any time act of the project, in any view. Copying events in the graph is kept apart, so both can be held at once."
+      "Text": "Copy this animation and its events, to paste into any time act in the project, in any view. Event copies in the graph are kept separately, so you can hold both at once."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Paste",
@@ -1778,7 +1778,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Paste_TT",
-      "Text": "Adds the copied animation to this time act under its own ID, or the next free one after it if that is taken. Its HKX file is not copied: the copy plays the motion its ID or mini header points to in this source."
+      "Text": "Add the copied animation to this time act under its own ID, or the next free ID if that is taken. Its HKX file isn't copied, so the copy plays the motion its ID or mini header points to in this source."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Change_ID",
@@ -1786,7 +1786,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Change_ID_TT",
-      "Text": "Gives this animation another ID. The list stays in ID order, and the name and motion follow the new ID."
+      "Text": "Change this animation's ID. The list stays in ID order, and the name and motion follow the new ID."
     },
     {
       "Key": "TAE_AnimationWindow_Copied",
@@ -1794,11 +1794,11 @@
     },
     {
       "Key": "TAE_AnimationWindow_Pasted",
-      "Text": "Pasted animation {0} from {1} as {2}"
+      "Text": "Pasted animation {0} from {1} as {2}."
     },
     {
       "Key": "TAE_AnimationWindow_Paste_Byte_Order",
-      "Text": "Animation {0} can't be pasted into {1}, as their event parameters are stored in a different byte order."
+      "Text": "Animation {0} can't be pasted into {1}, because their event parameters use a different byte order."
     },
     {
       "Key": "TAE_AnimationWindow_Paste_Import_Missing",
@@ -1814,7 +1814,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Change_ID_Input_TT",
-      "Text": "The ID within this time act, as the Properties ID field has it. Press Enter to apply, or Escape to cancel."
+      "Text": "The ID within this time act, as in the Properties ID field. Press Enter to apply, or Escape to cancel."
     },
     {
       "Key": "TAE_AnimationWindow_Change_ID_Becomes",
@@ -1826,7 +1826,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Change_ID_Confirm_TT",
-      "Text": "Changes the ID. This can be undone."
+      "Text": "Change the ID. You can undo this."
     },
     {
       "Key": "TAE_AnimationWindow_Change_ID_Cancel",
@@ -1834,7 +1834,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Changed_ID",
-      "Text": "Changed animation {0} to {1}"
+      "Text": "Changed animation {0} to {1}."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Delete",
@@ -1842,7 +1842,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Delete_TT",
-      "Text": "Removes this animation from the time act. Its HKX file is left in place."
+      "Text": "Remove this animation from the time act. Its HKX file is kept."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Sort",
@@ -1850,7 +1850,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Sort_TT",
-      "Text": "Puts the animations in ID order, which is the order the game stores them in."
+      "Text": "Sort the animations by ID, the order the game stores them in."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Import_HKX",
@@ -1858,7 +1858,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Import_HKX_TT",
-      "Text": "Imports a .hkx file as the motion of this animation, stored under its own ID. It replaces the existing file, or is added to the container that holds the other animations of its category. The container is updated when the source is saved."
+      "Text": "Import a .hkx file as this animation's motion, stored under its own ID. It replaces the existing file, or is added to the container that holds the other animations in its category. The container is updated when the source is saved."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Export_HKX",
@@ -1866,7 +1866,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Export_HKX_TT",
-      "Text": "Writes the .hkx file this animation plays to a hkx folder within the folder of its source, in the export folder. An animation that imports another exports the file it imports. Unsaved imports are included.\nExport folder: {0}"
+      "Text": "Write the .hkx file this animation plays to a hkx folder inside its source's folder in the export folder. An animation that imports another exports the imported file. Unsaved imports are included.\nExport folder: {0}"
     },
     {
       "Key": "TAE_AnimationWindow_Context_Export_All_HKX",
@@ -1874,7 +1874,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Export_All_HKX_TT",
-      "Text": "Writes the .hkx files of every animation in the list, as it is filtered, to a hkx folder within the folder of its source, in the export folder. Animations that import the same file share it.\nExport folder: {0}"
+      "Text": "Write the .hkx files of every animation in the filtered list to a hkx folder inside its source's folder in the export folder. Animations that import the same file share it.\nExport folder: {0}"
     },
     {
       "Key": "TAE_AnimationWindow_Created",
@@ -1882,7 +1882,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Duplicated",
-      "Text": "Duplicated animation {0} as {1}"
+      "Text": "Duplicated animation {0} as {1}."
     },
     {
       "Key": "TAE_AnimationWindow_Deleted",
@@ -1890,7 +1890,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Sorted",
-      "Text": "Sorted the animations of {0} by ID"
+      "Text": "Sorted the animations of {0} by ID."
     },
     {
       "Key": "TAE_AnimationWindow_Dialog_Select_Import_File",
@@ -1902,11 +1902,11 @@
     },
     {
       "Key": "TAE_AnimationWindow_Import_Failed",
-      "Text": "Failed to read animation file: {0}"
+      "Text": "Failed to read the animation file: {0}"
     },
     {
       "Key": "TAE_AnimationWindow_Import_Shared_Set",
-      "Text": "{0} has no HKX files of its own, as it plays the animations of another character. Import the file into that character instead."
+      "Text": "{0} has no HKX files of its own, because it plays another character's animations. Import the file into that character instead."
     },
     {
       "Key": "TAE_AnimationWindow_Imported",
@@ -1914,15 +1914,15 @@
     },
     {
       "Key": "TAE_AnimationWindow_Import_Uses_Other",
-      "Text": "{0} imports the motion of {1}, so it keeps playing that one until the import is turned off in its properties."
+      "Text": "{0} imports the motion of {1}, so it keeps playing that motion until you turn off the import in its properties."
     },
     {
       "Key": "TAE_AnimationWindow_Read_Failed",
-      "Text": "Failed to read the animation containers of {0}"
+      "Text": "Failed to read the animation containers of {0}."
     },
     {
       "Key": "TAE_AnimationWindow_No_Animation_File",
-      "Text": "No HKX file could be found for {0}"
+      "Text": "No HKX file was found for {0}."
     },
     {
       "Key": "TAE_AnimationWindow_Dialog_Overwrite_Files",
@@ -1934,7 +1934,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Exported_All",
-      "Text": "Exported {0} animation files to {1}"
+      "Text": "Exported {0} animation files to {1}."
     },
     {
       "Key": "TAE_AnimationWindow_Export_Failed",
@@ -1942,7 +1942,7 @@
     },
     {
       "Key": "TAE_AnimationWindow_Alias_Display_TT",
-      "Text": "Aliases: {0}\nClick to change to: {1}\nHidden aliases can still be searched for in the filter."
+      "Text": "Aliases: {0}\nClick to change to: {1}\nYou can still search for hidden aliases in the filter."
     },
     {
       "Key": "TAE_AnimationWindow_Alias_Display_Wrap",
@@ -2010,7 +2010,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Scope_Current_TimeAct_TT",
-      "Text": "Every animation of the selected time act."
+      "Text": "Every animation in the selected time act."
     },
     {
       "Key": "TAE_MassEditTool_Scope_Current_Source",
@@ -2018,7 +2018,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Scope_Current_Source_TT",
-      "Text": "Every time act of the selected source."
+      "Text": "Every time act in the selected source."
     },
     {
       "Key": "TAE_MassEditTool_Scope_No_Events",
@@ -2038,7 +2038,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Target_Header_TT",
-      "Text": "Whether the edit applies to events, or to whole animations."
+      "Text": "Whether the edit applies to events or to whole animations."
     },
     {
       "Key": "TAE_MassEditTool_Target_Events",
@@ -2054,7 +2054,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Animation_Header_TT",
-      "Text": "Matches the name, alias or properties of an animation. Leave it empty to match every animation."
+      "Text": "Match an animation's name, alias or properties. Leave empty to match every animation."
     },
     {
       "Key": "TAE_MassEditTool_Any_Hint",
@@ -2066,11 +2066,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Event_Header_TT",
-      "Text": "The type of event to match. Pick one from the list, or type in the list to match events by their name or ID as text."
+      "Text": "The event type to match. Pick one from the list, or type in the list to match events by name or ID as text."
     },
     {
       "Key": "TAE_MassEditTool_Event_Header_Animations_TT",
-      "Text": "Only matches animations that have an event of this type. Pick one from the list, or type in the list to match events by their name or ID as text."
+      "Text": "Only match animations that have an event of this type. Pick one from the list, or type in the list to match events by name or ID as text."
     },
     {
       "Key": "TAE_MassEditTool_Event_Filter_Hint",
@@ -2078,7 +2078,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Event_Filter_TT",
-      "Text": "Narrows the list of event types. The text can also be used as the filter itself, with the option below."
+      "Text": "Narrow the list of event types. With the option below, you can also use the text as the filter itself."
     },
     {
       "Key": "TAE_MassEditTool_Event_Any",
@@ -2090,7 +2090,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Event_Match_Text_TT",
-      "Text": "Matches the text against the name and ID of each event, as the search does, rather than picking a single type."
+      "Text": "Match the text against each event's name and ID, like the search, instead of picking a single type."
     },
     {
       "Key": "TAE_MassEditTool_Event_Text_Preview",
@@ -2106,7 +2106,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Conditions_Header_TT",
-      "Text": "Conditions on the fields of the target. Every condition must be met. Pick an event type above to pick from its parameters."
+      "Text": "Conditions on the target's fields. Every condition must be met. Pick an event type above to choose from its parameters."
     },
     {
       "Key": "TAE_MassEditTool_Field_TT",
@@ -2118,7 +2118,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Field_Filter_TT",
-      "Text": "Narrows the list of fields. The text can also be used as a field name to match, with the option below."
+      "Text": "Narrow the list of fields. With the option below, you can also use the text as a field name to match."
     },
     {
       "Key": "TAE_MassEditTool_Field_Any",
@@ -2130,7 +2130,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Field_Match_Text_TT",
-      "Text": "Matches the text against the internal name and the annotated name of each field."
+      "Text": "Match the text against each field's internal and annotated names."
     },
     {
       "Key": "TAE_MassEditTool_Field_Text_Preview",
@@ -2158,7 +2158,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Comparison_Not_Equals_TT",
-      "Text": "The value is not the same. Numbers are compared as numbers."
+      "Text": "The value isn't the same. Numbers are compared as numbers."
     },
     {
       "Key": "TAE_MassEditTool_Comparison_Between",
@@ -2166,7 +2166,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Comparison_Between_TT",
-      "Text": "The value is a number within the range, including both ends. Either end can be left empty."
+      "Text": "The value is a number within the range, inclusive. Either end can be empty."
     },
     {
       "Key": "TAE_MassEditTool_Comparison_Number_TT",
@@ -2174,15 +2174,15 @@
     },
     {
       "Key": "TAE_MassEditTool_Value_TT",
-      "Text": "The value to compare with. Leave it empty to match any value."
+      "Text": "The value to compare with. Leave empty to match any value."
     },
     {
       "Key": "TAE_MassEditTool_Value_Typed_TT",
-      "Text": "The value to compare with, as a {0}. Leave it empty to match any value."
+      "Text": "The value to compare with, as a {0}. Leave empty to match any value."
     },
     {
       "Key": "TAE_MassEditTool_Value_Between_TT",
-      "Text": "The ends of the range. Either can be left empty."
+      "Text": "The ends of the range. Either end can be empty."
     },
     {
       "Key": "TAE_MassEditTool_Value_Low_Hint",
@@ -2218,11 +2218,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Condition_Add_TT",
-      "Text": "Adds another condition. Every condition must be met."
+      "Text": "Add a condition. Every condition must be met."
     },
     {
       "Key": "TAE_MassEditTool_Condition_Remove_TT",
-      "Text": "Removes this condition."
+      "Text": "Remove this condition."
     },
     {
       "Key": "TAE_MassEditTool_Options_Header",
@@ -2238,7 +2238,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Exact_TT",
-      "Text": "Typed text must equal what it is matched against, rather than be part of it."
+      "Text": "Typed text must equal what it is matched against, not just be part of it."
     },
     {
       "Key": "TAE_MassEditTool_Actions_Header",
@@ -2254,7 +2254,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Find_TT",
-      "Text": "Finds everything in the scope that matches the filter."
+      "Text": "Find everything in the scope that matches the filter."
     },
     {
       "Key": "TAE_MassEditTool_Clear",
@@ -2262,7 +2262,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Clear_TT",
-      "Text": "Clears the filter and the matches."
+      "Text": "Clear the filter and the matches."
     },
     {
       "Key": "TAE_MassEditTool_Progress_Header",
@@ -2270,7 +2270,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Progress_Header_TT",
-      "Text": "How far the find has got."
+      "Text": "The progress of the find."
     },
     {
       "Key": "TAE_MassEditTool_Progress",
@@ -2286,7 +2286,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Cancel_TT",
-      "Text": "Stops the find. The matches found so far are kept."
+      "Text": "Stop the find. Matches found so far are kept."
     },
     {
       "Key": "TAE_MassEditTool_Matches_Header",
@@ -2294,7 +2294,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Matches_Header_TT",
-      "Text": "Everything the edit will apply to. Click a match to jump to it."
+      "Text": "Everything the edit applies to. Click a match to jump to it."
     },
     {
       "Key": "TAE_MassEditTool_Matches_Events",
@@ -2310,11 +2310,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Matches_Stale",
-      "Text": "The filter or selection has changed since Find was pressed. Press Find again to update the matches."
+      "Text": "The filter or selection changed after you clicked Find. Click Find again to update the matches."
     },
     {
       "Key": "TAE_MassEditTool_Jump_TT",
-      "Text": "Jumps to this match."
+      "Text": "Jump to this match."
     },
     {
       "Key": "TAE_MassEditTool_Action_Header",
@@ -2338,7 +2338,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Steps_Header_TT",
-      "Text": "The changes to make to each matched event, in order. Each step works on the value the step before it left."
+      "Text": "The changes to make to each matched event, in order. Each step works on the result of the step before."
     },
     {
       "Key": "TAE_MassEditTool_Step_Pick_Field",
@@ -2346,7 +2346,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Step_Field_TT",
-      "Text": "The field to change. The list holds the times, and the parameters of the event types among the matches."
+      "Text": "The field to change. The list contains the times and the parameters of the event types among the matches."
     },
     {
       "Key": "TAE_MassEditTool_Field_Times",
@@ -2366,7 +2366,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Step_Value_Typed_TT",
-      "Text": "The value the step uses. Set takes a {0} as the Properties window does; the other operations take a plain number."
+      "Text": "The value the step uses. Set takes a {0}, like the Properties window; the other operations take a plain number."
     },
     {
       "Key": "TAE_MassEditTool_Step_Value_Hint",
@@ -2390,7 +2390,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Step_Frames_TT",
-      "Text": "Whether the time is in frames, at 30 to the second, rather than in seconds."
+      "Text": "Whether the time is in frames (30 per second) instead of seconds."
     },
     {
       "Key": "TAE_MassEditTool_Step_Add",
@@ -2398,11 +2398,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Step_Add_TT",
-      "Text": "Adds another step, applied after the ones above it."
+      "Text": "Add a step, applied after the ones above."
     },
     {
       "Key": "TAE_MassEditTool_Step_Remove_TT",
-      "Text": "Removes this step."
+      "Text": "Remove this step."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Set",
@@ -2410,7 +2410,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Set_TT",
-      "Text": "Replaces the value."
+      "Text": "Replace the value."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Add",
@@ -2418,7 +2418,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Add_TT",
-      "Text": "Adds to the value."
+      "Text": "Add to the value."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Subtract",
@@ -2426,7 +2426,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Subtract_TT",
-      "Text": "Takes away from the value."
+      "Text": "Subtract from the value."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Multiply",
@@ -2434,7 +2434,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Multiply_TT",
-      "Text": "Multiplies the value. Whole numbers are rounded."
+      "Text": "Multiply the value. Whole numbers are rounded."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Divide",
@@ -2442,7 +2442,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Divide_TT",
-      "Text": "Divides the value. Whole numbers are rounded."
+      "Text": "Divide the value. Whole numbers are rounded."
     },
     {
       "Key": "TAE_MassEditTool_Operator_At_Least",
@@ -2450,7 +2450,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_At_Least_TT",
-      "Text": "Raises the value to this if it is lower."
+      "Text": "Raise the value to this if it is lower."
     },
     {
       "Key": "TAE_MassEditTool_Operator_At_Most",
@@ -2458,7 +2458,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_At_Most_TT",
-      "Text": "Lowers the value to this if it is higher."
+      "Text": "Lower the value to this if it is higher."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Reset",
@@ -2466,7 +2466,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Reset_TT",
-      "Text": "Sets the value the field usually has, as the Properties window's reset does."
+      "Text": "Set the field's usual value, like the Properties window's reset."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Toggle",
@@ -2474,7 +2474,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Toggle_TT",
-      "Text": "Turns the value on if it is off, and off if it is on."
+      "Text": "Turn the value on if it is off, or off if it is on."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Shift",
@@ -2482,7 +2482,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Shift_TT",
-      "Text": "Moves the event earlier or later, keeping its length."
+      "Text": "Move the event earlier or later, keeping its length."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Scale",
@@ -2490,7 +2490,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Scale_TT",
-      "Text": "Multiplies both times, stretching or squeezing the event and its distance from the start."
+      "Text": "Multiply both times, stretching or squeezing the event and its distance from the start."
     },
     {
       "Key": "TAE_MassEditTool_Operator_Set_Length",
@@ -2498,7 +2498,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Operator_Set_Length_TT",
-      "Text": "Moves the end time so the event lasts this long."
+      "Text": "Move the end time so the event lasts this long."
     },
     {
       "Key": "TAE_MassEditTool_Changes_Header",
@@ -2506,7 +2506,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Changes_Header_TT",
-      "Text": "Every change the edit will make. Apply makes exactly these changes, as one action that a single undo takes back."
+      "Text": "Every change the edit will make. Apply makes exactly these changes as one action, which a single undo reverses."
     },
     {
       "Key": "TAE_MassEditTool_Changes_No_Steps",
@@ -2518,11 +2518,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Changes_Unchanged",
-      "Text": "{0} events already have these values, and are left as they are."
+      "Text": "{0} events already have these values and are left unchanged."
     },
     {
       "Key": "TAE_MassEditTool_Changes_Skipped",
-      "Text": "{0} events can't be edited, and will be left as they are:"
+      "Text": "{0} events can't be edited and will be left unchanged:"
     },
     {
       "Key": "TAE_MassEditTool_Changes_Skipped_More",
@@ -2530,7 +2530,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Changes_Stale",
-      "Text": "The filter or selection has changed since Find was pressed. Press Find again before applying."
+      "Text": "The filter or selection changed after you clicked Find. Click Find again before applying."
     },
     {
       "Key": "TAE_MassEditTool_Apply",
@@ -2538,7 +2538,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Apply_TT",
-      "Text": "Makes the changes listed below. A single undo takes them all back."
+      "Text": "Make the changes listed below. A single undo reverses them all."
     },
     {
       "Key": "TAE_MassEditTool_Applied",
@@ -2546,15 +2546,15 @@
     },
     {
       "Key": "TAE_MassEditTool_Applied_Stale",
-      "Text": "{0} events were changed after the preview was made, and were left as they are."
+      "Text": "{0} events changed after the preview was made, and were left unchanged."
     },
     {
       "Key": "TAE_MassEditTool_Applied_Find_Again",
-      "Text": "Press Find again to make another edit."
+      "Text": "Click Find again to make another edit."
     },
     {
       "Key": "TAE_MassEditTool_Applied_Log",
-      "Text": "Mass edit applied to {0} events. {1} events had changed since the preview and were left as they are."
+      "Text": "Mass edit applied to {0} events. {1} events changed after the preview and were left unchanged."
     },
     {
       "Key": "TAE_MassEditTool_Skip_No_Template",
@@ -2614,11 +2614,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Edit_No_Matches",
-      "Text": "Press Find in the Find tab to choose what to edit."
+      "Text": "Click Find in the Find tab to choose what to edit."
     },
     {
       "Key": "TAE_MassEditTool_Edit_Finding",
-      "Text": "Still finding matches ({0} so far). The edit can be built once the find is done."
+      "Text": "Still finding matches ({0} so far). You can build the edit once the find finishes."
     },
     {
       "Key": "TAE_MassEditTool_Action_Delete",
@@ -2630,7 +2630,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Deletions_Header_TT",
-      "Text": "Everything Delete will remove: every match. A single undo puts them all back."
+      "Text": "Everything Delete will remove: every match. A single undo restores them all."
     },
     {
       "Key": "TAE_MassEditTool_Delete_Nothing",
@@ -2642,7 +2642,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Delete_Summary_Animations",
-      "Text": "{0} animations will be deleted, along with the {1} events in them."
+      "Text": "{0} animations will be deleted, with the {1} events in them."
     },
     {
       "Key": "TAE_MassEditTool_Delete",
@@ -2650,11 +2650,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Delete_Events_TT",
-      "Text": "Deletes every matched event. A single undo puts them all back where they were."
+      "Text": "Delete every matched event. A single undo restores them all in place."
     },
     {
       "Key": "TAE_MassEditTool_Delete_Animations_TT",
-      "Text": "Deletes every matched animation and its events. A single undo puts them all back where they were."
+      "Text": "Delete every matched animation and its events. A single undo restores them all in place."
     },
     {
       "Key": "TAE_MassEditTool_Delete_Confirm_Title",
@@ -2662,7 +2662,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Delete_Confirm_Text",
-      "Text": "Delete {0} animations, and the {1} events in them? A single undo puts them back."
+      "Text": "Delete {0} animations and the {1} events in them? A single undo restores them."
     },
     {
       "Key": "TAE_MassEditTool_Delete_Cancel",
@@ -2670,7 +2670,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Delete_Cancel_TT",
-      "Text": "Leaves the animations as they are."
+      "Text": "Leave the animations unchanged."
     },
     {
       "Key": "TAE_MassEditTool_Deleted_Events",
@@ -2682,15 +2682,15 @@
     },
     {
       "Key": "TAE_MassEditTool_Deleted_Stale",
-      "Text": "{0} matches had already gone since Find was pressed, and were skipped."
+      "Text": "{0} matches no longer existed when you clicked Delete, and were skipped."
     },
     {
       "Key": "TAE_MassEditTool_Deleted_Events_Log",
-      "Text": "Mass edit deleted {0} events. {1} matches had already gone and were skipped."
+      "Text": "Mass edit deleted {0} events. {1} matches no longer existed and were skipped."
     },
     {
       "Key": "TAE_MassEditTool_Deleted_Animations_Log",
-      "Text": "Mass edit deleted {0} animations. {1} matches had already gone and were skipped."
+      "Text": "Mass edit deleted {0} animations. {1} matches no longer existed and were skipped."
     },
     {
       "Key": "TAE_MassEditTool_Action_Create",
@@ -2726,7 +2726,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Placement_Each_Animation_TT",
-      "Text": "Adds one event to each animation among the matches, at the times given."
+      "Text": "Add one event to each matched animation, at the given times."
     },
     {
       "Key": "TAE_MassEditTool_Placement_Each_Event",
@@ -2734,7 +2734,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Placement_Each_Event_TT",
-      "Text": "Adds one event next to each matched event, at its times moved by the offsets given."
+      "Text": "Add one event next to each matched event, at its times shifted by the given offsets."
     },
     {
       "Key": "TAE_MassEditTool_Create_Times_Header",
@@ -2782,7 +2782,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Create_Options_Header_TT",
-      "Text": "Whether to leave out the places that already have the event."
+      "Text": "Whether to skip places that already have the event."
     },
     {
       "Key": "TAE_MassEditTool_Create_Skip_Existing",
@@ -2790,11 +2790,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Create_Skip_Existing_Type_TT",
-      "Text": "Leaves out animations that already have an event of this type."
+      "Text": "Skip animations that already have an event of this type."
     },
     {
       "Key": "TAE_MassEditTool_Create_Skip_Existing_Same_TT",
-      "Text": "Leaves out places that already have an event of this type at the same times."
+      "Text": "Skip places that already have an event of this type at the same times."
     },
     {
       "Key": "TAE_MassEditTool_Create_Parameters_Header",
@@ -2802,7 +2802,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Create_Parameters_Header_TT",
-      "Text": "The new events start with the default value of each field. Steps here set or change any of them."
+      "Text": "The new events start with each field's default value. Steps here can set or change any of them."
     },
     {
       "Key": "TAE_MassEditTool_Creations_Header",
@@ -2810,7 +2810,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Creations_Header_TT",
-      "Text": "Every event Create will add. A single undo takes them all back out."
+      "Text": "Every event Create will add. A single undo removes them all."
     },
     {
       "Key": "TAE_MassEditTool_Create_Invalid_Times",
@@ -2826,7 +2826,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Create_TT",
-      "Text": "Adds the events listed below. A single undo takes them all back out."
+      "Text": "Add the events listed below. A single undo removes them all."
     },
     {
       "Key": "TAE_MassEditTool_Created",
@@ -2834,11 +2834,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Created_Stale",
-      "Text": "{0} places had changed since the preview was made, and were left out."
+      "Text": "{0} places changed after the preview was made, and were left out."
     },
     {
       "Key": "TAE_MassEditTool_Created_Log",
-      "Text": "Mass edit added {0} events to {1} animations. {2} places had changed since the preview and were left out."
+      "Text": "Mass edit added {0} events to {1} animations. {2} places changed after the preview and were left out."
     },
     {
       "Key": "TAE_MassEditTool_Skip_Has_Type",
@@ -2854,7 +2854,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Scope_All_Sources_TT",
-      "Text": "Every time act of every source in the project. Sources that aren't open are read for the find, and only those with matches are kept. This can take a while."
+      "Text": "Every time act in every source in the project. Sources that aren't open are read for the find, and only those with matches are kept. This can take a while."
     },
     {
       "Key": "TAE_MassEditTool_Matches_Sources",
@@ -2866,11 +2866,11 @@
     },
     {
       "Key": "TAE_MassEditTool_Global_Undo_Warning",
-      "Text": "This edit spans sources. It can be undone until another source is selected, as the undo history is cleared then."
+      "Text": "This edit spans sources. You can undo it until another source is selected, because the undo history is then cleared."
     },
     {
       "Key": "TAE_MassEditTool_Applied_Save_All",
-      "Text": "The edited sources are marked as changed. Use File > {0} to save them all, as Save only saves the selected source."
+      "Text": "The edited sources are marked as changed. Use File > {0} to save them all, because Save only saves the selected source."
     },
     {
       "Key": "TAE_MassEditTool_Skip_Other_Templates",
@@ -2882,7 +2882,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Skip_No_Animation_Field",
-      "Text": "The animation has no {0}, as its mini header is of the other type"
+      "Text": "The animation has no {0}, because its mini header is the other type"
     },
     {
       "Key": "TAE_MassEditTool_Create_Kind_Header",
@@ -2890,7 +2890,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Create_Kind_Header_TT",
-      "Text": "Whether to add events to the matched animations, or to make copies of them."
+      "Text": "Whether to add events to the matched animations, or to copy the animations."
     },
     {
       "Key": "TAE_MassEditTool_Create_Kind_Events",
@@ -2906,7 +2906,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Duplicate_Offset_Header_TT",
-      "Text": "Each copy takes the ID of its animation plus this. The file name is renamed to match, as Duplicate does for one animation."
+      "Text": "Each copy takes its animation's ID plus this value. The file name is renamed to match, like Duplicate for a single animation."
     },
     {
       "Key": "TAE_MassEditTool_Duplicate_Offset_Hint",
@@ -2922,7 +2922,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Duplicate_Next_Free_TT",
-      "Text": "When the new ID is taken, the copy takes the next free one after it. Otherwise the animation is skipped."
+      "Text": "When the new ID is taken, the copy takes the next free ID. Otherwise, the animation is skipped."
     },
     {
       "Key": "TAE_MassEditTool_Duplicates_Header",
@@ -2930,7 +2930,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Duplicates_Header_TT",
-      "Text": "Every copy Create will make, from its animation to its new ID. A single undo takes them all back out."
+      "Text": "Every copy Create will make, from its animation to its new ID. A single undo removes them all."
     },
     {
       "Key": "TAE_MassEditTool_Duplicate_Invalid_Offset",
@@ -2942,7 +2942,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Duplicate_TT",
-      "Text": "Makes the copies listed below, with their events. A single undo takes them all back out."
+      "Text": "Make the copies listed below, with their events. A single undo removes them all."
     },
     {
       "Key": "TAE_MassEditTool_Duplicated",
@@ -2950,7 +2950,7 @@
     },
     {
       "Key": "TAE_MassEditTool_Duplicated_Log",
-      "Text": "Mass edit made {0} animation copies. {1} had changed since the preview and were left out."
+      "Text": "Mass edit made {0} animation copies. {1} changed after the preview and were left out."
     },
     {
       "Key": "TAE_MassEditTool_Skip_ID_In_Use",
@@ -2966,7 +2966,7 @@
     },
     {
       "Key": "TAE_SearchTool_Send_To_Mass_Edit_TT",
-      "Text": "Fills in the Mass Edit filter from this search and finds the results there, so they can be edited, deleted or added to all at once."
+      "Text": "Fill in the Mass Edit filter from this search and find the results there, so you can edit, delete or add to them all at once."
     },
     {
       "Key": "TAE_ToolWindow_View_Toggle_Combo_Builder",
@@ -2978,7 +2978,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Hint",
-      "Text": "Plays a list of animations one after another, to show what a combo looks like. Each step is selected in turn, so the events follow along."
+      "Text": "Play a list of animations in sequence to see what a combo looks like. Each step is selected in turn, so the events follow along."
     },
     {
       "Key": "TAE_ComboBuilder_No_Source",
@@ -2990,7 +2990,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Add_Header_TT",
-      "Text": "Animations can also be added from the right-click menu of the animation list."
+      "Text": "You can also add animations from the animation list's context menu."
     },
     {
       "Key": "TAE_ComboBuilder_Add_Selected",
@@ -2998,7 +2998,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Add_Selected_TT",
-      "Text": "Adds the selected animation to the end of the combo."
+      "Text": "Add the selected animation to the end of the combo."
     },
     {
       "Key": "TAE_ComboBuilder_Steps_Header",
@@ -3006,7 +3006,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Steps_Header_TT",
-      "Text": "The animations of the combo, in the order they play. Each source keeps its own combo for the session."
+      "Text": "The combo's animations, in playback order. Each source keeps its own combo for the session."
     },
     {
       "Key": "TAE_ComboBuilder_Empty",
@@ -3030,23 +3030,23 @@
     },
     {
       "Key": "TAE_ComboBuilder_End_TT",
-      "Text": "The frame the step cuts to the next one at, such as where the attack can be cancelled. -1 plays the clip to its end."
+      "Text": "The frame at which the step cuts to the next one, such as where the attack can be cancelled. -1 plays the clip to the end."
     },
     {
       "Key": "TAE_ComboBuilder_Play_From_TT",
-      "Text": "Plays the combo from this step."
+      "Text": "Play the combo from this step."
     },
     {
       "Key": "TAE_ComboBuilder_Move_Up_TT",
-      "Text": "Moves this step earlier in the combo."
+      "Text": "Move this step earlier in the combo."
     },
     {
       "Key": "TAE_ComboBuilder_Move_Down_TT",
-      "Text": "Moves this step later in the combo."
+      "Text": "Move this step later in the combo."
     },
     {
       "Key": "TAE_ComboBuilder_Remove_TT",
-      "Text": "Removes this step from the combo."
+      "Text": "Remove this step from the combo."
     },
     {
       "Key": "TAE_ComboBuilder_Options_Header",
@@ -3062,7 +3062,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Loop_TT",
-      "Text": "Starts the combo over once the last step ends."
+      "Text": "Restart the combo when the last step ends."
     },
     {
       "Key": "TAE_ComboBuilder_Actions_Header",
@@ -3078,7 +3078,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Play_TT",
-      "Text": "Plays the combo from the first step."
+      "Text": "Play the combo from the first step."
     },
     {
       "Key": "TAE_ComboBuilder_Stop",
@@ -3086,7 +3086,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Stop_TT",
-      "Text": "Stops the combo, and pauses on the current frame."
+      "Text": "Stop the combo and pause on the current frame."
     },
     {
       "Key": "TAE_ComboBuilder_Clear",
@@ -3094,7 +3094,7 @@
     },
     {
       "Key": "TAE_ComboBuilder_Clear_TT",
-      "Text": "Removes every step from the combo."
+      "Text": "Remove every step from the combo."
     },
     {
       "Key": "TAE_ComboBuilder_Status_Loading",
@@ -3106,15 +3106,15 @@
     },
     {
       "Key": "TAE_ComboBuilder_Status_Paused",
-      "Text": "Paused on step {0} of {1}. Play to carry on."
+      "Text": "Paused on step {0} of {1}. Click Play to resume."
     },
     {
       "Key": "TAE_ComboBuilder_Animation_Not_Found",
-      "Text": "Combo Builder: animation {0} could not be found, so it was skipped"
+      "Text": "Combo Builder: animation {0} wasn't found, so it was skipped."
     },
     {
       "Key": "TAE_ComboBuilder_No_Animations_Found",
-      "Text": "Combo Builder: none of the animations of the combo could be found"
+      "Text": "Combo Builder: none of the combo's animations were found."
     },
     {
       "Key": "TAE_AnimationWindow_Context_Add_To_Combo",
@@ -3122,23 +3122,23 @@
     },
     {
       "Key": "TAE_AnimationWindow_Context_Add_To_Combo_TT",
-      "Text": "Adds this animation to the end of the combo in the Combo Builder tool."
+      "Text": "Add this animation to the end of the combo in the Combo Builder tool."
     },
     { "Key": "TAE_AnimationWindow_Context_Register", "Text": "Register in Behavior..." },
-    { "Key": "TAE_AnimationWindow_Context_Register_TT", "Text": "Opens the character's behavior in the Behavior Editor and previews the clips this animation needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
+    { "Key": "TAE_AnimationWindow_Context_Register_TT", "Text": "Open the character's behavior in the Behavior Editor and preview the clips this animation needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
     { "Key": "TAE_SelectionWindow_Context_Register", "Text": "Register Time Act in Behavior..." },
-    { "Key": "TAE_SelectionWindow_Context_Register_TT", "Text": "Opens the character's behavior in the Behavior Editor and previews the clips every animation of this time act needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
+    { "Key": "TAE_SelectionWindow_Context_Register_TT", "Text": "Open the character's behavior in the Behavior Editor and preview the clips that every animation of this time act needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
     { "Key": "TAE_Register_Not_Character", "Text": "Only a character's time acts have a behavior." },
-    { "Key": "TAE_Register_No_Behavior_Editor", "Text": "Needs the Behavior Editor (enable it in the project settings)." },
+    { "Key": "TAE_Register_No_Behavior_Editor", "Text": "Needs the Behavior Editor. Enable it in the project settings." },
     { "Key": "TAE_Register_Unsupported_Game", "Text": "Register in Behavior supports Elden Ring, Nightreign, Dark Souls III and Sekiro." },
     { "Key": "TAE_Register_No_Behavior", "Text": "{0} has no behbnd." },
-    { "Key": "TAE_Register_Load_Failed", "Text": "Register in Behavior: time act {0} couldn't be read." },
+    { "Key": "TAE_Register_Load_Failed", "Text": "Register in Behavior: couldn't read time act {0}." },
     { "Key": "TAE_History_Duplicate_TimeAct_Files", "Text": "Duplicate time act {0} as {1} ({2} animation files)" },
-    { "Key": "TAE_Duplicate_Files_Done", "Text": "{0}: copied {1} animation files to its category, pointed {2} imports at the copies, kept {3} files the category already had, {4} files not found. The files are written when the time act is saved." },
-    { "Key": "TAE_Duplicate_Files_Shared_Set", "Text": "{0} plays another character's animations, so the duplicated time act doesn't get animation files of its own." },
+    { "Key": "TAE_Duplicate_Files_Done", "Text": "{0}: copied {1} animation files to its category, pointed {2} imports at the copies, kept {3} files the category already had, and couldn't find {4} files. The files are written when the time act is saved." },
+    { "Key": "TAE_Duplicate_Files_Shared_Set", "Text": "{0} plays another character's animations, so the duplicated time act doesn't get its own animation files." },
     {
       "Key": "TAE_Command_Select_Source_Scanning",
-      "Text": "{0} isn't listed in the Time Act Editor yet, as its sources are still being found. Try again in a moment."
+      "Text": "{0} isn't listed in the Time Act Editor yet, because its sources are still being found. Try again in a moment."
     },
     {
       "Key": "TAE_Command_Select_Source_Missing",
@@ -3155,7 +3155,7 @@
     },
     {
       "Key": "TAE_GraphWindow_Event_Speed_TT",
-      "Text": "The {0} event at the current time changes how fast the animation plays. The speed set beside this is multiplied by it. Turn Speed Events off in Time Act Simulation to play at the set speed only."
+      "Text": "The {0} event at the current time changes the animation's playback speed, multiplying the speed set next to this. Turn off Speed Events in Time Act Simulation to play at the set speed only."
     },
     {
       "Key": "TAE_SimulationTool_Header",
@@ -3163,7 +3163,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Hint",
-      "Text": "What the events of the animation do to the preview, as they would in game. Each simulation can be turned off, to check one thing at a time."
+      "Text": "What the animation's events do to the preview, as they would in game. You can turn off each simulation to check one thing at a time."
     },
     {
       "Key": "TAE_SimulationTool_Simulations_Header",
@@ -3171,7 +3171,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Simulations_Header_TT",
-      "Text": "The kinds of event the preview acts on. Which events are of each kind is set by the Simulation of the event in the game's time act meta."
+      "Text": "The kinds of event the preview acts on. Each event's kind is set by its Simulation in the game's time act meta."
     },
     {
       "Key": "TAE_SimulationTool_Speed_Events",
@@ -3179,7 +3179,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Speed_Events_TT",
-      "Text": "If enabled, events that change the animation speed (such as AnimSpeedGradient) speed up or slow down the playback while they are active."
+      "Text": "Speed up or slow down playback while events that change the animation speed (such as AnimSpeedGradient) are active."
     },
     {
       "Key": "TAE_SimulationTool_State_Info",
@@ -3187,7 +3187,7 @@
     },
     {
       "Key": "TAE_SimulationTool_State_Info_TT",
-      "Text": "If enabled, events with a StateInfo only play while that state is ticked under States. If disabled, they all play."
+      "Text": "Only play events with a StateInfo while that state is ticked under States. When off, they all play."
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Header",
@@ -3195,7 +3195,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Header_TT",
-      "Text": "How much of the root motion of the animation is applied to the model and its path. 1 is as the animation has it. Only the preview changes."
+      "Text": "How much of the animation's root motion is applied to the model and its path. 1 is as in the animation. Only the preview changes."
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Ground",
@@ -3203,7 +3203,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Ground_TT",
-      "Text": "Scales how far the model moves along the ground. Hold Ctrl and click to type a value."
+      "Text": "Scale how far the model moves along the ground. Ctrl+click to type a value."
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Up",
@@ -3211,7 +3211,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Up_TT",
-      "Text": "Scales how far the model moves up and down, as in a jump. Hold Ctrl and click to type a value."
+      "Text": "Scale how far the model moves up and down, as in a jump. Ctrl+click to type a value."
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Turn",
@@ -3219,7 +3219,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Turn_TT",
-      "Text": "Scales how far the model turns. Hold Ctrl and click to type a value."
+      "Text": "Scale how far the model turns. Ctrl+click to type a value."
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Reset",
@@ -3227,7 +3227,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Reset_TT",
-      "Text": "Sets all three back to 1."
+      "Text": "Reset all three to 1."
     },
     {
       "Key": "TAE_SimulationTool_Root_Motion_Off",
@@ -3239,7 +3239,7 @@
     },
     {
       "Key": "TAE_SimulationTool_States_Header_TT",
-      "Text": "The StateInfos the events of this animation are gated on. Untick a state to see the animation as it plays when the character isn't in it. Events that won't play are hatched in the event graph."
+      "Text": "The StateInfos that this animation's events depend on. Untick a state to see how the animation plays when the character isn't in it. Events that won't play are hatched in the event graph."
     },
     {
       "Key": "TAE_SimulationTool_States_Off",
@@ -3255,7 +3255,7 @@
     },
     {
       "Key": "TAE_SimulationTool_States_Enable_All_TT",
-      "Text": "Ticks every state again, including ones turned off in other animations."
+      "Text": "Tick every state again, including states turned off in other animations."
     },
     {
       "Key": "TAE_SimulationTool_Model_Masks",
@@ -3263,7 +3263,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Model_Masks_TT",
-      "Text": "If enabled, events that change the model masks (such as ChangeChrDrawMask, HideModelMask and ShowModelMask) show and hide the meshes of those masks. A player's model leaves out the meshes its armor hides, so events can't show those."
+      "Text": "Show and hide the meshes of model masks changed by events (such as ChangeChrDrawMask, HideModelMask and ShowModelMask). A player's model leaves out the meshes its armour hides, so events can't show those."
     },
     {
       "Key": "TAE_SimulationTool_Weapons",
@@ -3271,7 +3271,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Weapons_TT",
-      "Text": "If enabled, a player's weapons are held as the events say: two-handed by SetWeaponStyle, moved to another place (such as sheathed) by OverrideWeaponModelLocations, and hidden by HideEquippedWeapon. The places come from the WepAbsorpPosParam row of each weapon."
+      "Text": "Hold a player's weapons as the events say: two-handed by SetWeaponStyle, moved to another place (such as sheathed) by OverrideWeaponModelLocations, and hidden by HideEquippedWeapon. The places come from each weapon's WepAbsorpPosParam row."
     },
     {
       "Key": "TAE_SimulationTool_Weapon_Style_Header",
@@ -3283,7 +3283,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Weapon_Style_TT",
-      "Text": "The weapon style the animation starts with. Two-handing moves that weapon to its both-hands place and hangs the other one on the body."
+      "Text": "The weapon style the animation starts with. Two-handing moves that weapon to its both-hands position and hangs the other on the body."
     },
     {
       "Key": "TAE_SimulationTool_Weapon_Style_One_Hand",
@@ -3307,7 +3307,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Turning_TT",
-      "Text": "If enabled, the character turns toward the target angle under Turning while a SetTurnSpeed event is active, at the event's turn speed in degrees a second, as it tracks its target in game."
+      "Text": "While a SetTurnSpeed event is active, turn the character toward the target angle under Turning, at the event's turn speed in degrees per second, as it tracks its target in game."
     },
     {
       "Key": "TAE_SimulationTool_Rumble_Cam",
@@ -3315,7 +3315,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Rumble_Cam_TT",
-      "Text": "If enabled, rumble cam events shake the viewport camera as playback passes them. A local one fades with the camera's distance from its dummy poly, so zooming out lessens it."
+      "Text": "Shake the viewport camera when playback passes rumble cam events. A local one fades with the camera's distance from its dummy poly, so zooming out reduces it."
     },
     {
       "Key": "TAE_SimulationTool_Turn_Header",
@@ -3323,7 +3323,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Turn_Header_TT",
-      "Text": "Where the character's target is, for the SetTurnSpeed events. A cyan arrow in the viewport points to it while the animation has such an event."
+      "Text": "The character's target position, for SetTurnSpeed events. A cyan arrow in the viewport points to it while the animation has such an event."
     },
     {
       "Key": "TAE_SimulationTool_Turn_Target",
@@ -3331,7 +3331,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Turn_Target_TT",
-      "Text": "The direction of the target in degrees from the way the character faces at the start of the animation. Positive turns the same way as positive root motion turns. Hold Ctrl and click to type a value."
+      "Text": "The target's direction, in degrees from the character's facing at the start of the animation. Positive values turn the same way as positive root motion. Ctrl+click to type a value."
     },
     {
       "Key": "TAE_SimulationTool_Turn_Status",
@@ -3351,7 +3351,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Additive_Anims_TT",
-      "Text": "If enabled, SetAdditiveAnim events play their additive animation over the animation while they are active, at the event's weight. The animation ID is the event's AnimType plus the AnimationBase in the game's time act meta (40000 in the later games)."
+      "Text": "While SetAdditiveAnim events are active, play their additive animation over the animation at the event's weight. The animation ID is the event's AnimType plus the AnimationBase in the game's time act meta (40000 in the later games)."
     },
     {
       "Key": "TAE_SimulationTool_Blending",
@@ -3359,7 +3359,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Blending_TT",
-      "Text": "If enabled, each step of the Combo Builder crossfades from the one before it over the length of its Blend event, as it does in game."
+      "Text": "Crossfade each Combo Builder step from the previous one over the length of its Blend event, as in game."
     },
     {
       "Key": "TAE_SimulationTool_Blend_On_Change",
@@ -3367,11 +3367,11 @@
     },
     {
       "Key": "TAE_SimulationTool_Blend_On_Change_TT",
-      "Text": "If enabled, picking another animation in the list also crossfades from the last one. Off by default, as the first frames of the animation you're editing would then show a mix of the two."
+      "Text": "Also crossfade from the previous animation when you pick another one in the list. Off by default, because the first frames of the animation you're editing would show a mix of the two."
     },
     {
       "Key": "TAE_SimulationTool_Blend_Status",
-      "Text": "Crossfading from the last animation: {0}% of it is left."
+      "Text": "Crossfading from the previous animation: {0}% of it remains."
     },
     {
       "Key": "TAE_SimulationTool_Additive_Status",
@@ -3383,7 +3383,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Opacity_TT",
-      "Text": "If enabled, SetOpacityKeyframe events fade the model from the event's start opacity to its end opacity, and it stays at the end opacity after the event until the animation starts over. A faded model is drawn blended, so it casts no shadow and screen space effects leave it out."
+      "Text": "Fade the model from a SetOpacityKeyframe event's start opacity to its end opacity, and keep it at the end opacity after the event until the animation restarts. A faded model is drawn blended, so it casts no shadow and screen space effects leave it out."
     },
     {
       "Key": "TAE_SimulationTool_Opacity_Status",
@@ -3395,11 +3395,11 @@
     },
     {
       "Key": "TAE_SimulationTool_Assume_SpEffects_TT",
-      "Text": "If enabled, additive animation events that only play while the character has a SpEffect (their SpEffectID_Exist is set) play as if it does. If disabled, they are skipped."
+      "Text": "Play additive animation events that only play while the character has a SpEffect (their SpEffectID_Exist is set) as if it does. When off, they are skipped."
     },
     {
       "Key": "TAE_EventDisplay_Throw_Range",
-      "Text": "Throw reach (ThrowParam {0}): {1:0.00} m, within {2:0} degrees of facing; the other character's facing difference must be {3} degrees."
+      "Text": "Throw reach (ThrowParam {0}): {1:0.00} m, within {2:0} degrees of facing. The other character's facing difference must be {3} degrees."
     },
     {
       "Key": "TAE_EventDisplay_Throw_No_Range",
@@ -3411,11 +3411,11 @@
     },
     {
       "Key": "TAE_SimulationTool_Floor_Header_TT",
-      "Text": "The floor material the character stands on, for the effects that depend on it (such as SpawnFFX_FloorDetermined: dust on sand, splashes in water)."
+      "Text": "The floor material the character stands on, for effects that depend on it (such as SpawnFFX_FloorDetermined: dust on sand, splashes in water)."
     },
     {
       "Key": "TAE_SimulationTool_Floor_TT",
-      "Text": "The floor material, by its HitMtrlParam row. A floor-determined effect event's FFXID picks one of this floor's effects, through FootSfxParam."
+      "Text": "The floor material, by its HitMtrlParam row. A floor-determined effect event's FFXID picks one of this floor's effects through FootSfxParam."
     },
     {
       "Key": "TAE_SimulationTool_Magic",
@@ -3423,7 +3423,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Magic_TT",
-      "Text": "If enabled, cast events (CastHighlightedMagic) cast the magic picked below: its bullets fly from the event's dummy poly, the way the character faces, as the Projectile Editor simulates them."
+      "Text": "Make cast events (CastHighlightedMagic) cast the magic picked below: its bullets fly from the event's dummy poly in the character's facing direction, as simulated by the Projectile Editor."
     },
     {
       "Key": "TAE_SimulationTool_Magic_Header",
@@ -3431,7 +3431,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Magic_Header_TT",
-      "Text": "The magic the character casts at a cast event (CastHighlightedMagic). The bullets fly in the Projectile Editor's simulation settings (gravity, ground collision, the wall and the target), with the floor the character stands on as the ground."
+      "Text": "The magic the character casts at a cast event (CastHighlightedMagic). The bullets fly using the Projectile Editor's simulation settings (gravity, ground collision, the wall and the target), with the character's floor as the ground."
     },
     {
       "Key": "TAE_SimulationTool_Magic_None",
@@ -3443,7 +3443,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Magic_More",
-      "Text": "More rows match: refine the filter to see them."
+      "Text": "More rows match. Refine the filter to see them."
     },
     {
       "Key": "TAE_SimulationTool_Magic_Row_TT",
@@ -3455,7 +3455,7 @@
     },
     {
       "Key": "TAE_SimulationTool_Magic_Charged_TT",
-      "Text": "If enabled, casts the charged slots of the magic (consumeType 1) rather than its normal ones. A magic without charged slots casts its normal ones either way."
+      "Text": "Cast the magic's charged slots (consumeType 1) instead of its normal ones. Magic without charged slots casts its normal ones either way."
     },
     {
       "Key": "TAE_SimulationTool_Magic_Flight",
@@ -3475,7 +3475,7 @@
     },
     {
       "Key": "TAE_EventDisplay_Magic_None",
-      "Text": "No magic picked: pick one in the Simulation tool."
+      "Text": "No magic picked. Pick one in the Simulation tool."
     },
     {
       "Key": "TAE_EventDisplay_Magic_No_Param",

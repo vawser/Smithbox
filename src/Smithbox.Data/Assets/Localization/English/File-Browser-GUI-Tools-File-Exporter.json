@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "FILE_Exporter_Hint",
-      "Text": "Use this tool to export files from the packed archives into an export directory."
+      "Text": "Export files from the packed archives into an export folder."
     },
     {
       "Key": "FILE_FileExporter_Export_Directory_Header",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Dir_Hint",
-      "Text": "Set the export directory..."
+      "Text": "Set the export folder..."
     },
     {
       "Key": "FILE_FileExporter_Set_Export_Dir_Action",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "FILE_FileExporter_Set_Export_Dir_Action_TT",
-      "Text": "Set the directory the files are extracted into."
+      "Text": "Set the folder the files are exported to."
     },
     {
       "Key": "FILE_FileExporter_Open_Export_Dir_Action",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "FILE_FileExporter_Open_Export_Dir_Action_TT",
-      "Text": "Open the current output directory in a file explorer."
+      "Text": "Open the export folder in File Explorer."
     },
     {
       "Key": "FILE_FileExporter_Export_Folder",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Folder_TT",
-      "Text": "Export the files belonging to the currently folder (and any child folders)."
+      "Text": "Export the files in the selected folder and its subfolders."
     },
     {
       "Key": "FILE_FileExporter_Export_Container_File",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Container_File_TT",
-      "Text": "Export the currently selected container file. A split binder (.bhd) is exported together with its .bdt."
+      "Text": "Export the selected container file. A split binder (.bhd) is exported together with its .bdt."
     },
     {
       "Key": "FILE_FileExporter_Export_Internal_File",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Internal_File_TT",
-      "Text": "Export the currently selected internal file."
+      "Text": "Export the selected internal file."
     },
     {
       "Key": "FILE_FileExporter_Export_Texture_File",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Texture_File_TT",
-      "Text": "Export the currently selected texture file."
+      "Text": "Export the selected texture file."
     },
     {
       "Key": "FILE_FileExporter_Select_Output_Dir",
@@ -78,11 +78,11 @@
     },
     {
       "Key": "FILE_FileExporter_No_Output_Dir",
-      "Text": "Output directory has not been set."
+      "Text": "The export folder isn't set."
     },
     {
       "Key": "FILE_FileExporter_No_Folder_Selected",
-      "Text": "No folder has been selected."
+      "Text": "No folder is selected."
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_In_Progress",
@@ -90,15 +90,15 @@
     },
     {
       "Key": "FILE_FileExporter_No_Container_File_Selected",
-      "Text": "No main file has been selected."
+      "Text": "No main file is selected."
     },
     {
       "Key": "FILE_FileExporter_No_Internal_File_Selected",
-      "Text": "No internal file has been selected."
+      "Text": "No internal file is selected."
     },
     {
       "Key": "FILE_FileExporter_No_Texture_Selected",
-      "Text": "No texture has been selected."
+      "Text": "No texture is selected."
     },
     {
       "Key": "FILE_FileExporter_Not_A_Container",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "FILE_FileExporter_Skipped_Existing",
-      "Text": "Skipped, already exists in the export directory: {0} (turn on Overwrite Existing Files to replace it)"
+      "Text": "Skipped, already in the export folder: {0} (turn on Overwrite Existing Files to replace it)"
     },
     {
       "Key": "FILE_FileExporter_Options_Header",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "FILE_FileExporter_Texture_Format_TT",
-      "Text": "The format exported textures are written in. Console textures are given a DDS header first; other formats are decoded from it."
+      "Text": "The format for exported textures. Console textures get a DDS header first; other formats are decoded from it."
     },
     {
       "Key": "FILE_FileExporter_Export_Selected_Files",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Selected_Files_TT",
-      "Text": "Export every file selected in the File List (Ctrl-click to add, Shift-click for a range) to its path in the export directory."
+      "Text": "Export every file selected in the File List (Ctrl+click to add, Shift+click for a range) to its path in the export folder."
     },
     {
       "Key": "FILE_FileExporter_Export_Selected_Internal",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Selected_Internal_TT",
-      "Text": "Export every entry selected in the binder list (Ctrl-click to add)."
+      "Text": "Export every entry selected in the binder list (Ctrl+click to add)."
     },
     {
       "Key": "FILE_FileExporter_Export_Unpacked",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "FILE_FileExporter_Selected_Export_Complete",
-      "Text": "Export of selected files complete: {0} exported, {1} skipped (already existed), {2} failed."
+      "Text": "Exported selected files: {0} exported, {1} skipped (already existed), {2} failed."
     },
     {
       "Key": "FILE_FileExporter_Overwrite",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "FILE_FileExporter_Overwrite_TT",
-      "Text": "Replace files that already exist in the export directory. When off, existing files are skipped and the skip is logged."
+      "Text": "Replace files that already exist in the export folder. When off, existing files are skipped and logged."
     },
     {
       "Key": "FILE_FileExporter_Keep_Container_Path",
@@ -194,7 +194,7 @@
     },
     {
       "Key": "FILE_FileExporter_Keep_Container_Path_TT",
-      "Text": "Export internal files and textures into a folder named after their container, at the container's path (e.g. chr/c0000-chrbnd-dcx/), instead of directly into the export directory."
+      "Text": "Export internal files and textures into a folder named after their container, at the container's path (e.g. chr/c0000-chrbnd-dcx/), instead of directly into the export folder."
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_No_Files",
@@ -202,11 +202,11 @@
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_Complete",
-      "Text": "Folder export '{0}' complete: {1} exported, {2} skipped (already existed), {3} failed."
+      "Text": "Exported folder '{0}': {1} exported, {2} skipped (already existed), {3} failed."
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_VFS_File_Read_FAIL",
-      "Text": "Could not read file: {0}"
+      "Text": "Failed to read file: {0}"
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_VFS_File_Write_FAIL",

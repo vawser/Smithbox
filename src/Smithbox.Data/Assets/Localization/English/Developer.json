@@ -90,7 +90,7 @@
     },
     {
       "Key": "DEV_Tool_Enable_Param_Editor_Hint",
-      "Text": "Param Editor must be enabled to use this tool."
+      "Text": "Enable the Param Editor to use this tool."
     },
     {
       "Key": "DEV_Tool_Validate_Paramdef",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "DEV_Tool_Validate_Padding_All_TT",
-      "Text": "Validate that there are no non-zero values within padding fields."
+      "Text": "Check that no padding field contains a non-zero value."
     },
     {
       "Key": "DEV_Tool_Validate_Padding_Selected",
@@ -114,15 +114,15 @@
     },
     {
       "Key": "DEV_Tool_Validate_Padding_Selected_TT",
-      "Text": "Validate that there are no non-zero values within padding fields."
+      "Text": "Check that no padding field contains a non-zero value."
     },
     {
       "Key": "DEV_Tool_Validate_Param_Task_PASS",
-      "Text": "The param validation has run."
+      "Text": "Param validation finished."
     },
     {
       "Key": "DEV_Tool_Validate_Param_Task_FAIL",
-      "Text": "The param validation has failed to run."
+      "Text": "Param validation failed to run."
     },
     {
       "Key": "DEV_Tool_Param_Validation_Non_Zero_Values",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "DEV_Tool_Regulation_Version_Failed",
-      "Text": "Failed to get regulation version. Params might be corrupt."
+      "Text": "Failed to get the regulation version. The params might be corrupt."
     },
     {
       "Key": "DEV_Tool_Param_Def_Missing_For_Type",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "DEV_Tool_Param_Type_Null",
-      "Text": "Param type is unexpectedly null."
+      "Text": "The param type is null."
     },
     {
       "Key": "DEV_Tool_Failed_To_Apply_Param_Def",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Dump_Material_Definitions_TT",
-      "Text": "Writes how the materials of the current project resolve to a JSON file, and a summary of their shaders to a TSV file."
+      "Text": "Write how the current project's materials resolve to a JSON file, and a summary of their shaders to a TSV file."
     },
     {
       "Key": "DEV_Tool_Dialog_Select_Folder",
@@ -238,7 +238,7 @@
     },
     {
       "Key": "DEV_Tool_Action_Generate_Texture_Groups_TT",
-      "Text": "Reads the current project's game shaders and writes which UV group each of their textures is in. The file belongs in Assets/Material Definitions."
+      "Text": "Read the current project's game shaders and write the UV group of each of their textures. The file belongs in Assets/Material Definitions."
     },
     {
       "Key": "DEV_Tool_Material_Dump_Groups_Done",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "DEV_Tool_Server_Running",
-      "Text": "The server is {0}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect."
+      "Text": "The server is {0}.\nOnly other programs on this computer can access it, not the network.\nRestart Smithbox for changes to take effect."
     },
     {
       "Key": "DEV_Tool_Header_Export_Directory",
@@ -442,7 +442,7 @@
     },
     {
       "Key": "DEV_Param_Export_Table_Names_TT",
-      "Text": "Export the current table names for the current param directly to the Smithbox.Data folder."
+      "Text": "Export the table names of the current param to the Smithbox.Data folder."
     },
     {
       "Key": "DEV_Param_Log_Export_Row_Names",
@@ -450,7 +450,7 @@
     },
     {
       "Key": "DEV_Param_Export_Row_Names_TT",
-      "Text": "Export the current row names for the current param directly to the Smithbox.Data folder."
+      "Text": "Export the row names of the current param to the Smithbox.Data folder."
     }
   ]
 }

@@ -2,11 +2,11 @@
   "Entries": [
     {
       "Key": "PARAM_PARSE_Selection_TT",
-      "Text": "Selects the current param selection and selected rows in that param."
+      "Text": "Selects the selected param and its selected rows."
     },
     {
       "Key": "PARAM_PARSE_Clipboard_TT",
-      "Text": "Selects the param of the clipboard and the rows in the clipboard."
+      "Text": "Selects the clipboard's param and the rows on the clipboard."
     }
   ]
 }

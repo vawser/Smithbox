@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_RowDecorator_Action_Go_To_Text_TT",
-      "Text": "Go the the text entry this row is associated within in the Text Editor."
+      "Text": "Go to this row's text entry in the Text Editor."
     }
   ]
 }

@@ -178,10 +178,6 @@ public class SettingsEditor
 
         ImGui.Separator();
 
-        ImGui.Text(LOC.Get("HELP_Developed_By"));
-
-        ImGui.Separator();
-
         var buttonWidth = new Vector2(-1, 0);
 
         // Go to Wiki

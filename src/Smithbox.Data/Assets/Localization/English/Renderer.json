@@ -6,7 +6,7 @@
     },
     {
       "Key": "REND_DbgPrim_Empty",
-      "Text": "DbgPrim geometry is empty and it had no children. Something went wrong..."
+      "Text": "The DbgPrim geometry is empty and has no children. Something went wrong."
     },
     {
       "Key": "REND_Invalid_Axis",
@@ -18,7 +18,7 @@
     },
     {
       "Key": "REND_Listener_Tab_Name_Column_TT",
-      "Text": "Name of this resource."
+      "Text": "The resource's name."
     },
     {
       "Key": "REND_Listener_Tab_Load_State_Column",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "REND_Listener_Tab_Reference_Count_Column_TT",
-      "Text": "The reference count for this resource."
+      "Text": "The resource's reference count."
     },
     {
       "Key": "REND_Listener_Tab_Action_Select_TT",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "REND_Mesh_Provider_Tab_Name_Column_TT",
-      "Text": "Name of this resource."
+      "Text": "The resource's name."
     },
     {
       "Key": "REND_Mesh_Provider_Action_Select_TT",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "REND_Mesh_Provider_Wrong_Form",
-      "Text": "Mesh provider exists but in the wrong form."
+      "Text": "The mesh provider exists, but in the wrong form."
     },
     {
       "Key": "REND_Resource_Load_Failed",
@@ -126,11 +126,11 @@
     },
     {
       "Key": "REND_Binder_TPF_Load_Failed",
-      "Text": "Failed to load Binder TPF:\nName: {0}\nBinder Path: {1}\nBinder Virtual Path: {2}\nAccess Level: {3}"
+      "Text": "Failed to load binder TPF:\nName: {0}\nBinder Path: {1}\nBinder Virtual Path: {2}\nAccess Level: {3}"
     },
     {
       "Key": "REND_Binder_Load_Failed",
-      "Text": "Failed to load Binder:\nBinder Path: {0}\nBinder Virtual Path: {1}\nAccess Level: {2}"
+      "Text": "Failed to load binder:\nBinder Path: {0}\nBinder Virtual Path: {1}\nAccess Level: {2}"
     },
     {
       "Key": "REND_Job_Finished",
@@ -166,27 +166,27 @@
     },
     {
       "Key": "REND_FlverResource_Vertex_Read_Not_Implemented",
-      "Text": "Read not implemented for {0} vertex."
+      "Text": "Reading isn't implemented for {0} vertices."
     },
     {
       "Key": "REND_FlverResource_Float4_Invalid",
-      "Text": "Float4 Normal W was not a whole number: {0}"
+      "Text": "Float4 normal W isn't a whole number: {0}"
     },
     {
       "Key": "REND_FlverResource_Normal_Read_Not_Implemented",
-      "Text": "Read not implemented for {0} normal."
+      "Text": "Reading isn't implemented for {0} normals."
     },
     {
       "Key": "REND_FlverResource_UV_Read_Not_Implemented",
-      "Text": "Read not implemented for {0} UV."
+      "Text": "Reading isn't implemented for {0} UVs."
     },
     {
       "Key": "REND_FlverResource_Tangent_Read_Not_Implemented",
-      "Text": "Read not implemented for {0} tangent."
+      "Text": "Reading isn't implemented for {0} tangents."
     },
     {
       "Key": "REND_FlverResource_BufferLayout_Read_Not_Implemented",
-      "Text": "Read not implemented for {0} buffer layout type."
+      "Text": "Reading isn't implemented for the {0} buffer layout type."
     },
     {
       "Key": "REND_HavokCollisionResource_Load_Failed",
@@ -206,11 +206,11 @@
     },
     {
       "Key": "REND_TextureResource_Bad_Init",
-      "Text": "TextureResource: Empty Constructor is invalid."
+      "Text": "TextureResource: the empty constructor isn't valid."
     },
     {
       "Key": "REND_TextureResource_Missing_Texture_Descriptor",
-      "Text": "Unable to allocate texture descriptor."
+      "Text": "Couldn't allocate a texture descriptor."
     },
     {
       "Key": "REND_Buffer_Failed_Allocation_Migration",
@@ -218,31 +218,31 @@
     },
     {
       "Key": "REND_Buffer_GPU_Allocation_Failed",
-      "Text": "GPU allocation failed even after resize. Requested: {0} bytes, Buffer size: {1} bytes."
+      "Text": "GPU allocation failed even after resizing. Requested: {0} bytes, buffer size: {1} bytes."
     },
     {
       "Key": "REND_Buffer_Not_Staging",
-      "Text": "FlushIfNeeded called on non-staging buffer."
+      "Text": "FlushIfNeeded was called on a non-staging buffer."
     },
     {
       "Key": "REND_Buffer_Copy_To_Not_Staging",
-      "Text": "Attempted to copy data to non-staging buffer."
+      "Text": "Tried to copy data to a non-staging buffer."
     },
     {
       "Key": "REND_Buffer_Map_Vertex_Non_Staging",
-      "Text": "Attempted to map vertex buffer that isn't staging."
+      "Text": "Tried to map a vertex buffer that isn't staging."
     },
     {
       "Key": "REND_Buffer_Unmap_Vertex_Non_Staging",
-      "Text": "Attempted to unmap vertex buffer that isn't staging."
+      "Text": "Tried to unmap a vertex buffer that isn't staging."
     },
     {
       "Key": "REND_Buffer_Map_Index_Non_Staging",
-      "Text": "Attempted to map index buffer that isn't staging."
+      "Text": "Tried to map an index buffer that isn't staging."
     },
     {
       "Key": "REND_Buffer_Unmap_Index_Non_Staging",
-      "Text": "Attempted to unmap index buffer that isn't staging."
+      "Text": "Tried to unmap an index buffer that isn't staging."
     },
     {
       "Key": "REND_Renderable_Out_of_Index_Range",
@@ -258,19 +258,19 @@
     },
     {
       "Key": "REND_Picking_Results_Not_Ready",
-      "Text": "Can't get selection when picking results aren't ready"
+      "Text": "Can't get the selection before the picking results are ready."
     },
     {
       "Key": "REND_Unknown_DDS_Type",
-      "Text": "Unknown DDS Type: {0}"
+      "Text": "Unknown DDS type: {0}"
     },
     {
       "Key": "REND_Unimplemented_DXGI_Type",
-      "Text": "Unimplemented DXGI Type: {0}"
+      "Text": "Unimplemented DXGI type: {0}"
     },
     {
       "Key": "REND_Invalid_TPF_Texture_BlockSize",
-      "Text": "TPF Texture format {0} BlockSize unknown."
+      "Text": "The block size of TPF texture format {0} is unknown."
     },
     {
       "Key": "REND_Texture_Load_Error",
@@ -278,7 +278,7 @@
     },
     {
       "Key": "REND_Shoebox_Layout_Load_Failed",
-      "Text": "Failed to load Shoebox Layout: {0}"
+      "Text": "Failed to load Shoebox layout: {0}"
     },
     {
       "Key": "REND_IconManager_TPF_Read_Failed",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "REND_IconManager_TPF_Find_Failed",
-      "Text": "Failed to fomd TPF: {0}"
+      "Text": "Failed to find TPF: {0}"
     },
     {
       "Key": "REND_OpenGL_Texture_Upload_Error",
@@ -298,7 +298,7 @@
     },
     {
       "Key": "REND_Vulkan_Missing_Texture_Descriptor",
-      "Text": "Unable to allocate texture descriptor."
+      "Text": "Couldn't allocate a texture descriptor."
     },
     {
       "Key": "REND_Vulkan_TPF_Fill_Fail",
@@ -334,15 +334,15 @@
     },
     {
       "Key": "REND_No_Region_Model_Proxy_For_Type",
-      "Text": "No region model proxy was specified for {0}"
+      "Text": "No region model proxy is specified for {0}."
     },
     {
       "Key": "REND_Invalid_BTL_LightType",
-      "Text": "Unexpected BTL LightType: {0}"
+      "Text": "Unexpected BTL light type: {0}"
     },
     {
       "Key": "REND_Invalid_Mesh",
-      "Text": "Invalid mesh for: {0}"
+      "Text": "Invalid mesh for {0}."
     }
   ]
 }

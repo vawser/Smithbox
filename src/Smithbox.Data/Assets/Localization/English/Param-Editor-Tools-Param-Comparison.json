@@ -18,7 +18,7 @@
     },
     {
       "Key": "PARAM_Comparison_Header_Loaded_Projects_TT",
-      "Text": "These projects have been loaded and are displayed in the comparison column(s)."
+      "Text": "These projects are loaded and shown in the comparison columns."
     },
     {
       "Key": "PARAM_Comparison_Project_Context_Unload",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_Comparison_Header_Available_Projects_TT",
-      "Text": "These projects may be loaded for comparison."
+      "Text": "These projects can be loaded for comparison."
     },
     {
       "Key": "PARAM_Comparison_Header_Options",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PARAM_Comparison_Action_Clear_All_TT",
-      "Text": "Clear all current param comparisons."
+      "Text": "Clear all param comparisons."
     },
     {
       "Key": "PARAM_Comparison_Tab_Row_Compare",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PARAM_Comparison_No_Row_Compare",
-      "Text": "No row comparison target set."
+      "Text": "No row comparison target is set."
     },
     {
       "Key": "PARAM_Comparison_Action_Clear_Row_Compare",
@@ -86,7 +86,7 @@
     },
     {
       "Key": "PARAM_Comparison_Action_Clear_Row_Compare_TT",
-      "Text": "Clear the current row comparison target."
+      "Text": "Clear the row comparison target."
     },
     {
       "Key": "PARAM_Comparison_Tab_Field_Compare",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_Comparison_No_Field_Compare",
-      "Text": "No field comparison target set."
+      "Text": "No field comparison target is set."
     },
     {
       "Key": "PARAM_Comparison_Action_Clear_Field_Compare",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PARAM_Comparison_Action_Clear_Field_Compare_TT",
-      "Text": "Clear the current field comparison target."
+      "Text": "Clear the field comparison target."
     },
     {
       "Key": "PARAM_Comparison_Menu_Header_Report",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "PARAM_Comparison_Menu_View_Report_TT",
-      "Text": "View a text report that details the differences between the current project params and the vanilla params."
+      "Text": "View a text report of the differences between the current project's params and the vanilla params."
     },
     {
       "Key": "PARAM_Comparison_Menu_Header_Param_Compare",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "PARAM_Comparison_Menu_Clear_All_TT",
-      "Text": "Unloads all comparison param banks."
+      "Text": "Unload all comparison param banks."
     },
     {
       "Key": "PARAM_Comparison_Menu_Header_Row_Compare",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "PARAM_Comparison_Menu_Clear_Row_Compare_TT",
-      "Text": "Clears the current row comparison target."
+      "Text": "Clear the row comparison target."
     },
     {
       "Key": "PARAM_Comparison_Menu_Header_Field_Compare",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PARAM_Comparison_Menu_Clear_Field_Compare_TT",
-      "Text": "Clears the current field comparison target."
+      "Text": "Clear the field comparison target."
     },
     {
       "Key": "PARAM_Comparison_Report_Hint",
@@ -174,15 +174,15 @@
     },
     {
       "Key": "PARAM_Comparison_Report_Missing_Param_Key",
-      "Text": "{0} does not exist in [{1}]."
+      "Text": "{0} doesn't exist in [{1}]."
     },
     {
       "Key": "PARAM_Comparison_Report_Missing_Row_ID",
-      "Text": "{0} does not exist in [{1}]."
+      "Text": "{0} doesn't exist in [{1}]."
     },
     {
       "Key": "PARAM_Comparison_Report_Missing_Row_ID_With_Name",
-      "Text": "  {0} ({1}) does not exist in [{2}]."
+      "Text": "  {0} ({1}) doesn't exist in [{2}]."
     },
     {
       "Key": "PARAM_ComparisonReport_Header",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "PARAM_ComparisonReport_Comparison_Bank_No_Load",
-      "Text": "Comparison Bank - No Comparison Bank loaded."
+      "Text": "Comparison Bank - No comparison bank loaded."
     },
     {
       "Key": "PARAM_ComparisonReport_Header_Project_to_Compare",
@@ -230,15 +230,15 @@
     },
     {
       "Key": "PARAM_ComparisonReport_Header_Targeted_Params_TT",
-      "Text": "The params to target in the comparison report. Leave blank to target all params."
+      "Text": "The params to include in the comparison report. Leave blank to include all params."
     },
     {
       "Key": "PARAM_ComparisonReport_Param_Target_Add_TT",
-      "Text": "Add new param target input row."
+      "Text": "Add a param target input row."
     },
     {
       "Key": "PARAM_ComparisonReport_Param_Target_Remove_TT",
-      "Text": "Remove last added param target input row."
+      "Text": "Remove the last added param target input row."
     },
     {
       "Key": "PARAM_ComparisonReport_Param_Target_Reset",
@@ -246,7 +246,7 @@
     },
     {
       "Key": "PARAM_ComparisonReport_Param_Target_Reset_TT",
-      "Text": "The param target to include."
+      "Text": "Reset the param target input rows."
     },
     {
       "Key": "PARAM_ComparisonReport_Param_to_Include_TT",
@@ -274,7 +274,7 @@
     },
     {
       "Key": "PARAM_ComparisonReport_Action_Copy_Report_TT",
-      "Text": "Copy the param comparison report to clipboard."
+      "Text": "Copy the param comparison report to the clipboard."
     },
     {
       "Key": "PARAM_ComparisonReport_Action_Close_Report",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "PARAM_ComparisonReport_Generating_Report",
-      "Text": "Report is being generated..."
+      "Text": "Generating the report..."
     },
     {
       "Key": "PARAM_ComparisonReport_Current_Param",
@@ -302,11 +302,11 @@
     },
     {
       "Key": "PARAM_ComparisonReport_Task_Generate_PASS",
-      "Text": "Comparison report has been generated."
+      "Text": "Generated the comparison report."
     },
     {
       "Key": "PARAM_ComparisonReport_Task_Generate_FAIL",
-      "Text": "Comparison report failed to be generated."
+      "Text": "Failed to generate the comparison report."
     },
     {
       "Key": "PARAM_ComparisonReport_Modal_Name",

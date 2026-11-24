@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "PARAM_PSE_Modified_TT",
-      "Text": "Selects params where any rows do not match the vanilla version, or where any are added. Ignores row names."
+      "Text": "Selects params where any rows differ from the vanilla version or are added. Ignores row names."
     },
     {
       "Key": "PARAM_PSE_Param_Hint_1",
@@ -10,7 +10,7 @@
     },
     {
       "Key": "PARAM_PSE_Param_TT",
-      "Text": "Selects all params whose name matches the given regex"
+      "Text": "Selects all params whose name matches the given regex."
     },
     {
       "Key": "PARAM_PSE_AuxParam_Hint_1",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_PSE_AuxParam_TT",
-      "Text": "Selects params from the specified regulation or parambnd where the param name matches the given regex."
+      "Text": "Selects params from the given regulation or parambnd whose name matches the given regex."
     },
     {
       "Key": "PARAM_PSE_ParamType_Hint_1",

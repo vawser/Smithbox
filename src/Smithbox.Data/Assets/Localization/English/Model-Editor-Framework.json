@@ -10,7 +10,7 @@
     },
     {
       "Key": "MODEL_Framework_Filter_Mesh_TT",
-      "Text": "Toggle the display of meshes."
+      "Text": "Show or hide meshes."
     },
     {
       "Key": "MODEL_Framework_Filter_DummyPoly",
@@ -18,7 +18,7 @@
     },
     {
       "Key": "MODEL_Framework_Filter_DummyPoly_TT",
-      "Text": "Toggle the display of dummy polygons."
+      "Text": "Show or hide dummy polygons."
     },
     {
       "Key": "MODEL_Framework_Filter_DummyPoly_Labels",
@@ -26,7 +26,7 @@
     },
     {
       "Key": "MODEL_Framework_Filter_DummyPoly_Labels_TT",
-      "Text": "Toggle the display of each dummy polygon's reference ID in the viewport."
+      "Text": "Show or hide each dummy polygon's reference ID in the viewport."
     },
     {
       "Key": "MODEL_Framework_Filter_Bone",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "MODEL_Framework_Filter_Bone_TT",
-      "Text": "Toggle the display of bones."
+      "Text": "Show or hide bones."
     },
     {
       "Key": "MODEL_Framework_Filter_Bone_Labels",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "MODEL_Framework_Filter_Bone_Labels_TT",
-      "Text": "Toggle the display of each bone's name in the viewport."
+      "Text": "Show or hide each bone's name in the viewport."
     },
     {
       "Key": "MODEL_Framework_Filter_Collision",
@@ -50,11 +50,11 @@
     },
     {
       "Key": "MODEL_Framework_Filter_Collision_TT",
-      "Text": "Toggle the display of collision."
+      "Text": "Show or hide collision."
     },
     {
       "Key": "MODEL_Command_Invalid_Select_Index",
-      "Text": "Model select command ignored: '{0}' is not an index."
+      "Text": "Model select command ignored: '{0}' isn't an index."
     }
   ]
 }

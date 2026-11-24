@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "EDITOR_Help_Button_TT",
-      "Text": "How this works: click for a description and how it is used."
+      "Text": "Click for a description of this feature and how to use it."
     },
     {
       "Key": "EDITOR_Short_Project_Type_Undefined",
@@ -62,15 +62,15 @@
     },
     {
       "Key": "EDITOR_List_Filter_Exact_Match_TT",
-      "Text": "Filter will ignore partial matches when enabled."
+      "Text": "When enabled, the filter ignores partial matches."
     },
     {
       "Key": "EDITOR_List_Filter_Input_TT",
-      "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character.\n\nIn lists that colour items by their vanilla state, the terms modified and added show only modified or added items, and combine with other terms (e.g. modified{0}c1000)."
+      "Text": "Enter a term to filter this list.\n\nSeparate terms with {0} to match all of them (AND).\n\nSeparate terms with {1} to match any of them (OR).\n\nIn lists that colour items by vanilla state, the terms modified and added show only modified or added items, and combine with other terms (e.g. modified{0}c1000)."
     },
     {
       "Key": "EDITOR_Search_Size_Toggle_TT",
-      "Text": "Toggle the minimized state for the search bar."
+      "Text": "Minimize or expand the search bar."
     },
     {
       "Key": "EDITOR_Add_New_View",
@@ -106,7 +106,7 @@
     },
     {
       "Key": "EDITOR_Add_Axis_Viewports_TT",
-      "Text": "Adds three orthographic viewports looking down, along +Z and along -X at what the active viewport is focused on, at the same scale. Dock them beside it for a four-view layout."
+      "Text": "Add three orthographic viewports, looking down, along +Z and along -X, at the active viewport's focus and scale. Dock them next to it for a four-view layout."
     },
     {
       "Key": "EDITOR_Close_Viewport",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "EDITOR_ToolSections_Category_TT",
-      "Text": "Double-click to hide or show the tools in this category."
+      "Text": "Double-click to show or hide the tools in this category."
     },
     {
       "Key": "EDITOR_ToolCategory_Actions",
@@ -278,11 +278,11 @@
     },
     {
       "Key": "EDITOR_Editor_Is_Loading",
-      "Text": "Editor is loading..."
+      "Text": "The editor is loading..."
     },
     {
       "Key": "EDITOR_Menubar_Manual_Save_Output_TT",
-      "Text": "Determines which files are outputted during the manual saving process."
+      "Text": "Choose which files a manual save writes."
     },
     {
       "Key": "EDITOR_Menubar_Manual_Save_Output",
@@ -290,7 +290,7 @@
     },
     {
       "Key": "EDITOR_Menubar_Manual_Save_Output_TT",
-      "Text": "Determines which files are outputted during the manual saving process."
+      "Text": "Choose which files a manual save writes."
     },
     {
       "Key": "EDITOR_Menubar_Auto_Save_Output",
@@ -298,7 +298,7 @@
     },
     {
       "Key": "EDITOR_Menubar_Auto_Save_Output_TT",
-      "Text": "Determines which files are outputted during the automatic saving process."
+      "Text": "Choose which files an automatic save writes."
     },
     {
       "Key": "EDITOR_SaveOutput_FMG",
@@ -306,7 +306,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_FMG_TT",
-      "Text": "If enabled, the text files are outputted on save."
+      "Text": "When enabled, saving writes the text files."
     },
     {
       "Key": "EDITOR_SaveOutput_PARAM",
@@ -314,7 +314,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_PARAM_TT",
-      "Text": "If enabled, the param files are outputted on save."
+      "Text": "When enabled, saving writes the param files."
     },
     {
       "Key": "EDITOR_SaveOutput_FLVER",
@@ -322,7 +322,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_FLVER_TT",
-      "Text": "If enabled, the flver files are outputted on save."
+      "Text": "When enabled, saving writes the FLVER files."
     },
     {
       "Key": "EDITOR_SaveOutput_MTD",
@@ -330,7 +330,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_MTD_TT",
-      "Text": "If enabled, the material files are outputted on save."
+      "Text": "When enabled, saving writes the material files."
     },
     {
       "Key": "EDITOR_SaveOutput_MATBIN",
@@ -338,7 +338,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_MATBIN_TT",
-      "Text": "If enabled, the material bin files are outputted on save."
+      "Text": "When enabled, saving writes the material bin files."
     },
     {
       "Key": "EDITOR_SaveOutput_MSB",
@@ -346,7 +346,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_MSB_TT",
-      "Text": "If enabled, the map files are outputted on save."
+      "Text": "When enabled, saving writes the map files."
     },
     {
       "Key": "EDITOR_SaveOutput_BTL",
@@ -354,7 +354,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_BTL_TT",
-      "Text": "If enabled, the Light binder files are outputted on save."
+      "Text": "When enabled, saving writes the light binder files."
     },
     {
       "Key": "EDITOR_SaveOutput_CollisionHKX",
@@ -362,7 +362,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_CollisionHKX_TT",
-      "Text": "If enabled, the collision binder files are outputted on save."
+      "Text": "When enabled, saving writes the collision binder files."
     },
     {
       "Key": "EDITOR_SaveOutput_NavmeshHKX",
@@ -370,7 +370,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_NavmeshHKX_TT",
-      "Text": "If enabled, the navmesh binder files are outputted on save."
+      "Text": "When enabled, saving writes the navmesh binder files."
     },
     {
       "Key": "EDITOR_SaveOutput_AIP",
@@ -378,7 +378,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_AIP_TT",
-      "Text": "If enabled, the Invasion Point files are outputted on save."
+      "Text": "When enabled, saving writes the invasion point files."
     },
     {
       "Key": "EDITOR_SaveOutput_NVA",
@@ -386,7 +386,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_NVA_TT",
-      "Text": "If enabled, the Navmesh binder files are outputted on save."
+      "Text": "When enabled, saving writes the navmesh binder files."
     },
     {
       "Key": "EDITOR_SaveOutput_BTAB",
@@ -394,7 +394,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_BTAB_TT",
-      "Text": "If enabled, the Light Atlases binder files are outputted on save."
+      "Text": "When enabled, saving writes the light atlas binder files."
     },
     {
       "Key": "EDITOR_SaveOutput_BTPB",
@@ -402,7 +402,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_BTPB_TT",
-      "Text": "If enabled, the Light Probes binder files are outputted on save."
+      "Text": "When enabled, saving writes the light probe binder files."
     },
     {
       "Key": "EDITOR_SaveOutput_HKX",
@@ -410,7 +410,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_HKX_TT",
-      "Text": "If enabled, the havok files are outputted on save."
+      "Text": "When enabled, saving writes the Havok files."
     },
     {
       "Key": "EDITOR_SaveOutput_ACB",
@@ -418,7 +418,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_ACB_TT",
-      "Text": "If enabled, the Asset Configurations files are outputted on save."
+      "Text": "When enabled, saving writes the asset configuration files."
     },
     {
       "Key": "EDITOR_SaveOutput_GPARAM",
@@ -426,7 +426,7 @@
     },
     {
       "Key": "EDITOR_SaveOutput_GPARAM_TT",
-      "Text": "If enabled, the graphics param files are outputted on save."
+      "Text": "When enabled, saving writes the graphics param files."
     },
     {
       "Key": "EDITOR_Options_Header_Editor_Display",
@@ -446,7 +446,7 @@
     },
     {
       "Key": "EDITOR_Options_EditorDisplay_Action_TabbedPanels_TT",
-      "Text": "Display the editor with three core panels, with tabbed inner sections."
+      "Text": "Display the editor as three main panels with tabbed sections."
     },
     {
       "Key": "EDITOR_Window_RightPanel",

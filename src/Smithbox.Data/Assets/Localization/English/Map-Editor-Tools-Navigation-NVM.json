@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "MAP_Navigation_Nvm_Description",
-      "Text": "Views, edits and checks the navigation data of a loaded Demon's Souls or Dark Souls map: the NVM navmesh each MSB navmesh part loads, the MCP rooms (one per part) and the MCG graph whose nodes join the navmeshes at their gate triangles. Start in the Overlay tab, which draws them in the viewport; the editing tabs work on what it draws."
+      "Text": "View, edit and check the navigation data of a loaded Demon's Souls or Dark Souls map: the NVM navmesh each MSB navmesh part loads, the MCP rooms (one per part), and the MCG graph whose nodes join the navmeshes at their gate triangles. Start in the Overlay tab, which draws them in the viewport; the editing tabs work on what it draws."
     },
     {
       "Key": "MAP_Navigation_Nvm_No_Binder",
@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Overlay_Show_TT",
-      "Text": "Draws the map's NVM triangles (coloured by their flags), gate and entity triangles, MCP rooms and MCG graph over the map. The tabs' viewport modes act on what it draws."
+      "Text": "Draw the map's NVM triangles (coloured by their flags), gate and entity triangles, MCP rooms and MCG graph over the map. The tabs' viewport modes act on what it draws."
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Flags",
@@ -30,35 +30,35 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Flags_Help",
-      "Text": "Picks triangles and paints their flags (how the AI treats them). Each paint stroke is one undoable edit."
+      "Text": "Pick triangles and paint their flags (how the AI treats them). Each paint stroke is one undoable edit."
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Entities_Help",
-      "Text": "The entities of the picked triangle's navmesh: triangle sets an event script can disable by entity ID. Pick a triangle to choose the navmesh."
+      "Text": "The entities of the picked triangle's navmesh: sets of triangles that an event script can disable by entity ID. Pick a triangle to choose the navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Graph_Help",
-      "Text": "The MCG graph the AI plans long routes on: nodes on the gate triangles between navmeshes, and edges between the nodes of one room, with a cost. Also the MCP room of the picked navmesh."
+      "Text": "The MCG graph the AI uses to plan long routes: nodes on the gate triangles between navmeshes, and edges with a cost between the nodes of one room. Also shows the MCP room of the picked navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Edit_Help",
-      "Text": "Moves NVM vertices with a brush. Committing rebuilds each edited navmesh's box tree, sets its MCP room box, and moves the MCG nodes on its gates, as one undoable edit."
+      "Text": "Move NVM vertices with a brush. Committing rebuilds each edited navmesh's box tree, sets its MCP room box and moves the MCG nodes on its gates, as one undoable edit."
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Check_Help",
-      "Text": "Checks the map's NVMs, MCP and MCG against the rules the game files follow. Issues the vanilla files also have are marked inherited."
+      "Text": "Check the map's NVMs, MCP and MCG against the rules the game files follow. Issues that the vanilla files also have are marked as inherited."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mode_Entity",
-      "Text": "Clicks add triangles to the chosen entity (or take them out)."
+      "Text": "Clicks add triangles to the selected entity (or remove them)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mode_Node",
-      "Text": "Clicks choose an MCG node."
+      "Text": "Clicks select an MCG node."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mode_Connect",
-      "Text": "Clicks on a node connect it to the chosen node."
+      "Text": "Clicking a node connects it to the selected node."
     },
     {
       "Key": "MAP_Navigation_Nvm_Picked_Status",
@@ -66,11 +66,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Status",
-      "Text": "Chosen MCG node {0} ({1} edges)."
+      "Text": "Selected MCG node {0} ({1} edges)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Clear_TT",
-      "Text": "Clears the chosen node."
+      "Text": "Clear the selected node."
     },
     {
       "Key": "MAP_Navigation_Nvm_Only_Picked_Room",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Only_Picked_Room_TT",
-      "Text": "Draws only the navmesh of the picked triangle, with its MCP room and MCG edges. The brush only reaches what is drawn."
+      "Text": "Draw only the picked triangle's navmesh, with its MCP room and MCG edges. The brush only reaches what is drawn."
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_Faces",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_OpenEdges_TT",
-      "Text": "The edges with no triangle on their other side: the navmesh's boundary."
+      "Text": "Edges with no triangle on the other side: the navmesh's boundary."
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_NvmGates",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_NvmEntities_TT",
-      "Text": "The outline of the triangles an NVM entity lists. The chosen entity's are drawn in white."
+      "Text": "The outline of the triangles listed by an NVM entity. The selected entity's triangles are drawn in white."
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_McpRooms",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_McpRooms_TT",
-      "Text": "The box of each of the map's MCP rooms: its navmesh's bounds, with a metre more above and below."
+      "Text": "The box of each MCP room in the map: its navmesh's bounds, plus a metre above and below."
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_McgNodes",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_McgNodes_TT",
-      "Text": "The MCG nodes the map's edges use, as crosses. The chosen node is drawn larger, in pink."
+      "Text": "The MCG nodes used by the map's edges, as crosses. The selected node is drawn larger, in pink."
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_McgEdges",
@@ -142,7 +142,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Layer_McgEdges_TT",
-      "Text": "The map's MCG edges, as lines between their nodes. The chosen edge is drawn in pink."
+      "Text": "The map's MCG edges, as lines between their nodes. The selected edge is drawn in pink."
     },
     {
       "Key": "MAP_Navigation_Nvm_Summary_Rooms",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Legend_Header_TT",
-      "Text": "The flag combinations the drawn triangles have, in their overlay colours, with how many triangles have each."
+      "Text": "The flag combinations of the drawn triangles, in their overlay colours, and how many triangles have each."
     },
     {
       "Key": "MAP_Navigation_Nvm_Legend_Entry",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Legend_Use_TT",
-      "Text": "Paints with this flag combination (Set)."
+      "Text": "Paint with this flag combination (Set)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flags_None",
@@ -206,7 +206,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Pick_TT",
-      "Text": "While on, a click in the viewport picks the overlay's triangle under the cursor instead of selecting map objects."
+      "Text": "While on, a click in the viewport picks the overlay triangle under the cursor instead of selecting map objects."
     },
     {
       "Key": "MAP_Navigation_Nvm_Paint_Start",
@@ -230,15 +230,15 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Paint_Op_Set_TT",
-      "Text": "Gives painted triangles exactly the ticked flags."
+      "Text": "Give painted triangles exactly the ticked flags."
     },
     {
       "Key": "MAP_Navigation_Nvm_Paint_Op_Add_TT",
-      "Text": "Adds the ticked flags to painted triangles, keeping their others."
+      "Text": "Add the ticked flags to painted triangles, keeping their other flags."
     },
     {
       "Key": "MAP_Navigation_Nvm_Paint_Op_Remove_TT",
-      "Text": "Takes the ticked flags off painted triangles, keeping their others."
+      "Text": "Remove the ticked flags from painted triangles, keeping their other flags."
     },
     {
       "Key": "MAP_Navigation_Nvm_Painted",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Picked_Header_TT",
-      "Text": "The picked triangle. Ticking a flag edits it (undoable)."
+      "Text": "The picked triangle. Tick a flag to edit it (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Picked_None",
@@ -278,59 +278,59 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_INSIDE_WALL_TT",
-      "Text": "INSIDE_WALL (0x1), as SoulsFormats names it."
+      "Text": "INSIDE_WALL (0x1)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_BLOCK_GATE_TT",
-      "Text": "BLOCK_GATE (0x2), as SoulsFormats names it."
+      "Text": "BLOCK_GATE (0x2)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_CLOSED_DOOR_TT",
-      "Text": "CLOSED_DOOR (0x4), as SoulsFormats names it."
+      "Text": "CLOSED_DOOR (0x4)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_DOOR_TT",
-      "Text": "DOOR (0x8), as SoulsFormats names it. A few entity triangles have it."
+      "Text": "DOOR (0x8). A few entity triangles have it."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_HOLE_TT",
-      "Text": "HOLE (0x10), as SoulsFormats names it."
+      "Text": "HOLE (0x10)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_LADDER_TT",
-      "Text": "LADDER (0x20), as SoulsFormats names it."
+      "Text": "LADDER (0x20)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_LARGE_SPACE_TT",
-      "Text": "LARGE_SPACE (0x40), as SoulsFormats names it."
+      "Text": "LARGE_SPACE (0x40)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_EDGE_TT",
-      "Text": "EDGE (0x80), as SoulsFormats names it."
+      "Text": "EDGE (0x80)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_EVENT_TT",
-      "Text": "EVENT (0x100), as SoulsFormats names it."
+      "Text": "EVENT (0x100)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_LANDING_POINT_TT",
-      "Text": "LANDING_POINT (0x200), as SoulsFormats names it."
+      "Text": "LANDING_POINT (0x200)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_FLOOR_TO_WALL_TT",
-      "Text": "FLOOR_TO_WALL (0x400), as SoulsFormats names it."
+      "Text": "FLOOR_TO_WALL (0x400)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_DEGENERATE_TT",
-      "Text": "DEGENERATE (0x800), as SoulsFormats names it."
+      "Text": "DEGENERATE (0x800)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_WALL_TT",
-      "Text": "WALL (0x1000), as SoulsFormats names it."
+      "Text": "WALL (0x1000)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_BLOCK_TT",
-      "Text": "BLOCK (0x2000), as SoulsFormats names it."
+      "Text": "BLOCK (0x2000)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_GATE_TT",
@@ -338,7 +338,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Flag_DISABLE_TT",
-      "Text": "DISABLE (0x8000), as SoulsFormats names it."
+      "Text": "DISABLE (0x8000)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entities_Room_Header",
@@ -346,7 +346,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entities_Room_Header_TT",
-      "Text": "The entities are those of the picked triangle's navmesh."
+      "Text": "The entities of the picked triangle's navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entities_Pick_First",
@@ -358,7 +358,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entities_Header_TT",
-      "Text": "The navmesh's entities: each lists triangles an event can disable by its entity ID. Select one to draw and edit it."
+      "Text": "The navmesh's entities. Each lists triangles that an event can disable by its entity ID. Select one to draw and edit it."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entities_None",
@@ -370,7 +370,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Row_TT",
-      "Text": "Selects the entity, drawing its triangles in white."
+      "Text": "Select the entity and draw its triangles in white."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_New_Header",
@@ -378,11 +378,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_New_Header_TT",
-      "Text": "Adds an entity to the navmesh, with the picked triangle."
+      "Text": "Add an entity with the picked triangle to the navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_New_Id_TT",
-      "Text": "The new entity's ID, as an event script names it."
+      "Text": "The new entity's ID, as used by event scripts."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_New",
@@ -390,7 +390,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_New_TT",
-      "Text": "Adds an entity with this ID and the picked triangle, and selects it (undoable)."
+      "Text": "Add an entity with this ID and the picked triangle, and select it (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Selected_Header",
@@ -402,7 +402,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Id_TT",
-      "Text": "The entity's ID; changed when the field loses focus (undoable)."
+      "Text": "The entity's ID. Changes when you leave the field (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Remove_Clicked",
@@ -410,7 +410,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Remove_Clicked_TT",
-      "Text": "While ticked, clicking a triangle takes it out of the entity; otherwise clicks add triangles to it."
+      "Text": "While ticked, clicking a triangle removes it from the entity; otherwise, clicks add triangles to it."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Edit_Start",
@@ -422,7 +422,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Edit_TT",
-      "Text": "While on, clicking a triangle of this navmesh adds it to the entity (or takes it out, as ticked above). Each click is one undoable edit."
+      "Text": "While on, clicking a triangle in this navmesh adds it to the entity (or removes it, if ticked above). Each click is one undoable edit."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Delete",
@@ -430,7 +430,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Delete_TT",
-      "Text": "Removes the entity from the navmesh (undoable). Its triangles stay."
+      "Text": "Remove the entity from the navmesh (undoable). Its triangles stay."
     },
     {
       "Key": "MAP_Navigation_Nvm_Entity_Other_Room",
@@ -446,7 +446,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Graph_Actions_Header_TT",
-      "Text": "Choosing nodes, connecting them, and setting the MCP room boxes."
+      "Text": "Select nodes, connect them, and set the MCP room boxes."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Pick_Start",
@@ -458,7 +458,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Pick_TT",
-      "Text": "While on, clicking near an MCG node in the viewport chooses it."
+      "Text": "While on, clicking near an MCG node in the viewport selects it."
     },
     {
       "Key": "MAP_Navigation_Nvm_Connect_Start",
@@ -470,7 +470,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Connect_TT",
-      "Text": "While on, clicking another node adds an edge from the chosen node to it, in the room both nodes' gates are in (else the picked triangle's room), costing their distance (undoable)."
+      "Text": "While on, clicking another node adds an edge from the selected node to it, in the room that both nodes' gates are in (or else the picked triangle's room), with their distance as the cost (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Connect_Exists",
@@ -478,7 +478,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Connect_No_Room",
-      "Text": "The two nodes share no room of this map; pick a triangle of the room the edge should be in, then connect again."
+      "Text": "The two nodes share no room in this map. Pick a triangle in the room the edge should be in, then connect again."
     },
     {
       "Key": "MAP_Navigation_Nvm_Connected",
@@ -490,7 +490,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Refresh_Rooms_TT",
-      "Text": "Sets every MCP room box of this map from its navmesh, as the game's are: the part-placed NVM bounds, with the room's height margin (undoable). Vertex edits do this for the rooms they change."
+      "Text": "Set every MCP room box in this map from its navmesh, as the game does: the part-placed NVM bounds plus the room's height margin (undoable). Vertex edits do this for the rooms they change."
     },
     {
       "Key": "MAP_Navigation_Nvm_Refresh_Rooms_None",
@@ -502,7 +502,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_None",
-      "Text": "No node is chosen. Choose Nodes, then click one in the viewport."
+      "Text": "No node is selected. Choose Nodes, then click one in the viewport."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Header",
@@ -510,11 +510,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Header_TT",
-      "Text": "The chosen node's position (map space) and the gate triangles it sits on."
+      "Text": "The selected node's position (in map space) and the gate triangles it sits on."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Position_TT",
-      "Text": "The node's position; moved when the field loses focus. Its edges' costs scale with their new length (undoable)."
+      "Text": "The node's position. It moves when you leave the field, and its edges' costs scale with their new length (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_To_Picked",
@@ -522,7 +522,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_To_Picked_TT",
-      "Text": "Moves the node to the point of the last picked triangle (undoable)."
+      "Text": "Move the node to the point of the last picked triangle (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Frame",
@@ -530,7 +530,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Frame_TT",
-      "Text": "Moves the camera to the node."
+      "Text": "Move the camera to the node."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Unknowns",
@@ -574,11 +574,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Edge_Select_TT",
-      "Text": "Draws this edge in pink."
+      "Text": "Draw this edge in pink."
     },
     {
       "Key": "MAP_Navigation_Nvm_Edge_Go_TT",
-      "Text": "Chooses the node at the other end."
+      "Text": "Select the node at the other end."
     },
     {
       "Key": "MAP_Navigation_Nvm_Edge_Other_Map",
@@ -586,11 +586,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Edge_Cost_TT",
-      "Text": "The edge's cost (MCG Unk20); set when the field loses focus (undoable). The game's are mostly a little over the straight distance between the nodes, here {0}."
+      "Text": "The edge's cost (MCG Unk20). Set when you leave the field (undoable). The game's costs are mostly slightly more than the straight distance between the nodes, which here is {0}."
     },
     {
       "Key": "MAP_Navigation_Nvm_Edge_Remove_TT",
-      "Text": "Removes the edge (undoable)."
+      "Text": "Remove the edge (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Rooms_Header",
@@ -614,15 +614,15 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Validate_TT",
-      "Text": "Checks the map's NVMs (indices, neighbours, box trees, entities), its MCP (rooms, boxes, connections) and its MCG (edges, node lists, gates), then compares the issues with the vanilla files in the background."
+      "Text": "Check the map's NVMs (indices, neighbours, box trees, entities), MCP (rooms, boxes, connections) and MCG (edges, node lists, gates), then compare the issues with the vanilla files in the background."
     },
     {
       "Key": "MAP_Navigation_Nvm_Edit_Commit_TT",
-      "Text": "Builds each edited navmesh again with its moved vertices (rebuilding its box tree), sets its MCP room box, and moves the MCG nodes on its gates, as one undoable edit. The map's save writes them."
+      "Text": "Rebuild each edited navmesh with its moved vertices (including its box tree), set its MCP room box, and move the MCG nodes on its gates, as one undoable edit. Saving the map writes them."
     },
     {
       "Key": "MAP_Navigation_Nvm_Edit_Link_Neighbours_TT",
-      "Text": "Vertices of the map's other navmeshes under the brush move too, so gates between navmeshes stay joined."
+      "Text": "Also move vertices of the map's other navmeshes under the brush, so gates between navmeshes stay joined."
     },
     {
       "Key": "MAP_Navigation_Nvm_Edit_Cursor_Room",
@@ -630,7 +630,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Edit_Committed",
-      "Text": "Committed {0} navmeshes ({1} vertices moved); {2} MCG nodes followed, {3} room boxes set."
+      "Text": "Committed {0} navmeshes ({1} vertices moved). {2} MCG nodes followed, and {3} room boxes were set."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmBinderMissing",
@@ -638,23 +638,23 @@
     },
     {
       "Key": "MAP_Navigation_Issue_NvmPartFileMissing",
-      "Text": "Navmesh part {0} loads model {1}, which the binder has no NVM for."
+      "Text": "Navmesh part {0} loads model {1}, but the binder has no NVM for it."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmVertexRange",
-      "Text": "Triangle {0} names vertices {1}; the NVM has {2}."
+      "Text": "Triangle {0} refers to vertices {1}, but the NVM has {2}."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmNeighbourRange",
-      "Text": "Triangle {0} names neighbour {1}; the NVM has {2} triangles."
+      "Text": "Triangle {0} refers to neighbour {1}, but the NVM has {2} triangles."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmNeighbourNotShared",
-      "Text": "Triangle {0} names {1} as a neighbour, but they don't share that edge's two vertices (a few game files do this)."
+      "Text": "Triangle {0} lists {1} as a neighbour, but they don't share that edge's two vertices (a few game files do this)."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmNeighbourOneWay",
-      "Text": "Triangle {0} names {1} as a neighbour, but {1} doesn't name {0}."
+      "Text": "Triangle {0} lists {1} as a neighbour, but {1} doesn't list {0}."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmVertexOutsideRoot",
@@ -666,7 +666,7 @@
     },
     {
       "Key": "MAP_Navigation_Issue_NvmTreeExtraTriangle",
-      "Text": "{0} box tree leaf entries name a triangle that doesn't touch the leaf (harmless; a few game files do this)."
+      "Text": "{0} box tree leaf entries refer to a triangle that doesn't touch the leaf (harmless; a few game files do this)."
     },
     {
       "Key": "MAP_Navigation_Issue_NvmEntityTriangleRange",
@@ -678,11 +678,11 @@
     },
     {
       "Key": "MAP_Navigation_Issue_McpRoomCount",
-      "Text": "The MCP has {0} rooms of this map, but the MSB has {1} navmesh parts; room r is part r."
+      "Text": "The MCP has {0} rooms in this map, but the MSB has {1} navmesh parts. Room r is part r."
     },
     {
       "Key": "MAP_Navigation_Issue_McpRoomBox",
-      "Text": "MCP room {0} ({1}) doesn't fit its navmesh's bounds. Set Room Boxes in the Graph tab sets it."
+      "Text": "MCP room {0} ({1}) doesn't fit its navmesh's bounds. Use Set Room Boxes in the Graph tab to fix it."
     },
     {
       "Key": "MAP_Navigation_Issue_McpConnectionRange",
@@ -714,11 +714,11 @@
     },
     {
       "Key": "MAP_Navigation_Issue_McgNodeOffGate",
-      "Text": "MCG node {0} is {1} m from the nearest gate triangle; the game's sit on one."
+      "Text": "MCG node {0} is {1} m from the nearest gate triangle. The game's nodes sit on one."
     },
     {
       "Key": "MAP_Navigation_Nvm_Tab_Models_Help",
-      "Text": "The map's navmeshes: each MSB navmesh part, the NVM it loads and its MCP room. Generate or Duplicate makes a new one (a new part, NVM and room), Remove takes one out. A new navmesh then needs its gates marked and MCG nodes on them (Graph tab) for the AI to path into it."
+      "Text": "The map's navmeshes: each MSB navmesh part, the NVM it loads and its MCP room. Generate or Duplicate creates a new one (a new part, NVM and room), and Remove deletes one. For the AI to path into a new navmesh, mark its gates and add MCG nodes on them (Graph tab)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Models_Header",
@@ -726,7 +726,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Models_Header_TT",
-      "Text": "The map's navmesh parts in MSB order (room r of the MCP is part r), the NVM file each loads, and its triangles and entities. Select one for the actions below."
+      "Text": "The map's navmesh parts in MSB order (MCP room r is part r), the NVM file each loads, and its triangles and entities. Select one for the actions below."
     },
     {
       "Key": "MAP_Navigation_Nvm_Models_Counts",
@@ -738,7 +738,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Models_Select_Picked_TT",
-      "Text": "Selects the navmesh of the picked triangle."
+      "Text": "Select the picked triangle's navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Models_Column_Room",
@@ -778,7 +778,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Header_TT",
-      "Text": "Makes a navmesh from the collision parts selected in the viewport: a new navmesh part (at the map's origin) with its NVM and MCP room, or a new NVM for the selected navmesh."
+      "Text": "Create a navmesh from the collision parts selected in the viewport: either a new navmesh part (at the map's origin) with its NVM and MCP room, or a new NVM for the selected navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Sources",
@@ -790,7 +790,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Select",
-      "Text": "Select the collision parts to walk on in the viewport (their low collision, l####, is what the navmesh is made from)."
+      "Text": "Select the collision parts to walk on in the viewport. The navmesh is made from their low collision (l####)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Replace",
@@ -798,7 +798,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Replace_TT",
-      "Text": "Puts the generated NVM in place of the selected navmesh's, keeping its part: its MCP box is set from it and its MCG edges find their gate triangles again. Otherwise a new navmesh is made."
+      "Text": "Replace the selected navmesh's NVM with the generated one, keeping its part. Its MCP box is set from it, and its MCG edges find their gate triangles again. Otherwise, a new navmesh is created."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Mark_Gates",
@@ -806,7 +806,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Mark_Gates_TT",
-      "Text": "Flags GATE on the triangles whose open edge lies on another navmesh's open edge, on both sides, as Mark Gates does."
+      "Text": "Flag GATE on both sides, on triangles whose open edge lies on another navmesh's open edge, like Mark Gates."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Settings",
@@ -818,11 +818,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_TT",
-      "Text": "Generates the navmesh in the background from the selected collision (wound to face up, as the older games' collision is stored the other way), then adds it as one undoable edit. Links aren't made: NVMs have none."
+      "Text": "Generate the navmesh in the background from the selected collision (wound to face up, because the older games store collision the other way), then add it as one undoable edit. No links are created, because NVMs have none."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Cancel_TT",
-      "Text": "Drops the running generation's result."
+      "Text": "Discard the result of the running generation."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Running",
@@ -834,7 +834,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_No_Collision",
-      "Text": "The selected parts have no loaded collision ({0} without a file). Turn collision loading on and load the map again."
+      "Text": "The selected parts have no loaded collision ({0} without a file). Turn on collision loading and reload the map."
     },
     {
       "Key": "MAP_Navigation_Nvm_Generate_Failed",
@@ -842,7 +842,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Generated",
-      "Text": "Generated {0} ({1}.nvm, {2} triangles, {3} gate triangles marked). Save the map to write the new NVM; the Map Editor draws its part once the map is loaded again."
+      "Text": "Generated {0} ({1}.nvm, {2} triangles, {3} gate triangles marked). Save the map to write the new NVM. The Map Editor draws its part once the map is reloaded."
     },
     {
       "Key": "MAP_Navigation_Nvm_Regenerated",
@@ -854,11 +854,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Duplicate_Header_TT",
-      "Text": "Makes a new navmesh from the selected one's NVM, on a new part moved by the offset, with its own MCP room."
+      "Text": "Create a navmesh from the selected one's NVM, on a new part moved by the offset, with its own MCP room."
     },
     {
       "Key": "MAP_Navigation_Nvm_Duplicate_Offset_TT",
-      "Text": "How far the copy's part is moved from the source's (map space)."
+      "Text": "How far to move the copy's part from the source's (in map space)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Duplicate",
@@ -866,11 +866,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Duplicate_TT",
-      "Text": "Adds a navmesh part with a copy of this NVM (its gate flags and entities cleared, then gates marked where it now is), named as the game names them, and an MCP room for it (undoable)."
+      "Text": "Add a navmesh part with a copy of this NVM (gate flags and entities cleared, then gates marked at its new position), named the way the game names them, with an MCP room for it (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Duplicated",
-      "Text": "Added {0} ({1}.nvm, {2} triangles, {3} gate triangles marked). Save the map to write the new NVM; the Map Editor draws its part once the map is loaded again."
+      "Text": "Added {0} ({1}.nvm, {2} triangles, {3} gate triangles marked). Save the map to write the new NVM. The Map Editor draws its part once the map is reloaded."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates_Header",
@@ -878,11 +878,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates_Header_TT",
-      "Text": "Flags GATE where the selected navmesh meets the others, on both sides: the triangles whose open edge lies on another navmesh's open edge. MCG nodes then go on those triangles (Graph tab)."
+      "Text": "Flag GATE on both sides where the selected navmesh meets others: the triangles whose open edge lies on another navmesh's open edge. MCG nodes then go on those triangles (Graph tab)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates_Tolerance_TT",
-      "Text": "How close (m) both ends of two open edges must be to count as the same edge."
+      "Text": "How close (in metres) both ends of two open edges must be to count as the same edge."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates",
@@ -890,11 +890,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates_TT",
-      "Text": "Flags GATE on the triangles where this navmesh meets another (undoable). The game also flags some triangles further from the edge; paint those by hand if needed."
+      "Text": "Flag GATE on the triangles where this navmesh meets another (undoable). The game also flags some triangles further from the edge; paint those by hand if needed."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates_None",
-      "Text": "{0} shares no open edge with another navmesh that isn't marked already."
+      "Text": "{0} shares no unmarked open edge with another navmesh."
     },
     {
       "Key": "MAP_Navigation_Nvm_Mark_Gates_Done",
@@ -906,7 +906,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Remove_Header_TT",
-      "Text": "Takes the selected navmesh out of the map: its MSB part, its MCP room and the MCG edges in it, and its NVM unless another part loads it."
+      "Text": "Remove the selected navmesh from the map: its MSB part, its MCP room and the MCG edges in it, and its NVM unless another part loads it."
     },
     {
       "Key": "MAP_Navigation_Nvm_Remove",
@@ -914,7 +914,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Remove_TT",
-      "Text": "Removes the navmesh part, its room (later rooms move down one) and its edges, as one undoable edit. Its MCG nodes stay; remove them in the Graph tab if no other edge uses them."
+      "Text": "Remove the navmesh part, its room (later rooms move down one) and its edges as one undoable edit. Its MCG nodes stay; remove them in the Graph tab if no other edge uses them."
     },
     {
       "Key": "MAP_Navigation_Nvm_Remove_No_Part",
@@ -930,7 +930,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Nodes_Header_TT",
-      "Text": "Adding and removing MCG nodes, and joining a navmesh's nodes."
+      "Text": "Add and remove MCG nodes, and join a navmesh's nodes."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Add",
@@ -938,7 +938,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Add_TT",
-      "Text": "Adds an MCG node at the picked point and chooses it (undoable). Put it on a gate triangle between two navmeshes, then Link Room on each."
+      "Text": "Add an MCG node at the picked point and select it (undoable). Place it on a gate triangle between two navmeshes, then use Link Room on each."
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Remove",
@@ -946,7 +946,7 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Node_Remove_TT",
-      "Text": "Removes the chosen node and its edges; later nodes move down one (undoable)."
+      "Text": "Remove the selected node and its edges. Later nodes move down one (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Room_Link",
@@ -954,11 +954,11 @@
     },
     {
       "Key": "MAP_Navigation_Nvm_Room_Link_TT",
-      "Text": "Joins every two nodes on the picked navmesh's gate triangles (within 2 m) with an edge in its room, costing their distance, as most of the game's rooms are, and connects its MCP room to every room those nodes reach (undoable)."
+      "Text": "Join every pair of nodes on the picked navmesh's gate triangles (within 2 m) with an edge in its room, with their distance as the cost, like most of the game's rooms. Also connect its MCP room to every room those nodes reach (undoable)."
     },
     {
       "Key": "MAP_Navigation_Nvm_Room_Link_None",
-      "Text": "{0}'s nodes are all joined already."
+      "Text": "All of {0}'s nodes are already joined."
     },
     {
       "Key": "MAP_Navigation_Nvm_Room_Linked",

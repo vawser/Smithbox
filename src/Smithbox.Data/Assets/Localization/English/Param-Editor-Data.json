@@ -2,19 +2,19 @@
   "Entries": [
     {
       "Key": "PARAM_Data_Failed_Regulation_Load",
-      "Text": "Failed to get regulation version. Params might be corrupt."
+      "Text": "Failed to get the regulation version. The params might be corrupt."
     },
     {
       "Key": "PARAM_Data_Missing_ParamDef",
-      "Text": "Couldn't find ParamDef for param {0} and no tentative ParamType exists."
+      "Text": "Couldn't find a ParamDef for param {0}, and no tentative ParamType exists."
     },
     {
       "Key": "PARAM_Data_Missing_ParamType",
-      "Text": "Couldn't read ParamType for {0} and no tentative ParamType exists."
+      "Text": "Couldn't read the ParamType for {0}, and no tentative ParamType exists."
     },
     {
       "Key": "PARAM_Data_Missing_ParamDef_ParamType",
-      "Text": "Couldn't find ParamDef for param {0} with ParamType '{1}'."
+      "Text": "Couldn't find a ParamDef for param {0} with ParamType '{1}'."
     },
     {
       "Key": "PARAM_Data_Fixed_Up_Param",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_Data_Param_Type_Null",
-      "Text": "Param type is unexpectedly null."
+      "Text": "The param type is null."
     },
     {
       "Key": "PARAM_Data_Skipped_Param",
@@ -30,11 +30,11 @@
     },
     {
       "Key": "PARAM_Data_Failed_to_Apply_ParamDef",
-      "Text": "Could not apply ParamDef for {0}"
+      "Text": "Couldn't apply the ParamDef for {0}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Apply_ParamDef_Bank",
-      "Text": "Could not apply ParamDef for {0} in {1}"
+      "Text": "Couldn't apply the ParamDef for {0} in {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Find_Param_Path",
@@ -42,47 +42,47 @@
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_GameParam",
-      "Text": "Failed to load game param for at {0} for {1}"
+      "Text": "Failed to load the game param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_DrawParam",
-      "Text": "Failed to load draw param for at {0} for {1}"
+      "Text": "Failed to load the draw param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Locate_Param_Path",
-      "Text": "Cannot locate param files for {0}. Save failed."
+      "Text": "Can't find the param files for {0}. Save failed."
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_Encrypted_GameParam",
-      "Text": "Failed to load encrypted game param for at {0} for {1}"
+      "Text": "Failed to load the encrypted game param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_SystemParam",
-      "Text": "Failed to load system param for at {0} for {1}"
+      "Text": "Failed to load the system param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_EventParam",
-      "Text": "Failed to load event param for at {0} for {1}"
+      "Text": "Failed to load the event param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_GraphicsParam",
-      "Text": "Failed to load graphics param for at {0} for {1}"
+      "Text": "Failed to load the graphics param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Failed_to_Locate_Game_Param_Path",
-      "Text": "Cannot locate game param files for {0}. Save failed."
+      "Text": "Can't find the game param files for {0}. Save failed."
     },
     {
       "Key": "PARAM_Data_Failed_to_Locate_System_Param_Path",
-      "Text": "Cannot locate system param files for {0}. Save failed."
+      "Text": "Can't find the system param files for {0}. Save failed."
     },
     {
       "Key": "PARAM_Data_Failed_to_Locate_Event_Param_Path",
-      "Text": "Cannot locate event param files for {0}. Save failed."
+      "Text": "Can't find the event param files for {0}. Save failed."
     },
     {
       "Key": "PARAM_Data_Failed_to_Locate_Graphics_Param_Path",
-      "Text": "Cannot locate graphics param files for {0}. Save failed."
+      "Text": "Can't find the graphics param files for {0}. Save failed."
     },
     {
       "Key": "PARAM_Data_GetParamDiff_Missing_Vanilla_Param",
@@ -90,95 +90,95 @@
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_StayParam",
-      "Text": "Failed to load stay param: {0}"
+      "Text": "Failed to load the stay param: {0}"
     },
     {
       "Key": "PARAM_Data_Failed_to_Load_FarModelParam",
-      "Text": "Failed to load far model param at {0} for {1}"
+      "Text": "Failed to load the far model param at {0} for {1}."
     },
     {
       "Key": "PARAM_Data_Setup_ParamDefs_PASS",
-      "Text": "Setup PARAM definitions."
+      "Text": "Set up the PARAM definitions."
     },
     {
       "Key": "PARAM_Data_Setup_ParamDefs_FAIL",
-      "Text": "Failed to setup PARAM definitions."
+      "Text": "Failed to set up the PARAM definitions."
     },
     {
       "Key": "PARAM_Data_Setup_ParamMeta_PASS",
-      "Text": "Setup PARAM meta."
+      "Text": "Set up the PARAM meta."
     },
     {
       "Key": "PARAM_Data_Setup_ParamMeta_FAIL",
-      "Text": "Failed to setup PARAM meta."
+      "Text": "Failed to set up the PARAM meta."
     },
     {
       "Key": "PARAM_Data_Setup_ParamAnnotations_PASS",
-      "Text": "Setup PARAM annotations."
+      "Text": "Set up the PARAM annotations."
     },
     {
       "Key": "PARAM_Data_Setup_ParamAnnotations_FAIL",
-      "Text": "Failed to setup PARAM annotations."
+      "Text": "Failed to set up the PARAM annotations."
     },
     {
       "Key": "PARAM_Data_Setup_ParamEnums_PASS",
-      "Text": "Setup PARAM enums."
+      "Text": "Set up the PARAM enums."
     },
     {
       "Key": "PARAM_Data_Setup_ParamEnums_FAIL",
-      "Text": "Failed to setup PARAM enums."
+      "Text": "Failed to set up the PARAM enums."
     },
     {
       "Key": "PARAM_Data_Setup_RowImportLanguage_PASS",
-      "Text": "Setup Row Import Language options"
+      "Text": "Set up the row import language options."
     },
     {
       "Key": "PARAM_Data_Setup_RowImportLanguage_FAIL",
-      "Text": "Failed to setup Row Import Language options."
+      "Text": "Failed to set up the row import language options."
     },
     {
       "Key": "PARAM_Data_Setup_GraphAnnotations_PASS",
-      "Text": "Setup Graph annotations."
+      "Text": "Set up the graph annotations."
     },
     {
       "Key": "PARAM_Data_Setup_GraphAnnotations_FAIL",
-      "Text": "Failed to setup Graph annotations."
+      "Text": "Failed to set up the graph annotations."
     },
     {
       "Key": "PARAM_Data_Setup_RowFmgAnnotations_PASS",
-      "Text": "Setup Row FMG annotations."
+      "Text": "Set up the row FMG annotations."
     },
     {
       "Key": "PARAM_Data_Setup_RowFmgAnnotations_FAIL",
-      "Text": "Failed to setup Row FMG annotations."
+      "Text": "Failed to set up the row FMG annotations."
     },
     {
       "Key": "PARAM_Data_Setup_IconConfiguration_PASS",
-      "Text": "Setup Icon Configuration data."
+      "Text": "Set up the icon configuration data."
     },
     {
       "Key": "PARAM_Data_Setup_IconConfiguration_FAIL",
-      "Text": "Failed to setup Icon Configuration data."
+      "Text": "Failed to set up the icon configuration data."
     },
     {
       "Key": "PARAM_Data_Setup_TableParamList_PASS",
-      "Text": "Setup the Table Param list."
+      "Text": "Set up the table param list."
     },
     {
       "Key": "PARAM_Data_Setup_TableGroupNames_PASS",
-      "Text": "Setup the Table Group Name data."
+      "Text": "Set up the table group name data."
     },
     {
       "Key": "PARAM_Data_Setup_ParamReloaderOffsets_PASS",
-      "Text": "Setup Param Reloader offsets."
+      "Text": "Set up the Param Reloader offsets."
     },
     {
       "Key": "PARAM_Data_Setup_ParamReloaderOffsets_FAIL",
-      "Text": "Failed to setup Param Reloader offsets."
+      "Text": "Failed to set up the Param Reloader offsets."
     },
     {
       "Key": "PARAM_Data_Setup_ParamCategories_PASS",
-      "Text": "Failed to setup Param Categories."
+      "Text": "Set up the param categories."
     },
     {
       "Key": "PARAM_Data_Setup_ParamCategories_FAIL",
@@ -186,143 +186,143 @@
     },
     {
       "Key": "PARAM_Data_Setup_CommutativeParamGroups_PASS",
-      "Text": "Setup Commutative Param Groups."
+      "Text": "Set up the commutative param groups."
     },
     {
       "Key": "PARAM_Data_Setup_CommutativeParamGroups_FAIL",
-      "Text": "Failed to setup Commutative Param Groups."
+      "Text": "Failed to set up the commutative param groups."
     },
     {
       "Key": "PARAM_Data_Setup_FieldReferenceGroups_PASS",
-      "Text": "Setup Field Reference Groups."
+      "Text": "Set up the field reference groups."
     },
     {
       "Key": "PARAM_Data_Setup_FieldReferenceGroups_FAIL",
-      "Text": "Failed to setup Field Reference Groups."
+      "Text": "Failed to set up the field reference groups."
     },
     {
       "Key": "PARAM_Data_Setup_FieldLayouts_PASS",
-      "Text": "Setup Field Layouts."
+      "Text": "Set up the field layouts."
     },
     {
       "Key": "PARAM_Data_Setup_FieldLayouts_FAIL",
-      "Text": "Failed to setup Field Layouts."
+      "Text": "Failed to set up the field layouts."
     },
     {
       "Key": "PARAM_Data_Setup_PrimaryBank_PASS",
-      "Text": "Setup the Primary Param Bank."
+      "Text": "Set up the primary param bank."
     },
     {
       "Key": "PARAM_Data_Setup_PrimaryBank_FAIL",
-      "Text": "Failed to setup the Primary Param Bank."
+      "Text": "Failed to set up the primary param bank."
     },
     {
       "Key": "PARAM_Data_Setup_VanillaBank_PASS",
-      "Text": "Setup the Vanilla Param Bank."
+      "Text": "Set up the vanilla param bank."
     },
     {
       "Key": "PARAM_Data_Setup_VanillaBank_FAIL",
-      "Text": "Failed to setup the Vanilla Param Bank."
+      "Text": "Failed to set up the vanilla param bank."
     },
     {
       "Key": "PARAM_Data_Setup_AuxBank_PASS",
-      "Text": "Setup Auxilary Param Bank for {0}"
+      "Text": "Set up the auxiliary param bank for {0}."
     },
     {
       "Key": "PARAM_Data_Setup_AuxBank_FAIL",
-      "Text": "Failed to setup Auxilary Param Bank for {0}."
+      "Text": "Failed to set up the auxiliary param bank for {0}."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_ParamDef",
-      "Text": "Failed to deseralize {0} as PARAMDEF."
+      "Text": "Failed to read {0} as a PARAMDEF."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_ParamTypeInfo",
-      "Text": "Failed to deserialize {0} as Param Type Info."
+      "Text": "Failed to read {0} as param type info."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Read_ParamTypeInfo",
-      "Text": "Failed to read Param Type Info file: {0}"
+      "Text": "Failed to read the param type info file: {0}"
     },
     {
       "Key": "PARAM_Data_Reload_Param_Meta_PASS",
-      "Text": "Reloaded Param META."
+      "Text": "Reloaded the param meta."
     },
     {
       "Key": "PARAM_Data_Reload_Param_Meta_FAIL",
-      "Text": "Failed to reload Param META."
+      "Text": "Failed to reload the param meta."
     },
     {
       "Key": "PARAM_Data_Task_Refresh_Diff_Cache_PASS",
-      "Text": "Difference cache between param banks has been refreshed."
+      "Text": "Refreshed the difference cache between param banks."
     },
     {
       "Key": "PARAM_Data_Task_Refresh_Diff_Cache_FAIL",
-      "Text": "Difference cache refresh has failed."
+      "Text": "Failed to refresh the difference cache."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_PARAM_META",
-      "Text": "Failed to deseralize {0} as PARAMMETA."
+      "Text": "Failed to read {0} as PARAMMETA."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Annotation_Languages",
-      "Text": "Failed to deserialize param annotation languages: {0}"
+      "Text": "Failed to read the param annotation languages: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Annotation_Entry",
-      "Text": "Failed to deserialize param annotation entry: {0}"
+      "Text": "Failed to read a param annotation entry: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Row_Name_Import_Languages",
-      "Text": "Failed to deserialize row name import languages: {0}"
+      "Text": "Failed to read the row name import languages: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Enum_Entry",
-      "Text": "Failed to deserialize param enum entry: {0}"
+      "Text": "Failed to read a param enum entry: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Graph_Annotation",
-      "Text": "Failed to deserialize graph annotation groups: {0}"
+      "Text": "Failed to read the graph annotation groups: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Row_FMG_Annotation",
-      "Text": "Failed to deserialize row FMG annotations: {0}"
+      "Text": "Failed to read the row FMG annotations: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Icon_Configuration",
-      "Text": "Failed to deserialize icon configuration group: {0}"
+      "Text": "Failed to read an icon configuration group: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Reloader_Offsets",
-      "Text": "Failed to deserialize param reloader offset data: {0}"
+      "Text": "Failed to read the Param Reloader offset data: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Categories",
-      "Text": "Failed to deserialize param category group: {0}"
+      "Text": "Failed to read a param category group: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Commutative_Groups",
-      "Text": "Failed to deserialize param commutativity group: {0}"
+      "Text": "Failed to read a param commutativity group: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Field_Reference_Group",
-      "Text": "Failed to deserialize field reference group: {0}"
+      "Text": "Failed to read a field reference group: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Field_Layouts",
-      "Text": "Failed to deserialize field layout: {0}"
+      "Text": "Failed to read a field layout: {0}"
     },
     {
       "Key": "PARAM_Data_Log_Failed_Table_Group_Load",
-      "Text": "Failed to load {0} for table group name import during Base Store step."
+      "Text": "Failed to load {0} for the table group name import during the Base Store step."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Table_Group_Load_Project",
-      "Text": "Failed to load {0} for table group name import during Project Store step."
+      "Text": "Failed to load {0} for the table group name import during the Project Store step."
     },
     {
       "Key": "PARAM_Data_Log_Failed_Table_Param_List",
-      "Text": "Failed to load table param list."
+      "Text": "Failed to load the table param list."
     }
   ]
 }

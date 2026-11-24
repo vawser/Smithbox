@@ -130,43 +130,43 @@
     },
     {
       "Key": "HAVOK_Data_Save_File_PASS",
-      "Text": "Saved havok file: {0}"
+      "Text": "Saved Havok file: {0}"
     },
     {
       "Key": "HAVOK_Data_Save_File_IN_PROGRESS",
-      "Text": "Save aborted, a havok file is already being saved."
+      "Text": "Save cancelled: a Havok file is already being saved."
     },
     {
       "Key": "HAVOK_Data_Save_File_FAIL",
-      "Text": "Failed to save havok file: {0}"
+      "Text": "Failed to save Havok file: {0}"
     },
     {
       "Key": "HAVOK_Data_Save_File_NO_FILE_SELECT",
-      "Text": "Save aborted, no havok file has been selected yet."
+      "Text": "Save cancelled: no Havok file is selected."
     },
     {
       "Key": "HAVOK_Data_Save_File_NO_BINDER_SELECT",
-      "Text": "Save aborted, no havok binder has been selected yet."
+      "Text": "Save cancelled: no Havok binder is selected."
     },
     {
       "Key": "HAVOK_Data_Invalid_Root_Container",
-      "Text": "Save aborted, hkRootContainer is null."
+      "Text": "Save cancelled: hkRootContainer is null."
     },
     {
       "Key": "HAVOK_Data_AddFile_Binder_Write_FAIL",
-      "Text": "File paste aborted, binder failed to be written."
+      "Text": "File paste cancelled: failed to write the binder."
     },
     {
       "Key": "HAVOK_Data_Havok_Object_Aliases_FAIL",
-      "Text": "Failed to setup Havok Object Aliases."
+      "Text": "Failed to set up Havok object aliases."
     },
     {
       "Key": "HAVOK_Data_Havok_Object_Aliases_PASS",
-      "Text": "Setup Havok Object Aliases."
+      "Text": "Set up Havok object aliases."
     },
     {
       "Key": "HAVOK_Data_Havok_Object_Aliases_Fail_Read",
-      "Text": "Failed to read havok object alias file entry: {0}"
+      "Text": "Failed to read a Havok object alias file entry: {0}"
     },
     {
       "Key": "HAVOK_Data_Unsaved_File_Actions",

@@ -14,7 +14,7 @@
     },
     {
       "Key": "MAT_InGameTool_Hint",
-      "Text": "Connects to the running game: lists the materials loaded models use, and reloads the selected material in the game from this editor's copy. The game must run offline with EAC disabled."
+      "Text": "Connect to the running game to list the materials that loaded models use, and to reload the selected material in the game from this editor's copy. The game must run offline with EAC disabled."
     },
     {
       "Key": "MAT_InGameTool_Game_Header",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "MAT_InGameTool_State_Read_Failed",
-      "Text": "Reading the game failed: {0}"
+      "Text": "Failed to read the game: {0}"
     },
     {
       "Key": "MAT_InGameTool_Auto_Refresh",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "MAT_InGameTool_Auto_Refresh_TT",
-      "Text": "Reads the game's materials every {0} seconds while this tool is shown."
+      "Text": "Read the game's materials every {0} seconds while this tool is shown."
     },
     {
       "Key": "MAT_InGameTool_Refresh",
@@ -94,11 +94,11 @@
     },
     {
       "Key": "MAT_InGameTool_Reload_Note",
-      "Text": "Models already loaded keep the old material until they load again. Reload the world (below) to rebuild every model with the new material."
+      "Text": "Models already loaded keep the old material until they reload. Reload the world (below) to rebuild every model with the new material."
     },
     {
       "Key": "MAT_InGameTool_Reload_Note_No_World",
-      "Text": "Models already loaded keep the old material until they load again, for example on the next mission or expedition, or after returning to the title screen."
+      "Text": "Models already loaded keep the old material until they reload, for example on the next mission or expedition, or after returning to the title screen."
     },
     {
       "Key": "MAT_InGameTool_Send_Vanilla",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "MAT_InGameTool_Vanilla_Not_Ready",
-      "Text": "The vanilla materials are still loading; try again in a moment."
+      "Text": "The vanilla materials are still loading. Try again in a moment."
     },
     {
       "Key": "MAT_InGameTool_Vanilla_None",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "MAT_InGameTool_Modified_Header_TT",
-      "Text": "Send every material with unsaved changes at once, followed by one world reload (the choice above)."
+      "Text": "Send every material with unsaved changes at once, followed by one world reload (the option above)."
     },
     {
       "Key": "MAT_InGameTool_Modified_Count",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "MAT_InGameTool_Modified_Reload_TT",
-      "Text": "Send every material with unsaved changes to the game, then do the choice above once. Materials with check errors are left out."
+      "Text": "Send every material with unsaved changes to the game, then do the option above once. Materials with check errors are left out."
     },
     {
       "Key": "MAT_InGameTool_Send_On_Save",
@@ -142,11 +142,11 @@
     },
     {
       "Key": "MAT_InGameTool_Send_On_Save_TT",
-      "Text": "When you save the Material Editor while connected, the materials the save writes are also sent to the game, followed by the choice above. Automatic saves don't send."
+      "Text": "When you save in the Material Editor while connected, the saved materials are also sent to the game, followed by the option above. Automatic saves don't send."
     },
     {
       "Key": "MAT_InGameTool_Reload_Busy",
-      "Text": "A reload is still running, so {0} material(s) weren't sent to the game. Send them again when it's done (History or Reload Modified)."
+      "Text": "A reload is still running, so {0} material(s) weren't sent to the game. Send them again when it finishes (History or Reload Modified)."
     },
     {
       "Key": "MAT_InGameTool_Reload_Many_Name",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "MAT_InGameTool_Reload_Many_Failed",
-      "Text": "{0} failed (see the log)."
+      "Text": "{0} failed. See the log."
     },
     {
       "Key": "MAT_InGameTool_History_Header",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "MAT_InGameTool_History_Header_TT",
-      "Text": "The materials sent to the game this session, newest first. Send sends the editor's current copy again; Vanilla sends the original."
+      "Text": "The materials sent to the game this session, newest first. Send resends the editor's current copy; Vanilla sends the original."
     },
     {
       "Key": "MAT_InGameTool_History_Empty",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "MAT_InGameTool_History_Send_TT",
-      "Text": "Send the editor's current copy of this material again."
+      "Text": "Resend the editor's current copy of this material."
     },
     {
       "Key": "MAT_InGameTool_History_Vanilla",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "MAT_InGameTool_History_Clear_TT",
-      "Text": "Empty the history. Nothing in the game changes."
+      "Text": "Clear the history. Nothing changes in the game."
     },
     {
       "Key": "MAT_InGameTool_Source_Selected",
@@ -242,11 +242,11 @@
     },
     {
       "Key": "MAT_InGameTool_After_TT",
-      "Text": "What happens after the material reloads. Reloading the world saves and loads your save again, so every model is rebuilt with the new material."
+      "Text": "What happens after the material reloads. Reloading the world saves and reloads your save, so every model is rebuilt with the new material."
     },
     {
       "Key": "MAT_InGameTool_World_Header_TT",
-      "Text": "Reload the world from your save, or quit to the title screen. Loading the world again rebuilds every model, so all of them use the materials reloaded here."
+      "Text": "Reload the world from your save, or quit to the title screen. Reloading the world rebuilds every model, so they all use the materials reloaded here."
     },
     {
       "Key": "MAT_InGameTool_Reload_Done",
@@ -282,7 +282,7 @@
     },
     {
       "Key": "MAT_InGameTool_Browse_Header_TT",
-      "Text": "The models loaded in the game and the materials they use. Click a model to show its materials, and a material to select it here. Users is how many model materials hold it in the game."
+      "Text": "The models loaded in the game and the materials they use. Click a model to show its materials, or a material to select it here. Users is how many model materials use it in the game."
     },
     {
       "Key": "MAT_InGameTool_Browse_Count",
@@ -330,7 +330,7 @@
     },
     {
       "Key": "MAT_InGameTool_Sort_Recent_TT",
-      "Text": "Sort by when each model or material loaded, newest first: walk up to something and it comes to the top. Ones loaded within {0} seconds are marked in the Loaded column; ones already loaded when Smithbox connected go last."
+      "Text": "Sort by when each model or material loaded, newest first, so whatever you walk up to comes to the top. Those loaded within {0} seconds are marked in the Loaded column; those already loaded when Smithbox connected are listed last."
     },
     {
       "Key": "MAT_InGameTool_Tab_Models",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "MAT_InGameTool_Models_Unavailable",
-      "Text": "The game's loaded model list wasn't found in this version; use the Materials tab."
+      "Text": "The game's loaded model list wasn't found in this version. Use the Materials tab."
     },
     {
       "Key": "MAT_InGameTool_Models_Needs_Scan",
@@ -374,7 +374,7 @@
     },
     {
       "Key": "MAT_InGameTool_Selected_Not_In_Use",
-      "Text": "Not in use in the game right now."
+      "Text": "Not currently in use in the game."
     },
     {
       "Key": "MAT_InGameTool_Selected_In_Use",

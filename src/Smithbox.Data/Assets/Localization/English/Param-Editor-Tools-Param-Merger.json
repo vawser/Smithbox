@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_Merger_Hint",
-      "Text": "Select a compatible project below to merge into your current project.\nYou will need to create a project for the external mod first, it will then appear below"
+      "Text": "Select a compatible project below to merge into your current project.\nCreate a project for the external mod first, and it will appear below."
     },
     {
       "Key": "PARAM_Merger_Header_Compatible_Projects",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "PARAM_Merger_Header_Compatible_Projects_TT",
-      "Text": "List of projects you can merge into your current project."
+      "Text": "The projects you can merge into your current project."
     },
     {
       "Key": "PARAM_Merger_Action_Load_Project",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_Merger_Action_Load_Project_TT",
-      "Text": "Load the currently selected project."
+      "Text": "Load the selected project."
     },
     {
       "Key": "PARAM_Merger_Action_Merge_Project",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_Merger_Action_Merge_Project_TT",
-      "Text": "If loaded, merge the currently selected project into this project."
+      "Text": "Merge the selected project into this project, once it is loaded."
     },
     {
       "Key": "PARAM_Merger_Header_Options",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "PARAM_Merger_Checkbox_Include_Added_TT",
-      "Text": "If enabled, added rows in the target project will be merged into this project."
+      "Text": "When enabled, added rows in the target project are merged into this project."
     },
     {
       "Key": "PARAM_Merger_Checkbox_Include_Modified",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "PARAM_Merger_Checkbox_Include_Modified_TT",
-      "Text": "If enabled, modified rows in the target project (compared to this project) will be merged into this project."
+      "Text": "When enabled, rows in the target project that are modified (compared with this project) are merged into this project."
     },
     {
       "Key": "PARAM_Merger_Header_Target_Params",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "PARAM_Merger_Header_Target_Params_TT",
-      "Text": "Determines which params are merged in."
+      "Text": "Which params to merge."
     },
     {
       "Key": "PARAM_Merger_Param_Filter_Hint",
@@ -74,27 +74,27 @@
     },
     {
       "Key": "PARAM_Merger_Action_Toggle_All_Params_TT",
-      "Text": "Toggle the state of all the target params."
+      "Text": "Toggle all target params."
     },
     {
       "Key": "PARAM_Merger_Log_Loaded_Project",
-      "Text": "Loaded target project: {0} for Param Merge."
+      "Text": "Loaded target project {0} for Param Merge."
     },
     {
       "Key": "PARAM_Merger_Log_No_Target_Project",
-      "Text": "No target project selected. Cannot merge."
+      "Text": "No target project selected, so the merge can't run."
     },
     {
       "Key": "PARAM_Merger_Log_Param_Data_Not_Loaded",
-      "Text": "Target project has not loaded param data yet."
+      "Text": "The target project hasn't loaded its param data yet."
     },
     {
       "Key": "PARAM_Merger_Log_Project_Not_Loaded",
-      "Text": "Target project: {0} is not loaded, cannot merge."
+      "Text": "Target project {0} isn't loaded, so the merge can't run."
     },
     {
       "Key": "PARAM_Merger_Log_Merged_Project",
-      "Text": "Merged target project rows: {0} into this project."
+      "Text": "Merged the rows of target project {0} into this project."
     },
     {
       "Key": "PARAM_Merger_Log_Merged_Groups",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "PARAM_Merger_Direct_Merger_Hint",
-      "Text": "Define two or more regulation file paths. Smithbox will extract each file's vanilla-relative changes, auto merge them, and optionally build a new encrypted regulation file."
+      "Text": "Enter two or more regulation file paths. Smithbox extracts each file's vanilla-relative changes, merges them automatically, and can build a new encrypted regulation file."
     }
   ]
 }

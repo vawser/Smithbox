@@ -6,27 +6,27 @@
     },
     {
       "Key": "MODEL_MaskToggler_Hint",
-      "Text": "Quickly toggle between model mask combinations by selecting a NPC Param entry."
+      "Text": "Quickly switch between model mask combinations by selecting an NpcParam entry."
     },
     {
       "Key": "MODEL_MaskToggler_Invalid_Project",
-      "Text": "This project type is not supported by this tool."
+      "Text": "This tool doesn't support this project type."
     },
     {
       "Key": "MODEL_MaskToggler_No_Param_Editor",
-      "Text": "The Param Editor must be enabled for this tool to work."
+      "Text": "Enable the Param Editor to use this tool."
     },
     {
       "Key": "MODEL_MaskToggler_No_Model",
-      "Text": "A model must be loaded first for this tool to work."
+      "Text": "Load a model first to use this tool."
     },
     {
       "Key": "MODEL_MaskToggler_No_Npc_Param",
-      "Text": "Failed to find associated NpcParam entry."
+      "Text": "Failed to find the associated NpcParam entry."
     },
     {
       "Key": "MODEL_MaskToggler_Invalid_Mask_ID",
-      "Text": "Failed to parse Mask ID: {0}"
+      "Text": "Failed to read the mask ID: {0}"
     }
   ]
 }

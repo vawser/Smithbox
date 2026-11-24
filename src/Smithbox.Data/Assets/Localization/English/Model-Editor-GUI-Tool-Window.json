@@ -82,7 +82,7 @@
     },
     {
       "Key": "EDITOR_ModelPreview_Refresh_TT",
-      "Text": "Render the 3D previews again, to pick up changes to the models."
+      "Text": "Re-render the 3D previews to show changes to the models."
     },
     {
       "Key": "EDITOR_ModelPreview_Pending",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "EDITOR_ModelPreview_Unsupported",
-      "Text": "3D previews require the Vulkan renderer."
+      "Text": "3D previews need the Vulkan renderer."
     }
   ]
 }

@@ -26,7 +26,7 @@
     },
     {
       "Key": "MAT_Vanilla_Revert_Material_TT",
-      "Text": "Make every field, param and sampler the same as the game's file. Undo brings your version back."
+      "Text": "Make every field, param and sampler match the game's file. Undo restores your version."
     },
     {
       "Key": "MAT_Vanilla_Removed",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "MAT_Vanilla_Restore_TT",
-      "Text": "Add them back as the game has them, at the end of their lists. One undo removes them all."
+      "Text": "Restore them as the game has them, at the end of their lists. One undo removes them all."
     },
     {
       "Key": "MAT_Vanilla_Entry_Added_TT",
@@ -54,7 +54,7 @@
     },
     {
       "Key": "MAT_Vanilla_Revert_Entry_TT",
-      "Text": "Make this entry the same as the game's."
+      "Text": "Make this entry match the game's."
     },
     {
       "Key": "MAT_FileList_Modified_Only_On_TT",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "MAT_UsedBy_Not_Scanned",
-      "Text": "Which models use this material is found by reading the material table of every model in the project. It runs in the background and is kept for later sessions."
+      "Text": "Find which models use this material by reading the material table of every model in the project. The scan runs in the background, and its result is kept for later sessions."
     },
     {
       "Key": "MAT_UsedBy_Scan",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "MAT_UsedBy_Stale",
-      "Text": "A model in the project has been saved since the scan, so this may be out of date."
+      "Text": "A model in the project was saved after the scan, so this may be out of date."
     },
     {
       "Key": "MAT_UsedBy_None",
@@ -158,7 +158,7 @@
     },
     {
       "Key": "MAT_UsedByTool_Cancel_TT",
-      "Text": "Stop the scan. Nothing is kept from it."
+      "Text": "Stop the scan. Nothing from it is kept."
     },
     {
       "Key": "MAT_UsedByTool_Models_Header",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "MAT_UsedByTool_Needs_Scan",
-      "Text": "Scan the models (above) to see which use this material."
+      "Text": "Scan the models (above) to see which ones use this material."
     },
     {
       "Key": "MAT_UsedByTool_Count",

@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_Conflict_Policy_Header_TT",
-      "Text": "Choose which conflict strategy should be applied when two mods change the same field differently."
+      "Text": "The conflict strategy to apply when two mods change the same field differently."
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Header",
@@ -14,11 +14,11 @@
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Header_TT",
-      "Text": "Merge existing Smithbox delta JSON files using the same field-level conflict engine."
+      "Text": "Merge existing Smithbox delta JSON files with the same field-level conflict engine."
     },
     {
       "Key": "PARAM_DeltaMerge_Hint",
-      "Text": "Merge existing Smithbox delta JSON files using the same field-level conflict engine."
+      "Text": "Merge existing Smithbox delta JSON files with the same field-level conflict engine."
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Source_List_Header",
@@ -34,7 +34,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Clear_Selection_TT",
-      "Text": "Clear current selection within the delta list."
+      "Text": "Clear the selection in the delta list."
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Refresh_List_TT",
@@ -54,11 +54,11 @@
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Output_Filename_Hint",
-      "Text": "Enter filename..."
+      "Text": "Enter file name..."
     },
     {
       "Key": "PARAM_AutoMerge_Delta_Merge_Output_Filename_Header_TT",
-      "Text": "The name used if the merged result is saved as a delta patch."
+      "Text": "The name to use if the merged result is saved as a delta patch."
     },
     {
       "Key": "PARAM_AutoMerge_Actions_Header",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_Merge_Summary_Header_TT",
-      "Text": "Review and resolve field-level conflicts before saving, importing, or building a regulation file."
+      "Text": "Review and resolve field-level conflicts before saving, importing or building a regulation file."
     },
     {
       "Key": "PARAM_AutoMerge_Analyze_Delta_Merge_Action",
@@ -126,7 +126,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_Merge_Errors_Header_TT",
-      "Text": "The merge cannot be applied until these issues are fixed."
+      "Text": "The merge can't be applied until these issues are fixed."
     },
     {
       "Key": "PARAM_AutoMerge_ConflictEditor_Header",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_ConflictEditor_Cannot_Apply_Hint",
-      "Text": "Resolve every conflict in the table before building/importing. Field conflicts support Earlier, Later, or a manually edited value. Row-state and row group conflicts support Earlier or Later. Hover a row group conflict to see its rows; rows marked * differ from the other side."
+      "Text": "Resolve every conflict in the table before building or importing. Field conflicts support Earlier, Later or a manually edited value. Row-state and row group conflicts support Earlier or Later. Hover a row group conflict to see its rows; rows marked * differ from the other side."
     },
     {
       "Key": "PARAM_AutoMerge_ConflictResolution_UseEarlier",
@@ -242,11 +242,11 @@
     },
     {
       "Key": "PARAM_AutoMerge_Invalid_Project_Type",
-      "Text": "{0}: project type {1} does not match loaded project {2}."
+      "Text": "{0}: project type {1} doesn't match the loaded project {2}."
     },
     {
       "Key": "PARAM_AutoMerge_Invalid_Param_Version",
-      "Text": "{0}: param version {1} does not match loaded project {2}."
+      "Text": "{0}: param version {1} doesn't match the loaded project {2}."
     },
     {
       "Key": "PARAM_DirectMerge_Supported_Project_Type",
@@ -258,11 +258,11 @@
     },
     {
       "Key": "PARAM_DirectMerge_Add_Regulation_Source_TT",
-      "Text": "Add new regulation source."
+      "Text": "Add a regulation source."
     },
     {
       "Key": "PARAM_DirectMerge_Remove_Regulation_Source_TT",
-      "Text": "Remove last added regulation source."
+      "Text": "Remove the last added regulation source."
     },
     {
       "Key": "PARAM_DirectMerge_Reset_Source_List",
@@ -298,7 +298,7 @@
     },
     {
       "Key": "PARAM_DirectMerge_Sources_Header_TT",
-      "Text": "Select regulation files as sources for the merger."
+      "Text": "Select regulation files as sources for the merge."
     },
     {
       "Key": "PARAM_DirectMerge_Analyze_Regulation_Files",
@@ -314,7 +314,7 @@
     },
     {
       "Key": "PARAM_DirectMerge_Loaded_Sources_Header_TT",
-      "Text": "Each source has been converted to a vanilla-relative delta in memory."
+      "Text": "Each source is converted to a vanilla-relative delta in memory."
     },
     {
       "Key": "PARAM_DirectMerge_Loaded_Autoupgraded",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "PARAM_DirectMerge_Errors_Header_TT",
-      "Text": "The direct merge cannot continue until these issues are fixed."
+      "Text": "The direct merge can't continue until these issues are fixed."
     },
     {
       "Key": "PARAM_DirectMerge_Output_Header",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "PARAM_DirectMerge_Output_Header_TT",
-      "Text": "The output is created as a new file; input files are never overwritten."
+      "Text": "The output is created as a new file. Input files are never overwritten."
     },
     {
       "Key": "PARAM_DirectMerge_OutputPath",
@@ -386,15 +386,15 @@
     },
     {
       "Key": "PARAM_DirectMerge_Imported_Merged_Changes",
-      "Text": "Merged changes were sent to the loaded Param Editor project."
+      "Text": "Sent the merged changes to the loaded Param Editor project."
     },
     {
       "Key": "PARAM_DirectMerge_Saved_Merged_Changes",
-      "Text": "Saved merged delta as {0}."
+      "Text": "Saved the merged delta as {0}."
     },
     {
       "Key": "PARAM_ProjectMerge_Hint",
-      "Text": "Merge two or more complete mod folders. Unique files are copied automatically, identical files are deduplicated, regulation.bin uses the field-level merger, and supported binders are merged by internal entry.\n\nUnsupported binary collisions are never byte-merged. They remain conflicts and can either stop the build or be resolved using the earlier/later source policy above. Build into a new or empty output folder."
+      "Text": "Merge two or more complete mod folders. Unique files are copied automatically, identical files are deduplicated, regulation.bin uses the field-level merger, and supported binders are merged by internal entry.\n\nUnsupported binary collisions are never merged byte by byte. They stay as conflicts, and can either stop the build or be resolved with the earlier/later source policy above. Build into a new or empty output folder."
     },
     {
       "Key": "PARAM_ProjectMerge_Options_Header",
@@ -410,7 +410,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_Merge_By_Internal_Entry_TT",
-      "Text": "When merging, consider the internal entries of BND3/BND4 binder containers."
+      "Text": "Take the internal entries of BND3/BND4 binder containers into account when merging."
     },
     {
       "Key": "PARAM_ProjectMerge_AutoUpgrade_Regulation",
@@ -418,7 +418,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_AutoUpgrade_Regulation_TT",
-      "Text": "When an input regulation is older than the loaded project, Smithbox compares it against the matching historical vanilla regulation and carries its mod changes forward to the loaded version.\n\nAutomatic downgrade from a newer regulation is not supported."
+      "Text": "When an input regulation is older than the loaded project, Smithbox compares it with the matching historical vanilla regulation and carries its mod changes forward to the loaded version.\n\nAutomatic downgrade from a newer regulation isn't supported."
     },
     {
       "Key": "PARAM_ProjectMerge_Merge_Metadata",
@@ -426,7 +426,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_Merge_Metadata_TT",
-      "Text": "If enabled, ignore .smithbox folder, project.json and regulation.bin.prev during merging."
+      "Text": "When enabled, the .smithbox folder, project.json and regulation.bin.prev are ignored during merging."
     },
     {
       "Key": "PARAM_ProjectMerge_Write_Merge_Report",
@@ -434,7 +434,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_Write_Merge_Report_TT",
-      "Text": "Write a merge report to SMITHBOX_MERGE_REPORT.txt file."
+      "Text": "Write a merge report to SMITHBOX_MERGE_REPORT.txt."
     },
     {
       "Key": "PARAM_ProjectMerge_Sources_Header",
@@ -446,11 +446,11 @@
     },
     {
       "Key": "PARAM_ProjectMerge_Add_Project_Source_TT",
-      "Text": "Add new project source."
+      "Text": "Add a project source."
     },
     {
       "Key": "PARAM_ProjectMerge_Remove_Project_Source_TT",
-      "Text": "Remove last added project source."
+      "Text": "Remove the last added project source."
     },
     {
       "Key": "PARAM_ProjectMerge_Reset_Source_List",
@@ -458,7 +458,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_Reset_Source_List_TT",
-      "Text": "Clear project source list."
+      "Text": "Clear the project source list."
     },
     {
       "Key": "PARAM_ProjectMerge_Source",
@@ -506,7 +506,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_Summary_Header_TT",
-      "Text": "Review what will be copied, structurally merged, ignored, or treated as a conflict."
+      "Text": "Review what will be copied, structurally merged, ignored or treated as a conflict."
     },
     {
       "Key": "PARAM_ProjectMerge_Source_Folders",
@@ -574,11 +574,11 @@
     },
     {
       "Key": "PARAM_ProjectMerge_RegulationConflicts_Header_TT",
-      "Text": "Resolve regulation conflicts at row/field level. Manual values are supported for field conflicts."
+      "Text": "Resolve regulation conflicts at row and field level. Field conflicts also support manual values."
     },
     {
       "Key": "PARAM_ProjectMerge_Invalid_Build",
-      "Text": "No output will be written while unresolved conflicts remain. Resolve them in the tables above.\n\nMATBIN values can be resolved per property/index with Earlier, Later, or Manual; unsupported binary files can choose Earlier or Later."
+      "Text": "No output is written while conflicts remain unresolved. Resolve them in the tables above.\n\nMATBIN values can be resolved per property or index with Earlier, Later or Manual; unsupported binary files can use Earlier or Later."
     },
     {
       "Key": "PARAM_ProjectMerge_Build_Merge",
@@ -594,7 +594,7 @@
     },
     {
       "Key": "PARAM_ProjectMerge_FileConflictResolve_Header_TT",
-      "Text": "Resolve each file/binder collision independently. Binary entries can choose Earlier or Later; direct byte editing is intentionally not offered."
+      "Text": "Resolve each file or binder collision separately. Binary entries can use Earlier or Later; direct byte editing is deliberately not offered."
     },
     {
       "Key": "PARAM_ProjectMerge_Resolved_Unresolved_Hint",
@@ -602,11 +602,11 @@
     },
     {
       "Key": "PARAM_DirectMerge_Merged_Regulation",
-      "Text": "Merged regulation written to: {0}"
+      "Text": "Wrote the merged regulation to: {0}"
     },
     {
       "Key": "PARAM_ProjectMerge_Merged_Mod",
-      "Text": "Merged mod written to: {0}"
+      "Text": "Wrote the merged mod to: {0}"
     },
     {
       "Key": "PARAM_ProjectMerge_Merged_Mod_Failed",

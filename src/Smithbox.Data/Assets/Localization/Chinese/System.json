@@ -69,10 +69,6 @@
       "Text": "异常详情："
     },
     {
-      "Key": "HELP_Developed_By",
-      "Text": "由 Vawser 开发。"
-    },
-    {
       "Key": "HELP_Current_Version",
       "Text": "Smithbox 版本：{0}"
     },

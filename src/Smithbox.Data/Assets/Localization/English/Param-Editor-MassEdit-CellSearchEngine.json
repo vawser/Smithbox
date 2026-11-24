@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_CSE_Default_TT",
-      "Text": "Selects cells/fields where the internal name of that field matches the given regex."
+      "Text": "Select cells/fields whose field's internal name matches the given regex."
     },
     {
       "Key": "PARAM_CSE_Field_Value_Hint",
@@ -14,15 +14,15 @@
     },
     {
       "Key": "PARAM_CSE_Field_Value_TT",
-      "Text": "Selects cells/fields where the cell has the specified value."
+      "Text": "Select cells/fields whose cell has the given value."
     },
     {
       "Key": "PARAM_CSE_Field_Value_Cannot_Check_Cell",
-      "Text": "Can't check if cell - not part of a param."
+      "Text": "Can't check the cell: it isn't part of a param."
     },
     {
       "Key": "PARAM_CSE_Field_Value_No_Param",
-      "Text": "Can't check if cell - no param."
+      "Text": "Can't check the cell: there is no param."
     },
     {
       "Key": "PARAM_CSE_Field_Range_Hint_1",
@@ -34,19 +34,19 @@
     },
     {
       "Key": "PARAM_CSE_Field_Range_TT",
-      "Text": "Selects cells/fields where the cell has a value between the start and end values specified."
+      "Text": "Select cells/fields whose cell value is between the given start and end values."
     },
     {
       "Key": "PARAM_CSE_Modified_TT",
-      "Text": "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value."
+      "Text": "Select cells/fields whose value differs from the matching cell in the vanilla regulation or parambnd."
     },
     {
       "Key": "PARAM_CSE_Modified_Cannot_Check_Cell",
-      "Text": "Can't check if cell is modified - not part of a param."
+      "Text": "Can't check whether the cell is modified: it isn't part of a param."
     },
     {
       "Key": "PARAM_CSE_Modified_No_Param",
-      "Text": "Can't check if cell is modified - no vanilla param."
+      "Text": "Can't check whether the cell is modified: there is no vanilla param."
     },
     {
       "Key": "PARAM_CSE_AuxModified_Hint",
@@ -54,23 +54,23 @@
     },
     {
       "Key": "PARAM_CSE_AuxModified_TT",
-      "Text": "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value."
+      "Text": "Select cells/fields whose value differs from the matching cell in the given regulation or parambnd."
     },
     {
       "Key": "PARAM_CSE_AuxModified_No_ParamBank",
-      "Text": "Can't check if cell is modified - parambank not found"
+      "Text": "Can't check whether the cell is modified: the param bank wasn't found."
     },
     {
       "Key": "PARAM_CSE_AuxModified_Not_Part_of_Param",
-      "Text": "Can't check if cell is modified - not part of a param"
+      "Text": "Can't check whether the cell is modified: it isn't part of a param."
     },
     {
       "Key": "PARAM_CSE_AuxModified_No_Aux_Param",
-      "Text": "Can't check if cell is modified - no aux param"
+      "Text": "Can't check whether the cell is modified: there is no auxiliary param."
     },
     {
       "Key": "PARAM_CSE_AuxModified_No_Vanilla_Param",
-      "Text": "Can't check if cell is modified - no vanilla param"
+      "Text": "Can't check whether the cell is modified: there is no vanilla param."
     },
     {
       "Key": "PARAM_CSE_SfType_Hint",
@@ -78,19 +78,19 @@
     },
     {
       "Key": "PARAM_CSE_SfType_TT",
-      "Text": "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex"
+      "Text": "Select cells/fields whose field data type matches the given regex."
     },
     {
       "Key": "PARAM_CSE_DefaultValue_TT",
-      "Text": "Selects cells/fields where the cell value is the same as the 'default' for the field."
+      "Text": "Select cells/fields whose value equals the field's default."
     },
     {
       "Key": "PARAM_CSE_DefaultValue_Not_Part_of_Param",
-      "Text": "Can't check if cell - not part of a param"
+      "Text": "Can't check the cell: it isn't part of a param."
     },
     {
       "Key": "PARAM_CSE_DefaultValue_No_Param",
-      "Text": "Can't check if cell - no param"
+      "Text": "Can't check the cell: there is no param."
     }
   ]
 }

@@ -6,7 +6,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Hint",
-      "Text": "Use this to export FLVER models as OBJ."
+      "Text": "Export FLVER models as OBJ."
     },
     {
       "Key": "MODEL_FlverSelection_Tab_Objects",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Select_Current_Flver_Action_TT",
-      "Text": "Select the currently loaded FLVER."
+      "Text": "Select the loaded FLVER."
     },
     {
       "Key": "MODEL_ModelExport_Select_Flver_Action",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Flver_Current_Source_FLVER_None",
-      "Text": "No source FLVER defined yet."
+      "Text": "No source FLVER is set."
     },
     {
       "Key": "MODEL_ModelExport_Action_Header",
@@ -122,7 +122,7 @@
     },
     {
       "Key": "MODEL_Output_Dir_Hint",
-      "Text": "Enter the output directory..."
+      "Text": "Enter the output folder..."
     },
     {
       "Key": "MODEL_Exported_OBJ",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Error_Empty_Output_Directory",
-      "Text": "Output Directory has not been set."
+      "Text": "The output folder isn't set."
     },
     {
       "Key": "MODEL_ModelExport_Output_Directory_Name",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Error_Directory_Not_Set",
-      "Text": "{0} has not been set."
+      "Text": "{0} isn't set."
     },
     {
       "Key": "MODEL_ModelExport_Error_Invalid_Directory_Path",
@@ -170,7 +170,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Error_No_Source_FLVER",
-      "Text": "Source FLVER has not been set."
+      "Text": "The source FLVER isn't set."
     },
     {
       "Key": "MODEL_ModelExport_FlipOBJUVs",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Mirror_Header_TT",
-      "Text": "Negates the selected axes in the OBJ, after the Forward and Up axes are applied. Face winding is corrected automatically."
+      "Text": "Negate the selected axes in the OBJ, after the Forward and Up axes are applied. Face winding is corrected automatically."
     },
     {
       "Key": "MODEL_ModelExport_Mirror_X",
@@ -202,7 +202,7 @@
     },
     {
       "Key": "MODEL_ModelExport_ForwardAxis_Header_TT",
-      "Text": "The OBJ axis that the +Z axis of the FLVER is written to."
+      "Text": "The OBJ axis to write the FLVER's +Z axis to."
     },
     {
       "Key": "MODEL_ModelExport_UpAxis_Header",
@@ -210,7 +210,7 @@
     },
     {
       "Key": "MODEL_ModelExport_UpAxis_Header_TT",
-      "Text": "The OBJ axis that the +Y axis of the FLVER is written to."
+      "Text": "The OBJ axis to write the FLVER's +Y axis to."
     },
     {
       "Key": "MODEL_ModelExport_Axis_PosX",
@@ -238,7 +238,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Error_Invalid_Axes",
-      "Text": "Forward Axis and Up Axis cannot be on the same axis."
+      "Text": "The Forward Axis and Up Axis can't be the same axis."
     },
     {
       "Key": "MODEL_ModelExport_UseSingleColMat",

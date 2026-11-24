@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "TEXT_EntryList_Select_FMG_First",
-      "Text": "Select a FMG to see entries."
+      "Text": "Select an FMG to see its entries."
     },
     {
       "Key": "TEXT_EntryList_Header_Entries",
@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXT_EntryList_Focus_Selection_TT",
-      "Text": "Focus the currently selected entry.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
+      "Text": "Scroll to the selected entry.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
     },
     {
       "Key": "TEXT_DeleteConfirm_Title",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "TEXT_DeleteConfirm_Undo_Hint",
-      "Text": "This can be undone with {0}."
+      "Text": "You can undo this with {0}."
     },
     {
       "Key": "TEXT_DeleteConfirm_Action_Delete",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "TEXT_EntryList_Filter_Commands_TT",
-      "Text": "Filter by ID or text.\n\nSpecial filters:\n  modified - entries whose text differs from vanilla (or are new)\n  unique - entries that only exist in this project\n\nRow colours use the same two categories: unique entries and modified entries each have their own colour (set in the interface colour settings)."
+      "Text": "Filter by ID or text.\n\nSpecial filters:\n  modified - entries whose text differs from vanilla (or that are new)\n  unique - entries that exist only in this project\n\nRow colours use the same two categories: unique and modified entries each have their own colour (set in the interface colour settings)."
     },
     {
       "Key": "TEXT_EntryList_Column_Header_ID",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "TEXT_EntryList_NullEntries_Hint",
-      "Text": "Toggle the display of the null text entries.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle null text entries.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "TEXT_EntryList_Select_All_TT",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "TEXT_ContainerList_Context_Action_Copy_Text_TT",
-      "Text": "Copy the ID and text from the selected entry to clipboard."
+      "Text": "Copy the selected entry's ID and text to the clipboard."
     }
   ]
 }

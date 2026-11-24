@@ -34,7 +34,7 @@
     },
     {
       "Key": "FILE_BinderSearch_Include_Textures_TT",
-      "Text": "Also match the names of textures inside TPFs. Slower, since every TPF has to be read."
+      "Text": "Also match the names of textures inside TPFs. This is slower, as every TPF must be read."
     },
     {
       "Key": "FILE_BinderSearch_Scope",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "FILE_BinderSearch_Cancel_TT",
-      "Text": "Stop the search; the results found so far stay."
+      "Text": "Stop the search. Results found so far are kept."
     },
     {
       "Key": "FILE_BinderSearch_No_Results",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "FILE_BinderSearch_Result_Limit",
-      "Text": "Stopped at {0} matches; narrow the search for more."
+      "Text": "Stopped at {0} matches. Narrow the search to see more."
     },
     {
       "Key": "FILE_BinderSearch_Failed",

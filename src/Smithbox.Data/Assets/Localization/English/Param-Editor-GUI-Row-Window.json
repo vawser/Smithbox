@@ -2,7 +2,7 @@
   "Entries": [
     {
       "Key": "PARAM_RowWindow_Hint",
-      "Text": "Select a param to see rows."
+      "Text": "Select a param to see its rows."
     },
     {
       "Key": "PARAM_RowWindow_Title",
@@ -18,7 +18,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Action_Go_To_TT",
-      "Text": "Focus the currently selected row.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
+      "Text": "Scroll to the selected row.\nAction Shortcut: {0}\nPopup Shortcut: {1}"
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Modified_Background_Visible",
@@ -30,7 +30,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Modified_Background_Hint",
-      "Text": "Toggle the display of the modified background on modified rows.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle the background colour on modified rows.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Visible",
@@ -42,7 +42,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Hint",
-      "Text": "Toggle the display of the FMG text on rows.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle FMG text on rows.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "PARAM_RowWindow_Col_ID",
@@ -66,7 +66,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Copy_TT",
-      "Text": "Shortcut: {0}\n\nCopy the current row selection to the clipboard."
+      "Text": "Shortcut: {0}\n\nCopy the selected rows to the clipboard."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Paste",
@@ -74,7 +74,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Paste_TT",
-      "Text": "Shortcut: {0}\n\nPaste the current row clipboard into the current param."
+      "Text": "Shortcut: {0}\n\nPaste the copied rows into the current param."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Delete",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Delete_TT",
-      "Text": "Shortcut: {0}\n\nDelete the current row selection from the param."
+      "Text": "Shortcut: {0}\n\nDelete the selected rows from the param."
     },
     {
       "Key": "PARAM_RowWindow_Context_Duplicate_Header",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateOffset_TT",
-      "Text": "The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected."
+      "Text": "The ID offset to apply when duplicating.\nSet to 0 for row-indexed params to duplicate as expected."
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateAmount",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateAmount_TT",
-      "Text": "The number of times the current selection will be duplicated."
+      "Text": "How many times to duplicate the selection."
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateApply",
@@ -110,7 +110,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateApply_TT",
-      "Text": "Shortcut: {0}\n\nDuplicate the current row selection, automatically incrementing the row ID."
+      "Text": "Shortcut: {0}\n\nDuplicate the selected rows, incrementing the row ID automatically."
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateTo_Header",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_DuplicateTo_Header_TT",
-      "Text": "Duplicate the current row selection into the chosen target param."
+      "Text": "Duplicate the selected rows into the chosen target param."
     },
     {
       "Key": "PARAM_RowWindow_Context_Jump_Header",
@@ -138,7 +138,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Revert_to_Default_TT",
-      "Text": "Revert the current row selection field values to the vanilla field values."
+      "Text": "Revert the field values of the selected rows to their vanilla values."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Command_Palette",
@@ -166,7 +166,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Pin_TT",
-      "Text": "Pin the current row selection to the top of the row list."
+      "Text": "Pin the selected rows to the top of the row list."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin",
@@ -174,7 +174,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin_TT",
-      "Text": "Unpin the current row selection from top of the row list."
+      "Text": "Unpin the selected rows from the top of the row list."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin_All",
@@ -182,7 +182,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin_All_TT",
-      "Text": "Unpin all of the pinned rows in the current param."
+      "Text": "Unpin all pinned rows in the current param."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin_All_Params",
@@ -190,7 +190,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin_All_Params_TT",
-      "Text": "Unpin all of the pinned rows in every param."
+      "Text": "Unpin all pinned rows in every param."
     },
     {
       "Key": "PARAM_RowWindow_Context_Edit_Applies_To_Selection",
@@ -238,7 +238,7 @@
     },
     {
       "Key": "PARAM_Duplicate_Reference_Preview",
-      "Text": "These fields will be offset by {0} (values of -1 are left alone):"
+      "Text": "These fields will be offset by {0} (values of -1 are left unchanged):"
     },
     {
       "Key": "PARAM_RowWindow_Context_Search_Header",
@@ -254,7 +254,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Set_Compare_Row_TT",
-      "Text": "Set this row as the row comparison target within the field window."
+      "Text": "Set this row as the comparison row in the field window."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Clear_Compare_Row",
@@ -262,7 +262,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Clear_Compare_Row_TT",
-      "Text": "Clear the currently set comparison row."
+      "Text": "Clear the comparison row."
     },
     {
       "Key": "PARAM_RowWindow_Context_Name_Manipulation_Header",
@@ -286,7 +286,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Clear_Text_From_Name_TT",
-      "Text": "Clear the text from the names of all currently selected rows."
+      "Text": "Clear the names of all selected rows."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Prepend_Text_To_Name",
@@ -294,7 +294,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Prepend_Text_To_Name_TT",
-      "Text": "Prepend text to the names of all currently selected rows."
+      "Text": "Add text to the start of the names of all selected rows."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Postpend_Text_To_Name",
@@ -302,7 +302,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Postpend_Text_To_Name_TT",
-      "Text": "Postpend text to the names of all currently selected rows."
+      "Text": "Add text to the end of the names of all selected rows."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Remove_Text_To_Name",
@@ -310,7 +310,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Remove_Text_To_Name_TT",
-      "Text": "Remove text from the names of all currently selected rows."
+      "Text": "Remove text from the names of all selected rows."
     },
     {
       "Key": "PARAM_RowWindow_Context_Text_To_Apply_Input",
@@ -318,7 +318,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Text_To_Apply_Input_TT",
-      "Text": "The string to pre or post pend to the existing name."
+      "Text": "The text to add to the start or end of the existing name."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Proliferate_Name",
@@ -326,7 +326,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Proliferate_Name_TT",
-      "Text": "Proliferate the name of this row to the references pointed to by the named field within this row."
+      "Text": "Copy this row's name to the rows referenced by the named field in this row."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref",
@@ -334,7 +334,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref_TT",
-      "Text": "Inherit the name of the referenced row connected to via the target field."
+      "Text": "Use the name of the row referenced by the target field."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG",
@@ -342,7 +342,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG_TT",
-      "Text": "Inherit the name of the referenced FMG connected to via the target field."
+      "Text": "Use the name of the FMG entry referenced by the target field."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias",
@@ -350,7 +350,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias_TT",
-      "Text": "Inherit the name of the referenced Alias connected to via the target field."
+      "Text": "Use the name of the alias referenced by the target field."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Row_FMG",
@@ -358,7 +358,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Row_FMG_TT",
-      "Text": "Inherit the name of the connected row FMG entry."
+      "Text": "Use the name of the row's linked FMG entry."
     },
     {
       "Key": "PARAM_RowWindow_Context_Target_Field",
@@ -366,7 +366,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Target_Field_TT",
-      "Text": "The internal name of the field to target for the name actions."
+      "Text": "The internal name of the field the name actions target."
     },
     {
       "Key": "PARAM_RowWindow_Context_Target_String",
@@ -374,7 +374,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Target_String_TT",
-      "Text": "The string within the row name to target."
+      "Text": "The text to target in the row name."
     },
     {
       "Key": "PARAM_RowWindow_Context_Replace_String",
@@ -382,7 +382,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Replace_String_TT",
-      "Text": "The string that replaces the targeted string within the row name."
+      "Text": "The text that replaces the targeted text in the row name."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Replace",
@@ -390,7 +390,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Replace_TT",
-      "Text": "Replace the target string within the currently selected row's names with the replacement string."
+      "Text": "Replace the target text in the selected rows' names with the replacement text."
     },
     {
       "Key": "PARAM_RowWindow_Context_Info_Header",
@@ -406,7 +406,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Open_In_Projectile_Editor_TT",
-      "Text": "Shows this row in the Projectile Editor, which simulates what it fires in a 3D viewport, with its effects."
+      "Text": "Show this row in the Projectile Editor, which simulates what it fires, with its effects, in a 3D viewport."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Open_In_FaceGen_Editor",
@@ -414,11 +414,11 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Open_In_FaceGen_Editor_TT",
-      "Text": "Shows this face in the FaceGen Editor, or for a character row the face it wears."
+      "Text": "Show this face in the FaceGen Editor, or, for a character row, the face it wears."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Copy_ID_TT",
-      "Text": "Copy the row IDs for the currently selected rows to clipboard. Split by new lines."
+      "Text": "Copy the IDs of the selected rows to the clipboard, one per line."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Copy_Name",
@@ -426,7 +426,7 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Copy_Name_TT",
-      "Text": "Copy the row names for the currently selected rows to clipboard. Split by new lines."
+      "Text": "Copy the names of the selected rows to the clipboard, one per line."
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Copy_ID_And_Name",
@@ -434,11 +434,11 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Copy_ID_And_Name_TT",
-      "Text": "Copy the row ID and names for the currently selected rows to clipboard. Split by new lines."
+      "Text": "Copy the IDs and names of the selected rows to the clipboard, one per line."
     },
     {
       "Key": "PARAM_RowWindow_Context_Row_Selection_Count_TT",
-      "Text": "{0} rows selected currently."
+      "Text": "{0} rows selected."
     }
   ]
 }

@@ -6,7 +6,7 @@
     },
     {
       "Key": "PARAM_ModifiedFilter_Hint",
-      "Text": "Define rules with the Mass Edit param and row selectors. Modified rows that match the rules, and the params that hold them, are drawn with the Modified Filter colours instead of the normal modified colours. Only modified rows are checked. The rules are saved with the project."
+      "Text": "Define rules with the Mass Edit param and row selectors. Modified rows that match the rules, and the params that hold them, use the Modified Filter colours instead of the normal modified colours. Only modified rows are checked. The rules are saved with the project."
     },
     {
       "Key": "PARAM_ModifiedFilter_Header_Options",
@@ -50,7 +50,7 @@
     },
     {
       "Key": "PARAM_ModifiedFilter_Header_Rules_TT",
-      "Text": "Each rule has a param selector and a row selector, written as in Mass Edit. The count beside a rule is how many modified rows it matches on its own."
+      "Text": "Each rule has a param selector and a row selector, written as in Mass Edit. The count next to a rule is how many modified rows it matches by itself."
     },
     {
       "Key": "PARAM_ModifiedFilter_No_Rules",
@@ -90,7 +90,7 @@
     },
     {
       "Key": "PARAM_ModifiedFilter_Param_Selector_TT",
-      "Text": "A Mass Edit param selector, for example: EquipParamWeapon, or: param Equip.*\nLeave empty to apply the rule to every param. Use the dropdown button to build one."
+      "Text": "A Mass Edit param selector, for example: EquipParamWeapon, or: param Equip.*\nLeave empty to apply the rule to every param. Use the drop-down button to build one."
     },
     {
       "Key": "PARAM_ModifiedFilter_Row_Selector",
@@ -102,7 +102,7 @@
     },
     {
       "Key": "PARAM_ModifiedFilter_Row_Selector_TT",
-      "Text": "A Mass Edit row selector, for example: prop sortId 0, or: name Dagger && idrange 1000000 2000000\nConditions are joined with &&, and a leading ! negates one. Leave empty to match every modified row in the selected params. A selector that fails to parse, or a field the param doesn't have, matches nothing."
+      "Text": "A Mass Edit row selector, for example: prop sortId 0, or: name Dagger && idrange 1000000 2000000\nJoin conditions with &&, and put ! in front of one to negate it. Leave empty to match every modified row in the selected params. A selector that can't be parsed, or a field the param doesn't have, matches nothing."
     },
     {
       "Key": "PARAM_ModifiedFilter_Header_Actions",
@@ -118,7 +118,7 @@
     },
     {
       "Key": "PARAM_ModifiedFilter_Add_Rule_TT",
-      "Text": "Add a new rule. An empty rule matches every modified row."
+      "Text": "Add a rule. An empty rule matches every modified row."
     },
     {
       "Key": "PARAM_ModifiedFilter_Clear_Rules",

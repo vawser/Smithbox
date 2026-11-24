@@ -2,11 +2,11 @@
   "Entries": [
     {
       "Key": "MEM_No_Process_Found",
-      "Text": "Error: Process '{0}' not found. Please run the game first."
+      "Text": "Error: process '{0}' not found. Start the game first."
     },
     {
       "Key": "MEM_AOBReader_Init_Failed",
-      "Text": "Failed to initialize AOBReader."
+      "Text": "Failed to initialize the AOB reader."
     },
     {
       "Key": "MEM_AOB_Scan_Start",
@@ -38,7 +38,7 @@
     },
     {
       "Key": "MEM_Attach_Proc_Error",
-      "Text": "Can't find process {0}. Is it running?"
+      "Text": "Can't find process {0}. Check that it is running."
     }
   ]
 }

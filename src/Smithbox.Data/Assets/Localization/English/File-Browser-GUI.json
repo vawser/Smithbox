@@ -10,7 +10,7 @@
     },
     {
       "Key": "FILE_FileBrowser_View_Game_Directory_TT",
-      "Text": "Open the current project's specified game directory in a file explorer."
+      "Text": "Open the project's game folder in File Explorer."
     },
     {
       "Key": "FILE_FileBrowser_View_Project_Directory",
@@ -18,11 +18,11 @@
     },
     {
       "Key": "FILE_FileBrowser_View_Project_Directory_TT",
-      "Text": "Open the current project's specified project directory in a file explorer."
+      "Text": "Open the project folder in File Explorer."
     },
     {
       "Key": "FILE_FileBrowser_Folder_Missing",
-      "Text": "Folder does not exist: {0}"
+      "Text": "The folder doesn't exist: {0}"
     },
     {
       "Key": "FILE_FileBrowser_Refresh_File_List",

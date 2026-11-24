@@ -22,7 +22,7 @@
     },
     {
       "Key": "PARAM_PasteMenu_No_Selection_Exists",
-      "Text": "No selection exists."
+      "Text": "Nothing is selected."
     },
     {
       "Key": "PARAM_PasteMenu_Action_Submit",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "PARAM_StatisticsMenu_Failed",
-      "Text": "StatisticPopups buttons failed."
+      "Text": "The statistics popup buttons failed."
     },
     {
       "Key": "PARAM_StatisticsMenu_Value_Count",

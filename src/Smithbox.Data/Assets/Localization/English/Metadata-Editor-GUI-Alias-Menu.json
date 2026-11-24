@@ -26,11 +26,11 @@
     },
     {
       "Key": "META_AliasMenu_Menu_Base_Source_TT",
-      "Text": "If enabled, the source files from Smithbox are included in the Alias Lists."
+      "Text": "When enabled, the alias lists include Smithbox's source files."
     },
     {
       "Key": "META_AliasMenu_Menu_Project_Source_TT",
-      "Text": "If enabled, the source files unique to this project are included in the Alias Lists."
+      "Text": "When enabled, the alias lists include the source files unique to this project."
     },
     {
       "Key": "META_AliasMenu_Menu_Options",
@@ -42,11 +42,11 @@
     },
     {
       "Key": "META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source",
-      "Text": "Save Shortcut applies to Base Source"
+      "Text": "Save Shortcut Saves to Base Source"
     },
     {
       "Key": "META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source_TT",
-      "Text": "If enabled, the save shortcut will save to base aliases, rather than local."
+      "Text": "When enabled, the save shortcut saves to the base aliases instead of the local ones."
     },
     {
       "Key": "META_AliasMenu_Menu_Add",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "META_AliasMenu_Menu_Insert_New_At_Top_TT",
-      "Text": "If enabled, adding a new alias via the icon button will place it at the top of the list, rather than the bottom."
+      "Text": "When enabled, adding an alias with the icon button places it at the top of the list instead of the bottom."
     },
     {
       "Key": "META_AliasMenu_Menu_List_Copy",
@@ -70,7 +70,7 @@
     },
     {
       "Key": "META_AliasMenu_Header_Export_Delimiter_TT",
-      "Text": "Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'"
+      "Text": "The delimiter to use when exporting the alias lists with Copy Entries as Text."
     },
     {
       "Key": "META_AliasMenu_Checkbox_Ignore_Empty_On_Export",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "META_AliasMenu_Checkbox_Ignore_Empty_On_Export_TT",
-      "Text": "If enabled, empty entries will be ignored by the 'Copy Entries as Text' action."
+      "Text": "When enabled, Copy Entries as Text skips empty entries."
     },
     {
       "Key": "META_AliasMenu_Menu_Data_Source",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "META_AliasMenu_Menu_Regenerate_Project_Source_TT",
-      "Text": "Regenerates the project source associated with this project to use the latest base source. NOTE: this will remove all custom entries unique to the project."
+      "Text": "Regenerate this project's alias source from the latest base source. Note: this removes all custom entries unique to the project."
     },
     {
       "Key": "META_AliasMenu_Menu_Edit",
@@ -134,7 +134,7 @@
     },
     {
       "Key": "META_AliasMenu_Select_Alias_Type_Body",
-      "Text": "Aliases are readable names for IDs, such as character, map piece and event flag IDs. The editors show them next to the IDs. Pick a type on the left to see and edit its aliases."
+      "Text": "Aliases are readable names for IDs, such as character, map piece and event flag IDs. The editors show them next to the IDs. Pick a type on the left to view and edit its aliases."
     },
     {
       "Key": "META_AliasMenu_Source_Base",
@@ -154,7 +154,7 @@
     },
     {
       "Key": "META_AliasMenu_Sources_TT",
-      "Text": "Where the aliases shown are read from: Base is the set that comes with Smithbox, Project is this project's own. Change them in the Data Source menu."
+      "Text": "Where the shown aliases come from: Base is the set that ships with Smithbox, and Project is this project's own. Change them in the Data Source menu."
     },
     {
       "Key": "META_AliasMenu_Menu_Save_Local_Aliases_TT",
@@ -174,15 +174,15 @@
     },
     {
       "Key": "META_AliasMenu_Button_Add_Alias_TT",
-      "Text": "Add new alias entry."
+      "Text": "Add an alias entry."
     },
     {
       "Key": "META_AliasMenu_Button_Sort_Aliases_TT",
-      "Text": "Sort alias list alphanumerically."
+      "Text": "Sort the alias list alphanumerically."
     },
     {
       "Key": "META_AliasMenu_Button_Read_Only_Toggle_TT",
-      "Text": "Toggle whether the aliases are editable or not.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle whether the aliases can be edited.\n\nCurrent Mode:\n{0}"
     },
     {
       "Key": "META_AliasMenu_Alias_Read_Only_Active",

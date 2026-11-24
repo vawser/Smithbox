@@ -30,7 +30,7 @@
     },
     {
       "Key": "TEXT_Creator_Action_Create_Entries_TT",
-      "Text": "Create the new text entries based on the specified parameters."
+      "Text": "Create the text entries with the given settings."
     },
     {
       "Key": "TEXT_Creator_Header_Parameters",
@@ -46,7 +46,7 @@
     },
     {
       "Key": "TEXT_Creator_Header_Base_ID_TT",
-      "Text": "The base ID to use for the text entry creation."
+      "Text": "The base ID for the created text entries."
     },
     {
       "Key": "TEXT_Creator_Header_Amount",
@@ -62,7 +62,7 @@
     },
     {
       "Key": "TEXT_Creator_Header_ID_Spacing_TT",
-      "Text": "The amount to increment the ID by for each entry (if more than 1 is created)."
+      "Text": "How much to increase the ID for each entry (when creating more than one)."
     },
     {
       "Key": "TEXT_Creator_Header_Options",
@@ -78,7 +78,7 @@
     },
     {
       "Key": "TEXT_Creator_Checkbox_Update_On_Selection_TT",
-      "Text": "If enabled, the base ID and other parameters are updated when a FMG entry is selected."
+      "Text": "Update the base ID and other settings when an FMG entry is selected."
     },
     {
       "Key": "TEXT_Creator_Header_Entries",
@@ -98,7 +98,7 @@
     },
     {
       "Key": "TEXT_Creator_Checkbox_Create_Title_TT",
-      "Text": "If enabled, a Title entry is created."
+      "Text": "Create a Title entry."
     },
     {
       "Key": "TEXT_Creator_Header_Summary",
@@ -114,7 +114,7 @@
     },
     {
       "Key": "TEXT_Creator_Checkbox_Create_Summary_TT",
-      "Text": "If enabled, a Summary entry is created."
+      "Text": "Create a Summary entry."
     },
     {
       "Key": "TEXT_Creator_Header_Description",
@@ -130,7 +130,7 @@
     },
     {
       "Key": "TEXT_Creator_Checkbox_Create_Description_TT",
-      "Text": "If enabled, a Description entry is created."
+      "Text": "Create a Description entry."
     },
     {
       "Key": "TEXT_Creator_Header_Effect",
@@ -146,7 +146,7 @@
     },
     {
       "Key": "TEXT_Creator_Checkbox_Create_Effect_TT",
-      "Text": "If enabled, a Effect entry is created."
+      "Text": "Create an Effect entry."
     },
     {
       "Key": "TEXT_Creator_Header_Basic",
@@ -162,7 +162,7 @@
     },
     {
       "Key": "TEXT_Creator_Incremental_Template_Hint",
-      "Text": "This adjusts the contents of the text for each 'increment'. Allows for easy creation of infusion weapon entries, etc."
+      "Text": "Adjust the text for each increment, for example to create infusion weapon entries easily."
     },
     {
       "Key": "TEXT_Creator_Template_Header_Options",
@@ -178,7 +178,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Enable_TT",
-      "Text": "If enabled, the incremental template will be used during entry creation."
+      "Text": "Use the incremental template when creating entries."
     },
     {
       "Key": "TEXT_Creator_Template_Apply_Prefix",
@@ -186,7 +186,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Apply_Prefix_TT",
-      "Text": "If enabled, the text is prefixed to the base text. Otherwise, it is postfixed."
+      "Text": "Add the text before the base text. When off, it is added after."
     },
     {
       "Key": "TEXT_Creator_Template_Header_Templates",
@@ -198,7 +198,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Add_TT",
-      "Text": "Add new entry to template."
+      "Text": "Add an entry to the template."
     },
     {
       "Key": "TEXT_Creator_Template_Remove_TT",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "TEXT_Creator_Template_Entry_TT",
-      "Text": "This entry will apply for occurance {0}"
+      "Text": "This entry applies to occurrence {0}."
     },
     {
       "Key": "TEXT_Creator_Template_Select_None",
@@ -250,7 +250,7 @@
     },
     {
       "Key": "TEXT_Creator_Entries_ID_Collision",
-      "Text": "ID is already in use or is invalid: {0}"
+      "Text": "The ID is already in use or isn't valid: {0}"
     }
   ]
 }

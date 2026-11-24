@@ -2,11 +2,11 @@
   "Entries": [
     { "Key": "MAP_WorldReloader_Header", "Text": "World Reloader" },
     { "Key": "MAP_ToolWindow_View_Toggle_World_Reloader", "Text": "World Reloader" },
-    { "Key": "MAP_WorldReloader_Description", "Text": "Reload the world in the running game from your save, without going to the title screen. Save your maps first: the game loads them from the game files." },
+    { "Key": "MAP_WorldReloader_Description", "Text": "Reload the world in the running game from your save, without returning to the title screen. Save your maps first: the game loads them from the game files." },
     { "Key": "MAP_WorldReloader_Game_Header", "Text": "Game" },
     { "Key": "MAP_WorldReloader_Game_Header_TT", "Text": "The connection to the running game. It is shared with the Material Editor's Material Reloader and the Text Editor's FMG Reloader." },
-    { "Key": "MAP_WorldReloader_World_Header_TT", "Text": "Saves, then loads the same save again. Loading the world again reads the maps from the game files." },
-    { "Key": "MAP_WorldReloader_World_Header_No_Save_TT", "Text": "Loads the game's last save again, without saving first. Loading the world again reads the maps from the game files." },
+    { "Key": "MAP_WorldReloader_World_Header_TT", "Text": "Save, then reload the same save. Reloading the world reads the maps from the game files." },
+    { "Key": "MAP_WorldReloader_World_Header_No_Save_TT", "Text": "Reload the game's last save without saving first. Reloading the world reads the maps from the game files." },
     { "Key": "MAP_WorldReloader_Busy", "Text": "The game link is busy with another tool: a material or text reload, or a quit out." }
   ]
 }

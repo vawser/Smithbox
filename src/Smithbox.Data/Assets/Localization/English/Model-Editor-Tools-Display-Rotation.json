@@ -10,11 +10,11 @@
     },
     {
       "Key": "MODEL_DisplayRotation_Hint",
-      "Text": "Rotate the model in the viewport to view it from other angles. This only changes how the model is shown: the model data is not changed, and the rotation is never saved."
+      "Text": "Rotate the model in the viewport to view it from other angles. This only changes how the model is shown: the model data doesn't change, and the rotation is never saved."
     },
     {
       "Key": "MODEL_DisplayRotation_No_Model",
-      "Text": "A model must be loaded first for this tool to work."
+      "Text": "Load a model first to use this tool."
     },
     {
       "Key": "MODEL_DisplayRotation_Rotation_Header",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "MODEL_DisplayRotation_Rotation_Header_TT",
-      "Text": "The rotation of the displayed model, in degrees, about the model's origin."
+      "Text": "The rotation of the displayed model about its origin, in degrees."
     },
     {
       "Key": "MODEL_DisplayRotation_Rotation_Input_TT",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "MODEL_DisplayRotation_Reset_TT",
-      "Text": "Return the model to its original orientation and stop the turntable."
+      "Text": "Reset the model to its original orientation and stop the turntable."
     }
   ]
 }

@@ -10,7 +10,7 @@
     },
     {
       "Key": "UPDATER_Update_Hint",
-      "Text": "Use this tool to quickly update Smithbox."
+      "Text": "Update Smithbox."
     },
     {
       "Key": "UPDATER_Updater_Version_Header",
@@ -58,7 +58,7 @@
     },
     {
       "Key": "UPDATER_Download_Latest_Action_TT",
-      "Text": "Select a folder to extract and download the latest Smithbox release into."
+      "Text": "Select a folder to download and extract the latest Smithbox release into."
     },
     {
       "Key": "UPDATER_Phase_Starting",
@@ -82,7 +82,7 @@
     },
     {
       "Key": "UPDATER_Step_Downloading_Known",
-      "Text": "Downloaded {0} out of {1}"
+      "Text": "Downloaded {0} of {1}"
     },
     {
       "Key": "UPDATER_Step_Downloading_Unknown",
@@ -94,7 +94,7 @@
     },
     {
       "Key": "UPDATER_Log_Entry_Outside_of_Dest_Folder",
-      "Text": "Entry is outside the destination folder: {0}"
+      "Text": "The entry is outside the destination folder: {0}"
     },
     {
       "Key": "UPDATER_Phase_Extracting",
@@ -118,19 +118,19 @@
     },
     {
       "Key": "UPDATER_OutOfDate_Warning",
-      "Text": "Program is out-of-date: {0} is older than {1}"
+      "Text": "Smithbox is out of date: {0} is older than {1}."
     },
     {
       "Key": "UPDATER_UpToDate_Message",
-      "Text": "Program is up-to-date."
+      "Text": "Smithbox is up to date."
     },
     {
       "Key": "UPDATER_VersionCheck_Failed",
-      "Text": "Program version check failed."
+      "Text": "The version check failed."
     },
     {
       "Key": "UPDATER_VersionCheck_ParseWarning",
-      "Text": "Couldn't parse one or both versions as a System.Version."
+      "Text": "Couldn't read one or both versions as a System.Version."
     }
   ]
 }
