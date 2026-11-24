@@ -36,6 +36,11 @@ public class FxToolWindow
 
         Editor.ResourcesTool.OnToolWindow();
 
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        Editor.ReloaderTool.OnToolWindow();
+
         // Viewport
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
 

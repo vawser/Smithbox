@@ -1,0 +1,17 @@
+{
+  "exeName": "armoredcore6.exe",
+  "exeVersion": "1.9.0.0",
+  "sfxGlobalAob": "48 8B 0D ?? ?? ?? ?? 48 85 C9 75 ?? 48 8D 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 4C 8B C8 4C 8D 05 ?? ?? ?? ?? BA ?? ?? ?? ?? 48 8D 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 48 8B 0D ?? ?? ?? ?? 4C 8B CD 48 89 74 24 20 4C 8B C3 48 8D 54 24 40 E8 ?? ?? ?? ?? 48 8B 5C 24 48 48 8B 6C 24 50 48 8B 74 24 58 8B 08 89 4F 78",
+  "sfxGlobalRelativeOffset": "0x3/0x7",
+  "managerPath": "0x90,0x28,0x60",
+  "loadFxrAob": "83 F8 01 74 07 33 C0 E9 ?? ?? ?? ?? 48 8B 44 24 28 8B 40 04 C1 E8 10 83 F8",
+  "loadFxrAobOffset": "0x8B",
+  "loadFxrPrologue": "89 54 24 10 48 89 4C 24 08 57 48 83 EC 70",
+  "definitionsHeadOffset": "0x20",
+  "definitionsCountOffset": "0x28",
+  "nodeIdOffset": "0x10",
+  "nodeWrapperOffset": "0x18",
+  "wrapperDataOffset": "0x0",
+  "wrapperUseCountOffset": "0x8",
+  "fxrVersion": 5
+}

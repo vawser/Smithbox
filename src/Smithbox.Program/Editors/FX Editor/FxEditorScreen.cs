@@ -32,6 +32,9 @@ public class FxEditorScreen : EditorScreen
     public FxExternalReferences External;
     public FxProjectCheck ProjectCheck;
 
+    /// <summary>The FX Reloader's game work, shared by every view</summary>
+    public FxReloader Reloader;
+
     public FxEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -42,6 +45,7 @@ public class FxEditorScreen : EditorScreen
         Usage = new FxUsage(this);
         External = new FxExternalReferences(this);
         ProjectCheck = new FxProjectCheck(this);
+        Reloader = new FxReloader(project);
 
         ViewHandler = new FxViewHandler(this, project);
     }

@@ -1596,6 +1596,11 @@ public class CFG
     public bool FxEditor_Preview_Motion_Follow = true;
     public bool FxEditor_Viewport_Auto_Frame = true;
     public bool FxEditor_Live_Preview = false;
+    public bool FxEditor_InGame_AutoRefresh = true;
+    public float FxEditor_InGame_RefreshSeconds = 3f; // 0.5 to 30
+    public bool FxEditor_InGame_PlayingFirst = true;
+    public int FxEditor_InGame_AfterReload = 0; // FxReloader.AfterReload: 0 nothing, 1 reload world, 2 quit out
+    public bool FxEditor_InGame_RestartAfterReload = true;
     public bool FxEditor_Preview_Wind = false;
     public float FxEditor_Preview_Wind_Yaw = 0;
     public float FxEditor_Preview_Wind_Strength = 10;

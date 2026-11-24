@@ -1237,6 +1237,16 @@ public class Param : SoulsFile<Param>
         public PARAMDEF.Field Def { get; }
 
         /// <summary>
+        ///     Where the field starts in a row's data, in bytes (for a bit field, the byte holding its first bit)
+        /// </summary>
+        public uint ByteOffset => _byteOffset;
+
+        /// <summary>
+        ///     Whether the field is a bit field (it shares its bytes with other fields)
+        /// </summary>
+        public bool IsBitField => _bitSize != -1;
+
+        /// <summary>
         ///     The C# datatype that is used to represent the data in this column
         /// </summary>
         public Type ValueType { get; private set; }
