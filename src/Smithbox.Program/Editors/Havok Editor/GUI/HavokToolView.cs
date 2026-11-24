@@ -60,6 +60,21 @@ public class HavokToolView
             // Problems
             if (CFG.Current.Interface_BehaviorEditor_Tool_Problems)
                 BehaviorProblems.OnToolWindow();
+
+            // Viewport
+            if (View.Editor.Viewer != null &&
+                (CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector || CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview))
+            {
+                ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
+                // Character Selector
+                if (CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector)
+                    View.Editor.Viewer.DisplayCharacterSelector();
+
+                // Character Preview
+                if (CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview)
+                    View.Editor.Viewer.DisplayCharacterPreview();
+            }
         }
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));

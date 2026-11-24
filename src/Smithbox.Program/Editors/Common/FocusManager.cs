@@ -207,6 +207,7 @@ public static class FocusManager
             or EditorFocusContext.BehaviorEditor_FileList
             or EditorFocusContext.BehaviorEditor_States
             or EditorFocusContext.BehaviorEditor_Properties
+            or EditorFocusContext.BehaviorEditor_Viewport
             or EditorFocusContext.BehaviorEditor_Tools;
     }
 
@@ -379,6 +380,7 @@ public enum EditorFocusContext
     BehaviorEditor_FileList,
     BehaviorEditor_States,
     BehaviorEditor_Properties,
+    BehaviorEditor_Viewport,
     BehaviorEditor_Tools,
 
     EmevdEditor_None,

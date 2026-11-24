@@ -64,6 +64,9 @@ public class HavokEditorScreen : EditorScreen
     /// <summary>The files of every behbnd, for the behavior mode's file list (null outside it)</summary>
     public HavokBehaviorFileIndex BehaviorIndex;
 
+    /// <summary>The viewport that plays the behavior selection's clips on a character (null outside behavior mode)</summary>
+    public BehaviorEditor.BehaviorViewer Viewer;
+
     public HavokEditorScreen(ProjectEntry project, bool behaviorMode = false)
     {
         Project = project;
@@ -76,7 +79,10 @@ public class HavokEditorScreen : EditorScreen
         HavokBank.PreserveSelections = PreserveSelections;
 
         if (BehaviorMode)
+        {
             BehaviorIndex = new HavokBehaviorFileIndex(project, HavokBank);
+            Viewer = new BehaviorEditor.BehaviorViewer(this, project);
+        }
 
         ViewHandler = new HavokViewHandler(this, project);
 
@@ -360,6 +366,30 @@ public class HavokEditorScreen : EditorScreen
                     CFG.Current.Interface_BehaviorEditor_Tool_Problems = !CFG.Current.Interface_BehaviorEditor_Tool_Problems;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Problems);
+
+                // Character Selector
+                if (ImGui.MenuItem($"{LOC.Get("BHV_Viewer_View_Toggle_Character_Selector")}##behaviorCharacterSelectorToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector = !CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Character_Selector);
+
+                // Character Preview
+                if (ImGui.MenuItem($"{LOC.Get("BHV_Viewer_View_Toggle_Character_Preview")}##behaviorCharacterPreviewToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview = !CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Character_Preview);
+
+                ImGui.Separator();
+
+                // Viewport (and its Animation window)
+                if (ImGui.MenuItem($"{LOC.Get("BHV_Viewer_View_Toggle_Viewport")}##behaviorViewportToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Viewport = !CFG.Current.Interface_BehaviorEditor_Viewport;
+                }
+                GUI.Tooltip(LOC.Get("BHV_Viewer_View_Toggle_Viewport_TT"));
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Viewport);
             }
 
             ImGui.Separator();

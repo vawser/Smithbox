@@ -68,10 +68,6 @@
  
 - Generate meta names/descs
  
-- Add viewport for animation playback
-    - Add Character Selector tool to select model to play anims on (with option to auto-load model based on chr ID association)
-    - Add Character Preview for c0000
- 
 - Character Reloader: add support for DS2S / DS1R
 
 #----------------------------------------------------

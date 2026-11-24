@@ -424,6 +424,11 @@ public class HavokEditorView : IEditorView
             ImGui.End();
         }
 
+        // Viewport and Animation
+        // -> The behavior selection's clips played on a character (the Behavior Editor's only)
+        if (Editor.BehaviorMode)
+            Editor.Viewer?.Display(dockspaceId, this);
+
         // The behavior dialogs (Add Animation, Clone State ...) can be opened from the Contents or Graph window,
         // so they're drawn here, outside both, where they're opened and drawn in the same place
         behaviorView.ActionsView.DisplayDialogs();

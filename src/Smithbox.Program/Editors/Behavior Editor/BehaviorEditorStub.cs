@@ -2,6 +2,8 @@ using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.BehaviorEditor;
 
@@ -63,6 +65,9 @@ public class BehaviorEditorStub : IEditorStub
             if (Project.Handler.BehaviorEditor != null)
             {
                 Project.Handler.FocusedEditor = Project.Handler.BehaviorEditor;
+
+                // The character viewport's camera and playback
+                Project.Handler.BehaviorEditor.Update(dt);
             }
         }
         else
@@ -70,6 +75,23 @@ public class BehaviorEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();
+        }
+    }
+
+    // The character viewport renders under the editor's windows (ProjectEntry calls these)
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        if (Project.Handler.BehaviorEditor != null && Project.Handler.FocusedEditor is BehaviorEditorScreen)
+        {
+            Project.Handler.BehaviorEditor.EditorResized(window, device);
+        }
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (Project.Handler.BehaviorEditor != null && Project.Handler.FocusedEditor is BehaviorEditorScreen)
+        {
+            Project.Handler.BehaviorEditor.Draw(device, cl);
         }
     }
 }

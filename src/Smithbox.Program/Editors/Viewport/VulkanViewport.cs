@@ -211,6 +211,13 @@ public class VulkanViewport : IViewport
             ActionManager = luaUniverse.ViewportActionManager;
         }
 
+        if (owner is StudioCore.Editors.BehaviorEditor.BehaviorUniverse behaviorUniverse)
+        {
+            RenderScene = behaviorUniverse.RenderScene;
+            ViewportSelection = behaviorUniverse.ViewportSelection;
+            ActionManager = behaviorUniverse.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -238,6 +245,7 @@ public class VulkanViewport : IViewport
                 ProjectileUniverse projectile => projectile.Project,
                 StudioCore.Editors.FaceGenEditor.FaceGenUniverse faceGen => faceGen.Project,
                 StudioCore.Editors.LuaEditor.LuaUniverse lua => lua.Project,
+                StudioCore.Editors.BehaviorEditor.BehaviorUniverse behavior => behavior.Project,
                 _ => null
             };
 
@@ -350,7 +358,8 @@ public class VulkanViewport : IViewport
             });
 
             if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse || owner is CutsceneUniverse || owner is ProjectileUniverse ||
-                owner is StudioCore.Editors.FaceGenEditor.FaceGenUniverse || owner is StudioCore.Editors.LuaEditor.LuaUniverse)
+                owner is StudioCore.Editors.FaceGenEditor.FaceGenUniverse || owner is StudioCore.Editors.LuaEditor.LuaUniverse ||
+                owner is StudioCore.Editors.BehaviorEditor.BehaviorUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -407,6 +416,7 @@ public class VulkanViewport : IViewport
             HandleProjectileEditorFocus();
             HandleFaceGenEditorFocus();
             HandleLuaEditorFocus();
+            HandleBehaviorEditorFocus();
 
             HandleCompass();
 
@@ -683,6 +693,11 @@ public class VulkanViewport : IViewport
             return luaUniverse.Viewport == this;
         }
 
+        if (Owner is StudioCore.Editors.BehaviorEditor.BehaviorUniverse behaviorUniverse)
+        {
+            return behaviorUniverse.Viewport == this;
+        }
+
         return false;
     }
 
@@ -842,6 +857,22 @@ public class VulkanViewport : IViewport
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.LuaEditor_Viewport);
+                IsActiveViewport = true;
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleBehaviorEditorFocus()
+    {
+        if (Owner is StudioCore.Editors.BehaviorEditor.BehaviorUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.BehaviorEditor_Viewport);
                 IsActiveViewport = true;
             }
             else

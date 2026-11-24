@@ -1451,6 +1451,14 @@ public class CFG
     public bool BehaviorEditor_FileList_Display_Full_Path = false;
     public bool BehaviorEditor_FileList_Display_Aliases = true;
     public bool BehaviorEditor_FileList_Show_Support_Files = false;
+
+    // Havok behaviors: the viewport that plays the behavior selection's clips on a character
+    public bool Interface_BehaviorEditor_Viewport = true;
+    public bool Interface_BehaviorEditor_Tool_Character_Selector = true;
+    public bool Interface_BehaviorEditor_Tool_Character_Preview = true;
+    public bool BehaviorEditor_Viewport_Auto_Load_Character = true;
+    public bool BehaviorEditor_Viewport_Play_On_Select = true;
+    public bool BehaviorEditor_Viewport_Root_Motion = false;
     #endregion
 
     #region Sound Editor

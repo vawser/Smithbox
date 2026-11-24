@@ -260,4 +260,18 @@ public class BehaviorEditorScreen : EditorScreen
     public void OnDefocus()
     {
     }
+
+    // The Havok behaviors' character viewport renders under the editor's windows, as the Lua Editor's does
+    private BehaviorViewer Viewer => HavokBehaviors?.Viewer;
+
+    public void Update(float deltaTime) => Viewer?.Update(deltaTime);
+
+    public void Draw(Veldrid.GraphicsDevice device, Veldrid.CommandList cl) => Viewer?.Draw(device, cl);
+
+    public void EditorResized(Veldrid.Sdl2.Sdl2Window window, Veldrid.GraphicsDevice device) => Viewer?.EditorResized(window, device);
+
+    public bool InputCaptured() => Viewer?.InputCaptured() ?? false;
+
+    /// <summary>Releases the viewport's render pipeline, for when the project closes</summary>
+    public void Dispose() => Viewer?.Dispose();
 }

@@ -91,6 +91,9 @@ public class ProjectEntry
             if (Handler.LuaEditorStub != null)
                 Handler.LuaEditorStub.Draw(device, cl);
 
+            if (Handler.BehaviorEditorStub != null)
+                Handler.BehaviorEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
             MeshPreviewRenderer.Draw();
         }
@@ -152,6 +155,9 @@ public class ProjectEntry
 
             if (Handler.LuaEditorStub != null)
                 Handler.LuaEditorStub.EditorResized(window, device);
+
+            if (Handler.BehaviorEditorStub != null)
+                Handler.BehaviorEditorStub.EditorResized(window, device);
         }
     }
 
