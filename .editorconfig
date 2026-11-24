@@ -226,6 +226,30 @@ dotnet_naming_style.pascal_case.word_separator =
 dotnet_naming_style.pascal_case.capitalization = pascal_case
 
 dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
+
+#### Smithbox.Program: likely-bug analyzers ####
+# Build warnings for the rules that usually mean a real bug. Kept to a small set so a new warning stands out:
+# fix it, or suppress it at the site with a justification. The vendored projects (Andre, Veldrid, Havok…) aren't
+# covered. See Claude/Documentation/Smithbox.Program-CodeQuality-Analysis.md, section 3.8.
+
+[src/Smithbox.Program/**.cs]
+
+# Async: a blocking call (.Wait(), .Result, sync I/O) inside an async method, where an async overload exists
+dotnet_diagnostic.CA1849.severity = warning
+
+# Shared state: public or protected static fields that aren't readonly or const
+dotnet_diagnostic.CA2211.severity = warning
+
+# Disposal: a type owning a disposable field without being IDisposable, a disposable field never disposed,
+# and Dispose() not calling GC.SuppressFinalize
+dotnet_diagnostic.CA1001.severity = warning
+dotnet_diagnostic.CA2213.severity = warning
+dotnet_diagnostic.CA1816.severity = warning
+
+# Exceptions: thrown from property getters, Equals, GetHashCode, finalizers, Dispose…; and ArgumentException
+# constructed with the parameter name and message swapped, or an unknown parameter name
+dotnet_diagnostic.CA1065.severity = warning
+dotnet_diagnostic.CA2208.severity = warning
