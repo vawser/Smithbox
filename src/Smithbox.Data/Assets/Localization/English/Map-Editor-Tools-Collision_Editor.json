@@ -433,7 +433,7 @@
     { "Key": "MAP_CollisionEditor_User_Box_Flat", "Text": "Two points make a box only when they are apart along both X and Z." },
     { "Key": "MAP_CollisionEditor_Create_Flver_Unavailable", "Text": "Select one or more map pieces or assets of the active map to use their FLVERs." },
     { "Key": "MAP_CollisionEditor_Create_Facing_Header", "Text": "Facing" },
-    { "Key": "MAP_CollisionEditor_Create_Facing_Header_TT", "Text": "Which way the collision's faces point, as in the Havok Editor's collision generator." },
+    { "Key": "MAP_CollisionEditor_Create_Facing_Header_TT", "Text": "Which way the collision's faces point." },
     { "Key": "MAP_CollisionEditor_Create_Facing_Input_TT", "Text": "Up for ground that is stood on. If the collision can be fallen through in game, try the other facing." },
     { "Key": "MAP_CollisionEditor_Create_Material_Header", "Text": "Collision Material" },
     { "Key": "MAP_CollisionEditor_Create_Material_Header_TT", "Text": "The collision material of the triangles. A FLVER mesh whose material is named hkm_Name_Property keeps that material. The Material tab shows each face's material in a colour of its own, and paints new ones." },

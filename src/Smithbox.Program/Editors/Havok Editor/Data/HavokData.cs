@@ -218,7 +218,6 @@ public class HavokData : IDisposable
             foreach (var view in Project.Handler.HavokEditor.ViewHandler.Views)
             {
                 view?.Tools.CharacterReloader.Dispose();
-                view?.Tools.CollisionGeneratorTool.Dispose();
             }
         }
     }

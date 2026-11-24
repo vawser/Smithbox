@@ -37,7 +37,7 @@ public partial class FirstPersonTool
     private bool WantsViewportFocus;
     private int LastWalkFrame = -1;
 
-    // Names collision materials for the overlay, as the Collision Generator's picker does
+    // Names collision materials for the overlay, as the collision material picker does
     private HavokEditor.CollisionMaterialPicker MaterialNames;
 
     // The collision the session walks on, to notice a rebuild; and when the next automatic rebuild may start

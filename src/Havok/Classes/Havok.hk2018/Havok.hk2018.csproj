@@ -13,7 +13,7 @@
         <NoWarn>$(NoWarn);CS8618;CS8600;CS8601;CS8602;CS8603;CS8604;CS8625;CS8933;CS0108;CS0109</NoWarn>
     </PropertyGroup>
 
-    <!-- The Collision Generator's shapes: one source shared with Havok.hk2019, HK2018 selects this class set -->
+    <!-- The collision editors' shapes: one source shared with Havok.hk2019, HK2018 selects this class set -->
     <PropertyGroup>
         <DefineConstants>$(DefineConstants);HK2018</DefineConstants>
     </PropertyGroup>

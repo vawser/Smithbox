@@ -46,13 +46,13 @@ public class CollisionEditorCreate
     private readonly CollisionEditorTool Tool;
 
     private CollisionCreateShape Shape = CollisionCreateShape.Square;
-    private CollisionGeneratorTool.CollisionGeneratorFacing Facing = CollisionGeneratorTool.CollisionGeneratorFacing.Up;
+    private CollisionFacing Facing = CollisionFacing.Up;
     private int MaterialId = 1;
 
-    private readonly CollisionGeneratorTool.SquareParameters SquareInputs = new();
-    private readonly CollisionGeneratorTool.TriangeParameters TriangleInputs = new();
-    private readonly CollisionGeneratorTool.CircleParameters CircleInputs = new();
-    private readonly CollisionGeneratorTool.SemiCircleParameters SemiCircleInputs = new();
+    private readonly CollisionShapeInputs.SquareParameters SquareInputs = new();
+    private readonly CollisionShapeInputs.TriangleParameters TriangleInputs = new();
+    private readonly CollisionShapeInputs.CircleParameters CircleInputs = new();
+    private readonly CollisionShapeInputs.SemiCircleParameters SemiCircleInputs = new();
 
     private readonly CollisionMaterialPicker MaterialPicker;
 
@@ -242,7 +242,7 @@ public class CollisionEditorCreate
     /// </summary>
     public bool HandleViewportInput(VulkanViewport viewport, Ray ray, bool canPick)
     {
-        var facingUp = Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up;
+        var facingUp = Facing is CollisionFacing.Up;
 
         return UserDefined.HandleViewportInput(viewport, ray, canPick,
             () => UserDefined.GetKey(facingUp),
@@ -339,7 +339,7 @@ public class CollisionEditorCreate
             ImGui.SetNextItemWidth(-1);
             if (ImGui.BeginCombo("##collisionCreateFacing", LOC.Get(Facing.GetDisplayName())))
             {
-                foreach (var facing in Enum.GetValues<CollisionGeneratorTool.CollisionGeneratorFacing>())
+                foreach (var facing in Enum.GetValues<CollisionFacing>())
                 {
                     if (ImGui.Selectable($"{LOC.Get(facing.GetDisplayName())}##collisionCreateFacing{facing}", facing == Facing))
                     {
@@ -769,7 +769,7 @@ public class CollisionEditorCreate
             CollisionCreateShape.Circle => $"{CircleInputs.Radius}/{CircleInputs.Segments}",
             CollisionCreateShape.SemiCircle => $"{SemiCircleInputs.Radius}/{SemiCircleInputs.Segments}",
             CollisionCreateShape.SelectedFlver => GetFlverPreviewKey(),
-            CollisionCreateShape.UserDefined => UserDefined.GetKey(Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up),
+            CollisionCreateShape.UserDefined => UserDefined.GetKey(Facing is CollisionFacing.Up),
             _ => ""
         };
 
@@ -1027,7 +1027,7 @@ public class CollisionEditorCreate
         if (vertices == null || indices == null || vertices.Count == 0 || indices.Count == 0)
             return false;
 
-        if (Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up)
+        if (Facing is CollisionFacing.Up)
             HavokShapeGenerator.FlipTriangleWinding(indices);
 
         materials ??= Enumerable.Repeat((uint)MaterialId, indices.Count / 3).ToList();
@@ -1042,7 +1042,7 @@ public class CollisionEditorCreate
     {
         materials = null;
 
-        var facingUp = Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up;
+        var facingUp = Facing is CollisionFacing.Up;
 
         UserDefinedProblem = UserDefined.BuildGeometry(facingUp, out vertices, out indices);
 

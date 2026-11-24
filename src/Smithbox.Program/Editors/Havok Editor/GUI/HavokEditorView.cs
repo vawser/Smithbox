@@ -381,8 +381,5 @@ public class HavokEditorView : IEditorView
         // The behavior dialogs (Add Animation, Clone State ...) can be opened from the Contents or Graph window,
         // so they're drawn here, outside both, where they're opened and drawn in the same place
         behaviorView.ActionsView.DisplayDialogs();
-
-        Tools.CollisionGeneratorTool.DetectFlverSelectionMenu();
-        Tools.CollisionGeneratorTool.DisplayFlverSelectionMenu();
     }
 }

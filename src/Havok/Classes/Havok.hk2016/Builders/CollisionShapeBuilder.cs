@@ -1,4 +1,4 @@
-// The Collision Generator's shapes for Sekiro's Havok 2016 classes. The algorithm is the shared
+// The collision editors' shapes for Sekiro's Havok 2016 classes. The algorithm is the shared
 // HavokCompressedMeshBuilder (Havok.Shared/Builders); this fills the 2016 classes from its build.
 //
 // 2016 sits between DS3 and ER (checked against SDT map collision with Tools/CollisionSurvey):

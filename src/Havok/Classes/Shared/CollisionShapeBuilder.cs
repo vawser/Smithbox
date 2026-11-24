@@ -1,4 +1,4 @@
-// The Collision Generator's shapes for the Havok 2018 (ER, NR, DB) and 2019 (AC6) classes: one source, compiled into
+// The collision editors' shapes for the Havok 2018 (ER, NR, DB) and 2019 (AC6) classes: one source, compiled into
 // both class sets (Havok.hk2018 defines HK2018, Havok.hk2019 defines HK2019), so it is written once and still typed
 // against each SDK's classes. The two differ only where marked: 2018 composite shapes have a material table, 2019
 // extern meshes have m_isMutable. The algorithms are in Havok.Shared/Builders. DS3 (hk2014) lays the compressed mesh

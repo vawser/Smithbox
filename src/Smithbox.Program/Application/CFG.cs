@@ -1678,19 +1678,6 @@ public class CFG
     public bool HavokEditor_Properties_Auto_Open_Tree = false;
     public bool HavokEditor_Properties_Display_Property_Bags = false;
 
-    // Whether the Collision Generator shows its FLVER mesh list and its 3D preview
-    public bool HavokEditor_CollisionGen_Show_Flver_Meshes = true;
-    public bool HavokEditor_CollisionGen_Show_Preview = true;
-    public bool HavokEditor_CollisionGen_Show_Obj_Groups = true;
-
-    // The axes an OBJ was exported with, matching the Model Editor's OBJ export settings, so it can be brought back
-    // into the game's space
-    public bool HavokEditor_CollisionGen_Obj_MirrorX = false;
-    public bool HavokEditor_CollisionGen_Obj_MirrorY = false;
-    public bool HavokEditor_CollisionGen_Obj_MirrorZ = false;
-    public ModelExportAxis HavokEditor_CollisionGen_Obj_ForwardAxis = ModelExportAxis.PosZ;
-    public ModelExportAxis HavokEditor_CollisionGen_Obj_UpAxis = ModelExportAxis.PosY;
-
     #endregion
 
     #region Viewport
