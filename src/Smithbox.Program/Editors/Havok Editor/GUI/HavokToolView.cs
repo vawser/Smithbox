@@ -14,6 +14,7 @@ public class HavokToolView
     public HavokBehaviorSearchTool BehaviorSearch;
     public HavokBehaviorProblemsTool BehaviorProblems;
     public HavokBehaviorChangesTool BehaviorChanges;
+    public HavokBehaviorBookmarksTool BehaviorBookmarks;
 
     private ToolSections Sections = new();
 
@@ -26,6 +27,7 @@ public class HavokToolView
         BehaviorSearch = new(view, project);
         BehaviorProblems = new(view, project);
         BehaviorChanges = new(view, project);
+        BehaviorBookmarks = new(view, project);
     }
 
     public void Draw()
@@ -47,6 +49,10 @@ public class HavokToolView
             // Changes
             if (CFG.Current.Interface_BehaviorEditor_Tool_Changes)
                 BehaviorChanges.OnToolWindow();
+
+            // Bookmarks
+            if (CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks)
+                BehaviorBookmarks.OnToolWindow();
 
             // Validation
             ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));

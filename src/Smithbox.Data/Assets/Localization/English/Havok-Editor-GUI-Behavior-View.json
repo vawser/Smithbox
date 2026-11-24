@@ -1041,6 +1041,26 @@
     { "Key": "HAVOK_Modifiers_Error_Not_In_List", "Text": "Only a modifier in a modifier list can be duplicated or deleted." },
     { "Key": "HAVOK_Modifiers_Error_Generator_Holds", "Text": "{0} plays this modifier directly: deleting it would leave the generator without one. Change the generator's m_modifier instead." },
     { "Key": "HAVOK_OutlineView_Show_Modifiers", "Text": "Modifiers" },
-    { "Key": "HAVOK_OutlineView_Show_Modifiers_TT", "Text": "Show each modifier generator's modifiers under it (a modifier list's entries below the list)." }
+    { "Key": "HAVOK_OutlineView_Show_Modifiers_TT", "Text": "Show each modifier generator's modifiers under it (a modifier list's entries below the list)." },
+    { "Key": "HAVOK_ToolWindow_View_Toggle_Bookmarks", "Text": "Bookmarks Tool" },
+    { "Key": "HAVOK_Bookmarks_Header", "Text": "Bookmarks" },
+    { "Key": "HAVOK_Bookmarks_Hint", "Text": "States, generators, clips and modifiers you bookmarked (right-click → Bookmark), in any behavior file. Kept with the project, not in the files." },
+    { "Key": "HAVOK_Bookmarks_List_Header", "Text": "Bookmarks ({0})" },
+    { "Key": "HAVOK_Bookmarks_List_Header_TT", "Text": "Grouped by file, the shown file first. Click one to show it; one in another file opens that file first." },
+    { "Key": "HAVOK_Bookmarks_None", "Text": "No bookmarks yet. Right-click a state, selector, clip, state machine or modifier and choose Bookmark." },
+    { "Key": "HAVOK_Bookmarks_Remove_TT", "Text": "Remove this bookmark." },
+    { "Key": "HAVOK_Bookmarks_Jump_TT", "Text": "Show this {0}. A bookmark finds its object by type and name, so it may not be found after the object is renamed." },
+    { "Key": "HAVOK_Bookmarks_Add", "Text": "Bookmark" },
+    { "Key": "HAVOK_Bookmarks_Remove", "Text": "Remove Bookmark" },
+    { "Key": "HAVOK_Bookmarks_Add_TT", "Text": "Keep this object in the Bookmarks tool, to come back to it from any file. Kept with the project." },
+    { "Key": "HAVOK_Bookmarks_Load_Failed", "Text": "Couldn't read the behavior bookmarks from {0}." },
+    { "Key": "HAVOK_Bookmarks_Save_Failed", "Text": "Couldn't save the behavior bookmarks to {0}." },
+    { "Key": "HAVOK_Hint_Categories_Used", "Text": "Categories this selector plays ({0}): {1}" },
+    { "Key": "HAVOK_Hint_Categories_Used_TT", "Text": "The categories (aCCC) of the selector's clips. In the game's files a selector has one clip per category, so pick one not listed." },
+    { "Key": "HAVOK_Hint_Category_Taken", "Text": "Category {0} is taken: {1} plays it already" },
+    { "Key": "HAVOK_Hint_Use", "Text": "Use {0}" },
+    { "Key": "HAVOK_Hint_Use_Category_TT", "Text": "Use the category after the selector's highest, as Duplicate does." },
+    { "Key": "HAVOK_Hint_State_IDs", "Text": "The machine has {0} state(s), IDs up to {1}" },
+    { "Key": "HAVOK_Hint_State_IDs_TT", "Text": "A new state takes the ID after the machine's highest, so it never clashes with one in use (the game's IDs aren't always in order or without gaps)." }
   ]
 }

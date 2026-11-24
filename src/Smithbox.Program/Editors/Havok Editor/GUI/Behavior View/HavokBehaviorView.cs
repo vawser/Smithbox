@@ -27,6 +27,9 @@ public class HavokBehaviorView
     /// <summary>The action scripts paired with behavior files, and the Script window that shows them</summary>
     public HavokScriptIndex Scripts;
     public HavokScriptView ScriptView;
+
+    /// <summary>The project's bookmarked behavior objects</summary>
+    public HavokBehaviorBookmarks Bookmarks;
     public HavokOutlineView OutlineView;
     public HavokAnimationTableView AnimationTableView;
     public HavokBehaviorActionsView ActionsView;
@@ -57,6 +60,7 @@ public class HavokBehaviorView
         Changes = new(view, project);
         Scripts = new(project);
         ScriptView = new(view, this);
+        Bookmarks = new(project);
         OutlineView = new(view, this, project);
         AnimationTableView = new(view, this, project);
         ActionsView = new(view, this, project);

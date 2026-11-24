@@ -63,6 +63,8 @@ public partial class HavokBehaviorActionsView
             ImGui.EndMenu();
         }
 
+        DisplayBookmarkItem(modifier);
+
         ImGui.Separator();
 
         if (ImGui.MenuItem(LOC.Get("HAVOK_Modifiers_Show_In_Outline")))
@@ -70,6 +72,24 @@ public partial class HavokBehaviorActionsView
 
         if (ImGui.MenuItem(LOC.Get("HAVOK_BehaviorActions_Copy_Name")))
             ImGui.SetClipboardText(HavokBehaviorSymbols.GetValue(modifier, "m_name") as string ?? "");
+    }
+
+    /// <summary>
+    /// Bookmark / Remove Bookmark for an object of the shown file (kept per project; see the Bookmarks tool)
+    /// </summary>
+    public void DisplayBookmarkItem(object obj)
+    {
+        var bookmark = HavokBehaviorBookmarks.For(Owner.Symbols, View.Selection.BinderFileEntry, View.Selection.FilePath, obj);
+
+        if (bookmark == null)
+            return;
+
+        var bookmarked = Owner.Bookmarks.Contains(bookmark);
+
+        if (ImGui.MenuItem(LOC.Get(bookmarked ? "HAVOK_Bookmarks_Remove" : "HAVOK_Bookmarks_Add")))
+            Owner.Bookmarks.Toggle(bookmark);
+
+        GUI.Tooltip(LOC.Get("HAVOK_Bookmarks_Add_TT"));
     }
 
     private static void TooltipWhenDisabled(string text)

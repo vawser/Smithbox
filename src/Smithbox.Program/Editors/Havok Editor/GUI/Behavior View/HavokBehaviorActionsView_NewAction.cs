@@ -109,6 +109,9 @@ public partial class HavokBehaviorActionsView
         ImGui.InputTextWithHint("##newActionStateName", LOC.Get("HAVOK_NewAction_State_Name_Hint"), ref NewActionStateName, 255);
         GUI.Tooltip(LOC.Get("HAVOK_NewAction_State_Name_TT", HavokBehaviorOperations.GetFreeStateID(machine)));
 
+        ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_New_State_ID", HavokBehaviorOperations.GetFreeStateID(machine)));
+        DisplayStateIdHint(machine);
+
         ImGui.SetNextItemWidth(-1);
         ImGui.InputTextWithHint("##newActionSelectorName", LOC.Get("HAVOK_NewAction_Selector_Name_Hint"), ref NewActionSelectorName, 255);
         GUI.Tooltip(LOC.Get("HAVOK_NewAction_Selector_Name_TT"));

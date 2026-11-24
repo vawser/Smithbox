@@ -205,6 +205,7 @@ public class HavokAnimationTableView
                 if (ImGui.BeginPopupContextItem($"animationRowMenu{i}"))
                 {
                     Selected = row.Selector;
+                    Owner.ActionsView.DisplayBookmarkItem(row.Selector);
                     Owner.ActionsView.DisplayGeneratorItems(row.Selector, HavokBehaviorActionsView.Source.Outline);
                     ImGui.EndPopup();
                 }

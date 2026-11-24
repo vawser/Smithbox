@@ -347,6 +347,13 @@ public class HavokEditorScreen : EditorScreen
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Changes);
 
+                // Bookmarks
+                if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Bookmarks")}##behaviorBookmarksToolToggle"))
+                {
+                    CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks = !CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_Tool_Bookmarks);
+
                 // Problems
                 if (ImGui.MenuItem($"{LOC.Get("HAVOK_ToolWindow_View_Toggle_Problems")}##behaviorProblemsToolToggle"))
                 {

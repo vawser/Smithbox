@@ -109,6 +109,8 @@ public partial class HavokBehaviorActionsView
     {
         var typeName = node.GetType().Name;
 
+        DisplayBookmarkItem(node);
+
         if (typeName == "CustomManualSelectorGenerator")
         {
             if (ImGui.Selectable(LOC.Get("HAVOK_BehaviorActions_Add_Animation")))
@@ -156,6 +158,10 @@ public partial class HavokBehaviorActionsView
     {
         if (!IsTransferable(obj))
             return;
+
+        // The Outline's menu has its own bookmark item
+        if (source is Source.List)
+            DisplayBookmarkItem(obj);
 
         var typeName = obj.GetType().Name;
         var targets = selection != null && selection.Contains(obj) ? selection.Where(IsTransferable).ToList() : new List<object> { obj };
@@ -843,6 +849,8 @@ public partial class HavokBehaviorActionsView
         AnimationCategory = Math.Clamp(AnimationCategory, 0, size == 10000 ? 99 : 999);
         GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Category_TT"));
 
+        DisplayCategoryHint(TargetSelector, ref AnimationCategory);
+
         var name = animations?.FormatAnimationName(AnimationCategory, animationID)
             ?? $"a{AnimationCategory:D3}_{animationID:D6}";
 
@@ -875,6 +883,7 @@ public partial class HavokBehaviorActionsView
 
         var nextId = HavokBehaviorOperations.GetFreeStateID(TargetStateMachine);
         ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_New_State_ID", nextId));
+        DisplayStateIdHint(TargetStateMachine);
 
         return false;
     }
@@ -1152,7 +1161,21 @@ public partial class HavokBehaviorActionsView
             var oldAnimId = Convert.ToInt64(HavokBehaviorSymbols.GetValue(TargetObject, "m_animId") ?? 0);
 
             if (DuplicateAnimId != oldAnimId)
+            {
                 ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_Retarget_Clips", DuplicateAnimId));
+                DisplayAnimIdHint(DuplicateAnimId, TargetObject);
+            }
+            else
+            {
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_NewAction_Same_Anim_Id"));
+            }
+        }
+
+        // A new state: the ID it gets, beside the ones the machine uses
+        if (placement.Kind is HavokBehaviorOperations.PlacementKind.State && placement.StateMachine != null)
+        {
+            ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_New_State_ID", HavokBehaviorOperations.GetFreeStateID(placement.StateMachine)));
+            DisplayStateIdHint(placement.StateMachine);
         }
 
         if (placement.Kind is HavokBehaviorOperations.PlacementKind.State)
@@ -1217,6 +1240,8 @@ public partial class HavokBehaviorActionsView
         ImGui.InputInt(LOC.Get("HAVOK_BehaviorActions_Category"), ref DuplicateClipCategory);
         DuplicateClipCategory = Math.Clamp(DuplicateClipCategory, 0, size == 10000 ? 99 : 999);
         GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Duplicate_Clip_Category_TT"));
+
+        DisplayCategoryHint(selector, ref DuplicateClipCategory);
 
         DisplayNewClipStatus(selector, DuplicateClipCategory);
     }
