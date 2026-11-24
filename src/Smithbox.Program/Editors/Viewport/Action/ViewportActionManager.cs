@@ -9,32 +9,29 @@ namespace StudioCore.Editors.Common;
 /// </summary>
 public class ViewportActionManager
 {
-    private readonly List<IActionEventHandler> _eventHandlers = new();
-    private readonly Stack<ViewportAction> RedoStack = new();
+    private readonly UndoStack<ViewportAction> _stack;
 
-    private readonly Stack<ViewportAction> UndoStack = new();
+    public ViewportActionManager()
+    {
+        // Each run records, on the top-level action, the scopes the data it changes reports
+        _stack = new UndoStack<ViewportAction>(
+            a => Run(a, () => a.Execute()),
+            a => Run(a, a.Undo),
+            a => Run(a, () => a.Execute(true)));
+    }
 
     /// <summary>
     /// Raised whenever an action is executed, undone or redone, regardless of the event it returns
     /// </summary>
-    public event Action ActionPerformed;
+    public event Action ActionPerformed
+    {
+        add => _stack.ActionPerformed += value;
+        remove => _stack.ActionPerformed -= value;
+    }
 
     public void AddEventHandler(IActionEventHandler handler)
     {
-        _eventHandlers.Add(handler);
-    }
-
-    private void NotifyHandlers(ActionEvent evt)
-    {
-        if (evt == ActionEvent.NoEvent)
-        {
-            return;
-        }
-
-        foreach (IActionEventHandler handler in _eventHandlers)
-        {
-            handler.OnActionEvent(evt);
-        }
+        _stack.AddEventHandler(handler);
     }
 
     // The top-level action being executed, undone or redone, so the data it changes can record itself
@@ -70,11 +67,7 @@ public class ViewportActionManager
 
     public void ExecuteAction(ViewportAction a)
     {
-        NotifyHandlers(Run(a, () => a.Execute()));
-        Version++;
-        ActionPerformed?.Invoke();
-        UndoStack.Push(a);
-        RedoStack.Clear();
+        _stack.Execute(a);
     }
 
     /// <summary>
@@ -83,26 +76,8 @@ public class ViewportActionManager
     /// </summary>
     public void RemoveActionsTouching(string scope)
     {
-        static void Filter(Stack<ViewportAction> stack, string scope)
-        {
-            // A stack enumerates from the top, so reversed this is bottom to top, the order to push them back in
-            var kept = stack
-                .Where(a => a.TouchedScopes.Count > 0 && !a.TouchedScopes.Contains(scope))
-                .Reverse()
-                .ToList();
-
-            stack.Clear();
-
-            foreach (var a in kept)
-            {
-                stack.Push(a);
-            }
-        }
-
         // ActionPerformed isn't raised, as no data changes; its handlers treat it as an edit
-        Filter(UndoStack, scope);
-        Filter(RedoStack, scope);
-        Version++;
+        _stack.Retain(a => !Touches(a, scope));
     }
 
     /// <summary>
@@ -110,9 +85,7 @@ public class ViewportActionManager
     /// </summary>
     public int CountActionsTouching(string scope)
     {
-        static bool Dropped(ViewportAction a, string scope) => a.TouchedScopes.Count == 0 || a.TouchedScopes.Contains(scope);
-
-        return UndoStack.Count(a => Dropped(a, scope)) + RedoStack.Count(a => Dropped(a, scope));
+        return _stack.UndoSteps().Count(a => Touches(a, scope)) + _stack.RedoSteps().Count(a => Touches(a, scope));
     }
 
     /// <summary>
@@ -120,123 +93,55 @@ public class ViewportActionManager
     /// </summary>
     public void KeepOnlyActionsTouching(string scope)
     {
-        static void Filter(Stack<ViewportAction> stack, string scope)
-        {
-            var kept = stack
-                .Where(a => a.TouchedScopes.Contains(scope))
-                .Reverse()
-                .ToList();
-
-            stack.Clear();
-
-            foreach (var a in kept)
-            {
-                stack.Push(a);
-            }
-        }
-
-        Filter(UndoStack, scope);
-        Filter(RedoStack, scope);
-        Version++;
+        _stack.Retain(a => a.TouchedScopes.Contains(scope));
     }
 
-    public ViewportAction PeekRedoAction()
+    /// <summary>Whether the action changed the scope, or recorded no scope so may have</summary>
+    private static bool Touches(ViewportAction a, string scope)
     {
-        return RedoStack.Count == 0 ? null : RedoStack.Peek();
+        return a.TouchedScopes.Count == 0 || a.TouchedScopes.Contains(scope);
     }
+
+    public ViewportAction PeekRedoAction() => _stack.PeekRedo();
 
     /// <summary>
     /// The actions that can be undone, the most recent first
     /// </summary>
-    public IReadOnlyList<ViewportAction> GetUndoActions()
-    {
-        return UndoStack.ToList();
-    }
+    public IReadOnlyList<ViewportAction> GetUndoActions() => _stack.UndoSteps();
 
     /// <summary>
     /// The actions that can be redone, the next to be redone first
     /// </summary>
-    public IReadOnlyList<ViewportAction> GetRedoActions()
-    {
-        return RedoStack.ToList();
-    }
+    public IReadOnlyList<ViewportAction> GetRedoActions() => _stack.RedoSteps();
 
     /// <summary>
-    /// Raised whenever the history changes, so lists built from it know to rebuild
+    /// Goes up whenever the history changes, so lists built from it know to rebuild
     /// </summary>
-    public int Version { get; private set; }
+    public int Version => _stack.Version;
 
-    public ViewportAction PeekUndoAction()
-    {
-        if (UndoStack.Count() == 0)
-        {
-            return null;
-        }
+    public ViewportAction PeekUndoAction() => _stack.PeekUndo();
 
-        return UndoStack.Peek();
-    }
+    public void UndoAction() => _stack.Undo();
 
-    public void UndoAction()
-    {
-        if (UndoStack.Count() == 0)
-        {
-            return;
-        }
+    public void UndoAllAction() => _stack.UndoAll();
 
-        ViewportAction a = UndoStack.Pop();
-        NotifyHandlers(Run(a, a.Undo));
-        Version++;
-        ActionPerformed?.Invoke();
-        RedoStack.Push(a);
-    }
+    public void RedoAction() => _stack.Redo();
 
-    public void UndoAllAction()
-    {
-        if (UndoStack.Count() == 0)
-        {
-            return;
-        }
+    /// <summary>
+    /// Undoes the steps after the given one, and then it, so the history is back to before it was made
+    /// </summary>
+    public void UndoTo(ViewportAction target) => _stack.UndoTo(target);
 
-        while (UndoStack.Count() > 0)
-        {
-            ViewportAction a = UndoStack.Pop();
-            NotifyHandlers(Run(a, a.Undo));
-            Version++;
-            ActionPerformed?.Invoke();
-            RedoStack.Push(a);
-        }
-    }
+    /// <summary>
+    /// Redoes the steps up to and including the given one
+    /// </summary>
+    public void RedoTo(ViewportAction target) => _stack.RedoTo(target);
 
-    public void RedoAction()
-    {
-        if (RedoStack.Count() == 0)
-        {
-            return;
-        }
+    public bool CanUndo() => _stack.CanUndo;
 
-        ViewportAction a = RedoStack.Pop();
-        NotifyHandlers(Run(a, () => a.Execute(true)));
-        Version++;
-        ActionPerformed?.Invoke();
-        UndoStack.Push(a);
-    }
+    public bool CanRedo() => _stack.CanRedo;
 
-    public bool CanUndo()
-    {
-        return UndoStack.Count() > 0;
-    }
-
-    public bool CanRedo()
-    {
-        return RedoStack.Count() > 0;
-    }
-
-    public void Clear()
-    {
-        UndoStack.Clear();
-        RedoStack.Clear();
-        Version++;
-    }
+    public void Clear() => _stack.Clear();
 
     /// <summary>
     /// Moves the undo and redo history out, leaving the manager empty, so it can be given back later with
@@ -244,13 +149,9 @@ public class ViewportActionManager
     /// </summary>
     public ViewportActionHistory TakeHistory()
     {
-        var history = new ViewportActionHistory(UndoStack.Reverse().ToList(), RedoStack.Reverse().ToList());
+        var (undo, redo) = _stack.Take();
 
-        UndoStack.Clear();
-        RedoStack.Clear();
-        Version++;
-
-        return history;
+        return new ViewportActionHistory(undo, redo);
     }
 
     /// <summary>
@@ -258,23 +159,7 @@ public class ViewportActionManager
     /// </summary>
     public void RestoreHistory(ViewportActionHistory history)
     {
-        UndoStack.Clear();
-        RedoStack.Clear();
-
-        if (history != null)
-        {
-            foreach (var a in history.Undo)
-            {
-                UndoStack.Push(a);
-            }
-
-            foreach (var a in history.Redo)
-            {
-                RedoStack.Push(a);
-            }
-        }
-
-        Version++;
+        _stack.Restore(history?.Undo, history?.Redo);
     }
 }
 
@@ -295,4 +180,3 @@ public sealed class ViewportActionHistory
 
     public int Count => Undo.Count + Redo.Count;
 }
-

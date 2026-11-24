@@ -9,21 +9,35 @@ namespace StudioCore.Editors.Common;
 /// </summary>
 public class ActionManager
 {
-    private readonly List<IActionEventHandler> _eventHandlers = new();
-    private readonly Stack<EditorAction> RedoStack = new();
+    private readonly UndoStack<EditorAction> _stack;
 
-    private readonly Stack<EditorAction> UndoStack = new();
+    public ActionManager()
+    {
+        _stack = new UndoStack<EditorAction>(a => a.Execute(), a => a.Undo(), a => a.Execute())
+        {
+            IsRefused = IsBlocked,
+            // Every change can make what the editors derived from the data stale
+            AfterChange = CacheBank.ClearCaches
+        };
+    }
 
     /// <summary>
     /// Raised whenever an action is executed, undone or redone, regardless of the event it returns
     /// </summary>
-    public event Action ActionPerformed;
+    public event Action ActionPerformed
+    {
+        add => _stack.ActionPerformed += value;
+        remove => _stack.ActionPerformed -= value;
+    }
 
     /// <summary>
     /// Optional check run before an action is executed, undone or redone. Returns a reason to refuse it (which is
     /// logged as a warning), or null to allow it.
     /// </summary>
     public Func<EditorAction, string> ExecutionGuard;
+
+    /// <summary>Goes up whenever the history changes, so lists built from it know to rebuild</summary>
+    public int Version => _stack.Version;
 
     private bool IsBlocked(EditorAction a)
     {
@@ -40,20 +54,7 @@ public class ActionManager
 
     public void AddEventHandler(IActionEventHandler handler)
     {
-        _eventHandlers.Add(handler);
-    }
-
-    private void NotifyHandlers(ActionEvent evt)
-    {
-        if (evt == ActionEvent.NoEvent)
-        {
-            return;
-        }
-
-        foreach (IActionEventHandler handler in _eventHandlers)
-        {
-            handler.OnActionEvent(evt);
-        }
+        _stack.AddEventHandler(handler);
     }
 
     /// <summary>
@@ -61,18 +62,7 @@ public class ActionManager
     /// </summary>
     public bool ExecuteAction(EditorAction a)
     {
-        if (IsBlocked(a))
-        {
-            return false;
-        }
-
-        NotifyHandlers(a.Execute());
-        ActionPerformed?.Invoke();
-        UndoStack.Push(a);
-        RedoStack.Clear();
-        CacheBank.ClearCaches();
-
-        return true;
+        return _stack.Execute(a);
     }
 
     /// <summary>
@@ -80,140 +70,58 @@ public class ActionManager
     /// </summary>
     public void PushSubManager(ActionManager child, string displayName = null, string details = null)
     {
-        if (child.UndoStack.Count == 0)
+        if (child._stack.UndoCount == 0)
         {
             return;
         }
 
-        List<EditorAction> childList = child.UndoStack.ToList();
+        // Most recent first, so reversed this is the order they were done in
+        List<EditorAction> childList = child._stack.UndoSteps().ToList();
         childList.Reverse();
-        UndoStack.Push(new CompoundAction(childList) { DisplayName = displayName, Details = details });
-        ActionPerformed?.Invoke();
-        RedoStack.Clear();
-        CacheBank.ClearCaches();
+
+        _stack.PushDone(new CompoundAction(childList) { DisplayName = displayName, Details = details });
     }
 
-    public EditorAction PeekUndoAction()
-    {
-        if (UndoStack.Count() == 0)
-        {
-            return null;
-        }
+    public EditorAction PeekUndoAction() => _stack.PeekUndo();
 
-        return UndoStack.Peek();
-    }
+    public EditorAction PeekRedoAction() => _stack.PeekRedo();
 
-    public EditorAction PeekRedoAction()
-    {
-        if (RedoStack.Count == 0)
-        {
-            return null;
-        }
+    public int UndoCount => _stack.UndoCount;
 
-        return RedoStack.Peek();
-    }
-
-    public int UndoCount => UndoStack.Count;
-
-    public int RedoCount => RedoStack.Count;
+    public int RedoCount => _stack.RedoCount;
 
     /// <summary>
     /// The actions that can be undone, most recent first
     /// </summary>
-    public IReadOnlyList<EditorAction> GetUndoHistory()
-    {
-        return UndoStack.ToList();
-    }
+    public IReadOnlyList<EditorAction> GetUndoHistory() => _stack.UndoSteps();
 
     /// <summary>
     /// The actions that can be redone, the next one to redo first
     /// </summary>
-    public IReadOnlyList<EditorAction> GetRedoHistory()
-    {
-        return RedoStack.ToList();
-    }
+    public IReadOnlyList<EditorAction> GetRedoHistory() => _stack.RedoSteps();
 
     /// <summary>
-    /// Every action that can still be undone or redone
+    /// Every action that can still be undone or redone: the undo steps most recent first, then the redo steps
+    /// next first
     /// </summary>
-    public IEnumerable<EditorAction> GetHistory()
-    {
-        return UndoStack.Concat(RedoStack);
-    }
+    public IEnumerable<EditorAction> GetHistory() => _stack.UndoSteps().Concat(_stack.RedoSteps());
 
-    public void UndoAction()
-    {
-        if (UndoStack.Count() == 0)
-        {
-            return;
-        }
+    public void UndoAction() => _stack.Undo();
 
-        if (IsBlocked(UndoStack.Peek()))
-        {
-            return;
-        }
+    /// <summary>Undoes every step, stopping at the first one the <see cref="ExecutionGuard"/> refuses</summary>
+    public void UndoAllAction() => _stack.UndoAll();
 
-        EditorAction a = UndoStack.Pop();
-        NotifyHandlers(a.Undo());
-        ActionPerformed?.Invoke();
-        RedoStack.Push(a);
-        CacheBank.ClearCaches();
-    }
+    public void RedoAction() => _stack.Redo();
 
-    public void UndoAllAction()
-    {
-        if (UndoStack.Count() == 0)
-        {
-            return;
-        }
+    /// <summary>Undoes the steps after the given one, and then it. Stops at a step the guard refuses.</summary>
+    public void UndoTo(EditorAction target) => _stack.UndoTo(target);
 
-        while (UndoStack.Count() > 0)
-        {
-            if (IsBlocked(UndoStack.Peek()))
-            {
-                return;
-            }
+    /// <summary>Redoes the steps up to and including the given one. Stops at a step the guard refuses.</summary>
+    public void RedoTo(EditorAction target) => _stack.RedoTo(target);
 
-            EditorAction a = UndoStack.Pop();
-            NotifyHandlers(a.Undo());
-            ActionPerformed?.Invoke();
-            RedoStack.Push(a);
-            CacheBank.ClearCaches();
-        }
-    }
+    public bool CanUndo() => _stack.CanUndo;
 
-    public void RedoAction()
-    {
-        if (RedoStack.Count() == 0)
-        {
-            return;
-        }
+    public bool CanRedo() => _stack.CanRedo;
 
-        if (IsBlocked(RedoStack.Peek()))
-        {
-            return;
-        }
-
-        EditorAction a = RedoStack.Pop();
-        NotifyHandlers(a.Execute());
-        ActionPerformed?.Invoke();
-        UndoStack.Push(a);
-        CacheBank.ClearCaches();
-    }
-
-    public bool CanUndo()
-    {
-        return UndoStack.Count() > 0;
-    }
-
-    public bool CanRedo()
-    {
-        return RedoStack.Count() > 0;
-    }
-
-    public void Clear()
-    {
-        UndoStack.Clear();
-        RedoStack.Clear();
-    }
+    public void Clear() => _stack.Clear();
 }

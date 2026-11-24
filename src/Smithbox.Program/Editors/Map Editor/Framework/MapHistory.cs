@@ -142,34 +142,10 @@ public static class MapHistory
     /// <summary>
     /// Undoes the steps after the given one, and then it, so the history is back to before it was made
     /// </summary>
-    public static void UndoTo(ViewportActionManager manager, ViewportAction target)
-    {
-        if (!manager.GetUndoActions().Contains(target))
-            return;
-
-        while (manager.PeekUndoAction() is { } action)
-        {
-            manager.UndoAction();
-
-            if (action == target)
-                break;
-        }
-    }
+    public static void UndoTo(ViewportActionManager manager, ViewportAction target) => manager.UndoTo(target);
 
     /// <summary>
     /// Redoes the steps up to and including the given one
     /// </summary>
-    public static void RedoTo(ViewportActionManager manager, ViewportAction target)
-    {
-        if (!manager.GetRedoActions().Contains(target))
-            return;
-
-        while (manager.PeekRedoAction() is { } action)
-        {
-            manager.RedoAction();
-
-            if (action == target)
-                break;
-        }
-    }
+    public static void RedoTo(ViewportActionManager manager, ViewportAction target) => manager.RedoTo(target);
 }
