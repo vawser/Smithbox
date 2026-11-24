@@ -341,6 +341,35 @@ public class HavokBehaviorView
     public System.Numerics.Vector2 PropertySectionSize =>
         new(0, UsedByHeight > 0 ? -UsedByHeight : 0);
 
+    // The shown file's locators (bookmarks): built once, again after any edit (a rename changes them)
+    private HavokLocatorIndex LocatorIndex;
+    private HavokBehaviorSymbols LocatorSymbols;
+    private bool LocatorSubscribed;
+
+    /// <summary>
+    /// Makes locators for the shown file's objects, cached until the next edit (numbering every object of ER c0000 on
+    /// each frame a menu is open would be slow)
+    /// </summary>
+    public HavokLocatorIndex GetLocatorIndex()
+    {
+        if (Symbols == null)
+            return null;
+
+        if (!LocatorSubscribed && View.ActionManager != null)
+        {
+            View.ActionManager.ActionPerformed += () => LocatorIndex = null;
+            LocatorSubscribed = true;
+        }
+
+        if (LocatorIndex == null || !ReferenceEquals(LocatorSymbols, Symbols))
+        {
+            LocatorIndex = new HavokLocatorIndex(Symbols);
+            LocatorSymbols = Symbols;
+        }
+
+        return LocatorIndex;
+    }
+
     /// <summary>
     /// The outline nodes above an object (states and generators), outermost first: its breadcrumb
     /// </summary>

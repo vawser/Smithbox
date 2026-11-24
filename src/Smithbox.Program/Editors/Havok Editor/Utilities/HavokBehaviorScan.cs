@@ -103,10 +103,12 @@ public class HavokScanSink
     private readonly string FilePath;
     private readonly HavokLocatorIndex Locators;
     private readonly bool KeepLive;
+    private readonly int Run;
 
     internal HavokScanSink(HavokBehaviorScan scan, FileDictionaryEntry binder, string filePath, HavokBehaviorSymbols symbols, bool keepLive)
     {
         Scan = scan;
+        Run = scan.CurrentRun;
         Binder = binder;
         FilePath = filePath;
         Locators = new HavokLocatorIndex(symbols);
@@ -117,7 +119,7 @@ public class HavokScanSink
 
     public void Add(string text, object target, HavokScanJump jump = HavokScanJump.Outline, int index = -1)
     {
-        Scan.AddResult(new HavokScanResult(Binder, FilePath, text, jump, index,
+        Scan.AddResult(Run, new HavokScanResult(Binder, FilePath, text, jump, index,
             jump is HavokScanJump.Outline ? Locators.Get(target) : null, KeepLive ? target : null));
     }
 }
@@ -161,10 +163,17 @@ public class HavokBehaviorScan
         lock (ResultLock) return Results.ToList();
     }
 
-    internal void AddResult(HavokScanResult result)
+    /// <summary>Counts runs: a run that was cleared or replaced adds nothing more, and doesn't end the next one</summary>
+    internal int CurrentRun => Volatile.Read(ref RunCount);
+    private int RunCount;
+
+    internal void AddResult(int run, HavokScanResult result)
     {
         lock (ResultLock)
         {
+            if (run != RunCount)
+                return;
+
             if (Results.Count < MaxResults)
                 Results.Add(result);
         }
@@ -173,6 +182,12 @@ public class HavokBehaviorScan
     public void Clear()
     {
         CancelRun();
+
+        // A run still finishing a binder can't add to the new results
+        lock (ResultLock)
+            RunCount++;
+
+        IsRunning = false;
 
         lock (ResultLock) Results = new();
 
@@ -253,6 +268,8 @@ public class HavokBehaviorScan
         var token = Cancel.Token;
         var onlyChanged = scope is HavokBehaviorScope.Modified;
 
+        var run = CurrentRun;
+
         Task.Run(async () =>
         {
             var options = new ParallelOptions
@@ -286,7 +303,7 @@ public class HavokBehaviorScan
                                     work(symbols, project, new HavokScanSink(this, binder, path, symbols, false));
                             }, ct);
 
-                        if (failed.Count > 0)
+                        if (failed.Count > 0 && run == CurrentRun)
                         {
                             lock (Failed)
                                 Failed.AddRange(failed.Select(f => $"{binder.Filename}/{Path.GetFileName(f.Replace('\\', '/'))}"));
@@ -294,8 +311,11 @@ public class HavokBehaviorScan
                     }
                     catch (Exception ex) when (ex is not OperationCanceledException)
                     {
-                        lock (Failed)
-                            Failed.Add(binder.Filename);
+                        if (run == CurrentRun)
+                        {
+                            lock (Failed)
+                                Failed.Add(binder.Filename);
+                        }
                     }
 
                     Interlocked.Increment(ref DoneCount);
@@ -305,15 +325,20 @@ public class HavokBehaviorScan
             }
             catch (OperationCanceledException)
             {
-                WasCancelled = true;
+                if (run == CurrentRun)
+                    WasCancelled = true;
             }
             catch (Exception ex)
             {
                 Smithbox.LogError(this, LOC.Get("HAVOK_Scan_Failed"), ex);
             }
 
-            IsRunning = false;
-            HasRun = true;
+            // A run cleared meanwhile leaves the state to the run after it
+            if (run == CurrentRun)
+            {
+                IsRunning = false;
+                HasRun = true;
+            }
         });
     }
 

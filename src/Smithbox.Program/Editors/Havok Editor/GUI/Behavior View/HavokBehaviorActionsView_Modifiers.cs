@@ -79,7 +79,7 @@ public partial class HavokBehaviorActionsView
     /// </summary>
     public void DisplayBookmarkItem(object obj)
     {
-        var bookmark = HavokBehaviorBookmarks.For(Owner.Symbols, View.Selection.BinderFileEntry, View.Selection.FilePath, obj);
+        var bookmark = HavokBehaviorBookmarks.For(Owner.GetLocatorIndex(), View.Selection.BinderFileEntry, View.Selection.FilePath, obj);
 
         if (bookmark == null)
             return;

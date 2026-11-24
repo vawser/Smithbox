@@ -40,12 +40,12 @@ public class HavokBehaviorBookmarks
     /// <summary>
     /// The bookmark an object of the shown file would have, or null if it can't be located
     /// </summary>
-    public static HavokBehaviorBookmark For(HavokBehaviorSymbols symbols, FileDictionaryEntry binder, string file, object obj)
+    public static HavokBehaviorBookmark For(HavokLocatorIndex locators, FileDictionaryEntry binder, string file, object obj)
     {
-        if (symbols == null || binder == null || file == null || obj == null)
+        if (locators == null || binder == null || file == null || obj == null)
             return null;
 
-        var locator = new HavokLocatorIndex(symbols).Get(obj);
+        var locator = locators.Get(obj);
 
         if (locator == null)
             return null;
