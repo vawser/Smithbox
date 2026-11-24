@@ -33,7 +33,7 @@ public class HavokBehaviorTemplate
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
 
-    /// <summary>Category (the only kind so far)</summary>
+    /// <summary>Category (register an animation category) or State (add new states)</summary>
     public string Kind { get; set; } = "Category";
 
     /// <summary>The behavior file it's made for (c0000.hkx), or null for any</summary>
@@ -49,8 +49,33 @@ public class HavokBehaviorTemplate
 
     public List<HavokTemplateGroup> Groups { get; set; } = new();
 
-    /// <summary>What to do after applying it (params, HKS), shown in the wizard and logged</summary>
+    /// <summary>What to do after applying it (params, HKS), shown in the wizard and logged; {Category}, {Reference}, {Ids}</summary>
     public List<string> Notes { get; set; } = new();
+
+    // ---- State kind: new states copied from a template state of a machine
+
+    /// <summary>The state machine the states are added to (its m_name)</summary>
+    public string StateMachine { get; set; }
+
+    /// <summary>
+    /// A regex the template state's name matches, its first group the ID in the names (^Attack(\d+)$). The first such
+    /// state whose number is its selector's animation ID, with a wildcard into it, is the default template.
+    /// </summary>
+    public string TemplateMatch { get; set; }
+
+    /// <summary>The first new animation ID (the state Attack3040, its event W_Attack3040, its clip a000_003040)</summary>
+    public HavokTemplateNumber Id { get; set; } = new() { Default = 0, Min = 0, Max = 999999 };
+
+    /// <summary>How many states (IDs Id, Id + Step, ...)</summary>
+    public HavokTemplateNumber Count { get; set; } = new() { Default = 1, Min = 1, Max = 100 };
+
+    public HavokTemplateNumber Step { get; set; } = new() { Default = 1, Min = 1, Max = 1000 };
+
+    /// <summary>Text written once per new state ({Id}): the script functions the states need</summary>
+    public string Snippet { get; set; }
+
+    [JsonIgnore]
+    public bool IsState => string.Equals(Kind, "State", StringComparison.OrdinalIgnoreCase);
 
     /// <summary>The file it was read from</summary>
     [JsonIgnore]
@@ -114,11 +139,31 @@ public static class HavokBehaviorTemplates
                     continue;
                 }
 
-                if (!string.Equals(template.Kind, "Category", StringComparison.OrdinalIgnoreCase))
+                if (!string.Equals(template.Kind, "Category", StringComparison.OrdinalIgnoreCase) && !template.IsState)
                 {
                     errors.Add(LOC.Get("HAVOK_Templates_Error_Kind", path, template.Kind));
                     continue;
                 }
+
+                if (template.IsState && (string.IsNullOrWhiteSpace(template.StateMachine) || string.IsNullOrWhiteSpace(template.TemplateMatch)))
+                {
+                    errors.Add(LOC.Get("HAVOK_Templates_Error_State_Fields", path));
+                    continue;
+                }
+
+                if (template.IsState)
+                {
+                    try { _ = new System.Text.RegularExpressions.Regex(template.TemplateMatch); }
+                    catch (ArgumentException e)
+                    {
+                        errors.Add(LOC.Get("HAVOK_Templates_Error_Read", path, e.Message));
+                        continue;
+                    }
+                }
+
+                template.Id ??= new() { Default = 0, Min = 0, Max = 999999 };
+                template.Count ??= new() { Default = 1, Min = 1, Max = 100 };
+                template.Step ??= new() { Default = 1, Min = 1, Max = 1000 };
 
                 template.FilePath = path;
                 template.FromProject = fromProject;

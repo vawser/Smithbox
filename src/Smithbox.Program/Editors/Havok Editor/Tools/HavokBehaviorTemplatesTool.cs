@@ -138,6 +138,14 @@ public class HavokBehaviorTemplatesTool
         if (!string.IsNullOrEmpty(template.File) && !shownFile.StartsWith(Path.GetFileNameWithoutExtension(template.File), StringComparison.OrdinalIgnoreCase))
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_Templates_Other_File", template.File, shownFile));
 
+        if (template.IsState)
+            DisplayState(template);
+        else
+            DisplayCategory(template);
+    }
+
+    private void DisplayCategory(HavokBehaviorTemplate template)
+    {
         // Inputs
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Inputs_Header"), LOC.Get("HAVOK_Templates_Inputs_Header_TT"));
@@ -169,15 +177,7 @@ public class HavokBehaviorTemplatesTool
 
         DisplayPreview();
 
-        // Notes
-        if (template.Notes.Count > 0)
-        {
-            GUI.Spacer();
-            GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Notes_Header"), LOC.Get("HAVOK_Templates_Notes_Header_TT"));
-
-            foreach (var note in template.Notes)
-                GUI.WrappedText($"- {Fill(note)}");
-        }
+        DisplayNotes(template);
 
         // Actions
         GUI.Spacer();
@@ -191,6 +191,18 @@ public class HavokBehaviorTemplatesTool
 
         if (LastResult != null)
             GUI.WrappedText(LastResult);
+    }
+
+    private void DisplayNotes(HavokBehaviorTemplate template)
+    {
+        if (template.Notes.Count == 0)
+            return;
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Notes_Header"), LOC.Get("HAVOK_Templates_Notes_Header_TT"));
+
+        foreach (var note in template.Notes)
+            GUI.WrappedText($"- {Fill(note)}");
     }
 
     private void ReloadButton()
@@ -207,6 +219,12 @@ public class HavokBehaviorTemplatesTool
             return;
 
         InputsFor = template;
+        FirstId = template.Id.Default;
+        StateCount = template.Count.Default;
+        StateStep = template.Step.Default;
+        CandidateIndex = -1;
+        StatePlanKey = null;
+        StatePlanSymbols = null;
         Category = Math.Clamp(template.Category.Default, 0, MaxCategory);
         Reference = template.Reference.Default;
         FromReference = template.Reference.Required || template.Groups.Count == 0;
@@ -261,12 +279,303 @@ public class HavokBehaviorTemplatesTool
         }
     }
 
+    #region State templates
+    // Inputs
+    private int FirstId;
+    private int StateCount;
+    private int StateStep;
+
+    /// <summary>The picked template state, -1 for the default</summary>
+    private int CandidateIndex = -1;
+
+    // The plan, rebuilt when the inputs or the file's symbols change
+    private string StatePlanKey;
+    private HavokBehaviorSymbols StatePlanSymbols;
+    private object StateMachine;
+    private List<HavokStateTemplatePlanner.Candidate> Candidates = new();
+    private List<HavokStateTemplatePlanner.Row> StateRows = new();
+
+    private HavokStateTemplatePlanner.Candidate Candidate =>
+        CandidateIndex >= 0 && CandidateIndex < Candidates.Count ? Candidates[CandidateIndex] : null;
+
+    private void DisplayState(HavokBehaviorTemplate template)
+    {
+        UpdateStatePlan(template);
+
+        if (StateMachine == null)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("HAVOK_Templates_No_Machine", template.StateMachine));
+            return;
+        }
+
+        if (Candidates.Count == 0)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("HAVOK_Templates_No_Template_State", template.StateMachine, template.TemplateMatch));
+            return;
+        }
+
+        // Inputs
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Inputs_Header"), LOC.Get("HAVOK_Templates_State_Inputs_Header_TT"));
+
+        var width = 160 * DPI.UIScale();
+
+        // Only change the preview: nothing is applied before Apply
+        ImGui.SetNextItemWidth(width);
+        if (ImGui.InputInt($"{LOC.Get("HAVOK_Templates_First_Id")}##havokTemplateFirstId", ref FirstId))
+            FirstId = Math.Clamp(FirstId, template.Id.Min, template.Id.Max);
+        GUI.Tooltip(LOC.Get("HAVOK_Templates_First_Id_TT", template.Id.Min, template.Id.Max));
+
+        ImGui.SetNextItemWidth(width);
+        if (ImGui.InputInt($"{LOC.Get("HAVOK_Templates_Count")}##havokTemplateCount", ref StateCount))
+            StateCount = Math.Clamp(StateCount, template.Count.Min, template.Count.Max);
+        GUI.Tooltip(LOC.Get("HAVOK_Templates_Count_TT"));
+
+        if (StateCount > 1)
+        {
+            ImGui.SetNextItemWidth(width);
+            if (ImGui.InputInt($"{LOC.Get("HAVOK_Templates_Step")}##havokTemplateStep", ref StateStep))
+                StateStep = Math.Clamp(StateStep, template.Step.Min, template.Step.Max);
+            GUI.Tooltip(LOC.Get("HAVOK_Templates_Step_TT"));
+        }
+
+        ImGui.SetNextItemWidth(width);
+        if (ImGui.InputInt($"{LOC.Get("HAVOK_Templates_Clip_Category")}##havokTemplateClipCategory", ref Category))
+            Category = Math.Clamp(Category, Math.Clamp(template.Category.Min, 0, MaxCategory), Math.Clamp(template.Category.Max, 0, MaxCategory));
+        GUI.Tooltip(LOC.Get("HAVOK_Templates_Clip_Category_TT"));
+
+        // Template state
+        var candidate = Candidate;
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##havokTemplateState", LOC.Get("HAVOK_Templates_Template_State", candidate.Name), ImGuiComboFlags.HeightLarge))
+        {
+            for (var i = 0; i < Candidates.Count; i++)
+            {
+                var c = Candidates[i];
+                if (ImGui.Selectable($"{c.Name}  ({string.Join(", ", c.Categories.Select(x => Format((int)x)))})##havokTemplateCandidate{i}", i == CandidateIndex))
+                    CandidateIndex = i;
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("HAVOK_Templates_Template_State_TT", string.Join(", ", candidate.Events)));
+
+        if (!candidate.Categories.Contains((long)Category))
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("HAVOK_Templates_Category_Moved", Format(Category), candidate.Name));
+
+        // Preview
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Preview_Header"), LOC.Get("HAVOK_Templates_State_Preview_Header_TT"));
+
+        DisplayStatePreview();
+
+        DisplayNotes(template);
+
+        // Script
+        var snippet = Snippet(template);
+
+        if (snippet.Length > 0)
+        {
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Snippet_Header"), LOC.Get("HAVOK_Templates_Snippet_Header_TT"));
+
+            if (ImGui.SmallButton($"{LOC.Get("HAVOK_Templates_Copy_Snippet")}##havokTemplateCopySnippet"))
+                ImGui.SetClipboardText(snippet);
+            GUI.Tooltip(LOC.Get("HAVOK_Templates_Copy_Snippet_TT"));
+
+            var lines = Math.Min(snippet.Count(ch => ch == '\n') + 1, 12);
+            ImGui.InputTextMultiline("##havokTemplateSnippet", ref snippet, (uint)snippet.Length + 1,
+                new System.Numerics.Vector2(-1, lines * ImGui.GetTextLineHeight() + 8 * DPI.UIScale()), ImGuiInputTextFlags.ReadOnly);
+        }
+
+        // Actions
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("HAVOK_Templates_Actions_Header"), LOC.Get("HAVOK_Templates_Actions_Header_TT"));
+
+        var adds = StateRows.Count(r => r.Include && r.Status is HavokStateTemplatePlanner.RowStatus.Add);
+
+        GUI.ConditionalMultiButtonInput("havokTemplateStateActions",
+            "havokTemplateStateApply", LOC.Get("HAVOK_Templates_Apply_States", adds), LOC.Get("HAVOK_Templates_Apply_States_TT"),
+            () => ApplyState(template), adds > 0);
+
+        if (LastResult != null)
+            GUI.WrappedText(LastResult);
+    }
+
+    /// <summary>The template's snippet, once per included new state</summary>
+    private string Snippet(HavokBehaviorTemplate template)
+    {
+        if (string.IsNullOrWhiteSpace(template.Snippet))
+            return "";
+
+        return string.Join("\n", StateRows
+            .Where(r => r.Include && r.Status is HavokStateTemplatePlanner.RowStatus.Add)
+            .Select(r => template.Snippet.Replace("{Id}", r.Id.ToString()).Replace("{State}", r.StateName)));
+    }
+
+    private void UpdateStatePlan(HavokBehaviorTemplate template)
+    {
+        var symbols = Behavior.Symbols;
+
+        // The machine and its template states change only with the file
+        if (!ReferenceEquals(symbols, StatePlanSymbols))
+        {
+            var previous = Candidate?.Name;
+
+            StatePlanSymbols = symbols;
+            StatePlanKey = null;
+            StateMachine = HavokStateTemplatePlanner.FindMachine(symbols, template.StateMachine);
+            Candidates = HavokStateTemplatePlanner.FindCandidates(symbols, template, StateMachine);
+
+            // Keep the picked template state across the rebuild an edit makes
+            CandidateIndex = previous != null ? Candidates.FindIndex(c => c.Name == previous) : -1;
+        }
+
+        if (Candidates.Count == 0)
+        {
+            StateRows = new();
+            return;
+        }
+
+        if (CandidateIndex < 0)
+            CandidateIndex = HavokStateTemplatePlanner.DefaultCandidate(Candidates, Category);
+
+        var key = $"{TemplateIndex}|{FirstId}|{StateCount}|{StateStep}|{Category}|{CandidateIndex}";
+
+        if (key == StatePlanKey)
+            return;
+
+        StatePlanKey = key;
+        StateRows = HavokStateTemplatePlanner.Plan(symbols, StateMachine, Candidate, FirstId, StateCount, StateStep, Category, CategorySize);
+    }
+
+    private void DisplayStatePreview()
+    {
+        var add = StateRows.Count(r => r.Status is HavokStateTemplatePlanner.RowStatus.Add);
+        var exists = StateRows.Count - add;
+
+        GUI.WrappedText(LOC.Get("HAVOK_Templates_State_Summary", StateRows.Count, add, exists));
+
+        if (StateRows.Count == 0)
+            return;
+
+        var scale = DPI.UIScale();
+        var flags = ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable |
+            ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingStretchProp;
+        var height = Math.Min(StateRows.Count + 1, 12) * ImGui.GetTextLineHeightWithSpacing() + 8 * scale;
+
+        if (!ImGui.BeginTable("havokTemplateStateTable", 4, flags, new System.Numerics.Vector2(0, height)))
+            return;
+
+        ImGui.TableSetupScrollFreeze(0, 1);
+        ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthFixed, 24 * scale);
+        ImGui.TableSetupColumn(LOC.Get("HAVOK_Templates_Column_State"), ImGuiTableColumnFlags.WidthStretch, 1.2f);
+        ImGui.TableSetupColumn(LOC.Get("HAVOK_Templates_Column_Animation"), ImGuiTableColumnFlags.WidthStretch, 1f);
+        ImGui.TableSetupColumn(LOC.Get("HAVOK_Templates_Column_Events"), ImGuiTableColumnFlags.WidthStretch, 2f);
+        ImGui.TableHeadersRow();
+
+        var animations = Behavior.Animations is { IsReady: true, Error: null } ? Behavior.Animations : null;
+
+        foreach (var row in StateRows)
+        {
+            ImGui.TableNextRow();
+
+            // Include
+            ImGui.TableSetColumnIndex(0);
+
+            if (row.Status is HavokStateTemplatePlanner.RowStatus.Add)
+                ImGui.Checkbox($"##havokTemplateStateInclude{row.Id}", ref row.Include);
+
+            // State
+            ImGui.TableSetColumnIndex(1);
+
+            if (row.Status is HavokStateTemplatePlanner.RowStatus.Exists)
+            {
+                ImGui.TextDisabled(row.StateName);
+                GUI.Tooltip(LOC.Get("HAVOK_Templates_State_Exists_TT", row.StateName));
+            }
+            else
+            {
+                ImGui.Text(row.StateName);
+
+                if (row.IdUsers > 0)
+                {
+                    ImGui.SameLine();
+                    ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, "!");
+                    GUI.Tooltip(LOC.Get("HAVOK_Templates_Id_In_Use_TT", row.Id, row.IdUsers));
+                }
+            }
+
+            // Animation
+            ImGui.TableSetColumnIndex(2);
+            ImGui.Text(row.AnimationName);
+
+            if (animations != null && row.Status is HavokStateTemplatePlanner.RowStatus.Add && !animations.HasAnimationFile(row.AnimationName))
+            {
+                ImGui.SameLine();
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, "!");
+                GUI.Tooltip(LOC.Get("HAVOK_Register_No_Animation_File_TT", row.AnimationName));
+            }
+
+            // Events: existing ones are reused
+            ImGui.TableSetColumnIndex(3);
+            ImGui.TextWrapped(string.Join("  ", row.Events.Select(e => row.ExistingEvents.Contains(e) ? $"={e}" : $"+{e}")));
+            GUI.Tooltip(LOC.Get("HAVOK_Templates_Events_TT"));
+        }
+
+        ImGui.EndTable();
+    }
+
+    private void ApplyState(HavokBehaviorTemplate template)
+    {
+        var candidate = Candidate;
+
+        if (candidate == null)
+            return;
+
+        var snippet = Snippet(template);
+        var notes = template.Notes.Select(Fill).ToList();
+
+        var action = HavokStateTemplatePlanner.Apply(Context(), candidate, StateRows, Category, out var added, out var errors);
+
+        foreach (var e in errors.Distinct().Take(10))
+            Smithbox.LogError(this, e);
+
+        if (action == null)
+        {
+            LastResult = errors.FirstOrDefault() ?? LOC.Get("HAVOK_Templates_Nothing");
+            return;
+        }
+
+        View.ActionManager.ExecuteAction(action);
+
+        LastResult = LOC.Get("HAVOK_Templates_Done_States", template.Name, added, template.StateMachine, errors.Count);
+        Smithbox.Log(this, LastResult);
+
+        foreach (var note in notes)
+            Smithbox.Log(this, $"{template.Name}: {note}");
+
+        if (snippet.Length > 0)
+            Smithbox.Log(this, $"{template.Name}:\n{snippet}");
+
+        StatePlanKey = null;
+    }
+    #endregion
+
+    private HavokBehaviorContext Context() => new(View.Selection.SelectedFileWrapper, Behavior.Symbols, Project)
+    {
+        Character = () => HavokBehaviorOperations.FindCharacterAnimations(View.HavokBank, View.Selection.BinderFileEntry,
+            View.PropertyCache.GetCachedHavokFields)
+    };
+
     private string Format(int category) => CategorySize == 10000 ? $"a{category:D2}" : $"a{category:D3}";
 
-    /// <summary>A note's {Category} and {Reference}, filled in</summary>
+    /// <summary>A note's {Category}, {Reference} and {Ids} (the new states' IDs), filled in</summary>
     private string Fill(string text) => text
         .Replace("{Category}", Category.ToString())
-        .Replace("{Reference}", Reference.ToString());
+        .Replace("{Reference}", Reference.ToString())
+        .Replace("{Ids}", string.Join(", ", StateRows.Where(r => r.Include).Select(r => r.Id)));
 
     private void UpdatePlan(HavokBehaviorTemplate template)
     {
@@ -448,13 +757,7 @@ public class HavokBehaviorTemplatesTool
 
     private void Apply(HavokBehaviorTemplate template)
     {
-        var context = new HavokBehaviorContext(View.Selection.SelectedFileWrapper, Behavior.Symbols, Project)
-        {
-            Character = () => HavokBehaviorOperations.FindCharacterAnimations(View.HavokBank, View.Selection.BinderFileEntry,
-                View.PropertyCache.GetCachedHavokFields)
-        };
-
-        var action = HavokTemplatePlanner.Apply(context, Rows, Category, out var added, out var errors);
+        var action = HavokTemplatePlanner.Apply(Context(), Rows, Category, out var added, out var errors);
 
         foreach (var e in errors.Distinct().Take(10))
             Smithbox.LogError(this, e);

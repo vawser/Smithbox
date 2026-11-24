@@ -1,6 +1,6 @@
 {
   "Name": "Weapon Moveset",
-  "Description": "Registers a new weapon attack category (aCCC_03XXXX) for the attack selectors (WeaponCategoryRight, WeaponCategoryHandStyle, WeaponCategoryLeft) in c0000.hkx. With a reference category (an existing weapon type), each new clip copies the reference's clip (looping jump loops, variable bindings), and the Reference Category source copies every attack that weapon type has. Based on HkbEditor's weapon_moveset template (ndahn/HkbEditor).",
+  "Description": "Registers a new weapon attack category (aCCC_03XXXX) for the attack selectors (WeaponCategoryRight, WeaponCategoryHandStyle, WeaponCategoryLeft) in c0000.hkx. With a reference category (an existing weapon type), each new clip copies the reference's clip (looping jump loops, variable bindings), and the Reference Category source copies every attack that weapon type has..",
   "Kind": "Category",
   "File": "c0000.hkx",
   "OffsetTypes": [ "WeaponCategoryRight", "WeaponCategoryHandStyle", "WeaponCategoryLeft" ],

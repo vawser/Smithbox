@@ -1,0 +1,16 @@
+{
+  "Name": "Game Event (Player)",
+  "Description": "Adds event animation states to the player's Event_SM in c0000.hkx, copied from a vanilla event state (Event60000 by default: one clip, plays to the end, returns to idle), each entered by a W_Event<ID> wildcard like the vanilla ones.",
+  "Kind": "State",
+  "File": "c0000.hkx",
+  "StateMachine": "Event_SM",
+  "TemplateMatch": "^Event(\\d+)$",
+  "Id": { "Default": 70000, "Min": 0, "Max": 999999 },
+  "Count": { "Default": 1, "Min": 1, "Max": 50 },
+  "Step": { "Default": 1, "Min": 1, "Max": 1000 },
+  "Category": { "Default": 0, "Min": 0, "Max": 999 },
+  "Notes": [
+    "The new states are entered by their W_Event wildcards, as vanilla Event_SM animations are (IDs {Ids}).",
+    "Add the animations to c0000's anibnd, with their time acts."
+  ]
+}

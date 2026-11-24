@@ -1,0 +1,18 @@
+{
+  "Name": "NPC Attack Slot",
+  "Description": "Adds attack slots to an NPC's Attack_SM in its c9997.hkx, copied from a vanilla attack state (Attack3000 by default), each entered by both of its wildcards (W_Attack<ID> and W_Event<ID>), as every vanilla slot is.",
+  "Kind": "State",
+  "File": "c9997.hkx",
+  "StateMachine": "Attack_SM",
+  "TemplateMatch": "^Attack(\\d+)$",
+  "Id": { "Default": 3040, "Min": 0, "Max": 999999 },
+  "Count": { "Default": 1, "Min": 1, "Max": 100 },
+  "Step": { "Default": 1, "Min": 1, "Max": 1000 },
+  "Category": { "Default": 0, "Min": 0, "Max": 999 },
+  "Snippet": "function Attack{Id}_onActivate()\n    CallActionState({Id})\nend\n\nfunction Attack{Id}_onUpdate()\n    if AttackCommonFunction({Id}, STYLE_DEFAULT, TRUE) == TRUE then\n        return\n    end\nend\n",
+  "Notes": [
+    "Add the functions below to the NPC's c9997.hks, as vanilla has them for Attack3000-Attack3039.",
+    "c9997.hks only runs AI attacks with IDs from ANIME_ID_ATTACK_BEGIN to ANIME_ID_ATTACK_END (3000-3039 in vanilla): raise ANIME_ID_ATTACK_END to cover {Ids}.",
+    "Add the animations to the NPC's anibnd, with their time acts."
+  ]
+}

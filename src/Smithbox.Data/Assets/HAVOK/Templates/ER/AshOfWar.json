@@ -1,6 +1,6 @@
 {
   "Name": "Ash of War",
-  "Description": "Registers a new skill animation category (a6XX-a9XX) for the skill selectors (SwordArtsCategory) in c0000.hkx: the full-body and half-body selectors of each skill animation. Tick the parts of a skill it has. Based on HkbEditor's ash_of_war template (ndahn/HkbEditor).",
+  "Description": "Registers a new skill animation category (a6XX-a9XX) for the skill selectors (SwordArtsCategory) in c0000.hkx: the full-body and half-body selectors of each skill animation. Tick the parts of a skill it has.",
   "Kind": "Category",
   "File": "c0000.hkx",
   "OffsetTypes": [ "SwordArtsCategory" ],

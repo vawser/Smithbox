@@ -196,9 +196,12 @@ public static partial class HavokBehaviorOperations
     /// state (next free state ID, the original's outgoing transitions) holding a copy.
     /// Children shared with the rest of the file stay shared unless copyShared. The chain down to the object
     /// is always copied. A CMSG given a new animation ID has its clips copied and retargeted to it.
+    /// With clipCategory, the retargeted CMSG keeps one clip only (the one of that category, else its first),
+    /// moved to that category: a template state copied for one new animation (Behavior Templates).
     /// </summary>
     public static EditorAction DuplicateGenerator(HavokBehaviorContext context, object obj, HavokPlacement placement,
-        string newName, string newStateName, bool copyShared, long? newAnimId, out object newObj, out string error)
+        string newName, string newStateName, bool copyShared, long? newAnimId, out object newObj, out string error,
+        long? clipCategory = null)
     {
         newObj = null;
         error = null;
@@ -287,12 +290,29 @@ public static partial class HavokBehaviorOperations
 
             var addedNames = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
 
+            // One clip only: the copies of the others leave the new selector's list
+            if (clipCategory.HasValue && oldClips.Count > 0)
+            {
+                var keep = oldClips.FirstOrDefault(c => GetClipCategory(c) == clipCategory.Value) ?? oldClips[0];
+
+                if (GetList(newObj, "m_generators") is IList newGenerators)
+                {
+                    foreach (var oldClip in oldClips.Where(c => !ReferenceEquals(c, keep)))
+                    {
+                        if (copies.GetValueOrDefault(oldClip) is { } dropped)
+                            newGenerators.Remove(dropped);
+                    }
+                }
+
+                oldClips = new List<object> { keep };
+            }
+
             foreach (var oldClip in oldClips)
             {
                 if (copies.GetValueOrDefault(oldClip) is not { } clipCopy)
                     continue;
 
-                if (!RetargetClip(context, clipCopy, newAnimId.Value, addedNames, steps, out error))
+                if (!RetargetClip(context, clipCopy, newAnimId.Value, addedNames, steps, out error, clipCategory))
                     return null;
             }
         }
@@ -319,7 +339,7 @@ public static partial class HavokBehaviorOperations
     /// and its internal ID (that of a clip of the same animation, or a new animation name entry)
     /// </summary>
     private static bool RetargetClip(HavokBehaviorContext context, object clip, long newAnimId,
-        Dictionary<string, int> addedNames, List<EditorAction> steps, out string error)
+        Dictionary<string, int> addedNames, List<EditorAction> steps, out string error, long? newCategory = null)
     {
         error = null;
 
@@ -333,7 +353,9 @@ public static partial class HavokBehaviorOperations
             return false;
         }
 
-        var categoryText = match.Groups[1].Value;
+        var categoryText = newCategory.HasValue
+            ? newCategory.Value.ToString().PadLeft(match.Groups[1].Value.Length, '0')
+            : match.Groups[1].Value;
         var idDigits = match.Groups[2].Value.Length;
         var newAnimation = $"a{categoryText}_{newAnimId.ToString().PadLeft(idDigits, '0')}";
         var category = long.Parse(categoryText);
