@@ -26,6 +26,7 @@ public enum CollisionEditorSource
     Edit,
     Material,
     Create,
+    Subtract,
     Cleanup
 }
 
@@ -218,6 +219,13 @@ public partial class CollisionEditorTool
             {
                 OpenTab = CollisionEditorSource.Create;
                 Create.Display();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab("MAP_CollisionEditor_Tab_Subtract", "collisionEditorTabSubtract"))
+            {
+                OpenTab = CollisionEditorSource.Subtract;
+                DisplaySubtractTab();
                 ImGui.EndTabItem();
             }
 
@@ -635,12 +643,15 @@ public partial class CollisionEditorTool
             HandleMaterialPainting(scene, ray, canInteract && !placing);
         }
 
+        // Placing the Subtract tab's box takes the clicks too (only one tab is open, so it never runs with the above)
+        var placingBox = HandleSubtractInput(scene, ray, canInteract && !placing);
+
         UpdatePreviews(scene);
         UpdateRetiringPreviews();
         UpdateMaterialOverlay(scene);
 
         // While editing or painting, the picking button brushes, so it doesn't select what is under the brush as well
-        return Active || MaterialActive || placing;
+        return Active || MaterialActive || placing || placingBox;
     }
 
     /// <summary>The gizmo target of the Create tab's picked User-Defined point.</summary>
@@ -768,9 +779,9 @@ public partial class CollisionEditorTool
 
     /// <summary>
     /// Finds the nearest displayed collision triangle under the ray, out of the collision parts of the loaded maps,
-    /// and the corner of it nearest the hit.
+    /// and the corner of it nearest the hit. Only the edited layer is hit, or with layers, the layers of those letters.
     /// </summary>
-    private Hit RayCast(Ray ray)
+    private Hit RayCast(Ray ray, IReadOnlySet<char> layers = null)
     {
         Hit nearest = null;
         var layerLetter = GetLayerLetter(CFG.Current.MapEditor.MapEditor_CollisionEditor_Layer);
@@ -790,7 +801,9 @@ public partial class CollisionEditorTool
                     continue;
 
                 // Only the edited layer is hit: the layers lie on top of each other, so the nearest would flicker
-                if (char.ToLowerInvariant(fileName[0]) != layerLetter)
+                var letter = char.ToLowerInvariant(fileName[0]);
+
+                if (layers == null ? letter != layerLetter : !layers.Contains(letter))
                     continue;
 
                 if (!Files.TryGetValue(fileName, out var file))

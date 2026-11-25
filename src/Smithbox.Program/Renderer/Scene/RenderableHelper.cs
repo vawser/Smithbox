@@ -766,6 +766,30 @@ public static class RenderableHelper
         return r;
     }
 
+    /// <summary>A wire box from -0.5 to 0.5, not pickable, placed and sized by its world matrix.</summary>
+    public static DebugPrimitiveRenderableProxy GetUnitBoxWireProxy(RenderScene scene, Color color)
+    {
+        var wireColor = ColorHelper.GetTransparencyColor(color, RenderSettings.Graphics.GFX_Renderable_Default_Wireframe_Alpha);
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _fogVolumeBox);
+
+        r.Pickable = false;
+        r.BaseColor = wireColor;
+        r.HighlightedColor = wireColor;
+
+        return r;
+    }
+
+    /// <summary>A translucent solid box from -0.5 to 0.5, not pickable, placed and sized by its world matrix.</summary>
+    public static DebugPrimitiveRenderableProxy GetUnitBoxFillProxy(RenderScene scene, Color color)
+    {
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, _fogVolumeSolidBox, Utils.GetDecimalColor(color));
+
+        r.Visible = true;
+
+        return r;
+    }
+
     public static DebugPrimitiveRenderableProxy GetFogVolumeFillProxy(RenderScene scene)
     {
         var baseColor = RenderSettings.Viewport.Viewport_Fog_Volume_Base_Color;

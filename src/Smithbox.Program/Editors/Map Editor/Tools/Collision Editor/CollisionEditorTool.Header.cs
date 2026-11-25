@@ -125,6 +125,14 @@ public partial class CollisionEditorTool
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Point_Gizmo", userDefined.Selected + 1);
         }
+        else if (IsSubtractShown && SubtractPlacing)
+        {
+            mode = LOC.Get("MAP_CollisionEditor_Mode_Subtract_Placing", InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action));
+        }
+        else if (HasSubtractGizmo)
+        {
+            mode = LOC.Get("MAP_CollisionEditor_Mode_Subtract_Gizmo");
+        }
 
         if (mode == null)
         {
@@ -146,12 +154,16 @@ public partial class CollisionEditorTool
 
     /// <summary>
     /// Turns off everything that takes the viewport's clicks, keys or gizmo: the edit cursor, User-Defined point
-    /// placing and the point the gizmo holds. Pending edits and placed points are kept.
+    /// placing and the point the gizmo holds, and the Subtract box's placing and gizmo. Pending edits, placed points
+    /// and the box are kept.
     /// </summary>
     private void StopModes()
     {
         StopEditing();
         Create.UserDefined.StopModes();
+
+        SubtractPlacing = false;
+        SubtractGizmo = false;
     }
 
     /// <summary>

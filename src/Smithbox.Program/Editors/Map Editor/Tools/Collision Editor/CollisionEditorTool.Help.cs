@@ -28,7 +28,8 @@ public partial class CollisionEditorTool
         {
             CollisionEditorSource.Material => ("MAP_CollisionEditor_Tab_Material", "MAP_CollisionEditor_Material_Description"),
             CollisionEditorSource.Create =>("MAP_CollisionEditor_Tab_Create", "MAP_CollisionEditor_Create_Description"),
-            CollisionEditorSource.Cleanup => ("MAP_CollisionEditor_Tab_Cleanup", "MAP_CollisionEditor_Cleanup_Description"),
+            CollisionEditorSource.Subtract => ("MAP_CollisionEditor_Tab_Subtract", "MAP_CollisionEditor_Subtract_Description"),
+            CollisionEditorSource.Cleanup =>("MAP_CollisionEditor_Tab_Cleanup", "MAP_CollisionEditor_Cleanup_Description"),
             _ => ("MAP_CollisionEditor_Tab_Edit", "MAP_CollisionEditor_Description"),
         };
 

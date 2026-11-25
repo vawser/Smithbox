@@ -1306,6 +1306,13 @@ public class VulkanViewport : IViewport
             return;
         }
 
+        // The box of the Collision Editor's Subtract tab
+        if (Owner is MapUniverse subtractUniverse && subtractUniverse.View.CollisionEditorTool.SubtractGizmoTarget.HasTarget)
+        {
+            Gizmos.Target = subtractUniverse.View.CollisionEditorTool.SubtractGizmoTarget;
+            return;
+        }
+
         Gizmos.Target = null;
     }
 
