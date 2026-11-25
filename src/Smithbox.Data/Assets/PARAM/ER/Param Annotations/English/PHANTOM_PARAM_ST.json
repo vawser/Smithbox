@@ -2,152 +2,152 @@
   "Param": "PHANTOM_PARAM_ST",
   "Type": "PHANTOM_PARAM_ST",
   "Name": "PHANTOM_PARAM_ST",
-  "Description": null,
+  "Description": "Phantom (ghost) look of a character: colours, rim glow and transparency of the phantom shader on its materials. A character's row is, in order: a scripted override, the SpEffectVfxParam Phantom Param Overwrite of an active effect, NpcParam Wander Ghost Phantom ID (one character type), then the RoleParam Phantom Param ID of its role (summons, invaders, ghosts). EnemyCommonParam's time-activated phantom ID and NetworkParam's bonfire replay IDs also point here. -1 or a missing row: no phantom look.",
   "Fields": [
     {
       "Field": "edgeColorA",
       "Name": "Edge Color: Alpha",
-      "Description": "Edge color A."
+      "Description": "Fourth component of the edge (rim) colour, sent to the phantom shader as is with Edge Color R/G/B. Retail 0-1."
     },
     {
       "Field": "frontColorA",
       "Name": "Front Color: Alpha",
-      "Description": "The front color is A."
+      "Description": "Fourth component of the front (facing) colour, sent to the phantom shader as is with Front Color R/G/B. Retail 0-2."
     },
     {
       "Field": "diffMulColorA",
       "Name": "Diffuse Color: Alpha",
-      "Description": "Diffuse multiplication color A."
+      "Description": "Fourth component of the diffuse multiplier colour, sent to the phantom shader as is. Retail 0-3, default 1."
     },
     {
       "Field": "specMulColorA",
       "Name": "Specular Color: Alpha",
-      "Description": "Specular multiplication color A."
+      "Description": "Fourth component of the specular multiplier colour, sent to the phantom shader as is. Retail 0 or 1."
     },
     {
       "Field": "lightColorA",
       "Name": "Light Color: Alpha",
-      "Description": "Light color A."
+      "Description": "Fourth component of the light colour, sent to the phantom shader as is. Retail mostly 0."
     },
     {
       "Field": "edgeColorR",
       "Name": "Edge Color: R",
-      "Description": "Edge color R."
+      "Description": "Edge (rim) colour, red: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "edgeColorG",
       "Name": "Edge Color: G",
-      "Description": "Edge color G."
+      "Description": "Edge (rim) colour, green: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "edgeColorB",
       "Name": "Edge Color: B",
-      "Description": "Edge color B."
+      "Description": "Edge (rim) colour, blue: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "frontColorR",
       "Name": "Front Color: R",
-      "Description": "The front color is R."
+      "Description": "Front (facing) colour, red: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "frontColorG",
       "Name": "Front Color: G",
-      "Description": "The front color is G."
+      "Description": "Front (facing) colour, green: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "frontColorB",
       "Name": "Front Color: B",
-      "Description": "Front color B."
+      "Description": "Front (facing) colour, blue: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "diffMulColorR",
       "Name": "Diffuse Color: R",
-      "Description": "Diffuse multiplication color R."
+      "Description": "Diffuse multiplier colour, red: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "diffMulColorG",
       "Name": "Diffuse Color: G",
-      "Description": "Diffuse multiplication color G."
+      "Description": "Diffuse multiplier colour, green: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "diffMulColorB",
       "Name": "Diffuse Color: B",
-      "Description": "Diffuse multiplication color B."
+      "Description": "Diffuse multiplier colour, blue: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "specMulColorR",
       "Name": "Specular Color: R",
-      "Description": "Specular multiplication color R."
+      "Description": "Specular multiplier colour, red: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "specMulColorG",
       "Name": "Specular Color: G",
-      "Description": "Specular multiplication color G."
+      "Description": "Specular multiplier colour, green: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "specMulColorB",
       "Name": "Specular Color: B",
-      "Description": "Specular multiplication color B."
+      "Description": "Specular multiplier colour, blue: 0-255, sent to the shader as 0-1. 255: unchanged."
     },
     {
       "Field": "lightColorR",
       "Name": "Light Color: R",
-      "Description": "Light color R."
+      "Description": "Light colour, red: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "lightColorG",
       "Name": "Light Color: G",
-      "Description": "Light color G."
+      "Description": "Light colour, green: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "lightColorB",
       "Name": "Light Color: B",
-      "Description": "Light color B."
+      "Description": "Light colour, blue: 0-255, sent to the shader as 0-1."
     },
     {
       "Field": "reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "alpha",
       "Name": "Overall Alpha",
-      "Description": "The overall transparency."
+      "Description": "Overall opacity of the phantom, sent to the shader. 1: opaque, 0: invisible. Retail 0-1."
     },
     {
       "Field": "blendRate",
       "Name": "Blend Rate",
-      "Description": "The blend ratio."
+      "Description": "Appears unused by the game (retail always 1)."
     },
     {
       "Field": "blendType",
       "Name": "Blend Type",
-      "Description": "The type of alpha blend."
+      "Description": "Blend mode of the phantom shader, 0-3. Other values aren't handled (retail row 290 uses 4)."
     },
     {
       "Field": "isEdgeSubtract",
       "Name": "Perform Edge Color Subtraction",
-      "Description": "Whether to perform edge color subtraction."
+      "Description": "If set, the shader subtracts the edge colour instead of adding it. Retail: row 290 only."
     },
     {
       "Field": "isFrontSubtract",
       "Name": "Perform Front Color Subtraction",
-      "Description": "Is it front color subtraction?"
+      "Description": "If set, the shader subtracts the front colour instead of adding it."
     },
     {
       "Field": "isNo2Pass",
       "Name": "Is 1 Pass Only",
-      "Description": "Do you not do 2pass?"
+      "Description": "Appears unused by the game (retail always 0)."
     },
     {
       "Field": "edgePower",
-      "Name": "Edge Width",
-      "Description": "Edge width"
+      "Name": "Edge Power",
+      "Description": "Edge (rim) power sent to the phantom shader, which shapes the rim glow. Retail 0.1-8, default 1."
     },
     {
       "Field": "glowScale",
       "Name": "Glow Strength",
-      "Description": "Glow strength"
+      "Description": "Glow strength sent to the phantom shader. 0: no glow. Retail 0-10."
     }
   ]
 }

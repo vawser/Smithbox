@@ -2,42 +2,42 @@
   "Param": "MENUPROPERTY_SPEC",
   "Type": "MENUPROPERTY_SPEC",
   "Name": "MENUPROPERTY_SPEC",
-  "Description": null,
+  "Description": "Properties shown in the item, equipment and status panels. The row ID is the property ID the game fills with a value (MenuPropertyLayoutParam places it); the row sets its caption, icon, comparison and number format.",
   "Fields": [
     {
       "Field": "CaptionTextID",
       "Name": "Caption Text ID",
-      "Description": ""
+      "Description": "Menu text shown as the property's label. 0 or less: no label. A layout row's own Caption Text ID overrides it."
     },
     {
       "Field": "IconID",
       "Name": "Icon ID",
-      "Description": ""
+      "Description": "Icon shown beside the property. -1: no icon."
     },
     {
       "Field": "RequiredPropertyID",
-      "Name": "Required Property ID",
-      "Description": ""
+      "Name": "Requirement Property ID",
+      "Description": "Makes this value a requirement: it is shown as not met when it is greater than the value of this property (retail: the attribute requirements check the player's attributes, e.g. 360–364 against 10103–10109). Compare Type is then ignored. 0: not a requirement."
     },
     {
       "Field": "CompareType",
       "Name": "Compare Type",
-      "Description": ""
+      "Description": "How the value is judged when two items are compared. 1: higher is better. 2: lower is better. 0: not compared."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "FormatType",
       "Name": "Format Type",
-      "Description": ""
+      "Description": "How the value is written. If MenuValueTableParam has a row with this ID, that row and the rows with the following IDs turn the value into text (retail tables: 50 equip load, 90 consumable, 100 scaling letter, 110, 120 weapon type, 300 pot type, 400 affinity). Otherwise: 0 plain number; 1 whole number with + when 0 or more; 2 plain number, \"-\" when 0 or less; 3 (1 − value) × 100 as a whole number; 4 value × 1000, rounded; 10/11/12 1/2/3 decimals; 20/21/22 (1 − value) × 100 with 1/2/3 decimals; 100 scaling letter (S from 141, A 101, B 81, C 51, D 21, E 1, else \"-\"); any other value plain number."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

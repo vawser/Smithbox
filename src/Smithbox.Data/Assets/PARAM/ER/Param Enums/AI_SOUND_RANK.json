@@ -39,7 +39,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Auditory Hallucination"
+          "Text": "Auditory Hallucination (Not Heard)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No AI listens for this rank."
         }
       ]
     },
@@ -75,7 +81,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Weak Soul Coin"
+          "Text": "Sound Behavior ID"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only heard by characters whose NpcThinkParam Sound Behavior IDs include this sound behaviour ID."
         }
       ]
     },
@@ -84,7 +96,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Behavior ID Reference"
+          "Text": "Unknown"
         }
       ]
     },

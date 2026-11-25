@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mode 0"
+          "Text": "Fade Out Old Decal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "An existing nearby decal fades out over its own fade-out time."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mode 1"
+          "Text": "Skip New Decal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The new decal is not placed."
         }
       ]
     }

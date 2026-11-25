@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Plain Number"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Signed Whole Number"
         }
       ]
     },
@@ -30,7 +30,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Number, Dash When 0 or Less"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1 - Value) x 100"
         }
       ]
     },
@@ -39,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Value x 1000"
         }
       ]
     },
@@ -48,7 +57,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 10"
+          "Text": "1 Decimal"
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "2 Decimals"
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "3 Decimals"
         }
       ]
     },
@@ -57,7 +84,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 20"
+          "Text": "(1 - Value) x 100, 1 Decimal"
+        }
+      ]
+    },
+    {
+      "Key": "21",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "(1 - Value) x 100, 2 Decimals"
         }
       ]
     },
@@ -66,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 22"
+          "Text": "(1 - Value) x 100, 3 Decimals"
         }
       ]
     },
@@ -75,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 50"
+          "Text": "Value Table: Equip Load"
         }
       ]
     },
@@ -84,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 90"
+          "Text": "Value Table: Consumable/Reusable"
         }
       ]
     },
@@ -93,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 100"
+          "Text": "Scaling Grade"
         }
       ]
     },
@@ -102,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 110"
+          "Text": "Value Table 110"
         }
       ]
     },
@@ -111,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 120"
+          "Text": "Value Table: Weapon Type"
         }
       ]
     },
@@ -120,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 300"
+          "Text": "Value Table: Pot Type"
         }
       ]
     },
@@ -129,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 400"
+          "Text": "Value Table: Affinity"
         }
       ]
     }

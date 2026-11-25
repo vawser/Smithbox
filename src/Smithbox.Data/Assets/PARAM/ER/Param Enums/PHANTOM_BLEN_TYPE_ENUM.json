@@ -48,7 +48,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Unsupported"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Not handled by the game; gives an undefined blend mode."
         }
       ]
     }

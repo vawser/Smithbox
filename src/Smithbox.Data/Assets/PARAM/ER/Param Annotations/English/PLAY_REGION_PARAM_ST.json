@@ -2,442 +2,442 @@
   "Param": "PLAY_REGION_PARAM_ST",
   "Type": "PLAY_REGION_PARAM_ST",
   "Name": "PLAY_REGION_PARAM_ST",
-  "Description": null,
+  "Description": "Multiplayer and online rules for an area of a map. The current row is the Play Region ID of the collision the player stands on, or of an MSB Play Region they are inside (the higher priority wins). Controls whether multiplayer can start, invasions, white and red signs, summoning-pool signs, bloodstains, messages and phantoms, position saving, warp items, invasion point search and the world-map marker. A missing row uses row 0.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Not read by the retail game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "matchAreaId",
       "Name": "Match Area ID",
-      "Description": "Simple match area ID"
+      "Description": "Matchmaking area sent with online requests from this region. When the player moves between regions, a placed summoning-pool sign is kept only while the new region has the same value (or still allows the sign)."
     },
     {
       "Field": "multiPlayStartLimitEventFlagId",
       "Name": "Multiplayer Start Limit - Event Flag ID",
-      "Description": "Multiplayer start limit event flag ID"
+      "Description": "Event flag that gates all multiplayer in this region (invasions, white and red signs, summoning pools). Multiplayer is blocked while the flag is in its Target Flag State. 0: never blocked."
     },
     {
       "Field": "otherDisableDistance",
-      "Name": "Disable Intrusion if Other Ghost In Range",
-      "Description": "Other distances that cannot be invaded by spirits. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position."
+      "Name": "Invasion Point Min Distance",
+      "Description": "Invasion points closer than this to the host (in metres) are skipped when an invader's spawn point is chosen. Retail: 10."
     },
     {
       "Field": "pcPositionSaveLimitEventFlagId",
       "Name": "Player Position Save Limit - Event Flag ID",
-      "Description": "PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)"
+      "Description": "Event flag that allows saving the player's position in this region: saved while the flag is on, not saved while it is off. 0: always saved. Retail mostly uses the area's boss-defeat flag or flag 6001."
     },
     {
       "Field": "bossAreaId",
       "Name": "Boss Area ID",
-      "Description": "Areas with the same ID are treated as the same boss area."
+      "Description": "Regions with the same value count as one boss area: a placed summon sign is kept when the player moves between them. It also selects the MapMimicryEstablishmentParam row (Mimic's Veil disguise effects) used in the area; a missing row uses row 0. Retail uses the boss's flag ID (e.g. 10000800)."
     },
     {
       "Field": "cultNpcWhiteGhostEntityId_byFree",
       "Name": "White Phantom Entity ID - Free Frame",
-      "Description": "NPC White Spirit Summon Ritual Summon The beginning of the free frame ID used as the NPC's entity ID"
+      "Description": "Appears unused by the game. Retail sets 180 on rows 981001–981011 and 4500000–4502000."
     },
     {
       "Field": "bMapGuradianRegion",
       "Name": "Is Map Guardian Region",
-      "Description": "Whether to increase or decrease the frame of the map protection area"
+      "Description": "When on, white-sign cooldowns in this region use the Guardian columns of WhiteSignCoolTimeParam instead of the Normal columns (applies only while multiplayer can start here). Retail: off on every row."
     },
     {
       "Field": "bYellowCostumeRegion",
       "Name": "Is Yellow Monk Region",
-      "Description": "Is it the old man sign area of yellow robe?"
+      "Description": "Marks signs created in this region with the Yellow Monk flag. Retail: on for rows 981001–981005 and 4500000–4502000 (the m45 Colosseum)."
     },
     {
       "Field": "multiPlayStartLimitEventFlagId_targetFlagState",
       "Name": "Target Flag State - Multiplayer Start Limit ID [1]",
-      "Description": "Flag state that limits multiplayer start restriction event flag ID"
+      "Description": "Flag state (on/off) of Multiplayer Start Limit that blocks multiplayer."
     },
     {
       "Field": "breakInLimitEventFlagId_1_targetFlagState",
       "Name": "Target Flag State - Invasion Start Limit ID [1]",
-      "Description": "Flag state that limits intrusion restriction event flag ID1"
+      "Description": "Flag state (on/off) of Invasion Limit flag 1 that blocks invasions. Retail: off, with flag 6000 (invasions allowed once flag 6000 is on)."
     },
     {
       "Field": "whiteSignLimitEventFlagId_1_targetFlagState",
       "Name": "Target Flag State - White Sign Start Limit ID [1]",
-      "Description": "Flag state that limits white sign restriction event flag ID1"
+      "Description": "Flag state (on/off) of White Sign Limit flag 1 that blocks white signs. Retail: off, with flag 6000."
     },
     {
       "Field": "redSignLimitEventFlagId_1_targetFlagState",
       "Name": "Target Flag State - Red Sign Start Limit ID [1]",
-      "Description": "Flag state that limits red sign limit event flag ID1"
+      "Description": "Flag state (on/off) of Red Sign Limit flag 1 that blocks red signs. Retail: off, with flag 6000."
     },
     {
       "Field": "breakInLimitEventFlagId_2_targetFlagState",
       "Name": "Target Flag State - Invasion Start Limit ID [2]",
-      "Description": "Flag state that limits intrusion restriction event flag ID2"
+      "Description": "Flag state (on/off) of Invasion Limit flag 2 that blocks invasions."
     },
     {
       "Field": "breakInLimitEventFlagId_3_targetFlagState",
       "Name": "Target Flag State - Invasion Start Limit ID [3]",
-      "Description": "Flag state that limits intrusion restriction event flag ID3"
+      "Description": "Flag state (on/off) of Invasion Limit flag 3 that blocks invasions."
     },
     {
       "Field": "whiteSignLimitEventFlagId_2_targetFlagState",
       "Name": "Target Flag State - White Sign Start Limit ID [2]",
-      "Description": "Flag state that limits white sign restriction event flag ID2"
+      "Description": "Flag state (on/off) of White Sign Limit flag 2 that blocks white signs."
     },
     {
       "Field": "warpItemUsePermitBonfireId_1",
       "Name": "Warp Item Usage Permitted - Bonfire ID [1]",
-      "Description": "Bonfire entity ID1 used to determine whether to allow the use of warp items"
+      "Description": "Site of Grace entity ID. If any of the 5 is set, items marked as Bonfire Warp Item can be used here only once one of the listed graces is active. All 0: no restriction. Retail: 0."
     },
     {
       "Field": "warpItemUsePermitBonfireId_2",
       "Name": "Warp Item Usage Permitted - Bonfire ID [2]",
-      "Description": "Bonfire entity ID 2 used to determine permission to use warp items"
+      "Description": "Site of Grace entity ID 2. See Warp Item Usage Permitted - Bonfire ID [1]."
     },
     {
       "Field": "warpItemUsePermitBonfireId_3",
       "Name": "Warp Item Usage Permitted - Bonfire ID [3]",
-      "Description": "Bonfire entity ID 3 used to determine permission to use warp items"
+      "Description": "Site of Grace entity ID 3. See Warp Item Usage Permitted - Bonfire ID [1]."
     },
     {
       "Field": "warpItemUsePermitBonfireId_4",
       "Name": "Warp Item Usage Permitted - Bonfire ID [4]",
-      "Description": "Bonfire entity ID 4 used to determine permission to use warp items"
+      "Description": "Site of Grace entity ID 4. See Warp Item Usage Permitted - Bonfire ID [1]."
     },
     {
       "Field": "warpItemUsePermitBonfireId_5",
       "Name": "Warp Item Usage Permitted - Bonfire ID [5]",
-      "Description": "Bonfire entity ID 5 used to determine permission to use warp items"
+      "Description": "Site of Grace entity ID 5. See Warp Item Usage Permitted - Bonfire ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_1",
       "Name": "Warp Item Prohibition - Event Flag ID [1]",
-      "Description": "Event flag ID 1 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID"
+      "Description": "Event flag: while any of the 5 flags is on, items marked as Warp Prohibited can't be used in this region. 0: unused slot. Retail: 0."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_2",
       "Name": "Warp Item Prohibition - Event Flag ID [2]",
-      "Description": "Event flag ID 2 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID"
+      "Description": "Event flag 2. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_3",
       "Name": "Warp Item Prohibition - Event Flag ID [3]",
-      "Description": "Event flag ID 3 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID"
+      "Description": "Event flag 3. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_4",
       "Name": "Warp Item Prohibition - Event Flag ID [4]",
-      "Description": "Event flag ID 4 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID"
+      "Description": "Event flag 4. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "warpItemProhibitionEventFlagId_5",
       "Name": "Warp Item Prohibition - Event Flag ID [5]",
-      "Description": "Event flag ID 5 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID"
+      "Description": "Event flag 5. See Warp Item Prohibition - Event Flag ID [1]."
     },
     {
       "Field": "enableBloodstain",
       "Name": "Enable Bloodstain",
-      "Description": "Effective bloodstain / death illusion"
+      "Description": "When off, other players' bloodstains are not downloaded in this region. Retail: off for row 0 and the m45 Colosseum rows (4500000–4502000)."
     },
     {
       "Field": "enableBloodMessage",
       "Name": "Enable Blood Message",
-      "Description": "Blood character valid"
+      "Description": "When off, other players' messages are not downloaded in this region. Retail: off for row 0 and the m45 Colosseum rows (4500000–4502000)."
     },
     {
       "Field": "enableGhost",
       "Name": "Enable Ghost",
-      "Description": "Phantom effective"
+      "Description": "When off, other players' wandering phantoms are not downloaded in this region. Retail: off for row 0 and the m45 Colosseum rows (4500000–4502000)."
     },
     {
       "Field": "dispMask00",
       "Name": "Display Mask M00 (World Map)",
-      "Description": "Whether to display on map M00"
+      "Description": "Shows this region's world-map marker on the Lands Between map."
     },
     {
       "Field": "dispMask01",
       "Name": "Display Mask M01 (Underground Map)",
-      "Description": "Whether to display on map M01"
+      "Description": "Shows this region's world-map marker on the underground map."
     },
     {
       "Field": "whiteSignLimitEventFlagId_3_targetFlagState",
       "Name": "Target Flag State - White Sign Start Limit ID [3]",
-      "Description": "Flag state that limits white sign restriction event flag ID3"
+      "Description": "Flag state (on/off) of White Sign Limit flag 3 that blocks white signs."
     },
     {
       "Field": "redSignLimitEventFlagId_2_targetFlagState",
       "Name": "Target Flag State - Red Sign Start Limit ID [2]",
-      "Description": "Flag state that limits red sign limit event flag ID2"
+      "Description": "Flag state (on/off) of Red Sign Limit flag 2 that blocks red signs."
     },
     {
       "Field": "redSignLimitEventFlagId_3_targetFlagState",
       "Name": "Target Flag State - Red Sign Start Limit ID [3]",
-      "Description": "Flag state that limits red sign limit event flag ID3"
+      "Description": "Flag state (on/off) of Red Sign Limit flag 3 that blocks red signs."
     },
     {
       "Field": "isAutoIntrudePoint",
       "Name": "Is Automatic Invasion Point",
-      "Description": "Is it an intrusion point automatic generation? If it is set to , the intrusion position is searched by the automatically generated logic for the intrusion point."
+      "Description": "When on, invasion points are generated automatically near the nearest open boss in Boss ID 1–16 (boss positions from GameAreaParam). Retail: on for 90 open-world rows."
     },
     {
       "Field": "pad1_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dispMask10",
       "Name": "Display Mask M10 (DLC World Map)",
-      "Description": "Whether to display on map M10"
+      "Description": "Shows this region's world-map marker on the Realm of Shadow map."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "multiPlayHASHostLimitEventFlagId",
-      "Name": "Block Yellow Monk Multiplayer - Event Flag ID",
-      "Description": "Yellow Coat Host Restriction Event Flag - When this flag is turned on, multiplayer as a host of Yellow Coat is prohibited. It is assumed that the block clear flag will be inserted. 0 - No limit"
+      "Name": "Yellow Monk Host Limit - Event Flag ID",
+      "Description": "A player with the Yellow Monk host effect (SpEffect state 330) can host multiplayer here while this flag is off (and event flag 2100 is off). Needs multiplayer to be allowed by Multiplayer Start Limit. 0: never. Retail: 6000."
     },
     {
       "Field": "otherMaxDistance",
-      "Name": "Other Ghost Invasion Range - Max Limit",
-      "Description": "Other ghost invasion range upper limit. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position."
+      "Name": "Invasion Point Max Distance",
+      "Description": "Invasion points farther than this from the host (in metres) are skipped when an invader's spawn point is chosen. Retail: 80."
     },
     {
       "Field": "signPuddleOpenEventFlagId",
       "Name": "Summoning Pool Open - Event Flag ID",
-      "Description": "Sign accumulation release event flag ID"
+      "Description": "Appears unused by the game. Retail sets 6000/6001 on rows 981001–981005."
     },
     {
       "Field": "areaNo",
       "Name": "Map Area",
-      "Description": "Area number (mXX_00_00_00). Data for specifying the display position in the map menu"
+      "Description": "Map area number (mAA_00_00_00) of the map that World-Map Marker Position is relative to."
     },
     {
       "Field": "gridXNo",
       "Name": "Map Block",
-      "Description": "Grid X number (m00_XX_00_00). Data for specifying the display position in the map menu"
+      "Description": "Map block number (m00_BB_00_00) of the map that World-Map Marker Position is relative to."
     },
     {
       "Field": "gridZNo",
       "Name": "Map Region",
-      "Description": "Grid Z number (m00_00_XX_00). Data for specifying the display position in the map menu"
+      "Description": "Map region number (m00_00_CC_00) of the map that World-Map Marker Position is relative to."
     },
     {
       "Field": "pad4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "posX",
       "Name": "Coordinate - X",
-      "Description": "X coordinates (relative coordinates from the specified map). Data for specifying the display position in the map menu"
+      "Description": "X position of this region's world-map marker, local to the map in Map Area/Block/Region."
     },
     {
       "Field": "posY",
       "Name": "Coordinate - Y",
-      "Description": "Y coordinates (relative coordinates from the specified map). Data for specifying the display position in the map menu. Not actually used, but keep XYZ aligned"
+      "Description": "Y position of this region's world-map marker, local to the map in Map Area/Block/Region."
     },
     {
       "Field": "posZ",
       "Name": "Coordinate - Z",
-      "Description": "Z coordinates (relative coordinates from the specified map). Data for specifying the display position in the map menu"
+      "Description": "Z position of this region's world-map marker, local to the map in Map Area/Block/Region."
     },
     {
       "Field": "breakInLimitEventFlagId_1",
-      "Name": "Invasion Restriction - Event Flag ID [1]",
-      "Description": "Intrusion restriction event flag ID1"
+      "Name": "Invasion Limit - Event Flag ID [1]",
+      "Description": "Event flag for invasions (this player being invaded). Invasions are allowed while any set Invasion Limit flag (1–3) differs from its Target Flag State. If all three are 0, invasions are never allowed. Also needs Multiplayer Start Limit and the Boss ID check to pass."
     },
     {
       "Field": "whiteSignLimitEventFlagId_1",
-      "Name": "Summon Restriction - Event Flag ID [1]",
-      "Description": "White sign limit event flag ID1"
+      "Name": "White Sign Limit - Event Flag ID [1]",
+      "Description": "Event flag for white (cooperative) signs. White signs are allowed while any set White Sign Limit flag (1–3) differs from its Target Flag State. If all three are 0, white signs are never allowed. Also needs Multiplayer Start Limit and the Boss ID check to pass."
     },
     {
       "Field": "matchAreaSignCreateLimitEventFlagId",
       "Name": "Summoning Pool Restriction - Event Flag ID",
-      "Description": "Sign accumulation registration restriction Event flag ID (Flag ON - Sign accumulation registration is permitted Flag OFF - Sign accumulation registration is prohibited 0 - Sign accumulation registration is always permitted)"
+      "Description": "Event flag that allows summoning-pool signs in this region: allowed while the flag is on, blocked while it is off. 0: always allowed. Also needs multiplayer to be allowed and at least one White Sign Limit (for white signs) or Red Sign Limit (for red signs) flag to be set."
     },
     {
       "Field": "signAimId_1",
       "Name": "Sign Aim ID [1]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game (the multiplayer purpose list uses fixed texts). Retail sets it on 141 rows."
     },
     {
       "Field": "signAimId_2",
       "Name": "Sign Aim ID [2]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signAimId_3",
       "Name": "Sign Aim ID [3]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signAimId_4",
       "Name": "Sign Aim ID [4]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signAimId_5",
       "Name": "Sign Aim ID [5]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signAimId_6",
       "Name": "Sign Aim ID [6]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signAimId_7",
       "Name": "Sign Aim ID [7]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "signAimId_8",
       "Name": "Sign Aim ID [8]",
-      "Description": "Multi-purpose ID to be displayed in the list when setting the purpose"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "redSignLimitEventFlagId_1",
       "Name": "Red Sign Limit - Event Flag ID [1]",
-      "Description": "Red sign limit event flag ID1"
+      "Description": "Event flag for red (hostile) signs. Red signs are allowed while any set Red Sign Limit flag (1–3) differs from its Target Flag State. If all three are 0, red signs are never allowed. Also needs Multiplayer Start Limit to pass."
     },
     {
       "Field": "breakInLimitEventFlagId_2",
       "Name": "Invasion Limit - Event Flag ID [2]",
-      "Description": "Intrusion restriction event flag ID2"
+      "Description": "Event flag 2 for invasions. See Invasion Limit - Event Flag ID [1]."
     },
     {
       "Field": "breakInLimitEventFlagId_3",
       "Name": "Invasion Limit - Event Flag ID [3]",
-      "Description": "Intrusion restriction event flag ID3"
+      "Description": "Event flag 3 for invasions. See Invasion Limit - Event Flag ID [1]."
     },
     {
       "Field": "whiteSignLimitEventFlagId_2",
       "Name": "White Sign Limit - Event Flag ID [2]",
-      "Description": "White sign limit event flag ID2"
+      "Description": "Event flag 2 for white signs. See White Sign Limit - Event Flag ID [1]."
     },
     {
       "Field": "whiteSignLimitEventFlagId_3",
       "Name": "White Sign Limit - Event Flag ID [3]",
-      "Description": "White sign limit event flag ID3"
+      "Description": "Event flag 3 for white signs. See White Sign Limit - Event Flag ID [1]."
     },
     {
       "Field": "redSignLimitEventFlagId_2",
       "Name": "Red Sign Limit - Event Flag ID [2]",
-      "Description": "Red sign limit event flag ID2"
+      "Description": "Event flag 2 for red signs. See Red Sign Limit - Event Flag ID [1]."
     },
     {
       "Field": "redSignLimitEventFlagId_3",
       "Name": "Red Sign Limit - Event Flag ID [3]",
-      "Description": "Red sign limit event flag ID3"
+      "Description": "Event flag 3 for red signs. See Red Sign Limit - Event Flag ID [1]."
     },
     {
       "Field": "bossId_1",
       "Name": "Boss ID [1]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row. White signs and invasions are allowed only if some listed boss has its challenge flag on (or none) and its defeat flag off; all 16 at 0: no boss check. With Is Automatic Invasion Point on, invasion points are placed near the nearest such boss. 0: unused slot."
     },
     {
       "Field": "bossId_2",
       "Name": "Boss ID [2]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 2. See Boss ID [1]."
     },
     {
       "Field": "bossId_3",
       "Name": "Boss ID [3]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 3. See Boss ID [1]."
     },
     {
       "Field": "bossId_4",
       "Name": "Boss ID [4]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 4. See Boss ID [1]."
     },
     {
       "Field": "bossId_5",
       "Name": "Boss ID [5]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 5. See Boss ID [1]."
     },
     {
       "Field": "bossId_6",
       "Name": "Boss ID [6]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 6. See Boss ID [1]."
     },
     {
       "Field": "bossId_7",
       "Name": "Boss ID [7]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 7. See Boss ID [1]."
     },
     {
       "Field": "bossId_8",
       "Name": "Boss ID [8]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 8. See Boss ID [1]."
     },
     {
       "Field": "bossId_9",
       "Name": "Boss ID [9]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 9. See Boss ID [1]."
     },
     {
       "Field": "bossId_10",
       "Name": "Boss ID [10]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 10. See Boss ID [1]."
     },
     {
       "Field": "bossId_11",
       "Name": "Boss ID [11]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 11. See Boss ID [1]."
     },
     {
       "Field": "bossId_12",
       "Name": "Boss ID [12]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 12. See Boss ID [1]."
     },
     {
       "Field": "bossId_13",
       "Name": "Boss ID [13]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 13. See Boss ID [1]."
     },
     {
       "Field": "bossId_14",
       "Name": "Boss ID [14]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 14. See Boss ID [1]."
     },
     {
       "Field": "bossId_15",
       "Name": "Boss ID [15]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 15. See Boss ID [1]."
     },
     {
       "Field": "bossId_16",
       "Name": "Boss ID [16]",
-      "Description": "Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ."
+      "Description": "GameAreaParam boss row 16. See Boss ID [1]."
     },
     {
       "Field": "mapMenuUnlockEventId",
       "Name": "Map Menu Unlock - Event Flag ID",
-      "Description": "Map display_event flag ID (0 - always displayed). Only when this event flag is set, it will be displayed in a lively manner in the map menu."
+      "Description": "Event flag: this region's world-map marker is shown only while the flag is on. 0: always shown."
     },
     {
       "Field": "pad5",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

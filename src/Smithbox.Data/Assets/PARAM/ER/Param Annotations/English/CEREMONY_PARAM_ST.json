@@ -2,37 +2,37 @@
   "Param": "CEREMONY_PARAM_ST",
   "Type": "CEREMONY_PARAM_ST",
   "Name": "CEREMONY_PARAM_ST",
-  "Description": null,
+  "Description": "Ceremonies: alternate states of a map block. While a block's ceremony is active, its row can override the place name, the save data's map name and the multiplayer area (Play Region) of the player's location. Retail row IDs start with the map number and end in the ceremony number × 10 (11000020: ceremony 2 of a Leyndell block).",
   "Fields": [
     {
       "Field": "eventLayerId",
       "Name": "Event Layer ID",
-      "Description": "Event maker layer ID"
+      "Description": "Event layer of the ceremony. No game read of this value was found. Retail: equals the ceremony number in the row ID."
     },
     {
       "Field": "mapStudioLayerId",
       "Name": "Map Studio Layer ID",
-      "Description": "Map Studio Layer ID"
+      "Description": "Map (MSB) layer of the ceremony. No game read of this value was found. Retail: equals the ceremony number in the row ID."
     },
     {
       "Field": "multiPlayAreaOffset",
       "Name": "Play Region ID Offset",
-      "Description": "Multiplayer area ID offset. For example, if you enter 100, the multiplayer area ID will be offset by 100."
+      "Description": "Added to the multiplayer area (Play Region) ID found for the player's position, which is used for online play. 0: no change. Retail: set only on the test-map rows (18999, 4)."
     },
     {
       "Field": "overrideMapPlaceNameId",
       "Name": "Override Map Place Name ID",
-      "Description": "Override the map name ID_place name display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID."
+      "Description": "Replaces the place name (Place Name text) of the player's current location. -1: no override; any other value, including 0 and other negatives, replaces it. Retail: set only on the test-map rows."
     },
     {
       "Field": "overrideSaveMapNameId",
       "Name": "Override Save Map Name ID",
-      "Description": "Map name ID_Overwrites the save data display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID."
+      "Description": "Replaces the location name ID kept for the save data. -1: no override; any other value replaces it. Retail: set only on the test-map rows."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

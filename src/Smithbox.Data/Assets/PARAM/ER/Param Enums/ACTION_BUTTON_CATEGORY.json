@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 0"
+          "Text": "0: Lost Runes / System"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 1"
+          "Text": "1: Confirm"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 2"
+          "Text": "2: Materials / Ground Items"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 3"
+          "Text": "3: Pick Up Item"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 4"
+          "Text": "4: Talk"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 5"
+          "Text": "5: Open / Examine / Levers"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 6"
+          "Text": "6: Own Summon Sign"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 7"
+          "Text": "7: Summon Signs"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -84,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 8"
+          "Text": "8: Bloodstains"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -93,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 9"
+          "Text": "9: Own Message"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -102,7 +162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 10"
+          "Text": "10: Read Message"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -111,7 +177,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 11"
+          "Text": "11: Talk (Special)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     },
@@ -120,7 +192,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 12"
+          "Text": "12: Ride"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "13: Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No retail use."
         }
       ]
     },
@@ -129,7 +222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 14"
+          "Text": "14: Map / Other"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Named from retail use."
         }
       ]
     }

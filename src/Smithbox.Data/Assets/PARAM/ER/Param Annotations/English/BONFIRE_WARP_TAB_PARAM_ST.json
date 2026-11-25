@@ -2,42 +2,42 @@
   "Param": "BONFIRE_WARP_TAB_PARAM_ST",
   "Type": "BONFIRE_WARP_TAB_PARAM_ST",
   "Name": "BONFIRE_WARP_TAB_PARAM_ST",
-  "Description": null,
+  "Description": "Tabs of the Site of Grace warp list. Graces are grouped into subcategories (BonfireWarpSubCategoryParam), and each subcategory names the tab here that it's listed in. Only tabs that hold at least one listed grace appear.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Tab Display Name Text ID [MenuText]"
+      "Description": "Tab name, from Menu Text. Below 0: every grace in this tab is left out of the warp list."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Tab display order sort ID. Line up from the left with aim"
+      "Description": "Order of the tabs, ascending from the left. Retail: -1 on Roundtable Hold, so it comes first."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Tab icon ID. Menu resource compliance"
+      "Description": "Icon of the tab. Retail: a distinct icon per tab (1-69)."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

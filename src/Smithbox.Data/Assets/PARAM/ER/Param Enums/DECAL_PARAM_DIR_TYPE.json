@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Spawn Point"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the spawn point orientation."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "World Axes at Spawn Point"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses world axes at the spawn point position."
         }
       ]
     },
@@ -30,7 +42,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Attacker Facing (Hit Decals)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the attacker orientation for hit decals; the spawn point for other sources."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hit Character Facing"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Uses the hit character orientation for hit decals. No retail use."
         }
       ]
     }

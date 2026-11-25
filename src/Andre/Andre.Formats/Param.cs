@@ -1119,6 +1119,25 @@ public class Param : SoulsFile<Param>
             return Parent._paramData.DataEquals(other.Parent._paramData, other.DataIndex, DataIndex);
         }
 
+        /// <summary>
+        ///     A copy of the raw field data of this row (RowSize bytes, in the param's endianness).
+        /// </summary>
+        public byte[] GetRawData()
+        {
+            return Parent._paramData.DataForElement(DataIndex).ToArray();
+        }
+
+        /// <summary>
+        ///     Overwrites the raw field data of this row. The data must be exactly RowSize bytes.
+        /// </summary>
+        public void SetRawData(ReadOnlySpan<byte> data)
+        {
+            Span<byte> target = Parent._paramData.DataForElement(DataIndex);
+            if (data.Length != target.Length)
+                throw new ArgumentException($"Row data is {data.Length} bytes, the param's rows are {target.Length} bytes.");
+            data.CopyTo(target);
+        }
+
         ~Row()
         {
             Parent._paramData.RemoveAt(DataIndex);

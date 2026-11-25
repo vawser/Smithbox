@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Rarely Replan"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replans only when the NPC is in neither of two AI states."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Sometimes Replan"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Also replans during the first of those states."
         }
       ]
     },
@@ -30,7 +42,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Always Replan"
         }
       ]
     }

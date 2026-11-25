@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Blank"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Slider"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Colour Picker"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Icon Grid"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Option List"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 10"
+          "Text": "Submenu"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 11"
+          "Text": "End Submenu"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 12"
+          "Text": "Similar Face"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 14"
+          "Text": "Load Favourite"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 15"
+          "Text": "Save Favourite"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 20"
+          "Text": "Body Type"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 21"
+          "Text": "Age"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 22"
+          "Text": "Voice"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 23"
+          "Text": "Origin"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 24"
+          "Text": "Keepsake"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 25"
+          "Text": "Base Template"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 26"
+          "Text": "Name"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 99"
+          "Text": "Finish"
         }
       ]
     }

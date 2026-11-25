@@ -2,32 +2,32 @@
   "Param": "MENUPROPERTY_LAYOUT",
   "Type": "MENUPROPERTY_LAYOUT",
   "Name": "MENUPROPERTY_LAYOUT",
-  "Description": null,
+  "Description": "Where the item, equipment and status panels show each property. A panel starts at a fixed row ID and takes that row and the rows after it in file order, up to the first row with an empty Layout Path.",
   "Fields": [
     {
       "Field": "LayoutPath",
       "Name": "Layout Path",
-      "Description": ""
+      "Description": "Name of the menu element (in the panel's layout) that shows this entry, e.g. \"TopItem_0\". Empty: ends the panel's list of rows."
     },
     {
       "Field": "PropertyID",
-      "Name": "Menu Property ID",
-      "Description": ""
+      "Name": "Property ID",
+      "Description": "MenuPropertySpecParam row (property) whose value is shown in this element. The element is hidden when the property gives no text and Caption Text ID is 0 or less."
     },
     {
       "Field": "CaptionTextID",
       "Name": "Caption Text ID",
-      "Description": "If a valid text ID is set, this will be displayed in preference to the property name."
+      "Description": "Menu text shown as the label, used instead of the property's own caption. 0 or less: use the property's caption."
     },
     {
       "Field": "HelpTextID",
       "Name": "Help Text ID",
-      "Description": "Only if this is a valid text ID will it be selectable in the field help."
+      "Description": "Menu text shown in the field help when the cursor is on this element. 0 or less: the element has no help entry."
     },
     {
       "Field": "reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

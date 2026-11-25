@@ -1187,7 +1187,7 @@
     {
       "Field": "lockCameraParamId",
       "Name": "Lock Camera Param ID",
-      "Description": "LockCamParam row used when the player locks on to this character. A lock camera set on the character at runtime takes priority. -1: none."
+      "Description": "LockCamParam row used when the player locks on to this character. A lock camera set on the character at runtime takes priority. Its lock keep time also replaces the default one while this character is the target. -1: none."
     },
     {
       "Field": "spEffectID16",

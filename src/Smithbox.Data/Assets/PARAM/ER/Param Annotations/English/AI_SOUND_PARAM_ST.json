@@ -2,82 +2,82 @@
   "Param": "AI_SOUND_PARAM_ST",
   "Type": "AI_SOUND_PARAM_ST",
   "Name": "AI_SOUND_PARAM_ST",
-  "Description": "Determines the AI response to a sound. Typically triggered along side the actual sound event.",
+  "Description": "AI sounds: invisible sound events that NPCs can hear, emitted with footsteps, attacks, hits, items and SpEffects (usually alongside the real sound). Sets how far the sound carries, how long it lasts, who can hear it and how the NPC reacts and remembers it.",
   "Fields": [
     {
       "Field": "radius",
       "Name": "Radius",
-      "Description": "AI sound radius"
+      "Description": "How far the sound carries, in metres. Scaled by Radius Rate Type and, if Use SpEffect Radius Modifiers is set, by the emitter's and listener's SpEffect modifiers. An NPC hears it when its distance to the sound is within the radius plus its own hearing range (NpcThinkParam ear distance and cut distance). 0: no sound is created."
     },
     {
       "Field": "lifeFrame",
-      "Name": "Duration",
-      "Description": "Time for AI sound to remain"
+      "Name": "Lifetime",
+      "Description": "How long the sound stays in the world, in seconds; NPCs that come into range during that time still hear it. The same sound from the same source at about the same place and radius refreshes the existing one instead of adding another. 0: no sound is created."
     },
     {
       "Field": "bSpEffectEnable",
-      "Name": "Is Affected by Sound Radius Magnification",
-      "Description": "Whether it is affected by the special effect Sound Radius Magnification"
+      "Name": "Use SpEffect Radius Modifiers",
+      "Description": "If set, the radius is multiplied and offset by the emitter's and the listener's SpEffect sound radius modifiers (for example quieter footsteps). If not set, those modifiers are ignored."
     },
     {
       "Field": "type",
-      "Name": "Rate Type",
-      "Description": "AI sound type"
+      "Name": "Radius Rate Type",
+      "Description": "Rate applied to the radius. 0 Direct: none. 1 Moving: ×1 (no change in retail). 2 Attack: ×1.5 or ×1, depending on the attack that emits it."
     },
     {
       "Field": "opposeTarget",
       "Name": "Target: Hostile",
-      "Description": "Target:  Hostile"
+      "Description": "If set, characters hostile to the emitter can hear the sound."
     },
     {
       "Field": "friendlyTarget",
       "Name": "Target: Friendly",
-      "Description": "Target:  Allies"
+      "Description": "If set, characters friendly to the emitter can hear the sound."
     },
     {
       "Field": "selfTarget",
       "Name": "Target: Self",
-      "Description": "Target: myself"
+      "Description": "If set, the emitting character itself can hear the sound."
     },
     {
       "Field": "disableOnTargetPCompany",
       "Name": "Disable on Targeting Player",
-      "Description": "You can't listen while targeting your PC"
+      "Description": "If set, the sound is ignored by an NPC while a check on the NPC's current target passes (paramdef: while it is targeting the player's side; the check wasn't identified). Retail: 7 rows, mostly 99999-priority lure sounds."
     },
     {
       "Field": "rank",
-      "Name": "Rank",
-      "Description": "Character behavior (former: sound type)"
+      "Name": "Sound Rank",
+      "Description": "Kind of sound. NPCs check ranks in a fixed order (0, 1, 7, 2, 4, 5, 8, 9, 6; rank 3 is never checked), and ranks 2, 4, 5, 8 and 9 can be switched off per NPC. 0 normal and 1 important: the NPC reacts with its NpcThinkParam caution goal (normal / important). 7: heard only by NPCs listed by Sound Behavior ID. A new sound of a different rank can make the NPC replan (Replanning State)."
     },
     {
       "Field": "forgetTime",
       "Name": "Forget Time",
-      "Description": "Time to forget the sound target (overwrite) [sec]"
+      "Description": "How long (s) an NPC keeps the sound as its target after hearing it. Below 0: the NPC's NpcThinkParam Sound Target Forget Time. Rank 0 and 1 sounds last 1 s when the NPC's matching caution goal action is 14. Values below 1 act as 1 s."
     },
     {
       "Field": "priority",
       "Name": "Priority",
-      "Description": "AI sound priority"
+      "Description": "Which sound an NPC follows: it only takes a sound whose priority is at least that of the sound it already follows, and between equal priorities the nearer one. Higher wins."
     },
     {
       "Field": "soundBehaviorId",
       "Name": "Sound Behavior ID",
-      "Description": "Behavior ID"
+      "Description": "Rank 7: heard only by NPCs whose NpcThinkParam Sound Behavior ID 1-8 contains this value (-1 matches NPCs with an unused slot). The heard ID is also passed to the NPC's AI script, which picks the reaction. A different ID counts as a new sound for replanning."
     },
     {
       "Field": "aiSoundLevel",
       "Name": "AI Sound Level",
-      "Description": "How hard it is to hear"
+      "Description": "How hard the sound is to hear: heard only by NPCs whose hearing level (NpcThinkParam Ear Listen Level, or an SpEffect override) is at least this value. 1: nearly everyone hears it. 128: only NPCs with a level of 128 or more (also the level used when the NPC has no think param)."
     },
     {
       "Field": "replaningState",
       "Name": "Replanning State",
-      "Description": "AI state setting to run replanning when listening to AI sound"
+      "Description": "Whether hearing this as a new sound makes the NPC drop its current plan and replan. 0: only when the NPC is in neither of two AI states. 1: also during the first. 2: always (the two states weren't identified). Retail 2 on short cue sounds, 1 on rows 7000/8000."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mode 0"
+          "Text": "Top Menu Framing"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mode 1"
+          "Text": "Body Framing"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mode 2"
+          "Text": "Face Framing"
         }
       ]
     }

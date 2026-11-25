@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Equal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Matches when the value equals the row value."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "At Least"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Matches when the value is at least the row value."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Always"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Always matches."
         }
       ]
     }

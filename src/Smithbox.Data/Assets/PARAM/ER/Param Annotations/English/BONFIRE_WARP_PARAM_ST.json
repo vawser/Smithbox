@@ -2,407 +2,407 @@
   "Param": "BONFIRE_WARP_PARAM_ST",
   "Type": "BONFIRE_WARP_PARAM_ST",
   "Name": "BONFIRE_WARP_PARAM_ST",
-  "Description": null,
+  "Description": "The Sites of Grace: each row is one grace asset's world-map pin and fast-travel (warp list) entry. In the warp list a grace is grouped under its subcategory (BonfireWarpSubCategoryParam), and each subcategory belongs to a tab (BonfireWarpTabParam). A grace is shown only while it's unlocked, enabled for the current map, and at least one of its texts is visible.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "eventflagId",
-      "Name": "Event Flag ID",
-      "Description": "Release condition event flag ID"
+      "Name": "Unlock Event Flag ID",
+      "Description": "The grace's discovered flag. While it's on, the grace is lit, its pin shows on the world map and it's listed for warping; the grace asset's lit state is kept in step with this flag. 0: always unlocked. Retail: 71000 onward, one per grace."
     },
     {
       "Field": "bonfireEntityId",
-      "Name": "Bonfire Entity ID",
-      "Description": "Bonfire entity ID"
+      "Name": "Grace Entity ID",
+      "Description": "Entity ID of the grace asset this row describes. The game finds a grace's row by this ID (resting at it, its unlit SFX, its lit state, script warps), and the map pin keeps it as the warp destination. Opening the warp list at a grace selects that grace's tab."
     },
     {
       "Field": "pad4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "bonfireSubCategorySortId",
-      "Name": "Sort ID",
-      "Description": "Bonfire Warp Subcategory Sort ID. Specify the order (ascending order) in the same subcategory"
+      "Name": "Sort Order in Subcategory",
+      "Description": "Position of this grace within its subcategory in the warp list, ascending."
     },
     {
       "Field": "forbiddenIconId",
       "Name": "Warp Prohibition Icon ID",
-      "Description": "Icon ID when warp is prohibited"
+      "Description": "Map icon meant to replace Icon ID when warping to this grace isn't allowed. The pin is always created in the normal state and no switch to this icon was found, so it may never show. Retail: 2."
     },
     {
       "Field": "dispMinZoomStep",
-      "Name": "Display Zoom Step",
-      "Description": "Zoom step to display the bonfire (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)"
+      "Name": "Display Min Zoom Step",
+      "Description": "The pin is drawn only when the map zoom step is at least this (0 is fully zoomed out, +1 per zoom level). 0: always drawn. Retail: 0 on every row."
     },
     {
       "Field": "selectMinZoomStep",
-      "Name": "Selectable Zoom Step",
-      "Description": "A zoom step that allows you to select and snap a bonfire (0 for the most zoomed out state, +1 for each zoom). Can be selected and snapped when Selectable zoom step  current enlargement stage. The default is 0 (always selectable / snappable)"
+      "Name": "Selection Min Zoom Step",
+      "Description": "The pin can be selected (and the cursor snaps to it) only when the map zoom step is at least this (0 is fully zoomed out, +1 per zoom level). 0: always. Retail: 0 on every row."
     },
     {
       "Field": "bonfireSubCategoryId",
       "Name": "Subcategory ID",
-      "Description": "Bonfire Warp Subcategory Parameter ID (-1: Invalid). Set which subcategory it belongs to. If it is invalid, it will not be displayed in the bonfire list."
+      "Description": "The BonfireWarpSubCategoryParam row this grace is listed under; that subcategory's Tab ID gives the warp list tab. A grace whose subcategory row doesn't exist, or whose tab's Text ID is below 0, is left out of the warp list."
     },
     {
       "Field": "clearedEventFlagId",
       "Name": "Cleared Event Flag ID",
-      "Description": "Cleared event flag ID (0: always treated as cleared)"
+      "Description": "While this event flag is on, the pin shows its \"cleared\" mark. 0: never shows it. Unused in retail."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Icon ID"
+      "Description": "Map icon of the grace pin. Replaced by NPC Icon ID while a visible text is an NPC name. Retail: 1 (Table of Lost Grace: 48)."
     },
     {
       "Field": "dispMask00",
-      "Name": "Display Setting M00",
-      "Description": "Whether to display with M00"
+      "Name": "Show on Lands Between Map (M00)",
+      "Description": "The grace appears on the surface world map (M00): its pin, and its warp list entry while that map is shown."
     },
     {
       "Field": "dispMask01",
-      "Name": "Display Setting M01",
-      "Description": "Whether to display with M01"
+      "Name": "Show on Underground Map (M01)",
+      "Description": "The grace appears on the underground map (M01): its pin, and its warp list entry while that map is shown."
     },
     {
       "Field": "pad1_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dispMask02",
-      "Name": "Display Setting M02",
-      "Description": "Whether to display with M02"
+      "Name": "Show on Land of Shadow Map",
+      "Description": "The grace appears on the Land of Shadow map: its pin, and its warp list entry while that map is shown."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "areaNo",
       "Name": "Map Area",
-      "Description": "AA part of mAA_BB_CC_DD"
+      "Description": "AA part of the mAA_BB_CC_00 map the position is relative to (60 for the Lands Between overworld, 61 for the Land of Shadow)."
     },
     {
       "Field": "gridXNo",
-      "Name": "Map Block",
-      "Description": "BB part of mAA_BB_CC_DD"
+      "Name": "Map Block X",
+      "Description": "BB part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "gridZNo",
-      "Name": "Map Region",
-      "Description": "CC part of mAA_BB_CC_DD"
+      "Name": "Map Block Z",
+      "Description": "CC part of the mAA_BB_CC_00 map the position is relative to."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "posX",
       "Name": "Coordinate: X",
-      "Description": "X coordinate"
+      "Description": "X coordinate of the grace, relative to the map set by Map Area / Block X / Block Z. Places the pin on the world map."
     },
     {
       "Field": "posY",
       "Name": "Coordinate: Y",
-      "Description": "Y coordinate (not used)"
+      "Description": "Y (height) coordinate of the grace, relative to its map. Read with X and Z when the position is converted; the world map itself is top-down."
     },
     {
       "Field": "posZ",
       "Name": "Coordinate: Z",
-      "Description": "Z coordinate"
+      "Description": "Z coordinate of the grace, relative to the map set by Map Area / Block X / Block Z. Places the pin on the world map."
     },
     {
       "Field": "textId1",
       "Name": "Text ID [1]",
-      "Description": "The text ID to display. If the value is invalid (-1), nothing is displayed."
+      "Description": "Text shown for the grace on the map and in the warp list: a Place Name or NPC Name entry, picked by Text Type [1]. -1: none. The text is visible while all its set Enable flags are on and not all of its set Disable flags are on. A grace without any visible text is hidden from the map and the warp list."
     },
     {
       "Field": "textEnableFlagId1",
       "Name": "Text Enable Flag ID [1]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "Text 1 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [1]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId1",
       "Name": "Text Disable Flag ID [1]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "Text 1 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [1]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId2",
       "Name": "Text ID [2]",
-      "Description": "The text ID to display. If it is an invalid value (-2), nothing is displayed."
+      "Description": "Text 2 of the grace: a Place Name or NPC Name entry, picked by Text Type [2]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId2",
       "Name": "Text Enable Flag ID [2]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (1) is invalid, it will be treated as On."
+      "Description": "Text 2 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [2]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId2",
       "Name": "Text Disable Flag ID [2]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (1) is invalid, it will be treated as Off."
+      "Description": "Text 2 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [2]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId3",
       "Name": "Text ID [3]",
-      "Description": "The text ID to display. If it is an invalid value (-3), nothing is displayed."
+      "Description": "Text 3 of the grace: a Place Name or NPC Name entry, picked by Text Type [3]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId3",
       "Name": "Text Enable Flag ID [3]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (2) is invalid, it will be treated as On."
+      "Description": "Text 3 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [3]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId3",
       "Name": "Text Disable Flag ID [3]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (2) is invalid, it will be treated as Off."
+      "Description": "Text 3 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [3]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId4",
       "Name": "Text ID [4]",
-      "Description": "The text ID to display. If it is an invalid value (-4), nothing is displayed."
+      "Description": "Text 4 of the grace: a Place Name or NPC Name entry, picked by Text Type [4]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId4",
       "Name": "Text Enable Flag ID [4]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (3) is invalid, it will be treated as On."
+      "Description": "Text 4 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [4]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId4",
       "Name": "Text Disable Flag ID [4]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (3) is invalid, it will be treated as Off."
+      "Description": "Text 4 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [4]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId5",
       "Name": "Text ID [5]",
-      "Description": "The text ID to display. If it is an invalid value (-5), nothing is displayed."
+      "Description": "Text 5 of the grace: a Place Name or NPC Name entry, picked by Text Type [5]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId5",
       "Name": "Text Enable Flag ID [5]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (4) is invalid, it will be treated as On."
+      "Description": "Text 5 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [5]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId5",
       "Name": "Text Disable Flag ID [5]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (4) is invalid, it will be treated as Off."
+      "Description": "Text 5 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [5]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId6",
       "Name": "Text ID [6]",
-      "Description": "The text ID to display. If it is an invalid value (-6), nothing is displayed."
+      "Description": "Text 6 of the grace: a Place Name or NPC Name entry, picked by Text Type [6]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId6",
       "Name": "Text Enable Flag ID [6]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (5) is invalid, it will be treated as On."
+      "Description": "Text 6 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [6]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId6",
       "Name": "Text Disable Flag ID [6]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (5) is invalid, it will be treated as Off."
+      "Description": "Text 6 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [6]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId7",
       "Name": "Text ID [7]",
-      "Description": "The text ID to display. If it is an invalid value (-7), nothing is displayed."
+      "Description": "Text 7 of the grace: a Place Name or NPC Name entry, picked by Text Type [7]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId7",
       "Name": "Text Enable Flag ID [7]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (6) is invalid, it will be treated as On."
+      "Description": "Text 7 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [7]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId7",
       "Name": "Text Disable Flag ID [7]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (6) is invalid, it will be treated as Off."
+      "Description": "Text 7 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [7]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textId8",
       "Name": "Text ID [8]",
-      "Description": "The text ID to display. If it is an invalid value (-8), nothing is displayed."
+      "Description": "Text 8 of the grace: a Place Name or NPC Name entry, picked by Text Type [8]. -1: none. Visible under the same flag rules as Text ID [1]."
     },
     {
       "Field": "textEnableFlagId8",
       "Name": "Text Enable Flag ID [8]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (7) is invalid, it will be treated as On."
+      "Description": "Text 8 is shown only while this event flag is on. Combined with Text Enable Flag ID 2 [8]: every set flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlagId8",
       "Name": "Text Disable Flag ID [8]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (7) is invalid, it will be treated as Off."
+      "Description": "Text 8 is hidden while this event flag is on, overriding the Enable flags. Combined with Text Disable Flag ID 2 [8]: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textType1",
       "Name": "Text Type [1]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [1] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType2",
       "Name": "Text Type [2]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [2] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType3",
       "Name": "Text Type [3]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [3] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType4",
       "Name": "Text Type [4]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [4] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType5",
       "Name": "Text Type [5]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [5] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType6",
       "Name": "Text Type [6]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [6] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType7",
       "Name": "Text Type [7]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [7] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "textType8",
       "Name": "Text Type [8]",
-      "Description": "Text type (place name, NPC name, ...)"
+      "Description": "Which text list Text ID [8] comes from: 0 Place Name, 1 NPC Name (also switches the pin to the NPC icons while the text is visible). Other values show no text."
     },
     {
       "Field": "noIgnitionSfxDmypolyId_0",
-      "Name": "Bonfire Ignition - Dummy Poly ID [0]",
-      "Description": "Damipoli ID that issues SFX before bonfire ignition"
+      "Name": "Unlit SFX - Dummy Poly ID [0]",
+      "Description": "Dummy poly on the grace asset where Unlit SFX - SFX ID [0] is played. Retail: 100."
     },
     {
       "Field": "noIgnitionSfxId_0",
-      "Name": "Bonfire Ignition - SFX ID [0]",
-      "Description": "SFX ID issued before bonfire ignition. It goes out when ignited. In case of -1, SFX is not issued."
+      "Name": "Unlit SFX - SFX ID [0]",
+      "Description": "SFX played on the grace asset when it loads while the grace isn't lit yet. Below 0: none. Retail: 6410 or 6411."
     },
     {
       "Field": "noIgnitionSfxDmypolyId_1",
-      "Name": "Bonfire Ignition - Dummy Poly ID [1]",
-      "Description": "Damipoli ID that issues SFX before bonfire ignition"
+      "Name": "Unlit SFX - Dummy Poly ID [1]",
+      "Description": "Dummy poly on the grace asset where Unlit SFX - SFX ID [1] is played."
     },
     {
       "Field": "noIgnitionSfxId_1",
-      "Name": "Bonfire Ignition - SFX ID [1]",
-      "Description": "SFX ID issued before bonfire ignition. It goes out when ignited. In case of -1, SFX is not issued."
+      "Name": "Unlit SFX - SFX ID [1]",
+      "Description": "A second SFX played on the grace asset when it loads while the grace isn't lit yet. Below 0: none. Unused in retail."
     },
     {
       "Field": "textEnableFlag2Id1",
       "Name": "Text Enable Flag ID 2 [1]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 1: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id2",
       "Name": "Text Enable Flag ID 2 [2]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 2: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id3",
       "Name": "Text Enable Flag ID 2 [3]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 3: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id4",
       "Name": "Text Enable Flag ID 2 [4]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 4: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id5",
       "Name": "Text Enable Flag ID 2 [5]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 5: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id6",
       "Name": "Text Enable Flag ID 2 [6]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 6: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id7",
       "Name": "Text Enable Flag ID 2 [7]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 7: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textEnableFlag2Id8",
       "Name": "Text Enable Flag ID 2 [8]",
-      "Description": "Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On."
+      "Description": "A second Enable flag for Text 8: every set Enable flag must be on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id1",
       "Name": "Text Disable Flag ID 2 [1]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 1: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id2",
       "Name": "Text Disable Flag ID 2 [2]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 2: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id3",
       "Name": "Text Disable Flag ID 2 [3]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 3: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id4",
       "Name": "Text Disable Flag ID 2 [4]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 4: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id5",
       "Name": "Text Disable Flag ID 2 [5]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 5: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id6",
       "Name": "Text Disable Flag ID 2 [6]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 6: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id7",
       "Name": "Text Disable Flag ID 2 [7]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 7: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "textDisableFlag2Id8",
       "Name": "Text Disable Flag ID 2 [8]",
-      "Description": "Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off."
+      "Description": "A second Disable flag for Text 8: the text is hidden only when every set Disable flag is on. 0: no condition."
     },
     {
       "Field": "iconId_npc",
-      "Name": "Icon ID: NPC Name",
-      "Description": "Icon ID when NPC Name is included."
+      "Name": "NPC Icon ID",
+      "Description": "Icon shown instead of Icon ID while at least one visible text is an NPC name (Text Type 1). Retail: 101 on graces with an NPC text."
     },
     {
       "Field": "forbiddenIconId_npc",
-      "Name": "Forbidden Icon ID: NPC Name",
-      "Description": "Forbidden Icon ID when NPC Name is included."
+      "Name": "NPC Warp Prohibition Icon ID",
+      "Description": "Map icon meant to replace NPC Icon ID when warping to this grace isn't allowed. Like Warp Prohibition Icon ID, no switch to it was found, so it may never show. Retail: 102 on graces with an NPC text."
     }
   ]
 }

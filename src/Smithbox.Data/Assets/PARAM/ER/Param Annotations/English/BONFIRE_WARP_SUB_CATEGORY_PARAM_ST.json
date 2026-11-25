@@ -2,42 +2,42 @@
   "Param": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
   "Type": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
   "Name": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
-  "Description": null,
+  "Description": "Subcategories (headings) of the Site of Grace warp list. A grace points here with its Subcategory ID; its subcategory's Tab ID decides the tab it's listed in. In a tab, each subcategory's heading comes first, followed by its graces in their Sort Order in Subcategory.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Marks rows left out of the Network Test build. Appears unused by the game (retail sets it on most rows, which work normally)."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Subcategory display name Text ID [MenuText]"
+      "Description": "Heading text of the subcategory, from Menu Text. Below 0: no heading is shown, but its graces are still listed."
     },
     {
       "Field": "tabId",
       "Name": "Tab ID",
-      "Description": "Kagaribi Warp Tab ID. ID of the tab to which this subcategory belongs"
+      "Description": "The BonfireWarpTabParam row this subcategory and its graces are listed in."
     },
     {
       "Field": "sortId",
-      "Name": "Tab Sort ID",
-      "Description": "Bonfire Warp Tab Sort ID. Display order of subcategories in tabs"
+      "Name": "Sort Order in Tab",
+      "Description": "Order of this subcategory within its tab, ascending."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

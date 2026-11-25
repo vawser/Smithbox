@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Point"
+          "Text": "Face Region Centre"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The player must face the centre of the region."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Line"
+          "Text": "Face Against Dummy Poly"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The player must face opposite the dummy poly direction."
         }
       ]
     }

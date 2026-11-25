@@ -2,152 +2,152 @@
   "Param": "ACTIONBUTTON_PARAM_ST",
   "Type": "ACTIONBUTTON_PARAM_ST",
   "Name": "ACTIONBUTTON_PARAM_ST",
-  "Description": "Determines the parameters used for interactable prompts.",
+  "Description": "Interaction prompts (\"Open\", \"Talk\", \"Pick up item\"): the region the player must stand in, the facing check, the text shown and the conditions that hide or grey it out. Registered by objects (ObjActParam), characters, items and other sources; when several prompts are available they are ordered by Category.",
   "Fields": [
     {
       "Field": "regionType",
       "Name": "Region Type",
-      "Description": "Range shape (cylinder, prism, capsule)"
+      "Description": "Shape of the region the player must be in. 0 Cylinder: Radius, Region Angle, Height and Bottom Height Offset. 1 Prism: a box in front of Dummy Poly 1 (Depth, Width, Height, Bottom Height Offset). 2 Capsule: within Radius of the line between Dummy Poly 1 and 2 (height and facing are not checked). Other values: never shown."
     },
     {
       "Field": "category",
-      "Name": "Category",
-      "Description": "category. The number on the left side of the name is the priority when multiple action buttons overlap (the closer it is to 0, the higher the priority is displayed)."
+      "Name": "Category (Priority)",
+      "Description": "Prompt group. Only the nearest prompt of each category is kept, and categories are ordered by a fixed priority, highest first: 0, 1, 14, 2, 3, 4, 5, 6 and 7, 12, 13, 8 to 10, 11; equal priority goes to the nearer one. 15 and above: never shown. Retail: 0 lost runes, 2 materials and items on the ground, 3 pick up item, 4 talk, 5 open / examine / levers, 7 summon signs, 8 bloodstains, 10 messages, 12 ride."
     },
     {
       "Field": "padding1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "dummyPoly1",
-      "Name": "Dummy Poly [1]",
-      "Description": "Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygon or -1 is entered, the center coordinates will be the reference."
+      "Name": "Dummy Poly 1",
+      "Description": "Dummy poly on the registering object's model that the region is placed at, using its position and facing. -1 or not found: the object's own position and facing (a capsule needs both dummy polys)."
     },
     {
       "Field": "dummyPoly2",
-      "Name": "Dummy Poly [2]",
-      "Description": "Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons"
+      "Name": "Dummy Poly 2",
+      "Description": "Capsule only: second end of the capsule line. -1 or not found: the prompt is never shown."
     },
     {
       "Field": "radius",
       "Name": "Radius",
-      "Description": "Radius (cylinder / capsule)"
+      "Description": "Cylinder and capsule: horizontal radius in metres (capsule: distance from the line between the two dummy polys)."
     },
     {
       "Field": "angle",
-      "Name": "Angle",
-      "Description": "Angle (cylinder)"
+      "Name": "Region Angle",
+      "Description": "Cylinder only: the player must be within this many degrees either side of the dummy poly's facing, seen from the region centre. 180: all around."
     },
     {
       "Field": "depth",
       "Name": "Depth",
-      "Description": "Depth (prism)"
+      "Description": "Prism only: how far the box reaches in front of Dummy Poly 1, in metres. The player must be in front of the dummy poly and closer than this along its facing."
     },
     {
       "Field": "width",
       "Name": "Width",
-      "Description": "Width (prism)"
+      "Description": "Prism only: half-width of the box in metres; the box reaches this far to each side of the dummy poly's facing line."
     },
     {
       "Field": "height",
       "Name": "Height",
-      "Description": "Height (cylinder / prism)"
+      "Description": "Cylinder and prism: height of the region in metres, measured up from the bottom (the dummy poly height plus Bottom Height Offset)."
     },
     {
       "Field": "baseHeightOffset",
       "Name": "Bottom Height Offset",
-      "Description": "How much to raise or lower the Y coordinate of the bottom (cylinder / prism)"
+      "Description": "Cylinder and prism: raises (positive) or lowers (negative) the bottom of the region relative to the dummy poly, in metres. Retail rows usually start the region slightly below the dummy poly (-0.25 to -1)."
     },
     {
       "Field": "angleCheckType",
-      "Name": "Angle Difference Check Type",
-      "Description": "Angle difference judgment type (cylinder / prism)"
+      "Name": "Facing Check Type",
+      "Description": "Cylinder and prism: how the player's facing is checked against Facing Angle Tolerance. 0 Point: the player must face the region centre (the dummy poly). 1 Line: the player must face against the dummy poly's facing, wherever they stand. Other values: never shown."
     },
     {
       "Field": "padding2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "allowAngle",
-      "Name": "Allowable Angle Difference",
-      "Description": "Allowable angle difference (cylinder / prism)"
+      "Name": "Facing Angle Tolerance",
+      "Description": "Cylinder and prism: how far (degrees) the player's facing may be off the direction Facing Check Type asks for. 180: any facing."
     },
     {
       "Field": "spotDummyPoly",
-      "Name": "Action Spot Dummy Polygon",
-      "Description": "If there is no dummy polygon that specifies the dummy polygon ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference."
+      "Name": "Action Spot Dummy Poly",
+      "Description": "Appears unused by the game (retail sets it on 26 rows, mostly lever and corpse prompts)."
     },
     {
       "Field": "textBoxType",
       "Name": "Textbox Type",
-      "Description": "Text box type"
+      "Description": "Prompt box style. Only 0 (Action Button) exists and retail always uses 0; stored with the prompt, no effect found."
     },
     {
       "Field": "padding3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "padding5",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isInvalidForRide",
       "Name": "Is Invalid when Riding",
-      "Description": "If enabled, this action will not appear whilst in the 'riding' state."
+      "Description": "If set, the prompt is hidden while the player is riding Torrent. Also stops Riding Override ID from applying."
     },
     {
       "Field": "isGrayoutForRide",
       "Name": "Is Grayed Out when Riding",
-      "Description": "If enabled, this action will be grayed out whilst in the 'riding' state."
+      "Description": "If set, the prompt is shown greyed out (and can't be used) while the player is riding Torrent. Also stops Riding Override ID from applying."
     },
     {
       "Field": "isInvalidForCrouching",
-      "Name": "Invalid for Crouching",
-      "Description": "If enabled, this action will not appear whilst in the 'crouching' state."
+      "Name": "Is Invalid when Crouching",
+      "Description": "If set, the prompt is hidden while the player is crouching."
     },
     {
       "Field": "isGrayoutForCrouching",
-      "Name": "Greyout for Crouching",
-      "Description": "If enabled, this action will be grayed out whilst in the 'crouching' state."
+      "Name": "Is Grayed Out when Crouching",
+      "Description": "If set, the prompt is shown greyed out (and can't be used) while the player is crouching."
     },
     {
       "Field": "padding4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "The FMG Entry ID to display."
+      "Description": "Action Button Text (FMG) entry shown on the prompt."
     },
     {
       "Field": "invalidFlag",
-      "Name": "Invalid Event Flag",
-      "Description": "If the event flag is ON, then this action will not appear."
+      "Name": "Hide Event Flag",
+      "Description": "Event flag: while it is ON the prompt is hidden. 0 or -1: none."
     },
     {
       "Field": "grayoutFlag",
-      "Name": "Grayout Event Flag",
-      "Description": "If the event flag is ON, then this action will be grayed out."
+      "Name": "Grey Out Event Flag",
+      "Description": "Event flag: while it is ON the prompt is shown greyed out and can't be used. 0 or -1: none."
     },
     {
       "Field": "overrideActionButtonIdForRide",
-      "Name": "Override Button ID for Ride",
-      "Description": "Replace with this action button ID parameter while riding (-1: No replacement)"
+      "Name": "Riding Override ID",
+      "Description": "ActionButtonParam row used instead of this one while the player is riding Torrent (its region, text and conditions). Ignored if either riding flag is set on this row. -1: none."
     },
     {
       "Field": "execInvalidTime",
-      "Name": "Execution Invalid Time",
-      "Description": "Invalid time after execution (-infinite by value)"
+      "Name": "Cooldown After Use",
+      "Description": "After the prompt is used, it stays unavailable for this many seconds. Negative: it doesn't come back while its source keeps it registered (retail -1 on one-time actions). 0: available again at once."
     },
     {
       "Field": "padding6",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

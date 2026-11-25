@@ -2,27 +2,27 @@
   "Param": "CHARMAKEMENU_LISTITEM_PARAM_ST",
   "Type": "CHARMAKEMENU_LISTITEM_PARAM_ST",
   "Name": "CHARMAKEMENU_LISTITEM_PARAM_ST",
-  "Description": null,
+  "Description": "Choices of the character creator's icon grids, option lists and settings (body type, age, voice, origin, keepsake, base template). A menu entry's Table ID names the first row; the choices are that row and the rows with the following IDs.",
   "Fields": [
     {
       "Field": "value",
       "Name": "Value",
-      "Description": "The value handled by the program. Make serial numbers within one group"
+      "Description": "Value written to the entry's creator value when this choice is picked (e.g. a part model number, an origin index); the current value also selects which choice's caption is shown."
     },
     {
       "Field": "captionId",
-      "Name": "Caption ID",
-      "Description": "ID of the text to be displayed"
+      "Name": "Caption Text ID",
+      "Description": "Menu text of the choice. 0: no text (retail: most icon grid choices)."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "ID of the icon to be displayed"
+      "Description": "Icon shown on the choice's icon grid tile."
     },
     {
       "Field": "reserved",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }
