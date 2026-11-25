@@ -14,6 +14,27 @@
           "Language": "English",
           "Text": "None"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No special behaviour: only the effect's own fields apply."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TAE Gate (Unused)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. Only TAE events gated on this state react to it (a c0000 SFX and a c5050 sound), and no vanilla row sets it, so a mod row with this state switches those events on."
+        }
       ]
     },
     {
@@ -21,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Poison"
+          "Text": "Poison"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The poison ailment. Shows in the first status-ailment slot (timer = the effect's remaining duration) with the POISON banner, flags poison for HKS (STATUS_EFFECT_POISON), and is removed by cure states 10 and 13 and by the cure-all (grace rest, respawn). The damage itself comes from the row's changeHpPoint/changeHpRate ticking every motionInterval."
         }
       ]
     },
@@ -30,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Damage when Throwing Wolf"
+          "Text": "Label (Leech)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a test row uses it; any effect comes from the row's own fields."
         }
       ]
     },
@@ -39,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Durability Damage"
+          "Text": "Durability Damage (All Weapons)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's insideDurability is applied to the durability of every weapon slot and armour piece when the effect is applied (positive values wear, negative values repair). Weapons flagged to ignore durability changes are skipped, and the row is skipped entirely if it has corrosionIgnore set."
         }
       ]
     },
@@ -48,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Scarlet Rot"
+          "Text": "Scarlet Rot"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The scarlet rot ailment. Shows in the second status-ailment slot with the SCARLET ROT banner, flags rot for HKS (STATUS_EFFECT_DEADLY_POISON), and is removed by cure states 11 and 13 and by the cure-all. The damage comes from the row's HP-change fields."
         }
       ]
     },
@@ -57,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Blood Loss"
+          "Text": "Blood Loss"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The blood loss (hemorrhage) ailment. Shows in the third status-ailment slot with the BLOOD LOSS banner, flags bleed for HKS (STATUS_EFFECT_BLOOD), and is removed by cure states 12 and 13 and by the cure-all. The burst damage comes from the row's own fields."
         }
       ]
     },
@@ -66,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ghost"
+          "Text": "Camouflage (Sight Only)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's hearing modifiers (hearingSearchEnemyAdd/Rate) never apply, and its sight modifiers (sightSearchEnemyAdd/Rate) only apply to AI sight checks that ask for camouflage effects. Pairs with 53. No vanilla row uses it."
         }
       ]
     },
@@ -75,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Sight for AI (Reduction)"
+          "Text": "Hidden"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks the character as hidden or vanished. The game does not test it; AI scripts do (spirit candle enemies stop walking while it is active). Any effect on enemy sight comes from the row's own sight fields."
         }
       ]
     },
@@ -84,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Tranquil Walk of Peace"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -95,6 +164,12 @@
           "Language": "English",
           "Text": "Cure Poison"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes all active poison (state 2) effects, then ends itself immediately."
+        }
       ]
     },
     {
@@ -103,6 +178,12 @@
         {
           "Language": "English",
           "Text": "Cure Scarlet Rot"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes all active scarlet rot (state 5) effects, then ends itself immediately."
         }
       ]
     },
@@ -113,6 +194,12 @@
           "Language": "English",
           "Text": "Cure Blood Loss"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes all active blood loss (state 6) effects, then ends itself immediately."
+        }
       ]
     },
     {
@@ -120,7 +207,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cure All Status"
+          "Text": "Cure All Ailments"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes poison (2), scarlet rot (5), blood loss (6), frostbite (260), maggots (261), sleep (436) and madness (437), then ends itself immediately. Used by grace rest and respawn."
         }
       ]
     },
@@ -129,7 +222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Soul Steal"
+          "Text": "Label (Soul Steal)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Any effect comes from the row's own fields."
         }
       ]
     },
@@ -138,7 +237,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Toggle Telescope Camera"
+          "Text": "Telescope Zoom"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Puts the player camera into its zoom (scope) mode, the same mode as aiming, for as long as the effect is active. HKS act(120) ends this state, and HKS env(305, 15) tests it."
         }
       ]
     },
@@ -147,7 +252,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to last visited Grace"
+          "Text": "Darksign Warp"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When active on the player, requests the Darksign warp (warp kind 1, the pseudo-multiplayer return position path). A leftover from older games."
         }
       ]
     },
@@ -156,7 +267,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Revival Effect"
+          "Text": "Revival"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Revives the player in place: runs the same restore as respawning (HP and FP set to maximum, mount and equipment state refreshed), then shows text banner 2000."
+        }
+      ]
+    },
+    {
+      "Key": "18",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Dark Phantom Kicked Out"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, fires the OnBeBlackKickOut script event (a dark phantom being sent home). No vanilla row uses it."
         }
       ]
     },
@@ -165,7 +297,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dispel Black Phantom"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -174,7 +312,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -183,7 +327,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "OnReviveMagic"
+          "Text": "Revive Magic Event"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, fires the OnReviveMagic script event. No vanilla row uses it."
         }
       ]
     },
@@ -192,7 +342,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disables Spell Usage"
+          "Text": "Forbid Magic"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The character may not use magic while active (checked for enemies), unless another active effect has antiMagicIgnore set. No vanilla row uses it."
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Durability Damage (Active Weapon)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's insideDurability is applied to the active weapon only, when the effect is applied (positive values wear, negative values repair). The change applies even to a broken weapon; see 292 for the variant that skips broken ones."
         }
       ]
     },
@@ -201,7 +372,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: A)"
+          "Text": "War Cry Buff"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A label for the war cry attack buffs. The game does not test it; other effects use it as an invocation condition. The buff itself is the row's own fields."
         }
       ]
     },
@@ -210,7 +387,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Body Buff VFX (Type A)"
+          "Text": "Label (Body Protection)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by body-protection incantations; the protection is the rows' own fields."
         }
       ]
     },
@@ -219,7 +402,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ghost Parameter Change"
+          "Text": "Label (Ghost Params)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Any effect comes from the row's own fields."
         }
       ]
     },
@@ -228,7 +417,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC: Paralysis State"
+          "Text": "Paralysis (Bind)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks the character as bound or paralysed. AI can test it (the Lua HasParalysis function and target checks), and HKS env(362, 32) tests it in behaviour scripts. The immobility itself comes from the row's own fields and animations."
         }
       ]
     },
@@ -237,7 +432,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Giant Slime Freeze"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -246,7 +447,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dragon Bleed 1"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -255,7 +462,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dragon Bleed 2"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -264,7 +477,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dragon Bleed 3"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -273,7 +492,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC Call"
+          "Text": "Label (Test)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a test row uses it."
         }
       ]
     },
@@ -282,7 +507,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Body Buff VFX (Type B)"
+          "Text": "Label (Shield)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by upper-tier protection incantations; the protection is the rows' own fields."
         }
       ]
     },
@@ -291,7 +522,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Body Buff VFX (Type C)"
+          "Text": "Label (Fire Shield)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by fire protection incantations; the protection is the rows' own fields."
         }
       ]
     },
@@ -300,7 +537,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "HP Recovery"
+          "Text": "HP Recovery Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for enemy and spirit heals. The game does not test it; only TAE attack events gated on it react (c3360)."
         }
       ]
     },
@@ -309,7 +552,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Force Ghost Stage 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "First step of a three-stage ladder (43, 44, 45). A new 43 is refused while 43, 44 or 45 is already active. No vanilla row uses it."
         }
       ]
     },
@@ -318,7 +567,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Force Ghost Stage 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Second step of the 43-44-45 ladder. It can only be applied while 43 is active (and not while 44 or 45 is), and it ends 43 when it is applied. No vanilla row uses it."
         }
       ]
     },
@@ -327,7 +582,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Force Ghost Stage 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Third step of the 43-44-45 ladder. It can only be applied while 44 is active (and not while 43 is), and it ends 43 and 44 when it is applied. No vanilla row uses it."
         }
       ]
     },
@@ -336,7 +597,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify AI Target Priority"
+          "Text": "Label (Pheromone)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Any effect comes from the row's own fields."
         }
       ]
     },
@@ -345,7 +612,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disable Fall Damage"
+          "Text": "No Fall Damage"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The character takes no fall damage, and does not die from falls, while active. HKS also tests it (CAT_LANDING) to choose landing animations."
         }
       ]
     },
@@ -354,7 +627,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prepare VFX (Left)"
+          "Text": "Label (Low HP Attack)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by low-HP attack boosts; the condition and the bonus are the rows' own fields."
         }
       ]
     },
@@ -363,7 +642,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prepare VFX (Right)"
+          "Text": "Label (Low HP Defense)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by low-HP defense boosts; the condition and the bonus are the rows' own fields."
         }
       ]
     },
@@ -372,7 +657,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "HP/FP/Stamina Recovery"
+          "Text": "Regeneration"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A regeneration effect: when applied (and when reapplied), its tick timer starts with a full motionInterval already counted, so the first HP/FP change happens at once instead of after one interval. Used by grace restores and regen buffs."
         }
       ]
     },
@@ -381,7 +672,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pledge Effect Test"
+          "Text": "Weak Regeneration"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 50: the tick timer starts with a full motionInterval already counted, so the first tick happens at once."
+        }
+      ]
+    },
+    {
+      "Key": "53",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Weak Camouflage (Sight Only)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 7: the row's hearing modifiers never apply, and its sight modifiers only apply to AI sight checks that ask for camouflage effects. No vanilla row uses it."
         }
       ]
     },
@@ -390,7 +702,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Hearing for AI"
+          "Text": "Label (Silence)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by silencing effects; the silence is the rows' own hearing fields."
         }
       ]
     },
@@ -399,7 +717,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Blood Sign"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a system row only."
         }
       ]
     },
@@ -408,7 +732,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Point Light Source Equipped"
+          "Text": "Label (Point Light)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by the point-light equipment system row; the light is the row's own fields."
         }
       ]
     },
@@ -417,7 +747,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Message Was Rated"
+          "Text": "Label (Appraisal)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by the message appraisal restore row."
         }
       ]
     },
@@ -426,7 +762,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: Magic)"
+          "Text": "Label (Grease)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by weapon greases; the buff is the rows' own fields."
         }
       ]
     },
@@ -435,7 +777,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: Magic)"
+          "Text": "Label (Grease)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by greases; the buff is the rows' own fields."
         }
       ]
     },
@@ -444,7 +792,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: Fire)"
+          "Text": "Fire Enchant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A label for fire and blood-flame weapon buffs. The game does not test it; only TAE events gated on it react (c4310, c4340)."
         }
       ]
     },
@@ -453,7 +807,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: Enchanted)"
+          "Text": "Label (Grease)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by magic greases; the buff is the rows' own fields."
         }
       ]
     },
@@ -462,7 +822,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -471,7 +837,43 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Item Discovery"
+          "Text": "Item Discovery Bonus"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the itemDropRate of every active effect (not just this one) is added to item discovery. Without a state-66 effect, itemDropRate does nothing."
+        }
+      ]
+    },
+    {
+      "Key": "67",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Instant First Tick"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 50: the tick timer starts with a full motionInterval already counted, so the first tick happens at once. No vanilla row uses it."
+        }
+      ]
+    },
+    {
+      "Key": "68",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Instant First Tick"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 50: the tick timer starts with a full motionInterval already counted, so the first tick happens at once. No vanilla row uses it."
         }
       ]
     },
@@ -480,7 +882,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Event Lost Soul Restriction"
+          "Text": "Event Death Penalty"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Selects death-penalty mode 1 (the event lost-runes restriction) when the player dies with it active, taking priority over 159 and 160. Dying of death blight (117) ignores it."
         }
       ]
     },
@@ -489,7 +897,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Undead Standby State Check"
+          "Text": "Label (Test)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a test row uses it."
         }
       ]
     },
@@ -498,7 +912,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Spell Damage"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used for TAE gating and as an invocation condition for other effects. The game does not test it."
         }
       ]
     },
@@ -507,7 +927,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC: Trigger on Guard"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used for TAE gating and as an invocation condition for other effects. The game does not test it."
         }
       ]
     },
@@ -516,7 +942,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Green Blossom VFX"
+          "Text": "Label (Stamina)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by stamina-recovery boosts; the bonus is the rows' own fields."
         }
       ]
     },
@@ -525,7 +957,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Rune Gain"
+          "Text": "Label (Rune Gain)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by rune-gain boosts; the bonus is the rows' own fields."
         }
       ]
     },
@@ -534,7 +972,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dragon Bleed 4"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -543,7 +987,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dragon Bleed 5"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -552,7 +1002,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Giant Slime Freeze VFX"
+          "Text": "Label (Prototype)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a prototype row uses it."
         }
       ]
     },
@@ -561,7 +1017,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Appearance Change"
+          "Text": "Mimic Disguise"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Mimic's Veil. When it starts, the character takes one of three disguise forms, picked at random with the weights mimicryEstablishment0-2 of the area's MapMimicryEstablishmentParam row (row 0 if none); each form uses that row's begin/loop/end SFX. States 509, 510 and 511 each rule out one form. The form is kept until the effect ends, and some AI and lock-on logic is skipped while it is active."
         }
       ]
     },
@@ -570,7 +1032,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Applies Dragon Form effect"
+          "Text": "Armor Transformation"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replaces the character's armour look with the effect's SpEffectVfx transformProtectorId (full body or gauntlets as that row says) while active, and locks the head slot in the equipment menu. 167 is the full-body version that locks all slots."
         }
       ]
     },
@@ -579,7 +1047,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Detection"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -588,7 +1062,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Wait for Cooperation"
+          "Text": "HKS Flag (env 269)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. HKS env(269) returns whether it is active, so behaviour scripts can react to it. Removed by cure state 104. No vanilla row or script uses it."
         }
       ]
     },
@@ -597,7 +1077,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Cooperation"
+          "Text": "HKS Flag (env 270)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. HKS env(270) returns whether it is active, so behaviour scripts can react to it. No vanilla row or script uses it."
         }
       ]
     },
@@ -606,7 +1092,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Cooperation Sent"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -615,7 +1107,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wax Slow Down"
+          "Text": "Force Overloaded"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The player counts as overloaded (heaviest equip-load category) whatever their equipment weight, while active. No vanilla row uses it."
         }
       ]
     },
@@ -624,7 +1122,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Used for Evil Eye effect"
+          "Text": "Conditional Effect"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Makes the effect conditional even when its row has no HP or state conditions: it is re-checked every tick, switching on while its conditions pass and waiting (or ending, with isWaitModeDelete) while they fail. No vanilla row uses it."
         }
       ]
     },
@@ -633,7 +1137,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Wait for Cooperation"
+          "Text": "Cure Replace Levels"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes states 99, 105, 106 and 107, then ends itself immediately. No vanilla row uses it."
         }
       ]
     },
@@ -642,7 +1152,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Cooperation LV 1"
+          "Text": "Replace Level 0"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The base level of a three-step replace ladder (105, 106, 107). Removed by 104, 106 and 107. No vanilla row uses it."
         }
       ]
     },
@@ -651,7 +1167,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Cooperation LV 2"
+          "Text": "Replace Level 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replace level 1 for replaceCategory 1: when applied it removes 105, and it stays active for its duration. Removed by 104 and 107. No vanilla row uses it."
         }
       ]
     },
@@ -660,7 +1182,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "MP Cooperation LV 3"
+          "Text": "Replace Level 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replace level 2 for replaceCategory 1: when applied it removes 105 and 106, and it stays active for its duration. Removed by 104. No vanilla row uses it."
         }
       ]
     },
@@ -669,7 +1197,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Used for Evil Eye effect (1)"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -678,7 +1212,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Used for Evil Eye effect (2)"
+          "Text": "Replace Level Variant"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Counts as state 107 for the replace-level checks. No vanilla row uses it."
         }
       ]
     },
@@ -687,7 +1227,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Counter Damage"
+          "Text": "Counter Damage Cut"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's damage-cut rates (physical per attack type, magic, fire, lightning, holy) apply only to counter hits instead of every hit. Used by counter-damage effects."
+        }
+      ]
+    },
+    {
+      "Key": "111",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Ladder Stage 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "First step of a five-stage ladder (111, 112, 113, 114, 192). A new 111 is refused while any higher stage is active; cure state 198 removes the whole ladder. No vanilla row uses it."
         }
       ]
     },
@@ -696,7 +1257,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "1409F7282_HKS"
+          "Text": "Ladder Stage 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Second step of the 111-192 ladder: refused while 113, 114 or 192 is active, and ends 111 when applied. Cure 198 removes it. No vanilla row uses it."
         }
       ]
     },
@@ -705,7 +1272,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Ladder Stage 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Third step of the 111-192 ladder: refused while 114 or 192 is active, and ends 111-112 when applied. Cure 198 removes it. No vanilla row uses it."
         }
       ]
     },
@@ -714,7 +1287,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Ladder Stage 4"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Fourth step of the 111-192 ladder: refused while 192 is active, and ends 111-113 when applied. While active it also unequips the head and locks the head slot, and applies the effect's armour transformation as 96 does. Cure 198 removes it. No vanilla row uses it."
         }
       ]
     },
@@ -723,7 +1302,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Backstep Animation Change"
+          "Text": "Lightest Equip Load"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, a player with light enough equipment drops into an extra-light equip-load category (below the normal light category). No vanilla row uses it."
         }
       ]
     },
@@ -732,7 +1317,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Death Blight"
+          "Text": "Death Blight Build-Up"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The death blight ailment. Shows in the fourth status-ailment slot with the DEATH BLIGHTED banner, flags blight for HKS (STATUS_EFFECT_CURSE), and is removed by cure state 118 and by the cure-all. Its rows replace themselves with 117 (the instant death) when the build-up completes."
         }
       ]
     },
@@ -741,7 +1332,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Death Activation"
+          "Text": "Death Blight Death"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The instant death caused by death blight. The fourth ailment slot shows it as full; dying with it active ignores every death-penalty protection (69, 159, 160). The cure-all ends it."
         }
       ]
     },
@@ -752,6 +1349,12 @@
           "Language": "English",
           "Text": "Cure Death Blight"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes death blight build-up (116); it stays active for its duration rather than ending at once."
+        }
       ]
     },
     {
@@ -759,7 +1362,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Humanity Recovery"
+          "Text": "Label (Humanity Restore)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Any effect comes from the row's own fields."
         }
       ]
     },
@@ -768,7 +1377,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Set Damage Animation Level (Super Armor)"
+          "Text": "Label (Stagger)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by effects that change damage animations under super armor; the change is the rows' own dmgLv fields."
         }
       ]
     },
@@ -777,7 +1392,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Set Damage Animation Level (Full Super Armor)"
+          "Text": "Label (Behavior)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by behaviour effects (stance stabilisation, damage animation changes); the change is the rows' own dmgLv fields."
         }
       ]
     },
@@ -786,7 +1407,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Water/Swamp Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect only works while the character stands in water or a shallow swamp (HitMtrlParam floors 19-23 and 60); on any other floor it is suspended, and it resumes when the character steps back in. No vanilla row uses it."
         }
       ]
     },
@@ -795,7 +1422,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Head)"
+          "Text": "Briar Damage (Head)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's attack power is added as a separate contact-damage source, only to hits whose contact type includes the head piece's bits (used by the Briar set's rolling damage)."
         }
       ]
     },
@@ -804,7 +1437,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Body)"
+          "Text": "Briar Damage (Body)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's attack power is added as a separate contact-damage source, only to hits whose contact type includes the body piece's bits (used by the Briar set and Mantle of Thorns)."
         }
       ]
     },
@@ -813,7 +1452,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Hands)"
+          "Text": "Briar Damage (Arms)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's attack power is added as a separate contact-damage source, only to hits whose contact type includes the arms piece's bits (four kinds of contact)."
         }
       ]
     },
@@ -822,7 +1467,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on Roll (Legs)"
+          "Text": "Briar Damage (Legs)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's attack power is added as a separate contact-damage source, only to hits whose contact type includes the legs piece's bits (three kinds of contact)."
         }
       ]
     },
@@ -831,7 +1482,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mimic Sleep"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -840,7 +1497,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mimic Sleep"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -849,7 +1512,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mimic Sleep"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -858,7 +1527,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mimic Sleep"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -867,7 +1542,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Team Type Change"
+          "Text": "Charm"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Charms the character (Bewitching Branch): AI treats it as charmed and is reset when the charm starts and ends, and the row's changeTeamType switches its side. The charm only takes on targets that already have an active effect with enableCharm set; on anyone else the effect is refused."
         }
       ]
     },
@@ -876,7 +1557,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enable Blood Writing Display"
+          "Text": "Show Messages"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Widens the radius at which bloodstain messages appear around the player to 5 m (fully faded by 6 m), instead of the normal radius."
         }
       ]
     },
@@ -885,7 +1572,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Weapon Deflection Status"
+          "Text": "Iron Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replaces the character's defence material with iron (material 106) while active, so hits produce metal sounds and sparks. Used by living jars and Ironjar Aromatic."
         }
       ]
     },
@@ -894,7 +1587,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mimic Sleep"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -903,7 +1602,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Death Blight"
+          "Text": "HKS Flag (Crystal)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. Behaviour scripts test it (CONDITION_TYPE_CRYSTAL). No vanilla row uses it."
         }
       ]
     },
@@ -912,7 +1617,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ResonanceLvl 0"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -921,7 +1632,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ResonanceLvl 1"
+          "Text": "Item Replace Level 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replace level 1 for items and spells with replaceCategory 2: while active, those items or spells use their first replacement. No vanilla row uses it."
         }
       ]
     },
@@ -930,7 +1647,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ResonanceLvl 2"
+          "Text": "Item Replace Level 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replace level 2 for items and spells with replaceCategory 2: while active, those items or spells use their second replacement. No vanilla row uses it."
         }
       ]
     },
@@ -939,7 +1662,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ResonanceLvl 3"
+          "Text": "Item Replace Level 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replace level 3 for items and spells with replaceCategory 2: while active, those items or spells use their third replacement. No vanilla row uses it."
         }
       ]
     },
@@ -948,7 +1677,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ResonanceLvl 4"
+          "Text": "Item Replace Level 4"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replace level 4 for items and spells with replaceCategory 2: while active, those items or spells use their fourth replacement. No vanilla row uses it."
         }
       ]
     },
@@ -957,7 +1692,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply NPC Behavior ID"
+          "Text": "Run Behavior on Apply"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, runs the row's behaviorId as a behaviour on the character. Used by lava and burn hits."
         }
       ]
     },
@@ -966,7 +1707,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Allow NPC Revival"
+          "Text": "Cannot Die"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The character can't die while active: HP stops at the minimum instead of reaching death, so scripted revivals (one-time revival enemies) can play. HKS env(1101) tests the same can't-die check, and HKS env(362, 143) tests the state."
         }
       ]
     },
@@ -975,7 +1722,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
+        }
+      ]
+    },
+    {
+      "Key": "145",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "HKS Flag (Holy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. Behaviour scripts test it (env 305, SP_EFFECT_TYPE_HOLY). No vanilla row uses it."
         }
       ]
     },
@@ -984,7 +1752,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Restore Durability"
+          "Text": "Durability Damage (No Ignore)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Like 4: the row's insideDurability is applied to every weapon slot and armour piece when the effect is applied, but corrosionIgnore does not exempt it. No vanilla row uses it."
         }
       ]
     },
@@ -993,7 +1767,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Local Light Aura"
+          "Text": "Label (Light)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by light sources (torches, lanterns, Starlight); the light is the rows' own antiDarkSightRadius."
         }
       ]
     },
@@ -1002,7 +1782,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Rescue Request"
+          "Text": "Help Request (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Used by the help-request system rows. The only check reads it and throws the result away, so it has no effect in this build."
         }
       ]
     },
@@ -1011,7 +1797,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "White Relief Magic"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1020,7 +1812,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Black Relief Magic"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1029,7 +1827,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: Lightning)"
+          "Text": "Label (Lightning)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by lightning weapon buffs; the buff is the rows' own fields."
         }
       ]
     },
@@ -1038,7 +1842,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enable Attack Effect (NPC)"
+          "Text": "Weapon Buff On-Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A weapon buff whose atkOccurrenceSpEffectId is applied when its attacks hit. Only the first active 152/153 effect that fits the attack is used; atkOccurrenceSpEffectId does nothing on rows with other states."
         }
       ]
     },
@@ -1047,7 +1857,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enable Attack Effect (Player)"
+          "Text": "Weapon Buff On-Hit (Alt)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 152: the first active 152/153 effect that fits the attack supplies the on-hit SpEffect (atkOccurrenceSpEffectId). No vanilla row uses it."
         }
       ]
     },
@@ -1056,7 +1872,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prevent Flask Usage"
+          "Text": "Flask Ban"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The player can't use the refillable flasks (goods with suppleType 1 or 2) while active. Behaviour scripts also test it (CONDITION_TYPE_NO_EST)."
         }
       ]
     },
@@ -1065,7 +1887,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Poise (Super Armor)"
+          "Text": "Super Armor Change"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's changeSuperArmorPoint takes effect only on rows with this state; nothing else reads that field. Used by super-armor casting effects."
         }
       ]
     },
@@ -1074,7 +1902,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disable Durability"
+          "Text": "Lock Max Durability"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, changes to equipment maximum durability (from maxDurability on applied effects) are skipped. TAE events gated on it exist (c4450), but no vanilla row uses it."
         }
       ]
     },
@@ -1083,7 +1917,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Allow Spirit NPC Hit"
+          "Text": "Hit Ghosts"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The character's attacks can hit enemies flagged isGhost in NpcParam, which they would otherwise pass through. It also changes how the character is treated as a defender (not yet understood)."
         }
       ]
     },
@@ -1092,7 +1932,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: B)"
+          "Text": "Guard Strength Buff"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's guard fields (guardDefFlickPowerRate, guardStaminaCutRate, guardStaminaMult) take effect only on rows with this state (or 204/470 for the last two). Used by the Barricade Shield hardness buffs."
         }
       ]
     },
@@ -1101,7 +1947,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Negate Death Penalty"
+          "Text": "Keep Runes (Item)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the player dies with it active, the death penalty is avoided (runes are not lost) and the Sacrificial Twig in a talisman slot is used up. Overridden by 69 and 160, and ignored when dying of death blight."
         }
       ]
     },
@@ -1110,7 +1962,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Negate Death Penalty (include Death Blight)"
+          "Text": "Keep Runes (No Cost)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the player dies with it active, the death penalty is avoided without using anything up (Twiggy Cracked Tear). Takes priority over 159; overridden by 69; ignored when dying of death blight."
         }
       ]
     },
@@ -1119,7 +1977,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace: B"
+          "Text": "Return Stone B (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A cut return-stone warp kind. Its handler is empty, so it does nothing in ER."
         }
       ]
     },
@@ -1128,7 +1992,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace: C"
+          "Text": "Return Stone C (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A cut return-stone warp kind. Its handler is empty, so it does nothing in ER."
         }
       ]
     },
@@ -1137,7 +2007,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace: D"
+          "Text": "Return Stone D (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A cut return-stone warp kind. Its handler is empty, so it does nothing in ER."
         }
       ]
     },
@@ -1146,7 +2022,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace: E"
+          "Text": "Return Stone E (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A cut return-stone warp kind. Its handler is empty, so it does nothing in ER."
         }
       ]
     },
@@ -1155,7 +2037,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace: A"
+          "Text": "Return Stone A (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A cut return-stone warp kind. Its handler is empty, so it does nothing in ER."
         }
       ]
     },
@@ -1164,7 +2052,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pledge Discarded"
+          "Text": "Abandon Covenant"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, clears their covenant (vow) unless the covenant is locked."
         }
       ]
     },
@@ -1173,7 +2067,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Full Body Transform VFX"
+          "Text": "Full-Body Transformation"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Locks every armour slot in the equipment menu while active. The transformed look comes from the effect's SpEffectVfx transformProtectorId (with isFullBodyTransformProtectorId). Used by Rock Heart, Priestess Heart and Lamenter's Mask. See 96 for the head-only version."
         }
       ]
     },
@@ -1182,7 +2082,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Bow Distance"
+          "Text": "Full Zoom Range"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Removes the lower zoom limit of the scope camera (bow aiming, telescope), so the whole zoom range is available. Arrow's Reach uses it; its bow-range bonus is the separate bowDistRate field, which counts on any effect."
         }
       ]
     },
@@ -1191,7 +2097,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1200,7 +2112,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Karmic Justice Count Tracker"
+          "Text": "Retribution Counter"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, damage taken is added to the retribution total that triggers the chained effect (Law of Causality). The chained row uses this state as its condition."
         }
       ]
     },
@@ -1209,7 +2127,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Used for Behavior Change"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1218,7 +2142,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Post-Eclipse Ritual"
+          "Text": "Label (Test)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Only a test row uses it."
         }
       ]
     },
@@ -1227,7 +2157,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Evil Spirit Power"
+          "Text": "Label (Evil Spirit Power)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Any effect comes from the row's own fields."
         }
       ]
     },
@@ -1236,7 +2172,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Revival Staging Effect"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by system rows (revival effect, ritual target)."
         }
       ]
     },
@@ -1245,7 +2187,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply NPC Sound Distraction"
+          "Text": "Label (Catnip)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by catnip rows; the effect is the rows' own AI sound and target priority fields."
         }
       ]
     },
@@ -1254,7 +2202,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Soul Coin (Beastly)"
+          "Text": "Label (Catnip)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by catnip rows; the effect is the rows' own AI sound and target priority fields."
         }
       ]
     },
@@ -1263,7 +2217,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Death effect Lv1"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1272,7 +2232,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Death effect Lv2"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1281,7 +2247,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Death effect Lv3"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1290,7 +2262,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Death effect Lv4"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1299,7 +2277,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Blue Sign Visualization"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a system row only."
         }
       ]
     },
@@ -1308,7 +2292,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hide Weapon Appearance"
+          "Text": "Label (Unseen Blade)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by Unseen Blade; the effect is the row's own fields."
         }
       ]
     },
@@ -1317,7 +2307,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1326,7 +2322,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Contact Damage (Feet)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Like 123-126: the row's attack power is added as a separate contact-damage source, only to hits whose contact type matches (two kinds of contact). No vanilla row uses it."
         }
       ]
     },
@@ -1335,7 +2337,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Stormruler: Activation"
+          "Text": "Storm Ruler Active"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect, but a large set of c0000 TAE events (attacks, SFX and sounds) only play while it is active, which unlocks the weapon's special moveset effects."
         }
       ]
     },
@@ -1344,7 +2352,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Rescue Permission"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a system row only."
         }
       ]
     },
@@ -1353,7 +2367,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Yellow Robe Multiplayer: Guest"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a system row only."
         }
       ]
     },
@@ -1362,7 +2382,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1371,7 +2397,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1380,7 +2412,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Ladder Stage 5"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Top step of the 111-192 ladder: ends 111-114 when applied, and none of them can be applied while it is active. While active it also unequips the head and locks the head slot, and applies the effect's armour transformation as 96 does. Cure 198 removes it. No vanilla row uses it."
         }
       ]
     },
@@ -1389,7 +2427,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Effect Duration"
+          "Text": "Extend Durations"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, every effect flagged isExtendSpEffectLife lasts longer by this row's extendLifeRate (rates from several 193 effects add up). Used by the Old Lord's Talisman."
         }
       ]
     },
@@ -1398,7 +2442,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Increase number of magic uses"
+          "Text": "Cheaper Spell Uses"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Casting a spell uses up two thirds of a use instead of one. ER spells have unlimited uses (FP pays instead), so it has no visible effect unless a spell sets maxQuantity."
         }
       ]
     },
@@ -1407,7 +2457,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Scatter Dragon Scales"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a system row only."
         }
       ]
     },
@@ -1416,7 +2472,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "IfWorldChrManNull"
+          "Text": "No Effect"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Tested on the player, but the code it triggers is empty in this build, so it does nothing."
         }
       ]
     },
@@ -1425,7 +2487,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Counter Attack"
+          "Text": "Counter Attack Bonus"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's attack rates apply only to the character's counter hits. Used by the Spear Talisman."
         }
       ]
     },
@@ -1434,7 +2502,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cure Death Blight"
+          "Text": "Cure Ladder"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes states 111, 112, 113, 114 and 192, then ends itself immediately."
         }
       ]
     },
@@ -1443,7 +2517,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Kill Effect (for Player)"
+          "Text": "Kill Trigger"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the player defeats an enemy, every active effect with this state applies its applyIdOnGetSoul. applyIdOnGetSoul does nothing on rows with other states. Used by Rykard's Great Rune, Taker's Cameo and similar."
         }
       ]
     },
@@ -1452,7 +2532,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Power Within VFX"
+          "Text": "Label (Buff)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by self-buffs; the buff is the rows' own fields."
         }
       ]
     },
@@ -1461,7 +2547,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "VowOfSilenceVisual"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1470,7 +2562,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dragon Roar"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1479,7 +2577,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Decrease number of times magic is used"
+          "Text": "Costly Spell Uses"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Casting a spell uses up two uses instead of one. ER spells have unlimited uses (FP pays instead), so it has no visible effect unless a spell sets maxQuantity."
         }
       ]
     },
@@ -1488,7 +2592,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Strengthen Guard [Large]"
+          "Text": "Guard Strength Buff (Alt)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 158: the row's guard fields take effect only on rows with this state. No vanilla row uses it."
         }
       ]
     },
@@ -1497,7 +2607,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hand Buff VFX (Type: Holy)"
+          "Text": "Label (Holy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by holy weapon buffs; the buff is the rows' own fields."
         }
       ]
     },
@@ -1506,7 +2622,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Activatable State Change Type"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition for other effects (the Black Knife Assassin's hide). The game does not test it."
         }
       ]
     },
@@ -1515,7 +2637,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Jailer HP Drain"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1524,7 +2652,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger on NPC Backstab"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1533,7 +2667,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1542,7 +2682,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ItemBan"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1551,7 +2697,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1560,7 +2712,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1569,7 +2727,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No use of prohibited items in arena"
+          "Text": "Colosseum Area"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks the player as inside the Colosseum: goods with disableUseAtOutOfColiseum can only be used while it is active. No vanilla row sets it."
+        }
+      ]
+    },
+    {
+      "Key": "235",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Cannot Die (Players)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Like 143, but only for players: while active, the player can't die. HKS env(1101) tests the same can't-die check. No vanilla row uses it."
         }
       ]
     },
@@ -1578,7 +2757,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Calamity Ring"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1587,7 +2772,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Oil Status"
+          "Text": "Oil Covered"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The character is covered in oil: the next fire hit ignites it and ends the oil effect. The extra fire damage taken is the row's own fireDamageCutRate."
         }
       ]
     },
@@ -1596,7 +2787,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fire"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1605,7 +2802,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Crouched in Grass"
+          "Text": "Label (Grass)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by the crouching-in-grass AI sound row."
         }
       ]
     },
@@ -1614,7 +2817,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Down"
+          "Text": "Label (Downed)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by the downed-state row; AI scripts could test it but none do."
         }
       ]
     },
@@ -1623,7 +2832,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Frostbite"
+          "Text": "Frostbite"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The frostbite ailment. Shows in the fifth status-ailment slot with the FROSTBITE banner, flags frostbite for HKS (STATUS_EFFECT_COLD), and is removed by cure states 13 and 276 and by the cure-all. A fire hit on a frostbitten character applies SpEffect 5247, which removes the frost."
         }
       ]
     },
@@ -1632,7 +2847,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Effect If Torch In Hand"
+          "Text": "Maggots"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A maggot infestation that bleeds the character through its cycle effect. Removed by cure states 262 and 13."
         }
       ]
     },
@@ -1641,7 +2862,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cure Worm Status"
+          "Text": "Cure Maggots"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes maggots (state 261), then ends itself immediately. Used by torches and the maggot-curing bolus."
         }
       ]
     },
@@ -1650,7 +2877,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Is Ritual-Capable Corpse"
+          "Text": "Label (Ritual Corpse)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by ritual-corpse rows."
         }
       ]
     },
@@ -1659,7 +2892,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Quick Match Request Timing"
+          "Text": "Label (Quick Match)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a quick-match timing system row."
         }
       ]
     },
@@ -1668,7 +2907,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disable Fall Death"
+          "Text": "No Forced Fall Death"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect; behaviour scripts test it (env 305, SP_EFFECT_TYPE_FALL_DEATH_INVALID) to stop forced fall deaths in certain maps."
         }
       ]
     },
@@ -1677,7 +2922,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Sight for AI"
+          "Text": "AI Sight Cone Override"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The AI targeting system takes its sight-cone angles from this row's eye_angX and eye_angY while active. Those fields do nothing on rows with other states."
         }
       ]
     },
@@ -1686,7 +2937,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1695,7 +2952,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spirit Summon: Identification Effect"
+          "Text": "Spirit Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker identifying spirit summons for TAE gating and as an invocation condition. The game does not test it."
         }
       ]
     },
@@ -1704,7 +2967,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spirit Summon: Set Damage Animation Level (Super Armor)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition for another effect (a spirit's reserved damage-animation change). The game does not test it."
         }
       ]
     },
@@ -1713,7 +2982,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spirit Summon: Set Damage Animation Level (Full Super Armor)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition for another effect (a spirit's reserved damage-animation change). The game does not test it."
         }
       ]
     },
@@ -1722,7 +2997,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Player Behavior ID"
+          "Text": "Behavior on Apply"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, runs the row's behaviorId as a behaviour from the row's dmypolyId on the character. Used by many behaviour attachments (Spiritspring jumps, ailment cycle searches)."
         }
       ]
     },
@@ -1733,6 +3014,12 @@
           "Language": "English",
           "Text": "Cure Frostbite"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes frostbite (state 260), then ends itself immediately."
+        }
       ]
     },
     {
@@ -1740,7 +3027,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Selected Great Rune Effect"
+          "Text": "Rune Arc"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, the equipped Great Rune is active."
         }
       ]
     },
@@ -1749,7 +3042,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disable Fast Travel"
+          "Text": "Warp Ban"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, warp items, warp sorceries and incantations, and fast travel from the menu are refused."
+        }
+      ]
+    },
+    {
+      "Key": "279",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Summon Slot Choice"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Changes which summoning slot the multiplayer system opens for the player, which only matters for one cut covenant-style summon kind. No vanilla row uses it."
         }
       ]
     },
@@ -1758,7 +3072,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "WatchdogTriggerForHost"
+          "Text": "Label (Debug Only)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: set on the player but only read by a multiplayer debug display, so it has no gameplay effect."
         }
       ]
     },
@@ -1767,7 +3087,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Wet System"
+          "Text": "Label (Wetness)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by wetness rows."
         }
       ]
     },
@@ -1776,7 +3102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC Correction for Multiplayer"
+          "Text": "Multiplayer Only"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect only exists during multiplayer: it is removed whenever the player is not in an online session with other players. It is also left out of the active-effect list sent for other players. Used by multiplayer scaling."
         }
       ]
     },
@@ -1785,7 +3117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Tears of Denial Trigger"
+          "Text": "Minimum 1 HP"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, HP that reaches 0 is set back to 1, so the character can't be killed by HP loss. No vanilla row uses it."
         }
       ]
     },
@@ -1794,7 +3132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Recovery Effect"
+          "Text": "Label (Drain)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by drain and heal-on-hit rows."
         }
       ]
     },
@@ -1803,7 +3147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Completion Notice: Recover to Below Max HP"
+          "Text": "Label (System)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a system notification row."
         }
       ]
     },
@@ -1812,7 +3162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Weak Movement Slow"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1821,7 +3177,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Strong Movement Slow"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1830,7 +3192,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply on Critical Hit (HP)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition for the effect triggered by the Assassin's Crimson Dagger (critical hits restore HP). The game does not test it."
         }
       ]
     },
@@ -1839,7 +3207,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply on Critical Hit (FP)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition for the effect triggered by the Assassin's Cerulean Dagger (critical hits restore FP). The game does not test it."
         }
       ]
     },
@@ -1848,7 +3222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extend Roll Invincibility"
+          "Text": "Extended Roll Invincibility"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect, but c0000 TAE events that extend roll invincibility only play while it is active. Used by the Crucible Feather Talisman and Windy Crystal Tear."
         }
       ]
     },
@@ -1857,7 +3237,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Roll Invisibility"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1866,7 +3252,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Repair1"
+          "Text": "Repair Active Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's insideDurability changes the durability of the active weapon only (negative values repair), and only if the weapon wasn't already broken. No vanilla row uses it."
         }
       ]
     },
@@ -1875,7 +3267,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Durability Change"
+          "Text": "Repair All Equipment"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's insideDurability changes the durability of every weapon slot and armour piece (negative values repair), skipping pieces that are already broken. Used by the weapon repair row."
         }
       ]
     },
@@ -1884,7 +3282,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1893,7 +3297,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Label (Debug Only)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: set on the player but only read by a multiplayer debug display, so it has no gameplay effect."
         }
       ]
     },
@@ -1902,7 +3312,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -1911,7 +3327,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not in Multiplayer Session"
+          "Text": "Corpse Fade (Activity of Dead)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The mark that the activity-of-dead search (318) leaves on a corpse. It only sticks to a ragdolled corpse that hasn't started fading, then makes the corpse fade out over GameSystemCommonParam activityOfDeadSpEffect_DeadFadeOutTime. Effects with this state are never sent to other players. No vanilla row uses it."
         }
       ]
     },
@@ -1920,7 +3342,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Crouched (NPC)"
+          "Text": "Crouch Height"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the row's chrProxyHeightRate scales the character's collision height (used for the crouching stance)."
         }
       ]
     },
@@ -1929,7 +3357,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Allow AI to hit Invaders (Host)"
+          "Text": "Label (Host)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a multiplayer host row."
         }
       ]
     },
@@ -1938,7 +3372,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Allow AI to hit Invaders (Guest)"
+          "Text": "Label (Guest)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a multiplayer guest row."
         }
       ]
     },
@@ -1947,7 +3387,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dispel all Effects"
+          "Text": "Shorten Durations"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, every effect flagged isContractSpEffectLife runs out faster by this row's contractLifeRate (rates from several 301 effects add up). Used by Law of Regression."
         }
       ]
     },
@@ -1956,7 +3402,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warp to Grace"
+          "Text": "Return Stone Warp"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When active on the player, warps them using the return-stone warp; the destination kind is chosen by the game's warp system."
         }
       ]
     },
@@ -1965,7 +3417,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 1"
+          "Text": "Accumulator Slot 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 1: effects with accumuVal add to this gauge only while a 303 effect is active, and the gauge never drops below 0. The 303 row's accumuOverFireId / accumuUnderFireId fire when the gauge crosses accumuOverVal / accumuUnderVal. Also used widely as an enemy TAE marker."
         }
       ]
     },
@@ -1974,7 +3432,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 2"
+          "Text": "Accumulator Slot 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 2: effects with accumuVal add to it only while a 304 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Also used as an enemy TAE marker."
         }
       ]
     },
@@ -1983,7 +3447,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 3"
+          "Text": "Accumulator Slot 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 3: effects with accumuVal add to it only while a 305 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Also used as an enemy TAE marker."
         }
       ]
     },
@@ -1992,7 +3462,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 4"
+          "Text": "Accumulator Slot 4"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 4: effects with accumuVal add to it only while a 306 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Also used as an enemy TAE marker."
         }
       ]
     },
@@ -2001,7 +3477,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 5"
+          "Text": "Accumulator Slot 5"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 5: effects with accumuVal add to it only while a 307 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Also used as an enemy TAE marker and by AI scripts."
         }
       ]
     },
@@ -2010,7 +3492,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 6"
+          "Text": "Accumulator Slot 6"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 6: effects with accumuVal add to it only while a 308 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Used by the Thorny Cracked Tear gauge."
         }
       ]
     },
@@ -2019,7 +3507,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 7"
+          "Text": "Accumulator Slot 7"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 7: effects with accumuVal add to it only while a 309 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Used by Festive Grease."
         }
       ]
     },
@@ -2028,7 +3522,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 8"
+          "Text": "Accumulator Slot 8"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 8: effects with accumuVal add to it only while a 310 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Used by Festive Grease."
         }
       ]
     },
@@ -2037,7 +3537,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to Accumulator 9"
+          "Text": "Accumulator Slot 9"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 9: effects with accumuVal add to it only while a 311 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds."
         }
       ]
     },
@@ -2046,7 +3552,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Malenia： Rot Support Spawn"
+          "Text": "Accumulator Slot 10"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Enables accumulator gauge 10: effects with accumuVal add to it only while a 312 effect is active (never below 0), and the row's over/under fire IDs trigger at its thresholds. Used by Malenia's rot support."
         }
       ]
     },
@@ -2055,7 +3567,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enable Set Message Sign Display"
+          "Text": "Show Summon Signs"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, summon signs are shown to the player as if the Furlcalling Finger Remedy were in use. Used by the cycled Scriptstone."
         }
       ]
     },
@@ -2064,7 +3582,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Add to all Active Accumulators"
+          "Text": "Accumulator Bulk Add"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, adds the row's accumuVal to the accumulator gauges in one go (for gauges whose slot state is active)."
         }
       ]
     },
@@ -2073,7 +3597,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Attack Power Scaling for Equip Load"
+          "Text": "Light-Load Attack Bonus"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's attack rates are scaled by a curve (CalcCorrectGraph 50) of the player's equip load, so the bonus is largest at low load. Used by the Blue Dancer Charm."
         }
       ]
     },
@@ -2082,7 +3612,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "CalcCorrectGraph_33"
+          "Text": "Light-Load Attack Bonus 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 315, using CalcCorrectGraph 51 for the curve."
         }
       ]
     },
@@ -2091,7 +3627,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Revoke Online Penalty"
+          "Text": "Clear Network Penalty"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When active on the player, immediately clears the online-play penalty (penalty points, timer and penalised flag). The penalty system is unused in retail ER, so it has no visible effect."
         }
       ]
     },
@@ -2100,7 +3642,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dead Again"
+          "Text": "Corpse Search (Activity of Dead)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When it starts, the owner searches nearby corpses (radius from GameSystemCommonParam), applies the activity-of-dead OnHit effect to the first suitable one and shoots the activity-of-dead bullet at it. No vanilla row uses it, and the param's effect and bullet IDs don't exist in retail."
         }
       ]
     },
@@ -2109,7 +3657,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Block Weapon Inputs"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the player's weapon-switch (right and left) and attack inputs (right normal, right strong, left) are ignored, as while riding."
         }
       ]
     },
@@ -2118,7 +3672,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Block All Input"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the character's controller isn't processed at all (pad input for players, AI or network control for others), so it can't act. No vanilla row uses it."
         }
       ]
     },
@@ -2127,7 +3687,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Reverse Hollowing"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -2136,7 +3702,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ChrAsmStyle: HKS Left Hand"
+          "Text": "Left Hand Style Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Applied by HKS while the left weapon is two-handed. The game does not test it; shield buffs use it as a condition so they only work in that hand style."
         }
       ]
     },
@@ -2145,7 +3717,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ChrAsmStyle: HKS Right Hand"
+          "Text": "Right Hand Style Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Applied by HKS while the right weapon is two-handed. The game does not test it; shield buffs use it as a condition so they only work in that hand style."
         }
       ]
     },
@@ -2154,7 +3732,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply through Invicibility"
+          "Text": "Allow Damage While Invincible"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, effects whose row has isIgnoreNoDamage still damage the character during invincibility (normally only healing gets through). isIgnoreNoDamage does nothing without a 324 effect."
         }
       ]
     },
@@ -2163,7 +3747,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Wet Shader"
+          "Text": "Label (Wet Shader)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a wet-shader row."
         }
       ]
     },
@@ -2172,7 +3762,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Switch Animation Gender"
+          "Text": "Swap Gender (Posture)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the character's arm and leg posture-twist limits come from the other gender's PostureControlParam_Gender row (HKS env 367). Used by the Entwining Umbilical Cord."
         }
       ]
     },
@@ -2181,7 +3777,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ember"
+          "Text": "Great Rune on Respawn"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, requests the PlayerCommonParam systemEnchant_BigRune effect to be applied at the end of the next revive, unless Rune Arc is active. Rune Arc cancels the request. Unused in retail (the enchant effect doesn't exist)."
         }
       ]
     },
@@ -2190,7 +3792,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Change Durability"
+          "Text": "Durability Change (Inventory)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's insideDurability changes the durability of every weapon and armour piece the player owns, in the inventory and the storage box, skipping broken items. No vanilla row uses it."
         }
       ]
     },
@@ -2199,7 +3807,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "GetEstusCharge"
+          "Text": "Restore Flask Charge"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Once per activation, gives the player one Flask of Crimson Tears charge (up to the maximum) and plays the flask absorption SFX. No vanilla row uses it."
         }
       ]
     },
@@ -2208,7 +3822,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Yellow Robe Multiplayer: Host"
+          "Text": "Multiplayer Host Gate"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the player counts as able to host multiplayer in play regions that allow hosting, which opens the summoning slots. Some summon kinds require it."
         }
       ]
     },
@@ -2217,7 +3837,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "AiParam1"
+          "Text": "No Targeting (Pair A)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Works together with 332: a character with 331 can't keep or acquire a lock-on target that has 332. No vanilla row uses it."
         }
       ]
     },
@@ -2226,7 +3852,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "AiParam_effect16189"
+          "Text": "No Targeting (Pair B)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Works together with 331: a character with 332 can't be locked on to, or kept as a target, by a character with 331. No vanilla row uses it."
         }
       ]
     },
@@ -2235,7 +3867,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spell Enhance (+6 to ID)"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -2244,7 +3882,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Bullet Behavior ID"
+          "Text": "Behavior on Apply (Cond)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Like 275 (runs the row's behaviorId at its dmypolyId when applied), but only when a character-side condition holds. No vanilla row uses it."
         }
       ]
     },
@@ -2253,7 +3897,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Critical Hit occurs"
+          "Text": "Critical Hit Damage Cut"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's magic, fire, lightning and holy damage-cut rates apply only to critical hits (throws), and not to ordinary hits. Used by the Crucible Scale Talisman."
         }
       ]
     },
@@ -2262,7 +3912,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Summon Horse"
+          "Text": "Call Mount"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When it starts, calls the player's mount (Torrent) to the player, once per activation. Used by the Spectral Steed Whistle."
         }
       ]
     },
@@ -2271,7 +3927,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC: Non-Frenzy State"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (a grey berserker's calm state) for TAE gating: sound and other TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2280,7 +3942,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC: Frenzy State"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (a grey berserker's enraged state) for TAE gating: sound and other TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2289,7 +3957,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Reload"
+          "Text": "Clear Dead Mount"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, if their mount (Torrent) is dead it is removed from the world, so it can be called again. Used by grace rest."
         }
       ]
     },
@@ -2298,7 +3972,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Horse in Anti-Horse Area"
+          "Text": "Dismiss Mount"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, removes their mount (Torrent) from the world. Used for no-horse areas."
         }
       ]
     },
@@ -2307,7 +3987,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Horse HP Regen"
+          "Text": "Never Expires"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Effects with this state never time out, whatever their duration; they last until something removes them. Used by Torrent's HP regeneration."
         }
       ]
     },
@@ -2316,7 +4002,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Albinauric: NPC Sound Effect: Metal"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (frog man weapon/armour sounds) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2325,7 +4017,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Albinauric: NPC Sound Effect: Wood"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (frog man weapon/armour sounds) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2334,7 +4032,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Albinauric: NPC Sound Effect: Chainmail"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (frog man weapon/armour sounds) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2343,7 +4047,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Albinauric: NPC Sound Effect: Flesh"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (frog man weapon/armour sounds) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2352,7 +4062,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Albinauric: NPC Sound Effect: Normal Size"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (frog man weapon/armour sounds) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2361,7 +4077,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Albinauric: NPC Sound Effect: Large Size"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (frog man weapon/armour sounds) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2370,7 +4092,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Snail: NPC Sound Effect: Normal / Venom / Magic"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (snail) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2379,7 +4107,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Snail: NPC Sound Effect: Bone"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (snail) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2388,7 +4122,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Living Jar: NPC Sound Effect: Parent"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (living jar) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2397,7 +4137,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Living Jar: NPC Sound Effect: Child"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (living jar) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2406,7 +4152,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Living Jar: NPC Sound Effect: Normal / Fire"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (living jar) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2415,7 +4167,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Living Jar: NPC Sound Effect: Ceramic"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (living jar) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2424,7 +4182,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disable Navmesh Marking"
+          "Text": "No Navmesh Marking"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the character stops marking its area on the navmesh, so AI pathing no longer avoids it. The marking is removed about one second after the effect starts and comes back when it ends."
         }
       ]
     },
@@ -2433,7 +4197,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Malenia: NPC Sound Effect: Pre-Heatup"
+          "Text": "Enemy Phase Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a boss phase (Malenia before heat-up) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2442,7 +4212,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Malenia: NPC Sound Effect: Post-Heatup"
+          "Text": "Enemy Phase Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a boss phase (Malenia after heat-up) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2451,7 +4227,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Invoke Spirit Summon"
+          "Text": "Spirit Summon Request"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Applying it to the player asks the summon system to call the spirit ash matching the effect's ID (rounded down to the nearest hundred, linked through BuddyParam). If a spirit is already out, it is dismissed instead. Summoning also needs a monument in range (373)."
         }
       ]
     },
@@ -2460,7 +4242,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ancient Hero: NPC Sound Effect: Pre-Heatup"
+          "Text": "Spirit Sound Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a spirit (buddy) variant for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2469,7 +4257,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ancient Hero: NPC Sound Effect: Post-Heatup"
+          "Text": "Spirit Sound Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a spirit (buddy) variant for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2478,7 +4272,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC Sound Effect: Type A"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c4550) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2487,7 +4287,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC Sound Effect: Type B"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c4550 crushed throat) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2496,7 +4302,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Elder Albinauric: NPC Sound Effect: Clothing"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c3670 clothed) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2505,7 +4317,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Elder Albinauric: NPC Sound Effect: Nude"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c3670 naked) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2514,7 +4332,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Elder Albinauric: NPC Sound Effect: Restraint"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c3670 restrained) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2523,7 +4347,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sound Effect Status Change: Type A"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (perfumer/glintstone sorcerer) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2532,7 +4362,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sound Effect Status Change: Type B"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (perfumer page) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2541,7 +4377,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Critical Attack"
+          "Text": "Label (Talisman)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by the Dagger Talisman; its effect is the row's own fields."
         }
       ]
     },
@@ -2550,7 +4392,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sound Effect Check"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c3660 citizens) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2559,7 +4407,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Putrid Corpse: NPC Sound Effect: Rotten"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (rotting dead) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2568,7 +4422,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cemetery Shade: NPC Sound Effect: Shadow"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (grave shade) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2577,7 +4437,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC Transparency Disable"
+          "Text": "No See-Through Fade"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the character no longer fades out when the camera gets close to it."
         }
       ]
     },
@@ -2586,7 +4452,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Grafted Scion: NPC Sound Effect: Holy"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (grafted spider, holy) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2595,7 +4467,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Is near Spirit Summoning Stone"
+          "Text": "Summon Monument In Range"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks the player as near a summoning monument. Spirit ashes can only be summoned while it is active (with no spirit out), and the menu shows summoning as available only then. With a spirit already out, being near a different monument lets the player summon again there."
         }
       ]
     },
@@ -2604,7 +4482,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Crayfish: Normal"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (lake crab, normal) for TAE gating: attack, SFX and sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2613,7 +4497,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Crayfish: Freeze"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (lake crab, frozen) for TAE gating: attack, SFX and sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2622,7 +4512,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Stonedigger: NPC Sound Effect: No Backpack"
+          "Text": "Label (Enemy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used as a label by an enemy sound row."
         }
       ]
     },
@@ -2631,7 +4527,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Stonedigger: NPC Sound Effect: Backpack"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (miner with pack) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2640,7 +4542,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply in Presence of Blood Loss"
+          "Text": "Bleed Trigger Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker set when blood loss procs nearby. The game does not test it; effects such as Lord of Blood's Exultation use it as their invocation condition."
         }
       ]
     },
@@ -2649,7 +4557,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply in Presence of Rot"
+          "Text": "Rot/Poison Trigger Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker set when poison or rot procs nearby. The game does not test it; effects such as Kindred of Rot's Exultation use it as their invocation condition."
         }
       ]
     },
@@ -2658,7 +4572,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remnant Soldier: Item Use Permission"
+          "Text": "Label (Test)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a straggler test row."
         }
       ]
     },
@@ -2667,7 +4587,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remnant Soldier: Activation"
+          "Text": "Wake Stragglers (Test)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, every straggler the AI manager tracks is given the GameSystemCommonParam SpEffectId_StragglerWakeUp effect. Part of an unused straggler test system."
         }
       ]
     },
@@ -2676,7 +4602,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remnant Soldier: Pre-Activation State"
+          "Text": "Dormant Straggler (Test)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While a character has it, AI treats it as no target, so a straggler that hasn't woken yet can't be targeted. Part of an unused straggler test system."
         }
       ]
     },
@@ -2685,7 +4617,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Concentrate: Right Hand Effect"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the right-hand Determination buffs. The game does not test it; other effects use it as their invocation condition (to remove the buff)."
         }
       ]
     },
@@ -2694,7 +4632,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Concentrate: Left Hand Effect"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the left-hand Determination and life-drain buffs. The game does not test it; other effects use it as their invocation condition."
+        }
+      ]
+    },
+    {
+      "Key": "386",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "AI Can Path Over Lava"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the character's AI may route over lava navmesh faces (at eight times the normal path cost) instead of avoiding them. No vanilla row uses it."
         }
       ]
     },
@@ -2703,7 +4662,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Elder Albinauric: NPC Sound Effect: Prisoner"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (c3670 prisoner) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2712,7 +4677,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Deathbird: No Dark Wing Check"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (Deathbird without dark wings) for TAE gating: attack, SFX and sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2721,7 +4692,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Deathbird: Dark Wing Check"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (Deathbird with dark wings) for TAE gating: attack, SFX and sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2730,7 +4707,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pacify Wild Animals (Attack)"
+          "Text": "Beast Repellent Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a beast-repellent torch. The game does not test it; AI scripts check it on their target to react to the fire."
         }
       ]
     },
@@ -2739,7 +4722,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pacify Wild Animals (Active)"
+          "Text": "Beast Repellent Enabled"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy that reacts to beast-repellent fire. The game does not test it; AI scripts check it on themselves."
         }
       ]
     },
@@ -2748,7 +4737,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mounted Flinch Damage (Attack)"
+          "Text": "Label (Strategy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a mounted-stagger attack label row."
         }
       ]
     },
@@ -2757,7 +4752,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mounted Flinch Damage (Active)"
+          "Text": "Label (Strategy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a mounted-stagger enable label row."
         }
       ]
     },
@@ -2766,7 +4767,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Confusion to NPC"
+          "Text": "Confusion Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a confused enemy (Crystal Dart). The game does not test it; behaviour scripts and other effects do."
         }
       ]
     },
@@ -2775,7 +4782,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Berserk (Attack)"
+          "Text": "Berserk Trigger Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a berserk-inducing attack (Swarm Pot). The game does not test it; TAE events and AI scripts (pumpkin heads) react to it."
         }
       ]
     },
@@ -2784,7 +4797,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pacify Bear / Dragon (Attack)"
+          "Text": "Label (Strategy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by a bear/dragon repellent label row."
         }
       ]
     },
@@ -2793,7 +4812,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pacify Bear / Dragon (Active)"
+          "Text": "Label (Strategy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by bear/dragon repellent label rows."
         }
       ]
     },
@@ -2802,7 +4827,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Gravity Pull (Attack)"
+          "Text": "Anti-Air Attack Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an attack that brings down flying enemies. The game does not test it; behaviour scripts check it."
         }
       ]
     },
@@ -2811,7 +4842,43 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Gravity Pull (Active)"
+          "Text": "Anti-Air Enabled Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a flying enemy that can be brought down. The game does not test it; behaviour scripts check it."
+        }
+      ]
+    },
+    {
+      "Key": "400",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TAE Gate (Unused)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. Only a few c4340 TAE SFX events are gated on it, and no vanilla row sets it."
+        }
+      ]
+    },
+    {
+      "Key": "401",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "TAE Gate (Unused)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No built-in effect. Only a few c4340 TAE SFX events are gated on it, and no vanilla row sets it."
         }
       ]
     },
@@ -2820,7 +4887,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sleep Crystal"
+          "Text": "Sleep Crystal Message"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When it starts on the player, shows a dialog message (text ID 20000700, most likely \"This Dream Mist has been already acquired\") unless the event-item system blocks it."
         }
       ]
     },
@@ -2829,7 +4902,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Additional Sound Effect"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an enemy variant (grey berserker growl) for TAE gating: sound events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2838,7 +4917,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Berserk (Active)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for berserk-enabled targets. The game does not test it; the Swarm Pot effect uses it as its invocation condition."
         }
       ]
     },
@@ -2847,7 +4932,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer Host Status"
+          "Text": "Furlcalling Remedy"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, toggles the Furlcalling Finger Remedy: summon signs become visible (or stop being visible if it was already on)."
         }
       ]
     },
@@ -2856,7 +4947,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Rescue (Host)"
+          "Text": "White Cipher Ring"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, toggles the White Cipher Ring (automatic hunter summon request when invaded), applying or removing its related effects and showing a network message."
         }
       ]
     },
@@ -2865,7 +4962,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Rescue (Guest)"
+          "Text": "Blue Cipher Ring"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, toggles the Blue Cipher Ring (being summoned as a hunter), applying or removing its related effects and showing a network message."
         }
       ]
     },
@@ -2874,7 +4977,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Invasion Active (Finger Frame)"
+          "Text": "Taunter's Tongue"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, toggles SpEffect 28 (the Taunter's Tongue effect): removes it if present, applies it otherwise."
         }
       ]
     },
@@ -2883,7 +4992,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Send Sign to Pool (White)"
+          "Text": "Place/Withdraw White Sign"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Small Golden Effigy: places a white (co-op) summon sign in the pool, or withdraws it if one is already out. Placing happens once per activation."
         }
       ]
     },
@@ -2892,7 +5007,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Send Sign to Pool (Red)"
+          "Text": "Place/Withdraw Red Sign"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Small Red Effigy: places a red (duel) sign in the pool, or withdraws it if one is already out. Placing happens once per activation."
         }
       ]
     },
@@ -2901,7 +5022,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Display Spirit Summon Icon"
+          "Text": "Label (Spirit)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unused: nothing in the game tests this value. Used by the spirit-summon-active icon row."
         }
       ]
     },
@@ -2910,7 +5037,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification Effect (Normal)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker: many enemies' TAE events (attacks, SFX, sounds) only play while it is active, and other effects use it as a condition. The game itself does not test it."
         }
       ]
     },
@@ -2919,7 +5052,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification Effect (Type 1)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker: many enemies' TAE events (attacks, SFX, sounds) only play while it is active, and other effects use it as a condition. The game itself does not test it."
         }
       ]
     },
@@ -2928,7 +5067,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification Effect (Type 2)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker: many enemies' TAE events (attacks, SFX, sounds) only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2937,7 +5082,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification Effect (Type 3)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker: many enemies' TAE events (attacks, SFX, sounds) only play while it is active, and other effects use it as a condition. The game itself does not test it."
         }
       ]
     },
@@ -2946,7 +5097,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification Effect (Type 4)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker: many enemies' TAE events (attacks, SFX, sounds) only play while it is active, and other effects use it as a condition. The game itself does not test it."
         }
       ]
     },
@@ -2955,7 +5112,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Message Creation"
+          "Text": "Place Composed Message"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, places the bloodstain message they composed in the menu, then clears the composed message."
         }
       ]
     },
@@ -2964,7 +5127,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer Start Restriction"
+          "Text": "Block Online Play"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, every online action the play region allows is refused: hosting multiplayer, invading, and placing white or red signs."
         }
       ]
     },
@@ -2973,7 +5142,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply AI Sound Emitter"
+          "Text": "Call Allies Sound"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, emits the row's AppearAiSoundId as an AI sound, which nearby enemies hear (used by call-for-help behaviour)."
         }
       ]
     },
@@ -2982,7 +5157,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Normal)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general variant marker (for example a living-body SFX/sound variant, or Torrent's Spiritspring fall immunity): many TAE events only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -2991,7 +5172,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 1)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general variant marker (for example a spirit-body SFX/sound variant): many TAE events only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3000,7 +5187,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 2)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker for SFX and sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3009,7 +5202,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 3)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker for SFX and sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3018,7 +5217,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 4)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker for SFX and sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3027,7 +5232,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 5)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker for SFX and sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3036,7 +5247,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 6)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker for SFX and sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3045,7 +5262,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 7)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A general enemy variant marker for SFX and sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3054,7 +5277,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 8)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "An enemy variant marker (red-eyed merchants) for sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3063,7 +5292,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Variant Identification VFX (Type 9)"
+          "Text": "Enemy Variant Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "An enemy variant marker (red-eyed merchants) for sound changes: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3072,7 +5307,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "NPC: Buff Ignition"
+          "Text": "Buff Trigger Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for a rune wolf buff trigger: TAE sound events and another effect's condition depend on it. The game itself does not test it."
         }
       ]
     },
@@ -3081,7 +5322,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Kill Effect (for NPC)"
+          "Text": "Kill Trigger (Enemy)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the character defeats an enemy, every active effect with this state applies its applyIdOnGetSoul (used by an enemy's drain on kill)."
         }
       ]
     },
@@ -3090,7 +5337,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spirit Summon: Adjust Phantom Color"
+          "Text": "Spirit Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Replaces the character's defence material with the spirit material (142) while active, changing hit sounds and effects. Iron Body (134) wins if both are active."
         }
       ]
     },
@@ -3099,7 +5352,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Force Horse Dismount"
+          "Text": "Mount Ban Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a no-riding situation. The game does not test it; behaviour scripts do, and the Spectral Steed Whistle can't be used while it is active (its goods row lists this state)."
         }
       ]
     },
@@ -3108,7 +5367,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Opening Damage"
+          "Text": "Opening Damage Cut"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's damage-cut rates apply only to hits on an opening (stance broken, guard broken) instead of every hit."
         }
       ]
     },
@@ -3117,7 +5382,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Lookout Platform"
+          "Text": "Lookout Item Ban"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the player can't use items (used at lookout points)."
         }
       ]
     },
@@ -3126,7 +5397,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Sleep"
+          "Text": "Sleep"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The sleep ailment. Shows in the sixth status-ailment slot with the SLEEP banner, flags sleep for HKS (STATUS_EFFECT_SLEEP), and is removed by cure states 13 and 438. AI and behaviour scripts react to it."
         }
       ]
     },
@@ -3135,7 +5412,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Madness"
+          "Text": "Madness"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The madness ailment. Shows in the seventh status-ailment slot with the MADNESS banner, flags madness for HKS (STATUS_EFFECT_MADNESS), and is removed by cure states 13 and 439."
         }
       ]
     },
@@ -3146,6 +5429,12 @@
           "Language": "English",
           "Text": "Cure Sleep"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes sleep (state 436), then ends itself immediately."
+        }
       ]
     },
     {
@@ -3155,6 +5444,12 @@
           "Language": "English",
           "Text": "Cure Madness"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When applied, removes madness (state 437), then ends itself immediately."
+        }
       ]
     },
     {
@@ -3162,7 +5457,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Purify Mohg's Nihil"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Purifying Crystal Tear. The game does not test it; other effects use it as their invocation condition."
         }
       ]
     },
@@ -3171,7 +5472,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Mohg's Great Rune"
+          "Text": "Mohg's Great Rune"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, summoning a spirit gives the player the Mohg spirit-heal effect (GameSystemCommonParam bigRuneGreaterDemon_SummonBuddySpecialEffectId_Pc), and invading another world requests the Phantom Great Rune reward."
         }
       ]
     },
@@ -3180,7 +5487,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Heal on Enemy Kill"
+          "Text": "Spirit Kill Heal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the player's summoned spirit defeats an enemy, every active effect with this state applies its applyIdOnGetSoul. Used by Mohg's Great Rune."
         }
       ]
     },
@@ -3189,7 +5502,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Shockwave"
+          "Text": "Anti-Mount Poise Damage"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's saAttackPowerRate multiplies poise damage only for attacks flagged isVsRideAtk (anti-mount attacks); ordinary attacks ignore it."
+        }
+      ]
+    },
+    {
+      "Key": "444",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Special Bullet Range Bonus"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While the shooter has it, special bullets travel further: their range is multiplied by the BulletParam's spBulletDistUpRate. No vanilla row uses it."
         }
       ]
     },
@@ -3198,7 +5532,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Giant NPC Lift Height Override"
+          "Text": "Lift Height Override"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's hugeEnemyPickupHeightOverwrite sets the height huge enemies lift the character to."
         }
       ]
     },
@@ -3207,7 +5547,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sleep Collect"
+          "Text": "Sleep Collect Prompt"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While an enemy has it, the player gets an action-button prompt on it to collect from it (GameSystemCommonParam sleepCollectorItemActionButtonParamId and sleepCollectorSpEffectId, unless the character overrides them)."
         }
       ]
     },
@@ -3216,7 +5562,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Phantom Great Rune"
+          "Text": "Blessed Invader Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an invader blessed by the Phantom Great Rune: when they kill a host, the host's game notifies them, which triggers their 448 effect."
         }
       ]
     },
@@ -3225,7 +5577,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enemy Heals HP on Player Kill"
+          "Text": "Invader Kill Heal"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the host's game reports that this invader killed them, every active effect with this state applies its applyIdOnGetSoul (the Phantom Great Rune heal)."
         }
       ]
     },
@@ -3234,7 +5592,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Malenia's Great Rune"
+          "Text": "Rally (Regain HP)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, HP lost to damage becomes recoverable for a short time and can be regained by attacking. Without it no recoverable HP builds up. Used by Malenia's Great Rune."
         }
       ]
     },
@@ -3243,7 +5607,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Damage Immunity for Weak Point"
+          "Text": "Headshot Immunity"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, hits on the head part don't get the special part-hit handling (no headshot effect). Used by the Crucible Knot Talisman."
+        }
+      ]
+    },
+    {
+      "Key": "451",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Show Hidden Messages"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active on the player, a hidden kind of bloodstain message becomes visible. No vanilla row uses it."
         }
       ]
     },
@@ -3252,7 +5637,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Conversion (Heal to Damage)"
+          "Text": "Healing Damage Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks a character that is damaged by healing incantations. The game does not test it; behaviour scripts and the healing effects' conditions do."
         }
       ]
     },
@@ -3261,7 +5652,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fade after Death: Normal"
+          "Text": "Death Fade (General)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the character dies, it disappears with the general dissolve instead of the default death; if the model can't dissolve, it vanishes at once."
         }
       ]
     },
@@ -3270,7 +5667,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fade after Death: Blue"
+          "Text": "Death Fade (Spirit)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the character dies, it disappears with the spirit (buddy) dissolve instead of the default death; if the model can't dissolve, it vanishes at once."
         }
       ]
     },
@@ -3279,7 +5682,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fade after Death: Boss"
+          "Text": "Death Fade (Boss)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the character dies, it disappears with the boss dissolve instead of the default death; if the model can't dissolve, it vanishes at once."
         }
       ]
     },
@@ -3288,7 +5697,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "AI Home Distance Change"
+          "Text": "Return-Home Range Override"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's four return-home distances (overwrite_maxBackhomeDist, overwrite_backhomeDist, overwrite_backhomeBattleDist, overwrite_BackHome_LookTargetDist) replace the AI's own while active."
         }
       ]
     },
@@ -3297,7 +5712,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Is in Forbidden Attack Zone"
+          "Text": "No-Attack Area"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the player's attack inputs are ignored and items and magic can't be used (used inside no-attack areas)."
         }
       ]
     },
@@ -3306,7 +5727,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multiplayer: Re-invasion"
+          "Text": "Leave Host World"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Phantom Bloody Finger: while the player is in someone else's world, saves the current position as the return point and sends them back to their own world, leaving the session."
         }
       ]
     },
@@ -3315,7 +5742,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Glintstone Sorcery"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Twinsage Crown glow. The game does not test it; a TAE SFX event and the glow effect's condition depend on it."
         }
       ]
     },
@@ -3324,7 +5757,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Glintstone Sorcery (Barrier A)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Olivinus Crown glow. The game does not test it; a TAE SFX event and the glow effect's condition depend on it."
         }
       ]
     },
@@ -3333,7 +5772,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Glintstone Sorcery (Barrier B)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Lazuli Crown glow. The game does not test it; a TAE SFX event and the glow effect's condition depend on it."
         }
       ]
     },
@@ -3342,7 +5787,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Glintstone Sorcery (Barrier C)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Karolos Crown glow. The game does not test it; a TAE SFX event and the glow effect's condition depend on it."
         }
       ]
     },
@@ -3351,7 +5802,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Identification: Glintstone Sorcery (Stone Mask)"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Witch's Crown glow. The game does not test it; a TAE SFX event and the glow effect's condition depend on it."
         }
       ]
     },
@@ -3360,7 +5817,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Fall Immunity"
+          "Text": "Spiritspring Jump"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the character takes no fall damage (used during a Spiritspring jump). Checked after 47."
         }
       ]
     },
@@ -3369,7 +5832,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disable Event Warp"
+          "Text": "Darksign Ban Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an event warp ban. The game does not test it; the Memory of Grace can't be used while it is active (its goods row lists this state)."
         }
       ]
     },
@@ -3378,7 +5847,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply if Crouched"
+          "Text": "Crouch Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks the crouching stance. The game does not test it; the Concealing Veil uses it as its invocation condition."
         }
       ]
     },
@@ -3387,7 +5862,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Behavior ID"
+          "Text": "Behavior on Apply (Alt)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as 275: when applied, runs the row's behaviorId from the row's dmypolyId on the character. Used by the blood-loss and madness behaviours."
         }
       ]
     },
@@ -3396,7 +5877,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Madness Suppression"
+          "Text": "Item Use Enable Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks the frenzied-flame suppression event. The game does not test it; Miquella's Needle can only be used while it is active (its goods row lists this state)."
         }
       ]
     },
@@ -3405,7 +5892,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Bullet Launch on Absorb"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for a shield's absorb-and-fire behaviour: c0000 TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3414,7 +5907,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Guard Stamina Absorption"
+          "Text": "PvP Guard Modifier"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The row's guardStaminaCutRate and guardStaminaMult take effect only on rows with this state (or 158/204). Used by the PvP guard stamina rows."
         }
       ]
     },
@@ -3423,7 +5922,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown - Hefty Furance Pot"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for a pot effect: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3432,7 +5937,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Scadutree Fragment"
+          "Text": "Scadutree Blessing Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, the status screen highlights the stats the Scadutree blessing changes. The blessing's actual bonuses are the rows' own fields."
         }
       ]
     },
@@ -3441,7 +5952,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown - Spirit Raisin/Fine Crucible Feather Talisman"
+          "Text": "Stagger Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used by TAE events (c0000) and as an invocation condition (Spirit Raisin). The game does not test it."
         }
       ]
     },
@@ -3450,7 +5967,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown - Man-Fly Effect"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as another effect's invocation condition. The game does not test it."
         }
       ]
     },
@@ -3459,7 +5982,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Spirit Summon Death Effect"
+          "Text": "Spirit Death Trigger"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "When the player's summoned spirit dies, every active effect with this state applies its spiritDeathSpEffectId. Used by the Dried Bouquet."
         }
       ]
     },
@@ -3468,7 +5997,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enhance Spirit Summon Attack"
+          "Text": "Spirit Buff (Crystal Tear)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, a newly summoned spirit (and one already out when it starts) gets the GameSystemCommonParam elixirBuddyEnforceSpEffectId buff. Used by the Glovewort Crystal Tear."
         }
       ]
     },
@@ -3477,7 +6012,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Transformation - Prevent Rock Heart"
+          "Text": "Item Use Block Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an active Priestess Heart or Lamenter's Mask. The game does not test it; it blocks the Rock Heart (its goods row lists this state) and is used as a condition."
         }
       ]
     },
@@ -3486,7 +6027,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Transformation - Prevent Priestess Heart"
+          "Text": "Item Use Block Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an active Rock Heart or Lamenter's Mask. The game does not test it; it blocks the Priestess Heart (its goods row lists this state) and is used as a condition."
         }
       ]
     },
@@ -3495,7 +6042,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Transformation - Prevent Lamenter's Mask"
+          "Text": "Item Use Block Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Marks an active Rock Heart or Priestess Heart. The game does not test it; it blocks the Lamenter's Mask (its goods row lists this state)."
         }
       ]
     },
@@ -3504,7 +6057,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as an invocation condition by other effects (such as St. Trina's Smile). The game does not test it."
         }
       ]
     },
@@ -3513,7 +6072,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger after Successful Critical Attack"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition for the Blade of Mercy's critical-hit check. The game does not test it."
         }
       ]
     },
@@ -3522,7 +6087,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3531,7 +6102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3540,7 +6117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown - Hefty Fire Pot"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for a pot effect: TAE events tied to it only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3549,7 +6132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE SFX events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3558,7 +6147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE SFX events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3567,7 +6162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE SFX events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3576,7 +6177,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE SFX events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3585,7 +6192,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as another effect's invocation condition. The game does not test it."
         }
       ]
     },
@@ -3594,7 +6207,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for c0000 TAE SFX events, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3603,7 +6222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Skill: Timer Management"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Golden Order flail skill timer, used as the invocation condition of its follow-up effects. The game does not test it."
         }
       ]
     },
@@ -3612,7 +6237,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition by effects such as the Madding Hand and Aged One's Exultation. The game does not test it."
         }
       ]
     },
@@ -3621,7 +6252,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger after Flask Consumption"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Talisman of Lord's Bestowal, used by TAE and as its effects' invocation condition. The game does not test it."
         }
       ]
     },
@@ -3630,7 +6267,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Modify Charged Spell Damage"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Godfrey Icon charge bonus, used as its follow-up effect's invocation condition. The game does not test it."
         }
       ]
     },
@@ -3639,7 +6282,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as another effect's invocation condition. The game does not test it."
         }
       ]
     },
@@ -3648,7 +6297,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Stamina Consumption"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Viridian Hidden Tear, used as its effects' invocation condition. The game does not test it."
         }
       ]
     },
@@ -3657,7 +6312,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Temporary Attribute Attack Hit Recovery"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Crimsonwhorl Bubbletear timer, used as its effects' invocation condition. The game does not test it."
+        }
+      ]
+    },
+    {
+      "Key": "501",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker used as the invocation condition of a series of effects. The game does not test it."
         }
       ]
     },
@@ -3666,7 +6342,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger after holding Stance #1"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for Rellana's Cameo, used as its effects' invocation condition. The game does not test it."
         }
       ]
     },
@@ -3675,7 +6357,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger after holding Stance #2"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for Rellana's Cameo, used as its effects' invocation condition. The game does not test it."
         }
       ]
     },
@@ -3684,7 +6372,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger after holding Stance #3"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for Rellana's Cameo, used as its effects' invocation condition. The game does not test it."
         }
       ]
     },
@@ -3693,7 +6387,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Reduce FP Cost of Spirit Summons"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Death Mask Helm, used as its effect's invocation condition. The game does not test it."
         }
       ]
     },
@@ -3702,7 +6402,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Euporia Weapon Effect"
+          "Text": "Accumulator Slot (Euporia)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "An accumulator gauge of its own, outside slots 303-312: effects with accumuVal add to it only while a 506 effect is active (never below 0), and the row's accumuOverFireId / accumuUnderFireId fire at accumuOverVal / accumuUnderVal. Used by Euporia."
         }
       ]
     },
@@ -3711,7 +6417,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "TAE Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for TAE SFX events in several enemies, which only play while it is active. The game itself does not test it."
         }
       ]
     },
@@ -3720,7 +6432,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ancient Dragon-form - Unknown"
+          "Text": "Weakness Category"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Gives the character the weakness categories set on the row (isWeakA-isWeakF) while active, like NpcParam's isWeak flags, so attacks with the matching weakness damage rates deal extra damage to it."
         }
       ]
     },
@@ -3729,7 +6447,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Exclude Mimic Form 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, Mimic's Veil (95) can't pick its first disguise form. If 509, 510 and 511 are all active, nothing is excluded."
         }
       ]
     },
@@ -3738,7 +6462,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Exclude Mimic Form 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, Mimic's Veil (95) can't pick its second disguise form. If 509, 510 and 511 are all active, nothing is excluded."
         }
       ]
     },
@@ -3747,7 +6477,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Exclude Mimic Form 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While active, Mimic's Veil (95) can't pick its third disguise form. If 509, 510 and 511 are all active, nothing is excluded."
         }
       ]
     },
@@ -3756,7 +6492,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -3765,7 +6507,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "SkipSpCategoryCheck1"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -3774,7 +6522,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "SkipSpCategoryCheck2"
+          "Text": "Unused"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Nothing in Elden Ring sets or tests this value, so it has no effect."
         }
       ]
     },
@@ -3783,7 +6537,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Concentrate: Enchant"
+          "Text": "Condition Marker"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A marker for the Determination enchant, used as another effect's invocation condition. The game does not test it."
         }
       ]
     }
