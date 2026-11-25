@@ -2,3 +2,35 @@
 # TODO 
 #---------------------
 
+# BehaviorParam
+ezStateBehaviorType_old
+category
+
+# Bullet
+launchConditionType
+FollowType
+EmittePosType
+dmgCalcSide
+attachEffectType
+
+# SpEffectParam
+spCategory
+saveCategory
+atkAttribute
+deleteCriteriaDamage
+applyPartsGroup
+
+# AtkParam
+guardRangeType
+throwFlag
+
+atkMaterial
+defSeMaterial1
+defSfxMaterial1
+defSeMaterial2
+defSfxMaterial2
+
+atkBehaviorId
+atkBehaviorId_2
+
+Investigate how the X field of the Y is used in the executable for ER. Produce a document detailing what each value means and what it does.

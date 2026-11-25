@@ -1,19 +1,7 @@
 #-------------
 # Blue Sky
 #-------------
-- Game Porter
-    - NR -> ER
-    - DB_NT -> ER
-    - DS1R -> ER
-    - SDT -> ER
-    - BB -> ER
-    
-    - ER -> NR
-
-- Icon Builder
-    - Preview a model with adjustable bones so it can be placed in a specific way
-    - Include consistent camera angles
-    - Automatic icon capture
+- Model Editor: Proper model creation workflow
 
 #----------------------------------------------------
 # Map Editor TODO
@@ -22,11 +10,18 @@
 - AC6 MSB: assign meaning to unknowns
 - BTL: assign meaning to unknowns
 
+- Port:
+    - NR -> ER
+    - DB_NT -> ER
+    - DS1R -> ER
+    - SDT -> ER
+    - BB -> ER
+    
+    - ER -> NR
+
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------
-- Support cloth simulation
-- External Model Import (transform into FLVER)
 
 #----------------------------------------------------
 # Param Editor TODO
@@ -38,17 +33,19 @@
 # Text Editor TODO
 #----------------------------------------------------
 - FMG Reloader: add support for DS2S / DS1R
+- Merge tool (revist)
 
 #----------------------------------------------------
 # Graphics Param Editor TODO
 #----------------------------------------------------
-- GPARAM Reloader: add full support for DS2S
+- Merge tool
 
 #----------------------------------------------------
 # Material Editor TODO
 #----------------------------------------------------
-- Make reloader use chr reload?
+- Material Reloader: Add Chr Reload option (instead of World Reload)
 - Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
+- Merge tool
 
 #----------------------------------------------------
 # Texture Editor TODO
@@ -57,14 +54,9 @@
 #----------------------------------------------------
 # Time Act Editor TODO
 #----------------------------------------------------
-- NR: need to support additive blend
 - DS2: TAE support (requires some additional stuff for the 'network' concept DS2 has)
+- Merge tool
 
-- Tools:
-    - Scan for unused animations
-    - Animation Builder: builds new animation from combo of animations
-    - FBX to HKX
-        
 #----------------------------------------------------
 # Havok/Behavior Editor TODO
 #----------------------------------------------------
@@ -97,16 +89,19 @@
 #----------------------------------------------------
 # FX Editor TODO
 #----------------------------------------------------
+- Merge tool
 
 #----------------------------------------------------
 # EMEVD Editor TODO
 #----------------------------------------------------
 - Add auto-fill value ranges for templates (i.e. disable enemies with entity IDs between X and Y)
+- Merge tool
 
 #----------------------------------------------------
 # ESD Editor TODO
 #----------------------------------------------------
 - Aliases for ID references within States graph
+- Merge tool
 
 #----------------------------------------------------
 # Sound Editor TODO
@@ -121,25 +116,8 @@
 #----------------------------------------------------
 # Lua Editor TODO
 #----------------------------------------------------
-- AC6: needs connection between Lua and animations (as AC6 uses BHV)
 
 #----------------------------------------------------
 # Rendering
 #----------------------------------------------------
-- ER: Waterfall textures look a bit simple
-- NR: various assets missing textures (AEG576_127, AEG576_111)
-- ER: AEG007_183: extremely bright glow
-
-- Small issues:
- - ER: z-fighting on m004500 for decal textures
- - ER: Rat skin messed up for c4080 / c4090 (rats)
- - ER: Messed up texturing for c4640 (ulcerated)
- - ER: Messed up texturing for c3320 (blob)
- - ER: Flame asset doesn't look correct (AEG094_111), multi-colored with incorrect alpha
- - ER: Multi-colored mesh (m400000)
- - ER: Strange light white rock (AEG230_921 / AEG230_835 / m100056) 
- - ER: Strange white trunk (AEG232_478 / AEG232_474)
- - AC6: AEG410_184 uncolored
- - AC6: AEG410_180 uncolored (crystal)
- - AC6: AEG300_860 untextured
- - AC6: AEG300_891 uncolored
+- NR: two-part animations (upper/lower body) don't yet play correctly.

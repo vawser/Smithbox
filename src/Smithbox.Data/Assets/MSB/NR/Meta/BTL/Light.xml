@@ -74,7 +74,11 @@
 
     <ShadowSpecLevel
     AltName="Shadow Spec Level"
-    Wiki="The lowest shadow quality level this light casts shadows at. Not present before Sekiro." />
+    Wiki="The lowest shadow quality level this light casts shadows at. Not present before Sekiro. Only read in version 18 BTLs (ER, AC6); always 1 or 5 there." />
+
+    <UnkE5
+    AltName="Unknown: 0xE5"
+    Wiki="Only read in version 19 BTLs (NR), as a signed byte copied into the runtime light next to the shadow spec level. Always 0 in retail files." />
 
     <CachesShadow
     AltName="Shadow Cache"
@@ -157,73 +161,98 @@
     AltName="Anti-Exposure Rate"
     Wiki="Not present before Sekiro." />
 
+    <UsesProjectionTexture
+    AltName="Spot Light: Use Projection Texture"
+    Wiki="If ON, the projection texture name is used. Spot lights only: ER ignores it on point lights. Never set in retail files."
+    IsBool="" />
+
+    <ProjectionTextureName
+    AltName="Spot Light: Projection Texture"
+    Wiki="Name of a texture projected by a spot light. The game looks it up by name and uses a default one while it is not loaded; in DS3 a spot light with one is drawn as a separate light kind. Only read when 'Use Projection Texture' is ON. Never set in retail files." />
+
+    <UniqueIdTime
+    AltName="Unique ID: Creation Time"
+    Wiki="Part of the light's 16-byte unique ID, which ER copies into the runtime light. When the light was created, as a Unix time in seconds. New lights get the current time." />
+
+    <UniqueIdPart1
+    AltName="Unique ID: Part 1"
+    Wiki="Part of the light's 16-byte unique ID (bytes 4-7, big-endian). Meaning unknown; looks random." />
+
+    <UniqueIdPart2
+    AltName="Unique ID: Part 2"
+    Wiki="Part of the light's 16-byte unique ID (bytes 8-11, big-endian). Meaning unknown; looks random." />
+
+    <UniqueIdPart3
+    AltName="Unique ID: Part 3"
+    Wiki="Part of the light's 16-byte unique ID (bytes 12-15, big-endian). Meaning unknown; looks random." />
+
     <EventID
     AltName="Event ID"
-    Wiki="Referenced by map events. Only used in DS2." />
+    Wiki="Referenced by map events. Only used in DS2. Not read by DS3, Sekiro, ER, NR or AC6." />
 
     <Unk1C
     AltName="Unknown: 0x1C"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always ON in retail files." />
 
     <Unk30
     AltName="Unknown: 0x30"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Set only on spot lights in DS3 (2 to 70); always 0 in Sekiro, ER, NR and AC6." />
 
     <Unk34
     AltName="Unknown: 0x34"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. 2 on spot lights and 0 on other lights in every game from DS3 on." />
 
     <Unk50
     AltName="Unknown: 0x50"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 4 from Sekiro on (DS3: 4, 2, or 0 on directional lights)." />
 
     <Unk54
     AltName="Unknown: 0x54"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Usually 0; when set it is nearly always less than the radius." />
 
     <Unk5C
     AltName="Unknown: 0x5C"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always -1 (DS3: 0 on directional lights)." />
 
     <Unk64
     AltName="Unknown: 0x64"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 00 00 00 01 (DS3: FF FF FF 01 on directional lights)." />
 
     <Unk68
     AltName="Unknown: 0x68"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 0 from Sekiro on." />
 
     <Unk70
     AltName="Unknown: 0x70"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 0 from Sekiro on (DS3: 1 on directional lights)." />
 
     <Unk84
     AltName="Unknown: 0x84"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 0." />
 
     <Unk88
     AltName="Unknown: 0x88"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 0." />
 
     <Unk90
     AltName="Unknown: 0x90"
-    Wiki="" />
+    Wiki="Not read by DS3, Sekiro, ER, NR or AC6. Always 0." />
 
-    <UnkA0
-    AltName="Unknown: 0xA0"
-    Wiki="" />
+    <LightingModel
+    AltName="Lighting Model"
+    Wiki="Which of two banks of light kinds the light is drawn with: 0 = standard, 1 = second bank (probably the legacy lighting path). Read by DS3 and Sekiro only; ER, NR and AC6 ignore it and have no legacy light shaders. Usually 1 in DS3, always 0 from Sekiro on." />
 
     <UnkA1
     AltName="Unknown: 0xA1"
-    Wiki="" />
+    Wiki="When nonzero, sets a bit of the runtime light's mask: 0x10 in DS3, 0x80 in Sekiro, ER, NR and AC6 (the mask is 0x1 otherwise). Rare in ER (3 lights), common in Sekiro, DS3 and AC6." />
 
     <UnkE8
     AltName="Unknown: 0xE8"
-    Wiki="" />
+    Wiki="Only present in version 15 BTLs (2 files in ER). Not read by ER, NR or AC6." />
 
-    <UnkEB
-    AltName="Unknown: 0xEB"
-    Wiki="" />
+    <UnkEC
+    AltName="Unknown: 0xEC"
+    Wiki="Only present in version 15 BTLs (2 files in ER). Not read by ER, NR or AC6." />
   </Field>
 
   <Enums>
