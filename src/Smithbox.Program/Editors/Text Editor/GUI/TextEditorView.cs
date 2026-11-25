@@ -114,6 +114,9 @@ public class TextEditorView : IEditorView
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        // Text Merge builds its plan on a worker; the result is applied here, on the UI thread
+        ToolView.TextMerge.ProcessPending();
+
         // Each panel sets the focus context (which decides what Delete, Ctrl+D, Insert
         // and Alt+D act on) when it is the focused window, i.e. the one last clicked
         // or tabbed into. It used to follow the mouse hover, so shortcuts changed target

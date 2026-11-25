@@ -100,6 +100,11 @@ public sealed class TextEditorSettings : ICfgSection
     public bool TextEditor_Language_Sync_Apply_Prefix = true;
     public string TextEditor_Language_Sync_Prefix = "TRANSLATE: ";
 
+    // Text Merge
+    public string TextEditor_Merge_Languages = ""; // Comma-separated TextContainerCategory names; empty = primary language
+    public int TextEditor_Merge_Conflict_Mode = 0; // TextMergeConflictMode: 0 Keep Mine, 1 Take Theirs, 2 Ask Each
+    public int TextEditor_Merge_Source_Type = 0; // TextMergeSourceType: 0 Project, 1 Mod Folder, 2 JSON Export
+
     public bool TextEditor_LanguageSync_IncludeDefaultEntries = false;
     public bool TextEditor_LanguageSync_IncludeModifiedEntries = true;
     public bool TextEditor_LanguageSync_IncludeUniqueEntries = true;

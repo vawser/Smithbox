@@ -2,15 +2,63 @@
   "Entries": [
     {
       "Key": "TEXT_TextMerge_Hint",
-      "Text": "Merge a target project's text files into your current project.\n\nMerging brings all unique text from the target project into your project.\nModified text is included if enabled."
+      "Text": "Merge another project's text into your current project.\n\nEach entry is compared with vanilla:\n- Entries only the other project has are added.\n- Entries only the other project changed are updated.\n- Entries the other project left vanilla keep your text.\n- Entries both projects changed are conflicts.\n\nAnalyse to review the changes, then Apply. The merge is one step in Undo History."
     },
     {
       "Key": "TEXT_TextMerge_Header_Target_Project",
-      "Text": "Target Project"
+      "Text": "Merge From"
     },
     {
       "Key": "TEXT_TextMerge_Header_Target_Project_TT",
-      "Text": "The project you want to merge text from."
+      "Text": "Where to merge text from: another project, a mod folder, or a text export (JSON)."
+    },
+    {
+      "Key": "TEXT_TextMerge_No_Projects",
+      "Text": "No other projects for this game. To merge a downloaded mod, choose Mod Folder instead."
+    },
+    {
+      "Key": "TEXT_TextMerge_Source_Project",
+      "Text": "Project"
+    },
+    {
+      "Key": "TEXT_TextMerge_Source_Project_TT",
+      "Text": "Another Smithbox project for the same game."
+    },
+    {
+      "Key": "TEXT_TextMerge_Source_Folder",
+      "Text": "Mod Folder"
+    },
+    {
+      "Key": "TEXT_TextMerge_Source_Folder_TT",
+      "Text": "A mod's folder, laid out like the game's (for example msg/engus/item.msgbnd.dcx). You can pick the mod's root folder, its msg folder or a language folder. No project is needed."
+    },
+    {
+      "Key": "TEXT_TextMerge_Source_Json",
+      "Text": "Text Export"
+    },
+    {
+      "Key": "TEXT_TextMerge_Source_Json_TT",
+      "Text": "A JSON file made with the Text Editor's Export. It is merged into the container it was exported from, or the selected container for older exports. Entries missing from an export are not treated as removed, since an export can hold only some entries."
+    },
+    {
+      "Key": "TEXT_TextMerge_Browse_Folder",
+      "Text": "Select Mod Folder..."
+    },
+    {
+      "Key": "TEXT_TextMerge_Browse_Folder_TT",
+      "Text": "Choose the folder of the mod to merge from."
+    },
+    {
+      "Key": "TEXT_TextMerge_Browse_Json",
+      "Text": "Select Text Export..."
+    },
+    {
+      "Key": "TEXT_TextMerge_Browse_Json_TT",
+      "Text": "Choose the JSON text export to merge from."
+    },
+    {
+      "Key": "TEXT_TextMerge_No_Path",
+      "Text": "Nothing selected."
     },
     {
       "Key": "TEXT_TextMerge_Header_Options",
@@ -18,23 +66,71 @@
     },
     {
       "Key": "TEXT_TextMerge_Header_Options_TT",
-      "Text": ""
+      "Text": "Options are saved. Changing the languages clears the current analysis."
     },
     {
-      "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang",
-      "Text": "Merge Primary Language Only"
+      "Key": "TEXT_TextMerge_Languages_Label",
+      "Text": "Languages to merge:"
     },
     {
-      "Key": "TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT",
-      "Text": "Merge only the primary language FMGs."
+      "Key": "TEXT_TextMerge_Languages_Label_TT",
+      "Text": "Only text in the ticked languages is merged. With none ticked, the primary language is merged. Changing this clears the current analysis."
     },
     {
-      "Key": "TEXT_TextMerge_Checkbox_Replace_Modified",
-      "Text": "Replace Modified Entries"
+      "Key": "TEXT_TextMerge_Languages_Json",
+      "Text": "A text export is merged into the language it was exported from."
     },
     {
-      "Key": "TEXT_TextMerge_Checkbox_Replace_Modified_TT",
-      "Text": "When enabled, modified rows from the target overwrite existing rows in your project. When disabled, they are ignored and only unique rows are merged."
+      "Key": "TEXT_TextMerge_Language_Primary",
+      "Text": "{0} (primary)"
+    },
+    {
+      "Key": "TEXT_TextMerge_Languages_All",
+      "Text": "All"
+    },
+    {
+      "Key": "TEXT_TextMerge_Languages_All_TT",
+      "Text": "Tick every language."
+    },
+    {
+      "Key": "TEXT_TextMerge_Languages_Primary",
+      "Text": "Primary Only"
+    },
+    {
+      "Key": "TEXT_TextMerge_Languages_Primary_TT",
+      "Text": "Tick only the primary language."
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Label",
+      "Text": "When both projects changed an entry:"
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Label_TT",
+      "Text": "A conflict is an entry that both projects changed from vanilla (or both added) with different text, or a vanilla entry you deleted that the other project changed.\n\nThis sets the starting choice for each conflict. You can change any of them before applying."
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Keep_Mine",
+      "Text": "Keep Mine"
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Keep_Mine_TT",
+      "Text": "Conflicts start set to your text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Take_Theirs",
+      "Text": "Take Theirs"
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Take_Theirs_TT",
+      "Text": "Conflicts start set to the other project's text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Ask_Each",
+      "Text": "Ask Each"
+    },
+    {
+      "Key": "TEXT_TextMerge_Conflict_Ask_Each_TT",
+      "Text": "Conflicts start unresolved. Apply is enabled once you have chosen for each one."
     },
     {
       "Key": "TEXT_TextMerge_Header_Actions",
@@ -45,20 +141,212 @@
       "Text": ""
     },
     {
-      "Key": "TEXT_TextMerge_Action_Merge",
-      "Text": "Merge"
+      "Key": "TEXT_TextMerge_Action_Analyse",
+      "Text": "Analyse"
     },
     {
-      "Key": "TEXT_TextMerge_Action_Merge_TT",
-      "Text": "Merge the selected project's text into this project."
+      "Key": "TEXT_TextMerge_Action_Analyse_TT",
+      "Text": "Compare the selected project with yours and vanilla, and list the changes. Nothing is changed yet."
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Apply_TT",
+      "Text": "Apply the ticked changes and conflict choices to your project, as one undo step."
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Clear_TT",
+      "Text": "Discard the analysis."
+    },
+    {
+      "Key": "TEXT_TextMerge_Analysing",
+      "Text": "Analysing..."
+    },
+    {
+      "Key": "TEXT_TextMerge_Unresolved_Hint",
+      "Text": "{0} conflicts have no choice yet. Choose Mine or Theirs for each (filter: Unresolved Conflicts), or untick their FMG."
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Plan",
+      "Text": "Changes"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Plan_TT",
+      "Text": "Tick or untick FMGs and entries, and choose for each conflict. Click an ID to show the entry in the editor. Hover a row to see the vanilla, your and their text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Plan_Summary",
+      "Text": "From {0}: {1} added, {2} updated, {3} conflicts, {4} removed by them (unticked). {5} entries they left vanilla keep your text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Plan_No_Vanilla",
+      "Text": "{0} FMGs have no vanilla version, so every different entry in them is a conflict."
+    },
+    {
+      "Key": "TEXT_TextMerge_Plan_Unmatched",
+      "Text": "{0} files or FMGs in the source have no match in your project and are not merged (hover for the list)."
+    },
+    {
+      "Key": "TEXT_TextMerge_Plan_Unmatched_TT",
+      "Text": "The game only reads its own text files and FMG IDs, so these can't be merged:\n\n{0}"
+    },
+    {
+      "Key": "TEXT_TextMerge_Plan_Unmatched_More",
+      "Text": "...and {0} more (see the log)."
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Fill",
+      "Text": "Other Languages"
+    },
+    {
+      "Key": "TEXT_TextMerge_Header_Fill_TT",
+      "Text": "Entries added by the merge are missing from your other languages. In-game, a missing entry shows no text in those languages."
+    },
+    {
+      "Key": "TEXT_TextMerge_Fill_Hint",
+      "Text": "The merge added {0} entries. {1} copies are missing from the same FMGs in your other languages."
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Fill",
+      "Text": "Add to Other Languages"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Fill_TT",
+      "Text": "Add each added entry to the other languages that lack it, with the merged text as a placeholder (with the Language Sync prefix when that option is on). Existing entries are not changed. One undo step."
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Fill_Dismiss",
+      "Text": "Dismiss"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Fill_Dismiss_TT",
+      "Text": "Leave the other languages as they are."
+    },
+    {
+      "Key": "TEXT_TextMerge_Plan_Empty",
+      "Text": "Nothing to merge: the other project has no text changes that yours does not already have."
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Keep_All_Mine",
+      "Text": "Keep All Mine"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Keep_All_Mine_TT",
+      "Text": "Set every conflict to your text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Take_All_Theirs",
+      "Text": "Take All Theirs"
+    },
+    {
+      "Key": "TEXT_TextMerge_Action_Take_All_Theirs_TT",
+      "Text": "Set every conflict to the other project's text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Filter_TT",
+      "Text": "Show only one kind of change."
+    },
+    {
+      "Key": "TEXT_TextMerge_Filter_All",
+      "Text": "All Changes"
+    },
+    {
+      "Key": "TEXT_TextMerge_Filter_Unresolved",
+      "Text": "Unresolved Conflicts"
+    },
+    {
+      "Key": "TEXT_TextMerge_Group_Include_TT",
+      "Text": "Merge this FMG. Unticked FMGs are left as they are."
+    },
+    {
+      "Key": "TEXT_TextMerge_Group_Label",
+      "Text": "{0}  (+{1} ~{2} !{3} -{4})"
+    },
+    {
+      "Key": "TEXT_TextMerge_Select_Group",
+      "Text": "Select an FMG above to see its entries."
+    },
+    {
+      "Key": "TEXT_TextMerge_Column_Use",
+      "Text": "Use"
+    },
+    {
+      "Key": "TEXT_TextMerge_Column_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXT_TextMerge_Column_Kind",
+      "Text": "Change"
+    },
+    {
+      "Key": "TEXT_TextMerge_Column_Text",
+      "Text": "Text"
+    },
+    {
+      "Key": "TEXT_TextMerge_Choice_Mine",
+      "Text": "Mine"
+    },
+    {
+      "Key": "TEXT_TextMerge_Choice_Mine_TT",
+      "Text": "Keep your text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Choice_Theirs",
+      "Text": "Theirs"
+    },
+    {
+      "Key": "TEXT_TextMerge_Choice_Theirs_TT",
+      "Text": "Use the other project's text."
+    },
+    {
+      "Key": "TEXT_TextMerge_Row_Include_TT",
+      "Text": "Apply this change."
+    },
+    {
+      "Key": "TEXT_TextMerge_Row_Jump_TT",
+      "Text": "Show this entry in the editor."
+    },
+    {
+      "Key": "TEXT_TextMerge_Row_Versions_TT",
+      "Text": "Vanilla:\n{0}\n\nMine:\n{1}\n\nTheirs:\n{2}"
+    },
+    {
+      "Key": "TEXT_TextMerge_Row_Missing",
+      "Text": "<not present>"
+    },
+    {
+      "Key": "TEXT_TextMerge_Kind_Add",
+      "Text": "Added"
+    },
+    {
+      "Key": "TEXT_TextMerge_Kind_Change",
+      "Text": "Updated"
+    },
+    {
+      "Key": "TEXT_TextMerge_Kind_Conflict",
+      "Text": "Conflict"
+    },
+    {
+      "Key": "TEXT_TextMerge_Kind_Removed",
+      "Text": "Removed by Them"
     },
     {
       "Key": "TEXT_TextMerge_Log_No_Target_Project",
-      "Text": "No target project is selected."
+      "Text": "No project to merge from is selected."
     },
     {
       "Key": "TEXT_TextMerge_Log_Merge_In_Progress",
-      "Text": "A merge is already in progress."
+      "Text": "An analysis is already running."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Analysed",
+      "Text": "Text Merge: analysed {0}: {1} added, {2} updated, {3} conflicts, {4} removed by them."
     },
     {
       "Key": "TEXT_TextMerge_Log_Merged_Text_PASS",
@@ -66,7 +354,43 @@
     },
     {
       "Key": "TEXT_TextMerge_Log_Merged_Text_FAIL",
-      "Text": "Failed to merge text from {0}."
+      "Text": "Failed to analyse text from {0}."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Summary",
+      "Text": "Text Merge: {0} added, {1} updated, {2} conflicts took theirs, {3} conflicts kept yours, {4} removed, {5} left vanilla by the other project (yours kept), in {6} FMGs."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Folder_Root",
+      "Text": "Text Merge: reading the mod's text from {0}."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Folder_No_Text",
+      "Text": "Text Merge: no text files for this game were found in {0} (or the two folders above it)."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Json_Invalid",
+      "Text": "Text Merge: {0} is not a text export."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Json_No_Container",
+      "Text": "Text Merge: {0} does not say which container it came from. Select the container to merge it into, then analyse again."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Json_Selected_Container",
+      "Text": "Text Merge: the export does not say which container it came from, so it is merged into the selected container ({0})."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Unmatched",
+      "Text": "Text Merge: {0} files or FMGs in the source have no match in your project and are not merged: {1}"
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Filled",
+      "Text": "Text Merge: added {0} entries to other languages."
+    },
+    {
+      "Key": "TEXT_TextMerge_Log_Stale",
+      "Text": "Text Merge: {0} changes were skipped because the entry was edited, added or deleted after the analysis."
     }
   ]
 }

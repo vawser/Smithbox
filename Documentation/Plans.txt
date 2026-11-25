@@ -6,7 +6,6 @@
 #----------------------------------------------------
 # Project
 #----------------------------------------------------
-- Add "Create Release" tool: bundles the mod files into a ZIP, only including relevant files (as the user may have unpacked folders, .bak files, etc.
 
 #----------------------------------------------------
 # Map Editor TODO
