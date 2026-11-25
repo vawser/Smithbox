@@ -1,7 +1,6 @@
 #-------------
 # Blue Sky
 #-------------
-- Model Editor: Proper model creation workflow
 
 #----------------------------------------------------
 # Project
@@ -25,6 +24,7 @@
 #----------------------------------------------------
 # Model Editor TODO
 #----------------------------------------------------
+- Model Editor: Proper model creation workflow
 
 #----------------------------------------------------
 # Param Editor TODO

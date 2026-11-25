@@ -5,7 +5,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.ParamEditor;
 
 /// <summary>
-/// The Param Editor's Merge tool section: merges regulation files and other Smithbox projects (optionally with
+/// The Param Editor's Param Merge tool section: merges regulation files and other Smithbox projects (optionally with
 /// this project as the earliest source) through the auto-merge engine. The UI lives in
 /// <see cref="ParamDeltaAutoMergeTool.DisplayDirectRegulationMerge"/>.
 /// <para>
