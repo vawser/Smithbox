@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "ATKPARAM_SPATTR_TYPE"
+      "Text": "Special Attribute"
     }
   ],
   "Options": [
@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "Default (No Element)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No element: the hit plays no element body effect and sets no damage element for animations. On a bullet this overrides the weapon or buff element with none, since only 254 means \"don't override\"."
         }
       ]
     },
@@ -23,6 +29,12 @@
           "Language": "English",
           "Text": "Magic"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Magic. A hit that deals magic damage plays the magic body effect (SFX 2003000 + size) on the victim, and ends the victim's effects with Delete Criteria Damage 8."
+        }
       ]
     },
     {
@@ -31,6 +43,12 @@
         {
           "Language": "English",
           "Text": "Fire"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Fire. A hit that deals fire damage plays the burn body effect (SFX 2001000 + size, +10 for corpse burn type). It also ignites oil (state 252, SFX 4000), thaws frostbite (applies SpEffect 5247), ends effects with Delete Criteria Damage 9 (oil, frost build-up), and drives HKS fire damage and death animations."
         }
       ]
     },
@@ -41,6 +59,12 @@
           "Language": "English",
           "Text": "Lightning"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Lightning. A hit that deals lightning damage plays the lightning body effect (SFX 2002000 + size), and ends the victim's effects with Delete Criteria Damage 10."
+        }
       ]
     },
     {
@@ -49,6 +73,12 @@
         {
           "Language": "English",
           "Text": "Holy"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Holy (DAMAGE_ELEMENT_DARK in HKS). A hit that deals holy damage plays the holy body effect (SFX 2004000 + size), and ends the victim's effects with Delete Criteria Damage 11."
         }
       ]
     },
@@ -59,6 +89,12 @@
           "Language": "English",
           "Text": "Poison"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Poison. A hit that builds up poison plays the poison body effect (SFX 2005000 + size). On a poison effect (state info 2) that deals HP damage, the tick sets the damage element, so dying to it uses the poison death animation."
+        }
       ]
     },
     {
@@ -68,6 +104,12 @@
           "Language": "English",
           "Text": "Scarlet Rot"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Scarlet rot (DAMAGE_ELEMENT_BLIGHT in HKS). A hit that builds up rot plays the rot body effect (SFX 2006000 + size). On a rot effect (state info 5) that deals HP damage, the tick sets the damage element, so dying to it uses the poison death animation."
+        }
       ]
     },
     {
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bloodloss"
+          "Text": "Blood Loss"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Blood loss. A hit that builds up bleed plays the blood body effect (SFX 2007000 + size). On a blood loss effect (state info 6) that deals HP damage, the tick sets the damage element."
         }
       ]
     },
@@ -86,6 +134,12 @@
           "Language": "English",
           "Text": "Frostbite"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Frostbite. A hit that builds up frost plays the frost body effect (SFX 2008000 + size). On a frostbite effect (state info 260) that deals HP damage, the tick sets the damage element."
+        }
       ]
     },
     {
@@ -94,6 +148,12 @@
         {
           "Language": "English",
           "Text": "Sleep"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Sleep. A hit that builds up sleep plays the sleep body effect (SFX 2009000 + size). On a sleep effect (state info 436) that deals HP damage, the tick sets the damage element."
         }
       ]
     },
@@ -104,6 +164,12 @@
           "Language": "English",
           "Text": "Madness"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Madness. A hit that builds up madness plays the madness body effect (SFX 2010000 + size). On a madness effect (state info 437) that deals HP damage, the tick sets the damage element, so dying to it uses the madness death animation (also when riding)."
+        }
       ]
     },
     {
@@ -113,6 +179,12 @@
           "Language": "English",
           "Text": "Death Blight"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Death blight (DAMAGE_ELEMENT_CURSE in HKS). A hit that builds up death blight plays the death blight body effect (SFX 2011000 + size). On a death blight effect (state info 116) that deals HP damage, the tick sets the damage element."
+        }
       ]
     },
     {
@@ -120,7 +192,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "None (No Override)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No element. On a SpEffect or bullet this means \"don't override\": the attack keeps the element from its AtkParam, weapon or (for SpEffects) other buffs. This is the default for SpEffect and bullet rows."
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Use Weapon Attribute"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AtkParam only: use the weapon's Special Attribute and its variation value. Don't use it on a SpEffect: the weapon lookup runs before SpEffect overrides, so there it means no element."
         }
       ]
     }
