@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Default Colour"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Shows the default colour."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Three Points"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Steps 0-5 blend point 1 to point 2, steps 5-10 blend point 2 to point 3."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Two Points"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Blends point 1 to point 2 across the 11 steps."
         }
       ]
     }

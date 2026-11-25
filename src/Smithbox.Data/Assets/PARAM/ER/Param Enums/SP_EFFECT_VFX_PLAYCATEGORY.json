@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Category 0"
+          "Text": "None (Always Plays)"
         }
       ]
     },
@@ -76,6 +76,15 @@
         {
           "Language": "English",
           "Text": "Category 7"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Category 8"
         }
       ]
     }

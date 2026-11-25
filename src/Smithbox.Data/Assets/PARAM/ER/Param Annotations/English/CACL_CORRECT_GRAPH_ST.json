@@ -2,107 +2,107 @@
   "Param": "CACL_CORRECT_GRAPH_ST",
   "Type": "CACL_CORRECT_GRAPH_ST",
   "Name": "CACL_CORRECT_GRAPH_ST",
-  "Description": "Provides growth functions for various mechanics. Handles all stat scaling.",
+  "Description": "Piecewise curves that turn an input (a stat, level or other value) into an output. The input is clamped to Threshold Point [4]; the stage whose range holds it is found (stage n runs from Threshold Point [n] to [n+1]); the output is Threshold Output [n] plus (Threshold Output [n+1] − Threshold Output [n]) × t^e, where t is the input's position in the stage (0–1) and e is Adjustment Factor [n]. A negative e mirrors the curve: 1 − (1 − t)^|e|. The result is clamped between the two stage outputs. Inputs of 0 or less give Threshold Output [0]. Row 200 instead holds the level-up cost formula in the four Leveling Cost fields.",
   "Fields": [
     {
       "Field": "stageMaxVal0",
       "Name": "Threshold Point [0]",
-      "Description": "Stat Level Cap corresponds to the level of a certain stat"
+      "Description": "Input at which stage 0 starts. Keep it at or below the smallest real input: inputs between 0 and this value fall outside the curve. Retail uses 0 or 1."
     },
     {
       "Field": "stageMaxVal1",
       "Name": "Threshold Point [1]",
-      "Description": "Stage cap corresponds to the level of a certain stat"
+      "Description": "Input at which stage 0 ends and stage 1 starts (Threshold Output [1] is reached here). Must not be lower than the previous point."
     },
     {
       "Field": "stageMaxVal2",
       "Name": "Threshold Point [2]",
-      "Description": "Stage cap corresponds to the level of a certain stat"
+      "Description": "Input at which stage 1 ends and stage 2 starts (Threshold Output [2] is reached here). Must not be lower than the previous point."
     },
     {
       "Field": "stageMaxVal3",
       "Name": "Threshold Point [3]",
-      "Description": "Stage cap corresponds to the level of a certain stat"
+      "Description": "Input at which stage 2 ends and stage 3 starts (Threshold Output [3] is reached here). Must not be lower than the previous point."
     },
     {
       "Field": "stageMaxVal4",
       "Name": "Threshold Point [4]",
-      "Description": "Stage cap corresponds to the level of a certain stat"
+      "Description": "Input at which stage 3 ends. Inputs above this are treated as this value, so the curve stays flat at Threshold Output [4]."
     },
     {
       "Field": "stageMaxGrowVal0",
-      "Name": "Threshold Coefficient [0]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Stat Level Cap Field"
+      "Name": "Threshold Output [0]",
+      "Description": "Output at Threshold Point [0], and for any input of 0 or less. Units depend on the system using the row."
     },
     {
       "Field": "stageMaxGrowVal1",
-      "Name": "Threshold Coefficient [1]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Stat Level Cap Field"
+      "Name": "Threshold Output [1]",
+      "Description": "Output at Threshold Point [1] (end of stage 0, start of stage 1)."
     },
     {
       "Field": "stageMaxGrowVal2",
-      "Name": "Threshold Coefficient [2]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Stat Level Cap Field"
+      "Name": "Threshold Output [2]",
+      "Description": "Output at Threshold Point [2] (end of stage 1, start of stage 2)."
     },
     {
       "Field": "stageMaxGrowVal3",
-      "Name": "Threshold Coefficient [3]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Stat Level Cap Field"
+      "Name": "Threshold Output [3]",
+      "Description": "Output at Threshold Point [3] (end of stage 2, start of stage 3)."
     },
     {
       "Field": "stageMaxGrowVal4",
-      "Name": "Threshold Coefficient [4]",
-      "Description": "Stage growth is a multiplier of the maximum growth that will occur in a certain stage, as an example a chart such as this:\nGrowth Stage 0 - Growth = 20 - 20%% of the total scaling is reached at stage 0.\nGrowth Stage 1 - Growth = 25 - 25%% of the total scaling is reached at stage 1.\nGrowth Stage 2 - Growth = 50 - 50%% of the total scaling is reached at stage 2.\nGrowth Stage 3 - Growth = 80 - 80%% of the total scaling is reached at stage 3.\nGrowth Stage 4 - Growth = 90 - 90%% of the total scaling is reached at stage 4.\nAs you can see, in this specific chart 100%% is never reached, 100%% could be reached if only the value of growth stage 4 was 100%\nThis is not limited to 100%% as an example growth stage 4 could reach 200%%.\nThe level cap of a growth stage is specified in the corresponding Stat Level Cap Field"
+      "Name": "Threshold Output [4]",
+      "Description": "Output at Threshold Point [4] and above (end of stage 3)."
     },
     {
       "Field": "adjPt_maxGrowVal0",
       "Name": "Adjustment Factor [0]",
-      "Description": "Determines the exponent used to calculate the curve.\nThe growth values are normalised to be between the level range and the growth range dictated,\nSuch that: \n0 level is the lower bound of the stage, and 1 level is the upper bound\n0 growth is the lower bound of the stage, and 1 growth is the upper bound\nThis curve is, at a value of 1, linear, meaning direct proportion between each stage.\nAt a value of 2, it is quadratic (in fact, it will be flat exactly at 0, and have steepness 2 at 1)\nNote that a steepness of 2 means the growth per level is double the average growth per level.\nAt a value of 0.5, it is a square root.\nBelow 0, negative powers are not used as this would create asymptotes and infinite values.\nInstead, the axes are flipped. If you consider the graph 0 to 1 by 0 to 1, it is rotated 180 degrees.\nAt a value of -1, it is linear again.\nAt a value of -2, it is quadratic, however the origin is at the upper bound.\nNote this means there is a steepness of 2 at the lower bound and it is flat at the upper bound.\nAt a value of -0.5, it is a square root graph again, but rotated 180."
+      "Description": "Curve exponent for stage 0. With t the input's position in the stage (0–1): 1 is linear, above 1 starts slow and speeds up (t^e), between 0 and 1 starts fast and slows down. Negative values mirror the curve (1 − (1 − t)^|e|), so −2 starts fast and flattens. 0 jumps straight to the stage's end output."
     },
     {
       "Field": "adjPt_maxGrowVal1",
       "Name": "Adjustment Factor [1]",
-      "Description": "Determines the exponent used to calculate the curve.\nThe growth values are normalised to be between the level range and the growth range dictated,\nSuch that: \n0 level is the lower bound of the stage, and 1 level is the upper bound\n0 growth is the lower bound of the stage, and 1 growth is the upper bound\nThis curve is, at a value of 1, linear, meaning direct proportion between each stage.\nAt a value of 2, it is quadratic (in fact, it will be flat exactly at 0, and have steepness 2 at 1)\nNote that a steepness of 2 means the growth per level is double the average growth per level.\nAt a value of 0.5, it is a square root.\nBelow 0, negative powers are not used as this would create asymptotes and infinite values.\nInstead, the axes are flipped. If you consider the graph 0 to 1 by 0 to 1, it is rotated 180 degrees.\nAt a value of -1, it is linear again.\nAt a value of -2, it is quadratic, however the origin is at the upper bound.\nNote this means there is a steepness of 2 at the lower bound and it is flat at the upper bound.\nAt a value of -0.5, it is a square root graph again, but rotated 180."
+      "Description": "Curve exponent for stage 1 (from Threshold Point [1] to [2]). Works as Adjustment Factor [0]."
     },
     {
       "Field": "adjPt_maxGrowVal2",
       "Name": "Adjustment Factor [2]",
-      "Description": "Determines the exponent used to calculate the curve.\nThe growth values are normalised to be between the level range and the growth range dictated,\nSuch that: \n0 level is the lower bound of the stage, and 1 level is the upper bound\n0 growth is the lower bound of the stage, and 1 growth is the upper bound\nThis curve is, at a value of 1, linear, meaning direct proportion between each stage.\nAt a value of 2, it is quadratic (in fact, it will be flat exactly at 0, and have steepness 2 at 1)\nNote that a steepness of 2 means the growth per level is double the average growth per level.\nAt a value of 0.5, it is a square root.\nBelow 0, negative powers are not used as this would create asymptotes and infinite values.\nInstead, the axes are flipped. If you consider the graph 0 to 1 by 0 to 1, it is rotated 180 degrees.\nAt a value of -1, it is linear again.\nAt a value of -2, it is quadratic, however the origin is at the upper bound.\nNote this means there is a steepness of 2 at the lower bound and it is flat at the upper bound.\nAt a value of -0.5, it is a square root graph again, but rotated 180."
+      "Description": "Curve exponent for stage 2 (from Threshold Point [2] to [3]). Works as Adjustment Factor [0]."
     },
     {
       "Field": "adjPt_maxGrowVal3",
       "Name": "Adjustment Factor [3]",
-      "Description": "Determines the exponent used to calculate the curve.\nThe growth values are normalised to be between the level range and the growth range dictated,\nSuch that: \n0 level is the lower bound of the stage, and 1 level is the upper bound\n0 growth is the lower bound of the stage, and 1 growth is the upper bound\nThis curve is, at a value of 1, linear, meaning direct proportion between each stage.\nAt a value of 2, it is quadratic (in fact, it will be flat exactly at 0, and have steepness 2 at 1)\nNote that a steepness of 2 means the growth per level is double the average growth per level.\nAt a value of 0.5, it is a square root.\nBelow 0, negative powers are not used as this would create asymptotes and infinite values.\nInstead, the axes are flipped. If you consider the graph 0 to 1 by 0 to 1, it is rotated 180 degrees.\nAt a value of -1, it is linear again.\nAt a value of -2, it is quadratic, however the origin is at the upper bound.\nNote this means there is a steepness of 2 at the lower bound and it is flat at the upper bound.\nAt a value of -0.5, it is a square root graph again, but rotated 180."
+      "Description": "Curve exponent for stage 3 (from Threshold Point [3] to [4]). Works as Adjustment Factor [0]."
     },
     {
       "Field": "adjPt_maxGrowVal4",
       "Name": "Adjustment Factor [4]",
-      "Description": "This value is not used."
+      "Description": "Appears unused by the game: there is no stage after Threshold Point [4]."
     },
     {
       "Field": "init_inclination_soul",
-      "Name": "Leveling Cost - Initial Cost",
-      "Description": "Growth Soul Slope of the early graph 1"
+      "Name": "Leveling Cost - Base Multiplier",
+      "Description": "Row 200 only. Level-up cost: with x = the level being bought + 80, cost = x² × (Base Multiplier + Multiplier Growth × max(0, x − Growth Threshold)) + Flat Offset, rounded down. Retail: 0.1."
     },
     {
       "Field": "adjustment_value",
-      "Name": "Leveling Cost - Initial Offset",
-      "Description": "Growth soul Early soul adjustment 2"
+      "Name": "Leveling Cost - Flat Offset",
+      "Description": "Row 200 only. Runes added to every level-up cost after the multiplier (see Base Multiplier). Retail: 1."
     },
     {
       "Field": "boundry_inclination_soul",
-      "Name": "Leveling Cost - Cost Increase",
-      "Description": "Affects the slope of the graph after the growth soul threshold 3"
+      "Name": "Leveling Cost - Multiplier Growth",
+      "Description": "Row 200 only. Added to the Base Multiplier for each point x is above the Growth Threshold (x = the level being bought + 80). Retail: 0.02."
     },
     {
       "Field": "boundry_value",
-      "Name": "Leveling Cost - Increase Interval",
-      "Description": "Growth soul threshold t"
+      "Name": "Leveling Cost - Growth Threshold",
+      "Description": "Row 200 only. Value of x (the level being bought + 80) above which Multiplier Growth starts to apply. Retail: 92, so the cost grows faster from level 13."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

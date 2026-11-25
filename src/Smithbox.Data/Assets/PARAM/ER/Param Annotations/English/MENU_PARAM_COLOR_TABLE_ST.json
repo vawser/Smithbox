@@ -2,57 +2,57 @@
   "Param": "MENU_PARAM_COLOR_TABLE_ST",
   "Type": "MENU_PARAM_COLOR_TABLE_ST",
   "Name": "MENU_PARAM_COLOR_TABLE_ST",
-  "Description": null,
+  "Description": "Colour palettes of the character-creation colour pickers (skin, hair, eyes, make-up, tattoo and so on). A picker's Table ID (CharMakeMenuTopParam) names its first row; that row and the following row IDs give up to 13 columns, each a column of 11 shades built from the row's HSV points. Missing columns show a default colour. Retail palettes start at 1001, 1101, 1201, 1301, 1401, 1421, 1441, 1461 and 1481.",
   "Fields": [
     {
       "Field": "lerpMode",
-      "Name": "Lerp Mode",
-      "Description": "Interpolation method"
+      "Name": "Gradient Mode",
+      "Description": "How the column's 11 shades (top to bottom) are made. 1: shade 1 is point 1, shade 6 point 2 and shade 11 point 3, with even blends between. 2: shades blend from point 1 toward point 2 in steps of 1/11 (point 3 unused). 0 or other: every shade is the default colour."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "h",
       "Name": "Hue",
-      "Description": "Hue. Treat as a fixed value in interpolation"
+      "Description": "Hue in degrees (wraps at 360), shared by every shade of the column."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "s1",
       "Name": "Saturation [1]",
-      "Description": "Saturation 1. Treated as the first point of interpolation"
+      "Description": "Saturation of point 1 (0 to 1)."
     },
     {
       "Field": "v1",
       "Name": "Brightness [1]",
-      "Description": "Brightness 1. Treated as the first point of interpolation"
+      "Description": "Brightness (HSV value) of point 1 (0 to 1)."
     },
     {
       "Field": "s2",
       "Name": "Saturation [2]",
-      "Description": "Saturation 2. Treated as the second point of interpolation"
+      "Description": "Saturation of point 2 (0 to 1)."
     },
     {
       "Field": "v2",
       "Name": "Brightness [2]",
-      "Description": "Brightness 2. Treated as the second point of interpolation"
+      "Description": "Brightness (HSV value) of point 2 (0 to 1)."
     },
     {
       "Field": "s3",
       "Name": "Saturation [3]",
-      "Description": "Saturation 3. Treated as the third point of interpolation"
+      "Description": "Saturation of point 3 (0 to 1). Used only by Gradient Mode 1."
     },
     {
       "Field": "v3",
       "Name": "Brightness [3]",
-      "Description": "Brightness 3. Treated as the third point of interpolation"
+      "Description": "Brightness (HSV value) of point 3 (0 to 1). Used only by Gradient Mode 1."
     }
   ]
 }

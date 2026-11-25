@@ -2,362 +2,362 @@
   "Param": "SP_EFFECT_VFX_PARAM_ST",
   "Type": "SP_EFFECT_VFX_PARAM_ST",
   "Name": "SP_EFFECT_VFX_PARAM_ST",
-  "Description": null,
+  "Description": "Visual and sound effects of an SpEffect: SFX and sounds, camouflage, armour transformation, material changes and weapon enchant trails. Used through the SpEffectParam VFX IDs; every VFX row of every active SpEffect is re-evaluated each frame.",
   "Fields": [
     {
       "Field": "midstSfxId",
       "Name": "Midst SFX ID",
-      "Description": "In effect SfxID (-1: invalid)"
+      "Description": "SFX that plays for as long as the effect is active, from the Midst Dummy Poly ID. For a weapon enchant (Effect Type 1/2) this is the enchant trail SFX drawn between the enchant dummy polys. -1: none. Several SpEffects using the same VFX row share one instance."
     },
     {
       "Field": "midstSeId",
       "Name": "Midst SE ID",
-      "Description": "In effect SeID (-1: invalid)"
+      "Description": "Sound (s-type) that plays while the effect is active, from the Midst Dummy Poly ID. -1: none."
     },
     {
       "Field": "initSfxId",
       "Name": "Start SFX ID",
-      "Description": "SfxID at activation (-1: invalid)"
+      "Description": "One-shot SFX played when this VFX first appears on the character, from the Start Dummy Poly ID. Not replayed while the VFX is already showing. -1: none."
     },
     {
       "Field": "initSeId",
       "Name": "Start SE ID",
-      "Description": "When activated SeID (-1: invalid)"
+      "Description": "One-shot sound (s-type) played when this VFX first appears, from the Start Dummy Poly ID. -1: none."
     },
     {
       "Field": "finishSfxId",
       "Name": "End SFX ID",
-      "Description": "SfxID at the time of cancellation (-1: invalid)"
+      "Description": "One-shot SFX played when this VFX ends, from the End Dummy Poly ID. -1: none."
     },
     {
       "Field": "finishSeId",
       "Name": "End SE ID",
-      "Description": "SeID at the time of release (-1: invalid)"
+      "Description": "One-shot sound (s-type) played when this VFX ends, from the End Dummy Poly ID. -1: none."
     },
     {
       "Field": "camouflageBeginDist",
       "Name": "Camouflage - Start Distance",
-      "Description": "It is the camouflage start distance"
+      "Description": "Distance (m) between the character and the local player beyond which the character fades out. With End Distance it forms a hysteresis: once camouflaged, the character stays faded until the player comes closer than End Distance. Retail pairs: 17/12, 15/14, 10/9, 6/5, 5/4; 0/0 keeps the character faded at any distance."
     },
     {
       "Field": "camouflageEndDist",
       "Name": "Camouflage - End Distance",
-      "Description": "It is the camouflage end distance"
+      "Description": "Distance (m) to the local player below which a camouflaged character fades back in. Set it lower than the Start Distance."
     },
     {
       "Field": "transformProtectorId",
       "Name": "Transform - Protector ID",
-      "Description": "Makeover Armor ID (-1: None)"
+      "Description": "Player characters only: shows this armour piece instead of the equipped one while the effect is active. By default it replaces the head piece; Is Full Body Transformation and Is Transformation for Arms pick the other override slots. -1: none."
     },
     {
       "Field": "midstDmyId",
       "Name": "Midst Dummy Poly ID",
-      "Description": "In effect Damipoli ID (-1: Root)"
+      "Description": "Dummy poly the Midst SFX and SE play from. The SFX plays on every dummy poly with this ID and does not play if the model has none. -1: the character's root."
     },
     {
       "Field": "initDmyId",
       "Name": "Start Dummy Poly ID",
-      "Description": "Damipoli ID at the time of activation (-1: root)"
+      "Description": "Dummy poly the Start SFX and SE play from (every dummy poly with this ID). -1: the character's root."
     },
     {
       "Field": "finishDmyId",
       "Name": "End Dummy Poly ID",
-      "Description": "Damipoli ID at the time of cancellation (-1: root)"
+      "Description": "Dummy poly the End SFX and SE play from (every dummy poly with this ID). -1: the character's root."
     },
     {
       "Field": "effectType",
       "Name": "Effect Type",
-      "Description": "Effect type"
+      "Description": "What the VFX applies to. 0: the character (SFX, sounds, decals). 1: right-hand weapon enchant. 2: left-hand weapon enchant. Weapon enchants work on player characters only, use the enchant dummy polys, and are hidden during Mimic's Veil. The other fields (camouflage, transformation, material, wetness) apply for every type."
     },
     {
       "Field": "soulParamIdForWepEnchant",
-      "Name": "Weapon Enchant - Soul Param ID",
-      "Description": "Soul Param ID for Weapon Enchantment (-1: None). Change the applied Phantom Param."
+      "Name": "Weapon Enchant - Material Type",
+      "Description": "Weapon enchants (Effect Type 1/2): built-in material effect (the blade glow) put on the enchanted weapon. 0: none. Shields and torches use a different set of material effects for the same value."
     },
     {
       "Field": "playCategory",
       "Name": "Play Category",
-      "Description": "Controls effect playback due to duplicate effects"
+      "Description": "Exclusive group for VFX that should not stack. 0: always plays. 1–8: of all active VFX in the same category, only the one with the lowest Play Priority plays (up to 4 with the same priority)."
     },
     {
       "Field": "playPriority",
       "Name": "Play Priority",
-      "Description": "Set the playback priority when the categories match (lower one has priority)"
+      "Description": "Priority within the Play Category; the lowest value plays. For camouflage, the camouflage VFX with the lowest value sets the distances, alpha and fade rates."
     },
     {
       "Field": "existEffectForLarge",
-      "Name": "Large Effect Exists",
-      "Description": "Is there a large effect?"
+      "Name": "Use SFX Size Variants",
+      "Description": "If set, the six SFX and SE IDs are offset by the character's NpcParam SFX Size: +0 normal, +1 medium, +2 large. The variant IDs must exist."
     },
     {
       "Field": "existEffectForSoul",
       "Name": "Soul Effect Exists",
-      "Description": "Is there an effect for the soul body?"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "effectInvisibleAtCamouflage",
-      "Name": "Camouflage - Invisible while Active",
-      "Description": "Whether to hide the effect when hiding"
+      "Name": "Camouflage - Hide SFX",
+      "Description": "If set, this VFX's SFX is hidden while the character is camouflaged."
     },
     {
       "Field": "useCamouflage",
       "Name": "Camouflage - Enable",
-      "Description": "Do you hide"
+      "Description": "Makes the character fade out by distance to the local player (see the camouflage distances, alpha and fade rates). Without Invisible for Friend, only hostile characters see the fade."
     },
     {
       "Field": "invisibleAtFriendCamouflage",
       "Name": "Camouflage - Invisible for Friend",
-      "Description": "Is it hidden even by allies when hiding?"
+      "Description": "If set, the camouflage also applies when the local player is friendly to the character; otherwise friendly viewers see the character normally."
     },
     {
       "Field": "isHideFootEffect_forCamouflage",
       "Name": "Camouflage - Hide Foot Effect",
-      "Description": "Do you want to turn off the foot effect when hiding?"
+      "Description": "If set, the character's foot effects are turned off while the camouflage is active."
     },
     {
       "Field": "halfCamouflage",
       "Name": "Camouflage - Translucent Appearance",
-      "Description": "Only translucent appearance"
+      "Description": "If set, the camouflage ignores Min Alpha: the character fades to 20% when camouflaged and stays at 80% when the player is close."
     },
     {
       "Field": "isFullBodyTransformProtectorId",
       "Name": "Is Full Body Transformation",
-      "Description": "Is the transformation for the body?"
+      "Description": "If set, the Transform - Protector ID is used as a full-body appearance override instead of the head override."
     },
     {
       "Field": "isInvisibleWeapon",
       "Name": "Is Invisible Weapon",
-      "Description": "Invisible Weapon for Weapon Enchantment (0: Weapon Show, 1: Weapon Hide)"
+      "Description": "Weapon enchants: hides the enchanted weapon's model once the enchant has faded in."
     },
     {
       "Field": "isSilence",
       "Name": "Is Silent",
-      "Description": "Is it silence? (0: No, 1: Yes)"
+      "Description": "If set, the character is marked silent while the effect is active (works with or without camouflage)."
     },
     {
       "Field": "isMidstFullbody",
       "Name": "Is Midst SFX Full Body",
-      "Description": "Do you use whole body Damipoli for equipping SFX during effect? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1"
+      "Description": "Appears unused by the game (read for player characters, but never applied). Retail sets it on 92 rows."
     },
     {
       "Field": "isInitFullbody",
       "Name": "Is Start SFX Full Body",
-      "Description": "Do you use the whole body Damipoli for equipping SFX during activation? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1"
+      "Description": "Appears unused by the game (read for player characters, but never applied). Retail sets it on 18 rows."
     },
     {
       "Field": "isFinishFullbody",
       "Name": "Is End SFX Full Body",
-      "Description": "Do you use the whole body Damipoli for equipping SFX at the time of release? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1"
+      "Description": "Appears unused by the game (read for player characters, but never applied). Retail sets it on 47 rows."
     },
     {
       "Field": "isVisibleDeadChr",
-      "Name": "Is Visible on Dead Chr",
-      "Description": "If , VFX will be displayed even when the corpse is dead."
+      "Name": "Is Visible on Dead Character",
+      "Description": "If set, the VFX keeps playing on a dead character; otherwise the VFX is not applied while the character is dead."
     },
     {
       "Field": "isUseOffsetEnchantSfxSize",
       "Name": "Use Enchant SFX Size to Offset SFX ID",
-      "Description": "Whether to offset the SfxId according to the enchantment Sfx size of the weapon para"
+      "Description": "Weapon enchants: adds the weapon's EquipParamWeapon Enchant SFX Size to the Midst SFX ID, so one row can pick a trail sized for each weapon."
     },
     {
       "Field": "pad_1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isEnableLockOn_forCamouflage",
-      "Name": "Enable Lock-on whilst Invisible",
-      "Description": "If enabled, owner can be target locked when invisible."
+      "Name": "Camouflage - Allow Lock-on",
+      "Description": "If set, the camouflaged character can still be locked on to."
     },
     {
       "Field": "decalId1",
       "Name": "Decal ID [0]",
-      "Description": "Decal ID 1 (-1: invalid)"
+      "Description": "Decal placed when the effect starts (Effect Type 0). -1: none. Unused in retail."
     },
     {
       "Field": "decalId2",
       "Name": "Decal ID [1]",
-      "Description": "Decal ID 2 (-1: invalid)"
+      "Description": "Second decal placed when the effect starts (Effect Type 0). -1: none. Unused in retail."
     },
     {
       "Field": "footEffectPriority",
       "Name": "Foot Effect Priority",
-      "Description": "Foot effect offset priority (lower is higher)"
+      "Description": "Appears unused by the game. Retail leaves it at 0."
     },
     {
       "Field": "footEffectOffset",
       "Name": "Foot Effect Offset",
-      "Description": "Amount offset to foot effect ID when this special effect is applied"
+      "Description": "Appears unused by the game. Retail sets it on 35 rows."
     },
     {
       "Field": "traceSfxIdOffsetType",
       "Name": "Trace SFX ID Offset Type",
-      "Description": "The offset value applied to the sword flash SFX ID. Used for enchantment and sword trajectory effects"
+      "Description": "Changes the weapon swing trail SFX. 0: no change; n (1–28): the trail SFX ID is offset by 9000 + 1000 × n (1 → +10000, 28 → +37000). Effect Type 0 changes both weapons; a weapon enchant changes only that hand."
     },
     {
       "Field": "forceDeceasedType",
       "Name": "Force Deceased Type",
-      "Description": "A function that can force the appearance of a character to be alive / dead"
+      "Description": "Forced living/dead display type, set on the character while the effect is active. 0: no change. What each value does was not established. Retail uses 1 on 4 rows."
     },
     {
       "Field": "enchantStartDmyId_0",
       "Name": "Enchant SFX Start - Dummy Poly ID [0]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: weapon dummy poly where enchant trail 1 starts (retail: 10xxx/11xxx for the right hand, 20xxx/21xxx for the left). The trail plays only if the weapon has this dummy poly. -1: none. Whips use only the last start dummy poly they have."
     },
     {
       "Field": "enchantEndDmyId_0",
-      "Name": "Enchant SFX end - Dummy Poly ID [0]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Name": "Enchant SFX End - Dummy Poly ID [0]",
+      "Description": "Weapon enchants: weapon dummy poly where enchant trail 1 ends. -1: none."
     },
     {
       "Field": "enchantStartDmyId_1",
       "Name": "Enchant SFX Start - Dummy Poly ID [1]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 2. -1: none."
     },
     {
       "Field": "enchantEndDmyId_1",
       "Name": "Enchant SFX End - Dummy Poly ID [1]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 2. -1: none."
     },
     {
       "Field": "enchantStartDmyId_2",
       "Name": "Enchant SFX Start - Dummy Poly ID [2]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 3. -1: none."
     },
     {
       "Field": "enchantEndDmyId_2",
       "Name": "Enchant SFX End - Dummy Poly ID [2]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 3. -1: none."
     },
     {
       "Field": "enchantStartDmyId_3",
       "Name": "Enchant SFX Start - Dummy Poly ID [3]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 4. -1: none."
     },
     {
       "Field": "enchantEndDmyId_3",
       "Name": "Enchant SFX End - Dummy Poly ID [3]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 4. -1: none."
     },
     {
       "Field": "enchantStartDmyId_4",
       "Name": "Enchant SFX Start - Dummy Poly ID [4]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 5. -1: none."
     },
     {
       "Field": "enchantEndDmyId_4",
       "Name": "Enchant SFX End - Dummy Poly ID [4]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 5. -1: none."
     },
     {
       "Field": "enchantStartDmyId_5",
       "Name": "Enchant SFX Start - Dummy Poly ID [5]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 6. -1: none."
     },
     {
       "Field": "enchantEndDmyId_5",
       "Name": "Enchant SFX End - Dummy Poly ID [5]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 6. -1: none."
     },
     {
       "Field": "enchantStartDmyId_6",
       "Name": "Enchant SFX Start - Dummy Poly ID [6]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 7. -1: none."
     },
     {
       "Field": "enchantEndDmyId_6",
       "Name": "Enchant SFX End - Dummy Poly ID [6]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 7. -1: none."
     },
     {
       "Field": "enchantStartDmyId_7",
       "Name": "Enchant SFX Start - Dummy Poly ID [7]",
-      "Description": "Damipoli ID generated at the base of enchantment"
+      "Description": "Weapon enchants: start dummy poly of enchant trail 8. -1: none."
     },
     {
       "Field": "enchantEndDmyId_7",
       "Name": "Enchant SFX End - Dummy Poly ID [7]",
-      "Description": "Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number."
+      "Description": "Weapon enchants: end dummy poly of enchant trail 8. -1: none."
     },
     {
       "Field": "SfxIdOffsetType",
       "Name": "SFX ID Offset Type",
-      "Description": "SfxID offset type"
+      "Description": "Where the Start, Midst and End SFX IDs come from. 0: this row. 1: this row's IDs plus a per-character offset (not established; no retail use). 2: Mimic's Veil: the SFX of the current disguise from MapMimicryEstablishmentParam (nothing plays if there is none); the sounds still come from this row."
     },
     {
       "Field": "phantomParamOverwriteType",
       "Name": "Phantom Param Overwrite Type",
-      "Description": "Forced overwrite type of phantom parameters"
+      "Description": "Overrides the character's phantom look while the effect is active. 0: no change. 1: no phantom param. 2: uses the Phantom Param Overwrite ID. Re-evaluated every frame, so it ends with the effect."
     },
     {
       "Field": "camouflageMinAlpha",
       "Name": "Camouflage - Min Alpha",
-      "Description": "Minimum  value when hiding [%]"
+      "Description": "Opacity (%) the character fades to while camouflaged. 0: fully invisible. Ignored with Translucent Appearance."
     },
     {
       "Field": "wetAspectType",
       "Name": "Wet Aspect Type",
-      "Description": "Generate a wet expression by referring to the wet parameter"
+      "Description": "Wetness look put on the character when the effect applies. 0: none. Types 1–3, 5, 6 and 19 follow the effect's duration; the other types apply a fixed wetness."
     },
     {
       "Field": "phantomParamOverwriteId",
       "Name": "Phantom Param Overwrite ID",
-      "Description": "Forced Id of phantom parameter"
+      "Description": "PhantomParam row used when Phantom Param Overwrite Type is 2."
     },
     {
       "Field": "materialParamId",
       "Name": "Material Param ID",
-      "Description": "ID0-99 are GS reservation IDs. If ID100 or later is specified, the material extension parameter is referenced (-1: invalid value)."
+      "Description": "Material parameter animated on the character's materials while the effect is active. 0–99: built-in parameters; 100 and up: a MaterialExParam row. -1: none. Up to 4 at once per character."
     },
     {
       "Field": "materialParamInitValue",
-      "Name": "Material Param - Start Fade",
-      "Description": "The value at the start of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing"
+      "Name": "Material Param - Start Value",
+      "Description": "Value of the material parameter when the effect starts."
     },
     {
       "Field": "materialParamTargetValue",
-      "Name": "Material Param - End Fade",
-      "Description": "The value at the end of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing"
+      "Name": "Material Param - End Value",
+      "Description": "Value the material parameter reaches after the fade time."
     },
     {
       "Field": "materialParamFadeTime",
       "Name": "Material Param - Fade Time",
-      "Description": "Fade time for material parameter values. Gradually reach the target value over this time. If the material parameter ID is -1, do nothing"
+      "Description": "Seconds to go from the start value to the end value."
     },
     {
       "Field": "footDecalMaterialOffsetOverwriteId",
       "Name": "Foot Decal Material Offset Overwrite ID",
-      "Description": "Forcibly rewrite the floor material ID offset of the foot decal (-1 unused)"
+      "Description": "Override for the floor-material offset of the character's footprint decals, set while the effect is active. -1: no override."
     },
     {
       "Field": "pad_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "fadeOutRateCamouflage",
-      "Name": "Camouflage: Fade Out Rate",
-      "Description": "The alpha value that changes per second during the fade-out process that occurs when the special effect of concealing the character is applied."
+      "Name": "Camouflage - Fade Out Rate",
+      "Description": "Opacity lost per second (%) while fading out into camouflage. Default 150 (about 0.7 s from full to invisible)."
     },
     {
       "Field": "fadeInRateCamouflage",
-      "Name": "Camouflage: Fade In Rate",
-      "Description": "The alpha value that changes per second during the fade-in process that occurs when the special effect of concealing the character is applied."
+      "Name": "Camouflage - Fade In Rate",
+      "Description": "Opacity gained per second (%) while fading back in. Default 150."
     },
     {
       "Field": "isTransformGauntlet",
       "Name": "Is Transformation for Arms",
-      "Description": "Is the transformation armor ID for the arms"
+      "Description": "If set (and Is Full Body Transformation is not), the Transform - Protector ID is used as the arms override instead of the head override."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

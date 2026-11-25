@@ -2,1037 +2,1037 @@
   "Param": "FACE_RANGE_PARAM_ST",
   "Type": "FACE_RANGE_PARAM_ST",
   "Name": "FACE_RANGE_PARAM_ST",
-  "Description": null,
+  "Description": "Value ranges for FaceParam's bytes. Only row 1 (the value at byte 0) and row 2 (the value at byte 255) are read; a FaceParam byte b gives row 1 + (row 2 - row 1) x b / 255, so a row 2 below row 1 reverses the slider. Covers colours, cosmetics, body proportions, age, gender, caricature and the FaceGen shape and texture controls, not the asymmetric controls or model IDs.",
   "Fields": [
     {
       "Field": "face_partsId",
-      "Name": "Face - Parts ID",
-      "Description": "Face part ID"
+      "Name": "Face Model - Musculature, Bone Structure, Age",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "skin_color_R",
-      "Name": "Skin - Color R",
-      "Description": "Skin color (R)"
+      "Name": "Alter Skin Color R",
+      "Description": "Range for FaceParam \"Alter Skin Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.9)."
     },
     {
       "Field": "skin_color_G",
-      "Name": "Skin - Color G",
-      "Description": "Skin color (G)"
+      "Name": "Alter Skin Color G",
+      "Description": "Range for FaceParam \"Alter Skin Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.9)."
     },
     {
       "Field": "skin_color_B",
-      "Name": "Skin - Color B",
-      "Description": "Skin color (B)"
+      "Name": "Alter Skin Color B",
+      "Description": "Range for FaceParam \"Alter Skin Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.9)."
     },
     {
       "Field": "skin_gloss",
-      "Name": "Skin - Gloss",
-      "Description": "Shiny skin"
+      "Name": "Skin Features - Skin Luster",
+      "Description": "Range for FaceParam \"Skin Features - Skin Luster\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "skin_pores",
-      "Name": "Skin - Pores",
-      "Description": "pores"
+      "Name": "Skin Features - Pores",
+      "Description": "Range for FaceParam \"Skin Features - Pores\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_beard",
-      "Name": "Face - Beard",
-      "Description": "Blue beard"
+      "Name": "Facial Hair - Stubble",
+      "Description": "Range for FaceParam \"Facial Hair - Stubble\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_aroundEye",
-      "Name": "Face - Around Eye",
-      "Description": "Bear"
+      "Name": "Skin Features - Dark Circles",
+      "Description": "Range for FaceParam \"Skin Features - Dark Circles\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_aroundEyeColor_R",
-      "Name": "Face - Around Eye Color R",
-      "Description": "Bear color (R)"
+      "Name": "Skin Features - Dark Circle Color R",
+      "Description": "Range for FaceParam \"Skin Features - Dark Circle Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 3)."
     },
     {
       "Field": "face_aroundEyeColor_G",
-      "Name": "Face - Around Eye Color G",
-      "Description": "Bear color (G)"
+      "Name": "Skin Features - Dark Circle Color G",
+      "Description": "Range for FaceParam \"Skin Features - Dark Circle Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 3)."
     },
     {
       "Field": "face_aroundEyeColor_B",
-      "Name": "Face - Around Eye Color B",
-      "Description": "Bear color (B)"
+      "Name": "Skin Features - Dark Circle Color B",
+      "Description": "Range for FaceParam \"Skin Features - Dark Circle Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 3)."
     },
     {
       "Field": "face_cheek",
-      "Name": "Face - Cheek",
-      "Description": "cheek"
+      "Name": "Cosmetics - Cheeks",
+      "Description": "Range for FaceParam \"Cosmetics - Cheeks\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_cheekColor_R",
-      "Name": "Face - Cheek Color R",
-      "Description": "Teak color (R)"
+      "Name": "Cosmetics - Cheek Color R",
+      "Description": "Range for FaceParam \"Cosmetics - Cheek Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 3)."
     },
     {
       "Field": "face_cheekColor_G",
-      "Name": "Face - Cheek Color G",
-      "Description": "Teak color (G)"
+      "Name": "Cosmetics - Cheek Color G",
+      "Description": "Range for FaceParam \"Cosmetics - Cheek Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 3)."
     },
     {
       "Field": "face_cheekColor_B",
-      "Name": "Face - Cheek Color B",
-      "Description": "Teak color (B)"
+      "Name": "Cosmetics - Cheek Color B",
+      "Description": "Range for FaceParam \"Cosmetics - Cheek Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 3)."
     },
     {
       "Field": "face_eyeLine",
-      "Name": "Face - Eyeline",
-      "Description": "Eyeline"
+      "Name": "Cosmetics - Eyeliner",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeliner\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 20)."
     },
     {
       "Field": "face_eyeLineColor_R",
-      "Name": "Face - Eyeline Color R",
-      "Description": "Eyeliner color (R)"
+      "Name": "Cosmetics - Eyeliner Color R",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeliner Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_eyeLineColor_G",
-      "Name": "Face - Eyeline Color G",
-      "Description": "Eyeliner color (G)"
+      "Name": "Cosmetics - Eyeliner Color G",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeliner Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_eyeLineColor_B",
-      "Name": "Face - Eyeline Color B",
-      "Description": "Eyeliner color (B)"
+      "Name": "Cosmetics - Eyeliner Color B",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeliner Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_eyeShadowDown",
-      "Name": "Face - Eyeshadow (Down)",
-      "Description": "Eye shadow (bottom)"
+      "Name": "Cosmetics - Eyeshadow (Lower)",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Lower)\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_eyeShadowDownColor_R",
-      "Name": "Face - Eyeshadow (Down) Color R",
-      "Description": "Eyeshadow (bottom) color (R)"
+      "Name": "Cosmetics - Eyeshadow (Lower) Color R",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Lower) Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_eyeShadowDownColor_G",
-      "Name": "Face - Eyeshadow (Down) Color G",
-      "Description": "Eyeshadow (bottom) color (G)"
+      "Name": "Cosmetics - Eyeshadow (Lower) Color G",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Lower) Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_eyeShadowDownColor_B",
-      "Name": "Face - Eyeshadow (Down) Color B",
-      "Description": "Eyeshadow (bottom) color (B)"
+      "Name": "Cosmetics - Eyeshadow (Lower) Color B",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Lower) Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_eyeShadowUp",
-      "Name": "Face - Eyeshadow (Up)",
-      "Description": "Eye shadow (top)"
+      "Name": "Cosmetics - Eyeshadow (Upper)",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Upper)\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_eyeShadowUpColor_R",
-      "Name": "Face - Eyeshadow (Up) Color R",
-      "Description": "Eyeshadow (top) color (R)"
+      "Name": "Cosmetics - Eyeshadow (Upper) Color R",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Upper) Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 0.7)."
     },
     {
       "Field": "face_eyeShadowUpColor_G",
-      "Name": "Face - Eyeshadow (Up) Color G",
-      "Description": "Eyeshadow (top) color (G)"
+      "Name": "Cosmetics - Eyeshadow (Upper) Color G",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Upper) Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 0.7)."
     },
     {
       "Field": "face_eyeShadowUpColor_B",
-      "Name": "Face - Eyeshadow (Up) Color B",
-      "Description": "Eyeshadow (top) color (B)"
+      "Name": "Cosmetics - Eyeshadow (Upper) Color B",
+      "Description": "Range for FaceParam \"Cosmetics - Eyeshadow (Upper) Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 0.7)."
     },
     {
       "Field": "face_lip",
-      "Name": "Face - Lip",
-      "Description": "lipstick"
+      "Name": "Cosmetics - Lipstick",
+      "Description": "Range for FaceParam \"Cosmetics - Lipstick\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "face_lipColor_R",
-      "Name": "Face - Lip Color R",
-      "Description": "Lipstick color (R)"
+      "Name": "Cosmetics - Lipstick Color R",
+      "Description": "Range for FaceParam \"Cosmetics - Lipstick Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_lipColor_G",
-      "Name": "Face - Lip Color G",
-      "Description": "Lipstick color (G)"
+      "Name": "Cosmetics - Lipstick Color G",
+      "Description": "Range for FaceParam \"Cosmetics - Lipstick Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "face_lipColor_B",
-      "Name": "Face - Lip Color B",
-      "Description": "Lipstick color (B)"
+      "Name": "Cosmetics - Lipstick Color B",
+      "Description": "Range for FaceParam \"Cosmetics - Lipstick Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.4)."
     },
     {
       "Field": "body_hair",
-      "Name": "Body - Hair",
-      "Description": "Hair thickness"
+      "Name": "Alter Body - Body Hair",
+      "Description": "Range for FaceParam \"Alter Body - Body Hair\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -0.25 to 1)."
     },
     {
       "Field": "body_hairColor_R",
-      "Name": "Body - Hair Color R",
-      "Description": "Hair color (R)"
+      "Name": "Alter Body - Body Hair Color R",
+      "Description": "Range for FaceParam \"Alter Body - Body Hair Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "body_hairColor_G",
-      "Name": "Body - Hair Color G",
-      "Description": "Hair color (G)"
+      "Name": "Alter Body - Body Hair Color G",
+      "Description": "Range for FaceParam \"Alter Body - Body Hair Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "body_hairColor_B",
-      "Name": "Body - Hair Color B",
-      "Description": "Hair color (B)"
+      "Name": "Alter Body - Body Hair Color B",
+      "Description": "Range for FaceParam \"Alter Body - Body Hair Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eye_partsId",
-      "Name": "Eyes - Parts ID",
-      "Description": "Eyeball part ID"
+      "Name": "Eyes - Eye Model",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "eyeR_irisColor_R",
-      "Name": "Right Eye - Iris Color R",
-      "Description": "Right eye iris color (R)"
+      "Name": "Eyes - Right Iris Color R",
+      "Description": "Range for FaceParam \"Eyes - Right Iris Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_irisColor_G",
-      "Name": "Right Eye - Iris Color G",
-      "Description": "Right eye iris color (G)"
+      "Name": "Eyes - Right Iris Color G",
+      "Description": "Range for FaceParam \"Eyes - Right Iris Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_irisColor_B",
-      "Name": "Right Eye - Iris Color B",
-      "Description": "Right eye iris color (B)"
+      "Name": "Eyes - Right Iris Color B",
+      "Description": "Range for FaceParam \"Eyes - Right Iris Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_irisScale",
-      "Name": "Right Eye - Iris Scale",
-      "Description": "The size of the iris of the right eye"
+      "Name": "Eyes - Right Iris Size",
+      "Description": "Range for FaceParam \"Eyes - Right Iris Size\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 2 to 0.9)."
     },
     {
       "Field": "eyeR_cataract",
-      "Name": "Right Eye - Cataract",
-      "Description": "Cloudiness of the crystalline lens of the right eye"
+      "Name": "Eyes - Right Eye Clouding",
+      "Description": "Range for FaceParam \"Eyes - Right Eye Clouding\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_cataractColor_R",
-      "Name": "Right Eye - Cataract Color R",
-      "Description": "The turbid color of the crystalline lens of the right eye (R)"
+      "Name": "Eyes - Right Eye Clouding Color R",
+      "Description": "Range for FaceParam \"Eyes - Right Eye Clouding Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_cataractColor_G",
-      "Name": "Right Eye - Cataract Color G",
-      "Description": "The turbid color of the crystalline lens of the right eye (G)"
+      "Name": "Eyes - Right Eye Clouding Color G",
+      "Description": "Range for FaceParam \"Eyes - Right Eye Clouding Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_cataractColor_B",
-      "Name": "Right Eye - Cataract Color B",
-      "Description": "The turbid color of the crystalline lens of the right eye (B)"
+      "Name": "Eyes - Right Eye Clouding Color B",
+      "Description": "Range for FaceParam \"Eyes - Right Eye Clouding Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeR_scleraColor_R",
-      "Name": "Right Eye - Sclera Color R",
-      "Description": "White eye color of the right eye (R)"
+      "Name": "Eyes - Right Eye White Color R",
+      "Description": "Range for FaceParam \"Eyes - Right Eye White Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eyeR_scleraColor_G",
-      "Name": "Right Eye - Sclera Color G",
-      "Description": "White eye color of the right eye (G)"
+      "Name": "Eyes - Right Eye White Color G",
+      "Description": "Range for FaceParam \"Eyes - Right Eye White Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eyeR_scleraColor_B",
-      "Name": "Right Eye - Sclera Color B",
-      "Description": "White eye color of the right eye (B)"
+      "Name": "Eyes - Right Eye White Color B",
+      "Description": "Range for FaceParam \"Eyes - Right Eye White Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eyeR_irisDistance",
-      "Name": "Right Eye - Iris Distance",
-      "Description": "Position of the iris of the right eye"
+      "Name": "Eyes - Right Eye Position",
+      "Description": "Range for FaceParam \"Eyes - Right Eye Position\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -0.3 to 0.3)."
     },
     {
       "Field": "eyeL_irisColor_R",
-      "Name": "Left Eye - Iris Color R",
-      "Description": "Left eye iris color (R)"
+      "Name": "Eyes - Left Iris Color R",
+      "Description": "Range for FaceParam \"Eyes - Left Iris Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_irisColor_G",
-      "Name": "Left Eye - Iris Color G",
-      "Description": "Left eye iris color (G)"
+      "Name": "Eyes - Left Iris Color G",
+      "Description": "Range for FaceParam \"Eyes - Left Iris Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_irisColor_B",
-      "Name": "Left Eye - Iris Color B",
-      "Description": "Left eye iris color (B)"
+      "Name": "Eyes - Left Iris Color B",
+      "Description": "Range for FaceParam \"Eyes - Left Iris Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_irisScale",
-      "Name": "Left Eye - Iris Scale",
-      "Description": "The size of the iris of the left eye"
+      "Name": "Eyes - Left Iris Size",
+      "Description": "Range for FaceParam \"Eyes - Left Iris Size\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 2 to 0.9)."
     },
     {
       "Field": "eyeL_cataract",
-      "Name": "Left Eye - Cataract",
-      "Description": "Cloudiness of the crystalline lens of the left eye"
+      "Name": "Eyes - Left Eye Clouding",
+      "Description": "Range for FaceParam \"Eyes - Left Eye Clouding\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_cataractColor_R",
-      "Name": "Left Eye - Cataract Color R",
-      "Description": "The turbid color of the crystalline lens of the left eye (R)"
+      "Name": "Eyes - Left Eye Clouding Color R",
+      "Description": "Range for FaceParam \"Eyes - Left Eye Clouding Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_cataractColor_G",
-      "Name": "Left Eye - Cataract Color G",
-      "Description": "The turbid color of the crystalline lens of the left eye (G)"
+      "Name": "Eyes - Left Eye Clouding Color G",
+      "Description": "Range for FaceParam \"Eyes - Left Eye Clouding Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_cataractColor_B",
-      "Name": "Left Eye - Cataract Color B",
-      "Description": "The turbid color of the crystalline lens of the left eye (B)"
+      "Name": "Eyes - Left Eye Clouding Color B",
+      "Description": "Range for FaceParam \"Eyes - Left Eye Clouding Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyeL_scleraColor_R",
-      "Name": "Left Eye - Sclera Color R",
-      "Description": "White eye color of the left eye (R)"
+      "Name": "Eyes - Left Eye White Color R",
+      "Description": "Range for FaceParam \"Eyes - Left Eye White Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eyeL_scleraColor_G",
-      "Name": "Left Eye - Sclera Color G",
-      "Description": "White eye color of the left eye (G)"
+      "Name": "Eyes - Left Eye White Color G",
+      "Description": "Range for FaceParam \"Eyes - Left Eye White Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eyeL_scleraColor_B",
-      "Name": "Left Eye - Sclera Color B",
-      "Description": "White eye color of the left eye (B)"
+      "Name": "Eyes - Left Eye White Color B",
+      "Description": "Range for FaceParam \"Eyes - Left Eye White Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 1)."
     },
     {
       "Field": "eyeL_irisDistance",
-      "Name": "Left Eye - Iris Distance",
-      "Description": "Position of the iris of the left eye"
+      "Name": "Eyes - Left Eye Position",
+      "Description": "Range for FaceParam \"Eyes - Left Eye Position\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -0.3 to 0.3)."
     },
     {
       "Field": "hair_partsId",
-      "Name": "Hair - Parts ID",
-      "Description": "Hair part ID"
+      "Name": "Hair - Hair Model",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "hair_color_R",
-      "Name": "Hair - Color R",
-      "Description": "Hair color (R)"
+      "Name": "Hair - Hair Color R",
+      "Description": "Range for FaceParam \"Hair - Hair Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "hair_color_G",
-      "Name": "Hair - Color G",
-      "Description": "Hair color (G)"
+      "Name": "Hair - Hair Color G",
+      "Description": "Range for FaceParam \"Hair - Hair Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "hair_color_B",
-      "Name": "Hair - Color B",
-      "Description": "Hair color (B)"
+      "Name": "Hair - Hair Color B",
+      "Description": "Range for FaceParam \"Hair - Hair Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "hair_shininess",
-      "Name": "Hair - Shininess",
-      "Description": "Hair gloss"
+      "Name": "Hair - Luster",
+      "Description": "Range for FaceParam \"Hair - Luster\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.7)."
     },
     {
       "Field": "hair_rootBlack",
-      "Name": "Hair - Root Black",
-      "Description": "Blackness at the base of hair"
+      "Name": "Hair - Root Darkness",
+      "Description": "Range for FaceParam \"Hair - Root Darkness\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "hair_whiteDensity",
-      "Name": "Hair - White Density",
-      "Description": "Amount of white hair"
+      "Name": "Hair - White Hairs",
+      "Description": "Range for FaceParam \"Hair - White Hairs\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "beard_partsId",
-      "Name": "Beard - Parts ID",
-      "Description": "Beard part ID"
+      "Name": "Facial Hair - Beard Model",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "beard_color_R",
-      "Name": "Beard - Color R",
-      "Description": "Beard color (R)"
+      "Name": "Facial Hair - Beard Color R",
+      "Description": "Range for FaceParam \"Facial Hair - Beard Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "beard_color_G",
-      "Name": "Beard - Color G",
-      "Description": "Beard color (G)"
+      "Name": "Facial Hair - Beard Color G",
+      "Description": "Range for FaceParam \"Facial Hair - Beard Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "beard_color_B",
-      "Name": "Beard - Color B",
-      "Description": "Beard color (B)"
+      "Name": "Facial Hair - Beard Color B",
+      "Description": "Range for FaceParam \"Facial Hair - Beard Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "beard_shininess",
-      "Name": "Beard - Shininess",
-      "Description": "Beard luster"
+      "Name": "Facial Hair - Luster",
+      "Description": "Range for FaceParam \"Facial Hair - Luster\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.7)."
     },
     {
       "Field": "beard_rootBlack",
-      "Name": "Beard - Root Black",
-      "Description": "Blackness at the base of the beard"
+      "Name": "Facial Hair - Root Darkness",
+      "Description": "Range for FaceParam \"Facial Hair - Root Darkness\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "beard_whiteDensity",
-      "Name": "Beard - White Density",
-      "Description": "Amount of white hair with a beard"
+      "Name": "Facial Hair - White Hairs",
+      "Description": "Range for FaceParam \"Facial Hair - White Hairs\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyebrow_partsId",
-      "Name": "Eyebrow - Parts ID",
-      "Description": "Eyebrow part ID"
+      "Name": "Eyebrows - Brow Model",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "eyebrow_color_R",
-      "Name": "Eyebrow - Color R",
-      "Description": "Eyebrow color (R)"
+      "Name": "Eyebrows - Brow Color R",
+      "Description": "Range for FaceParam \"Eyebrows - Brow Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "eyebrow_color_G",
-      "Name": "Eyebrow - Color G",
-      "Description": "Eyebrow color (G)"
+      "Name": "Eyebrows - Brow Color G",
+      "Description": "Range for FaceParam \"Eyebrows - Brow Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "eyebrow_color_B",
-      "Name": "Eyebrow - Color B",
-      "Description": "Eyebrow color (B)"
+      "Name": "Eyebrows - Brow Color B",
+      "Description": "Range for FaceParam \"Eyebrows - Brow Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "eyebrow_shininess",
-      "Name": "Eyebrow - Shininess",
-      "Description": "Glossy eyebrows"
+      "Name": "Eyebrows - Luster",
+      "Description": "Range for FaceParam \"Eyebrows - Luster\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.7)."
     },
     {
       "Field": "eyebrow_rootBlack",
-      "Name": "Eyebrow - Root Black",
-      "Description": "Blackness at the base of the eyebrows"
+      "Name": "Eyebrows - Root Darkness",
+      "Description": "Range for FaceParam \"Eyebrows - Root Darkness\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyebrow_whiteDensity",
-      "Name": "Eyebrow - White Density",
-      "Description": "Amount of white hair on the eyebrows"
+      "Name": "Eyebrows - White Hairs",
+      "Description": "Range for FaceParam \"Eyebrows - White Hairs\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "eyelash_partsId",
-      "Name": "Eyelash - Parts ID",
-      "Description": "Eyelash parts ID"
+      "Name": "Eyelashes - Eyelash Model",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "eyelash_color_R",
-      "Name": "Eyelash - Color R",
-      "Description": "Eyelash color (R)"
+      "Name": "Eyelashes - Eyelash Color R",
+      "Description": "Range for FaceParam \"Eyelashes - Eyelash Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "eyelash_color_G",
-      "Name": "Eyelash - Color G",
-      "Description": "Eyelash color (G)"
+      "Name": "Eyelashes - Eyelash Color G",
+      "Description": "Range for FaceParam \"Eyelashes - Eyelash Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "eyelash_color_B",
-      "Name": "Eyelash - Color B",
-      "Description": "Eyelash color (B)"
+      "Name": "Eyelashes - Eyelash Color B",
+      "Description": "Range for FaceParam \"Eyelashes - Eyelash Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0.8)."
     },
     {
       "Field": "accessories_partsId",
-      "Name": "Accessories - Parts ID",
-      "Description": "Decorative part ID"
+      "Name": "Eyepatch - Eyepatch Model",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "accessories_color_R",
-      "Name": "Accessories - Color R",
-      "Description": "Decoration color (R)"
+      "Name": "Eyepatch - Eyepatch Color R",
+      "Description": "Range for FaceParam \"Eyepatch - Eyepatch Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.8)."
     },
     {
       "Field": "accessories_color_G",
-      "Name": "Accessories - Color G",
-      "Description": "Decoration color (G)"
+      "Name": "Eyepatch - Eyepatch Color G",
+      "Description": "Range for FaceParam \"Eyepatch - Eyepatch Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.8)."
     },
     {
       "Field": "accessories_color_B",
-      "Name": "Accessories - Color B",
-      "Description": "Decorative color (B)"
+      "Name": "Eyepatch - Eyepatch Color B",
+      "Description": "Range for FaceParam \"Eyepatch - Eyepatch Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0.1 to 0.8)."
     },
     {
       "Field": "decal_partsId",
-      "Name": "Decal - Parts ID",
-      "Description": "Decal part ID"
+      "Name": "Tattoo/Mark - Design",
+      "Description": "Appears unused by the game: FaceParam model IDs are used as they are."
     },
     {
       "Field": "decal_posX",
-      "Name": "Decal - Position X",
-      "Description": "Decal position (x)"
+      "Name": "Tweak Tattoo/Mark - Position (Horiz.)",
+      "Description": "Range for FaceParam \"Tweak Tattoo/Mark - Position (Horiz.)\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -0.4 to 0.4)."
     },
     {
       "Field": "decal_posY",
-      "Name": "Decal - Position Y",
-      "Description": "Decal position (y)"
+      "Name": "Tweak Tattoo/Mark - Position (Vert.)",
+      "Description": "Range for FaceParam \"Tweak Tattoo/Mark - Position (Vert.)\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -0.4 to 0.4)."
     },
     {
       "Field": "decal_angle",
-      "Name": "Decal - Angle",
-      "Description": "Decal angle"
+      "Name": "Tweak Tattoo/Mark - Angle",
+      "Description": "Range for FaceParam \"Tweak Tattoo/Mark - Angle\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -3.14 to 3.14)."
     },
     {
       "Field": "decal_scale",
-      "Name": "Decal - Scale",
-      "Description": "Decal scale"
+      "Name": "Tweak Tattoo/Mark - Expansion",
+      "Description": "Range for FaceParam \"Tweak Tattoo/Mark - Expansion\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 4 to 1)."
     },
     {
       "Field": "decal_color_R",
-      "Name": "Decal - Color R",
-      "Description": "Decal color (R)"
+      "Name": "Tattoo/Mark - Tattoo/Mark Color R",
+      "Description": "Range for FaceParam \"Tattoo/Mark - Tattoo/Mark Color R\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "decal_color_G",
-      "Name": "Decal - Color G",
-      "Description": "Decal color (G)"
+      "Name": "Tattoo/Mark - Tattoo/Mark Color G",
+      "Description": "Range for FaceParam \"Tattoo/Mark - Tattoo/Mark Color G\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "decal_color_B",
-      "Name": "Decal - Color B",
-      "Description": "Decal color (B)"
+      "Name": "Tattoo/Mark - Tattoo/Mark Color B",
+      "Description": "Range for FaceParam \"Tattoo/Mark - Tattoo/Mark Color B\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "decal_gloss",
-      "Name": "Decal - Gloss",
-      "Description": "Decal gloss"
+      "Name": "Tweak Tattoo/Mark - Gloss",
+      "Description": "Range for FaceParam \"Tweak Tattoo/Mark - Gloss\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "decal_mirror",
-      "Name": "Decal - Mirror",
-      "Description": "Decal reversal"
+      "Name": "Tweak Tattoo/Mark - Flip",
+      "Description": "Range for FaceParam \"Tweak Tattoo/Mark - Flip\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     },
     {
       "Field": "chrBodyScaleHead",
-      "Name": "Chr Body Scale - Head",
-      "Description": "Character body head scale"
+      "Name": "Alter Body - Head",
+      "Description": "Range for FaceParam \"Alter Body - Head\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 1)."
     },
     {
       "Field": "chrBodyScaleBreast",
-      "Name": "Chr Body Scale - Breast",
-      "Description": "Character body chest scale"
+      "Name": "Alter Body - Chest",
+      "Description": "Range for FaceParam \"Alter Body - Chest\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 1)."
     },
     {
       "Field": "chrBodyScaleAbdomen",
-      "Name": "Chr Body Scale - Abdomen",
-      "Description": "Character body type abdominal scale"
+      "Name": "Alter Body - Abdomen",
+      "Description": "Range for FaceParam \"Alter Body - Abdomen\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 1)."
     },
     {
       "Field": "chrBodyScaleArm",
-      "Name": "Chr Body Scale - Arm",
-      "Description": "Character body type arm scale"
+      "Name": "Alter Body - Arms",
+      "Description": "Range for FaceParam \"Alter Body - Arms\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 1). Used for both arms."
     },
     {
       "Field": "chrBodyScaleLeg",
-      "Name": "Chr Body Scale - Leg",
-      "Description": "Character body type leg scale"
+      "Name": "Alter Body - Legs",
+      "Description": "Range for FaceParam \"Alter Body - Legs\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -1 to 1). Used for both legs."
     },
     {
       "Field": "age",
-      "Name": "Age",
-      "Description": "age"
+      "Name": "Adjust Face Template - Apparent Age",
+      "Description": "Range for FaceParam \"Adjust Face Template - Apparent Age\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 15 to 60)."
     },
     {
       "Field": "gender",
-      "Name": "Gender",
-      "Description": "sex"
+      "Name": "Adjust Face Template - Facial Aesthetic",
+      "Description": "Range for FaceParam \"Adjust Face Template - Facial Aesthetic\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail -4 to 4)."
     },
     {
       "Field": "caricatureGeometry",
-      "Name": "Model Geometry",
-      "Description": "Exaggeration (model)"
+      "Name": "Adjust Face Template - Form Emphasis",
+      "Description": "Range for FaceParam \"Adjust Face Template - Form Emphasis\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 2)."
     },
     {
       "Field": "caricatureTexture",
-      "Name": "Model Texture",
-      "Description": "Exaggeration (texture)"
+      "Name": "Adjust Face Template - Texture Emphasis",
+      "Description": "Range for FaceParam \"Adjust Face Template - Texture Emphasis\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 2). The converted value is never applied to the face."
     },
     {
       "Field": "faceGeoData00",
-      "Name": "Face - Geo Data [00]]",
-      "Description": "Face - Geo Data [00]"
+      "Name": "Brow Ridge - Brow Ridge Height",
+      "Description": "Shape control 00 (\"Brow Ridge - high / low\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData01",
-      "Name": "Face - Geo Data [01]",
-      "Description": "Face - Geo Data [01]"
+      "Name": "Brow Ridge - Inner Brow Ridge",
+      "Description": "Shape control 01 (\"Brow Ridge Inner - down / up\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData02",
-      "Name": "Face - Geo Data [02]",
-      "Description": "Face - Geo Data [02]"
+      "Name": "Brow Ridge - Outer Brow Ridge",
+      "Description": "Shape control 02 (\"Brow Ridge Outer - up / down\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData03",
-      "Name": "Face - Geo Data [03]",
-      "Description": "Face - Geo Data [03]"
+      "Name": "Cheeks - Cheekbone Height",
+      "Description": "Shape control 03 (\"Cheekbones - low / high\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData04",
-      "Name": "Face - Geo Data [04]",
-      "Description": "Face - Geo Data [04]"
+      "Name": "Cheeks - Cheekbone Depth",
+      "Description": "Shape control 04 (\"Cheekbones - shallow / pronounced\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData05",
-      "Name": "Face - Geo Data [05]",
-      "Description": "Face - Geo Data [05]"
+      "Name": "Cheeks - Cheekbone Width",
+      "Description": "Shape control 05 (\"Cheekbones - thin / wide\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData06",
-      "Name": "Face - Geo Data [06]",
-      "Description": "Face - Geo Data [06]"
+      "Name": "Cheeks - Cheekbone Protrusion",
+      "Description": "Shape control 06 (\"Cheeks - concave / convex\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData07",
-      "Name": "Face - Geo Data [07]",
-      "Description": "Face - Geo Data [07]"
+      "Name": "Cheeks - Cheeks",
+      "Description": "Shape control 07 (\"Cheeks - round / gaunt\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData08",
-      "Name": "Face - Geo Data [08]",
-      "Description": "Face - Geo Data [08]"
+      "Name": "Chin - Chin Tip Position",
+      "Description": "Shape control 08 (\"Chin - forward / backward\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData09",
-      "Name": "Face - Geo Data [09]",
-      "Description": "Face - Geo Data [09]"
+      "Name": "Chin - Chin Length",
+      "Description": "Shape control 09 (\"Chin - pronounced / recessed\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData10",
-      "Name": "Face - Geo Data [10]",
-      "Description": "Face - Geo Data [10]"
+      "Name": "Chin - Chin Protrusion",
+      "Description": "Shape control 10 (\"Chin - retracted / jutting\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData11",
-      "Name": "Face - Geo Data [11]",
-      "Description": "Face - Geo Data [11]"
+      "Name": "Chin - Chin Depth",
+      "Description": "Shape control 11 (\"Chin - shallow / deep\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData12",
-      "Name": "Face - Geo Data [12]",
-      "Description": "Face - Geo Data [12]"
+      "Name": "Chin - Chin Size",
+      "Description": "Shape control 12 (\"Chin - small / large\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData13",
-      "Name": "Face - Geo Data [13]",
-      "Description": "Face - Geo Data [13]"
+      "Name": "Chin - Chin Height",
+      "Description": "Shape control 13 (\"Chin - tall / short\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData14",
-      "Name": "Face - Geo Data [14]",
-      "Description": "Face - Geo Data [14]"
+      "Name": "Chin - Chin Width",
+      "Description": "Shape control 14 (\"Chin - wide / thin\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData15",
-      "Name": "Face - Geo Data [15]",
-      "Description": "Face - Geo Data [15]"
+      "Name": "Eyes - Eye Position",
+      "Description": "Shape control 15 (\"Eyes - down / up\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData16",
-      "Name": "Face - Geo Data [16]",
-      "Description": "Face - Geo Data [16]"
+      "Name": "Eyes - Eye Size",
+      "Description": "Shape control 16 (\"Eyes - small / large\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData17",
-      "Name": "Face - Geo Data [17]",
-      "Description": "Face - Geo Data [17]"
+      "Name": "Eyes - Eye Slant",
+      "Description": "Shape control 17 (\"Eyes - tilt inward / outward\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData18",
-      "Name": "Face - Geo Data [18]",
-      "Description": "Face - Geo Data [18]"
+      "Name": "Eyes - Eye Spacing",
+      "Description": "Shape control 18 (\"Eyes - apart / together\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData19",
-      "Name": "Face - Geo Data [19]",
-      "Description": "Face - Geo Data [19]"
+      "Name": "Facial Balance - Nose Size",
+      "Description": "Shape control 19 (\"Face - brow-nose-chin ratio\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData20",
-      "Name": "Face - Geo Data [20]",
-      "Description": "Face - Geo Data [20]"
+      "Name": "Facial Balance - Nose/Forehead Ratio",
+      "Description": "Shape control 20 (\"Face - forehead-sellion-nose ratio\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData21",
-      "Name": "Face - Geo Data [21]",
-      "Description": "Face - Geo Data [21]"
+      "Name": "Hidden Shape - Face Heavy/Light",
+      "Description": "Shape control 21 (\"Face - heavy / light\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0). With that 0 to 0 range the control has no effect."
     },
     {
       "Field": "faceGeoData22",
-      "Name": "Face - Geo Data [22]",
-      "Description": "Face - Geo Data [22]"
+      "Name": "Facial Balance - Face Protrusion",
+      "Description": "Shape control 22 (\"Face - round / gaunt\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData23",
-      "Name": "Face - Geo Data [23]",
-      "Description": "Face - Geo Data [23]"
+      "Name": "Facial Balance - Vert. Face Ratio",
+      "Description": "Shape control 23 (\"Face - tall / short\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData24",
-      "Name": "Face - Geo Data [24]",
-      "Description": "Face - Geo Data [24]"
+      "Name": "Facial Balance - Facial Feature Slant",
+      "Description": "Shape control 24 (\"Face - up / down\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData25",
-      "Name": "Face - Geo Data [25]",
-      "Description": "Face - Geo Data [25]"
+      "Name": "Facial Balance - Horiz. Face Ratio",
+      "Description": "Shape control 25 (\"Face - wide / thin\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData26",
-      "Name": "Face - Geo Data [26]",
-      "Description": "Face - Geo Data [26]"
+      "Name": "Hidden Shape - Forehead Small/Large",
+      "Description": "Shape control 26 (\"Forehead - small / large\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0). With that 0 to 0 range the control has no effect."
     },
     {
       "Field": "faceGeoData27",
-      "Name": "Face - Geo Data [27]",
-      "Description": "Face - Geo Data [27]"
+      "Name": "Forehead/Glabella - Forehead Depth",
+      "Description": "Shape control 27 (\"Forehead - tall / short\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -5 to 5)."
     },
     {
       "Field": "faceGeoData28",
-      "Name": "Face - Geo Data [28]",
-      "Description": "Face - Geo Data [28]"
+      "Name": "Forehead/Glabella - Forehead Protrusion",
+      "Description": "Shape control 28 (\"Forehead - tilt forward / back\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 5 to -5)."
     },
     {
       "Field": "faceGeoData29",
-      "Name": "Face - Geo Data [29]",
-      "Description": "Face - Geo Data [29]"
+      "Name": "Hidden Shape - Head Thin/Wide",
+      "Description": "Range of the hidden shape control 29 (\"Head - thin / wide\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceGeoData30",
-      "Name": "Face - Geo Data [30]",
-      "Description": "Face - Geo Data [30]"
+      "Name": "Jaw - Jaw Protrusion",
+      "Description": "Shape control 30 (\"Jaw - retracted / jutting\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData31",
-      "Name": "Face - Geo Data [31]",
-      "Description": "Face - Geo Data [31]"
+      "Name": "Jaw - Jaw Width",
+      "Description": "Shape control 31 (\"Jaw - wide / thin\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 5 to -5)."
     },
     {
       "Field": "faceGeoData32",
-      "Name": "Face - Geo Data [32]",
-      "Description": "Face - Geo Data [32]"
+      "Name": "Jaw - Lower Jaw",
+      "Description": "Shape control 32 (\"Jaw-Neck - slope high / low\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 5 to -5)."
     },
     {
       "Field": "faceGeoData33",
-      "Name": "Face - Geo Data [33]",
-      "Description": "Face - Geo Data [33]"
+      "Name": "Jaw - Jaw Contour",
+      "Description": "Shape control 33 (\"Jawline - concave / convex\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData34",
-      "Name": "Face - Geo Data [34]",
-      "Description": "Face - Geo Data [34]"
+      "Name": "Lips - Lip Shape",
+      "Description": "Shape control 34 (\"Mouth - drawn / pursed\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData35",
-      "Name": "Face - Geo Data [35]",
-      "Description": "Face - Geo Data [35]"
+      "Name": "Lips - Lip Size",
+      "Description": "Shape control 35 (\"Mouth - happy / sad\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData36",
-      "Name": "Face - Geo Data [36]",
-      "Description": "Face - Geo Data [36]"
+      "Name": "Lips - Lip Fullness",
+      "Description": "Shape control 36 (\"Mouth - Lips deflated / inflated\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData37",
-      "Name": "Face - Geo Data [37]",
-      "Description": "Face - Geo Data [37]"
+      "Name": "Lips - Mouth Expression",
+      "Description": "Shape control 37 (\"Mouth - Lips large / small\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData38",
-      "Name": "Face - Geo Data [38]",
-      "Description": "Face - Geo Data [38]"
+      "Name": "Lips - Lip Protrusion",
+      "Description": "Shape control 38 (\"Mouth - Lips puckered / retracted\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData39",
-      "Name": "Face - Geo Data [39]",
-      "Description": "Face - Geo Data [39]"
+      "Name": "Lips - Lip Thickness",
+      "Description": "Shape control 39 (\"Mouth - Lips thin / thick\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData40",
-      "Name": "Face - Geo Data [40]",
-      "Description": "Face - Geo Data [40]"
+      "Name": "Mouth - Mouth Protrusion",
+      "Description": "Shape control 40 (\"Mouth - protruding / retracted\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData41",
-      "Name": "Face - Geo Data [41]",
-      "Description": "Face - Geo Data [41]"
+      "Name": "Mouth - Mouth Slant",
+      "Description": "Shape control 41 (\"Mouth - tilt up / down\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData42",
-      "Name": "Face - Geo Data [42]",
-      "Description": "Face - Geo Data [42]"
+      "Name": "Mouth - Occlusion",
+      "Description": "Shape control 42 (\"Mouth - underbite / overbite\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData43",
-      "Name": "Face - Geo Data [43]",
-      "Description": "Face - Geo Data [43]"
+      "Name": "Mouth - Mouth Position",
+      "Description": "Shape control 43 (\"Mouth - up / down\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData44",
-      "Name": "Face - Geo Data [44]",
-      "Description": "Face - Geo Data [44]"
+      "Name": "Mouth - Mouth Width",
+      "Description": "Shape control 44 (\"Mouth - wide / thin\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData45",
-      "Name": "Face - Geo Data [45]",
-      "Description": "Face - Geo Data [45]"
+      "Name": "Mouth - Mouth-Chin Distance",
+      "Description": "Shape control 45 (\"Mouth-Chin distance - short / long\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData46",
-      "Name": "Face - Geo Data [46]",
-      "Description": "Face - Geo Data [46]"
+      "Name": "Nose Ridge - Nose Ridge Depth",
+      "Description": "Shape control 46 (\"Nose - bridge shallow / deep\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData47",
-      "Name": "Face - Geo Data [47]",
-      "Description": "Face - Geo Data [47]"
+      "Name": "Nose Ridge - Nose Ridge Length",
+      "Description": "Shape control 47 (\"Nose - bridge short / long\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData48",
-      "Name": "Face - Geo Data [48]",
-      "Description": "Face - Geo Data [48]"
+      "Name": "Nose Ridge - Nose Position",
+      "Description": "Shape control 48 (\"Nose - down / up\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData49",
-      "Name": "Face - Geo Data [49]",
-      "Description": "Face - Geo Data [49]"
+      "Name": "Nose Ridge - Nose Tip Height",
+      "Description": "Shape control 49 (\"Nose - flat / pointed\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData50",
-      "Name": "Face - Geo Data [50]",
-      "Description": "Face - Geo Data [50]"
+      "Name": "Nostrils - Nostril Slant",
+      "Description": "Shape control 50 (\"Nose - nostril tilt down / up\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData51",
-      "Name": "Face - Geo Data [51]",
-      "Description": "Face - Geo Data [51]"
+      "Name": "Nostrils - Nostril Size",
+      "Description": "Shape control 51 (\"Nose - nostrils small / large\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData52",
-      "Name": "Face - Geo Data [52]",
-      "Description": "Face - Geo Data [52]"
+      "Name": "Nostrils - Nostril Width",
+      "Description": "Shape control 52 (\"Nose - nostrils wide / thin\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceGeoData53",
-      "Name": "Face - Geo Data [53]",
-      "Description": "Face - Geo Data [53]"
+      "Name": "Nose Ridge - Nose Protrusion",
+      "Description": "Shape control 53 (\"Nose - region concave / convex\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData54",
-      "Name": "Face - Geo Data [54]",
-      "Description": "Face - Geo Data [54]"
+      "Name": "Forehead/Glabella - Nose Bridge Height",
+      "Description": "Shape control 54 (\"Nose - sellion down / up\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData55",
-      "Name": "Face - Geo Data [55]",
-      "Description": "Face - Geo Data [55]"
+      "Name": "Forehead/Glabella - Bridge Protrusion 1",
+      "Description": "Shape control 55 (\"Nose - sellion shallow / deep\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData56",
-      "Name": "Face - Geo Data [56]",
-      "Description": "Face - Geo Data [56]"
+      "Name": "Forehead/Glabella - Bridge Protrusion 2",
+      "Description": "Shape control 56 (\"Nose - sellion shallow / deep\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData57",
-      "Name": "Face - Geo Data [57]",
-      "Description": "Face - Geo Data [57]"
+      "Name": "Forehead/Glabella - Nose Bridge Width",
+      "Description": "Shape control 57 (\"Nose - sellion thin / wide\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData58",
-      "Name": "Face - Geo Data [58]",
-      "Description": "Face - Geo Data [58]"
+      "Name": "Nose Ridge - Nose Height",
+      "Description": "Shape control 58 (\"Nose - short / long\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData59",
-      "Name": "Face - Geo Data [59]",
-      "Description": "Face - Geo Data [59]"
+      "Name": "Nose Ridge - Nose Slant",
+      "Description": "Shape control 59 (\"Nose - tilt down / up\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceGeoData60",
-      "Name": "Face - Geo Data [60]",
-      "Description": "Face - Geo Data [60]"
+      "Name": "Hidden Shape - Temples Thin/Wide",
+      "Description": "Range of the hidden shape control 60 (\"Temples - thin / wide\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData00",
-      "Name": "Face - Texture Data [00]",
-      "Description": "Face - Texture Data [00]"
+      "Name": "Face Texture - Beard Flushed/Pale",
+      "Description": "Range of texture control 00 (\"Beard - Flushed / Pale\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData01",
-      "Name": "Face - Texture Data [01]",
-      "Description": "Face - Texture Data [01]"
+      "Name": "Face Texture - Beard Light/Dark",
+      "Description": "Range of texture control 01 (\"Beard - Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData02",
-      "Name": "Face - Texture Data [02]",
-      "Description": "Face - Texture Data [02]"
+      "Name": "Face Texture - Beard Cheeks Light/Dark",
+      "Description": "Range of texture control 02 (\"Beard - Cheeks Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData03",
-      "Name": "Face - Texture Data [03]",
-      "Description": "Face - Texture Data [03]"
+      "Name": "Face Texture - Beard Circle Light/Dark",
+      "Description": "Range of texture control 03 (\"Beard - Circle Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData04",
-      "Name": "Face - Texture Data [04]",
-      "Description": "Face - Texture Data [04]"
+      "Name": "Face Texture - Beard Goatee Light/Dark",
+      "Description": "Range of texture control 04 (\"Beard - Goatee Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData05",
-      "Name": "Face - Texture Data [05]",
-      "Description": "Face - Texture Data [05]"
+      "Name": "Face Texture - Beard Moustache Light/Dark",
+      "Description": "Range of texture control 05 (\"Beard - Moustache Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData06",
-      "Name": "Face - Texture Data [06]",
-      "Description": "Face - Texture Data [06]"
+      "Name": "Face Texture - Cheek Blush Light/Red",
+      "Description": "Texture control 06 (\"Cheek Blush - Light / Red\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceTexData07",
-      "Name": "Face - Texture Data [07]",
-      "Description": "Face - Texture Data [07]"
+      "Name": "Face Texture - Eye Sockets Bruised/Bright",
+      "Description": "Texture control 07 (\"Eye Sockets - Bruised / Bright\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceTexData08",
-      "Name": "Face - Texture Data [08]",
-      "Description": "Face - Texture Data [08]"
+      "Name": "Face Texture - Eye Sockets Dark/Light",
+      "Description": "Texture control 08 (\"Eye Sockets - Dark / Light\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceTexData09",
-      "Name": "Face - Texture Data [09]",
-      "Description": "Face - Texture Data [09]"
+      "Name": "Face Texture - Eyebrows Dark/Light",
+      "Description": "Range of texture control 09 (\"Eyebrows - Dark / Light\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData10",
-      "Name": "Face - Texture Data [10]",
-      "Description": "Face - Texture Data [10]"
+      "Name": "Face Texture - Eyebrows Low/High",
+      "Description": "Range of texture control 10 (\"Eyebrows - Low / High\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData11",
-      "Name": "Face - Texture Data [11]",
-      "Description": "Face - Texture Data [11]"
+      "Name": "Face Texture - Eyebrows Thick/Thin",
+      "Description": "Range of texture control 11 (\"Eyebrows - Thick / Thin\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData12",
-      "Name": "Face - Texture Data [12]",
-      "Description": "Face - Texture Data [12]"
+      "Name": "Face Texture - Eyebrows Very Thin/Thick",
+      "Description": "Range of texture control 12 (\"Eyebrows - Very Thin / Thick\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData13",
-      "Name": "Face - Texture Data [13]",
-      "Description": "Face - Texture Data [13]"
+      "Name": "Face Texture - Eyebrows Lower Light/Dark",
+      "Description": "Range of texture control 13 (\"Eyebrows - Lower Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData14",
-      "Name": "Face - Texture Data [14]",
-      "Description": "Face - Texture Data [14]"
+      "Name": "Face Texture - Eyebrows Outer Light/Dark",
+      "Description": "Range of texture control 14 (\"Eyebrows - Outer Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData15",
-      "Name": "Face - Texture Data [15]",
-      "Description": "Face - Texture Data [15]"
+      "Name": "Face Texture - Eyebrows Upper Dark/Light",
+      "Description": "Range of texture control 15 (\"Eyebrows - Upper Dark / Light\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData16",
-      "Name": "Face - Texture Data [16]",
-      "Description": "Face - Texture Data [16]"
+      "Name": "Face Texture - Eyebrows Underneath Lightness Fix Light/Dark",
+      "Description": "Range of texture control 16 (\"Eyebrows - Underneath Lightness Fix Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData17",
-      "Name": "Face - Texture Data [17]",
-      "Description": "Face - Texture Data [17]"
+      "Name": "Face Texture - Eyebrows Underneath Inner Lightness Fix Light/Dark",
+      "Description": "Range of texture control 17 (\"Eyebrows - Underneath Inner Lightness Fix Light / Dark\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData18",
-      "Name": "Face - Texture Data [18]",
-      "Description": "Face - Texture Data [18]"
+      "Name": "Face Texture - Eyelids Light/Dark",
+      "Description": "Texture control 18 (\"Eyelids - Light / Dark\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceTexData19",
-      "Name": "Face - Texture Data [19]",
-      "Description": "Face - Texture Data [19]"
+      "Name": "Face Texture - Eyelids Pale/Red",
+      "Description": "Texture control 19 (\"Eyelids - Pale / Red\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceTexData20",
-      "Name": "Face - Texture Data [20]",
-      "Description": "Face - Texture Data [20]"
+      "Name": "Face Texture - Eyeliner Light/Dark",
+      "Description": "Texture control 20 (\"Eyeliner - Light / Dark\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceTexData21",
-      "Name": "Face - Texture Data [21]",
-      "Description": "Face - Texture Data [21]"
+      "Name": "Face Texture - Eyeshadow Light/Dark",
+      "Description": "Texture control 21 (\"Eyeshadow - Light / Dark\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceTexData22",
-      "Name": "Face - Texture Data [22]",
-      "Description": "Face - Texture Data [22]"
+      "Name": "Face Texture - Eye Whites Dim/Bright",
+      "Description": "Range of texture control 22 (\"Eye Whites - Dim / Bright\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData23",
-      "Name": "Face - Texture Data [23]",
-      "Description": "Face - Texture Data [23]"
+      "Name": "Face Texture - Eyes Dark Brown/Light Blue",
+      "Description": "Range of texture control 23 (\"Eyes - Dark Brown / Light Blue\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData24",
-      "Name": "Face - Texture Data [24]",
-      "Description": "Face - Texture Data [24]"
+      "Name": "Face Texture - Eyes Dark Brown/Light Brown",
+      "Description": "Range of texture control 24 (\"Eyes - Dark Brown / Light Brown\"). The game doesn't apply that control, so this has no effect."
     },
     {
       "Field": "faceTexData25",
-      "Name": "Face - Texture Data [25]",
-      "Description": "Face - Texture Data [25]"
+      "Name": "Face Texture - Lips Flushed/Pale",
+      "Description": "Texture control 25 (\"Lips - Flushed / Pale\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 0). With that 0 to 0 range the control has no effect."
     },
     {
       "Field": "faceTexData26",
-      "Name": "Face - Texture Data [26]",
-      "Description": "Face - Texture Data [26]"
+      "Name": "Face Texture - Lipstick Dark Red/Light Blue",
+      "Description": "Texture control 26 (\"Lipstick - Dark Red / Light Blue\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceTexData27",
-      "Name": "Face - Texture Data [27]",
-      "Description": "Face - Texture Data [27]"
+      "Name": "Face Texture - Lipstick Dark Blue/Light Red",
+      "Description": "Texture control 27 (\"Lipstick - Dark Blue / Light Red\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceTexData28",
-      "Name": "Face - Texture Data [28]",
-      "Description": "Face - Texture Data [28]"
+      "Name": "Face Texture - Naso Labial Lines Light/Dark",
+      "Description": "Texture control 28 (\"Naso Labial Lines - Light / Dark\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceTexData29",
-      "Name": "Face - Texture Data [29]",
-      "Description": "Face - Texture Data [29]"
+      "Name": "Face Texture - Nares Small/Large",
+      "Description": "Texture control 29 (\"Nares - Small / Large\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 10)."
     },
     {
       "Field": "faceTexData30",
-      "Name": "Face - Texture Data [30]",
-      "Description": "Face - Texture Data [30]"
+      "Name": "Face Texture - Nose Pale/Red",
+      "Description": "Texture control 30 (\"Nose - Pale / Red\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -10 to 10)."
     },
     {
       "Field": "faceTexData31",
-      "Name": "Face - Texture Data [31]",
-      "Description": "Face - Texture Data [31]"
+      "Name": "Face Texture - Skin Flushed/Pale",
+      "Description": "Texture control 31 (\"Skin - Flushed / Pale\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail 10 to -10)."
     },
     {
       "Field": "faceTexData32",
-      "Name": "Face - Texture Data [32]",
-      "Description": "Face - Texture Data [32]"
+      "Name": "Face Texture - Skin Shade Dark/Light",
+      "Description": "Texture control 32 (\"Skin Shade - Dark / Light\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -0.5 to 0.5)."
     },
     {
       "Field": "faceTexData33",
-      "Name": "Face - Texture Data [33]",
-      "Description": "Face - Texture Data [33]"
+      "Name": "Face Texture - Skin Tint Orange/Blue",
+      "Description": "Texture control 33 (\"Skin Tint - Orange / Blue\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -2 to 2)."
     },
     {
       "Field": "faceTexData34",
-      "Name": "Face - Texture Data [34]",
-      "Description": "Face - Texture Data [34]"
+      "Name": "Face Texture - Skin Tint Purple/Yellow",
+      "Description": "Texture control 34 (\"Skin Tint - Purple / Yellow\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -4 to 5)."
     },
     {
       "Field": "faceTexData35",
-      "Name": "Face - Texture Data [35]",
-      "Description": "Face - Texture Data [35]"
+      "Name": "Face Texture - Skin Tint Red/Green",
+      "Description": "Texture control 35 (\"Skin Tint - Red / Green\"): row 1 holds the value at FaceParam byte 0, row 2 the value at byte 255, bytes between map linearly (retail -2 to 2)."
     },
     {
       "Field": "burn_scar",
-      "Name": "Burn Scars",
-      "Description": "Burn scars"
+      "Name": "Alter Body - Burn Marks",
+      "Description": "Range for FaceParam \"Alter Body - Burn Marks\": row 1 holds the value at byte 0, row 2 the value at byte 255, bytes between map linearly (retail 0 to 1)."
     }
   ]
 }

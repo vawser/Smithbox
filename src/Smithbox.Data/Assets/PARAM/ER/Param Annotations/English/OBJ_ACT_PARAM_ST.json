@@ -2,137 +2,137 @@
   "Param": "OBJ_ACT_PARAM_ST",
   "Type": "OBJ_ACT_PARAM_ST",
   "Name": "OBJ_ACT_PARAM_ST",
-  "Description": null,
+  "Description": "Object actions: the interactions on assets such as doors, levers, chests and elevators. The row is the ObjAct ID given when the action is set up on the asset; −1 uses the asset's own default, else row 10000. Holds the prompt and failure messages, the condition, the animations, the event timing and the pre-action SFX.",
   "Fields": [
     {
       "Field": "actionEnableMsgId",
       "Name": "Action Enabled - Message ID",
-      "Description": "The MsgID of the menu displayed when the action is enabled."
+      "Description": "Text shown for the action prompt (Action Button Text). −1: none."
     },
     {
       "Field": "actionFailedMsgId",
       "Name": "Action Failed - Message ID",
-      "Description": "The MsgID of the menu to display when the action fails."
+      "Description": "Text shown when the action is attempted but the condition is not met (Action Button Text). −1: none."
     },
     {
       "Field": "spQualifiedPassEventFlag",
-      "Name": "Unconditional Qualified Event Flag ID",
-      "Description": "Event flags for unconditionally passing special conditions."
+      "Name": "Condition Bypass Flag",
+      "Description": "While this event flag is on, the condition (Qualified ID Type [1]/[2]) is skipped and the action always succeeds. 0: no bypass."
     },
     {
       "Field": "playerAnimId",
       "Name": "Player Animation ID",
-      "Description": "This is the animation ID for the action of the player character."
+      "Description": "Animation the player plays for the action. Some object types add an offset (for example by the side the object is used from)."
     },
     {
       "Field": "chrAnimId",
       "Name": "Character Animation ID",
-      "Description": "Anime ID at the time of action such as enemy"
+      "Description": "Animation a non-player character plays for the action. Some object types add an offset as for Player Animation ID."
     },
     {
       "Field": "validDist",
       "Name": "Valid Distance",
-      "Description": "The effective distance of the action."
+      "Description": "Distance in cm (150 = 1.5 m). The character slides into the action position; the slide takes its full time from this distance or farther, proportionally less when closer."
     },
     {
       "Field": "spQualifiedId_old",
       "Name": "(DEPRECATED) Conditional Qualified ID [1]",
-      "Description": "Special condition ID"
+      "Description": "Old 16-bit form of Conditional Qualified ID [1]. Only used when the param's data version is 2 or lower; retail is version 3, so Conditional Qualified ID [1] is used instead."
     },
     {
       "Field": "spQualifiedId2_old",
       "Name": "(DEPRECATED) Conditional Qualified ID [2]",
-      "Description": "Special condition ID part 2"
+      "Description": "Old 16-bit form of Conditional Qualified ID [2]. Only used when the param's data version is 2 or lower; retail is version 3, so Conditional Qualified ID [2] is used instead."
     },
     {
       "Field": "objDummyId",
       "Name": "Object Dummy Poly ID",
-      "Description": "Damipoli ID that is the action position of the object"
+      "Description": "Dummy poly on the object that marks the action position. Some object types add a fixed offset per approach side."
     },
     {
       "Field": "isEventKickSync",
-      "Name": "Is Event Execution Synchronized",
-      "Description": "ObjAct Whether to synchronize the events used in the execution judgment. Set to basic . It may be set to  only when the actor is not important."
+      "Name": "Sync Event Trigger",
+      "Description": "When on, the action's event is triggered through the synchronised path at the Event Execution Timing. Retail sets it on 28 rows."
     },
     {
       "Field": "objAnimId",
       "Name": "Object Animation ID",
-      "Description": "This is the animation ID for the action of the object."
+      "Description": "Animation the object plays for the action. Some object types add an offset as for Player Animation ID."
     },
     {
       "Field": "validPlayerAngle",
       "Name": "Valid Player Angle",
-      "Description": "The effective angle of the player's action. Effective angle difference between the player's orientation vector and the orientation vector to the object"
+      "Description": "Appears unused by the game (retail 30 or 60 on every row)."
     },
     {
       "Field": "spQualifiedType",
       "Name": "Qualified ID Type [1]",
-      "Description": "Types of special conditions"
+      "Description": "Condition type for Conditional Qualified ID [1]. None: the action has no condition. Goods: the player must have that item in the inventory (non-player characters fail). SpEffect: the acting character must have that SpEffect active. The action succeeds if condition [1] or condition [2] is met."
     },
     {
       "Field": "spQualifiedType2",
       "Name": "Qualified ID Type [2]",
-      "Description": "Type of special condition 2"
+      "Description": "Condition type for Conditional Qualified ID [2], checked when condition [1] is not met. None: no second condition. Goods and SpEffect work as for Qualified ID Type [1]."
     },
     {
       "Field": "validObjAngle",
       "Name": "Valid Object Angle",
-      "Description": "The action effective angle of the object. Effective angle difference between the action vector of the object and the character vector"
+      "Description": "Appears unused by the game (retail 30 or 60 on every row)."
     },
     {
       "Field": "chrSorbType",
       "Name": "Character Absorb Type",
-      "Description": "It is a method of adsorbing characters during object action."
+      "Description": "How the character is aligned to the action position during the action."
     },
     {
       "Field": "eventKickTiming",
       "Name": "Event Execution Timing",
-      "Description": "Event execution timing"
+      "Description": "When the action's synchronised event is triggered: before the animation plays (at the start of the action) or after it finishes."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "actionButtonParamId",
       "Name": "Action Button Param ID",
-      "Description": "Action button parameter ID"
+      "Description": "ActionButtonParam row for the action prompt. −1: no prompt is registered."
     },
     {
       "Field": "enableTreasureDelaySec",
       "Name": "Treasure Enable Delay",
-      "Description": "The number of seconds from the execution of the object action to the activation of the treasure. A setting exclusively for the object type treasure box of the object act."
+      "Description": "Treasure objects only: seconds after the action before the treasure becomes available."
     },
     {
       "Field": "preActionSfxDmypolyId",
       "Name": "Pre-action SFX Dummy Poly ID",
-      "Description": "Issue SFX from this Damipoli ID before executing the object. If it is -1, start from the origin."
+      "Description": "Object dummy poly the pre-action SFX is spawned at. −1, or no dummy poly with this ID: the object's origin."
     },
     {
       "Field": "preActionSfxId",
       "Name": "Pre-action SFX ID",
-      "Description": "SFX issued before executing the object. If it is -1, it will not be issued."
+      "Description": "SFX spawned on the object before the action. −1: none."
     },
     {
       "Field": "pad2_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (old layout only)."
     },
     {
       "Field": "spQualifiedId_new",
       "Name": "Conditional Qualified ID [1]",
-      "Description": "Special condition ID"
+      "Description": "Item (EquipParamGoods) or SpEffect ID for condition [1], depending on Qualified ID Type [1]."
     },
     {
       "Field": "spQualifiedId2_new",
       "Name": "Conditional Qualified ID [2]",
-      "Description": "Special condition ID part 2"
+      "Description": "Item (EquipParamGoods) or SpEffect ID for condition [2], depending on Qualified ID Type [2]."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

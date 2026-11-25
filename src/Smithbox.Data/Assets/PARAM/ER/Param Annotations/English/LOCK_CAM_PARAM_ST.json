@@ -2,112 +2,112 @@
   "Param": "LOCK_CAM_PARAM_ST",
   "Type": "LOCK_CAM_PARAM_ST",
   "Name": "LOCK_CAM_PARAM_ST",
-  "Description": null,
+  "Description": "Player camera settings, one row at a time. Free camera: a forced camera, else the camera IDs set by event scripts, else the default (row 0). Locked on: a forced camera, else the locked target's NpcParam Lock Camera Param ID, else the default. While riding, the difference between rows 1000 (free) / 1001 (locked) and row 0 is added on top. Changes blend in smoothly. Also holds the lock-on range and the auto-aim limits used when not locked on.",
   "Fields": [
     {
       "Field": "camDistTarget",
       "Name": "Camera Target Distance",
-      "Description": "Camera distance target"
+      "Description": "Distance from the camera to the character, in metres."
     },
     {
       "Field": "rotRangeMinX",
       "Name": "Rotation Range - Min X",
-      "Description": "Minimum X-axis rotation"
+      "Description": "Camera pitch limit in degrees (retail −40 on most rows)."
     },
     {
       "Field": "lockRotXShiftRatio",
       "Name": "Lock Rotation X - Shift Ratio",
-      "Description": "Lock X rotation shift rate"
+      "Description": "How much the camera pitch shifts while locked on, 0–1."
     },
     {
       "Field": "chrOrgOffset_Y",
-      "Name": "Character Origin - Offset Z",
-      "Description": "Character base point offset"
+      "Name": "Character Origin - Offset Y",
+      "Description": "Height of the camera's focus point above the character's origin, in metres."
     },
     {
       "Field": "chrLockRangeMaxRadius",
       "Name": "Character Lock Range - Max Radius",
-      "Description": "Maximum radius of character range"
+      "Description": "Maximum lock-on distance, in metres. Taken from the default camera row (row 0 in retail), not from event or target overrides; changes blend in smoothly."
     },
     {
       "Field": "camFovY",
       "Name": "Field of View - Vertical FOV",
-      "Description": "Vertical angle of view"
+      "Description": "Vertical field of view, in degrees."
     },
     {
       "Field": "chrLockRangeMaxRadius_forD",
       "Name": "Character Lock Range - Max Radius (Darkness)",
-      "Description": "Lockable range of characters in dark places"
+      "Description": "Maximum lock-on distance in darkness, in metres. Negative: use Max Radius."
     },
     {
       "Field": "chrLockRangeMaxRadius_forPD",
       "Name": "Character Lock Range - Max Radius (Total Darkness)",
-      "Description": "Character lockable range in total darkness"
+      "Description": "Maximum lock-on distance in total darkness, in metres. Negative: use the darkness value."
     },
     {
       "Field": "closeMaxHeight",
-      "Name": "Attack Capture - Upper Limit Height",
-      "Description": "Automatic lock-on judgment height upper limit when non-lock-on is close"
+      "Name": "Melee Auto-Aim - Max Height",
+      "Description": "While not locked on, how far above the attacker a target can be and still be auto-aimed by melee attacks, in metres, measured from 1.5 m above the attacker's feet."
     },
     {
       "Field": "closeMinHeight",
-      "Name": "Attack Capture - Lower Limit Height",
-      "Description": "Automatic lock-on judgment height lower limit when not locked on Proximity"
+      "Name": "Melee Auto-Aim - Max Depth",
+      "Description": "While not locked on, how far below the attacker a target can be and still be auto-aimed by melee attacks, in metres (positive value), measured from 1.5 m above the attacker's feet."
     },
     {
       "Field": "closeAngRange",
-      "Name": "Attack Capture - Auto Acquisition - Angle Range Left",
-      "Description": "Automatic lock-on judgment when non-lock-on Left / right angle [deg] Proximity"
+      "Name": "Melee Auto-Aim - Angle Range",
+      "Description": "While not locked on, the maximum angle between the attacker's facing and a target for melee auto-aim, in degrees."
     },
     {
       "Field": "closeMaxRadius",
-      "Name": "Attack Capture - Auto Acquisition - Max Radius",
-      "Description": "Automatic lock-on judgment distance when non-lock-on is close"
+      "Name": "Melee Auto-Aim - Max Radius",
+      "Description": "While not locked on, the maximum distance to a target for melee auto-aim, in metres (the target's own radius is added)."
     },
     {
       "Field": "closeMaxRadius_forD",
-      "Name": "Attack Capture - Auto Acquisition - Max Radius (Darkness)",
-      "Description": "Automatic lock-on judgment distance at non-lock-on _ darkness proximity"
+      "Name": "Melee Auto-Aim - Max Radius (Darkness)",
+      "Description": "Appears unused by the game: stored with the other auto-aim values, but only Melee Auto-Aim - Max Radius is checked."
     },
     {
       "Field": "closeMaxRadius_forPD",
-      "Name": "Attack Capture - Auto Acquisition - Max Radius (Total Darkness)",
-      "Description": "Automatic lock-on when non-lock-on _ pitch black proximity"
+      "Name": "Melee Auto-Aim - Max Radius (Total Darkness)",
+      "Description": "Appears unused by the game: stored with the other auto-aim values, but only Melee Auto-Aim - Max Radius is checked."
     },
     {
       "Field": "bulletMaxRadius",
-      "Name": "Attack Capture - Bullet - Max Radius",
-      "Description": "Automatic lock-on judgment distance when non-lock-on bullet"
+      "Name": "Projectile Auto-Aim - Max Radius",
+      "Description": "While not locked on, the maximum distance to a target for projectile auto-aim, in metres (the target's own radius is added)."
     },
     {
       "Field": "bulletMaxRadius_forD",
-      "Name": "Attack Capture - Bullet - Max Radius (Dark)",
-      "Description": "Automatic lock-on judgment distance at non-lock-on _ darkness bullet"
+      "Name": "Projectile Auto-Aim - Max Radius (Darkness)",
+      "Description": "Appears unused by the game: stored with the other auto-aim values, but only Projectile Auto-Aim - Max Radius is checked."
     },
     {
       "Field": "bulletMaxRadius_forPD",
-      "Name": "Attack Capture - Bullet - Max Radius (Pitch Dark",
-      "Description": "Automatic lock-on judgment distance at non-lock-on _ pitch black bullet"
+      "Name": "Projectile Auto-Aim - Max Radius (Total Darkness)",
+      "Description": "Appears unused by the game: stored with the other auto-aim values, but only Projectile Auto-Aim - Max Radius is checked."
     },
     {
       "Field": "bulletAngRange",
-      "Name": "Attack Capture - Bullet - Angle Range Left/Right",
-      "Description": "Automatic lock-on left / right angle when non-lock-on bullet"
+      "Name": "Projectile Auto-Aim - Angle Range",
+      "Description": "While not locked on, the maximum angle to a target for projectile auto-aim, in degrees."
     },
     {
       "Field": "lockTgtKeepTime",
       "Name": "Lock Target Keep Time",
-      "Description": "Time to continue locking even if the lock condition is not met (disabled at 0.0)"
+      "Description": "Seconds the lock-on is kept while its conditions are not met before it drops; 0 or less never keeps it. Taken from the locked target's NpcParam Lock Camera Param ID row when it has one, else row 0. Retail: 2 (10 on a few rows)."
     },
     {
       "Field": "chrTransChaseRateForNormal",
-      "Name": "Transition Chase Factor for Normal Character",
-      "Description": "Normal character translation tracking rate (disabled at -1.0)"
+      "Name": "Camera Follow Rate",
+      "Description": "How quickly the camera follows the character's movement. Negative: keep the camera's default rate (retail −1 on most rows, 0.2 or 0.5 on six)."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

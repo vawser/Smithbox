@@ -447,7 +447,7 @@
     {
       "Field": "createLimitGroupId",
       "Name": "Create Limit Group ID",
-      "Description": "Group for a shared cap set in BulletCreateLimitParam: a new bullet isn't created while its group is at the limit. 0: no group."
+      "Description": "Group for a shared cap set in BulletCreateLimitParam: when the group is at its limit, the oldest bullet in it is removed and the new one is still created. 0: no group."
     },
     {
       "Field": "pad5",

@@ -2,117 +2,117 @@
   "Param": "TALK_PARAM_ST",
   "Type": "TALK_PARAM_ST",
   "Name": "TALK_PARAM_ST",
-  "Description": null,
+  "Description": "Lines of NPC dialogue and cutscene subtitles: text, voice, lip-sync and timing per line. A conversation started at a row plays the following row IDs in turn (ID, ID+1, ID+2, ...) and ends at the first missing ID. Text and voice follow the player's body type.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "msgId",
-      "Name": "Male - Message ID",
-      "Description": "PC Gender is Male: Specify Message-> Menu"
+      "Name": "Message ID - Body Type A",
+      "Description": "Subtitle text (TalkMsg) of the line when the player is Body Type A."
     },
     {
       "Field": "voiceId",
-      "Name": "Male - Voice ID",
-      "Description": "PC Gender is Male: Specify Voice-> Sound"
+      "Name": "Voice ID - Body Type A",
+      "Description": "Voice played for the line when the player is Body Type A: the sound event Play_v followed by the 9-digit ID. -1: no voice."
     },
     {
       "Field": "spEffectId0",
       "Name": "SpEffect ID [0]",
-      "Description": "Specify special effects-> Character"
+      "Description": "Has no working effect: the game reads the SpEffect/motion pairs at older positions, so this value is taken as the motion of a pair keyed on Voice ID - Body Type A. -1 in retail; leave at -1."
     },
     {
       "Field": "motionId0",
       "Name": "Motion ID [0]",
-      "Description": "Specify motion-> Character"
+      "Description": "Has no working effect: the game reads the SpEffect/motion pairs at older positions, so this value is taken as the SpEffect that triggers the motion in SpEffect ID [1]. -1 in retail; leave at -1."
     },
     {
       "Field": "spEffectId1",
       "Name": "SpEffect ID [1]",
-      "Description": "Specify special effects-> Character"
+      "Description": "Has no working effect: the game reads the SpEffect/motion pairs at older positions, so this value is taken as the motion played when the speaker has the SpEffect in Motion ID [0]. -1 in retail; leave at -1."
     },
     {
       "Field": "motionId1",
       "Name": "Motion ID [1]",
-      "Description": "Specify motion-> Character"
+      "Description": "Appears unused by the game. -1 in retail."
     },
     {
       "Field": "returnPos",
-      "Name": "Return Position",
-      "Description": "Relative position of returning conversation-> Conversation"
+      "Name": "Redirect Talk ID",
+      "Description": "Talk ID played instead of this line when Redirect Event Flag ID is on; the redirect is checked again on that row. Retail: 0 everywhere, with no redirect flag set."
     },
     {
       "Field": "reactionId",
       "Name": "Reaction ID",
-      "Description": "Conversation specification when returning-> Conversation"
+      "Description": "Appears unused by the game. -1 in retail."
     },
     {
       "Field": "eventId",
-      "Name": "Event ID",
-      "Description": "Event ID-> Event"
+      "Name": "Redirect Event Flag ID",
+      "Description": "Event flag checked when a conversation starts at this row: when it is on, the conversation starts from Redirect Talk ID instead. -1: none (every retail row)."
     },
     {
       "Field": "msgId_female",
-      "Name": "Female - Message ID",
-      "Description": "PC Gender is Female: Specify Message-> Menu"
+      "Name": "Message ID - Body Type B",
+      "Description": "Subtitle text (TalkMsg) of the line when the player is Body Type B."
     },
     {
       "Field": "voiceId_female",
-      "Name": "Female - Voice ID",
-      "Description": "PC Gender is Female: Specify Voice-> Sound"
+      "Name": "Voice ID - Body Type B",
+      "Description": "Voice played for the line when the player is Body Type B: the sound event Play_v followed by the 9-digit ID. -1: no voice."
     },
     {
       "Field": "lipSyncStart",
       "Name": "Lip Sync Start",
-      "Description": "Speaker: Lip-sync start time. -1 with no lip-sync"
+      "Description": "Seconds after the line starts before the speaker's lip-sync begins. -1: no lip-sync."
     },
     {
       "Field": "lipSyncTime",
       "Name": "Lip Sync Time",
-      "Description": "Speaker: Lip-sync duration. Lip-sync at -1 continues forever"
+      "Description": "Seconds the speaker's lip-sync lasts. -1: until the line ends."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "timeout",
-      "Name": "Voice Playback Timeout",
-      "Description": "Voice playback timeout period. In case of -1, time-out processing is performed in NPC conversation voice playback timeout time of Common_Game system parameter."
+      "Name": "Voice Timeout",
+      "Description": "Seconds before the line moves on if its voice hasn't finished. -1 uses NPC Talk Timeout Threshold (GameSystemCommonParam). A longer time given by the talk script wins."
     },
     {
       "Field": "talkAnimationId",
       "Name": "Talk Animation ID",
-      "Description": "Speaker: Animation ID during conversation"
+      "Description": "Animation the speaker plays during this line; passed to the speaker's behaviour script while it is the current speaker. -1: none."
     },
     {
       "Field": "isForceDisp",
       "Name": "Force Subtitle Display",
-      "Description": "Do you want to force the display of subtitles? Display subtitles even when subtitles are turned off as an option"
+      "Description": "Marks the line's subtitle as forced, for talk and cutscene subtitles. Likely shows it even with subtitles turned off (the options check wasn't traced)."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

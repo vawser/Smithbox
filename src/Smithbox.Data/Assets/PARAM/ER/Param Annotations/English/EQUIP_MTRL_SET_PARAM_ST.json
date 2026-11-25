@@ -2,147 +2,147 @@
   "Param": "EQUIP_MTRL_SET_PARAM_ST",
   "Type": "EQUIP_MTRL_SET_PARAM_ST",
   "Name": "EQUIP_MTRL_SET_PARAM_ST",
-  "Description": "Defines costs associated with trades or upgrades. ID incrementation is used in places.",
+  "Description": "Material costs: up to six items with amounts. Used for weapon upgrades (the weapon's Reinforcement Material Set ID + the ReinforceParamWeapon offset of the level), goods upgrades such as Spirit Ashes (EquipParamGoods Upgrade Material Set ID) and shop or crafting trades (ShopLineupParam Required Material ID). A slot counts only when its ID is set, its category isn't 15 and its amount is above 0.",
   "Fields": [
     {
       "Field": "materialId01",
       "Name": "Material ID [1]",
-      "Description": "Material item ID required to strengthen armor."
+      "Description": "Item ID of material 1, in the table set by Material Category [1]. -1: slot empty."
     },
     {
       "Field": "materialId02",
       "Name": "Material ID [2]",
-      "Description": "Material item ID required to strengthen armor."
+      "Description": "Item ID of material 2, in the table set by Material Category [2]. -1: slot empty."
     },
     {
       "Field": "materialId03",
       "Name": "Material ID [3]",
-      "Description": "Material item ID required to strengthen armor."
+      "Description": "Item ID of material 3, in the table set by Material Category [3]. -1: slot empty."
     },
     {
       "Field": "materialId04",
       "Name": "Material ID [4]",
-      "Description": "Material item ID required to strengthen armor."
+      "Description": "Item ID of material 4, in the table set by Material Category [4]. -1: slot empty."
     },
     {
       "Field": "materialId05",
       "Name": "Material ID [5]",
-      "Description": "Material item ID required to strengthen armor."
+      "Description": "Item ID of material 5, in the table set by Material Category [5]. -1: slot empty."
     },
     {
       "Field": "materialId06",
       "Name": "Material ID [6]",
-      "Description": "Material item ID required to strengthen armor."
+      "Description": "Item ID of material 6, in the table set by Material Category [6]. -1: slot empty."
     },
     {
       "Field": "pad_id",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "itemNum01",
       "Name": "Material Amount [1]",
-      "Description": "The number of material items required to strengthen armor."
+      "Description": "How many of material 1 are needed. 0 or less: slot skipped."
     },
     {
       "Field": "itemNum02",
       "Name": "Material Amount [2]",
-      "Description": "The number of material items required to strengthen armor."
+      "Description": "How many of material 2 are needed. 0 or less: slot skipped."
     },
     {
       "Field": "itemNum03",
       "Name": "Material Amount [3]",
-      "Description": "The number of material items required to strengthen armor."
+      "Description": "How many of material 3 are needed. 0 or less: slot skipped."
     },
     {
       "Field": "itemNum04",
       "Name": "Material Amount [4]",
-      "Description": "The number of material items required to strengthen armor."
+      "Description": "How many of material 4 are needed. 0 or less: slot skipped."
     },
     {
       "Field": "itemNum05",
       "Name": "Material Amount [5]",
-      "Description": "The number of material items required to strengthen armor."
+      "Description": "How many of material 5 are needed. 0 or less: slot skipped."
     },
     {
       "Field": "itemNum06",
       "Name": "Material Amount [6]",
-      "Description": "The number of material items required to strengthen armor."
+      "Description": "How many of material 6 are needed. 0 or less: slot skipped."
     },
     {
       "Field": "pad_num",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "materialCate01",
       "Name": "Material Category [1]",
-      "Description": "This is a category of material items required for strengthening armor."
+      "Description": "Item type of material 1, as in item IDs: 0 Weapon, 1 Armor, 2 Talisman, 4 Goods, 8 Ash of War. 15: slot empty. Retail uses 1 and 4."
     },
     {
       "Field": "materialCate02",
       "Name": "Material Category [2]",
-      "Description": "This is a category of material items required for strengthening armor."
+      "Description": "Item type of material 2, as in item IDs: 0 Weapon, 1 Armor, 2 Talisman, 4 Goods, 8 Ash of War. 15: slot empty. Retail uses 1 and 4."
     },
     {
       "Field": "materialCate03",
       "Name": "Material Category [3]",
-      "Description": "This is a category of material items required for strengthening armor."
+      "Description": "Item type of material 3, as in item IDs: 0 Weapon, 1 Armor, 2 Talisman, 4 Goods, 8 Ash of War. 15: slot empty. Retail uses 1 and 4."
     },
     {
       "Field": "materialCate04",
       "Name": "Material Category [4]",
-      "Description": "This is a category of material items required for strengthening armor."
+      "Description": "Item type of material 4, as in item IDs: 0 Weapon, 1 Armor, 2 Talisman, 4 Goods, 8 Ash of War. 15: slot empty. Retail uses 1 and 4."
     },
     {
       "Field": "materialCate05",
       "Name": "Material Category [5]",
-      "Description": "This is a category of material items required for strengthening armor."
+      "Description": "Item type of material 5, as in item IDs: 0 Weapon, 1 Armor, 2 Talisman, 4 Goods, 8 Ash of War. 15: slot empty. Retail uses 1 and 4."
     },
     {
       "Field": "materialCate06",
       "Name": "Material Category [6]",
-      "Description": "This is a category of material items required for strengthening armor."
+      "Description": "Item type of material 6, as in item IDs: 0 Weapon, 1 Armor, 2 Talisman, 4 Goods, 8 Ash of War. 15: slot empty. Retail uses 1 and 4."
     },
     {
       "Field": "pad_cate",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isDisableDispNum01",
       "Name": "Disable Display Number [1]",
-      "Description": "Disable the number display (for enhanced shops)"
+      "Description": "Appears unused by the game. 0 in retail."
     },
     {
       "Field": "isDisableDispNum02",
       "Name": "Disable Display Number [2]",
-      "Description": "Whether to disable the number display"
+      "Description": "Appears unused by the game. 0 in retail."
     },
     {
       "Field": "isDisableDispNum03",
       "Name": "Disable Display Number [3]",
-      "Description": "Whether to disable the number display"
+      "Description": "Appears unused by the game. 0 in retail."
     },
     {
       "Field": "isDisableDispNum04",
       "Name": "Disable Display Number [4]",
-      "Description": "Whether to disable the number display"
+      "Description": "Appears unused by the game. 0 in retail."
     },
     {
       "Field": "isDisableDispNum05",
       "Name": "Disable Display Number [5]",
-      "Description": "Whether to disable the number display"
+      "Description": "Appears unused by the game. 0 in retail."
     },
     {
       "Field": "isDisableDispNum06",
       "Name": "Disable Display Number [6]",
-      "Description": "Whether to disable the number display"
+      "Description": "Appears unused by the game. 0 in retail."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

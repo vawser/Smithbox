@@ -2,27 +2,27 @@
   "Param": "SP_EFFECT_SET_PARAM_ST",
   "Type": "SP_EFFECT_SET_PARAM_ST",
   "Name": "SP_EFFECT_SET_PARAM_ST",
-  "Description": "Defines a set of SpEffects to be applied to a specific enemy from MSB (map).",
+  "Description": "Up to four SpEffects given to a character placed by a map. The MSB enemy part has 4 SpEffectSetParam IDs, so a placed character can hold up to 16 SpEffects this way. Each valid SpEffect is applied once when the character is set up; set ID 0 or -1, or a missing row, gives nothing.",
   "Fields": [
     {
       "Field": "spEffectId1",
       "Name": "SpEffect ID [1]",
-      "Description": "Special effect ID1"
+      "Description": "SpEffect applied to the map-placed character when it is set up (a timed SpEffect is not renewed when it expires). -1: none."
     },
     {
       "Field": "spEffectId2",
       "Name": "SpEffect ID [2]",
-      "Description": "Special effect ID2"
+      "Description": "Second SpEffect applied to the map-placed character. -1: none."
     },
     {
       "Field": "spEffectId3",
       "Name": "SpEffect ID [3]",
-      "Description": "Special effect ID3"
+      "Description": "Third SpEffect applied to the map-placed character. -1: none."
     },
     {
       "Field": "spEffectId4",
       "Name": "SpEffect ID [4]",
-      "Description": "Special effect ID4"
+      "Description": "Fourth SpEffect applied to the map-placed character. -1: none. Unused in retail."
     }
   ]
 }

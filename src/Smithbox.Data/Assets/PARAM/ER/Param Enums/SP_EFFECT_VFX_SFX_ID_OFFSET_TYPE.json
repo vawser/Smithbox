@@ -12,7 +12,22 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Character Offset (Unverified)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Adds an offset taken from per-character data. No retail use."
         }
       ]
     },
@@ -21,7 +36,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Mimic Disguise"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Takes the SFX from the MapMimicryEstablishmentParam row of the current disguise; no row means no VFX."
         }
       ]
     }

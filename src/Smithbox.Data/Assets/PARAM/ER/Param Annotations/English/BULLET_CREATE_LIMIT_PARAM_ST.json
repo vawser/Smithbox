@@ -2,27 +2,27 @@
   "Param": "BULLET_CREATE_LIMIT_PARAM_ST",
   "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
   "Name": "BULLET_CREATE_LIMIT_PARAM_ST",
-  "Description": null,
+  "Description": "Caps on how many bullets of one group can exist at once. A bullet or spell joins a group through its Create Limit Group ID (Bullet, Magic), which is the row ID here; group 0 is never limited.",
   "Fields": [
     {
       "Field": "limitNum_byGroup",
-      "Name": "Max Amount - By Group",
-      "Description": "Maximum number of creations in the same group"
+      "Name": "Max Bullets in Group",
+      "Description": "Most bullets of this group that can exist at once. When a bullet of the group is created with the cap reached, the oldest one (with its child bullets) is ended to make room. A spell whose Create Limit Group is at the cap can't be cast."
     },
     {
       "Field": "isLimitEachOwner",
-      "Name": "Is Limited for each Owner",
-      "Description": "Is it restricted for each owner?"
+      "Name": "Limit Per Owner",
+      "Description": "If on, the cap counts only the bullets of this group fired by the same owner, and the oldest of the owner's bullets is the one ended. If off, every bullet of the group counts, whoever fired it. Retail: on for every row except 0."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

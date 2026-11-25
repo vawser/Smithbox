@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "Weapon"
         }
       ]
     },
@@ -26,11 +26,29 @@
       ]
     },
     {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Accessory"
+        }
+      ]
+    },
+    {
       "Key": "4",
       "Names": [
         {
           "Language": "English",
-          "Text": "Good"
+          "Text": "Goods"
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Gem"
         }
       ]
     },
@@ -39,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "None"
         }
       ]
     }
