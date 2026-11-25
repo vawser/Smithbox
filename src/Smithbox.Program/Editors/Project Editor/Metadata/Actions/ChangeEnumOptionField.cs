@@ -35,6 +35,9 @@ public class ChangeEnumOptionField : EditorAction
                     nameEntry.Text = $"{NewValue}";
                 }
                 break;
+            case ProjectEnumOptionFieldType.Description:
+                OptionEntry.SetDescription($"{NewValue}");
+                break;
         }
 
         return ActionEvent.NoEvent;
@@ -55,6 +58,9 @@ public class ChangeEnumOptionField : EditorAction
                     var nameEntry = OptionEntry.Names.FirstOrDefault(e => e.Language == curLang);
                     nameEntry.Text = $"{OldValue}";
                 }
+                break;
+            case ProjectEnumOptionFieldType.Description:
+                OptionEntry.SetDescription($"{OldValue}");
                 break;
         }
 

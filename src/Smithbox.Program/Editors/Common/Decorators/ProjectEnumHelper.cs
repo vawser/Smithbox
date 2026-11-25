@@ -61,10 +61,12 @@ public static class ProjectEnumHelper
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
 
+        ParamEnumOption enumValue = null;
+
         if (enumEntry != null)
         {
             var enumValueName = "";
-            var enumValue = enumEntry.Options.Where(e => e.Key == value).FirstOrDefault();
+            enumValue = enumEntry.Options.Where(e => e.Key == value).FirstOrDefault();
 
             if (enumValue != null)
             {
@@ -79,6 +81,22 @@ public static class ProjectEnumHelper
         }
 
         ImGui.PopStyleColor();
+
+        // After the pop, so the tooltip is in the normal text colour
+        OptionTooltip(enumValue);
+    }
+
+    /// <summary>
+    /// The option's description, as the tooltip of the item just drawn, if it has one
+    /// </summary>
+    public static void OptionTooltip(ParamEnumOption option)
+    {
+        var description = option?.GetDescription();
+
+        if (!string.IsNullOrEmpty(description))
+        {
+            GUI.Tooltip(description);
+        }
     }
 
     public static bool ContextMenu(ParamEditorView curView, ParamEnumEntry en, object oldval, ref object newval)
@@ -104,7 +122,11 @@ public static class ProjectEnumHelper
 
                     if (isMatch)
                     {
-                        if (ImGui.Selectable($"{option.Key}: {option.GetName()}"))
+                        var picked = ImGui.Selectable($"{option.Key}: {option.GetName()}");
+
+                        OptionTooltip(option);
+
+                        if (picked)
                         {
                             newval = Convert.ChangeType(option.Key, oldval.GetType());
                             ImGui.EndChild();

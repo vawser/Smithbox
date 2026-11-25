@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 
@@ -59,6 +60,12 @@ public class ParamEnumOption : IComparable
 
     public List<ParamCategoryTextEntry> Names { get; set; } = new();
 
+    /// <summary>
+    /// What the option does, per language. Optional: left out of the JSON when the option has none.
+    /// </summary>
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public List<ParamCategoryTextEntry> Descriptions { get; set; }
+
     public ParamEnumOption()
     {
 
@@ -87,9 +94,54 @@ public class ParamEnumOption : IComparable
         return "";
     }
 
+    /// <summary>
+    /// The description in the annotation language, or "" if the option has none in it
+    /// </summary>
+    public string GetDescription()
+    {
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
+
+        return Descriptions?.FirstOrDefault(e => e.Language == curLang)?.Text ?? "";
+    }
+
+    /// <summary>
+    /// Sets the description in the annotation language, adding an entry for the language if there isn't one.
+    /// An empty description removes the entry, so that the JSON doesn't keep blank descriptions.
+    /// </summary>
+    public void SetDescription(string text)
+    {
+        var curLang = CFG.Current.ParamEditor.ParamEditor_Annotation_Language;
+        var entry = Descriptions?.FirstOrDefault(e => e.Language == curLang);
+
+        if (string.IsNullOrEmpty(text))
+        {
+            if (entry != null)
+                Descriptions.Remove(entry);
+
+            if (Descriptions?.Count == 0)
+                Descriptions = null;
+
+            return;
+        }
+
+        if (entry != null)
+        {
+            entry.Text = text;
+            return;
+        }
+
+        Descriptions ??= new();
+        Descriptions.Add(new ParamCategoryTextEntry(curLang, text));
+    }
+
     public ParamEnumOption Clone(ParamEnumOption entry)
     {
-        return (ParamEnumOption)entry.MemberwiseClone();
+        var clone = (ParamEnumOption)entry.MemberwiseClone();
+
+        // Copied, so that editing the clone's descriptions leaves the original's alone
+        clone.Descriptions = entry.Descriptions?.Select(e => new ParamCategoryTextEntry(e.Language, e.Text)).ToList();
+
+        return clone;
     }
 
     public int CompareTo(object obj)

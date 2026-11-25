@@ -391,11 +391,12 @@ public class ProjectEnumMenu
         {
             var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.Resizable;
 
-            if (ImGui.BeginTable($"##enumRowTable", 3, tblFlags))
+            if (ImGui.BeginTable($"##enumRowTable", 4, tblFlags))
             {
                 ImGui.TableSetupColumn("Select", ImGuiTableColumnFlags.WidthFixed);
                 ImGui.TableSetupColumn("Key", ImGuiTableColumnFlags.WidthStretch, 0.2f);
                 ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 0.5f);
+                ImGui.TableSetupColumn("Description", ImGuiTableColumnFlags.WidthStretch, 0.8f);
 
                 var filteredIndices = new List<int>();
 
@@ -427,6 +428,9 @@ public class ProjectEnumMenu
 
                         ImGui.TableSetColumnIndex(2);
                         DisplayNameColumn(realIndex, entry);
+
+                        ImGui.TableSetColumnIndex(3);
+                        DisplayDescriptionColumn(realIndex, entry);
                     }
 
                 }
@@ -560,6 +564,40 @@ public class ProjectEnumMenu
         }
     }
 
+    #endregion
+
+    #region Description Column
+    /// <summary>
+    /// The description in the annotation language, shown as a tooltip wherever the option is offered
+    /// </summary>
+    public void DisplayDescriptionColumn(int index, ParamEnumOption curEntry)
+    {
+        var oldDescription = curEntry.GetDescription();
+        var newDescription = oldDescription;
+
+        if (!ReadOnlyMode)
+        {
+            ImGui.PushItemWidth(-1);
+            ImGui.InputText($"##entry_{index}_Description", ref newDescription, 1024);
+
+            if (GUI.InputCommitted() && newDescription != oldDescription)
+            {
+                var action = new ChangeEnumOptionField(curEntry, oldDescription, newDescription, ProjectEnumOptionFieldType.Description);
+
+                ActionManager.ExecuteAction(action);
+            }
+
+            if (oldDescription.Length > 0)
+                GUI.Tooltip(oldDescription);
+        }
+        else
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted(oldDescription);
+            if (oldDescription.Length > 0)
+                GUI.Tooltip(oldDescription);
+        }
+    }
     #endregion
 
     #region Actions

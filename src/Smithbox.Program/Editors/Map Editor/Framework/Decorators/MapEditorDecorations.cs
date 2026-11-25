@@ -203,6 +203,8 @@ public static class MapEditorDecorations
 
             ImGui.EndGroup();
 
+            ProjectEnumHelper.OptionTooltip(matchedOption);
+
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
                 var opened = GenericEnumContextMenu(view, meta, propinfo, val, ref newVal, entry.Options);
@@ -299,7 +301,11 @@ public static class MapEditorDecorations
                         || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.GetName(), " ")
                         || enumSearchStr == "")
                     {
-                        if (ImGui.Selectable($"{entry.Key}: {entry.GetName()}"))
+                        var picked = ImGui.Selectable($"{entry.Key}: {entry.GetName()}");
+
+                        ProjectEnumHelper.OptionTooltip(entry);
+
+                        if (picked)
                         {
                             newVal = Convert.ChangeType(entry.Key, val.GetType());
                             ImGui.EndChild();

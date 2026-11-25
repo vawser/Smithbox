@@ -2,9 +2,13 @@
 # Blue Sky
 #-------------
 - Game Porter
+    - NR -> ER
     - DB_NT -> ER
     - DS1R -> ER
     - SDT -> ER
+    - BB -> ER
+    
+    - ER -> NR
 
 - Icon Builder
     - Preview a model with adjustable bones so it can be placed in a specific way
@@ -14,8 +18,9 @@
 #----------------------------------------------------
 # Map Editor TODO
 #----------------------------------------------------
-- NR MSB: research/sync with ER
-- AC6 MSB: research
+- NR MSB: assign meaning to unknowns
+- AC6 MSB: assign meaning to unknowns
+- BTL: assign meaning to unknowns
 
 #----------------------------------------------------
 # Model Editor TODO
@@ -28,8 +33,6 @@
 #----------------------------------------------------
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
 - Add fault-tolerant CSV import (i.e. CSVs from older paramdef versions)
-
-- Research into state infos
 
 #----------------------------------------------------
 # Text Editor TODO
