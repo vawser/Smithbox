@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Return Home"
         }
       ]
     },
@@ -21,7 +21,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Return Home"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sidestep with Ranged Attack"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Sidestep"
         }
       ]
     }

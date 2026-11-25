@@ -2,617 +2,617 @@
   "Param": "BULLET_PARAM_ST",
   "Type": "BULLET_PARAM_ST",
   "Name": "BULLET_PARAM_ST",
-  "Description": "Governs motion, hitbox and appearance of projetiles. Can reference AtkParam for damage.",
+  "Description": "Projectiles and other spawned attacks: their motion, hit sphere, effects and sounds, and the bullets they spawn. Damage comes from the referenced AtkParam row. An emitter fires Bullet Count bullets per volley; bullets can chain into Hit Bullet ID and spawn Interval Bullet ID while flying.",
   "Fields": [
     {
       "Field": "atkId_Bullet",
       "Name": "AtkParam ID",
-      "Description": "Register each attack parameter ID.  Attack type / Attack material / Physical attack power / Magic attack power / Stamina attack power / Knockback distance."
+      "Description": "The AtkParam row giving the bullet's damage and hit properties. The hit sphere comes from this bullet's Hit Radius fields, not from the AtkParam."
     },
     {
       "Field": "sfxId_Bullet",
       "Name": "Projectile SFX ID",
-      "Description": "Enter the SFX ID for [Bullet]. -1 does not occur."
+      "Description": "Effect played on the bullet when it enters this state. -1: none. A parent with Is SFX Inherited by Child Bullet passes its effect on to its child."
     },
     {
       "Field": "sfxId_Hit",
       "Name": "Impact SFX ID",
-      "Description": "[Impact] Enter the SFX ID. -1 does not occur."
+      "Description": "Effect played where the bullet hits. -1: none. With Is Hit SFX Stuck to Target, it is attached to the character or object hit instead. Not played on character and object hits with Is SFX Disabled on Chr/Object Hit, or on water hits that are ignored."
     },
     {
       "Field": "sfxId_Flick",
       "Name": "Repel SFX ID",
-      "Description": "[At the time of repelling] Enter the SFX ID. -1 does not occur."
+      "Description": "Effect played instead of the impact effect when a character repels the bullet. -1: none."
     },
     {
       "Field": "life",
       "Name": "Duration",
-      "Description": "Time for missiles to continue to exist (-1 is infinite)."
+      "Description": "How long the bullet lasts in this state, in seconds. Negative (-1): no time limit. Duration - Random Range adds a random extra time."
     },
     {
       "Field": "dist",
       "Name": "Attenuation Range",
-      "Description": "Distance at which attenuation begins (not actual flight distance)."
+      "Description": "Distance in metres after which the bullet is out of range: the Out of Range gravity and acceleration apply and damage falloff starts (strictly past this distance). Scaled by the weapon's range bonus and range-up effects (see Range-Up Effect Multiplier). Also the aim distance when not locked on if Target Range when Unlocked is -1."
     },
     {
       "Field": "shootInterval",
       "Name": "Shoot Interval",
-      "Description": "Specify how many seconds the missile will be fired."
+      "Description": "Seconds between volleys: the emitter fires Bullet Count bullets again every interval while it lasts. 0: fires once."
     },
     {
       "Field": "gravityInRange",
       "Name": "Gravity: In Range",
-      "Description": "Downward gravity within range."
+      "Description": "Downward acceleration while within Attenuation Range, in m/s². Negative values push upward."
     },
     {
       "Field": "gravityOutRange",
       "Name": "Gravity: Out of Range",
-      "Description": "Gravity applied downward when damping begins (expresses the feeling of falling down."
+      "Description": "Downward acceleration once past Attenuation Range, in m/s². Gives the drop at the end of a flight."
     },
     {
       "Field": "hormingStopRange",
       "Name": "Homing Stop Range",
-      "Description": "The distance to the target to stop the guidance. A parameter that prevents you from hitting too much with a guided bullet."
+      "Description": "Homing switches off for good once the bullet is within this many metres of the target, so it can be dodged up close. 0: homing never stops. While a flare effect is active, PlayerCommonParam's flare override stop range is used instead."
     },
     {
       "Field": "initVellocity",
       "Name": "Initial Velocity",
-      "Description": "Initial speed of SFX."
+      "Description": "Starting speed in m/s. Also the preferred launch speed for howitzer bullets (Ballistic Calculation Type 1)."
     },
     {
       "Field": "accelInRange",
       "Name": "Acceleration: In Range",
-      "Description": "Acceleration within SFX range."
+      "Description": "Acceleration along the flight direction while within Attenuation Range, in m/s². Negative slows the bullet. Starts only after Acceleration Delay."
     },
     {
       "Field": "accelOutRange",
       "Name": "Acceleration: Out of Range",
-      "Description": "Acceleration when SFX goes out of range."
+      "Description": "Acceleration along the flight direction once past Attenuation Range, in m/s². Negative slows the bullet."
     },
     {
       "Field": "maxVellocity",
       "Name": "Max Velocity",
-      "Description": "maximum speed."
+      "Description": "Speed cap in m/s, applied after Min Velocity. 0 is a real cap (no speed), not \"unlimited\"."
     },
     {
       "Field": "minVellocity",
       "Name": "Min Velocity",
-      "Description": "Minimum guaranteed speed."
+      "Description": "Minimum speed in m/s. The speed is raised to this first, then capped by Max Velocity."
     },
     {
       "Field": "accelTime",
-      "Name": "Acceleration Duration",
-      "Description": "Until this time, do not accelerate (make sure you can shoot magic like rockets)."
+      "Name": "Acceleration Delay",
+      "Description": "Seconds after the bullet starts flying before acceleration applies (rocket-like spells). 0: accelerates at once."
     },
     {
       "Field": "homingBeginDist",
       "Name": "Homing Start Distance",
-      "Description": "How many meters should the guidance start?"
+      "Description": "Distance in metres the bullet travels before homing starts."
     },
     {
       "Field": "hitRadius",
       "Name": "Initial Hit Radius",
-      "Description": "Set the radius of the hit ball."
+      "Description": "Radius of the hit sphere in metres when the bullet enters this state."
     },
     {
       "Field": "hitRadiusMax",
       "Name": "Final Hit Radius",
-      "Description": "Maximum radius of the hit sphere (If -1, make it the same as the initial radius / default)"
+      "Description": "Radius in metres the hit sphere grows to over Radius Spread Time. Negative (-1): stays at Initial Hit Radius."
     },
     {
       "Field": "spreadTime",
       "Name": "Radius Spread Time",
-      "Description": "The time when the radius of the range expands to a small extent."
+      "Description": "Seconds for the hit sphere to grow linearly from Initial to Final Hit Radius. While growing, the sphere is updated about six times a second. 0: no growth, the sphere stays at Initial Hit Radius."
     },
     {
       "Field": "expDelay",
       "Name": "Expansion Delay",
-      "Description": "Time from landing to expand (if 0, it expands immediately)."
+      "Description": "Appears unused by the game. Every retail row is 0."
     },
     {
       "Field": "hormingOffsetRange",
-      "Name": "Homing Offset Range",
-      "Description": "It is accurate if it is 0. At the time of shooting, each component of XYZ should be aimed by shifting this amount."
+      "Name": "Target Point Scatter",
+      "Description": "Scatters the target point the bullets aim and home at: X and Z are each offset by a random amount within ± half this value, in metres, and the point stays fixed instead of tracking the target. 0: aim at the target itself. Applies with Follow Type 0, 3 or 4. Retail: meteors and homing volleys."
     },
     {
       "Field": "dmgHitRecordLifeTime",
-      "Name": "Damage Hit Duration",
-      "Description": "Damage hit history survival time [sec] ( 0.0f: indefinite)"
+      "Name": "Shared Hit List Duration",
+      "Description": "Seconds the shared hit list lasts (see Is Use Shared Hit List; a bullet with an Attach Effect Type also gets one). While it lasts, a target already hit by the group can't be hit again by it. 0: the list doesn't time out."
     },
     {
       "Field": "externalForce",
       "Name": "External Force in Bullet Direction",
-      "Description": "External force applied in the direction of shooting. (Y-axis is removed)"
+      "Description": "Push added every frame along the initial horizontal shooting direction. It isn't scaled by frame time. Only values above 0 apply. Retail: Warhawk only (0.05)."
     },
     {
       "Field": "spEffectIDForShooter",
       "Name": "Shooter SpEffect ID",
-      "Description": "Special effects on the person who shot"
+      "Description": "SpEffect applied to the shooter each time the emitter fires a volley. Retail uses 0 for none."
     },
     {
       "Field": "autoSearchNPCThinkID",
-      "Name": "Bullet AI",
-      "Description": "Parameters used by the funnel to search for the target"
+      "Name": "Funnel Mode (Above 0)",
+      "Description": "Any value above 0 makes this a funnel bullet: it registers with the funnel targeting system, and with Follow Type 1 it is placed in a ring around the shooter (Funnel Formation Radius and Height). For player shooters the funnel count comes from Intelligence (up to 14: 1, 15-18: 2, 19-24: 3, 25-30: 4, 31+: 5) unless Funnel Count Ignores Intelligence is on. Only \"above 0\" matters; the ID itself isn't used as an NpcThinkParam row."
     },
     {
       "Field": "HitBulletID",
       "Name": "Hit Bullet ID",
-      "Description": "Specify the ID when generating a new bullet parameter from the bullet parameter"
+      "Description": "Bullet spawned when this bullet hits or expires, if Launch Condition Type allows it. -1: none."
     },
     {
       "Field": "spEffectId0",
       "Name": "Target SpEffect ID [0]",
-      "Description": "Register each special effect parameter ID.  General special effects."
+      "Description": "SpEffect applied to what the bullet hits, together with its attack. One of five slots. -1 or 0: none."
     },
     {
       "Field": "spEffectId1",
       "Name": "Target SpEffect ID [1]",
-      "Description": "Register each special effect parameter ID.  General special effects."
+      "Description": "SpEffect applied to what the bullet hits, together with its attack. One of five slots. -1 or 0: none."
     },
     {
       "Field": "spEffectId2",
       "Name": "Target SpEffect ID [2]",
-      "Description": "Register each special effect parameter ID.  General special effects."
+      "Description": "SpEffect applied to what the bullet hits, together with its attack. One of five slots. -1 or 0: none."
     },
     {
       "Field": "spEffectId3",
       "Name": "Target SpEffect ID [3]",
-      "Description": "Register each special effect parameter ID.  General special effects."
+      "Description": "SpEffect applied to what the bullet hits, together with its attack. One of five slots. -1 or 0: none."
     },
     {
       "Field": "spEffectId4",
       "Name": "Target SpEffect ID [4]",
-      "Description": "Register each special effect parameter ID.  General special effects."
+      "Description": "SpEffect applied to what the bullet hits, together with its attack. One of five slots. -1 or 0: none."
     },
     {
       "Field": "numShoot",
       "Name": "Bullet Count",
-      "Description": "The number of missiles fired at one time."
+      "Description": "Bullets fired at once per volley. Bullet i of the volley is turned by i × Launch Angle Interval and i × Launch Elevation Interval. For funnel bullets fired by players, Intelligence sets the count instead (see Funnel Mode)."
     },
     {
       "Field": "homingAngle",
       "Name": "Homing Angle",
-      "Description": "How many corrections per second? .."
+      "Description": "Maximum turn rate toward the target in degrees per second, once Homing Start Distance is reached. 0: no homing. While a flare effect is active, PlayerCommonParam's flare override angle is used instead."
     },
     {
       "Field": "shootAngle",
       "Name": "Launch Angle",
-      "Description": "Specify how many times the missile is fired forward."
+      "Description": "Horizontal launch angle in degrees, added to the aim direction. Only for Emitter Source Type 0 and 2."
     },
     {
       "Field": "shootAngleInterval",
       "Name": "Launch Angle Interval",
-      "Description": "When firing multiple missiles, specify how often to fire them. (Y-axis)"
+      "Description": "Extra horizontal angle per bullet in a volley, in degrees: bullet i fires at Launch Angle + i × this value."
     },
     {
       "Field": "shootAngleXInterval",
       "Name": "Launch Elevation Interval",
-      "Description": "When firing multiple missiles, specify how often to fire them. (X-axis)"
+      "Description": "Extra elevation per bullet in a volley, in degrees: bullet i fires at Launch Elevation Angle + i × this value."
     },
     {
       "Field": "damageDamp",
       "Name": "Damage Falloff %: Physical",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, physical damage drops by this many percent per second, down to 0."
     },
     {
       "Field": "spelDamageDamp",
       "Name": "Damage Falloff %: Magic",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, magic damage drops by this many percent per second, down to 0."
     },
     {
       "Field": "fireDamageDamp",
       "Name": "Damage Falloff %: Fire",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, fire damage drops by this many percent per second, down to 0."
     },
     {
       "Field": "thunderDamageDamp",
       "Name": "Damage Falloff %: Lightning",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, lightning damage drops by this many percent per second, down to 0."
     },
     {
       "Field": "staminaDamp",
       "Name": "Damage Falloff %: Stamina",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, stamina damage drops by this many percent per second, down to 0."
     },
     {
       "Field": "knockbackDamp",
       "Name": "Damage Falloff %: Knockback",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, knockback drops by this many percent per second, down to 0."
     },
     {
       "Field": "shootAngleXZ",
       "Name": "Launch Elevation Angle",
-      "Description": "Additional elevation angle from the horizontal."
+      "Description": "Launch elevation in degrees above the horizontal (-90 to 90). Only for Emitter Source Type 0 and 2."
     },
     {
       "Field": "lockShootLimitAng",
       "Name": "Lock Direction Limit Angle",
-      "Description": "Limit angle when facing the lock direction"
+      "Description": "At launch, the bullet turns toward the target by at most this many degrees. 0: no turn toward the target."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "prevVelocityDirRate",
       "Name": "Previous Velocity Direction Rate",
-      "Description": "Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall"
+      "Description": "For ground-hugging bullets (Follow Type 4) that hit a wall: percent of the previous direction mixed into the new one, so the bullet slides along. Retail: 100 on 5 Bayle rows."
     },
     {
       "Field": "atkAttribute",
       "Name": "Attack Attribute",
-      "Description": "Set the physical attributes to set for the bullet"
+      "Description": "Overrides the attack's physical damage type. 254: keep the AtkParam's value."
     },
     {
       "Field": "spAttribute",
       "Name": "Special Attribute",
-      "Description": "Set special attributes to set for bullets"
+      "Description": "Overrides the attack's special attribute. 254: keep the AtkParam's value."
     },
     {
       "Field": "Material_AttackType",
       "Name": "Material Attack Type",
-      "Description": "Specify what the attack attribute is"
+      "Description": "Overrides the attack type used for hit sounds and effects. 254: keep the attack's value."
     },
     {
       "Field": "Material_AttackMaterial",
       "Name": "Material Attack Material",
-      "Description": "Used for SFX / SE during attack"
+      "Description": "Overrides the attack material used for hit sounds and effects. 254: keep the attack's value."
     },
     {
       "Field": "isPenetrateChr",
       "Name": "Is Penetrate Character",
-      "Description": "If it is ON, it will penetrate without landing when it hits the character."
+      "Description": "On: the bullet passes through characters instead of ending on them. It still damages them."
     },
     {
       "Field": "isPenetrateObj",
       "Name": "Is Penetrate Object",
-      "Description": "If it is ON, it will penetrate without landing when hitting a dynamic / partial destruction asset."
+      "Description": "On: the bullet passes through dynamic and breakable assets instead of ending on them. Static assets count as map (Is Penetrate Map)."
     },
     {
       "Field": "pad_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "mayRemoteDetonate",
       "Name": "Can be Remotely Detonated",
-      "Description": "Bullets with Attach Type 6 will cause this bullet to be detonated if this bullet is within their hit radius."
+      "Description": "On: the bullet is ended when it is inside the field of a bullet with Attach Effect Type 6 (Remote Detonation)."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "launchConditionType",
       "Name": "Launch Condition Type",
-      "Description": "Specify the condition to judge whether to generate a bullet when it lands or the life is extinguished"
+      "Description": "When the Hit Bullet ID child spawns: 0 and 3 always (hit or expiry); 1 on water; 2 on water or swamp; 4 on a character hit or on expiry; 5 on a map or object hit; 6 when absorbed (Attach Effect Type 5); above 6 never. Read from the bullet's current state."
     },
     {
       "Field": "FollowType",
       "Name": "Follow Type",
-      "Description": "Follow-up type. Do not follow is the default."
+      "Description": "What the bullet moves with. 0: nothing. 1: the shooter's dummy poly. 2: the shooter's feet, one-to-one. 3: the target point (the lock-on target, or the aim point ahead). 4: nothing; the bullet hugs the ground instead. 5: the middle of the shooter's body."
     },
     {
       "Field": "EmittePosType",
       "Name": "Emitter Source Type",
-      "Description": "Source type. Usually from Damipoli. (Introduced to judge meteo)"
+      "Description": "Where the bullet is created. 0: the shooter's dummy poly. 1: around the shooter (Emitter Source Radius). 2: the dummy poly with a level orientation (meteors). 3: at or near the target. 4: around the nearest enemy (Emitter Source Radius). 5: the parent bullet, for chained bullets. 6: a stored placement. Shot angles apply only to 0 and 2."
     },
     {
       "Field": "isAttackSFX",
-      "Name": "Is Persistent Attack SFX",
-      "Description": "Set whether bullets such as arrows will remain stuck in the character"
+      "Name": "Is Hit SFX Stuck to Target",
+      "Description": "On: on a character or object hit, the Impact SFX is attached to what was hit and stays with it (arrows stuck in a target). The impact sound and Asset Generated on Hit are then skipped. Map hits are unchanged."
     },
     {
       "Field": "isEndlessHit",
       "Name": "Is Continuous Hit",
-      "Description": "Do you keep hitting?"
+      "Description": "Sets the continuous-hit flag on the bullet's attack hits. Its exact effect isn't established."
     },
     {
       "Field": "isPenetrateMap",
       "Name": "Is Penetrate Map",
-      "Description": "If it is ON, it will penetrate without landing when hitting a hit / static asset."
+      "Description": "On: the bullet passes through the map and static assets instead of ending on them. The floor still stops it."
     },
     {
       "Field": "isHitBothTeam",
       "Name": "Is Hit Both Teams",
-      "Description": "Are you an enemy or an ally? (Not a wandering ghost)"
+      "Description": "Appears unused by the game: no effect found, although retail sets it on many bullets."
     },
     {
       "Field": "isUseSharedHitList",
       "Name": "Is Use Shared Hit List",
-      "Description": "Specify whether to share the hit list"
+      "Description": "On: all bullets of this ID fired by one emitter (a volley, or repeated volleys) share one hit list, so each target is hit once by the whole group. The list lasts for Shared Hit List Duration."
     },
     {
       "Field": "isUseMultiDmyPolyIfPlace",
       "Name": "Use Multiple Dummy Polys for Placement",
-      "Description": "Do you use the same Damipoly ID more than once when placing bullets?"
+      "Description": "Appears unused by the game: no effect found, although retail sets it on some bullets."
     },
     {
       "Field": "isHitOtherBulletForceEraseA",
-      "Name": "Force Erase Bullet A if Hit by Other Bullet",
-      "Description": "Does it hit other bullets forced erasure A?"
+      "Name": "Is Erased by Erase Fields",
+      "Description": "On: the bullet is ended, with its hit effect, by bullets with Attach Effect Type 4 (Erase Bullets)."
     },
     {
       "Field": "isHitOtherBulletForceEraseB",
-      "Name": "Force Erase Bullet B if Hit by Other Bullet",
-      "Description": "Does it hit the other bullet forced erasure B?"
+      "Name": "Is Absorbed by Absorb Fields",
+      "Description": "On: the bullet is absorbed by bullets with Attach Effect Type 5: it ends without its hit effect and counts as absorbed (Launch Condition Type 6). Retail: spells that Carian and Golden Retaliation can absorb."
     },
     {
       "Field": "isHitForceMagic",
-      "Name": "Is Bullet deflected by Magic",
-      "Description": "Do you hit the force magic?"
+      "Name": "Is Pushed by Force Fields",
+      "Description": "On: the bullet is pushed away by bullets with Attach Effect Type 1 (wind barriers and similar)."
     },
     {
       "Field": "isIgnoreSfxIfHitWater",
-      "Name": "Is SFX ignored on Water Hit",
-      "Description": "Should I ignore the effect if it hits the surface of the water?"
+      "Name": "Ignore Map Hits After Water",
+      "Description": "On: from the first time the bullet touches water, its map hits play no impact effect, sound or asset, spawn no Hit Bullet ID and don't end it. Unused in retail."
     },
     {
       "Field": "isIgnoreMoveStateIfHitWater",
-      "Name": "Is Move State Ignored on Water Hit",
-      "Description": "Whether to ignore the state transition even if it hits water"
+      "Name": "Ignore Water Surface Hits",
+      "Description": "On: a hit on a water surface is ignored: no impact effect, sound or asset, no Hit Bullet ID, and the bullet carries on. Leave off for bullets that should react to water (Launch Condition Type 1 or 2)."
     },
     {
       "Field": "isHitDarkForceMagic",
-      "Name": "Is Bullet deflected by Bullet Deflection",
-      "Description": "Do you hit the dark force magic?"
+      "Name": "Is Pushed by Dark Force Fields",
+      "Description": "On: the bullet is pushed away by bullets with Attach Effect Type 3 (magic-repelling barriers)."
     },
     {
       "Field": "dmgCalcSide",
       "Name": "Damage Calculation Side",
-      "Description": "Damage calculation side. During multiplayer, the damage calculation is for switching between the giving side and the receiving side."
+      "Description": "Meant to choose which player's machine computes the damage in multiplayer. It is copied into the bullet's attack, but no effect was found. Every retail row is 0; leave it at 0."
     },
     {
       "Field": "isEnableAutoHoming",
       "Name": "Is Auto Homing Enabled",
-      "Description": "Whether to automatically follow when not locked on"
+      "Description": "On: when the shooter isn't locked on, the bullet picks a target by itself. Depends on a game-wide setting (most likely the Auto-Target option)."
     },
     {
       "Field": "isSyncBulletCulcDumypolyPos",
-      "Name": "Is Emitter Source Synced with Bullet",
-      "Description": "In the case of a synchronously generated bullet, the emitter attitude at the time of synchronization is used without recalculating the attitude due to the Damipoli position when the bullet is generated."
+      "Name": "Recalculate Placement for Synced Bullets",
+      "Description": "For bullets created through network sync: On recalculates the placement from the shooter's dummy poly instead of using the synced emitter placement."
     },
     {
       "Field": "isOwnerOverrideInitAngle",
-      "Name": "Is Direction Inherited by Child Bullet",
-      "Description": "Only valid for sub-bullets. If it is ON, the reference direction is the owner."
+      "Name": "Child Uses Shooter's Direction",
+      "Description": "Set on a chained bullet: On takes its starting direction from the shooting character instead of the parent bullet."
     },
     {
       "Field": "isInheritSfxToChild",
       "Name": "Is SFX Inherited by Child Bullet",
-      "Description": "Take over the SFX of the parent bullet. Ignore the SFX ID set for the sub bullet"
+      "Description": "Set on the parent: its chained bullet takes over the parent's bullet effect."
     },
     {
       "Field": "darkDamageDamp",
       "Name": "Damage Falloff %: Holy",
-      "Description": "Correction value that decreases in 1 second after the attenuation distance."
+      "Description": "Past Attenuation Range, holy damage drops by this many percent per second, down to 0."
     },
     {
       "Field": "bulletSfxDeleteType_byHit",
       "Name": "Bullet SFX Delete Type - By Hit",
-      "Description": "Bullet SFX extinction type when landing or playing"
+      "Description": "How the bullet effect ends when the bullet hits and ends: 0 stops its emitter (existing particles finish), 1 deletes it."
     },
     {
       "Field": "bulletSfxDeleteType_byLifeDead",
       "Name": "Bullet SFX Delete Type - By Expiration",
-      "Description": "Bullet SFX extinction type at the end of life"
+      "Description": "How the bullet effect ends when Duration runs out: 0 stops its emitter (existing particles finish), 1 deletes it."
     },
     {
       "Field": "targetYOffsetRange",
       "Name": "Target Vertical Offset",
-      "Description": "Vertical offset of landing position. Shift the target position up and down at the time of launch and during homing. (-N ~ n)"
+      "Description": "Raises the target point by this many metres at launch and during homing (negative lowers it). A fixed offset, not a random range."
     },
     {
       "Field": "shootAngleYMaxRandom",
       "Name": "Random Launch Angle - Max",
-      "Description": "Upper limit of random number of firing angle (0 to 360)"
+      "Description": "Random horizontal spread in degrees: each bullet's angle varies by up to ± half this value."
     },
     {
       "Field": "shootAngleXMaxRandom",
       "Name": "Random Elevation Angle - Max",
-      "Description": "Upper limit of firing elevation random number (0 to 360)"
+      "Description": "Random elevation spread in degrees: each bullet's elevation varies by up to ± half this value."
     },
     {
       "Field": "intervalCreateBulletId",
-      "Name": "Bullet Emitter: Bullet ID",
-      "Description": "Bullet ID used when making bullets at regular intervals"
+      "Name": "Interval Bullet: Bullet ID",
+      "Description": "Bullet spawned again and again at this bullet's position while it lasts (trails, drips). -1: off. Needs Interval Bullet: Max Interval other than 0."
     },
     {
       "Field": "intervalCreateTimeMin",
-      "Name": "Bullet Emitter: Minimum Shoot Interval",
-      "Description": "Minimum interval for making bullets at regular intervals (0 to n)"
+      "Name": "Interval Bullet: Min Interval",
+      "Description": "Shortest gap between interval spawns, in seconds. Each gap is random between Min and Max."
     },
     {
       "Field": "intervalCreateTimeMax",
-      "Name": "Bullet Emitter: Maximum Shoot Interval",
-      "Description": "Maximum interval for making bullets at regular intervals (function is disabled if 0 to n 0)"
+      "Name": "Interval Bullet: Max Interval",
+      "Description": "Longest gap between interval spawns, in seconds. 0 turns interval spawning off."
     },
     {
       "Field": "predictionShootObserveTime",
       "Name": "Prediction Shoot Observe Time",
-      "Description": "Average speed observation time of predicted shooting function (function is invalid if 0 to 40)"
+      "Description": "Leads the target: the aim uses the target's average velocity over this many seconds. 0: no lead."
     },
     {
       "Field": "intervalCreateWaitTime",
-      "Name": "Bullet Emitter: Initial Wait Time",
-      "Description": "Waiting time to start making bullets at regular intervals"
+      "Name": "Interval Bullet: Start Delay",
+      "Description": "Seconds after the bullet is created before interval spawning starts."
     },
     {
       "Field": "sfxPostureType",
       "Name": "SFX Posture Type",
-      "Description": "Set the initial attitude of an SFX or sub-bullet created from a bullet"
+      "Description": "Orientation given to effects and chained bullets created from this bullet. 0: the bullet's own. 1: levelled (world up); also levels the launch. 2: the normal of the surface hit."
     },
     {
       "Field": "createLimitGroupId",
       "Name": "Create Limit Group ID",
-      "Description": "If it is 0, it is unused. If the upper limit is reached when creating a bullet set in the same group Id, that bullet will not be created. (Bullets created synchronously on the network will be released regardless)"
+      "Description": "Group for a shared cap set in BulletCreateLimitParam: a new bullet isn't created while its group is at the limit. 0: no group."
     },
     {
       "Field": "pad5",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isInheritSpeedToChild",
       "Name": "Is Speed Inherited by Child Bullet",
-      "Description": "Take over the speed of the timing to replace the submunition. Ignore the speed set for the submunition"
+      "Description": "Set on the parent: its chained bullet starts at the parent's current speed instead of its own Initial Velocity."
     },
     {
       "Field": "isDisableHitSfx_byChrAndObj",
       "Name": "Is SFX Disabled on Chr/Object Hit",
-      "Description": "When ON, the bullet parameter landing SFX does not play even if it hits a character / object."
+      "Description": "On: no impact effect, impact sound or hit asset when the bullet hits a character or object. Map hits still play them."
     },
     {
       "Field": "isCheckWall_byCenterRay",
       "Name": "Is Wall Checked by Center Ray",
-      "Description": "There was a problem with the digging judgment when firing a bullet, so it is for error handling. SEQ23101 [Own character] If you use a soul short arrow or a strong soul short arrow in close contact with a character with a high lock-on position, the direction of the bullet will be reversed."
+      "Description": "Appears unused by the game: no effect found, although retail sets it on some bullets."
     },
     {
       "Field": "isHitFlare",
-      "Name": "Is Hit Flare",
-      "Description": "Do you hit flare magic?"
+      "Name": "Is Ended by Flare Fields",
+      "Description": "On: the bullet is ended by bullets with Attach Effect Type 2 (Flare), such as the moon spells."
     },
     {
       "Field": "isUseBulletWallFilter",
       "Name": "Is Bullet Wall Filter Used",
-      "Description": "Do you use primitive magic Atari? It will change to a filter that corresponds to the Atari dedicated to primitive magic."
+      "Description": "On: the bullet's map checks use a different collision filter (meant for collision that only bullets see). Unused in retail."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isDisableAiProjectileDodge",
       "Name": "Disable AI Projectile Dodge",
-      "Description": "If ON, this projectile will not be dodged by the AI."
+      "Description": "On: enemy AI doesn't notice this bullet, so it won't dodge or react to it."
     },
     {
       "Field": "isNonDependenceMagicForFunnleNum",
-      "Name": "Is Follow Bullet Count not scaled by INT",
-      "Description": "The number of funnels on the PC does not fluctuate by force. Become the number of shots"
+      "Name": "Funnel Count Ignores Intelligence",
+      "Description": "On: funnel bullets fired by players use Bullet Count instead of the Intelligence-based count (see Funnel Mode)."
     },
     {
       "Field": "isAiInterruptShootNoDamageBullet",
-      "Name": "Is AI Interrupted by Bullet",
-      "Description": "Does it react to AI bullets (even with 0 attack power)?"
+      "Name": "AI Reacts Even Without Damage",
+      "Description": "On: enemy AI notices this bullet even when its attack deals no damage. Without it, only damaging bullets are noticed."
     },
     {
       "Field": "randomCreateRadius",
       "Name": "Emitter Source Radius",
-      "Description": "The range of bullets used when the source type is set to occur at random locations."
+      "Description": "Radius in metres for Emitter Source Type 1 (around the shooter) and 4 (around the nearest enemy)."
     },
     {
       "Field": "followOffset_BaseHeight",
-      "Name": "Follow Bullet - Height Offset",
-      "Description": "Funnel tracking position_base point height [m]"
+      "Name": "Funnel Formation Height",
+      "Description": "Funnel bullets with Follow Type 1: height in metres of the ring they're placed in around the shooter."
     },
     {
       "Field": "assetNo_Hit",
       "Name": "Asset Generated on Hit",
-      "Description": "The number of the asset to be generated at the time of landing. -1: Do not generate. The asset number is the last 6 digits of the asset. Example: AEG999_999 = 999999"
+      "Description": "Asset created where the bullet hits, with the impact effect. The number is the asset name's digits: AEG999_999 = 999999. -1 or 0: none."
     },
     {
       "Field": "lifeRandomRange",
       "Name": "Duration - Random Range",
-      "Description": "Add a random number of seconds with a set time fluctuation range to the lifetime [s]."
+      "Description": "Adds a random 0 to this many seconds to Duration. Only when Duration isn't negative."
     },
     {
       "Field": "homingAngleX",
       "Name": "Homing Angle: X",
-      "Description": "Only the X-axis component of the inductive performance is changed. Do not change with -1"
+      "Description": "Appears unused by the game. Homing uses Homing Angle on every axis."
     },
     {
       "Field": "ballisticCalcType",
       "Name": "Ballistic Calculation Type",
-      "Description": "Initial shoot direction"
+      "Description": "0: the bullet is fired along the aim. 1: howitzer: the launch elevation and speed are solved to arc onto the target, within the Howitzer limits; uses Gravity: In Range."
     },
     {
       "Field": "attachEffectType",
       "Name": "Attach Effect Type",
-      "Description": "Effect type to attach"
+      "Description": "A field this bullet puts on other bullets while it flies. 1 pushes away, 2 ends, 3 pushes away, 4 erases, 5 absorbs, 6 remotely detonates. Only bullets with the matching flag are affected (Is Pushed by Force Fields, Is Ended by Flare Fields, Is Pushed by Dark Force Fields, Is Erased by Erase Fields, Is Absorbed by Absorb Fields, Can be Remotely Detonated)."
     },
     {
       "Field": "seId_Bullet1",
-      "Name": "Insert SE ID - Bullet [1]",
-      "Description": "Insert SE ID1 for [Bullet]. -1: Not generated 9 digits. Sound type is fixed to s: SFX."
+      "Name": "Projectile SE ID [1]",
+      "Description": "Sound played on the bullet when it enters this state (sound type s). -1: none."
     },
     {
       "Field": "seId_Bullet2",
-      "Name": "Insert SE ID - Bullet [2]",
-      "Description": "Insert SE ID 2 for [Bullet]. -1: Not generated 9 digits. Sound type is fixed to s: SFX."
+      "Name": "Projectile SE ID [2]",
+      "Description": "Second sound played on the bullet when it enters this state (sound type s). -1: none."
     },
     {
       "Field": "seId_Hit",
-      "Name": "Insert SE ID - Hit",
-      "Description": "Insert SE ID 1 for [landing]. -1 does not occur. 9 digits. Sound type is fixed to s: SFX."
+      "Name": "Impact SE ID",
+      "Description": "Sound played where the bullet hits (sound type s). -1: none."
     },
     {
       "Field": "seId_Flick",
-      "Name": "Insert SE ID - Repel",
-      "Description": "[At the time of repelling] Enter SE ID1 for. -1 does not occur. 9 digits. Sound type is fixed to s: SFX."
+      "Name": "Repel SE ID",
+      "Description": "Sound played when a character repels the bullet (sound type s). -1: none."
     },
     {
       "Field": "howitzerShootAngleXMin",
       "Name": "Howitzer - Launch Elevation Limit - Min",
-      "Description": "[Curly fire] The lower limit [deg] with the firing elevation angle as a reference (0 deg) before applying the curve fire calculation."
+      "Description": "Howitzer bullets: lowest launch elevation in degrees, relative to the base aim pitch (clamped to ±90)."
     },
     {
       "Field": "howitzerShootAngleXMax",
       "Name": "Howitzer - Launch Elevation Limit - Max",
-      "Description": "[Sky firing] The upper limit [deg] based on the firing elevation angle (0deg) before applying the bending firing calculation."
+      "Description": "Howitzer bullets: highest launch elevation in degrees, relative to the base aim pitch (clamped to ±90)."
     },
     {
       "Field": "howitzerInitMinVelocity",
       "Name": "Howitzer - Initial Min Velocity",
-      "Description": "[Song firing] The minimum speed limit for song firing calculation [m / s]."
+      "Description": "Howitzer bullets: lowest launch speed in m/s the arc solver may use."
     },
     {
       "Field": "howitzerInitMaxVelocity",
       "Name": "Howitzer - Initial Max Velocity",
-      "Description": "[Song firing] Maximum speed limit for song firing calculation [m / s]."
+      "Description": "Howitzer bullets: highest launch speed in m/s the arc solver may use."
     },
     {
       "Field": "sfxId_ForceErase",
-      "Name": "SFX ID - Force Erase",
-      "Description": "SFX ID at the time of forced erasure. -1 does not occur."
+      "Name": "Force Erase SFX ID",
+      "Description": "Effect played when the bullet is ended or absorbed by another bullet's field. -1: none."
     },
     {
       "Field": "bulletSfxDeleteType_byForceErase",
       "Name": "Bullet SFX Delete Type - By Force Erase",
-      "Description": "Bullet SFX extinction type at the time of forced erasure"
+      "Description": "How the bullet effect ends when the bullet is absorbed by another bullet's field: 0 stops its emitter (existing particles finish), 1 deletes it."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "followDmypoly_forSfxPose",
-      "Name": "Follow Bullet - Dummy Poly for SFX Pose",
-      "Description": "SFX direction specification when following Damipoli"
+      "Name": "SFX Orientation Dummy Poly",
+      "Description": "While the bullet flies, its orientation is taken from this dummy poly on the shooting character. -1: off."
     },
     {
       "Field": "followOffset_Radius",
-      "Name": "Follow Bullet - Radius Offset",
-      "Description": "Funnel tracking position_radius [m]"
+      "Name": "Funnel Formation Radius",
+      "Description": "Funnel bullets with Follow Type 1: radius in metres of the ring they're placed in around the shooter."
     },
     {
       "Field": "spBulletDistUpRate",
-      "Name": "SpEffect Bullet Distance - Magnification",
-      "Description": "Special effect flight distance correction magnification"
+      "Name": "Range-Up Effect Multiplier",
+      "Description": "While the shooter has a range-up SpEffect (state info 444), the effective Attenuation Range is multiplied by this. Default 1; 0 (410 retail rows) reduces it to zero."
     },
     {
       "Field": "nolockTargetDist",
       "Name": "Target Range when Unlocked",
-      "Description": "Target range when unlocked (-1: Refer to range, 0: No target)"
+      "Description": "When not locked on, the bullet aims at a point this many metres ahead. -1: use Attenuation Range. 0: no target point."
     },
     {
       "Field": "pad4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

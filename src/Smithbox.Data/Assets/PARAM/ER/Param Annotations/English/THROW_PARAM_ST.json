@@ -2,217 +2,217 @@
   "Param": "THROW_PARAM_ST",
   "Type": "THROW_PARAM_ST",
   "Name": "THROW_PARAM_ST",
-  "Description": null,
+  "Description": "Throws, grabs, backstabs and ripostes. When an attack with AtkParam Throw Flag hits, the game takes the first row (in ID order) whose Attacker and Defender Character IDs and Throw Type ID match, whose Throw Type matches both characters' throw states, and whose range, angle and wall checks pass. The row then sets both characters' animations and how they are joined.",
   "Fields": [
     {
       "Field": "AtkChrId",
-      "Name": "Attacker - Character ID",
-      "Description": "Throwing side character ID"
+      "Name": "Attacker Character ID",
+      "Description": "Character ID of the thrower (cXXXX model number as XXXX). 0: the player."
     },
     {
       "Field": "DefChrId",
-      "Name": "Defender - Character ID",
-      "Description": "Recipient character ID"
+      "Name": "Defender Character ID",
+      "Description": "Character ID of the character being thrown (cXXXX model number as XXXX). 0: the player."
     },
     {
       "Field": "Dist",
-      "Name": "Max Throw Distance",
-      "Description": "Do not throw unless the distance is closer than this value [m]"
+      "Name": "Max Distance",
+      "Description": "Maximum distance in metres between the two characters' reference points (see the Range Dummy Poly fields). 0 or less: the row never matches."
     },
     {
       "Field": "DiffAngMin",
-      "Name": "Height Angle Difference - Min",
-      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown."
+      "Name": "Facing Difference Min",
+      "Description": "Lowest allowed difference between the defender's and the attacker's facing, in degrees (−180 to 180; 0 = facing the same way, ±180 = facing each other). If Min is greater than Max the range wraps through 180: for example 90 and −90 accept every difference from 90 to 180 and from −180 to −90, as used by ripostes. Backstabs use −90 to 90."
     },
     {
       "Field": "DiffAngMax",
-      "Name": "Height Angle Difference - Max",
-      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is smaller than this angle, it will not be thrown."
+      "Name": "Facing Difference Max",
+      "Description": "Highest allowed difference between the defender's and the attacker's facing, in degrees. See Facing Difference Min."
     },
     {
       "Field": "upperYRange",
-      "Name": "Upper Height Range",
-      "Description": "Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value"
+      "Name": "Max Height Above",
+      "Description": "How far above the attacker's reference point the defender's may be, in metres. Retail: mostly 0.65."
     },
     {
       "Field": "lowerYRange",
-      "Name": "Lower Height Range",
-      "Description": "Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value"
+      "Name": "Max Height Below",
+      "Description": "How far below the attacker's reference point the defender's may be, in metres. Retail: mostly 0.65."
     },
     {
       "Field": "diffAngMyToDef",
-      "Name": "Angle Difference - To Defender",
-      "Description": "The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown"
+      "Name": "Max Angle to Defender",
+      "Description": "Maximum angle in degrees between the attacker's facing and the direction to the defender (a half-angle: 60 accepts defenders up to 60° to either side). 180: any direction."
     },
     {
       "Field": "throwTypeId",
       "Name": "Throw Type ID",
-      "Description": "ID that identifies the type of throw (association with attack parameter)"
+      "Description": "Must equal the Throw Type ID of the attack that triggers the throw (AtkParam). Retail: 0 for most rows, 10/20 for player throws, 41xx for some enemy grabs."
     },
     {
       "Field": "atkAnimId",
-      "Name": "Attacker - Animation ID",
-      "Description": "Set attack animation ID (linked to EzState)"
+      "Name": "Attacker Animation ID",
+      "Description": "Animation the thrower plays when the throw connects. Below 0: none."
     },
     {
       "Field": "defAnimId",
-      "Name": "Defender - Animation ID",
-      "Description": "Set damage animation ID (linked to EzState)"
+      "Name": "Defender Animation ID",
+      "Description": "Animation the thrown character plays when the throw connects. Below 0: none."
     },
     {
       "Field": "escHp",
-      "Name": "Self Escape - HP",
-      "Description": "Value that can withstand throwing through"
+      "Name": "Escape Points",
+      "Description": "Number of successful button-mash cycles the thrown character needs to break free (see Escape Cycle Time and Escape Presses per Cycle). 0: the throw can't be escaped."
     },
     {
       "Field": "selfEscCycleTime",
-      "Name": "Self Escape - Cycle Time",
-      "Description": "Cycle time for self-throwing [ms]"
+      "Name": "Escape Cycle Time",
+      "Description": "Length of one button-mash cycle in milliseconds. Each cycle in which the thrown character makes at least Escape Presses per Cycle inputs removes one Escape Point."
     },
     {
       "Field": "sphereCastRadiusRateTop",
-      "Name": "Sphere Cast - Radius Rate Top",
-      "Description": "Ratio of upper radius of sphere cast [80-> 0.8]"
+      "Name": "Wall Check Radius % (Upper)",
+      "Description": "The throw fails if a sphere cast from the attacker to the defender, at 80% of the characters' height, hits map collision. Radius = this % of the larger of the two characters' capsule radii. 0: this cast is skipped."
     },
     {
       "Field": "sphereCastRadiusRateLow",
-      "Name": "Sphere Cast - Radius Rate Low",
-      "Description": "Spherecast lower radius ratio [80-> 0.8]"
+      "Name": "Wall Check Radius % (Lower)",
+      "Description": "As Wall Check Radius % (Upper), for the cast at 42% of the characters' height. 0: this cast is skipped."
     },
     {
       "Field": "PadType",
       "Name": "Operation Type",
-      "Description": "Operation type"
+      "Description": "Appears unused by the game. Retail: 1 on most rows, 3 on the escapable ant backstabs, 0 on a few grabs."
     },
     {
       "Field": "AtkEnableState",
-      "Name": "Attack Enable State",
-      "Description": "Please set the state type that can be thrown on the throwing side"
+      "Name": "Attacker Throw State",
+      "Description": "The throw state the attacker must be in. 0: any state. A character whose throws are disabled can never throw. Retail: 0 on every row."
     },
     {
       "Field": "throwFollowingType",
-      "Name": "Throw Following Type",
-      "Description": "How to follow the character possessed by Adsorbed Damipoli while throwing. * Follow-up period is controlled by TAE action"
+      "Name": "Follow Dummy Poly",
+      "Description": "0: the joined character is placed at the absorb dummy poly once. 1: it keeps following that dummy poly while the throw lasts. Retail: 1 on most rows."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "throwType",
       "Name": "Throw Type",
-      "Description": "Type of throw"
+      "Description": "The throw-condition states both characters must be in (SpEffect Throw Condition). 0: normal throw or grab, neither character in a special state. 1: backstab, the same, but also allowed on a parried defender. 10/11: the attacker is in state 2/3 (10 is a jump-attack stab on the head). 20: the defender is parried (state 10). 21–25: the defender is in state 11–15 (22 fallen off a mount, 23 special backstab, 24 asleep, 25 stance broken). A character in state 1 can never throw or be thrown."
     },
     {
       "Field": "selfEscCycleCnt",
-      "Name": "Self Escape - Cycle Count",
-      "Description": "Number of self-throwing cycles"
+      "Name": "Escape Presses per Cycle",
+      "Description": "Inputs the thrown character must make within one Escape Cycle Time to remove one Escape Point."
     },
     {
       "Field": "dmyHasChrDirType",
-      "Name": "Character Throw - Dummy Poly Direction Type",
-      "Description": "Direction of Damipoli possession character when throwing occurs"
+      "Name": "Facing Without Absorb Dummy Poly",
+      "Description": "How a character is turned when no absorb dummy poly places it. 0: faces the other character. 1: faces away from it (180°). 255: keeps its own facing."
     },
     {
       "Field": "isTurnAtker",
-      "Name": "Throw can Side Turn",
-      "Description": "Does the throwing side turn?"
+      "Name": "Turn Attacker",
+      "Description": "Appears unused by the game. Retail: on for most rows."
     },
     {
       "Field": "isSkipWepCate",
-      "Name": "Skip Attacker Weapon Category Check",
-      "Description": "Do you want to skip the attacker's weapon category check?"
+      "Name": "Skip Weapon Throw Check",
+      "Description": "If on, the attacker's weapon doesn't need Enable Throw (EquipParamWeapon). If off, the throw only matches when the weapon in the attacking hand allows throws."
     },
     {
       "Field": "isSkipSphereCast",
-      "Name": "Skip Sphere Cast",
-      "Description": "Do you want to skip the sphere cast?"
+      "Name": "Skip Wall Check",
+      "Description": "If on, the sphere casts that stop throws through walls (Wall Check Radius %) are skipped."
     },
     {
       "Field": "isEnableCorrectPos_forThrowAdjust",
-      "Name": "Enable Correct Position for Throw Adjustment",
-      "Description": "If it is set to , the location of the throwing position will be the position of the adsorption Damipoli that has returned to the positional relationship equivalent to the flat ground."
+      "Name": "Flatten Absorb Position",
+      "Description": "If on, the absorb dummy poly position is corrected as if both characters stood on flat ground, so slopes don't tilt the joined character's placement."
     },
     {
       "Field": "isEnableThrowFollowingFallAssist",
-      "Name": "Enable Throw Following Fall Assist",
-      "Description": "Is the same treatment as the wall removal prevention applied to the fall prevention wall so that it does not fall from the step when the follow-up is released?"
+      "Name": "Fall Assist When Following Ends",
+      "Description": "If on, when following ends the joined character is kept from falling off ledges, as fall-prevention walls do."
     },
     {
       "Field": "isEnableThrowFollowingFeedback",
-      "Name": "Enable Throw Following Feedback",
-      "Description": "Do you want to return the character with the Adsorbed Damipoli when it comes in contact with a hit or fall prevention wall so that it does not look like it will get stuck in the middle wall or fall from a step?"
+      "Name": "Push Back From Walls While Following",
+      "Description": "If on, the character holding the absorb dummy poly is pushed back when the joined character touches a wall or fall-prevention wall, so it doesn't end up inside a wall or off a ledge."
     },
     {
       "Field": "pad0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "atkSorbDmyId",
-      "Name": "Attacker - Absorb Dummy ID",
-      "Description": "Where on the throwing side should the receiving side be attracted?"
+      "Name": "Attacker Absorb Dummy Poly",
+      "Description": "Dummy poly on the attacker where the defender is placed during the throw (facing opposite the dummy poly's direction). Takes priority: when this is not 0, Defender Absorb Dummy Poly is ignored. 0: not used."
     },
     {
       "Field": "defSorbDmyId",
-      "Name": "Defender - Absorb Dummy ID",
-      "Description": "Where on the receiving side should the throwing side be adsorbed?"
+      "Name": "Defender Absorb Dummy Poly",
+      "Description": "Dummy poly on the defender where the attacker is placed during the throw. Only used when Attacker Absorb Dummy Poly is 0. 0: not used."
     },
     {
       "Field": "Dist_start",
-      "Name": "Backstab - Max Throw Distance ",
-      "Description": "Only throw at a distance closer than this value [m] Used for throwing at the start of the Backstab"
+      "Name": "Backstab Start: Max Distance",
+      "Description": "For backstabs (Throw Type 1), replaces Max Distance in the check that starts the backstab; the row it finds is then used for the throw itself. Unused for other throw types."
     },
     {
       "Field": "DiffAngMin_start",
-      "Name": "Backstab - Height Angle Difference - Min",
-      "Description": "If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown. It is used for throwing at the start of the Backstab."
+      "Name": "Backstab Start: Facing Difference Min",
+      "Description": "For backstabs (Throw Type 1), replaces Facing Difference Min in the check that starts the backstab."
     },
     {
       "Field": "DiffAngMax_start",
-      "Name": "Backstab - Height Angle Difference - Max",
-      "Description": "The angle difference (Y-axis) between the throwing side and the receiving side must be smaller than this angle to throw. Used for throwing at the start of the Backstab."
+      "Name": "Backstab Start: Facing Difference Max",
+      "Description": "For backstabs (Throw Type 1), replaces Facing Difference Max in the check that starts the backstab."
     },
     {
       "Field": "upperYRange_start",
-      "Name": "Backstab - Upper Height Range",
-      "Description": "It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab."
+      "Name": "Backstab Start: Max Height Above",
+      "Description": "For backstabs (Throw Type 1), replaces Max Height Above in the check that starts the backstab."
     },
     {
       "Field": "lowerYRange_start",
-      "Name": "Backstab - Lower Height Range",
-      "Description": "It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab."
+      "Name": "Backstab Start: Max Height Below",
+      "Description": "For backstabs (Throw Type 1), replaces Max Height Below in the check that starts the backstab."
     },
     {
       "Field": "diffAngMyToDef_start",
-      "Name": "Backstab - Angle Difference - To Defender",
-      "Description": "The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown. It will be used for throwing at the start of the Backstab."
+      "Name": "Backstab Start: Max Angle to Defender",
+      "Description": "For backstabs (Throw Type 1), replaces Max Angle to Defender in the check that starts the backstab."
     },
     {
       "Field": "judgeRangeBasePosDmyId1",
-      "Name": "Attacker - Throwing Range Judgment - Dummy Poly ID",
-      "Description": "Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin"
+      "Name": "Attacker Range Dummy Poly",
+      "Description": "Dummy poly on the attacker used as its position for the distance, height and angle checks (and the wall-check casts). -1: the character's position."
     },
     {
       "Field": "judgeRangeBasePosDmyId2",
-      "Name": "Defender - Throwing Range Judgment - Dummy Poly ID",
-      "Description": "Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin"
+      "Name": "Defender Range Dummy Poly",
+      "Description": "Dummy poly on the defender used as its position for the distance, height and angle checks (and the wall-check casts). -1: the character's position."
     },
     {
       "Field": "adsrobModelPosInterpolationTime",
-      "Name": "Absorb Model Position Interpolation Time",
-      "Description": "After the capsule is adsorbed on Damipoli, the time it takes for the character model to interpolate and move to the position according to the throwing animation data (when 0 is set, the model position is not interpolated and playback starts immediately after adsorption with the positional relationship according to the animation data. Will be)"
+      "Name": "Absorb Model Blend Time",
+      "Description": "Seconds over which the joined character's model moves from where it was to its place in the throw animation after its capsule snaps to the absorb dummy poly. 0: no blend, the model starts in place."
     },
     {
       "Field": "throwFollowingEndEasingTime",
-      "Name": "Throw Following End Easing Time",
-      "Description": "Model position interpolation time at the end of tracking"
+      "Name": "Follow End Blend Time",
+      "Description": "Seconds over which the joined character's model blends back to its capsule when following ends."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

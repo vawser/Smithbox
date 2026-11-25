@@ -6,5 +6,24 @@
       "Text": "THROW_FOLLOWING_TYPE"
     }
   ],
-  "Options": []
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Place Once"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Follow Dummy Poly"
+        }
+      ]
+    }
+  ]
 }

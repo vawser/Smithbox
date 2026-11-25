@@ -2,197 +2,197 @@
   "Param": "GRASS_TYPE_PARAM_ST",
   "Type": "GRASS_TYPE_PARAM_ST",
   "Name": "GRASS_TYPE_PARAM_ST",
-  "Description": "Dynamic instanced assets, combined with a flat or billboard texture. Used to generate scattered grass or other such arrangements without the need for manual placement.",
+  "Description": "Scattered grass and small props (instanced models, flat tufts and billboards) generated on painted ground. A quality level (0–2) picks GrassTypeParam, GrassTypeParam_Lv1 or GrassTypeParam_Lv2; an ID missing from the chosen level falls back to the next lower level and finally to GrassTypeParam.",
   "Fields": [
     {
       "Field": "lodRange",
-      "Name": "LOD Distance",
-      "Description": ""
+      "Name": "LOD Range ID",
+      "Description": "GrassLodRangeParam row giving the distances of the three LOD levels. Each LOD runs out to its range, then fades over its play distance. A missing row gives zero distances."
     },
     {
       "Field": "lod0ClusterType",
       "Name": "LOD 0 - Cluster Type",
-      "Description": ""
+      "Description": "What is drawn at LOD 0 (nearest): none, model, billboard, flat tuft, simple model, or type 5. Retail: 1 (model) on almost every row."
     },
     {
       "Field": "lod1ClusterType",
       "Name": "LOD 1 - Cluster Type",
-      "Description": ""
+      "Description": "What is drawn at LOD 1. Retail rows using type 5 almost always set Model Name [1]; rows using 4 set Simple Model Name; rows using 2 use the billboard texture."
     },
     {
       "Field": "lod2ClusterType",
       "Name": "LOD 2 - Cluster Type",
-      "Description": ""
+      "Description": "What is drawn at LOD 2 (farthest). 0 draws nothing at this distance (retail: 0 on most rows)."
     },
     {
       "Field": "pad0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "distributionType",
       "Name": "Placement Method",
-      "Description": ""
+      "Description": "How instances are placed. 0: scattered at random, count set by Base Density. 1: on a regular grid set by Model Spacing, thinned by Dithering. Retail: 0 except one row."
     },
     {
       "Field": "baseDensity",
       "Name": "Base Density",
-      "Description": ""
+      "Description": "Random placement: instances per unit of ground area, multiplied by the painted grass weight of the triangle (fractional counts carry over to the next triangle). Grid placement: multiplies the painted weight that decides whether a grid point is filled. Retail: 0.05–10, mostly 1."
     },
     {
       "Field": "model0Name",
       "Name": "Model Name [0]",
-      "Description": ""
+      "Description": "Main asset model (e.g. AEG001_254). Models of all GrassTypeParam rows are loaded up front."
     },
     {
       "Field": "flatTextureName",
       "Name": "Flat Texture Name",
-      "Description": ""
+      "Description": "Texture of the flat-plane tuft (cluster type 3), e.g. AET005_004_a. Leave empty when unused."
     },
     {
       "Field": "billboardTextureName",
       "Name": "Billboard Texture Name",
-      "Description": ""
+      "Description": "Texture of the billboard (cluster type 2), e.g. AET005_004_a. Leave empty when unused."
     },
     {
       "Field": "normalInfluence",
-      "Name": "Effect of Tilt %",
-      "Description": ""
+      "Name": "Slope Alignment %",
+      "Description": "Percent (÷100) of how much each instance tilts to follow the ground's surface normal. 0 keeps it upright. Retail: 90 or 100 on most rows."
     },
     {
       "Field": "inclinationMax",
       "Name": "Maximum Tilt Angle",
-      "Description": ""
+      "Description": "Degrees. The instance's final tilt from upright is capped at this angle. Retail: 30 on most rows, 0–180."
     },
     {
       "Field": "inclinationJitter",
-      "Name": "Randomness of Tilt Angle",
-      "Description": ""
+      "Name": "Random Tilt",
+      "Description": "Degrees. Random extra tilt of 0 up to this value on each horizontal axis. Retail: 0, 5 or 10."
     },
     {
       "Field": "scaleBaseMin",
       "Name": "Width Scale - Min",
-      "Description": ""
+      "Description": "Percent. Each instance's horizontal size is picked at random between Width Scale - Min and Max (100 = model size)."
     },
     {
       "Field": "scaleBaseMax",
       "Name": "Width Scale - Max",
-      "Description": ""
+      "Description": "Percent. Upper bound of the random horizontal size (see Width Scale - Min)."
     },
     {
       "Field": "scaleHeightMin",
       "Name": "Height Scale - Min",
-      "Description": ""
+      "Description": "Percent. Each instance's height is picked at random between Height Scale - Min and Max, independently of the width."
     },
     {
       "Field": "scaleHeightMax",
       "Name": "Height Scale - Max",
-      "Description": ""
+      "Description": "Percent. Upper bound of the random height (see Height Scale - Min)."
     },
     {
       "Field": "colorShade1_r",
       "Name": "Color Shade [1] R",
-      "Description": ""
+      "Description": "Red of colour shade 1, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade1_g",
       "Name": "Color Shade [1] G",
-      "Description": ""
+      "Description": "Green of colour shade 1, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade1_b",
       "Name": "Color Shade [1] B",
-      "Description": ""
+      "Description": "Blue of colour shade 1, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_r",
       "Name": "Color Shade [2] R",
-      "Description": ""
+      "Description": "Red of colour shade 2, as a 0–255 multiplier (255 = no tint). Retail: 255 except two rows."
     },
     {
       "Field": "colorShade2_g",
       "Name": "Color Shade [2] G",
-      "Description": ""
+      "Description": "Green of colour shade 2, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "colorShade2_b",
       "Name": "Color Shade [2] B",
-      "Description": ""
+      "Description": "Blue of colour shade 2, as a 0–255 multiplier (255 = no tint)."
     },
     {
       "Field": "flatSplitType",
       "Name": "Plane Split Type",
-      "Description": ""
+      "Description": "Flat tuft: the planes are spread evenly over 180° (0, Half) or 360° (1, Full), so the angle between planes is 180° or 360° divided by Number of Planes."
     },
     {
       "Field": "flatBladeCount",
       "Name": "Number of Planes",
-      "Description": ""
+      "Description": "Flat tuft: number of planes, clamped to 1–8. Retail: 2 on most rows."
     },
     {
       "Field": "flatSlant",
       "Name": "Plane Angle",
-      "Description": ""
+      "Description": "Flat tuft: lean of the planes, in degrees (negative leans the other way). Retail: 0 except three rows (−30, 30, 5)."
     },
     {
       "Field": "flatRadius",
       "Name": "Plane Distance",
-      "Description": ""
+      "Description": "Flat tuft: offset of the planes from the centre. Retail: 0, or 0.4 on the two flat-tuft rows."
     },
     {
       "Field": "castShadow",
       "Name": "Cast Shadow",
-      "Description": ""
+      "Description": "1 casts shadows, 0 doesn't. Retail: 0 on almost all grass, 1 on 9 rows."
     },
     {
       "Field": "windAmplitude",
       "Name": "Wind Amplitude",
-      "Description": ""
+      "Description": "Wind sway strength. Baked into the model's vertices, scaled by each vertex's height within the model (base stays still), capped at 255. 0 disables the sway. Retail: 80, 0 on 7 rows."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "windCycle",
       "Name": "Wind Speed",
-      "Description": ""
+      "Description": "Wind sway cycle, passed to the shader together with Wind Amplitude. Retail: 40, 0 where the amplitude is 0."
     },
     {
       "Field": "orientationAngle",
       "Name": "Direction",
-      "Description": "Random for -1"
+      "Description": "Degrees. Facing of each instance. Negative (−1) gives a random facing over the full 360°; otherwise the facing is picked between Direction − Direction Range and Direction + Direction Range."
     },
     {
       "Field": "orientationRange",
       "Name": "Direction Range",
-      "Description": ""
+      "Description": "Degrees either side of Direction that the facing may vary. Only used when Direction is 0 or more."
     },
     {
       "Field": "spacing",
-      "Name": "Model Spacing",
-      "Description": ""
+      "Name": "Grid Spacing",
+      "Description": "Grid placement only (Placement Method 1): distance between grid points; every other row is shifted by half a step. Retail: 0 except two rows (2 and 1)."
     },
     {
       "Field": "dithering",
-      "Name": "Dithering",
-      "Description": ""
+      "Name": "Grid Dithering",
+      "Description": "Grid placement only: how the painted grass weight thins out the grid. 0: 8×8 ordered dither. 1: 4×4 ordered dither. 2: filled where the weight is at least 50%. 3: every grid point filled. Retail: 0."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "simpleModelName",
       "Name": "Simple Model Name",
-      "Description": ""
+      "Description": "Low-detail asset model (cluster type 4). Leave empty when unused."
     },
     {
       "Field": "model1Name",
       "Name": "Model Name [1]",
-      "Description": ""
+      "Description": "Second asset model. Retail rows that set this mostly use cluster type 5 for LOD 1 or 2."
     }
   ]
 }

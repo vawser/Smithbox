@@ -2,102 +2,102 @@
   "Param": "REINFORCE_PARAM_PROTECTOR_ST",
   "Type": "REINFORCE_PARAM_PROTECTOR_ST",
   "Name": "REINFORCE_PARAM_PROTECTOR_ST",
-  "Description": "Defines upgrades of Armor. Unused in Elden Ring.\nTailoring is handled by a shop and functions as total item replacement, not variation.",
+  "Description": "Defines armor reinforcement. An armor piece uses the row Reinforce Type ID + the last two digits of its ID, and its defences and resistances are multiplied by that row's rates. Armor can't be upgraded in Elden Ring: every retail armor uses row 0, whose rates are all 1. Keep that row: without a reinforce row, armor still gives its defences but no status resistance.",
   "Fields": [
     {
       "Field": "physicsDefRate",
       "Name": "Defence %: Physical",
-      "Description": "Physical defense correction value"
+      "Description": "Multiplier on the armor's physical defence. The armor's own strike, slash and pierce bonuses still apply on top."
     },
     {
       "Field": "magicDefRate",
       "Name": "Defence %: Magic",
-      "Description": "Magic defense correction value"
+      "Description": "Multiplier on the armor's magic defence."
     },
     {
       "Field": "fireDefRate",
       "Name": "Defence %: Fire",
-      "Description": "Fire defense correction value"
+      "Description": "Multiplier on the armor's fire defence."
     },
     {
       "Field": "thunderDefRate",
       "Name": "Defence %: Lightning",
-      "Description": "Electric shock defense correction value"
+      "Description": "Multiplier on the armor's lightning defence. The game also uses it for the armor's holy defence (Defence %: Holy is not read)."
     },
     {
       "Field": "slashDefRate",
       "Name": "Defence %: Slash",
-      "Description": "Slash defense correction value"
+      "Description": "Appears unused by the game: the armor's slash bonus isn't scaled by the reinforce row. Retail: always 1."
     },
     {
       "Field": "blowDefRate",
       "Name": "Defence %: Strike",
-      "Description": "Impact defense correction value"
+      "Description": "Appears unused by the game: the armor's strike bonus isn't scaled by the reinforce row. Retail: always 1."
     },
     {
       "Field": "thrustDefRate",
       "Name": "Defence %: Thrust",
-      "Description": "Correction value of piercing defense power"
+      "Description": "Appears unused by the game: the armor's pierce bonus isn't scaled by the reinforce row. Retail: always 1."
     },
     {
       "Field": "resistPoisonRate",
       "Name": "Aux Resist %: Poison",
-      "Description": "Poison resistance correction value"
+      "Description": "Multiplier on the armor's poison resistance."
     },
     {
       "Field": "resistDiseaseRate",
       "Name": "Aux Resist %: Scarlet Rot",
-      "Description": "Epidemic resistance correction value"
+      "Description": "Multiplier on the armor's scarlet rot resistance."
     },
     {
       "Field": "resistBloodRate",
       "Name": "Aux Resist %: Blood Loss",
-      "Description": "Bleeding resistance correction value"
+      "Description": "Multiplier on the armor's blood loss resistance."
     },
     {
       "Field": "resistCurseRate",
       "Name": "Aux Resist %: Death Blight",
-      "Description": "Curse resistance correction value"
+      "Description": "Multiplier on the armor's death blight resistance."
     },
     {
       "Field": "residentSpEffectId1",
       "Name": "Passive SpEffect ID [1] Offset",
-      "Description": "Addition correction value for resident special effect ID1"
+      "Description": "Added to the armor's Resident SpEffect ID [1]. Retail: always 0."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "Passive SpEffect ID [2] Offset",
-      "Description": "Addition correction value for resident special effect ID2"
+      "Description": "Added to the armor's Resident SpEffect ID [2]. Retail: always 0."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "Passive SpEffect ID [3] Offset",
-      "Description": "Addition correction value for resident special effect ID3"
+      "Description": "Added to the armor's Resident SpEffect ID [3]. Retail: always 0."
     },
     {
       "Field": "materialSetId",
-      "Name": "Reinforcement Material Set ID",
-      "Description": "Addition correction value of material parameter ID"
+      "Name": "Reinforcement Material Set Offset",
+      "Description": "Appears unused by the game: armor can't be reinforced in Elden Ring."
     },
     {
       "Field": "darkDefRate",
-      "Name": "Absorption %: Holy",
-      "Description": "Dark defense correction value"
+      "Name": "Defence %: Holy",
+      "Description": "Appears unused by the game: holy defence is multiplied by Defence %: Lightning instead. Retail: always 1."
     },
     {
       "Field": "resistFreezeRate",
-      "Name": "Aux Resist %: Frost",
-      "Description": "Cold resistance correction value"
+      "Name": "Aux Resist %: Frostbite",
+      "Description": "Multiplier on the armor's frostbite resistance. Retail: always 1."
     },
     {
       "Field": "resistSleepRate",
       "Name": "Aux Resist %: Sleep",
-      "Description": "Correction value for sleep tolerance"
+      "Description": "Multiplier on the armor's sleep resistance. Retail: always 1."
     },
     {
       "Field": "resistMadnessRate",
       "Name": "Aux Resist %: Madness",
-      "Description": "Madness resistance correction value"
+      "Description": "Multiplier on the armor's madness resistance. Retail: always 1."
     }
   ]
 }

@@ -2,367 +2,367 @@
   "Param": "PLAYER_COMMON_PARAM_ST",
   "Type": "PLAYER_COMMON_PARAM_ST",
   "Name": "PLAYER_COMMON_PARAM_ST",
-  "Description": null,
+  "Description": "Global player settings: resist recovery, flask allocation, low-stat penalties, pickup animations and more. Only the first row is used.",
   "Fields": [
     {
       "Field": "playerFootEffect_bySFX",
       "Name": "Automatic Foot Effect SFX Identifier",
-      "Description": "The identifier used for the SFX ID of the automatic foot effect. It corresponds to ZZZ of XYYZZZ."
+      "Description": "Footstep effect group: the last three digits of automatic footstep SFX IDs."
     },
     {
       "Field": "snipeModeDrawAlpha_FadeTime",
       "Name": "Precision Shoot - Player Model Fade Time",
-      "Description": "The fade time when hiding the player during precision shooting. The unit is seconds"
+      "Description": "Seconds the player model takes to fade out when aiming in first person (bows, crossbows)."
     },
     {
       "Field": "toughnessRecoverCorrection",
       "Name": "Toughness Recovery Correction",
-      "Description": "A correction value used to calculate the player's toughness recovery time."
+      "Description": "Multiplier on the player's poise recovery time. Retail: 1."
     },
     {
       "Field": "baseMagicSlotSize",
       "Name": "Base Memory Slot Count",
-      "Description": "Magic memory slot initial value"
+      "Description": "Memory slots the player has with no Memory Stones. Retail: 2."
     },
     {
       "Field": "baseAccSlotNum",
       "Name": "Base Talisman Slot Count",
-      "Description": "Talisman equipment slot initial value"
+      "Description": "Talisman slots the player has with no Talisman Pouches. Retail: 1."
     },
     {
       "Field": "reserved02",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "animeID_DropItemPick",
       "Name": "Item Pick-up - Animation ID",
-      "Description": "Animation ID when picking up a drop item"
+      "Description": "Animation for picking up dropped items."
     },
     {
       "Field": "resistRecoverPoint_Sleep_Player",
       "Name": "Player Resist Recovery - Sleep",
-      "Description": "Player resistance value recovery amount_sleep point / s"
+      "Description": "Sleep buildup the player loses per second."
     },
     {
       "Field": "flareOverrideHomingAngle",
       "Name": "Flare Overwrite Homing Angle",
-      "Description": "Flare overwrite guidance performance deg / s (-1 no overwrite)"
+      "Description": "Turn rate, in degrees per second, forced on homing projectiles while a flare effect is active. -1: no override."
     },
     {
       "Field": "flareOverrideHomingStopRange",
       "Name": "Flare Overwrite Homing Stop Range",
-      "Description": "Flare overwrite guidance stop distance m (-1 no overwrite)"
+      "Description": "Distance, in metres, at which homing stops while a flare effect is active. -1: no override."
     },
     {
       "Field": "animeID_SleepCollectorItemPick",
       "Name": "Sleep Collector Item Pick-up - Animation ID",
-      "Description": "Animation ID when acquiring Nemuri item"
+      "Description": "Animation for taking an item from a sleeping enemy."
     },
     {
       "Field": "unlockEventFlagBaseId_forWepAttr",
       "Name": "Weapon Affinity Unlock - Base Event Flag ID",
-      "Description": "Weapon attribute ban event flag base ID"
+      "Description": "First event flag for unlocking weapon affinities. Affinity N is unlocked by flag base + N x step."
     },
     {
       "Field": "systemEnchant_BigRune",
       "Name": "Great Rune Activation - SpEffect ID",
-      "Description": "Special effect Id to call when a large rune is activated from the system"
+      "Description": "SpEffect applied when a Great Rune is activated."
     },
     {
       "Field": "lowStatus_AtkPowDown",
       "Name": "Insufficient Stats - Attack Power Reduction",
-      "Description": "Insufficient status Basic attack power reduction"
+      "Description": "Attack rate lost when wielding a weapon without the required stats (0.4: attacks deal 60%)."
     },
     {
       "Field": "lowStatus_ConsumeStaminaRate",
       "Name": "Insufficient Stats - Stamina Consumption",
-      "Description": "Insufficient status Stamina consumption ratio"
+      "Description": "Stamina cost multiplier for weapons used without the required stats. Retail: 1.5."
     },
     {
       "Field": "lowStatus_AtkGuardBreak",
       "Name": "Insufficient Stats - Stamina Damage Reduction",
-      "Description": "Insufficient status Playing attack power"
+      "Description": "Guard-break value used for weapons wielded without the required stats. Retail: 5."
     },
     {
       "Field": "guardStatusCorrect_MaxStatusVal",
       "Name": "Guard Boost Correction - Max Value",
-      "Description": "Maximum status value to increase performance used when calculating the status correction value of shield performance"
+      "Description": "Stat value at which the stat bonus to guard performance stops increasing. Retail: 70."
     },
     {
       "Field": "unlockEventFlagStepNum_forWepAttr",
       "Name": "Weapon Affinity Unlock - Event Flag Step Offset",
-      "Description": "How much space is left for each weapon attribute ID from the base ID. Weapon attribute ban event flag ID = Weapon attribute ban event flag base ID + Weapon attribute ID x Weapon attribute ban event flag number of steps"
+      "Description": "Flag spacing between affinities. Affinity N is unlocked by flag base + N x step."
     },
     {
       "Field": "retributionMagic_damageCountNum",
       "Name": "Retribution Magic - Damage Trigger Count",
-      "Description": "Causal Retribution_Number of Damages Before Counterattack"
+      "Description": "Hits taken, within the time window, that trigger a retaliation spell."
     },
     {
       "Field": "retributionMagic_damageCountRemainTime",
       "Name": "Retribution Magic - Damage Trigger Duration",
-      "Description": "Causal response_Number of damages until counterattack Duration s"
+      "Description": "Seconds within which the hits must land to trigger the retaliation spell."
     },
     {
       "Field": "retributionMagic_burstDmypolyId",
       "Name": "Retribution Magic - Explosion Dummy Poly ID",
-      "Description": "Causal Retribution_Counterattack Magic Damipoli ID"
+      "Description": "Player dummy poly the retaliation spell is cast from."
     },
     {
       "Field": "retributionMagic_burstMagicParamId",
       "Name": "Retribution Magic - Explosion Magic Param ID",
-      "Description": "Causal Retribution_Counterattack Magic Param ID"
+      "Description": "Magic cast by the retaliation effect."
     },
     {
       "Field": "chrAimCam_rideOffsetHeight",
       "Name": "Mounted Precision Shoot - Camera Offset Height",
-      "Description": "Riding precision shooting camera offset height"
+      "Description": "Camera height offset when aiming in first person while mounted."
     },
     {
       "Field": "reserved23",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "arrowCaseWepBindDmypolyId",
       "Name": "Quiver Dummy Poly ID",
-      "Description": "Quiver adsorption Damipoly ID"
+      "Description": "Dummy poly the quiver is attached to."
     },
     {
       "Field": "boltPouchWepBindDmypolyId",
       "Name": "Bolt Case Dummy Poly ID",
-      "Description": "Bolt cylinder adsorption Damipoly ID (However, if the bolt cylinder is used alone, the quiver Damipoly ID is used)"
+      "Description": "Dummy poly the bolt case is attached to. A bolt case used on its own uses the quiver dummy poly."
     },
     {
       "Field": "estusFlaskAllocateRate",
       "Name": "Multiplayer Flask Reduction",
-      "Description": "Multi-time client bottle correction magnification (0.5 specified to halve the number of possessions)"
+      "Description": "Flask multiplier for summoned players: they get owned flasks x this, rounded down. Retail: 0.5."
     },
     {
       "Field": "reserved38",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "kickAcceptanceDeg",
       "Name": "Kick Acceptance Angle",
-      "Description": "Angle at which a kick can be taken when viewed from the front of the player"
+      "Description": "Angle, in degrees, in front of the player within which a kick can be performed."
     },
     {
       "Field": "npcPlayerAnalogWeightRate_Light",
       "Name": "NPC Player - Weight Rate Light",
-      "Description": "Analog weight ratio for NPC players %. lightweight."
+      "Description": "Movement input strength, in percent, for light-load NPC players."
     },
     {
       "Field": "npcPlayerAnalogWeightRate_Normal",
       "Name": "NPC Player - Weight Rate Normal",
-      "Description": "Analog weight ratio for NPC players %. Medium weight."
+      "Description": "Movement input strength, in percent, for medium-load NPC players. Retail: 26."
     },
     {
       "Field": "npcPlayerAnalogWeightRate_Heavy",
       "Name": "NPC Player - Weight Rate Heavy",
-      "Description": "Analog weight ratio for NPC players %. weight."
+      "Description": "Movement input strength, in percent, for heavy-load NPC players. Retail: 51."
     },
     {
       "Field": "npcPlayerAnalogWeightRate_WeightOver",
       "Name": "NPC Player - Weight Rate Encumbered",
-      "Description": "Analog weight ratio for NPC players %. Overweight."
+      "Description": "Movement input strength, in percent, for overloaded NPC players. Retail: 101."
     },
     {
       "Field": "npcPlayerAnalogWeightRate_SuperLight",
       "Name": "NPC Player - Weight Rate Ninja",
-      "Description": "Analog weight ratio for NPC players %. Super lightweight."
+      "Description": "Movement input strength, in percent, for NPC players under the lightest weight class."
     },
     {
       "Field": "reserved45",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "clearCountCorrectBaseSpEffectId",
       "Name": "Game Clear - Base SpEffect ID",
-      "Description": "Criteria ID for special effects applied for lap correction"
+      "Description": "SpEffect for the first journey. New Game+ cycle N applies this ID + (N - 1)."
     },
     {
       "Field": "arrowBoltModelIdOffset",
       "Name": "Ammunition Model ID Offset",
-      "Description": "Offset added to the model ID when equipped in slot 1 when displaying the arrow and bolt models. (Model Id + offset value)"
+      "Description": "Added to the arrow or bolt model ID for the second ammo slot."
     },
     {
       "Field": "arrowBoltRemainingNumModelMaskThreshold1",
       "Name": "Ammunition Count Model Mask Threshold 1",
-      "Description": "When displaying the arrow and bolt models, the one-step judgment value % of the threshold value when applying the display mask by the number. (If it is more than this value, it is displayed in one step)"
+      "Description": "Remaining ammo, in percent, above which the quiver shows its first fill step."
     },
     {
       "Field": "arrowBoltRemainingNumModelMaskThreshold2",
       "Name": "Ammunition Count Model Mask Threshold 2",
-      "Description": "Two-step judgment value % of the threshold value when applying a display mask based on the number of arrows and bolt models. (If it is more than this value, it is displayed in 2 steps)"
+      "Description": "Remaining ammo, in percent, above which the quiver shows its second fill step."
     },
     {
       "Field": "reserved27",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "resistRecoverPoint_Poision_Player",
       "Name": "Player Resist Recovery - Poison",
-      "Description": "Player resistance recovery amount_poison point / s"
+      "Description": "Poison buildup the player loses per second."
     },
     {
       "Field": "resistRecoverPoint_Desease_Player",
       "Name": "Player Resist Recovery - Scarlet Rot",
-      "Description": "Player resistance value recovery amount_plague point / s"
+      "Description": "Scarlet Rot buildup the player loses per second."
     },
     {
       "Field": "resistRecoverPoint_Blood_Player",
       "Name": "Player Resist Recovery - Blood Loss",
-      "Description": "Player resistance recovery amount_bleeding point / s"
+      "Description": "Blood Loss buildup the player loses per second."
     },
     {
       "Field": "resistRecoverPoint_Curse_Player",
       "Name": "Player Resist Recovery - Death Blight",
-      "Description": "Player resistance recovery amount_curse point / s"
+      "Description": "Death Blight buildup the player loses per second."
     },
     {
       "Field": "resistRecoverPoint_Freeze_Player",
       "Name": "Player Resist Recovery - Frostbite",
-      "Description": "Player resistance value recovery amount_cold air point / s"
+      "Description": "Frostbite buildup the player loses per second."
     },
     {
       "Field": "resistRecoverPoint_Poision_Enemy",
       "Name": "Enemy Resist Recovery - Poison",
-      "Description": "Enemy resistance recovery amount_poison point / s"
+      "Description": "Poison buildup enemies lose per second."
     },
     {
       "Field": "resistRecoverPoint_Desease_Enemy",
       "Name": "Enemy Resist Recovery - Scarlet Rot",
-      "Description": "Enemy resistance value recovery amount_plague point / s"
+      "Description": "Scarlet Rot buildup enemies lose per second."
     },
     {
       "Field": "resistRecoverPoint_Blood_Enemy",
       "Name": "Enemy Resist Recovery - Blood Loss",
-      "Description": "Enemy resistance recovery amount_bleeding point / s"
+      "Description": "Blood Loss buildup enemies lose per second."
     },
     {
       "Field": "resistRecoverPoint_Curse_Enemy",
       "Name": "Enemy Resist Recovery - Death Blight",
-      "Description": "Enemy resistance recovery amount_curse point / s"
+      "Description": "Death Blight buildup enemies lose per second."
     },
     {
       "Field": "resistRecoverPoint_Freeze_Enemy",
       "Name": "Enemy Resist Recovery - Frostbite",
-      "Description": "Enemy resistance value recovery amount_cold air point / s"
+      "Description": "Frostbite buildup enemies lose per second."
     },
     {
       "Field": "requestTimeLeftBothHand",
       "Name": "Button Input Time for Both-Hand Left",
-      "Description": "Button input time when holding both left hand"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "resistRecoverPoint_Madness_Player",
       "Name": "Player Resist Recovery - Madness",
-      "Description": "Player resistance value recovery amount_madness point / s"
+      "Description": "Madness buildup the player loses per second."
     },
     {
       "Field": "animeID_MaterialItemPick",
       "Name": "Material Pick-up - Animation ID",
-      "Description": "Animation ID when picking up a material item"
+      "Description": "Animation for gathering materials. Retail: 999999 (no special animation)."
     },
     {
       "Field": "hpEstusFlaskAllocateRateForYellowMonk",
       "Name": "HP Flask Reduction - Yellow Monk",
-      "Description": "Yellow Cloth HP Est Bottle Correction Magnification"
+      "Description": "Crimson Tears multiplier for the Old Monk of Yellow phantom (owned x this, rounded down, plus the offset)."
     },
     {
       "Field": "hpEstusFlaskAllocateOffsetForYellowMonk",
       "Name": "HP Flask Offset - Yellow Monk",
-      "Description": "Yellow Cloth HP Est Bottle Offset"
+      "Description": "Crimson Tears added for the Old Monk of Yellow phantom. Retail: 3 (with rate 0, exactly 3)."
     },
     {
       "Field": "mpEstusFlaskAllocateRateForYellowMonk",
       "Name": "FP Flask Reduction - Yellow Monk",
-      "Description": "Yellow Cloth MP Est Bottle Correction Magnification"
+      "Description": "Cerulean Tears multiplier for the Old Monk of Yellow phantom (owned x this, rounded down, plus the offset)."
     },
     {
       "Field": "mpEstusFlaskAllocateOffsetForYellowMonk",
       "Name": "FP Flask Offset - Yellow Monk",
-      "Description": "Yellow Cloth MP Est Bottle Offset"
+      "Description": "Cerulean Tears added for the Old Monk of Yellow phantom. Retail: 3."
     },
     {
       "Field": "resistRecoverPoint_Sleep_Enemy",
       "Name": "Enemy Resist Recovery - Sleep",
-      "Description": "Enemy resistance value recovery amount_sleep point / s"
+      "Description": "Sleep buildup enemies lose per second."
     },
     {
       "Field": "resistRecoverPoint_Madness_Enemy",
       "Name": "Enemy Resist Recovery - Madness",
-      "Description": "Enemy resistance value recovery amount_madness point / s"
+      "Description": "Madness buildup enemies lose per second."
     },
     {
       "Field": "resistCurseItemId",
       "Name": "Resist Death Blight Item ID",
-      "Description": "Abnormal condition_immediate death_immediate death Item ID"
+      "Description": "Item that protects against Death Blight. Retail: -1 (none)."
     },
     {
       "Field": "resistCurseItemMaxNum",
       "Name": "Resist Death Blight Item Max Count",
-      "Description": "Abnormal condition_immediate death_maximum number of instant death items"
+      "Description": "Maximum number of Death Blight protection items held. Retail: 0."
     },
     {
       "Field": "reserved_123",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "resistCurseItemSpEffectBaseId",
       "Name": "Resist Death Blight Item - Base SpEffect ID",
-      "Description": "Abnormal condition_Instant death_Instant death Item possession Special effect base ID"
+      "Description": "Base SpEffect for holding Death Blight protection items. Retail: -1."
     },
     {
       "Field": "resistCurseItemLotParamId_map",
       "Name": "Resist Death Blight Item - Map Item Lot ID",
-      "Description": "Abnormal condition_immediate death_immediate death item lottery ID_for map"
+      "Description": "Map ItemLotParam for Death Blight protection items. Retail: -1."
     },
     {
       "Field": "reserved41_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "duelExtraFlaskRate",
       "Name": "Duel: Extra Flask Rate",
-      "Description": ""
+      "Description": "Flask multiplier in arena Duels. Retail: 0."
     },
     {
       "Field": "duelExtraFlaskCount",
       "Name": "Duel: Extra Flask Count",
-      "Description": ""
+      "Description": "Flasks added in arena Duels. Retail: 3."
     },
     {
       "Field": "brawlExtraFlaskRate",
-      "Name": "Brawl: Extra Flask Rate",
-      "Description": ""
+      "Name": "Combat Ordeal: Extra Flask Rate",
+      "Description": "Flask multiplier in arena Combat Ordeal (free-for-all). Retail: 0."
     },
     {
       "Field": "brawlExtraFlaskCount",
-      "Name": "Brawl: Extra Flask Rate",
-      "Description": ""
+      "Name": "Combat Ordeal: Extra Flask Count",
+      "Description": "Flasks added in arena Combat Ordeal (free-for-all). Retail: 1."
     },
     {
       "Field": "teamMatchExtraFlaskRate",
-      "Name": "Team Match: Extra Flask Rate",
-      "Description": ""
+      "Name": "United Combat: Extra Flask Rate",
+      "Description": "Flask multiplier in arena United Combat (team). Retail: 0."
     },
     {
       "Field": "teamMatchExtraFlaskCount",
-      "Name": "Team Match: Extra Flask Rate",
-      "Description": ""
+      "Name": "United Combat: Extra Flask Count",
+      "Description": "Flasks added in arena United Combat (team). Retail: 1."
     },
     {
       "Field": "reserved41",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

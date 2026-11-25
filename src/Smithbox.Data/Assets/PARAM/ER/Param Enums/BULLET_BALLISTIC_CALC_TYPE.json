@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Emit Forwards"
+          "Text": "Direct"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Emit Backwards"
+          "Text": "Howitzer (Arc to Target)"
         }
       ]
     }

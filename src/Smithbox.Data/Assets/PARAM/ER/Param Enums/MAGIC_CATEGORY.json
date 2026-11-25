@@ -33,6 +33,15 @@
           "Text": "Pyromancy"
         }
       ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Vow Magic"
+        }
+      ]
     }
   ]
 }

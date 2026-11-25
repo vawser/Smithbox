@@ -2,162 +2,162 @@
   "Param": "KNOCKBACK_PARAM_ST",
   "Type": "KNOCKBACK_PARAM_ST",
   "Name": "KNOCKBACK_PARAM_ST",
-  "Description": null,
+  "Description": "Timing of the knockback push a character gets from a hit. The hit sets the push direction and distance; when the damage or guard reaction starts the knockback, the row's entry for that reaction sets how the distance is covered: full speed for the Full Speed Time, then a linear slow-down to a stop over the Deceleration Time. The total distance stays the same, so the speed is distance ÷ (full speed time + deceleration time ÷ 2). Players use their body armour's Knockback Param ID (retail: row 1), NPCs their NpcParam Knockback Param ID (retail: row 0).",
   "Fields": [
     {
       "Field": "damage_Min_ContTime",
-      "Name": "Damage Level - Minimum - Maintenance Time",
-      "Description": "Set the maintenance time used for tiny damage animation"
+      "Name": "Minimum Damage - Full Speed Time",
+      "Description": "Seconds the knockback moves at full speed for the minimum damage reaction, before the deceleration starts."
     },
     {
       "Field": "damage_S_ContTime",
-      "Name": "Damage Level - Small - Maintenance Time",
-      "Description": "Set the maintenance time used for small damage animation"
+      "Name": "Small Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the small damage reaction."
     },
     {
       "Field": "damage_M_ContTime",
-      "Name": "Damage Level - Medium - Maintenance Time",
-      "Description": "Set the maintenance time used for medium damage animation"
+      "Name": "Medium Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the medium damage reaction."
     },
     {
       "Field": "damage_L_ContTime",
-      "Name": "Damage Level - Heavy - Maintenance Time",
-      "Description": "Set the maintenance time used for heavy damage animation"
+      "Name": "Large Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the large damage reaction."
     },
     {
       "Field": "damage_BlowS_ContTime",
-      "Name": "Damage Level - Small Blow-off - Maintenance Time",
-      "Description": "Set the maintenance time used for small blow-off damage animation"
+      "Name": "Small Blow-off - Full Speed Time",
+      "Description": "Seconds at full speed for the small blow-off reaction."
     },
     {
       "Field": "damage_BlowM_ContTime",
-      "Name": "Damage Level - Heavy Blow-off - Maintenance Time",
-      "Description": "Set the maintenance time used during the big blow damage animation"
+      "Name": "Medium Blow-off - Full Speed Time",
+      "Description": "Seconds at full speed for the medium blow-off reaction."
     },
     {
       "Field": "damage_Strike_ContTime",
-      "Name": "Damage Level - Strike - Maintenance Time",
-      "Description": "Set the maintenance time used for slamming damage animation"
+      "Name": "Slam Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the slam (knocked down) reaction."
     },
     {
       "Field": "damage_Uppercut_ContTime",
-      "Name": "Damage Level - Uppercut - Maintenance Time",
-      "Description": "Set the maintenance time used for launch damage animation"
+      "Name": "Launch Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the launch (uppercut) reaction."
     },
     {
       "Field": "damage_Push_ContTime",
-      "Name": "Damage Level - Push - Maintenance Time",
-      "Description": "Set the maintenance time used for push damage animation"
+      "Name": "Push Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the push reaction."
     },
     {
       "Field": "damage_Breath_ContTime",
-      "Name": "Damage Level - Breath - Maintenance Time",
-      "Description": "Set the maintenance time used for breath damage animation"
+      "Name": "Breath Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the breath reaction. Retail leaves it at 0 in every row."
     },
     {
       "Field": "damage_HeadShot_ContTime",
-      "Name": "Damage Level - Headshot - Maintenance Time",
-      "Description": "Headshot damage Set the maintenance time used during animation"
+      "Name": "Headshot Damage - Full Speed Time",
+      "Description": "Seconds at full speed for the headshot reaction. Retail leaves it at 0 in every row."
     },
     {
       "Field": "guard_S_ContTime",
-      "Name": "Guard Damage Level - Small - Maintenance Time",
-      "Description": "Set the maintenance time used for guard receiving small animation"
+      "Name": "Small Guard - Full Speed Time",
+      "Description": "Seconds at full speed for the small guard (blocked hit) reaction."
     },
     {
       "Field": "guard_L_ContTime",
-      "Name": "Guard Damage Level - Heavy - Maintenance Time",
-      "Description": "Set the maintenance time used at the time of guard receiving large animation"
+      "Name": "Large Guard - Full Speed Time",
+      "Description": "Seconds at full speed for the large guard reaction."
     },
     {
       "Field": "guard_LL_ContTime",
-      "Name": "Guard Damage Level - Very Heavy - Maintenance Time",
-      "Description": "Set the maintenance time used for guard receiving oversized animation"
+      "Name": "Very Large Guard - Full Speed Time",
+      "Description": "Seconds at full speed for the very large guard reaction."
     },
     {
       "Field": "guardBrake_ContTime",
-      "Name": "Guard Damage Level - Break - Maintenance Time",
-      "Description": "Set the maintenance time specified at the time of guard scraping animation"
+      "Name": "Guard Break - Full Speed Time",
+      "Description": "Seconds at full speed for the guard break reaction."
     },
     {
       "Field": "damage_Min_DecTime",
-      "Name": "Damage Level - Minimum - Deceleration Time",
-      "Description": "Set the deceleration time used for minimal damage animation"
+      "Name": "Minimum Damage - Deceleration Time",
+      "Description": "Seconds over which the knockback slows linearly from full speed to a stop for the minimum damage reaction. 0: stops abruptly at the end of the full speed time."
     },
     {
       "Field": "damage_S_DecTime",
-      "Name": "Damage Level - Small - Deceleration Time",
-      "Description": "Set the deceleration time used for small damage animation"
+      "Name": "Small Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the small damage reaction."
     },
     {
       "Field": "damage_M_DecTime",
-      "Name": "Damage Level - Medium - Deceleration Time",
-      "Description": "Set the deceleration time used for medium damage animation"
+      "Name": "Medium Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the medium damage reaction."
     },
     {
       "Field": "damage_L_DecTime",
-      "Name": "Damage Level - Heavy - Deceleration Time",
-      "Description": "Set the deceleration time used for heavy damage animation"
+      "Name": "Large Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the large damage reaction."
     },
     {
       "Field": "damage_BlowS_DecTime",
-      "Name": "Damage Level - Small Blow-off - Deceleration Time",
-      "Description": "Set the deceleration time used for small blow-off damage animation"
+      "Name": "Small Blow-off - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the small blow-off reaction."
     },
     {
       "Field": "damage_BlowM_DecTime",
-      "Name": "Damage Level - Heavy Blow-off - Deceleration Time",
-      "Description": "Large blow-off damage Set the deceleration time used during animation"
+      "Name": "Medium Blow-off - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the medium blow-off reaction."
     },
     {
       "Field": "damage_Strike_DecTime",
-      "Name": "Damage Level - Strike - Deceleration Time",
-      "Description": "Set the deceleration time used during slamming damage animation"
+      "Name": "Slam Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the slam (knocked down) reaction."
     },
     {
       "Field": "damage_Uppercut_DecTime",
-      "Name": "Damage Level - Uppercut - Deceleration Time",
-      "Description": "Set the deceleration time used during launch damage animation"
+      "Name": "Launch Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the launch (uppercut) reaction."
     },
     {
       "Field": "damage_Push_DecTime",
-      "Name": "Damage Level - Push - Deceleration Time",
-      "Description": "Set the deceleration time used during push damage animation"
+      "Name": "Push Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the push reaction."
     },
     {
       "Field": "damage_Breath_DecTime",
-      "Name": "Damage Level - Breath - Deceleration Time",
-      "Description": "Set the deceleration time used during breath damage animation"
+      "Name": "Breath Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the breath reaction. Retail leaves it at 0 in every row."
     },
     {
       "Field": "damage_HeadShot_DecTime",
-      "Name": "Damage Level - Headshot - Deceleration Time",
-      "Description": "Headshot damage Set the deceleration time used during animation"
+      "Name": "Headshot Damage - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the headshot reaction. Retail leaves it at 0 in every row."
     },
     {
       "Field": "guard_S_DecTime",
-      "Name": "Guard Damage Level - Small - Deceleration Time",
-      "Description": "Set the deceleration time used for guard receiving small animation"
+      "Name": "Small Guard - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the small guard (blocked hit) reaction."
     },
     {
       "Field": "guard_L_DecTime",
-      "Name": "Guard Damage Level - Heavy - Deceleration Time",
-      "Description": "Set the deceleration time used for guard receiving large animation"
+      "Name": "Large Guard - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the large guard reaction."
     },
     {
       "Field": "guard_LL_DecTime",
-      "Name": "Guard Damage Level - Very Break - Deceleration Time",
-      "Description": "Set the deceleration time used for guard receiving oversized animation"
+      "Name": "Very Large Guard - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the very large guard reaction."
     },
     {
       "Field": "guardBrake_DecTime",
-      "Name": "Guard Damage Level - Break - Deceleration Time",
-      "Description": "Set the deceleration time specified at the time of guard breaking animation"
+      "Name": "Guard Break - Deceleration Time",
+      "Description": "Seconds of linear slow-down for the guard break reaction."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

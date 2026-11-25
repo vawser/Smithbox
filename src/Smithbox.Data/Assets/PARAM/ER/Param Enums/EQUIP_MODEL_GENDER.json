@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Male"
+          "Text": "Body Type A Only"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Female"
+          "Text": "Body Type B Only"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Per Body Type"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No Gender"
+          "Text": "Shared Model"
         }
       ]
     }

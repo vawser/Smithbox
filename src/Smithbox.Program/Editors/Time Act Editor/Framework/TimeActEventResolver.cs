@@ -228,16 +228,19 @@ public class TimeActEventResolver
             ranges.Select(r => r.Range).ToList());
     }
 
-    // ThrowParam rows are numbered in a different way in each game, but always end in two digits that the AtkParam's
-    // throwTypeId picks among the rows of a thrower (ER: 34201000 Blaidd grab #1, 34201010 grab #2 for throwTypeId 10)
+    // Fallback when the rows' own throwTypeId doesn't match: ThrowParam IDs end in two digits that the AtkParam's
+    // throwTypeId picks among the rows of a thrower (ER: 34201000 Blaidd grab #1, 34201010 grab #2). NPC grabs reach
+    // their rows by another path in the game, and their retail numbering fits this rule
     private const int ThrowVariantDigits = 100;
 
     /// <summary>
     /// The ThrowParam rows a throw attack of the character can start: those with the character as the thrower
-    /// (AtkChrId) against no particular character (DefChrId 0), whose ID ends in the throwTypeId of the AtkParam row. A
-    /// character can have several (a grab, a backstab, a riposte after a parry), for whichever state the other is in.
-    /// Without a row ending in the offset, a throwTypeId of 0 takes all of the thrower's rows (DS1R's player rows are
-    /// numbered 1 to 4). Also gives the facing the other character must have (DiffAngMin to DiffAngMax).
+    /// (AtkChrId) against no particular character (DefChrId 0) whose own throwTypeId equals the AtkParam row's, as the
+    /// game selects them (ER, Claude/Documentation/Param Fields (ER).md §3O). When no row matches (NPC grabs, or a
+    /// ThrowParam without the field), the rows whose ID ends in the throwTypeId; without those either, a throwTypeId of
+    /// 0 takes all of the thrower's rows. A character can have several (a grab, a backstab, a riposte after a parry),
+    /// for whichever state the other is in. Also gives the facing the other character must have (DiffAngMin to
+    /// DiffAngMax).
     /// </summary>
     private List<(TimeActThrowRange Range, string Facing)> FindThrowRanges(Param.Row attack, TimeActContainer container)
     {
@@ -260,7 +263,11 @@ public class TimeActEventResolver
             var own = throws.Rows.Where(r => r.ID > 0 && CharacterComposition.GetValue(r, "AtkChrId") == thrower &&
                                              CharacterComposition.GetValue(r, "DefChrId") == 0).ToList();
 
-            var picked = own.Where(r => r.ID % ThrowVariantDigits == offset % ThrowVariantDigits).ToList();
+            var picked = own.Where(r => CharacterComposition.HasField(r, "throwTypeId") &&
+                                        CharacterComposition.GetValue(r, "throwTypeId") == offset).ToList();
+
+            if (picked.Count == 0)
+                picked = own.Where(r => r.ID % ThrowVariantDigits == offset % ThrowVariantDigits).ToList();
 
             if (picked.Count == 0 && offset == 0)
                 picked = own;

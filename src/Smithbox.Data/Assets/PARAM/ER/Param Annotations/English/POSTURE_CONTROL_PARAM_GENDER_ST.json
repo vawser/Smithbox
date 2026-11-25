@@ -2,147 +2,147 @@
   "Param": "POSTURE_CONTROL_PARAM_GENDER_ST",
   "Type": "POSTURE_CONTROL_PARAM_GENDER_ST",
   "Name": "POSTURE_CONTROL_PARAM_GENDER_ST",
-  "Description": null,
+  "Description": "Body-type posture for the elbows and legs. Row ID = posture type × 100 + 0 for Body Type A or 1 for Body Type B; posture type is 0 normally, 1 while riding Torrent and 2 while in stealth (crouching). Each aNNN group is picked by the active weapon motion category (as in PostureControlParam_WepRight); categories without a group get no twist, and a missing row gives 0. Values are the maximum twist: the behaviour script scales them by a weight set by the current animation's TimeAct events and eases toward the result (up to 90 per second). Retail: the Body Type A rows are all 0.",
   "Fields": [
     {
       "Field": "a000_rightElbowIO",
       "Name": "[a000] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a000_leftElbowIO",
       "Name": "[a000] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a000_bothLegsIO",
       "Name": "[a000] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_rightElbowIO",
       "Name": "[a002] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_leftElbowIO",
       "Name": "[a002] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_bothLegsIO",
       "Name": "[a002] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a003_rightElbowIO",
       "Name": "[a003] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a003_leftElbowIO",
       "Name": "[a003] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a003_bothLegsIO",
       "Name": "[a003] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a010_rightElbowIO",
       "Name": "[a010] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 10. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a010_leftElbowIO",
       "Name": "[a010] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 10. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a010_bothLegsIO",
       "Name": "[a010] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 10. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a012_rightElbowIO",
       "Name": "[a012] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 12. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a012_leftElbowIO",
       "Name": "[a012] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 12. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a012_bothLegsIO",
       "Name": "[a012] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 12. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a013_rightElbowIO",
       "Name": "[a013] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 13. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a013_leftElbowIO",
       "Name": "[a013] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 13. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a013_bothLegsIO",
       "Name": "[a013] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 13. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a014_rightElbowIO",
       "Name": "[a014] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 14. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a014_leftElbowIO",
       "Name": "[a014] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 14. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a014_bothLegsIO",
       "Name": "[a014] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 14. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a015_rightElbowIO",
       "Name": "[a015] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 15. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a015_leftElbowIO",
       "Name": "[a015] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 15. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a015_bothLegsIO",
       "Name": "[a015] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 15. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a016_rightElbowIO",
       "Name": "[a016] Right Elbow - Inside/Outside",
-      "Description": "Right elbow _ inside and outside"
+      "Description": "Right elbow inside/outside twist. Used when the active weapon motion category is 16. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a016_leftElbowIO",
       "Name": "[a016] Left Elbow - Inside/Outside",
-      "Description": "Left elbow_inside and outside"
+      "Description": "Left elbow inside/outside twist. Used when the active weapon motion category is 16. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a016_bothLegsIO",
       "Name": "[a016] Both Legs - Inside/Outside",
-      "Description": "Both feet _ inside and outside"
+      "Description": "Inside/outside twist of both legs. Unlike the elbows, it isn't suppressed in some split upper/lower-body states and during jump attacks. Used when the active weapon motion category is 16. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

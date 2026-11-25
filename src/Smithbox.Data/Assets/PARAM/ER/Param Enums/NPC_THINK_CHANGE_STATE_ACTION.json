@@ -12,7 +12,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Action 0"
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Animation Toward Start"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Turn, then Animation"
         }
       ]
     }

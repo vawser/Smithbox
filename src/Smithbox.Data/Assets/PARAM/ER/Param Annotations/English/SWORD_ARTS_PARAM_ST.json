@@ -2,107 +2,107 @@
   "Param": "SWORD_ARTS_PARAM_ST",
   "Type": "SWORD_ARTS_PARAM_ST",
   "Name": "SWORD_ARTS_PARAM_ST",
-  "Description": "Defines Ashes of War, including unique AoW. Determines AoW animation.\nBehaviour data remains in BehaviourParam. Unique AoW data is with the weapon and not with other AoW data.",
+  "Description": "Defines weapon skills. A weapon's skill is the fitted Ash of War's Skill ID when it has an Ash of War, otherwise the weapon's own Sword Arts Param ID. The skill's animations are the a(600 + Sword Arts Type) section of the character's TAE; most of a skill's behaviour lives in those animations, the behaviour script and BehaviorParam.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Not read by the retail game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "artsSpeedType",
-      "Name": "Arts Speed Type",
-      "Description": "Which cancellation timing do you see? 0: Normal (left hand attack) / 1: Early / 2: Slow"
+      "Name": "Skill Speed Type",
+      "Description": "Value handed to the behaviour script (HKS env 121) for the skill of the given hand. Per the developer notes it picks the skill's cancel timing: 0 normal (left-hand attack), 1 early, 2 slow. Retail: 1 or 2 on every skill."
     },
     {
       "Field": "isRefRightArts",
-      "Name": "Is Right-hand Arts Reference",
-      "Description": "When set to the arts of the left-handed weapon, the arts of the right-handed weapon are displayed in FE. Assumed to be used for weapon maneuvers etc."
+      "Name": "Use Right-hand Skill in Left Hand",
+      "Description": "When the weapon with this skill is in the left hand and neither weapon is two-handed, the right-hand weapon's skill is used instead (for animations and the skill shown in the HUD). Retail: on for most weapon skills, off for shield, bow and a few left-hand skills."
     },
     {
       "Field": "isGrayoutLeftHand",
-      "Name": "Is Greyout Left-hand",
-      "Description": "Whether to gray out when displaying the arts name of the left hand (one-handed)"
+      "Name": "Grey Out in Left Hand",
+      "Description": "Greys out the HUD skill name when this skill comes from the left-hand weapon (one-handed, not using the right-hand skill)."
     },
     {
       "Field": "isGrayoutRightHand",
-      "Name": "Is Greyout Right-hand",
-      "Description": "Whether to gray out when displaying the arts name of the right hand (one-handed)"
+      "Name": "Grey Out in Right Hand",
+      "Description": "Greys out the HUD skill name when this skill is used from the right-hand weapon while one-handed (via Use Right-hand Skill in Left Hand). Retail: only Torch Attack."
     },
     {
       "Field": "isGrayoutBothHand",
-      "Name": "Is Greyout Both-hand",
-      "Description": "Whether to gray out when displaying the arts name of both hands"
+      "Name": "Grey Out When Two-handed",
+      "Description": "Greys out the HUD skill name while the weapon with this skill is two-handed. Retail: only Torch Attack."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "reserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "textId",
       "Name": "Text ID",
-      "Description": "Text ID for arts description"
+      "Description": "Skill name (Skill Title FMG), shown in the HUD and in weapon and Ash of War menus."
     },
     {
       "Field": "useMagicPoint_L1",
-      "Name": "FP Consumption - L1",
-      "Description": "MP consumed when issuing arts by L1"
+      "Name": "FP Cost: L1",
+      "Description": "FP cost of the skill when used with L1. The cost is multiplied by the active SpEffects' Skill FP Consumption % and rounded up. Retail: −1 on every skill."
     },
     {
       "Field": "useMagicPoint_L2",
-      "Name": "FP Consumption - L2",
-      "Description": "MP consumed when issuing arts by L2"
+      "Name": "FP Cost: L2",
+      "Description": "FP cost of the skill's main use (L2). The cost is multiplied by the active SpEffects' Skill FP Consumption % and rounded up. The skill counts as short of FP when current FP is 0 or below half the cost. The HUD and menus show this cost (the HUD marks the skill when FP is below half of it); when it is 0 or less they show the lower positive one of R1/R2. −1: not used (retail)."
     },
     {
       "Field": "useMagicPoint_R1",
-      "Name": "FP Consumption - R1",
-      "Description": "MP consumed when issuing arts by R1"
+      "Name": "FP Cost: R1",
+      "Description": "FP cost of a skill use or follow-up on R1 (for example bow skills, stance follow-ups). Scaled and checked like FP Cost: L2. −1: not used (retail)."
     },
     {
       "Field": "useMagicPoint_R2",
-      "Name": "FP Consumption - R2",
-      "Description": "MP consumed when issuing arts by R2"
+      "Name": "FP Cost: R2",
+      "Description": "FP cost of a skill use or follow-up on R2. Scaled and checked like FP Cost: L2. −1: not used (retail)."
     },
     {
       "Field": "shieldIconType",
       "Name": "Shield Icon Type",
-      "Description": "If you do not overwrite it, the icon will be displayed based on the swashbuckler ID of the weapon para."
+      "Description": "Older regulation layout only: replaced by Sword Arts Type. Not read by the current game."
     },
     {
       "Field": "endPadding",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (older regulation layout)."
     },
     {
       "Field": "swordArtsTypeNew",
       "Name": "Sword Arts Type",
-      "Description": "Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler"
+      "Description": "Animation section of the skill: its animations are a(600 + value)_xxxxxx in the character's TAE. Retail: 0–399 (a600–a999), 255 for No Skill; mostly unique per skill."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "ID of the icon displayed in FE etc."
+      "Description": "Skill icon shown in the HUD. Retail: 0 on many skills."
     },
     {
       "Field": "aiUsageId",
-      "Name": "AI Usage Judgment ID",
-      "Description": "AI usage judgment ID"
+      "Name": "AI Usage ID",
+      "Description": "Value returned to AI scripts by GetAIUsageParam for this skill; the scripts use it to decide when to use the skill. Its meaning is script-defined. −1: none."
     }
   ]
 }

@@ -2,527 +2,527 @@
   "Param": "NPC_THINK_PARAM_ST",
   "Type": "NPC_THINK_PARAM_ST",
   "Name": "NPC_THINK_PARAM_ST",
-  "Description": null,
+  "Description": "Enemy AI settings: senses (sight, hearing, smell), search and forget timers, return-home distances, pathing permissions, team help and the Lua logic and battle goal scripts. NpcParam picks the row; many values are read by the shared AI scripts (aicommon) through GetExcelParam.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "logicId",
       "Name": "Logic ID",
-      "Description": "Set the ID of the logic created by the script."
+      "Description": "Lua logic script that runs this AI (its file number, e.g. 10000 → 010000_logic). -1: none."
     },
     {
       "Field": "battleGoalID",
       "Name": "Battle Goal ID",
-      "Description": "Battle goal ID"
+      "Description": "Lua battle goal the logic adds when the NPC fights (its file number, e.g. 431000 → 431000_battle). -1: none. Scripts read it with GetExcelParam(battleGoalID)."
     },
     {
       "Field": "searchEye_dist",
-      "Name": "Vision - Distance",
-      "Description": "Search range by visual search."
+      "Name": "Vision - Search Distance Bonus",
+      "Description": "Metres added to Vision - Distance when looking for a character the NPC is already tracking (searching). Not used while Update Battle Vision applies."
     },
     {
       "Field": "searchEye_angY",
-      "Name": "Vision - Width",
-      "Description": "Search range by visual search."
+      "Name": "Vision - Search Width Angle Bonus",
+      "Description": "Degrees added to Vision - Width Angle when looking for a character the NPC is already tracking (searching)."
     },
     {
       "Field": "isNoAvoidHugeEnemy",
       "Name": "Don't Avoid Giant Enemy",
-      "Description": "Do you not detour a huge enemy?"
+      "Description": "When on, pathing ignores the extra cost the navmesh gives to areas meant for huge enemies, so the NPC walks through them instead of detouring."
     },
     {
       "Field": "enableWeaponOnOff",
       "Name": "Enable Weapon Switch",
-      "Description": "Do you want to pull out the sword?"
+      "Description": "When on, the common AI scripts sheathe and draw the weapon by state: out of alert they play Weapon Switch Out - Animation ID while Weapon Switch In - SpEffect ID is on, and when alerted they play Weapon Switch In - Animation ID while Weapon Switch Out - SpEffect ID is on."
     },
     {
       "Field": "targetAILockDmyPoly",
       "Name": "Aim for AI Target Lock Dummy Poly ID",
-      "Description": "Do you aim for Rock Damipoli (for enemies)?"
+      "Description": "Read by the AI as a yes/no setting; by its name it makes the AI aim at the target's lock-on dummy poly. Default on; 302 retail rows (e.g. Elden Beast) turn it off."
     },
     {
       "Field": "pad8",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "spEffectId_RangedAttack",
       "Name": "Ranged Attack - SpEffect ID",
-      "Description": "Special effects ID for ranged attacks"
+      "Description": "Used by the failed-path sidestep goal: when both this and Shift Animation ID on Ranged Attack are set and the NPC lacks this SpEffect, it plays the shift animation first. -1: none."
     },
     {
       "Field": "searchTargetLv1ForgetTime",
       "Name": "Search Forget Time - Level 1",
-      "Description": "Search enemy Lv1 Target Time to forget."
+      "Description": "Seconds the NPC keeps a search level 1 target before forgetting it. Goal Action - Target Search Level 1 set to 14 shortens this to 1 second."
     },
     {
       "Field": "searchTargetLv2ForgetTime",
       "Name": "Search Forget Time - Level 2",
-      "Description": "Search enemy Lv2 time to forget the target."
+      "Description": "Seconds the NPC keeps a search level 2 target before forgetting it. Goal Action - Target Search Level 2 set to 14 shortens this to 1 second."
     },
     {
       "Field": "BackHomeLife_OnHitEneWal",
       "Name": "Back Home Time on Touching Enemy Wall",
-      "Description": "The life of the BackToHome goal when it touches an enemy wall that blocks the block"
+      "Description": "When the NPC hits an enemy wall (a boundary that blocks enemies), the common AI scripts make it return home for this many seconds. 0: no reaction."
     },
     {
       "Field": "SightTargetForgetTime",
       "Name": "Vision - Search Forget Time",
-      "Description": "Time to forget the visual target."
+      "Description": "Seconds before a target the NPC can no longer see is forgotten."
     },
     {
       "Field": "idAttackCannotMove",
-      "Name": "Blocked Movement - Anim ID",
-      "Description": "An action that automatically takes place when a destructible object stops it."
+      "Name": "Blocked Movement - Attack ID",
+      "Description": "Attack the common AI scripts use on a breakable object that blocks the NPC's path (object defence ≤ 10, or ≤ 100 for huge enemies), drawing and sheathing the weapon around it when weapon switching is used. -1: never break obstacles."
     },
     {
       "Field": "ear_dist",
       "Name": "Listen - Distance",
-      "Description": "Hearing search range ..."
+      "Description": "Hearing range in metres, added to a sound's own radius: a sound is heard when the NPC is within radius + this distance."
     },
     {
       "Field": "callHelp_ActionAnimId",
-      "Name": "Call Help - Action Animation ID",
-      "Description": "Animation ID (EzStateAnimID) when responding"
+      "Name": "Call Help - Reply Action ID",
+      "Description": "Attack (action) the NPC performs toward the caller after answering a call for help. -1: none. Read by the reply-help script."
     },
     {
       "Field": "callHelp_CallActionId",
       "Name": "Call Help - Call Action ID",
-      "Description": "Action ID (EzStateAnimID) when calling a friend"
+      "Description": "Attack (action) the NPC performs, facing the target, when it calls for help."
     },
     {
       "Field": "eye_dist",
       "Name": "Vision - Distance",
-      "Description": "Visual search range."
+      "Description": "Sight range in metres. Scaled by the darkness multiplier (unless Disable Darkness Modifier is on) and other sight multipliers, applied only to the part beyond Vision - Start Distance."
     },
     {
       "Field": "isGuard_Act",
       "Name": "Use Guard during Action",
-      "Description": "Whether to guard against actions (assumed when returning home, looking toward the target)"
+      "Description": "When on, the NPC guards (action 9910) while sidestepping or retreating after a failed path or the return-home limit."
     },
     {
       "Field": "pad6",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "ear_soundcut_dist",
       "Name": "Listen - Sound Cutoff Distance",
-      "Description": "The distance to reduce the size of the sound source. You will not hear any sound below this distance."
+      "Description": "Metres subtracted from a sound's radius before the hearing check, making the NPC harder of hearing. 0: none."
     },
     {
       "Field": "nose_dist",
-      "Name": "Sense - Distance",
-      "Description": "Search range by smell."
+      "Name": "Smell - Distance",
+      "Description": "Smell range in metres. 0: no smell sense."
     },
     {
       "Field": "maxBackhomeDist",
       "Name": "Retreat Home - Max Distance",
-      "Description": "COMMON_SetBattleActLogic argument"
+      "Description": "Metres from home (or its move point) beyond which the NPC stops fighting and goes home; with Back to Home Stuck Act 1 it walks back and fades to its start position. 9999: effectively never. A SpEffect can override it."
     },
     {
       "Field": "backhomeDist",
       "Name": "Retreat Home - Distance",
-      "Description": "COMMON_SetBattleActLogic argument"
+      "Description": "Metres from home beyond which the NPC only keeps fighting targets within Retreat Home - Battle Distance; otherwise it returns or does its failed-path action. A SpEffect can override it."
     },
     {
       "Field": "backhomeBattleDist",
       "Name": "Retreat Home - Battle Distance",
-      "Description": "COMMON_SetBattleActLogic argument"
+      "Description": "Beyond Retreat Home - Distance, the NPC still fights a target closer than this many metres. A SpEffect can override it."
     },
     {
       "Field": "nonBattleActLife",
       "Name": "Non-Battle Act Duration when in Combat",
-      "Description": "COMMON_SetBattleActLogic argument"
+      "Description": "Seconds of non-battle behaviour (going home) the common AI scripts run when the NPC gives up beyond Retreat Home - Max Distance."
     },
     {
       "Field": "BackHome_LookTargetTime",
       "Name": "Retreat Home - Look for Target Time",
-      "Description": "When returning home: Time to look at the target [sec]"
+      "Description": "Seconds to keep watching the target while returning home. Available to scripts (GetExcelParam) but no Elden Ring script reads it; no other reader found."
     },
     {
       "Field": "BackHome_LookTargetDist",
       "Name": "Retreat Home - Look for Target Distance",
-      "Description": "When returning home: Distance to see the target [m]"
+      "Description": "Distance (m) within which the NPC watches the target while returning home. Available to scripts (GetExcelParam) and overridable by a SpEffect, but no Elden Ring script reads it."
     },
     {
       "Field": "SoundTargetForgetTime",
       "Name": "Listen - Search Forget Time",
-      "Description": "Time to forget the sound target."
+      "Description": "Seconds before a heard sound target is forgotten. A forget time set on the sound itself (when 0 or more) takes precedence; Goal Action - To Caution set to 14 shortens this to 1 second."
     },
     {
       "Field": "BattleStartDist",
       "Name": "Battle - Start Distance",
-      "Description": ""
+      "Description": "Distance (m) at which battle should start. Available to scripts (GetExcelParam) but no Elden Ring script reads it; no other reader found, although retail sets it on most rows."
     },
     {
       "Field": "callHelp_MyPeerId",
       "Name": "Call Help - My Peer ID",
-      "Description": "My fellow group ID"
+      "Description": "This NPC answers calls for help from NPCs whose Call Help - Call Peer ID matches this. 0 in every retail row."
     },
     {
       "Field": "callHelp_CallPeerId",
       "Name": "Call Help - Call Peer ID",
-      "Description": "Companion group ID to call a companion"
+      "Description": "Group this NPC calls for help (matched against helpers' Call Help - My Peer ID). 0: never calls. 0 in every retail row."
     },
     {
       "Field": "targetSys_DmgEffectRate",
       "Name": "Target System - Damage Effect Rate",
-      "Description": "Damage impact rate acquisition (target system evaluation information)"
+      "Description": "Percentage of the damage taken from a character that counts toward choosing it as the target. 100: full; 0: damage doesn't affect targeting."
     },
     {
       "Field": "TeamAttackEffectivity",
       "Name": "Team Attack Effectivity",
-      "Description": "A value for determining the number of simultaneous attacks in a team. Increasing the value reduces the number of people who can participate in the attack at the same time."
+      "Description": "Weight of this NPC in its team's attack slots: higher values let fewer team members attack at the same time."
     },
     {
       "Field": "eye_angX",
       "Name": "Vision - Height Angle",
-      "Description": "Visual search range."
+      "Description": "Vertical half-angle of sight in degrees, from straight ahead (180: all around). SpEffects can change it."
     },
     {
       "Field": "eye_angY",
       "Name": "Vision - Width Angle",
-      "Description": "Visual search range."
+      "Description": "Horizontal half-angle of sight in degrees, from straight ahead (180: all around). SpEffects can change it."
     },
     {
       "Field": "disableDark",
-      "Name": "Disable Darkness Modifier to Distance",
-      "Description": "Whether the alert vision_distance and battle start distance are not affected by the darkness"
+      "Name": "Disable Darkness Modifier",
+      "Description": "When on, sight range ignores the darkness multiplier."
     },
     {
       "Field": "caravanRole",
       "Name": "Caravan Role",
-      "Description": "Role in the caravan"
+      "Description": "Role in a caravan platoon, read by the platoon script: 0 Attack, 1 Guard, 2 Master. Guards and the master react when one of them is damaged or in battle."
     },
     {
       "Field": "callHelp_CallValidMinDistTarget",
       "Name": "Call Help - Valid Target Min Distance",
-      "Description": "If it is closer than this value, you cannot call a friend."
+      "Description": "A call for help is only made while the target is farther than this many metres."
     },
     {
       "Field": "callHelp_CallValidRange",
       "Name": "Call Help - Valid Target Range",
-      "Description": "Do not call if the companion is farther than this value."
+      "Description": "Only allies within this many metres are called."
     },
     {
       "Field": "callHelp_ForgetTimeByArrival",
       "Name": "Call Help - Forget Time by Arrival",
-      "Description": "Time to respond"
+      "Description": "Duration (s) of the reply-help goal the common AI scripts start when the NPC answers a call. 0 in every retail row."
     },
     {
       "Field": "callHelp_MinWaitTime",
       "Name": "Call Help - Min Wait Time",
-      "Description": "Minimum time for the first wait goal of the response goal [101 => 10.1sec]"
+      "Description": "Minimum wait before answering a call for help, in tenths of a second (101 = 10.1 s). 0 in every retail row."
     },
     {
       "Field": "callHelp_MaxWaitTime",
       "Name": "Call Help - Max Wait Time",
-      "Description": "Maximum time for the first waiting goal of the response goal [101 => 10.1sec]"
+      "Description": "Maximum wait before answering a call for help, in tenths of a second (101 = 10.1 s). 0 in every retail row."
     },
     {
       "Field": "goalAction_ToCaution",
       "Name": "Goal Action - To Caution (Sound)",
-      "Description": "Goal action: Target becomes alert due to normal sound detection"
+      "Description": "What the common AI scripts do when a normal sound alerts the NPC (see the goal action list: 1 stay, 2 walk to the source, 3 run to it, 14 play animation 3501, …). 0: ignore and resume normal behaviour."
     },
     {
       "Field": "ear_listenLevel",
       "Name": "Listen - Listen Level",
-      "Description": "How good your ears are"
+      "Description": "Sounds with a level above this are not heard. Default 128."
     },
     {
       "Field": "callHelp_ReplyBehaviorType",
       "Name": "Call Help - Reply Behavior Type",
-      "Description": "Action type to target position after response"
+      "Description": "How the NPC reaches the caller after answering: 0 walk, 1 run (it stays put within 3 m)."
     },
     {
       "Field": "disablePathMove",
       "Name": "Disable Path Move",
-      "Description": "Whether to move directly without following the path even if a path move command comes"
+      "Description": "When on, the NPC moves straight toward its destination instead of following the navmesh path."
     },
     {
       "Field": "skipArrivalVisibleCheck",
       "Name": "Skip Arrival Visibility Check",
-      "Description": "Do you want to skip the arrival judgment by the line of sight? When set to On, arrival judgment is performed even if the line of sight does not pass."
+      "Description": "Meant to accept arrival without line of sight. No reader found; 0 in every retail row."
     },
     {
       "Field": "thinkAttr_doAdmirer",
       "Name": "Think Attribute - Do Admirer",
-      "Description": "Thinking attribute: When turned on, it plays a role of surrounding."
+      "Description": "When on, the NPC takes part in surrounding the target (admirer role) instead of always attacking; read by many battle scripts through GetExcelParam and DoAdmirer_ThinkAttr."
     },
     {
       "Field": "enableNaviFlg_Edge",
       "Name": "Navigation - Edge",
-      "Description": "Can you pass through the node cliff? (def: 1)"
+      "Description": "Meant to allow navmesh cliff edges. No reader found in Elden Ring (only Ladder and Lava are read)."
     },
     {
       "Field": "enableNaviFlg_LargeSpace",
       "Name": "Navigation - Large Space",
-      "Description": "Can you pass through the node wide? (def: 1)"
+      "Description": "Meant to allow wide-space navmesh. No reader found in Elden Ring (only Ladder and Lava are read)."
     },
     {
       "Field": "enableNaviFlg_Ladder",
       "Name": "Navigation - Ladder",
-      "Description": "Can you pass through the node ladder? (def: 0)"
+      "Description": "When on, the NPC may path over ladders and periodically looks for ladders to use."
     },
     {
       "Field": "enableNaviFlg_Hole",
       "Name": "Navigation - Hole",
-      "Description": "Can you go through the node hole? (def: 0)"
+      "Description": "Meant to allow navmesh holes. No reader found in Elden Ring; 0 in every retail row."
     },
     {
       "Field": "enableNaviFlg_Door",
       "Name": "Navigation - Door",
-      "Description": "Can you pass through the node door? (def: 0)"
+      "Description": "Meant to allow navmesh doors. No reader found in Elden Ring (only Ladder and Lava are read), though many retail rows set it."
     },
     {
       "Field": "enableNaviFlg_InSideWall",
       "Name": "Navigation - Ignore Navmesh Wall",
-      "Description": "Can you pass through the node in the wall? (def: 0)"
+      "Description": "Meant to allow navmesh inside walls. No reader found in Elden Ring; 0 in every retail row."
     },
     {
       "Field": "enableNaviFlg_Lava",
       "Name": "Navigation - Lava",
-      "Description": "Can you pass through the node lava? (def: 0)"
+      "Description": "When on, the NPC may path over lava navmesh without the extra lava cost."
     },
     {
       "Field": "enableNaviFlg_Edge_Ordinary",
       "Name": "Navigation - Cliff Edge",
-      "Description": "Can you pass the node cliff under normal / alert conditions? (def: 1)"
+      "Description": "Meant to allow cliff edges outside battle. No reader found in Elden Ring (only Ladder and Lava are read)."
     },
     {
       "Field": "enableNaviFlg_reserve1",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "searchThreshold_Lv0toLv1",
       "Name": "Search Threshold - Level 0 to Level 1",
-      "Description": "Search enemy Lv0  Lv1 threshold"
+      "Description": "Search gauge points needed to reach search level 1. The gauge (0–999) rises while the NPC perceives a target and falls by 10 per second otherwise. -1: never."
     },
     {
       "Field": "searchThreshold_Lv1toLv2",
       "Name": "Search Threshold - Level 1 to Level 2",
-      "Description": "Search enemy Lv1  Lv2 threshold"
+      "Description": "Extra search gauge points, on top of Level 0 to Level 1, needed to reach search level 2. -1: never."
     },
     {
       "Field": "platoonReplyTime",
       "Name": "Platoon - Reply Time",
-      "Description": "Platoon reaction delay time [sec]"
+      "Description": "Meant as the delay (s) before reacting to a platoon order. No reader found."
     },
     {
       "Field": "platoonReplyAddRandomTime",
       "Name": "Platoon - Reply Add Random Time",
-      "Description": "Platoon reaction additional random time [sec]"
+      "Description": "Meant as a random extra delay (s) for platoon reactions. No reader found, although most retail rows set it."
     },
     {
       "Field": "searchEye_angX",
-      "Name": "Vision - Search Height Angle",
-      "Description": "Searching enemy vision_angle (height) [deg]"
+      "Name": "Vision - Search Height Angle Bonus",
+      "Description": "Degrees added to Vision - Height Angle when looking for a character the NPC is already tracking (searching)."
     },
     {
       "Field": "isUpdateBattleSight",
       "Name": "Update Battle Vision",
-      "Description": "Do you want to overwrite the battle view?"
+      "Description": "When on, the Battle Vision distance and angles replace normal sight for characters the NPC is already tracking."
     },
     {
       "Field": "battleEye_updateDist",
       "Name": "Battle Vision - Overwrite Distance",
-      "Description": "Battle Vision_Overwrite Distance [m]"
+      "Description": "Sight range in metres used instead of Vision - Distance when Update Battle Vision is on (same multipliers)."
     },
     {
       "Field": "battleEye_updateAngX",
       "Name": "Battle Vision - Overwrite Height Angle",
-      "Description": "Battle Vision_Overwrite Angle (Height) [deg]"
+      "Description": "Vertical half-angle of sight in degrees used when Update Battle Vision is on."
     },
     {
       "Field": "battleEye_updateAngY",
       "Name": "Battle Vision - Overwrite Width Angle",
-      "Description": "Battle Vision_Overwrite Angle (Width) [deg]"
+      "Description": "Horizontal half-angle of sight in degrees used when Update Battle Vision is on."
     },
     {
       "Field": "pad4",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "eye_BackOffsetDist",
       "Name": "Vision - Start Position - Backward Offset",
-      "Description": "The viewing angle start position is behind this distance from the center of the character."
+      "Description": "Moves the sight origin this many metres behind the character, so the sight cone also covers its sides."
     },
     {
       "Field": "eye_BeginDist",
       "Name": "Vision - Start Distance",
-      "Description": "This distance is not recognized from the viewing angle generation position"
+      "Description": "Characters nearer than this many metres to the sight origin aren't seen; sight multipliers don't scale this part of the range."
     },
     {
       "Field": "actTypeOnFailedPath",
       "Name": "Act Type on Failed Path",
-      "Description": "Default action type to be performed when the path search fails, when the end point of the alternative path is reached / when the homecoming limit distance is reached"
+      "Description": "Action after a failed path or at the return-home limit, from the common AI scripts: 0/1 go home, 2 sidestep using Attack ID - On Ranged Attack, 3 sidestep without attacking."
     },
     {
       "Field": "goalAction_ToCautionImportant",
       "Name": "Goal Action - Target Alerted by Important Sound",
-      "Description": "Goal action: Target becomes alert due to detection of important sound"
+      "Description": "What the common AI scripts do when an important sound alerts the NPC (same values as Goal Action - To Caution). 14 also shortens the sound forget time to 1 second."
     },
     {
       "Field": "shiftAnimeId_RangedAttack",
       "Name": "Shift Animation ID on Ranged Attack",
-      "Description": "Reference ID for AI attack parameters"
+      "Description": "Animation played before the failed-path sidestep when Ranged Attack - SpEffect ID is set and not active. -1: none."
     },
     {
       "Field": "actTypeOnNonBtlFailedPath",
       "Name": "Act Type on Non-BTL Failed Path",
-      "Description": "Target [None] Sometimes, the action to be taken after rewriting the current location to a nest"
+      "Description": "What the NPC does out of battle when its path fails, from the common AI scripts: 0 stay, 1 walk around."
     },
     {
       "Field": "isBuddyAI",
       "Name": "Is Spirit Summon AI",
-      "Description": "Thinking for a buddy"
+      "Description": "Marks the AI as a Spirit Ash (buddy); the senses treat it differently. Retail sets it on Spirit Ash rows."
     },
     {
       "Field": "goalAction_ToSearchLv1",
       "Name": "Goal Action - Target Search Level 1",
-      "Description": "Goal action: Target becomes Lv1"
+      "Description": "What the common AI scripts do when the NPC reaches search level 1 (same values as Goal Action - To Caution). 14 also shortens the level 1 forget time to 1 second."
     },
     {
       "Field": "goalAction_ToSearchLv2",
       "Name": "Goal Action - Target Search Level 2",
-      "Description": "Goal action: Target became enemy Lv2"
+      "Description": "What the common AI scripts do when the NPC reaches search level 2 (same values as Goal Action - To Caution). 14 also shortens the level 2 forget time to 1 second."
     },
     {
       "Field": "enableJumpMove",
       "Name": "Jump Move Type",
-      "Description": "Whether to jump over the user edge for jumping (non-combat state)"
+      "Description": "Use of navmesh jump links out of battle: 0 never; 1 allowed but strongly avoided; 2 allowed freely; 3 allowed with a small cost."
     },
     {
       "Field": "disableLocalSteering",
       "Name": "Disable Local Steering",
-      "Description": "Do you want to turn off the behavior (local steering) that tries to move while avoiding other characters?"
+      "Description": "When on, the NPC no longer steers around other characters while moving."
     },
     {
       "Field": "goalAction_ToDisappear",
       "Name": "Goal Action - Target Lost",
-      "Description": "Goal action: Lost target"
+      "Description": "What the common AI scripts do when the NPC loses its target (same values as Goal Action - To Caution). 14 also shortens the memory forget time to 1 second."
     },
     {
       "Field": "changeStateAction_ToNormal",
       "Name": "Change State Action - To Normal",
-      "Description": "Action when transitioning to the normal state"
+      "Description": "Action when the NPC returns to normal state, from the common AI scripts: 1 play animation 1810 toward its start position (stay if nearer than 10 m), 2 turn first, then the same. 0: none (every retail row)."
     },
     {
       "Field": "MemoryTargetForgetTime",
       "Name": "Time to Forget Target",
-      "Description": "Time to forget the memory target."
+      "Description": "Seconds before a remembered (no longer perceived) target is forgotten."
     },
     {
       "Field": "rangedAttackId",
       "Name": "Attack ID - On Ranged Attack",
-      "Description": "A parameter that specifies the attack ID issued by the enemy when making a ranged attack"
+      "Description": "Attack used during the failed-path sidestep (Act Type on Failed Path 2). -1: none."
     },
     {
       "Field": "useFall_onNormalCaution",
       "Name": "Use Fall Jump - Outside of Combat",
-      "Description": "Allows AI to pass the jumping edge in non-combat state"
+      "Description": "Use of navmesh drop links out of battle: 0 never; 1 allowed but strongly avoided; other values allowed."
     },
     {
       "Field": "useFall_onSearchBattle",
       "Name": "Use Fall Jump - In Combat",
-      "Description": "Allow AI to pass through the jumping edge in combat"
+      "Description": "Use of navmesh drop links in battle: 0 never; 1 allowed but strongly avoided; other values allowed."
     },
     {
       "Field": "enableJumpMove_onBattle",
       "Name": "Enable Jump - In Combat",
-      "Description": "Whether to jump over the user edge for jumping (combat state)"
+      "Description": "Use of navmesh jump links in battle: 0 never; 1 allowed but strongly avoided; 2 allowed freely; 3 allowed with a small cost."
     },
     {
       "Field": "backToHomeStuckAct",
       "Name": "Back to Home Stuck Act",
-      "Description": "Behavior when addicted to the homecoming limit"
+      "Description": "1: when the NPC is beyond Retreat Home - Max Distance or stuck returning home, it fades out and warps to its start position. 0: it walks back."
     },
     {
       "Field": "pad3",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     },
     {
       "Field": "soundBehaviorId01",
       "Name": "Sound Behavior ID [1]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "Behaviour sounds (sound type 7) are only heard when their behaviour ID matches one of the eight Sound Behavior IDs. -1: none. Scripts read the heard ID with GetLatestSoundBehaviorID."
     },
     {
       "Field": "soundBehaviorId02",
       "Name": "Sound Behavior ID [2]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId03",
       "Name": "Sound Behavior ID [3]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId04",
       "Name": "Sound Behavior ID [4]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId05",
       "Name": "Sound Behavior ID [5]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId06",
       "Name": "Sound Behavior ID [6]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId07",
       "Name": "Sound Behavior ID [7]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "soundBehaviorId08",
       "Name": "Sound Behavior ID [8]",
-      "Description": "Corresponds to the behavior ID of the sound target that can be heard"
+      "Description": "See Sound Behavior ID [1]."
     },
     {
       "Field": "weaponOffSpecialEffectId",
       "Name": "Weapon Switch Out - SpEffect ID",
-      "Description": "Special effect ID at the time of sword delivery"
+      "Description": "SpEffect that marks the weapon as sheathed; with Enable Weapon Switch, the NPC draws its weapon (Weapon Switch In - Animation ID) when alerted while this is on."
     },
     {
       "Field": "weaponOnSpecialEffectId",
       "Name": "Weapon Switch In - SpEffect ID",
-      "Description": "Special effect ID when pulling out a sword"
+      "Description": "SpEffect that marks the weapon as drawn; with Enable Weapon Switch, the NPC sheathes it (Weapon Switch Out - Animation ID) when calm while this is on."
     },
     {
       "Field": "weaponOffAnimId",
       "Name": "Weapon Switch Out - Animation ID",
-      "Description": "Katana Anime ID"
+      "Description": "Animation that sheathes the weapon."
     },
     {
       "Field": "weaponOnAnimId",
       "Name": "Weapon Switch In - Animation ID",
-      "Description": "Sword animation ID"
+      "Description": "Animation that draws the weapon."
     },
     {
       "Field": "surpriseAnimId",
-      "Name": "Stealth Attack - Animation ID",
-      "Description": "Amazing anime ID"
+      "Name": "Surprised - Animation ID",
+      "Description": "Animation played once when the NPC goes straight from unaware to battle. -1: none."
     }
   ]
 }

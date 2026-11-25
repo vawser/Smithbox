@@ -2,77 +2,77 @@
   "Param": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
   "Type": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
   "Name": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
-  "Description": null,
+  "Description": "Weapon posture twist for the left-hand weapon while not two-handing (every value counts as 0 while two-handing; PostureControlParam_WepRight then drives the left arm). Row ID = posture type × 100 + the left weapon's Posture Control ID (Left); posture type is 0 normally, 1 while riding Torrent and 2 while in stealth (crouching). Each aNNN group is picked by the right-hand weapon's one-handed motion category (0, 2 or 3; other categories get no twist), and a missing row gives 0. Values are the maximum twist: the behaviour script scales them by a weight set by the current animation's TimeAct events and eases toward the result (up to 90 per second). Retail rows use the same values in all three groups.",
   "Fields": [
     {
       "Field": "a000_leftArmFB",
       "Name": "[a000] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the chest armour's value (PostureControlParam_Pro): the one with the larger magnitude is used. Used when the right-hand weapon's one-handed motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a000_leftWristFB",
       "Name": "[a000] Left Wrist - Front/Back",
-      "Description": "Left wrist_front and back"
+      "Description": "Left wrist forward/back bend. Used when the right-hand weapon's one-handed motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a000_leftWristIO",
       "Name": "[a000] Left Wrist - Inside/Outside",
-      "Description": "Left wrist_inside and outside"
+      "Description": "Left wrist inside/outside twist. Used when the right-hand weapon's one-handed motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a000_leftWeaponRotation",
       "Name": "[a000] Left Weapon Rotation",
-      "Description": ""
+      "Description": "Twist of the left-hand weapon. Used when the right-hand weapon's one-handed motion category is 0. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_leftArmFB",
       "Name": "[a002] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the chest armour's value (PostureControlParam_Pro): the one with the larger magnitude is used. Used when the right-hand weapon's one-handed motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_leftWristFB",
       "Name": "[a002] Left Wrist - Front/Back",
-      "Description": "Left wrist_front and back"
+      "Description": "Left wrist forward/back bend. Used when the right-hand weapon's one-handed motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_leftWristIO",
       "Name": "[a002] Left Wrist - Inside/Outside",
-      "Description": "Left wrist_inside and outside"
+      "Description": "Left wrist inside/outside twist. Used when the right-hand weapon's one-handed motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a002_leftWeaponRotation",
       "Name": "[a002] Left Weapon Rotation",
-      "Description": ""
+      "Description": "Twist of the left-hand weapon. Used when the right-hand weapon's one-handed motion category is 2. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a003_leftArmFB",
       "Name": "[a003] Left Arm - Front/Back",
-      "Description": "Left arm_front and back"
+      "Description": "Left arm forward/back twist. Combined with the chest armour's value (PostureControlParam_Pro): the one with the larger magnitude is used. Used when the right-hand weapon's one-handed motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "pad_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (old layout)."
     },
     {
       "Field": "a003_leftWristFB",
       "Name": "[a003] Left Wrist - Front/Back",
-      "Description": "Left wrist_front and back"
+      "Description": "Left wrist forward/back bend. Used when the right-hand weapon's one-handed motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a003_leftWristIO",
       "Name": "[a003] Left Wrist - Inside/Outside",
-      "Description": "Left wrist_inside and outside"
+      "Description": "Left wrist inside/outside twist. Used when the right-hand weapon's one-handed motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "a003_leftWeaponRotation",
       "Name": "[a003] Left Weapon Rotation",
-      "Description": ""
+      "Description": "Twist of the left-hand weapon. Used when the right-hand weapon's one-handed motion category is 3. Twist amount; retail uses whole numbers. 0 is no twist."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

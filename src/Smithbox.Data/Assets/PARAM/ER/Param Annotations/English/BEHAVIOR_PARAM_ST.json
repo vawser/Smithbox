@@ -2,67 +2,67 @@
   "Param": "BEHAVIOR_PARAM_ST",
   "Type": "BEHAVIOR_PARAM_ST",
   "Name": "BEHAVIOR_PARAM_ST",
-  "Description": "Handles animation events, including attack frames or firing bullets.\nResponsible for stamina consumption.\nNote that in Elden Ring, SpEffects are applied directly from the animation.",
+  "Description": "What an animation's behaviour event does: the attack, bullet or SpEffect it starts, its stamina, poise and other costs, and which buffs apply to it. Players use BehaviorParam_PC (with AtkParam_Pc), other characters BehaviorParam (with AtkParam_Npc). The row ID is looked up from the event's behaviour judge ID: base × 100,000,000 + variation × 1,000 + judge ID (base 1 for players and 2 for NPC rows; a judge ID of 1000 or more supplies its own base digit). Players take the variation from the weapon's Behavior Variation ID (110000 Unarmed for fist actions); if that row is missing, the variation rounded down to a multiple of 100 is tried, then variation 0.",
   "Fields": [
     {
       "Field": "variationId",
       "Name": "Behavior Variation ID",
-      "Description": "Used when calculating the ID for attack parameters. It is not used directly on the actual machine."
+      "Description": "Bookkeeping copy of the variation part of the row ID (the weapon's or NPC's Behavior Variation ID). The game doesn't read it: only the row ID matters. Retail rows match their ID (ID = base × 100,000,000 + this × 1,000 + Behavior Judge ID)."
     },
     {
       "Field": "behaviorJudgeId",
       "Name": "Behavior Judge ID",
-      "Description": "Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine."
+      "Description": "Bookkeeping copy of the last three digits of the row ID: the behaviour judge ID entered in the animation's behaviour event. The game doesn't read it: only the row ID matters."
     },
     {
       "Field": "ezStateBehaviorType_old",
-      "Name": "State Behavior Type",
-      "Description": "For ID calculation rules"
+      "Name": "Behavior Table Type (Old)",
+      "Description": "Appears unused by the game. Retail: 1 on every BehaviorParam_PC row and 2 on every BehaviorParam row (one row has 3), a leftover tag for the player and NPC tables."
     },
     {
       "Field": "refType",
       "Name": "Reference Type",
-      "Description": "Specify the reference ID so that it is correct."
+      "Description": "What Reference ID points to: 0 Attack (AtkParam_Pc for BehaviorParam_PC, AtkParam_Npc for BehaviorParam), 1 Bullet, 2 SpEffect. Attack and bullet behaviours also pass Category on to the attack."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "refId",
       "Name": "Reference ID",
-      "Description": "It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."
+      "Description": "The AtkParam, Bullet or SpEffectParam row this behaviour uses, picked by Reference Type. -1: none."
     },
     {
       "Field": "consumeSA",
       "Name": "Poise Cost",
-      "Description": "Set the amount of SA consumed during action."
+      "Description": "Poise the character loses when the behaviour runs, taken from its current poise. 0: none. Retail: only some skeleton enemy attacks (20)."
     },
     {
       "Field": "stamina",
       "Name": "Stamina Cost",
-      "Description": "Set the amount of stamina consumed during action."
+      "Description": "Stamina spent when the behaviour runs. Multiplied by the character's SpEffect stamina-cost rates, by the weapon's Stamina Consumption Rate for weapon attacks, and by the low-stat penalty rate when the player doesn't meet the weapon's requirements; the result is rounded down. For a guard behaviour it is also added as a flat amount to the stamina lost when blocking. Retail: 0 on NPC rows; most player attacks 8–30."
     },
     {
       "Field": "consumeDurability",
       "Name": "Durability Cost",
-      "Description": "Set the durability of weapons consumed during action."
+      "Description": "Weapon durability spent when the behaviour runs. When this is not 0 and the player's weapon has no durability left, the behaviour doesn't run. Retail: 0 on every row."
     },
     {
       "Field": "category",
       "Name": "Category",
-      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+      "Description": "Which buffs and SpEffect attack-rate changes apply to this behaviour's attacks and bullets (the same kind as Goods and Magic SpEffect Category). 1 Right-Hand Weapon and 2 Left-Hand Weapon take buffs limited to that hand; 12 Active Weapon takes right-hand buffs, and left-hand buffs while the left weapon is two-handed; 9 Kick takes kick buffs; 3 Sorcery and 4 Incantation take sorcery or incantation buffs; 0, 5–8 take only unrestricted buffs. Retail: 1/2/12 player weapon attacks, 6/7 NPC attacks."
     },
     {
       "Field": "heroPoint",
-      "Name": "Humanity Cost",
-      "Description": "Set the amount of humanity consumed during action"
+      "Name": "Hero Point Cost",
+      "Description": "A legacy cost (Humanity in earlier games): the behaviour doesn't run when the player has fewer hero points than this. Retail: 0 on every row; leave at 0."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -2,4 +2,3 @@
 # TODO 
 #---------------------
 
-Investigate how the X field of the Y is used in the executable for ER. Produce a document detailing what each value means and what it does. Then update the param meta with these findings, and add descriptions if missing.

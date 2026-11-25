@@ -2,567 +2,567 @@
   "Param": "MAGIC_PARAM_ST",
   "Type": "MAGIC_PARAM_ST",
   "Name": "MAGIC_PARAM_ST",
-  "Description": "Defines behaviour data of spells. Do not confuse with version in EquipParamGoods.",
+  "Description": "Defines spells (sorceries and incantations): costs, stat requirements, catalyst type, use restrictions, stat- and SpEffect-based replacement, and up to ten Attack, Bullet or SpEffect references that the casting animation fires. The spell's inventory entry (icon, sort order) is the EquipParamGoods row with the same ID.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Not read by the retail game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "yesNoDialogMessageId",
-      "Name": "Dialog Message ID",
-      "Description": "Message ID of Yes / No dialog issued when using magic"
+      "Name": "Confirmation Dialog Message ID",
+      "Description": "Text of the Yes/No confirmation used by the menu the spell opens (Menu Opened on Use). Retail: always 0."
     },
     {
       "Field": "limitCancelSpEffectId",
-      "Name": "Ignore Usage Restriction - SpEffect ID",
-      "Description": "Usage restrictions can be ignored when the specified special effect ID is activated"
+      "Name": "Category Block Bypass SpEffect ID",
+      "Description": "While the caster has this SpEffect active, the Blocking SpEffect Category restriction is ignored. Other restrictions still apply. −1: none. Retail: always −1."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Sort ID (-1: Do not collect)"
+      "Description": "Appears unused by the game. The spell's inventory sort order is that of its EquipParamGoods row (same ID)."
     },
     {
       "Field": "requirementLuck",
       "Name": "Requirement: ARC",
-      "Description": "Can't be equipped without more PC luck"
+      "Description": "Arcane needed to cast the spell: it can't be cast below this. Also shown in the spell's menu details."
     },
     {
       "Field": "aiNotifyType",
-      "Name": "AI Interrupt Type",
-      "Description": "AI interrupt occurs in act (AI notification when magic is activated)"
+      "Name": "AI Notification Type",
+      "Description": "Notification sent to the AI system when the spell activates: 1 and 2 send two different notifications (the AI reaction to each was not traced). 0: none. Retail: always 0."
     },
     {
       "Field": "mp",
-      "Name": "FP Consumption - Default",
-      "Description": "MP consumption"
+      "Name": "FP Cost",
+      "Description": "FP spent when a reference slot whose Consumption Type is Default fires. Multiplied by the caster's SpEffect FP cost rate for the Spell Type (Sorcery, Incantation or Pyromancy FP Consumption %) and rounded. The spell can't be cast without enough FP, and this is the FP cost shown in the menu."
     },
     {
       "Field": "stamina",
-      "Name": "Stamina Consumption - Default",
-      "Description": "Consumption stamina"
+      "Name": "Stamina Cost",
+      "Description": "Stamina spent when a reference slot whose Consumption Type is Default fires, passed through the caster's stamina cost calculation."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Specify icon> For menu"
+      "Description": "Appears unused by the game. The menu icon comes from the spell's EquipParamGoods row (same ID); retail values here don't match the icons shown."
     },
     {
       "Field": "behaviorId",
       "Name": "Behavior ID",
-      "Description": "Set the action ID"
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "mtrlItemId",
       "Name": "Material Item ID",
-      "Description": "Item ID required for purchase"
+      "Description": "Appears unused by the game. Retail: always −1."
     },
     {
       "Field": "replaceMagicId",
-      "Name": "Replace Magic ID",
-      "Description": "ID to be replaced when the state change matches (-1: invalid)"
+      "Name": "Replacement Spell ID - SpEffect State",
+      "Description": "Magic ID cast in place of this spell while the caster has an active SpEffect of the Replacement SpEffect State. Checked after the stat-based replacement, on the spell that results from it. −1 or 0: none. Retail: always −1."
     },
     {
       "Field": "maxQuantity",
-      "Name": "Number of Uses",
-      "Description": "Number per piece (-1: infinity)"
+      "Name": "Casts per Memorised Copy",
+      "Description": "Leftover limited-casts system from earlier games. 0 or more: each memorised copy holds three times this many cast units and a cast uses 3 (2 or 6 under some SpEffect states), so the value is the number of casts. −1: unlimited. Retail: always −1."
     },
     {
       "Field": "refCategory1",
-      "Name": "Reference Category [1]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [1]",
+      "Description": "What Reference ID [1] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "overDexterity",
       "Name": "Dexterity over Start Value",
-      "Description": "Skill over start value"
+      "Description": "Appears unused by the game. Retail: always 99."
     },
     {
       "Field": "refCategory2",
-      "Name": "Reference Category [2]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [2]",
+      "Description": "What Reference ID [2] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "slotLength",
-      "Name": "Slot Usage",
-      "Description": "Number of slots required for equipment> For menu"
+      "Name": "Memory Slots Used",
+      "Description": "Memory slots the spell takes when memorised; the game adds this up over all memorised spells. Also shown in the menu."
     },
     {
       "Field": "requirementIntellect",
       "Name": "Requirement: INT",
-      "Description": "Can't be equipped without more PC intelligence"
+      "Description": "Intelligence needed to cast the spell: it can't be cast below this. Also shown in the spell's menu details."
     },
     {
       "Field": "requirementFaith",
       "Name": "Requirement: FTH",
-      "Description": "It cannot be equipped without the power of the PC any more."
+      "Description": "Faith needed to cast the spell: it can't be cast below this. Also shown in the spell's menu details."
     },
     {
       "Field": "analogDexterityMin",
-      "Name": "Casting Speed - DEX Start Range",
-      "Description": "Motion cancel analog: Minimum skill value"
+      "Name": "Casting Speed - DEX Start",
+      "Description": "DEX at which casting speed starts to improve. The cast animation's cancel point moves linearly from no speed-up at or below this DEX to the full speed-up at or above Casting Speed - DEX End. The DEX used includes SpEffect Cast Speed + bonuses. Retail: 10 on player spells, 1 on NPC spells."
     },
     {
       "Field": "analogDexterityMax",
-      "Name": "Casting Speed - DEX End Range",
-      "Description": "Motion cancel analog: Maximum skill value"
+      "Name": "Casting Speed - DEX End",
+      "Description": "DEX at which casting speed reaches its full speed-up (see Casting Speed - DEX Start). A value below the start is raised to it; equal values give the full speed-up at any DEX. Retail: 70 on player spells, 20 on NPC spells."
     },
     {
       "Field": "ezStateBehaviorType",
-      "Name": "Magic School Type",
-      "Description": "Used for sorting> For menu"
+      "Name": "Spell Type",
+      "Description": "0 Sorcery, 1 Incantation, 2 Pyromancy, 3 Vow Magic (2 and 3 are leftovers). Sets which catalysts can cast it (armament flags Enables Sorcery / Incantations / Pyromancy / Vow Magic), which SpEffect FP cost rate applies, the type text in the menu, and the attack category used for some attack modifiers. 3 also requires the caster's covenant to be allowed by the Covenant flags."
     },
     {
       "Field": "refCategory3",
-      "Name": "Reference Category [3]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [3]",
+      "Description": "What Reference ID [3] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "spEffectCategory",
-      "Name": "SpEffect Category",
-      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+      "Name": "Attack Behavior Category",
+      "Description": "Category of the spell's attacks, used to decide which SpEffect attack modifiers apply to them (same categories as the goods and accessory fields). Retail: 3 Sorcery or 4 Incantation."
     },
     {
       "Field": "refType",
-      "Name": "Motion Category",
-      "Description": "Specify motion> For EzState"
+      "Name": "Casting Animation Type",
+      "Description": "Casting animation set the spell uses, read by the character's animation state machine (EzState) to pick the cast animation."
     },
     {
       "Field": "opmeMenuType",
-      "Name": "Open Menu Type",
-      "Description": "Menu type to be displayed when using magic"
+      "Name": "Menu Opened on Use",
+      "Description": "Menu opened when the spell is used (same options as goods). 0: none. A spell with a menu is blocked while that menu can't be opened. Retail: always 0."
     },
     {
       "Field": "refCategory4",
-      "Name": "Reference Category [4]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [4]",
+      "Description": "What Reference ID [4] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "hasSpEffectType",
-      "Name": "Has SpEffect Type",
-      "Description": "Specify the state change that needs to replace the magic ID"
+      "Name": "Replacement SpEffect State",
+      "Description": "SpEffect state type that triggers Replacement Spell ID - SpEffect State. 0: none. Retail: always 0."
     },
     {
       "Field": "replaceCategory",
       "Name": "Replace Category",
-      "Description": "Additional conditions when replacing the magic ID"
+      "Description": "Adds a replace level to the Reference IDs while certain SpEffect states are active: 1 uses Replace Level 1/2 (+1/+2), 2 uses Item Replace Level 1–4 (+1 to +4). 0: none. Retail: always 0."
     },
     {
       "Field": "useLimitCategory",
-      "Name": "Use Limit Category",
-      "Description": "This item is usable if any active spEffect with the following spCategories are active."
+      "Name": "Blocking SpEffect Category",
+      "Description": "The spell can't be cast while the caster has an active SpEffect of the category this value stands for (some values cover several categories, as the option names show), unless the Category Block Bypass SpEffect is active. 0: no limit. Retail: always 0."
     },
     {
       "Field": "vowType0",
-      "Name": "Vow Type [0]",
-      "Description": "Pledge 0"
+      "Name": "Covenant 0 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 0. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType1",
-      "Name": "Vow Type [1]",
-      "Description": "Pledge 1"
+      "Name": "Covenant 1 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 1. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType2",
-      "Name": "Vow Type [2]",
-      "Description": "Pledge 2"
+      "Name": "Covenant 2 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 2. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType3",
-      "Name": "Vow Type [3]",
-      "Description": "Pledge 3"
+      "Name": "Covenant 3 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 3. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType4",
-      "Name": "Vow Type [4]",
-      "Description": "Pledge 4"
+      "Name": "Covenant 4 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 4. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType5",
-      "Name": "Vow Type [5]",
-      "Description": "Pledge 5"
+      "Name": "Covenant 5 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 5. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType6",
-      "Name": "Vow Type [6]",
-      "Description": "Pledge 6"
+      "Name": "Covenant 6 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 6. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType7",
-      "Name": "Vow Type [7]",
-      "Description": "Pledge 7"
+      "Name": "Covenant 7 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 7. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "enable_multi",
-      "Name": "Allow in Multiplayer",
-      "Description": "Can it be used in multi? Can be used for both single and multi"
+      "Name": "Usable During Multiplayer",
+      "Description": "The spell can be cast while a multiplayer session is active. Off: blocked during multiplayer (and in one further character state that was not identified). Retail: always on."
     },
     {
       "Field": "enable_multi_only",
-      "Name": "Allow only in Multiplayer",
-      "Description": "Is it only for multi? It cannot be used when it is a single. It can be used when it is multi."
+      "Name": "Only Usable During Multiplayer",
+      "Description": "The spell is blocked unless an online multiplayer session is active. Retail: always off."
     },
     {
       "Field": "isEnchant",
-      "Name": "Is Weapon Enchantment",
-      "Description": "Is it magic to enchant?"
+      "Name": "Armament Buff Spell",
+      "Description": "The spell can only be cast when the armament it buffs is buffable (Is Buffable in EquipParamWeapon). Retail: the armament buffs such as Scholar's Armament."
     },
     {
       "Field": "isShieldEnchant",
-      "Name": "Is Shield Enchantment",
-      "Description": "Is it magic to enchant guards and shields?"
+      "Name": "Shield Buff Spell",
+      "Description": "The spell can only be cast when the shield it buffs can guard (Enables Guard in EquipParamWeapon). Retail: Scholar's Shield."
     },
     {
       "Field": "enable_live",
-      "Name": "Enable Live",
-      "Description": "Can surviving characters be used?"
+      "Name": "Usable as Host",
+      "Description": "The spell can be cast in your own world as a normal (host) player."
     },
     {
       "Field": "enable_gray",
-      "Name": "Enable Gray",
-      "Description": "Can gray characters be used?"
+      "Name": "Usable as Gray Phantom",
+      "Description": "The spell can be cast while in the gray (offline phantom) state."
     },
     {
       "Field": "enable_friendly",
-      "Name": "Enable as friendly phantom",
-      "Description": "Is it possible to use this magic as a friendly phantom? (Furled Finger, Hunter, Npc Furled Finger)"
+      "Name": "Usable as Cooperator",
+      "Description": "The spell can be cast as a cooperating phantom (summoned or Hunter)."
     },
     {
       "Field": "enable_hostile",
-      "Name": "Enable as Black Phantom",
-      "Description": "Is it possible to use this magic as a hostile phantom? (All types of Invaders, Duelist, Npc Invaders, Npc's, etc...)"
+      "Name": "Usable as Invader",
+      "Description": "The spell can be cast as a hostile phantom (invader or duelist)."
     },
     {
       "Field": "disableOffline",
-      "Name": "Disable Offline",
-      "Description": "Is it unavailable offline?"
+      "Name": "Blocked While Offline",
+      "Description": "The spell is blocked while the game isn't connected online. Retail: always off."
     },
     {
       "Field": "castResonanceMagic",
       "Name": "Cast Resonance Magic",
-      "Description": "Do you deliver resonance magic?"
+      "Description": "Appears unused by the game. Retail: always off."
     },
     {
       "Field": "isValidTough_ProtSADmg",
-      "Name": "Is Toughness Perfomed if Poise is Initial Value",
-      "Description": "Whether the toughness calculation is performed even if the armor SA is the initial value. Check the toughness specification .xlsx for details"
+      "Name": "Toughness Check at Base Poise",
+      "Description": "Appears unused by the game. Retail: always off."
     },
     {
       "Field": "isWarpMagic",
-      "Name": "Is Blocked by Warp Prohibition Effect",
-      "Description": "Is it magic to warp? Magic with a check mark here is prohibited by the special effect Warp Prohibition."
+      "Name": "Blocked by Warp Ban",
+      "Description": "The spell is blocked while the Warp Ban SpEffect state (278) is active. Retail: always off."
     },
     {
       "Field": "enableRiding",
-      "Name": "Usable while Riding",
-      "Description": "Can it be used while riding?"
+      "Name": "Usable While Riding",
+      "Description": "The spell can be cast while mounted. Off: blocked while mounted."
     },
     {
       "Field": "disableRiding",
-      "Name": "Not Usable while Riding",
-      "Description": "Is it prohibited to use while not riding?"
+      "Name": "Only Usable While Riding",
+      "Description": "The spell is blocked while not mounted. Retail: always off."
     },
     {
       "Field": "isUseNoAttackRegion",
-      "Name": "Usable in No Attack Region",
-      "Description": "Can it be used in an attack-prohibited area?"
+      "Name": "Usable in No-Attack Areas",
+      "Description": "The spell can be cast while the No-Attack Area SpEffect state (457) is active (for example at the Roundtable Hold). Off: blocked there."
     },
     {
       "Field": "pad_1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "vowType8",
-      "Name": "Vow Type [8]",
-      "Description": "Pledge 8"
+      "Name": "Covenant 8 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 8. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType9",
-      "Name": "Vow Type [9]",
-      "Description": "Pledge 9"
+      "Name": "Covenant 9 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 9. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType10",
-      "Name": "Vow Type [10]",
-      "Description": "Pledge 10"
+      "Name": "Covenant 10 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 10. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType11",
-      "Name": "Vow Type [11]",
-      "Description": "Pledge 11"
+      "Name": "Covenant 11 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 11. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType12",
-      "Name": "Vow Type [12]",
-      "Description": "Pledge 12"
+      "Name": "Covenant 12 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 12. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType13",
-      "Name": "Vow Type [13]",
-      "Description": "Pledge 13"
+      "Name": "Covenant 13 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 13. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType14",
-      "Name": "Vow Type [14]",
-      "Description": "Pledge 14"
+      "Name": "Covenant 14 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 14. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "vowType15",
-      "Name": "Vow Type [15]",
-      "Description": "Pledge 15"
+      "Name": "Covenant 15 Allowed",
+      "Description": "Leftover covenant filter: the spell can only be cast when the caster's covenant (vow) type has its flag on; this is the flag for type 15. Elden Ring has no covenants. Retail: always on."
     },
     {
       "Field": "castSfxId",
       "Name": "SFX ID - Cast",
-      "Description": "SFXID during magical chanting"
+      "Description": "SFX spawned by the casting animation's spell-SFX events that ask for the cast effect. −1: none."
     },
     {
       "Field": "fireSfxId",
       "Name": "SFX ID - Fire",
-      "Description": "SFX ID when magic is activated"
+      "Description": "SFX spawned by the casting animation's spell-SFX events that ask for the fire (release) effect. −1: none."
     },
     {
       "Field": "effectSfxId",
       "Name": "SFX ID - Effect",
-      "Description": "SFXID during magic effect"
+      "Description": "SFX spawned by the casting animation's spell-SFX events that ask for the ongoing effect. −1: none."
     },
     {
       "Field": "toughnessCorrectRate",
       "Name": "Toughness Correction",
-      "Description": "It is a magnification that corrects the basic value of toughness."
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "ReplacementStatusType",
-      "Name": "Replacement Status Type",
-      "Description": "Replacement status type"
+      "Name": "Stat Replacement - Stat",
+      "Description": "Stat checked for the stat-based replacement: 0 STR, 1 DEX, 2 FTH, 3 INT. Slots are checked from 4 down to 1: the first Replacement Threshold the caster's stat is above picks that slot's Replacement Spell ID, and if that ID is −1 the spell isn't replaced. Retail: Carian Retaliation becomes 4641 above 34 INT and 4642 above 51 INT."
     },
     {
       "Field": "ReplacementStatus1",
       "Name": "Replacement Threshold [1]",
-      "Description": "Replacement status value 1"
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [1]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "ReplacementStatus2",
       "Name": "Replacement Threshold [2]",
-      "Description": "Replacement status value 2"
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [2]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "ReplacementStatus3",
       "Name": "Replacement Threshold [3]",
-      "Description": "Replacement status value 3"
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [3]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "ReplacementStatus4",
       "Name": "Replacement Threshold [4]",
-      "Description": "Replacement status value 4"
+      "Description": "The caster's Stat Replacement stat must be above this (not equal) for Replacement Spell ID [4]. Checked from slot 4 down to 1, first match wins; −1 always matches, so a −1 threshold with a −1 spell ends the check without replacing."
     },
     {
       "Field": "refCategory5",
-      "Name": "Reference Category [5]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [5]",
+      "Description": "What Reference ID [5] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "consumeSA",
       "Name": "Poise Consumption",
-      "Description": "SA consumption [normal / reservoir]"
+      "Description": "Super armor (poise) value stored with the cast when a reference slot with Consumption Type Default or Charged fires (0 for None); what then uses it was not traced. Retail: 1 on 17 spells (for example Dragonclaw), else 0."
     },
     {
       "Field": "ReplacementMagic1",
-      "Name": "Replacement Magic ID [1]",
-      "Description": "Replacement ID1"
+      "Name": "Replacement Spell ID [1]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [1] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "ReplacementMagic2",
-      "Name": "Replacement Magic ID [2]",
-      "Description": "Replacement ID2"
+      "Name": "Replacement Spell ID [2]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [2] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "ReplacementMagic3",
-      "Name": "Replacement Magic ID [3]",
-      "Description": "Replacement ID3"
+      "Name": "Replacement Spell ID [3]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [3] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "ReplacementMagic4",
-      "Name": "Replacement Magic ID [4]",
-      "Description": "Replacement ID 4"
+      "Name": "Replacement Spell ID [4]",
+      "Description": "Magic ID cast in place of this spell when the stat is above Replacement Threshold [4] (first match from slot 4 down to 1). −1: no replacement."
     },
     {
       "Field": "mp_charge",
-      "Name": "FP Consumption - Charged",
-      "Description": "MP consumption [reservoir]"
+      "Name": "FP Cost - Charged",
+      "Description": "FP spent when a reference slot whose Consumption Type is Charged fires (the charged or follow-up part of a spell). Same SpEffect FP cost rate and rounding as FP Cost."
     },
     {
       "Field": "stamina_charge",
-      "Name": "Stamina Consumption - Charged",
-      "Description": "Consumption stamina [reservoir]"
+      "Name": "Stamina Cost - Charged",
+      "Description": "Stamina spent when a reference slot whose Consumption Type is Charged fires, passed through the caster's stamina cost calculation."
     },
     {
       "Field": "createLimitGroupId",
-      "Name": "Create Limit Group ID",
-      "Description": "If it is 0, it is unused. Check the number of bullets created for the specified group Id, and if the upper limit is reached, you will not be able to use magic."
+      "Name": "Bullet Create Limit Group",
+      "Description": "Casting is blocked while the BulletCreateLimitParam group with this ID has reached its limit. 0: none. Retail: always 0."
     },
     {
       "Field": "refCategory6",
-      "Name": "Reference Category [6]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [6]",
+      "Description": "What Reference ID [6] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "subCategory1",
-      "Name": "Conditional Category [1]",
-      "Description": "Subcategory 1"
+      "Name": "Spell Sub-Category [1]",
+      "Description": "Spell group tag (for example Glintblade Sorcery or Dragon Communion Incantation), collected with the attack category into the attack-source information that SpEffect attack modifiers are matched against. 0: none."
     },
     {
       "Field": "subCategory2",
-      "Name": "Conditional Category [2]",
-      "Description": "Subcategory 2"
+      "Name": "Spell Sub-Category [2]",
+      "Description": "Second spell group tag, used like Spell Sub-Category [1]. Retail: 123 (Magma Attack) on the magma sorceries. 0: none."
     },
     {
       "Field": "refCategory7",
-      "Name": "Reference Category [7]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [7]",
+      "Description": "What Reference ID [7] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "refCategory8",
-      "Name": "Reference Category [8]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [8]",
+      "Description": "What Reference ID [8] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "refCategory9",
-      "Name": "Reference Category [9]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [9]",
+      "Description": "What Reference ID [9] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "refCategory10",
-      "Name": "Reference Category [10]",
-      "Description": "Call ID category [Attack, Projectile, Special Effects]"
+      "Name": "Reference Type [10]",
+      "Description": "What Reference ID [10] points to: 0 Attack (AtkParam_Pc), 1 Bullet, 2 SpEffect."
     },
     {
       "Field": "refId1",
       "Name": "Reference ID [1]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [1]) fired when the casting animation triggers slot 1; the slot also charges the costs chosen by Consumption Type [1]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId2",
       "Name": "Reference ID [2]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [2]) fired when the casting animation triggers slot 2; the slot also charges the costs chosen by Consumption Type [2]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId3",
       "Name": "Reference ID [3]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [3]) fired when the casting animation triggers slot 3; the slot also charges the costs chosen by Consumption Type [3]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "aiUseJudgeId",
       "Name": "AI Usage Judgment ID",
-      "Description": "AI usage judgment ID"
+      "Description": "ID the NPC AI uses to decide when to cast this spell. −1: none."
     },
     {
       "Field": "refId4",
       "Name": "Reference ID [4]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [4]) fired when the casting animation triggers slot 4; the slot also charges the costs chosen by Consumption Type [4]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId5",
       "Name": "Reference ID [5]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [5]) fired when the casting animation triggers slot 5; the slot also charges the costs chosen by Consumption Type [5]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId6",
       "Name": "Reference ID [6]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [6]) fired when the casting animation triggers slot 6; the slot also charges the costs chosen by Consumption Type [6]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId7",
       "Name": "Reference ID [7]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [7]) fired when the casting animation triggers slot 7; the slot also charges the costs chosen by Consumption Type [7]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId8",
       "Name": "Reference ID [8]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [8]) fired when the casting animation triggers slot 8; the slot also charges the costs chosen by Consumption Type [8]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId9",
       "Name": "Reference ID [9]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [9]) fired when the casting animation triggers slot 9; the slot also charges the costs chosen by Consumption Type [9]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "refId10",
       "Name": "Reference ID [10]",
-      "Description": "ID called from magic"
+      "Description": "Attack, Bullet or SpEffect (per Reference Type [10]) fired when the casting animation triggers slot 10; the slot also charges the costs chosen by Consumption Type [10]. With a Replace Category set, the replace level is added to the ID. −1: none."
     },
     {
       "Field": "consumeType1",
       "Name": "Consumption Type [1]",
-      "Description": "When Reference ID [1] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 1 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType2",
       "Name": "Consumption Type [2]",
-      "Description": "When Reference ID [2] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 2 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType3",
       "Name": "Consumption Type [3]",
-      "Description": "When Reference ID [3] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 3 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType4",
       "Name": "Consumption Type [4]",
-      "Description": "When Reference ID [4] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 4 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType5",
       "Name": "Consumption Type [5]",
-      "Description": "When Reference ID [5] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 5 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType6",
       "Name": "Consumption Type [6]",
-      "Description": "When Reference ID [6] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 6 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType7",
       "Name": "Consumption Type [7]",
-      "Description": "When Reference ID [7] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 7 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType8",
       "Name": "Consumption Type [8]",
-      "Description": "When Reference ID [8] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 8 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType9",
       "Name": "Consumption Type [9]",
-      "Description": "When Reference ID [9] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 9 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeType10",
       "Name": "Consumption Type [10]",
-      "Description": "When Reference ID [10] is called, consume FP/Stamina according to the configured cost."
+      "Description": "Costs charged when slot 10 fires: 0 Default (FP Cost, Stamina Cost), 1 Charged (FP Cost - Charged, Stamina Cost - Charged), 2 None. Poise Consumption applies for 0 and 1."
     },
     {
       "Field": "consumeLoopMP_forMenu",
-      "Name": "FP Consumption Loop - For Menu Display",
-      "Description": "MP consumption for menu supplement display"
+      "Name": "FP Cost - Continuous (Menu Only)",
+      "Description": "Second FP value shown in the spell's menu details, for spells with an ongoing cost; multiplied by the SpEffect FP cost rate like FP Cost. Display only: it doesn't change what casting costs. −1: none."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

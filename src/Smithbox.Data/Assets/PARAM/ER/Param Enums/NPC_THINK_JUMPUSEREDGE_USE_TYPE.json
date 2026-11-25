@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Never"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Avoid (High Cost)"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Allowed"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Allowed (Small Cost)"
         }
       ]
     }

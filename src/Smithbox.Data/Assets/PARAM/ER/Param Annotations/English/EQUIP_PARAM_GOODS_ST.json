@@ -2,612 +2,612 @@
   "Param": "EQUIP_PARAM_GOODS_ST",
   "Type": "EQUIP_PARAM_GOODS_ST",
   "Name": "EQUIP_PARAM_GOODS_ST",
-  "Description": "Defines an item, both consumable and key items.\nNote that many key items are placebo and the item's effect is granted through scripting. Passive effects from ownership are not defined here.",
+  "Description": "Defines goods: consumables, key items, crafting materials, spirit ashes, spells' inventory entries and other non-equipment items. Most use restrictions (multiplayer, riding, ladders, Great Rune, SpEffect states) are flags here. Many key items do nothing on their own: their effect comes from event scripts, and passive effects from merely owning an item are not defined here.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Not read by the retail game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "refId_default",
       "Name": "Reference ID",
-      "Description": "ID0 called from the item (default)"
+      "Description": "The Bullet or SpEffect the item triggers when used, as chosen by Reference Type. Greases and Shield Grease use this ID for the armament they normally target, and Reference ID - Left Hand for the other case. With a Replace Category set, the replace level (0–4) is added to the ID."
     },
     {
       "Field": "sfxVariationId",
       "Name": "SFX Variation ID",
-      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight [kg]"
+      "Description": "Item weight. Retail: 0 on every named item."
     },
     {
       "Field": "basicPrice",
       "Name": "Basic Price",
-      "Description": "Basic price"
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Selling price"
+      "Description": "Runes received when selling the item to a merchant. −1 (the retail default for most items): can't be sold."
     },
     {
       "Field": "behaviorId",
       "Name": "Behavior ID",
-      "Description": "Set the effect that occurs when using a tool"
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "replaceItemId",
-      "Name": "Replace Item ID",
-      "Description": "Item ID when replacing"
+      "Name": "Empty/Full Counterpart Item ID",
+      "Description": "The other state of a refillable item: the full flask's row points to its empty row and back. When replenishing (resting), an empty item (Is Empty Refillable Item) is turned into this item. −1: none."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Sort ID (-1 Do not collect)"
+      "Description": "Inventory sort order within the item's sort group."
     },
     {
       "Field": "appearanceReplaceItemId",
-      "Name": "Appearance Replace Item ID",
-      "Description": "Conditionally replace the display with another tool ID. The tool ID on the game data side does not change"
+      "Name": "Alternate Appearance Goods ID",
+      "Description": "Goods row whose icon and name are shown instead while the item's effect is active, for example a placed summon sign (Furled Fingers, Cipher Rings, Effigies) or the steed whistle while Torrent is out. Only the multiplayer items and horse whistles the game checks switch; the real item ID doesn't change. −1: none."
     },
     {
       "Field": "yesNoDialogMessageId",
-      "Name": "Dialog Message ID",
-      "Description": "YesNo Message ID used when displaying the dialog"
+      "Name": "Confirmation Dialog Message ID",
+      "Description": "Dialog text for the Yes/No confirmation shown before the item is used. −1: no confirmation. Retail: 20000610 on all spirit ashes."
     },
     {
       "Field": "useEnableSpEffectType",
-      "Name": "Use Enable SpEffect Type",
-      "Description": "Allow to use only when the special effect of the set state change type is applied"
+      "Name": "Required SpEffect State Type",
+      "Description": "The item can only be used while a SpEffect with this state type is active. 0: no requirement. Retail: only Miquella's Needle (468)."
     },
     {
       "Field": "potGroupId",
       "Name": "Pot Group ID",
-      "Description": "Consumable items for which 0 or more is set for the pot group ID can be possessed by the number of pots with the same pot group ID."
+      "Description": "Links pots and aromatics to their containers. On a normal item (Goods Type 0) it's the container group the item uses: how many you can hold is the number of containers of that group you own. On a container (Goods Type 11: Cracked Pot, Ritual Pot, Perfume Bottle, Hefty Cracked Pot) it's the group that container adds to. −1: none."
     },
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Menu icon ID"
+      "Description": "Menu icon ID. Full Crimson and Cerulean flasks use the next two icon IDs as well: the base icon when the remaining charges are low, +1 at a middle fill and +2 when nearly full (thresholds from the menu's estus icon settings)."
     },
     {
       "Field": "modelId",
       "Name": "Model ID",
-      "Description": "Model ID"
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": "Level that can be sold at the store"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "compTrophySedId",
-      "Name": "Achivement ID",
-      "Description": "SEQ number of complete trophy"
+      "Name": "Completion Achievement ID",
+      "Description": "Appears unused by the game: achievements are awarded by event scripts."
     },
     {
       "Field": "trophySeqId",
-      "Name": "Achivement Sequential ID",
-      "Description": "Trophy SEQ number"
+      "Name": "Achievement ID",
+      "Description": "Appears unused by the game. Retail: always −1."
     },
     {
       "Field": "maxNum",
       "Name": "Max Amount",
-      "Description": "Maximum number of possessions"
+      "Description": "Maximum number you can carry. 0 or less: 99. Pots and aromatics are capped by their containers instead (see Pot Group ID)."
     },
     {
       "Field": "consumeHeroPoint",
-      "Name": "Consume Humanity",
-      "Description": "Consumer nature"
+      "Name": "Humanity Cost",
+      "Description": "Leftover from earlier games: the item can't be used unless a player counter (humanity in Dark Souls) is at least this value, and using it subtracts the value. Elden Ring has no such resource. Retail: always 0."
     },
     {
       "Field": "overDexterity",
       "Name": "Over Dexterity",
-      "Description": "Skill over start value"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "goodsType",
       "Name": "Goods Type",
-      "Description": "Types of tools"
+      "Description": "Kind of item. Sets the inventory category and switches type-specific rules: Key Items (1), Crafting Materials (2), sorceries (5), incantations (16) and containers (11) can't be used from the item slots. Pots and aromatics of type 0 are capped by their containers (11). Spirit ashes (7, 8) follow the spirit summon rules. Wondrous Physick (9) and its Crystal Tears (10) and Great Runes (15) have their own handling."
     },
     {
       "Field": "refCategory",
       "Name": "Reference Type",
-      "Description": " ID category - Attack, Projectile, Special"
+      "Description": "What the Reference IDs point to: 1 Bullet (thrown items, pots), 2 SpEffect (consumables, buffs). Retail rows with 0 have no reference."
     },
     {
       "Field": "spEffectCategory",
-      "Name": "",
-      "Description": ""
+      "Name": "Attack Behavior Category",
+      "Description": "Category of the attacks the item creates, used to decide which SpEffect attack modifiers apply to them (same categories as the magic and accessory fields). 0: none. Retail: 5 (unarmed and thrown items) on throwables such as Ruin Fragment."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "quickMatchUseRestriction",
-      "Name": "Quick Match Usage Restriction",
-      "Description": "Controls when this item can be used during Quick Match multiplayer modes."
+      "Name": "Quick Match Use Restriction",
+      "Description": "Arena (quick match) modes in which the item is blocked. 0: never blocked, 7: blocked in every mode. Retail: 1 on Wondrous Physick, 7 on the multiplayer fingers and other items."
     },
     {
       "Field": "goodsUseAnim",
-      "Name": "Goods Use Animation",
-      "Description": "Set the animation to play when using the tool"
+      "Name": "Use Animation",
+      "Description": "Animation category played when the item is used. Some values add a requirement: 12 and 24 (Rock Heart, Priestess Heart, Lamenter's Mask) need all four armor slots empty; 11 and 23 need the head slot empty."
     },
     {
       "Field": "opmeMenuType",
-      "Name": "Interaction Menu Type",
-      "Description": "Menu type that opens when using an item"
+      "Name": "Menu Opened on Use",
+      "Description": "Menu opened when the item is used (multiplayer menus, spirit summon, message writing). 0: none. Items with a menu are blocked while that menu can't be opened."
     },
     {
       "Field": "useLimitCategory",
-      "Name": "Use Limit Category",
-      "Description": "This item is usable if any active spEffect with the following spCategories are active."
+      "Name": "Blocking SpEffect Category",
+      "Description": "The item can't be used while the player has an active SpEffect of the category this value stands for (some values cover several categories, as the option names show). 0: no limit. Retail: only row 99 (2)."
     },
     {
       "Field": "replaceCategory",
       "Name": "Replace Category",
-      "Description": "Condition category to add to call ID"
+      "Description": "Adds a replace level to the Reference ID while certain SpEffect states are active: 1 uses Replace Level 1/2 (+1/+2), 2 uses Item Replace Level 1–4 (+1 to +4). 0: none. Retail: always 0."
     },
     {
       "Field": "reserve4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "enable_live",
-      "Name": "Enable Host Player",
-      "Description": "Is it possible to use a surviving player?"
+      "Name": "Usable as Host",
+      "Description": "The item can be used in your own world as a normal (host) player."
     },
     {
       "Field": "enable_gray",
-      "Name": "Enable as Gray Phantom",
-      "Description": "Can Gray Ghost be used?"
+      "Name": "Usable as Gray Phantom",
+      "Description": "The item can be used while in the gray (offline phantom) state."
     },
     {
       "Field": "enable_friendly",
-      "Name": "Enable as friendly phantom",
-      "Description": "Is it possible to use this item as a friendly phantom? (Furled Finger, Hunter, Npc Furled Finger)"
+      "Name": "Usable as Cooperator",
+      "Description": "The item can be used as a cooperating phantom (summoned or Hunter)."
     },
     {
       "Field": "enable_hostile",
-      "Name": "Enable as Black Phantom",
-      "Description": "Is it possible to use this item as a hostile phantom? (All types of Invaders, Duelist, Npc Invaders, Npc's, etc...)"
+      "Name": "Usable as Invader",
+      "Description": "The item can be used as a hostile phantom (invader or duelist)."
     },
     {
       "Field": "enable_multi",
-      "Name": "Enable in Multiplayer",
-      "Description": "Can it be used during multiplayer?"
+      "Name": "Usable During Multiplayer",
+      "Description": "The item can be used while a multiplayer session is active. When off, it's blocked during multiplayer."
     },
     {
       "Field": "disable_offline",
-      "Name": "Enable Online Only",
-      "Description": "Is it unavailable while offline?"
+      "Name": "Online Only",
+      "Description": "The item is blocked while playing offline."
     },
     {
       "Field": "isEquip",
-      "Name": "Is Equippable",
-      "Description": "Whether it can be equipped"
+      "Name": "Can Equip to Item Slot",
+      "Description": "The item can be set in the quick item and pouch slots."
     },
     {
       "Field": "isConsume",
-      "Name": "Is Consumed",
-      "Description": "Will it be consumed when used (whether the number of possessions will decrease)"
+      "Name": "Consumed on Use",
+      "Description": "Using the item reduces the held count by one."
     },
     {
       "Field": "isAutoEquip",
-      "Name": "Is Auto Equipped",
-      "Description": "Will it be equipped automatically when picked up?"
+      "Name": "Auto Equip on Pickup",
+      "Description": "The item is equipped to a free item slot automatically when obtained."
     },
     {
       "Field": "isEstablishment",
-      "Name": "Is Guidance Item",
-      "Description": "Is it a stationary item?"
+      "Name": "Is Placed Object",
+      "Description": "Marks items that place an object in the world. Retail: Rainbow Stone, Glowstone, Grace Mimic and Polter Stone."
     },
     {
       "Field": "isOnlyOne",
-      "Name": "Is Unique Item",
-      "Description": "Is it an item that you can only have one?"
+      "Name": "Is Unique",
+      "Description": "Only one can be held: picking up more doesn't raise the count."
     },
     {
       "Field": "isDiscard",
       "Name": "Can Discard",
-      "Description": "Can you throw away the item? TRUE = thrown away"
+      "Description": "The item can be discarded from the inventory."
     },
     {
       "Field": "isDeposit",
-      "Name": "Can Deposit",
-      "Description": "Can you leave it in the warehouse?"
+      "Name": "Can Store in Chest",
+      "Description": "The item can be put in the storage chest."
     },
     {
       "Field": "isDisableHand",
-      "Name": "Disable if Right Hand is Empty",
-      "Description": "Can't be used when the right-handed weapon is bare-handed?"
+      "Name": "Blocked if Target Hand Unarmed",
+      "Description": "The item can't be used while the armament it targets is Unarmed (the right hand, or the left when two-handing it). Retail: greases."
     },
     {
       "Field": "isRemoveItem_forGameClear",
-      "Name": "Remove Item on Game Clear",
-      "Description": "Whether to delete at the time of lap"
+      "Name": "Removed on New Game+",
+      "Description": "The item is taken away when starting the next playthrough."
     },
     {
       "Field": "isSuppleItem",
-      "Name": "Is Regenerative Item",
-      "Description": "Used to determine replenishable items"
+      "Name": "Is Empty Refillable Item",
+      "Description": "The empty state of a refillable item: replenishing (resting) replaces it with the Empty/Full Counterpart item. Works with Replenish Type."
     },
     {
       "Field": "isFullSuppleItem",
-      "Name": "Is Full Regenerative Item",
-      "Description": "Used to determine replenished items"
+      "Name": "Is Full Refillable Item",
+      "Description": "The full state of a refillable item: replenishing (resting) tops its count back up. Works with Replenish Type."
     },
     {
       "Field": "isEnhance",
-      "Name": "Is Enhancement Item",
-      "Description": "Do you want to enchant your weapon?"
+      "Name": "Is Weapon Buff",
+      "Description": "Buffs the held armament (greases). The item can only be used if the target armament allows buffs (its Is Enhance flag). The right-hand armament is targeted, or the left one while two-handing it (using Reference ID - Left Hand)."
     },
     {
       "Field": "isFixItem",
-      "Name": "Can Repair Item",
-      "Description": "Is it an item to repair?"
+      "Name": "Is Repair Item",
+      "Description": "Repair item: blocked when the target armament can't be repaired (its Disable Repair flag). Retail: always 0."
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "Disable Dropping in Multiplayer",
-      "Description": "Is multi-drop sharing prohibited?"
+      "Name": "Cannot Drop for Others",
+      "Description": "A dropped copy can't be shared with other players in multiplayer."
     },
     {
       "Field": "disableUseAtColiseum",
-      "Name": "Disable Usage in Multiplayer Arena",
-      "Description": "Is it prohibited to use in the arena?"
+      "Name": "Disable Use in Colosseum",
+      "Description": "Appears unused by the game. Arena restrictions come from Quick Match Use Restriction."
     },
     {
       "Field": "disableUseAtOutOfColiseum",
-      "Name": "Disable Usage outside of Multiplayer Arena",
-      "Description": "Is it prohibited to use outside the arena?"
+      "Name": "Only Usable in Colosseum",
+      "Description": "The item can only be used while the Colosseum Area SpEffect state (232) is active. Retail: always 0."
     },
     {
       "Field": "isEnableFastUseItem",
-      "Name": "Can Cancel Application Early",
-      "Description": "Is it possible to cancel early?"
+      "Name": "Can Cancel Use Early",
+      "Description": "The use animation can be cancelled early. Retail: drawstring greases and throwing items."
     },
     {
       "Field": "isApplySpecialEffect",
-      "Name": "Apply SpEffect Modifiers",
-      "Description": "Whether to reflect special effects (such as ability value correction)"
+      "Name": "Apply User's SpEffect Modifiers",
+      "Description": "The item's bullet gets the user's active SpEffect attack modifiers (buffs). Retail: most pots and thrown items."
     },
     {
       "Field": "syncNumVaryId",
-      "Name": "Synchronized Item Usage ID",
-      "Description": "When the number of items is changed, the items with the same ID will be changed at the same time. 0 Not synchronized"
+      "Name": "Shared Count Group",
+      "Description": "When the count of an item in this group changes, every held item with the same value changes with it (used so all upgrade levels of a flask share charges). 0: not shared. Retail: 1 Crimson Tears, 2 Cerulean Tears."
     },
     {
       "Field": "refId_1",
       "Name": "Reference ID - Left Hand",
-      "Description": "ID1 called from the item"
+      "Description": "Bullet or SpEffect used instead of Reference ID when the item targets the left-hand armament: greases while two-handing the left armament, and Shield Grease on the left shield. −1: none."
     },
     {
       "Field": "refVirtualWepId",
-      "Name": "Weapon Reference ID",
-      "Description": "Weapon ID to refer to when using the tool"
+      "Name": "Virtual Weapon ID",
+      "Description": "Armament whose stats the item's attack uses (for example a pot's damage), and which the menu shows for it. −1: none."
     },
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Item Lot ID",
-      "Description": "-1 No vagrant 0 No lottery 1  With lottery"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
-      "Name": "Vagrant Enemy Item Lot ID",
-      "Description": "-1 No drop 0 No lottery 1  With lottery"
+      "Name": "Vagrant Bonus Enemy Drop Lot ID",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
-      "Name": "Vagrant Bonus Item Lot ID",
-      "Description": "-1 No drop 0 No lottery 1  With lottery"
+      "Name": "Vagrant Enemy Drop Lot ID",
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "castSfxId",
-      "Name": "Usage VFX - Cast",
-      "Description": "SFXID until the effect is activated when you try to use the item"
+      "Name": "Use SFX - Cast",
+      "Description": "SFX played while the item is being used, before it takes effect. A few multiplayer items override it while their effect is active. −1: none."
     },
     {
       "Field": "fireSfxId",
-      "Name": "Usage VFX  - Activate",
-      "Description": "SFX ID when the item is activated"
+      "Name": "Use SFX - Activate",
+      "Description": "SFX played when the item takes effect. −1: none."
     },
     {
       "Field": "effectSfxId",
-      "Name": "Usage VFX - Effect",
-      "Description": "After the item is activated, the SFX ID in effect"
+      "Name": "Use SFX - Effect",
+      "Description": "SFX played after the item has taken effect. −1: none."
     },
     {
       "Field": "enable_ActiveBigRune",
       "Name": "Usable with Great Rune Active",
-      "Description": "Can it be used with a large rune activated?"
+      "Description": "The item can be used while a Great Rune is active. Off: blocked while it's active (retail: Rune Arc, the Great Runes and the Crystal Tears)."
     },
     {
       "Field": "isBonfireWarpItem",
-      "Name": "Is Bonfire Warp Item",
-      "Description": "If the state change type Warp Prohibition is applied when TRUE, remove the function to disable the item."
+      "Name": "Checks Region Warp Permit Graces",
+      "Description": "Warp item check against the current play region's Warp Item Use Permit Bonfire IDs (PlayRegionParam): the item is blocked when that check fails. Retail: always 0."
     },
     {
       "Field": "enable_Ladder",
-      "Name": "Enable on Ladder",
-      "Description": "Check here for items available in the ladder"
+      "Name": "Usable on Ladder",
+      "Description": "The item can be used while on a ladder."
     },
     {
       "Field": "isUseMultiPlayPreparation",
-      "Name": "Usable before Multiplayer Session",
-      "Description": "Whether items can be used between session probability and initial synchronization"
+      "Name": "Usable While Multiplayer Starts",
+      "Description": "The item can be used while a multiplayer session is being set up (joining or waiting for the session). Off: blocked during that time."
     },
     {
       "Field": "canMultiUse",
-      "Name": "Usable in Multiplayer",
-      "Description": "Can it be used together?"
+      "Name": "Can Use Several at Once",
+      "Description": "The inventory menu allows using several at once. Retail: rune items."
     },
     {
       "Field": "isShieldEnchant",
-      "Name": "Is Shield Enchantment",
-      "Description": "Is it a shield enchantment?"
+      "Name": "Is Shield Buff",
+      "Description": "Buffs a shield (Shield Grease). The target armament must be able to guard. The left armament is targeted (using Reference ID - Left Hand), or the right one while two-handing it."
     },
     {
       "Field": "isWarpProhibited",
-      "Name": "Is Warp Prohibited",
-      "Description": "When this is TRUE, disable the item if the state change type Warp Prohibition is applied."
+      "Name": "Blocked by Warp Ban",
+      "Description": "The item is blocked while the Warp Ban SpEffect state (278) is active, and when the current play region's Warp Item Prohibition event flags (PlayRegionParam) forbid it. Retail: Pureblood Knight's Medal."
     },
     {
       "Field": "isUseMultiPenaltyOnly",
-      "Name": "Usable if Disconnect Penalty is Active",
-      "Description": "A flag that allows you to determine if an item is only available when a client disconnect penalty is incurred."
+      "Name": "Only Usable with Disconnect Penalty",
+      "Description": "The item can only be used while a multiplayer disconnect penalty is in effect. Retail: always 0."
     },
     {
       "Field": "suppleType",
-      "Name": "Regenerative Item Type",
-      "Description": "Replenishment item / Replenishment type when replenishing a replenished item."
+      "Name": "Replenish Type",
+      "Description": "Which refill the item belongs to when replenishing (resting): 1 Crimson Tears, 2 Cerulean Tears, 3 Wondrous Physick. 0: not refilled. Works with the empty/full refillable flags."
     },
     {
       "Field": "autoReplenishType",
-      "Name": "Auto Replenishment Type",
-      "Description": "Controls whether or not to automatically replenish and default settings"
+      "Name": "Auto Replenish Type",
+      "Description": "Group used by automatic replenishment of carried items from storage. 0: none. Retail: 1 on runes and materials, 2 on consumables."
     },
     {
       "Field": "isDrop",
-      "Name": "Can be Dropped",
-      "Description": "Can I put the item on the spot? TRUE = can be placed"
+      "Name": "Can Drop",
+      "Description": "The item can be dropped on the ground."
     },
     {
       "Field": "showLogCondType",
-      "Name": "Item Acquisition Log Condition Type",
-      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered )"
+      "Name": "Show in Acquisition Log",
+      "Description": "The item appears in the item acquisition log when obtained. Retail: on, except 6 hidden rows such as 9006 Warm Welcome."
     },
     {
       "Field": "isSummonHorse",
       "Name": "Is Horse Summon",
-      "Description": "Is it an item that summons a horse? Cannot be used if the horse died or the PC is in a horse-prohibited area"
+      "Description": "Summons the horse. Blocked where the horse can't be summoned, and while the horse is dead extra conditions apply (reviving it). Its menu appearance changes while the horse is out (see Alternate Appearance Goods ID)."
     },
     {
       "Field": "showDialogCondType",
-      "Name": "Item Acquisition Dialog Condition Type",
-      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered new only)"
+      "Name": "Acquisition Dialog Condition",
+      "Description": "Controls the pop-up shown when the item is obtained. Retail: 2 on almost every item, 0 on the same hidden rows that skip the log."
     },
     {
       "Field": "isSleepCollectionItem",
       "Name": "Is Sleep Collection Item",
-      "Description": "Is it a Nemuri collection item?"
+      "Description": "Leftover collection-item flag: the game can check whether such items are held, and blocks their use unless a related game state is active. Retail: always 0."
     },
     {
       "Field": "enableRiding",
-      "Name": "Enabled while Riding",
-      "Description": "Can it be used while riding?"
+      "Name": "Usable While Riding",
+      "Description": "The item can be used while mounted. Off: blocked while mounted."
     },
     {
       "Field": "disableRiding",
-      "Name": "Disabled while Riding",
-      "Description": "Is it prohibited to use while not riding?"
+      "Name": "Only Usable While Riding",
+      "Description": "The item is blocked while not mounted. Retail: the Rowa Raisin horse feed items."
     },
     {
       "Field": "maxRepositoryNum",
-      "Name": "Max Number Stored in Itembox",
-      "Description": "Number of warehouses"
+      "Name": "Max Number in Storage",
+      "Description": "Maximum number the storage chest can hold. 0 or less: 99."
     },
     {
       "Field": "sortGroupId",
       "Name": "Sort Group ID",
-      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+      "Description": "Sort group: items with the same group are listed together when sorting by item type. 255: none."
     },
     {
       "Field": "isUseNoAttackRegion",
-      "Name": "Enabled in No Attack Region",
-      "Description": "Can it be used in an attack-prohibited area?"
+      "Name": "Usable in No-Attack Areas",
+      "Description": "The item can be used while the No-Attack Area SpEffect state (457) is active (for example at the Roundtable Hold). Off: blocked there."
     },
     {
       "Field": "pad1_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isDisableGet",
-      "Name": "Disable Availability",
-      "Description": "Is it unavailable in the retail version?"
+      "Name": "Cannot Be Obtained",
+      "Description": "The item can't be obtained, and copies already held are removed by the inventory check. Retail: always 0."
     },
     {
       "Field": "quickMatchReplenish",
-      "Name": "Replenish after Quick Match",
-      "Description": "Should amount of this item be stored and replenished after quick match?"
+      "Name": "Restore Count After Quick Match",
+      "Description": "The held count is saved when a quick match starts and restored afterwards."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "saleValue",
       "Name": "Sale Value",
-      "Description": "Selling price"
+      "Description": "Price-like value checked by a shop menu: −1 excludes the item from that menu's list. Retail: 0 on every named item; other values only on unnamed test rows."
     },
     {
       "Field": "rarity",
       "Name": "Rarity",
-      "Description": "Rarity used in item acquisition logs"
+      "Description": "Item rarity, shown in menus and in the pop-up when the item is obtained."
     },
     {
       "Field": "useLimitSummonBuddy",
-      "Name": "Use Limit Category (Spirit Summon)",
-      "Description": "This item is usable if any active spEffect with the following spCategories are active."
+      "Name": "Requires Spirit Summon Area",
+      "Description": "1: the item can only be used where spirit ashes can be summoned (near a Rebirth Monument). Retail: 1 on all spirit ashes."
     },
     {
       "Field": "useLimitSpEffectType",
-      "Name": "Use Limit - SpEffect Type",
-      "Description": "Specified to control whether it can be used depending on the state change type of the special effect applied"
+      "Name": "Blocking SpEffect State Type",
+      "Description": "The item can't be used while a SpEffect with this state type is active. 0: no limit. Retail: the steed whistle (433), Memory of Grace (465) and the transformation items (477–479)."
     },
     {
       "Field": "aiUseJudgeId",
       "Name": "AI Usage Judgment ID",
-      "Description": "AI usage judgment ID"
+      "Description": "ID the NPC AI uses to decide when to use this item. −1: none."
     },
     {
       "Field": "consumeMP",
       "Name": "FP Cost",
-      "Description": "MP consumption"
+      "Description": "FP spent when using the item, multiplied by the user's SpEffect FP cost modifiers. The item can't be used without enough FP. Spirit ashes skip the cost in some summon states."
     },
     {
       "Field": "consumeHP",
       "Name": "HP Cost",
-      "Description": "HP consumed"
+      "Description": "HP spent when using the item. The item can't be used unless current HP is higher than the cost. −1: none. Spirit ashes skip the cost in some summon states."
     },
     {
       "Field": "reinforceGoodsId",
-      "Name": "Reinforcement Goods ID",
-      "Description": "Strengthening tool ID"
+      "Name": "Upgraded Goods ID",
+      "Description": "The goods row this item becomes when upgraded (spirit ash upgrades). −1: can't be upgraded."
     },
     {
       "Field": "reinforceMaterialId",
-      "Name": "Reinforcement Material ID",
-      "Description": "Material ID at the time of strengthening"
+      "Name": "Upgrade Material Set ID",
+      "Description": "Materials needed for the upgrade (EquipMtrlSetParam). −1: none."
     },
     {
       "Field": "reinforcePrice",
-      "Name": "Reinforcement Cost",
-      "Description": "Enhanced price"
+      "Name": "Upgrade Cost",
+      "Description": "Runes needed for the upgrade."
     },
     {
       "Field": "useLevel_vowType0",
-      "Name": "Use Level - Vow Level [0]",
-      "Description": "Pledge 0 usage level"
+      "Name": "Covenant Level Required - Vow Type 0",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 0, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType1",
-      "Name": "Use Level - Vow Level [1]",
-      "Description": "Pledge 1 usage level"
+      "Name": "Covenant Level Required - Vow Type 1",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 1, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType2",
-      "Name": "Use Level - Vow Level [2]",
-      "Description": "Pledge 2 usage level"
+      "Name": "Covenant Level Required - Vow Type 2",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 2, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType3",
-      "Name": "Use Level - Vow Level [3]",
-      "Description": "Pledge 3 usage level"
+      "Name": "Covenant Level Required - Vow Type 3",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 3, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType4",
-      "Name": "Use Level - Vow Level [4]",
-      "Description": "Pledge 4 usage level"
+      "Name": "Covenant Level Required - Vow Type 4",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 4, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType5",
-      "Name": "Use Level - Vow Level [5]",
-      "Description": "Pledge 5 usage level"
+      "Name": "Covenant Level Required - Vow Type 5",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 5, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType6",
-      "Name": "Use Level - Vow Level [6]",
-      "Description": "Pledge 6 usage level"
+      "Name": "Covenant Level Required - Vow Type 6",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 6, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType7",
-      "Name": "Use Level - Vow Level [7]",
-      "Description": "Pledge 7 usage level"
+      "Name": "Covenant Level Required - Vow Type 7",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 7, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType8",
-      "Name": "Use Level - Vow Level [8]",
-      "Description": "Pledge 8 usage level"
+      "Name": "Covenant Level Required - Vow Type 8",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 8, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType9",
-      "Name": "Use Level - Vow Level [9]",
-      "Description": "Pledge 9 usage level"
+      "Name": "Covenant Level Required - Vow Type 9",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 9, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType10",
-      "Name": "Use Level - Vow Level [10]",
-      "Description": "Pledge 10 usage level"
+      "Name": "Covenant Level Required - Vow Type 10",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 10, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType11",
-      "Name": "Use Level - Vow Level [11]",
-      "Description": "Pledge 11 usage level"
+      "Name": "Covenant Level Required - Vow Type 11",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 11, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType12",
-      "Name": "Use Level - Vow Level [12]",
-      "Description": "Pledge 12 usage level"
+      "Name": "Covenant Level Required - Vow Type 12",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 12, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType13",
-      "Name": "Use Level - Vow Level [13]",
-      "Description": "Pledge 13 usage level"
+      "Name": "Covenant Level Required - Vow Type 13",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 13, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType14",
-      "Name": "Use Level - Vow Level [14]",
-      "Description": "Pledge 14 usage level"
+      "Name": "Covenant Level Required - Vow Type 14",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 14, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel_vowType15",
-      "Name": "Use Level - Vow Level [15]",
-      "Description": "Pledge 15 usage level"
+      "Name": "Covenant Level Required - Vow Type 15",
+      "Description": "Leftover covenant check: when the player's covenant (vow) type is 15, the item needs at least this covenant level, and a negative value blocks it. Elden Ring has no covenants. Retail: always 0."
     },
     {
       "Field": "useLevel",
-      "Name": "Use Level",
-      "Description": "Appropriate level of use"
+      "Name": "Required Character Level",
+      "Description": "Minimum character level needed to use the item. Spirit ashes skip it in some summon states. Retail: always 0."
     },
     {
       "Field": "reserve5",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "itemGetTutorialFlagId",
       "Name": "Item Get Tutorial Flag ID",
-      "Description": "Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained."
+      "Description": "Event flag set ON when the item is obtained, used to trigger a tutorial. 0 or −1: none."
     },
     {
       "Field": "reserve3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

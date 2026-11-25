@@ -12,7 +12,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prevent Change"
+          "Text": "None (No Ash of War)"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Mountable, Not Changeable"
         }
       ]
     },

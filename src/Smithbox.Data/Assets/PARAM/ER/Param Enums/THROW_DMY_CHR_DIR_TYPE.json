@@ -12,7 +12,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Face Partner"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Face Away"
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Keep Facing"
         }
       ]
     }

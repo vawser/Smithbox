@@ -8,7 +8,6 @@
 #----------------------------------------------------
 - NR MSB: assign meaning to unknowns
 - AC6 MSB: assign meaning to unknowns
-- BTL: assign meaning to unknowns
 
 - Port:
     - NR -> ER
@@ -90,6 +89,7 @@
 # FX Editor TODO
 #----------------------------------------------------
 - Merge tool
+- Add texture assignment helper (places new texture in suitable binder)
 
 #----------------------------------------------------
 # EMEVD Editor TODO

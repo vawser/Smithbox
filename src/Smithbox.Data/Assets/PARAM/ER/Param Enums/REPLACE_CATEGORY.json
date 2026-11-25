@@ -12,7 +12,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "None"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Replace by Level (2 Steps)"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Replace by Level (4 Steps)"
         }
       ]
     }

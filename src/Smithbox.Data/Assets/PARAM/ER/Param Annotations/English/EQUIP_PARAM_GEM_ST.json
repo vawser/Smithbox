@@ -2,552 +2,552 @@
   "Param": "EQUIP_PARAM_GEM_ST",
   "Type": "EQUIP_PARAM_GEM_ST",
   "Name": "EQUIP_PARAM_GEM_ST",
-  "Description": "Defines an Ash of War item. Determines what weapons it can be applied to and with what affinities.\nDoes not manage unique Ashes of War. Ashes of war may not immediately function on arbitrary weapons.",
+  "Description": "Defines Ashes of War: which weapon types and affinities each one fits, and the skill it gives. An Ash of War fits a weapon when the weapon's Ash of War Type is 1 or 2, this row allows the weapon's type, the chosen affinity is allowed (only Standard on weapons that disable affinities), the weapon's upgrade row allows this Ash of War Rank, and the weapon isn't a throwing weapon when Disable For Throwing Weapons is set. Once fitted, its skill replaces the weapon's own and its passive and on-hit SpEffects are added. Unique skills are set on the weapon, not here.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Not read by the retail game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Menu icon ID"
+      "Description": "Menu icon ID."
     },
     {
       "Field": "rank",
-      "Name": "Rank",
-      "Description": "Magic stone rank"
+      "Name": "Ash of War Rank",
+      "Description": "The Ash of War only fits weapons whose upgrade row (ReinforceParamWeapon) has a Max Ash of War Rank of at least this value. Retail: always 0."
     },
     {
       "Field": "sortGroupId",
       "Name": "Sort Group ID",
-      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+      "Description": "Sort group: items with the same group are listed together when sorting by item type. 255: none."
     },
     {
       "Field": "spEffectId0",
-      "Name": "SpEffect ID [0]",
-      "Description": "Special effect ID00"
+      "Name": "Passive SpEffect ID [0]",
+      "Description": "SpEffect applied while a weapon with this Ash of War is held in the active right- or left-hand slot, alongside the weapon's own passive SpEffects. −1: none. Retail: only set on unused test rows."
     },
     {
       "Field": "spEffectId1",
-      "Name": "SpEffect ID [1]",
-      "Description": "Special effect ID01"
+      "Name": "Passive SpEffect ID [1]",
+      "Description": "Second passive SpEffect, applied like Passive SpEffect ID [0]. −1: none."
     },
     {
       "Field": "spEffectId2",
-      "Name": "SpEffect ID [2]",
-      "Description": "Special effect ID02"
+      "Name": "Passive SpEffect ID [2]",
+      "Description": "Third passive SpEffect, applied like Passive SpEffect ID [0]. −1: none."
     },
     {
       "Field": "itemGetTutorialFlagId",
       "Name": "Item Get Tutorial Flag ID",
-      "Description": "Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained."
+      "Description": "Event flag set ON when the item is obtained, used to trigger a tutorial. 0 or −1: none. Retail: 710600 on the Ashes of War."
     },
     {
       "Field": "swordArtsParamId",
-      "Name": "Sword Arts ID",
-      "Description": "ID of the destination arts parameter"
+      "Name": "Skill ID",
+      "Description": "The skill (SwordArtsParam) this Ash of War gives. While fitted, it replaces the weapon's own skill. −1: no skill."
     },
     {
       "Field": "mountValue",
       "Name": "Application Cost",
-      "Description": "Installation price"
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Sale price"
+      "Description": "Runes received when selling the Ash of War. Retail: 300 on the playable Ashes of War."
     },
     {
       "Field": "saleValue",
-      "Name": "Sale Value",
-      "Description": "Selling price"
+      "Name": "Shop Price",
+      "Description": "Default shop price: a shop lineup row whose own price is negative uses this value instead (still scaled and offset by that row's price multiplier and addition). −1 also makes one shop menu check reject the item. Retail: 0."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Sort ID (-1: Do not collect)"
+      "Description": "Inventory sort order within the sort group."
     },
     {
       "Field": "compTrophySedId",
-      "Name": "Achievement ID",
-      "Description": "SEQ number of complete trophy"
+      "Name": "Completion Achievement ID",
+      "Description": "Appears unused by the game. Retail: always −1."
     },
     {
       "Field": "trophySeqId",
-      "Name": "Achievement Sequential ID",
-      "Description": "Trophy SEQ number"
+      "Name": "Trophy Sequence ID",
+      "Description": "Appears unused by the game. Retail: always −1."
     },
     {
       "Field": "configurableWepAttr00",
       "Name": "Affinity: Standard",
-      "Description": "Configurable weapon attribute ID 0"
+      "Description": "The Ash of War can give the Standard affinity (affinity 0: the weapon's base row)."
     },
     {
       "Field": "configurableWepAttr01",
       "Name": "Affinity: Heavy",
-      "Description": "Configurable Weapon Attribute ID 1"
+      "Description": "The Ash of War can give the Heavy affinity (affinity 1: weapon row + 100). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr02",
       "Name": "Affinity: Keen",
-      "Description": "Configurable Weapon Attribute ID 2"
+      "Description": "The Ash of War can give the Keen affinity (affinity 2: weapon row + 200). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr03",
       "Name": "Affinity: Quality",
-      "Description": "Configurable Weapon Attribute ID 3"
+      "Description": "The Ash of War can give the Quality affinity (affinity 3: weapon row + 300). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr04",
       "Name": "Affinity: Fire",
-      "Description": "Configurable Weapon Attribute ID 4"
+      "Description": "The Ash of War can give the Fire affinity (affinity 4: weapon row + 400). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr05",
       "Name": "Affinity: Flame Art",
-      "Description": "Configurable Weapon Attribute ID 5"
+      "Description": "The Ash of War can give the Flame Art affinity (affinity 5: weapon row + 500). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr06",
       "Name": "Affinity: Lightning",
-      "Description": "Configurable Weapon Attribute ID 6"
+      "Description": "The Ash of War can give the Lightning affinity (affinity 6: weapon row + 600). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr07",
       "Name": "Affinity: Sacred",
-      "Description": "Configurable Weapon Attribute ID 7"
+      "Description": "The Ash of War can give the Sacred affinity (affinity 7: weapon row + 700). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr08",
       "Name": "Affinity: Magic",
-      "Description": "Configurable Weapon Attribute ID 8"
+      "Description": "The Ash of War can give the Magic affinity (affinity 8: weapon row + 800). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr09",
       "Name": "Affinity: Cold",
-      "Description": "Configurable Weapon Attribute ID 9"
+      "Description": "The Ash of War can give the Cold affinity (affinity 9: weapon row + 900). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr10",
       "Name": "Affinity: Poison",
-      "Description": "Configurable Weapon Attribute ID 10"
+      "Description": "The Ash of War can give the Poison affinity (affinity 10: weapon row + 1000). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr11",
       "Name": "Affinity: Blood",
-      "Description": "Configurable Weapon Attribute ID 11"
+      "Description": "The Ash of War can give the Blood affinity (affinity 11: weapon row + 1100). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr12",
       "Name": "Affinity: Occult",
-      "Description": "Configurable Weapon Attribute ID 12"
+      "Description": "The Ash of War can give the Occult affinity (affinity 12: weapon row + 1200). In the menu the affinity must also be unlocked, unless it is this row's Default Affinity."
     },
     {
       "Field": "configurableWepAttr13",
-      "Name": "Affinity: Unused [13]",
-      "Description": "Configurable Weapon Attribute ID 13"
+      "Name": "Affinity: 13",
+      "Description": "The Ash of War can give affinity 13 (weapon row + 1300). Retail has no affinity 13 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr14",
-      "Name": "Affinity: Unused [14]",
-      "Description": "Configurable Weapon Attribute ID 14"
+      "Name": "Affinity: 14",
+      "Description": "The Ash of War can give affinity 14 (weapon row + 1400). Retail has no affinity 14 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr15",
-      "Name": "Affinity: Unused [15]",
-      "Description": "Configurable Weapon Attribute ID 15"
+      "Name": "Affinity: 15",
+      "Description": "The Ash of War can give affinity 15 (weapon row + 1500). Retail has no affinity 15 weapon rows and never sets this."
     },
     {
       "Field": "rarity",
       "Name": "Rarity",
-      "Description": "Rarity used in item acquisition logs"
+      "Description": "Item rarity, shown in menus and in the pop-up when the item is obtained."
     },
     {
       "Field": "configurableWepAttr16",
-      "Name": "Affinity: Unused [16]",
-      "Description": "Configurable Weapon Attribute ID 16"
+      "Name": "Affinity: 16",
+      "Description": "The Ash of War can give affinity 16 (weapon row + 1600). Retail has no affinity 16 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr17",
-      "Name": "Affinity: Unused [17]",
-      "Description": "Configurable Weapon Attribute ID 17"
+      "Name": "Affinity: 17",
+      "Description": "The Ash of War can give affinity 17 (weapon row + 1700). Retail has no affinity 17 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr18",
-      "Name": "Affinity: Unused [18]",
-      "Description": "Configurable Weapon Attribute ID 18"
+      "Name": "Affinity: 18",
+      "Description": "The Ash of War can give affinity 18 (weapon row + 1800). Retail has no affinity 18 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr19",
-      "Name": "Affinity: Unused [19]",
-      "Description": "Configurable Weapon Attribute ID 19"
+      "Name": "Affinity: 19",
+      "Description": "The Ash of War can give affinity 19 (weapon row + 1900). Retail has no affinity 19 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr20",
-      "Name": "Affinity: Unused [20]",
-      "Description": "Configurable Weapon Attribute ID 20"
+      "Name": "Affinity: 20",
+      "Description": "The Ash of War can give affinity 20 (weapon row + 2000). Retail has no affinity 20 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr21",
-      "Name": "Affinity: Unused [21]",
-      "Description": "Configurable Weapon Attribute ID 21"
+      "Name": "Affinity: 21",
+      "Description": "The Ash of War can give affinity 21 (weapon row + 2100). Retail has no affinity 21 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr22",
-      "Name": "Affinity: Unused [22]",
-      "Description": "Configurable Weapon Attribute ID 22"
+      "Name": "Affinity: 22",
+      "Description": "The Ash of War can give affinity 22 (weapon row + 2200). Retail has no affinity 22 weapon rows and never sets this."
     },
     {
       "Field": "configurableWepAttr23",
-      "Name": "Affinity: Unused [23]",
-      "Description": "Configurable Weapon Attribute ID 23"
+      "Name": "Affinity: 23",
+      "Description": "The Ash of War can give affinity 23 (weapon row + 2300). Retail has no affinity 23 weapon rows and never sets this."
     },
     {
       "Field": "isDiscard",
-      "Name": "Is Discardable",
-      "Description": "Can you throw away the item? TRUE = thrown away"
+      "Name": "Can Discard",
+      "Description": "The item can be discarded from the inventory."
     },
     {
       "Field": "isDrop",
-      "Name": "Is Droppable",
-      "Description": "Can I put the item on the spot? TRUE = can be placed"
+      "Name": "Can Drop",
+      "Description": "The item can be dropped on the ground. Retail: on for the playable Ashes of War."
     },
     {
       "Field": "isDeposit",
-      "Name": "Is Depositable",
-      "Description": "Can you leave it in the warehouse?"
+      "Name": "Can Store in Chest",
+      "Description": "The item can be put in the storage chest."
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "Is Drop Disabled in Multiplayer",
-      "Description": "Is multi-drop sharing prohibited?"
+      "Name": "Cannot Drop for Others",
+      "Description": "A dropped copy can't be shared with other players in multiplayer. Retail: always off."
     },
     {
       "Field": "showDialogCondType",
-      "Name": "Item Acquisition Dialog Condition Type",
-      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)"
+      "Name": "Acquisition Dialog Condition",
+      "Description": "Controls the pop-up shown when the item is obtained. Retail: always 2."
     },
     {
       "Field": "showLogCondType",
-      "Name": "Item Acquisition Show Condition Type",
-      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
+      "Name": "Show in Acquisition Log",
+      "Description": "The item appears in the item acquisition log when obtained. Retail: always on."
     },
     {
       "Field": "isDisableGet",
-      "Name": "Disable Availability",
-      "Description": "Is it unavailable in the retail version?"
+      "Name": "Cannot Be Obtained",
+      "Description": "The item can't be obtained, and copies already held are removed by the inventory check. Retail: always 0."
     },
     {
       "Field": "defaultWepAttr",
-      "Name": "Default Weapon Affinity",
-      "Description": "Default weapon attribute ID. Can be installed even with unopened weapon attributes"
+      "Name": "Default Affinity",
+      "Description": "The affinity the Ash of War starts with and shows in menus. It is always allowed, even when its affinity flag is off or (in the menu) the affinity hasn't been unlocked. Values match the affinity flags: 0 Standard, 1 Heavy … 12 Occult."
     },
     {
       "Field": "pad2_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (older regulation layout)."
     },
     {
       "Field": "disableMount_ThrowingWep",
       "Name": "Disable For Throwing Weapons",
-      "Description": "Is it unsuitable for attachment to throwing weapons?"
+      "Description": "The Ash of War can't be fitted to weapons marked Is Throwing Weapon, whatever their weapon type. Retail: set on 13 Ashes of War (mostly spell-like and buff skills)."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "canMountWep_Dagger",
       "Name": "Available: Dagger",
-      "Description": "Can it be attached to Weapon type: Dagger? No input becomes x"
+      "Description": "Fits Daggers (weapon type 1)."
     },
     {
       "Field": "canMountWep_SwordNormal",
       "Name": "Available: Straight Sword",
-      "Description": "Can it be attached to Weapon type: Straight sword? No input becomes x"
+      "Description": "Fits Straight Swords (weapon type 3)."
     },
     {
       "Field": "canMountWep_SwordLarge",
       "Name": "Available: Greatsword",
-      "Description": "Can it be attached to Weapon Type: Large Sword? No input becomes x"
+      "Description": "Fits Greatswords (weapon type 5)."
     },
     {
       "Field": "canMountWep_SwordGigantic",
       "Name": "Available: Colossal Sword",
-      "Description": "Can it be attached to Weapon Type: Oversized Sword? No input becomes x"
+      "Description": "Fits Colossal Swords (weapon type 7)."
     },
     {
       "Field": "canMountWep_SaberNormal",
       "Name": "Available: Curved Sword",
-      "Description": "Can it be attached to Weapon Type: Curly Sword? No input becomes x"
+      "Description": "Fits Curved Swords (weapon type 9)."
     },
     {
       "Field": "canMountWep_SaberLarge",
       "Name": "Available: Curved Greatsword",
-      "Description": "Can it be attached to Weapon Type: Omagari Sword? No input becomes x"
+      "Description": "Fits Curved Greatswords (weapon type 11)."
     },
     {
       "Field": "canMountWep_katana",
       "Name": "Available: Katana",
-      "Description": "Can it be attached to Weapon type: Sword? No input becomes x"
+      "Description": "Fits Katanas (weapon type 13)."
     },
     {
       "Field": "canMountWep_SwordDoubleEdge",
       "Name": "Available: Twinblade",
-      "Description": "Can it be attached to Weapon type: Double-edged sword? No input becomes x"
+      "Description": "Fits Twinblades (weapon type 14)."
     },
     {
       "Field": "canMountWep_SwordPierce",
       "Name": "Available: Thrusting Sword",
-      "Description": "Can it be attached to Weapon type: Sword? No input becomes x"
+      "Description": "Fits Thrusting Swords (weapon type 15)."
     },
     {
       "Field": "canMountWep_RapierHeavy",
       "Name": "Available: Heavy Thrusting Sword",
-      "Description": "Can it be attached to Weapon Type: Large Sword? No input becomes x"
+      "Description": "Fits Heavy Thrusting Swords (weapon type 16)."
     },
     {
       "Field": "canMountWep_AxeNormal",
       "Name": "Available: Axe",
-      "Description": "Can it be attached to Weapon Type: Ax? No input becomes x"
+      "Description": "Fits Axes (weapon type 17)."
     },
     {
       "Field": "canMountWep_AxeLarge",
       "Name": "Available: Greataxe",
-      "Description": "Can it be attached to Weapon Type: Large Ax? No input becomes x"
+      "Description": "Fits Greataxes (weapon type 19)."
     },
     {
       "Field": "canMountWep_HammerNormal",
       "Name": "Available: Hammer",
-      "Description": "Can it be attached to Weapon type: Hammer? No input becomes x"
+      "Description": "Fits Hammers (weapon type 21)."
     },
     {
       "Field": "canMountWep_HammerLarge",
       "Name": "Available: Great Hammer",
-      "Description": "Can it be attached to Weapon Type: Gavel? No input becomes x"
+      "Description": "Fits Great Hammers (weapon type 23)."
     },
     {
       "Field": "canMountWep_Flail",
       "Name": "Available: Flail",
-      "Description": "Can it be attached to Weapon Type: Frail? No input becomes x"
+      "Description": "Fits Flails (weapon type 24)."
     },
     {
       "Field": "canMountWep_SpearNormal",
       "Name": "Available: Spear",
-      "Description": "Can it be attached to Weapon Type: Spear? No input becomes x"
+      "Description": "Fits Spears (weapon type 25)."
     },
     {
       "Field": "canMountWep_SpearLarge",
       "Name": "Available: Large Spear",
-      "Description": "Can it be attached to Weapon Type: Long Spear? No input becomes x"
+      "Description": "Fits weapon type 27. Retail: never set."
     },
     {
       "Field": "canMountWep_SpearHeavy",
       "Name": "Available: Heavy Spear",
-      "Description": "Can it be attached to Weapon Type: Large Spear? No input becomes x"
+      "Description": "Fits Great Spears (weapon type 28)."
     },
     {
       "Field": "canMountWep_SpearAxe",
       "Name": "Available: Halberd",
-      "Description": "Can it be attached to Weapon Type: Halberd? No input becomes x"
+      "Description": "Fits Halberds (weapon type 29)."
     },
     {
       "Field": "canMountWep_Sickle",
       "Name": "Available: Reaper",
-      "Description": "Can it be attached to Weapon type: Sickle? No input becomes x"
+      "Description": "Fits Reapers (weapon type 31)."
     },
     {
       "Field": "canMountWep_Knuckle",
       "Name": "Available: Fist",
-      "Description": "Can it be attached to Weapon type: Fist? No input becomes x"
+      "Description": "Fits Fists (weapon type 35)."
     },
     {
       "Field": "canMountWep_Claw",
       "Name": "Available: Claw",
-      "Description": "Can it be attached to Weapon type: Claw? No input becomes x"
+      "Description": "Fits Claws (weapon type 37)."
     },
     {
       "Field": "canMountWep_Whip",
       "Name": "Available: Whip",
-      "Description": "Can it be attached to Weapon type: Whip? No input becomes x"
+      "Description": "Fits Whips (weapon type 39)."
     },
     {
       "Field": "canMountWep_AxhammerLarge",
       "Name": "Available: Colossal Weapon",
-      "Description": "Can it be attached to Weapon type: Oversized ax mallet? No input becomes x"
+      "Description": "Fits Colossal Weapons (weapon type 41)."
     },
     {
       "Field": "canMountWep_BowSmall",
       "Name": "Available: Light Bow",
-      "Description": "Can it be attached to Weapon type: Small bow? No input becomes x"
+      "Description": "Fits Light Bows (weapon type 50)."
     },
     {
       "Field": "canMountWep_BowNormal",
       "Name": "Available: Bow",
-      "Description": "Can it be attached to Weapon Type: Bow? No input becomes x"
+      "Description": "Fits Bows (weapon type 51)."
     },
     {
       "Field": "canMountWep_BowLarge",
       "Name": "Available: Greatbow",
-      "Description": "Can it be attached to Weapon Type: Large Bow? No input becomes x"
+      "Description": "Fits Greatbows (weapon type 53)."
     },
     {
       "Field": "canMountWep_ClossBow",
       "Name": "Available: Crossbow",
-      "Description": "Can it be attached to Weapon Type: Crossbow? No input becomes x"
+      "Description": "Fits Crossbows (weapon type 55)."
     },
     {
       "Field": "canMountWep_Ballista",
       "Name": "Available: Ballista",
-      "Description": "Can it be attached to Weapon Type: Varistor? No input becomes x"
+      "Description": "Fits Ballistas (weapon type 56)."
     },
     {
       "Field": "canMountWep_Staff",
       "Name": "Available: Staff",
-      "Description": "Can it be attached to Weapon type: Wand? No input becomes x"
+      "Description": "Fits Glintstone Staffs (weapon type 57)."
     },
     {
       "Field": "canMountWep_Sorcery",
       "Name": "Available: Unused Catalyst",
-      "Description": "Can it be attached to Weapon type: Tattoo? No input becomes x"
+      "Description": "Fits weapon type 59 (no retail weapons)."
     },
     {
       "Field": "canMountWep_Talisman",
       "Name": "Available: Seal",
-      "Description": "Can it be attached to Weapon Type: Holy Mark? No input becomes x"
+      "Description": "Fits Sacred Seals (weapon type 61)."
     },
     {
       "Field": "canMountWep_ShieldSmall",
       "Name": "Available: Small Shield",
-      "Description": "Can it be attached to Weapon Type: Small Shield? No input becomes x"
+      "Description": "Fits Small Shields (weapon type 65)."
     },
     {
       "Field": "canMountWep_ShieldNormal",
       "Name": "Available: Medium Shield",
-      "Description": "Can it be attached to Weapon Type: Middle Shield? No input becomes x"
+      "Description": "Fits Medium Shields (weapon type 67)."
     },
     {
       "Field": "canMountWep_ShieldLarge",
       "Name": "Available: Greatshield",
-      "Description": "Can it be attached to Weapon Type: Large Shield? No input becomes x"
+      "Description": "Fits Greatshields (weapon type 69)."
     },
     {
       "Field": "canMountWep_Torch",
       "Name": "Available: Torch",
-      "Description": "Can it be attached to Weapon type: Torch? No input becomes x"
+      "Description": "Fits Torches (weapon type 87)."
     },
     {
       "Field": "reserved_canMountWep",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (older regulation layout; these bits now hold the Hand-to-Hand to Throwing Weapon flags)."
     },
     {
       "Field": "canMountWep_HandToHand",
       "Name": "Available: Hand-to-Hand",
-      "Description": "Can it be attached to Weapon type: Hand-to-Hand? No input becomes x"
+      "Description": "Fits Hand-to-Hand Arts (weapon type 88)."
     },
     {
       "Field": "canMountWep_PerfumeBottle",
       "Name": "Available: Perfume Bottle",
-      "Description": "Can it be attached to Weapon type: Perfume Bottle? No input becomes x"
+      "Description": "Fits Perfume Bottles (weapon type 89)."
     },
     {
       "Field": "canMountWep_ThrustingShield",
       "Name": "Available: Thrusting Shield",
-      "Description": "Can it be attached to Weapon type: Thrusting Shield? No input becomes x"
+      "Description": "Fits Thrusting Shields (weapon type 90)."
     },
     {
       "Field": "canMountWep_ThrowingWeapon",
       "Name": "Available: Throwing Weapon",
-      "Description": "Can it be attached to Weapon type: Throwing Weapon? No input becomes x"
+      "Description": "Fits Throwing Blades (weapon type 91). Separate from Disable For Throwing Weapons, which checks the weapon's Is Throwing Weapon flag."
     },
     {
       "Field": "reserved2_canMountWep_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding (older regulation layout)."
     },
     {
       "Field": "canMountWep_ReverseHandSword",
       "Name": "Available: Reverse-hand Sword",
-      "Description": "Can it be attached to Weapon type: Reverse-hand Sword? No input becomes x"
+      "Description": "Fits Backhand Blades (weapon type 92)."
     },
     {
       "Field": "canMountWep_LightGreatsword",
       "Name": "Available: Light Greatsword",
-      "Description": "Can it be attached to Weapon type: Throwing Weapon? No input becomes x"
+      "Description": "Fits Light Greatswords (weapon type 93)."
     },
     {
       "Field": "canMountWep_GreatKatana",
       "Name": "Available: Great Katana",
-      "Description": "Can it be attached to Weapon type: Great Katana? No input becomes x"
+      "Description": "Fits Great Katanas (weapon type 94)."
     },
     {
       "Field": "canMountWep_BeastClaw",
       "Name": "Available: Beast Claw",
-      "Description": "Can it be attached to Weapon type: Beast Claw? No input becomes x"
+      "Description": "Fits Beast Claws (weapon type 95)."
     },
     {
       "Field": "reserved_canMountWep_0x3d_4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "reserved2_canMountWep",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "spEffectMsgId0",
-      "Name": "SpEffect Message ID [0]",
-      "Description": "Effect text ID 00 (Gem_Effect). Magic stone effect text to display in status"
+      "Name": "Effect Text ID [0]",
+      "Description": "Effect line (Ash of War Effect FMG) shown in the Ash of War's status. −1: none."
     },
     {
       "Field": "spEffectMsgId1",
-      "Name": "SpEffect Message ID [1]",
-      "Description": "Effect text ID 01 (Gem_Effect). Magic stone effect text to display in status"
+      "Name": "Effect Text ID [1]",
+      "Description": "Second effect line (Ash of War Effect FMG) shown in the Ash of War's status. −1: none."
     },
     {
       "Field": "spEffectId_forAtk0",
-      "Name": "SpEffect ID - Attack Hit [0]",
-      "Description": "Special effect parameter ID for attack hit"
+      "Name": "On-Hit SpEffect ID [0]",
+      "Description": "SpEffect applied to targets hit by the player's attacks with a weapon carrying this Ash of War, in addition to the weapon's own on-hit SpEffects. −1: none. Retail: only set on an unused test row."
     },
     {
       "Field": "spEffectId_forAtk1",
-      "Name": "SpEffect ID - Attack Hit [1]",
-      "Description": "Special effect parameter ID for attack hit"
+      "Name": "On-Hit SpEffect ID [1]",
+      "Description": "Second on-hit SpEffect, applied like On-Hit SpEffect ID [0]. −1: none."
     },
     {
       "Field": "spEffectId_forAtk2",
-      "Name": "SpEffect ID - Attack Hit [2]",
-      "Description": "Special effect parameter ID for attack hit"
+      "Name": "On-Hit SpEffect ID [2]",
+      "Description": "Third on-hit SpEffect, applied like On-Hit SpEffect ID [0]. −1: none."
     },
     {
       "Field": "mountWepTextId",
-      "Name": "Mount Weapon Text ID",
-      "Description": "Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]"
+      "Name": "Compatible Weapons Text ID",
+      "Description": "Menu text (GR_MenuText) shown as the Ash of War's compatible weapon types. −1: the menu builds the text itself: an \"all armaments\" line when every weapon type flag is set, otherwise a list of the allowed types."
     },
     {
       "Field": "pad6",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -12,342 +12,342 @@
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": "Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)"
+      "Description": "Inventory sort order. The game multiplies it by 100 and adds the reinforce level."
     },
     {
       "Field": "wanderingEquipId",
       "Name": "Wandering Equip ID",
-      "Description": "Replacement equipment ID for wandering ghosts."
+      "Description": "Armor shown on wandering ghosts in place of this one. Retail: always 0."
     },
     {
       "Field": "resistSleep",
       "Name": "Resist - Sleep",
-      "Description": "Difficulty in getting sleep abnormalities"
+      "Description": "Sleep resistance. Scaled by the reinforce row's sleep resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "resistMadness",
       "Name": "Resist - Madness",
-      "Description": "Difficulty in getting mad"
+      "Description": "Madness resistance. Scaled by the reinforce row's madness resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "saDurability",
       "Name": "Poise Durability",
-      "Description": "Super armor endurance"
+      "Description": "Super armor durability. Summed over the worn pieces, weighted per slot. Retail: 100 on body armor, 0 elsewhere."
     },
     {
       "Field": "toughnessCorrectRate",
       "Name": "Toughness Correction",
-      "Description": "It is a magnification that corrects the basic value of toughness."
+      "Description": "Poise. Summed over the worn pieces into the Poise stat shown in the equipment menu."
     },
     {
       "Field": "fixPrice",
       "Name": "Repair Price",
-      "Description": "Basic repair price"
+      "Description": "Repair cost. Appears unused by the game: armor can't be repaired."
     },
     {
       "Field": "basicPrice",
       "Name": "Basic Price",
-      "Description": "Basic price"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Selling price"
+      "Description": "Runes received when selling the armor."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight [kg]."
+      "Description": "Weight. Added to the equip load with the other worn equipment."
     },
     {
       "Field": "residentSpEffectId",
       "Name": "Resident SpEffect ID [1]",
-      "Description": "Resident special effect ID1"
+      "Description": "SpEffect applied while the armor is worn. The reinforce row's Passive SpEffect ID [1] Offset is added to it. -1: none."
     },
     {
       "Field": "residentSpEffectId2",
       "Name": "Resident SpEffect ID [2]",
-      "Description": "Resident special effect ID2"
+      "Description": "Second SpEffect applied while the armor is worn. The reinforce row's Passive SpEffect ID [2] Offset is added to it. -1: none."
     },
     {
       "Field": "residentSpEffectId3",
       "Name": "Resident SpEffect ID [3]",
-      "Description": "Resident special effect ID3"
+      "Description": "Third SpEffect applied while the armor is worn. The reinforce row's Passive SpEffect ID [3] Offset is added to it. -1: none."
     },
     {
       "Field": "materialSetId",
       "Name": "Upgrade Material ID",
-      "Description": "Material parameter ID required for weapon enhancement"
+      "Description": "Upgrade materials. Appears unused by the game: armor can't be reinforced in Elden Ring."
     },
     {
       "Field": "partsDamageRate",
       "Name": "Weak Parts Damage %",
-      "Description": "Part damage rate"
+      "Description": "Damage multiplier for hits on the body part this armor covers. Retail: 1.5 on head armor, 1.1 on arm armor."
     },
     {
       "Field": "corectSARecover",
       "Name": "Poise Recovery Correction",
-      "Description": "Super Armor Recovery Time Correction Value"
+      "Description": "Super armor recovery time modifier: each worn piece multiplies recovery time by (1 + value). Retail: -0.4 on body armor."
     },
     {
       "Field": "originEquipPro",
       "Name": "Origin Armor +0",
-      "Description": "Strengthening of this armor Original armor ID"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro1",
       "Name": "Origin Armor +1",
-      "Description": "Strengthening this armor Original armor ID1"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro2",
       "Name": "Origin Armor +2",
-      "Description": "Strengthening this armor Original armor ID2"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro3",
       "Name": "Origin Armor +3",
-      "Description": "Strengthening this armor Original armor ID3"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro4",
       "Name": "Origin Armor +4",
-      "Description": "Strengthening this armor Original armor ID4"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro5",
       "Name": "Origin Armor +5",
-      "Description": "Strengthening this armor Original armor ID5"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro6",
       "Name": "Origin Armor +6",
-      "Description": "Strengthening this armor Original armor ID6"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro7",
       "Name": "Origin Armor +7",
-      "Description": "Strengthening this armor Original armor ID7"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro8",
       "Name": "Origin Armor +8",
-      "Description": "Strengthening this armor Original armor ID8"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro9",
       "Name": "Origin Armor +9",
-      "Description": "Strengthening this armor Original armor ID9"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro10",
       "Name": "Origin Armor +10",
-      "Description": "Strengthening this armor Original armor ID10"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro11",
       "Name": "Origin Armor +11",
-      "Description": "Strengthening this armor Original armor ID11"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro12",
       "Name": "Origin Armor +12",
-      "Description": "Strengthening this armor Original armor ID12"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro13",
       "Name": "Origin Armor +13",
-      "Description": "Strengthening this armor Original armor ID13"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro14",
       "Name": "Origin Armor +14",
-      "Description": "Strengthening this armor Original armor ID14"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "originEquipPro15",
       "Name": "Origin Armor +15",
-      "Description": "Strengthening this armor Original armor ID15"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "faceScaleM_ScaleX",
-      "Name": "Facescale - Male - Scale X",
-      "Description": ""
+      "Name": "Facescale - Body Type A - Scale X",
+      "Description": "Face scale for Body Type A while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleM_ScaleZ",
-      "Name": "Facescale - Male - Scale Z",
-      "Description": ""
+      "Name": "Facescale - Body Type A - Scale Z",
+      "Description": "Face scale for Body Type A while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleM_MaxX",
-      "Name": "Facescale - Male - Max X",
-      "Description": ""
+      "Name": "Facescale - Body Type A - Max X",
+      "Description": "Face scale for Body Type A while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleM_MaxZ",
-      "Name": "Facescale - Male - Max Z",
-      "Description": ""
+      "Name": "Facescale - Body Type A - Max Z",
+      "Description": "Face scale for Body Type A while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleF_ScaleX",
-      "Name": "Facescale - Female - Scale X",
-      "Description": ""
+      "Name": "Facescale - Body Type B - Scale X",
+      "Description": "Face scale for Body Type B while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleF_ScaleZ",
-      "Name": "Facescale - Female - Scale Z",
-      "Description": ""
+      "Name": "Facescale - Body Type B - Scale Z",
+      "Description": "Face scale for Body Type B while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleF_MaxX",
-      "Name": "Facescale - Female - Max X",
-      "Description": ""
+      "Name": "Facescale - Body Type B - Max X",
+      "Description": "Face scale for Body Type B while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "faceScaleF_MaxZ",
-      "Name": "Facescale - Female - Max Z",
-      "Description": ""
+      "Name": "Facescale - Body Type B - Max Z",
+      "Description": "Face scale for Body Type B while the armor is worn. Appears unused by the game."
     },
     {
       "Field": "qwcId",
       "Name": "QWC ID",
-      "Description": "QWC parameter ID"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "equipModelId",
       "Name": "Equip Model ID",
-      "Description": "Equipment model number."
+      "Description": "Model number. The model file name is built from it, the model category and the body type."
     },
     {
       "Field": "iconIdM",
-      "Name": "Icon ID - Male",
-      "Description": "Men's menu icon ID."
+      "Name": "Icon ID - Body Type A",
+      "Description": "Menu icon when the character is Body Type A."
     },
     {
       "Field": "iconIdF",
-      "Name": "Icon ID - Female",
-      "Description": "Women's menu icon ID."
+      "Name": "Icon ID - Body Type B",
+      "Description": "Menu icon when the character is Body Type B."
     },
     {
       "Field": "knockBack",
       "Name": "Knockback",
-      "Description": "Knockback reduction value."
+      "Description": "Knockback reduction, in percent. Summed over the worn pieces. Retail: always 0."
     },
     {
       "Field": "knockbackBounceRate",
       "Name": "Knockback Bounce Rate",
-      "Description": "Knockback repulsion rate."
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "durability",
       "Name": "Durability",
-      "Description": "Initial durability."
+      "Description": "Starting durability. Retail: 0, armor has no durability."
     },
     {
       "Field": "durabilityMax",
       "Name": "Max Durability",
-      "Description": "New durability."
+      "Description": "Maximum durability. Retail: 0, armor has no durability."
     },
     {
       "Field": "pad03",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "defFlickPower",
       "Name": "Weapon Repel Power",
-      "Description": "Used to determine the repulsion of enemy attacks."
+      "Description": "Repel power against attacks while guarding. Retail: always 0."
     },
     {
       "Field": "defensePhysics",
       "Name": "Defence - Physical",
-      "Description": "Physical attack damage protection."
+      "Description": "Physical defence. Scaled by the reinforce row's physical defence rate."
     },
     {
       "Field": "defenseMagic",
       "Name": "Defence - Magic",
-      "Description": "Magic attack damage protection."
+      "Description": "Magic defence. Scaled by the reinforce row's magic defence rate."
     },
     {
       "Field": "defenseFire",
       "Name": "Defence - Fire",
-      "Description": "Fire attack damage protection."
+      "Description": "Fire defence. Scaled by the reinforce row's fire defence rate."
     },
     {
       "Field": "defenseThunder",
       "Name": "Defence - Lightning",
-      "Description": "Damage protection for electric shock attacks."
+      "Description": "Lightning defence. Scaled by the reinforce row's lightning defence rate."
     },
     {
       "Field": "defenseSlash",
       "Name": "Defence - Slash",
-      "Description": "Look at the attack type, and if it is a slashing attribute, reduce the defense power"
+      "Description": "Change to physical defence against slash attacks, in percent: defence x (100 + value) / 100."
     },
     {
       "Field": "defenseBlow",
       "Name": "Defence - Strike",
-      "Description": "Look at the attack attribute, and if it is a hit attribute, reduce the defense power."
+      "Description": "Change to physical defence against strike attacks, in percent: defence x (100 + value) / 100."
     },
     {
       "Field": "defenseThrust",
       "Name": "Defence - Thrust",
-      "Description": "Look at the attack attribute, and if it is a hit attribute, reduce the defense power."
+      "Description": "Change to physical defence against thrust attacks, in percent: defence x (100 + value) / 100."
     },
     {
       "Field": "resistPoison",
       "Name": "Resist - Poison",
-      "Description": "Difficulty in getting poisonous"
+      "Description": "Poison resistance. Scaled by the reinforce row's poison resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "resistDisease",
       "Name": "Resist - Scarlet Rot",
-      "Description": "Difficulty in getting sick"
+      "Description": "Scarlet Rot resistance. Scaled by the reinforce row's rot resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "resistBlood",
       "Name": "Resist - Blood Loss",
-      "Description": "Difficulty in getting bleeding abnormalities"
+      "Description": "Blood Loss resistance. Scaled by the reinforce row's bleed resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "resistCurse",
       "Name": "Resist - Death Blight",
-      "Description": "Difficulty in getting a curse condition"
+      "Description": "Death Blight resistance. Scaled by the reinforce row's curse resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "reinforceTypeId",
       "Name": "Reinforce Type ID",
-      "Description": "Enhanced type ID"
+      "Description": "ReinforceParamProtector row. The armor's reinforce level (the last two digits of its ID) is added to it."
     },
     {
       "Field": "trophySGradeId",
       "Name": "Achievement ID",
-      "Description": "Is it related to the trophy system?"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": "Level that can be sold at the store"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "knockbackParamId",
       "Name": "Knockback Param ID",
-      "Description": "ID of the parameter used for knockback"
+      "Description": "KnockBackParam row used for the player's knockback reactions. Only the body armor counts. Retail: 1 on every armor."
     },
     {
       "Field": "flickDamageCutRate",
       "Name": "Weapon Repel Damage %",
-      "Description": "Used for damage attenuation rate when repelling"
+      "Description": "Damage reduction when repelling, in percent. Summed over the worn pieces. Retail: always 0."
     },
     {
       "Field": "equipModelCategory",
@@ -357,12 +357,12 @@
     {
       "Field": "equipModelGender",
       "Name": "Equip Model Gender",
-      "Description": "Gender of equipment model."
+      "Description": "Which body types the armor has a model for, and whether the model differs per body type."
     },
     {
       "Field": "protectorCategory",
       "Name": "Armor Category",
-      "Description": "Armor category."
+      "Description": "Equip slot: head, body, arms or legs. Leg armor also drives the automatic foot decals."
     },
     {
       "Field": "rarity",
@@ -377,12 +377,12 @@
     {
       "Field": "partsDmgType",
       "Name": "Parts Damage Type",
-      "Description": "Set the attack type to judge the part damage"
+      "Description": "Attack type that counts as a part hit for Weak Parts Damage %. 0: only hits the game already treats as part hits. Retail: always 0."
     },
     {
       "Field": "pad04",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "isDeposit",
@@ -392,27 +392,27 @@
     {
       "Field": "headEquip",
       "Name": "Is Head Equipment",
-      "Description": "Is it head equipment?"
+      "Description": "Appears unused by the game. The equip slot comes from Armor Category."
     },
     {
       "Field": "bodyEquip",
       "Name": "Is Body Equipment",
-      "Description": "Is it torso equipment?"
+      "Description": "Appears unused by the game. The equip slot comes from Armor Category."
     },
     {
       "Field": "armEquip",
       "Name": "Is Arm Equipment",
-      "Description": "Is it arm equipment?"
+      "Description": "Appears unused by the game. The equip slot comes from Armor Category."
     },
     {
       "Field": "legEquip",
       "Name": "Is Leg Equipment",
-      "Description": "Is it leg equipment?"
+      "Description": "Appears unused by the game. The equip slot comes from Armor Category."
     },
     {
       "Field": "useFaceScale",
       "Name": "Use Facescale",
-      "Description": "Whether to use a face scale"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "isSkipWeakDamageAnim",
@@ -442,7 +442,7 @@
     {
       "Field": "defenseMaterialVariationValue",
       "Name": "Defence Material - Variation Value",
-      "Description": "It is a value used in combination with the defense material to classify abnormal conditions, damage SFX, and SE. SEQ16473"
+      "Description": "Appears unused by the game. Only the weak-point version is used."
     },
     {
       "Field": "isDiscard",
@@ -462,7 +462,7 @@
     {
       "Field": "simpleModelForDlc",
       "Name": "Simple Model for DLC1",
-      "Description": "Is there a simple model for DLC?"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "showLogCondType",
@@ -477,42 +477,42 @@
     {
       "Field": "pad",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "neutralDamageCutRate",
       "Name": "Absorption - Physical",
-      "Description": "Non-attribute damage multiplier"
+      "Description": "Physical damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "slashDamageCutRate",
       "Name": "Absorption - Slash",
-      "Description": "Slash damage multiplier"
+      "Description": "Slash damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "blowDamageCutRate",
       "Name": "Absorption - Strike",
-      "Description": "Batter damage multiplier"
+      "Description": "Strike damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "thrustDamageCutRate",
       "Name": "Absorption - Thrust",
-      "Description": "Puncture damage ratio"
+      "Description": "Thrust damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "magicDamageCutRate",
       "Name": "Absorption - Magic",
-      "Description": "Magic damage multiplier"
+      "Description": "Magic damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "fireDamageCutRate",
       "Name": "Absorption - Fire",
-      "Description": "Flame damage multiplier"
+      "Description": "Fire damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "thunderDamageCutRate",
       "Name": "Absorption - Lightning",
-      "Description": "Electric shock damage ratio"
+      "Description": "Lightning damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "defenseMaterialSfx1",
@@ -562,857 +562,857 @@
     {
       "Field": "toughnessDamageCutRate",
       "Name": "Toughness Absorption",
-      "Description": "Toughness version cut rate"
+      "Description": "Multiplier on poise damage taken. Worn pieces multiply together. Retail: always 1."
     },
     {
       "Field": "toughnessRecoverCorrection",
       "Name": "Toughness Recovery Correction",
-      "Description": "Correction value for toughness recovery time"
+      "Description": "Poise recovery time modifier. Worn pieces combine multiplicatively. Retail: always 0."
     },
     {
       "Field": "darkDamageCutRate",
       "Name": "Absorption - Holy",
-      "Description": "Dark damage multiplier"
+      "Description": "Holy damage multiplier (0.9 = 10% absorbed). Worn pieces multiply together."
     },
     {
       "Field": "defenseDark",
       "Name": "Defence - Holy",
-      "Description": "Dark attack damage protection."
+      "Description": "Holy defence. Scaled by the reinforce row's Defence %: Lightning rate (the game never uses the reinforce holy rate)."
     },
     {
       "Field": "invisibleFlag48",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag49",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag50",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag51",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag52",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag53",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag54",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag55",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag56",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag57",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag58",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag59",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag60",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag61",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag62",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag63",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag64",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag65",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag66",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag67",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag68",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag69",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag70",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag71",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag72",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag73",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag74",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag75",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag76",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag77",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag78",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag79",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "invisibleFlag80",
       "Name": "",
-      "Description": ""
+      "Description": "Unused."
     },
     {
       "Field": "padbit",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "postureControlId",
       "Name": "Posture Control ID",
-      "Description": "Attitude control ID (torso)"
+      "Description": "Arm pose adjustment for bulky chest armor. Picks the PostureControlParam_Pro row posture type x 100 + this value (posture type 0 normal, 1 riding, 2 stealth). Only the chest piece counts."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "saleValue",
       "Name": "Shop Price",
-      "Description": "Selling price"
+      "Description": "Shop price. Retail: always 0."
     },
     {
       "Field": "resistFreeze",
       "Name": "Resist - Frost",
-      "Description": "Difficulty in getting cold air condition abnormal"
+      "Description": "Frostbite resistance. Scaled by the reinforce row's frost resist rate; with no reinforce row it gives no resistance."
     },
     {
       "Field": "invisibleFlag_SexVer00",
       "Name": "Mask 00 - Upper face",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer01",
       "Name": "Mask 01 - Chin",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer02",
       "Name": "Mask 02 - Nose and cheeks",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer03",
       "Name": "Mask 03 - Ears and top of head",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer04",
       "Name": "Mask 04 - Neck",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer05",
       "Name": "Mask 05 - Lower neck",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer06",
       "Name": "Mask 06 - Chest",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer07",
       "Name": "Mask 07 - Upper elbows",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer08",
       "Name": "Mask 08 - Shoulders",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer09",
       "Name": "Mask 09 - Lower elbows",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer10",
       "Name": "Mask 10 - Lower arms",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer11",
       "Name": "Mask 11 - Right hand",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer12",
       "Name": "Mask 12 - Waist",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer13",
       "Name": "Mask 13 - Left hand",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer14",
       "Name": "Mask 14 - Knees",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer15",
       "Name": "Mask 15 - Lower legs",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer16",
       "Name": "Mask 16 - Feet",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer17",
       "Name": "Mask 17 - Eyepatch",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer18",
       "Name": "Mask 18 - Unknown",
-      "Description": "Set on most gauntlets"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer19",
       "Name": "Mask 19 - Unknown",
-      "Description": "Set on most chests and legs"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer20",
       "Name": "Mask 20 - [ARMS] Long Gloves (Lower Arm)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer21",
       "Name": "Mask 21 - [ARMS] Long Gloves (Full Length)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer22",
       "Name": "Mask 22 - Unknown",
-      "Description": "Set on bare chest"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer23",
-      "Name": "Mask 23 - [BODY] Scarf / High Collar (Compressed)",
-      "Description": ""
+      "Name": "Mask 23 - [BODY] High Collar (Compressed)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer24",
       "Name": "Mask 24 - [BODY] Sleeves (Bunched to Elbow)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer25",
       "Name": "Mask 25 - [BODY] Sleeves (Bunched Midway)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer26",
       "Name": "Mask 26 - [BODY] Sleeves (Full)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer27",
-      "Name": "Mask 27 - [BODY] Large Sleeves (Bunched to Elbow)",
-      "Description": ""
+      "Name": "Mask 27 - [BODY] Large Sleeves (to Elbow)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer28",
       "Name": "Mask 28 - [BODY] Large Sleeves (Full)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer29",
       "Name": "Mask 29 - [BODY] Sleeves (Wrist Bracelets)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer30",
       "Name": "Mask 30 - [BODY] Couter / Elbow Armor",
-      "Description": "belt"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer31",
-      "Name": "Mask 31 - [BODY] Couter / Elbow Armor (Higher Up)",
-      "Description": ""
+      "Name": "Mask 31 - [BODY] Elbow Armor (Higher)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer32",
       "Name": "Mask 32 - [BODY] Small Collar",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer33",
       "Name": "Mask 33 - [BODY] Small Collar (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer34",
-      "Name": "Mask 34 - [BODY] Scarf / High Collar (Full)",
-      "Description": ""
+      "Name": "Mask 34 - [BODY] High Collar (Full)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer35",
       "Name": "Mask 35 - [BODY] Lower Abdomen Cover",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer36",
       "Name": "Mask 36 - [BODY] Small Hood (Down)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer37",
       "Name": "Mask 37 - [BODY] Small Hood (Up)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer38",
       "Name": "Mask 38 - [BODY] Left Pauldron / Shoulder",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer39",
       "Name": "Mask 39 - [BODY] Right Pauldron / Shoulder",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer40",
       "Name": "Mask 40 - [BODY] Cowl",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer41",
       "Name": "Mask 41 - [BODY] Cowl (Long)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer42",
       "Name": "Mask 42 - [BODY] Cowl (Mid)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer43",
       "Name": "Mask 43 - [BODY] Cowl (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer44",
       "Name": "Mask 44 - [HEAD] Gorget / Neckpiece",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer45",
       "Name": "Mask 45 - [HEAD] Gorget / Neckpiece (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer46",
-      "Name": "Mask 46 - [HEAD] Long Hood / Plume (Low)",
-      "Description": ""
+      "Name": "Mask 46 - [HEAD] Hood / Plume (Low)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer47",
-      "Name": "Mask 47 - [HEAD] Long Hood / Plume (Mid)",
-      "Description": ""
+      "Name": "Mask 47 - [HEAD] Hood / Plume (Mid)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer48",
-      "Name": "Mask 48 - [HEAD] Long Hood / Plume (High)",
-      "Description": ""
+      "Name": "Mask 48 - [HEAD] Hood / Plume (High)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer49",
-      "Name": "Mask 49 - [HEAD] Long Hood / Plume (Short)",
-      "Description": ""
+      "Name": "Mask 49 - [HEAD] Hood / Plume (Short)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer50",
       "Name": "Mask 50 - [LEGS] High Waistbelt",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer51",
       "Name": "Mask 51 - [LEGS] Leggings",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer52",
       "Name": "Mask 52 - [LEGS] Leggings (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer53",
       "Name": "Mask 53 - [LEGS] Kneepads",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer54",
       "Name": "Mask 54 - [LEGS] Kneepads (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer55",
       "Name": "Mask 55 - [LEGS] Waistbelt",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer56",
       "Name": "Mask 56 - [LEGS] Waistbelt (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer57",
       "Name": "Mask 57 - [LEGS] Waistcloth",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer58",
       "Name": "Mask 58 - [LEGS] Wiastcloth (Compressed)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer59",
       "Name": "Mask 59 - [LEGS] Pants Big Thighs",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer60",
       "Name": "Mask 60 - Hair (Front)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer61",
       "Name": "Mask 61 - Hair (Forehead)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer62",
       "Name": "Mask 62 - Hair (Under Helmet)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer63",
       "Name": "Mask 63 - Hair (Over Headband)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer64",
       "Name": "Mask 64 - Hair (Full)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer65",
       "Name": "Mask 65 - Hair (Back of Head)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer66",
-      "Name": "Mask 66 - Long Hair Braid / Tail (Low)",
-      "Description": ""
+      "Name": "Mask 66 - Hair Braid / Tail (Low)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer67",
-      "Name": "Mask 67 - Long Hair Braid / Tail (High)",
-      "Description": ""
+      "Name": "Mask 67 - Hair Braid / Tail (High)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer68",
-      "Name": "Mask 68 - Long Hair Braid / Tail (Highest)",
-      "Description": ""
+      "Name": "Mask 68 - Hair Braid / Tail (Highest)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer69",
-      "Name": "Mask 69 - Long Hair Braid / Tail (Lowest, Shortest)",
-      "Description": ""
+      "Name": "Mask 69 - Hair Braid / Tail (Lowest)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer70",
       "Name": "Mask 70 - [HEAD] Gorget / Neckpiece (Large)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer71",
-      "Name": "Mask 71 - [BODY] Long Shirt (Bunched up to Belt)",
-      "Description": ""
+      "Name": "Mask 71 - [BODY] Long Shirt (to Belt)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer72",
-      "Name": "Mask 72 - [BODY] Long Shirt (Full Length over Waist)",
-      "Description": ""
+      "Name": "Mask 72 - [BODY] Long Shirt (Full Length)",
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer73",
       "Name": "Mask 73 - Bare Torso and Upper Arms",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer74",
       "Name": "Mask 74 - [BODY] Gravekeeper Cloak Hood (Down)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer75",
       "Name": "Mask 75 - [BODY] Gravekeeper Cloak Hood (Up)",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer76",
       "Name": "Mask 76 - Lower Neck Warp",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer77",
       "Name": "Mask 77 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer78",
       "Name": "Mask 78 - Beard Jaw",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer79",
       "Name": "Mask 79 - Beard Chin",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer80",
       "Name": "Mask 80 - Beard Stubble",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer81",
       "Name": "Mask 81 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer82",
       "Name": "Mask 82 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer83",
       "Name": "Mask 83 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer84",
       "Name": "Mask 84 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer85",
       "Name": "Mask 85 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer86",
       "Name": "Mask 86 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer87",
       "Name": "Mask 87 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer88",
       "Name": "Mask 88 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer89",
       "Name": "Mask 89 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer90",
       "Name": "Mask 90 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer91",
       "Name": "Mask 91 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer92",
       "Name": "Mask 92 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer93",
       "Name": "Mask 93 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer94",
       "Name": "Mask 94 - Unknown",
-      "Description": "Used by chest armors"
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer95",
       "Name": "Mask 95 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer96",
       "Name": "Mask 96 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer97",
       "Name": "Mask 97 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer98",
       "Name": "Mask 98 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer99",
       "Name": "Mask 99 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer100",
       "Name": "Mask 100 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer101",
       "Name": "Mask 101 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer102",
       "Name": "Mask 102 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer103",
       "Name": "Mask 103 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer104",
       "Name": "Mask 104 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer105",
       "Name": "Mask 105 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer106",
       "Name": "Mask 106 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer107",
       "Name": "Mask 107 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer108",
       "Name": "Mask 108 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer109",
       "Name": "Mask 109 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer110",
       "Name": "Mask 110 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer111",
       "Name": "Mask 111 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer112",
       "Name": "Mask 112 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer113",
       "Name": "Mask 113 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer114",
       "Name": "Mask 114 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer115",
       "Name": "Mask 115 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer116",
       "Name": "Mask 116 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer117",
       "Name": "Mask 117 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer118",
       "Name": "Mask 118 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer119",
       "Name": "Mask 119 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer120",
       "Name": "Mask 120 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer121",
       "Name": "Mask 121 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer122",
       "Name": "Mask 122 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer123",
       "Name": "Mask 123 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer124",
       "Name": "Mask 124 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer125",
       "Name": "Mask 125 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "invisibleFlag_SexVer126",
       "Name": "Mask 126 - Unknown",
-      "Description": ""
+      "Description": "Hides this part of the character model while the armor is worn. Hidden on Body Type A/B: only on that body type. The masks of all worn armor pieces combine."
     },
     {
       "Field": "pad404",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "pad406",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

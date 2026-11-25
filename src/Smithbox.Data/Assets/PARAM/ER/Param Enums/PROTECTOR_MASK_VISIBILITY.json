@@ -1,0 +1,47 @@
+{
+  "Key": "PROTECTOR_MASK_VISIBILITY",
+  "Names": [
+    {
+      "Language": "English",
+      "Text": "PROTECTOR_MASK_VISIBILITY"
+    }
+  ],
+  "Options": [
+    {
+      "Key": "0",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shown"
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden on Body Type A"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Hidden on Body Type B"
+        }
+      ]
+    }
+  ]
+}

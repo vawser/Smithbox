@@ -57,13 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Follow (No Anchor)"
+          "Text": "Follow Target Point"
         }
       ],
       "Descriptions": [
         {
           "Language": "English",
-          "Text": "Following is enabled, but no anchor point is assigned in the code paths found. Vanilla: Death Rite Bird spears."
+          "Text": "The bullet moves with the target point: the lock-on target, or the aim point ahead when not locked on. Vanilla: Death Rite Bird spears."
         }
       ]
     },

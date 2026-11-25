@@ -2,227 +2,227 @@
   "Param": "EQUIP_PARAM_ACCESSORY_ST",
   "Type": "EQUIP_PARAM_ACCESSORY_ST",
   "Name": "EQUIP_PARAM_ACCESSORY_ST",
-  "Description": "Defines Talismans.",
+  "Description": "Defines talismans. A talisman's passive effects are its SpEffects: Reference ID (when Reference Type is SpEffect) and Passive SpEffect ID 1-4, all applied while it is equipped. Talismans that share an Accessory Group can't be worn together.",
   "Fields": [
     {
       "Field": "disableParam_NT",
       "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Description": "Development flag for network-test builds. Not read by the retail game."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Reserved. Appears unused by the game."
     },
     {
       "Field": "refId",
       "Name": "Reference ID",
-      "Description": "ID called from decorations"
+      "Description": "First passive SpEffect of the talisman, applied while it is equipped. Only used when Reference Type is 2 (SpEffect); with any other type this field gives nothing. Retail: every talisman uses type 2."
     },
     {
       "Field": "sfxVariationId",
       "Name": "SFX Variation ID",
-      "Description": "Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)"
+      "Description": "Appears unused by the game. Retail: always -1."
     },
     {
       "Field": "weight",
       "Name": "Weight",
-      "Description": "Weight [kg]"
+      "Description": "Weight. Added to the equip load with the other worn equipment."
     },
     {
       "Field": "behaviorId",
       "Name": "Behavior ID",
-      "Description": "Action ID (= Skill)"
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "basicPrice",
       "Name": "Basic Price",
-      "Description": "Basic price"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "sellValue",
       "Name": "Sell Value",
-      "Description": "Selling price"
+      "Description": "Runes received when selling the talisman."
     },
     {
       "Field": "sortId",
       "Name": "Sort ID",
-      "Description": ""
+      "Description": "Inventory sort order."
     },
     {
       "Field": "qwcId",
       "Name": "QWC ID",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "equipModelId",
       "Name": "Equip Model ID",
-      "Description": "Equipment model number"
+      "Description": "Appears unused by the game: talismans have no model. Retail: always 0."
     },
     {
       "Field": "iconId",
       "Name": "Icon ID",
-      "Description": "Menu icon ID"
+      "Description": "Menu icon ID."
     },
     {
       "Field": "shopLv",
       "Name": "Shop Level",
-      "Description": "Level that can be sold at the store"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "trophySGradeId",
       "Name": "Achievement Grade ID",
-      "Description": ""
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "trophySeqId",
       "Name": "Achievement Sequential ID",
-      "Description": "Trophy SEQ number"
+      "Description": "Appears unused by the game."
     },
     {
       "Field": "equipModelCategory",
       "Name": "Equip Model Category",
-      "Description": "Equipment model type"
+      "Description": "Appears unused by the game: talismans have no model. Retail: always 0."
     },
     {
       "Field": "equipModelGender",
       "Name": "Equip Model Gender",
-      "Description": "Gender of equipment model"
+      "Description": "Appears unused by the game: talismans have no model. Retail: always 0."
     },
     {
       "Field": "accessoryCategory",
-      "Name": "Accessory Type",
-      "Description": "Armor category"
+      "Name": "Accessory Category",
+      "Description": "Equipment category. Only 0 (Talisman) is mapped to the talisman equip slots when the game works out where the item can be equipped. Retail: always 0."
     },
     {
       "Field": "refCategory",
       "Name": "Reference Type",
-      "Description": " ID category [Attack, Projectile, Special]"
+      "Description": "What Reference ID points to. Only 2 (SpEffect) is used: Reference ID is then applied as a passive SpEffect. Retail: always 2."
     },
     {
       "Field": "spEffectCategory",
       "Name": "SpEffect Category",
-      "Description": "Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor."
+      "Description": "Appears unused by the game. Retail: always 0."
     },
     {
       "Field": "sortGroupId",
       "Name": "Sort Group ID",
-      "Description": "Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+      "Description": "Sort group: items with the same group are listed together when sorting by item type. 255: none."
     },
     {
       "Field": "vagrantItemLotId",
       "Name": "Vagrant Item Lot ID",
-      "Description": "-1: No vagrant 0: No lottery 1 ~: With lottery"
+      "Description": "Appears unused by the game. Retail: always -1."
     },
     {
       "Field": "vagrantBonusEneDropItemLotId",
-      "Name": "Vagrant Bonus Item Lot ID",
-      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
+      "Name": "Vagrant Bonus Enemy Drop Lot ID",
+      "Description": "Appears unused by the game. Retail: always -1."
     },
     {
       "Field": "vagrantItemEneDropItemLotId",
-      "Name": "Vagrant Enemy Item Lot ID",
-      "Description": "-1: No drop 0: No lottery 1 ~: With lottery"
+      "Name": "Vagrant Enemy Drop Lot ID",
+      "Description": "Appears unused by the game. Retail: always -1."
     },
     {
       "Field": "isDeposit",
-      "Name": "Is Depositable",
-      "Description": "Can you deposit it in the warehouse?"
+      "Name": "Can Store in Chest",
+      "Description": "The item can be put in the storage chest."
     },
     {
       "Field": "isEquipOutBrake",
       "Name": "Is Destroyed on Unequip",
-      "Description": "Will it break when equipped and removed?"
+      "Description": "Appears unused by the game. Retail: always off."
     },
     {
       "Field": "disableMultiDropShare",
-      "Name": "Is Dropping Disabled in Multiplayer",
-      "Description": "Is multi-drop sharing prohibited?"
+      "Name": "Cannot Drop for Others",
+      "Description": "A dropped copy can't be shared with other players in multiplayer."
     },
     {
       "Field": "isDiscard",
-      "Name": "Is Discardable",
-      "Description": "Can you throw away the item? TRUE = thrown away"
+      "Name": "Can Discard",
+      "Description": "The item can be discarded from the inventory."
     },
     {
       "Field": "isDrop",
-      "Name": "Is Droppable",
-      "Description": "Can I put the item on the spot? TRUE = can be placed"
+      "Name": "Can Drop",
+      "Description": "The item can be dropped on the ground. Retail: off only on the Entwining Umbilical Cord and one unnamed row."
     },
     {
       "Field": "showLogCondType",
-      "Name": "Item Acquisition Log Condition Type",
-      "Description": "Whether to display in the item acquisition log when acquiring the item (not entered: )"
+      "Name": "Show in Acquisition Log",
+      "Description": "The item appears in the item acquisition log when obtained. Retail: always on."
     },
     {
       "Field": "showDialogCondType",
-      "Name": "Item Acquisition Dialog Condition Type",
-      "Description": "Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)"
+      "Name": "Acquisition Dialog Condition",
+      "Description": "Controls the pop-up shown when the item is obtained. Retail: always 2."
     },
     {
       "Field": "rarity",
       "Name": "Rarity",
-      "Description": "Rarity used in item acquisition logs"
+      "Description": "Item rarity, shown in menus and in the pop-up when the item is obtained."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "saleValue",
-      "Name": "Sale Price",
-      "Description": "Selling price"
+      "Name": "Shop Price",
+      "Description": "Default shop price: a shop lineup row whose own price is negative uses this value instead (still scaled and offset by that row's price multiplier and addition). -1 also makes one shop menu check reject the item. Retail: always 0."
     },
     {
       "Field": "accessoryGroup",
       "Name": "Accessory Group",
-      "Description": "Items of the same group cannot be equipped at the same time"
+      "Description": "Talismans with the same group can't be equipped together: the equip menu marks those that share a group with one already worn. -1: no group. Retail: the tiers of a talisman share one group (for example every Crimson Amber Medallion is 1000)."
     },
     {
       "Field": "isDisableGet",
-      "Name": "Disable Availability",
-      "Description": "Is it unavailable in the retail version?"
+      "Name": "Cannot Be Obtained",
+      "Description": "The item can't be obtained, and copies already held are removed by the inventory check. Retail: always 0."
     },
     {
       "Field": "pad3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "compTrophySedId",
-      "Name": "Number of Completed Achievement ID",
-      "Description": "SEQ number of complete trophy"
+      "Name": "Completion Achievement ID",
+      "Description": "Appears unused by the game. Retail: 17 on the 8 legendary talismans (matching the Legendary Talismans achievement), -1 elsewhere."
     },
     {
       "Field": "residentSpEffectId1",
-      "Name": "SpEffect ID [1]",
-      "Description": "Resident special effect ID1"
+      "Name": "Passive SpEffect ID [1]",
+      "Description": "SpEffect applied while the talisman is equipped, alongside Reference ID and the other passive SpEffects. Retail uses 0 for none."
     },
     {
       "Field": "residentSpEffectId2",
-      "Name": "SpEffect ID [2]",
-      "Description": "Resident special effect ID2"
+      "Name": "Passive SpEffect ID [2]",
+      "Description": "Second additional SpEffect applied while the talisman is equipped. Retail uses 0 for none."
     },
     {
       "Field": "residentSpEffectId3",
-      "Name": "SpEffect ID [3]",
-      "Description": "Resident special effect ID3"
+      "Name": "Passive SpEffect ID [3]",
+      "Description": "Third additional SpEffect applied while the talisman is equipped. Retail uses 0 for none."
     },
     {
       "Field": "residentSpEffectId4",
-      "Name": "SpEffect ID [4]",
-      "Description": "Resident special effect ID4"
+      "Name": "Passive SpEffect ID [4]",
+      "Description": "Fourth additional SpEffect applied while the talisman is equipped. Retail uses 0 for none."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

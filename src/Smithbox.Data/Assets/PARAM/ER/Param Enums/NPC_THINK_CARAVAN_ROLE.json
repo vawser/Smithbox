@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Attack"
         }
       ]
     },
@@ -21,7 +21,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Guard"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Master"
         }
       ]
     }
