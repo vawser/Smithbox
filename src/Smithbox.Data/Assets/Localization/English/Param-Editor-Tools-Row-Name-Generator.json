@@ -1,0 +1,384 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowNameGen_Header",
+      "Text": "Generate Row Names"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Hint",
+      "Text": "Name rows after what they are linked to: their own text entry, the rows that use them, the rows and text they point at, and project aliases. Useful for modded regulations that come without row names. Generate shows a preview; nothing changes until you press Apply."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Sources",
+      "Text": "Sources"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Sources_TT",
+      "Text": "Where names may come from. A row's own text entry is tried first, then references (in the order set by Prefer Incoming References), then aliases."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Param_Rules",
+      "Text": "Param Rules"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Param_Rules_TT",
+      "Text": "Name these params by a rule of their own instead of the sources below:\nAtkParam: the behaviors (player or NPC side), else the bullets that use it.\nBehaviorParam: the time act and behavior state (Time Acts and Behaviors).\nBullet: the behaviors that fire it, else the bullets that spawn it.\nAttackElementCorrectParam: the scaling that's on, per damage type.\nEquipMtrlSetParam and ItemLotParam: the items listed, with counts.\nGameAreaParam: the alias of defeatBossFlagId.\nMagic: the goods with the same ID.\nNpcParam: nameId, else the character alias of the row ID.\nNpcThinkParam: the NpcParam row with the same ID, else the character alias.\nResistCorrectParam: the NpcParam fields that use it.\nShopLineupParam: the item of equipId.\nSwordArtsParam: the text of textId.\nCharaInitParam: the BaseChrSelectMenuParam row that uses it.\nAssetEnvironmentGeometryParam: the asset alias of the row ID (1003 = aeg001_003), else no name.\nBuddyStoneParam, CutsceneGparamTimeParam, CutsceneGparamWeatherParam, CutsceneMapIdParam, CutSceneTextureLoadParam, MapDefaultInfoParam, MapGdRegionInfoParam, PlayRegionParam, RollingObjLotParam: the map alias of the row ID's first 4 digits (1000 = m10_00).\nMapGridCreateHeightDetailLimitInfo: the map alias of currentGridBlockId.\nChrModelParam: the character alias of the row ID's first 4 digits.\nMapNameTexParam: the text of mapNameId (a negative ID uses the positive one).\nRideParam and ThrowParam: the character aliases of the attacker and defender, e.g. \"Player - Torrent\"."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_ItemLot_Map",
+      "Text": "Item Lot Map Prefix"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_ItemLot_Map_TT",
+      "Text": "Start item lot names with the alias of the map their row ID begins with, for IDs of 8 or more digits (10000100 = m10_00, Stormveil Castle), e.g. \"Stormveil Castle - Golden Rune [1]\"."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Row_Text",
+      "Text": "Row Text"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Row_Text_TT",
+      "Text": "Use the row's own text entry, such as a weapon or item name, with the same ID as the row."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Animations",
+      "Text": "Time Acts and Behaviors"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Animations_TT",
+      "Text": "Name BehaviorParam and BehaviorParam_PC rows after the animation whose time act events use them: the character (or weapon) and the Havok behavior state that plays the animation, e.g. \"Crucible Knight - Attack3000\" or \"Longsword - AttackRightLight1\". The attacks and bullets those rows use then take the name through Incoming References. The characters' anibnd and behbnd files are read in the background the first time; unsaved Time Act and Behavior Editor edits aren't included."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Incoming",
+      "Text": "Incoming References"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Incoming_TT",
+      "Text": "Use the name of a row that references this row, e.g. an attack is named after the bullet that uses it. When several rows reference it, the name most of them share is used."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Text_Refs",
+      "Text": "Text References"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Text_Refs_TT",
+      "Text": "Use the text of the first field that points at a text entry."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Param_Refs",
+      "Text": "Param References"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Param_Refs_TT",
+      "Text": "Use the name of the first named row this row's fields point at, e.g. an item lot is named after its first item."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Aliases",
+      "Text": "Aliases"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Aliases_TT",
+      "Text": "Use the project alias of the first field that holds a character, event flag, cutscene, movie, particle or sound ID."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Options_TT",
+      "Text": "How names are chosen and written."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Only_Unnamed",
+      "Text": "Only Unnamed Rows"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Only_Unnamed_TT",
+      "Text": "Only give names to rows that have none. Turn off to replace existing names too."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Chain",
+      "Text": "Chain Generated Names"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Chain_TT",
+      "Text": "Run the lookups again so a name generated for one row can name the rows linked to it, e.g. weapon, then behavior, then attack."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Prefer_Incoming",
+      "Text": "Prefer Incoming References"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Prefer_Incoming_TT",
+      "Text": "Try the rows that reference a row before the rows and text it references. Usually better for attacks, bullets and effects; turn off for item lots and shops."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Source_Label",
+      "Text": "Include Source Label"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Source_Label_TT",
+      "Text": "Add where the name came from, e.g. \"Fireball (Bullet)\" or \"Rune Arc (Item 1)\"."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Animation_ID",
+      "Text": "Include Animation ID"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Option_Animation_ID_TT",
+      "Text": "Add the animation after the behavior state, e.g. \"Crucible Knight - Attack3000 [a000_003000]\"."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Reread_Animations",
+      "Text": "Reread Time Acts and Behaviors"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Reread_Animations_TT",
+      "Text": "Forget the time acts and behaviors read so far, so the next Generate reads them again. Use after saving changes in the Time Act or Behavior Editor."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Progress",
+      "Text": "Reading time acts and behaviors: {0} / {1} ({2})"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Cancel_TT",
+      "Text": "Stop reading and don't generate. Characters already read are kept for the next Generate."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Generate",
+      "Text": "Generate"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Generate_TT",
+      "Text": "Which rows to generate names for. The result is shown as a preview below."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Selected_Rows",
+      "Text": "Selected Rows"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Selected_Rows_TT",
+      "Text": "Generate names for the selected rows."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Selected_Param",
+      "Text": "Selected Param"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Selected_Param_TT",
+      "Text": "Generate names for every row in the selected param."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_All_Params",
+      "Text": "All Params"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_All_Params_TT",
+      "Text": "Generate names for every row in every param."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Preview",
+      "Text": "Preview"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Header_Preview_TT",
+      "Text": "The names that will be applied. Click an entry to go to its row; hover it to see where the name came from."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Preview_None",
+      "Text": "No names could be generated for these rows."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Preview_Summary",
+      "Text": "{0} names generated across {1} params."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Preview_Old_Name",
+      "Text": "Current name: {0}"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Apply_TT",
+      "Text": "Rename the rows in the preview. This can be undone as one step."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Action_Clear_TT",
+      "Text": "Discard the preview without renaming anything."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Column_Param",
+      "Text": "Param"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Column_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Column_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Column_Source",
+      "Text": "Source"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Row_Text",
+      "Text": "Row Text"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Animation",
+      "Text": "Time Act"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Param_Rule",
+      "Text": "Param Rule"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Same_Id",
+      "Text": "The {0} row with the same ID ({1})."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Character_Id",
+      "Text": "The row ID belongs to character {0}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Item_List",
+      "Text": "The {0} items the row lists."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Scaling",
+      "Text": "The scaling flags that are on, per damage type."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Field_Usage",
+      "Text": "The {0} fields that use this row ({1} uses)."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Asset_Id",
+      "Text": "The row ID is asset {0}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Map_Id",
+      "Text": "The ID names map {0}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Character_Pair",
+      "Text": "Characters {0} and {1}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Name_No_Scaling",
+      "Text": "No Scaling"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Animation",
+      "Text": "Used by {0} animation {1} (judge ID {2})."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Animation_Count",
+      "Text": "{0} animations use it."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Reading_Animations",
+      "Text": "Generate Row Names: reading the time acts and behaviors of {0} characters. The names are generated when that's done."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Cancelled",
+      "Text": "Generate Row Names was cancelled."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Animation_Read_Failed",
+      "Text": "Generate Row Names: failed to read the time acts or behaviors of {0}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Animation_Load_Failed",
+      "Text": "Generate Row Names: failed to read time acts and behaviors."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Incoming",
+      "Text": "Referenced By"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Text_Ref",
+      "Text": "Text Reference"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Param_Ref",
+      "Text": "Param Reference"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Source_Short_Alias",
+      "Text": "Alias"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Row_Text",
+      "Text": "The row's own text entry."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Incoming",
+      "Text": "Referenced by {0} row {1} ({2})."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Incoming_Count",
+      "Text": "{0} rows reference this row."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Param_Ref",
+      "Text": "{0} points at {1} row {2}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Text_Ref",
+      "Text": "{0} points at {1} text {2}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Detail_Alias",
+      "Text": "{0} holds {1} alias {2}."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Menu_Header",
+      "Text": "Generate"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Menu_Selected_Param_TT",
+      "Text": "Generate and apply names for the selected param, using the options in the Generate Row Names tool. Can be undone."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Menu_All_Params_TT",
+      "Text": "Generate and apply names for every param, using the options in the Generate Row Names tool. Can be undone."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Context_Action",
+      "Text": "Generate Names"
+    },
+    {
+      "Key": "PARAM_RowNameGen_Context_Action_TT",
+      "Text": "Name the selected rows from their links, using the options in the Generate Row Names tool. Can be undone."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Failed",
+      "Text": "Failed to generate row names."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_None",
+      "Text": "No row names could be generated."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Applied",
+      "Text": "Generated {0} row names across {1} params."
+    },
+    {
+      "Key": "PARAM_RowNameGen_Log_Not_Applied",
+      "Text": "Generated row names were not applied."
+    }
+  ]
+}

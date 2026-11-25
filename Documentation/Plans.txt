@@ -30,8 +30,6 @@
 # Param Editor TODO
 #----------------------------------------------------
 - Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
-- Add fault-tolerant CSV import (i.e. CSVs from older paramdef versions)
-- Add "Generate Row Names" tool that uses cross-referencing lookups and aliases to generate suitable row names (mainly useful for editing modded regulations that don't include row names)
 
 #----------------------------------------------------
 # Text Editor TODO

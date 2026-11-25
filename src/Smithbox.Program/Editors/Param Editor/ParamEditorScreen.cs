@@ -109,6 +109,9 @@ public class ParamEditorScreen : EditorScreen
         if (activeView != null)
         {
             activeView.ToolMenu.ParamComparisonTool.HandleReportModal();
+
+            // Finishes a Generate Row Names run once its animation reads are done, whether or not its section is shown
+            activeView.ToolMenu.RowNameGenerator.Update();
         }
 
         if (CFG.Current.ParamEditor.ParamEditor_Enable_Compact_Mode)

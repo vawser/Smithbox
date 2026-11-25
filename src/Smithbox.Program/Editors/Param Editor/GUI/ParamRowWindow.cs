@@ -1582,6 +1582,9 @@ public class ParamRowWindow
             // Row Name Manipulation
             ParentView.ToolMenu.RowNameManipulationTool.DisplayRowContextMenu(imguiKey);
 
+            // Generate Row Names
+            ParentView.ToolMenu.RowNameGenerator.DisplayRowContextMenu(imguiKey);
+
             // Information
             if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Info_Header")}##infoMenuHeader"))
             {

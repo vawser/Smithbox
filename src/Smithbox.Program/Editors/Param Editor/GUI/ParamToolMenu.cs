@@ -34,6 +34,7 @@ public class ParamToolMenu
     public ParamPinGroups PinGroups;
     public ParamDeltaPatcher DeltaPatcher;
     public ParamRowNameManipulationTool RowNameManipulationTool;
+    public ParamRowNameGenerator RowNameGenerator;
     public ParamModifiedFilter ModifiedFilter;
     public ParamEditHistoryTool EditHistory;
     public ParamWeaponGenerator WeaponGenerator;
@@ -69,6 +70,7 @@ public class ParamToolMenu
         PinGroups = new(view, project);
         DeltaPatcher = new(view, project);
         RowNameManipulationTool = new(view, project);
+        RowNameGenerator = new(view, project);
         ModifiedFilter = new(view, project);
         WeaponGenerator = new(view, project);
         AcAssembly = new(view, project);
@@ -101,6 +103,7 @@ public class ParamToolMenu
             if (ImGui.BeginMenu($"{LOC.Get("PARAM_Tools_Header_Row_Names")}##rowNamesMenuHeader"))
             {
                 RowNameTool.DisplayDropdown();
+                RowNameGenerator.DisplayDropdown();
 
                 ImGui.EndMenu();
             }
@@ -158,6 +161,8 @@ public class ParamToolMenu
 
             ImGui.EndChild();
         }
+
+        RowNameGenerator.Display();
 
         WeaponGenerator.Display();
 
