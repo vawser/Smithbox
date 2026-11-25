@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "SP_EFFECT_APPLY_PARTS_GROUP"
+      "Text": "Apply Parts Group"
     }
   ],
   "Options": [
@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "All Parts"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No restriction: the effect's defensive fields apply to hits on any body part."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 6"
+          "Text": "Part Group 6"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only the effect's defensive fields (damage cut rates, poise damage cut, SA receive damage rate, damage correct rates) only count for hits on body parts of group 6. Vanilla: Highroad Guardian left hand, Land Octopus beak, Lake crayfish weak point."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 7"
+          "Text": "Part Group 7"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only the effect's defensive fields (damage cut rates, poise damage cut, SA receive damage rate, damage correct rates) only count for hits on body parts of group 7. Vanilla: Highroad Guardian right hand."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 8"
+          "Text": "Part Group 8"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only the effect's defensive fields (damage cut rates, poise damage cut, SA receive damage rate, damage correct rates) only count for hits on body parts of group 8. Vanilla: Highroad Guardian left leg."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 9"
+          "Text": "Part Group 9"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only the effect's defensive fields (damage cut rates, poise damage cut, SA receive damage rate, damage correct rates) only count for hits on body parts of group 9. Vanilla: Highroad Guardian right leg."
         }
       ]
     }

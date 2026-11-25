@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "SP_EFFECT_SPCATEGORY"
+      "Text": "SpEffect Category"
     }
   ],
   "Options": [
@@ -14,6 +14,12 @@
           "Language": "English",
           "Text": "None"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Different effects stack. Re-applying the same row while it is active is refused: the running effect is not refreshed."
+        }
       ]
     },
     {
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Persist through Death"
+          "Text": "Suspend 10002"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Stacks like None. While any effect of this category is active, every category 10002 effect is suspended; they resume when the last one ends. Unused in vanilla."
         }
       ]
     },
@@ -32,6 +44,12 @@
           "Language": "English",
           "Text": "Stack Self"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The same row can be applied again and again: each application adds another instance."
+        }
       ]
     },
     {
@@ -41,6 +59,12 @@
           "Language": "English",
           "Text": "Reset on Apply"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Re-applying the same row replaces the running instance and restarts its timer. Different rows stack."
+        }
       ]
     },
     {
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace (Same Priority)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A new effect replaces an existing one of this category with the same Category Priority. Different priorities coexist."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "None (No Rule)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No stacking rule: behaves like None (different effects stack, re-applying the same row is refused)."
         }
       ]
     },
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -84,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -93,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -102,7 +162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -111,7 +177,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -120,7 +192,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -129,7 +207,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -138,7 +222,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -147,7 +237,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -156,7 +252,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -165,7 +267,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -174,7 +282,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -183,7 +297,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -192,7 +312,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -201,7 +327,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -210,7 +342,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -219,7 +357,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -228,7 +372,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -237,7 +387,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -246,7 +402,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -255,7 +417,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -264,7 +432,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -273,7 +447,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -282,7 +462,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -291,7 +477,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
+        }
+      ]
+    },
+    {
+      "Key": "180",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Replace Previous"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category: a new effect replaces the existing effect of this category in place (it takes the new row and its timer restarts)."
         }
       ]
     },
@@ -300,7 +507,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous w/ Matching Priority"
+          "Text": "Replace (Same Priority)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A new effect replaces an existing one of this category with the same Category Priority. Different priorities coexist."
         }
       ]
     },
@@ -309,7 +522,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Remove Previous"
+          "Text": "Replace (Same Priority)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "A new effect replaces an existing one of this category with the same Category Priority. Different priorities coexist."
         }
       ]
     },
@@ -318,7 +537,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Only Highest Priority Active"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Effects stack, but each frame only the one with the lowest Category Priority number is active; the others are suspended until it ends. Blocks items/spells with use limit 5."
         }
       ]
     },
@@ -327,7 +552,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Damage Level Override (Highest Priority)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Effects stack. The active one with the lowest Category Priority number supplies the damage level remap (dmgLv fields). Blocks items/spells with use limit 6."
         }
       ]
     },
@@ -336,7 +567,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Only Highest Priority Active"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Effects stack, but each frame only the one with the lowest Category Priority number is active; the others are suspended until it ends."
         }
       ]
     },
@@ -345,7 +582,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Replace If Higher Priority"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category. A new effect replaces the existing one if its Category Priority number is lower or equal; otherwise the new effect is refused."
         }
       ]
     },
@@ -354,7 +597,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Replace If Higher Priority"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category. A new effect replaces the existing one if its Category Priority number is lower or equal; otherwise the new effect is refused."
         }
       ]
     },
@@ -363,7 +612,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Replace If Higher Priority"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category. A new effect replaces the existing one if its Category Priority number is lower or equal; otherwise the new effect is refused."
         }
       ]
     },
@@ -372,7 +627,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Apply Highest (Category Priority)"
+          "Text": "Replace If Higher Priority"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "One per category. A new effect replaces the existing one if its Category Priority number is lower or equal; otherwise the new effect is refused."
         }
       ]
     },
@@ -383,6 +644,12 @@
           "Language": "English",
           "Text": "Apply First"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Blocks items/spells with use limit 1."
+        }
       ]
     },
     {
@@ -391,6 +658,12 @@
         {
           "Language": "English",
           "Text": "Apply First (Damage Level Change)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Blocks items/spells with use limit 2, 11, 12 or 13."
         }
       ]
     },
@@ -401,6 +674,12 @@
           "Language": "English",
           "Text": "Apply First"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Suspended while a category 1 effect is active. Blocks items/spells with use limit 4, 12 or 13. Unused in vanilla."
+        }
       ]
     },
     {
@@ -409,6 +688,12 @@
         {
           "Language": "English",
           "Text": "Apply First (Blood Loss)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla blood loss build-up. Blocks items/spells with use limit 7."
         }
       ]
     },
@@ -419,6 +704,12 @@
           "Language": "English",
           "Text": "Apply First (Poison)"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla poison build-up. Blocks items/spells with use limit 8."
+        }
       ]
     },
     {
@@ -427,6 +718,12 @@
         {
           "Language": "English",
           "Text": "Apply First (Scarlet Rot)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla scarlet rot build-up. Blocks items/spells with use limit 9."
         }
       ]
     },
@@ -437,6 +734,12 @@
           "Language": "English",
           "Text": "Apply First"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla left-hand enchant check rows. Blocks items/spells with use limit 14."
+        }
       ]
     },
     {
@@ -445,6 +748,12 @@
         {
           "Language": "English",
           "Text": "Apply First (Frostbite)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla frostbite build-up. Blocks items/spells with use limit 10."
         }
       ]
     },
@@ -455,6 +764,12 @@
           "Language": "English",
           "Text": "Apply First (Death Blight)"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla death blight build-up. Blocks items/spells with use limit 15."
+        }
       ]
     },
     {
@@ -464,6 +779,12 @@
           "Language": "English",
           "Text": "Apply First (Sleep)"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla sleep build-up. Blocks items/spells with use limit 16."
+        }
       ]
     },
     {
@@ -472,6 +793,12 @@
         {
           "Language": "English",
           "Text": "Apply First (Madness)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Apply First: while an effect of this category is active, any new effect of the same category is refused. Vanilla madness build-up. Blocks items/spells with use limit 17."
         }
       ]
     }
