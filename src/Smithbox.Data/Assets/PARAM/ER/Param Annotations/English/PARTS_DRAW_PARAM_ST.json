@@ -2,202 +2,202 @@
   "Param": "PARTS_DRAW_PARAM_ST",
   "Type": "PARTS_DRAW_PARAM_ST",
   "Name": "PARTS_DRAW_PARAM_ST",
-  "Description": null,
+  "Description": "Draw settings for models: LOD switch distances, texture LOD, draw and shadow distances with fades, shadow and reflection flags, and the motion-blur range. Characters use NpcParam's Default LOD Param ID when above 0; otherwise players use row 6 (host) or 7 (client), and row 8 is used while the character loads. Assets use AssetEnvironmentGeometryParam's Draw Param ID. Distances are in metres. LOD Type and Load Balancer Scale ID choose the scale factors applied to them.",
   "Fields": [
     {
       "Field": "lv01_BorderDist",
-      "Name": "LOD 0-1 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 0-1 Border Distance",
+      "Description": "Distance (m) where the model switches from LOD 0 to LOD 1, times the LOD Type's scale. With Enable Crossfade the two LODs blend from here to here + Play. Without it the switch happens at Border + Play going out and Border − Play coming back. 9999 = never."
     },
     {
       "Field": "lv01_PlayDist",
       "Name": "LOD 0-1 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Transition width (m, not scaled) at the LOD 0-1 border. With Enable Crossfade it is the crossfade length past the border. Without it, it is a margin that stops flicker (out at Border + Play, back at Border − Play)."
     },
     {
       "Field": "lv12_BorderDist",
-      "Name": "LOD 1-2 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 1-2 Border Distance",
+      "Description": "Distance (m) where the model switches from LOD 1 to LOD 2, times the LOD Type's scale. Works like LOD 0-1 Border Distance. 9999 = never."
     },
     {
       "Field": "lv12_PlayDist",
       "Name": "LOD 1-2 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Transition width (m, not scaled) at the LOD 1-2 border: the crossfade length, or the switch margin without Enable Crossfade."
     },
     {
       "Field": "lv23_BorderDist",
-      "Name": "LOD 2-3 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 2-3 Border Distance",
+      "Description": "Distance (m) where the model switches from LOD 2 to LOD 3, times the LOD Type's scale. Works like LOD 0-1 Border Distance. 9999 = never (most retail rows)."
     },
     {
       "Field": "lv23_PlayDist",
       "Name": "LOD 2-3 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Transition width (m, not scaled) at the LOD 2-3 border: the crossfade length, or the switch margin without Enable Crossfade."
     },
     {
       "Field": "lv34_BorderDist",
-      "Name": "LOD 3-4 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 3-4 Border Distance",
+      "Description": "Distance (m) where the model switches from LOD 3 to LOD 4, times the LOD Type's scale. Works like LOD 0-1 Border Distance. 9999 = never (most retail rows)."
     },
     {
       "Field": "lv34_PlayDist",
       "Name": "LOD 3-4 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Transition width (m, not scaled) at the LOD 3-4 border: the crossfade length, or the switch margin without Enable Crossfade."
     },
     {
       "Field": "lv45_BorderDist",
-      "Name": "LOD 4-5 Boundry Distance",
-      "Description": "Switching center"
+      "Name": "LOD 4-5 Border Distance",
+      "Description": "Distance (m) where the model switches from LOD 4 to LOD 5, times the LOD Type's scale. Works like LOD 0-1 Border Distance. 9999 = never (most retail rows)."
     },
     {
       "Field": "lv45_PlayDist",
       "Name": "LOD 4-5 Play Distance",
-      "Description": " play at the center of the boundary"
+      "Description": "Transition width (m, not scaled) at the LOD 4-5 border: the crossfade length, or the switch margin without Enable Crossfade."
     },
     {
       "Field": "tex_lv01_BorderDist",
-      "Name": "Texture Switch - LOD 0-1 Boundry Distance",
-      "Description": "Texture switching center (Texure LOD disabled at 0)"
+      "Name": "Texture LOD Border Distance",
+      "Description": "Distance (m) beyond which the model uses its low-resolution textures. It is scaled by the LOD Type's texture scale and the game's texture-distance setting. 0 = texture LOD off (always full resolution)."
     },
     {
       "Field": "tex_lv01_PlayDist",
-      "Name": "Texture Switch - LOD 0-1 Play Distance",
-      "Description": "Texture Play around the boundary"
+      "Name": "Texture LOD Play Distance",
+      "Description": "Margin (m) around Texture LOD Border Distance that stops flicker: low resolution from Border + Play, full resolution again below Border − Play. Scaled together with the border."
     },
     {
       "Field": "enableCrossFade",
-      "Name": "Enable Crossfade",
-      "Description": "Is crossfade enabled (0: disabled, 1: enabled)?"
+      "Name": "Enable LOD Crossfade",
+      "Description": "On: LOD changes blend over each LOD Play Distance past the border. Off: LODs switch instantly, and Play Distance becomes a margin around the border."
     },
     {
       "Field": "drawDist",
-      "Name": "Draw - Max Distance",
-      "Description": "Maximum drawing distance. In the open, it will be used for the activation distance"
+      "Name": "Draw Distance",
+      "Description": "Distance (m) where the model starts to fade out, times the draw scale of Load Balancer Scale ID. It is fully gone at Draw Distance + Draw Fade Range. 9999 = always drawn."
     },
     {
       "Field": "drawFadeRange",
-      "Name": "Draw - Fade Range",
-      "Description": "Fade distance from the maximum drawing distance to the actual disappearance"
+      "Name": "Draw Fade Range",
+      "Description": "Distance (m, not scaled) over which the model fades out after Draw Distance. 0 = disappears at once."
     },
     {
       "Field": "shadowDrawDist",
-      "Name": "Shadow Draw - Max Distance",
-      "Description": "Maximum shadow drawing distance"
+      "Name": "Shadow Draw Distance",
+      "Description": "Distance (m) where the model's shadow starts to fade out, times the shadow scale of Load Balancer Scale ID. It is fully gone at Shadow Draw Distance + Shadow Fade Range. 9999 = always."
     },
     {
       "Field": "shadowFadeRange",
-      "Name": "Shadow Draw - Fade Range",
-      "Description": "Fade distance from the maximum shadow drawing distance to the actual disappearance"
+      "Name": "Shadow Fade Range",
+      "Description": "Distance (m, not scaled) over which the shadow fades out after Shadow Draw Distance. 0 = disappears at once."
     },
     {
       "Field": "motionBlur_BorderDist",
-      "Name": "Motion Blur - Max Distance",
-      "Description": "Distance at which motion blur is enabled"
+      "Name": "Motion Blur Distance",
+      "Description": "The model gets motion blur only while it is closer than this (m), times the LOD Type's motion-blur scale. 0 = never."
     },
     {
       "Field": "isPointLightShadowSrc",
-      "Name": "Is Point Light Shadow Source",
-      "Description": "Cast the shadow of a point light source"
+      "Name": "Casts Point Light Shadows",
+      "Description": "The model casts shadows from point lights. An instance's own setting can override this. Off when no row is found."
     },
     {
       "Field": "isDirLightShadowSrc",
-      "Name": "Is Directional Light Shadow Source",
-      "Description": "Cast the shadow of a parallel light source"
+      "Name": "Casts Sun Shadows",
+      "Description": "The model casts shadows from the directional (sun) light. An instance's own setting can override this. On when no row is found."
     },
     {
       "Field": "isShadowDst",
-      "Name": "Is Shadow Destination",
-      "Description": "Receive a shadow"
+      "Name": "Receives Shadows",
+      "Description": "The model receives shadows. An instance's own setting can override this. On when no row is found."
     },
     {
       "Field": "isShadowOnly",
-      "Name": "Is Shadow Only",
-      "Description": "Shadow drawing only"
+      "Name": "Shadow Only",
+      "Description": "The model is drawn only as a shadow. An instance's own setting can override this. Off in every retail row."
     },
     {
       "Field": "drawByReflectCam",
-      "Name": "Drawn by Reflection Camera",
-      "Description": "Reflected"
+      "Name": "Drawn in Reflections",
+      "Description": "The model is drawn by the reflection camera. An instance's own setting can override this. Off in every retail row."
     },
     {
       "Field": "drawOnlyReflectCam",
-      "Name": "Drawn only by Reflection Camera",
-      "Description": "Reflection drawing only"
+      "Name": "Drawn Only in Reflections",
+      "Description": "The model is drawn only by the reflection camera. An instance's own setting can override this. Off in every retail row."
     },
     {
       "Field": "IncludeLodMapLv",
       "Name": "Include LOD Map Level",
-      "Description": "What level of LodMap to include"
+      "Description": "Appears unused by the game. Retail sets it widely (-1 to 2)."
     },
     {
       "Field": "isNoFarClipDraw",
-      "Name": "Disable Far Clip Draw",
-      "Description": "Disable fur clips and always draw at the innermost depth of the clip space. Mainly for celestial sphere"
+      "Name": "Ignore Far Clip",
+      "Description": "Read for assets. Retail sets it on the skydome rows (850–899) and a few others. The game reads it into the asset's draw settings; its rendering effect was not traced."
     },
     {
       "Field": "lodType",
       "Name": "LOD Type",
-      "Description": "Type and size of LOD target"
+      "Description": "Picks the LoadBalancerDrawDistScaleParam rows whose value at the current load level scales this model's distances. The row is LOD Type for the LOD borders, 100 + LOD Type for texture LOD, and 400 + LOD Type for motion blur. 0–10. Retail: 1 for most rows, 8/9/10 for player host/client/loading."
     },
     {
       "Field": "shadowDrawLodOffset",
-      "Name": "Shadow Draw LOD Offset",
-      "Description": "LOD level offset value when drawing shadows"
+      "Name": "Shadow LOD Offset",
+      "Description": "LOD levels added when the model is drawn into shadows, so shadows can use a simpler LOD. Retail 0–2."
     },
     {
       "Field": "isTraceCameraXZ",
       "Name": "Follow Camera on XZ Plane",
-      "Description": "Follow the camera on the XZ plane (GR SEQ09242)"
+      "Description": "Read for assets. Retail sets it on the skydome rows (850–899) and a few others. The game reads it into the asset's draw settings; its effect was not traced."
     },
     {
       "Field": "isSkydomeDrawPhase",
-      "Name": "Is Celestial Sphere Draw Phase",
-      "Description": "Set the drawing phase to the celestial sphere (GR SEQ09242)"
+      "Name": "Draw in Skydome Phase",
+      "Description": "Read for assets. Retail sets it on the skydome rows (840–899) and a few others. The game reads it into the asset's draw settings; its effect was not traced."
     },
     {
       "Field": "DistantViewModel_BorderDist",
-      "Name": "Distant LOD - Boundry Distance",
-      "Description": "Distance switching distance [m]"
+      "Name": "Distant View Border Distance",
+      "Description": "Read for assets (m). The game reads it into the asset's draw settings (30 when no row is found); its effect was not traced. Retail sets it on a few rows (2060–3160)."
     },
     {
       "Field": "DistantViewModel_PlayDist",
-      "Name": "Distant LOD - Play Distance",
-      "Description": "Distant view switching play distance [m]"
+      "Name": "Distant View Play Distance",
+      "Description": "Read for assets (m), paired with Distant View Border Distance. The game reads it into the asset's draw settings (5 when no row is found); its effect was not traced."
     },
     {
       "Field": "LimtedActivate_BorderDist_forGrid",
-      "Name": "Open-world - Minimum Boundry Distance",
-      "Description": "Construction limit distance for open [m]. If the distance to the camera is less than this distance in the open, it will not be built. This is a function for distant view assets. -1: Function disabled (default)"
+      "Name": "Grid Activation Limit Distance",
+      "Description": "Read for assets (m). The game reads it into the asset's draw settings (-1 when no row is found); its effect was not traced. -1 in most retail rows; set on some distant-view rows."
     },
     {
       "Field": "LimtedActivate_PlayDist_forGrid",
-      "Name": "Open-world - Minimum Play Distance",
-      "Description": "Open construction limit play distance [m]"
+      "Name": "Grid Activation Limit Play Distance",
+      "Description": "Read for assets (m), paired with Grid Activation Limit Distance. The game reads it into the asset's draw settings (10 when no row is found); its effect was not traced."
     },
     {
       "Field": "zSortOffsetForNoFarClipDraw",
-      "Name": "Z Sort Offset for No Far Clip Draw",
-      "Description": "If the distance from the camera is the same in the same drawing phase, the smaller translucent system is drawn in the foreground, and the opaque system is drawn in the larger value. The base point of the offset is the origin in the celestial sphere drawing phase. Other than that, it is mainly Model AABB. (GR SEQ09242)"
+      "Name": "Z-Sort Offset (Ignore Far Clip)",
+      "Description": "Read for assets. The game reads it into the asset's draw settings; its effect was not traced. Retail sets 512–8000 on the skydome rows (850–899) and a few others."
     },
     {
       "Field": "shadowDrawAlphaTestDist",
-      "Name": "Shadow Draw Alpha Test Distance",
-      "Description": "Distance to perform alpha test when drawing shadow [m]"
+      "Name": "Shadow Alpha Test Distance",
+      "Description": "Alpha testing is used for the model's shadow only while the model is closer than this (m). 9999 = always. On when no row is found."
     },
     {
       "Field": "fowardDrawEnvmapBlendType",
       "Name": "Forward Draw Envmap Blend Type",
-      "Description": "Forward Drawing environment map Blend type"
+      "Description": "Read for assets. The game reads only whether it is 0 into the asset's draw settings; its effect was not traced. 0 in every retail row."
     },
     {
       "Field": "LBDrawDistScaleParamID",
-      "Name": "Load Balancer - Draw Distance Scale Param ID",
-      "Description": "Load balancer drawing distance scale parameter ID"
+      "Name": "Load Balancer Scale ID",
+      "Description": "LoadBalancerNewDrawDistScaleParam row (0–47) that scales Draw Distance and Shadow Draw Distance as the load balancer lowers quality. A missing row or an ID of 48 or above means no scaling. Retail: 20 (scale 1) for most rows."
     },
     {
       "Field": "resereve",
-      "Name": "",
-      "Description": ""
+      "Name": "Reserved",
+      "Description": "Padding."
     }
   ]
 }

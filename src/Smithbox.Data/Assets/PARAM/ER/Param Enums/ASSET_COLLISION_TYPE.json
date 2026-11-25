@@ -21,7 +21,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ignore Large Enemy Hit"
+          "Text": "Ignore Large Enemy Hit (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Not handled in Elden Ring: behaves like Default."
         }
       ]
     },
@@ -30,7 +36,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ignore Boss Hit"
+          "Text": "Ignore Boss Hit (No Effect)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Not handled in Elden Ring: behaves like Default."
         }
       ]
     },

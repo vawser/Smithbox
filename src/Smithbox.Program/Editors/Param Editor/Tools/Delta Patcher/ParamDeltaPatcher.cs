@@ -23,6 +23,7 @@ public class ParamDeltaPatcher
 
     public ParamDeltaProgressModal ImportProgressModal;
     public ParamDeltaProgressModal ExportProgressModal;
+    public ParamDeltaProgressModal MergeProgressModal;
 
     public ParamImportPreviewModal ImportPreviewModal;
     public ParamExportPreviewModal ExportPreviewModal;
@@ -42,6 +43,7 @@ public class ParamDeltaPatcher
 
         ImportProgressModal = new("PARAM_DeltaPatcher_Import_Modal_Name", this);
         ExportProgressModal = new("PARAM_DeltaPatcher_Export_Modal_Name", this);
+        MergeProgressModal = new("PARAM_DirectMerge_Progress_Modal_Name", this);
 
         ImportPreviewModal = new(this);
         ExportPreviewModal = new(this);

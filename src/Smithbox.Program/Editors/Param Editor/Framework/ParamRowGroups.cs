@@ -316,6 +316,40 @@ public static class ParamRowGroups
     /// <summary>
     /// Writes serialized field values to a row. Values that don't parse for the field's type are skipped.
     /// </summary>
+    /// <summary>
+    /// Whether <see cref="ApplyFields"/> can write this string into a field of this type (it skips values it can't
+    /// parse). True for a missing def or a type it doesn't convert.
+    /// </summary>
+    public static bool IsValidFieldValue(PARAMDEF.Field def, string value)
+    {
+        if (def == null)
+            return true;
+
+        value ??= "";
+
+        switch (def.DisplayType)
+        {
+            case PARAMDEF.DefType.s8: return sbyte.TryParse(value, out _);
+            case PARAMDEF.DefType.s16: return short.TryParse(value, out _);
+            case PARAMDEF.DefType.s32:
+            case PARAMDEF.DefType.b32: return int.TryParse(value, out _);
+            case PARAMDEF.DefType.f32:
+            case PARAMDEF.DefType.angle32: return float.TryParse(value, out _);
+            case PARAMDEF.DefType.f64: return double.TryParse(value, out _);
+            case PARAMDEF.DefType.u16: return ushort.TryParse(value, out _);
+            case PARAMDEF.DefType.u32: return uint.TryParse(value, out _);
+            case PARAMDEF.DefType.u8:
+            case PARAMDEF.DefType.dummy8:
+                // Byte arrays are written as [a|b|c]; Dummy8Read returns null for anything else
+                if (def.ArrayLength > 1)
+                    return ParamUtils.Dummy8Read(value, def.ArrayLength) != null;
+
+                return byte.TryParse(value, out _);
+            default:
+                return true;
+        }
+    }
+
     public static void ApplyFields(Param.Row curRow, IEnumerable<FieldDelta> fields)
     {
         foreach (var field in fields)

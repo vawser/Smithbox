@@ -2,52 +2,52 @@
   "Param": "TOUGHNESS_PARAM_ST",
   "Type": "TOUGHNESS_PARAM_ST",
   "Name": "TOUGHNESS_PARAM_ST",
-  "Description": null,
+  "Description": "Poise (toughness) during an animation's toughness window. A TAE toughness event names the row (0-255, so only rows up to 255 are reachable) and the weapon whose poise rate counts; row 0 is used whenever no window is active. At the start of a window the character's maximum and current poise are recalculated from the row. Players: maximum = 100 x (Weapon Poise Multiplier x the weapon's EquipParamWeapon Poise Rate + Armor Poise Multiplier x the summed EquipParamProtector Poise Rates). Enemies: maximum = the minimum below (a percentage of NpcParam Toughness).",
   "Fields": [
     {
       "Field": "correctionRate",
-      "Name": "Toughness Correction",
-      "Description": "It is a correction magnification applied to the toughness correction magnification of the weapon when calculating the toughness."
+      "Name": "Weapon Poise Multiplier",
+      "Description": "Multiplies the poise rate (EquipParamWeapon Toughness Correct Rate) of the weapon named by the TAE event; the result is added to the armor part of a player's maximum poise for the window. Not used for enemies. Retail row 0 (no window) uses 0, so outside windows only armor counts."
     },
     {
       "Field": "minToughness",
-      "Name": "Minimum Toughness",
-      "Description": "The lower limit of current toughness applied at the beginning of the toughness period. If the toughness falls below this value at the start of toughness, it will recover to this value."
+      "Name": "Minimum Poise",
+      "Description": "Floor applied at the start of the window: the maximum poise is raised to at least this value, and the current poise is raised to it if it is lower. With Minimum Ignores Multipliers off, this is a percentage of the window's calculated maximum (retail 80 = 80%). With it on, it is a flat value on the 100-based poise scale (players) or a percentage of NpcParam Toughness (enemies); retail rows 160-251 set it equal to Weapon Poise Multiplier x 100. 0 = no floor."
     },
     {
       "Field": "isNonEffectiveCorrectionForMin",
-      "Name": "Minimum Toughness not affected by Toughness Multiplier",
-      "Description": "The toughness correction factor will no longer be applied to the minimum toughness."
+      "Name": "Minimum Ignores Multipliers",
+      "Description": "If enabled, Minimum Poise is taken against the base poise scale (100 for players, NpcParam Toughness for enemies) instead of the window's multiplied maximum. Enemies only get a poise floor from rows with this enabled."
     },
     {
       "Field": "pad2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "spEffectId",
-      "Name": "Damage Level Replacement - SpEffect ID",
-      "Description": "Replacement special effect Id that takes place during the toughness period. If -1, the normal replacement rule applies. Only used by player characters"
+      "Name": "Stagger Override SpEffect",
+      "Description": "Players only. While poise holds, the damage level of incoming hits is replaced through this SpEffect's Damage Level replacement fields (dmgLv_*). -1: chosen from current poise: SpEffect 6354 at 100 or more, 6353 at 70, 6352 at 50, 6351 at 30, else 6350. Retail rows use 6352 or 6353."
     },
     {
       "Field": "proCorrectionRate",
-      "Name": "Armor - Toughness Correction",
-      "Description": "This is the correction factor applied to the toughness correction factor of the armor when determining the toughness."
+      "Name": "Armor Poise Multiplier",
+      "Description": "Players only. Multiplies the sum of the worn armor's poise rates (EquipParamProtector Toughness Correct Rate, four slots) in the maximum poise for the window. Retail 1, or 0.5 in most rows that also set a poise floor."
     },
     {
       "Field": "pvpToughnessDamageRate",
-      "Name": "PVP: Toughness Damage Reduction",
-      "Description": "While the poise ID set in TAE is active, a multiplier is applied to all poise damage received in PvP."
+      "Name": "PvP Poise Damage Taken Multiplier",
+      "Description": "While a toughness window is active, multiplies the poise damage this character takes from player-character attacks. 1 = no change."
     },
     {
       "Field": "pvpHpDamageRate",
-      "Name": "PVP: Damage Reduction",
-      "Description": "While the Toughness ID set in TAE is active, a multiplier is applied to all HP damage received in PvP."
+      "Name": "PvP HP Damage Taken Multiplier",
+      "Description": "While a toughness window is active and poise isn't broken, multiplies the HP damage (all five damage types) this character takes from player-character attacks. 1 = no change."
     },
     {
       "Field": "pad1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

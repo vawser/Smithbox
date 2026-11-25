@@ -2,32 +2,32 @@
   "Param": "WAYPOINT_PARAM_ST",
   "Type": "WAYPOINT_PARAM_ST",
   "Name": "WAYPOINT_PARAM_ST",
-  "Description": null,
+  "Description": "Appears unused by the game: nothing looks up this param. Retail has 6 rows (0, 100–500).",
   "Fields": [
     {
       "Field": "attribute1",
       "Name": "Attribute [1]",
-      "Description": ""
+      "Description": "Appears unused by the game. Retail: rows 100–500 set 0–4, row 0 is -1."
     },
     {
       "Field": "attribute2",
       "Name": "Attribute [2]",
-      "Description": ""
+      "Description": "Appears unused by the game. -1 in every retail row."
     },
     {
       "Field": "attribute3",
       "Name": "Attribute [3]",
-      "Description": ""
+      "Description": "Appears unused by the game. -1 in every retail row."
     },
     {
       "Field": "attribute4",
       "Name": "Attribute [4]",
-      "Description": ""
+      "Description": "Appears unused by the game. -1 in every retail row."
     },
     {
       "Field": "padding4",
-      "Name": "",
-      "Description": ""
+      "Name": "Padding",
+      "Description": "Padding."
     }
   ]
 }

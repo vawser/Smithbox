@@ -2,132 +2,132 @@
   "Param": "ASSET_MODEL_SFX_PARAM_ST",
   "Type": "ASSET_MODEL_SFX_PARAM_ST",
   "Name": "ASSET_MODEL_SFX_PARAM_ST",
-  "Description": null,
+  "Description": "Effects attached to a placed asset's model. Row ID = asset model number × 1000 + state × 100 + relative ID: state is 0 before and 1 after the asset breaks (likely); the relative ID (0–99) is picked at random from the up-to-4 SFX relative IDs set on the MSB asset part (negative entries skipped). Up to 8 effects per row.",
   "Fields": [
     {
       "Field": "sfxId_0",
       "Name": "SFX ID [0]",
-      "Description": "0: SfxID"
+      "Description": "Effect 0. Spawned at every dummy poly with Dummy Poly ID [0]. -1: none."
     },
     {
       "Field": "dmypolyId_0",
       "Name": "Dummy Poly ID [0]",
-      "Description": "0: Damipoli ID"
+      "Description": "Dummy poly effect 0 attaches to; one effect per matching dummy poly. ≤ 0: effect 0 isn't spawned."
     },
     {
       "Field": "reserve_0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_1",
       "Name": "SFX ID [1]",
-      "Description": "1: SfxID"
+      "Description": "Effect 1. Spawned at every dummy poly with Dummy Poly ID [1]. -1: none."
     },
     {
       "Field": "dmypolyId_1",
       "Name": "Dummy Poly ID [1]",
-      "Description": "1: Damipoli ID"
+      "Description": "Dummy poly effect 1 attaches to; one effect per matching dummy poly. ≤ 0: effect 1 isn't spawned."
     },
     {
       "Field": "reserve_1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_2",
       "Name": "SFX ID [2]",
-      "Description": "2: SfxID"
+      "Description": "Effect 2. Spawned at every dummy poly with Dummy Poly ID [2]. -1: none."
     },
     {
       "Field": "dmypolyId_2",
       "Name": "Dummy Poly ID [2]",
-      "Description": "2: Damipoli ID"
+      "Description": "Dummy poly effect 2 attaches to; one effect per matching dummy poly. ≤ 0: effect 2 isn't spawned."
     },
     {
       "Field": "reserve_2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_3",
       "Name": "SFX ID [3]",
-      "Description": "3: SfxID"
+      "Description": "Effect 3. Spawned at every dummy poly with Dummy Poly ID [3]. -1: none."
     },
     {
       "Field": "dmypolyId_3",
       "Name": "Dummy Poly ID [3]",
-      "Description": "3: Damipoli ID"
+      "Description": "Dummy poly effect 3 attaches to; one effect per matching dummy poly. ≤ 0: effect 3 isn't spawned."
     },
     {
       "Field": "reserve_3",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_4",
       "Name": "SFX ID [4]",
-      "Description": "4: SfxID"
+      "Description": "Effect 4. Spawned at every dummy poly with Dummy Poly ID [4]. -1: none."
     },
     {
       "Field": "dmypolyId_4",
       "Name": "Dummy Poly ID [4]",
-      "Description": "4: Damipoli ID"
+      "Description": "Dummy poly effect 4 attaches to; one effect per matching dummy poly. ≤ 0: effect 4 isn't spawned."
     },
     {
       "Field": "reserve_4",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_5",
       "Name": "SFX ID [5]",
-      "Description": "5: SfxID"
+      "Description": "Effect 5. Spawned at every dummy poly with Dummy Poly ID [5]. -1: none."
     },
     {
       "Field": "dmypolyId_5",
       "Name": "Dummy Poly ID [5]",
-      "Description": "5: Damipoli ID"
+      "Description": "Dummy poly effect 5 attaches to; one effect per matching dummy poly. ≤ 0: effect 5 isn't spawned."
     },
     {
       "Field": "reserve_5",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_6",
       "Name": "SFX ID [6]",
-      "Description": "6: SfxID"
+      "Description": "Effect 6. Spawned at every dummy poly with Dummy Poly ID [6]. -1: none."
     },
     {
       "Field": "dmypolyId_6",
       "Name": "Dummy Poly ID [6]",
-      "Description": "6: Damipoli ID"
+      "Description": "Dummy poly effect 6 attaches to; one effect per matching dummy poly. ≤ 0: effect 6 isn't spawned."
     },
     {
       "Field": "reserve_6",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "sfxId_7",
       "Name": "SFX ID [7]",
-      "Description": "7: SfxID"
+      "Description": "Effect 7. Spawned at every dummy poly with Dummy Poly ID [7]. -1: none."
     },
     {
       "Field": "dmypolyId_7",
       "Name": "Dummy Poly ID [7]",
-      "Description": "7: Damipoli ID"
+      "Description": "Dummy poly effect 7 attaches to; one effect per matching dummy poly. ≤ 0: effect 7 isn't spawned."
     },
     {
       "Field": "isDisableIV",
       "Name": "Is Irradiance Volume Disabled",
-      "Description": "When enabled, the effect on irradiance volume shooting is disabled."
+      "Description": "Sets a flag on every effect this row spawns. The flag's rendering effect isn't traced; the name suggests the effects are left out of irradiance volume capture. Retail never sets it."
     },
     {
       "Field": "reserve_7",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

@@ -2,327 +2,327 @@
   "Param": "WEP_ABSORP_POS_PARAM_ST",
   "Type": "WEP_ABSORP_POS_PARAM_ST",
   "Name": "WEP_ABSORP_POS_PARAM_ST",
-  "Description": null,
+  "Description": "Where a weapon's models (up to four, Model 0-3) attach to the character in each hold state: one-handed in either hand, two-handed, or sheathed. A weapon's row is its EquipParamWeapon Absorp Param ID. Dummy poly values are dummy poly IDs on the character model (retail 20/21 for the hands, 2030 and up for sheath points).",
   "Fields": [
     {
       "Field": "disableParam_NT",
-      "Name": "Disable Param - Network Test",
-      "Description": "Parameters marked with  are excluded in the NT version package."
+      "Name": "Disable Param: Network Test",
+      "Description": "Appears unused by the game. Unset in retail."
     },
     {
       "Field": "disableParamReserve1",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "disableParamReserve2",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "hangPosType",
-      "Name": "Sheath Position Type",
-      "Description": "The animation at the time of sword delivery changes depending on this value"
+      "Name": "Sheathe Style",
+      "Description": "Sheathe style of the weapon, read by the character's behaviour script (HKS) to choose sheathe and draw animations. Retail 0-3."
     },
     {
       "Field": "isSkeletonBind",
-      "Name": "Is Skeleton Bind",
-      "Description": "Do you want to combine skeletons?"
+      "Name": "Skeleton Bind",
+      "Description": "Set for weapons whose model follows the character's skeleton (retail: the Poisoned and Madding Hand, Dryleaf Arts and Beast Claw rows). While such a weapon is sheathed it gets no attachment point (the Sheathed dummy polys are ignored)."
     },
     {
       "Field": "pad0",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "right_0",
-      "Name": "Right Hand - Dummy Poly - Model [0]",
-      "Description": "Model 0 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Right Hand Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_0",
-      "Name": "Left Hand - Dummy Poly - Model [0]",
-      "Description": "Model 0 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Left Hand Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_0",
-      "Name": "Both Hand - Dummy Poly - Model [0]",
-      "Description": "Model 0 adsorption Damipoli when holding a right-handed weapon with both hands."
+      "Name": "Right Two-Handed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_0",
-      "Name": "Left Sheath - Dummy Poly - Model [0]",
-      "Description": "Model 0 adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+      "Name": "Left Sheathed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_0",
-      "Name": "Right Sheath - Dummy Poly - Model [0]",
-      "Description": "Model 0 adsorption Damipoli when holding a weapon in the right hand and delivering the weapon."
+      "Name": "Right Sheathed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_1",
-      "Name": "Right Hand - Dummy Poly - Model [1]",
-      "Description": "Model 1 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Right Hand Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_1",
-      "Name": "Left Hand - Dummy Poly - Model [1]",
-      "Description": "Model 1 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Left Hand Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_1",
-      "Name": "Both Hand - Dummy Poly - Model [1]",
-      "Description": "Model 1 adsorption Damipoli when holding a right-handed weapon with both hands."
+      "Name": "Right Two-Handed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_1",
-      "Name": "Left Sheath - Dummy Poly - Model [1]",
-      "Description": "Model 1 adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+      "Name": "Left Sheathed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_1",
-      "Name": "Right Sheath - Dummy Poly - Model [1]",
-      "Description": "Model 1 adsorption Damipoli when holding a weapon in the right hand and delivering the weapon."
+      "Name": "Right Sheathed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_2",
-      "Name": "Right Hand - Dummy Poly - Model [2]",
-      "Description": "Model 2 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Right Hand Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_2",
-      "Name": "Left Hand - Dummy Poly - Model [2]",
-      "Description": "Model 2 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Left Hand Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_2",
-      "Name": "Both Hand - Dummy Poly - Model [2]",
-      "Description": "Model 2 adsorption Damipoli when holding a right-handed weapon with both hands."
+      "Name": "Right Two-Handed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_2",
-      "Name": "Left Sheath - Dummy Poly - Model [2]",
-      "Description": "Model 2 adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+      "Name": "Left Sheathed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_2",
-      "Name": "Right Sheath - Dummy Poly - Model [2]",
-      "Description": "Model 2 adsorption Damipoli when holding a weapon in the right hand and delivering the weapon."
+      "Name": "Right Sheathed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "right_3",
-      "Name": "Right Hand - Dummy Poly - Model [3]",
-      "Description": "Model 3 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Right Hand Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while held one-handed in the right hand. -1: no attachment point."
     },
     {
       "Field": "left_3",
-      "Name": "Left Hand - Dummy Poly - Model [3]",
-      "Description": "Model 3 adsorption Damipoli when holding the weapon in one hand."
+      "Name": "Left Hand Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while held one-handed in the left hand. -1: no attachment point."
     },
     {
       "Field": "both_3",
-      "Name": "Both Hand - Dummy Poly - Model [3]",
-      "Description": "Model 3 adsorption Damipoli when holding a right-handed weapon with both hands."
+      "Name": "Right Two-Handed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftHang_3",
-      "Name": "Left Sheath - Dummy Poly - Model [3]",
-      "Description": "Model 3 Adsorption Damipoli when holding a weapon in the left hand and delivering the weapon."
+      "Name": "Left Sheathed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the left-hand weapon is sheathed, including while the right-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "rightHang_3",
-      "Name": "Right Sheath - Dummy Poly - Model [3]",
-      "Description": "Model 3 Adsorption Damipoli when holding a weapon in his right hand and delivering the weapon."
+      "Name": "Right Sheathed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the right-hand weapon is sheathed, including while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "wepInvisibleType_0",
-      "Name": "Hidden Type - Model [0]",
-      "Description": "Hidden type of model 0. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hide Category: Model 0",
+      "Description": "Category of weapon model 0 for TAE weapon hide and move events: an event acts only on the models whose category matches. Retail 0 for model 0, 1 or 2 for the other models."
     },
     {
       "Field": "wepInvisibleType_1",
-      "Name": "Hidden Type - Model [1]",
-      "Description": "Hidden type of model 1. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hide Category: Model 1",
+      "Description": "Category of weapon model 1 for TAE weapon hide and move events: an event acts only on the models whose category matches. Retail 0 for model 0, 1 or 2 for the other models."
     },
     {
       "Field": "wepInvisibleType_2",
-      "Name": "Hidden Type - Model [2]",
-      "Description": "Hidden type of model 2. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hide Category: Model 2",
+      "Description": "Category of weapon model 2 for TAE weapon hide and move events: an event acts only on the models whose category matches. Retail 0 for model 0, 1 or 2 for the other models."
     },
     {
       "Field": "wepInvisibleType_3",
-      "Name": "Hidden Type - Model [3]",
-      "Description": "Model 3 hidden type. When hiding a weapon with TAE, erase the one that matches this"
+      "Name": "Hide Category: Model 3",
+      "Description": "Category of weapon model 3 for TAE weapon hide and move events: an event acts only on the models whose category matches. Retail 0 for model 0, 1 or 2 for the other models."
     },
     {
       "Field": "leftBoth_0",
-      "Name": "Left Both-Hand - Dummy Poly - Model [0]",
-      "Description": "Model 0 adsorption Damipoli when holding a left-handed weapon with both hands."
+      "Name": "Left Two-Handed Dummy Poly: Model 0",
+      "Description": "Character dummy poly that weapon model 0 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_1",
-      "Name": "Left Both-Hand - Dummy Poly - Model [1]",
-      "Description": "Model 1 adsorption Damipoli when holding a left-handed weapon with both hands."
+      "Name": "Left Two-Handed Dummy Poly: Model 1",
+      "Description": "Character dummy poly that weapon model 1 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_2",
-      "Name": "Left Both-Hand - Dummy Poly - Model [2]",
-      "Description": "Model 2 adsorption Damipoli when holding a left-handed weapon with both hands."
+      "Name": "Left Two-Handed Dummy Poly: Model 2",
+      "Description": "Character dummy poly that weapon model 2 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "leftBoth_3",
-      "Name": "Left Both-Hand - Dummy Poly - Model [3]",
-      "Description": "Model 3 adsorption Damipoli when holding a left-handed weapon with both hands."
+      "Name": "Left Two-Handed Dummy Poly: Model 3",
+      "Description": "Character dummy poly that weapon model 3 attaches to while the left-hand weapon is held two-handed. -1: no attachment point."
     },
     {
       "Field": "dispPosType_right_0",
-      "Name": "Display Position - Right Hand - Model [0]",
-      "Description": "Model 0_ Right-hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Hand, Model 0",
+      "Description": "Where weapon model 0 counts as displayed while held one-handed in the right hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_left_0",
-      "Name": "Display Position - Left Hand - Model [0]",
-      "Description": "Model 0_Left hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Hand, Model 0",
+      "Description": "Where weapon model 0 counts as displayed while held one-handed in the left hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightBoth_0",
-      "Name": "Display Position - Right Both-hand - Model [0]",
-      "Description": "Model 0_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Two-Handed, Model 0",
+      "Description": "Where weapon model 0 counts as displayed while the right-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftBoth_0",
-      "Name": "Display Position - Left Both-Hand - Model [0]",
-      "Description": "Model 0_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Two-Handed, Model 0",
+      "Description": "Where weapon model 0 counts as displayed while the left-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightHang_0",
-      "Name": "Display Position - Right Sheath - Model [0]",
-      "Description": "Model 0_ Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Right Sheathed, Model 0",
+      "Description": "Where weapon model 0 counts as displayed while the right-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftHang_0",
-      "Name": "Display Position - Left Sheath - Model [0]",
-      "Description": "Model 0_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Left Sheathed, Model 0",
+      "Description": "Where weapon model 0 counts as displayed while the left-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_right_1",
-      "Name": "Display Position - Right Hand - Model [1]",
-      "Description": "Model 1_ Right-hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Hand, Model 1",
+      "Description": "Where weapon model 1 counts as displayed while held one-handed in the right hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_left_1",
-      "Name": "Display Position - Left Hand - Model [1]",
-      "Description": "Model 1_Left hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Hand, Model 1",
+      "Description": "Where weapon model 1 counts as displayed while held one-handed in the left hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightBoth_1",
-      "Name": "Display Position - Right Both-hand - Model [1]",
-      "Description": "Model 1_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Two-Handed, Model 1",
+      "Description": "Where weapon model 1 counts as displayed while the right-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftBoth_1",
-      "Name": "Display Position - Left Both-Hand - Model [1]",
-      "Description": "Model 1_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Two-Handed, Model 1",
+      "Description": "Where weapon model 1 counts as displayed while the left-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightHang_1",
-      "Name": "Display Position - Right Sheath - Model [1]",
-      "Description": "Model 1_ Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Right Sheathed, Model 1",
+      "Description": "Where weapon model 1 counts as displayed while the right-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftHang_1",
-      "Name": "Display Position - Left Sheath - Model [1]",
-      "Description": "Model 1_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Left Sheathed, Model 1",
+      "Description": "Where weapon model 1 counts as displayed while the left-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_right_2",
-      "Name": "Display Position - Right Hand - Model [2]",
-      "Description": "Model 2_ Right-hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Hand, Model 2",
+      "Description": "Where weapon model 2 counts as displayed while held one-handed in the right hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_left_2",
-      "Name": "Display Position - Left Hand - Model [2]",
-      "Description": "Model 2_Left hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Hand, Model 2",
+      "Description": "Where weapon model 2 counts as displayed while held one-handed in the left hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightBoth_2",
-      "Name": "Display Position - Right Both-hand - Model [2]",
-      "Description": "Model 2_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Two-Handed, Model 2",
+      "Description": "Where weapon model 2 counts as displayed while the right-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftBoth_2",
-      "Name": "Display Position - Left Both-Hand - Model [2]",
-      "Description": "Model 2_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Two-Handed, Model 2",
+      "Description": "Where weapon model 2 counts as displayed while the left-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightHang_2",
-      "Name": "Display Position - Right Sheath - Model [2]",
-      "Description": "Model 2_Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Right Sheathed, Model 2",
+      "Description": "Where weapon model 2 counts as displayed while the right-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftHang_2",
-      "Name": "Display Position - Left Sheath - Model [2]",
-      "Description": "Model 2_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Left Sheathed, Model 2",
+      "Description": "Where weapon model 2 counts as displayed while the left-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_right_3",
-      "Name": "Display Position - Right Hand - Model [3]",
-      "Description": "Model 3_ Right-hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Hand, Model 3",
+      "Description": "Where weapon model 3 counts as displayed while held one-handed in the right hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_left_3",
-      "Name": "Display Position - Left Hand - Model [3]",
-      "Description": "Model 3_Left hand display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Hand, Model 3",
+      "Description": "Where weapon model 3 counts as displayed while held one-handed in the left hand: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightBoth_3",
-      "Name": "Display Position - Right Both-hand - Model [3]",
-      "Description": "Model 3_Right-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Right Two-Handed, Model 3",
+      "Description": "Where weapon model 3 counts as displayed while the right-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftBoth_3",
-      "Name": "Display Position - Left Both-Hand - Model [3]",
-      "Description": "Model 3_ Left-handed two-handed display position (used to specify hidden position from TAE)"
+      "Name": "Display Position: Left Two-Handed, Model 3",
+      "Description": "Where weapon model 3 counts as displayed while the left-hand weapon is held two-handed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_rightHang_3",
-      "Name": "Display Position - Right Sheath - Model [3]",
-      "Description": "Model 3_Right-handed sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Right Sheathed, Model 3",
+      "Description": "Where weapon model 3 counts as displayed while the right-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "dispPosType_leftHang_3",
-      "Name": "Display Position - Left Sheath - Model [3]",
-      "Description": "Model 3_ Left hand sword display position (used to specify the non-display position from TAE)"
+      "Name": "Display Position: Left Sheathed, Model 3",
+      "Description": "Where weapon model 3 counts as displayed while the left-hand weapon is sheathed: 0 right hand, 1 left hand, 3 sheathed (retail values). It picks the Hand Model Mask fields (0 the Right ones, 1 the Left ones) and is kept for other weapon display checks."
     },
     {
       "Field": "reserve_old",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     },
     {
       "Field": "primInvisibleMask_right_0",
-      "Name": "Right Hand Attachment Mask: 0",
-      "Description": ""
+      "Name": "Right Hand Model Mask 1",
+      "Description": "Model mask bit (0-127) hidden while a model of this weapon is displayed in right-hand position (Display Position 0). -1: none. Retail only on Beast Claws."
     },
     {
       "Field": "primInvisibleMask_right_1",
-      "Name": "Right Hand Attachment Mask: 1",
-      "Description": ""
+      "Name": "Right Hand Model Mask 2",
+      "Description": "Second mask bit, as Right Hand Model Mask 1. -1: none."
     },
     {
       "Field": "primInvisibleMask_left_0",
-      "Name": "Left Hand Attachment Mask: 0",
-      "Description": ""
+      "Name": "Left Hand Model Mask 1",
+      "Description": "Model mask bit (0-127) hidden while a model of this weapon is displayed in left-hand position (Display Position 1). -1: none. Retail only on Beast Claws."
     },
     {
       "Field": "primInvisibleMask_left_1",
-      "Name": "Left Hand Attachment Mask: 1",
-      "Description": ""
+      "Name": "Left Hand Model Mask 2",
+      "Description": "Second mask bit, as Left Hand Model Mask 1. -1: none."
     },
     {
       "Field": "reserve",
       "Name": "",
-      "Description": ""
+      "Description": "Padding."
     }
   ]
 }

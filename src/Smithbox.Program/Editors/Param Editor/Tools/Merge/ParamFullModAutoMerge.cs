@@ -376,7 +376,7 @@ public sealed class ParamFullModAutoMerge
 
     private void AnalyzeRegulationGroup(FullModFilePlan plan, FullModMergeAnalysis analysis)
     {
-        if (!RegulationMerge.IsSupportedProject)
+        if (!RegulationMerge.CanUseRegulationFiles)
         {
             plan.Action = FullModMergeAction.Conflict;
             plan.SelectedSourcePath = SelectSource(plan.SourcePaths, analysis.Strategy);

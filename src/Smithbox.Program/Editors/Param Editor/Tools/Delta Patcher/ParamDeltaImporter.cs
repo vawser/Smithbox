@@ -56,8 +56,30 @@ public class ParamDeltaImporter
         return;
     }
 
-    public bool HandleParamImport(ParamDeltaPatch patch)
+    /// <summary>
+    /// Imports a merged patch as one undoable action. Merges ignore the Delta Patcher's import options: every
+    /// added, modified and deleted row of the merge is applied.
+    /// </summary>
+    public void ImportMergedDelta(string filename, ParamDeltaPatch delta)
     {
+        var action = new ParamDeltaImportAction(Patcher.View.Editor, this, delta, ParamDeltaImportOptions.Merge);
+        action.DisplayName = LOC.Get("PARAM_DeltaPatcher_Importer_Merge_Action_Name", filename);
+
+        try
+        {
+            Patcher.View.Editor.ActionManager.ExecuteAction(action);
+            Smithbox.Log(this, LOC.Get("PARAM_DeltaPatcher_Importer_Finished_Import", filename));
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Importer_Failed_Import", filename), ex);
+        }
+    }
+
+    public bool HandleParamImport(ParamDeltaPatch patch, ParamDeltaImportOptions options = null)
+    {
+        options ??= ParamDeltaImportOptions.FromConfig(Patcher.ImportMode);
+
         var primaryBank = Patcher.Project.Handler.ParamData.PrimaryBank;
         var vanillaBank = Patcher.Project.Handler.ParamData.VanillaBank;
 
@@ -105,8 +127,8 @@ public class ParamDeltaImporter
 
             var changed = false;
 
-            changed |= HandleGroupImport(curParam.Key, param, vanillaParam, work.Groups);
-            changed |= HandleRowsImport(curParam.Key, param, work.Rows);
+            changed |= HandleGroupImport(curParam.Key, param, vanillaParam, work.Groups, options);
+            changed |= HandleRowsImport(curParam.Key, param, work.Rows, options);
 
             if (changed)
             {
@@ -122,18 +144,19 @@ public class ParamDeltaImporter
     /// Each group replaces the project's group of the same ID in one step, honouring the Added / Modified /
     /// Deleted import options
     /// </summary>
-    public bool HandleGroupImport(string paramName, Param param, Param vanillaParam, List<RowGroupDelta> groups)
+    public bool HandleGroupImport(string paramName, Param param, Param vanillaParam, List<RowGroupDelta> groups,
+        ParamDeltaImportOptions options)
     {
         if (groups.Count == 0)
             return false;
 
-        var addRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Added_Rows;
-        var modRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Modified_Rows;
-        var delRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
+        var addRows = options.AddRows;
+        var modRows = options.ModifyRows;
+        var delRows = options.DeleteRows;
 
-        var restrictRowAdd = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
-        var restrictRowMod = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
-        var allowOverwrite = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
+        var restrictRowAdd = options.RestrictAdd;
+        var restrictRowMod = options.RestrictModify;
+        var allowOverwrite = options.AllowOverwrite;
 
         var fallbackTemplate = vanillaParam?.Rows.FirstOrDefault() ?? param.Rows.FirstOrDefault();
         var changed = false;
@@ -153,7 +176,7 @@ public class ParamDeltaImporter
                 continue;
             }
 
-            var state = Patcher.ImportMode is DeltaImportMode.Simple ? RowDeltaState.Added : group.State;
+            var state = options.Simple ? RowDeltaState.Added : group.State;
 
             if (state == RowDeltaState.Added)
             {
@@ -195,18 +218,19 @@ public class ParamDeltaImporter
     /// Rows keyed by (ID, Index). Every key is matched to its row before anything changes, so a delete or insert
     /// can't move a later delta onto another row with the same ID.
     /// </summary>
-    public bool HandleRowsImport(string paramName, Param srcParam, List<RowDelta> rowDeltas)
+    public bool HandleRowsImport(string paramName, Param srcParam, List<RowDelta> rowDeltas,
+        ParamDeltaImportOptions options)
     {
         if (rowDeltas.Count == 0)
             return false;
 
-        var addRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Added_Rows;
-        var modRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Modified_Rows;
-        var delRows = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
+        var addRows = options.AddRows;
+        var modRows = options.ModifyRows;
+        var delRows = options.DeleteRows;
 
-        var restrictRowAdd = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
-        var restrictRowMod = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
-        var allowOverwrite = CFG.Current.ParamEditor.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
+        var restrictRowAdd = options.RestrictAdd;
+        var restrictRowMod = options.RestrictModify;
+        var allowOverwrite = options.AllowOverwrite;
 
         // Keyed by row instance, so it tells apart rows that share an ID
         HashSet<Param.Row> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
@@ -226,7 +250,7 @@ public class ParamDeltaImporter
         {
             var rowStateIsAdded = rowDelta.State is RowDeltaState.Added;
 
-            if (Patcher.ImportMode is DeltaImportMode.Simple)
+            if (options.Simple)
                 rowStateIsAdded = true;
 
             if (rowStateIsAdded)
@@ -290,4 +314,44 @@ public class ParamDeltaImporter
         ParamRowGroups.ApplyFields(curRow, rowDelta.Fields);
     }
     #endregion
+}
+
+/// <summary>
+/// Which rows an import applies. Delta Patcher imports take them from the settings; merges apply everything.
+/// </summary>
+public sealed class ParamDeltaImportOptions
+{
+    public bool AddRows { get; init; } = true;
+    public bool ModifyRows { get; init; } = true;
+    public bool DeleteRows { get; init; } = true;
+    public bool RestrictAdd { get; init; }
+    public bool RestrictModify { get; init; }
+    public bool AllowOverwrite { get; init; } = true;
+
+    /// <summary>
+    /// Simple import mode: every row and group is treated as added
+    /// </summary>
+    public bool Simple { get; init; }
+
+    /// <summary>
+    /// A merged patch already holds the final rows: added rows replace a row at the same position, modified
+    /// rows are applied even if the project changed them, deleted rows are removed
+    /// </summary>
+    public static ParamDeltaImportOptions Merge { get; } = new();
+
+    public static ParamDeltaImportOptions FromConfig(DeltaImportMode mode)
+    {
+        var cfg = CFG.Current.ParamEditor;
+
+        return new ParamDeltaImportOptions
+        {
+            AddRows = cfg.ParamEditor_DeltaPatcher_Import_Added_Rows,
+            ModifyRows = cfg.ParamEditor_DeltaPatcher_Import_Modified_Rows,
+            DeleteRows = cfg.ParamEditor_DeltaPatcher_Import_Deleted_Rows,
+            RestrictAdd = cfg.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add,
+            RestrictModify = cfg.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify,
+            AllowOverwrite = cfg.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite,
+            Simple = mode is DeltaImportMode.Simple
+        };
+    }
 }

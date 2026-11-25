@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Never"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Any Break"
         }
       ]
     },
@@ -30,7 +30,58 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Last Hit Type A"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only when the last hit was of one specific type (not identified)."
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Last Hit Type B"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only when the last hit was of one specific type (not identified)."
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Last Hit Type C"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only when the last hit was of one specific type (not identified)."
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Last Hit Type D"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only when the last hit was of one specific type (not identified)."
         }
       ]
     }

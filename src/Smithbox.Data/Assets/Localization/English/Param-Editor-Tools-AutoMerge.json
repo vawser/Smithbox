@@ -250,19 +250,19 @@
     },
     {
       "Key": "PARAM_DirectMerge_Supported_Project_Type",
-      "Text": "Direct regulation merge currently supports {0}."
+      "Text": "Regulation files can only be merged for {0}. Use Project sources for this game."
     },
     {
       "Key": "PARAM_DirectMerge_Apply_ParamVer_AutoUpgrade",
-      "Text": "Upgrade Param Version for Older Regulations"
+      "Text": "Upgrade Older Sources"
     },
     {
       "Key": "PARAM_DirectMerge_Add_Regulation_Source_TT",
-      "Text": "Add a regulation source."
+      "Text": "Add a source (a regulation file or another project)."
     },
     {
       "Key": "PARAM_DirectMerge_Remove_Regulation_Source_TT",
-      "Text": "Remove the last added regulation source."
+      "Text": "Remove this regulation source."
     },
     {
       "Key": "PARAM_DirectMerge_Reset_Source_List",
@@ -298,11 +298,11 @@
     },
     {
       "Key": "PARAM_DirectMerge_Sources_Header_TT",
-      "Text": "Select regulation files as sources for the merge."
+      "Text": "The regulation files and projects to merge, earliest first. When sources change the same thing differently, it is a conflict; the conflict policy can pick the earliest or latest change. Use the arrows to change the order."
     },
     {
       "Key": "PARAM_DirectMerge_Analyze_Regulation_Files",
-      "Text": "Analyze Regulation Files"
+      "Text": "Analyze Sources"
     },
     {
       "Key": "PARAM_DirectMerge_Analyze_Regulation_Files_TT",
@@ -361,6 +361,90 @@
       "Text": "Enter the output path here..."
     },
     {
+      "Key": "PARAM_DirectMerge_Select_Output_Regulation",
+      "Text": "Save merged regulation as"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Include_Project",
+      "Text": "Include This Project"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Include_Project_TT",
+      "Text": "Use this project's own changes as the first (earliest) source. Where another source changes something this project also changed, it's a conflict to resolve instead of being overwritten on import. The project's changes are part of every output: the built regulation, the import and the saved delta.\nWith this on, one other source is enough to merge it into this project."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Project_Source",
+      "Text": "This project"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Source_Project_Row",
+      "Text": "Source {0}: this project (earliest)"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Move_Source_Earlier_TT",
+      "Text": "Move this source earlier."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Move_Source_Later_TT",
+      "Text": "Move this source later."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Progress_Modal_Name",
+      "Text": "Analyzing Sources"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Progress_Header",
+      "Text": "Reading and comparing the sources..."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Progress_Project",
+      "Text": "This project's changes"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Progress_Merge",
+      "Text": "Merging the changes"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Analyzing",
+      "Text": "Analyzing the sources..."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Not_Analyzed",
+      "Text": "Next: choose the sources, then press Analyze."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Errors",
+      "Text": "{0} errors: fix the sources listed below, then analyze again."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Stale",
+      "Text": "This project was edited after the analysis. Analyze again before using the merge."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Conflicts",
+      "Text": "{0} conflicts to resolve below before the merge can be used."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Ready",
+      "Text": "Ready: build a regulation, import into this project, or save a delta."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Import_Name",
+      "Text": "Direct merge"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Delta_Name",
+      "Text": "Delta Name"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Delta_Name_Hint",
+      "Text": "direct_merge"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Delta_Name_TT",
+      "Text": "The name of the delta patch written by Save Merged Delta. You're asked before an existing patch is replaced."
+    },
+    {
       "Key": "PARAM_DirectMerge_Build_Regulation_Action",
       "Text": "Build Regulation"
     },
@@ -386,7 +470,7 @@
     },
     {
       "Key": "PARAM_DirectMerge_Imported_Merged_Changes",
-      "Text": "Sent the merged changes to the loaded Param Editor project."
+      "Text": "Imported the merged changes into this project. Undo reverses the whole import."
     },
     {
       "Key": "PARAM_DirectMerge_Saved_Merged_Changes",
@@ -635,6 +719,114 @@
     {
       "Key": "PARAM_AutoMerge_Group_More_Rows",
       "Text": "... and {0} more rows"
+    },
+    {
+      "Key": "PARAM_AutoMerge_More_Warnings",
+      "Text": "... and {0} more warnings"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Apply_ParamVer_AutoUpgrade_TT",
+      "Text": "Upgrade a regulation or project of an older param version to this project's version before merging it, the same way the Param Upgrader does. Without this, an older source is an error."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Source_Type_File",
+      "Text": "Regulation"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Source_Type_Project",
+      "Text": "Project"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Source_Type_TT",
+      "Text": "Regulation: a regulation file. Project: another Smithbox project for this game. For games without encrypted regulation files, only projects can be merged."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Select_Project_Hint",
+      "Text": "Select a project..."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Project_Missing",
+      "Text": "{0} (not found)"
+    },
+    {
+      "Key": "PARAM_DirectMerge_No_Other_Projects",
+      "Text": "No other projects for this game. Create a project for the mod first."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Project_Source_TT",
+      "Text": "The project's saved params are merged. Edits open in that project but not saved aren't included."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Error_Project_Missing",
+      "Text": "Project {0} isn't in the project list any more."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Error_Project_Not_Loaded",
+      "Text": "The project's files couldn't be loaded."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Error_Project_Params_Failed",
+      "Text": "The project's params couldn't be loaded."
+    },
+    {
+      "Key": "PARAM_DirectMerge_Status_Ready_No_Regulation",
+      "Text": "Ready: import into this project or save a delta."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Filter_Hint",
+      "Text": "Param, row ID or name, field, source..."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Filter_TT",
+      "Text": "Show only conflicts whose param, row ID, row name, field (internal or display name) or source contains this text."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Type_All",
+      "Text": "All"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Unresolved_Only",
+      "Text": "Unresolved Only"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Visible_Earlier_TT",
+      "Text": "Resolve every listed conflict with the change from the earliest source that made one."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Visible_Later_TT",
+      "Text": "Resolve every listed conflict with the change from the latest source that made one."
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Changes",
+      "Text": "Changes"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictTable_Vanilla",
+      "Text": "Vanilla"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Not_In_Vanilla",
+      "Text": "Not in vanilla"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Superseded",
+      "Text": "Row deleted"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Invalid_Value",
+      "Text": "Not a valid {0} value"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictResolution_UseSource",
+      "Text": "Use {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Row_Description_Deleted",
+      "Text": "Row deleted"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Row_Description_Kept",
+      "Text": "Row kept ({0}, {1} changed fields)"
     },
     {
       "Key": "PARAM_DirectMerge_Loaded_Changed_Groups",

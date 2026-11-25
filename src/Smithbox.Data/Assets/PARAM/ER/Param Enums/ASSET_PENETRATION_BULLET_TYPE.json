@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Automatic"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Static assets act as map, dynamic assets as objects."
         }
       ]
     },
@@ -21,7 +27,25 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Treat as Map"
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Treat as Object"
+        }
+      ]
+    },
+    {
+      "Key": "3",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Treat as Character"
         }
       ]
     },
@@ -30,7 +54,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 4"
+          "Text": "Always Pass Through"
         }
       ]
     }

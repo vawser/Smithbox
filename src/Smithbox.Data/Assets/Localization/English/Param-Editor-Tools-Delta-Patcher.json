@@ -349,6 +349,10 @@
       "Text": "Finished the '{0}' param delta import."
     },
     {
+      "Key": "PARAM_DeltaPatcher_Importer_Merge_Action_Name",
+      "Text": "Import merged changes: {0}"
+    },
+    {
       "Key": "PARAM_DeltaPatcher_Importer_Failed_Import",
       "Text": "The '{0}' param delta import failed."
     },

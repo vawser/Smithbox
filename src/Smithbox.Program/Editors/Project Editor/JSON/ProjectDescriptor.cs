@@ -50,6 +50,10 @@ public class ProjectDescriptor
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
     public Dictionary<string, List<string>> PinnedFields { get; set; } = new();
 
+    // Param Editor > Param Merger > Direct: the last regulation sources and output path
+    public List<string> DirectMergeSources { get; set; } = new();
+    public string DirectMergeOutputPath { get; set; } = "";
+
     public ProjectDescriptor() { }
 
     public ProjectDescriptor(ProjectDescriptor newDescriptor)
@@ -251,7 +255,10 @@ public class ProjectDescriptor
             PinnedFields = this.PinnedFields.ToDictionary(
                 kvp => kvp.Key,
                 kvp => new List<string>(kvp.Value)
-            )
+            ),
+
+            DirectMergeSources = new List<string>(this.DirectMergeSources ?? new()),
+            DirectMergeOutputPath = this.DirectMergeOutputPath
         };
     }
 

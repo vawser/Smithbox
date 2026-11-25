@@ -194,7 +194,11 @@
     },
     {
       "Key": "PARAM_AutoMerge_Error_Select_Two_Regulations",
-      "Text": "Select at least two regulation files."
+      "Text": "Select at least two sources."
+    },
+    {
+      "Key": "PARAM_AutoMerge_Error_Select_One_Regulation",
+      "Text": "Select at least one source to merge with this project."
     },
     {
       "Key": "PARAM_AutoMerge_Error_File_Not_Found",
