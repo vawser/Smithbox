@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "ATKPARAM_ATKATTR_TYPE"
+      "Text": "Physical Attribute"
     }
   ],
   "Options": [
@@ -14,6 +14,12 @@
           "Language": "English",
           "Text": "Slash"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Slash. Physical damage uses the attacker's slash attack rate, the defender's slash defence bonus and slash absorption (armour, NpcParam, SpEffects), and the guard's slash guard bonus."
+        }
       ]
     },
     {
@@ -22,6 +28,12 @@
         {
           "Language": "English",
           "Text": "Strike"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Strike (DAMAGE_PHYSICAL_BLUNT in HKS). Physical damage uses the attacker's strike attack rate, the defender's strike defence bonus and strike absorption, and the guard's strike guard bonus."
         }
       ]
     },
@@ -32,6 +44,12 @@
           "Language": "English",
           "Text": "Pierce"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Pierce (DAMAGE_PHYSICAL_THRUST in HKS). Physical damage uses the attacker's pierce attack rate, the defender's pierce defence bonus and pierce absorption, and the guard's pierce guard bonus."
+        }
       ]
     },
     {
@@ -41,6 +59,12 @@
           "Language": "English",
           "Text": "Standard"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Standard (DAMAGE_PHYSICAL_NORMAL in HKS). Physical damage uses the attacker's neutral attack rate and the defender's neutral absorption. It gets no per-type defence or guard bonus."
+        }
       ]
     },
     {
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "EquipParamWeapon atkAttribute2 reference"
+          "Text": "Use Weapon Attribute 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AtkParam only: use the weapon's second physical attribute (EquipParamWeapon atkAttribute2)."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "EquipParamWeapon atkAttribute reference"
+          "Text": "Use Weapon Attribute 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "AtkParam only: use the weapon's first physical attribute (EquipParamWeapon atkAttribute)."
         }
       ]
     },
@@ -66,7 +102,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "None (No Override)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No physical type. On a bullet this means \"don't override\". On an attack, the physical damage gets no per-type modifiers and is not reduced by any physical absorption (armour, NpcParam or SpEffects). On a SpEffect it is the default and has no effect."
+        }
+      ]
+    },
+    {
+      "Key": "255",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Remove Physical Type"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "SpEffect only: the one value the weapon-buff override applies. Other SpEffect values are ignored. The buffed attacks then have no physical type, so physical absorption no longer reduces them."
         }
       ]
     }

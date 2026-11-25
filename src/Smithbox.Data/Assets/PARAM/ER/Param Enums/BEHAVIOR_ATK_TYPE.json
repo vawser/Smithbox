@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "BEHAVIOR_ATK_TYPE"
+      "Text": "Hit Effect Type"
     }
   ],
   "Options": [
@@ -14,6 +14,12 @@
           "Language": "English",
           "Text": "Slash"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. The hit uses the Slash columns of HitEffectSfxParam. Damage type comes from Physical Attribute, not from this field."
+        }
       ]
     },
     {
@@ -22,6 +28,12 @@
         {
           "Language": "English",
           "Text": "Strike"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. The hit uses the Blow columns of HitEffectSfxParam."
         }
       ]
     },
@@ -32,6 +44,12 @@
           "Language": "English",
           "Text": "Thrust"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. The hit uses the Thrust columns of HitEffectSfxParam."
+        }
       ]
     },
     {
@@ -40,6 +58,27 @@
         {
           "Language": "English",
           "Text": "Standard"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Visual and sound only. The hit uses the Neutral columns of HitEffectSfxParam. For the hit sound it is grouped with Strike."
+        }
+      ]
+    },
+    {
+      "Key": "254",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "None (No Override)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "On a bullet: keep the attack's own type (the default). On an attack: no HitEffectSfxParam column matches, so the hit plays no hit-spark SFX."
         }
       ]
     }

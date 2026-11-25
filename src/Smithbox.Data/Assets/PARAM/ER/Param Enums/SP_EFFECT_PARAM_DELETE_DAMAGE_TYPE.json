@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "SP_EFFECT_PARAM_DELETE_DAMAGE_TYPE"
+      "Text": "Delete On Damage Criteria"
     }
   ],
   "Options": [
@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "Never"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Taking damage never ends this effect."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Any Damage"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends when the character takes any hit that deals damage."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 2"
+          "Text": "Physical Type Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit whose Physical Attribute is not None (254)."
         }
       ]
     },
@@ -39,7 +57,88 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 3"
+          "Text": "Special Attribute Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit whose Special Attribute is not Default (0). This includes 254 (None), so only hits with Special Attribute 0 leave it."
+        }
+      ]
+    },
+    {
+      "Key": "4",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Slash Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Physical Attribute Slash (0)."
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Strike Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Physical Attribute Strike (1)."
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Pierce Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Physical Attribute Pierce (2)."
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Standard Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Physical Attribute Standard (3)."
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Magic Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Special Attribute Magic (10)."
         }
       ]
     },
@@ -48,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 9"
+          "Text": "Fire Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Special Attribute Fire (11). Vanilla uses it so fire washes off oil and frost build-up."
         }
       ]
     },
@@ -57,7 +162,28 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 10"
+          "Text": "Lightning Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Special Attribute Lightning (12)."
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Holy Hit"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The effect ends on a damaging hit with Special Attribute Holy (13)."
         }
       ]
     }
