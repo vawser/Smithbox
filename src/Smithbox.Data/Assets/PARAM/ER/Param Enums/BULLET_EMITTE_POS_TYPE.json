@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "BULLET_EMITTE_POS_TYPE"
+      "Text": "Emit Position"
     }
   ],
   "Options": [
@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Default"
+          "Text": "Dummy Poly"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created at the shooter's emit dummy poly. Shot angles apply."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shooter + randomCreateRadius"
+          "Text": "Around Shooter"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created at a random point around the shooter within Random Create Radius."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Higher elevation"
+          "Text": "Dummy Poly (Levelled)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created at the dummy poly with a level orientation (up = world up). Shot angles apply. Used for meteors."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Nearby enemy origin. If no enemies, targets bullet origin."
+          "Text": "At Target"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created relative to a nearby enemy or the target; falls back to the bullet origin."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Nearest enemy + randomCreateRadius"
+          "Text": "Around Nearest Enemy"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created at a random point around the nearest enemy within Random Create Radius."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Parent bullet (instead of hit location)"
+          "Text": "Parent Bullet"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "For child bullets: created at the parent bullet instead of the hit location."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Above and behind target"
+          "Text": "Stored Placement"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Created from a placement stored on the bullet (above and behind the target in vanilla use); otherwise at the dummy poly."
         }
       ]
     }

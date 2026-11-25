@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "BULLET_FOLLOW_TYPE"
+      "Text": "Follow Type"
     }
   ],
   "Options": [
@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Do not follow"
+          "Text": "None"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The bullet moves on its own."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Follow shooter"
+          "Text": "Follow Shooter (Dummy Poly)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The bullet moves with the shooter's emit dummy poly (or the shooter's position when there is none)."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Follow shooter's feet"
+          "Text": "Follow Shooter Root"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The bullet moves one-to-one with the shooter's root position (feet)."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Follow target"
+          "Text": "Follow (No Anchor)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Following is enabled, but no anchor point is assigned in the code paths found. Vanilla: Death Rite Bird spears."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Slide along ground"
+          "Text": "Ground Hugging"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No following. The bullet keeps to the ground: ground handling changes and hit positions are lifted slightly off the surface."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Return to shooter"
+          "Text": "Follow Shooter Centre"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The bullet moves with the middle of the shooter's body (position plus half its height)."
         }
       ]
     }

@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "BULLET_LAUNCH_CONDITION_TYPE"
+      "Text": "Launch Condition"
     }
   ],
   "Options": [
@@ -14,6 +14,12 @@
           "Language": "English",
           "Text": "Always"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The chained bullet spawns on every hit and on expiry."
+        }
       ]
     },
     {
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hit water"
+          "Text": "Hit Water"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The chained bullet spawns only when the hit material is water."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hit water or swamp"
+          "Text": "Hit Water or Swamp"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The chained bullet spawns only when the hit material is water or any swamp (poison, rot, blood)."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Didn't hit enemy"
+          "Text": "Always (3)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Same as Always."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hit enemy"
+          "Text": "Hit Character or Expired"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The chained bullet spawns when the hit has no material (a character hit) and when the bullet expires."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Hit Map or Object"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The chained bullet spawns only when the hit has a material (map or object). Not on expiry."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Absorbed Bullet"
+          "Text": "Absorbed"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The chained bullet spawns only when this bullet was absorbed by an Absorb field (Attach Effect Type 5)."
         }
       ]
     },
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Expired"
+          "Text": "Never"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Any value above 6: the chained bullet never spawns."
         }
       ]
     },
@@ -84,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hit ground or enemy"
+          "Text": "Never"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Any value above 6: the chained bullet never spawns."
         }
       ]
     }

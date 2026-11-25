@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "BULLET_ATTACH_EFFECT_TYPE"
+      "Text": "Attach Effect Type"
     }
   ],
   "Options": [
@@ -14,6 +14,12 @@
           "Language": "English",
           "Text": "None"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No field."
+        }
       ]
     },
     {
@@ -23,6 +29,12 @@
           "Language": "English",
           "Text": "Force"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While flying, pushes away other bullets that have Is Hit Force Magic. Vanilla: wind barriers."
+        }
       ]
     },
     {
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown Protection"
+          "Text": "Flare"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Ends other bullets that have Is Hit Flare when they touch it. Vanilla: moon flares."
         }
       ]
     },
@@ -41,6 +59,12 @@
           "Language": "English",
           "Text": "Dark Force"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "While flying, pushes away other bullets that have Is Hit Dark Force Magic. Vanilla: magic-repelling barriers."
+        }
       ]
     },
     {
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Erase Bullets"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Ends other bullets that have Is Hit Other Bullet Force Erase A (they still play their hit effect). Vanilla: boss bullet erasers."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Absorb Bullet"
+          "Text": "Absorb Bullets"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Absorbs other bullets that have Is Hit Other Bullet Force Erase B: they end without a hit effect and count as absorbed (Launch Condition 6). Vanilla: Carian and Golden Retaliation."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trigger Remote Detonation"
+          "Text": "Remote Detonation"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Ends other bullets that have May Remote Detonate."
         }
       ]
     }

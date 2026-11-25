@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "BEHAVIOR_CATEGORY"
+      "Text": "Attack Category"
     }
   ],
   "Options": [
@@ -14,6 +14,42 @@
           "Language": "English",
           "Text": "None"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only SpEffects with Weapon Param Change = None affect these attacks."
+        }
+      ]
+    },
+    {
+      "Key": "1",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Right-Hand Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player right-hand attacks. SpEffects with Weapon Param Change None or Right-hand affect them."
+        }
+      ]
+    },
+    {
+      "Key": "2",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Left-Hand Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player left-hand attacks. SpEffects with Weapon Param Change None or Left-hand affect them."
+        }
       ]
     },
     {
@@ -23,6 +59,12 @@
           "Language": "English",
           "Text": "Sorcery"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Sorceries. Only SpEffects with Sorcery Param Change (magParamChange) set affect them."
+        }
       ]
     },
     {
@@ -31,6 +73,132 @@
         {
           "Language": "English",
           "Text": "Incantation"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Incantations. Only SpEffects with Incantation Param Change (miracleParamChange) set affect them."
+        }
+      ]
+    },
+    {
+      "Key": "5",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Body"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Unarmed and body attacks (also thrown goods). Only SpEffects with Weapon Param Change = None affect these attacks."
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Attack 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Default NPC attacks. Only SpEffects with Weapon Param Change = None affect these attacks."
+        }
+      ]
+    },
+    {
+      "Key": "7",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Attack 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Secondary NPC attacks. Only SpEffects with Weapon Param Change = None affect these attacks."
+        }
+      ]
+    },
+    {
+      "Key": "8",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "NPC Attack 3"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only SpEffects with Weapon Param Change = None affect these attacks. Unused in vanilla."
+        }
+      ]
+    },
+    {
+      "Key": "9",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Kick"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Kicks. SpEffects with Weapon Param Change None or Kick affect them."
+        }
+      ]
+    },
+    {
+      "Key": "10",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Shaman"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Only SpEffects with Shaman Param Change set affect them (DS3 used this for pyromancy). Unused in vanilla."
+        }
+      ]
+    },
+    {
+      "Key": "11",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Both Hands"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "SpEffects with Weapon Param Change None, Right-hand or Left-hand affect them. Unused in vanilla."
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Active Weapon"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player weapon attacks. SpEffects with Weapon Param Change None or Right-hand affect them; Left-hand buffs also apply while the left weapon is two-handed."
         }
       ]
     }
