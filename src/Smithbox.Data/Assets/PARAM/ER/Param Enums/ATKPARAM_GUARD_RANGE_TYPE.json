@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "ATKPARAM_GUARD_RANGE_TYPE"
+      "Text": "Guard Check Origin"
     }
   ],
   "Options": [
@@ -12,7 +12,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 0"
+          "Text": "Attacker Position"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The guard direction check uses the position of the attack's owner (the character, or the bullet for bullet hits). The defender must face the attacker to block."
         }
       ]
     },
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Type 1"
+          "Text": "Hit Position"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "The guard direction check uses the point where the hit landed. The defender must face the impact to block. For attacks that land far from their owner."
         }
       ]
     }

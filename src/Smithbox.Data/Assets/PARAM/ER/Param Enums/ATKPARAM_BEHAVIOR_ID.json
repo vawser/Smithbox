@@ -3,7 +3,7 @@
   "Names": [
     {
       "Language": "English",
-      "Text": "ATKPARAM_BEHAVIOR_ID"
+      "Text": "Behavior Identifier"
     }
   ],
   "Options": [
@@ -14,6 +14,12 @@
           "Language": "English",
           "Text": "None"
         }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No tag."
+        }
       ]
     },
     {
@@ -21,7 +27,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Continuous Attack"
+          "Text": "Rolling"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_ROLLING. Players and enemies play no damage reaction (enemies with the rolling-push SpEffect get a push instead). Riders and mounts ignore it."
         }
       ]
     },
@@ -30,7 +42,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Super huge blowout"
+          "Text": "No Additive Blend"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_NO_ADD_BLEND. The hit plays no additive damage blend animation."
         }
       ]
     },
@@ -39,7 +57,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Delayed damage reaction"
+          "Text": "Large Damage 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player behaviour: a large-damage hit plays W_DamageLarge2 instead of the normal large damage."
         }
       ]
     },
@@ -48,7 +72,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Damage only FE"
+          "Text": "Insect"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_INSECT. Enemies with SpEffect 5731 play their special damage reaction."
         }
       ]
     },
@@ -57,7 +87,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small stagger guarantee"
+          "Text": "Golem Confusion"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_GOLEM_CONFUSION. Adds confusion points to golems; past the threshold the golem is confused."
         }
       ]
     },
@@ -66,7 +102,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Maliketh Parry"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_MARIQUES_PARRY. Enemies with SpEffect 15280/15281 play their parry events."
         }
       ]
     },
@@ -75,7 +117,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Morgott Trauma"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_TRAUMA_MORGOTT. Trauma reaction on enemies with SpEffect 16248."
         }
       ]
     },
@@ -84,7 +132,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Greater Demon Trauma"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "HKS BEH_IDENTIFIER_TRAUMA_GREATER_DEMON. Trauma reaction on enemies with SpEffect 10680."
         }
       ]
     },
@@ -93,7 +147,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unknown"
+          "Text": "Chain Recover"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player behaviour: the damage count uses chain recovery (UseChainRecover). Used by most player attacks."
         }
       ]
     },
@@ -102,7 +162,13 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Start Grab"
+          "Text": "Fall Safe / Huge Blow 1"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player behaviour: no damage reaction when falling from 10 m or more; a huge blow uses damage variant 1."
         }
       ]
     },
@@ -111,7 +177,88 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Finish Grab"
+          "Text": "Unknown (11)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No behaviour script tests this value."
+        }
+      ]
+    },
+    {
+      "Key": "12",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (12)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No behaviour script tests this value."
+        }
+      ]
+    },
+    {
+      "Key": "13",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Huge Blow 2"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player behaviour: a huge blow uses damage variant 2."
+        }
+      ]
+    },
+    {
+      "Key": "14",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Push SpEffect"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player behaviour: push-level damage applies SpEffect 19865."
+        }
+      ]
+    },
+    {
+      "Key": "15",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "No Weak Reaction"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "Player behaviour: suppresses the weak-point damage reaction."
+        }
+      ]
+    },
+    {
+      "Key": "16",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Unknown (16)"
+        }
+      ],
+      "Descriptions": [
+        {
+          "Language": "English",
+          "Text": "No behaviour script tests this value."
         }
       ]
     }
