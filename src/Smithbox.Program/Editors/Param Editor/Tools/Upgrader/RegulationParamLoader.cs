@@ -159,7 +159,8 @@ public static class RegulationParamLoader
         if (version >= 10601000 && param.ParamType == "CHR_MODEL_PARAM_ST")
             param.ExpandParamSize(12, 16);
 
-        if (version >= 11210015)
+        // 1.11 expanded these (the paramdefs gate the new fields from 11101000)
+        if (version >= 11101000)
         {
             if (param.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 param.ExpandParamSize(880, 1024);

@@ -1,22 +1,24 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Logger;
+using StudioCore.Editors.ParamEditor.Upgrader;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
+/// <summary>
+/// Upgrades a project's params to the game's current regulation version, one version step at a time, using the
+/// version diffs (Assets/PARAM/&lt;game&gt;/Upgrader Diffs, plus diffs made here). See
+/// Claude/Documentation/Param Upgrader Diffs Plan.md.
+/// </summary>
 public class ParamUpgrader
 {
     public ParamEditorView View;
@@ -28,30 +30,9 @@ public class ParamUpgrader
         Project = project;
     }
 
-    public void Display()
-    {
-        if (Project.Handler.ParamData == null)
-            return;
-
-        var windowWidth = ImGui.GetWindowWidth();
-        var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-
-        if (ToolSections.Header($"{LOC.Get("PARAM_Upgrader_Header")}##paramUpgraderHeader"))
-        {
-            ImGui.BeginChild("ParamUpgraderToolSection", ImGuiChildFlags.Borders);
-
-            UpgraderMenu();
-
-            ImGui.EndChild();
-        }
-    }
-
     public bool SupportsParamUpgrading()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            return true;
-
-        return false;
+        return RegulationHistory.GameFor(Project.Descriptor.ProjectType) != null;
     }
 
     public void ParamUpgradeWarning()
@@ -72,1147 +53,522 @@ public class ParamUpgrader
         }
     }
 
-    private bool DisplayActions = false;
-    private bool ConflictsChecked = false;
-    private bool UpgradePerformed = false;
-    private bool MassEditsPerformed = false;
+    #region State
 
-    private ParamUpgraderInfo UpgraderInfo;
-    private BND4 OldRegulationBinder;
-
-    private Dictionary<string, HashSet<int>> ConflictParams;
-    private Dictionary<string, Param> OldRegulationParams;
-    private Dictionary<string, Param> NewParams;
-
-    public void UpgraderMenu()
+    /// <summary>The result of a prepared upgrade, waiting for Apply Upgrade</summary>
+    private sealed class PreparedUpgrade
     {
-        var paramData = Project.Handler.ParamData;
+        public ulong FromVersion;
+        public ulong ToVersion;
+        public List<RegulationDiff> Chain;
+        public Dictionary<string, Param> Params;
+        public List<UpgradeConflict> Conflicts;
+    }
+
+    // Written by the background task, read by the UI
+    private volatile bool Busy;
+    private volatile string Status;
+    private volatile bool StatusIsError;
+
+    private PreparedUpgrade Prepared;
+    private ulong MissingVersion;
+
+    #endregion
+
+    public void Display()
+    {
+        if (Project.Handler.ParamData == null)
+            return;
+
+        if (ToolSections.Header($"{LOC.Get("PARAM_Upgrader_Header")}##paramUpgraderHeader"))
+        {
+            ImGui.BeginChild("ParamUpgraderToolSection", ImGuiChildFlags.Borders);
+
+            if (!SupportsParamUpgrading())
+            {
+                GUI.WrappedText(LOC.Get("PARAM_Upgrader_Not_Supported"));
+            }
+            else
+            {
+                UpgraderMenu();
+
+                GUI.Spacer();
+                GeneratorMenu();
+            }
+
+            ImGui.EndChild();
+        }
+    }
+
+    #region Upgrade
+
+    private void UpgraderMenu()
+    {
         var primaryBank = Project.Handler.ParamData.PrimaryBank;
         var vanillaBank = Project.Handler.ParamData.VanillaBank;
 
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
         GUI.WrappedText(LOC.Get("PARAM_Upgrader_Hint"));
 
         GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PARAM_Upgrader_Header_Version"),
-            LOC.Get("PARAM_Upgrader_Header_Version_TT"));
+        GUI.SimpleHeader(LOC.Get("PARAM_Upgrader_Header_Version"), LOC.Get("PARAM_Upgrader_Header_Version_TT"));
 
-        ImGui.Text(LOC.Get("PARAM_Upgrader_Primary_Version", primaryBank.ParamVersion));
-        ImGui.Text(LOC.Get("PARAM_Upgrader_Source_Version", vanillaBank.ParamVersion));
+        ImGui.Text(LOC.Get("PARAM_Upgrader_Primary_Version", ParamUtils.ParseRegulationVersion(primaryBank.ParamVersion)));
+        ImGui.Text(LOC.Get("PARAM_Upgrader_Source_Version", ParamUtils.ParseRegulationVersion(vanillaBank.ParamVersion)));
 
         GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PARAM_Upgrader_Header_Actions"), 
-            LOC.Get("PARAM_Upgrader_Header_Actions_TT"));
+        GUI.SimpleHeader(LOC.Get("PARAM_Upgrader_Header_Actions"), LOC.Get("PARAM_Upgrader_Header_Actions_TT"));
 
-        // Start
-        if (!DisplayActions && primaryBank.ParamVersion < vanillaBank.ParamVersion)
-        {
-            // Start
-            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Start")}##startAction"))
-            {
-                Start();
-            }
-        }
-
-        if (!DisplayActions && primaryBank.ParamVersion >= vanillaBank.ParamVersion
-            || DisplayActions && ConflictsChecked && UpgradePerformed && MassEditsPerformed)
+        if (primaryBank.ParamVersion >= vanillaBank.ParamVersion)
         {
             GUI.WrappedText(LOC.Get("PARAM_Upgrader_No_Upgrade_Needed"));
+            Prepared = null;
         }
-
-        // Conflicts
-        if (DisplayActions && !ConflictsChecked)
+        else if (Busy)
         {
-            // Check for Conflicts
-            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Check_for_Conflicts")}##checkForConflictsAction"))
-            {
-                CheckForConflicts();
-            }
-        }
-
-        // Apply Upgrade
-        if (DisplayActions && ConflictsChecked && !UpgradePerformed)
-        {
-            // Apply Upgrade
-            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Apply_Upgrade")}##applyUpgradeAction"))
-            {
-                UpgradeParams();
-            }
-        }
-
-        // Apply Mass Edit
-        if (DisplayActions && ConflictsChecked && UpgradePerformed && !MassEditsPerformed)
-        {
-            // Apply Mass Edits
-            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Apply_Mass_Edits")}##applyMasseditAction"))
-            {
-                ApplyMassEdits();
-            }
-        }
-
-        // Conflict List
-        if (ConflictsChecked)
-        {
-            if (ConflictParams.Count > 0)
-            {
-                GUI.SimpleHeader(
-                    LOC.Get("PARAM_Upgrader_Header_Conflicts"),
-                    LOC.Get("PARAM_Upgrader_Header_Conflicts_TT"));
-
-                if (ImGui.BeginTable($"conflictTable", 2, tblFlags))
-                {
-                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
-
-                    foreach (var entry in ConflictParams)
-                    {
-                        // Primary
-                        ImGui.TableNextRow();
-                        ImGui.TableSetColumnIndex(0);
-
-                        ImGui.AlignTextToFramePadding();
-                        ImGui.Text($"{entry.Key}");
-
-                        ImGui.TableSetColumnIndex(1);
-
-                        foreach (var cEntry in entry.Value)
-                        {
-                            ImGui.Text($"{cEntry}");
-                        }
-                    }
-
-                    ImGui.EndTable();
-                }
-            }
-        }
-    }
-
-    public async void Start()
-    {
-        UpgraderInfo = null;
-        OldRegulationBinder = null;
-
-        DisplayActions = false;
-        ConflictsChecked = false;
-        UpgradePerformed = false;
-
-        NewParams = new();
-        OldRegulationParams = new();
-        ConflictParams = new();
-
-        await SetupUpgraderInformation();
-        await SetupOldRegulation();
-
-        DisplayActions = true;
-    }
-
-    public async Task<bool> SetupUpgraderInformation()
-    {
-        Task<bool> upgraderInfoTask = LoadUpgraderInformation();
-        bool upgraderInfoTaskResult = await upgraderInfoTask;
-
-        if (!upgraderInfoTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Log_Missing_Upgrader_Info"));
-        }
-
-        return true;
-    }
-
-    public async Task<bool> SetupOldRegulation()
-    {
-        Task<bool> oldRegTask = LoadOldRegulation();
-        bool oldRegTaskFinished = await oldRegTask;
-
-        if (!oldRegTaskFinished)
-        {
-            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Log_Missing_Old_Regulation_File"));
-        }
-
-        return true;
-    }
-
-    private bool ApplySpecialHandlingForNR = false;
-
-    public async void UpgradeParams()
-    {
-        var paramData = Project.Handler.ParamData;
-
-        // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
-        if (Project.Descriptor.ProjectType is ProjectType.NR && paramData.PrimaryBank.ParamVersion == 10310025)
-        {
-            ApplySpecialHandlingForNR = true;
-
-            await StoreParamData();
-        }
-
-        Task<bool> upgradeTask = UpgradeParamsTask();
-        bool upgradeTaskFinished = await upgradeTask;
-
-        if (upgradeTaskFinished)
-        {
-            Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Upgraded_Primary_Bank_Params"));
-
-            UpgradePerformed = true;
+            ImGui.BeginDisabled();
+            ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Check_for_Conflicts")}##checkForConflictsAction");
+            ImGui.EndDisabled();
         }
         else
         {
-            Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Primary_Already_Upgraded"));
-        }
+            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Check_for_Conflicts")}##checkForConflictsAction"))
+                StartPrepare();
 
-        CacheBank.ClearCaches();
-        paramData.RefreshAllParamDiffCaches(false);
+            GUI.Tooltip(LOC.Get("PARAM_Upgrader_Action_Check_for_Conflicts_TT"));
 
-        // The upgrade rebuilds the params from the new game version, so all of them need to be written
-        if (upgradeTaskFinished)
-        {
-            paramData.PrimaryBank.MarkAllParamsDirty();
-        }
-
-        await paramData.PrimaryBank.Save();
-    }
-
-    // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
-    public async Task<bool> StoreParamData()
-    {
-        Task<bool> spEffectTask = StoreSpEffectData();
-        bool spEffectTaskResult = await spEffectTask;
-
-        if (!spEffectTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Failed_SpEffect_Store"));
-        }
-
-        return true;
-    }
-
-    private Dictionary<int, Dictionary<string, object>> SpEffectData = new();
-
-    // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
-    public async Task<bool> StoreSpEffectData()
-    {
-        await Task.Yield();
-
-        var paramData = Project.Handler.ParamData;
-
-        SpEffectData.Clear();
-
-        if (paramData.PrimaryBank.Params.ContainsKey("SpEffectParam") &&
-             paramData.VanillaBank.Params.ContainsKey("SpEffectParam"))
-        {
-            var spEffectParam = paramData.PrimaryBank.Params["SpEffectParam"];
-            var spEffectParamVanilla = paramData.VanillaBank.Params["SpEffectParam"];
-
-            foreach (var row in spEffectParam.Rows)
+            if (Prepared != null && Prepared.FromVersion == primaryBank.ParamVersion && Prepared.ToVersion == vanillaBank.ParamVersion)
             {
-                // Only add 'added' rows, the default mass edit covers the vanilla ones
-                if (spEffectParamVanilla.Rows.Any(e => e.ID == row.ID))
-                    continue;
+                ImGui.SameLine();
+                if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Apply_Upgrade")}##applyUpgradeAction"))
+                    ApplyPrepared();
 
-                var frostInflict = row["frostInflictRate_old"];
-                var sleepInflict = row["sleepInflictRate_old"];
-                var madnessInflict = row["madnessInflictRate_old"];
-                var applyOnKillSp = row["applyIdOnKillSp_old"];
+                GUI.Tooltip(LOC.Get("PARAM_Upgrader_Action_Apply_Upgrade_TT"));
+            }
+        }
 
-                if (!SpEffectData.ContainsKey(row.ID))
+        DisplayStatus();
+
+        if (MissingVersion != 0 && !Busy)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+                LOC.Get("PARAM_Upgrader_Missing_Step", ParamUtils.ParseRegulationVersion(MissingVersion)));
+        }
+
+        if (Prepared != null && !Busy)
+            DisplayPrepared();
+    }
+
+    private void DisplayStatus()
+    {
+        var status = Status;
+        if (string.IsNullOrEmpty(status))
+            return;
+
+        if (StatusIsError)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, status);
+        else
+            GUI.WrappedText(status);
+    }
+
+    private void DisplayPrepared()
+    {
+        var steps = string.Join(" > ", new[] { Prepared.FromVersion }
+            .Concat(Prepared.Chain.Select(d => d.ToVersion))
+            .Select(v => ParamUtils.ParseRegulationVersion(v)));
+
+        GUI.WrappedText(LOC.Get("PARAM_Upgrader_Steps", steps));
+
+        if (Prepared.Conflicts.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("PARAM_Upgrader_No_Conflicts"));
+            return;
+        }
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("PARAM_Upgrader_Header_Conflicts"), LOC.Get("PARAM_Upgrader_Header_Conflicts_TT"));
+
+        foreach (var group in Prepared.Conflicts.GroupBy(c => c.Param).OrderBy(g => g.Key))
+        {
+            if (!ImGui.TreeNodeEx($"{group.Key} ({group.Count()})##upgraderConflict_{group.Key}"))
+                continue;
+
+            foreach (var conflict in group)
+            {
+                var version = ParamUtils.ParseRegulationVersion(conflict.ToVersion);
+
+                if (conflict.RowConflict)
                 {
-                    SpEffectData.Add(row.ID, new());
+                    ImGui.Text(LOC.Get("PARAM_Upgrader_Conflict_Row", conflict.RowID, version));
+                    continue;
                 }
 
-                SpEffectData[row.ID].Add("frostInflictRate", frostInflict.Value.Value);
-                SpEffectData[row.ID].Add("sleepInflictRate", sleepInflict.Value.Value);
-                SpEffectData[row.ID].Add("madnessInflictRate", madnessInflict.Value.Value);
-                SpEffectData[row.ID].Add("applyIdOnKillSp", applyOnKillSp.Value.Value);
+                foreach (var field in conflict.Fields)
+                {
+                    ImGui.Text(LOC.Get("PARAM_Upgrader_Conflict_Field", conflict.RowID, field.Field, version,
+                        field.ModValue, field.OldValue, field.NewValue));
+                }
             }
-        }
 
-        return true;
+            ImGui.TreePop();
+        }
     }
 
-    public async void ApplyMassEdits()
+    /// <summary>
+    /// Rebuilds the vanilla versions from the project's version to the game's and merges the project's params
+    /// through each step, in the background. Nothing is changed until Apply Upgrade.
+    /// </summary>
+    private void StartPrepare()
     {
         var paramData = Project.Handler.ParamData;
-        var newVersion = paramData.VanillaBank.ParamVersion;
+        var history = RegulationHistory.For(Project);
+        var from = paramData.PrimaryBank.ParamVersion;
+        var to = paramData.VanillaBank.ParamVersion;
 
-        // Update fields
-        var massEditCmds = UpgraderInfo.UpgradeCommands.Where(e => e.Version == $"{newVersion}").ToList();
+        // Shallow copies: the task must not see params added or removed while it runs
+        var mod = new Dictionary<string, Param>(paramData.PrimaryBank.Params);
+        var vanilla = new Dictionary<string, Param>(paramData.VanillaBank.Params);
+        var context = history.CreateContext();
 
-        var commandString = "";
-        foreach (var cmd in massEditCmds)
+        Busy = true;
+        Prepared = null;
+        MissingVersion = 0;
+        SetStatus(LOC.Get("PARAM_Upgrader_Status_Preparing"), false);
+
+        Task.Run(() =>
         {
-            commandString = $"{commandString}{cmd.Command};\n";
-        }
-
-        View.MassEdit.ApplyMassEdit(commandString);
-
-        Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Applied_MassEdit_Commands"));
-
-        // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
-        if (Project.Descriptor.ProjectType is ProjectType.NR && ApplySpecialHandlingForNR)
-        {
-            commandString = "";
-
-            foreach (var entry in SpEffectData)
+            try
             {
-                var rowID = entry.Key;
-                var fieldData = entry.Value;
+                var (chain, versions) = history.RebuildFrom(from, context, out var missing);
 
-                var command = $"param SpEffectParam: id {rowID}: frostInflictRate: = {fieldData["frostInflictRate"]};" +
-                    $"param SpEffectParam: id {rowID}: sleepInflictRate: = {fieldData["sleepInflictRate"]};" +
-                    $"param SpEffectParam: id {rowID}: madnessInflictRate: = {fieldData["madnessInflictRate"]};" +
-                    $"param SpEffectParam: id {rowID}: applyIdOnKillSp: = {fieldData["applyIdOnKillSp"]};";
+                if (chain == null)
+                {
+                    MissingVersion = missing;
+                    SetStatus(LOC.Get("PARAM_Upgrader_Status_No_Chain"), true);
+                    return;
+                }
 
-                commandString = $"{commandString}\n{command}";
+                if (chain.Count == 0 || chain[^1].ToVersion != to)
+                {
+                    SetStatus(LOC.Get("PARAM_Upgrader_Status_Game_Version_Mismatch",
+                        ParamUtils.ParseRegulationVersion(to)), true);
+                    return;
+                }
+
+                // The last step merges into the Vanilla bank's params (what the project shows as vanilla)
+                var newest = versions[^1];
+                versions[^1] = newest.ToDictionary(kv => kv.Key,
+                    kv => vanilla.TryGetValue(kv.Key, out var v) ? v : kv.Value);
+
+                var conflicts = new List<UpgradeConflict>();
+                var result = RegulationUpgradeChain.Upgrade(mod, chain, versions, conflicts);
+
+                // Params outside the regulation (system params and the like) aren't versioned by it: the
+                // project's own copy is kept
+                foreach (var (name, param) in vanilla)
+                {
+                    if (newest.ContainsKey(name))
+                        continue;
+
+                    result[name] = mod.TryGetValue(name, out var own) ? own : param;
+                }
+
+                Prepared = new PreparedUpgrade
+                {
+                    FromVersion = from,
+                    ToVersion = to,
+                    Chain = chain,
+                    Params = result,
+                    Conflicts = conflicts
+                };
+
+                SetStatus(LOC.Get("PARAM_Upgrader_Status_Prepared", chain.Count, conflicts.Count), false);
             }
-
-            View.MassEdit.ApplyMassEdit(commandString);
-        }
-
-        await paramData.PrimaryBank.Save();
-
-        MassEditsPerformed = true;
+            catch (Exception e)
+            {
+                SetStatus(LOC.Get("PARAM_Upgrader_Status_Failed", e.Message), true);
+                Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Conflict_Check_Failed"), e);
+            }
+            finally
+            {
+                Busy = false;
+            }
+        });
     }
 
-    public async Task<bool> UpgradeParamsTask()
+    private async void ApplyPrepared()
     {
-        await Task.Yield();
+        var prepared = Prepared;
+        if (prepared == null)
+            return;
 
         var paramData = Project.Handler.ParamData;
+        var primaryBank = paramData.PrimaryBank;
 
         // Backup original
-        var data = Project.VFS.ProjectFS.GetFile(@"regulation.bin")?.GetData().ToArray();
-
         if (CFG.Current.Project.Project_Enable_Backup_Saves)
         {
-            File.WriteAllBytes(Path.Join(Project.Descriptor.ProjectPath, "regulation.bin.prev"), data);
+            var data = Project.VFS.ProjectFS.GetFile(RegulationHistory.RegulationFile)?.GetData().ToArray();
+            if (data != null)
+                await File.WriteAllBytesAsync(Path.Join(Project.Descriptor.ProjectPath, "regulation.bin.prev"), data);
         }
 
-        NewParams = new();
-
-        var anyUpgrades = false;
-
-        var primaryBank = paramData.PrimaryBank;
-        var vanillaBank = paramData.VanillaBank;
-
-        foreach (var k in vanillaBank.Params.Keys)
-        {
-            // If the param is completely new, just take it
-            if (!OldRegulationParams.ContainsKey(k) || !primaryBank.Params.ContainsKey(k))
-            {
-                NewParams.Add(k, vanillaBank.Params[k]);
-                continue;
-            }
-
-            // Otherwise try to upgrade
-            HashSet<int> conflicts = new();
-
-            // Process the param
-            Param res = ProcessParam(
-                primaryBank.Params[k], OldRegulationParams[k], vanillaBank.Params[k],
-                conflicts);
-
-            if (res != OldRegulationParams[k])
-                anyUpgrades = true;
-
-            NewParams.Add(k, res);
-        }
-
-        if (!anyUpgrades)
-        {
-            return false;
-        }
-
-        // Set new params
-        primaryBank._params = NewParams;
-        primaryBank._paramVersion = vanillaBank.ParamVersion;
+        primaryBank._params = prepared.Params;
+        primaryBank._paramVersion = prepared.ToVersion;
         primaryBank._pendingUpgrade = true;
 
         CacheBank.ClearCaches();
         paramData.RefreshAllParamDiffCaches(false);
 
-        return true;
+        // The upgrade rebuilds the params from the new game version, so all of them need to be written
+        primaryBank.MarkAllParamsDirty();
+
+        await primaryBank.Save();
+
+        Prepared = null;
+        SetStatus(LOC.Get("PARAM_Upgrader_Upgraded_Primary_Bank_Params"), false);
+        Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Upgraded_Primary_Bank_Params"));
     }
 
-    public async void CheckForConflicts()
+    private void SetStatus(string text, bool error)
     {
-        Task<bool> conflictTask = ConflictCheckTask();
-        bool conflictTaskFinished = await conflictTask;
+        StatusIsError = error;
+        Status = text;
+    }
 
-        if (conflictTaskFinished)
+    #endregion
+
+    #region Generator
+
+    private enum SourceKind
+    {
+        Game,
+        Snapshot,
+        File
+    }
+
+    private sealed class RegulationSource
+    {
+        public SourceKind Kind = SourceKind.Game;
+        public RegulationSnapshotFile Snapshot;
+        public string FilePath = "";
+    }
+
+    private readonly RegulationSource OlderSource = new() { Kind = SourceKind.Snapshot };
+    private readonly RegulationSource NewerSource = new() { Kind = SourceKind.Game };
+
+    private volatile bool GeneratorBusy;
+    private volatile string GeneratorStatus;
+    private volatile bool GeneratorStatusIsError;
+    private List<string> GeneratorNotes = new();
+    private List<RegulationSnapshotFile> Snapshots;
+
+    private void GeneratorMenu()
+    {
+        var history = RegulationHistory.For(Project);
+
+        if (!ImGui.CollapsingHeader($"{LOC.Get("PARAM_Upgrader_Generator_Header")}##upgraderGenerator"))
+            return;
+
+        GUI.WrappedText(LOC.Get("PARAM_Upgrader_Generator_Hint"));
+        GUI.Spacer();
+
+        Snapshots ??= history.ListSnapshots();
+
+        if (OlderSource.Kind == SourceKind.Snapshot && OlderSource.Snapshot == null)
         {
-            Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Conflict_Check_Passed"));
-
-            ConflictsChecked = true;
+            OlderSource.Snapshot = Snapshots.LastOrDefault();
+            if (OlderSource.Snapshot == null)
+                OlderSource.Kind = SourceKind.File;
         }
-        else
+
+        SourceSelector("older", LOC.Get("PARAM_Upgrader_Generator_Older"), OlderSource);
+        SourceSelector("newer", LOC.Get("PARAM_Upgrader_Generator_Newer"), NewerSource);
+
+        GUI.Spacer();
+
+        if (GeneratorBusy)
         {
-            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Conflict_Check_Failed"));
+            ImGui.BeginDisabled();
+            ImGui.Button($"{LOC.Get("PARAM_Upgrader_Generator_Generate")}##upgraderGenerate");
+            ImGui.EndDisabled();
+        }
+        else if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Generator_Generate")}##upgraderGenerate"))
+        {
+            StartGenerate(history);
+        }
+
+        GUI.Tooltip(LOC.Get("PARAM_Upgrader_Generator_Generate_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Generator_Open_Folder")}##upgraderOpenFolder"))
+        {
+            Directory.CreateDirectory(history.UserDiffDir);
+            Process.Start("explorer.exe", $"\"{history.UserDiffDir}\"");
+        }
+
+        GUI.Tooltip(LOC.Get("PARAM_Upgrader_Generator_Open_Folder_TT"));
+
+        var status = GeneratorStatus;
+        if (!string.IsNullOrEmpty(status))
+        {
+            if (GeneratorStatusIsError)
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, status);
+            else
+                GUI.WrappedText(status);
+        }
+
+        var notes = GeneratorNotes;
+        if (!GeneratorBusy && notes.Count > 0 &&
+            ImGui.TreeNodeEx($"{LOC.Get("PARAM_Upgrader_Generator_Notes", notes.Count)}##upgraderGeneratorNotes"))
+        {
+            foreach (var note in notes)
+                GUI.WrappedText(note);
+
+            ImGui.TreePop();
         }
     }
 
-    public async Task<bool> ConflictCheckTask()
+    private void SourceSelector(string id, string label, RegulationSource source)
     {
-        await Task.Yield();
+        var gameVersion = ParamUtils.ParseRegulationVersion(Project.Handler.ParamData.VanillaBank.ParamVersion);
 
-        var paramData = Project.Handler.ParamData;
-        var primaryBank = paramData.PrimaryBank;
-        var vanillaBank = paramData.VanillaBank;
-
-        foreach (var k in vanillaBank.Params.Keys)
+        string Describe(SourceKind kind, RegulationSnapshotFile snapshot) => kind switch
         {
-            // If the param is completely new, just take it
-            if (!OldRegulationParams.ContainsKey(k) || !primaryBank.Params.ContainsKey(k))
+            SourceKind.Game => LOC.Get("PARAM_Upgrader_Generator_Source_Game", gameVersion),
+            SourceKind.Snapshot => LOC.Get("PARAM_Upgrader_Generator_Source_Snapshot",
+                ParamUtils.ParseRegulationVersion(snapshot?.Version ?? 0)),
+            _ => LOC.Get("PARAM_Upgrader_Generator_Source_File")
+        };
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text(label);
+        ImGui.SameLine();
+
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo($"##upgraderSource_{id}", Describe(source.Kind, source.Snapshot)))
+        {
+            if (ImGui.Selectable(Describe(SourceKind.Game, null), source.Kind == SourceKind.Game))
+                source.Kind = SourceKind.Game;
+
+            foreach (var snapshot in Snapshots)
             {
-                continue;
+                if (ImGui.Selectable($"{Describe(SourceKind.Snapshot, snapshot)}##snapshot{snapshot.Version}",
+                        source.Kind == SourceKind.Snapshot && source.Snapshot == snapshot))
+                {
+                    source.Kind = SourceKind.Snapshot;
+                    source.Snapshot = snapshot;
+                }
             }
 
-            // Otherwise try to upgrade
-            HashSet<int> conflicts = new();
+            if (ImGui.Selectable(Describe(SourceKind.File, null), source.Kind == SourceKind.File))
+                source.Kind = SourceKind.File;
 
-            // Process the param
-            ProcessConflicts(primaryBank.Params[k], OldRegulationParams[k], vanillaBank.Params[k], conflicts);
+            ImGui.EndCombo();
+        }
 
-            if (conflicts.Count > 0)
+        if (source.Kind != SourceKind.File)
+            return;
+
+        if (ImGui.Button($"{LOC.Get("DIALOG_Select")}##upgraderSelect_{id}"))
+        {
+            if (PlatformUtils.Instance.OpenFileDialog(LOC.Get("PARAM_Upgrader_Generator_Select_Regulation"),
+                    new[] { "bin" }, out var path) && !string.IsNullOrEmpty(path))
             {
-                ConflictParams.Add(k, conflicts);
+                source.FilePath = path;
             }
         }
 
-        return true;
+        ImGui.SameLine();
+        ImGui.TextWrapped(string.IsNullOrEmpty(source.FilePath)
+            ? LOC.Get("PARAM_Upgrader_Generator_No_File")
+            : source.FilePath);
     }
 
-    public async Task<bool> LoadUpgraderInformation()
+    private byte[] ReadSource(RegulationHistory history, RegulationSource source)
     {
-        await Task.Yield();
+        return source.Kind switch
+        {
+            SourceKind.Game => history.ReadGameRegulation(),
+            SourceKind.Snapshot when source.Snapshot != null => File.ReadAllBytes(source.Snapshot.Path),
+            SourceKind.File when File.Exists(source.FilePath) => File.ReadAllBytes(source.FilePath),
+            _ => throw new FileNotFoundException(LOC.Get("PARAM_Upgrader_Generator_Error_No_Source"))
+        };
+    }
 
-        var oldRegInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Upgrader Information.json");
+    private void StartGenerate(RegulationHistory history)
+    {
+        byte[] olderData, newerData;
 
         try
         {
-            var filestring = File.ReadAllText(oldRegInfoPath);
-
-            try
-            {
-                UpgraderInfo = JsonSerializer.Deserialize(filestring, ParamEditorJsonSerializerContext.Default.ParamUpgraderInfo);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Deserialize_Upgrader_Info_Failed"), e);
-            }
+            olderData = ReadSource(history, OlderSource);
+            newerData = ReadSource(history, NewerSource);
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Read_Upgrader_Info_Failed"), e);
+            SetGeneratorStatus(e.Message, true);
+            return;
         }
 
-        return true;
-    }
+        var context = history.CreateContext();
 
-    public async Task<bool> LoadOldRegulation()
-    {
-        await Task.Yield();
+        GeneratorBusy = true;
+        GeneratorNotes = new List<string>();
+        SetGeneratorStatus(LOC.Get("PARAM_Upgrader_Generator_Status_Working"), false);
 
-        var oldRegPath = GetOldRegulationPath();
-
-        if (!File.Exists(oldRegPath))
+        Task.Run(() =>
         {
-            return false;
-        }
-
-        if (Project.Descriptor.ProjectType == ProjectType.ER)
-        {
-            OldRegulationBinder = SFUtil.DecryptERRegulation(oldRegPath);
-        }
-        else if (Project.Descriptor.ProjectType == ProjectType.AC6)
-        {
-            OldRegulationBinder = SFUtil.DecryptAC6Regulation(oldRegPath);
-        }
-        else if (Project.Descriptor.ProjectType == ProjectType.NR)
-        {
-            OldRegulationBinder = SFUtil.DecryptNightreignRegulation(oldRegPath);
-        }
-
-        OldRegulationParams = new();
-        ulong version;
-
-        var success = LoadParamFromBinder(OldRegulationBinder, ref OldRegulationParams, out version);
-
-        return success;
-    }
-
-    private string GetOldRegulationPath()
-    {
-        if (UpgraderInfo == null)
-            return "";
-
-        var paramData = Project.Handler.ParamData;
-        var primaryBank = paramData.PrimaryBank;
-        var oldVersionString = ParamUtils.ParseRegulationVersion(primaryBank.ParamVersion);
-
-        var oldRegulationPath = "";
-
-        var oldRegDirectory = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Regulations");
-
-        var targetRegInfo = UpgraderInfo.RegulationEntries.Where(e => e.Version == oldVersionString).FirstOrDefault();
-
-        if (targetRegInfo != null)
-        {
-            oldRegulationPath = Path.Join(oldRegDirectory, targetRegInfo.Folder, "regulation.bin");
-        }
-
-        return oldRegulationPath;
-    }
-
-    /// <summary>
-    /// Non-VFS version just for the old regulation
-    /// </summary>
-    private bool LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version)
-    {
-        var successfulLoad = true;
-
-        var success = ulong.TryParse(parambnd.Version, out version);
-
-        if (!success)
-        {
-            throw new Exception(LOC.Get("PARAM_Data_Failed_Regulation_Load"));
-        }
-
-        var paramData = Project.Handler.ParamData;
-
-        // Load every param in the regulation
-        foreach (BinderFile f in parambnd.Files)
-        {
-            var paramName = Path.GetFileNameWithoutExtension(f.Name);
-
-            if (!f.Name.EndsWith(".PARAM", StringComparison.OrdinalIgnoreCase))
-            {
-                continue;
-            }
-
-            if (paramBank.ContainsKey(paramName))
-            {
-                continue;
-            }
-
-            Param p;
-
-            // AC6/SDT - Tentative ParamTypes
-            if (Project.Descriptor.ProjectType is ProjectType.AC6 or ProjectType.SDT)
-            {
-                p = Param.ReadIgnoreCompression(f.Bytes);
-                if (!string.IsNullOrEmpty(p.ParamType))
-                {
-                    if (!paramData.ParamDefs.ContainsKey(p.ParamType) || paramName == "EquipParamWeapon_Npc")
-                    {
-                        if (paramData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
-                        {
-                            p.ParamType = newParamType;
-                        }
-                        else
-                        {
-                            Smithbox.Log(this, 
-                                LOC.Get("PARAM_Data_Missing_ParamDef", paramName),
-                                LogLevel.Error);
-
-                            successfulLoad = false;
-                            continue;
-                        }
-                    }
-                }
-                else
-                {
-                    if (paramData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
-                    {
-                        p.ParamType = newParamType;
-                    }
-                    else
-                    {
-                        Smithbox.Log(this, 
-                            LOC.Get("PARAM_Data_Missing_ParamType", paramName),
-                            LogLevel.Error);
-
-                        successfulLoad = false;
-                        continue;
-                    }
-                }
-            }
-            else
-            {
-                p = Param.ReadIgnoreCompression(f.Bytes);
-                if (!paramData.ParamDefs.ContainsKey(p.ParamType ?? ""))
-                {
-                    Smithbox.Log(this, 
-                        LOC.Get("PARAM_Data_Missing_ParamDef_ParamType", paramName, p.ParamType),
-                        LogLevel.Warning);
-
-                    successfulLoad = false;
-                    continue;
-                }
-            }
-
-            // Try to fixup Elden Ring ChrModelParam for ER 1.06 because many have been saving botched params and
-            // it's an easy fixup
-            if (Project.Descriptor.ProjectType == ProjectType.ER && version >= 10601000)
-            {
-                if (p.ParamType == "CHR_MODEL_PARAM_ST")
-                {
-                    if (p.ExpandParamSize(12, 16))
-                    {
-                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "CHR_MODEL_PARAM_ST"));
-                    }
-                }
-            }
-
-            // Add in the new data for these two params added in 1.12.1
-            if (Project.Descriptor.ProjectType == ProjectType.ER && version >= 11210015)
-            {
-                if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
-                {
-                    if (p.ExpandParamSize(880, 1024))
-                    {
-                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "GAME_SYSTEM_COMMON_PARAM_ST"));
-                    }
-                }
-                if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
-                {
-                    if (p.ExpandParamSize(112, 144))
-                    {
-                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST"));
-                    }
-                }
-                if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
-                {
-                    if (p.ExpandParamSize(32, 48))
-                    {
-                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "SIGN_PUDDLE_PARAM_ST"));
-                    }
-                }
-            }
-
-            if (p.ParamType == null)
-            {
-                throw new Exception(LOC.Get("PARAM_Data_Param_Type_Null"));
-            }
-
-            // Skip these for DS1 so the param load is not slowed down by the catching
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-            {
-                if (paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
-                {
-                    Smithbox.Log(this, LOC.Get("PARAM_Data_Skipped_Param", paramName));
-                    continue;
-                }
-            }
-
-            // VAW: this is grabbing the defs from the primary/vanilla param bank stuff
-            PARAMDEF def = paramData.ParamDefs[p.ParamType];
-
             try
             {
-                p.ApplyParamdef(def, version);
-                paramBank.Add(paramName, p);
+                var older = RegulationSnapshot.Load(olderData, context);
+                var newer = RegulationSnapshot.Load(newerData, context);
+
+                if (older.Version >= newer.Version)
+                {
+                    SetGeneratorStatus(LOC.Get("PARAM_Upgrader_Generator_Error_Order",
+                        ParamUtils.ParseRegulationVersion(older.Version),
+                        ParamUtils.ParseRegulationVersion(newer.Version)), true);
+                    return;
+                }
+
+                var report = new RegulationDiffReport();
+                var diff = RegulationDiffBuilder.Build(older, newer, context, "User", report);
+                var path = history.SaveUserDiff(diff);
+
+                var notes = new List<string>();
+                notes.AddRange(older.Warnings.Select(w => $"{ParamUtils.ParseRegulationVersion(older.Version)}: {w}"));
+                notes.AddRange(newer.Warnings.Select(w => $"{ParamUtils.ParseRegulationVersion(newer.Version)}: {w}"));
+                notes.AddRange(report.Notes);
+                GeneratorNotes = notes;
+
+                SetGeneratorStatus(LOC.Get("PARAM_Upgrader_Generator_Status_Done",
+                    ParamUtils.ParseRegulationVersion(older.Version),
+                    ParamUtils.ParseRegulationVersion(newer.Version), path), false);
+
+                Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Generator_Status_Done",
+                    ParamUtils.ParseRegulationVersion(older.Version),
+                    ParamUtils.ParseRegulationVersion(newer.Version), path));
+
+                // The missing step may be there now
+                MissingVersion = 0;
             }
             catch (Exception e)
             {
-                var name = f.Name.Split("\\").Last();
-
-                successfulLoad = false;
-                Smithbox.LogError(this, LOC.Get("PARAM_Data_Failed_to_Apply_ParamDef", name), e);
+                SetGeneratorStatus(LOC.Get("PARAM_Upgrader_Generator_Status_Failed", e.Message), true);
+                Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Generator_Status_Failed", e.Message), e);
             }
-        }
-
-        return successfulLoad;
+            finally
+            {
+                GeneratorBusy = false;
+            }
+        });
     }
 
-    private void ProcessConflicts(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
+    private void SetGeneratorStatus(string text, bool error)
     {
-        // List of rows that are in source but not oldVanilla
-        Dictionary<int, List<Param.Row>> addedRows = new(source.Rows.Count);
-
-        // List of rows in oldVanilla that aren't in source
-        Dictionary<int, List<Param.Row>> deletedRows = new(source.Rows.Count);
-
-        // List of rows that are in source and oldVanilla, but are modified
-        Dictionary<int, List<Param.Row>> modifiedRows = new(source.Rows.Count);
-
-        // List of rows that only had the name changed
-        Dictionary<int, List<Param.Row>> renamedRows = new(source.Rows.Count);
-
-        // List of ordered edit operations for each ID
-        Dictionary<int, List<ParamUpgradeEditOperation>> editOperations = new(source.Rows.Count);
-
-        // First off we go through source and everything starts as an added param
-        foreach (Param.Row row in source.Rows)
-        {
-            if (!addedRows.ContainsKey(row.ID))
-            {
-                addedRows.Add(row.ID, new List<Param.Row>());
-            }
-
-            addedRows[row.ID].Add(row);
-        }
-
-        // Next we go through oldVanilla to determine if a row is added, deleted, modified, or unmodified
-        foreach (Param.Row row in oldVanilla.Rows)
-        {
-            // First off if the row did not exist in the source, it's deleted
-            if (!addedRows.ContainsKey(row.ID))
-            {
-                if (!deletedRows.ContainsKey(row.ID))
-                {
-                    deletedRows.Add(row.ID, new List<Param.Row>());
-                }
-
-                deletedRows[row.ID].Add(row);
-
-                if (!editOperations.ContainsKey(row.ID))
-                {
-                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
-                }
-
-                editOperations[row.ID].Add(ParamUpgradeEditOperation.Delete);
-
-                continue;
-            }
-
-            // Otherwise the row exists in source. Time to classify it.
-            List<Param.Row> list = addedRows[row.ID];
-
-            // First we see if we match the first target row. If so we can remove it.
-            if (row.DataEquals(list[0]))
-            {
-                Param.Row modrow = list[0];
-                list.RemoveAt(0);
-                if (list.Count == 0)
-                {
-                    addedRows.Remove(row.ID);
-                }
-
-                if (!editOperations.ContainsKey(row.ID))
-                {
-                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
-                }
-
-                // See if the name was not updated
-                if (modrow.Name == null && row.Name == null ||
-                    modrow.Name != null && row.Name != null && modrow.Name == row.Name)
-                {
-                    editOperations[row.ID].Add(ParamUpgradeEditOperation.Match);
-                    continue;
-                }
-
-                // Name was updated
-                editOperations[row.ID].Add(ParamUpgradeEditOperation.NameChange);
-
-                if (!renamedRows.ContainsKey(row.ID))
-                {
-                    renamedRows.Add(row.ID, new List<Param.Row>());
-                }
-
-                renamedRows[row.ID].Add(modrow);
-
-                continue;
-            }
-
-            // Otherwise it is modified
-            if (!modifiedRows.ContainsKey(row.ID))
-            {
-                modifiedRows.Add(row.ID, new List<Param.Row>());
-            }
-
-            modifiedRows[row.ID].Add(list[0]);
-            list.RemoveAt(0);
-            if (list.Count == 0)
-            {
-                addedRows.Remove(row.ID);
-            }
-
-            if (!editOperations.ContainsKey(row.ID))
-            {
-                editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
-            }
-
-            editOperations[row.ID].Add(ParamUpgradeEditOperation.Modify);
-        }
-
-        // Mark all remaining rows as added
-        foreach (KeyValuePair<int, List<Param.Row>> entry in addedRows)
-        {
-            if (!editOperations.ContainsKey(entry.Key))
-            {
-                editOperations.Add(entry.Key, new List<ParamUpgradeEditOperation>());
-            }
-
-            foreach (List<ParamUpgradeEditOperation> k in editOperations.Values)
-            {
-                editOperations[entry.Key].Add(ParamUpgradeEditOperation.Add);
-            }
-        }
-
-        // Now try to build the destination from the new regulation with the edit operations in mind
-        var pendingAdds = addedRows.Keys.OrderBy(e => e).ToArray();
-        var currPendingAdd = 0;
-        var lastID = 0;
-
-        foreach (Param.Row row in newVanilla.Rows)
-        {
-            // See if we have any pending adds we can slot in
-            while (currPendingAdd < pendingAdds.Length &&
-                   pendingAdds[currPendingAdd] >= lastID &&
-                   pendingAdds[currPendingAdd] < row.ID)
-            {
-                if (!addedRows.ContainsKey(pendingAdds[currPendingAdd]))
-                {
-                    currPendingAdd++;
-                    continue;
-                }
-
-                foreach (Param.Row arow in addedRows[pendingAdds[currPendingAdd]])
-                {
-                    // ADDED ROW
-                    //TargetLog(source, $"newVanilla - AddRow");
-                }
-
-                addedRows.Remove(pendingAdds[currPendingAdd]);
-                editOperations.Remove(pendingAdds[currPendingAdd]);
-                currPendingAdd++;
-            }
-
-            lastID = row.ID;
-
-            if (!editOperations.ContainsKey(row.ID))
-            {
-                // ADDED ROW
-                continue;
-            }
-
-            // Pop the latest operation we need to do
-            ParamUpgradeEditOperation operation = editOperations[row.ID][0];
-            editOperations[row.ID].RemoveAt(0);
-
-            if (editOperations[row.ID].Count == 0)
-            {
-                editOperations.Remove(row.ID);
-            }
-
-            if (operation == ParamUpgradeEditOperation.Add)
-            {
-                // Getting here means both the mod and the updated regulation added a row. Our current strategy is
-                // to overwrite the new vanilla row with the modded one and add to the conflict log to give the user
-                rowConflicts.Add(row.ID);
-
-                // ADDED CONFLICTED ROW
-
-                addedRows[row.ID].RemoveAt(0);
-
-                if (addedRows[row.ID].Count == 0)
-                {
-                    addedRows.Remove(row.ID);
-                }
-            }
-            else if (operation == ParamUpgradeEditOperation.Match)
-            {
-                // Match means we inherit updated param
-                // INHERIT NEW ROW
-            }
-            else if (operation == ParamUpgradeEditOperation.Delete)
-            {
-                // deleted means we don't add anything
-                deletedRows[row.ID].RemoveAt(0);
-                if (deletedRows[row.ID].Count == 0)
-                {
-                    deletedRows.Remove(row.ID);
-                }
-            }
-            else if (operation == ParamUpgradeEditOperation.Modify)
-            {
-                // Modified means we use the modded regulation's param
-                // MODIFIED PARAM
-                modifiedRows[row.ID].RemoveAt(0);
-                if (modifiedRows[row.ID].Count == 0)
-                {
-                    modifiedRows.Remove(row.ID);
-                }
-            }
-            else if (operation == ParamUpgradeEditOperation.NameChange)
-            {
-                // Inherit name
-                // INHERIT ROW NAME
-                renamedRows[row.ID].RemoveAt(0);
-                if (renamedRows[row.ID].Count == 0)
-                {
-                    renamedRows.Remove(row.ID);
-                }
-            }
-        }
+        GeneratorStatusIsError = error;
+        GeneratorStatus = text;
     }
 
-    private Param ProcessParam(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
-    {
-        // Presorting this would make it easier, but we're trying to preserve order as much as possible
-        // Unfortunately given that rows aren't guaranteed to be sorted and there can be duplicate IDs,
-        // we try to respect the existing order and IDs as much as possible.
-
-        // In order to assemble the final param, the param needs to know where to sort rows from given the
-        // following rules:
-        // 1. If a row with a given ID is unchanged from source to oldVanilla, we source from newVanilla
-        // 2. If a row with a given ID is deleted from source compared to oldVanilla, we don't take any row
-        // 3. If a row with a given ID is changed from source compared to oldVanilla, we source from source
-        // 4. If a row has duplicate IDs, we treat them as if the rows were deduplicated and process them
-        //    in the order they appear.
-
-        // List of rows that are in source but not oldVanilla
-        Dictionary<int, List<Param.Row>> addedRows = new(source.Rows.Count);
-
-        // List of rows in oldVanilla that aren't in source
-        Dictionary<int, List<Param.Row>> deletedRows = new(source.Rows.Count);
-
-        // List of rows that are in source and oldVanilla, but are modified
-        Dictionary<int, List<Param.Row>> modifiedRows = new(source.Rows.Count);
-
-        // List of rows that only had the name changed
-        Dictionary<int, List<Param.Row>> renamedRows = new(source.Rows.Count);
-
-        // List of ordered edit operations for each ID
-        Dictionary<int, List<ParamUpgradeEditOperation>> editOperations = new(source.Rows.Count);
-
-        // First off we go through source and everything starts as an added param
-        foreach (Param.Row row in source.Rows)
-        {
-            if (!addedRows.ContainsKey(row.ID))
-            {
-                addedRows.Add(row.ID, new List<Param.Row>());
-            }
-
-            addedRows[row.ID].Add(row);
-            //TargetLog(source, $"Source - Add row: {row.ID}");
-        }
-
-        // Next we go through oldVanilla to determine if a row is added, deleted, modified, or unmodified
-        foreach (Param.Row row in oldVanilla.Rows)
-        {
-            // First off if the row did not exist in the source, it's deleted
-            if (!addedRows.ContainsKey(row.ID))
-            {
-                if (!deletedRows.ContainsKey(row.ID))
-                {
-                    deletedRows.Add(row.ID, new List<Param.Row>());
-                }
-
-                deletedRows[row.ID].Add(row);
-
-                if (!editOperations.ContainsKey(row.ID))
-                {
-                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
-                }
-
-                editOperations[row.ID].Add(ParamUpgradeEditOperation.Delete);
-                //TargetLog(source, $"oldVanilla - EditOperation.Delete: {row.ID}");
-
-                continue;
-            }
-
-            // Otherwise the row exists in source. Time to classify it.
-            List<Param.Row> list = addedRows[row.ID];
-
-            // First we see if we match the first target row. If so we can remove it.
-            if (row.DataEquals(list[0]))
-            {
-                Param.Row modrow = list[0];
-                list.RemoveAt(0);
-                if (list.Count == 0)
-                {
-                    addedRows.Remove(row.ID);
-                }
-
-                if (!editOperations.ContainsKey(row.ID))
-                {
-                    editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
-                }
-
-                // See if the name was not updated
-                if (modrow.Name == null && row.Name == null ||
-                    modrow.Name != null && row.Name != null && modrow.Name == row.Name)
-                {
-                    editOperations[row.ID].Add(ParamUpgradeEditOperation.Match);
-                    //TargetLog(source, $"oldVanilla - EditOperation.Match: {row.ID}");
-                    continue;
-                }
-
-                // Name was updated
-                editOperations[row.ID].Add(ParamUpgradeEditOperation.NameChange);
-                //TargetLog(source, $"oldVanilla - EditOperation.NameChange: {row.ID}");
-
-                if (!renamedRows.ContainsKey(row.ID))
-                {
-                    renamedRows.Add(row.ID, new List<Param.Row>());
-                }
-
-                renamedRows[row.ID].Add(modrow);
-
-                continue;
-            }
-
-            // Otherwise it is modified
-            if (!modifiedRows.ContainsKey(row.ID))
-            {
-                modifiedRows.Add(row.ID, new List<Param.Row>());
-            }
-
-            modifiedRows[row.ID].Add(list[0]);
-            list.RemoveAt(0);
-            if (list.Count == 0)
-            {
-                addedRows.Remove(row.ID);
-            }
-
-            if (!editOperations.ContainsKey(row.ID))
-            {
-                editOperations.Add(row.ID, new List<ParamUpgradeEditOperation>());
-            }
-
-            editOperations[row.ID].Add(ParamUpgradeEditOperation.Modify);
-            //TargetLog(source, $"oldVanilla - EditOperation.Modify: {row.ID}");
-        }
-
-        // Mark all remaining rows as added
-        foreach (KeyValuePair<int, List<Param.Row>> entry in addedRows)
-        {
-            if (!editOperations.ContainsKey(entry.Key))
-            {
-                editOperations.Add(entry.Key, new List<ParamUpgradeEditOperation>());
-            }
-
-            foreach (List<ParamUpgradeEditOperation> k in editOperations.Values)
-            {
-                editOperations[entry.Key].Add(ParamUpgradeEditOperation.Add);
-                //TargetLog(source, $"oldVanilla - EditOperation.Add: {entry.Key}");
-            }
-        }
-
-        Param dest = new(newVanilla);
-
-        // Now try to build the destination from the new regulation with the edit operations in mind
-        var pendingAdds = addedRows.Keys.OrderBy(e => e).ToArray();
-        var currPendingAdd = 0;
-        var lastID = 0;
-        foreach (Param.Row row in newVanilla.Rows)
-        {
-            //TargetLog(source, $"newVanilla row");
-
-            // See if we have any pending adds we can slot in
-            while (currPendingAdd < pendingAdds.Length &&
-                   pendingAdds[currPendingAdd] >= lastID &&
-                   pendingAdds[currPendingAdd] < row.ID)
-            {
-                if (!addedRows.ContainsKey(pendingAdds[currPendingAdd]))
-                {
-                    currPendingAdd++;
-                    //TargetLog(source, $"newVanilla - currPendingAdd: {pendingAdds[currPendingAdd-1]}");
-                    continue;
-                }
-
-                foreach (Param.Row arow in addedRows[pendingAdds[currPendingAdd]])
-                {
-                    dest.AddRow(new Param.Row(arow, dest));
-                    //TargetLog(source, $"newVanilla - AddRow");
-                }
-
-                addedRows.Remove(pendingAdds[currPendingAdd]);
-                editOperations.Remove(pendingAdds[currPendingAdd]);
-                currPendingAdd++;
-            }
-
-            lastID = row.ID;
-
-            if (!editOperations.ContainsKey(row.ID))
-            {
-                // No edit operations for this ID, so just add it (likely a new row in the update)
-                dest.AddRow(new Param.Row(row, dest));
-                //TargetLog(source, $"newVanilla - AddRow (New)");
-                continue;
-            }
-
-            // Pop the latest operation we need to do
-            ParamUpgradeEditOperation operation = editOperations[row.ID][0];
-            editOperations[row.ID].RemoveAt(0);
-
-            if (editOperations[row.ID].Count == 0)
-            {
-                editOperations.Remove(row.ID);
-            }
-
-            if (operation == ParamUpgradeEditOperation.Add)
-            {
-                // Getting here means both the mod and the updated regulation added a row. Our current strategy is
-                // to overwrite the new vanilla row with the modded one and add to the conflict log to give the user
-                rowConflicts.Add(row.ID);
-                dest.AddRow(new Param.Row(addedRows[row.ID][0], dest));
-                addedRows[row.ID].RemoveAt(0);
-
-                if (addedRows[row.ID].Count == 0)
-                {
-                    addedRows.Remove(row.ID);
-                }
-            }
-            else if (operation == ParamUpgradeEditOperation.Match)
-            {
-                // Match means we inherit updated param
-                dest.AddRow(new Param.Row(row, dest));
-            }
-            else if (operation == ParamUpgradeEditOperation.Delete)
-            {
-                // deleted means we don't add anything
-                deletedRows[row.ID].RemoveAt(0);
-                if (deletedRows[row.ID].Count == 0)
-                {
-                    deletedRows.Remove(row.ID);
-                }
-            }
-            else if (operation == ParamUpgradeEditOperation.Modify)
-            {
-                // Modified means we use the modded regulation's param
-                dest.AddRow(new Param.Row(modifiedRows[row.ID][0], dest));
-                modifiedRows[row.ID].RemoveAt(0);
-                if (modifiedRows[row.ID].Count == 0)
-                {
-                    modifiedRows.Remove(row.ID);
-                }
-            }
-            else if (operation == ParamUpgradeEditOperation.NameChange)
-            {
-                // Inherit name
-                Param.Row newRow = new(row, dest);
-                newRow.Name = renamedRows[row.ID][0].Name;
-                dest.AddRow(newRow);
-                renamedRows[row.ID].RemoveAt(0);
-                if (renamedRows[row.ID].Count == 0)
-                {
-                    renamedRows.Remove(row.ID);
-                }
-            }
-        }
-
-        // Take care of any more pending adds
-        for (; currPendingAdd < pendingAdds.Length; currPendingAdd++)
-        {
-            // If the pending add doesn't exist in the added rows list, it was a conflicting row
-            if (!addedRows.ContainsKey(pendingAdds[currPendingAdd]))
-            {
-                continue;
-            }
-
-            foreach (Param.Row arow in addedRows[pendingAdds[currPendingAdd]])
-            {
-                dest.AddRow(new Param.Row(arow, dest));
-            }
-
-            addedRows.Remove(pendingAdds[currPendingAdd]);
-            editOperations.Remove(pendingAdds[currPendingAdd]);
-        }
-
-        return dest;
-    }
+    #endregion
 }

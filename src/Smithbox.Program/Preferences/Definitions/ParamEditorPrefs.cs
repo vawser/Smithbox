@@ -693,6 +693,25 @@ public class ParamEditorPrefs
         };
     }
 
+    public static PreferenceItem ParamEditor_Upgrader_Keep_Regulation_Snapshots()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Regulation,
+
+            Title = "PREF_ParamEditor_Upgrader_Keep_Regulation_Snapshots",
+            Description = "PREF_ParamEditor_Upgrader_Keep_Regulation_Snapshots_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor.ParamEditor_Upgrader_Keep_Regulation_Snapshots);
+            }
+        };
+    }
+
     #endregion
 
     #region Param Reloader

@@ -242,7 +242,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_Warning_Auto_Upgrade_Complete",
-      "Text": "{0}: automatically upgraded param changes from {1} to {2} using Smithbox's Param Upgrader historical vanilla data."
+      "Text": "{0}: automatically upgraded from {1} to {2} with the Param Upgrader, one game version at a time."
     },
     {
       "Key": "PARAM_AutoMerge_Error_Direct_Merge_Not_Supported",
@@ -265,32 +265,16 @@
       "Text": "{0}: failed to read, so it was skipped ({1})."
     },
     {
-      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Not_Found",
-      "Text": "The Param Upgrader information wasn't found: {0}"
-    },
-    {
       "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Not_Loaded",
-      "Text": "Couldn't load the Param Upgrader information."
+      "Text": "The Param Upgrader doesn't support this game, so older regulations can't be upgraded automatically."
     },
     {
       "Key": "PARAM_AutoMerge_Error_ParamUpgrader_No_Data",
-      "Text": "Smithbox has no Param Upgrader baseline data for {0}. Upgrade this regulation manually first, or use a Smithbox build that supports that version."
+      "Text": "Smithbox has no Param Upgrader data from {0} to the game's version: no upgrade data reaches {1}. Make it with Generate Upgrade Data in the Param Upgrader, or upgrade this regulation manually first."
     },
     {
-      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Vanilla_Reg_Not_Found",
-      "Text": "The historical vanilla regulation wasn't found: {0}"
-    },
-    {
-      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Invalid_Vanilla_Reg",
-      "Text": "The historical vanilla regulation doesn't contain a valid parameter version."
-    },
-    {
-      "Key": "PARAM_AutoMerge_Error_ParamUpgrader_Version_Mismatch",
-      "Text": "The historical vanilla version {0} doesn't match the source version {1}."
-    },
-    {
-      "Key": "PARAM_AutoMerge_Error_Auto_Upgrade_Skipped_Elements",
-      "Text": "The automatic upgrade skipped {0} obsolete params and {1} fields that don't exist in the loaded version."
+      "Key": "PARAM_AutoMerge_Warning_Auto_Upgrade_Conflicts",
+      "Text": "{0}: the automatic upgrade found {1} conflicts, where the regulation and a game update both changed a value. The regulation's values were kept."
     },
     {
       "Key": "PARAM_AutoMerge_Error_Build_Delta_Skipped_Param",

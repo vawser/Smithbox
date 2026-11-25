@@ -42,6 +42,9 @@ public sealed class ParamEditorSettings : ICfgSection
     public bool ParamEditor_Repack_Loose_Params_DS2 = false;
     public ParamSaveCompressionType ParamEditor_CompressionOverride = ParamSaveCompressionType.Default;
 
+    // Param Upgrader: keep a local copy of the game's regulation.bin while no upgrade diff leads on from its version
+    public bool ParamEditor_Upgrader_Keep_Regulation_Snapshots = true;
+
     public bool ParamEditor_Row_Name_Strip_DES = false;
     public bool ParamEditor_Row_Name_Strip_DS1 = false;
     public bool ParamEditor_Row_Name_Strip_DS2 = true;

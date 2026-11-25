@@ -62,11 +62,6 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(ParamImportLanguages))]
 [JsonSerializable(typeof(ParamImportLanguageEntry))]
 
-// Param Upgrader Instructions
-[JsonSerializable(typeof(ParamUpgraderInfo))]
-[JsonSerializable(typeof(OldRegulationEntry))]
-[JsonSerializable(typeof(UpgraderMassEditEntry))]
-
 // Graph Legends
 [JsonSerializable(typeof(GraphAnnotations))]
 [JsonSerializable(typeof(GraphAnnotationEntry))]

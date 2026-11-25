@@ -77,25 +77,25 @@
     <Field Def="s16 a014_leftWristIO" />
     <Field Def="s16 a014_lefttWeaponRotation" />
     
-    <Field Def="s16 a015_rightArmFB" FirstVersion="11210015"/>
-    <Field Def="s16 a015_rightWristFB" FirstVersion="11210015"/>
-    <Field Def="s16 a015_rightWristIO" FirstVersion="11210015"/>
-    <Field Def="s16 a015_rightWeaponRotation" FirstVersion="11210015"/>
+    <Field Def="s16 a015_rightArmFB" FirstVersion="11101000"/>
+    <Field Def="s16 a015_rightWristFB" FirstVersion="11101000"/>
+    <Field Def="s16 a015_rightWristIO" FirstVersion="11101000"/>
+    <Field Def="s16 a015_rightWeaponRotation" FirstVersion="11101000"/>
     
-    <Field Def="s16 a015_leftArmFB" FirstVersion="11210015"/>
-    <Field Def="s16 a015_leftWristFB" FirstVersion="11210015"/>
-    <Field Def="s16 a015_leftWristIO" FirstVersion="11210015"/>
-    <Field Def="s16 a015_lefttWeaponRotation" FirstVersion="11210015"/>
+    <Field Def="s16 a015_leftArmFB" FirstVersion="11101000"/>
+    <Field Def="s16 a015_leftWristFB" FirstVersion="11101000"/>
+    <Field Def="s16 a015_leftWristIO" FirstVersion="11101000"/>
+    <Field Def="s16 a015_lefttWeaponRotation" FirstVersion="11101000"/>
     
-    <Field Def="s16 a016_rightArmFB" FirstVersion="11210015"/>
-    <Field Def="s16 a016_rightWristFB" FirstVersion="11210015"/>
-    <Field Def="s16 a016_rightWristIO" FirstVersion="11210015"/>
-    <Field Def="s16 a016_rightWeaponRotation" FirstVersion="11210015"/>
+    <Field Def="s16 a016_rightArmFB" FirstVersion="11101000"/>
+    <Field Def="s16 a016_rightWristFB" FirstVersion="11101000"/>
+    <Field Def="s16 a016_rightWristIO" FirstVersion="11101000"/>
+    <Field Def="s16 a016_rightWeaponRotation" FirstVersion="11101000"/>
     
-    <Field Def="s16 a016_leftArmFB" FirstVersion="11210015"/>
-    <Field Def="s16 a016_leftWristFB" FirstVersion="11210015"/>
-    <Field Def="s16 a016_leftWristIO" FirstVersion="11210015"/>
-    <Field Def="s16 a016_lefttWeaponRotation" FirstVersion="11210015"/>
+    <Field Def="s16 a016_leftArmFB" FirstVersion="11101000"/>
+    <Field Def="s16 a016_leftWristFB" FirstVersion="11101000"/>
+    <Field Def="s16 a016_leftWristIO" FirstVersion="11101000"/>
+    <Field Def="s16 a016_lefttWeaponRotation" FirstVersion="11101000"/>
     
   </Fields>
 </PARAMDEF>

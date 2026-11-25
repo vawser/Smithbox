@@ -10,7 +10,11 @@
     },
     {
       "Key": "PARAM_Upgrader_Hint",
-      "Text": "Upgrade the param version for this project's params."
+      "Text": "Upgrade this project's params to the game's current version. Each game update between the two is applied in turn: fields you changed keep your values, fields you didn't change take the update's values, and fields an update added or moved are filled in."
+    },
+    {
+      "Key": "PARAM_Upgrader_Not_Supported",
+      "Text": "The Param Upgrader supports Elden Ring, Armored Core VI and Nightreign projects."
     },
     {
       "Key": "PARAM_Upgrader_Header_Version",
@@ -22,11 +26,11 @@
     },
     {
       "Key": "PARAM_Upgrader_Primary_Version",
-      "Text": "Primary Param Version: {0}"
+      "Text": "Project Param Version: {0}"
     },
     {
       "Key": "PARAM_Upgrader_Source_Version",
-      "Text": "Source Param Version: {0}"
+      "Text": "Game Param Version: {0}"
     },
     {
       "Key": "PARAM_Upgrader_Header_Actions",
@@ -37,10 +41,6 @@
       "Text": ""
     },
     {
-      "Key": "PARAM_Upgrader_Action_Start",
-      "Text": "Start"
-    },
-    {
       "Key": "PARAM_Upgrader_No_Upgrade_Needed",
       "Text": "The params don't need upgrading."
     },
@@ -49,12 +49,16 @@
       "Text": "Check for Conflicts"
     },
     {
+      "Key": "PARAM_Upgrader_Action_Check_for_Conflicts_TT",
+      "Text": "Work out the upgrade and list where your changes and the game updates disagree. Nothing in the project is changed yet."
+    },
+    {
       "Key": "PARAM_Upgrader_Action_Apply_Upgrade",
       "Text": "Apply Upgrade"
     },
     {
-      "Key": "PARAM_Upgrader_Action_Apply_Mass_Edits",
-      "Text": "Apply Mass Edits"
+      "Key": "PARAM_Upgrader_Action_Apply_Upgrade_TT",
+      "Text": "Replace the project's params with the upgraded ones and save. With backup saves on, the old regulation.bin is kept as regulation.bin.prev."
     },
     {
       "Key": "PARAM_Upgrader_Header_Conflicts",
@@ -62,47 +66,143 @@
     },
     {
       "Key": "PARAM_Upgrader_Header_Conflicts_TT",
-      "Text": ""
+      "Text": "Where your changes and a game update disagree. Your values are kept in every case; check these rows after the upgrade."
     },
     {
-      "Key": "PARAM_Upgrader_Log_Missing_Upgrader_Info",
-      "Text": "Failed to find the upgrader information."
+      "Key": "PARAM_Upgrader_Steps",
+      "Text": "Upgrade steps: {0}"
     },
     {
-      "Key": "PARAM_Upgrader_Log_Missing_Old_Regulation_File",
-      "Text": "Failed to find the old regulation file."
+      "Key": "PARAM_Upgrader_No_Conflicts",
+      "Text": "No conflicts."
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Row",
+      "Text": "Row {0}: added by both your project and the {1} update. Your row is kept."
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Field",
+      "Text": "Row {0}, {1} ({2}): yours {3}, was {4}, update {5}. Yours is kept."
+    },
+    {
+      "Key": "PARAM_Upgrader_Missing_Step",
+      "Text": "Smithbox has no upgrade data that reaches version {0}. Make it with Generate Upgrade Data below, from the regulation.bin of the version before it and the regulation.bin of {0}."
+    },
+    {
+      "Key": "PARAM_Upgrader_Status_Preparing",
+      "Text": "Working out the upgrade..."
+    },
+    {
+      "Key": "PARAM_Upgrader_Status_No_Chain",
+      "Text": "The upgrade can't be worked out: a version step is missing."
+    },
+    {
+      "Key": "PARAM_Upgrader_Status_Game_Version_Mismatch",
+      "Text": "The game's regulation.bin is not version {0}, the version the Vanilla bank loaded. Reload the project and try again."
+    },
+    {
+      "Key": "PARAM_Upgrader_Status_Prepared",
+      "Text": "Ready: {0} version steps, {1} conflicts. Select Apply Upgrade to change the project."
+    },
+    {
+      "Key": "PARAM_Upgrader_Status_Failed",
+      "Text": "The upgrade failed: {0}"
+    },
+    {
+      "Key": "PARAM_Upgrader_Conflict_Check_Failed",
+      "Text": "Failed to work out the param upgrade."
     },
     {
       "Key": "PARAM_Upgrader_Upgraded_Primary_Bank_Params",
       "Text": "Upgraded the primary bank params."
     },
     {
-      "Key": "PARAM_Upgrader_Primary_Already_Upgraded",
-      "Text": "The primary bank is already fully upgraded."
+      "Key": "PARAM_Upgrader_Error_No_Game_Regulation",
+      "Text": "The game's regulation.bin was not found."
     },
     {
-      "Key": "PARAM_Upgrader_Failed_SpEffect_Store",
-      "Text": "Failed to store SpEffect data."
+      "Key": "PARAM_Upgrader_Log_Snapshot_Taken",
+      "Text": "Kept a copy of the game's regulation.bin ({0}) for the Param Upgrader."
     },
     {
-      "Key": "PARAM_Upgrader_Applied_MassEdit_Commands",
-      "Text": "Applied the upgrader mass edit commands."
+      "Key": "PARAM_Upgrader_Log_Snapshot_Failed",
+      "Text": "Failed to keep a copy of the game's regulation.bin for the Param Upgrader."
     },
     {
-      "Key": "PARAM_Upgrader_Conflict_Check_Passed",
-      "Text": "Conflict check passed."
+      "Key": "PARAM_Upgrader_Generator_Header",
+      "Text": "Generate Upgrade Data"
     },
     {
-      "Key": "PARAM_Upgrader_Conflict_Check_Failed",
-      "Text": "Failed to check for conflicts."
+      "Key": "PARAM_Upgrader_Generator_Hint",
+      "Text": "Make the upgrade data for a game version Smithbox doesn't have yet, from the regulation.bin of an older version and the regulation.bin of the newer one. The data is saved on this computer and used by the Param Upgrader from then on."
     },
     {
-      "Key": "PARAM_Upgrader_Deserialize_Upgrader_Info_Failed",
-      "Text": "Failed to read the upgrader information."
+      "Key": "PARAM_Upgrader_Generator_Older",
+      "Text": "Older:"
     },
     {
-      "Key": "PARAM_Upgrader_Read_Upgrader_Info_Failed",
-      "Text": "Failed to load the upgrader information."
+      "Key": "PARAM_Upgrader_Generator_Newer",
+      "Text": "Newer:"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Source_Game",
+      "Text": "Game regulation.bin ({0})"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Source_Snapshot",
+      "Text": "Kept copy ({0})"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Source_File",
+      "Text": "File..."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Select_Regulation",
+      "Text": "Select a regulation.bin"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_No_File",
+      "Text": "No file selected."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Generate",
+      "Text": "Generate"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Generate_TT",
+      "Text": "Compare the two regulations and save the upgrade data. The data is checked by rebuilding the older regulation from it."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Open_Folder",
+      "Text": "Open Folder"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Open_Folder_TT",
+      "Text": "Open the folder that holds the upgrade data made on this computer."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Notes",
+      "Text": "Notes ({0})"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Error_No_Source",
+      "Text": "Select a regulation.bin for both sides."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Error_Order",
+      "Text": "The older regulation ({0}) must be an older version than the newer one ({1})."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Status_Working",
+      "Text": "Generating..."
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Status_Done",
+      "Text": "Made the upgrade data for {0} to {1}: {2}"
+    },
+    {
+      "Key": "PARAM_Upgrader_Generator_Status_Failed",
+      "Text": "Failed to make the upgrade data: {0}"
     }
   ]
 }

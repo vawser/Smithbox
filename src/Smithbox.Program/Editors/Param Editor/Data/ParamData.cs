@@ -278,6 +278,18 @@ public class ParamData : IDisposable
         else
         {
             Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_VanillaBank_PASS"));
+
+            // Param Upgrader: keep a copy of the game's regulation while no diff leads on from its version
+            try
+            {
+                var snapshot = Upgrader.RegulationHistory.For(Project)?.TrySnapshot(VanillaBank.ParamVersion);
+                if (snapshot != null)
+                    Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Log_Snapshot_Taken", ParamUtils.ParseRegulationVersion(VanillaBank.ParamVersion)));
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogWarning(this, LOC.Get("PARAM_Upgrader_Log_Snapshot_Failed"), e);
+            }
         }
 
         switch (Project.Descriptor.ProjectType)

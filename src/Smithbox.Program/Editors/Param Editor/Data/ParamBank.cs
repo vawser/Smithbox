@@ -486,8 +486,8 @@ public class ParamBank : IDisposable
             }
         }
 
-        // Add in the new data for these two params added in 1.12.1
-        if (Project.Descriptor.ProjectType is ProjectType.ER && ParamVersion >= 11210015)
+        // Add in the new data for these params, which 1.11 expanded (the paramdefs named the new fields from 1.12.1)
+        if (Project.Descriptor.ProjectType is ProjectType.ER && ParamVersion >= 11101000)
         {
             if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
             {

@@ -209,6 +209,14 @@
       "Text": "The DCX compression to apply to the saved regulation file."
     },
     {
+      "Key": "PREF_ParamEditor_Upgrader_Keep_Regulation_Snapshots",
+      "Text": "Keep Regulation Snapshots for the Param Upgrader"
+    },
+    {
+      "Key": "PREF_ParamEditor_Upgrader_Keep_Regulation_Snapshots_TT",
+      "Text": "When the game's regulation.bin is a version Smithbox has no upgrade data from yet, keep a copy of it on this computer. After the game updates, the Param Upgrader can then make the upgrade data for the new version itself. The copy is never shared or bundled."
+    },
+    {
       "Key": "PREF_ParamReloader_Use_Latest_Offset",
       "Text": "Automatically Use Latest"
     },

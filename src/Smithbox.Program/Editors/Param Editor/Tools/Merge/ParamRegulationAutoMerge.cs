@@ -1,4 +1,4 @@
-using Andre.Formats;
+﻿using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Utilities;
@@ -232,10 +232,17 @@ public sealed class ParamRegulationAutoMerge
                     LOC.Get("PARAM_AutoMerge_Error_Auto_Reg_Upgrade_Not_Supported", displayVersion, displayProjectVersion));
             }
 
-            var oldVanillaParams = LoadHistoricalVanillaParams(version, warnings);
-            delta = BuildDelta(path, sourceParams, loadedVersion, warnings, oldVanillaParams);
-            NormalizeDeltaForLoadedVersion(delta, warnings);
+            // Upgrade the regulation to the project's version the same way the Param Upgrader does (one version
+            // step at a time, field by field), then take its changes against vanilla at that version
+            var (upgradedParams, baseParams, conflictCount) = UpgradeToLoadedVersion(sourceParams, version, loadedVersion);
+            delta = BuildDelta(path, upgradedParams, loadedVersion, warnings, baseParams);
             autoUpgraded = true;
+
+            if (conflictCount > 0)
+            {
+                warnings?.Add(LOC.Get("PARAM_AutoMerge_Warning_Auto_Upgrade_Conflicts",
+                    Path.GetFileName(path), conflictCount));
+            }
 
             warnings?.Add(
                 LOC.Get("PARAM_AutoMerge_Warning_Auto_Upgrade_Complete",
@@ -397,126 +404,55 @@ public sealed class ParamRegulationAutoMerge
 
     private void ApplyParamFixups(Param param, ulong version)
     {
-        if (Patcher.Project.Descriptor.ProjectType != ProjectType.ER)
-            return;
-
-        if (version >= 10601000 && param.ParamType == "CHR_MODEL_PARAM_ST")
-            param.ExpandParamSize(12, 16);
-
-        if (version >= 11210015)
-        {
-            if (param.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
-                param.ExpandParamSize(880, 1024);
-            if (param.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
-                param.ExpandParamSize(112, 144);
-            if (param.ParamType == "SIGN_PUDDLE_PARAM_ST")
-                param.ExpandParamSize(32, 48);
-        }
+        // The same fixups the Param Upgrader applies (ER only)
+        var game = Upgrader.RegulationHistory.GameFor(Patcher.Project.Descriptor.ProjectType);
+        if (game != null)
+            Upgrader.RegulationParamLoader.ApplyFixups(game.Value, param, version);
     }
 
-    private Dictionary<string, Param> LoadHistoricalVanillaParams(ulong sourceVersion, List<string> warnings)
+    /// <summary>
+    /// Upgrades params of an older regulation to the project's version through the Param Upgrader's version
+    /// diffs. Returns the upgraded params, the vanilla params of the project's version (to take the delta
+    /// against) and the number of conflicts the upgrade found (the regulation's values are kept in those).
+    /// </summary>
+    private (Dictionary<string, Param> Upgraded, IReadOnlyDictionary<string, Param> Vanilla, int Conflicts)
+        UpgradeToLoadedVersion(Dictionary<string, Param> sourceParams, ulong sourceVersion, ulong loadedVersion)
     {
-        var gameDirectory = ProjectUtils.GetGameDirectory(Patcher.Project);
-        var assetRoot = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", gameDirectory);
-        var infoPath = Path.Join(assetRoot, "Upgrader Information.json");
+        var history = Upgrader.RegulationHistory.For(Patcher.Project)
+            ?? throw new NotSupportedException(LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Not_Loaded"));
 
-        if (!File.Exists(infoPath))
+        var (chain, versions) = history.RebuildFrom(sourceVersion, history.CreateContext(), out var missing);
+        if (chain == null)
         {
-            throw new FileNotFoundException(
-                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Not_Found", infoPath));
+            throw new InvalidDataException(LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_No_Data",
+                ParamUtils.ParseRegulationVersion(sourceVersion), ParamUtils.ParseRegulationVersion(missing)));
         }
 
-        var infoJson = File.ReadAllText(infoPath);
-        var info = JsonSerializer.Deserialize(
-            infoJson, ParamEditorJsonSerializerContext.Default.ParamUpgraderInfo);
-
-        if (info == null)
+        // The chain runs to the game's version; stop at the project's
+        var steps = chain.FindIndex(d => d.ToVersion == loadedVersion) + 1;
+        if (steps == 0)
         {
-            throw new InvalidDataException(LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Not_Loaded"));
+            throw new InvalidDataException(LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_No_Data",
+                ParamUtils.ParseRegulationVersion(sourceVersion), ParamUtils.ParseRegulationVersion(loadedVersion)));
         }
 
-        var sourceVersionText = ParamUtils.ParseRegulationVersion(sourceVersion);
-        var entry = info.RegulationEntries.FirstOrDefault(e => e.Version == sourceVersionText);
-        if (entry == null)
+        var vanilla = Patcher.Project.Handler.ParamData.VanillaBank;
+        var usedVersions = versions.Take(steps + 1).ToList();
+
+        // At the game's version, the Vanilla bank is the base, as for a regulation of the project's version
+        IReadOnlyDictionary<string, Param> baseParams = usedVersions[^1];
+        if (vanilla.ParamVersion == loadedVersion)
         {
-            throw new InvalidDataException(
-                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_No_Data", sourceVersionText));
+            usedVersions[^1] = usedVersions[^1].ToDictionary(kv => kv.Key,
+                kv => vanilla.Params.TryGetValue(kv.Key, out var v) ? v : kv.Value);
+            baseParams = vanilla.Params;
         }
 
-        var regulationPath = Path.Join(assetRoot, "Regulations", entry.Folder, "regulation.bin");
-        if (!File.Exists(regulationPath))
-        {
-            throw new FileNotFoundException(
-                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Vanilla_Reg_Not_Found", regulationPath));
-        }
+        var conflicts = new List<Upgrader.UpgradeConflict>();
+        var upgraded = Upgrader.RegulationUpgradeChain.Upgrade(
+            sourceParams, chain.Take(steps).ToList(), usedVersions, conflicts);
 
-        using var oldVanillaBinder = ReadRegulation(regulationPath);
-        if (!ulong.TryParse(oldVanillaBinder.Version, out var oldVersion))
-        {
-            throw new InvalidDataException(
-                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Invalid_Vanilla_Reg"));
-        }
-
-        if (oldVersion != sourceVersion)
-        {
-            var oldVer = ParamUtils.ParseRegulationVersion(oldVersion);
-
-            throw new InvalidDataException(
-                LOC.Get("PARAM_AutoMerge_Error_ParamUpgrader_Version_Mismatch", oldVer, sourceVersionText));
-        }
-
-        return ParseBinderParams(oldVanillaBinder, oldVersion, warnings, strict: false);
-    }
-
-    private void NormalizeDeltaForLoadedVersion(ParamDeltaPatch patch, List<string> warnings)
-    {
-        var currentVanilla = Patcher.Project.Handler.ParamData.VanillaBank.Params;
-        var removedParams = 0;
-        var removedFields = 0;
-
-        for (var paramIndex = patch.Params.Count - 1; paramIndex >= 0; paramIndex--)
-        {
-            var paramDelta = patch.Params[paramIndex];
-            if (!currentVanilla.TryGetValue(paramDelta.Name, out var currentParam))
-            {
-                patch.Params.RemoveAt(paramIndex);
-                removedParams++;
-                continue;
-            }
-
-            var validFields = currentParam.Rows
-                .SelectMany(row => row.Columns)
-                .Select(column => column.Def.InternalName)
-                .ToHashSet(StringComparer.Ordinal);
-
-            // Group rows lose the same fields; a field the current version added keeps the value of the
-            // template row when the group is applied
-            foreach (var row in paramDelta.Rows.Concat(paramDelta.Groups.SelectMany(g => g.Rows)))
-            {
-                for (var fieldIndex = row.Fields.Count - 1; fieldIndex >= 0; fieldIndex--)
-                {
-                    if (validFields.Contains(row.Fields[fieldIndex].Field))
-                        continue;
-
-                    row.Fields.RemoveAt(fieldIndex);
-                    removedFields++;
-                }
-            }
-
-            paramDelta.Rows.RemoveAll(row =>
-                row.State == RowDeltaState.Modified &&
-                row.Fields.Count == 0 &&
-                string.IsNullOrWhiteSpace(row.Name));
-
-            if (paramDelta.Rows.Count == 0 && paramDelta.Groups.Count == 0)
-                patch.Params.RemoveAt(paramIndex);
-        }
-
-        if (removedParams > 0 || removedFields > 0)
-        {
-            warnings?.Add(
-                LOC.Get("PARAM_AutoMerge_Error_Auto_Upgrade_Skipped_Elements", removedParams, removedFields));
-        }
+        return (upgraded, baseParams, conflicts.Sum(c => c.RowConflict ? 1 : c.Fields.Count));
     }
 
     private ParamDeltaPatch BuildDelta(
