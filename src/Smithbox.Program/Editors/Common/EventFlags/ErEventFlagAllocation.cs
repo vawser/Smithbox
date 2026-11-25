@@ -45,7 +45,26 @@ public sealed class ErEventFlagAllocation
     private readonly HashSet<Tile> Excluded = new();             // m60 tiles in the table: no slots of their own
     private readonly HashSet<int> Blocks = new();
 
+    // The save slot of each registered block, and the block of each slot (-1 = unused): the game's own mapping, so a
+    // byte of the game's flag buffer (slot × 125 + offset) can be turned into flag IDs. First registration wins.
+    private readonly Dictionary<int, int> BlockSlots = new();
+    private readonly int[] SlotBlocks = Enumerable.Repeat(-1, SlotCount).ToArray();
+
     public int BlockCount => Blocks.Count;
+
+    /// <summary>Slots in the game's flag buffer (14,667): the buffer is SlotCount × BytesPerBlock bytes</summary>
+    public const int Slots = SlotCount;
+    public const int FlagsPerBlock = 1000;
+    public const int BytesPerBlock = FlagsPerBlock / 8;
+
+    /// <summary>The block (flag ID / 1000) stored in a slot of the game's flag buffer; -1 when no block uses it</summary>
+    public int BlockOfSlot(int slot) => slot >= 0 && slot < SlotCount ? SlotBlocks[slot] : -1;
+
+    /// <summary>The slot of the game's flag buffer that stores a block; -1 when the block isn't in the buffer</summary>
+    public int SlotOfBlock(int block) => BlockSlots.TryGetValue(block, out var slot) ? slot : -1;
+
+    /// <summary>The registered blocks that are in the game's flag buffer, in ID order</summary>
+    public IEnumerable<int> BufferBlocks => BlockSlots.Keys.OrderBy(b => b);
 
     /// <summary>Builds the allocation for an ER project; null (with a log entry) when its data can't be read</summary>
     public static ErEventFlagAllocation TryBuild(ProjectEntry project)
@@ -166,8 +185,12 @@ public sealed class ErEventFlagAllocation
 
     private void Add(int block, int slot)
     {
-        if (slot >= 0)
-            Blocks.Add(block);
+        if (slot < 0)
+            return;
+
+        Blocks.Add(block);
+        if (BlockSlots.TryAdd(block, slot) && slot < SlotCount && SlotBlocks[slot] < 0)
+            SlotBlocks[slot] = block;
     }
 
     private void AddTile(int t, int b, int x, int y)

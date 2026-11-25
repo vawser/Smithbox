@@ -91,7 +91,7 @@
 # FX Editor TODO
 #----------------------------------------------------
 - Merge tool
-- Add texture assignment helper (places new texture in suitable binder)
+- Add model/texture assignment helper (places new texture in suitable binder)
 
 #----------------------------------------------------
 # EMEVD Editor TODO

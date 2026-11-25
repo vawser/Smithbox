@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
-/// The EMEVD Editor's Tools window: Search, Called By, Palette and Problems (see Claude/Documentation/UI.md (Tools window conventions))
+/// The EMEVD Editor's Tools window: Search, Called By, Palette, Problems and Event Flags (see Claude/Documentation/UI.md (Tools window conventions))
 /// </summary>
 public class EmevdToolWindow
 {
@@ -16,6 +16,7 @@ public class EmevdToolWindow
     public EmevdSearchTool SearchTool;
     public EmevdMassEditTool MassEditTool;
     public EmevdTemplatesTool TemplatesTool;
+    public EventFlagTool EventFlagTool;
 
     private readonly ToolSections Sections = new();
 
@@ -29,6 +30,8 @@ public class EmevdToolWindow
         SearchTool = new(view);
         MassEditTool = new(view);
         TemplatesTool = new(view);
+        EventFlagTool = new(view.Project, "emevd",
+            new EventFlagSearch("EVENTFLAG_Tool_Find_Emevd", flag => SearchTool.SearchValue(flag)));
     }
 
     public void Draw()
@@ -64,6 +67,12 @@ public class EmevdToolWindow
 
         // Problems
         ProblemsTool.OnToolWindow();
+
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        // Event Flags
+        EventFlagTool.OnToolWindow();
 
         Sections.End();
     }

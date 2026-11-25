@@ -224,6 +224,19 @@ public class FieldValueFinder
 
     }
 
+    /// <summary>Set by <see cref="SearchValue"/>: the Tools window opens Data Finders on this tab</summary>
+    public bool FocusNext;
+
+    /// <summary>Searches every field for one value (e.g. an event flag from the Event Flags tool) and shows the results</summary>
+    public void SearchValue(long value)
+    {
+        SearchText = value.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        UseRangeMatchMode = false;
+        CFG.Current.Interface.Interface_ParamEditor_ToolWindow = true;
+        FocusNext = true;
+        ConductSearch();
+    }
+
     public void ConductSearch()
     {
         CachedSearchText = SearchText;

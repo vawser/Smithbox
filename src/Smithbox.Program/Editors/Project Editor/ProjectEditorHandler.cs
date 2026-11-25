@@ -36,6 +36,10 @@ public class ProjectEditorHandler : IDisposable
     private GameLink _gameLink;
     public GameLink GameLink => _gameLink ??= new GameLink(Project);
 
+    // The running game's event flags (ER), shared by the Event Flags tool of the EMEVD, ESD and Param editors
+    private EventFlagMonitor _eventFlagMonitor;
+    public EventFlagMonitor EventFlagMonitor => _eventFlagMonitor ??= new EventFlagMonitor(Project);
+
     // Project Data
     public ProjectData ProjectData;
     public TextureData TextureData;
@@ -547,6 +551,7 @@ public class ProjectEditorHandler : IDisposable
 
         ModelPreviewCache.Release(Project);
 
+        _eventFlagMonitor = null;
         _gameLink?.Detach();
         _gameLink = null;
 

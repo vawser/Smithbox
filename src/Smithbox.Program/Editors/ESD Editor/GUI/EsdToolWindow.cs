@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.EsdEditor;
 
 /// <summary>
-/// The ESD Editor's Tools window: Search, Called By and Palette (see Claude/Documentation/UI.md (Tools window conventions))
+/// The ESD Editor's Tools window: Search, Called By, Palette and Event Flags (see Claude/Documentation/UI.md (Tools window conventions))
 /// </summary>
 public class EsdToolWindow
 {
@@ -13,6 +13,7 @@ public class EsdToolWindow
     public EsdPaletteTool PaletteTool;
     public EsdSearchTool SearchTool;
     public EsdCalledByTool CalledByTool;
+    public EventFlagTool EventFlagTool;
 
     private readonly ToolSections Sections = new();
 
@@ -22,6 +23,8 @@ public class EsdToolWindow
         PaletteTool = new(view);
         SearchTool = new(view);
         CalledByTool = new(view);
+        EventFlagTool = new(view.Project, "esd",
+            new EventFlagSearch("EVENTFLAG_Tool_Find_Esd", flag => SearchTool.SearchValue(flag, true)));
     }
 
     public void Draw()
@@ -45,6 +48,12 @@ public class EsdToolWindow
 
         // Palette
         PaletteTool.OnToolWindow();
+
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        // Event Flags
+        EventFlagTool.OnToolWindow();
 
         Sections.End();
     }

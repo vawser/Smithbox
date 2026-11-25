@@ -31,6 +31,9 @@ public class GameLink : IGameProcess
 
     private GameLinkOffsets Offsets => OffsetsCache ??= GameLinkOffsets.Load(Project);
 
+    /// <summary>This game's offset groups, the running version's first (for tools that keep their offsets here)</summary>
+    public List<GameLinkOffsetEntry> OffsetGroups => Offsets.GroupsFor(ExeVersion);
+
     /// <summary>Whether this game has Game Link offsets</summary>
     public bool IsSupported => !string.IsNullOrEmpty(Offsets.ExeName);
 
@@ -660,6 +663,12 @@ public class GameLink : IGameProcess
         if (!ReadProcessMemory(Handle, address, buffer, length, out _))
             throw new InvalidOperationException($"Could not read {length} bytes at 0x{address:X}");
         return buffer;
+    }
+
+    /// <summary>Reads into an existing buffer (for large reads repeated often); false when the read fails</summary>
+    public bool ReadInto(nint address, byte[] buffer, int length)
+    {
+        return ReadProcessMemory(Handle, address, buffer, length, out var read) && read == length;
     }
 
     public void WriteBytes(nint address, byte[] bytes)

@@ -39,6 +39,7 @@ public class ParamToolMenu
     public ParamEditHistoryTool EditHistory;
     public ParamWeaponGenerator WeaponGenerator;
     public ParamAcAssemblyTool AcAssembly;
+    public EventFlagTool EventFlagTool;
 
     private ToolSections Sections = new();
 
@@ -65,6 +66,8 @@ public class ParamToolMenu
         ParamMerger = new(view, project);
         ItemGib = new(view, project);
         SpEffectGib = new(view, project, ItemGib);
+        EventFlagTool = new(project, "param",
+            new EventFlagSearch("EVENTFLAG_Tool_Find_Params", flag => FieldValueFinder.SearchValue(flag)));
         ParamUpgrader = new(view, project);
         ParamListCategories = new(view, project);
         PinGroups = new(view, project);
@@ -203,11 +206,21 @@ public class ParamToolMenu
 
         SpEffectGib.Display();
 
+        EventFlagTool.OnToolWindow();
+
         Sections.End();
     }
 
     private void DisplayDataFinders()
     {
+        // A search started elsewhere (e.g. Event Flags) opens Data Finders on the Field Values tab
+        var showFieldValues = FieldValueFinder.FocusNext;
+        if (showFieldValues)
+        {
+            ToolSections.Focus();
+            FieldValueFinder.FocusNext = false;
+        }
+
         if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Data_Finders")}##dataFindersMenuHeader"))
         {
             ImGui.BeginChild("DataFinderToolSection", ImGuiChildFlags.Borders);
@@ -222,7 +235,8 @@ public class ParamToolMenu
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Values")}##tab_fieldValues"))
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Values")}##tab_fieldValues",
+                    showFieldValues ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None))
                 {
                     FieldValueFinder.Display();
 

@@ -141,6 +141,18 @@ public class GameLinkOffsetEntry
     public string worldCurrentSlotGameManRelativeOffset { get; set; }
     public string worldCurrentSlotFieldOffset { get; set; }
     public string worldFixedSlot { get; set; }
+
+    // Optional: the event flag buffer, for the EMEVD Editor's Event Flags tool (EventFlagMonitor; see
+    // Claude/Documentation/Event Flag Viewer.md). eventFlagManAob finds a load of the flag manager global
+    // (eventFlagManRelativeOffset = its rel32, "start/end"); the other offsets are fields of the manager: the buffer
+    // pointer, the slot count, the bytes per block, the flags per block and the layout mode (0 = normal).
+    public string eventFlagManAob { get; set; }
+    public string eventFlagManRelativeOffset { get; set; }
+    public string eventFlagBufferOffset { get; set; }
+    public string eventFlagSlotCountOffset { get; set; }
+    public string eventFlagBlockBytesOffset { get; set; }
+    public string eventFlagBlockFlagsOffset { get; set; }
+    public string eventFlagLayoutModeOffset { get; set; }
 }
 
 [JsonSourceGenerationOptions(WriteIndented = true, GenerationMode = JsonSourceGenerationMode.Metadata)]
