@@ -20,6 +20,9 @@ public class FmgImporter
 
     public Dictionary<string, StoredFmgContainer> ImportSources = new();
 
+    // Last write time of each ImportSources file (same keys), read once per load for the export list
+    public Dictionary<string, DateTime> ImportSourceDates = new();
+
     private bool _wrappersLoaded = false;
 
     public FmgImporter(TextEditorView view, ProjectEntry project)
@@ -72,6 +75,12 @@ public class FmgImporter
                 PromptExternalTextImport(ImportBehavior.Append, importType);
             }
 
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Importer_Action_From_Clipboard")}##fromClipboardAppend"))
+            {
+                ImportFromClipboard(ImportBehavior.Append, importType);
+            }
+            GUI.Tooltip(LOC.Get("TEXT_Importer_Action_From_Clipboard_TT"));
+
             ImGui.Separator();
 
             if (ImportSources.Count > 0)
@@ -102,6 +111,12 @@ public class FmgImporter
                 PromptExternalTextImport(ImportBehavior.Replace, importType);
             }
 
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Importer_Action_From_Clipboard")}##fromClipboardReplace"))
+            {
+                ImportFromClipboard(ImportBehavior.Replace, importType);
+            }
+            GUI.Tooltip(LOC.Get("TEXT_Importer_Action_From_Clipboard_TT"));
+
             ImGui.Separator();
 
             if (ImportSources.Count > 0)
@@ -125,7 +140,7 @@ public class FmgImporter
         GUI.Tooltip(LOC.Get("TEXT_Importer_Header_Replace_TT"));
     }
 
-    private static void ShowSourceTooltip(StoredFmgContainer stored)
+    public static void ShowSourceTooltip(StoredFmgContainer stored)
     {
         if (!ImGui.IsItemHovered())
             return;
@@ -135,40 +150,58 @@ public class FmgImporter
             : LOC.Get("TEXT_Importer_Source_TT", stored.SourceContainer, stored.SourceCategory));
     }
 
-    private List<EditorAction> ImportActions;
-    private int AddedCount;
-    private int ChangedCount;
+    /// <summary>The import preview popup (shown when TextEditor_DataTransfer_Preview_Imports is on).</summary>
+    public TextImportPreviewPopup PreviewPopup;
 
     /// <summary>
-    /// Import stored text into the selected container.
+    /// Import stored text into the selected container: shows the preview first when the setting is on,
+    /// otherwise applies at once. Every import (menus, Data Transfer panel, external file) comes here.
+    /// </summary>
+    public void ImportText(StoredFmgContainer containerWrapper, ImportBehavior importBehavior, FmgImportType importType = FmgImportType.Container)
+    {
+        var plan = BuildPlan(containerWrapper, importBehavior, importType);
+        if (plan == null)
+            return;
+
+        if (CFG.Current.TextEditor.TextEditor_DataTransfer_Preview_Imports)
+        {
+            PreviewPopup ??= new TextImportPreviewPopup(Parent, this);
+            PreviewPopup.Show(plan);
+            return;
+        }
+
+        ApplyPlan(plan);
+    }
+
+    /// <summary>
+    /// Work out what importing would do, without changing anything. Null when there is nothing to import into.
     /// importType limits the target: Container = every matching FMG in the container;
-    /// FMG and FMG_Entries = only the selected FMG.
+    /// FMG = only the selected FMG; FMG_Entries = the selected FMG and the FMGs of its entry group.
     /// A stored FMG matches a target FMG when the binder IDs match and, if the stored
     /// FMG has a name, the names match too, so an export from one container
     /// can't write into an unrelated FMG that happens to share a binder ID.
     /// </summary>
-    public void ImportText(StoredFmgContainer containerWrapper, ImportBehavior importBehavior, FmgImportType importType = FmgImportType.Container)
+    public TextImportPlan BuildPlan(StoredFmgContainer containerWrapper, ImportBehavior importBehavior, FmgImportType importType)
     {
         if (containerWrapper == null || containerWrapper.FmgWrappers == null)
-            return;
-
-        ImportActions = new List<EditorAction>();
-        AddedCount = 0;
-        ChangedCount = 0;
+            return null;
 
         var targetContainer = Parent.Selection.SelectedContainerWrapper;
         if (targetContainer == null || targetContainer.FmgWrappers == null)
-            return;
+            return null;
 
-        // Warn when importing into a different container than the export came from.
-        // Not refused: the ID + name match below decides what is actually imported, and
-        // moving text between e.g. item_dlc01 and item_dlc02 is a legitimate use.
-        if (!string.IsNullOrEmpty(containerWrapper.SourceContainer) &&
-            containerWrapper.SourceContainer != targetContainer.FileEntry.Filename)
+        var plan = new TextImportPlan
         {
-            Smithbox.LogWarning(this, LOC.Get("TEXT_Importer_Container_Mismatch",
-                containerWrapper.Name, containerWrapper.SourceContainer, targetContainer.FileEntry.Filename));
-        }
+            Source = containerWrapper,
+            Behavior = importBehavior,
+            Scope = importType,
+            Target = targetContainer,
+
+            // Not refused: the ID + name match below decides what is actually imported, and
+            // moving text between e.g. item_dlc01 and item_dlc02 is a legitimate use.
+            ContainerMismatch = !string.IsNullOrEmpty(containerWrapper.SourceContainer) &&
+                containerWrapper.SourceContainer != targetContainer.FileEntry.Filename
+        };
 
         IEnumerable<TextFmgWrapper> targetFmgs = targetContainer.FmgWrappers;
 
@@ -176,7 +209,7 @@ public class FmgImporter
         {
             var selectedFmg = Parent.Selection.SelectedFmgWrapper;
             if (selectedFmg == null)
-                return;
+                return null;
 
             var scopedFmgs = new List<TextFmgWrapper> { selectedFmg };
 
@@ -202,7 +235,7 @@ public class FmgImporter
                 storedWrapperMap.TryAdd(storedWrapper.ID, storedWrapper);
         }
 
-        var matchedAny = false;
+        var matchedStored = new HashSet<StoredFmgWrapper>();
 
         foreach (var fmgWrapper in targetFmgs)
         {
@@ -212,35 +245,24 @@ public class FmgImporter
             if (!string.IsNullOrEmpty(storedFmgWrapper.Name) && storedFmgWrapper.Name != fmgWrapper.Name)
                 continue;
 
-            matchedAny = true;
-            ProcessFmg(targetContainer, fmgWrapper, storedFmgWrapper, importBehavior);
+            matchedStored.Add(storedFmgWrapper);
+            plan.Fmgs.Add(PlanFmg(fmgWrapper, storedFmgWrapper, importBehavior));
         }
 
-        if (!matchedAny)
+        foreach (var storedWrapper in containerWrapper.FmgWrappers)
         {
-            Smithbox.Log(this, LOC.Get("TEXT_Importer_No_Matching_FMG", containerWrapper.Name));
-            return;
+            if (storedWrapper?.Fmg?.Entries != null && !matchedStored.Contains(storedWrapper))
+                plan.Unmatched.Add(storedWrapper);
         }
 
-        if (ImportActions.Count > 0)
-        {
-            var groupAction = new FmgGroupedAction(ImportActions);
-            Parent.ActionManager.ExecuteAction(groupAction);
-
-            // The actions skip per-entry diff tracking for speed; refresh it once at the end
-            Parent.DifferenceManager.TrackFmgDifferences();
-        }
-
-        Smithbox.Log(this, LOC.Get("TEXT_Importer_Import_Result", containerWrapper.Name, AddedCount, ChangedCount));
+        return plan;
     }
 
-    private void ProcessFmg(
-        TextContainerWrapper containerWrapper,
-        TextFmgWrapper fmgWrapper,
-        StoredFmgWrapper storedWrapper,
-        ImportBehavior importBehavior)
+    private static TextImportFmgPlan PlanFmg(TextFmgWrapper fmgWrapper, StoredFmgWrapper storedWrapper, ImportBehavior importBehavior)
     {
-        // First entry wins when the target FMG has duplicate IDs (ToDictionary threw here)
+        var fmgPlan = new TextImportFmgPlan { Target = fmgWrapper, Stored = storedWrapper };
+
+        // First entry wins when the target FMG has duplicate IDs
         var targetEntryMap = new Dictionary<int, FMG.Entry>();
         foreach (var entry in fmgWrapper.File.Entries)
         {
@@ -248,35 +270,92 @@ public class FmgImporter
         }
 
         var addedIds = new HashSet<int>();
+        var seenIds = new HashSet<int>();
 
         foreach (var storedEntry in storedWrapper.Fmg.Entries)
         {
             if (!targetEntryMap.TryGetValue(storedEntry.ID, out var targetEntry))
             {
                 // Skip repeats of the same ID within the stored file
-                if (!addedIds.Add(storedEntry.ID))
-                    continue;
-
-                // A fresh entry, so the cached import source is never inserted (and shared) itself
-                var newEntry = new FMG.Entry(fmgWrapper.File, storedEntry.ID, storedEntry.Text);
-
-                ImportActions.Add(new AddFmgEntry(Parent, containerWrapper, newEntry, newEntry, storedEntry.ID, true));
-                AddedCount++;
+                if (addedIds.Add(storedEntry.ID))
+                    fmgPlan.Added.Add(storedEntry);
             }
-            else if (importBehavior is not ImportBehavior.Append)
+            else
             {
-                if (targetEntry.Text == storedEntry.Text)
+                // Repeats of an existing ID: the first stored one decides
+                if (!seenIds.Add(storedEntry.ID))
                     continue;
 
-                ImportActions.Add(new ChangeFmgEntryText(Parent, containerWrapper, targetEntry, storedEntry.Text, false, true));
-                ChangedCount++;
+                if (targetEntry.Text == storedEntry.Text)
+                    fmgPlan.Identical++;
+                else if (importBehavior is ImportBehavior.Append)
+                    fmgPlan.Kept.Add((targetEntry, storedEntry.Text));
+                else
+                    fmgPlan.Changed.Add((targetEntry, storedEntry.Text));
             }
         }
+
+        return fmgPlan;
+    }
+
+    /// <summary>
+    /// Apply a plan as one undoable action. The plan is rebuilt first from the same inputs, so it is
+    /// never applied to entries that changed (or were undone) since the preview was built.
+    /// </summary>
+    public void ApplyPlan(TextImportPlan plan)
+    {
+        if (plan == null)
+            return;
+
+        var fresh = BuildPlan(plan.Source, plan.Behavior, plan.Scope);
+        if (fresh == null)
+            return;
+
+        if (fresh.ContainerMismatch)
+        {
+            Smithbox.LogWarning(this, LOC.Get("TEXT_Importer_Container_Mismatch",
+                fresh.Source.Name, fresh.Source.SourceContainer, fresh.Target.FileEntry.Filename));
+        }
+
+        if (fresh.Fmgs.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("TEXT_Importer_No_Matching_FMG", fresh.Source.Name));
+            return;
+        }
+
+        var actions = new List<EditorAction>();
+
+        foreach (var fmgPlan in fresh.Fmgs)
+        {
+            foreach (var storedEntry in fmgPlan.Added)
+            {
+                // A fresh entry, so the cached import source is never inserted (and shared) itself
+                var newEntry = new FMG.Entry(fmgPlan.Target.File, storedEntry.ID, storedEntry.Text);
+                actions.Add(new AddFmgEntry(Parent, fresh.Target, newEntry, newEntry, storedEntry.ID, true));
+            }
+
+            foreach (var (entry, newText) in fmgPlan.Changed)
+            {
+                actions.Add(new ChangeFmgEntryText(Parent, fresh.Target, entry, newText, false, true));
+            }
+        }
+
+        if (actions.Count > 0)
+        {
+            Parent.ActionManager.ExecuteAction(new FmgGroupedAction(actions));
+
+            // The actions skip per-entry diff tracking for speed; refresh it once at the end
+            Parent.DifferenceManager.TrackFmgDifferences();
+        }
+
+        Smithbox.Log(this, LOC.Get("TEXT_Importer_Import_Result", fresh.Source.Name, fresh.Added, fresh.Changed));
     }
 
     public void OnGui()
     {
         LoadWrappers();
+
+        PreviewPopup?.Display();
     }
 
     public void LoadWrappers()
@@ -285,6 +364,7 @@ public class FmgImporter
             return;
 
         ImportSources = new();
+        ImportSourceDates = new();
 
         var wrapperPathList = TextUtils.GetStoredContainerWrappers(Project);
 
@@ -292,7 +372,9 @@ public class FmgImporter
         {
             foreach (var path in wrapperPathList)
             {
-                var filename = Path.GetFileName(path);
+                // Keyed by full path: the Exported Text folder and the custom export folder
+                // can both hold a file with the same name
+                var key = path;
                 var wrapper = new StoredFmgContainer();
 
                 if (File.Exists(path))
@@ -312,13 +394,21 @@ public class FmgImporter
                     }
                 }
 
-                if (!ImportSources.ContainsKey(filename))
+                // Valid JSON that isn't a text export (a custom folder can hold other JSON): not listed
+                if (wrapper?.FmgWrappers == null)
+                    continue;
+
+                if (string.IsNullOrEmpty(wrapper.Name))
+                    wrapper.Name = Path.GetFileNameWithoutExtension(path);
+
+                if (!ImportSources.ContainsKey(key))
                 {
-                    ImportSources.Add(filename, wrapper);
+                    ImportSources.Add(key, wrapper);
+                    ImportSourceDates[key] = File.GetLastWriteTime(path);
                 }
                 else
                 {
-                    Smithbox.LogError(this, LOC.Get("TEXT_Importer_Stored_Text_Key_Collision", filename));
+                    Smithbox.LogError(this, LOC.Get("TEXT_Importer_Stored_Text_Key_Collision", key));
                 }
             }
         }
@@ -366,7 +456,43 @@ public class FmgImporter
         return wrapper;
     }
 
-    private void PromptExternalTextImport(ImportBehavior type, FmgImportType importType)
+    /// <summary>
+    /// Import a text export held on the clipboard: e.g. copied from the Data Transfer panel's Export Output,
+    /// or shared as text by someone else. Goes through ImportText, so the preview shows first.
+    /// </summary>
+    public void ImportFromClipboard(ImportBehavior type, FmgImportType importType)
+    {
+        var text = PlatformUtils.Instance.GetClipboardText();
+
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            Smithbox.LogWarning(this, LOC.Get("TEXT_Importer_Clipboard_Empty"));
+            return;
+        }
+
+        StoredFmgContainer container = null;
+        try
+        {
+            container = JsonSerializer.Deserialize(text, StoredContainerWrapperSerializationContext.Default.StoredFmgContainer);
+        }
+        catch (Exception)
+        {
+            // Reported below: any non-export text on the clipboard ends up here
+        }
+
+        if (container?.FmgWrappers == null)
+        {
+            Smithbox.LogWarning(this, LOC.Get("TEXT_Importer_Clipboard_Not_Export"));
+            return;
+        }
+
+        if (string.IsNullOrEmpty(container.Name))
+            container.Name = LOC.Get("TEXT_Importer_Clipboard_Name");
+
+        ImportText(container, type, importType);
+    }
+
+    public void PromptExternalTextImport(ImportBehavior type, FmgImportType importType)
     {
         if (PlatformUtils.Instance.OpenFileDialog(LOC.Get("TEXT_Importer_Select_Stored_JSON"), ["json"], out var path))
         {

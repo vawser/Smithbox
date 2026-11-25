@@ -10,7 +10,7 @@
     },
     {
       "Key": "TEXT_Importer_Header_Append_TT",
-      "Text": "Append the imported text entries to the existing text entry list."
+      "Text": "Add entries whose IDs are missing. Existing entries are never changed."
     },
     {
       "Key": "TEXT_Importer_Action_From_External_File",
@@ -22,7 +22,7 @@
     },
     {
       "Key": "TEXT_Importer_Header_Replace_TT",
-      "Text": "Replace existing text entries with the imported text entries."
+      "Text": "Add missing entries and update the text of existing ones. Nothing is removed."
     },
     {
       "Key": "TEXT_Importer_No_Exported_Text",
@@ -71,6 +71,122 @@
     {
       "Key": "TEXT_Importer_Invalid_Selected_File",
       "Text": "The selected file isn't valid."
+    },
+    {
+      "Key": "TEXT_Importer_Action_From_Clipboard",
+      "Text": "From Clipboard"
+    },
+    {
+      "Key": "TEXT_Importer_Action_From_Clipboard_TT",
+      "Text": "Import a text export copied to the clipboard, e.g. from the Data Transfer panel's Export Output."
+    },
+    {
+      "Key": "TEXT_Importer_Clipboard_Empty",
+      "Text": "The clipboard is empty."
+    },
+    {
+      "Key": "TEXT_Importer_Clipboard_Not_Export",
+      "Text": "The clipboard doesn't hold a text export (JSON from Data Transfer's Export Output or an exported text file)."
+    },
+    {
+      "Key": "TEXT_Importer_Clipboard_Name",
+      "Text": "Clipboard"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Title",
+      "Text": "Import Preview"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Header",
+      "Text": "Import {0} into {1} ({2}, scope: {3})."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Container_Mismatch",
+      "Text": "This export comes from {0}, not {1}. Only text files that match by ID and name receive entries."
+    },
+    {
+      "Key": "TEXT_ImportPreview_No_Match",
+      "Text": "No text file in the export matches a text file in scope (by ID and name). Nothing would be imported."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Summary",
+      "Text": "{0} added, {1} changed, {2} kept, {3} already identical."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Kept_Hint",
+      "Text": "{0} existing entries have different text in the export, but Append keeps them as they are. Use Replace to update them."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Nothing_To_Do",
+      "Text": "Nothing to change: the project already has this text."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Undo_Hint",
+      "Text": "The import is one action: undo it with {0}."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Unmatched",
+      "Text": "{0} text files in the export match nothing in scope and are skipped. Hover for the list."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Option_Preview",
+      "Text": "Preview imports"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Option_Preview_TT",
+      "Text": "Show this preview before every text import. When off, imports apply at once (they can still be undone)."
+    },
+    {
+      "Key": "TEXT_ImportPreview_Action_Apply",
+      "Text": "Import"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Action_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Column_Text_File",
+      "Text": "Text File"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Column_Added",
+      "Text": "Added"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Column_Changed",
+      "Text": "Changed"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Column_Kept",
+      "Text": "Kept"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Column_Identical",
+      "Text": "Identical"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Row_Added",
+      "Text": "+ {0}"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Row_Changed",
+      "Text": "~ {0}"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Row_Kept",
+      "Text": "= {0} (kept)"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Row_Change_TT",
+      "Text": "Current:\n{0}\n\nIn the export:\n{1}"
+    },
+    {
+      "Key": "TEXT_ImportPreview_More_Rows",
+      "Text": "... and {0} more"
+    },
+    {
+      "Key": "TEXT_ImportPreview_Empty_Text",
+      "Text": "(empty)"
     }
   ]
 }

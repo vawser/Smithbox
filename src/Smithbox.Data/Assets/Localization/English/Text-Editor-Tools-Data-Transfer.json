@@ -10,15 +10,39 @@
     },
     {
       "Key": "TEXT_DataTransfer_Import_Hint",
-      "Text": "Import JSON data and apply it to your current project."
+      "Text": "Import a JSON text export into the selected container. Text files are matched by ID and name. The import can be undone."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Scope",
+      "Text": "Scope"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Scope_TT",
+      "Text": "Where the import can write.\n\nContainer: every matching text file of the selected container.\nText File: the selected text file only.\nSelected Entries: the selected text file and the other text files of its entry group."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Import_Type",
-      "Text": "Import Type"
+      "Text": "Mode"
     },
     {
       "Key": "TEXT_DataTransfer_Header_Import_Type_TT",
-      "Text": ""
+      "Text": "How imported entries are applied. Neither mode removes entries."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Mode_Append_Desc",
+      "Text": "Adds entries whose IDs are missing. Existing entries are never changed."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Mode_Replace_Desc",
+      "Text": "Adds missing entries and updates the text of existing ones. Nothing is removed."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Sources",
+      "Text": "Exported Text"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Sources_TT",
+      "Text": "Exports in the project's Exported Text folder and in your export folder (set in the Export tab), newest first. A source in the warning colour comes from another container or language than the selected one. Right-click an export for more actions."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Actions",
@@ -26,7 +50,15 @@
     },
     {
       "Key": "TEXT_DataTransfer_Header_Actions_TT",
-      "Text": ""
+      "Text": "Buttons are disabled until the selection the scope needs exists."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_Selected",
+      "Text": "Import Selected"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_Selected_TT",
+      "Text": "Import the export selected in the list above."
     },
     {
       "Key": "TEXT_DataTransfer_Action_Import_From_File",
@@ -34,15 +66,27 @@
     },
     {
       "Key": "TEXT_DataTransfer_Action_Import_From_File_TT",
-      "Text": "Import text from a JSON file."
+      "Text": "Choose a JSON text export anywhere on disk and import it."
     },
     {
-      "Key": "TEXT_DataTransfer_Select_Text_JSON",
-      "Text": "Select text JSON"
+      "Key": "TEXT_DataTransfer_Action_Import_From_Clipboard",
+      "Text": "Import from Clipboard"
     },
     {
-      "Key": "TEXT_DataTransfer_Invalid_Text_JSON",
-      "Text": "The selected file isn't valid."
+      "Key": "TEXT_DataTransfer_Action_Import_From_Clipboard_TT",
+      "Text": "Import a text export copied to the clipboard, e.g. with Copy to Clipboard in the Export tab, or shared as text."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Refresh_Sources",
+      "Text": "Refresh List"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Refresh_Sources_TT",
+      "Text": "Read the export folders again, e.g. after copying files into them."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Source_Selected",
+      "Text": "No export is selected."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Import",
@@ -54,7 +98,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Import_Container_TT",
-      "Text": "Import the selected text file at container level, replacing all FMGs and their associated entries (if any)."
+      "Text": "Import into every matching text file of the selected container."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Import_Text_File",
@@ -62,7 +106,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Import_Text_File_TT",
-      "Text": "Import the selected text file at FMG level, replacing all associated entries (if any)."
+      "Text": "Import into the selected text file only."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Import_Text_Entry",
@@ -70,7 +114,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Import_Text_Entry_TT",
-      "Text": "Import the selected text file at FMG entry level, replacing all matching entries."
+      "Text": "Import into the selected text file and the other text files of its entry group."
     },
     {
       "Key": "TEXT_DataTransfer_Tab_Export",
@@ -78,31 +122,63 @@
     },
     {
       "Key": "TEXT_DataTransfer_Export_Hint",
-      "Text": "Export JSON data from your current project."
+      "Text": "Export text from the current selection to a JSON file, to import later into this or another project."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Scope",
+      "Text": "Scope"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Scope_TT",
+      "Text": "What to export.\n\nContainer: every text file of the selected container.\nText File: the selected text file.\nSelected Entries: the selected entries (and their entry group, if Include Grouped Entries is on in the settings)."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Type",
+      "Text": "Filter"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Export_Type_TT",
+      "Text": "All: every entry in the scope.\nModified Only: entries changed from vanilla or added by the project.\nUnique Only: entries that don't exist in vanilla."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Export_Directory",
-      "Text": "Export Directory"
+      "Text": "Export Folder"
     },
     {
       "Key": "TEXT_DataTransfer_Header_Export_Directory_TT",
-      "Text": "The folder to export the JSON data to."
+      "Text": "Where exports are written, from this panel and from the menus. Leave blank to use the project's Exported Text folder. Exports in this folder are listed for import too."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Directory_Hint",
+      "Text": "Project's Exported Text folder"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Export_Directory_Resolved",
+      "Text": "Exports go to: {0}"
     },
     {
       "Key": "TEXT_DataTransfer_Action_Set_Export_Directory",
-      "Text": "Set Export Directory"
+      "Text": "Browse"
     },
     {
       "Key": "TEXT_DataTransfer_Action_Set_Export_Directory_TT",
-      "Text": "Set the export folder for the JSON file."
+      "Text": "Choose the export folder."
     },
     {
       "Key": "TEXT_DataTransfer_Action_Open_Export_Directory",
-      "Text": "Open Export Directory"
+      "Text": "Open Folder"
     },
     {
       "Key": "TEXT_DataTransfer_Action_Open_Export_Directory_TT",
-      "Text": "Open the export folder in File Explorer."
+      "Text": "Open the folder exports go to in File Explorer."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Clear_Export_Directory",
+      "Text": "Use Project Folder"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Clear_Export_Directory_TT",
+      "Text": "Clear the export folder, so exports go to the project's Exported Text folder."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Export_Filename",
@@ -110,15 +186,15 @@
     },
     {
       "Key": "TEXT_DataTransfer_Header_Export_Filename_TT",
-      "Text": "The name of the exported file. If blank, a name is generated automatically."
+      "Text": "The name of the exported file, without .json. Leave blank to use the name shown in the field (container, language, IDs and filter). Characters that can't be in a file name become _."
     },
     {
-      "Key": "TEXT_DataTransfer_Header_Export_Type",
-      "Text": "Export Type"
+      "Key": "TEXT_DataTransfer_Action_Export",
+      "Text": "Export"
     },
     {
-      "Key": "TEXT_DataTransfer_Header_Export_Type_TT",
-      "Text": "Which data to export."
+      "Key": "TEXT_DataTransfer_Action_Export_TT",
+      "Text": "Export the chosen scope and filter to a JSON file in the export folder."
     },
     {
       "Key": "TEXT_DataTransfer_Header_Output",
@@ -126,7 +202,11 @@
     },
     {
       "Key": "TEXT_DataTransfer_Header_Output_TT",
-      "Text": "The export string contents."
+      "Text": "The contents of the last export."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Output_Truncated",
+      "Text": "\n... {0} more lines. Copy to Clipboard copies all of it, or open the file in the export folder."
     },
     {
       "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard",
@@ -134,39 +214,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard_TT",
-      "Text": "Copy the output to the clipboard."
-    },
-    {
-      "Key": "TEXT_DataTransfer_Header_Actions",
-      "Text": "Actions"
-    },
-    {
-      "Key": "TEXT_DataTransfer_Header_Actions_TT",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_DataTransfer_Action_Export_Container",
-      "Text": "Export Selected Container"
-    },
-    {
-      "Key": "TEXT_DataTransfer_Action_Export_Container_TT",
-      "Text": "Generate the export for the selected container."
-    },
-    {
-      "Key": "TEXT_DataTransfer_Action_Export_File",
-      "Text": "Export Selected Text File"
-    },
-    {
-      "Key": "TEXT_DataTransfer_Action_Export_File_TT",
-      "Text": "Generate the export for the selected file."
-    },
-    {
-      "Key": "TEXT_DataTransfer_Action_Export_Entry",
-      "Text": "Export Selected Text Entry"
-    },
-    {
-      "Key": "TEXT_DataTransfer_Action_Export_Entry_TT",
-      "Text": "Generate the export for the selected entry."
+      "Text": "Copy the whole output to the clipboard."
     },
     {
       "Key": "TEXT_DataTransfer_Dialog_Select_Export_Dest",
@@ -175,10 +223,6 @@
     {
       "Key": "TEXT_DataTransfer_Log_No_Container_Selected",
       "Text": "No container is selected."
-    },
-    {
-      "Key": "TEXT_DataTransfer_Log_No_Export_Directory_Defined",
-      "Text": "No export folder is set."
     },
     {
       "Key": "TEXT_DataTransfer_Log_Filename_Empty",
@@ -193,6 +237,10 @@
       "Text": "No text entry is selected."
     },
     {
+      "Key": "TEXT_DataTransfer_Log_Open_Directory_Failed",
+      "Text": "Couldn't open the export folder {0}."
+    },
+    {
       "Key": "TEXT_DataTransfer_Menu_Header_Export",
       "Text": "Export"
     },
@@ -202,7 +250,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Menu_Header_Container_TT",
-      "Text": "Export the selected file, including all its text files and their entries, to an export text file."
+      "Text": "Export the selected container, with all its text files and their entries."
     },
     {
       "Key": "TEXT_DataTransfer_Menu_Header_Text_File",
@@ -210,7 +258,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Menu_Header_Text_File_TT",
-      "Text": "Export the selected text file, including all its entries, to an export text file."
+      "Text": "Export the selected text file, with all its entries."
     },
     {
       "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry",
@@ -218,7 +266,7 @@
     },
     {
       "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry_TT",
-      "Text": "Export the selected FMG entries to an export text file."
+      "Text": "Export the selected entries."
     },
     {
       "Key": "TEXT_DataTransfer_Export_Selected_Container",
@@ -238,11 +286,11 @@
     },
     {
       "Key": "TEXT_DataTransfer_Export_Modified_Text_TT",
-      "Text": "Only include modified text entries (and their text files)."
+      "Text": "Only include entries changed from vanilla or added by the project (and their text files)."
     },
     {
       "Key": "TEXT_DataTransfer_Export_Entry_Modified_Text_TT",
-      "Text": "Only include modified FMG entries."
+      "Text": "Only include selected entries changed from vanilla or added by the project."
     },
     {
       "Key": "TEXT_DataTransfer_Export_Unique_Text",
@@ -250,11 +298,115 @@
     },
     {
       "Key": "TEXT_DataTransfer_Export_Unique_Text_TT",
-      "Text": "Only include unique text entries (and their text files)."
+      "Text": "Only include entries that don't exist in vanilla (and their text files)."
     },
     {
       "Key": "TEXT_DataTransfer_Export_Entry_Unique_Text_TT",
-      "Text": "Only include unique FMG entries."
+      "Text": "Only include selected entries that don't exist in vanilla."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Column_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Column_Source",
+      "Text": "Source"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Column_Size",
+      "Text": "Size"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Column_Date",
+      "Text": "Date"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Column_Folder",
+      "Text": "Folder"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Source_Unknown",
+      "Text": "Unknown"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Source_Mismatch_TT",
+      "Text": "Exported from {0} ({1}), but the selected container is {2} ({3}).\n\nIt can still be imported: only text files with matching IDs and names receive entries."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Size_Value",
+      "Text": "{0} files, {1} entries"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Folder_Project",
+      "Text": "Project"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Folder_Custom",
+      "Text": "Export Folder"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Show_In_Folder",
+      "Text": "Show in Folder"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Show_In_Folder_TT",
+      "Text": "Open the selected export's folder in File Explorer, with the file selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Rename_Export",
+      "Text": "Rename"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Rename_Export_TT",
+      "Text": "Rename the selected export's file (and the name shown in the import lists)."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Archive_Export",
+      "Text": "Move to Archive"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Archive_Export_TT",
+      "Text": "Move the selected export into an Archive subfolder of its folder. It leaves the import lists, but nothing is deleted: move it back to list it again."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Rename_Popup",
+      "Text": "Rename Export"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Rename_Empty",
+      "Text": "The name is empty."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Rename_Invalid",
+      "Text": "The name contains characters that can't be used in a file name."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Rename_Exists",
+      "Text": "An export named {0} already exists in this folder."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Rename_Apply",
+      "Text": "Rename"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Rename_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Renamed",
+      "Text": "Renamed {0} to {1}."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Rename_Failed",
+      "Text": "Couldn't rename {0}."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Archived",
+      "Text": "Moved {0} to {1}."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Archive_Failed",
+      "Text": "Couldn't move {0} to the Archive folder."
     }
   ]
 }

@@ -96,6 +96,19 @@ public sealed class TextEditorSettings : ICfgSection
     public bool TextEditor_Text_Export_Enable_Quick_Export = false;
     public string TextEditor_TextExport_QuickExportPrefix = "quick_export";
 
+    // Data Transfer export folder; blank = the project's .smithbox/Workflow/Exported Text.
+    // Exports found here are listed for import too.
+    public string TextEditor_DataTransfer_Export_Directory = "";
+
+    // Show what a text import will do (added / changed / kept per text file) before applying it
+    public bool TextEditor_DataTransfer_Preview_Imports = true;
+
+    // Data Transfer panel choices, kept between sessions
+    public ExportType TextEditor_DataTransfer_Export_Scope = ExportType.Container;
+    public ExportModifier TextEditor_DataTransfer_Export_Filter = ExportModifier.None;
+    public FmgImportType TextEditor_DataTransfer_Import_Scope = FmgImportType.Container;
+    public ImportBehavior TextEditor_DataTransfer_Import_Mode = ImportBehavior.Append;
+
     public bool TextEditor_Language_Sync_Display_Primary_Only = false;
     public bool TextEditor_Language_Sync_Apply_Prefix = true;
     public string TextEditor_Language_Sync_Prefix = "TRANSLATE: ";

@@ -61,10 +61,6 @@
       "Text": "Options"
     },
     {
-      "Key": "PARAM_DataFinder_Header_Options_TT",
-      "Text": "Which params to search. Leave blank to search all params."
-    },
-    {
       "Key": "PARAM_DataFinder_Header_Search",
       "Text": "Search"
     },

@@ -105,7 +105,7 @@
       "Text": "将另一个类别的所有独有更改同步到此类别。\n\n在您希望将更改导入到的类别上使用此功能。"
     },
     {
-      "Key": "TEXT_LanguageSync_Action_Sync_TT",
+      "Key": "TEXT_LanguageSync_Action_Sync_From_Category_TT",
       "Text": "将 {0} 类别的更改带入此类别。"
     },
     {

@@ -289,10 +289,6 @@
       "Text": "Output on Manual Save"
     },
     {
-      "Key": "EDITOR_Menubar_Manual_Save_Output_TT",
-      "Text": "Choose which files a manual save writes."
-    },
-    {
       "Key": "EDITOR_Menubar_Auto_Save_Output",
       "Text": "Output on Automatic Save"
     },

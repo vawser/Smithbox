@@ -730,18 +730,74 @@ public static class TextUtils
         return Path.Join(project.Descriptor.ProjectPath, ".smithbox", "Workflow", "Exported Text");
     }
 
+    /// <summary>
+    /// Make a name usable as an export filename: characters Windows refuses become '_', trailing dots and
+    /// spaces go (Windows drops them), and a typed ".json" goes (it is added on write). "" if nothing is left.
+    /// </summary>
+    public static string SanitizeFileName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return "";
+
+        var invalid = Path.GetInvalidFileNameChars();
+        var result = new string(name.Trim().Select(c => invalid.Contains(c) ? '_' : c).ToArray());
+
+        if (result.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            result = result[..^".json".Length];
+
+        return result.TrimEnd('.', ' ');
+    }
+
+    /// <summary>The Data Transfer export folder set in the panel, or "" when none is set.</summary>
+    public static string GetCustomExportDirectory()
+    {
+        return CFG.Current.TextEditor.TextEditor_DataTransfer_Export_Directory?.Trim() ?? "";
+    }
+
+    /// <summary>
+    /// Where text exports are written: the custom export folder when one is set,
+    /// otherwise the project's Exported Text folder. Every export path goes through this.
+    /// </summary>
+    public static string GetExportDirectory(ProjectEntry project)
+    {
+        var custom = GetCustomExportDirectory();
+        return custom != "" ? custom : GetStoredTextDirectory(project);
+    }
+
+    /// <summary>
+    /// The JSON files listed for import: the project's Exported Text folder, plus the custom
+    /// export folder when one is set, so exports written there can be imported from the lists too.
+    /// </summary>
     public static List<string> GetStoredContainerWrappers(ProjectEntry project)
     {
         List<string> results = new();
 
-        var wrapperDir = GetStoredTextDirectory(project);
+        var dirs = new List<string> { GetStoredTextDirectory(project) };
 
-        if (Directory.Exists(wrapperDir))
+        var custom = GetCustomExportDirectory();
+        if (custom != "")
+            dirs.Add(custom);
+
+        var seenDirs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var dir in dirs)
         {
-            foreach (var entry in Directory.GetFiles(wrapperDir))
+            string fullDir;
+            try
             {
-                results.Add(entry);
+                fullDir = Path.GetFullPath(dir);
             }
+            catch (Exception)
+            {
+                continue; // Not a valid path (e.g. a half-typed folder)
+            }
+
+            // The custom folder may be the Exported Text folder itself
+            if (!seenDirs.Add(fullDir) || !Directory.Exists(fullDir))
+                continue;
+
+            // Only JSON: a custom folder can hold anything
+            results.AddRange(Directory.GetFiles(fullDir, "*.json"));
         }
 
         return results;

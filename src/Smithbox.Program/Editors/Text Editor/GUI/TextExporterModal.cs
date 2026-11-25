@@ -19,6 +19,13 @@ public class TextExporterModal
         Project = project;
     }
 
+    /// <summary>Open the modal with the name field filled in (the auto name for the selection; editable).</summary>
+    public void Open(string defaultName)
+    {
+        WrapperName = defaultName ?? "";
+        ShowModal = true;
+    }
+
     public void Display()
     {
         if (ShowModal)
@@ -34,7 +41,7 @@ public class TextExporterModal
     {
         if (ImGui.BeginPopupModal($"{LOC.Get("TEXT_Exporter_Modal_Name")}###textExporterModal", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            ImGui.BeginChild("TextExporterSection", new Vector2(200f * DPI.UIScale(), 0f),
+            ImGui.BeginChild("TextExporterSection", new Vector2(360f * DPI.UIScale(), 0f),
                 ImGuiChildFlags.Borders | ImGuiChildFlags.AutoResizeY);
 
             GUI.SimpleHeader(
@@ -68,13 +75,8 @@ public class TextExporterModal
             return;
         }
 
-        var outputWrapper = View.FmgExporter.ProcessExport(WrapperName);
-
-        var exportDir = TextUtils.GetStoredTextDirectory(Project);
-        if (View.ToolView.DataTransferTool.ExportDirectory != "")
-            exportDir = View.ToolView.DataTransferTool.ExportDirectory;
-
-        View.FmgExporter.WriteWrapper(exportDir, WrapperName, outputWrapper);
+        // Same path as the panel and Quick Export (filename made safe there)
+        View.FmgExporter.InitializeExport(WrapperName, View.FmgExporter.CurrentExportType, View.FmgExporter.CurrentExportModifier);
 
         ShowModal = false;
     }

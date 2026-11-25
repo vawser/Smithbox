@@ -29,12 +29,12 @@
       "Text": "仅独有"
     },
     {
-      "Key": "TEXT_ENUM_TextImportMode_Append",
+      "Key": "TEXT_ENUM_ImportBehavior_Append",
       "Text": "追加"
     },
     {
-      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
-      "Text": "覆盖"
+      "Key": "TEXT_ENUM_ImportBehavior_Replace",
+      "Text": "替换"
     }
   ]
 }

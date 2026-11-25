@@ -293,7 +293,7 @@ public class TextLanguageSyncTool
                         }
                     }
                     GUI.Tooltip(
-                        LOC.Get("TEXT_LanguageSync_Action_Sync_TT", selectableName));
+                        LOC.Get("TEXT_LanguageSync_Action_Sync_From_Category_TT", selectableName));
                 }
             }
 

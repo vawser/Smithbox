@@ -121,34 +121,85 @@ public class FmgExporter
 
         if (CFG.Current.TextEditor.TextEditor_Text_Export_Enable_Quick_Export)
         {
-            var exportName = CFG.Current.TextEditor.TextEditor_TextExport_QuickExportPrefix;
+            // Prefix + what was exported + a timestamp: every quick export is kept
+            // (it used to reuse the prefix alone, overwriting the previous quick export each time)
+            var parts = new[]
+            {
+                CFG.Current.TextEditor.TextEditor_TextExport_QuickExportPrefix?.Trim(),
+                AutoExportName(exportType, exportModifier),
+                DateTime.Now.ToString("yyyyMMdd-HHmmss")
+            };
 
-            var outputWrapper = ProcessExport(exportName);
-
-            var exportDir = TextUtils.GetStoredTextDirectory(Project);
-            if (View.ToolView.DataTransferTool.ExportDirectory != "")
-                exportDir = View.ToolView.DataTransferTool.ExportDirectory;
-
-            WriteWrapper(exportDir, exportName, outputWrapper);
+            InitializeExport(string.Join("-", parts.Where(p => !string.IsNullOrEmpty(p))), exportType, exportModifier);
         }
         else
         {
-            View.TextExportModal.ShowModal = true;
+            View.TextExportModal.Open(AutoExportName(exportType, exportModifier));
         }
     }
 
+    /// <summary>
+    /// Export the scope to {export folder}/{exportName}.json. Every export (panel, modal, Quick Export) comes
+    /// here, so the name is made filename-safe in one place.
+    /// </summary>
     public void InitializeExport(string exportName, ExportType exportType, ExportModifier exportModifier = ExportModifier.None)
     {
+        exportName = TextUtils.SanitizeFileName(exportName);
+
+        if (exportName == "")
+        {
+            Smithbox.LogError(this, LOC.Get("TEXT_Exporter_Log_Filename_Empty"));
+            return;
+        }
+
         CurrentExportType = exportType;
         CurrentExportModifier = exportModifier;
 
         var outputWrapper = ProcessExport(exportName);
 
-        var exportDir = TextUtils.GetStoredTextDirectory(Project);
-        if (View.ToolView.DataTransferTool.ExportDirectory != "")
-            exportDir = View.ToolView.DataTransferTool.ExportDirectory;
+        WriteWrapper(TextUtils.GetExportDirectory(Project), exportName, outputWrapper);
+    }
 
-        WriteWrapper(exportDir, exportName, outputWrapper);
+    /// <summary>
+    /// The default export name for the current selection: container, language, text file ID and entry ID as
+    /// the scope needs, plus -modified / -unique for a filtered export, e.g. item.msgbnd-english-10-1000-modified.
+    /// "" when the selection doesn't have what the scope needs.
+    /// </summary>
+    public string AutoExportName(ExportType scope, ExportModifier filter)
+    {
+        var container = View.Selection.SelectedContainerWrapper;
+        var fmg = View.Selection.SelectedFmgWrapper;
+        var entry = View.Selection._selectedFmgEntry;
+
+        if (container == null)
+            return "";
+        if (scope is ExportType.FMG or ExportType.FMG_Entries && fmg == null)
+            return "";
+        if (scope is ExportType.FMG_Entries && entry == null)
+            return "";
+
+        var name = container.FileEntry.Filename;
+
+        // The same container exists once per language: without it, exports of two languages share a name
+        if (container.ContainerDisplayCategory is not (TextContainerCategory.None or TextContainerCategory.Common))
+            name = $"{name}-{container.ContainerDisplayCategory.ToString().ToLowerInvariant()}";
+
+        name = scope switch
+        {
+            ExportType.FMG => $"{name}-{fmg.ID}",
+            ExportType.FMG_Entries => $"{name}-{fmg.ID}-{entry.ID}",
+            _ => name
+        };
+
+        // A filtered export doesn't overwrite the full export of the same scope
+        name = filter switch
+        {
+            ExportModifier.ModifiedOnly => $"{name}-modified",
+            ExportModifier.UniqueOnly => $"{name}-unique",
+            _ => name
+        };
+
+        return TextUtils.SanitizeFileName(name);
     }
 
     public ExportType CurrentExportType = ExportType.Container;
@@ -326,7 +377,8 @@ public class FmgExporter
 
         var proceed = false;
 
-        if (File.Exists(filename))
+        // Check the full path: a bare filename resolved against the working directory, so this never fired
+        if (File.Exists(filePath))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox(
                     LOC.Get("TEXT_Exporter_Export_Text_Exists_Overwrite"),
@@ -345,17 +397,18 @@ public class FmgExporter
 
         if(proceed)
         {
-            string jsonString = JsonSerializer.Serialize(wrapper, typeof(StoredFmgContainer), StoredContainerWrapperSerializationContext.Default);
-
             try
             {
-                var fs = new FileStream(filePath, FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(jsonString);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
+                // Readable UTF-8 (was ASCII with every non-ASCII character as \uXXXX)
+                var jsonString = StoredFmgJson.Write(filePath, wrapper);
 
                 View.ToolView.DataTransferTool.ExportString = jsonString;
+
+                // Reload the stored-export list so the new file shows in the import menus
+                View.FmgImporter.InvalidateWrapperCache();
+
+                // Select the new export in the Import tab's table (keys are full paths)
+                View.ToolView.DataTransferTool.ExportList.SelectedKey = Path.GetFullPath(filePath);
 
                 Smithbox.Log(this, LOC.Get("TEXT_Exporter_Exported_Text_PASS", wrapper.Name, filePath));
             }

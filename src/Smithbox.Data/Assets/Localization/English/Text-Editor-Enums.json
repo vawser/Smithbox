@@ -13,12 +13,24 @@
       "Text": "Unique Only"
     },
     {
-      "Key": "TEXT_ENUM_TextImportMode_Append",
+      "Key": "TEXT_ENUM_ImportBehavior_Append",
       "Text": "Append"
     },
     {
-      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
-      "Text": "Overwrite"
+      "Key": "TEXT_ENUM_ImportBehavior_Replace",
+      "Text": "Replace"
+    },
+    {
+      "Key": "TEXT_ENUM_TransferScope_Container",
+      "Text": "Container"
+    },
+    {
+      "Key": "TEXT_ENUM_TransferScope_Text_File",
+      "Text": "Text File"
+    },
+    {
+      "Key": "TEXT_ENUM_TransferScope_Text_Entries",
+      "Text": "Selected Entries"
     },
     {
       "Key": "TEXT_ENUM_SearchFilterType_Primary_Category",

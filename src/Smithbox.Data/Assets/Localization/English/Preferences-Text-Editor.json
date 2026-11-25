@@ -134,7 +134,7 @@
     },
     {
       "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export_TT",
-      "Text": "Name the export file automatically instead of showing the Export Text prompt. Each quick export overwrites the previous quick export file."
+      "Text": "Name the export file automatically instead of showing the Export Text prompt. The name is quick_export, what was exported and the date and time (e.g. quick_export-item.msgbnd-english-20261125-143000), so earlier quick exports are kept."
     },
     {
       "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only",

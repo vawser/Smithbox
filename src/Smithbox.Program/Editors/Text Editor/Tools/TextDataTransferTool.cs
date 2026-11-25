@@ -1,30 +1,83 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
 using StudioCore.Utilities;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
 
+/// <summary>
+/// The Data Transfer tool: JSON export / import of text. The tool panel and the Tools menu use the
+/// same model: Scope (Container / Text File / Selected Entries) x Filter (All / Modified / Unique)
+/// for export, Scope x Mode (Append / Replace) for import, and the same export folder
+/// (TextUtils.GetExportDirectory).
+/// </summary>
 public class TextDataTransferTool
 {
     public TextEditorView View;
     public ProjectEntry Project;
 
-    public TextImportMode ImportType = TextImportMode.Append;
+    // The panel's choices live in the settings, so they are kept between sessions
+    // (ref properties, so the combos can edit the setting directly)
+    private ref ExportType ExportScope => ref CFG.Current.TextEditor.TextEditor_DataTransfer_Export_Scope;
+    private ref ExportModifier ExportFilter => ref CFG.Current.TextEditor.TextEditor_DataTransfer_Export_Filter;
+    private ref FmgImportType ImportScope => ref CFG.Current.TextEditor.TextEditor_DataTransfer_Import_Scope;
+    private ref ImportBehavior ImportMode => ref CFG.Current.TextEditor.TextEditor_DataTransfer_Import_Mode;
 
-    public string ImportString = "";
-    public string ExportString = "";
-
-    public string ExportDirectory = "";
     public string ExportFilename = "";
 
-    public ExportModifier ExportModifier = ExportModifier.None;
+    // Lines of the last export shown in Export Output; Copy to Clipboard copies all of it
+    private const int PreviewLineLimit = 200;
+
+    private string _exportString = "";
+    private string _exportPreview = "";
+
+    /// <summary>The JSON of the last export. Setting it also builds the shortened preview, once.</summary>
+    public string ExportString
+    {
+        get => _exportString;
+        set
+        {
+            _exportString = value ?? "";
+            _exportPreview = BuildPreview(_exportString);
+        }
+    }
+
+    private static string BuildPreview(string text)
+    {
+        // Count lines without splitting the whole (possibly huge) string
+        var index = 0;
+        for (var line = 0; line < PreviewLineLimit; line++)
+        {
+            index = text.IndexOf('\n', index);
+            if (index < 0)
+                return text; // Short enough to show whole
+
+            index++;
+        }
+
+        var remaining = 1;
+        for (var i = index; i < text.Length; i++)
+        {
+            if (text[i] == '\n')
+                remaining++;
+        }
+
+        return text[..index] + LOC.Get("TEXT_DataTransfer_Output_Truncated", remaining);
+    }
+
+    // The Import tab's table of stored exports (selection, rename, archive)
+    public TextStoredExportList ExportList;
+
+    // Edit buffer of the export folder field; applied to the setting when the field is left
+    private string _directoryInput;
 
     public TextDataTransferTool(TextEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        ExportList = new TextStoredExportList(view, project);
     }
 
     public void DisplayDropdown()
@@ -52,6 +105,56 @@ public class TextDataTransferTool
         ImGui.EndChild();
     }
 
+    #region Shared
+    /// <summary>Why the scope can't be used with the current selection, or null when it can.</summary>
+    private string ScopeUnavailableReason(ExportType scope)
+    {
+        if (View.Selection.SelectedContainerWrapper == null)
+            return LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected");
+
+        if (scope is ExportType.FMG or ExportType.FMG_Entries && View.Selection.SelectedFmgWrapper == null)
+            return LOC.Get("TEXT_DataTransfer_Log_No_Text_File_Selected");
+
+        if (scope is ExportType.FMG_Entries && View.Selection._selectedFmgEntry == null)
+            return LOC.Get("TEXT_DataTransfer_Log_No_Text_Entry_Selected");
+
+        return null;
+    }
+
+    private string ScopeUnavailableReason(FmgImportType scope)
+    {
+        return ScopeUnavailableReason(scope switch
+        {
+            FmgImportType.FMG => ExportType.FMG,
+            FmgImportType.FMG_Entries => ExportType.FMG_Entries,
+            _ => ExportType.Container
+        });
+    }
+
+    private static void EnumCombo<T>(string id, ref T value) where T : struct, Enum
+    {
+        GUI.SetInputWidth();
+        if (ImGui.BeginCombo(id, LOC.Get(value.GetDisplayName())))
+        {
+            foreach (var entry in Enum.GetValues<T>())
+            {
+                if (ImGui.Selectable(LOC.Get(entry.GetDisplayName()), entry.Equals(value)))
+                {
+                    value = entry;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+    }
+
+    private static void ReasonText(string reason)
+    {
+        if (reason != null)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, reason);
+    }
+    #endregion
+
     #region Import
     public void ImportTab()
     {
@@ -59,80 +162,111 @@ public class TextDataTransferTool
         {
             GUI.WrappedText(LOC.Get("TEXT_DataTransfer_Import_Hint"));
 
+            // Scope
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Import_Scope"),
+                LOC.Get("TEXT_DataTransfer_Header_Import_Scope_TT"));
+
+            EnumCombo("##importScope", ref ImportScope);
+
+            // Mode
             GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Import_Type"),
                 LOC.Get("TEXT_DataTransfer_Header_Import_Type_TT"));
 
-            var previewName = LOC.Get(ImportType.GetDisplayName());
+            EnumCombo("##importMode", ref ImportMode);
 
-            GUI.SetInputWidth();
-            if (ImGui.BeginCombo("##importType", previewName))
-            {
-                foreach (var entry in Enum.GetValues(typeof(TextImportMode)))
-                {
-                    var curImportType = (TextImportMode)entry;
+            GUI.WrappedText(LOC.Get(ImportMode is ImportBehavior.Replace
+                ? "TEXT_DataTransfer_Import_Mode_Replace_Desc"
+                : "TEXT_DataTransfer_Import_Mode_Append_Desc"));
 
-                    var displayName = LOC.Get(curImportType.GetDisplayName());
+            ImGui.Checkbox($"{LOC.Get("TEXT_ImportPreview_Option_Preview")}##dataTransferPreviewToggle",
+                ref CFG.Current.TextEditor.TextEditor_DataTransfer_Preview_Imports);
+            GUI.Tooltip(LOC.Get("TEXT_ImportPreview_Option_Preview_TT"));
 
-                    if (ImGui.Selectable(displayName, curImportType == ImportType))
-                    {
-                        ImportType = curImportType;
-                    }
-                }
+            // Sources
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Import_Sources"),
+                LOC.Get("TEXT_DataTransfer_Header_Import_Sources_TT"));
 
-                ImGui.EndCombo();
-            }
+            ExportList.Display(ImportSelectedSource);
 
+            var hasSource = ExportList.HasSelection;
+
+            GUI.ConditionalMultiButtonInput("storedExportActions",
+                "showInFolder",
+                LOC.Get("TEXT_DataTransfer_Action_Show_In_Folder"),
+                LOC.Get("TEXT_DataTransfer_Action_Show_In_Folder_TT"),
+                ExportList.ShowSelectedInFolder, hasSource,
+
+                "renameExport",
+                LOC.Get("TEXT_DataTransfer_Action_Rename_Export"),
+                LOC.Get("TEXT_DataTransfer_Action_Rename_Export_TT"),
+                ExportList.BeginRenameSelected, hasSource,
+
+                "archiveExport",
+                LOC.Get("TEXT_DataTransfer_Action_Archive_Export"),
+                LOC.Get("TEXT_DataTransfer_Action_Archive_Export_TT"),
+                ExportList.ArchiveSelected, hasSource);
+
+            // Actions
             GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Actions"),
                 LOC.Get("TEXT_DataTransfer_Header_Actions_TT"));
 
-            GUI.MultiButtonInput("importActions",
-                "importTextFromFile", 
+            var reason = ScopeUnavailableReason(ImportScope);
+
+            GUI.ConditionalMultiButtonInput("importActions",
+                "importSelected",
+                LOC.Get("TEXT_DataTransfer_Action_Import_Selected"),
+                LOC.Get("TEXT_DataTransfer_Action_Import_Selected_TT"),
+                ImportSelectedSource, reason == null && hasSource,
+
+                "importTextFromFile",
                 LOC.Get("TEXT_DataTransfer_Action_Import_From_File"),
                 LOC.Get("TEXT_DataTransfer_Action_Import_From_File_TT"),
-                ImportTextFromFile);
+                ImportTextFromFile, reason == null,
+
+                "importTextFromClipboard",
+                LOC.Get("TEXT_DataTransfer_Action_Import_From_Clipboard"),
+                LOC.Get("TEXT_DataTransfer_Action_Import_From_Clipboard_TT"),
+                ImportTextFromClipboard, reason == null,
+
+                "refreshSources",
+                LOC.Get("TEXT_DataTransfer_Action_Refresh_Sources"),
+                LOC.Get("TEXT_DataTransfer_Action_Refresh_Sources_TT"),
+                View.FmgImporter.InvalidateWrapperCache, true);
+
+            ReasonText(reason ?? (hasSource ? null : LOC.Get("TEXT_DataTransfer_Log_No_Source_Selected")));
 
             ImGui.EndTabItem();
         }
     }
 
-    public void ImportTextFromInput()
+    public void ImportSelectedSource()
     {
-        var importBehavior = ImportBehavior.Append;
-        if (ImportType is TextImportMode.Overwrite)
-            importBehavior = ImportBehavior.Replace;
-
-        var generatedStoredFmgContainer = View.FmgImporter.GenerateStoredFmgContainerFromJson(ImportString);
-        if (generatedStoredFmgContainer != null)
+        var source = ExportList.Selected;
+        if (source == null)
         {
-            View.FmgImporter.ImportText(generatedStoredFmgContainer, importBehavior);
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Source_Selected"));
+            return;
         }
+
+        View.FmgImporter.ImportText(source, ImportMode, ImportScope);
+    }
+
+    public void ImportTextFromClipboard()
+    {
+        View.FmgImporter.ImportFromClipboard(ImportMode, ImportScope);
     }
 
     public void ImportTextFromFile()
     {
-        var importBehavior = ImportBehavior.Append;
-        if(ImportType is TextImportMode.Overwrite)
-            importBehavior = ImportBehavior.Replace;
-
-        if (PlatformUtils.Instance.OpenFileDialog(
-            LOC.Get("TEXT_DataTransfer_Select_Text_JSON"), ["json"], out var path))
-        {
-            if (!File.Exists(path))
-            {
-                Smithbox.LogError(this, LOC.Get("TEXT_DataTransfer_Invalid_Text_JSON"));
-                return;
-            }
-
-            var generatedStoredFmgContainer = View.FmgImporter.GenerateStoredFmgContainerFromFile(path);
-            if (generatedStoredFmgContainer != null)
-            {
-                View.FmgImporter.ImportText(generatedStoredFmgContainer, importBehavior);
-            }
-        }
+        View.FmgImporter.PromptExternalTextImport(ImportMode, ImportScope);
     }
 
     public void ImportMenu()
@@ -175,105 +309,136 @@ public class TextDataTransferTool
         {
             GUI.WrappedText(LOC.Get("TEXT_DataTransfer_Export_Hint"));
 
+            // Scope
             GUI.Spacer();
             GUI.SimpleHeader(
-                LOC.Get("TEXT_DataTransfer_Header_Export_Directory"),
-                LOC.Get("TEXT_DataTransfer_Header_Export_Directory_TT"));
+                LOC.Get("TEXT_DataTransfer_Header_Export_Scope"),
+                LOC.Get("TEXT_DataTransfer_Header_Export_Scope_TT"));
 
-            GUI.SinglelineTextInput("textExportDir", ref ExportDirectory);
+            EnumCombo("##exportScope", ref ExportScope);
 
-            GUI.MultiButtonInput("textExportDir",
-                "setDirectory", 
-                LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory"),
-                LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory_TT"),
-                SetExportDirectory,
-
-                "openDirectory", 
-                LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory"),
-                LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory_TT"),
-                OpenExportDirectory);
-
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("TEXT_DataTransfer_Header_Export_Filename"),
-                LOC.Get("TEXT_DataTransfer_Header_Export_Filename_TT"));
-
-            GUI.SinglelineTextInput("textExportFileName", ref ExportFilename);
-
+            // Filter
             GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Export_Type"),
                 LOC.Get("TEXT_DataTransfer_Header_Export_Type_TT"));
 
-            var previewName = LOC.Get(ExportModifier.GetDisplayName());
+            EnumCombo("##exportFilter", ref ExportFilter);
 
-            GUI.SetInputWidth();
-            if (ImGui.BeginCombo("##exportType", previewName))
-            {
-                foreach (var entry in Enum.GetValues(typeof(ExportModifier)))
-                {
-                    var curExportType = (ExportModifier)entry;
-
-                    var displayName = LOC.Get(curExportType.GetDisplayName());
-
-                    if (ImGui.Selectable(displayName, curExportType == ExportModifier))
-                    {
-                        ExportModifier = curExportType;
-                    }
-                }
-
-                ImGui.EndCombo();
-            }
-
+            // Folder
             GUI.Spacer();
             GUI.SimpleHeader(
-                LOC.Get("TEXT_DataTransfer_Header_Output"),
-                LOC.Get("TEXT_DataTransfer_Header_Output_TT"));
+                LOC.Get("TEXT_DataTransfer_Header_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Header_Export_Directory_TT"));
 
-            // Has to use TextUnformatted as the CSV output string can be massive,
-            // and it exceeds the internal buffers used by InputTextMultiline
-            ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
-            ImGui.TextUnformatted(ExportString);
-            ImGui.EndChild();
+            DisplayDirectoryInput();
 
-            GUI.MultiButtonInput("csvOutputActions",
-                "copyToClipboard", 
-                LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard"),
-                LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard_TT"),
-                CopyOutputToClipboard);
+            GUI.MultiButtonInput("textExportDir",
+                "setDirectory",
+                LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory_TT"),
+                SetExportDirectory,
 
+                "openDirectory",
+                LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory_TT"),
+                OpenExportDirectory,
+
+                "clearDirectory",
+                LOC.Get("TEXT_DataTransfer_Action_Clear_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Action_Clear_Export_Directory_TT"),
+                () => SetCustomDirectory(""));
+
+            // Filename
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Export_Filename"),
+                LOC.Get("TEXT_DataTransfer_Header_Export_Filename_TT"));
+
+            // The hint shows the name used when the field is blank
+            ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);
+            ImGui.InputTextWithHint("##textExportFileName", AutoExportName(), ref ExportFilename, 255);
+
+            // Actions
             GUI.Spacer();
             GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Actions"),
                 LOC.Get("TEXT_DataTransfer_Header_Actions_TT"));
 
-            GUI.MultiButtonInput("exportActions",
-                "exportContainer", 
-                LOC.Get("TEXT_DataTransfer_Action_Export_Container"),
-                LOC.Get("TEXT_DataTransfer_Action_Export_Container_TT"),
-                ExportContainerAction,
+            var reason = ScopeUnavailableReason(ExportScope);
 
-                "exportFmg", 
-                LOC.Get("TEXT_DataTransfer_Action_Export_File"),
-                LOC.Get("TEXT_DataTransfer_Action_Export_File_TT"),
-                ExportFmgAction,
+            GUI.ConditionalMultiButtonInput("exportActions",
+                "export",
+                LOC.Get("TEXT_DataTransfer_Action_Export"),
+                LOC.Get("TEXT_DataTransfer_Action_Export_TT"),
+                ExportAction, reason == null);
 
-                "exportEntry",
-                LOC.Get("TEXT_DataTransfer_Action_Export_Entry"),
-                LOC.Get("TEXT_DataTransfer_Action_Export_Entry_TT"), 
-                ExportEntryAction);
+            ReasonText(reason);
+
+            // Output
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Output"),
+                LOC.Get("TEXT_DataTransfer_Header_Output_TT"));
+
+            // TextUnformatted, as the output can exceed InputTextMultiline's buffers; and only the first
+            // lines, as drawing a whole-container export every frame is slow
+            ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
+            ImGui.TextUnformatted(_exportPreview);
+            ImGui.EndChild();
+
+            GUI.MultiButtonInput("csvOutputActions",
+                "copyToClipboard",
+                LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard"),
+                LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard_TT"),
+                CopyOutputToClipboard);
 
             ImGui.EndTabItem();
         }
     }
 
+    private void DisplayDirectoryInput()
+    {
+        var saved = TextUtils.GetCustomExportDirectory();
+
+        _directoryInput ??= saved;
+
+        ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X);
+        ImGui.InputTextWithHint("##textExportDir", LOC.Get("TEXT_DataTransfer_Export_Directory_Hint"), ref _directoryInput, 1024);
+
+        // Applied when the field is left after an edit (Enter, Tab or a click), not on every key
+        if (GUI.InputCommitted())
+        {
+            SetCustomDirectory(_directoryInput);
+        }
+        // Not being edited: follow the setting (Browse / Use Project Folder, or Escape)
+        else if (!ImGui.IsItemActive())
+        {
+            _directoryInput = saved;
+        }
+
+        GUI.WrappedText(LOC.Get("TEXT_DataTransfer_Export_Directory_Resolved", TextUtils.GetExportDirectory(Project)));
+    }
+
+    private void SetCustomDirectory(string path)
+    {
+        path = path?.Trim() ?? "";
+
+        if (path == TextUtils.GetCustomExportDirectory())
+            return;
+
+        CFG.Current.TextEditor.TextEditor_DataTransfer_Export_Directory = path;
+        _directoryInput = path;
+
+        // The import lists include the export folder
+        View.FmgImporter.InvalidateWrapperCache();
+    }
+
     public void SetExportDirectory()
     {
-        string path;
-        var result = PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXT_DataTransfer_Dialog_Select_Export_Dest"), out path);
-        if (result)
+        if (PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXT_DataTransfer_Dialog_Select_Export_Dest"), out var path))
         {
-            ExportDirectory = path;
+            SetCustomDirectory(path);
         }
     }
 
@@ -284,141 +449,42 @@ public class TextDataTransferTool
 
     public void OpenExportDirectory()
     {
-        Process.Start("explorer.exe", ExportDirectory);
+        var dir = TextUtils.GetExportDirectory(Project);
+
+        try
+        {
+            // The Exported Text folder only exists after the first export
+            Directory.CreateDirectory(dir);
+            Process.Start("explorer.exe", $"\"{dir}\"");
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("TEXT_DataTransfer_Log_Open_Directory_Failed", dir), ex);
+        }
     }
 
-    public void ExportContainerAction()
+    /// <summary>The filename used when the Export Filename field is blank ("" when the scope can't be used).</summary>
+    private string AutoExportName() => View.FmgExporter.AutoExportName(ExportScope, ExportFilter);
+
+    public void ExportAction()
     {
-        var wrapper = View.Selection.SelectedContainerWrapper;
-
-        if(wrapper == null)
+        var reason = ScopeUnavailableReason(ExportScope);
+        if (reason != null)
         {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected"));
+            Smithbox.LogError<TextDataTransferTool>(reason);
             return;
         }
 
-        if (ExportDirectory == "")
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Export_Directory_Defined"));
-            return;
-        }
+        // Made filename-safe in InitializeExport
+        var filename = string.IsNullOrWhiteSpace(ExportFilename) ? AutoExportName() : ExportFilename.Trim();
 
-        var filename = "";
-
-        if (ExportFilename == "")
-        {
-            filename = $"{wrapper.FileEntry.Filename}";
-        }
-        else
-        {
-            filename = ExportFilename;
-        }
-
-        if(filename == "")
+        if (TextUtils.SanitizeFileName(filename) == "")
         {
             Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_Filename_Empty"));
             return;
         }
 
-        var exportMod = ExportModifier.None;
-
-        View.FmgExporter.InitializeExport(filename, ExportType.Container, exportMod);
-
-    }
-    public void ExportFmgAction()
-    {
-        var wrapper = View.Selection.SelectedContainerWrapper;
-        var selectedFmgWrapper = View.Selection.SelectedFmgWrapper;
-
-        if (wrapper == null)
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected"));
-            return;
-        }
-
-        if (selectedFmgWrapper == null)
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Text_File_Selected"));
-            return;
-        }
-
-        if (ExportDirectory == "")
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Export_Directory_Defined"));
-            return;
-        }
-
-        var filename = "";
-
-        if (ExportFilename == "")
-        {
-            filename = $"{wrapper.FileEntry.Filename}-{selectedFmgWrapper.ID}";
-        }
-        else
-        {
-            filename = ExportFilename;
-        }
-
-        if (filename == "")
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_Filename_Empty"));
-            return;
-        }
-
-        var exportMod = ExportModifier.None;
-
-        View.FmgExporter.InitializeExport(filename, ExportType.FMG, exportMod);
-    }
-    public void ExportEntryAction()
-    {
-        var wrapper = View.Selection.SelectedContainerWrapper;
-        var selectedFmgWrapper = View.Selection.SelectedFmgWrapper;
-        var selectedEntry = View.Selection._selectedFmgEntry;
-
-        if (wrapper == null)
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected"));
-            return;
-        }
-
-        if (selectedFmgWrapper == null)
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Text_File_Selected"));
-            return;
-        }
-
-        if (selectedEntry == null)
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Text_Entry_Selected"));
-            return;
-        }
-
-        if (ExportDirectory == "")
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Export_Directory_Defined"));
-            return;
-        }
-
-        var filename = "";
-
-        if (ExportFilename == "")
-        {
-            filename = $"{wrapper.FileEntry.Filename}-{selectedFmgWrapper.ID}-{selectedEntry.ID}";
-        }
-        else
-        {
-            filename = ExportFilename;
-        }
-
-        if (filename == "")
-        {
-            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_Filename_Empty"));
-            return;
-        }
-
-        var exportMod = ExportModifier.None;
-
-        View.FmgExporter.InitializeExport(filename, ExportType.FMG_Entries, exportMod);
+        View.FmgExporter.InitializeExport(filename, ExportScope, ExportFilter);
     }
 
     public void ExportMenu()
@@ -517,13 +583,4 @@ public class TextDataTransferTool
     }
 
     #endregion
-}
-
-public enum TextImportMode
-{
-    [Display(Name = "TEXT_ENUM_TextImportMode_Append")]
-    Append,
-
-    [Display(Name = "TEXT_ENUM_TextImportMode_Overwrite")]
-    Overwrite
 }

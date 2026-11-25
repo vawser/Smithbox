@@ -189,10 +189,6 @@
       "Text": "Remove the last added target text entry."
     },
     {
-      "Key": "PARAM_RowNameManip_Target_String_Add_TT",
-      "Text": "Add a target text entry."
-    },
-    {
       "Key": "PARAM_RowNameManip_Target_String_Reset",
       "Text": "Reset"
     },
